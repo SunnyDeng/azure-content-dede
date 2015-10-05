@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="tbd" 
-	ms.date="04/21/2015"
+	ms.date="09/17/2015"
 	ms.author="himad"/>
 
 
@@ -38,7 +38,7 @@ Dadurch können Benutzer von Azure Machine Learning Webdienste erstellen, die si
 - Klicken Sie am unteren Rand auf die Schaltfläche **Add Endpoint**. Geben Sie einen Namen und eine Beschreibung ein, und stellen Sie sicher, dass keine anderen Endpunkte mit demselben Namen in diesem Webdienst vorhanden sind. Behalten Sie die Standardeinstellung des Drosselunggrads bei, sofern keine besonderen Anforderungen bestehen. Wenn Sie mehr über Drosselung erfahren möchten, besuchen Sie die Seite [Skalieren von API-Endpunkten](machine-learning-scaling-endpoints.md). ![Endpunkt erstellen](./media/machine-learning-create-endpoint/figure-4.png)
 
 
-Nach dem Erstellen kann der Endpunkt über synchrone APIs, Batch-APIs und Excel-Arbeitsblätter genutzt werden. Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden Sie unter [Nutzen eines veröffentlichten Azure Machine Learning-Webdiensts](machine-learning-consume-web-services.md).
+Nach dem Erstellen kann der Endpunkt über synchrone APIs, Batch-APIs und Excel-Arbeitsblätter genutzt werden. Zusätzlich zum Hinzufügen von Endpunkten über diese Benutzeroberfläche können Sie auch die Endpunktverwaltungs-APIs verwenden, um Endpunkte programmgesteuert hinzuzufügen. Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden Sie unter [Nutzen eines veröffentlichten Azure Machine Learning-Webdiensts](machine-learning-consume-web-services.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

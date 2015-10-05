@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="09/05/2015"
+	ms.date="09/23/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -32,7 +32,7 @@ Ein „BACPAC“ ist eine BACPAC-Datei, die ein Datenbankschema und Daten enthä
 
 > [AZURE.NOTE]Azure SQL-Datenbank erstellt für jede Benutzerdatenbank automatisch Sicherungen. Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
 
-Das BACPAC wird in einen Azure-Speicher-BLOB-Container exportiert, den Sie nach dem erfolgreichen Abschluss des Vorgangs herunterladen können.
+Das BACPAC wird in einen Azure-Speicherblobcontainer exportiert, den Sie nach dem erfolgreichen Abschluss des Vorgangs herunterladen können.
 
 
 Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie Folgendes:
@@ -144,4 +144,4 @@ Beim Ausführen dieses Befehls werden Sie zur Eingabe eines Kennworts aufgeforde
 - [Warnungen zur Notfallwiederherstellung](sql-database-disaster-recovery-drills.md)
 - [SQL-Datenbank-Dokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

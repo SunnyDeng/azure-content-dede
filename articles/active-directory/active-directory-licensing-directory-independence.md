@@ -4,7 +4,7 @@
    services="active-directory"
    documentationCenter=""
    authors="curtand"
-   manager="swadhwa"
+   manager="stevenpo"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/16/2015"
+   ms.date="09/21/2015"
    ms.author="curtand"/>
 
 # Hinzufügen und Verwalten von mehreren Azure AD-Verzeichnissen
@@ -40,4 +40,4 @@ Um ein Azure AD-Verzeichnis im Azure-Verwaltungsportal hinzuzufügen, wählen Si
 
 Eine grobe Übersicht über Lizenzierungsprobleme und bewährte Methoden im Zusammenhang mit Azure AD finden Sie unter [Was ist Azure Active Directory-Lizenzierung?](active-directory-licensing-what-is.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

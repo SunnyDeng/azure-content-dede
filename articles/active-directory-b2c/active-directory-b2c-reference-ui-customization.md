@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Anpassen der Azure AD B2C-Benutzeroberfläche (UI)
@@ -43,11 +43,11 @@ Verwenden Sie unser Hilfsprogramm (demnächst verfügbar), um das Anpassungsfeat
 
 ## Die wichtigsten UI-Elemente in jedem Seitentyp
 
-In diesem Abschnitt finden Sie die HTML5-Fragmente (für jeden Seitentyp), die Azure AD B2C im `<div id="api"></div>`-Element in Ihrem Inhalt zusammenführt. Mit Stylesheets können diese UI-Elemente anpassen. Diese Stylesheets können die standardmäßigen Stylesheets überschreiben, die wir in diesen Seitentypen in den `<head>`-Fragmenten hinzufügen.
+Im folgenden Abschnitt finden Sie Beispiele für HTML5-Fragmente (für jeden Seitentyp), die Azure AD B2C im <div id="api"></div>-Element in Ihrem Inhalt zusammenführt. Sie können diese UI-Elemente mit Ihren eigenen Stylesheets anpassen. Diese Stylesheets müssen die standardmäßigen Stylesheets überschreiben, die wir in diesen Seiten in den <head>-Fragmenten hinzufügen.
 
-> [AZURE.IMPORTANT]Gehen Sie in der Vorschau davon aus, dass sich die genauen UI-Elemente ändern, da sie an Ihr Feedback angepasst werden. Überprüfen Sie den Quellcode der Standardseiten auf Details zu folgenden Elementen.
+> [AZURE.IMPORTANT]Gehen Sie in der Vorschau davon aus, dass sich die genauen UI-Elemente ändern, da sie an Ihr Feedback angepasst werden. Überprüfen Sie immer den Quellcode der Standardseiten auf die neuesten Aktualisierungen. Tatsächlich ist die erste Änderung, die berücksichtigt wird, das Entfernen unserer Standardstylesheets. Dies bedeutet, dass Sie immer Ihre eigenen Stylesheets für diese UI-Elemente in Ihrem Inhalt bereitstellen müssen.
 
-### Auswahlseite für Identitätsanbieter
+## Auswahlseite für Identitätsanbieter
 
 Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer während der Registrierung und Anmeldung auswählen kann. Dies sind entweder Identitätsanbieter in Form von sozialen Netzwerken wie Facebook und Google+ oder lokale Konten (basierend auf E-Mail-Adressen oder Benutzernamen).
 
@@ -75,7 +75,7 @@ Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer 
 
 ```
 
-### Registrierungsseite für lokales Konto
+## Registrierungsseite für lokales Konto
 
 Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen muss, wenn die Registrierung mit einer auf einem lokalen Konto basierenden E-Mail-Adresse oder einem entsprechenden Benutzernamen erfolgt. Das Formular kann verschiedene Eingabesteuerelemente enthalten, z. B. Texteingabefelder, Kennworteingabefelder, Optionsfelder, Dropdownlisten mit einer Auswahlmöglichkeit und Kontrollkästchen mit mehreren Optionen.
 
@@ -192,11 +192,11 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 
 ```
 
-### Registrierungsseite für Konten sozialer Netzwerke
+## Registrierungsseite für Konten sozialer Netzwerke
 
 Diese Seite enthält ein Registrierungsformular, das der Consumer ausfüllen muss, wenn die Registrierung mit einem vorhandenen Konto bei einem sozialen Netzwerk wie Facebook oder Google+ als Identitätsanbieter erfolgt. Diese Seite ähnelt der Registrierungsseite für lokale Konten (siehe Abschnitt oben), eine Ausnahme bilden die Kennworteingabefelder.
 
-### Seite für Multi-Factor Authentication
+## Seite für Multi-Factor Authentication
 
 Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung ihre Telefonnummern (mit Text oder Stimme) zu überprüfen.
 
@@ -242,7 +242,7 @@ Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung 
 
 ```
 
-### Fehlerseite
+## Fehlerseite
 
 
 ```HTML
@@ -265,7 +265,7 @@ Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung 
 Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten Sie die folgenden bewährten Methoden:
 
 - Kopieren Sie nicht die Azure AD B2C-Standardvorlage, um zu versuchen, sie zu ändern. Es wird empfohlen, eigene HTML5-Inhalte von Grund auf neu zu erstellen und die Standardvorlage als Referenz zu verwenden.
-- Aus Gründen der Sicherheit ist es nicht zulässig, JavaScript in Ihren Inhalt aufzunehmen. Das meiste, was Sie benötigen, sollte ohne Bearbeitungsaufwand verfügbar sein. Falls nicht, fordern Sie über [Feedback](http://feedback.azure.com/forums/169401-azure-active-directory) neue Funktionen an.
+- Aus Gründen der Sicherheit ist es nicht zulässig, JavaScript in Ihren Inhalt aufzunehmen. Das meiste, was Sie benötigen, sollte ohne Bearbeitungsaufwand verfügbar sein. Falls nicht, fordern Sie über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) neue Funktionen an.
 - Unterstützte Browserversionen:
 	- Internet Explorer 11
 	- Internet Explorer 10
@@ -276,4 +276,4 @@ Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten S
 	- Mozilla Firefox 38.0
 	- Mozilla Firefox 37.0
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

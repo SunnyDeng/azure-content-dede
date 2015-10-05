@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Einrichten eines neuen Geräts mit Azure AD über den Eindruck beim ersten Ausführen | Microsoft Azure" 
+	pageTitle="Übersicht über Microsoft Passport und Details zu dieser neuen, zertifikatbasierten Authentifizierung | Microsoft Azure" 
 	description="In diesem Thema wird erklärt, wie Benutzer Azure AD Join während Ihres Eindrucks beim ersten Ausführen einrichten können." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor=""/>
-
 
 <tags 
 	ms.service="active-directory" 
@@ -14,9 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/02/2015" 
+	ms.date="09/21/2015" 
 	ms.author="femila"/>
-
 
 # Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport
 
@@ -68,7 +66,7 @@ Auf Benutzerebene
 
 ## Zusätzliche Informationen
 
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -1,20 +1,20 @@
 <properties
-	pageTitle="Anzeigen von Zugriffs- und Nutzungsberichten"
-	description="In diesem Thema wird das Anzeigen von Zugriffs- und Nutzungsberichten erläutert, um sich einen Einblick in die Integrität und Sicherheit des Verzeichnisses Ihrer Organisation zu verschaffen."
+	pageTitle="Anzeigen Ihrer Zugriffs- und Nutzungsberichte | Microsoft Azure"
+	description="Erläutert das Anzeigen von Zugriffs- und Nutzungsberichten, um sich einen Einblick in die Integrität und Sicherheit des Verzeichnisses Ihrer Organisation zu verschaffen."
 	services="active-directory"
 	documentationCenter=""
 	authors="kenhoff"
-	manager="TerryLan"
-	editor="LisaToft"/>
+	manager="stevenpo"
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
+	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/24/2015"
-	ms.author="kenhoff;Justinha"/>
+	ms.date="09/21/2015"
+	ms.author="kenhoff;Justinha;curtand"/>
 
 # Anzeigen von Zugriffs- und Nutzungsberichten
 
@@ -90,12 +90,6 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 |	Aktivste RMS-Benutzer | | |	Nur RMS |
 |	Nutzung von RMS-Geräten | | |	Nur RMS |
 |	Nutzung RMS-fähiger Anwendungen | | |	Nur RMS |
-
-
-
-
-
-
 
 
 
@@ -228,7 +222,7 @@ Nur bestimmte Arten von Anmeldeereignissen werden im Bericht "Benutzeraktivität
 | Anmeldungen bei einer benutzerdefinierten Geschäfts-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 | Anmeldungen bei einer Azure AD-Anwendungsproxy-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 
-> Hinweis: Um diese Bericht übersichtlich zu halten, werden Anmeldungen bei der systemeigenen App [Lync/Skype for Business](http://products.office.com/de-DE/skype-for-business/online-meetings) und durch den [Microsoft Online Services-Anmelde-Assistenten](http://community.office365.com/de-DE/w/sso/534.aspx) nicht gezeigt.
+> Hinweis: Um diese Bericht übersichtlich zu halten, werden Anmeldungen bei der systemeigenen App [Lync/Skype for Business](http://products.office.com/DE-DE/skype-for-business/online-meetings) und durch den [Microsoft Online Services-Anmelde-Assistenten](http://community.office365.com/DE-DE/w/sso/534.aspx) nicht gezeigt.
 
 
 
@@ -276,4 +270,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

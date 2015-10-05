@@ -2,10 +2,11 @@
    pageTitle="Erstellen eines virtuellen Azure-Computers mit der Azure-Befehlszeilenschnittstelle | Microsoft Azure"
    description="In diesem Thema erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle auf einer beliebigen Plattform installieren, eine Verbindung mit Ihrem Azure-Konto herstellen und über die Azure-Befehlszeilenschnittstelle einen virtuellen Computer erstellen."
    services="virtual-machines"
-   documentationCenter="virtual-machines"
+   documentationCenter=""
    authors="dlepow"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"
+   tags="azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
@@ -17,6 +18,9 @@
    ms.author="danlep"/>
 
 # Erstellen eines virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle (Azure-CLI)
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-deploy-rmtemplates-azure-cli.md) erstellen.
+
 Die Azure-Befehlszeilenschnittstelle ist eine hervorragende Methode, um Ihre Azure-Infrastruktur von einer beliebigen Plattform aus zu verwalten.
 
 Wenn Sie die Azure-Befehlszeilenschnittstelle installiert haben und über ein Azure-Abonnement verfügen, können Sie sofort einen virtuellen Computer erstellen. Führen wir diese Schritte also aus. Wenn Sie noch kein Azure-Konto besitzen, erhalten Sie [hier](http://azure.microsoft.com/pricing/free-trial/) ein kostenloses Abonnement.
@@ -43,7 +47,7 @@ Das Erstellen eines virtuellen Computers beginnt mit der Auswahl (oder dem Hochl
 
     Aus den Ergebnissen können Sie ein Image auswählen und den Befehl `show` verwenden, um die zugehörigen Eigenschaften im Detail anzuzeigen:
 
-        azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB
+        azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB
 
 2. Nachdem Sie ein VM-Image ausgewählt haben, verwenden Sie den Befehl `vm create`, um das Image zu erstellen. Dieser Befehl umfasst viele Optionen, die Sie mit dem Befehl `help` auflisten können:
 
@@ -59,7 +63,7 @@ Das Erstellen eines virtuellen Computers beginnt mit der Auswahl (oder dem Hochl
 
     The Linux example below creates a VM in West US, opens the default SSH port 22 (the -e argument), and creates a user called `myadminuser`:
 
-        azure vm create -e -l "West US"  my-new-cli-vm b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB "myadminuser" "myAdm1n@passwd"
+        azure vm create -e -l "West US"  my-new-cli-vm b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB "myadminuser" "myAdm1n@passwd"
 
 ## Nächste Schritte
 
@@ -74,4 +78,4 @@ Weitere Beispiele zur Verwendung der Azure-Befehlszeilenschnittstelle zum Verwal
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

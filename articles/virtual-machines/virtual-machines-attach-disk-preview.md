@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Anfügen eines Datenträgers für Daten im Azure-Vorschauportal"
-	description="Anfügen neuer und vorhandener Datenträger für Daten im Azure-Vorschauportal | Microsoft Azure"
+	pageTitle="Anfügen eines Datenträgers | Microsoft Azure"
+	description="Hier erhalten Sie Informationen zum Anfügen von neuen oder vorhandenen Datenträgern an einen virtuellen Computer im Azure-Vorschauportal mit dem Ressourcen-Manager-Bereitstellungsmodell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -11,13 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/14/2015"
 	ms.author="cynthn"/>
 
 # Anfügen eines Datenträgers für Daten im Azure-Vorschauportal
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie haben auch die Möglichkeit, eine Ressource mit dem [klassischen Bereitstellungsmodell](storage-windows-attach-disk.md) zu erstellen.
 
 In diesem Artikel wird beschrieben, wie Sie über das Azure-Vorschauportal neue und vorhandene Datenträger an einen virtuellen Computer anfügen können. Lesen Sie die folgenden Tipps, bevor Sie mit diesem Vorgang fortfahren:
 
@@ -88,4 +90,4 @@ Nach dem Hinzufügen des Datenträgers müssen Sie ihn für die Verwendung im Be
 
 [Informationen zu Azure-Speicherkonten]: ../storage-whatis-account/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

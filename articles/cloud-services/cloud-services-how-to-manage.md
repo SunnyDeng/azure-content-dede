@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/01/2015"
+	ms.date="09/22/2015"
 	ms.author="adegeo"/>
 
 
@@ -37,23 +37,23 @@ Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwe
 
 	![Bereitstellung aktualisieren](./media/cloud-services-how-to-manage/CloudServices_UpdateDeployment.png)
 
-2. Geben Sie in **Bereitstellungsbezeichnung** einen Namen ein, um die Bereitstellung zu kennzeichnen \(z. B. meinclouddienstv4\). Sie finden den Bereitstellungsnamen unter **Schnellstart** im Dashboard.
+2. Geben Sie in **Bereitstellungsbezeichnung** einen Namen ein, um die Bereitstellung zu kennzeichnen (z. B. meinclouddienstv4). Sie finden den Bereitstellungsnamen unter **Schnellstart** im Dashboard.
 
-3. Klicken Sie unter **Paket** auf **Durchsuchen**, um die Dienstpaketdatei \(.cspkg\) hochzuladen.
+3. Klicken Sie unter **Paket** auf **Durchsuchen**, um die Dienstpaketdatei (.cspkg) hochzuladen.
 
-4. Klicken Sie unter **Konfiguration** auf **Durchsuchen**, um die Dienstkonfigurationsdatei \(.cscfg\) hochzuladen.
+4. Klicken Sie unter **Konfiguration** auf **Durchsuchen**, um die Dienstkonfigurationsdatei (.cscfg) hochzuladen.
 
 5. Wählen Sie unter **Rolle** die Option **Alle**, wenn Sie alle Rollen im Cloud-Dienst aktualisieren möchten. Wählen Sie zum Ausführen einer einzelnen Rollenaktualisierung die zu aktualisierende Rolle aus. Auch wenn Sie eine bestimmte Rolle zum Aktualisieren auswählen, werden die Updates in der Dienstkonfigurationsdatei auf alle Rollen angewendet.
 
 6. Wenn durch das Update die Anzahl der Rollen oder die Größe einer Rolle geändert wird, aktivieren Sie das Kontrollkästchen **Allow update if role sizes or number of roles changes**, um die Fortsetzung des Updates zu ermöglichen.
 
-	Wenn Sie die Größe einer Rolle \(d. h. die Größe eines virtuellen Computers, der eine Rolleninstanz hostet\) oder die Anzahl der Rollen ändern, denken Sie daran, dass für jede Rolleninstanz \(virtueller Computer\) ein neues Image erstellt werden muss und dass lokale Daten verloren gehen.
+	Wenn Sie die Größe einer Rolle (d. h. die Größe eines virtuellen Computers, der eine Rolleninstanz hostet) oder die Anzahl der Rollen ändern, denken Sie daran, dass für jede Rolleninstanz (virtueller Computer) ein neues Image erstellt werden muss und dass lokale Daten verloren gehen.
 
 7. Wenn Dienstrollen nur eine Rolleninstanz haben, aktivieren Sie das Kontrollkästchen **Update even if one or more role contain a single instance**, damit das Update fortgesetzt werden kann.
 
-	Azure kann während des Updates eines Clouddiensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen \(virtuelle Computer\) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
+	Azure kann während des Updates eines Clouddiensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen (virtuelle Computer) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
 
-8. Klicken Sie auf **OK** \(Häkchen\), um mit dem Update des Diensts zu beginnen.
+8. Klicken Sie auf **OK** (Häkchen), um mit dem Update des Diensts zu beginnen.
 
 
 
@@ -83,7 +83,7 @@ Sie können Bereitstellungen über die Seite **Cloud-Dienste** oder über das Da
 
 Um die Abhängigkeiten des Cloud-Diensts von anderen Ressourcen anzuzeigen, können Sie eine Azure-SQL-Datenbankinstanz oder ein Speicherkonto mit dem Cloud-Dienst verknüpfen. Auf der Seite **Verknüpfte Ressourcen** können Sie Ressourcen verknüpfen und Verknüpfungen aufheben und dann deren Verwendung im Clouddienst-Dashboard überwachen. Wenn für ein verknüpftes Speicherkonto die Überwachung aktiviert ist, können Sie die gesamten Anforderungen im Cloud-Dienst-Dashboard überwachen.
 
-Verwenden Sie **Verknüpfen**, um eine neue oder vorhandene SQL-Datenbankinstanz oder ein Speicherkonto mit Ihrem Cloud-Dienst zu verknüpfen. Anschließend können Sie die Datenbank sowie die Cloud-Dienstrolle, die diese verwendet, auf der Seite **Skalieren** skalieren. \(Ein Speicherkonto wird mit zunehmender Nutzung automatisch skaliert.\) Weitere Informationen finden Sie unter [How to Scale a Cloud Service and Linked Resources](cloud-services-how-to-scale.md) \(Skalieren eines Cloud-Diensts und verknüpfter Ressourcen – in englischer Sprache\).
+Verwenden Sie **Verknüpfen**, um eine neue oder vorhandene SQL-Datenbankinstanz oder ein Speicherkonto mit Ihrem Cloud-Dienst zu verknüpfen. Anschließend können Sie die Datenbank sowie die Cloud-Dienstrolle, die diese verwendet, auf der Seite **Skalieren** skalieren. (Ein Speicherkonto wird mit zunehmender Nutzung automatisch skaliert.) Weitere Informationen finden Sie unter [How to Scale a Cloud Service and Linked Resources](cloud-services-how-to-scale.md) (Skalieren eines Cloud-Diensts und verknüpfter Ressourcen – in englischer Sprache).
 
 Sie können die Datenbank außerdem im Knoten **Datenbanken** des Verwaltungsportals überwachen, verwalten und skalieren.
 
@@ -109,7 +109,7 @@ Im Folgenden wird beschrieben, wie eine neue SQL-Datenbankinstanz, die auf einem
 
 4. Klicken Sie auf **Create a new resource** oder auf **Link an existing resource**.
 
-5. Wählen Sie den Typ der zu verknüpfenden Ressource. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **SQL-Datenbank**. \(Das Vorschau-Verwaltungsportal unterstützt nicht das Verknüpfen eines Speicherkontos mit einem Cloud-Dienst.\)
+5. Wählen Sie den Typ der zu verknüpfenden Ressource. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **SQL-Datenbank**. (Das Vorschau-Verwaltungsportal unterstützt nicht das Verknüpfen eines Speicherkontos mit einem Cloud-Dienst.)
 
 6. Um die Datenbankkonfiguration abzuschließen, folgen Sie den Anweisungen in der Hilfe für den Bereich **SQL-Datenbanken** im Verwaltungsportal.
 
@@ -141,7 +141,7 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Cloud-Dienste**.
 
-2. Wählen Sie den Cloud-Dienst aus, und klicken Sie dann auf **Löschen**. \(Um einen Cloud-Dienst auszuwählen, ohne das Dashboard zu öffnen, klicken Sie im Cloud-Diensteintrag auf eine beliebige Stelle außerhalb des Namens.\)
+2. Wählen Sie den Cloud-Dienst aus, und klicken Sie dann auf **Löschen**. (Um einen Cloud-Dienst auszuwählen, ohne das Dashboard zu öffnen, klicken Sie im Cloud-Diensteintrag auf eine beliebige Stelle außerhalb des Namens.)
 
 	Wenn Sie eine Bereitstellung in Staging oder Produktion haben, wird unten im Fenster ein Auswahlmenü ähnlich dem folgenden angezeigt. Bevor Sie den Cloud-Dienst löschen können, müssen Sie bestehende Bereitstellungen löschen.
 
@@ -156,6 +156,12 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 > [AZURE.NOTE]Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter "Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals" in <a href="http://azure.microsoft.com/documentation/articles/cloud-services-how-to-monitor/">Überwachen von Clouddiensten</a>.
 
- 
 
-<!---HONumber=August15_HO7-->
+## Nächste Schritte
+
+ * [Allgemeine Konfiguration Ihres Clouddiensts](cloud-services-how-to-configure.md)
+* Weitere Informationen zum [Bereitstellen eines Clouddiensts](cloud-services-how-to-create-deploy.md)
+* [Konfigurieren eines benutzerdefinierten Domänennamens](cloud-services-custom-domain-name.md)
+* Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
+
+<!---HONumber=Sept15_HO4-->

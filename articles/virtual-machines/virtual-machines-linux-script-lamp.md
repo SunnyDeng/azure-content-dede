@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Bereitstellen einer Linux-Anwendung mithilfe der Azure-CustomScript-Erweiterung"
-	description="Erfahren Sie, wie die Azure-CustomScript-Erweiterung zum Bereitstellen von Anwendungen auf virtuellen Linux-Computern verwendet wird."
+	pageTitle="Verwenden der CustomScript-Erweiterung auf einem virtuellen Linux-Computer | Microsoft Azure"
+	description="Erfahren Sie, wie die CustomScript-Erweiterung zum Bereitstellen von Anwendungen auf virtuellen Linux-Computern in Azure, die mit dem klassischen Bereitstellungsmodell erstellt wurden, verwendet wird."
 	editor="tysonn"
 	manager="timlt"
 	documentationCenter=""
 	services="virtual-machines"
-	authors="gbowerman"/>
+	authors="gbowerman"
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -18,15 +19,17 @@
 
 #Bereitstellen einer LAMP-App mithilfe der Azure-CustomScript-Erweiterung für Linux#
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel beschreibt die Behandlung von Problemen beim Anwendungszugriff auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
+
 Die Microsoft Azure-CustomScript-Erweiterung für Linux bietet eine Möglichkeit, Ihre virtuellen Computer anzupassen, indem Sie beliebigen, in einer vom virtuellen Computer unterstützten Skriptsprache geschriebenen Code ausführen (z. B. Python, Bash usw.) Dies bietet eine sehr flexible Möglichkeit zum Automatisieren der Anwendungsbereitstellung auf verschiedenen Computern.
 
 Sie können die CustomScript-Erweiterung mit dem Azure-Portal, mit Windows PowerShell oder der Azure-Befehlszeilenschnittstelle (Azure-CLI) bereitstellen.
 
-In diesem Artikel stellen wir mithilfe der Azure-CLI eine einfache LAMP-Anwendung auf Ubuntu bereit.
+In diesem Artikel verwenden wir die Azure-Befehlszeilenschnittstelle zum Bereitstellen einer einfachen LAMP-Anwendung auf einem virtuellen Ubuntu-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
 
 ## Voraussetzungen
 
-Erstellen Sie für das nächste Beispiel zuerst zwei virtuelle Azure-Computer, auf denen Ubuntu 14.04 ausgeführt wird. Die virtuellen Computer heißen *script-vm* und *lamp-vm*. Verwenden Sie beim Erstellen der virtuellen Computer eindeutige Namen. Einer davon dient zur Ausführung der CLI-Befehle, auf dem anderen wird die LAMP-App bereitgestellt.
+Erstellen Sie für dieses Beispiel zuerst zwei virtuelle Azure-Computer, auf denen Ubuntu 14.04 oder höher ausgeführt wird. Die virtuellen Computer heißen *script-vm* und *lamp-vm*. Verwenden Sie beim Erstellen der virtuellen Computer eindeutige Namen. Einer davon dient zur Ausführung der CLI-Befehle, auf dem anderen wird die LAMP-App bereitgestellt.
 
 Darüber hinaus benötigen Sie ein Azure Storage-Konto und einen Schlüssel für den Zugriff (Sie erhalten diesen über das Azure-Portal).
 
@@ -38,11 +41,11 @@ Auf dem virtuellen Computer „script-vm“ muss die Azure-CLI mit einer funktio
 
 ## Hochladen von Skripts
 
-In diesem Beispiel wird die CustomScript-Erweiterung auf einem virtuellen Remotecomputer ausgeführt, um den LAMP-Stack zu installieren und eine PHP-Seite zu erstellen. Damit von einem beliebigen Standort aus auf das Skript zugegriffen werden kann, wird es als Azure-Blob hochgeladen.
+Wir führen mit der CustomScript-Erweiterung ein Skript auf einem virtuellen Remotecomputer aus, um den LAMP-Stack zu installieren und eine PHP-Seite zu erstellen. Damit von einem beliebigen Standort aus auf das Skript zugegriffen werden kann, wird es als Azure-Blob hochgeladen.
 
 ### Skriptübersicht
 
-Das nächste Skript installiert einen LAMP-Stack auf Ubuntu (einschließlich Einrichtung einer unbeaufsichtigten Installation von MySQL), schreibt eine einfache PHP-Datei und startet Apache.
+Das nächste Skriptbeispiel installiert einen LAMP-Stack auf Ubuntu (einschließlich Einrichtung einer unbeaufsichtigten Installation von MySQL), schreibt eine einfache PHP-Datei und startet Apache.
 
 	#!/bin/bash
 	# set up a silent install of MySQL
@@ -87,7 +90,7 @@ Da die App einen Webserver umfasst, müssen Sie daran denken, mithilfe des näch
 
 ## Überwachung und Problembehandlung
 
-Sie können den Fortschritt bei der Ausführung des benutzerdefinierten Skripts mithilfe der Protokolldatei auf dem virtuellen Computer überprüfen. Stellen Sie mit dem nächsten Befehl über SSH eine Verbindung mit *lamp-vm* her, und zeigen Sie mithilfe von „tail“ die Protokolldatei an.
+Sie können den Fortschritt bei der Ausführung des benutzerdefinierten Skripts mithilfe der Protokolldatei auf dem virtuellen Computer überprüfen. Stellen Sie mit dem nächsten Befehl über SSH eine Verbindung mit *lamp-vm* her, und zeigen Sie mithilfe von "tail" die Protokolldatei an.
 
     cd /var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.3.0.0/
     tail -f extension.log
@@ -106,4 +109,4 @@ Nachfolgend finden Sie einige zusätzliche Ressourcen für die Azure-CLI, Linux 
 
 [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

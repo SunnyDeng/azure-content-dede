@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Erweiterbares Richtlinienframework
@@ -71,7 +71,7 @@ Für die Registrierung bei Ihrer Anwendung müssen Sie eine Registrierungsrichtl
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Der **Name** bestimmt den Namen der Registrierungsrichtlinie, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiUp" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
-6. Klicken Sie auf **Registrierungsattribute**. Hier wählen Sie die Attribute aus, die der Consumer bei der Registrierung angeben soll. Wählen Sie z. B. "Stadt", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
+6. Klicken Sie auf **Registrierungsattribute**. Hier wählen Sie die Attribute aus, die der Consumer bei der Registrierung angeben soll. Wählen Sie z. B. "Land/Region", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
 7. Klicken Sie auf **Anwendungsansprüche**. Hier können Sie die Ansprüche auswählen, die in den Token nach einer erfolgreichen Registrierung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl", "Benutzer ist neu" und "Objekt-ID des Benutzers" aus.
 8. Klicken Sie auf **Erstellen**. Beachten Sie, dass die soeben erstellte Richtlinie als **B2C\_1\_SiUp** (das **B2C\_1\_**-Fragment wird automatisch vorangestellt) auf dem Blatt **Registrierungsrichtlinien** angezeigt wird.
 9. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiUp** klicken.
@@ -104,7 +104,7 @@ Um die Profilbearbeitung in Ihrer Anwendung zu ermöglichen, müssen Sie eine Ri
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Der **Name** bestimmt den Namen der Richtlinie für die Profilbearbeitung, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiPe" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
-6. Klicken Sie auf **Profilattribute**. Hier wählen Sie Attribute aus, die der Consumer anzeigen und bearbeiten kann. Wählen Sie z. B. "Stadt", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
+6. Klicken Sie auf **Profilattribute**. Hier wählen Sie Attribute aus, die der Consumer anzeigen und bearbeiten kann. Wählen Sie z. B. "Land/Region", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
 7. Klicken Sie auf **Anwendungsansprüche**. Hier können Sie die Ansprüche auswählen, die in den Token nach einer erfolgreichen Profilbearbeitung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename" und "Postleitzahl" aus.
 8. Klicken Sie auf **Erstellen**. Beachten Sie, dass die soeben erstellte Richtlinie als **B2C\_1\_SiPe** (das **B2C\_1\_**-Fragment wird automatisch vorangestellt) auf dem Blatt **Richtlinien für die Profilbearbeitung** angezeigt wird.
 9. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiPe** klicken.
@@ -112,4 +112,4 @@ Um die Profilbearbeitung in Ihrer Anwendung zu ermöglichen, müssen Sie eine Ri
 
     > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

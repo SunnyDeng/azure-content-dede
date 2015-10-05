@@ -1,24 +1,27 @@
 <properties
-   pageTitle="Beispielkonfiguration für Azure-VM-Erweiterungen | Microsoft Azure"
-   description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen"
+   pageTitle="Beispielkonfiguration für Linux-VM-Erweiterungen | Microsoft Azure"
+   description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen für Linux-VMs"
    services="virtual-machines"
    documentationCenter=""
    authors="kundanap"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
    ms.devlang="na"
    ms.topic="article"
-   ms.tgt_pltfrm="na"
+   ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
    ms.date="09/01/2015"
    ms.author="kundanap"/>
 
-# Konfigurationsbeispiele für Linux-VM-Erweiterungen in Azure.
+# Konfigurationsbeispiele für Linux-VM-Erweiterungen
 
-Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für Azure-IaaS-Linux-VMs.
+Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für virtuelle Linux-Computer.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 Weitere Informationen zu diesen Erweiterungen finden Sie unter [Azure-VM-Erweiterungen](https://msdn.microsoft.com/library/azure/dn606311.aspx).
 
@@ -97,7 +100,7 @@ Im weiteren Verlauf des Artikels sind Beispielkonfigurationen für Linux-VM-Erwe
         }
 
 ### VM-Zugriffserweiterung (Zurücksetzen des Kennworts)
-Das aktualisierte Schema finden Sie unter [VMAccessForLinux Dokumentation](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) (in englischer Sprache)
+Das aktualisierte Schema finden Sie in der [VMAccessForLinux-Dokumentation](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess).
 
         {
           "publisher": "Microsoft.OSTCExtensions",
@@ -113,7 +116,7 @@ Das aktualisierte Schema finden Sie unter [VMAccessForLinux Dokumentation](https
         }
 
 ### Betriebssystempatching
-Das aktualisierte Schema finden Sie unter [OSPatching Extension](https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching) (in englischer Sprache)
+Das aktualisierte Schema finden Sie in der [OSPatching-Dokumentation](https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching)
 
         {
         "publisher": "Microsoft.OSTCExtensions",
@@ -138,7 +141,7 @@ Das aktualisierte Schema finden Sie unter [OSPatching Extension](https://github.
         }
 
 ### Docker-Erweiterung
-Das aktualisierte Schema finden Sie unter [Azure Virtual Machine Extension for Docker](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema) (in englischer Sprache)
+Das aktualisierte Schema finden Sie in der [Docker Extension-Dokumentation](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema)
 
         {
           "publisher": "Microsoft.Azure.Extensions ",
@@ -186,4 +189,4 @@ Dies ist eine vollständige VM-Vorlage zum Erstellen eines virtuellen Linux-Comp
 
 [Benutzerdefinierte Skriptserweiterung auf einem virtuellen Linux-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

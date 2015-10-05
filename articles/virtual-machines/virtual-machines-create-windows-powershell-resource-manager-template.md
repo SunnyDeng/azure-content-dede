@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen Sie einen virtuellen Windows-Computer mit einer Resource Manager-Vorlage"
+	pageTitle="Erstellen eines virtuellen Computers mit ARM-Vorlage | Microsoft Azure"
 	description="Verwenden Sie eine Resource Manager-Vorlage, um ganz einfach einen neuen virtuellen Windows-Computer mit PowerShell oder der Azure-CLI zu erstellen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -11,13 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/28/2015"
 	ms.author="davidmu"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer mit einer Resource Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Sie können ganz leicht einen neuen Windows-basierten virtuellen Computer in Azure mit einer Ressourcen-Manager-Vorlage mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle erstellen. Diese Vorlage erstellt einen einzelnen virtuellen Computer unter Windows in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in einer neuen Ressourcengruppe.
 
@@ -216,7 +218,7 @@ Dies ist der Inhalt der JSON-Datei für die Vorlage.
 
 ### Schritt 2: Erstellen Sie den virtuellen Computer mit der Vorlage
 
-Geben Sie einen Azure-Bereitstellungsnamen, einen Ressourcengruppennamen und den Standort des Azure-Datencenters ein. Führen Sie anschließend die folgenden Befehle aus:
+Geben Sie einen Azure-Bereitstellungsnamen, einen Ressourcengruppennamen und den Standort des Azure-Rechenzentrums ein. Führen Sie anschließend die folgenden Befehle aus:
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
@@ -280,7 +282,7 @@ Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in
 
 Gehen Sie folgendermaßen vor, um einen virtuellen Windows-Computer mit einer Ressourcen-Manager-Vorlage im Github-Vorlagenrepository mit Befehlen der Azure-Befehlszeilenschnittstelle zu erstellen.
 
-Geben Sie einen Namen und Azure-Speicherort \(z. B. westus für den Westen der USA\) ein, entfernen Sie die eckigen Klammern, und führen Sie anschließend diese Befehle aus.
+Geben Sie einen Namen und Azure-Speicherort (z. B. westus für den Westen der USA) ein, entfernen Sie die eckigen Klammern, und führen Sie anschließend diese Befehle aus.
 
 	azure group create [resource group] [location]
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json [resource group] firstdeployment
@@ -325,12 +327,12 @@ Die Ausgabe sollte folgendermaßen aussehen:
 
 [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md)
 
-[Create a Windows virtual machine with Azure Resource Manager and PowerShell](virtual-machines-create-windows-powershell-resource-manager.md) \(Erstellen eines virtuellen Windows-Computers mit dem Azure-Ressourcen-Manager und PowerShell\)
+[Create a Windows virtual machine with Azure Resource Manager and PowerShell](virtual-machines-create-windows-powershell-resource-manager.md) (Erstellen eines virtuellen Windows-Computers mit dem Azure-Ressourcen-Manager und PowerShell)
 
-[Create a Windows virtual machine with PowerShell and Azure Service Manager](virtual-machines-create-windows-powershell-service-manager.md) \(Erstellen eines virtuellen Windows-Computer mit PowerShell und Azure Service Manager\)
+[Create a Windows virtual machine with PowerShell and Azure Service Manager](virtual-machines-create-windows-powershell-service-manager.md) (Erstellen eines virtuellen Windows-Computer mit PowerShell und Azure Service Manager)
 
 [Dokumentation zu virtuellen Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

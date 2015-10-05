@@ -13,13 +13,15 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure-services"
-	ms.date="05/25/2015"
+	ms.date="09/22/2015"
 	ms.author="rasquill"/>
 
 
 # Verwenden der Docker-VM-Erweiterung mithilfe des Azure-Portals
 
 [Docker](https://www.docker.com/) ist einer der beliebtesten Virtualisierungsansätze, der für das Isolieren von Daten und Computing auf gemeinsam genutzten Ressourcen [Linux-Container](http://en.wikipedia.org/wiki/LXC) statt virtueller Computer verwendet. Verwenden Sie die Docker-VM-Erweiterung des [Azure Linux-Agents], um einen virtuellen Docker-Computer zu erstellen, der eine beliebige Anzahl von Containern für Ihre Anwendungen in Azure hostet.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 > [AZURE.NOTE]Dieses Thema beschreibt das Erstellen eines virtuellen Docker-Computers im Azure-Portal. Informationen zum Erstellen eines virtuellen Docker-Computers an der Befehlszeile finden Sie unter [##Verwenden der Docker-VM-Erweiterung über die Azure-Befehlszeilenschnittstelle (Azure-CLI)]. Eine allgemeine Diskussion über die Container und ihre Vorteile finden Sie unter [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard) (Whiteboard auf hoher Ebene zu Docker) (in englischer Sprache).
 
@@ -144,4 +146,4 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

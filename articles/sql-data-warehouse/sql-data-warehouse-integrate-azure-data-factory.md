@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/09/2015"
+   ms.date="09/23/2015"
    ms.author="lodipalm"/>
 
 # Verwenden von Azure Data Factory mit SQL Data Warehouse
@@ -30,8 +30,6 @@ Azure Data Factory ermöglicht eine Datenverschiebung zwischen lokalen Datenquel
 + SQL Server unter IaaS
 
 Informationen zum Einrichten einer Datenkopieraktivität finden Sie unter [Kopieren von Daten mit Azure Data Factory][].
-
-> [AZURE.NOTE]Zum aktuellen Zeitpunkt kann Azure Data Factory nicht zum Übertragen von Daten in Spalten, die keine Nullwerte zulassen, in SQL Data Warehouse verwendet werden.
 
 ## Gespeicherte Prozeduren
  Auf die gleiche Weise wie beim Planen von Datenübertragungen kann Azure Data Factory auch zum Orchestrieren der Ausführung von gespeicherten Prozeduren verwendet werden. Dies ermöglicht die Erstellung komplexerer Pipelines und erweitert die Möglichkeiten von Azure Data Factory, sodass die Rechenleistung von SQL Data Warehouse genutzt wird.
@@ -51,6 +49,6 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 
 <!--Other Web references-->
 [Azure Data Factory-Dokumentation]: https://azure.microsoft.com/documentation/services/data-factory/
-[Kopieren von Daten mit Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/articles/data-factory-data-movement-activities/
+[Kopieren von Daten mit Azure Data Factory]: https://azure.microsoft.com/DE-DE/documentation/articles/data-factory-data-movement-activities/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="" 
-	description="Beschreibt die ersten Schritte für die Arbeit mit Azure Mobile Services in einem Cordova-Projekt." 
+	pageTitle="Erste Schritte mit einem Cordova-Projekt für Mobile Services (Visual Studio Verbundene Dienste)" 
+	description="Beschreibt die ersten Schritte, die Sie ausführen können, nachdem Sie Ihr Cordova-Projekt mithilfe von Visual Studio Verbundene Dienste mit Azure Mobile Services verbunden haben." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="patshea123" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="09/17/2015" 
 	ms.author="patshea"/>
 
 # Erste Schritte mit Mobile Services (Cordova-Projekte)
@@ -94,4 +94,4 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Ruf
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

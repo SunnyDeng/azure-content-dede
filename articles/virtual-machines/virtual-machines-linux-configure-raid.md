@@ -1,13 +1,13 @@
 <properties 
-	pageTitle="Konfigurieren von Software-RAID auf einem virtuellen Computer unter Linux in Azure" 
+	pageTitle="Konfigurieren von Software-RAID auf einem virtuellen Computer unter Linux | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mdadm zum Konfigurieren von RAID unter Linux in Azure verwenden." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	writer="szark" 
 	manager="timlt" 
-	editor=""/>
-
+	editor=""
+	tag="azure-service-management,azure-resource-manager" />
 
 <tags 
 	ms.service="virtual-machines" 
@@ -20,10 +20,10 @@
 
 
 
-
 # Konfigurieren von Software-RAID unter Linux
 Ein häufiges Szenario ist die Verwendung von Software-RAID auf virtuellen Linux-Computern in Azure, um mehrere angefügte Datenträger als einzelnes RAID-Gerät darzustellen. Dies kann normalerweise angewendet werden, um die Leistung zu verbessern und optimierten Durchsatz im Vergleich zur Verwendung eines einzelnen Datenträgers zu ermöglichen.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 ## Anfügen von Datenträgern
 In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Microsoft Azure-Artikel [Anfügen eines Datenträgers](storage-windows-attach-disk.md#attachempty).
@@ -119,7 +119,7 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
 		# sudo mkfs -t ext3 /dev/md127
 
-3. **SLES 11 und openSUSE** - boot.md aktivieren und mdadm.conf erstellen
+3. **SLES 11 und openSUSE** – "boot.md" aktivieren und "mdadm.conf" erstellen
 
 		# sudo -i chkconfig --add boot.md
 		# sudo echo 'DEVICE /dev/sd*[0-9]' >> /etc/mdadm.conf
@@ -181,4 +181,4 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

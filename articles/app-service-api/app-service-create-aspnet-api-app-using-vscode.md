@@ -13,14 +13,16 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015"
+	ms.date="09/01/2015" 
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code
 
 > [AZURE.SELECTOR]
-- [Visual Studio 2015 or 2013](app-service-dotnet-create-api-app.md)
-- [Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
+- [.NET - Visual Studio 2015](app-service-dotnet-create-api-app.md)
+- [.NET - Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
+- [Node.js](app-service-api-nodejs-api-app.md)
+- [Java](app-service-api-java-api-app.md)
 
 ## Übersicht
 
@@ -63,8 +65,8 @@ Dieses Lernprogramm unterstützt Sie beim Einstieg in die Erstellung von Anwendu
 4. Nachdem Sie nun über DNVM verfügen, müssen Sie damit DNX herunterladen, um Ihre Anwendungen ausführen zu können. Führen Sie im Befehlsfenster folgenden Befehl aus:
 
 	<pre class="prettyprint">
-	dnvm upgrade
-	</pre>
+dnvm upgrade
+</pre>
 
 5. Überprüfen Sie DNVM, und zeigen Sie die aktive Laufzeit an, indem Sie im Befehlsfenster Folgendes eingeben:
 
@@ -86,14 +88,14 @@ In diesem Abschnitt erfahren Sie, wie Sie das Gerüst für eine neue ASP.NET-API
 2. Geben Sie im Befehlsfenster Folgendes ein, um Yeoman und die unterstützenden Tools zu installieren:
 
 	<pre class="prettyprint">
-	npm install -g yo grunt-cli generator-aspnet bower
-	</pre>
+npm install -g yo grunt-cli generator-aspnet bower
+</pre>
 
 3. Geben Sie im Befehlsfenster Folgendes ein, um den Projektordner und das Gerüst für die App zu erstellen:
 
 	<pre class="prettyprint">
-	yo aspnet
-	</pre>
+yo aspnet
+</pre>
 
 4. Befolgen Sie die vom Generator bereitgestellten Anweisungen, indem Sie zum Typ der **Web-API-Anwendung** scrollen und diesen auswählen.
 
@@ -135,42 +137,42 @@ Nun ändern Sie die **ContactsList**-App, indem Sie eine **Contact**- und eine *
 2. Klicken Sie mit der rechten Maustaste auf den Ordner **Models**, um mithilfe des folgenden Codes eine neue Klassendatei namens *Contact.cs* hinzuzufügen:
 
 	<pre class="prettyprint">
-	namespace ContactsList.Models
-	{
-	    public class Contact
-	    {
-	        public int Id { get; set; }
-	        public string Name { get; set; }
-	        public string EmailAddress { get; set; }
-	    }
-	}
-	</pre>
+namespace ContactsList.Models
+{
+    public class Contact
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string EmailAddress { get; set; }
+    }
+}
+</pre>
 
 3. Klicken Sie mit der rechten Maustaste auf den Ordner **Controllers**, und fügen Sie eine *ContactsController.cs*-Datei hinzu, sodass der Code folgendermaßen aussieht:
 
 	<pre class="prettyprint">
-	using System.Collections.Generic;
-	using Microsoft.AspNet.Mvc;
-	using ContactsList.Models;
+using System.Collections.Generic;
+using Microsoft.AspNet.Mvc;
+using ContactsList.Models;
 
-	namespace ContactsList.Controllers
-	{
-	    [Route("api/[controller]")]
-	    public class ContactsController : Controller
-	    {
-	        // GET: api/Contacts
-	        [HttpGet]
-	        public IEnumerable&lt;Contact> Get()
-	        {
-	            return new Contact[]{
-	                new Contact { Id = 1, EmailAddress = "barney@contoso.com", Name = "Barney Poland"},
-	                new Contact { Id = 2, EmailAddress = "lacy@contoso.com", Name = "Lacy Barrera"},
-	                new Contact { Id = 3, EmailAddress = "lora@microsoft.com", Name = "Lora Riggs"}
-	            };
-	        }
-	    }
-	}
-	</pre>
+namespace ContactsList.Controllers
+{
+    [Route("api/[controller]")]
+    public class ContactsController : Controller
+    {
+        // GET: api/Contacts
+        [HttpGet]
+        public IEnumerable&lt;Contact> Get()
+        {
+            return new Contact[]{
+                new Contact { Id = 1, EmailAddress = "barney@contoso.com", Name = "Barney Poland"},
+                new Contact { Id = 2, EmailAddress = "lacy@contoso.com", Name = "Lacy Barrera"},
+                new Contact { Id = 3, EmailAddress = "lora@microsoft.com", Name = "Lora Riggs"}
+            };
+        }
+    }
+}
+</pre>
 
 4. Stellen Sie sicher, dass alle Dateien gespeichert wurden, indem Sie **Datei** > **Alle speichern** auswählen.
 5. Geben Sie in der **Befehlspalette** Folgendes ein, um die App lokal auszuführen:
@@ -198,18 +200,18 @@ Die Metadaten, mit denen ein ASP.NET-API-Projekt als API-App bereitgestellt werd
 3. Fügen Sie der Datei *apiapp.json* folgenden Code hinzu:
 
 	<pre class="prettyprint">
-	{
-	    "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
-	    "id": "ContactsList",
-	    "namespace": "microsoft.com",
-	    "gateway": "2015-01-14",
-	    "version": "1.0.0",
-	    "title": "ContactsList",
-	    "summary": "",
-	    "author": "",
-	    "endpoints": null
-	}
-	</pre>
+{
+    "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
+    "id": "ContactsList",
+    "namespace": "microsoft.com",
+    "gateway": "2015-01-14",
+    "version": "1.0.0",
+    "title": "ContactsList",
+    "summary": "",
+    "author": "",
+    "endpoints": null
+}
+</pre>
 
 In der Datei *apiapp.json* können Sie einen Endpunkt für eine dynamische Swagger-API-Definitionsdatei (JSON) angeben, im Rahmen dieses Lernprogramms verwenden Sie jedoch eine statische API-Definitionsdatei. Ein Beispiel für die dynamische Swagger-Generierung finden Sie unter [Konfigurieren eines Web-API-Projekts als API-App](app-service-dotnet-create-api-app-visual-studio.md).
 
@@ -220,108 +222,107 @@ Um eine statische Swagger 2.0-API-Definitionsdatei bereitzustellen, müssen Sie
 2. Klicken Sie mit der rechten Maustaste auf den Ordner *metadata*, und fügen Sie eine neue Datei namens *apiDefinition.swagger.json* ein. 
 3. Fügen Sie der neuen Datei folgende JSON-Syntax hinzu:
 
-
 	<pre class="prettyprint">
-	{
-	  "swagger": "2.0",
-	  "info": {
-	    "version": "v1",
-	    "title": "ContactsList"
-	  },
-	  "host": "MUST REPLACE THIS WITH YOUR HOST URL",
-	  "schemes": [
-	    "https"
-	  ],
-	  "paths": {
-	    "/api/Contacts": {
-	      "get": {
-	        "tags": [
-	          "Contacts"
-	        ],
-	        "operationId": "Contacts_Get",
-	        "consumes": [],
-	        "produces": [
-	          "application/json",
-	          "text/json",
-	          "application/xml",
-	          "text/xml"
-	        ],
-	        "responses": {
-	          "200": {
-	            "description": "OK",
-	            "schema": {
-	              "type": "array",
-	              "items": {
-	                "$ref": "#/definitions/Contact"
-	              }
-	            }
-	          }
-	        },
-	        "deprecated": false
-	      },
-	      "post": {
-	        "tags": [
-	          "Contacts"
-	        ],
-	        "operationId": "Contacts_Post",
-	        "consumes": [
-	          "application/json",
-	          "text/json",
-	          "application/xml",
-	          "text/xml",
-	          "application/x-www-form-urlencoded"
-	        ],
-	        "produces": [
-	          "application/json",
-	          "text/json",
-	          "application/xml",
-	          "text/xml"
-	        ],
-	        "parameters": [
-	          {
-	            "name": "contact",
-	            "in": "body",
-	            "required": true,
-	            "schema": {
-	              "$ref": "#/definitions/Contact"
-	            }
-	          }
-	        ],
-	        "responses": {
-	          "200": {
-	            "description": "OK",
-	            "schema": {
-	              "$ref": "#/definitions/Object"
-	            }
-	          }
-	        },
-	        "deprecated": false
-	      }
-	    }
-	  },
-	  "definitions": {
-	    "Contact": {
-	      "type": "object",
-	      "properties": {
-	        "Id": {
-	          "format": "int32",
-	          "type": "integer"
-	        },
-	        "Name": {
-	          "type": "string"
-	        },
-	        "EmailAddress": {
-	          "type": "string"
-	        }
-	      }
-	    },
-	    "Object": {
-	      "type": "object",
-	      "properties": {}
-	    }
-	  }
-	}
-	</pre>
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "ContactsList"
+  },
+  "host": "MUST REPLACE THIS WITH YOUR HOST URL",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/Contacts": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "operationId": "Contacts_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            „description“: „OK“,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "operationId": "Contacts_Post",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            „description“: „OK“,
+            "schema": {
+              "$ref": "#/definitions/Object"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "Object": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+}
+</pre>
 
 Später in diesem Lernprogramm werden Sie die oben stehende URL-Platzhalterzeichenfolge durch die Azure-Host-URL ersetzen, die Sie später erstellen und kopieren.
 
@@ -421,14 +422,14 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 7. Wechseln Sie in **GitBash** zu Ihrem VSCode-Projektordner. Beispiel:
 
 	<pre class="prettyprint">
-	cd c:\VSCodeProjects\ContactsList
-	</pre>
+cd c:\VSCodeProjects\ContactsList
+</pre>
 
 7. Erstellen Sie einen Remotebezug, um Updates mittels Push an die zuvor erstellte Web-App (API-App-Host) zu übertragen, und verwenden Sie hierbei die zuvor kopierte Git-URL (die auf ".git" endet):
 
 	<pre class="prettyprint">
-	git remote add azure [URL for remote repository]
-	</pre>
+git remote add azure [URL for remote repository]
+</pre>
 
 8. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
 
@@ -441,10 +442,10 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 	Die Ausgabe des oben stehenden Befehls führt zu einer Meldung, dass die Bereitstellung erfolgreich durchgeführt wurde:
 
 	<pre class="prettyprint">
-	remote: Deployment successful.
-	To https://user@testsite.scm.azurewebsites.net/testsite.git
-	[new branch]      master -> master
-	</pre>
+remote: Deployment successful.
+To https://user@testsite.scm.azurewebsites.net/testsite.git
+[new branch]      master -> master
+</pre>
 
 > [AZURE.NOTE]Wenn Sie Änderungen an Ihrer App vornehmen, können Sie sie erneut veröffentlichen. Aktivieren Sie hierzu in VSCode **Commit für alle**, und geben Sie anschließend in **GitBash** den Befehl **git push azure master** ein.
 
@@ -465,4 +466,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

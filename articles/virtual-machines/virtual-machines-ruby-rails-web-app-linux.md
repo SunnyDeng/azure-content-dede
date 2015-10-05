@@ -1,19 +1,20 @@
-<properties 
-	pageTitle="Ruby on Rails-Web-App auf Azure mithilfe eines virtuellen Linux-Computers" 
-	description="Hosten Sie mithilfe eines virtuellen Linux-Computers eine Ruby on Rails-basierte Website auf Azure." 
-	services="virtual-machines" 
-	documentationCenter="ruby" 
-	authors="MikeWasson" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+	pageTitle="Hosten einer Ruby on Rails-Website auf einem virtuellen Linux-Computer | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie eine Ruby on Rails-basierte Website auf Azure mithilfe eines virtuellen Linux-Computers einrichten und hosten."
+	services="virtual-machines"
+	documentationCenter="ruby"
+	authors="MikeWasson"
+	manager="wpickett"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="ruby" 
-	ms.topic="article" 
-	ms.date="06/09/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="web"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="ruby"
+	ms.topic="article"
+	ms.date="06/09/2015"
 	ms.author="mwasson"/>
 
 
@@ -25,6 +26,8 @@
 In diesem Lernprogramm wird gezeigt, wie Sie eine Ruby on Rails-Website auf Azure mit einem virtuellen Linux-Computer hosten.
 
 Dieses Lernprogramm wurde mit Ubuntu Server 14.04 LTS getestet. Wenn Sie eine andere Linux-Distribution verwenden, müssen Sie die Schritte zur Rails-Installation möglicherweise anpassen.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 ## Erstellen einer Azure-VM
 
@@ -50,8 +53,8 @@ Nachdem der virtuelle Computer bereitgestellt wurde, können Sie den SSH-Endpunk
 
 ## Installieren von Ruby on Rails
 
-1. Verwenden Sie SSH zum Herstellen einer Verbindung mit dem virtuellen Computer. 
-	
+1. Verwenden Sie SSH zum Herstellen einer Verbindung mit dem virtuellen Computer.
+
 2. Verwenden Sie in der SSH-Sitzung die folgenden Befehle zur Installation von Ruby auf dem virtuellen Computer:
 
 		sudo apt-get update -y
@@ -170,6 +173,5 @@ Informationen zum Verwenden von Azure-Diensten in der Ruby-Anwendung finden Sie 
 [new-endpoint]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

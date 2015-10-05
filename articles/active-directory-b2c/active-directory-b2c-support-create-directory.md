@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Erstellen eines Azure AD-Verzeichnisses oder eines Azure AD B2C-Verzeichnisses – Probleme und Lösungen
@@ -34,4 +34,4 @@ Es gibt bekannte Probleme, die beim [Erstellen eines Azure AD B2C-Verzeichnisses
 	- Löschen Sie das soeben erstellte Verzeichnis, und versuchen Sie es noch mal.
 - Wenn keine der oben aufgeführten Lösungen für Sie funktioniert, wenden Sie sich an den Support. In [diesem Artikel](active-directory-b2c-support.md) erhalten Sie Informationen zum Senden von Supportanfragen für Azure AD B2C.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

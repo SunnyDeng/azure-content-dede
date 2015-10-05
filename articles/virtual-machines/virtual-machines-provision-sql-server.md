@@ -1,19 +1,21 @@
 <properties 
-	pageTitle="Bereitstellen eines virtuellen Computers mit SQL Server in Azure"
-	description="In diesem Tutorial erfahren Sie, wie Sie einen virtuellen Computer mit SQL Server in Azure erstellen und konfigurieren."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="rothja"
-	manager="jeffreyg"
-	editor="monicar"/>
+	pageTitle="Bereitstellen eines virtuellen Computers mit SQL Server | Microsoft Azure" 
+	description="In diesem Tutorial erfahren Sie, wie Sie einen virtuellen Computer mit SQL Server in Azure erstellen und konfigurieren." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="rothja" 
+	manager="jeffreyg" 
+	editor="monicar"
+	tags="azure-service-management"
+	/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-windows-sql-server" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/26/2015" 
 	ms.author="jroth"/>
 
 # Bereitstellen eines virtuellen Computers mit SQL Server in Azure
@@ -23,6 +25,8 @@
 - [PowerShell](virtual-machines-sql-server-create-vm-with-powershell.md)
 
 ## Übersicht
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu finden, die Microsoft SQL Server enthalten. Sie können eines der Images virtueller Computer aus der Galerie auswählen, und mit wenigen Klicks können Sie den virtuellen Computer auf Ihrer Azure-Umgebung bereitstellen.
 
@@ -45,13 +49,13 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
->[AZURE.NOTE]Wenn Sie über einen virtuellen Computer verfügen, der von einem Plattformimage mit der SQL Server Evaluation-Edition erstellt wurde, können Sie kein Upgrade auf ein minütlich bezahltes Editionsimage in der Galerie durchführen. Sie haben zwei Möglichkeiten:
+>[AZURE.NOTE] Wenn Sie über einen virtuellen Computer verfügen, der von einem Plattformimage mit der SQL Server Evaluation-Edition erstellt wurde, können Sie kein Upgrade auf ein minütlich bezahltes Editionsimage in der Galerie durchführen. Sie haben zwei Möglichkeiten:
 >
 > - Sie können einen neuen virtuellen Computer erstellen, indem Sie die minütlich abgerechnete SQL Server-Edition aus dem Katalog verwenden und die Datenbankdateien zu diesem neuen virtuellen Computer migrieren. Führen Sie dazu die Schritte unter [Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](virtual-machines-migrate-onpremises-database) aus.
 > - Sie können auch eine vorhandene Instanz von SQL Server Evaluation Edition gemäß der Vereinbarung [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/) auf eine andere SQL Server-Edition aktualisieren, indem Sie die Schritte unter [Aktualisieren auf eine andere Edition von SQL Server](https://msdn.microsoft.com/library/cc707783.aspx) ausführen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [So kaufen Sie SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
 
 4. Geben Sie zunächst auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
-	- EIN **VERÖFFENTLICHUNGSDATUM DER VERSION**. Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
+	- EIN **VERÖFFENTLICHUNGSDATUM DER VERSION** Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
 	- Ein eindeutiger **NAME FÜR DEN VIRTUELLEN COMPUTER**
 	- Geben Sie im Feld **NEUER BENUTZERNAME** einen eindeutigen Benutzernamen für das lokale Administratorkonto des Computers ein.
 	- Geben Sie in das Feld **NEUES KENNWORT** ein sicheres Kennwort ein. 
@@ -60,7 +64,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 
 	![Konfiguration des virtuellen Computers](./media/virtual-machines-provision-sql-server/4VM-Config.png)
 
-	>[AZURE.NOTE]Die Größe des virtuellen Computers wird während der Bereitstellung angegeben:
+	>[AZURE.NOTE] Die Größe des virtuellen Computers wird während der Bereitstellung angegeben:
  	>
 	> - A2 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen. 
     > - Die empfohlene Minimalgröße für einen virtuellen Computer ist A3, wenn SQL Server Enterprise Edition verwendet wird.
@@ -128,7 +132,7 @@ Weitere Informationen finden Sie unter [How to Troubleshoot Connecting to the SQ
 
 ##<a id="Optional">Nächste Schritte</a>
 
-Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Computer mithilfe des Plattform-Image erstellen und konfigurieren. In vielen Fällen ist der nächste Schritt, die Datenbanken auf diese neue SQL Server-VM zu migrieren. Anleitungen zur Datenbankmigration finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](virtual-machines-migrate-onpremises-database.md).
+Sie haben jetzt erfahren, wie Sie einen SQL Server auf einem virtuellen Azure-Computer mithilfe des Plattform-Image erstellen und konfigurieren. In vielen Fällen ist der nächste Schritt, die Datenbanken auf diese neue SQL Server-VM zu migrieren. Anleitungen zur Datenbankmigration finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md).
 
 Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuellen Azure-Computern.
 
@@ -154,4 +158,4 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

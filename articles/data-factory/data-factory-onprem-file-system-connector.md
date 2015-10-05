@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten in und aus dem Dateisystem | Azure Data Factory"
-	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in das und aus dem lokalen Dateisystem verschoben werden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten in und aus dem Dateisystem | Azure Data Factory" 
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in das und aus dem lokalen Dateisystem verschoben werden." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/22/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in das und aus dem lokalen Dateisystem mithilfe von Azure Data Factory
@@ -561,7 +561,18 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 
 ## Eigenschaften von Kopieraktivitätstyp "Dateifreigabe"
 
-**FileSystemSource** und **FileSystemSink** unterstützen derzeit keine Eigenschaften.
+**FileSystemSource** unterstützt die folgenden Eigenschaften:
+
+| Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
+| -------- | ----------- | -------------- | -------- |
+| recursive | Gibt an, ob die Daten rekursiv aus den Unterordnern oder nur aus dem angegebenen Ordner gelesen werden. | True/False (Standardwert)| Nein | 
+
+**FileSystemSink** unterstützt die folgenden Eigenschaften:
+
+| Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
+| -------- | ----------- | -------------- | -------- |
+| copyBehavior | Definiert das Verhalten beim Kopieren, wenn die Quelle "BlobSource" oder "FileSystem" ist. | <p>Es gibt drei mögliche Werte für die copyBehavior-Eigenschaft. </p><ul><li>**PreserveHierarchy:** Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</li><li>**FlattenHierarchy:** Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Die Namen der Zieldateien werden automatisch generiert. </li><li>**MergeFiles:** Führt alle Dateien aus dem Quellordner in einer Datei zusammen. Wenn der Datei-/Blob-Name angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.</li></ul> | Nein |
+
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -576,4 +587,4 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

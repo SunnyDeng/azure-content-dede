@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Bereitstellen eines Clouddiensts| Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie einen Clouddienst mithilfe der Schnellerfassung in Azure erstellen und bereitstellen."
+	pageTitle="Erstellen und Bereitstellen eines Clouddiensts (Vorschauportal) | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie einen Clouddienst mithilfe der Schnellerfassung in Azure erstellen und bereitstellen. In diesen Beispielen wird das Azure-Vorschauportal verwendet."
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="09/22/2015"
 	ms.author="adegeo"/>
 
 
@@ -107,4 +107,11 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 
 [TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
 
-<!---HONumber=August15_HO8-->
+## Nächste Schritte
+
+* [Allgemeine Konfiguration Ihres Clouddiensts](cloud-services-how-to-configure-portal.md)
+* [Konfigurieren eines benutzerdefinierten Domänennamens](cloud-services-custom-domain-name-portal.md)
+* [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
+* Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
+
+<!---HONumber=Sept15_HO4-->

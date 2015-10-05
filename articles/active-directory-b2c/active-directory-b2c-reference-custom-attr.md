@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 #  Azure Active Directory B2C-Vorschau: Verwenden benutzerdefinierter Attribute zum Erfassen von Informationen über Ihre Kunden
@@ -46,4 +46,4 @@ Das benutzerdefinierte Attribut steht jetzt in der Liste der **Benutzerattribute
 
 Mit dem Feature "Jetzt ausführen" für die Richtlinie können Sie die Benutzererfahrung überprüfen. "ShoeSize" sollte jetzt in der Liste der Attribute angezeigt werden, die während der Registrierung von Kunden erfasst werden, sowie in dem Token, das zurück an die Anwendung gesendet wird.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

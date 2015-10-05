@@ -1,20 +1,20 @@
 <properties
    pageTitle="Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse | Microsoft Azure"
-	description="Schritte zum Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse"
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="sahaj08"
-	manager="barbkess"
-	editor=""/>
+   description="Schritte zum Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse"
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="sahaj08"
+   manager="barbkess"
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="06/26/2015"
-	ms.author="sahajs"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/23/2015"
+   ms.author="sahajs"/>
 
 # Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse
 
@@ -30,16 +30,23 @@ Wenn es durch einen Benutzerfehler zu einer unbeabsichtigten Änderung von Daten
 
 ### PowerShell
 
-Verwenden Sie PowerShell für eine programmatische Durchführung der Datenbankwiederherstellung. Zur Wiederherstellung einer Datenbank verwenden Sie das [Start-AzureSqlDatabaseRestore][]-Cmdlet.
+Verwenden Sie Azure PowerShell, um eine Datenbankwiederherstellung programmgesteuert auszuführen. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus.
 
-1. Wählen Sie das Abonnement Ihres Kontos aus, in dem die wiederherzustellende Datenbank enthalten ist.
-2. Listen Sie die Wiederherstellungspunkte für die Datenbank auf (erfordert den Azure-Ressourcenverwaltungsmodus).
-3. Wählen Sie den gewünschten Wiederherstellungspunkt mit RestorePointCreationDate aus.
-3. Stellen Sie die Datenbank mit dem gewünschten Wiederherstellungspunkt wieder her.
-4. Überwachen Sie den Fortschritt der Wiederherstellung.
+Zur Wiederherstellung einer Datenbank verwenden Sie das [Start-AzureSqlDatabaseRestore][]-Cmdlet.
+
+1. Öffnen Sie Microsoft Azure PowerShell.
+2. Stellen Sie eine Verbindung mit Ihrem Azure-Konto her, und listen Sie alle Abonnements auf, die Ihrem Konto zugeordnet sind.
+3. Wählen Sie das Abonnement aus, in dem die wiederherzustellende Datenbank enthalten ist.
+4. Listen Sie die Wiederherstellungspunkte für die Datenbank auf (erfordert den Azure-Ressourcenverwaltungsmodus).
+5. Wählen Sie den gewünschten Wiederherstellungspunkt mit RestorePointCreationDate aus.
+6. Stellen Sie die Datenbank mit dem gewünschten Wiederherstellungspunkt wieder her.
+7. Überwachen Sie den Fortschritt der Wiederherstellung.
 
 ```
-Select-AzureSubscription -SubscriptionId <Subscription_GUID>
+
+Add-AzureAccount
+Get-AzureSubscription
+Select-AzureSubscription -SubscriptionName "<Subscription_name>"
 
 # List database restore points
 Switch-AzureMode AzureResourceManager
@@ -59,7 +66,7 @@ $RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerNa
 Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
 ```
 
-Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
+Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den obigen PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
 
 ### REST-API
 Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung.
@@ -74,15 +81,20 @@ Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestel
 Wenn eine Datenbank gelöscht wurde, können Sie den Zustand der gelöschten Datenbank zum Löschzeitpunkt wiederherstellen. Azure SQL Data Warehouse erstellt eine Datenbankmomentaufnahme, bevor die Datenbank verworfen wird, und bewahrt sie sieben Tage lang auf.
 
 ### PowerShell
-Verwenden Sie PowerShell für eine programmgesteuerte Wiederherstellung einer gelöschten Datenbank. Zur Wiederherstellung einer gelöschten Datenbank mithilfe der Zeitpunktwiederherstellung verwenden Sie das Cmdlet [Start-AzureSqlDatabaseRestore][].
+Verwenden Sie Azure PowerShell für eine programmgesteuerte Wiederherstellung einer gelöschten Datenbank. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus.
 
-1. Suchen Sie in der Liste der gelöschten Datenbanken die gelöschte Datenbank und das zugehörige Löschdatum.
+Zur Wiederherstellung einer gelöschten Datenbank mithilfe der Zeitpunktwiederherstellung verwenden Sie das Cmdlet [Start-AzureSqlDatabaseRestore][].
+
+1. Öffnen Sie Microsoft Azure PowerShell.
+2. Stellen Sie eine Verbindung mit Ihrem Azure-Konto her, und listen Sie alle Abonnements auf, die Ihrem Konto zugeordnet sind.
+3. Wählen Sie das Abonnement aus, das die gelöschte Datenbank enthält, die wiederhergestellt werden soll.
+4. Suchen Sie in der Liste der gelöschten Datenbanken die Datenbank und das zugehörige Löschdatum.
 
 ```
 Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>"
 ```
 
-2. Rufen Sie die gelöschte Datenbank ab, und starten Sie die Wiederherstellung.
+5. Rufen Sie die gelöschte Datenbank ab, und starten Sie die Wiederherstellung.
 
 ```
 $Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>" -DeletionDate "1/01/2015 12:00:00 AM"
@@ -91,6 +103,8 @@ $RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase
 
 Get-AzureSqlDatabaseOperation –ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
 ```
+
+Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den obigen PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
 
 ### REST-API
 Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung.
@@ -118,8 +132,8 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 [Datenbank-Betriebsstatus]: http://msdn.microsoft.com/library/azure/dn720371.aspx
 [Wiederherstellbare gelöschte Datenbank abrufen]: http://msdn.microsoft.com/library/azure/dn509574.aspx
 [Wiederherstellbare gelöschte Datenbanken auflisten]: http://msdn.microsoft.com/library/azure/dn509562.aspx
-[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/de-DE/library/dn720218.aspx
+[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/DE-DE/library/dn720218.aspx
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

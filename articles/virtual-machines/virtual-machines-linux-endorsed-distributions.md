@@ -1,11 +1,13 @@
 <properties 
-	pageTitle="Unterstützte Verteilungen von Linux in Azure" 
-	description="Erfahren Sie mehr über unterstützte Linux-Verteilungen auf Azure, einschließlich Leitfäden für Ubuntu, OpenLogic und SUSE." 
+	pageTitle="Unterstützte Verteilungen von Linux | Microsoft Azure" 
+	description="Hier erfahren Sie mehr über unterstützte Linux-Verteilungen auf Azure, einschließlich Leitfäden für Ubuntu, OpenLogic, Oracle und SUSE." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management,azure-resource-manager" 
+	/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -77,4 +79,4 @@ SUSE Linux Enterprise Server unter Azure ist eine bewährte Plattform, die hervo
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

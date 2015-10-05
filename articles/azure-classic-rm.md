@@ -1,21 +1,21 @@
 <properties
    pageTitle="Bereitstellungsmodi Ressourcen-Manager und Service Management (klassisch) | Azure"
-	description="Grundlegendes zu den Unterschieden zwischen dem Modell der Ressourcen-Manager-Bereitstellung und dem Modell der klassischen Bereitstellung"
-	services="virtual-network"
-	documentationCenter=""
-	authors="telmosampaio"
-	manager="carolz"
-	editor=""
-	tags="azure-resource-manager,azure-service-management"/>
+   description="Grundlegendes zu den Unterschieden zwischen dem Modell der Ressourcen-Manager-Bereitstellung und dem Modell der klassischen Bereitstellung"
+   services="virtual-network"
+   documentationCenter=""
+   authors="telmosampaio"
+   manager="carolz"
+   editor=""
+   tags="azure-resource-manager,azure-service-management"/>
 
 <tags
    ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/14/2015"
-	ms.author="telmos"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/14/2015"
+   ms.author="telmos"/>
 
 # Azure-Bereitstellungsmodelle
 
@@ -65,7 +65,7 @@ Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die 
 ## Nächste Schritte
 
 - Erfahren Sie mehr über [Ressourcen-Manager](/resource-group-overview.md).
-- Erlernen Sie das [Entwerfen von Vorlagen](/best-practices-resource-manager-design-templates/md).
-- Wenden Sie [bewährte Methoden](best-practices-resource-manager-examples.md) an.
+- Erlernen Sie das [Entwerfen von Vorlagen](/best-practices-resource-manager-design-templates.md).
+- Wenden Sie [bewährte Methoden](/best-practices-resource-manager-examples.md) an.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

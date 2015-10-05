@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Webanmeldungen mit OpenID Connect
@@ -133,8 +133,7 @@ Eine der Eigenschaften dieses Konfigurationsdokuments ist der `jwks_uri`, dessen
 
 Es gibt zwei Möglichkeiten, zu ermitteln, welche Richtlinie zum Signieren eines ID-Tokens verwendet wurde (und wo die Metadaten abgerufen werden können). Zunächst einmal ist der Richtliniennamen im `acr`-Anspruch im ID-Token enthalten. Informationen zum Analysieren von Ansprüchen nach einem ID-Token finden Sie in der [Azure AD B2C-Tokenreferenz](active-directory-b2c-reference-tokens.md). Eine andere Möglichkeit besteht darin, die Richtlinie beim Übermitteln der Anforderung im Wert des `state`-Parameters zu verschlüsseln und später zu entschlüsseln, um die verwendete Richtlinie zu bestimmen. Beide Methoden sind gleichwertig.
 
-Nachdem Sie das Metadatendokument aus dem OpenID Connect-Metadatenendpunkt erhalten haben, können Sie die öffentlichen RSA256-Schlüssel an diesem Endpunkt zum Überprüfen der Signatur des ID-Tokens verwenden. Es gibt möglicherweise zu einem bestimmten Zeitpunkt mehrere Schlüssel an diesem Endpunkt. Sie werden jeweils durch eine `kid` identifiziert. Der Header des ID-Tokens enthält außerdem einen `kid`-Anspruch, der anzeigt, welcher Schlüssel zum Signieren des ID-Tokens verwendet wurde. Weitere Informationen finden Sie in der [Azure AD B2C-Tokenreferenz](active-directory-b2c-reference-tokens.md). Dort finden Sie auch Einzelheiten zum [Überprüfen von Token](active-directory-b2c-reference-tokens.md#validating-tokens) und [Wichtige Informationen zum Signaturschlüsselrollover](active-directory-b2c-reference-tokens.md#validating-tokens).
-<!--TODO: Improve the information on this-->
+Nachdem Sie das Metadatendokument aus dem OpenID Connect-Metadatenendpunkt erhalten haben, können Sie die öffentlichen RSA256-Schlüssel an diesem Endpunkt zum Überprüfen der Signatur des ID-Tokens verwenden. Es gibt möglicherweise zu einem bestimmten Zeitpunkt mehrere Schlüssel an diesem Endpunkt. Sie werden jeweils durch eine `kid` identifiziert. Der Header des ID-Tokens enthält außerdem einen `kid`-Anspruch, der anzeigt, welcher Schlüssel zum Signieren des ID-Tokens verwendet wurde. Weitere Informationen finden Sie in der [Azure AD B2C-Tokenreferenz](active-directory-b2c-reference-tokens.md). Dort finden Sie auch Einzelheiten zum [Überprüfen von Token](active-directory-b2c-reference-tokens.md#validating-tokens) und [Wichtige Informationen zum Signaturschlüsselrollover](active-directory-b2c-reference-tokens.md#validating-tokens). <!--TODO: Improve the information on this-->
 
 Nachdem Sie die Signatur des ID-Tokens validiert haben, müssen Sie noch einige Ansprüche überprüfen:
 
@@ -345,4 +344,4 @@ image goes here
 
 -->
 
-<!----HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

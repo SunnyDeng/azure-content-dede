@@ -68,6 +68,8 @@ Wenn die Anwendung für die Produktion bereit ist, können Sie die Versionsanfor
 
 Nachdem Sie wissen, wie Sie Node.js-Module mit Azure verwenden, erfahren Sie nun, wie Sie [die Node.js-Version angeben], [eine Node.js-Website erstellen und bereitstellen] und [die Azure-Befehlszeilenschnittstelle für Mac und Linux verwenden].
 
+Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
+
 [die Node.js-Version angeben]: nodejs-specify-node-version-azure-apps.md
 [die Azure-Befehlszeilenschnittstelle für Mac und Linux verwenden]: xplat-cli.md
 [eine Node.js-Website erstellen und bereitstellen]: web-sites-nodejs-develop-deploy-mac.md
@@ -76,4 +78,4 @@ Nachdem Sie wissen, wie Sie Node.js-Module mit Azure verwenden, erfahren Sie nun
 [Build and deploy a Node.js application to an Azure Cloud Service]: cloud-services-nodejs-develop-deploy-app.md
 [Benutzerdefinierte Website-Bereitstellungsskripts mit Kudu]: /documentation/videos/custom-web-site-deployment-scripts-with-kudu/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Verwalten eines virtuellen Windows-Computers in der Dienstverwaltung unter Verwendung von Azure PowerShell"
-	description="Verwenden Sie Azure PowerShell, um schnell einen neuen Windows-basierten virtuellen Computer in der Dienstverwaltung zu erstellen und Verwaltungsfunktionen auszuführen."
+	pageTitle="Erstellen und Verwalten eines virtuellen Windows-Computers unter Verwendung von Azure PowerShell | Microsoft Azure"
+	description="Sie können einen virtuellen Windows-Computer mit Azure PowerShell unter Verwendung des klassischen Bereitstellungsmodells erstellen und verwalten."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,13 +17,13 @@
 	ms.date="07/09/2015"
 	ms.author="cynthn"/>
 
-# Erstellen und Verwalten eines Windows-basierten virtuellen Computers in der Azure-Dienstverwaltung unter Verwendung von Azure PowerShell
+# Erstellen und Verwalten eines virtuellen Windows-Computers unter Verwendung von Azure PowerShell
 
-Dieser Artikel beschreibt das Erstellen und Verwalten eines virtuellen Windows Azure-Computers in der Dienstverwaltung mithilfe von Azure PowerShell.
+Dieser Artikel beschreibt das Erstellen und Verwalten virtueller Windows-Computer mithilfe von Azure PowerShell.
 
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines virtuellen Windows-Computers mit dem klassischen Bereitstellungsmodell. Sie können einen virtuellen Windows-Computer mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-deploy-rmtemplates-powershell.md) erstellen.
 
-- [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+
 
 ## Einrichten von Azure PowerShell
 
@@ -209,4 +209,4 @@ Führen Sie den folgenden Befehl zum Anfügen von Datenträgern aus einer vorhan
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

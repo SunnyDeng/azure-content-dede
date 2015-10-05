@@ -1,17 +1,18 @@
 <properties
-	pageTitle="Ressourcen-Manager-Vorlage für Spark unter Ubuntu"
-	description="Erfahren Sie, wie Sie auf einfache Weise auf Ubuntu-VMs mit Azure PowerShell oder der Azure-CLI und einer Ressourcen-Manager-Vorlage einen neuen Spark-Cluster bereitstellen"
+	pageTitle="Ressourcen-Manager-Vorlage für Spark unter Ubuntu | Microsoft Azure"
+	description="Erfahren Sie, wie Sie auf Ubuntu-VMs mit Azure PowerShell oder der Azure-CLI und einer Ressourcen-Manager-Vorlage einen neuen Spark-Cluster bereitstellen"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="paolosalvatori"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
+	ms.tgt_pltfrm="vm-linux"
 	ms.workload="multiple"
 	ms.date="05/16/2015"
 	ms.author="paolosalvatori"/>
@@ -19,6 +20,9 @@
 # Spark auf Ubuntu mit einer Ressourcen-Manager-Vorlage
 
 Apache Spark ist eine schnelles Modul zur Verarbeitung von umfangreichen Daten. Spark verfügt über ein erweitertes DAG-Ausführungsmodul, das zyklischen Datenfluss und In-Memory-Computing unterstützt sowie auf verschiedene Datenquellen, einschließlich HDFS, Spark, HBase und S3 zugreifen kann.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Bereitstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell bereitstellen.
+
 
 Zusätzlich zur Ausführung auf den Cluster-Managern Mesos oder YARN bietet Spark einen einfachen eigenständigen Bereitstellungsmodus. Dieses Lernprogramm führt Sie durch die Verwendung einer Beispielvorlage für Azure-Ressourcen-Manager zum Bereitstellen eines Spark-Clusters auf Ubuntu-VMs über [Azure PowerShell](../powershell-install-configure.md) oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
 
@@ -381,7 +385,7 @@ Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie
 
 - Klicken Sie auf der linken Navigationsleiste auf **Durchsuchen**, scrollen Sie nach unten, und klicken Sie auf **Ressourcengruppen**.
 - Klicken Sie auf die gerade erstellte Ressourcengruppe, um das Blatt "Ressourcengruppe" anzuzeigen.
-- Durch Klicken auf das Balkendiagramm **Ereignisse** im Bereich **Überwachung** des Blattes "Ressourcengruppe" werden die Ereignisse für die Bereitstellung angezeigt.
+- Durch Klicken auf das Balkendiagramm **Ereignisse** im Bereich **Überwachung** des Blattes "Ressourcengruppe" werden die Ereignisse für die Bereitstellung angezeigt:
 - Durch Klicken auf die einzelnen Ereignisse können Sie sich die Details jedes einzelnen Vorgangs, der von der Vorlage angestoßen wurde, noch näher ansehen.
 
 ![portal-events](media/virtual-machines-spark-template/portal-events.png)
@@ -449,7 +453,7 @@ Im Folgenden finden Sie ein Beispiel für einen Parameter für die "T-Shirt-Grö
 },
 ```
 
-> [AZURE.NOTE]Beachten Sie, dass ein **DefaultValue** und **AllowedValues** angegeben werden können.
+> [AZURE.NOTE]Beachten Sie, dass **DefaultValue** und **AllowedValues** angegeben werden können.
 
 ### Abschnitt "Variablen"
 
@@ -760,7 +764,7 @@ Eine Ressource, die das **copy**-Element verwendet, "kopiert" sich selbst in der
 	}
 ```
 
-Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **dependsOn** sehen können. In dieser speziellen Vorlage sehen Sie, dass die Spark-Clusterknoten von den zuerst erstellten gemeinsame Ressourcen und **networkInterfaces**-Ressourcen abhängig sind.
+Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **dependsOn** sehen können. In dieser speziellen Vorlage sehen Sie, dass die Spark-Clusterknoten von den zuerst erstellten gemeinsamen Ressourcen und **networkInterfaces**-Ressourcen abhängig sind.
 
 Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiterungen **CustomScriptForLinux**. Diese werden als gesonderter Ressourcentyp mit einer Abhängigkeit auf jedem Clusterknoten installiert. In diesem Fall dient dies zum Installieren und Einrichten von Spark auf jedem VM-Knoten. Sehen wir uns einen Ausschnitt aus der Vorlage "azuredeploy.json" an, die diese verwendet:
 
@@ -843,4 +847,4 @@ Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md)
 
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

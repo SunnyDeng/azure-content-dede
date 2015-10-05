@@ -1,6 +1,7 @@
-<properties 
-	pageTitle="Upgrade auf die neueste Clientbibliothek für elastische Datenbanken" 
-	description="Upgradeanweisungen für PowerShell und C#" 
+<properties
+	
+	pageTitle="Upgrade to the latest elastic database client library" 
+	description="Upgrade apps and libraries using Nuget" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
@@ -12,23 +13,25 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/17/2015" 
+	ms.date="09/22/2015" 
 	ms.author="sidneyh" />
 
 # Upgrade auf die neueste Clientbibliothek für elastische Datenbanken
 
 Neue Versionen der Clientbibliothek für elastische Datenbanken stehen über [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) und die NuGetPackage Manager-Benutzeroberfläche in Visual Studio zur Verfügung. Upgrades bieten Fehlerkorrekturen und Unterstützung für die neuen Funktionen der Clientbibliothek.
 
+Erstellen Sie die Anwendung mit der neuen Bibliothek neu, und ändern Sie Ihre vorhandenen Shard Map Manager-Metadaten, die in Ihren Azure SQL-Datenbanken gespeichert sind, damit neue Features unterstützt werden.
+
+Durch Ausführen dieser Schritte in dieser Reihenfolge wird sichergestellt, dass alte Versionen der Clientbibliothek nicht mehr in Ihrer Umgebung vorhanden sind, wenn Metadatenobjekte aktualisiert werden. Dies bedeutet, dass Metadatenobjekte der alten Version nach dem Upgrade nicht mehr erstellt werden.
+
 ## Upgradeschritte
-
-Für ein Upgrade müssen Sie die Anwendung mit der neuen Bibliothek neu erstellen und Ihre vorhandenen Shard Map Manager-Metadaten ändern, die in Ihren Azure SQL-Datenbanken gespeichert sind, damit neue Features unterstützt werden.
-
-Befolgen Sie die nachstehenden Anweisungen zum Aktualisieren Ihrer Anwendungen, der Shard Map Manager-Datenbank und der lokalen Shard Map Manager-Metadaten für jeden Shard. Durch Upgradeschritte in dieser Reihenfolge wird sichergestellt, dass alte Versionen der Clientbibliothek nicht mehr in Ihrer Umgebung vorhanden sind, wenn Metadatenobjekte aktualisiert werden. Dies bedeutet, dass Metadatenobjekte der alten Version nach dem Upgrade nicht mehr erstellt werden.
 
 **1. Aktualisieren Sie Ihre Anwendungen.** Laden Sie in Visual Studio die neueste Version der Clientbibliothek herunter, und verweisen Sie in allen Ihren Entwicklungsprojekten, die die Bibliothek verwenden, darauf. Führen Sie dann die Schritte zur Neuerstellung und Bereitstellung aus.
 
  * Wählen Sie in Ihrer Visual Studio-Projektmappe **Extras** --> **NuGet-Paket-Manager** --> **NuGet-Pakete für die Lösung verwalten** aus. 
- * Wählen Sie im linken Bereich **Updates** aus, und klicken Sie dann auf die Schaltfläche **Aktualisieren** für das Paket **Elastic Scale-Clientbibliothek für Azure SQL-Datenbank**, das im Fenster angezeigt wird. ![Aktualisieren von Nuget-Paketen][1]
+ * (Visual Studio 2013) Wählen Sie im linken Bereich **Updates** aus, und klicken Sie dann auf die Schaltfläche **Aktualisieren** für das Paket **Elastic Scale-Clientbibliothek für Azure SQL-Datenbank**, das im Fenster angezeigt wird.
+ * (Visual Studio 2015) Legen Sie das Filterfeld auf **Upgrade verfügbar** fest. Wählen Sie das zu aktualisierende Paket aus, und klicken Sie auf die Schaltfläche **Aktualisieren**.
+	
  
  * Führen Sie die Schritte zur Erstellung und Bereitstellung aus.
 
@@ -94,4 +97,4 @@ Erste Vorschauversion
 [1]: ./media/sql-database-elastic-scale-upgrade-client-library/nuget-upgrade.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

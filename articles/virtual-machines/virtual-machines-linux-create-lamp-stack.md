@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Erstellen eines LAMP-Stapels mit Microsoft Azure"
+	pageTitle="Erstellen eines LAMP-Stapels mit Azure | Microsoft Azure"
 	description="Erfahren Sie, wie Sie einen LAMP-Stapel mit Microsoft Azure mithilfe von virtuellen Azure-Computern erstellen, auf denen Linux ausgeführt wird."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="NingKuang"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -19,6 +20,8 @@
 #Erstellen eines LAMP-Stapels mit Microsoft Azure
 
 Ein "LAMP"-Stapel ist eine Gruppe von Open-Source-Software, die in der Regel zusammen installiert wird, um einem Server das Hosten dynamischer Websites und Webanwendungen zu ermöglichen. Dieser Begriff ist ein Akronym (Linux, Apache, MySQL-Datenbank, PHP), das das Linux-Betriebssystem mit dem Apache-Webserver darstellt. Die Websitedaten werden in einer MySQL-Datenbank gespeichert, und dynamische Inhalte werden von PHP verarbeitet.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
 
 In diesem Handbuch installieren Sie einen LAMP-Stapel in einem Linux-Image und stellen dieses unter Microsoft Azure bereit.
 
@@ -42,12 +45,12 @@ SSH ist ein wichtiges Tool für Systemadministratoren. Es ist jedoch aus Sicherh
 
 Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel zu generieren.
 
--	Laden und installieren Sie puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/](http://www.chiark.greenend.org.uk/~sgtatham/)putty/download.html
+-	Laden und installieren Sie puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/)
 -	Führen Sie "putty.exe" aus.
 -	Klicken Sie auf **Generieren**, um die Schlüssel zu generieren. Während des Vorgangs können Sie den Zufallsfaktor durch Bewegen der Maus über den leeren Bereich im Fenster erhöhen. ![][1]
 -	Nach dem Generierungsvorgang zeigt "Puttygen.exe" den generierten Schlüssel an. Beispiel: ![][2]
--	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei namens **publicKey.pem**. Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
--	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei namens **privateKey.ppk**.
+-	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei mit dem Namen **publicKey.pem**. Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
+-	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei mit dem Namen **privateKey.ppk**.
 
 ###Schritt 2: Erstellen des Images im Azure-Portal
 Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image anhand dieser Anleitungen. Wählen Sie dabei das Linux-Image basierend auf Ihren Anforderungen aus. Dieses Beispiel verwendet das Ubuntu-Image 14.04.
@@ -110,7 +113,7 @@ Klicken Sie nach dem Download auf die ausführbare Datei "PUTTY.EXE". Konfigurie
 
 ![][9]
 
-Klicken Sie im linken Bereich auf **Verbindung -> SSH -> Authentifizierung**. Klicken Sie dann auf **Durchsuchen**, um den Speicherort der Datei **privateKey.ppk** anzugeben, die den von puttygen in Phase 1: "Erstellen eines Images" generierten privaten Schlüssel enthält. Beispiel:
+Klicken Sie im linken Bereich auf **Verbindung -> SSH -> Authentifizierung**. Klicken Sie dann auf **Durchsuchen**, um den Speicherort der Datei **privateKey.ppk** anzugeben, die den von puttygen in Phase 1: "Erstellen eines Image" generierten privaten Schlüssel enthält. Beispiel:
 
 ![][10]
 
@@ -141,6 +144,7 @@ Abhängig von der zum Erstellen des virtuellen Computers verwendeten Linux-Verte
 Starten Sie Apache nach der Installation mit dem folgenden Befehl:
 
 	sudo service httpd start
+
 ####Testen von Apache
 Wenn Sie überprüfen möchten, ob Apache erfolgreich installiert wurde, navigieren Sie zum DNS-Namen Ihres Apache-Servers (für die Beispiel-URL in diesem Artikel http://lampdemo.cloudapp.net/)). Die Seite sollte den Text "It works!" anzeigen. ![][14]
 
@@ -356,7 +360,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 
 -	**Symptom** Apache wird ausgeführt, die Apache-Standardseite wird jedoch nicht in Ihrem Browser angezeigt.
 -	**Mögliche Ursache**
-	1.	Der Apache-Überwachungsport ist nicht identisch mit den privaten Port des Endpunkts des virtuellen Computers für Webdatenverkehr.</br> Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Apache-Lauschport identisch ist. Informationen zum Konfigurieren von Endpunkten für den virtuellen Computer finden Sie unter Phase 1: "Erstellen eines Images".</br> Öffnen Sie zum Ermitteln des Lauschports von Apache "/etc/httpd/conf/httpd.conf" (Red Hat-Version) oder "/etc/apache2/ports.conf" (Debian-Version). Suchen Sie nach der Zeichenfolge "Listen". Der Standardport ist 80.
+	1.	Der Apache-Überwachungsport ist nicht identisch mit dem privaten Port des Endpunkts des virtuellen Computers für Webdatenverkehr.</br> Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Apache-Lauschport identisch ist. Informationen zum Konfigurieren von Endpunkten für den virtuellen Computer finden Sie unter Phase 1: "Erstellen eines Image".</br> Öffnen Sie zum Ermitteln des Lauschports von Apache "/etc/httpd/conf/httpd.conf" (Red Hat-Version) oder "/etc/apache2/ports.conf" (Debian-Version). Suchen Sie nach der Zeichenfolge "Listen". Der Standardport ist 80.
 
 	2.	Die Firewall hat den Überwachungsport von Apache deaktiviert.</br> Wenn Sie die Apache-Standardseite vom lokalen Host aus sehen können, besteht das Problem wahrscheinlich darin, dass der Port, an dem Apache lauscht, durch die Firewall blockiert ist. Sie können das Tool w3m verwenden, um die Webseite zu durchsuchen. Mit den folgenden Befehle installieren Sie w3m und navigieren zur Apache-Standardseite:
 
@@ -428,7 +432,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 
 -	**Mögliche Ursache** Sie haben den Servernamen von Apache nicht festgelegt.
 
--	**Lösung** Fügen Sie eine Zeile "ServerName localhost" in "httpd.conf" (Red Hat-Version) oder "apache2.conf" (Debian Version) in "/etc/apache2" ein, und starten Sie Apache dann neu. Die Meldung wird nicht mehr angezeigt.
+-	**Lösung** Fügen Sie die Zeile "ServerName localhost" in "httpd.conf" (Red Hat-Version) oder "apache2.conf" (Debian-Version) in "/etc/apache2" ein, und starten Sie Apache dann neu. Die Meldung wird nicht mehr angezeigt.
 
 
 
@@ -450,6 +454,5 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [16]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-16.png
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

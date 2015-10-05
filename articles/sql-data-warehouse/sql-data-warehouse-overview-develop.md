@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Entwickeln von Lösungen für SQL Data Warehouse | Microsoft Azure"
-   description="Entwicklungstechniken und bewährte Methoden zum Erstellen von Lösungen mit Azure SQL Data Warehouse."
+   pageTitle="Entwurfsentscheidungen und Programmiertechniken für SQL Data Warehouse-Entwicklung | Microsoft Azure"
+   description="Entwicklungskonzepte, Entwurfsentscheidungen, Empfehlungen und Programmiertechniken für SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="jrowlandjones"
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/25/2015"
+   ms.date="09/22/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
-# Entwickeln von Lösungen für SQL Data Warehouse
+# Entwurfsentscheidungen und Programmiertechniken für SQL Data Warehouse
 
-Lesen Sie die Entwicklungsartikel, um ein besseres Verständnis von Entwicklungsprinzipien, bewährten Methoden und Programmiertechniken für SQL Data Warehouse zu erlangen.
+Lesen Sie diese Entwicklungsartikel, um ein besseres Verständnis der wesentlichen Entwurfsentscheidungen, der Empfehlungen und der Programmiertechniken für SQL Data Warehouse zu erlangen.
 
-## Wichtige Konzepte
+## Wesentliche Entwurfsentscheidungen
 In den folgenden Artikeln werden einige der zentralen Konzepte und Entwurfsentscheidungen hervorgehoben, die Sie für die Entwicklung Ihres verteilten Data Warehouses mit SQL Data Warehouse verstehen müssen:
 
 - [Verbindungen][]
@@ -33,8 +33,8 @@ In den folgenden Artikeln werden einige der zentralen Konzepte und Entwurfsentsc
 - [CTAS][]
 - [Statistiken][]
 
-## Entwicklungstechniken
-In diesen Artikeln werden bestimmte Programmiertechniken, Tipps und bewährte Methoden für die Entwicklung von Lösungen mit SQL Data Warehouse hervorgehoben:
+## Entwicklungsempfehlungen und Programmiertechniken
+In diesen Artikeln werden bestimmte Programmiertechniken, Tipps und Empfehlungen für die Entwicklung eines SQL Data Warehouse behandelt:
 
 - [Gespeicherte Prozeduren][]
 - [Bezeichnungen][]
@@ -79,4 +79,4 @@ Wenn Sie die Entwicklungsartikel durchgearbeitet haben, finden Sie auf der Seite
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

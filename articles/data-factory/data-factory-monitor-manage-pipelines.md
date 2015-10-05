@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Überwachen und Verwalten von Azure Data Factory-Pipelines"
-	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys und Pipelines mithilfe des Azure-Verwaltungsportals und Azure PowerShell überwachen und verwalten."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Überwachen und Verwalten von Azure Data Factory-Pipelines" 
+	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys und Pipelines mithilfe des Azure-Verwaltungsportals und Azure PowerShell überwachen und verwalten." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/27/2015" 
 	ms.author="spelluru"/>
 
 # Überwachen und Verwalten von Azure Data Factory-Pipelines
@@ -287,6 +287,10 @@ Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Be
 
 Aus der obigen JSON-Definition kann **subStatus** entfernt werden, wenn Sie zu einem bestimmten Fehler nicht informiert werden möchten.
 
+Im obige Beispiel wird die Warnung für alle Data Factorys in Ihrem Abonnement eingerichtet. Wenn die Warnung für eine bestimmte Daten Factory eingerichtet werden soll, können Sie den **ResourceUri** der Daten Factory im **DataSource**-Block wie unten gezeigt angeben:
+
+	"resourceUri" : "/SUBSCRIPTIONS/<subscriptionId>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/DATAFACTORIES/<dataFactoryName>"
+
 Die folgende Tabelle enthält eine Liste der verfügbaren Vorgänge und Status (samt Unterstatus).
 
 Vorgangsname | Status | Unterstatus
@@ -471,4 +475,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-monitor-manage-pipelines.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

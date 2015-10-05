@@ -1,57 +1,181 @@
 <properties
-   pageTitle="Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure"
-	description="Beschreibt allgemeine Probleme beim Bereitstellen von Ressourcen in Azure und zeigt, wie das Azure-Portal, die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows (Azure CLI) und PowerShell genutzt werden können, um Bereitstellungen zu überprüfen und Probleme zu erkennen."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="squillace"
-	manager="timlt"
-	editor=""/>
+   pageTitle="Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure | Microsoft Azure"
+   description="Hier werden allgemeine Probleme beim Bereitstellen von Ressourcen beschrieben, die mithilfe des Ressourcen-Manager-Bereitstellungsmodells erstellt wurden. Zudem wird erläutert, wie Sie diese Probleme ermitteln und beheben."
+   services="azure-resource-manager,virtual-machines"
+   documentationCenter=""
+   authors="squillace"
+   manager="timlt"
+   editor=""/>
 
 <tags
-   ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="command-line-interface"
-	ms.workload="infrastructure"
-	ms.date="08/26/2015"
-	ms.author="rasquill"/>
+   ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-multiple"
+   ms.workload="infrastructure"
+   ms.date="09/18/2015"
+   ms.author="rasquill"/>
 
 # Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure
 
-Bei Bereitstellungen können aus unterschiedlichen Gründen Probleme auftreten. Daher empfiehlt es sich, einige Dinge im Vorfeld zu überprüfen, um Bereitstellungsfehler zu vermeiden. Dieses Dokument beschreibt Tools und Vorgänge zur Vermeidung einfacher Fehler, zum Herunterladen von Vorlagendateien sowie zum Überprüfen von Bereitstellungsprotokollen. Ebenfalls werden die wichtigsten Bereiche besprochen, die bei der Fehlerüberprüfung von Bereitstellungsprotokollen zu berücksichtigen sind.
+Wenn während der Bereitstellung ein Problem auftritt, müssen Sie den Grund dafür ermitteln. Der Ressourcen-Manager bietet zwei Möglichkeiten, um herauszufinden, was passiert ist und warum es passiert ist. Sie können Bereitstellungsbefehle verwenden, um Informationen zu bestimmten Bereitstellungen für eine Ressourcengruppe abzurufen. Alternativ können Sie die Überwachungsprotokolle zum Abrufen von Informationen zu allen Vorgängen in einer Ressourcengruppe verwenden. Mit diesen Informationen können Sie das Problem beheben und die Vorgänge in Ihrer Lösung fortsetzen.
 
-## Nützliche Tools für die Interaktion mit Azure
-Wenn Sie mit Ihren Azure-Ressourcen über die Befehlszeile arbeiten, können Sie Tools verwenden, Sie bei Ihrer Arbeit unterstützen. Vorlagen für Azure-Ressourcengruppen sind JSON-Dokumente, und die Azure-Ressourcen-Manager-API akzeptiert JSON und gibt JSON zurück. JSON-Analysetools zählen also zu den ersten Instrumenten, die die Navigation durch Informationen zu Ihren Ressourcen sowie die Gestaltung von und die Interaktion mit Vorlagen und Parameterdateien von Vorlagen erleichtern.
+In diesem Thema geht es hauptsächlich um die Verwendung von Bereitstellungsbefehlen für das Beheben von Bereitstellungsfehlern. Weitere Informationen zum Nachverfolgen aller Vorgänge in Ihren Ressourcen mithilfe der Überwachungsprotokolle finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](../resource-group-audit.md).
 
-### Mac-, Linux- und Windows-Tools
-Wenn Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden, sind Sie wahrscheinlich mit den Standard-Downloadtools wie **[curl](http://curl.haxx.se/)** und **[wget](https://www.gnu.org/software/wget/)** oder **[Resty](https://github.com/beders/Resty)** sowie mit JSON-Dienstprogrammen wie **[jq](http://stedolan.github.io/jq/download/)**, **[jsawk](https://github.com/micha/jsawk)** und Sprachbibliotheken vertraut, die JSON verarbeiten können. (Viele dieser Tools verfügen auch über Ports für Windows – beispielsweise [wget](http://gnuwin32.sourceforge.net/packages/wget.htm). Tatsächlich gibt es verschiedene Arten, um Linux und andere Open Source-Tools auch in Windows auszuführen.)
+In diesem Thema wird das Abrufen von Informationen zur Problembehandlung mit Azure PowerShell, mit der Azure-Befehlszeilenschnittstelle und der REST-API veranschaulicht. Informationen zum Verwenden des Vorschauportals zum Beheben von Bereitstellungsfehlern finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../azure-portal/resource-group-portal.md).
 
-Dieses Thema beinhaltet einige Azure Befehlszeilenschnittstelle-Befehle, die Sie mit **jq** verwenden können, um auf effizientere Weise genau die Informationen zu erhalten, die Sie wünschen. Sie sollten für ein besseres Verständnis Ihres Azure-Ressourceneinsatzes ein Ihnen vertrautes Toolset wählen.
+Lösungen für allgemeine Fehler bei der Verwendung werden ebenfalls in diesem Thema beschrieben.
 
-### Windows PowerShell
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Beheben von Problemen mit Ressourcengruppen erläutert, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden. Sie können Ressourcengruppen nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
-Windows PowerShell verfügt über mehrere Basisbefehle, um die gleichen Prozeduren auszuführen.
 
-- Verwenden Sie das Cmdlet **[Invole-WebRequest](https://technet.microsoft.com/library/hh849901%28v=wps.640%29)**, um Dateien wie Ressourcengruppen-Vorlagen oder JSON-Parameterdateien herunterzuladen.
-- Verwenden Sie das Cmdlet **[ConvertFrom-Json](https://technet.microsoft.com/library/hh849898%28v=wps.640%29.aspx)**, um eine JSON-Zeichenfolge in ein benutzerdefiniertes Objekt zu konvertieren ([PSCustomObject](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pscustomobject%28v=vs.85%29.aspx)), das für jedes Feld in der JSON-Zeichenfolge eine Eigenschaft hat.
+## Problembehandlung mit PowerShell
 
-## Vermeiden von Fehlern in der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
+Sie können den allgemeinen Status einer Bereitstellung mit dem Befehl **Get-AzureResourceGroupDeployment** abrufen. Im folgenden Beispiel ist die Bereitstellung fehlgeschlagen.
 
-Die Azure-Befehlszeilenschnittstelle bietet mehrere Befehle, die bei der Fehlervermeidung helfen und mit denen Fehlerursachen aufgespürt werden können.
+    PS C:\> Get-AzureResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment
 
-- **azure location list**. Dieser Befehl ruft die Speicherorte ab, die die einzelnen Ressourcentypen unterstützen (Beispiel: den Anbieter für virtuelle Computer). Bevor Sie einen Speicherort für eine Ressource eingeben, verwenden Sie diesen Befehl, um zu überprüfen, ob der Speicherort den Ressourcentyp unterstützt.
+    DeploymentName    : ExampleDeployment
+    ResourceGroupName : ExampleGroup
+    ProvisioningState : Failed
+    Timestamp         : 8/27/2015 8:03:34 PM
+    Mode              : Incremental
+    TemplateLink      :
+    Parameters        :
+                    Name             Type                       Value
+                    ===============  =========================  ==========
+                    siteName         String                     ExampleSite
+                    hostingPlanName  String                     ExamplePlan
+                    siteLocation     String                     West US
+                    sku              String                     Free
+                    workerSize       String                     0
 
-    Da die Liste der Speicherorte lang sein kann und es viele Anbieter gibt, können Sie Tools verwenden, um Anbieter und Speicherorte zu überprüfen, bevor Sie einen Speicherort nutzen, der noch nicht zur Verfügung steht. Das folgende Skript nutzt **jq**, um die Speicherorte zu ermitteln, an denen der Ressourcenanbieter für virtuelle Azure-Computer verfügbar ist.
+    Outputs           :
 
-        azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
-        {
-          "name": "Microsoft.Compute/virtualMachines",
-          "location": "East US,West US,West Europe,East Asia,Southeast Asia,North Europe"
-        }
+Jede Bereitstellung besteht in der Regel aus mehreren Vorgängen. Dabei stellt jeder Vorgang einen Schritt im Bereitstellungsprozess dar. Um einen Bereitstellungsfehler zu ermitteln, benötigen Sie in der Regel Einzelheiten zu den Bereitstellungsvorgängen. Den Status der Vorgänge können Sie mit **Get-AzureResourceGroupDeploymentOperation** abrufen.
 
-- **azure group template validate<resource group>**. Mit diesem Befehl können Sie Ihre Vorlagen und die Vorlagenparameter überprüfen, bevor Sie sie verwenden. Geben Sie eine benutzerdefinierte Vorlage oder eine Katalogvorlage und die Vorlagenparameterwerte ein, die Sie verwenden möchten.
+    PS C:\> Get-AzureResourceGroupDeploymentOperation -DeploymentName ExampleDeployment -ResourceGroupName ExampleGroup
+    Id                        OperationId          Properties         
+    -----------               ----------           -------------
+    /subscriptions/xxxxx...   347A111792B648D8     @{ProvisioningState=Failed; Timestam...
+    /subscriptions/xxxxx...   699776735EFC3D15     @{ProvisioningState=Succeeded; Times...
 
-    Das folgende Beispiel zeigt, wie Sie eine Vorlage und alle erforderlichen Parameter zu überprüfen. Die Azure-Befehlszeilenschnittstelle fordert Sie zur Eingabe der erforderlichen Parameterwerte auf.
+Es werden zwei Vorgänge in der Bereitstellung angezeigt. Für einen Vorgang lautet der Bereitstellungszustand „Failed“, für den anderen Vorgang „Succeeded“.
+
+Sie können die Statusmeldung mit dem folgenden Befehl abrufen:
+
+    PS C:\> (Get-AzureResourceGroupDeploymentOperation -DeploymentName ExampleDeployment -ResourceGroupName ExampleGroup).Properties.StatusMessage
+
+    Code       : Conflict
+    Message    : Website with given name mysite already exists.
+    Target     :
+    Details    : {@{Message=Website with given name mysite already exists.}, @{Code=Conflict}, @{ErrorEntity=}}
+    Innererror :
+
+## Problembehandlung mit der Azure-Befehlszeilenschnittstelle
+
+Sie können den allgemeinen Status einer Bereitstellung mit dem Befehl **azure group deployment show** abrufen. Im folgenden Beispiel ist die Bereitstellung fehlgeschlagen.
+
+    azure group deployment show ExampleGroup ExampleDeployment
+
+    info:    Executing command group deployment show
+    + Getting deployments
+    data:    DeploymentName     : ExampleDeployment
+    data:    ResourceGroupName  : ExampleGroup
+    data:    ProvisioningState  : Failed
+    data:    Timestamp          : 2015-08-27T20:03:34.9178576Z
+    data:    Mode               : Incremental
+    data:    Name             Type    Value
+    data:    ---------------  ------  ------------
+    data:    siteName         String  ExampleSite
+    data:    hostingPlanName  String  ExamplePlan
+    data:    siteLocation     String  West US
+    data:    sku              String  Free
+    data:    workerSize       String  0
+    info:    group deployment show command OK
+
+
+Weitere Informationen zu den Gründen einer fehlgeschlagenen Bereitstellung finden Sie in den Überwachungsprotokollen. Führen Sie zum Anzeigen der Überwachungsprotokolle den Befehl **azure group log show** aus. Sie können die Option **--last-deployment** angeben, um nur das Protokoll der letzten Bereitstellung abzurufen.
+
+    azure group log show ExampleGroup --last-deployment
+
+Mit dem Befehl **azure group log show** können zahlreiche Informationen abgerufen werden. Bei der Problembehandlung konzentrieren Sie sich in der Regel auf fehlgeschlagene Vorgänge. Im folgenden Skript werden die Option **--json** und **jq** verwendet, um das Protokoll nach Bereitstellungsfehlern zu durchsuchen. Informationen zu Tools wie **jq** finden Sie unter [Nützliche Tools für die Interaktion mit Azure](#useful-tools-to-interact-with-azure)
+
+    azure group log show ExampleGroup --json | jq '.[] | select(.status.value == "Failed")'
+
+    {
+      "claims": {
+        "aud": "https://management.core.windows.net/",
+        "iss": "https://sts.windows.net/<guid>/",
+        "iat": "1442510510",
+        "nbf": "1442510510",
+        "exp": "1442514410",
+        "ver": "1.0",
+        "http://schemas.microsoft.com/identity/claims/tenantid": "<guid>",
+        "http://schemas.microsoft.com/identity/claims/objectidentifier": "<guid>",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress": "someone@example.com",
+        "puid": "XXXXXXXXXXXXXXXX",
+        "http://schemas.microsoft.com/identity/claims/identityprovider": "example.com",
+
+        "altsecid": "1:example.com:XXXXXXXXXXX",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "<hash string>",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "Tom",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "FitzMacken",
+        "name": "Tom FitzMacken",
+        "http://schemas.microsoft.com/claims/authnmethodsreferences": "pwd",
+        "groups": "<guid>",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "example.com#someone@example.com",
+        "wids": "<guid>",
+        "appid": "<guid>",
+        "appidacr": "0",
+        "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
+        "http://schemas.microsoft.com/claims/authnclassreference": "1",
+        "ipaddr": "000.000.000.000"
+      },
+      "properties": {
+        "statusCode": "Conflict",
+        "statusMessage": "{"Code":"Conflict","Message":"Website with given name mysite already exists.","Target":null,"Details":[{"Message":"Website with given name 
+          mysite already exists."},{"Code":"Conflict"},{"ErrorEntity":{"Code":"Conflict","Message":"Website with given name mysite already exists.","ExtendedCode":
+          "54001","MessageTemplate":"Website with given name {0} already exists.","Parameters":["mysite"],"InnerErrors":null}}],"Innererror":null}"
+      },
+    ...
+
+**properties** enthält Informationen in JSON zum fehlgeschlagenen Vorgang.
+
+Mit den Optionen **--verbose** und **-vv** können Sie weitere Informationen aus dem Protokoll anzeigen. Mit der Option **--verbose** können Sie die einzelnen Schritte der Vorgänge in `stdout` anzeigen. Den vollständigen Anforderungsverlauf zeigen Sie mit der Option **-vv** an. Die Mitteilungen liefern häufig wertvolle Hinweise zur Ursache von Fehlern.
+
+## Problembehandlung mit der REST-API
+
+Die Ressourcen-Manager-REST-API stellt URIs zum Abrufen von Informationen zu einer Bereitstellung und zu den Bereitstellungsvorgängen sowie Details zu einem bestimmten Vorgang bereit. Ausführliche Beschreibungen dieser Befehle finden Sie in folgenden Themen:
+
+- [Abrufen von Informationen zu einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790565.aspx)
+- [Auflisten aller Vorlagenbereitstellungsvorgänge](https://msdn.microsoft.com/library/azure/dn790518.aspx)
+- [Abrufen von Informationen zu einem Vorlagenbereitstellungsvorgang](https://msdn.microsoft.com/library/azure/dn790519.aspx)
+
+
+## Aktualisieren abgelaufener Anmeldeinformationen
+
+Bei der Bereitstellung tritt ein Fehler auf, wenn Ihre Azure-Anmeldedaten abgelaufen sind oder Sie sich nicht bei Ihrem Azure-Konto angemeldet haben. Ihre Anmeldeinformationen können ablaufen, wenn die Sitzung zu lange geöffnet ist. Sie können Ihre Anmeldeinformationen mit den folgenden Optionen aktualisieren:
+
+- Verwenden Sie bei PowerShell das Cmdlet **Add-AzureAccount**. Die Anmeldeinformationen in einer Datei mit Veröffentlichungseinstellungen sind für die Cmdlets im AzureResourceManager-Modul nicht ausreichend.
+- Verwenden Sie bei der Azure-Befehlszeilenschnittstelle **azure login**. Stellen Sie für Hilfe mit Authentifizierungsfehlern sicher, dass Sie die [Azure-Befehlszeilenschnittstelle korrekt konfiguriert](../xplat-cli-connect.md) haben.
+
+## Überprüfen des Formats von Vorlagen und Parametern
+
+Liegt die Vorlage oder der Parameter im falschen Format vor, tritt bei der Bereitstellung ein Fehler auf. Vor dem Ausführen einer Bereitstellung können Sie die Gültigkeit Ihrer Vorlagen und Parameter testen.
+
+### PowerShell
+
+Verwenden Sie bei PowerShell den Befehl **Test-AzureResourceGroupTemplate**.
+
+    PS C:\> Test-AzureResourceGroupTemplate -ResourceGroupName ExampleGroup -TemplateFile c:\Azure\Templates\azuredeploy.json -TemplateParameterFile c:\Azure\Templates\azuredeploy.parameters.json
+    VERBOSE: 12:55:32 PM - Template is valid.
+
+### Azure-Befehlszeilenschnittstelle
+
+Verwenden Sie bei der Azure-Befehlszeilenschnittstelle den Befehl **azure group template validate <resource group>**
+
+Das folgende Beispiel zeigt, wie Sie eine Vorlage und alle erforderlichen Parameter zu überprüfen. Die Azure-Befehlszeilenschnittstelle fordert Sie zur Eingabe der erforderlichen Parameterwerte auf.
 
         azure group template validate \
         > --template-uri "https://contoso.com/templates/azuredeploy.json" \
@@ -64,146 +188,54 @@ Die Azure-Befehlszeilenschnittstelle bietet mehrere Befehle, die bei der Fehlerv
         + Validating the template
         info:    group template validate command OK
 
-## Informationserwerb zum Beheben von Bereitstellungsproblemen mit der Azure-Befehlszeilenschnittstelle
+### REST-API
 
-- **azure group log show<resource group>**: Dieser Befehl ruft die Einträge im Protokoll für die einzelnen Bereitstellungen der Ressourcengruppen ab. Falls ein Fehler auftritt, sollten Sie zunächst die Bereitstellungsprotokolle untersuchen.
+Informationen zur REST-API finden Sie unter [Überprüfen einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790547.aspx).
 
-        info:    Executing command group log show
-        info:    Getting group logs
-        data:    ----------
-        data:    EventId:              <guid>
-        data:    Authorization:
-        data:                          action: Microsoft.Network/networkInterfaces/write
-        data:                          role:   Subscription Admin
-        data:                          scope:  /subscriptions/xxxxxxxxxxx/resourcegroups/templates/
-                                               providers/Microsoft.Network/
-                                               networkInterfaces/myNic
-        data:    ResourceUri:          /subscriptions/xxxxxxxxxxxx/resourcegroups/templates/providers/
-                                       Microsoft.Network/networkInterfaces/myNic
-        data:    SubscriptionId:       <guid>
-        data:    EventTimestamp (UTC): Wed Apr 22 2015 05:53:31 GMT+0000 (UTC)
-        data:    OperationName:        Microsoft.Network/networkInterfaces/write
-        data:    OperationId:          <guid>
-        data:    Status:               Started
-        data:    SubStatus:
-        data:    Caller:
-        data:    CorrelationId:        <guid>
-        data:    Description:
-        data:    HttpRequest:          clientRequestId: <guid>
-                                       clientIpAddress: 000.000.00.000
-                                       method:          PUT
+## Überprüfen, welche Standorte die Ressource unterstützen
 
-        data:    Level:                Informational
-        data:    ResourceGroup:        templates
-        data:    ResourceProvider:     Microsoft.Network
-        data:    EventSource:          Microsoft Resources
-        data:    Properties:           requestbody: {"location":"West US","properties
-                                       ":{"ipConfigurations":[{"
-                                       name":"ipconfig1","properties":{"
-                                       privateIPAllocationMethod
+Verwenden Sie beim Angeben eines Standorts für eine Ressource einen von der Ressource unterstützten Standort. Bevor Sie einen Standort für eine Ressource eingeben, überprüfen Sie mit einem der folgenden Befehle, ob der Standort den Ressourcentyp unterstützt.
 
-                                       ":"Dynamic","publicIPAddress":{"id":"/
-                                       subscriptions/
-                                       <guid>/
-                                       resourceGroups/
-                                       templates/providers/Microsoft.Network/
-                                       publicIPAddresses/
-                                       myPublicIP"},"subnet":{"idThe AzureResourceManager module includes cmdlets that ":"/subscriptions/
-                                       <guid>/resourceGroups/templates/
-                                       providers/
-                                       Microsoft.Network/virtualNetworks/myVNET/subnets/
-                                       Subnet-1
-                                       "}}}]}}
+### PowerShell
 
-Verwenden der Option**--Last-Deployment**, um nur das Protokoll für die aktuelle Bereitstellung abzurufen. Im folgenden Skript wird die Option **--Json** und **Jq** verwendet, um das Protokoll auf Fehler bei der Bereitstellung zu durchsuchen.
+Bei PowerShell können Sie die vollständige Liste der Ressourcen und Standorte mit dem Befehl **Get-AzureLocation** anzeigen.
 
-        azure group log show templates --json | jq '.[] | select(.status.value == "Failed")'
+    PS C:\> Get-AzureLocation
 
-        {
-          "claims": {
-            "aud": "https://management.core.windows.net/",
-            "iss": "https://sts.windows.net/<guid>/",
-            "iat": "1429678549",
-            "nbf": "1429678549",
-            "exp": "1429682449",
-            "ver": "1.0",
-            "http://schemas.microsoft.com/identity/claims/tenantid": "<guid>",
-            "http://schemas.microsoft.com/identity/claims/objectidentifier": "<guid>",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "ahmet@contoso.onmicrosoft.com",
-            "puid": "XXXXXXXXXXXXXX",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "<hash string>",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "ahmet",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "",
-            "name": "Friendly Name",
-            "http://schemas.microsoft.com/claims/authnmethodsreferences": "pwd",
-            "groups": "<guid>",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "ahmet@contoso.onmicrosoft.com",
-            "appid": "<guid>",
-            "appidacr": "0",
-            "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
-            "http://schemas.microsoft.com/claims/authnclassreference": "1"
-          },
-          "properties": {},
-          "authorization": {
-            "action": "Microsoft.Resources/subscriptions/resourcegroups/deployments/write",
-            "role": "Subscription Admin",
-            "scope": "/subscriptions/<guid>/resourcegroups/templates/deployments/basic-vm-version-0.1"
-          },
-          "eventChannels": "Operation",
-          "eventDataId": "<guid>",
-          "correlationId": "<guid>",
-          "eventName": {
-            "value": "EndRequest",
-            "localizedValue": "End request"
-          },
-          "eventSource": {
-            "value": "Microsoft.Resources",
-            "localizedValue": "Microsoft Resources"
-          },
-          "level": "Error",
-          "resourceGroupName": "templates",
-          "resourceProviderName": {
-            "value": "Microsoft.Resources",
-            "localizedValue": "Microsoft Resources"
-          },
-          "resourceUri": "/subscriptions/<guid>/resourcegroups/templates/deployments/basic-vm-version-0.1",
-          "operationId": "<guid>",
-          "operationName": {
-            "value": "Microsoft.Resources/subscriptions/resourcegroups/deployments/write",
-            "localizedValue": "Update deployment"
-          },
-          "status": {
-            "value": "Failed",
-            "localizedValue": "Failed"
-          },
-          "subStatus": {},
-          "eventTimestamp": "2015-04-22T05:53:40.8150293Z",
-          "submissionTimestamp": "2015-04-22T05:54:00.6728843Z",10037FFE8E80BB65
-          "subscriptionId": "<guid>"
-        }
+    Name                                    Locations                               LocationsString
+    ----                                    ---------                               ---------------
+    ResourceGroup                           {East Asia, South East Asia, East US... East Asia, South East Asia, East US,...
+    Microsoft.ApiManagement/service         {Central US, East US, East US 2, Nor... Central US, East US, East US 2, Nort...
+    Microsoft.AppService/apiapps            {East US, West US, South Central US,... East US, West US, South Central US, ...
+    ...
 
+Sie können folgendermaßen einen bestimmten Ressourcentyp angeben:
 
-- **--verbose und -vv-Optionen**: Nutzen Sie die **--verbose**-Option, um den ausführlichen Modus einzustellen und so die Schritte der einzelnen Vorgänge anzuzeigen `stdout`. Nutzen Sie für einen vollständigen Anforderungsverlauf einschließlich der Schritte, die **--verbose** aktiviert, die **-vv**-Option. Die Mitteilungen liefern häufig wertvolle Hinweise zur Ursache von Fehlern.
+    PS C:\> Get-AzureLocation | Where-Object Name -eq "Microsoft.Compute/virtualMachines" | Format-Table Name, LocationsString -Wrap
 
-- **Ihre Azure-Anmeldeinformationen wurden nicht eingestellt oder sind abgelaufen**: Geben Sie einfach `azure login` ein, um die Anmeldeinformationen zu aktualisieren. Stellen Sie für Hilfe mit Authentifizierungsfehlern sicher, dass Sie die [Azure-Befehlszeilenschnittstelle korrekt konfiguriert](../xplat-cli-connect.md) haben.
+    Name                                                        LocationsString
+    ----                                                        ---------------
+    Microsoft.Compute/virtualMachines                           East US, East US 2, West US, Central US, South Central US,
+                                                                North Europe, West Europe, East Asia, Southeast Asia,
+                                                                Japan East, Japan West
 
-## Fehlervermeidung in Windows PowerShell
+### Azure-Befehlszeilenschnittstelle
 
-Das AzureResourceManager-Modul umfasst Cmdlets, mit denen Sie Fehler vermeiden können.
+Verwenden Sie bei der Azure-Befehlszeilenschnittstelle den Befehl **azure location list**. Da die Liste der Speicherorte lang sein kann und es viele Anbieter gibt, können Sie Tools verwenden, um Anbieter und Speicherorte zu überprüfen, bevor Sie einen Speicherort nutzen, der noch nicht zur Verfügung steht. Das folgende Skript ermittelt mithilfe von **jq** die Standorte, an denen der Ressourcenanbieter für virtuelle Azure-Computer verfügbar ist.
 
+    azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
+    {
+      "name": "Microsoft.Compute/virtualMachines",
+      "location": "East US,East US 2,West US,Central US,South Central US,North Europe,West Europe,East Asia,Southeast Asia,Japan East,Japan West"
+    }
 
-- **Get-AzureLocation**: Dieses Cmdlet ruft die Speicherorte ab, die die einzelnen Ressourcentypen unterstützen. Bevor Sie einen Speicherort für eine Ressource eingeben, verwenden Sie dieses Cmdlet, um zu überprüfen, ob der Speicherort den Ressourcentyp unterstützt.
+### REST-API
+        
+Informationen zur REST-API finden Sie unter [Abrufen von Informationen zu einem Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790534.aspx).
 
+## Erstellen eindeutiger Ressourcennamen
 
-- **Test-AzureResourceGroupTemplate**: Testen Sie Ihre Vorlage und Vorlagenparameter, bevor Sie sie benutzen. Geben Sie eine benutzerdefinierte Vorlage oder eine Katalogvorlage und die Vorlagenparameterwerte ein, die Sie verwenden möchten. Dieses Cmdlet testet, ob die Vorlage intern konsistent ist und ob die Parameterwerte der Vorlage entsprechen.
-
-## Informationserwerb zur Behebung von Bereitstellungsproblemen in Windows PowerShell
-
-- **Get-AzureResourceGroupLog**: Dieses Cmdlet ruft die Einträge im Protokoll für die einzelnen Bereitstellungen der Ressourcengruppe ab. Falls ein Fehler auftritt, sollten Sie zunächst die Bereitstellungsprotokolle untersuchen.
-
-- **Verbose und Debug**: Die Cmdlets im AzureResourceManager-Modul rufen REST-APIs auf, die die eigentliche Arbeit durchführen. Um die Meldungen anzuzeigen, die von den APIs zurückgegeben werden, legen Sie die $DebugPreference-Variable auf "Continue" fest und verwenden in Ihren Befehlen den allgemeinen Verbose-Parameter. Die Mitteilungen liefern häufig wertvolle Hinweise zur Ursache von Fehlern.
-
-- **Ihre Azure-Anmeldeinformationen wurden nicht eingestellt oder sind abgelaufen**: Verwenden Sie das Cmdlet **Add-AzureAccount**, um die Anmeldeinformationen während Ihrer Windows PowerShell-Sitzung zu aktualisieren. Die Anmeldeinformationen in einer Datei mit Veröffentlichungseinstellungen sind für die Cmdlets im AzureResourceManager-Modul nicht ausreichend.
+Bei einigen Ressourcen, insbesondere Speicherkonten, Datenbankservern und Websites, müssen Sie einen im gesamten Azure-Dienst eindeutigen Namen für die Ressource angeben. Derzeit gibt es keine Möglichkeit, einen Namen auf seine Eindeutigkeit zu testen. Es wird empfohlen, eine Benennungskonvention zu verwenden, die wahrscheinlich nicht von anderen Organisationen verwendet wird.
 
 ## Probleme mit Authentifizierung, Abonnement, Rolle und Kontingent
 
@@ -211,7 +243,7 @@ Es gibt ein oder mehrere mögliche Probleme, die eine erfolgreiche Bereitstellun
 
 Doch mit Azure Active Directory können Sie oder Ihr Verwalter sehr genau kontrollieren, welche Identitäten auf welche Ressourcen Zugriff haben. Falls Ihre Bereitstellungen nicht erfolgreich sind, überprüfen Sie die eigentlichen Anfragen auf Anzeichen von Authentifizierungs- oder Autorisierungsproblemen sowie die Bereitstellungsprotokolle für Ihre Ressourcengruppen. Dabei stellen Sie unter Umständen fest, dass Sie nicht für alle Ressourcen über Berechtigungen verfügen. Mithilfe der Azure-Befehlszeilenschnittstelle können Sie über die `azure ad` Befehle Azure Active Directory-Mandanten und -Benutzer überprüfen. (Eine vollständige Liste mit den Befehlen der Azure-Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md).)
 
-Probleme können auch auftreten, wenn eine Bereitstellung ein Standardkontingent erreicht (etwa für eine Ressourcengruppe, ein Abonnement, ein Konto oder Ähnliches). Vergewissern Sie sich, dass Sie über die für eine einwandfreie Bereitstellung benötigten Ressourcen verfügen. Die vollständigen Kontingentinformationen finden Sie unter [Azure-Abonnement und Service-Grenzen, Kontingente und Einschränkungen](../azure-subscription-service-limits.md).
+Probleme können auch auftreten, wenn eine Bereitstellung ein Standardkontingent erreicht (etwa für eine Ressourcengruppe, ein Abonnement, ein Konto oder Ähnliches). Vergewissern Sie sich, dass Sie über die für eine einwandfreie Bereitstellung benötigten Ressourcen verfügen. Die vollständigen Kontingentinformationen finden Sie unter [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../azure-subscription-service-limits.md).
 
 Um Ihre Abonnementkontingente für Kerne zu untersuchen, verwenden Sie den Befehl `azure vm list-usage` in der Azure-Befehlszeilenschnittstelle und das Cmdlet **Get-AzureVMUsage** in PowerShell. Im Folgenden wird der Befehl in der Azure-CLI gezeigt und veranschaulicht, dass das Kernkontingent für ein kostenloses Testkonto 4 ist:
 
@@ -231,10 +263,10 @@ Wenn Sie versuchen, eine Vorlage bereitzustellen, die mehr als vier Kerne in der
 
 In diesen Fällen sollten Sie zum Portal navigieren und ein Supportproblem einreichen, um Ihr Kontingent für die Region, in der Sie diese bereitstellen möchten, zu erhöhen.
 
-> [AZURE.NOTE] Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region „USA (West)“ bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für „USA (West)“ anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern.
-<!-- -->
-Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird:
-<!-- -->
+> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. 
+<!-- --> 
+Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: 
+<!-- --> 
         azure provider show Microsoft.Compute --json | jq '.resourceTypes[] | select(.name == "virtualMachines") | { name,apiVersions, locations}'
         {
           "name": "virtualMachines",
@@ -252,13 +284,26 @@ Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, 
         }
 
 
-## Probleme mit der Azure-Befehlszeilenschnittstelle und PowerShell-Modus
-
-Es kann sein, dass Azure-Ressourcen, die über die Serviceverwaltungs-API oder über das klassische Portal bereitgestellt wurden, bei Verwendung der Ressourcen-Manager-API oder des Azure-Portals nicht sichtbar sind. Ressourcen müssen mit der gleichen Ressourcen-Manager-API oder dem gleichen Portal verwaltet werden, die bzw. das Sie zum Erstellen verwendet haben. Ist eine Ressource verschwunden, überprüfen Sie Ihre Verfügbarkeit mithilfe der anderen Verwaltungs-API oder dem anderen Portal.
-
-## Registrierungsprobleme beim Azure-Ressourcenanbieter
+## Überprüfen der Ressourcenanbieterregistrierung
 
 Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonnement kann für die Verwendung eines bestimmten Anbieters konfiguriert werden. Falls Ihre Aktivierung die Nutzung eines bestimmten Anbieters vorsieht, muss dieser auch für die Nutzung registriert sein. Die meisten Anbieter werden automatisch über das Azure-Portal oder die verwendete Befehlszeilenschnittstelle registriert.
+
+### PowerShell
+
+Verwenden Sie zum Abrufen einer Liste der Ressourcenanbieter und Ihres Registrierungsstatus **Get-AzureProvider**.
+
+    PS C:\> Get-AzureProvider
+
+    ProviderNamespace                       RegistrationState                       ResourceTypes
+    -----------------                       -----------------                       -------------
+    Microsoft.AppService                    Registered                              {apiapps, appIdentities, gateways, d...
+    Microsoft.Batch                         Registered                              {batchAccounts}
+    microsoft.cache                         Registered                              {Redis, checkNameAvailability, opera...
+    ...
+
+Für die Registrierung bei einem Anbieter verwenden Sie **Register-AzureProvider**.
+
+### Azure-Befehlszeilenschnittstelle
 
 Um mithilfe der Azure-Befehlszeilenschnittstelle zu sehen, ob der Anbieter zur Nutzung registriert ist, verwenden Sie den `azure provider list` Befehl (es folgt ein gekürztes Beispiel für eine Ausgabe).
 
@@ -307,8 +352,14 @@ Um weitere Informationen zu Anbietern (einschließlich regionaler Verfügbarkeit
           "registrationState": "Registered"
         }
 
-
 Falls ein Anbieter registriert werden muss, verwenden Sie den `azure provider register <namespace>` Befehl, der den *Namespace*-Wert der vorhergehenden Liste nutzt.
+
+### REST-API
+
+Informationen zum Registrierungsstatus finden Sie unter [Abrufen von Informationen zu einem Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790534.aspx).
+
+Informationen zum Registrieren eines Anbieters finden Sie unter [Registrieren eines Abonnements bei einem Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790548.aspx).
+
 
 ## Grundlegendes zur erfolgreichen Bereitstellung benutzerdefinierter Vorlagen
 
@@ -316,78 +367,23 @@ Wenn Sie selbst erstellte Vorlagen verwenden, ist es wichtig zu verstehen, dass 
 
 Es bedeutet jedoch nicht zwangsläufig, dass Ihre Ressourcengruppe aktiv ist und für Benutzer bereitsteht. Zum Beispiel erfordern die meisten Bereitstellungen, dass die Bereitstellung Upgrades herunterlädt, auf andere Ressourcen ohne Vorlagen wartet oder komplexe Skripte oder andere ausführbare Aktivitäten installiert, die Azure nicht kennt, da es sich um keine Aktivität handelt, die ein Anbieter überwacht. In diesen Fällen kann einige Zeit vergehen, bis Ihre Ressourcen tatsächlich nutzungsbereit sind. Daher sollten Sie davon ausgehen, dass der Bereitstellungsstatus einige Zeit bevor Ihre Bereitstellung genutzt werden kann, erfolgreich ist.
 
-Sie können jedoch Azure daran hindern, einen erfolgreichen Bereitstellungsstatus zu melden, indem Sie ein benutzerdefiniertes Skript für Ihre benutzerdefinierte Vorlage erstellen (beispielsweise mithilfe von [CustomerScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)), das weiß, wie die gesamte Bereitstellung für eine systemweite Einsatzbereitschaft zu überwachen ist und nur erfolgreich zurückkehrt, wenn Benutzer mit der gesamten Bereitstellung interagieren können. Wenn Sie sicherstellen möchten, dass Ihre Erweiterung die letzte ist, die ausgeführt wird, verwenden Sie die **dependsOn**-Eigenschaft in Ihrer Vorlage. Ein Beispiel ist hier [hier](https://msdn.microsoft.com/library/azure/dn790564.aspx) zu sehen.
+Sie können jedoch Azure daran hindern, einen erfolgreichen Bereitstellungsstatus zu melden, indem Sie ein benutzerdefiniertes Skript für Ihre benutzerdefinierte Vorlage erstellen -- beispielsweise mithilfe der [CustomerScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) -- das weiß, wie die gesamte Bereitstellung für eine systemweite Einsatzbereitschaft zu überwachen ist und nur erfolgreich zurückkehrt, wenn Benutzer mit der gesamten Bereitstellung interagieren können. Wenn Sie sicherstellen möchten, dass Ihre Erweiterung die letzte ist, die ausgeführt wird, verwenden Sie die **dependsOn**-Eigenschaft in Ihrer Vorlage. Ein Beispiel ist hier [hier](https://msdn.microsoft.com/library/azure/dn790564.aspx) zu sehen.
 
-## Zusammenführen von Vorlagen
+## Nützliche Tools für die Interaktion mit Azure
+Wenn Sie mit Ihren Azure-Ressourcen über die Befehlszeile arbeiten, können Sie Tools verwenden, Sie bei Ihrer Arbeit unterstützen. Vorlagen für Azure-Ressourcengruppen sind JSON-Dokumente, und die Azure-Ressourcen-Manager-API akzeptiert JSON und gibt JSON zurück. JSON-Analysetools zählen also zu den ersten Instrumenten, die die Navigation durch Informationen zu Ihren Ressourcen sowie die Gestaltung von und die Interaktion mit Vorlagen und Parameterdateien von Vorlagen erleichtern.
 
-Manchmal ist es notwendig, zwei Vorlagen zusammenzuführen oder anhand einer übergeordneten Vorlage eine neue untergeordnete Vorlage einzuführen. Das kann durch Nutzung einer Bereitstellungsressource innerhalb der Mastervorlage geschehen, um eine untergeordnete Vorlage bereitzustellen.
+### Mac-, Linux- und Windows-Tools
+Wenn Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden, sind Sie wahrscheinlich mit den Standarddownloadtools wie **[curl](http://curl.haxx.se/)** und **[wget](https://www.gnu.org/software/wget/)** oder **[Resty](https://github.com/beders/Resty)** sowie mit JSON-Dienstprogrammen wie **[jq](http://stedolan.github.io/jq/download/)**, **[jsawk](https://github.com/micha/jsawk)** und Sprachbibliotheken vertraut, die JSON verarbeiten können. (Viele dieser Tools verfügen auch über Ports für Windows – beispielsweise [wget](http://gnuwin32.sourceforge.net/packages/wget.htm). Tatsächlich gibt es verschiedene Arten, um Linux und andere Open Source-Tools auch unter Windows auszuführen.)
 
+Dieses Thema beinhaltet einige Azure Befehlszeilenschnittstelle-Befehle, die Sie mit **jq** verwenden können, um auf effizientere Weise genau die Informationen zu erhalten, die Sie wünschen. Sie sollten für ein besseres Verständnis Ihres Azure-Ressourceneinsatzes ein Ihnen vertrautes Toolset wählen.
 
-    {
-            "name": "instance01",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2015-01-01",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "https://mystore.blob.windows.net/azurermtemplates/my-child-template.json",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "storageAccountName": { "value": "[variables('stgAcctName1')]" },
-                    "adminUsername": { "value": "[parameters('adminUsername')]" },
-                    "adminPassword": { "value": "[parameters('adminPassword')]" }
-                }
-            }
-    }
+### PowerShell
 
+PowerShell verfügt über mehrere Basisbefehle, um die gleichen Prozeduren auszuführen.
 
-## Übergreifendes Verwenden von Ressourcengruppen
+- Verwenden Sie das Cmdlet **[Invole-WebRequest](https://technet.microsoft.com/library/hh849901%28v=wps.640%29)**, um Dateien wie Ressourcengruppen-Vorlagen oder JSON-Parameterdateien herunterzuladen.
+- Verwenden Sie das Cmdlet **[ConvertFrom-Json](https://technet.microsoft.com/library/hh849898%28v=wps.640%29.aspx)**, um eine JSON-Zeichenfolge in ein benutzerdefiniertes Objekt zu konvertieren ([PSCustomObject](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pscustomobject%28v=vs.85%29.aspx)), das für jedes Feld in der JSON-Zeichenfolge eine Eigenschaft hat.
 
-Manchmal möchten Sie vielleicht eine Ressource von außerhalb der aktuellen Ressourcengruppe verwenden, in der eine Vorlage bereitgestellt wird. In diesem Fall wird üblicherweise ein Speicherkonto oder ein virtuelles Netzwerk in einer anderen Ressourcengruppe verwendet. Dies wird häufig verwendet, damit die Löschung der Ressourcengruppe mit den virtuellen Computern nicht zur Löschung der VHD-Blobs oder eines VNets führt, das von mehreren Ressourcengruppen genutzt wird. Das folgende Beispiel zeigt, wie eine Ressource einer externen Ressourcengruppe genutzt werden kann:
-
-
-    {
-      "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-          "virtualNetworkName": {
-              "type": "string"
-          },
-          "virtualNetworkResourceGroup": {
-              "type": "string"
-          },
-          "subnet1Name": {
-              "type": "string"
-          },
-          "nicName": {
-              "type": "string"
-          }
-      },
-      "variables": {
-          "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-          "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', parameters('subnet1Name'))]"
-      },
-      "resources": [
-      {
-          "apiVersion": "2015-05-01-preview",
-          "type": "Microsoft.Network/networkInterfaces",
-          "name": "[parameters('nicName')]",
-          "location": "[parameters('location')]",
-          "properties": {
-              "ipConfigurations": [{
-                  "name": "ipconfig1",
-                  "properties": {
-                      "privateIPAllocationMethod": "Dynamic",
-                      "subnet": {
-                          "id": "[variables('subnet1Ref')]"
-                      }
-                  }
-              }]
-           }
-      }]
-
-    }
 
 ## Nächste Schritte
 
@@ -397,4 +393,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

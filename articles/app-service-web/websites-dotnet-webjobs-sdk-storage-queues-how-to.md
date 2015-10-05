@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK"
-	description="Erfahren Sie, wie Sie Azure-Warteschlangenspeicher mit dem WebJobs-SDK nutzen. Sie können Warteschlangen erstellen und löschen, Warteschlangennachrichten einfügen, einsehen, abrufen und löschen und vieles mehr."
-	services="app-service\web, storage"
-	documentationCenter=".net"
-	authors="tdykstra"
-	manager="wpickett"
+	pageTitle="Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK" 
+	description="Erfahren Sie, wie Sie Azure-Warteschlangenspeicher mit dem WebJobs-SDK nutzen. Sie können Warteschlangen erstellen und löschen, Warteschlangennachrichten einfügen, einsehen, abrufen und löschen und vieles mehr." 
+	services="app-service\web, storage" 
+	documentationCenter=".net" 
+	authors="tdykstra" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="06/29/2015"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/22/2015" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK
@@ -586,4 +586,4 @@ In einer Azure-Tabelle sehen die Protokolle `Console.Out` und `Console.Error` wi
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

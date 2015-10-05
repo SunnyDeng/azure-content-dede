@@ -12,8 +12,8 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="05/19/2015"
+	ms.topic="hero-article" 
+	ms.date="09/08/2015"
 	ms.author="bwren"/>
 
 
@@ -146,4 +146,4 @@ Microsoft und die Azure Automation-Community stellen Beispiel-Runbooks zur Verf�
 
 **Geben Sie uns Feedback!** Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

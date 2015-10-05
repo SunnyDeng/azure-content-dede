@@ -1,22 +1,27 @@
 <properties 
-	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks ausschließlich für die Cloud"
-	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes, komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen."
-	services="virtual-machines, virtual-network"
-	documentationCenter=""
-	authors="cherylmc"
-	manager="adinah"
-	editor=""/>
+	pageTitle="Erstellen eines virtuellen Nur-Cloud-Netzwerks | Microsoft Azure" 
+	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes, komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen." 
+	services="virtual-machines, virtual-network" 
+	documentationCenter="" 
+	authors="cherylmc" 
+	manager="adinah" 
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-network"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/17/2015"
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/17/2015" 
 	ms.author="cherylmc"/>
 
 # Lernprogramm: Erstellen eines virtuellen Netzwerks nur für die Cloud in Azure
+
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+
 
 Dieses Lernprogramm führt Sie durch die Schritte im Azure-Verwaltungsportal zum Erstellen eines virtuellen Azure-Beispielnetzwerks, das ausschließlich für die Cloud gedacht ist und zwei Subnetze enthält. Das resultierende virtuelle Netzwerk sieht wie folgt aus:
 
@@ -118,4 +123,4 @@ Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie un
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

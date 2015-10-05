@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern"
-	description="Erfahren Sie, wie Sie Azure PowerShell zum Erstellen und Vorabkonfigurieren Linux-basierter virtueller Computer verwenden."
+	pageTitle="Erstellen eines virtuellen Linux-Computers mit Azure Powershell | Microsoft Azure"
+	description="In diesem Artikel erhalten Sie Informationen zum Erstellen und Vorabkonfigurieren eines virtuellen Linux-Computers mit Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -11,19 +11,23 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/09/2015"
 	ms.author="cynthn"/>
 
-# Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern
+# Erstellen und Vorabkonfigurieren eines virtuellen Linux-Computers mit Azure PowerShell
 
 > [AZURE.SELECTOR]
 - [Azure CLI](virtual-machines-linux-tutorial.md)
 - [PowerShell](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
-Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen, mit denen ein Linux-basierter virtueller Azure-Computer in der Dienstverwaltung mit einem Bausteinansatz erstellt und vorab konfiguriert wird. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Linux-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
+<br>
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
+Mit den folgenden Schritten können Sie mithilfe einer Reihe von Azure PowerShell-Befehlen einen virtuellen Linux-Computer mit dem klassischen Verwaltungsmodell erstellen und vorkonfigurieren. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Linux-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
 
 Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit Azure PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Fortgeschrittene Azure PowerShell-Benutzer können die Befehle verwenden und dabei die Variablen (Zeilen, die mit "$" beginnen) durch eigene Werte ersetzen.
 
@@ -42,7 +46,7 @@ Legen Sie Ihr Azure-Abonnement und Speicherkonto fest, indem Sie die folgenden B
 	Select-AzureSubscription -SubscriptionName $subscr –Current
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
-Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft **SubscriptionName** der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft **Beschriftung** der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeben. Sie können diese Befehle auch in einer Textdatei für die zukünftige Verwendung speichern.
+Sie erhalten den korrekten Abonnementnamen aus der **SubscriptionName**-Eigenschaft der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft **Beschriftung** der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeben. Sie können diese Befehle auch in einer Textdatei für die zukünftige Verwendung speichern.
 
 ## Schritt 3: Bestimmen der ImageFamily
 
@@ -260,4 +264,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

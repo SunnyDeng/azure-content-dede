@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/31/2015" 
+	ms.date="09/23/2015" 
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
@@ -22,6 +22,19 @@ Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder m�
 Der fortlaufende Export ist im kostenlosen Testzeitraum und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
 
 (Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".)
+
+## Erstellen eines Speicherkontos
+
+Wenn Sie noch nicht über ein "klassisches" Speicherkonto verfügen, erstellen Sie jetzt eins.
+
+
+1. Erstellen Sie ein "klassisches" Speicherkonto in Ihrem Abonnement im [Azure-Portal](https://portal.azure.com).
+
+    ![Wählen Sie im Azure-Portal "Neu", "Daten" und "Speicher".](./media/app-insights-export-telemetry/030.png)
+
+2. Erstellen eines Containers
+
+    ![Wählen Sie im neuen Speicher "Container" aus, klicken Sie auf die Kachel "Container" und anschließend auf "Hinzufügen".](./media/app-insights-export-telemetry/040.png)
 
 ## <a name="setup"></a> Einrichten des fortlaufenden Exports
 
@@ -204,4 +217,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

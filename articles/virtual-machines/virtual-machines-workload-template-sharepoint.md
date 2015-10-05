@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen | Microsoft Azure"
-	description="Mit Ressourcen-Manager-Vorlagen und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach eine SharePoint-Farm mit drei oder neun Servern bereitstellen."
+	pageTitle="Bereitstellen von SharePoint-Farmen mit ARM-Vorlagen | Microsoft Azure"
+	description="Mit Ressourcen-Manager-Vorlagen und dem Azure-Portal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach eine SharePoint-Farm mit 3 oder 9 Servern bereitstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -18,6 +18,8 @@
 	ms.author="davidmu"/>
 
 # Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Folgen Sie den Anweisungen in diesem Artikel, um mithilfe von Ressourcen-Manager-Vorlagen eine neue SharePoint Server 2013-Farm mit drei oder neun Servern bereitzustellen.
 
@@ -47,7 +49,7 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 ### Azure PowerShell
 
-Stellen Sie zunächst sicher, dass die richtige Version von Azure PowerShell installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Nähere Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-powershell.md#setting-up-powershell-for-resource-manager-templates).
+Stellen Sie zunächst sicher, dass die richtige Version von Azure PowerShell installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Ausführliche Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-powershell.md#setting-up-powershell-for-resource-manager-templates).
 
 Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
@@ -75,7 +77,7 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 ### Azure-Befehlszeilenschnittstelle
 
-Stellen Sie zunächst sicher, dass die richtige Version von Azure-Befehlszeilenschnittstelle installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Nähere Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-azure-cli.md#getting-ready).
+Stellen Sie zunächst sicher, dass die richtige Version von Azure-Befehlszeilenschnittstelle installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Ausführliche Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-azure-cli.md#getting-ready).
 
 Erstellen Sie zunächst eine neue Ressourcengruppe. Geben Sie mit dem folgenden Befehl den Namen der Gruppe und den Standort des Azure-Rechenzentrums für die Bereitstellung an.
 
@@ -120,7 +122,7 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 Stellen Sie zunächst sicher, dass die richtige Version von Azure PowerShell installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Ausführliche Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-powershell.md#setting-up-powershell-for-resource-manager-templates).
 
-Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
+Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
@@ -180,4 +182,4 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

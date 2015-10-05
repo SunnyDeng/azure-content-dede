@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Installieren von MongoDB auf einem virtuellen Computer unter Windows Server"
-	description="Erfahren Sie, wie Sie MongoDB auf einem virtuellen Azure-Computer unter Windows Server installieren."
+	pageTitle="Installieren von MongoDB auf einem virtuellen Windows-Computer | Microsoft Azure"
+	description="Erfahren Sie, wie Sie MongoDB auf einem virtuellen Azure-Computer installieren, der mit dem klassischen Bereitstellungsmodell unter Windows Server erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -18,6 +18,8 @@
 	ms.author="dkshir"/>
 
 #Installieren von MongoDB auf einem virtuellen Computer unter Windows Server
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Installation von Anwendungen auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
 
 [MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank. Im [Azure-Portal][AzureManagementPortal] können Sie über den Imagekatalog einen virtuellen Windows Server-Computer unter Verwendung des klassischen Bereitstellungsmodells erstellen. Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
 
@@ -48,4 +50,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Serv
 [MongoDB]: http://www.mongodb.org/
 [AzureManagementPortal]: http://manage.windowsazure.com
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

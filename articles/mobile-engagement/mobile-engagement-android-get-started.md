@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="Java"
 	ms.topic="hero-article"
-	ms.date="05/01/2015"
+	ms.date="09/22/2015"
 	ms.author="piyushjo" />
 
 # Erste Schritte mit Azure Mobile Engagement für Android-Apps
@@ -21,94 +21,53 @@
 > [AZURE.SELECTOR]
 - [Windows Universal](mobile-engagement-windows-store-dotnet-get-started.md)
 - [Windows Phone Silverlight](mobile-engagement-windows-phone-get-started.md)
-- [iOS - Obj C](mobile-engagement-ios-get-started.md)
-- [iOS - Swift](mobile-engagement-ios-swift-get-started.md)
+- [iOS | Obj C](mobile-engagement-ios-get-started.md)
+- [iOS | Swift](mobile-engagement-ios-swift-get-started.md)
 - [Android](mobile-engagement-android-get-started.md)
 - [Cordova](mobile-engagement-cordova-get-started.md)
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Engagement die Nutzung Ihrer App verstehen können und wie Sie Pushbenachrichtigungen an segmentierte Benutzer einer Android-Anwendung senden. In diesem Lernprogramm wird ein einfaches Übertragungsszenario mit Mobile Engagement dargestellt. Darin erstellen Sie eine leere Android-App, die einfache Daten erfasst und Pushbenachrichtigungen über Google Cloud Messaging (GCM) empfängt. Nach Abschluss dieses Lernprogramms können Sie Pushbenachrichtigungen an alle Geräte oder zielspezifische Benutzer basierend auf ihren Geräteeigenschaften übertragen. Bearbeiten Sie auch das nachfolgende Lernprogramm, um mehr über die Verwendung von Mobile Engagement zur Adressierung von speziellen Benutzern und Gerätegruppen zu erfahren.
-
+In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Engagement die Nutzung Ihrer App verstehen können und wie Sie Pushbenachrichtigungen an segmentierte Benutzer einer Android-Anwendung senden. In diesem Lernprogramm wird ein einfaches Übertragungsszenario mit Mobile Engagement dargestellt. Darin erstellen Sie eine leere Android-App, die einfache Daten erfasst und Pushbenachrichtigungen über Google Cloud Messaging (GCM) empfängt.
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Das Android SDK (es wird davon ausgegangen, dass Sie Android Studio verwenden), das Sie [hier herunterladen](http://go.microsoft.com/fwlink/?LinkId=389797) können.
 + Das [Mobile Engagement Android SDK]
 
-> [AZURE.IMPORTANT]Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für Android-Apps. Damit Sie es abschließen können, ist ein aktives Azure-Konto erforderlich. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.IMPORTANT]Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für Android-Apps. Damit Sie es abschließen können, ist ein aktives Azure-Konto erforderlich. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2FDE-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
-<!--
-##<a id="register"></a>Enable Google Cloud Messaging
+##<a id="setup-azme"></a>Einrichten von Mobile Engagement für Ihre iOS-App
 
-[WACOM.INCLUDE [Enable GCM](../../includes/mobile-services-enable-google-cloud-messaging.md)]
-
-You will use your GCM API key later when setting up your app for Mobile Engagement.
--->
-
-##<a id="setup-azme"></a>Einrichten von Mobile Engagement für Ihre App
-
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an, und klicken Sie im unteren Teil des Bildschirms auf **+NEW**.
-
-2. Klicken Sie auf **App-Dienste**, dann auf **Mobile Engagement** und anschließend auf **Erstellen**.
-
-    ![][7]
-
-3. Geben Sie in das Popupfenster, das angezeigt wird, die folgenden Informationen ein:
-
-    ![][8]
-
-    - **Name der Anwendung**: Sie können den Namen der Anwendung eingeben. Sie können jedes beliebige Zeichen verwenden.
-    - **Platform**: Wählen Sie die Zielplattform für die App (Wenn Ihre App auf mehrere Plattformen ausgerichtet ist, wiederholen Sie dieses Lernprogramm für jede Plattform).
-    - **Ressourcenname der Anwendung**: Dies ist der Name, mit dem Sie über APIs und URLs auf diese Anwendung zugreifen können. Wir empfehlen die ausschließliche Verwendung von konventionellen URL-Zeichen: Der automatisch generierte Name sollte eine sichere Basis bereitstellen. Wir empfehlen auch das Anfügen des Plattformnamens, um einen Namenskonflikt zu vermeiden, da dieser Name eindeutig sein muss.
-    - **Standort**: Wählen Sie das Rechenzentrum, in denen diese App (und vor allem die Sammlung – siehe unten) gehostet werden soll.
-    - **Sammlung**: Wenn Sie bereits eine Anwendung erstellt haben, wählen Sie eine zuvor erstellte Sammlung; wählen Sie andernfalls **Neue Sammlung**.
-    - **Name der Sammlung**: Dieser steht für die Anwendungsgruppe. Dadurch wird außerdem sichergestellt, dass sich alle Ihre Apps in einer Gruppe befinden, wodurch aggregierte Berechnungen möglich sind. Es wird dringend empfohlen, den Firmennamen oder die Abteilung zu verwenden.
-
-	Wenn Sie fertig sind, klicken Sie auf das Kontrollkästchen, um die Erstellung Ihrer App zu beenden.
-
-4. Klicken Sie nun auf die soeben in der Registerkarte **Anwendung** erstellte Anwendung, bzw. wählen Sie sie aus.
-
-    ![][9]
-
-5. Klicken Sie dann auf **Verbindungsinformationen**, um die **Verbindungseinstellungen** für die SDK-Integration anzuzeigen.
-
-    ![][10]
-
-6. Notieren Sie abschließend die **Verbindungszeichenfolge**, die Sie benötigen, um diese Anwendung aus dem Anwendungscode zu identifizieren.
-
-    ![][11]
-
-	>[AZURE.TIP]Sie können auch das Symbol **Kopieren** auf der rechten Seite der **Verbindungszeichenfolge** verwenden, um diese der Einfachheit halber in die Zwischenablage zu kopieren.
+[AZURE.INCLUDE [Erstellen einer Mobile Engagement-App im Portal](../../includes/mobile-engagement-create-app-in-portal.md)]
 
 ##<a id="connecting-app"></a>Verbinden Sie Ihre App mit dem Mobile Engagement-Back-End
 
-In diesem Lernprogramm wird eine "einfache Integration" dargestellt. Dabei handelt es sich um den minimalen erforderlichen Satz zur Sammlung von Daten und zum Senden einer Pushbenachrichtigung. Die vollständige Dokumentation zur Integration finden Sie in der [Dokumentation zum Mobile Engagement Android SDK].
+In diesem Lernprogramm wird eine "einfache Integration" dargestellt. Dabei handelt es sich um den minimalen erforderlichen Satz zur Sammlung von Daten und zum Senden einer Pushbenachrichtigung. Die vollständige Dokumentation zur Integration finden Sie unter [Android SDK für Mobile Engagement](../mobile-engagement-android-sdk-overview/).
 
 Wir werden eine einfache App mit Android Studio erstellen, um die Integration zu veranschaulichen.
 
 ###Erstellen eines neuen Android-Projekts
 
-Sie können diesen Schritt überspringen, wenn Sie bereits eine App besitzen und mit der Android-Entwicklung vertraut sind.
-
 1. Starten Sie **Android Studio**, und wählen Sie im Popupfenster die Option **Start a new Android Studio project** aus.
 
-    ![][12]
+    ![][1]
 
-2. Geben Sie den App-Namen und die Unternehmensdomäne ein. Notieren Sie sich diese Angaben, da Sie sie später benötigen, und klicken Sie auf **Next**.
+2. Geben Sie einen App-Namen und eine Unternehmensdomäne ein. Notieren Sie sich, was Sie eingeben, da Sie diese Informationen später verwenden. Klicken Sie auf **Weiter**.
 
-    ![][13]
+    ![][2]
 
-3. Wählen Sie jetzt den Zielformfaktor und die API-Ebene aus, und klicken Sie dann auf **Next**.
+3. Wählen Sie den Zielformfaktor und die API-Ebene aus, und klicken Sie auf **Next**.
+	
 	>[AZURE.NOTE]Mobile Engagement erfordert mindestens „API Level 10“ (Android 2.3.3).
 
-    ![][14]
+    ![][3]
 
-4. Jetzt wird eine Aktivität zur einfachen App hinzugefügt, bei der es sich um ihren hauptsächlichen und einzigen Bildschirm handelt. Stellen Sie sicher, dass **Blank Activity** ausgewählt ist, und klicken Sie dann auf **Next**.
+4. Wählen Sie hier **Blank Activity** aus (dies ist der einzige Bildschirm für diese App), und klicken Sie auf **Next**.
 
-    ![][15]
+    ![][4]
 
-5. Für den Zweck dieses Lernprogramms können Sie auf der letzten Seite des Assistenten alle Optionen unverändert lassen. Klicken Sie dann auf **Finish**.
+5. Übernehmen Sie schließlich die Standardeinstellungen, und klicken Sie auf **Finish**.
 
-    ![][16]
+    ![][5]
 
 Android Studio erstellt jetzt die Demo-App, in die wir Mobile Engagement integrieren.
 
@@ -120,36 +79,36 @@ Herunterladen und Integrieren der SDK-Bibliothek
 2. Extrahieren Sie die Archivdatei in einem Ordner auf Ihrem Computer.
 3. Ermitteln Sie die JAR-Bibliothek für die aktuelle Version dieses SDKs, und kopieren Sie sie in die Zwischenablage.
 
-	  ![][17]
+	  ![][6]
 
 4. Navigieren Sie zum **Projektabschnitt** (1), und fügen Sie die JAR-Datei in den Ordner "libs" (2) ein.
 
-	  ![][18]
+	  ![][7]
 
 5. Synchronisieren Sie das Projekt, um die Bibliothek zu laden.
 
-	  ![][19]
-
+	  ![][8]
 
 ###Verbinden der App mit Mobile Engagement-Back-End mithilfe der Verbindungszeichenfolge
 
-1. Kopieren Sie die folgenden Codezeilen in die Erstellung der Aktivität (muss nur an einer Stelle der App vorgenommen werden, in der Regel in der Hauptaktivität).
+1. Kopieren Sie die folgenden Codezeilen in die Erstellung der Aktivität (muss nur an einer Stelle der App vorgenommen werden, in der Regel in der Hauptaktivität). Öffnen Sie für diese Beispiel-App "MainActivity" im Ordner "Src" -> "main" -> "java", und fügen Sie Folgendes hinzu:
 
 		EngagementConfiguration engagementConfiguration = new EngagementConfiguration();
 		engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
 		EngagementAgent.getInstance(this).init(engagementConfiguration);
 
-2. Wechseln Sie zurück zum Azure-Portal auf der Seite **Verbindungsinformationen** Ihrer App und kopieren Sie die **Verbindungszeichenfolge**.
+2. Lösen Sie die Verweise auf, indem Sie ALT+EINGABE drücken oder die folgenden import-Anweisungen hinzufügen:
 
-	  ![][11]
+		import com.microsoft.azure.engagement.EngagementAgent;
+		import com.microsoft.azure.engagement.EngagementConfiguration;
 
-3. Fügen Sie diese in den `setConnectionString`-Parameter ein, um das bereitgestellte Beispiel wie folgt zu ersetzen („AppId“ und „Sdkkey“ wurden unten ausgeblendet).
+3. Wechseln Sie zurück zum Azure-Portal auf der Seite **Verbindungsinformationen** Ihrer App und kopieren Sie die **Verbindungszeichenfolge**.
+
+	  ![][9]
+
+4. Fügen Sie diese in den `setConnectionString`-Parameter ein, um das bereitgestellte Beispiel wie folgt zu ersetzen:
 
 		engagementConfiguration.setConnectionString("Endpoint=my-company-name.device.mobileengagement.windows.net;SdkKey=********************;AppId=*********");
-
-4. **EngagementConfiguration** und **EngagementAgent** werden möglicherweise als "nicht aufgelöst" angezeigt (im Code rot dargestellt). Klicken Sie auf die einzelnen nicht aufgelösten Klassen, und drücken Sie zur deren automatischer Auflösung ALT+EINGABE.
-
-	  ![][20]
 
 ###Hinzufügen von Berechtigungen und einer Dienstdeklaration
 
@@ -162,10 +121,6 @@ Herunterladen und Integrieren der SDK-Bibliothek
 		<uses-permission android:name="android.permission.VIBRATE" />
 		<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
 
-	Das Ergebnis sollte wie unten dargestellt angezeigt werden:
-
-	 ![][21]
-
 2. Fügen Sie folgendes zwischen den Tags `<application>` und `</application>` hinzu, um den Agentdienst zu deklarieren:
 
 		<service
@@ -174,36 +129,19 @@ Herunterladen und Integrieren der SDK-Bibliothek
  			android:label="<Your application name>"
  			android:process=":Engagement"/>
 
-3. Ersetzen Sie im soeben eingefügten Code die Beschriftung `"<Your application name>"`. Dies wird im Menü **Einstellungen** angezeigt. Hier können Benutzer die auf dem Gerät ausgeführten Dienste sehen. Sie können z. B. das Wort "Dienst" in der Beschriftung hinzufügen.
+3. Ersetzen Sie in dem Code, den Sie gerade eingefügt haben, `"<Your application name>"` in der Beschriftung (in "label"). Dies wird im Menü **Einstellungen** angezeigt. Hier können Benutzer die auf dem Gerät ausgeführten Dienste sehen. Sie können z. B. das Wort "Dienst" in der Beschriftung hinzufügen.
 
 ###Senden eines Bildschirms an Mobile Engagement
 
-Um mit dem Senden von Daten zu beginnen und sicherzustellen, dass die Benutzer aktiv sind, müssen Sie mindestens einen Bildschirm (Aktivität) an das Mobile Engagement-Back-End schicken. Dies wird dadurch erreicht, dass für unsere Aktivität mit der vom SDK bereitgestellten Klasse **EngagementActivity** eine Unterklasse erstellt wird. Ersetzen Sie dazu die übergeordnete Klasse von **MainActivity**, die sich vor **ActionBarActivity** befindet, durch **EngagementActivity**, wie unten veranschaulicht:
+Um mit dem Senden von Daten zu beginnen und sicherzustellen, dass die Benutzer aktiv sind, müssen Sie mindestens einen Bildschirm (Aktivität) an das Mobile Engagement-Back-End schicken.
 
- ![][22]
+Wechseln Sie zu **mainactivity.Java**, und fügen Sie Folgendes hinzu, um die **ActionBarActivity**-Basisklasse von **MainActivity** durch **EngagementActivity** zu ersetzen:
 
->[AZURE.NOTE]Vergessen Sie nicht, die Klasse aufzulösen, wenn sie rot dargestellt wird, indem Sie auf die Klasse klicken und ALT+EINGABE drücken.
+	public class MainActivity extends EngagementActivity {
 
-##<a id="monitor"></a>Vergewissern Sie sich, dass Ihre App mit der Echtzeitüberwachung verbunden ist.
+##<a id="monitor"></a>Verbinden der App mit Überwachung in Echtzeit
 
-In diesem Abschnitt erfahren Sie, wie Sie sicherstellen, dass Ihre App eine Verbindung mit dem Mobile Engagement-Back-End mithilfe der Echtzeitüberwachungsfunktion von Mobile Engagement herstellt.
-
-1. Navigieren Sie zum Mobile Engagement-Portal.
-
-	Stellen Sie über das Azure-Portal sicher, dass Sie sich in der App befinden, die wir für dieses Projekt verwenden, und klicken Sie dann am unteren Rand auf die Schaltfläche **Einbinden**.
-
-	 ![][26]
-
-2. Sie gelangen zu der Seite **Einstellungen** des Engagement-Portals Ihrer App. Klicken Sie dort auf die Registerkarte **Überwachen**, wie unten dargestellt. ![][30]
-
-3. Die Überwachung kann Ihnen ein beliebiges Gerät in Echtzeit anzeigen, das Ihre App startet. ![][31]
-
-4. Wechseln Sie wieder zu Android Studio, starten Sie die App entweder in der Überwachung oder auf einem verbundenen Gerät, indem Sie auf das grüne Dreieck klicken und dann das Gerät auswählen. ![][32]
-
-5. Wenn es funktioniert hat, sollte jetzt eine Sitzung in der Überwachung angezeigt werden!![][33]
-
-**Glückwunsch!** Sie haben den ersten Schritt dieses Lernprogramms mit einer App abgeschlossen, die eine Verbindung zum Mobile Engagement-Back-End herstellt, das bereits Daten sendet.
-
+[AZURE.INCLUDE [Verbinden der App mit Überwachung in Echtzeit](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
 ##<a id="integrate-push"></a>Aktivieren von Pushbenachrichtigungen und In-App-Messaging
 
@@ -258,33 +196,31 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern interagieren und diese mit
 2. Kopieren Sie die Ressourcen mithilfe der folgenden Schritte in das Projekt:
 	1. Navigieren Sie wieder zum heruntergeladenen SDK-Inhalt, und kopieren Sie den Ordner "res".
 
-		 ![][23]
+		 ![][13]
 
 	2. Wechseln Sie zurück zu Android Studio, und wählen Sie das Verzeichnis "main" mit den Projektdateien aus. Fügen Sie dieses anschließend ein, um die Ressourcen zum Projekt hinzuzufügen.
 
-		 ![][24]
+		 ![][14]
 
 ###Geben Sie ein Symbol für Benachrichtigungen an.
 
-Im folgenden Code wird das Symbol definiert, mit dem sowohl In-App- als auch Systembenachrichtigungen angezeigt werden.
-
-Dies ist für In-App-Benachrichtigungen optional, für Systembenachrichtigungen ist es jedoch obligatorisch. Android weist Systembenachrichtigungen mit ungültigen Symbolen zurück.
-
-Dieser XML-Codeausschnitt muss in die Datei "Manifest.xml" zwischen die Tags `<application>` und `</application>` eingefügt werden.
-
-Stellen Sie sicher, dass Sie ein Symbol in einem der **ziehbaren** Ordner verwenden (z. B. ``engagement_close.png``). **Mipmap**-Ordner werden nicht unterstützt.
+Fügen Sie den folgenden XML-Codeausschnitt in die Datei "Manifest.xml" zwischen die Tags `<application>` und `</application>` ein.
 
 		<meta-data android:name="engagement:reach:notification:icon" android:value="engagement_close"/>
 
-Dies ist nur ein Beispiel für die Syntax. Sie sollten natürlich ein Symbol verwenden, das entsprechend den [Android Entwurfsrichtlinien](http://developer.android.com/design/patterns/notifications.html) für Benachrichtigungen geeignet ist.
+Dies definiert das Symbol, das in System- und In-App-Benachrichtigungen angezeigt wird. Es ist für In-App-Benachrichtigungen optional, für Systembenachrichtigungen jedoch obligatorisch. Android weist Systembenachrichtigungen mit ungültigen Symbolen zurück.
 
-Sie sollten das Symbol für das **Startprogramm** nicht verwenden. Es weist eine andere Auflösung auf und befindet sich in der Regel in den Mipmap-Ordnern, die nicht unterstützt werden.
+Stellen Sie sicher, dass Sie ein Symbol in einem der **ziehbaren** Ordner verwenden (z. B. ``engagement_close.png``). **Mipmap**-Ordner werden nicht unterstützt.
 
->[AZURE.TIP]Um sicherzustellen, dass Sie die richtigen Auflösungen für Symbole verwenden, betrachten Sie [diese Beispiele](https://www.google.com/design/icons). Führen Sie einen Bildlauf nach unten zum Abschnitt **Benachrichtigung** durch, klicken Sie auf ein Symbol, und klicken Sie dann auf `PNGS`, um den ziehbaren Symbolsatz herunterzuladen. Es wird für jede Version des Symbols angezeigt, welche ziehbaren Ordner für welche Auflösung verwendet werden.
+>[AZURE.NOTE]Sie sollten das Symbol für das **Startprogramm** nicht verwenden. Es weist eine andere Auflösung auf und befindet sich in der Regel in den Mipmap-Ordnern, die nicht unterstützt werden.
+
+Für reale Apps können Sie ein Symbol verwenden, das entsprechend den [Android-Entwurfsrichtlinien](http://developer.android.com/design/patterns/notifications.html) für Benachrichtigungen geeignet ist.
+
+>[AZURE.TIP]Um sicherzustellen, dass Sie die richtigen Auflösungen für Symbole verwenden, betrachten Sie [diese Beispiele](https://www.google.com/design/icons). Scrollen Sie nach unten zum Abschnitt **Benachrichtigung**, klicken Sie auf ein Symbol, und klicken Sie dann auf `PNGS`, um den ziehbaren Symbolsatz herunterzuladen. Es wird für jede Version des Symbols angezeigt, welche ziehbaren Ordner für welche Auflösung verwendet werden.
 
 ###Aktivieren der App für den Empfang von GCM-Pushbenachrichtigungen
 
-1. Geben Sie die "gcm:sender"-Metadaten ein, kopieren Sie den folgenden Code, und fügen Sie ihn in die Datei "Manifest.xml" zwischen den Tags `<application>` und `</application>` ein. Der unten ausgeblendete Wert (mit Sternen) ist die `project number`, die von Ihrer Google Play-Konsole abgerufen wird. \\n ist beabsichtigt, stellen Sie daher sicher, dass Sie die Projektnummer damit endet.
+1. Fügen Sie in "Manifest.xml" Folgendes zwischen die Tags `<application>` und `</application>` ein, nachdem Sie die aus der Google Play-Konsole abgerufene `project number` ersetzt haben. \\n ist beabsichtigt, stellen Sie daher sicher, dass Sie die Projektnummer damit endet.
 
 		<meta-data android:name="engagement:gcm:sender" android:value="************\n" />
 
@@ -319,78 +255,76 @@ Damit Mobile Engagement Pushbenachrichtigungen in Ihrem Namen senden kann, müss
 
 	Stellen Sie über das Azure-Portal sicher, dass Sie sich in der App befinden, die wir für dieses Projekt verwenden, und klicken Sie dann am unteren Rand auf die Schaltfläche **Einbinden**:
 
-	 ![][26]
+	![][15]
 
-2. Sie befinden sich jetzt auf der Seite **Einstellungen** des Mobile Engagement-Portals. Klicken Sie hier auf den Abschnitt **Systemeigener Push**, um Ihren GCM-Schlüssel einzugeben: ![][27]
+2. Klicken Sie dann auf den Abschnitt **Einstellungen** -> **Systemeigener Push**, um Ihren GCM-Schlüssel einzugeben:
+	  
+	![][16]
 
-3. Klicken Sie im Abschnitt **GCM-Einstellungen** auf das Symbol **Bearbeiten** vor **API-Schlüssel**, wie unten gezeigt: ![][28]
+3. Klicken Sie im Abschnitt **GCM-Einstellungen** auf das Symbol **Bearbeiten** vor **API-Schlüssel**, wie unten gezeigt:
+	  
+	![][17]
 
 4. Fügen Sie den im Abschnitt [Aktivieren von Google Cloud Messaging](#register) erhaltenen GCM-Serverschlüssel ein, und klicken Sie dann auf **OK**.
 
-	 ![][29]
-
-Sie sind fertig, und wir werden jetzt überprüfen, ob Sie diese einfache Integration ordnungsgemäß durchgeführt haben.
-
-> [AZURE.IMPORTANT]Stellen Sie sicher, dass Sie für die Erstellung und den Start diesen neuen Code verwenden, beenden Sie dann die App, und warten Sie ungefähr eine Minute, bevor Sie die folgenden Schritte ausführen:
+	![][18]
 
 ##<a id="send"></a>Versenden von Benachrichtigungen an die App
 
 Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Benachrichtigung an die App sendet.
 
-1. Navigieren Sie zu der Registerkarte **REACH** in Ihrem Mobile Engagement-Portal.![][34]
+1. Navigieren Sie zu der Registerkarte **REACH** in Ihrem Mobile Engagement-Portal.
+	 
+2. Klicken Sie auf **Neue Ankündigung**, um die Push-Benachrichtigungskampagne zu erstellen.
+	 
+	![][20]
 
-2. Klicken Sie auf **Neue Ankündigung**, um die Push-Benachrichtigungskampagne zu erstellen. ![][35]
+3. Richten Sie das erste Feld der Kampagne mit den folgenden Schritten ein:
+	 
+	![][21]
 
-3. Richten Sie das erste Feld der Kampagne mit den folgenden Schritten ein: ![][36]
+	a. Benennen der Kampagne.
 
-	1. Wählen Sie einen beliebigen Namen für die Kampagne.
-	2. Wählen Sie für **Übermittlungstyp** *Systembenachrichtigung/Einfach*: Dies ist der einfache Android-Pushbenachrichtigungstyp, der einen Titel und eine kleine Textzeile unterstützt.
-	3. Wählen Sie für **Lieferzeit** die Option *Jederzeit* aus, um eine Benachrichtigung darüber zu erhalten, ob die App gestartet wurde oder nicht.
-	4. Geben Sie in den Benachrichtigungstext den Titel ein, der im Push-Vorgang fett gedruckt erscheint.
-	5. Geben Sie dann Ihre Nachricht ein.
+	b. Wählen Sie für **Übermittlungstyp** *Systembenachrichtigung/Einfach*: Dies ist der einfache Android-Pushbenachrichtigungstyp, der einen Titel und eine kleine Textzeile unterstützt.
 
-4. Navigieren Sie nach unten, und wählen Sie im **Inhaltsbereich** die Option **Nur Benachrichtigung** aus. ![][37]
+	c. Wählen Sie für **Lieferzeit** die Option *Jederzeit* aus, um eine Benachrichtigung darüber zu erhalten, ob die App gestartet wurde oder nicht.
 
-5. Sie haben das Festlegen der Basiskampagne abgeschlossen, scrollen Sie nun nach unten und erstellen Sie Ihre Kampagne, um sie zu speichern!![][38]
+	d. Geben Sie in den Benachrichtigungstext den **Titel** ein, der im Pushvorgang fett gedruckt erscheint.
 
-6. Als letzten Schritt aktivieren Sie die Kampagne. ![][39]
+	e. Geben Sie dann Ihre **Nachricht** ein.
 
+4. Scrollen Sie nach unten, und wählen Sie im **Inhaltsbereich** die Option **Nur Benachrichtigung** aus.
+
+	![][22]
+
+5. Sie haben das Festlegen der Basiskampagne abgeschlossen. Scrollen Sie nun wieder nach unten, und klicken Sie auf die Schaltfläche **Erstellen**, um Ihre Kampagne zu speichern.
+
+6. Als letzten Schritt klicken Sie auf **Aktivieren**, um die Kampagne zu aktivieren, damit Pushbenachrichtigungen gesendet werden.
+    
+	![][24]
 
 <!-- URLs. -->
 [Mobile Engagement Android SDK]: http://go.microsoft.com/?linkid=9863935
-[Dokumentation zum Mobile Engagement Android SDK]: http://go.microsoft.com/?linkid=9874682
+[Mobile Engagement Android SDK documentation]: http://go.microsoft.com/?linkid=9874682
 <!-- Images. -->
-[7]: ./media/mobile-engagement-android-get-started/create-mobile-engagement-app.png
-[8]: ./media/mobile-engagement-android-get-started/create-azme-popup.png
-[9]: ./media/mobile-engagement-android-get-started/select-app.png
-[10]: ./media/mobile-engagement-android-get-started/app-main-page-select-connection-info.png
-[11]: ./media/mobile-engagement-android-get-started/app-connection-info-page.png
-[12]: ./media/mobile-engagement-android-get-started/android-studio-new-project.png
-[13]: ./media/mobile-engagement-android-get-started/android-studio-project-props.png
-[14]: ./media/mobile-engagement-android-get-started/android-studio-project-props2.png
-[15]: ./media/mobile-engagement-android-get-started/android-studio-add-activity.png
-[16]: ./media/mobile-engagement-android-get-started/android-studio-activity-name.png
-[17]: ./media/mobile-engagement-android-get-started/sdk-content.png
-[18]: ./media/mobile-engagement-android-get-started/paste-jar.png
-[19]: ./media/mobile-engagement-android-get-started/sync-project.png
-[20]: ./media/mobile-engagement-android-get-started/resolve-classes.png
-[21]: ./media/mobile-engagement-android-get-started/permissions.png
-[22]: ./media/mobile-engagement-android-get-started/subclass-activity.png
-[23]: ./media/mobile-engagement-android-get-started/copy-resources.png
-[24]: ./media/mobile-engagement-android-get-started/paste-resources.png
-[26]: ./media/mobile-engagement-android-get-started/engage-button.png
-[27]: ./media/mobile-engagement-android-get-started/engagement-portal.png
-[28]: ./media/mobile-engagement-android-get-started/native-push-settings.png
-[29]: ./media/mobile-engagement-android-get-started/api-key.png
-[30]: ./media/mobile-engagement-android-get-started/clic-monitor-tab.png
-[31]: ./media/mobile-engagement-android-get-started/monitor.png
-[32]: ./media/mobile-engagement-android-get-started/launch.png
-[33]: ./media/mobile-engagement-android-get-started/monitor-trafic.png
-[34]: ./media/mobile-engagement-android-get-started/reach-tab.png
-[35]: ./media/mobile-engagement-android-get-started/new-announcement.png
-[36]: ./media/mobile-engagement-android-get-started/campaign-first-params.png
-[37]: ./media/mobile-engagement-android-get-started/campaign-content.png
-[38]: ./media/mobile-engagement-android-get-started/campaign-create.png
-[39]: ./media/mobile-engagement-android-get-started/campaign-activate.png
+[1]: ./media/mobile-engagement-android-get-started/android-studio-new-project.png
+[2]: ./media/mobile-engagement-android-get-started/android-studio-project-props.png
+[3]: ./media/mobile-engagement-android-get-started/android-studio-project-props2.png
+[4]: ./media/mobile-engagement-android-get-started/android-studio-add-activity.png
+[5]: ./media/mobile-engagement-android-get-started/android-studio-activity-name.png
+[6]: ./media/mobile-engagement-android-get-started/sdk-content.png
+[7]: ./media/mobile-engagement-android-get-started/paste-jar.png
+[8]: ./media/mobile-engagement-android-get-started/sync-project.png
+[9]: ./media/mobile-engagement-android-get-started/app-connection-info-page.png
+[13]: ./media/mobile-engagement-android-get-started/copy-resources.png
+[14]: ./media/mobile-engagement-android-get-started/paste-resources.png
+[15]: ./media/mobile-engagement-android-get-started/engage-button.png
+[16]: ./media/mobile-engagement-android-get-started/engagement-portal.png
+[17]: ./media/mobile-engagement-android-get-started/native-push-settings.png
+[18]: ./media/mobile-engagement-android-get-started/api-key.png
+[20]: ./media/mobile-engagement-android-get-started/new-announcement.png
+[21]: ./media/mobile-engagement-android-get-started/campaign-first-params.png
+[22]: ./media/mobile-engagement-android-get-started/campaign-content.png
+[24]: ./media/mobile-engagement-android-get-started/campaign-activate.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

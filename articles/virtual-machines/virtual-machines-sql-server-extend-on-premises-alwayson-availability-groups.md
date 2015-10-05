@@ -1,11 +1,13 @@
 <properties 
-   pageTitle="Erweitern von lokalen AlwaysOn-Verfügbarkeitsgruppen auf Azure"
-   description="Dieses Lernprogramm beschreibt die Verwendung des Assistenten zum Hinzufügen von Replikaten in SQL Server Management Studio (SSMS) zum Hinzufügen einer Replikats einer AlwaysOn-Verfügbarkeitsgruppe in Azure."
+   pageTitle="Erweitern von lokalen AlwaysOn-Verfügbarkeitsgruppen auf Azure | Microsoft Azure"
+   description="In diesem Lernprogramm werden mit dem klassischen Bereitstellungsmodell erstellte Ressourcen verwendet. Es beschreibt die Verwendung des Assistenten zum Hinzufügen von Replikaten in SQL Server Management Studio (SSMS) zum Hinzufügen eines Replikats einer AlwaysOn-Verfügbarkeitsgruppe in Azure."
    services="virtual-machines"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
-   editor="monicar" />
+   editor="monicar"
+   tags="azure-service-management"/>
+
 <tags 
    ms.service="virtual-machines"
    ms.devlang="na"
@@ -19,15 +21,17 @@
 
 AlwaysOn-Verfügbarkeitsgruppen bieten hohe Verfügbarkeit für Datenbankgruppen durch Hinzufügen sekundärer Replikate. Diese Replikate ermöglichen den Failover von Datenbanken bei Ausfällen. Darüber hinaus können Sie für das Auslagern von Lesearbeitslasten oder Sicherungsaufgaben verwendet werden.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
 Sie können lokale Verfügbarkeitsgruppen nach Microsoft Azure erweitern, indem Sie eine oder mehrere Azure-VMs mit SQL Server bereitstellen und diese dann Ihren lokalen Verfügbarkeitsgruppen als Replikate hinzufügen.
 
 Dieses Lernprogramm setzt voraus, dass Sie über die folgenden Punkte verfügen:
 
-- Ein aktives Azure-Abonnement. Sie können sich [für eine kostenlose Testversion registrieren](http://azure.microsoft.com/pricing/free-trial).
+- Ein aktives Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial) registrieren.
 
-- Eine vorhandene, lokale AlwaysOn-Verfügbarkeitsgruppe. Weitere Informationen zu Verfügbarkeitsgruppen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppen (SQL Server)](https://msdn.microsoft.com/library/hh510230.aspx).
+- Eine vorhandene, lokale AlwaysOn-Verfügbarkeitsgruppe. Weitere Informationen zu Verfügbarkeitsgruppen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppen](https://msdn.microsoft.com/library/hh510230.aspx).
 
-- Konnektivität zwischen dem lokalen Netzwerk und Ihrem virtuellen Azure-Netzwerk. Weitere Informationen zum Erstellen dieses virtuellen Netzwerks finden Sie unter [Konfigurieren eines standortübergreifenden VPN im Verwaltungsportal](../vpn-gateway/vpn-gateway-site-to-site-create.md).
+- Konnektivität zwischen dem lokalen Netzwerk und Ihrem virtuellen Azure-Netzwerk. Weitere Informationen zum Erstellen dieses virtuellen Netzwerks finden Sie unter [Konfigurieren eines Site-to-Site-VPN im Verwaltungsportal](../vpn-gateway/vpn-gateway-site-to-site-create.md).
 
 ## Assistent zum Hinzufügen von Azure-Replikaten
 
@@ -41,7 +45,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den **Assistenten zum Hinzufügen von 
 
 	![SQL](./media/virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups/IC742861.png)
 
-1. In diesem Fall müssen Sie Verbindungen mit allen vorhandenen sekundären Replikaten herstellen. Klicken Sie neben den einzelnen Replikaten auf **Verbinden…** oder alternativ unten auf dem Bildschirm auf **Alle verbinden…**. Klicken Sie nach der Authentifizierung auf **Weiter** um zum nächsten Bildschirm zu gelangen.
+1. In diesem Fall müssen Sie Verbindungen mit allen vorhandenen sekundären Replikaten herstellen. Klicken Sie neben den einzelnen Replikaten auf **Verbinden…** oder alternativ unten auf dem Bildschirm auf **Alle verbinden…**. Klicken Sie nach der Authentifizierung auf **Weiter**, um zum nächsten Bildschirm zu gelangen.
 
 1. Auf der Seite **Replikate angeben** sind entlang der Oberkante mehrere Registerkarten aufgeführt: **Replikate**, **Endpunkte**, **Sicherungseinstellungen** und **Listener**. Klicken Sie auf der Registerkarte **Replikate** auf **Azure-Replikat hinzufügen…**, um den Assistenten zum Hinzufügen von Azure-Replikaten zu starten.
 
@@ -71,23 +75,23 @@ In diesem Abschnitt erfahren Sie, wie Sie den **Assistenten zum Hinzufügen von 
 
 1. Als Nächstes werden die rechtlichen Bestimmungen angezeigt. Lesen Sie die Bedingungen durch, und klicken Sie auf **OK**, wenn Sie ihnen zustimmen.
 
-1. Die Seite **Replikate angeben** wird erneut angezeigt. Überprüfen Sie die Einstellungen für das neue Azure-Replikat auf den Registerkarten **Replikate**, **Endpunkte** und **Sicherheitseinstellungen**. Ändern Sie die Einstellungen entsprechend Ihren Geschäftsanforderungen. Weitere Informationen zu den auf diesen Registerkarten aufgeführten Parametern finden Sie unter [Seite „Replikate angeben“ (Assistent für neue Verfügbarkeitsgruppen/Assistent zum Hinzufügen von Replikaten)](https://msdn.microsoft.com/library/hh213088.aspx). Beachten Sie, dass für Verfügbarkeitsgruppen, die Azure-Replikate enthalten, keine Listener auf der Registerkarte „Listener“ erstellt werden können. Ferner wird, wenn vor dem Ausführen des Assistenten bereits ein Listener erstellt wurde, eine Meldung angezeigt, die Sie darauf hinweist, dass der Listener von Azure nicht unterstützt wird. Das Erstellen von Listenern wird im Abschnitt **Erstellen von Listenern für Verfügbarkeitsgruppen** behandelt.
+1. Die Seite **Replikate angeben** wird erneut angezeigt. Überprüfen Sie die Einstellungen für das neue Azure-Replikat auf den Registerkarten **Replikate**, **Endpunkte** und **Sicherungseinstellungen**. Ändern Sie die Einstellungen entsprechend Ihren Geschäftsanforderungen. Weitere Informationen zu den auf diesen Registerkarten aufgeführten Parametern finden Sie unter [Seite "Replikate angeben" (Assistent für neue Verfügbarkeitsgruppen/Assistent zum Hinzufügen von Replikaten)](https://msdn.microsoft.com/library/hh213088.aspx). Beachten Sie, dass für Verfügbarkeitsgruppen, die Azure-Replikate enthalten, keine Listener auf der Registerkarte "Listener" erstellt werden können. Ferner wird, wenn vor dem Ausführen des Assistenten bereits ein Listener erstellt wurde, eine Meldung angezeigt, die Sie darauf hinweist, dass der Listener von Azure nicht unterstützt wird. Das Erstellen von Listenern wird im Abschnitt **Erstellen von Listenern für Verfügbarkeitsgruppen** behandelt.
 
 	![SQL](./media/virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups/IC742865.png)
 
 1. Klicken Sie auf **Weiter**.
 
-1. Wählen Sie auf der Seite **Anfängliche Datensynchronisierung auswählen** die gewünschte Methode der Datensynchronisierung aus, und klicken Sie auf **Weiter**. Für die meisten Szenarien sollten Sie **Vollständige Datensynchronisation** auswählen. Weitere Informationen zu Methoden der Datensynchronisierung finden Sie unter [Seite „Anfängliche Datensynchronisierung auswählen“ (Assistenten für AlwaysOn-Verfügbarkeitsgruppen)](https://msdn.microsoft.com/library/hh231021.aspx).
+1. Wählen Sie auf der Seite **Anfängliche Datensynchronisierung auswählen** die gewünschte Methode der Datensynchronisierung aus, und klicken Sie auf **Weiter**. Für die meisten Szenarien sollten Sie **Vollständige Datensynchronisation** auswählen. Weitere Informationen zu Methoden der Datensynchronisierung finden Sie unter [Seite "Anfängliche Datensynchronisierung auswählen" (Assistenten für AlwaysOn-Verfügbarkeitsgruppen)](https://msdn.microsoft.com/library/hh231021.aspx).
 
 1. Überprüfen Sie die Ergebnisse auf der Seite **Überprüfung**. Beheben Sie noch bestehende Probleme, und führen Sie die Überprüfung ggf. erneut aus. Klicken Sie auf **Weiter**.
 
 	![SQL](./media/virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups/IC742866.png)
 
-1. Überprüfen Sie die Einstellungen auf der Seite **Zusammenfassung**, und klicken Sie dann **Fertig stellen**.
+1. Überprüfen Sie die Einstellungen auf der Seite **Zusammenfassung**, und klicken Sie dann auf **Fertig stellen**.
 
 1. Der Bereitstellungsvorgang beginnt. Wenn der Assistent erfolgreich abgeschlossen wird, klicken Sie auf **Schließen**, um den Assistenten zu verlassen.
 
->[AZURE.NOTE]Der Assistent zum Hinzufügen von Azure-Replikaten erstellt eine Protokolldatei unter <Users><Benutzername>\\AppData\\Local\\SQL Server\\AddReplicaWizard. Diese Protokolldatei kann zum Beheben von Fehlern in fehlerhaften Azure-Replikatbereitstellungen verwendet werden. Wenn der Assistent keinerlei Aktionen ausführt, wird ein Rollback aller zuvor vorgenommenen Vorgänge ausgeführt, einschließlich der Löschung der bereitgestellten VM.
+>[AZURE.NOTE]Der Assistent zum Hinzufügen von Azure-Replikaten erstellt eine Protokolldatei unter <Users>"<Benutzername>\\AppData\\Local\\SQL Server\\AddReplicaWizard". Diese Protokolldatei kann zum Beheben von Fehlern in fehlerhaften Azure-Replikatbereitstellungen verwendet werden. Wenn der Assistent keinerlei Aktionen ausführt, wird ein Rollback aller zuvor vorgenommenen Vorgänge ausgeführt, einschließlich der Löschung der bereitgestellten VM.
 
 ## Erstellen eines Listeners für eine Verfügbarkeitsgruppe
 
@@ -95,8 +99,8 @@ Nach dem Erstellen der Verfügbarkeitsgruppe sollten Sie einen Listener für Cli
 
 ## Nächste Schritte
 
-Über die Verwendung des **Assistenten zum Hinzufügen von Azure-Replikaten** zum Erweitern Ihrer AlwaysOn-Verfügbarkeitsgruppe in Azure hinaus können Sie auch einen Teil Ihrer SQL Server-Arbeitslasten vollständig nach Azure auslagern. Informationen zum Einstieg finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure](virtual-machines-provision-sql-server.md).
+Über die Verwendung des **Assistenten zum Hinzufügen von Azure-Replikaten** zum Erweitern Ihrer AlwaysOn-Verfügbarkeitsgruppe in Azure hinaus können Sie auch einen Teil Ihrer SQL Server-Arbeitslasten vollständig nach Azure auslagern. Informationen zum Einstieg finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
 
-Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
+Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

@@ -1,12 +1,13 @@
-<properties 
-	pageTitle="Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern (PowerShell)"
-	description="Verwenden von PowerShell zum Erstellen einer AlwaysOn-Verfügbarkeitsgruppe in Azure."
+<properties
+	pageTitle="Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern | Microsoft Azure"
+	description="In diesem Lernprogramm werden Ressourcen verwendet, die mit dem klassischen Bereitstellungsmodell erstellt wurden, um mithilfe von PowerShell eine AlwaysOn-Verfügbarkeitsgruppe in Azure zu erstellen."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
-<tags 
+	editor="monicar"
+	tags="azure-service-management" />
+<tags
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
@@ -17,7 +18,13 @@
 
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern (PowerShell)
 
->[AZURE.NOTE]Informationen zum GUI-basierten Tutorial des gleichen Szenarios finden Sie unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)](virtual-machines-sql-server-alwayson-availability-groups-gui.md).
+> [AZURE.SELECTOR]
+- [Portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
+- [PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
+
+<br/>
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Virtuelle Azure-Computer (VMs) können Datenbankadministratoren helfen, die Kosten für die Implementierung von hoch verfügbaren SQL Server-Systemen zu senken. In diesem Tutorial erfahren Sie, wie Sie eine Verfügbarkeitsgruppe mithilfe von SQL Server AlwaysOn End-to-End in einer Azure-Umgebung implementieren können. Am Ende des Tutorials besteht Ihre SQL Server AlwaysOn-Lösung in Azure aus folgenden Elementen:
 
@@ -49,10 +56,10 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 
 		Import-Module "C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\Azure\Azure.psd1"
 		Get-AzurePublishSettingsFile
-		Import-AzurePublishSettingsFile <publishsettingsfilepath> 
+		Import-AzurePublishSettingsFile <publishsettingsfilepath>
 
 	Der Befehl **Get-AzurePublishgSettingsFile** erstellt automatisch ein Verwaltungszertifikat für Azure, das auf Ihren Computer heruntergeladen wird. Ein Browser wird automatisch geöffnet, und Sie werden aufgefordert, die Anmeldeinformationen Ihres Microsoft-Kontos für Ihr Azure-Abonnement einzugeben. Die heruntergeladene **PUBLISHSETTINGS**-Datei enthält alle Informationen, die Sie zum Verwalten Ihres Azure-Abonnements benötigen. Importieren Sie diese Datei, nachdem Sie sie in einem lokalen Verzeichnis gespeichert haben, mithilfe des Befehls **Import-AzurePublishSettingsFile**.
-	
+
 	>[AZURE.NOTE]Die PUBLISHSETTINGS-Datei enthält Ihre Anmeldeinformationen (unverschlüsselt) für die Verwaltung Ihrer Azure-Abonnements und -Dienste. Die bewährte Sicherheitsmethode für diese Datei besteht im vorübergehenden Speichern außerhalb Ihrer Quellcodeverzeichnisse (beispielsweise im Ordner "Libraries\\Documents"). Löschen Sie sie nach Abschluss des Importvorgangs. Böswillige Benutzer, die Zugriff auf die „PUBLISHSETTINGS“-Datei erlangen, können Ihre Azure-Dienste bearbeiten, erstellen und löschen.
 
 1. Definieren Sie eine Reihe von Variablen, die Sie zum Erstellen Ihrer Cloud-IT-Infrastruktur verwenden.
@@ -69,21 +76,21 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 		$winImageName = (Get-AzureVMImage | where {$_.Label -like "Windows Server 2008 R2 SP1*"} | sort PublishedDate -Descending)[0].ImageName
 		$sqlImageName = (Get-AzureVMImage | where {$_.Label -like "SQL Server 2012 SP1 Enterprise*"} | sort PublishedDate -Descending)[0].ImageName
 		$dcServerName = "ContosoDC"
-		$dcServiceName = "<uniqueservicename>" 
+		$dcServiceName = "<uniqueservicename>"
 		$availabilitySetName = "SQLHADR"
-		$vmAdminUser = "AzureAdmin" 
-		$vmAdminPassword = "Contoso!000" 
+		$vmAdminUser = "AzureAdmin"
+		$vmAdminPassword = "Contoso!000"
 		$workingDir = "c:\scripts"
 
 	Achten Sie auf die folgenden Punkte, um sicherzustellen, dass die Befehle später erfolgreich ausgeführt werden:
-	
+
 	- Die Variablen **$storageAccountName** und **$dcServiceName** müssen eindeutig sein, da sie zur Identifikation Ihres Cloudspeicherkontos bzw. Ihres Cloudservers im Internet verwendet werden.
-	
+
 	- Die für die Variablen **$affinityGroupName** und **$virtualNetworkName** angegebenen Namen werden im Konfigurationsdokument des virtuellen Netzwerks konfiguriert, das Sie im späteren Verlauf verwenden.
-	
-	- **$sqlImageName** gibt den aktualisierten Namen des VM-Images an, das SQL Server 2012 Service Pack 1 Enterprise Edition enthält.
-	
-	- Der Einfachheit halber wird im gesamten Tutorial das Kennwort **Contoso!000** verwendet.
+
+	- **$sqlImageName** gibt den aktualisierten Namen des VM-Images an, das SQL Server 2012 Service Pack 1 Enterprise Edition enthält.
+
+	- Der Einfachheit halber wird im gesamten Lernprogramm das Kennwort **Contoso!000** verwendet.
 
 1. Erstellen Sie eine Affinitätsgruppe.
 
@@ -98,7 +105,7 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 		Set-AzureVNetConfig `
 			-ConfigurationPath $networkConfigPath
 
-	Die Konfigurationsdatei enthält das folgende XML-Dokument. Kurz gesagt, gibt es ein virtuellen Netzwerk mit dem Namen **ContosoNET** in der Affinitätsgruppe **ContosoAG** an. Dieses weist den Adressbereich **10.10.0.0/16** und zwei Subnetze auf, **10.10.1.0/24** und **10.10.2.0/24**, bei denen es sich um das Frontsubnetz und das Rücksubnetz handelt. Im Frontsubnetz können Clientanwendungen, wie etwa Microsoft SharePoint, platziert werden, während im Rücksubnetz die SQL Server-VMs untergebracht werden. Wenn Sie die zuvor genannten Variablen **$affinityGroupName** und **$virtualNetworkName** ändern, müssen Sie auch die entsprechenden Namen unten ändern.
+	Die Konfigurationsdatei enthält das folgende XML-Dokument. Kurz gesagt, gibt es ein virtuelles Netzwerk mit dem Namen **ContosoNET** in der Affinitätsgruppe **ContosoAG** an. Dieses weist den Adressbereich **10.10.0.0/16** und zwei Subnetze auf, **10.10.1.0/24** und **10.10.2.0/24**, bei denen es sich um das Frontsubnetz und das Rücksubnetz handelt. Im Frontsubnetz können Clientanwendungen, wie etwa Microsoft SharePoint, platziert werden, während im Rücksubnetz die SQL Server-VMs untergebracht werden. Wenn Sie die zuvor genannten Variablen **$affinityGroupName** und **$virtualNetworkName** ändern, müssen Sie auch die entsprechenden Namen unten ändern.
 
 		<NetworkConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
 		  <VirtualNetworkConfiguration>
@@ -126,7 +133,7 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 		New-AzureStorageAccount `
 			-StorageAccountName $storageAccountName `
 			-Label $storageAccountLabel `
-			-AffinityGroup $affinityGroupName 
+			-AffinityGroup $affinityGroupName
 		Set-AzureSubscription `
 			-SubscriptionName (Get-AzureSubscription).SubscriptionName `
 			-CurrentStorageAccount $storageAccountName
@@ -138,7 +145,7 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 			-InstanceSize Medium `
 			-ImageName $winImageName `
 			-MediaLocation "$storageAccountContainer$dcServerName.vhd" `
-			-DiskLabel "OS" | 
+			-DiskLabel "OS" |
 			Add-AzureProvisioningConfig `
 				-Windows `
 				-DisableAutomaticUpdates `
@@ -150,26 +157,26 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 					-VNetName $virtualNetworkName
 
 	Diese Reihe von weitergeleiteten Befehlen führt Folgendes aus:
-	
+
 	- **New-AzureVMConfig** erstellt eine VM-Konfiguration.
-	
+
 	- **Add-AzureProvisioningConfig** gibt die Konfigurationsparameter eines eigenständigen Windows-Servers an.
-	
-	- **Add-AzureDataDisk** fügt den Datenträger, den Sie zum Speichern von Active Directory-Daten verwenden, mit auf „None“ festgelegter Cacheoption hinzu.
-	
-	- **New-AzureVM** erstellt einen neuen Clouddienst sowie die neue Azure VM im neuen Clouddienst.
+
+	- **Add-AzureDataDisk** fügt den Datenträger, den Sie zum Speichern von Active Directory-Daten verwenden, mit auf "None" festgelegter Cacheoption hinzu.
+
+	- **New-AzureVM** erstellt einen neuen Clouddienst sowie den neuen virtuellen Azure-Computer im neuen Clouddienst.
 
 1. Warten Sie bis zur vollständigen Bereitstellung der neuen VM, und laden Sie die Remotedesktopdatei in Ihr Arbeitsverzeichnis herunter. Da die Bereitstellung der neuen Azure-VM ziemlich lange dauert, fragt die While-Schleife die neue VM ab, bis sie zur Verwendung bereit ist.
 
 		$VMStatus = Get-AzureVM -ServiceName $dcServiceName -Name $dcServerName
-		
+
 		While ($VMStatus.InstanceStatus -ne "ReadyRole")
 		{
 		    write-host "Waiting for " $VMStatus.Name "... Current Status = " $VMStatus.InstanceStatus
 		    Start-Sleep -Seconds 15
 		    $VMStatus = Get-AzureVM -ServiceName $dcServiceName -Name $dcServerName
 		}
-		
+
 		Get-AzureRemoteDesktopFile `
 		    -ServiceName $dcServiceName `
 		    -Name $dcServerName `
@@ -179,11 +186,11 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 
 ## Konfigurieren des Domänencontrollers
 
-1. Stellen Sie eine Verbindung mit dem DC-Server her, indem Sie die Remotedesktopdatei starten. Verwenden Sie den Benutzernamen „AzureAdmin“ und das Kennwort **Contoso!000** des Computeradministrators, die Sie beim Erstellen der neuen VM angegeben hatten.
+1. Stellen Sie eine Verbindung mit dem DC-Server her, indem Sie die Remotedesktopdatei starten. Verwenden Sie den Benutzernamen "AzureAdmin" und das Kennwort **Contoso!000** des Computeradministrators, die Sie beim Erstellen der neuen VM angegeben hatten.
 
 1. Öffnen Sie ein PowerShell-Fenster im Administratormodus.
 
-1. Führen Sie den folgenden **DCPROMO.EXE**-Befehl aus, um die Domäne **corp.contoso.com** mit den Datenverzeichnissen auf Laufwerk „M“ einzurichten.
+1. Führen Sie den folgenden **DCPROMO.EXE**-Befehl aus, um die Domäne **corp.contoso.com** mit den Datenverzeichnissen auf Laufwerk "M" einzurichten.
 
 		dcpromo.exe `
 			/unattend `
@@ -242,9 +249,9 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		$corp = Get-ADObject -Identity "DC=corp,DC=contoso,DC=com"
 		$acl = Get-Acl $corp
 		$acl.AddAccessRule($ace1)
-		Set-Acl -Path "DC=corp,DC=contoso,DC=com" -AclObject $acl 
+		Set-Acl -Path "DC=corp,DC=contoso,DC=com" -AclObject $acl
 
-	Die oben angegebene GUID ist die GUID für den Computerobjekttyp. Das Konto **CORP\\Install** muss über die Berechtigungen **Alle Eigenschaften lesen** und **Computerobjekte erstellen** verfügen, um die Active Directory-Objekte für den WSFC-Cluster zu erstellen. Die Berechtigung **Alle Eigenschaften lesen** wird „CORP\\Install“ standardmäßig erteilt, daher brauchen Sie sie nicht explizit zu erteilen. Weitere Informationen zu Berechtigungen, die zum Erstellen des WSFC-Clusters erforderlich sind, finden Sie unter [Schrittweise Anleitung für Failovercluster: Konfigurieren von Konten in Active Directory](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx).
+	Die oben angegebene GUID ist die GUID für den Computerobjekttyp. Das Konto **CORP\\Install** muss über die Berechtigungen **Alle Eigenschaften lesen** und **Computerobjekte erstellen** verfügen, um die Active Directory-Objekte für den WSFC-Cluster zu erstellen. Die Berechtigung **Alle Eigenschaften lesen** wird "CORP\\Install" standardmäßig erteilt, daher brauchen Sie sie nicht explizit zu erteilen. Weitere Informationen zu Berechtigungen, die zum Erstellen des WSFC-Clusters erforderlich sind, finden Sie unter [Schrittweise Anleitung für Failovercluster: Konfigurieren von Konten in Active Directory](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx).
 
 	Nachdem Sie nun die Konfiguration von Active Directory und den Benutzerobjekten abgeschlossen haben, erstellen Sie zwei virtuelle SQL Server-Computer und lassen sie dieser Domäne beitreten.
 
@@ -263,7 +270,7 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		$dataDiskSize = 100
 		$dnsSettings = New-AzureDns -Name "ContosoBackDNS" -IPAddress "10.10.0.4"
 
-	Die IP-Adresse **10.10.0.4** wird normalerweise der ersten VM zugewiesen, die im Subnetz **10.10.0.0/16** des virtuellen Azure-Netzwerks erstellt wird. Sie sollten überprüfen, ob es sich um die Adresse Ihres DC-Servers handelt, indem Sie **IPCONFIG** ausführen.
+	Die IP-Adresse **10.10.0.4** wird normalerweise dem ersten virtuellen Computer zugewiesen, die im Subnetz **10.10.0.0/16** des virtuellen Azure-Netzwerks erstellt wird. Sie sollten überprüfen, ob es sich um die Adresse Ihres DC-Servers handelt, indem Sie **IPCONFIG** ausführen.
 
 1. Führen Sie die folgenden weitergeleiteten Befehle aus, um die erste VM im WSFC-Cluster mit dem Namen **ContosoQuorum** zu erstellen:
 
@@ -273,7 +280,7 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 			-ImageName $winImageName `
 			-MediaLocation "$storageAccountContainer$quorumServerName.vhd" `
 			-AvailabilitySetName $availabilitySetName `
-			-DiskLabel "OS" | 
+			-DiskLabel "OS" |
 			Add-AzureProvisioningConfig `
 				-WindowsDomain `
 				-AdminUserName $vmAdminUser `
@@ -292,14 +299,14 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 						-DnsSettings $dnsSettings
 
 	Beachten Sie zum oben genannten Befehl die folgenden Punkte:
-	
+
 	- **New-AzureVMConfig** erstellt eine VM-Konfiguration mit dem gewünschten Namen der Verfügbarkeitsgruppe. Die nachfolgenden VMs werden mit dem gleichen Namen der Verfügbarkeitsgruppe erstellt, sodass sie Mitglieder der gleichen Verfügbarkeitsgruppe sind.
-	
+
 	- **Add-AzureProvisioningConfig** macht die VM zum Mitglied der von Ihnen erstellten Active Directory-Domäne.
-	
+
 	- **Set-AzureSubnet** platziert den virtuellen Computer im Rücksubnetz.
-	
-	- **New-AzureVM** erstellt einen neuen Clouddienst sowie die neue Azure VM im neuen Clouddienst. Der Parameter **DnsSettings** gibt an, dass der DNS-Server für die Server im neuen Clouddienst die IP-Adresse **10.10.0.4** aufweist, also die IP-Adresse des DC-Servers. Dieser Parameter ist erforderlich, um den neuen VMs im Clouddienst den erfolgreichen Beitritt zur Active Directory-Domäne zu ermöglichen. Ohne diesen Parameter müssen Sie nach der Bereitstellung der VM die IPv4-Einstellungen in Ihrer VM manuell für die Verwendung des DC-Servers als primärem DNS-Server festlegen und die VM dann mit der Active Directory-Domäne verbinden.
+
+	- **New-AzureVM** erstellt einen neuen Clouddienst sowie den neuen virtuellen Azure-Computer im neuen Clouddienst. Der **DnsSettings**-Parameter gibt an, dass der DNS-Server für die Server im neuen Clouddienst die IP-Adresse **10.10.0.4** aufweist, also die IP-Adresse des DC-Servers. Dieser Parameter ist erforderlich, um den neuen VMs im Clouddienst den erfolgreichen Beitritt zur Active Directory-Domäne zu ermöglichen. Ohne diesen Parameter müssen Sie nach der Bereitstellung der VM die IPv4-Einstellungen in Ihrer VM manuell für die Verwendung des DC-Servers als primärem DNS-Server festlegen und die VM dann mit der Active Directory-Domäne verbinden.
 
 1. Führen Sie die folgenden weitergeleiteten Befehle aus, um die SQL Server-VMs mit den Namen **ContosoSQL1** und **ContosoSQL2** zu erstellen.
 
@@ -311,7 +318,7 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		    -MediaLocation "$storageAccountContainer$sql1ServerName.vhd" `
 		    -AvailabilitySetName $availabilitySetName `
 		    -HostCaching "ReadOnly" `
-		    -DiskLabel "OS" | 
+		    -DiskLabel "OS" |
 		    Add-AzureProvisioningConfig `
 		        -WindowsDomain `
 		        -AdminUserName $vmAdminUser `
@@ -327,10 +334,10 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		                -Name "SQL" `
 		                -Protocol "tcp" `
 		                -PublicPort 1 `
-		                -LocalPort 1433 | 
+		                -LocalPort 1433 |
 		                New-AzureVM `
 		                    -ServiceName $sqlServiceName
-		
+
 		# Create ContosoSQL2...
 		New-AzureVMConfig `
 		    -Name $sql2ServerName `
@@ -339,7 +346,7 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		    -MediaLocation "$storageAccountContainer$sql2ServerName.vhd" `
 		    -AvailabilitySetName $availabilitySetName `
 		    -HostCaching "ReadOnly" `
-		    -DiskLabel "OS" | 
+		    -DiskLabel "OS" |
 		    Add-AzureProvisioningConfig `
 		        -WindowsDomain `
 		        -AdminUserName $vmAdminUser `
@@ -355,28 +362,28 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		                -Name "SQL" `
 		                -Protocol "tcp" `
 		                -PublicPort 2 `
-		                -LocalPort 1433 | 
+		                -LocalPort 1433 |
 		                New-AzureVM `
 		                    -ServiceName $sqlServiceName
 
 	Beachten Sie zu den Befehlen oben die folgenden Punkte:
 
-	- **New-AzureVMConfig** verwendet den gleichen Verfügbarkeitsgruppennamen wie der DC-Server und das SQL Server 2012 Service Pack 1 Enterprise Edition-Image im Katalog für virtuelle Computer. Außerdem wird der Betriebssystemdatenträger als schreibgeschützt (ohne Schreibcache) festgelegt. Es wird empfohlen, die Datenbankdateien auf einen separaten Datenträger zu migrieren, den Sie der VM anfügen und ohne Lese- und Schreibcache konfigurieren. Die zweitbeste Lösung besteht im Entfernen des Schreibcaches für den Betriebssystemdatenträger, da der Lesecache für den Betriebssystemdatenträger nicht deaktiviert werden kann.
-	
+	- **New-AzureVMConfig** verwendet denselben Verfügbarkeitsgruppennamen wie der DC-Server und das SQL Server 2012 Service Pack 1 Enterprise Edition-Image im Katalog für virtuelle Computer. Außerdem wird der Betriebssystemdatenträger als schreibgeschützt (ohne Schreibcache) festgelegt. Es wird empfohlen, die Datenbankdateien auf einen separaten Datenträger zu migrieren, den Sie der VM anfügen und ohne Lese- und Schreibcache konfigurieren. Die zweitbeste Lösung besteht im Entfernen des Schreibcaches für den Betriebssystemdatenträger, da der Lesecache für den Betriebssystemdatenträger nicht deaktiviert werden kann.
+
 	- **Add-AzureProvisioningConfig** macht die VM zum Mitglied der von Ihnen erstellten Active Directory-Domäne.
-	
+
 	- **Set-AzureSubnet** platziert den virtuellen Computer im Rücksubnetz.
-	
+
 	- **Add-AzureEndpoint** fügt Zugriffsendpunkte hinzu, damit Clientanwendungen aus dem Internet auf diese SQL Server-Dienstinstanzen zugreifen können. ContosoSQL1 und ContosoSQL2 werden verschiedene Ports zugewiesen.
-	
-	- **New-AzureVM** erstellt die neue SQL Server-VM im gleichen Clouddienst wie „ContosoQuorum“. Sie müssen die VMs im gleichen Clouddienst platzieren, wenn sie sich in der gleichen Verfügbarkeitsgruppe befinden sollen.
+
+	- **New-AzureVM** erstellt die neue SQL Server-VM im gleichen Clouddienst wie "ContosoQuorum". Sie müssen die VMs im gleichen Clouddienst platzieren, wenn sie sich in der gleichen Verfügbarkeitsgruppe befinden sollen.
 
 1. Warten Sie bis zur vollständigen Bereitstellung jeder einzelnen VM, und laden ihre Remotedesktopdateien in Ihr Arbeitsverzeichnis herunter. Die For-Schleife durchläuft die drei neuen VMs und führt die Befehle innerhalb der geschweiften Klammern der obersten Ebene für jede von ihnen aus.
 
 		Foreach ($VM in $VMs = Get-AzureVM -ServiceName $sqlServiceName)
 		{
 		    write-host "Waiting for " $VM.Name "..."
-		
+
 		    # Loop until the VM status is "ReadyRole"
 		    While ($VM.InstanceStatus -ne "ReadyRole")
 		    {
@@ -384,9 +391,9 @@ Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren 
 		        Start-Sleep -Seconds 15
 		        $VM = Get-AzureVM -ServiceName $VM.ServiceName -Name $VM.InstanceName
 		    }
-		
+
 		    write-host "  Current Status = " $VM.InstanceStatus
-		
+
 		    # Download remote desktop file
 		    Get-AzureRemoteDesktopFile -ServiceName $VM.ServiceName -Name $VM.InstanceName -LocalPath "$workingDir$($VM.InstanceName).rdp"
 		}
@@ -401,23 +408,23 @@ In diesem Abschnitt müssen Sie die drei Server ändern, die Sie für die WSFC-C
 
 - (Alle Server) Sie müssen **CORP\\Install** als **Computeradministrator** hinzufügen.
 
-- (Nur „ContosoSQL1“ und „ContosoSQL2“) Sie müssen **CORP\\Install** zur **sysadmin**-Rolle in der Standarddatenbank hinzufügen.
+- (Nur "ContosoSQL1" und "ContosoSQL2") Sie müssen **CORP\\Install** zur **sysadmin**-Rolle in der Standarddatenbank hinzufügen.
 
-- (Nur „ContosoSQL1“ und „ContosoSQL2“) Sie müssen **NT AUTHORITY\\System** als Anmeldekonto mit den folgenden Berechtigungen hinzufügen:
+- (Nur "ContosoSQL1" und "ContosoSQL2") Sie müssen **NT AUTHORITY\\System** als Anmeldekonto mit den folgenden Berechtigungen hinzufügen:
 
 	- Beliebige Verfügbarkeitsgruppe ändern
-	
+
 	- SQL verbinden
-	
+
 	- Serverstatus anzeigen
 
-- (Nur „ContosoSQL1“ und „ContosoSQL2“) Das **TCP**-Protokoll ist bereits auf der SQL Server-VM aktiviert. Jedoch müssen Sie die Firewall für den Remotezugriff auf SQL Server öffnen.
+- (Nur "ContosoSQL1" und "ContosoSQL2") Das **TCP**-Protokoll ist bereits auf der SQL Server-VM aktiviert. Jedoch müssen Sie die Firewall für den Remotezugriff auf SQL Server öffnen.
 
 Jetzt sind Sie aber bereit. Führen Sie die nachfolgenden Schritte aus, beginnend mit **ContosoQuorum**:
 
 1. Stellen Sie eine Verbindung mit **ContosoQuorum** her, indem Sie die Remotedesktopdateien starten. Verwenden Sie den Benutzernamen **AzureAdmin** und das Kennwort **Contoso!000** des Computeradministrators, die Sie beim Erstellen der VMs angegeben hatten.
 
-1. Überprüfen Sie, ob die Computer erfolgreich zu **corp.contoso.com** hinzugefügt wurden.
+1. Überprüfen Sie, ob die Computer **corp.contoso.com** hinzugefügt wurden.
 
 1. Warten Sie bis zum Abschluss der automatischen Initialisierungstasks der SQL Server-Installation, bevor Sie fortfahren.
 
@@ -440,7 +447,7 @@ Initialisieren Sie als Nächstes **ContosoSQL1** und **ContosoSQL2**. Führen Si
 
 1. Stellen Sie eine Verbindung mit den beiden SQL Server-VMs her, indem Sie die Remotedesktopdateien ausführen. Verwenden Sie den Benutzernamen **AzureAdmin** und das Kennwort **Contoso!000** des Computeradministrators, die Sie beim Erstellen der VMs angegeben hatten.
 
-1. Überprüfen Sie, ob die Computer erfolgreich zu **corp.contoso.com** hinzugefügt wurden.
+1. Überprüfen Sie, ob die Computer **corp.contoso.com** hinzugefügt wurden.
 
 1. Warten Sie bis zum Abschluss der automatischen Initialisierungstasks der SQL Server-Installation, bevor Sie fortfahren.
 
@@ -468,7 +475,7 @@ Initialisieren Sie als Nächstes **ContosoSQL1** und **ContosoSQL2**. Führen Si
 1. Fügen Sie **NT AUTHORITY\\System** als Anmeldekonto mit den drei oben beschriebenen Berechtigungen hinzu.
 
 		Invoke-SqlCmd -Query "CREATE LOGIN [NT AUTHORITY\SYSTEM] FROM WINDOWS" -ServerInstance "."
-		Invoke-SqlCmd -Query "GRANT ALTER ANY AVAILABILITY GROUP TO [NT AUTHORITY\SYSTEM] AS SA" -ServerInstance "." 
+		Invoke-SqlCmd -Query "GRANT ALTER ANY AVAILABILITY GROUP TO [NT AUTHORITY\SYSTEM] AS SA" -ServerInstance "."
 		Invoke-SqlCmd -Query "GRANT CONNECT SQL TO [NT AUTHORITY\SYSTEM] AS SA" -ServerInstance "."
 		Invoke-SqlCmd -Query "GRANT VIEW SERVER STATE TO [NT AUTHORITY\SYSTEM] AS SA" -ServerInstance "."
 
@@ -515,7 +522,7 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 		$svc1 = Get-Service -ComputerName $server1 -Name 'MSSQLSERVER'
 		$svc1.Stop()
 		$svc1.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped,$timeout)
-		$svc1.Start(); 
+		$svc1.Start();
 		$svc1.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
 1. Ändern Sie das SQL Server-Dienstkonto für „ContosoSQL2“ in „CORP\\SQLSvc2“.
@@ -525,10 +532,10 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 		$svc2 = Get-Service -ComputerName $server2 -Name 'MSSQLSERVER'
 		$svc2.Stop()
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped,$timeout)
-		$svc2.Start(); 
+		$svc2.Start();
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
-1. Laden Sie **CreateAzureFailoverCluster.ps1** von [Erstellen eines WSFC-Clusters für AlwaysOn-Verfügbarkeitsgruppen in Azure-VMs](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) in das lokale Arbeitsverzeichnis herunter. Dieses Skript unterstützt Sie beim Erstellen eines funktionsfähigen WSFC-Clusters. Wichtige Informationen zum Zusammenwirken von WSFC mit dem Azure-Netzwerk finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md).
+1. Laden Sie **CreateAzureFailoverCluster.ps1** von [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) (Erstellen eines WSFC-Clusters für AlwaysOn-Verfügbarkeitsgruppen in Azure-VMs, in englischer Sprache) in das lokale Arbeitsverzeichnis herunter. Dieses Skript unterstützt Sie beim Erstellen eines funktionsfähigen WSFC-Clusters. Wichtige Informationen zum Zusammenwirken von WSFC mit dem Azure-Netzwerk finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md).
 
 1. Wechseln Sie in das Arbeitsverzeichnis, und erstellen Sie mithilfe des heruntergeladenen Skripts den WSFC-Cluster.
 
@@ -545,7 +552,7 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 		    -NoServiceRestart
 		$svc2.Stop()
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped,$timeout)
-		$svc2.Start(); 
+		$svc2.Start();
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
 1. Erstellen Sie ein Sicherungsverzeichnis und erteilen Sie Berechtigungen für die SQL Server-Dienstkonten. Dieses Verzeichnis verwenden Sie zum Vorbereiten der Verfügbarkeitsdatenbank für das sekundäre Replikat.
@@ -565,21 +572,21 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 
 1. Erstellen Sie die Endpunkte der Verfügbarkeitsgruppen auf den SQL Server-VMs, und legen Sie die Berechtigungen für die Endpunkte ordnungsgemäß fest.
 
-		$endpoint = 
+		$endpoint =
 		    New-SqlHadrEndpoint MyMirroringEndpoint `
 		    -Port 5022 `
 		    -Path "SQLSERVER:\SQL\$server1\Default"
 		Set-SqlHadrEndpoint `
 		    -InputObject $endpoint `
 		    -State "Started"
-		$endpoint = 
+		$endpoint =
 		    New-SqlHadrEndpoint MyMirroringEndpoint `
 		    -Port 5022 `
 		    -Path "SQLSERVER:\SQL\$server2\Default"
 		Set-SqlHadrEndpoint `
 		    -InputObject $endpoint `
 		    -State "Started"
-		
+
 		Invoke-SqlCmd -Query "CREATE LOGIN [$acct2] FROM WINDOWS" -ServerInstance $server1
 		Invoke-SqlCmd -Query "GRANT CONNECT ON ENDPOINT::[MyMirroringEndpoint] TO [$acct2]" -ServerInstance $server1
 		Invoke-SqlCmd -Query "CREATE LOGIN [$acct1] FROM WINDOWS" -ServerInstance $server2
@@ -587,7 +594,7 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 
 1. Erstellen Sie die Verfügbarkeitsreplikate.
 
-		$primaryReplica = 
+		$primaryReplica =
 		    New-SqlAvailabilityReplica `
 		    -Name $server1 `
 		    -EndpointURL "TCP://$server1.corp.contoso.com:5022" `
@@ -595,7 +602,7 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 		    -FailoverMode "Automatic" `
 		    -Version 11 `
 		    -AsTemplate
-		$secondaryReplica = 
+		$secondaryReplica =
 		    New-SqlAvailabilityReplica `
 		    -Name $server2 `
 		    -EndpointURL "TCP://$server2.corp.contoso.com:5022" `
@@ -623,4 +630,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

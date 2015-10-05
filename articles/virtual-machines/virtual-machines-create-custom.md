@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen eines benutzerdefinierten virtuellen Computers in Azure"
-	description="Erfahren Sie, wie Sie einen benutzerdefinierten virtuellen Computer in Azure erstellen können."
+	pageTitle="Erstellen eines benutzerdefinierten virtuellen Computers | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie einen benutzerdefinierten virtuellen Computer über das Azure-Portal unter Verwendung des klassischen Bereitstellungsmodells erstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -11,13 +11,17 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/11/2015"
 	ms.author="cynthn"/>
 
 #Erstellen eines benutzerdefinierten virtuellen Computers
+
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
 
 Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie durch diese Option mehr Konfigurationsmöglichkeiten erhalten als durch die Option **Schnellerfassung**. Zu diesen Möglichkeiten gehören:
 
@@ -31,4 +35,4 @@ Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Compute
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

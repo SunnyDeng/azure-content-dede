@@ -72,7 +72,7 @@ Ihr Unternehmen kann Azure AD verwenden, um in vielerlei Hinsicht die Mitarbeit
  - [Probieren Sie es aus!](https://azure.microsoft.com/trial/get-started-active-directory/) – Registrieren Sie sich noch heute über diesen Link für eine kostenlose 30-Tage-Testversion, und stellen Sie Ihre erste Cloudlösung in weniger als 5 Minuten bereit.
  - Lesen Sie den Artikel "Erste Schritte mit Azure AD" mit Tipps und Tricks zum schnellen Einrichten und Ausführen eines Azure AD-Mandanten.
 -	Wenn Sie Entwickler sind:
- - Sehen Sie sich die [Anleitung für Entwickler](https://msdn.microsoft.com/library/azure/ff800682.aspx) für Azure Active Directory an. <need link>
+ - Sehen Sie sich die [Anleitung für Entwickler](active-directory-developers-guide.md) für Azure Active Directory an. 
  - [Starten Sie eine Testversion.](https://azure.microsoft.com/trial/get-started-active-directory/) – Registrieren Sie sich noch heute für eine kostenlose 30-Tage-Testversion, und beginnen Sie damit, Ihre App in Azure AD zu integrieren.
 
 
@@ -104,4 +104,4 @@ Wir haben viele hervorragende Ressourcen online gestellt, in denen Sie alles Wis
 
 - [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="hero-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="08/07/2015"
+   ms.date="09/21/2015"
    ms.author="joaoma"/>
 
 
@@ -97,16 +97,22 @@ Das folgende Beispiel zeigt, wie Sie mit dem Ressourcen-Manager ein virtuelles N
 
 ### Schritt 1	
 	
-	$subnet = New-AzureVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
+	$subnetconfig = New-AzureVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
 
 Dieser Befehl weist den Adressbereich 10.0.0.0/24 der Subnetzvariablen zu, die zum Erstellen eines virtuelles Netzwerks verwendet wird.
 
 ### Schritt 2
 	
-	$vnet = New-AzurevirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
+	$vnet = New-AzurevirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
 
 Ein virtuelles Netzwerk mit dem Namen "appgwvnet" wird in der Ressourcengruppe "appw-rg" für die Region "USA, Westen" mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
 	
+### Schritt 3
+
+	$subnet=$vnet.subnets[0]
+
+Weist der Variablen "$subnet" das Subnetzobjekt für die nächsten Schritte zu.
+ 
 
 ## Erstellen eines Konfigurationsobjekts für das Application Gateway
 
@@ -168,10 +174,9 @@ Mit diesem Cmdlet wird ein Application Gateway mit allen Konfigurationselementen
 
 
 
-
 ## Starten des Gateways
 
-Sobald das Gateway konfiguriert ist, verwenden Sie das Cmdlet `Start-AzureApplicationGateway`, um es zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
+Sobald das Gateway konfiguriert wurde, verwenden Sie das `Start-AzureApplicationGateway`-Cmdlet, um das Gateway zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
 
 
 **Hinweis:** Bis zum Abschluss des `Start-AzureApplicationGateway`-Cmdlets können bis zu 15 – 20 Minuten vergehen.
@@ -201,11 +206,11 @@ Verwenden Sie `Start-AzureApplicationGateway`, um das Application Gateway zu sta
 
 ## Überprüfen des Application Gateway-Status
 
-Überprüfen Sie mit dem Cmdlet `Get-AzureApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Running* sein, und "Vip" und "DnsName" sollten gültige Einträge aufweisen.
+Überprüfen Sie mit dem Cmdlet `Get-AzureApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Wird ausgeführt* lauten, und für "Vip" und "DnsName" sollten gültige Einträge vorliegen.
 
 Dieses Beispiel zeigt ein Application Gateway, das ausgeführt wird und Datenverkehr verarbeiten kann, der für `http://<generated-dns-name>.cloudapp.net` vorgesehen ist.
 
-	PS C:\> Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName app-rg
+	PS C:\> Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 	VERBOSE: 8:09:28 PM - Begin Operation: Get-AzureApplicationGateway 
 	VERBOSE: 8:09:30 PM - Completed Operation: Get-AzureApplicationGateway
@@ -234,7 +239,7 @@ Dieses Beispiel zeigt das Cmdlet `Stop-AzureApplicationGateway` in der ersten Ze
 
 Rufen Sie das Application Gateway-Objekt ab, und ordnen Sie es der Variablen "$getgw" zu:
  
-	$getgw =  Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName app-rg
+	$getgw =  Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 ### Schritt 2
 	 
@@ -248,10 +253,10 @@ Verwenden Sie `Stop-AzureApplicationGateway`, um das Application Gateway zu been
 	----       ----------------     ------------                             ----
 	Successful OK                   ce6c6c95-77b4-2118-9d65-e29defadffb8
 
-Sobald das Application Gateway beendet wurde, verwenden das Cmdlet `Remove-AzureApplicationGateway`, um den Dienst zu entfernen.
+Sobald das Application Gateway beendet wurde, verwenden Sie das Cmdlet `Remove-AzureApplicationGateway`, um den Dienst zu entfernen.
 
 
-	PS C:\> Remove-AzureApplicationGateway -Name $appgwName -ResourceGroupName $rgname -Force
+	PS C:\> Remove-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Force
 
 	VERBOSE: 10:49:34 PM - Begin Operation: Remove-AzureApplicationGateway 
 	VERBOSE: 10:50:36 PM - Completed Operation: Remove-AzureApplicationGateway
@@ -262,10 +267,10 @@ Sobald das Application Gateway beendet wurde, verwenden das Cmdlet `Remove-Azure
 >[AZURE.NOTE]Mit dem optionalen Switch "-force" kann diese Bestätigungsmeldung unterdrückt werden.
 >
 
-Um sicherzustellen, dass der Dienst wurde entfernt, können Sie das Cmdlet `Get-AzureApplicationGateway` verwenden. Dieser Schritt ist nicht erforderlich.
+Mithilfe des Cmdlets `Get-AzureApplicationGateway` können Sie sicherstellen, dass der Dienst entfernt wurde. Dieser Schritt ist nicht erforderlich.
 
 
-	PS C:\>Get-AzureApplicationGateway -Name appgwtest-ResourceGroupName app-rg
+	PS C:\>Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 	VERBOSE: 10:52:46 PM - Begin Operation: Get-AzureApplicationGateway 
 
@@ -274,13 +279,13 @@ Um sicherzustellen, dass der Dienst wurde entfernt, können Sie das Cmdlet `Get-
 
 ## Nächste Schritte
 
-Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren des Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
+Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
 
-Wenn Sie ein Application Gateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
+Wenn Sie ein Anwendungsgateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
 
 Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unter:
 
-- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
+- [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

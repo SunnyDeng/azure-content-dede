@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="Grenzwerte des Azure-Schlüsseltresordienstes" 
-   description="Weitere Informationen zu den Dienstgrenzwerten des Azure-Schlüsseltresors" 
+<properties
+   pageTitle="Grenzwerte des Azure-Schlüsseltresordiensts | Microsoft Azure"
+   description="Weitere Informationen zu den Grenzwerten des Azure-Schlüsseltresordiensts"
    documentationCenter="dev-center-name"
    services="key-vault"  
    authors="msmbaldwin" 
-   manager="mbaldwin" 
+   manager="mbaldwin"
    editor=""/>
 
 <tags
@@ -12,8 +12,8 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="identity" 
-   ms.date="07/06/2015"
+   ms.workload="identity"
+   ms.date="09/22/2015"
    ms.author="mbaldwin"/>
 
 # Grenzwerte des Azure-Schlüsseltresordienstes
@@ -22,4 +22,4 @@ Hierbei handelt es sich um die Dienstgrenzwerte des Azure-Schlüsseltresors
 
 [AZURE.INCLUDE [key-vault-limits](../../includes/key-vault-limits.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

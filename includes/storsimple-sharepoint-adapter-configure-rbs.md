@@ -1,9 +1,10 @@
+<!--author=SharS last changed: 9/17/15-->
 
 >[AZURE.NOTE]Wenn Sie den StorSimple-Adapter für die SharePoint-RBS-Konfiguration ändern möchten, müssen Sie mit einem Benutzerkonto angemeldet sein, das der Domänenadministratorgruppe angehört. Darüber hinaus müssen Sie die Konfigurationsseite in einem Browser öffnen, der auf dem gleichen Host ausgeführt wird wie die Zentraladministration.
 
 #### So konfigurieren Sie RBS
 
-1. Öffnen Sie die SharePoint-Zentraladministration, und navigieren Sie zu **Systemeinstellungen**. 
+1. Öffnen Sie die SharePoint-Seite „Zentraladministration“, und navigieren Sie zu **Systemeinstellungen**. 
 
 2. Klicken Sie im Abschnitt **Azure StorSimple** auf **StorSimple-Adapter konfigurieren**.
 
@@ -35,7 +36,7 @@
  
 4. Überprüfen Sie die Konfiguration:
 
-    1. Melden Sie sich auf der Website „SharePoint-Zentraladministration“ an, und navigieren Sie zur Seite **StorSimple-Adapter konfigurieren**.
+    1. Melden Sie sich bei der SharePoint-Zentraladministrationswebsite an, und navigieren Sie zur Seite **StorSimple-Adapter konfigurieren**.
 
     2. Vergewissern Sie sich, dass die Konfigurationsdetails den eingegebenen Einstellungen entsprechen.
 
@@ -98,9 +99,9 @@
 
        >[AZURE.WARNING]Wenn Sie RBS nicht aktiviert haben, ist es nicht ratsam, die Inhaltsdatenbank auf das StorSimple-Gerät zu verschieben. Dies ist eine nicht getestete Konfiguration.
  
-9. Fahren Sie mit dem nächsten Schritt fort: [Konfigurieren der automatischen Speicherbereinigung](#configure-garbage-collection).
+9. Wechseln Sie zum nächsten Schritt: [Konfigurieren der automatischen Speicherbereinigung](#configure-garbage-collection).
 
 [6]: https://technet.microsoft.com/library/ff628254(v=office.15).aspx
 [7]: https://technet.microsoft.com/library/ff628255(v=office.14).aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

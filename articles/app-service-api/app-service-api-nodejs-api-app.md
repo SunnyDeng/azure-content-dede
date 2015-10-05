@@ -4,8 +4,8 @@
 	services="app-service\api"
 	documentationCenter="nodejs"
 	authors="pkefal"
-	manager=""
-	editor=""/>
+  manager="" 
+  editor=""/>
 
 <tags
 	ms.service="app-service-api"
@@ -17,6 +17,12 @@
 	ms.author="pakefali"/>
 
 # Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service
+
+> [AZURE.SELECTOR]
+- [.NET - Visual Studio 2015](app-service-dotnet-create-api-app.md)
+- [.NET - Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
+- [Node.js](app-service-api-nodejs-api-app.md)
+- [Java](app-service-api-java-api-app.md)
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine [Node.js](http://nodejs.org)-Anwendung erstellen und mit [Git](http://git-scm.com) als Azure App Service-API-App bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Node ausgeführt werden kann.
 
@@ -50,7 +56,7 @@ Der folgende Screenshot zeigt die fertige Anwendung:
 
 	Wenn Sie das Kontrollkästchen **Zum Startboard hinzufügen** aktiviert lassen, öffnet das Portal nach dem Erstellen der API-App automatisch das zugehörige Blatt. Wenn Sie das Kontrollkästchen deaktiviert haben, klicken Sie auf der Startseite des Portals auf **Benachrichtigungen**, um den Status der API-App-Erstellung anzuzeigen. Klicken Sie anschließend auf die Benachrichtigung, um zum Blatt für die neue API-App zu wechseln.
 
-7. Klicken Sie auf **Einstellungen** > **Anwendungseinstellungen**.
+7. Klicken Sie auf **Einstellungen** > **Anwendungseinstellungen**.
 
 9. Legen Sie die Zugriffsebene auf **Öffentlich (anonym)** fest.
 
@@ -244,4 +250,4 @@ Sie haben eine Node.js-Web-App bereitgestellt, die ein API-App-Back-End zu Azure
 [sample-api-app-page]: ./media/app-service-api-nodejs-api-app/sample-api-app-page.png
 [browse-api-app-page]: ./media/app-service-api-nodejs-api-app/browse-api-app-page.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

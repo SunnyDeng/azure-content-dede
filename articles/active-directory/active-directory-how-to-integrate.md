@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Integration in Azure Active Directory"
+   pageTitle="Integration in Azure Active Directory | Microsoft Azure"
    description="Eine Übersicht für die Vorteile und Ressourcen für die Integration in Azure Active Directory."
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="08/25/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin"/>
 
 # Integration in Azure Active Directory
@@ -90,4 +90,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 [Anmelden von Benutzern über Azure AD](active-directory-authentication-scenarios.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

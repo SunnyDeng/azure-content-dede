@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services" 
-   ms.date="07/14/2015"
+   ms.date="09/22/2015"
    ms.author="thmullan;jackr"/>
 
 
@@ -34,19 +34,28 @@ Für alle Verbindungen zur Azure SQL-Datenbank ist eine Verschlüsselung (SSL/TL
 
 ## Authentifizierung
 
-Authentifizierung bezieht sich darauf, auf welche Weise Sie Ihre Identität beim Herstellen der Verbindung mit der Datenbank nachweisen. Die SQL-Datenbank unterstützt derzeit die SQL-Authentifizierung mit Benutzername und Kennwort.
+Authentifizierung bezieht sich darauf, auf welche Weise Sie Ihre Identität beim Herstellen der Verbindung mit der Datenbank nachweisen. SQL-Datenbank unterstützt zwei Arten der Authentifizierung:
 
-Bei der Erstellung des logischen Servers für die Datenbank haben Sie eine "Server Admin"-Anmeldung mit Benutzername und Kennwort angegeben. Mit diesen Anmeldeinformationen können Sie sich bei jeder Datenbank auf diesem Server als Datenbankbesitzer bzw. "dbo" (database owner) authentifizieren.
+ - **SQL-Authentifizierung**, bei der ein Benutzername und ein Kennwort verwendet werden
+ - **Azure Active Directory-Authentifizierung**, bei der von Azure Active Directory verwaltete Identitäten verwendet werden und die für verwaltete und integrierte Domänen unterstützt wird
 
-Entsprechend einer bewährten Methode sollte Ihre Anwendung jedoch ein anderes Konto zur Authentifizierung verwenden. Auf diese Weise können Sie die Berechtigungen für die Anwendung beschränken und die Risiken schädlicher Aktivitäten reduzieren, falls Ihr Anwendungscode für einen SQL-Injection-Angriff anfällig ist. Der empfohlene Ansatz besteht darin, einen [eigenständigen Datenbankbenutzer](https://msdn.microsoft.com/library/ff929188) zu erstellen. Dadurch kann sich Ihre App direkt bei einer Datenbank mit Benutzername und Kennwort authentifizieren. Sie können einen eigenständigen Datenbankbenutzer erstellen, indem Sie das folgende T-SQL ausführen, während Sie mit Ihrer Benutzerdatenbank über Ihre Server Admin-Anmeldung verbunden sind:
+Bei der Erstellung des logischen Servers für die Datenbank haben Sie eine "Server Admin"-Anmeldung mit Benutzername und Kennwort angegeben. Mit diesen Anmeldeinformationen können Sie sich bei jeder Datenbank auf diesem Server als Datenbankbesitzer bzw. "dbo" (database owner) authentifizieren. Wenn Sie die Azure Active Directory-Authentifizierung verwenden möchten, müssen Sie einen weiteren Serveradministrator mit der Bezeichnung "Azure AD Admin" erstellen, der zum Verwalten von Azure Active Directory-Benutzern und -Gruppen berechtigt ist. Dieser Administrator kann außerdem die gleichen Aufgaben wie ein normaler Serveradministrator ausführen. Unter [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md) finden Sie eine exemplarische Vorgehensweise zum Erstellen eines Azure AD-Administrators, um die Azure Active Directory-Authentifizierung zu aktivieren.
+
+Entsprechend einer bewährten Methode sollte Ihre Anwendung ein anderes Konto zur Authentifizierung verwenden. Auf diese Weise können Sie die Berechtigungen für die Anwendung beschränken und die Risiken schädlicher Aktivitäten reduzieren, falls Ihr Anwendungscode für einen SQL-Injection-Angriff anfällig ist. Der empfohlene Ansatz besteht darin, einen [eigenständigen Datenbankbenutzer](https://msdn.microsoft.com/library/ff929188) zu erstellen. Dadurch kann sich Ihre App direkt bei einer Datenbank authentifizieren. Sie können einen eigenständigen Datenbankbenutzer erstellen, der die SQL-Authentifizierung verwendet, indem Sie den folgenden T-SQL-Befehl ausführen, während Sie mit Ihrer Benutzerdatenbank über die Server Admin-Anmeldung verbunden sind:
 
 ```
-CREATE USER ApplicationUser WITH PASSWORD = 'strong_password';
+CREATE USER ApplicationUser WITH PASSWORD = 'strong_password'; -- SQL Authentication
 ```
 
-Für die Verbindung mit der Datenbank sollte die Verbindungszeichenfolge Ihrer Anwendung diesen Benutzernamen und das Kennwort anstelle der Server Admin-Anmeldung angeben.
+Wenn Sie einen Azure AD-Administrator erstellt haben, können Sie einen eigenständigen Datenbankbenutzer erstellen, der die Azure Active Directory-Authentifizierung verwendet, indem Sie den folgenden T-SQL-Befehl ausführen, während Sie mit Ihrer Benutzerdatenbank über die Server Admin-Anmeldung verbunden sind:
 
-Weitere Informationen zur Authentifizierung bei einer SQL-Datenbank finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/ee336235).
+```
+CREATE USER [Azure_AD_principal_name | Azure_AD_group_display_name] FROM EXTERNAL PROVIDER; -- Azure Active Directory Authentication
+```
+
+In beiden Fällen sollte für die Verbindung mit der Datenbank die Verbindungszeichenfolge Ihrer Anwendung diese Benutzeranmeldeinformationen anstelle der Server Admin-Anmeldung angeben.
+
+Weitere Informationen zur Authentifizierung bei einer SQL-Datenbank finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md).
 
 
 ## Autorisierung
@@ -98,4 +107,4 @@ Die Überwachung und Nachverfolgung von Datenbankereignissen kann Sie bei der Ei
 Zusätzlich zu den oben aufgeführten Features und Funktionalitäten, mit denen Ihre Anwendung eine Reihe von Security Compliance-Anforderungen erfüllen kann, wird Azure SQL-Datenbank außerdem regelmäßigen Überprüfungen unterzogen und ist für eine Reihe von Compliance-Standards zertifiziert. Weitere Informationen finden Sie im [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/), wo die aktuellste Liste von [Compliance-Zertifizierungen für SQL-Datenbank](http://azure.microsoft.com/support/trust-center/services/) angezeigt wird.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

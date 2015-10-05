@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie regelmäßige Updates im Verwaltungsportal
 
@@ -11,4 +12,4 @@
 
     Sie werden benachrichtigt, wenn das Update erfolgreich installiert wurde.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

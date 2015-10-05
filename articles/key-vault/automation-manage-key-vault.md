@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwalten des Azure-Schlüsseltresors mit Azure Automation"
+	pageTitle="Verwalten des Azure-Schlüsseltresors mit Azure Automation | Microsoft Azure"
 	description="Erfahren Sie, wie der Azure Automation-Dienst zum Verwalten des Azure-Schlüsseltresors verwendet werden kann."
 	services="Key-Vault, automation"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/30/2015"
+	ms.date="09/22/2015"
 	ms.author="csand"/>
 
 
@@ -44,6 +44,5 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz 
 
 * Weitere Informationen erhalten Sie im Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation.
 * Weitere Informationen finden Sie in den [PowerShell-Skripts des Azure-Schlüsseltresors](https://gallery.technet.microsoft.com/scriptcenter/Azure-Key-Vault-Powershell-1349b091).
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

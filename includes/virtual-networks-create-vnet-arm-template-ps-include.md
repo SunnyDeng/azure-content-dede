@@ -13,7 +13,7 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 
 	>[AZURE.WARNING]Das Cmdlet "Switch-AzureMode" ist demnächst veraltet. In diesem Fall werden alle Ressourcen-Manager-Cmdlets umbenannt.
 
-3. Führen Sie bei Bedarf das Cmdlet **New-AzureResourceGroup** aus, um eine neue Ressourcengruppe zu erstellen. Mit dem folgenden Befehl wird eine Ressourcengruppe mit dem Namen *TestRG* in der Azure-Region *USA, Mitte* erstellt. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
+3. Führen Sie bei Bedarf das Cmdlet **New-AzureResourceGroup** aus, um eine neue Ressourcengruppe zu erstellen. Mit dem folgenden Befehl wird eine Ressourcengruppe mit dem Namen *TestRG* in der Azure-Region *USA, Mitte* erstellt. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
 		New-AzureResourceGroup -Name TestRG -Location centralus
 		
@@ -101,4 +101,4 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		                      }
 		                    ]
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -1,23 +1,18 @@
-<properties title="List of Oracle virtual machine images"
-pageTitle="Liste der Images virtueller Oracle-Computer"
-description="Rufen Sie die Liste der Oracle-Images im Azure-Katalog auf, und erfahren Sie, wie Sie anhand eines dieser Images einen virtuellen Oracle-Computer erstellen."
-services="virtual-machines"
-documentationCenter=""
-authors="bbenz"
-manager=""
-editor=""
-tags=""/>
+<properties" pageTitle="title="Liste der Images virtueller Oracle-Computer | Microsoft Azure" description="Rufen Sie die Liste der Oracle-Images im Azure-Katalog auf, und erfahren Sie, wie Sie anhand eines dieser Images einen virtuellen Oracle-Computer erstellen." services="virtual-machines" documentationCenter="" authors="bbenz" manager="" editor="" tags="azure-service-management, azure-resource-manager"/>
 
 <tags
 ms.service="virtual-machines"
 ms.devlang="na"
 ms.topic="article"
-ms.tgt_pltfrm="na"
+ms.tgt_pltfrm="vm-multiple"
 ms.workload="infrastructure-services"
 ms.date="06/22/2015"
 ms.author="bbenz" />
 
 #Liste der Images virtueller Oracle-Computer
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+
 Um auf Oracle-Images basierende virtuelle Computer zu erstellen, melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an, klicken Sie auf **Marketplace**, klicken Sie auf **Compute**, und geben Sie dann im Suchfeld **Oracle** ein. Wählen Sie ein Image aus, und folgen Sie den Anweisungen zum Einrichten des Images in Microsoft Azure. Beachten Sie, dass Oracle-Images von Microsoft im [Azure-Portal](https://ms.portal.azure.com/) unter Windows und Oracle-Images von Oracle unter Oracle Linux ausgeführt werden.
 
 ![](media/virtual-machines-oracle-list-oracle-virtual-machine-images/image1.png)
@@ -67,4 +62,4 @@ Die folgende Liste enthält die verfügbaren vorkonfigurierten Images virtueller
 
 [Images virtueller Oracle-Computer – verschiedene Überlegungen](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

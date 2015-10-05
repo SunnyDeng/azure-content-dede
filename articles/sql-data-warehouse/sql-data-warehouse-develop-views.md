@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/22/2015"
+   ms.date="09/22/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
  
@@ -24,7 +24,7 @@ Sichten sind in SQL Data Warehouse besonders nützlich. Sie können auf verschie
 In diesem Artikel werden einige Beispiele zum Verbessern der Lösung mit einer Implementierung von Sichten dargestellt. Es gibt einige Einschränkungen, die ebenfalls berücksichtigt werden müssen.
 
 ## Architekturabstraktion
-Ein häufig verwendetes Anwendungsmuster ist das erneute Erstellen von Tabellen mit CREATE TABLE AS SELECT \(CTAS\) gefolgt von einem Muster zur Objektumbenennung beim Laden von Daten.
+Ein häufig verwendetes Anwendungsmuster ist das erneute Erstellen von Tabellen mit CREATE TABLE AS SELECT (CTAS) gefolgt von einem Muster zur Objektumbenennung beim Laden von Daten.
 
 Im folgenden Beispiel werden einer Datumsdimension neue Datumsdatensätze hinzugefügt. Beachten Sie, wie das neue Objekt "DimDate\_New" zuerst erstellt und dann umbenannt wird, um die ursprüngliche Version des Objekts zu ersetzen.
 
@@ -69,4 +69,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

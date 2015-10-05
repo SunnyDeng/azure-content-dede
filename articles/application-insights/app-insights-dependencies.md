@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="09/17/2015" 
 	ms.author="awills"/>
  
 # Diagnostizieren von Problemen mit Abhängigkeiten in Application Insights
@@ -48,7 +48,7 @@ Installieren Sie den entsprechenden Agent für den Hostserver.
 Plattform | Installieren
 ---|---
 IIS-Server | [Statusmonitor](app-insights-monitor-performance-live-website-now.md)
-Azure-Web-App | [Application Insights-Erweiterung](../insights-perf-analytics.md)
+Azure-Web-App | [Application Insights-Erweiterung](../azure-portal/insights-perf-analytics.md)
 Java-Webserver | [Java-Web-Apps](app-insights-java-agent.md)
 
 Für den Statusmonitor für IIS-Server müssen Sie das Quellprojekt nicht mit dem Application Insights-SDK neu erstellen.
@@ -129,4 +129,4 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 
 <!--Link references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

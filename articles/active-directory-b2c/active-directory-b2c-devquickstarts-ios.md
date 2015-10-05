@@ -6,7 +6,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="objectivec"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="brandwe"/>
 
 # Azure AD B2C Preview: Aufrufen von Web-APIs aus einer iOS-Anwendung
@@ -19,7 +19,7 @@ Mit Azure AD B2C können Sie Ihren iOS-Apps und Web-APIs in wenigen Schritten le
 	
 > [AZURE.NOTE]Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für „node.js“ eine API für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure Active Directory-Web-API-Beispiel für Node.js](active-directory-b2c-devquickstarts-api-node.md`).
 
-> [AZURE.NOTE]Dieser Artikel behandelt nicht das Implementieren von Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
+> [AZURE.NOTE]Dieser Artikel behandelt nicht das Implementieren von Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
 
 ## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
 
@@ -27,16 +27,20 @@ Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen
 
 ## 2\. Erstellen einer Anwendung
 
-Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind. Die App und die Web-API werden in diesem Fall durch eine einzelne **Anwendungs-ID** dargestellt, da sie zusammen eine logische App bilden. Befolgen Sie zum Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Schritte
+Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind. Die App und die Web-API werden in diesem Fall durch eine einzelne **Anwendungs-ID** dargestellt, da sie zusammen eine logische App bilden. Befolgen Sie zum Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
 
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `http://localhost:3000/auth/openid/return` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
 - Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen wird. Sie benötigen sie ebenfalls in Kürze.
 
+    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+
 ## 3\. Erstellen der Richtlinien
 
-In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Anwendung enthält drei Oberflächen für die Identität: Registrierung, Anmeldung und Facebook-Anmeldung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Beachten Sie beim Erstellen der drei Richtlinien Folgendes:
+> [AZURE.NOTE]Für unsere B2C-Vorschau verwenden Sie beim Client- und Serversetup dieselben Richtlinien. Wenn Sie bereits eine exemplarische Vorgehensweise befolgt und diese Richtlinien erstellt haben, müssen Sie diese nicht erneut erstellen. Sie können die Richtlinien wiederverwenden, die Sie zuvor im Portal erstellt haben, wenn sie die Anforderungen der Anwendung erfüllen.
+
+In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Anwendung enthält drei Oberflächen für die Identität: Registrierung, Anmeldung und Facebook-Anmeldung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
 
 - Wählen Sie den **Anzeigenamen** und einige andere Anmeldeattribute in der Registrierungsrichtlinie aus.
 - Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsansprüche in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
@@ -44,11 +48,11 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md).
 
 ## 4\. Herunterladen des Codes
 
-Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS.git
@@ -56,7 +60,7 @@ git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClie
 
 > [AZURE.NOTE]**Zur Durchführung dieses Lernprogramms ist das Herunterladen des Gerüsts erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter iOS enthält das **Gerüst** UX-Code, der ausgeführt wird, nachdem Sie das unten angegebene Lernprogramm ausgeführt haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Hinzufügen von B2C zu einer iOS-Anwendung nicht von Belang.
 
-Die fertige App ist auch [als ZIP verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
 
 
 Laden Sie nun das Podfile mithilfe von Cocoapods. Dadurch wird ein neuer XCode-Arbeitsbereich erstellt, den Sie nun laden. Wenn Sie Cocoapods noch nicht eingerichtet haben, ist dies über [diese Website](https://cocoapods.org) möglich.
@@ -111,7 +115,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie einen OAuth 2.0-Tokenaustausc
 
 Wir benötigen Methoden, um ein Token mit unserer ausgewählten Richtlinie abzurufen und anschließend unseren Aufgabenserver aufzurufen. Diese richten wir jetzt ein.
 
-Erstellen Sie eine Datei mit dem Namen `samplesWebAPIConnector.h` unter „/Microsoft Tasks“ in Ihrem XCode-Projekt.
+Erstellen Sie eine Datei mit dem Namen `samplesWebAPIConnector.h` unter "/Microsoft Tasks" in Ihrem XCode-Projekt.
 
 Fügen Sie den folgenden Code hinzu, um festzulegen, was zu tun ist:
 
@@ -285,7 +289,7 @@ Als Nächstes schreiben wir die `convertPolicyToDictionary`-Methode unter den Co
 }
 
 ```
-Mit diesem recht einfachen Code wird lediglich ein „p“ an unsere Richtlinie angefügt, sodass die Abfrage „?p=<policy>“ lautet.
+Mit diesem recht einfachen Code wird lediglich ein "p" an unsere Richtlinie angefügt, sodass die Abfrage "?p=<policy>" lautet.
 
 Jetzt schreiben wir unsere umfangreiche `getClaimsWithPolicyClearingCache`-Methode. Aufgrund ihres Umfangs wird sie in einem separaten Abschnitt beschrieben.
 
@@ -293,7 +297,7 @@ Jetzt schreiben wir unsere umfangreiche `getClaimsWithPolicyClearingCache`-Metho
 
 Wenn Sie das Gerüst von GitHub heruntergeladen haben, werden Sie bemerken, dass zur Unterstützung der Beispielanwendung bereits einige dieser Gerüste verwendet werden. Sie basieren alle auf dem Muster `get(Claims|Token)With<verb>ClearningCache`. Bei Verwendung von Objetive C-Konventionen liest sich dies fast wie normales Englisch. Beispiel: „Get a Token with extra parameters I provide you and clear the cache“ (Token mit zusätzlichen von mir bereitgestellten Parametern abrufen und Cache löschen). Dies sieht wie folgt aus: `getTokenWithExtraParamsClearingCache()`. Ziemlich einfach.
 
-Wir schreiben „get Claims and a token With the policy I provide you and don't clear the cache“ (Ansprüche und ein Token mit der von mir bereitgestellten Richtlinie abrufen und Cache nicht löschen) bzw. `getClaimsWithPolicyClearingCache`. Wir erhalten von ADAL immer ein Token zurück. Daher ist es nicht erforderlich, in der Methode „Claims and token“ (Ansprüche und Token) anzugeben. In einigen Fällen benötigen Sie aber nur das Token ohne den zusätzlichen Aufwand für das Analysieren der Ansprüche. Daher haben wir im Gerüst eine Methode ohne Ansprüche bereitgestellt, die den Namen `getTokenWithPolicyClearingCache` hat.
+Wir schreiben "get Claims and a token With the policy I provide you and don't clear the cache" (Ansprüche und ein Token mit der von mir bereitgestellten Richtlinie abrufen und Cache nicht löschen) bzw. `getClaimsWithPolicyClearingCache`. Wir erhalten von ADAL immer ein Token zurück. Daher ist es nicht erforderlich, in der Methode „Claims and token“ (Ansprüche und Token) anzugeben. In einigen Fällen benötigen Sie aber nur das Token ohne den zusätzlichen Aufwand für das Analysieren der Ansprüche. Daher haben wir im Gerüst eine Methode ohne Ansprüche bereitgestellt, die den Namen `getTokenWithPolicyClearingCache` hat.
 
 Diesen Code schreiben wir jetzt:
 
@@ -362,7 +366,7 @@ Nun kommen wir zum eigentlichen Aufruf von ADAL. Hierbei verändert sich der Auf
 
 Hier sehen Sie, dass der Aufruf relativ einfach aufgebaut ist.
 
-**scopes**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **additionalScopes**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie für Ihre Anwendung verwenden können. Dies wird in Zukunft benötigt. **clientId**: Anwendungs-ID, die Sie vom Portal erhalten haben. **redirectURI**: Die Umleitung, über die das Token voraussichtlich wieder bereitgestellt wird. **identifier**: Dies ist eine Möglichkeit zum Identifizieren des Benutzers, um zu ermitteln, ob im Cache ein verwendbares Token enthalten ist (gegenüber dem ständigen Abfragen eines weiteren Tokens vom Server). Sie sehen, dass hierfür ein Typ mit dem Namen `ADUserIdentifier` genutzt wird und dass wir angeben können, was wir als ID verwenden möchten. Es ist ratsam, „username“ zu verwenden. **promptBehavior**: Dies ist veraltet und sollte AD\_PROMPT\_ALWAYS lauten. **extraQueryParameters**: Zusätzliche Elemente, die Sie im URL-codierten Format an den Server übergeben möchten. **policy**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**scopes**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **additionalScopes**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie für Ihre Anwendung verwenden können. Dies wird in Zukunft benötigt. **clientId**: Anwendungs-ID, die Sie vom Portal erhalten haben. **redirectURI**: Die Umleitung, über die das Token voraussichtlich wieder bereitgestellt wird. **identifier**: Dies ist eine Möglichkeit zum Identifizieren des Benutzers, um zu ermitteln, ob im Cache ein verwendbares Token enthalten ist (gegenüber dem ständigen Abfragen eines weiteren Tokens vom Server). Sie sehen, dass hierfür ein Typ mit dem Namen `ADUserIdentifier` genutzt wird und dass wir angeben können, was wir als ID verwenden möchten. Es ist ratsam, "username" zu verwenden. **promptBehavior**: Dies ist veraltet und sollte AD\_PROMPT\_ALWAYS lauten. **extraQueryParameters**: Zusätzliche Elemente, die Sie im URL-codierten Format an den Server übergeben möchten. **policy**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
 
 Sie sehen im completionBlock, dass wir das `ADAuthenticationResult`-Element übergeben, in dem unser Token und die Profilinformationen enthalten sind (falls der Aufruf erfolgreich war).
 
@@ -630,7 +634,7 @@ Als Letztes müssen wir die Abmeldung für unsere Anwendung implementieren. Dies
 
 ## 9\. Ausführen der Beispiel-App
 
-Abschließend erstellen Sie die App in xCode und führen sie aus. Registrieren Sie sich bei der App, oder melden Sie sich bei der App an, und erstellen Sie Aufgaben für den angemeldeten Benutzer. Melden Sie sich ab, und melden Sie sich als ein anderer Benutzer wieder an, und erstellen Sie für diesen Benutzer Aufgaben.
+Abschließend erstellen Sie die App in xCode und führen sie aus. Registrieren Sie sich bei der App, oder melden Sie sich bei der App an, und erstellen Sie Aufgaben für den angemeldeten Benutzer. Melden Sie sich ab, melden Sie sich als ein anderer Benutzer wieder an, und erstellen Sie für diesen Benutzer Aufgaben.
 
 Beachten Sie, wie die Aufgaben pro Benutzer in der API gespeichert werden, da die API die Benutzeridentität aus dem empfangenen Zugriffstoken extrahiert.
 
@@ -646,4 +650,4 @@ Sie können nun mit den B2C-Themen für fortgeschrittenere Benutzer fortfahren. 
 
 [Anpassen der Benutzeroberfläche einer B2C-App >>]()
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

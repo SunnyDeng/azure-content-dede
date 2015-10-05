@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Erstellen von Windows-Desktop-Apps
@@ -26,32 +26,34 @@ einer E-Mail-Adresse sowie über Konten sozialer Netzwerke wie Facebook oder Goo
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
+## 1. Erstellen eines Azure AD B2C-Verzeichnisses
 
 Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über
 ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
-## 2\. Erstellen einer Anwendung
+## 2. Erstellen einer Anwendung
 
 Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind.  Befolgen Sie zum
 Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
 
 - Einfügen eines **systemeigenen Clients** in die Anwendung
 - Notieren Sie sich den **Umleitungs-URI** `urn:ietf:wg:oauth:2.0:oob` – dies ist die Standard-URL für dieses Codebeispiel.
-- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen diese Informationen in Kürze.
+- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie später.
 
-## 3\. Erstellen der Richtlinien
+    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+
+## 3. Erstellen der Richtlinien
 
 In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert.  Dieses Codebeispiel enthält drei 
 Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im 
 [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Beachten Sie beim Erstellen der drei Richtlinien Folgendes:
 
-- Wählen Sie auf dem Blatt für den Identitätsanbieter **User ID signup** oder **Email signup** aus.
-- Wählen Sie den **Anzeigenamen** und einige andere Anmeldeattribute in der Registrierungsrichtlinie aus.
+- Wählen Sie **Registrierung mit Benutzer-ID** oder **E-Mail-Registrierung** auf dem Blatt für den Identitätsanbieter aus.
+- Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
 - Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsanspruch in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
-- Notieren Sie sich den **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Er muss das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
+- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
 
-Nachdem Sie die drei Richtlinien erstellt haben, können Sie Ihre App erstellen.
+Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
 ## 4\. Herunterladen des Codes
 
@@ -71,7 +73,7 @@ dargestellt, da sie zusammen eine logische Anwendung bilden.
 
 ## 5\. Konfigurieren des Aufgabendiensts
 
-Wenn der `TaskService` Anforderungen vom `TaskClient` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen der Token müssen Sie dem `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
+Wenn `TaskService` Anforderungen von `TaskClient` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen der Zugriffstoken müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
 
 ```
 <appSettings>
@@ -102,7 +104,7 @@ PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory
 ```
 
 #### Geben Sie Ihre B2C-Details ein.
-Öffnen Sie die Datei `Globals.cs`, und ersetzen Sie alle Eigenschaftenwerte durch Ihre eigenen. Diese Klasse wird vom `TaskClient` für Verweise auf häufig verwendete Werte verwendet.
+Öffnen Sie die Datei `Globals.cs`, und ersetzen Sie alle Eigenschaftswerte durch Ihre eigenen. Diese Klasse wird vom `TaskClient` für Verweise auf häufig verwendete Werte verwendet.
 
 ```C#
 public static class Globals
@@ -332,7 +334,7 @@ Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müss
 
 Sie können frei mit Ihren Richtlinien experimentieren und die Auswirkung auf die Beispiel-App beobachten – Sie können IDPs hinzufügen/entfernen oder die Anwendungsansprüche oder Registrierungsattribute ändern. Experimentieren Sie so lange, bis die Zusammenarbeit von Richtlinien, Authentifizierungsanforderungen und ADAL verstanden haben.
 
-Als Referenz stellen wir das vollständige Beispiel [hier als ZIP-Datei bereit](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip). Sie können es auch aus GitHub klonen:
+Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) bereit. Sie können es auch aus GitHub klonen:
 
 ```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet.git```
 
@@ -348,4 +350,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!-----HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Informationen zu Images für virtuelle Computer"
+	pageTitle="Informationen zu Images für virtuelle Computer | Microsoft Azure"
 	description="Informationen zur Nutzung von Images mit virtuellen Computern in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/13/2015"
@@ -57,4 +57,4 @@ Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/20/2015"
+   ms.date="09/18/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
@@ -232,6 +232,8 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 
 Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion (weiter unten beschrieben) den eindeutigen Bezeichner für eine Ressource abrufen.
 
+Die Werte für das **properties**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie unter [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
+
 Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und eine **Microsoft.Web/Sites**-Ressource mit einer verschachtelten **Extensions**-Ressource:
 
     "resources": [
@@ -408,4 +410,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

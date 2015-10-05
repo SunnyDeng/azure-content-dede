@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="kenazk"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -16,7 +17,7 @@
 	ms.date="07/23/2015"
 	ms.author="kenazk"/>
 
-#Verwalten der Verfügbarkeit virtueller Computer
+# Verwalten der Verfügbarkeit virtueller Computer
 
 ## Verstehen geplanter und nicht geplanter Wartung
 Es gibt zwei Arten von Microsoft Azure Platform-Ereignissen, die sich auf die Verfügbarkeit von virtuellen Computern auswirken können: geplante und ungeplante Wartung.
@@ -69,4 +70,4 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
 [Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: virtual-machines-how-to-configure-availability.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

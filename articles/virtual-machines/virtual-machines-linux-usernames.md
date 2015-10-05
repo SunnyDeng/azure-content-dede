@@ -1,12 +1,12 @@
 <properties 
-	pageTitle="Auswählen von Benutzernamen für Linux in Azure" 
+	pageTitle="Auswählen von Benutzernamen für Linux | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Benutzernamen für einen virtuellen Linux-Computer in Azure auswählen." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
-	editor=""/>
-
+	editor=""
+	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
 	ms.service="virtual-machines" 
@@ -16,7 +16,6 @@
 	ms.topic="article" 
 	ms.date="07/29/2015" 
 	ms.author="szark"/>
-
 
 
 
@@ -250,4 +249,4 @@ Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

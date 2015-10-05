@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Hochladen einer Linux-VHD in Azure"
-	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die das Linux-Betriebssystem enthält."
+	pageTitle="Erstellen und Hochladen einer Linux-VHD | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD), die das Linux-Betriebssystem enthält, mit dem klassischen Bereitstellungsmodell erstellen und hochladen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -18,6 +18,8 @@
 	ms.author="dkshir"/>
 
 # Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Hochladen einer VHD mit dem klassischen Bereitstellungsmodell.
 
 Dieser Artikel erläutert, wie Sie eine virtuelle Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, um sie als eigenes Image für die Erstellung von virtuellen Computern in Azure zu nutzen. Sie erfahren, wie Sie das Betriebssystem vorbereiten, um es zum Erstellen mehrerer virtueller Computer auf Grundlage des Images zu verwenden. Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
@@ -159,4 +161,4 @@ Weitere Informationen hierzu finden Sie unter [Add-AzureVhd]((https://msdn.micro
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

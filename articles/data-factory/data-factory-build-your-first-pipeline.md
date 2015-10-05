@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="09/10/2015"
+	ms.date="09/22/2015"
 	ms.author="spelluru"/>
 
 # Erstellen der ersten Pipeline mit Azure Data Factory
@@ -148,13 +148,15 @@ Bevor Sie mit dem Tutorial beginnen, müssen Sie den Azure-Speicher mit Dateien 
 	1. Laden Sie die [neueste Version von **AzCopy**](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter. Finden Sie unter dem Artikel [Verwenden vonAzCopy ](../storage/storage-use-azcopy.md) eine Anleitung zur Verwendung des Dienstprogramms.
 	2. Nach der Installation von AzCopy können Sie das Tool dem Systempfad hinzufügen, indem Sie den folgenden Befehl an der Eingabeaufforderung ausführen. 
 	
-			set path=%path%;C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy
-	
+			set path=%path%;C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy			 
 
 	3. Navigieren Sie zum Ordner "c:\\adfgettingstarted", und führen Sie den folgenden Befehl zum Hochladen der HQL-Datei von Hive in das Speicherkonto aus. Ersetzen Sie **StorageAccountName** durch den Namen Ihres Speicherkontos und **Storage Key** durch den Speicherkontoschlüssel.
 
 			AzCopy /Source:. /Dest:https://<StorageAccountName>.blob.core.windows.net/script /DestKey:<Storage Key>
-	4. Nachdem die Datei erfolgreich hochgeladen wurde, sehen Sie die folgende Ausgabe von AzCopy.
+
+		> [AZURE.NOTE]Der obige Befehl erstellt einen Container mit dem Namen **Skript** in Ihrem Azure Blob-Speicher und kopiert die Datei **partitionweblogs.hql** in den Container.
+	>
+	5. Nachdem die Datei erfolgreich hochgeladen wurde, sehen Sie die folgende Ausgabe von AzCopy.
 	
 			Finished 1 of total 1 file(s).
 			[2015/06/15 15:47:13] Transfer summary:
@@ -174,4 +176,4 @@ Gehen Sie wie folgt vor:
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

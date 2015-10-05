@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden des Tabellenspeichers mit Java | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele sind in Java-Code geschrieben."
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
+	pageTitle="Verwenden des Tabellenspeichers mit Java | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele sind in Java-Code geschrieben." 
+	services="storage" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="08/31/2015" 
 	ms.author="robmcm"/>
 
 
@@ -552,6 +552,9 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 - [Azure Storage-REST-API][]
 - [Azure Storage-Teamblog][]
 
+Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/java/).
+
+
 [Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
 [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
@@ -562,4 +565,4 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
 [Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

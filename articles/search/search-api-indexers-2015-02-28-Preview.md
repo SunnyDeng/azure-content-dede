@@ -12,7 +12,7 @@ ms.service="search"
 ms.devlang="rest-api" 
 ms.workload="search" ms.topic="article"  
 ms.tgt_pltfrm="na" 
-ms.date="07/08/2015" 
+ms.date="09/21/2015" 
 ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)
@@ -40,7 +40,7 @@ Die folgenden Datenquellen werden derzeit unterstützt:
 
 Unterstützung für zusätzliche Datenquellen ist für einen späteren Zeitpunkt geplant. Damit wir unsere Entscheidungen besser priorisieren können, lassen Sie uns im [Feedback-Forum für Azure Search](http://feedback.azure.com/forums/263029-azure-search) Ihr Feedback zukommen.
 
-Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenressourcen Sie unter [Grenzen und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
+Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenressourcen Sie unter [Grenzwerte](search-limits-quotas-capacity.md).
 
 ## Typischer Verwendungsablauf
 
@@ -775,4 +775,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

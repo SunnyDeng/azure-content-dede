@@ -114,6 +114,8 @@ Wenn Sie PowerShell noch nicht mit Ihrem Azure-Abonnement verwendet haben:
 
 E-Mail-Nachricht senden, wenn die Antwort des Servers auf HTTP-Anforderungen, gemittelt über 5 Minuten, langsamer als 1 Sekunde ist. Der Name meiner Application Insights-Ressource lautet IceCreamWebApp, und sie befindet sich in der Ressourcengruppe "Fabrikam". Ich bin Besitzer des Azure-Abonnements.
 
+Die GUID ist die Abonnement-ID (nicht der Instrumentierungsschlüssel der Anwendung).
+
     Add-AlertRule -Name "slow responses" `
      -Description "email me if the server responds slowly" `
      -ResourceGroup "Fabrikam" `
@@ -140,7 +142,7 @@ Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-
      -CustomEmails "satish@fabrikam.com","lei@fabrikam.com" `
      -Location "East US" -RuleType Metric
 
-Die gleiche Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Tracking-Aufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
+Dieselbe Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Tracking-Aufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
 
 #### Metriknamen
 
@@ -169,7 +171,14 @@ Metrikname | Anzeigename | Beschreibung
 `view.count`|Seitenaufrufe|Anzahl der Clientbenutzeranforderungen für eine Webseite. Synthetischer Datenverkehr wird herausgefiltert.
 {benutzerdefinierter Metrikname}|{Ihr Metrikname}|Der von [TrackMetric](app-insights-api-custom-events-metrics.md#track-metric) oder im [Messparameter für einen Tracking-Aufruf](app-insights-api-custom-events-metrics.md#properties) gemeldete Metrikwert.
 
-   
+Die Metriken werden von verschiedenen Telemetriemodulen gesendet:
+
+Metrikgruppe | Erfassungsmodul
+---|---
+basicExceptionBrowser,<br/>clientPerformance,<br/>view | [Browser JavaScript](app-insights-javascript.md)
+performanceCounter | [Leistung](app-insights-configuration-with-applicationinsights-config.md#nuget-package-3)
+remoteDependencyFailed| [Abhängigkeit](app-insights-configuration-with-applicationinsights-config.md#nuget-package-1)
+request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-applicationinsights-config.md#nuget-package-2)
 
 
 <!--Link references-->
@@ -182,4 +191,4 @@ Metrikname | Anzeigename | Beschreibung
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

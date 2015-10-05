@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erstellen einer Datensatzgruppe und von Einträgen für eine DNS-Zone | Microsoft Azure"
-	description="Erstellen von Hosteinträgen für Azure DNS. Einrichten von Datensatzgruppen und Einträgen mithilfe von PowerShell"
-	services="dns"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="Adinah"
-	editor=""/>
+   description="Erstellen von Hosteinträgen für Azure DNS. Einrichten von Datensatzgruppen und Einträgen mithilfe von PowerShell"
+   services="dns"
+   documentationCenter="na"
+   authors="joaoma"
+   manager="Adinah"
+   editor=""/>
 
 <tags
    ms.service="dns"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/12/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/22/2015"
+   ms.author="joaoma"/>
 
 
 # Erstellen von DNS-Einträgen
@@ -124,4 +124,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

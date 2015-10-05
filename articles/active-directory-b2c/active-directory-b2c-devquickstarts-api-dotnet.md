@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 	
 # Azure AD B2C-Vorschau: Erstellen einer .NET-Web-API
@@ -36,32 +36,34 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Verwenden Sie für die Web-App den **Umleitungs-URI** `https://localhost:44316/` – dies ist der Standardspeicherort des Web-App-Clients für dieses Codebeispiel.
 - Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie später.
 
+     >[AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+
 ## 3\. Erstellen der Richtlinien
 
 In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Der Client in diesem Codebeispiel enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
 
 - Wählen Sie **Registrierung mit Benutzer-ID** oder **E-Mail-Registrierung** auf dem Blatt für den Identitätsanbieter aus.
-- Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
+- Wählen Sie den **Anzeigenamen** und einige andere Anmeldeattribute in der Registrierungsrichtlinie aus.
 - Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsanspruch in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
-- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
+- Notieren Sie sich den **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Er muss das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
 ## 4\. Herunterladen des Codes
 
-Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP herunterladen](https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet.git
 ```
 
-Die fertige App ist ebenfalls [als ZIP verfügbar](https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-WebAPI-DotNet/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
 
 Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskWebApp`-Projekt und ein `TaskService`-Projekt. `TaskWebApp` ist eine MVC-Webanwendung, mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste des Benutzers gespeichert wird.
 
 ## 5\. Konfigurieren der Aufgaben-Web-App
 
-Wenn der Benutzer mit `TaskWebApp` interagiert, sendet der Client Anfragen an Azure AD und erhält Token, die für den Aufruf der Web-API `TaskService` verwendet werden können. Damit sich die Benutzer anmelden und Token erhalten können, benötigt `TaskWebApp` einige Informationen über Ihre App. Öffnen Sie im `TaskWebApp`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`.
+Wenn der Benutzer mit `TaskWebApp` interagiert, sendet der Client Anfragen an Azure AD und erhält Token, die für den Aufruf der Web-API `TaskService` verwendet werden können. Damit sich die Benutzer anmelden und Token erhalten können, benötigt `TaskWebApp` einige Informationen über Ihre App. Öffnen Sie im `TaskWebApp`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
 
 ```
 <appSettings>
@@ -99,7 +101,7 @@ public class TasksController : Controller
 {
 ```
 
-Wenn Sie wissen möchten, wie eine Web-App wie `TaskWebApp` Azure AD B2C verwendet, sehen Sie sich unseren [Artikel mit den ersten Schritte für die Web-App-Anmeldung](active-directory-b2c-devquickstarts-web-dotnet.md) an.
+Wenn Sie wissen möchten, wie eine Web-App wie `TaskWebApp` Azure AD B2C verwendet, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-App-Anmeldung](active-directory-b2c-devquickstarts-web-dotnet.md) an.
 
 ## 6\. Sichern der API
 
@@ -230,4 +232,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!----HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

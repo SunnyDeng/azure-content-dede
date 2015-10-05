@@ -19,6 +19,14 @@
 
 #Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über FTP
 
+> [AZURE.SELECTOR]
+- [.Net](web-sites-dotnet-get-started.md)
+- [Node.js](web-sites-nodejs-develop-deploy-mac.md)
+- [Java](web-sites-java-get-started.md)
+- [PHP - Git](web-sites-php-mysql-deploy-use-git.md)
+- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
+- [Python](web-sites-python-ptvs-django-mysql.md)
+
 In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Web-App erstellen und über FTP bereitstellen. Dieses Lernprogramm setzt voraus, dass Sie [PHP][install-php], [MySQL][install-mysql], einen Webserver und einen FTP-Client auf Ihrem Computer installiert haben. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Azure ausgeführte PHP-/MySQL-Web-App.
  
 Sie erhalten Informationen zu folgenden Themen:
@@ -289,4 +297,4 @@ Nachdem Sie sowohl `index.php` als auch `createtable.php` hochgeladen haben, nav
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

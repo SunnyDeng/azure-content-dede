@@ -1,20 +1,20 @@
 <properties
    pageTitle="Sichern einer Datenbank in SQL Data Warehouse | Microsoft Azure"
-	description="Tipps für das Sichern einer Datenbank in Azure SQL Data Warehouse für die Entwicklung von Lösungen."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="sahaj08"
-	manager="barbkess"
-	editor=""/>
+   description="Tipps für das Sichern einer Datenbank in Azure SQL Data Warehouse für die Entwicklung von Lösungen."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="sahaj08"
+   manager="barbkess"
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="06/22/2015"
-	ms.author="sahajs"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/22/2015"
+   ms.author="sahajs"/>
 
 # Sichern einer Datenbank in SQL Data Warehouse
 
@@ -33,10 +33,23 @@ Authentifizierung bezieht sich darauf, auf welche Weise Sie Ihre Identität beim
 
 Bei der Erstellung des logischen Servers für die Datenbank haben Sie eine "Server Admin"-Anmeldung mit Benutzername und Kennwort angegeben. Mit diesen Anmeldeinformationen können Sie sich bei jeder Datenbank auf diesem Server als Datenbankbesitzer bzw. "dbo" (database owner) authentifizieren.
 
-Entsprechend einer bewährten Methode sollten die Benutzer Ihrer Organisation jedoch ein anderes Konto zur Authentifizierung verwenden. Auf diese Weise können Sie die Berechtigungen für die Anwendung beschränken und die Risiken schädlicher Aktivitäten reduzieren, falls Ihr Anwendungscode für einen SQL-Injection-Angriff anfällig ist. Der empfohlene Ansatz besteht darin, einen eigenständigen Datenbankbenutzer zu erstellen. Dadurch kann sich Ihre App direkt bei einer Datenbank mit Benutzername und Kennwort authentifizieren. Sie können einen eigenständigen Datenbankbenutzer erstellen, indem Sie das folgende T-SQL ausführen, während Sie mit Ihrer Benutzerdatenbank über Ihre Server Admin-Anmeldung verbunden sind:
+Allerdings sollten die Benutzer in Ihrer Organisation als bewährte Methode ein anderes Konto für die Authentifizierung verwenden. Auf diese Weise können Sie die Berechtigungen für die Anwendung beschränken und die Risiken schädlicher Aktivitäten reduzieren, falls Ihr Anwendungscode für einen SQL-Injection-Angriff anfällig ist. So erstellen Sie einen Datenbankbenutzer auf Grundlage der Serveranmeldung:
+
+Stellen Sie zunächst als mit den Anmeldeinformationen für den Serveradministrator eine Verbindung mit der Masterdatenbank auf dem Server her, und erstellen Sie eine neue Serveranmeldung.
 
 ```
-CREATE USER ApplicationUser WITH PASSWORD = 'strong_password';
+-- Connect to master database and create a login
+CREATE LOGIN ApplicationLogin WITH PASSWORD = 'strong_password';
+
+```
+
+Stellen Sie dann mit den Anmeldedaten für den Serveradministrator eine Verbindung mit der SQL Data Warehouse-Datenbank her, und erstellen Sie einen Datenbankbenutzer mit der gerade erstellten Serveranmeldung.
+
+```
+
+-- Connect to SQL DW database and create a database user
+CREATE USER ApplicationUser FOR LOGIN ApplicationLogin;
+
 ```
 
 Weitere Informationen zur Authentifizierung bei einer SQL-Datenbank finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank][].
@@ -47,13 +60,17 @@ Weitere Informationen zur Authentifizierung bei einer SQL-Datenbank finden Sie u
 Autorisierung bezieht sich darauf, welche Aufgaben Sie in einer Azure SQL Data Warehouse-Datenbank ausführen können. Dies wird durch die Rollenmitgliedschaften und Berechtigungen Ihres Benutzerkontos gesteuert. Als bewährte Methode sollten Sie Benutzern nur die minimal erforderlichen Berechtigungen erteilen. Azure SQL Data Warehouse vereinfacht die Verwaltung durch Rollen in T-SQL:
 
 ```
-ALTER ROLE db_datareader ADD MEMBER ApplicationUser; -- allows ApplicationUser to read data
-ALTER ROLE db_datawriter ADD MEMBER ApplicationUser; -- allows ApplicationUser to write data
+EXEC sp_addrolemember 'db_datareader', 'ApplicationUser'; -- allows ApplicationUser to read data
+EXEC sp_addrolemember 'db_datawriter', 'ApplicationUser'; -- allows ApplicationUser to write data
 ```
 
 Das Server-Admin-Konto, mit dem Sie eine Verbindung herstellen, ist Mitglied von db\_owner und verfügt daher über alle Berechtigungen in der Datenbank. Speichern Sie dieses Konto für die Bereitstellung von Schemaänderungen und andere Verwaltungsvorgänge. Verwenden Sie das Konto "ApplicationUser" mit eingeschränkteren Berechtigungen, um eine Verbindung von Ihrer Anwendung zur Datenbank mit den geringsten Berechtigungen herzustellen, die von Ihrer Anwendung benötigt werden.
 
-Es gibt Möglichkeiten, weiter einzuschränken, was für einen Benutzer mit einer Azure SQL-Datenbank möglich ist: – [Datenbankrollen][] außer db\_datareader und db\_datawriter können verwendet werden, um leistungsfähigere Anwendungsbenutzerkonten oder weniger leistungsfähige Verwaltungskonten zu erstellen. – Mit präzisen [Berechtigungen][] können Sie steuern, welche Vorgänge Sie für einzelne Spalten, Tabellen, Sichten, Prozeduren und andere Objekte in der Datenbank durchführen können. – [Gespeicherte Prozeduren][] können verwendet werden, um die Aktionen einzuschränken, die in der Datenbank ausgeführt werden können.
+Es gibt Möglichkeiten, Benutzerberechtigungen für die Azure SQL-Datenbank noch weiter einzuschränken:
+
+- [Datenbankrollen][] können, mit Ausnahme von "db\_datareader" und "db\_datawriter", dazu verwendet werden, leistungsstärkere Benutzerkonten für Anwendungen oder weniger leistungsstarke Verwaltungskonten zu erstellen.
+- Mithilfe von granularen [Berechtigungen][] können Sie steuern, welche Aufgaben in einzelnen Spalten, Tabellen, Ansichten, Prozeduren und anderen Objekten in der Datenbank ausgeführt werden dürfen.
+- [Gespeicherten Prozeduren][] können verwendet werden, um die Aktionen zu begrenzen, die in der Datenbank ausgeführt werden können.
 
 Die Verwaltung von Datenbanken und logischen Servern über das Azure-Verwaltungsportal oder mit der Azure-Ressourcen-Manager-API wird durch die Rollenzuweisungen Ihres Portal-Benutzerkontos gesteuert. Weitere Informationen zu diesem Thema finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal][].
 
@@ -94,7 +111,7 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Datenbankrollen]: https://msdn.microsoft.com/library/ms189121.aspx
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: https://msdn.microsoft.com/library/ee336235.aspx
 [Berechtigungen]: https://msdn.microsoft.com/library/ms191291.aspx
-[Gespeicherte Prozeduren]: https://msdn.microsoft.com/library/ms190782.aspx
+[Gespeicherten Prozeduren]: https://msdn.microsoft.com/library/ms190782.aspx
 [Transparent Data Encryption]: http://go.microsoft.com/fwlink/?LinkId=526242
 [Erste Schritte mit der SQL-Datenbanküberwachung]: sql-database-auditing-get-started.md
 [Azure-Portal]: https://portal.azure.com/
@@ -102,4 +119,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 <!--Other Web references-->
 [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal]: http://azure.microsoft.com/documentation/articles/role-based-access-control-configure.aspx
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C Preview: Anwendungstypen
@@ -128,4 +128,4 @@ Viele Architekturen umfassen eine Web-API, von der eine andere nachgeschaltete W
 
 Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im-Auftrag-von-Vorgang“. Der Im-Auftrag-von-Vorgang ist in der Preview-Version von Azure AD B2C derzeit noch nicht implementiert.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

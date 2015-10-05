@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Erstellen und Verwalten eines Pool für elastische SQL-Datenbanken mit PowerShell"
-	description="Erstellen und Verwalten eines elastischen Pool für elastische Azure SQL-Datenbanken mit PowerShell"
-	services="sql-database"
-	documentationCenter=""
-	authors="stevestein"
-	manager="jeffreyg"
-	editor=""/>
+   pageTitle="Erstellen und Verwalten eines Pool für elastische SQL-Datenbanken mit PowerShell" 
+   description="Erstellen und Verwalten eines elastischen Pool für elastische Azure SQL-Datenbanken mit PowerShell" 
+   services="sql-database" 
+   documentationCenter="" 
+   authors="stevestein" 
+   manager="jeffreyg" 
+   editor=""/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="powershell"
-	ms.workload="data-management"
-	ms.date="08/25/2015"
-	ms.author="adamkr; sstein"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="data-management" 
+   ms.date="09/23/2015"
+   ms.author="adamkr; sstein"/>
 
 # Erstellen und Verwalten eines Pool für elastische SQL-Datenbanken mit PowerShell
 
@@ -240,4 +240,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie elastisch
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

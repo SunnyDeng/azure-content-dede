@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="09/22/2015" 
 	ms.author="spelluru"/>
 
 # Azure Data Factory Editor
@@ -221,4 +221,4 @@ Schrittanleitungen zum Erstellen einer Azure Data Factory mit Data Factory Edito
 [clone-datafactory-entity]: ./media/data-factory-editor/clone-datafactory-entity.png
 [add-activity-options]: ./media/data-factory-editor/add-activity-options.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Anfügen eines Datenträgers an einen virtuellen Computer | Microsoft Azure"
-	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Azure-Computer anfügen und initialisieren können, damit er betriebsbereit ist."
+	description="Fügen Sie einen Datenträger an einen virtuellen Computer an, der mit dem klassischen Bereitstellungsmodell erstellt wurde, und initialisieren Sie ihn."
 	services="virtual-machines, storage"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +17,9 @@
 	ms.date="07/16/2015"
 	ms.author="cynthn"/>
 
-# Anfügen eines Datenträgers an einen virtuellen Windows-Computer
+# Anfügen eines Datenträgers an einen virtuellen Windows-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell. Sie können Ressourcen auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-attach-disk-preview.md) erstellen.
 
 Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann.
 
@@ -59,4 +61,4 @@ Hier finden Sie eine exemplarische Vorgehensweise für die Schritte dieses Tutor
 
 [logon]: virtual-machines-log-on-windows-server.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

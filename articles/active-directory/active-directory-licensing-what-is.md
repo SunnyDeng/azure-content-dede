@@ -1,20 +1,20 @@
 <properties
    pageTitle="Was ist Microsoft Azure Active Directory-Lizenzierung? | Microsoft Azure"
-	description="Beschreibung der Microsoft Azure AD-Lizenzierung, der Funktionsweise, der ersten Schritte und der bewährten Methoden, einschließlich Office 365, Microsoft Intune und Azure Active Directory Premium und Basic"
-	services="active-directory"
-	documentationCenter=""
-	authors="curtand"
-	manager="swadhwa"
-	editor=""/>
+   description="Beschreibung der Microsoft Azure AD-Lizenzierung, der Funktionsweise, der ersten Schritte und der bewährten Methoden, einschließlich Office 365, Microsoft Intune und Azure Active Directory Premium und Basic"
+   services="active-directory"
+   documentationCenter=""
+   authors="curtand"
+   manager="stevenpo"
+   editor=""/>
 
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="07/16/2015"
-	ms.author="curtand"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/21/2015"
+   ms.author="curtand"/>
 
 # Was ist Microsoft Azure Active Directory-Lizenzierung?
 
@@ -131,4 +131,4 @@ Jetzt sind Sie möglicherweise bereit, einige Funktionen von Azure AD Premium zu
 - [Azure Multi-Factor Authentication](multi-factor-authentication.md)
 - [Direkter Erwerb von Azure AD Premium-Lizenzen](http://aka.ms/buyaadp)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

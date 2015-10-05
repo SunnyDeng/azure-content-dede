@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle"
-	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export."
-	services="application-insights"
-	documentationCenter=""
-	authors="mazharmicrosoft"
+	pageTitle="Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle" 
+	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
+	services="application-insights" 
+    documentationCenter=""
+	authors="mazharmicrosoft" 
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/04/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/23/2015" 
 	ms.author="awills"/>
  
 # Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle
@@ -51,13 +51,13 @@ Erste Schritte:
 
 ## Erstellen von Speicher in Azure
 
-1. Erstellen Sie ein Speicherkonto in Ihrem Abonnement im [Azure-Portal][portal].
+1. Erstellen Sie ein "klassisches" Speicherkonto in Ihrem Abonnement im [Azure-Portal][portal].
 
     ![Wählen Sie im Azure-Portal "Neu", "Daten" und "Speicher".](./media/app-insights-code-sample-export-telemetry-sql-database/040-store.png)
 
 2. Erstellen eines Containers
 
-    ![Wählen Sie im neuen Speicher "Container" und anschließend "Hinzufügen".](./media/app-insights-code-sample-export-telemetry-sql-database/050-container.png)
+    ![Wählen Sie im neuen Speicher "Container" aus, klicken Sie auf die Kachel "Container" und anschließend auf "Hinzufügen".](./media/app-insights-code-sample-export-telemetry-sql-database/050-container.png)
 
 
 ## Starten des fortlaufenden Exports in den Azure-Speicher
@@ -539,4 +539,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

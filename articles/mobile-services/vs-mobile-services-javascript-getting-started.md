@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="" 
+	pageTitle="Erste Schritte mit einer mobilen Javascript-App, nachdem Mobile Services mithilfe von Visual Studio Verbundene Dienste hinzugefügt wurde | Microsoft Azure" 
 	description="Beschreibt die ersten Schritte mit Mobile Services in einem JavaScript-Projekt in Visual Studio." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="09/17/2015" 
 	ms.author="patshea"/>
 
-# Erste Schritte mit Mobile Services
+# Erste Schritte mit einer mobilen Javascript-App, nachdem Azure Mobile Services mithilfe von Visual Studio Verbundene Dienste hinzugefügt wurde
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-mobile-services-javascript-getting-started.md)
@@ -24,9 +24,9 @@
 
 Der erste Schritt, der ausgeführt werden muss, um den Code in diesen Beispielen verwenden zu können, hängt davon ab, mit welchem Typ von mobilem Dienst Sie eine Verbindung herstellen.
 
-Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens TodoItem. Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Knoten "Azure" im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann **Create Table** aus. Geben Sie TodoItem als Tabellennamen ein.
+ - Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens TodoItem. Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Knoten "Azure" im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann **Create Table** aus. Geben Sie TodoItem als Tabellennamen ein.
 
-Wenn Sie stattdessen einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle TodoItem in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
+ - Wenn Sie stattdessen einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle TodoItem in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
 
 ##Abrufen eines Verweises auf eine Tabelle
 
@@ -92,4 +92,4 @@ Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() f�
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

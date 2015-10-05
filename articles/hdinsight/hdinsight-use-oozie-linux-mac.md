@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/24/2015"
+	ms.date="09/23/2015"
 	ms.author="larryfr"/>
 
 
@@ -48,11 +48,11 @@ Der Workflow, den Sie mithilfe der Anweisungen in diesem Dokument implementieren
 
 1. Eine Hive-Aktion führt ein HiveQL-Skript zum Extrahieren von Datensätzen aus der in HDInsight enthaltenen Tabelle **hivesampletable** aus. Jede Datenzeile beschreibt einen Besuch eines bestimmten Mobilgeräts. Das Format des Eintrags sieht wie folgt aus:
 
-		8       18:54:20        de-de   Android Samsung SCH-i500        California     United States    13.9204007      0       0
-		23      19:19:44        de-de   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
-		23      19:19:46        de-de   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
+		8       18:54:20        DE-DE   Android Samsung SCH-i500        California     United States    13.9204007      0       0
+		23      19:19:44        DE-DE   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
+		23      19:19:46        DE-DE   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
 
-	Das in diesem Dokument verwendete Hive-Skript zählt die gesamten Besuche für jede Plattform \(z. B. Android oder iPhone\) und speichert die Werte in einer neuen Hive-Tabelle.
+	Das in diesem Dokument verwendete Hive-Skript zählt die gesamten Besuche für jede Plattform (z. B. Android oder iPhone) und speichert die Werte in einer neuen Hive-Tabelle.
 
 	Weitere Informationen über Hive finden Sie unter [Verwenden von Hive mit HDInsight][hdinsight-use-hive].
 
@@ -62,7 +62,7 @@ Der Workflow, den Sie mithilfe der Anweisungen in diesem Dokument implementieren
 
 ##Erstellen des Arbeitsverzeichnisses
 
-Oozie erwartet, dass die für einen Auftrag erforderlichen Ressourcen im selben Verzeichnis gespeichert werden. In diesem Beispiel wird **wasb:///tutorials/useoozie** verwendet. Geben Sie den folgenden Befehl zum Erstellen dieses Verzeichnisses und des Datenverzeichnisses ein, das die mit diesem Workflow erstellte neue Hive-Tabelle enthalten wird:
+Oozie erwartet, dass die für einen Auftrag erforderlichen Ressourcen im selben Verzeichnis gespeichert werden. In diesem Beispiel wird ****wasb:///tutorials/useoozie** verwendet. Geben Sie den folgenden Befehl zum Erstellen dieses Verzeichnisses und des Datenverzeichnisses ein, das die mit diesem Workflow erstellte neue Hive-Tabelle enthalten wird:
 
 	hadoop fs -mkdir -p /tutorials/useoozie/data
 
@@ -108,11 +108,11 @@ Führen Sie die folgenden Schritte aus, um ein HiveQL-Skript zu erstellen, das e
 	- **${hiveTableName}**: Enthält den Namen der zu erstellenden Tabelle
 	- **${hiveDataFolder}**: Enthält den Speicherort der Datendateien für die Tabelle
 
-	Die Workflowdefinitionsdatei \("workflow.xml" in diesem Tutorial\) übergibt diese Werte zur Laufzeit an das HiveQL-Skript.
+	Die Workflowdefinitionsdatei ("workflow.xml" in diesem Tutorial) übergibt diese Werte zur Laufzeit an das HiveQL-Skript.
 
 2. Drücken Sie STRG+X, um den Editor zu verlassen. Wählen Sie bei entsprechender Aufforderung **Y** aus, um die Datei zu speichern. Drücken Sie dann die **EINGABETASTE**, um den Dateinamen **useooziewf.hql** zu verwenden.
 
-3. Verwenden Sie die folgenden Befehle zum Kopieren von **useooziewf.hql** in **wasb:///tutorials/useoozie/useooziewf.hql**:
+3. Verwenden Sie die folgenden Befehle zum Kopieren von **useooziewf.hql** in ****wasb:///tutorials/useoozie/useooziewf.hql**:
 
 		hadoop fs -copyFromLocal useooziewf.hql /tutorials/useoozie/useooziewf.hql
 
@@ -120,7 +120,7 @@ Führen Sie die folgenden Schritte aus, um ein HiveQL-Skript zu erstellen, das e
 
 ##Definieren des Workflows
 
-Definitionen von Oozie-Workflows werden in hPDL \(einer XML-Prozessdefinitionssprache\) geschrieben. Führen Sie zum Definieren des Workflows die folgenden Schritte aus:
+Definitionen von Oozie-Workflows werden in hPDL (einer XML-Prozessdefinitionssprache) geschrieben. Führen Sie zum Definieren des Workflows die folgenden Schritte aus:
 
 1. Verwenden Sie die folgende Anweisung zum Erstellen und Bearbeiten einer neuen Datei:
 
@@ -185,15 +185,15 @@ Definitionen von Oozie-Workflows werden in hPDL \(einer XML-Prozessdefinitionssp
 
 	- **RunSqoopExport**: Diese Aktion exportiert die vom Hive-Skript erstellten Daten mithilfe von Sqoop in die SQL-Datenbank. Diese Aktion wird nur ausgeführt, wenn die Aktion **RunHiveScript** erfolgreich war.
 
-		> [AZURE.NOTE]Weitere Informationen über den Oozie-Workflow und die Verwendung von Workflowaktionen finden Sie in der [Apache Oozie 4.0-Dokumentation][apache-oozie-400] \(für HDInsight der Version 3.0\) oder in der [Apache Oozie 3.3.2-Dokumentation][apache-oozie-332] \(für HDInsight der Version 2.1\).
+		> [AZURE.NOTE]Weitere Informationen über den Oozie-Workflow und die Verwendung von Workflowaktionen finden Sie in der [Apache Oozie 4.0-Dokumentation][apache-oozie-400] (für HDInsight der Version 3.0) oder in der [Apache Oozie 3.3.2-Dokumentation][apache-oozie-332] (für HDInsight der Version 2.1).
 
-	Beachten Sie, dass der Workflow mehrere Einträge hat, z. B. `${jobTracker}`, die durch Werte ersetzt werden, die Sie in der Auftragsdefinition weiter unten in diesem Dokument verwenden.
+	Beachten Sie, dass der Workflow mehrere Einträge hat (z. B. `${jobTracker}`), die durch Werte ersetzt werden, die Sie in der Auftragsdefinition weiter unten in diesem Dokument verwenden.
 
-	Beachten Sie auch den Eintrag `<archive>sqljdbc4.jar</arcive>` im Abschnitt "Sqoop". Dieser weist Oozie an, dieses Archiv für Sqoop zur Verfügung zu stellen, wenn diese Aktion ausgeführt wird.
+	Beachten Sie auch den Eintrag `<archive>sqljdbc4.jar</arcive>` im Abschnitt „Sqoop“. Dieser weist Oozie an, dieses Archiv für Sqoop zur Verfügung zu stellen, wenn diese Aktion ausgeführt wird.
 
 2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
-3. Verwenden Sie den folgenden Befehl zum Kopieren der Datei **workflow.xml** in **wasb:///tutorials/useoozie/workflow.xml**:
+3. Verwenden Sie den folgenden Befehl zum Kopieren der Datei **workflow.xml** in ****wasb:///tutorials/useoozie/workflow.xml**:
 
 		hadoop fs -copyFromLocal workflow.xml wasb:///tutorials/useoozie/workflow.xml
 
@@ -216,7 +216,7 @@ Die folgenden Schritte dienen zum Erstellen der Azure SQL-Datenbank, in die Date
         data:    Server Name i1qwc540ts
         info:    sql server create command OK
 
-    > [AZURE.IMPORTANT]Beachten Sie den von diesem Befehl zurückgegebenen Servernamen \("i1qwc540ts" im obigen Beispiel.\) Dies ist der Kurzname des erstellten SQL-Datenbankservers. Der vollqualifizierte Domänenname \(FQDN\) ist **&lt;Kurzname&gt;.database.windows.net**. Für das obige Beispiel lautet der FQDN **i1qwc540ts.database.windows.net**.
+    > [AZURE.IMPORTANT]Beachten Sie den von diesem Befehl zurückgegebenen Servernamen (**i1qwc540ts** im obigen Beispiel). Dies ist der kurze Name des erstellten SQL-Datenbankservers. Der vollqualifizierte Domänenname (FQDN) ist **&lt;Kurzname&gt;.database.windows.net**. Für das obige Beispiel lautet der FQDN **i1qwc540ts.database.windows.net**.
 
 2. Verwenden Sie den folgenden Befehl zum Erstellen einer Datenbank mit dem Namen **oozietest** auf dem SQL-Datenbankserver:
 
@@ -273,7 +273,7 @@ Die folgenden Schritte dienen zum Erstellen der Azure SQL-Datenbank, in die Date
 
 ##Erstellen der Auftragsdefinition
 
-Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie anderer Dateien, die vom Workflow verwendet werden \(Beispiel: useooziewf.hql\). Sie definiert auch die Werte für Eigenschaften, die innerhalb des Workflows verwendet werden, und zugeordnete Dateien.
+Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie anderer Dateien, die vom Workflow verwendet werden (Beispiel: useooziewf.hql). Sie definiert auch die Werte für Eigenschaften, die innerhalb des Workflows verwendet werden, und zugeordnete Dateien.
 
 1. Geben Sie den folgenden Befehl ein, um die vollständige WASB-Adresse des Standardspeichers abzurufen. Diese wird in Kürze weiter unten in der Konfigurationsdatei verwendet:
 
@@ -284,7 +284,7 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 		<name>fs.defaultFS</name>
 		<value>wasb://mycontainer@mystorageaccount.blob.core.windows.net</value>
 
-	Speichern Sie den Wert **wasb://mycontainer@mystorageaccount.blob.core.windows.net**, da er in den nächsten Schritten verwendet wird.
+	Speichern Sie den Wert ****wasb://mycontainer@mystorageaccount.blob.core.windows.net**, da er in den nächsten Schritten verwendet wird.
 
 2. Rufen Sie den folgenden Befehl auf, um den FQDN des Cluster-Hauptknotens abzurufen. Dieser wird für die JobTracker-Adresse des Clusters verwendet. Diese wird in Kürze weiter unten in der Konfigurationsdatei verwendet:
 
@@ -361,9 +361,9 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 		  </property>
 		</configuration>
 
-	* Ersetzen Sie alle Vorkommen von **wasb://mycontainer@mystorageaccount.blob.core.windows.net** durch den Wert, den Sie zuvor erhalten haben.
+	* Ersetzen Sie alle Vorkommen von ****wasb://mycontainer@mystorageaccount.blob.core.windows.net** durch den Wert, den Sie zuvor erhalten haben.
 
-	> [AZURE.WARNING] Sie müssen den vollständigen WASB-Pfad mit dem Container und Speicherkonto als Teil des Pfads verwenden. Das Verwenden des Kurzformats (wasb:///) bewirkt, dass die Aktion "RunHiveScript" misslingt, wenn der Auftrag gestartet wird.
+	> [AZURE.WARNING]Sie müssen den vollständigen WASB-Pfad mit dem Container und Speicherkonto als Teil des Pfads verwenden. Das Verwenden des Kurzformats (wasb:///) bewirkt, dass die Aktion „RunHiveScript“ misslingt, wenn der Auftrag gestartet wird.
 
 	* Ersetzen Sie **JOBTRACKERADDRESS** durch die JobTracker/ResourceManager-Adresse, die Sie zuvor erhalten haben.
 
@@ -371,9 +371,9 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 
 	* Ersetzen Sie **serverName**, **adminLogin** und **adminPassword** durch die Informationen für Ihre Azure SQL-Datenbank.
 
-	Die meisten der Informationen in dieser Datei dienen zum Auffüllen der Werte, die in der Datei "workflow.xml" oder "ooziewf.hql" \(z. B. ${NameNode}\) verwendet werden.
+	Die meisten der Informationen in dieser Datei dienen zum Auffüllen der Werte, die in der Datei "workflow.xml" oder "ooziewf.hql" (z. B. ${NameNode}) verwendet werden.
 
-	> [AZURE.NOTE]Der Eintrag **oozie.wf.application.path** definiert den Speicherort der Datei "workflow.xml", die den von diesem Auftrag ausgeführten Workflow enthält.
+	> [AZURE.NOTE]Der Eintrag **oozie.wf.application.path** definiert den Speicherort der Datei „workflow.xml“, die den von diesem Auftrag ausgeführten Workflow enthält.
 
 2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
@@ -381,7 +381,7 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 
 Die folgenden Schritte verwenden den Oozie-Befehl zum Übermitteln und Verwalten von Oozie-Workflows im Cluster. Der Oozie-Befehl ist eine benutzerfreundliche Schnittstelle, die über die [Oozie-REST-API](https://oozie.apache.org/docs/4.1.0/WebServicesAPI.html) zur Verfügung steht.
 
-> [AZURE.IMPORTANT] Wenn Sie den Oozie-Befehl verwenden, müssen Sie den vollqualifizierten Domänennamen (FQDN) des HDInsight-Hauptknotens verwenden. Auf diesen FQDN kann nur innerhalb des Clusters zugegriffen werden. Wenn der Cluster sich in einem virtuellen Azure-Netzwerk befindet, ist der Zugriff von anderen Computern im selben Netzwerk aus möglich.
+> [AZURE.IMPORTANT]Wenn Sie den Oozie-Befehl verwenden, müssen Sie den vollqualifizierten Domänennamen (FQDN) des HDInsight-Hauptknotens verwenden. Auf diesen FQDN kann nur innerhalb des Clusters zugegriffen werden. Wenn der Cluster sich in einem virtuellen Azure-Netzwerk befindet, ist der Zugriff von anderen Computern im selben Netzwerk aus möglich.
 
 1. Geben Sie zum Abrufen der URL des Oozie-Diensts Folgendes an:
 
@@ -392,7 +392,7 @@ Die folgenden Schritte verwenden den Oozie-Befehl zum Übermitteln und Verwalten
 		<name>oozie.base.url</name>
 		<value>http://headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:11000/oozie</value>
 
-	Der Teil **http://headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:11000/oozie** ist die mit dem Oozie-Befehl zu verwendende URL.
+	Der Teil ****http://headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:11000/oozie** ist die mit dem Oozie-Befehl zu verwendende URL.
 
 2. Geben Sie Folgendes an, um eine Umgebungsvariable für die URL erstellen, damit Sie sie nicht für jeden Befehl eingeben müssen:
 
@@ -465,7 +465,7 @@ Mit der Oozie-REST-API können Sie eigene Tools erstellen, die mit Oozie arbeite
 
 * **URI**: Auf die REST-API kann von außerhalb des Clusters unter `https://CLUSTERNAME.azurehdinsight.net/oozie` zugegriffen werden.
 
-* **Authentifizierung**: Sie müssen sich bei der API mit dem HTTP-Clusterkonto \(admin\) und Kennwort authentifizieren. Beispiel:
+* **Authentifizierung**: Sie müssen sich bei der API mit dem HTTP-Clusterkonto (admin) und -kennwort authentifizieren. Beispiel:
 
 		curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/oozie/versions
 
@@ -483,7 +483,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md#tunnel)
 
-2. Nachdem der Tunnel erstellt wurde, öffnen Sie die Ambari-Webbenutzeroberfläche in Ihrem Webbrowser. Der URI der Ambari-Website lautet **https://CLUSTERNAME.azurehdinsight.net**. Ersetzen Sie **CLUSTERNAME** durch den Namen des Linux-basierten HDInsight-Clusters.
+2. Nachdem der Tunnel erstellt wurde, öffnen Sie die Ambari-Webbenutzeroberfläche in Ihrem Webbrowser. Der URI der Ambari-Website lautet ****https://CLUSTERNAME.azurehdinsight.net**. Ersetzen Sie **CLUSTERNAME** durch den Namen des Linux-basierten HDInsight-Clusters.
 
 3. Wählen Sie auf der linken Seite der Seite **Oozie**, dann **Quicklinks** und schließlich **Oozie Web UI** aus.
 
@@ -497,7 +497,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 	![Auftragsinformationen](./media/hdinsight-use-oozie-linux-mac/jobinfo.png)
 
-6. Auf der Registerkarte "Auftragsinformationen" können Sie grundlegende Auftragsinformationen sowie die einzelnen Aktionen innerhalb des Auftrags anzeigen. Auf den Registerkarten am oberen Rand können Sie die Auftragsdefinition und Auftragskonfiguration anzeigen, auf das Auftragsprotokoll zugreifen oder einen gerichteten azyklischen Graph \(Directed Acyclic Graph, DAG\) des Auftrags anzeigen.
+6. Auf der Registerkarte "Auftragsinformationen" können Sie grundlegende Auftragsinformationen sowie die einzelnen Aktionen innerhalb des Auftrags anzeigen. Auf den Registerkarten am oberen Rand können Sie die Auftragsdefinition und Auftragskonfiguration anzeigen, auf das Auftragsprotokoll zugreifen oder einen gerichteten azyklischen Graph (Directed Acyclic Graph, DAG) des Auftrags anzeigen.
 
 	* **Auftragsprotokoll**: Klicken Sie auf die Schaltfläche **GetLogs**, um alle Protokolle für den Auftrag abzurufen, oder verwenden Sie zum Filtern von Protokollen das Feld **Suchfilter eingeben**.
 
@@ -535,10 +535,10 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 
 	Hierbei werden Variablen vom Typ `${...}` verwendet, die durch Werte in der Auftragsdefinition ersetzt werden. Die Variablen heißen wie folgt:
 
-	* **${CoordFrequency}**: Zeit zwischen ausgeführten Instanzen des Auftrags
+	* **${coordFrequency}**: Zeit zwischen ausgeführten Instanzen des Auftrags
 	* **${coordStart}**: Startzeit des Auftrags
-	* **${CoordEnd}**: Endzeit des Auftrags
-	* **${coordTimezone}**: Koordinatoraufträge erfolgen in einer festen Zeitzone ohne Sommerzeit \(in der Regel unter Verwendung von UTC dargestellt\). Diese Zeitzone wird als "Oozie-Verarbeitungszeitzone" bezeichnet.
+	* **${coordEnd}**: Endzeit des Auftrags
+	* **${coordTimezone}**: Koordinatoraufträge erfolgen in einer festen Zeitzone ohne Sommerzeit (in der Regel unter Verwendung von UTC dargestellt). Diese Zeitzone wird als "Oozie-Verarbeitungszeitzone" bezeichnet.
 	* **${wfPath}**: Pfad zur Datei „workflow.xml“.
 
 2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
@@ -586,7 +586,7 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 		      <value>UTC</value>
 		    </property>
 
-		Die Startzeit wird auf 12:00 Uhr am 25. Juni 2015, die Endzeit auf den 27. Juni 2015 und das Intervall für die Ausführung dieses Auftrags auf täglich festgelegt \(die Frequenz wird in Minuten angegeben: 24 Stunden x 60 Minuten = 1440 Minuten\). Schließlich wird die Zeitzone auf UTC festgelegt.
+		Die Startzeit wird auf 12:00 Uhr am 25. Juni 2015, die Endzeit auf den 27. Juni 2015 und das Intervall für die Ausführung dieses Auftrags auf täglich festgelegt (die Frequenz wird in Minuten angegeben: 24 Stunden x 60 Minuten = 1440 Minuten). Schließlich wird die Zeitzone auf UTC festgelegt.
 
 5. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
@@ -618,13 +618,13 @@ Bei der Behandlung von Problemen mit Oozie-Aufträgen ist die Oozie-Benutzerober
 
 2. Wenn eine bestimmte Aktion nicht erfolgreich war, wählen Sie die Aktion aus, um festzustellen, ob das Feld **Fehlermeldung** weitere Informationen zum Fehler enthält.
 
-3. Falls verfügbar, verwenden Sie die URL der Aktion, um weitere Details \(z. B. JobTracker-Protokolle\) für die Aktion anzuzeigen.
+3. Falls verfügbar, verwenden Sie die URL der Aktion, um weitere Details (z. B. JobTracker-Protokolle) für die Aktion anzuzeigen.
 
 Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Behebung.
 
 ###JA009: Cluster kann nicht initialisiert werden.
 
-**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von "RunHiveScript" als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von „RunHiveScript“ als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	JA009: Cannot initialize Cluster. Please check your configuration for map
 
@@ -715,7 +715,7 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
 [powershell-install-configure]: powershell-install-configure.md
 [powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/de-de/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/DE-DE/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
@@ -725,4 +725,4 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

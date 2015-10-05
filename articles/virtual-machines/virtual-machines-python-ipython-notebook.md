@@ -1,11 +1,12 @@
 <properties
-	pageTitle="IPython Notebook | Microsoft Azure"
-	description="Dieses Lernprogramm beschreibt die Bereitstellung von IPython Notebook in Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs)."
-	services="virtual-machines"
+	pageTitle="Erstellen eines IPython-Notizbuchs | Microsoft Azure"
+	description="In diesem Artikel erfahren Sie, wie Sie das IPython-Notizbuch auf einem virtuellen Linux- oder Windows-Computer bereitstellen, der mit dem klassischen Bereitstellungsmodell in Azure erstellt wurde."
+	services="virtua-lmachines"
 	documentationCenter="python"
 	authors="huguesv"
 	manager="wpickett"
-	editor=""/>
+	editor=""
+	tags=“azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -16,8 +17,9 @@
 	ms.date="05/20/2015"
 	ms.author="huvalo"/>
 
-
 # IPython Notebook in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Bereitstellen eines Notizbuchs auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
 
 Das [IPython-Projekt](http://ipython.org) bietet eine Sammlung von Tools für wissenschaftliche Berechnungen inklusive umfangreicher interaktiver Shells, leistungsstarker und leicht einsetzbarer paralleler Bibliotheken und einer webbasierten Umgebung mit dem Namen IPython-Notizbuch. Notebook bietet eine Arbeitsumgebung für interaktive Berechnungen, die Codeausführung mit der Erstellung eines Live-Berechnungsdokuments vereint. Diese Notebook-Dateien enthalten beliebigen Text, mathematische Formeln, Eingabecode, Ergebnisse, Grafiken, Videos und beliebige andere Medientypen, die in modernen Webbrowsern angezeigt werden können.
 
@@ -112,7 +114,7 @@ Um IPython und dessen Abhängigkeiten auf der Windows-VM zu installieren, verbin
 
 	* Sie müssen `C:\OpenSSL-Win32\bin` der `PATH`-Umgebungsvariable hinzufügen.
 
-> [AZURE.NOTE]Installieren Sie unbedingt Version 1.0.1g oder höher von OpenSSL, da diese Versionen Schutz vor der Heartbleed-Sicherheitslücke bieten.
+	> [AZURE.NOTE]Installieren Sie unbedingt Version 1.0.1g oder höher von OpenSSL, da diese Versionen Schutz vor der Heartbleed-Sicherheitslücke bieten.
 
 1.  Installieren Sie IPython mithilfe des folgenden Befehls.
 
@@ -205,7 +207,7 @@ Nach der Anmeldung sehen Sie das "IPython-Notizbuch-Dashboard", die Steuerzentra
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-002.png)
 
-Wenn Sie auf die Schaltfläche **Neues Notizbuch** klicken, öffnet sich die folgende Seite.
+Wenn Sie auf die Schaltfläche **Neues Notizbuch** klicken, wird die folgende Seite geöffnet.
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-003.png)
 
@@ -270,4 +272,4 @@ Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools fo
 [Python 2.7]: http://www.python.org/download
 [OpenSSL]: http://slproweb.com/products/Win32OpenSSL.html
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

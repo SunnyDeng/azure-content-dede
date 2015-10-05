@@ -14,7 +14,8 @@ Beim Hosten von Node.js-Anwendungen sollten Sie sicherstellen, dass Ihre Anwendu
 
 Die von Azure bereitgestellten Node.js-Versionen werden ständig aktualisiert. Sofern nicht anders angegeben, wird die neueste Version verwendet. Derzeit umfasst dies die folgenden Versionen:
 
-- 0\.12.x: 0.12.0
+- 4\.x.x: 4.0.0
+- 0\.12.x: 0.12.6, 0.12.3, 0.12.2, 0.12.0
 - 0\.10.x: 0.10.32, 0.10.31, 0.10.29, 0.10.28, 10.26, 0.10.24, 0.10.21, 0.10.18, 0.10.5
 - 0\.8.x: 0.8.28, 0.8.27, 0.8.26, 0.8.19, 0.8.2
 - 0\.6.x: 0.6.20, 0.6.17
@@ -42,7 +43,7 @@ Wenn Sie Ihre Anwendung in einem Clouddienst hosten und mit Azure PowerShell ber
 
 	Set-AzureServiceProjectRole WebRole1 Node 0.8.4
 
-Beachten Sie, dass bei den Parametern in der obigen Anweisung die Groß- und Kleinschreibung beachtet werden muss. Sie können überprüfen, ob die richtige Version von "Node.js" ausgewählt wurde, indem Sie die **engines**-Eigenschaft in **package.json** für Ihre Rolle prüfen.
+Beachten Sie, dass bei den Parametern in der obigen Anweisung die Groß- und Kleinschreibung beachtet werden muss. Sie können überprüfen, ob die richtige Version von „Node.js“ ausgewählt wurde, indem Sie die **engines**-Eigenschaft in **package.json** für Ihre Rolle prüfen.
 
 Außerdem können Sie **Get-AzureServiceProjectRoleRuntime** verwenden, um eine Liste der verfügbaren Node.js-Versionen für Anwendungen abzurufen, die als Clouddienste gehostet werden. Überprüfen Sie anhand dieser Liste die Version von Node.js, von der Ihr Projekt abhängt.
 
@@ -90,9 +91,11 @@ Obwohl Azure verschiedene Standardversionen von Node.js anbietet, kann es sein, 
 
 Nachdem Sie gelernt haben, wie Sie die von ihrer Anwendung verwendete Node.js-Version angeben können, empfehlen wir die Themen [Arbeiten mit Modulen], [Erstellen und Bereitstellen einer Node.js-Website] und [Verwenden der Azure-Befehlszeilentools für Mac und Linux].
 
+Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
+
 [Verwenden der Azure-Befehlszeilentools für Mac und Linux]: xplat-cli.md
 [Azure-Befehlszeilentools]: xplat-cli.md
 [Arbeiten mit Modulen]: nodejs-use-node-modules-azure-apps.md
 [Erstellen und Bereitstellen einer Node.js-Website]: web-sites-nodejs-develop-deploy-mac.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

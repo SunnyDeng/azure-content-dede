@@ -1,28 +1,32 @@
 <properties
-   pageTitle="Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory"
-	description="Beschreibt, wie Sie mithilfe Ihrer persönlichen Identität eine Arbeits- oder Schulidentität erstellen, die mit Ressourcengruppenvorlagen oder rollenbasiertem Zugriff und anderen Funktionen verwendet werden kann."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="squillace"
-	manager="timlt"
-	editor=""/>
+   pageTitle="Erstellen von Arbeits- oder Schulidentitäten in AAD | Microsoft Azure"
+   description="Hier erfahren Sie, wie Sie eine Arbeits- oder Schulidentität in Azure Active Directory erstellen, die in Ressourcen-Manager- und klassischen Bereitstellungsmodellen verwendet werden kann."
+   services="virtual-machines"
+   documentationCenter=""
+   authors="squillace"
+   manager="timlt"
+   editor=""
+   tags="azure-service-management,azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure"
-	ms.date="09/01/2015"
-	ms.author="rasquill"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure"
+   ms.date="09/01/2015"
+   ms.author="rasquill"/>
 
 # Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory
 
 Wenn Sie ein persönliches Azure-Konto erstellt oder ein persönliches MSDN-Abonnement besitzen und das Azure-Konto erstellt haben, um das MSDN Azure-Guthaben nutzen zu können, haben Sie zum Erstellen als Identität ein *Microsoft-Konto* verwendet. Viele hervorragende Funktionen von Azure – beispielsweise [Ressourcengruppenvorlagen](../resource-group-overview.md) – erfordern ein Arbeits- oder Schulkonto (eine Identität, die von Azure Active Directory verwaltet wird).
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Erstellen einer AAD-Identität behandelt, die für das Ressourcen-Manager- und das klassische Bereitstellungsmodell benötigt wird.
+
+
 Glücklicherweise ist einer der größten Vorteile Ihres persönlichen Azure-Kontos, dass eine Azure Active Directory-Standarddomäne enthalten ist, mit der Sie ein neues Arbeits- oder Schulkonto für die Azure-Funktionen, die dies erfordern, erstellen können.
 
-> [AZURE.NOTE]Wenn Sie einen Benutzernamen und ein Kennwort von einem Administrator erhalten haben, besteht eine hohe Wahrscheinlichkeit, dass Sie bereits eine Arbeits- oder Schul-ID (auch als *Organisations-ID* bezeichnet) besitzen. In diesem Fall können Sie sofort Ihr Azure-Konto verwenden, um auf entsprechende Azure-Ressourcen zuzugreifen. Wenn Sie feststellen, dass Sie diese Ressourcen nicht verwenden können, können Sie bei Bedarf zu diesem Artikel zurückkehren. Viele weitere Informationen finden Sie unter [Konten, die für die Anmeldung verwendet werden können](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SignInAccounts) und insbesondere [Die Beziehung zwischen einem Azure-Abonnement und Azure AD](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SubRelationToDir).
+> [AZURE.NOTE]Wenn Sie einen Benutzernamen und ein Kennwort von einem Administrator erhalten haben, besteht eine hohe Wahrscheinlichkeit, dass Sie bereits eine Arbeits- oder Schul-ID (auch als *Organisations-ID* bezeichnet) besitzen. In diesem Fall können Sie sofort Ihr Azure-Konto verwenden, um auf entsprechende Azure-Ressourcen zuzugreifen. Wenn Sie feststellen, dass Sie diese Ressourcen nicht verwenden können, können Sie bei Bedarf zu diesem Artikel zurückkehren. Weitere Informationen finden Sie unter [Konten, die für die Anmeldung verwendet werden können](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SignInAccounts) und insbesondere [Die Beziehung zwischen einem Azure-Abonnement und Azure AD](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SubRelationToDir).
 
 Die Schritte sind einfach. Sie müssen Ihre angemeldete Identität im Azure-Portal suchen, Ihre Azure Active Directory-Standarddomäne ermitteln und als Azure-Co-Administrator einen neuen Benutzer hinzufügen.
 
@@ -66,7 +70,7 @@ Klicken Sie auf die Schaltfläche **Erstellen**, um ein temporäres Kennwort fü
 
 ![](./media/resource-group-create-work-id-from-personal/gettemporarypasswordforuser.png)
 
-Kopieren Sie die Benutzername-E-Mail-Adresse, oder verwenden Sie **KENNWORT IN E-MAIL SENDEN**. In beiden Fällen benötigen Sie die Informationen in Kürze für die Anmeldung.
+Kopieren Sie die Benutzernamen-E-Mail-Adresse, oder verwenden Sie **KENNWORT IN E-MAIL SENDEN**. In beiden Fällen benötigen Sie die Informationen in Kürze für die Anmeldung.
 
 ![](./media/resource-group-create-work-id-from-personal/receivedtemporarypassworddialog.png)
 
@@ -140,4 +144,4 @@ Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität
     data:
     info:    group create command OK
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

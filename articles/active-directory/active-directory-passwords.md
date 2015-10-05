@@ -1,19 +1,19 @@
-<properties 
+<properties
 	pageTitle="Erläuterung: Azure AD-Kennwortverwaltung | Microsoft Azure"
-	description="Beschreibung der Funktionen zur Kennwortverwaltung in Azure AD, einschließlich Zurücksetzen und Ändern des Kennworts, Berichte zur Kennwortverwaltung und Rückschreiben in Ihr lokales Active Directory." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="asteen" 
-	manager="kbrint" 
+	description="Beschreibung der Funktionen zur Kennwortverwaltung in Azure AD, einschließlich Zurücksetzen und Ändern des Kennworts, Berichte zur Kennwortverwaltung und Rückschreiben in Ihr lokales Active Directory."
+	services="active-directory"
+	documentationCenter=""
+	authors="asteen"
+	manager="kbrint"
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/08/2015" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/18/2015" 
 	ms.author="asteen"/>
 
 # Verwalten von Kennwörtern von einem beliebigen Ort aus
@@ -40,7 +40,7 @@ Hier sind einige Aktivitäten aufgeführt, die Sie mit den Funktionen der Azure 
 - Durch die **Self-Service-Kennwortänderung** können Endbenutzer oder Administratoren ihre abgelaufenen oder nicht abgelaufenen Kennwörter ändern, ohne einen Administrator oder den Helpdesk um Unterstützung zu bitten.
 - Mit der **Self-Service-Kennwortzurücksetzung** können Endbenutzer oder Administratoren ihre Kennwörter automatisch zurücksetzen, ohne einen Administrator oder den Helpdesk um Unterstützung zu bitten. Die Self-Service-Kennwortzurücksetzung erfordert Azure AD Premium oder Basic. Weitere Informationen finden Sie unter "Azure Active Directory-Editionen".
 - Mit der vom **Administrator ausgelösten Kennwortzurücksetzung** kann ein Administrator über das [Azure-Verwaltungsportal](https://manage.windowsazure.com) das Kennwort eines Endbenutzers oder eines anderen Administrators zurücksetzen.
-- **Berichte zu Kennwortverwaltungsaktivitäten** bieten Administratoren Einblicke in die Aktivitäten, die sich in ihrer Organisation in Bezug auf die Kennwortzurücksetzung und -registrierung ereignen. 
+- **Berichte zu Kennwortverwaltungsaktivitäten** bieten Administratoren Einblicke in die Aktivitäten, die sich in ihrer Organisation in Bezug auf die Kennwortzurücksetzung und -registrierung ereignen.
 - Das **Rückschreiben von Kennwörtern** ermöglicht die Verwaltung lokaler Kennwörter in der Cloud, sodass alle oben genannten Szenarien von oder im Auftrag von Verbund- oder kennwortsynchronisierten Benutzern durchgeführt werden können. Für das Rückschreiben von Kennwörtern ist Azure AD Premium erforderlich. Weitere Informationen finden Sie unter "Erste Schritte mit Azure AD Premium".
 
 ## Gründe für die Verwendung der Azure AD-Kennwortverwaltung
@@ -77,6 +77,6 @@ Hier sind einige Gründe aufgeführt, warum Sie die Funktionen der Azure AD-Kenn
 * [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
 * [Problembehandlung für die Kennwortverwaltung](active-directory-passwords-troubleshoot.md)
 * [Weitere Informationen](active-directory-passwords-learn-more.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
+* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

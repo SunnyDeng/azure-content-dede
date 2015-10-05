@@ -1,24 +1,27 @@
 <properties 
-	pageTitle="Erweiterung für SQL Server-IaaS-Agent"
-	description="Beschreibt die SQL Server-Agent-Erweiterung, dank der virtuelle Computer mit SQL Server in der Cloud in Azure Automatisierungsfeatures verwenden können. Darüber hinaus wird erläutert, wie Sie den Agent installieren, wenn er nicht bereits automatisch installiert wurde."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="jeffgoll"
+	pageTitle="Erweiterung für SQL Server-IaaS-Agent | Microsoft Azure" 
+	description="Dieses Thema verwendet Ressourcen, die mit dem klassischen Bereitstellungsmodell erstellt wurden, und beschreibt die SQL Server-Agent-Erweiterung, die einem virtuellen Computer mit SQL Server in Azure die Verwendung von Automatisierungsfeatures ermöglicht." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="jeffgoll" 
 	manager="jeffreyg"
-	editor=""/>
+   editor="monicar"    
+   tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
+	ms.workload="infrastructure-services" 
 	ms.date="06/17/2015"
 	ms.author="jeffreyg"/>
 
 # Erweiterung für SQL Server-IaaS-Agent
 
 Mit dieser Erweiterung kann SQL Server auf virtuellen Azure-Computern bestimmte Dienste nutzen. Diese Dienste sind in diesem Artikel aufgeführt und können nur verwendet werden, wenn die Erweiterung installiert ist. Diese Erweiterung wird automatisch für SQL Server-Galerie-Images im Azure-Vorschauportal installiert. Sie kann auf allen virtuellen SQL Server-Computern in Azure installiert werden, auf denen auch der Gast-Agent für virtuelle Azure-Computer installiert ist.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwenden einer Ressource mit dem klassischen Bereitstellungsmodell.
  
 ## Voraussetzungen
 Anforderungen für die Verwendung von Powershell-Cmdlets:
@@ -74,4 +77,4 @@ Wenn Sie diese Erweiterung vom virtuellen Computer entfernen möchten, können S
 ### Syntax
 Remove-AzureVMSqlServerExtension -VM <IPersistentVM> [<CommonParameters>]
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

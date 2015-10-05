@@ -13,12 +13,12 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="08/12/2015"
+	ms.date="09/21/2015"
 	ms.author="curtand"/>
 
 # Dienst- und andere Einschränkungen für Azure AD
 
- Einen vollständigen Überblick über die Microsoft Azure-Diensteinschränkungen finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md).
+Einen vollständigen Überblick über die Microsoft Azure-Diensteinschränkungen finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md).
 
 [AZURE.INCLUDE [AAD-Diensteinschränkungen](../../includes/active-directory-service-limits-include.md)]
 
@@ -27,4 +27,4 @@
 - [Verknüpfung von Azure-Abonnements mit Azure AD](active-directory-how-subscriptions-associated-directory.md)
 - [Azure AD-Terminologie](active-directory-terminology.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

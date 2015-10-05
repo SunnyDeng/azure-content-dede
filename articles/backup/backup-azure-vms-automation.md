@@ -7,7 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/16/2015" ms.author="trinadhk";"aashishr" />
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/21/2015" ms.author="trinadhk";"aashishr" />
 
 
 # Bereitstellen und Verwalten von Sicherungen für Azure-VMs mit PowerShell
@@ -140,7 +140,7 @@ Um die gesicherten Daten wiederherstellen zu können, müssen Sie das gesicherte
 Zum Abrufen des PowerShell-Objekts, das das richtige Sicherungselement identifiziert, müssen Sie vom Container im Tresor aus starten und dann die Objekthierarchie nach unten durchlaufen. Um den Container auszuwählen, der den virtuellen Computer darstellt, verwenden Sie das Cmdlet **Get-AzureRMBackupContainer** und reichen dieses an das Cmdlet **Get-AzureRMBackupItem** weiter.
 
 ```
-PS C:\> $backupitem = Get-AzureBackupContainer -Vault $backupvault -Type AzureVM -name "testvm" | Get-AzureRMBackupItem
+PS C:\> $backupitem = Get-AzureRMBackupContainer -Vault $backupvault -Type AzureVM -name "testvm" | Get-AzureRMBackupItem
 ```
 
 ### Auswählen eines Wiederherstellungspunkts
@@ -231,4 +231,4 @@ Weitere Informationen zum Erstellen eines virtuellen Computers aus den wiederher
 - [New-AzureVMConfig](https://msdn.microsoft.com/library/azure/dn495159.aspx)
 - [New-AzureVM,](https://msdn.microsoft.com/library/azure/dn495254.aspx)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

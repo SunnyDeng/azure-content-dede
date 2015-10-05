@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Über virtuelle Azure-Computer"
+	pageTitle="Über virtuelle Azure-Computer | Microsoft Azure"
 	description="Machen Sie sich mit den Grundlagen von virtuellen Azure-Computern vertraut."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,9 @@
 	ms.date="07/14/2015"
 	ms.author="cynthn"/>
 
-#Über virtuelle Azure-Computer
+#Informationen zu mit den beiden Bereitstellungsmodellen erstellten virtuellen Azure-Computern
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt Ressourcen, die mit dem Ressourcen-Manager- und dem klassischen Bereitstellungsmodell erstellt wurden.
 
 Virtuelle Azure-Computer sind eine von mehreren bedarfsgesteuerten, skalierbaren Computerressourcen, die von Azure angeboten werden. In der Regel wählen Sie eine virtuelle Maschine anstelle einer anderen Option, wenn Sie mehr Kontrolle über Ihre Computerumgebung benötigen, als die anderen Optionen bieten.
 
@@ -49,4 +51,4 @@ Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfe
 [Virtuelle Computer]: #tellmevm
 [Cloud-Dienste]: cloud-services-choose-me.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

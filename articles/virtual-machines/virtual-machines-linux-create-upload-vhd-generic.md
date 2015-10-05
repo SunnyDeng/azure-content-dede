@@ -1,11 +1,12 @@
-<properties 
+<properties
 	pageTitle="Erstellen und Hochladen einer Linux-VHD in Azure"
 	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Linux-Betriebssystem enthält."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="szarkos"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -16,8 +17,9 @@
 	ms.date="05/15/2015"
 	ms.author="szarkos"/>
 
-
 # <a id="nonendorsed"> </a>Informationen zu nicht unterstützten Verteilungen #
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 **Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [unterstützten Verteilungen](virtual-machines-../linux-endorsed-distributions.md) verwendet wird. Alle Linux-Verteilungen, die im Azure-Image-Katalog bereitgestellt werden, sind unterstützte Verteilungen mit der erforderlichen Konfiguration.
 
@@ -189,4 +191,4 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -1,17 +1,17 @@
 <properties
-	pageTitle="Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer"
-	description="Setzen Sie ein lokales Administratorkennwort oder den Remotedesktopdienst für virtuelle Windows-Computer mit dem Azure-Vorschauportal oder mithilfe von PowerShell-Befehlen rasch zurück."
+	pageTitle="Zurücksetzen des Kennworts oder von Remotedesktop auf einen virtuellen Windows-Computer | Microsoft Azure"
+	description="Setzen Sie das Administratorkennwort oder die Remotedesktopdienste auf einem mit dem Ressourcen-Manager-Bereitstellungsmodell erstellten virtuellen Windows-Computer zurück."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management"/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/21/2015"
@@ -19,9 +19,9 @@
 
 # Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer
 
-Wenn Sie ein Kennwort vergessen haben oder ein Problem mit der Konfiguration des Remotedesktopdiensts vorliegt und Sie daher keine Verbindung mit einem virtuellen Windows-Computer herstellen können, verwenden Sie das Azur-Vorschauportal oder die VMAccess-Erweiterung zum Zurücksetzen des lokalen Administratorkennworts oder zum Zurücksetzen der Konfiguration des Remotedesktopdiensts.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt mit dem Ressourcen-Manager-Bereitstellungsmodell erstellte virtuelle Computer.
 
-> [AZURE.NOTE]Dieser Artikel gilt nicht für virtuelle Computer, die im Azure-Ressourcen-Manager erstellt wurden.
+Wenn Sie ein Kennwort vergessen haben oder ein Problem mit der Konfiguration des Remotedesktopdiensts vorliegt und Sie daher keine Verbindung mit einem virtuellen Windows-Computer herstellen können, verwenden Sie das Azur-Vorschauportal oder die VMAccess-Erweiterung zum Zurücksetzen des lokalen Administratorkennworts oder zum Zurücksetzen der Konfiguration des Remotedesktopdiensts.
 
 ## Vorschauportal
 
@@ -39,7 +39,7 @@ Um den Namen und das Kennwort des lokalen Administratorkontos im [Vorschauportal
 
 Bevor Sie beginnen, benötigen Sie Folgendes:
 
-- Das Azure PowerShell-Modul Version 0.8.5 oder höher. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320552&clcid=0x409).
+- Das Azure PowerShell-Modul Version 0.8.5 oder höher. Sie können die installierte Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Anweisungen und einen Link zur neuesten Version finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320552&clcid=0x409).
 - Das neue Kennwort für das lokale Administratorkonto. Dies ist nicht erforderlich, wenn Sie die Konfiguration des Remotedesktopdiensts zurücksetzen möchten.
 - Der VM-Agent.
 
@@ -100,7 +100,7 @@ Wenn das Problem mit dem Zugriff auf Remotedesktop dadurch nicht behoben werden 
 1.	Klicken Sie im Diagnosepaket auf **Diagnosepaket Microsoft Azure IaaS (Windows)**, um eine neue Diagnosesitzung zu erstellen.
 2.	Wählen Sie auf der Seite **Welches der folgenden Probleme tritt mit Ihrem virtuellen Azure-Computer auf?** das Problem **RDP-Verbindung mit einem virtuellen Azure-Computer (Neustart erforderlich)**.
 
-Weitere Informationen finden Sie in der Knowledge Base im Artikel [Microsoft Azure IaaS (Windows) und Diagnoseprogramme](http://support.microsoft.com/kb/2976864).
+Weitere Informationen finden Sie in der Knowledge Base im Artikel [Microsoft Azure IaaS (Windows)-Diagnosepaket](http://support.microsoft.com/kb/2976864).
 
 Wenn Sie das Azure IaaS-Diagnosepaket (Windows) nicht ausführen konnten oder das Problem dadurch nicht behoben wurde, finden Sie weitere Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem virtuellen Azure-Computer unter Windows](virtual-machines-troubleshoot-remote-desktop-connections.md).
 
@@ -113,4 +113,4 @@ Wenn Sie das Azure IaaS-Diagnosepaket (Windows) nicht ausführen konnten oder da
 
 [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

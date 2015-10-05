@@ -1,20 +1,20 @@
 <properties
    pageTitle="Übersicht über die Konfiguration von Service Fabric Reliable Actors vom Typ KVSActorStateProviders"
-	description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ KVSActorStateProvider"
-	services="Service-Fabric"
-	documentationCenter=".net"
-	authors="sumukhs"
-	manager="anuragg"
-	editor=""/>
+   description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ KVSActorStateProvider"
+   services="Service-Fabric"
+   documentationCenter=".net"
+   authors="sumukhs"
+   manager="anuragg"
+   editor=""/>
 
 <tags
    ms.service="Service-Fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/26/2015"
-	ms.author="sumukhs"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2015"
+   ms.author="sumukhs"/>
 
 # Konfigurieren von Reliable Actors – KVSActorStateProvider
 Die Standardkonfiguration von KVSActorStateProvider kann geändert werden, indem die Datei "settings.xml", die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde, für den betreffenden Actor geändert wird.
@@ -27,8 +27,6 @@ Die Service Fabric-Laufzeit sucht nach vordefinierten Abschnittsnamen in der Dat
 Replicator-Sicherheitskonfigurationen werden verwendet, um den während der Replikation verwendeten Kommunikationskanal zu sichern. Dies bedeutet, dass Dienste nicht ihren gegenseitigen Replikationsdatenverkehr erkennen können. Dadurch wird sichergestellt, dass die Daten nicht nur hochverfügbar, sondern auch sicher sind. Standardmäßig ermöglicht ein leerer Sicherheitskonfigurationsabschnitt keine Replikationssicherheit.
 ### Name des Abschnitts
 &lt;ActorName&gt;ServiceReplicatorSecurityConfig
-### Konfigurationsnamen
-Weitere Informationen finden Sie unter [Replikationssicherheit](../service-fabric/service-fabric-replication-security.md)
 
 ## Replicator-Konfiguration
 Replicator-Konfigurationen werden zum Konfigurieren des Replicators verwendet, der dafür verantwortlich ist, den Status des Actor-Status-Anbieters hochverfügbar zu machen. Die Standardkonfiguration wird von der Visual Studio-Vorlage generiert und sollte ausreichen. Dieser Abschnitt befasst sich mit zusätzlichen Konfigurationen, die zum Optimieren des Replicators verfügbar sind.
@@ -82,6 +80,5 @@ Speicherkonfigurationen werden zum Konfigurieren des lokalen Speichers verwendet
 ## Anmerkungen
 
 "BatchAcknowledgementInterval" steuert die Replikationslatenz. Der Wert "0" ergibt die geringstmögliche Latenz, allerdings auf Kosten des Durchsatzes (da eine größer Anzahl von Bestätigungsnachrichten gesendet und verarbeitet werden muss, von denen jede weniger Bestätigungen enthält). Je größer der Wert für "BatchAcknowledgementInterval" ist, um so höher ist der Gesamtdurchsatz der Replikation, zu Lasten einer höheren Vorgangslatenz. Daraus ergibt sich direkt die Latenz von Transaktions-Commits.
- 
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

@@ -13,19 +13,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/21/2015"
+   ms.date="09/22/2015"
    ms.author="lodipalm;barbkess"/>
 
 # Laden von Daten in SQL Data Warehouse
 SQL Data Warehouse bietet zahlreiche Optionen zum Laden von Daten. Dazu gehören:
 
+- PolyBase
 - Azure Data Factory
 - Befehlszeilenprogramm BCP
-- PolyBase
 - SQL Server Integration Services (SSIS)
 - Drittanbietertools zum Laden von Daten
 
-Alle oben genannten Methoden können für SQL Data Warehouse verwendet werden. Viele Benutzer nehmen erste Ladevorgänge im Bereich von Hundertstel Gigabyte bis zu Zehntel Terabyte vor. In den folgenden Abschnitten finden Sie Anleitungen zum anfänglichen Laden von Daten.
+Während alle oben genannten Methoden mit SQL Data Warehouse verwendet werden können, ist PolyBase durch die Möglichkeit, Lasten aus Azure Blob-Speichern transparent zu parallelisieren, das schnellste Tool zum Laden von Daten. Weitere Informationen zum [Laden mit PolyBase][]. Da viele Benutzer mit Anfangswerten von Hunderten von Gigabytes bis Dutzenden Terabytes aus lokalen Quellen arbeiten, finden Sie in den folgenden Abschnitten Informationen zum anfänglichen Laden von Daten.
 
 ## Anfängliches Laden in SQL Data Warehouse aus SQL Server 
 Zum Laden aus einer lokalen SQL Server-Instanz in SQL Data Warehouse werden folgende Schritte empfohlen:
@@ -183,10 +183,10 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [SSIS]: https://msdn.microsoft.com/library/ms141026.aspx
 
 <!--Other Web references-->
-[Installationsanweisungen für AZCopy]: https://azure.microsoft.com/de-de/documentation/articles/storage-use-azcopy/
-[Microsoft-Befehlszeilenprogrammen für SQL Server]: http://www.microsoft.com/de-de/download/details.aspx?id=36433
-[Import/Export]: https://azure.microsoft.com/de-de/documentation/articles/storage-import-export-service/
-[Azure-Speicherdokumentation]: https://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/
+[Installationsanweisungen für AZCopy]: https://azure.microsoft.com/DE-DE/documentation/articles/storage-use-azcopy/
+[Microsoft-Befehlszeilenprogrammen für SQL Server]: http://www.microsoft.com/DE-DE/download/details.aspx?id=36433
+[Import/Export]: https://azure.microsoft.com/DE-DE/documentation/articles/storage-import-export-service/
+[Azure-Speicherdokumentation]: https://azure.microsoft.com/DE-DE/documentation/articles/storage-create-storage-account/
 [Dokumentation zu ExpressRoute]: http://azure.microsoft.com/documentation/services/expressroute/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

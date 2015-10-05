@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"    
+	ms.date="09/20/2015"    
 	ms.author="juliako"/>
 
 
@@ -22,8 +22,6 @@
 Die Codierung ist einer der häufigsten Verarbeitungsvorgänge in Media Services. Sie erstellen Codierungsaufträge, um Mediendateien von einer Codierung in eine andere zu konvertieren. Zum Codieren können Sie den in Media Services integrierten Media Encoder verwenden. Außerdem können Sie Codierer von Media Services-Partnern verwenden. Externe Codierer finden Sie im Azure Marketplace.
 
 In diesem Thema wird veranschaulicht, wie Sie .NET mithilfe von Media Encoder Standard verwenden, um Assets zu codieren. Media Encoder Standard wird mithilfe einer der Encoder-Voreinstellungen konfiguriert, die [hier](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409) beschrieben sind.
-
->[AZURE.NOTE]Die aktuelle Version des Medienprozessors erfordert, dass Sie eine vollständige XML- oder JSON-Zeichenfolge als die Codierungsvoreinstellung übergeben. Die Unterstützung für die Übergabe in eine benannte Zeichenfolge, wie z. B. "H264 mehreren Bitraten 720p", ist in Kürze über ein Update verfügbar.
 
 Es wird empfohlen, Zwischendateien immer in einen MP4-Satz mit adaptiver Bitrate zu codieren und anschließend mithilfe der [dynamischen Paketerstellung](media-services-dynamic-packaging-overview.md) in das gewünschte Format zu konvertieren. Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [Skalieren von Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
 
@@ -35,7 +33,7 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 
 - Erstellen eines Codierungsauftrags.
 - Abrufen eines Verweises auf den Media Encoder Standard-Encoder
-- Laden Sie die vordefinierte XML aus einer der [hier](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409) gezeigten Vorgaben.
+- Angeben, dass die Voreinstellung „H264 Multiple Bitrate 720p“ verwendet werden soll. Alle Voreinstellungen finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409). Sie können sich auch das Schema ansehen, dem diese Voreinstellungen entsprechen müssen. Klicken Sie dazu [hier](https://msdn.microsoft.com/library/mt269962.aspx).
 - Fügen Sie eine einzelne Codierungsaufgabe zum Auftrag hinzu. 
 - Geben Sie das zu codierende Asset an.
 - Erstellen Sie ein Ausgabeasset, das das codierte Asset enthalten soll.
@@ -50,13 +48,12 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 		    // processor to use for the specific task.
 		    IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
 		
-		    // Load the XML (or JSON) from the local file
-		    string configuration = File.ReadAllText(pathToLocalPresetFile);
-		
-		    // Create a task
-		    ITask task = job.Tasks.AddNew("Media Encoder Standard encoding task",
+
+		    // Create a task with the encoding details, using a string preset.
+		    // In this case "H264 Multiple Bitrate 720p" preset is used.
+		    ITask task = job.Tasks.AddNew("My encoding task",
 		        processor,
-		        configuration,
+		        "H264 Multiple Bitrate 720p",
 		        TaskOptions.None);
 		
 		    // Specify the input asset to be encoded.
@@ -126,6 +123,6 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 ##Weitere Informationen 
 
-[Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
+[Erstellen von Miniaturansichten über Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md) [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

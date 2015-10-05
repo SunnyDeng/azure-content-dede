@@ -4,9 +4,8 @@
    services="active-directory"
    documentationCenter=""
    authors="curtand"
-   manager="stevepo"
+   manager="stevenpo"
    editor=""/>
-
 
 <tags
    ms.service="active-directory"
@@ -14,9 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="08/03/2015"
+   ms.date="09/21/2015"
    ms.author="curtand"/>
-
 
 #Verwalten des Verzeichnisses für Ihr Office 365-Abonnement in Azure
 
@@ -67,9 +65,9 @@ Nehmen wir nun an, dass John Doe sich am Azure-Verwaltungsportal anmelden und di
 
 1.	Melden Sie sich mithilfe des Dienstadministratorkontos des Azure-Abonnements am Verwaltungsportal an (in diesem Beispiel msmith@hotmail.com)).
 2.	Übertragen Sie das Abonnement in das Verzeichnis "Contoso": Klicken Sie auf **Einstellungen** > **Abonnements** > wählen Sie das Abonnement > **Verzeichnis bearbeiten** > wählen Sie **Contoso (Contoso.com)**. Alle Geschäfts- oder Schulonten, die Co-Administratoren des Abonnements sind, werden als Teil der Übertragung entfernt.
-3.	Fügen Sie John Doe als Co-Administrator zum Abonnement hinzu: Klicken Sie auf **Einstellungen** > **Administratoren**> wählen Sie das Abonnement > **Hinzufügen** > Typ \*\***JohnDoe@Contoso.com**.
+3.	Fügen Sie John Doe als Co-Administrator zum Abonnement hinzu: Klicken Sie auf **Einstellungen** > **Administratoren**> wählen Sie das Abonnement > **Hinzufügen** > Typ ****JohnDoe@Contoso.com**.
 
 ##Nächste Schritte
 Weitere Informationen über die Beziehung zwischen Abonnements und Verzeichnissen finden Sie unter [Zuordnung zwischen einem Abonnement und einem Verzeichnis](active-directory-how-subscriptions-associated-directory.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

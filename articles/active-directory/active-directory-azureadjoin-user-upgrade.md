@@ -7,16 +7,14 @@
 	manager="stevenpo" 
 	editor=""/>
 
-
 <tags 
 	ms.service="active-directory" 
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/02/2015" 
+	ms.date="09/21/2015" 
 	ms.author="femila"/>
-
 
 # Einrichten eines Windows 10-Geräts mit Azure AD in den Einstellungen
 Wenn Sie bereits Windows 7 oder 8 nutzen und Ihren Computer auf Windows 10 aktualisiert haben, können Sie über das Menü "Einstellungen" mit Azure AD eine Verknüpfung herstellen.
@@ -38,8 +36,8 @@ Verknüpfen mit Azure AD im Menü "Einstellungen"
 
 
 ## Zusätzliche Informationen
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Informationen zu Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

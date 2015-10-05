@@ -5,7 +5,8 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor="jimbe"
+	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -17,6 +18,8 @@
 	ms.author="robmcm"/>
 
 # Gewusst wie: Ausführen einer rechenintensiven Aufgabe in Java auf einem virtuellen Computer
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Mit Azure können Sie einen virtuellen Computer zum Verarbeiten rechenintensiver Aufgaben verwenden. Ein virtueller Computer kann beispielsweise Aufgaben verarbeiten und Clientcomputern oder mobilen Anwendungen Ergebnisse bereitstellen. Nach dem Lesen dieses Artikels wissen Sie, wie ein virtueller Computer erstellt wird, der eine rechenintensive Java-Anwendung ausführt, die durch eine andere Java-Anwendung überwacht werden kann.
 
@@ -81,7 +84,7 @@ Um Service Bus-Warteschlangen in Azure zu verwenden, müssen Sie zunächst einen
 
 So erstellen Sie einen Dienstnamespace
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
+1.  Melden Sie sich auf dem [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
 2.  Klicken Sie unten links im Navigationsbereich des Verwaltungsportals auf **Service Bus, Zugriffssteuerung und Cache**.
 3.  Klicken Sie im Verwaltungsportal links oben auf den Knoten **Service Bus** und dann auf die Schaltfläche **Neu**. ![Screenshot des Service Bus-Knotens][svc_bus_node]
 4.  Geben Sie im Dialogfeld zum Erstellen eines neuen Dienstnamespace einen **Namespace** ein, und klicken Sie dann auf die Schaltfläche **Verfügbarkeit prüfen**, um sicherzustellen, dass er eindeutig ist. ![Screenshot des Erstellens eines neuen Namespace][create_namespace]
@@ -93,8 +96,8 @@ So erstellen Sie einen Dienstnamespace
 
 Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Erstellen einer Warteschlange, müssen Sie die Verwaltungsanmeldeinformationen für den Namespace abrufen.
 
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste der verfügbaren Namespaces anzuzeigen. ![Screenshot der verfügbaren Namespaces][avail_namespaces]
-2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben. ![Screenshot der Namespaceliste][namespace_list]
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste der verfügbaren Namespaces anzuzeigen: ![Screenshot der verfügbaren Namespaces][avail_namespaces]
+2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben: ![Screenshot der Namespaceliste][namespace_list]
 3.  Im Bereich **Eigenschaften** auf der rechten Seite werden die Eigenschaften des neuen Namespace aufgelistet. ![Screenshot des Eigenschaftenbereichs][properties_pane]
 4.  Der **Standardschlüssel** ist ausgeblendet. Klicken Sie auf die Schaltfläche **Anzeigen**, um die Sicherheitsanmeldeinformationen anzuzeigen. ![Screenshot des Standardschlüssels][default_key]
 5.  Notieren Sie sich den **Standardaussteller** und den **Standardschlüssel**, da Sie diese Informationen weiter unten zum Durchführen von Vorgängen mit dem Namespace verwenden werden.
@@ -516,4 +519,4 @@ Für Solver- und Clientanwendungen können Sie **Strg+C** drücken, um die Anwen
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
 [add_ca_cert]: ../java-add-certificate-ca-store.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

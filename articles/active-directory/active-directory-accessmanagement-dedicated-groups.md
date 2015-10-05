@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Dedizierte Gruppen in Azure Active Directory | Microsoft Azure" 
-	description="Ein Thema mit Erläuterungen zum Verwalten von Gruppen in Azure AD." 
+	description="Übersicht über dedizierte Gruppen in Azure AD und wie sie erstellt werden." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
@@ -28,9 +28,7 @@ Die dedizierte Gruppe "Alle Benutzer" ist hilfreich, wenn Sie allen Benutzer in 
 Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Directory bieten:
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
-
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
-
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

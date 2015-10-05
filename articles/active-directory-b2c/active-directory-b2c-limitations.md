@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Einschränkungen
@@ -26,13 +26,9 @@ Es gibt mehrere Features und Funktionen von Azure Active Directory (AD) B2C, die
 
 Es gibt bekannte Probleme, die beim [Erstellen eines Azure AD B2C-Verzeichnisses](active-directory-b2c-get-started) auftreten können. Dieser [Artikel](active-directory-b2c-support-create-directory.md) enthält Informationen hierzu.
 
-## Branding-Problem auf der Anmeldeseite des lokalen Kontos
+## Brandingprobleme in Bestätigungs-E-Mails und auf Seiten für die Self-Service-Kennwortzurücksetzung
 
-Die Standardvorlage für die Anmeldeseite des lokalen Kontos enthält Branding-Elemente vom Typ „Microsoft Azure“. Wir arbeiten aktiv an der Behebung dieses Problems. Sie können das Branding auf dieser Seite ändern, indem Sie das [Feature für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md) verwenden.
-
-## Probleme mit der Abmeldung vom lokalen Konto
-
-Derzeit funktioniert die Abmeldung vom lokalen Konto nicht. Wir arbeiten aktiv an der Behebung dieses Problems. Sie können dieses Problem umgehen, indem Sie den Browser schließen oder die Cookies löschen.
+Die standardmäßigen Bestätigungs-E-Mails und Seiten für die Self-Service-Kennwortzurücksetzung enthalten die Brandingelemente "Microsoft" und "Azure". Wir werden diese entfernen. Mit dem [Feature für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md) können Sie das Branding auf diesen Seiten ändern, sodass diese Brandingelemente nicht mehr angezeigt werden.
 
 ## Unterstützung für Produktionsanwendungen
 
@@ -52,17 +48,17 @@ Anwendungen, die lang andauernde Prozesse enthalten oder ohne das Vorhandensein 
 
 ### Eigenständige Web-APIs
 
-In der Preview-Version von Azure AD B2C können Sie eine [Web-API erstellen, die mit OAuth 2.0-Token geschützt wird](active-directory-b2c-apps.md#web-apis). Allerdings kann die Web-API nur Token von einem Client empfangen, der die gleiche Anwendungs-ID aufweist. Das Erstellen einer Web-API, auf die von mehreren unterschiedlichen Clients zugegriffen werden kann, wird nicht unterstützt.
+In der Vorschauversion von Azure AD B2C können Sie eine [Web-API erstellen, die mit OAuth 2.0-Token geschützt wird](active-directory-b2c-apps.md#web-apis). Allerdings kann die Web-API nur Token von einem Client empfangen, der die gleiche Anwendungs-ID aufweist. Das Erstellen einer Web-API, auf die von mehreren unterschiedlichen Clients zugegriffen werden kann, wird nicht unterstützt.
 
 ## Einschränkungen für Bibliotheken und SDKs
 
 Nicht alle Sprachen und Plattformen verfügen über Bibliotheken, die die Preview-Version von Azure AD B2C unterstützen. Der Satz von Authentifizierungsbibliotheken ist zurzeit auf .NET, iOS, Android und NodeJS beschränkt. Entsprechende Schnellstart-Lernprogramme für jede Bibliothek stehen im Abschnitt [Erste Schritte](active-directory-b2c-overview.md#getting-started) zur Verfügung.
 
-Wenn Sie eine Anwendung mit einer anderen Sprache oder Plattform in die Preview-Version von Azure AD B2C integrieren möchten, finden Sie Informationen dazu in der [OAuth 2.0- und OpenID Connect-Protokollreferenz](active-directory-b2c-protocols.md). Sie enthält Anweisungen zum Erstellen der HTTP-Nachrichten, die zum Kommunizieren mit dem Azure AD B2C-Dienst erforderlich sind.
+Wenn Sie eine Anwendung mit einer anderen Sprache oder Plattform in die Vorschauversion von Azure AD B2C integrieren möchten, finden Sie Informationen dazu in der [OAuth 2.0- und OpenID Connect-Protokollreferenz](active-directory-b2c-protocols.md). Sie enthält Anweisungen zum Erstellen der HTTP-Nachrichten, die zum Kommunizieren mit dem Azure AD B2C-Dienst erforderlich sind.
 
 ## Einschränkungen für Protokolle
 
-Die Preview-Version von Azure AD B2C unterstützt OpenID Connect und OAuth 2.0. Allerdings wurden nicht alle Features und Funktionen der einzelnen Protokolle implementiert. Lesen Sie zum besseren Verständnis des Umfangs der unterstützten Protokollfunktionen in der Preview-Version von Azure AD B2C die [OpenID Connect- und OAuth 2.0-Protokollreferenz](active-directory-b2c-protocols.md).
+Die Preview-Version von Azure AD B2C unterstützt OpenID Connect und OAuth 2.0. Allerdings wurden nicht alle Features und Funktionen der einzelnen Protokolle implementiert. Lesen Sie zum besseren Verständnis des Umfangs der unterstützten Protokollfunktionen in der Vorschauversion von Azure AD B2C die [OpenID Connect- und OAuth 2.0-Protokollreferenz](active-directory-b2c-protocols.md).
 
 ## Einschränkungen für Token
 
@@ -82,4 +78,4 @@ Sie können über das Azure-Vorschauportal auf B2C-Features zugreifen. Sie könn
 
 Sie können ein Azure AD B2C-Verzeichnis im Azure-Portal nicht löschen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

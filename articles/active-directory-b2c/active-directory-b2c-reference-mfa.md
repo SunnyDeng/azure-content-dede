@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Aktivieren der Multi-Factor Authentication in kundenorientierten Anwendungen
@@ -53,4 +53,4 @@ Mit dem Feature "Jetzt ausführen" für die Richtlinie können Sie die Benutzere
 
 Wenn sich der Kunde (mit einem lokalen Konto oder dem Konto eines sozialen Netzwerks) anmeldet und eine bestätigte Telefonnummer an das Kundenkonto angefügt wurde, wird der aufgefordert, diese zu bestätigen. Wenn keine Telefonnummer angefügt ist, wird der Kunde aufgefordert, eine anzugeben und zu bestätigen. Bei erfolgreicher Bestätigung wird die Telefonnummer zur späteren Verwendung an das Kundenkonto angefügt.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

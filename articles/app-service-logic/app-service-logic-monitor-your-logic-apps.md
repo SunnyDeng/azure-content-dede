@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/01/2015"
+	ms.date="09/22/2015"
 	ms.author="stepsic"/>
 
 #Überwachen von Logik-Apps
@@ -56,4 +56,4 @@ Beachten Sie, dass für *Push*-Trigger hier *nicht* die Zeiten angezeigt werden,
 Es gibt eine weitere Funktion, die zurzeit noch nicht auf der Benutzeroberfläche verfügbar ist, aber über [die REST-API](http://go.microsoft.com/fwlink/?LinkID=525617&clcid=0x409) zur Verfügung steht. Wenn Sie die Definition einer Logik-App aktualisieren, wird die vorherige Version der Definition gespeichert. Dies liegt daran, dass wenn eine Ausführung bereits läuft, diese Ausführung auf die Version der Logik-App verweist, die zum Zeitpunkt des Ausführungsbeginns vorhanden war. Definitionen laufender Ausführungen können nicht geändert werden. Die REST-API für den Versionsverlauf ermöglicht Ihnen den Zugriff auf diese Informationen.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory (AD) B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit LinkedIn-Konten
@@ -52,4 +52,4 @@ Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie **Client-ID** und **Geheimer Clientschlüssel** der LinkeIn-Anwendung, die Sie zuvor erstellt haben, ein.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für LinkedIn zu speichern.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

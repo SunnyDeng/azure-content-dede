@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Erstellen eines Azure AD B2C-Verzeichnisses
@@ -67,4 +67,4 @@ Führen Sie die folgenden Schritte aus, um ein neues Azure AD B2C-Verzeichnis zu
 
 Fahren Sie mit dem [Registrieren einer Anwendung bei Azure AD B2C und dem Erstellen einer Schnellstartanwendung](active-directory-b2c-app-registration.md) fort.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

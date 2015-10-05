@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.date="09/22/2015" 
 	ms.author="tdykstra"/>
 
 # Authentifizierung für API-Apps und mobile Apps in Azure App Service
@@ -208,10 +208,10 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 * [Hinzufügen der Authentifizierung zu Ihrer iOS-App](../app-service-mobile/app-service-mobile-dotnet-backend-ios-get-started-users-preview.md)
 * [Hinzufügen der Authentifizierung zu Ihrer Xamarin.iOS-App](../app-service-mobile/app-service-mobile-dotnet-backend-xamarin-ios-get-started-users-preview.md)
 * [Hinzufügen der Authentifizierung zu Ihrer Xamarin.Android-App](../app-service-mobile/app-service-mobile-dotnet-backend-xamarin-android-get-started-users-preview.md)
-* [Hinzufügen der Authentifizierung zu Ihrer Windows-App](../app-service-mobile/app-service-mobile-dotnet-backend-windows-store-get-started-users-preview.md)
+* [Hinzufügen der Authentifizierung zu Ihrer Windows-App](../app-service-mobile/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-users-preview.md)
 
 ### <a id="maobo"></a>Mobile Apps – Aufrufe gesicherter Ressourcen im Auftrag
 
 * [Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API in einer mobilen App](../app-service-mobile/app-service-mobile-dotnet-backend-get-started-connect-to-enterprise.md#obtain-token)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

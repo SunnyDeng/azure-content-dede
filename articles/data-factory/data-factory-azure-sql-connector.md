@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten in und aus Azure SQL | Azure Data Factory"
-	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure SQL-Datenbank verschoben werden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten in und aus Azure SQL | Azure Data Factory" 
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure SQL-Datenbank verschoben werden." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/22/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus Azure SQL mithilfe von Azure Data Factory
@@ -474,4 +474,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

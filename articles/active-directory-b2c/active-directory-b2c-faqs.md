@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Häufig gestellte Fragen
@@ -105,4 +105,4 @@ Derzeit können wir noch keine Angaben zum Datum der allgemeinen Verfügbarkeit 
 
 Es kann hilfreich sein, sich auch über die aktuellen [Einschränkungen der Preview-Version](active-directory-b2c-limitations.md) zu informieren.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

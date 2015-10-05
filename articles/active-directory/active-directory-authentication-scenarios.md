@@ -1,6 +1,6 @@
 
 <properties
-   pageTitle="Authentifizierungsszenarien für Azure AD"
+   pageTitle="Authentifizierungsszenarien für Azure AD | Microsoft Azure"
    description="Eine Übersicht über die fünf am häufigsten verwendeten Authentifizierungsszenarien für Azure Active Directory (AAD)"
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/02/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin"/>
 
 # Authentifizierungsszenarien für Azure AD
@@ -467,4 +467,4 @@ Wenn die erste Anwendung mithilfe ihres Autorisierungscodes ein JWT-Zugriffstoke
 
 [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Konfigurieren zustandsbehafteter Reliable Services"
-	description="Erfahren Sie mehr über das Konfigurieren zustandsbehafteter Reliable Services in Service Fabric."
-	services="Service-Fabric"
-	documentationCenter=".net"
-	authors="sumukhs"
-	manager="anuragg"
-	editor=""/>
+   description="Erfahren Sie mehr über das Konfigurieren zustandsbehafteter Reliable Services in Service Fabric."
+   services="Service-Fabric"
+   documentationCenter=".net"
+   authors="sumukhs"
+   manager="anuragg"
+   editor=""/>
 
 <tags
    ms.service="Service-Fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/26/2015"
-	ms.author="sumukhs"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2015"
+   ms.author="sumukhs"/>
 
 # Konfigurieren zustandsbehafteter Reliable Services
 Die Standardkonfiguration für zustandsbehaftete Reliable Services kann geändert werden. Bearbeiten Sie zu diesem Zweck für jeden Dienst in der Anwendung die Datei "settings.xml", die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde.
@@ -28,9 +28,6 @@ Replicator-Sicherheitskonfigurationen werden verwendet, um den während der Repl
 
 ### Name des Abschnitts
 ReplicatorSecurityConfig
-
-### Konfigurationsnamen
-Weitere Informationen finden Sie unter [Replikationssicherheit](../service-fabric/service-fabric-replication-security.md)
 
 ## Replicator-Konfiguration
 Replicator-Konfigurationen werden zum Konfigurieren des Replicators verwendet, der für die hohe Zuverlässigkeit des zustandsbehafteten Reliable Service verantwortlich ist. Er repliziert und speichert den Zustand zu diesem Zweck lokal. Die Standardkonfiguration wird von der Visual Studio-Vorlage generiert und sollte ausreichen. Dieser Abschnitt befasst sich mit zusätzlichen Konfigurationen, die zum Optimieren des Replicators verfügbar sind.
@@ -89,6 +86,5 @@ Mit der Einstellung "OptimizeForLocalSSD" werden Zustandsinformationen vor der �
 Die Einstellung "MaxRecordSizeInKB" definiert die maximale Größe eines Datensatzes, der vom Replicator in die Protokolldatei geschrieben werden kann. In den meisten Fällen ist die Standarddatensatzgröße 1024 KB optimal. Wenn durch den Dienst jedoch größere Datenelemente in die Zustandsinformationen einbezogen werden, muss dieser Wert möglicherweise erhöht werden. Es nutzt wenig, für "MaxRecordSizeInKB" einen Wert unter 1024 festzulegen, da kleinere Datensätze nur den für sie erforderlichen Speicherplatz belegen. Eine Änderung sollte nur in seltenen Fällen erforderlich sein.
 
 Die Einstellungen "SharedLogId" und "SharedLogPath" werden immer zusammen verwendet. Sie ermöglichen einem Dienst, ein separates freigegebenes Protokoll aus dem freigegebenen Standardprotokoll für den Knoten zu verwenden. Zur Optimierung der Effizienz sollten so viele Dienste wie möglich dasselbe freigegebene Protokoll angeben. Freigegebene Protokolldateien sollten auf Datenträgern gespeichert werden, die ausschließlich für die freigegebene Protokolldatei verwendet werden. Dies reduziert Konflikte durch die Bewegungen des Lesekopfs. Eine Änderung sollte nur in seltenen Fällen erforderlich sein.
- 
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

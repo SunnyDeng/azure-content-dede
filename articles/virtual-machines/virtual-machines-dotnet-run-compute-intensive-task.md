@@ -1,26 +1,27 @@
 <properties
-	pageTitle="Ausführen einer rechenintensiven Aufgabe in .NET auf einem virtuellen Azure-Computer"
+	pageTitle="Ausführen einer rechenintensiven .NET-App auf einem virtuellen Computer | Microsoft Azure"
 	description="Erfahren Sie, wie Sie eine rechenintensive .NET-App auf einem virtuellen Azure-Computer bereitstellen und ausführen und Azure Service Bus-Warteschlangen für die Remoteüberwachung des Status verwenden."
 	services="virtual-machines"
 	documentationCenter=".net"
 	authors="wadepickett"
 	manager="wpickett"
-	editor="mollybos"/>
-
+	editor="mollybos"
+	tags=“azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="06/25/2015"
 	ms.author="wpickett"/>
 
-
 # Ausführen einer rechenintensiven Aufgabe in .NET auf einem virtuellen Azure-Computer
 
 Mit Azure können Sie einen virtuellen Computer zum Verarbeiten rechenintensiver Aufgaben verwenden. Ein virtueller Computer kann beispielsweise Aufgaben verarbeiten und Clientcomputern oder mobilen Anwendungen Ergebnisse bereitstellen. Nach Abschluss dieses Tutorials wissen Sie, wie ein virtueller Computer erstellt wird, der eine rechenintensive .NET-Anwendung ausführt, die durch eine andere .NET-Anwendung überwacht werden kann.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Dieses Lernprogramm setzt voraus, dass Sie wissen, wie .NET-Konsolenanwendungen erstellt werden. Wissen über Azure ist keine Voraussetzung.
 
@@ -53,7 +54,7 @@ Es folgt ein Beispiel der .NET-Anwendung, welche die rechenintensive Aufgabe üb
 5. Geben Sie auf dem Bildschirm **Virtuellen Computer erstellen** einen Wert für **DNS-Name** ein.
 6. Wählen Sie in der Dropdownliste **Image** ein Image aus, z. B. **Windows Server 2012 R2**.
 7. Geben Sie im Feld **Benutzername** einen Namen für den Administrator ein. Merken Sie sich diesen Namen und das als nächstes eingegebene Kennwort. Sie benötigen diese Daten, wenn Sie sich von einem Remotestandort aus an dem virtuellen Computer anmelden.
-8. Geben Sie ein Kennwort in das Feld **Neues Kennwort** ein, und geben Sie das Kennwort dann erneut in das Feld **Kennwort bestätigen** ein.
+8. Geben Sie ein Kennwort im Feld **Neues Kennwort** ein, und geben Sie das Kennwort dann erneut im Feld **Kennwort bestätigen** ein.
 9. Wählen Sie in der Dropdownliste **Standort** den Standort des Rechenzentrums Ihres virtuellen Computers aus.
 10. Klicken Sie auf **Virtuellen Computer erstellen**. Sie können den Status im Abschnitt **Virtuelle Computer** des Azure-Portals überwachen. Wenn als Status des virtuellen Computers **Aktiv** angezeigt wird, können Sie sich am virtuellen Computer anmelden.
 
@@ -95,7 +96,7 @@ Der erstellte Namespace wird dann im Azure-Portal angezeigt und nach einem Momen
 Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Erstellen einer Warteschlange, müssen Sie die Verwaltungsanmeldeinformationen für den Namespace abrufen.
 
 1.  Klicken Sie im linken Navigationsbereich auf **Service Bus**, um die Liste der verfügbaren Namespaces anzuzeigen. ![Screenshot der verfügbaren Namespaces][available_namespaces]
-2.  Wählen Sie in der Liste den Namespace, den Sie gerade erstellt haben. ![Screenshot der Namespaceliste][namespace_list]
+2.  Wählen Sie in der Liste den Namespace aus, den Sie gerade erstellt haben. ![Screenshot der Namespaceliste][namespace_list]
 3. Klicken Sie auf **Verbindungsinformationen**. ![Schaltfläche "Zugriffsschlüssel"][access_key_button]
 4.  Suchen Sie im Dialogfeld den Eintrag **Verbindungszeichenfolge**. Notieren Sie sich diesen Wert, da Sie diese Information später im Tutorial benötigen, um Vorgänge mit dem Namespace durchführen zu können.
 
@@ -103,14 +104,13 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 
 1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für .NET](http://azure.microsoft.com/develop/net/) herunter.
 2. Erstellen Sie eine .NET-Konsolenanwendung mit dem Projekt namens TSPSolver. Stellen Sie sicher, dass als Zielframework **.NET Framework 4** oder höher (nicht **.NET Framework 4 Client Profile**) festgelegt ist. Nach dem Erstellen eines Projekts kann das Zielframework folgendermaßen festgelegt werden: Klicken Sie im Menü von Visual Studio auf **Projekte**. Klicken Sie auf **Eigenschaften** und anschließend auf die Registerkarte **Anwendung**, und legen Sie den Wert für **Zielframework** fest.
-3. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPSolver**. Klicken Sie auf **Verweis hinzufügen** und anschließend auf die Registerkarte **Durchsuchen**, und navigieren Sie zum Azure .NET SDK (zum Beispiel unter „C:\\Programme\\Microsoft SDKs\\Azure.NET SDK\\v2.5\\ToolsRef). Wählen Sie als Verweis **Microsoft.ServiceBus.dll**.
+3. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPSolver**. Klicken Sie auf **Verweis hinzufügen** und anschließend auf die Registerkarte **Durchsuchen**, und navigieren Sie zum Azure .NET SDK (zum Beispiel unter "C:\\Programme\\Microsoft SDKs\\Azure.NET SDK\\v2.5\\ToolsRef"). Wählen Sie als Verweis **Microsoft.ServiceBus.dll** aus.
 4. Fügen Sie die System.Runtime.Serialization-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPSolver**. Klicken Sie auf **Verweis hinzufügen** und auf die Registerkarte **.NET**, und wählen Sie dann **System.Runtime.Serialization** als Verweis aus.
 5. Verwenden Sie das Codebeispiel am Ende dieses Abschnitts als Inhalt der Datei „Program.cs“.
 6. Ändern Sie den Platzhalter **your\_connection\_string**, um die **Verbindungszeichenfolge** Ihres Service Bus zu verwenden.
 7. Kompilieren Sie die Anwendung. Damit wird TSPSolver.exe im Ordner bin des Projekts erstellt (entweder bin\\release oder bin\\debug, je nachdem, ob Sie als Ziel eine Releaseversion oder eine Debugversion vorgesehen haben). Später kopieren Sie diese ausführbare Datei und Microsoft.ServiceBus.dll auf den virtuellen Computer.
 
 <p/>
-
 
 	using System;
 	using System.Collections.Generic;
@@ -329,14 +329,13 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 ## Erstellen einer .NET-Anwendung, die den Fortschritt der rechenintensiven Aufgabe überwacht
 
 1. Erstellen Sie auf dem Entwicklungscomputer eine .NET-Konsolenanwendung mit TSPClient als Projektnamen. Stellen Sie sicher, dass als Zielframework **.NET Framework 4** oder höher (nicht **.NET Framework 4 Client Profile**) festgelegt ist. Nach dem Erstellen eines Projekts kann das Zielframework folgendermaßen festgelegt werden: Klicken Sie im Menü von Visual Studio auf **Projekte**. Klicken Sie auf **Eigenschaften** und anschließend auf die Registerkarte **Anwendung**, und legen Sie den Wert für **Zielframework** fest.
-2. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPClient**. Klicken Sie auf **Verweis hinzufügen** und anschließend auf die Registerkarte **Durchsuchen**, und navigieren Sie zum Azure .NET SDK (zum Beispiel unter „C:\\Programme\\Microsoft SDKs\\Azure.NET SDK\\v2.5\\ToolsRef). Wählen Sie als Verweis **Microsoft.ServiceBus.dll**.
+2. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPClient**. Klicken Sie auf **Verweis hinzufügen** und anschließend auf die Registerkarte **Durchsuchen**, und navigieren Sie zum Azure .NET SDK (zum Beispiel unter "C:\\Programme\\Microsoft SDKs\\Azure.NET SDK\\v2.5\\ToolsRef"). Wählen Sie als Verweis **Microsoft.ServiceBus.dll** aus.
 3. Fügen Sie die System.Runtime.Serialization-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPClient**. Klicken Sie auf **Verweis hinzufügen** und auf die Registerkarte **.NET**, und wählen Sie **System.Runtime.Serialization** als Verweis aus.
 4. Verwenden Sie das Codebeispiel am Ende dieses Abschnitts als Inhalt der Datei „Program.cs“.
 5. Ändern Sie den Platzhalter **your\_connection\_string**, um die **Verbindungszeichenfolge** Ihres Service Bus zu verwenden.
 6. Kompilieren Sie die Anwendung. Damit wird TSPClient.exe im Ordner bin des Projekts erstellt (entweder bin\\release oder bin\\debug, je nachdem, ob Sie als Ziel eine Releaseversion oder eine Debugversion vorgesehen haben). Sie können diesen Code auf dem Entwicklungscomputer ausführen oder diese ausführbare Datei und Microsoft.ServiceBus.dll auf einen Computer kopieren, auf dem die Clientanwendung ausgeführt wird (sie muss nicht auf den virtuellen Computer kopiert werden).
 
 <p/>
-
 
 	using System;
 	using System.Collections.Generic;
@@ -550,4 +549,4 @@ Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, k�
 [namespace_list]: ./media/virtual-machines-dotnet-run-compute-intensive-task/NamespaceList.png
 [access_key_button]: ./media/virtual-machines-dotnet-run-compute-intensive-task/AccessKey.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -28,6 +28,6 @@ Maximale Anzahl von Punkten in einem Polygon-Argument in einer ST_WITHIN-Abfrage
 Maximale Anzahl von Sammlungserstellungen pro Minute* |5 
 Maximale Anzahl von Skalierungsvorgängen pro Minute* |5
 
-Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
+Kontingente mit einem Sternchen \(*\) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

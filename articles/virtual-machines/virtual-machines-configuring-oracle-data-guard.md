@@ -1,6 +1,23 @@
-<properties title="Configuring Oracle Data Guard for Azure" pageTitle="Konfigurieren von Oracle Data Guard für Azure" description="Bearbeiten Sie ein Lernprogramm für das Einrichten und Implementieren von Oracle Data Guard auf Azure Virtual Machines für hohe Verfügbarkeit und Notfallwiederherstellung." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
+<properties
+	pageTitle="Konfigurieren von Oracle Data Guard auf virtuellen Computern | Microsoft Azure"
+	description="Bearbeiten Sie ein Lernprogramm für das Einrichten und Implementieren von Oracle Data Guard auf Azure Virtual Machines für hohe Verfügbarkeit und Notfallwiederherstellung."
+	services="virtual-machines"
+	authors="bbenz"
+	documentationCenter=""
+	tags="azure-service-management"/>
+<tags
+	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
+	ms.workload="infrastructure-services"
+	ms.date="06/22/2015"
+	ms.author="bbenz" />
+
 #Konfigurieren von Oracle Data Guard für Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource, die mit dem klassischen Bereitstellungsmodell erstellt wurde.
+
 Dieses Lernprogramm zeigt, wie Sie Oracle Data Guard für virtuelle Computer in einer Azure-Umgebung für hohe Verfügbarkeit und Notfallwiederherstellung einrichten und implementieren. Das Lernprogramm konzentriert sich auf die unidirektionale Replikation für Oracle-Datenbanken ohne RAC.
 
 Oracle Data Guard unterstützt Datenschutz und Notfallwiederherstellung für Oracle Database. Es handelt sich um eine einfache, leistungsfähige und gebrauchsfertige Lösung für Notfallwiederherstellung, Datenschutz und hohe Verfügbarkeit des gesamten Oracle Database-Systems.
@@ -11,13 +28,13 @@ Das Lernprogramm geht zudem davon aus, dass Sie die folgenden Voraussetzungen be
 
 - Sie haben bereits den Abschnitt mit Überlegungen zu Hochverfügbarkeit und Notfallwiederherstellung im Thema [Images virtueller Oracle-Computer – verschiedene Überlegungen](virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images.md) gelesen. Beachten Sie, dass Azure derzeit eigenständige Oracle-Datenbankinstanzen, aber keine Oracle Real Application Clusters (Oracle RAC) unterstützt.
 
-- Sie haben zwei virtuelle Computer (VMs) in Azure mit demselben von der Plattform bereitgestellten Image von Oracle Enterprise Edition unter Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine.md) und [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer in [demselben Clouddienst](virtual-machines-load-balance.md) und im demselben [virtuellen Netzwerk](azure.microsoft.com/documentation/services/virtual-network/) befinden, damit sie über die statische private IP-Adresse aufeinander zugreifen können. Darüber hinaus wird empfohlen, die virtuellen Computern in derselben [Verfügbarkeitsgruppe](virtual-machines-manage-availability.md) zu platzieren, damit sie von Azure in eigenen Fehlerdomänen und Upgradedomänen angeordnet werden können. Beachten Sie, dass Oracle Data Guard nur mit Oracle Database Enterprise Edition verfügbar ist. Jeder Computer muss mindestens 2 GB Arbeitsspeicher und 5 GB Speicherplatz aufweisen. Aktuelle Informationen zu den von der Plattform bereitgestellten VM-Größen finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/dn197896.aspx). Wenn Sie zusätzliche Datenträgervolumes für die virtuellen Computer benötigen, können Sie zusätzliche Datenträger anfügen. Entsprechende Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md).
+- Sie haben zwei virtuelle Computer (VMs) in Azure mit demselben von der Plattform bereitgestellten Image von Oracle Enterprise Edition unter Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine.md) und [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können. Darüber hinaus wird empfohlen, die virtuellen Computer in derselben [Verfügbarkeitsgruppe](virtual-machines-manage-availability.md) zu platzieren, damit sie von Azure in eigenen Fehlerdomänen und Upgradedomänen angeordnet werden können. Beachten Sie, dass Oracle Data Guard nur mit Oracle Database Enterprise Edition verfügbar ist. Jeder Computer muss mindestens 2 GB Arbeitsspeicher und 5 GB Speicherplatz aufweisen. Aktuelle Informationen zu den von der Plattform bereitgestellten VM-Größen finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/dn197896.aspx). Wenn Sie zusätzliche Datenträgervolumes für die virtuellen Computer benötigen, können Sie zusätzliche Datenträger anfügen. Entsprechende Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md).
 
 - Sie haben im Azure-Portal die Namen der virtuellen Computer auf Machine1 für den primären virtuellen Computer und Machine2 für den virtuellen Standbycomputer festgelegt.
 
 - Sie haben festgelegt, dass auf dem primären virtuellen Computer und auf dem virtuellen Standbycomputer die **ORACLE\_HOME**-Umgebungsvariable auf denselben Oracle-Stamminstallationspfad verweist, z. B. `C:\OracleDatabase\product\11.2.0\dbhome_1\database`.
 
-- Sie melden Sie sich beim Windows-Server als Mitglied der Gruppe **Administratoren** oder als Mitglied der Gruppe **ORA\_DBA** an.
+- Sie melden Sie sich bei dem Windows-Server als Mitglied der Gruppe **Administratoren** oder als Mitglied der Gruppe **ORA\_DBA** an.
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -77,17 +94,17 @@ Nachfolgende Versionen von Oracle-Datenbanken und Oracle Data Guard enthalten m�
 - Stellen Sie an der SQL*Plus-Eingabeaufforderung als Benutzer SYS mit der Rolle SYSDBA eine Verbindung mit der Datenbank her, und führen Sie die folgende Anweisung aus, um den Namen der Datenbank anzuzeigen:
 
 		SQL> select name from v$database;
-		
+
 		The result will display like the following:
-		
+
 		NAME
 		---------
 		TEST
 - Fragen Sie anschließend die Namen der Datenbankdateien aus der Systemansicht "dba\_data\_files" ab:
 
-		SQL> select file_name from dba_data_files; 
-		FILE_NAME 
-		------------------------------------------------------------------------------- 
+		SQL> select file_name from dba_data_files;
+		FILE_NAME
+		-------------------------------------------------------------------------------
 		C:\ <YourLocalFolder>\TEST\USERS01.DBF
 		C:\ <YourLocalFolder>\TEST\UNDOTBS01.DBF
 		C:\ <YourLocalFolder>\TEST\SYSAUX01.DBF
@@ -142,8 +159,8 @@ Führen an der SQL*PLUS-Eingabeaufforderung auf Machine1 die folgende Anweisung 
 	3         ONLINE  C:<YourLocalFolder>\TEST\REDO03.LOG               NO
 	2         ONLINE  C:<YourLocalFolder>\TEST\REDO02.LOG               NO
 	1         ONLINE  C:<YourLocalFolder>\TEST\REDO01.LOG               NO
-	Next, query the v$log system view, displays log file information from the control file. 
-	SQL> select bytes from v$log; 
+	Next, query the v$log system view, displays log file information from the control file.
+	SQL> select bytes from v$log;
 	BYTES
 	----------
 	52428800
@@ -182,7 +199,7 @@ Aktivieren Sie dann die Archivierung, um die primäre Datenbank in den Modus "AR
 Melden Sie sich zunächst als SYSDBA an. Führen Sie an der Windows-Eingabeaufforderung Folgendes aus:
 
 	sqlplus /nolog
-	
+
 	connect / as sysdba
 
 Fahren Sie dann an der SQL*Plus-Eingabeaufforderung die Datenbank herunter:
@@ -205,13 +222,13 @@ Führen Sie dann den Befehl "startup mount" aus, um die Datenbank bereitzustelle
 
 Führen Sie anschließend Folgendes aus:
 
-	SQL> alter database archivelog; 
+	SQL> alter database archivelog;
 	Database altered.
 
 Führen Sie dann die Anweisung "alter database" mit der Klausel "open" aus, um die Datenbank für die normale Verwendung verfügbar zu machen:
 
 	SQL> alter database open;
-	
+
 	Database altered.
 
 #### Festlegen der Initialisierungsparameter für die primäre Datenbank
@@ -224,16 +241,16 @@ Sie können die Data Guard-Umgebung mit den Parametern in der Datei "INIT.ORA" s
 	File created.
 
 Anschließend müssen Sie die PFILE-Datei bearbeiten, um die Standbyparameter hinzuzufügen. Öffnen Sie hierzu im Verzeichnis "% ORACLE\_HOME%\\database" die Datei "INITTEST. ORA". Fügen Sie dann die folgenden Anweisungen an die Datei "INITTEST.ORA" an. Beachten Sie, dass die Datei "INIT.ORA" gemäß der Namenskonvention "INIT<Datenbankname>.ORA" benannt werden muss.
-	
-	db_name='TEST' 
-	db_unique_name='TEST' 
+
+	db_name='TEST'
+	db_unique_name='TEST'
 	LOG_ARCHIVE_CONFIG='DG_CONFIG=(TEST,TEST_STBY)'
 	LOG_ARCHIVE_DEST_1= 'LOCATION=C:\OracleDatabase\archive   VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=TEST'
 	LOG_ARCHIVE_DEST_2= 'SERVICE=TEST_STBY LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=TEST_STBY'
 	LOG_ARCHIVE_DEST_STATE_1=ENABLE
-	LOG_ARCHIVE_DEST_STATE_2=ENABLE 
-	REMOTE_LOGIN_PASSWORDFILE=EXCLUSIVE 
-	LOG_ARCHIVE_FORMAT=%t_%s_%r.arc 
+	LOG_ARCHIVE_DEST_STATE_2=ENABLE
+	REMOTE_LOGIN_PASSWORDFILE=EXCLUSIVE
+	LOG_ARCHIVE_FORMAT=%t_%s_%r.arc
 	LOG_ARCHIVE_MAX_PROCESSES=30
 	# Standby role parameters --------------------------------------------------------------------
 	fal_server=TEST_STBY
@@ -251,11 +268,11 @@ Sobald die neue Parameterdatei erstellt ist, müssen Sie aus ihr die SPFILE-Date
 Fahren Sie zunächst die Datenbank herunter:
 
 	SQL> shutdown immediate;
-	
+
 	Database closed.
-	
+
 	Database dismounted.
-	
+
 	ORACLE instance shut down.
 
 Führen Sie dann den Befehl "startup nomount" wie folgt aus:
@@ -277,7 +294,7 @@ Erstellen Sie jetzt eine SPFILE-Datei:
 Fahren Sie dann die Datenbank herunter:
 
 	SQL> shutdown immediate;
-	
+
 	ORA-01507: database not mounted
 
 Starten Sie dann eine Instanz mithilfe des Befehls "startup":
@@ -322,18 +339,18 @@ Führen Sie anschließend die folgenden Schritte aus:
 ### 1\. Erstellen einer Initialisierungsparameterdatei für die Standbydatenbank
 
 In diesem Abschnitt wird veranschaulicht, wie Sie eine Initialisierungsparameterdatei für die Standbydatenbank erstellen. Kopieren Sie zu diesem Zweck zunächst die Datei "INITTEST.ORA" manuell von Machine1 auf Machine2. Auf beiden Computern sollte die Datei "INITTEST.ORA" im Ordner "%ORACLE\_HOME%\\database" angezeigt werden. Ändern Sie dann die Datei "INITTEST.ORA" auf Machine2 wie folgt, um die Datenbank als Standbydatenbank einzurichten:
-	
+
 	db_name='TEST'
 	db_unique_name='TEST_STBY'
 	db_create_file_dest='c:\OracleDatabase\oradata\test_stby’
 	db_file_name_convert=’TEST’,’TEST_STBY’
 	log_file_name_convert='TEST','TEST_STBY'
-	
-	
+
+
 	job_queue_processes=10
 	LOG_ARCHIVE_CONFIG='DG_CONFIG=(TEST,TEST_STBY)'
 	LOG_ARCHIVE_DEST_1='LOCATION=c:\OracleDatabase\TEST_STBY\archives VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=’TEST'
-	LOG_ARCHIVE_DEST_2='SERVICE=TEST LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) 
+	LOG_ARCHIVE_DEST_2='SERVICE=TEST LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE)
 	LOG_ARCHIVE_DEST_STATE_1='ENABLE'
 	LOG_ARCHIVE_DEST_STATE_2='ENABLE'
 	LOG_ARCHIVE_FORMAT='%t_%s_%r.arc'
@@ -359,9 +376,9 @@ Bevor Sie eine Standbydatenbank erstellen, müssen Sie sicherstellen, dass die p
 Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie die Datei "listener.ora" wie unten gezeigt. Wenn Sie die Datei "listener.ora" bearbeiten, stellen Sie immer sicher, dass die öffnende und schließende Klammer in der gleichen Spalte angeordnet sind. Sie finden die Datei "listener.ora" im folgenden Ordner: "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\".
 
 	# listener.ora Network Configuration File: C:\OracleDatabase\product\11.2.0\dbhome_1\network\admin\listener.ora
-	
+
 	# Generated by Oracle configuration tools.
-	
+
 	SID_LIST_LISTENER =
 	  (SID_LIST =
 	    (SID_DESC =
@@ -371,7 +388,7 @@ Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie di
 	      (ENVS = "EXTPROC_DLLS=ONLY:C:\OracleDatabase\product\11.2.0\dbhome_1\bin\oraclr11.dll")
 	    )
 	  )
-	
+
 	LISTENER =
 	  (DESCRIPTION_LIST =
 	    (DESCRIPTION =
@@ -381,9 +398,9 @@ Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie di
 	  )
 
 Stellen Sie anschließend eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie die Datei "listener.ora" Datei wie folgt: # listener.ora Network Configuration File: "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\network\\admin\\listener.ora"
-	
+
 	# Generated by Oracle configuration tools.
-	
+
 	SID_LIST_LISTENER =
 	  (SID_LIST =
 	    (SID_DESC =
@@ -393,7 +410,7 @@ Stellen Sie anschließend eine Remotedesktopverbindung mit Machine2 her, und bea
 	      (ENVS = "EXTPROC_DLLS=ONLY:C:\OracleDatabase\product\11.2.0\dbhome_1\bin\oraclr11.dll")
 	    )
 	  )
-	
+
 	LISTENER =
 	  (DESCRIPTION_LIST =
 	    (DESCRIPTION =
@@ -416,7 +433,7 @@ Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie di
 	      (SERVICE_NAME = test)
 	    )
 	  )
-	
+
 	TEST_STBY =
 	  (DESCRIPTION =
 	    (ADDRESS_LIST =
@@ -428,7 +445,7 @@ Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie di
 	  )
 
 Stellen Sie eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie die Datei "tnsnames.ora" wie folgt:
-	
+
 	TEST =
 	  (DESCRIPTION =
 	    (ADDRESS_LIST =
@@ -438,7 +455,7 @@ Stellen Sie eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie di
 	      (SERVICE_NAME = test)
 	    )
 	  )
-	
+
 	TEST_STBY =
 	  (DESCRIPTION =
 	    (ADDRESS_LIST =
@@ -455,7 +472,7 @@ Stellen Sie eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie di
 Öffnen Sie auf dem primären Computer und virtuellen Standbycomputer eine neue Windows-Eingabeaufforderung, und führen Sie die folgenden Anweisungen aus:
 
 	C:\Users\DBAdmin>tnsping test
-	
+
 	TNS Ping Utility for 64-bit Windows: Version 11.2.0.1.0 - Production on 14-NOV-2013 06:29:08
 	Copyright (c) 1997, 2010, Oracle.  All rights reserved.
 	Used parameter files:
@@ -464,10 +481,10 @@ Stellen Sie eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie di
 	Attempting to contact (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = MACHINE1)(PORT = 1521))) (CONNECT_DATA = (SER
 	VICE_NAME = test)))
 	OK (0 msec)
-	
+
 
 	C:\Users\DBAdmin>tnsping test_stby
-	
+
 	TNS Ping Utility for 64-bit Windows: Version 11.2.0.1.0 - Production on 14-NOV-2013 06:29:16
 	Copyright (c) 1997, 2010, Oracle.  All rights reserved.
 	Used parameter files:
@@ -493,10 +510,10 @@ Starten Sie dann die Standbydatenbank im Status "NOMOUNT", und generieren Sie da
 Starten Sie die Datenbank:
 
 	SQL>shutdown immediate;
-	
+
 	SQL>startup nomount
 	ORACLE instance started.
-	
+
 	Total System Global Area  747417600 bytes
 	Fixed Size                  2179496 bytes
 	Variable Size             473960024 bytes
@@ -512,7 +529,7 @@ Stellen Sie eine Remotedesktopverbindung mit dem virtuellen Standbycomputer (MAC
 >[AZURE.IMPORTANT]Verwenden Sie nicht die Betriebssystemauthentifizierung, da sich auf dem Standbyservercomputer noch keine Datenbank befindet.
 
 	C:\> RMAN TARGET sys/password@test AUXILIARY sys/password@test_STBY
-	
+
 	RMAN>DUPLICATE TARGET DATABASE
 	  FOR STANDBY
 	  FROM ACTIVE DATABASE
@@ -545,15 +562,15 @@ In diesem Abschnitt wird veranschaulicht, wie Sie als Administrator die Hochverf
 Öffnen Sie ein SQL*Plus-Eingabeaufforderungsfenster, und überprüfen Sie das archivierte Redo Log auf dem virtuellen Standbycomputer (Machine2):
 
 	SQL> show parameters db_unique_name;
-	
+
 	NAME                                TYPE       VALUE
 	------------------------------------ ----------- ------------------------------
 	db_unique_name                      string     TEST_STBY
-	
+
 	SQL> SELECT NAME FROM V$DATABASE
-	
+
 	SQL> SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME, APPLIED FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;
-	
+
 	SEQUENCE# FIRST_TIM NEXT_TIM APPLIED
 	----------------  ---------------  --------------- ------------
 	45                    23-FEB-14   23-FEB-14   YES
@@ -565,9 +582,9 @@ In diesem Abschnitt wird veranschaulicht, wie Sie als Administrator die Hochverf
 
 Öffnen Sie ein SQL*Plus-Eingabeaufforderungsfenster, und wechseln Sie die Protokolldateien auf dem primären Computer (Machine1):
 
-	SQL> alter system switch logfile; 
+	SQL> alter system switch logfile;
 	System altered.
-	
+
 	SQL> archive log list
 	Database log mode              Archive Mode
 	Automatic archival             Enabled
@@ -579,14 +596,14 @@ In diesem Abschnitt wird veranschaulicht, wie Sie als Administrator die Hochverf
 Überprüfen Sie das archivierte Redo Log auf dem virtuellen Standbycomputer (Machine2):
 
 	SQL> SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME, APPLIED FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;
-	
+
 	SEQUENCE# FIRST_TIM NEXT_TIM APPLIED
 	----------------  ---------------  --------------- ------------
 	45                    23-FEB-14   23-FEB-14   YES
 	46                    23-FEB-14   23-FEB-14   YES
 	47                    23-FEB-14   23-FEB-14   YES
 	48                    23-FEB-14   23-FEB-14   YES
-	
+
 	49                    23-FEB-14   23-FEB-14   YES
 	50                    23-FEB-14   23-FEB-14   IN-MEMORY
 
@@ -605,6 +622,6 @@ Wenn Sie für die ursprüngliche primäre Datenbank nicht Flashback aktiviert ha
 Es wird empfohlen, für die primäre und Standbydatenbank "flashback database" zu aktivieren. Wenn ein Failover erfolgt, kann die primäre Datenbank in dem vor dem Failover vorhandenen Zustand wiederhergestellt und schnell in eine Standbydatenbank umgewandelt werden.
 
 ##Zusätzliche Ressourcen
-[Images des virtuellen Oracle-Computers für Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
+[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

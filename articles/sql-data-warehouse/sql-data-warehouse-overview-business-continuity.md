@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/15/2015"
+   ms.date="09/22/2015"
    ms.author="sahajs"/>
 
 
@@ -51,7 +51,7 @@ Da SQL Data Warehouse Computer und Speicher trennt, werden alle Ihre Daten direk
 
 ### Datenbankwiederherstellung
 
-Mit der Datenbankwiederherstellung können Sie die Datenbank in den Zustand zu einem früheren Zeitpunkt wiederherstellen. Der Azure SQL Data Warehouse-Dienst schützt alle Datenbanken durch automatische Speichermomentaufnahmen alle acht Stunden, die sieben Tage lang aufbewahrt werden und einen diskreten Satz von Wiederherstellungspunkten für Sie bereitstellen. Diese Sicherungen werden in Azure Storage in RA-GRS gespeichert und sind daher standardmäßig georedundant. Die automatischen Funktionen zur Sicherung und Wiederherstellung sind nicht mit zusätzlichen Kosten verbunden und bieten eine kosten- und verwaltungsfreie Möglichkeit, Datenbanken vor versehentlicher Beschädigung oder Löschung zu schützen. Weitere Informationen zur Datenbankwiederherstellung finden Sie unter [Wiederherstellung nach Benutzerfehlern][].
+Mit der Datenbankwiederherstellung können Sie die Datenbank in den Zustand zu einem früheren Zeitpunkt wiederherstellen. Der Azure SQL Data Warehouse-Dienst schützt alle Datenbanken durch automatische Speichermomentaufnahmen mindestens alle vier Stunden, die sieben Tage lang aufbewahrt werden und einen diskreten Satz von Wiederherstellungspunkten für Sie bereitstellen. Diese Sicherungen werden in Azure Storage in RA-GRS gespeichert und sind daher standardmäßig georedundant. Die automatischen Funktionen zur Sicherung und Wiederherstellung sind nicht mit zusätzlichen Kosten verbunden und bieten eine kosten- und verwaltungsfreie Möglichkeit, Datenbanken vor versehentlicher Beschädigung oder Löschung zu schützen. Weitere Informationen zur Datenbankwiederherstellung finden Sie unter [Wiederherstellung nach Benutzerfehlern][].
 
 ### Geografische Wiederherstellung
 
@@ -78,4 +78,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer SQL-Datenbank-Editi
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

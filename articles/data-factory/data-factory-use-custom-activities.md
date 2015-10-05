@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von benutzerdefinierten Aktivitäten in einer Azure Data Factory-Pipeline"
-	description="Erfahren Sie, wie Sie benutzerdefinierte Aktivitäten erstellen und in einer Azure Data Factory-Pipeline verwenden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verwenden von benutzerdefinierten Aktivitäten in einer Azure Data Factory-Pipeline" 
+	description="Erfahren Sie, wie Sie benutzerdefinierte Aktivitäten erstellen und in einer Azure Data Factory-Pipeline verwenden." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/28/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/22/2015" 
 	ms.author="spelluru"/>
 
 # Verwenden von benutzerdefinierten Aktivitäten in einer Azure Data Factory-Pipeline
@@ -53,7 +53,7 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
 4. Importieren Sie das Azure Storage NuGet-Paket in das Projekt.
 
-		Install-Package Azure.Storage
+		Install-Package Azure.Storage -Version 4.3.0 
 
 5. Fügen Sie die folgenden **using**-Anweisungen der Quelldatei im Projekt hinzu.
 
@@ -244,7 +244,18 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 	4. Geben Sie für die **version**-Eigenschaft die HDInsight-Version an, die Sie verwenden möchten. Wenn Sie diese Eigenschaft ausschließen, wird die neueste Version verwendet.  
 	5. Geben Sie für **linkedServiceName** den Dienst **StorageLinkedService** an, den Sie im Lernprogramm "Erste Schritte" erstellt haben. 
 
-		{ "name": "HDInsightOnDemandLinkedService", "properties": { "type": "HDInsightOnDemand", "typeProperties": { "clusterSize": "1", "timeToLive": "00:05:00", "version": "3.1", "linkedServiceName": "StorageLinkedService" } } }
+			{
+			  "name": "HDInsightOnDemandLinkedService",
+			  "properties": {
+			    "type": "HDInsightOnDemand",
+			    "typeProperties": {
+			      "clusterSize": "1",
+			      "timeToLive": "00:05:00",
+			      "version": "3.1",
+			      "linkedServiceName": "StorageLinkedService"
+			    }
+			  }
+			}
 
 2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
    
@@ -405,6 +416,7 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 		    "type": "AzureBatch",
 		    "typeProperties": {
 		      "accountName": "<Azure Batch account name>",
+			  "batchUri": "https://<region>.batch.azure.com",
 		      "accessKey": "<Azure Batch account key>",
 		      "poolName": "<Azure Batch pool name>",
 		      "linkedServiceName": "<Specify associated storage linked service reference here>"
@@ -412,11 +424,10 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 		  }
 		}
 
-	> [AZURE.NOTE]Erweitern Sie den Namen Ihres Batch-Kontos für die Eigenschaft **accountName** um "**.<Name der Region**". Beispiel: "mybatchaccount.eastus". Außerdem kann, wie nachfolgend gezeigt, auch der batchUri-Endpunkt angegeben werden.
+	> [AZURE.IMPORTANT]Die **URL** auf dem Blatt **Azure-Batch-Konto** hat folgendes Format: Kontoname.Region.Batch.azure.com. Für die **batchUri**-Eigenschaft in JSON müssen Sie in der URL **"Kontoname." entfernen** den **Kontoname**n für die JSON-Eigenschaft **accountName** verwenden.
+	  
+	Für die **poolName**-Eigenschaft können Sie auch die ID des Pools anstelle des Namens des Pools angeben.
 
-		accountName: "adfteam",
-		batchUri: "https://eastus.batch.azure.com",
- 
 	Im MSDN-Thema [Mit Azure Batch verknüpfter Dienst](https://msdn.microsoft.com/library/mt163609.aspx) finden Sie Beschreibungen dieser Eigenschaften.
 
 2.  Öffnen Sie im Data Factory-Editor die JSON-Definition für die Pipeline, die Sie in der exemplarischen Vorgehensweise erstellt haben, und ersetzen Sie **HDInsightLinkedService** durch **AzureBatchLinkedService**.
@@ -467,4 +478,4 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 [image-data-factory-azure-batch-tasks]: ./media/data-factory-use-custom-activities/AzureBatchTasks.png
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

@@ -13,12 +13,12 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
-	ms.date="07/21/2015"
+	ms.date="09/23/2015"
 	ms.author="yidingz"/>
 
 # Erste Schritte mit der Azure-Batch-Bibliothek für .NET  
 
-Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine Konsolenanwendung, die Unterstützungsdateien und ein auf mehreren Computeknoten in einem Azure Batch-Pool ausgeführtes Programm einrichtet. Die in diesem Tutorial erstellten Aufgaben werten Text in Dateien aus, die in Azure Storage hochgeladen werden, und geben die in diesen Dateien am häufigsten verwendeten Wörter zurück. Die Beispiele sind in C#  geschrieben und verwenden die [Azure Batch-Bibliothek für .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx).
+Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine Konsolenanwendung, die Unterstützungsdateien und ein auf mehreren Computeknoten in einem Azure Batch-Pool ausgeführtes Programm einrichtet. Die in diesem Tutorial erstellten Aufgaben werten Text in Dateien aus, die in Azure Storage hochgeladen werden, und geben die in diesen Dateien am häufigsten verwendeten Wörter zurück. Die Beispiele sind in C# geschrieben und verwenden die [Azure Batch-Bibliothek für .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx).
 
 ## Voraussetzungen
 
@@ -34,7 +34,7 @@ Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine
 
 	1.  Klicken Sie in Visual Studio im Menü **Datei** auf **Neu** und anschließend auf **Projekt**.
 
-	2.	Klicken Sie in **Fenster** unter **Visual C\#** auf **Konsolenanwendung**, weisen Sie dem Projekt den Namen **GettingStarted** und der Lösung den Namen **AzureBatch** zu, und klicken Sie dann auf **OK**.
+	2.	Klicken Sie in **Fenster** unter **Visual C#** auf **Konsolenanwendung**, weisen Sie dem Projekt den Namen **GettingStarted** und der Lösung den Namen **AzureBatch** zu, und klicken Sie dann auf **OK**.
 
 - Die NuGet-Assemblys:
 
@@ -205,14 +205,14 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 
 2. Fügen Sie der Main-Methode diesen Code hinzu, der die Anmeldeinformationen für die Aufrufe an den Azure Batch-Dienst einrichtet:
 
-			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("https://[account-name].[region].batch.azure.com", "[account-name]", "[account-key]");
+			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("[account-url]", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
-	Ersetzen Sie die folgenden Werte:
+	Ersetzen Sie die Werte in Klammern durch die, die zu Ihrem Batch-Konto gehören, die Sie alle im [Azure-Vorschauportal](https://portal.azure.com) finden können. Um diese Werte zu finden, melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und:
 
-	- **[account-name]**: Der Name des Batch-Kontos, das Sie zuvor erstellt haben.
-	- **[region]**: Die Region, in der sich Ihr Konto befindet. Informationen zum Ermitteln der verfügbaren Regionen finden Sie unter [Azure-Regionen](http://azure.microsoft.com/regions/).
-	- **[account-key]**: Der primäre Schlüssel des Batch-Kontos.
+	- **[account-name]** – Klicken Sie auf **Batch-Konten**, und wählen Sie das zuvor erstellte Batch-Konto aus.
+	- **[account-url]** – Klicken Sie auf dem Blatt des Batch-Kontos auf **Eigenschaften** > **URL**.
+	- **[account-key]** – Klicken Sie auf dem Blatt des Batch-Kontos auf **Eigenschaften** > **Schlüssel** > **Primärer Zugriffsschlüssel**.
 
 3.	Fügen Sie der Program-Klasse diese Methode hinzu, die den Pool erstellt:
 
@@ -495,4 +495,4 @@ Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle
 
 2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

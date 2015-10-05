@@ -1,12 +1,11 @@
 <properties 
 	pageTitle="Einrichten von Azure AD Join für Ihre Benutzer| Microsoft Azure" 
-	description="In diesem Thema wird erklärt, wie Administratoren Azure AD Join für Ihre Endbenutzer (Mitarbeiter, Studenten und andere Benutzer) einrichten können." 
+	description="Erläutert, wie Administratoren Azure AD Join für ihre Endbenutzer (Mitarbeiter, Studenten und andere Benutzer) in ihrer Organisation einrichten können." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
 	editor=""/>
-
 
 <tags 
 	ms.service="active-directory" 
@@ -14,9 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/02/2015" 
+	ms.date="09/21/2015" 
 	ms.author="femila"/>
-
 
 # Einrichten von Azure AD Join in Ihrer Organisation
 
@@ -49,8 +47,8 @@ Mithilfe der folgenden drei Szenarien können Sie es Ihren Benutzern ermögliche
 - Benutzer fügen auf einem persönlichen Gerät Arbeitskonten zu Windows hinzu. 
 
 ## Zusätzliche Informationen
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

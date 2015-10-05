@@ -1,10 +1,10 @@
 <properties
    pageTitle="Azure AD Reporting: Erste Schritte"
-   description="Azure AD Reporting: Erste Schritte"
+   description="Listet die verschiedenen verfügbaren Berichte in Azure Active Directory Reporting auf"
    services="active-directory"
    documentationCenter=""
    authors="curtand"
-   manager="mbaldwin"
+   manager="stevenpo"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="06/30/2015"
+   ms.date="09/21/2015"
    ms.author="curtand;kenhoff"/>
 
 # Erste Schritte mit Azure AD Reporting
@@ -156,4 +156,4 @@ Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghel
 
 > [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

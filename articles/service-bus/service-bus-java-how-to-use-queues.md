@@ -174,9 +174,12 @@ Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **d
 
 Nachdem Sie mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen unter [Warteschlangen, Themen und Abonnements][].
 
+Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/java/).
+
+
   [Azure SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
-  [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/de-DE/library/azure/hh694271.aspx
+  [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/DE-DE/library/azure/hh694271.aspx
   [What are Service Bus Queues?]: #what-are-service-bus-queues
   [Create a Service Namespace]: #create-a-service-namespace
   [Obtain the Default Management Credentials for the Namespace]: #obtain-default-credentials
@@ -190,4 +193,4 @@ Nachdem Sie mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, fin
   [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

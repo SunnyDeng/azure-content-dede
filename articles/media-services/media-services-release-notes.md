@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/07/2015"   
+	ms.date="09/20/2015"   
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version September 2015](#september_changes_15)
 - [Version August 2015](#august_changes_15)
 - [Version Juli 2015](#july_changes_15)
 - [Version Juni 2015](#june_changes_15)
@@ -72,6 +73,16 @@ Media Services-Medienobjekte im SDK können nicht serialisiert werden und funkti
 ##<a id="rest_version_history"></a>REST-API-Versionsverlauf
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
+
+##<a id="september_changes_15"></a>Version September 2015 
+
+- AMS bietet jetzt die Möglichkeit zum Schutz von Video-On-Demand (VOD) und Livestreams mit der modularen DRM-Technologie Widevine. Sie können sich von folgenden Bereitstellungsservicepartnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [CastLabs](http://castlabs.com/company/partners/azure/). Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/).
+
+	Sie können das [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/) (ab Version 3.5.1) oder die REST-API verwenden, um die AssetDeliveryConfiguration für die Verwendung von Widevine zu konfigurieren.
+
+- AMS bietet jetzt Unterstützung für Apple ProRes-Videos. Sie können jetzt die QuickTime-Quellvideodateien hochladen, die Apple ProRes oder andere Codecs verwenden. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/announcing-support-for-apple-prores-videos-in-azure-media-services/).
+
+- Sie können jetzt mit Media Encoder Standard Subclipping und Livearchivextraktion ausführen. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/).
 
 ##<a id="august_changes_15"></a>Version August 2015
 
@@ -581,4 +592,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

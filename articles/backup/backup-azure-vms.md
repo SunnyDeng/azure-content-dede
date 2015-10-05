@@ -7,7 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="09/14/2015" ms.author="trinadhk"; "aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="09/24/2015" ms.author="trinadhk"; "aashishr"; "jimpark"/>
 
 
 # Sichern von virtuellen Azure-Computern
@@ -194,7 +194,7 @@ Anhand dieser Informationen können Sie die Zeitdauer schätzen, die zur Sicheru
 Obgleich ein Großteil der Zeit für das Lesen und Kopieren von Daten aufgewendet wird, gibt es noch andere Vorgänge, die sich auf die Gesamtdauer einer VM-Sicherung auswirken:
 
 1. Die Zeit, die zum [Installieren oder Aktualisieren der Sicherungserweiterung](backup-azure-vms.md#offline-vms) benötigt wird.
-2. Die Wartezeit in der Warteschlange: Da der Dienst Sicherungen von mehreren Kunden verarbeitet, kann Ihr Sicherungsvorgang möglicherweise nicht sofort gestartet werden. Die durchschnittliche Wartezeit für einen virtuellen Computer beträgt 15 bis 30 Minuten.
+2. Die Wartezeit in der Warteschlange: Da der Sicherungsdienst Sicherungen von mehreren Kunden verarbeitet, kann Ihr Sicherungsvorgang möglicherweise nicht sofort gestartet werden. Während Spitzenauslastungszeiten können die Wartezeiten aufgrund der Anzahl der verarbeiteten Sicherungen bis zu 8 Stunden betragen. Die Gesamtdauer der VM-Sicherung wird jedoch bei täglichen Sicherungsrichtlinien weniger als 24 Stunden betragen.
 
 ## Problembehandlung
 Hier finden Sie eine vollständige Liste von Problemumgehungen für Fehler, die bei der Sicherung eines virtuellen Computers auftreten können:
@@ -207,4 +207,4 @@ Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

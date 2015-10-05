@@ -1,25 +1,25 @@
 
 <properties
-		pageTitle="Verwenden der Linux-Diagnoseerweiterung zur Überwachung der Leistungs- und Diagnosedaten von Linux-VMs | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie die Linux-Diagnoseerweiterung zur Überwachung der Leistungs- und Diagnosedaten von Linux-VMs verwenden."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="NingKuang"
-	manager="timlt"
-	editor=""
-	tags=""/>
+		pageTitle="Überwachen eines Linux-VM mit einer VM-Erweiterung | Microsoft Azure"
+		description="Hier erfahren Sie, wie Sie die Linux-Diagnoseerweiterung zur Überwachung der Leistungs- und Diagnosedaten einer Linux-VM in Azure verwenden."
+		services="virtual-machines"
+		documentationCenter=""
+  		authors="NingKuang"
+		manager="timlt"
+		editor=""
+  		tags="azure-service-management"/>
 
 <tags
 		ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/20/2015"
-	ms.author="Ning"/>
+		ms.workload="infrastructure-services"
+		ms.tgt_pltfrm="vm-linux"
+		ms.devlang="na"
+		ms.topic="article"
+		ms.date="07/20/2015"
+		ms.author="Ning"/>
 
 
-# Verwenden der Linux-Diagnoseerweiterung zur Überwachung der Leistungs- und Diagnosedaten von Linux-VMs
+# Verwenden der Linux-Diagnoseerweiterung zur Überwachung der Leistungs- und Diagnosedaten eines Linux-VM
 
 ## Einführung
 
@@ -34,6 +34,8 @@ In Version 2.0 werden folgende Daten verarbeitet:
 - Alle Rsyslog-Protokolle von Linux, einschließlich System-, Sicherheits- und Anwendungsprotokolle.
 - Alle in [diesem Dokument](https://scx.codeplex.com/wikipage?title=xplatproviders") angegebenen Systemdaten.
 - Benutzerdefinierte Protokolldateien.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 ## So aktivieren Sie die Erweiterung
 Die Erweiterung kann über das [Azure-Portal](https://ms.portal.azure.com/#), die Azure PowerShell oder per Azure-Befehlszeilenschnittstellen-Skript aktiviert werden.
@@ -141,4 +143,4 @@ Wenn Sie in Szenario 2 und 3 „fileCfg“ oder „perfCfg“ aktiviert haben,
 - In Version 2.0 kann auf die Rsyslog-Informationen und die benutzerdefinierte Protokolldatei nur über Skripts zugegriffen werden.
 - Wenn Sie in Version 2.0 die Linux-Diagnoseerweiterung zuerst über ein Skript aktiviert haben, können Sie die Daten nicht über das Azure-Portal anzeigen. Wenn Sie die Erweiterung dagegen zuerst im Portal aktivieren, funktionieren die Skripts weiterhin.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

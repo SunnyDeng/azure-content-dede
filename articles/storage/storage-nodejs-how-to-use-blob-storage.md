@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden des Blobspeichers mit Node.js | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele sind in Node.js geschrieben."
+	pageTitle="Verwenden des Blob-Speichers mit Node.js | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blobinhalten verwenden. Die Beispiele sind in Node.js geschrieben."
 	services="storage"
 	documentationCenter="nodejs"
 	authors="MikeWasson"
@@ -24,7 +24,7 @@
 
 ## Übersicht
 
-Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blobdienstes. Die Beispiele sind in C# geschrieben und verwenden die Node.js-API. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs.
+Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blobdienstes. Die Beispiele werden über die Node.js-API geschrieben. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -32,7 +32,7 @@ Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azur
 
 ## Erstellen einer Node.js-Anwendung
 
-Erstellen Sie eine leere Node.js-Anwendung. Hinweise zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Clouddienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder [Website mit WebMatrix].
+Anleitungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Cloud-Dienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder [Web-App mit WebMatrix].
 
 ## Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -67,7 +67,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen `AZURE_STORAGE_ACCOUNT` und `AZURE_STORAGE_ACCESS_KEY` oder `AZURE_STORAGE_CONNECTION_STRING` die erforderlichen Informationen zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createBlobService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher].
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Web-App finden Sie unter [Node.js-Web-Anwendung mit Storage].
 
 ## Erstellen eines Containers
 
@@ -75,11 +75,11 @@ Mit dem **BlobService**-Objekt können Sie auf Container und Blobs zugreifen. De
 
     var blobSvc = azure.createBlobService();
 
-> [AZURE.NOTE]Sie können anonym auf ein Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Beispiel: `var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.windows.net/');`.
+> [AZURE.NOTE]Sie können anonym auf ein Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Verwenden Sie z. B. `var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.windows.net/');`.
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
-Verwenden Sie zum Erstellen eines neuen Containers **createContainerIfNotExists**. Im folgenden Codebeispiel wird ein neuer Container namens „mycontainer“ erstellt.
+Verwenden Sie zum Erstellen eines neuen Containers **createContainerIfNotExists**. Im folgenden Codebeispiel wird ein neuer Container namens „mycontainer“ erstellt:
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
       if(!error){
@@ -123,7 +123,7 @@ Sie können optionale Filtervorgänge auf Vorgänge anwenden, die mithilfe von *
 
 		function handle (requestOptions, next)
 
-Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, muss die Methode "next" aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
+Nachdem die Vorverarbeitung der Anforderungsoptionen abgeschlossen ist, muss die Methode "next" aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
 
 		function (returnObject, finalCallback, next)
 
@@ -250,7 +250,7 @@ Sie können ETag-Bedingungen mithilfe des optionalen `options.accessConditions`-
 	  }
 	});
 
-Das allgemeine Muster bei der Verwendung von ETags lautet:
+Wenn Sie ETags verwenden, lautet das allgemeine Muster:
 
 1. Rufen Sie das ETag als Ergebnis eines "create"-, "list"- oder "get"-Vorgangs ab.
 
@@ -276,13 +276,13 @@ Verwenden Sie zum Entfernen einer Lease **releaseLease**. Zum Unterbrechen einer
 
 ## Arbeiten mit Shared Access Signatures
 
-Shared Access Signature (SAS) ist eine sichere Möglichkeit zum Bereitstellen einen granularen Zugriffs auf Blobs und Container, ohne dass dabei Ihr Speicherkontoname oder -schlüssel angegeben werden müssen. SAS wird oftmals zum Bereitstellen des beschränkten Zugriffs auf Ihre Daten verwendet, dazu zählt beispielsweise auch, einer mobilen App den Zugriff auf Blobs zu gewähren.
+Shared Access Signatures (SAS) sind eine sichere Möglichkeit zum Bereitstellen einen granularen Zugriffs auf Blobs und Container, ohne dass dabei Ihr Speicherkontoname oder -schlüssel angegeben werden müssen. Shared Access Signatures werden oftmals zum Bereitstellen des beschränkten Zugriffs auf Ihre Daten verwendet, dazu zählt beispielsweise auch, einer mobilen App den Zugriff auf Blobs zu gewähren.
 
-> [AZURE.NOTE]Während Sie auch den anonymen Zugriff auf Blobs erlauben können, verleiht Ihnen SAS einen kontrollierteren Zugriff, da Sie die SAS generieren müssen.
+> [AZURE.NOTE]Während Sie auch den anonymen Zugriff auf Blobs erlauben können, verleihen Ihnen Shared Access Signatures einen kontrollierteren Zugriff, da Sie die Shared Access Signatures generieren müssen.
 
-Eine vertrauenswürdige Anwendung wie ein cloudbasierter Dienst generiert mittels **generateSharedAccessSignature** von **BlobService** ein SAS und stellt für eine nicht vertrauenswürdige oder teilweise vertrauenswürdige Anwendung wie beispielsweise eine mobile App bereit. Die SAS wird mithilfe einer Richtlinie generiert, die das Anfangs- und das Enddatum der Gültigkeit der SAS sowie die Zugriffsstufe definiert, die dem Inhaber der SAS gewährt wird.
+Eine vertrauenswürdige Anwendung wie ein cloudbasierter Dienst generiert mittels **generateSharedAccessSignature** von **BlobService** Shared Access Signatures und stellt diese für eine nicht vertrauenswürdige oder teilweise vertrauenswürdige Anwendung wie beispielsweise eine mobile App bereit. Shared Access Signatures werden mithilfe einer Richtlinie generiert, die das Anfangs- und das Enddatum der Gültigkeit der Shared Access Signatures sowie die Zugriffsstufe definiert, die dem Inhaber der Shared Access Signatures gewährt wird.
 
-Im folgenden Codebeispiel wird eine neue Richtlinie für den geteilten Zugriff generiert, wodurch der SAS-Inhaber Lesevorgänge im **myblob**-Blob vornehmen kann, die 100 Minuten nach ihrer Erstellung abläuft.
+Im folgenden Codebeispiel wird eine neue Richtlinie für den geteilten Zugriff generiert, wodurch der Inhaber von Shared Access Signatures Lesevorgänge im **myblob**-Blob vornehmen kann, die 100 Minuten nach ihrer Erstellung abläuft.
 
 	var startDate = new Date();
 	var expiryDate = new Date(startDate);
@@ -300,9 +300,9 @@ Im folgenden Codebeispiel wird eine neue Richtlinie für den geteilten Zugriff g
 	var blobSAS = blobSvc.generateSharedAccessSignature('mycontainer', 'myblob', sharedAccessPolicy);
 	var host = blobSvc.host;
 
-Beachten Sie, dass auch die Hostinformationen angegeben werden müssen, da sie erforderlich sind, wenn der SAS-Inhaber versucht, auf den Container zuzugreifen.
+Beachten Sie, dass auch die Hostinformationen angegeben werden müssen, da sie erforderlich sind, wenn der Inhaber von Shared Access Signatures versucht, auf den Container zuzugreifen.
 
-Die Clientanwendung verwendet dann die SAS mit **BlobServiceWithSAS**, um Vorgänge auf das Blob auszuführen. Im Folgenden werden Informationen über **myblob** abgerufen.
+Die Clientanwendung verwendet dann die Shared Access Signatures mit **BlobServiceWithSAS**, um Vorgänge auf das Blob auszuführen. Im Folgenden werden Informationen über **myblob** abgerufen.
 
 	var sharedBlobSvc = azure.createBlobServiceWithSas(host, blobSAS);
 	sharedBlobSvc.getBlobProperties('mycontainer', 'myblob', function (error, result, response) {
@@ -311,11 +311,11 @@ Die Clientanwendung verwendet dann die SAS mit **BlobServiceWithSAS**, um Vorgä
 	  }
 	});
 
-Da die SAS nur mit Lesezugriff generiert wurde, würde beim Versuch, das Blob zu ändern, ein Fehler zurückgegeben werden.
+Da Shared Access Signatures mit einem schreibgeschützten Zugriff generiert wurden, wird ein Fehler bei dem Versuch zurückgegeben, den Blob zu ändern.
 
 ### Zugriffssteuerungslisten
 
-Sie können auch eine Zugriffssteuerungsliste (Access Control List, ACL) verwenden, um die Zugriffsrichtlinie für eine SAS festzulegen. Dies ist nützlich, wenn mehrere Clients auf einen Container zugreifen sollen und für jeden Client unterschiedliche Zugriffsrichtlinien bereitgestellt werden.
+Sie können auch eine Zugriffssteuerungsliste (Access Control List, ACL) verwenden, um die Zugriffsrichtlinie für SAS festzulegen. Dies ist nützlich, wenn mehrere Clients auf einen Container zugreifen sollen und für jeden Client unterschiedliche Zugriffsrichtlinien bereitgestellt werden.
 
 Eine ACL wird in einem Array von Zugriffsrichtlinien implementiert, wobei jeder Richtlinie eine ID zugeordnet wird. Im folgenden Codebeispiel werden zwei Richtlinien definiert, eine für „user1“ und eine für „user2“:
 
@@ -352,29 +352,30 @@ Im folgenden Codebeispiel wird die aktuelle Zugriffssteuerungsliste für **mycon
 	  }
 	});
 
-Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Richtlinie eine SAS erstellen. Im folgenden Codebeispiel wird eine neue SAS für „user2“ erstellt:
+Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Richtlinie Shared Access Signatures erstellen. Im folgenden Codebeispiel werden neue Shared Access Signatures für „user2“ erstellt:
 
 	blobSAS = blobSvc.generateSharedAccessSignature('mycontainer', { Id: 'user2' });
 
 ## Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+Weitere Informationen finden Sie in den folgenden Ressourcen.
 
--   Lesen Sie die [API-Referenz zum Azure Storage-SDK für Node][].
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
--   Besuchen Sie den [Blog des Azure-Speicherteams][].
--   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
+-   [API-Referenz zum Azure Storage-SDK für Node][]
+-   MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
+-   [Azure Storage-Teamblog][]
+-   [Azure Storage SDK for Node.js][]-Repository auf GitHub (in englischer Sprache)
+-   [Node.js Developer Center](/develop/nodejs/)
 
-[Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node
-[Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: /develop/nodejs/tutorials/create-a-website-(mac)/
+[Azure Storage SDK for Node.js]: https://github.com/Azure/azure-storage-node
+[Create and deploy a Node.js application to an Azure Web Site]: /develop/nodejs/tutorials/create-a-website-(mac)/
 [Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
-[Node.js-Webanwendung mit Speicher]: ../storage-nodejs-use-table-storage-web-site.md
-[Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
-[using the REST API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
-[Azure Management Portal]: http://manage.windowsazure.com
+[Node.js-Web-Anwendung mit Storage]: ../storage-nodejs-use-table-storage-web-site.md
+[Web-App mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
+[Using the REST API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
+[Azure portal]: http://manage.windowsazure.com
 [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

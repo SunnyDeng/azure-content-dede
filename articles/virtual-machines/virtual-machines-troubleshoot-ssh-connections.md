@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer"
+	pageTitle="Problembehandlung bei SSH-Verbindungen mit einem virtuellen Linux-Computer | Microsoft Azure"
 	description="Wenn Sie keine Verbindung mit Ihrem Linux-basierten virtuellen Azure-Computer herstellen können, verwenden Sie diese Schritte, um die Ursache des Problems zu isolieren."
 	services="virtual-machines"
 	documentationCenter=""
@@ -19,6 +19,8 @@
 	ms.author="dkshir"/>
 
 # Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel erfahren Sie, wie Sie Probleme bei SSH-Verbindungen auf einem virtuellen Computer behandeln, der mit dem klassischen oder Ressourcen-Manager-Bereitstellungsmodell erstellt wurde.
 
 Wenn Sie keine Verbindung mit Linux-basierten virtuellen Azure-Computern herstellen können, finden Sie in diesem Artikel die Beschreibung eines methodischen Ansatzes zum Isolieren und Beheben des Problems.
 
@@ -54,7 +56,7 @@ Im Azure-Vorschauportal:
 
 Analysieren Sie zum Überprüfen der Netzwerkverbindung die konfigurierten Endpunkte, und testen Sie, ob der virtuelle Computer über ein anderes Protokoll (z. B. HTTP) oder über einen anderen bekannten Dienst erreichbar ist.
 
-Führen Sie bei Bedarf einen [Neustart des virtuellen Computers](https://msdn.microsoft.com/library/azure/dn763934.aspx) durch, oder [passen Sie die Größe des virtuellen Computers an](https://msdn.microsoft.com/library/dn168976.aspx).
+Führen Sie bei Bedarf einen Neustart des virtuellen Computers durch, oder [passen Sie die Größe des virtuellen Computers an](virtual-machines-size-specs.md).
 
 Versuchen Sie nach diesen Schritten erneut, die SSH-Verbindung herzustellen.
 
@@ -159,10 +161,10 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 ## Zusätzliche Ressourcen
 
-[Gewusst wie: Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
+[Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
 
 [Problembehandlung bei Windows-Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md)
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

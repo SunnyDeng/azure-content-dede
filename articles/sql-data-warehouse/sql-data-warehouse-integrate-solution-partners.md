@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/07/2015"
+   ms.date="09/22/2015"
    ms.author="joliang"/>
 
-# SQL Data Warehouse-Lösungspartner #
+# SQL Data Warehouse-Lösungspartner
 
 Für die Erstellung Ihrer eigenen End-to-End-Data Warehouse-Lösung können Sie auf eine Vielzahl branchenführender Tools zurückgreifen. In diesem Artikel sind Partnerunternehmen aufgeführt, die Lösungen für SQL Data Warehouse anbieten.
 
@@ -46,6 +46,7 @@ Für die Erstellung Ihrer eigenen End-to-End-Data Warehouse-Lösung können Sie 
 | ![Yellowfin][21] |**Yellowfin**<br>Yellowfin ist laut der von BARC durchgeführten Umfrage "The BI Survey" ein erstklassiger Anbieter von cloudbasierter BI-Software für Ad-hoc-Berichte und -Dashboards. Stellen Sie eine Verbindung mit Azure SQL Data Warehouse her, und erstellen und teilen Sie dann Berichte und Dashboards mithilfe preisgekrönter Business Intelligence- und Location Intelligence-Funktionen. | [Weitere Informationen][yellowfin_more] |
 
 ## Nächste Schritte
+
 Weitere Informationen zur Integration mit SQL Data Warehouse finden Sie unter [Erstellen von integrierten Lösungen mit SQL Data Warehouse][].
 
 
@@ -100,4 +101,4 @@ Weitere Informationen zur Integration mit SQL Data Warehouse finden Sie unter [E
 [targit_more]: http://www.targit.com/en/
 [yellowfin_more]: http://www.yellowfinbi.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

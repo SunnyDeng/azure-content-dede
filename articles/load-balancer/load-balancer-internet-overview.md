@@ -36,7 +36,7 @@ Die folgende Abbildung zeigt einen Endpunkt für verschlüsselten Datenverkehr m
 
 
 
-Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Port 443 des Clouddiensts senden, verteilt der Azure-Lastenausgleich diese Anfragen nach dem Zufallsprinzip auf die drei virtuellen Computer im Satz mit Lastenausgleich.
+Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Port 443 des Clouddiensts senden, verteilt der Azure-Lastenausgleich diese Anfragen hashbasiert auf die drei virtuellen Computer im Satz mit Lastenausgleich. Weitere Informationen zu Lastenausgleichsalgorithmen finden Sie auf der [Übersichtsseite zum Lastenausgleich](load-balancer-overview#load-balancer-features).
 
 
 ## Nächste Schritte
@@ -52,4 +52,4 @@ Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Po
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

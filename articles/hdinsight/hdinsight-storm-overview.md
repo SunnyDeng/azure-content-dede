@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/24/2015"
+   ms.date="09/23/2015"
    ms.author="larryfr"/>
 
 #Einführung in Apache Storm in HDInsight: Echtzeitanalysen für Hadoop
@@ -142,7 +142,7 @@ Weitere Informationen zu Storm-Komponenten finden Sie im [Storm Tutorial][apache
 
 Der Storm in HDInsight-Cluster unterstützt C#, Java und Python.
 
-### C&\#35;
+### C&#35;
 
 Mit den HDInsight-Tools für Visual Studio können .NET-Entwickler eine Topologie in C# entwerfen und implementieren. Sie können auch Hybridtopologien erstellen, die Java- und C#-Komponenten verwenden.
 
@@ -207,4 +207,4 @@ Weitere Informationen zu Lösungen für Echtzeitanalysen mit Apache Storm in HDI
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: ../hdinsight-storm-getting-started.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

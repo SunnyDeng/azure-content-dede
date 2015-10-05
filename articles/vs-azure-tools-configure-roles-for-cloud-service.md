@@ -183,7 +183,7 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 ## Verwalten von lokalem Speicher für jede Rolleninstanz
 
-Sie können lokalen Dateisystemspeicher für jede Instanz einer Rolle hinzufügen. Hier können Sie die lokalen Daten speichern, auf die nicht von anderen Rollen zugegriffen werden muss. Alle Daten, die nicht im Tabellen-, Blob- oder SQL-Datenbankspeicher gespeichert werden müssen, können hier abgelegt werden. Beispielsweise können Sie diesen lokalen Speicher zum Zwischenspeichern von Daten verwenden, die möglicherweise erneut verwendet werden müssen. Auf diese gespeicherten Daten kann nicht von anderen Instanzen einer Rolle zugegriffen werden. Weitere Informationen zu lokalen Speicherressourcen finden Sie unter [Konfigurieren lokaler Speicherressourcen](https://msdn.microsoft.com/library/azure/ee758708).
+Sie können lokalen Dateisystemspeicher für jede Instanz einer Rolle hinzufügen. Hier können Sie die lokalen Daten speichern, auf die nicht von anderen Rollen zugegriffen werden muss. Alle Daten, die nicht im Tabellen-, Blob- oder SQL-Datenbankspeicher gespeichert werden müssen, können hier abgelegt werden. Beispielsweise können Sie diesen lokalen Speicher zum Zwischenspeichern von Daten verwenden, die möglicherweise erneut verwendet werden müssen. Auf diese gespeicherten Daten kann nicht von anderen Instanzen einer Rolle zugegriffen werden. Weitere Informationen zu lokalen Speicherressourcen finden Sie unter [Konfigurieren lokaler Speicherressourcen](../cloud-services/cloud-services-configure-local-storage-resources.md).
 
 Die Einstellungen des lokalen Speichers gelten für alle Dienstkonfigurationen. Sie können lokalen Speicher nur für alle Dienstkonfigurationen hinzufügen, entfernen oder ändern.
 
@@ -376,4 +376,4 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 ## Nächste Schritte
 Unter [Konfigurieren eines Azure-Projekts](vs-azure-tools-configuring-an-azure-project.md) erhalten Sie weitere Informationen zu Azure-Projekten in Visual Studio. Informationen zum Clouddienstschema finden Sie unter [Schemareferenz](https://msdn.microsoft.com/library/azure/dd179398).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

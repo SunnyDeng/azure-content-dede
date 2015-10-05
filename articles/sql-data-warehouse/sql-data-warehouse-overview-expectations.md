@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/05/2015"
+   ms.date="09/22/2015"
    ms.author="lvargas;twounder;barbkess"/>
 
 # Erwartungen an SQL Data Warehouse Preview
@@ -49,7 +49,7 @@ SQL Data Warehouse speichert alle Daten mithilfe von georedundanten Blobs im Azu
 
 ### Backups
 
-Azure SQL Data Warehouse sichert sämtliche Daten alle 4 Stunden mit Azure-Speichermomentaufnahmen. Diese Momentaufnahmen werden 7 Tage lang aufbewahrt. Dadurch können Daten an bis zu 42 Punkten innerhalb der letzten 7 Tage bis zu dem Zeitpunkt wiederhergestellt werden, an dem letzte Momentaufnahme erstellt wurde. Bei allgemeiner Verfügbarkeit können Sie den Aufbewahrungszeitraum selbst angeben. Mithilfe von PowerShell oder REST-APIs können Sie die Daten aus einer Momentaufnahme wiederherstellen.
+Azure SQL Data Warehouse sichert sämtliche Daten mindestens alle 8 Stunden mit Azure-Speichermomentaufnahmen. Diese Momentaufnahmen werden 7 Tage lang aufbewahrt. Dadurch können Daten an bis zu 21 Punkten innerhalb der letzten 7 Tage bis zu dem Zeitpunkt wiederhergestellt werden, zu dem die letzte Momentaufnahme erstellt wurde. Mithilfe von PowerShell oder REST-APIs können Sie die Daten aus einer Momentaufnahme wiederherstellen.
 
 Momentaufnahmen werden asynchron in eine Azure-Remoteregion kopiert, um im Falle eines regionalen Ausfalls (Notfallwiederherstellung) eine noch bessere Wiederherstellbarkeit zu erzielen.
 
@@ -78,4 +78,4 @@ Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßna
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

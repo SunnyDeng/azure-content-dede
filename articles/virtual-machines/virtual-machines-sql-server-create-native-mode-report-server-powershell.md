@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Verwenden von PowerShell zum Erstellen einer Azure-VM mit einem Berichtsserver im einheitlichen Modus"
+	pageTitle="Verwenden von PowerShell zum Erstellen einer VM mit einem Berichtsserver im einheitlichen Modus | Microsoft Azure"
 	description="In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Server Reporting Services-Berichtsserver im einheitlichen Modus auf einem virtuellen Azure Computer (Azure Virtual Machine, Azure-VM) bereitgestellt und konfiguriert wird."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor="monicar" 
+	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,9 +14,11 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/19/2015"
-	ms.author="jroth"/>
+	ms.author="jroth" />
 
 # Verwenden von PowerShell zum Erstellen einer Azure-VM mit einem Berichtsserver im einheitlichen Modus
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Server Reporting Services-Berichtsserver im einheitlichen Modus auf einem virtuellen Azure Computer (Azure Virtual Machine, Azure-VM) bereitgestellt und konfiguriert wird. Die Schritte in diesem Dokument bestehen aus einer Kombination von manuellen Schritten zum Erstellen des virtuellen Computers und einem Windows PowerShell-Skript zum Konfigurieren von Reporting Services auf dem virtuellen Computer. Das Konfigurationsskript umfasst das Öffnen eines Firewallports für HTTP oder HTTPS.
 
@@ -57,7 +60,7 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 	![Weiter](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
-	Wenn Sie die Reporting Services-Funktion für datengesteuerte Abonnements benötigen, wählen Sie **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2** aus. Weitere Informationen über die Unterstützung von SQL Server-Editionen und -Funktionen finden Sie unter [Von den SQL Server 2014-Editionen unterstützte Funktionen](https://msdn.microsoft.com/library/cc645993.aspx#Reporting).
+	Wenn Sie die Reporting Services-Funktion für datengesteuerte Abonnements benötigen, wählen Sie **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2** aus. Weitere Informationen über die Unterstützung von SQL Server-Editionen und -Funktionen finden Sie unter [Von den SQL Server 2012-Editionen unterstützte Funktionen](https://msdn.microsoft.com/library/cc645993.aspx#Reporting).
 
 1. Bearbeiten Sie auf der Seite **Konfiguration des virtuellen Computers** die folgenden Felder:
 									
@@ -97,7 +100,7 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 1. Behalten Sie auf der letzten Seite des Assistenten die Standardoption **VM-Agent installieren** bei. Für die Schritte in diesem Thema wird der VM-Agent nicht verwendet, wenn Sie aber planen, diesen virtuellen Computer weiterzuverwenden, bieten Ihnen der VM-Agent und die Erweiterungen die Möglichkeit, den virtuellen Computer zu erweitern. Weitere Informationen zum VM-Agenten finden Sie unter [VM Agent and Extensions – Part 1](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/). Eine der Standarderweiterungen, die installiert und ausgeführt werden, ist die BGINFO-Erweiterung, die auf dem Desktop des virtuellen Computers Systeminformationen wie die interne IP-Adresse und den freien Speicherplatz anzeigt.
 
-1. Klicken Sie auf „Abgeschlossen“. ![OK](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660122.gif)
+1. Klicken Sie auf „Fertig stellen“. ![OK](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660122.gif)
 
 1. Der **Status** des virtuellen Computers wird während des Bereitstellungsprozesses als **Wird gestartet (Bereitstellung)** und dann als **Wird ausgeführt** angezeigt, wenn der virtuelle Computer bereitgestellt und betriebsbereit ist.
 
@@ -701,4 +704,4 @@ In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorh
 
 [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

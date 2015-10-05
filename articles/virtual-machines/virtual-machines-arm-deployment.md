@@ -19,6 +19,8 @@
 
 # Bereitstellen von Azure-Ressourcen mithilfe der Computing-, Netzwerk- und Speicherbibliotheken von .NET
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Verwalten einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell beschrieben.
+
 In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in den Computing-, Netzwerk- und Speicherbibliotheken von .NET zum Erstellen und Löschen von Ressourcen in Microsoft Azure verwenden. Außerdem erfahren Sie, wie Sie die Anforderungen an den Azure-Ressourcen-Manager mithilfe von Azure Active Directory authentifizieren.
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
@@ -27,7 +29,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-de/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-de/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/DE-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/DE-DE/download/details.aspx?id=40855)
 - [Azure PowerShell](../install-configure-powershell.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
@@ -388,4 +390,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

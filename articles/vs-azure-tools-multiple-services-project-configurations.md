@@ -1,19 +1,19 @@
-<properties 
+<properties
    pageTitle="Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen"
-	description="Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
-<tags 
+   description="Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
+<tags
    ms.service="multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Konfigurieren eines Azure-Projekts
 
@@ -85,7 +85,7 @@ Eine Workerrolle kann eine beliebige Anzahl von HTTP-, HTTPS- oder TCP-Endpunkte
 
 ## Seite "Lokaler Speicher"
 
-Sie können die Eigenschaftenseite **Lokaler Speicher** verwenden, um mindestens eine lokale Speicherressource für eine Rolle zu reservieren. Eine lokale Speicherressource ist ein reserviertes Verzeichnis im Dateisystem des virtuellen Azure-Computers, in dem eine Instanz einer Rolle ausgeführt wird. Weitere Informationen zur Verwendung lokaler Speicherressourcen finden Sie unter [Konfigurieren von lokalen Speicherressourcen](https://msdn.microsoft.com/library/azure/ee758708.aspx).
+Sie können die Eigenschaftenseite **Lokaler Speicher** verwenden, um mindestens eine lokale Speicherressource für eine Rolle zu reservieren. Eine lokale Speicherressource ist ein reserviertes Verzeichnis im Dateisystem des virtuellen Azure-Computers, in dem eine Instanz einer Rolle ausgeführt wird. Weitere Informationen zur Verwendung lokaler Speicherressourcen finden Sie unter [Konfigurieren von lokalen Speicherressourcen](../cloud-services/cloud-services-configure-local-storage-resources.md).
 
 ## Seite "Zertifikate"
 
@@ -114,4 +114,4 @@ Zum Konfigurieren von für ein gesamtes Azure-Clouddienstprojekt gültigen Einst
 
 [Azure Tools für Microsoft Visual Studio](https://msdn.microsoft.com/library/azure/ee405484.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

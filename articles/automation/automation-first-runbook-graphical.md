@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="08/13/2015"
+	ms.date="09/17/2015"
 	ms.author="bwren"/>
 
 
@@ -21,9 +21,9 @@
 
 > [AZURE.SELECTOR]
 - [Graphical](automation-first-runbook-graphical.md)
-- [Textual](automation-first-runbook-textual.md)
+- [PowerShell Workflow](automation-first-runbook-textual.md)
 
-Dieses Tutorial führt Sie durch die Erstellung eines [grafischen Runbooks](automation-graphical-authoring-intro.md) in Azure Automation. Wir beginnen mit einem einfachen Runbook, das wir testen und veröffentlichen. Dabei erläutern wir, wie Sie den Status des Runbookauftrags nachverfolgen. Anschließend ändern wir das Runbook, um damit tatsächlich Azure-Ressourcen zu verwalten. Im vorliegenden Fall soll ein virtueller Azure-Computer gestartet werden. Danach fügen wir Runbookparameter und eine bedingte Verknüpfung hinzu, um das Runbook hilfreicher zu machen.
+Dieses Tutorial führt Sie durch die Erstellung eines [grafischen Runbooks](automation-runbook-types.md#graphical-runbooks) in Azure Automation. Wir beginnen mit einem einfachen Runbook, das wir testen und veröffentlichen. Dabei erläutern wir, wie Sie den Status des Runbookauftrags nachverfolgen. Anschließend ändern wir das Runbook, um damit tatsächlich Azure-Ressourcen zu verwalten. Im vorliegenden Fall soll ein virtueller Azure-Computer gestartet werden. Danach fügen wir Runbookparameter und eine bedingte Verknüpfung hinzu, um das Runbook hilfreicher zu machen.
 
 ## Voraussetzungen
 
@@ -165,8 +165,8 @@ In diesem Schritt ändern wir das Runbook, sodass es nur gestartet wird, wenn es
 ## Verwandte Artikel
 
 - [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md)
-- [Mein erstes Textrunbook](automation-first-runbook-textual.md)
+- [Mein erstes PowerShell-Workflow-Runbook](automation-first-runbook-textual.md)
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

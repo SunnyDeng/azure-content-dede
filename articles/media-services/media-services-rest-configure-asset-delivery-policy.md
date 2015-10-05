@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="09/20/2015" 
 	ms.author="juliako"/>
 
 #Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
@@ -265,6 +265,15 @@ Anforderung:
 	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":1,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":2,"Value":"https:\\/\\/amsaccount1.keydelivery.mediaservices.windows.net\/PlayReady\/"}]"}
 
 
+Wenn Sie Ihre Inhalte mithilfe von Widevine DRM schützen möchten, aktualisieren Sie die AssetDeliveryConfiguration-Werte so, dass WidevineLicenseAcquisitionUrl (hat den Wert 7) verwendet wird, und geben Sie die URL eines Lizenzübermittlungsdiensts an. Sie können sich von folgenden AMS-Partnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [CastLabs](http://castlabs.com/company/partners/azure/).
+
+Beispiel:
+ 
+	
+	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":2,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":7,"Value":"https:\\/\\/example.net\/WidevineLicenseAcquisition\/"}]"}
+
+>[AZURE.NOTE]Wenn Sie mit Widevine verschlüsseln, können Sie nur über DASH übermitteln. Geben Sie DASH (2) im Übermittlungsprotokoll für Medienobjekte an.
+  
 ###Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
 Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte](#link_asset_with_asset_delivery_policy).
@@ -373,6 +382,7 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
     /// <summary>
     /// Keys used to get specific configuration for an asset delivery policy.
     /// </summary>
+
     public enum AssetDeliveryPolicyConfigurationKey
     {
         /// <summary>
@@ -409,8 +419,12 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
         /// The initialization vector to use for envelope encryption.
         /// </summary>
         EnvelopeEncryptionIV,
-    }
 
+        /// <summary>
+        /// Widevine DRM acquisition url
+        /// </summary>
+        WidevineLicenseAcquisitionUrl
+    }
 
 
 ##Media Services-Lernpfade
@@ -422,4 +436,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

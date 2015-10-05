@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Aufrufen einer Web-API von einer .NET-Web-App
@@ -39,6 +39,8 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
 - Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
+    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+
 ## 3\. Erstellen der Richtlinien
 
 In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Web-App enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
@@ -49,23 +51,23 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Tutorial "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md).
 
 ## 4\. Herunterladen des Codes
 
-Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP herunterladen](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet.git
 ```
 
-Die fertige App ist ebenfalls [als ZIP verfügbar](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
 
-Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskWebApp`-Projekt und ein `TaskService`-Projekt. `TaskWebApp` ist der WPF-Web-App-Front-End, mit dem der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste des Benutzers gespeichert wird.
+Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskWebApp`-Projekt und ein `TaskService`-Projekt. `TaskWebApp` ist das WPF-Web-App-Front-End, mit dem der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste des Benutzers gespeichert wird.
 
 ## 5\. Konfigurieren des Aufgabendiensts
 
-Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen der Zugriffstoken müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`.
+Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen der Zugriffstoken müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
 
 ```
 <appSettings>
@@ -243,7 +245,7 @@ private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotifica
 
 #### Abrufen eines Zugriffstoken in den Controllern
 
-Jetzt verfügen wir über ein Zugriffstoken für den `TaskService`-Back-End, und es ist im Tokencache von ADAL gespeichert. Nun müssen wir es auch verwenden. `TasksController` ist verantwortlich für die Kommunikation mit der `TaskService`-API und sendet HTTP-Anforderungen an die API, um Aufgaben zu lesen, zu erstellen und zu löschen. Rufen Sie vor dem Senden einer HTTP-Anforderung ein Token von ADAL ab:
+Jetzt verfügen wir über ein Zugriffstoken für das `TaskService`-Back-End, und es ist im Tokencache von ADAL gespeichert. Nun müssen wir es auch verwenden. `TasksController` ist verantwortlich für die Kommunikation mit der `TaskService`-API und sendet HTTP-Anforderungen an die API, um Aufgaben zu lesen, zu erstellen und zu löschen. Rufen Sie vor dem Senden einer HTTP-Anforderung ein Token von ADAL ab:
 
 ```C#
 // Controllers\TasksController.cs
@@ -362,9 +364,9 @@ public void SignOut()
 
 ## 9\. Ausführen der Beispiel-App
 
-Erstellen Sie abschließend `TaskClient` und `TaskService`, und führen Sie beide aus. Registrieren Sie sich bei der App, oder melden Sie sich bei der App an, und erstellen Sie Aufgaben für den angemeldeten Benutzer. Melden Sie sich ab, und melden Sie sich als ein anderer Benutzer wieder an, und erstellen Sie für diesen Benutzer Aufgaben. Beachten Sie, wie die Aufgaben pro Benutzer in der API gespeichert werden, da die API die Benutzeridentität aus dem empfangenen Zugriffstoken extrahiert.
+Erstellen Sie abschließend `TaskClient` und `TaskService`, und führen Sie beide aus. Registrieren Sie sich bei der App, oder melden Sie sich bei der App an, und erstellen Sie Aufgaben für den angemeldeten Benutzer. Melden Sie sich ab, melden Sie sich als ein anderer Benutzer wieder an, und erstellen Sie für diesen Benutzer Aufgaben. Beachten Sie, wie die Aufgaben pro Benutzer in der API gespeichert werden, da die API die Benutzeridentität aus dem empfangenen Zugriffstoken extrahiert.
 
-Als Referenz stellen wir das vollständige Beispiel [hier als ZIP-Datei bereit](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip). Sie können es auch aus GitHub klonen:
+Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip) bereit. Sie können es auch aus GitHub klonen:
 
 ```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet.git```
 
@@ -380,4 +382,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!----HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

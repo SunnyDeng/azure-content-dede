@@ -7,7 +7,14 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/18/2015" ms.author="aashishr"; "jimpark"/>
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/21/2015" 
+	ms.author="aashishr"; "jimpark"/>
 
 
 # Bereitstellen und Verwalten der Sicherung in Azure für Windows Server-/Windows-Clientcomputer mit PowerShell
@@ -28,8 +35,8 @@ Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell a
 Sie können mit dem Cmdlet **New-AzureBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
-PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “West US”
-PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+PS C:\> New-AzureResourceGroup –Name “test-rg” –Location “West US”
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
 ```
 
 Mit dem Cmdlet **Get-AzureBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
@@ -84,7 +91,7 @@ Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureBacku
 
 ```
 PS C:\> $credspath = "C:"
-PS C:\> $credsfilename = Get-AzureBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+PS C:\> $credsfilename = Get-AzureRMBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
 PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```
@@ -103,7 +110,7 @@ Region              : West US
 Machine registration succeeded.
 ```
 
-> [AZURE.IMPORTANT]Verwenden Sie keine relativen Pfade, um die Tresoranmeldedatendatei anzugeben. Sie müssen einen absoluten Pfad als Eingabe für das Cmdlet angeben.
+> [AZURE.IMPORTANT] Verwenden Sie keine relativen Pfade, um die Tresoranmeldedatendatei anzugeben. Sie müssen einen absoluten Pfad als Eingabe für das Cmdlet angeben.
 
 ### Netzwerkeinstellungen
 Wenn die Konnektivität des Windows-Computers mit dem Internet über einen Proxyserver hergestellt wird, können die Proxyeinstellungen auch dem Agent bereitgestellt werden. Da es in diesem Beispiel keinen Proxyserver gibt, löschen wir explizit alle Proxy-bezogenen Informationen.
@@ -128,7 +135,7 @@ PS C:\> ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force 
 Server properties updated successfully
 ```
 
-> [AZURE.IMPORTANT]Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
+> [AZURE.IMPORTANT] Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
 
 ## Sichern von Dateien und Ordnern
 All Ihre Sicherungen von Windows-Servern und -Clients in Azure Backup werden durch eine Richtlinie gesteuert. Die Richtlinie besteht aus drei Teilen:
@@ -170,7 +177,7 @@ Die Aufbewahrungsrichtlinie definiert, wie lange durch Sicherungsaufträge erste
 PS C:\> $retentionpolicy = New-OBRetentionPolicy -RetentionDays 7
 ```
 
-> [AZURE.NOTE]Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
+> [AZURE.NOTE] Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
 
 Die Aufbewahrungsrichtlinie muss der Hauptrichtlinie mithilfe des [Set-OBRetentionPolicy](https://technet.microsoft.com/library/hh770405)-Cmdlets zugeordnet werden:
 
@@ -583,4 +590,4 @@ Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Si
 - [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 - [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

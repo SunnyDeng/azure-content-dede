@@ -1,19 +1,19 @@
 <properties
 	pageTitle="Zuweisen von Administratorrollen in Azure AD"
-	description="Bei dem Thema wird erklärt, welche Administratorrollen in Azure AD verfügbar sind und wie sie zugewiesen werden."
+	description="Erläutert, welche Administratorrollen in Azure AD verfügbar sind und wie sie zugewiesen werden."
 	services="active-directory"
 	documentationCenter=""
-	authors="curtand" 
+	authors="curtand"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
+	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/14/2015"
+	ms.date="09/21/2015"
 	ms.author="curtand"/>
 
 # Zuweisen von Administratorrollen in Azure AD
@@ -69,14 +69,14 @@ Möglich | Nicht möglich
 
 Der globale Administrator hat Zugriff auf alle administrativen Funktionen. Standardmäßig wird der Person, die sich für ein Azure-Abonnement registriert, die globale Administratorrolle für das Verzeichnis zugewiesen. Nur globale Administratoren können weitere Administratorrollen zuweisen.
 
-## Zuweisen oder Entfernen von Administratorrollen 
+## Zuweisen oder Entfernen von Administratorrollen
 
 
 1. Klicken Sie im Verwaltungsportal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
 2. Auf der Seite **Benutzer** klicken Sie auf den Anzeigenamen des Benutzers, den Sie bearbeiten möchten.
-3. Wählen Sie das Dropdown-Menü **Organisationsrolle**, und wählen Sie dann die Administratorrolle, die diesem Benutzer zugewiesen werden soll, oder wählen Sie **Benutzer**, wenn Sie eine vorhandene Administratorrolle entfernen möchten. 
+3. Wählen Sie das Dropdown-Menü **Organisationsrolle**, und wählen Sie dann die Administratorrolle, die diesem Benutzer zugewiesen werden soll, oder wählen Sie **Benutzer**, wenn Sie eine vorhandene Administratorrolle entfernen möchten.
 4. Im Feld **Alternative E-Mail-Adresse** geben Sie eine E-Mail-Adresse ein. Diese E-Mail-Adresse wird für wichtige Benachrichtigungen, einschließlich des automatischen Zurücksetzens des Kennworts verwendet, so dass der Benutzer Zugriff auf das E-Mail-Konto benötigt, und zwar unabhängig davon, ob er auf Azure zugreifen kann oder nicht.
-5. Wählen Sie **Zulassen** oder **Blockieren**, um anzugeben, ob der Benutzer sich anmelden kann und Zugriff auf die Dienste bekommt. 
+5. Wählen Sie **Zulassen** oder **Blockieren**, um anzugeben, ob der Benutzer sich anmelden kann und Zugriff auf die Dienste bekommt.
 6. Geben Sie einen Speicherort aus der Dropdown-Liste **Nutzungsspeicherort** an.
 7. Wenn Sie fertig sind, klicken Sie auf **Speichern**.
 
@@ -86,7 +86,4 @@ Der globale Administrator hat Zugriff auf alle administrativen Funktionen. Stand
 - [Verwalten von Kennwörtern](active-directory-manage-passwords.md)
 - [Gruppen verwalten](active-directory-manage-groups.md)
 
-
- 
-
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

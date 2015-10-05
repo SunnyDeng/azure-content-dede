@@ -1,24 +1,27 @@
-<properties 
-	pageTitle="Einrichten von Tomcat7 auf einem virtuellen Linux-Computer mit Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Tomcat7 mit Microsoft Azure unter Verwendung eines virtuellen Linux-Computers einrichten können." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="NingKuang" 
-	manager="timlt" 
-	editor="tysonn"/>
+<properties
+	pageTitle="Einrichten von Apache Tomcat auf einem virtuellen Linux-Computer | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Apache Tomcat7 unter Verwendung eines virtuellen Azure-Computers (VM) mit Linux einrichten können."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="NingKuang"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/21/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="05/21/2015"
 	ms.author="ningk"/>
 
-#Einrichten von Tomcat7 auf einem virtuellen Linux-Computer mit Microsoft Azure 
+#Einrichten von Tomcat7 auf einem virtuellen Linux-Computer mit Microsoft Azure
 
 Apache Tomcat (oder einfach Tomcat, früher auch Jakarta Tomcat) ist ein Open-Source-Webserver und Servlet-Container und wurde von der Apache Software Foundation (ASF) entwickelt. Tomcat implementiert das Java-Servlet und die JavaServer Pages (JSP)-Spezifikationen von Sun Microsystems und bietet eine reine Java-HTTP-Webserverumgebung zum Ausführen von Java-Code. In der einfachsten Konfiguration wird Tomcat in einem einzelnen Betriebssystem-Prozess ausgeführt. Dieser Prozess führt eine Java Virtual Machine (JVM) aus. Jede HTTP-Anforderung von einem Browser an Tomcat wird als separater Thread im Tomcat-Prozess verarbeitet.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 In diesem Handbuch installieren Sie tomcat7 in einem Linux-Image und stellen dieses unter Microsoft Azure bereit.
 
@@ -46,20 +49,20 @@ Mit dieser Methode ist es auch möglich, sich mit einer Kennwortanforderung anzu
 
 Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel zu generieren.
 
-1.	Laden und installieren Sie puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 
+1.	Laden und installieren Sie puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 2.	Führen Sie "PUTTYGEN.EXE" aus.
 3.	Klicken Sie auf **Generieren**, um die Schlüssel zu generieren. Während des Vorgangs können Sie den Zufallsfaktor durch Bewegen der Maus über den leeren Bereich im Fenster erhöhen. ![][1]
 4.	Nach dem Generierungsvorgang zeigt "Puttygen.exe" den generierten Schlüssel an. Beispiel: ![][2]
 5.	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei namens "publicKey.pem". Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
-6.	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei namens "privateKey.ppk". 
+6.	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei namens "privateKey.ppk".
 
 ###Schritt 2: Erstellen des Bildes im Azure-Vorschauportal
 Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image. Wählen Sie dabei das Linux-Image aus, das Ihren Anforderungen gerecht wird. Dieses Beispiel verwendet das Ubuntu 14.04-Image. ![][3]
- 
+
 Geben Sie unter **Hostname** den Namen für die URL ein, die Sie und die Internetclients für den Zugriff auf diesen virtuellen Computer verwenden. Definieren Sie den letzten Teil des DNS-Namens (z. B. "tomcatdemo"), und Azure generiert die URL als "tomcatdemo.cloudapp.net".
 
 Kopieren Sie für die Angabe **SSH Authentication Key** den Schlüsselwert aus der Datei **publicKey.pem**, die den von puttygen generierten öffentlichen Schlüssel enthält. ![][4]
-  
+
 Konfigurieren Sie weitere Einstellungen wie erforderlich, und klicken Sie dann auf "Erstellen".
 
 ##Phase 2: Vorbereiten des virtuellen Computers für Tomcat7
@@ -70,15 +73,15 @@ Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem �
 TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen Port mit einem Azure-Endpunkt öffnen, können Sie und andere Internetclients auf die Tomcat-Seiten zugreifen.
 
 1.	Klicken Sie im Azure-Vorschauportal auf **Durchsuchen** -> **Virtueller Computer**, und klicken Sie dann auf den virtuellen Computer, den Sie erstellt haben. ![][5]
-2.	Klicken Sie zum Hinzufügen eines Endpunkts zu einem virtuellen Computer auf das Feld **Endpunkte**. ![][6] 
+2.	Klicken Sie zum Hinzufügen eines Endpunkts zu einem virtuellen Computer auf das Feld **Endpunkte**. ![][6]
 3.	Klicken Sie auf **Hinzufügen**.  
 	1.	Geben Sie für **Endpunkt** einen Endpunktnamen ein, und geben Sie dann unter **Öffentlicher Port** den Port "80" ein.  
-	  
+
 		Wenn Sie den Port auf 80 festlegen, müssen Sie die Portnummer nicht in die URL einschließen, die Ihnen den Zugriff auf Tomcat ermöglicht. Beispiel: http://tomcatdemo.cloudapp.net.
 
 		Wenn Sie den Port auf einen anderen Wert festlegen (z. B. Port 81), müssen Sie die Portnummer der URL für den Zugriff auf Tomcat hinzufügen. Beispiel: http://tomcatdemo.cloudapp.net:81/.
 	2.	Geben Sie unter "Privater Port" den Port "8080" ein. Tomcat lauscht standardmäßig am TCP-Port 8080. Wenn Sie den Standardüberwachungsport von Tomcat geändert haben, sollten Sie den privaten Port so aktualisieren, dass er mit dem Tomcat-Überwachungsport übereinstimmt. ![][7]
- 
+
 4.	Klicken Sie auf **OK** , um den Endpunkt Ihrem virtuellen Computer hinzuzufügen.
 
 
@@ -89,13 +92,13 @@ Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihr
 Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Vorschauportal ab. Klicken Sie auf **Durchsuchen** -> **Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
 
 Rufen Sie die Portnummer für SSH-Verbindungen aus dem Feld **SSH** ab. Beispiel: ![][8]
- 
+
 Laden Sie Putty [hier](http://www.putty.org/) herunter.
 
 Klicken Sie nach dem Download auf die ausführbare Datei "PUTTY.EXE". Konfigurieren Sie die grundlegenden Optionen mit dem Hostnamen und der Portnummer, die Sie aus den Eigenschaften Ihres virtuellen Computers abgerufen haben. Beispiel: ![][9]
- 
+
 Klicken Sie im linken Bereich auf **Verbindung** -> **SSH** -> **Authentifizierung**. Klicken Sie dann auf **Durchsuchen** , um den Speicherort der Datei **privateKey.ppk** anzugeben, die den von puttygen in Phase 1: "Erstellen eines Image" generierten privaten Schlüssel enthält: Beispiel: ![][10]
- 
+
 Klicken Sie auf **Öffnen**. Möglicherweise wird ein Meldungsfeld angezeigt. Wenn Sie den DNS-Namen und die Portnummer richtig konfiguriert haben, klicken Sie auf **Ja**. ![][11]
 
 
@@ -179,7 +182,7 @@ Der Tomcat7-Server wird bei der Installation von Tomcat7 automatisch gestartet. 
 
 Beenden von Tomcat7：
 
-	sudo /etc/init.d/tomcat7 stop 
+	sudo /etc/init.d/tomcat7 stop
 
 Anzeigen des Status von Tomcat7：
 
@@ -205,7 +208,7 @@ Nach der Bearbeitung dieser Datei sollten Sie Tomcat7-Dienste mit dem folgenden 
 Öffnen Sie den Browser, und geben Sie die URL **http://<your tomcat server DNS name>/manager/html** ein. Das Beispiel in diesem Artikel verwendet die URL http://tomcatexample.cloudapp.net/manager/html.
 
 Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt werden: ![][18]
- 
+
 ##Häufige Probleme
 
 ###Auf den virtuellen Computer mit Tomcat und Moodle kann nicht über das Internet zugegriffen werden.
@@ -213,7 +216,7 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 -	**Symptom** Tomcat wird ausgeführt, die Tomcat-Standardseite wird jedoch nicht in Ihrem Browser angezeigt.
 -	**Mögliche Ursache**   
 	1.	Der Tomcat-Überwachungsport ist nicht identisch mit dem privaten Port des Endpunkts des virtuellen Computers für Tomcat-Datenverkehr.  
-	
+
 		Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Tomcat-Überwachungsport identisch ist. Informationen zum Konfigurieren von Endpunkten für den virtuellen Computer finden Sie unter Phase 1: "Erstellen eines Image".
 
 		Öffnen Sie zur Bestimmung des Tomcat-Überwachungsports "/etc/httpd/conf/httpd.conf" (Red Hat-Version) oder "/etc/tomcat7/server.xml" (Debian-Version). Standardmäßig ist der Tomcat-Überwachungsport 8080. Beispiel:
@@ -237,9 +240,9 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 
 -	**Lösung**
 	1. Wenn der Tomcat-Überwachungsport nicht mit dem privaten Port des Endpunkts für den Datenverkehr an den virtuellen Computer identisch ist, müssen Sie den privaten Port so ändern, dass dieser identisch mit dem Tomcat-Überwachungsport ist.   
-	
+
 	2.	Wenn das Problem durch die Firewall/iptables verursacht wird, fügen Sie "/etc/sysconfig/iptables" die folgenden Zeilen hinzu:
-	
+
 			-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 			-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT  
 
@@ -301,6 +304,5 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 [16]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-16.png
 [17]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-17.png
 [18]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-18.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

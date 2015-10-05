@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden von Tags zum Organisieren von Azure-Ressourcen" 
-	description="Zeigt, wie Sie Tags zum Organisieren von Ressourcen für die Abrechnung und Verwaltung anwenden können." 
-	services="azure-resource-manager" 
-	documentationCenter="" 
+<properties
+	pageTitle="Verwenden von Tags zum Organisieren von Azure-Ressourcen"
+	description="Zeigt, wie Sie Tags zum Organisieren von Ressourcen für die Abrechnung und Verwaltung anwenden können."
+	services="azure-resource-manager"
+	documentationCenter=""
 	authors="tfitzmac"
-	manager="wpickett" 
+	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="azure-resource-manager" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="AzurePortal" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/04/2015" 
+<tags
+	ms.service="azure-resource-manager"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="AzurePortal"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/04/2015"
 	ms.author="tomfitz"/>
 
 
@@ -25,7 +25,7 @@ Wenn Sie Ressourcen mit einem bestimmten Tag anzeigen, sehen Sie Ressourcen aus 
 
 Jedes Tag, das Sie einer Ressource oder Ressourcengruppe hinzufügen, wird automatisch der Taxonomie für das Abonnement hinzugefügt. Sie können die Taxonomie für Ihr Abonnement auch vorab mit Tagnamen und -werten füllen, die Sie zukünftig zum Markieren von Ressourcen verwenden möchten.
 
-> [AZURE.NOTE]Sie können Tags nur auf Ressourcen anwenden, die Ressourcen-Manager-Vorgänge unterstützen. Wenn Sie einen virtuellen Computer, ein virtuelles Netzwerk (VNET) oder Speicher über das klassische Bereitstellungsmodell erstellt haben (z. B. über das Azure-Portal oder die [Dienstverwaltungs-API](https://msdn.microsoft.com/library/azure/dn948465.aspx)), können Sie auf diese Ressource kein Tag anwenden. Sie müssen diese Ressourcen über den Ressourcen-Manager erneut bereitstellen, damit Tags unterstützt werden. Alle anderen Ressourcen unterstützen die Markierung durch Tags.
+> [AZURE.NOTE]Sie können Tags nur auf Ressourcen anwenden, die Ressourcen-Manager-Vorgänge unterstützen. Wenn Sie einen virtuellen Computer, ein virtuelles Netzwerk (VNET) oder Speicher über das klassische Bereitstellungsmodell erstellt haben (z. B. über das Azure-Portal oder die [Dienstverwaltungs-API](../services/api-management/)), können Sie auf diese Ressource kein Tag anwenden. Sie müssen diese Ressourcen über den Ressourcen-Manager erneut bereitstellen, damit Tags unterstützt werden. Alle anderen Ressourcen unterstützen die Markierung durch Tags.
 
 
 ## Tags im Vorschauportal
@@ -154,8 +154,5 @@ Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung vo
 - Eine Einführung zur Verwendung von Azure PowerShell für das Bereitstellen von Ressourcen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](./powershell-azure-resource-manager.md).
 - Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](./xplat-cli-azure-resource-manager.md).
 - Eine Einführung zum Verwenden des Vorschauportals finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](./resource-group-portal.md).  
-  
 
-  
-
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

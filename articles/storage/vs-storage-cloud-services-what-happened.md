@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea123"/>
+	ms.author="patshea"/>
 
 # Was ist mit dem Clouddienstprojekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
 
@@ -43,4 +43,4 @@ Elemente mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Sp
 - **ServiceConfiguration.Cloud.cscfg**
 - **ServiceConfiguration.Local.cscfg**
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea123"/>
+	ms.author="patshea"/>
 
 # Was ist mit dem WebJob-Projekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
 
@@ -41,4 +41,4 @@ In der Datei "App.config" Ihres Projekts wurden die Einträge **AzureWebJobsStor
 
 Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

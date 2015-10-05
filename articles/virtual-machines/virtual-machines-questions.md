@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Häufig gestellte Fragen zu virtuellen Azure-Computern"
-	description="Stellt Antworten auf die häufigsten Fragen zu virtuellen Azure-Computern bereit"
+	pageTitle="Häufig gestellte Fragen zu virtuellen Computern | Microsoft Azure"
+	description="Hier finden Sie Antworten auf die häufigsten Fragen zu virtuellen Azure-Computern, die mit dem klassischen Bereitstellungsmodell erstellt wurden."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,9 +17,11 @@
 	ms.date="07/17/2015"
 	ms.author="cynthn"/>
 
-# Virtuelle Azure-Computer – häufig gestellte Fragen
+# Häufig gestellte Fragen zu virtuellen Azure-Computern, die mit dem klassischen Bereitstellungsmodell erstellt wurden
 
-In diesem Artikel werden einige allgemeine Fragen erörtert, die häufig von Benutzern zu virtuellen Computern in Azure gestellt werden. Die Auswahl basiert auf den Fragen an das Azure-VM-Support-Team sowie Einträgen in Foren, Newsgroups und Kommentaren in anderen Artikeln. Grundlegende Informationen finden Sie unter [Informationen zu virtuellen Computern](virtual-machines-about.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Fragen zu Ressourcen beantwortet, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
+
+In diesem Artikel werden einige allgemeine Fragen erörtert, die häufig von Benutzern zu virtuellen Computern in Azure gestellt werden, die mit dem klassischen Bereitstellungsmodell erstellt wurden. Die Auswahl basiert auf den Fragen an das Azure-VM-Support-Team sowie Einträgen in Foren, Newsgroups und Kommentaren in anderen Artikeln. Grundlegende Informationen finden Sie unter [Informationen zu virtuellen Computern](virtual-machines-about.md).
 
 ## Was kann ich auf einem virtuellen Azure-Computer ausführen?
 
@@ -132,7 +134,7 @@ Ausführliche Informationen finden Sie unter [Virtuelle Computer – Preise](htt
 
 ## Startet Azure meinen virtuellen Computer zur Wartung neu?
 
-Im Allgemeinen können Sie Ihren virtuellen Computer nach Bedarf jederzeit starten, beenden oder neu starten. (Weitere Informationen finden Sie unter [Informationen zum Starten, Beenden und Neustarten eines virtuellen Azure-Computers](https://msdn.microsoft.com/library/azure/dn763934.aspx).) Azure startet Ihren virtuellen Computer in einigen Fällen im Rahmen regelmäßiger, geplanter Wartungsupdates in den Azure-Rechenzentren neu. Nicht geplante Wartungsereignisse können eintreten, wenn Azure ein schwerwiegendes Hardwareproblem erkennt, das Ihren virtuellen Computer betrifft. Bei ungeplanten Ereignissen migriert Azure den virtuellen Computer automatisch auf einen fehlerfreien Host und startet den virtuellen Computer neu.
+Im Allgemeinen können Sie Ihren virtuellen Computer nach Bedarf jederzeit starten, beenden oder neu starten. Azure startet Ihren virtuellen Computer in einigen Fällen im Rahmen regelmäßiger, geplanter Wartungsupdates in den Azure-Rechenzentren neu. Nicht geplante Wartungsereignisse können eintreten, wenn Azure ein schwerwiegendes Hardwareproblem erkennt, das Ihren virtuellen Computer betrifft. Bei ungeplanten Ereignissen migriert Azure den virtuellen Computer automatisch auf einen fehlerfreien Host und startet den virtuellen Computer neu.
 
 Für alle eigenständigen virtuellen Computer (d. h. virtuelle Computer, die nicht Teil einer Verfügbarkeitsgruppe sind) benachrichtigt Azure den Dienstadministrator des Abonnements per E-Mail mindestens eine Woche vor der geplanten Wartung, da die virtuellen Computer während des Updates möglicherweise neu gestartet werden. Bei Anwendungen, die auf den virtuellen Computer ausgeführt werden, kann es zu Ausfällen kommen.
 
@@ -148,4 +150,4 @@ Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurier
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

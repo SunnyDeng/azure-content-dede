@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Installieren des LAMP-Stapels auf einem virtuellen Linux-Computer"
-	description="Erfahren Sie, wie Sie den LAMP-Stack auf einem virtuellen Linux-Computer in Azure verwenden. Sie können die Installation auf Ubuntu oder CentOS vornehmen."
+	pageTitle="Installieren des LAMP-Stapels auf einem virtuellen Linux-Computer | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den LAMP-Stack auf einem virtuellen Linux-Computer in Azure verwenden."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="szarkos"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags=“azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -19,6 +20,8 @@
 
 
 #Installieren des LAMP-Stapels auf einem virtuellen Linux-Computer in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
 
 Ein LAMP-Stack besteht aus den folgenden verschiedenen Elementen:
 
@@ -125,4 +128,4 @@ Es gibt zahlreiche weitere Ressourcen für die Einrichtung eines LAMP-Stacks in 
 - [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

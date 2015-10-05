@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verbinden virtueller Computer in einem Azure-Cloud-Dienst"
-	description="Erfahren Sie, wie Sie einen virtuellen Computer mit einem Azure-Cloud-Dienst verbinden."
+	pageTitle="Verbinden virtueller Computer in einem Clouddienst | Microsoft Azure"
+	description="Verbinden Sie einen virtuellen Computer mit einem Azure-Clouddienst."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -18,8 +18,10 @@
 	ms.author="cynthn"/>
 
 
-# Verbinden virtueller Computer mit einem virtuellen Netzwerk oder Clouddienst
+# Verbinden virtueller Computer, die mit dem klassischen Bereitstellungsmodell erstellt wurden, mit einem virtuellen Netzwerk oder einem Clouddienst
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 [AZURE.INCLUDE [howto-connect-vm-cloud-service](../../includes/howto-connect-vm-cloud-service.md)]
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

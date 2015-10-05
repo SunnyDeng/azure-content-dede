@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Aufrufen eines MapReduce-Programms über Azure Data Factory"
-	description="Erfahren Sie, wie Sie Daten verarbeiten, indem Sie MapReduce-Programme mithilfe einer Azure Data Factory auf einen Azure HDInsight-Cluster anwenden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Aufrufen eines MapReduce-Programms über Azure Data Factory" 
+	description="Erfahren Sie, wie Sie Daten verarbeiten, indem Sie MapReduce-Programme mithilfe einer Azure Data Factory auf einen Azure HDInsight-Cluster anwenden." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/31/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/22/2015" 
 	ms.author="spelluru"/>
 
 # Aufrufen von MapReduce-Programmen über Data Factory
@@ -32,7 +32,7 @@ Gehen Sie für die JSON-Definition der HDInsight-Aktivität so vor:
 3. Geben Sie für die Eigenschaft **className** den Namen der Klasse an.
 4. Geben Sie den Pfad zur JAR-Datei an, einschließlich des Dateinamens für die Eigenschaft **jarFilePath**.
 5. Geben Sie den verknüpften Dienst an, der auf den Azure-Blobspeicher verweist, der die JAR-Datei für die Eigenschaft **jarLinkedService** enthält.   
-6. Geben Sie im Abschnitt **arguments** Argumente für das MapReduce-Programm an. 
+6. Geben Sie im Abschnitt **arguments** Argumente für das MapReduce-Programm an. Zur Laufzeit werden ein paar zusätzliche Argumente aus dem MapReduce-Framework angezeigt (z. B.: mapreduce.job.tags). Um Ihre Argumente mit den MapReduce-Argumenten zu unterscheiden, sollten Sie erwägen, sowohl Option als auch Wert als Argumente zu verwenden, wie im folgenden Beispiel gezeigt ("-s", "--input", "--output" usw. sind Optionen, die unmittelbar von ihrem Wert gefolgt werden).
 
  
 
@@ -102,4 +102,4 @@ Sie können ein Beispiel zur Verwendung der HDInsight-Aktivität mit MapReduce-T
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

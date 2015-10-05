@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure"
-	description="In diesem Tutorial erfahren Sie, wie Sie in Azure einen Listener für eine AlwaysOn-Verfügbarkeitsgruppe mit dem internen Load Balancer erstellen."
+	pageTitle="Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen | Microsoft Azure"
+	description="In diesem Lernprogramm werden Ressourcen verwendet, die mit dem klassischen Bereitstellungsmodell erstellt wurden, und es wird mithilfe eines internen Load Balancers (ILB) eine AlwaysOn-Verfügbarkeitsgruppe in Azure erstellt."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar" 
+	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -24,6 +25,8 @@
 ## Übersicht
 
 In diesem Thema erfahren Sie, wie Sie mit dem **internen Load Balancer (ILB)** einen Listener für eine AlwaysOn-Verfügbarkeitsgruppe konfigurieren.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](virtual-machines-sql-server-alwayson-availability-groups-gui.md), Sie jedoch noch keinen Listener konfiguriert haben.
 
@@ -133,4 +136,4 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

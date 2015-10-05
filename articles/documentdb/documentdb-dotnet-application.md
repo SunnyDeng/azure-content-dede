@@ -26,9 +26,9 @@ In diesem Artikel wird mithilfe einer umfassenden exemplarischen Vorgehensweise 
 
 In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit dem von Azure bereitgestellten DocumentDB-Dienst Daten aus einer in Azure gehosteten ASP.NET MVC-Webanwendung speichern und auf diese zugreifen.
 
-> [AZURE.TIP]Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den als [Voraussetzung erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige [ToDo](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/todo)-Lernprogrammprojekt von [GitHub](https://github.com/Azure/azure-documentdb-net) herunterladen und gemäß den [Anweisungen am Ende dieses Artikels](#GetProject) erstellen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
+> [AZURE.TIP]Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den als Voraussetzung [erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige Beispielprojekt von [GitHub][] herunterladen und den Anweisungen in diesem Beispiel folgen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
 
-## <a name="_Toc395637760"></a>Voraussetzungen für dieses Lernprogramm
+## <a name="_Toc395637760"></a>Voraussetzungen für dieses Datenbanklernprogramm
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes vorhanden ist:
 
@@ -448,7 +448,7 @@ Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und d
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie die Anwendung nun ausführen, wird sie Ihren **ItemController** aufrufen, der die Repository-Klasse aufruft und die GetItems-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
+Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die Repository-Klasse aufgerufen und die GetItems-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
@@ -476,7 +476,7 @@ Jetzt fügen wir zur DocumentDBRepository und zum ItemController etwas Code hinz
 			return View(); 
    		}
 
-	Es ist noch weiterer Code in diesem Controller notwendig, mit dem die Übermittlung aus der Ansicht **Erstellen** akzeptiert wird.
+	Es ist noch weiterer Code in diesem Controller notwendig, mit dem die Übermittlung aus der Ansicht **Erstellen** empfangen wird.
 
 2. Fügen Sie den nächsten Codeblock zur ItemController.cs-Klasse hinzu, sodass ASP.NET MVC mitgeteilt wird, was mit einem Formular POST für diesen Controller geschehen soll.
 	
@@ -493,7 +493,7 @@ Jetzt fügen wir zur DocumentDBRepository und zum ItemController etwas Code hinz
 		}
 	Dieser Code ruft das DocumentDBRepository-Element auf und verwendet die CreateItemAsync-Methode, um das neue Todo-Element in der Datenbank beizubehalten.
  
-	**Sicherheitshinweis**: Das Attribut **ValidateAntiForgeryToken** wird hier verwendet, um den Schutz dieser Anwendung vor websiteübergreifenden Anforderungsfälschungen zu unterstützen. Das Hinzufügen dieses Attributs reicht jedoch nicht aus, Ihre Ansichten müssen auch mit diesem Antifälschungstoken zusammenarbeiten. Weitere Informationen zum Thema und Beispiele für eine ordnungsgemäße Implementierung finden Sie unter [Verhindern der websiteübergreifenden Anforderungsfälschung][]. Der auf [GitHub][] bereitgestellte Quellcode enthält die vollständige Implementierung.
+	**Sicherheitshinweis**: Das Attribut **ValidateAntiForgeryToken** wird hier verwendet, um den Schutz dieser Anwendung vor websiteübergreifenden Anforderungsfälschungen zu unterstützen. Das Hinzufügen dieses Attributs reicht jedoch nicht aus, Ihre Ansichten müssen auch mit diesem Antifälschungstoken zusammenarbeiten. Weitere Informationen zum Thema und Beispiele für eine ordnungsgemäße Implementierung finden Sie unter [Verhindern von websiteübergreifender Anforderungsfälschung][]. Der auf [GitHub][] bereitgestellte Quellcode enthält die vollständige Implementierung.
 
 	**Sicherheitshinweis**: Wir verwenden außerdem das Attribut **Bind** im Methodenparameter, um Schutz vor Overposting-Angriffen bereitzustellen. Weitere Informationen finden Sie unter [Grundlegende CRUD-Vorgänge in ASP.NET MVC][].
 
@@ -581,7 +581,7 @@ Um die Anwendung lokal zu testen, führen Sie die folgenden Schritte aus:
 
 	![Screenshot der in diesem Datenbanklernprogramm erstellten Aufgabenliste-Webanwendung](./media/documentdb-dotnet-application/image24.png)
 
-	Wenn an dieser Stelle Fehler auftreten, können Sie Ihren Code mit dem Todo-Lernprogramm auf [GitHub][] vergleichen.
+	Wenn an dieser Stelle Fehler auftreten, können Sie Ihren Code mit dem Beispielprojekt auf [GitHub][] vergleichen.
 
 2. Klicken Sie auf den Link **Neu erstellen**, und fügen Sie Werte in die Felder **Name** und **Beschreibung** ein. Lassen Sie das Kontrollkästchen **Abgeschlossen** deaktiviert, andernfalls hat das neue hinzugefügte **Element** den Status abgeschlossen und erscheint nicht in der Anfangsliste.
 
@@ -619,44 +619,12 @@ Glückwunsch! Sie haben soeben Ihre erste ASP.NET MVC-Anwendung unter Verwendung
 
 Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie sich die APIs in der [DocumentDB .NET-Bibliothek](http://msdn.microsoft.com/library/azure/dn783362.aspx) an. Sie können auch gerne eigene Beiträge zur DocumentDB .NET-Bibliothek auf [GitHub][] schreiben.
 
-##<a id="GetProject"></a>Die Lösung von GitHub abrufen
-
-Wenn Sie Zeit sparen und einfach nur die vollständige Todo-Projektmappe erstellen möchten, ohne den Code selbst hinzuzufügen, haben Sie Glück. Die vollständige Projektmappe ist auf GitHub verfügbar, und Sie können sie mithilfe der folgenden Anweisungen in wenigen Minuten erstellen und bereitstellen.
-
-1. Stellen Sie sicher, dass Sie die als [Voraussetzung erforderliche Software](#_Toc395637760) installiert haben, einschließlich Visual Studio und Azure SDK für .NET Version 2.3 oder höher.
-
-2. Klonen Sie das azure-documentdb-net-Repository mit Git für Windows ([http://www.git-scm.com/](http://www.git-scm.com/)), oder laden Sie die ZIP-Datei von [GitHub](https://github.com/Azure/azure-documentdb-net/) herunter.
-
-2. Öffnen Sie in Visual Studio die Datei "todo.sln" aus dem Verzeichnis "azure-documentdb-net/tutorials/todo".
-
-3. Um die Verweise auf das DocumentDB .NET SDK in Visual Studio 2013 wiederherzustellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Todo-Projektmappe, und klicken Sie dann auf die Option zum **Aktivieren der NuGet-Paketwiederherstellung**, um die Verweise wiederherzustellen.
-
-4. Rufen Sie auf dem Blatt **Schlüssel** Ihres DocumentDB-Kontos im [Azure-Vorschauportal](https://portal.azure.com/) die Werte für den **URI** und den **PRIMÄRSCHLÜSSEL** oder den **SEKUNDÄRSCHLÜSSEL** ab.
-
-	
-	Wenn Sie nicht über ein Konto verfügen, finden Sie unter [Erstellen eines Datenbankkontos](documentdb-create-account.md) Informationen zum Einrichten eines Kontos.
-
-	![Screenshot des Azure-Vorschauportals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche „Schlüssel“ auf dem Blatt „DocumentDB-Konto“, und auf dem Blatt „Schlüssel“ die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind](media/documentdb-dotnet-application/keys.png)
-
-5. Aktualisieren Sie in der Datei "Web.config" die Standardwerte für die Schlüssel **endpoint** und **authKey**.
-
-    	<add key="endpoint" value="~enter URI for your DocumentDB Account, from Azure Preview portal~" /> 
-		<add key="authKey" value="~enter either Primary or Secondary key for your DocumentDB Account, from Azure Preview portal~" /> 
-
-	- Kopieren Sie den Wert für **URI** auf dem Blatt "Schlüssel", und fügen Sie ihn in den Wert der **endpoint**-Eigenschaft ein. 
-	- Kopieren Sie den Wert für **PRIMÄRSCHLÜSSEL** oder **SEKUNDÄRSCHLÜSSEL** auf dem Blatt **Schlüssel**, und fügen Sie ihn in den Wert der **authKey**-Eigenschaft ein.
-	
-
-
-7. Sie können nun [Ihre Anwendung lokal ausführen](#_Toc395637773) und anschließend [auf Azure-Websites bereitstellen](#_Toc395637774).
-
 
 [*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
 [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
 [Microsoft-Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
-[GitHub]: http://go.microsoft.com/fwlink/?LinkID=509838&clcid=0x409
-[Verhindern der websiteübergreifenden Anforderungsfälschung]: http://go.microsoft.com/fwlink/?LinkID=517254
+[Verhindern von websiteübergreifender Anforderungsfälschung]: http://go.microsoft.com/fwlink/?LinkID=517254
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
- 
+[GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

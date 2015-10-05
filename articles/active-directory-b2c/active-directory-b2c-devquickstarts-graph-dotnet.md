@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 
@@ -343,4 +343,4 @@ Das ist schon alles. Mit dem B2CGraphClient verfügen Sie jetzt über eine Diens
 
 Wenn Sie Fragen haben oder Aktionen anfordern möchten, die Sie mit der Graph-API in Ihrem B2C-Verzeichnis durchführen möchten, können Sie sich gern an uns wenden. Geben Sie einen Kommentar zu einem Artikel ein, oder legen Sie im GitHub-Repository des Codebeispiels einen entsprechenden Eintrag an.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

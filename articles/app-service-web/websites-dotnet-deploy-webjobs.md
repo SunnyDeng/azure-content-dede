@@ -7,16 +7,14 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-
 <tags 
 	ms.service="app-service-web" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
-	ms.date="06/29/2015" 
+	ms.date="09/22/2015" 
 	ms.author="tdykstra"/>
-
 
 # Bereitstellen von Webaufträgen mit Visual Studio
 
@@ -202,4 +200,4 @@ In diesem Artikel wird erklärt, wie WebJobs mit Visual Studio bereitgestellt wi
 * Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

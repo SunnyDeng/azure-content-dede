@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Anfügen eines Datenträgers an einen virtuellen Computer unter Linux in Azure"
-	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Azure-Computer anfügen und initialisieren können, damit er betriebsbereit ist."
+	pageTitle="Anfügen eines Datenträgers an einen virtuellen Linux-Computer | Microsoft Azure"
+	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Linux-Computer unter Azure anfügen und initialisieren können, damit er betriebsbereit ist."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -18,6 +18,8 @@
 	ms.author="dkshir"/>
 
 # Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Anfügen eines Datenträgers mit dem klassischen Bereitstellungsmodell.
 
 Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann. Dieser Artikel bezieht sich auf virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
@@ -171,4 +173,4 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 [Agent]: virtual-machines-linux-agent-user-guide.md
 [Logon]: virtual-machines-linux-how-to-log-on.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

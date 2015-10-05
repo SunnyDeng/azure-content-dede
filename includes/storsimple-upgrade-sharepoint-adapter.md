@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Upgraden des StorSimple-Adapters für SharePoint | Microsoft Azure"
-   description="Beschreibt, wie Sie ein Upgrade für SharePoint ausführen und anschließend eine neue Version des StorSimple-Adapters für SharePoint installieren."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/03/2015"
-   ms.author="v-sharos" />
+<!--author=SharS last changed: 9/17/15-->
 
 ### Upgraden von SharePoint 2010 auf SharePoint 2013 und Installieren des StorSimple-Adapters für SharePoint
 
@@ -37,7 +22,7 @@
 >
 >- Zuvor externalisierte Inhalte sind erst nach der Neuinstallation des Adapters wieder verfügbar.
 >
->- Alle Inhalte, die nach der Deinstallation der vorherigen Version des StorSimple-Adapters für SharePoint und vor der Installation der neuen Version an die Website hochgeladen werden, werden in der Inhaltsdatenbank gespeichert. Diese Inhalte müssen nach dem Installieren des neuen Adapters auf das StorSimple-Gerät verschoben werden. Sie können das Microsoft` RBS Migrate()` PowerShell-Cmdlet aus SharePoint für das Migrieren der Inhalte verwenden. Weitere Informationen finden Sie unter [Migrieren von Inhalten in den und aus dem Remote-BLOB-Speicher (Remote BLOB Storage, RBS) (SharePoint Foundation 2010)](https://technet.microsoft.com/library/ff628255.aspx).
+>- Alle Inhalte, die nach der Deinstallation der vorherigen Version des StorSimple-Adapters für SharePoint und vor der Installation der neuen Version an die Website hochgeladen werden, werden in der Inhaltsdatenbank gespeichert. Diese Inhalte müssen nach dem Installieren des neuen Adapters auf das StorSimple-Gerät verschoben werden. Sie können das Microsoft PowerShell-Cmdlet ` RBS Migrate()` aus SharePoint für das Migrieren der Inhalte verwenden. Weitere Informationen finden Sie unter [Migrieren von Inhalten in den und aus dem Remote-BLOB-Speicher (Remote BLOB Storage, RBS) (SharePoint Foundation 2010)](https://technet.microsoft.com/library/ff628255.aspx).
 
 
 #### So führen Sie ein Upgrade des StorSimple-Adapters für SharePoint aus 
@@ -48,4 +33,4 @@
  
 2. Installieren Sie den StorSimple-Adapter für SharePoint. Der neue Adapter erkennt automatisch die Inhaltsdatenbanken, die zuvor mit RBS verwendet wurden, und verwendet die vorherigen Einstellungen.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

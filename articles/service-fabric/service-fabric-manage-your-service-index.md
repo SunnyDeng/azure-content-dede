@@ -21,7 +21,6 @@ Diese Seite enthält Links zur Übersicht, zu grundlegenden Artikeln und zum Ler
 
 - [Anwendungslebenszyklus](service-fabric-application-lifecycle.md)
 - [Visualisieren des Clusters mit Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md)
-- [Sicherer Replikationsdatenverkehr zustandsbehafteter Dienste](service-fabric-replication-security.md)
 
 ## Packen, Bereitstellen und Entfernen einer Anwendung
 In den folgenden Themen werden das Service Fabric-Anwendungsmodell und Vorgehensweisen zum Packen und Bereitstellen von Anwendungen erläutert.
@@ -41,13 +40,12 @@ Lesen Sie die folgenden Informationen zum Upgraden von Anwendungen:
 - [Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
 - [Beheben von Problemen mit Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
 - [Lernprogramm/Exemplarische Vorgehensweise für Anwendungsupgrades](service-fabric-application-upgrade-tutorial.md)
-- [Service Fabric-Anwendungsupgrade: Datenserialisierung](service-fabric-application-upgrade-data-serialization.md) 
+- [Service Fabric-Anwendungsupgrade: Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
 
 ## Skalieren und Partitionieren von Anwendungsdiensten
 In den folgenden Artikeln wird die Skalierung und Partitionierung beschrieben:
 
 - [Partitionieren von Service Fabric-Diensten](service-fabric-concepts-partitioning.md)
 - [Skalieren von Service Fabric-Anwendungen](service-fabric-concepts-scalability.md)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

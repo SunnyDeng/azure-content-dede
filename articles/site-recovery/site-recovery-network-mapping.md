@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Netzwerkzuordnung für Site Recovery"
+	pageTitle="Netzwerkzuordnung für Azure Site Recovery | Microsoft Azure"
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung lokaler virtueller Computer und physischer Server zu Azure oder zu einem sekundären lokalen Standort."
 	services="site-recovery"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 	ms.author="raynew"/>
 
 
-# Netzwerkzuordnung für Site Recovery
+# Netzwerkzuordnung für Azure Site Recovery
 
 
 Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Informationen zu möglichen Bereitstellungsszenarien finden Sie unter [Übersicht über Site Recovery](site-recovery-overview.md).
@@ -49,7 +49,7 @@ Die Einrichtung der Netzwerkzuordnung ist abhängig vom jeweiligen Site Recover
 
 ## VM-Netzwerke
 
-Das logische VMM-Netzwerk bietet eine abstrakte Sicht auf die physische Netzwerkinfrastruktur. VM-Netzwerke stellen eine Netzwerkschnittstelle bereit, sodass virtuelle Computer eine Verbindung mit logischen Netzwerken herstellen können. Ein logisches Netzwerk benötigt mindestens ein VM-Netzwerk. Wenn Sie einen virtuellen Computer zu dessen Schutz in einer Cloud platzieren, muss er mit einem VM-Netzwerk verbunden sein, das über eine Verknüpfung mit einem logischen Netzwerk verfügt, welches wiederum der Cloud zugeordnet ist. Weitere Informationen:
+Ein logisches VMM-Netzwerk bietet eine abstrakte Sicht auf die physische Netzwerkinfrastruktur. VM-Netzwerke stellen eine Netzwerkschnittstelle bereit, sodass virtuelle Computer eine Verbindung mit logischen Netzwerken herstellen können. Ein logisches Netzwerk benötigt mindestens ein VM-Netzwerk. Wenn Sie einen virtuellen Computer zu dessen Schutz in einer Cloud platzieren, muss er mit einem VM-Netzwerk verbunden sein, das über eine Verknüpfung mit einem logischen Netzwerk verfügt, welches wiederum der Cloud zugeordnet ist. Weitere Informationen:
 
 - [Logical Networks (Part 1)](http://blogs.technet.com/b/scvmm/archive/2013/02/14/networking-in-vmm-2012-sp1-logical-networks-part-i.aspx) (Logische Netzwerke (Teil 1); in englischer Sprache)
 - [Virtual Networking in VMM 2012 SP1](http://blogs.technet.com/b/scvmm/archive/2013/01/08/virtual-networking-in-vmm-2012-sp1.aspx) (Virtuelle Netzwerke in VMM 2012 SP1; in englischer Sprache)
@@ -127,13 +127,12 @@ Einige mögliche Szenarien mit diesen Einstellungen:
 ---|---
 Keine Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover | VM-1 bleibt mit dem Quellnetzwerk verbunden.
 Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover und Trennung der Verbindung | VM-1 wird getrennt.
-Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover und Verbindung mit „VMNetwork2-Chicago“ | Wenn „VMNetwork2-Chicago“ nicht zugeordnet ist, wird VM-1 getrennt.
-Änderung der Netzwerkzuordnung von „VMNetwork1-Chicago“ | VM-1 wird mit dem Netzwerk verbunden, das jetzt „VMNetwork1-Chicago“ zugeordnet ist.
+Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover und Verbindung mit "VMNetwork2-Chicago" | Wenn "VMNetwork2-Chicago" nicht zugeordnet ist, wird VM-1 getrennt.
+Änderung der Netzwerkzuordnung von "VMNetwork1-Chicago" | VM-1 wird mit dem Netzwerk verbunden, das jetzt "VMNetwork1-Chicago" zugeordnet ist.
 
 
 ## Nächste Schritte
 
 Nachdem Sie die Netzwerkzuordnung nun besser nachvollziehen können, können Sie sich zur Vorbereitung auf die Bereitstellung mit den [bewährten Methoden](site-recovery-best-practices.md) vertraut machen.
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

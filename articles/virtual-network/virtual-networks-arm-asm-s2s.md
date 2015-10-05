@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/14/2015"
+   ms.date="09/18/2015"
    ms.author="telmos" />
 
 # Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets
 
-Azure verfügt zurzeit über zwei Verwaltungsmodi: Azure Service Manager \(als "klassisch" bezeichnet\) und Azure Resource Manager \(ARM\). Wenn Sie Azure seit einiger Zeit verwenden, verfügen Sie wahrscheinlich über virtuelle Azure-Computer und Instanzrollen, die in einem klassischen VNet ausgeführt werden. Und Ihre neueren virtuellen Computer und Rolleninstanzen werden ggf. in einem in ARM erstellten VNet ausgeführt.
+Azure verfügt zurzeit über zwei Verwaltungsmodi: Azure Service Manager (als "klassisch" bezeichnet) und Azure Resource Manager (ARM). Wenn Sie Azure seit einiger Zeit verwenden, verfügen Sie wahrscheinlich über virtuelle Azure-Computer und Instanzrollen, die in einem klassischen VNet ausgeführt werden. Und Ihre neueren virtuellen Computer und Rolleninstanzen werden ggf. in einem in ARM erstellten VNet ausgeführt.
 
-Unter diesen Umständen sollten Sie sicherstellen, dass die neue Infrastruktur mit Ihren klassischen Ressourcen kommunizieren kann. Sie können zu diesem Zweck eine VPN-Verbindung zwischen den beiden VNets erstellen. Die Abbildung unten zeigt eine Beispielumgebung mit zwei VNets \(klassisches und ARM-VNet\) mit einer sicheren Tunnelverbindung zwischen den VNets.
+Unter diesen Umständen sollten Sie sicherstellen, dass die neue Infrastruktur mit Ihren klassischen Ressourcen kommunizieren kann. Sie können zu diesem Zweck eine VPN-Verbindung zwischen den beiden VNets erstellen. Die Abbildung unten zeigt eine Beispielumgebung mit zwei VNets (klassisches und ARM-VNet) mit einer sicheren Tunnelverbindung zwischen den VNets.
 
 ![](..\virtual-network\media\virtual-networks-arm-asm-s2s\figure01.png)
 
@@ -31,7 +31,7 @@ Sie führen die folgenden Aktionen aus, um dieses Szenario zu testen:
 2. [Erstellen einer neuen VNet-Umgebung](#Create-a-new-VNet-environment).
 3. [Verbinden der beiden VNets](#Connect-the-two-VNets).
 
-Sie führen die oben genannten Schritte zuerst mithilfe der klassischen Azure-Verwaltungstools \(z. B. klassisches Portal, Netzwerkkonfigurationsdateien und Azure Service Manager-PowerShell-Cmdlets\) aus. Später fahren Sie mit den neuen Verwaltungstools \(z. B. dem neuen Azure-Portal, ARM-Vorlagen und ARM-PowerShell-Cmdlets\) fort.
+Sie führen die oben genannten Schritte zuerst mithilfe der klassischen Azure-Verwaltungstools (z. B. klassisches Portal, Netzwerkkonfigurationsdateien und Azure Service Manager-PowerShell-Cmdlets) aus. Später fahren Sie mit den neuen Verwaltungstools (z. B. dem neuen Azure-Portal, ARM-Vorlagen und ARM-PowerShell-Cmdlets) fort.
 
 >[AZURE.IMPORTANT]Damit die VNets miteinander verbunden werden können, dürfen keine Konflikte der CIDR-Blöcke vorliegen. Stellen Sie sicher, dass jedes VNet über einen eindeutigen CIDR-Block verfügt!
 
@@ -108,7 +108,7 @@ Befolgen Sie die Anweisungen unten, um einen virtuellen Computer im klassischen 
 		    | ?{$_.ImageFamily -eq "Windows Server 2012 R2 Datacenter"} `
 		    | sort PublishedDate -Descending)[0]		
 
-2. Erstellen Sie ein Speicherkonto zum Speichern der virtuellen Festplatte \(VHD\) für den virtuellen Computer, indem Sie den folgenden Befehl ausführen.
+2. Erstellen Sie ein Speicherkonto zum Speichern der virtuellen Festplatte (VHD) für den virtuellen Computer, indem Sie den folgenden Befehl ausführen.
 
 		$storage1 = New-AzureStorageAccount `
 			-StorageAccountName v1v2teststorage1 `
@@ -173,7 +173,7 @@ Befolgen Sie die Anweisungen unten, um das ARM-VNet mit zwei Subnetzen und einem
 	- **Lokales Gateway**: Diese Ressource stellt das Gateway dar, das für das VNet erstellt wird, mit dem eine Verbindung hergestellt werden soll. In diesem Szenario handelt es sich um das Gateway für "vnet01".
 	- **Virtuelles Netzwerk**: Diese Ressource stellt ein ARM-VNet dar, das erstellt werden soll. In diesem Szenario ist dies "vnet02".
 	- **Öffentliche IP-Adresse des Gateways**: Diese Ressource stellt die öffentliche IP-Adresse für das Gateway dar, das für das ARM-VNet erstellt werden soll. 
-	- **Gateway**: Diese Ressource stellt das Gateway dar, das für das ARM-VNet \("vnet02"\) erstellt werden soll.
+	- **Gateway**: Diese Ressource stellt das Gateway dar, das für das ARM-VNet ("vnet02") erstellt werden soll.
 
 3. Beachten Sie die in dieser Datei verwendeten Parameter. Die meisten von ihnen verfügen über einen Standardwert. Sie können diese Werte entsprechend Ihren Anforderungen ändern.
 
@@ -214,7 +214,7 @@ Befolgen Sie die Anweisungen unten, um das ARM-VNet mit zwei Subnetzen und einem
 Befolgen Sie die Anweisungen unten, um im Azure-Portal einen virtuellen Computer im neuen VNet zu erstellen.
 
 1. Klicken Sie im Portal auf die Schaltfläche **NEU** und dann auf **Compute**, und klicken Sie dann auf **Windows Server 2012 R2 Datacenter**.
-2. Wählen Sie im unteren der rechten Bereich **Computestapel auswählen** aus, wählen Sie **Ressourcen-Manager-Stapel verwenden** zum Erstellen des virtuellen Computers in ARM \(wie unten gezeigt\) aus, und klicken Sie dann auf**Erstellen**.
+2. Wählen Sie im unteren der rechten Bereich **Computestapel auswählen** aus, wählen Sie **Ressourcen-Manager-Stapel verwenden** zum Erstellen des virtuellen Computers in ARM (wie unten gezeigt) aus, und klicken Sie dann auf**Erstellen**.
 
 	![VNet-Dashboard](..\virtual-network\media\virtual-networks-arm-asm-s2s\figure07.png)
 
@@ -240,7 +240,7 @@ Da Sie nun über zwei VNets verfügen, mit denen virtuelle Computer verbunden si
 
 ### Schritt 1: Konfigurieren des Gateways für das klassische VNet
 
-Sie müssen das klassische VNet für die Verwendung der IP-Adresse des Gateways konfigurieren, das für das ARM-VNet \("vnet02"\) erstellt wurde und dann eine Verbindung aus jedem VNet einrichten. Befolgen Sie zu diesem Zweck die Anweisungen unten.
+Sie müssen das klassische VNet für die Verwendung der IP-Adresse des Gateways konfigurieren, das für das ARM-VNet ("vnet02") erstellt wurde und dann eine Verbindung aus jedem VNet einrichten. Befolgen Sie zu diesem Zweck die Anweisungen unten.
 
 1. Führen Sie zum Abrufen der IP-Adresse für das Gateway im ARM-VNet den folgenden Befehl aus, und beachten Sie die Ausgabe. Notieren Sie sich die Adresse. Sie benötigen diese, um die Einstellungen des lokalen Netzwerks für das klassische VNet später zu ändern.
 
@@ -318,7 +318,7 @@ Nachdem Sie nun das klassische VNet-Gateway konfiguriert haben, muss die Verbind
 	![VNet-Dashboard](..\virtual-network\media\virtual-networks-arm-asm-s2s\figure11.png)
 
 5. Obwohl Sie das klassische VNet und seine Verbindung über das klassische Portal verwalten können, wird empfohlen, das neue Azure-Portal zu verwenden. Navigieren Sie zum Öffnen des neuen Portals zu https://portal.azure.com.
-6. Klicken Sie im neuen Portal auf **ALLE DURCHSUCHEN**, klicken Sie auf **Virtuelle Netzwerke \(Klassisch\)**, und klicken Sie dann auf **vnet01**. Beachten Sie den unten gezeigten Bereich **VPN-Verbindungen**.
+6. Klicken Sie im neuen Portal auf **ALLE DURCHSUCHEN**, klicken Sie auf **Virtuelle Netzwerke (Klassisch)**, und klicken Sie dann auf **vnet01**. Beachten Sie den unten gezeigten Bereich **VPN-Verbindungen**.
 
 	![VNet-Dashboard](..\virtual-network\media\virtual-networks-arm-asm-s2s\figure12.png)
 
@@ -333,7 +333,7 @@ Da die beiden VNets nun verbunden sind, müssen Sie die Konnektivität testen, i
 5. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Ja**.
 6. Sobald eine Verbindung mit dem virtuellen Computer hergestellt wurde, klicken Sie unter **Server-Manager** auf **Tools**, und klicken Sie dann auf **Windows-Firewall mit erweiterter Sicherheit**.
 7. Klicken Sie im Fenster **Windows-Firewall mit erweiterter Sicherheit** auf **Eingehende Regeln**.
-8. Klicken Sie in Liste **Eingehende Regeln** mit der rechten Maustaste auf **Datei- und Druckerfreigabe \(Echoanforderung - ICMPv4 eingehend\)**, und klicken Sie dann auf **Regel aktivieren**.
+8. Klicken Sie in Liste **Eingehende Regeln** mit der rechten Maustaste auf **Datei- und Druckerfreigabe (Echoanforderung - ICMPv4 eingehend)**, und klicken Sie dann auf **Regel aktivieren**.
 9. Klicken Sie auf der Taskleiste auf die Schaltfläche **Windows PowerShell**, und führen Sie dann den folgenden Befehl aus.
 
 		ipconfig
@@ -345,7 +345,7 @@ Da die beiden VNets nun verbunden sind, müssen Sie die Konnektivität testen, i
 		Default Gateway . . . . . . . . . : 10.2.0.101
 
 10. Notieren Sie sich die IP-Adresse für den virtuellen Computer. In diesem Szenario ist dies **10.2.0.101**. Sie werden für diese Adresse Ping vom anderen virtuellen Computer aus ausführen, um die Konnektivität zwischen den VNets zu testen.
-11. Klicken Sie im Azure-Portal im linken Bereich auf **Virtuelle Computer \(Klassisch\)**, klicken Sie auf **VM01**, und klicken Sie dann auf **Verbinden**. Wenn erforderlich, klicken Sie auf Ihrem Browsersicherheitsbanner auf **Öffnen**, um die RDP-Datei zu öffnen.
+11. Klicken Sie im Azure-Portal im linken Bereich auf **Virtuelle Computer (Klassisch)**, klicken Sie auf **VM01**, und klicken Sie dann auf **Verbinden**. Wenn erforderlich, klicken Sie auf Ihrem Browsersicherheitsbanner auf **Öffnen**, um die RDP-Datei zu öffnen.
 12. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Verbinden**.
 13. Geben Sie im Dialogfeld **Windows-Sicherheit** Ihren Benutzernamen und das Kennwort für den virtuellen Computer ein. 
 14. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Ja**.
@@ -360,7 +360,7 @@ Da die beiden VNets nun verbunden sind, müssen Sie die Konnektivität testen, i
 
 ## Nächste Schritte
 
-- Weitere Informationen zum [Netzwerkressourcenanbieter \(Network Resource Provider, NRP\) für ARM](../resource-groups-networking.md).
+- Weitere Informationen zum [Netzwerkressourcenanbieter (Network Resource Provider, NRP) für ARM](../resource-groups-networking.md).
 - Anzeigen der allgemeinen Richtlinien zum [Erstellen einer S2S-VPN-Verbindung zwischen einem klassischen VNet und einem ARM-VNet](../virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

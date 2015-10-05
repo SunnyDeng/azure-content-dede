@@ -7,16 +7,14 @@
 	manager="stevenpo"
 	editor=""/>
 
-
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/02/2015"
+	ms.date="09/21/2015"
 	ms.author="femila"/>
-
 
 # Verknüpfen eines persönlichen Geräts mit Ihrer Organisation
 
@@ -33,8 +31,8 @@ So verknüpfen Sie ein Windows 10-Gerät mit Ihrer Organisation
 9.	Falls Sie ein Partnerbenutzer sind, gelangen Sie zum Anmeldebildschirm von Windows und müssen Ihre Anmeldeinformationen eingeben.
 
 ## Zusätzliche Informationen
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Informationen zu Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

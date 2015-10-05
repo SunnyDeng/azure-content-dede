@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="kundanap"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
@@ -17,6 +18,8 @@
    ms.author="kundanap"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen mit VM-Erweiterungen
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
 
 ## Übersicht über Azure-Ressourcen-Manager-Vorlagen
 
@@ -85,4 +88,4 @@ Eine vollständige Vorlage mit VM-Erweiterungen finden Sie in der folgenden Doku
 
 Nachdem Sie die Vorlage geschrieben haben, können Sie sie über die Azure-Befehlszeilenschnittstelle oder über Azure Powershell bereitstellen.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

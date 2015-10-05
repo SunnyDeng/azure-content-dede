@@ -114,4 +114,10 @@ In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Da
 
 - [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
 
-<!---HONumber=Sept15_HO3-->
+
+- [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md)
+
+
+- [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md)
+
+<!---HONumber=Sept15_HO4-->

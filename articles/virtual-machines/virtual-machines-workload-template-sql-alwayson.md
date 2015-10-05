@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bereitstellen von SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage | Microsoft Azure"
+	pageTitle="SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage | Microsoft Azure"
 	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach fünf Server für die Unterstützung von SQL Server AlwaysOn bereitstellen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -18,6 +18,8 @@
 	ms.author="davidmu"/>
 
 # Bereitstellen von SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Folgen Sie den Anweisungen in diesem Artikel, um SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage bereitzustellen. Mit dieser Vorlage werden fünf virtuelle Computer in einem neuen virtuellen Netzwerk in zwei verschiedenen Subnetzen erstellt.
 
@@ -105,4 +107,4 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

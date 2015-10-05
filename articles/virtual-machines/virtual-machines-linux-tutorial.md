@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Erstellen eines virtuellen Computers unter Linux in Azure"
-	description="Erfahren Sie, wie Sie mithilfe eines Images von Azure einen virtuellen Azure-Computer unter Linux erstellen."
+	pageTitle="Erstellen eines virtuellen Computers unter Linux | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mithilfe eines Images von Azure und der Azure-Befehlszeilenschnittstelle einen virtuellen Azure-Computer unter Linux erstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-management" />
+	tags="azure-resource-manager" />
 
 <tags
 	ms.service="virtual-machines"
@@ -37,9 +37,9 @@ Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
 
 Als erstes [installieren Sie die Azure-CLI](../xplat-cli-install.md).
 
-Gut. Stellen Sie jetzt sicher, dass Sie sich im Ressourcenverwaltungsmodus befinden. Geben Sie hierfür `azure config mode arm` ein.
+Gut. Stellen Sie jetzt sicher, dass Sie sich im Ressourcen-Manager-Modus befinden. Geben Sie hierfür `azure config mode arm` ein.
 
-Umso besser. Melden Sie sich jetzt mit Ihrer Arbeits- oder Schulkonto-ID an. Geben Sie hierfür `azure login` ein, und folgen Sie den Bildschirmanweisungen.
+Umso besser. [Melden Sie sich jetzt mit Ihrer Arbeits- oder Schulkonto-ID an](../xplat-cli-connect.md#use-the-log-in-method). Geben Sie hierfür `azure login` ein, und folgen Sie den Eingabeaufforderungen.
 
 > [AZURE.NOTE]Wenn Sie bei der Anmeldung eine Fehlermeldung erhalten, müssen Sie möglicherweise eine [Arbeits- oder Schulkonto-ID aus Ihrem persönlichen Microsoft-Konto erstellen](resource-group-create-work-id-from-personal.md).
 
@@ -305,4 +305,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

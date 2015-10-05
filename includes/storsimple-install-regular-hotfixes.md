@@ -1,19 +1,4 @@
-<properties
-   pageTitle="Installieren von regelmäßigen Hotfixes"
-   description="Beschreibt die Installation von regelmäßigen Hotfixes über Windows PowerShell für StorSimple."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="NA" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="07/28/2015"
-   ms.author="alkohli" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie regelmäßige Hotfixes über Windows PowerShell für StorSimple
 
@@ -34,4 +19,4 @@
 
 5. Sie werden aufgefordert, diesen Schritt zu bestätigen. Geben Sie **J** ein, um mit der Installation des Hotfixes fortzufahren.
 
-<!------HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

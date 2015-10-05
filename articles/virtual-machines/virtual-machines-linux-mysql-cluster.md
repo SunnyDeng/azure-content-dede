@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux"
-	description="Ein Artikel, der Muster zum Einrichten eines hoch verfügbaren Linux-Clusters mit Lastenausgleich auf Azure mit MySQL als ein Beispiel veranschaulicht."
+	pageTitle="Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL | Microsoft Azure"
+	description="Richten Sie einen Linux MySQL-Cluster mit Lastenausgleich und hoher Verfügbarkeit unter Verwendung des klassischen Bereitstellungsmodells in Azure ein."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="bureado"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -18,16 +19,7 @@
 
 # Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux
 
-* [Vorbereitung](#getting-ready)
-* [Einrichten des Clusters](#setting-up-the-cluster)
-* [Einrichten von MySQL](#setting-up-mysql)
-* [Einrichten von Corosync](#setting-up-corosync)
-* [Einrichten von Pacemaker](#setting-up-pacemaker)
-* [Testen](#testing)
-* [STONITH](#stonith)
-* [Einschränkungen](#limitations)
-
-## Einführung
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Der Zweck dieses Artikels besteht darin, die unterschiedlichen verfügbaren Ansätze für die Bereitstellung hoch verfügbarer Linux-basierter Dienste auf Microsoft Azure zu untersuchen und zu veranschaulichen, wobei primär die hohe Verfügbarkeit von MySQL Server untersucht wird. Ein Video, das diesen Ansatz veranschaulicht, steht unter [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL) zur Verfügung.
 
@@ -346,6 +338,5 @@ Es gelten die folgenden Einschränkungen:
 - Der Lastenausgleich benötigt mindestens 5 Sekunden, um zu antworten. Anwendungen sollten daher clusterfähig und in Bezug auf eine Zeitüberschreitung toleranter sein. Auch andere Architekturen können hilfreich sein, beispielsweise In-App-Warteschlangen, Middleware-Abfragen usw.
 - Die MySQL-Feinabstimmung ist erforderlich, um sicherzustellen, dass der Schreibvorgang in einer vernünftigen Geschwindigkeit erfolgt und Zwischenspeicherungen möglichst häufig auf den Datenträger übertragen werden, um Speicherverluste zu vermeiden.
 - Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

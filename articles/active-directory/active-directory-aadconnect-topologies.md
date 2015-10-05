@@ -108,8 +108,8 @@ Für einige Office 365-Workloads gelten bestimmte Einschränkungen für unterst
 
 | Workload | |
 | --------- | --------- |
-| Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/de-DE/library/jj873754.aspx) |
-| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/de-DE/library/dn933910.aspx) |
+| Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/DE-DE/library/jj873754.aspx) |
+| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/DE-DE/library/dn933910.aspx) |
 
 ## Stagingserver
 ![StagingServer](./media/active-directory-aadconnect-topologies/MultiForestStaging.png)
@@ -162,4 +162,4 @@ Es wird unterstützt, FIM2010/MIM2016 lokal für GALsync zum Synchronisieren von
 ## Nächste Schritte
 Weitere Informationen zum Installieren von Azure AD-Connect für diese Szenarios finden Sie unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md). Weitere Informationen über die Konfiguration für die Azure AD Connect-Synchronisierung finden Sie unter [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

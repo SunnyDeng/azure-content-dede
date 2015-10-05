@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory Graph-API"
+   pageTitle="Azure Active Directory Graph-API | Microsoft Azure"
    description="Eine Übersicht und eine Schnellstartanleitung für die Graph-API, die den programmgesteuerten Zugriff auf Azure AD über REST-API-Endpunkte ermöglicht."
    services="active-directory"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/08/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin" />
 
 # Azure Active Directory Graph-API
@@ -66,4 +66,4 @@ Die Graph-API ermöglicht eine Vielzahl von Anwendungsszenarios. Die gängigsten
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

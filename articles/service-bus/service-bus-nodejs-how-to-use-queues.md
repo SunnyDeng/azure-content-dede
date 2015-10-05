@@ -163,10 +163,11 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 ## Nächste Schritte
 
-Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
+Weitere Informationen finden Sie in den folgenden Ressourcen.
 
--   Siehe [Warteschlangen, Themen und Abonnements][].
--   Besuchen Sie das [Azure SDK für Node][]-Repository auf GitHub.
+-   [Warteschlangen, Themen und Abonnements][]
+-   [Azure SDK für Node][]-Repository auf GitHub
+-   [Node.js Developer Center](/develop/nodejs/)
 
   [Azure SDK für Node]: https://github.com/Azure/azure-sdk-for-node
   [Nächste Schritte]: #next-steps
@@ -189,4 +190,4 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
   [Node.js-Webanwendung mit Speicher]: ../storage/storage-nodejs-how-to-use-table-storage.md
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

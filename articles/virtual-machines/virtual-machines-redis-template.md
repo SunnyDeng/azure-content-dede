@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="timwieman"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -17,6 +18,8 @@
 	ms.author="twieman"/>
 
 # Bereitstellen von Redis-Clustern mithilfe einer Ressourcen-Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines Redis-Clusters mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 Redis ist ein Open-Source-Schlüsselwertcache und -speicher, bei dem Schlüssel Datenstrukturen wie Zeichenfolgen, Hashes, Listen, Sätze und sortierte Sätze enthalten können. Redis unterstützt einen Satz automatischer Vorgänge für diese Datentypen. Mit der Veröffentlichung von Version 3.0 von Redis ist Redis Cluster jetzt in der neuesten stabilen Version von Redis verfügbar. Redis Cluster ist eine verteilte Implementierung von Redis, in der Daten automatisch auf mehreren Knoten von Redis freigegeben werden, sodass Vorgänge fortgesetzt werden können, wenn einige Knoten ausfallen.
 
@@ -525,7 +528,7 @@ Insbesondere folgende verknüpfte Vorlagen werden für diese Bereitstellung eing
 
 - **shared-resource.json**: enthält die Definition aller Ressourcen, die in der Bereitstellung gemeinsam genutzt werden. Beispiele hierfür sind Speicherkonten, die zum Speichern der Betriebssystemdatenträger, virtuellen Netzwerke und Verfügbarkeitsgruppen eines virtuellen Computers verwendet werden.
 - **jumpbox-resources.json**: stellt die "Jumpbox"-VM und alle zugehörigen Ressourcen wie Netzwerkschnittstelle, öffentliche IP-Adresse und den Eingabeendpunkt für SSH in der Umgebung bereit.
-- **nodes-resources.json**: stellt alle Redis-Clusterknoten-VMs und verbundene Ressourcen (Netzwerkkarten, private IP-Adressen usw.) bereit. Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript auf, um Redis auf jedem Knoten physisch zu installieren und einzurichten. Das aufzurufende Skript wird im `machineSettings`-Parameter der `commandToExecute`-Eigenschaft an diese Vorlage übergeben. Alle bis auf einen Redis-Clusterknoten können parallel bereitgestellt und per Skript eingerichtet werden. Ein Knoten muss bis zum Ende zurückgehalten werden, da das Setup des Redis-Clusters nur auf einem Knoten ausgeführt werden kann, und zwar nachdem alle Knoten den Redis-Server ausführen. Deshalb wird das auszuführende Skript an diese Vorlage übergeben. Der letzte Knoten muss mit einem etwas anderen Skript ausgeführt werden, mit dem nicht nur der Redis-Server installiert, sondern auch der Redis-Cluster eingerichtet wird.
+- **nodes-resources.json**: Stellt alle Redis-Clusterknoten-VMs und verbundene Ressourcen (Netzwerkkarten, private IP-Adressen usw.) bereit. Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript auf, um Redis auf jedem Knoten physisch zu installieren und einzurichten. Das aufzurufende Skript wird im `machineSettings`-Parameter der `commandToExecute`-Eigenschaft an diese Vorlage übergeben. Alle bis auf einen Redis-Clusterknoten können parallel bereitgestellt und per Skript eingerichtet werden. Ein Knoten muss bis zum Ende zurückgehalten werden, da das Setup des Redis-Clusters nur auf einem Knoten ausgeführt werden kann, und zwar nachdem alle Knoten den Redis-Server ausführen. Deshalb wird das auszuführende Skript an diese Vorlage übergeben. Der letzte Knoten muss mit einem etwas anderen Skript ausgeführt werden, mit dem nicht nur der Redis-Server installiert, sondern auch der Redis-Cluster eingerichtet wird.
 
 Sehen wir uns nun die *Verwendung* der letzten Vorlage, "node-resources.json", genauer an, da diese aus Sicht der Vorlagenentwicklung am interessantesten ist. Ein wichtiges hervorzuhebendes Konzept ist die Möglichkeit, mehrere Kopien eines einzelnen Ressourcentyps mit einer einzigen Vorlagendatei bereitzustellen und für jede Instanz eindeutige Werte für die erforderlichen Einstellungen festzulegen. Dieses Konzept ist als **Ressourcenschleife** bekannt.
 
@@ -666,4 +669,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

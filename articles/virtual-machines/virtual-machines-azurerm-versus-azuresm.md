@@ -1,27 +1,30 @@
 <properties
-   pageTitle="Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager"
-   description="Konzeptuelle Übersicht über die Rechen-, Netzwerk- und Speicherressourcenanbieter CRP, NRP, SRP)"
+   pageTitle="Computing-, Netzwerk- und Speicheranbieter | Microsoft Azure"
+   description="Konzeptuelle Übersicht über die Computing-, Netzwerk- und Speicherressourcenanbieter (CRP, NRP und SRP) im Azure-Ressourcen-Manager"
    services="virtual-machines"
-   documentationCenter="dev-center-name"
+   documentationCenter=""
    authors="mahthi"
    manager="timlt"
    editor=""
-	tags="azure-resource-manager,azure-service-management"/>
+   tags="azure-resource-manager,azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
    ms.devlang="na"
    ms.topic="article"
-   ms.tgt_pltfrm="na"
+   ms.tgt_pltfrm="vm-multiple"
    ms.workload="infrastructure-services"
    ms.date="04/29/2015"
    ms.author="mahthi"/>
 
-# Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager
+# Azure Computing-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager
 
 Wenn der Azure-Ressourcen-Manager um Rechen-, Netzwerk- und Speicherkapazitäten erweitert wird, stellt dies eine erhebliche Vereinfachung der Bereitstellung und Verwaltung komplexer Anwendungen dar, die in IaaS ausgeführt werden. Für viele Anwendungen ist eine Kombination von Ressourcen wie virtuellen Netzwerken, Speicherkonten, virtuellen Computern und Netzwerkschnittstellen erforderlich. Mit dem Azure-Ressourcen-Manager können Sie eine JSON-Vorlage erstellen, um alle Ressourcen gemeinsam als eine einzige Anwendung bereitzustellen und zu verwalten.
 
-## Vorteile der Integration von Rechen-, Netzwerk- und Speicherkapazitäten unter dem Azure-Ressourcen-Manager
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+
+
+## Vorteile der Integration von Computing-, Netzwerk- und Speicherkapazitäten unter dem Azure-Ressourcen-Manager
 
 Mit dem Azure-Ressourcen-Manager können Sie vordefinierte Anwendungsvorlagen unkompliziert nutzen oder selbst Anwendungsvorlagen erstellen, um Rechen-, Netzwerk- und Speicherressourcen in Azure bereitzustellen und zu verwalten. In diesem Abschnitt werden die Vorteile einer Bereitstellung von Ressourcen mithilfe der Azure-Ressourcen-Manager erläutert.
 
@@ -33,7 +36,7 @@ Mit dem Azure-Ressourcen-Manager können Sie vordefinierte Anwendungsvorlagen un
 -	Vereinfachter Upgrade-/Updateverlauf durch Ändern und erneutes Bereitstellen der Originalvorlage
 
 
-## Verbesserungen der Rechen-, Netzwerk- und Speicher-APIs unter dem Azure-Ressourcen-Manager
+## Verbesserungen der Computing-, Netzwerk- und Speicher-APIs unter dem Azure-Ressourcen-Manager
 
 Zusätzlich zu den oben genannten Vorteilen sind einige bedeutende Leistungsverbesserungen in den veröffentlichten APIs verfügbar.
 
@@ -113,4 +116,4 @@ Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager
 
 Einen umfassenden Satz von Startervorlagen finden Sie unter [Schnellstartvorlagen für den Azure-Ressourcen-Manager](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

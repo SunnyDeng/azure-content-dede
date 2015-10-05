@@ -17,7 +17,7 @@
    ms.date="07/09/2015"
    ms.author="jgao"/>
 
-# Kennenlernen von Hadoop mithilfe der HDInsight-Galerie für erste Schritte
+# Kennenlernen von Hadoop mithilfe der Azure HDInsight-Galerie für erste Schritte
 
 Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Möglichkeit, Hadoop durch das Ausführen von Beispielanwendungen in HDInsight kennenzulernen. Einige Beispiele verfügen über Beispieldaten. Für die restlichen Beispiele können Sie eigene Daten bereitstellen. Derzeit sind die folgenden sechs Beispiele verfügbar (weitere folgen):
 
@@ -36,7 +36,7 @@ Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Mög
 
 ![Lösungen für HDInsight Hadoop, Storm und HBase-Galerie für erste Schritte enthalten Beispieldaten.][hdinsight.sample.gallery]
 
-Der folgende Videoclip zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgeführt wird:
+Das folgende Video zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgeführt wird:
 
 <center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
@@ -45,11 +45,11 @@ Auf das Dashboard kann über „http://<YourHDInsightClusterName>.azurehdinsight
 **So führen Sie ein Beispiel aus der Galerie für erste Schritte aus**
 
 1. Melden Sie sich beim [Azure-Vorschauportal][azure.portal] an.
-2. Klicken Sie im linken Menü auf **Alle durchsuchen**, und klicken Sie auf **HDInsight-Cluster** und dann auf den Clusternamen.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster**, und klicken Sie dann auf Ihren Clusternamen.
 3. Klicken Sie im Hauptmenü auf **Dashboard**.
-4. Geben Sie Benutzername und Kennwort für den HTTP-Benutzer (auch als Clusterbenutzer bezeichnet) ein.
-6.	Klicken Sie oben auf **Erste Schritte mit der Galerie**.
-7.	Klicken Sie auf eines der Beispiele. Jedes Beispiel bietet ausführliche Anweisungen zur Ausführung. Die folgende Abbildung zeigt das Beispiel zur Twitter-Trendanalyse:
+4. Geben Sie den Benutzernamen und das Kennwort für den HTTP-Benutzer (auch als Clusterbenutzer bezeichnet) ein.
+6. Klicken Sie oben auf **Erste Schritte mit der Galerie**.
+7. Klicken Sie auf eines der Beispiele. Jedes Beispiel bietet ausführliche Anweisungen zur Ausführung. Die folgende Abbildung zeigt das Beispiel zur Twitter-Trendanalyse:
 
 	![HDInsight Twitter-Trendanalysebeispiel][hdinsight.twitter.sample]
 
@@ -68,4 +68,4 @@ Andere Möglichkeiten zum Kennenlernen von HDInsight:
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]: https://portal.azure.com
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

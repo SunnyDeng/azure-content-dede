@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Installieren von Update 1.2 über das Azure-Verwaltungsportal"
-   description="Hier wird erläutert, wie Sie das Verwaltungsportal zum Installieren von Update 1.2 der StorSimple 8000-Serie verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/08/2015"
-   ms.author="v-sharos" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie Update 1.2 über das Verwaltungsportal
 
@@ -80,4 +65,4 @@
 
 > [AZURE.NOTE]In bestimmten Fällen werden Meldungen, die anzeigen, dass Updates des Wartungsmodus verfügbar sind, bis zu 24 Stunden nach erfolgreichem Anwenden dieser Updates auf dem Gerät angezeigt.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

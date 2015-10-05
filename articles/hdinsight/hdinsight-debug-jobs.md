@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Debuggen von Hadoop in HDInsight: Fehlermeldungen | Microsoft Azure"
+	pageTitle="Debuggen von Hadoop in HDInsight: Anzeigen von Protokollen und Verstehen von Fehlermeldungen | Microsoft Azure"
 	description="Lernen Sie die Fehlermeldungen kennen, die Sie bei der Administration von HDInsight mit PowerShell erhalten können und Schritte zu deren Behebung."
 	services="hdinsight"
 	tags="azure-portal"
@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/28/2015"
+	ms.date="09/22/2015"
 	ms.author="jgao"/>
 
-# Debuggen von Hadoop in HDInsight: Verstehen von Fehlermeldungen
+# Debuggen von Hadoop in HDInsight: Anzeigen von Protokollen und Verstehen von Fehlermeldungen
 
 Die in diesem Thema beschriebenen Fehlermeldungen sollen den Benutzern von Hadoop in Azure HDInsight dabei helfen, mögliche Fehlerbedingungen zu verstehen, auf die sie möglicherweise stoßen, wenn sie den Dienst mit Azure PowerShell verwalten. Es werden auch Schritte zur Behebung des Problems erörtert.
 
@@ -25,12 +25,40 @@ Einige dieser Fehlermeldungen können auch im Azure-Vorschauportal angezeigt wer
 
 ![HDInsight-Fehlermeldung im Vorschauportal][image-hdi-debugging-error-messages-portal]
 
-Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal stoßen kann, sind unter [HDInsight-Fehler](#hdinsight-error-messages) alphabetisch nach Name aufgeführt. Sie sind mit dem entsprechenden Eintrag im Abschnitt mit der [Beschreibung und Lösung der Fehler](#discription-mitigation-errors) verknüpft, der die folgenden Informationen zu dem Fehler enthält:
+In Situationen, in denen der Fehler spezifisch für Azure HDInsight ist, sollten Sie ermitteln, weshalb der Fehler aufgetreten ist. Unter [HDInsight-Fehlercodes](#hdi-error-codes) finden Sie Informationen zu den unterschiedlichen Fehlercodes und ihrer Behebung. In einigen Situationen sollten Sie auch auf die Hadoop-Protokolle selbst zugreifen. Dies ist direkt über das Azure-Vorschauportal möglich.
+
+## Anzeigen von Clusterintegritäts- und Auftragsprotokollen
+
+* **Rufen Sie die Hadoop-Benutzeroberfläche auf**. Klicken Sie im Azure-Vorschauportal auf den Namen eines HDInsight-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**.
+
+	![Clusterdashboard starten](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard.png)
+  
+	Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **Hadoop UI**.
+
+	![Hadoop-Benutzeroberfläche starten](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard-hadoop-ui.png)
+
+* **Rufen Sie die YARN-Benutzeroberfläche auf**. Klicken Sie im Azure-Vorschauportal auf den Namen eines HDInsight-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**. Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **YARN UI**.
+
+	Über die YARN-Benutzeroberfläche haben Sie folgende Möglichkeiten:
+
+	* **Abrufen des Clusterstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie auf **Info**. Der aktuelle Clusterstatus enthält Informationen wie insgesamt zugeordneter Arbeitsspeicher, verwendete Kerne, Status des Clusterressourcen-Managers, Clusterversion usw.
+
+		![Clusterdashboard starten](./media/hdinsight-debug-jobs/hdi-debug-yarn-cluster-state.png)
+
+	* **Abrufen des Knotenstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie auf **Knoten**. Hiermit werden alle Knoten im Cluster, die HTTP-Adresse der einzelnen Knoten, die jeweils zugewiesenen Ressourcen usw. aufgeführt.
+
+	* **Überwachen des Auftragsstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie dann auf **Anwendungen**, um alle Aufträge im Cluster aufzulisten. Wenn Sie nur Aufträge in einem bestimmten Zustand betrachten möchten (z. B. neu, übermittelt, ausgeführt usw.), klicken Sie auf den entsprechenden Link unter **Anwendungen**. Sie können außerdem auf den Auftragsnamen klicken, um weitere Informationen zum Auftrag abzurufen, z. B. Ausgabe, Protokolle usw.
+
+* **Zugriff auf die HBase-Benutzeroberfläche**. Klicken Sie im Azure-Vorschauportal auf den Namen eines HDInsight HBase-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**. Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **HBase UI**.
+
+## <a id="hdi-error-codes"></a>HDInsight-Fehlercodes
+
+Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal stoßen kann, werden unten alphabetisch nach Name aufgeführt. Die Fehler sind wiederum mit einem Eintrag im Abschnitt [Diagnose und Lösung von Fehlern](#discription-mitigation-errors) verknüpft, der folgende Informationen bereitstellt:
 
 - **Beschreibung**: Fehlermeldung, die dem Benutzer angezeigt wird.
 - **Lösung**: Schritte, die zur Problembehebung unternommen werden können.
 
-###HDInsight-Fehlercodes
+
 
 - [AtleastOneSqlMetastoreMustBeProvided](#AtleastOneSqlMetastoreMustBeProvided)
 - [AzureRegionNotSupported](#AzureRegionNotSupported)
@@ -242,11 +270,11 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal sto�
 
 ### <a id="UnableToResolveDNS"></a>UnableToResolveDNS
 - **Beschreibung**: DNS *IhreDnsUrl* konnte nicht aufgelöst werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt sie muss mit „**http://*“ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
 
 ### <a id="UnableToVerifyLocationOfResource"></a>UnableToVerifyLocationOfResource
 - **Beschreibung**: Der Speicherort der Ressource *IhreDnsUrl* konnte nicht überprüft werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt sie muss mit „**http://*“ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
 
 ### <a id="VersionCapabilityNotAvailable"></a>VersionCapabilityNotAvailable
 - **Beschreibung**: Die Versionsfunktion ist nicht für Version *AngegebeneVersion* und Abonnement-ID *IhreAbonnementID* verfügbar.  
@@ -272,4 +300,4 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal sto�
 
 [image-hdi-debugging-error-messages-portal]: ./media/hdinsight-debug-jobs/hdi-debug-errormessages-portal.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

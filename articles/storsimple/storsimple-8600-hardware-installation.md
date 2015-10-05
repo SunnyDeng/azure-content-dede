@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/16/2015"
+   ms.date="09/23/2015"
    ms.author="alkohli" />
 
 # Auspacken, Einbauen und Verkabeln des StorSimple 8600-Geräts
@@ -204,7 +204,7 @@ Das Gerät verfügt sowohl über ein primäres als auch ein EBOD-Gehäuse. Daher
 
 Wenn Sie dieses Gerät zum ersten Mal einrichten, führen Sie zuerst die Schritte für die SAS-Verkabelung und danach die Schritte für die Stromverkabelung aus.
 
-[AZURE.INCLUDE [storsimple-cable-8600-for-power](../../includes/storsimple-sas-cable-8600.md)]
+[AZURE.INCLUDE [storsimple-cable-8600-for-SAS](../../includes/storsimple-sas-cable-8600.md)]
 
 [AZURE.INCLUDE [storsimple-cable-8600-for-power](../../includes/storsimple-cable-8600-for-power.md)]
 
@@ -289,4 +289,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

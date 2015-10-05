@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Konfigurieren eines benutzerdefinierten Domänennamens in Cloud Services"
+	pageTitle="Konfigurieren eines benutzerdefinierten Domänennamens in Cloud Services | Microsoft Azure"
 	description="Hier erfahren Sie, wie Sie Ihre Azure-Anwendung oder -Daten durch das Konfigurieren von DNS-Einstellungen auf einer benutzerdefinierten Domäne verfügbar machen."
 	services="cloud-services"
 	documentationCenter=".net"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/29/2015"
+	ms.date="09/22/2015"
 	ms.author="adegeo"/>
 
 # Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst
@@ -23,7 +23,7 @@
 - [Azure Preview Portal](cloud-services-custom-domain-name-portal.md)
 
 
-Wenn Sie einen Clouddienst erstellen, weist Azure diesen einer Unterdomäne von cloudapp.net zu. Wenn der Clouddienst beispielsweise den Namen "contoso" hat, können Ihre Benutzer auf die Anwendung über eine URL wie "http://&lt;*contoso*>.cloudapp.net" zugreifen. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
+Wenn Sie einen Clouddienst erstellen, weist Azure diesen einer Unterdomäne von cloudapp.net zu. Wenn der Clouddienst beispielsweise den Namen „contoso“ hat, können Ihre Benutzer auf die Anwendung über eine URL wie etwa http://contoso.cloudapp.net zugreifen. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
 
 Sie können Ihre Anwendung jedoch auch unter Ihrem eigenen Domänennamen zur Verfügung stellen, beispielsweise contoso.com. In diesem Artikel erfahren Sie, wie Sie einen benutzerdefinierten Domänennamen für Clouddienst-Webrollen reservieren oder konfigurieren.
 
@@ -131,7 +131,7 @@ Sie müssen zunächst die virtuelle IP-Adresse Ihres Clouddiensts ermitteln, um 
 
 4. Geben Sie die IP-Adresse Ihres Clouddiensts in das angegebene Feld ein. So wird der im A-Datensatz verwendete Domäneneintrag der IP-Adresse Ihrer Clouddienstbereitstellung zugewiesen.
 
-Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **contoso.com** an **137.135.70.239** weiter. Das ist die IP-Adresse Ihrer bereitgestellten Anwendung:
+Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.contoso.com** an **137.135.70.239** weiter. Das ist die IP-Adresse Ihrer bereitgestellten Anwendung:
 
 | Hostname/Unterdomäne | IP-Adresse |
 | ------------------- | -------------- |
@@ -145,8 +145,14 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
 
 ## Nächste Schritte
 
--   [Verwalten von Cloud Services](cloud-services-how-to-manage.md)
--   [Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne](http://msdn.microsoft.com/library/windowsazure/gg680307.aspx)
+* [Verwalten von Cloud Services](cloud-services-how-to-manage.md)
+* [Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne](cdn-map-content-to-custom-domain.md)
+* [Allgemeine Konfiguration Ihres Clouddiensts](cloud-services-how-to-configure.md)
+* Weitere Informationen zum [Bereitstellen eines Clouddiensts](cloud-services-how-to-create-deploy.md)
+* Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
+
+
+
 
 [Expose Your Application on a Custom Domain]: #access-app
 [Add a CNAME Record for Your Custom Domain]: #add-cname
@@ -159,4 +165,4 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
 [csurl]: ./media/cloud-services-custom-domain-name/csurl.png
  
 
-<!-------HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

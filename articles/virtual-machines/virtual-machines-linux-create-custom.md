@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure"
-	description="Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure"
+	pageTitle="Erstellen eines virtuellen Linux-Computers | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie einen benutzerdefinierten virtuellen Computer mit dem Linux-Betriebssystem unter Verwendung des klassischen Bereitstellungsmodells erstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -19,6 +19,8 @@
 
 # Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-linux-tutorial.md) erstellen.
+
 Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle und des klassischen Bereitstellungsmodells. Wir verwenden ein Linux-Image von den verfügbaren **IMAGES**in Azure. Die Azure-Befehlszeilenschnittstelle enthält u. a. folgende Konfigurationsoptionen:
 
 - Verbinden des virtuellen Computers mit einem virtuellen Netzwerk
@@ -29,13 +31,13 @@ Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* vi
 > [AZURE.IMPORTANT]Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, damit Sie sich direkt über den Hostnamen oder über eine lokal eingerichtete Verbindung mit ihm verbinden können, stellen Sie sicher, dass Sie das virtuelle Netzwerk schon dann angeben, wenn Sie den virtuellen Computer erstellen. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Ausführliche Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über Azure Virtual Network](http://go.microsoft.com/fwlink/p/?LinkID=294063).
 
 <p/>
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
+
 
 - [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
 
 
 ## Erstellen eines virtuellen Linux-Computers mithilfe des klassischen Bereitstellungsmodells
 
-[AZURE.INCLUDE [Virtueller-Computer-erstellen-LinuxVM](../../includes/virtual-machines-create-linuxvm.md)]
+[AZURE.INCLUDE [virtual-machines-create-LinuxVM](../../includes/virtual-machines-create-linuxvm.md)]
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/10/2015"
+   ms.date="09/04/2015"
    ms.author="bwren" />
 
 # Grafische Erstellung in Azure Automation
@@ -61,6 +61,17 @@ Der Zeichenbereich ist der Bereich, in dem Sie Ihr Runbook entwerfen. Sie fügen
 Das Steuerelement "Test" wird beim ersten Start des grafischen Editors nicht angezeigt. Es wird geöffnet, wenn Sie ein [grafisches Runbook interaktiv testen](#graphical-runbook-procedures).
 
 ## Grafische Runbooks – Verfahren 
+
+### Exportieren und Importieren eines grafischen Runbooks
+
+Sie können nur die veröffentlichte Version eines grafisch Runbooks exportieren. Wenn das Runbook noch nicht veröffentlicht wurde, ist die Schaltfläche **Veröffentlichtes exportieren** deaktiviert. Beim Klicken auf die Schaltfläche **Veröffentlichtes exportieren** wird das Runbook auf Ihren lokalen Computer heruntergeladen. Der Name der Datei entspricht dem Namen des Runbooks mit der Erweiterung *graphrunbook*.
+
+![Veröffentlichte exportieren](media/automation-graphical-authoring-intro/runbook-export.png)
+
+Sie können eine grafische Runbookdatei importieren, indem Sie die Option **Importieren** auswählen, wenn Sie ein Runbook hinzufügen. Wenn Sie die zu importierende Datei auswählen, können Sie denselben **Name**n beibehalten oder einen neuen vergeben.
+
+![Runbook importieren](media/automation-graphical-authoring-intro/runbook-import.png)
+
 
 ### Testen eines grafischen Runbooks
 
@@ -280,4 +291,4 @@ Daten, die von einer Aktivität ohne ausgehende Verknüpfung erstellt werden, we
 - [Automation-Objekte](http://msdn.microsoft.com/library/azure/dn939988.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

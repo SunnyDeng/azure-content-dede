@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie auf einfache Weise auf Ubuntu-VMs mit Azure PowerShell oder der Azure-CLI und einer Ressourcen-Manager-Vorlage einen neuen DataStax Enterprise-Cluster bereitstellen"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="karthmut"
+	authors="scoriani"
 	manager="timlt"
 	editor="tysonn"/> <!-- In pageTitle, to follow corporate style (sentence-case caps), s/b lowercase "template", correct? This matches what is used later in article too. Also, precede first mention of "Azure" with "Microsoft" --> <tags
 	ms.service="virtual-machines"
@@ -12,7 +12,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="04/29/2015"
-	ms.author="karthmut"/>
+	ms.author="scoriani"/>
 
 # DataStax Enterprise auf Ubuntu mit einer Ressourcen-Manager-Vorlage
 
@@ -490,4 +490,4 @@ Dieser Ansatz empfiehlt folgende Schritte:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

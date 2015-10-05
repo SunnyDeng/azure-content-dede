@@ -1,23 +1,25 @@
 <properties
    pageTitle="Erstellen eines FQDN für einen virtuellen Computer im Azure-Portal | Microsoft Azure"
-	description="Enthält Informationen zum Erstellen eines vollqualifizierten Domänennamens (FQDN) für einen Ressourcen-Manager-basierten virtuellen Computer im Azure-Vorschauportal."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="dsk-2015"
-	manager="timlt"
-	editor="tysonn"
-	tags="azure-resource-management"/>
+   description="Enthält Informationen zum Erstellen eines vollqualifizierten Domänennamens (FQDN) für einen Ressourcen-Manager-basierten virtuellen Computer im Azure-Vorschauportal."
+   services="virtual-machines"
+   documentationCenter=""
+   authors="dsk-2015"
+   manager="timlt"
+   editor="tysonn"
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/21/2015"
-	ms.author="dkshir"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/21/2015"
+   ms.author="dkshir"/>
 
 # Erstellen eines vollständig qualifizierten Domänennamens im Azure-Vorschauportal
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines FQDN mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 Beim Erstellen eines virtuellen Computers im [Azure-Vorschauportal](https://portal.azure.com) mit dem Bereitstellungsmodell **Ressourcen-Manager** erstellt das Portal eine öffentliche IP als Ressource für den virtuellen Computer. Mit dieser IP-Adresse können Sie per Remotezugriff auf den virtuellen Computer zugreifen. Das Portal erstellt standardmäßig aber keinen [vollqualifizierten Domänennamen](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) (FQDN). Da es einfacher ist, sich anstelle einer IP-Adresse einen FQDN zu merken und zu verwenden, wird in diesem Artikel beschrieben, wie Sie ihn dem virtuellen Computer hinzufügen.
 
@@ -51,4 +53,4 @@ Im Artikel wird vorausgesetzt, dass Sie sich an Ihrem Abonnement im Portal angem
 
     Sie können jetzt eine Remoteverbindung mit dem virtuellen Computer herstellen, indem Sie diesen DNS-Namen verwenden. Verwenden Sie beispielsweise `SSH adminuser@testdnslabel.eastus.cloudapp.azure.com` beim Herstellen einer Verbindung mit einem virtuellen Linux-Computer, der über den vollqualifizierten Domänennamen `testdnslabel.eastus.cloudapp.azure.com` und den Benutzernamen `adminuser` verfügt.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

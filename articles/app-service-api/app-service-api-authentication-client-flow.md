@@ -97,6 +97,8 @@ Sie müssen diese Seite später ändern, indem Sie einen Abschnitt für die Anze
 	* Verwenden Sie die bereits erstellte AAD-Anwendung, anstatt eine neue zu erstellen.
  
 	* Behalten Sie denselben **App-ID-URI** bei, der bereits für die AAD-Anwendung vorhanden ist. (Ändern Sie nicht ihn in das Format, das in der Infodatei angegeben ist.)
+	
+	* Ändern Sie weitere AAD-Einstellungen gemäß Anweisung. Legen Sie insbesondere die Anmelde- und Antwort-URLs auf die Basis-URL für die Beispiel-App fest.
 
 Sie behalten den gleichen App-ID-URI, den Sie für die API-App erstellt haben, damit Sie das gleiche AAD-Zugriffstoken sowohl für die Web-App als auch die API-App verwenden können. Wenn Sie den App-ID-URI in das von der Infodatei vorgeschriebene Format geändert haben, wäre nur der Zugriff auf die Web-App, nicht aber die API-App möglich. Sie wären nicht in der Lage, das AAD-Token an das API-App-Gateway zu übergeben, um ein Zumo-Token zu erhalten, da das Gateway ein Token für einen App-ID-URI erwartet, der aus der Gateway-URL plus "/login/aad" besteht.
 
@@ -109,8 +111,6 @@ In diesem Abschnitt fügen Sie automatisch generierten Code für eine typisierte
 9.	Wählen Sie im Dialogfeld **Microsoft Azure-API-App-Client hinzufügen** die API-Anwendung, die Sie mit AAD gesichert haben.
 
 	Sobald der Code generiert wurde, wird im **Projektmappen-Explorer** ein neuer Ordner mit dem Namen der API-App angezeigt. Dieser Ordner enthält den Code zur Implementierung der Clientklassen und Datenmodelle.
-
-	![](./media/app-service-api-authentication-client-flow/aboutpagestart.png)
 
 10. Korrigieren Sie mehrdeutige Verweise, die auf den generierte Code in *ContactsList/ContactsExtensions.cs* zurückzuführen sind: Ändern Sie die beiden Instanzen von `Task.Factory.StartNew` zu `System.Threading.Tasks.Task.Factory.StartNew`.
  
@@ -227,4 +227,4 @@ Sie haben eine Clientflussauthentifizierung für App Service API-Apps kennengele
 [Azure-Portal]: https://manage.windowsazure.com/
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

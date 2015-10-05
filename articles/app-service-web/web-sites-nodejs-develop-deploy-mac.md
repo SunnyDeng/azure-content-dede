@@ -18,6 +18,14 @@
 
 # Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service
 
+> [AZURE.SELECTOR]
+- [.Net](web-sites-dotnet-get-started.md)
+- [Node.js](web-sites-nodejs-develop-deploy-mac.md)
+- [Java](web-sites-java-get-started.md)
+- [PHP - Git](web-sites-php-mysql-deploy-use-git.md)
+- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
+- [Python](web-sites-python-ptvs-django-mysql.md)
+
 In diesem Lernprogramm erfahren Sie, wie Sie eine [Node][nodejs.org]-Anwendung erstellen und mit [Git] im [Web-Apps-Feature von Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Node ausgeführt werden kann.
 
 Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
@@ -28,7 +36,8 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröffentlichung zu aktivieren.
 
-> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
+> [AZURE.NOTE]
+> Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-de/pricing/free-trial/?WT.mc_id=A261C142F).
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
@@ -166,10 +175,11 @@ Wenn nach der Bereitstellung in Azure Probleme mit der Anwendung auftreten, find
 
 * [Azure PowerShell](../install-configure-powershell.md)
 * [Azure-Befehlszeilenschnittstelle](../xplat-cli.md)
+* [Node.js Developer Center](/develop/nodejs/) (in englischer Sprache)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
+* Hinweise zu den Änderungen von App Service gegenüber Websites finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
 
 [nodejs.org]: http://nodejs.org
@@ -195,4 +205,4 @@ Wenn nach der Bereitstellung in Azure Probleme mit der Anwendung auftreten, find
 
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

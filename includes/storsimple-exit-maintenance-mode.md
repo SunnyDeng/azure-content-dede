@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So beenden Sie den Wartungsmodus
 
@@ -9,4 +10,4 @@
 
     Beide Controller werden neu gestartet. Wenn der Neustart abgeschlossen ist, wird eine andere Meldung mit dem Hinweis angezeigt, dass das Gerät in den Normalmodus versetzt wird.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

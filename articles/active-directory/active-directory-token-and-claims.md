@@ -1,5 +1,5 @@
  <properties
-   pageTitle="Unterstützte Token- und Anspruchstypen"
+   pageTitle="Unterstützte Token- und Anspruchstypen | Microsoft Azure"
    description="Anleitung zum Verstehen und Auswerten der Ansprüche in den SAML 2.0- und JWT-Token (JSON Web Tokens), die Azure Active Directory (Azure AD) ausstellt."
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="08/12/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin"/>
 
 # Unterstützte Token- und Anspruchstypen
@@ -201,7 +201,7 @@ Bei einem JWT-Token wird der Umfang des Tokens in einem "scp"-Anspruch angegeben
 
     "scp": "user_impersonation"
 
-### Subject (Antragsteller)
+### Betreff
 
 Der Antragsteller des Tokens ist der Prinzipal, für den das Token Informationen zusichert, z. B. der Benutzer einer Anwendung. Dieser Wert ist unveränderlich und kann nicht neu zugewiesen oder wiederverwendet werden. Daher kann er für die sichere Durchführung von Autorisierungsüberprüfungen verwendet werden, z. B. wenn das Token verwendet wird, um auf eine Ressource zuzugreifen. Da der Antragsteller immer in den Token vorhanden ist, die Azure AD ausstellt, wird die Nutzung dieses Werts in einem allgemeinen Autorisierungssystem empfohlen.
 
@@ -412,4 +412,4 @@ Dies ist ein Beispiel eines typischen JWT-Tokens (JSON webtoken), das bei einem 
 
 [Azure Active Directory-Authentifizierungsprotokolle](https://msdn.microsoft.com/library/azure/dn151124.aspx)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory-Codebeispiele"
+   pageTitle="Azure Active Directory-Codebeispiele | Microsoft Azure"
    description="Ein Index der Azure Active Directory-Codebeispiele, organisiert nach Szenario."
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/30/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin"/>
 
 # Azure Active Directory-Codebeispiele
@@ -151,4 +151,4 @@ PHP | [PHP-Beispielanwendung für die Graph-API von Azure AD](http://code.msdn.m
 
 [Entwickeln moderner Anwendungen mit OAuth und den Active Directory-Verbunddiensten](http://msdn.microsoft.com/library/dn633593.aspx)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Einführung in Application Gateway | Microsoft Azure"
-	description="Diese Seite bietet eine Übersicht über den Application Gateway-Dienst für Lastenausgleich der Ebene 7, einschließlich Gatewaygrößen, HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung."
-	documentationCenter="na"
-	services="application-gateway"
-	authors="joaoma"
-	manager="jdial"
-	editor="tysonn"/>
+   description="Diese Seite bietet eine Übersicht über den Application Gateway-Dienst für Lastenausgleich der Ebene 7, einschließlich Gatewaygrößen, HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung."
+   documentationCenter="na"
+   services="application-gateway"
+   authors="joaoma"
+   manager="jdial"
+   editor="tysonn"/>
 <tags 
    ms.service="application-gateway"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/23/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="08/23/2015"
+   ms.author="joaoma"/>
 
 # Was ist Application Gateway?
 
@@ -36,7 +36,10 @@ Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der
 
 Das Anwendungsgateway leitet den HTTP-Datenverkehr auf Grundlage der Konfiguration weiter: virtueller Computer, Clouddienst, Web-App oder eine externe IP-Adresse.
 
-Das folgende Diagramm veranschaulicht den Datenfluss für Application Gateway: ![Application Gateway2](./media/application-gateway-introduction/appgateway2.png)
+Das folgende Diagramm veranschaulicht den Datenfluss für ein Application Gateway:
+
+ 
+![Application Gateway2](./media/application-gateway-introduction/appgateway2.png)
 
 Lastenausgleich der HTTP-Ebene 7 eignet sich für:
 
@@ -57,8 +60,8 @@ Sie können das Anwendungsgateway mithilfe von REST-APIs und PowerShell-Cmdlets 
 
 ## Nächste Schritte
 
-Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Erstellen eines Anwendungsgateways](application-gateway-create-gateway.md).
+Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Erstellen eines Application Gateways](application-gateway-create-gateway.md).
 
 Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

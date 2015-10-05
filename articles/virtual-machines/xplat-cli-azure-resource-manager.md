@@ -1,5 +1,5 @@
-﻿<properties
-	pageTitle="Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung | Microsoft Azure"
+<properties
+	pageTitle="Befehlszeilenschnittstelle für Mac, Linux und Windows | Microsoft Azure"
 	description="Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit dem Azure-Ressourcen-Manager."
 	editor="tysonn"
 	manager="timlt"
@@ -7,23 +7,16 @@
 	authors="dlepow"
 	services="virtual-machines"/>
 
-
-<tags 
-ms.service="virtual-machines" 
-ms.workload="infrastructure-services" 
-ms.tgt_pltfrm="command-line-interface" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="06/09/2015" 
-ms.author="danlep"/>
-
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services"" ms.tgt_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="06/09/2015" ms.author="danlep"/>
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](../powershell-azure-resource-manager.md)
-- [Azure CLI](xplat-cli-azure-resource-manager.md)
 
+<br>
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel ist das Verwalten von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell beschrieben.
 
 In diesem Artikel erfahren Sie, wie Sie Ihre Azure-Ressourcen und Ihre virtuellen Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows im Azure-Ressourcen-Manager-Modus erstellen, verwalten und löschen können.
 
@@ -63,7 +56,7 @@ Dadurch erhalten Sie eine regionsspezifische Standortliste (beispielsweise für 
 
 ## Erstellen einer Ressourcengruppe
 
-Bei einer Ressourcengruppe handelt es sich um eine logische Gruppe von Netzwerkressourcen, Speicherressourcen und anderen Ressourcen. Für fast alle Befehle im Azure-Ressourcen-Manager-Modus ist eine Ressourcengruppe erforderlich. Der folgende Befehl erstellt beispielsweise eine Ressourcengruppe namens _Testrg_.
+Bei einer Ressourcengruppe handelt es sich um eine logische Gruppe von Netzwerkressourcen, Speicherressourcen und anderen Ressourcen. Für fast alle Befehle im Azure-Ressourcen-Manager-Modus ist eine Ressourcengruppe erforderlich. Der folgende Befehl erstellt beispielsweise eine Ressourcengruppe namens _testrg_.
 
 	azure group create -n "testrg" -l "West US"
 
@@ -140,7 +133,7 @@ Speichern Sie den URN-Namen des Image, das Sie auf Ihrem virtuellen Computer lad
 
 #### Erstellen eines virtuellen Computers
 
-Nun können Sie den Befehl **vm create** mit allen erforderlichen Informationen ausführen und einen virtuellen Computer erstellen. An dieser Stelle ist die Übergabe der öffentlichen IP-Adresse optional, da die NIC bereits über diese Information verfügt. Der Befehl sieht in etwa wie in folgendem Beispiel aus. _testvm_ ist hierbei der Name des virtuellen Computers, der in der Ressourcengruppe _Testrg_ erstellt wurde.
+Nun können Sie den Befehl **vm create** mit allen erforderlichen Informationen ausführen und einen virtuellen Computer erstellen. An dieser Stelle ist die Übergabe der öffentlichen IP-Adresse optional, da die NIC bereits über diese Information verfügt. Der Befehl sieht in etwa wie in folgendem Beispiel aus. _testvm_ ist hierbei der Name des virtuellen Computers, der in der Ressourcengruppe _testrg_ erstellt wurde.
 
 	azure-cli@0.8.0:/# azure vm create "testrg" "testvm" "westus" "Linux" -Q "CoreOS:CoreOS:Alpha:660.0.0" -u "azureuser" -p "Pass1234!" -N "testnic"
 	info:    Executing command vm create
@@ -159,7 +152,7 @@ Führen Sie den folgenden Befehl aus, um den virtuellen Computer zu starten:
 
 	azure vm start "testrg" "testvm"
 
-Führen Sie anschließend den Befehl „\*\*ssh username@ipaddress**“ aus, um eine SSH-Verbindung herzustellen. Mit dem folgenden Befehl können Sie schnell die IP-Adresse der öffentlichen IP-Ressource anzeigen.
+Führen Sie anschließend den Befehl "**ssh username@ipaddress**" aus, um eine SSH-Verbindung herzustellen. Mit dem folgenden Befehl können Sie schnell die IP-Adresse der öffentlichen IP-Ressource anzeigen.
 
 	azure network public-ip show "testrg" "testip"
 
@@ -249,7 +242,7 @@ Die Azure-Befehlszeilenschnittstelle erstellt einen virtuellen Computer mit Stan
 		  }
 	    }
 
-5. Verwenden Sie nach dem Speichern der Datei params.json den folgenden Befehl, um eine neue Ressourcengruppe basierend auf der Vorlage zu erstellen. Der Parameter `-e` gibt die im vorherigen Schritt erstellte Datei „params.json“ an. Ersetzen Sie **testRG** durch den gewünschten Gruppennamen und **TestDeploy** durch den Namen Ihrer Bereitstellung. Der Standort muss dem Standort aus der Parametervorlagendatei „params.json“ entsprechen.
+5. Verwenden Sie nach dem Speichern der Datei params.json den folgenden Befehl, um eine neue Ressourcengruppe basierend auf der Vorlage zu erstellen. Der Parameter `-e` gibt die im vorherigen Schritt erstellte Datei "params.json" an. Ersetzen Sie **testRG** durch den gewünschten Gruppennamen und **TestDeploy** durch den Namen Ihrer Bereitstellung. Der Standort muss dem Standort aus der Parametervorlagendatei „params.json“ entsprechen.
 
 		azure group create "testRG" "West US" -f CoreOS.CoreOSStable.0.2.40-preview.json -d "testDeploy" -e params.json
 
@@ -294,7 +287,7 @@ Die Azure-Befehlszeilenschnittstelle erstellt einen virtuellen Computer mit Stan
 
 	Dieser Befehl gibt Informationen zu den Ressourcen in der Gruppe zurück. Sind mehreren Gruppen vorhanden, können Sie mit dem Befehl `azure group list` eine Liste mit Gruppennamen abrufen. Verwenden Sie dann `azure group show`, um die Details einer bestimmten Gruppe anzuzeigen.
 
-7. Anstelle der Vorlagen aus der Vorlagenbibliothek können Sie auch aktuelle Vorlagen über GitHub beziehen. Suchen Sie auf [GitHub.com](http://www.github.com) nach „AzureRmTemplates“. Wählen Sie das Repository „AzureRmTemplates“ aus, und suchen Sie nach Vorlagen, die für Sie interessant sind (beispielsweise _101-simple-vm-from-image_). Wenn Sie die Vorlage anklicken, sehen Sie, dass sie unter anderem die Datei „azuredeploy.json“ enthält. Das ist die Vorlage, die Sie in Ihrem Befehl mit einer Option vom Typ **--template-url** verwenden möchten. Öffnen Sie die Vorlage im _Rohmodus_, und kopieren Sie die URL aus der Adressleiste des Browsers. Mit dieser URL können Sie direkt eine Bereitstellung erstellen, anstatt eine Vorlage aus einem Katalog herunterzuladen. Verwenden Sie hierzu einen Befehl wie im folgenden Beispiel.
+7. Anstelle der Vorlagen aus der Vorlagenbibliothek können Sie auch aktuelle Vorlagen über GitHub beziehen. Suchen Sie auf [GitHub.com](http://www.github.com) nach "AzureRmTemplates". Wählen Sie das Repository „AzureRmTemplates“ aus, und suchen Sie nach Vorlagen, die für Sie interessant sind (beispielsweise _101-simple-vm-from-image_). Wenn Sie die Vorlage anklicken, sehen Sie, dass sie unter anderem die Datei „azuredeploy.json“ enthält. Das ist die Vorlage, die Sie in Ihrem Befehl mit einer Option vom Typ **--template-url** verwenden möchten. Öffnen Sie die Vorlage im _Rohmodus_, und kopieren Sie die URL aus der Adressleiste des Browsers. Mit dieser URL können Sie direkt eine Bereitstellung erstellen, anstatt eine Vorlage aus einem Katalog herunterzuladen. Verwenden Sie hierzu einen Befehl wie im folgenden Beispiel.
 
 		azure group deployment create "testDeploy" -g "testResourceGroup" --template-uri https://raw/githubusercontent.com/azurermtemplates/azurermtemplates/master/101-simple-vm-from-image/azuredeploy.json
 
@@ -348,4 +341,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [clisetup]: ../xplat-cli.md
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

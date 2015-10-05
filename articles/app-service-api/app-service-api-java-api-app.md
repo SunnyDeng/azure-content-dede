@@ -18,6 +18,12 @@
 
 # Erstellen und Bereitstellen einer Java-API-App in Azure App Service
 
+> [AZURE.SELECTOR]
+- [.NET - Visual Studio 2015](app-service-dotnet-create-api-app.md)
+- [.NET - Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
+- [Node.js](app-service-api-nodejs-api-app.md)
+- [Java](app-service-api-java-api-app.md)
+
 In diesem Lernprogramm erfahren Sie, wie Sie eine Java-Anwendung erstellen und mit [Git](http://git-scm.com) als Azure App Service-API-App bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Java ausgeführt werden kann. Dieses Lernprogramm basiert zudem auf [Gradle](https://gradle.org), um die Build-Automatisierung und die Paketabhängigkeitsauflösung für die Java-Anwendung zu aktivieren. [RESTEasy](http://resteasy.jboss.org/) wird schließlich zum Erstellen des RESTful-Dienstes verwendet, womit die [JaxRS](https://jax-rs-spec.java.net/)-Spezifikation vollständig implementiert wird.
 
 Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
@@ -270,4 +276,4 @@ Sie können diese Beispiel-API-App unter [TryApp Service](http://tryappservice.a
 [api-definition-blade]: ./media/app-service-api-java-api-app/apidefblade.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

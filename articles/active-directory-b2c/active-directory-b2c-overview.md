@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Registrieren und Anmelden von Kunden in den Anwendungen
@@ -62,4 +62,4 @@ Unter den folgenden Links finden Sie ausführliche Informationen zum Dienst:
 - [Häufig gestellte Fragen zu Azure Active Directory B2C](active-directory-b2c-faqs.md)
 - [Senden von Supportanfragen zu Azure Active Directory B2C](active-directory-b2c-support.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

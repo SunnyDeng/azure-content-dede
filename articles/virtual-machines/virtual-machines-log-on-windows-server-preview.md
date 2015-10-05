@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Anmelden an einem virtuellen Computer unter Windows Server"
-	description="Erfahren Sie, wie Sie das Azure-Vorschauportal verwenden, um sich an einem virtuellen Computer unter Windows Server anzumelden."
+	pageTitle="Anmelden bei einem virtuellen Windows Server-Computer | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie sich unter Verwendung des Azure-Vorschauportals und des Ressourcen-Manager-Bereitstellungsmodells bei einem virtuellen Windows Server-Computer anmelden."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +17,9 @@
 	ms.date="09/15/2015"
 	ms.author="cynthn"/>
 
-# Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
+# Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Anmeldung bei einem virtuellen Windows-Computer mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können eine Ressource auch mit dem [klassischen Bereitstellungsmodell](virtual-machines-log-on-windows-server.md) erstellen.
 
 Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal zum Starten einer Remotedesktopsitzung. Zuerst stellen Sie eine Verbindung mit dem virtuellen Computer her, und dann melden Sie sich an.
 
@@ -27,7 +29,7 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal z
 
 2.	Klicken Sie im Menü "Hub" auf **Durchsuchen**.
 
-3.	Klicken Sie auf das Blatt "Suchen", scrollen Sie nach unten, und klicken Sie auf **Virtuelle Computer**.
+3.	Klicken Sie auf das Blatt "Suchen", führen Sie einen Bildlauf nach unten durch, und klicken Sie auf **Virtuelle Computer**.
 
 	![Suchen nach virtuellen Computern](./media/virtual-machines-log-on-windows-server-preview/search-blade-preview-portal.png)
 
@@ -45,4 +47,4 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal z
 
 Wenn die Tipps zum Anmelden nicht hilfreich oder nicht das Gesuchte sind, finden Sie entsprechende Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md). Dieser Artikel führt Sie durch die Diagnose und Behebung von häufigen Problemen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

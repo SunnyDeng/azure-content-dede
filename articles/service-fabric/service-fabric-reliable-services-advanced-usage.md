@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erweiterte Verwendung des Reliable Services-Programmiermodells"
-	description="Erfahren Sie mehr über die erweiterte Verwendung des Reliable Service-Programmiermodells von Service Fabric, das mehr Flexibilität für Ihre Dienste bietet."
-	services="Service-Fabric"
-	documentationCenter=".net"
-	authors="jessebenson"
-	manager="timlt"
-	editor="masnider"/>
+   description="Erfahren Sie mehr über die erweiterte Verwendung des Reliable Service-Programmiermodells von Service Fabric, das mehr Flexibilität für Ihre Dienste bietet."
+   services="Service-Fabric"
+   documentationCenter=".net"
+   authors="jessebenson"
+   manager="timlt"
+   editor="masnider"/>
 
 <tags
    ms.service="Service-Fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/26/2015"
-	ms.author="jesseb"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2015"
+   ms.author="jesseb"/>
 
 # Erweiterte Verwendung des Reliable Services-Programmiermodells
 Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandsloser und zustandsbehafteter Dienste (Reliable Services). In diesem Handbuch wird die erweiterte Verwendung des Reliable Services-Programmiermodells erläutert, mit dem Sie mehr Kontrolle und Flexibilität für Ihre Dienste erlangen. Machen Sie sich vor dem Lesen dieses Handbuchs mit dem [Reliable Services-Programmiermodell](service-fabric-reliable-services-introduction.md) vertraut.
@@ -59,7 +59,4 @@ Erweiterte Themen im Zusammenhang mit Service Fabric finden Sie in den folgenden
 
 - [Platzierungseinschränkungen – Übersicht](service-fabric-placement-constraint.md)
 
-- [Sicherer Replikationsdatenverkehr zustandsbehafteter Dienste in Azure Service Fabric](service-fabric-replication-security.md)
- 
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So wechseln Sie in den Wartungsmodus
 
@@ -13,4 +14,4 @@
 
     Beide Controller werden neu gestartet. Wenn der Neustart abgeschlossen ist, wird eine andere Meldung angezeigt, die besagt, dass das Gerät in den Wartungsmodus versetzt wird.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="06/18/2015"
+   ms.date="09/21/2015"
    ms.author="kenhoff"/>
 
 # Azure Active Directory-Überwachungsberichtsereignisse
@@ -108,4 +108,4 @@ TelephoneNumber | Die Telefonnummer des Benutzers.
 
 Überwachungsdatensätze sind ein erforderliches Steuerelement in vielen Richtlinien zur Einhaltung von Vorschriften. Kunden, die den Azure Active Directory-Überwachungsbericht zum Erfüllen dieser Vorschriften nutzen, wird empfohlen, der Kopie des exportierten Überwachungsberichts eine Kopie dieses Hilfethemas hinzuzufügen, das die Berichtsdetails erläutert. Wenn der Prüfer die Richtlinien zur Vorschrifteneinhaltung bestimmen möchte, die Azure derzeit erfüllt, leiten Sie ihn zur [Seite "Compliance"](http://azure.microsoft.com/support/trust-center/compliance/) im Microsoft Azure Trust Center.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -1,18 +1,18 @@
-<properties 
-    pageTitle="Was ist ein Clouddienstmodell, und wie kann es in Azure gepackt werden?" 
-    description="Beschreibung des Clouddienstmodells (.csdef, .cscfg) und der Paketdatei (.cspkg) in Azure" 
-    services="cloud-services" 
-    documentationCenter="" 
-    authors="Thraka" 
-    manager="timlt" 
+<properties
+    pageTitle="Was ist ein Clouddienstmodell, und wie kann es in Azure gepackt werden?"
+    description="Beschreibung des Clouddienstmodells (.csdef, .cscfg) und der Paketdatei (.cspkg) in Azure"
+    services="cloud-services"
+    documentationCenter=""
+    authors="Thraka"
+    manager="timlt"
     editor=""/>
-<tags 
-    ms.service="cloud-services" 
-    ms.workload="tbd" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="07/06/2015" 
+<tags
+    ms.service="cloud-services"
+    ms.workload="tbd"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="07/06/2015"
     ms.author="adegeo"/>
 
 # Was ist das Clouddienstmodell, und wie kann es gepackt werden?
@@ -24,7 +24,7 @@ Wenn der Clouddienst in Azure ausgeführt wird, können Sie ihn über die Datei 
 
 * Ich benötige weitere Informationen zu den Dateien [ServiceDefinition.csdef](#csdef) und [ServiceConfig.cscfg](#cscfg).
 * Damit bin ich bereits vertraut, ich benötige [einige Beispiele](#next-steps) zur Konfiguration.
-* Ich möchte die Datei [ServicePackage.cspkg](#cspkg) erstellen. 
+* Ich möchte die Datei [ServicePackage.cspkg](#cspkg) erstellen.
 * Ich verwende Visual Studio und möchte ...
     * [Erstellen eines Azure-Projekts mit Visual Studio][vs_create]
     * [Einen vorhandenen Clouddienst neu konfigurieren][vs_reconfigure]
@@ -253,7 +253,7 @@ Ich erstelle ein Clouddienstpaket und möchte ...
 
 <!--
 * [Configure Sizes for Cloud Services](!!!!!https://msdn.microsoft.com/library/azure/ee814754.aspx)  
-* [Configure Local Storage Resources](!!!!!https://msdn.microsoft.com/library/azure/ee758708.aspx)
+* [Configure Local Storage Resources](!!!!!https://azure.microsoft.com/documentation/articles/cloud-services-configure-local-storage-resources/)
 -->
 
 * [Eine Remotedesktopverbindung für eine Clouddienstinstanz einrichten][remotedesktop]
@@ -269,9 +269,9 @@ Ich verwende Visual Studio und möchte ...
 
 [deploy]: cloud-services-how-to-create-deploy-portal.md
 [remotedesktop]: cloud-services-role-enable-remote-desktop.md
-[vs_remote]: https://msdn.microsoft.com/de-de/library/gg443832.aspx
-[vs_deploy]: https://msdn.microsoft.com/de-de/library/ee460772.aspx
+[vs_remote]: https://msdn.microsoft.com/DE-DE/library/gg443832.aspx
+[vs_deploy]: https://msdn.microsoft.com/DE-DE/library/ee460772.aspx
 [vs_reconfigure]: https://msdn.microsoft.com/library/ee405486.aspx
-[vs_create]: https://msdn.microsoft.com/de-de/library/ee405487.aspx
+[vs_create]: https://msdn.microsoft.com/DE-DE/library/ee405487.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

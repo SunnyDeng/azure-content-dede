@@ -27,7 +27,7 @@ Dieser Artikel enthält detaillierte Schritte zur Problembehandlung bei komplexe
 
 Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
 
-Alternativ haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
+Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
 
 
 ## Allgemeine Fehlermeldung für Remotedesktop
@@ -53,8 +53,8 @@ In den folgenden Abschnitten wird schrittweise erläutert, wie die verschiedenen
 Führen Sie die folgenden Schritte aus, bevor Sie mit der detaillierten Problembehandlung fortfahren.
 
 - Überprüfen Sie den Status des virtuellen Computers im Azure-Portal oder dem Azure-Vorschauportal.
-- [Starten Sie den virtuellen Computer neu.](https://msdn.microsoft.com/library/azure/dn763934.aspx)
-- [Ändern Sie die Größe des virtuellen Computers.](https://msdn.microsoft.com/library/dn168976.aspx)
+- Starten Sie den virtuellen Computer neu.
+- [Ändern Sie die Größe des virtuellen Computers.](virtual-machines-size-specs.md)
 
 Versuchen Sie nach diesen Schritten erneut, die Remotedesktopverbindung herzustellen.
 
@@ -205,4 +205,4 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

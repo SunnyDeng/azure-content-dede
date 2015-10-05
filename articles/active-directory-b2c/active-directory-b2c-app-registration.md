@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Registrieren der Anwendung
@@ -23,6 +23,9 @@
 ## Voraussetzung
 
 Zum Erstellen einer Anwendung, die Registrierungen und Anmeldungen von Kunden akzeptiert, müssen Sie sie zunächst bei einem Azure Active Directory B2C-Verzeichnis registrierten. Die Schritte, mit denen Sie Ihr eigenes Verzeichnis erhalten, sind [hier](active-directory-b2c-get-started.md) beschrieben. Wenn Sie alle Schritte in diesem Artikel ausgeführt haben, sollte das B2C-Featureblatt an Ihr Startmenü angeheftet sein.
+
+    > [AZURE.IMPORTANT]
+    You cannot use applications registered in the **Applications** tab on the [Azure Portal](https://manage.windowsazure.com/) for this.
 
 ## Navigieren zum B2C-Featureblatt
 
@@ -51,7 +54,7 @@ Sie finden den Link **B2C-Einstellungen verwalten** außerdem auf der Registerka
 
 5. Wenn Sie eine mobile Anwendung entwickeln, stellen Sie den Schalter **Systemeigenen Client einschließen** auf **Ja**. Notieren Sie sich den standardmäßigen **Umleitungs-URI**, der automatisch für Sie erstellt wurde.
 6. Klicken Sie auf **Erstellen**, um Ihre Anwendung zu registrieren.
-7. Klicken Sie auf die soeben erstellte Anwendung und notieren Sie sich die global eindeutige **Anwendungs-ID**, die Sie später in Ihrem Code verwenden.
+7. Klicken Sie auf die soeben erstellte Anwendung, und notieren Sie sich die global eindeutige **Anwendungs-ID**, die Sie später in Ihrem Code verwenden.
 
 ## Erstellen einer Schnellstart-App
 
@@ -59,4 +62,4 @@ Nachdem Sie über eine bei Azure AD B2C registrierte Anwendung verfügen, könne
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-b2c-quickstart-table.md)]
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

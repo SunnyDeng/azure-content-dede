@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So konfigurieren Sie automatische Updates
 
@@ -7,4 +8,4 @@
 
 3. Legen Sie für **Automatische Updates** die Option **Ja** fest. Diese Option sucht täglich um 3:00 Uhr Gerätezeit automatisch nach Updates und installiert Updates um 4:00 Uhr.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

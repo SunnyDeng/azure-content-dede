@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Web-App mit Express (Node.js) | Microsoft Azure"
-	description="Dieses Lernprogramm baut auf dem Lernprogramm für Clouddienste auf und zeigt, wie das Express-Modul verwendet wird."
-	services="cloud-services"
-	documentationCenter="nodejs"
-	authors="MikeWasson"
-	manager="wpickett"
+	pageTitle="Web-App mit Express (Node.js) | Microsoft Azure" 
+	description="Dieses Lernprogramm baut auf dem Lernprogramm für Clouddienste auf und zeigt, wie das Express-Modul verwendet wird." 
+	services="cloud-services" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="mwasson"/>
 
 
@@ -128,6 +128,9 @@ Sobald die Bereitstellung abgeschlossen ist, wird der Browser geöffnet und die 
 
 ![Webbrowser mit der Express-Seite. Die URL zeigt an, dass die Seite jetzt auf Azure gehostet wird.](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
 
   [Node.js Web Application]: http://www.windowsazure.com/develop/nodejs/tutorials/getting-started/
   [Express]: http://expressjs.com/
@@ -135,4 +138,4 @@ Sobald die Bereitstellung abgeschlossen ist, wird der Browser geöffnet und die 
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

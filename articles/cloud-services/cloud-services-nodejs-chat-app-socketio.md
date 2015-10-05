@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Node.js-Anwendung mit Socket.io| Microsoft Azure"
-	description="Erfahren Sie, wie Sie socket.io in einer node.js-Anwendung verwenden können, die in Azure gehostet wird."
-	services="cloud-services"
-	documentationCenter="nodejs"
-	authors="TomArcher"
-	manager="wpickett"
+	pageTitle="Node.js-Anwendung mit Socket.io| Microsoft Azure" 
+	description="Erfahren Sie, wie Sie socket.io in einer node.js-Anwendung verwenden können, die in Azure gehostet wird." 
+	services="cloud-services" 
+	documentationCenter="nodejs" 
+	authors="TomArcher" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="tarcher"/>
 
 
@@ -32,7 +32,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 Stellen Sie sicher, dass die folgenden Produkte und Versionen installiert sind, um das Beispiel in diesem Artikel erfolgreich abzuschließen:
 
-* Installieren von [Visual Studio 2013](https://www.visualstudio.com/de-DE/downloads/download-visual-studio-vs.aspx)
+* Installieren von [Visual Studio 2013](https://www.visualstudio.com/DE-DE/downloads/download-visual-studio-vs.aspx)
 * Installieren von [Node.js](https://nodejs.org/download/)
 * Installieren von [Python, Version 2.7.10](https://www.python.org/)
 
@@ -149,6 +149,8 @@ Ihre Anwendung wird jetzt in Azure ausgeführt und kann Chat-Nachrichten zwische
 
 In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung erstellt wird, die in einem Azure-Cloud-Dienst gehostet wird. Informationen zum Hosten dieser Anwendung in einer Azure-Website finden Sie unter [Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einer Azure-Website][chatwebsite].
 
+Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develop/nodejs/).
+
   [chatwebsite]: /develop/nodejs/tutorials/website-using-socketio/
 
   [Azure SLA]: http://www.windowsazure.com/support/sla/
@@ -172,4 +174,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung 
   
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

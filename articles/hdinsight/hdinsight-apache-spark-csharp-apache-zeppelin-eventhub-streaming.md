@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/31/2015" 
+	ms.date="09/23/2015" 
 	ms.author="nitinme"/>
 
 
@@ -22,7 +22,7 @@
 
 Das Spark-Streaming ist eine Erweiterung der Spark-Kern-API zum Erstellen von skalierbaren, fehlertoleranten Anwendungen für die Datenstromverarbeitung mit hohem Durchsatz. Daten können aus vielen Quellen erfasst werden. In diesem Artikel verwenden wir Event Hubs zum Erfassen von Daten. Bei Event Hubs handelt es sich um ein hochskalierbares Erfassungssystem, mit dem Millionen von Ereignissen pro Sekunde verarbeitet werden können.
 
-In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C#  für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
+In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C# für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
 
 > [AZURE.NOTE]Für die Anweisungen in diesem Artikel benötigen Sie beide Versionen des Azure-Portals. Zum Erstellen eines Event Hubs verwenden Sie das [Azure-Portal](https://manage.windowsazure.com). Für das Arbeiten mit dem HDInsight Spark-Cluster nutzen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
 
@@ -74,9 +74,25 @@ Sie benötigen Folgendes:
 
 In diesem Abschnitt erstellen Sie ein [Zeppelin](https://zeppelin.incubator.apache.org) Notebook zum Empfangen von Nachrichten aus dem Event Hub im Spark-Cluster unter HDInsight.
 
+### Zuordnen von Ressourcen zu Zeppelin für eine Streaminganwendung
+
+Beachten Sie die folgenden Punkte beim Erstellen einer Streaminganwendung mithilfe von Zeppelin:
+
+* **Event Hub-Partitionen und Zeppelin zugeordnete Kerne**. In den vorherigen Schritten haben Sie einen Event Hub mit einigen Partitionen erstellt. In der Zeppelin-Streaminganwendung, die Sie nachfolgend erstellen, müssen Sie die gleiche Anzahl an Partitionen angeben. Für ein erfolgreiches Streaming von Event Hub-Daten mithilfe von Zeppelin muss die Zahl der Zeppelin zugeordneten Kerne doppelt so groß sein wie die Anzahl der Event Hub-Partitionen.
+* **Minimale Anzahl an Kernen, die Zeppelin zugeordnet werden**. In der Streaminganwendung, die Sie nachfolgend erstellen, erstellen Sie eine temporäre Tabelle, in der die von Ihrer Anwendung gestreamten Nachrichten gespeichert werden. Anschließend verwenden Sie eine Spark-SQL-Anweisung zum Lesen der Nachrichten aus dieser temporären Tabelle. Damit die Spark-SQL-Anweisung erfolgreich ausgeführt wird, müssen Sie sicherstellen, dass Zeppelin mindestens zwei Kerne zugeordnet sind.
+
+Aus den beiden oben genannten Anforderungen ergibt sich folgende Voraussetzung:
+
+* Die minimale Anzahl von Kernen, die Zeppelin zugeordnet werden müssen, ist 2.
+* Die Zahl der zugeordneten Kerne muss doppelt so groß sein wie die Zahl der Event Hub-Partitionen. 
+
+Informationen zum Zuordnen von Ressourcen in einem Spark-Cluster finden Sie unter [Verwalten von Ressourcen für den Apache Spark-Cluster in HDInsight](hdinsight-apache-spark-resource-manager.md).
+
+### Erstellen einer Streaminganwendung mit Zeppelin
+
 1. Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
 
-2. Starten Sie das Zeppelin Notebook. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Clusterdashboard** auf **Zeppelin Notebook**. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Folgen Sie den Anweisungen auf der angezeigten Seite, um das Notebook zu starten.
+2. Starten Sie das Zeppelin Notebook. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quick Links** und anschließend auf dem Blatt **Cluster-Dashboard** auf **Zeppelin Notebook**. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Folgen Sie den Anweisungen auf der angezeigten Seite, um das Notebook zu starten.
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie im Headerbereich auf **Notebook**, und wählen Sie in der Dropdownliste die Option **Neue Notiz erstellen**.
 
@@ -89,6 +105,8 @@ In diesem Abschnitt erstellen Sie ein [Zeppelin](https://zeppelin.incubator.apac
 	![Zeppelin Notebook-Status](./media/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/HDI.Spark.NewNote.Connected.png "Zeppelin Notebook-Status")
 
 4. Fügen Sie in den leeren Absatz, der im neuen Notebook standardmäßig erstellt wird, den folgenden Codeausschnitt ein, und ersetzen Sie die Platzhalter, um Ihre Event Hub-Konfiguration zu verwenden. In diesem Codeausschnitt empfangen Sie den Datenstrom vom Event Hub und registrieren ihn in einer temporären Tabelle mit dem Namen **mytemptable**. Im nächsten Abschnitt starten wir die Absenderanwendung. Anschließend können Sie die Daten direkt aus der Tabelle auslesen.
+
+	> [AZURE.NOTE]Der folgende Codeausschnitt (**eventhubs.checkpoint.dir**) muss auf ein Verzeichnis in Ihrem Standardspeichercontainer festgelegt werden. Wenn das Verzeichnis nicht vorhanden ist, wird es von der Streaminganwendung erstellt. Sie können entweder den vollständigen Pfad zum Verzeichnis angeben, z. B. "**wasb://container@storageaccount.blob.core.windows.net/mycheckpointdir/**", oder nur den relativen Verzeichnispfad, z. B. "**/mycheckpointdir**".
 
 		import org.apache.spark.streaming.{Seconds, StreamingContext}
 		import org.apache.spark.streaming.eventhubs.EventHubsUtils
@@ -147,7 +165,7 @@ Die Verwendung von Zeppelin zum Empfangen von Streamingdaten im Spark-Cluster un
 3. Greifen Sie per RDP auf den Cluster zu, und kopieren Sie die Anwendungs-JAR-Datei in den obersten Knoten des Clusters.
 3. Greifen Sie per RDP auf den Cluster zu, und führen Sie die Anwendung im Clusterknoten aus.
 
-Eine Anleitung zum Ausführen dieser Schritte und eine Streaming-Beispielanwendung können Sie bei GitHub unter [https://github.com/hdinsight/hdinsight-spark-examples](https://github.com/hdinsight/hdinsight-spark-examples) herunterladen.
+Eine Anleitung zum Ausführen dieser Schritte und eine Streaming-Beispielanwendung können Sie von GitHub unter [https://github.com/hdinsight/hdinsight-spark-examples](https://github.com/hdinsight/hdinsight-spark-examples) herunterladen.
 
 
 ##<a name="seealso"></a>Weitere Informationen
@@ -170,4 +188,4 @@ Eine Anleitung zum Ausführen dieser Schritte und eine Streaming-Beispielanwendu
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

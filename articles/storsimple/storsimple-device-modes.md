@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Ändern des StorSimple-Gerätemodus | Microsoft Azure"
-	description="Beschreibt die StorSimple-Gerätemodi und erläutert, wie Sie den Gerätemodus mithilfe von Windows PowerShell für StorSimple ändern."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt die StorSimple-Gerätemodi und erläutert, wie Sie den Gerätemodus mithilfe von Windows PowerShell für StorSimple ändern."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="09/01/2015"
-	ms.author="alkohli"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/17/2015"
+   ms.author="alkohli" />
 
 # Ändern des Gerätemodus auf Ihrem StorSimple-Gerät
 
@@ -97,4 +97,4 @@ Sie können das StorSimple-Gerät (vom normalen Modus) in den Wartungsmodus vers
 
 Hier erfahren Sie, wie Sie auf Ihrem StorSimple-Gerät [Updates im normalen Modus und im Wartungsmodus installieren](storsimple-update-device.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

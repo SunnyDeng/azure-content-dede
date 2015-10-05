@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Brandingrichtlinien für Anwendungen"
-	description="Eine umfassende Anleitung zu entwicklerorientierten Ressourcen für Azure Active Directory"
-	services="active-directory"
-	documentationCenter="dev-center-name"
-	authors="msmbaldwin"
-	manager="mbaldwin"
-	editor=""/>
+   pageTitle="Brandingrichtlinien für Anwendungen | Microsoft Azure"
+   description="Eine umfassende Anleitung zu entwicklerorientierten Ressourcen für Azure Active Directory"
+   services="active-directory"
+   documentationCenter="dev-center-name"
+   authors="msmbaldwin"
+   manager="mbaldwin"
+   editor=""/>
 
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="08/25/2015"
-	ms.author="mbaldwin"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/17/2015"
+   ms.author="mbaldwin"/>
 
 
 # Brandingrichtlinien für Anwendungen
@@ -94,4 +94,4 @@ Stellen Sie den Benutzern eine Funktion zur Verfügung, über die sie sich abmel
 
 Wenn Ihre App sowohl Azure AD- als auch Microsoft-Konten unterstützt, müssen Sie in Ihrer App zwei separate Schaltflächen bereitstellen. Wir arbeiten derzeit an einem Update, durch das Sie nach einmaliger Integration sowohl persönliche Konten als auch Geschäftskonten von Microsoft unterstützen können. Nach dem Update können Sie in Ihrer App eine einzelne Microsoft-Anmeldeschaltfläche verwenden.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

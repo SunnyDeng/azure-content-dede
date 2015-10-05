@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwalten von Azure Virtual Machines mithilfe von Azure Automation"
+	pageTitle="Verwalten virtueller Computer mit Azure Automation | Microsoft Azure"
 	description="Erfahren Sie, wie der Azure Automation-Dienst zur angemessenen Verwaltung von Azure Virtual Machines verwendet werden kann."
 	services="virtual-machines, automation"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/20/2015"
+	ms.date="08/11/2015"
 	ms.author="jolevy"/>
 
 
@@ -21,6 +21,8 @@
 #Verwalten von Azure Virtual Machines mithilfe von Azure Automation
 
 Dieser Leitfaden bietet eine Einführung in den Azure Automation-Dienst und zeigt, wie Azure Automation zur Vereinfachung der Verwaltung Ihrer virtuellen Azure-Computer genutzt werden kann.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 ## Was ist Azure Automation?
 
@@ -42,4 +44,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz 
 
 [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

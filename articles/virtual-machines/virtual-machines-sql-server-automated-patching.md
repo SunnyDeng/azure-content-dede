@@ -1,12 +1,13 @@
-<properties 
-   pageTitle="Automatisches Patchen für SQL Server auf virtuellen Azure-Computern"
+<properties
+   pageTitle="Automatisiertes SQL Server-Patchen auf virtuellen Computern | Microsoft Azure"
    description="Erläutert die Funktion „Automatisiertes Patchen“ für virtuelle SQL Server-Computer in Azure."
    services="virtual-machines"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
-   editor="monicar" />
-<tags 
+   editor="monicar"
+   tags="azure-resource-manager" />
+<tags
    ms.service="virtual-machines"
    ms.devlang="na"
    ms.topic="article"
@@ -16,6 +17,8 @@
    ms.author="jroth" />
 
 # Automatisches Patchen für SQL Server auf virtuellen Azure-Computern
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Beim automatischen Patchen wird ein Wartungsfenster für einen virtuellen Azure-Computer mit SQL Server 2012 oder 2014 eingerichtet. Automatische Updates können nur während dieses Wartungsfensters installiert werden. Dadurch wird bei SQL Server sichergestellt, dass Systemupdates und alle erforderlichen Neustarts zum bestmöglichen Zeitpunkt für die Datenbank stattfinden. Dieser ist abhängig vom SQL Server-IaaS Agent.
 
@@ -40,7 +43,7 @@ Sie können das automatisierte Patchen auch mithilfe von PowerShell konfiguriere
 Im folgenden Beispiel wird PowerShell zum Konfigurieren des automatisierten Patchens auf einem vorhandenen virtuellen SQL Server-Computer verwendet. Der Befehl **New-AzureVMSqlServerAutoPatchingConfig** konfiguriert ein neues Wartungsfenster für automatische Updates.
 
     $aps = New-AzureVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120  -PatchCategory "Important"
-    
+
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoPatchingSettings $aps | Update-AzureVM
 
 In der folgenden Tabelle wird basierend auf diesem Beispiel die tatsächliche Auswirkung auf den virtuellen Azure-Zielcomputer beschrieben:
@@ -86,6 +89,6 @@ Die folgenden Produkte sind mit den SQL Server-IaaS-Agent-Funktionen für das au
 
 Eine verwandte Funktion für virtuelle SQL Server-Computer in Azure ist die [automatisierte Sicherung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-automated-backup.md).
 
-Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
+Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

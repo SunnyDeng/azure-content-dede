@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="08/12/2015" 
+	ms.date="09/23/2015" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
@@ -30,9 +30,9 @@ Dieses Dokument enthält Anleitungen, die Ihnen bei der Einschätzung helfen, ob
 
 ## Elastische Datenbankpools
 
-SaaS-ISVs \(Internetdienstanbieter, die „Software as a Service“ anbieten\) entwickeln Anwendungen, die auf der obersten von umfangreichen Datenebenen aufsetzen, die wiederum aus zahlreichen Datenbanken bestehen können. Es kommt häufig vor, dass es für diese Datenbanken unterschiedliche Kunden mit eindeutig voneinander abweichenden und nicht vorhersehbaren Verwendungsmustern gibt. Daher kann es für den ISV schwierig werden, die Ressourcenanforderungen für jede einzelne Datenbank vorherzusehen. Unter diesen Umständen kann es vorkommen, dass der ISV zu viele Ressourcen bereitstellt, um den bestmöglichen Datendurchsatz und die optimale Antwortzeit für alle Datenbanken zu gewährleisten, was jedoch mit erheblichen Kosten verbunden ist. Auf der anderen Seite riskiert der ISV eine schlechtere Leistung bei geringeren Kosten für seine Kunden.
+SaaS-ISVs (Internetdienstanbieter, die „Software as a Service“ anbieten) entwickeln Anwendungen, die auf der obersten von umfangreichen Datenebenen aufsetzen, die wiederum aus zahlreichen Datenbanken bestehen können. Es kommt häufig vor, dass es für diese Datenbanken unterschiedliche Kunden mit eindeutig voneinander abweichenden und nicht vorhersehbaren Verwendungsmustern gibt. Daher kann es für den ISV schwierig werden, die Ressourcenanforderungen für jede einzelne Datenbank vorherzusehen. Unter diesen Umständen kann es vorkommen, dass der ISV zu viele Ressourcen bereitstellt, um den bestmöglichen Datendurchsatz und die optimale Antwortzeit für alle Datenbanken zu gewährleisten, was jedoch mit erheblichen Kosten verbunden ist. Auf der anderen Seite riskiert der ISV eine schlechtere Leistung bei geringeren Kosten für seine Kunden.
 
-Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der Lage, das Preis-/Leistungs-Verhältnis für eine Gruppen von Datenbanken im Rahmen eines vorgegebenen Budgets zu optimieren und können dennoch eine flexible Leistung für jede Datenbank sicherstellen. Mit elastischen Datenbankpools kann der ISV elastische Datenbankdurchsatzeinheiten \(Elastic Database Throughput Units, eDTUs\) für einen Pool erwerben, der von mehreren Datenbanken gemeinsam genutzt wird, um unvorhersehbare Nutzungszeiten von einzelnen Datenbanken abzufedern. Die eDTU-Anforderungen eines Pools werden anhand der zusammengefassten Auslastung der hierin befindlichen Datenbanken ermittelt. Die Anzahl der für den Pool verfügbaren eDTUs wird vom Budget des ISVs gesteuert. Elastische Datenbankpools machen es dem ISV leicht, Argumente für die Auswirkungen des Budgets auf die Leistung und umgekehrt auf den Pool zu finden. Der ISV fügt dem Pool einfach Datenbanken hinzu, legt alle erforderlichen eDTU-Garantien oder -Beschränkungen für die Datenbanken fest und berechnet dann die eDTUs des Pools basierend auf dem vorhandenen Budget. Mithilfe von elastischen Datenbankpools können ISVs ihre Dienste nahtlos von einem schlanken Einstieg für Startups bis zu einem Angebot für gut eingeführte Unternehmen mit ständig wachsenden Anforderungen skalieren.
+Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der Lage, das Preis-/Leistungs-Verhältnis für eine Gruppen von Datenbanken im Rahmen eines vorgegebenen Budgets zu optimieren und können dennoch eine flexible Leistung für jede Datenbank sicherstellen. Mit elastischen Datenbankpools kann der ISV elastische Datenbankdurchsatzeinheiten (Elastic Database Throughput Units, eDTUs) für einen Pool erwerben, der von mehreren Datenbanken gemeinsam genutzt wird, um unvorhersehbare Nutzungszeiten von einzelnen Datenbanken abzufedern. Die eDTU-Anforderungen eines Pools werden anhand der zusammengefassten Auslastung der hierin befindlichen Datenbanken ermittelt. Die Anzahl der für den Pool verfügbaren eDTUs wird vom Budget des ISVs gesteuert. Elastische Datenbankpools machen es dem ISV leicht, Argumente für die Auswirkungen des Budgets auf die Leistung und umgekehrt auf den Pool zu finden. Der ISV fügt dem Pool einfach Datenbanken hinzu, legt alle erforderlichen eDTU-Garantien oder -Beschränkungen für die Datenbanken fest und berechnet dann die eDTUs des Pools basierend auf dem vorhandenen Budget. Mithilfe von elastischen Datenbankpools können ISVs ihre Dienste nahtlos von einem schlanken Einstieg für Startups bis zu einem Angebot für gut eingeführte Unternehmen mit ständig wachsenden Anforderungen skalieren.
   
 
 
@@ -40,7 +40,7 @@ Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der La
 
 Elastische Datenbankpools sind hervorragend geeignet, wenn es eine große Anzahl an Datenbanken mit spezifischen Nutzungsmustern gibt. Im Hinblick auf eine einzelne Datenbank wird dieses Muster durch eine geringe durchschnittliche Auslastung mit relativ wenigen Nutzungslastspitzen gekennzeichnet.
 
-Je mehr Datenbanken Sie einem Pool hinzufügen können, desto höher werden die Einsparungen, aber je nach Anwendungsauslastungsmuster kann es sein, dass sich diese Einsparungen schon im Bereich von vier S3-Datenbanken einstellen.
+Je mehr Datenbanken Sie einem Pool hinzufügen können, desto höher werden die Einsparungen, aber je nach Anwendungsauslastungsmuster kann es sein, dass sich diese Einsparungen schon im Bereich von zwei S3-Datenbanken einstellen.
 
 In den folgenden Abschnitten wird erläutert, wie Sie einschätzen können, ob Ihre spezielle Sammlung an Datenbanken von elastischen Datenbankpools profitieren kann. In diesen Beispielen wird von elastischen Datenbankpools der Standard-Edition ausgegangen, die Grundlagen gelten für Basic- und Premium-Pools jedoch gleichermaßen.
 
@@ -60,7 +60,7 @@ Ausgehend vom vorherigen Beispiel nehmen wir einmal an, dass es weitere Datenban
 
    ![Zwanzig Datenbanken][3]
 
-Die zusammengefasste DTU-Auslastung aller 20 Datenbanken wird in der vorstehenden Abbildung durch die schwarze Linie dargestellt. Diese zeigt, dass die zusammengefasste DTU-Auslastung niemals 100 DTUs übersteigt, und gibt an, dass die 20 Datenbanken in diesem Zeitraum 100 eDTUs gemeinsam nutzen können. Dies führt zu einer 20-fachen Verringerung im Hinblick auf die DTUs und einer sechsfachen Preisreduzierung im Vergleich zur Positionierung jeder Datenbank in S3-Leistungsstufen für Einzeldatenbanken.
+Die zusammengefasste DTU-Auslastung aller 20 Datenbanken wird in der vorstehenden Abbildung durch die schwarze Linie dargestellt. Diese zeigt, dass die zusammengefasste DTU-Auslastung niemals 100 DTUs übersteigt, und gibt an, dass die 20 Datenbanken in diesem Zeitraum 100 eDTUs gemeinsam nutzen können. Dies führt zu einer 20-fachen Verringerung im Hinblick auf die DTUs und einer 13-fachen Preisreduzierung im Vergleich zur Positionierung jeder Datenbank in S3-Leistungsstufen für Einzeldatenbanken.
 
 
 Dieses Beispiel ist aus den folgenden Gründen ideal:
@@ -70,38 +70,38 @@ Dieses Beispiel ist aus den folgenden Gründen ideal:
 - Die eDTUs werden von einer großen Anzahl Datenbanken gemeinsam genutzt.
 
 
-Der Preis für einen elastischen Datenbankpool ist eine Funktion aus den Pool-eDTUs und der Anzahl der im Pool befindlichen Datenbanken. Während der Preis pro eDTU für einen Pool bei den allgemein verfügbaren Preisen \(General Availability, GA\) drei Mal höher als der Preis pro DTU für eine einzelne Datenbank ist, können hierbei **Pool-eDTUs von vielen Datenbanken gemeinsam genutzt werden, daher liegt der Preis in vielen Fällen unter der Gesamtanzahl der benötigten eDTUs**. Die Unterschiede bei der Preisgestaltung und die gemeinsame Nutzung von eDTUs sind die Basis des Einsparungspotenzials, das von Pools geboten wird.
+Der Preis für einen elastischen Datenbankpool ist eine Funktion aus den Pool-eDTUs. Während der Preis pro eDTU für einen Pool 1,5 Mal höher als der Preis pro DTU für eine einzelne Datenbank ist, können hierbei **Pool-eDTUs von vielen Datenbanken gemeinsam genutzt werden, daher liegt der Preis in vielen Fällen unter der Gesamtanzahl der benötigten eDTUs**. Die Unterschiede bei der Preisgestaltung und die gemeinsame Nutzung von eDTUs sind die Basis des Einsparungspotenzials, das von Pools geboten wird.
 
 <br>
 
-Im Hinblick auf die Datenbankanzahl und die Datenbankauslastung sollen Ihnen die folgenden Faustregeln bei der Sicherstellung helfen, dass sich mit einem elastischen Datenbankpool im Vergleich zu Leistungsstufen für einzelne Datenbanken die Kosten reduzieren lassen. Die Richtlinien basieren auf allgemein verfügbaren Preisen \(GA\). Beachten Sie, dass die allgemein verfügbaren Preise während der Vorschau um 50 % rabattiert sind, sodass diese Faustregel als relativ konservativ angesehen werden sollte.
+Im Hinblick auf die Datenbankanzahl und die Datenbankauslastung sollen Ihnen die folgenden Faustregeln bei der Sicherstellung helfen, dass sich mit einem elastischen Datenbankpool im Vergleich zu Leistungsstufen für einzelne Datenbanken die Kosten reduzieren lassen.
 
 
 ### Minimale Anzahl Datenbanken
 
-In Anbetracht der allgemein verfügbaren Preise ist ein elastischer Datenbankpool kosteneffizienter, wenn eine eDTU von mehr als drei Datenbanken gemeinsam genutzt werden kann. Dies bedeutet, dass die Summe der DTUs für die Leistungsstufen für einzelne Datenbanken mehr als das Dreifache der eDTUs des Pools beträgt. Informationen zu den verfügbaren Größen finden Sie unter [eDTUs und Speicherbeschränkungen für elastische Datenbankpools und elastische Datenbanken](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+Wenn die Summe der DTUs für Leistungsstufen für einzelne Datenbanken mehr als das 1,5-fache der für den Pool benötigten eDTUs entspricht, ist ein elastischer Pool kostengünstiger. Informationen zu den verfügbaren Größen finden Sie unter [eDTUs und Speicherbeschränkungen für elastische Datenbankpools und elastische Datenbanken](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
-***Beispiel***<br> Es werden mindestens vier S3-Datenbanken oder mindestens 36 S0-Datenbanken benötigt, damit ein elastischer Datenbankpool mit 100 eDTUs kosteneffizienter als die Leistungsstufen für einzelne Datenbanken ist. \(Beachten Sie, dass bei den prognostizierten Preisen die Rentabilitätsgrenze auf einer Datenbankanzahl von zwei oder weniger S3-Datenbanken oder 17 S0-Datenbanken basiert.\)
+***Beispiel***<br> Es werden mindestens zwei S3-Datenbanken oder mindestens 15 S0-Datenbanken benötigt, damit ein elastischer Datenbankpool mit 100 eDTUs kosteneffizienter als die Leistungsstufen für einzelne Datenbanken ist.
 
 
 
 ### Maximale Anzahl von gleichzeitig unter Spitzenlast laufenden Datenbanken
 
-Bei der gemeinsamen Nutzung von eDTUs können nicht alle Datenbanken in einem Pool gleichzeitig eDTUs bis zum verfügbaren Grenzwert verwenden, wenn Leistungsstufen für einzelne Datenbanken verwendet werden. Je weniger Datenbanken gleichzeitig auf Spitzenlast genutzt werden, desto niedriger kann der Pool-eDTU festgelegt werden und desto mehr Kosten können eingespart werden. Im Allgemeinen sollte nicht mehr als ein Drittel der Datenbanken im Pool gleichzeitig den eDTU-Grenzwert erreichen.
+Bei der gemeinsamen Nutzung von eDTUs können nicht alle Datenbanken in einem Pool gleichzeitig eDTUs bis zum verfügbaren Grenzwert verwenden, wenn Leistungsstufen für einzelne Datenbanken verwendet werden. Je weniger Datenbanken gleichzeitig auf Spitzenlast genutzt werden, desto niedriger kann der Pool-eDTU festgelegt werden und desto mehr Kosten können eingespart werden. Im Allgemeinen sollten nicht mehr als zwei Drittel der Datenbanken (67 %) im Pool gleichzeitig den eDTU-Grenzwert erreichen.
 
-***Beispiel***<br> Um die Kosten für vier S3-Datenbanken in einem Pool mit 200 eDTUs zu senken, können höchstens zwei dieser Datenbanken gleichzeitig mit Spitzenauslastung ausgeführt werden. Andernfalls gilt, dass der Pool auf mehr als 200 eDTUs ausgelegt werden muss, wenn zwei dieser vier S3-Datenbanken gleichzeitig mit Spitzenlast ausgeführt werden. Wenn die Größe des Pools auf mehr als 200 eDTUs geändert wird, müssten weitere S3-Datenbanken zum Pool hinzugefügt werden, damit die Kosten unterhalb der Leistungsstufe für einzelne Datenbanken bleiben.
+***Beispiel***<br> Um die Kosten für drei S3-Datenbanken in einem Pool mit 200 eDTUs zu senken, können höchstens zwei dieser Datenbanken gleichzeitig mit Spitzenauslastung ausgeführt werden. Andernfalls gilt, dass der Pool auf mehr als 200 eDTUs ausgelegt werden muss, wenn zwei dieser vier S3-Datenbanken gleichzeitig mit Spitzenlast ausgeführt werden. Wenn die Größe des Pools auf mehr als 200 eDTUs geändert wird, müssten weitere S3-Datenbanken zum Pool hinzugefügt werden, damit die Kosten unterhalb der Leistungsstufe für einzelne Datenbanken bleiben.
 
 
-Beachten Sie, dass in diesem Beispiel die Auslastung anderer Datenbanken im Pool nicht berücksichtigt wird. Wenn alle Datenbanken zu einem gegebenen Zeitpunkt eine Spitzenauslastung aufweisen, können weniger als ein Drittel der Datenbanken gleichzeitig eine Spitzenauslastung aufweisen.
+Beachten Sie, dass in diesem Beispiel die Auslastung anderer Datenbanken im Pool nicht berücksichtigt wird. Wenn alle Datenbanken zu einem gegebenen Zeitpunkt eine Spitzenauslastung aufweisen, können weniger als zwei Drittel (67 %) der Datenbanken gleichzeitig eine Spitzenauslastung aufweisen.
 
 
 ### DTU-Auslastung pro Datenbank
 
-Ein großer Unterschied zwischen der mittleren und der Spitzenauslastung einer Datenbank weist darauf hin, dass es längere Zeiträume mit geringer Auslastung und kurze Zeiträume mit hoher Auslastung gibt. Dieses Auslastungsmuster eignet sich ideal für die gemeinsame, datenbankübergreifende Nutzung von Ressourcen. Eine Datenbank eignet sich für die Aufnahme in einen Pool, wenn die Spitzenauslastung etwa um das Dreifache höher als die mittlere Auslastung ist.
+Ein großer Unterschied zwischen der mittleren und der Spitzenauslastung einer Datenbank weist darauf hin, dass es längere Zeiträume mit geringer Auslastung und kurze Zeiträume mit hoher Auslastung gibt. Dieses Auslastungsmuster eignet sich ideal für die gemeinsame, datenbankübergreifende Nutzung von Ressourcen. Eine Datenbank eignet sich für die Aufnahme in einen Pool, wenn die Spitzenauslastung etwa um das 1,5-fache höher als die mittlere Auslastung ist.
 
     
-***Beispiel***<br> Eine S3-Datenbank, die zu Spitzenzeiten 100 DTUs und im Durchschnitt 30 DTUs oder weniger benötigt, ist ein guter Kandidat für die gemeinsame Nutzung von eDTUs in einem elastischen Datenbankpool. Alternativ ist auch eine S1-Datenbank, die zu Spitzenzeiten 20 DTUs und im Durchschnitt 7 DTUs oder weniger benötigt, ist ein guter Kandidat für einen elastischen Datenbankpool.
+***Beispiel***<br> Eine S3-Datenbank, die zu Spitzenzeiten 100 DTUs und im Durchschnitt 67 DTUs oder weniger benötigt, ist ein guter Kandidat für die gemeinsame Nutzung von eDTUs in einem elastischen Datenbankpool. Alternativ ist auch eine S1-Datenbank, die zu Spitzenzeiten 20 DTUs und im Durchschnitt 13 DTUs oder weniger benötigt, ist ein guter Kandidat für einen elastischen Datenbankpool.
     
 
 ## Heuristik zum Vergleich des Preisunterschieds zwischen einem elastischen Datenbankpool und einzelnen Datenbanken 
@@ -110,14 +110,14 @@ Die folgende Heuristik kann bei der Einschätzung helfen, ob ein elastischer Dat
 
 1. Wir schätzen die für den Pool benötigten eDTUs wie folgt:
     
-    MAX\(*Gesamtanzahl Datenbanken* * *durchschnittliche DTU-Auslastung pro Datenbank*, *Anzahl von gleichzeitig unter Spitzenlast ausgeführten Datenbanken* * *Spitzen-DTU-Auslastung pro Datenbank*\)
+    MAX(*Gesamtanzahl Datenbanken* * *durchschnittliche DTU-Auslastung pro Datenbank*, *Anzahl von gleichzeitig unter Spitzenlast ausgeführten Datenbanken* * *Spitzen-DTU-Auslastung pro Datenbank*)
 
 2. Wählen Sie den kleinsten verfügbaren eDTU-Wert für den Pool aus, der größer als die Schätzung aus Schritt 1 ist. Die in Frage kommenden eDTU-Auswahlmöglichkeiten finden Sie hier unter den gültigen Werten für eDTUs: [eDTUs und Speicherbeschränkungen für elastische Datenbankpools und elastische Datenbanken](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
 3. Wir berechnen den Preis für den Pool wie folgt:
 
-    Preis für den Pool = \(*Pool-eDTUs* * *Preis pro Einheit per Pool-eDTU*\) + \(*Gesamtanzahl Datenbanken* * *Preis pro Einheit per Pool-DTU*\)
+    Preis des Pools = *eDTUs im Pool* * *Einzelpreis der eDTUs im Pool*
 
     Preisinformationen finden Sie unter [SQL-Datenbank – Preisgestaltung](http://azure.microsoft.com/pricing/details/sql-database/).
 
@@ -133,18 +133,10 @@ Die beste Größe für einen elastischen Datenbankpool ist von den zusammengefas
 * Maximale Anzahl DTUs, die von allen Datenbanken im Pool verwendet werden.
 * Maximale Speicherbytes, die von allen Datenbanken im Pool verwendet werden. 
 
-Beachten Sie, dass auf der Standarddienstebene 1 GB Speicher für jede für den Pool konfigurierte eDTU bereitgestellt wird. Wenn der Pool beispielsweise für 200 DTUs konfiguriert ist, beträgt die Speicherkapazität 200 GB.
-
-Die folgende Tabelle zeigt die Menge an Speicherplatz pro eDTU für jede Preisstufe:
-
-| Preisstufe | eDTU | Storage |
-| :--- | :--- | :--- |
-| Basic | 1 | 100 MB |
-| Standard | 1 | 1 GB |
-| Premium | 1 | 0,5 GB |
+Informationen zu den verfügbaren Größen finden Sie unter [eDTUs und Speicherbeschränkungen für elastische Datenbankpools und elastische Datenbanken](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
 
-### Verwenden von Service Tier Advisor \(STA\) und Dynamic Management Views \(DMVs\) für Größenempfehlungen   
+### Verwenden von Service Tier Advisor (STA) und Dynamic Management Views (DMVs) für Größenempfehlungen   
 
 STA und DMVs bieten unterschiedliche Tools und Optionen für die Größenauslegung eines elastischen Datenbankpools. Ungeachtet der verwendeten Tools sollte die Größeneinschätzung nur für die Erstbewertung und -erstellung von elastischen Datenbankpools zugrunde gelegt werden. Nachdem ein Pool erstellt wurde, muss die Ressourcennutzung akkurat überwacht werden, wobei die Leistungseinstellungen des Pools je nach Bedarf nach oben oder unten korrigiert werden können.
 
@@ -172,7 +164,7 @@ STA steht im Vorschauportal zur Verfügung, wenn Sie einem vorhandenen Server ei
 
 Weitere Informationen finden Sie unter [Tarifempfehlungen für den elastischen Datenbankpool](sql-database-elastic-pool-portal.md#elastic-database-pool-pricing-tier-recommendations).
 
-### Schätzen der Größe von elastischen Pools mit DMVs \(Dynamic Management Views\) 
+### Schätzen der Größe von elastischen Pools mit DMVs (Dynamic Management Views) 
 
 Mit den von [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) generierten Messwerten kann die Ressourcenverwendung einer einzelnen Datenbank gemessen werden. Diese DMV enthält Informationen zur CPU, zur E/A, zur Protokollierung und zur Protokollauslastung einer Datenbank als Prozentsatz der Leistungsbegrenzung der Datenbank. Diese Daten können zum Berechnen der DTU-Auslastung einer Datenbank in beliebigen Intervallen von jeweils 15 Sekunden verwendet werden.
 
@@ -207,12 +199,12 @@ Sie können das Skript auf Ihrem lokalen Computer oder in einem virtuellen Compu
 
 Das Skript schließt bestimmte Datenbanken aus, die keine guten Kandidaten für die aktuelle öffentliche Vorschau auf der Ebene „Standardmäßiger elastischer Pool“ sind. Wenn Sie auf dem Zielserver weitere Datenbanken ausschließen müssen, können Sie das Skript Ihren Anforderungen entsprechend ändern. Standardmäßig kompiliert das Skript keine Informationen für Folgendes:
 
-* Elastische Datenbanken \(Datenbanken, die sich bereits in einem elastischen Pool befinden\)
+* Elastische Datenbanken (Datenbanken, die sich bereits in einem elastischen Pool befinden)
 * Die Masterdatenbank auf dem Server
 
 Für das Skript ist eine Ausgabedatenbank zum Speichern von Zwischendaten zwecks Analyse erforderlich. Sie können eine neue Datenbank anlegen oder eine vorhandene verwenden. Obwohl es für die Ausführung des Tools technisch nicht erforderlich ist, empfiehlt es sich, die Ausgabedatenbank auf einem anderen Server zu speichern, um Auswirkungen auf das Analyseergebnis zu vermeiden. Gehen Sie bei der Leistungsstufe der Ausgabedatenbank von mindestens S0 oder höher aus. Beim Sammeln von Daten über einen längeren Zeitraum für eine große Anzahl von Datenbanken sollten Sie überlegen, ob die Ausgabedatenbank auf eine höhere Leistungsstufe aktualisiert werden sollte.
 
-Für das Skript müssen Sie Anmeldeinformationen angeben, um die Verbindung zum Zielserver herzustellen \(dem Kandidaten für den elastischen Datenbankpool\), und zwar mit einem vollständigen Servernamen wie „abcdef.database.windows.net“. Zurzeit unterstützt das Skript nicht die gleichzeitige Analyse mehrerer Server.
+Für das Skript müssen Sie Anmeldeinformationen angeben, um die Verbindung zum Zielserver herzustellen (dem Kandidaten für den elastischen Datenbankpool), und zwar mit einem vollständigen Servernamen wie „abcdef.database.windows.net“. Zurzeit unterstützt das Skript nicht die gleichzeitige Analyse mehrerer Server.
 
 
 Nach der Übermittlung von Werten für den anfänglichen Parametersatz werden Sie aufgefordert, sich bei Ihrem Azure-Konto anzumelden. Hiermit melden Sie sich beim Zielserver und nicht beim Datenbankausgabeserver an.
@@ -225,7 +217,7 @@ Wenn beim Ausführen des Skripts die folgenden Warnungen ausgegeben werden, kön
 Nach Abschluss des Skripts wird die geschätzte Anzahl eDTUs ausgegeben, die für einen elastischen Pool erforderlich sind, der alle Datenbankkandidaten auf dem Zielserver enthält. Diese geschätzten eDTUs können zum Erstellen und Konfigurieren eines elastischen Datenbankpools für diese Datenbanken verwendet werden. Nachdem der Pool erstellt und Datenbanken in diesen Pool verschoben wurden, sollte er für einige Tage genauestens überwacht werden, um im Bedarfsfall Anpassungen an der Konfiguration der Pool-eDTUs vornehmen zu können.
 
 
-Wenn Sie das vollständige Skript kopieren möchten, klicken Sie drei Mal auf einen beliebigen Text im Skript \(Dreifach-Klick\).
+Wenn Sie das vollständige Skript kopieren möchten, klicken Sie drei Mal auf einen beliebigen Text im Skript (Dreifach-Klick).
 
     
     param (
@@ -434,7 +426,7 @@ Wenn Sie das vollständige Skript kopieren möchten, klicken Sie drei Mal auf ei
 
 ## Zusammenfassung
 
-Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Datenbankpools. Datenbanken mit Auslastungsmustern, die sich durch geringe durchschnittliche Auslastung und relativ seltene Auslastungsspitzen auszeichnen, sind herausragende Kandidaten für elastische Datenbankpools. Die Nutzungsmuster von Anwendungen sind dynamisch; verwenden Sie die in diesem Artikel angegebenen Informationen und Tools also für eine erste Einschätzung, um zu sehen, ob ein elastischer Datenbankpool für einige oder alle Ihre Datenbanken eine gute Wahl ist. Dieser Artikel ist lediglich ein Ausgangspunkt, um Sie bei der Entscheidung zu unterstützen, ob ein elastischer Datenbankpool für Sie geeignet ist. Denken Sie daran, dass Sie den Verlauf der Ressourcennutzung \(mit STA oder DVMs\) kontinuierlich überwachen sollten und dass auch die Leistungsstufen aller Datenbanken immer wieder neu bewertet werden müssen. Vergessen Sie nicht, dass Sie Datenbanken ganz einfach in oder aus elastischen Datenbankpools verschieben können, und wenn Sie über eine sehr große Anzahl von Datenbanken verfügen, können Sie auch unterschiedliche Pools mit unterschiedlichen Größen erstellen, auf die Sie Ihre Datenbanken verteilen.
+Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Datenbankpools. Datenbanken mit Auslastungsmustern, die sich durch geringe durchschnittliche Auslastung und relativ seltene Auslastungsspitzen auszeichnen, sind herausragende Kandidaten für elastische Datenbankpools. Die Nutzungsmuster von Anwendungen sind dynamisch; verwenden Sie die in diesem Artikel angegebenen Informationen und Tools also für eine erste Einschätzung, um zu sehen, ob ein elastischer Datenbankpool für einige oder alle Ihre Datenbanken eine gute Wahl ist. Dieser Artikel ist lediglich ein Ausgangspunkt, um Sie bei der Entscheidung zu unterstützen, ob ein elastischer Datenbankpool für Sie geeignet ist. Denken Sie daran, dass Sie den Verlauf der Ressourcennutzung (mit STA oder DVMs) kontinuierlich überwachen sollten und dass auch die Leistungsstufen aller Datenbanken immer wieder neu bewertet werden müssen. Vergessen Sie nicht, dass Sie Datenbanken ganz einfach in oder aus elastischen Datenbankpools verschieben können, und wenn Sie über eine sehr große Anzahl von Datenbanken verfügen, können Sie auch unterschiedliche Pools mit unterschiedlichen Größen erstellen, auf die Sie Ihre Datenbanken verteilen.
 
 
 
@@ -443,4 +435,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

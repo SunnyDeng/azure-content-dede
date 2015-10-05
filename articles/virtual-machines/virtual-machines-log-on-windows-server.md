@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Anmelden an einem virtuellen Computer unter Windows Server"
-	description="Erfahren Sie, wie Sie das Azure-Portal verwenden, um sich an einem virtuellen Computer unter Windows Server anzumelden."
+	pageTitle="Anmelden bei einem virtuellen Computer | Microsoft Azure"
+	description="Verwenden Sie das Portal für die Anmeldung bei einem virtuellen Windows-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -18,11 +18,13 @@
 	ms.author="cynthn"/>
 
 
-# Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
+# Anmelden bei einem virtuellen Windows-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal zum Starten einer Remotedesktopsitzung. Zuerst stellen Sie eine Verbindung mit dem virtuellen Computer her, und dann melden Sie sich an.
 
-Sie möchten eine Verbindung mit einem virtuellen Linux-Computer herstellen? Siehe [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).
+Möchten Sie eine Verbindung mit einem virtuellen Linux-Computer herstellen? Siehe [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).
 
 ## Herstellen einer Verbindung mit dem virtuellen Computer
 
@@ -51,4 +53,4 @@ Folgende Dinge können Sie für eine schnelle Behebung Ihres Problems im Portal 
 
 Wenn die Tipps nicht funktionieren oder nicht das Gesuchte sind, finden Sie entsprechende Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md). Dieser Artikel führt Sie durch die Diagnose und Behebung von häufigen Problemen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

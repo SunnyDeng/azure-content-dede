@@ -1,30 +1,33 @@
 <properties
    pageTitle="Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle | Microsoft Azure"
-   description="Erfahren Sie, wie Sie eine Bereitstellung mit mehreren virtuellen Computern über die Azure-Befehlszeilenschnittstelle erstellen."
+   description="Erfahren Sie, wie Sie eine Bereitstellung mit mehreren virtuellen Computern über das klassische Bereitstellungsmodell und die Azure-Befehlszeilenschnittstelle erstellen."
    services="virtual-machines"
    documentationCenter="nodejs"
    authors="AlanSt"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-service-management"/>
 
    <tags
    ms.service="virtual-machines"
    ms.devlang="nodejs"
    ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
+   ms.tgt_pltfrm="Linux"
    ms.workload="infrastructure-services"
    ms.date="02/20/2015"
-   ms.author="alanst;kasing"/>
+   ms.author="alanst"/>
 
 # Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle
 
-Das folgende Skript zeigt, wie Sie eine Dienstbereitstellung mit mehreren virtuellen Computern und mehreren Clouds in einem VNET über die Azure-Befehlszeilenschnittstelle \(Azure-CLI\) konfigurieren.
+> [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+
+Das folgende Skript zeigt, wie Sie eine Dienstbereitstellung mit mehreren virtuellen Computern und mehreren Clouds in einem VNET über die Azure-Befehlszeilenschnittstelle (Azure-CLI) konfigurieren.
 
 Im unten gezeigten Bild wird erläutert, wie die Bereitstellung nach Abschluss des Skripts aussehen wird:
 
 ![](./media/virtual-machines-create-multi-vm-deployment-xplat-cli/multi-vm-xplat-cli.png)
 
-Das Skript erstellt im Clouddienst **servercs** einen virtuellen Computer \(**servervm**\) mit zwei angehängten Datenträgern und im Clouddienst **workercs** zwei virtuelle Computer \(**clientvm1, clientvm2**\). Beide Clouddienste werden im VNET **samplevnet** abgelegt. Der Clouddienst **servercs** verfügt auch über einen Endpunkt, der für externe Konnektivität konfiguriert ist.
+Das Skript erstellt im Clouddienst **servercs** einen virtuellen Computer (**servervm**) mit zwei angehängten Datenträgern und im Clouddienst **workercs** zwei virtuelle Computer (**clientvm1, clientvm2**). Beide Clouddienste werden im VNET **samplevnet** abgelegt. Der Clouddienst **servercs** verfügt auch über einen Endpunkt, der für externe Konnektivität konfiguriert ist.
 
 ## Dafür erforderliches CLI-Skript
 Der Code für diese Einrichtung ist relativ einfach:
@@ -32,9 +35,9 @@ Der Code für diese Einrichtung ist relativ einfach:
 >[AZURE.NOTE]Sie müssen wahrscheinlich die Namen der Cloud-Dienste servercs und workercs ändern, sodass es sich um eindeutige Cloud-Dienstnamen handelt.
 
     azure network vnet create samplevnet -l "West US"
-    azure vm create -l "West US" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB azureuser Password@1
-    azure vm create -l "West US" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB azureuser Password@1
-    azure vm create -l "West US" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB azureuser Password@1
+    azure vm create -l "West US" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB azureuser Password@1
+    azure vm create -l "West US" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB azureuser Password@1
+    azure vm create -l "West US" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB azureuser Password@1
     azure vm disk attach-new servervm 100
     azure vm disk attach-new servervm 500
     azure vm endpoint create servervm 443 443 -n https -o tcp
@@ -67,4 +70,4 @@ Während Sie weitere Informationen zu jedem der Azure-CLI-Befehle mithilfe der O
 * [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

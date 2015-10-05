@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer"
-	description="Enthält die Schritte zum Konfigurieren einer Verfügbarkeitsgruppe für einen neuen oder vorhandenen virtuellen Computer in Azure mithilfe des Azure-Portals und mit Azure PowerShell-Befehlen"
+	pageTitle="Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer | Microsoft Azure"
+	description="Konfigurieren Sie eine Verfügbarkeitsgruppe für einen neuen oder vorhandenen virtuellen Computer im klassischen Bereitstellungsmodell mithilfe des Azure-Portals und mit Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +17,9 @@
 	ms.date="08/10/2015"
 	ms.author="cynthn"/>
 
-# Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer
+# Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer im klassischen Bereitstellungsmodell
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Eine Verfügbarkeitsgruppe hilft, dass Ihre virtuellen Computer während eines Ausfalls wie während einer Wartung verfügbar bleiben. Das Platzieren von mindestens zwei ähnlich konfigurierten virtuellen Computern in einer Verfügbarkeitsgruppe erstellt die Redundanz, die zum Wahren der Verfügbarkeit der Anwendungen oder Dienste erforderlich ist, die auf Ihrem virtuellen Computer ausgeführt werden. Ausführliche Informationen hierzu finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer][].
 
@@ -109,4 +111,4 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
 [Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

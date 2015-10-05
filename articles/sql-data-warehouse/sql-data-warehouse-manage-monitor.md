@@ -1,20 +1,20 @@
 <properties
    pageTitle="Überwachen Ihres Workloads mit dynamischen Verwaltungssichten | Microsoft Azure"
-	description="Informationen zum Überwachen Ihres Workloads mit dynamischen Verwaltungssichten."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="sahaj08"
-	manager="barbkess"
-	editor=""/>
+   description="Informationen zum Überwachen Ihres Workloads mit dynamischen Verwaltungssichten."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="sahaj08"
+   manager="barbkess"
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="08/06/2015"
-	ms.author="sahajs"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/22/2015"
+   ms.author="sahajs"/>
 
 # Überwachen Ihres Workloads mit dynamischen Verwaltungssichten
 
@@ -22,23 +22,9 @@ Dieser Artikel beschreibt, wie Sie mit dynamischen Verwaltungssichten Ihren Work
 
 
 
-
-## Berechtigungen
-
-Die Abfrage einer dynamischen Verwaltungsansicht erfordert in SQL Data Warehouse die Berechtigung **VIEW DATABASE STATE**. Die Berechtigung **VIEW DATABASE STATE** gibt Informationen zu allen Objekten innerhalb der aktuellen Datenbank zurück. Zum Erteilen der Berechtigung **VIEW DATABASE STATE** für einen bestimmten Benutzer führen Sie die folgende Abfrage aus:
-
-```
-
-GRANT VIEW DATABASE STATE TO database_user;
-
-```
-
-
-
-
 ## Überwachen von Verbindungen
 
-Sie können die Sicht *sys.dm\_pdw\_nodes\_exec\_connections* zum Abrufen von Informationen zu den Verbindungen nutzen, die mit Ihrer Azure SQL Data Warehouse-Datenbank hergestellt wurden. Darüber hinaus ist die Sicht *Sys. dm\_exec\_sessions* hilfreich beim Abrufen von Informationen zu allen aktiven Benutzerverbindungen.
+Sie können die Sicht *sys.dm\_pdw\_nodes\_exec\_connections* zum Abrufen von Informationen zu den Verbindungen nutzen, die mit Ihrer Azure SQL Data Warehouse-Datenbank hergestellt wurden. Darüber hinaus ist die Sicht *sys.dm\_exec\_sessions* hilfreich beim Abrufen von Informationen zu allen aktiven Benutzerverbindungen.
 
 ```
 
@@ -138,7 +124,7 @@ Speichern Sie den Schrittindex des lang dauernden Schritts.
 Überprüfen Sie die Spalte *operation\_type* des Schritts für die Abfrage mit langer Laufzeit:
 
 - Fahren Sie mit Schritt 4a für **SQL-Vorgänge** fort: OnOperation, RemoteOperation, ReturnOperation.
-- Fahren Sie mit Schritt 4b für **Datenübertragungsvorgänge** fort: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
+- Fahren Sie mit Schritt 4b für **Datenverschiebungsvorgänge** fort: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
 
 
 
@@ -217,4 +203,4 @@ Weitere Tipps zur Verwaltung von SQL Data Warehouse finden Sie unter [Verwaltung
 
 <!--MSDN references-->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

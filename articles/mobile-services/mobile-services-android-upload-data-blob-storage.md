@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blobspeicher (Android) | Mobile Services"
 	description="Erfahren Sie, wie Sie mithilfe von Mobile Services Bilder in Azure Storage hochladen und von Ihrer Android-App auf die Bilder zugreifen."
 	services="mobile-services"
@@ -7,13 +7,13 @@
 	manager="dwrede"
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="09/18/2015"
 	ms.author="ricksal"/>
 
 # Hochladen von Bildern auf Azure Storage aus einem Android-Gerät
@@ -47,7 +47,8 @@ Was bedeutet SAS?
 
 Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Dienst erforderlichen Anmeldeinformationen innerhalb der Client-App zu speichern. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die die Berechtigung zum Hochladen eines neuen Bildes erteilt. Die SAS, eine Anmeldeinformation mit einer Laufzeit von fünf Minuten, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. Weitere Informationen finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
 
->[AZURE.NOTE] [Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) ist der abgeschlossenen Quellcodeteil des Clients von dieser Anwendung.
+## Codebeispiel
+[Hier](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) finden Sie den abgeschlossenen Teil des Clientquellcodes dieser App. Damit Sie die App ausführen können, müssen Sie die Mobile Services-Back-End-Teile dieses Lernprogramms ausführen.
 
 ## Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
@@ -130,7 +131,7 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	    static final int REQUEST_TAKE_PHOTO = 1;
 	    public Uri mPhotoFileUri = null;
 	    public File mPhotoFile = null;
-		
+
 	    public void takePicture(View view) {
 	        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	        // Ensure that there's a camera activity to handle the intent
@@ -161,14 +162,14 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	     */
 	    @com.google.gson.annotations.SerializedName("imageUri")
 	    private String mImageUri;
-	
+
 	    /**
 	     * Returns the item ImageUri
 	     */
 	    public String getImageUri() {
 	        return mImageUri;
 	    }
-	
+
 	    /**
 	     * Sets the item ImageUri
 	     *
@@ -178,20 +179,20 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	    public final void setImageUri(String ImageUri) {
 	        mImageUri = ImageUri;
 	    }
-	
+
 	    /**
 	     * ContainerName - like a directory, holds blobs
 	     */
 	    @com.google.gson.annotations.SerializedName("containerName")
 	    private String mContainerName;
-	
+
 	    /**
 	     * Returns the item ContainerName
 	     */
 	    public String getContainerName() {
 	        return mContainerName;
 	    }
-	
+
 	    /**
 	     * Sets the item ContainerName
 	     *
@@ -201,20 +202,20 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	    public final void setContainerName(String ContainerName) {
 	        mContainerName = ContainerName;
 	    }
-	
+
 	    /**
 	     *  ResourceName
 	     */
 	    @com.google.gson.annotations.SerializedName("resourceName")
 	    private String mResourceName;
-	
+
 	    /**
 	     * Returns the item ResourceName
 	     */
 	    public String getResourceName() {
 	        return mResourceName;
 	    }
-	
+
 	    /**
 	     * Sets the item ResourceName
 	     *
@@ -224,20 +225,20 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	    public final void setResourceName(String ResourceName) {
 	        mResourceName = ResourceName;
 	    }
-	
+
 	    /**
 	     *  SasQueryString - permission to write to storage
 	     */
 	    @com.google.gson.annotations.SerializedName("sasQueryString")
 	    private String mSasQueryString;
-	
+
 	    /**
 	     * Returns the item SasQueryString
 	     */
 	    public String getSasQueryString() {
 	        return mSasQueryString;
 	    }
-	
+
 	    /**
 	     * Sets the item SasQueryString
 	     *
@@ -297,19 +298,19 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	        if (mClient == null) {
 	            return;
 	        }
-	
+
 	        // Create a new item
 	        final ToDoItem item = new ToDoItem();
-	
+
 	        item.setText(mTextNewToDo.getText().toString());
 	        item.setComplete(false);
 	        item.setContainerName("todoitemimages");
-	
+
 	        // Use a unigue GUID to avoid collisions.
 	        UUID uuid = UUID.randomUUID();
 	        String uuidInString = uuid.toString();
 	        item.setResourceName(uuidInString);
-	
+
 	        // Send the item to be inserted. When blob properties are set this
 	        // generates an SAS in the response.
 	        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>(){
@@ -317,23 +318,23 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	            protected Void doInBackground(Void... params) {
 	                try {
 		                    final ToDoItem entity = addItemInTable(item);
-		
+
 		                    // If we have a returned SAS, then upload the blob.
 		                    if (entity.getSasQueryString() != null) {
-		
+
 	                       // Get the URI generated that contains the SAS
 	                        // and extract the storage credentials.
-	                        StorageCredentials cred = 
+	                        StorageCredentials cred =
 								new StorageCredentialsSharedAccessSignature(entity.getSasQueryString());
 	                        URI imageUri = new URI(entity.getImageUri());
-	
+
 	                        // Upload the new image as a BLOB from a stream.
 	                        CloudBlockBlob blobFromSASCredential =
 	                                new CloudBlockBlob(imageUri, cred);
-	
+
 	                        blobFromSASCredential.uploadFromFile(mPhotoFileUri.getPath());
   	                    }
-	
+
 	                    runOnUiThread(new Runnable() {
 	                        @Override
 	                        public void run() {
@@ -348,17 +349,17 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 	                return null;
 	            }
 	        };
-	
+
 	        runAsyncTask(task);
-	
+
 	        mTextNewToDo.setText("");
 	    }
-	
+
 
 Mit diesem Code wird eine Anforderung zum Einfügen eines neuen TodoItem-Elements an den mobilen Dienst gesendet. Die Antwort enthält die SAS, die dann zum Hochladen des Bilds aus dem lokalen Speicher in einen Blob im Azure-Speicher verwendet wird.
 
 
-## Testen des Hochladens von Bildern 
+## Testen des Hochladens von Bildern
 
 1. Drücken Sie in Android Studio **Ausführen**. Wählen Sie im Dialogfeld das Gerät aus.
 
@@ -380,7 +381,7 @@ Mit diesem Code wird eine Anforderung zum Einfügen eines neuen TodoItem-Element
 Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen Dienstes in den Blob-Dienst sicher hochzuladen, können Sie sich einigen anderen Themen aus dem Bereich Backend-Dienste und Integration zuwenden:
 
 + [Senden von E-Mails in Mobile Services mit SendGrid]
- 
+
   Lernen Sie, wie Sie mithilfe des E-Mail-Dienstes SendGrid eine E-Mail-Funktion zu Ihrem mobilen Dienst hinzufügen können. In diesem Thema wird erläutert, wie serverseitige Skripts zum Senden von E-Mails mithilfe von SendGrid hinzugefügt werden.
 
 + [Planen von Back-End-Aufträgen in Mobile Services]
@@ -390,12 +391,12 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 + [Mobile Services: Serverskriptreferenz]
 
   Referenzthemen zur Verwendung von Serverskripts zur Ausführung serverseitiger Tasks sowie zur Integration in andere Azure-Komponenten und externe Ressourcen.
- 
+
 + [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]
 
   Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
-  
- 
+
+
 <!-- Anchors. -->
 [Install the Storage Client library]: #install-storage-client
 [Update the client app to capture images]: #add-select-images
@@ -420,6 +421,5 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
- 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

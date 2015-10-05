@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Keine Verbindungsherstellung mit einem virtuellen Azure-Computer per RDP | Microsoft Azure"
+	pageTitle="Problembehandlung bei der Remotedesktopverbindung auf einem virtuellen Windows-Computer | Microsoft Azure"
 	description="Problembehandlung bei Remotedesktopverbindungen oder RDP-Verbindungen mit einem Windows-basierten virtuellen Azure-Computer"
 	services="virtual-machines"
 	documentationCenter=""
@@ -18,6 +18,8 @@
 	ms.author="dkshir"/>
 
 # Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel erfahren Sie, wie Sie Probleme bei einem virtuellen Computer behandeln, der mit dem klassischen oder Ressourcen-Manager-Bereitstellungsmodell erstellt wurde.
 
 Es kann unterschiedliche Gründe haben, warum Remotedesktop (RDP) keine Verbindung mit Ihrem Windows-basierten virtuellen Azure-Computer herstellen kann. Dieser Artikel hilft Ihnen, die Ursachen zu ermitteln und zu korrigieren.
 
@@ -38,9 +40,9 @@ Diese einfachen Schritte sind hilfreich, um die meisten Remotedesktop-Verbindung
 
 ![Remotezugriff zurücksetzen](./media/virtual-machines-troubleshoot-remote-desktop-connections/Portal-RDP-Reset-Windows.png)
 
-- [Starten Sie den virtuellen Computer neu](https://msdn.microsoft.com/library/azure/dn763934.aspx).
+- [Starten Sie den virtuellen Computer neu.](https://msdn.microsoft.com/library/azure/dn763934.aspx)
 
-- [Ändern Sie die Größe des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
+- [Ändern Sie die Größe des virtuellen Computers.](https://msdn.microsoft.com/library/dn168976.aspx)
 
 
 ## Ausführen des Azure IaaS-Diagnosepakets unter Windows
@@ -59,15 +61,15 @@ Falls das Azure IaaS-Diagnosepaket nicht ausgeführt werden konnte oder nicht hi
 
 Hier sind die häufigsten Fehler angegeben, die bei dem Versuch auftreten können, eine Remotedesktopverbindung mit Ihrem virtuellen Azure-Computer herzustellen:
 
-1. [Fehler bei Remotedesktopverbindung: Die Verbindung mit der Remotesitzung wurde getrennt, da keine Lizenzserver für Remotedesktop vorhanden sind](#rdplicense).
+1. [Fehler bei Remotedesktopverbindung: Die Verbindung mit der Remotesitzung wurde getrennt, da keine Lizenzserver für Remotedesktop vorhanden sind.](#rdplicense)
 
-2. [Fehler bei Remotedesktopverbindung: Der Computer „Name“ kann von Remotedesktop nicht gefunden werden](#rdpname).
+2. [Fehler bei Remotedesktopverbindung: Der Computer "Name" kann von Remotedesktop nicht gefunden werden.](#rdpname)
 
 3. [Fehler bei Remotedesktopverbindung: Authentifizierungsfehler. Die lokale Sicherheitsautorität (LSA) ist nicht erreichbar](#rdpauth).
 
-4. [Fehler bei Windows-Sicherheit: Mit den Anmeldeinformationen konnte keine Verbindung hergestellt werden](#wincred).
+4. [Fehler bei Windows-Sicherheit: Mit den Anmeldeinformationen konnte keine Verbindung hergestellt werden.](#wincred)
 
-5. [Fehler bei Remotedesktopverbindung: Dieser Computer kann keine Verbindung mit dem Remotecomputer herstellen](#rdpconnect).
+5. [Fehler bei Remotedesktopverbindung: Dieser Computer kann keine Verbindung mit dem Remotecomputer herstellen.](#rdpconnect)
 
 <a id="rdplicense"></a>
 ### Fehler bei Remotedesktopverbindung: Die Verbindung mit der Remotesitzung wurde getrennt, da keine Lizenzserver für Remotedesktop vorhanden sind.
@@ -104,7 +106,7 @@ Der Adressteil in dieser RDP-Datei besteht aus dem vollqualifizierten Domänenna
 
 Ursache: Der virtuelle Zielcomputer konnte die Sicherheitsautorität im Benutzernamenteil Ihrer Anmeldeinformationen nicht finden.
 
-Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: „CORP\\User1“) aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
+Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: "CORP\\User1") aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
 
 Lösungsvorschläge:
 
@@ -119,8 +121,8 @@ Ursache: Der virtuelle Zielcomputer konnte Ihren Kontonamen und das Kennwort nic
 
 Ein Windows-basierter Computer kann die Anmeldeinformationen eines lokalen Kontos oder eines Domänenkontos überprüfen.
 
-- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: „SQL1\\Admin4798“).
-- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: „CONTOSO\\johndoe“).
+- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: "SQL1\\Admin4798").
+- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: "CONTOSO\\johndoe").
 
 Wenn Sie den virtuellen Computer auf einem Domänencontroller in einer neuen Active Directory-Gesamtstruktur heraufgestuft haben, wird auch das lokale Administratorkonto, mit dem Sie sich angemeldet haben, in ein äquivalentes Konto mit dem gleichen Kennwort in der neuen Gesamtstruktur und Domäne konvertiert. Das lokale Administratorkonto wird gelöscht. Wenn Sie sich beispielsweise mit dem lokalen Administratorkonto DC1\\DCAdmin angemeldet und den virtuellen Computer als Domänencontroller in einer neuen Gesamtstruktur für die Domäne "corp.contoso.com" heraufgestuft haben, dann wird das lokale Konto DC1\\DCAdmin gelöscht und ein neues Domänenkonto (CORP\\DCAdmin) mit demselben Kennwort erstellt.
 
@@ -135,7 +137,7 @@ Ursache: Das Konto zum Herstellen der Verbindung verfügt nicht über Remotedesk
 
 Jeder Windows-Computer hat eine lokale Gruppe von Remotedesktopbenutzern, in der die Konten und Gruppen enthalten sind, die sich per Remoteverbindung anmelden können. Auch Mitglieder der lokalen Gruppe „Administratoren“ haben Zugriff, obwohl diese Konten nicht in der lokalen Gruppe „Remotedesktopbenutzer“ aufgelistet werden. Bei Computern, die Mitglieder einer Domäne sind, enthält die lokalen Gruppe "Administratoren" auch die Domänenadministratoren für die Domäne.
 
-Stellen Sie sicher, dass das Konto, das Sie zum Herstellen der Verbindung verwenden, über Remotedesktop-Anmelderechte verfügt. Verwenden Sie als Problemumgehung ein Domänenkonto oder lokales Administratorkonto, um per Remotedesktop eine Verbindung herzustellen. Verwenden Sie anschließend das Snap-In „Computerverwaltung“ (**Systemprogramme > Lokale Benutzer und Gruppen > Gruppen > Remotedesktopbenutzer**), um das gewünschte Konto der lokalen Gruppe mit den Remotedesktopbenutzern hinzuzufügen.
+Stellen Sie sicher, dass das Konto, das Sie zum Herstellen der Verbindung verwenden, über Remotedesktop-Anmelderechte verfügt. Verwenden Sie als Problemumgehung ein Domänenkonto oder lokales Administratorkonto, um per Remotedesktop eine Verbindung herzustellen. Verwenden Sie anschließend das Snap-In "Computerverwaltung" (**Systemprogramme > Lokale Benutzer und Gruppen > Gruppen > Remotedesktopbenutzer**), um das gewünschte Konto der lokalen Gruppe mit den Remotedesktopbenutzern hinzuzufügen.
 
 
 ## Detaillierte Problembehandlung
@@ -155,4 +157,4 @@ Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem vir
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

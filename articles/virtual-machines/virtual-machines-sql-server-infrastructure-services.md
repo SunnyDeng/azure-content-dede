@@ -1,22 +1,25 @@
 <properties 
-	pageTitle="Übersicht über SQL Server auf virtuellen Azure-Computern"
-	description="Dieser Artikel bietet einen Übersicht über SQL Server auf virtuellen Azure-IaaS-Computern. Dies schließt Links zu weiterführenden Inhalten ein."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="rothja"
+	pageTitle="Übersicht über SQL Server auf virtuellen Computern | Microsoft Azure"
+	description="Dieser Artikel bietet eine Übersicht über SQL Server auf virtuellen Azure-Computern. Dies schließt Links zu weiterführenden Inhalten ein." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="rothja" 
 	manager="jeffreyg"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
+	ms.workload="infrastructure-services" 
 	ms.date="09/01/2015"
 	ms.author="jroth"/>
 
 # Übersicht zu SQL Server auf virtuellen Azure-Computern
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 ## Erste Schritte
 Sie können [SQL Server auf virtuellen Azure-Computern](http://azure.microsoft.com/services/virtual-machines/sql-server/) in einer Vielzahl von Konfigurationen hosten, die von einem einzelnen Datenbankserver bis hin zu einer Konfiguration mehrerer Computer mit AlwaysOn-Verfügbarkeitsgruppen und einem virtuellen Azure-Netzwerk reichen.
@@ -43,7 +46,7 @@ Die folgende Tabelle enthält eine Matrix der SQL Server-Images, die im Katalog 
 
 >[AZURE.NOTE]Die VM-Katalogimages für Data Warehousing und transaktionale Workloads (oben nicht gezeigt) sind veraltet und werden in Kürze aus dem Katalog entfernt. Verwenden Sie die Standardimages in der vorstehenden Tabelle, und optimieren Sie die Leistung für Ihre spezifische Workload, indem Sie die Empfehlungen unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md) befolgen.
 
-Zusätzlich zu diesen vorkonfigurierten Images können Sie auch [einen virtuellen Azure-Computer](virtual-machines-windows-tutorial.md) ohne vorinstallierte SQL Server-Instanz erstellen. Sie können eine beliebige SQL Server-Instanz darauf installieren, für die Sie über eine Lizenz verfügen. Sie migrieren Ihre Lizenz nach Azure, um SQL Server auf einem virtuellen Azure-Computer auszuführen. Diese Migration erfolgt gemäß [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/). In diesem Szenario bezahlen Sie lediglich für die Compute- und Speicherkosten[ ](http://azure.microsoft.com/pricing/details/virtual-machines)in Azure, die im Zusammenhang mit dem virtuellen Computer anfallen.
+Zusätzlich zu diesen vorkonfigurierten Images können Sie auch [einen virtuellen Azure-Computer](virtual-machines-windows-tutorial.md) ohne vorinstallierte SQL Server-Instanz erstellen. Sie können eine beliebige SQL Server-Instanz darauf installieren, für die Sie über eine Lizenz verfügen. Sie migrieren Ihre Lizenz nach Azure, um SQL Server auf einem virtuellen Azure-Computer auszuführen. Diese Migration erfolgt gemäß [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/). In diesem Szenario bezahlen Sie lediglich für die Compute- und Speicher[kosten](http://azure.microsoft.com/pricing/details/virtual-machines) in Azure, die im Zusammenhang mit dem virtuellen Computer anfallen.
 
 Zu den häufigen Aufgaben in diesen frühen Phasen der Bereitstellung und Konfiguration gehören:
 
@@ -71,7 +74,7 @@ Weitere Informationen finden Sie unter [Hochverfügbarkeit und Notfallwiederhers
 ## Sichern und Wiederherstellen
 Bei lokalen Datenbanken kann Azure als sekundäres Datencenter zum Speichern von SQL Server-Sicherungsdateien fungieren. Eine Übersicht der Sicherungs- und Wiederherstellungsoptionen finden Sie unter [Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-backup-and-restore.md).
 
-Die [SQL Server-URL-Sicherung](https://msdn.microsoft.com/library/dn435916.aspx) speichert Azure-Sicherungsdateien im Azure-Blob-Speicher. Mithilfe von [SQL Server Managed Backup](https://msdn.microsoft.com/library/dn449496.aspx) können Sie eine Sicherung und Archivierung in Azure planen. Diese Dienste können mit lokalen SQL Server-Instanzen oder SQL Server auf virtuellen Azure-Computern verwendet werden. Azure-VMs können auch [automatisierte Sicherungen](virtual-machines-sql-server-automated-backup.md) und [automatische Anwendung von Patches](virtual-machines-sql-server-automated-patching.md) für SQL Server nutzen.
+Die [SQL Server-URL-Sicherung](https://msdn.microsoft.com/library/dn435916.aspx) speichert Azure-Backupdateien im Azure-Blob-Speicher. Mithilfe von [SQL Server Managed Backup](https://msdn.microsoft.com/library/dn449496.aspx) können Sie eine Sicherung und Archivierung in Azure planen. Diese Dienste können mit lokalen SQL Server-Instanzen oder SQL Server auf virtuellen Azure-Computern verwendet werden. Azure-VMs können auch [automatisierte Sicherungen](virtual-machines-sql-server-automated-backup.md) und [automatische Anwendung von Patches](virtual-machines-sql-server-automated-patching.md) für SQL Server nutzen.
 
 ## Konfigurationsdetails eines Image eines virtuellen Computers mit SQL Server
 
@@ -142,6 +145,6 @@ Wenn Sie einen virtuellen Computer erstellen, indem Sie ein von der Plattform be
 - [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md)
 - [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md)
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
-- [Azure Virtual Machines](virtual-machines-about.md) 
+- [Dokumentation zu virtuellen Computern](virtual-machines-about.md) 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

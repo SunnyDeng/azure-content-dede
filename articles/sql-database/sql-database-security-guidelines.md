@@ -1,21 +1,21 @@
 <properties
    pageTitle="Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank | Microsoft Azure"
-	description="Enthält Informationen zu den Richtlinien und Einschränkungen von Microsoft Azure SQL-Datenbank, die sich auf die Sicherheit beziehen."
-	services="sql-database"
-	documentationCenter=""
-	authors="BYHAM"
-	manager="jeffreyg"
-	editor=""
-	tags=""/>
+   description="Enthält Informationen zu den Richtlinien und Einschränkungen von Microsoft Azure SQL-Datenbank, die sich auf die Sicherheit beziehen."
+   services="sql-database"
+   documentationCenter=""
+   authors="BYHAM"
+   manager="jeffreyg"
+   editor=""
+   tags=""/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="data-management"
-	ms.date="08/20/2015"
-	ms.author="rickbyh"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management"
+   ms.date="08/20/2015"
+   ms.author="rickbyh"/>
 
 # Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank
 
@@ -45,7 +45,7 @@ Zusätzliche technische Informationen finden Sie im Artikel [Azure SQL-Datenbank
 
 ## Authentifizierung
 
-SQL-Datenbank unterstützt nur die SQL Server-Authentifizierung. Windows-Authentifizierung (integrierte Sicherheit) wird nicht unterstützt. Die Benutzer müssen bei jeder Verbindung zur SQL-Datenbank ihre Anmeldeinformationen (Benutzername und Kennwort) angeben. Weitere Informationen zur SQL Server-Authentifizierung finden Sie unter [Auswählen eines Authentifizierungsmodus](https://msdn.microsoft.com/library/ms144284.aspx) in der SQL Server-Onlinedokumentation.
+Die Active Directory-Authentifizierung (integrierte Sicherheit) ist als Vorschau in SQL-Datenbank V12 verfügbar. Informationen zum Konfigurieren der AD-Authentifizierung finden Sie unter [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md). Wenn die Vorschau nicht verwendet wird, müssen die Benutzer bei jeder Verbindung mit der SQL-Datenbank ihre Anmeldeinformationen (Benutzername und Kennwort) angeben. Weitere Informationen zur SQL Server-Authentifizierung finden Sie unter [Auswählen eines Authentifizierungsmodus](https://msdn.microsoft.com/library/ms144284.aspx) in der SQL Server-Onlinedokumentation.
 
 Mit [SQL-Datenbank V12](sql-database-v12-whats-new.md) können sich Benutzer gegenüber der Datenbank authentifizieren, indem sie Benutzer für eigenständige Datenbanken verwenden. Weitere Informationen finden Sie unter [Eigenständige Datenbankbenutzer - machen Sie Ihre Datenbank portabel](https://msdn.microsoft.com/library/ff929188.aspx), [CREATE USER (Transact-SQL)](https://technet.microsoft.com/library/ms173463.aspx) und [Eigenständige Datenbanken](https://technet.microsoft.com/library/ff929071.aspx).
 
@@ -88,7 +88,7 @@ GO
 - Nur die Serverebenenprinzipal-Anmeldung und die Mitglieder der Datenbankrolle **dbmanager** in der Datenbank **master** verfügen über die Berechtigung zum Ausführen der Anweisungen ``CREATE DATABASE`` und ``DROP DATABASE``.
 - Nur die Serverebenenprinzipal-Anmeldung und die Mitglieder der Datenbankrolle **loginmanager** in der Datenbank **master** verfügen über die Berechtigung zum Ausführen der Anweisungen ``CREATE LOGIN``, ``ALTER LOGIN`` und ``DROP LOGIN``.
 - Für ``CREATE/ALTER/DROP`` benötigt ein Benutzer die Berechtigung ``ALTER ANY USER`` für die Datenbank.
-- Wenn der Besitzer einer Datenbankrolle versucht, einen anderen Datenbankbenutzer dieser Datenbankrolle hinzuzufügen oder ihn daraus zu entfernen, tritt ggf. ein Fehler der folgenden Art auf: **Benutzer oder Rolle „Name“ ist in dieser Datenbank nicht vorhanden.** Dieser Fehler tritt auf, da der Benutzer für den Besitzer nicht sichtbar ist. Gewähren Sie dem Rollenbesitzer die Berechtigung ``VIEW DEFINITION`` für den Benutzer, um dieses Problem zu beheben. 
+- Wenn der Besitzer einer Datenbankrolle versucht, einen anderen Datenbankbenutzer dieser Datenbankrolle hinzuzufügen oder ihn daraus zu entfernen, tritt ggf. ein Fehler der folgenden Art auf: **Benutzer oder Rolle "Name" ist in dieser Datenbank nicht vorhanden.** Dieser Fehler tritt auf, da der Benutzer für den Besitzer nicht sichtbar ist. Gewähren Sie dem Rollenbesitzer die Berechtigung ``VIEW DEFINITION`` für den Benutzer, um dieses Problem zu beheben. 
 
 Weitere Informationen zu Anmeldungen und Benutzern finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md).
 
@@ -111,4 +111,4 @@ Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendung
 
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

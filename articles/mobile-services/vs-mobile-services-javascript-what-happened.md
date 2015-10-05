@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="" 
+	pageTitle="Was passiert, wenn Sie Mobile Services mithilfe von Visual Studio Verbundene Dienste zu einer Javascript-App hinzufügen?" 
 	description="Beschreibt, was mit Ihrem Azure Mobile Services-Projekt in Visual Studio passiert ist." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="patshea123" 
 	manager="douge" 
 	editor=""/>
-
 
 <tags 
 	ms.service="mobile-services" 
@@ -17,8 +16,7 @@
 	ms.date="07/02/2015" 
 	ms.author="patshea"/>
 
-
-# Was ist mit meinem Projekt passiert?
+# Was passiert in meinem Visual Studio Azure-Javascript-Projekt, wenn ich Mobile Services über Verbundene Dienste hinzugefügt habe?
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-mobile-services-javascript-getting-started.md)
@@ -48,4 +46,4 @@ Im Ordner "Dienste" wurden Konfigurationsdateien für verbundene Dienste hinzuge
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -1,6 +1,8 @@
 <properties
+    title="Azure SQL Database elastic database query overview"
     pageTitle="Übersicht über die Abfrage für elastische Datenbanken in Azure SQL-Datenbank"
     description="Übersicht über das Abfragefeature für elastische Datenbanken"
+    metaKeywords="azure sql database elastic database queries"
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
@@ -55,7 +57,7 @@ In Zukunft werden weitere Topologien von der Abfragefunktion für elastische Dat
 
 Zum Erstellen einer Abfragelösung für elastische Datenbanken muss die [**Shard-Zuordnung**](sql-database-elastic-scale-shard-map-management.md) der Tools für elastische Datenbanken die Remotedatenbank repräsentieren. Wenn Sie bereits die Clientbibliothek für elastische Datenbanken verwenden, können Sie Ihre vorhandene Shard-Zuordnung nutzen. Andernfalls müssen Sie mithilfe der Tools für elastische Datenbanken eine Shard-Zuordnung erstellen.
 
-Im folgenden C\#-Beispielcode wird gezeigt, wie eine Shard-Zuordnung mit einer einzigen Remotedatenbank als Shard hinzugefügt wird.
+Im folgenden C#-Beispielcode wird gezeigt, wie eine Shard-Zuordnung mit einer einzigen Remotedatenbank als Shard hinzugefügt wird.
 
     ShardMapManagerFactory.CreateSqlShardMapManager(
       "yourconnectionstring",
@@ -94,7 +96,7 @@ Die Anmeldeinformationen umfassen Benutzer-ID und Kennwort, die von der Abfrage 
      [;]
 Stellen Sie sicher, dass &lt;shard\_map\_username> kein "@servername"-Suffix enthält.
 
-Hinweise zu Anmeldeinformationen werden in der Katalogsicht "sys.database\_scoped.credentials" angezeigt.
+Hinweise zu Anmeldeinformationen werden in der Katalogsicht „sys.database\_scoped.credentials“ angezeigt.
 
 Verwenden Sie die folgende Syntax, um Hauptschlüssel und Anmeldeinformationen zu übergeben:
 
@@ -265,4 +267,4 @@ Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittwe
 
 <!--anchors-->
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

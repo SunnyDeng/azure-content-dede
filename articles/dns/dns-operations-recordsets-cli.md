@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS | Microsoft Azure" 
-   description="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS, wenn Sie Ihre Domäne in Azure DNS hosten. Alle PowerShell-Befehle für Vorgänge für Datensatzgruppen und Einträge." 
+   pageTitle="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS mithilfe der Befehlszeilenschnittstelle (CLI) | Microsoft Azure" 
+   description="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS, wenn Sie Ihre Domäne in Azure DNS hosten. Alle Befehle der Befehlszeilenschnittstelle (CLI) für Vorgänge für Datensatzgruppen und Einträge." 
    services="dns" 
    documentationCenter="na" 
    authors="joaoma" 
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/07/2015"
+   ms.date="09/22/2015"
    ms.author="joaoma"/>
 
-# Verwalten von DNS-Einträgen
+# Verwalten von DNS-Einträgen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
 - [Azure CLI](dns-operations-recordsets-cli.md)
@@ -239,4 +239,4 @@ Mit dem optionalen Switch "-q" kann diese Bestätigungsaufforderung unterdrückt
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset-cli.md)<BR> [Durchführen von Vorgängen für DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

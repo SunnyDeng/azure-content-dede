@@ -110,6 +110,8 @@ Weitere Informationen zur Arbeit mit Modulen in Azure finden Sie unter [Verwende
 
 Weitere Informationen zum Festlegen einer Node.js-Version für Ihre Anwendung finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung].
 
+Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develop/nodejs/).
+
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
@@ -125,4 +127,4 @@ Weitere Informationen zum Festlegen einer Node.js-Version für Ihre Anwendung fi
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

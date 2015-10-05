@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="sabbour"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -18,7 +19,9 @@
 
 # MariaDB (MySQL)-Cluster - Azure-Lernprogramm
 
-<p>Wir erstellen einen Multimaster-Galera-Cluster (http://galeracluster.com/products/) von MariaDBs (https://mariadb.org/en/about/) – ein robuster, skalierbarer und zuverlässiger MySQL-Ersatz für den Einsatz in einer hochverfügbaren Umgebung auf virtuellen Azure-Computern.</p>
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines MariaDB-Clusters mit dem klassischen Bereitstellungsmodell.
+
+Wir erstellen einen Multimaster-[Galera](http://galeracluster.com/products/)-Cluster von [MariaDBs](https://mariadb.org/en/about/), ein robuster, skalierbarer und zuverlässiger Ersatz für MySQL für das Arbeiten in einer hoch verfügbaren Umgebung auf virtuellen Azure-Computern.
 
 ## Übersicht über die Architektur
 
@@ -368,6 +371,5 @@ Es empfiehlt sich unter Umständen, sich über eine [weitere Möglichkeit zur Gr
 [Möglichkeiten zum Optimieren und Testen der MySQL-Leistung auf virtuellen Azure-Computern mit Linux]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [Problem 1268]: https://github.com/Azure/azure-xplat-cli/issues/1268
 [weitere Möglichkeit zur Gruppierung von MySQL unter Linux]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-mysql-cluster/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

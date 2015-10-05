@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Problembehandlung für Fehler bei der Azure-VM-Erweiterung"
+   pageTitle="Problembehandlung für Fehler bei der Azure-VM-Erweiterung | Microsoft Azure"
    description="Erfahren Sie mehr über die Problembehandlung für Fehler bei der Azure-VM-Erweiterung"
    services="virtual-machines"
    documentationCenter=""
    authors="kundanap"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
@@ -18,9 +19,12 @@
 
 # Problembehandlung für Fehler bei der Azure-VM-Erweiterung.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
+
 ## Übersicht über Azure-Ressourcen-Manager-Vorlagen
 
 Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, die Azure IaaS-Infrastruktur deklarativ in der Json-Sprache anzugeben, indem Sie die Abhängigkeiten zwischen Ressourcen definieren.
+
 
 Klicken Sie auf den Artikel [Erweiterungsvorlagen erstellen](virtual-machines-extensions-authoring-templates.md), um weitere Informationen zum Erstellen von Vorlagen für die Verwendung von Erweiterungen zu erhalten.
 
@@ -80,4 +84,4 @@ Wobei "publsher-name" dem Erweiterungstyp aus der Ausgabe von "azure vm get-inst
 
 Nachdem die Erweiterung entfernt wurde, kann die Vorlage erneut ausgeführt werden, um die Skripts auf dem virtuellen Computer auszuführen.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

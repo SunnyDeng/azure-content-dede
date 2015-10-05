@@ -1,33 +1,44 @@
 <properties
    pageTitle="Erstellen, Starten oder Löschen eines Application Gateways | Microsoft Azure"
-	description="Diese Seite enthält Anweisungen zum Erstellen, Konfigurieren, Starten und Löschen eines Azure Application Gateways"
-	documentationCenter="na"
-	services="application-gateway"
-	authors="joaoma"
-	manager="jdial"
-	editor="tysonn"/>
+   description="Diese Seite enthält Anweisungen zum Erstellen, Konfigurieren, Starten und Löschen eines Azure Application Gateways"
+   documentationCenter="na"
+   services="application-gateway"
+   authors="joaoma"
+   manager="jdial"
+   editor="tysonn"/>
 <tags
    ms.service="application-gateway"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="07/29/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/21/2015"
+   ms.author="joaoma"/>
 
 # Erstellen, Starten oder Löschen eines Application Gateways
 
-In dieser Version können Sie ein Application Gateway mit PowerShell oder REST-API-Aufrufen erstellen. Azure-Portal- und CLI-Unterstützung werden in einer zukünftigen Version bereitgestellt. Dieser Artikel führt Sie durch die Schritte zum Erstellen, Konfigurieren, Starten und Löschen eines Application Gateways.
+Application Gateways verfügen über Lastenausgleich der Ebene 7. Sie bieten Failover, wobei mithilfe von HTTP-Anforderungen die Leistung zwischen verschiedenen Servern in der Cloud oder lokalen Servern verteilt wird. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](application-gateway-create-gateway.md)
-- [Resource Manager Powershell steps](application-gateway-create-gateway-arm.md)
+- [Azure Classic Powershell steps](application-gateway-create-gateway.md)
+- [Azure Resource Manager Powershell steps](application-gateway-create-gateway-arm.md)
+- [Azure Resource Manager template steps](application-gateway-create-gateway-arm-template.md)
+
+
+<BR>
+
+Dieser Artikel führt Sie durch die Schritte zum Erstellen, Konfigurieren, Starten und Löschen eines Application Gateways.
+
+
+>[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und die klassische Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie mit Azure-Ressourcen arbeiten. Sie können die Dokumentation für verschiedene Tools anzeigen, indem Sie auf die Registerkarten oben in diesem Artikel klicken. Dieses Dokument behandelt das Erstellen eines Application Gateways mit einer klassischen Azure-Bereitstellung. Wenn Sie die Version mit dem Ressourcen-Manager verwenden möchten, wechseln Sie zu [Erstellen einer Application Gateway-Bereitstellung mit dem Ressourcen-Manager](application-gateway-create-gateway-arm.md).
+
+
 
 
 
 ## Voraussetzungen
 
-1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version im Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Stellen Sie sicher, dass Sie über ein funktionierendes virtuelles Netzwerk mit einem gültigen Subnetz verfügen. Stellen Sie sicher, dass keine virtuellen Computer oder Cloudbereitstellungen das Subnetz verwenden. Das Application Gateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
 3. Die Server, die Sie für die Verwendung des Application Gateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
 
@@ -42,8 +53,8 @@ Die Werte sind:
 - **Back-End-Serverpool**: Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem Subnetz des virtuellen Netzwerks angehören oder eine öffentliche IP-Adresse/VIP sein.
 - **Einstellungen für den Back-End-Serverpool**: Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
 - **Front-End-Port**: Dieser Port ist der öffentliche Port, der im Application Gateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
-- **Listener**: Der Listener verfügt über einen Front-End-Port, ein Protokoll (HTTP oder HTTPS, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird).
-- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
+- **Listener:** Der Listener verfügt über einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird).
+- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden soll, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
 
 
 
@@ -74,7 +85,7 @@ Mit dem folgenden Beispiel wird ein neues Application Gateway über ein virtuell
  *Description*, *InstanceCount* und *GatewaySize* sind optionale Parameter.
 
 
-**Um zu überprüfen**, ob das Gateway erstellt wurde, können Sie das `Get-AzureApplicationGateway`-Cmdlet verwenden.
+Mithilfe des Cmdlets `Get-AzureApplicationGateway` können Sie **überprüfen**, ob das Gateway erstellt wurde.
 
 
 
@@ -323,7 +334,7 @@ Fügen Sie die Regel der Konfiguration hinzu:
 
 ## Starten des Gateways
 
-Nachdem das Gateway konfiguriert ist, starten Sie es mit dem Cmdlet `Start-AzureApplicationGateway`. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
+Sobald das Gateway konfiguriert ist, verwenden Sie das Cmdlet `Start-AzureApplicationGateway`, um es zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
 
 
 > [AZURE.NOTE]Die Ausführung des Cmdlets `Start-AzureApplicationGateway` kann 15 bis 20 Minuten dauern.
@@ -340,7 +351,7 @@ Nachdem das Gateway konfiguriert ist, starten Sie es mit dem Cmdlet `Start-Azure
 
 ## Überprüfen des Gatewaystatus
 
-Verwenden Sie das Cmdlet `Get-AzureApplicationGateway` zum Überprüfen des Gatewaystatus. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Wird ausgeführt* sein, und "Vip" und "DnsName" sollten gültige Einträge aufweisen.
+Verwenden Sie das Cmdlet `Get-AzureApplicationGateway` zum Überprüfen des Gatewaystatus. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Wird ausgeführt* lauten, und für "Vip" und "DnsName" sollten gültige Einträge vorliegen.
 
 Dieses Beispiel zeigt ein Application Gateway, das ausgeführt wird und Datenverkehr verarbeiten kann, der für `http://<generated-dns-name>.cloudapp.net` vorgesehen ist.
 
@@ -377,7 +388,7 @@ Das folgende Beispiel zeigt das Cmdlet `Stop-AzureApplicationGateway` in der ers
 	----       ----------------     ------------                             ----
 	Successful OK                   ce6c6c95-77b4-2118-9d65-e29defadffb8
 
-Nachdem das Application Gateway beendet wurde, verwenden Sie das Cmdlet `Remove-AzureApplicationGateway`, um den Dienst zu entfernen.
+Sobald das Application Gateway beendet wurde, verwenden Sie das Cmdlet `Remove-AzureApplicationGateway`, um den Dienst zu entfernen.
 
 
 	PS C:\> Remove-AzureApplicationGateway AppGwTest
@@ -388,7 +399,7 @@ Nachdem das Application Gateway beendet wurde, verwenden Sie das Cmdlet `Remove-
 	----       ----------------     ------------                             ----
 	Successful OK                   055f3a96-8681-2094-a304-8d9a11ad8301
 
-Um sicherzustellen, dass der Dienst wurde entfernt, können Sie das Cmdlet `Get-AzureApplicationGateway` verwenden. Dieser Schritt ist nicht erforderlich.
+Mit dem Cmdlet `Get-AzureApplicationGateway` können Sie überprüfen, ob der Dienst entfernt wurde. Dieser Schritt ist nicht erforderlich.
 
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest
@@ -400,13 +411,13 @@ Um sicherzustellen, dass der Dienst wurde entfernt, können Sie das Cmdlet `Get-
 
 ## Nächste Schritte
 
-Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren des Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
+Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
 
-Wenn Sie ein Application Gateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Load Balancer (ILB)](application-gateway-ilb.md).
+Wenn Sie ein Application Gateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
 
 Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unter:
 
-- [Dokumentation zum Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
+- [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

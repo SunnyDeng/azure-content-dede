@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="08/11/2015"
+   ms.date="09/22/2015"
    ms.author="mbaldwin" />
 
 # Entwicklerhandbuch zu Azure-Schlüsseltresor
@@ -55,11 +55,11 @@ Schlüssel und geheime Schlüssel von Azure-Schlüsseltresor können auch mithil
 
 - [Erstellen und Verwalten von Schlüsseltresoren mit PowerShell](key-vault-get-started.md)
 - [Erstellen und Verwalten von Schlüsseltresoren über die Befehlszeilenschnittstelle](key-vault-manage-with-cli.md)
-- [Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903624.aspx)
+- [Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor](key-vault-hsm-protected-keys.md)
 - [Informationen zu Schlüsseln und geheimen Schlüsseln](https://msdn.microsoft.com/library/azure/dn903623.aspx)
 
 ## Weitere Informationen
 
 - [Codebeispiele für Azure-Schlüsseltresor](http://www.microsoft.com/download/details.aspx?id=45343)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

@@ -1,13 +1,12 @@
 <properties
-	pageTitle="Erste Schritte mit Fleet unter CoreOS in Azure"
-	description="Stellt grundlegende Beispiele für die Verwendung von Fleet und Docker auf einem virtuellen Linux-Computer mit CoreOS in Azure bereit."
+	pageTitle="Erste Schritte mit Fleet unter CoreOS | Microsoft Azure"
+	description="Stellt grundlegende Beispiele für die Verwendung von Fleet und Docker auf einem mit dem klassischen Bereitstellungsmodell erstellten virtuellen Linux-Computer mit CoreOS in Azure bereit."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
-
 
 <tags
 	ms.service="virtual-machines"
@@ -18,8 +17,9 @@
 	ms.date="08/03/2015"
 	ms.author="danlep"/>
 
-
 # Erste Schritte mit Fleet unter CoreOS in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 In diesem Artikel enthält zwei kurze Beispiele für die Verwendung von [Fleet](https://github.com/coreos/fleet) und [Docker](https://www.docker.com/) zum Ausführen von Anwendungen in einem Cluster von virtuellen [CoreOS]-Computern.
 
@@ -32,7 +32,7 @@ Um diese Beispiele verwenden zu können, müssen Sie zunächst ein CoreOS-Cluste
 
 Hier ist eine einfache "Hello World"-Anwendung, die in einem einzelnen Docker-Container ausgeführt wird. Dazu wird das [Docker-Hub-Image BusyBox] verwendet.
 
-Erstellen Sie auf dem Linux-Clientcomputer mit einem Texteditor Ihrer Wahl die folgende **systemd**-Unit-Datei, und nennen Sie sie `helloworld.service`. (Nähere Informationen zur Syntax finden Sie unter [Unit Files].)
+Erstellen Sie auf dem Linux-Clientcomputer mit einem Text-Editor Ihrer Wahl die folgende **systemd**-Unit-Datei, und nennen Sie sie `helloworld.service`. (Nähere Informationen zur Syntax finden Sie unter [Unit Files].)
 
 ```
 [Unit]
@@ -175,4 +175,4 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload apache@{1,2,3}.service
 [CoreOS-Image Apache Docker Hub]: https://registry.hub.docker.com/u/coreos/apache/
 [Linux- und Open Source-Computing in Azure]: virtual-machines-linux-opensource.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers"
-	description="Listet die verschiedenen Möglichkeiten zum Erstellen eines virtuellen Linux-Computers auf und enthält Links zu Anweisungen."
+	pageTitle="Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers | Microsoft Azure"
+	description="Listet die verschiedenen Möglichkeiten zum Erstellen eines virtuellen Linux-Computers in Azure auf und enthält Links zu weiteren Anweisungen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -101,4 +101,4 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

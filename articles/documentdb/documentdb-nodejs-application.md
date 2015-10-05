@@ -34,7 +34,7 @@ In diesem Datenbanklernprogramm erstellen Sie eine einfache webbasierte Anwendun
 
 ![Screenshot der in diesem Node.js-Lernprogramm erstellten Anwendung "My Todo List"](./media/documentdb-nodejs-application/image1.png)
 
-Sie haben keine Zeit, um das Lernprogramm abzuschließen, und möchten nur die vollständige Lösung von GitHub abrufen? Kein Problem. Die Lösung erhalten Sie [hier](https://github.com/Azure/azure-documentdb-node/tree/master/tutorial/todo).
+Sie haben keine Zeit, um das Lernprogramm abzuschließen, und möchten nur die vollständige Lösung abrufen? Kein Problem, Sie können die vollständige Beispiellösung von [GitHub][] abrufen.
 
 ## <a name="_Toc395783176"></a>Voraussetzungen
 
@@ -554,10 +554,13 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 
 Glückwunsch! Sie haben Ihre erste Node.js-Express-Webanwendung mit Azure DocumentDB erstellt und auf Azure-Websites veröffentlicht.
 
-Den Quellcode für die vollständige Referenzanwendung können Sie [hier](https://github.com/Azure/azure-documentdb-node/tree/master/tutorial/todo) herunterladen.
+Den Quellcode für die vollständige Referenzanwendung können Sie von [GitHub][] herunterladen.
 
-  [Node.js]: http://nodejs.org/
-  [Git]: http://git-scm.com/
+Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
+
+[Node.js]: http://nodejs.org/
+[Git]: http://git-scm.com/
+[Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

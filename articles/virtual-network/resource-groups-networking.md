@@ -18,20 +18,7 @@
 # Anbieter von Netzwerkressourcen
 Ein zentrales Bedürfnis für den heutigen Geschäftserfolg ist die Fähigkeit, großmaßstäbliche netzwerksensible Anwendungen auf agile, flexible und wiederholbare Weise aufzubauen und zu verwalten. Mit Azure Resource Manager (ARM) können Sie solche Anwendungen als eine einzelne Ressourcensammlung in Ressourcengruppen erstellen. Solche Ressourcen werden durch mehrere Ressourcenanbieter unter ARM verwaltet.
 
-Mit dem Azure Resource Manager (ARM) können Sie solche Anwendungen und die damit verbundene Sammlung von Netzwerkressourcen als eine einzelne Ressourcensammlung in einer Ressourcengruppe erstellen. Die Anwendung und die Netzwerkressourcen werden als eine Einheit in einer ARM-Ressourcengruppe ausgeführt.
-
-Sie können Netzwerkressourcen mithilfe der folgenden Verwaltungsschnittstellen verwalten:
-
-- REST basierte API
-- PowerShell
-- .NET SDK
-- Node.JS SDK
-- Java-SDK
-- Azure-Befehlszeilenschnittstelle
-- Azure-Portal
-- ARM-Vorlagensprache
-
-Mit Einführung der Anbieter von Netzwerkressourcen können Sie die folgenden Vorteile nutzen:
+Azure Resource Manager stützt sich auf verschiedene Ressourcenanbieter, um den Zugriff auf Ressourcen zu ermöglichen. Es gibt drei Hauptressourcenanbieter: Netzwerk, Speicher und Compute. In diesem Dokument werden Merkmale und Vorteile des Netzwerkressourcenanbieters wie die Folgenden beschrieben:
 
 - **Metadaten** – Sie können mithilfe von Tags Informationen hinzufügen. Diese Tags können verwendet werden, um die Ressourcenverwendung über Ressourcengruppen und Abonnements hinweg nachzuverfolgen.
 - **Bessere Kontrolle Ihres Netzwerks** - Netzwerkressourcen sind lose gekoppelt und Sie können sie granularer kontrollieren. Das bedeutet, dass Sie beim Verwalten der Netzwerkressourcen mehr Flexibilität haben.
@@ -40,19 +27,55 @@ Mit Einführung der Anbieter von Netzwerkressourcen können Sie die folgenden Vo
 - **Leichteres Verwalten und Bereitstellen** - Anwendungen können leichter bereitgestellt und verwaltet werden, da Sie einen ganzen Anwendungsstapel als eine einzelne Ressourcensammlung in einer Ressourcengruppe erstellen können. Das Bereitstellen erfolgt schneller, da Sie hierfür lediglich eine Vorlage einer JSON-Nutzlast zur Verfügung stellen müssen.
 - **Schnelle Anpassung** - Sie können Vorlagen im deklarativen Stil verwenden, um eine wiederholbare und schnelle Anpassung von Bereitstellungen zu aktivieren. 
 - **Wiederholbare Anpassung** - Sie können Vorlagen im deklarativen Stil verwenden, um eine wiederholbare und schnelle Anpassung von Bereitstellungen zu aktivieren.
+- **Verwaltungsoberflächen** - Zum Verwalten der Ressourcen können Sie zwischen den folgenden Schnittstellen wählen:
+	- REST basierte API
+	- PowerShell
+	- .NET SDK
+	- Node.JS SDK
+	- Java-SDK
+	- Azure-Befehlszeilenschnittstelle
+	- Vorschauportal
+	- ARM-Vorlagensprache
 
 ## Netzwerkressourcen 
 Die Verwaltung von Netzwerkressourcen kann nun unabhängig voneinander erfolgen, anstatt sie alle durch eine einzelne Computerressource (virtueller Computer) zu verwalten. Das stellt ein höheres Maß an Flexibilität und Agilität beim Verfassen einer komplexen und großmaßstäblichen Infrastruktur in einer Ressourcengruppe sicher.
- 
-Das untenstehende Diagramm stellt eine umfassende Sicht des Netzwerkressourcen-Modells und seinen Zuordnungen aus höherer Ebene dar. Die Ressourcen der höchsten Ebene sind farbig und blau konturiert. Zusätzlich zu den Ressourcen der höchsten Ebene sind untergeordnete Ressourcen farbig und grau konturiert dargestellt. Sie können jede Ressource individuell verwalten.
 
-![Netzwerkressourcen-Modell](./media/resource-groups-networking/Figure1.png)
-
-Eine konzeptionelle Ansicht einer Beispielbereitstellung mit einer Multi-Tier-Anwendung ist nachstehend dargestellt. Alle Netzwerkressourcen sind farbig unterlegt und blau konturiert.
+Eine konzeptionelle Ansicht einer Beispielbereitstellung mit einer Multi-Tier-Anwendung ist nachstehend dargestellt. Alle angezeigten Ressourcen wie Netzwerkkarten, öffentliche IP-Adressen und virtuelle Computer können unabhängig voneinander verwaltet werden.
 
 ![Netzwerkressourcen-Modell](./media/resource-groups-networking/Figure2.png)
 
-## REST-API 
+Jede Ressource enthält einen allgemeinen und einen spezifischen Satz von Eigenschaften. Allgemeine Eigenschaften:
+
+|Eigenschaft|Beschreibung|Beispielwerte|
+|---|---|---|
+|**name**|Der eindeutige Name der Ressource. Für jeden Ressourcentyp gelten eigene Einschränkungen für die Benennung.|PIP01, VM01, NIC01|
+|**location**|Die Azure-Region, in der sich die Ressource befindet.|westus, eastus|
+|**id**|Die eindeutige URI-basierte Kennung.|/subscriptions/<subGUID>/resourceGroups/TestRG/providers/Microsoft.Network/publicIPAddresses/TestPIP|
+
+Die spezifischen Eigenschaften der Ressourcen finden Sie in den folgenden Abschnitten.
+
+[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../../includes/virtual-networks-nrp-pip-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../../includes/virtual-networks-nrp-vnet-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../../includes/virtual-networks-nrp-nic-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../../includes/virtual-networks-nrp-nsg-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../../includes/virtual-networks-nrp-lb-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../../includes/virtual-networks-nrp-lb-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../../includes/virtual-networks-nrp-vpn-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../../includes/virtual-networks-nrp-dns-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../../includes/virtual-networks-nrp-tm-include.md)]
+
+## Verwaltungsschnittstellen
+Azure-Netzwerkressourcen können über verschiedene Schnittstellen verwaltet werden. In diesem Dokument liegt der Schwerpunkt auf zwei dieser Schnittstellen: der REST-API und Vorlagen.
+
+### REST-API 
 Wie zuvor erwähnt können Netzwerkressourcen über eine Vielzahl an Schnittstellen verwaltet werden, einschließlich REST API, .NET SDK, Node.JS SDK, Java SDK, PowerShell, CLI, Azure Portal und Vorlagen.
 
 Die Rest APIs entsprechen der HTTP 1.1 Protokollspezifikation. Die allgemeine URI-Struktur der API ist nachstehend dargestellt:
@@ -73,7 +96,7 @@ Die folgenden HTTP-Methoden werden bei Aufrufen der REST API unterstützt:
 
 Sowohl die Anforderung als auch die Antwort entsprechen einem JSON-Nutzlast-Format. Weitere Informationen finden Sie unter [Azure Resource Management APIs](https://msdn.microsoft.com/library/azure/dn948464.aspx).
 
-## ARM-Vorlagensprache
+### ARM-Vorlagensprache
 Neben dem unerlässlichen Verwalten von Ressourcen (über APIs oder SDK) können Sie auch einen deklarativen Programmierstil verwenden, um Netzwerkressourcen mithilfe der ARM-Vorlagensprache zu erstellen und zu verwalten.
 
 Nachstehend finden Sie eine Beispieldarstellung einer Vorlage –
@@ -214,150 +237,7 @@ Weitere Informationen zur ARM-Vorlagensprache finden Sie unter [Azure Resource M
 
 Die oben abgebildete Vorlage nutzt das virtuelle Netzwerk und Subnetzressourcen. Wie unten aufgeführt, gibt es weitere Netzwerkressourcen, die Sie nutzen können:
 
-## NIC
-Die Netzwerkschnittstellenkarte (Network Interface Card, NIC) stellt eine Netzwerkschnittstelle dar, die einem virtuellen Computer (VM) zugeordnet werden kann. Ein virtueller Computer hat ein oder mehrere NICs.
-
-![NICs auf einem einzelnen virtuellen Computer](./media/resource-groups-networking/Figure3.png)
-
-Zu den Schlüsseleigenschaften einer NIC-Ressource zählen:
-
-- IP-Einstellungen
-- Interner DNS-Name
-- DNS-Server
-
-Eine NIC kann auch den folgenden Netzwerkressourcen zugeordnet werden:
-
-- Netzwerksicherheitsgruppen (NSG) 
-- Lastenausgleichsmodul
-
-## Virtuelles Netzwerk und Subnetz
-Virtuelle Netzwerke (VNET) und Subnetze helfen, eine Sicherheitsbegrenzung für in Azure ausgeführte Arbeitsauslastungen zu definieren. Ein VNET verfügt über einen Adressraum, der auch als CIDR-Block bezeichnet wird.
-
-Ein Subnetz ist eine untergeordnete Ressource eines VNET und hilft, die Segmente von Adressräumen innerhalb eines CIDR-Blocks mithilfe von IP-Adressenpräfixen zu definieren. Virtuelle Computer, die mehrere Arbeitsauslastungen ausführen, arbeiten grundsätzlich in einer Subnetzgrenze.
-
-![NICs auf einem einzelnen virtuellen Computer](./media/resource-groups-networking/Figure4.png)
-
-Zu den Schlüsseleigenschaften einer VNET-Ressource zählen:
-
-- IP-Adressenraum (CIDR-Block) 
-- VNET-Name
-- Subnetze
-- DNS-Server
-
-Ein VNET kann auch den folgenden Netzwerkressourcen zugeordnet werden:
-
-- VPN-Gateway
-
-Zu den Schlüsseleigenschaften eines Subnetzes zählen:
-
-- IP-Adressenpräfix
-- Subnetzname:
-
-Ein Subnetz kann auch den folgenden Netzwerkressourcen zugeordnet werden:
-
-- NSG
-
-## Lastenausgleichsmodul
-Ein Lastenausgleichsmodul wird verwendet, wenn Sie Ihre Anwendungen skalieren möchten. Zu den typischen Bereitstellungsszenarios zählen Anwendungen, die auf mehreren VM-Instanzen ausgeführt werden. Den VM-Instanzen ist ein Lastenausgleichsmodul vorgelagert, das hilft den Netzwerkdatenverkehr an die verschiedenen Instanzen zu verteilen.
-
-![NICs auf einem einzelnen virtuellen Computer](./media/resource-groups-networking/Figure5.png)
-
-Lastenausgleichsmodule enthalten die folgenden untergeordneten Ressourcen:
-
-- **Front-End-IP-Konfiguration** – ein Lastenausgleichsmodul kann ein oder mehrere Front-End-IP-Adressen umschließen, auch als virtuelle IPs (VIPs) bekannt. Diese IP-Adressen dienen als Eingang für den Datenverkehr. 
-- **Back-End-Adresspool** – IP-Adressen, die den VM NICs zugeordnet sind, an die Last verteilt wird.
-- **Lastenausgleichsregeln** – eine Regeleigenschaft ordnet eine bestimmte Front-End-IP-/Port-Kombination einer Back-End-IP-Adressen-/Port-Kombination zu. Mit einer einzelnen Definition eines Lastenausgleichsmodul können Sie mehrere Lastenausgleichsregeln definieren, von denen jede eine Kombination aus Front-End-IP und Port sowie Back-End-IP und Port ist, die dem virtuellen Computer zugeordnet ist. 
-- **Überprüfungen** – Mit Überprüfungen können Sie die Integrität der VM-Instanzen nachverfolgen. Schlägt eine Integritätsüberprüfung fehl, wird die VM-Instanz automatisch aus der Rotation entfernt.
-- **Eingehende NAT-Regeln** – NAT-Regeln definieren den Eingangsdatenverkehr, der durch die Front-End-IP fließt und an die Back-End-IP verteilt wird.
-
-## Application Gateway
-
-Application Gateway bietet eine von Azure verwaltete HTTP-Lastenausgleichslösung, die auf Lastenausgleich der HTTP-Ebene 7 basiert. Anwendungslastenausgleich ermöglicht die Verwendung von Weiterleitungsregeln für Netzwerkverkehr auf Basis von HTTP.
-
-Application Gateways enthalten die folgenden untergeordneten Ressourcen:
-
-- **Back-End-Serverpool**: Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem Subnetz des virtuellen Netzwerks angehören oder eine öffentliche IP-Adresse/VIP sein. 
-- **Einstellungen für den Back-End-Serverpool**: Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
-- **Front-End-Port**: Dieser Port ist der öffentliche Port, der im Application Gateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
-- **Listener**: Der Listener umfasst einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
-- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel "basic" unterstützt. Die Regel "basic" ist eine Round-Robin-Lastverteilung.
-
-
-## Öffentliche IP
-Eine öffentliche IP-Adresse bietet entweder eine reservierte oder dynamische öffentliche IP-Adresse. Eine öffentliche IP-Adresse kann einem Lastausgleichsmodul, NAT, zugewiesen oder einer privaten IP-Adresse auf einer NIC eines virtuellen Computers zugeordnet sein.
-
-Zu den Schlüsseleigenschaften einer öffentlichen IP-Ressource zählen:
-
-- **IP-Zuordnungsmethode** – reserviert oder dynamisch 
-
-## Netzwerksicherheitsgruppen (NSG)
-Eine NSG-Ressource ermöglicht das Erstellen einer Sicherheitsbegrenzung für Arbeitsauslastungen durch Implementieren von Zulassungs- und Ablehnungsregeln. Solche Regeln können auf NIC-Ebene (VM-Instanzebene) oder auf Subnetzebene (VM-Gruppe) angewendet werden.
-
-Zu den Schlüsseleigenschaften einer NSG-Ressource zählen:
-
-- **Sicherheitsregeln** - Eine NSG kann mehrere Sicherheitsregeln definieren. Jede Regel kann verschiedene Datenverkehrstypen zulassen oder ablehnen.
-
-## Sicherheitsregel
-Eine Sicherheitsregel ist eine der NSG untergeordnete Ressource.
-
-Zu den Schlüsseleigenschaften einer Sicherheitsregel zählen:
-
-- **Protokoll** – Das Netzwerkprotokoll, für das diese Regel gilt.
-- **Quellportbereich** - Quellport, oder Bereich, von 0 bis 65535. Zur Übereinstimmung aller Ports kann ein Platzhalter verwendet werden. 
-- **Zielportbereich** - Zielport, oder Bereich, von 0 bis 65535. Zur Übereinstimmung aller Ports kann ein Platzhalter verwendet werden.
-- **Quelladresspräfix** - Quell-IP-Adressbereich. 
-- **Zieladresspräfix** - Ziel-IP-Adressbereich.
-- **Zugriff** – *Zulassen* oder *Ablehnen* von Datenverkehr.
-- **Priorität** - ein Wert zwischen 100 und 4096. Die Prioritätsnummer muss für jede Regel in der Sammlung von Sicherheitsregeln eindeutig sein. Je niedrigere die Prioritätsnummer ist, desto höher ist die Priorität der Regel.
-- **Richtung** – gibt an, ob die Regel für Datenverkehr in *eingehende* oder *ausgehende* Richtung angewendet wird. 
-
-## VPN-Gateway 
-Eine VPN-Gateway-Ressource ermöglicht Ihnen, eine sichere Verbindung zwischen ihrem lokalen Rechenzentrum und Azure zu erstellen. Eine VPN-Gateway-Ressource kann auf drei unterschiedliche Arten konfiguriert werden:
- 
-- **Punkt-zu-Standort** – Mit einem VPN-Client von einem beliebigen Computer können Sie sicher auf Ihre in einem VNET gehosteten Azure-Ressourcen zugreifen. 
-- **Multisite-Verbindung** – Sie können von Ihren lokalen Rechenzentren eine sichere Verbindung zu Ressourcen aufbauen, die in einem VNET ausgeführt werden. 
-- **VNET-zu-VNET** – Sie können über Azure-VNETs hinweg (in der gleichen Region oder regionsübergreifend) eine sichere Verbindung aufbauen, um Arbeitsauslastungen mit Georedundanz zu erstellen.
-
-Zu den Schlüsseleigenschaften eines VPN-Gateway zählen:
- 
-- **Gateway-Typ** - dynamisch oder statisch weitergeleitetes Gateway. 
-- **Adresspool-Präfix des VPN-Client** – IP-Adressen, die den Clients mit Punkt-zu-Standort-Verbindung zuzuweisen sind.
-
-
-
-## Traffic Manager-Profil
-Der Traffic Manager und seine untergeordnete Endpunkt-Ressource ermöglichen die Verteilung Ihres Datenverkehrs zu Endpunkten in und außerhalb von Azure. Eine solche Datenverkehrsverteilung wird durch Richtlinien bestimmt. Der Traffic Manager lässt auch eine Überwachung der Endpunkt-Integrität zu, sowie eine angemessene Umleitung des Datenverkehrs basierend auf der Integrität eines Endpunktes.
-
-Zu den Schlüsseleigenschaften eines Traffic Manager zählen:
-
-- **Datenverkehr-Routingmethode** - mögliche Werte sind *Leistung*, *Gewichtung* und *Priorität*.
-- **DNS-Konfiguration** - FQDN für das Profil.
-- **Protokoll** - Überwachungsprotokoll, mögliche Werte sind *HTTP* und *HTTPS*.
-- **Port** - Überwachungsport. 
-- **Pfad** - Überwachungspfad.
-- **Endpunkte** - Container für Endpunkt-Ressourcen.
-
-## Endpunkt 
-Ein Endpunkt ist eine dem Traffic Manager-Profil untergeordnete Ressource. Er stellt einen Dienst- oder Webendpunkt dar, an den der Benutzerdatenverkehr anhand der in der Traffic Manager-Ressource konfigurierten Richtlinie verteilt wird.
-
-Zu den Schlüsseleigenschaften eines Endpunktes zählen:
- 
-- **Typ** - der Typ des Endpunkts, mögliche Werte sind *Azure-Endpunkt*, *externer Endpunkt* und *geschachtelter Endpunkt*. 
-- **Zielressourcen-ID** – öffentliche IP-Adresse eines Dienst- oder Webendpunktes. Dabei kann es sich um einen Azure- oder externen Endpunkt handeln.
-- **Gewichtung** - Endpunkt-Gewichtung, die für die Datenverkehrsverwaltung verwendet wird. 
-- **Priorität** - Priorität des Endpunktes, die zum Definieren einer Failover-Aktion verwendet wird. 
-
-## Azure DNS
-
-Azure DNS ist ein Hostingdienst für DNS-Domänen, der die Namensauflösung mithilfe der Microsoft Azure-Infrastruktur durchführt.
-
-Zu den Schlüsseleigenschaften von Azure DNS zählen:
-
-- ** DNS-Zonen ** – Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne.
-- ** DNS-Eintragssätze ** – eine Auflistung der Einträge eines bestimmten Typs. Unterstützte Typen sind A, AAAA, CNAME, MX, NS, SOA, SRV und TXT.
-
-
-## Verwenden einer Vorlage
+### Verwenden einer Vorlage
 
 Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerShell oder AzureCLI verwenden oder indem Sie die Bereitstellung von GitHub per Klick ausführen. Führen Sie zum Bereitstellen von Diensten über eine Vorlage in GitHub die folgenden Schritte aus:
 
@@ -392,4 +272,4 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 
 [Bereitstellungen von Vorlagen](https://msdn.microsoft.com/library/azure/dn790549.aspx)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

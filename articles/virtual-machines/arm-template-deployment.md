@@ -1,4 +1,12 @@
-<properties pageTitle="Bereitstellen von Azure-Ressourcen mithilfe einer Vorlage" description="Erfahren Sie, wie Sie einige der verfügbaren Clients in der Azure-Ressourcenverwaltungsbibliothek verwenden, um einen virtuellen Computer, ein virtuelles Netzwerk und ein Speicherkontos bereitzustellen" services="virtual-machines,virtual-networks,storagSpeichere" documentationCenter="" authors="davidmu1" manager="timlt" editor="tysonn" tags="azure-resource-manager/>
+<properties
+	pageTitle="Bereitstellen von Azure-Ressourcen mithilfe einer Vorlage | Microsoft Azure"
+	description="In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in der Azure-Ressourcenverwaltungsbibliothek verwenden, um einen virtuellen Computer, ein virtuelles Netzwerk und ein Speicherkontos bereitzustellen."
+	services="virtual-machines,virtual-networks,storage"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="azure-resource-manager"
@@ -11,6 +19,8 @@
 
 # Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+
 Durch das Verwenden von Ressourcengruppen und Vorlagen, können Sie alle Ressourcen verwalten, die zusammen Ihre Anwendung unterstützen. In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in der Azure-Ressourcenverwaltungsbibliothek verwenden und eine Vorlage zum Bereitstellen eines virtuellen Computers, virtuellen Netzwerks und Speicherkontos erstellen können.
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
@@ -19,7 +29,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-DE/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/DE-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/DE-DE/download/details.aspx?id=40855)
 - [Azure PowerShell](../powershell-install-configure.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
@@ -294,7 +304,7 @@ Um Werte für die Ressourcenparameter anzugeben, die in der Vorlage definiert wu
           }
         }
 
-    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Informationen zu Images für virtuelle Computer](https://azure.microsoft.com/de-DE/documentation/articles/virtual-machines-images/). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
+    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Informationen zu Images für virtuelle Computer](https://azure.microsoft.com/DE-DE/documentation/articles/virtual-machines-images/). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
 
 
 4.	Speichern Sie Parameterdatei, die Sie erstellt haben.
@@ -443,4 +453,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

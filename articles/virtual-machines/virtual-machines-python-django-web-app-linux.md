@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Python-Web-App mit Django auf Mac | Microsoft Azure" 
-	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe eines virtuellen Linux-Computers eine Django-basierte Website auf Azure hosten können." 
+	pageTitle="Python-Web-App mit Django unter Linux | Microsoft Azure" 
+	description="Hier erfahren Sie, wie Sie mithilfe eines virtuellen Linux-Computers eine Django-basierte Webanwendung auf Azure hosten können." 
 	services="virtual-machines" 
 	documentationCenter="python" 
 	authors="huguesv" 
 	manager="wpickett" 
-	editor=""/>
+	editor=""
+	tags=“azure-service-management"/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -15,16 +16,16 @@
 	ms.topic="article" 
 	ms.date="05/20/2015" 
 	ms.author="huvalo"/>
-
-
-
-
-
-# Django-Webanwendung "Hello World" (Mac, Linux)
+	
+# Django-Webanwendung "Hello World" auf einem virtuellen Linux-Computer
 
 > [AZURE.SELECTOR]
-- [Windows](web-app-with-django.md)
-- [Mac/Linux](django-hello-world-(maclinux).md)
+- [Windows](virtual-machines-python-django-web-app-windows-server.md)
+- [Mac/Linux](virtual-machines-python-django-web-app-linux.md)
+
+<br>
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Microsoft Azure mithilfe eines virtuellen Linux-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
 
@@ -131,4 +132,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 [portal-vm]: /manage/linux/tutorials/virtual-machine-from-gallery/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

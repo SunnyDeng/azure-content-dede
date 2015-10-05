@@ -1,26 +1,29 @@
-<properties 
-	pageTitle="Optimieren der MySQL-Leistung auf virtuellen Azure Linux-Computern" 
-	description="Erfahren Sie, wie Sie MySQL bei Ausführung auf einem virtuellen Azure-Computer unter Linux optimieren können." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="NingKuang" 
-	manager="timlt" 
-	editor="tysonn"/>
+<properties
+	pageTitle="Optimieren der Leistung von MySQL auf virtuellen Linux-Computern | Microsoft Azure"
+	description="Erfahren Sie, wie Sie MySQL bei Ausführung auf einem virtuellen Azure-Computer unter Linux optimieren können."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="NingKuang"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/21/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="05/21/2015"
 	ms.author="ningk"/>
 
-#Optimieren der MySQL-Leistung auf virtuellen Azure Linux-Computern 
+#Optimieren der MySQL-Leistung auf virtuellen Azure Linux-Computern
 
 Es gibt viele Faktoren, die die MySQL-Leistung unter Azure beeinträchtigen, sowohl in Bezug auf die Auswahl der virtuellen Hardware als auch auf die Softwarekonfiguration. Dieser Artikel befasst sich mit der Leistungsoptimierung über die Speicher-, System- und Datenbankkonfiguration.
 
-##Verwenden von RAID auf einem virtuellen Azure-Computer 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
+
+##Verwenden von RAID auf einem virtuellen Azure-Computer
 Speicher ist der wichtigste Faktor, der sich auf die Leistung der Datenbank in Cloudumgebungen auswirkt. Im Vergleich zu einem einzelnen Datenträger kann RAID schnelleren Zugriff über Parallelität bereitstellen. Unter [Standard-RAID-Stufen](http://en.wikipedia.org/wiki/Standard_RAID_levels) finden Sie weitere Details.
 
 Datenträger-E/A-Durchsatz und E/A-Antwortzeiten in Azure können durch RAID erheblich verbessert werden. Unsere Labortests zeigen, dass der Datenträger-E/A-Durchsatz bei Verdoppelung der Anzahl der RAID-Datenträger (von 2 auf 4, von 4 auf 8 usw.) durchschnittlich verdoppelt und die E/A-Antwortzeiten auf die Hälfte reduziert werden können. In [Anhang A](#AppendixA) finden Sie nähere Informationen.
@@ -32,9 +35,9 @@ Sie sollten auch die Segmentgröße berücksichtigen. Im Allgemeinen erzielen Si
 Bitte beachten Sie, dass es hinsichtlich der Anzahl der Festplatten Beschränkungen gibt, die Sie für verschiedene Arten von virtuellen Computern hinzufügen können. Ausführliche Informationen zu diesen Grenzen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Im RAID-Beispiel in diesem Artikel benötigen Sie 4 angefügte Datenträger; Sie können jedoch auch ein RAID mit weniger Datenträgern einrichten.
 
 In diesem Artikel wird angenommen, dass Sie bereits einen virtuellen Linux-Computer erstellt und MySQL installiert und konfiguriert haben. Weitere Informationen zu den ersten Schritten finden Sie unter "Installieren von MySQL unter Azure".
-  
+
 ###Einrichtung von RAID unter Azure
-Die folgenden Schritte beschreiben, wie Sie RAID mithilfe des Windows Azure-Verwaltungsportals auf Azure erstellen können. Sie können RAID auch mithilfe von Windows PowerShell-Skripten einrichten. In diesem Beispiel wird RAID 0 mit 4 Datenträgern konfiguriert.
+Die folgenden Schritte beschreiben, wie Sie RAID mithilfe des Azure-Verwaltungsportals auf Azure erstellen können. Sie können RAID auch mithilfe von Windows PowerShell-Skripten einrichten. In diesem Beispiel wird RAID 0 mit 4 Datenträgern konfiguriert.
 
 ####Schritt 1: Hinzufügen eines Datenträgers zum virtuellen Computer  
 
@@ -45,16 +48,16 @@ Klicken Sie auf der Seite "Virtuelle Computer" im Azure-Verwaltungsportal auf de
 Klicken Sie auf der Seite für den virtuellen Computer auf **Dashboard**.
 
 ![][2]
- 
+
 
 Klicken Sie in der Taskleiste auf **Anfügen**.
- 
+
 ![][3]
 
 Klicken Sie dann auf **Leeren Datenträger anfügen**.
 
 ![][4]
- 
+
 Für Datenträger sollte für **Hostcacheeinstellungen** die Einstellung **Keine** festgelegt werden.
 
 Dadurch wird ein leerer Datenträger zu Ihrem virtuellen Computer hinzugefügt. Wiederholen Sie diesen Schritt drei weitere Male, bis Sie über 4 Datenträger für RAID verfügen.
@@ -66,7 +69,7 @@ Sie sehen die hinzugefügten Laufwerke auf dem virtuellen Computer im Kernel-Mes
 ####Schritt 2: Erstellen von RAID mit den zusätzlichen Datenträgern
 Die detaillierten Schritte zur Einrichtung von RAID finden Sie in diesem Artikel:
 
-[http://azure.microsoft.com/documentation/articles/virtual-machines-linux-configure-RAID/](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-configure-RAID/)
+[Konfigurieren von Software-RAID unter Linux](virtual-machines-linux-configure-RAID.md)
 
 >[AZURE.NOTE]Führen Sie bei Verwendung des XFS-Dateisystems nach der RAID-Erstellung die nachfolgend aufgeführten Schritte aus:
 
@@ -76,7 +79,7 @@ Verwenden Sie den folgenden Befehl, um XFS auf Debian, Ubuntu oder Linux Mint zu
 
 Verwenden Sie den folgenden Befehl, um XFS auf Fedora, CentOS oder RHEL zu installieren:
 
-	yum -y install xfsprogs  xfsdump 
+	yum -y install xfsprogs  xfsdump
 
 
 ####Schritt 3: Einrichten eines neuen Speicherpfads
@@ -116,11 +119,11 @@ Für Debian-Verteilungen:
 ###Schritt 1. Anzeigen des aktuellen E/A-Schedulers
 Verwenden Sie den folgenden Befehl:
 
-	root@mysqlnode1:~# cat /sys/block/sda/queue/scheduler 
+	root@mysqlnode1:~# cat /sys/block/sda/queue/scheduler
 
 Sie sehen die folgende Ausgabe; diese gibt den aktuellen Scheduler an.
 
-	noop [deadline] cfq 
+	noop [deadline] cfq
 
 
 ###Schritt 2. Ändern des aktuellen Geräts (/dev/sda) des E/A-Scheduling-Algorithmus
@@ -150,7 +153,7 @@ Bei Redhat-Verteilungen benötigen Sie nur den folgenden Befehl:
 
 ##Konfigurieren der Einstellungen für Systemdateivorgänge
 Eine bewährte Methode ist, das Protokollierungsfeature "atime" im Dateisystem zu deaktivieren. "Atime" ist die Zeit des letzten Dateizugriffs. Wenn auf eine Datei zugegriffen wird, erfasst das Dateisystem den Zeitstempel im Protokoll. Diese Informationen werden jedoch nur selten verwendet. Sie können sie deaktivieren, wenn Sie sie nicht benötigen. Hierdurch verringert sich die Datenträger-Zugriffszeit insgesamt.
- 
+
 Für die Deaktivierung der atime-Protokollierung müssen Sie die Dateisystemkonfigurationsdatei "/etc/fstab" ändern und die Option **noatime** hinzufügen.
 
 Bearbeiten Sie z. B. die "vim/etc/fstab"-Datei, indem Sie "noatime" hinzufügen (siehe unten).
@@ -170,7 +173,7 @@ Testen Sie das geänderte Ergebnis. Beachten Sie, dass die Zugriffszeit beim Än
 Beispiel vorher:
 
 ![][5]
- 
+
 Beispiel nachher:
 
 ![][6]
@@ -190,7 +193,7 @@ Fügen Sie die folgenden vier Zeilen in die Datei "/etc/security/limits.conf" ei
 Führen Sie die folgenden Befehle aus:
 
 	ulimit -SHn 65536
-	ulimit -SHu 65536 
+	ulimit -SHu 65536
 
 ###Schritt 3: Sicherstellen, dass die Grenzwerte beim Systemstart aktualisiert werden
 Fügen Sie die folgenden Startbefehle in die Datei "/etc/rc.local" ein, damit diese bei jedem Systemstart wirksam werden.
@@ -198,7 +201,7 @@ Fügen Sie die folgenden Startbefehle in die Datei "/etc/rc.local" ein, damit di
 	echo “ulimit -SHn 65536” >>/etc/rc.local
 	echo “ulimit -SHu 65536” >>/etc/rc.local
 
-##MySQL-Datenbankoptimierung 
+##MySQL-Datenbankoptimierung
 Sie können die gleiche Leistungsoptimierungsstrategie für die Konfiguration von MySQL auf Azure wie für einen lokalen Computer verwenden.
 
 Die wichtigsten E/A-Optimierungsregeln sind:
@@ -214,10 +217,10 @@ Die folgenden Konfigurationselemente sind die Hauptfaktoren, die die MySQL-Leist
 -	**innodb\_log\_file\_size**: Dies ist die Größe des Redo-Protokolls. Sie verwenden die redo-Protokolle, um sicherzustellen, dass die Schreibvorgänge nach einem Systemabsturz schnell, zuverlässig und wiederherstellbar sind. Dies ist auf 512 MB festgelegt. Damit verfügen Sie über ausreichend Speicherplatz für die Protokollierung von Schreibvorgängen.
 -	**max\_connections**: Manchmal schließen Anwendungen Verbindungen nicht ordnungsgemäß. Mit einem größeren Wert erhält der Server mehr Zeit für die Wiederverwendung von Leerlaufverbindungen. Es sind maximal 10.000 Verbindungen möglich, aber das empfohlene Maximum beträgt 5000 Verbindungen.
 -	**Innodb\_file\_per\_table**: Mit dieser Einstellung wird die Fähigkeit von InnoDB zur Speicherung von Tabellen in separaten Dateien aktiviert bzw. deaktiviert. Durch Aktivieren der Option wird sichergestellt, dass mehrere erweiterte Verwaltungsvorgänge effizient angewendet werden können. Vom Leistungsstandpunkt aus betrachtet kann die Übermittlung von Tabellenspeicherplatz hierdurch beschleunigt und die Leistung beim Umgang mit Verschwendung optimiert werden. Daher wird empfohlen, diese Einstellung zu aktivieren.</br> Ab MySQL 5.6 ist diese Option standardmäßig aktiviert. Daher ist keine Aktion erforderlich. Bei den früheren Versionen (vor 5.6) ist die Option standardmäßig deaktiviert. Daher müssen Sie diese aktivieren. Die Option sollte vor dem Laden neuer Daten angewendet werden, weil sie sich nur auf neu erstellte Tabellen auswirkt.
--	**Innodb\_flush\_log\_at\_trx\_commit**:Der Standardwert ist 1, wobei der Gültigkeitsbereich auf 0\~2 gesetzt ist. Der Standardwert ist die am besten geeignete Option für eine eigenständige MySQL-DB. Die Einstellung 2 ermöglicht die höchste Datenintegrität und eignet sich für den Master im MySQL-Cluster. Die Einstellung 0 lässt Datenverluste zu. Dies kann die Zuverlässigkeit beeinträchtigen. In einigen Fällen wird die Leistung verbessert. Daher eignet sich die Einstellung für Slaves im MySQL-Cluster.
+-	**Innodb\_flush\_log\_at\_trx\_commit**:Der Standardwert ist 1, wobei der Gültigkeitsbereich auf 0~2 gesetzt ist. Der Standardwert ist die am besten geeignete Option für eine eigenständige MySQL-DB. Die Einstellung 2 ermöglicht die höchste Datenintegrität und eignet sich für den Master im MySQL-Cluster. Die Einstellung 0 lässt Datenverluste zu. Dies kann die Zuverlässigkeit beeinträchtigen. In einigen Fällen wird die Leistung verbessert. Daher eignet sich die Einstellung für Slaves im MySQL-Cluster.
 -	**Innodb\_log\_buffer\_size**: Der Protokollpuffer lässt zu, dass Transaktionen ausgeführt werden, ohne dass das Protokoll vor dem Ausführen der Transaktionen auf den Datenträger übertragen werden muss. Wenn jedoch ein großes binäres Objekt oder Textfeld vorhanden ist, wird der Zwischenspeicher sehr schnell aufgebraucht. Dadurch wird eine häufige Datenträger-E/A ausgelöst. Es ist besser, die Puffergröße zu erhöhen, wenn die Zustandsvariable "Innodb\_log\_waits" nicht 0 ist.
 -	**query\_cache\_size**: Die beste Möglichkeit ist, diese Einstellung von Anfang an zu deaktivieren. Legen Sie "query\_cache\_size" auf 0 fest (in MySQL 5.6 ist dies nun die Standardeinstellung), und verwenden Sie andere Methoden zur Beschleunigung von Abfragen.  
-  
+
 In [Anhang D](#AppendixD) finden Sie einen Vergleich der Leistung nach der Optimierung.
 
 
@@ -236,11 +239,11 @@ Beachten Sie, dass diese Option standardmäßig nicht aktiviert ist. Die Aktivie
 	service  mysql  restart
 
 ###Schritt 3: Überprüfen der Wirksamkeit der Einstellung mit dem Befehl "show"
- 
+
 ![][7]
-   
+
 ![][8]
- 
+
 In diesem Beispiel sehen Sie, dass die Funktion für langsame Abfragen aktiviert wurde. Anschließend können Sie mit dem Tool **mysqldumpslow** Leistungsengpässe ermitteln und die Leistung optimieren (z. B. das Hinzufügen von Indizes).
 
 
@@ -255,7 +258,7 @@ Im folgenden Beispiel werden Leistungstestdaten für eine gezielte Lab-Umgebung 
 
 
 ![][9]
- 
+
 **Testbefehle:**
 
 	fio -filename=/path/test -iodepth=64 -ioengine=libaio -direct=1 -rw=randwrite -bs=4k -size=5G -numjobs=64 -runtime=30 -group_reporting -name=test-randwrite
@@ -264,7 +267,7 @@ Im folgenden Beispiel werden Leistungstestdaten für eine gezielte Lab-Umgebung 
 
 <a name="AppendixB"></a>Anhang B: **MySQL-Leistungsvergleich (Durchsatz) bei verschiedenen RAID-Stufen** (XFS-Dateisystem)
 
- 
+
 ![][10] ![][11]
 
 **Testbefehle:**
@@ -279,7 +282,7 @@ Im folgenden Beispiel werden Leistungstestdaten für eine gezielte Lab-Umgebung 
 
 <a name="AppendixC"></a>Anhang C: **Vergleich der Datenträgerleistung (IOPS) bei verschiedenen Blockgrößen** (XFS-Dateisystem)
 
- 
+
 ![][13]
 
 **Testbefehle:**
@@ -292,7 +295,7 @@ Für diesen Test wird eine Dateigröße von 30 GB bzw. 1 GB mit einem RAID 0-X
 
 <a name="AppendixD"></a>Anhang D: **Vergleich der MySQL-Leistung (Durchsatz) vor und nach der Optimierung** (XFS-Dateisystem)
 
-  
+
 ![][14]
 
 **Testbefehle:**
@@ -343,6 +346,5 @@ Weitere und detailliertere Konfigurationsparameter für die Optimierung finden S
 [12]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-12.png
 [13]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-13.png
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

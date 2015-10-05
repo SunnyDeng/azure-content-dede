@@ -1,23 +1,23 @@
 <properties
-   pageTitle="Erstellen einer Datensatzgruppe und von Einträgen für eine DNS-Zone | Microsoft Azure"
-	description="Erstellen von Hosteinträgen für Azure DNS. Einrichten von Datensatzgruppen und Einträgen mithilfe von PowerShell oder der Befehlszeilenschnittstelle"
-	services="dns"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="Adinah"
-	editor=""/>
+   pageTitle="Erstellen einer Datensatzgruppe und von Einträgen für eine DNS-Zone mithilfe der Befehlszeilenschnittstelle (CLI) | Microsoft Azure"
+   description="Erstellen von Hosteinträgen für Azure DNS. Einrichten von Datensatzgruppen und Einträgen mithilfe der Befehlszeilenschnittstelle (CLI)"
+   services="dns"
+   documentationCenter="na"
+   authors="joaoma"
+   manager="Adinah"
+   editor=""/>
 
 <tags
    ms.service="dns"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="09/02/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/22/2015"
+   ms.author="joaoma"/>
 
 
-# Erstellen von DNS-Einträgen
+# Erstellen von DNS-Einträgen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
 - [Azure CLI](dns-getstarted-create-recordset-cli.md)
@@ -52,14 +52,14 @@ Die Gültigkeitsdauer (TTL oder Time-to-Live) gibt an, wie lange jeder Eintrag v
 
 
 
-## Erstellen von Datensatzgruppen und Einträgen über die Befehlszeilenschnittstelle
+## Erstellen von Datensatzgruppen und Einträgen 
 
 Das folgende Beispiel zeigt, wie Sie eine Datensatzgruppe und Einträge erstellen. Wir verwenden den DNS-Datensatztyp "A-Datensatz". Informationen zu anderen Datensatztypen finden Sie unter [Verwalten von DNS-Einträgen](dns-operations-recordsets-cli.md).
 
 
 ### Schritt 1
 
-Erstellen Sie eine Datensatzgruppe über die Befehlszeilenschnittstelle:
+Erstellen Sie eine Datensatzgruppe:
 
 	Usage: network dns record-set create <resource-group> <dns-zone-name> <name> <type> <ttl>
 
@@ -122,4 +122,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

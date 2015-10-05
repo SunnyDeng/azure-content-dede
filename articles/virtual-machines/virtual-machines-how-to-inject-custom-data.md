@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Einfügen von benutzerdefinierten Daten in Azure Virtual Machines"
+	pageTitle="Einfügen benutzerdefinierter Daten in virtuelle Computer | Microsoft Azure"
 	description="Dieses Thema beschreibt das Einfügen von benutzerdefinierten Daten in einem virtuellen Azure-Computer, wenn die Instanz erstellt wird, und das Suchen der benutzerdefinierten Daten auf Windows oder Linux."
 	services="virtual-machines"
 	documentationCenter=""
@@ -7,7 +7,6 @@
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management" />
-
 
 <tags
 	ms.service="virtual-machines"
@@ -19,10 +18,13 @@
 	ms.author="rasquill"/>
 
 
-
 #Einfügen benutzerdefinierter Daten in einen virtuellen Azure-Computer
 
-Das Einfügen eines Skripts oder anderer Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird, ist ein sehr häufiges Szenario, unabhängig davon, ob es sich bei dem Betriebssystem um Windows oder eine Linux-Distribution handelt. In diesem Thema wird Folgendes beschrieben:
+Das Einfügen eines Skripts oder anderer Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird, ist ein sehr häufiges Szenario, unabhängig davon, ob es sich bei dem Betriebssystem um Windows oder eine Linux-Distribution handelt.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
+In diesem Thema wird Folgendes beschrieben:
 
 - Das Einfügen von Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird.
 
@@ -64,7 +66,7 @@ Wenn Ihr virtueller Azure-Computer von einem Ubuntu- oder CoreOS-Image erstellt 
 
 ### Ubuntu-Cloud-Images
 
-In den meisten Azure Linux-Images bearbeiten Sie "/ /etc/waagent.conf", um den temporären Ressourcendatenträger und die Auslagerungsdatei zu konfigurieren. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux Agent](virtual-machines-linux-agent-user-guide.md).
+In den meisten Azure Linux-Images bearbeiten Sie "/ /etc/waagent.conf", um den temporären Ressourcendatenträger und die Auslagerungsdatei zu konfigurieren. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md).
 
 Bei Ubuntu-Cloud-Images muss zum Konfigurieren des Ressourcendatenträgers (auch als "kurzlebiger" Datenträger bezeichnet) und der Swap-Partition jedoch Cloud-Init verwendet werden. Weitere Details finden Sie auf der folgenden Seite im Ubuntu-Wiki: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
 
@@ -80,4 +82,4 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 
 [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

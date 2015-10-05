@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="07/21/2015"
+ ms.date="09/23/2015"
  ms.author="larryfr"/>
 
 # Beispiel-Storm-Topologien und -Komponenten für Apache Storm auf HDInsight
@@ -58,4 +58,4 @@ Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight,
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "Dieses Projekt enthält Vorlagen für Spouts, Bolts und Topologien für die Interaktion mit verschiedenen Azure-Diensten wie Event Hubs, DocumentDB und SQL-Datenbank."
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

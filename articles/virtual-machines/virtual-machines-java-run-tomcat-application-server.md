@@ -1,11 +1,12 @@
 <properties
 	pageTitle="Tomcat auf einem virtuellen Computer | Microsoft Azure"
-	description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows erstellen und den Computer konfigurieren können, damit darauf ein Apache Tomcat-Anwendungsserver ausgeführt wird."
+	description="In diesem Lernprogramm werden Ressourcen verwendet, die mit dem klassischen Bereitstellungsmodell erstellt wurden. Außerdem wird dargestellt, wie Sie einen virtuellen Windows-Computer erstellen und für das Ausführen eines Apache Tomcat-Anwendungsservers konfigurieren."
 	services="virtual-machines"
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor="jimbe"
+    tags="azure-service-management" />
 
 <tags
 	ms.service="virtual-machines"
@@ -16,7 +17,9 @@
 	ms.date="06/03/2015"
 	ms.author="robmcm"/>
 
-# Gewusst wie: Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer
+# Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Mit Azure können Sie einen virtuellen Computer nutzen, um Serverfunktionen bereitzustellen. Beispielsweise kann ein unter Azure ausgeführter virtueller Computer so konfiguriert werden, dass er einen Java-Anwendungsserver wie Apache Tomcat hostet. Nachdem Sie diesen Leitfaden durchgearbeitet haben, werden Sie besser verstehen, wie ein virtueller Computer unter Azure erstellt wird und wie er für die Ausführung eines Java-Anwendungsservers konfiguriert wird.
 
@@ -59,7 +62,7 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 
 ## So melden Sie sich von einem Remotestandort aus bei Ihrem virtuellen Computer an
 
-1. Melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com) an.
+1. Melden Sie sich im [Verwaltungsportal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Virtuelle Computer**.
 3. Klicken Sie auf den Namen des virtuellen Computers, an dem Sie sich anmelden möchten.
 4. Nachdem der virtuelle Computer gestartet wurde werden unten auf der Seite über ein Popupmenü Verbindungen zugelassen.
@@ -106,7 +109,7 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 5. Klicken Sie auf **Eingehende Regeln** und dann auf **Neue Regel**. ![Neue eingehende Regel][NewIBRule]
 6. Wählen Sie für **Regeltyp** die Option **Port** aus, und klicken Sie dann auf**Weiter**. ![Neue eingehende Regel – Port][NewRulePort]
 7. Wählen Sie im Bildschirm **Protokoll und Ports** die Option **TCP** aus, geben Sie **8080** unter **Specific local port** ein, und klicken Sie dann auf **Weiter**. ![Neue eingehende Regel][NewRuleProtocol]
-8. Wählen Sie im Dialogfeld **Aktion** die Option **Verbindung zulassen**, und klicken Sie anschließend auf **Weiter**. ![Neue eingehende Regel – Aktion][NewRuleAction]
+8. Wählen Sie im Dialogfeld **Aktion** die Option **Verbindung zulassen** aus, und klicken Sie anschließend auf **Weiter**. ![Neue eingehende Regel – Aktion][NewRuleAction]
 9. Achten Sie im Bildschirm **Profil** darauf, dass **Domäne**, **Privat** und **Öffentlich** ausgewählt sind, und klicken Sie dann auf **Weiter**. ![Neue eingehende Regel – Profil][NewRuleProfile]
 10. Geben Sie im Bildschirm **Name** einen Namen für die Regel an, beispielsweise **HttpIn** (der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen). Klicken Sie anschließend auf **Fertig stellen**. ![Neue eingehende Regel – Name][NewRuleName]
 
@@ -142,4 +145,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

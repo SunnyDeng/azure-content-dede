@@ -12,7 +12,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="03/10/2015"
+ ms.date="09/22/2015"
  ms.author="rasquill"/>
  
 #Informationen zum Agent und zu Erweiterungen für virtuelle Computer
@@ -62,4 +62,4 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
 
 Weitere Informationen zu diesen Aufgaben finden Sie unter [Hinzufügen, Suchen, Aktualisieren und Entfernen von Azure-VM-Erweiterungen](virtual-machines-extensions-install.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

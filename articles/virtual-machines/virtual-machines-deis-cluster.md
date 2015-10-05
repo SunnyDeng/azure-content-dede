@@ -1,12 +1,12 @@
 <properties
-   pageTitle="Bereitstellen eines Deis-Clusters mit drei Knoten in Azure"
+   pageTitle="Bereitstellen eines Deis-Clusters mit drei Knoten | Microsoft Azure"
    description="In diesem Artikel wird beschrieben, wie Sie einen Deis-Cluster mit drei Knoten in Azure mit einer Azure-Ressourcen-Manager-Vorlage erstellen."
    services="virtual-machines"
    documentationCenter=""
    authors="HaishiBai"
    manager="larar"
-   editor=""/>
-
+   editor=""
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
@@ -17,22 +17,23 @@
    ms.date="06/24/2015"
    ms.author="hbai"/>
 
-
 # Bereitstellen eines Deis-Clusters mit drei Knoten
 
 Dieser Artikel führt Sie durch die Bereitstellung eines [Deis](http://deis.io/)-Clusters in Azure. Er umfasst alle Schritte von der Erstellung der erforderlichen Zertifikate bis zur Bereitstellung und Skalierung der Beispielanwendung **Go** im neu bereitgestellten Cluster.
 
-Das folgende Diagramm zeigt die Architektur des bereitgestellten Systems. Der Systemadministrator verwaltet den Cluster mit Deis-Tools wie z. B. **deis** und **deisctl**. Die Verbindungen werden über einen Azure-Load Balancer hergestellt, der die Verbindungen auf einen der Mitgliedsknoten im Cluster weiterleitet. Der Clientzugriff auf bereitgestellte Anwendungen erfolgt ebenfalls über den Load Balancer. In diesem Fall leitet der Load Balancer den Datenverkehr an ein Router-Netz weiter, in dem der Datenverkehr zu entsprechenden im Cluster gehosteten Docker-Containern weitergeleitet wird.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+
+Das folgende Diagramm zeigt die Architektur des bereitgestellten Systems. Der Systemadministrator verwaltet den Cluster mit Deis-Tools wie **deis** und **deisctl**. Die Verbindungen werden über einen Azure-Load Balancer hergestellt, der die Verbindungen auf einen der Mitgliedsknoten im Cluster weiterleitet. Der Clientzugriff auf bereitgestellte Anwendungen erfolgt ebenfalls über den Load Balancer. In diesem Fall leitet der Load Balancer den Datenverkehr an ein Router-Netz weiter, in dem der Datenverkehr zu entsprechenden im Cluster gehosteten Docker-Containern weitergeleitet wird.
 
   ![Architekturdiagramm eines bereitgestellten Deis-Clusters](media/virtual-machines-deis-cluster/architecture-overview.png)
 
 Zum Ausführen der folgenden Schritte benötigen Sie Folgendes:
 
  * Ein aktives Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie eine kostenlose Testversion unter [azure.com](https://azure.microsoft.com) erhalten.
- * Eine Arbeits- oder Schulkonto-ID für die Verwendung von Azure-Ressourcengruppen. Wenn Sie über ein persönliches Konto verfügen, und Siesich mit einer Microsoft-ID anmelden, müssen Sie [aus der persönlichen ID eine Arbeits-ID erstellen](resource-group-create-work-id-from-personal.md).
+ * Eine Arbeits- oder Schulkonto-ID für die Verwendung von Azure-Ressourcengruppen. Wenn Sie über ein persönliches Konto verfügen, und Sie sich mit einer Microsoft-ID anmelden, müssen Sie [aus der persönlichen ID eine Arbeits-ID erstellen](resource-group-create-work-id-from-personal.md).
  * Je nach Client-Betriebssystem entweder [Azure PowerShell](powershell-install-configure.md) oder [Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows](xplat-cli-install.md).
  * [OpenSSL](https://www.openssl.org/). OpenSSL wird verwendet, um die erforderlichen Zertifikate zu generieren.
- * Ein Git-Client, wie z. B. [Git Bash](https://git-scm.com/).
+ * Ein Git-Client, z. B. [Git Bash](https://git-scm.com/).
  * Um die Beispielanwendung zu testen, benötigen Sie auch einen DNS-Server. Sie können beliebige DNS-Server oder -Dienste verwenden, die Platzhalter-A-Datensätze unterstützen.
  * Einen Computer zum Ausführen der Deis-Clienttools. Sie können einen lokalen oder virtuellen Computer verwenden. Sie können diese Tools auf nahezu jeder Linux-Bereitstellung ausführen, in den folgenden Anweisungen wird jedoch Ubuntu verwendet.
 
@@ -59,8 +60,7 @@ In diesem Abschnitt verwenden Sie eine [Azure-Ressourcen-Manager](../resource-gr
 5. Wechseln Sie zu [https://discovery.etcd.io/new](https://discovery.etcd.io/new), um ein neues Cluster-Token zu erstellen, das in etwas so aussieht:
 
         https://discovery.etcd.io/6a28e078895c5ec737174db2419bb2f3
-<br />
- Jeder CoreOS-Cluster muss über einen eindeutigen Token aus diesen kostenlosen Dienst verfügen. Weitere Informationen finden Sie in der [CoreOS-Dokumentation](https://coreos.com/docs/cluster-management/setup/cluster-discovery/).
+<br /> Jeder CoreOS-Cluster muss über ein eindeutiges Token aus diesem kostenlosen Dienst verfügen. Weitere Informationen finden Sie in der [CoreOS-Dokumentation](https://coreos.com/docs/cluster-management/setup/cluster-discovery/).
 
 6. Ändern Sie die Datei **cloud-config.yaml**, um das vorhandene **discovery**-Token durch das neue Token zu ersetzen.
 
@@ -73,11 +73,11 @@ In diesem Abschnitt verwenden Sie eine [Azure-Ressourcen-Manager](../resource-gr
             discovery: https://discovery.etcd.io/3973057f670770a7628f917d58c2208a
         ...
 
-7. Ändern Sie die Datei **azuredeploy-parameters.json**: Öffnen Sie das Zertifikat, das Sie in Schritt 4 in einem Text-Editor erstellt haben. Kopieren Sie den gesamten Text zwischen `----BEGIN CERTIFICATE-----` und `-----END CERTIFICATE-----` in den Parameter **sshKeyData** (Sie müssen alle neue Zeilenumbruchzeichen entfernen).
+7. Ändern Sie die Datei **azuredeploy-parameters.json**: Öffnen Sie das Zertifikat, das Sie in Schritt 4 in einem Text-Editor erstellt haben. Kopieren Sie den gesamten Text zwischen `----BEGIN CERTIFICATE-----` und `-----END CERTIFICATE-----` in den Parameter **sshKeyData** (Sie müssen alle Zeilenumbruchzeichen entfernen).
 
 8. Ändern Sie den Parameter **newStorageAccountName**. Dies ist das Speicherkonto für Betriebssystem-Datenträger des virtuellen Computers. Dieser Kontoname muss global eindeutig sein.
 
-9. Ändern Sie den Parameter **publicDomainName**: Dieser ist Teil des DNS-Namens des Load Balancers, der mit der öffentlichen IP-Adresse des Load Balancers verknüpft ist. Der endgültige FQDN hat das Format _[Wert dieses Parameters]_._[Region]_.cloudapp.azure.com. Wenn Sie z. B. den Namen "deishbai32" angeben und die Ressourcengruppe in der Region "West US" bereitgestellt wird, lautet der endgültige FQDN für den Load Balancer "deishbai32.westus.cloudapp.azure.com".
+9. Ändern Sie den Parameter **publicDomainName**. Dieser ist Teil des DNS-Namens des Load Balancers, der mit der öffentlichen IP-Adresse des Load Balancers verknüpft ist. Der endgültige FQDN hat das Format _[Wert dieses Parameters]_._[Region]_.cloudapp.azure.com. Wenn Sie z. B. den Namen "deishbai32" angeben und die Ressourcengruppe in der Region "West US" bereitgestellt wird, lautet der endgültige FQDN für den Load Balancer "deishbai32.westus.cloudapp.azure.com".
 
 10. Speichern Sie die Parameterdatei. Stellen Sie anschließend den Cluster mit Azure PowerShell bereit:
 
@@ -171,7 +171,6 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
 
     ![GoDaddy-A-Datensatz](media/virtual-machines-deis-cluster/go-daddy.png)
 <p />
-
 2. Installieren Sie deis:
 
         mkdir deis
@@ -186,17 +185,14 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
 
 4. Fügen Sie "id\_rsa.pub" oder einen öffentlichen Schlüssel Ihrer Wahl zu GitHub hinzu. Verwenden Sie hierzu die Schaltfläche zum Hinzufügen des SSH-Schlüssels im Konfigurationsbildschirm für SSH-Schlüssel:
 
-  ![GitHub-Schlüssel](media/virtual-machines-deis-cluster/github-key.png) <p />
- 5. Registrieren Sie einen neuen Benutzer:
+  ![GitHub-Schlüssel](media/virtual-machines-deis-cluster/github-key.png) <p /> 5. Registrieren Sie einen neuen Benutzer:
 
         deis register http://deis.[your domain]
 <p />
-
 6. Fügen Sie den SSH-Schlüssel hinzu:
 
         deis keys:add [path to your SSH public key]
   <p />
-
 7. Erstellen Sie eine Anwendung.
 
         git clone https://github.com/deis/helloworld.git
@@ -204,8 +200,7 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         deis create
         git push deis master
 <p />
-
-8. Mit "git push" wird die Erstellung und Bereitstellung von Docker-Images ausgelöst. Dies kann einige Minuten dauern. Der Vorgang kann gelegentlich bei Schritt 10 (Übertragung des Images in das private Repository) hängen bleiben. Beenden Sie in diesem Fall den Prozess, entfernen Sie die Anwendung mit `deis apps:destroy –a <application name>` entfernen, und versuchen Sie es erneut. Den Namen der Anwendung können Sie mit `deis apps:list` ermitteln. Wenn alle Prozesse ordnungsgemäß funktioniert haben, sollte am Ende der Befehlsausgabe etwa Folgendes angezeigt werden:
+8. Mit "git push" wird die Erstellung und Bereitstellung von Docker-Images ausgelöst. Dies kann einige Minuten dauern. Der Vorgang kann gelegentlich bei Schritt 10 (Übertragung des Images in das private Repository) hängen bleiben. Beenden Sie in diesem Fall den Prozess, entfernen Sie die Anwendung mit `deis apps:destroy –a <application name>`, und versuchen Sie es erneut. Den Namen der Anwendung können Sie mit `deis apps:list` ermitteln. Wenn alle Prozesse ordnungsgemäß funktioniert haben, sollte am Ende der Befehlsausgabe etwa Folgendes angezeigt werden:
 
         -----> Launching...
                done, lambda-underdog:v2 deployed to Deis
@@ -214,7 +209,6 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         To ssh://git@deis.artitrack.com:2222/lambda-underdog.git
          * [new branch]      master -> master
 <p />
-
 9. Überprüfen Sie, ob die Anwendung funktioniert:
 
         curl -S http://[your application name].[your domain]
@@ -224,12 +218,10 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         See the documentation at http://docs.deis.io/ for more information.
         (you can use geis apps:list to get the name of your application).
 <p />
-
 10. Skalieren Sie die Anwendung in drei Instanzen:
 
         deis scale cmd=3
 <p />
-
 11. Optional können Sie "deis info" verwenden, um die Details Ihrer Anwendung zu überprüfen. Die folgenden Ausgaben stammen aus der Bereitstellung der Anwendung:
 
         deis info
@@ -265,4 +257,4 @@ In diesem Artikel wurden Sie durch alle Schritte der Bereitstellung eines neuen 
 [resource-group-overview]: ../resource-group-overview.md
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

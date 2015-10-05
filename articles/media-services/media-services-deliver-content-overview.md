@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="09/22/2015" 
 	ms.author="juliako"/>
 
 
@@ -28,32 +28,29 @@ So erreichen Sie dieses Ziel:
 - Codieren Sie den Stream in einen Videostream mit mehreren Bitraten (mit adaptiver Bitrate) (dies betrifft die Qualität und die Netzwerkbedingungen) und 
 - verwenden Sie [Media Services Dynamic Packaging](media-services-dynamic-packaging-overview.md), um den Stream dynamisch erneut in verschiedene Protokolle zu packen (dies betrifft das Streaming auf verschiedenen Geräten). Media Services unterstützt die Übermittlung der folgenden Streamingtechnologien mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-Dieses Thema bietet einen Überblick über die [Konzepte für die Inhaltsbereitstellung](media-services-deliver-content-overview.md#concepts) sowie Links zu Themen, in denen erläutert wird, wie Sie die für die Bereitstellung von Inhalten erforderlichen [Aufgaben](media-services-deliver-content-overview.md#tasks) durchführen.
+Dieses Thema bietet einen Überblick über wichtige Content Delivery-Konzepte.
 
-##<a id="concepts"></a>Konzepte
 
-In der folgenden Liste werden hilfreiche Begriffe und Konzepte beim Bereitstellen von Medien beschrieben.
-
-###Dynamische Paketerstellung
+##Dynamische Paketerstellung
 
 Es wird empfohlen, eine dynamische Paketerstellung zu verwenden, um die Inhalte bereitzustellen. Weitere Informationen finden Sie unter [Dynamische Paketerstellung](media-services-dynamic-packaging-overview.md).
 
-Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [Skalieren von Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
+Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [How to Scale Media Services](media-services-manage-origins.md#scale_streaming_endpoints) (Skalieren von Media Services).
 
-###Filter und dynamische Manifeste
+##Filter und dynamische Manifeste
 
 Mit Media Services können Sie Filter für Ihre Medienobjekte definieren. Diese Filter sind serverseitige Regeln, mit denen Ihre Kunden verschiedene Aktionen ausführen können, z. B. Wiedergabe bestimmter Videoabschnitte (anstelle des gesamten Videos). Sie können zudem nur eine Teilmenge von Audio- und Videowiedergaben (anstelle von allen mit dem Medienobjekt verknüpften Wiedergaben) angeben, die für das Gerät eines Kunden geeignet sind. Diese Filterung der Medienobjekte erfolgt über **dynamische Manifeste**, die auf Anfrage des Kunden zum Streamen von Videos basierend auf bestimmten Filtern erstellt werden.
 
 Weitere Informationen finden Sie unter [Filter und dynamische Manifeste](media-services-dynamic-manifest-overview.md).
 
-###Locators
+##Locators
 
 Um Ihren Benutzern eine URL für das Streaming bzw. Herunterladen des Inhalts angeben zu können, müssen Sie zunächst das Medienobjekt "veröffentlichen", indem Sie einen Locator erstellen. Locator bieten einen Einstiegspunkt für den Zugriff auf die in einem Medienobjekt enthaltenen Dateien. Media Services unterstützt zwei Arten von Locatorobjekten:
 
-- **OnDemandOrigin**-Locators, die zum Streaming von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und zum Herunterladen von Dateien dienen.
--  **SAS**-URL-Locators (Zugriffssignatur), die zum Herunterladen von Mediendateien auf den lokalen Computer dienen. 
+- **OnDemandOrigin**-Locators, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und zum Herunterladen von Dateien verwendet werden.
+-  **SAS**-URL-Locators (Zugriffssignatur), die zum Herunterladen von Mediendateien auf den lokalen Computer verwendet werden. 
 
-Anhand einer **Zugriffsrichtlinie** werden die Berechtigungen eines Clients (z. B. Lesen, Schreiben und Anzeigen) und die Dauer definiert, für die der Client auf eine bestimmte Ressource zugreifen kann. Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim Erstellen eines OrDemandOrigin-Locators nicht verwendet werden sollte.
+Anhand einer **Zugriffsrichtlinie** werden die Berechtigungen eines Clients (z. B. Lesen, Schreiben und Anzeigen) und die Dauer definiert, für die der Client auf eine bestimmte Ressource zugreifen kann. Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim Erstellen eines OrDemandOrigin-Locators nicht verwendet werden sollte.
 
 Locator haben ein Ablaufdatum. Wenn Sie Medienobjekte über das Portal veröffentlichen, werden Locator mit einem Ablaufdatum von 100 Jahren erstellt.
 
@@ -66,7 +63,7 @@ Locator sind nicht für die Verwaltung der Zugriffssteuerung pro Benutzer konzip
 Beachten Sie, dass beim Erstellen eines Locators möglicherweise eine Verzögerung von 30 Sekunden auftritt, die durch die erforderlichen Speicher- und Weitergabeprozesse in Azure Storage verursacht wird.
 
 
-###Adaptives Streaming 
+##Adaptives Streaming 
 
 Bei adaptiven Bitratentechnologien können Videoplayeranwendungen die Netzwerkbedingungen ermitteln und eine Auswahl aus mehreren Bitraten treffen. Wenn die Netzwerkleistung absinkt, kann der Client eine niedrigere Bitrate auswählen, und der Player kann die Wiedergabe des Videos mit einer geringeren Videoqualität fortsetzen. Verbessert sich die Netzwerkleistung, kann der Client auf eine höhere Bitrate umschalten und eine verbesserte Videoqualität anbieten. Von Azure Media Services werden die folgenden Technologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS.
 
@@ -77,7 +74,7 @@ Um Benutzern Streaming-URLs bereitzustellen, müssen Sie zuerst einen OnDemandOr
 Beachten Sie, dass Sie nur über SSL streamen können, wenn der Streaming-Endpunkt, von dem aus Sie Ihre Inhalte übermitteln, nach dem 10. September 2014 erstellt wurde. Wenn die Streaming-URLs auf Streaming-Endpunkten basieren, die nach dem 10. September erstellt wurden, enthält die URL "streaming.mediaservices.windows.net" (neues Format). Streaming-URLs, die "origin.mediaservices.windows.net" (das alte Format) enthalten, unterstützen kein SSL. Wenn die URL im alten Format vorliegt und Sie über SSL streamen möchten, erstellen Sie einen neuen Streamingendpunkt. Verwenden Sie die URLs, die basierend auf dem neuen Streaming-Endpunkt erstellt wurden, um Ihre Inhalte über SSL zu streamen.
 
 
-####Streaming-URL-Formate:
+##Streaming-URL-Formate
 
 **MPEG DASH-Format**
 
@@ -123,7 +120,7 @@ Das Smooth Streaming-Manifestformat enthält standardmäßig das repeat-Tag (r-t
 	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f)
 
 
-###Dynamische Paketerstellung
+##Dynamische Paketerstellung
 
 Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
@@ -136,7 +133,7 @@ Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speiche
 
 Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
 
-###Progressiver Download 
+##Progressiver Download 
 
 Der progressive Download ermöglicht die Wiedergabe von Medien, bevor die gesamte Datei heruntergeladen wurde. Sie können Dateien mit der Endung ".ism*" (ISMV, ISMA, ISMT, ISMC) nicht progressiv herunterladen.
 
@@ -149,7 +146,7 @@ Es gelten die folgenden Bedingungen:
 - Sie müssen alle speicherverschlüsselten Medienobjekte entschlüsseln, die Sie aus dem ursprünglichen Dienst für den progressiven Download streamen möchten.
 
 
-###Herunterladen
+##Herunterladen
 
 Um Ihre Inhalte auf ein Clientgerät herunterzuladen, müssen Sie einen SAS-Locator erstellen. Die SAS-Locator ermöglicht den Zugriff auf den Azure Storage-Container, in dem sich die Datei befindet. Zum Erstellen der Download-URL müssen Sie den Dateinamen zwischen dem Host und der SAS-Signatur einbetten.
 
@@ -164,40 +161,9 @@ Es gelten die folgenden Bedingungen:
 
 
 
-###Streamingendpunkte
+##Streamingendpunkte
 
 Ein **Streamingendpunkt** stellt einen Streamingdienst dar, der Inhalte zur weiteren Verteilung direkt in einer Clientwiedergabeanwendung oder einem Content Delivery Network (CDN) bereitstellen kann. Der ausgehende Stream des Streamingendpunkt-Diensts kann ein Livestream oder ein Video on Demand-Medienobjekt in Ihrem Media Services-Konto sein. Darüber hinaus können Sie die Kapazität des Streamingendpunkt-Diensts für die Verarbeitung wachsender Bandbreitenanforderungen steuern, indem Sie die reservierten Einheiten für das Streaming anpassen. Anwendungen in einer Produktionsumgebung sollten Sie mindestens eine reservierte Einheit zuweisen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints).
-
-##<a id="tasks"></a>Aufgaben für das Bereitstellen von Medienobjekten
-
-
-###Konfigurieren von Streamingendpunkten
-
-Eine Übersicht über Streamingendpunkte sowie Informationen zu deren Verwaltung finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md).
-
-###Hochladen von Medien 
-
-Laden Sie Ihre Dateien mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET** oder **REST-API** hoch.
-
-[AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
-
-###Codieren von Medienobjekten
-
-Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET**, oder **REST-API** aus.
- 
-[AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
-
-###Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
-
-Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte mithilfe von **.NET** oder **REST-API**.
-
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
-
-###Veröffentlichen von Medienobjekten
-
-Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mithilfe von **.NET**.
-
-[AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
 
 
 ##Media Services-Lernpfade
@@ -213,4 +179,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel](media-services-roll-storage-access-keys.md)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

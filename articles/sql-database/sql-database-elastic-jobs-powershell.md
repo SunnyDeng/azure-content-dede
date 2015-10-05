@@ -1,8 +1,7 @@
 <properties 
-	pageTitle="Übersicht über elastische Datenbankaufträge" 
-	description="Veranschaulicht den Dienst für elastische Datenbankaufträge" 
-	services="sql-database" 
-	documentationCenter=""  
+	pageTitle="Erstellen und Verwalten von Aufträgen für die elastische Datenbank mithilfe von PowerShell" 
+	description="PowerShell, verwendet zum Verwalten von Pools für Azure SQL-Datenbanken" 
+	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
 	authors="ddove"/>
 
@@ -12,10 +11,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="09/17/2015" 
 	ms.author="ddove; sidneyh" />
 
-# Erstellen und Verwalten von Aufträgen für die elastische SQL-Datenbank mithilfe von PowerShell \(Vorschau\)
+# Erstellen und Verwalten von Aufträgen für die elastische SQL-Datenbank mithilfe von PowerShell (Vorschau)
 
 > [AZURE.SELECTOR]
 - [Azure portal](sql-database-elastic-jobs-create-and-manage.md)
@@ -23,22 +22,22 @@
 
 ## Übersicht
 
-Mithilfe des Features **Aufträge für die elastische Datenbank** \(Vorschau\) können Sie ein Transact-SQL-Skript \(T-SQL\) zuverlässig ausführen oder ein DACPAC auf eine gesamte Gruppe von Datenbanken anwenden, einschließlich einer benutzerdefinierten Sammlung von Datenbanken, aller Datenbanken in einem [elastischen Datenbankpool \(Vorschau\)](sql-database-elastic-pool.md) oder einem Shardset \(das mithilfe der [Clientbibliothek für die elastische Datenbank](sql-database-elastic-database-client-library.md) erstellt wurde\). Im Vorschaustadium stellt **Aufträge für die elastische Datenbank** derzeit einen vom Kunden gehosteten Azure Cloud Service dar, der die Ad-Hoc-Ausführung und die geplante Ausführung von Verwaltungsaufgaben ermöglicht, die als Aufträge bezeichnet werden. Mithilfe dieses Features können Sie auf einfache und zuverlässige Weise eine große Anzahl von Azure SQL-Datenbanken im Maßstab durch Ausführen von Transact-SQL-Skripts zum Durchführen von Verwaltungsvorgängen, wie Schemaänderungen, Verwaltung von Anmeldeinformationen, Aktualisierung von Verweisdaten, Sammlung von Leistungsdaten oder Erfassung von Mandantentelemetrie \(Kundentelemetrie\) verwalten. Weitere Informationen zu elastischen Datenbankaufträgen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
+Mithilfe des Features **Aufträge für die elastische Datenbank** (Vorschau) können Sie ein Transact-SQL-Skript (T-SQL) zuverlässig ausführen oder ein DACPAC auf eine gesamte Gruppe von Datenbanken anwenden, einschließlich einer benutzerdefinierten Sammlung von Datenbanken, aller Datenbanken in einem [elastischen Datenbankpool (Vorschau)](sql-database-elastic-pool.md) oder einem Shardset (das mithilfe der [Clientbibliothek für die elastische Datenbank](sql-database-elastic-database-client-library.md) erstellt wurde). Im Vorschaustadium stellt **Aufträge für die elastische Datenbank** derzeit einen vom Kunden gehosteten Azure Cloud Service dar, der die Ad-Hoc-Ausführung und die geplante Ausführung von Verwaltungsaufgaben ermöglicht, die als Aufträge bezeichnet werden. Mithilfe dieses Features können Sie auf einfache und zuverlässige Weise eine große Anzahl von Azure SQL-Datenbanken im Maßstab durch Ausführen von Transact-SQL-Skripts zum Durchführen von Verwaltungsvorgängen, wie Schemaänderungen, Verwaltung von Anmeldeinformationen, Aktualisierung von Verweisdaten, Sammlung von Leistungsdaten oder Erfassung von Mandantentelemetrie (Kundentelemetrie) verwalten. Weitere Informationen zu elastischen Datenbankaufträgen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
 
 Die PowerShell-APIs für **Aufträge für die elastische Datenbank** geben Ihnen die Flexibilität, zu definieren, für welche Gruppe von Datenbanken welche Skripts ausgeführt werden. Aktuell weist die im Azure-Portal verfügbare Funktionalität der **Aufträge für die elastische Datenbank** eine eingeschränkte Funktionalität auf und ist auf die Ausführung in elastischen Datenbankpools beschränkt.
 
-**Aufträge für die elastische Datenbank** \(Vorschau\) verwendet mehrere Azure-Komponenten, um die auszuführenden Aufträge zu definieren, den Zeitpunkt ihrer Ausführung zu definieren, die Aufträge auszuführen, ihre erfolgreiche oder fehlerhafte Ausführung nachzuverfolgen und optional ein Ergebnisziel für die Ergebnisse zurückgebenden Abfragen anzugeben. Da die in dieser Vorschau enthaltenen Powershell-APIs gegenüber der ursprünglichen Vorschau über das Portal zusätzliche Funktionen umfassen, wird die Installation der neuesten Komponenten der **Aufträge für die elastische Datenbank** empfohlen. Wenn sie bereits installiert sind, können Sie einfach ein Upgrade der Komponenten der **Aufträge für die elastische Datenbank** durchführen. Weitere Informationen zur Installation von [Nuget](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.Jobs) finden Sie unter [Installieren der Komponenten für Aufträge für die elastische Datenbank](sql-database-elastic-jobs-service-installation.md).
+**Aufträge für die elastische Datenbank** (Vorschau) verwendet mehrere Azure-Komponenten, um die auszuführenden Aufträge zu definieren, den Zeitpunkt ihrer Ausführung zu definieren, die Aufträge auszuführen, ihre erfolgreiche oder fehlerhafte Ausführung nachzuverfolgen und optional ein Ergebnisziel für die Ergebnisse zurückgebenden Abfragen anzugeben. Da die in dieser Vorschau enthaltenen Powershell-APIs gegenüber der ursprünglichen Vorschau über das Portal zusätzliche Funktionen umfassen, wird die Installation der neuesten Komponenten der **Aufträge für die elastische Datenbank** empfohlen. Wenn sie bereits installiert sind, können Sie einfach ein Upgrade der Komponenten der **Aufträge für die elastische Datenbank** durchführen. Weitere Informationen zur Installation von [Nuget](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.Jobs) finden Sie unter [Installieren der Komponenten für Aufträge für die elastische Datenbank](sql-database-elastic-jobs-service-installation.md).
 
 In diesem Artikel erfahren Sie, wie Sie alle erforderlichen Elemente mit Ausnahme des Azure-Abonnements erhalten, die Sie zum Erstellen und Verwalten der **Aufträge für die elastische Datenbank** benötigen. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf „Kostenlose Testversion“ klicken. Lesen Sie anschließend den Artikel weiter. Dieses Thema baut auf dem Beispiel unter [Erste Schritte mit den Tools für die elastische Datenbank](sql-database-elastic-scale-get-started.md) auf. Nach dem Abschluss erfahren Sie, wie Sie Aufträge zum Durchführen von Verwaltungsvorgängen für eine Gruppe von Shard-Datenbanken, die durch ein **Shard-Set** definiert sind, und alternativ für eine benutzerdefinierte Sammlung von Datenbanken erstellen und verwalten.
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/).
 * Das PowerShell-Paket **Aufträge für die elastische Datenbank** muss zuerst heruntergeladen und importiert werden, und die Komponenten der Aufträge für die elastische Datenbank müssen installiert werden. Führen Sie diese Schritte aus: [Installieren von Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-service-installation.md)
-* Azure PowerShell, Version \>= 0.8.16. Installieren Sie die neueste Version \(0.9.5\) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
 ### Auswählen des Azure-Abonnements
 
-Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID \(**-SubscriptionId**\) oder den Abonnementnamen \(**-SubscriptionName**\). Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem ResultSet kopieren. Nachdem Sie Ihre Abonnementinformationen ermittelt haben, führen Sie das folgende Cmdlet aus, um das betreffende Abonnement als Standard festzulegen, insbesondere als Ziel für das Erstellen und Verwalten von Aufträgen:
+Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID (**-SubscriptionId**) oder den Abonnementnamen (**-SubscriptionName**). Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem ResultSet kopieren. Nachdem Sie Ihre Abonnementinformationen ermittelt haben, führen Sie das folgende Cmdlet aus, um das betreffende Abonnement als Standard festzulegen, insbesondere als Ziel für das Erstellen und Verwalten von Aufträgen:
 
 	Select-AzureSubscription -SubscriptionId {SubscriptionID}
 
@@ -196,7 +195,7 @@ In der folgenden Tabelle sind alle Objekttypen von **Aufträgen für die elastis
 </table>
 
 ## Von den Aufträgen für die elastische Datenbank unterstützte Gruppentypen
-**Aufträge für die elastische Datenbank** ermöglicht das Ausführen von Transact-SQL \(T-SQL\)-Skripts oder die Anwendung von DACPACs für eine gesamte Gruppe von Datenbanken. Wenn ein Auftrag für die übergreifende Ausführung für eine Gruppe von Datenbanken gesendet wird, „erweitern“ die Aufträge für die elastische Datenbank den Auftrag in untergeordnete Aufträge, von denen jeder Einzelauftrag die angeforderte Ausführung für eine einzelne Datenbank der Gruppe übernimmt.
+**Aufträge für die elastische Datenbank** ermöglicht das Ausführen von Transact-SQL (T-SQL)-Skripts oder die Anwendung von DACPACs für eine gesamte Gruppe von Datenbanken. Wenn ein Auftrag für die übergreifende Ausführung für eine Gruppe von Datenbanken gesendet wird, „erweitern“ die Aufträge für die elastische Datenbank den Auftrag in untergeordnete Aufträge, von denen jeder Einzelauftrag die angeforderte Ausführung für eine einzelne Datenbank der Gruppe übernimmt.
  
 Dies ist eine Liste der aktuell unterstützten Gruppentypen:
 
@@ -237,7 +236,7 @@ Verwenden Sie zum Aktualisieren vorhandener Anmeldeinformationen für den Fall, 
 	Set-AzureSqlJobCredential -CredentialName $credentialName -Credential $credential 
 
 ## Definieren eines Shardzuordnungsziels für die elastische Datenbank
-Führen Sie einen Auftrag für alle Datenbanken in einem Shardsatz \(der mithilfe der [Clientbibliothek für die elastische Datenbank](sql-database-elastic-database-client-library.md) erstellt wurde\) aus, und verwenden Sie dazu eine Shardzuordnung als Datenbankziel. Dieses Beispiel setzt voraus, dass Sie mithilfe der Clientbibliothek für die elastische Datenbank eine Anwendung erstellen, die Sharding unterstützt. Laden Sie das Beispiel [Erste Schritte mit den Tools für die elastische Datenbank](sql-database-elastic-scale-get-started.md) herunter, und führen Sie es aus.
+Führen Sie einen Auftrag für alle Datenbanken in einem Shardsatz (der mithilfe der [Clientbibliothek für die elastische Datenbank](sql-database-elastic-database-client-library.md) erstellt wurde) aus, und verwenden Sie dazu eine Shardzuordnung als Datenbankziel. Dieses Beispiel setzt voraus, dass Sie mithilfe der Clientbibliothek für die elastische Datenbank eine Anwendung erstellen, die Sharding unterstützt. Laden Sie das Beispiel [Erste Schritte mit den Tools für die elastische Datenbank](sql-database-elastic-scale-get-started.md) herunter, und führen Sie es aus.
 
 ###Erstellen eines Shardzuordnungs-Managers mithilfe der Beispiel-App
 
@@ -347,7 +346,7 @@ Legen Sie die folgen den Variablen fest, um das gewünschte Skript und Ziel anzu
 
 Das folgende PowerShell-Skript kann verwendet werden, um einen vorhandenen Auftrag auszuführen:
 
-Aktualisieren Sie die folgende Variable, sodass sie den gewünschten Auftragsnamen für die Ausführung wiedergibt:
+Aktualisieren Sie die folgende Variable, sodass sie den gewünschten Auftragsnamen für die Ausführung angibt:
 
 	$jobName = "{Job Name}"
 	$jobExecution = Start-AzureSqlJobExecution -JobName $jobName 
@@ -449,7 +448,7 @@ Ausführungsrichtlinien lassen aktuell die folgenden Definitionen zu:
 * Auftragstimeout: Gesamtzeit bis zum Abbruch eines Auftrags durch die Aufträge für die elastische Datenbank.
 * Anfängliches Wiederholungsintervall: Wartezeit vor dem ersten Wiederholungsversuch.
 * Maximales Wiederholungsintervall: Höchstmenge der zu durchlaufenden Wiederholungsintervalle.
-* Backoffkoeffizient des Wiederholungsintervalls: Koeffizient zur Berechnung des nächsten Intervalls zwischen Wiederholungsversuchen. Dazu wird diese Formel verwendet: \(Anfängliches Wiederholungsintervall\) * Math.pow\(\(Intervallbackoffkoeffizient\), \(Anzahl der Wiederholungsversuche\) - 2\). 
+* Backoffkoeffizient des Wiederholungsintervalls: Koeffizient zur Berechnung des nächsten Intervalls zwischen Wiederholungsversuchen. Dazu wird diese Formel verwendet: (Anfängliches Wiederholungsintervall) * Math.pow((Intervallbackoffkoeffizient), (Anzahl der Wiederholungsversuche) - 2). 
 * Versuche maximal: Die Höchstzahl der im Rahmen eines Auftrags auszuführenden Wiederholungsversuche.
 
 Für die standardmäßige Ausführungsrichtlinie werden diese Werte verwendet:
@@ -635,9 +634,9 @@ Das folgende PowerShell-Skript kann verwendet werden, um Zeitpläne abzurufen un
 	$jobTriggers = Get-AzureSqlJobTrigger -JobName $jobName
 	Write-Output $jobTriggers
 
-## Erstellen eines DACPACs \(Data-tier Application Deployment, Anwendungsbereitstellung auf Datenebene\) für die datenbankübergreifende Ausführung
+## Erstellen eines DACPACs (Data-tier Application Deployment, Anwendungsbereitstellung auf Datenebene) für die datenbankübergreifende Ausführung
 
-Aufträge für die elastische Datenbank kann verwendet werden, um ein DACPAC \(Anwendungsbereitstellung auf Datenebene\) für eine Gruppe von Datenbanken bereitzustellen. Informationen zum Erstellen von DACPACs finden Sie in dieser Dokumentation. Damit Aufträge für die elastische Datenbank ein DACPAC für eine Gruppe von Datenbanken bereitstellen kann, muss das DACPAC für den Dienst zugänglich sein. Es empfiehlt sich, ein erstelltes DACPAC auf Azure Storage hochzuladen und einen signierten URI für das DACPAC zu erstellen.
+Aufträge für die elastische Datenbank kann verwendet werden, um ein DACPAC (Anwendungsbereitstellung auf Datenebene) für eine Gruppe von Datenbanken bereitzustellen. Informationen zum Erstellen von DACPACs finden Sie in dieser Dokumentation. Damit Aufträge für die elastische Datenbank ein DACPAC für eine Gruppe von Datenbanken bereitstellen kann, muss das DACPAC für den Dienst zugänglich sein. Es empfiehlt sich, ein erstelltes DACPAC auf Azure Storage hochzuladen und einen signierten URI für das DACPAC zu erstellen.
 
 Das folgende PowerShell-Skript kann verwendet werden, um ein DACPAC in Aufträge für die elastische Datenbank einzufügen:
 
@@ -646,7 +645,7 @@ Das folgende PowerShell-Skript kann verwendet werden, um ein DACPAC in Aufträge
 	$dacpac = New-AzureSqlJobContent -DacpacUri $dacpacUri -ContentName $dacpacName 
 	Write-Output $dacpac
 
-### Aktualisieren eines DACPACs \(Data-tier Application Deployment\) für die datenbankübergreifende Ausführung
+### Aktualisieren eines DACPACs (Data-tier Application Deployment) für die datenbankübergreifende Ausführung
 
 Vorhandene DACPACs, die bei Aufträge für die elastische Datenbank registriert sind, können so aktualisiert werden, dass sie auf neue URIs verweisen. Das folgende PowerShell-Skript kann verwendet werden, um den DACPAC-URI für ein vorhandenes registriertes DACPAC zu aktualisieren:
 
@@ -655,7 +654,7 @@ Vorhandene DACPACs, die bei Aufträge für die elastische Datenbank registriert 
 	$updatedDacpac = Set-AzureSqlJobDacpacDefinition -ContentName $dacpacName -DacpacUri $newDacpacUri
 	Write-Output $updatedDacpac
 
-## Erstellen eines Auftrags zur datenbankübergreifenden Anwendung eines DACPACs \(Data-tier Application Deployment\)
+## Erstellen eines Auftrags zur datenbankübergreifenden Anwendung eines DACPACs (Data-tier Application Deployment)
 
 Nach der Erstellung eines DACPACs in Aufträge für die elastische Datenbank kann ein Auftrag erstellt werden, um das DACPAC übergreifend auf eine Gruppe von Datenbanken anzuwenden. Das folgende PowerShell-Skript kann verwendet werden, um einen DACPAC-Auftrag übergreifend auf eine benutzerdefinierte Sammlung von Datenbanken anzuwenden:
 
@@ -674,4 +673,4 @@ Nach der Erstellung eines DACPACs in Aufträge für die elastische Datenbank kan
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

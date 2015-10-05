@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Speicheranalyse" 
-	description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste" 
+	pageTitle="Aktivieren von Speichermetriken im Azure-Portal | Microsoft Azure" 
+	description="Aktivieren von Speichermetriken für die Blob-, Warteschlangen-, Tabellen- und Dateidienste" 
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/03/2015" 
+	ms.date="09/04/2015" 
 	ms.author="tamram"/>
 
 # Aktivieren der Speichermetriken und Anzeigen von Metrikdaten
@@ -192,4 +192,4 @@ Die von den Metriktabellen verwendete Kapazität ist ebenfalls kostenpflichtig: 
 [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](https://msdn.microsoft.com/library/dn782840.aspx)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

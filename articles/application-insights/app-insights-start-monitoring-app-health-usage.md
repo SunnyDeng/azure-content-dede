@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/09/2015"
+	ms.date="09/23/2015"
 	ms.author="awills"/>
 
 
@@ -133,6 +133,21 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
 
+
+## Nachverfolgen der Anwendungsversion
+
+Stellen Sie sicher, dass `buildinfo.config` von Ihrem Buildprozess generiert wird. Fügen Sie in Ihrer CSPROJ-Datei Folgendes hinzu:
+
+```XML
+
+    <PropertyGroup>
+      <GenerateBuildInfoConfigFile>true</GenerateBuildInfoConfigFile>    <IncludeServerNameInBuildInfo>true</IncludeServerNameInBuildInfo>
+    </PropertyGroup> 
+```
+
+Wenn das Webmodul Application Insights über die Buildinformationen verfügt, fügt es jedem Telemetrieelement automatisch die **Anwendungsversion** als Eigenschaft hinzu. Dies ermöglicht es Ihnen, nach Version zu filtern, wenn Sie [Diagnosesuchen][diagnostic] ausführen oder [Metriken untersuchen][metrics].
+
+
 ## 5\. Hinzufügen der Nachverfolgung von Abhängigkeiten und von Leistungsindikatoren
 
 Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzliche Schritt ist insbesondere erforderlich, um eine automatische Messung der von Ihrer App ausgeführten Aufrufe von Datenbanken, REST-APIs und anderen externen Komponenten zu ermöglichen. Diese Abhängigkeitsmetriken können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren.
@@ -156,6 +171,8 @@ Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-
 #### Wenn es sich um ein Azure-Clouddienstprojekt handelt
 
 [Hinzufügen von Skripts zu Web- und Workerrollen](app-insights-cloudservices.md)
+
+
 
 ## 6\. Hinzufügen der clientseitigen Überwachung
 
@@ -255,4 +272,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 [roles]: app-insights-resources-roles-access-control.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

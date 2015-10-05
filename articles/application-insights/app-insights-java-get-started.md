@@ -271,7 +271,7 @@ Nicht behandelte Ausnahmen werden automatisch gesammelt:
 
 Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
-* [Fügen Sie TrackException-Aufrufe in den Code ein][apiexceptions]. 
+* [Fügen Sie trackException()-Aufrufe in den Code ein][apiexceptions]. 
 * [Installieren Sie den Java-Agent auf dem Server](app-insights-java-agent.md). Sie geben die Methoden an, die Sie überwachen möchten.
 
 
@@ -381,7 +381,9 @@ Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, fall
 
 [Problembehandlung für Java](app-insights-java-troubleshoot.md)
 
+## Nächste Schritte
 
+Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
 <!--Link references-->
 
@@ -394,4 +396,4 @@ Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, fall
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

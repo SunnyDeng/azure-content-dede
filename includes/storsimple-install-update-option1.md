@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Option 1: Verwenden von Windows PowerShell für StorSimple zum Installieren von Update 1.2"
-   description="Beschreibt die Installation von Update 1.2 der StorSimple 8000-Serie über Windows PowerShell für StorSimple."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/09/2015"
-   ms.author="v-sharos" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie Update 1.2 über Windows PowerShell für StorSimple
 
@@ -28,7 +13,7 @@
 
         ![Katalog durchsuchen](./media/storsimple-install-update-option-1/HCS_SearchCatalog-include.png)
 
-    4. Das Paket **StorSimple Update 1.2-Anwendungsupdate** wird angezeigt. Klicken Sie auf **Hinzufügen**. Das Update wird dem Warenkorb hinzugefügt.
+    4. Das Paket **StorSimple Update 1.2 Appliance Update** wird angezeigt. Klicken Sie auf **Hinzufügen**. Das Update wird dem Warenkorb hinzugefügt.
 
         ![Updatepaket](./media/storsimple-install-update-option-1/HCS_UpdateBundle-include.png)
 
@@ -36,7 +21,7 @@
  
         ![Warenkorb anzeigen](./media/storsimple-install-update-option-1/HCS_InstallBasket-include.png)
 
-    6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder **navigieren** Sie zu einem lokalen Speicherort, an dem der Download angezeigt werden soll. Das Update wird am ausgewählten Speicherort im Ordner **StorSimple Update 1.2-Anwendungsupdate-Paket** (KB3063418) heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
+    6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder **navigieren** Sie zu einem lokalen Speicherort, in dem der Download abgelegt werden soll. Das Update wird in einem Ordner **StorSimple Update 1.2 Appliance Update bundle** (KB3063418) in den ausgewählten Speicherort heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
     
 	Dieses Verfahren beschreibt, wie Softwaregeräteupdates als Hotfixes installiert werden, Firmwareupdates für Datenträger aus dem Microsoft Update-Server und LSI-Treiber und Windows-Updates aus dem Verwaltungsportal. Sie können jedoch auswählen, Firmwareupdates für Software, Treiber und Datenträger als Hotfixes zu installieren. Sie müssen dann das StorSimple 1.2 SAS Controller Update (KB3043005) und das StorSimple 1.2 Disk Firmware Update (KB3063416) herunterladen, und in denselben gemeinsamen Ordner kopieren. Um Firmwareupdates für Datenträger als Hotfixes zu installieren, führen Sie die unter [Installieren des Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple](storsimple-update-device.md#install-hotfixes-via-windows-powershell-for-storsimple) beschriebenen Schritte aus.
     
@@ -75,7 +60,7 @@
 
 7. Überwachen Sie das Update mithilfe des `Get-HcsUpdateStatus`-Cmdlets.
 
-    Die folgende Beispielausgabe zeigt den Status des Updates. Der Code `RunInprogress` ist `True`, wenn das Update ausgeführt wird.
+    Die folgende Beispielausgabe zeigt den Status des Updates. Der Parameter `RunInprogress` ist `True`, wenn das Update ausgeführt wird.
 
         ````
         Controller0>Get-HcsUpdateStatus
@@ -86,7 +71,7 @@
         Controller1Events   : 
         ````
  
-     Die folgende Beispielausgabe zeigt an, dass das Update abgeschlossen ist. Der Code `RunInProgress` ist `False`, wenn das Update abgeschlossen ist.
+     Die folgende Beispielausgabe zeigt an, dass das Update abgeschlossen ist. Der Parameter `RunInProgress` ist `False`, wenn das Update abgeschlossen ist.
 
         ````
         Controller1>Get-HcsUpdateStatus
@@ -100,7 +85,7 @@
         ````
 		
 
-	> [AZURE.NOTE]In manchen Fällen gibt das Cmdlet `False` zurück, wenn das Update noch in Bearbeitung ist. Um sicherzustellen, dass das Update abgeschlossen ist, warten Sie einige Minuten, führen Sie diesen Befehl erneut aus, und überprüfen Sie, ob `RunInProgress` `False` ist. Wenn dies der Fall ist, wurde das Hotfix abgeschlossen.
+	> [AZURE.NOTE]In manchen Fällen gibt das Cmdlet `False` zurück, wenn das Update noch ausgeführt wird. Um sicherzustellen, dass das Update abgeschlossen ist, warten Sie einige Minuten, führen Sie diesen Befehl erneut aus, und überprüfen Sie, ob `RunInProgress` gleich `False` ist. Wenn dies der Fall ist, wurde das Hotfix abgeschlossen.
 	
 8. Überprüfen Sie nach dem Abschließen des Softwareupdates die Versionen der Systemsoftware. Geben Sie den folgenden Befehl ein:
 
@@ -127,4 +112,4 @@
  
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

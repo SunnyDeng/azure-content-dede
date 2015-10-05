@@ -1,24 +1,24 @@
-<properties 
-	pageTitle="Was ist der Azure-Schlüsseltresor? | Microsoft Azure" 
-	description="Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Schlüsseltresors können Kunden Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden." 
-	services="key-vault" 
-	documentationCenter="" 
-	authors="cabailey" 
+<properties
+	pageTitle="Was ist der Azure-Schlüsseltresor? | Microsoft Azure"
+	description="Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Schlüsseltresors können Kunden Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden."
+	services="key-vault"
+	documentationCenter=""
+	authors="cabailey"
 	manager="mbaldwin"
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="key-vault" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="09/11/2015" 
+<tags
+	ms.service="key-vault"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="09/22/2015"
 	ms.author="cabailey"/>
 
 
 
-# Was ist der Azure-Schlüsseltresor? 
+# Was ist der Azure-Schlüsseltresor?
 
 Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisdetails für Schlüsseltresor](../../../../pricing/details/key-vault/).
 
@@ -43,7 +43,7 @@ Die folgende Tabelle enthält Informationen dazu, wie Sie mithilfe des Schlüsse
 
 Jeder Benutzer mit einem Azure-Abonnement kann Schlüsseltresore erstellen und verwenden. Wenngleich der Schlüsseltresor insbesondere Entwicklern und Sicherheitsadministratoren Vorteile bietet, kann er durch einen Organisationsadministrator implementiert und verwaltet werden, der andere Azure-Dienste für eine Organisation verwaltet. Beispielsweise kann sich dieser Administrator mit einem Azure-Abonnement anmelden, einen Tresor für die Schlüsselspeicherung der Organisation erstellen und dann operative Vorgänge wie die folgenden übernehmen:
 
-+ Erstellen oder Importieren eines Schlüssels oder geheimer Informationen 
++ Erstellen oder Importieren eines Schlüssels oder geheimer Informationen
 + Widerrufen oder Löschen eines Schlüssels oder geheimer Informationen
 + Autorisieren von Benutzern oder Anwendungen zur Verwaltung oder Verwendung von Schlüsseln und geheimen Schlüsseln
 + Konfigurieren der Schlüsselverwendung (z. B. Anmelden oder Verschlüsseln)
@@ -53,7 +53,7 @@ Dieser Administrator kann anschließend den Entwicklern die URIs für den Aufruf
 
    ![Übersicht über den Azure-Schlüsseltresor][1]
 
-Entwickler können die Schlüssel außerdem durch Verwendung von APIs direkt verwalten. Weitere Informationen finden Sie unter [Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903625.aspx) in der Dokumentationsbibliothek von Microsoft auf MSDN.
+Entwickler können die Schlüssel außerdem durch Verwendung von APIs direkt verwalten. Weitere Informationen finden Sie im [Entwicklerhandbuch für den Schlüsseltresor](key-vault-developers-guide.md).
 
 ## Nächste Schritte
 
@@ -65,7 +65,4 @@ Weitere Informationen zur Verwendung von Schlüsseln und geheimen Schlüsseln mi
 <!--Image references-->
 [1]: ./media/key-vault-whatis/AzureKeyVault_overview.png
 
-
- 
-
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

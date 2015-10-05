@@ -1,8 +1,8 @@
 <properties
-   pageTitle="Tastenkombinationen für das Azure-Portal"
+   pageTitle="Tastenkombinationen für das Azure-Portal | Microsoft Azure"
    description="Dieser Artikel enthält stets eine aktuelle Liste der Tastaturkombinationen, die im Azure-Portal verwendet werden können. Einzelne Dienste nutzen möglicherweise eigene, spezialisierte Tastenkombinationen."
    services="cloud-services"
-   documentationCenter="dev-center-name"
+   documentationCenter=""
    authors="curtand"
    manager="msStevenPo"
    editor=""/>
@@ -50,4 +50,4 @@
 
 Weitere Informationen zum Azure-Portal: http://azure.microsoft.com.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

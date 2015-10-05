@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Was ist die Self-Service-Registrierung für Azure?"
+	pageTitle="Was ist die Self-Service-Registrierung für Azure? | Microsoft Azure"
 	description="Eine Übersicht über die Self-Service-Registrierung für Azure und die Verwaltung des Registrierungsprozesses."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="08/14/2015" 
+	ms.date="09/21/2015"
 	ms.author="stevenpo"/>
 
 
@@ -30,43 +30,41 @@ In diesem Thema wird der Self-Service-Registrierungsvorgang und das Übernehmen 
 
 ## Begriffe und Definitionen
 
-+ **Self-Service-Registrierung**: Dies ist die Methode, mit der sich ein Benutzer für einen Clouddienst registriert, wobei für ihn basierend auf seiner E-Mail-Domäne automatisch eine Identität in Azure Active Directory erstellt wird.
++ **Self-Service-Registrierung**: Dies ist die Methode, mit der sich ein Benutzer für einen Clouddienst registriert, wobei für ihn basierend auf seiner E-Mail-Domäne automatisch eine Identität in Azure Active Directory (AD) erstellt wird.
 + **Nicht verwalteter Azure-Mandant**: Dies ist das Verzeichnis, in dem diese Identität erstellt wird. Ein nicht verwalteter Mandant ist ein Verzeichnis ohne globalen Administrator.
 + **Über E-Mail verifizierter Benutzer**: Dies ist ein Typ von Benutzerkonto in Azure AD. Ein Benutzer, für den nach der Registrierung für ein Self-Service-Angebot automatisch eine Identität erstellt wird, wird als über E-Mail verifizierter Benutzer bezeichnet. Ein über E-Mail verifizierter Benutzer ist ein normales Mitglied eines Verzeichnisses mit der Kennzeichnung "creationmethod=EmailVerified".
 
-## Kundenerfahrung
-
-### Benutzererfahrung
+## Benutzererfahrung
 
 Angenommen, ein Benutzer, dessen E-Mail-Adresse Dan@BellowsCollege.com ist, empfängt vertrauliche Dateien per E-Mail. Die Dateien wurden durch Azure Rights Management (Azure RMS) geschützt. Doch die Organisation von Dan, das Bellows College, hat sich nicht für Azure RMS registriert und auch nicht Active Directory RMS bereitgestellt. In diesem Fall kann Dan sich für ein kostenloses Abonnement für RMS für Einzelpersonen registrieren, um die geschützten Dateien lesen zu können.
 
 Wenn Dan der erste Benutzer mit einer E-Mail-Adresse von "BellowsCollege.com" ist, der sich für dieses Self-Service-Angebot registriert, wird in Azure AD ein nicht verwalteter Mandant für "BellowsCollege.com" erstellt. Wenn sich andere Benutzer aus der Domäne "BellowsCollege.com" für dieses Angebot oder ein ähnliches Self-Service-Angebot registrieren, haben sie über E-Mail verifizierte Benutzerkonten, die im gleichen nicht verwalteten Mandanten in Azure erstellt wurden.
 
-### Administratorerfahrung
+## Administratorerfahrung
 
 Ein Administrator, der Besitzer des DNS-Domänennamens eines nicht verwalteten Azure-Mandanten ist, kann den Mandanten nach dem Nachweis des Besitzes übernehmen oder zusammenführen. In den nächsten Abschnitten wird die Administratorerfahrung im Detail erläutert. Hier zunächst eine Zusammenfassung:
 
 - Wenn Sie einen nicht verwalteten Azure-Mandanten übernehmen, werden Sie zum globalen Administrator des nicht verwalteten Mandanten. Dies wird mitunter als interne Übernahme bezeichnet.
 - Wenn Sie einen nicht verwalteten Azure-Mandanten zusammenführen, fügen Sie den DNS-Domänennamen des nicht verwalteten Mandanten Ihrem verwalteten Azure-Mandanten hinzu. Eine Zuordnung von Benutzern zu Ressourcen wird erstellt, damit Benutzer weiterhin ohne Unterbrechung auf Dienste zugreifen können. Dies wird mitunter als externe Übernahme bezeichnet.
 
-### Was wird im Microsoft Azure-Verzeichnis erstellt?
+## Was wird in Azure Active Directory erstellt?
 
 #### Mandant
 
-- Für die Domäne wird ein Azure-Mandant erstellt, ein Mandant pro Domäne.
-- Das Azure-Mandantenverzeichnis hat keinen globalen Administrator.
+- Für die Domäne wird ein Azure Active Directory-Mandant erstellt, ein Mandant pro Domäne.
+- Das Azure AD-Mandantenverzeichnis hat keinen globalen Administrator.
 
 #### Benutzer
 
-- Für jeden Benutzer, der sich registriert, wird ein Objekt im Azure-Mandanten erstellt.
+- Für jeden Benutzer, der sich registriert, wird ein Benutzerobjekt im Azure AD-Mandanten erstellt.
 - Jedes Benutzerobjekt wird als "viral" markiert.
 - Jeder Benutzer erhält Zugriff auf den Dienst, für den er sich registriert hat.
 
-### Wie beanspruche ich einen Self-Service-Azure-Mandanten für eine Domäne, die ich besitze?
+### Wie beanspruche ich einen Self-Service-Azure AD-Mandanten für eine Domäne, die ich besitze?
 
-Sie können einen Self-Service-Azure-Mandanten beanspruchen, indem Sie eine Domänenüberprüfung ausführen. Die Domänenüberprüfung weist nach, dass Sie die Domäne besitzen, indem DNS-Einträge erstellt werden.
+Sie können einen Self-Service-Azure AD-Mandanten beanspruchen, indem Sie eine Domänenüberprüfung ausführen. Die Domänenüberprüfung weist nach, dass Sie die Domäne besitzen, indem DNS-Einträge erstellt werden.
 
-Für eine DNS-Übernahme eines Azure-Mandanten gibt es zwei Möglichkeiten:
+Für eine DNS-Übernahme eines Azure AD-Mandanten gibt es zwei Möglichkeiten:
 
 - interne Übernahme (der Administrator ermittelt einen nicht verwalteten Azure-Mandanten, den er in einen verwalteten Mandanten umwandeln möchte)
 - externe Übernahme (der Administrator versucht, seinem verwalteten Azure-Mandanten eine neue Domäne hinzufügen)
@@ -234,4 +232,4 @@ Weitere Informationen und Beispiele zum Verwenden dieser Parameter finden Sie un
 <!--Image references-->
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

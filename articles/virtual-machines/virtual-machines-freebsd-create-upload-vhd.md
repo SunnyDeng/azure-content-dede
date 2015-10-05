@@ -1,29 +1,32 @@
-<properties 
-   pageTitle="Erstellen und Hochladen einer FreeBSD-VHD in Azure"
-	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die das FreeBSD-Betriebssystem enthält."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="KylieLiang"
-	manager="timlt"
-	editor=""/>
+<properties
+   pageTitle="Erstellen und Hochladen eines FreeBSD-VM-Images | Microsoft Azure"
+   description="Erfahren Sie, wie Sie eine virtuelle Festplatte (Virtual Hard Disk, VHD), die das FreeBSD-Betriebssystem enthält, erstellen und hochladen, um einen virtuelle Azure-Computer zu erstellen."
+   services="virtual-machines"
+   documentationCenter=""
+   authors="KylieLiang"
+   manager="timlt"
+   editor=""
+   tags="azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
-	ms.date="05/19/2015"
-	ms.author="kyliel"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="05/19/2015"
+   ms.author="kyliel"/>
 
-# Erstellen und Hochladen einer FreeBSD-VHD in Azure 
+# Erstellen und Hochladen einer FreeBSD-VHD in Azure
 
 Dieser Artikel erläutert, wie Sie eine virtuelle Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die das FreeBSD-Betriebssystem enthält, um sie als eigenes Image für die Erstellung von virtuellen Computern (Virtual Machines, VM) in Azure zu nutzen.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 ##Voraussetzungen##
 In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente verfügen:
 
-- **Azure-Abonnement**: Wenn Sie noch nicht über ein Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie die Informationen zum [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Anderenfalls finden Sie unter [Erstellen eines kostenlosen Testkontos](http://azure.microsoft.com/pricing/free-trial/) weitere Informationen.  
+- **Azure-Abonnement** – Wenn Sie noch nicht über ein Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Anderenfalls finden Sie unter [Erstellen eines kostenlosen Testkontos](http://azure.microsoft.com/pricing/free-trial/) weitere Informationen.  
 
 - **Azure PowerShell-Tools** – Sie haben das Microsoft Azure PowerShell-Modul installiert und für die Verwendung Ihres Abonnements konfiguriert. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure-Downloads](http://azure.microsoft.com/downloads/). Ein Tutorial zum Installieren und Konfigurieren des Moduls ist hier verfügbar. Sie verwenden das Cmdlet [Azure-Downloads](http://azure.microsoft.com/downloads/) zum Hochladen der VHD.
 
@@ -35,7 +38,7 @@ Diese Aufgabe umfasst die folgenden fünf Schritte.
 
 ## Schritt 1: Vorbereiten des hochzuladenden Images ##
 
-Wie für die FreeBSD-Installation auf Hyper-V steht [hier](http://blogs.msdn.com/b/kylie/archive/2014/12/25/running-freebsd-on-hyper-v.aspx) ein Tutorial zur Verfügung.
+Wie für die FreeBSD-Installation auf Hyper-V steht [hier](http://blogs.msdn.com/b/kylie/archive/2014/12/25/running-freebsd-on-hyper-v.aspx) ein Lernprogramm zur Verfügung.
 
 Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem installiert wurde, die folgenden Prozeduren aus:
 
@@ -48,9 +51,9 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
     SSH wird nach der Installation von einem Datenträger standardmäßig aktiviert. Wenn dies nicht der Fall ist oder Sie FreeBSD VHD direkt verwenden, geben Sie Folgendes ein:
 
-		# echo 'sshd_enable="YES"' >> /etc/rc.conf 
-		# ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key 
-		# ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key 
+		# echo 'sshd_enable="YES"' >> /etc/rc.conf
+		# ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
+		# ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 		# service sshd restart
 
 3. **Einrichten der seriellen Konsole**
@@ -73,7 +76,7 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
     5\.2 **Installieren von wget**
 
-		# pkg install wget 
+		# pkg install wget
 
 6. **Installieren des Azure-Agents**
 
@@ -111,11 +114,11 @@ Sie benötigen ein Speicherkonto in Azure, um eine VHD-Datei hochzuladen, damit 
 	![Speicherkonto schnell erfassen](./media/virtual-machines-freebsd-create-upload-vhd/Storage-quick-create.png)
 
 4. Füllen Sie die Felder wie folgt aus:
-	
+
 	- Geben Sie unter **URL** einen Unterdomänennamen ein, der im URL für das Speicherkonto verwendet werden soll. Der Eintrag kann drei bis 24 Kleinbuchstaben und Zahlen enthalten. Dieser Name wird der Hostname im URL, der zum Adressieren von Blob-, Warteschlangen- oder Tabellenspeicherressourcen für das Abonnement verwendet wird.
-			
+
 	- Wählen Sie den **Standort oder die Affinitätsgruppe** für das Speicherkonto aus. Mit einer Affinitätsgruppe können Sie Ihre Clouddienste und Speicher im selben Rechenzentrum platzieren.
-		 
+
 	- Sie können wählen, ob Sie **Georeplikation** für das Speicherkonto verwenden möchten. Georeplikation ist als Standard voreingestellt. Mit dieser Option werden Ihre Daten kostenfrei an einem sekundären Speicherort repliziert. So wird die Speicherung auf jenen Speicherort umgeschaltet, wenn am primären Speicherort ein größerer Ausfall auftritt. Der sekundäre Speicherort wird automatisch zugewiesen und kann nicht verändert werden. Wenn Sie aufgrund gesetzlicher Vorschriften oder Unternehmensrichtlinien mehr Kontrolle über den Speicherort des cloudbasierten Speichers benötigen, können Sie die Georeplikation deaktivieren. Beachten Sie jedoch, dass bei einem späteren Aktivieren der Georeplikation eine einmalige Datenübertragungsgebühr fällig wird, um Ihre vorhandenen Daten in dem sekundären Speicherort zu replizieren. Die Speicherdienste ohne Georeplikation werden mit einem Rabatt angeboten. Ausführliche Informationen zur Verwaltung der Georeplikation für Speicherkonten finden Sie unter: [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/#replication-options).
 
 	![Speicherkontodetails eingeben](./media/virtual-machines-freebsd-create-upload-vhd/Storage-create-account.png)
@@ -148,7 +151,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 1. Öffnen Sie die Azure PowerShell-Konsole.
 
 2. Geben Sie den folgenden Befehl ein: `Add-AzureAccount`
-	
+
 	Durch diesen Befehl wird ein Anmeldefenster geöffnet, sodass Sie sich mit Ihrem Geschäfts- oder Schulkonto anmelden können.
 
 	![PowerShell-Fenster](./media/virtual-machines-freebsd-create-upload-vhd/add_azureaccount.png)
@@ -157,7 +160,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 ###Verwenden eines Zertifikats
 
-1. Öffnen Sie die Azure PowerShell-Konsole. 
+1. Öffnen Sie die Azure PowerShell-Konsole.
 
 2. Geben Sie Folgendes ein: `Get-AzurePublishSettingsFile`.
 
@@ -172,7 +175,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 	Dabei stellt `<PathToFile>` den vollständigen Pfad zur Datei ".publishsettings" dar.
 
    Weitere Informationen finden Sie unter [Erste Schritte mit Microsoft Azure-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj554332.aspx).
-	
+
    Weitere Informationen zur Installation und Konfiguration von PowerShell finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](../install-configure-powershell.md).
 
 ## Schritt 4: Hochladen der VHD-Datei ##
@@ -204,6 +207,5 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 4. Nach Abschluss der Bereitstellung sehen Sie, dass Ihre FreeBSD-VM in Azure ausgeführt wird.
 
 	![FreeBSD-Images in Azure](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
- 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

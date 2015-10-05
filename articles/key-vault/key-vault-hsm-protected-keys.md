@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="09/11/2015"
+	ms.date="09/18/2015"
 	ms.author="cabailey"/>
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
@@ -106,6 +106,7 @@ Wechseln Sie zum Microsoft Download Center, und [laden Sie das BYOK-Toolset für
 |Asien|KeyVault-BYOK-Tools-AsiaPacific.zip|0C76967B3AC76687E4EA47EB96174EE6B25AB24E3114E28A90D9B93A2E6ABF6E|
 |Lateinamerika|KeyVault-BYOK-Tools-LatinAmerica.zip|B38015990D4D1E522B8367FF78E78E0234BF9592663470426088C44C3CAAAF48|
 |Japan|KeyVault-BYOK-Tools-Japan.zip|DB512CD9472FDE2FD610522847DF05E4D7CD49A296EE4A2DD74D43626624A113|
+|Australien|KeyVault-BYOK-Tools-Australia.zip|8EBC69E58E809A67C036B50BB4F1130411AD87A7464E0D61A9E993C797915967|
 
 Verwenden Sie in der Azure PowerShell-Sitzung das [Get-FileHash](https://technet.microsoft.com/library/dn520872.aspx)-Cmdlet, um die Integrität des heruntergeladenen BYOK-Toolsets zu überprüfen.
 
@@ -154,7 +155,7 @@ Starten Sie eine Eingabeaufforderung, und führen Sie das Thales-new-world-Progr
 
 	new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 
-Dieses Programm erstellt eine **Security World**-Datei unter „%NFAST\_KMDATA%\\local\\world“, die dem Ordner „C:\\ProgramData\\nCipher\\Key Management Data\\local“ entspricht. Sie können verschiedene Werte für das Quorum verwenden, aber in unserem Beispiel werden Sie aufgefordert, jeweils drei leere Karten und PINs einzugeben. Dann erhalten Sie mit zwei beliebigen Karten vollständigen Zugriff auf die Security World. Diese Karten werden zur **Administratorkartengruppe** für die neue Security World.
+Dieses Programm erstellt eine **Security World**-Datei unter "%NFAST\_KMDATA%\\local\\world", die dem Ordner "C:\\ProgramData\\nCipher\\Key Management Data\\local" entspricht. Sie können verschiedene Werte für das Quorum verwenden, aber in unserem Beispiel werden Sie aufgefordert, jeweils drei leere Karten und PINs einzugeben. Dann erhalten Sie mit zwei beliebigen Karten vollständigen Zugriff auf die Security World. Diese Karten werden zur **Administratorkartengruppe** für die neue Security World.
 
 Gehen Sie wie folgt vor:
 
@@ -188,6 +189,9 @@ So überprüfen Sie das heruntergeladene Paket
 	- Für Japan:
 
 			python verifykeypackage.py -k BYOK-KEK-pkg-JPN-1 -w BYOK-SecurityWorld-pkg-JPN-1
+	- Für Australien:
+
+			python verifykeypackage.py -k BYOK-KEK-pkg-AUS-1 -w BYOK-SecurityWorld-pkg-AUS-1
 
 	>[AZURE.TIP]Die Thales-Software enthält Python unter „%NFAST\_HOME%\\python\\bin“.
 	
@@ -211,7 +215,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 - „pubexp“ wird in diesem Beispiel leer gelassen (Standard), aber Sie können bestimmte Werte angeben. Weitere Informationen finden Sie in der Thales-Dokumentation.
 
-Mit diesem Befehl wird im Ordner „%NFAST\_KMDATA%\\local“ eine Tokenschlüsseldatei erstellt, deren Name mit **key\_simple\_** beginnt. Danach folgt die ID, die im Befehl angegeben wurde. Beispiel: **key\_simple\_contosokey**. Diese Datei enthält einen verschlüsselten Schlüssel.
+Mit diesem Befehl wird im Ordner "%NFAST\_KMDATA%\\local" eine Tokenschlüsseldatei erstellt, deren Name mit **key\_simple\_** beginnt. Danach folgt die ID, die im Befehl angegeben wurde. Beispiel: **key\_simple\_contosokey**. Diese Datei enthält einen verschlüsselten Schlüssel.
 
 Sichern Sie diese Tokenschlüsseldatei an einem sicheren Ort.
 
@@ -242,12 +246,15 @@ Um die Berechtigungen für den Schlüssel zu reduzieren, führen Sie an einer Ei
 - Für Japan:
 
 		KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-JPN-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-JPN-1
+- Für Australien:
+
+		KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AUS-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AUS-1
 
 Ersetzen Sie beim Ausführen dieses Befehls *contosokey* durch den gleichen Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
 
 Sie werden aufgefordert, Ihre Security World-Administratorkarten einzuführen.
 
-Wenn der Befehl abgeschlossen ist, wird **Result: SUCCESS** angezeigt, und die Kopie Ihres Schlüssels mit reduzierten Berechtigungen ist in der Datei mit dem Namen „key\_xferacId\_<contosokey>“ enthalten.
+Wenn der Befehl abgeschlossen ist, wird **Result: SUCCESS** angezeigt, und die Kopie Ihres Schlüssels mit reduzierten Berechtigungen ist in der Datei mit dem Namen "key\_xferacId\_<contosokey>" enthalten.
 
 ###Schritt 4.2: Überprüfen der neuen Kopie des Schlüssels
 
@@ -259,7 +266,7 @@ Optional können Sie die Thales-Hilfsprogramme ausführen, um zu bestätigen, da
 - kmfile-dump.exe:
 
 		"%nfast_home%\bin\kmfile-dump.exe" "%NFAST_KMDATA%\local\key_xferacld_contosokey"
-Ersetzen Sie beim Ausführen dieser Befehle „contosokey“ durch den Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
+Ersetzen Sie beim Ausführen dieser Befehle "contosokey" durch den Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
 
 ###Schritt 4.3: Verschlüsseln des Schlüssels mit dem Schlüsselaustauschschlüssel von Microsoft
 
@@ -280,6 +287,9 @@ Führen Sie je nach Region einen der folgenden Befehle aus:
 - Für Japan:
 
 		KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-JPN-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-JPN-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
+- Für Australien:
+
+		KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AUS-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AUS-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
 
 Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
@@ -289,7 +299,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 - Ersetzen Sie *ContosoFirstHSMKey* durch eine Bezeichnung, die als Name Ihrer Ausgabedatei verwendet werden soll.
 
-Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: „TransferPackage-*ContosoFirstHSMkey**byok“.
+Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: "TransferPackage-*ContosoFirstHSMkey**byok".
 
 ###Schritt 4.4: Kopieren des Schlüsselübertragungspakets auf die Arbeitsstation mit Internetverbindung 
 
@@ -307,4 +317,4 @@ Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefüg
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

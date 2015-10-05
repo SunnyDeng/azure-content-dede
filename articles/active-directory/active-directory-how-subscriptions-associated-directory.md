@@ -1,19 +1,19 @@
 <properties
-	pageTitle="Verknüpfung von Azure-Abonnements mit Azure AD"
+	pageTitle="Verknüpfen von Azure-Abonnements mit Azure AD | Microsoft Azure"
 	description="Ein Thema zur Anmeldung bei Microsoft Azure und zu verwandten Aspekten, z. B. der Beziehung zwischen einem Azure-Abonnement und Azure AD."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
+	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/14/2015"
+	ms.date="09/21/2015"
 	ms.author="curtand"/>
 
 # Verknüpfung von Azure-Abonnements mit Azure AD
@@ -67,7 +67,7 @@ Aber der wichtigste Punkt hierbei ist, dass Azure-Abonnementadministratoren und 
 
 Eine Person kann Mitglied beider Rollen sein, was allerdings nicht erforderlich ist. Ein Benutzer kann der globalen Verzeichnisadministratorrolle, nicht jedoch als Dienstadministrator oder Co-Administrator eines Azure-Abonnements zugewiesen sein. Da dieser Benutzer kein Administrator des Abonnements ist, kann er sich nicht am Azure-Verwaltungsportal anmelden. Der Benutzer kann jedoch Verzeichnisverwaltungsaufgaben mithilfe anderer Tools (z. B. Azure AD PowerShell oder Office 365 Admin Center) ausführen.
 
-### Warum kann ich das Verzeichnis nicht mit meinem aktuellen Benutzerkonto verwalten?
+## Warum kann ich das Verzeichnis nicht mit meinem aktuellen Benutzerkonto verwalten?
 
 Mitunter versucht ein Benutzer, sich mithilfe eines Geschäfts- oder Schulkontos am Azure-Verwaltungsportal anzumelden, bevor er sich für ein Azure-Abonnement registriert. In diesem Fall erhält der Benutzer die Meldung, dass kein Abonnement für dieses Konto vorhanden ist. Die Meldung enthält einen Link zum Ausprobieren eines kostenlosen Testabonnements.
 
@@ -88,7 +88,7 @@ Wenn Sie in der Vergangenheit ein Microsoft-Privatnutzerkonto mithilfe Ihrer ges
 
 ![][3]
 
-Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ein anderes im Privatnutzerkontosystem von Microsoft. Sie müssen das Konto wählen, das dem Azure-Abonnement zugeordnet ist, das Sie verwenden möchten. Wenn ein Fehler ausgegeben wird, der besagt, dass für diesen Benutzer kein Abonnement vorhanden ist, haben Sie wahrscheinlich die falsche Option gewählt. Melden Sie sich ab, und versuchen Sie es erneut. Weitere Informationen zu Fehlern, die eine Anmeldung verhindern können, finden Sie unter[ Problembehandlung von Fehlern des Typs "Es wurden keine Abonnements gefunden, die Ihrem Konto zugeordnet sind"](https://social.msdn.microsoft.com/Forums/de-DE/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement).
+Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ein anderes im Privatnutzerkontosystem von Microsoft. Sie müssen das Konto wählen, das dem Azure-Abonnement zugeordnet ist, das Sie verwenden möchten. Wenn ein Fehler ausgegeben wird, der besagt, dass für diesen Benutzer kein Abonnement vorhanden ist, haben Sie wahrscheinlich die falsche Option gewählt. Melden Sie sich ab, und versuchen Sie es erneut. Weitere Informationen zu Fehlern, die eine Anmeldung verhindern können, finden Sie unter[ Problembehandlung von Fehlern des Typs "Es wurden keine Abonnements gefunden, die Ihrem Konto zugeordnet sind"](https://social.msdn.microsoft.com/Forums/DE-DE/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement).
 
 ## Verwalten des Verzeichnisses für Ihr Office 365-Abonnement in Azure
 
@@ -124,4 +124,4 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im Verwaltungsportal zu v
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Verwenden von ReportViewer auf einer in Azure gehosteten Website"
+	pageTitle="Verwenden von ReportViewer auf einer Website | Microsoft Azure"
 	description="In diesem Thema wird beschrieben, wie eine Microsoft Azure-Website mit dem Visual Studio-Steuerelement „ReportViewer“ erstellt wird, in dem ein Bericht angezeigt wird, der auf einem virtuellen Microsoft Azure-Computer gespeichert ist."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor="monicar" 
+	tags="azure-service-management" />
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,9 +14,11 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/19/2015"
-	ms.author="jroth"/>
+	ms.author="jroth" />
 
 # Verwenden von ReportViewer auf einer in Azure gehosteten Website
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Sie können eine Microsoft Azure-Website mit dem Visual Studio-Steuerelement „ReportViewer“ erstellen, in dem ein Bericht angezeigt wird, der auf einem virtuellen Microsoft Azure-Computer gespeichert ist. Das ReportViewer-Steuerelement ist eine Webanwendung, die Sie mithilfe der Vorlage für ASP.NET-Webanwendungen erstellen.
 
@@ -23,7 +26,7 @@ Sie können eine Microsoft Azure-Website mit dem Visual Studio-Steuerelement „
 
 Um „ReportViewer“ in Ihre Microsoft Azure-Website zu integrieren, müssen Sie die folgenden Aufgaben ausführen.
 
-- **Hinzufügen** von Assemblys zu dem Bereitstellungspaket
+- **Hinzufügen** von Assemblys zum Bereitstellungspaket
 
 - **Konfigurieren** von Authentifizierung und Autorisierung
 
@@ -31,7 +34,7 @@ Um „ReportViewer“ in Ihre Microsoft Azure-Website zu integrieren, müssen Si
 
 ## Voraussetzungen
 
-Lesen Sie den Abschnitt „Allgemeine Empfehlungen und bewährte Methoden“ in [SQL Server-Business Intelligence auf virtuellen Azure-Computern](virtual-machines-sql-server-business-intelligence.md).
+Lesen Sie den Abschnitt "Allgemeine Empfehlungen und bewährte Methoden" in [SQL Server-Business Intelligence auf virtuellen Azure-Computern](virtual-machines-sql-server-business-intelligence.md).
 
 >[AZURE.NOTE]ReportViewer-Steuerelemente werden mit Visual Studio Standard Edition oder höher geliefert. Wenn Sie die Web Developer Express Edition verwenden, müssen Sie die [MICROSOFT REPORT VIEWER 2012 RUNTIME](https://www.microsoft.com/download/details.aspx?id=35747) installieren, damit Sie die ReportViewer-Laufzeitfunktionen verwenden können.
 >
@@ -51,13 +54,13 @@ Im Remoteverarbeitungsmodus verwendet das ReportViewer-Steuerelement die folgend
 
 ### So fügen Sie einen Verweis auf „Microsoft.ReportViewer.Common“ hinzu
 
-- Klicken Sie mit der rechten Maustaste auf den **Verweise**-Knoten des Projekts, wählen Sie **Verweis hinzufügen** aus, wählen Sie die Assembly auf der .NET-Registerkarte aus, und klicken Sie auf **OK**.
+- Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** des Projekts, wählen Sie **Verweis hinzufügen** aus, wählen Sie die Assembly auf der .NET-Registerkarte aus, und klicken Sie auf **OK**.
 
 ### So erreichen Sie, dass Ihre ASP.NET-Anwendung lokal auf die Assemblys zugreifen kann
 
-1. Klicken Sie im **Verweise**-Ordner auf die Microsoft.ReportViewer.Common-Assembly, sodass seine Eigenschaften im Eigenschaftenbereich angezeigt werden.
+1. Klicken Sie im Ordner **Verweise** auf die Assembly "Microsoft.ReportViewer.Common", sodass seine Eigenschaften im Eigenschaftenbereich angezeigt werden.
 
-1. Legen Sie im Eigenschaftenbereich die Eigenschaft **Lokale Kopie** auf „Wahr“ fest.
+1. Legen Sie im Eigenschaftenbereich die Eigenschaft **Lokale Kopie** auf "Wahr" fest.
 
 1. Wiederholen Sie die Schritte 1 und 2 für „Microsoft.ReportViewer.WebForms“.
 
@@ -67,25 +70,25 @@ Im Remoteverarbeitungsmodus verwendet das ReportViewer-Steuerelement die folgend
 
 1. Wählen Sie die Sprache in der Dropdownliste aus. Danach wird die Seite auf die entsprechende Download Center-Seite umgeleitet.
 
-1. Klicken Sie auf **Herunterladen**, um mit dem Herunterladen von „ReportViewerLP.exe“ zu beginnen.
+1. Klicken Sie auf **Herunterladen**, um mit dem Herunterladen von "ReportViewerLP.exe" zu beginnen.
 
-1. Nachdem Sie „ReportViewerLP.exe“ heruntergeladen haben, klicken Sie auf **Ausführen**, damit sofort installiert wird, oder klicken Sie auf **Speichern**, damit die Datei auf dem Computer gespeichert wird. Wenn Sie auf **Speichern** klicken, sollten Sie sich den Namen des Ordners merken, in dem Sie die Datei speichern.
+1. Nachdem Sie "ReportViewerLP.exe" heruntergeladen haben, klicken Sie auf **Ausführen**, damit es sofort installiert wird, oder klicken Sie auf **Speichern**, damit die Datei auf dem Computer gespeichert wird. Wenn Sie auf **Speichern** klicken, sollten Sie sich den Namen des Ordners merken, in dem Sie die Datei speichern.
 
-1. Navigieren Sie zu dem Ordner, in dem Sie die Datei gespeichert haben. Klicken Sie mit der rechten Maustaste auf „ReportViewerLP.exe“, klicken Sie auf **Als Administrator ausführen**, und klicken Sie dann auf **Ja**.
+1. Navigieren Sie zu dem Ordner, in dem Sie die Datei gespeichert haben. Klicken Sie mit der rechten Maustaste auf "ReportViewerLP.exe", klicken Sie auf **Als Administrator ausführen**, und klicken Sie dann auf **Ja**.
 
-1. Nach dem Ausführen von „ReportViewerLP.exe“ können Sie sehen, dass „c:\\windows\\assembly“ die Ressourcendateien **ReportViewerLP.exe** und **Microsoft.ReportViewer.Common.Resources** enthält.
+1. Nach dem Ausführen von "ReportViewerLP.exe" können Sie sehen, dass "c:\\windows\\assembly" die Ressourcendateien **ReportViewerLP.exe** und **Microsoft.ReportViewer.Common.Resources** enthält.
 
 ### So konfigurieren Sie für ein lokalisiertes ReportViewer-Steuerelement
 
 1. Gehen Sie gemäß den oben angegebenen Anweisungen vor, um das verteilbare Microsoft Report Viewer 2012-Laufzeit-Paket herunterzuladen und zu installieren.
 
-1. Erstellen Sie im Projekt den <language>-Ordner, und kopieren die zugehörigen Ressourcenassemblydateien. Folgende Ressourcenassemblydateien müssen kopiert werden: **Microsoft.ReportViewer.Webforms.Resources.dll** und **Microsoft.ReportViewer.Common.Resources.dll**. Wählen Sie die Ressourcenassemblydateien aus, und legen Sie im Eigenschaftenbereich die Eigenschaft **In Ausgabeverzeichnis kopieren** auf „**Immer kopieren**“ fest.
+1. Erstellen Sie im Projekt den Ordner <language>, und kopieren Sie die zugehörigen Ressourcenassemblydateien. Folgende Ressourcenassemblydateien müssen kopiert werden: **Microsoft.ReportViewer.Webforms.Resources.dll** und **Microsoft.ReportViewer.Common.Resources.dll**. Wählen Sie die Ressourcenassemblydateien aus, und legen Sie im Eigenschaftenbereich die Eigenschaft **In Ausgabeverzeichnis kopieren** auf "**Immer kopieren**" fest.
 
 1. Legen Sie die Kultur und Benutzeroberflächenkultur für das Webprojekt fest. Weitere Informationen dazu, wie die Kultur und Benutzeroberflächenkultur für eine ASP.NET-Webseite festgelegt werden, finden Sie unter [Vorgehensweise: Festlegen der Kultur und Benutzeroberflächenkultur für die Globalisierung von ASP.NET-Webseiten](http://go.microsoft.com/fwlink/?LinkId=237461).
 
 ## Konfigurieren von Authentifizierung und Autorisierung
 
-Das ReportViewer-Steuerelement muss geeignete Anmeldeinformationen verwenden, um sich beim Berichtsserver zu authentifizieren, und die Anmeldeinformationen müssen vom Berichtsserver autorisiert werden, damit Sie auf die gewünschten Berichte zuzugreifen können. Informationen über Authentifizierung finden Sie im Whitepaper [ReportViewer-Steuerelement von Reporting Services und Berichtsserver, die auf virtuellen Microsoft Azure-Computern basieren](https://msdn.microsoft.com/library/azure/dn753698.aspx).
+Das ReportViewer-Steuerelement muss geeignete Anmeldeinformationen verwenden, um sich beim Berichtsserver zu authentifizieren, und die Anmeldeinformationen müssen vom Berichtsserver autorisiert werden, damit Sie auf die gewünschten Berichte zuzugreifen können. Informationen über die Authentifizierung finden Sie im Whitepaper [ReportViewer-Steuerelement von Reporting Services und Berichtsserver, die auf virtuellen Microsoft Azure-Computern basieren](https://msdn.microsoft.com/library/azure/dn753698.aspx).
 
 ## Veröffentlichen der ASP.NET-Webanwendung in Azure
 
@@ -105,4 +108,4 @@ Anleitungen zum Veröffentlichen einer ASP.NET Web-Anwendung in Azure finden Sie
 
 [ReportViewer-Steuerelement von Reporting Services und Berichtsserver, die auf virtuellen Microsoft Azure-Computern basieren](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

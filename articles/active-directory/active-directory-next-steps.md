@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Was sind die nächsten Schritte in Azure AD?"
-	description="Erläutert erweiterte Aufgaben mithilfe von Azure AD."
+	pageTitle="Was sind die nächsten Schritte, die ich mithilfe von Azure Active Directory unternehmen kann?"
+	description="Erweiterte Aufgaben wie das Verwalten von Kennwörtern, Benutzern und Gruppen sowie der bedingte Zugriff mithilfe von Azure Active Directory."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
-	manager="terrylan"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/02/2015"
+	ms.date="09/21/2015"
 	ms.author="curtand"/>
 
 # Was sind die nächsten Schritte in Azure AD?
 
 
-###Weitere Artikel zu diesem Thema
+### Weitere Artikel zu diesem Thema
 [Was ist Azure AD?](active-directory-whatis.md)<br> [Wie funktioniert Azure AD?](active-directory-works.md)<br> [Erste Schritte](active-directory-get-started.md)<br> [Nächste Schritte](active-directory-next-steps.md)<br> [Weitere Informationen](active-directory-learn-map.md)
 
 ## Verwalten von Benutzern in Azure AD
@@ -41,4 +41,4 @@ Die Azure AD-Geräteregistrierung versieht Geräte mit einer Identität, die ver
 * [Azure-Identität](fundamentals-identity.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

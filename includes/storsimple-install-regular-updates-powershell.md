@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie regelmäßige Updates über Windows PowerShell für StorSimple
 
@@ -20,4 +21,4 @@
 > - Dieser Befehl gilt nur für regelmäßige Updates. Dieser Befehl muss nur auf einem Controller ausgeführt werden, es werden jedoch beide Controller aktualisiert. 
 > - Möglicherweise werden Sie während des Updatevorgangs ein Failover des Controllers bemerken. Dieses Failover wirkt sich jedoch nicht auf die Systemverfügbarkeit oder den Betrieb aus.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

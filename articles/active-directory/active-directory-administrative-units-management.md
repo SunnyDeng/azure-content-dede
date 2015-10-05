@@ -4,9 +4,8 @@
    services="active-directory"
    documentationCenter=""
    authors="curtand"
-   manager="stevepo"
+   manager="stevenpo"
    editor=""/>
-
 
 <tags
    ms.service="active-directory"
@@ -14,11 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="08/03/2015"
+   ms.date="09/21/2015"
    ms.author="curtand"/>
 
-
-#Verwaltung von Verwaltungseinheiten in Azure AD - Öffentliche Vorschau
+# Verwaltung von Verwaltungseinheiten in Azure AD - Öffentliche Vorschau
 
 Dieser Artikel beschreibt Verwaltungseinheiten – ein neuer Azure Active Directory-Container mit Ressourcen, die zum Delegieren administrativer Berechtigungen und Anwenden von Richtlinien für bestimmte Benutzergruppen verwendet werden können. In Azure Active Directory können Administratoren mit Verwaltungseinheiten Berechtigungen zu regionalen Administratoren delegieren oder eine Richtlinie auf präziser Ebene festlegen.
 
@@ -28,14 +26,14 @@ Dies ist hilfreich in Organisationen mit unabhängigen Bereichen, z. B. eine gro
 
 Aus Sicht des zentralen Administrators ist eine Verwaltungseinheit ein Verzeichnisobjekt, das erstellt und mit Ressourcen aufgefüllt werden kann. **In dieser Version können diese Ressourcen nur Benutzer sein.** Sobald erstellt und aufgefüllt, kann die Verwaltungseinheit zum Einschränken der erteilten Berechtigung nur für Ressourcen in der Verwaltungseinheit verwendet werden.
 
-##Verwalten von Verwaltungseinheiten
+## Verwalten von Verwaltungseinheiten
 
 In dieser Vorschauversion können Sie Verwaltungseinheiten mit dem Azure Active Directory-Modul für Windows PowerShell-Cmdlets erstellen und verwalten.
 
 Weitere Informationen zu Softwareanforderungen und der Installation des Azure AD-Moduls sowie Informationen zu den Azure AD-Modul-Cmdlets zur Verwaltung von Verwaltungseinheiten, einschließlich Syntax, Beschreibung der Parameter und Beispielen finden Sie unter [Verwalten von Azure AD mithilfe von Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx).
 
 
-##Nächste Schritte
+## Nächste Schritte
 [Azure Active Directory-Editionen](active-directory-editions.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

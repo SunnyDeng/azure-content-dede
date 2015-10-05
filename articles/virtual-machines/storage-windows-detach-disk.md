@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Trennen eines Datenträgers von einem virtuellen Computer unter Windows | Microsoft Azure"
-	description="Erfahren Sie, wie Sie einen Datenträger von einem virtuellen Computer in Azure trennen."
-	services="virtual-machines, storage"
+	description="Hier erfahren Sie, wie Sie einen Datenträger unter Verwendung des klassischen Bereitstellungsmodells von einem virtuellen Computer in Azure trennen."
+	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
 	manager="timlt"
@@ -21,6 +21,9 @@
 
 # Trennen eines Datenträgers von einem virtuellen Computer unter Windows
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird beschrieben, wie Sie einen Datenträger unter Verwendung des klassischen Bereitstellungsmodells trennen.
+
+
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
 
 ## Zusätzliche Ressourcen
@@ -29,4 +32,4 @@
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/03/2015" 
-	ms.author="patshea123"/>
+	ms.author="patshea"/>
 
 # Erste Schritte mit Azure Active Directory und verbundenen Visual Studio-Diensten (WebApi-Projekte)
 
@@ -29,4 +29,4 @@ Alle Controller in Ihrem Projekt wurden mit dem Attribut **Authorize** versehen.
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

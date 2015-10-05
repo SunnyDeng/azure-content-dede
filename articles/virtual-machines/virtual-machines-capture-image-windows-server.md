@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erfassen eines Images des virtuellen Computers unter Windows Server"
-	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Windows Server erfassen können."
+	pageTitle="Erfassen eines Images eines virtuellen Windows-Computers | Microsoft Azure"
+	description="Erfassen eines Images eines virtuellen Windows-Computers, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +17,9 @@
 	ms.date="07/16/2015"
 	ms.author="cynthn"/>
 
-#Erfassen eines virtuellen Windows-Computers, um ihn als Image zu verwenden#
+#Erfassen eines Images eines virtuellen Windows-Computers, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 In diesem Artikel wird erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn als Image zum Erstellen anderer virtueller Computer zu verwenden. Dieses Image enthält den Betriebssystem-Datenträger und alle Datenträger, die an den virtuellen Computer angefügt sind. Da die Vorlage keine Netzwerkkonfiguration enthält, muss diese später erfolgen, wenn Sie die anderen auf dieser Vorlage basierenden virtuellen Computer erstellen.
 
@@ -83,4 +85,4 @@ Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu er
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

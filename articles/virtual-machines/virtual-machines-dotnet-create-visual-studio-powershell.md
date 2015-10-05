@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen eines virtuellen Computers für ein Webprojekt mit Visual Studio"
+	pageTitle="Erstellen eines virtuellen Computers für ein Webprojekt mit Visual Studio | Microsoft Azure"
 	description="Erstellen eines virtuellen Computers für eine Website"
 	services="virtual-machines"
 	documentationCenter=""
@@ -22,8 +22,8 @@ Wenn Sie ein Webprojekt für eine Azure-Website erstellen, können Sie einen vir
 
 Befolgen Sie die folgenden Schritte, um beim Erstellen einer Website einen virtuellen Computer zu erstellen:
 
-1. Klicken Sie in Visual Studio auf **Datei** \> **Neu** \> **Projekt** \> **Web**. Wählen Sie dann **ASP.NET-Webanwendung** aus \(unter dem Knoten **Visual C\#** oder **Visual Basic**\).
-2. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** den gewünschten Typ der Webanwendung aus. Stellen Sie dann im Azure-Bereich des Dialogfelds \(in der unteren rechten Ecke\) sicher, dass das Kontrollkästchen **In der Cloud hosten** aktiviert ist \(dieses Kontrollkästchen ist bei einigen Installationen mit **Remoteressourcen erstellen** bezeichnet\).
+1. Klicken Sie in Visual Studio auf **Datei** > **Neu** > **Projekt** > **Web**. Wählen Sie dann **ASP.NET-Webanwendung** aus (unter dem Knoten **Visual C#** oder **Visual Basic**).
+2. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** den gewünschten Typ der Webanwendung aus. Stellen Sie dann im Azure-Bereich des Dialogfelds (in der unteren rechten Ecke) sicher, dass das Kontrollkästchen **In der Cloud hosten** aktiviert ist (dieses Kontrollkästchen ist bei einigen Installationen mit **Remoteressourcen erstellen** bezeichnet).
 
 	![][0]
 
@@ -52,7 +52,7 @@ Befolgen Sie die folgenden Schritte, um beim Erstellen einer Website einen virtu
 
 	![][4]
 
-<br/> 13. \(Optional:\) Stellen Sie eine Verbindung mit dem neuen virtuellen Computer her. Erweitern Sie in **Server-Explorer** den Knoten **Virtuelle Computer**, wählen Sie dann den Knoten für den erstellten virtuellen Computer aus, und wählen Sie anschließend im Kontextmenü **Mit Remotedesktop verbinden** aus.
+<br/> 13. (Optional:) Stellen Sie eine Verbindung mit dem neuen virtuellen Computer her. Erweitern Sie in **Server-Explorer** den Knoten **Virtuelle Computer**, wählen Sie dann den Knoten für den erstellten virtuellen Computer aus, und wählen Sie anschließend im Kontextmenü **Mit Remotedesktop verbinden** aus.
 
  ![][5]
 
@@ -68,4 +68,4 @@ Wenn Sie die erstellten veröffentlichten Skripts anpassen möchten, lesen Sie d
 [4]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_SolutionExplorer.png
 [5]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/VS_Create_VM_Connect.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

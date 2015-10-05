@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="09/23/2015"
 	ms.author="genemi"/>
 
 
@@ -150,7 +150,7 @@ Wir empfehlen Kunden, die Verbindung zu ihren Azure SQL-Datenbanken mit Visual S
 - Entwickeln einer Datenbank, entweder online oder offline
 
 
-Sie können die Verbindung stattdessen mit [Visual Studio Community 2013](https://www.visualstudio.com/de-DE/news/vs2013-community-vs.aspx/) herstellen, bei dem es sich um eine kostenlose, voll funktionsfähige Version von VS2013 handelt.
+Sie können die Verbindung stattdessen mit [Visual Studio Community 2013](https://www.visualstudio.com/DE-DE/news/vs2013-community-vs.aspx/) herstellen, bei dem es sich um eine kostenlose, voll funktionsfähige Version von VS2013 handelt.
 
 
 Im älteren Azure-Portal können Sie auf der Datenbankseite auf **In Visual Studio öffnen** klicken, um VS2013 auf Ihrem Computer zu starten und die Verbindung zu Ihrer Azure SQL-Datenbank herzustellen.
@@ -169,6 +169,7 @@ Während des Upgrades auf V12 kann weiterhin auf Daten in V11-Datenbanken zugegr
 | :--- | :--- |
 | Dauer des Upgrades | Die Dauer des Upgrades, hängt von der Größe, der Edition und der Anzahl der Datenbanken auf dem Server ab. Der Upgradevorgang kann Stunden bis Tage dauern, insbesondere bei Servern mit Datenbanken mit den folgenden Eigenschaften:<br/><br/>* Größer als 50 GB oder <br/>* Andere Dienstebene als Premium<br/><br/>Auch die Erstellung neuer Datenbanken auf dem Server während des Upgrades kann die Upgradedauer erhöhen. |
 | Keine Georeplikation | Georeplikation wird auf einem V12-Server nicht unterstützt, für den aktuell ein Upgrade aus V11 ausgeführt wird. |
+| Datenbank ist in der abschließenden Phase des Upgrades auf V12 kurzzeitig nicht verfügbar | Die Datenbanken, die zu Ihrem V11-Server gehören, bleiben während des Upgradeprozesses verfügbar. Die Verbindung mit dem Server und den Datenbanken ist jedoch in der abschließenden Phase, wenn der Wechsel von V11 zur vorbereiteten V12 beginnt, kurzzeitig nicht verfügbar.<br/><br/>Der Wechselzeitraum kann von 40 Sekunden bis zu 5 Minuten lang sein. Für die meisten Server ist zu erwarten, dass der Wechsel innerhalb von 90 Sekunden abgeschlossen ist. Die Wechselzeit verlängert sich für Server, die eine große Anzahl von Datenbanken haben, oder verlängert sich, wenn es umfangreiche Schreibworkloads für die Datenbanken gibt. |
 
 
 ### Einschränkung *nach* Upgrades auf V12
@@ -243,9 +244,6 @@ Mit dem Cmdlet „Stop-“ wird der Vorgang abgebrochen, nicht angehalten. Ein U
 Wenn aus einem bestimmten Grund ein Upgradefehler auftritt, bleibt Ihre V11-Datenbank aktiv und ist wie üblich verfügbar.
 
 
-> [AZURE.NOTE]Während des Upgrades auf V12 kann* weiterhin* auf Daten in Datenbankversionen vor V12 zugegriffen werden.
-
-
 ## Verwandte Links
 
 
@@ -256,4 +254,4 @@ Wenn aus einem bestimmten Grund ein Upgradefehler auftritt, bleibt Ihre V11-Date
 [Subheading 1]: #subheading-1
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

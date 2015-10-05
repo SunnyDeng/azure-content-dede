@@ -1,24 +1,27 @@
 <properties
-   pageTitle="Beispielkonfiguration für Azure-VM-Erweiterungen | Microsoft Azure"
+   pageTitle="Beispielkonfiguration für Windows-VM-Erweiterungen | Microsoft Azure"
    description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen"
    services="virtual-machines"
    documentationCenter=""
    authors="kundanap"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
    ms.devlang="na"
    ms.topic="article"
-   ms.tgt_pltfrm="na"
+   ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="09/01/2015"
    ms.author="kundanap"/>
 
 # Konfigurationsbeispiele für Windows-VM-Erweiterungen in Azure.
 
-Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für Azure-IaaS-Windows-VMs.
+Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für virtuelle Windows-Computer.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 Weitere Informationen zu diesen Erweiterungen finden Sie unter [Azure-VM-Erweiterungen](https://msdn.microsoft.com/library/azure/dn606311.aspx).
 
@@ -302,4 +305,4 @@ Dies ist ein Beispiel für eine vollständige VM-Vorlage mit einer benutzerdefin
 
 [Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

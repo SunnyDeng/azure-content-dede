@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Gewusst wie: Markieren eines virtuellen Computers in Azure"
-   description="Erfahren Sie mehr über das Markieren eines virtuellen Computers in Azure"
+   pageTitle="Kennzeichnen eines virtuellen Computers | Microsoft Azure"
+   description="Informieren Sie sich über das Kennzeichnen eines mit dem Ressourcen-Manager-Bereitstellungsmodell erstellten virtuellen Azure-Computers."
    services="virtual-machines"
    documentationCenter=""
    authors="mmccrory"
@@ -19,11 +19,13 @@
 
 # Gewusst wie: Markieren eines virtuellen Computers in Azure
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Kennzeichnen eines mit dem Ressourcen-Manager-Bereitstellungsmodell erstellten virtuellen Computers.
+
 Dieser Artikel beschreibt verschiedene Methoden zum Markieren eines virtuellen Computers in Azure mithilfe des Azure-Ressourcen-Managers. Tags sind benutzerdefinierte Schlüssel-Wert-Paare, die direkt auf einer Ressource oder einer Ressourcengruppe platziert werden können. Azure unterstützt derzeit bis zu 15 Tags pro Ressource und Ressourcengruppe. Tags können zum Zeitpunkt der Erstellung auf einer Ressource platziert werden oder zu einer vorhandenen Ressource hinzugefügt werden. Beachten Sie, dass Tags nur für Ressourcen unterstützt werden, die über den Azure-Ressourcen-Manager erstellt werden.
 
 ## Markieren eines virtuellen Computers mittels Vorlagen
 
-Zunächst sehen wir uns das Verwenden von Tags mithilfe von Vorlagen an. [Diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) platziert Tags auf den folgenden Ressourcen: Compute (Virtual Machine), Speicher (Storage-Konto) und Netzwerk (öffentliche IP-Adresse, Virtual Network und Netzwerkschnittstelle).
+Zunächst sehen wir uns das Verwenden von Tags mithilfe von Vorlagen an. [Diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) platziert Tags auf den folgenden Ressourcen: Compute (virtueller Computer), Speicher (Storage-Konto) und Netzwerk (öffentliche IP-Adresse, Virtual Network und Netzwerkschnittstelle).
 
 Klicken Sie unter dem [Vorlagenlink](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) auf die Schaltfläche **Bereitstellen in Azure**. Dadurch werden Sie ans [Azure-Vorschauportal](http://portal.azure.com/) weitergeleitet, in dem Sie diese Vorlage bereitstellen können.
 
@@ -83,7 +85,7 @@ Wenn der virtuelle Computer bereits Tags enthält, werden auf der Ressource ansc
                 "Environment": "Production"
                }
 
-Wenn Sie Tags über PowerShell hinzufügen möchten, können Sie den `Set-AzureResource`-Befehl verwenden. Beachten Sie, dass beim Aktualisieren von Tags über PowerShell die Tags als Ganzes aktualisiert werden. Wenn Sie ein Tag auf eine Ressource hinzufügen, die bereits über Tags verfügt, müssen Sie alle Tags einschließen, die auf der Ressource platziert werden sollen. Es folgt ein Beispiel für das Hinzufügen zusätzlicher Tags zu einer Ressource über PowerShell-Cmdlets.
+Wenn Sie Tags über PowerShell hinzufügen möchten, können Sie den Befehl `Set-AzureResource` verwenden. Beachten Sie, dass beim Aktualisieren von Tags über PowerShell die Tags als Ganzes aktualisiert werden. Wenn Sie ein Tag auf eine Ressource hinzufügen, die bereits über Tags verfügt, müssen Sie alle Tags einschließen, die auf der Ressource platziert werden sollen. Es folgt ein Beispiel für das Hinzufügen zusätzlicher Tags zu einer Ressource über PowerShell-Cmdlets.
 
 Das erste Cmdlet legt alle Tags, die auf *MyWindowsVM* platziert sind, mithilfe der `Get-AzureResource`- und `Tags`-Funktion auf die *Tags*-Variable fest.
 
@@ -104,7 +106,7 @@ Der zweite Befehl zeigt die Tags für die angegebene Variable an.
         Value		Production
         Name		Environment
 
-Der dritte Befehl fügt ein zusätzliches Tag auf die *Tags*-Variable hinzu. Beachten Sie, wie **+=** verwendet wird, um das neue Schlüssel-Wert-Paar an die *Tags*-Liste anzufügen.
+Der dritte Befehl fügt ein zusätzliches Tag für die *Tags*-Variable hinzu. Beachten Sie, wie **+=** verwendet wird, um das neue Schlüssel-Wert-Paar an die *Tags*-Liste anzufügen.
 
         PS C:\> $tags +=@{Name="Location";Value="MyLocation"}
 
@@ -158,7 +160,7 @@ Klicken Sie auf **Nutzungsdetails herunterladen**, um die Nutzungsdetails in Ihr
 
 ![Nutzungsdetails im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-tags-usage-details.png)
 
-Wählen Sie die Abrechnungsanweisung und die **Version 2** der Nutzungsdetails:
+Wählen Sie die Abrechnungsanweisung und die **Version 2** der Nutzungsdetails aus:
 
 ![Version 2 Vorschau der Nutzungsdetails im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-version2-usage-details.png)
 
@@ -180,11 +182,11 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 
 
 [PowerShell-Umgebung mit dem Azure-Ressourcen-Manager]: ../powershell-azure-resource-manager.md
-[Azure Resource-Cmdlets]: https://msdn.microsoft.com/de-de/library/azure/dn757692.aspx
+[Azure Resource-Cmdlets]: https://msdn.microsoft.com/DE-DE/library/azure/dn757692.aspx
 [Umgebung für Ihre Azure-Befehlszeilenschnittstelle]: ./xplat-cli-azure-resource-manager.md
 [Übersicht über den Azure Resource Manager]: ../resource-group-overview.md
 [Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
 [Erläuterungen zur Rechnung für Azure]: ../billing-understand-your-bill.md
 [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure]: ../billing-usage-rate-card-overview.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

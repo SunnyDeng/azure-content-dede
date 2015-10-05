@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"  
+	ms.date="09/23/2015"  
 	ms.author="juliako"/>
 
 #Azure On-Demand Media Encoder – Überblick und Vergleich
@@ -70,13 +70,13 @@ Media Encoder Standard wird mithilfe einer der Encoder-Voreinstellungen konfigur
 
 ###Eingabe- und Ausgabemetadaten
 
-Die Eingabemetadaten des Encoders werden [hier](http://msdn.microsoft.com/library/azure/dn783120.aspx) beschrieben (wie für Azure Media Encoder).
+Die Eingabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/library/azure/dn783120.aspx) beschrieben.
 
-Die Ausgabemetadaten des Encoders werden [hier](http://msdn.microsoft.com/library/azure/dn783217.aspx) beschrieben (wie für Azure Media Encoder).
+Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/library/azure/dn783217.aspx) beschrieben.
 
 ###Miniaturansicht
 
-Wird derzeit nicht unterstützt.
+Informationen dazu, wie Miniaturansichten erstellt werden, finden Sie unter [Erstellen von Miniaturansichten über Media Encoder Standard](media-services-dotnet-generate-thumbnail-with-mes.md).
 
 ###Audio- und/oder Videoüberlagerungen
 
@@ -112,7 +112,7 @@ Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/li
 
 ###Miniaturansicht
 
-[Erstellen einer Miniaturansicht](https://msdn.microsoft.com/library/azure/Dn673581.aspx)
+[Erstellen einer Miniaturansicht](https://msdn.microsoft.com/library/hh973624.aspx)
 
 ###Audio- und/oder Videoüberlagerungen
 
@@ -127,14 +127,16 @@ Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/li
 [Codieren Ihrer Medien mit Dolby Digital Plus](media-services-encode-with-dolby-digital-plus.md)
 
 ##Media Encoder Premium Workflow
-	
+
+###Übersicht
+
+[Introducing Premium Encoding in Azure Media Services (in englischer Sprache)](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
+
+###Gewusst wie
+
 Media Encoder Premium Workflow ist mit komplexen Workflows konfiguriert. Workflowdateien können mit dem Tool [Workflow-Designer](media-services-workflow-designer.md) erstellt und aktualisiert werden.
 
-Weitere Informationen finden Sie unter:
-
-- [Introducing Premium Encoding in Azure Media Services (in englischer Sprache)](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
-- [How to Use Premium Encoding in Azure Media Services (in englischer Sprache)](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
-
+[How to Use Premium Encoding in Azure Media Services (in englischer Sprache)](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
 
 ##<a id="compare_encoders"></a>Vergleich der Encoder
 
@@ -254,4 +256,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

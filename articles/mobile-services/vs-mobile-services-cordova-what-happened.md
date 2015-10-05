@@ -1,8 +1,8 @@
 <properties 
-	pageTitle="" 
-	description="Beschreibt, was mit Ihrem Azure Mobile Service-Projekt in Cordova passiert ist." 
+	pageTitle="Was ist mit meinem Cordova-Projekt passiert (Visual Studio Verbundene Dienste) | Microsoft Azure" 
+	description="Beschreibt, was mit Ihrem Azure Cordova-Projekt passiert ist, nachdem Azure Mobile Services mithilfe von Visual Studio Verbundene Dienste hinzugefügt wurde." 
 	services="mobile-services" 
-	documentationCenter="" 
+	documentationCenter="na" 
 	authors="patshea123" 
 	manager="douge" 
 	editor=""/>
@@ -10,13 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="09/17/2015" 
 	ms.author="patshea"/>
 
-# Was ist mit meinem Projekt passiert?
+# Was ist mit meinem Azure Cordova-Projekt passiert, nachdem Azure Mobile Services mithilfe von Visual Studio Verbundene Dienste hinzugefügt wurde?
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-mobile-services-cordova-getting-started.md)
@@ -39,4 +39,4 @@ Unter `services\mobileServices\settings` wurde eine neue JavaScript-Datei (JS-Da
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

@@ -60,17 +60,17 @@ Wenn Ihre Daten aus einer Event Hub-Quelle stammen, können Sie auf einige Metad
 
 | Eigenschaft | Beschreibung |
 |------------------------------|--------------------------------------------------------------------|
-| System.EventProcessedUtcTime | Das Datum und die Uhrzeit der Verarbeitung des Ereignisses durch Stream Analytics. |
-| System.EventEnqueuedUtcTime | Das Datum und die Uhrzeit des Ereignisempfangs durch die Event Hubs. |
-| System.PartitionId | Die nullbasierte Partitions-ID für den Eingabeadapter |
+| EventProcessedUtcTime | Das Datum und die Uhrzeit der Verarbeitung des Ereignisses durch Stream Analytics. |
+| EventEnqueuedUtcTime | Das Datum und die Uhrzeit des Ereignisempfangs durch die Event Hubs. |
+| PartitionId | Die nullbasierte Partitions-ID für den Eingabeadapter |
 
 Sie können eine Abfrage beispielsweise wie folgt schreiben:
 
 
     SELECT
-    	System. EventProcessedUtcTime,
-    	System. EventEnqueuedUtcTime,
-    	System.PartitionId
+    	EventProcessedUtcTime,
+    	EventEnqueuedUtcTime,
+    	PartitionId
     FROM Input
 
 ## Erstellen eines Blobspeichers als Datenstromeingabe
@@ -136,23 +136,23 @@ Wenn Ihre Daten aus einer Blobspeicherquelle stammen, können Sie auf einige Met
 
 | Eigenschaft | Beschreibung |
 |--------------------------------|--------------------------------------------------------------------|
-| System.BlobName | Der Name des Eingabe-Blobs, aus dem das Ereignis stammt. |
-| System.EventProcessedUtcTime | Das Datum und die Uhrzeit der Verarbeitung des Ereignisses durch Stream Analytics. |
-| System.BlobLastModifiedUtcTime | Das Datum und die Uhrzeit der letzten Änderung des BLOBs |
-| System.PartitionId | Die nullbasierte Partitions-ID für den Eingabeadapter |
+| BlobName | Der Name des Eingabe-Blobs, aus dem das Ereignis stammt. |
+| EventProcessedUtcTime | Das Datum und die Uhrzeit der Verarbeitung des Ereignisses durch Stream Analytics. |
+| BlobLastModifiedUtcTime | Das Datum und die Uhrzeit der letzten Änderung des BLOBs |
+| PartitionId | Die nullbasierte Partitions-ID für den Eingabeadapter |
 
 Sie können eine Abfrage beispielsweise wie folgt schreiben:
 
 
     SELECT
-    	System.BlobName,
-    	System.EventProcessedUtcTime,
-    	System.BlobLastModifiedUtcTime
+    	BlobName,
+    	EventProcessedUtcTime,
+    	BlobLastModifiedUtcTime
     FROM Input
 
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/DE-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stream Analytics für Daten aus dem Internet der Dinge. Weitere Informationen zu diesem Dienst finden Sie unter:
@@ -170,4 +170,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

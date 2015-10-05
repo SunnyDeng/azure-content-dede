@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/24/2015"
+   ms.date="09/18/2015"
    ms.author="tomfitz"/>
 
 # Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal
 
 ## Übersicht
-Dienstprinzipale sind automatisierte Prozesse, Anwendungen oder Dienste, die auf andere Ressourcen zugreifen müssen. Mithilfe des Azure Resource Managers können Sie einem Dienstprinzipal Zugriff gewähren und es authentifizieren, sodass es die zulässigen Verwaltungsaktionen an Ressourcen ausführen kann, die im Abonnement oder als Mandant existieren.
+Ein Dienstprinzipal ist ein automatisierter Prozess, eine automatisierte Anwendung oder ein automatisierter Dienst, der auf andere Ressourcen zugreifen muss. Mithilfe des Azure Resource Managers können Sie einem Dienstprinzipal Zugriff gewähren und es authentifizieren, sodass es die zulässigen Verwaltungsaktionen an Ressourcen ausführen kann, die im Abonnement oder als Mandant existieren.
 
 Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals erstellt werden kann. Aktuell müssen Sie das Microsoft Azure-Portal zum Erstellen eines neuen Dienstprinzipals verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert.
 
@@ -34,58 +34,58 @@ Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals ers
 
 2. Wählen Sie im linken Bereich **Active Directory** aus.
 
-   ![Active Directory auswählen][1]
+     ![Active Directory auswählen][1]
 
 3. Wählen Sie das Verzeichnis aus, das Sie zum Erstellen der neuen Anwendung nutzen möchten.
 
-   ![Verzeichnis wählen][2]
+     ![Verzeichnis wählen][2]
 
 3. Klicken Sie auf **Anwendungen**, um die Anwendungen in Ihrem Verzeichnis anzuzeigen.
 
-   ![Anwendungen anzeigen][11]
+     ![Anwendungen anzeigen][11]
 
 4. Wenn Sie in diesem Verzeichnis zuvor noch keine Anwendung erstellt haben, sollten Sie eine Abbildung ähnlich dieser hier sehen. Klicken Sie auf **EINE ANWENDUNG HINZUFÜGEN**
 
-   ![Anwendung hinzufügen][6]
+     ![Anwendung hinzufügen][6]
 
-   Oder klicken Sie im unteren Bereich auf **Hinzufügen**.
+     Oder klicken Sie im unteren Bereich auf **Hinzufügen**.
 
-   ![Hinzufügen][12]
+     ![Hinzufügen][12]
 
 5. Wählen Sie den Anwendungstypen aus, den Sie erstellen möchten. Für dieses Lernprogramm wird keine Anwendung aus der Galerie verwendet.
 
-   ![neue Anwendung][10]
+     ![neue Anwendung][10]
 
 6. Füllen Sie den Namen der Anwendung aus und wählen Sie den Anwendungstyp aus, den Sie nutzen möchten. Da hier das Dienstprinzipal dieser Anwendung zur Authentifizierung mit Azure Resource Manager verwendet werden soll, wird die Option zum Erstellen einer **WEBANWENDUNG UND/ODER WEB-API** gewählt und auf die Schaltfläche „Weiter“ geklickt.
 
-   ![Anwendung benennen][9]
+     ![Anwendung benennen][9]
 
 7. Tragen Sie die Eigenschaften Ihrer Anwendung ein. Geben Sie für die **ANMELDE-URL** die URI einer Website an, die Ihre Anwendung beschreibt. Das Vorhandensein der Website wird nicht überprüft. Geben Sie für die **APP-ID URI ** die URI an, die Ihre Anwendung identifiziert. Die Eindeutigkeit oder das Vorhandensein des Endpunktes wird nicht überprüft. Klicken Sie auf **Abschließen**, um Ihre AAD-Anwendung zu erstellen.
 
-   ![Anwendungseigenschaften][4]
+     ![Anwendungseigenschaften][4]
 
 ## Erstellen von Ihrem Dienstprinzipal-Kennwort
 Das Portal sollte nun Ihre Anwendung ausgewählt haben.
 
 1. Klicken Sie auf die Registrierkarte **Konfigurieren**, um das Kennwort für Ihre Anwendung zu konfigurieren.
 
-   ![Anwendung konfigurieren][3]
+     ![Anwendung konfigurieren][3]
 
 2. Scrollen Sie herunter zum Abschnitt **Schlüssel** und wählen Sie den gewünschten Gültigkeitszeitraum für Ihr Kennwort aus.
 
-   ![Schlüssel][7]
+     ![Schlüssel][7]
 
 3. Wählen Sie **Speichern** aus, um Ihren Schlüssel zu erstellen.
 
-   ![speichern][13]
+     ![speichern][13]
 
-   Der gespeicherte Schlüssel wird angezeigt, sodass Sie ihn kopieren können.
+     Der gespeicherte Schlüssel wird angezeigt, sodass Sie ihn kopieren können.
 
-   ![gespeicherter Schlüssel][8]
+     ![gespeicherter Schlüssel][8]
 
 4. Sie können nun Ihren Schlüssel zur Authentifizierung als Dienstprinzipal verwenden. Neben Ihrem **SCHLÜSSEL** benötigen Sie zur Anmeldung Ihre **CLIENT-ID**. Gehen Sie zu **CLIENT-ID** und kopieren Sie diese.
   
-   ![Client-ID][5]
+     ![Client-ID][5]
 
 
 Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstellt. Wenn Sie sich als Dienstprinzipal anmelden, achten Sie auf die Nutzung von:
@@ -116,4 +116,4 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

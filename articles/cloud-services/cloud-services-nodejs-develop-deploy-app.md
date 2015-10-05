@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
 	ms.date="08/31/2015"
@@ -41,7 +41,7 @@ Die Anwendung ist eine einfache "Hello World"-Anwendung:
 > [AZURE.NOTE]In diesem Lernprogramm wird Azure PowerShell verwendet, für die Windows installiert sein muss.
 
 - Installieren und konfigurieren Sie [Azure PowerShell](../install-configure-powershell.md).
-- Laden Sie das [Azure SDK für .NET 2.7](http://www.microsoft.com/de-DE/download/details.aspx?id=48178) herunter, und installieren Sie es. Wählen Sie während der Installationseinrichtung Folgendes:
+- Laden Sie das [Azure SDK für .NET 2.7](http://www.microsoft.com/DE-DE/download/details.aspx?id=48178) herunter, und installieren Sie es. Wählen Sie während der Installationseinrichtung Folgendes:
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator
 
@@ -177,6 +177,9 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 
 	> [AZURE.NOTE]Durch das Löschen dieses Diensts wird das Speicherkonto, das beim erstmaligen Veröffentlichen des Diensts erstellt wurde, nicht gelöscht, und Sie erhalten weiterhin eine Rechnung über den verwendeten Speicherplatz. Weitere Informationen zum Löschen eines Speicherkontos finden Sie unter [Löschen eines Speicherkontos aus einem Azure-Abonnement](http://msdn.microsoft.com/library/windowsazure/hh531562.aspx).
 
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
 
 [The Windows Start menu with the Azure SDK Node.js entry expanded]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-menu.png
 [mkdir]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png
@@ -194,4 +197,4 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

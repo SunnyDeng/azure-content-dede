@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/26/2015"
+   ms.date="09/22/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Parallelitäts- und Workloadverwaltung in SQL Data Warehouse
@@ -73,7 +73,7 @@ SQL Data Warehouse hat Ressourcenklassen durch Verwendung von Datenbankrollen im
 
 ### Ressourcenklassenmitgliedschaft
 
-Sie können sich selbst der Datenbankrolle für die Workloadverwaltung hinzufügen, indem Sie die Prozeduren `sp_addrolemember` und `sp_droprolemember` verwenden. Beachten Sie, dass Sie hierfür die Berechtigung `ALTER ROLE` benötigen. Es ist nicht möglich, die ALTER ROLE DDL-Syntax zu verwenden. Sie müssen die oben erwähnten gespeicherten Prozeduren verwenden. Ein vollständiges Beispiel zum Erstellen von Anmeldungen und Benutzern finden Sie im Abschnitt [Verwalten von Benutzern)[\#managing-users] am Ende dieses Artikels.
+Sie können sich selbst der Datenbankrolle für die Workloadverwaltung hinzufügen, indem Sie die Prozeduren `sp_addrolemember` und `sp_droprolemember` verwenden. Beachten Sie, dass Sie hierfür die Berechtigung `ALTER ROLE` benötigen. Es ist nicht möglich, die ALTER ROLE DDL-Syntax zu verwenden. Sie müssen die oben erwähnten gespeicherten Prozeduren verwenden. Ein vollständiges Beispiel zum Erstellen von Anmeldungen und Benutzern finden Sie im Abschnitt [Verwalten von Benutzern)[#managing-users] am Ende dieses Artikels.
 
 > [AZURE.NOTE]Anstatt einen Benutzer einer Workloadverwaltungsgruppe hinzuzufügen und daraus zu entfernen, ist es häufig einfacher, diese intensiveren Vorgänge über eine separate Anmeldung bzw. einen separaten Benutzer zu initiieren, die bzw. der der höheren Ressourcenklasse dauerhaft zugewiesen ist.
 
@@ -139,19 +139,49 @@ Es folgt eine Liste von Anweisungen und Vorgängen, die durch Ressourcenklassen 
 - INSERT-SELECT
 - UPDATE
 - DELETE
-- SELECT (wenn nicht ausschließlich DMVs abgefragt werden)
+- SELECT (wenn Benutzertabellen abgefragt werden)
 - ALTER INDEX REBUILD
 - ALTER INDEX REORGANIZE
 - ALTER TABLE REBUILD
-- CREATE CLUSTERED INDEX
+- CREATE INDEX
 - CREATE CLUSTERED COLUMNSTORE INDEX
 - CREATE TABLE AS SELECT 
 - Laden von Daten 
+- Datenverschiebungsvorgänge, die vom DMS (Data Movement Service) ausgeführt werden
+
+Die folgenden Anweisungen berücksichtigen Ressourcenklassen **nicht**:
+
+- CREATE TABLE
+- ALTER TABLE ... SWITCH PARTITION 
+- ALTER TABLE ... SPLIT PARTITION 
+- ALTER TABLE ... MERGE PARTITION 
+- DROP TABLE
+- ALTER INDEX DISABLE
+- DROP INDEX
+- CREATE STATISTICS
+- UPDATE STATISTICS
+- DROP STATISTICS
+- TRUNCATE TABLE
+- ALTER AUTHORIZATION
+- CREATE LOGIN
+- CREATE USER
+- ALTER USER
+- DROP USER
+- CREATE PROCEDURE
+- ALTER PROCEDURE
+- DROP PROCEDURE
+- CREATE VIEW
+- DROP VIEW
+- INSERT VALUES
+- SELECT (aus Systemsichten und DMVs)
+- EXPLAIN
+- DBCC
 
 <!--
 Removed as these two are not confirmed / supported under SQLDW
 - CREATE REMOTE TABLE AS SELECT
-- CREATE EXTERNAL TABLE AS SELECT 
+- CREATE EXTERNAL TABLE AS SELECT
+- REDISTRIBUTE 
 -->
 > [AZURE.NOTE]Es sollte betont werden, dass `SELECT`-Abfragen, die ausschließlich für dynamische Verwaltungssichten und Katalogsichten ausgeführt werden, **nicht** durch Ressourcenklassen gesteuert werden.
 
@@ -265,7 +295,7 @@ Nachdem die Anmeldung abgeschlossen ist, muss nun ein Benutzerkonto hinzugefügt
 CREATE USER newperson FOR LOGIN newperson
 ```
 
-Sobald dieser abgeschlossen ist, müssen dem Benutzer Berechtigungen erteilt werden. Im Beispiel unten erteilt `CONTROL` Berechtigungen in der SQL Data Warehouse-Datenbank. `CONTROL` auf Ebene der Datenbank entspricht "db\_owner" in SQL Server.
+Sobald dieser abgeschlossen ist, müssen dem Benutzer Berechtigungen erteilt werden. Im Beispiel unten erteilt `CONTROL` Berechtigungen in der SQL Data Warehouse-Datenbank. `CONTROL` auf Ebene der Datenbank entspricht „db\_owner“ in SQL Server.
 
 ```
 GRANT CONTROL ON DATABASE::MySQLDW to newperson
@@ -418,8 +448,8 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: https://msdn.microsoft.com/de-de/library/azure/ee336235.aspx
+[Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: https://msdn.microsoft.com/DE-DE/library/azure/ee336235.aspx
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

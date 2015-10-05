@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Best Practices: Azure AD-Kennwortverwaltung | Microsoft Azure" 
-	description="Best Practices für die Bereitstellung und Nutzung, Beispieldokumentation für Endbenutzer und Schulungshandbücher für die Kennwortverwaltung in Azure Active Directory." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="asteen" 
-	manager="kbrint" 
+<properties
+	pageTitle="Best Practices: Azure AD-Kennwortverwaltung | Microsoft Azure"
+	description="Best Practices für die Bereitstellung und Nutzung, Beispieldokumentation für Endbenutzer und Schulungshandbücher für die Kennwortverwaltung in Azure Active Directory."
+	services="active-directory"
+	documentationCenter=""
+	authors="asteen"
+	manager="kbrint"
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/08/2015" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/18/2015" 
 	ms.author="asteen"/>
 
 # Bereitstellen der Kennwortverwaltung und Schulen der Benutzer zu deren Verwendung
@@ -98,12 +98,12 @@ Sie können die Authentifizierungsdaten über das [Azure-Verwaltungsportal](http
 1.	Navigieren Sie im **Azure-Verwaltungsportal** in der [Active Directory-Erweiterung](https://manage.windowsazure.com) zu Ihrem Verzeichnis.
 2.	Klicken Sie auf die Registerkarte **Benutzer**.
 3.	Wählen Sie den für Sie relevanten Benutzer aus der Liste aus.
-4.	Auf der ersten Registerkarte finden Sie **Alternative E-Mail-Adresse**, die als Eigenschaft zum Aktivieren der Kennwortzurücksetzung verwendet werden kann. 
+4.	Auf der ersten Registerkarte finden Sie **Alternative E-Mail-Adresse**, die als Eigenschaft zum Aktivieren der Kennwortzurücksetzung verwendet werden kann.
 
     ![][005]
 
 5.	Klicken Sie auf die Registerkarte **Arbeitsinformationen**.
-6.	Auf dieser Seite finden Sie **Bürotelefon**, **Mobiltelefon**, **Telefon für Authentifizierung** und **Authentifizierungs-E-Mail**. Diese Eigenschaften können auch so festgelegt werden, dass sie einem Benutzer das Zurücksetzen des Kennworts ermöglichen. 
+6.	Auf dieser Seite finden Sie **Bürotelefon**, **Mobiltelefon**, **Telefon für Authentifizierung** und **Authentifizierungs-E-Mail**. Diese Eigenschaften können auch so festgelegt werden, dass sie einem Benutzer das Zurücksetzen des Kennworts ermöglichen.
 
     ![][006]
 
@@ -136,6 +136,5 @@ Wir arbeiten an Beispielschulungsmaterial, mit dem Sie Ihre IT-Organisation und 
 [004]: ./media/active-directory-passwords-best-practices/004.jpg "Image_004.jpg"
 [005]: ./media/active-directory-passwords-best-practices/005.jpg "Image_005.jpg"
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

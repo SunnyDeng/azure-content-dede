@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Verwenden von SSH zum Herstellen einer Verbindung zu virtuellen Linux-Computern in Azure" 
+	pageTitle="Verwenden von SSH zum Herstellen einer Verbindung zu virtuellen Linux-Computern | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie SSH-Schlüssel mit einem virtuellen Linux-Computer auf Azure generieren und verwenden." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
-	editor=""/>
+	editor=""
+	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
 	ms.service="virtual-machines" 
@@ -17,6 +18,8 @@
 	ms.author="szark"/>
 
 #Gewusst wie: Verwenden von SSH mit Linux auf Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SSH-Schlüssel, die in einem X509-Zertifikat enthalten sind. Gehen Sie wie nachstehend beschrieben vor, um SSH-Schlüssel mit Azure zu erzeugen und zu verwenden.
 
@@ -133,7 +136,7 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 
 ## Erstellen eines PPK für Putty ##
 
-1. Download and install Puttygen from the following location: [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1. Download and install Puttygen from the following location: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 
 2. Puttygen ist möglicherweise nicht in der Lage, den zuvor erstellten privaten Schlüssel (`myPrivateKey.key`) zu lesen. Führen Sie den folgenden Befehl aus, um ihn in einen privaten RSA-Schlüssel zu übersetzen, den Puttygen verstehen kann:
 
@@ -163,7 +166,7 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 
 ## Verwenden von Putty für eine Verbindung mit einem Linux-Computer ##
 
-1.	Laden und installieren Sie Putty von folgendem Speicherort: [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1.	Laden und installieren Sie Putty von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 2.	Führen Sie putty.exe aus.
 3.	Geben Sie den Hostnamen ein. Verwenden Sie dafür die IP aus dem Verwaltungsportal:
 
@@ -176,4 +179,4 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

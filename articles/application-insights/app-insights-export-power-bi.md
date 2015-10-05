@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/08/2015" 
+	ms.date="09/23/2015" 
 	ms.author="awills"/>
  
 # Power BI-Ansichten von Application Insights-Daten
@@ -42,13 +42,13 @@ Wenn Sie es noch nicht ausprobiert haben, ist jetzt der richtige Zeitpunkt, um z
 
 Durch fortlaufende Exportaktivitäten werden Daten an ein Azure-Speicherkonto übertragen, daher müssen Sie zuerst Speicher erstellen.
 
-1. Erstellen Sie ein Speicherkonto in Ihrem Abonnement im [Azure-Portal](https://portal.azure.com).
+1. Erstellen Sie ein "klassisches" Speicherkonto in Ihrem Abonnement im [Azure-Portal](https://portal.azure.com).
 
     ![Wählen Sie im Azure-Portal "Neu", "Daten" und "Speicher".](./media/app-insights-export-power-bi/030.png)
 
 2. Erstellen eines Containers
 
-    ![Wählen Sie im neuen Speicher "Container" und anschließend "Hinzufügen".](./media/app-insights-export-power-bi/040.png)
+    ![Wählen Sie im neuen Speicher "Container" aus, klicken Sie auf die Kachel "Container" und anschließend auf "Hinzufügen".](./media/app-insights-export-power-bi/040.png)
 
 3. Kopieren Sie den Speicherzugriffsschlüssel.
 
@@ -239,4 +239,4 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 * [Application Insights](app-insights-overview.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

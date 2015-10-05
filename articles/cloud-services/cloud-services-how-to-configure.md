@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Konfigurieren eines Clouddiensts | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie Clouddienste in Azure konfigurieren. Hier erfahren Sie, wie Sie die Konfiguration für Clouddienste aktualisieren und Remotezugriff auf Rolleninstanzen konfigurieren."
-	services="cloud-services"
-	documentationCenter=""
-	authors="Thraka"
-	manager="timlt"
+	pageTitle="Konfigurieren eines Clouddiensts | Microsoft Azure" 
+	description="Hier erfahren Sie, wie Sie Clouddienste in Azure konfigurieren. Hier erfahren Sie, wie Sie die Konfiguration für Clouddienste aktualisieren und Remotezugriff auf Rolleninstanzen konfigurieren." 
+	services="cloud-services" 
+	documentationCenter="" 
+	authors="Thraka" 
+	manager="timlt" 
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/29/2015"
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/22/2015"
 	ms.author="adegeo"/>
 
 
@@ -78,8 +78,12 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
     4. Klicken Sie auf **OK** (Häkchen).
 
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services](cloud-services-role-enable-remote-desktop.md)
+* Weitere Informationen zum [Bereitstellen eines Clouddiensts](cloud-services-how-to-create-deploy.md)
+* [Konfigurieren eines benutzerdefinierten Domänennamens](cloud-services-custom-domain-name.md)
+* [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage.md)
+* [Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services](cloud-services-role-enable-remote-desktop.md)
+* Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

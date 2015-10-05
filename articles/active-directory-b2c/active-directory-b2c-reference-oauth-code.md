@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: OAuth 2.0-Autorisierungcodefluss
@@ -272,4 +272,4 @@ Wenn Sie diese Anfragen selbst ausprobieren möchten, müssen Sie zunächst dies
 - [Erstellen einer Anwendung](active-directory-b2c-app-registration.md) zum Abrufen einer Anwendungs-ID und eines Umleitungs-URIs. Sie können Ihrer App einen **systemeigenen Client** hinzufügen.
 - [Erstellen der Richtlinien](active-directory-b2c-reference-policies.md) zum Abrufen der Richtliniennamen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

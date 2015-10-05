@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des ARM-Modus der Azure-Befehlszeilenschnittstellen verwalten."
+	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des Ressourcen-Manager-Bereitstellungsmodus verwalten."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor="tysonn"/>
-
+	editor="tysonn"
+	tags="azure-resource-mangaer"/>
 
 <tags
 	ms.service="multiple"
@@ -17,8 +17,10 @@
 	ms.date="06/09/2015"
 	ms.author="danlep"/>
 
+# Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
-# Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können eine Ressource auch mit dem [klassischen Bereitstellungsmodell](virtual-machines-command-line-tools.md) erstellen.
+
 
 In diesem Thema wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure-CLI) im **ARM-Modus** Dienste in der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können die gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs mit PowerShell und dem Azure-Portal ausführen.
 
@@ -1737,6 +1739,5 @@ Parameteroptionen:
 	vm image list-offers [options] <location> <publisher>
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

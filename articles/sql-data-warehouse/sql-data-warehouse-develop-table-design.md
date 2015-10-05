@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/09/2015"
+   ms.date="09/22/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Tabellenentwurf in SQL Data Warehouse #
@@ -123,8 +123,8 @@ Teilweise unterstützt:
 
 Es gibt zwei Möglichkeiten für das Verteilen von Daten in SQL Data Warehouse:
 
-1. Verteilen von Daten basierend auf Hashwerten aus einer einzelnen Spalte
-2. Gleichmäßiges zufälliges Verteilen von Daten  
+1. Gleichmäßiges zufälliges Verteilen von Daten 
+2. Verteilen von Daten basierend auf Hashwerten aus einer einzelnen Spalte
 
 Die Datenverteilung wird auf Tabellenebene entschieden. Alle Tabellen sind verteilt. Sie weisen die Verteilung für jede Tabelle in der SQL Data Warehouse-Datenbank zu.
 
@@ -306,4 +306,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

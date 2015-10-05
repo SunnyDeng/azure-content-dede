@@ -15,7 +15,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="09/03/2015"
+	ms.date="09/21/2015"
 	ms.author="jgao"/>
 
 # Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight zum Ausführen einer Hive-Abfrage
@@ -35,7 +35,6 @@ Um dieses Tutorial durchzuführen und die Hadoop-Tools in Visual Studio zu verwe
 
 	- Windows 8.1, Windows 8 oder Windows 7
 	- Visual Studio (eine der folgenden Versionen):
-		- Visual Studio 2012 Professional/Premium/Ultimate mit [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
 		- Visual Studio 2013 Community/Professional/Premium/Ultimate mit [Update 4](https://www.microsoft.com/download/details.aspx?id=44921)
 		- Visual Studio 2015 (Community/Enterprise)
 
@@ -44,12 +43,14 @@ Um dieses Tutorial durchzuführen und die Hadoop-Tools in Visual Studio zu verwe
 
 ## Installieren von HDInsight-Tools für Visual Studio
 
-HDInsight-Tools für Visual Studio gehören zum Microsoft Azure SDK für .NET, Version 2.5.1 oder höher. Für die Installation kann der [Webplattform-Installer](http://go.microsoft.com/fwlink/?LinkId=255386) verwendet werden. Sie müssen die Auswahl entsprechend Ihrer Version von Visual Studio vornehmen. Mit dem Hadoop-Toolpaket werden auch die Microsoft Hive ODBC-Treiber (32 Bit und 64 Bit) installiert.
+HDInsight-Tools für Visual Studio und Microsoft Hive ODBC Driver gehören zum Microsoft Azure SDK für .NET, Version 2.5.1 oder höher. Sie können dies mit dem [Web Platform-Installer](http://go.microsoft.com/fwlink/?LinkId=255386) installieren. Sie müssen die Auswahl entsprechend Ihrer Version von Visual Studio vornehmen. Wenn Sie Visual Studio nicht installiert haben, können Sie das aktuelle Visual Studio Community und Azure SDK über den [Webplattform-Installer](http://go.microsoft.com/fwlink/?LinkId=255386) oder die folgenden Links installieren:
+
+- [Visual Studio Community 2015 mit Microsoft Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
+- [Visual Studio Community 2013 mit Microsoft Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
+- [Microsoft Azure SDK für .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
+- [Microsoft Azure SDK für .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
 
 ![Hadoop-Tools: HDInsight-Tools für Visual Studio – Webplattform-Installer][1]
-
-
->[AZURE.NOTE]Wenn Sie Visual Studio 2015 oder 2012 verwenden und Azure SDK 2.5 installiert ist, müssen Sie die frühere Version manuell entfernen, bevor Sie die neueste Version installieren können. Visual Studio 2013 unterstützt eine direkte Aktualisierung.
 
 ## Herstellen einer Verbindung mit Azure-Abonnements
 Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit Ihren HDInsight-Clustern herstellen, einfache Verwaltungsvorgänge durchführen und Hive-Abfragen ausführen.
@@ -144,7 +145,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – lokale Überprüfung][10]
 
-4. Klicken Sie auf **Übermitteln** oder **Übermitteln (Erweitert)**. Mit der Option „Übermitteln (Erweitert)“ konfigurieren Sie **Auftragsname**, **Argumente**, **Zusätzliche Konfigurationen** und **Statusverzeichnis** für das Skript:
+4. Klicken Sie auf **Übermitteln** oder **Übermitteln (Erweitert)**. Mit der Option "Übermitteln (Erweitert)" konfigurieren Sie **Auftragsname**, **Argumente**, **Zusätzliche Konfigurationen** und **Statusverzeichnis** für das Skript:
 
 	![HDInsight Hadoop Hive-Abfrage][9]
 
@@ -169,7 +170,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 ### Anzeigen von Hive-Aufträgen
 Sie können Auftragsabfragen, die Auftragsausgabe, Auftragsprotokolle und YARN-Protokolle für Hive-Aufträge anzeigen. Weitere Informationen finden Sie im vorherigen Screenshot.
 
-Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb der Hive-Aufträge befindet, indem Sie die YARN-Protokolle sammeln und anzeigen. Ein YARN-Protokoll kann Ihnen bei der Untersuchung von Leistungsproblemen helfen. Weitere Informationen zur Vorgehensweise von HDInsight beim Sammeln von YARN-Protokollen finden Sie unter [Programmgesteuerter Zugriff auf HDInsight-Anwendungsprotokolle][hdinsight.access.application.logs].
+Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb der Hive-Aufträge befindet, indem Sie die YARN-Protokolle sammeln und anzeigen. Ein YARN-Protokoll kann Ihnen bei der Untersuchung von Leistungsproblemen helfen. Weitere Informationen zur Vorgehensweise von HDInsight beim Erfassen von YARN-Protokollen finden Sie unter [Programmgesteuerter Zugriff auf HDInsight-Anwendungsprotokolle][hdinsight.access.application.logs].
 
 **So zeigen Sie Hive-Aufträge an**
 
@@ -236,4 +237,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

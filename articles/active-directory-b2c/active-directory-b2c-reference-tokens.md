@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C Preview: Tokenreferenz
@@ -155,4 +155,4 @@ Die folgenden Angaben zur Tokengültigkeitsdauer dienen ausschließlich zu Infor
 | Aktualisierungstoken | Bis zu 14 Tage | Ein einzelnes Aktualisierungstoken ist maximal 14 Tage gültig. Das Aktualisierungstoken kann jedoch jederzeit aus verschiedenen Gründen ungültig werden. Ihre App muss daher ein Aktualisierungstoken verwenden, bis es fehlschlägt oder bis es von Ihrer App durch ein neues Aktualisierungstoken ersetzt wird. Ein Aktualisierungstoken wird außerdem ungültig, wenn der Benutzer das letzte Mal vor 90 Tagen seine Anmeldeinformationen eingegeben hat. |
 | Autorisierungscodes | 5 Minuten | Autorisierungscodes haben absichtlich eine kurze Gültigkeitsdauer. Sie müssen umgehend für Zugriffs-, ID- und Aktualisierungstoken eingelöst werden, wenn sie empfangen werden. |
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="07/06/2015"
+	ms.date="09/23/2015"
 	ms.author="larryfr"/>
 
 
@@ -52,7 +52,7 @@ Beim Streaming übergeben Hive und Pig Daten über "stdout" an externe Anwendung
 
 Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsolenanwendung** für Ihre C#-Projekte verwendet werden.
 
-##Hive and C&\#35;
+##Hive and C&#35;
 
 ###Erstellen des C#-Projekts
 
@@ -153,7 +153,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 6. Klicken Sie auf **Aktualisieren**, um die Zusammenfassung zu aktualisieren, bis der **Auftragsstatus** sich in **Abgeschlossen** ändert. Klicken Sie auf **Auftragsausgabe**, um die Auftragsausgabe anzuzeigen.
 
-##Pig und C&\#35;
+##Pig und C&#35;
 
 ###Erstellen des C#-Projekts
 
@@ -241,4 +241,4 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

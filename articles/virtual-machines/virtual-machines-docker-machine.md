@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwenden von &quot;docker-machine&quot; mit Azure"
-   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit &quot;docker-machine&quot; auf Ubuntu."
+   pageTitle="Verwenden von ";docker-machine"; mit Azure"
+   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit ";docker-machine"; auf Ubuntu."
    services="virtual-machines"
    documentationCenter="virtual-machines"
    authors="squillace"
@@ -13,12 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
-   ms.date="05/25/2015"
+   ms.date="09/22/2015"
    ms.author="rasquill"/>
 
 # Verwenden von "docker-machine" mit Azure
 
 Dieses Thema beschreibt die Verwendung von [Docker](https://www.docker.com/) mit [Machine](https://github.com/docker/machine) und der [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-xplat-cli) (Azure-CLI) zum schnellen Erstellen eines virtuellen Azure-Computers, um Linux-Container von einem Ubuntu-Computer aus schnell und einfach zu verwalten. Zur Demonstration zeigt das Lernprogramm, wie die Docker Hub-Images [busybox](https://registry.hub.docker.com/_/busybox/) und [nginx](https://registry.hub.docker.com/_/nginx/) bereitgestellt werden und der Container zum Routen von Webanforderungen an den nginx-Container konfiguriert wird. (Die Docker-Dokumentation zu **machine** beschreibt, wie diese Anweisungen für andere Plattformen angepasst werden.)
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
 
 Für das Abschließen dieses Lernprogramms müssen verschiedene Voraussetzungen erfüllt sein. Sie müssen folgende Komponenten installieren:
 
@@ -38,7 +41,7 @@ Sie können Ihre **docker-machine** auch selbst erstellen, indem Sie die Schritt
 
 <br />
 
->  Unabhängig von der gewählten Methode müssen Sie den binären Namen entweder direkt in der Befehlszeile aufrufen oder m Pfad platzieren, z. B. **/usr/local/bin**. Denken Sie daran, den Namen als ausführbar zu markieren, indem Sie `chmod +x` &lt;*`binaryName`*&gt; eingeben. Hierbei steht &lt;*`binaryName`*&gt; für den Namen der ausführbaren Docker-Machine. In diesem Lernprogramm wird **docker-machine\_linux-amd64** verwendet.
+>  Unabhängig von der gewählten Methode müssen Sie den binären Namen entweder direkt in der Befehlszeile aufrufen oder m Pfad platzieren, z. B. **/usr/local/bin**. Denken Sie daran, den Namen als ausführbar zu markieren, indem Sie `chmod +x` &lt;*`binaryName`*&gt; eingeben. Hierbei steht &lt;*`binaryName`*&gt; für den Namen der ausführbaren Datei des Docker-Computers. In diesem Lernprogramm wird **docker-machine\_linux-amd64** verwendet.
 
 ## Erstellen Sie die Zertifikat- und Schlüsseldateien für Docker, "machine" und Azure.
 
@@ -210,4 +213,4 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

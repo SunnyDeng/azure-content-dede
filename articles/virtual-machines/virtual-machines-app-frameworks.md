@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Anwendungsframeworks"
+   pageTitle="Anwendungsframeworks | Microsoft Azure"
    description="Hier wird das Erstellen der beliebtesten Anwendungsframeworks mithilfe von Vorlagen und Azure-Ressourcen-Manager beschrieben. Die Beispiele umfassen LAMP-Stack, SharePoint und SQL Server."
    services="virtual-machines"
    documentationCenter="virtual-machines"
    authors="squillace"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager" />
 
 <tags
    ms.service="virtual-machines"
@@ -19,6 +20,8 @@
 # Erstellen von Anwendungsframeworks mithilfe von Vorlagen
 
 Verwenden Sie diese Methoden, um Ideen rasch umzusetzen.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 | Vorlage | Beschreibung | Anzeigen der Vorlage | Direkte Bereitstellung |
 |:---|:---|:---:|:---:|
@@ -49,4 +52,4 @@ Auf [GitHub](https://github.com/Azure/azure-quickstart-templates) finden Sie all
 
 Hier finden Sie weitere Informationen zum [Azure-Ressourcen-Manager](../resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

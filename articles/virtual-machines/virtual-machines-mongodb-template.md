@@ -1,22 +1,25 @@
 <properties
-  pageTitle="Erstellen eines MongoDB-Clusters unter Ubuntu mithilfe einer Azure-Ressourcen-Manager-Vorlage"
-	description="Erstellen eines MongoDB-Clusters unter Ubuntu mithilfe einer Azure-Ressourcen-Manager-Vorlage mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="karthmut"
-	manager="timlt"
-	editor="tysonn"/>
+  pageTitle="Erstellen eines MongoDB-Clusters unter Ubuntu | Microsoft Azure"
+  description="Erstellen eines MongoDB-Clusters unter Ubuntu mithilfe einer Azure-Ressourcen-Manager-Vorlage mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle"
+  services="virtual-machines"
+  documentationCenter=""
+  authors="scoriani"
+  manager="timlt"
+  editor="tysonn"
+  tags="azure-resource-manager"/>
 
 <tags
   ms.service="virtual-machines"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="04/29/2015"
-	ms.author="karthmut"/>
+  ms.workload="multiple"
+  ms.tgt_pltfrm="vm-windows"
+  ms.devlang="na"
+  ms.topic="article"
+  ms.date="04/29/2015"
+  ms.author="scoriani"/>
 
 # Erstellen eines MongoDB-Clusters unter Ubuntu mithilfe einer Azure-Ressourcen-Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 MongoDB ist eine Open-Source-Dokumentendatenbank, die hohe Leistung, hohe Verfügbarkeit und automatische Skalierung bereitstellt. MongoDB kann als eigenständige Datenbank oder innerhalb eines Clusters installiert werden und die integrierten Replikationsfunktionen nutzen. In einigen Fällen können Sie mit Replikation die Lesekapazitäten erhöhen. Clients können Lese- und Schreibvorgänge an verschiedene Server senden. Sie können auch Kopien in verschiedenen Datencentern verwalten, um die Positionierung und die Verfügbarkeit von Daten für verteilte Anwendungen zu verbessern. Mit MongoDB bietet die Replikation auch Redundanz und erhöht die Verfügbarkeit von Daten. Durch mehrere Kopien von Daten auf verschiedenen Datenbankservern schützt die Replikation eine Datenbank bei einem Ausfall eines einzelnen Servers. Replikation ermöglicht auch die Wiederherstellung nach Hardwareausfällen und Dienstunterbrechungen. Mit zusätzlichen Kopien der Daten können Sie eine für die Wiederherstellung im Notfall und eine für die Berichterstellung oder Sicherung reservieren.
 
@@ -305,7 +308,7 @@ Denken Sie beim Bereitstellen daran, dass ein neues Azure-Speicherkonto erstellt
 
 Während und nach der Bereitstellung können Sie alle Anforderungen überprüfen, die während der Bereitstellung vorgenommen wurden, einschließlich der aufgetretenen Fehler.
 
-Wechseln Sie dazu zum [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
+Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
 
 - Klicken Sie auf der linken Navigationsleiste auf **Durchsuchen**, führen Sie einen Bildlauf nach unten durch, und klicken Sie auf **Ressourcengruppen**.
 - Nach dem Klicken auf die Ressourcengruppe, die Sie gerade erstellt haben, wird das Blatt "Ressourcengruppe" angezeigt.
@@ -690,4 +693,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/07/2015"  
+	ms.date="09/20/2015"  
 	ms.author="juliako"/>
 
 #Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
@@ -101,6 +101,33 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
             assetDeliveryPolicy.AssetDeliveryPolicyType);
     }
 
+Azure Media Services ermöglicht es Ihnen ebenfalls, Widevine-Verschlüsselung hinzuzufügen. Im folgenden Beispiel wird gezeigt, wie sowohl PlayReady als auch Widevine zur Übermittlungsrichtlinie für Medienobjekte (AssetDeliveryPolicy) hinzugefügt wird.
+
+	static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
+	{
+	    Uri acquisitionUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.PlayReadyLicense);
+	
+	    Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
+	        new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
+	    {
+	        {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()},
+	        {AssetDeliveryPolicyConfigurationKey.WidevineLicenseAcquisitionUrl,"http://testurl"},
+	        
+	    };
+	
+	    var assetDeliveryPolicy = _context.AssetDeliveryPolicies.Create(
+	            "AssetDeliveryPolicy",
+	        AssetDeliveryPolicyType.DynamicCommonEncryption,
+	        AssetDeliveryProtocol.Dash,
+	        assetDeliveryPolicyConfiguration);
+	
+	   
+	    // Add AssetDelivery Policy to the asset
+	    asset.DeliveryPolicies.Add(assetDeliveryPolicy);
+	
+	}
+
+>[AZURE.NOTE]Wenn Sie mit Widevine verschlüsseln, können Sie nur über DASH übermitteln. Geben Sie DASH (2) im Übermittlungsprotokoll für Medienobjekte an.
 
 
 ##DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Medienobjekte 
@@ -287,8 +314,12 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         /// The initialization vector to use for envelope encryption.
         /// </summary>
         EnvelopeEncryptionIV,
-    } 
 
+        /// <summary>
+        /// Widevine DRM acquisition url
+        /// </summary>
+        WidevineLicenseAcquisitionUrl
+    }
 
 ##Media Services-Lernpfade
 
@@ -297,4 +328,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

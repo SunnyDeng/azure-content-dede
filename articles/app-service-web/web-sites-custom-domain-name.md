@@ -130,7 +130,7 @@ Besucher Ihrer Web-App sehen die awverify-Unterdomäne nicht. Sie dient nur zum 
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns-getstarted-create-dnszone) sowie unter [Delegieren von Domänen an Azure DNS](../dns/dns-domain-delegation).
+Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns-getstarted-create-dnszone.md) sowie unter [Delegieren von Domänen an Azure DNS](../dns/dns-domain-delegation.md).
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -147,4 +147,4 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

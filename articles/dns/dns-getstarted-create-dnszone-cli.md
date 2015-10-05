@@ -1,22 +1,22 @@
 <properties
-   pageTitle="Erste Schritte mit Azure DNS | Microsoft Azure"
-	description="Erfahren Sie, wie Sie DNS-Zonen für Azure DNS Schritt für Schritt erstellen, um mit dem Hosten der DNS-Domäne mithilfe von PowerShell oder der Befehlszeilenschnittstelle zu beginnen."
-	services="dns"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="adinah"
-	editor=""/>
+   pageTitle="Erste Schritte mit Azure DNS mithilfe der Befehlszeilenschnittstelle (CLI) | Microsoft Azure"
+   description="Erfahren Sie, wie Sie DNS-Zonen für Azure DNS Schritt für Schritt erstellen, um mit dem Hosten der DNS-Domäne mithilfe der Befehlszeilenschnittstelle (CLI) zu beginnen."
+   services="dns"
+   documentationCenter="na"
+   authors="joaoma"
+   manager="adinah"
+   editor=""/>
 
 <tags
    ms.service="dns"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="09/02/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/22/2015"
+   ms.author="joaoma"/>
 
-# Erste Schritte mit Azure DNS
+# Erste Schritte mit Azure DNS mithilfe der Befehlszeilenschnittstelle (CLI)
 
 
 
@@ -173,4 +173,4 @@ Im folgenden Beispiel wird DIG zum Abfragen der Domäne "contoso.com" mithilfe d
 
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset-cli.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Verwalten von DNS-Einträgen](dns-operations-recordsets-cli.md)<BR> [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)<BR> [Referenz zur Azure DNS-REST-API](https://msdn.microsoft.com/library/azure/mt163862.aspx)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

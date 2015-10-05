@@ -1,19 +1,4 @@
-<properties
-   pageTitle="Installieren von Wartungsmodus-Updates"
-   description="Beschreibt die Installation von Wartungsmodus-Updates über Windows PowerShell für StorSimple."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/18/2015"
-   ms.author="alkohli" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie Wartungsmodus-Updates über Windows PowerShell für StorSimple
 
@@ -41,4 +26,4 @@
 
 8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Schritt 4: Beenden des Wartungsmodus](storsimple-update-device.md#step4).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/24/2015"
+   ms.date="09/23/2015"
    ms.author="larryfr"/>
 
 #Verwalten von HDInsight-Clustern mit Ambari (Vorschau)
@@ -69,7 +69,7 @@ Beachten Sie beim Öffnen der Seite die Leiste im oberen Bereich. Diese enthält
 
 * **Alerts**: Eine Liste von Informationen, Warnungen und kritischen Warnungen.
 
-* **Admin**: Softwarestapel/Dienste, die im Cluster installiert sind oder hinzugefügt werden können, Dienstkontoinformationen sowie die Kerberos-Sicherheit.
+* **Admin**: Softwarestapel/Dienste, die im Cluster installiert sind, Dienstkontoinformationen sowie die Kerberos-Sicherheit.
 
 * Schaltfläche **Admin**: Ambari-Verwaltung, Benutzereinstellungen und Abmeldung.
 
@@ -191,27 +191,12 @@ Die Seite **Hosts** listet alle Hosts im Cluster auf. Gehen Sie folgendermaßen 
 
 ###<a id="service"></a>Dienste
 
-Verwenden Sie auf der Seite **Dashboard **oder **Services** am Ende der Dienstliste die Schaltfläche **Actions**, um neue Dienste hinzuzufügen oder alle Dienste zu beenden und zu starten.
+Verwenden Sie auf der Seite **Dashboard **oder **Services** am Ende der Dienstliste die Schaltfläche **Actions**, um alle Dienste zu beenden und zu starten.
 
 ![Dienstaktionen](./media/hdinsight-hadoop-manage-ambari/service-actions.png)
 
-Nachfolgend sind die allgemeinen Schritte zum Hinzufügen eines Diensts aufgeführt:
+> [AZURE.WARNING]Zwar wird __Dienst hinzufügen__ in diesem Menü aufgelistet, es sollte aber nicht verwendet werden, um dem HDInsight-Cluster Dienste hinzuzufügen. Neue Dienste sollten während der Clusterbereitstellung mit einer Skriptaktion hinzugefügt werden. Weitere Informationen zur Verwendung von Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
-1. Verwenden Sie auf der Seite **Dashboard** oder **Services** die Schaltfläche **Actions**, und wählen Sie **Add Service** aus.
-
-2. Wählen Sie im **Add Service Wizard** den hinzuzufügenden Dienst aus, und klicken Sie auf **Next**.
-
-	![Dienst hinzufügen](./media/hdinsight-hadoop-manage-ambari/add-service.png)
-
-3. Fahren Sie mit dem Assistenten fort, und stellen Sie die Konfigurationsinformationen für den Dienst bereit. Weitere Informationen zu Konfigurationsanforderungen finden Sie in der Dokumentation zum jeweiligen Dienst, den Sie hinzufügen.
-
-4. Auf der Seite **Review** können Sie die Konfigurationsinformationen **drucken** oder den Dienst für den Cluster **bereitstellen**.
-
-5. Nachdem der Dienst bereitgestellt wurde, zeigt die Seite **Install, Start and Test** Statusinformationen an, während der Dienst installiert und getestet wird. Sobald der **Status** grün ist, klicken Sie auf **Next**.
-
-	![Abbildung der Seite "Install, Start und Test"](./media/hdinsight-hadoop-manage-ambari/install-start-test.png)
-
-6. Die Seite **Summary** zeigt eine Zusammenfassung des Installationsvorgangs sowie alle möglichen Aktionen an, die Sie ausführen müssen, z. B. andere Dienste neu starten. Klicken Sie auf **Complete**, um den Assistenten zu beenden.
 
 Während die Schaltfläche **Actions** alle Dienste neu starten kann, ist es möglicherweise häufig erforderlich, dass Sie bestimmte Dienste starten, beenden oder neu starten möchten. Gehen Sie wie folgt vor, um Aktionen für einzelne Dienste auszuführen:
 
@@ -247,8 +232,8 @@ Ambari Web basiert auf einer zugrunde liegenden REST-API, die Sie zum Erstellen 
 
 * **IP-Adressen**: Auf die für Hosts in einem Cluster zurückgegebene Adresse kann von außerhalb des Clusters nicht zugegriffen werden, es sei denn, der Cluster gehört zu einem virtuellen Azure-Netzwerk. Dann können andere Mitglieder des virtuellen Netzwerks auf die IP-Adresse zugreifen, jedoch nicht von außerhalb des Netzwerks.
 
-* **Einige Funktionen sind nicht aktiviert**: Einige Ambari-Funktionen sind deaktiviert, da sie vom HDInsight-Cloud-Dienst verwaltet werden, z. B. das Hinzufügen oder Entfernen von Hosts im Cluster. Andere Funktionen sind möglicherweise nicht vollständig in der Vorschau des Linux-basierten HDInsight implementiert.
+* **Einige Funktionen sind nicht aktiviert**: Einige Ambari-Funktionen sind deaktiviert, da sie vom HDInsight-Clouddienst verwaltet werden, z. B. Hinzufügen oder Entfernen von Hosts im Cluster oder Hinzufügen neuer Dienste. Andere Funktionen sind möglicherweise nicht vollständig in der Vorschau des Linux-basierten HDInsight implementiert.
 
 Eine vollständige Referenz der REST-API finden Sie unter [Referenz zur Ambari-API V1](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

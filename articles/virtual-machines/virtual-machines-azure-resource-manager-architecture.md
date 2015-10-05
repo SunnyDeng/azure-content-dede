@@ -1,12 +1,12 @@
 <properties
-   pageTitle="Architektur des Azure-Ressourcen-Managers"
-	description="Lernen Sie die Architektur des Ressourcen-Managers und die Beziehungen zwischen den Anbietern für Compute-, Netzwerk- und Speicherressourcen kennen."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="davidmu1"
-	manager="timlt"
-	editor=""
-	tags="azure-resource-manager"/>
+   pageTitle="Architektur des Azure-Ressourcen-Managers | Microsoft Azure"
+   description="Lernen Sie die Architektur des Ressourcen-Managers und die Beziehungen zwischen den Anbietern für Compute-, Netzwerk- und Speicherressourcen kennen."
+   services="virtual-machines"
+   documentationCenter=""
+   authors="davidmu1"
+   manager="timlt"
+   editor=""
+   tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="azure-resource-manager"
@@ -18,6 +18,8 @@
 	ms.author="davidmu"/>
 
 # Architektur des Azure-Ressourcen-Managers
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 Dieser Artikel bietet einen Überblick über die Architektur der Dienstverwaltung und des Ressourcen-Managers zum Erstellen infrastrukturbasierter Anwendungen und Workloads.
 
@@ -77,6 +79,6 @@ Sie können die Komponentisierung sowie die Abhängigkeitsbeziehungen zwischen R
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Azure Resource Manager Overview](resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)
+[Azure Resource Manager-Übersicht](resource-group-overview.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

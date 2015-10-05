@@ -1,22 +1,24 @@
-<properties 
-pageTitle="Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer"
-	description="Informieren Sie sich über weitere Aspekte, bevor Sie einen virtuellen Oracle-Computer in Azure bereitstellen."
-	services="virtual-machines"
-	documentationCenter=""
-	manager=""
-	authors="bbenz"
-	tags=""/>
+<properties
+pageTitle="Überlegungen zu Images für virtuelle Oracle-Computer | Microsoft Azure"
+description="In diesem Artikel erhalten Sie vor der Bereitstellung Informationen zu unterstützten Konfigurationen und Einschränkungen für einen virtuellen Oracle-Computer unter Windows Server in Azure."
+services="virtual-machines"
+documentationCenter=""
+manager=""
+authors="bbenz"
+tags="azure-service-management"/>
 
 <tags
 ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="06/22/2015"
-	ms.author="bbenz"/>
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="vm-windows"
+ms.workload="infrastructure-services"
+ms.date="06/22/2015"
+ms.author="bbenz" />
 
 #Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
 Inhalt dieses Artikels sind Überlegungen zu virtuellen Oracle-Computern in Azure, die auf von Microsoft bereitgestellten Oracle-Softwareimages basieren und unter dem Betriebssystem Windows Server ausgeführt werden.
 
 -  Images von virtuellen Oracle Database-Computern
@@ -84,7 +86,7 @@ Mit Oracle Data Guard kann Hochverfügbarkeit mit einer primären Datenbank auf 
 
 			-Dweblogic.rjvm.enableprotocolswitch=true
 
-Verwandte Informationen finden Sie im KB-Artikel **860340.1** unter <http://support.oracle.com>.
+Weitere Informationen finden Sie im KB-Artikel **860340.1** unter <http://support.oracle.com>.
 
 -  **Einschränkungen für dynamisches Clustering und Lastenausgleich**. Angenommen, Sie möchten in WebLogic Server einen dynamischen Cluster verwenden und ihn in Azure über einen einzelnen Endpunkt mit Lastenausgleich verfügbar machen. Dies ist möglich, solange Sie für jeden verwalteten Server eine feste Portnummer (keine dynamisch aus einem Bereich zugewiesene Nummer) verwenden und nicht mehr verwaltete Server starten, als Computer vorhanden sind, die vom Administrator nachverfolgt werden (d. h. nicht mehr als einen verwalteten Server pro virtuellem Computer). Wenn die Konfiguration bewirkt, dass mehr WebLogic-Server gestartet werden, als virtuelle Computer vorhanden sind (d. h., wenn mehrere WebLogic Server-Instanzen denselben virtuellen Computer verwenden), kann nicht mehr als eine dieser WebLogic Server-Instanzen an eine angegebene Portnummer gebunden werden, und die anderen Instanzen auf diesem virtuellen Computer schlagen fehl.
 
@@ -103,4 +105,4 @@ Verwandte Informationen finden Sie im KB-Artikel **860340.1** unter <http://supp
 ##Zusätzliche Ressourcen
 [Images des virtuellen Oracle-Computers für Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

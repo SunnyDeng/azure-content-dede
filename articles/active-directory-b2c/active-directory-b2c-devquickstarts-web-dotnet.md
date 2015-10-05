@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="09/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Erstellen einer .NET-Web-App
@@ -36,6 +36,8 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Geben Sie `https://localhost:44316/` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie später.
 
+    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+
 ## 3\. Erstellen der Richtlinien
 
 In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Dieses Codebeispiel enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
@@ -43,13 +45,13 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active
 - Wählen Sie **Registrierung mit Benutzer-ID** oder **E-Mail-Registrierung** auf dem Blatt für den Identitätsanbieter aus.
 - Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
 - Wählen Sie den **Anzeigenamen** als Anwendungsanspruch in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
-- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
+- Notieren Sie sich den **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Er muss das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
 ## 4\. Herunterladen des Codes und Konfigurieren der Authentifizierung
 
-Der Code für dieses Beispiel wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIdConnect-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP herunterladen](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIdConnect-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Beispiel wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIdConnect-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIdConnect-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIdConnect-DotNet.git
@@ -304,7 +306,7 @@ Erstellen und führen Sie Ihre Anwendung zum Schluss aus! Registrieren Sie sich 
 
 ## 8\. Soziale Netzwerke als IDPs hinzufügen
 
-Die App unterstützt bisher nur die Registrierung und Anmeldung von Benutzern mit sogenannten **lokalen Konten** – Konten in Ihrem B2C-Verzeichnis mit einem Benutzernamen und einem Kennwort. Mit Azure AD B2C können Sie auch andere **Identitätsanbieter** (oder IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
+Die App unterstützt bisher nur die Registrierung und Anmeldung von Benutzern mit sogenannten **lokalen Konten** – Konten in Ihrem B2C-Verzeichnis mit einem Benutzernamen und einem Kennwort. Mit Azure AD B2C können Sie auch andere **Identitätsanbieter** (oder IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
 
 Um Ihrer App soziale Netzwerke als IDPs hinzuzufügen, befolgen Sie zunächst die detaillierten Anweisungen in einem oder zwei der folgenden Artikel. Sie müssen für jeden IDP, den Sie unterstützen möchten, eine Anwendung in dessen System registrieren und eine Client-ID abrufen.
 
@@ -313,7 +315,7 @@ Um Ihrer App soziale Netzwerke als IDPs hinzuzufügen, befolgen Sie zunächst di
 - [Einrichten von Amazon als IDP](active-directory-b2c-setup-amzn-app.md)
 - [Einrichten von LinkedIn als IDP](active-directory-b2c-setup-li-app.md) 
 
-Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müssen Sie jede der drei Richtlinien bearbeiten, um die neuen IDPs wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md) beschrieben einzufügen. Nachdem Sie Ihre Richtlinien gespeichert haben, führen Sie die App einfach erneut aus. Die neuen IDPs sollten als eine Registrierungs- und Anmeldeoption auf allen Benutzeroberflächen für Identitäten angezeigt werden.
+Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müssen Sie jede der drei Richtlinien bearbeiten, um die neuen IDPs wie im [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md) beschrieben einzufügen. Nachdem Sie Ihre Richtlinien gespeichert haben, führen Sie die App einfach erneut aus. Die neuen IDPs sollten als eine Registrierungs- und Anmeldeoption auf allen Benutzeroberflächen für Identitäten angezeigt werden.
 
 Sie können frei mit Ihren Richtlinien experimentieren und die Auswirkung auf die Beispiel-App beobachten – Sie können IDPs hinzufügen/entfernen oder die Anwendungsansprüche oder Registrierungsattribute ändern. Experimentieren Sie so lange, bis Sie die Verknüpfung von Richtlinien, Authentifizierungsanforderungen und OWIN verstanden haben.
 
@@ -335,4 +337,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

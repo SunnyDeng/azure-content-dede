@@ -1,22 +1,22 @@
 <properties 
-   pageTitle="Vorgänge für DNS-Zonen | Microsoft Azure"
-	description="Sie können DNS-Zonen mit Azure Powershell-Cmdlets oder der -Befehlszeilenschnittstelle verwalten. Aktualisieren, Löschen und Erstellen von DNS-Zonen in Azure DNS"
-	services="dns"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="Adinah"
-	editor=""/>
+   pageTitle="Vorgänge für DNS-Zonen mithilfe der Befehlszeilenschnittstelle (CLI) | Microsoft Azure" 
+   description="Sie können DNS-Zonen mithilfe der Azure-Befehlszeilenschnittstelle (CLI) verwalten. Aktualisieren, Löschen und Erstellen von DNS-Zonen in Azure DNS" 
+   services="dns" 
+   documentationCenter="na" 
+   authors="joaoma" 
+   manager="Adinah" 
+   editor=""/>
 
 <tags
    ms.service="dns"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="09/02/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="09/02/2015"
+   ms.author="joaoma"/>
 
-# Verwalten von DNS-Zonen
+# Verwalten von DNS-Zonen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
 - [Azure CLI](dns-operations-dnszones-cli.md)
@@ -76,4 +76,4 @@ Dieser Vorgang hat einen optionalen Switch "-q", der die Eingabeaufforderung zur
 
 [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

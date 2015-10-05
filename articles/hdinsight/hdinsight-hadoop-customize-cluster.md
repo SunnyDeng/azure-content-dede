@@ -92,7 +92,9 @@ Es gibt zwei Arten von Open-Source-Komponenten, die im HDInsight-Dienst verfügb
 
 Integrierte Komponenten werden vollständig unterstützt, und Microsoft Support hilft Ihnen, Probleme im Zusammenhang mit diesen Komponenten zu isolieren und zu beheben.
 
-Für benutzerdefinierte Komponenten steht kommerziell angemessener Support für eine weiterführende Behebung des Problems zur Verfügung. Auf diese Weise kann das Problem behoben werden, oder Sie werden aufgefordert, verfügbare Kanäle für Open-Source-Technologien in Anspruch zu nehmen, die über umfassende Kenntnisse dieser Technologien verfügen. So können z. B. viele Communitywebsites verwendet werden, wie: das <a href ="https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight" target="_blank">MSDN-Forum für HDInsight</a> und <a href="http://stackoverflow.com" target="_blank">Stack Overflow</a>. Für Apache-Projekte gibt es Projektwebsites auf <a href="http://apache.org" target="_blank">Apache.org</a>, z. B. <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> und <a href="http://spark.apache.org/" target="_blank">Spark</a>.
+> [AZURE.WARNING]Komponenten, die mit dem HDInsight-Cluster bereitgestellt werden, werden vollständig unterstützt, und Microsoft Support hilft Ihnen, Probleme im Zusammenhang mit diesen Komponenten zu isolieren und zu beheben.
+>
+> Für benutzerdefinierte Komponenten steht kommerziell angemessener Support für eine weiterführende Behebung des Problems zur Verfügung. Auf diese Weise kann das Problem behoben werden, ODER Sie werden aufgefordert, verfügbare Kanäle für Open-Source-Technologien in Anspruch zu nehmen, die über umfassende Kenntnisse für diese Technologien verfügen. So können z. B. viele Communitywebsites verwendet werden, wie: das [MSDN-Forum für HDInsight](https://social.msdn.microsoft.com/Forums/azure/DE-DE/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Für Apache-Projekte gibt es Projektwebsites auf [http://apache.org](http://apache.org), zum Beispiel: [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
 
 Der HDInsight-Dienst bietet mehrere Möglichkeiten, benutzerdefinierte Komponenten zu verwenden. Unabhängig davon, wie die Komponente verwendet wird oder im Cluster installiert ist, gilt der gleiche Supportumfang. Nachfolgend finden Sie eine Liste der am häufigsten genutzten Möglichkeiten für die Verwendung von benutzerdefinierten Komponenten in HDInsight-Clustern:
 
@@ -102,7 +104,7 @@ Der HDInsight-Dienst bietet mehrere Möglichkeiten, benutzerdefinierte Komponent
 
 ## Entwickeln von Script Action-Skripts
 
-Siehe [Entwickeln von Skriptaktionsskripts für HDInsight][hdinsight-write-script].
+Weitere Informationen finden Sie unter [Entwickeln von Skriptaktionsskripts für HDInsight][hdinsight-write-script].
 
 
 ## Weitere Informationen
@@ -111,7 +113,7 @@ Siehe [Entwickeln von Skriptaktionsskripts für HDInsight][hdinsight-write-scrip
 - [Entwickeln von Script Action-Skripts für HDInsight][hdinsight-write-script]
 - [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark]
 - [Installieren und Verwenden von R in HDInsight-Clustern][hdinsight-install-r]
-- [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md).
+- [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md)
 - [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md)
 
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
@@ -123,4 +125,4 @@ Siehe [Entwickeln von Skriptaktionsskripts für HDInsight][hdinsight-write-scrip
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Phasen während der Clusterbereitstellung"
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

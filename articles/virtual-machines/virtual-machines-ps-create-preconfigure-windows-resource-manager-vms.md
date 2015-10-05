@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell"
-	description="Erfahren Sie, wie Sie Azure PowerShell zum Erstellen und Vorabkonfigurieren virtueller Computer auf Windows- und Ressourcen-Manager-Basis verwenden."
+	pageTitle="Erstellen und Vorkonfigurieren eines virtuellen Computers | Microsoft Azure"
+	description="Sie können einen virtuellen Azure-Computer mit dem Ressourcen-Manager-Bereitstellungsmodell und PowerShell erstellen und vorkonfigurieren."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -19,13 +19,11 @@
 
 # Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell
 
-Diese Schritte zeigen, wie Sie einen Befehlssatz im Ressourcen-Manager-Modus von Azure PowerShell erstellen, mit dem ein Windows-basierter virtueller Azure-Computer erstellt und vorab konfiguriert wird. Sie können dieses Bausteinverfahren verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern. Sie können damit auch mehrere Befehlssätze erstellen, mit denen Sie schnell eine benutzerdefinierte professionelle Entwicklungs- und Test-IT-Umgebung aufbauen können.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können Ressourcen auch mit dem [klassischen Bereitstellungsmodell](virtual-machines-ps-create-preconfigure-windows-vms.md) erstellen.
+
+Diese Schritte zeigen, wie Sie einen Satz von Azure PowerShell-Befehlen erstellen, mit dem ein virtueller Azure-Computer im Ressourcen-Manager-Bereitstellungsmodell erstellt und vorab konfiguriert wird. Sie können dieses Bausteinverfahren verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern. Sie können damit auch mehrere Befehlssätze erstellen, mit denen Sie schnell eine benutzerdefinierte professionelle Entwicklungs- und Test-IT-Umgebung aufbauen können.
 
 Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Wenn Sie ein fortgeschrittener PowerShell-Benutzer sind, können Sie die Befehle verwenden und die Variablen (mit "$" beginnende Zeilen) durch eigene Werte ersetzen.
-
-[AZURE.INCLUDE [resource-manager-pointer-to-service-management](../../includes/resource-manager-pointer-to-service-management.md)]
-
-- [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
 ## Schritt 1: Installieren von Azure PowerShell
 
@@ -381,12 +379,12 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
+[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
 
 [Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

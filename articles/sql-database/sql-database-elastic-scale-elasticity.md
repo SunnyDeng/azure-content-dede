@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/17/2015" 
+	ms.date="09/22/2015" 
 	ms.author="sidneyh"/>
 
 # Shard-Elastizität 
 
-**Shard-Elastizität** ermöglicht es Anwendungsentwicklern, Datenbankressourcen dem Bedarf entsprechend dynamisch zu erweitern oder zu reduzieren, sodass die Anwendungsleistung optimiert und die Kosten minimiert werden können. Die Kombination aus **Tools für elastische Datenbanken** für die Azure SQL-Datenbank und den [Dienstebenen „Basic“, „Standard“ und „Premium“](http://msdn.microsoft.com/library/azure/dn741340.aspx) liefert sehr bestechende Elastizitätsszenarios. Die Tools für elastische Datenbanken ermöglichen die horizontale Skalierung, ein Entwurfsmuster, bei dem Datenbanken (sogenannte [Shards](sql-database-elastic-scale-glossary.md)) einer Shard-Gruppe hinzugefügt oder daraus entfernt werden, um die Kapazität zu vergrößern oder zu verringern. Auf ähnliche Weise stellen die Dienstebenen von SQL-Datenbank Funktionen zur **vertikalen Skalierung** bereit, sodass die Ressourcen einer einzigen Datenbank dem Bedarf entsprechend skaliert werden können. Die Kombination von vertikaler Skalierung einzelner Shards und horizontaler Skalierung vieler Shards bietet Anwendungsentwicklern eine sehr flexible Umgebung, die sich den Anforderungen an Leistung, Kapazität und Kostenoptimierung entsprechend skalieren lässt.
+**Shard-Elastizität** ermöglicht es Anwendungsentwicklern, Datenbankressourcen dem Bedarf entsprechend dynamisch zu erweitern oder zu reduzieren, sodass die Anwendungsleistung optimiert und die Kosten minimiert werden können. Die Kombination aus **Tools für elastische Datenbanken** für die Azure SQL-Datenbank und den [Dienstebenen „Basic“, „Standard“ und „Premium“](sql-database-service-tiers) liefert sehr bestechende Elastizitätsszenarios. Die Tools für elastische Datenbanken ermöglichen die horizontale Skalierung, ein Entwurfsmuster, bei dem Datenbanken (sogenannte [Shards](sql-database-elastic-scale-glossary.md)) einer Shard-Gruppe hinzugefügt oder daraus entfernt werden, um die Kapazität zu vergrößern oder zu verringern. Auf ähnliche Weise stellen die Dienstebenen von SQL-Datenbank Funktionen zur **vertikalen Skalierung** bereit, sodass die Ressourcen einer einzigen Datenbank dem Bedarf entsprechend skaliert werden können. Die Kombination von vertikaler Skalierung einzelner Shards und horizontaler Skalierung vieler Shards bietet Anwendungsentwicklern eine sehr flexible Umgebung, die sich den Anforderungen an Leistung, Kapazität und Kostenoptimierung entsprechend skalieren lässt.
 
 Mit den neu eingeführten **Pools für elastische Datenbanken** ist die vertikale Skalierung sogar noch einfacher zu erreichen. Pools ermöglichen es, den Ressourcenverbrauch einer einzelnen Datenbank *automatisch* innerhalb eines Budgets für den gesamten Pool zu vergrößern oder zu verkleinern. Für Anwendungen, die nicht die Vorteile von Pools für elastische Datenbanken nutzen, werden in diesem Artikel andere Techniken zum Implementieren von richtlinienbasierten Mechanismen für die Verwaltung der vertikalen Skalierung sowie einige allgemeine Szenarios für die Automatisierung von Vorgängen zur horizontalen Skalierung beschrieben.
 
@@ -147,7 +147,7 @@ Um die tatsächliche Umsetzung von Szenarios für die horizontale und vertikale 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
-[1]: ./media/sql-database-elastic-scale-elasticity/data-ingestion.png
+
 
 <!--anchors-->
 [Telemetry]: #telemetry
@@ -155,4 +155,4 @@ Um die tatsächliche Umsetzung von Szenarios für die horizontale und vertikale 
 [Action]: #action
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

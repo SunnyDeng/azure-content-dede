@@ -18,7 +18,8 @@
 	ms.author="danlep"/>
 
 # Artikel zu virtuellen Computern in der Dienstverwaltung
-Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtuellen Computern in der Azure-Dienstverwaltung erleichtern sollen. Bei neuen Bereitstellungen empfehlen wir die Verwendung von virtuellen Computern und anderen Ressourcen, die auf dem Azure-Ressourcen-Manager basieren. Eine Erläuterung der Vorteile des Ressourcen-Managers finden Sie unter [Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 ## Erste Schritte
 
@@ -150,4 +151,4 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

@@ -13,7 +13,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="07/06/2015"
+ ms.date="09/23/2015"
  ms.author="larryfr"/>
 
 # Entwickeln Sie Scalding MapReduce-Aufträge mit Apache Hadoop in HDInsight
@@ -290,4 +290,4 @@ Nachdem Sie erfahren haben, wie mit Scalding MapReduce-Aufträge für HDInsight 
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

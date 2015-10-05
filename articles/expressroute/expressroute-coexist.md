@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="09/17/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren von gleichzeitig vorhandenen Azure ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen
@@ -150,7 +150,10 @@ Dieses Verfahren führt Sie durch das Erstellen eines virtuellen Netzwerks sowie
 
 	Ersetzen Sie anhand des folgenden Beispiels die Werte mit Ihren eigenen.
 
-	`New-AzureLocalNetworkGateway -GatewayName MyLocalNetwork -IpAddress <local-network- gateway-public-IP> -AddressSpace <local-network-address-space>`
+	`New-AzureLocalNetworkGateway -Gatewayname MyLocalNetwork -IpAddress <MyLocalGatewayIp> -AddressSpace <MyLocalNetworkAddress>`
+
+	> [AZURE.IMPORTANT]Wenn Ihr lokales Netzwerk mehrere Routen hat, können Sie diese als ein Array übergeben. $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")
+
 
 	Verwenden Sie zum Abrufen der Einstellungen des Virtual Network-Gateway, einschließlich der Gateway-ID und der öffentlichen IP, das`Get-AzureVirtualNetworkGateway` Cmdlet. Siehe folgendes Beispiel.
 
@@ -192,7 +195,7 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 2. Exportieren Sie das Virtual Network-Schema. Nutzen Sie das folgende PowerShell-Cmdlet, um die Werte mit Ihren eigenen auszutauschen.
 
 	`Get-AzureVNetConfig –ExportToFile “C:\NetworkConfig.xml”`
-3. Bearbeiten Sie die Netzwerk-Konfigurationsdateischema, sodass das Gateway-Subnetz /27 ist (oder ein kürzeres Präfix). Siehe folgendes Beispiel. Weitere Informationen zum Arbeiten mit der Netzwerk-Konfigurationsdatei finden Sie unter [Erstellen eines VNet mithilfe einer Netzwerkkonfigurationsdatei im Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-portal.md#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal). Weitere Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx).
+3. Bearbeiten Sie die Netzwerk-Konfigurationsdateischema, sodass das Gatewaysubnetz gleich /27 oder kleiner (/26, /25 usw.) ist. Siehe folgendes Beispiel. Weitere Informationen zum Arbeiten mit der Netzwerk-Konfigurationsdatei finden Sie unter [Erstellen eines VNet mithilfe einer Netzwerkkonfigurationsdatei im Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-portal.md#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal). Weitere Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx).
 
 
           <Subnet name="GatewaySubnet">
@@ -213,8 +216,8 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 ## Nächste Schritte
 
-Erfahren Sie mehr zu ExpressRoute. Siehe [ExpressRoute-Übersicht](expressroute-introduction.md).
+Erfahren Sie mehr zu ExpressRoute. Weitere Informationen finden Sie unter [ExpressRoute-Übersicht](expressroute-introduction.md).
 
 Erfahren Sie mehr zu VPN-Gateways. Weitere Informationen finden Sie unter [Informationen zu VPN-Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

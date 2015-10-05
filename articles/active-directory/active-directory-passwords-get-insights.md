@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Operative Einblicke: Kennwortverwaltung in Azure AD | Microsoft Azure" 
-	description="Dieser Artikel beschreibt, wie Sie Berichte verwenden, um einen Einblick in die Vorgänge zur Kennwortverwaltung in Ihrem Unternehmen zu erhalten." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="asteen" 
-	manager="kbrint" 
+<properties
+	pageTitle="Operative Einblicke: Kennwortverwaltung in Azure AD | Microsoft Azure"
+	description="Dieser Artikel beschreibt, wie Sie Berichte verwenden, um einen Einblick in die Vorgänge zur Kennwortverwaltung in Ihrem Unternehmen zu erhalten."
+	services="active-directory"
+	documentationCenter=""
+	authors="asteen"
+	manager="kbrint"
 	editor="billmath"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/08/2015" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/18/2015" 
 	ms.author="asteen"/>
 
 # Operative Einblicke durch Berichte zur Kennwortverwaltung
@@ -106,14 +106,14 @@ Details|Beachten Sie die folgende Tabelle.
 ### Zulässige Werte für die Spalte "Details"
 Nachfolgend finden Sie die Liste der Ergebnistypen, die Sie im Bericht zur Aktivität "Zurücksetzen des Kennworts" erwarten können:
 
-Details | Ergebnistyp 
+Details | Ergebnistyp
 ----|----
 Benutzer hat nach Abschluss der Überprüfung per E-Mail vorzeitig beendet. | Vorzeitig beendet
-Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.|Vorzeitig beendet 
-Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet. | Vorzeitig beendet 
+Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.|Vorzeitig beendet
+Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet. | Vorzeitig beendet
 Benutzer hat nach Abschluss der Überprüfung per Bürotelefon-Sprachanruf vorzeitig beendet. | Vorzeitig beendet
-Benutzer hat nach Abschluss der Überprüfung per Sicherheitsfragen vorzeitig beendet.|Vorzeitig beendet 
-Benutzer hat nach Eingabe der Benutzer-ID vorzeitig beendet.| Vorzeitig beendet 
+Benutzer hat nach Abschluss der Überprüfung per Sicherheitsfragen vorzeitig beendet.|Vorzeitig beendet
+Benutzer hat nach Eingabe der Benutzer-ID vorzeitig beendet.| Vorzeitig beendet
 Benutzer hat nach dem Start der Überprüfung per E-Mail vorzeitig beendet.|Vorzeitig beendet
 Benutzer hat nach dem Start der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.|Vorzeitig beendet
 Benutzer hat nach dem Start der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet.|Vorzeitig beendet
@@ -141,7 +141,7 @@ Das Kennwort des Benutzers wird lokal verwaltet. Sie können die Kennwortrücksc
 Wir konnten den Dienst zum Zurücksetzen Ihres lokalen Kennworts nicht erreichen. Überprüfen Sie das Ereignisprotokoll des Synchronisierungscomputers.|Fehler
 Beim Zurücksetzen des lokalen Kennworts des Benutzers ist ein Problem aufgetreten. Überprüfen Sie das Ereignisprotokoll des Synchronisierungscomputers. | Fehler
 Der Benutzer ist kein Mitglied der Benutzergruppe für Kennwortzurücksetzung. Fügen Sie diesen Benutzer dieser Gruppe hinzu, um dieses Problem zu beheben.|Fehler
-Die Kennwortzurücksetzung wurde für diesen Mandanten vollständig deaktiviert. [Hier](http://aka.ms/ssprtroubleshoot) finden Sie Informationen zur Lösung des Problems. | Fehler 
+Die Kennwortzurücksetzung wurde für diesen Mandanten vollständig deaktiviert. [Hier](http://aka.ms/ssprtroubleshoot) finden Sie Informationen zur Lösung des Problems. | Fehler
 Benutzer hat das Kennwort erfolgreich zurückgesetzt.|Succeeded
 
 **Weitere Ressourcen**
@@ -162,6 +162,5 @@ Benutzer hat das Kennwort erfolgreich zurückgesetzt.|Succeeded
 [001]: ./media/active-directory-passwords-get-insights/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-get-insights/002.jpg "Image_002.jpg"
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

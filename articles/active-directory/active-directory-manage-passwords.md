@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
+	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="09/21/2015"
 	ms.author="curtand"/>
 
 # Verwalten von Kennwörtern in Azure AD
@@ -48,4 +48,4 @@ Im weiteren Verlauf dieses Themas werden die umfassenden Kennwortverwaltungsfunk
 - [Erstellen oder Bearbeiten von Benutzern in Azure AD](active-directory-create-users.md)
 - [Verwalten von Gruppen in Azure AD](active-directory-manage-groups.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

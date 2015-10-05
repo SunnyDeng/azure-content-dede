@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="06/29/2015"
+	ms.date="09/22/2015"
 	ms.author="tdykstra"/>
 
 # Erstellen eines .NET-Webauftrags in Azure App Service
@@ -93,10 +93,12 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 1. Öffnen Sie das Fenster **Server-Explorer** in Visual Studio.
 
 2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**. 
+
 ![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. Melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 5. Klicken Sie unter dem Azure-Knoten mit der rechten Maustaste auf **Speicher**, und klicken Sie dann auf **Speicherkonto erstellen**. 
+
 ![Speicherkonto erstellen](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
 
 3. Geben Sie im Dialogfeld **Speicherkonto erstellen** einen Namen für das Speicherkonto ein.
@@ -142,12 +144,10 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 	Die Speicherverbindungszeichenfolge ist ein Beispiel, das Platzhalter für den Namen des Speicherkontos und den Zugriffsschlüssel verwendet. Sie müssen dies durch eine Verbindungszeichenfolge mit dem Namen und Schlüssel des Speicherkontos ersetzen.
 
 	<pre class="prettyprint">&lt;connectionStrings>
-	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
-	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[Kontoname]</mark>;AccountKey=<mark>[Zugriffsschlüssel]</mark>"/>
-	&lt;/connectionStrings></pre>
+  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
+  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[Kontoname]</mark>;AccountKey=<mark>[Zugriffsschlüssel]</mark>"/>
+&lt;/connectionStrings></pre>Die Speicher-Verbindungszeichenfolge hat den Namen AzureWebJobsStorage, da dies der Name ist, den das WebJobs SDK standardmäßig verwendet. Hier wird derselbe Name verwendet, sodass Sie nur einen Verbindungszeichenfolgenwert in der Azure-Umgebung festlegen müssen.
 
-	Die Speicher-Verbindungszeichenfolge hat den Namen AzureWebJobsStorage, da dies der Name ist, den das WebJobs SDK standardmäßig verwendet. Hier wird derselbe Name verwendet, sodass Sie nur einen Verbindungszeichenfolgenwert in der Azure-Umgebung festlegen müssen.
- 
 2. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf Ihr Speicherkonto im Knoten **Speicher**, und klicken Sie anschließend auf **Eigenschaften**.
 
 	![Klicken Sie auf Benutzerkonteneigenschaften](./media/websites-dotnet-webjobs-sdk-get-started/storppty.png)
@@ -585,7 +585,7 @@ Die `BlobInformation`-Klasse speichert Informationen über ein Bild-Blob in eine
 
 ### ContosoAdsWeb - Global.asax.cs
 
-Der aus der `Application_Start`-Methode aufgerufene Code erstellt einen *images*-Blobcontainer und eine *images*-Warteschlange, falls diese noch nicht vorhanden sind. Damit wird sichergestellt, dass Blob-Container und Warteschlange immer automatisch erstellt werden, wenn Sie ein neues Speicherkonto verwenden.
+Der aus der `Application_Start`-Methode aufgerufene Code erstellt einen *images*-Blob-Container und eine *images*-Warteschlange, falls diese noch nicht vorhanden sind. Damit wird sichergestellt, dass Blob-Container und Warteschlange immer automatisch erstellt werden, wenn Sie ein neues Speicherkonto verwenden.
 
 Der Code verwendet die Speicher-Verbindungszeichenfolge aus der *Web.config*-Datei oder aus der Azure-Laufzeitumgebung für den Zugriff auf das Speicherkonto.
 
@@ -611,14 +611,14 @@ Ein ähnlicher Codeabschnitt ruft einen Verweis auf die *blobnamerequest*-Wartes
 		var imagesQueue = queueClient.GetQueueReference("blobnamerequest");
 		imagesQueue.CreateIfNotExists();
 
-### ContosoAdsWeb - \_Layout.cshtml
+### ContosoAdsWeb - _Layout.cshtml
 
-Die *\_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
+Die *_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
 
-### ContosoAdsWeb - Views\\Home\\Index.cshtml
+### ContosoAdsWeb - Views\Home\Index.cshtml
 
-Die *Views\\Home\\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
-
+Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
+	
 		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
 		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
@@ -706,7 +706,7 @@ Hier sehen Sie den Code, der Blobs löscht, wenn Sie eine Werbung löschen:
 		    await blobToDelete.DeleteAsync();
 		}
 
-### ContosoAdsWeb - Views\\Ad\\Index.cshtml und Details.cshtml
+### ContosoAdsWeb - Views\Ad\Index.cshtml und Details.cshtml
 
 Die Datei *Index.cshtml* zeigt Miniaturansichten zusammen mit den restlichen Werbedaten an:
 
@@ -716,7 +716,7 @@ Die Datei *Details.cshtml* zeigt das Bild in voller Größe an:
 
 		<img src="@Html.Raw(Model.ImageURL)" />
 
-### ContosoAdsWeb - Views\\Ad\\Create.cshtml und Edit.cshtml
+### ContosoAdsWeb - Views\Ad\Create.cshtml und Edit.cshtml
 
 Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das `HttpPostedFileBase`-Objekt abruft.
 
@@ -818,4 +818,4 @@ Weitere Informationen finden Sie unter [Azure WebJobs - Empfohlene Ressourcen](h
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -7,7 +7,14 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/04/2015" ms.author="jimpark"; "aashishr"; "sammehta"; "anuragm"/>
+<tags 
+	ms.service="backup" 
+	ms.workload="storage-backup-recovery" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/21/2015" 
+	ms.author="jimpark"; "aashishr"; "sammehta"; "anuragm"/>
 
 
 # Bereitstellen und Verwalten der Sicherung in Azure für Data Protection Manager (DPM)-Server mit PowerShell
@@ -35,8 +42,8 @@ Sample DPM scripts: Get-DPMSampleScript
 Sie können mit dem Cmdlet **New-AzureBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
-PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “West US”
-PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+PS C:\> New-AzureResourceGroup –Name “test-rg” –Location “West US”
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
 ```
 
 Mit dem Cmdlet **Get-AzureBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
@@ -89,7 +96,7 @@ Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureBacku
 
 ```
 PS C:\> $credspath = "C:"
-PS C:\> $credsfilename = Get-AzureBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+PS C:\> $credsfilename = Get-AzureRMBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
 PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```
@@ -206,7 +213,7 @@ PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 Wiederholen Sie diesen Schritt, bis Sie der Schutzgruppe alle ausgewählten Datenquellen hinzugefügt haben. Sie können auch mit einer Datenquelle beginnen, die Schritte zum Erstellen der Schutzgruppe durchführen und der Schutzgruppe später weitere Datenquellen hinzufügen.
 
 ### Auswählen der Datenschutzmethode
-Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet. Sie müssen auch die zu schützende Datenquelle mit dem Cmdlet [Add-DPMChildDatasource](https://technet.microsoft.com/de-DE/library/hh881732.aspx) und dem "-Online"-Flag angeben.
+Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet. Sie müssen auch die zu schützende Datenquelle mit dem Cmdlet [Add-DPMChildDatasource](https://technet.microsoft.com/DE-DE/library/hh881732.aspx) und dem "-Online"-Flag angeben.
 
 ```
 PS C:\> Set-DPMProtectionType -ProtectionGroup $MPG -ShortTerm Disk –LongTerm Online
@@ -261,7 +268,7 @@ Wenn Sie eine Datenquelle zum ersten Mal sichern, muss DPM ein erstes Replikat e
 PS C:\> Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
 ```
 ### Ändern der Größe des DPM-Replikat- und des Wiederherstellungspunktvolumes
-Mit dem Cmdlet [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/de-DE/library/hh881618(v=sc.20).aspx) können Sie auch die Größe des DPM-Replikatvolumes sowie des Schattenkopievolumes ändern, wie im folgenden Beispiel gezeigt: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
+Mit dem Cmdlet [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/DE-DE/library/hh881618(v=sc.20).aspx) können Sie auch die Größe des DPM-Replikatvolumes sowie des Schattenkopievolumes ändern, wie im folgenden Beispiel gezeigt: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
 
 ### Commit für Änderungen an der Schutzgruppe
 Zum Schluss muss für die Änderungen ein Commit ausgeführt werden, bevor DPM die Sicherung für die neue Schutzgruppenkonfiguration durchführen kann. Dazu wird das [Set-DPMProtectionGroup](https://technet.microsoft.com/library/hh881758)-Cmdlet verwendet.
@@ -302,4 +309,4 @@ Die Befehle können mühelos für beliebige Datenquellentypen erweitert werden.
 ## Nächste Schritte
 Weitere Informationen zu Azure Backup für DPM finden Sie unter [Einführung in Azure DPM Backup](backup-azure-dpm-introduction.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

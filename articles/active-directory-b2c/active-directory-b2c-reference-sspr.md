@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="09/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C (Vorschauversion): Einrichten der Self-Service-Kennwortzurücksetzung für Ihre Kunden
@@ -36,4 +36,4 @@ Zum Testen verwenden Sie die Funktion "Jetzt ausführen" für eine beliebige Anm
 
 > [AZURE.NOTE]Die Seiten der Self-Service-Kennwortzurücksetzung können mithilfe der [Unternehmensbranding-Funktion](active-directory-add-company-branding.md) angepasst werden.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

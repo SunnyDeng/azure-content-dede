@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/23/2015"
+   ms.date="09/22/2015"
    ms.author="barbkess"/>
 
 # Sprachelemente
@@ -49,8 +49,8 @@
 ## Operatoren
 - [\+ (Addition)](https://msdn.microsoft.com/library/ms178565.aspx)
 - [\+ (Verketten von Zeichenfolgen)](https://msdn.microsoft.com/library/ms177561.aspx)
-- [\- (Negativ)](https://msdn.microsoft.com/library/ms189480.aspx)
-- [\- (Subtraktion)](https://msdn.microsoft.com/library/ms189518.aspx)
+- [- (Negativ)](https://msdn.microsoft.com/library/ms189480.aspx)
+- [- (Subtraktion)](https://msdn.microsoft.com/library/ms189518.aspx)
 - [* (Multiplikation)](https://msdn.microsoft.com/library/ms176019.aspx)
 - [/ (Division)](https://msdn.microsoft.com/library/ms175009.aspx)
 - [Modulo](https://msdn.microsoft.com/library/ms190279.aspx)
@@ -78,7 +78,7 @@
 - [& (Bitweises AND)](https://msdn.microsoft.com/library/ms174965.aspx)
 - [| (Bitweises OR)](https://msdn.microsoft.com/library/ms186714.aspx)
 - [^ (Bitweises exklusives OR)](https://msdn.microsoft.com/library/ms190277.aspx)
-- [\~ (Bitweises NOT)](https://msdn.microsoft.com/library/ms173468.aspx)
+- [~ (Bitweises NOT)](https://msdn.microsoft.com/library/ms173468.aspx)
 - [^= (Bitweises exklusives OR EQUALS)](https://msdn.microsoft.com/library/cc627413.aspx)
 - | = (Bitweises OR EQUALS)
 - ? (Bitweises AND EQUALS)
@@ -290,4 +290,4 @@ Weitere Referenzinformationen finden Sie unter â€žSQL Data Warehouse-Referenz â€
 
 <!--MSDN references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

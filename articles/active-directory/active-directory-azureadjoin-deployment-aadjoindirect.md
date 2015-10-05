@@ -1,12 +1,11 @@
 <properties 
 	pageTitle="Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join| Microsoft Azure" 
-	description="In diesem Thema wird erklärt, wie Administratoren Azure AD Join für Ihre Endbenutzer (Mitarbeiter, Studenten und andere Benutzer) einrichten können." 
+	description="Listet die verschiedenen Bereitstellungsszenarien für Azure AD Join auf, und erläutert sie." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
 	editor=""/>
-
 
 <tags 
 	ms.service="active-directory" 
@@ -14,9 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/02/2015" 
+	ms.date="09/21/2015" 
 	ms.author="femila"/>
-
 
 # Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join 
 
@@ -84,7 +82,7 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 
 
 ## Zusätzliche Informationen
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

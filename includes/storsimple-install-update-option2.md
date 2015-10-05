@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Option 2: Verwenden des Azure-Verwaltungsportals zum Anwenden von Update 1.2"
-   description="Hier wird erläutert, wie Sie das Verwaltungsportal zum Installieren von Update 1.2 der StorSimple 8000-Serie verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/08/2015"
-   ms.author="v-sharos" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie Update 1.2 über das Azure-Verwaltungsportal
 
@@ -27,4 +12,4 @@
 
 7. Sie können nun [das Verwaltungsportal zum Installieren von Update 1.2 verwenden](#use-the-management-portal-to-install-update-1). Befolgen Sie die Anleitung beginnend mit Schritt 3 dieses Verfahrens. Nachdem Sie alle Updates installiert haben, können Sie die deaktivierte Netzwerkschnittstelle wieder aktivieren.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

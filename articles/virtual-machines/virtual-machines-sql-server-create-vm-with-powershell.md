@@ -1,11 +1,13 @@
 <properties 
-	pageTitle="Erstellen eines virtuellen Computers mit SQL Server in Azure (PowerShell)"
+	pageTitle="Erstellen eines virtuellen Computers mit SQL Server in PowerShell | Microsoft Azure"
 	description="Enthält Schritte und PowerShell-Skripts zum Erstellen eines virtuellen Azure-Computers über Images aus dem Katalog von virtuellen Computern mit SQL Server."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor="monicar" 
+	tags="azure-service-management"
+	 />
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/26/2015"
-	ms.author="jroth"/>
+	ms.author="jroth" />
 
 # Erstellen eines virtuellen Computers mit SQL Server in Azure (PowerShell)
 
@@ -25,11 +27,11 @@
 
 Dieser Artikel enthält Schritte zum Erstellen eines virtuellen Computers mit SQL Server in Azure durch Verwenden von PowerShell-Cmdlets.
 
->[AZURE.NOTE]Dieser Artikel gilt für einen virtuellen Computer, der in der Dienstverwaltung erstellt wurde, und enthält eine SQL Server-spezifische Erweiterung der allgemeinen Schritte, die im Thema [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md) zu finden sind. Wenn Sie einen virtuellen Computer mit SQL Server nicht über die Dienstverwaltung, sondern mit dem Ressourcen-Manager in PowerShell erstellen möchten, sollten Sie die generischen Anleitungen für virtuelle Ressourcen-Manager-Computer im folgenden Thema lesen: [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Wenn Sie einen virtuellen Computer mit SQL Server mit dem Ressourcen-Manager in PowerShell erstellen möchten, sollten Sie die generischen Anleitungen für virtuelle Ressourcen-Manager-Computer im folgenden Thema lesen: [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md).
 
 ## Installieren und Konfigurieren von PowerShell
 
-1. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/) besuchen. 
+1. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/DE-DE/pricing/free-trial/) besuchen. 
  
 2. [Installieren Sie die neuesten Azure PowerShell-Cmdlets](../powershell-install-configure.md/#how-to-install-azure-powershell).
 
@@ -93,7 +95,7 @@ Erstellen Sie schließlich den virtuellen Computer PowerShell:
 		$svcname = "<cloud service name>"
 		New-AzureService -ServiceName $svcname -Label $svcname -Location $dcLocation
 
-2. Geben Sie den Namen für den virtuellen Computer sowie dessen Größe an. Weitere Informationen über Größen von virtuellen Computern finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
+2. Geben Sie den Namen für den virtuellen Computer sowie dessen Größe an. Weitere Informationen über Größen von virtuellen Computern finden Sie unter [Größen für virtuelle Azure-Computer](virtual-machines-size-specs.md).
 
 		$vmname="<machine name>"
 		$vmsize="<Specify a valid machine size>" # see the link to virtual machine sizes
@@ -171,4 +173,4 @@ Wenn Sie auch wissen möchten, wie diese Schritte aus dem Azure-Verwaltungsporta
 
 Zusätzlich zu diesen Ressourcen wird empfohlen, dass Sie sich die [anderen Themen im Zusammenhang mit Ausführen von SQL Server auf virtuellen Azure Computern ansehen](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

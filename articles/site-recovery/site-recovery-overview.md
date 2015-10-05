@@ -26,7 +26,7 @@ Site Recovery ist Teil einer Lösung für Geschäftskontinuität und Notfallwied
 - **Metadaten**: Es werden keine Anwendungsdaten an Azure gesendet. Site Recovery benötigt nur Metadaten (etwa den Namen des virtuellen Computers und der VMM-Cloud), um die Replikation und das Failover orchestrieren zu können. 
 - **Verbindung mit Azure**: Die Kommunikation zwischen Verwaltungsservern und Azure ist abhängig von Ihrem Bereitstellungsszenario. Wenn Sie beispielsweise virtuelle Computer in einer lokalen VMM-Cloud replizieren, kommuniziert der VMM-Server mit Site Recovery über eine verschlüsselte ausgehende HTTPS-Verbindung. Für die virtuellen Computer oder Hyper-V-Hosts ist keine Verbindung erforderlich.
 - **Hyper-V-Replikat**: Azure Site Recovery nutzt Hyper-V-Replikat für den Replikationsprozess und kann auch die SAN-Replikation nutzen, wenn die Replikation zwischen zwei lokalen VMM-Standorten stattfindet. Dank der intelligenten Replikation von Site Recovery werden bei der ersten Replikation nur Datenblöcke (und nicht die gesamte virtuelle Festplatte) repliziert. Bei der laufenden Replikation werden nur geänderte Daten repliziert. Site Recovery unterstützt die Offlinedatenübertragung und kann mit WAN-Optimierern kombiniert werden.
-- **Preise**: Preisinformationen zu Site Recovery finden Sie [hier](pricing/details/site-recovery).
+- **Preise**: Preisinformationen zu Site Recovery finden Sie [hier](http://azure.microsoft.com/pricing/details/site-recovery/).
 
 
 ## Bereitstellungsszenarien
@@ -90,4 +90,4 @@ Speicherzuordnung|Nicht zutreffend|Ordnet Speicherklassifizierungen auf VMM-Quel
 Lesen Sie nach dieser Übersicht die [bewährten Methoden](site-recovery-best-practices.md), um mit der Planung der Bereitstellung zu beginnen.
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

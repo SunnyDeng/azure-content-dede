@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Erstellen und Hochladen einer Oracle Linux-VHD in Azure" 
+	pageTitle="Erstellen und Hochladen einer Oracle Linux-VHD | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Oracle Linux-Betriebssystem enthält." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
 	ms.service="virtual-machines" 
@@ -17,6 +18,8 @@
 	ms.author="szark"/>
 
 # Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 - [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](#oracle6)
 - [Vorbereiten eines virtuellen Oracle Linux 7.0+-Computers für Azure](#oracle7)
@@ -227,4 +230,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

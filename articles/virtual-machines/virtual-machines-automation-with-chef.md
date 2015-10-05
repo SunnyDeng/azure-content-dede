@@ -1,18 +1,19 @@
 <properties
-   pageTitle="Automatisieren der Bereitstellung virtueller Azure-Computer mit Chef"
-	description="Lassen Sie sich in die Kunst der Automatisierung virtueller Azure-Computer mit Chef einführen."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="diegoviso"
-	manager="timlt"
-	editor=""/>
+   pageTitle="Bereitstellung virtueller Azure-Computer mit Chef | Microsoft Azure"
+   description="Hier erfahren Sie, wie Sie Chef zur automatisierten Bereitstellung und Konfiguration virtueller Computer in Microsoft Azure verwenden."
+   services="virtual-machines"
+   documentationCenter=""
+   authors="diegoviso"
+   manager="timlt"
+   tags="azure-service-management,azure-resource-manager"
+   editor=""/>
 
 <tags ms.service="virtual-machines" ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="05/19/2015"
-	ms.author="diviso"/>
+ms.tgt_pltfrm="vm-multiple"
+ms.devlang="na"
+ms.topic="article"
+ms.date="05/19/2015"
+ms.author="diviso"/>
 
 # Automatisieren der Bereitstellung virtueller Azure-Computer mit Chef
 
@@ -236,4 +237,4 @@ Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure
 
 <!--Link references-->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

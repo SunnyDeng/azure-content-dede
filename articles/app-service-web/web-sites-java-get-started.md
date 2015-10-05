@@ -17,13 +17,21 @@
 
 # Erstellen einer Java Web-App in Azure App Service
 
-In diesem Tutorial erfahren Sie, wie Sie eine Web-App in Microsoft Azure mithilfe von Java erstellen, indem Sie entweder den Azure Marketplace oder die Konfigurationsoberfläche der [Web-Apps-Funktion in Azure App Service][] verwenden.
+> [AZURE.SELECTOR]
+- [.Net](web-sites-dotnet-get-started.md)
+- [Node.js](web-sites-nodejs-develop-deploy-mac.md)
+- [Java](web-sites-java-get-started.md)
+- [PHP - Git](web-sites-php-mysql-deploy-use-git.md)
+- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
+- [Python](web-sites-python-ptvs-django-mysql.md)
+
+In diesem Lernprogramm erfahren Sie, wie Sie eine Web-App in Microsoft Azure mithilfe von Java erstellen, indem Sie entweder den Azure Marketplace oder die Konfigurationsoberfläche der [Web-Apps-Funktion in Azure App Service][] verwenden.
 
 Wenn Sie eines dieser Verfahren verwenden möchten, um beispielsweise Ihren Anwendungscontainer anzupassen, finden Sie weitere Informationen unter [Hochladen einer benutzerdefinierten Java-Web-App in Azure](web-sites-java-custom-upload.md).
 
 > [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Tutorial auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren][] oder [sich für eine kostenlose Testversion registrieren][].
 
-Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Testen von App Service][]. Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen][]. Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ## Erstellen einer Java-Web-App mithilfe von Azure Marketplace
 
@@ -81,6 +89,8 @@ Nachdem Sie nun die Web-App mit einem App-Container erstellt haben, finden Sie i
 
 Sie führen nun Ihren Java-Anwendungsserver als Ihre Java-Web-App auf Azure aus. Informationen zum Hinzufügen Ihrer eigenen Anwendung oder Webseite finden Sie unter [Hinzufügen einer Anwendung oder Webseite zu Ihrer Java-Web-App](web-sites-java-add-app.md).
 
+Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
+
 ## Änderungen
 
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste][].
@@ -90,8 +100,8 @@ Sie führen nun Ihren Java-Anwendungsserver als Ihre Java-Web-App auf Azure aus.
 [Ihre MSDN-Abonnentenvorteile aktivieren]: http://go.microsoft.com/fwlink/?LinkId=623901
 [sich für eine kostenlose Testversion registrieren]: http://go.microsoft.com/fwlink/?LinkId=623901
 [Web-Apps-Funktion in Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
-[Testen von App Service]: http://go.microsoft.com/fwlink/?LinkId=523751
+[Azure App Service-App erstellen]: http://go.microsoft.com/fwlink/?LinkId=523751
 [Azure App Service und vorhandene Azure-Dienste]: http://go.microsoft.com/fwlink/?LinkId=529714
 [Referenz zur Navigation im Azure-Portal]: http://go.microsoft.com/fwlink/?LinkId=529715
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

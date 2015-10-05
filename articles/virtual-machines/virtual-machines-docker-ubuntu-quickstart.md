@@ -18,23 +18,19 @@
 
 # Schneller Einstieg in Docker in Azure Marketplace
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
 Die schnellste Möglichkeit für die ersten Schritte mit [Docker] besteht darin, Azure Marketplace aufzurufen und einen virtuellen Computer mit der Imagevorlage **Docker on Ubuntu Server** zu erstellen, die von [Canonical] in Verbindung mit [MSOpenTech] erstellt wurde. Damit wird eine Ubuntu Server-VM erstellt und automatisch die [Docker-VM-Erweiterung](virtual-machines-docker-vm-extension.md) zusammen mit dem **neuesten** Docker-Modul, das bereits auf Azure installiert und aktiv ist, installiert.
 
 Sie können sofort ohne zusätzlichen Aufwand eine Verbindung mit dem virtuellen Computer über SSH herstellen und direkt mit dem Ausführen von Aufgaben mit Docker beginnen.
 
 > [AZURE.NOTE]Der mit der Azure Marketplace-Vorlage erstellte virtuelle Computer ist kein Host für die Remote-API von Docker zur Verwaltung eines Remote-Docker-Clients. Informationen zur Remotesteuerung des Docker-Hosts auf diesem virtuellen Computer finden Sie unter [Running Docker with HTTPS](https://docs.docker.com/articles/https/) (Ausführen von Docker mit https) (in englischer Sprache). Sie können auch die Schritte unter [Verwenden der Docker-VM-Erweiterung mithilfe des Azure-Portals ](virtual-machines-docker-with-portal.md) oder [Verwenden der Docker-VM-Erweiterung über die Azure-CLI](virtual-machines-docker-with-xplat-cli.md) ausführen. Sie können aber auch den [Windows-Docker-Client](https://github.com/ahmetalpbalkan/Docker.DotNet) von Github erstellen und ausprobieren (auch unter [nuget](https://www.nuget.org/packages/Docker.DotNet/) abrufbar).
 
-In diesem Thema:
-
-- [Anmelden beim Portal]
-- [Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech]
-- [Verbinden mit SSH und Spaß haben]
-
-## <a id='logon'>Anmelden beim Portal</a>
+## Anmelden beim Portal
 
 Dieser Teil ist leicht, sofern Sie über ein Azure-Konto verfügen. [Sie erhalten dieses auf einfache Weise kostenlos](http://azure.microsoft.com/pricing/free-trial/)!
 
-## <a id='createvm'>Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech</a>
+## Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech
 
 1. Nachdem Sie sich angemeldet haben, klicken Sie unten links auf **Neu**, um ein neues VM-Image zu erstellen. Das richtige Image wird möglicherweise sofort im Banner angezeigt:
 
@@ -52,7 +48,7 @@ Dieser Teil ist leicht, sofern Sie über ein Azure-Konto verfügen. [Sie erhalte
 
 > ![Im Verwaltungsportal ausgeführtes Docker-Image](./media/virtual-machines-docker-ubuntu-quickstart/DockerUbuntuRunning.png)
 
-## <a id='havingfun'>Verbinden mit SSH und Spaß haben</a>
+## Verbinden mit SSH und Spaß haben
 
 Jetzt beginnt der Spaß. Sie können sofort eine Verbindung mit dem virtuellen Computer über SSH herstellen:
 
@@ -68,9 +64,9 @@ Beginnen Sie mit der Ausgabe von Docker-Befehlen. (Hinweis: Bei dieser Azure-VM 
 Sie könnten mit der Verwendung von [Docker] beginnen!
 
 <!--Anchors-->
-[Anmelden beim Portal]: #logon
-[Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech]: #createvm
-[Verbinden mit SSH und Spaß haben]: #havingfun
+[Log on to the Portal]: #logon
+[Create a VM with the Docker Image from Canonical and MSOpenTech]: #createvm
+[Connect with SSH and Have Fun]: #havingfun
 [Next steps]: #next-steps
 
 
@@ -81,4 +77,4 @@ Sie könnten mit der Verwendung von [Docker] beginnen!
 [MSOpenTech]: http://msopentech.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

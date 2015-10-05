@@ -1,20 +1,20 @@
 <properties
    pageTitle="Migration: Data Warehouse-Dienstprogramm zur Migration | Microsoft Azure"
-	description="Migrieren nach SQL Data Warehouse."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="lodipalm"
-	manager="barbkess"
-	editor=""/>
+   description="Migrieren nach SQL Data Warehouse."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="lodipalm"
+   manager="barbkess"
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="08/13/2015"
-	ms.author="lodipalm"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/22/2015"
+   ms.author="lodipalm"/>
 
 
 #Data Warehouse-Dienstprogramm für die Migration (Vorschau)
@@ -53,8 +53,8 @@ Nachdem Sie nun einige Daten migriert haben, schauen Sie sich an, die das [Entwi
 <!--Image references-->
 
 <!--Article references-->
-[Migrationsdokumentation]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwickeln]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
+[Migrationsdokumentation]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-migrate/
+[Entwickeln]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-develop/
 [hier]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

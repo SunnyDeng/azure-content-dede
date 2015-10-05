@@ -320,7 +320,7 @@ Das Empfangen eines ID-Tokens allein reicht nicht aus, um den Benutzer zu authen
 
 Das App-Modell v2.0 verfügt über einen OpenID Connect-Metadatenendpunkt, mit dem die App Informationen über das App-Modell v2.0 in Laufzeit abrufen kann. Diese Informationen umfassen Endpunkte, Tokeninhalte und Token-Signaturschlüssel. Der Metadatenendpunkt enthält ein JSON-Dokument, das Sie hier finden:
 
-`https://login.microsoftonline.com/common/v2.0/.well-known/configuration`
+`https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
 
 Eine der Eigenschaften dieses Konfigurationsdokuments ist der `jwks_uri`, dessen Wert für das App-Modell v2.0 wie folgt lautet:
 
@@ -475,4 +475,4 @@ Der „Im-Auftrag-von-Vorgang“ oder die JWT-Bearer-Anmeldeinformationsberechti
 
 Der Vorgang wird derzeit von der Vorschauversion des App-Modells v2.0 nicht unterstützt. Um zu sehen, wie dies im allgemein verfügbaren Azure AD-Dienst funktioniert, schauen Sie sich [dieses Azure AD-Codebeispiel](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet) an.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

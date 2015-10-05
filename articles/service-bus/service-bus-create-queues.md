@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Erstellen von Anwendungen, die Service Bus-Warteschlangen verwenden | Microsoft Azure"
+   pageTitle="Schreiben von Anwendungen, die Service Bus-Warteschlangen verwenden | Microsoft Azure"
    description="Schreiben einer einfachen warteschlangenbasierten Anwendung, bei der Service Bus verwendet wird."
    services="service-bus"
    documentationCenter="na"
@@ -160,4 +160,4 @@ catch (Exception e)
 
 Nun, da Sie sich mit den Grundlagen in Bezug auf Warteschlangen vertraut gemacht haben, finden Sie unter [Erstellen von Anwendungen, die Service Bus-Themen und -Abonnements verwenden](service-bus-create-topics-subscriptions.md) weiterführende Informationen zur Verwendung der Funktionen zum Veröffentlichen/Abonnieren des Service Bus-Brokermessaging.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

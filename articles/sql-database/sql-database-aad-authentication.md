@@ -252,7 +252,7 @@ Um einen Azure AD-basierten eigenständigen Datenbankbenutzer zu erstellen (bei 
 	FROM EXTERNAL PROVIDER;
 
 
-*Azure\_AD\_principal\_name* kann der Benutzerprinzipalname eines Azure AD-Benutzers oder der Anzeigename für eine Azure AD-Gruppe oder -Anwendung sein.
+*Azure\_AD\_principal\_name* kann der Benutzerprinzipalname eines Azure AD-Benutzers oder der Anzeigename für eine Azure AD-Gruppe sein.
 
 **Beispiele:** So erstellen Sie einen eigenständigen Datenbankbenutzer, der einen Benutzer der Azure AD-Verbunddomäne oder einen Benutzer der verwalteten Azure AD-Domäne repräsentiert:
 
@@ -268,7 +268,7 @@ Weitere Informationen zum Erstellen eigenständiger Datenbankbenutzer basierend 
 
 Wenn Sie einen Datenbankbenutzer erstellen, erhält dieser Benutzer die Berechtigung **VERBINDEN** und kann sich als Mitglied der Rolle **ÖFFENTLICH** mit dieser Datenbank verbinden. Anfänglich stehen dem Benutzer nur die Berechtigungen zur Verfügung, die der Rolle **ÖFFENTLICH** gewährt wurden, sowie sämtliche Berechtigungen, die einer Windows-Gruppe erteilt wurden, denen der Benutzer angehört. Nachdem Sie einen Azure AD-basierten eigenständigen Datenbankbenutzer bereitgestellt haben, können Sie dem Benutzer zusätzliche Berechtigungen gewähren. Die Vorgehensweise ist hierbei mit der Berechtigungszuweisung für alle weiteren Benutzertypen identisch. Typischerweise gewähren Sie Datenbankrollen die gewünschten Berechtigungen, und weisen diesen Rollen anschließend Benutzer zu. Weitere Informationen finden Sie unter [Database Engine Permission Basics](http://social.technet.microsoft.com/wiki/contents/articles/4433.database-engine-permission-basics.aspx) (in englischer Sprache). Weitere Informationen zu besonderen SQL-Datenbankrollen finden Sie unter [Verwalten von Datenbanken und Anmeldungen in Azure SQL-Datenbank](sql-database-manage-logins.md). Ein Verbunddomänenbenutzer, der in eine verwaltete Domäne importiert wird, muss die Identität der verwalteten Domäne verwenden.
 
-> [AZURE.NOTE]Azure AD-Benutzer werden in den Datenbankmetadaten mit dem Typ E (EXTERNAL\_USER) gekennzeichnet, Gruppen oder Anwendungen mit dem Typ X (EXTERNAL\_GROUPS). Weitere Informationen finden Sie unter [sys.database\_principals](https://msdn.microsoft.com/library/ms187328.aspx).
+> [AZURE.NOTE]Azure AD-Benutzer werden in den Datenbankmetadaten mit dem Typ E (EXTERNAL\_USER) gekennzeichnet, Gruppen mit dem Typ X (EXTERNAL\_GROUPS). Weitere Informationen finden Sie unter [sys.database\_principals](https://msdn.microsoft.com/library/ms187328.aspx).
 
 
 ## 7\. Herstellen einer Verbindung mit Ihrer Datenbank unter Verwendung von Azure AD-Identitäten
@@ -310,6 +310,7 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [CREATE USER (Transact-SQL)](http://msdn.microsoft.com/library/ms173463.aspx)
 
 <!--Image references-->
+
 [1]: ./media/sql-database-aad-authentication/1aad-auth-diagram.png
 [2]: ./media/sql-database-aad-authentication/2subscription-relationship.png
 [3]: ./media/sql-database-aad-authentication/3admin-structure.png
@@ -320,6 +321,5 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [8]: ./media/sql-database-aad-authentication/8choose-ad.png
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
-<!--anchors-->
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

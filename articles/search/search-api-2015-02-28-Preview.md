@@ -1,33 +1,26 @@
 <properties
    pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure"
-	description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Natural Language-Analyseprogramme und moreLikeThis-Suchvorgänge."
-	services="search"
-	documentationCenter="na"
-	authors="HeidiSteen"
-	manager="mblythe"
-	editor=""/>
+   description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Natural Language-Analyseprogramme und moreLikeThis-Suchvorgänge."
+   services="search"
+   documentationCenter="na"
+   authors="HeidiSteen"
+   manager="mblythe"
+   editor=""/>
 
 <tags
    ms.service="search"
-	ms.devlang="rest-api"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="search"
-	ms.date="08/25/2015"
-	ms.author="heidist"/>
+   ms.devlang="rest-api"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="search"
+   ms.date="09/22/2015"
+   ms.author="heidist"/>
 
 # Azure-Suchdienst-REST-API: Version 2015-02-28-Preview
 
 Dieser Artikel bildet die Referenzdokumentation zu `api-version=2015-02-28-Preview`. Diese Vorschauversion erweitert die aktuelle allgemein verfügbare Version [api-version=2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx) durch folgende experimentelle Features erweitert:
 
-- [Natural Language-Prozessoren](#LanguageSupport) von Microsoft (die auch von Office und Bing verwendet werden) bieten gegenüber Abfrageergebnissen mehr Sprachen und eine höhere Genauigkeit.
 - `moreLikeThis` ist ein in [Suchvorgängen](#SearchDocs) verwendeter Abfrageparameter, mit dem zu einem bestimmten Dokument weitere damit verbundene Dokumente ermittelt werden.
-- Eine POST-Alternative zur GET-Syntax für die APIs [Search](#SearchDocs) und [Suggestions](#Suggestions) für den Fall, dass die Gesamtlänge der URL andernfalls 8 KB überschreitet.
-
-Weitere zusätzliche Features in `2015-02-28-Preview` werden separat dokumentiert. Diese umfassen:
-
-- [Bewertungsprofile](search-api-scoring-profiles-2015-02-28-preview.md)
-- [Indexer](search-api-indexers-2015-02-28-preview.md)
 
 Der Azure-Suchdienst ist in mehreren Versionen verfügbar. Weitere Informationen erhalten Sie im Artikel [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
@@ -136,7 +129,7 @@ Alternativ können Sie mit PUT den Indexnamen für den URI angeben. Wenn der Ind
 
 Beim Erstellen eines Index wird die Struktur der gespeicherten und in Suchvorgängen verwendeten Dokumente bestimmt. Gefüllt wird der Index in einem separaten Vorgang. Sie können für diesen Schritt einen [Indexer](https://msdn.microsoft.com/library/azure/mt183328.aspx) (für unterstützte Datenquellen verfügbar) oder einen Vorgang zum [Hinzufügen, Aktualisieren oder Löschen von Dokumenten](https://msdn.microsoft.com/library/azure/dn798930.aspx) verwenden. Der invertierte Index wird während der Bereitstellung der Dokumente generiert.
 
-**Hinweis**: Die maximal zulässige Anzahl von Indizes variiert je nach Preisstufe. Im Free-Tarif sind bis zu drei Indizes möglich. Im Standard-Tarif sind 50 Indizes pro Suchdienst zulässig. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
+**Hinweis**: Die maximal zulässige Anzahl von Indizes variiert je nach Preisstufe. Im Free-Tarif sind bis zu drei Indizes möglich. Im Standard-Tarif sind 50 Indizes pro Suchdienst zulässig. In den [Einschränkungen für Dienste](search-limits-quota-capacity.md) finden Sie weitere Informationen.
 
 **Anforderung**
 
@@ -633,7 +626,7 @@ Clientseitiger JavaScript-Code kann standardmäßig keine APIs aufrufen, da der 
         {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
         {"name": "baseRate", "type": "Edm.Double"},
         {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer"="fr.lucene"},
+	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, analyzer="fr.lucene"},
         {"name": "hotelName", "type": "Edm.String"},
         {"name": "category", "type": "Edm.String"},
         {"name": "tags", "type": "Collection(Edm.String)"},
@@ -1142,7 +1135,7 @@ Ein Vorgang vom Typ **Search** wird als GET- oder POST-Anforderung ausgegeben un
 
 **Verwenden von POST anstelle von GET**
 
-Wenn die API **Search** mittels „HTTP GET“ aufrufen, darf die Länge der angeforderten URL maximal 8 KB betragen. Dies ist für die meisten Anwendungen ausreichend. Manche Anwendungen erzeugen jedoch sehr große Abfragen. Das gilt insbesondere für OData-Filterausdrücke. Bei diesen Anwendungen ist „HTTP POST“ die bessere Wahl. Hier beträgt die maximal zulässige Anforderungsgröße knapp 17 MB und bietet damit auch genügend Platz für besonders komplexe Abfragen.
+Wenn die API **Search** mittels "HTTP GET" aufgerufen wird, darf die Länge der angeforderten URL maximal 8 KB betragen. Dies ist für die meisten Anwendungen ausreichend. Manche Anwendungen erzeugen jedoch sehr große Abfragen. Das gilt insbesondere für OData-Filterausdrücke. Bei diesen Anwendungen ist „HTTP POST“ die bessere Wahl. Hier beträgt die maximal zulässige Anforderungsgröße knapp 17 MB und bietet damit auch genügend Platz für besonders komplexe Abfragen.
 
 **Anforderung**
 
@@ -1161,11 +1154,11 @@ Bei der Erstellung von GET-Anforderungen empfiehlt es sich, für spezifische Abf
 
 Die URL-Codierung wird nur bei den oben angegebenen Abfrageparametern empfohlen. Wenn Sie versehentlich die gesamte Abfragezeichenfolge mit einer URL-Codierung versehen (alles nach dem ?), schlagen die Anforderungen fehl.
 
-Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Search** mithilfe von „POST“ aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
+Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Search** mithilfe von "POST" aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
 
 <a name="SearchQueryParameters"></a> **Abfrageparameter**
 
-**Search** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Search** mittels „GET“) bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von**Search** mittels „POST“) angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
+**Search** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Search** mittels "GET") bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von **Search** mittels "POST") angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
 
 `search=[string]` (optional): Der zu suchenden Text. Alle Felder mit dem Attribut `searchable` werden standardmäßig durchsucht, es sei denn, es wurde `searchFields` angegeben. Beim Durchsuchen von Feldern mit dem Attribut `searchable` wird der zu durchsuchende Text mit Token versehen. Auf diese Weise können mehrere Begriffe durch Leerzeichen getrennt werden (Beispiel: `search=hello world`). Verwenden Sie für die Übereinstimmung mit einem beliebigen Begriff `*` (dies kann bei booleschen Filterabfragen nützlich sein). Das Auslassen dieses Parameters hat dieselbe Wirkung wie das Festlegen auf `*`. Einzelheiten zur Suchsyntax finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx).
 
@@ -1179,25 +1172,25 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `$skip=#` (optional): Die Anzahl der zu überspringenden Suchergebnisse. Darf nicht größer als 100.000 sein. Wenn Sie Dokumente der Reihe nach scannen müssen, `$skip` aber aufgrund dieser Einschränkung nicht zulässig ist, können Sie alternativ für einen Schlüssel für die Gesamtreihenfolge `$orderby` und für eine Bereichsabfrage `$filter` verwenden.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$skip`, sondern `skip`.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$skip`, sondern `skip`.
 
 `$top=#` (optional): Die Anzahl der abzurufenden Suchergebnisse. Kann mit `$skip` kombiniert werden, um clientseitiges Paging von Suchergebnissen zu implementieren.
 
 > [AZURE.NOTE]Azure Search verwendet ***serverseitiges Paging***, um zu verhindern, dass bei Abfragen zu viele Dokumente auf einmal abgerufen werden. Die Standardseitengröße ist 50, die maximale Seitengröße ist 1000. Standardmäßig werden also von **Search** ohne Angabe von `$top` maximal 50 Ergebnisse zurückgegeben. Sind mehr als 50 Ergebnisse vorhanden, enthält die Antwort Informationen zum Abrufen der nächsten Seite mit ebenfalls maximal 50 Ergebnissen (siehe `@odata.nextLink` und `@search.nextPageParameters` im [folgenden Beispiel](#SearchResponse)). Analog dazu gilt: Wenn Sie für `$top` einen Wert über 1000 angeben und mehr als 1000 Ergebnisse vorliegen, werden lediglich die ersten 1000 Ergebnisse sowie Informationen zum Abrufen der nächsten Seite (ebenfalls mit maximal 1000 Ergebnissen) zurückgegeben.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$top`, sondern `top`.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$top`, sondern `top`.
 
 `$count=true|false` (optional, Standardwert ist `false`): Gibt an, ob alle Ergebnisse abgerufen werden sollen. Wenn Sie diesen Wert auf `true` setzen, kann sich dies auf die Leistung auswirken. Beachten Sie, dass die zurückgegebene Anzahl ein Näherungswert ist.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$count`, sondern `count`.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$count`, sondern `count`.
 
 `$orderby=[string]` (optional): Eine Liste mit kommagetrennten Ausdrücken, nach denen die Ergebnisse sortiert werden. Jeder Ausdruck kann ein Feldname oder ein Aufruf der Funktion `geo.distance()` sein. Jedem Ausdruck kann für eine aufsteigende Reihenfolge `asc` und für eine absteigende Reihenfolge `desc` nachgestellt sein. Standardmäßig wird in aufsteigender Reihenfolge sortiert. Verknüpfungen werden durch die Ergebnisstände von Dokumenten getrennt. Wenn `$orderby` nicht angegeben ist, werden Dokumente absteigend nach Ergebnisstand sortiert. `$orderby` ist auf 32 Klauseln beschränkt.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$orderby`, sondern `orderby`.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$orderby`, sondern `orderby`.
 
 `$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben, werden alle im Schema als abrufbar gekennzeichnete Felder einbezogen. Sie können auch alle Felder explizit anfordern, indem Sie diesen Parameter auf `*` setzen.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$select`, sondern `select`.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$select`, sondern `select`.
 
 `facet=[string]` (null oder höher): Ein Feld, anhand dessen die Facettenbildung erfolgen soll. Die Zeichenfolge kann optional Parameter enthalten, um die in Form von kommagetrennten `name:value`-Paaren ausgedrückte Facettenbildung anzupassen. Gültige Parameter sind:
 
@@ -1215,27 +1208,27 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
   - Beispiel: `facet=lastRenovationDate,interval:year` erstellt ein Bucket für jedes Jahr, in dem Hotels renoviert wurden.
 - **Hinweis**: `count` und `sort` können in derselben Facettenspezifikation kombiniert werden. Eine Kombination mit `interval` oder `values` ist jedoch nicht möglich. Ebenso wenig können `interval` und `values` kombiniert werden.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `facet`, sondern `facets`. Darüber hinaus muss ein JSON-Zeichenfolgenarray mit jeweils separaten Facettenausdrücken angegeben werden.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `facet`, sondern `facets`. Darüber hinaus muss ein JSON-Zeichenfolgenarray mit jeweils separaten Facettenausdrücken angegeben werden.
 
 `$filter=[string]` (optional): Ein strukturierter Suchbegriff in standardmäßiger OData-Syntax. Details zur Teilmenge der von Azure Search unterstützten Grammatik von OData-Ausdrücken finden Sie unter [OData-Ausdruckssyntax](#ODataExpressionSyntax).
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$filter`, sondern `filter`.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$filter`, sondern `filter`.
 
 `highlight=[string]` (optional): Ein Satz kommagetrennter Feldnamen für wichtige Treffer. Für wichtige Treffer können nur Felder mit dem Attribut `searchable` verwendet werden.
 
 `highlightPreTag=[string]` (optional, Standardwert ist `<em>`): Dieses Zeichenfolgetag wird wichtigen Treffern vorangestellt. Es muss mit `highlightPostTag` festgelegt werden.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „GET“ aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. „%23“ anstatt „#“).
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "GET" aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. "%23" anstatt "#").
 
 `highlightPostTag=[string]` (optional, Standardwert ist `</em>`): Dieses Zeichenfolgetag wird wichtigen Treffern angehängt. Es muss mit `highlightPreTag` festgelegt werden.
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „GET“ aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. „%23“ anstatt „#“).
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "GET" aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. "%23" anstatt "#").
 
 `scoringProfile=[string]` (optional): Der Name des Bewertungsprofils, mit dem Ergebnisstände übereinstimmender Dokumente zum Sortieren der Ergebnisse bewertet werden.
 
 `scoringParameter=[string]` (Null oder höher): Gibt den Wert für jeden in einer Bewertungsfunktion definierten Parameter (z. B. `referencePointParameter`) im Format "Name:Wert" an. Beispiel: Wenn das Bewertungsprofil eine Funktion mit einem Parameter namens "mylocation" definiert, lautet die Option für die Abfragezeichenfolge "&scoringParameter=mylocation:-122.2,44.8"
 
-> [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `scoringParameter`, sondern `scoringParameters`. Darüber hinaus muss ein JSON-Zeichenfolgenarray mit jeweils separaten Name/Wert-Paaren angegeben werden.
+> [AZURE.NOTE]Wenn Sie **Search** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `scoringParameter`, sondern `scoringParameters`. Darüber hinaus muss ein JSON-Zeichenfolgenarray mit jeweils separaten Name/Wert-Paaren angegeben werden.
 
 `minimumCoverage` (optional, Standardwert ist 100): Eine Zahl zwischen 0 und 100, die den Prozentsatz des Index angibt, der von einer Suchabfrage abgedeckt werden muss, damit diese als erfolgreich gilt. Standardmäßig muss der gesamte Index verfügbar sein, da `Search` sonst den HTTP-Statuscode "503" zurück gibt. Wenn Sie `minimumCoverage` festlegen und `Search` erfolgreich ist, werden der Statuscode "HTTP 200" und ein Wert für `@search.coverage` in der Antwort zurückgegeben. Letzterer gibt den in Prozentsatz des Index an, der in die Abfrage einbezogen wurde.
 
@@ -1243,7 +1236,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
-Hinweis: Für diesen Vorgang wird `api-version` als Abfrageparameter in der URL angegeben. Dabei spielt es keine Rolle, ob Sie **Search** mithilfe von „GET“ oder mithilfe von „POST“ aufrufen.
+Hinweis: Für diesen Vorgang wird `api-version` als Abfrageparameter in der URL angegeben. Dabei spielt es keine Rolle, ob Sie **Search** mithilfe von "GET" oder mithilfe von "POST" aufrufen.
 
 **Anforderungsheader**
 
@@ -1596,7 +1589,7 @@ Ein Vorgang vom Typ **Suggestions** wird als GET- oder POST-Anforderung ausgegeb
 
 **Verwenden von POST anstelle von GET**
 
-Wenn die API **Suggestions** mittels „HTTP GET“ aufrufen, darf die Länge der angeforderten URL maximal 8 KB betragen. Dies ist für die meisten Anwendungen ausreichend. Manche Anwendungen erzeugen jedoch sehr große Abfragen. Das gilt insbesondere für OData-Filterausdrücke. Bei diesen Anwendungen ist „HTTP POST“ die bessere Wahl. Hier beträgt die maximal zulässige Anforderungsgröße knapp 17 MB und bietet damit auch genügend Platz für besonders komplexe Abfragen.
+Wenn Sie die API **Suggestions** mittels "HTTP GET" aufrufen, darf die Länge der angeforderten URL maximal 8 KB betragen. Dies ist für die meisten Anwendungen ausreichend. Manche Anwendungen erzeugen jedoch sehr große Abfragen. Das gilt insbesondere für OData-Filterausdrücke. Bei diesen Anwendungen ist „HTTP POST“ die bessere Wahl. Hier beträgt die maximal zulässige Anforderungsgröße knapp 17 MB und bietet damit auch genügend Platz für besonders komplexe Abfragen.
 
 **Anforderung**
 
@@ -1613,21 +1606,21 @@ Bei der Erstellung von GET-Anforderungen empfiehlt es sich, für spezifische Abf
 
 Die URL-Codierung wird nur bei den oben angegebenen Abfrageparametern empfohlen. Wenn Sie versehentlich die gesamte Abfragezeichenfolge mit einer URL-Codierung versehen (alles nach dem ?), schlagen die Anforderungen fehl.
 
-Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
+Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Suggestions** mithilfe von "POST" aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
 
 **Abfrageparameter**
 
-**Suggestions** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Suggestions** mittels „GET“) bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von**Suggestions** mittels „POST“) angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
+**Suggestions** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Suggestions** mittels "GET") bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von **Suggestions** mittels "POST") angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
 
 `search=[string]`: Der zum Vorschlagen von Abfragen zu verwendende Suchtext. Er muss zwischen 1 und 100 Zeichen lang sein.
 
 `highlightPreTag=[string]` (optional): Ein Zeichenfolgetag, das Suchergebnissen vorangestellt wird. Es muss mit `highlightPostTag` festgelegt werden.
 
-> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „GET“ aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. „%23“ anstatt „#“).
+> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von "GET" aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. "%23" anstatt "#").
 
 `highlightPostTag=[string]` (optional): Ein Zeichenfolgetag, das Suchergebnissen nachgestellt wird. Es muss mit `highlightPreTag` festgelegt werden.
 
-> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „GET“ aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. „%23“ anstatt „#“).
+> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von "GET" aufrufen, müssen in URLs reservierte Zeichen als Prozentwert codiert werden (z. B. "%23" anstatt "#").
 
 `suggesterName=[string]`: Der Name des Vorschlags, der in der Sammlung `suggesters` angegeben wurde, die Teil der Indexdefinition ist. Ein `suggester` bestimmt, welche Felder für vorgeschlagene Abfragebegriffe gescannt werden. Details finden Sie unter [Vorschläge](#Suggesters).
 
@@ -1637,19 +1630,19 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `$top=#` (optional, Standardwert = 5): Die Anzahl der abzurufenden Vorschläge. Dies muss eine Zahl zwischen 1 und 100 sein.
 
-> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$top`, sondern `top`.
+> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$top`, sondern `top`.
 
 `$filter=[string]` (optional): Ein Ausdruck, der die für Vorschläge in Betracht kommenden Dokumente filtert.
 
-> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$filter`, sondern `filter`.
+> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$filter`, sondern `filter`.
 
 `$orderby=[string]` (optional): Eine Liste mit kommagetrennten Ausdrücken, nach denen die Ergebnisse sortiert werden. Jeder Ausdruck kann ein Feldname oder ein Aufruf der Funktion `geo.distance()` sein. Jedem Ausdruck kann für eine aufsteigende Reihenfolge `asc` und für eine absteigende Reihenfolge `desc` nachgestellt sein. Standardmäßig wird in aufsteigender Reihenfolge sortiert. `$orderby` ist auf 32 Klauseln beschränkt.
 
-> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$orderby`, sondern `orderby`.
+> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$orderby`, sondern `orderby`.
 
 `$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben, werden nur der Dokumentschlüssel und der Vorschlagstext zurückgegeben.
 
-> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$select`, sondern `select`.
+> [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von "POST" aufrufen, heißt dieser Parameter nicht `$select`, sondern `select`.
 
 `minimumCoverage` (optional, Standardwert ist 80): Eine Zahl zwischen 0 und 100, die den Prozentsatz des Index angibt, der von einer Vorschlagsabfrage abgedeckt werden muss, damit diese als erfolgreich gilt. Standardmäßig müssen mindestens 80 % des Index verfügbar sein, da `Suggest` sonst den HTTP-Statuscode "503" zurück gibt. Wenn Sie `minimumCoverage` festlegen und `Suggest` erfolgreich ist, werden der Statuscode "HTTP 200" und ein Wert für `@search.coverage` in der Antwort zurückgegeben. Letzterer gibt den in Prozentsatz des Index an, der in die Abfrage einbezogen wurde.
 
@@ -1657,7 +1650,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
-Hinweis: Für diesen Vorgang wird `api-version` als Abfrageparameter in der URL angegeben. Dabei spielt es keine Rolle, ob Sie **Suggestions** mithilfe von „GET“ oder mithilfe von „POST“ aufrufen.
+Hinweis: Für diesen Vorgang wird `api-version` als Abfrageparameter in der URL angegeben. Dabei spielt es keine Rolle, ob Sie **Suggestions** mithilfe von "GET" oder mithilfe von "POST" aufrufen.
 
 **Anforderungsheader**
 
@@ -1729,4 +1722,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

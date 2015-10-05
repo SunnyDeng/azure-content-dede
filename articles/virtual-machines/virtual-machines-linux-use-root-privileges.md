@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure" 
+	pageTitle="Verwenden von Stammberechtigungen auf virtuellen Linux-Computern | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Stammberechtigungen auf einem virtuellen Linux-Computer in Azure verwenden." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
-	editor=""/>
+	editor=""
+	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
 	ms.service="virtual-machines" 
@@ -17,15 +18,13 @@
 	ms.author="szark"/>
 
 
-
-
 # Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure
 
 Standardmäßig ist der Benutzer `root` auf virtuellen Linux-Computern in Azure deaktiviert. Benutzer können Befehle mit dem Befehl `sudo` mit erweiterten Rechten ausführen. Das Verhalten kann je nachdem, wie das System bereitgestellt wurde, unterschiedlich sein.
 
 1. **SSH-Schlüssel und Kennwort ODER nur Kennwort** – Der virtuelle Computer wurde mit einem Zertifikat (`.CER`-Datei) oder einem SSH-Schlüssel sowie einem Kennwort oder nur mit einem Benutzernamen und einem Kennwort bereitgestellt. In diesem Fall fordert `sudo` den Benutzer zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
 
-2. **Nur SSH-Schlüssel** – Der virtuelle Computer wurde mit einem Zertifikat (`.cer` oder `.pem`-Datei) oder einem SSH-Schlüssel bereitgestellt, jedoch ohne Kennwort. In diesem Fall fordert `sudo` den Benutzer **nicht** zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
+2. **Nur SSH-Schlüssel** – Der virtuelle Computer wurde mit einem Zertifikat (`.cer`-, `.pem`- oder `.pub`-Datei) oder einem SSH-Schlüssel bereitgestellt, jedoch ohne Kennwort. In diesem Fall fordert `sudo` den Benutzer **nicht** zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
 
 
 ## SSH-Schlüssel und Kennwort oder nur Kennwort
@@ -54,4 +53,4 @@ In diesem Fall wird der Benutzer **nicht** zur Eingabe eines Kennworts aufgeford
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Analysieren von Sensordaten mit Apache Storm und HBase | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit einem virtuellen Netzwerk eine Verbindung mit Apache Storm herstellen. Verwenden Sie Storm mit HBase, um Sensordaten von einem Event Hub zu verarbeiten und mit D3.js darzustellen."
-	services="hdinsight"
-	documentationCenter=""
-	authors="Blackmist"
-	manager="paulettm"
-	editor="cgronlun"/>
+   description="Erfahren Sie, wie Sie mit einem virtuellen Netzwerk eine Verbindung mit Apache Storm herstellen. Verwenden Sie Storm mit HBase, um Sensordaten von einem Event Hub zu verarbeiten und mit D3.js darzustellen."
+   services="hdinsight"
+   documentationCenter=""
+   authors="Blackmist"
+   manager="paulettm"
+   editor="cgronlun"/>
 
 <tags
    ms.service="hdinsight"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="07/06/2015"
-	ms.author="larryfr"/>
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/23/2015"
+   ms.author="larryfr"/>
 
 # Analysieren von Sensordaten mit Apache Storm, Event Hub und HBase in HDInsight (Hadoop)
 
@@ -420,4 +420,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

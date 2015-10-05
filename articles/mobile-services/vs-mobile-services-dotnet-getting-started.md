@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="Erste Schritte mit einem Visual Studio .NET-Mobile Services-Projekt (Verbundene Dienste) | Microsoft Azure"
 	description="Beschreibt die ersten Schritte mit Azure Mobile Services in einem .NET-Projekt in Visual Studio."
 	services="mobile-services"
 	documentationCenter=""
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/16/2015"
-	ms.author="patshea123"/>
+	ms.date="09/17/2015" 
+	ms.author="patshea"/>
 
 # Erste Schritte mit Mobile Services (.NET-Projekte)
 
@@ -85,4 +85,4 @@ Löschen Sie eine Zeile in der Datenbank. Das Parameterelement ist das TodoItem-
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

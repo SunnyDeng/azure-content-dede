@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Trennen eines Datenträgers von einem virtuellen Linux-Computer in Azure"
+	pageTitle="Trennen eines Datenträgers von einem virtuellen Linux-Computer | Microsoft Azure"
 	description="Informationen zum Trennen eines Datenträgers von einem virtuellen Azure-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
@@ -19,6 +19,7 @@
 
 # Trennen eines Datenträgers von einem virtuellen Linux-Computer
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Entfernen eines Datenträgers mit dem klassischen Bereitstellungsmodell.
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-linux.md)]
 
@@ -28,4 +29,4 @@
 
 [Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](virtual-machines-command-line-tools.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

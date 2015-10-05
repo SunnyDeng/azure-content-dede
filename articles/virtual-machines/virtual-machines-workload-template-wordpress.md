@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bereitstellen eines WordPress-Servers auf Ubuntu mit einer Azure-Ressourcen-Manager-Vorlage"
+	pageTitle="WordPress auf Ubuntu mit ARM-Vorlage | Microsoft Azure"
 	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach einen einzelnen WordPress-Server mit Ubuntu bereitstellen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -11,13 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/29/2015"
 	ms.author="davidmu"/>
 
 # Bereitstellen eines WordPress-Servers auf Ubuntu mit einer Azure-Ressourcen-Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Folgen Sie den Anweisungen in diesem Artikel, um mithilfe einer Ressourcen-Manager-Vorlage einen WordPress-Server unter Ubuntu bereitzustellen. Mit dieser Vorlage wird ein einzelner virtueller Computer in einem neuen virtuellen Netzwerk erstellt.
 
@@ -63,7 +65,7 @@ Beispiel:
 	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
-Führen Sie anschließend den Befehlsblock in der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie anschließend den Befehlsblock in der Azure PowerShell-Eingabeaufforderung aus.
 
 Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von **New-AzureResourceGroupDeployment** erstellt und konfiguriert.
 
@@ -104,4 +106,4 @@ Wenn die Vorlagenausführung abgeschlossen ist, verfügen Sie über einen neuen 
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

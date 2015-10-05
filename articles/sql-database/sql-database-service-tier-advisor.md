@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Tarifempfehlungen für Azure SQL-Datenbank" 
-   description="Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank empfehlen." 
+   description="Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank empfehlen. Tarife beschreiben die Dienstebene und die Leistungsebene einer SQL-Datenbank." 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -13,19 +13,26 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="06/30/2015"
+   ms.date="09/22/2015"
    ms.author="sstein"/>
 
 # Tarifempfehlungen für SQL-Datenbank
 
- Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank empfehlen.
+ Es werden Tarifempfehlungen bereitgestellt, die die Dienstebene und die Leistungsebene empfehlen, die am besten geeignet sind, den Workload einer vorhandenen Azure SQL-Datenbank auszuführen.
 
-> [AZURE.NOTE]Tarifempfehlungen sind nur für Web- und Business-Datenbanken und nur im [Azure-Portal](https://portal.azure.com/) verfügbar.
+> [AZURE.NOTE]Tarifempfehlungen sind nur für Web- und Business-Datenbanken sowie für Pools für elastische Datenbanken verfügbar – und sie sind nur im [Azure-Vorschauportal](https://portal.azure.com/) verfügbar.
+
+
+Sie erhalten Tarifempfehlungen während der folgenden Aufgaben:
+
+- [Ändern der Dienstebene und Leistungsstufe (Tarif) einer SQL-Datenbank](sql-database-scale-up.md)
+- [Upgraden von Azure SQL-Server auf V12](sql-database-v12-upgrade.md)
+- [Erstellen eines elastischen Datenbankpools](sql-database-elastic-pool.md#elastic-database-pool-pricing-tier-recommendations)
 
 
 ## Übersicht
 
-Azure analysiert die aktuellen Leistungs- und Featureanforderungen durch Bewertung der historischen Ressourcennutzung für eine SQL-Datenbank. Darüber hinaus wird der minimal zulässige Tarif basierend auf der Größe der Datenbank und der aktivierten Funktionen für die [Geschäftskontinuität](https://msdn.microsoft.com/library/azure/hh852669.aspx) bestimmt.
+Der SQL-Datenbak-Dienst analysiert die aktuellen Leistungs- und Featureanforderungen durch Bewertung der historischen Ressourcennutzung für eine SQL-Datenbank. Darüber hinaus wird der minimal zulässige Tarif basierend auf der Größe der Datenbank und der aktivierten Funktionen für die [Geschäftskontinuität](https://msdn.microsoft.com/library/azure/hh852669.aspx) bestimmt.
 
 Diese Informationen werden analysiert, und der Tarif und die Leistungsstufe, die für die Ausführung der typischen Arbeitsauslastung der Datenbank und die Aufrechterhaltung ihrer aktuellen Featuregruppe am besten geeignet sind, werden empfohlen.
 
@@ -45,9 +52,9 @@ Basierend auf Ihrer Datenbanknutzung können derzeit 2 Kategorien von Empfehlung
 
 ## Abrufen von Tarifempfehlungen
 
-Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, und klicken Sie dann auf die Kachel **Tarif** .
+Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, und klicken Sie dann auf die Kachel **Tarif** . (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
 2. Klicken Sie im linken Menü auf **DURCHSUCHEN**.
 3. Klicken Sie im Blatt **Durchsuchen** auf **SQL-Datenbanken**.
 4. Klicken Sie im Blatt **SQL-Datenbanken** auf die Datenbank, die der Dienst analysieren soll.
@@ -90,4 +97,4 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

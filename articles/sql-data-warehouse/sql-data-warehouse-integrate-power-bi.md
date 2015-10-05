@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/09/2015"
+   ms.date="09/23/2015"
    ms.author="lodipalm"/>
 
 # Verwenden von Power BI mit SQL Data Warehouse
@@ -42,11 +42,12 @@ Die einfachste Möglichkeit zum Navigieren zwischen Ihrem SQL Data Warehouse und
 ## Herstellen einer Verbindung über das Power BI-Portal
 Zusätzlich zur Schaltfläche "Open in Power BI" können Benutzer auch über das Power BI-Portal eine Verbindung mit dem SQL Data Warehouse herstellen.
 
-1.   Klicken Sie unten im Navigationsbereich auf "Get Data".
-2.  Wählen Sie "Big Data & More".
-3.  Wählen Sie auf der Seite "Big Data & More" das SQL Data Warehouse aus.
-4.  Geben Sie die erforderlichen Verbindungsinformationen ein. Im Abschnitt "Finding Parameters" unten wird gezeigt, wo Sie diese Daten finden.  
-5.	Durch einen Drilldown in das DataSet können Sie alle Tabellen und Spalten in der Datenbank durchsuchen. Durch die Auswahl einer Spalte wird eine Abfrage zurück an die Quelle gesendet und dynamisch ein visuelles Element erstellt. Diese visuellen Elemente können in einem neuen Bericht gespeichert und wieder an Ihr Dashboard angeheftet werden.
+1.  Klicken Sie unten im Navigationsbereich auf „Get Data“.
+2.  Wählen Sie „Databases“ aus.
+3.  Wenn die Seite „Databases“ angezeigt wird, wählen Sie „Azure SQL Data Warehouse“ aus, und klicken Sie dann auf „Connect“.
+4.  Geben Sie die erforderlichen Verbindungsinformationen ein. Im Abschnitt „Finding Parameters“ unten wird gezeigt, wo Sie diese Daten finden. 
+5.  Sie gelangen zurück zur Hauptseite von Power BI, und nachdem die Verbindung hergestellt ist, wird unter „Datasets“ ein neuer Eintrag mit dem Namen Ihrer Instanz angezeigt.  
+6.	 Sie können auf das neue Dataset klicken, um alle Tabellen und Sichten in der Datenbank zu untersuchen. Durch die Auswahl einer Spalte wird eine Abfrage zurück an die Quelle gesendet und dynamisch ein visuelles Element erstellt. Diese visuellen Elemente können in einem neuen Bericht gespeichert und wieder an Ihr Dashboard angeheftet werden.
 
 ## Suchen nach Parameterwerten
 Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im Azure-Verwaltungsportal. Bitte beachten Sie, dass SQL Data Warehouse zu diesem Zeitpunkt nur im Azure-Vorschauportal verfügbar ist.
@@ -62,4 +63,4 @@ Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im Azure-Verwa
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

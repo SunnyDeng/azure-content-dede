@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Verwalten der virtuellen Azure-Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows | Microsoft Azure"
-   description="Beschreibt das Erstellen, Verwalten und Löschen von virtuellen Azure-Computern mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows."
+   pageTitle="Verwalten der virtuellen Azure-Computer mithilfe der Azure-Befehlszeilenschnittstelle | Microsoft Azure"
+   description="Beschreibt, wie Sie Ihre virtuellen Azure-Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwalten."
    services="virtual-machines"
    documentationCenter="virtual-machines"
    authors="dlepow"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-service-management"/>
 
    <tags
    ms.service="virtual-machines"
@@ -17,6 +18,8 @@
    ms.author="danlep"/>
 
 # Verwalten der virtuellen Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource, die mit dem klassischen Bereitstellungsmodell erstellt wurde. Sie können auch eine Ressource verwalten, die mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-how-to-automate-azure-resource-manager.md) erstellt wurde.
 
 Viele täglich ausgeführte Aufgaben zur Verwaltung Ihrer virtuellen Computer können mithilfe der Azure-Befehlszeilenschnittstelle automatisiert werden. In diesem Artikel finden Sie Beispiele für Befehle für einfachere Aufgaben und Links zu Artikeln, die die Befehle für komplexere Aufgaben behandeln.
 
@@ -79,6 +82,5 @@ Wenn Sie diese Werte bereits kennen, finden Sie die entsprechenden Schalter zur 
 ## Nächste Schritte
 
 Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Manager](../xplat-cli-resource-manager.md). Weitere Informationen über die Konzepte und Azure-Ressourcen erhalten Sie unter [Übersicht über Azure Resource Manager](../resource-group-overview.md).
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

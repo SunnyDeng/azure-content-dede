@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen eines virtuellen Computers unter MySQL in Azure"
-	description="Erstellen Sie einen virtuellen Azure-Computer unter Windows Server 2012 R2, und installieren und konfigurieren Sie dann eine MySQL-Datenbank auf dem virtuellen Computer."
+	pageTitle="Erstellen eines virtuellen Computers, auf dem MySQL ausgeführt wird | Microsoft Azure"
+	description="Erstellen Sie einen virtuellen Azure-Computer unter Windows Server 2012 R2, der mit dem klassischen Bereitstellungsmodell erstellt wurde, und installieren und konfigurieren Sie dann eine MySQL-Datenbank auf dem virtuellen Computer."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -18,12 +18,13 @@
 	ms.author="cynthn"/>
 
 
-# Installieren von MySQL auf einem virtuellen Computer mit Windows Server 2012 R2 in Azure
+# Installieren von MySQL auf einem virtuellen Computer mit Windows Server 2012 R2, der mit dem klassischen Bereitstellungsmodell erstellt wurde
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 [MySQL](http://www.mysql.com) ist eine beliebte Open-Source-SQL-Datenbank. Mit dem [Azure-Portal](http://manage.windowsazure.com) können Sie über die Bildergalerie einen virtuellen Windows Server 2012 R2-Computer erstellen. Sie können ihn dann als MySQL-Server installieren und konfigurieren.
 
-Anleitungen zum Installieren von MySQL auf Linux finden Sie unter: [Installieren von MySQL auf Azure](virtual-machines-linux-install-mysql.md).
+Anleitungen zum Installieren von MySQL auf Linux finden Sie unter: [Installieren von MySQL in Azure](virtual-machines-linux-install-mysql.md).
 
 Dieses Lernprogramm beschreibt Folgendes:
 
@@ -55,7 +56,7 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 > [AZURE.NOTE]Diese Schritte gelten für die Community-Version 5.6.23.0 von MySQL und Windows Server 2012 R2. Ihre Erfahrung ist möglicherweise für unterschiedliche Versionen von MySQL oder Windows Server unterschiedlich.
 
 1.	Wenn Sie über Remotedesktop eine Verbindung zum virtuellen Computer aufgebaut haben, klicken Sie im Startbildschirm auf **Internet Explorer**.
-2.	Wählen Sie die Schaltfläche **Tools** oben rechts (Zahnradsymbol), und klicken Sie dann auf **Internetoptionen**. Klicken Sie auf die Registerkarte **Sicherheit**, auf das Symbol **Vertrauenswürdige Sites** und dann auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites http://*.mysql.com hinzu. Klicken Sie auf **Schließen** und dann auf **OK**.
+2.	Wählen Sie die Schaltfläche **Tools** oben rechts (Zahnradsymbol) aus, und klicken Sie dann auf **Internetoptionen**. Klicken Sie auf die Registerkarte **Sicherheit**, auf das Symbol **Vertrauenswürdige Sites** und dann auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites http://*.mysql.com hinzu. Klicken Sie auf **Schließen** und dann auf **OK**.
 3.	Geben Sie in der Adressleiste von Internet Explorer Folgendes ein: http://dev.mysql.com/downloads/mysql/.
 4.	Verwenden Sie die MySQL-Website, um die neueste Version von MySQL-Installer für Windows zu suchen und herunterzuladen. Laden Sie bei Auswahl des MySQL-Installer die Version mit dem kompletten Dateisatz herunter (beispielsweise mysql-installer-community-5.6.23.0.msi mit einer Dateigröße von 282,4 MB), und speichern Sie die Installationsprogrammdatei auf dem Windows-Desktop.
 5.	Doppelklicken Sie auf dem Desktop auf die Installationsprogrammdatei, um die Installation zu beginnen.
@@ -63,7 +64,7 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 7.	Klicken Sie auf der Seite **Einrichtungstyp wählen** auf den gewünschten Einrichtungstyp, und klicken Sie dann auf **Weiter**. Bei den folgenden Schritten wird davon ausgegangen, dass der Einrichtungstyp **Nur Server** ausgewählt ist.
 8.	Klicken Sie auf der Seite **Installation** auf **Ausführen**. Klicken Sie nach Abschluss der Installation auf **Weiter**.
 9.	Klicken Sie auf der Seite **Produktkonfiguration ** auf **Weiter**.
-10.	Geben Sie auf der Seite **Typ und Netzwerke** Ihren gewünschten Konfigurationstyp und die Konnektivitätsoptionen an, einschließlich des TCP-Ports (falls erforderlich). Wählen Sie **Erweiterte Optionen anzeigen**, und klicken Sie dann auf **Weiter**.
+10.	Geben Sie auf der Seite **Typ und Netzwerke** Ihren gewünschten Konfigurationstyp und die Konnektivitätsoptionen an, einschließlich des TCP-Ports (falls erforderlich). Wählen Sie **Erweiterte Optionen anzeigen** aus, und klicken Sie dann auf **Weiter**.
 
 	![](./media/virtual-machines-mysql-windows-server-2008r2/MySQL_TypeNetworking.png)
 
@@ -128,4 +129,4 @@ Um die Remoteverbindung zum MySQL Server-Dienst zu testen, der auf dem virtuelle
 
 Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.com/doc/)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -104,6 +104,9 @@ Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
             if (tc != null)
             {
                 tc.Flush(); // only for desktop apps
+
+                // Allow time for flushing:
+                System.Threading.Thread.Sleep(1000);
             }
             base.OnClosing(e);
         }
@@ -174,7 +177,7 @@ Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwen
 
 Wenn Ihre Apps in einem Kontext ausgeführt werden, in dem nicht immer eine Internetverbindung oder nur eine langsame Internetverbindung verfügbar ist, erwägen Sie die Verwendung eines Persistenzkanals anstelle des standardmäßigen In-Memory-Kanals.
 
-Der standardmäßige In-Memory-Kanal verliert alle Telemetriedaten, die nicht vor dem Schließen der App gesendet wurden. Wenngleich Sie mithilfe von `Flush()` versuchen können, alle im Puffer verbleibenden Daten zu senden, kommt es zu einem Timeout, wenn keine Internetverbindung besteht. Dies verzögert das Schließen der App.
+Der standardmäßige In-Memory-Kanal verliert alle Telemetriedaten, die nicht vor dem Schließen der App gesendet wurden. Wenngleich Sie mithilfe von `Flush()` versuchen können, alle im Puffer verbleibenden Daten zu senden, gehen dennoch Daten verloren, wenn keine Internetverbindung besteht oder wenn die App heruntergefahren wird, bevor die Übertragung abgeschlossen ist.
 
 Im Gegensatz dazu puffert der Persistenzkanal Telemetriedaten in einer Datei, bevor diese an das Portal gesendet werden. `Flush()` stellt sicher, dass Daten in der Datei gespeichert werden. Wenn beim Schließen der App keine Daten gesendet werden, verbleiben diese in der Datei. Wenn die App erneut gestartet wird, werden die Daten gesendet, sofern eine Internetverbindung besteht. Daten werden so lange in der Datei gesammelt, bis eine Internetverbindung verfügbar ist.
 
@@ -294,4 +297,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

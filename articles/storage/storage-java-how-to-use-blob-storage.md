@@ -258,6 +258,8 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 - [Azure Storage-REST-API][]
 - [Azure Storage-Teamblog][]
 
+Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/java/).
+
 [Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
 [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
@@ -266,4 +268,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

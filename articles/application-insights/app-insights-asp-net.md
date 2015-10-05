@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/09/2015" 
+	ms.date="09/23/2015" 
 	ms.author="awills"/>
 
 
@@ -156,10 +156,23 @@ Wenn Sie Ihre App noch nicht veröffentlicht haben (seit Sie Application Insight
 + `dc.services.visualstudio.com:443`
 + `f5.services.visualstudio.com:443`
 
-### Trennen der Ressourcen für Entwicklung, Test und Freigabe
 
-Bei größeren Anwendungen ist es ratsam, Telemetriedaten vom Debuggen, Testen und aus der Produktion an [getrennte Ressourcen](app-insights-separate-resources.md) zu senden.
+## Entwickeln, Testen und Freigeben
 
+Bei größeren Anwendungen ist es ratsam, Telemetriedaten von verschiedenen Stempeln (Debuggen, Testen und Produktionsbuilds) an [getrennte Ressourcen](app-insights-separate-resources.md) zu senden.
+
+## Nachverfolgen der Anwendungsversion
+
+Stellen Sie sicher, dass `buildinfo.config` von Ihrem Buildprozess generiert wird. Fügen Sie in Ihrer CSPROJ-Datei Folgendes hinzu:
+
+```XML
+
+    <PropertyGroup>
+      <GenerateBuildInfoConfigFile>true</GenerateBuildInfoConfigFile>    <IncludeServerNameInBuildInfo>true</IncludeServerNameInBuildInfo>
+    </PropertyGroup> 
+```
+
+Wenn das Webmodul Application Insights über die Buildinformationen verfügt, fügt es jedem Telemetrieelement automatisch die **Anwendungsversion** als Eigenschaft hinzu. Dies ermöglicht es Ihnen, nach Version zu filtern, wenn Sie [Diagnosesuchen][diagnostic] ausführen oder [Metriken untersuchen][metrics].
 
 
 
@@ -235,4 +248,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

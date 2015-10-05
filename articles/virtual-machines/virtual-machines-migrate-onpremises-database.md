@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer"
+	pageTitle="Migrieren einer Datenbank zu SQL Server auf einem virtuellen Computer | Mirosoft Azure"
 	description="Erfahren Sie mehr über das Migrieren einer lokalen Benutzerdatenbank auf SQL Server in einem virtuellen Azure-Computer."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="carlrabeler"
 	manager="jeffreyg"
-	editor=""/>
-
+	editor=""
+	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
@@ -18,6 +18,8 @@
 
 
 # Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Es gibt verschiedene Methoden zur Migration einer lokalen SQL Server-Benutzerdatenbank zu SQL Server in einer Azure-VM. In diesem Artikel werden die verschiedenen Methoden kurz angesprochen, die jeweils beste Methode für verschiedene Szenarios empfohlen und ein [Tutorial](#azure-vm-deployment-wizard-tutorial) vorgestellt, das Sie durch den Assistenten zum **Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer** leitet.
 
@@ -47,15 +49,15 @@ In der folgenden Tabelle werden alle primären Migrationsmethoden aufgeführt, u
 | Methode | Version der Quelldatenbank | Version der Zieldatenbank | Größeneinschränkung für Sicherung der Quelldatenbank | Hinweise |
 |---|---|---|---|---|
 | [Verwenden des Assistenten für das Bereitstellen einer SQL Server-Datenbank auf einer Microsoft Azure-VM](#azure-vm-deployment-wizard-tutorial) | SQL Server 2005 oder höher | SQL Server 2014 oder höher | > 1 TB | Schnellste und einfachste Methode, sollte möglichst immer verwendet werden, um eine neue oder vorhandene SQL Server-Instanz in einem virtuellen Azure-Computer zu migrieren |
-| [Durchführen einer lokalen Sicherung mit Komprimierung und anschließendes manuelles Kopieren der Sicherungsdatei auf den virtuellen Azure-Computer](#backup-to-file-and-copy-to-vm-and-restore) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/de-DE/documentation/articles/azure-subscription-service-limits/) | Nur verwenden, wenn Sie den Assistenten nicht verwenden können, da z. B. die Version der Zieldatenbank eine frühere ist als SQL Server 2012 SP1 CU2 oder da die Größe der Datenbanksicherung 1 TB überschreitet (bei SQL Server 2016 12,8 TB) |
+| [Durchführen einer lokalen Sicherung mit Komprimierung und anschließendes manuelles Kopieren der Sicherungsdatei auf den virtuellen Azure-Computer](#backup-to-file-and-copy-to-vm-and-restore) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/DE-DE/documentation/articles/azure-subscription-service-limits/) | Nur verwenden, wenn Sie den Assistenten nicht verwenden können, da z. B. die Version der Zieldatenbank eine frühere ist als SQL Server 2012 SP1 CU2 oder da die Größe der Datenbanksicherung 1 TB überschreitet (bei SQL Server 2016 12,8 TB) |
 | [Durchführen einer Sicherung auf eine URL und Wiederherstellung auf dem virtuellen Azure-Computer aus der URL](#backup-to-url-and-restore) | SQL Server 2012 SP1 CU2 oder höher | SQL Server 2012 SP1 CU2 oder höher | > 1 TB (für SQLServer 2016 < 12,8 TB) | Im Allgemeinen entspricht die Leistung der Methode [Sicherung über URLs](https://msdn.microsoft.com/library/dn435916.aspx) etwa der bei Verwendung des Assistenten, jedoch ist sie nicht ganz so einfach. |
-| [Trennen und anschließendes Kopieren der Daten- und Protokolldateien in einen Azure Blob-Speicher, dann Anschließen an den SQL Server auf dem virtuellen Azure-Computer über URL](#detach-and-copy-to-url-and-attach-from-url) | SQL Server 2005 oder höher | SQL Server 2014 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/de-DE/documentation/articles/azure-subscription-service-limits/) | Verwenden Sie diese Methode, wenn Sie Datenbankdateien an SQL Server auf einem virtuellen Azure-Computer anfügen und [diese Dateien mit dem Azure-Blobspeicherdienst speichern](https://msdn.microsoft.com/library/dn385720.aspx), insbesondere bei sehr großen Datenbanken. |
-| [Konvertieren eines lokalen physischen Computers in Hyper-V-VHD, Hochladen in einen Azure-Blob-Speicher und anschließendes Bereitstellen als neuen virtuellen Computer mithilfe des hochgeladenen VHD](#convert-to-vm-and-upload-to-url-and-deploy-as-new-vm) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/de-DE/documentation/articles/azure-subscription-service-limits/) | Verwenden Sie diese Methode, wenn Sie [Ihre eigene SQL Server-Lizenz mitbringen](../data-management-azure-sql-database-and-sql-server-iaas/), wenn Sie eine Datenbank migrieren, die unter einer älteren Version von SQL Server ausgeführt wird, oder wenn Sie System- und Benutzerdatenbanken gemeinsam als Teil der Migration von Datenbanken migrieren, die von anderen Benutzer- und/oder Systemdatenbanken abhängig sind. |
-| [Versenden einer Festplatte mithilfe des Windows-Import-Export-Diensts](#ship-hard-drive) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/de-DE/documentation/articles/azure-subscription-service-limits/) | Verwenden Sie den [Windows-Import/Export-Dienst](../storage-import-export-service/), wenn das manuelle Kopieren zu langsam ist (etwa bei sehr großen Datenbanken). |
+| [Trennen und anschließendes Kopieren der Daten- und Protokolldateien in einen Azure Blob-Speicher, dann Anschließen an den SQL Server auf dem virtuellen Azure-Computer über URL](#detach-and-copy-to-url-and-attach-from-url) | SQL Server 2005 oder höher | SQL Server 2014 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/DE-DE/documentation/articles/azure-subscription-service-limits/) | Beim Anfügen von Datenbankdateien an SQL Server in einer Azure-VM [und Speichern dieser Dateien mit dem Azure-Blob-Speicherdienst](https://msdn.microsoft.com/library/dn385720.aspx), insbesondere bei sehr großen Datenbanken |
+| [Konvertieren eines lokalen physischen Computers in Hyper-V-VHD, Hochladen in einen Azure-Blob-Speicher und anschließendes Bereitstellen als neuen virtuellen Computer mithilfe des hochgeladenen VHD](#convert-to-vm-and-upload-to-url-and-deploy-as-new-vm) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/DE-DE/documentation/articles/azure-subscription-service-limits/) | Verwenden Sie diese Methode, wenn Sie [Ihre eigene SQL Server-Lizenz mitbringen](../data-management-azure-sql-database-and-sql-server-iaas/), wenn Sie eine Datenbank migrieren, die unter einer älteren Version von SQL Server ausgeführt wird, oder wenn Sie System- und Benutzerdatenbanken gemeinsam als Teil der Migration von Datenbanken migrieren, die von anderen Benutzer- und/oder Systemdatenbanken abhängig sind. |
+| [Versenden einer Festplatte mithilfe des Windows-Import-Export-Diensts](#ship-hard-drive) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/DE-DE/documentation/articles/azure-subscription-service-limits/) | Verwenden Sie den [Windows-Import/Export-Dienst](../storage-import-export-service/), wenn das manuelle Kopieren zu langsam ist (etwa bei sehr großen Datenbanken). |
 
 ## Lernprogramm zum Assistenten für die Azure VM-Bereitstellung
 
-Verwenden Sie den **Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer** in Microsoft SQL Server Management Studio, um eine lokale Benutzerdatenbank (bis zu 1 TB) unter SQL Server 2005, SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014 oder SQL Server 2016 zu SQL Server 2014 oder SQL Server 2016 auf einem virtuellen Azure-Computer zu migrieren. Verwenden Sie diesen Assistenten, um eine Benutzerdatenbank zu einem vorhandenen virtuellen Azure-Computer zu migrieren oder zu einem virtuellen Azure-Computer mit SQL Server, der während des Migrationsprozesses vom Assistenten erstellt wird. Wenn Sie eine Datenbank auf eine neuere Version von SQL Server migrieren, wird die Datenbank während des Prozesses automatisch aktualisiert.
+Verwenden Sie den **Assistenten zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer** in Microsoft SQL Server Management Studio, um eine lokale Benutzerdatenbank (bis zu 1 TB) unter SQL Server 2005, SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014 oder SQL Server 2016 zu SQL Server 2014 oder SQL Server 2016 auf einem virtuellen Azure-Computer zu migrieren. Verwenden Sie diesen Assistenten, um eine Benutzerdatenbank zu einem vorhandenen virtuellen Azure-Computer zu migrieren oder zu einem virtuellen Azure-Computer mit SQL Server, der während des Migrationsprozesses vom Assistenten erstellt wird. Wenn Sie eine Datenbank auf eine neuere Version von SQL Server migrieren, wird die Datenbank während des Prozesses automatisch aktualisiert.
 
 ### Abrufen der neuesten Version des Assistenten für das Bereitstellen einer SQL Server-Datenbank auf einer Microsoft Azure-VM
 
@@ -65,8 +67,8 @@ Verwenden Sie die neueste Version von Microsoft SQL Server Management Studio fü
 
 Wenn Sie zu einer vorhandenen Azure-VM migrieren, sind die folgenden Konfigurationsschritte erforderlich:
 
-- Konfigurieren Sie den virtuellen Azure-Computer und die SQL Server-Instanz so, dass die Verbindung von einem anderen Computer aus möglich ist. Führen Sie dazu die Schritte im Abschnitt „Herstellen einer Verbindung mit der Instanz eines virtuellen SQL Server-Computers über SSMS auf einem anderen Computer“ unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](../virtual-machines-provision-sql-server/#SSMS) aus. Nur die Images von SQL Server 2014 und SQL Server 2016 im Katalog werden unterstützt, wenn Sie mithilfe des Assistenten migrieren.
-- Konfigurieren Sie einen offenen Endpunkt für den Cloudadapter des SQL Server-Diensts auf dem Microsoft Azure-Gateway mit dem privaten Port 11435. Dieser Port wird als Teil der Bereitstellung von SQL Server 2014 oder SQL Server 2016 auf einer Microsoft Azure-VM erstellt. Der Cloudadapter erstellt außerdem eine Windows-Firewall-Regel, um eingehende TCP-Verbindungen über den Standardport 11435 zuzulassen. Dieser Endpunkt ermöglicht dem Assistenten die Nutzung des Cloudadapterdiensts, um die Sicherungsdateien aus der lokalen Instanz auf die Azure-VM zu kopieren. Weitere Informationen finden Sie unter[Cloudadapter für SQL Server](https://msdn.microsoft.com/library/dn169301.aspx).
+- Konfigurieren Sie den virtuellen Azure-Computer und die SQL Server-Instanz so, dass die Verbindung von einem anderen Computer aus möglich ist. Führen Sie dazu die Schritte im Abschnitt "Herstellen einer Verbindung mit der Instanz eines virtuellen SQL Server-Computers über SSMS auf einem anderen Computer" unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](../virtual-machines-provision-sql-server/#SSMS) aus. Nur die Images von SQL Server 2014 und SQL Server 2016 im Katalog werden unterstützt, wenn Sie mithilfe des Assistenten migrieren.
+- Konfigurieren Sie einen offenen Endpunkt für den Cloudadapter des SQL Server-Diensts auf dem Microsoft Azure-Gateway mit dem privaten Port 11435. Dieser Port wird als Teil der Bereitstellung von SQL Server 2014 oder SQL Server 2016 auf einer Microsoft Azure-VM erstellt. Der Cloudadapter erstellt außerdem eine Windows-Firewall-Regel, um eingehende TCP-Verbindungen über den Standardport 11435 zuzulassen. Dieser Endpunkt ermöglicht dem Assistenten die Nutzung des Cloudadapterdiensts, um die Sicherungsdateien aus der lokalen Instanz auf die Azure-VM zu kopieren. Weitere Informationen finden Sie unter [Cloudadapter für SQL Server](https://msdn.microsoft.com/library/dn169301.aspx).
 
 	![Erstellen eines Cloudadapter-Endpunkts](./media/virtual-machines-migrate-onpremises-database/cloud-adapter-endpoint.png)
 
@@ -124,7 +126,7 @@ Wenn Sie zu einer vorhandenen Azure-VM migrieren, sind die folgenden Konfigurati
 	![Ergebnisse](./media/virtual-machines-migrate-onpremises-database/results.png)
 
 13. Stellen Sie nach Abschluss des Assistenten eine Verbindung mit dem virtuellen Computer her, und stellen Sie sicher, dass Ihre Datenbank migriert wurde.
-14. Wenn Sie einen neuen virtuellen Computer erstellt haben, konfigurieren Sie den virtuellen Azure-Computer und die SQL Server-Instanz mithilfe der Schritte im Abschnitt „Herstellen einer Verbindung mit der Instanz eines virtuellen SQL Server-Computers über SSMS auf einem anderen Computer“ in [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](../virtual-machines-provision-sql-server/#SSMS).
+14. Wenn Sie einen neuen virtuellen Computer erstellt haben, konfigurieren Sie den virtuellen Azure-Computer und die SQL Server-Instanz mithilfe der Schritte im Abschnitt "Herstellen einer Verbindung mit der Instanz eines virtuellen SQL Server-Computers über SSMS auf einem anderen Computer" in [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](../virtual-machines-provision-sql-server/#SSMS).
 
 ## Sichern in einer Datei und Kopieren in die VM zur Wiederherstellung
 
@@ -141,10 +143,10 @@ Verwenden Sie die Methode [Sicherung über URLs](https://msdn.microsoft.com/libr
 
 ## Trennen und Kopieren nach URL kopieren sowie Anschließen per URL
 
-Verwenden Sie diese Methode, wenn Sie [diese Dateien mithilfe des Azure-Blobspeicherdiensts speichern](https://msdn.microsoft.com/library/dn385720.aspx) und sie mit SQL Server auf einem virtuellen Azure-Computer verbinden möchten (insbesondere bei sehr großen Datenbanken empfohlen). Verwenden Sie die folgenden allgemeinen Schritte zum Migrieren einer Benutzerdatenbank anhand dieser manuellen Methode:
+Verwenden Sie diese Methode, wenn Sie planen, [diese Dateien mithilfe des Azure Blob-Speicherdiensts zu speichern](https://msdn.microsoft.com/library/dn385720.aspx) und sie mit SQL Server in einer Azure-VM zu verbinden, insbesondere bei sehr großen Datenbanken. Verwenden Sie die folgenden allgemeinen Schritte zum Migrieren einer Benutzerdatenbank anhand dieser manuellen Methode:
 
 1.	Trennen Sie die Datenbankdateien von der lokalen Datenbankinstanz.
-2.	Kopieren Sie die getrennten Datenbankdateien in den Azure-Blobspeicher mit dem Befehlszeilenprogramm [AZCopy](../storage-use-azcopy/).
+2.	Kopieren Sie die getrennten Datenbankdateien in den Azure-Blob-Speicher mit dem Befehlszeilenprogramm [AZCopy](../storage-use-azcopy/).
 3.	Fügen Sie die Datenbankdateien über die Azure-URL der SQL Server-Instanz in der Azure-VM an.
 
 ## Konvertieren in eine VM, Hochladen zur URL und Bereitstellen als neue VM
@@ -159,10 +161,10 @@ Verwenden Sie diese Methode, um alle System- und Benutzerdatenbanken in einer lo
 
 ## Versenden einer Festplatte
 
-Mit dem [Windows-Import/Export-Dienst](../storage-import-export-service/) können Sie große Mengen von Dateidaten in den Azure-Blobspeicher übertragen, wenn das Hochladen über das Netzwerk sehr teuer oder nicht praktikabel ist. Mit diesem Dienst versenden Sie Festplatten mit den Daten an ein Azure-Rechenzentrum, in dem die Daten in Ihr Speicherkonto hochgeladen werden.
+Mithilfe der Methode [Windows Import-Export-Dienst](../storage-import-export-service/) können Sie große Mengen von Dateidaten an Azure-Blob-Speicher übertragen, beispielsweise, wenn das Hochladen über das Netzwerk zu kostenintensiv oder nicht machbar ist. Mit diesem Dienst versenden Sie Festplatten mit den Daten an ein Azure-Rechenzentrum, in dem die Daten in Ihr Speicherkonto hochgeladen werden.
 
 ## Nächste Schritte
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

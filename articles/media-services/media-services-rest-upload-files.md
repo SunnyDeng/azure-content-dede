@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="09/20/2015"
 	ms.author="juliako"/>
 
 
@@ -27,14 +27,17 @@ In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch. Die
 
 >[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
 
-Der grundlegende Workflow zum Erfassen von Medienobjekten ist in folgende Abschnitte unterteilt:
+Der grundlegende Workflow zum Hochladen von Medienobjekten ist in folgende Abschnitte unterteilt:
 
 - Erstellen eines Medienobjekts
 - Verschlüsseln eines Medienobjekts (optional)
 - Hochladen einer Datei in den Blobspeicher
 
+Mit AMS können Sie Medienobjekte auch per Massenvorgang hochladen. Weitere Informationen finden Sie in [diesem](media-services-rest-upload-files.md#upload_in_bulk) Abschnitt.
 
-##Erstellen eines Medienobjekts
+##Hochladen von Medienobjekten
+
+###Erstellen eines Medienobjekts
 
 >[AZURE.NOTE]Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
@@ -106,7 +109,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	   "StorageAccountName":"storagetestaccount001"
 	}
 	
-##Erstellen einer AssetFile
+###Erstellen einer AssetFile
 
 Die [AssetFile](http://msdn.microsoft.com/library/azure/hh974275.aspx)-Entität stellt eine Video- oder Audiodatei dar, die in einem Blobcontainer gespeichert ist. Eine Medienobjektdatei ist immer mit einem Medienobjekt verknüpft, wobei ein Medienobjekt eine oder mehrere Medienobjektdateien enthalten kann. Der Media Services Encoder-Task kann nicht ausgeführt werden, wenn ein Medienobjektdatei-Objekt keiner digitalen Datei in einem Blobcontainer zugeordnet ist.
 
@@ -171,7 +174,7 @@ Nachdem Sie Ihre digitale Mediendatei in einen Blobcontainer hochgeladen haben, 
 	}
 
 
-## Erstellen der AccessPolicy mit Schreibberechtigung 
+### Erstellen der AccessPolicy mit Schreibberechtigung 
 
 Bevor Sie Dateien in den Blobspeicher hochladen, legen Sie die Zugriffsrichtlinienberechtigungen für das Schreiben in ein Medienobjekt fest. Senden Sie dazu eine HTTP POST-Anforderung an die AccessPolicies-Entitätenmenge. Definieren Sie bei der Erstellung einen DurationInMinutes-Wert, da Sie andernfalls eine Antwort mit einer "500 Interner Serverfehler"-Meldung empfangen. Weitere Informationen zu "AccessPolicies" finden Sie unter [AccessPolicy](http://msdn.microsoft.com/library/azure/hh974297.aspx).
 
@@ -218,7 +221,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 	   "Permissions":2
 	}
 
-##Abrufen der Upload-URL
+###Abrufen der Upload-URL
 
 Um die eigentliche Upload-URL zu empfangen, erstellen Sie einen SAS-Locator. Ein Locator definiert die Startzeit und den Typ des Verbindungsendpunkts für Clients, die auf Dateien in einem Medienobjekt zugreifen möchten. Sie können mehrere Locator-Entitäten für ein bestimmtes AccessPolicy-/ Asset-Paar erstellen, um unterschiedliche Clientanforderungen und -voraussetzungen zu verarbeiten. Jeder dieser Locators verwendet den StartTime-Wert plus den DurationInMinutes-Wert des AccessPolicy-Objekts, um zu bestimmen, für welchen Zeitraum eine URL verwendet werden kann. Weitere Informationen finden Sie unter [Locator](http://msdn.microsoft.com/library/azure/hh974308.aspx).
 
@@ -286,7 +289,7 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	   "Name":null
 	}
 
-## Hochladen einer Datei in einen Blobspeichercontainer
+### Hochladen einer Datei in einen Blobspeichercontainer
 	
 Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie die eigentliche Datei mithilfe der Azure Storage-REST-APIs in einen Azure-Blobspeichercontainer hochladen. Sie können Dateien entweder in Seiten- oder Blockblobs hochladen.
 
@@ -295,7 +298,7 @@ Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie die eigentl
 Weitere Informationen zum Arbeiten mit Azure Storage-Blobs finden Sie unter [REST-API für den Blobdienst](http://msdn.microsoft.com/library/azure/dd135733.aspx).
 
 
-## Aktualisieren der AssetFile 
+### Aktualisieren der AssetFile 
 
 Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe und andere Informationen aktualisieren. Beispiel:
 	
@@ -322,7 +325,7 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 
 Im Erfolgsfall wird Folgendes zurückgegeben: HTTP/1.1 204 Kein Inhalt
 
-## Löschen von AccessPolicy und Locator 
+### Löschen von AccessPolicy und Locator 
 
 **HTTP-Anforderung**
 
@@ -362,6 +365,146 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	HTTP/1.1 204 No Content 
 	...
 
+##<a id="upload_in_bulk"></a>Hochladen von Medienobjekten per Massenvorgang
+
+###Erstellen des IngestManifest-Containers
+
+"IngestManifest" ist ein Container für eine Gruppe von Medienobjekten, Medienobjektdateien und statistischen Informationen, die zur Ermittlung des Fortschritts der Massenerfassung für die Gruppe verwendet werden können.
+
+
+**HTTP-Anforderung**
+
+	POST https:// media.windows.net/API/IngestManifests HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+	Content-Length: 36
+	Expect: 100-continue
+	
+	{ "Name" : "ExampleManifestREST" }
+
+###Erstellen von Medienobjekten
+
+Bevor Sie das IngestManifestAsset erstellen können, müssen Sie das Medienobjekt erstellen und mithilfe der Massenerfassung verarbeiten. Ein Medienobjekt ist ein Container für mehrere Typen oder Gruppen von Objekten in Media Services. Dazu gehören Videos, Audiodateien, Bilder, Miniaturansichtsammlungen, Texttitel und Untertiteldateien. In der REST-API muss zum Erstellen eines Medienobjekts eine HTTP-POST-Anforderung an Microsoft Azure Media Services gesendet und es müssen alle Eigenschafteninformationen über Ihr Medienobjekt im Anforderungstext platziert werden. In diesem Beispiel wird das Medienobjekt mithilfe der StorageEncrption(1)-Option erstellt, die im Anforderungstext enthalten ist.
+
+**HTTP-Antwort**
+
+	POST https://media.windows.net/API/Assets HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+	Content-Length: 55
+	Expect: 100-continue
+	
+	{ "Name" : "ExampleManifestREST_Asset", "Options" : 1 }
+
+###Erstellen von IngestManifestAssets
+
+"IngestManifestAssets" repräsentieren Medienobjekte innerhalb eines IngestManifest-Containers, die bei der Massenerfassung verwendet werden. Sie verknüpfen das Medienobjekt mit dem Manifest. Azure Media Services überwacht intern den Dateiupload, basierend auf der mit dem IngestManifestAsset verknüpften IngestManifestFiles-Sammlung. Sobald diese Dateien hochgeladen wurden, ist das Medienobjekt vollständig. Sie können ein neues IngestManifestAsset mit einer HTTP-POST-Anforderung erstellen. Fügen Sie im Anforderungstext die IngestManifest-ID und die Medienobjekt-ID ein, die das IngestManifestAsset zur Massenerfassung miteinander verknüpfen soll.
+
+**HTTP-Antwort**
+
+	POST https://media.windows.net/API/IngestManifestAssets HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+	Content-Length: 152
+	Expect: 100-continue
+	{ "ParentIngestManifestId" : "nb:mid:UUID:5c77f186-414f-8b48-8231-17f9264e2048", "Asset" : { "Id" : "nb:cid:UUID:b757929a-5a57-430b-b33e-c05c6cbef02e"}}
+
+###(Optional) Erstellen von ContentKeys zur Verschlüsselung
+
+Wenn Ihr Medienobjekt Verschlüsselung verwenden soll, müssen Sie einen ContentKey erstellen, über den die Verschlüsselung erfolgen soll, bevor Sie die IngestManifestFiles für das Medienobjekt erstellen. In diesem Fall sind die folgenden Eigenschaften im Anforderungstext enhalten.
+ 
+Anforderungstexteigenschaft | Beschreibungs-ID | Die ContentKey-ID, die wir selbst in folgendem Format generieren: "nb:kid:UUID:<NEW GUID>". ContentKeyType | Dies ist der Inhaltsschlüsseltyp für diesen Inhaltsschlüssel in Form einer Ganzzahl. Wir übergeben den Wert 1 für die Speicherverschlüsselung. EncryptedContentKey | Wir erstellen einen neuen Inhaltsschlüsselwert mit einer Länge von 256 Bits (32 Bytes). Der Schlüssel wird mithilfe des X.509-Speicherverschlüsselungszertifikats verschlüsselt, das wir von Microsoft Azure Media Services abrufen, indem wir eine HTTP-GET-Anforderung für die Methoden "GetProtectionKeyId" und "GetProtectionKey" ausführen. ProtectionKeyId | Dies ist die Schutzschlüssel-ID für das X.509-Speicherverschlüsselungszertifikat, das zur Verschlüsselung des Inhaltsschlüssels verwendet wurde. ProtectionKeyType | Dies ist der Verschlüsselungstyp für den Schutzschlüssel, der zur Verschlüsselung des Inhaltsschlüssels verwendet wurde. In unserem Beispiel lautet der Wert "StorageEncryption(1)". Checksum | Die per MD5 berechnete Prüfsumme für den Inhaltsschlüssel. Die Berechnung erfolgt durch Verschlüsselung der Inhalts-ID mit dem Inhaltsschlüssel. Der Beispielcode zeigt, wie die Prüfsumme berechnet wird.
+
+
+**HTTP-Antwort**
+	
+	POST https://media.windows.net/api/ContentKeys HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+	Content-Length: 572
+	Expect: 100-continue
+	
+	{"Id" : "nb:kid:UUID:316d14d4-b603-4d90-b8db-0fede8aa48f8", "ContentKeyType" : 1, "EncryptedContentKey" : "Y4NPej7heOFa2vsd8ZEOcjjpu/qOq3RJ6GRfxa8CCwtAM83d6J2mKOeQFUmMyVXUSsBCCOdufmieTKi+hOUtNAbyNM4lY4AXI537b9GaY8oSeje0NGU8+QCOuf7jGdRac5B9uIk7WwD76RAJnqyep6U/OdvQV4RLvvZ9w7nO4bY8RHaUaLxC2u4aIRRaZtLu5rm8GKBPy87OzQVXNgnLM01I8s3Z4wJ3i7jXqkknDy4VkIyLBSQvIvUzxYHeNdMVWDmS+jPN9ScVmolUwGzH1A23td8UWFHOjTjXHLjNm5Yq+7MIOoaxeMlKPYXRFKofRY8Qh5o5tqvycSAJ9KUqfg==", "ProtectionKeyId" : "7D9BB04D9D0A4A24800CADBFEF232689E048F69C", "ProtectionKeyType" : 1, "Checksum" : "TfXtjCIlq1Y=" }
+
+### Verknüpfen des ContentKey mit dem Medienobjekt
+
+Der ContentKey wird durch Senden einer HTTP-POST-Anforderung mit mindestens einem Medienobjekt verknüpft. Folgende Anforderung ist ein Beispiel für die Verknüpfung des Beispiel-ContentKey mit dem Beispielmedienobjekt über die ID.
+
+**HTTP-Antwort**
+	
+	POST https://media.windows.net/API/Assets('nb:cid:UUID:b3023475-09b4-4647-9d6d-6fc242822e68')/$links/ContentKeys HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+	Content-Length: 113
+	Expect: 100-continue
+	
+	{ "uri": "https://media.windows.net/api/ContentKeys('nb%3Akid%3AUUID%3A32e6efaf-5fba-4538-b115-9d1cefe43510')"}
+
+###Erstellen der IngestManifestFiles für jedes Medienobjekt
+
+Eine IngestManifestFile repräsentiert ein tatsächliches Video- oder Audioblobobjekt, das im Rahmen einer Massenerfassung für ein Medienobjekt hochgeladen wird. Verschlüsselungseigenschaften sind nur erforderlich, wenn das Medienobjekt eine Verschlüsselungsoption verwendet. Das Beispiel in diesem Abschnitt zeigt die Erstellung einer IngestManifestFile, die die Option "StorageEncryption" für das zuvor erstellte Medienobjekt verwendet.
+
+
+**HTTP-Antwort**
+
+	POST https://media.windows.net/API/IngestManifestFiles HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+	Content-Length: 367
+	Expect: 100-continue
+	
+	{ "Name" : "REST_Example_File.wmv", "ParentIngestManifestId" : "nb:mid:UUID:5c77f186-414f-8b48-8231-17f9264e2048", "ParentIngestManifestAssetId" : "nb:maid:UUID:beed8531-9a03-9043-b1d8-6a6d1044cdda", "IsEncrypted" : "true", "EncryptionScheme" : "StorageEncryption", "EncryptionVersion" : "1.0", "EncryptionKeyId" : "nb:kid:UUID:32e6efaf-5fba-4538-b115-9d1cefe43510" }
+	
+###Hochladen der Dateien in den Blobspeicher
+
+Sie können eine beliebige hochleistungsfähige Clientanwendung nutzen, die in der Lage ist, die Medienobjektdateien mithilfe des durch die BlobStorageUriForUpload-Eigenschaft von IngestManifest angegebenen URI des Blobspeichercontainers hochzuladen. Der Uploaddienst [Aspera On Demand für Azure](http://go.microsoft.com/fwlink/?LinkId=272001) bietet beispielsweise hohe Geschwindigkeiten.
+
+###Überwachen des Massenerfassungsprozesses
+
+Sie können den Status der Massenerfassung für alle Medienobjekte bestimmen, die einem IngestManifest zugeordnet sind, indem Sie die Statistics-Eigenschaft von IngestManifest abrufen. Diese Eigenschaft weist einen komplexen Typ auf: [IngestManifestStatistics](https://msdn.microsoft.com/library/azure/jj853027.aspx). Zum Abrufen der Statistics-Eigenschaft senden Sie eine HTTP-GET-Anforderung, in der Sie die IngestManifest-ID übergeben.
+ 
+
+**HTTP-Antwort**
+
+	GET https://media.windows.net/API/IngestManifests('nb:mid:UUID:5c77f186-414f-8b48-8231-17f9264e2048') HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=070500D0-F35C-4A5A-9249-485BBF4EC70B&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1334275521&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=GxdBb%2fmEyN7iHdNxbawawHRftLhPFFqxX1JZckuv3hY%3d
+	Host: media.windows.net
+
 
 ##Media Services-Lernpfade
 
@@ -375,4 +518,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [How to Get a Media Processor]: media-services-get-media-processor.md
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

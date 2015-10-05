@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory-Authentifizierungsprotokolle"
+   pageTitle="Azure Active Directory-Authentifizierungsprotokolle | Microsoft Azure"
    description="Eine Übersicht über die von Azure Active Directory (AD) unterstützten Authentifizierungsprotokolle"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/02/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin"/>
 
 # Azure Active Directory-Authentifizierungsprotokolle
@@ -55,4 +55,4 @@ Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwen
 
 [Active Directory-Codebeispiele](active-directory-code-samples.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

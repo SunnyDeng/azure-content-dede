@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Linux erfassen können."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="karthmut"
+	authors="madhana"
 	manager="timlt"
 	editor="tysonn"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="02/20/2015"
-	ms.author="karthmut"/>
+	ms.author="madhana"/>
 
 
 
@@ -162,4 +162,4 @@ Weitere Informationen und zusätzliche Befehlen finden Sie in der [Azure-CLI-Dok
 [Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

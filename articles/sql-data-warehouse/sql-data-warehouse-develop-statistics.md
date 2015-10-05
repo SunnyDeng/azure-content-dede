@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/22/2015"
+   ms.date="09/22/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Verwalten von Statistiken in SQL Data Warehouse
@@ -452,4 +452,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [sys.table\_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

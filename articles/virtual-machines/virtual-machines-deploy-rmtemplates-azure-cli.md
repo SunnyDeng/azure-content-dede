@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und der Azure-CLI für Mac, Linux und Windows | Microsoft Azure"
-	description="Stellen Sie ganz einfach den am häufigsten verwendeten Konfigurationssatz für virtuelle Azure-Computer bereit, und verwalten Sie sie mithilfe von Ressourcen-Manager-Vorlagen und der Azure-CLI."
+	pageTitle="Bereitstellen und Verwalten von virtuellen Computer mit Vorlagen | Microsoft Azure"
+	description="Stellen Sie ganz einfach die am häufigsten verwendeten Konfigurationen für virtuelle Azure-Computer bereit, und verwalten Sie sie mithilfe von Ressourcen-Manager-Vorlagen und der Azure-CLI."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -19,6 +20,9 @@
 # Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI
 
 In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von virtuellen Azure-Computern automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Bereitstellung und Verwaltung virtueller Computer mithilfe von Vorlagen im Ressourcen-Manager-Bereitstellungsmodell. Im klassischen Bereitstellungsmodell können Sie keine Vorlagen verwenden.
+
 
 - [Schnelles Erstellen eines virtuellen Computers in Azure](#quick-create-a-vm-in-azure)
 - [Bereitstellen eines virtuellen Computers in Azure anhand einer Vorlage](#deploy-a-vm-in-azure-from-a-template)
@@ -38,12 +42,12 @@ Vor der Verwendung von Azure-CLI mit Azure-Ressourcengruppen benötigen Sie die 
 
 ### Aktualisieren Ihrer Azure-CLI auf Version 0.9.0 oder höher
 
-Geben Sie `azure --version` ein, um zu prüfen, ob Sie bereits Version 0.9.0 oder höher installiert haben.
+Geben Sie `azure --version` ein, um zu prüfen, ob Sie bereits Version 0.9.0 oder höher installiert haben.
 
 	azure --version
     0.9.0 (node: 0.10.25)
 
-Wenn Ihre Version nicht 0.9.0 oder höher ist, müssen Sie entweder die [Azure-CLI installieren](../xplat-cli-install.md) oder sie mithilfe eines der systemeigenen Installer oder über eine **npm** durch Eingabe von `npm update -g azure-cli` aktualisieren.
+Wenn Ihre Version nicht 0.9.0 oder höher ist, müssen Sie entweder die [Azure-Befehlszeilenschnittstelle installieren](../xplat-cli-install.md) oder sie mithilfe eines der systemeigenen Installer oder über eine **npm** durch Eingabe von `npm update -g azure-cli` aktualisieren.
 
 Sie können die Azure-CLI mit dem folgenden [Docker-Image](https://registry.hub.docker.com/u/microsoft/azure-cli/) auch als Docker-Container ausführen. Führen Sie von einem Docker-Host den folgenden Befehl aus:
 
@@ -97,7 +101,7 @@ Sie können dann den gesamten Lebenszyklus der Gruppenressourcen mithilfe von Re
 - Vorgänge zu überwachen.
 - Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung auszuzeichnen.
 
-Erfahren Sie mehr über Azure-Ressourcengruppen und wie Sie sie nutzen können unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md). Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
+Weitere Informationen zu Azure-Ressourcengruppen und wie Sie sie nutzen können finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md). Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
 ## <a id="quick-create-a-vm-in-azure"></a>Aufgabe: Schnelles Erstellen eines virtuellen Computers in Azure
 
@@ -119,7 +123,7 @@ Erstellen Sie zunächst die Ressourcengruppe.
     info:    group create command OK
 
 
-Zweitens benötigen Sie ein Image. Informationen zur Suche eines Image mit der Azure-CLI finden Sie unter [Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md). Doch für diesen Artikel finden Sie hier eine kurze Liste beliebter Images. Für diese Schnellerfassung verwenden wir das CoreOSs Stable-Image.
+Zweitens benötigen Sie ein Image. Informationen zur Suche eines Images mit der Azure-CLI finden Sie unter [Navigieren zwischen und Aussuchen von Azure Virtual Machine-Images mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md). Doch für diesen Artikel finden Sie hier eine kurze Liste beliebter Images. Für diese Schnellerfassung verwenden wir das CoreOSs Stable-Image.
 
 > [AZURE.NOTE]Sie können für "ComputeImageVersion" sowohl in der Vorlagensprache als auch in der Azure-Befehlszeilenschnittstelle auch einfach "latest" als Parameter angeben. Dies ermöglicht es Ihnen, immer die neueste gepatchte Version des Image zu verwenden, ohne Ihre Skripts oder Vorlagen ändern zu müssen. Dies wird nachfolgend gezeigt.
 
@@ -493,9 +497,9 @@ Sie erhalten den folgenden Informationstyp:
 
 
 
-## <a id="create-a-custom-vm-image"></a>Aufgabe: Erstellen eines benutzerdefinierten VM-Image
+## <a id="create-a-custom-vm-image"></a>Aufgabe: Erstellen eines benutzerdefinierten VM-Images
 
-Sie haben oben die grundlegende Verwendung von Vorlagen gesehen, sodass wir nun ähnliche Anweisungen zum Erstellen eines benutzerdefinierten virtuellen Computers aus einer spezifischen VHD-Datei in Azure mit einer Vorlage über die Azure-CLI verwenden können. Der Unterschied ist hier, dass diese Vorlage eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte (VHD) erstellt.
+Sie haben oben die grundlegende Verwendung von Vorlagen gesehen, sodass wir nun ähnliche Anweisungen zum Erstellen eines benutzerdefinierten virtuellen Computers aus einer spezifischen VHD-Datei in Azure mit einer Vorlage über die Azure-CLI verwenden können. Der Unterschied ist hier, dass diese Vorlage einen einzelnen virtuellen Computer von einer angegebenen virtuellen Festplatte (VHD) erstellt.
 
 ### Schritt 1: Untersuchen der JSON-Datei für die Vorlage
 
@@ -688,13 +692,13 @@ Auch hier müssen Sie die Werte finden, die Sie für die Parameter eingeben, die
 
 Natürlich benötigen Sie dafür eine VHD-Datei. Sie können entweder eine bereits vorhandene Datei in Azure verwenden oder eine hochladen.
 
-Informationen zu einer Windows-basierten virtuellen Maschine finden Sie in [Erstellen und Hochladen einer Windows Server-VHD in Azure](virtual-machines-create-upload-vhd-windows-server.md).
+Informationen zu Windows-basierten virtuellen Computern finden Sie in [Erstellen und Hochladen einer Windows Server-VHD in Azure](virtual-machines-create-upload-vhd-windows-server.md).
 
 Anweisungen für Linux-basierte virtuelle Computer finden Sie unter [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](virtual-machines-linux-create-upload-vhd.md).
 
 ### Schritt 3: Erstellen des virtuellen Computers mit der Vorlage
 
-Sie nun können einen neuen virtuellen Computer basierend auf der VHD-Datei erstellen. Erstellen Sie eine Gruppe zum Bereitstellen mit `azure group create <location>`:
+Sie nun können einen neuen virtuellen Computer basierend auf der VHD-Datei erstellen. Erstellen Sie mit `azure group create <location>` eine Gruppe für die Bereitstellung:
 
     azure group create myResourceGroupUser eastus
     info:    Executing command group create
@@ -1172,7 +1176,7 @@ Beachten Sie, dass diese Vorlage ein Windows Server-Image bereitstellt. Allerdin
 
 ## <a id="remove-a-resource-group"></a>Aufgabe: Entfernen einer Ressourcengruppe
 
-Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. Aber wenn Sie mit einer fertig sind, können Sie sie mit `azure group delete <group name>` löschen.
+Beachten Sie, dass erneute Bereitstellungen in einer Ressourcengruppe möglich sind. Wenn Sie eine Ressourcengruppe jedoch nicht mehr benötigen, können Sie sie mit `azure group delete <group name>` löschen.
 
     azure group delete myResourceGroup
     info:    Executing command group delete
@@ -1180,7 +1184,7 @@ Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. A
     + Deleting resource group myResourceGroup
     info:    group delete command OK
 
-## <a id="show-the-log-for-a-resource-group-deployment"></a>Aufgabe: Anzeigen des Protokolls für die Ressourcengruppenbereitstellung
+## <a id="show-the-log-for-a-resource-group-deployment"></a>Aufgabe: Anzeigen des Protokolls zu einer Ressourcengruppenbereitstellung
 
 Dieses tritt häufig beim Erstellen oder Verwenden von Vorlagen auf. Der Aufruf zur Anzeige von Bereitstellungsprotokollen für eine Gruppe ist `azure group log show <groupname>`. Es werden eine Menge Informationen angezeigt, die für das Verständnis hilfreich sind, warum etwas passiert ist oder auch nicht. (Weitere Informationen zur Problembehandlung für Ihre Bereitstellungen sowie andere Informationen zu Problemen finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](resource-group-deploy-debug.md).)
 
@@ -1198,7 +1202,7 @@ Sie können sehr schnell ermitteln, welche Fehler aufgetreten sind, sie beheben 
 
 ## <a id="display-information-about-a-virtual-machine"></a>Aufgabe: Anzeigen von Informationen zu einem virtuellen Computer
 
-Informationen zu spezifischen virtuellen Computern in Ihrer Ressourcengruppe finden Sie mithilfe von `azure vm show <groupname> <vmname> command`. Wenn Sie über mehr als einen virtuellen Computer in der Gruppe verfügen, müssen Sie womöglich zuerst die virtuellen Computer in einer Gruppe mithilfe von `azure vm list <groupname>` auflisten.
+Informationen zu spezifischen virtuellen Computern in Ihrer Ressourcengruppe zeigen Sie mithilfe von `azure vm show <groupname> <vmname> command` an. Wenn Sie über mehr als einen virtuellen Computer in der Gruppe verfügen, müssen Sie womöglich zuerst die virtuellen Computer in einer Gruppe mithilfe von `azure vm list <groupname>` auflisten.
 
     azure vm list zoo
     info:    Executing command vm list
@@ -1263,7 +1267,7 @@ Suchen Sie dann nach "myVM1":
 
 > [AZURE.NOTE]Wenn Sie die Ausgabe der Konsolenbefehle programmgesteuert speichern und bearbeiten möchten, sollten Sie möglicherweise ein JSON-Analysetool verwenden, z. B. **[jq](https://github.com/stedolan/jq)**, **[jsawk](https://github.com/micha/jsawk)** oder für die Aufgabe geeignete Sprachbibliotheken.
 
-## <a id="log-on-to-a-linux-based-virtual-machine"></a>Aufgabe: Anmelden bei einem auf Linux basierten virtuellen Computer
+## <a id="log-on-to-a-linux-based-virtual-machine"></a>Aufgabe: Anmelden bei einem Linux-basierten virtuellen Computer
 
 In der Regel sind Linux-Computer über SSH verbunden. Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux auf Azure](virtual-machines-linux-use-ssh-key.md).
 
@@ -1273,7 +1277,7 @@ Führen Sie den folgenden Befehl aus:
 
     azure vm stop <group name> <virtual machine name>
 
->[AZURE.IMPORTANT]Verwenden Sie diesen Parameter, um die virtuelle IP-Adresse des VNETs beizubehalten, falls es sich um den letzten virtuellen Computer in diesem VNET handelt. <br><br> Auch wenn Sie den Parameter `StayProvisioned` verwenden, wird der virtuelle Computer in Rechnung gestellt.
+>[AZURE.IMPORTANT]Verwenden Sie diesen Parameter, um die virtuelle IP-Adresse des VNETs beizubehalten, falls es sich um den letzten virtuellen Computer in diesem VNET handelt. <br><br> Auch wenn Sie den `StayProvisioned`-Parameter verwenden, wird der virtuelle Computer in Rechnung gestellt.
 
 ## <a id="start-a-virtual-machine"></a>Aufgabe: Starten eines virtuellen Computers
 
@@ -1298,8 +1302,8 @@ Anschließend müssen Sie den Datenträger wie gewohnt in Linux (oder Windows) e
 
 ## Nächste Schritte
 
-Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Weitere Informationen über Azure-Ressourcen und deren Konzepte erhalten Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
+Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Weitere Informationen zu Azure-Ressourcen und deren Konzepten erhalten Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird"
+	pageTitle="Behandeln von Problemen beim Zugriff auf Anwendungen auf einem virtuellen Computer | Microsoft Azure"
 	description="Wenn Sie auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird, nicht zugreifen können, führen Sie diese Schritte aus, um die Ursache des Problems zu ermitteln."
 	services="virtual-machines"
 	documentationCenter=""
@@ -18,6 +18,8 @@
 	ms.author="dkshir"/>
 
 # Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel erfahren Sie, wie Sie Probleme beim Zugriff auf Anwendungen auf einem virtuellen Computer behandeln, der mit dem klassischen oder Ressourcen-Manager-Bereitstellungsmodell erstellt wurde.
 
 Wenn Sie auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird, nicht zugreifen können, finden Sie in diesem Artikel einen methodischen Ansatz zum Ermitteln der Ursache des Problems und zu seiner Behebung.
 
@@ -110,4 +112,4 @@ Wenn Sie die Schritte 1 bis 3 in diesem Artikel ausgeführt haben und zur Behebu
 
 [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

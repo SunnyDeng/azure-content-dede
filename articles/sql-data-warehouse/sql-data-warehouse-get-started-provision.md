@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/09/2015"
+   ms.date="09/22/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Erste Schritte: Bereitstellen von SQL Data Warehouses #
@@ -161,6 +161,8 @@ Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu
 1. Data Warehouse – [Verbinden und Abfragen][].
 2. Laden von [Beispieldaten].
 
+	> [AZURE.NOTE]Wir möchten diesen Artikel verbessern. Wenn Sie auf die Frage „War dieser Artikel hilfreich?“ mit „Nein“ antworten, bitten wir Sie, einen kurzen Vorschlag dazu einzufügen, was fehlt oder wie der Artikel zu verbessern ist. Vielen Dank im Voraus!
+
 <!--Image references-->
 
 
@@ -169,7 +171,7 @@ Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu
 [Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
 
 <!--External links-->
-[kostenlose Testversion]: https://azure.microsoft.com/de-DE/pricing/free-trial/
+[kostenlose Testversion]: https://azure.microsoft.com/DE-DE/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

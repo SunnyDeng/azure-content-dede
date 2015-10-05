@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten in einen und aus einem Azure-Blob | Azure Data Factory"
-	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in einen und aus einem Azure-Blob-Speicher verschoben werden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten in einen und aus einem Azure-Blob | Azure Data Factory" 
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in einen und aus einem Azure-Blob-Speicher verschoben werden." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/26/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in einen und aus einem Azure-Blob mithilfe von Azure Data Factory
@@ -472,6 +472,7 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 | -------- | ----------- | -------------- | -------- | 
 | treatEmptyAsNull | Gibt an, ob Null oder eine leere Zeichenfolge als NULL-Wert behandelt wird. | TRUE<br/>FALSE | Nein |
 | skipHeaderLineCount | Gibt an, wie viele Zeilen übersprungen werden müssen. Nur anwendbar, wenn das Eingabedataset **TextFormat** verwendet. | Ganzzahl zwischen "0" und "Max". | Nein | 
+| recursive | Gibt an, ob die Daten rekursiv aus den Unterordnern oder nur aus dem angegebenen Ordner gelesen werden. | True (Standardwert), False | Nein | 
 
 
 **BlobSink** unterstützt die folgenden Eigenschaften im Abschnitt **typeProperties**:
@@ -479,6 +480,8 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
 | blobWriterAddHeader | Gibt an, ob der Header der Spaltendefinitionen hinzugefügt werden soll. | TRUE<br/>FALSE (Standard) | Nein |
+| copyBehavior | Definiert das Verhalten beim Kopieren, wenn die Quelle "BlobSource" oder "FileSystem" ist. | <p>Es gibt drei mögliche Werte für die copyBehavior-Eigenschaft. </p><ul><li>**PreserveHierarchy:** Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</li><li>**FlattenHierarchy:** Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Die Namen der Zieldateien werden automatisch generiert. </li><li>**MergeFiles:** Führt alle Dateien aus dem Quellordner in einer Datei zusammen. Wenn der Datei-/Blob-Name angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.</li></ul> | Nein |
+
 
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
@@ -492,4 +495,4 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-azure-blob-connector.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Lastenausgleich für Azure-Infrastrukturdienste"
+	pageTitle="Lastenausgleich für Infrastrukturdienste | Microsoft Azure"
 	description="Beschreibt zwei unterschiedliche Typen des durch Azure unterstützten Lastenausgleichs: Lastenausgleich für Clouddienste und Azure Traffic Manager für Clientdatenverkehr."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/21/2015"
@@ -18,6 +18,7 @@
 
 
 # Lastenausgleich für Azure-Infrastrukturdienste#
+
 
 Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
 
@@ -83,4 +84,4 @@ Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgl
 
 <!-- LINKS -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

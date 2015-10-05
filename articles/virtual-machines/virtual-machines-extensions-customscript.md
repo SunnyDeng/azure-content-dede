@@ -1,31 +1,34 @@
 <properties
-   pageTitle="CustomScript-Erweiterung unter Windows | Microsoft Azure"
-	description="Automatische Konfigurationsaufgaben für virtuellen Azure Computer mithilfe der CustomScript-Erweiterung unter Windows"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="kundanap"
-	manager="timlt"
-	editor=""/>
+   pageTitle="Benutzerdefinierte Skripterweiterungen unter Windows | Microsoft Azure"
+   description="Automatisieren Sie Konfigurationsaufgaben für virtuelle Azure-Computer mit der benutzerdefinierten Skripterweiterung zum Ausführen von PowerShell-Skripts auf einem virtuellen Remote-Computer unter Windows."
+   services="virtual-machines"
+   documentationCenter=""
+   authors="kundanap"
+   manager="timlt"
+   editor=""
+   tags="azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/06/2015"
-	ms.author="kundanap"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="08/06/2015"
+   ms.author="kundanap"/>
 
-# CustomScript-Erweiterung für Windows
+# Benutzerdefinierte Skripterweiterung für virtuelle Windows-Computer
 
-Der vorliegende Artikel bietet einen Überblick über die Verwendung der CustomScript-Erweiterung unter Windows mithilfe von Azure Powershell-Cmdlets.
+Der vorliegende Artikel bietet einen Überblick über die Verwendung der benutzerdefinierten Skripterweiterung auf virtuellen Windows-Computern mithilfe von Azure Powershell-Cmdlets.
+
+Mit den Erweiterungen virtueller Computer, die von Microsoft und vertrauenswürdigen Drittanbietern entwickelt werden, wird die Funktionalität des virtuellen Computers erweitert. Einen Überblick über die Erweiterungen virtueller Computer finden Sie unter [Erweiterungen virtueller Azure-Computer und Features](virtual-machines-extensions-features.md).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie haben auch die Möglichkeit, eine Ressource mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-extensions-customscript%20-with%20template.md) zu erstellen.
 
 
-Mit den Erweiterungen virtueller Computer, die von Microsoft und vertrauenswürdigen Drittanbietern entwickelt werden, wird die Funktionalität des virtuellen Computers erweitert. Einen Überblick über die Erweiterungen virtueller Computer finden Sie unter <a href="https://msdn.microsoft.com/library/azure/dn606311.aspx" target="_blank">Erweiterungen virtueller Azure-Computer und Features</a>.
+## Übersicht über benutzerdefinierte Skripterweiterungen
 
-## Übersicht über die CustomScript-Erweiterung
-
-Die CustomScript-Erweiterung für Windows ermöglicht Ihnen das Ausführen von Powershell-Skripts auf einem virtuellen Remotecomputer, ohne sich bei diesem anzumelden. Die Skripts können nach Bereitstellung des virtuellen Computers oder zu einem beliebigen Zeitpunkt im Lebenszyklus des virtuellen Computers ausgeführt werden, ohne dass zusätzliche Ports auf dem virtuellen Computer geöffnet werden müssen. Die häufigsten Anwendungsfälle für benutzerdefinierte Skripterweiterungen sind das Ausführen, das Installieren und das Konfigurieren zusätzlicher Software auf dem virtuellen Computer, nachdem dieser bereitgestellt wurde.
+Die benutzerdefinierte Skripterweiterung für Windows ermöglicht Ihnen das Ausführen von Powershell-Skripts auf einem virtuellen Remotecomputer, ohne sich bei diesem anzumelden. Die Skripts können nach Bereitstellung des virtuellen Computers oder zu einem beliebigen Zeitpunkt im Lebenszyklus des virtuellen Computers ausgeführt werden, ohne dass zusätzliche Ports auf dem virtuellen Computer geöffnet werden müssen. Die häufigsten Anwendungsfälle für benutzerdefinierte Skripterweiterungen sind das Ausführen, das Installieren und das Konfigurieren zusätzlicher Software auf dem virtuellen Computer, nachdem dieser bereitgestellt wurde.
 
 ### Voraussetzungen für das Ausführen der CustomScript-Erweiterung
 
@@ -34,7 +37,7 @@ Die CustomScript-Erweiterung für Windows ermöglicht Ihnen das Ausführen von P
 3. Laden Sie die Skripts, die Sie auf der VM ausführen möchten, nach Azure Storage hoch. Die Skripts können aus einem einzelnen oder mehreren Speichercontainern stammen.
 4. Das Skript sollte so geschrieben sein, dass das Eingangsskript, das durch die Erweiterung gestartet wird, weitere Skripts startet.
 
-## Szenarien für die CustomScript-Erweiterung
+## Szenarien für benutzerdefinierte Skripterweiterungen
 
 ### Hochladen von Dateien in den Standardcontainer
 
@@ -68,24 +71,24 @@ Dieses Szenario zeigt, wie ein Nicht-Standardspeicher verwendet wird, entweder i
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### Hinzufügen der CustomScript-Erweiterung aus dem Portal
+### Hinzufügen einer benutzerdefinierten Skripterweiterung aus dem Portal
 
-Navigieren Sie im <a href="https://portal.azure.com/ " target="_blank">Azure-Vorschauportal </a> zum virtuellen Computer, und fügen Sie die Erweiterung hinzu, indem Sie die auszuführende Skriptdatei angeben.
+Navigieren Sie im <a href="https://portal.azure.com/ " target="_blank">Azure-Vorschauportal</a> zum virtuellen Computer, und fügen Sie die Erweiterung hinzu, indem Sie die auszuführende Skriptdatei angeben.
 
   ![][5]
 
 
-### Deinstallieren der CustomScript-Erweiterung
+### Deinstallieren der benutzerdefinierten Skripterweiterung
 
 Die CustomScript-Erweiterung kann mithilfe des folgenden Befehls vom virtuellen Computer deinstalliert werden.
 
       get-azureVM -ServiceName KPTRDemo -Name KPTRDemo | Set-AzureVMCustomScriptExtension -Uninstall | Update-AzureVM
 
-### Verwenden der CustomScript-Erweiterung mit Vorlagen
+### Verwenden der benutzerdefinierten Skripterweiterung mit Vorlagen
 
-Um Informationen zur Verwendung der CustomScript-Erweiterung mit Vorlagen zu erhalten, lesen Sie die Dokumentation [hier] (virtual-machines-extensions-customscript -with template.md).
+Um Informationen zur Verwendung der benutzerdefinierten Skripterweiterung mit Vorlagen zu erhalten, lesen Sie die Dokumentation [hier] (virtual-machines-extensions-customscript -with template.md).
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

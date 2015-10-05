@@ -13,8 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/09/2015"
+   ms.date="09/22/2015"
    ms.author="barbkess;twounder;JRJ@BigBangData.co.uk;"/>
+
 
 # Was ist Azure SQL Data Warehouse?
 
@@ -78,4 +79,4 @@ Erfahren Sie mehr über die [Data Warehouse-Workload]. [Beispieldaten] [bereitst
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO4-->

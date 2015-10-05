@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Hochladen einer Windows Server-VHD nach Azure"
-	description="Erfahren Sie, wie Sie eine virtuelle Festplatte (Virtual Hard Disk, VHD) mit dem Betriebssystem Windows Server in Azure erstellen und hochladen."
+	pageTitle="Erstellen und Hochladen einer Windows Server-VHD nach Azure unter Verwendung von PowerShell"
+	description="Hier finden Sie Informationen Sie zum Erstellen und Hochladen einer Windows Server-basierten virtuellen Festplatte (VHD) mit dem klassischen Bereitstellungsmodell und Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -198,4 +198,4 @@ Versuchen Sie nach dem Erstellen eines virtuellen Computers, einen virtuellen SQ
 [Step 3: Prepare the connection to Azure]: #prepAzure
 [Step 4: Upload the .vhd file]: #upload
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Sept15_HO4-->

@@ -1,12 +1,13 @@
-<properties 
-   pageTitle="Automatisierte Sicherung für SQL Server auf virtuellen Azure-Computern"
+<properties
+   pageTitle="Automatisierte Sicherung für virtuelle SQL Server-Computer | Microsoft Azure"
    description="Erläutert die Funktion „Automatisierte Sicherung“ für SQL Server auf virtuellen Azure-Computern."
    services="virtual-machines"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
-   editor="monicar" />
-<tags 
+   editor="monicar"
+   tags="azure-resource-manager" />
+<tags
    ms.service="virtual-machines"
    ms.devlang="na"
    ms.topic="article"
@@ -16,6 +17,9 @@
    ms.author="jroth" />
 
 # Automatisierte Sicherung für SQL Server auf virtuellen Azure-Computern
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
+
 
 Die automatisierte Sicherung konfiguriert automatisch [Managed Backup für Microsoft Azure](https://msdn.microsoft.com/library/dn449496.aspx) für alle vorhandenen und neuen Datenbanken auf einer Azure-VM, auf der SQL Server 2014 Standard oder Enterprise ausgeführt wird. Dies bietet Ihnen die Möglichkeit, reguläre Datenbanksicherungen zu konfigurieren, die permanenten Azure-Blob-Speicher nutzen.
 
@@ -35,7 +39,7 @@ In der folgenden Tabelle werden die Optionen beschrieben, die für die automatis
 
 ## Konfigurieren der automatisierten Sicherung im Portal
 
-Sie können das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkID=525040&clcid=0x409) zum Konfigurieren der automatisierten Sicherung verwenden, wenn Sie einen neuen virtuellen Computer mit SQL Server 2014 erstellen. Der folgende Screenshot zeigt die oben beschriebenen Optionen unter **OPTIONALE KONFIGURATION**|**AUTOMATISIERTE SQL-SICHERUNG**.
+Sie können das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkID=525040&clcid=0x409) zum Konfigurieren der automatisierten Sicherung verwenden, wenn Sie einen neuen virtuellen Computer mit SQL Server 2014 erstellen. Der folgende Screenshot zeigt die oben beschriebenen Optionen unter **OPTIONALE KONFIGURATION** | **AUTOMATISIERTE SQL-SICHERUNG**.
 
 ![Konfiguration der automatischen SQL-Sicherung im Azure-Portal](./media/virtual-machines-sql-server-automated-backup/IC778483.jpg)
 
@@ -53,7 +57,7 @@ Im folgenden PowerShell-Beispiel wird die automatisierte Sicherung für eine vor
     $storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
     $storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
     $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10
-    
+
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
 
 Die Installation und Konfiguration des SQL Server-IaaS-Agents kann mehrere Minuten in Anspruch nehmen.
@@ -66,8 +70,8 @@ Um die Verschlüsselung zu aktivieren, ändern Sie das vorherige Skript, um den 
     $password = "P@ssw0rd"
     $encryptionpassword = $password | ConvertTo-SecureString -AsPlainText -Force  
     $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $encryptionpassword
-    
-    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM 
+
+    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
 
 Führen Sie zum Deaktivieren der automatisierten Sicherung das gleiche Skript ohne den **-Enable**-Parameter für **New-AzureVMSqlServerAutoBackupConfig** aus. Ähnlich wie die Installation kann auch das Deaktivieren der automatisierten Sicherung mehrere Minuten dauern.
 
@@ -107,6 +111,6 @@ Weitere Informationen zur Sicherung und Wiederherstellung für SQL Server auf Az
 
 Eine verwandte Funktion für SQL Server-VMs in Azure ist die [automatisierte Anwendung von Patches für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-automated-patching.md).
 
-Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
+Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO4-->

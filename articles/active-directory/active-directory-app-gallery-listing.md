@@ -1,6 +1,6 @@
 <properties
    pageTitle="Ihre Anwendung im Azure Active Directory-Anwendungskatalog auflisten"
-   description="Eine umfassende Anleitung für an Entwickler ausgerichtete Ressourcen für Azure Active Directory"
+   description="Auflisten einer Anwendung, die einmaliges Anmelden unterstützt, im Azure Active Directory-Katalog | Microsoft Azure"
    services="active-directory"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/30/2015"
+   ms.date="09/17/2015"
    ms.author="mbaldwin"/>
 
 
@@ -56,6 +56,5 @@ Nach Abschluss der Tests kann die Anwendung im Azure Active Directory-Anwendungs
 > Großes Anwendungssymbol einfügen (PNG-Datei, 215 px mal 215 px, Volltonfarbe für den Hintergrund):
 >
 > Logo einfügen (PNG-Datei, 150 px mal 122 px, transparente Hintergrundfarbe):
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->

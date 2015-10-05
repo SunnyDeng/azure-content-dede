@@ -1,19 +1,4 @@
-<properties
-   pageTitle="Installieren von Wartungsmodus-Hotfixes"
-   description="Beschreibt die Installation von Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/19/2015"
-   ms.author="v-sharos" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So installieren Sie Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple
 
@@ -33,4 +18,4 @@
 
 6. Nachdem alle Hotfixes angewendet wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Schritt 4: Beenden des Wartungsmodus](storsimple-update-device.md#step4).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO4-->

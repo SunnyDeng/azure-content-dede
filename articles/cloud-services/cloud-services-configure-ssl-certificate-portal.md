@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Konfigurieren von SSL für einen Clouddienst | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können." 
+	pageTitle="Konfigurieren von SSL für einen Clouddienst (Vorschauportal) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können. In diesen Beispielen wird das Azure-Vorschauportal verwendet." 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/28/2015"
+	ms.date="09/22/2015"
 	ms.author="adegeo"/>
 
 
@@ -43,7 +43,7 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 
 -   Das Zertifikat muss einen privaten Schlüssel enthalten.
 -   Das Zertifikat muss für den Schlüsselaustausch erstellt werden und in eine PFX-Datei (Persönlicher Informationsaustausch) exportiert werden können.
--   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf den Clouddienst zugegriffen wird. Für die Domäne cloudapp.net können Sie kein SSL-Zertifikat von einer Zertifizierungsstelle beziehen. Sie müssen einen benutzerdefinierten Domänennamen erwerben, den Sie für den Zugriff auf Ihren Dienst verwenden können. Wenn Sie ein Zertifikat von einer Zertifizierungsstelle anfordern, muss der Name des Antragstellers für das Zertifikat der Domäne entsprechen, über die auf Ihre Anwendung zugegriffen wird. Wenn beispielsweise der benutzerdefinierte Domänenname **contoso.com** lautet, fordern Sie von Ihrer Zertifizierungsstelle ein Zertifikat für **\*.contoso.com** oder **www.contoso.com** an.
+-   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf den Clouddienst zugegriffen wird. Für die Domäne cloudapp.net können Sie kein SSL-Zertifikat von einer Zertifizierungsstelle beziehen. Sie müssen einen benutzerdefinierten Domänennamen erwerben, den Sie für den Zugriff auf Ihren Dienst verwenden können. Wenn Sie ein Zertifikat von einer Zertifizierungsstelle anfordern, muss der Name des Antragstellers für das Zertifikat der Domäne entsprechen, über die auf Ihre Anwendung zugegriffen wird. Wenn beispielsweise der benutzerdefinierte Domänenname **contoso.com** lautet, fordern Sie von Ihrer Zertifizierungsstelle ein Zertifikat für ****.contoso.com** oder **www.contoso.com** an.
 -   Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
 
 Zu Testzwecken können Sie ein selbst signiertes Zertifikat [erstellen](cloud-services-certs-create.md) und verwenden. Ein selbstsigniertes Zertifikat wird nicht über eine Zertifizierungsstelle authentifiziert. Daher kann in diesem Fall die Domäne cloudapp.net als Website-URL verwendet werden. Zum Beispiel wird in der Aufgabe unten ein selbstsigniertes Zertifikat verwendet, in dem der allgemeine Name, der im Zertifikat verwendet wird, **sslexample.cloudapp.net** lautet.
@@ -119,7 +119,7 @@ Stellen Sie eine Verbindung mit dem Portal her, und ...
 1. Wählen Sie den Clouddienst mit einem der folgenden Schritte aus:
     - Wählen Sie im Portal Ihren **Clouddienst** aus. (Befindet sich im Bereich **Alle durchsuchen/Aktuell**.)
     
-        ![Veröffentlichen Sie Ihren Clouddienst.](media/cloud-services-configure-ssl-certificate-portal/browse.png)
+        ![Clouddienst veröffentlichen](media/cloud-services-configure-ssl-certificate-portal/browse.png)
     
         **ODER**
         
@@ -155,4 +155,11 @@ Jetzt wird die Bereitstellung in Azure ausgeführt, und Sie können eine HTTPS-V
 
 [Azure Portal]: http://portal.azure.com/
 
-<!------HONumber=August15_HO7-->
+## Nächste Schritte
+
+* [Allgemeine Konfiguration Ihres Clouddiensts](cloud-services-how-to-configure-portal.md)
+* Weitere Informationen zum [Bereitstellen eines Clouddiensts](cloud-services-how-to-create-deploy-portal.md)
+* Konfigurieren eines [benutzerdefinierten Domänennamens](cloud-services-custom-domain-name-portal.md)
+* [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
+
+<!---HONumber=Sept15_HO4-->

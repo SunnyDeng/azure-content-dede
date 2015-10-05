@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern"
-	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei azuredeploy.json für die SharePoint-Farm mit drei Servern."
+	pageTitle="ARM-Vorlage 3-Server SharePoint-Farm | Microsoft Azure"
+	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei ";azuredeploy.json"; für die SharePoint-Farm mit drei Servern."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -10,13 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ms.tgt_pltfrm="vm-windows-sharepoint"
+	ms.workload="infrastructure-services"                                                                             ms.tgt_pltfrm="vm-windows-sharepoint"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/28/2015"
 	ms.author="davidmu"/>
 
 # Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Dieses Thema führt Sie schrittweise durch die Struktur der Vorlagendatei "azuredeploy.json" für die SharePoint-Farm mit drei Servern. Von [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json) aus können Sie den Inhalt dieser Vorlage in Ihrem Browser anzeigen.
 
@@ -51,7 +53,7 @@ Im Abschnitt **"Parameter"** werden die Parameter angegeben, mit denen Daten in 
 
 ## Abschnitt "Variablen"
 
-Der Abschnitt **"Variablen"** gibt Variablen und deren Werte an, die die Vorlage verwendet. Variablenwerte können explizit festgelegt oder von Parameterwerten abgeleitet werden. Im Gegensatz zu Parametern stellen Sie diese nicht bereit, wenn Sie die Vorlage ausführen. Es können bis zu 100 Variablen definiert werden. Hier einige Beispiele:
+Der Abschnitt **"Variablen"** gibt die von der Vorlage verwendeten Variablen und deren Werte an. Variablenwerte können explizit festgelegt oder von Parameterwerten abgeleitet werden. Im Gegensatz zu Parametern stellen Sie diese nicht bereit, wenn Sie die Vorlage ausführen. Es können bis zu 100 Variablen definiert werden. Hier einige Beispiele:
 
 	"LBFE": "LBFE",
 	"LBBE": "LBBE",
@@ -368,10 +370,10 @@ Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Man
 
 ## Zusätzliche Ressourcen
 
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md) [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
+[Azure Computing-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md) [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
 [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO4-->

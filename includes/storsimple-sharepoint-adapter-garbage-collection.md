@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 Dieses Verfahren umfasst Folgendes:
 
@@ -21,9 +22,9 @@ Dieses Verfahren umfasst Folgendes:
 
 5. Fügen Sie der entschlüsselten Datei „web.config“ unter dem Knoten **<connectionStrings>** die Verbindungszeichenfolge für Ihre SQL Server-Instanz und den Namen der Inhaltsdatenbank hinzu. Siehe folgendes Beispiel.
 
-    `<add name=”RBSMaintainerConnectionWSSContent” connectionString="Data Source=SHRPT13-SQL12\SHRPT13;Initial Catalog=WSS_Content;Integrated Security=True;Application Name=&quot;Remote Blob Storage Maintainer for WSS_Content&quot;" providerName="System.Data.SqlClient" />`
+    `<add name=”RBSMaintainerConnectionWSSContent” connectionString="Data Source=SHRPT13-SQL12\SHRPT13;Initial Catalog=WSS_Content;Integrated Security=True;Application Name=";Remote Blob Storage Maintainer for WSS_Content";" providerName="System.Data.SqlClient" />`
 
-6. Verschlüsseln Sie die Datei „web.config“ mithilfe von `aspnet_regiis –pef connectionStrings` wieder.
+6. Verwenden Sie `aspnet_regiis –pef connectionStrings`, um die Datei „web.config“ erneut zu verschlüsseln.
 
 7. Benennen Sie die Datei „Web.config“ in „Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config“ um.
 
@@ -37,7 +38,7 @@ Dieses Verfahren umfasst Folgendes:
 
        `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
 
-2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb vorübergehend zu deaktivieren. Im Zuge dieser Aktion wird auch der Papierkorb für alle dazugehörigen Websitesammlungen geleert. Klicken Sie auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **AUS** fest.
+2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die **Allgemeinen Webanwendungseinstellungen** für die gewünschte Inhaltsdatenbank, um den Papierkorb vorübergehend zu deaktivieren. Im Zuge dieser Aktion wird auch der Papierkorb für alle dazugehörigen Websitesammlungen geleert. Klicken Sie dazu auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den **Status des Papierkorbs** auf **AUS** fest.
 
     ![Allgemeine Webanwendungseinstellungen](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
 
@@ -61,6 +62,6 @@ Dieses Verfahren umfasst Folgendes:
 
       `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
 
-2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb wieder zu aktivieren. Klicken Sie auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **EIN** fest.
+2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die **Allgemeinen Webanwendungseinstellungen** für die gewünschte Inhaltsdatenbank, um den Papierkorb wieder zu aktivieren. Klicken Sie auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den „Status des Papierkorbs“ auf **EIN** fest.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO4-->
