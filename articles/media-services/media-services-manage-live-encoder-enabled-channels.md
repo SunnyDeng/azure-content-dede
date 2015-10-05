@@ -92,7 +92,7 @@ Wenn der **Encodertyp** die Einstellung **Standard** aufweist, gibt es folgende 
 - Single-Bitrate **RTMP**
 - Single-Bitrate **Fragmentiertes MP4** (Smooth Streaming)
 
-Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 
 ####RTP (MPEG-TS) – MPEG-2-Transportdatenstrom über RTP.  
 
@@ -394,7 +394,7 @@ Beendet|Beendet|Nein
 - Ein Kanal kann nur beendet werden, wenn er den Status „Wird ausgeführt“ aufweist und alle Programme im Kanal beendet wurden.
 - In der Standardeinstellung können Sie Ihrem Media Services-Konto nicht mehr als 5 Livekanäle hinzufügen. Hierbei handelt es sich um eine weiche Kontingentgrenze bei allen neuen Konten. Weitere Informationen finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal.
-- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [￼diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
+- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
 
 ##Bekannte Probleme
 

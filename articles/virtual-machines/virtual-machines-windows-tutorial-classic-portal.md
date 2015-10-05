@@ -40,7 +40,7 @@ Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
 
 ## <a id="createvirtualmachine"> </a>Erstellen eines virtuellen Computers
 
-In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼￼im Azure-Portal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
+In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Azure-Portal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
 
 > [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, erweiterte Überwachungs- und Diagnosefeatures zu verwenden, Premium-Speicher einzusetzen und vieles mehr. Die verfügbaren Optionen zum Konfigurieren eines virtuellen Computers sind in den beiden Portalen im Wesentlichen ähnlich, aber nicht identisch. Verwenden Sie z. B. das Vorschauportal, um einen virtuellen Computer mit Premium-Speicher zu konfigurieren.
 

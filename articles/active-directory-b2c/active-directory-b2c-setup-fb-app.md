@@ -24,7 +24,7 @@
 
 Um Facebook als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden zu können, müssen Sie zuerst eine Facebook-Anwendung erstellen und die entsprechenden Parameter bereitstellen. Sie benötigen dazu ein Facebook-Konto. Wenn Sie kein Facebook-Konto haben, können Sie ein Konto unter [https://www.facebook.com/](https://www.facebook.com/) erstellen.
 
-1. Navigieren Sie zur [Facebook-Entwickler-Website](https://developers.facebook.com/)￼, und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
+1. Navigieren Sie zur [Facebook-Entwickler-Website](https://developers.facebook.com/), und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
 2. Falls Sie dies noch nicht getan haben, klicken Sie auf **Apps** und dann auf **Register as a Developer**, akzeptieren Sie die Richtlinie, und führen Sie die Schritte für die Registrierung aus.
 3. Klicken Sie auf **Apps** und dann auf **Add a new app**. Wählen Sie dann **Website** als Plattform aus, und klicken Sie auf **Skip and Create App ID**.
 

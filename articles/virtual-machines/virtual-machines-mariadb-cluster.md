@@ -176,7 +176,7 @@ Die Ausgabe sieht in etwa wie folgt aus: `5112500ae3b842c8b9c604889f8753c3__Open
 
 			vi /etc/my.cnf.d/server.cnf
 
-	- Bearbeiten Sie den Abschnitt **[￼￼galera]￼￼**, und bereinigen Sie ihn.
+	- Bearbeiten Sie den Abschnitt **[galera]**, und bereinigen Sie ihn.
 
 	- Bearbeiten Sie den Abschnitt **[mariadb]**.
 
@@ -362,7 +362,7 @@ Es empfiehlt sich unter Umständen, sich über eine [weitere Möglichkeit zur Gr
 <!--Image references-->
 
 <!--Link references-->
-[￼￼galera]: http://galeracluster.com/products/
+[galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/documentation/articles/xplat-cli/
 [Befehlsreferenz zur Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/

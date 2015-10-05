@@ -111,7 +111,7 @@ Fügen Sie eine weitere Klasse namens `PlayerRank` hinzu.
 
 Beide Klassen erben von der **EntityData**-Klasse. Durch das Ableiten von **EntityData** wird die Nutzung der Daten für die App erleichtert. Es wird die plattformübergreifende Clientbibliothek für Azure Mobile Services verwendet. **EntityData** macht außerdem das [Behandeln von Datenbank-Schreibkonflikten](mobile-services-windows-store-dotnet-handle-database-conflicts.md) leichter für die App.
 
-Die `PlayerRank`-Klasse verfügt über eine ￼[Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx)￼, die auf die zugehörige `Player`￼￼￼-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
+Die `PlayerRank`-Klasse verfügt über eine [Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx), die auf die zugehörige `Player`-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
 
 ## Hinzufügen von Web-API-Controllern
 
@@ -308,7 +308,7 @@ Fügen Sie anschließend den folgenden Code zu `PlayerRankController` hinzu:
         return Ok();
     }
 
-Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`￼￼￼-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
+Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
 
 1.	Fügt einen neuen Wert für `PlayerRank` für den Spieler hinzu, falls er nicht bereits in der Datenbank vorhanden ist.
 2.	Aktualisiert das Ergebnis des Spielers.

@@ -30,7 +30,7 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
  
 2. Klicken Sie auf **Einstellungen**, **Benutzerauthentifizierung**, und dann auf **Facebook**. Kopieren Sie den **Umleitungs-URI** aus dem Facebook-Blatt. Diesen verwenden Sie mit der Facebook-App.
  
-3. Navigieren Sie in einem anderen Browserfenster zur Website für [Facebook-Entwickler]￼, und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
+3. Navigieren Sie in einem anderen Browserfenster zur Website für [Facebook-Entwickler], und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
 
 4. (Optional) Falls Sie sich noch nicht registriert haben, klicken Sie auf **Apps** und dann auf **Register as a Developer**, akzeptieren Sie die Richtlinie, und führen Sie die Registrierungsschritte durch.
 

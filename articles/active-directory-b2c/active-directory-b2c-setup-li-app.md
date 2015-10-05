@@ -24,7 +24,7 @@
 
 Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden zu können, müssen Sie zuerst eine LinkedIn-Anwendung erstellen und die entsprechenden Parameter bereitstellen. Sie benötigen dazu ein LinkedIn-Konto. Wenn Sie kein LinkedIn-Konto haben, können Sie ein Konto unter [https://www.linkedin.com/](https://www.linkedin.com/) erstellen.
 
-1. Navigieren Sie zur [LinkedIn-Entwickler-Website](https://www.developer.linkedin.com/)￼, und melden Sie sich mit den Anmeldeinformationen für Ihr LinkedIn-Konto an.
+1. Navigieren Sie zur [LinkedIn-Entwickler-Website](https://www.developer.linkedin.com/), und melden Sie sich mit den Anmeldeinformationen für Ihr LinkedIn-Konto an.
 2. Klicken Sie in der oberen Menüleiste auf **Meine Apps** und dann auf **Anwendung erstellen**.
 
     ![LinkedIn – Neue App](./media/active-directory-b2c-setup-li-app/linkedin-new-app.png)
