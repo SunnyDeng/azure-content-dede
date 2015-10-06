@@ -886,7 +886,16 @@ Zuerst schreiben wir unser `getTask`-Element:
  
  **In derselben Datei** mit dem Namen `ToDoActivity.java`:
  
- ``` private URL getEndpointUrl() { URL endpoint = null; try { endpoint = new URL(Constants.SERVICE\_URL); } catch (MalformedURLException e) { e.printStackTrace(); } return endpoint; }
+```
+    private URL getEndpointUrl() {
+        URL endpoint = null;
+        try {
+            endpoint = new URL(Constants.SERVICE_URL);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return endpoint;
+    }
 
  ```
 
@@ -962,18 +971,21 @@ Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https:/
 ```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-NativeClient-Android```
 
 
-### Important Information
+### Wichtige Informationen
 
 
-#### Encryption
+#### Verschlüsselung
 
-ADAL encrypts the tokens and store in SharedPreferences by default. You can look at the StorageHelper class to see the details. Android introduced AndroidKeyStore for 4.3(API18) secure storage of private keys. ADAL uses that for API18 and above. If you want to use ADAL for lower SDK versions, you need to provide secret key at AuthenticationSettings.INSTANCE.setSecretKey
+Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPreferences gespeichert. Sehen Sie sich die StorageHelper-Klasse an, um einen Einblick in die Details zu erhalten. Für Android wurde AndroidKeyStore für 4.3 (API18) zum sicheren Speichern privater Schlüssel eingeführt. ADAL nutzt dieses Verfahren für API18 und höher. Falls Sie ADAL für frühere SDK-Versionen verwenden möchten, müssen Sie unter „AuthenticationSettings.INSTANCE.setSecretKey“ einen geheimen Schlüssel angeben.
 
-#### Session cookies in Webview
+#### Sitzungscookies in Webview
 
-Android webview does not clear session cookies after app is closed. You can handle this with sample code below:
-```
-CookieSyncManager.createInstance(getApplicationContext()); CookieManager cookieManager = CookieManager.getInstance(); cookieManager.removeSessionCookie(); CookieSyncManager.getInstance().sync(); ``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: ```
+CookieSyncManager.createInstance(getApplicationContext());
+CookieManager cookieManager = CookieManager.getInstance();
+cookieManager.removeSessionCookie();
+CookieSyncManager.getInstance().sync();
+``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
  
 
 <!---HONumber=Sept15_HO4-->

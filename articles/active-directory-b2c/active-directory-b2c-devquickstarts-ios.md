@@ -650,4 +650,4 @@ Sie können nun mit den B2C-Themen für fortgeschrittenere Benutzer fortfahren. 
 
 [Anpassen der Benutzeroberfläche einer B2C-App >>]()
 
-<!---HONumber=Sept15_HO4-->
+<!----HONumber=Sept15_HO4-->

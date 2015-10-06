@@ -20,9 +20,7 @@
 
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-native-switcher](../../includes/active-directory-b2c-devquickstarts-native-switcher.md)]-->
 
-Mit Azure AD B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen.  In diesem Artikel 
-erfahren Sie, wie eine .NET WPF-App für eine Aufgabenliste erstellt wird, die Benutzerregistrierung, -anmeldung und die Verwaltung von Profilen umfasst. Sie umfasst auch die Unterstützung für die Registrierung und Anmeldung mit einem Benutzernamen oder
-einer E-Mail-Adresse sowie über Konten sozialer Netzwerke wie Facebook oder Google.
+Mit Azure AD B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen. In diesem Artikel erfahren Sie, wie eine .NET WPF-App für eine Aufgabenliste erstellt wird, die Benutzerregistrierung, -anmeldung und die Verwaltung von Profilen umfasst. Sie umfasst auch die Unterstützung für die Registrierung und Anmeldung mit einem Benutzernamen oder einer E-Mail-Adresse sowie über Konten sozialer Netzwerke wie Facebook oder Google.
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
@@ -88,16 +86,13 @@ Wenn `TaskService` Anforderungen von `TaskClient` erhält, sucht er nach einem g
   </appSettings>
   ```
 
-If you want to learn how a web API securely authenticates requests using Azure AD B2C, check out our
-[Web API Getting Started article](active-directory-b2c-devquickstarts-api-dotnet.md).
+Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
 
-## 6. Execute policies
-Now that the `TaskService` is ready to authenticate requests, we can implement the `TaskClient`.  Your app communicates with Azure AD B2C by sending HTTP authentication requests,
-specifying the policy it wishes to execute as part of the request.  For .NET desktop applications, you can use the **Active Directory Authentication Library (ADAL)**
-to send OAuth 2.0 authentication messages, execute policies, and get tokens for calling web APIs.
+## 6. Ausführen von Richtlinien
+Nun, da `TaskService` zum Authentifizieren von Anforderungen bereit ist, können wir den `TaskClient` implementieren. Ihre App kommuniziert mit Azure AD B2C durch Senden von HTTP-Authentifizierungsanforderungen, in denen die Richtlinie, die ausgeführt werden soll, als Teil der Anforderung angegeben wird. Für .NET-Desktopanwendungen können Sie die **Active Directory-Authentifizierungsbibliothek (ADAL)** zum Senden von OAuth 2.0-Authentifizierungsnachrichten, zum Ausführen von Richtlinien und zum Abrufen von Token für den Aufruf von Web-APIs verwenden.
 
-#### Install ADAL
-Begin by adding ADAL to the TaskClient project using the Visual Studio Package Manager Console.
+#### Installieren von ADAL
+Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole von Visual Studio zum TaskClient-Projekt hinzu.
 
 ```
 PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TaskClient -IncludePrerelease
