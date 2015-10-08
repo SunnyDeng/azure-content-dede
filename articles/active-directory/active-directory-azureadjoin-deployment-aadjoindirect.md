@@ -23,7 +23,9 @@ Szenario 1: Unternehmen, die größtenteils in der Cloud sind
 --------------------------------------------------------
 Azure AD Join kann davon profitieren, wenn Sie aktuell die Identitäten für Ihr Unternehmen in der Cloud ausführen und verwalten, oder diese in Kürze in die Cloud umziehen. Sie können ein Konto verwenden, das Sie in Azure AD erstellt haben, um sich bei Windows 10 anzumelden. Ihre Benutzer können ihre Computer entweder über [den Prozess des Eindrucks beim ersten Ausführen](active-directory-azureadjoin-user-frx.md) oder über [die Einstellungsumgebung](active-directory-azureadjoin-user-upgrade.md) mit Azure AD verknüpfen. Ihre Benutzer profitieren nun vom SSO-Zugriff auf ihre Cloudressourcen wie Office 365 entweder im Browser oder in den Office-Anwendungen.
 
-Szenario 2: Bildungseinrichtungen ----------------------------------------------------------------------------------Bildungseinrichtungen weisen in der Regel zwei Benutzertypen auf: Lehrkräfte und Schüler. Lehrkräfte werden als längerfristige Mitglieder der Organisation betrachtet, sodass lokale Konten für diese Benutzer empfohlen werden. Studenten werden jedoch als kurzfristigere Mitglieder der Organisation angesehen und können somit in Azure AD verwaltet werden, sodass Verzeichnisse in der Cloud statt lokal abgelegt werden können. Studenten können sich jetzt mit ihrem Azure AD-Konto bei Windows anmelden und erhalten Zugriff auf die Office 365-Ressourcen in den Office-Anwendungen.
+Szenario 2: Bildungseinrichtungen
+----------------------------------------------------------------------------------
+Bildungseinrichtungen weisen in der Regel zwei Benutzertypen auf: Lehrkräfte und Schüler. Lehrkräfte werden als längerfristige Mitglieder der Organisation betrachtet, sodass lokale Konten für diese Benutzer empfohlen werden. Studenten werden jedoch als kurzfristigere Mitglieder der Organisation angesehen und können somit in Azure AD verwaltet werden, sodass Verzeichnisse in der Cloud statt lokal abgelegt werden können. Studenten können sich jetzt mit ihrem Azure AD-Konto bei Windows anmelden und erhalten Zugriff auf die Office 365-Ressourcen in den Office-Anwendungen.
 
 Szenario 3: Einzelhandelsunternehmen
 ---------------------------------------------------------------------------------------
@@ -85,4 +87,4 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 * [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Sept15_HO4-->
+<!----HONumber=Sept15_HO4-->
