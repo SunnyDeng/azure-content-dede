@@ -46,23 +46,7 @@ Sekundäres Datencenter | Einzelner VMM-Server | Repliziert virtuelle Computer a
 
 ## Informationen zu Workloads
 
-Die ASR-Replikationstechnologien sind mit jeder Anwendung kompatibel, die auf einem virtuellen Computer ausgeführt wird. Wir haben in Zusammenarbeit mit Anwendungsproduktteams zusätzliche Tests durchgeführt, um die Unterstützung der einzelnen Anwendungen noch weiter zu optimieren.
-
-**Workload** | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: Azure)**</p> | <p>**Replizieren virtueller VMware-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller VMware-Computer**</p><p>**(Ziel: Azure)**</p>
----|---|---|---|---
-Active Directory, DNS | J | J | J | J 
-Web-Apps (IIS, SQL) | J | J | J | J
-SCOM | J | J | J | J
-Sharepoint | J | J | J | J
-<p>SAP</p><p>Replizieren eines SAP-Standorts zu Azure (kein Cluster)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
-Exchange (kein DAG) | J | In Kürze verfügbar | J | J
-Remotedesktop/VDI | J | J | J | N/A 
-<p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) 
-Dynamics AX | J | J | J | J
-Dynamics CRM | J | In Kürze verfügbar | J | In Kürze verfügbar
-Oracle | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
-Windows-Dateiserver | J | J | J | J
-
+In [diesem Dokument](site-recovery-workload.md) finden Sie Informationen zur Verwendung von Azure Site Recovery für unterschiedliche Workloads.
 
 ## Features und Anforderungen 
 
@@ -90,4 +74,4 @@ Speicherzuordnung|Nicht zutreffend|Ordnet Speicherklassifizierungen auf VMM-Quel
 Lesen Sie nach dieser Übersicht die [bewährten Methoden](site-recovery-best-practices.md), um mit der Planung der Bereitstellung zu beginnen.
  
 
-<!---HONumber=Sept15_HO4-->
+<!----HONumber=Sept15_HO4-->
