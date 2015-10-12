@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Einrichten von Stagingumgebungen für Web-Apps in Azure App Service"
 	description="Erfahren Sie, wie Sie Stagingveröffentlichungen Ihrer Web-Apps in Azure App Service verwenden."
-	services="app-service\web"
+	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
 	writer="cephalin"
@@ -10,11 +10,11 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="web"
+	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="09/21/2015"
 	ms.author="cephalin"/>
 
 # Einrichten von Stagingumgebungen für Web-Apps in Azure App Service
@@ -127,6 +127,11 @@ Das Konfigurieren von Auto Swap für einen Slot ist einfach. Führen Sie die fol
 
 3. Führen Sie einen Code-Push für diesen Bereitstellungsslot aus. Auto Swap erfolgt nach kurzer Zeit, und die Aktualisierung wird an der URL des Zielslots wiedergegeben.
 
+<a name="Multi-Phase"></a>
+## Verwenden eines mehrstufigen Austauschs für Ihre Web-App ##
+
+Ein mehrstufiger Austausch steht zur Verfügung, um die Validierung im Kontext von Konfigurationselementen zu vereinfachen, die in einem Slot wie Verbindungszeichenfolgen verbleiben sollen. In diesen Fällen kann es hilfreich sein, solche Konfigurationselemente aus dem Austauschziel auf die Austauschquelle anzuwenden und vor dem tatsächlichen Austausch zu validieren. Sobald die Konfigurationselemente des Austauschziels auf die Austauschquelle angewendet wurden, können die verfügbaren Aktionen entweder zum Abschließen des Austauschs oder zum Wiederherstellen der ursprünglichen Konfiguration der Austauschquelle genutzt werden, wodurch der Austausch außerdem abgebrochen wird. Beispiele für Azure PowerShell-Cmdlets für den mehrstufigen Austausch sind im Abschnitt „Azure-PowerShell-Cmdlets für Bereitstellungsslots“ enthalten.
+
 <a name="Rollback"></a>
 ## So setzen Sie eine Produktions-App nach dem Austausch wieder zurück ##
 Wenn nach dieser Aktion Fehler in der Produktionswebsite feststellen, führen Sie ein Rollback in den Zustand vor dem Austausch aus, indem Sie dieselben beiden Slots sofort austauschen.
@@ -147,49 +152,43 @@ Azure PowerShell ist ein Modul, das Cmdlets für die Verwaltung von Azure über 
 
 - Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](../install-configure-powershell.md).  
 
-- Um eine Liste der verfügbaren Cmdlets für Azure App Service in PowerShell zu erhalten, rufen Sie `help AzureWebsite` auf.
+- Um den neuen Azure-Ressourcen-Manager-Modus für PowerShell-Cmdlets verwenden zu können, beginnen Sie mit dem folgenden: `Switch-AzureMode -Name AzureResourceManager`.
 
 ----------
 
-### Get-AzureWebsite
-Das Cmdlet **Get-AzureWebsite** gibt Informationen über Azure-Web-Apps für das aktuelle Abonnement an, wie in folgendem Beispiel:
+### Web-App erstellen
 
-`Get-AzureWebsite webappslotstest`
-
-----------
-
-### New-AzureWebsite
-Sie können einen Bereitstellungsslot mithilfe des Cmdlets **New-AzureWebsite** erstellen und dabei die Namen der Web-App und des Slots angeben. Geben Sie zudem dieselbe Region wie die Web-App für die Erstellung des Bereitstellungsslot an, wie in folgendem Beispiel.
-
-`New-AzureWebsite webappslotstest -Slot staging -Location "West US"`
+`New-AzureWebApp -ResourceGroupName [resource group name] -Name [web app name] -Location [location] -AppServicePlan [app service plan name]`
 
 ----------
 
-### Publish-AzureWebsiteProject
-Sie können das Cmdlet **Publish-AzureWebsiteProject** wie in folgendem Beispiel für die Inhaltsbereitstellung verwenden.
+### Erstellen eines Bereitstellungsslots für eine Web-App
 
-`Publish-AzureWebsiteProject -Name webappslotstest -Slot staging -Package [path].zip`
-
-----------
-
-### Show-AzureWebsite
-Nachdem die Aktualisierungen des Inhalts und der Konfiguration auf den neuen Steckplatz angewendet wurden, können Sie die Aktualisierungen validieren, indem Sie mithilfe des Cmdlet **Show-AzureWebsite** zum Steckplatz navigieren.
-
-`Show-AzureWebsite -Name webappslotstest -Slot staging`
+`New-AzureWebApp -ResourceGroupName [resource group name] -Name [web app name] -SlotName [deployment slot name] -Location [location] -AppServicePlan [app service plan name]`
 
 ----------
 
-### Switch-AzureWebsiteSlot
-Das Cmdlet **Switch-AzureWebsiteSlot** kann einen Überführungsvorgang ausführen, um den aktualisierten Bereitstellungs-Steckplatz wie in folgendem Beispiel zur Produktions-Website zu machen. Die Produktions-App weist keine Ausfallzeiten auf und durchläuft keinen Kaltstart.
+### Initiieren des mehrstufigen Austauschs und Zuweisen einer Zielslotkonfiguration zu einem Quellslot
 
-`Switch-AzureWebsiteSlot -Name webappslotstest`
+`$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}` `Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01`
 
 ----------
 
-### Remove-AzureWebsite
-Wird ein Bereitstellungs-Steckplatz nicht mehr benötigt, kann dieser mithilfe des Cmdlet **Remove-AzureWebsite** wie in folgendem Beispiel gelöscht werden.
+### Zurücksetzen der ersten Phase des mehrstufigen Austauschs und Wiederherstellen der Quellslotkonfiguration
 
-`Remove-AzureWebsite -Name webappslotstest -Slot staging`
+`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01`
+
+----------
+
+### Überführen von Bereitstellungsslots
+
+`$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}` `Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01`
+
+----------
+
+### Löschen von Bereitstellungsslots
+
+`Remove-AzureResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots –Name [web app name]/[slot name] -ApiVersion 2015-07-01`
 
 ----------
 
@@ -200,7 +199,7 @@ Wird ein Bereitstellungs-Steckplatz nicht mehr benötigt, kann dieser mithilfe d
 
 Die Azure-Befehlszeilenschnittstelle bietet plattformübergreifende Befehle für das Arbeiten mit Azure, einschließlich Unterstützung für die Verwaltung von Web-App-Bereitstellungsslots.
 
-- Anweisungen zur Installation und Konfiguration der Azure-Befehlszeilenschnittstelle, einschließlich Informationen zur Verbindung der Azure-Befehlszeilenschnittstelle mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+- Anweisungen zur Installation und Konfiguration der Azure-Befehlszeilenschnittstelle, einschließlich Informationen zur Verbindung der Azure-Befehlszeilenschnittstelle mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 -  Um eine Liste der verfügbaren Befehle für Azure App Service in der Azure-Befehlszeilenschnittstelle zu erhalten, rufen Sie `azure site -h` auf.
 
@@ -261,4 +260,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

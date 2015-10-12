@@ -56,7 +56,7 @@ Dieser Artikel beschreibt mehrere Anwendungsmuster, die für einfache Anwendunge
 
 - Sie möchten die Funktionen der Azure-Umgebung nutzen, die Azure SQL-Datenbank unterstützt jedoch nicht alle Features, die die Anwendung benötigt. Dies könnte die folgenden Bereiche umfassen:
 
-	- **Datenbankgröße**: Zum Zeitpunkt der Aktualisierung dieses Artikels unterstützt die SQL-Datenbank eine Datenbank mit bis zu 500 GB an Daten. Wenn die Anwendung mehr als 500 GB an Daten erfordert und Sie keine benutzerdefinierten Shardinglösungen implementieren möchten, empfiehlt es sich, SQL Server auf einem virtuellen Azure-Computer zu verwenden. Die neuesten Informationen finden Sie unter [Horizontales Skalieren von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/dn495641.aspx) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn741336.aspx).
+	- **Datenbankgröße**: Zum Zeitpunkt der Aktualisierung dieses Artikels unterstützt die SQL-Datenbank eine Datenbank mit bis zu 500 GB an Daten. Wenn die Anwendung mehr als 500 GB an Daten erfordert und Sie keine benutzerdefinierten Shardinglösungen implementieren möchten, empfiehlt es sich, SQL Server auf einem virtuellen Azure-Computer zu verwenden. Die neuesten Informationen finden Sie unter [Horizontales Skalieren von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/dn495641.aspx) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](../sql-database/sql-database-service-tiers.md).
 	- **HIPAA-Konformität**: Kunden und unabhängige Softwarehersteller (ISVs) können [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md) anstelle von [Azure SQL-Datenbank](../sql-database/sql-database-technical-overview.md) wählen, da SQL Server auf einem virtuellen Azure-Computer vom HIPAA Business Associate Agreement (BAA) abgedeckt wird. Weitere Informationen zur Kompatibilität finden Sie unter [Microsoft Azure Trust Center: Compliance](http://azure.microsoft.com/support/trust-center/compliance/) (in englischer Sprache).
 	- **Features auf Instanzebene**: Zum aktuellen Zeitpunkt unterstützt die SQL-Datenbank keine Funktionen, die sich außerhalb der Datenbank befinden (z. B. verknüpfte Server, Agent-Aufträge, FileStream, Service Broker usw.). Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/ff394102.aspx).
 
@@ -106,7 +106,7 @@ In diesem Anwendungsmuster gibt es nur einen virtuellen Computer auf jeder Ebene
 
 Im Diagramm kann es sich bei den Internetprotokollen um TCP, UDP, HTTP oder HTTPS handeln.
 
->[AZURE.NOTE] Das Einrichten eines virtuellen Netzwerks in Azure ist kostenlos. Allerdings wird das VPN-Gateway für die lokale Verbindung in Rechnung gestellt. Diese Kosten basieren auf dem Zeitraum, in dem die Verbindung bereitgestellt wird und verfügbar ist.
+>[AZURE.NOTE]Das Einrichten eines virtuellen Netzwerks in Azure ist kostenlos. Allerdings wird das VPN-Gateway für die lokale Verbindung in Rechnung gestellt. Diese Kosten basieren auf dem Zeitraum, in dem die Verbindung bereitgestellt wird und verfügbar ist.
 
 ## 2 und 3 Ebenen mit horizontal hochskalierter Präsentationsebene
 
@@ -323,4 +323,4 @@ Weitere Informationen zur Auswahl der richtigen Programmiermethode finden Sie un
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -1,0 +1,62 @@
+<properties
+	pageTitle="Anleitung zum Anpassen vorkonfigurierter Microsoft Azure IoT Suite-Lösungen | Microsoft Azure"
+	description="Dieses Dokument bietet eine Anleitung zum Anpassen vorkonfigurierter Azure IoT Suite-Lösungen."
+	services=""
+	documentationCenter=".net"
+	authors="stevehob"
+	manager="kevinmil"
+	editor=""/>
+
+<tags
+     ms.service="na"
+     ms.devlang="na"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="tbd"
+     ms.date="09/22/2015"
+     ms.author="stevehob"/>
+
+# Anpassen vorkonfigurierter Lösungen
+Die vorkonfigurierten Lösungen in der Azure IoT-Suite ermöglichen es den Kunden, basierend auf dem Zusammenwirken der Dienste in der Suite eine End-to-End-Lösung bereitzustellen. Von hier ausgehend gibt es verschiedene Möglichkeiten zur Anpassung und Erweiterung, um die Lösung für bestimmte Szenarien anzupassen. Diese allgemeinen Anpassungsmöglichkeiten werden in den folgenden Abschnitten beschrieben.
+
+## Suchen des Quellcodes
+Der Quellcode für die vorkonfigurierte Lösung ist auf GitHub in den folgenden Repositorys verfügbar:
+
+- Remoteüberwachung: [https://www.github.com/Azure/azure-iot-remote-monitoring](https://github.com/Azure/azure-iot-remote-monitoring)
+
+Dieser Quellcode wird bereitgestellt, um ein Muster zum Implementieren der Kernfunktionen der Remoteüberwachung mithilfe der Azure IoT-Suite zu veranschaulichen.
+
+## Ändern der vorkonfigurierten Regeln
+Die Remoteüberwachungslösung enthält zwei [Azure Stream Analytics](http://azure.microsoft.com/documentation/services/stream-analytics)-Aufträge, um die im Dashboard angezeigte Telemetrie- und Alarmlogik zu implementieren.
+
+Der erste Auftrag wählt alle Daten aus dem eingehenden Telemetriedatenstrom und erstellt zwei verschiedene Ausgaben. Der Auftrag wird mit "[Lösungsname]-Telemetrie" benannt.
+
+- Die erste Ausgabe wählt einfach mit `SELECT *` alle Daten aus und speichert die Ausgaben in einem Blob. Aus diesem Blobspeicher liest das Dashboard Rohwerte zum Erstellen der Diagramme.
+- Die zweite Ausgabe führt eine `AVG()`-, `MIN()`- und `MAX()`-Berechnung über einem gleitenden Fenster von 5 Minuten aus. Diese Daten werden auf den Drehsteuerungen des Dashboards angezeigt.
+
+Auf der Stream Analytics-Benutzeroberfläche können Sie diese Aufträge direkt bearbeiten, um die Logik zu ändern oder spezifische Logik des Szenarios hinzuzufügen.
+
+Der zweite Auftrag bearbeitet die Werte für "Gerät bis Schwellenwert", die auf der Seite "Regeln" der Lösung erstellt werden. Dieser Auftrag verarbeitet den für jedes Gerät festgelegten Schwellenwert als Referenzdaten. Er bestimmt durch Vergleich des Schwellenwerts, ob dieser größer als (`>`) der tatsächliche Wert ist. Dieser Auftrag kann geändert werden, um z. B. den Vergleichsoperator zu ändern.
+
+***Beachten Sie, dass das Remoteüberwachungsdashboard von bestimmten Daten abhängt. Deshalb kann das Ändern der Aufträge dazu führen, dass das Dashboard fehlschlägt.***
+
+## Hinzufügen eigener Regeln
+Sie können nicht nur die vorkonfigurierten Azure Stream Analytics-Aufträge ändern, sondern auch im Azure-Portal neue Aufträge hinzufügen oder vorhandenen Aufträgen neue Abfragen hinzufügen.
+
+## Anpassen von Geräten
+Eine der am häufigsten Erweiterungsaktivitäten ist das Arbeiten mit speziellen Geräten für Ihr Szenario. Es gibt mehrere Methoden zum Arbeiten mit Geräten. Dazu gehört das Anpassen eines simulierten Geräts an Ihr Szenario oder das Verknüpfen des physischen Geräts mit der Lösung mithilfe des Azure IoT-Geräte-SDK.
+
+Im Dokument [Verbinden des Geräts mit der Azure IoT Suite-Remoteüberwachungslösung](iot-suite-connecting-devices.md) finden Sie eine schrittweise Anleitung zum Hinzufügen von Geräten zur vorkonfigurierten Remoteüberwachungslösung.
+
+### Erstellen eines eigenen simulierten Geräts
+Der Quellcode der Remoteüberwachungslösung (weiter oben erwähnt) enthält einen .NET-Simulator. Dieser Simulator wird als Teil der Lösung bereitgestellt und kann geändert werden, um andere Metadaten oder Telemetrie zu senden oder auf andere Befehle zu reagieren.
+
+Darüber hinaus haben wir ein [C-SDK-Beispiel](https://github.com/Azure/azure-iot-sdks/c/serializer/samples/remote_monitoring) bereitgestellt, das mit der vorkonfigurierten Remoteüberwachungslösung verwendet werden kann.
+
+### Erstellen und Verwenden eines eigenen (physischen) Geräts
+Die [Azure IoT-SDKs](https://github.com/Azure/azure-iot-sdks) bieten Bibliotheken zum Verknüpfen zahlreicher Gerätetypen (Sprachen und Betriebssysteme) mit IoT-Lösungen.
+
+
+Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwebsite](http://azure.microsoft.com/develop/iot), die entsprechende Links und Dokumente enthält.
+
+<!---HONumber=Oct15_HO1-->

@@ -1,177 +1,97 @@
 <properties
-   pageTitle="Erste Schritte: Bereitstellen von SQL Data Warehouses | Microsoft Azure"
-   description="Stellen Sie ein SQL Data Warehouse bereit, indem Sie diese Schritte und Richtlinien befolgen."
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="lodipalm"
-   manager="barbkess"
-   editor=""/>
-
+	pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Vorschauportal | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Vorschauportal erstellen."
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="lodipalm"
+	manager="barbkess"
+	editor=""
+	tags="azure-sql-data-warehouse"/>
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="hero-article"
+   ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="09/29/2015"
+   ms.author="lodipalm;barbkess"/>
 
-# Erste Schritte: Bereitstellen von SQL Data Warehouses #
+# Erstellen eines SQL Data Warehouse im Azure-Vorschauportal#
 
-Dieser Artikel stellt einen Leitfaden für die Bereitstellung eines SQL Data Warehouse in Azure dar. In dieser Anleitung werden die folgenden Aufgaben ausgeführt:
+In diesem Tutorial erfahren Sie, wie einfach es ist, in wenigen Minuten ein Azure SQL Data Warehouse im Azure-Vorschauportal zu erstellen.
 
-1. Erstellen einer neuen SQL Data Warehouse-Datenbank
-2. Konfigurieren eines neuen logischen Servers
-3. Festlegen einer Azure-Firewallregel, um externen Clientzugriff zu ermöglichen
+In dieser exemplarischen Vorgehensweise führen Sie folgende Aktionen aus:
 
-## Kostenlose Azure-Testversion ##
-Sie benötigen ein Azure-Abonnement und eine Genehmigung für SQL Data Warehouse Preview, um die folgenden Aufgaben auszuführen. Wenn Sie noch keinen Zugriff auf ein Azure-Abonnement haben, müssen Sie dies als ersten Schritt erledigen.
+- Erstellen einer neuen SQL Data Warehouse-Datenbank
+- Erstellen eines Servers für die Datenbank
+- Laden von AdventureWorksDW in die neue Datenbank
 
-Sie können eine [kostenlose Testversion][] erhalten, mit der Sie alle Azure-Dienste, einschließlich SQL Data Warehouse, testen können.
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 
-## Anmelden beim Azure-Portal ##
+## Anmelden und Suchen von SQL Data Warehouse
 
-Wenn Sie ein Abonnement haben, können Sie sich beim [Azure-Portal][] anmelden. Melden Sie sich jetzt dort an.
+1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
 
-In den nächsten Schritten setzen wir schnell einen neuen logischen Server auf und erstellen eine neue SQL Data Warehouse-Datenbank.
+2. Klicken Sie im Menü "Hub" auf **Neu** > **Daten und Speicher** > **SQL Data Warehouse**.
 
-## Suchen des SQL Data Warehouse-Diensts
+	![Erstellen eines Data Warehouse](./media/sql-data-warehouse-get-started-provision/new-data-warehouse.png)
 
-Als Erstes müssen wir den SQL Data Warehouse-Dienst im Azure-Portal suchen.
+## Konfigurieren von Leistungs- und anderen grundlegenden Einstellungen
 
-In der oben linken Ecke des Azure-Portals befindet sich die Schaltfläche "Neu". Die Schaltfläche "Neu" ist der Ausgangspunkt zum Erstellen eines neuen Diensts in Azure.
+Füllen Sie im Bereich **SQL Data Warehouse** die folgenden Felder aus. **Server** und **Quelle** werden in den nächsten Abschnitten konfiguriert.
 
-- Klicken Sie jetzt auf die Schaltfläche "Neu".
+1. **Datenbankname**: Geben Sie einen Namen für die SQL Data Warehouse-Datenbank ein.
 
-### Daten + Speicher
+2. **Leistung**: Sie können während der Bereitstellung die Leistung anpassen, mit der die Instanz gestartet wird. Es wird empfohlen, mit 400 DWU zu beginnen, da hierdurch mehr MPP-Vorteile von SQL Data Warehouse zur Geltung kommen.
+     
+    ![Name und DWU](./media/sql-data-warehouse-get-started-provision/name-and-dwu.png)
 
-Durch Klicken auf die Schaltfläche "Neu" werden alle Azure-Dienstkategorien geöffnet. SQL Data Warehouse befindet sich in der Kategorie "Daten + Speicher".
+    > [AZURE.NOTE]Die Leistung wird in Data Warehouse-Einheiten (Data Warehouse Units, DWUs) gemessen. Wenn Sie die Anzahl der DWUs erhöhen, erhöht SQL Data Warehouse die Computerressourcen, die für die Data Warehouse-Datenbankvorgänge verfügbar sind.
 
-- Klicken Sie auf **Daten + Speicher**, um die von Azure angebotenen Dienste für diese Kategorie anzuzeigen.
+	> [AZURE.NOTE]Sie können die Leistungsstufe schnell und einfach ändern, nachdem die Datenbank erstellt wurde. Wenn Sie z. B. die Datenbank nicht verwenden, ziehen Sie den Schieberegler nach links, um Kosten zu senken. Oder erhöhen Sie die Leistung, wenn mehr Ressourcen benötigt werden. Dies ist die skalierbare Leistung von SQL Data Warehouse.
+	
 
-### SQL Data Warehouse
+2. **Ressourcengruppe**. Behalten Sie die Standardwerte bei. Ressourcengruppen sind Container, die Ihnen helfen, eine Sammlung von Azure-Ressourcen zu verwalten. Erfahren Sie mehr über [Ressourcengruppen](../azure-portal/resource-group-portal.md).
+3. **Abonnement**. Wählen Sie das Abonnement für die Abrechnung dieser Datenbank aus.
 
-Wie Sie sehen können, bietet Azure viele Daten- und Speichermodule. Dieser Leitfaden bezieht sich jedoch auf SQL Data Warehouse.
 
-- Fahren Sie fort, und wählen Sie **SQL Data Warehouse**. 
+## Konfigurieren eines logischen Servers
 
-##Zulassung für die Vorschau (Preview)
-Bevor Sie den Installationsvorgang starten können, müssen Sie für das Vorschauprogramm (Preview-Programm) zugelassen werden. Klicken Sie auf die Anmeldung für die Vorschau, und senden Sie diese ab (einreichen). Sie werden per E-Mail benachrichtigt, wenn Ihre Einreichung genehmigt wurde.
+3. Klicken Sie auf **Server** > **Neuen Server erstellen**. Dadurch wird ein logischer Server erstellt, dem die Datenbank zugeordnet wird. Wenn Sie einen bereits vorhandenen V12-Server verwenden möchten, wählen Sie den vorhandenen Server aus, und fahren Sie mit dem nächsten Abschnitt fort.
 
-Sobald Sie die Genehmigung erhalten haben, können Sie die nächsten Schritte ausführen. Hinweis: Es kann mehrere Tage dauern, bis die Genehmigung erteilt wird.
+    ![Erstellen eines neuen Servers](./media/sql-data-warehouse-get-started-provision/create-new-server.png)
 
-## Konfigurieren von SQL Data Warehouse
+    >[AZURE.NOTE]In SQL Data Warehouse und einer SQL-Datenbank bietet ein Server eine einheitliche Methode zum Konfigurieren von cloudbasierten Datenbanken. Zwar ist in Azure ein Server an ein einzelnes Rechenzentrum gebunden, er ist jedoch keine physische Hardware wie ein Server für eine lokale Instanz von SQL Server. Stattdessen ist er Teil der Dienstsoftware. Aus diesem Grund wird er als logischer Server bezeichnet. Beachten Sie, dass im Unterschied zur realen Welt durch die Ausführung von Datenbanken und Data Warehouses auf demselben Server keine gegenseitige Beeinträchtigung der Leistung erfolgt.
 
-Zum Abschließen des Bereitstellungsverfahrens müssen Sie einfach SQL Data Warehouse konfigurieren.
+1. Geben Sie im Fenster **Neuer Server** die erforderlichen Informationen ein.
 
+    Stellen Sie sicher, dass Sie den Servernamen, den Administratornamen und das Kennwort notieren und aufbewahren. Sie benötigen diese Informationen, um sich beim Server anzumelden. – **Servername**. Geben Sie einen Namen für den logischen Server ein. – **Name des Serveradmins**. Geben Sie einen Benutzernamen für das Serveradministratorkonto ein. – **Kennwort**. Geben Sie das Administratorkennwort für den Server ein. - **Standort**. Wählen Sie einen geografischen Standort aus, der sich in Ihrer Nähe oder in der Nähe anderer Azure-Ressourcen befindet. Dies reduziert die Netzwerklatenz, da sich alle Datenbanken und Ressourcen, die zum logischen Server gehören, physisch in derselben Region befinden.
 
-### Datenbankname
+    ![Konfigurieren des neuen Servers](./media/sql-data-warehouse-get-started-provision/configure-new-server.png)
 
-Die erste Konfiguration ist die Benennung der Datenbank.
+1. Klicken Sie auf **OK** um die Serverkonfigurationseinstellungen zu speichern.
 
+## Laden der Beispieldatenbank
 
+1. Wählen Sie **Quelle** > **Beispiel** aus, um die neue Datenbank mit der AdventureWorksDW-Beispieldatenbank zu initialisieren. 
 
-- Nennen Sie die Datenbank im Rahmen dieses Schnellstarts "MySQLDW".
+    ![Erstellen eines Data Warehouse](./media/sql-data-warehouse-get-started-provision/create-data-warehouse.png)
 
+## Abschließen der Datenbankerstellung
 
-> [AZURE.NOTE]Bei der Erstellung Ihrer eigenen Datenbank können Sie diese natürlich nach eigenem Bedarf benennen. Der Name muss jedoch den grundlegenden Benennungsanforderungen von Azure entsprechen.
+1. Klicken Sie auf **Erstellen**, um die SQL Data Warehouse-Datenbank zu erstellen. 
 
-### Leistung
+1. Jetzt müssen Sie lediglich einige Minuten warten. Abschließend wird die Beispieldatenbank auf der Startseite angezeigt.
 
-Die Leistungsoption ist sehr *wichtig*. Über diesen Schieberegler kann die Leistung von SQL Data Warehouse skaliert werden. Sie können die Leistung zu einem beliebigen Zeitpunkt erhöhen oder verringern – nicht nur während der Konfiguration von Data Warehouse. Je weiter Sie den Regler nach rechts schieben, desto mehr Ressourcen stehen zur Verfügung. Wenn diese Ressourcen nicht mehr benötigt werden, können Sie den Schieberegler sofort wieder zurückschieben, um Kosten zu sparen. In SQL Data Warehouse können Sie Ihr Leistungsprofil bei Bedarf ändern, ohne es neu erstellen oder Daten verschieben zu müssen.
-
-- Verwenden Sie den Schieberegler nun, um zu sehen, wie die Data Warehouse-Einheiten (DWU) zunehmen, während Sie den Regler nachts rechts bewegen, und sich verringern, wenn Sie ihn wieder nach links schieben.
-
-- Vor dem Beenden dieses Schritts sollten Sie sicherstellen, dass sich der Schieberegler wieder auf der linken Seite befindet. Ihr neues Data Warehouse ist klein, sodass wir nicht sehr viele Ressourcen benötigen. Bewahren Sie sich die Ressourcen für den verbleibenden Testzeitraum auf.
-
-### Auswählen der Quelle
-
-Diese Option bietet die Möglichkeit, mit einer leeren Datenbank zu starten. Wählen Sie die neue Datenbank als Ausgangspunkt.
-
-> [AZURE.NOTE]Es gibt auch eine zweite Option. Es ist auch möglich, die Datenbank aus einem bereits vorhandenen Wiederherstellungspunkt zu erstellen – eine Wiederherstellungsoption.
-
-### Logischer Server
-
-Ihre neue SQL Data Warehouse-Datenbank befindet sich auf einem logischen Server. Der logische Server sorgt für eine Reihe von Datenbanken für Konfigurationskonsistenz und lagert den Dienst an ein Azure-Rechenzentrum aus.
-
-Die festzulegenden Optionen sind: 1. Servername 2. Name des Serveradmins 3. Kennwort 4. Standort des Rechenzentrums 5. Zugriffsberechtigungen für Azure-Dienste auf den Server
-
-Sie können diese Werte nach Bedarf festlegen. Der Servername muss eindeutig sein. Es empfiehlt sich, ein Rechenzentrum in der Nähe auszuwählen, um die Netzwerklatenz gering zu halten. SQL Data Warehouse enthält außerdem leistungsfähige Features, die andere Azure-Dienste nutzen. Es ist daher ratsam, das Kontrollkästchen für den Zugriff auf Azure-Dienste aktiviert zu lassen.
-
-> [AZURE.NOTE]SQL Data Warehouse muss V12-Server verwenden. Stellen Sie sicher, dass diese Option auf "Ja" festgelegt ist. Azure SQL-Datenbanken und SQL Data Warehouse-Datenbanken können den logischen Server auch gemeinsam verwenden. Es muss jedoch ein V12-Server sein.
-
-> [AZURE.NOTE]Notieren Sie den Servernamen, den Namen des Serveradmins und das Kennwort, und bewahren Sie diese sicher auf. Sie benötigen diese Informationen zum Herstellen einer Verbindung mit der SQL Data Warehouse-Datenbank.
-
-### Ressourcengruppe
-Ressourcengruppen sind Container, die zum Verwalten einer Azure-Ressourcensammlung entwickelt wurden.
-
-Für diese Schnellstartanleitung können die Standardwerte für Ressourcengruppen beibehalten werden.
-
-Erfahren Sie mehr über [Ressourcengruppen](../azure-portal/resource-group-portal.md).
-
-### Abonnement
-Ein einzelner Benutzer kann ein oder mehrere Azure-Abonnements haben. Wenn mehr als ein Abonnement mit Ihrem Benutzernamen verknüpft ist, können Sie wählen, welches Abonnement verwendet werden soll.
-
-Für diesen Leitfaden reichen die Standardwerte aus.
-
-Erstellen wir nun das SQL Data Warehouse.
-
-## Erstellen des Data Warehouse ##
-Sie müssen nur noch auf die Schaltfläche "Erstellen" klicken, um das Data Warehouse zu erstellen.
-
-Glückwunsch! Sie haben Ihre erste SQL Data Warehouse-Datenbank erstellt.
-
-Jetzt sollte wieder das [Azure-Portal][] angezeigt werden. Beachten Sie, dass die SQL Data Warehouse-Datenbank auf der Seite hinzugefügt wurde.
-
-
-An diesem Punkt kann niemand auf die SQL Data Warehouse-Datenbank zugreifen. Aus Gründen der Sicherheit wird in der Standardeinstellung der Clientzugriff für die Datenbank noch nicht konfiguriert.
-
-Daher wird im letzten Schritt des Bereitstellungsverfahrens der Dienst für den externen Zugriff konfiguriert.
-
-## Konfigurieren der Azure-Firewall ##
-
-So führen Sie die erstmalige Konfiguration der Azure-Firewall aus:
-
-1. Klicken Sie auf dem linken Navigationsblatt auf **Durchsuchen**.
-
-2. Wählen Sie **SQL Server** aus.
-
-3. Wählen Sie Ihren logischen SQL Server aus.
-
-4. Wählen Sie Einstellungen aus.
-
-5. Klicken Sie auf **Firewall**.
-
-6. Legen Sie die Firewallregel fest.
-
-    Sie müssen an dieser Stelle einige Einstellungen vornehmen. Die sind die folgenden: – Benennen der Firewallregel –Festlegen eines IP-Adressbereichs, wenn Sie nicht über eine statische IP-Adresse verfügen
-
-    > [AZURE.NOTE]Der Client IP-Adressbereich, den Sie einbeziehen müssen, ist Ihre externe oder öffentliche IP-Adresse. Sie können Ihre externe IP-Adresse über einige Websites wie z. B. <a href="http://www.whatismyip.com" target="\_blank">www.whatismyip.com</a> herausfinden.
-
-7. Speichern Sie Ihre Firewallregel.
-
-
-Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen dem Desktop und dem gerade erstellten Azure SQL Data Warehouse herstellen.
+    ![Portal-Ansicht von SQL Data Warehouse](./media/sql-data-warehouse-get-started-provision/database-portal-view.png)
 
 ## Nächste Schritte
 
-Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen. Nächste Schritte:
+Nachdem Sie jetzt eine Beispieldatenbank für SQL Data Warehouse erstellt haben, erfahren Sie in der nächsten exemplarischen Vorgehensweise, wie SQL Data Warehouse verwendet wird.
 
-1. Data Warehouse – [Verbinden und Abfragen][].
-2. Laden von [Beispieldaten].
+- [Herstellen der Verbindung und Abfragen](./sql-data-warehouse-get-started-connect-query.md)
 
 	> [AZURE.NOTE]Wir möchten diesen Artikel verbessern. Wenn Sie auf die Frage „War dieser Artikel hilfreich?“ mit „Nein“ antworten, bitten wir Sie, einen kurzen Vorschlag dazu einzufügen, was fehlt oder wie der Artikel zu verbessern ist. Vielen Dank im Voraus!
 
-<!--Image references-->
-
-
-<!-- Articles -->
-[Verbinden und Abfragen]: sql-data-warehouse-get-started-connect-query.md
-[Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
-
-<!--External links-->
-[kostenlose Testversion]: https://azure.microsoft.com/DE-DE/pricing/free-trial/
-[Azure-Portal]: https://portal.azure.com/
-
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

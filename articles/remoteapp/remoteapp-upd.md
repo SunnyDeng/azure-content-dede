@@ -1,6 +1,6 @@
 
 <properties 
-    pageTitle="Benutzerprofildaten in Azure RemoteApp"
+    pageTitle="Benutzerprofildaten in Azure RemoteApp | Microsoft Azure"
 	description="Erfahren Sie, wie Benutzerdaten in Azure RemoteApp gespeichert und abgerufen werden können."
 	services="remoteapp"
 	documentationCenter="" 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="08/12/2015" 
+    ms.date="09/29/2015" 
     ms.author="elizapo" />
 
 
@@ -35,7 +35,7 @@ Wenn Sie Zugriff auf die Daten für einen Ihrer Benutzer benötigen (für die Wi
 
 ## Werden die Daten gesichert?
 
-Ja, wir speichern einen Backup der Benutzerdaten je nach geografischem Standort. Die Daten sind schreibgeschützt und auf die gleiche Weise zugänglich, wie die regulären Daten (kontaktieren Sie dafür das Azure RemoteApp-Team), wenn das primäre Rechenzentrum ausgefallen ist.
+Ja, wir speichern einen Backup der Benutzerdaten je nach geografischem Standort. Die Daten sind schreibgeschützt und auf die gleiche Weise zugänglich wie die regulären Daten (kontaktieren Sie dafür das Azure RemoteApp-Team), wenn das primäre Rechenzentrum ausgefallen ist. Die Daten werden in Echtzeit in den Sicherungsspeicherort kopiert, und wir behalten keine Kopien der verschiedenen Versionen bei. Bei einer Beschädigung von Daten sind wir also nicht in der Lage, diese auf eine zuvor funktionierende Version wiederherzustellen. Wenn allerdings das primäre Rechenzentrum ausfällt, können Sie die Benutzerdaten von einem anderen Speicherort abrufen.
 
 ## Wie wird ein Benutzerprofil-Datenträger dem Benutzer auf der Serverseite angezeigt?
 
@@ -54,7 +54,7 @@ Ja, Azure RemoteApp unterstützt Lösungen für freigegebene Daten, insbesondere
 Sie können konfigurieren, dass Azure RemoteApp Benutzern durch Einrichten einer [Umleitung](remoteapp-redirection.md) Zugriff auf lokale Geräte gewährt. Lokale Geräte können dann auf die Daten auf dem Benutzerprofil-Datenträger zugreifen.
 
 ## Kann ich meinen Benutzerprofil-Datenträger als Netzwerkfreigabe verwenden?
-Nein, denn der Datenträger ist nicht persistent. Ein Benutzerprofil-Datenträger ist nur verfügbar, wenn der Benutzer aktiv mit Azure RemoteApp verbunden ist.
+Nein. Benutzerprofil-Datenträger können nicht als Netzwerkfreigabe verwendet werden. Ein Benutzerprofil-Datenträger steht dem Bentuzer nur zur Verfügung, wenn er aktiv mit Azure RemoteApp verbunden ist.
 
 ## Wird beim Löschen eines Benutzers aus einer Sammlung dessen Benutzerprofil-Datenträger gelöscht?
 
@@ -69,6 +69,9 @@ Ja, wenn Sie sich an das [Azure RemoteApp](mailto:remoteappforum@microsoft.com)-
 ## Sind Benutzerprofil-Datenträger offline verfügbar?
 
 Momentan bieten wir über das zehnstündige Zugriffsfenster hinaus keinen Offline-Zugriff auf Benutzerprofil-Datenträger. Dies bedeutet, dass wir derzeit keine Möglichkeit haben, Ihnen längeren Zugriff für komplexere Aufgaben wie dem Ausführen von Antivirus-Software auf Benutzerprofil-Datenträgern oder dem Zugriff auf die Daten für eine Überwachung zu gewähren.
+
+## Werden Einstellungen für Registrierungsschlüssel beibehalten?
+Ja. Alles, was in „HKEY\_Current\_User“ geschrieben ist, ist Teil des Benutzerprofil-Datenträgers.
 
 ## Kann ich Benutzerprofil-Datenträger für eine Sammlung deaktivieren?
 
@@ -123,4 +126,4 @@ Nein, dies wird von Azure RemoteApp nicht unterstützt, da der RDSH genutzt wird
 
 Nein, dies wird von Azure RemoteApp nicht unterstützt.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

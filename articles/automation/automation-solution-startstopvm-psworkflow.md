@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Starten und Beenden von virtuellen Computern mit Azure Automation - PowerShell-Workflow | Microsoft Azure"
-   description="Grafische Version der Azure Automation-Lösung, einschließlich Runbooks zum Starten und Beenden von klassischen virtuellen Computern."
-   services="automation"
-   documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
-   editor="tysonn" />
+	pageTitle="Starten und Beenden von virtuellen Computern mit Azure Automation - PowerShell-Workflow | Microsoft Azure"
+	description="Grafische Version der Azure Automation-Lösung, einschließlich Runbooks zum Starten und Beenden von klassischen virtuellen Computern."
+	services="automation"
+	documentationCenter=""
+	authors="bwren"
+	manager="stevenka"
+	editor="tysonn" />
 <tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
-   ms.author="bwren" />
+	ms.service="automation"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/25/2015"
+	ms.author="bwren" />
 
 # Azure Automation-Lösung – Starten und Beenden virtueller Computer
 
@@ -53,7 +53,7 @@ Die Runbooks enthalten einen kommentierten Hilfetext mit einer Beschreibung und 
 Die Runbooks erfordern die folgenden Assets, die Sie erstellen und mit den entsprechenden Werten füllen müssen.
 
 | Assettyp | Assetname | Beschreibung |
-|:---|:---|:---|
+|:---|:---|:---|:---|
 | Credential | AzureCredential | Enthält die Anmeldeinformationen für ein Konto mit der Berechtigung zum Starten und Beenden virtueller Computer im Azure-Abonnement. Alternativ können Sie ein anderes Anmeldeinformationsasset im Parameter **Credential** der Aktivität **Add-AzureAccount** angeben. |
 | Variable | AzureSubscriptionId | Enthält die Abonnement-ID Ihres Azure-Abonnements. |
 
@@ -64,7 +64,7 @@ Die Runbooks erfordern die folgenden Assets, die Sie erstellen und mit den entsp
 Die Runbooks verfügen jeweils über die folgenden Parameter. Sie müssen Werte für alle obligatorischen Parameter angeben und können optional Werte für andere Parameter je nach Bedarf bereitstellen.
 
 | Parameter | Typ | Erforderlich | Beschreibung |
-|:---|:---|:---|
+|:---|:---|:---|:---|
 | ServiceName | string | Nein | Wenn ein Wert angegeben wird, werden alle virtuellen Computer mit diesem Dienstnamen gestartet oder beendet. Wenn kein Wert angegeben wird, werden alle klassischen virtuellen Computer im Azure-Abonnement gestartet oder beendet. |
 | AzureSubscriptionIdAssetName | string | Nein | Enthält den Namen des [Variablen-Assets](#installing-the-solution), in dem die Abonnement-ID des Azure-Abonnements enthalten ist. Wenn Sie keinen Wert angeben, wird *AzureSubscriptionId* verwendet. |
 | AzureCredentialAssetName | string | Nein | Enthält den Namen des [Anmeldeinformationsassets](#installing-the-solution), in dem die Anmeldeinformationen für das zu verwendende Runbook enthalten sind. Wenn Sie keinen Wert angeben, wird *AzureCredential* verwendet. |
@@ -193,4 +193,4 @@ In den nächsten Zeilen werden die einzelnen virtuellen Computer schrittweise du
 - [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -20,6 +20,8 @@
 
 Erfahren Sie, wie Sie Apache Storm in HDInsight zur Verarbeitung von Sensordaten von Azure Event Hubs verwenden und mit "D3.js" visualisieren. Dieses Dokument beschreibt weiterhin die Verwendung virtueller Azure-Netzwerke zum Verbinden von Storm in HDInsight mit HBase in HDInsight sowie das Speichern von Daten aus der Topologie in HBase.
 
+> [AZURE.NOTE]Die Informationen in diesem Dokument basieren auf der Verwendung eine Windows-basierten Storm auf HDInsight-Clusters. Informationen zum Arbeiten mit Azure Event Hub von Linux-basiertem Storm auf HDInsight finden Sie unter [Verarbeitung von Ereignissen von Azure Event Hubs mit Storm auf HDInsight.](hdinsight-storm-develop-java-event-hub-topology.md)
+
 ## Voraussetzungen
 
 * Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -420,4 +422,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

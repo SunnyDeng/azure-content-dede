@@ -1,14 +1,14 @@
 <properties
 	pageTitle="Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal"
 	description="Beschreibt die Funktionsweise und Einrichtung der rollenbasierten Zugriffssteuerung."
-	services=""
+	services="active-directory"
 	documentationCenter=""
 	authors="IHenkel"
 	manager="stevenpo"
 	editor=""/>
 
 <tags
-	ms.service="multiple"
+	ms.service="active-directory"
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.tgt_pltfrm="Ibiza"
@@ -1275,7 +1275,7 @@ Wir bitten Sie, Azure RBAC zu testen und uns [Feedback](http://aka.ms/azurerbacf
 Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der rollenbasierten Zugriffssteuerung:
 
 + [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](role-based-access-control-powershell.md)
-+ [Verwalten der rollenbasierten Zugriffssteuerung mit XPLAT CLI](role-based-access-control-xplat-cli.md)
++ [Verwalten der rollenbasierten Zugriffssteuerung mit XPLAT CLI](role-based-access-control-xplat-cli-install.md)
 + [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 + [Azure Active Directory Premium und Basic](active-directory-editions.md)
 + [Verknüpfung von Azure-Abonnements mit Azure AD](active-directory-how-subscriptions-associated-directory.md)
@@ -1293,4 +1293,4 @@ Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der r
 [9]: ./media/role-based-access-control-configure/RBACInviteExtUser_NEW.png
 [10]: ./media/role-based-access-control-configure/RBACDirConfigTab.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/01/2015"
+	ms.date="09/28/2015"
 	ms.author="asmalser-msft"/>
 
 #Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?
@@ -80,7 +80,7 @@ Die kennwortbasierte einmalige Anmeldung nutzt eine Browsererweiterung, um die A
 
 Für kennwortbasiertes SSO eignen sich folgende Browser des Endbenutzers:
 
-- Internet Explorer 8, 9 und 10 – unter Windows 7 oder höher
+- Internet Explorer 8, 9 und 10 – unter Windows 7 oder höher (Siehe auch [Bereitstellungshandbuch für Internet Explorer-Erweiterungen](active-directory-saas-ie-group-policy.md))
 - Chrome – unter Windows 7 oder höher und MacOS x oder höher
 - Firefox 26.0 oder höher – unter Windows XP SP2 oder höher und Mac OS X 10.6 oder höher
 
@@ -220,4 +220,4 @@ Diese Links verwenden die gleichen Mechanismen der Zugriffssteuerung wie der Zug
 [5]: ./media/active-directory-appssoaccess-whatis/workdaymobile.png
 [6]: ./media/active-directory-appssoaccess-whatis/deeplink.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

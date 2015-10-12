@@ -23,7 +23,7 @@
 
 MongoDB ist eine Open-Source-Dokumentendatenbank, die hohe Leistung, hohe Verfügbarkeit und automatische Skalierung bereitstellt. MongoDB kann als eigenständige Datenbank oder innerhalb eines Clusters installiert werden und die integrierten Replikationsfunktionen nutzen. In einigen Fällen können Sie mit Replikation die Lesekapazitäten erhöhen. Clients können Lese- und Schreibvorgänge an verschiedene Server senden. Sie können auch Kopien in verschiedenen Datencentern verwalten, um die Positionierung und die Verfügbarkeit von Daten für verteilte Anwendungen zu verbessern. Mit MongoDB bietet die Replikation auch Redundanz und erhöht die Verfügbarkeit von Daten. Durch mehrere Kopien von Daten auf verschiedenen Datenbankservern schützt die Replikation eine Datenbank bei einem Ausfall eines einzelnen Servers. Replikation ermöglicht auch die Wiederherstellung nach Hardwareausfällen und Dienstunterbrechungen. Mit zusätzlichen Kopien der Daten können Sie eine für die Wiederherstellung im Notfall und eine für die Berichterstellung oder Sicherung reservieren.
 
-Zusätzlich zu den verschiedenen Versionen, die bereits in Azure Marketplace verfügbar waren, können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit [Azure PowerShell](../powershell-install-configure.md) oder der [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) mithilfe einer Azure-Ressourcen-Manager-Vorlage einen neuen MongoDB-Cluster bereitstellen.
+Zusätzlich zu den verschiedenen Versionen, die bereits in Azure Marketplace verfügbar waren, können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit [Azure PowerShell](../powershell-install-configure.md) oder der [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) mithilfe einer Azure-Ressourcen-Manager-Vorlage einen neuen MongoDB-Cluster bereitstellen.
 
 Neu bereitgestellte Cluster auf Basis dieser Vorlage besitzen die im folgenden Diagramm beschriebene Topologie, auch wenn andere Topologien leicht durch das Anpassen der in diesem Artikel gezeigten Vorlage erreicht werden können.
 
@@ -693,4 +693,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

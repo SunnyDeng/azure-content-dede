@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/09/2015" 
+	ms.date="09/29/2015" 
 	ms.author="jeffstok"/>
 
 # Schreiben von Abfragen
@@ -22,9 +22,13 @@ Die Stream-Verarbeitungslogik in Azure-Stream Analytics wird als "stehende Abfra
 
 ## So erstellen Sie eine Stream Analytics-Abfrage: ##
 
-1. Klicken Sie im Stream Analytics-Auftrag auf **Abfrage**.
+1. Klicken Sie im Stream Analytics-Auftrag im Azure-Verwaltungsportal auf **Abfrage**.
 
     ![Auswählen der Abfrage](./media/stream-analytics-write-queries/1-stream-analytics-write-queries.png)
+
+    Klicken Sie im Azure-Vorschauportal auf **Abfrage**.
+
+    ![Vorschau – Auswählen der Abfrage](./media/stream-analytics-write-queries/query-preview-portal.png)
 
 2.	Neue Aufträge verfügen über Abfragevorlagen, die Ihnen beim Einstieg helfen. Abfragevorlagen führen eine "Pass-Through"-Abfrage durch, die alle Felder aus den Eingabeereignissen in die Ausgabe überträgt.
 
@@ -36,6 +40,8 @@ Die Stream-Verarbeitungslogik in Azure-Stream Analytics wird als "stehende Abfra
 ## So testen Sie eine Abfrage: ##
 
 Sie können testen, ob sich die Abfrage wie erwartet verhält, indem Sie sie im Browser über eine oder mehrere lokale JSON-Dateien mit den Testdaten ausführen. Dadurch wird weder der Auftrag gestartet noch gibt es Auswirkungen auf die Abrechnung.
+
+> [AZURE.NOTE]Derzeit wird das Testen von Abfragen im Browser im Azure-Vorschauportal nicht unterstützt.
 
 1.	Stellen Sie sicher, dass keine Fehler in der Abfrage enthalten sind (andernfalls ist die Schaltfläche "Testen" deaktiviert), und klicken Sie dann auf die Schaltfläche "Testen".  
 
@@ -64,4 +70,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

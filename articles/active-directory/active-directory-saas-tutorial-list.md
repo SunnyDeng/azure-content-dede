@@ -20,7 +20,7 @@
 
 Um Sie bei der Integration Ihrer gesamten Cloudanwendungen (SaaS) in Azure Active Directory zu unterstützen, haben wir eine Sammlung von Tutorials entwickelt, in denen alle erforderlichen Konfigurationsschritte gezeigt werden.
 
-Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [Active Directory-Marketplace](https://azure.microsoft.com/DE-DE/marketplace/active-directory/).
+Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [Active Directory-Marketplace](https://azure.microsoft.com/de-DE/marketplace/active-directory/).
 
 ##Liste der Tutorials
 
@@ -55,7 +55,6 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Clarizen.jpg)| [Clarizen](https://go.microsoft.com/fwLink/?LinkID=403229&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Clever.jpg)| [Clever](https://go.microsoft.com/fwLink/?LinkID=530228&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_ClickTime.jpg)| [ClickTime](https://go.microsoft.com/fwLink/?LinkID=403236&clcid=0x409)|
-| ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CloudBees.jpg)| [CloudBees](https://go.microsoft.com/fwLink/?LinkID=403228&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CloudPassage.jpg)| [CloudPassage](https://go.microsoft.com/fwLink/?LinkID=512732&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Concur.jpg)| [Concur](https://go.microsoft.com/fwLink/?LinkID=309575&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Coupa.jpg)| [Coupa](https://go.microsoft.com/fwLink/?LinkID=510267&clcid=0x409)|
@@ -160,8 +159,6 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 
 
 
-
-
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

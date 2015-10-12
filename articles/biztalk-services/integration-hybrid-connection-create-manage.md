@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.date="09/24/2015" 
 	ms.author="mandia"/>
 
 
@@ -38,8 +38,10 @@ Eine Hybridverbindung kann im Azure-Verwaltungsportal anhand von Web-Apps **oder
 **So erstellen Sie Hybridverbindungen in BizTalk Services**:
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
-2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. <br/>Wenn Sie keinen vorhandenen BizTalk Service haben, können Sie [einen BizTalk Service erstellen](biztalk-provision-services.md).
-3. Wählen Sie die Registerkarte "Hybridverbindungen" aus: <br/> ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
+2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. 
+
+	Wenn Sie keinen vorhandenen BizTalk Service haben, können Sie [einen BizTalk Service erstellen](biztalk-provision-services.md).
+3. Wählen Sie die Registerkarte „Hybridverbindungen“ aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
 
 4. Wählen Sie **Hybridverbindung erstellen** aus, oder klicken Sie auf die Schaltfläche **HINZUFÜGEN** in der Taskleiste. Geben Sie Folgendes ein:
 
@@ -70,8 +72,8 @@ Nachdem eine Hybridverbindung erstellt wurde, installieren Sie den Hybrid Connec
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. 
-3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: <br/> ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
-4. Wählen Sie auf der Taskleiste **Lokale Einrichtung** aus: <br/> ![Lokale Einrichtung][HCOnPremSetup]
+3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
+4. Wählen Sie auf der Taskleiste **Lokale Einrichtung** aus: ![Lokale Einrichtung][HCOnPremSetup]
 5. Wählen Sie **Installieren und konfigurieren** aus, um den Hybrid Connection Manager auf dem lokalen System herunterzuladen oder auszuführen. 
 6. Wählen Sie das Häkchen, um die Installation zu starten. 
 
@@ -99,7 +101,7 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 	- Die lokale Ressource wird automatisch so konfiguriert, dass sie die primäre lokale Verbindungszeichenfolge verwendet.
 
 - Der Hybrid Connection Manager muss eine gültige lokale Verbindungszeichenfolge für die Autorisierung verwenden. Die Azure-Web-Apps bzw. die mobilen Apps müssen eine gültige Anwendungsverbindungszeichenfolge für die Autorisierung verwenden.
-- Sie können Hybridverbindungen skalieren, indem Sie eine andere Instanz von Hybrid Connection Manager auf einem anderen Server installieren. Konfigurieren Sie den lokalen Listener so, dass er die gleiche Adresse wie der erste lokale Listener verwenden. In diesem Fall wird der Datenverkehr zufällig \(Roundrobin\) zwischen den aktiven lokalen Listenern verteilt. 
+- Sie können Hybridverbindungen skalieren, indem Sie eine andere Instanz von Hybrid Connection Manager auf einem anderen Server installieren. Konfigurieren Sie den lokalen Listener so, dass er die gleiche Adresse wie der erste lokale Listener verwenden. In diesem Fall wird der Datenverkehr zufällig (Roundrobin) zwischen den aktiven lokalen Listenern verteilt. 
 
 
 ## <a name="ManageHybridConnection"></a>Verwalten von Hybridverbindungen
@@ -112,20 +114,22 @@ Zum Verwalten der Hybridverbindungen haben Sie folgende Möglichkeiten:
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. 
-3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: <br/> ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
-4. Wählen Sie die Hybridverbindung aus. Wählen Sie in der Taskleiste **Verbindung verwalten** aus: <br/> ![Verwalten von Optionen][HCManageConnection] <br/> **Verbindung verwalten** listet die Anwendungs- und lokalen Verbindungszeichenfolgen auf. Sie können die Verbindungszeichenfolgen kopieren oder den Zugriffsschlüssel in der Verbindungszeichenfolge regenerieren. <br/> <br/> **Wenn Sie "Regenerieren" auswählen**, verändert sich der freigegebene Zugriffsschlüssel innerhalb der Verbindungszeichenfolge. Gehen Sie wie folgt vor:
-- Wählen Sie im Azure-Verwaltungsportal die Option **Synchronisierungsschlüssel** in der Azure-Anwendung aus.
-- Führen Sie das **lokale Setup** erneut aus. Wenn Sie das lokale Setup erneut ausführen, wird die lokale Ressource automatisch für die Verwendung der aktualisierten primären Verbindungszeichenfolge konfiguriert.
+3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
+4. Wählen Sie die Hybridverbindung aus. Wählen Sie auf der Taskleiste **Verbindung verwalten** aus: ![Verwalten von Optionen][HCManageConnection]
+
+	**Verbindungen verwalten** führt die Anwendung und die Vor-Ort-Verbindungszeichenfolgen auf. Sie können die Verbindungszeichenfolgen kopieren oder den Zugriffsschlüssel in der Verbindungszeichenfolge regenerieren.
+
+	**Wenn Sie "Regenerieren" auswählen**, verändert sich der freigegebene Zugriffsschlüssel innerhalb der Verbindungszeichenfolge. Gehen Sie folgendermaßen vor: – Wählen Sie im Azure-Verwaltungsportal die Option **Synchronisierungsschlüssel** in der Azure-Anwendung aus. – Führen Sie das **lokale Setup** erneut aus. Wenn Sie das lokale Setup erneut ausführen, wird die lokale Ressource automatisch für die Verwendung der aktualisierten primären Verbindungszeichenfolge konfiguriert.
 
 
 #### Verwenden Sie Gruppenrichtlinien, um die von einer Hybridverbindung verwendeten lokalen Ressourcen zu steuern.
 
 1. Laden Sie die [administrativen Vorlagen des Hybrid Connection Manager](http://www.microsoft.com/download/details.aspx?id=42963) herunter.
 2. Extrahieren Sie die Dateien.
-3. Gehen Sie auf dem Computer, der die Gruppenrichtlinie ändert, wie folgt vor: 
+3. Gehen Sie auf dem Computer, der die Gruppenrichtlinie ändert, wie folgt vor:  
 
 	- Kopieren Sie die ADMX-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions*.
-	- Kopieren Sie die ADML-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions\\de-de*.
+	- Kopieren Sie die ADML-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions\\de-DE*.
 
 Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Richtlinie zu ändern.
 
@@ -134,16 +138,16 @@ Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Ri
 
 ## Weiter
 
-[Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md)<br/> [Verbinden mit einem lokalen SQL-Server über Azure-Web-Apps](../web-sites-hybrid-connection-connect-on-premises-sql-server.md)<br/> [Azure Mobile Services und Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md)<br/> [Übersicht über Hybridverbindungen](integration-hybrid-connection-overview.md)
+[Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md) [Verbinden mit einem lokalen SQL-Server über Azure-Web-Apps](../web-sites-hybrid-connection-connect-on-premises-sql-server.md) [Azure Mobile Services und Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md) [Übersicht über Hybridverbindungen](integration-hybrid-connection-overview.md)
 
 
 ## Weitere Informationen
 
-[REST-API zum Verwalten von BizTalk Services auf Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx)<br/> [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md)<br/> [Erstellen eines BizTalk Service mit dem Azure-Verwaltungsportal](biztalk-provision-services.md)<br/> [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](biztalk-dashboard-monitor-scale-tabs.md)<br/>
+[REST-API zum Verwalten von BizTalk Services auf Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx) [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md) [Erstellen eines BizTalk Service mit dem Azure-Verwaltungsportal](biztalk-provision-services.md) [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](biztalk-dashboard-monitor-scale-tabs.md)
 
 
 [HybridConnectionTab]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionTab.png
 [HCOnPremSetup]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

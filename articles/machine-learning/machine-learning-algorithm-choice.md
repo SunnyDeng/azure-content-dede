@@ -14,7 +14,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="08/10/2015"
+	ms.date="09/28/2015"
 	ms.author="brohrer;garye" />
 
 # Auswählen von Algorithmen für Microsoft Azure Machine Learning
@@ -35,7 +35,7 @@ Diese Empfehlungen sind eine Zusammenstellung aus Feedback und Tipps von zahlrei
 
 Die Pfad- und Algorithmusbezeichnungen in den Diagrammen sind wie folgt zu lesen: "Für *&lt;Pfadbezeichnung&gt;* verwenden Sie *&lt;Algorithmus&gt;*". Beispiel: "Für *Geschwindigkeit* verwenden Sie *Logistische Regression mit zwei Klassen*". Manchmal ist mehr als eine Verzweigung gültig. Manchmal ist keine davon eine optimale Lösung. Sie dienen als Faustregelempfehlungen. Machen Sie sich also keine Sorgen über ihre Exaktheit. Einige Datenanalysten, mit denen ich gesprochen habe, haben mir gesagt, dass die einzige sichere Methode zum Herausfinden des idealen Algorithmus darin besteht, alle auszuprobieren.
 
-Es folgt ein Beispiel aus dem [Azure Machine Learning-Katalog](http://gallery.azureml.net/). Dabei handelt es sich um ein Experiment, mit dem mehrere Algorithmen auf dieselben Daten angewendet und die Ergebnisse verglichen werden: [Vergleichen von Multiklassen-Klassifizierungen: Buchstabenerkennung](http://gallery.azureml.net/Details/a635502fc98b402a890efe21cec65b92).
+Es folgt ein Beispiel aus dem [Cortana Analytics-Katalog](http://gallery.azureml.net/). Dabei handelt es sich um ein Experiment, mit dem mehrere Algorithmen auf dieselben Daten angewendet und die Ergebnisse verglichen werden: [Vergleichen von Multiklassen-Klassifizierungen: Buchstabenerkennung](http://gallery.azureml.net/Details/a635502fc98b402a890efe21cec65b92).
 
 ## Ausprägungen des maschinellen Lernens
 
@@ -112,7 +112,7 @@ Einige Lernalgorithmen treffen bestimmte Annahmen über die Struktur der Daten o
 |[Locally Deep Support Vector Machine (lokal tiefe SVM)](https://msdn.microsoft.com/library/azure/dn913070.aspx)|○| | |8|Für große Merkmalssätze geeignet|
 |[Bayes' Point Machine](https://msdn.microsoft.com/library/azure/dn905930.aspx)| |○|●|3| |
 |**Klassifizierung mit mehreren Klassen**| | | | | |
-|[Logistische Regression](https://msdn.microsoft.com/de-de/library/azure/dn905853.aspx)| |●|●|5| |
+|[Logistische Regression](https://msdn.microsoft.com/de-DE/library/azure/dn905853.aspx)| |●|●|5| |
 |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn906015.aspx)|●|○| |6| |
 |[Decision Jungle (Entscheidungsdschungel)](https://msdn.microsoft.com/library/azure/dn905963.aspx)|●|○| |6|Niedriger Speicherbedarf|
 |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn906030.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
@@ -222,4 +222,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

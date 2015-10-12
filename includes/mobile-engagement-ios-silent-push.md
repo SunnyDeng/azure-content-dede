@@ -26,4 +26,4 @@
 	- Legen Sie unter „Targets > Build Settings“ die Option **Enable Bitcode** auf **No** fest. Wählen Sie in der obersten Leiste die Option „ALL“ aus. 
 	- Aktivieren Sie **Push Notifications** in „Targets > Ihr Zielname > Capabilities“.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

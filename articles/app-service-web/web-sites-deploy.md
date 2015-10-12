@@ -1,15 +1,15 @@
 <properties
 	pageTitle="Bereitstellen von Web-Apps in Azure App Service"
 	description="Erfahren Sie, welche Methoden zum Bereitstellen von Inhalten in Web-Apps zur Verfügung stehen."
-	services="app-service\web"
+	services="app-service"
 	documentationCenter=""
 	authors="tdykstra"
 	manager="wpickett"
 	editor="mollybos"/>
 
 <tags
-	ms.service="app-service-web"
-	ms.workload="web"
+	ms.service="app-service"
+	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
@@ -20,60 +20,37 @@
 
 ## Übersicht
 
-Für die Bereitstellung Ihrer eigenen Inhalte in [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) gibt es zahlreiche Optionen. Dieses Thema enthält eine kurze Übersicht über die jeweilige Option und Links, um weitere Informationen zu erhalten.
-
-
-###<a name="cloud"></a>Bereitstellen über ein in der Cloud gehostetes Quellcodeverwaltungssystem
+Dieses Thema enthält eine kurze Übersicht über die Optionen für die Bereitstellung Ihrer eigenen Inhalte auf [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 Für die Bereitstellung einer Web-App ist es am einfachsten, einen [Workflow für die kontinuierliche Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) einzurichten, der in Ihr [Quellcodeverwaltungssystem](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) integriert ist. Durch die Automatisierung ist der Entwicklungsprozess effizienter, und darüber hinaus können auch die Prozesse für die Sicherung und Wiederherstellung besser verwaltet werden und sind zuverlässiger.
 
-Wenn Sie die Quellcodeverwaltung bisher noch nicht eingerichtet haben, ist es am einfachsten, wenn Sie dafür ein in der Cloud gehostetes Quellcodeverwaltungssystem verwenden.
+Informationen zur Bereitstellung aus in der Cloud gehosteten Quellcodeverwaltungssystemen finden Sie in den folgenden Abschnitten weiter unten in diesem Artikel.
 
 * [Visual Studio Online](#vso)
 * [Repositorywebsites über Git](#git)
 * [Repositorywebsites über Mercurial](#mercurial)
 * [Dropbox](#dropbox)
 
-###<a name="ide"></a>Bereitstellen über eine IDE
-
-Bei [Visual Studio](http://www.visualstudio.com/) und [WebMatrix](http://www.microsoft.com/web/webmatrix/) handelt es sich um Microsoft-IDEs (Integrated Development Environments = Integrierte Entwicklungsumgebungen), die Sie für die Webentwicklung verwenden können. Beide stellen integrierte Funktionen für die einfache Bereitstellung von Web-Apps zur Verfügung. [Web Deploy](http://www.iis.net/downloads/microsoft/web-deploy) kann bei beiden Entwicklungsumgebungen zum Einsatz kommen, um zusätzliche Aufgaben, die mit der Bereitstellung in Zusammenhang stehen, zu automatisieren. Bei diesen Aufgaben kann es sich um die Datenbankbereitstellung oder Änderungen hinsichtlich der Verbindungszeichenfolge handeln. Die Bereitstellung kann bei beiden Umgebungen auch mithilfe von [FTP oder FTPS](http://en.wikipedia.org/wiki/File_Transfer_Protocol) erfolgen.
-
-WebMatrix kann schnell installiert werden und ist leicht erlernbar. Visual Studio bietet allerdings viele weitere Funktionen für die Arbeit mit Web-Apps. In der Visual Studio-IDE können Sie Web-Apps erstellen, anhalten, starten und löschen. Darüber hinaus können Sie Protokolle anzeigen, während diese in Echtzeit erstellt werden. Neben vielen weiteren Funktionen ist auch das Remotedebuggen möglich. Visual Studio kann auch mit Quellcodeverwaltungssystemen, wie beispielsweise [Visual Studio Online](#vso), [Team Foundation Server](#tfs) und [Git-Repositorys](#git), integriert werden.
-
-* [Visual Studio](#vs)
-* [WebMatrix](#webmatrix)
-
-###<a name="ftp"></a>Bereitstellen über ein FTP-Dienstprogramm
-
-Unabhängig davon, welche IDE Sie verwenden, können Sie Inhalte in Ihrer Web-App bereitstellen, indem Sie zum Kopieren von Dateien [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol) verwenden. Sie können problemlos FTP-Anmeldeinformationen für eine Web-App erstellen und sie in einer beliebigen Anwendung verwenden, die FTP unterstützt, z. B. Internet Explorer und kostenlose Hilfsprogramme mit vollem Funktionsumfang wie [FileZilla](https://filezilla-project.org/). Web-Apps unterstützen auch das sicherere FTPS-Protokoll.
-
-Obwohl es ziemlich einfach ist, die Dateien Ihrer Web-App mithilfe von FTP-Dienstprogrammen in Azure zu kopieren, berücksichtigen oder koordinieren diese Programme nicht automatisch die dazugehörigen Bereitstellungsaufgaben, wie beispielsweise das Bereitstellen einer Datenbank oder Ändern der Verbindungszeichenfolgen. Bei vielen FTP-Tools werden die Quell- und die Zieldateien nicht verglichen, sodass das Kopieren von unveränderten Dateien übersprungen werden könnte. Wenn bei umfangreichen Web-Apps stets alle Dateien kopiert werden, kann es selbst bei kleineren Updates zu langen Wartezeiten hinsichtlich der Bereitstellung kommen, da immer alle Dateien kopiert werden.
-
-###<a name="onpremises"></a>Bereitstellen über ein lokales Quellcodeverwaltungssystem
-
-Wenn Sie TFS, Git oder Mercurial in einem lokalen (nicht in einer Cloud gehosteten) Repository verwenden, kann die Bereitstellung direkt vom Repository in Web-Apps erfolgen.
+Informationen zur Bereitstellung aus lokalen Quellcodeverwaltungssystemen finden Sie in den folgenden Abschnitten weiter unten in diesem Artikel.
 
 * [Team Foundation Server (TFS)](#tfs)
 * [Lokale Git- oder Mercurial-Repositorys](#onpremises)
 
-###<a name="commandline"></a>Verwenden von Befehlszeilentools und der Azure-REST-Verwaltungs-API
+Sie können die Bereitstellung auch automatisieren, indem Sie Befehlszeilentools nutzen. Informationen zur Bereitstellung mithilfe von Befehlszeilentools finden Sie in den folgenden Abschnitten weiter unten in diesem Artikel.
 
-Die Automatisierung Ihres Workflows für die Entwicklung ist immer die beste Wahl. Wenn Sie diese Aufgabe aber nicht direkt in Ihrem Quellcodeverwaltungssystem ausführen können, können Sie die Automatisierung mithilfe von Befehlszeilentools manuell einrichten. Im Allgemeinen sind dafür mehrere Tools oder Frameworks erforderlich, da bei der Bereitstellung oftmals Website-Verwaltungsfunktionen ausgeführt werden und Inhalte kopiert werden.
-
-Mithilfe von Azure werden die für die Bereitstellung durchzuführenden Website-Verwaltungsaufgaben vereinfacht. Eine REST-Verwaltungs-API und mehrere Frameworks stehen zur Verfügung, sodass das Arbeiten mit der API einfacher ist.
-
-* [FTP](#ftp)
 * [MSBuild](#msbuild)
-* [FTP-Skripte](#ftp2)
+* [FTP-Tools und -Skripte](#ftp)
 * [Windows PowerShell](#powershell)
 * [.NET-Verwaltungs-API](#api)
 * [Installieren der Azure-Befehlszeilenschnittstelle (Azure-CLI)](#cli)
 * [Web Deploy-Befehlszeile](#webdeploy)
  
-###<a name="octopus"></a>Octopus Deploy
+Manchmal ist es einfacher, die Bereitstellung von Ihrer integrierten Entwicklungsumgebung (Integrated Development Environment, IDE) aus durchzuführen. Informationen zur Bereitstellung aus einer IDE finden Sie in den folgenden Abschnitten weiter unten in diesem Artikel.
 
-[Octopus Deploy](http://en.wikipedia.org/wiki/Octopus_Deploy) kann mit App Service-Web-Apps verwendet werden. Weitere Informationen finden Sie unter [Bereitstellen von ASP.NET-Anwendungen für Azure-Websites](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites).
+* [Visual Studio](#vs)
+* [WebMatrix](#webmatrix)
 
+Eine weitere Möglichkeit der Bereitstellung ist die Nutzung eines cloudbasierten Diensts, wie z. B. [Octopus Deploy](http://en.wikipedia.org/wiki/Octopus_Deploy). Weitere Informationen finden Sie unter [Bereitstellen von ASP.NET-Anwendungen für Azure-Websites](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites).
 
 ##<a name="vso"></a>Visual Studio Online
 
@@ -154,7 +131,6 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Azure-Forum für Git, Mercurial und DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=azuregit)
 * [Deploying TWO websites to Azure from one Git Repository (Bereitstellen von TWO-Websites in Azure über ein Git-Repository, in englischer Sprache)](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx). Blogeintrag von Scott Hanselman.
 
-
 ##<a name="msbuild"></a>MSBuild
 
 Wenn Sie die [Visual Studio IDE](#vs) für die Entwicklung verwenden, können Sie [MSBuild](http://msbuildbook.com/) zur Automatisierung sämtlicher Aufgaben nutzen, die Sie in Ihrer IDE ausführen können. Sie können MSBuild so konfigurieren, dass zum Kopieren der Dateien entweder [Web Deploy](#webdeploy) oder [FTP/FTPS](#ftp) verwendet wird. Mit Web Deploy können auch viele andere Aufgaben, die mit der Bereitstellung in Zusammenhang stehen, automatisiert werden, wie beispielsweise das Bereitstellen von Datenbanken.
@@ -164,9 +140,11 @@ Weitere Informationen zur Befehlszeilen-Bereitstellung mithilfe von MSBuild find
 * [ASP.NET-Webbereitstellung mithilfe von Visual Studio: Befehlszeilenbereitstellung](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment). Der zehnte Teil in einer Lernprogrammserie, in dem die Bereitstellung in Azure mithilfe von Visual Studio erläutert wird. In diesem Lernprogramm wird gezeigt, wie die Befehlszeile für die Bereitstellung verwendet wird, nachdem Veröffentlichungsprofile in Visual Studio eingerichtet wurden.
 * [Inside the Microsoft Build Engine: Using MSBuild and Team Foundation Build (In der Microsoft Build Engine: Verwenden von MSBuild und Team Foundation Build, in englischer Sprache)](http://msbuildbook.com/). Buch, in dem Kapitel zur Verwendung von MSBuild für die Bereitstellung enthalten sind.
 
-##<a name="ftp2"></a>FTP-Skripte
+##<a name="ftp"></a>FTP-Tools und -Skripte
 
-Sie können auf einfache Weise [FTP/FTPS](http://en.wikipedia.org/wiki/File_Transfer_Protocol)-Anmeldeinformationen für eine Web-App erstellen. Die Anmeldeinformationen können anschließend auch mit FTP-Batchskripts verwendet werden.
+Sie können Inhalte auf Ihrer App bereitstellen, indem Sie [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol) zum Kopieren von Dateien verwenden. Sie können problemlos FTP-Anmeldeinformationen für eine Web-App erstellen und sie in Skripten oder Anwendungen verwenden, die FTP unterstützen, z. B. Internet Explorer und kostenlose Hilfsprogramme mit vollem Funktionsumfang wie [FileZilla](https://filezilla-project.org/). Web-Apps unterstützen auch das sicherere FTPS-Protokoll.
+
+Obwohl es ziemlich einfach ist, die Dateien Ihrer Web-App mithilfe von FTP-Dienstprogrammen in Azure zu kopieren, berücksichtigen oder koordinieren diese Programme nicht automatisch die dazugehörigen Bereitstellungsaufgaben, wie beispielsweise das Bereitstellen einer Datenbank oder Ändern der Verbindungszeichenfolgen. Bei vielen FTP-Tools werden die Quell- und die Zieldateien nicht verglichen, sodass das Kopieren von unveränderten Dateien übersprungen werden könnte. Wenn bei umfangreichen Web-Apps stets alle Dateien kopiert werden, kann es selbst bei kleineren Updates zu langen Wartezeiten hinsichtlich der Bereitstellung kommen, da immer alle Dateien kopiert werden.
 
 Weitere Informationen finden Sie in der folgenden Ressource:
 
@@ -227,4 +205,4 @@ Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

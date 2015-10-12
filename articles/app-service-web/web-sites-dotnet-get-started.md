@@ -36,10 +36,12 @@ In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
 Sie lernen Folgendes:
 
-* Ermöglichen der Azure-Entwicklung auf Ihrem Computer durch Installieren des Azure SDK
-* Erstellen eines Visual Studio ASP.NET-Webprojekts und Bereitstellen für eine Azure-Web-App
-* Vornehmen von Änderungen am Webprojekt und erneute Bereitstellung der Anwendung
-* Verwenden des [Azure-Portals](/overview/preview-portal/) zum Überwachen und Verwalten der Web-App
+* Vorbereiten der Ihres Computers für die Azure-Entwicklung durch Installieren des [Azure SDK für .NET](../dotnet-sdk/)
+* Einrichten von Visual Studio zum Erstellen einer neuen App Service-Web-App beim Erstellen eines Webprojekts
+* Bereitstellen eines Webprojekts für eine App Service-Web-App mit Visual Studio
+* Überwachen und Verwalten der Web-App im [Azure-Portal](/overview/preview-portal/)
+
+In diesem Lernprogramm wird nicht das Schreiben von Code zum Anpassen der Web-App erläutert. Ein ausführlicheres Lernprogramm zum Arbeiten mit einer Datenbank und zur Authentifizierung von Benutzern finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschafts-, OAuth- und SQL-Datenbank für eine Azure-Web-App](/develop/net/tutorials/web-site-with-sql-database/).
 
 ##<a name="video"></a>Anmelden bei Microsoft Azure
 
@@ -48,7 +50,7 @@ Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu k
 * [Kostenloses Anlegen eines Azure-Kontos](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, mit dem Sie andere kostenpflichtige Azure-Dienste ausprobieren können. Selbst, nachdem Sie dieses Guthaben aufgebraucht haben, können Sie das Konto behalten und kostenlose Azure-Dienste und -Features nutzen, z. B. das Web-Apps-Feature in Azure App Service.
 * [Aktivieren der Vorteile für MSDN-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.
 
-> [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [ Azure App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+> [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 In diesem Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose Testversion von Microsoft Azure anmelden können. (Dauer: 1:58)
 
@@ -132,7 +134,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 5. Verändern Sie das Datenbankfeld nicht.
 
-	Für dieses Lernprogramm verwenden Sie keine Datenbank. Der Abschnitt [Nächste Schritte](#next-steps) verweist auf ein Tutorial, in dem die Verwendung einer Datenbank erläutert wird.
+	Für dieses Lernprogramm verwenden Sie keine Datenbank. Der Abschnitt [Nächste Schritte](#next-steps) verweist auf ein Lernprogramm, in dem die Verwendung einer Datenbank erläutert wird.
 
 6. Klicken Sie auf **OK**.
 
@@ -144,7 +146,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 	![Projektmappen-Explorer](./media/web-sites-dotnet-get-started/solutionexplorer.png)
 
-	Im Fenster **Azure App Service Activity** wird angegeben, dass die Web-App erstellt wurde.
+	Im Fenster **Web Publish Activity** wird angegeben, dass die Web-App erstellt wurde.
 
 	![Web-App erstellt](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
 
@@ -158,17 +160,13 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 ![Erstellen und Bereitstellen](./media/web-sites-dotnet-get-started/Create_App.png)
 
-7. Klicken Sie im Fenster **Azure App Service Activity** auf **Publish MyExample to this Web App now**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
 
-	![Web-App erstellt](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
+	![Wählen Sie "Veröffentlichen"](./media/web-sites-dotnet-get-started/choosepublish.png)
 
-	Wenige Sekunden später wird der Assistent **Web veröffentlichen** geöffnet.
-
-	Die Einstellungen, die Visual Studio benötigt, um Ihr Projekt in Azure bereitzustellen, wurden in einem *Veröffentlichungsprofil* gespeichert. Mithilfe des Assistenten können Sie diese Einstellungen überprüfen und ändern.
+	Wenige Sekunden später wird der Assistent **Web veröffentlichen** geöffnet. Im Assistenten wird ein *Veröffentlichungsprofil* mit Einstellungen für die Bereitstellung des Webprojekts in der neuen Web-App angezeigt. Wenn die Bereitstellung in einer anderen Web-App erfolgen soll, können Sie auf die Registerkarte **Profil** klicken, um ein anderes Profil zu erstellen. In diesem Lernprogramm übernehmen Sie die Einstellungen, mit denen die Bereitstellung in der zuvor erstellten Web-App erfolgt.
 
 8. Klicken Sie auf der Registerkarte **Verbindung** des Assistenten **Web veröffentlichen** auf **Weiter**.
-
-	Visual Studio bietet alle Einstellungen, die Sie Ihrer Azure-Web-App bereitstellen müssen.
 
 	![Erfolgreich geprüfte Verbindung](./media/web-sites-dotnet-get-started/GS13ValidateConnection.png)
 
@@ -186,7 +184,7 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 	![](./media/web-sites-dotnet-get-started/GS13previewoutput.png)
 
-	Die Dateien werden von Visual Studio auf den Azure-Server kopiert.
+	Wenn Sie auf **Veröffentlichen** klicken, werden die Dateien von Visual Studio auf den Azure-Server kopiert.
 
 	In den Fenstern **Ausgabe** und **Azure App Service Activity** wird angezeigt, welche Bereitstellungsaktionen ausgeführt wurden, und es wird die erfolgreiche Durchführung der Bereitstellung gemeldet.
 
@@ -198,39 +196,7 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 13. Schließen Sie den Browser.
 
-## Vornehmen von Änderungen und erneutes Bereitstellen
-
-Dieser Abschnitt des Tutorials ist optional. In diesem Abschnitt ändern Sie die **h1**-Überschrift der Startseite, führen das Projekt lokal auf dem Entwicklungscomputer aus, um die Änderung zu prüfen, und stellen diese dann in Azure bereit.
-
-2. Öffnen Sie die Datei **Views/Home/Index.cshtml** oder **.vbhtml** im **Projektmappen-Explorer**, ändern Sie die Überschrift **h1** von "ASP.NET" in "ASP.NET and Azure", und speichern Sie die Datei.
-
-	![MVC index.cshtml](./media/web-sites-dotnet-get-started/index.png)
-
-	![Änderung von "h1" bei MVC](./media/web-sites-dotnet-get-started/mvcandazure.png)
-
-1. Drücken Sie STRG+F5, um die geänderte Überschrift anzuzeigen, indem Sie die Web-App auf dem lokalen Computer ausführen.
-
-	![Lokal ausgeführte Web-App](./media/web-sites-dotnet-get-started/localandazure.png)
-
-	Die URL `localhost` zeigt an, dass die Web-App auf dem lokalen Computer ausgeführt wird. Standardmäßig erfolgt die Ausführung in IIS Express, einer im Umfang eingeschränkten Version von IIS, die für die Entwicklung von Webanwendungen konzipiert wurde.
-
-1. Schließen Sie den Browser.
-
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
-
-	![Wählen Sie "Veröffentlichen"](./media/web-sites-dotnet-get-started/choosepublish.png)
-
-	Die Registerkarte **Vorschau** im Assistenten **Web veröffentlichen** wird angezeigt. Wenn Sie Veröffentlichungseinstellungen ändern mussten, können Sie eine andere Registerkarte auswählen. Nun ist es jedoch völlig ausreichend, die erneute Bereitstellung mit denselben Einstellungen auszuführen.
-
-2. Klicken Sie im Assistenten **Web veröffentlichen** auf **Veröffentlichen**.
-
-	![Auf "Veröffentlichen" klicken](./media/web-sites-dotnet-get-started/GS13previewoutput.png)
-
-	Das Projekt wird von Visual Studio für Azure bereitgestellt, und die Web-App wird im Standardbrowser geöffnet.
-
-	![Geänderte Web-App bereitgestellt](./media/web-sites-dotnet-get-started/deployedandazure.png)
-
-**Tipp:** Für eine noch schnellere Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. In der Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche zum Veröffentlichen klicken oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
+**Tipp:** Für eine schnellere Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Auf der Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche zum Veröffentlichen klicken oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
 
 ![Symbolleiste "Webveröffentlichung mit einem Klick"](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
@@ -240,7 +206,7 @@ Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die da
 
 1. Rufen Sie in Ihrem Browser [https://portal.azure.com](https://portal.azure.com) auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
-2. Klicken Sie auf **Alle durchsuchen > Web-Apps** und dann auf den Namen der Web-App.
+2. Klicken Sie auf **Web-Apps** und dann auf den Namen der Web-App.
 
 	Auf dem Blatt **Web-App** wird eine Übersicht über die Einstellungen und eine Nutzungsstatistik für Ihre Web-App angezeigt.
 
@@ -249,6 +215,8 @@ Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die da
 	Bisher gab es in Ihrer Web-App kaum Datenverkehr, daher wird in der Übersicht möglicherweise nichts angezeigt. Wenn Sie Ihre Anwendung aufrufen, aktualisieren Sie die Seite mehrmals, und aktualisieren Sie anschließend die Portalseite. Nun sollte eine Statistik angezeigt werden.
 
 3. Klicken Sie auf **Einstellungen**, um weitere Optionen zum Konfigurieren der Web-App anzuzeigen.
+
+	![Klicken Sie auf "Einstellungen"](./media/web-sites-dotnet-get-started/portaldashboard2.png)
 
 	Es wird eine Liste der verschiedenen Einstellungstypen angezeigt.
 
@@ -266,23 +234,19 @@ Dies sind nur einige Funktionen des Portals. Sie können neue Web-Apps erstellen
 
 In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstellt und in einer Azure-Web-App bereitgestellt wird. In den folgenden Themen und Ressourcen finden Sie weitere Informationen zu Web-Apps in Azure App Service.
 
+* Hinzufügen von Datenbank- und Autorisierungsfunktionalität
+
+	Ein Lernprogramm mit Anleitungen bezüglich Datenbankzugriff und Einschränkung einiger Anwendungsfunktionen auf autorisierte Benutzer finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Web-App](/develop/net/tutorials/web-site-with-sql-database/).
+
 * Andere Möglichkeiten für die Bereitstellung eines Webprojekts
 
-	In diesem Lernprogramm wurde die schnellste Methode zum Erstellen und Bereitstellen einer Web-App in einem einzigen Vorgang erläutert. Eine Übersicht über andere Möglichkeiten der Bereitstellung mit Visual Studio oder durch die [Automatisierung der Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) über ein [Quellcode-Verwaltungssystem](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter [Bereitstellen von Azure-Web-Apps](web-sites-deploy.md).
+	Informationen zu anderen Möglichkeiten der Bereitstellung von Webprojekten in Web-Apps mit Visual Studio oder durch die [Automatisierung der Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) über ein [Quellcode-Verwaltungssystem](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter [Bereitstellen von Azure-Web-Apps](web-sites-deploy.md).
 
 	Visual Studio kann auch Windows PowerShell-Skripte generieren, mit deren Hilfe Sie die Bereitstellung automatisieren können. Weitere Informationen finden Sie unter [Automate Everything (Building Real-World Cloud Apps with Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything) (in englischer Sprache).
-
-* Verwalten von Web-Apps in Visual Studio
-
-	Informationen zu den verfügbaren Web-App-Verwaltungsfunktionen im **Server-Explorer** finden Sie unter [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 * Problembehandlung für eine Web-App
 
 	Visual Studio enthält Funktionen, die die Anzeige von Azure-Protokollen vereinfachen, da sie in Echtzeit erstellt werden. Darüber hinaus ist die Ausführung in Azure remote im Debugmodus möglich. Weitere Informationen finden Sie unter [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
-
-* Hinzufügen von Datenbank- und Autorisierungsfunktionalität
-
-	Ein Lernprogramm mit Anleitungen bezüglich Datenbankzugriff und Einschränkung einiger Anwendungsfunktionen auf autorisierte Benutzer finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank für eine Azure-Web-App](/develop/net/tutorials/web-site-with-sql-database/).
 
 * So fügen Sie einen benutzerdefinierten Domänennamen und SSL hinzu
 
@@ -290,10 +254,6 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 	* [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](web-sites-custom-domain-name.md)
 	* [Aktivieren von HTTPS für Azure-Web-Apps](web-sites-configure-ssl-certificate.md)
-
-* Vermeiden von Wartezeiten nach Leerlaufzeiten
-
-	Standardmäßig werden Web-Apps entladen, wenn sie einige Zeit im Leerlauf waren. Bei der ersten Anforderung nach dem Entladen einer Web-App muss gewartet werden, bis die Web-App neu geladen wurde. Zur Vermeidung von Wartezeiten können Sie das Feature "Always On" aktivieren. Weitere Informationen dazu finden Sie unter den Konfigurationsoptionen in [Konfigurieren von Web-Apps](web-sites-configure.md).
 
 * Hinzufügen von Echtzeitfunktionen wie Chat
 
@@ -308,7 +268,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 * [Auswählen oder Erstellen einer Ressourcengruppe](../azure-preview-portal-using-resource-groups.md)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
+* Hinweise zu den Änderungen von App Service gegenüber Websites finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

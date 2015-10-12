@@ -106,6 +106,7 @@ In diesem Code versucht eine Anwendung, ein bestehendes **ShardMapManager**-Elem
         // for privileges on both the GSM and the shards themselves.
     } 
  
+Alternativ können Sie PowerShell zur Erstellung eines neuen Shard-Zuordnungs-Managers nutzen. Ein Beispiel ist [hier](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) verfügbar.
 
 ### Administratoranmeldeinformationen für Shard-Zuordnungen
 
@@ -199,7 +200,7 @@ Der Code ist so geschrieben, dass die gesamte Methode problemlos erneut ausgefü
             } 
         } 
  
-Als Alternative können Sie PowerShell-Skripts verwenden, um das gleiche Ergebnis zu erzielen.
+Als Alternative können Sie PowerShell-Skripts verwenden, um das gleiche Ergebnis zu erzielen. Einige der PowerShell-Beispiele finden Sie [hier](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db).
 
 Sobald Shard Maps aufgefüllt wurden, können Anwendungen für den Datenzugriff erstellt oder angepasst werden, um mit den Shard Maps arbeiten zu können. Ein Auffüllen oder Bearbeiten der Shard-Zuordnungen muss so lange nicht erneut erfolgen, bis das **Zuordnungslayout** geändert werden muss.
 
@@ -252,4 +253,4 @@ Bei Szenarios, die eine Datenverschiebung erforderlich machen, wird jedoch das S
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

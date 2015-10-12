@@ -64,7 +64,7 @@ Abrufen Sie aller verfügbaren Größen von virtuellen Computern | Nicht verfüg
 
 ## Nächste Schritte
 
-* Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle mit Ressourcen-Manager-Ressourcen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](../role-based-access-control-xplat-cli.md).
+* Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle mit Ressourcen-Manager-Ressourcen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](../role-based-access-control-xplat-cli-install.md).
 * Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](../virtual-machines-command-line-tools.md) und [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

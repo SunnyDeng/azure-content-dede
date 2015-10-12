@@ -49,7 +49,7 @@ In fast allen OAuth- und OpenID Connect-Vorgängen sind vier Beteiligte am Austa
 
 ## Richtlinien
 
-Die **Richtlinien** in Azure AD B2C sind wohl das wichtigste Feature des Diensts. Azure AD B2C erweitert die Standardprotokolle OAuth 2.0 und OpenID Connect durch die Einführung von Richtlinien, durch die in Azure AD B2C deutlich mehr möglich ist als einfache Authentifizierung und Autorisierung. Die Richtlinien beschreiben die Aspekte der Benutzeridentität, z. B. Registrierung, Anmelden oder Profilbearbeitung. Sie können in einer Administrator-Benutzeroberfläche definiert und mithilfe von speziellen Abfrageparametern in HTTP-Authentifizierungsanforderungen ausgeführt werden. Richtlinien sind kein Standardfeature von OAuth 2.0 und OpenID Connect, Sie sollten sich also die Zeit nehmen, sich damit vertraut zu machen. Weitere Informationen finden Sie im [Referenzhandbuch zu Azure AD B2C-Richtlinien](active-directory-b2c-reference-policies).
+Die **Richtlinien** in Azure AD B2C sind wohl das wichtigste Feature des Diensts. Azure AD B2C erweitert die Standardprotokolle OAuth 2.0 und OpenID Connect durch die Einführung von Richtlinien, durch die in Azure AD B2C deutlich mehr möglich ist als einfache Authentifizierung und Autorisierung. Die Richtlinien beschreiben die Aspekte der Benutzeridentität, z. B. Registrierung, Anmelden oder Profilbearbeitung. Sie können in einer Administrator-Benutzeroberfläche definiert und mithilfe von speziellen Abfrageparametern in HTTP-Authentifizierungsanforderungen ausgeführt werden. Richtlinien sind kein Standardfeature von OAuth 2.0 und OpenID Connect, Sie sollten sich also die Zeit nehmen, sich damit vertraut zu machen. Weitere Informationen finden Sie im [Referenzhandbuch zu Azure AD B2C-Richtlinien](active-directory-b2c-reference-policies.md).
 
 
 ## Token
@@ -59,7 +59,7 @@ Weitere Informationen zu verschiedenen Tokentypen, die in Azure AD B2C verwendet
 
 ## Protokolle
 
-Wenn Sie einige Beispielanforderungen sehen möchten, beginnen Sie mit einem der folgenden Lernprogramme. Jedes Lernprogramm entspricht einem bestimmten Szenario. Wenn Sie Hilfe bei der Bestimmung des richtigen Arbeitsablaufs benötigen, informieren Sie sich über die [App-Typen, die mit Azure AD B2C erstellt werden können](active-directory-b2c-apps).
+Wenn Sie einige Beispielanforderungen sehen möchten, beginnen Sie mit einem der folgenden Lernprogramme. Jedes Lernprogramm entspricht einem bestimmten Szenario. Wenn Sie Hilfe bei der Bestimmung des richtigen Arbeitsablaufs benötigen, informieren Sie sich über die [App-Typen, die mit Azure AD B2C erstellt werden können](active-directory-b2c-apps.md).
 
 - [Erstellen von mobilen und systemeigenen Anwendungen mit OAuth 2.0](active-directory-b2c-reference-oauth-code.md)
 - [Erstellen von Web-Apps mit OpenID Connect](active-directory-b2c-reference-oidc.md)
@@ -70,4 +70,4 @@ Wenn Sie einige Beispielanforderungen sehen möchten, beginnen Sie mit einem der
 
 <!-- [Call the Azure AD Graph API using the OAuth 2.0 Client Credentials Flow](active-directory-reference-graph.md) -->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

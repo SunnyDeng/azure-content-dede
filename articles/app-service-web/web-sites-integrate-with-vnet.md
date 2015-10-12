@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Integrieren einer Web-App in einem Azure Virtual Network" 
 	description="Sie erfahren, wie Sie eine Verbindung zwischen einer Azure-Web-App in Azure App Service und einem neuen oder vorhandenen virtuellen Azure-Netzwerk herstellen." 
-	services="app-service\web" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="app-service" 
-	ms.workload="web" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
@@ -109,4 +109,4 @@ Es gibt zurzeit auch bei den Preisebenen noch Unterschiede zwischen den beiden F
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

@@ -33,7 +33,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Visual Studio 2013
 + NuGet-Paket [MicrosoftAzure.MobileEngagement]
 
-> [AZURE.IMPORTANT]Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für Windows Universal-Apps. Sie benötigen ein aktives Azure-Konto, um es abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2FDE-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.IMPORTANT]Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für Windows Universal-Apps. Sie benötigen ein aktives Azure-Konto, um es abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ##<a id="setup-azme"></a>Einrichten von Mobile Engagement für Ihre Windows Universal-App
 
@@ -159,6 +159,8 @@ Sie sind bereits für das Senden einer Popupbenachrichtigung. und wir werden jet
 
 1. Sie müssen Ihre App einer Windows Store-App zuweisen, um Ihre **Paket-Sicherheits-ID (SID)** und Ihren **Geheimen Schlüssel** (Geheimer Clientschlüssel) zu erhalten. Sie können eine Anwendung aus dem [Windows Store Dev Center] erstellen und dann sicherstellen, dass Sie **Verknüpfen der App mit dem Store** aus Visual Studio verwenden.
 
+	![][7]
+
 2. Navigieren Sie zu den **Einstellungen** Ihres Mobile Engagement-Portals, und klicken Sie auf den Abschnitt **Systemeigener Push** auf der linken Seite.
 
 3. Klicken Sie auf die Schaltfläche **Bearbeiten**, um Ihre **Paket-Sicherheits-ID (SID)** und Ihren **Geheimen Schlüssel** wie unten dargestellt einzugeben:
@@ -178,10 +180,11 @@ Nun sollte eine Popupbenachrichtigung von der Kampagne auf Ihrem Gerät erschein
 [Windows Universal-Apps - Overlay-Integration]: ../mobile-engagement-windows-store-integrate-engagement-reach/#overlay-integration
 
 <!-- Images. -->
-[1]: ./media/mobile-engagement-windows-store-dotnet-get-started/UniversalAppCreation.png
+[1]: ./media/mobile-engagement-windows-store-dotnet-get-started/universal-app-creation.png
 [2]: ./media/mobile-engagement-windows-store-dotnet-get-started/manifest-capabilities.png
 [3]: ./media/mobile-engagement-windows-store-dotnet-get-started/add-connection-info.png
 [5]: ./media/mobile-engagement-windows-store-dotnet-get-started/manifest-toast.png
 [6]: ./media/mobile-engagement-windows-store-dotnet-get-started/enter-credentials.png
+[7]: ./media/mobile-engagement-windows-store-dotnet-get-started/associate-app-store.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

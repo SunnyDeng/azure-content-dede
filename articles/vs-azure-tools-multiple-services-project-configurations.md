@@ -1,6 +1,6 @@
 <properties
    pageTitle="Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen"
-   description="Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen"
+   description="Erfahren Sie, wie Sie ein Azure-Clouddienstprojekt konfigurieren, indem Sie die Dateien ";ServiceDefinition.csdef"; und ";ServiceConfiguration.cscfg"; ändern."
    services="visual-studio-online"
    documentationCenter="na"
    authors="kempb"
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/24/2015"
+   ms.date="09/29/2015"
    ms.author="kempb" />
 
-# Konfigurieren eines Azure-Projekts
+# Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen
 
 Ein Azure-Clouddienstprojekt enthält zwei Konfigurationsdateien: "Servicedefinition.csdef" und "ServiceConfiguration.cscfg". Diese Dateien sind im Paket mit Ihrer Azure-Cloudienstanwendung enthalten und werden in Azure bereitgestellt.
 
@@ -27,13 +27,13 @@ Die Azure Tools für Microsoft Visual Studio verfügen über Eigenschaftenseiten
 
 ![VS\_Solution\_Explorer\_Roles\_Properties](./media/vs-azure-tools-multiple-services-project-configurations/IC784076.png)
 
-Informationen zu den zugrunde liegenden Schemas für die Dienstdefinition und die Dienstkonfigurationsdateien finden Sie unter [Schemareferenz](https://msdn.microsoft.com/library/azure/dd179398.aspx). Weitere Informationen zur Dienstkonfiguration finden Sie unter [Konfigurieren einer Anwendung](https://msdn.microsoft.com/library/azure/gg432977.aspx).
+Informationen zu den zugrunde liegenden Schemas für die Dienstdefinition und die Dienstkonfigurationsdateien finden Sie unter [Schemareferenz](https://msdn.microsoft.com/library/azure/dd179398.aspx). Weitere Informationen zur Dienstkonfiguration finden Sie unter [Konfigurieren von Clouddiensten](cloud-services-how-to-configure.md).
 
 ## Konfigurieren von Rolleneigenschaften
 
 Die Eigenschaftenseiten für eine Web- und Workerrolle sind ähnlich. Es bestehen jedoch einige Unterschiede, die in den folgenden Abschnitten erläutert werden.
 
-Auf der Seite **Caching** können Sie die in der Vorschauversion vorhandenen Azure-Cachedienste konfigurieren. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren eines Azure In-Role Caches](https://msdn.microsoft.com/library/azure/jj131263.aspx).
+Auf der Seite **Caching** können Sie die Azure-Cachedienste konfigurieren.
 
 ### Seite "Konfiguration"
 
@@ -43,7 +43,7 @@ Auf der Seite **Konfiguration** können Sie diese Eigenschaften festlegen:
 
 Legen Sie die Eigenschaft **Instanzenanzahl** auf die Anzahl der Instanzen fest, die der Dienst für diese Rolle ausführen soll.
 
-Legen Sie die Eigenschaft **Größe des virtuellen Computers** auf **Sehr klein**, **Klein**, **Mittel**, **Groß** oder **Sehr groß** fest. Weitere Informationen finden Sie unter [Konfigurieren von Größen für Clouddienste](https://msdn.microsoft.com/library/azure/ee814754.aspx).
+Legen Sie die Eigenschaft **Größe des virtuellen Computers** auf **Sehr klein**, **Klein**, **Mittel**, **Groß** oder **Sehr groß** fest. Weitere Informationen finden Sie unter [Größen für Clouddienste](cloud-services-sizes-specs.md).
 
 **Startaktion** (nur Webrolle)
 
@@ -55,19 +55,19 @@ Wenn Sie bereits einen HTTPS-Endpunkt hinzugefügt haben, wird die Option "HTTPS
 
 **Diagnose**
 
-Die Diagnosefunktion ist standardmäßig für die Webrolle aktiviert. Das Azure-Clouddienstprojekt und Speicherkonto wurden auf die Verwendung des lokalen Speicheremulators festgelegt. Wenn die Bereitstellung in Azure durchgeführt werden soll, klicken Sie auf die Generatorschaltfläche (**…**), um das Speicherkonto so zu aktualisieren, dass der Azure-Speicher in der Cloud verwendet wird. Sie können die Diagnosedaten entweder bei Bedarf oder in automatisch geplanten Intervallen an das Speicherkonto übertragen. Weitere Informationen zur Azure-Diagnose finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](https://msdn.microsoft.com/library/azure/gg433048.aspx).
+Die Diagnosefunktion ist standardmäßig für die Webrolle aktiviert. Das Azure-Clouddienstprojekt und Speicherkonto wurden auf die Verwendung des lokalen Speicheremulators festgelegt. Wenn die Bereitstellung in Azure durchgeführt werden soll, klicken Sie auf die Generatorschaltfläche (**…**), um das Speicherkonto so zu aktualisieren, dass der Azure-Speicher in der Cloud verwendet wird. Sie können die Diagnosedaten entweder bei Bedarf oder in automatisch geplanten Intervallen an das Speicherkonto übertragen. Weitere Informationen zur Azure-Diagnose erhalten Sie unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](cloud-services-dotnet-diagnostics.md).
 
 ## Seite "Einstellungen"
 
 Auf der Seite **Einstellungen** können Sie Konfigurationseinstellungen für den Dienst hinzufügen. Konfigurationseinstellungen sind Name-Wert-Paare. Von in dieser Rolle ausgeführtem Code können die Werte der Konfigurationseinstellungen zur Laufzeit anhand von Klassen ausgelesen werden, die von der [verwalteten Azure-Bibliothek](http://go.microsoft.com/fwlink?LinkID=171026) bereitgestellt werden. Im Speziellen wird von der [GetConfigurationSettingValue](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx)-Methode der Wert einer benannten Konfigurationseinstellung zur Laufzeit zurückgegeben.
 
-Konfigurieren einer Verbindungszeichenfolge für ein Speicherkonto
+### Konfigurieren einer Verbindungszeichenfolge für ein Speicherkonto
 
 Eine Verbindungszeichenfolge ist eine Konfigurationseinstellung, die Verbindungs- und Authentifizierungsinformationen für den Speicheremulator oder für ein Azure-Speicherkonto enthält. Wenn vom Code Zugriff auf Azure-Speicherdienstdaten – d. h. auf Blob-, Warteschlangen- oder Tabellendaten – innerhalb eines in einer Rolle ausgeführten Codes erfordert wird, muss eine Verbindungszeichenfolge für das Speicherkonto definiert werden.
 
-Eine Verbindungszeichenfolge, die auf ein Azure-Speicherkonto verweist, muss ein definiertes Format aufweisen. Informationen zum Erstellen von Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Verbindungszeichenfolgen](https://msdn.microsoft.com/library/azure/ee758697.aspx).
+Eine Verbindungszeichenfolge, die auf ein Azure-Speicherkonto verweist, muss ein definiertes Format aufweisen. Informationen zum Erstellen von Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](storage-configure-connection-string.md).
 
-Wenn Sie Ihren Dienst mit den Azure-Speicherdiensten testen oder den Clouddienst in Azure bereitstellen möchten, können Sie den Wert aller Verbindungszeichenfolgen so ändern, dass sie auf Ihr Azure-Speicherkonto verweisen. Klicken Sie auf (**…**), und wählen Sie **Anmeldeinformationen für Speicherkonto eingeben** aus. Geben Sie die Kontoinformationen ein, die Ihren Kontonamen und den Kontoschlüssel enthalten. Im Dialogfeld **Verbindungszeichenfolge für das Speicherkonto** können Sie auch angeben, ob standardmäßige HTTPS-Endpunkte (die Standardoption), die standardmäßigen HTTP-Endpunkte oder benutzerdefinierte Endpunkte verwendet werden sollen. Sie können ggf. benutzerdefinierte Endpunkte verwenden, wenn ein benutzerdefinierter Domänenname für den Dienst registriert wurde, wie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Blobdaten in einem Azure-Speicherkonto](./storage//storage-custom-domain-name/) beschrieben.
+Wenn Sie Ihren Dienst mit den Azure-Speicherdiensten testen oder den Clouddienst in Azure bereitstellen möchten, können Sie den Wert aller Verbindungszeichenfolgen so ändern, dass sie auf Ihr Azure-Speicherkonto verweisen. Klicken Sie auf (**…**), und wählen Sie **Anmeldeinformationen für Speicherkonto eingeben** aus. Geben Sie die Kontoinformationen ein, die Ihren Kontonamen und den Kontoschlüssel enthalten. Im Dialogfeld **Verbindungszeichenfolge für das Speicherkonto** können Sie auch angeben, ob standardmäßige HTTPS-Endpunkte (die Standardoption), die standardmäßigen HTTP-Endpunkte oder benutzerdefinierte Endpunkte verwendet werden sollen. Sie können ggf. benutzerdefinierte Endpunkte verwenden, wenn ein benutzerdefinierter Domänenname für den Dienst registriert wurde, wie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Blobdaten in einem Azure-Speicherkonto](storage-custom-domain-name.md) beschrieben.
 
 >[AZURE.IMPORTANT]Sie müssen die Verbindungszeichenfolgen ändern, damit sie auf ein Azure-Speicherkonto verweisen, bevor Sie den Dienst bereitstellen. Wenn diese Änderung nicht vorgenommen wird, wird die Rolle möglicherweise nicht gestartet, oder die Zustände "Initialisieren", "Ausgelastet" und "Beenden" werden nicht durchlaufen.
 
@@ -79,19 +79,19 @@ Eine Workerrolle kann eine beliebige Anzahl von HTTP-, HTTPS- oder TCP-Endpunkte
 
 - Ändern Sie den Endpunkttyp in einen **Eingabeendpunkt**, und geben Sie einen Namen, die Nummer eines öffentlichen Ports und den Namen eines Verwaltungszertifikats an, um einen HTTPS-Endpunkt für externe Clients und Webbrowser verfügbar zu machen.
 
-    Bevor ein Verwaltungszertifikat angegeben werden kann, muss das Zertifikat auf der Eigenschaftenseite "Zertifikate" definiert werden.
+    Bevor ein Verwaltungszertifikat angegeben werden kann, muss das Zertifikat auf der Eigenschaftenseite **Zertifikate** definiert werden.
 
 - Ändern Sie den Endpunkttyp in einen internen Endpunkt, und geben Sie einen Namen und mögliche private Ports für den Endpunkt an, um einen Endpunkt für den internen Zugriff durch andere Rollen innerhalb des Clouddiensts verfügbar zu machen.
 
 ## Seite "Lokaler Speicher"
 
-Sie können die Eigenschaftenseite **Lokaler Speicher** verwenden, um mindestens eine lokale Speicherressource für eine Rolle zu reservieren. Eine lokale Speicherressource ist ein reserviertes Verzeichnis im Dateisystem des virtuellen Azure-Computers, in dem eine Instanz einer Rolle ausgeführt wird. Weitere Informationen zur Verwendung lokaler Speicherressourcen finden Sie unter [Konfigurieren von lokalen Speicherressourcen](../cloud-services/cloud-services-configure-local-storage-resources.md).
+Sie können die Eigenschaftenseite **Lokaler Speicher** verwenden, um mindestens eine lokale Speicherressource für eine Rolle zu reservieren. Eine lokale Speicherressource ist ein reserviertes Verzeichnis im Dateisystem des virtuellen Azure-Computers, in dem eine Instanz einer Rolle ausgeführt wird. Weitere Informationen zur Verwendung lokaler Speicherressourcen finden Sie unter [Konfigurieren von lokalen Speicherressourcen](cloud-services-configure-local-storage-resources.md).
 
 ## Seite "Zertifikate"
 
 Auf der Seite **Zertifikate** können Sie der Rolle Zertifikate zuordnen. Mit den hinzugefügten Zertifikaten können HTTPS-Endpunkte auf der Eigenschaftenseite **Endpunkte** konfiguriert werden.
 
-Auf der Eigenschaftenseite **Zertifikate** werden der Dienstkonfiguration Informationen zu den Zertifikaten hinzugefügt. Die Zertifikate sind nicht im Dienstpaket enthalten. Die Zertifikate müssen über das [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885) gesondert in Azure hochgeladen werden.
+Auf der Eigenschaftenseite **Zertifikate** werden der Dienstkonfiguration Informationen zu den Zertifikaten hinzugefügt. Die Zertifikate sind kein Teil des Diensts, sondern müssen über das [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885) gesondert in Azure hochgeladen werden.
 
 Um der Rolle ein Zertifikat zuzuordnen, geben Sie einen Namen für das Zertifikat an. Mit diesem Namen wird beim Konfigurieren eines HTTPS-Endpunkts auf der Eigenschaftenseite **Endpunkte** auf das Zertifikat verwiesen. Geben Sie im nächsten Schritt an, ob der Zertifikatspeicher **Lokaler Computer** oder **Aktueller Benutzer** ist. Geben Sie außerdem den Namen des Speichers an. Geben Sie zuletzt den Fingerabdruck des Zertifikats ein. Wenn sich das Zertifikat im Speicher "Current User\\Personal (My)" befindet, können Sie den Fingerabdruck des Zertifikats eingeben, indem Sie das Zertifikat aus einer aufgefüllten Liste auswählen. Wenn es sich an einem beliebigen anderen Ort befindet, geben Sie den Fingerabdruckwert manuell ein.
 
@@ -110,8 +110,4 @@ Zum Konfigurieren von für ein gesamtes Azure-Clouddienstprojekt gültigen Einst
 |Entwicklung|Auf dieser Seite geben Sie Buildkonfigurationsanweisungen und die Bedingungen an, unter denen Postbuildereignisse ausgeführt werden.|
 |Web|Auf dieser Seite konfigurieren Sie Einstellungen für den Webserver.|
 
-## Siehe auch
-
-[Azure Tools für Microsoft Visual Studio](https://msdn.microsoft.com/library/azure/ee405484.aspx)
-
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

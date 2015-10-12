@@ -12,16 +12,16 @@
     ms.workload="data-services"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.topic="get-started-article" 
-    ms.date="06/29/2015"
+    ms.topic="get-started-article"
+    ms.date="09/28/2015"
     ms.author="chhavib;olgali"/>
 
 # Verwenden von Beispielexperimenten zum Erstellen neuer Experimente
-Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperimenten des Machine Learning-Teams und in den von der Machine Learning-Community freigegebenen Experimenten nach Beispielen. Sie können auch in der [Galerie](http://gallery.azureml.net/) Fragen stellen oder Anmerkungen zu Experimenten veröffentlichen.
+Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperimenten des Machine Learning-Teams und in den von der Machine Learning-Community freigegebenen Experimenten nach Beispielen. Sie können auch im [Cortana Analytics-Katalog](http://gallery.azureml.net/) Fragen stellen oder Anmerkungen zu Experimenten veröffentlichen.
 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-## Durchsuchen der Galerie
+## Durchsuchen des Cortana Analytics-Katalogs
 1. Wechseln Sie zu [Gallery](http://gallery.azureml.net/) (Galerie).
 2. Durchsuchen Sie **Trending Experiments** (Trendanalyse-Experimente) oder **Microsoft Samples** (Microsoft-Beispiele).
 3. Verwenden Sie die Suchfunktion und Filter, um die Ergebnisse einzugrenzen: ![](./media/machine-learning-sample-experiments/image1.png) 
@@ -38,6 +38,5 @@ Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperiment
 - [Überprüfen der R-Beispielexperimente](machine-learning-r-csharp-web-service-examples.md)
 - [Erstellen einer Webdienst-API](machine-learning-publish-a-machine-learning-web-service.md)
 - [Durchsuchen einsatzbereiter Anwendungen](https://datamarket.azure.com/browse?query=machine+learning)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

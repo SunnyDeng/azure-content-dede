@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/01/2015"
+	ms.date="09/29/2015"
 	ms.author="liviodlc"/>
 
 #Verwalten von Zertifikaten für die einmalige Verbundanmeldung in Azure Active Directory
@@ -26,7 +26,7 @@ Dieser Artikel ist nur relevant für Apps, die für **Azure AD – einmaliges An
 
 ##Anpassen des Ablaufdatums für das Verbundzertifikat
 
-Standardmäßig wird für Zertifikate eine Gültigkeitsdauer von zwei Jahren festgelegt. Mit folgenden Schritten können Sie ein anderes Ablaufdatum für Ihr Zertifikat auswählen. In den Screenshots wurde ServiceNow als Beispiel verwendet, diese Schritte können jedoch für jede SaaS-Verbund-App angewendet werden.
+Standardmäßig wird für Zertifikate eine Gültigkeitsdauer von zwei Jahren festgelegt. Mit folgenden Schritten können Sie ein anderes Ablaufdatum für Ihr Zertifikat auswählen. In den Screenshots wurde Salesforce als Beispiel verwendet, diese Schritte können jedoch für jede SaaS-Verbund-App angewendet werden.
 
 1. Klicken Sie in Azure Active Directory auf der Seite "Schnellstart" für Ihre Anwendung auf **Einmaliges Anmelden konfigurieren**.
 
@@ -76,8 +76,6 @@ Im Idealfall sollte die unten gezeigten Schritte zur Erneuerung keine wesentlich
 
 	![Herunterladen und Hochladen des Zertifikats](./media/active-directory-sso-certs/renew-config-app.PNG)
 
-##Siehe auch
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-[Anwendungszugriff und einmaliges Anmelden in Azure AD](active-directory-appssoaccess-whatis.md)
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

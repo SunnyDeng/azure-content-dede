@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="07/07/2015"
+	ms.date="09/29/2015"
 	ms.author="kenhoff"/>
 
 # Suche in Azure Active Directory-Berichten
@@ -28,31 +28,32 @@ Um für einen bestimmten Benutzer nach Aktivitäts- oder Überwachungsereignisse
 
 Es werden noch nicht alle Berichte in die Suchergebnisse einbezogen. Diese Tabelle gibt an, welche Berichte enthalten sind.
 
-|	Bericht |	Included |
-|	------												|	--------			|
-|	Anmeldungen aus unbekannten Quellen |	Nein |
-|	Anmeldungen nach mehreren Fehlern |	Nein |
-|	Anmeldungen aus mehreren geografischen Regionen |	Nein |
-|	Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten |	Nein |
-|	Anmeldungen von möglicherweise infizierten Geräten |	Nein |
-|	Irreguläre Anmeldeaktivitäten |	Nein |
-|	Benutzer mit anomalen Anmeldeaktivitäten |	Nein |
-|	Benutzer mit kompromittierten Anmeldeinformationen |	Nein |
-|	Überwachungsbericht |	Ja |
-|	Kennwortzurücksetzungsaktivität |	Ja |
-|	Aktivität "Registrierung für Zurücksetzen des Kennworts" |	Ja |
-|	Self-Service-Gruppenaktivität |	Ja |
-|	Anwendungsnutzung |	Nein |
-|	Kontobereitstellungsaktivität |	Ja |
-|	Status des Kennwortrollovers |	Nein |
-|	Kontobereitstellungsfehler |	Nein |
-|	RMS-Nutzung |	Nein |
-|	Aktivste RMS-Benutzer |	Nein |
-|	Nutzung von RMS-Geräten |	Nein |
+Bericht | Included
+--------------------------------------------------- | --------
+Anmeldungen aus unbekannten Quellen | Nein
+Anmeldungen nach mehreren Fehlern | Nein
+Anmeldungen aus mehreren geografischen Regionen | Nein
+Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten | Nein
+Anmeldungen von möglicherweise infizierten Geräten | Nein
+Irreguläre Anmeldeaktivitäten | Nein
+Benutzer mit anomalen Anmeldeaktivitäten | Nein
+Benutzer mit kompromittierten Anmeldeinformationen | Nein
+Überwachungsbericht | Ja
+Kennwortzurücksetzungsaktivität | Ja
+Aktivität "Registrierung für Zurücksetzen des Kennworts" | Ja
+Self-Service-Gruppenaktivität | Ja
+Anwendungsnutzung | Nein
+Kontobereitstellungsaktivität | Ja
+Status des Kennwortrollovers | Nein
+Kontobereitstellungsfehler | Nein
+RMS-Nutzung | Nein
+Aktivste RMS-Benutzer | Nein
+Nutzung von RMS-Geräten | Nein
+
 
 ## Weitere Informationen
 
  - [Azure Active Directory-Berichte](active-directory-view-access-usage-reports.md)
  - [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

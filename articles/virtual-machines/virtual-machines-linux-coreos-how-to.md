@@ -8,7 +8,6 @@
 	editor="tysonn"
 	tags="azure-service-management"/>
 
-
 <tags
 	ms.service="virtual-machines"
 	ms.devlang="multiple"
@@ -17,7 +16,6 @@
 	ms.workload="infrastructure-services"
 	ms.date="08/03/2015"
 	ms.author="rasquill"/>
-
 
 # Gewusst wie: Verwenden von CoreOS in Azure
 
@@ -200,7 +198,7 @@ Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten in Azure
 
 
 <!--Link references-->
-[Azure-Befehlszeilenschnittstelle (Azure-CLI)]: ../xplat-cli.md
+[Azure-Befehlszeilenschnittstelle (Azure-CLI)]: ../xplat-cli-install.md
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -210,4 +208,4 @@ Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten in Azure
 [YAML]: http://yaml.org/
 [Erste Schritte mit Fleet unter CoreOS in Azure]: virtual-machines-linux-coreos-fleet-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

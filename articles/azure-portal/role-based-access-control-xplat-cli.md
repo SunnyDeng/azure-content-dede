@@ -20,7 +20,7 @@
 
 > [AZURE.SELECTOR]
 - [Windows PowerShell](role-based-access-control-powershell.md)
-- [Azure CLI](/role-based-access-control-xplat-cli.md)
+- [Azure CLI](/role-based-access-control-xplat-cli-install.md)
 
 Mit der rollenbasierten Zugriffssteuerung (RBAC) im Azure-Portal und der Azure-Ressourcen-Manager-API können Sie den Zugriff auf Ihr Abonnement und Ihre Ressourcen differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
 
@@ -32,7 +32,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnitts
 
 Bevor Sie RBAC mithilfe der Azure-Befehlszeilenschnittstelle verwalten können, benötigen Sie Folgendes:
 
-- Azure-Befehlszeilenschnittstelle, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+- Azure-Befehlszeilenschnittstelle, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 - Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit der Einrichtung und Verwendung des Azure-Ressourcen-Managers in der Azure-Befehlszeilenschnittstelle vertraut zu machen: [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md)
 
 ## Dieses Lernprogramm umfasst folgende Punkte ##
@@ -64,7 +64,7 @@ Wenn Sie über mehrere Abonnements verfügen und ein anderes Abonnement abrufen 
     # Use the subscription name to select the one you want to work on.
     azure account set <subscription name>
 
-Weitere Informationen finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+Weitere Informationen finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 ## <a id="check"></a>Überprüfen bestehender Rollenzuweisungen ##
 
@@ -144,11 +144,11 @@ Wenn Sie versuchen, andere Cmdlets wie `azure group create` auszuführen, wird e
 In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Verwaltung der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle:
 
 - [Rollenbasierte Zugriffssteuerung in Azure](../role-based-access-control-configure.md)
-- [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md)
+- [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
 - [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](../xplat-cli-azure-resource-manager.md)
 - [Using Resource groups to manage your Azure resources](../azure-preview-portal-using-resource-groups.md) (in englischer Sprache): Erstellen und Verwalten von Ressourcengruppe im Azure-Verwaltungsportal.
 - [Azure-Blog](http://blogs.msdn.com/windowsazure): Informationen zu neuen Funktionen in Azure.
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](role-based-access-control-powershell.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

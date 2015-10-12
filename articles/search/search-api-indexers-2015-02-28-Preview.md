@@ -12,14 +12,14 @@ ms.service="search"
 ms.devlang="rest-api" 
 ms.workload="search" ms.topic="article"  
 ms.tgt_pltfrm="na" 
-ms.date="09/21/2015" 
+ms.date="09/29/2015" 
 ms.author="heidist" />
 
-#Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)
+#Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)#
 
-> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` (dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
+> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](./search-api-2015-02-28-preview). Derzeit besteht kein Unterschied zwischen der `2015-02-28`-Version, die auf [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173) dokumentiert ist, und der hier beschriebenen `2015-02-28-Preview`-Version. Dieser Artikel ist hier enthalten, um eine vollständige Dokumentation für `2015-02-28-Preview` bereitzustellen. Die API selbst wurde jedoch nicht geändert.
 
-## Übersicht
+## Übersicht ##
 
 Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
 
@@ -40,9 +40,9 @@ Die folgenden Datenquellen werden derzeit unterstützt:
 
 Unterstützung für zusätzliche Datenquellen ist für einen späteren Zeitpunkt geplant. Damit wir unsere Entscheidungen besser priorisieren können, lassen Sie uns im [Feedback-Forum für Azure Search](http://feedback.azure.com/forums/263029-azure-search) Ihr Feedback zukommen.
 
-Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenressourcen Sie unter [Grenzwerte](search-limits-quotas-capacity.md).
+Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenressourcen finden Sie unter [Grenzwerte](search-limits-quotas-capacity.md).
 
-## Typischer Verwendungsablauf
+## Typischer Verwendungsablauf ##
 
 Das Erstellen und Verwalten der Indexer und Datenquellen erfolgt über einfache HTTP-Anforderungen (POST, GET, PUT, DELETE) für die angegebene `data source`- oder `indexer`-Ressource.
 
@@ -63,9 +63,9 @@ Nach dem Erstellen eines Indexers können Sie seinen Ausführungsstatus mit dem 
 <!-- MSDN has 2 art files plus a API topic link list -->
 
 
-## Datenquelle erstellen
+## Datenquelle erstellen ##
 
-Das Erstellen einer neuen Datenquelle in einem Azure Search-Dienst erfolgt mithilfe einer HTTP POST-Anforderung.
+In Azure Search wird eine Datenquelle mit Indexern verwendet, sodass die Verbindungsinformationen für die Aktualisierung von Ad-Hoc- oder geplanten Daten eines Zielindexes bereitgestellt werden. Das Erstellen einer neuen Datenquelle in einem Azure Search-Dienst erfolgt mithilfe einer HTTP POST-Anforderung.
 	
     POST https://[service name].search.windows.net/datasources?api-version=[api-version]
     Content-Type: application/json
@@ -75,7 +75,7 @@ Alternativ können Sie PUT verwenden und den Namen der Datenquelle für den URI 
 
     PUT https://[service name].search.windows.net/datasources/[datasource name]?api-version=[api-version]
 
-**Hinweis**: Die maximal zulässige Anzahl von Datenquellen variiert je nach Preisstufe. Der kostenlose Dienst kann bis zu 3 Datenquellen enthalten. Der Standard-Dienst kann 50 Datenquellen enthalten. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
+**Hinweis**: Die maximal zulässige Anzahl von Datenquellen variiert je nach Preisstufe. Der kostenlose Dienst kann bis zu 3 Datenquellen enthalten. Der Standard-Dienst kann 50 Datenquellen enthalten. In den [Einschränkungen für Dienste](search-limits-quotas-capacity.md) finden Sie weitere Informationen.
 
 **Anforderung**
 
@@ -125,7 +125,8 @@ Die Anforderung enthält die folgenden Eigenschaften:
 		
 - `container`:
 	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht (für Azure SQL-Datenquelle) oder eine Sammlung (für DocumentDB-Datenquelle) an, die indiziert werden soll. 
-	- DocumentDB-Datenquellen unterstützen auch die optionale Eigenschaft `query` zum Angeben einer Abfrage, die ein beliebiges JSON-Dokumentlayout in ein Flatfile-Schema reduziert, welches von Azure Search indiziert werden kann.   
+	- Lassen Sie für SQL-Datenquellen Schemapräfixe wie z. B. „dbo.“ aus, sodass der Container nur aus dem Namen der Tabelle oder der Ansicht besteht.
+	- DocumentDB-Datenquellen unterstützen die optionale Eigenschaft `query` zum Angeben einer Abfrage, die ein beliebiges JSON-Dokumentlayout in ein Flatfile-Schema reduziert, welches von Azure Search indiziert werden kann.   
 - Die optionalen Richtlinien `dataChangeDetectionPolicy` und `dataDeletionDetectionPolicy` werden im Folgenden beschrieben.
 
 <a name="DataChangeDetectionPolicies"></a>**Richtlinien zur Erkennung von Datenänderungen**
@@ -211,7 +212,7 @@ Wenn Sie die Datenquelle nur zum einmaligen Kopieren der Daten verwenden möchte
 Bei erfolgreicher Anforderung: "201 Erstellt".
 
 <a name="UpdateDataSource"></a>
-## Datenquelle aktualisieren
+## Datenquelle aktualisieren ##
 
 Sie können eine vorhandene Datenquelle mithilfe einer HTTP-PUT-Anforderung aktualisieren. Geben Sie den Namen der Datenquelle an, die mit der Anforderungs-URI aktualisiert werden soll:
 
@@ -230,7 +231,7 @@ Sie können eine vorhandene Datenquelle mithilfe einer HTTP-PUT-Anforderung aktu
 **HINWEIS:** Manche Eigenschaften vorhandener Datenquellen können nicht aktualisiert werden. Sie können z. B. nicht den Typ einer vorhandenen Datenquelle ändern.
 
 <a name="ListDataSource"></a>
-## Datenquellen auflisten
+## Datenquellen auflisten ##
 
 Der Vorgang **Datenquellen auflisten** gibt eine Liste der Datenquellen im Azure Search-Dienst zurück.
 
@@ -269,7 +270,7 @@ In diesem Fall würde die Antwort aus dem obigen Beispiel wie folgt aussehen:
 Dies ist ein nützliches Verfahren, um Bandbreite zu sparen, wenn Sie über zahlreiche Datenquellen im Search-Dienst verfügen.
 
 <a name="GetDataSource"></a>
-## Datenquelle abrufen
+## Datenquelle abrufen ##
 
 Der Vorgang **Datenquelle abrufen** ruft die Definition der Datenquelle aus Azure Search ab.
 
@@ -304,7 +305,7 @@ Die Antwort ähnelt den Beispielen unter [Beispiele für Anforderung "Datenquell
 **HINWEIS** Legen Sie beim Aufrufen dieser API den `Accept`-Anforderungsheader nicht auf `application/json;odata.metadata=none` fest. Andernfalls wird das `@odata.type`-Attribut nicht in der Antwort berücksichtigt, sodass Sie nicht zwischen den Richtlinien für die Erkennung geänderter und gelöschter Änderungen verschiedener Typen unterscheiden können.
 
 <a name="DeleteDataSource"></a>
-## Datenquelle löschen
+## Datenquelle löschen ##
 
 Der Vorgang **Datenquelle löschen** entfernt eine Datenquelle aus Ihrem Azure Search-Dienst.
 
@@ -322,7 +323,7 @@ Der Vorgang **Datenquelle löschen** entfernt eine Datenquelle aus Ihrem Azure S
 Bei erfolgreicher Antwort wird der Statuscode "204 Kein Inhalt" zurückgegeben.
 
 <a name="CreateIndexer"></a>
-## Indexer erstellen
+## Indexer erstellen ##
 
 Sie können einen neuen Indexer innerhalb des Azure Search-Dienstes mithilfe einer HTTP POST-Anforderung erstellen.
 	
@@ -334,7 +335,7 @@ Alternativ können Sie PUT verwenden und den Namen der Datenquelle für den URI 
 
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=[api-version]
 
-**Hinweis**: Die maximal zulässige Anzahl von Indexern variiert je nach Preisstufe. Der kostenlose Dienst kann bis zu 3 Indexer enthalten. Der Standard-Dienst kann 50 Indexer enthalten. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
+**Hinweis**: Die maximal zulässige Anzahl von Indexern variiert je nach Preisstufe. Der kostenlose Dienst kann bis zu 3 Indexer enthalten. Der Standard-Dienst kann 50 Indexer enthalten. In den [Einschränkungen für Dienste](search-limits-quotas-capacity.md) finden Sie weitere Informationen.
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
@@ -355,14 +356,15 @@ Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine 
         "targetIndexName" : "Required. The name of an existing index",
         "schedule" : { Optional. See Indexing Schedule below. },
         "parameters" : { Optional. See Indexing Parameters below. },
-        "fieldMappings" : { Optional. See Field Mappings below. }
+        "fieldMappings" : { Optional. See Field Mappings below. },
+        "disabled" : Optional boolean value indicating whether the indexer is disabled. False by default.  
 	}
 
 **Indexer-Zeitplan**
 
 Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wird der Indexer regelmäßig gemäß Zeitplan ausgeführt. Der Zeitplan besitzt die folgenden Attribute:
 
-- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
+- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P[nD][T[nH][nM]]`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
 
 - `startTime`: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll.
 
@@ -370,9 +372,9 @@ Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wi
 
 Optional kann ein Indexer mehrere Parameter angeben, die sein Verhalten beeinflussen. Alle Parameter sind optional.
 
-- `maxFailedItems`: Die maximale Anzahl der Elemente, deren Indizierung fehlschlagen darf. Wird die Anzahl überschritten, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0. Informationen zu fehlgeschlagenen Elementen werden mithilfe des Vorgangs [Indexer-Status abrufen](#GetIndexerStatus) zurückgegeben. 
+- `maxFailedItems` : Die maximale Anzahl der Elemente, deren Indizierung fehlschlagen darf. Wird die Anzahl überschritten, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0. Informationen zu fehlgeschlagenen Elementen werden mithilfe des Vorgangs [Indexer-Status abrufen](#GetIndexerStatus) zurückgegeben. 
 
-- `maxFailedItemsPerBatch`: Die maximale Anzahl der Elemente in jedem Batch, deren Indizierung fehlschlagen darf. Wird die Anzahl überschritten, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0.
+- `maxFailedItemsPerBatch` : Die maximale Anzahl der Elemente in jedem Batch, deren Indizierung fehlschlagen darf. Wird die Anzahl überschritten, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0.
 
 - `base64EncodeKeys`: Gibt an, ob Dokumentschlüssel mit base-64 codiert werden. In Azure Search gelten Einschränkungen für Zeichen, die in einem Dokumentschlüssel vorhanden sein können. Allerdings können die Werte in Ihren Quelldaten Zeichen enthalten, die ungültig sind. Wenn solche Werte als Dokumentschlüssel indiziert werden sollen, können Sie dieses Kennzeichen auf "true" festlegen. Der Standardwert ist `false`.
 
@@ -401,7 +403,7 @@ Derzeit wird nur eine Zuordnungsfunktion unterstützt: `jsonArrayToStringCollect
 
 Wenn das Quellfeld beispielsweise die Zeichenfolge `["red", "white", "blue"]` enthält, wird das Zielfeld vom Typ `Collection(Edm.String)` mit drei Werten gefüllt: `"red"`, `"white"` und `"blue"`.
 
-HINWEIS: Die Eigenschaft `targetFieldName` ist optional; wenn Sie keinen Wert angeben, wird der `sourceFieldName`-Wert verwendet).
+Beachten Sie, dass die `targetFieldName`Eigenschaft optional ist. Wenn Sie keinen Wert angeben, wird der `sourceFieldName`-Wert verwendet.
 
 <a name="CreateIndexerRequestExamples"></a>**Beispiel für einen Anforderungstext**
 
@@ -422,7 +424,7 @@ Bei erfolgreicher Anforderung: "201 Erstellt".
 
 
 <a name="UpdateIndexer"></a>
-## Indexer aktualisieren
+## Indexer aktualisieren ##
 
 Sie können einen vorhandene Indexer mithilfe einer HTTP PUT-Anforderung aktualisieren. Geben Sie den Namen des Indexers an, der mit der Anforderungs-URI aktualisiert werden soll:
 
@@ -444,7 +446,7 @@ Bei erfolgreicher Anforderung: "201 Erstellt", wenn ein neuer Indexer erstellt w
 
 
 <a name="ListIndexers"></a>
-## Indexer auflisten
+## Indexer auflisten ##
 
 Der Vorgang **Indexer auflisten** gibt die Liste der Indexer in Ihrem Azure Search-Dienst zurück.
 
@@ -487,7 +489,7 @@ Dies ist ein nützliches Verfahren, um Bandbreite zu sparen, wenn Sie über zahl
 
 
 <a name="GetIndexer"></a>
-## Indexer abrufen
+## Indexer abrufen ##
 
 Der Vorgang **Indexer abrufen** ruft die Indexer-Definition aus Azure Search ab.
 
@@ -515,7 +517,7 @@ Die Antwort ähnelt den Beispielen unter [Beispiele für Anforderung "Datenquell
 
 
 <a name="DeleteIndexer"></a>
-## Indexer löschen
+## Indexer löschen ##
 
 Der Vorgang **Indexer löschen** entfernt einen Indexer aus Ihrem Azure Search-Dienst.
 
@@ -533,7 +535,7 @@ Beim Löschen eines Indexers, der gerade ausgeführt wird, werden die Ausführun
 Bei erfolgreicher Antwort wird der Statuscode "204 Kein Inhalt" zurückgegeben.
 
 <a name="RunIndexer"></a>
-## Indexer ausführen
+## Indexer ausführen ##
 
 Zusätzlich zur Ausführung in regelmäßigen Abständen nach einem Zeitplan kann ein Indexer bei Bedarf auch mit der Anforderung **Indexer ausführen** aufgerufen werden:
 
@@ -549,7 +551,7 @@ Zusätzlich zur Ausführung in regelmäßigen Abständen nach einem Zeitplan kan
 Bei erfolgreicher Antwort wird der Statuscode "202 Zulässig" zurückgegeben.
 
 <a name="GetIndexerStatus"></a>
-## Indexer-Status abrufen
+## Indexer-Status abrufen ##
 
 Der Vorgang **Indexer-Status abrufen** ruft den aktuellen Status und den Ausführungsverlauf eines Indexers ab:
 
@@ -617,7 +619,7 @@ Das Indexer-Ausführungsergebnis enthält die folgenden Eigenschaften:
 
 - `endTime`: Die Zeit in UTC, zu der die Ausführung gestartet wurde. Dieser Wert wird nicht festgelegt, wenn die Ausführung noch nicht abgeschlossen ist.
 
-- `errors`: Eine Liste der auf Elementebene aufgetretenen Fehler, falls vorhanden.
+- `errors`: Eine Liste der auf Elementebene aufgetretenen Fehler, falls vorhanden. Jeder Eintrag enthält einen Dokumentschlüssel (`key`-Eigenschaft) und eine Fehlermeldung (`errorMessage`-Eigenschaft).
 
 - `itemsProcessed`: Die Anzahl der vom Indexer in dieser Ausführung zu indizierenden Datenquellen-Elemente (z. B. Zeilen in Tabelle).
 
@@ -635,15 +637,14 @@ Der Status der Indexer-Ausführung erfasst den Status einer einzelnen Indexer-Au
 
 - `inProgress` gibt an, dass der Indexer gerade ausgeführt wird.
 
-- `transientFailure` gibt an, dass eine Indexer-Ausführung fehlgeschlagen ist. Weitere Informationen finden Sie in der Eigenschaft `errorMessage`. Zum Beheben des Fehlers ist möglicherweise ein Eingreifen des Benutzers erforderlich. Die Behebung einer Schema-Inkompatibilität erfordert beispielsweise eine Benutzeraktion; ein vorübergehender Ausfall der Datenquelle hingegen nicht.
-- erfordert beispielsweise eine Benutzeraktion; ein vorübergehender Ausfall der Datenquelle hingegen nicht. Die nachfolgenden Indexer-Aufrufe werden wie geplant ausgeführt, falls zutreffend. 
+- `transientFailure` gibt an, dass eine Indexer-Ausführung fehlgeschlagen ist. Weitere Informationen finden Sie in der Eigenschaft `errorMessage`. Zum Beheben des Fehlers ist möglicherweise ein Eingreifen des Benutzers erforderlich. Die Behebung einer Schema-Inkompatibilität erfordert beispielsweise eine Benutzeraktion; ein vorübergehender Ausfall der Datenquelle hingegen nicht. Die nachfolgenden Indexer-Aufrufe werden wie geplant ausgeführt, falls zutreffend.
 
 - `persistentFailure` gibt an, dass zum Beheben des Indexer-Fehlers eine Benutzeraktion erforderlich ist. Die geplanten Indexer-Ausführungen werden gestoppt. Beheben Sie das Problem und starten Sie die geplanten Ausführungen mithilfe der API zum Zurücksetzen des Indexers neu.
 
 - `reset` gibt an, dass der Indexer durch den Aufruf der API zum Zurücksetzen des Indexers (siehe unten) zurückgesetzt wurde.
 
 <a name="ResetIndexer"></a>
-## Indexer zurücksetzen
+## Indexer zurücksetzen ##
 
 Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen (z. B. wenn Ihr Datenquellenschema geändert wurde) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
 
@@ -658,7 +659,7 @@ Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Sta
 
 Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 
-## Zuordnung zwischen SQL-Datentypen und Azure Search-Datentypen
+## Zuordnung zwischen SQL-Datentypen und Azure Search-Datentypen ##
 
 <table style="font-size:12">
 <tr>
@@ -725,7 +726,7 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-## Zuordnung zwischen JSON-Datentypen und Azure Search-Datentypen
+## Zuordnung zwischen JSON-Datentypen und Azure Search-Datentypen ##
 
 <table style="font-size:12">
 <tr>
@@ -775,4 +776,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

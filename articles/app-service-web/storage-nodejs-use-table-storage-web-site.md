@@ -613,8 +613,8 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Git-Remoterepository]: http://git-scm.com/docs/git-remote
 
 [Node.js-Web-App mit MongoDB]: web-sites-nodejs-store-data-mongodb.md
-[Azure-Befehlszeilenschnittstelle]: ../xplat-cli.md
-[Azure-CLI]: ../xplat-cli.md
+[Azure-Befehlszeilenschnittstelle]: ../xplat-cli-install.md
+[Azure-CLI]: ../xplat-cli-install.md
 
 [Continuous deployment using GIT in Azure App Service]: web-sites-publish-source-control.md
 [azure]: https://github.com/Azure/azure-sdk-for-node
@@ -641,4 +641,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

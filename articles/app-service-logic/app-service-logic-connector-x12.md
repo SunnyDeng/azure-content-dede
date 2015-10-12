@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Verwendung des BizTalk X12-Connectors in Logik-Apps | Microsoft Azure App Service"
-	description="Erstellen und Konfigurieren des BizTalk X12-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
-	services="app-service\logic"
-	documentationCenter=".net,nodejs,java"
-	authors="rajeshramabathiran"
-	manager="dwrede"
-	editor=""/>
+   pageTitle="Verwendung des BizTalk X12-Connectors in Logik-Apps | Microsoft Azure App Service" 
+   description="Erstellen und Konfigurieren des BizTalk X12-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service" 
+   services="app-service\logic" 
+   documentationCenter=".net,nodejs,java" 
+   authors="rajeshramabathiran" 
+   manager="dwrede" 
+   editor=""/>
 
 <tags
    ms.service="app-service-logic"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="integration"
-	ms.date="08/23/2015"
-	ms.author="rajram"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="08/23/2015"
+   ms.author="rajram"/>
 
 # Erste Schritte mit der BizTalk X12-API-App und das Hinzufügen zur Logik-App
 Sie können mit dem BizTalk X12-Dienst bei der Business-to-Business-Kommunikation Nachrichten über das X12-Protokoll empfangen und senden. X12 wird häufig auch als ASC X12 (Accredited Standards Committee X12) bezeichnet und ist branchenweit verbreitet.
@@ -54,7 +54,7 @@ Der X12-Connector kann als Trigger oder als Aktion verwendet werden.
 
 Parameter|Typ|Beschreibung des Parameters
 ---|---|---
-Inhalt|string|XML-Nachricht
+Inhalt|Zeichenfolge|XML-Nachricht
 Vereinbarungs-ID|Zeichenfolge|Vereinbarungs-ID
 Batchnachricht|string|Batchnachricht
 
@@ -62,6 +62,8 @@ Die Aktion gibt ein Objekt mit der X12-Nutzlast zurück.
 
 ## Optimale Nutzung Ihres Connectors
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+>[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -81,4 +83,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-x12/EncodeConfigured.PNG
 [11]: ./media/app-service-logic-connector-x12/TriggerSettings.PNG
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

@@ -1,15 +1,15 @@
 <properties
 	pageTitle="Verbinden Ihrer mobilen Azure-App mit einer lokalen SQL Server-Instanz über Hybridverbindungen | Microsoft Azure"
 	description="Erfahren Sie, wie Sie über Hybridverbindungen eine Verbindung mit einer lokalen SQL Server-Instanz von einer mobilen App Service-App aus herstellen können."
-	services="app-service\mobile"
+	services="app-service"
 	documentationCenter=""
 	authors="ggailey777"
 	manager="dwrede"
 	editor=""/>
 
 <tags
-	ms.service="app-service-mobile"
-	ms.workload="mobile"
+	ms.service="app-service"
+	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="get-started-article"
@@ -164,4 +164,4 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 [Azure Management Portal]: http://go.microsoft.com/fwlink/p/?linkid=213885
 [Get started with Mobile Services]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

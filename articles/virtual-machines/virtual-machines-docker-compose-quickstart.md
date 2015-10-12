@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erste Schritte mit Docker und Compose auf einem virtuellen Azure-Computer"
-	description="Kurze Einführung in das Arbeiten mit Compose und Docker in Azure"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="dlepow"
-	manager="timlt"
-	editor=""/>
+   description="Kurze Einführung in das Arbeiten mit Compose und Docker in Azure"
+   services="virtual-machines"
+   documentationCenter=""
+   authors="dlepow"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
-	ms.date="08/07/2015"
-	ms.author="danlep"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="08/07/2015"
+   ms.author="danlep"/>
 
 # Erste Schritte mit Docker und Compose auf einem virtuellen Azure-Computer
 
@@ -24,7 +24,7 @@ Wenn Sie mit Docker und Containern noch nicht vertraut sind, lesen Sie die Infor
 
 ## Schritt 1: Einrichten eines virtuellen Linux-Computers als Docker-Host
 
-Im Azure Marketplace stehen Ihnen verschieden Azure-Verfahren und Images zur Verfügung, um einen virtuellen Azure-Computer zu erstellen und als Docker-Host einzurichten. Beispielsweise finden Sie unter [Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle](virtual-machines-docker-with-xplat-cli.md) ein schnelles Verfahren zum Erstellen eines virtuellen Ubuntu-Computers mit der Docker-VM-Erweiterung. Wenn Sie die Docker-VM-Erweiterung verwenden, wird Ihr virtueller Computer automatisch als Docker-Host eingerichtet. Das Beispiel in diesem Artikel veranschaulicht, wie Sie die [Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows ](../xplat-cli.md) (die Azure-CLI) im Dienstverwaltungsmodus verwenden, um den virtuellen Computer zu erstellen.
+Im Azure Marketplace stehen Ihnen verschieden Azure-Verfahren und Images zur Verfügung, um einen virtuellen Azure-Computer zu erstellen und als Docker-Host einzurichten. Beispielsweise finden Sie unter [Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle](virtual-machines-docker-with-xplat-cli-install.md) ein schnelles Verfahren zum Erstellen eines virtuellen Ubuntu-Computers mit der Docker-VM-Erweiterung. Wenn Sie die Docker-VM-Erweiterung verwenden, wird Ihr virtueller Computer automatisch als Docker-Host eingerichtet. Das Beispiel in diesem Artikel veranschaulicht, wie Sie die [Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows ](../xplat-cli-install.md) (die Azure-CLI) im Dienstverwaltungsmodus verwenden, um den virtuellen Computer zu erstellen.
 
 ## Schritt 2: Installieren von Compose
 
@@ -125,4 +125,4 @@ Daraufhin sollte der Startbildschirm von WordPress angezeigt werden, auf dem Sie
 
 [wordpress_start]: ./media/virtual-machines-docker-compose-quickstart/WordPress.png
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

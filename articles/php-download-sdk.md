@@ -105,7 +105,9 @@ Informationen zur Verwendung von Azure finden Sie unter [Verwenden von Azure Pow
 
 Die Azure-Befehlszeilenschnittstelle ist eine Gruppe von Befehlen zum Bereitstellen und Verwalten von Azure-Diensten wie Azure-Websites und virtuellen Azure-Computern. Informationen zum Installieren der Azure-Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
+## Nächste Schritte
 
+Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 
 
 [install-php]: http://www.php.net/manual/en/install.php
@@ -128,4 +130,4 @@ Die Azure-Befehlszeilenschnittstelle ist eine Gruppe von Befehlen zum Bereitstel
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

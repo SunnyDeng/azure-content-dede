@@ -76,4 +76,4 @@ Dieser Vorgang hat einen optionalen Switch "-q", der die Eingabeaufforderung zur
 
 [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

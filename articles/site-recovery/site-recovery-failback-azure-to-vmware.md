@@ -26,13 +26,13 @@ Wichtig: Bei einem Failback von Azure zu Ihrem VMware-Standort kann als Wiederhe
 
 ## Übersicht
 
-1.  Installieren des vContinuum-Servers \(lokal\)
+1.  Installieren des vContinuum-Servers (lokal)
 
     a. Konfigurieren des Servers mit einem Verweis auf den Konfigurationsserver
 
-2.  Bereitstellen eines Prozessservers \(PS\) für Azure
+2.  Bereitstellen eines Prozessservers (PS) für Azure
 
-3.  Installieren eines Masterziels \(lokal\)
+3.  Installieren eines Masterziels (lokal)
 
 4.  Schritte zur Rückkehr zum lokalen Schutz virtueller Computer nach einem Failover
 
@@ -52,7 +52,7 @@ Im Anschluss finden Sie eine Übersicht über das Setup, das wir mit den weiter 
 
 ![](./media/site-recovery-failback-azure-to-vmware/vconports.png)
 
-## Installieren von vContinuum \(lokal\)
+## Installieren von vContinuum (lokal)
 
 Die Setupdatei für vContinuum finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=526305). Installieren Sie zusätzlich den [hier](http://go.microsoft.com/fwlink/?LinkID=533813) verfügbaren vContinuum-Patch.
 
@@ -69,7 +69,7 @@ Die Setupdatei für vContinuum finden Sie [hier](http://go.microsoft.com/fwlink/
 
 	![](./media/site-recovery-failback-azure-to-vmware/image5.png)
 
-5.  Geben Sie die Passphrase für den Konfigurationsserver \(Configuration Server, CS\) an. Die Passphrase haben Sie sich bei der CS-Registrierung notiert. Hierbei handelt es sich um die gleiche Passphrase, die Sie auch bei der Bereitstellung von Masterziel und Prozessserver verwendet haben. Sollten Sie die Passphrase vergessen haben, navigieren Sie in Azure zum CS. Dort finden Sie die Passphrase unter „C:\\Programme \(x86\)\\InMage Systems\\private\\connection.passphrase“.
+5.  Geben Sie die Passphrase für den Konfigurationsserver (Configuration Server, CS) an. Die Passphrase haben Sie sich bei der CS-Registrierung notiert. Hierbei handelt es sich um die gleiche Passphrase, die Sie auch bei der Bereitstellung von Masterziel und Prozessserver verwendet haben. Sollten Sie die Passphrase vergessen haben, navigieren Sie in Azure zum CS. Dort finden Sie die Passphrase unter „C:\\Programme (x86)\\InMage Systems\\private\\connection.passphrase“.
 
 	![](./media/site-recovery-failback-azure-to-vmware/image6.png)
 
@@ -80,7 +80,7 @@ Die Setupdatei für vContinuum finden Sie [hier](http://go.microsoft.com/fwlink/
 7.  Sobald angezeigt wird, dass die Installation abgeschlossen ist, können Sie vContinuum starten. ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
 
-## Installieren des Prozessservers \(PS\) für Azure
+## Installieren des Prozessservers (PS) für Azure
 
 Für Azure muss ein PS installiert werden, damit die virtuellen Computer in Azure die Daten wieder an das lokale Masterziel zurücksenden können. Der PS für Azure muss im gleichen Netzwerk bereitgestellt werden wie der Konfigurationsserver.
 
@@ -103,11 +103,11 @@ Wenn der Prozessserver für Azure bereitgestellt wurde, können Sie sich mit den
 
 Während des Failbacks registrierte Server werden nicht in den VM-Eigenschaften angezeigt. Diese Server werden nur auf der Serverregisterkarte des Konfigurationsservers angezeigt, für den sie registriert wurden. Es kann etwa 10 bis 15 Minuten dauern, bis der PS unter dem Konfigurationsserver erscheint.
 
-## Installieren eines Masterzielservers \(lokal\)
+## Installieren eines Masterzielservers (lokal)
 
 Abhängig von den virtuellen Quellcomputern muss lokal entweder ein Linux- oder ein Windows-basierter Masterzielserver installiert werden.
 
-### Bereitstellen eines Windows-Masterziels \(MT\)
+### Bereitstellen eines Windows-Masterziels (MT)
 
 Ein Windows-MT ist bereits im vContinuum-Setup enthalten. Bei der Installation von vContinuum wird auf dem Computer auch ein MT bereitgestellt und beim Konfigurationsserver registriert.
 
@@ -125,7 +125,7 @@ Ein Windows-MT ist bereits im vContinuum-Setup enthalten. Bei der Installation v
 
 2.  Stellen Sie sicher, dass mit dem virtuellen Computer mindestens zwei Datenträger verknüpft sind: einer für das Betriebssystem und einer als Aufbewahrungslaufwerk.
 
-3.  Installieren Sie das Linux-Betriebssystem. Bei dem System mit dem Linux-basierten Masterziel \(Master Target, MT\) darf für den Stamm- oder Aufbewahrungspeicherplatz nicht der LVM verwendet werden. Das Linux-MT ist standardmäßig so konfiguriert, dass LVM-Partitionen/Datenträger nicht erkannt werden.
+3.  Installieren Sie das Linux-Betriebssystem. Bei dem System mit dem Linux-basierten Masterziel (Master Target, MT) darf für den Stamm- oder Aufbewahrungspeicherplatz nicht der LVM verwendet werden. Das Linux-MT ist standardmäßig so konfiguriert, dass LVM-Partitionen/Datenträger nicht erkannt werden.
 4.  Folgende Partitionen können erstellt werden:
 
 	![](./media/site-recovery-failback-azure-to-vmware/image13.png)
@@ -152,7 +152,7 @@ Aktivieren Sie den Parameter „disk.EnableUUID = TRUE“, um SCSI-IDs für die 
 
 HINWEIS: Vergewissern Sie sich vor dem Herunterladen und Installieren zusätzlicher Pakete, dass das System über eine Internetverbindung verfügt.
 
-\# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
+# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
 
 Der obige Befehl lädt die folgenden 15 Pakete aus dem CentOS 6.6-Repository herunter und installiert sie:
 
@@ -188,17 +188,17 @@ wget-1.12-5.el6\_6.1.x86\_64.rpm
 
 HINWEIS: Wenn der Quellcomputer für das Stamm- oder Startgerät das Reiser- oder das XFS-Dateisystem verwendet, müssen vor dem Schutz die folgenden Pakete heruntergeladen und auf dem Linux-Masterziel installiert werden:
 
-\# cd /usr/local
+# cd /usr/local
 
-\# wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
+# wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
 
-\# wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
+# wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
+# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
-\# wget <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
+# wget <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
+# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
 #### Anwenden benutzerdefinierter Konfigurationsänderungen
 
@@ -210,15 +210,15 @@ Gehen Sie zum Anwenden benutzerdefinierter Konfigurationsänderungen wie folgt v
 
 2. Führen Sie für die Binärdatei den folgenden Untar-Befehl aus:
 
-**tar -zxvf \<Dateiname\>**
+**tar -zxvf <Dateiname>**
 
 3. Führen Sie den folgenden Befehl aus, um die erforderliche Berechtigung zu erteilen:
 
-\# **chmod 755 ./ApplyCustomChanges.sh**
+# **chmod 755 ./ApplyCustomChanges.sh**
 
 4. Führen Sie den folgenden Befehl aus, um das Skript auszuführen:
 
-**\# ./ApplyCustomChanges.sh**
+**# ./ApplyCustomChanges.sh**
 
 HINWEIS: Führen Sie das Skript nur einmal auf dem Server aus. Starten Sie den Server nach erfolgreicher Ausführung des obigen Skripts neu.
 
@@ -230,9 +230,9 @@ Kopieren Sie das heruntergeladene Installationsprogramm für den Linux-Masterzie
 
 Melden Sie sich bei dem virtuellen Computer für den Linux-Masterzielserver mit einem beliebigen SSH-Client an.
 
-Wenn Sie über eine VPN-Verbindung mit dem Azure-Netzwerk verbunden sind, in dem Sie den Linux-Masterzielserver bereitgestellt haben, verwenden Sie die interne IP-Adresse für den Linux-Masterzielserver \(zu finden auf dem Dashboard für virtuelle Computer\) und den Port 22, um über Secure Shell eine Verbindung mit dem Linux-Masterzielserver herzustellen.
+Wenn Sie über eine VPN-Verbindung mit dem Azure-Netzwerk verbunden sind, in dem Sie den Linux-Masterzielserver bereitgestellt haben, verwenden Sie die interne IP-Adresse für den Linux-Masterzielserver (zu finden auf dem Dashboard für virtuelle Computer) und den Port 22, um über Secure Shell eine Verbindung mit dem Linux-Masterzielserver herzustellen.
 
-Wenn Sie über eine öffentliche Internetverbindung eine Verbindung mit dem Linux-Masterzielserver herstellen, verwenden Sie die öffentliche virtuelle IP-Adresse des Linux-Masterzielservers \(zu finden auf der Dashboardseite für virtuelle Computer\) und den für SSH erstellten öffentlichen Endpunkt, um sich bei dem Linux-Masterzielserver anzumelden.
+Wenn Sie über eine öffentliche Internetverbindung eine Verbindung mit dem Linux-Masterzielserver herstellen, verwenden Sie die öffentliche virtuelle IP-Adresse des Linux-Masterzielservers (zu finden auf der Dashboardseite für virtuelle Computer) und den für SSH erstellten öffentlichen Endpunkt, um sich bei dem Linux-Masterzielserver anzumelden.
 
 Extrahieren Sie die Dateien aus dem gezippten tar-Archiv des Installationsprogramms für den Linux-Masterzielserver. Führen Sie hierzu
 
@@ -244,7 +244,7 @@ Wenn Sie die Dateien des Installationsprogramms in ein anderes Verzeichnis extra
 
 ![](./media/site-recovery-failback-azure-to-vmware/image17.png)
 
-Wenn Sie zum Auswählen der primären Rolle des Agents aufgefordert werden, wählen Sie „2“ \(Masterziel\) aus.
+Wenn Sie zum Auswählen der primären Rolle des Agents aufgefordert werden, wählen Sie „2“ (Masterziel) aus.
 
 Lassen Sie die anderen Optionen der interaktiven Installation unverändert.
 
@@ -254,7 +254,7 @@ Warten Sie, bis die Installation fortgesetzt wird und die Oberfläche für die H
 
 ![](./media/site-recovery-failback-azure-to-vmware/image19.png)
 
-1.  Geben Sie die interne IP-Adresse des Konfigurationsservers \(zu finden auf der Dashboardseite für virtuelle Computer\) ein, und drücken Sie die EINGABETASTE.
+1.  Geben Sie die interne IP-Adresse des Konfigurationsservers (zu finden auf der Dashboardseite für virtuelle Computer) ein, und drücken Sie die EINGABETASTE.
 
 2.  Geben Sie als Portnummer den Wert „22“ ein, und drücken Sie die EINGABETASTE.
 
@@ -268,12 +268,14 @@ Warten Sie, bis die Installation abgeschlossen ist.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image20.png)
 
-Falls der Linux-Masterzielserver noch nicht beim Konfigurationsserver registriert wurde, können Sie unter „/usr/local/ASR/Vx/bin/hostconfigcli“ das Hilfsprogramm für die Hostkonfiguration ausführen. \(Hierzu müssen Sie zunächst Zugriffsberechtigungen für dieses Verzeichnis festlegen, indem Sie „chmod“ als Administrator ausführen.\)
+Falls der Linux-Masterzielserver noch nicht beim Konfigurationsserver registriert wurde, können Sie unter „/usr/local/ASR/Vx/bin/hostconfigcli“ das Hilfsprogramm für die Hostkonfiguration ausführen. (Hierzu müssen Sie zunächst Zugriffsberechtigungen für dieses Verzeichnis festlegen, indem Sie „chmod“ als Administrator ausführen.)
 
 
 #### Überprüfen Sie die Registrierung des Masterzielservers beim Konfigurationsserver.
 
 Rufen Sie in Azure Site Recovery über die Konfigurationsserverseite die Serverdetailseite auf, und vergewissern Sie sich, dass der Masterzielserver erfolgreich registriert wurde.
+
+Hinweis: Nach dem Registrieren des MTs sehen Sie möglicherweise, dass dafür ein Konfigurationsfehler mit den möglichen Ursachen angezeigt wird. Der virtuelle Computer wird möglicherweise aus Azure gelöscht oder die Endpunkte sind nicht richtig konfiguriert. Dies liegt daran, dass die MT-Konfiguration von Azure-Endpunkten erkannt wird, wenn das MT in Azure bereitgestellt wird. Dies gilt allerdings nicht für lokale MT, sodass der Fehler dort ignoriert werden kann. Für das Failback sollten dadurch keine Probleme auftreten.
 
 
 ## Initiieren der Rückkehr zum lokalen Schutz der virtuellen Computer
@@ -288,7 +290,7 @@ Bevor Sie mit der Umkehr des Schutzes der virtuellen Computer beginnen, müssen 
 
 Gehen Sie hierzu wie folgt vor:
 
-1.  Öffnen Sie die Computerverwaltung \(entweder über die Systemsteuerung oder im Explorer durch einen Rechtsklick auf „Computer“ und anschließendes Klicken auf „Verwalten“\).
+1.  Öffnen Sie die Computerverwaltung (entweder über die Systemsteuerung oder im Explorer durch einen Rechtsklick auf „Computer“ und anschließendes Klicken auf „Verwalten“).
 
 2.  Klicken Sie auf die Speicherverwaltung, um die Datenträger anzuzeigen, die online und mit dem Computer verbunden sind.
 
@@ -324,7 +326,7 @@ Hinweis: Während des Failovers von Azure zurück zum lokalen Schutz ähnelt der
 
     e. Wenn Sie die virtuellen Computer ermittelt haben, die Sie schützen möchten, wählen Sie sie nacheinander aus.
 
-5.  Wenn Sie einen zu schützenden virtuellen Computer auswählen, für den bereits ein Failover zu Azure stattgefunden hat, erscheint ein Popupfenster mit zwei Einträgen für den virtuellen Computer. Der Grund: Beim CS sind zwei Instanzen des virtuellen Computers registriert. Der Eintrag für den lokalen virtuellen Computer muss entfernt werden, damit der richtige virtuelle Computer geschützt werden kann. Bei den Einträgen handelt es sich jeweils um den Hostnamen des Computers. Zur Ermittlung des Eintrags für den richtigen virtuellen Azure-Computer können Sie sich bei dem virtuellen Azure-Computer anmelden und zu „C:\\Programme \(x86\)\\Microsoft Azure Site Recovery\\Application Data\\...“ navigieren. Ermitteln Sie in der Datei „drscout.conf“ die Host-ID. Behalten Sie im Dialogfeld von vContinuum den Eintrag, dessen Host-ID Sie auf dem virtuellen Computer gefunden haben. Löschen Sie alle anderen Einträge.
+5.  Wenn Sie einen zu schützenden virtuellen Computer auswählen, für den bereits ein Failover zu Azure stattgefunden hat, erscheint ein Popupfenster mit zwei Einträgen für den virtuellen Computer. Der Grund: Beim CS sind zwei Instanzen des virtuellen Computers registriert. Der Eintrag für den lokalen virtuellen Computer muss entfernt werden, damit der richtige virtuelle Computer geschützt werden kann. Bei den Einträgen handelt es sich jeweils um den Hostnamen des Computers. Zur Ermittlung des Eintrags für den richtigen virtuellen Azure-Computer können Sie sich bei dem virtuellen Azure-Computer anmelden und zu „C:\\Programme (x86)\\Microsoft Azure Site Recovery\\Application Data\\...“ navigieren. Ermitteln Sie in der Datei „drscout.conf“ die Host-ID. Behalten Sie im Dialogfeld von vContinuum den Eintrag, dessen Host-ID Sie auf dem virtuellen Computer gefunden haben. Löschen Sie alle anderen Einträge.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image22.png)
 
@@ -387,7 +389,7 @@ NAT Configuration|Diese Option wird im Anschluss näher erläutert.
 >
 > Die öffentliche IP-Adresse des Prozessservers finden Sie in der PS-Bereitstellung in Azure.
 >
-> Der zweite Kanal wird zwischen dem Prozessserver und dem Masterziel \(Master Target, MT\) eingerichtet. Die Verwendung der NAT-Option hängt davon ab, ob Sie zwischen MT und PS eine VPN-basierte Verbindung oder einen internetbasierten Schutz verwenden. Wenn der PS über ein VPN mit dem MT kommuniziert, wählen Sie die Option nicht aus. Wenn das Masterziel über das Internet mit dem Prozessserver kommunizieren muss, geben Sie die NAT-Einstellungen für den PS an.
+> Der zweite Kanal wird zwischen dem Prozessserver und dem Masterziel (Master Target, MT) eingerichtet. Die Verwendung der NAT-Option hängt davon ab, ob Sie zwischen MT und PS eine VPN-basierte Verbindung oder einen internetbasierten Schutz verwenden. Wenn der PS über ein VPN mit dem MT kommuniziert, wählen Sie die Option nicht aus. Wenn das Masterziel über das Internet mit dem Prozessserver kommunizieren muss, geben Sie die NAT-Einstellungen für den PS an.
 >
 > ![](./media/site-recovery-failback-azure-to-vmware/image29.png)
 >
@@ -395,7 +397,7 @@ NAT Configuration|Diese Option wird im Anschluss näher erläutert.
 >
 > ![](./media/site-recovery-failback-azure-to-vmware/image30.png)
 
-1.  Wenn Sie die lokalen virtuellen Computer nicht wie in Schritt 5d beschrieben gelöscht haben und der Datenspeicher, der als Ziel für das Failback fungiert \(siehe Schritt 7a\), immer noch die alten VMDK-Dateien enthält, müssen Sie zudem dafür sorgen, dass die virtuellen Failbackcomputer an einem anderen Ort erstellt werden. Hierzu können Sie in den erweiterten Einstellungen unter **Folder Name Settings** einen alternativen Ordner für die Wiederherstellung angeben.
+1.  Wenn Sie die lokalen virtuellen Computer nicht wie in Schritt 5d beschrieben gelöscht haben und der Datenspeicher, der als Ziel für das Failback fungiert (siehe Schritt 7a), immer noch die alten VMDK-Dateien enthält, müssen Sie zudem dafür sorgen, dass die virtuellen Failbackcomputer an einem anderen Ort erstellt werden. Hierzu können Sie in den erweiterten Einstellungen unter **Folder Name Settings** einen alternativen Ordner für die Wiederherstellung angeben.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image31.png)
 
@@ -543,7 +545,7 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
 
 3.  Navigieren Sie zu den virtuellen Azure IAAS-Computern, und löschen Sie die virtuellen Computer, für die ein Failover ausgeführt wurde.
 
-4.  Löschen Sie die alten virtuellen Computer bei vSphere. \(Hierbei handelt es sich um die virtuellen Computer, für die zuvor ein Failover zu Azure ausgeführt wurde.\)
+4.  Löschen Sie die alten virtuellen Computer bei vSphere. (Hierbei handelt es sich um die virtuellen Computer, für die zuvor ein Failover zu Azure ausgeführt wurde.)
 
 5.  Wählen Sie im ASR-Portal aus, dass die virtuellen Computer, für die kürzlich ein Failover ausgeführt wurde, geschützt werden sollen.
 
@@ -552,4 +554,4 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

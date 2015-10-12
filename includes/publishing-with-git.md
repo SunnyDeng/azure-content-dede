@@ -276,7 +276,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Git website]: http://git-scm.com
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Verwenden von PowerShell für Azure]: ../articles/install-configure-powershell.md
-[Verwenden des Azure-Befehlszeilentools für Mac und Linux]: ../articles/xplat-cli.md
+[Verwenden des Azure-Befehlszeilentools für Mac und Linux]: ../articles/xplat-cli-install.md
 [Git-Dokumentation]: http://git-scm.com/documentation
 
 [portal-select-website]: ./media/publishing-with-git/git-select-website.png
@@ -298,4 +298,4 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Online]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

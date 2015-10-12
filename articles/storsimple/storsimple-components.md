@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Was sind die Komponenten von StorSimple? | Microsoft Azure"
-	description="Beschreibt das StorSimple-Gerät, das virtuelle Gerät, Dienste und Verwaltungstechnologien und definiert in der Lösung verwendete wichtige Begriffe."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="AdinaH"
-	editor=""/>
+   pageTitle="Was sind die Komponenten von StorSimple? | Microsoft Azure" 
+   description="Beschreibt das StorSimple-Gerät, das virtuelle Gerät, Dienste und Verwaltungstechnologien und definiert in der Lösung verwendete wichtige Begriffe." 
+   services="storsimple" 
+   documentationCenter="NA" 
+   authors="SharS" 
+   manager="AdinaH" 
+   editor=""/>
 
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/26/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD" 
+   ms.date="08/26/2015"
+   ms.author="v-sharos"/>
 
 
 # Informationen zu den Komponenten von StorSimple und ihrer Funktionsweise 
@@ -53,7 +53,7 @@ Das virtuelle StorSimple-Gerät wird auf einem einzelnen Knoten eines virtuellen
 - Das virtuelle Gerät verfügt nur über eine Schnittstelle, während das physische Gerät sechs Netzwerkschnittstellen bereitstellt. 
 - Sie registrieren das virtuelle Gerät während der Gerätekonfiguration und nicht in einem separaten Vorgang.
 - Sie können den Verschlüsselungsschlüssel für Dienstdaten nicht mittels eines virtuellen Geräts neu generieren. Während des Schlüsselrollovers generieren Sie den Schlüssel auf dem physischen Gerät erneut und aktualisieren dann das virtuelle Gerät mit dem neuen Schlüssel.
-- Wenn Sie Updates auf das virtuelle Gerät anwenden müssen, treten Ausfallzeiten auf. Dies ist bei einem physischen StorSimple-Gerät nicht der Fall.
+- Derzeit ist das Anwenden von Updates auf das virtuelle Gerät deaktiviert. Wenn Sie ein virtuelles Gerät mit der neuesten Version benötigen, können Sie ein neues erstellen und ein Failover der Volumecontainer an das neue virtuelle Gerät herstellen.
 
 Es wird empfohlen, dass Sie das virtuelle StorSimple-Gerät für Wiederherstellungsszenarien nach einem Notfall verwenden, in denen kein physisches Gerät verfügbar ist, z. B. in Cloudentwicklungs- und Testszenarios.
 
@@ -226,4 +226,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

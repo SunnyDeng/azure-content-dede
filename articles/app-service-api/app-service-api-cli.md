@@ -22,7 +22,7 @@ In diesem Artikel erfahren Sie, wie Sie API-Apps in Azure App Service mithilfe d
 
 ## Voraussetzungen
 
-In diesem Artikel wird davon ausgegangen, dass Sie die Azure-Befehlszeilenschnittstelle installiert haben und wissen, wie Sie damit allgemeine Aufgaben ausführen. Eine Einführung zur Befehlszeilenschnittstelle finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+In diesem Artikel wird davon ausgegangen, dass Sie die Azure-Befehlszeilenschnittstelle installiert haben und wissen, wie Sie damit allgemeine Aufgaben ausführen. Eine Einführung zur Befehlszeilenschnittstelle finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 > [AZURE.NOTE]Die Anweisungen für das [Herstellen einer Verbindung mit einem Azure-Abonnement](../xplat-cli-connect.md) enthalten zwei Alternativen: Anmelden mit einem Geschäfts- oder Schulkonto und Herunterladen einer *.publishsettings*-Datei. Bei API-Apps kann die Authentifizierung mithilfe der Datei *.publishsettings* nicht verwendet werden. Dies liegt daran, dass Sie den Ressourcenverwaltungsmodus (im nächsten Abschnitt vorgestellt) für die Verwendung von API-Apps nutzen müssen. Die Authentifizierung mithilfe der Datei *.publishsettings* funktioniert nicht mit dem Ressourcen-Manager.
 
@@ -288,4 +288,4 @@ Weitere Informationen zur Verwendung von Azure-Befehlszeilenprogrammen mit dem A
 * [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

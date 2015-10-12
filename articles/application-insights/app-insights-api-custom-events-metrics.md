@@ -461,6 +461,17 @@ Wenn sich Benutzer bei Ihrer App anmelden, erhalten Sie einen genaueren Zählwer
     }
 ```
 
+In einer ASP.NET-MVC-Webanwendung, beispielsweise:
+
+*Razor*
+
+        @if (Request.IsAuthenticated)
+        {
+            <script>
+                appInsights.setAuthenticatedUserContext("@User.Identity.Name".replace(/[,;=| ]+/g, "_"));
+            </script>
+        }
+
 Es ist nicht notwendig, den tatsächlichen Anmeldenamen des Benutzers zu verwenden. Es muss sich lediglich um eine ID handeln, die für diesen Benutzer eindeutig ist. Sie darf keine Leerzeichen und keines der folgenden Zeichen enthalten: `,;=|`.
 
 Die Benutzer-ID wird zudem in einem Sitzungscookie festgelegt und an den Server gesendet. Wenn das Server-SDK installiert ist, wird die ID des authentifizierten Benutzers als Teil der Kontexteigenschaften der Client- und Servertelemetrie gesendet, sodass Sie sie filtern und durchsuchen können.
@@ -470,7 +481,9 @@ Wenn bei Ihrer App Benutzer in Konten gruppiert werden, können Sie auch einen B
 
       appInsights.setAuthenticatedUserContext(validatedId, accountId);
 
-Im [Metrik-Explorer](app-insights-metrics-explorer.md) können Sie ein Diagramm der **authentifizierten Benutzer** und **Konten** erstellen.
+Im [Metrik-Explorer](app-insights-metrics-explorer.md) können Sie ein Diagramm erstellen, dass **authentifizierte Benutzer** und **Benutzerkonten** zählt.
+
+Sie können auch nach Clientdatenpunkten mit bestimmten Benutzernamen und Konten [suchen][diagnostic].
 
 
 ## <a name="defaults"></a>Festlegen von Standardeinstellungen für ausgewählte benutzerdefinierte Telemetriedaten
@@ -699,7 +712,7 @@ Normalerweise sendet das SDK Daten zu ausgewählten Zeiten, um den Benutzer mög
     // Allow some time for flushing before shutdown.
     System.Threading.Thread.Sleep(1000);
 
-Beachten Sie, dass die Funktion asynchron ist.
+Beachten Sie, dass die Funktion für speicherinterne Kanäle asynchron ist, allerdings synchron, wenn Sie den [persistenten Kanal](app-insights-windows-desktop.md#persistence-channel) wählen.
 
 
 
@@ -903,4 +916,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

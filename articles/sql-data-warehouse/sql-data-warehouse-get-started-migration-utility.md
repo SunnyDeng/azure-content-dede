@@ -53,8 +53,8 @@ Nachdem Sie nun einige Daten migriert haben, schauen Sie sich an, die das [Entwi
 <!--Image references-->
 
 <!--Article references-->
-[Migrationsdokumentation]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwickeln]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-develop/
+[Migrationsdokumentation]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
+[Entwickeln]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
 [hier]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

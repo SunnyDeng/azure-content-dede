@@ -24,7 +24,7 @@ Apache Spark ist eine schnelles Modul zur Verarbeitung von umfangreichen Daten. 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Bereitstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell bereitstellen.
 
 
-Zusätzlich zur Ausführung auf den Cluster-Managern Mesos oder YARN bietet Spark einen einfachen eigenständigen Bereitstellungsmodus. Dieses Lernprogramm führt Sie durch die Verwendung einer Beispielvorlage für Azure-Ressourcen-Manager zum Bereitstellen eines Spark-Clusters auf Ubuntu-VMs über [Azure PowerShell](../powershell-install-configure.md) oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+Zusätzlich zur Ausführung auf den Cluster-Managern Mesos oder YARN bietet Spark einen einfachen eigenständigen Bereitstellungsmodus. Dieses Lernprogramm führt Sie durch die Verwendung einer Beispielvorlage für Azure-Ressourcen-Manager zum Bereitstellen eines Spark-Clusters auf Ubuntu-VMs über [Azure PowerShell](../powershell-install-configure.md) oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 Diese Vorlage stellt einen Spark-Cluster auf Ubuntu-VMs bereit. Diese Vorlage stellt außerdem ein Speicherkonto, ein virtuelles Netzwerk, Verfügbarkeitsgruppen, öffentliche IP-Adressen und die für die Installation erforderlichen Netzwerkkarten bereit. Es gibt keinen öffentlichen IP-Zugriff auf den Spark-Cluster, da dieser hinter einem Subnetz erstellt wird. Als Teil der Bereitstellung kann eine optionale "Jumpbox" bereitgestellt werden. Diese "Jumpbox" ist ein virtueller Ubuntu-Computer, der in einem Subnetz bereitgestellt wird, aber eine öffentliche IP-Adresse mit einem offenen SSH-Port *verfügbar* macht, sodass Sie darauf zugreifen können. Sie können dann von der "Jumpbox" per SSH auf alle virtuellen Spark-Computer im Subnetz zugreifen.
 
@@ -847,4 +847,4 @@ Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md)
 
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

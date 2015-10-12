@@ -46,4 +46,4 @@
     |5, 6|SAS-Anschlüsse am primären Gehäuse (mit der Beschriftung "EBOD")|
     |7, 8|SAS-Anschlüsse am EBOD-Gehäuse (Anschluss A)|
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

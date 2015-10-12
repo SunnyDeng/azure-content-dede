@@ -39,19 +39,21 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
 - Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
-    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## 3\. Erstellen der Richtlinien
 
-In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Web-App enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
+In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Web-App enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie jedes Typs erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
 
 - Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
-- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsansprüche in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
-- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
+- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsansprüche in jeder Richtlinie aus. Sie können auch andere Ansprüche auswählen.
+- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze.
+
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
 
 ## 4\. Herunterladen des Codes
 
@@ -61,13 +63,13 @@ Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQu
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet.git
 ```
 
-Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
-Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskWebApp`-Projekt und ein `TaskService`-Projekt. `TaskWebApp` ist das WPF-Web-App-Front-End, mit dem der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste des Benutzers gespeichert wird.
+Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die Visual Studio-Datei (`.sln`), um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskWebApp`-Projekt und ein `TaskService`-Projekt. `TaskWebApp` ist das WPF-Web-App-Front-End, mit dem der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste jedes Benutzers gespeichert wird.
 
 ## 5\. Konfigurieren des Aufgabendiensts
 
-Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen der Zugriffstoken müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
+Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen des Zugriffstokens müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
 
 ```
 <appSettings>
@@ -80,15 +82,16 @@ Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem g
     <add key="ida:ClientId" value="{Enter the Application ID assigned to your app by the Azure Portal}" />
     <add key="ida:PolicyId" value="{Enter the name of one of the policies you created, like `b2c_1_my_sign_in_policy`}" />
 </appSettings>
-  ```
+```
+  
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
-Dieser Artikel behandelt nicht die Details der Sicherung von `TaskService`. Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren
-[Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
+
+Dieser Artikel behandelt nicht die Details der Sicherung von `TaskService`. Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
 
 ## 6. Konfigurieren der Aufgaben-Web-App
 
-In order for the `TaskWebApp` to communicate with Azure AD B2C, there are a few common parameters that you will need to provide.  In the `TaskWebApp` project, open up the
-`web.config` file in the root of the project and replace the values in the `<appSettings>` section.  These values will be used throughout the web app.
+Damit die `TaskWebApp` mit Azure AD B2C kommunizieren kann, müssen Sie einige allgemeine Parameter angeben. Öffnen Sie im `TaskWebApp`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`. Diese Werte werden in der gesamten Web-App verwendet.
 
 ```
 <appSettings>
@@ -107,6 +110,8 @@ In order for the `TaskWebApp` to communicate with Azure AD B2C, there are a few 
     <add key="api:TaskServiceUrl" value="https://localhost:44332/" />
 </appSettings>
 ```     
+
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
 Es gibt auch zwei `[PolicyAuthorize]`-Decorator-Elemente, in denen Sie den Namen der Anmelderichtlinie angeben müssen. Das `[PolicyAuthorize]`-Attribut wird verwendet, um eine bestimmte Richtlinie aufzurufen, wenn der Benutzer versucht, auf eine Seite in der App zuzugreifen, für die eine Authentifizierung erforderlich ist.
 
@@ -208,7 +213,7 @@ public partial class Startup
 
 Die Web-App ist jetzt zum Authentifizieren des Benutzers mit Ihrem B2C-Verzeichnis und zum Empfangen eines Autorisierungscodes von Azure AD konfiguriert. Der nächste Schritt besteht darin, diesen Autorisierungscode durch ein Zugriffstoken von Azure AD auszutauschen.
 
-Immer wenn Ihre .NET-Web-Apps Zugriffstoken von Azure AD abrufen müssen, können Sie die **Active Directory-Authentifizierungsbibliothek (ADAL)** verwenden. Sie müssen ADAL für diesen Prozess nicht verwenden, aber ADAL erleichtert Ihnen die Arbeit durch die Übernahme vieler Details, wie z. B. Senden von OAuth 2.0-Authentifizierungsmeldungen, Zwischenspeichern und Aktualisieren von Token.
+Immer wenn Ihre .NET-Web-Apps Zugriffstoken von Azure AD abrufen müssen, können Sie die **Active Directory Authentication Library (ADAL)** verwenden. Sie müssen ADAL für diesen Prozess nicht verwenden, aber ADAL erleichtert Ihnen die Arbeit durch die Übernahme vieler Details, wie z. B. Senden von OAuth 2.0-Authentifizierungsmeldungen, Zwischenspeichern und Aktualisieren von Token.
 
 Installieren Sie zunächst wieder mit der Paket-Manager-Konsole ADAL im `TaskWebApp`-Projekt:
 
@@ -282,7 +287,7 @@ ADAL übernimmt das Zwischenspeichern von Token, aktualisiert sie, wenn sie abla
 
 #### Lesen von Aufgaben aus der Web-API
 
-Da Sie jetzt ein Token haben, können Sie es mit der HTTP-GET-Anforderung im `Authorization`-Header verknüpfen, um `TaskService` sicher aufzurufen:
+Da Sie jetzt über ein Token verfügen, können Sie es an die HTTP-GET-Anforderung im `Authorization`-Header anfügen, um `TaskService` sicher aufzurufen:
 
 ```C#
 // Controllers\TasksController.cs
@@ -333,7 +338,7 @@ public async Task<ActionResult> Index()
 
 #### Erstellen und Löschen von Aufgaben mit der Web-API
 
-Sie können genau dem gleichen Muster beim Senden von POST- und DELETE-Anforderungen an `TaskService` folgen. Rufen Sie einfach `AuthenticationContext.AcquireTokenSilentAsync(...)` auf, und fügen Sie das resultierende Token der Anforderung im `Authorization`-Header hinzu. Wir haben die `Create`-Aktion für Sie implementiert. Versuchen Sie, die `Delete`-Aktion selbst in `TasksController.cs` zu beenden.
+Sie können genau dem gleichen Muster beim Senden von POST- und DELETE-Anforderungen an `TaskService` folgen. Rufen Sie einfach `AuthenticationContext.AcquireTokenSilentAsync(...)` auf, und fügen Sie das resultierende Token an die Anforderung im `Authorization`-Header an. Wir haben die `Create`-Aktion für Sie implementiert. Versuchen Sie, die `Delete`-Aktion selbst in `TasksController.cs` zu beenden.
 
 ## 8\. Abmelden des Benutzers
 
@@ -382,4 +387,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

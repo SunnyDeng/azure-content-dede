@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="07/02/2015"
+	ms.date="09/28/2015"
 	ms.author="dastrock"/>
 
 # Einrichten eines Azure Active Directory-Mandanten
@@ -65,4 +65,4 @@ Wenn Ihnen diese genannten Schritte unverständlich sind, machen Sie sich keine 
 
 Im Rahmen der Registrierung bei Azure müssen Sie Kreditkarteninformationen angeben. Sie können vertrauensvoll fortfahren, da das Veröffentlichen von Anwendungen in Azure AD oder Erstellen neuer Mandanten nicht berechnet wird.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

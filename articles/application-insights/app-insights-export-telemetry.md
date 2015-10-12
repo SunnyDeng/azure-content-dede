@@ -32,7 +32,7 @@ Wenn Sie noch nicht über ein "klassisches" Speicherkonto verfügen, erstellen S
 
     ![Wählen Sie im Azure-Portal "Neu", "Daten" und "Speicher".](./media/app-insights-export-telemetry/030.png)
 
-2. Erstellen eines Containers
+2. Erstellen Sie einen Container.
 
     ![Wählen Sie im neuen Speicher "Container" aus, klicken Sie auf die Kachel "Container" und anschließend auf "Hinzufügen".](./media/app-insights-export-telemetry/040.png)
 
@@ -217,4 +217,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

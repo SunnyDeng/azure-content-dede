@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-html5"
 	ms.devlang="javascript"
 	ms.topic="get-started-article"
-	ms.date="08/11/2015"
+	ms.date="09/24/2015"
 	ms.author="glenga"/>
 
 
@@ -65,13 +65,11 @@ Standardmäßig wird das aus dem Portal heruntergeladene Client-Schnellstartproj
  
 		Install-Package Microsoft.AspNet.WebApi.Cors  
 
-	Dadurch wird die vom Back-End benötigte CORS-Unterstützung installiert.
-
-2. Öffnen Sie die Projektdatei "App\_Start/WebApiConfig.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
+2. Öffnen Sie die Projektdatei "App\_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
 
 		using System.Web.Http.Cors;
 
-3. Fügen Sie als Nächstes den folgenden Code in die **WebApiConfig.Register**-Methode ein, nachdem **HttpConfiguration** erstellt wurde:
+3. Fügen Sie als Nächstes den folgenden Code in die **Startup.ConfigureMobileApp**-Methode ein, nachdem **HttpConfiguration** (*config*) erstellt wurde:
 
         // Enable CORS support for localhost port 8000, all headers and methods.
         var cors = new EnableCorsAttribute("http://localhost:8000", "*", "*");
@@ -121,4 +119,4 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 [Visual Studio Community 2013]: https://www.visualstudio.com/downloads
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

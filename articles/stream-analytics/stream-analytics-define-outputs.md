@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/17/2015" 
+	ms.date="09/29/2015" 
 	ms.author="jeffstok"/>
 
 # Grundlegendes zu Stream Analytics-Ausgaben
@@ -31,7 +31,6 @@ Um verschiedene Anwendungsmuster zu aktivieren, stellt Azure Stream Analytics si
 | Eigenschaftenname | Beschreibung |
 |---------------|-------------|
 | Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diese Datenbank weiterzuleiten. |
-| Abonnement | Wählen Sie eine Datenbank aus Ihrem eigenen Abonnement, oder geben Sie die Verbindungsinformationen für eine in einem anderen Abonnement an. |
 | Datenbank | Der Name der Datenbank, an die Sie die Ausgabe senden. |
 | Servername | Der Servername der SQL-Datenbank. |
 | Benutzername | Der Benutzername, der Schreibzugriff auf die Datenbank hat. |
@@ -53,10 +52,6 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 <tr>
 <td>Ausgabealias</td>
 <td>Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diesen Blobspeicher weiterzuleiten.</td>
-</tr>
-<tr>
-<td>Abonnement</td>
-<td>Wählen Sie ein Blobspeicherkonto aus Ihrem eigenen Abonnement, oder geben Sie die Verbindungsinformationen für eines in einem anderen Abonnement an.</td>
 </tr>
 <tr>
 <td>Speicherkonto</td>
@@ -92,7 +87,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Trennzeichen</td>
-<td>Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der CSV-Daten. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich.</td>
+<td>Gilt nur für die CSV-Serialisierung. Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der CSV-Daten. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich.</td>
 </tr>
 <tr>
 <td>Format</td>
@@ -110,7 +105,6 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 | Eigenschaftenname | Beschreibung |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diesen Event Hub weiterzuleiten. |
-| Abonnement | Wählen Sie ein Event Hub aus Ihrem eigenen Abonnement, oder geben Sie die Verbindungsinformationen für eines in einem anderen Abonnement an. |
 | Service Bus- Namespace | Ein Service Bus-Namespace ist ein Container für einen Satz von Nachrichtenentitäten. Sie haben bei der Erstellung eines neuen Event Hubs auch einen Service Bus-Namespace erstellt. |
 | Event Hub | Der Name Ihrer Event Hub-Ausgabe. |
 | Event Hub-Richtlinienname | Die Richtlinie für den gemeinsamen Zugriff, die auf der Registerkarte "Event Hub-Konfiguration" erstellt werden kann. Jede Richtlinie für den gemeinsamen Zugriff verfügt über einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel. |
@@ -118,15 +112,17 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 | Partitionsschlüsselspalte [optional] | Diese Spalte enthält den Partitionsschlüssel für die Event Hub-Ausgabe. |
 | Ereignisserialisierungsformat | Das Serialisierungsformat für Ausgabedaten. Es werden JSON, CSV und Avro unterstützt. |
 | Codieren | Bei CSV und JSON ist UTF-8 gegenwärtig das einzige unterstützte Codierungsformat. |
-| Trennzeichen | Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
+| Trennzeichen | Gilt nur für die CSV-Serialisierung. Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
 | Format | Gilt nur für den JSON-Typ. "Separate Zeile" gibt an, dass die Ausgabe so formatiert wird, dass jedes JSON-Objekt in einer neuen Zeile enthalten ist. "Array" gibt an, dass die Ausgabe als Array aus JSON-Objekten formatiert wird. |
 ## Power BI
 
 [Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um Stream Analytics-Benutzern eine umfassende Visualisierungsumgebung bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, Erstellung von Berichten und metrikgesteuerte Berichterstellung verwendet werden.
 
+> [AZURE.NOTE]Zurzeit wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
+
 ### Autorisieren eines Power BI-Kontos
 
-1.	Wenn Power BI als Ausgabe ausgewählt ist, werden Sie aufgefordert, einen vorhandenen Power BI-Benutzer zu autorisieren oder ein neues Power BI-Konto zu erstellen.  
+1.	Wenn Power BI im Azure-Verwaltungsportal als Ausgabe ausgewählt ist, werden Sie aufgefordert, einen vorhandenen Power BI-Benutzer zu autorisieren oder ein neues Power BI-Konto zu erstellen.  
 
     ![Autorisieren von Power BI-Benutzern](./media/stream-analytics-define-outputs/01-stream-analytics-define-outputs.png)
 
@@ -168,7 +164,6 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 | Eigenschaftenname | Beschreibung |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diesen Tabellenspeicher weiterzuleiten. |
-| Abonnement | Wählen Sie ein Tabellenspeicherkonto aus Ihrem eigenen Abonnement, oder geben Sie die Verbindungsinformationen an, wenn das Speicherkonto aus einem anderen Abonnement stammt. |
 | Speicherkonto | Der Name des Speicherkontos, an das Sie die Ausgabe senden. |
 | Speicherkontoschlüssel | Der Zugriffsschlüssel, der dem Speicherkonto zugeordnet ist. |
 | Tabellenname | Der Name der Tabelle. Die Tabelle wird erstellt, wenn sie noch nicht vorhanden ist. |
@@ -185,33 +180,71 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 | Eigenschaftenname | Beschreibung |
 |----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diese Service Bus-Warteschlange weiterzuleiten. |
-| Abonnement | Wählen Sie einen Service Bus-Namespace aus Ihrem eigenen Abonnement, oder geben Sie die Verbindungsinformationen an, wenn der Namespace aus einem anderen Abonnement stammt. |
 | Service Bus- Namespace | Ein Service Bus-Namespace ist ein Container für einen Satz von Nachrichtenentitäten. |
 | Warteschlangenname | Der Name der Service Bus-Warteschlange. |
 | Name der Warteschlangenrichtlinie | Beim Erstellen einer Warteschlange können Sie auf der Registerkarte "Warteschlange konfigurieren" Richtlinien für den gemeinsamen Zugriff erstellen. Jede Richtlinie für den gemeinsamen Zugriff umfasst einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel. |
 | Schlüssel der Warteschlangenrichtlinie | Der Schlüssel für den gemeinsamen Zugriff, der für die Authentifizierung des Zugriffs auf den Service Bus-Namespace verwendet wird. |
 | Ereignisserialisierungsformat | Das Serialisierungsformat für Ausgabedaten. Es werden JSON, CSV und Avro unterstützt. |
 | Codieren | Bei CSV und JSON ist UTF-8 gegenwärtig das einzige unterstützte Codierungsformat. |
-| Trennzeichen | Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
+| Trennzeichen | Gilt nur für die CSV-Serialisierung. Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
 | Format | Gilt nur für den JSON-Typ. "Separate Zeile" gibt an, dass die Ausgabe so formatiert wird, dass jedes JSON-Objekt in einer neuen Zeile enthalten ist. "Array" gibt an, dass die Ausgabe als Array aus JSON-Objekten formatiert wird. |
 
 ## Service Bus-Themen
 
-Während Service Bus-Warteschlangen eine 1: 1-Kommunikationsmethode vom Absender zum Empfänger bereitstellen, bieten [Service Bus Themen](https://msdn.microsoft.com/library/azure/hh367516.aspx) eine 1: n-Form der Kommunikation.
+Während Service Bus-Warteschlangen eine 1: 1-Kommunikationsmethode vom Absender zum Empfänger bereitstellen, bieten [Service Bus-Themen](https://msdn.microsoft.com/library/azure/hh367516.aspx) eine 1: n-Form der Kommunikation.
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Tabellenausgabe.
 
 | Eigenschaftenname | Beschreibung |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an dieses Service Bus-Thema weiterzuleiten. |
-| Abonnement | Wählen Sie einen Service Bus-Namespace aus Ihrem eigenen Abonnement, oder geben Sie die Verbindungsinformationen an, wenn der Namespace aus einem anderen Abonnement stammt. |
 | Service Bus- Namespace | Ein Service Bus-Namespace ist ein Container für einen Satz von Nachrichtenentitäten. Sie haben bei der Erstellung eines neuen Event Hubs auch einen Service Bus-Namespace erstellt. |
 | Themenname | Themen sind Messagingentitäten, vergleichbar mit Event Hubs und Warteschlangen. Sie wurden für die Erfassung von Ereignisstreams von einer Reihe unterschiedlicher Geräte und Dienste entwickelt. Wenn ein Thema erstellt wird, wird ihm auch ein bestimmter Name zugewiesen. Die an ein Thema gesendeten Nachrichten sind nur verfügbar, wenn ein Abonnement erstellt wurde. Stellen Sie daher sicher, dass es mindestens ein Abonnement unter dem Thema gibt. |
 | Name der Themenrichtlinie | Beim Erstellen eines Themas können Sie auf der Registerkarte "Thema konfigurieren" Richtlinien für den gemeinsamen Zugriff erstellen. Jede Richtlinie für den gemeinsamen Zugriff verfügt über einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel. |
 | Schlüssel der Themenrichtlinie | Der Schlüssel für den gemeinsamen Zugriff, der für die Authentifizierung des Zugriffs auf den Service Bus-Namespace verwendet wird. |
 | Ereignisserialisierungsformat | Das Serialisierungsformat für Ausgabedaten. Es werden JSON, CSV und Avro unterstützt. |
 | Codieren | Beim CSV- oder JSON-Format muss eine Codierung angegeben werden. Das einzige derzeit unterstützte Codierungsformat ist UTF-8. |
-| Trennzeichen | Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
+| Trennzeichen | Gilt nur für die CSV-Serialisierung. Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
+
+## DocumentDB
+
+[Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) ist ein vollständig verwalteter NoSQL-Dokumentendatenbankdienst, der Abfragen und Transaktionen über schemafreie Daten, vorhersagbare und zuverlässige Leistung sowie schnelle Entwicklung bietet.
+
+Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer DocumentDB-Ausgabe.
+
+<table>
+<tbody>
+<tr>
+<td>EIGENSCHAFTENNAME</td>
+<td>BESCHREIBUNG</td>
+</tr>
+<tr>
+<td>Kontoname</td>
+<td>Der Name des DocumentDB-Kontos. Dies kann auch der Endpunkt für das Konto sein.</td>
+</tr>
+<tr>
+<td>Kontoschlüssel</td>
+<td>Der gemeinsame Zugriffsschlüssel für das DocumentDB-Konto.</td>
+</tr>
+<tr>
+<td>Datenbank</td>
+<td>Der Name der DocumentDB-Datenbank.</td>
+</tr>
+<tr>
+<td>Muster des Sammlungsnamen</td>
+<td>Das Sammlungsnamenmuster für die zu verwendenden Sammlungen. Das Sammlungsnamenformat kann mit dem optionalen Token {partition} gebildet werden, wobei Partitionen bei 0 beginnen.<BR>Beispiel: Die Eingaben sind zulässig:<BR>MyCollection{partition}<BR>MyCollection<BR>Beachten Sie, dass Sammlungen vorhanden sein müssen, bevor der Stream Analytics-Auftrag gestartet wird, und nicht automatisch erstellt werden.</td>
+</tr>
+<tr>
+<td>Partitionsschlüssel</td>
+<td>Der Name des Felds in Ausgabeereignissen, das zur Angabe des Schlüssels für die Partitionierung der Ausgabe über Sammlungen hinweg verwendet wird.</td>
+</tr>
+<tr>
+<td>Dokument-ID</td>
+<td>Der Name des Felds in Ausgabeereignissen, das zur Angabe des Primärschlüssels verwendet wird, auf dem Einfüge- und Updatevorgänge basieren.</td>
+</tr>
+</tbody>
+</table>
+
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -232,4 +265,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

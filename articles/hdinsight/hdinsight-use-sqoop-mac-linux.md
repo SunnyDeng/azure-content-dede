@@ -40,17 +40,17 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Arbeitsstation**: ein Computer mit einem SSH-Client.
 
-- **Azure CLI**: Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../xplat-cli.md)
+- **Azure CLI**: Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../xplat-cli-install.md)
 
 - **Linux-basierter HDInsight-Cluster**: Anweisungen zur Bereitstellung von Clustern finden Sie unter [Erste Schritte mit HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md) oder unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
 - **Azure SQL-Datenbank**: Dieses Dokument enthält Anweisungen zum Erstellen einer Beispiel-SQL-Datenbank. Weitere Informationen zur SQL-Datenbank finden Sie unter [Erste Schritte mit Azure SQL-Datenbank][sqldatabase-get-started].
 
-* **SQL Server**: Die Schritte in diesem Dokument können mit einigen Änderungen auch für SQL-Server verwendet werden. Weitere Informationen zu den in diesem Artikel speziell für SQL-Server geltenden Anforderungen finden Sie im Abschnitt [Verwenden von SQL Server](#using-sql-server).
+* **SQL-Server**: Die Schritte in diesem Dokument können (mit einigen Anpassungen) auch mit SQL-Server verwendet werden. Allerdings müssen sich sowohl das HDInsight-Cluster als auch der SQL-Server im gleichen Azure Virtual Network befinden. Weitere Informationen zu den in diesem Artikel speziell für SQL-Server geltenden Anforderungen finden Sie im Abschnitt [Verwenden von SQL Server](#using-sql-server).
 
 ##Das Szenario
 
-Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden eine Hive-Tabelle namens **hivesampletable**, die auf die Datendatei unter **wasb:///hive/warehouse/hivesampletable** verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
+Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden eine Hive-Tabelle namens **hivesampletable**, die auf die Datendatei unter ****wasb:///hive/warehouse/hivesampletable** verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
 
 | Feld | Datentyp |
 | ----- | --------- |
@@ -263,4 +263,4 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

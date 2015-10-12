@@ -37,7 +37,7 @@ Um den Namen und das Kennwort des Benutzerkontos mit sudo-Berechtigungen oder de
 Sie benötigen Folgendes:
 
 - Microsoft Azure Linux Agent Version 2.0.5 oder höher. Die meisten Linux-Images im VM-Katalog enthalten Version 2.0.5. Sie können **waagent -version** ausführen, um zu ermitteln, welche Version installiert ist. Folgen Sie den Anweisungen im [Benutzerhandbuch für Azure Linux-Agent], um den Agent zu aktualisieren.
-- Azure-Befehlszeilenschnittstelle (CLI). Informationen zum Installieren und Einrichten der Azure-CLI finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+- Azure-Befehlszeilenschnittstelle (CLI). Informationen zum Installieren und Einrichten der Azure-CLI finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 - Azure PowerShell. Sie verwenden Befehle im Cmdlet Set-AzureVMExtension, um die Erweiterung VMAccessForLinux automatisch zu laden und zu konfigurieren. Ausführliche Informationen zum Einrichten von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell].
 - Ein neues Kennwort oder neue SSH-Schlüssel, wenn Sie diese zurücksetzen möchten. Dies ist nicht erforderlich, wenn Sie die SSH-Konfiguration zurücksetzen möchten.
 
@@ -263,4 +263,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Azure-VM-Erweiterungen und Features]: http://msdn.microsoft.com/library/azure/dn606311.aspx
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

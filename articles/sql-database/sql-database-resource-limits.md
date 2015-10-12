@@ -71,8 +71,8 @@ Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von d
 
 [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md)
 
-[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/dn741336.aspx)
+[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md)
 
 [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

@@ -95,11 +95,11 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
--Starten von Transaktionen
+- Starten von Transaktionen
 
--Einfügen von Zeilen mit Daten
+- Einfügen von Zeilen mit Daten
 
--Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql
@@ -109,7 +109,10 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

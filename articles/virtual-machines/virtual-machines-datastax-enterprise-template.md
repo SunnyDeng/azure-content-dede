@@ -20,7 +20,7 @@ DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstell
 
 >[AZURE.NOTE]Im Gegensatz zur Community-Edition benötigen Sie zum Bereitstellen von DataStax Enterprise ein gültiges DataStax-Konto (Benutzername und Kennwort), die während der Vorlagenbereitstellung als Parameter übergeben werden. Besuchen Sie die [Website von DataStax](http://www.datastax.com) zur Einrichtung Ihres Kontos, wenn Sie nicht bereits eines besitzen.
 
-Zusätzlich zu dem, was bereits in Azure Marketplace verfügbar war, können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit [Azure PowerShell](../powershell-install-configure.md) oder der [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) mithilfe einer Vorlage für Ressourcen-Manager einen neuen DataStax Enterprise-Cluster bereitstellen.
+Zusätzlich zu dem, was bereits in Azure Marketplace verfügbar war, können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit [Azure PowerShell](../powershell-install-configure.md) oder der [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) mithilfe einer Vorlage für Ressourcen-Manager einen neuen DataStax Enterprise-Cluster bereitstellen.
 
 Neu bereitgestellte Cluster auf Basis dieser Vorlage besitzen die im folgenden Diagramm beschriebene Topologie, auch wenn andere Topologien leicht durch das Anpassen der in diesem Artikel gezeigten Vorlage erreicht werden können.
 
@@ -490,4 +490,4 @@ Dieser Ansatz empfiehlt folgende Schritte:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -27,11 +27,11 @@ Wenn Sie die Azure-Befehlszeilenschnittstelle installiert haben und über ein Az
 
 ## Installieren der Azure-Befehlszeilenschnittstelle
 
-Befolgen Sie die Anweisungen für das [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md#install).
+Befolgen Sie die Anweisungen für das [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md#install).
 
 ## Herstellen einer Verbindung mit Azure unter Verwendung der Azure-Befehlszeilenschnittstelle
 
-Sie können die Installation der Azure-Befehlszeilenschnittstelle mit einem persönlichen Azure-Konto oder einem Arbeits- oder Schulkonto für Azure verbinden. Die Unterschiede zwischen diesen Konten werden unter [Verbinden mit Ihrem Azure-Abonnement](../xplat-cli.md#configure) erläutert.
+Sie können die Installation der Azure-Befehlszeilenschnittstelle mit einem persönlichen Azure-Konto oder einem Arbeits- oder Schulkonto für Azure verbinden. Die Unterschiede zwischen diesen Konten werden unter [Verbinden mit Ihrem Azure-Abonnement](../xplat-cli-install.md#configure) erläutert.
 
 ## Erstellen eines virtuellen Computers und Herstellen einer Verbindung mit Azure
 
@@ -47,7 +47,7 @@ Das Erstellen eines virtuellen Computers beginnt mit der Auswahl (oder dem Hochl
 
     Aus den Ergebnissen können Sie ein Image auswählen und den Befehl `show` verwenden, um die zugehörigen Eigenschaften im Detail anzuzeigen:
 
-        azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB
+        azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-DE-30GB
 
 2. Nachdem Sie ein VM-Image ausgewählt haben, verwenden Sie den Befehl `vm create`, um das Image zu erstellen. Dieser Befehl umfasst viele Optionen, die Sie mit dem Befehl `help` auflisten können:
 
@@ -63,7 +63,7 @@ Das Erstellen eines virtuellen Computers beginnt mit der Auswahl (oder dem Hochl
 
     The Linux example below creates a VM in West US, opens the default SSH port 22 (the -e argument), and creates a user called `myadminuser`:
 
-        azure vm create -e -l "West US"  my-new-cli-vm b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB "myadminuser" "myAdm1n@passwd"
+        azure vm create -e -l "West US"  my-new-cli-vm b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-DE-30GB "myadminuser" "myAdm1n@passwd"
 
 ## Nächste Schritte
 
@@ -78,4 +78,4 @@ Weitere Beispiele zur Verwendung der Azure-Befehlszeilenschnittstelle zum Verwal
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

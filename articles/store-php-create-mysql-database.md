@@ -23,4 +23,8 @@
 
 Unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tasklist-mysql> finden Sie ein Beispiel, das die Verwendung von MySQL mit PHP in Azure veranschaulicht.
 
-<!---HONumber=September15_HO1-->
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
+
+<!---HONumber=Oct15_HO1-->

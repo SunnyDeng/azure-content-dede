@@ -128,7 +128,7 @@ Damit wird das Standardabonnement in "Azure-sub-2" geändert.
 
 Wenn Sie in der Azure-Befehlszeilenschnittstelle ein anderes Abonnement als das Standardabonnement verwenden, aber das aktuelle Standardabonnement nicht ändern möchten, können Sie die Option `--subscription` und den Namen des Abonnements angeben, das Sie für den Vorgang verwenden möchten.
 
-Nachdem Sie mit Ihrem Azure-Abonnement verbunden sind, können Sie beginnen, die Befehle der Azure-Befehlszeilenschnittstelle zu verwenden. Weitere Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle](xplat-cli.md).
+Nachdem Sie mit Ihrem Azure-Abonnement verbunden sind, können Sie beginnen, die Befehle der Azure-Befehlszeilenschnittstelle zu verwenden. Weitere Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
 ## Speichern der Einstellungen für die Befehlszeilenschnittstelle
 
@@ -159,4 +159,4 @@ Unabhängig davon, ob Sie sich mit einem Geschäfts- oder Schulkonto anmelden od
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

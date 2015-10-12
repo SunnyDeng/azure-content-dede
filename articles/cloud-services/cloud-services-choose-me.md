@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Ist Cloud Services in Azure die passende Computeoption für mich?"
-	description="Erfahren Sie mehr über die Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines"
+	pageTitle="Ist Cloud Services in Azure die passende Computeoption für mich?" 
+	description="Erfahren Sie mehr über die Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines" 
 	services="cloud-services"
-	documentationCenter=""
-	authors="Thraka"
+    documentationCenter=""
+	authors="Thraka" 
 	manager="timlt"/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="adegeo"/>
 
 # Sollte ich mich für Cloud Services entscheiden?
@@ -33,7 +33,7 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 [Erstellen einer Clouddienst-App in .NET](cloud-services-dotnet-get-started.md)<br/> [Erstellen einer Clouddienst-App in Node.js](cloud-services-nodejs-develop-deploy-app.md)<br/> [Erstellen einer Clouddienst-App in PHP](../cloud-services-php-create-web-role.md)<br/> [Erstellen einer Clouddienst-App in Python](../cloud-services-python-ptvs.md)<br/>
 
 [App Service]: app-service-choose-me.md
-[Virtual Machines]: ../virtual-machines-choose-me.md
+[Virtual Machines]: ../virtual-machines-about.md
 [Cloud Services]: #tellmecs
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

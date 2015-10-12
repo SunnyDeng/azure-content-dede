@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Geplante Neuerungen in Azure RemoteApp"
+    pageTitle="Geplante Neuerungen in Azure RemoteApp | Microsoft Azure"
     description="Erfahren Sie, welche neuen Funktionen für Azure RemoteApp geplant sind."
     services="remoteapp"
     documentationCenter=""
@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="NA"
     ms.devlang="NA"
     ms.topic="article"
-    ms.date="08/12/2015"
+    ms.date="09/29/2015"
     ms.author="elizapo" />
 
 # Geplante Neuerungen in Azure RemoteApp
@@ -28,7 +28,9 @@ Wir arbeiten stetig daran, Azure RemoteApp mithilfe Ihres Feedbacks zu verbesser
 |ExpressRoute ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| |X| | |
 |Azure RemoteApp verfügbar im neuen [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/)| | | |X|
 |Universelle Windows 10-Anwendung für die Vorschauversion von Azure RemoteApp| | |X| |
-|Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec))| | |X| |
+|Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer – **Öffentliche Vorschau** ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec))| | ||X|
+|Verteilbares Windows-MSI-Clientpaket ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo))| | ||X|
+
 
 Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 
@@ -39,4 +41,4 @@ Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 - Verfügbarkeit in australischen Rechenzentren
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

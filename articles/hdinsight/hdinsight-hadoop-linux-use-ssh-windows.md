@@ -35,7 +35,7 @@ Mit [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) können Sie
 
 OR
 
-* [Azure-CLI für Mac, Linux und Windows](../xplat-cli.md).
+* [Azure-CLI für Mac, Linux und Windows](../xplat-cli-install.md).
 
 ##Was ist SSH?
 
@@ -43,7 +43,7 @@ SSH ist ein Dienstprogramm zur Anmeldung und Remoteausführung von Befehlen auf 
 
 ###SSH-Benutzername
 
-Eine SSH-Benutzername ist der Name, den Sie für die Authentifizierung beim HDInsight-Cluster verwenden. Wenn Sie während der Erstellung des Clusters einen SSH-Benutzernamen angeben, wird dieser Benutzer in allen Knoten im Cluster erstellt. Nach dem Erstellen des Clusters können Sie diesen Benutzernamen zum Herstellen einer Verbindung mit den Hauptknoten des HDInsight-Clusters verwenden. Ausgehend von den Hauptknoten können Sie dann eine Verbindung mit den einzelnen Workerknoten herstellen.
+Ein SSH-Benutzername ist der Name, den Sie für die Authentifizierung beim HDInsight-Cluster verwenden. Wenn Sie während der Erstellung des Clusters einen SSH-Benutzernamen angeben, wird dieser Benutzer in allen Knoten im Cluster erstellt. Nach dem Erstellen des Clusters können Sie diesen Benutzernamen zum Herstellen einer Verbindung mit den Hauptknoten des HDInsight-Clusters verwenden. Ausgehend von den Hauptknoten können Sie dann eine Verbindung mit den einzelnen Workerknoten herstellen.
 
 > [AZURE.NOTE]Ein SSH-Benutzername muss eindeutig sein. Da ein SSH-Benutzername ein Benutzerkonto im HDInsight-Cluster erstellt, darf kein Konflikt mit vorhandenen Benutzern entstehen, die von HDInsight erstellt werden. Im Folgenden finden Sie die Namen, die für die Verwendung durch Dienste, die im HDInsight-Cluster ausgeführt werden, reserviert sind und daher nicht als SSH-Benutzername verwendet werden können:
 >
@@ -53,7 +53,7 @@ Eine SSH-Benutzername ist der Name, den Sie für die Authentifizierung beim HDIn
 
 Ein SSH-Benutzer kann entweder ein Kennwort oder einen öffentlichen Schlüssel für die Authentifizierung verwenden. Ein Kennwort ist nur eine von Ihnen erstellte Textzeichenfolge, während ein öffentlicher Schlüssel Teil eines kryptografischen Schlüsselpaars ist, das generiert wurde, um Sie eindeutig zu identifizieren.
 
-Ein Schlüssel ist sicherer als ein Kennwort, es sind jedoch zusätzliche Schritte erforderlich, um den Schlüssel zu generieren, und Sie müssen die Dateien mit dem Schlüssel an einem sicheren Ort verwalten. Wenn jemand Zugriff auf die Schlüsseldateien erhält, hat er Zugriff auf Ihr Konto. Wenn die Schlüsseldateien verloren gehen, können Sie sich nicht bei Ihrem Konto anmelden.
+Ein Schlüssel ist sicherer als ein Kennwort, es sind jedoch zusätzliche Schritte erforderlich, um den Schlüssel zu generieren, und Sie müssen die Dateien mit dem Schlüssel an einem sicheren Ort verwalten. Wenn jemand Zugriff auf die Schlüsseldateien erhält, hat er Zugriff auf Ihr Konto. Wenn die Schlüsseldateien verloren gehen, können Sie sich nicht mehr bei Ihrem Konto anmelden.
 
 Ein Schlüsselpaar besteht aus einem öffentlichen Schlüssel (der an den HDInsight-Server gesendet wird) und einem privaten Schlüssel (der auf dem Clientcomputer gespeichert ist). Beim Herstellen einer Verbindung mit dem HDInsight-Server über SSH verwendet der SSH-Client den privaten Schlüssel auf Ihrem Computer zur Authentifizierung beim Server.
 
@@ -109,7 +109,7 @@ Dadurch wird für den angegebenen Benutzer ein Anmeldename erstellt und die Kenn
 
 ###Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows Azure
 
-Sie können über die [Azure-CLI für Mac, Linux und Windows ](../xplat-cli.md) einen neuen Cluster mithilfe des Befehls `azure hdinsight cluster create` erstellen.
+Sie können über die [Azure-CLI für Mac, Linux und Windows ](../xplat-cli-install.md) einen neuen Cluster mithilfe des Befehls `azure hdinsight cluster create` erstellen.
 
 Weitere Informationen zur Verwendung dieses Befehls finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Linux-Clusters in HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -217,7 +217,7 @@ Wenn Sie weitere Konten zum Cluster hinzufügen möchten, führen Sie die folgen
 
 SSH kann auch zum Tunneln lokaler Anforderungen wie etwa Webanforderungen zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde.
 
-> [AZURE.IMPORTANT]Ein SSH-Tunnel ist eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche für manche Hadoop-Dienste. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
+> [AZURE.IMPORTANT]Ein SSH-Tunnel ist für manche Hadoop-Dienste eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
 
 Weitere Informationen zum Erstellen und Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
@@ -233,4 +233,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

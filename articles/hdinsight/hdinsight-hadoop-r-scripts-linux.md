@@ -101,7 +101,6 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 		ints = to.dfs(1:100)
 		calc = mapreduce(input = ints, map = function(k, v) cbind(v, 2*v))
 
-
 	Die erste Zeile ruft die RHadoop-Bibliothek „rmr2“ auf, die für MapReduce-Vorgänge verwendet wird.
 
 	Die zweite Zeile generiert die Werte 1 bis 100 und speichert sie mithilfe von `to.dfs` im Hadoop-Dateisystem.
@@ -149,4 +148,4 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

@@ -48,7 +48,7 @@ Dieser Artikel befasst sich mit dem Aktivieren und Konfigurieren der Erweiterung
 
 ## Voraussetzungen
 - Microsoft Azure Linux Agent in Version 2.0.6 oder höher. Beachten Sie, dass die meisten Images des Linux-Katalogs für virtuelle Azure-Computer die Version 2.0.6 oder höher besitzen. Durch Ausführen von **WAAgent -version** können Sie ermitteln, welche Version auf dem virtuellen Computer installiert ist. Wenn auf dem virtuellen Computer eine ältere Version als 2.0.6 ausgeführt wird, können Sie sie unter Verwendung dieser [Anweisungen](https://github.com/Azure/WALinuxAgent "Anweisungen") aktualisieren.
-- [Azure-Befehlszeilenschnittstelle](./xplat-cli.md). Folgen Sie [dieser Anleitung](./xplat-cli-install.md), um die Azure-Befehlszeilenschnittstelle auf Ihrem Computer einzurichten. Sobald die Azure-Befehlszeilenschnittstelle installiert ist, können Sie über Ihre Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung) mithilfe des Befehls **azure** auf die Befehle der Azure-Befehlszeilenschnittstelle zugreifen. Mit **azure vm extension set --help** erhalten Sie beispielsweise ausführliche Syntaxinformationen. Mit **azure login** können Sie sich bei Azure anmelden, und **azure vm list** führt alle Ihre virtuellen Computer in Azure auf.
+- [Azure-Befehlszeilenschnittstelle](./xplat-cli-install.md). Folgen Sie [dieser Anleitung](./xplat-cli-install.md), um die Azure-Befehlszeilenschnittstelle auf Ihrem Computer einzurichten. Sobald die Azure-Befehlszeilenschnittstelle installiert ist, können Sie über Ihre Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung) mithilfe des Befehls **azure** auf die Befehle der Azure-Befehlszeilenschnittstelle zugreifen. Mit **azure vm extension set --help** erhalten Sie beispielsweise ausführliche Syntaxinformationen. Mit **azure login** können Sie sich bei Azure anmelden, und **azure vm list** führt alle Ihre virtuellen Computer in Azure auf.
 - Ein Speicherkonto zum Speichern der Daten. Sie benötigen einen zuvor erstellten Speicherkontonamen und den Zugriffsschlüssel zum Hochladen von Daten an Ihren Speicher.
 
 
@@ -143,4 +143,4 @@ Wenn Sie in Szenario 2 und 3 „fileCfg“ oder „perfCfg“ aktiviert haben,
 - In Version 2.0 kann auf die Rsyslog-Informationen und die benutzerdefinierte Protokolldatei nur über Skripts zugegriffen werden.
 - Wenn Sie in Version 2.0 die Linux-Diagnoseerweiterung zuerst über ein Skript aktiviert haben, können Sie die Daten nicht über das Azure-Portal anzeigen. Wenn Sie die Erweiterung dagegen zuerst im Portal aktivieren, funktionieren die Skripts weiterhin.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

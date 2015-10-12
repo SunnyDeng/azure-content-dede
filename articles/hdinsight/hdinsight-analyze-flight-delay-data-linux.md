@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="08/12/2015" 
 	ms.author="larryfr"/>
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
 
-Hier erfahren Sie, wie Sie Flugverspätungsdaten mithilfe von Hive in einem Linux-basierten HDInsight-Cluster (Vorschau) analysieren und anschließend die Daten mithilfe von Sqoop in die Azure SQL-Datenbank exportieren.
+Hier erfahren Sie, wie Sie Flugverspätungsdaten mithilfe von Hive in einem Linux-basierten HDInsight-Cluster analysieren und anschließend die Daten mithilfe von Sqoop in die Azure SQL-Datenbank exportieren.
 
 > [AZURE.NOTE]Einzelne Teile dieses Dokuments können zwar für Windows-basierte HDInsight-Cluster (beispielsweise Python und Hive) verwendet werden. Zahlreiche Schritte gelten jedoch spezifisch für Linux-basierte Cluster. Schritte für Windows-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data.md).
 
@@ -33,7 +33,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - __Azure SQL-Datenbank__. Sie verwenden eine Azure SQL-Datenbank als Zieldatenspeicher. Falls Sie noch keine SQL-Datenbank besitzen, lesen Sie das Thema [Erstellen und Konfigurieren einer Azure SQL-Datenbank](../sql-database/sql-database-create-configure.md).
 
-- __Azure-Befehlszeilenschnittstelle__ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md) weitere Schritte.
+- __Azure-Befehlszeilenschnittstelle__ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weitere Schritte.
 
 
 ##Herunterladen der Flugdaten
@@ -305,4 +305,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

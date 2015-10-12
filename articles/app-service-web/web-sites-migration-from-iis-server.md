@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Migrieren von Unternehmens-Web-Apps in Azure App Service" 
 	description="Sie erfahren, wie Sie mit dem Migrations-Assistenten für Web-Apps auf schnelle Weise vorhandene IIS-Websites in Azure App Service-Web-Apps migrieren" 
-	services="app-service\web" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	writer="cephalin" 
@@ -10,7 +10,7 @@
 
 <tags 
 	ms.service="app-service" 
-	ms.workload="web" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
@@ -136,4 +136,4 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

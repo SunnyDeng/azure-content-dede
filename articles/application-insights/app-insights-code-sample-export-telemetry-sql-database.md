@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle" 
+	pageTitle="Codebeispiel: Analysieren von Daten, die aus Application Insights exportiert wurden" 
 	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
 	services="application-insights" 
     documentationCenter=""
@@ -12,16 +12,16 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="09/28/2015" 
 	ms.author="awills"/>
  
-# Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle
+# Codebeispiel: Analysieren von Daten, die aus Application Insights exportiert wurden
 
-Dieser Artikel zeigt, wie Sie Ihre Telemetriedaten mithilfe von [fortlaufendem Export][export] und etwas Code aus [Visual Studio Application Insights][start] in eine Azure SQL-Datenbank verschieben.
+Dieser Artikel beschreibt, wie JSON-Daten verarbeitet werden, die aus Application Insights exportiert wurden. Als Beispiel schreiben wir Code, um Ihre Telemetriedaten mithilfe von [fortlaufendem Export][export] aus [Visual Studio Application Insights][start] in eine Azure SQL-Datenbank verschieben. (Das Ganze kann auch [mit von Stream Analytics](app-insights-code-sample-export-sql-stream-analytics.md) erreicht werden, aber unser Ziel ist es hier, Ihnen Code zu zeigen.)
 
 Beim fortlaufenden Export werden Ihre Telemetrie im JSON-Format in Azure Storage verschoben. Daher schreiben wir Code zum Analysieren der JSON-Objekte und zum Erstellen von Zeilen in einer Datenbanktabelle.
 
-(Allgemeiner ausgedrückt, bietet der fortlaufende Export Ihnen die Möglichkeit, selbst eine Analyse der Telemetriedaten durchzuführen, die Ihre Apps an Application Insights senden. Sie können dieses Codebeispiel für andere Aufgaben mit den exportierten Telemetriedaten anpassen.)
+Allgemeiner ausgedrückt, bietet der fortlaufende Export Ihnen die Möglichkeit, selbst eine Analyse der Telemetriedaten durchzuführen, die Ihre Apps an Application Insights senden. Sie können dieses Codebeispiel für andere Aufgaben mit den exportierten Telemetriedaten anpassen.
 
 Zu Beginn gehen wir davon aus, dass Sie bereits über die App verfügen, die Sie überwachen möchten.
 
@@ -50,6 +50,8 @@ Erste Schritte:
 
 
 ## Erstellen von Speicher in Azure
+
+Daten von Application Insights werden immer in ein Azure-Speicherkonto im JSON-Format exportiert. Aus diesem Speicher liest Ihr Code dann die Daten.
 
 1. Erstellen Sie ein "klassisches" Speicherkonto in Ihrem Abonnement im [Azure-Portal][portal].
 
@@ -83,7 +85,7 @@ Erste Schritte:
 
     Darüber hinaus werden die Daten in Ihren Speicher exportiert.
 
-4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen / Cloud Explorer**, und öffnen Sie "Azure / Storage". (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
+4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen/Cloud Explorer**, und öffnen Sie „Azure/Storage“. (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
 
     ![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-telemetry-sql-database/087-explorer.png)
 
@@ -92,6 +94,8 @@ Erste Schritte:
 Die Ereignisse werden in Blobdateien im JSON-Format geschrieben. Jede Datei kann ein oder mehrere Ereignisse enthalten. Daher möchten wir die Ereignisdaten lesen und die gewünschten Felder herausfiltern. Es gibt viele verschiedene Möglichkeiten zur Nutzung der Daten, aber unser Plan besteht darin, Code zum Verschieben der Daten in eine SQL-Datenbank zu verfassen. Auf diese Weise können wir ganz einfach viele interessante Abfragen ausführen.
 
 ## Erstellen einer Azure-SQL-Datenbank
+
+In diesem Beispiel schreiben wir Code, um die Daten in eine Datenbank zu übertragen.
 
 Beginnen Sie erneut bei Ihrem Abonnement im [Azure-Portal][portal], und erstellen Sie die Datenbank (und einen neuen Server, sofern noch keiner verfügbar ist), in die die Daten geschrieben werden sollen.
 
@@ -106,7 +110,7 @@ Stellen Sie sicher, dass der Datenbankserver den Zugriff auf Azure-Dienste ermö
 
 ## Erstellen einer Workerrolle 
 
-Jetzt können wir [Code](https://sesitai.codeplex.com/) zum Analysieren der JSON-Daten in den exportierten Blobs und zum Erstellen von Datensätzen in der Datenbank schreiben. Da sich der Exportspeicher und die Datenbank in Azure befinden, führen wir den Code in einer Azure-Workerrolle aus.
+Zu guter Letzt können wir nun [Code](https://sesitai.codeplex.com/) zum Analysieren der JSON-Daten in den exportierten Blobs und zum Erstellen von Datensätzen in der Datenbank schreiben. Da sich der Exportspeicher und die Datenbank in Azure befinden, führen wir den Code in einer Azure-Workerrolle aus.
 
 Dieser Code extrahiert automatisch alle Eigenschaften, die in den JSON-Daten vorhanden sind. Beschreibungen der Eigenschaften finden Sie unter [Exportdatenmodell](app-insights-export-data-model.md).
 
@@ -539,4 +543,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

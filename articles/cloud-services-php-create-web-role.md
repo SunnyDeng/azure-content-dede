@@ -198,6 +198,10 @@ Führen Sie folgenden Befehl aus, um die Emulatoren zu stoppen:
 
 Um die Anwendung zu veröffentlichen, müssen Sie zunächst die Veröffentlichungseinstellungen mithilfe des Cmdlets **Import-PublishSettingsFile** importieren. Anschließend können Sie die Anwendung mithilfe des Cmdlets [Publish-AzureServiceProject](https://msdn.microsoft.com/library/azure/dn495166.aspx) veröffentlichen. Informationen zum Anmelden finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
+
 [Azure SDK für PHP]: /develop/php/common-tasks/download-php-sdk/
 [install ps and emulators]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [Azure-Dienstdefinitionsschema (.csdef-Datei)]: http://msdn.microsoft.com/library/windowsazure/ee758711.aspx
@@ -207,4 +211,4 @@ Um die Anwendung zu veröffentlichen, müssen Sie zunächst die Veröffentlichun
 [sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64-Installer]: http://go.microsoft.com/fwlink/?LinkID=239648
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

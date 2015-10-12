@@ -74,4 +74,4 @@ Speicherzuordnung|Nicht zutreffend|Ordnet Speicherklassifizierungen auf VMM-Quel
 Lesen Sie nach dieser Übersicht die [bewährten Methoden](site-recovery-best-practices.md), um mit der Planung der Bereitstellung zu beginnen.
  
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

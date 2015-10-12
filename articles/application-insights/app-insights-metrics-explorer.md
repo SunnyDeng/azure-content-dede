@@ -12,14 +12,14 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/07/2015" 
+	ms.date="09/28/2015" 
 	ms.author="awills"/>
  
 # Untersuchen von Metriken in Application Insights
 
 Metriken in [Application Insights][start] sind gemessene Werte und Anzahlen von Ereignissen, die als Telemetriedaten aus Ihrer Anwendung gesendet werden. Sie dienen zum Erkennen von Leistungsproblemen und Überwachen von Trends bei der Nutzung Ihrer Anwendung. Es gibt eine Vielzahl von Standardmetriken, doch Sie können auch eigene benutzerdefinierte Metriken und Ereignisse erstellen.
 
-Metriken und Ereignisanzahlen werden in Diagrammen aggregierter Werte z. B. als Summen, Mittelwerte oder Anzahlen angezeigt.
+Metriken und Ereignisanzahlen werden in Diagrammen aggregierter Werte z. B. als Summen, Mittelwerte oder Zählwerte angezeigt.
 
 Hier sehen Sie ein Beispieldiagramm:
 
@@ -75,20 +75,24 @@ Klicken Sie sich z. B. durch das Diagramm "Anforderungsfehler" der Web-App:
 
 ## Was bedeuten die Zahlen?
 
-In der Legende auf der Seite wird standardmäßig der über den Zeitraum des Diagramms aggregierte Wert gezeigt.
+In der Legende auf der Seite wird standardmäßig der über den Zeitraum des Diagramms aggregierte Wert angezeigt. Wenn Sie auf das Diagramm zeigen, wird der an diesem Punkt befindliche Wert angezeigt.
 
-Jeder Datenpunkt im Diagramm ist auch ein Aggregat der Datenwerte, die im vorherigen Abtastintervall (Granularität) empfangen wurden. Die Granularität wird oben auf dem Blatt angezeigt und variiert abhängig von der gesamten Zeitskala des Diagramms.
+Jeder Datenpunkt im Diagramm ist ein Aggregat der Datenwerte, die im vorherigen Samplingintervall (Granularität) empfangen wurden. Die Granularität wird oben auf dem Blatt angezeigt und variiert abhängig von der gesamten Zeitskala des Diagramms.
 
-Verschiedene Metriken werden auf unterschiedliche Weise zusammengefasst:
+Metriken können auf unterschiedliche Weisen zusammengefasst werden:
 
- * Für eine Metrik wie Antwortzeit werden Werte über den Zeitraum des Diagramms **gemittelt**.
- * Für Anzahlen von Ereignissen, wie z. B. Anforderungsfehler, ist das Aggregat die **Summe** der Anzahlen über den Zeitraum.
- * Für Anzahlen von Benutzer ist das Aggregat ist die Anzahl **eindeutiger** Benutzer über den Zeitraum. (Wenn ein Benutzer mehr als einmal im Zeitraum erfasst wird, wird er nur einmal gezählt.)
+ * **Summe** addiert die Werte aller Datenpunkte, die über das Samplingintervall oder den Zeitraum des Diagramms empfangen werden.
+ * **Durchschnitt** teilt die Summe durch die Anzahl der Datenpunkte, die während des Intervalls empfangen werden.
+ * **Eindeutige** Werte werden verwendet, um Benutzer und Konten zu zählen. Die Abbildung zeigt die Anzahl der verschiedenen Benutzer, die während des Samplingintervalls oder über den Zeitraum des Diagramms gezählt werden.
 
-Um zu überprüfen, ob der Wert eine Summe, ein Mittel- oder eindeutiger Wert ist, klicken Sie auf das Diagramm und führen einen Bildlauf nach unten zum ausgewählten Wert durch. Sie können auch eine kurze Beschreibung der Metrik abrufen.
 
-![Bewegen Sie den Mauszeiger über (i)](./media/app-insights-metrics-explorer/06-total.png)
- 
+Sie können die Aggregationsmethode ändern:
+
+![Wählen Sie das Diagramm und dann die Aggregation aus](./media/app-insights-metrics-explorer/05-aggregation.png)
+
+Die Standardmethode für die einzelnen Metriken wird bei der Erstellung eines neuen Diagramms angezeigt:
+
+![Heben Sie die Auswahl aller Metriken auf, um die Standardwerte anzuzeigen](./media/app-insights-metrics-explorer/06-total.png)
 
 
 ## Bearbeiten von Diagrammen und Rastern
@@ -128,6 +132,12 @@ So zeigen Sie nur die Metriken für eine ausgewählte Gruppe von Eigenschaftswer
 Wenn Sie für eine bestimmte Eigenschaft keine Werte auswählen, entspricht dies der Auswahl aller Werte ohne Angabe von Filtern.
 
 Beachten Sie die Anzahlen von Ereignissen neben jedem Eigenschaftswert. Wenn Sie Werte einer Eigenschaft auswählen, werden neben anderen Eigenschaftswerten die Anzahlen angepasst.
+
+### So fügen Sie der Filterliste Eigenschaften hinzu
+
+Möchten Sie Telemetrie nach einer Kategorie Ihrer Wahl filtern? Möglicherweise unterteilen Sie Ihre Benutzer in verschiedene Kategorien und möchten Ihre Daten nach diesen Kategorien segmentieren.
+
+[Erstellen Sie eine eigene Eigenschaft](app-insights-api-custom-events-metrics.md#properties). Legen Sie sie in einem [Telemetrieinitialisierer](app-insights-api-custom-events-metrics.md#telemetry-initializers) fest, damit sie in allen Telemetrieformen angezeigt wird, einschließlich der von unterschiedlichen SDK-Modulen gesendeten Standardtelemetrie.
 
 ## Entfernen von Robot- und Webtest-Datenverkehr
 
@@ -202,4 +212,4 @@ Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Pow
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

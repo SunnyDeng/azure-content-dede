@@ -3,17 +3,17 @@
 	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer HTML-App aufrufen, die Azure Mobile Services verwendet."
 	services="mobile-services"
 	documentationCenter=""
-	authors="ggailey777"
+	authors="ggailey777"  
 	manager="dwrede"
 	editor=""/>
 
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-html"
+	ms.tgt_pltfrm="mobile-html" 
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/28/2015"
 	ms.author="glenga"/>
 
 # Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung
@@ -92,4 +92,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-html-get-started-data.md
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

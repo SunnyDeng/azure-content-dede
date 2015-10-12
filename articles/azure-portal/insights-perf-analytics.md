@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
+	ms.date="09/23/2015" 
 	ms.author="awills"/>
 
 # Überwachen der Leistung der Azure-Web-App
@@ -21,7 +21,7 @@ Im [Azure-Portal](http://portal.azure.com) können Sie festlegen, dass Statistik
 
 Azure unterstützt die Überwachung der Anwendungsleistung (oder *APM*, Application Performance Monitoring) durch die Nutzung von *Erweiterungen*. Diese Erweiterungen werden in Ihrer Anwendung installiert und geben die gesammelten Daten an die Überwachungsdienste zurück.
 
-Application Insights und New Relic sind zwei der zur Verfügung stehenden Erweiterungen zur Leistungsüberwachung. Um New Relic zu verwenden, müssen Sie einen Agent zur Laufzeit installieren. Um Application Insights zu verwenden, erstellen Sie Ihren Code mit einem SDK neu. Sie können auch eine Erweiterung installieren, die Zugriff auf zusätzliche Daten bietet. Mit dem SDK können Sie Code schreiben, um die Auslastung und Leistung Ihrer Anwendung genauer zu überwachen.
+Application Insights und New Relic sind zwei der zur Verfügung stehenden Erweiterungen zur Leistungsüberwachung. Um sie zu verwenden, müssen Sie einen Agent zur Laufzeit installieren. Application Insights bietet auch die Option zum Erstellen des Codes mit einem SDK. Mit dem SDK können Sie Code schreiben, um die Auslastung und Leistung Ihrer Anwendung genauer zu überwachen.
 
 ## Aktivieren einer Erweiterung
 
@@ -37,9 +37,9 @@ Oder wenn Sie einen virtuellen Computer verwenden:
 
 ![Klicken Sie auf die Kachel „Analytics“.](./media/insights-perf-analytics/10-vm1.png)
 
-### Für Application Insights: Neuerstellen mit dem SDK
+### Optional für Application Insights: Neuerstellen mit dem SDK
 
-Application Insights kann verwendet werden, indem Sie ein SDK in Ihrer App installieren.
+Application Insights kann durch Installieren eines SDKs in Ihrer App eine detailliertere Telemetrie bereitstellen.
 
 Fügen Sie in Visual Studio Ihrem Projekt das Application Insights SDK hinzu.
 
@@ -83,4 +83,4 @@ Nachdem Sie das Blatt geöffnet haben, z. B. für Application Insights, können
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

@@ -24,8 +24,7 @@
 
 Zum Erstellen einer Anwendung, die Registrierungen und Anmeldungen von Kunden akzeptiert, müssen Sie sie zunächst bei einem Azure Active Directory B2C-Verzeichnis registrierten. Die Schritte, mit denen Sie Ihr eigenes Verzeichnis erhalten, sind [hier](active-directory-b2c-get-started.md) beschrieben. Wenn Sie alle Schritte in diesem Artikel ausgeführt haben, sollte das B2C-Featureblatt an Ihr Startmenü angeheftet sein.
 
-    > [AZURE.IMPORTANT]
-    You cannot use applications registered in the **Applications** tab on the [Azure Portal](https://manage.windowsazure.com/) for this.
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## Navigieren zum B2C-Featureblatt
 
@@ -62,4 +61,4 @@ Nachdem Sie über eine bei Azure AD B2C registrierte Anwendung verfügen, könne
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-b2c-quickstart-table.md)]
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

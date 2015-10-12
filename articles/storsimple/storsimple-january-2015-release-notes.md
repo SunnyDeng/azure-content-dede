@@ -1,19 +1,19 @@
 <properties 
-    pageTitle="Versionshinweise zu Update 0.2 von StorSimple 8000 | Microsoft Azure"
-    description="Beschreibt die neuen Features und Problembehebungen sowie noch nicht behandelte Probleme und verfügbare Problemumgehungen für die Microsoft Azure StorSimple-Version vom Januar 2015 (Update 0.2)."
-    services="storsimple"
-    documentationCenter="NA"
-    authors="SharS"
-    manager="carolz"
-    editor="" />
+   pageTitle="Versionshinweise zu Update 0.2 von StorSimple 8000 | Microsoft Azure"
+   description="Beschreibt die neuen Features und Problembehebungen sowie noch nicht behandelte Probleme und verfügbare Problemumgehungen für die Microsoft Azure StorSimple-Version vom Januar 2015 (Update 0.2)."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
  <tags 
-    ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="09/04/2015"
-    ms.author="v-sharos" />
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/04/2015"
+   ms.author="v-sharos" />
 
 
 # Versionsanmerkungen zu Update 0.2 der StorSimple 8000-Serie – Januar 2015
@@ -78,4 +78,4 @@ Diese Version enthält ein aktualisiertes Image für das virtuelle Gerät. Für 
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

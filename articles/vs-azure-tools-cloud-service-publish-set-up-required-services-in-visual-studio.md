@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts aus Visual Studio erforderlich sind"
+   pageTitle="Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio"
    description="Lernen Sie die Verfahren zum Einrichten von Cloud- und Speicherkontodiensten und zum Konfigurieren Ihrer Azure-Anwendung kennen."
    services="visual-studio-online"
    documentationCenter="na"
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="09/08/2015"
+   ms.date="09/28/2015"
    ms.author="kempb" />
 
-# Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts aus Visual Studio erforderlich sind
+# Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio
 
 ## Übersicht
 
@@ -30,7 +30,7 @@ Befolgen Sie die folgenden Verfahren, um diese Dienste einzurichten und Ihre Anw
 
 ## Erstellen eines Clouddiensts
 
-Um einen Clouddienst in Azure zu veröffentlichen, müssen Sie zunächst einen Clouddienst erstellen, in dem Ihre Rollen in der Azure-Umgebung ausgeführt werden. Sie können einen Clouddienst im Azure-Verwaltungsportal erstellen, was [hier](#to-create-a-cloud-service-by-using-the-azure-management-portal) beschrieben wird. Sie können auch einen Clouddienst in Visual Studio erstellen, wenn Sie den Veröffentlichungs-Assistenten verwenden.
+Um einen Clouddienst in Azure zu veröffentlichen, müssen Sie zunächst einen Clouddienst erstellen, in dem Ihre Rollen in der Azure-Umgebung ausgeführt werden. Sie können einen Clouddienst im Azure-Verwaltungsportal erstellen, wie im Abschnitt **So erstellen Sie einen Clouddienst über das Azure-Verwaltungsportal** weiter unten in diesem Artikel beschrieben. Sie können auch mit dem Veröffentlichungs-Assistenten einen Clouddienst in Visual Studio erstellen.
 
 ### So erstellen Sie einen Clouddienst in Visual Studio
 
@@ -70,7 +70,7 @@ Ein Speicherkonto bietet Zugriff auf die Blob-, Warteschlangen- und Tabellendien
 
 ### So erstellen ein Speicherkonto mithilfe von Visual Studio
 
-1. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für den Knoten **Speicher**, und wählen Sie dann **Speicherkonto erstellen**.
+1. Öffnen Sie im **Projektmappen-Explorer** das Kontextmenü für den Knoten **Speicher**, und wählen Sie dann **Speicherkonto erstellen** aus.
 
     ![Erstellen eines neuen Azure-Speicherkontos](./media/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/IC744166.png)
 
@@ -80,7 +80,7 @@ Ein Speicherkonto bietet Zugriff auf die Blob-, Warteschlangen- und Tabellendien
     - Die Region oder Affinitätsgruppe (z. B. USA, Westen oder Ostasien)
     - Den Typ der Replikation, den Sie für das Speicherkonto verwenden möchten, zum Beispiel "Georedundant"
 
-1. Wenn Sie fertig sind, wählen Sie **Erstellen** aus. Das neue Speicherkonto wird im Server-Explorer in der Liste **Speicher** angezeigt.
+1. Wenn Sie fertig sind, wählen Sie **Erstellen** aus. Das neue Speicherkonto wird im **Server-Explorer** in der Liste **Speicher** angezeigt.
 
 ### So erstellen Sie ein Speicherkonto im Azure-Verwaltungsportal
 
@@ -108,15 +108,15 @@ Nachdem Sie Ihr Speicherkonto erstellt haben, sehen Sie die URLs, über die Sie 
 
 ## Konfigurieren Ihrer App für das Verwenden der vom Speicherkonto bereitgestellten Dienste
 
-Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden der Azure-Speicherdienste konfigurieren, die Sie erstellt haben. Zu diesem Zweck können Sie mehrere Dienstkonfigurationen für Ihr Azure-Projekt verwenden. Standardmäßig werden zwei im Ihrem Azure-Projekt erstellt. Mithilfe mehrerer Dienstkonfigurationen können Sie die gleiche Verbindungszeichenfolge in Ihrem Code verwenden, aber in jeder Dienstkonfiguration einen anderen Wert für eine Verbindungszeichenfolge angeben. Beispielsweise können Sie eine Dienstkonfiguration zum lokalen Ausführen und Debuggen Ihrer Anwendung mit dem Azure-Speicheremulator und eine andere Dienstkonfiguration zum Veröffentlichen Ihrer Anwendung in Azure nutzen. Weitere Informationen zu den Dienstkonfigurationen finden Sie unter [Konfigurieren eines Azure-Projekts](https://msdn.microsoft.com/library/azure/ee405486.aspx).
+Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden der Azure-Speicherdienste konfigurieren, die Sie erstellt haben. Zu diesem Zweck können Sie mehrere Dienstkonfigurationen für Ihr Azure-Projekt verwenden. Standardmäßig werden zwei im Ihrem Azure-Projekt erstellt. Mithilfe mehrerer Dienstkonfigurationen können Sie die gleiche Verbindungszeichenfolge in Ihrem Code verwenden, aber in jeder Dienstkonfiguration einen anderen Wert für eine Verbindungszeichenfolge angeben. Beispielsweise können Sie eine Dienstkonfiguration zum lokalen Ausführen und Debuggen Ihrer Anwendung mit dem Azure-Speicheremulator und eine andere Dienstkonfiguration zum Veröffentlichen Ihrer Anwendung in Azure nutzen. Weitere Informationen zu den Dienstkonfigurationen finden Sie unter [Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen](vs-azure-tools-multiple-services-project-configurations.md).
 
 ### So konfigurieren Sie Ihre Anwendung für die Nutzung der Dienste, die vom Speicherkonto bereitgestellt werden
 
-1. Öffnen Sie in Visual Studio Ihre Azure-Projektmappe. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für jede Rolle in Ihrem Azure-Projekt, die auf die Speicherdienste zugreift, und wählen Sie **Eigenschaften**. Eine Seite mit dem Namen der Rolle wird im Visual Studio-Editor angezeigt. Die Seite zeigt die Felder für die Registerkarte **Konfiguration**.
+1. Öffnen Sie in Visual Studio Ihre Azure-Projektmappe. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für jede Rolle in Ihrem Azure-Projekt, die auf die Speicherdienste zugreift, und wählen Sie **Eigenschaften** aus. Eine Seite mit dem Namen der Rolle wird im Visual Studio-Editor angezeigt. Die Seite zeigt die Felder für die Registerkarte **Konfiguration** an.
 
 1. Wählen Sie auf den Eigenschaftenseiten der Rolle **Einstellungen** aus.
 
-1. Wählen Sie in der Liste **Dienstkonfiguration** den Namen der Dienstkonfiguration aus, die Sie bearbeiten möchten. Wenn Sie alle Dienstkonfigurationen für diese Rolle ändern möchten, können Sie **Alle Konfigurationen** auswählen. Weitere Informationen zum Aktualisieren von Dienstkonfigurationen finden Sie unter [Verwalten von Verbindungszeichenfolgen für Speicherkonten](https://msdn.microsoft.com/library/azure/8cda8963-ef0e-4f64-8d29-5eac467e5f53#ConnectionStrings).
+1. Wählen Sie in der Liste **Dienstkonfiguration** den Namen der Dienstkonfiguration aus, die Sie bearbeiten möchten. Wenn Sie alle Dienstkonfigurationen für diese Rolle ändern möchten, können Sie **Alle Konfigurationen** auswählen. Weitere Informationen zum Aktualisieren von Dienstkonfigurationen finden Sie im Abschnitt **Verwalten von Verbindungszeichenfolgen für Speicherkonten** im Thema [Konfigurieren der Rollen für einen Azure-Clouddienst mit Visual Studio](vs-azure-tools-configure-roles-for-cloud-service.md).
 
 1. Um Einstellungen von Verbindungszeichenfolgen zu ändern, klicken Sie auf die Schaltfläche **...** neben der Einstellung. Das Dialogfeld **Verbindungszeichenfolge für den Speicher erstellen** wird angezeigt.
 
@@ -124,15 +124,15 @@ Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden d
 
 1. Wählen Sie in der Liste **Abonnement** Ihr Abonnement aus. Wenn die Liste der Abonnements nicht das gewünschte Abonnement enthält, klicken Sie auf den Link **Veröffentlichungseinstellungen herunterladen**.
 
-1. Wählen Sie in der Liste **Kontoname** den Namen Ihres Speicherkontos aus. Azure Tools erhält Anmeldeinformationen für das Speicherkonto automatisch mithilfe der PUBLISHSETTINGS-Datei. Wenn Sie die Anmeldeinformationen für das Speicherkonto manuell angeben möchten, wählen Sie die Option **Manuell eingegebene Anmeldeinformationen** aus und fahren mit diesen Schritten fort. Sie erhalten Ihren Speicherkontonamen und Primärschlüssel über das [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885). Wenn Sie die Einstellungen für das Speicherkonto nicht manuell angeben möchten, klicken Sie auf **OK**, um das Dialogfeld zu schließen.
+1. Wählen Sie in der Liste **Kontoname** den Namen Ihres Speicherkontos aus. Azure Tools erhält Anmeldeinformationen für das Speicherkonto automatisch mithilfe der PUBLISHSETTINGS-Datei. Wenn Sie die Anmeldeinformationen für das Speicherkonto manuell angeben möchten, wählen Sie die Option **Manuell eingegebene Anmeldeinformationen** aus und fahren mit diesen Schritten fort. Sie erhalten Ihren Speicherkontonamen und Primärschlüssel über das [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885). Wenn Sie die Einstellungen für das Speicherkonto nicht manuell angeben möchten, klicken Sie auf **OK**, um das Dialogfeld zu schließen.
 
 1. Klicken Sie auf den Link **Anmeldeinformationen für Speicherkonto eingeben**.
 
 1. Geben Sie in das Feld **Kontoname** den Namen Ihres Azure-Speicherkontos ein.
 
-    >[AZURE.NOTE]Melden Sie sich am Verwaltungsportal an, und klicken Sie dann auf die Schaltfläche **Speicher**. Im Portal wird eine Liste der Speicherkonten angezeigt. Wenn Sie ein Konto auswählen, wird eine entsprechende Seite geöffnet. Sie können den Namen des Speicherkontos von dieser Seite kopieren. Wenn Sie eine frühere Version des Verwaltungsportals verwenden, wird der Name Ihres Speicherkontos in der Ansicht **Speicherkonten** des Verwaltungsportals angezeigt. Um diesen Namen zu kopieren, markieren Sie ihn im Fenster **Eigenschaften** dieser Ansicht und drücken dann STRG+C. Um den Namen in Visual Studio einzufügen, wählen Sie das Textfeld **Kontoname** und drücken dann STRG+V.
+    >[AZURE.NOTE]Melden Sie sich am Verwaltungsportal an, und klicken Sie dann auf die Schaltfläche **Speicher**. Im Portal wird eine Liste der Speicherkonten angezeigt. Wenn Sie ein Konto auswählen, wird eine entsprechende Seite geöffnet. Sie können den Namen des Speicherkontos von dieser Seite kopieren. Wenn Sie eine frühere Version des Verwaltungsportals verwenden, wird der Name Ihres Speicherkontos in der Ansicht **Speicherkonten** des Verwaltungsportals angezeigt. Um diesen Namen zu kopieren, markieren Sie ihn im Fenster **Eigenschaften** dieser Ansicht und drücken dann STRG+C. Um den Namen in Visual Studio einzufügen, wählen Sie das Textfeld **Kontoname** aus und drücken dann STRG+V.
 
-1. Geben Sie in das Feld **Kontoschlüssel** den Primärschlüssel ein, oder kopieren Sie ihn aus dem [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885), und fügen Sie in dann ein. So kopieren Sie diesen Schlüssel aus dem Verwaltungsportal
+1. Geben Sie in das Feld **Kontoschlüssel** den Primärschlüssel ein, oder kopieren Sie ihn aus dem [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885), und fügen Sie ihn dann ein. So kopieren Sie diesen Schlüssel aus dem Verwaltungsportal
 
     1. Klicken Sie unten auf der Seite für das entsprechende Speicherkonto auf die Schaltfläche **Schlüssel verwalten**.
 
@@ -145,12 +145,12 @@ Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden d
         - **HTTPS verwenden** (für eine sichere Verbindung). Beispiel: `https://<accountname>.blob.core.windows.net`.
         - **Benutzerdefinierte Endpunkte angeben** (für jeden der drei Dienste). Sie können dann diese Endpunkte für den jeweiligen Dienst in das Feld eingeben.
 
-        >[AZURE.NOTE]Wenn Sie benutzerdefinierte Endpunkte erstellen, können Sie eine komplexere Verbindungszeichenfolge erstellen. Wenn Sie dieses Zeichenfolgenformat verwenden, können Sie Speicherdienstendpunkte angeben, die einen benutzerdefinierten Domänennamen enthalten, den Sie für Ihr Speicherkonto mit dem Blobdienst registriert haben. Außerdem können Sie über eine SAS (Shared Access Signature) Zugriff auf ausschließlich Blobressourcen in einem einzelnen Container gewähren. Weitere Informationen zum Erstellen benutzerdefinierter Endpunkte finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](https://azure.microsoft.com/documentation/articles/storage-configure-connection-string/).
+        >[AZURE.NOTE]Wenn Sie benutzerdefinierte Endpunkte erstellen, können Sie eine komplexere Verbindungszeichenfolge erstellen. Wenn Sie dieses Zeichenfolgenformat verwenden, können Sie Speicherdienstendpunkte angeben, die einen benutzerdefinierten Domänennamen enthalten, den Sie für Ihr Speicherkonto mit dem Blobdienst registriert haben. Außerdem können Sie über eine SAS (Shared Access Signature) Zugriff auf ausschließlich Blobressourcen in einem einzelnen Container gewähren. Weitere Informationen zum Erstellen benutzerdefinierter Endpunkte finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](storage-configure-connection-string.md).
 
 1. Um diese Änderungen an der Verbindungszeichenfolge zu speichern, klicken Sie auf die Speichern **OK** und dann auf der Symbolleiste auf die Schaltfläche **Speichern**. Nachdem Sie diese Änderungen gespeichert haben, erhalten Sie den Wert dieser Verbindungszeichenfolge in Ihrem Code mithilfe von [GetConfigurationSettingValue](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx). Wenn Sie Ihre Anwendung in Azure veröffentlichen, wählen Sie die Dienstkonfiguration, die das Azure-Speicherkonto für die Verbindungszeichenfolge enthält. Nachdem die Anwendung veröffentlicht wurde, stellen Sie sicher, dass die Anwendung mit den Azure-Speicherdiensten wie erwartet funktioniert.
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Veröffentlichen eines Clouddiensts mit Azure Tools](https://msdn.microsoft.com/library/azure/ee460772.aspx)
+Weitere Informationen zum Veröffentlichen von Anwendungen in Azure aus Visual Studio finden Sie unter [Veröffentlichen eines Clouddiensts mit den Azure Tools](vs-azure-tools-publishing-a-cloud-service.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

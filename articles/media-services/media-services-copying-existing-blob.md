@@ -259,7 +259,15 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 		            try
 		            {
 		                Console.WriteLine(string.Format("Copy blob '{0}' to '{1}'", sourceBlob.Uri, destinationBlob.Uri));
-		                destinationBlob.StartCopyFromBlob(new Uri(sourceBlob.Uri.AbsoluteUri + signature));
+		                destinationBlob.StartCopy(sourceBlob.Uri);
+
+	                    while (destinationBlob.CopyState.Status == CopyStatus.Pending)
+	                    {
+	                        Thread.Sleep(10000);
+	                    }
+	
+	                    Console.WriteLine("Final Copy status = " + destinationBlob.CopyState.Status);
+
 		            }
 		            catch (Exception ex)
 		            {
@@ -293,4 +301,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

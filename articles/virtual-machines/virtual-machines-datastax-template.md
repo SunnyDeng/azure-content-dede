@@ -20,7 +20,7 @@
 
 DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen, die auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra basieren. Diese verteilte NoSQL-Datenbanktechnologie ist weithin anerkannt als agil, immer funktionsbereit und vorhersehbar auf jede Größe skalierbar. DataStax bietet die Versionen Enterprise (DSE) und Community (DSC) an. Zudem beinhaltet es Funktionen wie In-Memory-Computing, unternehmensweite Sicherheit, schnelle und leistungsfähige integrierte Analysen und eine Unternehmenssuche.
 
-Zusätzlich zu den bereits in Azure Marketplace verfügbaren Funktionen können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit [Azure PowerShell](../powershell-install-configure.md) oder der [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) unter Verwendung einer Ressourcen-Manager-Vorlage einen neuen DataStax-Cluster bereitstellen.
+Zusätzlich zu den bereits in Azure Marketplace verfügbaren Funktionen können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit [Azure PowerShell](../powershell-install-configure.md) oder der [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) unter Verwendung einer Ressourcen-Manager-Vorlage einen neuen DataStax-Cluster bereitstellen.
 
 Neu bereitgestellte Cluster auf Basis dieser Vorlage besitzen die im folgenden Diagramm beschriebene Topologie, auch wenn andere Topologien leicht durch das Anpassen der in diesem Artikel gezeigten Vorlage erreicht werden können:
 
@@ -477,4 +477,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

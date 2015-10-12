@@ -251,10 +251,10 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
 
 In diesem Artikel wurden Sie durch alle Schritte der Bereitstellung eines neuen Deis-Clusters mit einer Azure-Ressourcen-Manager-Vorlage geführt. Die Vorlage unterstützt Redundanz für Verbindung zu Tools und Lastenausgleich für bereitgestellte Anwendungen. Die Vorlage vermeidet außerdem die Verwendung öffentlicher IPs auf Mitgliederknoten, sodass wertvolle öffentliche IP-Ressourcen gespart werden und eine sichere Umgebung für das Hosten von Anwendungen gewährleistet ist. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-[Übersicht über den Azure-Ressourcen-Manager][resource-group-overview] [Verwenden der Azure-CLI][azure-command-line-tools] [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager][powershell-azure-resource-manager]
+[Übersicht über den Azure-Ressourcen-Manager][resource-group-overview] [Verwenden der Azure-Befehlszeilenschnittstelle][azure-command-line-tools] [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager][powershell-azure-resource-manager]
 
-[azure-command-line-tools]: ../xplat-cli.md
+[azure-command-line-tools]: ../xplat-cli-install.md
 [resource-group-overview]: ../resource-group-overview.md
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

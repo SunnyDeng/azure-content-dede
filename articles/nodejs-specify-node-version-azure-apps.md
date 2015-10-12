@@ -93,9 +93,9 @@ Nachdem Sie gelernt haben, wie Sie die von ihrer Anwendung verwendete Node.js-Ve
 
 Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
 
-[Verwenden der Azure-Befehlszeilentools für Mac und Linux]: xplat-cli.md
-[Azure-Befehlszeilentools]: xplat-cli.md
+[Verwenden der Azure-Befehlszeilentools für Mac und Linux]: xplat-cli-install.md
+[Azure-Befehlszeilentools]: xplat-cli-install.md
 [Arbeiten mit Modulen]: nodejs-use-node-modules-azure-apps.md
 [Erstellen und Bereitstellen einer Node.js-Website]: web-sites-nodejs-develop-deploy-mac.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

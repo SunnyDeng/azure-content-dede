@@ -34,11 +34,11 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Azure-CLI** – Informationen zur Installation und Konfiguration finden Sie unter [Installieren und Konfigurieren der Azure-CLI](../xplat-cli.md).
+- **Azure-CLI** – Informationen zur Installation und Konfiguration finden Sie unter [Installieren und Konfigurieren der Azure-CLI](../xplat-cli-install.md).
 
 ##Installation
 
-Sofern noch nicht geschehen, installieren und konfigurieren Sie die Befehlszeilenschnittstelle von Azure (Azure-CLI) nach den Anweisungen im Dokument [Installieren und Konfigurieren der Azure-CLI](../xplat-cli.md).
+Sofern noch nicht geschehen, installieren und konfigurieren Sie die Befehlszeilenschnittstelle von Azure (Azure-CLI) nach den Anweisungen im Dokument [Installieren und Konfigurieren der Azure-CLI](../xplat-cli-install.md).
 
 ##Bereitstellen eines HDInsight-Clusters
 
@@ -132,8 +132,11 @@ Mit dem folgenden Befehl können Sie ein Cluster löschen:
 
 	azure hdinsight cluster delete <ClusterName>
 
+##<a name="scaling"></a>Skalieren eines Clusters
 
+Führen Sie den folgenden Befehl auf einem Clientcomputer aus, um die Hadoop-Clustergröße mithilfe von Azure PowerShell zu ändern:
 
+	Set-AzureHDInsightClusterSize -ClusterSizeInNodes <NewSize> -name <clustername>
 
 ##Nächste Schritte
 Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluster auszuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
@@ -144,7 +147,7 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 * [Verwenden der Azure-CLI][azure-command-line-tools]
 
 
-[azure-command-line-tools]: ../xplat-cli.md
+[azure-command-line-tools]: ../xplat-cli-install.md
 [azure-create-storageaccount]: ../storage-create-storage-account.md
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
@@ -160,4 +163,4 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 [image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "Auflisten und Anzeigen von Clustern"
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

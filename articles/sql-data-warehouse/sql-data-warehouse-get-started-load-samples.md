@@ -78,21 +78,21 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 <!--Image references-->
 
 <!--Article references-->
-[Migrieren]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwicklung]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-develop/
-[Laden]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-overview-load/
-[Herstellen der Verbindung und Abfragen]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-get-started-connect-query/
-[Migrieren von Code]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-migrate-code/
-[Beispieldaten auch manuell laden]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[Beispieldaten manuell laden]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[Azure-Portal]: portal.azure.com
-[Power BI]: www.powerbi.com
-[Herstellen einer Verbindung mit SQL Data Warehouse]: https://azure.microsoft.com/DE-DE/documentation/articles/sql-data-warehouse-integrate-power-bi/
+[Migrieren]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
+[Entwicklung]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
+[Laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-load/
+[Herstellen der Verbindung und Abfragen]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-connect-query/
+[Migrieren von Code]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-migrate-code/
+[Beispieldaten auch manuell laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[Beispieldaten manuell laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[Azure-Portal]: https://portal.azure.com
+[Power BI]: http://www.powerbi.com
+[Herstellen einer Verbindung mit SQL Data Warehouse]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-integrate-power-bi/
 
 <!--MSDN references-->
-[Microsoft Command Line Utilities for SQL Server]: http://www.microsoft.com/DE-DE/download/details.aspx?id=36433
+[Microsoft Command Line Utilities for SQL Server]: http://www.microsoft.com/de-DE/download/details.aspx?id=36433
 
 <!--Other Web references-->
 [Sample Data Scripts]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksPDW2012.zip
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

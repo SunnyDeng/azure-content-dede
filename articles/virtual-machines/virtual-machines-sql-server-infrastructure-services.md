@@ -32,6 +32,8 @@ Um einen virtuellen Computer mit SQL Server in Azure zu erstellen, müssen Sie z
 
 Nachdem Sie sich für ein Abonnement angemeldet haben, besteht die einfachste Möglichkeit zum Bereitstellen eines virtuellen Computers mit SQL Server in Azure darin, [im Azure-Verwaltungsportal aus dem Imagekatalog ein Image eines virtuellen Computers mit SQL Server bereitzustellen](virtual-machines-provision-sql-server.md). Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen.
 
+>[AZURE.NOTE]Nutzen Sie das [neue Portal](https://manage.windowsazure.com) zum Bereitstellen und Verwalten von virtuellen SQL Server-Computern. Es verwendet standardmäßig Storage Premium und bietet die automatisierte Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen.
+
 Die folgende Tabelle enthält eine Matrix der SQL Server-Images, die im Katalog der virtuellen Computer verfügbar sind.
 
 |SQL Server-Version|Betriebssystem|SQL Server-Edition|
@@ -44,13 +46,14 @@ Die folgende Tabelle enthält eine Matrix der SQL Server-Images, die im Katalog 
 |SQL Server 2014 SP1|Windows Server 2012 R2|Enterprise, Standard, Web|
 |SQL Server 2016 CTP|Windows Server 2012 R2|Auswertung|
 
->[AZURE.NOTE]Die VM-Katalogimages für Data Warehousing und transaktionale Workloads (oben nicht gezeigt) sind veraltet und werden in Kürze aus dem Katalog entfernt. Verwenden Sie die Standardimages in der vorstehenden Tabelle, und optimieren Sie die Leistung für Ihre spezifische Workload, indem Sie die Empfehlungen unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md) befolgen.
+>[AZURE.NOTE]Die VM-Katalogimages für Data Warehousing und transaktionale Workloads (oben nicht gezeigt) sind veraltet und werden in Kürze aus dem Katalog entfernt. Bitte verwenden Sie die Standardimages aus der vorherigen Tabelle und optimieren Sie die Leistung für Ihren spezifischen Workload.
 
 Zusätzlich zu diesen vorkonfigurierten Images können Sie auch [einen virtuellen Azure-Computer](virtual-machines-windows-tutorial.md) ohne vorinstallierte SQL Server-Instanz erstellen. Sie können eine beliebige SQL Server-Instanz darauf installieren, für die Sie über eine Lizenz verfügen. Sie migrieren Ihre Lizenz nach Azure, um SQL Server auf einem virtuellen Azure-Computer auszuführen. Diese Migration erfolgt gemäß [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/). In diesem Szenario bezahlen Sie lediglich für die Compute- und Speicher[kosten](http://azure.microsoft.com/pricing/details/virtual-machines) in Azure, die im Zusammenhang mit dem virtuellen Computer anfallen.
 
-Zu den häufigen Aufgaben in diesen frühen Phasen der Bereitstellung und Konfiguration gehören:
+Um die besten VM-Konfigurationseinstellungen für Ihr SQL Server-Image zu bestimmen, lesen Sie sich [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md) durch. Für Produktionsworkloads ist **DS3** die empfohlene Mindestgröße des virtuellen Computers für SQL Server Enterprise Edition, und **DS2** für Standard Edition.
 
-- [Durcharbeiten der optimalen Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md)
+Neben dem Durchlesen der optimalen Verfahren für die Leistung gehört Folgendes zu den ersten Schritten:
+
 - [Durcharbeiten der optimalen Verfahren für die Sicherheit für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-security-considerations.md)
 - [Einrichten von Konnektivität](virtual-machines-sql-server-connectivity.md)
 
@@ -111,7 +114,7 @@ Die SQL Server-Installation im Plattformimage enthält die folgenden Konfigurati
 |Data Quality Services|Installiert (nur SQL Server 2012 oder höher)|
 |Master Data Services|Installiert (nur SQL Server 2012 oder höher). Erfordert [zusätzliche Konfigurationsschritte und Komponenten](https://msdn.microsoft.com/library/ee633752.aspx)
 |PowerPivot für SharePoint|Verfügbar (nur SQL Server 2012 oder höher). Erfordert zusätzliche Konfiguration und Komponenten (einschließlich SharePoint)|
-|Distributed Replay Client|Verfügbar (nur SQL Server 2012 oder höher), aber nicht installiert. Weitere Informationen finden Sie unter [Ausführen von SQL Server-Setup aus dem von der Plattform bereitgestellten SQL Server-Image](#run-sql-server-setup-from-the-platform-provided-sql-server-image)|
+|Distributed Replay Client|Verfügbar (nur SQL Server 2012 oder höher), aber nicht installiert. Weitere Informationen finden Sie unter [Ausführen von SQL Server-Setup aus dem von der Plattform bereitgestellten SQL Server-Image](#run-sql-server-setup-from-the-platform-provided-sql-server-image).|
 |Tools|Alle Tools einschließlich SQL Server Management Studio, SQL Server-Konfigurations-Manager, Business Intelligence Development Studio, SQL Server-Setup, Konnektivität der Clienttools, Clienttools SDK und SQL Client Connectivity SDK sowie Upgrade- und Migrationstools, z. B. Datenebenenanwendungen (Data-Tier Application, DAC), Sichern, Wiederherstellen, Anfügen und Trennen|
 |SQL Server-Onlinedokumentation|Installiert, erfordert aber Konfiguration mithilfe von Help Viewer|
 
@@ -147,4 +150,4 @@ Wenn Sie einen virtuellen Computer erstellen, indem Sie ein von der Plattform be
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 - [Dokumentation zu virtuellen Computern](virtual-machines-about.md) 
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

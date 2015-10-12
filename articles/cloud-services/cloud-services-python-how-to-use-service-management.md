@@ -303,7 +303,7 @@ Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Clouddiens
 		location=location)
 
 	# Name of an os image as returned by list_os_images
-	image_name = 'OpenLogic__OpenLogic-CentOS-62-20120531-de-de-30GB.vhd'
+	image_name = 'OpenLogic__OpenLogic-CentOS-62-20120531-de-DE-30GB.vhd'
 
 	# Destination storage account container/blob where the VM disk
 	# will be created
@@ -406,7 +406,7 @@ Weitere Informationen zum Erfassen eines virtuellen Windows-Computers finden Sie
 
 Da Sie nun mit den Grundlagen der Dienstverwaltung vertraut sind, können Sie auf die [vollständige API-Referenzdokumentation für das Azure Python SDK](http://azure-sdk-for-python.readthedocs.org/en/documentation/index.html) zugreifen und komplexe Aufgaben mühelos durchführen, um Ihre Python-Anwendung zu verwalten.
 
-
+Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
 [What is Service Management]: #WhatIs
 [Concepts]: #Concepts
@@ -445,4 +445,4 @@ Da Sie nun mit den Grundlagen der Dienstverwaltung vertraut sind, können Sie au
 [Virtual Machines]: http://msdn.microsoft.com/library/windowsazure/jj156003.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

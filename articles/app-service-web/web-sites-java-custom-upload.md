@@ -134,6 +134,22 @@ Wie bei Tomcat, können Kunden auch für Jetty ihre eigenen Instanzen hochladen.
 
 Die Jetty-Konfiguration muss in der start.ini-Datei geändert werden, um `java.net.preferIPv4Stack=true` festzulegen.
 
+### Springboot
+Um eine Springboot-Anwendung auszuführen, müssen Sie die JAR- oder WAR-Datei hochladen und die folgende web.config-Datei hinzufügen. Die web.config-Datei wird im Ordner "wwwroot" gespeichert. Passen Sie in der web.config-Datei die Argumente so an, dass Sie auf die JAR-Datei verweisen. Im folgenden Beispiel befindet sich die JAR-Datei ebenfalls im Ordner "wwwroot".
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<configuration>
+	  <system.webServer>
+	    <handlers>
+	      <add name="httpPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
+	    </handlers>
+	    <httpPlatform processPath="%JAVA_HOME%\bin\java.exe"
+	        arguments="-Djava.net.preferIPv4Stack=true -Dserver.port=%HTTP_PLATFORM_PORT% -jar ";%HOME%\site\wwwroot\my-web-project.jar";">
+	    </httpPlatform>
+	  </system.webServer>
+	</configuration>
+
+
 ### Hudson
 
 In unserem Test verwendeten wir die Hudson 3.1.2-WAR-Datei und die Standardinstanz Tomcat 7.0.50, jedoch ohne die UI für die Einrichtung zu verwenden. Da es sich bei Hudson um ein softwarebasiertes Tool handelt, empfehlen wir die Installation auf dedizierten Instanzen, auf denen das Kennzeichen **AlwaysOn** für die Web-App festgelegt werden kann.
@@ -241,4 +257,4 @@ Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/jav
 <!-- External Links -->
 [Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

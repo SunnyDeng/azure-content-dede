@@ -14,8 +14,9 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/09/2015" 
+	ms.date="09/29/2015" 
 	ms.author="jeffstok"/>
+
 
 # Einrichten von Warnungen
 
@@ -29,14 +30,14 @@ Regeln können auf Metriken über das Portal eingerichtet oder [programmgesteuer
 
 ## Einrichten von Warnungen über das Azure-Portal
 
-Es gibt zwei Möglichkeiten zum Einrichten von Warnungen:
+Es gibt zwei Möglichkeiten, Warnungen im Azure-Verwaltungsportal einzurichten:
 
-1.	Die Registerkarte "Überwachen" in Ihrem Stream Analytics-Auftrag  
+1.	Die Registerkarte **Überwachen** in Ihrem Stream Analytics-Auftrag  
 2.	Das Vorgangsprotokoll in den Verwaltungsdiensten  
 
 ## Warnungen über die Registerkarte "Überwachen" des Auftrags im Portal
 
-1.	Wählen Sie die Metrik in der Registerkarte "Überwachen", klicken Sie auf die Schaltfläche "Regel hinzufügen" im unteren Teil des Dashboards, und richten Sie dann die Regeln ein.  
+1.	Wählen Sie die Metrik in der Registerkarte "Überwachen", klicken Sie auf die Schaltfläche **Regel hinzufügen** im unteren Teil des Dashboards, und richten Sie dann die Regeln ein.  
 
     ![Dashboard](./media/stream-analytics-set-up-alerts/01-stream-analytics-set-up-alerts.png)
 
@@ -51,13 +52,27 @@ Es gibt zwei Möglichkeiten zum Einrichten von Warnungen:
 ## Einrichten von Warnungen über die Vorgangsprotokolle
 
 1.	Wechseln Sie zur Registerkarte **Warnungen** in den Verwaltungsdiensten im [Azure-Portal](https://manage.windowsazure.com)  
-2.	Klicken Sie auf **Regel hinzufügen**.  
+2.	Klicken Sie auf **Regel hinzufügen**  
 
     ![Kriterien](./media/stream-analytics-set-up-alerts/04-stream-analytics-set-up-alerts.png)
 
 3.	Definieren Sie den Namen und die Beschreibung der Warnung Wählen Sie 'Stream Analytics' als Diensttyp und den Namen des Auftrags als Dienstnamen.
 
     ![Definieren einer Warnung](./media/stream-analytics-set-up-alerts/05-stream-analytics-set-up-alerts.png)
+
+## Einrichten von Warnungen im Azure-Vorschauportal ##
+
+Navigieren Sie im Azure-Vorschauportal zum Stream Analytics-Auftrag, für dessen Metriken Sie Warnungen einrichten möchten, und klicken Sie auf den Abschnitt **Überwachung**. Klicken Sie im Blatt **Metrik**, das geöffnet wird, auf den Befehl **Benachrichtigung hinzufügen**.
+
+  ![Azure-Vorschauportal, Einrichtung](./media/stream-analytics-set-up-alerts/06-stream-analytics-set-up-alerts.png)
+
+Sie können einen Namen für die Warnungsregel eingeben und eine Beschreibung auswählen, die in der Benachrichtigungs-E-Mail angezeigt wird.
+
+Bei Auswahl von „Metrics“ geben Sie eine Bedingung und einen Schwellenwert für die Metrik an.
+
+  ![Azure-Vorschauportal, Auswählen von Metriken](./media/stream-analytics-set-up-alerts/07-stream-analytics-set-up-alerts.png)
+
+Weitere Informationen über das Konfigurieren von Warnungen im Azure-Vorschauportal finden Sie unter [Empfangen von Warnbenachrichtigungen](./azure-portal/insights-receive-alert-notifications.md).
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -70,4 +85,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

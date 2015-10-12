@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/25/2015" 
+	ms.date="09/25/2015" 
 	ms.author="mimig"/>
 
 # Verwenden von Konsistenzebenen zum Maximieren der Verfügbarkeit und Leistung in DocumentDB
@@ -56,15 +56,13 @@ Die Konsistenzebene "Eventual" bietet die schwächste Lesekonsistenz, jedoch die
 
 ### Ändern der Konsistenzebene einer Datenbank
 
-1.  Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Alle durchsuchen**.
+1.  Klicken Sie in der Navigationsleiste im [Azure-Vorschauportal](https://portal.azure.com/) auf **DocumentDB-Konten**.
 
-2.  Klicken Sie auf dem Blatt **Alle durchsuchen** auf **DocumentDB-Konten**.
+2. Wählen Sie auf dem Blatt **DocumentDB-Konten** das zu ändernde Datenbankkonto aus.
 
-3. Wählen Sie auf dem Blatt **DocumentDB-Konten** das zu ändernde Datenbankkonto aus.
+3. Klicken Sie auf dem Kontoblatt im Fokus **Konfiguration** auf die Kachel **Standardkonsistenz**.
 
-4. Klicken Sie auf dem Kontoblatt im Fokus **Konfiguration** auf die Kachel **Standardkonsistenz**.
-
-5. Wählen Sie die neue Konsistenzebene aus, und klicken Sie auf **Speichern**.
+4. Wählen Sie im Blatt **Standardkonsistenz** die neue Konsistenzebene aus und klicken Sie auf **Speichern**.
 
 	![Screenshot, der die Kachel" Standardkonsistenz", die Einstellungen für die Konsistenz und die Schaltfläche "Speichern" zeigt](./media/documentdb-consistency-levels/database-consistency-level.png)
 
@@ -90,4 +88,4 @@ Wenn Sie weitere Informationen zu Konsistenzebenen und deren Vor- und Nachteile 
 -	Werner Vogels. Eventual Consistent - Revisited. [http://allthingsdistributed.com/2008/12/eventually\_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

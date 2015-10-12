@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="07/29/2015"
+	ms.date="09/23/2015"
 	ms.author="tomfitz"/>
 
 # Verwenden des Warteschlangenspeichers mit PHP
@@ -378,9 +378,11 @@ Nachdem Sie sich nun mit den Grundlagen des Azure-Warteschlangenspeichers vertra
 - Weitere Informationen finden Sie in der MSDN-Referenz [Azure-Speicher](http://msdn.microsoft.com/library/azure/gg433040.aspx).
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
+Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/php/).
+
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure Management Portal]: http://manage.windowsazure.com/
 [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

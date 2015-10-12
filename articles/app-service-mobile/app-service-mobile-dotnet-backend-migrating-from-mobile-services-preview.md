@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service" 
+	ms.service="app-service-mobile" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile" 
 	ms.devlang="dotnet" 
@@ -135,14 +135,14 @@ Sobald Ihre Kunden diese Updates erhalten haben, können Sie die Mobile Services
 [Vorschau auf das Azure-Verwaltungsportal]: https://portal.azure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Was sind mobile Apps?]: app-service-mobile-value-prop-preview.md
-[Ich verwende bereits Websites und mobile Dienste – welche Vorteile bietet App Service?]: /de-de/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview
+[Ich verwende bereits Websites und mobile Dienste – welche Vorteile bietet App Service?]: /de-DE/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview
 [Mobile App Server SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
 [Erstellen einer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md
 [Hinzufügen von Pushbenachrichtigungen zu Ihrer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-push-preview.md
 [Hinzufügen der Authentifizierung zu Ihrer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-users-preview.md
-[Azure Scheduler]: /de-de/documentation/services/scheduler/
+[Azure Scheduler]: /de-DE/documentation/services/scheduler/
 [WebJob]: ../app-service-web/websites-webjobs-resources.md
 [Senden von plattformübergreifenden Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-push-notifications-to-user-preview.md
 [Verwenden des .NET-Server-SDKs]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

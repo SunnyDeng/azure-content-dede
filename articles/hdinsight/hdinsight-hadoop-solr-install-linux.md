@@ -19,7 +19,6 @@
 
 # Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern
 
-
 In diesem Thema wird beschrieben, wie Sie Solr in Azure HDInsight mithilfe der Funktion "Skriptaktion" installieren. Solr ist eine leistungsfähige Suchplattform und bietet Suchfunktionen der Unternehmensklasse für von Hadoop verwaltete Daten. Sobald Sie Solr in einem HDInsight-Cluster installiert haben, erfahren Sie auch, wie Sie Daten mithilfe von Solr suchen können.
 
 > [AZURE.NOTE]Die Schritte in diesem Dokument erfordern einen Linux-basierten HDInsight-Cluster. Informationen zur Verwendung von Solr mit einem Windows-basierten Cluster finden Sie unter [Installieren und Verwenden von Solr in HDinsight Hadoop-Clustern (Windows)](hdinsight-hadoop-solr-install.md).
@@ -58,11 +57,11 @@ Ein Beispielskript zum Installieren von Solr in einem HDInsight-Cluster steht in
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Stellen Sie den Cluster weiterhin wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben bereit.
+4. Setzen Sie die Bereitstellung des Clusters wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben fort.
 
 ## <a name="usesolr"></a>Wie verwende ich Solr in HDInsight?
 
-###Indizieren von Daten
+### Indizieren von Daten
 
 Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie können dann Solr verwenden, um Suchabfragen der indizierten Daten auszuführen. Verwenden Sie die folgenden Schritte, um einige Beispieldaten zu Solr hinzuzufügen und diese dann abzufragen:
 
@@ -153,7 +152,7 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 			    ]
 			  }
 
-###Verwenden des Solr-Dashboards
+### Verwenden des Solr-Dashboards
 
 Das Solr-Dashboard ist eine Webbenutzeroberfläche, mit dem Sie über Ihren Webbrowser mit Solr arbeiten können. Das Solr-Dashboard wir nicht direkt im Internet aus Ihrem HDInsight-Cluster verfügbar gemacht. Der Zugriff muss mithilfe eines SSH-Tunnels stattfinden. Weitere Informationen zum Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
@@ -229,7 +228,7 @@ Wenn Sie einen SSH-Tunnel eingerichtet haben, gehen Sie folgendermaßen vor, um 
 			    ]
 			  }
 
-###Starten und Anhalten von Solr
+### Starten und Anhalten von Solr
 
 Wenn Sie Solr manuell beenden oder starten müssen, verwenden Sie die folgenden Befehle:
 
@@ -237,8 +236,7 @@ Wenn Sie Solr manuell beenden oder starten müssen, verwenden Sie die folgenden 
 
 	sudo start solr
 
-
-##Sichern indizierter Daten
+## Sichern indizierter Daten
 
 Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterknoten in Azure-Blobspeicher. Führen Sie dazu die folgenden Schritte aus:
 
@@ -276,7 +274,7 @@ Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterkno
 Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen finden Sie unter [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores) (auf Englisch).
 
 
-## Weitere Informationen##
+## Weitere Informationen
 
 - [Installieren und Verwenden von Hue in HDInsight-Clustern](hdinsight-hadoop-hue-linux.md) Hue ist eine Webbenutzeroberfläche, die das Erstellen, Ausführen und Speichern von Pig- und Hive-Aufträgen sowie das Durchsuchen des Standardspeichers für Ihre HDInsight-Cluster vereinfacht.
 
@@ -291,11 +289,9 @@ Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen fin
 
 
 
-
-
 [hdinsight-provision]: hdinsight-provision-clusters-linux.md
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

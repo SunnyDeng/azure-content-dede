@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Bereitstellen einer mobilen ASP.NET MVC 5-Web-App in Azure App Service." 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Web-App in Azure App Service mithilfe von mobilen Features in einer ASP.NET-MVC 5-Webanwendung bereitstellen." 
-	services="app-service\web" 
+	services="app-service" 
 	documentationCenter=".net" 
 	authors="cephalin" 
 	manager="wpickett" 
@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="app-service" 
-	ms.workload="web" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
@@ -618,4 +618,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 [SessionByCodeFixed3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-Fixed-3-644.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

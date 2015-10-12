@@ -28,7 +28,7 @@
 
 In diesem Artikel wird beschrieben, wie Sie die Dienstebene und Leistungsstufe Ihrer SQL-Datenbank mit PowerShell ändern.
 
-Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQL-Datenbanken auf die neuen Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-upgrade-new-service-tiers.md) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn741336.aspx) die geeignete Dienstebene und Leistungsstufe für Ihre Azure SQL-Datenbank.
+Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQL-Datenbanken auf die neuen Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-upgrade-new-service-tiers.md) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-service-tiers.md) die geeignete Dienstebene und Leistungsstufe für Ihre Azure SQL-Datenbank.
 
 > [AZURE.IMPORTANT]Ein Ändern der Dienstebene und Leistungsstufe einer SQL-Datenbank ist ein Onlinevorgang. Dies bedeutet, dass die Datenbank während des gesamten Vorgangs ohne Ausfallzeit online und verfügbar bleibt.
 
@@ -134,4 +134,4 @@ Führen Sie das **Set-AzureSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedS
 - [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md)
 - [SQL-Datenbank-Dokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

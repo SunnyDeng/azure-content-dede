@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="08/13/2015"
+   ms.date="09/30/2015"
    ms.author="kempb" />
 
 # Zugreifen auf virtuelle Computer in Azure über den Server-Explorer
@@ -51,6 +51,6 @@ Wenn Sie in Azure gehostete virtuelle Computer verwenden, können Sie über den 
 
 ## Nächste Schritte
 
-Weitere Informationen zum Verwenden von Azure-Rollen in Visual Studio finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](http://go.microsoft.com/fwlink/p/?LinkID=623091).
+Weitere Informationen zum Verwenden von Azure-Rollen in Visual Studio finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](vs-azure-tools-remote-desktop-roles.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

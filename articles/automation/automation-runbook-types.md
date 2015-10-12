@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
+   ms.date="09/24/2015"
    ms.author="bwren" />
 
 # Azure Automation-Runbooktypen
@@ -35,37 +35,42 @@ Azure Automation unterstützt drei Arten von Runbooks, die in der folgenden Tabe
 - Erstellen von Runbooks mit nur minimalen Kenntnissen des [PowerShell-Workflows](automation-powershell-workflow.md).
 - Visuelle Darstellung von Verwaltungsprozessen.
 - Verwendung von [Prüfpunkten](automation-powershell-workflow.md#checkpoints) zum Fortsetzen des Runbooks im Fall eines Fehlers.
-- Verwendung der [parallelen Verarbeitung](automation-powershell-workflow.md#parallel-processing), um mehrere Aktionen gleichzeitig auszuführen.
-- Andere grafische oder PowerShell-Workflow-Runbooks können als untergeordnete Runbooks integriert werden, um übergeordnete Workflows zu erstellen.
+- Verwendung der [parallelen Verarbeitung](automation-powershell-workflow.md#parallel-processing), um mehrere Aktivitäten gleichzeitig auszuführen.
+- Kann andere grafische und PowerShell-Workflow-Runbooks als untergeordnete Runbooks integrieren, um übergeordnete Workflows zu erstellen.
+
 
 ### Einschränkungen
 
 - Runbook kann nicht außerhalb des Azure-Portals bearbeitet werden.
 - Erfordert möglicherweise ein [Workflow-Skriptsteuerelement](automation-powershell-workflow.md#activities) mit PowerShell-Workflowcode zum Ausführen komplexer Logik.
+- Kann den vom grafischen Workflow erstellten PowerShell-Workflowcode nicht anzeigen oder direkt bearbeiten. Beachten Sie, dass Sie den Code in allen Workflowskriptaktivitäten anzeigen können.
 - Das Starten des Runbooks dauert länger als bei PowerShell-Runbooks, da es vor der Ausführung kompiliert werden muss.
-- PowerShell-Runbooks können nur mithilfe des Cmdlets "Start-AzureAutomationRunbook" einbezogen werden, wodurch ein neuer Auftrag erstellt wird.
+- PowerShell-Runbooks können nur als untergeordnete Runbooks mithilfe des Cmdlets "Start-AzureAutomationRunbook" einbezogen werden, wodurch ein neuer Auftrag erstellt wird.
+
 
 ## PowerShell-Workflow-Runbooks
 
-PowerShell-Workflow-Runbooks sind Textrunbooks, die auf einem [Windows PowerShell-Workflow](automation-powershell-workflow.md) basieren. Sie bearbeiten den Code des Runbooks direkt mit dem Text-Editor im Azure-Portal. Sie können auch einen beliebigen Offline-Text-Editor verwenden und das [Runbook in Azure Automation importieren](http://msdn.microsoft.com/library/azure/dn643637.aspx).
+PowerShell-Workflow-Runbooks sind Textrunbooks, die auf einem [Windows PowerShell-Workflow](automation-powershell-workflow.md) basieren. Sie bearbeiten den Code des Runbooks direkt mit dem Text-Editor im Azure-Portal. Sie können auch einen beliebigen Offline-Texteditor verwenden und das [Runbook in Azure Automation importieren](http://msdn.microsoft.com/library/azure/dn643637.aspx).
 
 ### Vorteile
 
 - Implementierung der gesamten komplexen Logik mit PowerShell-Workflowcode.
 - Verwendung von [Prüfpunkten](automation-powershell-workflow.md#checkpoints) zum Fortsetzen des Runbooks im Fall eines Fehlers.
 - Verwendung der [parallelen Verarbeitung](automation-powershell-workflow.md#parallel-processing), um mehrere Aktionen gleichzeitig auszuführen.
-- Andere PowerShell-Workflow- oder grafische Runbooks können als untergeordnete Runbooks integriert werden, um übergeordnete Workflows zu erstellen.
+- Kann andere grafische und PowerShell-Workflow-Runbooks als untergeordnete Runbooks integrieren, um übergeordnete Workflows zu erstellen.
+
 
 ### Einschränkungen
 
 - Autor muss mit PowerShell-Workflow vertraut sein.
 - Die zusätzliche Komplexität des PowerShell-Workflows, z. B. [deserialisierte Objekte](automation-powershell-workflow.md#code-changes), müssen vom Runbook verarbeitet werden.
 - Das Starten des Runbooks dauert länger als bei PowerShell-Runbooks, da es vor der Ausführung kompiliert werden muss.
-- PowerShell-Runbooks können nur mithilfe des Cmdlets "Start-AzureAutomationRunbook" einbezogen werden, wodurch ein neuer Auftrag erstellt wird.
+- PowerShell-Runbooks können nur als untergeordnete Runbooks mithilfe des Cmdlets "Start-AzureAutomationRunbook" einbezogen werden, wodurch ein neuer Auftrag erstellt wird.
+
 
 ## PowerShell-Runbooks
 
-PowerShell-Runbooks basieren auf Windows PowerShell. Sie bearbeiten den Code des Runbooks direkt mit dem Text-Editor im Azure-Portal. Sie können auch einen beliebigen Offline-Text-Editor verwenden und das [Runbook in Azure Automation importieren](http://msdn.microsoft.com/library/azure/dn643637.aspx).
+PowerShell-Runbooks basieren auf Windows PowerShell. Sie bearbeiten den Code des Runbooks direkt mit dem Text-Editor im Azure-Portal. Sie können auch einen beliebigen Offline-Texteditor verwenden und das [Runbook in Azure Automation importieren](http://msdn.microsoft.com/library/azure/dn643637.aspx).
 
 ### Vorteile
 
@@ -77,7 +82,7 @@ PowerShell-Runbooks basieren auf Windows PowerShell. Sie bearbeiten den Code des
 - Autor muss mit PowerShell-Skripts vertraut sein.
 - Eine [parallele Verarbeitung](automation-powershell-workflow.md#parallel-processing) zum gleichzeitigen Ausführen mehrerer Aktionen ist nicht möglich.
 - Die Verwendung von [Prüfpunkten](automation-powershell-workflow.md#checkpoints) zum Fortsetzen des Runbooks im Fall eines Fehlers ist nicht möglich.
-- Das Starten von Runbooks auf einem [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md) ist nicht möglich.
+- Das Starten von Runbooks auf [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md) ist nicht möglich.
 - PowerShell-Workflow- und grafische Runbooks können nur mithilfe des Cmdlets "Start-AzureAutomationRunbook" einbezogen werden, wodurch ein neuer Auftrag erstellt wird.
 
 ### Bekannte Probleme
@@ -104,4 +109,4 @@ Wenn Sie festlegen, welchen Typ Sie für ein bestimmtes Runbook verwenden möcht
 - [Grundlagen des Windows PowerShell-Workflows](automation-powershell-workflow.md)
 - [Erstellen oder Importieren eines Runbooks](http://msdn.microsoft.com/library/azure/dn643637.aspx)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

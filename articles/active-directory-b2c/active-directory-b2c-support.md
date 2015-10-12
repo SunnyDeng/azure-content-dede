@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="09/24/2015"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Senden von Supportanfragen für Azure Active Directory B2C
@@ -23,7 +23,7 @@
 Führen Sie die folgenden Schritte aus, um Supportanfragen für Azure Active Directory (AD) B2C im Azure-Vorschauportal zu senden:
 
 1. [Navigieren Sie zum B2C-Featureblatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
-2. Wechseln Sie aus Ihrem B2C-Verzeichnis in ein anderes Verzeichnis, dem ein Azure-Abonnement zugeordnet ist. Dies ist normalerweise Ihr Mitarbeiterverzeichnis oder das Standardverzeichnis, das bei der Registrierung für ein Azure-Abonnement erstellt wurde. Lesen Sie [diesen Artikel](active-directory-how-subscriptions-associated-directory.md#how-an-azure-subscription-is-related-to-azure-ad), um weitere Informationen zum Zusammenhang zwischen Azure-Abonnements und Azure AD-Verzeichnissen zu erhalten.
+2. Wechseln Sie aus Ihrem B2C-Mandanten in einen anderen Mandanten, dem ein Azure-Abonnement zugeordnet ist. Dies ist normalerweise Ihr Mitarbeitermandant oder der Standardmandant, der bei der Registrierung für ein Azure-Abonnement erstellt wurde. Lesen Sie [diesen Artikel](active-directory-how-subscriptions-associated-directory.md#how-an-azure-subscription-is-related-to-azure-ad), um weitere Informationen zum Zusammenhang zwischen Azure-Abonnements und Azure AD-Verzeichnissen zu erhalten.
 
     > [AZURE.IMPORTANT]Dieser Schritt ist erforderlich. Der Vorgang kann nicht abgeschlossen werden, wenn Sie diesen Schritt nicht ausführen.
 
@@ -38,16 +38,16 @@ Führen Sie die folgenden Schritte aus, um Supportanfragen für Azure Active Dir
     - Geben Sie für **Anforderungstyp** den Wert **Technischen** ein.
 	- **Ressource** ist **Active Directory**.
 	- Wählen Sie auf dem Blatt **Problemkategorie** die Option **B2C-Vorschau** als **Problemtyp** sowie den entsprechenden Wert für **Kategorie** aus.
-	- Beschreiben Sie auf dem Blatt **Beschreibung** das Problem ausführlicher. Geben Sie im Textfeld **Ressource** den Namen Ihres B2C-Verzeichnisses an, z. B. "contosob2c.onmicrosoft.com".
+	- Beschreiben Sie auf dem Blatt **Beschreibung** das Problem ausführlicher. Geben Sie im Textfeld **Ressource** den Namen Ihres B2C-Mandanten an, z. B. "contosob2c.onmicrosoft.com".
 
 5. Wenn Ihre Supportanfrage gesendet wurde, können Sie sie überwachen, indem Sie im Startmenü auf **Hilfe und Support** und dann auf **Supportanfragen verwalten** klicken.
 
-## Bekanntes Problem: Senden von Supportanfragen im Kontext eines B2C-Verzeichnisses
+## Bekanntes Problem: Senden von Supportanfragen im Kontext eines B2C-Mandanten
 
-Wenn Sie den oben beschriebenen Schritt 2 nicht durchführen und versuchen, eine Supportanfrage im Kontext Ihres B2C-Verzeichnisses zu erstellen, wird der folgende Fehler angezeigt.
+Wenn Sie den oben beschriebenen Schritt 2 nicht durchführen und versuchen, eine Supportanfrage im Kontext Ihres B2C-Mandanten zu erstellen, wird der folgende Fehler angezeigt.
 
-> [AZURE.IMPORTANT]Versuchen Sie nicht, sich in Ihrem B2C-Verzeichnis für ein neues Azure-Abonnement zu registrieren.
+> [AZURE.IMPORTANT]Versuchen Sie nicht, sich in Ihrem B2C-Mandanten für ein neues Azure-Abonnement zu registrieren.
 
 ![Support – Kein Abonnement](./media/active-directory-b2c-support/support-no-sub.png)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

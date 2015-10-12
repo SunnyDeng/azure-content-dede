@@ -148,9 +148,11 @@ Stellen Sie sicher, dass `buildinfo.config` von Ihrem Buildprozess generiert wir
 Wenn das Webmodul Application Insights über die Buildinformationen verfügt, fügt es jedem Telemetrieelement automatisch die **Anwendungsversion** als Eigenschaft hinzu. Dies ermöglicht es Ihnen, nach Version zu filtern, wenn Sie [Diagnosesuchen][diagnostic] ausführen oder [Metriken untersuchen][metrics].
 
 
-## 5\. Hinzufügen der Nachverfolgung von Abhängigkeiten und von Leistungsindikatoren
+## 5\. Hinzufügen der Nachverfolgung von Abhängigkeiten (und von IIS-Leistungsindikatoren)
 
 Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzliche Schritt ist insbesondere erforderlich, um eine automatische Messung der von Ihrer App ausgeführten Aufrufe von Datenbanken, REST-APIs und anderen externen Komponenten zu ermöglichen. Diese Abhängigkeitsmetriken können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren.
+
+Wenn die Ausführung auf Ihrem eigenen IIS-Server stattfindet, ermöglicht dieser Schritt auch das Anzeigen von Systemleistungsindikatoren im [Metrik-Explorer](app-insights-metrics-explorer.md).
 
 #### Wenn Ihre App in IIS-Server ausgeführt wird
 
@@ -166,7 +168,6 @@ Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-
 
 ![In der Web-App: „Einstellungen“ > „Erweiterungen“ > „Hinzufügen“ > „Application Insights“](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
 
-(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt und in Azure veröffentlicht wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
 
 #### Wenn es sich um ein Azure-Clouddienstprojekt handelt
 
@@ -234,7 +235,7 @@ In diesem Fall wird das [JavaScript-SDK][client] nicht Ihren Webseiten hinzugef�
 
 #### Setupoptionen
 
-Wenn Sie erstmals ein Projekt erstellen, werden Sie aufgefordert, sich bei Microsoft Azure Preview anzumelden. (Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.)
+Wenn Sie erstmals ein Projekt erstellen, werden Sie aufgefordert, sich bei Microsoft Azure Preview anzumelden.
 
 Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithilfe von **Einstellungen konfigurieren** in derselben Ressourcengruppe wie die anderen Komponenten abzulegen.
 
@@ -272,4 +273,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 [roles]: app-insights-resources-roles-access-control.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

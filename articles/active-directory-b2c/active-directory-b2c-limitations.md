@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="09/28/2015"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Einschränkungen
@@ -24,7 +24,7 @@ Es gibt mehrere Features und Funktionen von Azure Active Directory (AD) B2C, die
 
 ## Probleme bei der Erstellung von Azure AD B2C-Verzeichnissen
 
-Es gibt bekannte Probleme, die beim [Erstellen eines Azure AD B2C-Verzeichnisses](active-directory-b2c-get-started) auftreten können. Dieser [Artikel](active-directory-b2c-support-create-directory.md) enthält Informationen hierzu.
+Es gibt bekannte Probleme, die beim [Erstellen eines Azure AD B2C-Mandanten](active-directory-b2c-get-started) auftreten können. Dieser [Artikel](active-directory-b2c-support-create-directory.md) enthält Informationen hierzu.
 
 ## Brandingprobleme in Bestätigungs-E-Mails und auf Seiten für die Self-Service-Kennwortzurücksetzung
 
@@ -50,6 +50,12 @@ Anwendungen, die lang andauernde Prozesse enthalten oder ohne das Vorhandensein 
 
 In der Vorschauversion von Azure AD B2C können Sie eine [Web-API erstellen, die mit OAuth 2.0-Token geschützt wird](active-directory-b2c-apps.md#web-apis). Allerdings kann die Web-API nur Token von einem Client empfangen, der die gleiche Anwendungs-ID aufweist. Das Erstellen einer Web-API, auf die von mehreren unterschiedlichen Clients zugegriffen werden kann, wird nicht unterstützt.
 
+### Web-API-Ketten (Im-Auftrag-von)
+
+Viele Architekturen umfassen eine Web-API, von der eine andere Downstream-Web-API aufgerufen werden muss, wobei beide durch Azure AD B2C gesichert sind. Dieses Szenario kommt häufig in systemeigenen Clients mit Web-API-Back-End vor, das wiederum einen Microsoft Online-Dienst aufruft, z. B. die Azure AD Graph-API.
+
+Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im-Auftrag-von-Vorgang“. Der Im-Auftrag-von-Vorgang ist in der Preview-Version von Azure AD B2C derzeit noch nicht implementiert.
+
 ## Einschränkungen für Bibliotheken und SDKs
 
 Nicht alle Sprachen und Plattformen verfügen über Bibliotheken, die die Preview-Version von Azure AD B2C unterstützen. Der Satz von Authentifizierungsbibliotheken ist zurzeit auf .NET, iOS, Android und NodeJS beschränkt. Entsprechende Schnellstart-Lernprogramme für jede Bibliothek stehen im Abschnitt [Erste Schritte](active-directory-b2c-overview.md#getting-started) zur Verfügung.
@@ -62,20 +68,24 @@ Die Preview-Version von Azure AD B2C unterstützt OpenID Connect und OAuth 2.0.
 
 ## Einschränkungen für Token
 
-Viele der von der Preview-Version von Azure AD B2C ausgestellten Token werden als JSON-Webtoken (JWTs) implementiert. Aber nicht alle Informationen, die in JWTs enthalten sind (als „Ansprüche“ bezeichnet), sind richtig, oder sie fehlen sogar. Beispiele hierfür sind die Ansprüche „sub“ und „preferred\_username“. Sie können davon ausgehen, dass sich einige Dinge während der Preview-Phase ändern werden. Lesen Sie sich die [Token-Referenz](active-directory-b2c-tokens.md) durch, um ein besseres Verständnis für die Token zu entwickeln, die vom Azure AD B2C-Dienst derzeit ausgegeben werden.
+Viele der von der Preview-Version von Azure AD B2C ausgestellten Token werden als JSON-Webtoken (JWTs) implementiert. Aber nicht alle Informationen, die in JWTs enthalten sind (als „Ansprüche“ bezeichnet), sind richtig, oder sie fehlen sogar. Beispiele hierfür sind die Ansprüche „sub“ und „preferred\_username“. Sie können davon ausgehen, dass sich einige Dinge während der Preview-Phase ändern werden. Lesen Sie die [Tokenreferenz](active-directory-b2c-tokens.md), um ein besseres Verständnis für die Token zu entwickeln, die vom Azure AD B2C-Dienst derzeit ausgegeben werden.
 
 ## Probleme mit der Benutzerverwaltung im Azure-Portal
 
-Sie können über das Azure-Vorschauportal auf B2C-Features zugreifen. Sie können aber das Azure-Portal verwenden, um auf andere Verzeichnisfeatures zuzugreifen, z. B. die Benutzerverwaltung. Derzeit treten im Azure-Vorschauportal einige bekannte Probleme mit der Benutzerverwaltung auf (Registerkarte **Benutzer**).
+Sie können über das Azure-Vorschauportal auf B2C-Features zugreifen. Sie können jedoch das Azure-Portal verwenden, um auf andere Mandantenfeatures zuzugreifen, z. B. die Benutzerverwaltung. Derzeit treten im Azure-Portal einige bekannte Probleme mit der Benutzerverwaltung auf (Registerkarte **Benutzer**).
 
-- Für einen Benutzer mit lokalem Konto (also ein Consumer, der sich mit E-Mail-Adresse und Kennwort oder Benutzername und Kennwort anmeldet) entspricht das Feld **Benutzername** nicht dem Anmeldebezeichner (E-Mail-Adresse oder Benutzername), der während der Anmeldung verwendet wird. Dies liegt daran, dass das im Azure-Portal angezeigte Feld eigentlich der Benutzerprinzipalname ist, der in B2C-Szenarien nicht verwendet wird. Wenn Sie den Anmeldebezeichner des lokalen Kontos anzeigen möchten, finden Sie das Benutzerobjekt dazu im [Graph-Explorer](https://graphexplorer.cloudapp.net/). Auf das gleiche Problem stoßen Sie bei einem Benutzer mit einem Konto bei einem sozialen Netzwerk (also ein Consumer, der sich mit Facebook, Google+ usw. anmeldet), aber in diesem Fall ist kein eigentlicher Anmeldebezeichner vorhanden.
+- Für einen Benutzer mit lokalem Konto (also ein Consumer, der sich mit E-Mail-Adresse und Kennwort oder Benutzername und Kennwort registriert) entspricht das Feld **Benutzername** nicht dem Anmeldebezeichner (E-Mail-Adresse oder Benutzername), der während der Registrierung verwendet wird. Dies liegt daran, dass das im Azure-Portal angezeigte Feld eigentlich der Benutzerprinzipalname ist, der in B2C-Szenarien nicht verwendet wird. Wenn Sie den Anmeldebezeichner des lokalen Kontos anzeigen möchten, suchen Sie das Benutzerobjekt im [Graph-Explorer](https://graphexplorer.cloudapp.net/). Auf das gleiche Problem stoßen Sie bei einem Benutzer mit einem Konto bei einem sozialen Netzwerk (also ein Consumer, der sich mit Facebook, Google+ usw. anmeldet), aber in diesem Fall ist kein eigentlicher Anmeldebezeichner vorhanden.
 
     ![Lokales Konto – UPN](./media/active-directory-b2c-limitations/limitations-user-mgmt.png)
 
-- Bei einem Benutzer mit lokalem Konto können Sie keine Felder ändern und auf der Registerkarte **Profil** keine Änderungen speichern. Dies soll in Kürze behoben werden.
+- Bei einem Benutzer mit lokalem Konto können Sie keine Felder bearbeiten und auf der Registerkarte **Profil** keine Änderungen speichern. Dies soll in Kürze behoben werden.
+
+## Probleme bei Kennwortzurücksetzungen im Azure-Portal, die vom Administrator initiiert werden
+
+Wenn Sie das Kennwort für einen Consumer mit einem lokalen Konto im Azure-Portal (mit dem Befehl **Kennwort zurücksetzen** auf der Registerkarte **Benutzer**) zurücksetzen, ist der Consumer nicht in der Lage, bei der nächsten Anmeldung sein Kennwort zu ändern und wird für Ihre Anwendungen gesperrt. Wir arbeiten an einer Problembehebung. Um dieses Problem zu umgehen, verwenden Sie die [Azure AD Graph-API](active-directory-b2c-devquickstarts-graph-dotnet.md) zum Zurücksetzen des Consumerkennworts.
 
 ## Einschränkungen beim Löschen von Azure AD B2C-Verzeichnissen
 
-Sie können ein Azure AD B2C-Verzeichnis im Azure-Portal nicht löschen.
+Sie können keinen Azure AD B2C-Mandanten im Azure-Portal löschen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

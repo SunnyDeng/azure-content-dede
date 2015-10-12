@@ -33,7 +33,7 @@ Vorgänge für Schlüsseltresore werden mithilfe von Azure Active Directory auth
 
 ## Programmierung für den Schlüsseltresor
 
-Das Schlüsseltresore-Verwaltungssystem für Programmierer besteht aus mehreren Schnittstellen auf der Grundlage von REST.
+Das Schlüsseltresore-Verwaltungssystem für Programmierer besteht aus mehreren Schnittstellen auf der Grundlage von REST. Dieser Artikel in der REST-Referenz enthält die Grundbegriffe, [Informationen zu Schlüsseln und geheimen Schlüsseln](https://msdn.microsoft.com/library/azure/dn903623.aspx).
 
 ### REST
 
@@ -47,19 +47,24 @@ Die .NET API ist eine Gruppe von Wrappern, die eine Implementierung über das C#
 
 ### Node.js
 
-Die Node.js-API ist eine Gruppe von Wrappern, die eine Implementierung über das JavaScript-Programmiermodell ohne direkte Interaktion mit dem REST-Endpunkt ermöglicht. Hier finden Sie die [Schlüsseltresorverwaltung für das Microsoft Azure SDK für Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest/).
+Die Node.js-API ist eine Gruppe von Wrappern, die eine Implementierung über das Node.js-Programmiermodell ohne direkte Interaktion mit dem REST-Endpunkt ermöglicht. Hier finden Sie die [Schlüsseltresorverwaltung für das Microsoft Azure SDK für Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest/).
 
-## Verwalten des Schlüsseltresors mit PowerShell und CLI
+## Verwalten von Schlüsseltresoren
 
-Schlüssel und geheime Schlüssel von Azure-Schlüsseltresor können auch mithilfe von PowerShell und über die Befehlszeilenschnittstelle verwaltet werden, wie in den folgenden Artikeln beschrieben:
+Azure-Schlüsseltresorcontainer (Tresore) können mithilfe von PowerShell oder über die Befehlszeilenschnittstelle verwaltet werden, wie in den folgenden Artikeln beschrieben:
 
 - [Erstellen und Verwalten von Schlüsseltresoren mit PowerShell](key-vault-get-started.md)
 - [Erstellen und Verwalten von Schlüsseltresoren über die Befehlszeilenschnittstelle](key-vault-manage-with-cli.md)
+
+
+## Vorgehensweisen
+
+Die folgenden Artikel bieten aufgabenspezifische Anleitungen:
+
 - [Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor](key-vault-hsm-protected-keys.md)
-- [Informationen zu Schlüsseln und geheimen Schlüsseln](https://msdn.microsoft.com/library/azure/dn903623.aspx)
 
-## Weitere Informationen
+## Beispiele
 
-- [Codebeispiele für Azure-Schlüsseltresor](http://www.microsoft.com/download/details.aspx?id=45343)
+- Dieser Download enthält sowohl die Beispielanwendung „HelloKeyVault“ als auch ein Azure-Webdienstbeispiel. [Codebeispiele für Azure-Schlüsseltresor](http://www.microsoft.com/download/details.aspx?id=45343)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

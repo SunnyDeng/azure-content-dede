@@ -41,6 +41,7 @@ Im Beispiel unten wurden eine Datenbank namens **sample\_shard\_2** mit allen er
                             (new Range<long>(300, 400), shard2, MappingStatus.Online)); 
 
 
+Alternativ können Sie PowerShell zur Erstellung eines neuen Shard-Zuordnungs-Managers nutzen. Ein Beispiel ist [hier](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) verfügbar.
 ## So fügen Sie einen Shard für einen leeren Teil eines vorhandenen Bereichs hinzu  
 
 In einigen Fällen haben Sie einem Shard vielleicht bereits einen Bereich zugeordnet und diesen teilweise mit Daten gefüllt. Jetzt möchten Sie aber weitere Daten an einen anderen Shard umleiten. Angenommen, Sie führen das Sharding nach einem Bereich von Tagen durch und haben einem Shard bereits 50 Tage zugeordnet. Am 24. Tag sollen zukünftige Daten jedoch an einen anderen Shard weitergeleitet werden. Das [Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge.md) für elastische Datenbanken kann diesen Vorgang durchführen. Wenn jedoch keine Datenverschiebung erforderlich ist (weil noch keine Daten für den Bereich der Tage [25, 50), d. h. einschließlich Tag 25 bis ausschließlich Tag 50, vorliegen), können Sie den ganzen Vorgang direkt mithilfe der Shard-Zuordnungs-Verwaltungs-APIs durchführen.
@@ -78,4 +79,4 @@ Eine Datenbank namens „sample\_shard\_2“ sowie alle erforderlichen, darin en
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

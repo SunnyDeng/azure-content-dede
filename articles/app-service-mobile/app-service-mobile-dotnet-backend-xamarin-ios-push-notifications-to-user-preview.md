@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an einen bestimmten Benutzer mit dem Xamarin iOS-Client&quot;" 
+	pageTitle="Senden von Pushbenachrichtigungen an einen bestimmten Benutzer mit dem Xamarin iOS-Client";" 
 	description="Erfahren Sie, wie Sie Pushbenachrichtigungen an alle Geräte eines bestimmten Benutzers senden." 
 	services="app-service\mobile" 
 	documentationCenter="windows" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/25/2015"
+	ms.date="09/25/2015"
 	ms.author="yuaxu"/>
 
 # Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer
@@ -110,6 +110,6 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 <!-- URLs. -->
 [Erste Schritte mit der Authentifizierung]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-users-preview.md
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-push-preview.md
-[Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
+[Vorlagen]: https://msdn.microsoft.com/de-DE/library/dn530748.aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

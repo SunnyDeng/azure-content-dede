@@ -1,20 +1,20 @@
 <properties
  pageTitle="Verwenden von virtuellen Linux-Computern in einem HPC Pack-Cluster | Microsoft Azure"
-	description="Erfahren Sie mehr über die Bereitstellung eines HPC Pack-Clusters in Azure, die einen Head-Knoten unter Windows Server mit Linux Compute-Knoten enthält."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="dlepow"
-	manager="timlt"
-	editor=""
-	tags="azure-service-management"/>
+ description="Erfahren Sie mehr über die Bereitstellung eines HPC Pack-Clusters in Azure, die einen Head-Knoten unter Windows Server mit Linux Compute-Knoten enthält."
+ services="virtual-machines"
+ documentationCenter=""
+ authors="dlepow"
+ manager="timlt"
+ editor=""
+ tags="azure-service-management"/>
 <tags
  ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.workload="big-compute"
-	ms.date="09/01/2015"
-	ms.author="danlep"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-multiple"
+ ms.workload="big-compute"
+ ms.date="09/01/2015"
+ ms.author="danlep"/>
 
 # Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure
 
@@ -43,7 +43,7 @@ Eine Übersicht über die Optionen für die Bereitstellung von HPC Pack-Clustern
 * **Kernkontingent**: Unter Umständen muss das Kontingent für die Kerne erhöht werden. Dies gilt insbesondere, wenn Sie mehrere Clusterknoten mit Multicore-VM-Größen bereitstellen. Für das Beispiel in diesem Artikel benötigen Sie mindestens 24 Kerne. Um ein Kontingent zu erhöhen, können Sie kostenlos eine [Anfrage an den Onlinekundensupport richten](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 
 ### Erstellen der Konfigurationsdatei
-Das HPC Pack-IaaS-Bereitstellungsskript verwendet als Eingabe eine XML-Konfigurationsdatei mit der Beschreibung der Infrastruktur des HPC-Clusters. Ersetzen Sie Werte für Ihre Umgebung in der folgenden Beispielkonfigurationsdatei zum Bereitstellen eines kleinen Clusters bestehend aus einem Head-Knoten und zwei Linux-Compute-Knoten. Weitere Informationen zur Konfigurationsdatei finden Sie in der Datei „Manual.rtf“ (im Skriptordner) oder in der [Skriptdokumentation](https://msdn.microsoft.com/library/azure/dn864734.aspx).
+Das HPC Pack-IaaS-Bereitstellungsskript verwendet als Eingabe eine XML-Konfigurationsdatei mit der Beschreibung der Infrastruktur des HPC-Clusters. Ersetzen Sie Werte für Ihre Umgebung in der folgenden Beispielkonfigurationsdatei zum Bereitstellen eines kleinen Clusters bestehend aus einem Head-Knoten und zwei Linux-Compute-Knoten. Weitere Informationen zur Konfigurationsdatei finden Sie in der Datei „Manual.rtf“ im Skriptordner und unter [Erstellen eines HPC-Clusters mit dem HPC Pack-IaaS-Bereitstellungskript](virtual-machines-hpcpack-cluster-powershell-script.md).
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -310,4 +310,4 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 [nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
 [nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

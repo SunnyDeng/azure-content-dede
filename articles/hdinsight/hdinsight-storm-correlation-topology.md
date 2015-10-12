@@ -1,27 +1,29 @@
 <properties
  pageTitle="Korrelieren von Ereignissen im Zeitverlauf mithilfe von Storm und HBase in HDInsight"
-	description="Erfahren Sie, wie Ereignisse, die zu unterschiedlichen Zeitpunkten eingehen, mithilfe von Storm und HBase in HDInsight korreliert werden."
-	services="hdinsight"
-	documentationCenter=""
-	authors="Blackmist"
-	manager="paulettm"
-	editor="cgronlun"
+ description="Erfahren Sie, wie Ereignisse, die zu unterschiedlichen Zeitpunkten eingehen, mithilfe von Storm und HBase in HDInsight korreliert werden."
+ services="hdinsight"
+ documentationCenter=""
+ authors="Blackmist"
+ manager="paulettm"
+ editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
  ms.service="hdinsight"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="09/02/2015"
-	ms.author="larryfr"/>
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="09/02/2015"
+ ms.author="larryfr"/>
 
 # Korrelieren von Ereignissen im Zeitverlauf mithilfe von Storm und HBase in HDInsight
 
 Durch die Verwendung eines persistenten Datenspeichers für Apache Storm können Sie Dateneinträge korrelieren, die zu unterschiedlichen Zeitpunkten eingehen. Beispielsweise kann durch die Verknüpfung der An- und Abmeldungsereignisse für eine Benutzersitzung berechnet werden, wie lange die Sitzung gedauert hat.
 
 In diesem Dokument erfahren Sie, wie Sie eine einfache C#-Storm-Topologie erstellen, die Anmelde-und Abmeldevorgänge für Benutzersitzungen verfolgt und die Sitzungsdauer berechnet. In dieser Topologie wird HBase als persistenter Datenspeicher verwendet. HBase ermöglicht es Ihnen auch, Batchabfragen an den historischen Daten auszuführen, um zusätzliche Einblicke zu gewinnen, wie z. B. wie viele Benutzersitzungen während eines bestimmten Zeitraums gestartet oder beendet wurden.
+
+[AZURE.INCLUDE [nur für Windows](../../includes/hdinsight-windows-only.md)]
 
 ## Voraussetzungen
 
@@ -198,4 +200,4 @@ Wenn Sie die Topologie beenden möchten, kehren Sie zum Projekt **CorrelationTop
 Weitere Storm-Beispiele finden Sie unter [Beispieltopologien für Storm in HDInsight](hdinsight-storm-example-topology.md).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

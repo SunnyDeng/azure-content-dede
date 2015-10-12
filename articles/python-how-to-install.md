@@ -171,7 +171,7 @@ Weitere Informationen zum Entwickeln und Veröffentlichen von Azure-Websites fin
 * [IPython – ein erweitertes REPL/Notebook für Python][]
 * [IPython Notebook in Azure][]
 * [Python-Tools für Visual Studio auf GitHub][]
-
+* [Python Developer Center](/develop/python/)
 
 [Continuum Analytics Python-Distribution]: http://continuum.io
 [Enthought Python-Distribution]: http://www.enthought.com
@@ -206,4 +206,4 @@ Weitere Informationen zum Entwickeln und Veröffentlichen von Azure-Websites fin
 [Warteschlangenspeicher]: storage-python-how-to-use-queue-storage.md
 [Blob-Speicher]: storage-python-how-to-use-blob-storage.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

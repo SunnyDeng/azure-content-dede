@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="TBD" 
-   ms.date="09/16/2015"
+   ms.date="09/24/2015"
    ms.author="coreyp"/>
 
 # Azure Automation DSC – Übersicht #
@@ -137,11 +137,11 @@ Der Weg von einem leeren Automation-Konto zu einer verwalteten und ordnungsgemä
 
 - Beim Integrieren eines virtuellen Azure-Computers für die Verwaltung in Azure Automation DSC mithilfe von `Register-AzureAutomationDscNode`, `Set-AzureVMExtension` oder mithilfe der VM-Erweiterung für Azure Automation DSC im Azure-Vorschauportal kann es bis zu eine Stunde dauern, bis der virtuelle Computer als DSC-Knoten in Azure Automation angezeigt wird. Dies liegt an der Installation von Windows Management Framework 5.0 auf dem virtuellen Computer durch die Azure VM-Erweiterung für DSC, mit der der virtuelle Computer in Azure Automation DSC integriert werden muss.
 
-- Bei der Registrierung von Knoten handeln Knoten automatisch ein Zertifikat für die Authentifizierung des Knotens bei Azure Automation DSC nach der Registrierung aus. Dieses Zertifikat hat eine Gültigkeitsdauer von einem Jahr ab Erstellung. Das PS DSC-Pull-Protokoll bietet derzeit keine Möglichkeit zum Ausstellen eines neuen Zertifikats vor Ablauf des aktuellen Zertifikats. Aus diesem Grund müssen nach einem Jahr die Knoten mit Azure Automation DSC erneut registriert werden, bis dieses Protokoll in einer zukünftigen Version von WMF (hoffentlich vor Jahresfrist) implementiert wird.
+- Nach der Registrierung handelt jeder Knoten automatisch ein eindeutiges Zertifikat für die Authentifizierung aus, die nach einem Jahr abläuft. Zu diesem Zeitpunkt kann das Registrierungsprotokoll für den PowerShell-DSC Zertifikate nicht automatisch erneuern, wenn sie sich dem Ablaufdatum nähern, weshalb Sie die Knoten nach einem Jahr erneut registrieren müssen. Stellen Sie vor einer erneuten Registrierung sicher, dass jeder Knoten Windows Management Framework 5.0 RTM ausführt. Wenn das Authentifizierungszertifikat eines Knotens abläuft und er nicht erneut registriert wird, schlägt die Kommunikation mit Azure Automation fehl und der Knoten wird als „nicht reagierend“ markiert. Die erneute Registrierung erfolgt auf dieselbe Weise wie die ursprüngliche Registrierung des Knotens. Eine erneute Registrierung, die 90 Tage oder weniger vor Ablaufzeitpunkt des Zertifikats oder zu einem beliebigen Zeitpunkt nach dessen Ablaufzeitpunkt durchgeführt wird, hat zur Folge, dass ein neues Zertifikat generiert und verwendet wird.
 
 ##Verwandte Artikel##
 
 - [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 - [Azure Automation DSC – Preise](http://azure.microsoft.com/pricing/details/automation/)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

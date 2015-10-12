@@ -1,8 +1,6 @@
 <properties
-    title="Azure SQL Database elastic database query overview"
     pageTitle="Übersicht über die Abfrage für elastische Datenbanken in Azure SQL-Datenbank"
-    description="Übersicht über das Abfragefeature für elastische Datenbanken"
-    metaKeywords="azure sql database elastic database queries"
+    description="Übersicht über das Abfragefeature für elastische Datenbanken"    
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
@@ -15,7 +13,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="07/09/2015"
-    ms.author="sidneyh" />
+    ms.author="sidneyh;torsteng" />
 
 # Übersicht über die Abfrage für elastische Datenbanken in Azure SQL-Datenbank (Vorschau)
 
@@ -81,7 +79,7 @@ Um die Remotetabellen zu beschreiben, auf die von einem Abfrageendpunkt für ela
 Die Abfragefunktion für elastische Datenbanken stützt sich auf diese vier DDL-Anweisungen. Normalerweise werden diese DDL-Anweisungen nur einmal oder selten verwendet, wenn das Schema der Anwendung geändert wird.
 
 *    [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx)
-*    [CREATE CREDENTIAL](https://msdn.microsoft.com/library/ms189522.aspx)
+*    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
 
@@ -100,7 +98,7 @@ Hinweise zu Anmeldeinformationen werden in der Katalogsicht „sys.database\_sco
 
 Verwenden Sie die folgende Syntax, um Hauptschlüssel und Anmeldeinformationen zu übergeben:
 
-    DROP CREDENTIAL <credential_name> ON DATABASE;
+    DROP DATABASE SCOPED CREDENTIAL <credential_name>;
     DROP MASTER KEY;  
 
 ### Externe Datenquellen
@@ -267,4 +265,4 @@ Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittwe
 
 <!--anchors-->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

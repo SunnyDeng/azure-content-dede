@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="09/30/2015" 
 	ms.author="sdanie"/>
 
 # Skalieren von Azure Redis Cache
 
->[AZURE.NOTE]Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau.
+>[AZURE.NOTE]Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums haben Sie nicht die Möglichkeit, auf, von oder innerhalb eines Chaches des Premium-Tarifs zu skalieren.
 
 Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -funktionen bieten. Wenn sich die Anforderungen Ihrer Anwendung ändern, nachdem der Cache erstellt wurde, können Sie die Größe des Caches auf dem Blatt **Ändern des Tarifs** im [Azure-Vorschauportal](https://portal.azure.com) skalieren.
 
@@ -48,6 +48,7 @@ Wählen Sie auf dem Blatt **Tarif** den gewünschten Tarif aus, und klicken Sie 
 
 >[AZURE.NOTE]Sie können mit den folgenden Einschränkungen auf eine andere Preisstufe skalieren.
 >
+>-	Sie können keine Skalierung auf oder aus einem **Premium**-Cache vornehmen.
 >-	Ein **Standard**-Cache kann nicht auf einen **Basic**-Cache skaliert werden.
 >-	Ein **Basic**-Cache kann auf einen **Standard**-Cache skaliert werden, die Größe kann jedoch nicht gleichzeitig geändert werden. Wenn Sie eine andere Größe benötigen, können Sie anschließend einen Skalierungsvorgang auf die gewünschte Größe durchführen.
 >-	Von einer größeren Größe kann nicht auf **C0 (250 MB)** herunterskaliert werden.
@@ -86,6 +87,10 @@ Weitere Informationen finden Sie im Beispiel [Verwalten von Redis Cache mithilfe
 
 Die folgende Liste enthält Antworten auf häufig gestellte Fragen zur Skalierung von Azure Redis Cache-Instanzen.
 
+## Kann ich eine Skalierung auf, aus oder innerhalb eines Premium-Caches vornehmen?
+
+Während des Vorschauzeitraums ist die Skalierung für **Premium**-Caches nicht verfügbar.
+
 ## Muss ich nach dem Skalieren den Namen oder die Zugriffsschlüssel für den Cache ändern?
 
 Nein, Cachename und -schlüssel bleiben während eines Skalierungsvorgangs unverändert.
@@ -115,6 +120,8 @@ Hinweis: Für Caches des Tarifs "Standard" gilt zwar eine SLA (Service Level Agr
 **Basic**-Caches sind während der Skalierung auf eine andere Größe offline, bleiben jedoch bei der Skalierung von **Basic** auf **Standard** verfügbar.
 
 ## Nicht unterstützte Vorgänge
+
+Sie können keine Skalierung auf, aus oder innerhalb eines **Premium**-Caches vornehmen.
 
 Ein **Standard**-Cache kann nicht zu einem **Basic**-Cache geändert werden.
 
@@ -148,4 +155,4 @@ Wir haben die Funktion veröffentlicht, um Feedback zu erhalten. Basierend auf d
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

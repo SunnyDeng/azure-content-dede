@@ -64,10 +64,6 @@ In diesem Abschnitt verwenden Sie eine Beispiel-Webclient-App, die mit AngularJS
 
     ![Ansicht der mobilen Xamarin-App](./media/app-service-mobile-dotnet-backend-web-and-mobile/xamarin-ios-quickstart-device.png)
 
-## Nächste Schritte
-
-In diesem Beispiel wurde die Verwendung derselben zugrunde liegenden Datenbank für eine App veranschaulicht, die über eine Website und einen mobilen Client verfügt. Dabei gab es keine Geschäftslogik im Back-End, die auf zwei Clients verwendet werden sollte, sodass es ausreichend war, einfach dieselbe Datenbank zu verwenden. In einem späteren Lernprogramm erfahren Sie, wie Sie Ihrer Web-API Geschäftslogik hinzufügen und diese Logik im Code des mobilen App-Back-Ends wiederverwenden.
-
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
@@ -77,4 +73,4 @@ In diesem Beispiel wurde die Verwendung derselben zugrunde liegenden Datenbank f
 [MultiChannelToDo]: https://github.com/Azure/mobile-services-samples/tree/web-mobile/MultiChannelToDo
 [Erstellen einer mobilen App]: ../article/app-service-mobile/app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

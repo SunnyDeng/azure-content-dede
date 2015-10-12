@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="06/30/2015"
+   ms.date="09/29/2015"
    ms.author="joaoma"/>
 
 # Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)
@@ -31,7 +31,7 @@ Ein Application Gateway kann mit einer VIP mit Internetzugriff oder mit einem in
 3. Stellen Sie sicher, dass Sie über Back-End-Server im virtuellen Netzwerk verfügen oder dass ihnen eine öffentliche IP-Adresse/VIP zugewiesen ist.
 
 
-Um ein neues Application Gateway zu erstellen, führen Sie die folgenden Schritte in der angegebenen Reihenfolge aus.
+Um ein neues Anwendungsgateway zu erstellen, führen Sie die folgenden Schritte in der angegebenen Reihenfolge aus.
 
 1. [Erstellen eines neuen Application Gateways](#create-a-new-application-gateway)
 2. [Konfigurieren des Gateways](#configure-the-gateway)
@@ -75,7 +75,7 @@ In diesem Beispiel sind *Description*, *InstanceCount* und *GatewaySize* optiona
 
 ## Konfigurieren des Gateways
 
-Eine Application Gateway-Konfiguration besteht aus mehreren Werten. Die Werte können verknüpft werden, um die Konfiguration zu erstellen.
+Eine Anwendungsgatewaykonfiguration besteht aus mehreren Werten. Die Werte können verknüpft werden, um die Konfiguration zu erstellen.
  
 Die Werte sind:
 
@@ -159,7 +159,7 @@ Beachten Sie Folgendes:
 
 ## Festlegen der Gatewaykonfiguration
 
-Dann legen Sie das Application Gateway fest. Sie können das `Set-AzureApplicationGatewayConfig`-Cmdlet mit einem Konfigurationsobjekt oder mit einer XML-Konfigurationsdatei verwenden.
+Dann legen Sie das Anwendungsgateway fest. Sie können das `Set-AzureApplicationGatewayConfig`-Cmdlet mit einem Konfigurationsobjekt oder mit einer XML-Konfigurationsdatei verwenden.
 
 	PS C:\> Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile D:\config.xml
 
@@ -212,4 +212,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

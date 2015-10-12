@@ -77,13 +77,13 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows)
 
-7. Als __Datenquelle__ können Sie den Eintrag für die vorhandene Datenquelle auswählen oder eine neue Datenquelle erstellen.
+7. Wählen Sie den Eintrag __Datenquelle__ aus, um eine vorhandene Datenquelle auszuwählen, oder erstellen Sie eine neue Datenquelle.
 
 	![Blatt „Datenquelle“](./media/hdinsight-administer-use-portal-linux/datasource.png)
 
 	Zurzeit kann ein Azure-Speicherkonto als Datenquelle für einen HDInsight-Cluster ausgewählt werden. Die Einträge auf dem Blatt __Datenquelle__ werden im Folgenden erläutert.
 
-	- __Auswahlmethode__: Wählen Sie __Aus allen Abonnements__ aus, damit die Speicherkonten in Ihren Abonnements durchsucht werden können. Legen Sie diese Methode auf __Zugriffsschlüssel__ fest, wenn Sie den __Speichernamen__ und __Zugriffsschlüssel__ eines vorhandenen Speicherkontos eingeben möchten.
+	- __Auswahlmethode__: Wählen Sie __Aus allen Abonnements__ aus, damit die Speicherkonten in Ihren Abonnements durchsucht werden können. Wählen Sie __Zugriffsschlüssel__ aus, wenn Sie den __Speichernamen__ und __Zugriffsschlüssel__ eines vorhandenen Speicherkontos eingeben möchten.
 
 	- __Neu erstellen__: Hiermit können Sie ein neues Speicherkonto erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
 
@@ -95,13 +95,15 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 
 	- __Auswählen__: Hiermit speichern Sie die Datenquellenkonfiguration.
 
-8. Wählen Sie __Knotentarife__ aus, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Die Anzahl von Workerknoten ist standardmäßig auf __4__ festgelegt.
+	
+8. Wählen Sie __Knotenpreistarife__ aus, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Die Anzahl von Workerknoten ist standardmäßig auf __4__ festgelegt.
+
 
 	Die vorkalkulierten Kosten für den Cluster werden unten auf dem Blatt angezeigt.
 
 	![Blatt „Knotenpreistarife“](./media/hdinsight-administer-use-portal-linux/nodepricingtiers.png)
 
-	Klicken Sie auf die Schaltfläche __Auswählen__, um die Informationen zu den __Knotentarifen__ zu speichern.
+	Klicken Sie auf die Schaltfläche __Auswählen__, um die Informationen zu den __Knotenpreistarifen__ zu speichern.
 
 9. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie die folgenden Elemente konfigurieren:
 
@@ -114,8 +116,12 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 		> [AZURE.IMPORTANT]Sie müssen das virtuelle Azure-Netzwerk vor dem HDInsight-Cluster erstellen, da Sie in einer HDInsight-Konfiguration kein neues Netzwerk erstellen können.
 		>
 		> Zurzeit (25.08.2015) besteht die Einschränkung, das in einem virtuellen Azure-Netzwerk nur ein einziger Linux-basierter HDInsight-Knoten vorhanden sein darf.
+        >
+        > Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit Linux-basiertem HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Vorschauportal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
+        >
+        > Wenn Ressourcen in einem v1-Netzwerk vorhanden sind und diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können sollen, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Erstellen einer Verbindung zwischen einem virtuellen v2-Netzwerk und einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
 
-	* __Skriptaktionen__: Hiermit können Sie Bash-Skripts angeben, die den HDInsight-Cluster während der Bereitstellung anpassen. Beispielsweise gibt es ein [Skript zu Installation von Hue](hdinsight-hadoop-hue-linux.md) (einem grafischen Client zur Arbeit mit Hadoop). Weitere Informationen zu Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
+	* __Skriptaktionen__: Hiermit können Sie Bash-Skripts angeben, die den HDInsight-Cluster während der Bereitstellung anpassen. Beispielsweise gibt es ein [Skript zur Installation von Hue](hdinsight-hadoop-hue-linux.md) (einem grafischen Client für den Einsatz mit Hadoop). Weitere Informationen zu Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
 	* __Azure-Speicherschlüssel__: Hiermit können Sie dem HDInsight-Server weitere Speicherkonten zuordnen.
 
@@ -137,9 +143,9 @@ Wenn Sie einen Cluster im Azure-Vorschauportal auswählen, werden grundlegende I
 
 ![Clusterdetails](./media/hdinsight-administer-use-portal-linux/clusterdetails.png)
 
-Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten __Zusammenfassung__ und __Quicklinks__ erläutert:
+Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten __Zusammenfassung__ und __QuickLinks__ erläutert:
 
-* __Einstellungen__ und __Alle Einstellungen__: Zeigen das Blatt __Einstellungen__ für den Cluster an, über das Sie auf detaillierte Konfigurationsinformationen für den Cluster zugreifen können.
+* __Einstellungen__ und __Alle Einstellungen__: Zeigt das Blatt __Einstellungen__ für den Cluster an, über das Sie auf detaillierte Konfigurationsinformationen für den Cluster zugreifen können.
 
 * __Dashboard__, __Cluster-Dashboard__ und __URL__: Über diese Optionen können Sie auf das Cluster-Dashboard zugreifen (Ambari Web für Linux-basierte Cluster).
 
@@ -149,13 +155,13 @@ Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten __Z
 
 * __Löschen__: Löscht den HDInsight-Cluster.
 
-* __Schnellstart (![Cloud- und Blitzsymbol = Schnellstart](./media/hdinsight-administer-use-portal-linux/quickstart.png))__: Zeigt hilfreiche Informationen für die ersten Schritte mit HDInsight an.
+* __Schnellstart__ (![Cloud- und Blitzsymbol = Schnellstart](./media/hdinsight-administer-use-portal-linux/quickstart.png)): Zeigt hilfreiche Informationen für die ersten Schritte mit HDInsight an.
 
-* __Benutzer (![Benutzersymbol](./media/hdinsight-administer-use-portal-linux/users.png))__: Dient zum Festlegen der Berechtigungen für die _Portalverwaltung_ dieses Clusters für andere Benutzer in Ihrem Azure-Abonnement.
+* __Benutzer__ (![Benutzersymbol](./media/hdinsight-administer-use-portal-linux/users.png)): Dient zum Festlegen der Berechtigungen für die _Portalverwaltung_ dieses Clusters für andere Benutzer in Ihrem Azure-Abonnement.
 
 	> [AZURE.IMPORTANT]Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Vorschauportal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
 
-* __Tags (![Tagsymbol](./media/hdinsight-administer-use-portal-linux/tags.png))__: Mithilfe von Tags können Sie Schlüssel-Wert-Paare festlegen, um eine benutzerdefinierte Taxonomie für Ihre Clouddienste zu definieren. Sie können z. B. einen Schlüssel mit dem Namen __Projekt__ erstellen und dann einen gemeinsamen Wert für alle mit einem bestimmten Projekt verknüpften Dienste verwenden.
+* __Tags__ (![Tagsymbol](./media/hdinsight-administer-use-portal-linux/tags.png)): Mithilfe von Tags können Sie Schlüssel-Wert-Paare festlegen, um eine benutzerdefinierte Taxonomie für Ihre Cloud Services zu definieren. Sie können z. B. einen Schlüssel mit dem Namen __Projekt__ erstellen und dann einen gemeinsamen Wert für alle mit einem bestimmten Projekt verknüpften Dienste verwenden.
 
 * __Dokumentation__: Links zur Dokumentation für Azure HDInsight.
 
@@ -171,7 +177,7 @@ Weitere Informationen zum Skalieren von Vorgängen finden Sie unter [Information
 
 ## Überwachen eines Clusters
 
-Der Abschnitt __Nutzung__ des Blatts für den HDInsight-Cluster enthält Informationen zur Anzahl von Kernen, die für Ihr Abonnement zur Verwendung mit HDInsight verfügbar sind, und zur Anzahl von Kernen, die diesem Cluster zugeordnet sind. Es wird auch angezeigt, wie die Kerne für die Knoten innerhalb dieses Clusters zugeordnet sind.
+Der Abschnitt __Nutzung__ des Blatts für den HDInsight-Cluster enthält Informationen zur Anzahl von Kernen, die für Ihr Abonnement zur Verwendung mit HDInsight verfügbar sind, und zur Anzahl von Kernen, die diesem Cluster zugeordnet sind. Es wird auch angezeigt, wie die Kerne für die Knoten innerhalb dieses Clusters zugeordnet werden.
 
 ![Informationen zur Nutzung](./media/hdinsight-administer-use-portal-linux/usage.png)
 
@@ -189,4 +195,4 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 
 [preview-portal]: https://portal.azure.com
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

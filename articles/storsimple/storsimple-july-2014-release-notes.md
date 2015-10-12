@@ -1,19 +1,19 @@
 <properties 
-    pageTitle="Versionshinweise zur Freigabeversion von StorSimple 8000 | Microsoft Azure"
-    description="Beschreibt die neuen Features, offenen Probleme und verfügbaren Problemumgehungen für die Microsoft Azure StorSimple-Version vom Juli 2014."
-    services="storsimple"
-    documentationCenter="NA"
-    authors="SharS"
-    manager="carolz"
-    editor="" />
+   pageTitle="Versionshinweise zur Freigabeversion von StorSimple 8000 | Microsoft Azure"
+   description="Beschreibt die neuen Features, offenen Probleme und verfügbaren Problemumgehungen für die Microsoft Azure StorSimple-Version vom Juli 2014."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
  <tags 
-    ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="09/04/2015"
-    ms.author="v-sharos" />
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/04/2015"
+   ms.author="v-sharos" />
 
 # Versionsanmerkungen zur Freigabeversion der StorSimple 8000-Serie – Juli 2014 
 
@@ -42,4 +42,4 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

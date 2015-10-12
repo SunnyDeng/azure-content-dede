@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="09/28/2015"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit Konten von Google+
@@ -41,19 +41,19 @@ Um Google+ als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden 
     ![G+ – OAuth-Zustimmungsbildschirm](./media/active-directory-b2c-setup-goog-app/google-consent-screen.png)
 
 6. Wählen Sie unter **Application type** die Option **Web application** aus.
-7. Geben Sie unter **Name** einen Namen für die Anwendung ein, geben Sie [https://login.microsoftonline.com](https://login.microsoftonline.com) im Feld **Authorized redirect URIs** und [https://login.microsoftonline.com/te/{directory}/oauth2/authresp](https://login.microsoftonline.com/te/{directory}/oauth2/authresp) im Feld **Authorized redirect URIs** ein. Ersetzen Sie dabei **{directory}** durch den Namen Ihres Verzeichnisses (z. B. "contosob2c.onmicrosoft.com"). Klicken Sie auf **Erstellen**.
+7. Geben Sie unter **Name** einen Namen für die Anwendung ein, geben Sie [https://login.microsoftonline.com](https://login.microsoftonline.com) im Feld **Authorized redirect URIs** und [https://login.microsoftonline.com/te/{tenant}/oauth2/authresp](https://login.microsoftonline.com/te/{tenant}/oauth2/authresp) im Feld **Authorized redirect URIs** ein. Ersetzen Sie dabei **{tenant}** durch den Namen Ihres Mandanten (z. B. "contosob2c.onmicrosoft.com"). Klicken Sie auf **Erstellen**.
 
-    > [AZURE.NOTE]Beim Wert für **{directory}** wird die Groß-/Kleinschreibung beachtet.
+    > [AZURE.NOTE]Beim Wert für **{tenant}** wird die Groß-/Kleinschreibung beachtet.
 
     ![G+ – Erstellen der Client-ID](./media/active-directory-b2c-setup-goog-app/google-create-client-id.png)
 
-8. Kopieren Sie die Werte für **Client ID** und **Client Secret**. Sie benötigen beide Angaben, um Google+ als Identitätsanbieter in Ihrem Verzeichnis zu konfigurieren.
+8. Kopieren Sie die Werte für **Client ID** und **Client Secret**. Sie benötigen beide Angaben, um Google+ als Identitätsanbieter in Ihrem Mandanten zu konfigurieren.
 
     > [AZURE.NOTE]Der **geheime Clientschlüssel** ist eine wichtige Anmeldeinformation.
 
     ![G+ – Geheimer Clientschlüssel](./media/active-directory-b2c-setup-goog-app/google-client-secret.png)
 
-## Konfigurieren von Google+ als Identitätsanbieter in Ihrem Verzeichnis
+## Konfigurieren von Google+ als Identitätsanbieter in Ihrem Mandanten
 
 1. [Navigieren Sie zum B2C-Featureblatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
 2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter für soziale Medien**.
@@ -63,4 +63,4 @@ Um Google+ als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden 
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie die **Client-ID** und den **geheimen App-Schlüssel** der Google+-Anwendung ein, die Sie zuvor erstellt haben.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für Google+ zu speichern.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="09/29/2015"
 	ms.author="juliako"/>
 
 
-#Verwenden von .NET SDK, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird (Vorschau)
+#Verwenden von .NET SDK, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird
 
 > [AZURE.SELECTOR]
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
@@ -36,33 +36,28 @@ In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines **Kanal
 
 Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestreaminganwendungen beschrieben.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
-	
-	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+
+Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
 1. Erstellen Sie einen Kanal, und starten Sie ihn.
 
 1. Rufen Sie die Erfassungs-URL des Kanals ab.
 
-	Die Erfassungs-URL wird vom Liveencoder verwendet, um den Datenstrom an den Kanal zu senden.
-1. Rufen Sie die Vorschau-URL des Kanals ab. 
+Die Erfassungs-URL wird vom Liveencoder verwendet, um den Datenstrom an den Kanal zu senden. 1. Rufen Sie die Vorschau-URL des Kanals ab.
 
-	Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgemäß vom Kanal empfangen wird.
+Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgemäß vom Kanal empfangen wird.
 
 2. Erstellen Sie ein Medienobjekt.
-3. Wenn das Medienobjekt während der Wiedergabe dynamisch verschlüsselt werden soll, führen Sie folgende Schritte aus: 	
-	
-	1. 	Erstellen Sie einen Inhaltsschlüssel. 
-	1. 	Konfigurieren Sie eine Autorisierungsrichtlinie für Inhaltsschlüssel.
+3. Wenn das Medienobjekt während der Wiedergabe dynamisch verschlüsselt werden soll, führen Sie folgende Schritte aus:
+
+1. 	Erstellen Sie einen Inhaltsschlüssel.
+1. 	Konfigurieren Sie eine Autorisierungsrichtlinie für Inhaltsschlüssel.
 1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
 3. Erstellen Sie ein Programm, und legen Sie fest, dass das erstellte Medienobjekt verwendet werden soll.
-1. Veröffentlichen Sie das dem Programm zugeordnete Medienobjekt, indem Sie einen OnDemand-Locator erstellen.  
+1. Veröffentlichen Sie das dem Programm zugeordnete Medienobjekt, indem Sie einen OnDemand-Locator erstellen.
 
-	Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
-1. Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm.
-2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt.
-1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
-1. Löschen Sie das Programm (und optional das Medienobjekt).   
+Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist. 1. Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm. 2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt. 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden. 1. Löschen Sie das Programm (und optional das Medienobjekt).
 
 ##In diesem Thema
 
@@ -72,15 +67,15 @@ In diesem Thema erfahren Sie, wie Sie die folgenden Aufgaben ausführen:
 
 1. Erstellen Sie einen Kanal, und starten Sie ihn. Verwenden Sie langfristige APIs.
 1. Erfassen Sie den Eingabeendpunkt der Kanäle. Dieser Endpunkt muss dem Encoder bereitgestellt werden, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
-1. Rufen Sie den Vorschauendpunkt ab. Dieser Endpunkt wird verwendet, um Ihren Datenstrom in der Vorschau anzuzeigen. 
+1. Rufen Sie den Vorschauendpunkt ab. Dieser Endpunkt wird verwendet, um Ihren Datenstrom in der Vorschau anzuzeigen.
 1. Erstellen Sie ein Medienobjekt, das zum Speichern Ihrer Inhalte verwendet wird. Konfigurieren Sie außerdem Übermittlungsrichtlinien für Medienobjekte wie in diesem Beispiel gezeigt.
 1. Erstellen Sie ein Programm, und legen Sie fest, dass das zuvor erstellte Medienobjekt verwendet werden soll. Starten Sie das Programm. Verwenden Sie langfristige APIs.
 1. Erstellen Sie einen Locator für das Medienobjekt, damit der Inhalt veröffentlicht wird und an Ihre Kunden gestreamt werden kann.
 1. Blenden Sie Slates ein und aus. Starten und Beenden Sie Werbespots. Verwenden Sie langfristige APIs.
 1. Bereinigen Sie den Kanal und alle zugehörigen Ressourcen.
 
->[AZURE.NOTE]Dieses Feature befindet sich in der Vorschauphase. Die maximale empfohlene Dauer einer Live-Veranstaltung ist 8 Stunden.
->
+>[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
+
 ##Voraussetzungen
 Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt sein:
 
@@ -90,7 +85,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 - Sie benötigen eine Webcam und einen Encoder, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
 
 ##Vorbereiten der Entwicklung mit Media Services SDK für .NET
- 
+
 1. Erstellen Sie mithilfe von Visual Studio eine Konsolenanwendung.
 1. Fügen Sie Ihrer Konsolenanwendung mithilfe des Media Services NuGet-Pakets das Media Services SDK für .NET hinzu.
 
@@ -98,17 +93,11 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 Als bewährte Methode sollten Sie eine app.config-Datei zum Speichern von Namen und Kontoschlüssel von Media Services verwenden.
 
 >[AZURE.NOTE]Sie finden Werte für Namen und Schlüssel im Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol SCHLÜSSEL VERWALTEN. Klicken Sie auf die Symbole neben den Textfeldern, um den jeweiligen Wert in die Systemzwischenablage zu kopieren.
- 
+
 Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben Sie Ihren Kontonamen und Kontoschlüssel für Media Services ein.
 
 
-	<?xml version="1.0"?>
-	<configuration>
-	  <appSettings>
-	      <add key="MediaServicesAccountName" value="YouMediaServicesAccountName" />
-	      <add key="MediaServicesAccountKey" value="YouMediaServicesAccountKey" />
-	  </appSettings>
-	</configuration>
+<?xml version="1.0"?> <configuration> <appSettings> <add key="MediaServicesAccountName" value="YouMediaServicesAccountName" /> <add key="MediaServicesAccountKey" value="YouMediaServicesAccountKey" /> </appSettings> </configuration>
 	 
 	
 
@@ -508,4 +497,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

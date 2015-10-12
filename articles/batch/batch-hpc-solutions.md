@@ -7,16 +7,14 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="batch"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="big-compute"
-   ms.date="07/01/2015"
+   ms.date="09/29/2015"
    ms.author="danlep"/>
-
 
 # Batch- und HPC-Lösungen
 
@@ -98,7 +96,7 @@ Clusterverwaltungs- und Auftragsplanungstools ermöglichen die schrittweise Einr
 
 Azure bietet für Big Compute-Lösungen und -Workflows eine Reihe von Compute-, Daten- und Netzwerkdiensten und ähnliche Dienste. Ausführliche Informationen zu den einzelnen Diensten finden Sie in der Dokumentation zu den Azure-Diensten. Gängige Ansätze für Batch- und HPC-Lösungen werden in diesem Artikel unter [Lösungsszenarien](#solution-scenarios) erläutert.
 
->[AZURE.NOTE]Die Azure-Plattform wird regelmäßig um neue Dienste erweitert, die für Ihr Szenario hilfreich sein können. Die Verwendung der Vorschauversionen von Diensten wird nur für Tests oder Machbarkeitsstudien, nicht aber für Produktionsworkloads empfohlen. Wenden Sie sich bei Fragen an einen [Azure-Partner](https://pinpoint.microsoft.com/en-US/search?keyword=azure), oder senden Sie eine E-Mail an \**bigcompute@microsoft.com*.
+>[AZURE.NOTE]Die Azure-Plattform wird regelmäßig um neue Dienste erweitert, die für Ihr Szenario hilfreich sein können. Die Verwendung der Vorschauversionen von Diensten wird nur für Tests oder Machbarkeitsstudien, nicht aber für Produktionsworkloads empfohlen. Wenden Sie sich bei Fragen an einen [Azure-Partner](https://pinpoint.microsoft.com/de-DE/search?keyword=azure), oder senden Sie eine E-Mail an **bigcompute@microsoft.com*.
 
 ### Compute Services
 
@@ -108,10 +106,9 @@ Die Compute Services in Azure bilden das Herzstück einer Big Compute-Lösung. 
 
 Dienst | Beschreibung
 ------------- | -----------
-**[Clouddienste](http://azure.microsoft.com/documentation/services/cloud-services)**<br/><br/>|• Ausführung von Big Compute-Anwendungen in Workerrolleninstanzen (virtuelle Computer mit einer Version von Windows Server, die vollständig von Azure verwaltet werden)<br/><br/>• Möglichkeit zur Verwendung skalierbarer, zuverlässiger Anwendungen mit geringem Verwaltungsaufwand im Rahmen eines Platform-as-a-Service (PaaS)-Modells<br/><br/>• Möglicherweise zusätzliche Tools oder Entwicklung für die Integration in lokale HPC-Clusterlösungen erforderlich
-**[Virtuelle Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines)**<br/><br/>|• Bereitstellung einer Compute-Infrastruktur als Dienst (Infrastructure-as-a-Service, IaaS) unter Verwendung von Microsoft Hyper-V-Technologie<br/><br/>• Möglichkeit zur flexiblen Bereitstellung und Verwaltung persistenter Cloudcomputer auf der Grundlage standardmäßiger Windows Server- oder Linux-Images oder auf der Grundlage von Images und Datenträgern, die von Ihnen selbst oder über den [Azure Marketplace](https://azure.microsoft.com/marketplace/) bereitgestellt werden<br/><br/>• Vollständige Ausführung lokaler Computeclustertools und -anwendungen in der Cloud
-**[Batch](http://azure.microsoft.com/documentation/services/batch)**<br/><br/>|• Ausführung umfangreicher Parallel- und Batch-Workloads wie Bildrendering und Codierung/Transcodierung von Medien in einem vollständig verwalteten Dienst<br/><br/>• Möglichkeit zur Auftragsplanung sowie zur automatischen Skalierung eines verwalteten Pools virtueller Computer<br/><br/>• Möglichkeit zur Entwicklung und Ausführung von Anwendungen als Dienst sowie zur Nutzung vorhandener Anwendungen in der Cloud<br/>
-
+**[Clouddienste](http://azure.microsoft.com/documentation/services/cloud-services)**<br/><br/> |• Ausführung von Big Compute-Anwendungen in Workerrolleninstanzen (virtuelle Computer mit einer Version von Windows Server, die vollständig von Azure verwaltet werden)<br/><br/>• Möglichkeit zur Verwendung skalierbarer, zuverlässiger Anwendungen mit geringem Verwaltungsaufwand im Rahmen eines Platform-as-a-Service (PaaS)-Modells<br/><br/>• Möglicherweise zusätzliche Tools oder Entwicklung für die Integration in lokale HPC-Clusterlösungen erforderlich
+**[Virtuelle Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines)**<br/><br/> |• Bereitstellung einer Compute-Infrastruktur als Dienst (Infrastructure-as-a-Service, IaaS) unter Verwendung von Microsoft Hyper-V-Technologie<br/><br/>• Möglichkeit zur flexiblen Bereitstellung und Verwaltung persistenter Cloudcomputer auf der Grundlage standardmäßiger Windows Server- oder Linux-Images oder auf der Grundlage von Images und Datenträgern, die von Ihnen selbst oder über den [Azure Marketplace](https://azure.microsoft.com/marketplace/) bereitgestellt werden<br/><br/>• Vollständige Ausführung lokaler Computeclustertools und -anwendungen in der Cloud
+**[Batch](http://azure.microsoft.com/documentation/services/batch)**<br/><br/> |• Ausführung umfangreicher Parallel- und Batch-Workloads wie Bildrendering und Codierung/Transcodierung von Medien in einem vollständig verwalteten Dienst<br/><br/>• Möglichkeit zur Auftragsplanung sowie zur automatischen Skalierung eines verwalteten Pools virtueller Computer<br/><br/>• Möglichkeit zur Entwicklung und Ausführung von Anwendungen als Dienst sowie zur Nutzung vorhandener Anwendungen in der Cloud<br/>
 
 ### Speicherdienste
 
@@ -169,11 +166,11 @@ Mit Azure Automation-Tools können Sie einen HPC-Cluster auf virtuellen Azure-C
 
 >[AZURE.NOTE]Erkundigen Sie sich beim Hersteller Ihrer lokalen Clusterlösung und -anwendungen nach zusätzlichen Anforderungen und bewährten Methoden für die Ausführung in einer öffentlichen Cloud mit IaaS (Infrastructure-as-a-Service).
 
-So können Sie beispielsweise einen Windows Server-basierten HPC-Cluster mit [Microsoft HPC Pack](https://technet.microsoft.com/library/cc514029) auf virtuellen Azure-Computern mit Infrastrukturdiensten (IaaS) erstellen, um Ihre Workloads auszuführen (wie in der folgenden vereinfachten Abbildung zu sehen). Über die standardmäßigen Auftragsübermittlungstools von HPC Pack, die auf einem Clientcomputer ausgeführt werden, kann ein Clusterbenutzer einen Auftrag sicher an den Cloudcluster übermitteln. Ausführlichere Informationen und Bereitstellungsoptionen finden Sie unter [Microsoft HPC Pack in Azure VMs](https://msdn.microsoft.com/library/azure/dn518135.aspx).
+So können Sie beispielsweise einen HPC-Cluster mit [Microsoft HPC Pack](https://technet.microsoft.com/library/cc514029) auf virtuellen Azure-Computern mit Infrastrukturdiensten (IaaS) erstellen, um Ihre Windows- oder Linux-Workloads auszuführen (wie in der folgenden vereinfachten Abbildung zu sehen). Über die standardmäßigen Auftragsübermittlungstools von HPC Pack, die auf einem Clientcomputer ausgeführt werden, kann ein Clusterbenutzer einen Auftrag sicher an den Cloudcluster übermitteln. Weitere Informationen finden Sie unter [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](../virtual-machines/virtual-machines-hpcpack-cluster-options.md).
 
 ![Cluster in IaaS][iaas_cluster]
 
-**Automatisierte Bereitstellung**: Zur Bereitstellung einer großen Anzahl von Windows Server- oder Linux-basierten VMs können Sie standardmäßige oder benutzerdefinierte VM-Images und Azure Automation-Tools wie die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) oder [Azure PowerShell](../powershell-install-configure.md) verwenden. Beispiele:
+**Automatisierte Bereitstellung**: Zur Bereitstellung einer großen Anzahl von Windows Server- oder Linux-basierten VMs können Sie standardmäßige oder benutzerdefinierte VM-Images und Azure Automation-Tools wie die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) oder [Azure PowerShell](../powershell-install-configure.md) verwenden. Beispiele:
 
 * Wenn Sie einen HPC Pack-Cluster in Azure-Infrastrukturdiensten bereitstellen möchten, können Sie von einem Clientcomputer aus ein flexibles [Azure PowerShell-Skript](https://msdn.microsoft.com/library/azure/dn864734.aspx) ausführen. Das Skript verwendet ein Windows Server-basiertes VM-Image mit vorinstalliertem HPC Pack. Ein HPC Pack-Cluster kann auch mithilfe einer [Azure-Schnellstartvorlage](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/) über Azure PowerShell oder über die Azure-Befehlszeilenschnittstelle bereitgestellt werden.
 
@@ -227,4 +224,4 @@ Die folgende Abbildung zeigt einen typischen Workflow, den ein Entwickler mit Ba
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

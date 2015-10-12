@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="09/10/2015"
+   ms.date="09/25/2015"
    ms.author="v-sharos"/>
 
 # StorSimple-Sicherheit und -Datenschutz
@@ -52,7 +52,7 @@ Nur autorisierte StorSimple-Geräte dürfen dem StorSimple-Manager-Dienst hinzug
 
 Um ein Gerät zu autorisieren, müssen Sie es beim StorSimple-Manager-Dienst registrieren, indem Sie den Dienstregistrierungsschlüssel bereitstellen. Der Dienstregistrierungsschlüssel ist ein im Portal generierter zufälliger 128-Bit-Schlüssel. Infomationen zum Abrufen eines Dienstregistrierungsschlüssels erhalten Sie unter [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](storsimple-deployment-walkthrough.md#step-2-get-the-service-registration-key).
 
-> [AZURE.NOTE]Der Dienstregistrierungsschlüssel ist ein langer Schlüssel mit mehr als 100 Zeichen. Es wird empfohlen, dass Sie den Schlüssel kopieren und ihn an einem sicheren Ort in einer Textdatei speichern, damit Sie bei Bedarf weitere Geräte mit dem Schlüssel autorisieren können.
+> [AZURE.NOTE]Der Dienstregistrierungsschlüssel ist ein langer Schlüssel mit mehr als 100 Zeichen. Sie können den Schlüssel kopieren und ihn an einem sicheren Ort in einer Textdatei speichern, damit Sie bei Bedarf weitere Geräte mit dem Schlüssel autorisieren können.
 > 
 > * Wenn der Dienstregistrierungsschlüssel nach der Registrierung Ihres ersten Geräts verloren geht, können Sie über den StorSimple-Manager-Dienst einen neuen Schlüssel generieren. Dies wirkt sich nicht auf den Betrieb vorhandener Geräte aus. 
 > * Nachdem ein Gerät registriert wurde, verwendet es Token für die Kommunikation mit Microsoft Azure. Der Dienstregistrierungsschlüssel wird nach der Geräteregistrierung nicht verwendet.
@@ -69,7 +69,7 @@ Kennwörter sind ein wichtiger Aspekt der Computersicherheit und werden in der M
 
 ### Windows PowerShell für StorSimple- und StorSimple-Geräteadministratorkennwörter
 
-Windows PowerShell für StorSimple ist eine Befehlszeilenschnittstelle, mit der Sie das StorSimple-Gerät verwalten können. Windows PowerShell für StorSimple bietet Features, mit denen Sie Ihr Gerät registrieren, die Netzwerkschnittstelle Ihres Geräts konfigurieren, bestimmte Arten von Updates installieren, Probleme Ihres Geräts durch Zugriff auf eine Supportsitzung beheben und den Gerätestatus ändern können. Sie können auf Windows PowerShell für StorSimple zugreifen, indem Sie eine Verbindung mit der seriellen Konsole herstellen oder Windows PowerShell-Remoting verwenden.
+Windows PowerShell für StorSimple ist eine Befehlszeilenschnittstelle, mit der Sie das StorSimple-Gerät verwalten können. Windows PowerShell für StorSimple bietet Features, mit denen Sie Ihr Gerät registrieren, die Netzwerkschnittstelle Ihres Geräts konfigurieren, bestimmte Arten von Updates installieren, Probleme Ihres Geräts durch Zugriff auf eine Supportsitzung beheben und den Gerätestatus ändern können. Sie können auf Windows PowerShell für StorSimple zugreifen, indem Sie eine Verbindung mit der seriellen Konsole auf dem Gerät herstellen oder Windows PowerShell-Remoting verwenden.
 
 Das PowerShell-Remoting kann über HTTPS oder HTTP erfolgen. Wenn die Remoteverwaltung über HTTPS aktiviert ist, müssen Sie das Remoteverwaltungszertifikat vom Gerät herunterladen und es auf dem Remoteclient installieren.
 
@@ -129,7 +129,7 @@ Wie in anderen Abschnitten erläutert, werden Kennwörter verwendet, um Benutzer
 Der Hauptzweck des StorSimple-Manager-Diensts ist die Verwaltung und Konfiguration des StorSimple-Geräts. Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Sie können Gerätekonfigurationsdaten über das Azure-Verwaltungsportal eingeben. Anschließend verwendet Microsoft Azure den StorSimple-Manager-Dienst, um die Daten an das Gerät zu senden. Der StorSimple-Manager-Dienst verwendet ein System aus asymmetrischen Schlüsselpaaren, um sicherzustellen, dass eine Gefährdung des Azure-Diensts nicht zu einer Gefährdung der gespeicherten Daten führt. Das asymmetrische Schlüsselsystem schützt die durch den Dienst geleiteten Daten wie folgt:
 
 1. Ein Datenverschlüsselungszertifikat, das ein asymmetrisches öffentliches und privates Schlüsselpaar verwendet, wird auf dem Gerät generiert und dient zum Schutz der Daten. Die Schlüssel werden bei der Registrierung des ersten Geräts generiert. 
-2. Die Zertifikatschlüssel für die Datenverschlüsselung werden in eine PFX-Datei (Personal Information Exchange) exportiert, die über den Verschlüsselungsschlüssel für Dienstdaten geschützt wird. Dies ist ein sicherer 128-Bit-Schlüssel, der vom Gerät während der Registrierung zufällig generiert wird.
+2. Die Zertifikatschlüssel für die Datenverschlüsselung werden in eine PFX-Datei (Personal Information Exchange) exportiert, die über den Verschlüsselungsschlüssel für Dienstdaten geschützt wird. Dies ist ein sicherer 128-Bit-Schlüssel, der vom ersten Gerät während der Registrierung zufällig generiert wird.
 3. Der öffentliche Schlüssel des Zertifikats wird für den StorSimple-Manager-Dienst auf sichere Weise zur Verfügung gestellt. Der private Schlüssel verbleibt beim Gerät.
 4. Die im Dienst eingehenden Daten werden mithilfe des öffentlichen Schlüssels verschlüsselt und mithilfe des privaten Schlüssels, der auf dem Gerät gespeichert wird, wieder entschlüsselt.
 
@@ -144,7 +144,7 @@ Der Hauptzweck des StorSimple-Manager-Diensts ist die Verwaltung und Konfigurati
 
 ## Schutz gespeicherter Daten
 
-Das StorSimple-Gerät verwaltet Daten, indem diese lokal und in der Cloud abhängig von der Häufigkeit ihrer Nutzung auf Ebenen gespeichert werden. Alle Hostcomputer, die mit dem Gerät verbunden sind, senden Daten an das Gerät, das die Daten dann ggf. in die Cloud verschiebt. Die Daten werden vom Gerät über das iSCSI-Protokoll in die Cloud gesendet. Jedes Gerät verfügt über ein iSCSI-Ziel, das alle freigegebenen Volumes auf diesem Gerät zum Vorschein bringt. Alle Daten werden verschlüsselt, bevor sie zum Cloud-Speicher gesendet werden. Um die Sicherheit und Integrität von Daten sicherzustellen, die in die Cloud verschoben werden, gestattet es Azure StorSimple, Verschlüsselungsschlüssel für Cloud-Speicher wie folgt zu definieren:
+Das StorSimple-Gerät verwaltet Daten, indem diese lokal und in der Cloud abhängig von der Häufigkeit ihrer Nutzung auf Ebenen gespeichert werden. Alle Hostcomputer, die mit dem Gerät verbunden sind, senden Daten an das Gerät, das die Daten dann ggf. in die Cloud verschiebt. Die Daten werden vom Gerät über das Internet sicher in die Cloud gesendet. Jedes Gerät verfügt über ein iSCSI-Ziel, das alle freigegebenen Volumes auf diesem Gerät zum Vorschein bringt. Alle Daten werden verschlüsselt, bevor sie zum Cloud-Speicher gesendet werden. Um die Sicherheit und Integrität von Daten sicherzustellen, die in die Cloud verschoben werden, gestattet es Azure StorSimple, Verschlüsselungsschlüssel für Cloud-Speicher wie folgt zu definieren:
 
 - Sie geben bei der Erstellung eines Volumecontainers den Verschlüsselungsschlüssel für Cloud-Speicher an. Der Schlüssel kann nicht später geändert oder hinzugefügt werden. 
 - Alle Volumes in einem Volumecontainer teilen sich denselben Verschlüsselungsschlüssel. Wenn Sie für ein bestimmtes Volume eine andere Form der Verschlüsselung wünschen, wird empfohlen, einen neuen Volumecontainer als Host für dieses Volume zu erstellen.
@@ -203,7 +203,7 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 
 **F:** Ich habe meinen Verschlüsselungsschlüssel für Dienstdaten verloren. Wie gehe ich vor?
 
-**A:** Wenden Sie sich an den Microsoft-Support. Der Support kann sich in einer Supportsitzung bei Ihrem Gerät anmelden und Ihnen helfen, den Schlüssel abzurufen. Sie sollten den Verschlüsselungsschlüssel für Dienstdaten sofort nach Erhalt ändern, damit der neue Schlüssel nur Ihnen bekannt ist. Anweisungen dazu finden Sie unter:
+**A:** Wenden Sie sich an den Microsoft-Support. Der Support kann sich in einer Supportsitzung bei Ihrem Gerät anmelden und Ihnen helfen, den Schlüssel abzurufen (vorausgesetzt, dass mindestens ein Gerät online ist). Sie sollten den Verschlüsselungsschlüssel für Dienstdaten sofort nach Erhalt ändern, damit der neue Schlüssel nur Ihnen bekannt ist. Anweisungen dazu finden Sie unter:
 
 - [Ändern des Verschlüsselungsschlüssels für Dienstdaten](storsimple-service-dashboard.md#change-the-service-data-encryption-key)
 
@@ -253,4 +253,4 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 [Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

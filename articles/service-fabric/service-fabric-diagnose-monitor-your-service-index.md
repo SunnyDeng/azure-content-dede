@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/04/2015"
+   ms.date="09/25/2015"
    ms.author="ryanwi"/>
 
 # Diagnostizieren und Überwachen von Service Fabric-Diensten
@@ -22,7 +22,6 @@
 - [Gewusst wie: Lokales Überwachen und Diagnostizieren von Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 - [Einrichten von Application Insights für Service-Fabric-Anwendungen](service-fabric-diagnostics-application-insights-setup.md)
 - [Beheben von Problemen mit Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
-- [Problembehandlung bei fehlgeschlagenen überwachten Anwendungsupgrades](../service-fabric-application-monitored-upgrade-troubleshooting.md)
 - [Diagnose und Leistungsüberwachung für Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 - [Diagnose und Leistungsüberwachung für Reliable Services](service-fabric-reliable-services-diagnostics.md)
 
@@ -38,6 +37,5 @@ Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible 
 - [Gewusst wie: Anzeigen von Service Fabric-Integritätsberichten](service-fabric-view-entities-aggregated-health.md)
 - [Verwenden von Systemintegritätsberichten für die Problembehandlung](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 - [Gewusst wie: Hinzufügen von Service Fabric-Integritätsberichten](service-fabric-report-health.md)
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

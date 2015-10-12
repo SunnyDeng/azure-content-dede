@@ -1,23 +1,23 @@
 <properties 
-   pageTitle="Starten und Beenden von virtuellen Computern – Graph | Microsoft Azure"
-   description="PowerShell-Workflow-Version der Azure Automation-Projektmappe, einschließlich Runbooks zum Starten und Beenden von klassischen virtuellen Computern."
-   services="automation"
-   documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
-   editor="tysonn" />
+	pageTitle="Starten und Beenden von virtuellen Computern – Graph | Microsoft Azure"
+	description="PowerShell-Workflow-Version der Azure Automation-Projektmappe, einschließlich Runbooks zum Starten und Beenden von klassischen virtuellen Computern."
+	services="automation"
+	documentationCenter=""
+	authors="bwren"
+	manager="stevenka"
+	editor="tysonn" />
 <tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
-   ms.author="bwren" />
+	ms.service="automation"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/25/2015"
+	ms.author="bwren" />
 
-# Azure Automation-Projektmappe – Starten und Beenden von virtuellen Computern
+# Azure Automation-Lösung – Starten und Beenden virtueller Computer
 
-Diese Azure Automation-Projektmappe enthält Runbooks zum Starten und Beenden virtueller Computer. Sie können die Projektmappe für folgende Zwecke einsetzen:
+Diese Azure Automation-Lösung enthält Runbooks zum Starten und Beenden klassischer virtueller Computer. Sie können die Lösung für folgende Zwecke einsetzen:
 
 - Verwenden Sie die Runbooks unverändert in Ihrer eigenen Umgebung. 
 - Ändern Sie die Runbooks, um benutzerdefinierte Funktionen auszuführen.  
@@ -54,18 +54,18 @@ Die Runbooks enthalten eine Aktivität namens **Read Me** mit einer Beschreibung
 Die Runbooks erfordern die folgenden Assets, die Sie erstellen und mit den entsprechenden Werten füllen müssen. Die Namen sind standardmäßige Namen. Sie können Assets mit unterschiedlichen Namen verwenden, wenn Sie diese Namen beim Starten des Runbooks in den [Eingabeparametern](#using-the-solution) angeben.
 
 | Assettyp | Standardname | Beschreibung |
-|:---|:---|:---|
+|:---|:---|:---|:---|
 | [Credential](automation-credentials.md) | AzureCredential | Enthält die Anmeldeinformationen für ein Konto mit der Berechtigung zum Starten und Beenden von virtuellen Computern im Azure-Abonnement. |
 | [Variable](automation-variables.md) | AzureSubscriptionId | Enthält die Abonnement-ID Ihres Azure-Abonnements. |
 
-## Verwenden der Projektmappe
+## Verwenden der Lösung
 
 ### Parameter
 
 Die Runbooks verfügen jeweils über die folgenden [Eingabeparameter](automation-starting-a-runbook#runbook-parameters). Sie müssen Werte für alle obligatorischen Parameter angeben und können optional Werte für andere Parameter je nach Bedarf bereitstellen.
 
 | Parameter | Typ | Erforderlich | Beschreibung |
-|:---|:---|:---|
+|:---|:---|:---|:---|
 | ServiceName | string | Nein | Wenn ein Wert angegeben wird, werden alle virtuellen Computer mit diesem Dienstnamen gestartet oder beendet. Wenn kein Wert angegeben wird, werden alle klassischen virtuellen Computer im Azure-Abonnement gestartet oder beendet. |
 | AzureSubscriptionIdAssetName | string | Nein | Enthält den Namen des [Variablen-Assets](#installing-the-solution), in dem die Abonnement-ID des Azure-Abonnements enthalten ist. Wenn Sie keinen Wert angeben, wird *AzureSubscriptionId* verwendet. |
 | AzureCredentialAssetName | string | Nein | Enthält den Namen des [Anmeldeinformations-Assets](#installing-the-solution), in dem die Anmeldeinformationen für das zu verwendende Runbook enthalten sind. Wenn Sie keinen Wert angeben, wird *AzureCredential* verwendet. |
@@ -153,4 +153,4 @@ Der letzte Schritt im Runbook ist das Senden einer Ausgabe mit der Information, 
 - [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

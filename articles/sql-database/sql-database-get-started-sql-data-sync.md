@@ -4,7 +4,7 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="spelluru"
-	manager="jhubbard"
+	manager="JennieHubbard"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2015"
-	ms.author="spelluru"/>
+	ms.date="09/24/2015"
+	ms.author="jhubbard"/>
 
 
 #Erste Schritte mit Azure SQL-Datensynchronisierung (Vorschauversion)
@@ -40,7 +40,7 @@ Für dieses Lernprogramm wird minimale vorherige Erfahrung mit SQL Server und Az
 
 
 ## Schritt 2: Hinzufügen eines Client-Agents
-Dieser Schritt ist nur erforderlich, wenn Sie eine lokale SQL Server-Datenbank in Ihre Synchronisierungsgruppe integrieren möchten. Sie können Schritt 4: "Erstellen einer Synchronisierungsgruppe" überspringen, wenn Ihre Synchronisierungsgruppe nur SQL Datenbank-Instanzen umfasst.
+Dieser Schritt ist nur erforderlich, wenn Sie eine lokale SQL Server-Datenbank in Ihre Synchronisierungsgruppe integrieren möchten. Fahren Sie mit Schritt 4 fort, wenn Ihre Synchronisierungsgruppe nur über SQL Database-Instanzen verfügt.
 
 <a id="InstallRequiredSoftware"></a>
 ### Schritt 2a: Installieren der erforderlichen Software
@@ -202,4 +202,4 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

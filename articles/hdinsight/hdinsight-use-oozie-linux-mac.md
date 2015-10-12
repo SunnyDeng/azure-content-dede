@@ -34,7 +34,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**: Siehe [Kostenlose Azure-Testversion](get-azure-free-trial-for-testing-hadoop-in-hdinsight.md).
 
-- **Azure-Befehlszeilenschnittstelle**: Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli.md).
+- **Azure-Befehlszeilenschnittstelle**: Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
 - **Einen HDInsight-Cluster**: Siehe [Erste Schritte mit HDInsight unter Linux](hdinsight-hadoop-linux-tutorial-get-started.md)
 
@@ -48,9 +48,9 @@ Der Workflow, den Sie mithilfe der Anweisungen in diesem Dokument implementieren
 
 1. Eine Hive-Aktion führt ein HiveQL-Skript zum Extrahieren von Datensätzen aus der in HDInsight enthaltenen Tabelle **hivesampletable** aus. Jede Datenzeile beschreibt einen Besuch eines bestimmten Mobilgeräts. Das Format des Eintrags sieht wie folgt aus:
 
-		8       18:54:20        DE-DE   Android Samsung SCH-i500        California     United States    13.9204007      0       0
-		23      19:19:44        DE-DE   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
-		23      19:19:46        DE-DE   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
+		8       18:54:20        de-DE   Android Samsung SCH-i500        California     United States    13.9204007      0       0
+		23      19:19:44        de-DE   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
+		23      19:19:46        de-DE   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
 
 	Das in diesem Dokument verwendete Hive-Skript zählt die gesamten Besuche für jede Plattform (z. B. Android oder iPhone) und speichert die Werte in einer neuen Hive-Tabelle.
 
@@ -108,7 +108,7 @@ Führen Sie die folgenden Schritte aus, um ein HiveQL-Skript zu erstellen, das e
 	- **${hiveTableName}**: Enthält den Namen der zu erstellenden Tabelle
 	- **${hiveDataFolder}**: Enthält den Speicherort der Datendateien für die Tabelle
 
-	Die Workflowdefinitionsdatei ("workflow.xml" in diesem Tutorial) übergibt diese Werte zur Laufzeit an das HiveQL-Skript.
+	Die Workflowdefinitionsdatei ("workflow.xml" in diesem Lernprogramm) übergibt diese Werte zur Laufzeit an das HiveQL-Skript.
 
 2. Drücken Sie STRG+X, um den Editor zu verlassen. Wählen Sie bei entsprechender Aufforderung **Y** aus, um die Datei zu speichern. Drücken Sie dann die **EINGABETASTE**, um den Dateinamen **useooziewf.hql** zu verwenden.
 
@@ -191,7 +191,7 @@ Definitionen von Oozie-Workflows werden in hPDL (einer XML-Prozessdefinitionsspr
 
 	Beachten Sie auch den Eintrag `<archive>sqljdbc4.jar</arcive>` im Abschnitt „Sqoop“. Dieser weist Oozie an, dieses Archiv für Sqoop zur Verfügung zu stellen, wenn diese Aktion ausgeführt wird.
 
-2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
+2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann **EINGABE**.
 
 3. Verwenden Sie den folgenden Befehl zum Kopieren der Datei **workflow.xml** in ****wasb:///tutorials/useoozie/workflow.xml**:
 
@@ -201,7 +201,7 @@ Definitionen von Oozie-Workflows werden in hPDL (einer XML-Prozessdefinitionsspr
 
 Die folgenden Schritte dienen zum Erstellen der Azure SQL-Datenbank, in die Daten exportiert werden sollen.
 
-> [AZURE.IMPORTANT]Vor dem Ausführen dieser Schritte müssen Sie [die Azure-Befehlszeilenschnittstelle installieren und konfigurieren](xplat-cli.md). Das Installieren der Befehlszeilenschnittstelle und die Schritte zum Erstellen einer Datenbank können entweder im HDInsight-Cluster oder auf der lokalen Arbeitsstation ausgeführt werden.
+> [AZURE.IMPORTANT]Vor dem Ausführen dieser Schritte müssen Sie die [Azure-Befehlszeilenschnittstelle installieren und konfigurieren](xplat-cli-install.md). Das Installieren der Befehlszeilenschnittstelle und die Schritte zum Erstellen einer Datenbank können entweder im HDInsight-Cluster oder auf der lokalen Arbeitsstation ausgeführt werden.
 
 1. Verwenden Sie den folgenden Befehl, um einen neuen Azure SQL-Datenbankserver zu erstellen:
 
@@ -371,11 +371,11 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 
 	* Ersetzen Sie **serverName**, **adminLogin** und **adminPassword** durch die Informationen für Ihre Azure SQL-Datenbank.
 
-	Die meisten der Informationen in dieser Datei dienen zum Auffüllen der Werte, die in der Datei "workflow.xml" oder "ooziewf.hql" (z. B. ${NameNode}) verwendet werden.
+	Die meisten der Informationen in dieser Datei dienen zum Auffüllen der Werte, die in der Datei "workflow.xml" oder "ooziewf.hql" (z. B. ${nameNode}) verwendet werden.
 
 	> [AZURE.NOTE]Der Eintrag **oozie.wf.application.path** definiert den Speicherort der Datei „workflow.xml“, die den von diesem Auftrag ausgeführten Workflow enthält.
 
-2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
+2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann **EINGABE**.
 
 ##Übermitteln und Verwalten des Auftrags
 
@@ -477,15 +477,11 @@ Die Oozie-Webbenutzeroberfläche bietet eine webbasierte Anzeige des Status von 
 
 Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen vor:
 
-1. Erstellen Sie einen SSH-Tunnel zum HDInsight-Cluster. Informationen hierzu finden in einem der folgenden Artikel:
-
-	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md#tunnel)
-
-	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md#tunnel)
+1. Erstellen Sie einen SSH-Tunnel zum HDInsight-Cluster. Informationen zur Vorgehensweise finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 2. Nachdem der Tunnel erstellt wurde, öffnen Sie die Ambari-Webbenutzeroberfläche in Ihrem Webbrowser. Der URI der Ambari-Website lautet ****https://CLUSTERNAME.azurehdinsight.net**. Ersetzen Sie **CLUSTERNAME** durch den Namen des Linux-basierten HDInsight-Clusters.
 
-3. Wählen Sie auf der linken Seite der Seite **Oozie**, dann **Quicklinks** und schließlich **Oozie Web UI** aus.
+3. Wählen Sie auf der linken Seite der Seite **Oozie**, dann **QuickLinks** und schließlich **Oozie Web UI** aus.
 
 	![Abbildung der Menüs](./media/hdinsight-use-oozie-linux-mac/ooziewebuisteps.png)
 
@@ -507,7 +503,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 		![DAG des Auftrags](./media/hdinsight-use-oozie-linux-mac/jobdag.png)
 
-7. Bei Auswählen einer der Aktionen auf der Registerkarte **Auftragsinformationen** werden Informationen zur Aktion eingeblendet. Wählen Sie z. B. die Aktion **RunHiveScript** aus.
+7. Bei Auswahl einer der Aktionen auf der Registerkarte **Auftragsinformationen** werden Informationen zur Aktion eingeblendet. Wählen Sie z. B. die Aktion **RunHiveScript** aus.
 
 	![Aktionsinformationen](./media/hdinsight-use-oozie-linux-mac/action.png)
 
@@ -539,9 +535,9 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 	* **${coordStart}**: Startzeit des Auftrags
 	* **${coordEnd}**: Endzeit des Auftrags
 	* **${coordTimezone}**: Koordinatoraufträge erfolgen in einer festen Zeitzone ohne Sommerzeit (in der Regel unter Verwendung von UTC dargestellt). Diese Zeitzone wird als "Oozie-Verarbeitungszeitzone" bezeichnet.
-	* **${wfPath}**: Pfad zur Datei „workflow.xml“.
+	* **${wfPath}**: Pfad zur Datei "workflow.xml".
 
-2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
+2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann **EINGABE**.
 
 3. Verwenden Sie den folgenden Befehl, um ihn in das Arbeitsverzeichnis dieses Auftrags zu kopieren:
 
@@ -562,7 +558,7 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 		      <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie</value>
 		    </property>
 
-		Ersetzen Sie die Werte für **mycontainer** und **mystorageaccount** durch die Werte in anderen Einträgen der Datei „job.xml“.
+		Ersetzen Sie die Werte für **mycontainer** und **mystorageaccount** durch die Werte in anderen Einträgen der Datei "job.xml".
 
 	* Fügen Sie die folgenden Code hinzu, mit dem Start, Ende und Häufigkeit für die Datei "coordinator.xml" definiert werden:
 
@@ -588,7 +584,7 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 
 		Die Startzeit wird auf 12:00 Uhr am 25. Juni 2015, die Endzeit auf den 27. Juni 2015 und das Intervall für die Ausführung dieses Auftrags auf täglich festgelegt (die Frequenz wird in Minuten angegeben: 24 Stunden x 60 Minuten = 1440 Minuten). Schließlich wird die Zeitzone auf UTC festgelegt.
 
-5. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
+5. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann **EINGABE**.
 
 6. Um den Auftrag auszuführen, geben Sie den folgenden Befehl ein:
 
@@ -624,7 +620,7 @@ Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Be
 
 ###JA009: Cluster kann nicht initialisiert werden.
 
-**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von „RunHiveScript“ als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von "RunHiveScript" als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	JA009: Cannot initialize Cluster. Please check your configuration for map
 
@@ -634,13 +630,13 @@ Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Be
 
 ###JA002: Oozie darf nicht die Identität von "&lt;USER>" annehmen.
 
-**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von „RunHiveScript“ als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von "RunHiveScript" als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	JA002: User: oozie is not allowed to impersonate <USER>
 
 **Ursache**: Die aktuellen Berechtigungseinstellungen lassen nicht zu, dass Oozie die Identität des angegebenen Benutzerkontos annimmt.
 
-**Lösung**: Oozie darf die Identität von Benutzern in der Gruppe **users** annehmen. Verwenden Sie `groups USERNAME`, um die Gruppen anzuzeigen, deren Mitglied das Benutzerkonto ist. Wenn der Benutzer nicht Mitglied der Gruppe **users** ist, verwenden Sie den folgenden Befehl, um den Benutzer der Gruppe hinzuzufügen:
+**Lösung**: Oozie darf die Identität von Benutzern in der Gruppe **users** annehmen. Verwenden Sie `groups USERNAME`, um die Gruppen anzuzeigen, denen das Benutzerkonto als Mitglied angehört. Wenn der Benutzer nicht Mitglied der Gruppe **users** ist, verwenden Sie den folgenden Befehl, um den Benutzer der Gruppe hinzuzufügen:
 
 	sudo adduser USERNAME users
 
@@ -648,15 +644,15 @@ Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Be
 
 ###Launcher ERROR (Sqoop)
 
-**Symptome**: Der Auftragsstatus wird in **KILLED** geändert. In den Details zum Auftrag wird der Status von „RunSqoopExport“ als **ERROR** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus wird in **KILLED** geändert. In den Details zum Auftrag wird der Status von "RunSqoopExport" als **ERROR** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	Launcher ERROR, reason: Main class [org.apache.oozie.action.hadoop.SqoopMain], exit code [1]
 
 **Ursache**: Sqoop kann den Datenbanktreiber nicht laden, der für den Zugriff auf die Datenbank erforderlich ist.
 
-**Lösung**: Bei Verwendung von Sqoop in einem Oozie-Auftrag müssen Sie den Datenbanktreiber mit anderen vom Auftrag verwendeten Ressourcen (z. B. „workflow.xml“) angeben.
+**Lösung**: Bei Verwendung von Sqoop in einem Oozie-Auftrag müssen Sie den Datenbanktreiber mit anderen vom Auftrag verwendeten Ressourcen (z. B. "workflow.xml") angeben.
 
-Sie müssen auch im Abschnitt `<sqoop>...</sqoop>` der Datei „workflow.xml“ auf das Archiv mit dem Datenbanktreiber verweisen.
+Sie müssen auch im Abschnitt `<sqoop>...</sqoop>` der Datei "workflow.xml" auf das Archiv mit dem Datenbanktreiber verweisen.
 
 Für den Auftrag in diesem Dokument würden Sie z. B. folgendermaßen die folgenden Schritte ausführen:
 
@@ -664,12 +660,12 @@ Für den Auftrag in diesem Dokument würden Sie z. B. folgendermaßen die folgen
 
 		 hadoop fs -copyFromLocal /usr/share/java/sqljdbc_4.1/enu/sqljdbc4.jar /tutorials/useoozie/sqljdbc4.jar
 
-2. Ändern Sie die Datei „workflow.xml“ durch Hinzufügen des folgenden Codes in eine neue Zeile über `</sqoop>`:
+2. Ändern Sie die Datei "workflow.xml" durch Hinzufügen des folgenden Codes in eine neue Zeile über `</sqoop>`:
 
 		<archive>sqljdbc4.jar</archive>
 
 ##Nächste Schritte
-In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein Oozie-Auftrag ausgeführt wird. Weitere Informationen zum Arbeiten mit HDInsight finden Sie in den folgenden Artikeln:
+In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und ein Oozie-Auftrag ausgeführt wird. Weitere Informationen zum Arbeiten mit HDInsight finden Sie in den folgenden Artikeln:
 
 - [Verwenden des zeitbasierten Oozie-Koordinators mit HDInsight][hdinsight-oozie-coordinator-time]
 - [Hochladen von Daten für Hadoop-Aufträge in HDInsight][hdinsight-upload-data]
@@ -715,7 +711,7 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
 [powershell-install-configure]: powershell-install-configure.md
 [powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/DE-DE/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/de-DE/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
@@ -725,4 +721,4 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

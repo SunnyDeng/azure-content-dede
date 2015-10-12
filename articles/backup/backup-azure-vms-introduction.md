@@ -122,4 +122,4 @@ Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Compute
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

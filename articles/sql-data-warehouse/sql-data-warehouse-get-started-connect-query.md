@@ -184,4 +184,4 @@ Versuchen Sie nun, da Sie eine Verbindung herstellen und Abfragen senden können
 [das Laden von Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
 [Entwickeln von Code]: ./articles/sql-data-warehouse-overview-develop/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

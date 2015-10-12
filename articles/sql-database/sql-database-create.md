@@ -40,7 +40,7 @@ True author is: authors="sonalmm" , ms.author="sonalm".
 |5c. Auf dem Blatt **Neuer Server** können Sie den neuen Server mit V12-Updates erstellen. Weitere Informationen über die Funktionen von V12-Servern finden Sie unter [Neuerungen in Azure SQL-Datenbank V12](sql-database-v12-whats-new.md).| ![Auswählen des V12-Servers][6]|
 |5d. Treffen Sie auf dem Blatt **Neuer Server** Ihre Auswahl, und klicken Sie auf **OK**. Sie kehren zum Blatt **SQL-Datenbank** zurück. Führen Sie dort die übrigen Aktionen zum Erstellen einer Datenbank aus. | ![Abschließen der Aktionen auf dem Blatt "Neuer Server"][8]|
 |6\. Klicken Sie auf **Quelle auswählen**. Sie können eine Datenbank aus verschiedenen Arten von Datenquellen erstellen: aus einer leeren Datenbank, einer Beispieldatenbank oder aus der Sicherung einer Datenbank.| ![Auswählen der Quelle für die Datenbank][10]|
-|7\. Klicken Sie auf dem Blatt **SQL-Datenbank** auf **PRICING TIER**. Sie können einen empfohlenen Tarif auswählen oder mit **Alle anzeigen** alle verfügbaren Tarife durchsuchen. Nachdem Sie Ihre Wahl getroffen haben, klicken Sie auf **Auswählen**. <p> Weitere Informationen zu Tarifen finden Sie unter [Ausführen eines Upgrades für Web-/Business-Datenbanken von SQL-Datenbank auf neue Dienstebenen](./sql-database-upgrade-new-service-tiers/) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn741336.aspx). |![Auswählen einer Preisstufe][7]
+|7\. Klicken Sie auf dem Blatt **SQL-Datenbank** auf **PRICING TIER**. Sie können einen empfohlenen Tarif auswählen oder mit **Alle anzeigen** alle verfügbaren Tarife durchsuchen. Nachdem Sie Ihre Wahl getroffen haben, klicken Sie auf **Auswählen**. <p> Weitere Informationen zu Tarifen finden Sie unter [Ausführen eines Upgrades für Web-/Business-Datenbanken von SQL-Datenbank auf neue Dienstebenen](./sql-database-upgrade-new-service-tiers/) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-service-tiers.md). |![Auswählen einer Preisstufe][7]
 | 8\. Als Nächstes klicken Sie auf dem Blatt **SQL-Datenbank** auf **Optionale Konfiguration**, treffen Ihre Auswahl, und klicken auf **OK**. 
 | 9\. Wenn Sie einen vorhandenen Server ausgewählt haben, sind **Ressourcengruppe** und **Abonnement** bereits ausgewählt. Auf dem Blatt **SQL-Datenbank** wird neben **Ressourcengruppe** und **Abonnement** ein Sperrsymbol angezeigt. Wenn Sie einen neuen Server erstellen, können Sie eine Ressourcengruppe auswählen oder erstellen. Weitere Informationen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](resource-group-overview.md).|![Angeben der Ressourcengruppe][11]
 | 10\. Klicken Sie auf **Erstellen**. Eine neue Datenbank mit den Funktionen von SQL-Datenbank V12 wird erstellt. |![Erstellt eine neue Datenbank][12]
@@ -66,4 +66,4 @@ True author is: authors="sonalmm" , ms.author="sonalm".
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

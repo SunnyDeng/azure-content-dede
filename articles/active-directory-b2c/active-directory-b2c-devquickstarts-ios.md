@@ -17,13 +17,13 @@ Mit Azure AD B2C können Sie Ihren iOS-Apps und Web-APIs in wenigen Schritten le
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 	
-> [AZURE.NOTE]Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für „node.js“ eine API für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure Active Directory-Web-API-Beispiel für Node.js](active-directory-b2c-devquickstarts-api-node.md`).
+> [AZURE.NOTE]Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für node.js eine für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure Active Directory-Web-API-Beispiel für Node.js](active-directory-b2c-devquickstarts-api-node.md`).
 
-> [AZURE.NOTE]Dieser Artikel behandelt nicht das Implementieren von Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
+> [AZURE.NOTE]Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
 
 ## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
 
-Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen, müssen Sie [ein B2C-Verzeichnis erstellen](active-directory-b2c-get-started.md), bevor Sie fortfahren.
+Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen,[ erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
 ## 2\. Erstellen einer Anwendung
 
@@ -32,23 +32,23 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `http://localhost:3000/auth/openid/return` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
-- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen wird. Sie benötigen sie ebenfalls in Kürze.
+- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
-    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## 3\. Erstellen der Richtlinien
 
-> [AZURE.NOTE]Für unsere B2C-Vorschau verwenden Sie beim Client- und Serversetup dieselben Richtlinien. Wenn Sie bereits eine exemplarische Vorgehensweise befolgt und diese Richtlinien erstellt haben, müssen Sie diese nicht erneut erstellen. Sie können die Richtlinien wiederverwenden, die Sie zuvor im Portal erstellt haben, wenn sie die Anforderungen der Anwendung erfüllen.
+In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Anwendung enthält drei Oberflächen für die Identität: Registrierung, Anmeldung und Facebook-Anmeldung. Sie müssen eine Richtlinie jedes Typs erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
 
-In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Diese Anwendung enthält drei Oberflächen für die Identität: Registrierung, Anmeldung und Facebook-Anmeldung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
+- Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
+- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsansprüche in jeder Richtlinie aus. Sie können auch andere Ansprüche auswählen.
+- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
 
-- Wählen Sie den **Anzeigenamen** und einige andere Anmeldeattribute in der Registrierungsrichtlinie aus.
-- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsansprüche in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
-- Notieren Sie sich den **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Er muss das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
 
 ## 4\. Herunterladen des Codes
 
@@ -60,10 +60,10 @@ git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClie
 
 > [AZURE.NOTE]**Zur Durchführung dieses Lernprogramms ist das Herunterladen des Gerüsts erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter iOS enthält das **Gerüst** UX-Code, der ausgeführt wird, nachdem Sie das unten angegebene Lernprogramm ausgeführt haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Hinzufügen von B2C zu einer iOS-Anwendung nicht von Belang.
 
-Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
 
-Laden Sie nun das Podfile mithilfe von Cocoapods. Dadurch wird ein neuer XCode-Arbeitsbereich erstellt, den Sie nun laden. Wenn Sie Cocoapods noch nicht eingerichtet haben, ist dies über [diese Website](https://cocoapods.org) möglich.
+Laden Sie nun das Podfile mithilfe von Cocoapods. Dadurch wird ein neuer XCode-Arbeitsbereich erstellt, den Sie nun laden. Wenn Sie nicht über Cocoapods verfügen, besuchen Sie die [Website zum Einrichten von Cocoapods](https://cocoapods.org).
 
 ```
 $ pod install
@@ -73,7 +73,7 @@ $ open Microsoft Tasks for Consumers.xcworkspace
 
 ## 5\. Konfigurieren der iOS-Aufgabenanwendung
 
-Damit die iOS-Aufgaben-App mit Azure AD B2C kommunizieren kann, müssen Sie einige allgemeine Parameter angeben. Öffnen Sie im Ordner `Microsoft Tasks` die Datei `settings.plist` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<dict>`. Diese Werte werden in der gesamten App verwendet.
+Damit die iOS-Aufgaben-App mit Azure AD B2C kommunizieren kann, müssen Sie einige allgemeine Parameter angeben. Öffnen Sie im Ordner `Microsoft Tasks` die Datei "`settings.plist`" aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<dict>`. Diese Werte werden in der gesamten App verwendet.
 
 ```
 <dict>
@@ -107,7 +107,9 @@ Damit die iOS-Aufgaben-App mit Azure AD B2C kommunizieren kann, müssen Sie eini
 </plist>
 ```
 
-## 6\. Beschaffen von Zugriffstoken und Aufrufen der Aufgaben-API
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
+
+## 6\. Abrufen von Zugriffstoken und Aufrufen der Aufgaben-API
 
 In diesem Abschnitt wird veranschaulicht, wie Sie einen OAuth 2.0-Tokenaustausch in einer Web-App mit den Bibliotheken und Frameworks von Microsoft durchführen. Falls Sie mit **Autorisierungscodes** und **Zugriffstoken** nicht vertraut sein sollten, ist es ratsam, sich die [Referenz zum OAuth 2.0-Protokoll](active-directory-b2c-reference-protocols.md) anzusehen.
 
@@ -147,7 +149,7 @@ completionBlock:(void (^) (ADProfileInfo* userInfo, NSError* error)) completionB
 @end
 ```
 
-Sie werden sehen, dass dies einfache CRUD-Vorgänge unserer API sowie eine `doPolicy`-Methode umfasst, mit der Sie ein Token mit der gewünschten Richtlinie beschaffen können.
+Sie werden sehen, dass dies einfache CRUD-Vorgänge unserer API sowie eine `doPolicy`-Methode umfasst, mit der Sie ein Token mit der gewünschten Richtlinie abrufen können.
 
 Außerdem werden Sie feststellen, dass zwei andere Headerdateien definiert werden müssen, in denen unser Aufgabenelement und unsere Richtliniendaten enthalten sind. Lassen Sie uns diese jetzt erstellen:
 
@@ -217,7 +219,7 @@ Erstellen Sie eine Datei namens `samplesPolicyData.m` mit dem folgenden Code:
 
 Der kurze Code zum Speichern unserer Objekte für die Benutzeroberfläche ist fertig. Jetzt müssen wir den Code zum Zugreifen auf ADAL für iOS mit den Parametern schreiben, die wir in die Datei `settings.plist` einfügen, um ein Zugriffstoken für unseren Aufgabenserver zu erhalten. Da dies unübersichtlich werden kann, sollten Sie sich genau konzentrieren.
 
-Wir führen alle Schritte in `samplesWebAPIConnector.m` aus.
+Die gesamte Arbeit wird in `samplesWebAPIConnector.m` erledigt.
 
 Zuerst erstellen wir die `doPolicy()`-Implementierung, die wir in unserer Headerdatei `samplesWebAPIConnector.h` geschrieben haben:
 
@@ -289,7 +291,7 @@ Als Nächstes schreiben wir die `convertPolicyToDictionary`-Methode unter den Co
 }
 
 ```
-Mit diesem recht einfachen Code wird lediglich ein "p" an unsere Richtlinie angefügt, sodass die Abfrage "?p=<policy>" lautet.
+Mit diesem recht einfachen Code wird lediglich ein "p" an unsere Richtlinie angefügt, sodass die Abfrage wie folgt "?p=<policy>" lautet.
 
 Jetzt schreiben wir unsere umfangreiche `getClaimsWithPolicyClearingCache`-Methode. Aufgrund ihres Umfangs wird sie in einem separaten Abschnitt beschrieben.
 
@@ -347,7 +349,7 @@ Diesen Code schreiben wir jetzt:
 
 ```
 
-Der erste Teil sollte Ihnen bekannt vorkommen. Wir laden die Einstellungen, die in `Settings.plist` bereitgestellt wurden, und weisen sie `data` zu. Anschließend richten wir `ADAuthenticationError` ein, um alle Fehler zu erfassen, die von ADAL für iOS kommen. Außerdem erstellen wir ein `authContext`-Element, mit dem unser Aufruf von ADAL eingerichtet wird. Wir übergeben unsere *Autorität*, um zu beginnen. Außerdem versehen wir `authContext` mit einem Verweis auf unseren übergeordneten Controller, damit wir dorthin zurückkehren können. Wir konvertieren auch unseren `redirectURI`, wobei es sich um eine Zeichenfolge in unserer `settings.plist` handelt, in den von ADAL erwarteten NSURL-Typ. Zuletzt richten wir eine `correlationId` ein, wobei es sich lediglich um eine UUID handelt, die den Aufruf über den Client zum Server und zurück verfolgen kann. Dies ist hilfreich für das Debuggen.
+Der erste Teil sollte Ihnen bekannt vorkommen. Wir laden die Einstellungen, die in `Settings.plist` bereitgestellt wurden, und weisen sie `data` zu. Anschließend richten wir `ADAuthenticationError` ein, um alle Fehler zu erfassen, die von ADAL für iOS kommen. Außerdem erstellen wir ein `authContext`-Element, mit dem unser Aufruf von ADAL eingerichtet wird. Wir übergeben unsere *authority*, um zu beginnen. Außerdem versehen wir `authContext` mit einem Verweis auf unseren übergeordneten Controller, damit wir dorthin zurückkehren können. Wir konvertieren auch unseren `redirectURI`, wobei es sich um eine Zeichenfolge in unserer `settings.plist` handelt, in den von ADAL erwarteten NSURL-Typ. Zuletzt richten wir eine `correlationId` ein, wobei es sich lediglich um eine UUID handelt, die den Aufruf über den Client zum Server und zurück verfolgen kann. Dies ist hilfreich für das Debuggen.
 
 Nun kommen wir zum eigentlichen Aufruf von ADAL. Hierbei verändert sich der Aufruf gegenüber der Form, die Sie von der vorherigen Verwendung von ADAL für iOS erwarten:
 
@@ -366,7 +368,7 @@ Nun kommen wir zum eigentlichen Aufruf von ADAL. Hierbei verändert sich der Auf
 
 Hier sehen Sie, dass der Aufruf relativ einfach aufgebaut ist.
 
-**scopes**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **additionalScopes**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie für Ihre Anwendung verwenden können. Dies wird in Zukunft benötigt. **clientId**: Anwendungs-ID, die Sie vom Portal erhalten haben. **redirectURI**: Die Umleitung, über die das Token voraussichtlich wieder bereitgestellt wird. **identifier**: Dies ist eine Möglichkeit zum Identifizieren des Benutzers, um zu ermitteln, ob im Cache ein verwendbares Token enthalten ist (gegenüber dem ständigen Abfragen eines weiteren Tokens vom Server). Sie sehen, dass hierfür ein Typ mit dem Namen `ADUserIdentifier` genutzt wird und dass wir angeben können, was wir als ID verwenden möchten. Es ist ratsam, "username" zu verwenden. **promptBehavior**: Dies ist veraltet und sollte AD\_PROMPT\_ALWAYS lauten. **extraQueryParameters**: Zusätzliche Elemente, die Sie im URL-codierten Format an den Server übergeben möchten. **policy**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**scopes**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **additionalScopes**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie für Ihre Anwendung verwenden können. Wird zukünftig verwendet. **clientId**: Die Anwendungs-ID, die Sie vom Portal erhalten haben. **redirectURI**: Die Umleitung, die für das Postback des Tokens erwartet wird. **identifier**: Dies ist eine Möglichkeit zum Identifizieren des Benutzers, um zu ermitteln, ob im Cache ein verwendbares Token enthalten ist (im Gegensatz zum ständigen Abfragen eines weiteren Tokens vom Server). Sie sehen, dass hierfür ein Typ mit dem Namen `ADUserIdentifier` genutzt wird und dass wir angeben können, was wir als ID verwenden möchten. Es ist ratsam, "username" zu verwenden. **promptBehavior**: Dies ist veraltet und sollte AD\_PROMPT\_ALWAYS lauten. **extraQueryParameters**: Zusätzliche Elemente, die Sie im URL-codierten Format an den Server übergeben möchten. **policy**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
 
 Sie sehen im completionBlock, dass wir das `ADAuthenticationResult`-Element übergeben, in dem unser Token und die Profilinformationen enthalten sind (falls der Aufruf erfolgreich war).
 
@@ -393,7 +395,7 @@ completionBlock:(void (^) (bool, NSError* error)) completionBlock;
 
 Mit `getTasksList` wird ein Array bereitgestellt, das die Aufgaben auf unserem Server darstellt. Mit `addTask` und `deleteTask` wird die nachfolgende Aktion durchgeführt und bei erfolgreicher Ausführung TRUE oder FALSE zurückgegeben.
 
-Zuerst schreiben wir unsere `getTaskList`:
+Zuerst schreiben wir unser `getTaskList`-Element:
 
 ```
 
@@ -486,7 +488,7 @@ Wir fügen den folgenden Code der Datei „samplesWebAPIConnector.m“ hinzu:
 }
 ```
 
-Wie Sie sehen, wird ein Web-URI verwendet, das Token wird mit dem Header `Bearer` in HTTP hinzugefügt, und anschließend erfolgt die Rückgabe an uns. Wir rufen die `getTokenClearingCache`-API auf, was auf den ersten Blick vielleicht komisch aussieht. Wir verwenden diesen Aufruf aber einfach, um ein Token aus dem Cache abzurufen, und stellen sicher, dass es noch gültig ist (getToken*-Aufrufe erledigen dies für uns per Abfrage an ADAL). Wir verwenden diesen Code bei jedem Aufruf. Nun kommen wir zurück zur Erstellung unserer zusätzlichen Task-Methoden.
+Wie Sie sehen, wird ein Web-URI verwendet, dem das Token wird mit dem Header `Bearer` in HTTP hinzugefügt wird. Anschließend erfolgt die Rückgabe an uns. Wir rufen die `getTokenClearingCache`-API auf, was auf den ersten Blick vielleicht sonderbar erscheint. Wir verwenden diesen Aufruf aber einfach, um ein Token aus dem Cache abzurufen und sicherzustellen, dass es noch gültig ist (getToken*-Aufrufe erledigen dies für uns per Abfrage an ADAL). Wir verwenden diesen Code bei jedem Aufruf. Nun kommen wir zurück zur Erstellung unserer zusätzlichen Task-Methoden.
 
 Wir schreiben `addTask`:
 
@@ -650,4 +652,4 @@ Sie können nun mit den B2C-Themen für fortgeschrittenere Benutzer fortfahren. 
 
 [Anpassen der Benutzeroberfläche einer B2C-App >>]()
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

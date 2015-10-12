@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-dotnet" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="06/23/2015"
+	ms.date="09/25/2015"
 	ms.author="yuaxu"/>
 
 # Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer
@@ -103,7 +103,7 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 <!-- URLs. -->
 [Erste Schritte mit der Authentifizierung]: app-service-mobile-dotnet-backend-ios-get-started-push-preview.md
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-ios-get-started-push-preview.md
-[Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
+[Vorlagen]: https://msdn.microsoft.com/de-DE/library/dn530748.aspx
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

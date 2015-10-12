@@ -60,4 +60,4 @@ Weitere Informationen zu Azure Backup finden Sie unter
 - [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 - [Azure Backup testen](backup-try-azure-backup-in-10-mins)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

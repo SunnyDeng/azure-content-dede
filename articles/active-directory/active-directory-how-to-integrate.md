@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/17/2015"
+   ms.date="09/24/2015"
    ms.author="mbaldwin"/>
 
 # Integration in Azure Active Directory
@@ -76,7 +76,7 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 ### Einfache Entwicklung
 
-**Protokolle gemäß Branchenstandard.** Microsoft ist bestrebt, Branchenstandards zu unterstützen. Azure AD unterstützt die Authentifizierungsprotokolle SAML 2.0, OpenID Connect 1.0, OAuth 2.0 und WS-Federation 1.2. Der Graph-API ist OData-4.0-kompatibel. Wenn die Anwendung bereits das SAML 2.0- oder OpenID Connect 1.0-Protokoll für die Verbundanmeldung unterstützt, kann das Hinzufügen dieser Unterstützung für Azure AD einfach erfolgen. Erfahren Sie mehr über [von Azure AD unterstützte Authentifizierungsprotokolle](../authentication-protocols.md).
+**Protokolle gemäß Branchenstandard.** Microsoft ist bestrebt, Branchenstandards zu unterstützen. Azure AD unterstützt die Authentifizierungsprotokolle SAML 2.0, OpenID Connect 1.0, OAuth 2.0 und WS-Federation 1.2. Der Graph-API ist OData-4.0-kompatibel. Wenn die Anwendung bereits das SAML 2.0- oder OpenID Connect 1.0-Protokoll für die Verbundanmeldung unterstützt, kann das Hinzufügen dieser Unterstützung für Azure AD einfach erfolgen. Erfahren Sie mehr über [von Azure AD unterstützte Authentifizierungsprotokolle](active-directory-authentication-protocols.md).
 
 **Open-Source-Bibliotheken.** Microsoft bietet zur Beschleunigung der Entwicklung für gängige Sprachen und Plattformen vollständig unterstützte Open-Source-Bibliotheken. Der Quellcode wird unter Apache 2.0 lizenziert, und Sie sind eingeladen, sich an den Projekten zu beteiligen. Erfahren Sie mehr über [Azure AD-Authentifizierungsbibliotheken](active-directory-authentication-libraries.md).
 
@@ -90,4 +90,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 [Anmelden von Benutzern über Azure AD](active-directory-authentication-scenarios.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -34,9 +34,9 @@ Dieses Beispiel umfasst ein Abonnement, das Folgendes enthält:
 - Zwei Windows Server-Instanzen, die Back-End-Anwendungsserver darstellen ("AppVM01", "AppVM02")
 - Eine Windows Server-Instanz, die einen DNS-Server darstellt ("DNS01")
 
-Der Referenzabschnitt enthält ein PowerShell-Skript, mit dem sich der größte Teil der oben beschriebenen Umgebung erstellen lässt. Die Erstellung der virtuellen Computer und Netzwerke wird zwar durch das Beispielskript ausgeführt, in diesem Dokument jedoch nicht im Einzelnen beschrieben.
+Der Referenzabschnitt enthält ein PowerShell-Skript, mit dem sich der größte Teil der oben beschriebenen Umgebung erstellen lässt. Die Erstellung der virtuellen Computer und Netzwerke wird zwar durch das Beispielskript ausgeführt, aber dies wird in diesem Dokument nicht im Einzelnen beschrieben.
 
-Erstellen der Umgebung:
+So erstellen Sie die Umgebung
 
   1.	Speichern Sie die im Referenzabschnitt enthaltene und mit dem Namen, dem Speicherort und den IP-Adressen für das jeweilige Szenario aktualisierte XML-Netzwerkkonfigurationsdatei.
   2.	Aktualisieren Sie die Benutzervariablen im Skript gemäß der Umgebung, in der das Skript ausgeführt werden soll (Abonnements, Dienstnamen usw.).
@@ -62,7 +62,7 @@ Folgende Regeln werden deklarativ für eingehenden Datenverkehr erstellt:
 5.	Jeglicher Datenverkehr (alle Ports) aus dem Internet in das gesamte VNet (beide Subnetze) wird abgelehnt.
 6.	Jeglicher Datenverkehr (alle Ports) vom Front-End-Subnetz zum Back-End-Subnetz wird abgelehnt.
 
-Diese Regeln sind an jedes Subnetz gebunden. Wenn also eine HTTP-Anforderung aus dem Internet an den Webserver gesendet wird, gilt sowohl Regel 3 (Zulassen) als auch Regel 5 (Ablehnen). Da jedoch Regel 3 eine höhere Priorität besitzt, wird nur diese angewendet, und Regel 5 wird nicht berücksichtigt. Aus diesem Grund wird die HTTP-Anforderung für den Webserver als zulässig eingestuft. Falls versucht würde, denselben Datenverkehr an den DNS01-Server zu senden, würde Regel 5 (Ablehnen) zuerst angewendet, der Datenverkehr also nicht an den Server übergeben. Mit Regel 6 (Ablehnen) wird die Kommunikation des Front-End-Subnetzes mit dem Back-End-Subnetz blockiert (mit Ausnahme von zulässigem Datenverkehr gemäß Regeln 1 und 4). Dies dient dem Schutz des Back-End-Netzwerks, falls die Webanwendung im Front-End durch einen Angriff gefährdet würde. Der Angreifer hätte dann nur eingeschränkten Zugriff auf das "geschützte" Back-End-Netzwerk (nur auf Ressourcen, die auf dem Server AppVM01 verfügbar gemacht wurden).
+Diese Regeln sind an jedes Subnetz gebunden. Wenn also eine HTTP-Anforderung aus dem Internet an den Webserver gesendet wird, gilt sowohl Regel 3 (Zulassen) als auch Regel 5 (Ablehnen). Da jedoch Regel 3 eine höhere Priorität besitzt, wird nur diese angewendet, und Regel 5 wird nicht berücksichtigt. Aus diesem Grund wird die HTTP-Anforderung für den Webserver als zulässig eingestuft. Falls versucht würde, denselben Datenverkehr an den DNS01-Server zu senden, würde Regel 5 (Ablehnen) zuerst angewendet, der Datenverkehr also nicht an den Server übergeben. Mit Regel 6 (Verweigern) wird die Kommunikation des Front-End-Subnetzes mit dem Back-End-Subnetz blockiert (mit Ausnahme von zulässigem Datenverkehr in den Regeln 1 und 4). Dies dient dem Schutz des Back-End-Netzwerks, falls ein Angreifer die Webanwendung am Front-End attackiert. Der Angreifer hat dann nur beschränkten Zugriff auf das „geschützte“ Back-End-Netzwerk (nur auf Ressourcen, die auf dem Server AppVM01 verfügbar gemacht werden).
 
 Es gibt eine Standardregel für ausgehenden Datenverkehr, die das Senden von Datenverkehr an das Internet zulässt. In diesem Beispiel wird ausgehender Datenverkehr zugelassen, und es werden keine ausgehenden Regeln geändert. Um den Datenverkehr in beide Richtungen zu sperren, ist benutzerdefiniertes Routing (User Defined Routing, UDR) erforderlich. Dies wird in Beispiel 3 erläutert.
 
@@ -149,7 +149,7 @@ Jede Regel wird im Folgenden detailliert beschrieben (Hinweis: Jedes Element in 
   3.	NSG-Regel 3 (Internet an IIS01) trifft zu, Datenverkehr wird zugelassen, Regelverarbeitung wird beendet.
 4.	Datenverkehr trifft an interner IP-Adresse des Webservers IIS01 ein (10.0.1.5).
 5.	IIS01 lauscht auf Webdatenverkehr, empfängt diese Anforderung und beginnt mit der Verarbeitung der Anforderung.
-6.	IIS01 fragt Informationen von SQL Server auf AppVM01 ab.
+6.	IIS01 fragt Informationen von SQL Server unter AppVM01 ab.
 7.	Keine ausgehenden Regeln im Front-End-Subnetz, Datenverkehr wird zugelassen.
 8.	Das Back-End-Subnetz beginnt mit der Verarbeitung der eingehenden Regel:
   1.	NSG-Regel 1 (DNS) trifft nicht zu, weiter zur nächsten Regel.
@@ -175,7 +175,7 @@ Jede Regel wird im Folgenden detailliert beschrieben (Hinweis: Jedes Element in 
 
 #### (*Zulässig*) Webserver-DNS-Lookup auf DNS-Server
 1.	Der Webserver IIS01 benötigt einen Datenfeed von "www.data.gov", muss jedoch die Adresse auflösen.
-2.	Die Netzwerkkonfiguration für das VNet listet DNS01 (10.0.2.4 im Back-End-Subnetz) als primären DNS-Server, IIS01 sendet die DNS-Anforderung an DNS01.
+2.	Die Netzwerkkonfiguration für das VNet listet DNS01 (10.0.2.4 im Back-End-Subnetz) als primären DNS-Server auf, IIS01 sendet die DNS-Anforderung an DNS01.
 3.	Keine ausgehenden Regeln im Front-End-Subnetz, Datenverkehr wird zugelassen.
 4.	Das Back-End-Subnetz beginnt mit der Verarbeitung der eingehenden Regel:
   1.	 NSG-Regel 1 (DNS) trifft zu, Datenverkehr wird zugelassen, Regelverarbeitung wird beendet.
@@ -218,7 +218,7 @@ Jede Regel wird im Folgenden detailliert beschrieben (Hinweis: Jedes Element in 
 #### (*Abgelehnt*) Zugriff auf SQL aus dem Web über Firewall
 1.	Internetbenutzer fordert SQL-Daten von FrontEnd001.CloudApp.Net (Clouddienst mit Schnittstelle zum Internet) an.
 2.	Da keine Endpunkte für SQL geöffnet sind, würde die Anforderung nicht durch den Clouddienst geleitet und daher die Firewall nicht erreichen.
-3.	Wären aus irgendeinem Grund Endpunkte offen, würde das Front-End-Subnetz mit der Verarbeitung der eingehenden Regel beginnen:
+3.	Wenn Endpunkte aus irgendeinem Grund geöffnet wären, würde das Front-End-Subnetz mit der Verarbeitung der eingehenden Regel beginnen:
   1.	NSG-Regel 1 (DNS) trifft nicht zu, weiter zur nächsten Regel.
   2.	NSG-Regel 2 (RDP) trifft nicht zu, weiter zur nächsten Regel.
   3.	NSG-Regel 3 (Internet an IIS01) trifft zu, Datenverkehr wird zugelassen, Regelverarbeitung wird beendet.
@@ -240,7 +240,7 @@ Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes a
 1.	Herstellen einer Verbindung mit einem Azure-Abonnement
 2.	Erstellen eines neuen Speicherkontos
 3.	Erstellen eines neuen VNets und zweier Subnetze, wie in der Netzwerkkonfigurationsdatei definiert
-4.	Erstellen von vier Windows Server-VMs
+4.	Erstellen von Windows Server-VMs (Build 4)
 5.	Konfigurieren von Netzwerksicherheitsgruppen einschließlich:
   -	Erstellen einer Netzwerksicherheitsgruppe
   -	Auffüllen der Gruppe mit Regeln
@@ -248,7 +248,7 @@ Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes a
 
 Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC oder Server ausgeführt werden.
 
->[AZURE.IMPORTANT]Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen beachtet und ggf. gelöst werden.
+>[AZURE.IMPORTANT]Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen genauer beachtet und ggf. gelöst werden.
 
 
 	<# 
@@ -508,7 +508,7 @@ Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC 
 	  
 
 #### Netzwerkkonfigurationsdatei
-Speichern Sie diese XML-Datei mit dem aktualisierten Speicherort, und fügen Sie den Link zu dieser Datei in die $NetworkConfigFile-Variable in obigem Skript ein.
+Speichern Sie diese XML-Datei mit dem aktualisierten Speicherort, und fügen Sie den Link zu dieser Datei in die $NetworkConfigFile-Variable im obigen Skript ein.
 	
 	<NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
 	  <VirtualNetworkConfiguration>
@@ -550,4 +550,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [HOME]: ../best-practices-network-security.md
 [SampleApp]: ./virtual-networks-sample-app.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

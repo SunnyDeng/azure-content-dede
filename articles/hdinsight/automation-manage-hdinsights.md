@@ -44,4 +44,4 @@ Nun, da Sie die Grundlagen von Azure Automation kennen und wissen, wie es zum Ve
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

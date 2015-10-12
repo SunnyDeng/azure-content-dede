@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Analysieren der Kundenabwanderung mithilfe von Machine Learning | Microsoft Azure" 
-	description="Fallstudie zur Entwicklung eines integrierten Modells für die Analyse und Bewertung der Kundenbindung" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="jeannt" 
-	manager="paulettm" 
+<properties
+	pageTitle="Analysieren der Kundenabwanderung mithilfe von Machine Learning | Microsoft Azure"
+	description="Fallstudie zur Entwicklung eines integrierten Modells für die Analyse und Bewertung der Kundenbindung"
+	services="machine-learning"
+	documentationCenter=""
+	authors="jeannt"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/02/2015" 
+<tags
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/28/2015" 
 	ms.author="jeannt"/>
 
 # Analysieren der Kundenabwanderung mithilfe von Microsoft Azure Machine Learning
@@ -54,17 +54,17 @@ Ein allgemeiner Problemlösungsprozess für die Kundenabwanderung ist in den Abb
 Dieser zukunftsorientierte Ansatz stellt die beste Möglichkeit zur Behandlung von Abwanderung dar, bringt jedoch Komplexität mit sich: Wir müssen einen Multimodell-Prototyp entwickeln und Abhängigkeiten zwischen den Modellen nachverfolgen. Die Interaktion zwischen den Modellen kann gekapselt werden, wie im folgenden Diagramm veranschaulicht:
 
 ![][2]
- 
+
 *Abbildung 4: Vereinheitlichter Prototyp mit mehreren Modellen*
 
 Interaktionen zwischen den verschiedenen Modellen sind entscheidend, wenn wir einen ganzheitlichen Ansatz für die Kundenbindung bereitstellen müssen. Jedes Modell lässt im Laufe der Zeit zwangsläufig nach. Daher besteht die Architektur aus einer impliziten Schleife (ähnlich dem Prototyp, der vom CRISP-DM Data Mining-Standard, [***3***], festgelegt wurde).
- 
+
 Der Gesamtzyklus von Risiko-Entscheidung-Marketingsegmentierung/-spaltung entspricht weiterhin einer verallgemeinerten Struktur, die auf viele Geschäftsprobleme angewendet werden kann. Die Abwanderungsanalyse ist einfach ein starker Vertreter dieser Gruppe von Problemen, da sie alle Merkmale eines komplexen Geschäftsproblems aufweist, das keine vereinfachte vorhersehbare Lösung gestattet. Die gesellschaftlichen Aspekte des modernen Ansatzes für die Abwanderung werden im Ansatz nicht ausdrücklich hervorgehoben, aber die gesellschaftlichen Aspekte sind wie bei allen Modellen auch im Prototyp für die Modellerstellung gekapselt.
 
 Eine interessante Ergänzung ist hier die Analyse großer Datenmengen. Die heutigen Telekommunikations- und Einzelhandelsunternehmen erfassen flächendeckend Daten zu ihren Kunden, und es ist leicht vorherzusehen, dass sich der Bedarf an Verbindungen zwischen den verschiedenen Modellen zu einem allgemeinen Trend entwickelt, wenn man aufkommende Trends wie das "Internet der Dinge" und allgegenwärtige Geräte bedenkt, die es Unternehmen gestatten, intelligente Lösungen auf verschiedenen Ebenen einzusetzen.
 
  
-##Implementieren des Modellierungs-Prototyps in Machine Learning Studio 
+##Implementieren des Modellierungs-Prototyps in Machine Learning Studio
 Wie können wir für das soeben beschriebene Problem einen integrierten Ansatz für die Modellierung und Bewertung implementieren? In diesem Abschnitt wird veranschaulicht, wie dies mithilfe von Azure Machine Learning Studio erreicht wird.
 
 Der Multi-Modell-Ansatz ist beim Entwerfen eines globalen Prototyps für die Abwanderung zwingend erforderlich. Selbst der (voraussagende) Bewertungsteil des Ansatzes sollte mehrere Modelle einbeziehen.
@@ -72,7 +72,7 @@ Der Multi-Modell-Ansatz ist beim Entwerfen eines globalen Prototyps für die Abw
 Das folgende Diagramm zeigt den erstellten Prototyp, der vier Bewertungsalgorithmen in Machine Learning Studio einbezieht, um die Abwanderung vorherzusagen. Der Grund für die Verwendung eines Multi-Modell-Ansatzes besteht nicht nur darin, einen Gesamtklassifizierer zum Erhöhen der Genauigkeit zu erstellen, sondern er dient auch zum Schutz vor einer Überanpassung sowie zur Verbesserung der vorgeschriebenen Funktionsauswahl.
 
 ![][3]
- 
+
 *Abbildung 5: Prototyp eines Abwanderungsmodell-Ansatzes*
 
 Die folgenden Abschnitte enthalten Einzelheiten zum Bewertungsmodell des Prototyps, das wir mithilfe von Machine Learning Studio implementiert haben.
@@ -91,23 +91,23 @@ Der wichtigste Punkt dabei ist, dass der gesamte Prozess, einschließlich ETL, F
 Die folgenden Diagramme veranschaulichen die verwendeten Daten.
 
 ![][4]
- 
+
 *Abbildung 6: Auszug aus der Datenquelle (verschleiert)*
 
 ![][5]
 
- 
+
 *Abbildung 7: Aus der Datenquelle extrahierte Funktionen*
-> Beachten Sie, dass diese Daten privat sind, weshalb Modell und Daten nicht freigegeben werden dürfen. Sie finden jedoch ein ähnliches Modell mit öffentlich verfügbaren Daten in diesem Beispielexperiment im [Modellkatalog](http://gallery.azureml.net/): [Abwanderung von Kunden eines Telekommunikationsanbieters](http://gallery.azureml.net/Experiment/31c19425ee874f628c847f7e2d93e383).
-> 
+> Beachten Sie, dass diese Daten privat sind, weshalb Modell und Daten nicht freigegeben werden dürfen. Sie finden jedoch ein ähnliches Modell mit öffentlich verfügbaren Daten in diesem Beispielexperiment im [Cortana Analytics-Katalog](http://gallery.azureml.net/): [Abwanderung von Kunden eines Telekommunikationsanbieters](http://gallery.azureml.net/Experiment/31c19425ee874f628c847f7e2d93e383).
+>
 
 ###Im Prototyp verwendete Algorithmen
 
 Wir haben die folgenden vier Machine Learning-Algorithmen für die Erstellung des Prototyps verwendet (keine Anpassung):
 
 1.	Logistische Regression (LR)
-2.	Boosted Decision Tree (BT, verstärkter Entscheidungsbaum) 
-3.	Averaged Perceptron (AP, gemitteltes Perzeptron) 
+2.	Boosted Decision Tree (BT, verstärkter Entscheidungsbaum)
+3.	Averaged Perceptron (AP, gemitteltes Perzeptron)
 4.	Support Vector Machine (SVM, Stützvektormethode)  
 
 
@@ -115,7 +115,7 @@ Das folgende Diagramm veranschaulicht einen Teil der Experimententwurfsoberfläc
 
 ![][6]
 
- 
+
 *Abbildung 8: Erstellen von Modellen in Machine Learning Studio*
 
 ###Bewertungsmethoden
@@ -123,7 +123,7 @@ Wir haben die vier Modelle mithilfe eines bezeichneten Trainings-DataSets bewert
 
 Wir haben das Bewertungs-DataSet auch mit der Desktop-Edition von SAS Enterprise Miner 12 an ein vergleichbares Modell übermittelt. Wir maßen die Genauigkeit des SAS-Modells und aller vier Machine Learning Studio-Modelle.
 
-##Ergebnisse 
+##Ergebnisse
 In diesem Abschnitt werden unsere Ergebnisse zur Genauigkeit der Modelle auf Basis des Bewertungsdatasets präsentiert.
 
 ###Richtigkeit und Genauigkeit der Bewertung
@@ -133,7 +133,7 @@ Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassi
 
 ![][7]
 
- 
+
 *Abbildung 9: Fläche unter der Kurve für den Passauer Prototyp*
 
 ###Verwenden von AUC zum Vergleichen von Ergebnissen
@@ -154,7 +154,7 @@ Ebenso ist die Richtigkeit wichtiger als die Genauigkeit, da wir am stärksten a
 Das folgende Diagramm aus Wikipedia veranschaulicht die Beziehung in einer einfach zu verstehenden Grafik:
 
 ![][8]
- 
+
 *Abbildung 10: Kompromiss zwischen Richtigkeit und Genauigkeit*
 
 ###Ergebnisse für Richtigkeit und Genauigkeit für das Boosted Tree-Modell  
@@ -165,7 +165,7 @@ Das folgende Diagramm zeigt die Originalergebnisse der Bewertung mithilfe des Ma
 
 *Abbildung 11: Merkmale des Boosted Decision Tree-Modells*
 
-##Leistungsvergleich 
+##Leistungsvergleich
 Wir haben die Geschwindigkeit, mit der Daten mithilfe der Machine Learning Studio-Modelle bewertet wurden, mit einem vergleichbaren Modell verglichen, das mithilfe der Desktopversion von SAS Enterprise Miner 12.1 erstellt wurde.
 
 Die folgende Tabelle fasst die Leistung der Algorithmen zusammen:
@@ -184,16 +184,16 @@ In der Telekommunikationsbranche haben sich verschiedene Methoden zur Analyse de
 -	Ableitung der Metriken für vier grundlegende Kategorien:
 	-	**Entität (z. B. ein Abonnement)**. Bereitstellung grundlegender Informationen zum Abonnement und/oder Kunden, das/der Gegenstand der Abwanderung ist.
 	-	**Aktivität**: Abrufen aller möglichen Nutzungsinformationen, die sich auf die Entität beziehen, z. B. die Anzahl der Anmeldungen.
-	-	**Kundensupport**. Sammeln von Informationen aus Kundensupportprotokollen, um anzuzeigen, ob es für das Abonnement Probleme oder Interaktionen mit dem Kundensupport gab. 
+	-	**Kundensupport**. Sammeln von Informationen aus Kundensupportprotokollen, um anzuzeigen, ob es für das Abonnement Probleme oder Interaktionen mit dem Kundensupport gab.
 	-	**Wettbewerbs- und Geschäftsdaten**. Abrufen aller möglichen Informationen zum Kunden (können nicht verfügbar oder schwer nachzuverfolgen sein).
 -	Verwenden der Gewichtung zur Steuerung der Funktionsauswahl. Das bedeutet, dass das Boosted Decision Tree-Modell immer einen vielversprechenden Ansatz darstellt.  
 
 Die Verwendung der vorherigen vier Kategorien schafft die Illusion, dass ein einfacher *deterministischer* Ansatz basierend auf Indizes, die auf angemessenen Faktoren pro Kategorie geformt sind, ausreichen sollten, um abwanderungsgefährdete Kunden zu identifizieren. Obwohl dieser Gedanke plausibel scheint, beruht er leider auf einem falschen Verständnis. Der Grund hierfür ist, dass die Abwanderung ein temporaler Effekt ist, während die zur Abwanderung führenden Faktoren normalerweise schwankende Zustände aufweisen. Was bringt einen Kunden dazu, zu glauben, dass es einen Unterschied macht, ob er heute oder morgen oder in sechs Monaten abwandert? Daher ist ein *Wahrscheinlichkeitsmodell* erforderlich.
- 
+
 Diese wichtige Beobachtung wird in Unternehmen häufig übersehen, die im Allgemeinen einen Business Intelligence-orientierten Ansatz für die Analyse bevorzugen (hauptsächlich, da er besser zu verkaufen ist und eine unkomplizierte Automatisierung gestattet).
 
 Die Aussicht der Self-Service-Analyse mithilfe von Machine Learning Studio ist jedoch, dass die vier Informationskategorien, die nach Geschäftsbereich oder Abteilung bewertet werden, für das maschinelle Lernen hinsichtlich der Abwanderung zu einer wichtigen Quelle werden.
- 
+
 Eine weitere interessante Funktion von Azure Machine Learning ist die Möglichkeit, dem Repository der bereits verfügbaren vordefinierten Module ein benutzerdefiniertes Modul hinzuzufügen. Diese Funktion bietet im Wesentlichen eine Möglichkeit, Bibliotheken auszuwählen und Vorlagen für vertikale Märkte zu erstellen. Sie ist am Markt ein wichtiges Unterscheidungsmerkmal von Azure Machine Learning.
 
 Wir hoffen, dieses Thema weiter behandeln zu können, insbesondere in Bezug auf die Analyse großer Datenmengen.
@@ -204,7 +204,7 @@ In diesem Dokument wird ein sinnvoller Ansatz zur Bewältigung eines allgemeinen
 
 Konnte Ihnen dieses Dokument helfen? Bitte senden Sie uns Ihr Feedback. Teilen Sie uns auf einer Skala von 1 (schlecht) bis 5 (ausgezeichnet) mit, wie Sie dieses Dokument bewerten, und nennen Sie uns einen Grund für diese Bewertung. Beispiel:
 
--	Erfolgt die positive Bewertung aufgrund geeigneter Beispiele, ausgezeichneter Screenshots, anschaulicher Beschreibungen oder aus anderen Gründen? 
+-	Erfolgt die positive Bewertung aufgrund geeigneter Beispiele, ausgezeichneter Screenshots, anschaulicher Beschreibungen oder aus anderen Gründen?
 -	Erfolgt die negative Bewertung aufgrund schlechter Beispiele, ungenauer Screenshots oder missverständlicher Beschreibungen?  
 
 Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whitepaper zu verbessern.
@@ -214,7 +214,7 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 [1]Predictive Analytics: Beyond the Predictions, W. McKnight, Information Management, Juli/August 2011, S. 18-20.
 
 [2] [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision) auf Wikipedia
- 
+
 [3] [CRISP-DM 1.0: Step-by-Step Data Mining Guide](http://www.the-modeling-agency.com/crisp-dm.pdf)
 
 [4] Big Data Marketing
@@ -223,9 +223,9 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 ##Anhang
 
 ![][10]
- 
+
 *Abbildung 12: Snapshot einer Präsentation zum Abwanderungs-Prototyp*
-  
+
 
 [1]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-1.png
 [2]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-2.png
@@ -237,6 +237,5 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 [8]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-8.png
 [9]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-9.png
 [10]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-10.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

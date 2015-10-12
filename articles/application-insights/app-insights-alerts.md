@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/14/2015" 
+	ms.date="09/23/2015" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -34,7 +34,7 @@ Wenn Sie Application Insights noch nicht für Ihre App eingerichtet haben, [hole
 
 Um eine E-Mail zu erhalten, wenn eine Metrik einen Schwellenwert überschreitet, starten Sie entweder vom Metrik-Explorer oder von der Kachel "Warnungsregeln" auf dem Blatt "Übersicht".
 
-![Klicken Sie auf dem Blatt "Warnungsregeln" auf "Warnung hinzufügen". Legen Sie Ihre App als die zu messende Ressource fest, geben Sie einen Namen für die Warnung ein, und wählen eine Metrik.](./media/app-insights-alerts/01-set-metric.png)
+![Klicken Sie auf dem Blatt "Warnungsregeln" auf "Warnung hinzufügen". Legen Sie Ihre App als die zu messende Ressource fest, geben Sie einen Namen für die Warnung ein, und wählen Sie eine Metrik.](./media/app-insights-alerts/01-set-metric.png)
 
 Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "(Komponenten)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
 
@@ -50,6 +50,10 @@ Sie erhalten eine E-Mail, wenn sich ein Warnungsstatus von "Inaktiv" in "Aktiv" 
 
 Der aktuelle Status jeder Warnung wird im Fenster "Warnungsregeln" angezeigt.
 
+Die Dropdownliste "Warnungen" enthält einen Überblick über die letzten Aktivitäten:
+
+![](./media/app-insights-alerts/010-alert-drop.png)
+
 Der Verlauf von Statusänderungen befindet sich im Ereignisprotokoll "Vorgänge":
 
 ![Klicken Sie auf dem Blatt "Übersicht" im unteren Bereich auf "Ereignisse der letzten Woche"](./media/app-insights-alerts/09-alerts.png)
@@ -57,6 +61,27 @@ Der Verlauf von Statusänderungen befindet sich im Ereignisprotokoll "Vorgänge"
 *Beziehen sich diese "Ereignisse" auf Telemetrie- oder benutzerdefinierte Ereignisse?*
 
 * Nein. Diese operativen Ereignisse sind nur ein Protokoll der Geschehnisse auf dieser Anwendungsressource. 
+
+
+## Funktionsweise von Warnungen
+
+* Eine Warnung verfügt über zwei Zustände: "Warnung" und "Fehlerfrei". 
+
+* Wenn sich der Zustand einer Warnung ändert, wird eine E-Mail gesendet.
+
+* Eine Warnung wird jedes Mal ausgewertet, wenn eine Metrik empfangen wird, sonst aber aus keinem anderen Grund.
+
+* Durch die Auswertung wird die Metrik über den vorangegangenen Zeitraum aggregiert und mit dem Schwellenwert verglichen, um den neuen Zustand zu ermitteln.
+
+* Der von Ihnen ausgewählte Zeitraum gibt das Intervall an, über das Metriken aggregiert werden. Der Zeitraum hat keinen Einfluss darauf, wie häufig die Warnung ausgewertet wird: Dies hängt davon ab, wie häufig Metriken empfangen werden.
+
+* Wenn eine Zeit lang kein Daten für eine bestimmte Metrik empfangen wurden, wirkt sich diese Lücke unterschiedlich auf die Auswertung von Warnungen und die Diagramme im Metrik-Explorer aus. Wenn länger als durch das Samplingintervall des Diagramms vorgegeben keine Daten empfangen werden, hat das Diagramm im Metrik-Explorer den Wert 0. Eine auf derselben Metrik basierende Warnung wird jedoch nicht erneut ausgewertet, und der Zustand der Warnung bleibt unverändert.
+
+    Sobald dann Daten empfangen werden, springt das Diagramm auf einen Wert ungleich 0 (null) zurück. Die Warnung wird auf Grundlage der Daten ausgewertet, die für den angegebenen Zeitraum zur Verfügung stehen. Wenn der neue Datenpunkt der einzige in diesem Zeitraum verfügbare Datenpunkt ist, basiert das Aggregat auf diesem Datenpunkt.
+
+* Eine Warnung kann häufig zwischen den Zuständen "Warnung" und "Fehlerfrei" hin und her wechseln, auch wenn Sie einen langen Zeitraum festlegen. Dies kann vorkommen, wenn sich der metrische Wert um den Schwellenwert herum bewegt. Der Schwellenwert weist keine Hysterese auf: Der Übergang zur Warnung erfolgt beim selben Wert wie der Übergang zum fehlerfreien Zustand.
+
+
 
 ## Verfügbarkeitswarnungen
 
@@ -69,8 +94,9 @@ Das hängt von Ihrer Anwendung ab. Zunächst einmal sollten Sie nicht zu viele M
 Zu den gängigen Warnungen zählen Folgende:
 
 * [Webtests][availability] sind wichtig, wenn es sich bei der Anwendung um eine Website oder einen Webdienst handelt, der im öffentlichen Internet sichtbar ist. Sie teilen Ihnen mit, wenn Ihre Website ausfällt oder langsam reagiert – selbst wenn das Problem eher beim Netzbetreiber als bei Ihrer App zu suchen ist. Hierbei handelt es sich allerdings um synthetische Tests, die daher nicht das tatsächliche Benutzererlebnis messen.
-* [Browsermetriken][client], insbesondere Browser-Seitenladezeiten, eignen sich für Webanwendungen. Wenn Ihre Seite viele Skripts enthält, sollten Sie auf Browserausnahmen achten. Um diese Metriken und Warnungen zu erhalten, müssen Sie die [Webseitenüberwachung][client] einrichten.
-* Serverantwortzeit und Fehler bei Anforderungen für die Serverseite von Webanwendungen. Achten Sie neben der Einrichtung von Warnungen auf diese Metriken, um festzustellen, ob sie bei hohen Anforderungsraten unverhältnismäßig variieren: Dies kann darauf hindeuten, dass für Ihre App nicht genügend Systemressourcen vorhanden sind.
+* [Browsermetriken][client], insbesondere **Browser-Seitenladezeiten**, eignen sich für Webanwendungen. Wenn Ihre Seite viele Skripts enthält, sollten Sie auf **Browserausnahmen** achten. Um diese Metriken und Warnungen zu erhalten, müssen Sie die [Webseitenüberwachung][client] einrichten.
+* **Serverantwortzeit** und **Anforderungsfehler** für die Serverseite von Webanwendungen. Achten Sie neben der Einrichtung von Warnungen auf diese Metriken, um festzustellen, ob sie bei hohen Anforderungsraten unverhältnismäßig variieren: Dies kann darauf hindeuten, dass für Ihre App nicht genügend Systemressourcen vorhanden sind.
+* **Serverausnahmen** erfordern ein [zusätzliches Setup](app-insights-asp-net-exceptions.md), damit sie angezeigt werden.
 
 ## Festlegen von Warnungen mit PowerShell
 
@@ -129,7 +155,7 @@ Die GUID ist die Abonnement-ID (nicht der Instrumentierungsschlüssel der Anwend
 
 #### Beispiel 2
 
-Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik mit dem Namen "salesPerHour" melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
+Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik namens "salesPerHour" melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
 
     Add-AlertRule -Name "poor sales" `
      -Description "slow sales alert" `
@@ -142,7 +168,7 @@ Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-
      -CustomEmails "satish@fabrikam.com","lei@fabrikam.com" `
      -Location "East US" -RuleType Metric
 
-Dieselbe Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Tracking-Aufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
+Dieselbe Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Trackingaufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
 
 #### Metriknamen
 
@@ -167,9 +193,9 @@ Metrikname | Anzeigename | Beschreibung
 `remoteDependencyFailed.durationMetric.count`|Abhängigkeitsfehler|Anzahl der Aufrufe mit Fehlern von der Serveranwendung an externe Ressourcen.
 `request.duration`|Serverantwortzeit|Zeit zwischen dem Empfang einer HTTP-Anforderung und dem Abschluss des Sendevorgangs der Antwort.
 `request.rate`|Anforderungsrate|Rate aller Anforderungen an die Anwendung pro Sekunde.
-`requestFailed.count`|Failed requests|Anzahl von HTTP-Anforderungen, die als Ergebnis Antwortcode >= 400 hatten. 
+`requestFailed.count`|Anforderungsfehler|Anzahl von HTTP-Anforderungen, die als Ergebnis Antwortcode >= 400 hatten. 
 `view.count`|Seitenaufrufe|Anzahl der Clientbenutzeranforderungen für eine Webseite. Synthetischer Datenverkehr wird herausgefiltert.
-{benutzerdefinierter Metrikname}|{Ihr Metrikname}|Der von [TrackMetric](app-insights-api-custom-events-metrics.md#track-metric) oder im [Messparameter für einen Tracking-Aufruf](app-insights-api-custom-events-metrics.md#properties) gemeldete Metrikwert.
+{benutzerdefinierter Metrikname}|{Ihr Metrikname}|Der von [TrackMetric](app-insights-api-custom-events-metrics.md#track-metric) oder im [Messparameter eines Trackingaufrufs](app-insights-api-custom-events-metrics.md#properties) gemeldete Metrikwert.
 
 Die Metriken werden von verschiedenen Telemetriemodulen gesendet:
 
@@ -191,4 +217,4 @@ request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-appli
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

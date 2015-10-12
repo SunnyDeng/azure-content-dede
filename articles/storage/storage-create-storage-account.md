@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/16/2015"
+	ms.date="09/23/2015"
 	ms.author="tamram"/>
 
 
@@ -25,8 +25,8 @@ Ein Azure-Speicherkonto bietet Ihnen Zugriff auf die Azure Blob-, Warteschlangen
 
 Zwei Typen von Speicherkonten stehen zur Verfügung:
 
-- Ein Standardspeicherkonto enthält Blob-, Tabellen und Warteschlangenspeicher. Dateispeicher ist auf Anfrage über die [Azure-Vorschauseite](http://azure.microsoft.com/services/preview/) verfügbar.
-- Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Arbeitsauslastungen auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+- Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher. 
+- Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
 ## Speicherkontoabrechnung
 
@@ -37,7 +37,7 @@ Die Rechnungsstellung für Azure-Speicher basiert auf Ihrem Speicherkonto. Speic
 - Transaktionen beziehen sich auf alle Lese- und Schreibvorgänge im Azure-Speicher.
 - Datenausgang bezieht sich auf Daten, die aus einer Azure-Region übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Azure-Dienste können Sie Maßnahmen durchführen, um Daten und Dienste in den gleichen Rechenzentren zu gruppieren und so Datenausgangsgebühren zu reduzieren oder zu eliminieren.)  
 
-Die Seite [Azure-Preise](http://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisdetails](http://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
+Die Seite [Azure-Preise](http://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](http://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
 
 Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/azure/dn249410.aspx).
 
@@ -63,6 +63,11 @@ Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finde
 
 	Beachten Sie, dass Sie bei der Erstellung Ihres Speicherkontos eine solche Affinitätsgruppe auswählen müssen. Sie können kein vorhandenes Konto in eine Affinitätsgruppe verschieben. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Dienst am selben Standort wie Affinitätsgruppe](#service-co-location-with-an-affinity-group) (siehe unten).
 
+	>[AZURE.IMPORTANT]Um zu ermitteln, welche Standorte für Ihr Abonnement verfügbar sind, können Sie den [Anbieter auflisten](https://msdn.microsoft.com/library/azure/dn790524.aspx)-Vorgang aufrufen. Um Anbieter aus PowerShell aufzulisten, rufen Sie [Get-AzureLocation](https://msdn.microsoft.com/library/azure/dn757693.aspx) auf. Verwenden Sie in .NET die [List](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.provideroperationsextensions.list.aspx)-Methode der ProviderOperationsExtensions-Klasse.
+	>
+	>Darüber hinaus finden Sie unter [Azure-Regionen](https://azure.microsoft.com/de-DE/regions/#services) weitere Informationen dazu, welche Dienste in welcher Region verfügbar sind.
+
+
 5. Wenn Sie mehr als ein Azure-Abonnement besitzen, wird das Feld **Abonnement** angezeigt. Geben Sie unter **Abonnement** das Azure-Abonnement ein, das Sie mit dem Speicherkonto verwenden möchten.
 
 6. Wählen Sie unter **Replikation** die gewünschte Replikationsstufe für das Speicherkonto. Die empfohlene Replikationsoption ist die georedundante Replikation. Sie sorgt für maximalen Bestand Ihrer Daten. Weitere Details zu den Replikationsoptionen für Azure Storage finden Sie unter [Azure Storage-Replikation](storage-redundancy.md).
@@ -76,7 +81,7 @@ Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finde
 
 ### Speicherkontoendpunkte
 
-Jedes Objekt, das Sie in Azure Storage speichern, verfügt über eine eindeutige URL-Adresse. Der Name des Speicherkontos bildet die Unterdomäne dieser Adresse. Die Unterdomäne bildet zusammen mit dem Domänennamen, der für jeden Dienst spezifisch ist, einen *Endpunkt* für Ihr Speicherkonto.
+Jedes Objekt, das Sie in Azure Storage speichern, verfügt über eine eindeutige URL-Adresse. Der Name des Speicherkontos bildet die Unterdomäne dieser Adresse. Die Kombination aus Unterdomäne und Domänenname, die für jeden Dienst spezifisch ist, bildet einen *Endpunkt* für Ihr Speicherkonto.
 
 Wenn Ihr Speicherkonto beispielsweise *meinspeicherkonto* heißt, dann sind die Standardendpunkte für Ihr Speicherkonto wie folgt:
 
@@ -162,8 +167,8 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 
 ## Nächste Schritte
 
-- Weitere Informationen über den Azure-Speicher finden Sie in der entsprechenden Dokumentation auf [Azure.com](http://azure.microsoft.com/documentation/services/storage/) und auf [MSDN](http://msdn.microsoft.com/library/azure/gg433040.aspx).
+- Weitere Informationen über Azure Storage finden Sie in der Azure Storage-Dokumentation auf [Azure.com](http://azure.microsoft.com/documentation/services/storage/) und auf [MSDN](http://msdn.microsoft.com/library/azure/gg433040.aspx).
 
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

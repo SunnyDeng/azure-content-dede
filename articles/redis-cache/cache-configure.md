@@ -12,12 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="tbd"
-   ms.date="09/22/2015"
+   ms.date="09/30/2015"
    ms.author="sdanie" />
 
 # Gewusst wie: Konfigurieren von Azure Redis Cache
 
 In diesem Thema wird beschrieben, wie Sie die Konfiguration für Ihre Azure Redis Cache-Instanzen überprüfen und aktualisieren. Außerdem wird die standardmäßige Redis-Serverkonfiguration für Azure Redis Cache-Instanzen beschrieben.
+
+>[AZURE.NOTE]Der Premium-Tarif von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums können Premium-Features nur beim Erstellen des Caches konfiguriert werden. Weitere Informationen zur Verwendung von Premium-Cache-Features finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md), [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md) und [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
 
 ## Konfigurieren von Redis Cache-Einstellungen
 
@@ -86,9 +88,9 @@ Unter **Maxmemory-Richtlinie** können Sie unter den folgenden Entfernungsrichtl
 
 Weitere Informationen zu Maxmemory-Richtlinien finden Sie unter [Entfernungsrichtlinien](http://redis.io/topics/lru-cache#eviction-policies).
 
-Mit der Einstellung **maxmemory-reserved** wird die Arbeitsspeichermenge in MB konfiguriert, die für andere Vorgänge als Cachevorgänge reserviert ist, z. B. die Replikation während eines Failovers. Sie kann auch verwendet werden, wenn Sie über ein hohes Fragmentierungsverhältnis verfügen. Mit dem Festlegen dieses Werts können Sie dafür sorgen, dass Sie bei wechselnden Auslastungen eine konsistentere Redis-Servererfahrung erzielen. Dieser Wert sollte für Workloads, die mit hohem Schreibaufwand verbunden sind, höher gewählt werden. Wenn Arbeitsspeicher für Vorgänge dieser Art reserviert ist, ist er nicht für die Speicherung zwischengespeicherter Daten verfügbar.
+Mit der Einstellung **maxmemory-reserved** wird die Arbeitsspeichermenge in MB konfiguriert, die für andere Prozesse als Cacheprozesse reserviert ist, z. B. die Replikation während eines Failovers. Sie kann auch verwendet werden, wenn Sie über ein hohes Fragmentierungsverhältnis verfügen. Mit dem Festlegen dieses Werts können Sie dafür sorgen, dass Sie bei wechselnden Auslastungen eine konsistentere Redis-Servererfahrung erzielen. Dieser Wert sollte für Workloads, die mit hohem Schreibaufwand verbunden sind, höher gewählt werden. Wenn Arbeitsspeicher für Vorgänge dieser Art reserviert ist, ist er nicht für die Speicherung zwischengespeicherter Daten verfügbar.
 
->[AZURE.IMPORTANT]Die Einstellung **maxmemory-reserved** ist nur für Standardcaches verfügbar.
+>[AZURE.IMPORTANT]Die Einstellung **maxmemory-reserved** ist nur für Standard- und Premium-Caches verfügbar.
 
 ## Keyspacebenachrichtigungen (Erweiterte Einstellungen)
 
@@ -96,7 +98,7 @@ Klicken Sie auf **Erweiterte Einstellungen**, um Redis-Keyspacebenachrichtigunge
 
 ![Redis Cache: Erweiterte Einstellungen](./media/cache-configure/IC808319.png)
 
->[AZURE.IMPORTANT]Keyspacebenachrichtigungen und die Einstellung **notify-keyspace-events** sind nur für Standardcaches verfügbar.
+>[AZURE.IMPORTANT]Keyspacebenachrichtigungen und die Einstellung **notify-keyspace-events** sind nur für Caches vom Typ "Standard" und "Premium" verfügbar.
 
 Weitere Informationen finden Sie unter [Redis-Keyspacebenachrichtigungen](http://redis.io/topics/notifications). Beispielcode finden Sie in der Datei [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) im [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloWorld)-Beispiel.
 
@@ -130,13 +132,19 @@ Neue Azure Redis Cache-Instanzen werden mit den folgenden standardmäßigen Redi
 
 <sup>1</sup>`maxclients` unterscheidet sich für jeden Azure Redis Cache-Tarif.
 
--	Cache C0 (250 MB) – bis zu 256 Verbindungen
--	Cache C1 (1 GB) – bis zu 1.000 Verbindungen
--	Cache C2 (2,5 GB) – bis zu 2.000 Verbindungen
--	Cache C3 (6 GB) – bis zu 5.000 Verbindungen
--	Cache C4 (13 GB) – bis zu 10.000 Verbindungen
--	Cache C5 (26 GB) – bis zu 15.000 Verbindungen
--	Cache C6 (53 GB) – bis zu 20.000 Verbindungen
+-	Caches vom Typ "Basic" und "Standard"
+	-	Cache C0 (250 MB) – bis zu 256 Verbindungen
+	-	Cache C1 (1 GB) – bis zu 1.000 Verbindungen
+	-	Cache C2 (2,5 GB) – bis zu 2.000 Verbindungen
+	-	Cache C3 (6 GB) – bis zu 5.000 Verbindungen
+	-	Cache C4 (13 GB) – bis zu 10.000 Verbindungen
+	-	Cache C5 (26 GB) – bis zu 15.000 Verbindungen
+	-	Cache C6 (53 GB) – bis zu 20.000 Verbindungen
+-	Premium-Caches
+	-	P1 (6 GB - 60 GB) – bis zu 7.500 Verbindungen
+	-	P2 (13 GB - 130 GB) – bis zu 15.000 Verbindungen
+	-	P3 (26 GB - 260 GB) – bis zu 30.000 Verbindungen
+	-	P4 (53 GB - 530 GB) – bis zu 40.000 Verbindungen
 
 ## Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden.
 
@@ -155,11 +163,11 @@ Weitere Informationen zu Redis-Befehlen finden Sie unter [http://redis.io/comman
 
 ## Redis-Konsole
 
-Über die **Redis-Konsole**, die für Standardcaches zur Verfügung steht, können Sie Befehle sicher auf Ihre Azure Redis Cache-Instanzen anwenden. Um auf die Redis-Konsole zuzugreifen, klicken Sie auf dem Blatt **Redis-Cache** auf **Konsole**.
+Über die **Redis-Konsole**, die für Caches vom Typ "Standard" und "Premium" zur Verfügung steht, können Sie Befehle sicher auf Ihre Azure Redis Cache-Instanzen anwenden. Um auf die Redis-Konsole zuzugreifen, klicken Sie auf dem Blatt **Redis-Cache** auf **Konsole**.
 
 ![Redis-Konsole](./media/cache-configure/redis-console-menu.png)
 
->[AZURE.IMPORTANT]Die Redis-Konsole ist nur für Caches vom Typ "Standard" verfügbar.
+>[AZURE.IMPORTANT]Die Redis-Konsole ist nur für Caches vom Typ "Standard" und "Premium" verfügbar.
 
 Zum Anwenden von Befehlen auf Ihre Cache-Instanz geben Sie einfach den gewünschten Befehl in die Konsole ein.
 
@@ -170,4 +178,4 @@ Eine Liste der Redis-Befehle, die für Azure Redis Cache deaktiviert sind, finde
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

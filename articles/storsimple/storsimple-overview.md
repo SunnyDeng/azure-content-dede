@@ -1,31 +1,31 @@
 <properties 
-   pageTitle="Was ist StorSimple? | Microsoft Azure"
-	description="Beschreibt die Datenverwaltung und den Schutzprozess sowie die Vorteile und die Architektur von StorSimple und stellt die StorSimple-Komponenten vor."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   pageTitle="Was ist StorSimple? | Microsoft Azure" 
+   description="Beschreibt die Datenverwaltung und den Schutzprozess sowie die Vorteile und die Architektur von StorSimple und stellt die StorSimple-Komponenten vor." 
+   services="storsimple" 
+   documentationCenter="NA" 
+   authors="SharS" 
+   manager="carolz" 
+   editor=""/>
 
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/26/2015"
-	ms.author="v-sharos@microsoft.com"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD" 
+   ms.date="09/25/2015"
+   ms.author="v-sharos@microsoft.com"/>
 
 # StorSimple 8000-Serie: eine Hybridcloud-Speicherlösung 
 
 ## Übersicht
 
-Microsoft Azure StorSimple ist eine effiziente, kostengünstige und einfach zu verwaltende Lösung, die viele der Probleme und Kosten im Zusammenhang mit der Datenspeicherung in Unternehmen und dem Datenschutz beseitigt. Die Lösung verwendet ein proprietäres Gerät (das Microsoft Azure StorSimple-Gerät), die Integration mit Clouddiensten und einen Satz integrierter Verwaltungstools, um eine transparente Ansicht aller Speicher im Unternehmen einschließlich Cloud-Speicher zu ermöglichen.
+Microsoft Azure StorSimple ist eine effiziente, kostengünstige und einfach zu verwaltende SAN-Lösung, die viele der Probleme und Kosten im Zusammenhang mit der Datenspeicherung in Unternehmen und dem Datenschutz beseitigt. Die Lösung verwendet ein proprietäres Gerät (das Microsoft Azure StorSimple-Gerät), bietet die Integration mit Clouddiensten und stellt einen Satz integrierter Verwaltungstools bereit, um eine transparente Ansicht aller Speicher im Unternehmen einschließlich Cloud-Speicher zu ermöglichen.
 
 StorSimple verwendet zur Verwaltung von gespeicherten Daten auf verschiedenen Speichermedien eine Speicherstaffelung. Der aktuelle Arbeitssatz wird lokal auf Solid-State-Laufwerken (SSDs) gespeichert, weniger häufig verwendete Daten auf Festplattenlaufwerken (HDDs), und Archivdaten werden in die Cloud verschoben. Darüber hinaus nutzt StorSimple die Deduplizierung und Komprimierung, um die Menge an Speicher zu reduzieren, den die Daten nutzen. Die Speicherstaffelung erfolgt folgendermaßen:
 
 1. Ein Systemadministrator richtet ein Microsoft Azure-Cloudspeicherkonto ein.
-2. Der Administrator verwendet die serielle Konsole sowie den StorSimple Manager-Dienst (der im Azure-Verwaltungsportal ausgeführt wird) zum Konfigurieren des Geräts und des Dateiservers, und er erstellt Volumes und Richtlinien zur Datensicherheit. Der lokale Dateiserver verwendet die iSCSI-Schnittstelle (Internet Small Computer System Interface) auf dem StorSimple-Gerät.
+2. Der Administrator verwendet die serielle Konsole sowie den StorSimple Manager-Dienst (der im Azure-Verwaltungsportal ausgeführt wird) zum Konfigurieren des Geräts und Erstellen von Volumes und Richtlinien zur Datensicherheit. Lokale Maschinen (wie z. B. Dateiserver) verwenden die iSCSI-Schnittstelle (Internet Small Computer System Interface) auf dem StorSimple-Gerät.
 3. StorSimple speichert zunächst Daten auf der schnellen SSD-Ebene des Geräts.
 4. Wenn die SSD-Ebene sich der Kapazitätsgrenze nähert, dupliziert und komprimiert StorSimple die ältesten Datenblöcke und verschiebt sie auf die HDD-Ebene.
 5. Wenn sich die HDD-Ebene der Kapazitätsgrenze nähert, verschlüsselt StorSimple die ältesten Datenblöcke und sendet diese sicher per HTTPS an das Microsoft Azure-Speicherkonto.
@@ -57,7 +57,7 @@ Das folgende Diagramm bietet einen allgemeinen Überblick über die Microsoft Az
 Die Microsoft Azure StorSimple-Lösung umfasst die folgenden Komponenten:
 
 - **Microsoft Azure StorSimple-Gerät** – Ein lokales Hybridspeicherarray mit Solid-State-Laufwerken (SSDs) und Festplattenlaufwerken (HDDs) sowie redundanten Controllern und automatischen Failoverfunktionen. Die Controller verwalten die Speicherstaffelung, wobei derzeit verwendete (d. h. aktiv genutzte) Daten in lokalem Speicher (auf dem Gerät oder lokalen Server) abgelegt werden, während weniger häufig verwendete Daten in die Cloud verschoben werden.
-- **Virtuelles StorSimple-Gerät** – Dies ist eine Softwareversion des StorSimple-Geräts, die die Architektur und Funktionen des physischen Hybridspeichergeräts repliziert. Das virtuelle StorSimple-Gerät wird auf einem einzelnen Knoten in einem virtuellen Azure-Computer ausgeführt. Das virtuelle Gerät eignet sich für Test-und kleine Pilotprojektszenarien. Ein virtuelles StorSimple-Gerät kann nicht auf einem StorSimple-Gerät oder einem lokalen Server erstellt werden.
+- **Virtuelles StorSimple-Gerät** – Dies ist eine Softwareversion des StorSimple-Geräts, die die Architektur und die meisten Funktionen des physischen Hybridspeichergeräts repliziert. Das virtuelle StorSimple-Gerät wird auf einem einzelnen Knoten in einem virtuellen Azure-Computer ausgeführt. Das virtuelle Gerät eignet sich für Test-und kleine Pilotprojektszenarien. Ein virtuelles StorSimple-Gerät kann nicht auf einem StorSimple-Gerät oder einem lokalen Server erstellt werden.
 - **Windows PowerShell für StorSimple** – Eine Befehlszeilenschnittstelle, mit der Sie das StorSimple-Gerät verwalten können. Windows PowerShell für StorSimple bietet Features, mit denen Sie Ihr StorSimple-Gerät registrieren, die Netzwerkschnittstelle Ihres Geräts konfigurieren, bestimmte Arten von Updates installieren, Probleme Ihres Geräts durch Zugriff auf eine Supportsitzung beheben und den Gerätestatus ändern können. Sie können auf Windows PowerShell für StorSimple zugreifen, indem Sie eine Verbindung mit der seriellen Konsole herstellen oder Windows PowerShell-Remoting verwenden.
 - **Azure PowerShell-Cmdlets für StorSimple** – eine Auflistung von Windows PowerShell-Cmdlets, die es Ihnen ermöglichen, Servicelevel- und Migrationsaufgaben über die Befehlszeile zu automatisieren. Weitere Informationen zu den Azure PowerShell-Cmdlets für StorSimple finden Sie unter [Cmdlet-Referenz](https://msdn.microsoft.com/library/dn920427.aspx).
 - **StorSimple-Manager-Dienst** – Eine Erweiterung des Azure-Verwaltungsportals, mit der Sie ein StorSimple-Gerät oder virtuelles StorSimple-Gerät über eine einzelne Weboberfläche verwalten können. Sie können den StorSimple-Manager-Dienst nutzen, um Dienste zu erstellen und zu verwalten, Geräte anzuzeigen und zu verwalten, Warnungen anzuzeigen, Volumes zu verwalten und Sicherungsrichtlinien und den Sicherungskatalog anzuzeigen und zu verwalten.
@@ -73,4 +73,4 @@ Erfahren Sie mehr über [StorSimple-Komponenten und- Terminologie](storsimple-co
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

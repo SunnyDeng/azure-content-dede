@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [pig-selector](../../includes/hdinsight-maven-mapreduce-selector.md)]
 
-In diesem Dokument wird erläutert, wie Apache Maven zum Erstellen einer MapReduce-Anwendung und zum anschließenden Bereitstellen und Ausführen der Anwendung auf einem Linux-basierten Hadoop-Cluster in HDInsight verwendet wird.
+In diesem Dokument wird erläutert, wie Apache Maven zum Erstellen einer MapReduce-Anwendung und zum anschließenden Bereitstellen und Ausführen der Anwendung auf einem Linux-basierten Hadoop-Cluster in HDInsight verwendet wird. Informationen zur Verwendung eines Windows-basierten Hadoop auf HDInsight-Clusters finden Sie unter [Entwickeln von Java MapReduce-Programmen für Hadoop in HDInsight (Windows)](hdinsight-develop-deploy-java-mapreduce.md)
 
 ##<a name="prerequisites"></a>Voraussetzungen
 
@@ -33,7 +33,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**: Siehe [Kostenlose Azure-Testversion](get-azure-free-trial-for-testing-hadoop-in-hdinsight.md).
 
-- **Azure-Befehlszeilenschnittstelle**: Weitere Informationen finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md)
+- **Azure-Befehlszeilenschnittstelle**: Weitere Informationen finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
 
 ##Konfigurieren von Umgebungsvariablen
 
@@ -88,7 +88,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 		  <scope>provided</scope>
 		</dependency>
 
-	Damit teilen Sie Maven mit, dass das Projekt die Bibliotheken (aufgelistet in <artifactId>) in bestimmten Versionen (aufgelistet in <version>) benötigt. Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Maven-Repositorysuche](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) verwenden, um weitere Komponenten anzuzeigen.
+	Damit teilen Sie Maven mit, dass das Projekt die Bibliotheken (aufgelistet in &lt;artifactId>) in bestimmten Versionen (aufgelistet in &lt;version>) benötigt. Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Maven-Repositorysuche](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) verwenden, um weitere Komponenten anzuzeigen.
 
 	`<scope>provided</scope>` gibt für Maven an, dass diese Abhängigkeiten nicht mit der Anwendung zusammengepackt werden sollen, da sie durch den HDInsight-Cluster zur Laufzeit bereitgestellt werden.
 
@@ -300,4 +300,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

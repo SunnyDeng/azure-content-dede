@@ -27,12 +27,12 @@ In diesem Beispiel wird eine DMZ mit einer Firewall, vier Windows-Servern und Ne
 ## Beschreibung der Umgebung
 Dieses Beispiel umfasst ein Abonnement, das Folgendes enthält:
 
-- Zwei Clouddienste: „FrontEnd001“ und „BackEnd001“
-- Ein virtuelles Netzwerk „CorpNetwork“ mit zwei Subnetzen: „FrontEnd“ und „BackEnd“
+- Zwei Clouddienste: "FrontEnd001" und "BackEnd001"
+- Ein virtuelles Netzwerk, "CorpNetwork", mit zwei Subnetzen: "FrontEnd" und "BackEnd"
 - Eine einzelne Netzwerksicherheitsgruppe, die auf beide Subnetze angewendet wird
 - Ein virtuelles Netzwerkgerät, in diesem Fall eine Barracuda NG Firewall, das mit dem Front-End-Subnetz verbunden ist
 - Eine Windows Server-Instanz, die einen Anwendungswebserver darstellt („IIS01“)
-- Zwei Windows Server-Instanzen, die Back-End-Anwendungsserver darstellen („AppVM01“, „AppVM02“)
+- Zwei Windows Server-Instanzen, die Back-End-Anwendungsserver darstellen ("AppVM01", "AppVM02")
 - Eine Windows Server-Instanz, die einen DNS-Server darstellt („DNS01“)
 
 >[AZURE.NOTE]In diesem Beispiel wird zwar eine Barracuda NG Firewall verwendet, aber es könnten auch andere virtuelle Netzwerkgeräte eingesetzt werden.
@@ -42,7 +42,7 @@ Der Referenzabschnitt enthält ein PowerShell-Skript, mit dem sich der größte 
 So erstellen Sie die Umgebung
 
   1.	Speichern Sie die im Referenzabschnitt enthaltene und mit dem Namen, dem Speicherort und den IP-Adressen für das jeweilige Szenario aktualisierte XML-Netzwerkkonfigurationsdatei.
-  2.	Aktualisieren Sie die Benutzervariablen im Skript gemäß der Umgebung, in der das Skript ausgeführt werden soll (Abonnement, Dienstnamen usw.).
+  2.	Aktualisieren Sie die Benutzervariablen im Skript gemäß der Umgebung, in der das Skript ausgeführt werden soll (Abonnements, Dienstnamen usw.).
   3.	Führen Sie das Skript in PowerShell aus.
 
 **Hinweis**: Die im PowerShell-Skript angegebene Region muss der Region in der XML-Netzwerkkonfigurationsdatei entsprechen.
@@ -55,7 +55,7 @@ Nachdem das Skript erfolgreich ausgeführt wurde, können im Anschluss folgende 
 Im nächsten Abschnitt werden die meisten Skriptanweisungen für Netzwerksicherheitsgruppen beschrieben.
 
 ## Netzwerksicherheitsgruppen
-In diesem Beispiel wird eine Netzwerksicherheitsgruppe erstellt und dann mit sechs Regeln geladen.
+Für dieses Beispiel wird eine Netzwerksicherheitsgruppe erstellt und dann mit sechs Regeln geladen.
 
 >[AZURE.TIP]Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
 
@@ -65,12 +65,12 @@ Folgende Regeln werden deklarativ für eingehenden Datenverkehr erstellt:
 2.	RDP-Datenverkehr (Port 3389) aus dem Internet zu jedem virtuellen Computer wird zugelassen.
 3.	HTTP-Datenverkehr (Port 80) über das Internet an den NVA (Firewall) wird zugelassen.
 4.	Jeglicher Datenverkehr (alle Ports) von IIS01 zu AppVM1 wird zugelassen.
-5.	Jeglicher Datenverkehr (alle Ports) aus dem Internet in das gesamte VNet (beide Subnetze) wird verweigert.
-6.	Jeglicher Datenverkehr (alle Ports) vom Front-End-Subnetz zum Back-End-Subnetz wird verweigert.
+5.	Jeglicher Datenverkehr (alle Ports) aus dem Internet in das gesamte VNet (beide Subnetze) wird abgelehnt.
+6.	Jeglicher Datenverkehr (alle Ports) vom Front-End-Subnetz zum Back-End-Subnetz wird abgelehnt.
 
 Wenn diese Regeln an jedes Subnetz gebunden sind und eine HTTP-Anforderung aus dem Internet an den Webserver eingeht, gilt sowohl Regel 3 (Zulassen) als auch Regel 5 (Verweigern). Da Regel 3 aber eine höhere Priorität hat, wird nur diese Regel angewendet, und Regel 5 wird nicht berücksichtigt. Aus diesem Grund würde die HTTP-Anforderung für die Firewall als zulässig eingestuft werden. Falls derselbe Datenverkehr versuchen würde, den DNS01-Server zu erreichen, würde Regel 5 (Verweigern) zuerst gelten. Für den Datenverkehr wird die Übergabe an den Server also nicht zugelassen. Mit Regel 6 (Verweigern) wird die Kommunikation des Front-End-Subnetzes mit dem Back-End-Subnetz blockiert (mit Ausnahme von zulässigem Datenverkehr in den Regeln 1 und 4). Dies dient dem Schutz des Back-End-Netzwerks, falls ein Angreifer die Webanwendung am Front-End attackiert. Der Angreifer hat dann nur beschränkten Zugriff auf das „geschützte“ Back-End-Netzwerk (nur auf Ressourcen, die auf dem Server AppVM01 verfügbar gemacht werden).
 
-Es gibt eine Standardregel für ausgehenden Datenverkehr, bei dem Datenverkehr ins Internet gesendet werden kann. In diesem Beispiel wird ausgehender Datenverkehr zugelassen, und es werden keine Regeln für die ausgehende Richtung geändert. Zum Sperren von Datenverkehr in beiden Richtungen ist das benutzerdefinierte Routing erforderlich. Dies wird in einem anderen Beispiel behandelt, das im [Hauptdokument zu Sicherheitsgrenzen][HOME] enthalten ist.
+Es gibt eine Standardregel für ausgehenden Datenverkehr, die das Senden von Datenverkehr an das Internet zulässt. In diesem Beispiel wird ausgehender Datenverkehr zugelassen, und es werden keine Regeln für die ausgehende Richtung geändert. Zum Sperren von Datenverkehr in beiden Richtungen ist das benutzerdefinierte Routing erforderlich. Dies wird in einem anderen Beispiel behandelt, das im [Hauptdokument zu Sicherheitsgrenzen][HOME] enthalten ist.
 
 Die oben beschriebenen NSG-Regeln weisen eine starke Ähnlichkeit mit den NSG-Regeln unter [Beispiel 1 – Erstellen einer einfachen DMZ mit NSGs][Example1] auf. Lesen Sie sich die NSG-Beschreibung in diesem Dokument durch, um ausführliche Informationen zu den einzelnen NSG-Regeln und ihren Attributen zu erhalten.
 
@@ -132,7 +132,7 @@ Mit der Aktivierung des Firewallregelsatzes ist die Erstellung dieser Beispielum
 10.	AppVM01 empfängt die SQL-Abfrage und antwortet.
 11.	Da es keine ausgehenden Regeln im Back-End-Subnetz gibt, wird die Antwort zugelassen.
 12.	Das Front-End-Subnetz beginnt mit der Verarbeitung der eingehenden Regel:
-  1.	Es gibt keine NSG-Regel für eingehenden Datenverkehr vom Back-End- zum Front-End-Subnetz, sodass keine der NSG-Regeln zutrifft.
+  1.	Es gibt keine NSG-Regel für eingehenden Datenverkehr vom Back-End- zum Front-End-Subnetz, daher trifft keine der NSG-Regeln zu.
   2.	Da die standardmäßige Systemregel Datenverkehr zwischen Subnetzen zulässt, wird der Datenverkehr zugelassen.
 13.	Der IIS-Server empfängt die SQL-Antwort, erstellt die HTTP-Antwort und sendet sie an den Anforderer.
 14.	Da es sich um eine NAT-Sitzung von der Firewall handelt, wird als Antwortziel (zuerst) die Firewall verwendet.
@@ -158,11 +158,11 @@ Mit der Aktivierung des Firewallregelsatzes ist die Erstellung dieser Beispielum
 5.	DNS-Server empfängt Anforderung.
 6.	Die Adresse ist nicht im DNS-Server zwischengespeichert, daher fragt der DNS-Server die Adresse bei einem DNS-Stammserver im Internet ab.
 7.	Keine ausgehenden Regeln im Back-End-Subnetz, Datenverkehr wird zugelassen.
-8.	Der DNS-Internetserver antwortet, da diese Sitzung intern initiiert wurde, und die Antwort wird zugelassen.
+8.	Der DNS-Server im Internet antwortet. Da diese Sitzung intern initiiert wurde, wird die Antwort zugelassen.
 9.	Der DNS-Server speichert die Antwort zwischen und gibt die Antwort auf die ursprüngliche Anforderung zurück an IIS01.
 10.	Keine ausgehenden Regeln im Back-End-Subnetz, Datenverkehr wird zugelassen.
 11.	Das Front-End-Subnetz beginnt mit der Verarbeitung der eingehenden Regel:
-  1.	Es gibt keine NSG-Regel für eingehenden Datenverkehr vom Back-End- zum Front-End-Subnetz, sodass keine der NSG-Regeln zutrifft.
+  1.	Es gibt keine NSG-Regel für eingehenden Datenverkehr vom Back-End- zum Front-End-Subnetz, daher trifft keine der NSG-Regeln zu.
   2.	Da die standardmäßige Systemregel Datenverkehr zwischen Subnetzen zulässt, wird der Datenverkehr zugelassen.
 12.	IIS01 empfängt die Antwort von DNS01.
 
@@ -174,10 +174,10 @@ Mit der Aktivierung des Firewallregelsatzes ist die Erstellung dieser Beispielum
   2.	NSG-Regel 2 (RDP) trifft nicht zu, weiter zur nächsten Regel.
   3.	NSG-Regel 3 (Internet an Firewall) trifft nicht zu, weiter zur nächsten Regel.
   4.	NSG-Regel 4 (IIS01 an AppVM01) trifft zu, Datenverkehr wird zugelassen, Regelverarbeitung wird beendet.
-4.	AppVM01 empfängt die Anforderung und antwortet mit einer Datei (bei autorisiertem Zugriff).
+4.	AppVM01 empfängt die Anforderung und antwortet mit der Datei (autorisierter Zugriff vorausgesetzt).
 5.	Da es keine ausgehenden Regeln im Back-End-Subnetz gibt, wird die Antwort zugelassen.
 6.	Das Front-End-Subnetz beginnt mit der Verarbeitung der eingehenden Regel:
-  1.	Es gibt keine NSG-Regel für eingehenden Datenverkehr vom Back-End- zum Front-End-Subnetz, sodass keine der NSG-Regeln zutrifft.
+  1.	Es gibt keine NSG-Regel für eingehenden Datenverkehr vom Back-End- zum Front-End-Subnetz, daher trifft keine der NSG-Regeln zu.
   2.	Da die standardmäßige Systemregel Datenverkehr zwischen Subnetzen zulässt, wird der Datenverkehr zugelassen.
 7.	Der IIS-Server empfängt die Datei.
 
@@ -211,18 +211,18 @@ Weitere Beispiele und eine Übersicht über die Sicherheitsgrenzen des Netzwerks
 
 ## Referenzen
 ### Hauptskript und Netzwerkkonfiguration
-Speichern Sie das vollständige Skript in einer PowerShell-Skriptdatei. Speichern Sie die Netzwerkkonfiguration in einer Datei namens „NetworkConf2.xml“. Bearbeiten Sie die benutzerdefinierten Variablen nach Bedarf. Führen Sie das Skript aus, und befolgen Sie dann die oben angegebene Anweisung zur Einrichtung der Firewallregel.
+Speichern Sie das vollständige Skript in einer PowerShell-Skriptdatei. Speichern Sie die Netzwerkkonfiguration in einer Datei namens „NetworkConf2.xml“. Bearbeiten Sie die benutzerdefinierten Variablen nach Bedarf. Führen Sie das Skript aus, und befolgen Sie dann oben stehende Anweisungen zur Einrichtung der Firewallregel.
 
 #### Vollständiges Skript
 Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes aus:
 
 1.	Herstellen einer Verbindung mit einem Azure-Abonnement
 2.	Erstellen eines neuen Speicherkontos
-3.	Erstellen eines neuen VNets und von zwei Subnetzen, wie in der Netzwerkkonfigurationsdatei definiert
+3.	Erstellen eines neuen VNets und zweier Subnetze, wie in der Netzwerkkonfigurationsdatei definiert
 4.	Erstellen von Windows Server-VMs (Build 4)
-5.	Konfigurieren von Netzwerksicherheitsgruppen, z. B.:
+5.	Konfigurieren von Netzwerksicherheitsgruppen einschließlich:
   -	Erstellen einer Netzwerksicherheitsgruppe
-  -	Auffüllen mit Regeln
+  -	Auffüllen der Gruppe mit Regeln
   -	Binden der Netzwerksicherheitsgruppe an die geeigneten Subnetze
 
 Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC oder Server ausgeführt werden.
@@ -566,4 +566,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [SampleApp]: ./virtual-networks-sample-app.md
 [Example1]: ./virtual-networks-dmz-nsg-asm.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

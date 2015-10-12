@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="09/21/2015"
+   ms.date="09/24/2015"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
@@ -152,7 +152,7 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 |TCP 443 (HTTPS)<sup>3</sup>| aus | WAN | Ja |<ul><li>Der ausgehende Port wird für den Zugriff auf Daten in der Cloud verwendet.</li><li>Der ausgehende Webproxy ist vom Benutzer konfigurierbar.</li><li>Zum Ermöglichen von Systemupdates muss dieser Port auch für die festen IP-Adressen des Controllers geöffnet sein.</li></ul>|
 |UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. |
 | UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden. |
-| TCP 9354 | aus | WAN | In einigen Fällen; siehe Hinweise. |Der ausgehende Port wird vom StorSimple Manager-Dienst für die Kommunikation mit dem Gerät verwendet. Dieser Port ist erforderlich, wenn Ihr aktuelles Netzwerk für Verbindungen mit dem Internet nicht HTTP 1.1 unterstützt, z. B. wenn Sie einen HTTP-1.0-basierten Proxyserver verwenden.<br> Informationen zum Herstellen von Verbindungen über einen Proxyserver finden Sie unter [Hosten hinter einer Firewall mit Servicebus](https://msdn.microsoft.com/library/azure/ee706729.aspx). |
+| TCP 9354 | aus | WAN | In einigen Fällen; siehe Hinweise. |Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet. Dieser Port ist erforderlich, wenn Ihr aktuelles Netzwerk für Verbindungen mit dem Internet nicht HTTP 1.1 unterstützt, z. B. wenn Sie einen HTTP-1.0-basierten Proxyserver verwenden.<br> Informationen zum Herstellen von Verbindungen über einen Proxyserver finden Sie unter [Hosten hinter einer Firewall mit Servicebus](https://msdn.microsoft.com/library/azure/ee706729.aspx). |
 | 3260 (iSCSI) | Geben Sie in | LAN | Nein | Dieser Port wird für den Datenzugriff über iSCSI verwendet.|
 | 5985 | Geben Sie in | LAN | Nein | Der eingehende Port wird vom StorSimple-Momentaufnahme-Manager für die Kommunikation mit dem StorSimple-Gerät verwendet.<br>Dieser Port wird auch verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTP herstellen. |
 | 5986 | Geben Sie in | LAN | Nein | Dieser Port wird verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTPS herstellen. |
@@ -187,6 +187,8 @@ Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgend
 
 - Isolieren Sie den Datenverkehr für iSCSI und Cloud durch Verwendung jeweils eigener Netzwerkschnittstellen auf dem Gerät für den iSCSI- und Cloudzugriff. Weitere Informationen finden Sie unter [Ändern von Netzwerkschnittstellen](storsimple-modify-device-config.md#modify-network-interfaces) für das StorSimple-Gerät.
 
+- Verwenden Sie keine Link Aggregation Protocol-Konfiguration (LACP) für die Netzwerkschnittstellen. Dies ist eine nicht unterstützte Konfiguration.
+
 ## Nächste Schritte
 
 - [Informationen über StorSimple-Systemeinschränkungen](storsimple-limits.md).
@@ -195,4 +197,4 @@ Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgend
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -3,7 +3,7 @@
 	description="Erläutert, wie von einer früheren Version von Azure SQL-Datenbank ein Upgrade auf Azure SQL-Datenbank V12 durchgeführt wird." 
 	services="sql-database" 
 	documentationCenter="" 
-	authors="sonalmm" 
+	authors="stevestein" 
 	manager="jeffreyg" 
 	editor=""/>
 
@@ -13,85 +13,76 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-management" 
-	ms.date="05/15/2015" 
-	ms.author="sonalm"/>
+	ms.date="09/30/2015" 
+	ms.author="sstein"/>
 
 
-# Upgrade auf SQL-Datenbank V12 vorhanden
+# Upgrade auf SQL-Datenbank V12
 
 
-[Registrieren Sie sich](https://portal.azure.com) für SQL-Datenbank V12, um die Vorteile der nächsten SQL-Datenbankgeneration in Microsoft Azure zu nutzen. Zunächst benötigen Sie ein Microsoft Azure-Abonnement. Registrieren Sie sich für eine [kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial), und lesen Sie die [Preisinformationen](http://azure.microsoft.com/pricing/details/sql-database).
+> [AZURE.SELECTOR]
+- [Azure Preview Portal](sql-database-v12-upgrade.md)
+- [PowerShell](sql-database-upgrade-server.md)
 
 
-## Schritte für das Upgrade auf SQL-Datenbank V12
+SQL-Datenbank V12 ist die neueste Version der SQL-Datenbank und [viele Vorteile gegenüber der vorherigen V2-Version ](sql-database-v12-whats-new.md). In diesem Artikel ist beschrieben, wie V2-Server über das Azure-Vorschauportal auf V12 aktualisiert werden.
+
+Im Verlauf der Aktualisierung auf SQL-Datenbank V12 müssen Sie auch [alle Web- und Business-Datenbanken auf eine neue Dienstebene aktualisieren](sql-database-upgrade-new-service-tiers.md). Die folgenden Anleitungen umfassen die Schritte zum Aktualisieren Ihrer Web- und Business-Datenbanken anhand von Tarifempfehlungen, die auf der bisherigen Nutzung Ihrer Datenbanken basieren.
 
 
-| Upgradeschritte | Screenshot |
-| :--- | :--- |
-| 1\. Melden Sie sich bei [http://portal.azure.com/](http://portal.azure.com/) an. | ![Neues Azure-Portal][1] |
-| 2\. Klicken Sie auf **DURCHSUCHEN**. | ![Durchsuchen von Diensten][2] |
-| 3\. Klicken Sie auf **SQL-Server**. Eine Liste der Namen der Computer mit SQL-Server wird angezeigt. | ![Auswählen des SQL Server-Diensts][3] |
-| 4\. Wählen Sie den Server aus, den Sie auf einen neuen Server kopieren möchten, auf dem das SQL-Datenbankupdate aktiviert ist. | ![Zeigt eine Liste der SQL-Server an][4] |
-| 5\. Klicken Sie auf **Einstellungen** oder **Serverversion**, um den Server auf Version 12 zu aktualisieren. | ![Aktuelles Vorschaufeature][5] |
-| 6\. Klicken Sie auf **UPGRADE FÜR DIESEN SERVER AUSFÜHREN**. | ![SQL Server-Upgrade auf die Preview][6] |
-| 7\. Nach dem Klicken auf **UPGRADE FÜR DEN SERVER AUSFÜHREN** wird der Upgradevorgang initiiert. Unter **Serverversion** ändert sich die Benachrichtigung von **V2** in **Upgrade scheduled...**. Wenn Sie auf die Benachrichtigung **Upgrade scheduled...** klicken, wird ein Blatt geöffnet, das die Schaltfläche **Upgrade abbrechen** enthält. Klicken Sie auf **Upgrade abbrechen**, wenn Sie sich gegen ein Upgrade für den Server entscheiden. **Hinweis:** Ein Abbruch des Vorgangs gegen Ende des Upgradevorgangs ist nicht möglich, das Upgrade wird in diesem Fall normal abgeschlossen.|![Upgrade abbrechen][9] 
+
+1. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/) zu dem Server, den Sie aktualisieren möchten. Wählen Sie dazu **ALLE DURCHSUCHEN** > **SQL-Server** und dann den gewünschten Server aus.
+2. Wählen Sie **Letzte Aktualisierung der SQL-Datenbank** aus, und wählen Sie dann **Upgrade für diesen Server ausführen** aus.
+
+      ![Server upgraden][1]
+
+## Upgrade für Ihre Web- und Business-Datenbanken durchführen
+
+2. Führen Sie ein Upgrade für alle Web- und Business-Datenbanken durch. Wenn Ihr Server Web- oder Business-Datenbanken hat, müssen Sie für diese ein Upgrade durchführen. Um Sie beim Durchführen des Upgrades zu unterstützen, empfiehlt der SQL-Datenbank-Dienst eine geeignete Dienstebene und Leistungsstufe (Tarif) für jede Datenbank. Durch Analysieren der bisherigen Nutzung für jede Datenbank empfiehlt der Dienst einen Tarif, der am besten geeignet ist, die vorhandene Datenbankworkload auszuführen. 
+    
+    Wählen Sie jede zu überprüfende Datenbank aus, und wählen Sie den empfohlenen Tarif aus, auf den aktualisiert werden soll. Sie können immer die verfügbaren Tarife durchsuchen und den Tarif auswählen, der für Ihre Umgebung am besten geeignet ist.
+
+     ![Datenbanken][2]
 
 
-> [AZURE.NOTE]Nachdem Sie die Upgradeoption ausgewählt haben, werden die Funktionen der SQL-Datenbank V12 für den Server und die Datenbanken auf diesem Server aktiviert. Dieser Vorgang kann nicht rückgängig gemacht werden. Damit für Server ein Upgrade auf SQL-Datenbank V12 durchgeführt werden kann, ist die Dienstebene „Basic“, „Standard“ oder „Premium“ erforderlich. Weitere Informationen zu den Dienstebenen finden Sie unter [Upgrade von Web-/Businessdatenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
+
+7. Nachdem Sie auf den vorgeschlagenen Tarif geklickt haben, wird das Blatt **Wählen Sie Ihren Tarif** angezeigt. Dort können Sie einen Tarif auswählen und dann auf die Schaltfläche **Auswählen** klicken, um zu diesem Tarif zu wechseln. Wählen Sie für jede Web- oder Business-Datenbank einen neuen Tarif aus.
+
+    ![empfehlungen][6]
 
 
-> [AZURE.IMPORTANT]Georeplikation wird von SQL-Datenbank V12 (Preview) nicht unterstützt. Weitere Informationen finden Sie unter [Plan and Prepare to Upgrade to Azure SQL Database V12 Preview](sql-database-v12-plan-prepare-upgrade.md) (Planen und Vorbereiten des Upgrades auf die Azure SQL-Datenbank V12 (Preview); in englischer Sprache).
+Nachdem alle Datenbanken auf dem Server qualifiziert sind, können Sie das Upgrade starten.
+
+## Starten des Upgrades
+
+3. Wenn alle Datenbanken auf dem Server zum Upgrade qualifiziert sind, müssen Sie in **GEBEN SIE DEN SERVERNAMEN EIN** den Servernamen eingeben, um zu bestätigen, dass Sie das Upgrade durchführen möchten. Klicken Sie dann auf **OK**. 
+
+    ![Upgrade bestätigen][3]
 
 
-Nachdem Sie auf die Option **UPGRADE FÜR DIESEN SERVER AUSFÜHREN** geklickt haben, wird ein Blatt geöffnet, das eine Meldung zu einem Überprüfungsvorgang anzeigt.
+4. Das Upgrade wird gestartet, und die Benachrichtigung zum Vorgangsfortschritt wird angezeigt. Der Upgradevorgang wird eingeleitet. Abhängig von den Details Ihrer speziellen Datenbanken kann das Durchführen des Upgrades auf V12 einige Zeit dauern. Während dieser Zeitspanne bleiben alle Datenbanken auf dem Server online, Server- und Datenbankverwaltungsaktionen sind jedoch eingeschränkt.
 
+    ![Upgrade wird ausgeführt][4]
 
-- Der Überprüfungsvorgang überprüft die Dienstebene Ihrer Datenbank und ermittelt, ob Georeplikation aktiviert ist. In diesem Bereich werden auch die Ergebnisse angezeigt, nachdem die Überprüfung abgeschlossen ist. 
-- Nachdem der Überprüfungsvorgang abgeschlossen wurde, wird eine Liste der Datenbanknamen angezeigt, für die Aktionen erforderlich sind, um die Anforderungen eines Upgrades auf SQL-Datenbank V12 zu erfüllen.
- - **Sie müssen diese Aktionen für jede dieser Datenbanken durchführen, damit ein Upgrade auf SQL-Datenbank V12 erfolgen kann**.
-- Wenn Sie auf die einzelnen Datenbanknamen klicken, stellt ein neuer Bereich Empfehlungen für Diensttarife basierend auf Ihrer aktuellen Nutzung zur Verfügung. Sie können auch verschiedene Tarife durchsuchen und die Stufe auswählen, die am besten für Ihre Umgebung geeignet ist. Alle Datenbanken, die für Georeplikation eingerichtet sind, müssen so neu konfiguriert werden, dass die Replikation beendet wird. 
-- Beachten Sie, dass keine Empfehlung für den Tarif angezeigt wird, wenn nicht genügend Daten gefunden wurden. 
+    Zum Zeitpunkt des tatsächlichen Übergangs auf die neue Leistungsstufe können die Datenbankverbindungen ggf. für einen sehr kurzen Zeitraum (normalerweise im Sekundenbereich) vorübergehend unterbrochen werden. Wenn eine Anwendung über Maßnahmen zur Behandlung vorübergehender Fehler (Wiederholungslogik) bei Verbindungsunterbrechungen verfügt, ist es ausreichend, am Ende des Upgrades Schutz vor unterbrochenen Verbindungen vorzusehen.
 
+5. Nach Abschluss des Upgradevorgangs werden die SQL-Datenbank V12-Server-Features aktiviert.
 
-| Aktion | Screenshot |
-| :--- | :--- |
-| 7\. Nachdem Sie die Aktionen abgeschlossen haben, die Ihren Server auf das Upgrade vorbereiten, geben Sie den Namen des Servers ein, für den das Upgrade durchgeführt werden soll. Klicken Sie dann auf **OK**. | ![Bestätigen Sie den Namen des Servers, für den ein Upgrade durchgeführt werden soll.][7] |
-| 8\. Der Upgradevorgang wird eingeleitet. Das Upgrade kann bis zu 24 Stunden dauern. Während dieser Zeitspanne bleiben alle Datenbanken auf diesem Server online. Server- und Datenbankverwaltungsaktionen sind jedoch eingeschränkt. Nachdem der Vorgang abgeschlossen wurde, wird im Serverbereich der Status **Aktiviert** angezeigt. | ![Bestätigt, dass Vorschaufeatures aktiviert sind][8] |
-
-
-## Powershell-Cmdlets
-
-
-Powershell-Cmdlets sind verfügbar, um ein Upgrade auf Azure SQL-Datenbank V12 von V11 oder einer anderen niedrigeren Version als V12 zu starten, zu beenden oder zu überwachen.
-
-
-Referenzdokumentation zu diesen Powershell-Cmdlets finden Sie unter:
-
-
-- [Get-AzureSqlServerUpgrade](http://msdn.microsoft.com/library/mt143621.aspx)
-- [Start-AzureSqlServerUpgrade](http://msdn.microsoft.com/library/mt143623.aspx)
-- [Stop-AzureSqlServerUpgrade](http://msdn.microsoft.com/library/mt143622.aspx)
-
-
-Mit dem Cmdlet „Stop-“ wird der Vorgang abgebrochen, nicht angehalten. Ein Upgrade kann nach einem Abbruch nicht fortgesetzt werden, es muss wieder von vorne begonnen werden. Das Cmdlet „Stop-“ bereinigt alle entsprechenden Ressourcen und setzt sie frei.
+    ![V12-aktiviert][5]
 
 
 ## Verwandte Links
 
--  [Neuerungen in SQL-Datenbank V12](sql-database-v12-whats-new.md) 
+- [Neuerungen in SQL-Datenbank V12](sql-database-v12-whats-new.md)
 - [Plan and prepare to upgrade to SQL Database V12](sql-database-v12-plan-prepare-upgrade.md) (Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12; in englischer Sprache)
 
 
 <!--Image references-->
-[1]: ./media/sql-database-v12-upgrade/firstscreenportal.png
-[2]: ./media/sql-database-v12-upgrade/firstscreenportal.png
-[3]: ./media/sql-database-v12-upgrade/sqlserverlist.png
-[4]: ./media/sql-database-v12-upgrade/sqlserverlist.png
-[5]: ./media/sql-database-v12-upgrade/latestprview.png
-[6]: ./media/sql-database-v12-upgrade/upgrade.png
-[7]: ./media/sql-database-v12-upgrade/typeservername.png
-[8]: ./media/sql-database-v12-upgrade/enabled.png
-[9]: ./media/sql-database-v12-upgrade/cancel.PNG
- 
+[1]: ./media/sql-database-v12-upgrade/latest-sql-database-update.png
+[2]: ./media/sql-database-v12-upgrade/upgrade-server2.png
+[3]: ./media/sql-database-v12-upgrade/upgrade-server3.png
+[4]: ./media/sql-database-v12-upgrade/online-during-upgrade.png
+[5]: ./media/sql-database-v12-upgrade/enabled.png
+[6]: ./media/sql-database-v12-upgrade/recommendations.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

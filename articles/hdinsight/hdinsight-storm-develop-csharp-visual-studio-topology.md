@@ -23,6 +23,8 @@ Erfahren Sie, wie Sie eine C#-Storm-Topologie mithilfe der HDInsight-Tools für 
 
 Außerdem erfahren Sie, wie hybride Topologien erstellt werden, die C#- und Java-Komponenten verwenden.
 
+[AZURE.INCLUDE [nur für Windows](../../includes/hdinsight-windows-only.md)]
+
 ##Voraussetzungen
 
 -	Eine der folgenden Versionen von Visual Studio:
@@ -656,4 +658,4 @@ Weitere Möglichkeiten zum Arbeiten mit HDInsight sowie weitere Beispiele für S
 
 -	[Erste Schritte mit HBase in HDInsight](../hdinsight-hbase-get-started.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

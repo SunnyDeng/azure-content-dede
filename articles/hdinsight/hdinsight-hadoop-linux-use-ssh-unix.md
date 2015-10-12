@@ -35,7 +35,7 @@
 
 OR
 
-* [Azure-CLI für Mac, Linux und Windows](../xplat-cli.md).
+* [Azure-CLI für Mac, Linux und Windows](../xplat-cli-install.md).
 
 ##Was ist SSH?
 
@@ -242,4 +242,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

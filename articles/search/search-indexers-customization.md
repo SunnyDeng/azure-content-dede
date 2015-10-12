@@ -13,18 +13,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="09/29/2015" 
 	ms.author="eugenesh"/>
 
-#Anpassen von Azure Search-Indexern#
+#Anpassen von Azure Search-Indexern
 
-In diesem Artikel erfahren Sie, wie Sie mit Azure Search-Indexern die folgenden Szenarios implementieren können:
-
-- Umbenennen von Feldern zwischen einer Datenquelle und einem Zielindex 
-- Transformieren von Zeichenfolgen aus einer Datenbanktabelle in Zeichenfolgenauflistungen
-- Wechseln der Änderungserkennungsrichtlinie in einer Datenquelle 
-- Durchführen der URL-Codierung von Dokumentschlüsseln, die URL-unsichere Zeichen enthalten 
-- Tolerieren von Fehlern beim Indizieren von Dokumenten 
+Durch Konfigurieren eines Indexers in Azure Search können Sie Felder zwischen einer Datenquelle und einem Zielindex umbenennen, Zeichenfolgen aus einer Datenbanktabelle in Zeichenfolgensammlungen umwandeln, die Richtlinie zur Änderungserkennung in einer Datenquelle wechseln, Dokumentschlüssel mit nicht sicheren URL-Zeichen per URL codieren und Fehler bei der Indizierung einiger Dokumente zulassen.
 
 Wenn Sie nicht mit Azure Search-Indexern vertraut sind, sollten Sie zunächst die folgenden Artikel lesen:
 
@@ -123,4 +117,4 @@ Selbst wenn Sie die Tolerierung einiger Fehler festlegen, werden durch den [API-
 Damit sind wir am Ende angelangt. Wenn Sie Ideen oder Vorschläge für zukünftige Artikel haben, senden Sie uns einen Tweet mit dem Hashtag #AzureSearch, oder geben Sie Ihre Anregungen auf unserer [UserVoice-Seite](http://feedback.azure.com/forums/263029-azure-search) ein.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

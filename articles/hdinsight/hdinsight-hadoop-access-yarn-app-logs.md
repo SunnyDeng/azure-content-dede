@@ -24,6 +24,7 @@ In diesem Thema wird erläutert, wie Sie YARN-Anwendungen (Yet Another Resource 
   1. Der allgemeine Anwendungsverlaufsserver für HDInsight-Cluster wurde aktiviert. Es handelt sich um eine Komponente im YARN Timeline Server, die für Speicherung und Abruf allgemeiner Informationen zu abgeschlossenen Anwendungen zuständig ist.
   2. Im Azure HDInsight .Net SDK stehen APIs zur Verfügung, um Ihnen das programmgesteuerte Aufzählen von Anwendungen zu ermöglichen, die in Ihren Clustern ausgeführt wurden. Es erlaubt zudem das Herunterladen der relevanten Informationen oder containerspezifischen Protokolle (als unformatierten Text), damit Sie auftretende Anwendungsprobleme besser beheben können.
 
+> [AZURE.NOTE]Die Informationen in diesem Dokument gelten nur für Windows-basierte HDInsight-Cluster. Weitere Informationen zum Zugriff auf YARN-Protokolle auf Linux-basierten HDInsight-Clustern finden Sie unter [Zugriff auf YARN-Anwendungsprotokolle auf Linux-basierten Hadoop-Clustern in HDInsight](hdinsight-hadoop-access-yarn-app-logs-linux.md).
 
 ## Voraussetzungen
 
@@ -173,4 +174,4 @@ Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmt
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

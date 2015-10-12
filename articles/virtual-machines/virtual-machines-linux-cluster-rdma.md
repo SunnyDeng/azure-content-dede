@@ -33,7 +33,7 @@ Mit den folgenden Methoden können Sie einen Linux RDMA-Cluster mit oder ohne ei
 
 * **HPC Pack** – Erstellen Sie einen Microsoft HPC Pack-Cluster in Azure, und fügen Sie Computeknoten hinzu, auf denen unterstützte Linux-Distributionen ausgeführt werden (Unterstützung von Linux-Computeknoten ab HPC Pack 2012 R2 Update 2). Bestimmte Linux-Knoten können für den Zugriff auf das RDMA-Netzwerk konfiguriert werden. Informationen finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster.md).
 
-* **Azure-CLI-Skripts** – Verwenden Sie wie in den Schritten im restlichen Artikel gezeigt die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) (CLI) für Mac, Linux und Windows zum Erstellen von Skripts für die Bereitstellung eines virtuellen Netzwerks und der übrigen Komponenten, die zum Erstellen eines Linux-Clusters erforderlich sind. Über die Befehlszeilenschnittstelle im klassischen Bereitstellungsmodus (Dienstverwaltungsmodus) werden die Clusterknoten seriell erstellt, daher kann die Bereitstellung vieler Computeknoten einige Minuten in Anspruch nehmen.
+* **Azure-CLI-Skripts** – Verwenden Sie wie in den Schritten im restlichen Artikel gezeigt die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) (CLI) für Mac, Linux und Windows zum Erstellen von Skripts für die Bereitstellung eines virtuellen Netzwerks und der übrigen Komponenten, die zum Erstellen eines Linux-Clusters erforderlich sind. Über die Befehlszeilenschnittstelle im klassischen Bereitstellungsmodus (Dienstverwaltungsmodus) werden die Clusterknoten seriell erstellt, daher kann die Bereitstellung vieler Computeknoten einige Minuten in Anspruch nehmen.
 
 * **Azure-Ressourcen-Manager-Vorlagen** – Durch Erstellen einer einfachen Azure-Ressourcen-Manager-JSON-Vorlagendatei und Ausführen der Azure-CLI-Befehle für den Ressourcen-Manager oder mithilfe des Azure-Vorschauportals können Sie mehrere virtuelle A8- und A9-Linux-Computer bereitstellen sowie virtuelle Netzwerke, statische IP-Adressen, DNS-Einstellungen und andere Ressourcen definieren, um einen Computecluster einzurichten, der das RDMA-Netzwerk zum Ausführen von MPI-Workloads nutzen kann. Sie können [eine eigene Vorlage erstellen](../resource-group-authoring-templates.md) oder auf der Seite [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) nach Vorlagen von Microsoft oder der Community suchen, um die gewünschte Lösung bereitzustellen. Ressourcen-Manager-Vorlagen stellen in der Regel die schnellste und zuverlässigste Möglichkeit zum Bereitstellen eines Linux-Clusters dar.
 
@@ -51,7 +51,7 @@ Die folgenden Schritte helfen Ihnen beim Bereitstellen einer SLES-12-VM, beim In
 
 *   **Azure-CLI** – [Installieren](../xplat-cli-install.md) Sie die Azure-Befehlszeilenschnittstelle, und [konfigurieren](../xplat-cli-connect.md) Sie sie, um auf dem Clientcomputer eine Verbindung mit dem Azure-Abonnement herzustellen.
 
-*   **Intel MPI** – Wenn Sie ein Image für einen virtuellen Linux-Computer für Ihren Cluster anpassen (Informationen hierzu finden Sie weiter unten im Artikel), müssen Sie die Intel MPI Library 5-Laufzeit von der Website [Intel.com](https://software.intel.com/DE-DE/intel-mpi-library/) auf einen bereitgestellten virtuellen Azure Linux-Computer herunterladen. Folgen Sie als Vorbereitung dazu nach der Registrierung bei Intel dem Link in der Bestätigungs-E-Mail auf die entsprechende Webseite, und kopieren Sie den Downloadlink der TGZ-Datei für die entsprechende Version von Intel MPI. Dieser Artikel basiert auf Intel MPI-Version 5.0.3.048.
+*   **Intel MPI** – Wenn Sie ein Image für einen virtuellen Linux-Computer für Ihren Cluster anpassen (Informationen hierzu finden Sie weiter unten im Artikel), müssen Sie die Intel MPI Library 5-Laufzeit von der Website [Intel.com](https://software.intel.com/de-DE/intel-mpi-library/) auf einen bereitgestellten virtuellen Azure Linux-Computer herunterladen. Folgen Sie als Vorbereitung dazu nach der Registrierung bei Intel dem Link in der Bestätigungs-E-Mail auf die entsprechende Webseite, und kopieren Sie den Downloadlink der TGZ-Datei für die entsprechende Version von Intel MPI. Dieser Artikel basiert auf Intel MPI-Version 5.0.3.048.
 
 ### Bereitstellen einer SLES 12-VM
 
@@ -367,6 +367,6 @@ In einem funktionierenden Cluster mit zwei Knoten wird eine Ausgabe angezeigt, d
 
 * Versuchen Sie, Ihre Linux-MPI-Anwendungen im Linux-Cluster bereitzustellen und auszuführen.
 
-* Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/DE-DE/articles/intel-mpi-library-documentation/).
+* Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/de-DE/articles/intel-mpi-library-documentation/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

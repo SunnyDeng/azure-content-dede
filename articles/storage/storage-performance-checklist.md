@@ -187,7 +187,7 @@ Weitere Informationen finden Sie im Artikel [Eine Übersicht der Leistungsverbes
 Während Parallelität großartig für die Leistung sein kann, verwenden Sie uneingeschränkte Parallelität (ohne Beschränkung der Anzahl von Threads und/oder parallelen Anforderungen) zum Hochladen oder Herunterladen von Daten mit Vorsicht. Das gilt auch für mehrere Worker zum Zugriff auf mehrere Partitionen (Container, Warteschlangen oder Tabellenpartitionen) im selben Speicherkonto oder für den Zugriff auf mehrere Elemente in derselben Partition. Bei uneingeschränkter Parallelität kann die Kapazität des Clientgeräts oder das Skalierbarkeitsziel des Speicherkontos überschritten werden, sodass es zu höherer Latenz und Drosselung kommt.
 
 ###<a name="subheading13"></a>Speicherclientbibliotheken und Tools
-Verwenden Sie immer die neuesten von Microsoft bereitgestellten Clientbibliotheken und Tools. Zum Redaktionszeitpunkt sind RTM-Bibliotheken für .NET, Windows Phone, Windows Runtime und Java sowie Vorschaubibliotheken in anderen Sprachen wie node.js und C++ verfügbar. Darüber hinaus hat Microsoft PowerShell-Cmdlets und Befehle der Azure-Befehlszeilenschnittstelle für die Verwendung in Azure Storage entwickelt. Microsoft entwickelt diese Tools aktiv im Hinblick auf die Leistung, hält sie auf dem aktuellen Stand der Dienstversionen und stellt sicher, dass sie viele der bewährten Leistungsmethoden intern abwickeln.
+Verwenden Sie immer die neuesten von Microsoft bereitgestellten Clientbibliotheken und Tools. Zum Redaktionszeitpunkt sind Client-Bibliotheken für .NET, Windows Phone, Windows Runtime, Java und C++ sowie Vorschaubibliotheken für andere Sprachen verfügbar. Darüber hinaus hat Microsoft PowerShell-Cmdlets und Befehle der Azure-Befehlszeilenschnittstelle für die Verwendung in Azure Storage entwickelt. Microsoft entwickelt diese Tools aktiv im Hinblick auf die Leistung, hält sie auf dem aktuellen Stand der Dienstversionen und stellt sicher, dass sie viele der bewährten Leistungsmethoden intern abwickeln.
 
 ###Wiederholungsversuche
 ####<a name="subheading14"></a>Drosselung/Server ausgelastet
@@ -387,4 +387,4 @@ Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen.
 In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler, seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Über virtuelle Azure-Computer | Microsoft Azure"
-	description="Machen Sie sich mit den Grundlagen von virtuellen Azure-Computern vertraut."
+	description="Machen Sie sich mit den Grundlagen von virtuellen Azure-Computern mithilfe von beiden Bereitstellungsmodellen vertraut."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +17,7 @@
 	ms.date="07/14/2015"
 	ms.author="cynthn"/>
 
-#Informationen zu mit den beiden Bereitstellungsmodellen erstellten virtuellen Azure-Computern
+#Über virtuelle Azure-Computer 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt Ressourcen, die mit dem Ressourcen-Manager- und dem klassischen Bereitstellungsmodell erstellt wurden.
 
@@ -48,7 +48,7 @@ Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfe
 
 <!--links-->
 [App Service]: app-service-choose-me.md
-[Virtuelle Computer]: #tellmevm
-[Cloud-Dienste]: cloud-services-choose-me.md
+[Virtual Machines]: #tellmevm
+[Cloud Services]: cloud-services-choose-me.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

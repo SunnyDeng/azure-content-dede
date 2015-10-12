@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/11/2015"
-   ms.author="bwren" />
+   ms.date="09/28/2015"
+   ms.author="bwren;sngun"/>
 
 # Starten eines Runbooks in Azure Automation
 
@@ -49,7 +49,6 @@ Die folgende Tabelle hilft Ihnen dabei herauszufinden, welche Methode zum Starte
   </td>
  </tr>
  <tr>
- <tr>
   <td><a href="http://msdn.microsoft.com/library/azure/mt163849.aspx">Azure Automation-API</a></td>
   <td>
    <ul>
@@ -62,7 +61,6 @@ Die folgende Tabelle hilft Ihnen dabei herauszufinden, welche Methode zum Starte
   </td>
  </tr>
  <tr>
- <tr>
   <td><a href="http://azure.microsoft.com/documentation/articles/automation-webhooks/">Webhook</a></td>
   <td>
    <ul>
@@ -74,6 +72,16 @@ Die folgende Tabelle hilft Ihnen dabei herauszufinden, welche Methode zum Starte
   </td>
  </tr>
  <tr>
+  <td><a href="http://azure.microsoft.com/documentation/articles/automation-webhooks/">Reagieren auf eine Azure-Warnung</a></td>
+  <td>
+   <ul>
+    <li>Starten Sie ein Runbook als Reaktion auf eine Azure-Warnung.</li>
+    <li>Konfigurieren eines Webhooks für Runbook und Link zum Warnen.</li>
+    <li>Authentifizierung über Sicherheitstoken in der URL.</li>
+    <li>Unterstützt derzeit nur Warnungen für Metriken.</li>
+   </ul>
+  </td>
+ </tr>
  <tr>
   <td><a href="http://azure.microsoft.com/documentation/articles/automation-scheduling-a-runbook">Zeitplan</a></td>
   <td>
@@ -232,4 +240,4 @@ Wenn der Benutzernamen in den Anmeldeinformationen *jsmith* lautet, erhalten Sie
 
 - [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx) 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

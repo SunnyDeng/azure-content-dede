@@ -1,20 +1,20 @@
 <properties
    pageTitle="HDInsight-Artikelindex für das Azure-Portal | Microsoft Azure"
-	description="Eine Indexseite mit Links zu Artikeln über HDInsight im Azure-Portal. Microsoft empfiehlt für neue Hadoop-Cluster in HDInsight die Verwendung des Azure-Vorschauportals."
-	services="hdinsight"
-	documentationCenter="na"
-	authors="cjgronlund"
-	manager="pablissima"
-	editor=""/>
+   description="Eine Indexseite mit Links zu Artikeln über HDInsight im Azure-Portal. Microsoft empfiehlt für neue Hadoop-Cluster in HDInsight die Verwendung des Azure-Vorschauportals."
+   services="hdinsight"
+   documentationCenter="na"
+   authors="cjgronlund"
+   manager="pablissima"
+   editor=""/>
 
 <tags
    ms.service="hdinsight"
-	ms.devlang="na"
-	ms.topic="index-page"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="08/17/2015"
-	ms.author="cjgronlund"/>
+   ms.devlang="na"
+   ms.topic="index-page"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/17/2015"
+   ms.author="cjgronlund"/>
 
 # HDInsight-Artikelindex für das Azure-Portal
 
@@ -102,6 +102,7 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Vorschau
 * [Erstellen von Filmempfehlungen mithilfe von Apache Mahout mit Hadoop](hdinsight-mahout.md)
 * [Lernpfad: Erstellen von erweiterten Analyselösungen](machine-learning-data-science-how-to-create-machine-learning-service.md)
 * [Lernpfad: Erweiterte Datenverarbeitung](machine-learning-data-science-advanced-data-processing.md)
+* [Vorhersagen von Taxitrinkgeldern mit HDInsight und Machine Learning](machine-learning-data-science-process-hive-walkthrough.md)
 
 ## Erweiterbarkeit
 
@@ -132,4 +133,4 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Vorschau
 * [Interpretieren von Fehlermeldungen](hdinsight-debug-jobs.md)
 * [Hilfe im Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

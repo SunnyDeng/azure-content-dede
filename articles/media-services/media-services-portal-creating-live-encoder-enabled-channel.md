@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="09/30/2015" 
 	ms.author="juliako"/>
 
 
-#Verwenden des Verwaltungsportals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird (Vorschau)
+#Verwenden des Verwaltungsportals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird 
 
 > [AZURE.SELECTOR]
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
@@ -140,7 +140,7 @@ Wenn keine IP-Adressen angegeben werden und keine Regeldefinition vorhanden ist,
 
 ![standard4][standard4]
 
->[AZURE.NOTE]Derzeit kann der Kanalstart in der Vorschau bis zu 30 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
+>[AZURE.NOTE]Derzeit kann der Kanalstart bis zu 30 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
 
 Nachdem Sie den Kanal erstellt haben, können Sie die Registerkarte **ENCODER** auswählen, um die Konfigurationen Ihrer Kanäle anzusehen. Sie können auch Werbespots und Slates verwalten.
 
@@ -266,4 +266,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!----HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

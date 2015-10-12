@@ -1,20 +1,20 @@
 <properties
    pageTitle="Entwickeln von Service Fabric-Diensten"
-	description="Enthält grundlegende Informationen und Lernprogramme zum Entwickeln eines Service Fabric-Diensts mit dem Reliable Actors- oder Reliable Services-Programmiermodell."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="rwike77"
-	manager="timlt"
-	editor=""/>
+   description="Enthält grundlegende Informationen und Lernprogramme zum Entwickeln eines Service Fabric-Diensts mit dem Reliable Actors- oder Reliable Services-Programmiermodell."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="rwike77"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/20/2015"
-	ms.author="ryanwi"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/25/2015"
+   ms.author="ryanwi"/>
 
 # Entwickeln von Service Fabric-Diensten
 Diese Seite enthält Links zur Übersicht, zu grundlegenden Artikeln und zum Lernprogramm für das Entwickeln von Service Fabric-Diensten. Service Fabric bietet zwei High-Level-Programmiermodelle zum Erstellen von Diensten: Reliable Actors-APIs und Reliable Services-APIs. Beide Programmiermodelle setzen auf dem gleichen Service Fabric-Kern auf, sie unterscheiden sich jedoch durch unterschiedliche Kompromisse zwischen Einfachheit und Flexibilität im Hinblick auf Parallelität, Partitionierung und Kommunikation. Um das richtige Framework für einen bestimmten Dienst in Ihrer Anwendung zu wählen, sollten Sie beide Modelle kennen.
@@ -30,10 +30,11 @@ Diese Seite enthält Links zur Übersicht, zu grundlegenden Artikeln und zum Ler
 - [Actor-Lebenszyklus und Garbage Collection](service-fabric-reliable-actors-lifecycle.md)
 - [Verwendung der Service Fabric-Plattform durch Fabric Actors](service-fabric-reliable-actors-platform.md)
 - [Hinweise zur Typserialisierung von Azure Service Fabric Actors](service-fabric-reliable-actors-notes-on-actor-type-serialization.md)
+- [Node.js und Reliable Actors](service-fabric-node-and-reliable-actors-an-winning-combination.md)
 
 Die Kommunikation mit Actors wird in folgenden Artikeln beschrieben:
 
-- [Einführung in das Azure Service Fabric-Actor-Modell](service-fabric-reliable-actors-introduction.md#actor-communication)
+- [Einführung in das Azure Service Fabric-Actors-Modell](service-fabric-reliable-actors-introduction.md#actor-communication)
 - [Kommunizieren mit Diensten](service-fabric-connect-and-communicate-with-services.md)
 
 Diese Artikel befasst sich mit hilfreichen Entwurfsmustern und Szenarien:
@@ -69,7 +70,6 @@ Reliable Actors geben Ereignisse und Leistungsindikatoren aus, die zur Diagnose 
 Reliable Services bietet ein einfaches, leistungsfähiges High-Level-Programmiermodell, mit dem Sie alles Wichtige in Ihrer Anwendung programmieren können. Weitere Informationen finden Sie unter:
 
 - [Erste Schritte mit Reliable Services](service-fabric-reliable-services-quick-start.md)
-- [Übersicht über das Programmiermodell](../service-fabric-reliable-services-service-overview.md)  
 - [Architektur](service-fabric-reliable-services-platform-architecture.md)
 - [Zuverlässige Auflistungen](service-fabric-reliable-services-reliable-collections.md)
 - [Konfigurieren zustandsbehafteter zuverlässiger Dienste](../Service-Fabric/service-fabric-reliable-services-configuration.md)
@@ -87,4 +87,4 @@ Reliable Services geben Ereignisse und Leistungsindikatoren aus, die zur Diagnos
 
 - [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

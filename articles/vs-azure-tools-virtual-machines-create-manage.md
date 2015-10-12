@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/24/2015"
+   ms.date="09/30/2015"
    ms.author="kempb" />
 
 # Erstellen und Verwalten virtueller Azure-Computer in Visual Studio
@@ -61,7 +61,7 @@ Sie können einen virtuellen Computer im [Azure-Verwaltungsportal](http://go.mic
 
     Sie verwenden den neuen Namen und das Kennwort, um sich mithilfe von Remotedesktop am Computer anzumelden. Daher ist es sinnvoll, sich diese Angaben zu notieren. Nachdem Sie einen virtuellen Azure-Computer in Visual Studio erstellt haben, können Sie seine Größe und andere Einstellungen im [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=253103) ändern.
 
-   >[AZURE.NOTE]Wenn Sie eine größere Größe für den virtuellen Computer auswählen, fallen ggf. zusätzliche Kosten an. Weitere Informationen finden Sie unter [Preisdetails für virtuelle Computer](http://azure.microsoft.com/pricing/details/virtual-machines/).
+        >[AZURE.NOTE] If you choose larger sizes for the virtual machine, extra charges may apply. See [Virtual Machines Pricing Details](http://azure.microsoft.com/pricing/details/virtual-machines/) for more information.
 
 1. Für virtuelle Computer, die in Visual Studio erstellt werden, ist ein Clouddienst erforderlich. Wählen Sie auf der Seite **Einstellungen des Clouddiensts** einen Clouddienst für den virtuellen Computer aus, oder klicken Sie in der Dropdownliste auf **Neu erstellen…**, wenn Sie noch nicht über einen Clouddienst verfügen oder einen neuen Clouddienst verwenden möchten. Ein Speicherkonto ist ebenfalls erforderlich. Wählen Sie daher aus dem Dropdownlistenfeld **Speicherkonto** ein Speicherkonto aus (oder erstellen Sie ein neues Speicherkonto). Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](./storage/storage-introduction/).
 
@@ -73,7 +73,7 @@ Sie können einen virtuellen Computer im [Azure-Verwaltungsportal](http://go.mic
 
     Indem Sie Ihren virtuellen Computer einer Verfügbarkeitsgruppe hinzufügen, können Sie sicherstellen, dass die Anwendung bei Netzwerkfehlern, Hardwarefehlern des lokalen Datenträgers und während geplanter Ausfallzeiten verfügbar bleibt. Zum Erstellen von virtuellen Netzwerken, Subnetzen und Verfügbarkeitsgruppen müssen Sie das [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=253103) verwenden. Weitere Informationen finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer](http://www.windowsazure.com/documentation/articles/manage-availability-virtual-machines/).
 
-1. Geben Sie auf der Seite **Endpunkte** die öffentlichen Endpunkte an, die für Benutzer Ihres virtuellen Computers verfügbar sein sollen. Sie können z. B. zusätzlich zu den Remotedesktop- und PowerShell-Endpunkten, die standardmäßig aktiviert sind, HTTP (Port 80) aktivieren. Wählen Sie zum Hinzufügen eines Endpunkts im Dropdownlistenfeld **Portname** einen Endpunkt aus, und klicken Sie auf die Schaltfläche **Hinzufügen**. Wenn Sie einen Endpunkt entfernen möchten, wählen Sie in der Liste der Endpunkte das rote **X** neben dem Namen aus.
+1. Geben Sie auf der Seite **Endpunkte** die öffentlichen Endpunkte an, die für Benutzer Ihres virtuellen Computers verfügbar sein sollen. Sie können z. B. zusätzlich zu den Remotedesktop- und PowerShell-Endpunkten, die standardmäßig aktiviert sind, HTTP (Port 80) aktivieren. Um einen Endpunkt hinzuzufügen, wählen Sie im Dropdownlistenfeld **Portname** einen Endpunkt aus, und klicken Sie auf die Schaltfläche **Hinzufügen**. Wenn Sie einen Endpunkt entfernen möchten, wählen Sie in der Liste der Endpunkte das rote **X** neben dem Namen aus.
 
     ![Die Seite "Endpunkte" im Assistenten für virtuelle Computer](./media/vs-azure-tools-virtual-machines-create-manage/IC718351.png)
 
@@ -133,7 +133,7 @@ Wenn Sie Ihren virtuellen Computer konfigurieren und Software darauf installiere
 
     ![Aufzeichnungsschaltfläche auf der Konfigurationsseite in Azure](./media/vs-azure-tools-virtual-machines-create-manage/IC744142.png)
 
-    Das Dialogfeld **Virtuellen Computer aufzeichnen** wird angezeigt.
+    Das Dialogfeld **Virtuellen Computer erfassen** wird angezeigt.
 
     ![Das Azure-Dialogfeld zum Aufzeichnen des virtuellen Computers](./media/vs-azure-tools-virtual-machines-create-manage/IC744143.png)
 
@@ -171,10 +171,10 @@ Wenn Sie Ihren virtuellen Computer konfigurieren und Software darauf installiere
 
 1. Wählen Sie im Server-Explorer im Knoten **Virtuelle Azure-Computer** den virtuellen Computer aus, den Sie herunterfahren möchten.
 
-1. Wählen Sie im Kontextmenü den Befehl **Herunterfahren** aus, oder wählen Sie** Konfigurieren** aus, um die Konfigurationsseite des virtuellen Computers anzuzeigen, und klicken Sie dann auf die Schaltfläche **Herunterfahren**.
+1. Wählen Sie im Kontextmenü den Befehl **Herunterfahren** aus, oder wählen Sie **Konfigurieren** aus, um die Konfigurationsseite des virtuellen Computers anzuzeigen, und klicken Sie dann auf die Schaltfläche **Herunterfahren**.
 
 ## Nächste Schritte
 
 Weitere Informationen zum Erstellen von virtuellen Computern finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md) und [Erstellen ein virtuellen Windows-Computers im Azure-Vorschauportal](virtual-machines-windows-tutorial.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Abfragen von Daten aus HDFS-kompatiblen Blobspeicher | Microsoft Azure"
 	description="HDInsight verwendet Blobspeicher als Big Data-Speicher für HDFS. Erfahren Sie, wie Sie Daten aus Blobspeicher abfragen und die Ergebnisse der Analyse speichern."
+	keywords="blob storage,hdfs,structured data,unstructured data"
 	services="hdinsight,storage"
 	documentationCenter=""
 	tags="azure-portal"
@@ -100,7 +101,7 @@ Bei der Bereitstellung eines HDInsight-Clusters im Vorschauportal können Sie ei
 
 ###Verwenden der Azure-Befehlszeilenschnittstelle
 
-Wenn Sie [die Befehlszeilenschnittstelle von Azure (Azure-CLI) installiert und konfiguriert](../xplat-cli.md) haben, können Sie zur Erstellung eines Speicherkontos und Containers den folgenden Befehl verwenden.
+Wenn Sie [die Befehlszeilenschnittstelle von Azure (Azure-CLI) installiert und konfiguriert](../xplat-cli-install.md) haben, können Sie zur Erstellung eines Speicherkontos und Containers den folgenden Befehl verwenden.
 
 	azure storage account create <storageaccountname> --type LRS
 
@@ -315,4 +316,4 @@ Weitere Informationen finden Sie unter:
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

@@ -58,4 +58,4 @@ Eine vollständige, automatisierte Lösung für dieses Szenario ist als Teil des
 
 Weitere Beispiel-Storm-Topologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

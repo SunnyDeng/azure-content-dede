@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen einer Windows Store-Bestenlisten-App mit .NET-Back-End | Microsoft Azure" 
+	pageTitle="Erstellen einer Windows Store-Bestenlisten-App mit .NET-Back-End | Azure Mobile Services" 
 	description="Erfahren Sie, wie Sie eine Windows Store-Bestenlisten-App mithilfe von Azure Mobile Services mit einem .NET-Back-End erstellen." 
 	documentationCenter="windows" 
 	authors="MikeWasson" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.date="09/24/2015" 
 	ms.author="glenga"/>
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End
@@ -111,7 +111,7 @@ Fügen Sie eine weitere Klasse namens `PlayerRank` hinzu.
 
 Beide Klassen erben von der **EntityData**-Klasse. Durch das Ableiten von **EntityData** wird die Nutzung der Daten für die App erleichtert. Es wird die plattformübergreifende Clientbibliothek für Azure Mobile Services verwendet. **EntityData** macht außerdem das [Behandeln von Datenbank-Schreibkonflikten](mobile-services-windows-store-dotnet-handle-database-conflicts.md) leichter für die App.
 
-Die `PlayerRank`-Klasse verfügt über eine [Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx), die auf die zugehörige `Player`-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
+Die `PlayerRank`-Klasse verfügt über eine ￼[Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx)￼, die auf die zugehörige `Player`￼￼￼-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
 
 ## Hinzufügen von Web-API-Controllern
 
@@ -308,7 +308,7 @@ Fügen Sie anschließend den folgenden Code zu `PlayerRankController` hinzu:
         return Ok();
     }
 
-Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
+Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`￼￼￼-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
 
 1.	Fügt einen neuen Wert für `PlayerRank` für den Spieler hinzu, falls er nicht bereits in der Datenbank vorhanden ist.
 2.	Aktualisiert das Ergebnis des Spielers.
@@ -762,4 +762,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

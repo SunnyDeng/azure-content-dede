@@ -102,7 +102,7 @@ Alternativen:
 - **geography**: stattdessen einen varbinary-Typ
 - **hierarchyid**: CLR-Typ, nicht systemeigen
 - **image**, **text**, **ntext**: falls textbasiert, varchar/nvarchar verwenden (je kleiner desto besser)
-- **nvarchar(max)**: varchar(4000) oder kleiner zur Verbesserung der Leistung
+- **nvarchar(max)**: nvarchar(4000) oder kleiner zur Verbesserung der Leistung
 - **numeric**: decimal
 - **sql\_variant**: Spalte in mehrere Spalten mit starker Typisierung unterteilen
 - **sysname**: nvarchar(128)
@@ -306,4 +306,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

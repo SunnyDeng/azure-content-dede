@@ -6,7 +6,7 @@
    authors="rashimg"
    manager="mwinkle"
    editor="cgronlun"
-	tags="azure-portal"/>
+   tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -22,7 +22,9 @@
 
 Hadoop-Cluster sind standardmäßig nicht leistungsoptimiert. In diesem Artikel werden einige der gängigsten Optimierungsmethoden für die Leistung von Hive vorgestellt, die Sie auf unsere Abfragen anwenden können.
 
+
 [AZURE.INCLUDE [preview-portal](../../includes/hdinsight-azure-preview-portal.md)]
+
 
 * [Optimieren von Hive-Abfragen für Hadoop in HDInsight](hdinsight-hadoop-optimize-hive-query-v1.md)
 
@@ -59,7 +61,7 @@ Sie können jede von Tez ermöglichte Hive-Abfrage ausführen, indem Sie der Abf
 
 	set hive.execution.engine=tez;
 
-Tez muss zum Zeitpunkt der Bereitstellung aktiviert sein. Nachfolgend sehen Sie ein Azure PowerShell-Beispielskript für die Bereitstellung eines Hadoop-Clusters mit aktiviertem Tez:
+Für Windows-basierte HDInsight-Cluster muss Tez zum Zeitpunkt der Bereitstellung aktiviert sein. Nachfolgend sehen Sie ein Azure PowerShell-Beispielskript für die Bereitstellung eines Hadoop-Clusters mit aktiviertem Tez:
 
 
 	$clusterName = "[HDInsightClusterName]"
@@ -83,6 +85,10 @@ Tez muss zum Zeitpunkt der Bereitstellung aktiviert sein. Nachfolgend sehen Sie 
 	Set-AzureHDInsightDefaultStorage -StorageAccountName "$defaultStorageAccountName.blob.core.windows.net" -StorageAccountKey $defaultStorageAccountKey -StorageContainerName $defaultStorageContainerName |
 	Add-AzureHDInsightConfigValues -Hive $hiveConfig |
 	New-AzureHDInsightCluster -Name $clusterName -Location $location -Credential $hdiCredential
+
+    
+> [AZURE.NOTE]Linux-basierte HDInsight-Cluster haben Tez standardmäßig aktiviert.
+    
 
 ## Partitionierung in Hive
 
@@ -220,4 +226,4 @@ In diesem Artikel haben Sie mehrere allgemeine Hive-Methoden zur Optimierung von
 [image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO1-->

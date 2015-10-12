@@ -27,7 +27,7 @@
 
 In diesem Artikel wird beschrieben, wie Sie die Dienstebene und Leistungsstufe Ihrer SQL-Datenbank mit dem [Azure-Vorschauportal](https://portal.azure.com) ändern.
 
-Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQL-Datenbanken auf die neuen Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-upgrade-new-service-tiers.md) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn741336.aspx) die geeignete Dienstebene und Leistungsstufe für Ihre Azure SQL-Datenbank.
+Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQL-Datenbanken auf die neuen Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-upgrade-new-service-tiers.md) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-service-tiers.md) die geeignete Dienstebene und Leistungsstufe für Ihre Azure SQL-Datenbank.
 
 > [AZURE.IMPORTANT]Ein Ändern der Dienstebene und Leistungsstufe einer SQL-Datenbank ist ein Onlinevorgang. Dies bedeutet, dass die Datenbank während des gesamten Vorgangs ohne Ausfallzeit online und verfügbar bleibt.
 
@@ -98,4 +98,4 @@ Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQ
 [3]: ./media/sql-database-scale-up/scale-notification.png
 [4]: ./media/sql-database-scale-up/new-tier.png
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

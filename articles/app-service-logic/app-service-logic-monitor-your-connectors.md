@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten und Überwachen von Connectors und API-Apps in Azure App Service" 
+	pageTitle="Verwalten und Überwachen von Connectors und API-Apps in App Service | Microsoft Azure" 
 	description="Anzeigen der Leistung von Connectors und API-Apps in Azure App Service; Microservices-Architektur" 
 	services="app-service\logic" 
 	documentationCenter=".net,nodejs,java"
@@ -13,20 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="09/29/2015" 
 	ms.author="mandia"/>
 
 # Verwalten und Überwachen integrierter API-Apps und Connectors
 
 Sie haben eine integrierte API-App erstellt. Was nun?
 
-In Azure ist jede API-App eine separate in Azure gehostete Website. Daher können Sie einfach erkennen, wie viele Anforderungen gestellt und wie viele Daten vom Connector verwendet wurden.
-
-Sie können Ihre App-API auch sichern, Warnungen erstellen, Tinfoil Security aktivieren sowie Benutzer und Rollen hinzufügen.
+In Azure ist jede API-App eine separate in Azure gehostete Website. Daher können Sie einfach erkennen, wie viele Anforderungen gestellt und wie viele Daten vom Connector verwendet wurden. Sie können Ihre App-API auch sichern, Warnungen erstellen, Tinfoil Security aktivieren sowie Benutzer und Rollen hinzufügen.
 
 In diesem Thema werden einige der Möglichkeiten zum Verwalten Ihrer App-API beschrieben.
 
-Um diese integrierten Features anzuzeigen, öffnen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/p/?LinkID=525040). Wenn sich die API-App in Ihrem Startmenü befindet, wählen Sie sie aus, um das Eigenschaftenfenster zu öffnen. Sie können auch auf **Durchsuchen** klicken, **API-Apps** auswählen und dann Ihre API-App auswählen:
+Um diese integrierten Features anzuzeigen, öffnen Sie die API-App im [Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=525040). Wenn sich die API-App in Ihrem Startmenü befindet, wählen Sie sie aus, um das Eigenschaftenfenster zu öffnen. Sie können auch auf **Durchsuchen** klicken, **API-Apps** auswählen und dann Ihre API-App auswählen:
 
 ![][browse]
 
@@ -51,17 +49,15 @@ Nachdem Sie Connector konfiguriert oder erstellt haben, können Sie die Werte ä
 Dazu müssen diese Schritte ausgeführt werden:
 
 1. Öffnen Sie Ihren Connector oder Ihre API-App. In diesem Fall wird das Blatt "API-App" geöffnet.
-2. Klicken Sie in der Übersicht auf den Link unter der Eigenschaft "Host". Der Link wird als *slackconnector* oder *microsoftsqlconnector123* angezeigt:
+2. Klicken Sie unter **Essentials** auf den Link unter der Eigenschaft "Host". Der Link wird als *slackconnector* oder *microsoftsqlconnector123* angezeigt:
 
 	![][apiapphost]
 
-3. Klicken Sie auf dem Blatt "API-App-Host" auf **Einstellungen**.
-4. Klicken Sie auf dem Blatt "Einstellungen" auf **Anwendungseinstellungen**.
-5. Der Konfigurationswerte sind unter **App-Einstellungen** aufgeführt: 
+3. Klicken Sie auf dem Blatt "API-App-Host" auf **Einstellungen**. Klicken Sie auf dem Blatt "Einstellungen" auf **Anwendungseinstellungen**. Der Konfigurationswerte sind unter **App-Einstellungen** aufgeführt:
 	
 	![][hostsettings]
 
-6. Klicken Sie auf die Einstellung, die Sie ändern möchten, geben den neuen Wert ein, und **speichern** Sie Ihre Änderungen.
+4. Klicken Sie auf die Einstellung, die Sie ändern möchten, geben den neuen Wert ein, und **speichern** Sie Ihre Änderungen.
 
 
 ## Installieren des Hybrid Connection Managers (optional)
@@ -75,7 +71,7 @@ Siehe [Verwenden des Hybrid Connection Managers in Azure App Service](app-servic
 > [AZURE.NOTE]Der Hybrid Connection Manager wird nur benötigt, wenn Sie auf eine lokale Ressource hinter der Firewall eine Verbindung herstellen wollen. Wenn Sie keine Verbindung mit einem lokalen System herstellen möchten, ist der Hybrid Connection Manager ggf. nicht auf Ihrem Blatt "Connector" aufgeführt.
 
 ## Überwachen der Leistung
-Leistungsmetriken sind integrierte Features und gehören zu jeder API-App, die Sie erstellen. Diese Metriken sind spezifisch für Ihre in Azure gehostete API-App:
+Leistungsmetriken sind integrierte Features und gehören zu jeder API-App, die Sie erstellen. Diese Metriken sind spezifisch für Ihre in Azure gehostete API-App. Beispielmetriken:
 
 ![][monitoring]
 
@@ -118,6 +114,9 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 > 
 > Diese Eigenschaften sind spezifisch für die Website, die Ihre API-App hostet. Bei Verwendung einer integrierten API-App oder eines Connectors gelten die meisten dieser Eigenschaften nicht wirklich, und es wird empfohlen, dass Sie diese Eigenschaften nicht aktualisieren. Wenn Sie Ihre eigenen API-App in Visual Studio erstellt und in Ihrem Azure-Abonnement bereitgestellt haben, können Sie die Blätter "Host" und "Gateway" verwenden. Unter [Verwalten von API-Apps](../app-service-api/app-service-api-manage-in-portal.md) finden weitere Informationen zu den Aufgaben, die Sie auf diesen Blättern für Ihre benutzerdefiniert erstellte API-App ausführen können.
 
+
+>[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte und keine Verpflichtungen erforderlich.
+
 ## Weitere Informationen
 
 [Überwachen von Logik-App](app-service-logic-monitor-your-logic-apps.md)<br/>[Liste der Connectors und API-Apps in Microsoft Azure App Service](app-service-logic-connectors-list.md)<br/>[Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md)<br/>[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)
@@ -133,4 +132,4 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 [hostsettings]: ./media/app-service-logic-monitor-your-connectors/hostsettings.png
 [apiapphost]: ./media/app-service-logic-monitor-your-connectors/apiapphost.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

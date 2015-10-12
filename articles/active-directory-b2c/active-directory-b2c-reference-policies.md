@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="09/28/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Erweiterbares Richtlinienframework
@@ -30,7 +30,7 @@ Das erweiterbare Richtlinienframework von Azure Active Directory (AD) B2C ist de
 - Das Aussehen und Verhalten aller Registrierungsseiten.
 - Informationen (die als Ansprüche im Token ausgedrückt werden), die die Anwendung nach Abschluss der Richtlinienausführung erhält.
 
-Sie können mehrere Richtlinien verschiedener Typen in Ihrem Verzeichnis erstellen und bei Bedarf in Ihrer Anwendung verwenden. Richtlinien können anwendungsübergreifend wieder verwendet werden. Dadurch können Entwickler Benutzeroberflächen im Zusammenhang mit der Consumeridentität mit minimalen oder ganz ohne Änderungen an ihrem Code definieren und ändern. Der Dienst wird nach und nach mit umfangreicheren Richtlinientypen erweitert.
+Sie können mehrere Richtlinien verschiedener Typen in Ihrem Mandanten erstellen und bei Bedarf in Ihrer Anwendung verwenden. Richtlinien können anwendungsübergreifend wieder verwendet werden. Dadurch können Entwickler Benutzeroberflächen im Zusammenhang mit der Consumeridentität mit minimalen oder ganz ohne Änderungen an ihrem Code definieren und ändern. Der Dienst wird nach und nach mit umfangreicheren Richtlinientypen erweitert.
 
 Richtlinien können über eine einfache Entwicklerschnittstelle verwendet werden. Ihre Anwendung löst eine Richtlinie mithilfe einer standardmäßigen HTTP-Authentifizierungsanforderung aus (übergibt einen Richtlinienparameter in der Anforderung) und empfängt ein benutzerdefiniertes Token als Antwort. Der einzige Unterschied zwischen Anforderungen, die eine Registrierungsrichtlinie und eine Anmelderichtlinie aufrufen, ist beispielsweise der Richtlinienname, der im Parameter "p" der Abfragezeichenfolge verwendet wird:
 
@@ -71,8 +71,11 @@ Für die Registrierung bei Ihrer Anwendung müssen Sie eine Registrierungsrichtl
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Der **Name** bestimmt den Namen der Registrierungsrichtlinie, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiUp" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
+
+    > [AZURE.NOTE]Für lokale Konten werden unter den Anmelderichtlinien von Azure AD B2C "sichere" Kennwörter verwendet (sie sind so festgelegt, dass sie "nie ablaufen"). Weitere Einstellungen (die von Azure AD B2C derzeit nicht verwendet werden) finden Sie in der [Azure AD-Kennwortrichtlinie](https://msdn.microsoft.com/library/azure/jj943764.aspx).
+
 6. Klicken Sie auf **Registrierungsattribute**. Hier wählen Sie die Attribute aus, die der Consumer bei der Registrierung angeben soll. Wählen Sie z. B. "Land/Region", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
-7. Klicken Sie auf **Anwendungsansprüche**. Hier können Sie die Ansprüche auswählen, die in den Token nach einer erfolgreichen Registrierung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl", "Benutzer ist neu" und "Objekt-ID des Benutzers" aus.
+7. Klicken Sie auf **Anwendungsansprüche**. Hier wählen Sie die Ansprüche aus, die in den zurückgegebenen Token nach einer erfolgreichen Registrierung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl", "Benutzer ist neu" und "Objekt-ID des Benutzers" aus.
 8. Klicken Sie auf **Erstellen**. Beachten Sie, dass die soeben erstellte Richtlinie als **B2C\_1\_SiUp** (das **B2C\_1\_**-Fragment wird automatisch vorangestellt) auf dem Blatt **Registrierungsrichtlinien** angezeigt wird.
 9. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiUp** klicken.
 10. Wählen Sie "Contoso B2C-App" in der Dropdownliste **Anwendungen** und `https://localhost:44321/` in der Dropdownliste **Antwort-URL/Umleitungs-URI** aus. Klicken Sie auf die Schaltfläche **Jetzt ausführen**. Eine neue Browserregisterkarte wird geöffnet, und Sie können die Benutzeroberfläche für Consumer für die Registrierung bei Ihrer Anwendung durchgehen.
@@ -88,7 +91,7 @@ Für die Anmeldung bei Ihrer Anwendung müssen Sie eine Anmelderichtlinie erstel
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Der **Name** bestimmt den Namen der Anmelderichtlinie, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiIn" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
-6. Klicken Sie auf **Anwendungsansprüche**. Hier können Sie die Ansprüche auswählen, die in den Token nach einer erfolgreichen Anmeldung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl" und "Objekt-ID des Benutzers" aus. Klicken Sie auf **OK**.
+6. Klicken Sie auf **Anwendungsansprüche**. Hier wählen Sie die Ansprüche aus, die in den zurückgegebenen Token nach einer erfolgreichen Anmeldung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl" und "Objekt-ID des Benutzers" aus. Klicken Sie auf **OK**.
 7. Klicken Sie auf **Erstellen**. Beachten Sie, dass die soeben erstellte Richtlinie als **B2C\_1\_SiIn** (das **B2C\_1\_**-Fragment wird automatisch hinzugefügt) auf dem Blatt **Anmelderichtlinien** angezeigt wird.
 8. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiIn** klicken.
 9. Wählen Sie "Contoso B2C-App" in der Dropdownliste **Anwendungen** und `https://localhost:44321/` in der Dropdownliste **Antwort-URL/Umleitungs-URI** aus. Klicken Sie auf die Schaltfläche **Jetzt ausführen**. Eine neue Browserregisterkarte wird geöffnet, und Sie können die Benutzeroberfläche für Consumer für die Anmeldung bei Ihrer Anwendung durchgehen.
@@ -105,11 +108,11 @@ Um die Profilbearbeitung in Ihrer Anwendung zu ermöglichen, müssen Sie eine Ri
 4. Der **Name** bestimmt den Namen der Richtlinie für die Profilbearbeitung, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiPe" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
 6. Klicken Sie auf **Profilattribute**. Hier wählen Sie Attribute aus, die der Consumer anzeigen und bearbeiten kann. Wählen Sie z. B. "Land/Region", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
-7. Klicken Sie auf **Anwendungsansprüche**. Hier können Sie die Ansprüche auswählen, die in den Token nach einer erfolgreichen Profilbearbeitung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename" und "Postleitzahl" aus.
+7. Klicken Sie auf **Anwendungsansprüche**. Hier wählen Sie die Ansprüche aus, die in den zurückgegebenen Token nach einer erfolgreichen Profilbearbeitung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename" und "Postleitzahl" aus.
 8. Klicken Sie auf **Erstellen**. Beachten Sie, dass die soeben erstellte Richtlinie als **B2C\_1\_SiPe** (das **B2C\_1\_**-Fragment wird automatisch vorangestellt) auf dem Blatt **Richtlinien für die Profilbearbeitung** angezeigt wird.
 9. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiPe** klicken.
 10. Wählen Sie "Contoso B2C-App" in der Dropdownliste **Anwendungen** und `https://localhost:44321/` in der Dropdownliste **Antwort-URL/Umleitungs-URI** aus. Klicken Sie auf die Schaltfläche **Jetzt ausführen**. Eine neue Browserregisterkarte wird geöffnet, und Sie können die Benutzeroberfläche für Consumer für die Profilbearbeitung in Ihrer Anwendung durchgehen.
 
     > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten zwischen lokalen Quellen und der Cloud mit Azure Data Factory"
-	description="Erfahren Sie mehr über das Verschieben von Daten zwischen lokalen Quellen und der Cloud mit dem Datenverwaltungsgateway und Azure Data Factory."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten zwischen lokalen Quellen und der Cloud mit Azure Data Factory" 
+	description="Erfahren Sie mehr über das Verschieben von Daten zwischen lokalen Quellen und der Cloud mit dem Datenverwaltungsgateway und Azure Data Factory." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/29/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/24/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten zwischen lokalen Quellen und der Cloud mit dem Datenverwaltungsgateway
@@ -105,7 +105,7 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 	Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data factory name "ADFTutorialOnPremDF" is not available** ändern Sie den Namen der Data Factory (z. B.in "IhrNameADFTutorialOnPremDF") und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialOnPremDF".
 
-9. Suchen Sie im Hub **BENACHRICHTIGUNGEN** auf der linken Seite nach Benachrichtigungen zum Erstellungsvorgang. Klicken Sie auf **X**, um das Blatt **BENACHRICHTIGUNGEN** zu schließen, falls es geöffnet ist.
+9. Suchen Sie Benachrichtigungen des Erstellungsvorgangs, indem Sie auf der Titelleiste auf die Schaltfläche **Benachrichtigungen** klicken, wie im folgenden Bild gezeigt. Klicken Sie erneut auf die Schaltfläche, um das Benachrichtigungsfenster zu schließen.
 
 	![Hub BENACHRICHTIGUNGEN](./media/data-factory-move-data-between-onprem-and-cloud/OnPremNotificationsHub.png)
 
@@ -114,15 +114,13 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 	![Data Factory-Startseite](./media/data-factory-move-data-between-onprem-and-cloud/OnPremDataFactoryHomePage.png)
 
 ### Schritt 2: Erstellen eines Datenverwaltungsgateways
-5.	Klicken Sie auf dem Blatt **Data Factory** für **ADFTutorialOnPremDF** auf **Verknüpfte Dienste**. 
+5. Klicken Sie auf dem Blatt **DATA FACTORY** auf die Kachel **Erstellen und bereitstellen**, um den Editor für die Data Factory zu starten.
 
-	![Data Factory-Startseite](./media/data-factory-move-data-between-onprem-and-cloud/DataFactoryHomePage.png)
+	![Kachel "Erstellen und bereitstellen"](./media/data-factory-move-data-between-onprem-and-cloud/author-deploy-tile.png) 
+6.	Klicken Sie in Data Factory Editor auf der Symbolleiste auf **... (Auslassungspunkte)** und dann auf **Neues Daten-Gateway**. 
 
-2.	Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf **Neues Datengateway**.
-
-	![Verknüpfte Dienste – Schaltfläche "Gateway hinzufügen"](./media/data-factory-move-data-between-onprem-and-cloud/OnPremLinkedServicesAddGaewayButton.png)
-
-2. Geben Sie auf dem Blatt **Erstellen** den Namen **adftutorialgateway** unter **Name** ein, und klicken Sie auf **OK**.
+	!["Neues Daten-Gateway" auf der Symbolleiste](./media/data-factory-move-data-between-onprem-and-cloud/NewDataGateway.png)
+2. Geben Sie auf dem Blatt **Erstellen** den Namen **adftutorialgateway** unter **Name** ein, und klicken Sie auf **OK**. 	
 
 	![Blatt "Gateway erstellen"](./media/data-factory-move-data-between-onprem-and-cloud/OnPremCreateGatewayBlade.png)
 
@@ -134,82 +132,72 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 	Dies ist die einfachste Möglichkeit (One-Click) zum Herunterladen, Installieren, Konfigurieren und Registrieren des Gateways in einem einzigen Schritt. Sie können sehen, dass die Anwendung **Microsoft Datenverwaltungsgateway – Konfigurations-Manager** auf Ihrem Computer installiert ist. Die ausführbare Datei **ConfigManager.exe** befindet sich im Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\Shared**.
 
-	Sie können das Gateway auch manuell über die Links in diesem Blatt herunterladen und installieren und mit dem Schlüssel im Textfeld **MIT SCHLÜSSEL REGISTRIEREN** registrieren.
+	Sie können das Gateway auch manuell über die Links in diesem Fenster herunterladen und installieren und mit dem Schlüssel im Textfeld **MIT SCHLÜSSEL REGISTRIEREN** registrieren.
 	
 	Im Abschnitt [Datenverwaltungsgateway](#DMG) finden Sie ausführliche Informationen zum Gateway mit bewährten Methoden und wichtigen Hinweisen.
 
 	>[AZURE.NOTE]Sie müssen ein Administrator auf dem lokalen Computer sein, um das Datenverwaltungsgateway erfolgreich installieren und konfigurieren zu können. Sie können der lokalen Windows-Gruppe "Datenverwaltungsgateway-Benutzer" zusätzliche Benutzer hinzufügen. Die Mitglieder dieser Gruppe können den Datenverwaltungsgateway-Konfigurations-Manager verwenden, um das Gateway zu konfigurieren.
 
-4. Klicken Sie auf der linken Seite auf den Hub **BENACHRICHTIGUNGEN**. Warten Sie, bis die Meldung **Express-Setup für "adftutorialgateway" erfolgreich** auf dem Blatt **Benachrichtigungen** angezeigt wird.
-
-	![Express-Installation erfolgreich](./media/data-factory-move-data-between-onprem-and-cloud/express-setup-succeeded.png)
-6. Klicken Sie auf dem Blatt **Erstellen** auf **OK** und dann auf das Blatt **Neues Datenverwaltungsgateway**.
-6. Schließen Sie das Blatt **Verknüpfte Dienste** (durch Klicken auf **X** rechts oben), und öffnen Sie erneut das Blatt **Verknüpfte Dienste**, um den aktuellen Status des Gateways anzuzeigen. 
-7. Überprüfen Sie, ob der **Status** des Gateways **Online** lautet. 
-
-	![Gatewaystatus](./media/data-factory-move-data-between-onprem-and-cloud/gateway-status.png)
-
-5. Starten Sie den **Microsoft Datenverwaltungsgateway-Konfigurations-Manager** auf Ihrem Computer.
+5. Warten Sie einige Minuten, und starten Sie dann den **Datenverwaltungsgateway-Konfigurations-Manager** auf Ihrem Computer. Geben Sie im Fenster **Suchen** den Begriff **Datenverwaltungsgateway** ein, um auf dieses Hilfsprogramm zuzugreifen. Die ausführbare Datei **ConfigManager.exe** befindet sich im Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\Shared**.
 
 	![Gatewaykonfigurations-Manager](./media/data-factory-move-data-between-onprem-and-cloud/OnPremDMGConfigurationManager.png)
 
 6. Warten Sie, bis die Werte wie folgt festgelegt sind:
-	1. Wenn der **Status** des Diensts nicht auf **Gestartet** festgelegt ist, klicken Sie auf **Dienst starten**, um den Dienst zu starten. Warten Sie eine Minute, bis die anderen Felder aktualisiert wurden.
+	1. **Status** wird auf **Gestartet** festgelegt.
 	2. **Gatewayname** wird auf **adftutorialgateway** festgelegt.
 	3. **Instanzname** wird auf **adftutorialgateway** festgelegt.
-	4. **Gateway-Schlüsselstatus** wird auf **Registriert** festgelegt.
+	4. **Registrierung** wird auf **Registriert** festgelegt.
 	5. Die Statusleiste im unteren Bereich zeigt **Mit Datenverwaltungsgateway-Clouddienst verbunden** sowie ein **grünes Häkchen** an.
-	
-7. Wechseln Sie zu **Zertifikate**. Das auf dieser Registerkarte angegebene Zertifikat wird zum Verschlüsseln/Entschlüsseln von Anmeldeinformationen für den lokalen Datenspeicher verwendet, den Sie im Portal angeben. Klicken Sie auf **Ändern**, um Ihr eigenes Zertifikat zu verwenden. Standardmäßig verwendet das Gateway das Zertifikat, das vom Data Factory-Dienst automatisch generiert wird.
+
+8. Wechseln Sie zu **Zertifikate**. Das auf dieser Registerkarte angegebene Zertifikat wird zum Verschlüsseln/Entschlüsseln von Anmeldeinformationen für den lokalen Datenspeicher verwendet, den Sie im Portal angeben. Klicken Sie auf **Ändern**, um Ihr eigenes Zertifikat zu verwenden. Standardmäßig verwendet das Gateway das Zertifikat, das vom Data Factory-Dienst automatisch generiert wird.
 
 	![Konfiguration des Gatewayzertifikats](./media/data-factory-move-data-between-onprem-and-cloud/gateway-certificate.png)
-
-8. Vergewissern Sie sich im Portal auf dem Blatt **Verknüpfte Dienste**, dass der **Status** des Gateways **Gut** lautet.
-
+9. Klicken Sie im Azure-Portal auf **OK** auf dem Blatt **Konfigurieren** und dann auf dem Blatt **Neues Daten-Gateway**.
+6. In der Strukturansicht links sollte **adftutorialgateway** unter **Daten-Gateways** angezeigt werden. Wenn Sie darauf klicken, sollte die zugehörige JSON angezeigt werden. 
+	
 
 ### Schritt 2: Erstellen von verknüpften Diensten 
-In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService** und **SqlServerLinkedService**. Der **SqlServerLinkedService** verknüpft eine lokale SQL Server-Datenbank, und der verknüpfte Dienst **StorageLinkedService** verknüpft einen Azure-Blobspeicher mit der **ADFTutorialDataFactory**. Sie erstellen eine Pipeline weiter unten in dieser exemplarischen Vorgehensweise, die Daten aus der lokalen SQL Server-Datenbank in den Azure-Blobspeicher kopiert.
+In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService** und **SqlServerLinkedService**. Der **SqlServerLinkedService** verknüpft eine lokale SQL Server-Datenbank, und der verknüpfte Dienst **StorageLinkedService** verknüpft einen Azure-Blobspeicher mit der Data Factory. Sie erstellen eine Pipeline weiter unten in dieser exemplarischen Vorgehensweise, die Daten aus der lokalen SQL Server-Datenbank in den Azure-Blobspeicher kopiert.
 
 #### Hinzufügen eines verknüpften Diensts zu einer lokalen SQL Server-Datenbank
-1.	Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf der Befehlsleiste auf **Neuer Datenspeicher**.
-2.	Geben Sie **SqlServerLinkedService** für **Name** ein. 
-2.	Klicken Sie auf den Pfeil neben **Typ**, und wählen Sie **SQL Server** aus.
+1.	Klicken Sie in **Data Factory Editor** auf der Symbolleiste auf **Neuer Datenspeicher**, und wählen Sie **SQL Server**. 
 
-	![Neuen Datenspeicher erstellen](./media/data-factory-move-data-between-onprem-and-cloud/new-data-store.png)
-3.	Es gibt weitere Einstellungen unter der Einstellung **Typ**.
-4.	Wählen Sie als **Datengateway** das Gateway aus, das Sie gerade erstellt haben. 
+	![Neuer mit SQL Server verknüpfter Dienst](./media/data-factory-move-data-between-onprem-and-cloud/NewSQLServer.png) 
+3.	Gehen Sie im **JSON-Editor** folgendermaßen vor: 
+	1. Geben Sie unter **gatewayName** den Namen **adftutorialgateway** an.	
+	2. Bei Verwendung der Windows-Authentifizierung:
+		1. In **connectionString**: 
+			1. Legen Sie **Integrierte Sicherheit** auf **wahr** fest.
+			2. Geben Sie für die Datenbank **Servername** und **Datenbankname** an. 
+			2. Entfernen Sie **Benutzer-ID** und **Kennwort**. 
+		3. Geben Sie den Benutzernamen und das Kennwort für die Eigenschaften **userName** und **password** an.
+		
+				"typeProperties": {
+            		"connectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;",
+            		"gatewayName": "adftutorialgateway",
+            		"userName": "<Specify user name if you are using Windows Authentication>",
+            		"password": "<Specify password for the user account>"
+        		}
 
-	![SQL Server-Einstellungen](./media/data-factory-move-data-between-onprem-and-cloud/sql-server-settings.png)
-4.	Geben Sie den Namen des Datenbankservers für die Einstellung **Server** ein.
-5.	Geben Sie den Namen der Datenbank für die Einstellung **Datenbank** ein.
-6.	Klicken Sie auf den Pfeil neben **Anmeldeinformationen**.
+	4. Bei Verwendung der SQL-Authentifizierung:
+		1. Geben Sie für die Datenbank **Servername**, **Datenbankname**, **Benutzer-ID** und **Kennwort** in **connectionString** an.       
+		2. Entfernen Sie die letzten beiden JSON-Eigenschaften – **userName** und **password** – aus der JSON.
+		3. Entfernen Sie das nachgestellte **, (Komma)** am Ende der Zeile, die den Wert für die **gatewayName**-Eigenschaft angibt. 
 
-	![Blatt "Anmeldeinformationen"](./media/data-factory-move-data-between-onprem-and-cloud/credentials-dialog.png)
-7.	Klicken Sie auf dem Blatt **Anmeldeinformationen** auf **Klicken Sie hier, um Anmeldeinformationen festzulegen**.
-8.	Gehen Sie im Dialogfeld **Anmeldeinformationen festlegen** folgendermaßen vor:
-
-	![Dialogfeld "Anmeldeinformationen festlegen"](./media/data-factory-move-data-between-onprem-and-cloud/setting-credentials-dialog.png)
-	1.	Wählen Sie die **Authentifizierung** aus, die der Data Factory-Dienst für die Verbindung mit der Datenbank verwenden soll.
-	2.	Geben Sie für die Einstellung **BENUTZERNAME** den Namen des Benutzers ein, der auf die Datenbank zugreifen kann.
-	3.	Geben Sie für die Einstellung **KENNWORT** das Kennwort für den Benutzer ein.
-	4.	Klicken Sie auf **OK**, um das Dialogfeld zu schließen. 
-4. Klicken Sie auf **OK**, um das Blatt **Anmeldeinformationen** zu schließen. 
-5. Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 	
-6. Überprüfen Sie, ob der Status für **SqlServerLinkedService** auf dem Blatt "Verknüpfte Dienste" auf "Online" festgelegt ist.
-	![Status des verknüpften SQL Server-Diensts](./media/data-factory-move-data-between-onprem-and-cloud/sql-server-linked-service-status.png)
-
-Ausführliche Informationen zum Festlegen von Anmeldeinformationen finden Sie im Abschnitt [Festlegen von Anmeldeinformationen und Sicherheit](#setting-credentials-and-security).
+				"typeProperties": {
+            		"connectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;",
+	           		"gatewayName": "<Name of the gateway that the Data Factory service should use to connect to the on-premises SQL Server database>"
+    		    }
+	   
+2.	Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften SQL Server-Dienst bereitzustellen.
 
 #### Hinzufügen eines verknüpften Diensts für Azure-Speicherkonten
  
-1. Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf der Symbolleiste auf **Neuer Datenspeicher**. 
-2. Geben Sie **StorageLinkedService** im Feld **Name** ein. 
-3. Klicken Sie auf den Pfeil neben **Typ**, und wählen Sie **Azure Storage** aus.
-4. Sie sollten jetzt die neuen Felder **Kontoname** und **Kontoschlüssel** unter der Einstellung **Typ** sehen. 
-3. Geben Sie den Namen des Azure-Speicherkontos für **Kontoname** ein.
-4. Geben Sie den Schlüssel des Azure-Speicherkontos für **Kontoschlüssel** ein. 
-5. Klicken Sie auf **OK**, um das Dialogfeld zu schließen. 
-
+1. Klicken Sie im **Data Factory-Editor** auf der Befehlsleiste auf **Neuer Datenspeicher** und dann auf **Azure-Speicher**.
+2. Geben Sie den Namen des Azure-Speicherkontos für **Kontoname** ein.
+3. Geben Sie den Schlüssel des Azure-Speicherkontos für **Kontoschlüssel** ein.
+4. Klicken Sie auf **Bereitstellen**, um **StorageLinkedService** bereitzustellen.
+   
  
 ### Schritt 3: Erstellen von Eingabe- und Ausgabedatasets
 In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und ausgehende Daten für den Kopiervorgang darstellen (lokale SQL Server-Datenbank = > Azure-Blobspeicher). Vor dem Erstellen von Datasets oder Tabellen (rechteckige Datasets) müssen Sie Folgendes ausführen (detaillierte Schritte in der Liste):
@@ -242,10 +230,7 @@ In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und a
 
 ### Erstellen der Eingabetabelle
 
-1.	Klicken Sie auf dem Blatt **DATA FACTORY** auf die Kachel **Erstellen und bereitstellen**, um den Editor für die Data Factory zu starten.
-
-	![Kachel "Erstellen und bereitstellen"](./media/data-factory-move-data-between-onprem-and-cloud/author-deploy-tile.png) 
-1. Klicken Sie im **Data Factory-Editor** auf der Symbolleiste auf **Neues Dataset**, und wählen Sie **Lokaler SQL Server**. 
+1. Klicken Sie im **Data Factory-Editor** auf der Befehlsleiste auf **Neues Dataset** und dann auf **SQL Server-Tabelle**. 
 2.	Ersetzen Sie das JSON-Skript im rechten Bereich durch folgenden Text:    
 
 		{
@@ -471,11 +456,37 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 
 
 ## Festlegen von Anmeldeinformationen und Sicherheit
+
+Sie können einen verknüpften SQL Server-Dienst auch mithilfe des Blatts "Verknüpfte Dienste" anstelle des Data Factory-Editors erstellen.
+ 
+3.	Klicken Sie auf der Data Factory-Startseite auf die Kachel **Verknüpfte Dienste**. 
+4.	Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf der Befehlsleiste auf **Neuer Datenspeicher**. 
+4.	Geben Sie **SqlServerLinkedService** für **Name** ein. 
+2.	Klicken Sie auf den Pfeil neben **Typ**, und wählen Sie **SQL Server** aus.
+
+	![Neuen Datenspeicher erstellen](./media/data-factory-move-data-between-onprem-and-cloud/new-data-store.png)
+3.	Es gibt weitere Einstellungen unter der Einstellung **Typ**.
+4.	Wählen Sie als **Datengateway** das Gateway aus, das Sie gerade erstellt haben. 
+
+	![SQL Server-Einstellungen](./media/data-factory-move-data-between-onprem-and-cloud/sql-server-settings.png)
+4.	Geben Sie den Namen des Datenbankservers für die Einstellung **Server** ein.
+5.	Geben Sie den Namen der Datenbank für die Einstellung **Datenbank** ein.
+6.	Klicken Sie auf den Pfeil neben **Anmeldeinformationen**.
+
+	![Blatt "Anmeldeinformationen"](./media/data-factory-move-data-between-onprem-and-cloud/credentials-dialog.png)
+7.	Klicken Sie auf dem Blatt **Anmeldeinformationen** auf **Klicken Sie hier, um Anmeldeinformationen festzulegen**.
+8.	Gehen Sie im Dialogfeld **Anmeldeinformationen festlegen** folgendermaßen vor:
+
+	![Dialogfeld "Anmeldeinformationen festlegen"](./media/data-factory-move-data-between-onprem-and-cloud/setting-credentials-dialog.png) 1. Wählen Sie die **Authentifizierung** aus, die der Data Factory-Dienst für die Verbindung mit der Datenbank verwenden soll. 2. Geben Sie für die Einstellung **BENUTZERNAME** den Namen des Benutzers ein, der auf die Datenbank zugreifen kann. 3. Geben Sie für die Einstellung **KENNWORT** das Kennwort für den Benutzer ein. 4. Klicken Sie auf **OK**, um das Dialogfeld zu schließen. 
+4. Klicken Sie auf **OK**, um das Blatt **Anmeldeinformationen** zu schließen. 
+5. Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 	
+6. Überprüfen Sie, ob der Status für **SqlServerLinkedService** auf dem Blatt "Verknüpfte Dienste" auf "Online" festgelegt ist. ![Status des verknüpften SQL Server-Diensts](./media/data-factory-move-data-between-onprem-and-cloud/sql-server-linked-service-status.png)
+
 Wenn Sie auf das Portal auf einem Computer zugreifen, der sich vom Computer mit dem Gateway unterscheidet, müssen Sie sicherstellen, dass die Anwendung "Anmeldeinformations-Manager" eine Verbindung mit dem Gatewaycomputer herstellen kann. Wenn die Anwendung den Computer mit dem Gateway nicht erreichen kann, können Sie keine Anmeldeinformationen für die Datenquelle festlegen und die Verbindung mit der Datenquelle nicht testen.
 
 Wenn Sie die Anwendung "Anmeldeinformationen festlegen" über das Azure-Portal gestartet haben, um Anmeldeinformationen für eine lokale Datenquelle festzulegen, werden die Anmeldeinformationen im Portal mit dem Zertifikat verschlüsselt, das Sie auf der Registerkarte "Zertifikat" des Datenverwaltungsgateway-Konfigurations-Managers auf dem Gatewaycomputer angegeben haben.
 
-Wenn Sie einen API-basierten Ansatz zum Verschlüsseln der Anmeldeinformationen suchen, können Sie das PowerShell-Cmdlet [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/azure/dn834940.aspx) verwenden, um Anmeldeinformationen zu verschlüsseln. Das Cmdlet verwendet das Zertifikat, für dessen Verwendung dieses Gateway konfiguriert ist, um die Anmeldeinformationen zu verschlüsseln. Sie können die verschlüsselten Anmeldeinformationen, die von diesem Cmdlet zurückgegeben werden, zum EncryptedCredential-Element von connectionString in der JSON-Datei, die Sie mit dem Cmdlet [New-AzureDataFactoryLinkedService](https://msdn.microsoft.com/library/azure/dn820246.aspx) verwenden, oder im JSON-Ausschnitt im Data Factory-Editor im Portal hinzufügen.
+Wenn Sie einen API-basierten Ansatz zum Verschlüsseln der Anmeldeinformationen nutzen möchten, können Sie das PowerShell-Cmdlet [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/azure/dn834940.aspx) verwenden, um Anmeldeinformationen zu verschlüsseln. Das Cmdlet verwendet das Zertifikat, für dessen Verwendung dieses Gateway konfiguriert ist, um die Anmeldeinformationen zu verschlüsseln. Sie können die verschlüsselten Anmeldeinformationen, die von diesem Cmdlet zurückgegeben werden, zum EncryptedCredential-Element von "connectionString" in der JSON-Datei, die Sie mit dem Cmdlet [New-AzureDataFactoryLinkedService](https://msdn.microsoft.com/library/azure/dn820246.aspx) verwenden, oder im JSON-Ausschnitt im Data Factory-Editor im Portal hinzufügen.
 
 	"connectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;EncryptedCredential=<encrypted credential>",
 
@@ -525,7 +536,7 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 		PS C:\> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
 
 	
-4. Wechseln Sie in Azure PowerShell zum Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\PowerShellScript\\**, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
+4. Wechseln Sie in Azure PowerShell zum Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\PowerShellScript\**, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
 
 		PS C:\> .\RegisterGateway.ps1 $Key.GatewayKey
 		
@@ -558,7 +569,7 @@ Im Folgenden sind der allgemeine Datenfluss und eine Zusammenfassung der Schritt
 	2.	Verwendung des PowerShell-Cmdlets [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/dn834940.aspx): a. Wenn Sie den PowerShell-Befehl verwenden, um die Anmeldeinformationen zu verschlüsseln, und nicht möchten, dass bei der Gatewayinstallation die eingehenden Ports auf dem Gatewaycomputer in der Windows-Firewall geöffnet werden, können Sie während der Installation den folgenden Befehl verwenden:
 	
 			msiexec /q /i DataManagementGateway.msi NOFIREWALL=1
-3.	Wenn Sie die Anwendung **Anmeldeinformationen festlegen** verwenden, müssen Sie sie auf einem Computer starten, der sich mit dem Datenverwaltungsgateway verbinden kann, um Anmeldeinformationen für die Datenquelle festzulegen und die Verbindung mit der Datenquelle zu testen.
+3.	Wenn Sie die Anwendung **Anmeldeinformationen festlegen** verwenden, müssen Sie diese auf einem Computer starten, der eine Verbindung mit dem Datenverwaltungsgateway herstellen kann, um Anmeldeinformationen für die Datenquelle festzulegen und die Verbindung mit der Datenquelle zu testen.
 4.	Stellen Sie beim Kopieren von Daten zwischen einer lokalen SQL Server-Datenbank und einer Azure SQL-Datenbank Folgendes sicher:	
 	- 	Die Firewall auf dem Gatewaycomputer lässt die ausgehende TCP-Kommunikation über **TCP**-Port **1433** zu.
 	- 	Die [Azure SQL-Firewalleinstellungen](https://msdn.microsoft.com/library/azure/jj553530.aspx) müssen so konfiguriert sein, dass die **IP-Adresse des Gatewaycomputers** den **zulässigen IP-Adressen** hinzugefügt wird.
@@ -567,4 +578,4 @@ Im Folgenden sind der allgemeine Datenfluss und eine Zusammenfassung der Schritt
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-move-data-between-onprem-and-cloud.md).
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Redis Cache – häufig gestellte Fragen"
-	description="In diesem Artikel erhalten Sie Antworten auf häufig gestellte Fragen sowie Informationen zu Mustern und Best Practices für Azure Redis Cache."
-	services="redis-cache"
-	documentationCenter=""
-	authors="steved0x"
-	manager="dwrede"
+	pageTitle="Azure Redis Cache – häufig gestellte Fragen" 
+	description="In diesem Artikel erhalten Sie Antworten auf häufig gestellte Fragen sowie Informationen zu Mustern und Best Practices für Azure Redis Cache." 
+	services="redis-cache" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="cache"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="cache-redis"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/30/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -22,31 +22,43 @@ In diesem Artikel erhalten Sie Antworten auf häufig gestellte Fragen sowie Info
 
 <a name="cache-size"></a>
 ## Welches Redis Cache-Angebot und welche Redis Cache-Größe sollte ich verwenden?
-
 Jedes Azure Redis Cache-Angebot bietet unterschiedliche Optionen in Bezug auf **Größe**, **Bandbreite**, **Hochverfügbarkeit** und **SLA**.
 
--	Basic-SKU – Einzelner Knoten, keine Replikation oder SLA, Cachegrößen von 250 MB bis 53 GB.
--	Standard-SKU – Primäre/sekundäre Knoten mit automatischer Replikation, SLA mit 99,9 %, Cachegrößen von 250 MB bis 53 GB.
+Nachfolgend sind verschiedene Aspekte aufgeführt, die Ihnen bei der Wahl helfen können.
 
-Wenn Sie eine höhere Verfügbarkeit benötigen, wählen Sie das Standard-Angebot, das eine SLA mit 99,9 % bietet. Für Entwicklung und Prototyperstellung oder für Szenarien, in denen keine SLA erforderlich ist, reicht das Basic-Angebot aus.
+-	**Speicher**: Der Basic-Tarif und der Standard-Tarif bieten 250 MB bis 53 GB. Der Premium-Tarif bietet bis zu 530 GB, die [auf Anfrage](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase) aufgestockt werden können. Weitere Informationen finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/pricing/details/cache/).
+-	**Netzwerkleistung**: Bei einer Workload, die einen hohen Durchsatz erfordert, bietet der Premium-Tarif im Vergleich zum Standard- oder Basic-Tarif eine größere Bandbreite. Zudem haben die größeren Caches aufgrund des zugrunde liegenden virtuellen Computers, der den Cache hostet, bei jedem Tarif eine höhere Bandbreite. Ausführliche Informationen finden Sie in der Tabelle weiter unten.
+-	**Durchsatz**: Der Premium-Tarif bietet den maximal verfügbaren Durchsatz. Wenn Cacheserver oder -clients die Bandbreitengrenzwerte erreichen, kommt es zu Timeouts auf Clientseite. Ausführliche Informationen finden Sie in der Tabelle weiter unten.
+-	**Hohe Verfügbarkeit/SLA**: Azure Redis Cache garantiert, dass ein Standard-Cache oder Premium-Cache (SLA für den Premium-Tarif erst nach der Vorschauphase) mindestens 99,9 % der Zeit zur Verfügung steht. Weitere Informationen zu unserer SLA finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/pricing/details/cache/). Die SLA deckt nur die Konnektivität zu den Cache-Endpunkten ab. Sie bezieht sich dagegen nicht auf Schutz vor Datenverlusten. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen.
+-	**Redis-Datenpersistenz**: Der Premium-Tarif ermöglicht die Persistenz der Cachedaten in einem Azure-Speicherkonto. In einem Basic- oder Standard-Cache werden alle Daten nur im Arbeitsspeicher gespeichert. Bei Problemen mit der zugrunde liegenden Infrastruktur kann es zu Datenverlusten kommen. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen. Azure Redis Cache bietet RDB- und AOF-Optionen (demnächst verfügbar) bei der Redis-Persistenz. Weitere Informationen finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md).
+-	**Redis Cluster**: Wenn Sie Caches mit einer Größe über 53 GB erstellen oder Daten über mehrere Redis-Knoten horizontal partitionieren möchten, können Sie das im Premium-Tarif verfügbare Redis-Clustering verwenden. Für die hohe Verfügbarkeit besteht jeder Knoten aus einem Paar aus primärem Cache und Replikatcache. Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
+-	**Erhöhte Sicherheit und Isolation**: Die Bereitstellung von Azure Virtual Network (VNET) bietet verbesserte Sicherheit und Isolation für den Azure Redis Cache sowie Subnetze, Zugriffssteuerungsrichtlinien und andere Features, mit denen der Zugriff weiter eingeschränkt wird. Weitere Informationen finden Sie unter [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
+-	**Konfigurieren von Redis**: Sowohl im Standard- als auch im Premium-Tarif können Sie Redis für Keyspace-Benachrichtigungen konfigurieren.
+-	**Maximale Anzahl von Clientverbindungen**: Der Premium-Tarif bietet die maximale Anzahl von Clients, die eine Verbindung mit Redis herstellen können, mit einer größeren Anzahl an Verbindungen für größere Caches. [Angaben zu den Preisen finden Sie in der Preisübersicht](TODO).
+-	**Dedizierter Kern für Redis Server**: Im Premium-Tarif verfügen alle Cachegrößen über einen dedizierten Kern für Redis. Im Basic- oder Standard-Tarif verfügen alle Cachegrößen ab C1 über einen dedizierten Kern für Redis-Server.
+-	**Redis verwendet Single-Threading**, deshalb bietet der Einsatz von mehr als zwei Kernen keine zusätzlichen Vorteile gegenüber der Verwendung von nur zwei Kernen. Größere virtuelle Computer besitzen jedoch i. d. R. mehr Bandbreite als kleine virtuelle Computer. Wenn Cacheserver oder -client die Bandbreitengrenzwerte erreichen, kommt es zu Timeouts auf Clientseite.
+-	**Leistungsoptimierungen**: Caches im Premium-Tarif werden auf Hardware mit schnelleren Prozessoren bereitgestellt, die im Vergleich zu den Tarifen Basic oder Standard eine bessere Leistung bieten. Caches im Premium-Tarif erreichen einen höheren Durchsatz und geringere Wartezeiten.
 
-Cachegrößen und Bandbreite entsprechen ungefähr den Größen und Bandbreiten der virtuellen Computer, die den Cache hosten. Die Cachegröße von 250 MB wird im Basic- und Standard-Angebot auf einem virtuellen Computer der Stufe "Extra Small (A0)" gehostet. Hierbei erfolgt das Hosting über gemeinsam genutzte Kerne, während bei den anderen Größen dedizierte Kerne verwendet werden. Die Cachegröße von 1 GB wird auf einem virtuellen Computer der Stufe "Small (A1)" gehostet. Dieser verfügt über 1 dedizierten virtuellen Kern, der sowohl das Betriebssystem als auch Redis Cache bedient. Größere Cachegrößen werden auf größeren VM-Instanzen mit mehreren dedizierten virtuellen Kernen gehostet.
+In der folgenden Tabelle sind die maximalen Bandbreitenwerte beim Testen verschiedener Standard- und Premium-Cachegrößen bei Verwendung von `redis-benchmark.exe` aus einem virtuellen IaaS-Computer mit dem Azure Redis Cache-Endpunkt angegeben. Beachten Sie, dass diese Werte nicht garantiert werden und dass keine SLA für diese Werte bereitgestellt wird. Die Werte sollten jedoch typischerweise erreicht werden. Führen Sie Auslastungstests für Ihre Anwendung durch, um die geeignete Cachegröße für Ihre Anwendung zu ermitteln.
 
-Wenn Ihr Cache einen hohen Durchsatz aufweist, wählen Sie 1 GB oder mehr, damit Ihr Cache mit dedizierten Kernen ausgeführt wird. Der 1-GB-Cache wird auf einem virtuellen Computer mit 1 Kern ausgeführt. Dieser Kern bedient sowohl das Betriebssystem als auch den Cache. Cachegrößen von mehr als 1 GB werden auf virtuellen Computern mit mehreren Kernen ausgeführt, und Redis Cache verwendet einen dedizierten Kern, der nicht gemeinsam mit dem Betriebssystem verwendet wird.
+Aus dieser Tabelle können folgende Schlussfolgerungen gezogen werden. - Der Durchsatz für Cache derselben Größe ist im Premium-Tarif im Vergleich zum Standard-Tarif höher. Bei einem Cache mit 6 GB liegt der Durchsatz von P1 bei 140.000 RPS im Vergleich zu 49.000 RPS bei C3. - Mit dem Redis-Clustering steigt der Durchsatz linear, je mehr Shards (Knoten) Sie im Cluster verwenden. Wenn Sie z. B. einen P4-Cluster mit 10 Shards erstellen, ergibt sich für den verfügbaren Durchsatz 250.000 * 10 = 2,5 Mio. RPS. - Der Durchsatz für größere Schlüsselgrößen ist im Premium-Tarif höher als im Standard-Tarif.
 
-**Redis verwendet Single-Threading**, deshalb bietet der Einsatz von mehr als zwei Kernen keine zusätzlichen Vorteile gegenüber der Verwendung von nur zwei Kernen. **Größere VMs bieten jedoch typischerweise mehr Bandbreite als kleine VMs.** Wenn Cacheserver oder -client die Bandbreitengrenzwerte erreichen, kommt es zu Timeouts auf Clientseite.
+| Tarif | Größe | Verfügbare Bandbreite (MBit/s) | 1 KB Schlüsselgröße |
+|----------------------|--------|----------------------------|--------------------------------|
+| **Standard-Cachegröße** | &nbsp; | &nbsp; | **Anforderungen pro Sekunde (RPS)** |
+| C0 | 250 MB | 5 | 600 |
+| C1 | 1 GB | 100 | 12\.200 |
+| C2 | 2,5 GB | 200 | 24\.000 |
+| C3 | 6 GB | 400 | 49\.000 |
+| C4 | 13 GB | 500 | 61\.000 |
+| C5 | 26 GB | 1000 | 115\.000 |
+| C6 | 53 GB | 2000 | 150\.000 |
+| **Premium-Cachegröße** | &nbsp; | &nbsp; | **Anforderungen pro Sekunde (RPS), pro Shard** |
+| P1 | 6 GB | 1000 | 140\.000 |
+| P2 | 13 GB | 2000 | 220\.000 |
+| P3 | 26 GB | 2000 | 220\.000 |
+| P4 | 53 GB | 4000 | 250\.000 |
 
-Die folgende Tabelle zeigt die maximalen Bandbreitenwerte beim Testen verschiedener Azure Redis Cache-Größen bei Verwendung von `redis-benchmark.exe` aus einer IaaS-VM mit dem Azure Redis Cache-Endpunkt. Beachten Sie, dass diese Werte nicht garantiert werden und keine SLA für diese Werte bereitgestellt. Die Werte sollten jedoch typischerweise erreicht werden. Führen Sie Auslastungstests für Ihre Anwendung durch, um die geeignete Cachegröße für Ihre Anwendung zu ermitteln.
-
-Cachename|Cachegröße|GET/s (einfache GET-Aufrufe mit 1-KB-Werten)|Bandbreite (MBit/s)
----|---|---|---
-C0|250 MB|610|5
-C1|1 GB|12\.200|100
-C2|2,5 GB|24\.300|200
-C3|6 GB|48\.875|400
-C4|13 GB|61\.350|500
-C5|26 GB|112\.275|1\.000
-C6|53 GB|153\.219|mehr als 1.000
 
 Anweisungen zum Herunterladen von Redis-Tools wie beispielsweise `redis-benchmark.exe` finden Sie im Abschnitt [Wie führe ich Redis-Befehle aus?](#cache-commands).
 
@@ -76,7 +88,7 @@ Microsoft Azure Redis Cache-Instanzen können im [Azure-Vorschauportal](https://
 Nachfolgend werden einige Gründe dafür aufgeführt, warum ein Cache getrennt wird.
 
 -	Gründe auf Clientseite
-	-	Der Client wurde neu bereitgestellt.
+	-	Die Clientanwendung wurde neu bereitgestellt.
 	-	Die Clientanwendung hat eine Skalierung ausgeführt.
 		-	Bei Cloud Services oder Web-Apps kann dies aufgrund einer automatischen Skalierung der Fall sein.
 	-	Die Netzwerkschicht auf Clientseite wurde geändert.
@@ -123,7 +135,7 @@ In den meisten Fällen reichen die Standardwerte des Clients aus. Sie können di
 
 -	Sie sollten bestimmte Redis-Befehle mit langer Ausführungszeit nur dann einsetzen, wenn Sie deren Auswirkung verstehen.
 	-	Führen Sie beispielsweise den [KEYS](http://redis.io/commands/keys)-Befehl nicht in der Produktion aus, da die Rückgabe in Abhängigkeit von der Anzahl von Schlüsseln sehr viel Zeit in Anspruch nehmen kann. Redis ist ein Server mit Single-Threading, d. h. Befehle werden nacheinander verarbeitet. Wenn Sie nach KEYS weitere Befehle ausgeben, werden diese erst ausgeführt, wenn Redis den KEYS-Befehl verarbeitet hat.
--	Schlüsselgrößen – sollte ich kleine Schlüssel/Werte oder große Schlüssel/Werte verwenden? Dies hängt im Allgemeinen vom Szenario ab. Wenn Ihre Szenarien größere Schlüssel erfordern, können Sie die ConnectionTimeout- und retry-Werte sowie die Logik für erneute Verbindungsversuche anpassen. In Bezug auf den Redis-Server führen kleinere Werte zu einer besseren Leistung.
+-	Schlüsselgrößen – sollte ich kleine Schlüssel/Werte oder große Schlüssel/Werte verwenden? Dies hängt im Allgemeinen vom Szenario ab. Wenn Ihre Szenarios größere Schlüssel erfordern, können Sie die ConnectionTimeout- und retry-Werte sowie die Logik für erneute Verbindungsversuche anpassen. In Bezug auf den Redis-Server führen kleinere Werte zu einer besseren Leistung.
 	-	Dies bedeutet jedoch nicht, dass Sie in Redis keine größeren Werte speichern können – Sie müssen sich lediglich der folgenden Punkte bewusst sein. Latenzen sind höher. Wenn Sie über einen größeren und einen kleineren Datensatz verfügen, können Sie mehrere ConnectionMultiplexer-Instanzen verwenden und jede mit einem anderen Satz an Werten für Timeout und erneute Verbindungsherstellung konfigurieren – wie im vorangegangenen Abschnitt [Was bewirken die StackExchange.Redis-Konfigurationsoptionen?](#cache-configuration) beschrieben.
 
 
@@ -151,9 +163,9 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 <a name="cache-commands"></a>
 ## Wie führe ich Redis-Befehle aus?
 
-Sie können allen aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Ausnahme der Befehle verwenden, die unter [Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden](cache-configure.md#redis-commands-not-supported-in-azure-redis-cache) aufgelistet sind. Für die Ausführung von Redis-Befehlen haben Sie mehrere Optionen.
+Sie können alle aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Ausnahme der Befehle verwenden, die unter [Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden](cache-configure.md#redis-commands-not-supported-in-azure-redis-cache) aufgeführt sind. Für die Ausführung von Redis-Befehlen haben Sie mehrere Optionen.
 
--	Wenn Sie einen Standard-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Vorschauportal.
+-	Wenn Sie über einen Standard- oder Premium-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Vorschauportal.
 -	Sie können auch die Redis-Befehlszeilentools verwenden. Führen Sie hierzu die folgenden Schritte aus:
 	-	Laden Sie die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip) herunter.
 	-	Stellen Sie über `redis-cli.exe` eine Verbindung mit dem Cache her. Übergeben Sie den Cacheendpunkt mithilfe des Schalters "-h" und dem Schlüssel mit Verwendung von "-a", wie im folgenden Beispiel gezeigt.
@@ -175,4 +187,4 @@ Microsoft Azure Redis Cache basiert auf dem populären quelloffenen Redis Cache 
 
 Da jeder Client anders ist, gibt es nicht nur einen zentralen Klassenverweis in MSDN. Stattdessen verwaltet jeder Client seine eigene Verweisdokumentation. Zusätzlich zur Verweisdokumentation gibt es mehrere Lernprogramme auf "Azure.com". Diese stehen auf der Seite [Redis Cache-Dokumentation](http://azure.microsoft.com/documentatgion/services/redis-cache/) zur Verfügung und erleichtern Ihnen den Einstieg in die Verwendung von Azure Redis Cache mit verschiedenen Sprachen und Cacheclients.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

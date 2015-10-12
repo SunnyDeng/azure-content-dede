@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="08/25/2015"
+	ms.date="09/28/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -39,8 +39,7 @@ Elastische Datenbankpools vereinfachen die Erstellung, Wartung und Verwaltung vo
 Zur Erstellung eines elastischen Datenbankpools benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
-- Ein Server mit Azure SQL-Datenbank V12. Wenn Sie nicht über einen Server der Version 12 verfügen, erstellen Sie ihn anhand der Schritte in dem Artikel [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
-
+- Einen Azure SQL-Datenbank V12-Server Wenn Sie keinen V12-Server haben, erstellen Sie ihn anhand der Schritte in dem Artikel [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md), oder [aktualisieren Sie einen vorhandenen Server auf V12](sql-database-v12-upgrade.md).
 
 
 ## Erstellen eines elastischen Datenbankpools
@@ -49,15 +48,24 @@ Erstellen Sie einen elastischen Datenbankpool, indem Sie einen neuen Pool zu ein
 
 
 1.	Wählen Sie den Server mit SQL-Datenbank V12 mit den Datenbanken, die Sie dem Pool hinzufügen möchten.
-2.	Erstellen Sie den Pool durch Auswählen von **Add pool** am oberen Rand des Blatts **SQL Server**.
+2.	Erstellen Sie einen Pool, indem Sie **Pool hinzufügen** am oberen Rand des Blatts **SQL Server** auswählen.
 
-   ![Erstellen eines elastischen Pools][1]
+
+     Oder
+
+    Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für diesen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
+    
+    
+    ![Erstellen eines elastischen Pools][1]
+
+
+
 
 ## Konfigurieren eines elastischen Datenbankpools
 
 Konfigurieren Sie den Pool, indem Sie den Tarif festlegen, Datenbanken hinzufügen und die Leistungsmerkmale des Pools einrichten.
 
-> [AZURE.NOTE]Bei der Auswahl des Befehls **Add pool** müssen Sie den Bedingungen der Vorschau zustimmen, indem Sie **PREVIEW TERMS** auswählen und das Blatt **Preview Terms** ausfüllen. Sie müssen diesen Bedingungen nur einmal für jedes Abonnement zustimmen.
+> [AZURE.NOTE]Bei der Auswahl des Befehls **Pool hinzufügen** müssen Sie den Bedingungen der Vorschau zustimmen, indem Sie **VORSCHAUBESTIMMUNGEN** auswählen und das Blatt **Vorschaubestimmungen** ausfüllen. Sie müssen diesen Bedingungen nur einmal für jedes Abonnement zustimmen.
 
    ![Konfigurieren eines elastischen Pools][2]
 
@@ -72,7 +80,11 @@ Der Tarif für einen elastischen Datenbankpool legt die Features für die elasti
 
 ## Tarifempfehlungen für den elastischen Datenbankpool.
 
-Der SQL-Datenbankdienst bewertet den Nutzungsverlauf und empfiehlt einen oder mehrere elastische Datenbankpools, wenn dies kostengünstiger als die Verwendung einzelner Datenbanken ist. Tarife mit einem Stern (![Stern][10]) stellen Empfehlungen auf der Grundlage Ihrer Datenbanknutzung dar.
+Der SQL-Datenbankdienst bewertet den Nutzungsverlauf und empfiehlt einen oder mehrere elastische Datenbankpools, wenn dies kostengünstiger als die Verwendung einzelner Datenbanken ist.
+
+
+
+Tarife mit einem Stern (![Stern][10]) stellen Empfehlungen auf der Grundlage Ihrer Datenbankworkloads dar.
 
 Wenn mehrere Tarife empfohlen werden, bedeutet dies, dass mehrere elastische Datenbankpools erstellt werden sollen. Jede Empfehlung ist mit einer eindeutigen Teilmenge der Datenbanken des Servers konfiguriert, die optimal in den Pool passen.
 
@@ -112,9 +124,35 @@ Es gibt drei Parameter, die Sie festlegen können und die die Leistung des Pools
 
 | Leistungsparameter | Beschreibung |
 | :--- | :--- |
-| **POOL eDTU** – eDTU-Garantie für den Pool | Die eDTU-Garantie für den Pool ist die zugesagte Anzahl verfügbarer eDTUs, die für alle Datenbanken im Pool freigegeben sind. <br> Die spezifische Größe der eDTU-Garantie für eine Gruppe sollte unter Berücksichtigung des eDTU-Nutzungsverlaufs der Gruppe bereitgestellt werden. Wahlweise kann diese Größe durch die gewünschte eDTU-Garantie pro Datenbank und Nutzung gleichzeitig aktiver Datenbanken festgelegt werden. Die eDTU-Garantie für den Pool korreliert auch mit dem verfügbaren Speicher für den Pool. Für jede eDTU, die Sie dem Pool zuordnen, erhalten Sie eine feste Menge Datenbankspeicher. <br> **Wie sollte die eDTU-Garantie des Pools festgelegt werden?** <br>Sie sollten die eDTU-Garantie des Pools mindestens auf das Ergebnis der Formel ([Anzahl Datenbanken] x [durchschnittliche DTU-Auslastung pro Datenbank]) festlegen. |
+| **POOL eDTU** – eDTU-Garantie für den Pool | Die eDTU-Garantie für den Pool ist die zugesagte Anzahl verfügbarer eDTUs, die für alle Datenbanken im Pool freigegeben sind. <br> Die spezifische Größe der eDTU-Garantie für eine Gruppe sollte unter Berücksichtigung des eDTU-Nutzungsverlaufs der Gruppe bereitgestellt werden. Wahlweise kann diese Größe durch die gewünschte eDTU-Garantie pro Datenbank und Nutzung gleichzeitig aktiver Datenbanken festgelegt werden. Die eDTU-Garantie für den Pool korreliert auch mit dem verfügbaren Speicher für den Pool. Für jede eDTU, die Sie dem Pool zuordnen, erhalten Sie eine feste Menge Datenbankspeicher. <br> **Wie sollte die eDTU-Garantie des Pools festgelegt werden?** <br>Sie sollten die eDTU-Garantie des Pools mindestens auf das Ergebnis der Formel ([Anzahl von Datenbanken] x [durchschnittliche DTU-Auslastung pro Datenbank]) festlegen. |
 | **eDTU MIN**: eDTU-Garantie für jede Datenbank | Die eDTU-Garantie pro Datenbank ist die minimale Anzahl von eDTUs, die einer einzelnen Datenbank im Pool garantiert wird. Beispielsweise können Sie diese Garantie in Standard-Pools auf 0, 10, 20, 50 oder e100 DTUs festlegen, oder Sie können auch keine Garantie auf Datenbanken in der Gruppe (eDTU MIN = 0) bereitstellen. <br> **Auf welchen Wert sollte die eDTU-Garantie pro Datenbank festgelegt werden?** <br> Normalerweise wird die eDTU-Garantie pro Datenbank (eDTU MIN) auf einen Wert zwischen 0 und ([durchschnittliche Nutzung pro Datenbank]) festgelegt. Die eDTU-Garantie pro Datenbank ist eine globale Einstellung, die die eDTU-Garantie für alle Datenbanken im Pool festlegt. |
 | **eDTU MAX**: eDTU-Obergrenze pro Datenbank | eDTU MAX pro Datenbank ist die maximale Anzahl von eDTUs, die von einer einzelnen Datenbank im Pool verwendet werden können. Legen Sie die eDTU-Obergrenze pro Datenbank hoch genug fest, um maximale Aktivitätsspitzen, die für Ihre Datenbanken auftreten können, verarbeiten zu können. Sie können diese Obergrenze bis auf den Systembegrenzungswert festlegen, der vom Tarif des Pools (1000 eDTUs beim Premium-Tarif) abhängig ist. Die spezifische Größe dieser Obergrenze sollte an maximalen Auslastungsmustern der Datenbanken innerhalb der Gruppe ausgerichtet sein. Sie sollten ein gewisses Maß an Mehrlast für die Gruppe einplanen, da für den Pool i. Allg. von Nutzungsmustern starker und schwacher Auslastung ausgegangen wird, bei der jedoch nicht alle Datenbanken gleichzeitig stark ausgelastet sind.<br> **Auf welchen Wert sollte die eDTU-Obergrenze pro Datenbank festgelegt werden?** <br> Legen Sie eDTU MAX oder die eDTU-Obergrenze pro Datenbank auf die ([Spitzenauslastung der Datenbank]) fest. Angenommen, die Spitzenauslastung pro Datenbank beträgt 50 DTUs und nur 20 % der 100 Datenbanken in der Gruppe springen gleichzeitig auf die Spitzenauslastung. Wenn die eDTU-Obergrenze pro Datenbank auf 50 eDTUs festgelegt ist, ist es sinnvoll, den Pool 5mal größer zu dimensionieren und die eDTU-Garantie für die Gruppe (POOL-eDTU) auf 1.000 eDTUs festzulegen. Es ist außerdem erwähnenswert, dass die eDTU-Obergrenze keine Ressourcengewährleitung für eine Datenbank darstellt, sondern ein eDTU-Grenzwert ist, der ggf. erreicht werden kann. |
+
+## Empfohlene Pools für elastische Datenbanken
+
+Navigieren Sie zu einem SQL-Datenbank V12-Server. Möglicherweise wird dann eine Meldung angezeigt, dass es empfohlene Pools für elastische Datenbanken für den Server gibt.
+
+Ähnlich wie Tarifempfehlungen für einen Pool für elastische Datenbanken sind empfohlene Pools vorkonfiguriert, wobei folgende Optionen bereits festgelegt sind:
+
+- Tarif für den Pool.
+- Angemessenes Niveau der Pool-eDTUs.
+- Die Minimal-/Maximalwerte der Datenbank-eDTU-Einstellungen.  
+- Eine Liste der empfohlenen Datenbanken.
+
+### Erstellen eines empfohlenen Pools
+
+1. Klicken Sie auf die Meldung, um eine Liste mit den empfohlenen Pools anzuzeigen:
+ 
+     ![Empfohlene Pools][12]
+  
+1. Klicken Sie auf einen Pool, um die ausführlichen Empfehlungseinstellungen anzuzeigen.
+2. Bearbeiten Sie einfach den Poolnamen, und klicken Sie auf **OK**, um den Pool zu erstellen. (Empfohlene Pools können erst nach der Erstellung geändert werden.)
+
+    ![Empfohlener Pool][11]
+
+
+
+
 
 
 ## Hinzufügen von Datenbanken zu einem Pool und Entfernen elastischer Datenbanken aus einem Pool
@@ -180,5 +218,7 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [8]: ./media/sql-database-elastic-pool-portal/configure-pool.png
 [9]: ./media/sql-database-elastic-pool-portal/pricing-tier.png
 [10]: ./media/sql-database-elastic-pool-portal/star.png
+[11]: ./media/sql-database-elastic-pool-portal/recommended-pool.png
+[12]: ./media/sql-database-elastic-pool-portal/pools-message.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

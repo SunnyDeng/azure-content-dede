@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Details zur Netzwerkkonfiguration für das Arbeiten mit Express Route" 
 	description="Details zur Netzwerkkonfiguration zum Ausführen von App Service-Umgebungen in einem an eine ExpressRoute-Verbindung angeschlossenen virtuellen Netzwerk" 
-	services="app-service\web" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="stefsch" 
 	manager="nirma" 
@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="app-service" 
-	ms.workload="web" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
@@ -126,4 +126,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

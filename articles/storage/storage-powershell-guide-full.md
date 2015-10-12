@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/27/2015"
+	ms.date="09/27/2015"
 	ms.author="selcint"/>
 
 # Verwenden von Azure PowerShell mit Azure Storage
@@ -595,9 +595,9 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wen
     $Queue.CloudQueue.DeleteMessage($QueueMessage)
 
 ## Verwalten von Azure-Dateifreigaben und Dateien
-Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB 2.1-Protokoll. Microsoft Azure Virtual Machines und Cloud Services können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die Dateispeicher-API oder Azure PowerShell auf freigegebene Dateien zugreifen.
+Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB-Protokoll. Microsoft Azure Virtual Machines und Cloud Services können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die Dateispeicher-API oder Azure PowerShell auf freigegebene Dateien zugreifen.
 
-Ausführliche Informationen zum Azure-Dateispeicher finden Sie unter [Verwenden des Azure-Dateispeichers](storage-dotnet-how-to-use-files.md) und [Dateidienst-REST-API](http://msdn.microsoft.com/library/azure/dn167006.aspx).
+Ausführliche Informationen zum Azure-Dateispeicher finden Sie unter [Verwenden des Azure-Dateispeichers mit Windows](storage-dotnet-how-to-use-files.md) und [Dateidienst-REST-API](http://msdn.microsoft.com/library/azure/dn167006.aspx).
 
 ## Festlegen und Abfragen von Speicheranalysen
 Mithilfe der [Azure Storage-Analyselösung](storage-analytics.md) können Sie Metriken von Ihren Azure-Speicherkonten und Protokolldaten zu Anforderungen erfassen, die an Ihr Speicherkonto gesendet wurden. Mithilfe von Speichermetriken können Sie die Integrität eines Speicherkontos überwachen. Mithilfe der Speicherprotokollierung können Sie Probleme mit dem Speicherkonto diagnostizieren und beheben. Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des Azure-Verwaltungsportals, über Windows PowerShell oder programmgesteuert über eine Speicher-API aktivieren. Die Speicherprotokollierung erfolgt serverseitig, und sie ermöglicht es Ihnen, Details für erfolgreiche und fehlerhafte Anforderungen in Ihrem Speicherkonto aufzuzeichnen. Anhand dieser Protokolle können Sie Details zu Lese-, Schreib- und Löschvorgängen für Ihre Tabellen, Warteschlangen und Blobs sowie die Gründe für fehlerhafte Anforderungen anzeigen.
@@ -736,4 +736,4 @@ In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShel
 [Next Steps]: #next
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

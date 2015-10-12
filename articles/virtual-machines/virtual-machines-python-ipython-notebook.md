@@ -258,8 +258,9 @@ IPython-Notizbücher bieten eine leistungsstarke Schnittstelle für die interakt
 
 Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools for Visual Studio][] (PTVS) verfügbar. PTVS ist ein kostenloses Open Source-Plug-In von Microsoft und verwandelt Visual Studio in eine umfangreiche Python-Entwicklungsumgebung mit einem modernen Editor inklusive IntelliSense, Debugging, Profilerstellung und Integration für parallele Berechnungen.
 
+## Nächste Schritte
 
-
+Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
 [Tornado]: http://www.tornadoweb.org/ "Tornado"
 [PyZMQ]: https://github.com/zeromq/pyzmq "PyZMQ"
@@ -272,4 +273,4 @@ Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools fo
 [Python 2.7]: http://www.python.org/download
 [OpenSSL]: http://slproweb.com/products/Win32OpenSSL.html
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article" 
 	ms.tgt_pltfrm="na"
-	ms.date="09/16/2015"
+	ms.date="09/29/2015"
 	ms.author="heidist"/>
 
 #Azure Search: Lernprogramme, Videodemos und Beispiele
@@ -31,6 +31,7 @@ Die [**Demo eines Jobportals für New York City (NYC) mit Azure Search**](http:/
 
 Link|Beschreibung
 ----|-----------
+[AzureCon 2015 – Bewährte Methoden für Azure Search](https://azure.microsoft.com/de-DE/documentation/videos/azurecon-2015-azure-search-best-practices-for-web-and-mobile-applications/)|Praktische Tipps, um beim Erstellen von Apps für Web- oder mobile Szenarios Skalierung, optimale Leistung und Codeeffizienz zu erzielen. 
 [Microsoft Virtual Academy: Adding Azure Search to your Websites and Apps](http://channel9.msdn.com/Series/Adding-Microsoft-Azure-Search-to-Your-Websites-and-Apps)|7-teilige Reihe über das Hinzufügen von Azure Search zu einer Anwendung, präsentiert von Liam Cavanagh, Janusz Lembicz und Bernardita Torres Garayar.
 [Build 2015: Modern Data](http://channel9.msdn.com/Events/Build/2015/2-663)|Über 29 Minuten des Vortrags erfahren Sie, wie Azure Search mit der Revolution moderner Daten zusammenpasst, präsentiert von Shawn Bice und Pablo Castro.
 [Build 2015: Using Azure Search to Build Great Search Experiences in Mobile and WebApps](http://channel9.msdn.com/Events/Build/2015/2-745)|Vortrag von Pablo Castro bei Microsoft Build 2015.
@@ -71,7 +72,7 @@ Exemplarische Vorgehensweise|Beschreibung
 - [BabyNameJS](https://github.com/liamca/AzureSearchDemos/tree/master/BabyNamesJS) ist eine „index.html“-Datei, die Daten in einem Lernprogramm bereitstellt.
 - [DotNetSample](https://github.com/liamca/AzureSearchDemos/tree/master/DotNetSample) ist eine ASP.NET MVC-Anwendung für Azure Search.
 - [NYCJobs.NET](https://github.com/liamca/AzureSearchDemos/tree/master/NYCJobs.NET) stellt Quellcode für die aktive NYCJobs-Demowebsite bereit.
-- [Recommendations](https://github.com/liamca/AzureSearchDemos/tree/master/Recommendations) verwendet Active Data Factory, SQL-Datenbank, BLOB-Speicher und HDInsight, um Produktempfehlungen anhand der Häufigkeit zu implementieren, mit der Produkte zusammen gekauft werden.
+- [Recommendations](https://github.com/liamca/AzureSearchDemos/tree/master/Recommendations) verwendet Active Data Factory, SQL-Datenbank, Blob-Speicher und HDInsight, um Produktempfehlungen anhand der Häufigkeit zu implementieren, mit der Produkte zusammen gekauft werden.
 
 [****https://github.com/AzureSearch**](https://github.com/AzureSearch) ist ein weiteres GitHub-Repository für Azure Search, das Codebeispiele enthält, die vom Azure Search-Entwicklungsteam erstellt wurden. Sie können das Repository durchsuchen, um den Inhalt zu sehen, oder auf die folgenden Links klicken, um direkt zu spezifischen Beispielen zu wechseln.
 
@@ -90,4 +91,4 @@ Auf CodePlex finden Sie mehrere Beispiele, die während der öffentlichen Vorsch
 - [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer lokalen eingebetteten Datenbank lädt.
 - [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) ist eine Windows-Konsolenanwendung, die Bewertungsprofile für die Optimierung der Suchergebnisse definiert, ausführt und aktualisiert.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="09/08/2015"
+   ms.date="09/25/2015"
    ms.author="rickbyh"/>
 
 # Verwalten von Datenbanken und Anmeldungen in Azure SQL-Datenbank
@@ -140,7 +140,7 @@ CREATE DATABASE database1;
 
 > [AZURE.NOTE]Sie müssen beim Erstellen einer Anmeldung ein sicheres Kennwort verwenden. Weitere Informationen finden Sie unter [Sichere Kennwörter](https://msdn.microsoft.com/library/ms161962.aspx).
 
-Im nächsten Beispiel wird veranschaulicht, wie Sie einen Datenbankbenutzer mit dem Namen **login1User** in der Datenbank **database1** erstellen, der zur Anmeldung **login1** gehört:
+Im nächsten Beispiel wird veranschaulicht, wie Sie einen Datenbankbenutzer mit dem Namen **login1User** in der Datenbank **database1** erstellen, der zur Anmeldung **login1** gehört. Um das folgende Beispiel ausführen zu können, müssen Sie zunächst eine neue Verbindung zu „database1“ herstellen, indem Sie eine Anmeldung mit der Berechtigung **ALTER ANY USER** in dieser Datenbank verwenden. Jeder Benutzer, der als Mitglied der **db\_owner**-Rolle eine Verbindung herstellt, verfügt über diese Berechtigung, wie z. B. die Anmeldung, über die die Datenbank erstellt wurde.
 
 ```
 -- Establish a new connection to the database1 database
@@ -169,4 +169,4 @@ SELECT * FROM sys.databases;
 
 [Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank](sql-database-security-guidelines.md) [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Was ist SQL-Datenbank?"
+   pageTitle="Was ist SQL Database | Microsoft Azure"
    description="Entdecken Sie die technischen Details und Funktionen der Azure SQL-Datenbank, das Microsoft Managementsystem für relationale Datenbanken (RDBMS) und die PaaS-Lösung in der Cloud."
    services="sql-database"
    documentationCenter=""
@@ -13,17 +13,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="07/17/2015"
+   ms.date="09/30/2015"
    ms.author="shkurhek"/>
 
 # Einführung in SQL-Datenbank
 
 SQL-Datenbank ist ein relationaler Datenbankdienst in der Cloud, der auf der marktführenden Microsoft SQL Server Engine basiert und betriebsnotwendige Funktionen beinhaltet. SQL-Datenbank bietet vorhersagbare Leistung, Skalierbarkeit ohne Ausfallzeiten, Geschäftskontinuität, Datenschutz und nahezu keinerlei Verwaltungsaufwand. Anstatt auf die Verwaltung virtueller Computer und der Infrastruktur können Sie sich auf die schnelle Entwicklung von Apps und eine beschleunigte Markteinführung konzentrieren. Da SQL-Datenbank auf dem [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx)-Modul basiert, werden vorhandene SQL Server-Tools, -Bibliotheken und -APIs unterstützt, sodass diese einfacher in die Cloud verschoben und auf die Cloud ausgedehnt werden können.
 
+
+Wenn Sie bereit sind, können Sie binnen Minuten loslegen. Wenn Sie tiefer in die Materie eindringen wollen, sehen Sie sich dieses dreißigminütige Video an.
+
+
+> [AZURE.VIDEO azurecon-2015-get-started-with-azure-sql-database]
+
+
 In diesem Artikel werden die grundlegenden Konzepte und Funktionen von SQL-Datenbank im Hinblick auf Leistung, Skalierbarkeit und Verwaltbarkeit mit Links zu detaillierten Informationen eingeführt. Wenn Sie sich damit vertraut gemacht haben, können Sie binnen Minuten [eine erste SQL-Datenbank erstellen](sql-database-get-started.md) oder [einen Pool für elastische Datenbanken erstellen und verwalten](sql-database-elastic-pool-portal.md).
 
 ## Anpassen von Leistung und Skalierung ohne Ausfallzeiten
-Für SQL-Datenbanken sind die *Dienstebenen* Basic, Standard und Premium verfügbar. Jede Dienstebene bietet [verschiedene Leistungsstufen und Funktionen](sql-database-service-tiers.md) zur Unterstützung geringer und hoher Datenbank-Workloads. Sie können Ihre erste App mit einer kleinen Datenbank zu einem geringen Preis pro Monat erstellen und dann jederzeit manuell oder programmgesteuert [die Dienstebene ändern](sql-database-scale-up.md), wenn Ihre App weltweit genutzt wird, ohne dass Ausfallzeiten für die App oder Ihre Kunden entstehen.
+Für SQL-Datenbanken sind die *Dienstebenen* Basic, Standard und Premium verfügbar. Jede Dienstebene bietet [verschiedene Leistungsstufen und Funktionen](sql-database-service-tiers.md) zur Unterstützung geringer und hoher Datenbankworkloads. Sie können Ihre erste App mit einer kleinen Datenbank zu einem geringen Preis pro Monat erstellen und dann jederzeit manuell oder programmgesteuert [die Dienstebene ändern](sql-database-scale-up.md), wenn Ihre App weltweit genutzt wird, ohne dass Ausfallzeiten für die App oder Ihre Kunden entstehen.
 
 Für viele Unternehmen und Apps genügt es, wenn Datenbanken erstellt werden können und sich die Leistung von Einzeldatenbanken nach oben oder unten anpassen lässt, insbesondere, wenn die Nutzungsmuster relativ vorhersagbar sind. Bei unvorhersagbaren Nutzungsmustern kann es jedoch schwer sein, die Kosten und Ihr Geschäftsmodell zu verwalten.
 
@@ -65,4 +72,4 @@ SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mi
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

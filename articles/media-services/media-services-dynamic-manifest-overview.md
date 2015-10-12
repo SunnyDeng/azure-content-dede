@@ -111,7 +111,7 @@ Wie bereits zuvor erwähnt, besteht Ihr Ziel bei der Übermittlung Ihrer Inhalte
 - Wiedergeben von nur einem Abschnitt eines Videos (anstelle des gesamten Videos).
 - Anpassen des DVR-Präsentationsfensters.
 
-###Filtern der Wiedergabe 
+##Filtern der Wiedergabe 
 
 Sie haben die Möglichkeit, ein Medienobjekt in mehreren Codierungsprofilen (H.264 Baseline, H.264 High, AACL, AACH, Dolby Digital Plus) und mit Bitraten für unterschiedliche Qualität zu codieren. Die Profile und Bitraten des Medienobjekts werden jedoch nicht auf allen Clientgeräten unterstützt. Auf älteren Android-Geräten wird beispielsweise nur H.264 Baseline+AACL unterstützt. Wenn höhere Bitraten an ein Gerät gesendet werden, auf dem daraus kein Nutzen gezogen werden kann, werden Bandbreite und Rechenressourcen des Geräts verschwendet. Diese Geräte müssen alle angegebenen Informationen decodieren, um sie dann für die Anzeige herunterzuskalieren.
 
@@ -124,20 +124,20 @@ Im folgenden Beispiel wurde mit dem Azure Media-Encoder ein Mezzanine-Medienobje
 
 ![Filtern der Wiedergabe][renditions1]
 
-###Entfernen von Sprachspuren
+##Entfernen von Sprachspuren
 
 Ihre Medienobjekte können mehrere Audiosprachen enthalten, z. B. Englisch, Spanisch, Französisch usw. In der Regel verwaltet das Player-SDK die Auswahl der Standardaudiospur und verfügbare Audiospuren entsprechend der Benutzerauswahl. Es ist schwierig, solche Player-SDKs zu entwickeln. Sie erfordern verschiedene Implementierungen in gerätespezifischen Player-Frameworks. Außerdem sind die Player-APIs auf manchen Plattformen eingeschränkt und umfassen keine Funktion zur Audioauswahl, sodass Benutzer die Standardaudiospur nicht auswählen oder ändern können. Mit Filtern für Medienobjekte können Sie das Verhalten steuern, indem Sie Filter erstellen, die nur die gewünschten Audiosprachen enthalten.
 
 ![Filtern der Sprachspuren][language_filter]
 
 
-###Kürzen des Starts eines Medienobjekts 
+##Kürzen des Starts eines Medienobjekts 
 
 Bei den meisten Live-Streaming-Ereignissen führen Operatoren vor dem eigentlichen Ereignis einige Tests durch. Sie fügen z. B. die folgende Meldung vor dem Start des Ereignisses ein: "Programm beginnt sofort". Wenn das Programm archiviert wird, werden auch die Test- und Meldungsdaten archiviert und sind in der Präsentation enthalten. Diese Informationen sollten jedoch nicht auf den Clients angezeigt werden. Mit dynamischen Manifesten können Sie einen Filter für die Startzeit erstellen und die unerwünschten Daten aus dem Manifest entfernen.
 
 ![Kürzen des Starts][trim_filter]
 
-###Erstellen von Subclips (Ansichten) aus einem Livearchiv
+##Erstellen von Subclips (Ansichten) aus einem Livearchiv
 
 Viele Liveereignisse werden lange ausgeführt. Daher können Livearchive mehrere Ereignisse enthalten. Nach dem Ende des Liveereignisses möchten Sendeanstalten das Livearchiv möglicherweise in logische Sequenzen mit Programmstart und Programmende unterteilen. Anschließend sollen diese virtuellen Programme separat ohne Nachbearbeitung des Livearchivs veröffentlicht und keine separaten Medienobjekte erstellt werden (bei denen kein Nutzen aus den vorhandenen in den CDNs zwischengespeicherten Fragmenten gezogen wird). Beispiele für solche virtuellen Programme (Subclips) sind Halbzeiten eines Fußball- oder Basketballspiels, die Innings beim Baseball oder einzelne Wettbewerbe der Olympiade an einem bestimmten Nachmittag.
 
@@ -149,24 +149,22 @@ Gefiltertes Medienobjekt:
 
 ![Skilaufen][skiing]
 
-###Anpassen des Präsentationsfensters (DVR)
+##Anpassen des Präsentationsfensters (DVR)
 
 Zum gegenwärtigen Zeitpunkt umfasst Azure Media Services Umlaufarchive, bei denen eine Dauer zwischen 5 Minuten und 25 Stunden konfiguriert werden kann. Durch Filter über Manifeste kann ein DVR-Gleitfenster über dem Archiv erstellt werden, ohne dass Medien gelöscht werden. Es gibt viele Szenarios, bei denen Sendeanstalten ein in der Größe begrenztes DVR-Fenster bereitstellen möchten, das sich am Rand des Livevideos bewegt, und gleichzeitig ein größeres Archivierungsfenster beibehalten möchten. Ein bestimmter Sender möchte eventuell die Daten verwenden, die sich außerhalb des DVR-Fensters befinden, um Clips hervorzuheben oder unterschiedliche DVR-Fenster für verschiedene Geräte bereitstellen. Auf den meisten Mobilgeräten werden beispielsweise keine großen DVR-Fenster verarbeitet. (Sie können ein 2-Minuten-Fenster für Mobilgeräte und ein 1-Stunden-Fenster für Desktopclients einrichten.)
 
 ![DVR-Fenster][dvr_filter]
 
-###Anpassen von LiveBackoff (Liveposition)
+##Anpassen von LiveBackoff (Liveposition)
 
 Mit der Filterung über Manifeste können mehrere Sekunden vom Rand eines Liveprogramms entfernt werden. So können Sendeanstalten die Präsentation am Vorschauveröffentlichungspunkt ansehen und Einfügepunkte für Werbespots erstellen, bevor die Zuschauer den Stream empfangen (normalerweise um 30 Sekunden zurückgehalten). Sendeanstalten können diese Werbespots dann an ihre Clientframeworks senden, sodass diese sie rechtzeitig empfangen und die Informationen vor der Ausstrahlung verarbeiten können.
 
 Neben der Unterstützung für Werbespots kann mithilfe von LiveBackoff die Livedownloadposition von Clients angepasst werden, sodass Clients anstelle der HHTP-Fehler 404 oder 412 weiterhin Fragmente empfangen, wenn sie den Rand des Livevideos erreichen.
 
-
-
 ![livebackoff\_filter][livebackoff_filter]
 
 
-###Kombinieren mehrerer Regeln in einem Filter
+##Kombinieren mehrerer Regeln in einem Filter
 
 Sie können mehrere Filterregeln in ein und demselben Filter kombinieren. Als Beispiel können Sie eine Bereichsregel zum Entfernen von Meldungen aus einem Livearchiv definieren und zudem verfügbare Bitraten filtern. Das Endergebnis für mehrere Filterregeln ist die Mischung (nur die Schnittmenge) dieser Regeln.
 
@@ -177,6 +175,22 @@ Sie können mehrere Filterregeln in ein und demselben Filter kombinieren. Als Be
 Im folgenden Thema werden Media Services-Entitäten beschrieben, die im Zusammenhang mit Filtern stehen. In diesem Thema wird auch erörtert, wie Filter programmgesteuert erstellt werden.
 
 [Erstellen von Filtern mit REST-APIs](media-services-rest-dynamic-manifest.md).
+
+## Kombinieren mehrerer Filter (Filterkomposition)
+
+Sie können auch mehrere Filter in einer einzelnen URL kombinieren.
+
+Das folgende Szenario zeigt, warum es sinnvoll sein kann, Filter zu kombinieren:
+
+1. Sie müssen Ihre Videoqualitäten für mobile Geräte wie Android oder iPAD filtern (um die Videoqualitäten einzuschränken). Zum Entfernen der unerwünschten Qualitäten würden Sie einen globalen Filter erstellen, der für die Geräteprofile geeignet ist. Wie bereits oben erwähnt, können globale Filter für alle Medienobjekte desselben Mediendienstkontos ohne weitere Zuordnung verwendet werden. 
+2. Sie möchten außerdem die Start- und Endzeit Zeit eines Medienobjekts kürzen. Zu diesem Zweck erstellen Sie einen lokalen Filter und legen die Start- bzw. Endzeit fest. 
+3. Sie möchten die beiden Filter kombinieren (ohne Kombination müssten Sie den Qualitätsfilter zum Kürzungsfilter hinzufügen, was die Verwendung des Filters erschweren würde).
+
+Um Filter zu kombinieren, müssen Sie die Filternamen, durch Semikolons getrennt, zur Manifest-/Wiedergabelisten-URL hinzufügen. Angenommen, Sie verfügen über einen Filter mit dem Namen *MyMobileDevice* zum Filtern der Qualitäten und über einen weiteren Filter mit dem Namen *MyStartTime* zum Festlegen einer bestimmten Startzeit. Sie können diese Filter folgendermaßen kombinieren:
+
+	http://teststreaming.streaming.mediaservices.windows.net/3d56a4d-b71d-489b-854f-1d67c0596966/64ff1f89-b430-43f8-87dd-56c87b7bd9e2.ism/Manifest(filter=MyMobileDevice;MyStartTime)
+
+Sie können bis zu 3 Filter kombinieren.
 
 ##Bekannte Probleme und Einschränkungen
 
@@ -192,7 +206,9 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
+##Weitere Informationen
 
+[Bereitstellen von Inhalten für Kunden – Übersicht](media-services-deliver-content-overview.md)
 
 [renditions1]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter.png
 [renditions2]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter2.png
@@ -214,4 +230,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

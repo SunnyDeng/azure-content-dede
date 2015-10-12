@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
-	ms.date="08/25/2015" 
+	ms.date="09/30/2015" 
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache
@@ -25,10 +25,11 @@ Dieser Leitfaden beschreibt die ersten Schritte mit **Azure Redis Cache**. Die B
 
 Microsoft Azure Redis Cache basiert auf dem beliebten Open Source Redis Cache. Sie erhalten Zugriff auf einen sicheren dedizierten Redis Cache, der von Microsoft verwaltet wird. Ein mit Azure Redis Cache erstellter Cache ist für beliebige Anwendungen in Microsoft Azure erreichbar.
 
-Microsoft Azure Redis Cache ist in zwei Ebenen verfügbar:
+Microsoft Azure Redis Cache ist in den folgenden Ebenen verfügbar:
 
 -	**Basic** – Einzelner Knoten. Mehrere Größen bis zu 53 GB.
 -	**Standard** – Zwei Knoten: Primär/Replikat. Mehrere Größen bis zu 53 GB. 99,9 % SLA
+-	**Premium** – zurzeit als Vorschau verfügbar. Zwei Knoten (Primär/Replikat) mit bis zu 10 Shards. Mehrere Größen von 6 GB bis zu 530 GB (für mehr wenden Sie sich an uns). Alle Funktionen der Standard-Ebene und weitere umfassen die Unterstützung für [Redis-Cluster](cache-how-to-premium-clustering.md), [Redis-Persistenz](cache-how-to-premium-persistence.md), und [Azure Virtual Network](cache-how-to-premium-vnet.md). Keine SLA während des Vorschauzeitraums.
 
 Diese Ausführungen unterscheiden sich hinsichtlich der Features und des Preises. Die Features werden weiter unten in diesem Leitfaden behandelt, weitere Informationen zu den Preisen finden Sie unter [Cache – Preisdetails][].
 
@@ -57,7 +58,7 @@ Geben Sie auf dem Blatt **Neuer Redis Cache** die gewünschte Konfiguration für
 
 Geben Sie unter **DNS-Name** einen Unterdomänennamen für den Cacheendpunkt ein. Der Endpunktname muss eine Zeichenfolge zwischen sechs und zwanzig Zeichen sein. Er darf nur Kleinbuchstaben und Ziffern enthalten und muss mit einem Buchstaben beginnen.
 
-Wählen Sie unter **Tarif** die gewünschte Größe und Merkmale für den Cache aus. Caches der Stufe **Basic** verfügen über einen einzelnen Knoten in unterschiedlichen Größen bis zu 53 GB. Caches der Stufe **Standard** verfügen über eine Konfiguration mit zwei Knoten – Primär und Replikat –, eine Vereinbarung zum Servicelevel (SLA) von 99,9 % sowie unterschiedliche Größen bis zu 53 GB.
+Wählen Sie unter **Tarif** die gewünschte Größe und Merkmale für den Cache aus.
 
 Unter **Ressourcengruppe** können Sie eine Ressourcengruppe für Ihren Cache auswählen oder erstellen.
 
@@ -126,7 +127,7 @@ Um eine Verbindung zu einem Azure Redis Cache herzustellen und eine Instanz eine
 
 >[AZURE.IMPORTANT]Warnung: Speichern Sie niemals Anmeldeinformationen im Quellcode. Ich zeige diese Daten hier im Code, um dieses Beispiel zu vereinfachen. Informationen zum Speichern von Anmeldeinformationen finden Sie unter [Funktionsweise von Anwendungs- und Verbindungszeichenfolgen][].
 
-Wenn Sie SSL verwenden nicht möchten, legen Sie entweder `ssl=false` fest, oder lassen Sie den `ssl`-Parameter aus.
+Wenn Sie SSL nicht verwenden möchten, legen Sie entweder `ssl=false` fest, oder lassen Sie den `ssl`-Parameter aus.
 
 >[AZURE.NOTE]Der Nicht-SSL-Port ist für neue Caches standardmäßig deaktiviert. Anweisungen zum Aktivieren des Nicht-SSL-Ports finden Sie im Thema [Konfigurieren eines Caches in Azure Redis Cache][] im Abschnitt "Zugriffsports".
 
@@ -367,4 +368,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Redis Caches vertraut gemacht 
 
 [Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=redis_cache_hero
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

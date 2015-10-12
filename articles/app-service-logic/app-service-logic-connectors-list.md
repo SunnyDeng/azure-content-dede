@@ -22,6 +22,7 @@ Hier werden alle verfügbaren Connectors und API-Apps aufgelistet, die von Micro
 
 Informationen zu Preisen und eine Liste der auf den einzelnen Dienstebenen verfügbaren Komponenten finden Sie unter [Azure App Service-Preise](http://azure.microsoft.com/pricing/details/app-service/).
 
+> [AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Standardconnectors
 Die folgende Tabelle listet alle verfügbaren von Microsoft erstellten Connectors und API-Apps auf, die mit den Standardconnectors zur Verfügung stehen:
@@ -93,4 +94,4 @@ Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden.
 
 [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md) [Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md) [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
-	ms.date="08/27/2015"
+	ms.date="09/24/2015"
 	ms.author="davidmu;v-marsma"/>
 
 # Effiziente Listenabfragen mit Batch
@@ -37,6 +37,8 @@ Dabei ist zu beachten, dass sowohl die Anzahl der zurückgegebenen Elemente als 
 - Je mehr Elemente vorhanden sind und/oder je größer die Elemente werden, desto mehr Speicher wird durch die Anwendung verbraucht, die Batch aufruft.
 - Mehr Elemente und/oder größere Elemente führen zu einem erhöhten Netzwerkdatenverkehr. Die Übertragung dauert länger, und je nach Architektur der Anwendung erhöhen sich möglicherweise die Kosten für Daten, die außerhalb der Region des Batch-Kontos übertragen werden.
 
+> [AZURE.IMPORTANT]Es wird *dringend* empfohlen, dass Sie *immer* Filter- (FilterClause) und Auswahlklauseln (SelectClause) für Ihre API-Aufrufe zur Listenerstellung verwenden, um die maximale Effizienz und optimale Leistung der Anwendung zu gewährleisten. Diese Klauseln und ihre Verwendung sind weiter unten beschrieben.
+
 Für alle Batch-APIs gelten folgende Bedingungen:
 
 - Jeder Eigenschaftenname ist eine Zeichenfolge, die der Eigenschaft des Objekts zugeordnet ist.
@@ -50,7 +52,7 @@ Für alle Batch-APIs gelten folgende Bedingungen:
 
 ## Effizientes Abfragen in Batch .NET
 
-Mithilfe der Batch-.NET-API können Sie sowohl die Anzahl der in einer Liste zurückgegebenen Elemente als auch die Menge der Informationen reduzieren, die für jedes Element zurückgegeben wird, indem Sie [DetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.detaillevel.aspx) für eine Abfrage festlegen. Bei "DetailLevel" handelt es sich um eine abstrakte Basisklasse, sodass ein [ODATADetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx)-Objekt erstellt und als Parameter an die entsprechenden Methoden übergeben werden muss.
+Mithilfe der Batch-.NET-API können Sie sowohl die Anzahl der in einer Liste zurückgegebenen Elemente als auch die Menge der Informationen reduzieren, die für jedes Element zurückgegeben wird, indem Sie [DetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.detaillevel.aspx) für eine Abfrage festlegen. Bei "DetailLevel" handelt es sich um eine abstrakte Basisklasse, sodass ein [ODATADetailLevel][odata]-Objekt erstellt und als Parameter an die entsprechenden Methoden übergeben werden muss.
 
 Ein ODataDetailLevel-Objekt verfügt über drei öffentliche Zeichenfolgeneigenschaften, die entweder im Konstruktor angegeben oder direkt festgelegt werden können:
 
@@ -124,7 +126,23 @@ Im Folgenden finden Sie einen Codeausschnitt, der die Batch-.NET-API verwendet, 
 	// detail level we configured above
 	List<CloudPool> testPools = myBatchClient.PoolOperations.ListPools(detailLevel).ToList();
 
-> [AZURE.TIP]Es wird empfohlen, dass Sie *immer* filter- und select-Klauseln für Ihre API-Aufrufe zur Listenerstellung verwenden, um die maximale Effizienz und optimale Leistung der Anwendung zu gewährleisten.
+## Beispielprojekt
+
+Probieren Sie das [EfficientListQueries][efficient_query_sample]-Beispielprojekt auf GitHub aus, um zu sehen, wie sich effiziente Listenabfragen auf die Leistung in einer Anwendung auswirken können. Diese C#-Konsolenanwendung erstellt einen Task, fügt diesem eine große Anzahl von Aufgaben hinzu, und fragt dann den Batchdienst über unterschiedliche [ODATADetailLevel][odata]-Spezifikationen ab, wodurch eine Ausgabe angezeigt wird, die der folgenden ähnelt:
+
+		Adding 5000 tasks to job jobEffQuery...
+		5000 tasks added in 00:00:47.3467587, hit ENTER to query tasks...
+
+		4943 tasks retrieved in 00:00:04.3408081 (ExpandClause:  | FilterClause: state eq 'active' | SelectClause: id,state)
+		0 tasks retrieved in 00:00:00.2662920 (ExpandClause:  | FilterClause: state eq 'running' | SelectClause: id,state)
+		59 tasks retrieved in 00:00:00.3337760 (ExpandClause:  | FilterClause: state eq 'completed' | SelectClause: id,state)
+		5000 tasks retrieved in 00:00:04.1429881 (ExpandClause:  | FilterClause:  | SelectClause: id,state)
+		5000 tasks retrieved in 00:00:15.1016127 (ExpandClause:  | FilterClause:  | SelectClause: id,state,environmentSettings)
+		5000 tasks retrieved in 00:00:17.0548145 (ExpandClause: stats | FilterClause:  | SelectClause: )
+
+		Sample complete, hit ENTER to continue...
+
+Wie den Informationen über die jeweils verstrichene Zeit zu entnehmen ist, kann ein Begrenzen der Eigenschaften und der Anzahl von zurückgegebenen Elementen die Antwortzeiten für Abfragen erheblich verkürzen. Sie finden dieses Beispielprojekt und weitere Beispielprojekte im [azure-batch-samples][github_samples]-Repository auf GitHub.
 
 ## Nächste Schritte
 
@@ -133,4 +151,8 @@ Im Folgenden finden Sie einen Codeausschnitt, der die Batch-.NET-API verwendet, 
     - [Batch .NET](https://msdn.microsoft.com/library/azure/dn865466.aspx)
 2. Sehen Sie sich die [Azure Batch-Beispiele](https://github.com/Azure/azure-batch-samples) auf GitHub an, und machen Sie sich mit dem Code vertraut.
 
-<!---HONumber=September15_HO1-->
+[efficient_query_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/EfficientListQueries
+[github_samples]: https://github.com/Azure/azure-batch-samples
+[odata]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx
+
+<!---HONumber=Oct15_HO1-->

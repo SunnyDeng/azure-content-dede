@@ -232,10 +232,7 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) 
 [Vorschauportal]: https://portal.azure.com/
 
-
-<!--Please, pass the changes in lines 52-->
-
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

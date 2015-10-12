@@ -6,16 +6,14 @@
 	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
-
 <tags 
 	ms.service="storage" 
 	ms.workload="storage" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="09/23/2015" 
 	ms.author="tamram"/>
-
 
 # Einsatz des Azure-Speicheremulators für Entwicklung und Tests
 
@@ -156,14 +154,8 @@ Geben Sie zum Anzeigen der Liste der Optionen an der Eingabeaufforderung `/help`
 | **Starten** | Startet den Speicheremulator. | `AzureStorageEmulator start [-inprocess]` | *-inprocess*: startet den Emulator im aktuellen Prozess, anstatt einen neuen Prozess zu erstellen. |
 | **Beenden** | Beendet den Speicheremulator. | `AzureStorageEmulator stop` | |
 | **Status** | Zeigt den Status des Speicheremulators an. | `AzureStorageEmulator status` | |
-| **Clear** | Löscht die Daten in allen Diensten, die an der Befehlszeile angegeben werden. | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `| *blob*: löscht Blob-Daten. <br/>
-\*queue\*: löscht Warteschlangendaten. <br/>
-\*table\*: löscht Tabellendaten. <br/>
-\*all\*: löscht sämtliche Daten in allen Diensten. |
-| **Init** | Führt eine einmalige Initialisierung zur Einrichtung des Emulators durch. | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName\\instanceName*: gibt den Server an, auf dem die SQL-Instanz gehostet wird. <br/>
-\*-sqlinstance instanceName\*: gibt den Namen der zu verwendenden SQL-Instanz in der Standardserverinstanz an. <br/>
-\*-forcecreate\*: erzwingt die Erstellung der SQL-Datenbank, auch wenn diese bereits vorhanden ist. <br/>
-\*-inprocess\*: führt die Initialisierung im aktuellen Prozess aus, anstatt einen neuen Prozess zu erstellen. Sie müssen den aktuellen Prozess mit erweiterten Berechtigungen zum Ausführen der Initialisierung starten. |
+| **Clear** | Löscht die Daten in allen Diensten, die an der Befehlszeile angegeben werden. | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `| *blob*: löscht Blob-Daten. <br/>*queue*: löscht Warteschlangendaten. <br/>*table*: löscht Tabellendaten. <br/>*all*: löscht sämtliche Daten in allen Diensten. |
+| **Init** | Führt eine einmalige Initialisierung zur Einrichtung des Emulators durch. | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName\\instanceName*: gibt den Server an, auf dem die SQL-Instanz gehostet wird. <br/>*-sqlinstance instanceName*: gibt den Namen der zu verwendenden SQL-Instanz in der Standardserverinstanz an. <br/>*-forcecreate*: erzwingt die Erstellung der SQL-Datenbank, auch wenn diese bereits vorhanden ist. <br/>*-inprocess*: führt die Initialisierung im aktuellen Prozess aus, anstatt einen neuen Prozess zu erstellen. Sie müssen den aktuellen Prozess mit erweiterten Berechtigungen zum Ausführen der Initialisierung starten. |
                                                                                                                   
 ## Unterschiede zwischen dem Speicheremulator und Azure Storage
 
@@ -236,4 +228,4 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 
 - Version 2013-08-15 der Azure Storage-Dienste wird jetzt vollständig unterstützt. (Zuvor wurde diese Version nur von Version 2.2.1 Preview des Speicheremulators unterstützt.)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

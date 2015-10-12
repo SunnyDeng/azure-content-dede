@@ -26,13 +26,13 @@ Zur Verwendung des OneDrive-Connectors müssen Sie zunächst eine Instanz der On
 2.	Suchen Sie unter „Alles“ nach „OneDrive-Connector“.
 3.	Konfigurieren Sie den OneDrive-Connector wie folgt:
 
-	![][1]
-	- **Name** - Geben Sie einen Namen für den OneDrive-Connector an
-	- **App Service-Plan** - Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen 
-	- **Tarif** - Wählen Sie einen Tarif für den Connector aus 
-	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll 
-	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll 
-	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+	![][1] 
+	– **Name** – Geben Sie einen Namen für den OneDrive-Connector an 
+	– **App Service-Plan** – Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen 
+	– **Tarif** – Wählen Sie einen Tarif für den Connector aus 
+	– **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll 
+	– **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll 
+	– **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
 
 4. Klicken Sie auf "Erstellen". Ein neuer OneDrive-Connector wird erstellt.
 5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des OneDrive-Connectors erstellen.
@@ -49,7 +49,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 	![][2]
 4.	Sie können die OneDrive-Connector-API-App im Editor bearbeiten, indem Sie auf den "OneDrive-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an (falls Sie nicht automatisch angemeldet werden). Klicken Sie auf "Ja", um den Zugriff zuzulassen.
 
-	![][3]
+	![][3] 
 	![][4]
 
 5.	Sie können nun den OneDrive-Connector im Datenfluss verwenden. Trigger sind derzeit nicht im OneDrive-Connector verfügbar. Die verfügbaren Aktionen sind: Abrufen einer Datei, Hochladen einer Datei, Löschen einer Datei und Auflisten von Dateien.
@@ -78,7 +78,9 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
+>[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -95,4 +97,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn974227.aspx
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

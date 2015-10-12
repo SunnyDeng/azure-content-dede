@@ -45,7 +45,7 @@ Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 Öffnen Sie das Blatt „SQL-Datenbank“ für die Datenbank, die Sie als BACPAC-Datei exportieren möchten:
 
-1.	Öffnen Sie das [Azure-Vorschauportal](https//:portal.azure.com).
+1.	Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
 2.	Klicken Sie auf **ALLE DURCHSUCHEN**.
 3.	Klicken Sie auf **SQL-Datenbanken**.
 2.	Klicken Sie auf die Datenbank, die Sie als BACPAC-Datei exportieren möchten.
@@ -101,4 +101,4 @@ Durch Klicken auf **Erstellen** wird eine Anforderung zum Exportieren der Datenb
 [4]: ./media/sql-database-export/export-status.png
 [5]: ./media/sql-database-export/bacpac-details.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

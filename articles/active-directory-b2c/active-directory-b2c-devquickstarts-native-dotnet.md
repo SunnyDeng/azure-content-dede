@@ -38,40 +38,36 @@ Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md
 - Notieren Sie sich den **Umleitungs-URI** `urn:ietf:wg:oauth:2.0:oob` – dies ist die Standard-URL für dieses Codebeispiel.
 - Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie später.
 
-    > [AZURE.IMPORTANT]Sie können hierfür keine Anwendungen verwenden, die im [Azure-Portal](https://manage.windowsazure.com/) auf der Registerkarte **Anwendungen** registriert sind.
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## 3. Erstellen der Richtlinien
 
-In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert.  Dieses Codebeispiel enthält drei 
-Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im 
-[Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Beachten Sie beim Erstellen der drei Richtlinien Folgendes:
+In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Dieses Codebeispiel enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie jedes Typs erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
 
 - Wählen Sie **Registrierung mit Benutzer-ID** oder **E-Mail-Registrierung** auf dem Blatt für den Identitätsanbieter aus.
 - Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
-- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsanspruch in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
-- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze. 
+- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsanspruch in jeder Richtlinie aus. Sie können auch andere Ansprüche auswählen.
+- Notieren Sie sich die **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie müssen das Präfix `b2c_1_` aufweisen. Sie benötigen diese Richtliniennamen in Kürze.
+
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
 ## 4\. Herunterladen des Codes
 
-Der Code für dieses Lernprogramm wird auf [GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie 
-[ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet.git
 ```
 
-Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) und unter
-`complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
-Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskClient`-Projekt und ein `TaskService`-Projekt. `TaskClient` ist eine WPF-Desktopanwendung,
-mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenlisten der Benutzer gespeichert werden. Der `TaskClient` und der `TaskService` werden in diesem Fall durch eine einzige **Anwendungs-ID**
-dargestellt, da sie zusammen eine logische Anwendung bilden.
+Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die Visual Studio-Datei (`.sln`), um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskClient`-Projekt und ein `TaskService`-Projekt. `TaskClient` ist eine WPF-Desktopanwendung, mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste jedes Benutzers gespeichert wird. Der `TaskClient` und der `TaskService` werden in diesem Fall durch eine einzelne **Anwendungs-ID** dargestellt, da sie zusammen eine logische Anwendung bilden.
 
 ## 5\. Konfigurieren des Aufgabendiensts
 
-Wenn `TaskService` Anforderungen von `TaskClient` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen der Zugriffstoken müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
+Wenn `TaskService` Anforderungen von `TaskClient` erhält, sucht er nach einem gültigen Zugriffstoken zum Authentifizieren der Anforderung. Zum Überprüfen des Zugriffstokens müssen Sie `TaskService` einige Informationen zur App bereitstellen. Öffnen Sie im `TaskService`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`:
 
 ```
 <appSettings>
@@ -84,12 +80,14 @@ Wenn `TaskService` Anforderungen von `TaskClient` erhält, sucht er nach einem g
     <add key="ida:ClientId" value="{Enter the Application ID assigned to your app by the Azure Portal}" />
     <add key="ida:PolicyId" value="{Enter the name of one of the policies you created, like `b2c_1_my_sign_in_policy`}" />
   </appSettings>
-  ```
+```
+  
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
 Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
 
 ## 6. Ausführen von Richtlinien
-Nun, da `TaskService` zum Authentifizieren von Anforderungen bereit ist, können wir den `TaskClient` implementieren. Ihre App kommuniziert mit Azure AD B2C durch Senden von HTTP-Authentifizierungsanforderungen, in denen die Richtlinie, die ausgeführt werden soll, als Teil der Anforderung angegeben wird. Für .NET-Desktopanwendungen können Sie die **Active Directory-Authentifizierungsbibliothek (ADAL)** zum Senden von OAuth 2.0-Authentifizierungsnachrichten, zum Ausführen von Richtlinien und zum Abrufen von Token für den Aufruf von Web-APIs verwenden.
+Nun, da `TaskService` zum Authentifizieren von Anforderungen bereit ist, können wir den `TaskClient` implementieren. Ihre App kommuniziert mit Azure AD B2C durch Senden von HTTP-Authentifizierungsanforderungen, in denen die Richtlinie, die ausgeführt werden soll, als Teil der Anforderung angegeben wird. Für .NET-Desktopanwendungen können Sie die **Active Directory Authentication Library (ADAL)** zum Senden von OAuth 2.0-Authentifizierungsnachrichten, zum Ausführen von Richtlinien und zum Abrufen von Token für den Aufruf von Web-APIs verwenden.
 
 #### Installieren von ADAL
 Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole von Visual Studio zum TaskClient-Projekt hinzu.
@@ -117,6 +115,8 @@ public static class Globals
 }
 ``` 
 
+[AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
+
 
 #### Erstellen eines "AuthenticationContext"
 Die primäre Klasse der ADAL ist der `AuthenticationContext` – er stellt die Verbindung zwischen der App und Ihrem B2C-Verzeichnis dar. Wenn die App gestartet wird, erstellen Sie eine `AuthenticationContext`-Instanz in `MainWindow.xaml.cs`, die im Fenster verwendet werden kann.
@@ -140,7 +140,7 @@ public partial class MainWindow : Window
 ```
 
 #### Initiieren eines Registrierungsflusses
-Klickt der Benutzer auf die Registrierungsschaltfläche, soll mithilfe der von Ihnen erstellten Registrierungsrichtlinie ein Registrierungsfluss initiiert werden. Bei ADAL müssen Sie nur `authContext.AcquireTokenAsync(...)` aufrufen. Die von Ihnen an `AcquireTokenAsync(...)` übergebenen Parameter legen fest, welche Token Sie erhalten, welche Richtlinie für die Authentifizierungsanfrage verwendet wird usw.
+Klickt der Benutzer auf die Registrierungsschaltfläche, soll mithilfe der von Ihnen erstellten Registrierungsrichtlinie ein Registrierungsfluss initiiert werden. Bei ADAL müssen Sie nur `authContext.AcquireTokenAsync(...)` aufrufen. Die von Ihnen an `AcquireTokenAsync(...)` übergebenen Parameter legen fest, welches Token Sie erhalten, welche Richtlinie in der Authentifizierungsanforderung verwendet wird usw.
 
 ```C#
 private async void SignUp(object sender, RoutedEventArgs e)
@@ -221,10 +221,10 @@ private async void EditProfile(object sender, RoutedEventArgs e)
                     new PlatformParameters(PromptBehavior.Always, null), Globals.editProfilePolicy);
 ```
 
-In all diesen Fällen gibt die ADAL entweder im `AuthenticationResult` ein Token zurück oder löst eine Ausnahme aus. Jedes Mal, wenn Sie ein Token von der ADAL erhalten, können Sie mit dem `AuthenticationResult.UserInfo`-Objekt die Benutzerdaten in der App (z. B. die Benutzeroberfläche) aktualisieren. Die ADAL speichert auch das Token für die Verwendung in anderen Teilen der Anwendung zwischen.
+In all diesen Fällen gibt die ADAL entweder im `AuthenticationResult` ein Token zurück oder löst eine Ausnahme aus. Jedes Mal, wenn Sie ein Token von der ADAL abrufen, können Sie mit dem `AuthenticationResult.UserInfo`-Objekt die Benutzerdaten in der App (z. B. die Benutzeroberfläche) aktualisieren. Die ADAL speichert auch das Token für die Verwendung in anderen Teilen der Anwendung zwischen.
 
 ## 7\. Aufrufen von APIs
-Wir haben bereits die ADAL zum Ausführen von Richtlinien sowie zum Abrufen von Token verwendet. In vielen Fällen möchten Sie jedoch prüfen, ob ein zwischengespeichertes Token vorhanden ist, ohne eine Richtlinie auszuführen. Ein solcher Fall tritt z. B. ein, wenn die App versucht, die Aufgabenliste des Benutzers vom `TaskService` abzurufen. Sie können dieselbe `authContext.AcquireTokenAsync(...)`-Methode verwenden und erneut die `clientId` als Bereichsparameter einsetzen, dieses Mal aber mit `PromptBehavior.Never`:
+Wir haben bereits die ADAL zum Ausführen von Richtlinien sowie zum Abrufen von Token verwendet. In vielen Fällen möchten Sie jedoch prüfen, ob ein zwischengespeichertes Token vorhanden ist, ohne eine Richtlinie auszuführen. Ein solcher Fall tritt z. B. ein, wenn die App versucht, die Aufgabenliste des Benutzers vom `TaskService` abzurufen. Sie können dazu dieselbe `authContext.AcquireTokenAsync(...)`-Methode verwenden und erneut die `clientId` als Bereichsparameter einsetzen, dieses Mal aber mit `PromptBehavior.Never`:
 
 ```C#
 private async void GetTodoList()
@@ -286,7 +286,7 @@ Wenn der Aufruf von `AcquireTokenAsync(...)` erfolgreich ist und ein Token im Ca
 	...
 ``` 
 
-Dasselbe Muster können Sie jederzeit anwenden, um den Tokencache für Token zu überprüfen, ohne dass der Benutzer sich anmelden muss. Wir möchten z. B. beim Starten der App den `FileCache` auf vorhandene Token überprüfen, damit die Anmeldesitzung des Benutzers bei jeder Ausführung der App beibehalten wird. Sie finden den gleichen Code im `OnInitialized`-Ereignis des `MainWindow`, der auch die erste Ausführung behandelt.
+Dasselbe Muster können Sie jederzeit anwenden, um den Tokencache für Token zu überprüfen, ohne dass der Benutzer sich anmelden muss. Wir möchten z. B. beim Starten der App den `FileCache` auf vorhandene Token überprüfen, damit die Anmeldesitzung des Benutzers bei jeder Ausführung der App beibehalten wird. Sie finden den gleichen Code im `OnInitialized`-Ereignis von `MainWindow`, der auch die erste Ausführung behandelt.
 
 ## 8\. Abmelden des Benutzers
 Sie können mit der ADAL auch die App-Sitzung des Benutzers beenden, wenn dieser auf die Schaltfläche "Abmelden" klickt. Mit der ADAL erfolgt dies einfach durch Leeren aller Token aus dem Tokencache:
@@ -316,7 +316,7 @@ Erstellen Sie abschließend `TaskClient` und `TaskService`, und führen Sie beid
 
 ## 10\. Soziale Netzwerke als IDPs hinzufügen
 
-Die App unterstützt bisher nur die Registrierung und Anmeldung von Benutzern mit sogenannten **lokalen Konten** – Konten in Ihrem B2C-Verzeichnis mit einem Benutzernamen und einem Kennwort. Mit Azure AD B2C können Sie auch andere **Identitätsanbieter** (oder IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
+Die App unterstützt bisher nur die Registrierung und Anmeldung von Benutzern mit sogenannten **lokalen Konten** – Konten in Ihrem B2C-Verzeichnis mit einem Benutzernamen und einem Kennwort. Mit Azure AD B2C können Sie auch Unterstützung für andere **Identitätsanbieter** (oder IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
 
 Um Ihrer App soziale Netzwerke als IDPs hinzuzufügen, befolgen Sie zunächst die detaillierten Anweisungen in einem oder zwei der folgenden Artikel. Sie müssen für jeden IDP, den Sie unterstützen möchten, eine Anwendung in dessen System registrieren und eine Client-ID abrufen.
 
@@ -325,7 +325,7 @@ Um Ihrer App soziale Netzwerke als IDPs hinzuzufügen, befolgen Sie zunächst di
 - [Einrichten von Amazon als IDP](active-directory-b2c-setup-amzn-app.md)
 - [Einrichten von LinkedIn als IDP](active-directory-b2c-setup-li-app.md) 
 
-Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müssen Sie jede der drei Richtlinien bearbeiten, um die neuen IDPs wie im [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md) beschrieben einzufügen. Nachdem Sie Ihre Richtlinien gespeichert haben, führen Sie die App einfach erneut aus. Die neuen IDPs sollten als eine Registrierungs- und Anmeldeoption auf allen Benutzeroberflächen für Identitäten angezeigt werden.
+Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müssen Sie zurückkehren und jede der drei Richtlinien bearbeiten, um die neuen IDPs einzuschließen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md) beschrieben. Nachdem Sie Ihre Richtlinien gespeichert haben, führen Sie die App einfach erneut aus. Die neuen IDPs sollten als eine Registrierungs- und Anmeldeoption auf allen Benutzeroberflächen für Identitäten angezeigt werden.
 
 Sie können frei mit Ihren Richtlinien experimentieren und die Auswirkung auf die Beispiel-App beobachten – Sie können IDPs hinzufügen/entfernen oder die Anwendungsansprüche oder Registrierungsattribute ändern. Experimentieren Sie so lange, bis die Zusammenarbeit von Richtlinien, Authentifizierungsanforderungen und ADAL verstanden haben.
 
@@ -345,4 +345,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

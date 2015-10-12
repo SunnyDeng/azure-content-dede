@@ -227,4 +227,4 @@ Sie haben eine Clientflussauthentifizierung für App Service API-Apps kennengele
 [Azure-Portal]: https://manage.windowsazure.com/
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

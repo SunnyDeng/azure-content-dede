@@ -45,9 +45,11 @@ Microsoft bekennt sich seit langer Zeit zum Datenschutz, einem wichtigen Teil un
 
 ###Nächste Schritte:
 
+[Bewährte Methoden und Prozess zur Erstellung Ihres Mobile Engagement](mobile-engagement-getting-started-best-practices.md)
+
 [Erste Schritte (Vermarkter)](mobile-engagement-define-your-mobile-engagement-strategy.md)
 
 [Erste Schritte (Entwickler)](/documentation/services/mobile-engagement/)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

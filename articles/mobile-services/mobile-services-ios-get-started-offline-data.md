@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="07/01/2015"
+	ms.date="10/01/2015"
 	ms.author="krisragh;donnam"/>
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
@@ -155,7 +155,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     #### TodoItem
 
-    | Attribut | Typ | Hinweis | 
+    | Attribut | Typ | Hinweis |
     |-------------- |  ------ | -------------------------------------------------------|
     | ID (erforderlich) | String | Primärschlüssel im Remotespeicher (erforderlich) |
     | complete | Boolean | Todo-Elementfeld |
@@ -271,4 +271,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO1-->

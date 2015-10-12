@@ -39,7 +39,7 @@ Beim Erstellen eines neuen Azure-Clouddiensts in Visual Studio werden standardm�
 
 Sie können einen Azure-Clouddienst vom Projektmappen-Explorer in Visual Studio aus konfigurieren, wie in der folgenden Abbildung dargestellt.
 
-    ![](./media/vs-azure-tools-configure-roles-for-cloud-service/IC713462.png)
+![Konfigurieren eines Clouddiensts](./media/vs-azure-tools-configure-roles-for-cloud-service/IC713462.png)
 
 ### So konfigurieren Sie einen Azure-Clouddienst
 
@@ -57,11 +57,11 @@ Sie können einen Azure-Clouddienst vom Projektmappen-Explorer in Visual Studio 
 
 ## Ändern der Anzahl von Rolleninstanzen
 
-Um die Leistung des Clouddiensts zu verbessern, können Sie die Anzahl der ausgeführten Instanzen einer Rolle basierend auf der Anzahl der Benutzer oder der erwarteten Auslastung für eine Rolle ändern. Wenn der Clouddienst in Azure ausgeführt wird, wird ein separater virtueller Computer für jede Instanz einer Rolle erstellt. Dies wirkt sich auf die Abrechnung für die Bereitstellung dieses Clouddiensts aus. Weitere Informationen zur Abrechnungen finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
+Um die Leistung des Clouddiensts zu verbessern, können Sie die Anzahl der ausgeführten Instanzen einer Rolle basierend auf der Anzahl der Benutzer oder der erwarteten Auslastung für eine Rolle ändern. Wenn der Clouddienst in Azure ausgeführt wird, wird ein separater virtueller Computer für jede Instanz einer Rolle erstellt. Dies wirkt sich auf die Abrechnung für die Bereitstellung dieses Clouddiensts aus. Weitere Informationen zur Abrechnung finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
 
 ### So ändern Sie die Anzahl der Instanzen für eine Rolle
 
-1. Wählen Sie die Registerkarte **Konfiguration**.
+1. Wählen Sie die Registerkarte **Konfiguration** aus.
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten.
 
@@ -71,7 +71,7 @@ Um die Leistung des Clouddiensts zu verbessern, können Sie die Anzahl der ausge
 
     >[AZURE.NOTE]Jede Instanz wird auf einem separaten virtuellen Computer ausgeführt, wenn Sie Ihren Clouddienst in Azure veröffentlichen.
 
-1. Wählen Sie in der Symbolleiste die Schaltfläche **Speichern**, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
+1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
 
 ## Verwalten von Verbindungszeichenfolgen für Speicherkonten
 
@@ -83,13 +83,13 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 ### So verwalten Sie Verbindungszeichenfolgen für Speicherkonten
 
-1. Wählen Sie die Registerkarte **Einstellungen**.
+1. Wählen Sie die Registerkarte **Einstellungen** aus.
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten.
 
     >[AZURE.NOTE]Sie können Verbindungszeichenfolgen für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch eine Verbindungszeichenfolge hinzufügen oder löschen möchten, müssen Sie "Alle Konfigurationen" auswählen.
 
-1. Wenn Sie eine Verbindungszeichenfolge hinzufügen möchten, wählen Sie die Schaltfläche **Einstellung hinzufügen**. Der Liste wird ein neuer Eintrag hinzugefügt.
+1. Wenn Sie eine Verbindungszeichenfolge hinzufügen möchten, wählen Sie die Schaltfläche **Einstellung hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
 1. Geben Sie im Textfeld **Name** den Namen ein, den Sie für die Verbindungszeichenfolge verwenden möchten.
 
@@ -97,17 +97,17 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 1. Um den Wert für die Verbindungszeichenfolge zu ändern, klicken Sie auf die Schaltfläche mit den Auslassungspunkten (...). Das Dialogfeld **Verbindungszeichenfolge für den Speicher erstellen** wird angezeigt.
 
-1. Um den lokalen Speicherkontoemulator zu verwenden, wählen Sie das Optionsfeld **Microsoft Azure-Speicheremulator**, und klicken Sie dann auf die Schaltfläche **OK**.
+1. Um den lokalen Speicherkontoemulator zu verwenden, wählen Sie das Optionsfeld **Microsoft Azure-Speicheremulator** aus, und klicken Sie dann auf die Schaltfläche **OK**.
 
-1. Um ein Speicherkonto in Azure zu verwenden, wählen Sie das Optionsfeld **Ihr Abonnement**, und wählen Sie dann das gewünschte Speicherkonto aus.
+1. Um ein Speicherkonto in Azure zu verwenden, wählen Sie das Optionsfeld **Ihr Abonnement** aus, und wählen Sie dann das gewünschte Speicherkonto aus.
 
-1. Wählen Sie das Optionsfeld **Manuell eingegebene Anmeldeinformationen** aus, um benutzerdefinierte Anmeldeinformationen zu verwenden. Geben Sie den Speicherkontonamen und dann entweder den primären oder sekundären Schlüssel ein. Informationen zur Erstellung eines Speicherkontos und zur Eingabe der Details für das Speicherkonto im Dialogfeld **Verbindungszeichenfolge für den Speicher erstellen** finden Sie unter [Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts mit Visual Studio erforderlich sind](vs-azure-tools-setting-up-services-required-to-publish-a-cloud-service-from-visual-studio.md).
+1. Wählen Sie das Optionsfeld **Manuell eingegebene Anmeldeinformationen** aus, um benutzerdefinierte Anmeldeinformationen zu verwenden. Geben Sie den Speicherkontonamen und dann entweder den primären oder sekundären Schlüssel ein. Informationen zur Erstellung eines Speicherkontos und zur Eingabe der Details für das Speicherkonto im Dialogfeld **Verbindungszeichenfolge für den Speicher erstellen** finden Sie unter [Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio](vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md).
 
-1. Um eine Verbindungszeichenfolge zu löschen, wählen Sie die Verbindungszeichenfolge aus, und wählen Sie dann die Schaltfläche **Einstellung entfernen**.
+1. Um eine Verbindungszeichenfolge zu löschen, wählen Sie die Verbindungszeichenfolge aus, und wählen Sie dann die Schaltfläche **Einstellung entfernen** aus.
 
-1. Wählen Sie in der Symbolleiste das Symbol **Speichern**, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
+1. Wählen Sie auf der Symbolleiste das Symbol **Speichern** aus, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
 
-1. Für den Zugriff auf die Verbindungszeichenfolge in der Dienstkonfigurationsdatei müssen Sie den Wert der Konfigurationseinstellung abrufen. Der folgende Code zeigt ein Beispiel, in dem Blobspeicher erstellt wird und Daten mithilfe einer Verbindungszeichenfolge `MyConnectionString` aus der Dienstkonfigurationsdatei hochgeladen werden, wenn ein Benutzer auf der Seite "Default.aspx" in der Webrolle für einen Azure-Clouddienst **Button1** auswählt: Fügen Sie die folgenden using-Anweisungen zu "Default.aspx.cs" hinzu:
+1. Für den Zugriff auf die Verbindungszeichenfolge in der Dienstkonfigurationsdatei müssen Sie den Wert der Konfigurationseinstellung abrufen. Der folgende Code zeigt ein Beispiel, in dem Blob-Speicher erstellt wird und Daten mithilfe einer Verbindungszeichenfolge `MyConnectionString` aus der Dienstkonfigurationsdatei hochgeladen werden, wenn ein Benutzer auf der Seite "Default.aspx" in der Webrolle für einen Azure-Clouddienst **Button1** auswählt: Fügen Sie die folgenden using-Anweisungen zu "Default.aspx.cs" hinzu:
 
     ```
     using Microsoft.WindowsAzure;
@@ -143,13 +143,13 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 ### So fügen Sie benutzerdefinierte Einstellungen zur Verwendung in Ihrem Azure-Clouddienst hinzu
 
-1. Wählen Sie die Registerkarte **Einstellungen**.
+1. Wählen Sie die Registerkarte **Einstellungen** aus.
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten.
 
     >[AZURE.NOTE]Sie können Zeichenfolgen für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch eine Zeichenfolge hinzufügen oder löschen möchten, müssen Sie **Alle Konfigurationen** auswählen.
 
-1. Wenn Sie eine Zeichenfolge hinzufügen möchten, wählen Sie die Schaltfläche **Einstellung hinzufügen**. Der Liste wird ein neuer Eintrag hinzugefügt.
+1. Wenn Sie eine Zeichenfolge hinzufügen möchten, wählen Sie die Schaltfläche **Einstellung hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
 1. Geben Sie im Textfeld **Name** den Namen ein, den Sie für die Zeichenfolge verwenden möchten.
 
@@ -157,9 +157,9 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 1. Geben Sie zum Hinzufügen oder Ändern des Werts für die Zeichenfolge den neuen Wert ins Textfeld **Wert** ein.
 
-1. Um eine Zeichenfolge zu löschen, wählen Sie die Zeichenfolge aus, und wählen Sie dann die Schaltfläche **Einstellung entfernen**.
+1. Um eine Zeichenfolge zu löschen, wählen Sie die Zeichenfolge aus, und wählen Sie dann die Schaltfläche **Einstellung entfernen** aus.
 
-1. Wählen Sie in der Symbolleiste die Schaltfläche **Speichern**, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
+1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
 
 1. Für den Zugriff auf die Zeichenfolge in der Dienstkonfigurationsdatei müssen Sie den Wert der Konfigurationseinstellung abrufen.
 
@@ -183,7 +183,7 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 ## Verwalten von lokalem Speicher für jede Rolleninstanz
 
-Sie können lokalen Dateisystemspeicher für jede Instanz einer Rolle hinzufügen. Hier können Sie die lokalen Daten speichern, auf die nicht von anderen Rollen zugegriffen werden muss. Alle Daten, die nicht im Tabellen-, Blob- oder SQL-Datenbankspeicher gespeichert werden müssen, können hier abgelegt werden. Beispielsweise können Sie diesen lokalen Speicher zum Zwischenspeichern von Daten verwenden, die möglicherweise erneut verwendet werden müssen. Auf diese gespeicherten Daten kann nicht von anderen Instanzen einer Rolle zugegriffen werden. Weitere Informationen zu lokalen Speicherressourcen finden Sie unter [Konfigurieren lokaler Speicherressourcen](../cloud-services/cloud-services-configure-local-storage-resources.md).
+Sie können lokalen Dateisystemspeicher für jede Instanz einer Rolle hinzufügen. Hier können Sie die lokalen Daten speichern, auf die nicht von anderen Rollen zugegriffen werden muss. Alle Daten, die nicht im Tabellen-, Blob- oder SQL-Datenbankspeicher gespeichert werden müssen, können hier abgelegt werden. Beispielsweise können Sie diesen lokalen Speicher zum Zwischenspeichern von Daten verwenden, die möglicherweise erneut verwendet werden müssen. Auf diese gespeicherten Daten kann nicht von anderen Instanzen einer Rolle zugegriffen werden. Weitere Informationen zu lokalen Speicherressourcen finden Sie unter [Konfigurieren lokaler Speicherressourcen](cloud-services-configure-local-storage-resources.md).
 
 Die Einstellungen des lokalen Speichers gelten für alle Dienstkonfigurationen. Sie können lokalen Speicher nur für alle Dienstkonfigurationen hinzufügen, entfernen oder ändern.
 
@@ -203,9 +203,9 @@ Die Einstellungen des lokalen Speichers gelten für alle Dienstkonfigurationen. 
 
 1. Um einen vorhandenen lokalen Speichereintrag zu bearbeiten, wählen Sie die Zeile, die Sie aktualisieren möchten. Dann können Sie die Felder bearbeiten, wie in den vorherigen Schritten beschrieben.
 
-1. Um einen lokalen Speichereintrag zu löschen, wählen Sie den Speichereintrag in der Liste aus, und wählen Sie dann die Schaltfläche **Lokalen Speicher entfernen**.
+1. Um einen lokalen Speichereintrag zu löschen, wählen Sie den Speichereintrag in der Liste aus, und wählen Sie dann die Schaltfläche **Lokalen Speicher entfernen** aus.
 
-1. Wählen Sie in der Symbolleiste das Symbol **Speichern**, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
+1. Wählen Sie auf der Symbolleiste das Symbol **Speichern** aus, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
 
 1. Um auf den lokalen Speicher zuzugreifen, den Sie in der Dienstkonfigurationsdatei hinzugefügt haben, müssen Sie den Wert der Konfigurationseinstellung der lokalen Ressource abrufen. Verwenden Sie die folgenden Codezeilen für den Zugriff auf diesen Wert, erstellen Sie eine Datei mit dem Namen **MyStorageTest.txt**, und schreiben Sie eine Zeile mit Testdaten in diese Datei. Sie können diesen Code der `Button_Click`-Methode hinzufügen, die Sie in den vorherigen Verfahren verwendet haben:
 
@@ -237,17 +237,17 @@ Die Einstellungen des lokalen Speichers gelten für alle Dienstkonfigurationen. 
 
   1. Führen Sie die Webrolle aus, und klicken Sie auf **Button1**, um sicherzustellen, dass der Code in `Button1_Click` aufgerufen wird.
 
-  1. Öffnen Sie im Infobereich das Kontextmenü für das Azure-Symbol, und wählen Sie **Serveremulator-Benutzeroberfläche** anzeigen. Das Dialogfeld **Azure-Serveremulator** wird angezeigt.
+  1. Öffnen Sie im Infobereich das Kontextmenü für das Azure-Symbol, und wählen Sie **Serveremulator-Benutzeroberfläche anzeigen** aus. Das Dialogfeld **Azure-Serveremulator** wird angezeigt.
 
   1. Wählen Sie die Webrolle aus:
 
-  1. Wählen Sie in der Menüleiste **Extras**, **Lokalen Speicher öffnen**. Ein Windows Explorer-Fenster wird angezeigt.
+  1. Wählen Sie in der Menüleiste **Extras**, **Lokalen Speicher öffnen** aus. Ein Windows Explorer-Fenster wird angezeigt.
 
   1. Geben Sie in der Menüleiste im Textfeld **Suchen** den Text **MyStorageTest.txt** ein, und drücken Sie dann die **EINGABETASTE**, um die Suche zu starten.
 
     Die Datei wird in den Suchergebnissen angezeigt.
 
-  1. Um den Inhalt der Datei anzuzeigen, öffnen Sie das Kontextmenü für die Datei, und wählen Sie **Öffnen**.
+  1. Um den Inhalt der Datei anzuzeigen, öffnen Sie das Kontextmenü für die Datei, und wählen Sie **Öffnen** aus.
 
 ## Erfassen von Clouddienst-Diagnoseinformationen
 
@@ -257,9 +257,9 @@ Sie können Diagnosedaten für den Azure-Clouddienst sammeln. Diese Daten werden
 
 ### So erfassen Sie Clouddienst-Diagnoseinformationen
 
-1. Wählen Sie die Registerkarte **Konfiguration**.
+1. Wählen Sie die Registerkarte **Konfiguration** aus.
 
-1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten, oder wählen Sie **Alle Konfigurationen**.
+1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten, oder wählen Sie **Alle Konfigurationen** aus.
 
     >[AZURE.NOTE]Sie können das Speicherkonto für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch die Diagnose aktivieren oder deaktivieren möchten, müssen Sie "Alle Konfigurationen" auswählen.
 
@@ -275,7 +275,7 @@ Sie können Diagnosedaten für den Azure-Clouddienst sammeln. Diese Daten werden
 
 1. Um ein Speicherkonto für die lokale Verbindungszeichenfolge zu verwenden, wählen Sie die Option **Manuell eingegebene Anmeldeinformationen** aus.
 
-    Weitere Informationen zur Erstellung eines Speicherkontos und zur Eingabe der Details für das Speicherkonto im Dialogfeld "Verbindungszeichenfolge für den Speicher erstellen" finden Sie unter [Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts mit Visual Studio erforderlich sind](vs-azure-tools-setting-up-services-required-to-publish-a-cloud-service-from-visual-studio.md).
+    Weitere Informationen zur Erstellung eines Speicherkontos und zur Eingabe der Details für das Speicherkonto im Dialogfeld **Verbindungszeichenfolge für den Speicher erstellen** finden Sie unter [Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio](vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md).
 
 1. Wählen Sie unter **Kontoname** das Speicherkonto aus, das Sie verwenden möchten.
 
@@ -285,27 +285,27 @@ Sie können Diagnosedaten für den Azure-Clouddienst sammeln. Diese Daten werden
 
   1. Wählen Sie die Schaltfläche **Zugriffsschlüssel verwalten** am unteren Bildschirmrand aus. Das Dialogfeld **Zugriffsschlüssel verwalten** wird angezeigt.
 
-  1. Um den Zugriffsschüssel zu kopieren, wählen Sie die Schaltfläche **In Zwischenablage kopieren**. Sie können jetzt diesen Schlüssel in das Feld **Kontoschlüssel** einfügen.
+  1. Um den Zugriffsschüssel zu kopieren, wählen Sie die Schaltfläche **In Zwischenablage kopieren** aus. Sie können jetzt diesen Schlüssel in das Feld **Kontoschlüssel** einfügen.
 
 1. Wenn Sie das von Ihnen angegebene Speicherkonto beim Veröffentlichen des Clouddiensts in Azure als Verbindungszeichenfolge für die Diagnose (und die Zwischenspeicherung) verwenden möchten, aktivieren Sie das Kontrollkästchen **Verbindungszeichenfolgen für Entwicklungsspeicher zur Diagnose und zum Zwischenspeichern beim Veröffentlichen in Microsoft Azure mit Anmeldeinformationen für Microsoft Azure-Speicherkonto aktualisieren**.
 
-1. Wählen Sie in der Symbolleiste die Schaltfläche **Speichern**, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
+1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
 
 ## Ändern der Größe des virtuellen Computers, der für die einzelnen Rollen verwendet wird
 
-Sie können die Größe der virtuellen Computer für die einzelnen Rollen festlegen. Sie können diese Größe nur für alle Dienstkonfigurationen festlegen. Wenn Sie eine geringere Computergröße auswählen, werden weniger CPU-Kerne, weniger Arbeitsspeicher und weniger lokaler Festplattenspeicher zugewiesen. Die zugewiesene Bandbreite ist ebenfalls kleiner. Weitere Informationen zu diesen Größen und den zugewiesenen Ressourcen finden Sie unter [Konfigurieren von Größen für Cloud Services](https://msdn.microsoft.com/library/azure/ee814754).
+Sie können die Größe der virtuellen Computer für die einzelnen Rollen festlegen. Sie können diese Größe nur für alle Dienstkonfigurationen festlegen. Wenn Sie eine geringere Computergröße auswählen, werden weniger CPU-Kerne, weniger Arbeitsspeicher und weniger lokaler Festplattenspeicher zugewiesen. Die zugewiesene Bandbreite ist ebenfalls kleiner. Weitere Informationen zu diesen Größen und den zugewiesenen Ressourcen finden Sie unter [Größen für Clouddienste](cloud-services-sizes-specs.md).
 
-Die für die einzelnen virtuellen Computer in Azure erforderlichen Ressourcen wirken sich auf die Kosten der Ausführung Ihres Clouddiensts in Azure aus. Weitere Informationen zur Azure-Abrechnung finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
+Die für die einzelnen virtuellen Computer in Azure erforderlichen Ressourcen wirken sich auf die Kosten der Ausführung Ihres Clouddiensts in Azure aus. Weitere Informationen zu Azure-Abrechnungen finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
 
 ### So ändern Sie die Größe des virtuellen Computers
 
-1. Wählen Sie die Registerkarte **Konfiguration**.
+1. Wählen Sie die Registerkarte **Konfiguration** aus.
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** den Eintrag **Alle Konfigurationen** aus.
 
 1. Um die Größe des virtuellen Computers für diese Rolle auszuwählen, wählen Sie die entsprechende Größe aus der Liste **Größe des virtuellen Computers** aus.
 
-1. Wählen Sie in der Symbolleiste die Schaltfläche **Speichern**, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
+1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
 
 ## Verwalten von Endpunkten und Zertifikaten für Ihre Rollen
 
@@ -331,7 +331,7 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 
     >[AZURE.NOTE]Sie müssen zum Hinzufügen oder Entfernen von Zertifikaten "Alle Konfigurationen" auswählen. Sie können den Namen und den Fingerabdruck für eine bestimmte Dienstkonfiguration aktualisieren, wenn es erforderlich ist.
 
-1. Um ein Zertifikat für diese Rolle hinzuzufügen, wählen Sie die Schaltfläche **Zertifikat hinzufügen**. Der Liste wird ein neuer Eintrag hinzugefügt.
+1. Um ein Zertifikat für diese Rolle hinzuzufügen, wählen Sie die Schaltfläche **Zertifikat hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
 1. Geben Sie im Textfeld **Name** den Namen für das Zertifikat ein.
 
@@ -347,15 +347,15 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 
 1. Wählen Sie zum Löschen eines Zertifikats das Zertifikat aus, und klicken Sie dann auf die Schaltfläche **Zertifikat entfernen**.
 
-1. Wählen Sie in der Symbolleiste das Symbol **Speichern**, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
+1. Wählen Sie auf der Symbolleiste das Symbol **Speichern** aus, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
 
 ### So verwalten Sie Endpunkte für eine Rolle
 
-1. Wählen Sie die Registerkarte **Endpunkte**.
+1. Wählen Sie die Registerkarte **Endpunkte** aus.
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** den Eintrag **Alle Konfigurationen** aus.
 
-1. Um einen Endpunkt hinzuzufügen, wählen Sie die Schaltfläche **Endpunkt hinzufügen**. Der Liste wird ein neuer Eintrag hinzugefügt.
+1. Um einen Endpunkt hinzuzufügen, wählen Sie die Schaltfläche **Endpunkt hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
 1. Geben Sie im Textfeld **Name** den Namen ein, den Sie für den Endpunkt verwenden möchten.
 
@@ -371,9 +371,9 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 
     >[AZURE.NOTE]Diese Liste enthält die Zertifikate, die Sie für diese Rolle auf der Registerkarte **Zertifikate** hinzugefügt haben.
 
-1. Wählen Sie in der Symbolleiste die Schaltfläche **Speichern**, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
+1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
 
 ## Nächste Schritte
 Unter [Konfigurieren eines Azure-Projekts](vs-azure-tools-configuring-an-azure-project.md) erhalten Sie weitere Informationen zu Azure-Projekten in Visual Studio. Informationen zum Clouddienstschema finden Sie unter [Schemareferenz](https://msdn.microsoft.com/library/azure/dd179398).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten in eine und aus einer Azure-Tabelle | Azure Data Factory"
-	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in einen und aus einem Azure-Tabellenspeicher verschoben werden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten in eine und aus einer Azure-Tabelle | Azure Data Factory" 
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in einen und aus einem Azure-Tabellenspeicher verschoben werden." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/26/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in eine und aus einer Azure-Tabelle mithilfe von Azure Data Factory
@@ -348,7 +348,7 @@ Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-
 | Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- |
 | Typ | Die type-Eigenschaft muss auf "AzureStorage" festgelegt sein. | Ja |
-| connectionString | Geben Sie Informationen, die zur Verbindung mit Azure Storage erforderlich sind, für die connectionString-Eigenschaft ein. Sie können die connectionString-Eigenschaft für Azure Storage aus dem Azure-Portal abrufen. | Ja |
+| connectionString | Geben Sie Informationen, die zur Verbindung mit dem Azure-Speicher erforderlich sind, für die connectionString-Eigenschaft ein. Sie können die connectionString-Eigenschaft für den Azure-Speicher aus dem Azure-Portal abrufen. | Ja |
 
 ## Eigenschaften des Dataset-Typs "Azure-Tabelle"
 
@@ -370,8 +370,7 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich
 -------- | ----------- | -------------- | -------- 
-azureTableSourceQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | Abfragezeichenfolge für Azure-Tabelle. Beispiel: **ColumnA eq ValueA** | Nein
-azureTableSourceIgnoreTableNotFound | Gibt an, ob der Ausnahmefall, dass die Tabelle nicht vorhanden ist, ignoriert werden soll. | TRUE<br/>FALSE | Nein |
+azureTableSourceQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | <p>Abfragezeichenfolge für Azure-Tabelle.</p>**Beispiele:****<br/> "azureTableSourceQuery": "PartitionKey eq 'DefaultPartitionKey'" <br/><br/>"azureTableSourceQuery": "$$Text.Format('PartitionKey ge \\'{0:yyyyMMddHH00\_0000}\\' and PartitionKey le \\'{0:yyyyMMddHH00\_9999}\\')', SliceStart)" | Kein "azureTableSourceIgnoreTableNotFound" | Gibt an, ob der Ausnahmefall, dass die Tabelle nicht vorhanden ist, ignoriert werden soll. | TRUE<br/>FALSE | Nein |
 
 **AzureTableSink** unterstützt die folgenden Eigenschaften im Abschnitt "typeProperties":
 
@@ -485,4 +484,4 @@ In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

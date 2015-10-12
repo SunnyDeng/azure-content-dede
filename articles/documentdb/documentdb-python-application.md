@@ -343,6 +343,9 @@ Wir aktualisieren und verbessern dieses Thema häufig basierend auf Ihrem Feedba
 
 Um Ihrer Webanwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Python SDK für DocumentDB](https://pypi.python.org/pypi/pydocumentdb) verfügbaren APIs.
 
+Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
+
+
   [Klicken Sie hier, um Flask-Lernprogramme zu öffnen]: http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
   [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
   [hier]: http://aka.ms/ptvs
@@ -352,4 +355,4 @@ Um Ihrer Webanwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im 
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.com
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="SQL Server-Aktivität Gespeicherte Prozedur"
-	description="Informationen, wie Sie die SQL Server-Aktivität Gespeicherte Prozedur in einer Data Factory-Pipeline zum Aufrufen einer gespeicherten Prozedur in einer Azure SQL-Datenbank verwenden können."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="SQL Server-Aktivität ";Gespeicherte Prozedur";" 
+	description="Informationen, wie Sie die SQL Server-Aktivität ";Gespeicherte Prozedur"; in einer Data Factory-Pipeline zum Aufrufen einer gespeicherten Prozedur in einer Azure SQL-Datenbank oder einem Azure SQL Data Warehouse verwenden können." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/04/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/30/2015" 
 	ms.author="spelluru"/>
 
 # SQL Server-Aktivität "Gespeicherte Prozedur"
 
-Sie können die SQL Server-Aktivität "Gespeicherte Prozedur" in einer Data Factory-[Pipeline](data-factory-create-pipelines.md) zum Aufrufen einer gespeicherten Prozedur in einer **Azure SQL**-Datenbank verwenden. Dieser Artikel baut auf dem Artikel zu [Datentransformationsaktivitäten](data-factory-data-transformation-activities.md) auf, der einen allgemeinen Überblick über die Datentransformation und die unterstützten Transformationsaktivitäten bietet.
+Sie können die SQL Server-Aktivität "Gespeicherte Prozedur" in einer Data Factory-[Pipeline](data-factory-create-pipelines.md) zum Aufrufen einer gespeicherten Prozedur in einer **Azure SQL-Datenbank** oder einem **Azure SQL Data Warehouse** verwenden. Dieser Artikel baut auf dem Artikel zu [Datentransformationsaktivitäten](data-factory-data-transformation-activities.md) auf, der einen allgemeinen Überblick über die Datentransformation und die unterstützten Transformationsaktivitäten bietet.
 
 ## Syntax
 	{
@@ -46,8 +46,8 @@ Name | Der Name der Aktivität | Ja
 description | Ein Text, der beschreibt, wofür die Aktivität verwendet wird. | Nein
 Typ | SqlServerStoredProcedure | Ja
 inputs | Eingabedatasets müssen (im Status "Bereit") verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. Die Eingaben in die Aktivität "Gespeicherte Prozedur" dienen nur zur Verwaltung von Abhängigkeiten bei deren Verkettung. Die Eingabedatasets können nicht als Parameter in der gespeicherten Prozedur genutzt werden. | Nein
-outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgabedatasets. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank mit der Data Factory verknüpft. Die Ausgaben in der Aktivität "Gespeicherte Prozedur" dienen als Möglichkeit, das Ergebnis dieser Aktivität für die nachfolgende Verarbeitung zu übergeben und/oder Abhängigkeiten bei deren Verkettung zu verwalten. | Ja
-storedProcedureName | Geben Sie den Namen der gespeicherten Prozedur in der Azure SQL-Datenbank an, die vom verknüpften Dienst dargestellt wird, den die Ausgabetabelle verwendet. | Ja
+outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgabedatasets. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank oder ein Azure SQL Data Warehouse mit der Data Factory verknüpft. Die Ausgaben in der Aktivität "Gespeicherte Prozedur" dienen als Möglichkeit, das Ergebnis dieser Aktivität für die nachfolgende Verarbeitung zu übergeben und/oder Abhängigkeiten bei deren Verkettung zu verwalten. | Ja
+storedProcedureName | Geben Sie den Namen der gespeicherten Prozedur in der Azure SQL-Datenbank oder dem Azure SQL Data Warehouse an, die bzw. das vom verknüpften Dienst dargestellt wird, den die Ausgabetabelle verwendet. | Ja
 storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Prozedur an. | Nein
 
 ## Beispiel
@@ -132,4 +132,4 @@ Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus d
 		}
 	}
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO1-->

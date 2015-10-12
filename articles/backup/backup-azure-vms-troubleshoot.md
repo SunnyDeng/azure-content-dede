@@ -7,10 +7,10 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/14/2015" ms.author="trinadhk";"aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/29/2015" ms.author="trinadhk";"aashishr"/>
 
 
-# Problembehandlung
+# Problembehandlung bei der Sicherung virtueller Azure-Computer
 Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Backup auftreten, mit den Informationen in der unten angegebenen Tabelle durchführen.
 
 ## Ermittlung
@@ -89,7 +89,7 @@ Für virtuelle Windows-Computer:
 
 Für virtuelle Linux-Computer:
 
-- Installieren Sie den neuesten [Linux-Agent](https://github.com/Azure/WALinuxAgent) aus Github. 
+- Installieren Sie den neuesten [Linux-Agent](https://github.com/Azure/WALinuxAgent) aus Github.
 - [Aktualisieren Sie die VM-Eigenschaft](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx), um anzugeben, dass der Agent installiert wurde.
 
 
@@ -100,7 +100,7 @@ Für virtuelle Windows-Computer:
 
 Für virtuelle Linux-Computer:
 
-- Folgen Sie den Anweisungen unter [Aktualisieren des virtuellen Linux-Agents](../virtual-machines-linux-update-agent.md). 
+- Folgen Sie den Anweisungen unter [Aktualisieren des virtuellen Linux-Agents](../virtual-machines-linux-update-agent.md).
 
 
 ### Überprüfen der VM-Agent-Installation
@@ -123,4 +123,4 @@ Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff a
 1. Beschaffen Sie sich die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx), die auf der Positivliste stehen sollen.
 2. Heben Sie Blockierung für die IP-Adressen mit dem [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx)-Cmdlet auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (Als Administrator ausführen).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO1-->

@@ -351,4 +351,4 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 <LI>Wenn Sie Fragen haben, besuchen Sie das <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure Recovery Services-Forum</a>.</LI></UL>
  
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

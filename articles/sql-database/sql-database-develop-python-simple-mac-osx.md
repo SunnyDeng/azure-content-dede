@@ -24,7 +24,7 @@
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird auf einem Macintosh-Computer ausgeführt. Das Beispiel stellt mithilfe des **pymssql**-Treibers eine Verbindung mit Azure SQL-Datenbank her.
+Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird auf einem Macintosh-Computer ausgeführt. Das Beispiel stellt mithilfe des **pymssql**-Treibers eine Verbindung mit Azure SQL-Datenbank her. Nutzen Sie darüber hinaus bitte unser Video [Erste Schritte mit Python auf Mac](https://www.youtube.com/watch?v=OMpugPTwnTI), um diese Dokumentation zu ergänzen.
 
 
 ## Anforderungen
@@ -43,11 +43,11 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-**2) FreeTDS**: Führen Sie den folgenden Befehl über das Terminal aus. Damit wird FreeTDS auf Ihren Computer heruntergeladen. FreeTDS ist für die Ausführung von pymmsql erforderlich.
+**2) FreeTDS:** Führen Sie den folgenden Befehl über das Terminal aus. Damit wird FreeTDS auf Ihren Computer heruntergeladen. FreeTDS ist für die Ausführung von pymmsql erforderlich.
 
     brew install FreeTDS
   
-**3) pymmsql**: Führen Sie den folgenden Befehl über das Terminal aus. Damit wird pymmsql auf Ihrem Computer installiert.
+**3) Pymmsql**: Führen Sie den folgenden Befehl über das Terminal aus. Damit wird pymmsql auf Ihrem Computer installiert.
 
     sudo -H pip install pymssql
 
@@ -102,11 +102,11 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
--Starten von Transaktionen
+- Starten von Transaktionen
 
--Einfügen von Zeilen mit Daten
+- Einfügen von Zeilen mit Daten
 
--Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql
@@ -118,4 +118,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->

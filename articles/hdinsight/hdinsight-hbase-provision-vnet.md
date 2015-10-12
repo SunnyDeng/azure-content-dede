@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Bereitstellen von HBase-Clustern in einem virtuellen Netzwerk | Microsoft Azure"
 	description="Erste Schritte mit HBase in Azure HDInsight. Erfahren Sie, wie Sie HDInsight HBase-Cluster in Azure Virtual Network erstellen können."
+	keywords=""
 	services="hdinsight,virtual-network"
 	documentationCenter=""
 	authors="mumian"
@@ -9,14 +10,14 @@
 
 <tags
    ms.service="hdinsight"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="08/12/2015"
-	ms.author="jgao"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/12/2015"
+   ms.author="jgao"/>
 
-# Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk
+# Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk 
 
 Erfahren Sie, wie Sie Azure HDInsight HBase-Cluster in einem [Azure Virtual Network][1] erstellen können.
 
@@ -77,9 +78,11 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 2. Klicken Sie auf **NEU**, auf **Netzwerk** und anschließend auf **Virtuelles Netzwerk**.
 3. Wählen Sie unter **Bereitstellungsmodell auswählen** die Option **Klassisch** aus, und klicken Sie dann auf **Erstellen**.
 
-	>[AZURE.NOTE]Windows-basierte HDInsight-Cluster können nur in einem klassischen virtuellen Netzwerk bereitgestellt werden.
+	> [AZURE.NOTE]Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Vorschauportal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
+> 
+> Wenn Ressourcen in einem v1-Netzwerk vorhanden sind und diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können sollen, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Erstellen einer Verbindung zwischen einem virtuellen v2-Netzwerk und einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
 
-4. Geben Sie folgende Werte ein bzw. wählen diese aus:
+4. Geben Sie die folgenden Werte ein, oder wählen Sie sie aus:
 
 	- **Name**: Name des virtuellen Netzwerks.
 	- **Adressraum**: Wählen Sie einen Adressraum für das virtuelle Netzwerk, der groß genug ist, um Adressen für alle Knoten im Cluster zur Verfügung zu stellen. Andernfalls schlägt die Bereitstellung fehl. Für dieses Tutorial können Sie die Standardwerte verwenden. Klicken Sie zum Speichern der Änderungen auf **OK**.
@@ -121,15 +124,15 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
   - **Ressourcengruppe**: Wählen Sie die Ressourcengruppe aus, die Sie zuvor in diesem Tutorial erstellt haben.
   - **Anmeldeinformationen**: Konfigurieren Sie den Benutzernamen und das Kennwort für den Hadoop-Benutzer (HTTP-Benutzer). Wenn Sie Remotedesktop für den Cluster aktivieren, müssen Sie den Benutzernamen und das Kennwort für den Remotedesktopbenutzer konfigurieren und ein Ablaufdatum für das Konto festlegen. Klicken Sie unten auf **Auswählen**, um die Änderungen zu speichern.
   - **Datenquelle**: Wählen Sie ein vorhandenes Azure-Speicherkonto aus, oder erstellen Sie ein neues Azure-Speicherkonto, das als Standarddateisystem für den Cluster verwendet werden soll. Der standardmäßige Name für den Standardcontainer ist der Clustername. Der Standort des Speicherkontos bestimmt auch den Standort des Clusters.
-  - **Knotenpreistarife**: Wählen Sie zu Übungszwecken oder zur Auswertung einen Knoten mit einer Region aus, um die Kosten zu minimieren.
+  - **Knotentarife**: Wählen Sie zu Übungszwecken oder zur Auswertung einen Knoten mit einer Region aus, um die Kosten zu minimieren.
 
   	- **Auswahlmethode**: Wählen Sie **Aus allen Abonnements** aus, damit Speicherkonten aus all Ihren Abonnements durchsucht werden können. Wählen Sie **Zugriffsschlüssel** aus, wenn Sie den **Speichernamen** und **Zugriffsschlüssel** eines vorhandenen Speicherkontos eingeben möchten.
   	- **Speicherkonto auswählen/Neu erstellen**: Klicken Sie auf **Speicherkonto auswählen**, um ein vorhandenes Speicherkonto auszuwählen, das Sie dem Cluster zuordnen möchten. Alternativ können Sie auf **Neu erstellen** klicken, um ein neues Speicherkonto zu erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
     - **Standardcontainer auswählen**: Geben Sie den Namen des Standardcontainers für den Cluster ein. Sie können einen beliebigen Namen eingeben, es wird jedoch empfohlen, den Namen des Clusters zu verwenden. So können Sie leichter erkennen, dass es sich um den Container für diesen spezifischen Cluster handelt.
   	- **Standort**: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird. Dieser Standort bestimmt auch den Clusterstandort. Der Cluster und das zugeordnete Standardspeicherkonto müssen sich im selben Azure-Rechenzentrum befinden.
 
-  - **Knotenpreistarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
-	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtuelles Netzwerk** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
+  - **Knotentarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
+	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtual Network** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
 
 4. Klicken Sie auf **Erstellen**.
 
@@ -379,4 +382,6 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Bereitstellen von Details für den neuen HBase-Cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Verwenden von Skriptaktionen zum Anpassen eines HBase-Clusters"
 
-<!---HONumber=August15_HO9-->
+[azure-preview-portal]: https://portal.azure.com
+
+<!---HONumber=Oct15_HO1-->

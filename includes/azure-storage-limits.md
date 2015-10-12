@@ -14,6 +14,8 @@ Maximale Größe einer Nachricht in einer Warteschlange|64 KB
 Maximale Größe einer Dateifreigabe|5 TB
 Maximale Größe einer Datei in einer Dateifreigabe|1 TB
 Maximale Anzahl an Dateien in einer Dateifreigabe|Die einzige Einschränkung besteht in der Gesamtkapazität der Dateifreigabe von 5 TB.
+Max. 8 KB IOPS pro Freigabe|1000
+Maximale Anzahl an Dateien in einer Dateifreigabe|Die einzige Einschränkung besteht in der Gesamtkapazität der Dateifreigabe von 5 TB.
 Maximale Anzahl an Blob-Containern, Blobs, Dateifreigaben, Tabellen, Warteschlangen, Entitäten oder Meldungen pro Speicherkonto|Die einzige Einschränkung besteht in der Speicherkontokapazität von 500 TB.
 Maximale Anzahl der gespeicherten Zugriffsrichtlinien pro Container, Dateifreigabe, Tabelle oder Warteschlange|5
 Maximal 8 KB IOPS pro persistentem Laufwerk (virtueller Computer mit Basic-Tarif)|300<sup>2</sup>
@@ -22,7 +24,7 @@ Gesamtanfragerate (ausgehend von einer Objektgröße von 1 KB) pro Speicherkont
 Zieldurchsatz bei Einzel-Blob|Bis zu 60 MB pro Sekunde, oder bis zu 500 Anforderungen pro Sekunde
 Zieldurchsatz bei Einzelwarteschlange (Meldungen mit 1 KB)|Bis zu 2000 Meldungen pro Sekunde
 Zieldurchsatz bei einzelner Tabellenpartition (Entitäten mit 1 KB)|Bis zu 2000 Entitäten pro Sekunde
-Zieldurchsatz für eine einzelne Dateifreigabe (Vorschau)|Bis 60 MB pro Sekunde
+Zieldurchsatz für eine einzelne Dateifreigabe|Bis 60 MB pro Sekunde
 Max. Eingang<sup>3</sup> pro Speicherkonto (US-Regionen)|10 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 20 GBit/s bei LRS
 Max. Ausgang<sup>3</sup> pro Speicherkonto (US-Regionen)|20 GBit/s mit aktiviertem RA-GRS/GRS/ZRS<sup>4</sup>, 30 GBit/s bei LRS
 Max. Eingang<sup>3</sup> pro Speicherkonto (Regionen Europa und Asien)|5 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 10 GBit/s bei LRS
@@ -43,4 +45,4 @@ Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Daten
 - **ZRS**: Zonenredundanter Speicher Derzeit nur für Blockblobs verfügbar. 
 - **LRS**: Lokal redundanter Speicher 
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO1-->

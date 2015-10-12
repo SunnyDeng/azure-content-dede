@@ -34,9 +34,9 @@ Dieses Beispiel umfasst ein Abonnement, das Folgendes enthält:
 - Zwei Windows Server-Instanzen, die Back-End-Anwendungsserver darstellen ("AppVM01", "AppVM02")
 - Eine Windows Server-Instanz, die einen DNS-Server darstellt ("DNS01")
 
-Der Referenzabschnitt enthält ein PowerShell-Skript, mit dem sich der größte Teil der oben beschriebenen Umgebung erstellen lässt. Die Erstellung der virtuellen Computer und Netzwerke wird zwar durch das Beispielskript ausgeführt, in diesem Dokument jedoch nicht im Einzelnen beschrieben.
+Der Referenzabschnitt enthält ein PowerShell-Skript, mit dem sich der größte Teil der oben beschriebenen Umgebung erstellen lässt. Die Erstellung der virtuellen Computer und Netzwerke wird zwar durch das Beispielskript ausgeführt, aber dies wird in diesem Dokument nicht im Einzelnen beschrieben.
 
-Erstellen der Umgebung:
+So erstellen Sie die Umgebung
 
   1.	Speichern Sie die im Referenzabschnitt enthaltene und mit dem Namen, dem Speicherort und den IP-Adressen für das jeweilige Szenario aktualisierte XML-Netzwerkkonfigurationsdatei.
   2.	Aktualisieren Sie die Benutzervariablen im Skript gemäß der Umgebung, in der das Skript ausgeführt werden soll (Abonnements, Dienstnamen usw.).
@@ -345,7 +345,7 @@ Nachdem der Regelsatz gemäß den Angaben des logischen Diagramms geändert wurd
 
 ![Aktivierung der Firewallregeln][18]
  
-In der oberen rechten Ecke des Verwaltungsclients befinden sich verschiedene Schaltflächen. Klicken Sie auf die Schaltfläche "Send Changes", um die geänderten Regeln an die Firewall zu senden, und klicken Sie dann auf die Schaltfläche "Activate".
+In der oberen rechten Ecke des Verwaltungsclients befinden sich verschiedene Schaltflächen. Klicken Sie auf die Schaltfläche „Send Changes“, um die geänderten Regeln an die Firewall zu senden, und klicken Sie dann auf die Schaltfläche „Activate“.
  
 Mit der Aktivierung des Firewallregelsatzes ist die Erstellung dieser Beispielumgebung abgeschlossen.
 
@@ -426,8 +426,8 @@ Denken Sie auch daran, dass Netzwerksicherheitsgruppen für den eingehenden Inte
 10.	Die RDP-Sitzung wird aktiviert.
 11.	AppVM01 fordert zur Eingabe von Benutzername und Kennwort auf.
 
-#### (Zulässig) Webserver-DNS-Lookup auf DNS-Server
-1.	Der Webserver IIS01 benötigt einen Datenfeed von "www.data.gov", muss jedoch die Adresse auflösen.
+#### (Zugelassen) Webserver-DNS-Lookup auf DNS-Server
+1.	Der Webserver IIS01 benötigt einen Datenfeed von „www.data.gov“, muss jedoch die Adresse auflösen.
 2.	Die Netzwerkkonfiguration für das VNet listet DNS01 (10.0.2.4 im Back-End-Subnetz) als primären DNS-Server, IIS01 sendet die DNS-Anforderung an DNS01.
 3.	UDR routet ausgehenden Datenverkehr an die Firewall, die den nächsten Hop darstellt.
 4.	An das Front-End-Subnetz sind keine ausgehenden NSG-Regeln gebunden, Datenverkehr wird zugelassen.
@@ -525,7 +525,7 @@ Denken Sie auch daran, dass Netzwerksicherheitsgruppen für den eingehenden Inte
 
 ## Referenzen
 ### Hauptskript und Netzwerkkonfiguration
-Speichern Sie das vollständige Skript in einer PowerShell-Skriptdatei. Speichern Sie die Netzwerkkonfiguration in einer Datei namens "NetworkConf2.xml". Bearbeiten Sie die benutzerdefinierten Variablen nach Bedarf. Führen Sie das Skript aus, und befolgen Sie dann oben stehende Anweisungen zur Einrichtung der Firewallregel.
+Speichern Sie das vollständige Skript in einer PowerShell-Skriptdatei. Speichern Sie die Netzwerkkonfiguration in einer Datei namens „NetworkConf2.xml“. Bearbeiten Sie die benutzerdefinierten Variablen nach Bedarf. Führen Sie das Skript aus, und befolgen Sie dann oben stehende Anweisungen zur Einrichtung der Firewallregel.
 
 #### Vollständiges Skript
 Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes aus:
@@ -546,7 +546,7 @@ Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes a
 
 Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC oder Server ausgeführt werden.
 
->[AZURE.IMPORTANT]Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen beachtet und ggf. gelöst werden.
+>[AZURE.IMPORTANT]Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen genauer beachtet und ggf. gelöst werden.
 
 	<# 
 	 .SYNOPSIS
@@ -879,7 +879,7 @@ Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC 
 	
 
 #### Netzwerkkonfigurationsdatei
-Speichern Sie diese XML-Datei mit dem aktualisierten Speicherort, und fügen Sie den Link zu dieser Datei in die $NetworkConfigFile-Variable in obigem Skript ein.
+Speichern Sie diese XML-Datei mit dem aktualisierten Speicherort, und fügen Sie den Link zu dieser Datei in die $NetworkConfigFile-Variable im obigen Skript ein.
 
 	<NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
 	  <VirtualNetworkConfiguration>
@@ -941,4 +941,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [HOME]: ../best-practices-network-security.md
 [SampleApp]: ./virtual-networks-sample-app.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO1-->

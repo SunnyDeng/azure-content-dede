@@ -125,7 +125,7 @@ In diesem Schritt erfahren Sie, wie Sie mit Windows Identity Foundation (WIF) un
 		federation.reply=https://localhost/phpSample/index.php 
 
 
-> [AZURE.NOTE]Den Werten **audienceuris** und **realm** muss die Zeichenfolge "spn:" vorausgehen.
+	> [AZURE.NOTE]Den Werten **audienceuris** und **realm** muss die Zeichenfolge "spn:" vorausgehen.
 
 4. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt **phpSample**, und klicken Sie dann auf **Neu** sowie auf **PHP-Datei**.
 
@@ -181,13 +181,16 @@ In diesem Schritt erfahren Sie, wie Sie mit Windows Identity Foundation (WIF) un
 		</body>
 		</html> 
 
-8. Klicken Sie im Menü **Ausführen** auf **Ausführen**. Sie sollten dann automatisch auf die Seite "Office 365-Identitätsanbieter" weitergeleitet werden, auf der Sie sich mit den Anmeldedaten für Ihren Directory-Mandanten anmelden können. Beispiel: *john.doe@fabrikam.onmicrosoft.com*.
+8. Klicken Sie im Menü **Ausführen** auf **Ausführen**. Sie sollten dann automatisch auf die Seite "Office 365-Identitätsanbieter" weitergeleitet werden, auf der Sie sich mit den Anmeldedaten für Ihren Directory-Mandanten anmelden können. Zum Beispiel **john.doe@fabrikam.onmicrosoft.com*.
 
 ## Zusammenfassung
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine PHP-Anwendung für einen einzelnen Mandanten erstellen und konfigurieren können, die die Möglichkeiten einer einmaligen Anwendung mit Azure Active Directory nutzt.
 
 Ein Beispiel für die Verwendung von Azure Active Directory und des einmaligen Anmeldens für PHP-Websites finden Sie unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP>.
 
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 
 [Step 1: Create a PHP Application]: #createapp
 [Step 2: Provision the Application in a Company's Directory Tenant]: #provisionapp
@@ -203,4 +206,4 @@ Ein Beispiel für die Verwendung von Azure Active Directory und des einmaligen A
 [PHP-Beispielcode für Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP
  
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO1-->
