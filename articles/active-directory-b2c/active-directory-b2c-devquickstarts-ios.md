@@ -642,7 +642,9 @@ Beachten Sie, wie die Aufgaben pro Benutzer in der API gespeichert werden, da di
 
 Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS/archive/complete.zip) bereit. Sie können es auch aus GitHub klonen:
 
-```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS```
+```
+git clone --branch complete https://github.com/AzureADQuickStarts/B2C-NativeClient-iOS
+```
 
 ## Nächste Schritte
 
@@ -652,4 +654,4 @@ Sie können nun mit den B2C-Themen für fortgeschrittenere Benutzer fortfahren. 
 
 [Anpassen der Benutzeroberfläche einer B2C-App >>]()
 
-<!---HONumber=Oct15_HO1-->
+<!----HONumber=Oct15_HO1-->

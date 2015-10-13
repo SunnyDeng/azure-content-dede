@@ -59,7 +59,7 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 ## Verwenden des SMTP-Connectors in Logik-Apps
 Sobald Ihr Connector erstellt wurde, können Sie den SMTP-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
 
-1.	Erstellen einer neuen Logik-App:
+1.	Erstellen Sie eine neue Logik-App:
 ![][2]
 2.	Öffnen Sie **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren:
 ![][3]
@@ -67,7 +67,7 @@ Sobald Ihr Connector erstellt wurde, können Sie den SMTP-Connector als Aktion f
 ![][4]
 4.	Wählen Sie den SMTP-Connector aus, um ihn automatisch dem Workflow-Designer hinzuzufügen.
 
-Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfigurieren. Wählen Sie die Aktion **E-Mail senden** aus, und konfigurieren Sie die Eingabeeigenschaften wie folgt:
+Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfigurieren. Wählen Sie die Aktion **E-Mail senden**, und konfigurieren Sie die Eingabeeigenschaften wie folgt:
 
 	Eigenschaft | Beschreibung
 	--- | ---

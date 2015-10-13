@@ -37,35 +37,36 @@ Dazu müssen Sie folgende Schritte ausführen:
 
 Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet) verwaltet. Um folgen zu können, können Sie [das App-Gerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
-```git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet.git```
+```
+git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet.git
+```
 
 Die fertige App wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
-
 ## 1. Registrieren einer App
-Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die [ausführlichen Schritte aus](active-directory-v2-app-registration.md).  Stellen Sie sicher, dass Sie:
+Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die folgenden [ausführlichen Schritte](active-directory-v2-app-registration.md) aus: Stellen Sie sicher, dass Sie:
 
-- die der App zugewiesene **Anwendungs-ID** kopieren, da Sie sie demnächst benötigen.
-- die **Web**-Plattform zur App hinzufügen.
-- den richtigen **Umleitungs-URI** eingeben. Der Umleitungs-URI zeigt Azure AD an, wohin Authentifizierungsantworten gesendet werden sollen. In diesem Lernprogramm ist dies standardmäßig „https://localhost:44326/“.
+- die Ihrer App zugewiesene **Anwendungs-ID** kopieren. Sie benötigen Sie in Kürze.
+- die **Web**-Plattform für Ihre App hinzufügen.
+- den richtigen **Umleitungs-URI** eingeben. Der Umleitungs-URI verweist auf Azure AD, wohin Authentifizierungsantworten gesendet werden sollen – der Standardwert in diesem Tutorial lautet `https://localhost:44326/`.
 
-## 2. Einrichten der App zur Verwendung mit der OWIN-Authentifizierungspipeline
-Hier konfigurieren wir die OWIN-Middleware zur Verwendung mit dem OpenID Connect-Authentifizierungsprotokoll. OWIN wird u. a. zum Ausstellen von Anmelde- und Abmeldeanforderungen, zum Verwalten von Benutzersitzungen und zum Abrufen von Benutzerinformationen verwendet.
+## 2. Konfigurieren Ihrer Anwendung für die Verwendung der OWIN-Authentifizierungspipeline
+Hier konfigurieren wir die OWIN-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect. OWIN wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
--   Öffnen Sie zunächst die Datei „web.config“ im Stammverzeichnis des Projekts, und geben Sie im Abschnitt <AppEinstellungen> die Konfigurationswerte der App ein.
-    -    Die „ida:ClientId“ ist die Ihrer App zugewiesene **Anwendungs-ID** im Registrierungsportal.
-    -    Der „ida:RedirectUri“ ist der im Portal eingegebene **Umleitungs-URI**.
+-	Öffnen Sie zunächst die Datei `web.config` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `<appSettings>` ein.
+    -	`ida:ClientId` ist die **Anwendungs-ID**, die Ihrer App im Registrierungsportal zugewiesen ist.
+    -	`ida:RedirectUri` ist der **Umleitungs-URI**, den Sie im Portal eingegeben haben.
 
--    Fügen Sie als Nächstes mithilfe der Paket-Manager-Konsole die OWIN-Middleware-NuGet-Pakete zum Projekt hinzu.
+-	Fügen Sie dem Projekt als Nächstes über die Paket-Manager-Konsole die NuGet-Pakete der OWIN-Middleware hinzu.
 
 ```
-PM > Install-Package Microsoft.Owin.Security.OpenIdConnect
-PM > Install-Package Microsoft.Owin.Security.Cookies
-PM > Install-Package Microsoft.Owin.Host.SystemWeb
+PM> Install-Package Microsoft.Owin.Security.OpenIdConnect
+PM> Install-Package Microsoft.Owin.Security.Cookies
+PM> Install-Package Microsoft.Owin.Host.SystemWeb
 ```
 
--	Fügen Sie dem Projekt eine „OWIN-Startklasse“ mit dem Namen `Startup.cs` hinzu. Klicken Sie dazu mit der rechten Maustaste auf das Projekt, wählen Sie **Hinzufügen** --> **Neues Element** aus, und suchen Sie nach „OWIN“. Die OWIN-Middleware ruft beim Starten Ihrer Anwendung die Methode `Configuration(...)` auf.
--	Ändern Sie die Klassendeklaration in `public partial class Startup` – einen Teil dieser Klasse haben wir bereits für Sie in einer anderen Datei implementiert. Rufen Sie in der Methode `Configuration(...)` „ConfigureAuth(...)“ auf, um die Authentifizierung für Ihre Webanwendung einzurichten.  
+-	Fügen Sie dem Projekt eine „OWIN-Startklasse“ mit dem Namen `Startup.cs` hinzu. Klicken Sie dazu mit der rechten Maustaste auf das Projekt, wählen Sie **Hinzufügen** --> **Neues Element**, und suchen Sie nach „OWIN“. Die OWIN-Middleware ruft beim Starten Ihrer Anwendung die Methode `Configuration(...)` auf.
+-	Ändern Sie die Klassendeklaration in `public partial class Startup` – einen Teil dieser Klasse haben wir bereits für Sie in einer anderen Datei implementiert. Rufen Sie in der Methode `Configuration(...)` „ConfigureAuth(...)“ auf, um die Authentifizierung für Ihre Web-App einzurichten.  
 
 ```C#
 public partial class Startup
@@ -200,7 +201,9 @@ Erstellen und führen Sie Ihre Anwendung zum Schluss aus! Melden Sie sich entwed
 
 Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswerte) [hier als ZIP-Datei bereit](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet/archive/complete.zip). Sie können es alternativ aus GitHub klonen:
 
-```git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet.git```
+```
+git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet.git
+```
 
 ## Nächste Schritte
 
