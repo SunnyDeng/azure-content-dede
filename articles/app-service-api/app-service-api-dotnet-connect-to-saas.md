@@ -26,15 +26,15 @@ Als Alternative zum Schreiben von Code, der eine SaaS-API direkt aus einer benut
 
 In diesem Tutorial werden die folgenden Schritte behandelt:
 
-* Erstellen eines API-App-Projekts in Visual Studio 
-* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen
-* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt
-* Erstellen einer neuen API-App in Azure
-* Bereitstellen des Projekts für die API-App
-* Konfigurieren der API-App
-* Konfigurieren des Gateways
-* Erstellen eines Testclients
-* Ausführen des Testclients
+* Erstellen eines API-App-Projekts in Visual Studio. 
+* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen.
+* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt.
+* Erstellen einer neuen API-App in Azure.
+* Bereitstellen des Projekts für die API-App.
+* Konfigurieren der API-App.
+* Konfigurieren des Gateways.
+* Erstellen eines Testclients.
+* Ausführen des Testclients.
 
 ## Voraussetzungen
 
@@ -354,15 +354,15 @@ Diese Konsolenanwendung ist auf eine minimale Menge von Code ausgelegt, um die S
 
 Es folgt eine Übersicht über die Aufgaben, die der Code ausführt:
 
-* Öffnen eines Browsers mit der Gatewayanmelde-URL für den konfigurierten Identitätsanbieter, in diesem Fall Azure Active Directory 
+* Öffnen eines Browsers mit der Gatewayanmelde-URL für den konfigurierten Identitätsanbieter, in diesem Fall Azure Active Directory. 
 	 
-* Verarbeiten der erwarteten Antwort-URL nach der Benutzeranmeldung, Extrahieren von Benutzer-ID und Zumo-Token und deren Bereitstellung für das App Service-Clientobjekt
+* Verarbeiten der erwarteten Antwort-URL nach der Benutzeranmeldung, Extrahieren von Benutzer-ID und Zumo-Token und deren Bereitstellung für das App Service-Clientobjekt.
 
-* Verwenden des App Service-Clientobjekts zum Abrufen einer Gateway-URL, die für die Anmeldung und Zustimmung zum Dropbox-Link umgeleitet wird. Schritt 1 im Diagramm
+* Verwenden des App Service-Clientobjekts zum Abrufen einer Gateway-URL, die für die Anmeldung und Zustimmung zum Dropbox-Link umgeleitet wird. Schritt 1 im Diagramm.
 
-* Öffnen eines Browsers mit der Zustimmungs-URL des Gateways. Der Browser wird zum Dropbox-Anmeldungs- und Zustimmungslink umgeleitet. Schritt 2 im Diagramm
+* Öffnen eines Browsers mit der Zustimmungs-URL des Gateways. Der Browser wird zum Dropbox-Anmeldungs- und Zustimmungslink umgeleitet. Schritt 2 im Diagramm.
 	 
-* Schließen des Browsers, nachdem der Benutzer sich angemeldet hat und auf Dropbox.com die Zustimmung gegeben hat. Schritt 3 im Diagramm
+* Schließen des Browsers, nachdem der Benutzer sich angemeldet hat und auf Dropbox.com die Zustimmung gegeben hat. Schritt 3 im Diagramm.
  
 * Aufrufen der API-App auf Schritt 5 im Diagramm. (Schritt 4 erfolgt im Hintergrund zwischen Dropbox.com und Gateway. Die Schritte 6 und 7 werden von der API-App, nicht vom Client ausgeführt.)
 
@@ -376,7 +376,12 @@ Weitere Hinweise:
 
 		browser.Navigate(string.Format(@"{0}/login/aad", GATEWAY_URL));
 
-	Hier die Werte für andere Anbieter: * "microsoftaccount" * "facebook" * "twitter" * "google" <br/><br/>
+	Hier die Werte für andere Anbieter: 
+	* "microsoftaccount" 
+	* "facebook" 
+	* "twitter" 
+	* "google"
+<br/><br/>
 
 * Der zweite Parameter für die `GetConsentLinkAsync()`-Methode ist die Rückruf-URL, zu der der Zustimmungsserver umgeleitet wird, nachdem sich der Benutzer bei Dropbox angemeldet und die Zustimmung für den Zugriff auf das Konto des Benutzers gegeben hat.
 
@@ -420,7 +425,7 @@ Falls Sie den HTTP-Fehler 405 erhalten, sobald der Code "GetConsentLinkAsync" au
 
 ![](./media/app-service-api-dotnet-connect-to-saas/http405.png)
 
-Sie erhalten den Fehler "405 – Nicht zulässig", da der Client versucht, eine Nicht-SSL-HTTP POST-Anforderung zu stellen, die das Gateway an **https://* umleitet. Diese Umleitung verursacht eine GET-Anforderung. Die URL zum Abrufen von eines Zustimmungslinks akzeptiert nur POST-Anforderungen.
+Sie erhalten den Fehler "405 – Nicht zulässig", da der Client versucht, eine Nicht-SSL-HTTP POST-Anforderung zu stellen, die das Gateway an *https://* umleitet. Diese Umleitung verursacht eine GET-Anforderung. Die URL zum Abrufen von eines Zustimmungslinks akzeptiert nur POST-Anforderungen.
 
 ### <a id="400"></a>HTTP-Fehler 400 anstelle der Dropbox-Anmeldeseite
 
@@ -444,7 +449,7 @@ Wenn Sie "%3d%3d" am Ende des Werts `error` der Abfragezeichenfolge entfernen, i
 
 Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die sich mit einer SaaS-Plattform verbindet. Links zu anderen Tutorials zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service – Nächste Schritte](../app-service/app-service-authentication-overview.md#next-steps).
 
-[Azure preview portal]: https://portal.azure.com/
-[Azure portal]: https://manage.windowsazure.com/
+[Azure-Vorschauportal]: https://portal.azure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO1-->
+<!----HONumber=Oct15_HO1-->
