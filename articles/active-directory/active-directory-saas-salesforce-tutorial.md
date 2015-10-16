@@ -220,11 +220,7 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 
 4. Um Ihre Einstellungen für die einmalige Anmeldung zu testen, öffnen Sie den Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/), melden Sie sich beim Testkonto an, und klicken Sie auf **Salesforce**.
 
-##Weitere Informationen
-
-- [Liste der Tutorials zur Integration von SaaS-Anwendungen](active-directory-saas-tutorial-list.md)
-- [Anwendungszugriff in Azure AD](https://msdn.microsoft.com/library/azure/dn308590.aspx)
-- [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx)
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
 [0]: ./media/active-directory-saas-salesforce-tutorial/azure-active-directory.png
 [1]: ./media/active-directory-saas-salesforce-tutorial/applications-tab.png
@@ -257,4 +253,4 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 [28]: ./media/active-directory-saas-salesforce-tutorial/assign-confirm.png
 [29]: ./media/active-directory-saas-salesforce-tutorial/assign-sf-profile.png
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->
