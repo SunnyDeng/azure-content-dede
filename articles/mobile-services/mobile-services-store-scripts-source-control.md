@@ -130,7 +130,8 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
-+ [Arbeiten mit Serverskripts in Mobile Services] <br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
++ [Arbeiten mit Serverskripts in Mobile Services] <br/>
+Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control

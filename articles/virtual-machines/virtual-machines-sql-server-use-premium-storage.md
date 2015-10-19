@@ -88,7 +88,7 @@ Um diese in ein regionales VNET in Westeuropa zu verschieben, ändern Sie die Ko
 
 Sie müssen ein neues Speicherkonto erstellen, das für Premium-Speicher konfiguriert ist. Beachten Sie, dass die Verwendung von Premium-Speicher für das Speicherkonto, nicht aber für einzelne VHDs festgelegt wird. Wenn Sie jedoch virtuelle Computer der DS*-Serie verwenden, können Sie VHDs aus Premium- und Standard- Speicherkonten anfügen. Sie sollten dies in Erwägung ziehen, wenn Sie die Betriebssystem-VHD nicht im Premium-Speicherkonto platzieren möchten.
 
-Durch den folgenden **New-AzureStorageAccountPowerShell**-Befehl mit dem **Typ** "Premium\_LRS" wird ein Premium-Speicherkonto erstellt:
+Durch den folgenden **New-AzureStorageAccountPowerShell**-Befehl mit dem **Typ** "Premium_LRS" wird ein Premium-Speicherkonto erstellt:
 
     $newstorageaccountname = "danpremstor" 
     New-AzureStorageAccount -StorageAccountName $newstorageaccountname -Location "West Europe" -Type "Premium_LRS"   
@@ -150,7 +150,7 @@ Die Höhe der Speicherleistung hängt von der angegebenen Größe des virtuellen
 
 Höhere IOPS werden mit größeren Datenträgern erreicht. Sie sollten dies berücksichtigen, wenn Sie Ihren Migrationspfad planen. Weitere Informationen finden Sie in der [Tabelle für IOPS und Datenträgertypen](../storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage).
 
-Bedenken Sie, dass virtuelle Computer unterschiedliche maximale Datenträgerbandbreiten haben, die sie für alle verbundenen Datenträger unterstützen. Unter hoher Last könnten Sie die maximale Bandbreite für diese VM-Rollengröße auslasten. Beispielsweise unterstützt eine Standard\_DS14 bis zu 512 MB/s. Daher könnten Sie mit drei P30-Datenträgern die Bandbreite des Datenträgers des virtuellen Computers auslasten. In diesem Beispiel kann jedoch der Durchsatzgrenzwert je nach E/A-Lese- und Schreibvorgängen überschritten werden.
+Bedenken Sie, dass virtuelle Computer unterschiedliche maximale Datenträgerbandbreiten haben, die sie für alle verbundenen Datenträger unterstützen. Unter hoher Last könnten Sie die maximale Bandbreite für diese VM-Rollengröße auslasten. Beispielsweise unterstützt eine Standard_DS14 bis zu 512 MB/s. Daher könnten Sie mit drei P30-Datenträgern die Bandbreite des Datenträgers des virtuellen Computers auslasten. In diesem Beispiel kann jedoch der Durchsatzgrenzwert je nach E/A-Lese- und Schreibvorgängen überschritten werden.
 
 ## Neue Bereitstellungen
 
@@ -379,7 +379,7 @@ Es gibt zwei Strategien zum Migrieren von AlwaysOn-Bereitstellungen, die Ausfall
 1. **Hinzufügen weiterer sekundärer Replikate zu einem vorhandenen AlwaysOn-Cluster**
 1. **Migrieren zu einem neuen AlwaysOn-Cluster**
 
-#### 1\. Hinzufügen weiterer sekundärer Replikate zu einem vorhandenen AlwaysOn-Cluster
+#### 1. Hinzufügen weiterer sekundärer Replikate zu einem vorhandenen AlwaysOn-Cluster
 
 Eine Strategie ist das Hinzufügen weiterer sekundärer Replikate zur AlwaysOn-Verfügbarkeitsgruppe. Sie müssen diese Replikate in einem neuen Clouddienst hinzufügen und den Listener mit der neuen IP-Adresse des Lastenausgleichsmoduls aktualisieren.
 
@@ -401,7 +401,7 @@ Sie sollten Zeit für die Durchführung manueller Failover- und Chaostests auf d
 1. Kopieren Sie VOLLSTÄNDIGE Sicherungen, und stellen Sie sie mit **NORECOVERY** wieder her.
 1. Kopieren Sie abhängige Objekte aus der Benutzerdatenbank, wie z. B. Anmeldungen usw.
 1. Erstellen Sie einen neuen internen Lastenausgleich (ILB) oder verwenden Sie einen externen Lastenausgleich (ELB), und richten Sie Lastenausgleichs-Endpunkte auf beiden neuen Knoten ein.
-> [AZURE.NOTE]Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen.
+> [AZURE.NOTE] Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen
 
 1. Beenden Sie den Benutzer-/Anwendungszugriff auf SQL Server (bei Verwendung von Speicherpools).
 1. Beenden Sie SQL Server-Datenbankmoduldienste auf allen Knoten (bei Verwendung von Speicherpools).
@@ -426,7 +426,7 @@ Sie sollten Zeit für die Durchführung manueller Failover- und Chaostests auf d
 - Es können lange SQL-Datenübertragungen beim Einrichten der sekundären Replikate auftreten.
 - Es entstehen zusätzliche Kosten bei der Migration, während Sie neue Computer parallel ausführen.
 
-#### 2\. Migrieren zu einem neuen AlwaysOn-Cluster
+#### 2. Migrieren zu einem neuen AlwaysOn-Cluster
 
 Eine andere Strategie ist die Erstellung eines völlig neuen AlwaysOn-Clusters mit neuen Knoten im neuen Clouddienst, an den die Clients weitergeleitet werden.
 
@@ -457,7 +457,7 @@ Es gibt zwei Strategien für die Migration von AlwaysOn-Bereitstellungen mit min
 1. **Verwenden von vorhandenen sekundären Replikaten: Einzelstandort**
 1. **Verwenden von vorhandenen sekundären Replikaten: Mehrere Standorte**
 
-#### 1\. Verwenden von vorhandenen sekundären Replikaten: Einzelstandort
+#### 1. Verwenden von vorhandenen sekundären Replikaten: Einzelstandort
 
 Eine Strategie für minimale Ausfallzeiten ist die sekundäre Verwendung einer vorhandenen Cloud mit anschließender Entfernung aus dem aktuellen Clouddienst. Sie kopieren dann die VHDs in das neue Premium-Speicherkonto und erstellen den virtuellen Computer im neuen Clouddienst. Aktualisieren Sie dann den Listener für Cluster und Failover.
 
@@ -503,7 +503,7 @@ In diesem Dokument ist kein vollständiges End-to-End-Beispiel dargestellt. Im [
 - Wenn Sie die Schritte 5ii verwenden, fügen Sie SQL1 als möglichen Besitzer für die hinzugefügte IP-Adressressource hinzu.
 - Testen Sie die Failover.
 
-#### 2\. Verwenden von vorhandenen sekundären Replikaten: Mehrere Standorte
+#### 2. Verwenden von vorhandenen sekundären Replikaten: Mehrere Standorte
 
 Wenn Sie über Knoten in mehreren Azure-Datencentern (DC) oder über eine Hybridumgebung verfügen, können Sie eine AlwaysOn-Konfiguration in dieser Umgebung nutzen, um Ausfallzeiten zu minimieren.
 

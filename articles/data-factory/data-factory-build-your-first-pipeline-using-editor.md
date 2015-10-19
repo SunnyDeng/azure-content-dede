@@ -70,10 +70,10 @@ In den folgenden Schritten erfahren Sie, wie Sie die verknüpften Dienste, Datas
 In diesem Schritt verknüpfen Sie Ihr Azure-Speicherkonto und einen bedarfsgesteuerten Azure HDInsight-Cluster mit Ihrer Data Factory und erstellen dann ein Dataset, das die Ausgabedaten der Hive-Verarbeitung darstellt.
 
 ### Erstellen des mit Azure Storage verknüpften Diensts
-1.	Klicken Sie auf dem Blatt **DATA FACTORY** für **DataFactoryFirstPipeline** auf **Author and deploy**. Der Data Factory-Editor wird gestartet. 
+1.	Klicken Sie auf dem Blatt **DATA FACTORY** für **DataFactoryFirstPipeline** auf **Erstellen und bereitstellen**. Der Data Factory-Editor wird gestartet. 
 	 
 	![Kachel "Erstellen und bereitstellen"](./media/data-factory-build-your-first-pipeline-using-editor/data-factory-author-deploy.png)
-2.	Klicken Sie auf **Neuer Datenspeicher**, und wählen Sie **Azure Storage**.
+2.	Klicken Sie auf **Neuer Datenspeicher**, und wählen Sie **Azure-Speicher**.
 	
 	![Mit Azure Storage verknüpfter Dienst](./media/data-factory-build-your-first-pipeline-using-editor/azure-storage-linked-service.png)
 
