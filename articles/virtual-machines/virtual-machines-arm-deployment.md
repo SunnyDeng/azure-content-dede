@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Bereitstellen von Azure-Ressourcen mithilfe der Computing-, Netzwerk- und Speicherbibliotheken von .NET"
-	description="Erfahren Sie, wie Sie einige der verfügbaren Clients in den Computing-, Netzwerk- und Speicherbibliotheken von .NET zum Erstellen und Löschen von Ressourcen in Microsoft Azure verwenden."
+	pageTitle="Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken | Microsoft Azure"
+	description="Erfahren Sie, wie mit den Compute-, Storage- und Netzwerkbibliotheken von .NET zum Ressourcen in Microsoft Azure mit dem Ressourcen-Manager erstellen und löschen."
 	services="virtual-machines,virtual-network,storage"
 	documentationCenter=""
 	authors="davidmu1"
@@ -29,7 +29,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/DE-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/DE-DE/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-DE/download/details.aspx?id=40855)
 - [Azure PowerShell](../install-configure-powershell.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
@@ -189,7 +189,7 @@ Ein Speicherkonto wird benötigt, um die für den virtuellen Computer erstellte 
 		CreateStorageAccount(credential);
 		Console.ReadLine();
 
-###Erstellen eines virtuellen Netzwerks
+###Erstellen der Netzwerkkonfiguration
 
 Ein virtueller Computer ist am produktivsten, wenn er einem virtuellen Netzwerk hinzugefügt wird.
 
@@ -390,4 +390,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

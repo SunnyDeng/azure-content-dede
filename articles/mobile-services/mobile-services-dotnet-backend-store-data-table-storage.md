@@ -20,13 +20,13 @@
 
 In diesem Thema erfahren Sie, wie Sie einen nicht relationalen Datenspeicher für Ihren mobilen .NET-Back-End-Dienst verwenden. In diesem Lernprogramm ändern Sie das Azure Mobile Services-Schnellstartprojekt, um den Azure-Tabellenspeicher statt des standardmäßigen Azure SQL-Datenbank-Datenspeichers zu verwenden.
 
-Voraussetzung für dieses Lernprogramm ist der Abschluss des Lernprogramms [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App]. Sie benötigen außerdem ein Azure-Speicherkonto.
+Voraussetzung für dieses Lernprogramm ist der Abschluss des Lernprogramms [Erste Schritte mit Mobile Services]. Sie benötigen außerdem ein Azure-Speicherkonto.
 
 ##Konfigurieren des Azure-Tabellenspeichers im mobilen .NET-Back-End-Dienst
 
 Zunächst müssen Sie den mobilen Dienst und das .NET Back-End-Codeprojekt zum Herstellen einer Verbindung mit dem Azure-Speicher konfigurieren.
 
-1. Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf das .NET-Back-End-Projekt, und wählen Sie dann **Manage NuGet Packages** aus.
+1. Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf das .NET-Back-End-Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus.
 
 2. Wählen Sie im linken Bereich die Kategorie **Online** aus, wählen Sie **Stabile Only** aus, suchen Sie nach **MobileServices**, klicken Sie im Paket **Microsoft Azure Mobile Services .NET Backend Azure Storage Extension** auf **Installieren**, und akzeptieren Sie dann die Lizenzbedingungen.
 
@@ -58,7 +58,7 @@ Zunächst müssen Sie den mobilen Dienst und das .NET Back-End-Codeprojekt zum H
 
 	Der mobile Dienst verwendet diese Verbindungszeichenfolge, wenn er auf dem lokalen Computer ausgeführt wird, sodass Sie den Code testen können, bevor Sie ihn veröffentlichen. Wenn der mobile Dienst in Azure ausgeführt wird, verwendet er stattdessen den im Portal festgelegten Verbindungszeichenfolgen-Wert und ignoriert die Verbindungszeichenfolge im Projekt.
 
-## <a name="modify-service"></a>Ändern von Datentypen und Tabellen-Controllern
+## <a name="modify-service"></a>Ändern von Datentypen und Tabellencontrollern
 
 Da das TodoList-Schnellstartprojekt für die Ausführung mit einer SQL-Datenbank unter Verwendung von Entity Framework vorgesehen ist, müssen Sie im Projekt einige Aktualisierungen vornehmen, damit es mit Tabellenspeicher verwendet werden kann.
 
@@ -70,7 +70,7 @@ Da das TodoList-Schnellstartprojekt für die Ausführung mit einer SQL-Datenbank
 	        public bool Complete { get; set; }
 	    }
 
-	>[AZURE.NOTE]Der Typ **StorageData** verfügt über eine Id-Eigenschaft, die einen zusammengesetzten Schlüssel erfordert. Dieser ist eine Zeichenfolge im Format *partitionId*, *rowValue*.
+	>[AZURE.NOTE]Der Typ **StorageData** verfügt über eine Id-Eigenschaft, die einen zusammengesetzten Schlüssel erfordert. Dieser ist eine Zeichenfolge im Format *partitionId*,*rowValue*.
 
 2. Fügen Sie in **TodoItemController** die folgende using-Anweisung hinzu.
 
@@ -135,8 +135,6 @@ Sie können jetzt die App testen.
 
 Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET Back-End verwenden lässt, sollten Sie weitere Optionen für den Back-End-Speicher untersuchen:
 
-+ [Verwenden von MongoDB als Datenspeicher für das Mobile Services-.NET-Back-End](mobile-services-dotnet-backend-use-non-relational-data-store.md)</br>Wie in dem Lernprogramm, das Sie gerade abgeschlossen haben, wird in diesem Thema gezeigt, wie ein nicht relationaler Datenspeicher für einen mobilen Dienst verwendet wird. In diesem Lernprogramm bearbeiten Sie das Mobile Services-Schnellstartprojekt, sodass es MongoDB statt der SQL-Datenbank als Datenspeicher verwendet.
- 
 + [Herstellen einer Verbindung mit einem lokalen SQL Server mithilfe von Hybridverbindungen](mobile-services-dotnet-backend-hybrid-connections-get-started.md)</br>Hybridverbindungen ermöglichen Ihnen das Herstellen einer sicheren Verbindung des mobilen Diensts mit den lokalen Ressourcen. Auf diese Weise können Sie Ihre lokalen Daten mithilfe von Azure für Ihre mobilen Clients zugänglich machen. Unterstützt werden unter anderem alle Ressourcen, die auf einem statischen TCP-Port laufen, inklusive Microsoft SQL Server, MySQL, HTTP Web-APIs und die meisten selbst entwickelten Webdienste.
 
 + [Hochladen von Bildern in den Azure-Speicher mithilfe von Mobile Services](mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage.md)</br>In diesem Thema wird gezeigt, wie Sie das TodoList-Beispielprojekt erweitern, damit Sie Bilder von Ihrer App in den Azure-BLOB-Speicher hochladen können.
@@ -152,10 +150,9 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
 [Azure Management Portal]: https://manage.windowsazure.com/
 [What is the Table Service]: ../storage-dotnet-how-to-use-tables.md#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

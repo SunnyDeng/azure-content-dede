@@ -4,10 +4,9 @@
    description="Service Fabric Reliable Actors ist der Schlüsselbaustein (als mittlere Ebene) in einem System, das ein Messaging-System-Front-End mit Unterstützung mehrerer Übertragungstypen, wie z. B. HTTPS, MQTT oder AMQP, kombiniert und dann mit Actors kommuniziert, die einzelne Geräte darstellen."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
-
 
 <tags
    ms.service="service-fabric"
@@ -16,8 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/05/2015"
-   ms.author="claudioc"/>
-
+   ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Internet der Dinge
 Seitdem das Internet der Dinge zusammen mit dem technologischen Fortschritt bei Geräten und Cloud-Diensten zum aktuellen Trend wurde, suchen Entwickler nach Schlüsselbausteinen für die Entwicklung ihrer Systeme. Das folgende Diagramm zeigt die wichtigsten Szenarien, die mithilfe von Service Fabric Reliable Actors erreicht wurden:
@@ -219,4 +217,4 @@ Abschließend sei bemerkt, dass immer mehr Kunden Azure Service Fabric Actors al
 [1]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-2.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

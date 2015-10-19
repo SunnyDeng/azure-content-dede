@@ -3,7 +3,7 @@
 	description="Stellen Sie eine SQL Server-Datenbank mit dem Assistenten in SQL Server 2016 Management Studio unter Azure SQL-Datenbank bereit." 
 	services="sql-database" 
 	documentationCenter="" 
-	authors="sidneyh" 
+	authors="CarlRabeler" 
 	manager="jeffreyg" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
-	ms.author="sidneyh"/>
+	ms.date="10/08/2015" 
+	ms.author="carlrab"/>
 
 
 # So stellen Sie eine SQL Server-Datenbank für Azure SQL-Datenbank bereit
@@ -593,4 +593,4 @@ Ein Lernprogramm zum Erstellen einer neuen Azure SQL-Datenbank finden Sie unter 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

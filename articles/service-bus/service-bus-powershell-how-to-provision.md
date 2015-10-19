@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwalten von Service Bus mit PowerShell"
+	pageTitle="Verwalten von Service Bus mit PowerShell | Microsoft Azure"
 	description="Verwalten von Service Bus mit PowerShell-Skripts anstelle von .NET"
 	services="service-bus"
 	documentationCenter=".net"
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/18/2015"
+	ms.date="10/07/2015"
 	ms.author="sethm"/>
 
 # Verwalten von Service Bus mit PowerShell
 
 ## Übersicht
 
-Microsoft Azure PowerShell ist eine Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. In diesem Artikel wird beschrieben, wie Sie mithilfe von PowerShell Service Bus-Entitäten wie Namespaces, Warteschlangen und Event Hubs über eine lokale Azure PowerShell-Konsole bereitstellen und verwalten.
+Microsoft Azure PowerShell ist eine Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Workloads in Azure steuern und automatisieren können. In diesem Artikel wird beschrieben, wie Sie mithilfe von PowerShell Service Bus-Entitäten wie Namespaces, Warteschlangen und Event Hubs über eine lokale Azure PowerShell-Konsole bereitstellen und verwalten.
 
 ## Voraussetzungen
 
@@ -45,8 +45,7 @@ Sie müssen zunächst sicherstellen, dass Ihr Skript die Assembly **Microsoft.Se
 
 Diese Schritte werden in einem PowerShell-Skript folgendermaßen implementiert:
 
-```powershell
-
+```
 try
 {
     # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
@@ -63,12 +62,11 @@ catch [System.Exception]
 {
     Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
 }
-
 ```
 
 ## Bereitstellen eines Service Bus-Namespace
 
-Zwei PowerShell-Cmdlets unterstützen Service Bus-Namespacevorgänge. Anstelle der .NET SDK-APIs können Sie [Get-AzureSBNamespace] und [New-AzureSBNamespace] verwenden.
+Zwei PowerShell-Cmdlets unterstützen Service Bus-Namespacevorgänge. Anstelle der .NET SDK-APIs können Sie [Get-AzureSBNamespace][] und [New-AzureSBNamespace][] verwenden.
 
 In diesem Beispiel werden einige lokale Variablen im Skript erstellt: `$Namespace` und `$Location`.
 
@@ -84,8 +82,7 @@ Dieser Teil des Skripts führt Folgendes aus:
 2. Wenn der Namespace gefunden wird, erfolgt eine Meldung, was gefunden wurde.
 3. Wenn der Namespace nicht gefunden wird, wird der Namespace erstellt und anschließend der neu erstellte Namespace abgerufen.
 
-	``` powershell
-	
+	```
 	$Namespace = "MyServiceBusNS"
 	$Location = "West US"
 	
@@ -105,10 +102,9 @@ Dieser Teil des Skripts führt Folgendes aus:
 	    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 	    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
 	}
-
 	```
 
-Um weitere Service Bus-Entitäten bereitstellen zu können, erstellen Sie eine Instanz der `NamespaceManager`-Klasse aus dem SDK. Sie können mithilfe des Cmdlets [Get-AzureSBAuthorizationRule] eine Autorisierungsregel abrufen, die zur Bereitstellung einer Verbindungszeichenfolge verwendet wird. Sie speichern einen Verweis auf die `NamespaceManager`-Instanz in der `$NamespaceManager`-Variablen. Sie werden `$NamespaceManager` später im Skript verwenden, um weitere Entitäten bereitzustellen.
+Um weitere Service Bus-Entitäten bereitstellen zu können, erstellen Sie eine Instanz der [NamespaceManager][]-Klasse aus dem SDK. Sie können mithilfe des Cmdlets [Get-AzureSBAuthorizationRule][] eine Autorisierungsregel abrufen, die zur Bereitstellung einer Verbindungszeichenfolge verwendet wird. Sie speichern einen Verweis auf die `NamespaceManager`-Instanz in der `$NamespaceManager`-Variablen. Sie werden `$NamespaceManager` später im Skript verwenden, um weitere Entitäten bereitzustellen.
 
 ``` powershell
 $sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
@@ -120,7 +116,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 ## Bereitstellen weiterer Service Bus-Entitäten
 
-Um weitere Entitäten wie z. B. Warteschlangen, Themen und Event Hubs bereitzustellen, verwenden Sie die [.NET-API für Service Bus]. In diesem Artikel geht es nur um Event Hubs, die Schritte sind für andere Entitäten jedoch ähnlich. Darüber hinaus finden Sie am Ende dieses Artikels Hinweise auf einige detaillierte Beispiele, auch für andere Entitäten.
+Um weitere Entitäten wie z. B. Warteschlangen, Themen und Event Hubs bereitzustellen, verwenden Sie die [.NET-API für Service Bus][]. In diesem Artikel geht es nur um Event Hubs, die Schritte sind für andere Entitäten jedoch ähnlich. Darüber hinaus finden Sie am Ende dieses Artikels Hinweise auf einige detaillierte Beispiele, auch für andere Entitäten.
 
 In diesem Teil des Skripts werden vier weitere lokale Variablen erstellt. Diese Variablen werden zum Instanziieren eines `EventHubDescription`-Objekts verwendet. Das Skript führt Folgendes aus:
 
@@ -128,8 +124,7 @@ In diesem Teil des Skripts werden vier weitere lokale Variablen erstellt. Diese 
 2. Wenn dieser nicht vorhanden ist, erstellen Sie ein `EventHubDescription`-Objekt und übergeben dieses an die `CreateEventHubIfNotExists`-Methode der `NamespaceManager`-Klasse.
 3. Nachdem Sie nun wissen, dass der Event Hub verfügbar ist, erstellen Sie mithilfe von `ConsumerGroupDescription` und `NamespaceManager` eine Verbrauchergruppe.
 
-	``` powershell
-		
+	```
 	$Path  = "MyEventHub"
 	$PartitionCount = 12
 	$MessageRetentionInDays = 7
@@ -170,7 +165,7 @@ In folgenden Blogbeiträgen finden Sie ausführlichere Beispiele:
 - [How to create Service Bus queues, topics and subscriptions using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx) (Erstellen von Service Bus-Warteschlangen, -Themen und -Abonnements mithilfe eines PowerShell-Skripts, in englischer Sprache)
 - [How to create a Service Bus Namespace and an Event Hub using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx) (Erstellen eines Service Bus-Namespace und eines Event Hubs mithilfe eines PowerShell-Skripts, in englischer Sprache)
 
-Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Service Bus-PowerShell-Skripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
+Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Service Bus-PowerShell-Skripts](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
 
 <!--Link references-->
 [Azure erwerben]: http://azure.microsoft.com/pricing/purchase-options/
@@ -181,7 +176,7 @@ Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Servi
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
-[.NET-API für Service Bus]: https://msdn.microsoft.com/library/microsoft.servicebus.aspx
- 
+[.NET-API für Service Bus]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.aspx
+[NamespaceManager]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

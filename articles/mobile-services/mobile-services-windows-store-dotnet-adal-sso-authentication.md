@@ -35,7 +35,7 @@ Um Benutzer authentifizieren zu können, müssen Sie Ihre Anwendung in Azure Act
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 * Visual Studio 2013 für Windows 8.1
-* Abschluss des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten].
+* Abschluss des Lernprogramms [Erste Schritte mit Mobile Services]
 * NuGet-Paket: Azure Mobile Services SDK
 * NuGet-Paket: Active Directory-Bibliothek für Authentifizierung
 
@@ -213,8 +213,7 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 [Registrieren in Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
 [Active Directory]: https://manage.windowsazure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Erste Schritte mit Daten]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

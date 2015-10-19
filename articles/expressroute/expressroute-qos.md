@@ -12,12 +12,12 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="10/06/2015"
    ms.author="cherylmc"/>
 
 # QoS-Anforderungen für ExpressRoute
 
-Skype for Business umfasst verschiedene Workloads mit jeweils unterschiedlichen QoS-Anforderungen. Wenn Sie Sprachdienste über ExpressRoute bereitstellen möchten, müssen die im Folgenden beschriebenen Anforderungen erfüllt sein.
+Skype for Business umfasst verschiedene Workloads mit jeweils unterschiedlichen QoS-Anforderungen. Wenn Sie Sprachdienste über ExpressRoute bereitstellen möchten, sollten die im Folgenden beschriebenen Anforderungen erfüllt sein.
 
 ![](./media/expressroute-qos/expressroute-qos.png)
 
@@ -35,18 +35,19 @@ Die folgende Tabelle enthält eine Liste mit DSCP-Markierungen, die von Skype fo
 | | CS0 (0) | Alles andere| 
 
 
-- Sie müssen die Workloads klassifizieren und die richtigen DSCP-Markierungen wählen. Folgen Sie [dieser Anleitung](https://technet.microsoft.com/library/gg405409.aspx) zum Festlegen von DSCP-Markierungen in Ihrem Netzwerk.
+- Sie sollten die Workloads klassifizieren und die richtigen DSCP-Markierungen wählen. Folgen Sie [dieser Anleitung](https://technet.microsoft.com/library/gg405409.aspx) zum Festlegen von DSCP-Markierungen in Ihrem Netzwerk.
 
-- Sie müssen mehrere QoS-Warteschlangen in Ihrem Netzwerk konfigurieren und bereitstellen. Voice muss als eigenständige Klasse definiert werden und die in RFC 3246 angegebene EF-Behandlung erhalten.
+- Sie sollten mehrere QoS-Warteschlangen in Ihrem Netzwerk konfigurieren und bereitstellen. Voice muss als eigenständige Klasse definiert werden und die in RFC 3246 angegebene EF-Behandlung erhalten.
 
 - Sie können den gewünschten Warteschlangenmechanismus, die Richtlinie für die Auslastungserkennung und die Bandbreitenzuordnung pro Datenverkehrsklasse festlegen. Die DSCP-Markierung der Skype for Business-Workloads muss jedoch in jedem Fall erhalten bleiben. Wenn Sie andere als die oben aufgeführten DSCP-Markierungen verwenden, z. B. AF31 (26), muss dieser DSCP-Wert im Paket vor dem Senden an Microsoft auf 0 zurückgesetzt werden. Microsoft sendet nur Pakete mit dem in der obigen Tabelle aufgeführten DSCP-Wert.
 
 ## Nächste Schritte
 
 - Sehen Sie sich die Anforderungen für [Routing](expressroute-routing.md) und [NAT](expressroute-nat.md) an.
-- Konfigurieren Sie Ihre ExpressRoute-Verbindung.
+- Informationen zum Konfigurieren der ExpressRoute-Verbindung finden Sie über die folgenden Links.
+
 	- [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md)
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

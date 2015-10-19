@@ -1,10 +1,10 @@
 <properties 
 	pageTitle="Ressourcen, Rollen und Zugriffssteuerung in Application Insights" 
-	description="&quot;Besitzer&quot;, &quot;Mitwirkende&quot; und &quot;Leser&quot; für die gewonnenen Unternehmensinformationen." 
+	description="";Besitzer";, ";Mitwirkende"; und ";Leser"; für die gewonnenen Unternehmensinformationen." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="10/01/2015" 
 	ms.author="awills"/>
  
 # Ressourcen, Rollen und Zugriffssteuerung in Application Insights
@@ -38,7 +38,6 @@ Zunächst einige Definitionen:
 
     
     ![Wählen Sie "Durchsuchen", "Ressourcengruppen" und dann eine Gruppe aus.](./media/app-insights-resources-roles-access-control/11-group.png)
-
 
 * [**Abonnement**](https://manage.windowsazure.com) – Zum Verwenden von Application Insights oder anderen Azure-Ressourcen melden Sie sich bei einem Azure-Abonnement an. Jede Ressourcengruppe gehört zu einem Azure-Abonnement, in dem Sie Ihr Preispaket und, wenn es sich um ein Abonnement für die Organisation handelt, die Mitglieder und deren Zugriffsberechtigungen auswählen.
 * [**Microsoft-Konto**][account] – Benutzername und Kennwort, den bzw. das Sie zur Anmeldung bei den Microsoft Azure-Abonnements, XBox Live, Outlook.com und anderen Microsoft-Diensten verwenden.
@@ -111,4 +110,4 @@ Wenn der gewünschte Benutzer nicht im Verzeichnis enthalten ist, können Sie je
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

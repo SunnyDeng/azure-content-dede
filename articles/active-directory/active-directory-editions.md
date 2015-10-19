@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="10/01/2015"
 	ms.author="markvi"/>
 
 # Azure Active Directory-Editionen
@@ -56,9 +56,9 @@ Die Active Directory Premium Edition ist ein kostenpflichtiges Angebot von Azure
 
     Weitere Informationen finden Sie unter [Was ist Azure Multi-Factor Authentication?](multi-factor-authentication.md)
 
-- **Microsoft Identity Manager (MIM)** – Die Premium Edition beinhaltet die Möglichkeit, in Ihrem lokalen Netzwerk die Rechte zur Nutzung eines MIM-Servers (und zur Nutzung von CALs) zu erteilen, um beliebige Kombinationen von Hybrid-Identity-Lösungen zu unterstützen. Dies ist ein großartiges Feature, wenn Sie verschiedene lokale Verzeichnisse und Datenbanken verwenden, die Sie direkt mit Azure Active Directory synchronisieren möchten. Die Anzahl der FIM-Server, die Sie verwenden können, ist unbeschränkt, die Erteilung von MIM CALs basiert jedoch auf der Zuweisung einer Azure Active Directory Premium-Benutzerlizenz.
+- **Microsoft Identity Manager** – Die Premium Edition beinhaltet die Möglichkeit, in Ihrem lokalen Netzwerk die Rechte zur Nutzung eines MIM-Servers (und zur Nutzung von CALs) zu erteilen, um beliebige Kombinationen von Hybrid-Identity-Lösungen zu unterstützen. Dies ist ein großartiges Feature, wenn Sie verschiedene lokale Verzeichnisse und Datenbanken verwenden, die Sie direkt mit Azure Active Directory synchronisieren möchten. Die Anzahl der MIM-Server, die Sie verwenden können, ist unbeschränkt, die Erteilung von MIM-CALs basiert jedoch auf der Zuweisung einer Azure Active Directory Premium-Benutzerlizenz.
 
-    Weitere Informationen finden Sie unter [Bereitstellen von MIM 2010 R2](https://www.microsoft.com/server-cloud/products/forefront-identity-manager/features.aspx).
+    Weitere Informationen finden Sie unter [Microsoft Identity Manager](http://www.microsoft.com/de-DE/server-cloud/products/microsoft-identity-manager/default.aspx).
 
 - **Unternehmens-SLA von 99,9 %** – Microsoft garantiert für den Azure Active Directory Premium-Dienst eine Verfügbarkeit von mindestens 99,9 %.
 
@@ -450,4 +450,4 @@ Die folgenden Features sind derzeit in öffentlicher Vorschau verfügbar und wer
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

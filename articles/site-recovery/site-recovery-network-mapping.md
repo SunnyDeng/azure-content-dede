@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="08/05/2015"
+	ms.date="10/07/2015"
 	ms.author="raynew"/>
 
 
@@ -135,4 +135,4 @@ Keine Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover | VM-1 blei
 
 Nachdem Sie die Netzwerkzuordnung nun besser nachvollziehen können, können Sie sich zur Vorbereitung auf die Bereitstellung mit den [bewährten Methoden](site-recovery-best-practices.md) vertraut machen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

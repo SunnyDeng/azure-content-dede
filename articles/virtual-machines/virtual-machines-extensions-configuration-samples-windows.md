@@ -170,7 +170,7 @@ Im weiteren Verlauf des Artikels sind Beispielkonfigurationen für Windows-VM-Er
               "protectedSettings": {
                 "workspaceKey"  : "The Workspace Key is a string that is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
               }
-          }
+              }
             }
 
 ### McAfee EndpointSecurity
@@ -305,4 +305,4 @@ Dies ist ein Beispiel für eine vollständige VM-Vorlage mit einer benutzerdefin
 
 [Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

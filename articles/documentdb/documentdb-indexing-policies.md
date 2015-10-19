@@ -14,7 +14,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="08/03/2015" 
+    ms.date="10/05/2015" 
     ms.author="mimig"/>
 
 
@@ -541,7 +541,7 @@ Hier sehen Sie die unterstützten Indexarten und Beispiele für Abfragen, für d
 
 Standardmäßig wird ein Fehler für Abfragen mit Bereichsoperatoren wie „> =“ zurückgegeben, wenn kein Bereichsindex (mit Genauigkeit) vorhanden ist, um zu signalisieren, dass möglicherweise eine Überprüfung erforderlich ist, um die Abfrage zu verarbeiten. Bereichsabfragen können ohne Bereichsindex mit dem Header "x-ms-documentdb-enable-scans" in der REST-API oder mithilfe der "EnableScanInQuery"-Option des .NET SDK ausgeführt werden. Wenn die Abfrage weitere Filter enthält, die DocumentDB für den Index verwenden kann, wird kein Fehler gemeldet.
 
-Die gleichen Regeln gelten für räumliche Abfragen. Standardmäßig wird ein Fehler für räumliche Abfragen zurückgegeben, wenn keine räumlicher Index vorhanden ist. Sie können als Suche mit "x-ms-documentdb-enable-scan/EnableScanInQuery" erfolgen.
+Die gleichen Regeln gelten für räumliche Abfragen. Standardmäßig wird ein Fehler für räumliche Abfragen zurückgegeben, wenn kein räumlicher Index vorhanden ist und keine anderen Filter vorhanden sind, für die die Verarbeitung über den Index möglich ist. Sie können als Suche mit "x-ms-documentdb-enable-scan/EnableScanInQuery" erfolgen.
 
 #### Indexgenauigkeit
 
@@ -664,6 +664,8 @@ Warum sollten Sie Änderungen an der Indizierungsrichtlinie Ihrer DocumentDB-Sam
 - Optimieren der Indizierungsgenauigkeit zur Verbesserung der Abfrageleistung oder zum Reduzieren der Speicherbelegung
 
 >[AZURE.NOTE]Zum Ändern der Indizierungsrichtlinie mit „ReplaceDocumentCollectionAsync“ benötigen Sie Version > = 1.3.0 von .NET SDK.
+>
+> Damit die Indextransformation erfolgreich abgeschlossen wird, müssen Sie sicherstellen, dass ausreichend freier Speicherplatz in der Sammlung vorhanden ist. Wenn das Speicherkontingent der Sammlung erreicht ist, wird die Indextransformation angehalten. Die Indextransformation wird automatisch fortgesetzt, sobald Speicherplatz verfügbar ist, z. B. wenn Sie einige Dokumente löschen.
 
 ## Leistungsoptimierung
 
@@ -677,7 +679,7 @@ Um das Speicherkontingent und die Verwendung einer Sammlung zu überprüfen, fü
      Console.WriteLine("Document size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 
 
-Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren oder Löschen) zu messen, überprüfen Sie den Header „x-ms-request-charge“ (oder die entsprechende [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx)-Eigenschaft in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) im .NET SDK). Hier können Sie die Anzahl der Anforderungseinheiten messen, die von diesen Vorgängen genutzt werden.
+Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren oder Löschen) zu messen, überprüfen Sie den Header "x-ms-request-charge" (oder die entsprechende [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx)-Eigenschaft in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) im .NET SDK). Hier können Sie die Anzahl der Anforderungseinheiten messen, die von diesen Vorgängen genutzt werden.
 
      // Measure the performance (request units) of writes.     
      ResourceResponse<Document> response = await client.CreateDocumentAsync(collectionSelfLink, myDocument);              
@@ -767,4 +769,4 @@ Verwenden Sie die unten angegebenen Links, um auf Beispiele für die Verwaltung 
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/30/2015" 
+	ms.date="10/01/2015" 
 	ms.author="sdanie"/>
 
 # Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"
@@ -72,15 +72,17 @@ Im Folgenden sind einige häufige Konfigurationsfehler aufgeführt, die dazu fü
 -	Virtuelle Computer mit blockierten Redis-Rolleninstanzen, sodass die Kommunikation zwischen den Rolleninstanzen im Subnetz nicht möglich ist. Redis-Rolleninstanzen müssen über TCP auf allen verwendeten Ports miteinander kommunizieren können. Dies kann zwar geändert werden, muss jedoch mindestens für alle in der Redis-Datei "CSDEF" verwendeten Ports zulässig sein.
 -	Azure Load Balancer kann keine Verbindung mit den virtuellen Redis-Computern über den TCP/HTTP-Port 16001 herstellen. Azure Redis Cache hängt vom standardmäßigen Azure Load Balancer-Test ab, um zu ermitteln ob Rolleninstanzen ausgeführt werden. Beim standardmäßigen Load Balancer-Test wird der Azure-Gast-Agent über Port 16001 gepingt. Nur die Rolleninstanzen, die auf den Ping reagieren, werden in die Rotation für den Empfang des von der ILB weitergeleiteten Datenverkehrs platziert. Wenn sich keine Instanzen in der Rotation befinden, da Pings aufgrund blockierter Ports fehlschlagen, akzeptiert die ILB keine eingehenden TCP-Verbindungen.
 -	Der für die Überprüfung des öffentlichen SSL-Schlüssels verwendete Webdatenverkehr der Clientanwendung ist blockiert. Clients von Redis (innerhalb des virtuellen Netzwerks) müssen HTTP-Datenverkehr an das öffentliche Internet weiterleiten können, um Zertifizierungsstellenzertifikate und Zertifikatsperrlisten herunterzuladen und die Überprüfung von SSL-Zertifikaten durchzuführen, wenn sie über Port 6380 eine Verbindung mit Redis herstellen und die Authentifizierung des SSL-Servers durchführen.
--	Azure Load Balancer kann keine Verbindung zu virtuellen Redis-Computern in einem Cluster über Port 1300x (13000, 13001 usw.) oder 1500x (15000, 15001 usw.) herstellen. VNETs werden in der CSDEF-Datei mit einem Load Balancer-Test zum Öffnen dieser Ports konfiguriert. Der Azure Load Balancer muss von NSGs zugelassen werden. Bei Standard-NSGs erfolgt dies über das Tag "AZURE\_LOADBALANCER". Dem Azure Load Balancer ist die statische IP-Adresse 168.63.126.16 zugewiesen. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](..\virtual-network\virtual-networks-nsg.md).
+-	Azure Load Balancer kann keine Verbindung zu virtuellen Redis-Computern in einem Cluster über Port 1300x (13000, 13001 usw.) oder 1500x (15000, 15001 usw.) herstellen. VNETs werden in der CSDEF-Datei mit einem Load Balancer-Test zum Öffnen dieser Ports konfiguriert. Der Azure Load Balancer muss von NSGs zugelassen werden. Bei Standard-NSGs erfolgt dies über das Tag "AZURE\_LOADBALANCER". Dem Azure Load Balancer ist die statische IP-Adresse 168.63.126.16 zugewiesen. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](../virtual-network/virtual-networks-nsg.md).
 
 ## Kann ich VNETs mit einem Standard-Cache oder Basic-Cache verwenden?
 
 VNETs können nur mit Premium-Caches verwendet werden.
 
 ## Nächste Schritte
+Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie in den folgenden Artikeln.
 
-Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie in den folgenden Artikeln. - [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md) - [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md)
+-	[Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md)
+-	[Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md)
 
 
 
@@ -101,4 +103,4 @@ Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie i
 
 [redis-cache-vnet-subnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-subnet.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

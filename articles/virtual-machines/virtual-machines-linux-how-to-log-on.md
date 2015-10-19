@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Anmelden an einem virtuellen Computer unter Linux in Azure"
+	pageTitle="Anmelden bei einem virtuellen Linux-Computer in Azure | Microsoft Azure"
 	description="Erfahren Sie, wie Sie sich an einem virtuellen Azure-Computer unter Linux mithilfe eines Secure Shell (SSH)-Clients anmelden."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -20,6 +21,8 @@
 
 
 #Anmelden bei einem mit Linux betriebenen virtuellen Computer #
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt wurden. Für virtuelle Computer, die mit dem [Ressourcen-Manager-Bereitstellungsmodell](virtual-machines-linux-tutorial-portal-rm.md) erstellt wurden, gelten ähnliche Schritte.
 
 Bei einem virtuellen Computer, auf dem das Betriebssystem Linux ausgeführt wird, verwenden Sie zur Anmeldung einen Secure Shell (SSH)-Client.
 
@@ -53,4 +56,4 @@ Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbei
 <!-- LINKS -->
 [Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer]: http://go.microsoft.com/fwlink/p/?LinkId=512138
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO2-->

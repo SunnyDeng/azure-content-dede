@@ -43,7 +43,7 @@ Die folgenden IoT-Dienst-SDKs sind auf GitHub zum Download verfügbar:
 
 - [Azure IoT-Dienst-SDK für Node.js][]
 
-## API-Referenzdokumentation
+## Online verfügbare API-Referenzdokumentation
 
 Die folgende Liste enthält Links zur online verfügbaren API-Referenzdokumentation für Azure IoT-Gerätebibliotheken:
 
@@ -73,4 +73,4 @@ Die folgende Liste enthält Links zur online verfügbaren API-Referenzdokumentat
 [Microsoft Azure IoT-Geräte-SDK für Node.js]: http://azure.github.io/azure-iot-sdks/node/api_reference/index.html
 [IoT Hub REST]: https://msdn.microsoft.com/library/mt548492.aspx
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

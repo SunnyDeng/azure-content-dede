@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Mobile Services für HTML 5-Apps"
+	pageTitle="Erste Schritte mit Azure Mobile Services für HTML-/JavaScript-Apps | Microsoft Azure"
 	description="In diesem Lernprogramm erhalten Sie Informationen zu den ersten Schritten mit Azure Mobile Services für die HTML-Entwicklung."
 	services="mobile-services"
 	documentationCenter=""
@@ -12,14 +12,16 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-html5"
 	ms.devlang="javascript"
-	ms.topic="article" 
-	ms.date="07/25/2015"
+	ms.topic="get-started-article" 
+	ms.date="10/05/2015"
 	ms.author="glenga"/>
 
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
 ##Übersicht 
 
@@ -46,7 +48,7 @@ Zum Abschließen dieses Tutorials müssen folgende Voraussetzungen erfüllt sein
 	Die App kann zwar auf jedem Webserver gehostet werden, aber dies sind die von den heruntergeladenen Skripts unterstützen Webserver.
 
 + Ein Webbrowser, der HTML5 unterstützt.
-+ Ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F"%20target="_blank). 
++ Ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F"%20target="_blank). 
 
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
@@ -117,13 +119,12 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-* **[Erste Schritte mit Daten]** <br/>Lernen Sie mehr über das Speichern und Abfragen von Daten mit Mobile Services.
+* **[Hinzufügen von Authentifizierung zur App]** Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* **[Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung]** <br/>Verbinden Sie Ihre HTML-Anwendung mit einer benutzerdefinierten API, die von Mobile Services gehostet wird.
+* **[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]** Erfahren Sie mehr über die Verwendung von Mobile Services mit HTML/JavaScript.
 
-* **[Erste Schritte mit der Authentifizierung]** <br/>Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
-* **[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]** <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit HTML/JavaScript.
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -144,9 +145,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: mobile-services-html-get-started-data.md
-[Erste Schritte mit der Authentifizierung]: mobile-services-html-get-started-users.md
-[Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung]: mobile-services-html-call-custom-api.md
+[Hinzufügen von Authentifizierung zur App]: mobile-services-html-get-started-users.md
 
 [Management Portal]: https://manage.windowsazure.com/
 [Microsoft Web Platform Installer]: http://go.microsoft.com/fwlink/p/?LinkId=286333
@@ -155,4 +154,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Cross-origin resource sharing]: http://msdn.microsoft.com/library/azure/dn155871.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

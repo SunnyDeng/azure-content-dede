@@ -1,15 +1,33 @@
-<properties pageTitle="Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers unter Windows Server 2012 in Microsoft Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
+<properties
+	pageTitle="Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers | Microsoft Azure"
+	description="Erstellen Sie einen virtuellen Oracle WebLogic Server 12c-Computer, auf dem Windows Server 2012 in Microsoft Azure ausgeführt wird, indem Sie das Ressourcen-Manager-Bereitstellungsmodell verwenden."
+	services="virtual-machines"
+	authors="bbenz"
+	documentationCenter=""
+	tags="azure-resource-manager"/>
+
+<tags
+	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="06/22/2015"
+	ms.author="bbenz" />
+
 #Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf einem von Microsoft bereitgestellten Oracle WebLogic Server 12c-Image unter Windows Server 2012 in Azure erstellen.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines Oracle WebLogic-Servers mit dem Ressourcen-Manager-Bereitstellungsmodell.
+
 
 ##Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure
 
 1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
 
-2. Klicken Sie auf **Marketplace**, dann auf **Compute**, und geben Sie **Oracle** in das Suchfeld ein.
+2. Klicken Sie auf **Marketplace** und dann auf **Compute**, und geben Sie **Oracle** in das Suchfeld ein.
 
-3.	Wählen Sie das Image **WebLogic Server 12c Standard Edition on Windows Server 2012** oder **Oracle WebLogic Server 12c Enterprise Edition on Windows Server 2012** aus. Überprüfen Sie die Informationen zum Image, das Sie auswählen möchten (z. B. empfohlene Mindestgröße), und klicken Sie dann auf **Weiter**.
+3.	Wählen Sie das Image **WebLogic Server 12c Standard Edition on Windows Server 2012** oder **Oracle WebLogic Server 12c Enterprise Edition on Windows Server 2012** aus. Überprüfen Sie die Informationen zum Image, das Sie auswählen möchten (z. B. empfohlene Mindestgröße), und klicken Sie dann auf **Weiter**.
 
 4.	Geben Sie einen **Hostnamen** für den virtuellen Computer an.
 
@@ -17,14 +35,14 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 6.	Geben Sie ein Kennwort für den virtuellen Computer ein, und bestätigen Sie es, oder geben Sie einen öffentlichen SSH-Schlüssel an.
 
-7.	Wählen Sie einen **Tarif** aus. Beachten Sie, dass die empfohlenen Preiskategorien standardmäßig angezeigt werden. Um alle Konfigurationsoptionen anzuzeigen, klicken Sie oben rechts auf **Alle anzeigen**.
+7.	Wählen Sie einen **Tarif** aus. Beachten Sie, dass die empfohlenen Tarife standardmäßig angezeigt werden. Um alle Konfigurationsoptionen anzuzeigen, klicken Sie oben rechts auf **Alle anzeigen**.
 
 8.	Legen Sie die optionale Konfiguration nach Bedarf fest. Beachten Sie dabei folgende Überlegungen:
 	1. Lassen Sie **Speicherkonto** unverändert, um ein neues Speicherkonto mit dem Namen des virtuellen Computers zu erstellen.
-	2. Lassen Sie die **Verfügbarkeitsgruppe** auf "Nicht konfiguriert" festgelegt.
+	2. Lassen Sie die **Verfügbarkeitsgruppe** auf „Nicht konfiguriert“ festgelegt.
 	3. Fügen Sie zu diesem Zeitpunkt keine **Endpunkte** hinzu.
 
-9.	Wählen Sie eine [Ressourcengruppe](resource-group-portal.md) aus, oder erstellen Sie eine.
+9.	Wählen Sie eine [Ressourcengruppe](resource-group-portal.md) aus, oder erstellen Sie sie.
 
 10. Wählen Sie ein **Abonnement** aus.
 
@@ -86,11 +104,11 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 15.	Eine Eingabeaufforderung für **startWebLogic.cmd** wird gestartet. Geben Sie bei Aufforderung Ihren WebLogic-Benutzernamen und das Kennwort ein.
 
 ##Installieren einer Anwendung auf einem virtuellen Oracle WebLogic Server 12c-Computer in Azure
-1.	Bleiben Sie am virtuellen Computer angemeldet, und speichern Sie das shoppingcart.war-Beispiel unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war lokal. Erstellen Sie z. B. einen Ordner mit dem Namen **c:\\mywar** und speichern Sie die WAR-Datei unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war in **c:\\mywar**.
+1.	Bleiben Sie am virtuellen Computer angemeldet, und speichern Sie das shoppingcart.war-Beispiel lokal unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war. Erstellen Sie z. B. einen Ordner mit dem Namen **c:\\mywar**, und speichern Sie die WAR-Datei unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war in **c:\\mywar**.
 
 2.	Öffnen Sie die **WebLogic Server-Verwaltungskonsole** (http://localhost:7001/console). Geben Sie bei Aufforderung Ihren WebLogic-Benutzernamen und das Kennwort ein.
 
-3.	Klicken Sie in der **WebLogic Server-Verwaltungskonsole** auf **Sperren und bearbeiten**, klicken Sie auf **Bereitstellungen**, und dann auf **Installieren**.
+3.	Klicken Sie in der **WebLogic Server-Verwaltungskonsole** auf **Sperren und bearbeiten**, und klicken Sie auf **Bereitstellungen** und dann auf **Installieren**.
 
 4.	Geben Sie den **Pfad** **c:\\myway\\shoppingcart.war** ein.
 
@@ -98,13 +116,13 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	Klicken Sie auf **Weiter**.
 
-5.	Wählen Sie "Diese Bereitstellung als Anwendung installieren", und klicken Sie dann auf **Weiter**.
+5.	Wählen Sie „Diese Bereitstellung als Anwendung installieren“, und klicken Sie dann auf **Weiter**.
 
 6.	Klicken Sie auf **Fertig stellen**.
 
 7.	Klicken Sie in der **WebLogic Server-Verwaltungskonsole** auf **Speichern** und dann auf **Änderungen aktivieren**.
 
-8.	Klicken Sie auf **Bereitstellungen**, wählen Sie **shoppingcart** aus, klicken Sie auf **Start** und dann auf **Alle Anforderungen bearbeiten**. Wenn Sie aufgefordert werden, die Auswahl zu bestätigen, klicken Sie auf **Ja**.
+8.	Klicken Sie auf **Bereitstellungen**, wählen Sie **shoppingcart** aus, und klicken Sie auf **Start** und dann auf **Alle Anforderungen bearbeiten**. Wenn Sie aufgefordert werden, die Auswahl zu bestätigen, klicken Sie auf **Ja**.
 
 9.	Um die lokal ausgeführte Warenkorbanwendung zu sehen, öffnen Sie einen Browser mit der URL <http://localhost:7001/shoppingcart>.
 
@@ -140,9 +158,9 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	1.	Melden Sie sich am virtuellen Computer an.
 
-	2.	Klicken Sie auf die Windows-Schaltfläche **Start**, geben Sie **Windows-Firewall mit erweiterter Sicherheit** ein, und klicken Sie dann auf das Symbol **Windows-Firewall mit erweiterter Sicherheit**. Die Verwaltungskonsole für **Windows-Firewall mit erweiterter Sicherheit** wird geöffnet.
+	2.	Klicken Sie auf die Windows-Schaltfläche **Start**, geben Sie **Windows-Firewall mit erweiterter Sicherheit** ein, und klicken Sie dann auf das Symbol **Windows-Firewall mit erweiterter Sicherheit**. Die Verwaltungskonsole für die **Windows-Firewall mit erweiterter Sicherheit** wird geöffnet.
 
-	3.	Klicken Sie in der Firewall-Verwaltungskonsole im linken Bereich auf **Eingehende Regeln** (wenn **Eingehende Regeln** nicht angezeigt wird, erweitern Sie den obersten Knoten im linken Bereich), und klicken Sie dann auf "Neue Regel" im rechten Bereich.
+	3.	Klicken Sie in der Firewall-Verwaltungskonsole im linken Bereich auf **Eingehende Regeln** (wenn **Eingehende Regeln** nicht angezeigt wird, erweitern Sie den obersten Knoten im linken Bereich), und klicken Sie dann auf „Neue Regel“ im rechten Bereich.
 
 	4.	Wählen Sie für **Regeltyp** die Option **Port** aus, und klicken Sie auf **Weiter**.
 
@@ -168,4 +186,4 @@ Nachdem Sie den virtuellen Computer mit Oracle WebLogic Server eingerichtet habe
 
 -	[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

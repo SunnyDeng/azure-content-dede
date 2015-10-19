@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/25/2015"
+	ms.date="10/05/2015"
 	ms.author="dkshir"/>
 
 # Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer
@@ -35,21 +35,116 @@ Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen
 
 ## Grundlegende Schritte
 
-Führen Sie die folgenden Schritte aus, um häufig auftretende SSH-Verbindungsfehler zu beheben:
+
+### Klassisches Bereitstellungsmodell
+
+Führen Sie die folgenden Schritte aus, um häufige SSH-Verbindungsfehler für virtuelle Computer zu beheben, die mit dem klassischen Bereitstellungsmodell erstellt werden:
 
 1. Setzen Sie den Remotezugriff über das [Azure-Portal](https://portal.azure.com) zurück. Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Remotezugriff zurücksetzen**.
 
 	![Remotezugriff zurücksetzen](./media/virtual-machines-troubleshoot-ssh-connections/Portal-SSH-Reset-Windows.png)
 
-2. Starten Sie den virtuellen Computer neu. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) die Option **Virtuelle Computer** > **Instanzen**, und klicken Sie auf **Neustart**.
+2. Starten Sie den virtuellen Computer neu, indem Sie ähnlich wie oben vorgehen. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) die Option **Virtuelle Computer** > **Instanzen**, und klicken Sie auf **Neustart**.
 
 3. [Ändern Sie die Größe des virtuellen Computers.](https://msdn.microsoft.com/library/dn168976.aspx)
 
-4. Führen Sie dazu auf dem virtuellen Computer die unter [Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md) beschriebenen Anweisungen für Folgende Schritte aus:
+4. Führen Sie dazu auf dem virtuellen Computer die unter [Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md) beschriebenen Anweisungen für folgende Schritte aus:
 
 	- Zurücksetzen des Kennworts oder des SSH-Schlüssels
 	- Erstellen eines neuen sudo-Benutzerkontos
 	- Zurücksetzen der SSH-Konfiguration
+
+
+### Ressourcen-Manager-Bereitstellungsmodell
+
+Führen Sie die folgenden Schritte aus, um häufige SSH-Probleme für virtuelle Computer zu beheben, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt werden.
+
+1. Setzen Sie die SSH-Verbindung mit Ihrem virtuellen Linux-Computer in der Befehlszeile zurück. Stellen Sie sicher, dass [Microsoft Azure Linux Agent](virtual-machines-linux-agent-user-guide.md) Version 2.0.5 oder höher installiert ist.
+
+	[A] Verwenden der Azure-Befehlszeilenschnittstelle:
+
+	Schritt 1: [Installieren Sie die Azure-Befehlszeilenschnittstelle, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../xplat-cli-install.md), indem Sie den Befehl `azure login` verwenden (falls noch nicht geschehen).
+
+	Schritt 2: Wechseln Sie in den Ressourcen-Manager-Modus.
+
+		azure config mode arm
+
+	Schritt 3: Sie können die SSH-Verbindung mit einer der folgenden Methoden zurücksetzen.
+
+	(i) Verwenden Sie den Befehl `vm reset-access` wie im folgenden Beispiel.
+
+		azure vm reset-access -g TestRgV2 -n TestVmV2 -r
+
+	Die `VMAccessForLinux`-Erweiterung wird auf Ihrem virtuellen Computer installiert.
+
+	(ii) Alternativ dazu können Sie eine Datei mit dem Namen „PrivateConf.json“ und dem folgenden Inhalt erstellen:
+
+		{
+			"reset_ssh":"True"
+		}
+
+	Führen Sie anschließend manuell die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung zurückzusetzen.
+
+		azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+
+	[B] Verwenden von Azure PowerShell:
+
+	Schritt 1: [Installieren Sie die Azure PowerShell, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../powershell-install-configure.md), indem Sie die Azure AD-Methode verwenden.
+
+	Schritt 2: Wechseln Sie in den Ressourcen-Manager-Modus.
+
+		Switch-AzureMode -Name AzureResourceManager
+
+	Schritt 3: Führen Sie die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung wie im folgenden Beispiel zurückzusetzen.
+
+		Set-AzureVMExtension -ResourceGroupName "testRG" -VMName "testVM" -Location "West US" -Name "VMAccessForLinux" -Publisher "Microsoft.OSTCExtensions" -ExtensionType "VMAccessForLinux" -TypeHandlerVersion "1.2" -SettingString "{}" -ProtectedSettingString '{"reset_ssh":true}'
+
+2. Starten Sie den virtuellen Linux-Computer über das Portal neu. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer** > Ihr virtueller Windows-Computer > **Neustart**.
+
+	![V2 neu starten](./media/virtual-machines-troubleshoot-ssh-connections/Portal-SSH-Restart-V2-Windows.png)
+
+3. Setzen Sie Ihr Kennwort bzw. den SSH-Schlüssel für den virtuellen Linux-Computer in der Befehlszeile zurück. Sie können auch wie im folgenden Beispiel einen neuen Benutzernamen bzw. ein Kennwort mit sudo-Berechtigung erstellen.
+
+	[A] Verwenden der Azure-Befehlszeilenschnittstelle:
+
+	Installieren und konfigurieren Sie die Azure-Befehlszeilenschnittstelle wie oben erwähnt. Wechseln Sie in den Ressourcen-Manager-Modus, und führen Sie die Erweiterung mit einem der folgenden Verfahren aus.
+
+	(i) Führen Sie den Befehl `vm reset-access` aus, um die SSH-Anmeldeinformationen festzulegen.
+
+		azure vm reset-access TestRgV2 TestVmV2 -u NewUser -p NewPassword
+
+	Weitere Informationen hierzu erhalten Sie, indem Sie in der Befehlszeile `azure vm reset-access -h` eingeben.
+
+	(ii) Alternativ dazu können Sie eine Datei mit dem Namen „PrivateConf.json“ und dem folgenden Inhalt erstellen.
+
+		{
+			"username":"NewUsername", "password":"NewPassword", "expiration":"2016-01-01", "ssh_key":"", "reset_ssh":false, "remove_user":""
+		}
+
+	Führen Sie anschließend die Linux-Erweiterung mithilfe der oben angegebenen Datei aus.
+
+		$azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+
+	Beachten Sie, dass Sie Schritte wie unter [Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md) ausführen können, um andere Varianten auszuprobieren. Denken Sie hierbei daran, die Anweisungen der Azure-Befehlszeilenschnittstelle für den Ressourcen-Manager-Modus zu ändern.
+
+	[B] Verwenden von Azure PowerShell:
+
+	Installieren und konfigurieren Sie Azure PowerShell wie oben erwähnt. Wechseln Sie in den Ressourcen-Manager-Modus, und führen Sie die Erweiterung dann wie folgt aus.
+
+		$RGName = 'testRG'
+		$VmName = 'testVM'
+		$Location = 'West US'
+
+		$ExtensionName = 'VMAccessForLinux'
+		$Publisher = 'Microsoft.OSTCExtensions'
+		$Version = '1.2'
+
+		$PublicConf = '{}'
+		$PrivateConf = '{"username":"NewUsername", "password":"NewPassword", "ssh_key":"", "reset_ssh":false, "remove_user":""}'
+
+		Set-AzureVMExtension -ResourceGroupName $RGName -VMName $VmName -Location $Location -Name $ExtensionName -Publisher $Publisher -ExtensionType $ExtensionName -TypeHandlerVersion $Version -SettingString $PublicConf -ProtectedSettingString $PrivateConf
+
+	Achten Sie darauf, die Werte von $RGName, $VmName, $Location und die SSH-Anmeldeinformationen durch die jeweiligen Werte für Ihre Installation zu ersetzen.
 
 ## Detaillierte Problembehandlung
 
@@ -63,7 +158,7 @@ Mit den Informationen in den folgenden Abschnitten können Sie die Fehlerquelle 
 
 Überprüfen Sie zunächst den Status des virtuellen Computers im Azure-Portal.
 
-Im [Azure-Verwaltungsportal](https://manage.windowsazure.com):
+Im [Azure-Verwaltungsportal](https://manage.windowsazure.com) für virtuelle Computer im klassischen Bereitstellungsmodell:
 
 1. Klicken Sie auf **Virtuelle Computer** > *VM-Name*.
 2. Klicken Sie auf das **Dashboard** des virtuellen Computers, um den Status zu überprüfen.
@@ -72,8 +167,8 @@ Im [Azure-Verwaltungsportal](https://manage.windowsazure.com):
 
 Im [Azure-Vorschauportal](https://portal.azure.com):
 
-1. Klicken Sie auf **Durchsuchen** > **Virtuelle Computer** > *VM-Name*. Klicken Sie für einen virtuellen Computer, der im Azure-Ressourcen-Manager erstellt wurde, auf **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name*. Im Statusbereich für den virtuellen Computer wird **Wird ausgeführt** angezeigt. Führen Sie einen Bildlauf nach unten durch, um aktuelle Aktivitäten für Compute-, Speicher- und Netzwerkressourcen anzuzeigen.
-2. Klicken Sie auf **Einstellungen**, um Endpunkte, IP-Adressen und andere Einstellungen zu überprüfen.
+1. Klicken Sie für einen virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde, auf **Durchsuchen** > **Virtuelle Computer (klassisch)** > *VM-Name*. Klicken Sie für einen virtuellen Computer, der mit dem Ressourcen-Manager erstellt wurde, auf **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name*. Im Statusbereich für den virtuellen Computer wird **Wird ausgeführt** angezeigt. Führen Sie einen Bildlauf nach unten durch, um aktuelle Aktivitäten für Compute-, Speicher- und Netzwerkressourcen anzuzeigen.
+2. Klicken Sie auf **Einstellungen**, um Endpunkte, IP-Adressen und andere Einstellungen zu überprüfen. Um Endpunkte in virtuellen Computern zu identifizieren, die mit dem Ressourcen-Manager erstellt wurden, überprüfen Sie Folgendes: ob eine [Netzwerksicherheitsgruppe](../traffic-manager/virtual-networks-nsg.md) definiert ist, die darauf angewendeten Regeln und das Vorhandensein eines Verweises darauf im Subnetz.
 
 Analysieren Sie zum Überprüfen der Netzwerkverbindung die konfigurierten Endpunkte, und testen Sie, ob der virtuelle Computer über ein anderes Protokoll (z. B. HTTP oder über einen anderen Dienst) erreichbar ist.
 
@@ -130,20 +225,20 @@ Korrigieren Sie in Zusammenarbeit mit Ihrem Netzwerkadministrator die Einstellun
 
 #### Quelle 3: Clouddienst-Endpunkt und ACL
 
+> [AZURE.NOTE]Diese Quelle gilt nur für virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt werden. Für virtuelle Computer, die mit dem Ressourcen-Manager erstellt wurden, fahren Sie mit [Quelle 4: Netzwerksicherheitsgruppen](#nsg) fort.
+
 Überprüfen Sie bei virtuellen Computern, die mit dem [klassischen Bereitstellungsmodell](../resource-manager-deployment-model.md) erstellt wurden, ob ein anderer virtueller Azure-Computer im gleichen virtuellen Netzwerk eine SSH-Verbindung mit Ihrem virtuellen Computer herstellen kann, um den Clouddienst-Endpunkt und die ACL als Fehlerquelle auszuschließen.
 
 ![](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot4.png)
-
-> [AZURE.NOTE]Für virtuelle Computer, die mit dem Ressourcen-Manager erstellt wurden, fahren Sie mit [Quelle 4: Netzwerksicherheitsgruppen](#nsg) fort.
 
 Ist kein anderer virtueller Computer im gleichen virtuellen Netzwerk vorhanden, können Sie problemlos einen neuen virtuellen Azure-Computer erstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers unter Linux in Azure](virtual-machines-linux-tutorial.md). Löschen Sie den zusätzlichen virtuellen Computer, wenn Sie Ihre Tests abgeschlossen haben.
 
 Wenn Sie eine SSH-Verbindung mit einem virtuellen Computer im gleichen virtuellen Netzwerk herstellen können, überprüfen Sie Folgendes:
 
 - Die Endpunktkonfiguration für den SSH-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts sollte dem TCP-Port entsprechen, an dem der SSH-Dienst auf dem virtuellen Computer lauscht (Standardeinstellung ist Port 22). Überprüfen Sie bei virtuellen Computern, die im Ressourcen-Manager-Bereitstellungsmodell mithilfe von Vorlagen erstellt wurden, die SSH-TCP-Portnummer im Azure-Vorschauportal unter **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name* > **Einstellungen** > **Endpunkte**.
-- Die ACL für den SSH-Datenverkehrsendpunkt auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können dazu führen, dass eingehender SSH-Datenverkehr den Endpunkt nicht erreicht. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](../virtual-network/virtual-networks-acl.md).
+- Die ACL für den SSH-Datenverkehrsendpunkt auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können dazu führen, dass eingehender SSH-Datenverkehr den Endpunkt nicht erreicht. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](../virtual-network/virtual-networks-acl.md)
 
-Entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt mit dem SSH-Namen und dem TCP-Port 22 als öffentliche und private Portnummer, um den Endpunkt als Problemquelle auszuschließen. Weitere Informationen finden Sie unter [Festlegen von Endpunkten auf einem virtuellen Computer in Azure](virtual-machines-set-up-endpoints.md).
+Entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt mit dem **SSH**-Namen und dem TCP-Port 22 als öffentliche und private Portnummer, um den Endpunkt als Problemquelle auszuschließen. Weitere Informationen finden Sie unter [Festlegen von Endpunkten auf einem virtuellen Computer in Azure](virtual-machines-set-up-endpoints.md).
 
 <a id="nsg"></a>
 #### Quelle 4: Netzwerksicherheitsgruppen
@@ -168,10 +263,10 @@ Versuchen Sie erneut, die Verbindung von Ihrem Computer aus herzustellen. Wenn d
 
 ## Zusätzliche Ressourcen
 
-[Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
+Für virtuelle Computer im klassischen Bereitstellungsmodell: [Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
 
 [Problembehandlung bei Windows-Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md)
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

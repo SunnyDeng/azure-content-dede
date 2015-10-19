@@ -64,7 +64,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 
 ## Berichte in den verschiedenen Editionen
 
-|	Bericht |	Kostenlos |	Basic |	Premium |
+|	Bericht |	Free |	Basic |	Premium |
 |	------												|	----	|	-----	|	--------	|
 |	**Berichte zu anomalen Aktivitäten**
 |	Anmeldungen aus unbekannten Quellen |	✓ |	✓ |	✓ |
@@ -256,6 +256,7 @@ Wenn Sie vermuten, dass ein Benutzerkonto ggf. gefährdet ist, oder von einer ve
 	- Im Azure-Verwaltungsportal werden bis zu 1000 Ereignisse angezeigt.
 5. Falls zutreffend, klicken Sie auf **Herunterladen**, um den Bericht in einer komprimierten Datei im CSV-Format herunterzuladen, um ihn offline anzeigen oder zu archivieren.
 	- In der heruntergeladenen Datei werden bis zu 75.000 Ereignisse aufgenommen.
+	- Informationen zu weiteren Daten finden Sie im Artikel zur [Azure AD Reporting-API](active-directory-reporting-api-getting-started.md).
 
 ## Ignorieren von Ereignissen
 
@@ -270,4 +271,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

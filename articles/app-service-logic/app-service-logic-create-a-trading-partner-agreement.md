@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="07/01/2015"
+   ms.date="10/01/2015"
    ms.author="rajram"/>
 
 
@@ -63,10 +63,10 @@ Wie bereits erwähnt, erfordern AS2-, X12- und EDIFACT-API-Apps eine TPM-API-App
 So erstellen Sie Handelspartnervereinbarungen:
 
 1. Erstellen Sie eine Instanz des **BizTalk-Handelspartnerverwaltungs**-Connectors. Hierfür ist eine leere SQL-Datenbank erforderlich. Vergewissern Sie sich, bevor Sie beginnen, dass eine leere Datenbank verfügbar und einsatzbereit ist.
-2. Laden Sie Schemas und Zertifikate entsprechend den Anforderungen der Vereinbarungen hoch. Dies erfolgt durch Durchsuchen der TPM-Instanz und ein schrittweises Durchlaufen des Teils "Schemas" und/oder "Zertifikate".
+2. Laden Sie Schemas und Zertifikate entsprechend den Anforderungen der Vereinbarungen hoch. Hierzu durchsuchen Sie die erstellte TPM-Instanz und durchlaufen schrittweise den Teil "Schemas" und/oder "Zertifikate".
 3. Navigieren Sie zur erstellten TPM-Instanz und hier zum Teil **Partner**.
 4. Erstellen Sie Partner wie gewünscht. Bearbeiten Sie auch die Profile den Anforderungen entsprechend, und fügen Sie die erforderlichen Identitäten hinzu.
-5. Erstellen Sie nun Vereinbarungen im Teil **Vereinbarungen**. Während der Vereinbarungserstellung ist einer der ersten Schritte das Auswählen des Protokolls. Basierend auf dem gewählten Protokoll erfolgt die restliche Vereinbarungskonfiguration.
+5. Erstellen Sie nun Vereinbarungen im Teil **Vereinbarungen**. Beim Erstellen einer Vereinbarung müssen Sie das zu verwendende Protokoll auswählen. Die restlichen Konfigurationsoptionen basieren auf dem Protokoll, das Sie ausgewählt haben.
 
 ![][2]
 
@@ -78,4 +78,4 @@ So erstellen Sie Handelspartnervereinbarungen:
 [3]: ./media/app-service-logic-create-a-trading-partner-agreement/X12AgreementCreation.jpg
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/29/2015"
+	ms.date="10/05/2015"
 	ms.author="juliako"/>
 
 
@@ -487,14 +487,17 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	
 
 
+##Nächste Schritte
 
-##Media Services-Lernpfade
+###Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
- 
+### Suchen Sie etwas anderes?
 
-<!---HONumber=Oct15_HO1-->
+Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
+
+<!---HONumber=Oct15_HO2-->

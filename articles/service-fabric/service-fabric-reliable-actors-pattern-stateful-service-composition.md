@@ -4,10 +4,9 @@
    description="Entwurfsmuster in Service Fabric Reliable Actors, das statusbehaftete Actors zum Verwalten des Status zwischen Dienstaufrufen sowie zum Zwischenspeichern bisheriger Dienstergebnisse verwendet. Der Status kann persistent oder transient sein."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
-
 
 <tags
    ms.service="service-fabric"
@@ -16,8 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/05/2015"
-   ms.author="claudioc"/>
-
+   ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Komposition zustandsbehafteter Dienste
 Entwickler haben die letzten eineinhalb Jahrzehnte damit verbracht, zustandsfreie N-Tier-Dienste im Unternehmen erstellen. Sie haben Dienste auf Datenbanken erstellt, sie haben höherwertige Dienste über anderen Diensten erstellt, und sie haben Orchestrierungs-Module und nachrichtenorientierte Middleware erstellt, um diese Dienste zu koordinieren. Mit der steigenden Arbeitsauslastung von Benutzern, gleichgültig ob ein höheres Maß an Interaktivität oder Skalierung gefordert wurde, begann die statusfreie serviceorientierte Architektur, ihre Schwachstellen zu zeigen.
@@ -93,4 +91,4 @@ Nachteile von "zustandslosen Diensten" sehen wir bei der Erstellung von skalierb
 [2]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-3.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

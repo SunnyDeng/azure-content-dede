@@ -3,7 +3,7 @@
    description="Service Fabric Reliable Actors ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/08/2015"
-   ms.author="claudioc"/>
+   ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Verteilte Berechnung
 Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Service Fabric Reliable Actors innerhalb verblüffend kurzer Zeit durchführte – eine Monte-Carlo-Simulation für die Risikoberechnung, um genau zu sein.
@@ -206,4 +206,4 @@ Es soll hier keineswegs behauptet werden, Azure Service Fabric sei ein Drop-in R
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-computation/distributed-computation-1.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Verwenden von ";docker-machine"; mit Azure"
-   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit ";docker-machine"; auf Ubuntu."
+   pageTitle="Verwenden von ";docker-machine"; mit Azure | Microsoft Azure"
+   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit ";docker-machine"; auf Ubuntu unter Verwendung des klassischen Bereitstellungsmodells."
    services="virtual-machines"
    documentationCenter="virtual-machines"
    authors="squillace"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"
+   tags="azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
@@ -72,7 +73,7 @@ Wenn Sie Erfahrung mit Linux-Distributionen haben, stehen diese Dateien möglich
 
 3. Klicken Sie im selben Fensterbereich **Einstellungen** im Portal auf **Abonnements**, und notieren Sie die Abonnement-ID zur Erstellung Ihrer VM, da Sie diese im nächsten Schritt benötigen. (Sie können die Abonnement-ID auch über die Befehlszeile mit dem Azure-CLI-Befehl `azure account list` ermitteln, der die Abonnement-ID für jedes Abonnement in Ihrem Konto anzeigt.)
 
-4. Erstellen Sie mit dem Befehl **docker-machine create** eine Docker-Host-VM auf Azure. Für den Befehl ist die Abonnement-ID erforderlich, die Sie im vorherigen Schritt notiert haben, sowie der Pfad zur **PEM**-Datei, die Sie in Schritt 1 erstellt haben. In diesem Thema wird "machine-name" als Azure-Cloud-Dienst (und Name für Ihre VM) verwendet, aber Sie sollten diesen durch einen Namen Ihrer Wahl ersetzen und daran denken, Ihren Cloud-Dienstnamen in allen weiteren Schritten zu verwenden, die den VM-Namen erfordern. (Denken Sie daran, dass es sich hier um ein Beispiel handelt. Wir verwenden den vollständigen binären Namen und keinen symbolischen Link für **docker-machine**.)
+4. Erstellen Sie mit dem Befehl **docker-machine create** eine Docker-Host-VM auf Azure. Für den Befehl ist die Abonnement-ID erforderlich, die Sie im vorherigen Schritt notiert haben, sowie der Pfad zur **PEM**-Datei, die Sie in Schritt 1 erstellt haben. In diesem Thema wird "machine-name" als Azure-Clouddienst (und Name für Ihre VM) verwendet, aber Sie sollten diesen durch einen Namen Ihrer Wahl ersetzen und daran denken, Ihren Clouddienstnamen in allen weiteren Schritten zu verwenden, die den VM-Namen erfordern. (Denken Sie daran, dass es sich hier um ein Beispiel handelt. Wir verwenden den vollständigen binären Namen und keinen symbolischen Link für **docker-machine**.)
 
 		docker-machine_linux-amd64 create \
 	    -d azure \
@@ -211,6 +212,5 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 1 to another azure.microsoft.com documentation topic]: virtual-machines-windows-tutorial.md
 [Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
- 
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

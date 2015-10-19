@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.author="heidist"
-	ms.date="07/24/2015" />
+	ms.date="10/01/2015" />
 
 # Bewertungsprofile (Azure Search REST-API Version 2015-02-28-Preview)
 
@@ -301,7 +301,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 </tr><tr>
 <td>magnitude | constantBoostBeyondRange</td>	<td>Gültige Werte sind "true" oder "false" (Standard). Bei "true" wird die vollständige Verstärkung weiterhin auf Dokumente angewendet, die einen Wert für das Zielfeld aufweisen, der über dem oberen Ende des Bereichs liegt. Bei "false" wird die Verstärkung dieser Funktion nicht auf Dokumente angewendet, die einen Wert für das Zielfeld aufweisen, der außerhalb des Bereichs liegt.</td>
 </tr><tr>
-<td>freshness</td>	<td>Die Bewertungsfunktion für die Aktualität wird dazu verwendet, um Rangfolgenbewertungen für Elemente auf Basis von Werten in DateTimeOffset-Feldern zu ändern. Ein Element mit einem aktuelleren Datum kann z.&#160;B. höher als ältere Elemente eingestuft werden.  Im aktuellen Service Release wird ein Ende des Bereichs auf die aktuelle Zeit festgelegt. Die Rate, mit der die Verstärkung von einem maximalen und minimalen Bereich wechselt, wird durch die Interpolation bestimmt, die auf das Bewertungsprofil angewendet wird (siehe folgende Abbildung). Wählen Sie zum Umkehren des angewendeten Verstärkungsfaktors einen Verstärkungsfaktor, der kleiner ist als 1.</td>
+<td>freshness</td>	<td>Die Bewertungsfunktion für die Aktualität wird dazu verwendet, um Rangfolgenbewertungen für Elemente auf Basis von Werten in DateTimeOffset-Feldern zu ändern. Ein Element mit einem aktuelleren Datum kann z.&#160;B. höher als ältere Elemente eingestuft werden.  (Beachten Sie, dass z. B. Kalenderereignisse mit in der Zukunft liegenden Daten so eingestuft werden können, dass Ereignisse mit geringerem Abstand zur Gegenwart höher als Ereignisse eingestuft werden, die weiter in der Zukunft liegen.) Im aktuellen Service Release wird ein Ende des Bereichs auf die aktuelle Zeit festgelegt. Das andere Ende ist ein Zeitpunkt in der Vergangenheit, der auf "boostingDuration" basiert. Um einen Bereich von Zeitpunkten in der Zukunft zu verstärken, verwenden Sie einen negativen Wert für "boostingDuration". Die Rate, mit der die Verstärkung von einem maximalen und minimalen Bereich wechselt, wird durch die Interpolation bestimmt, die auf das Bewertungsprofil angewendet wird (siehe folgende Abbildung). Wählen Sie zum Umkehren des angewendeten Verstärkungsfaktors einen Verstärkungsfaktor, der kleiner ist als 1.</td>
 </tr><tr>
 <td>freshness | boostingDuration</td>	<td>Legt eine Ablaufdauer fest, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Informationen zur Syntax und Beispiele finden Sie im folgenden Abschnitt unter [Festlegen von „boostingDuration“](#bkmk_boostdur).</td>
 </tr><tr>
@@ -339,9 +339,9 @@ Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewer
 <a name="bkmk_boostdur"></a>
 ##Festlegen von boostingDuration
 
-`boostingDuration` ist ein Attribut der Funktion "freshness". Sie können damit eine Ablaufdauer festlegen, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Um beispielsweise eine Produktlinie oder Marke für einen zehntägigen Werbezeitraum zu verstärken, können Sie den zehntägigen Zeitraum für diese Dokumente z. B. als "P10D" angeben.
+`boostingDuration` ist ein Attribut der Funktion "freshness". Sie können damit eine Ablaufdauer festlegen, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Um beispielsweise eine Produktlinie oder Marke für einen zehntägigen Werbezeitraum zu verstärken, können Sie den zehntägigen Zeitraum für diese Dokumente z. B. als "P10D" angeben. Oder geben Sie "-P7D" an, um bevorstehende Ereignisse in der nächsten Woche zu verstärken.
 
-`boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts). Das Muster hierfür lautet: P[nD][T[nH][nM][nS]].
+`boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts). Das Muster hierfür lautet: "P(nD)(T(nH)(nM)(nS))".
 
 Die folgende Tabelle enthält einige Beispiele.
 
@@ -371,4 +371,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 <!--Image references-->
 [1]: ./media/search-api-scoring-profiles-2015-02-28-Preview/scoring_interpolations.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

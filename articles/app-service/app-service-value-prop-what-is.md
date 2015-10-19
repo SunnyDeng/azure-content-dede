@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.date="10/02/2015" 
 	ms.author="omark"/>
 
 # Was ist Azure App Service?
@@ -43,20 +43,20 @@ App Service ermöglicht Ihnen das Erstellen der folgenden App-Typen über eine e
 
 - [**Web-Apps**](../app-service-web-overview) – Schnelles Erstellen und Bereitstellen von unternehmenskritischen Web-Apps, die in Abstimmung auf Ihre Geschäftsanforderungen skaliert werden können.
 - [**Mobile Apps**](../app-service-mobile-value-prop-preview) – Unterstützen Sie Mitarbeiter, Partner und Kunden jederzeit auf beliebigen Geräten.
-- [**API-Apps**](../app-service-api-apps-why-best-platform) – Einfaches Erstellen und Nutzen von Cloud-APIs und Teilnahme an der API-Ökonomie.
+- [**API-Apps**](../app-service-api-apps-why-best-platform) – Einfaches Erstellen und Nutzen von Cloud-APIs.
 - [**Logik-Apps**](../app-service-logic-what-are-logic-apps) – Automatisieren Sie Zugriff und Nutzung cloudübergreifend, ohne hierzu Code schreiben zu müssen.
 
 Als einzelner integrierter Dienst vereinfacht App Service das Kombinieren der zwei App-Typen in einer einzigen Lösung, sodass Sie auf einfache Weise und mit demselben Back-End Apps für Webclients und mobile Clients erstellen und diese in lokale System sowie gängige Dienste integrieren können – darunter z. B. Office 365 und salesforce.com.
 
 ### App Service-Pläne
-App Service-Pläne repräsentieren einen Satz an Funktionen und Kapazität, den Sie App-übergreifend nutzen können. App Service-Pläne unterstützen verschiedene Preisstufen (z. B. Free, Shared, Basic und Standard), wobei jede Preisstufe eigene Funktionen bietet. Sie können den App Service-Plan für eine App jederzeit und ohne Ausfallzeiten ändern. [Weitere Informationen zu App Service-Plänen](../web-sites-web-hosting-plan-overview.md).
+App Service-Pläne repräsentieren einen Satz an Funktionen und Kapazität, den Sie App-übergreifend nutzen können. App Service-Pläne unterstützen verschiedene Tarife (z. B. Free, Shared, Basic, Standard und Premium), wobei jeder Tarif eigene Funktionen bietet. Sie können den App Service-Plan für eine App jederzeit und ohne Ausfallzeiten ändern. [Weitere Informationen zu App Service-Plänen](../web-sites-web-hosting-plan-overview.md).
 
 ##Erste Schritte mit App Service
 Möchten Sie es ausprobieren? Sie können gleich loslegen.
 
 Mit Azure App Service brauchen Sie dazu nur eine Sprache auszuwählen!
 
-[Erstellen Sie eine neue Web-App](http://go.microsoft.com/fwlink/?LinkId=523751) – sofort und kostenlos. Keine Kreditkarte erforderlich, keine Verpflichtungen, kein Ärger.
+[Erstellen Sie eine neue App](http://go.microsoft.com/fwlink/?LinkId=523751) – sofort und kostenlos. Keine Kreditkarte erforderlich, keine Verpflichtungen, kein Ärger.
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

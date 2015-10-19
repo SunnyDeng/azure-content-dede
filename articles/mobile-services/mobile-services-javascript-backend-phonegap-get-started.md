@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Mobile Services für PhoneGap/Cordova-Apps"
+	pageTitle="Erste Schritte mit Azure Mobile Services für PhoneGap/Cordova-Apps | Microsoft Azure"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die PhoneGap-Entwicklung für iOS, Android und Windows Phone."
 	services="mobile-services"
 	documentationCenter=""
@@ -12,13 +12,15 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-phonegap"
 	ms.devlang="multiple"
-	ms.topic="article" 
-	ms.date="07/21/2015"
+	ms.topic="get-started-article" 
+	ms.date="10/05/2015"
 	ms.author="ggailey777"/>
 
 # Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
 In diesem Lernprogramm erfahren Sie, wie Sie einen cloudbasierten Backend-Dienst mithilfe von Azure Mobile Services zu einer App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert.
 
@@ -151,9 +153,13 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-* [Hinzufügen von Authentifizierung zur App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* **[Hinzufügen von Authentifizierung zur App]** Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.  
 
-* [Hinzufügen von Pushbenachrichtigungen zur App](https://msdn.microsoft.com/magazine/dn879353.aspx) <br/>Erfahren Sie, wie Sie die Registrierung für Pushbenachrichtigungen durchführen und wie Sie Pushbenachrichtigungen an Ihre App senden.
+* **[Hinzufügen von Pushbenachrichtigungen zur App](https://msdn.microsoft.com/magazine/dn879353.aspx)** Erfahren Sie, wie Sie die Registrierung für Pushbenachrichtigungen durchführen und wie Sie Pushbenachrichtigungen an Ihre App senden.
+
+* **[Mobile Services HTML/JavaScript: Konzeptionelle Referenz](mobile-services-html-how-to-use-client-library.md)** Erfahren Sie mehr über die Verwendung der JavaScript-Clientbibliothek für den Zugriff auf Daten, das Aufrufen benutzerdefinierter APIs und das Ausführen der Authentifizierung.
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Images. -->
 [0]: ./media/mobile-services-javascript-backend-phonegap-get-started/portal-screenshot1.png
@@ -163,7 +169,6 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-[Add Mobile Services to an existing app]: mobile-services-html-get-started-data.md
 [Hinzufügen von Authentifizierung zur App]: mobile-services-html-get-started-users.md
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Management Portal]: https://manage.windowsazure.com/
@@ -171,4 +176,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

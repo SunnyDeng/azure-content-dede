@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="10/05/2015"
 	ms.author="josephd"/>
 
 
@@ -58,7 +58,7 @@ Mit virtuellen Azure-Computern erhalten Entwickler die Flexibilität, ihre bevor
 
 ## Bereitstellung
 
-Die Abbildbibliothek in Azure enthält eine Liste der verfügbaren vorkonfigurierten virtuellen Computer. Benutzer können ISO/VHDs von SharePoint Server, SQL Server, Windows Server und anderen in der Abbildbibliothek veröffentlichen. Um die Erstellung von virtuellen Computern zu erleichtern, werden Basisimages angelegt und in der Bibliothek veröffentlicht. Autorisierte Benutzer können anhand dieser Images den gewünschten virtuellen Computer generieren. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers mit Windows im Azure-Vorschauportal](virtual-machines-windows-tutorial.md). Abbildung 1 zeigt die grundlegenden Schritte zum Erstellen eines virtuellen Computers mit dem Azure-Portal.
+Die Abbildbibliothek in Azure enthält eine Liste der verfügbaren vorkonfigurierten virtuellen Computer. Benutzer können ISO/VHDs von SharePoint Server, SQL Server, Windows Server und anderen in der Abbildbibliothek veröffentlichen. Um die Erstellung von virtuellen Computern zu erleichtern, werden Basisimages angelegt und in der Bibliothek veröffentlicht. Autorisierte Benutzer können anhand dieser Images den gewünschten virtuellen Computer generieren. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers mit Windows im Azure-Portal](virtual-machines-windows-tutorial-classic-portal.md). Abbildung 1 zeigt die grundlegenden Schritte zum Erstellen eines virtuellen Computers mit dem Azure-Portal.
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
 
@@ -86,7 +86,7 @@ Sie können SharePoint 2010 auf Azure mit dem klassischen Bereitstelungsmodell b
 	- Geben Sie im Feld **Neues Kennwort** ein sicheres Kennwort ein.
 	- Geben Sie im Feld **Bestätigen** das Kennwort erneut ein, und klicken Sie dann auf den Pfeil nach rechts.
 5. Das zweite Dialogfeld **Konfiguration des virtuellen Computers** wird angezeigt. Geben Sie die folgenden Informationen ein:
-	- Wählen Sie unter **Clouddienst** die Option **Einen neuen Cloud-Dienst erstellen** aus. Geben Sie den DNS-Namen eines Clouddienstes an, oder wählen Sie einen vorhandenen Clouddienst aus.
+	- Wählen Sie unter **Clouddienst** die Option **Einen neuen Clouddienst erstellen** aus. Geben Sie den DNS-Namen eines Clouddienstes an, oder wählen Sie einen vorhandenen Clouddienst aus.
 	- Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** die Region aus, in der das virtuelle Image gehostet werden soll.
 	- Klicken Sie unter **Speicherkonto** auf die Option **Ein automatisch generiertes Speicherkonto verwenden** oder auf den Namen eines vorhandenen Speicherkontos. Es wird nur ein Speicherkonto pro Region automatisch erstellt. Alle weiteren virtuellen Computer, die mit dieser Einstellung erstellt werden, befinden sich in diesem Speicherkonto. Es sind maximal 20 Speicherkonten möglich. Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos in Azure](virtual-machines-create-upload-vhd-windows-server.md#step-2-create-a-storage-account-in-azure).
 	- Wählen Sie im Feld **Verfügbarkeitsgruppe** die Option **(Keine)**, aus, und klicken Sie dann auf den Pfeil nach rechts.
@@ -144,7 +144,7 @@ Dieser Abschnitt behandelt einige führende Kundenszenarien für SharePoint-Bere
 
 Organisationen suchen nach agileren Möglichkeiten, um SharePoint-Anwendungen zu erstellen und SharePoint-Umgebungen für die Bereitstellung und den Test, sowohl vor Ort als auch ausgelagert, zu konfigurieren. Im Grunde möchten sie die Zeit für das Einrichten von SharePoint-Anwendungsentwicklungsprojekten verkürzen und Kosten durch Nutzung der Testumgebungen senken. Eine Organisation möchte beispielsweise einen bedarfsgesteuerten Auslastungstest auf SharePoint Server und Benutzerakzeptanztests (UAT) mit mehr gleichzeitigen Benutzern an unterschiedlichen geografischen Standorten durchführen. Zudem ist für viele Organisationen die Integration von lokalen/externen Teams ein zunehmend wichtiges Geschäftserfordernis.
 
-Dieses Szenario beschreibt, wie Organisationen vorkonfigurierte SharePoint-Farmen für Entwicklungs- und Testarbeitsauslastungen einsetzen können. Eine SharePoint-Bereitstellungstopologie unterscheidet sich nicht von einer lokalen virtualisierten Bereitstellung. Vorhandene IT-Fähigkeiten können 1:1 für eine Bereitstellung von virtuellen Azure-Computern eingesetzt werden, und zwar mit dem großen Vorteil einer fast vollständigen Kostenverschiebung von Investitionsaufwendungen zu operativen Aufwendungen. Es müssen dafür keine physischen Server angeschafft werden. Organisationen können Investitionskosten für Serverhardware vermeiden und größere Flexibilität erzielen, indem die Dauer für das Erstellen, Konfigurieren oder Erweitern einer SharePoint-Farm für eine Test- oder Entwicklungsumgebung erheblich reduziert wird. Die IT kann je nach Test- und Entwicklungsbedarf Kapazitäten dynamisch hinzufügen und entfernen. Zudem kann sich die IT mehr auf die Wertschöpfung durch SharePoint-Projekte konzentrieren als auf die Verwaltung der Infrastruktur.
+Dieses Szenario beschreibt, wie Organisationen vorkonfigurierte SharePoint-Farmen für Entwicklungs- und Testworkloads einsetzen können. Eine SharePoint-Bereitstellungstopologie unterscheidet sich nicht von einer lokalen virtualisierten Bereitstellung. Vorhandene IT-Fähigkeiten können 1:1 für eine Bereitstellung von virtuellen Azure-Computern eingesetzt werden, und zwar mit dem großen Vorteil einer fast vollständigen Kostenverschiebung von Investitionsaufwendungen zu operativen Aufwendungen. Es müssen dafür keine physischen Server angeschafft werden. Organisationen können Investitionskosten für Serverhardware vermeiden und größere Flexibilität erzielen, indem die Dauer für das Erstellen, Konfigurieren oder Erweitern einer SharePoint-Farm für eine Test- oder Entwicklungsumgebung erheblich reduziert wird. Die IT kann je nach Test- und Entwicklungsbedarf Kapazitäten dynamisch hinzufügen und entfernen. Zudem kann sich die IT mehr auf die Wertschöpfung durch SharePoint-Projekte konzentrieren als auf die Verwaltung der Infrastruktur.
 
 Um Auslastungstest-Computer vollständig zu nutzen, können Organisationen virtualisierte SharePoint-Entwicklungs- und -Testcomputer auf Azure mit Betriebssystemunterstützung für Windows Server 2008 R2 konfigurieren. Dies ermöglicht Entwicklungsteams, Anwendungen zu erstellen und zu testen und auf einfache Weise ohne Codeänderungen auf lokale oder Cloud-Produktionsumgebungen zu migrieren. Die gleichen Frameworks und Toolsets können lokal und in der Cloud verwendet werden, sodass verteilten Teams der Zugang zu derselben Umgebung ermöglicht wird. Benutzer können durch Herstellen einer direkten VPN-Verbindung auch auf lokale Daten und Anwendungen zugreifen.
 
@@ -156,7 +156,7 @@ Abbildung 3 zeigt eine SharePoint-Entwicklungs- und -Testumgebung auf einem vir
 
 Führen Sie die folgenden Schritte aus, um eine SharePoint-Entwicklungs- und -Testumgebung auf Azure zu implementieren:
 
-1. Bereitstellen: Stellen Sie zuerst mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem Standort und Azure bereit. (Da hier nicht Active Directory verwendet wird, ist ein VPN-Tunnel erforderlich.) Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md). Stellen Sie dann im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
+1. Bereitstellen: Stellen Sie zuerst mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem Standort und Azure bereit. (Da hier nicht Active Directory verwendet wird, ist ein VPN-Tunnel erforderlich.) Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md). Stellen Sie dann im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
 	- Sie können die lokalen virtuellen SharePoint-Entwicklungs- und -Testcomputer in Ihr Azure-Speicherkonto hochladen und über die Abbildbibliothek auf diese VMs verweisen, um die erforderliche Umgebung zu erstellen.
 	- Sie können das SQL Server 2012-Image anstelle des Windows Server 2008 R2 SP1-Image verwenden. Weitere Informationen finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure](virtual-machines-provision-sql-server.md).
 
@@ -209,7 +209,7 @@ Führen Sie die folgenden Schritte aus, um eine öffentliche SharePoint-Farm auf
 
 Business Intelligence (BI) ist unerlässlich, um wichtige Erkenntnisse zu gewinnen und schnelle, fundierte Entscheidungen zu treffen. Wenn Organisationen von einem lokalen Ansatz zur Bereitstellung von BI-Anwendungen in der Cloud übergehen, möchten sie keine Änderungen an der BI-Umgebung vornehmen. Berichte von SQL Server Analysis Services (SSAS) oder SQL Server Reporting Services (SSRS) sollen in einer sehr stabilen Umgebung mit hoher Verfügbarkeit gehostet werden, und dabei soll die komplette Kontrolle über die BI-Anwendung aufrechterhalten werden – und das alles mit geringem Zeit- und Kostenaufwand für die Wartung.
 
-Dieses Szenario beschreibt, wie Organisationen mit virtuellen Azure-Computern geschäftskritische BI-Anwendungen hosten können. Organisationen können SharePoint-Farmen auf virtuellen Azure-Computern bereitstellen und die BI-Komponenten des virtuellen Anwendungsservercomputers, wie SSRS oder Excel Services, horizontal hochskalieren. Durch die Skalierung ressourcenintensiver Komponenten in der Cloud können besondere Arbeitsauslastungen besser und einfacher unterstützt werden. SQL Server eignet sich gut für virtuelle Azure-Computer, weil SQL Server-Instanzen einfach von kleinen bis zu sehr großen Installationen skaliert werden können. Die dadurch erreichte Flexibilität ermöglicht Organisationen, BI-Instanzen auf Basis unmittelbarer Arbeitsauslastungsanforderungen dynamisch bereitzustellen (sie zu erweitern) bzw. die Bereitstellung zurückzunehmen (sie zu verkleinern).
+Dieses Szenario beschreibt, wie Organisationen mit virtuellen Azure-Computern geschäftskritische BI-Anwendungen hosten können. Organisationen können SharePoint-Farmen auf virtuellen Azure-Computern bereitstellen und die BI-Komponenten des virtuellen Anwendungsservercomputers, wie SSRS oder Excel Services, horizontal hochskalieren. Durch die Skalierung ressourcenintensiver Komponenten in der Cloud können besondere Workloads besser und einfacher unterstützt werden. SQL Server eignet sich gut für virtuelle Azure-Computer, weil SQL Server-Instanzen einfach von kleinen bis zu sehr großen Installationen skaliert werden können. Die dadurch erreichte Flexibilität ermöglicht Organisationen, BI-Instanzen auf Basis unmittelbarer Workloadanforderungen dynamisch bereitzustellen (sie zu erweitern) bzw. die Bereitstellung zurückzunehmen (sie zu verkleinern).
 
 Die Migration vorhandener BI-Anwendungen auf Azure ermöglicht eine bessere Skalierung. Dank der hohen Leistung von SQL Server Analysis Services (SSAS), SQL Server Reporting Services (SSRS) und SharePoint Server können Organisationen leistungsfähige BI- und Berichterstellungsanwendungen und Dashboards erstellen, die zentral hoch- und herunterskaliert werden können. Diese Anwendungen und Dashboards können zudem sicherer in lokale Daten und Anwendungen integriert werden. Azure sorgt für die Rechenzentrums-Compliance mit Unterstützung für ISO 27001. Weitere Informationen finden Sie unter [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/compliance/).
 
@@ -222,7 +222,7 @@ Um die Bereitstellung von BI-Komponenten horizontal hochzuskalieren, muss ein ne
 Führen Sie die folgenden Schritte aus, um eine BI-Umgebung auf Azure horizontal zu skalieren:
 
 1. Bereitstellung:
-	- Stellen Sie mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem lokalen Standort und Azure bereit. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick](http://msdn.microsoft.com/library/jj156007.aspx).
+	- Stellen Sie mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem lokalen Standort und Azure bereit. Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md).
 	- Stellen Sie im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Images aus der Abbildbibliothek bereit. Sie können BI-Workloadimages von SharePoint Server oder SQL Server in die Abbildbibliothek hochladen. Auf diese Weise kann jeder autorisierte Benutzer diese virtuellen BI-Komponentencomputer auswählen, um die horizontal hochskalierte Umgebung zu erstellen.
 2. Installation: 
 	- Wenn Ihre Organisation über keine vorgefertigten Images von SharePoint Server- oder SQL Server-BI-Komponenten verfügt, installieren Sie SharePoint Server und SQL Server mit einer Remotedesktopverbindung auf den virtuellen Computern.
@@ -261,7 +261,7 @@ Die folgenden Schritte zeigen, wie eine angepasste SharePoint-Farmumgebung aus v
 	- Konfigurieren Sie SQL Server auf dem virtuellen Computer. Weitere Informationen finden Sie unter [Installieren von SQL Server mit SysPrep](http://msdn.microsoft.com/library/ee210664.aspx).
 	- Verknüpfen Sie den virtuellen Computer mit der neu angelegten Active Directory-Domäne.
 3. Bereitstellen einer SharePoint-Farm mit mehreren Servern:
-	- Erstellen Sie ein virtuelles Netzwerk. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick](http://msdn.microsoft.com/library/jj156007.aspx).
+	- Erstellen Sie ein virtuelles Netzwerk. Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md).
 	- Wenn virtuelle SharePoint-Computer bereitgestellt werden, müssen Subnetze für SharePoint Server vorhanden sein, damit die DNS-Adressen in dem lokalen Active Directory während der Bereitstellung verfügbar sind.
 	- Verwenden Sie das Azure-Portal, um einen virtuellen Computer zu erstellen.
 	- Installieren Sie SharePoint Server auf diesem virtuellen Computer, und generieren Sie ein wiederverwendbares Image. Weitere Informationen zum Installieren von SharePoint Server finden Sie unter [Installieren von SharePoint Server 2010 mithilfe von Windows PowerShell](http://technet.microsoft.com/library/cc262839.aspx) oder [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
@@ -273,7 +273,7 @@ Die folgenden Schritte zeigen, wie eine angepasste SharePoint-Farmumgebung aus v
 
 ## Zusammenfassung
 
-Virtuelle Azure-Computer bieten ein vollständiges Kontinuum von SharePoint-Bereitstellungen. Azure Virtual Machines werden komplett unterstützt und ausgiebig getestet, um zusammen mit anderen Microsoft-Anwendungen eine optimale Leistung zu liefern. Daher können Organisationen SharePoint Server in Azure einfach konfigurieren und bereitstellen, entweder um eine Infrastruktur für eine neue SharePoint-Bereitstellung einzurichten oder um eine vorhandene zu erweitern. Wenn Geschäftsarbeitsauslastungen zunehmen, können Organisationen ihre SharePoint-Infrastruktur schnell erweitern. Ebenso lassen sich bei sinkender Arbeitsauslastung Ressourcen nach Bedarf verringern, wobei nur Kosten für tatsächlich genutzte Ressourcen anfallen. Virtuelle Azure-Computer bieten eine außergewöhnliche Infrastruktur für eine breite Palette von Geschäftsanforderungen, wie anhand der vier SharePoint-basierten Szenarien in diesem Artikel gezeigt wurde.
+Virtuelle Azure-Computer bieten ein vollständiges Kontinuum von SharePoint-Bereitstellungen. Azure Virtual Machines werden komplett unterstützt und ausgiebig getestet, um zusammen mit anderen Microsoft-Anwendungen eine optimale Leistung zu liefern. Daher können Organisationen SharePoint Server in Azure einfach konfigurieren und bereitstellen, entweder um eine Infrastruktur für eine neue SharePoint-Bereitstellung einzurichten oder um eine vorhandene zu erweitern. Wenn Geschäftsworkloads zunehmen, können Organisationen ihre SharePoint-Infrastruktur schnell erweitern. Ebenso lassen sich bei sinkendem Workload Ressourcen nach Bedarf verringern, wobei nur Kosten für tatsächlich genutzte Ressourcen anfallen. Virtuelle Azure-Computer bieten eine außergewöhnliche Infrastruktur für eine breite Palette von Geschäftsanforderungen, wie anhand der vier SharePoint-basierten Szenarien in diesem Artikel gezeigt wurde.
 
 Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf virtuellen Azure-Computern ist eine solide Planung, vor allem in Bezug auf die kritischen Farmarchitektur- und Bereitstellungsoptionen. Die in diesem Artikel erläuterten Erkenntnisse und bewährten Methoden können Sie als Entscheidungshilfe bei der Implementierung einer fundierten SharePoint-Bereitstellung heranziehen.
 
@@ -287,4 +287,4 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf vi
 
 [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (auf Englisch)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

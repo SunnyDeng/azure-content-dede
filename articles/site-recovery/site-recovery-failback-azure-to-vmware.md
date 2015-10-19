@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.topic="article"
    ms.workload="required" 
-   ms.date="08/05/2015"
+   ms.date="10/07/2015"
    ms.author="ruturajd@microsoft.com"/>
 
 # Schritte für ein Failback von Azure zu VMware
@@ -152,7 +152,7 @@ Aktivieren Sie den Parameter „disk.EnableUUID = TRUE“, um SCSI-IDs für die 
 
 HINWEIS: Vergewissern Sie sich vor dem Herunterladen und Installieren zusätzlicher Pakete, dass das System über eine Internetverbindung verfügt.
 
-\# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
+# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
 
 Der obige Befehl lädt die folgenden 15 Pakete aus dem CentOS 6.6-Repository herunter und installiert sie:
 
@@ -188,21 +188,21 @@ wget-1.12-5.el6\_6.1.x86\_64.rpm
 
 HINWEIS: Wenn der Quellcomputer für das Stamm- oder Startgerät das Reiser- oder das XFS-Dateisystem verwendet, müssen vor dem Schutz die folgenden Pakete heruntergeladen und auf dem Linux-Masterziel installiert werden:
 
-\# cd /usr/local
+# cd /usr/local
 
-\# wget
+# wget 
 <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
 
-\# wget
+# wget 
 <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm
+# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm 
 reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
-\# wget
+# wget 
 <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
+# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
 #### Anwenden benutzerdefinierter Konfigurationsänderungen
 
@@ -218,7 +218,7 @@ Gehen Sie zum Anwenden benutzerdefinierter Konfigurationsänderungen wie folgt v
 
 3. Führen Sie den folgenden Befehl aus, um die erforderliche Berechtigung zu erteilen:
 
-\# **chmod 755 ./ApplyCustomChanges.sh**
+# **chmod 755 ./ApplyCustomChanges.sh**
 
 4. Führen Sie den folgenden Befehl aus, um das Skript auszuführen:
 
@@ -558,4 +558,4 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
 
  
 
-<!------HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

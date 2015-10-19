@@ -93,17 +93,17 @@ PowerShell-Module enthalten Cmdlets, die Sie in Ihren Runbooks verwenden können
 6. Sie werden zu einem Bereich vom Typ **Benutzerdefinierte Bereitstellung** im Azure-Vorschauportal zurückgeleitet. Geben Sie an, ob Sie das Modul in einem **neuen oder vorhandenen Automation-Konto** installieren, und geben Sie den **Namen des Automation-Kontos** ein. Bei Verwendung eines vorhandenen Kontos wird der **Speicherort des Automation-Kontos** ignoriert. 
 7. Wählen Sie **Ressourcengruppe**, und geben Sie eine vorhandene Ressourcengruppe an, oder erstellen Sie eine neue Ressourcengruppe für das Modul.
 6. Wählen Sie **Rechtliche Bedingungen**, und klicken Sie auf **Kaufen**. Beachten Sie, dass trotz des Namens dieser Schaltfläche die Installation eines Moduls nicht tatsächlich in Rechnung gestellt wird.
-7. Klicken Sie zum Importieren des Moduls auf **Erstellen**.  
+7. Klicken Sie zum Importieren des Moduls auf **Erstellen**. Dies kann einige Minuten dauern, da jede Aktivität extrahiert werden muss.  
 8. Sie erhalten jeweils eine Benachrichtigung, wenn das Modul bereitgestellt wird und wenn die Bereitstellung abgeschlossen ist. 
 
 
 ## Anfordern eines Runbooks oder eines Moduls
 
-Senden Sie Anforderungen an [User Voice](http://feedback.azure.com/[forum](http://social.msdn.microsoft.com/Forums/windowsazure/de-DE/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc)s/246290-azure-automation). Wenn Sie Hilfe beim Schreiben eines Runbooks benötigen oder eine Frage zu PowerShell haben, stellen Sie eine entsprechende Anfrage in unserem [Forum](http://social.msdn.microsoft.com/Forums/windowsazure/de-DE/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
+Sie können Anforderungen an [User Voice](http://feedback.azure.com/forums/246290-azure-automation) senden. Wenn Sie Hilfe beim Schreiben eines Runbooks benötigen oder eine Frage zu PowerShell haben, stellen Sie eine entsprechende Anfrage in unserem [Forum](http://social.msdn.microsoft.com/Forums/windowsazure/de-DE/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
 
 ## Verwandte Artikel
 
 - [Erstellen und Importieren eines Runbooks in Azure Automation](automation-creating-importing-runbook.md)
 - [Grundlagen des PowerShell-Workflows](automation-powershell-workflow.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

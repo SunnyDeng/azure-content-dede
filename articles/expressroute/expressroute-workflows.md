@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="10/06/2015"
    ms.author="cherylmc"/>
 
 # Bereitstellungsworkflows für ExpressRoute-Verbindungen und Verbindungszustände
@@ -24,15 +24,15 @@ Die folgende Abbildung und die zugehörigen Schritte zeigen die Aufgaben, die Si
 
 1. Verwenden Sie PowerShell, um eine ExpressRoute-Verbindung zu konfigurieren. Ausführlichere Anweisungen finden Sie im Artikel [Erstellen von ExpressRoute-Verbindungen](expressroute-howto-circuit-classic.md).
 
-2. Fordern Sie Konnektivität vom Dienstanbieter an. Dieser Prozess variiert. Wenden Sie sich an Ihren Konnektivitätsanbieter, um weitere Details zum Anfordern der Konnektivität zu erhalten.
+2. Fordern Sie Konnektivität vom Service Provider an. Dieser Prozess variiert. Wenden Sie sich an Ihren Konnektivitätsanbieter, um weitere Details zum Anfordern der Konnektivität zu erhalten.
 
 3. Stellen Sie sicher, dass die Verbindung erfolgreich eingerichtet wurde, indem Sie den Bereitstellungszustand der ExpressRoute-Verbindung mithilfe von PowerShell überprüfen.
 
 4. Konfigurieren Sie Routingdomänen. Wenn Ihr Konnektivitätsanbieter Layer 3 für Sie verwaltet, konfiguriert er das Routing für Ihre Verbindung. Wenn Ihr Konnektivitätsanbieter nur Layer 2-Dienste anbietet, müssen Sie das Routing gemäß den Richtlinien auf den Seiten [Routinganforderungen](expressroute-routing.md) und [Routingkonfiguration](expressroute-howto-routing-classic.md) konfigurieren.
 
-	1. Privates Azure-Peering aktivieren – Sie müssen dieses Peering aktivieren, um eine Verbindung mit virtuellen Computern/Clouddiensten herzustellen, die in virtuellen Netzwerken bereitgestellt werden. 
-	2. Öffentliches Azure-Peering aktivieren – sie müssen das öffentliche Azure-Peering aktivieren, wenn Sie eine Verbindung mit Azure-Diensten herstellen möchten, die unter öffentlichen IP-Adressen gehostet werden. Dies ist eine Voraussetzung, damit auf Azure-Ressourcen zugegriffen werden kann, wenn Sie das Standardrouting für privates Azure-Peering aktiviert haben.
-	3. Microsoft-Peering aktivieren – Sie müssen das Microsoft-Peering aktivieren, um auf Office 365 und CRM-Onlinedienste zugreifen zu können. 
+	-  Privates Azure-Peering aktivieren – Sie müssen dieses Peering aktivieren, um eine Verbindung mit virtuellen Computern/Clouddiensten herzustellen, die in virtuellen Netzwerken bereitgestellt werden.
+	-  Öffentliches Azure-Peering aktivieren – sie müssen das öffentliche Azure-Peering aktivieren, wenn Sie eine Verbindung mit Azure-Diensten herstellen möchten, die unter öffentlichen IP-Adressen gehostet werden. Dies ist eine Voraussetzung, damit auf Azure-Ressourcen zugegriffen werden kann, wenn Sie das Standardrouting für privates Azure-Peering aktiviert haben.
+	-  Microsoft-Peering aktivieren – Sie müssen das Microsoft-Peering aktivieren, um auf Office 365 und CRM-Onlinedienste zugreifen zu können. 
 	
 	>[AZURE.IMPORTANT]Wenn Sie das Microsoft-Peering aktivieren, stellen Sie sicher, dass das öffentliche Azure-Peering ebenfalls aktiviert ist, damit auf Azure AD zugegriffen werden kann. Verwenden Sie für die Verbindung mit Microsoft unbedingt einen anderen Proxy/Edge als für das Internet. Wenn Sie denselben Edge für ExpressRoute und das Internet verwenden, führt das zu asymmetrischem Routing und Konnektivitätsausfällen für Ihr Netzwerk.
 
@@ -46,7 +46,7 @@ Die folgende Abbildung und die zugehörigen Schritte zeigen die Aufgaben, die Si
 
 Jede ExpressRoute-Verbindung hat zwei Zustände:
 
-- Bereitstellungszustand des Dienstanbieters
+- Bereitstellungszustand des Service Providers
 - Status
 
 Der Status gibt den Bereitstellungszustand von Microsoft an. Diese Eigenschaft kann einen der folgenden Zustände aufweisen: *Enabled*, *Enabling* oder *Disabling*. Die ExpressRoute-Verbindung muss sich im aktivierten Zustand befinden, damit Sie sie verwenden können.
@@ -91,9 +91,9 @@ Die ExpressRoute-Verbindung weist den unten beschriebenen Zustand auf, sobald Si
 
 Sie müssen sich an Ihren Konnektivitätsanbieter wenden, wenn Sie die Bereitstellung der ExpressRoute-Verbindung aufheben möchten. **Wichtig:** Microsoft erhebt weiterhin Gebühren für die Verbindung, bis Sie mithilfe des PowerShell-Cmdlets die Bereitstellung der Verbindung aufheben.
 
-#### Die Aufhebung der Bereitstellung wird aufseiten des Dienstanbieters initiiert:
+#### Die Aufhebung der Bereitstellung wird aufseiten des Service Providers initiiert:
 
-Wenn Sie den Dienstanbieter aufgefordert haben, zuerst die Bereitstellung der ExpressRoute-Verbindung aufzuheben, weist die Verbindung den unten beschriebenen Zustand auf, wenn der Dienstanbieter den Prozess zur Bereitstellungsaufhebung abgeschlossen hat.
+Wenn Sie den Service Provider aufgefordert haben, zuerst die Bereitstellung der ExpressRoute-Verbindung aufzuheben, weist die Verbindung den unten beschriebenen Zustand auf, wenn der Service Provider den Prozess zur Bereitstellungsaufhebung abgeschlossen hat.
 
 
 	ServiceProviderProvisioningState : NotProvisioned
@@ -116,8 +116,9 @@ Wenn der Zustand der angekündigten öffentlichen Präfixe *validation needed* l
 ## Nächste Schritte
 
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung.
+
 	- [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md)
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

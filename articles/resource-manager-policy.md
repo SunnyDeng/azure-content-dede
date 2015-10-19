@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="09/29/2015"
+	ms.date="10/06/2015"
 	ms.author="gauravbh;tomfitz"/>
 
 # Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung
@@ -26,7 +26,7 @@ In diesem Artikel wird die grundlegende Struktur der Richtliniendefinitionssprac
 
 ## Häufige Szenarios
 
-Ein allgemeines Szenario ist der Bedarf an Tags auf Abteilungsebene zum Zweck der verbrauchsbasierten Kostenzuteilung. Eine Organisation möchte beispielsweise Vorgänge nur zulassen, wenn die richtige Kostenstelle zugeordnet ist. Andernfalls würde die Anforderung abgelehnt werden. Dadurch ist es möglich, die Abrechnung für die durchgeführten Vorgänge mit der richtigen Kostenstelle durchzuführen.
+Ein allgemeines Szenario ist der Bedarf an Tags auf Abteilungsebene zum Zweck der verbrauchsbasierten Kostenzuteilung. Eine Organisation könnte beispielsweise Vorgänge nur zulassen, wenn die richtige Kostenstelle zugeordnet ist, andernfalls soll die Anfrage abgelehnt werden. Dadurch ist es möglich, die Abrechnung für die durchgeführten Vorgänge mit der richtigen Kostenstelle durchzuführen.
 
 In einem weiteren gängigen Szenario möchte die Organisation die Standorte steuern, an denen Ressourcen erstellt werden. Oder sie möchte möglicherweise den Zugriff auf Ressourcen steuern, indem nur bestimmte Arten von Ressourcen bereitgestellt werden dürfen.
 
@@ -42,7 +42,7 @@ Grundsätzlich enthält eine Richtlinie Folgendes:
 
 **Bedingung/logische Operatoren**: eine Reihe von Bedingungen, die über einen Satz von logischen Operatoren beeinflusst werden.
 
-**Effekt**: beschreibt die Auswirkungen, wenn die Bedingung erfüllt ist – verweigern oder überwachen. Ein Überwachungseffekt gibt ein Warnereignis im Dienstprotokoll aus. Ein Administrator kann z. B. eine Richtlinie erstellen, die eine Überwachung festlegt, wenn ein Benutzer einen großen virtueller Computer erstellt. Er kann dann diese Protokolle später überprüfen.
+**Effekt**: beschreibt die Auswirkungen, wenn die Bedingung erfüllt ist – verweigern oder überwachen. Ein Überwachungseffekt gibt ein Warnereignis im Dienstprotokoll aus. Administratoren können z. B. eine Richtlinie erstellen, die eine Überwachung verursacht, wenn jemand einen großen virtuellen Computer erstellt, und dann später die Protokolle überprüfen.
 
     {
       "if" : {
@@ -177,17 +177,17 @@ Richtlinien können auf verschiedene Gültigkeitsbereiche wie Abonnements, Resso
 
 ## Erstellen einer Richtlinie
 
-Dieser Abschnitt enthält Informationen zum Erstellen einer Richtlinie mithilfe von REST-API und PowerShell.
+Dieser Abschnitt enthält Informationen zum Erstellen einer Richtlinie mithilfe der REST-API.
 
 ### Erstellen der Richtliniendefinition mit der REST-API
 
-Sie können eine Richtlinie mit der REST-API für Richtlinien erstellen. Die REST-API ermöglicht es Ihnen, Richtlinien zu erstellen und zu löschen sowie Informationen zu vorhandenen Richtlinien abzurufen.
+Sie können eine Richtlinie mit der REST-API erstellen, wie unter [Policy Definitions](https://msdn.microsoft.com/library/azure/mt588471.aspx) (in englischer Sprache) beschrieben. Die REST-API ermöglicht es Ihnen, Richtliniendefinitionen zu erstellen und zu löschen sowie Informationen zu vorhandenen Definitionen abzurufen.
 
 So erstellen Sie eine neue Richtlinie
 
     PUT https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
 
-Im Folgenden finden Sie ein Beispiel für einen Anforderungstext:
+Der Anforderungstext sollte dem folgenden ähneln:
 
     {
       "properties":{
@@ -211,21 +211,21 @@ Im Folgenden finden Sie ein Beispiel für einen Anforderungstext:
     }
 
 
-Die Richtliniendefinition kann als eines der oben aufgeführten Beispiele definiert werden. Verwenden Sie die API-Version *2015-10-01-preview*. Weitere Beispiele und Informationen finden Sie in der REST-API für Richtlinien.
+Die Richtliniendefinition kann als eines der oben aufgeführten Beispiele definiert werden. Verwenden Sie die API-Version *2015-10-01-preview*. Weitere Beispiele und Informationen finden Sie unter [Policy Definitions](https://msdn.microsoft.com/library/azure/mt588471.aspx) (in englischer Sprache).
 
 ## Anwenden einer Richtlinie
 
 ### Zuweisen von Richtlinien mit der REST-API
 
-Sie können die Richtliniendefinition über die REST-API für die Richtlinienzuweisung auf den gewünschten Bereich anwenden. Sie können darüber hinaus mit der REST-API Richtlinienzuweisungen erstellen und löschen und Informationen zu vorhandenen Zuweisungen abrufen.
+Sie können die Richtliniendefinition mithilfe von [Policy Assignments](https://msdn.microsoft.com/library/azure/mt588466.aspx) (Richtlinienzuweisungen, in englischer Sprache) auf den gewünschten Bereich anwenden. Die REST-API ermöglicht es Ihnen, Richtlinienzuweisungen zu erstellen und zu löschen sowie Informationen zu vorhandenen Zuweisungen abzurufen.
 
 Führen Sie zum Erstellen einer neuen Richtlinienzuweisung Folgendes aus:
 
     PUT https://management.azure.com /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
 
-"{policy-assignment}" ist der Name der Richtlinienzuweisung. Verwenden Sie die API-Version *2015-10-01-preview*. Weitere Beispiele und Informationen finden Sie in der REST-API für die Richtlinienzuweisung.
+"{policy-assignment}" ist der Name der Richtlinienzuweisung. Verwenden Sie die API-Version *2015-10-01-preview*.
 
-Im Folgenden finden Sie ein Beispiel für einen Anforderungstext:
+Der Anforderungstext sollte dem folgenden ähneln:
 
     {
       "properties":{
@@ -238,4 +238,6 @@ Im Folgenden finden Sie ein Beispiel für einen Anforderungstext:
       "name":"VMPolicyAssignment"
     }
 
-<!---HONumber=Oct15_HO1-->
+Weitere Beispiele und Informationen finden Sie unter [Policy Assignments](https://msdn.microsoft.com/library/azure/mt588466.aspx) (Richtlinienzuweisungen, in englischer Sprache).
+
+<!---HONumber=Oct15_HO2-->

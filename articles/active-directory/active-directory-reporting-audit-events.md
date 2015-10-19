@@ -44,8 +44,8 @@ Benutzer löschen | Einen Benutzer aus dem Verzeichnis gelöscht.
 Lizenzeigenschaften festlegen | Lizenzeigenschaften für einen Benutzer im Verzeichnis festgelegt.
 Benutzerkennwort zurücksetzen | Kennwort eines Benutzers im Verzeichnis zurückgesetzt.
 Benutzerkennwort ändern | Kennwort eines Benutzers im Verzeichnis geändert.
-Benutzerlizenz ändern | Die einem Benutzer im Verzeichnis zugewiesene Lizenz geändert.
-Benutzer aktualisieren | Einen Benutzer im Verzeichnis aktualisiert.
+Benutzerlizenz ändern | Die einem Benutzer im Verzeichnis zugewiesene Lizenz geändert. Um zu ermitteln, welche Lizenzen aktualisiert wurden, überprüfen Sie "Benutzer aktualisieren" unmittelbar vor oder nach diesem Ereignis.
+Benutzer aktualisieren | Einen Benutzer im Verzeichnis aktualisiert. Informationen zu Attributen, die aktualisiert werden können, [finden Sie weiter unter](#quotupdate-userquot-attributes).
 Änderung des Benutzerkennworts erzwingen | Eigenschaft festgelegt, die einen Benutzer zwingt, sein Kennwort bei der Anmeldung zu ändern.
 **Gruppenereignisse** |
 Gruppe erstellen | Eine Gruppe wurde im Verzeichnis erstellt.
@@ -58,9 +58,9 @@ Dienstprinzipal hinzufügen | Dienstprinzipal zum Verzeichnis hinzugefügt.
 Dienstprinzipal entfernen | Dienstprinzipal aus dem Verzeichnis entfernt.
 Anmeldeinformationen für Dienstprinzipal hinzufügen | Anmeldeinformationen für einen Dienstprinzipal hinzugefügt.
 Anmeldeinformationen für Dienstprinzipal entfernen | Anmeldeinformationen für einen Dienstprinzipal entfernt.
-Delegierungseintrag hinzufügen | Delegierungseintrag zum Verzeichnis hinzugefügt.
-Delegierungseintrag festlegen | Delegierungseintrag im Verzeichnis aktualisiert.
-Delegierungseintrag entfernen | Delegierungseintrag aus dem Verzeichnis entfernt.
+Delegierungseintrag hinzufügen | [OAuth2PermissionGrant](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#OAuth2PermissionGrantEntity) im Verzeichnis erstellt.
+Delegierungseintrag festlegen | [OAuth2PermissionGrant](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#OAuth2PermissionGrantEntity) im Verzeichnis aktualisiert.
+Delegierungseintrag entfernen | [OAuth2PermissionGrant](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#OAuth2PermissionGrantEntity) im Verzeichnis gelöscht.
 **Rollenereignisse** |
 Rollenmitglied zur Rolle hinzufügen | Benutzer einer Verzeichnisrolle hinzugefügt.
 Rollenmitglied aus Rolle entfernen | Benutzer aus einer Verzeichnisrolle entfernt.
@@ -89,7 +89,7 @@ Promote tenant to partner
 
 --->
 
-### Im Überwachungsereignis "Benutzer aktualisieren" enthaltene Benutzerattribute
+## Attribute von "Benutzer aktualisieren"
 Das Überwachungsereignis "Benutzer aktualisieren" enthält Informationen dazu, welche Benutzerattribute aktualisiert wurden. Für jedes Attribut sind der vorherige Wert und der neue Wert enthalten.
 
 Attribut | Beschreibung
@@ -108,4 +108,4 @@ TelephoneNumber | Die Telefonnummer des Benutzers.
 
 Überwachungsdatensätze sind ein erforderliches Steuerelement in vielen Richtlinien zur Einhaltung von Vorschriften. Kunden, die den Azure Active Directory-Überwachungsbericht zum Erfüllen dieser Vorschriften nutzen, wird empfohlen, der Kopie des exportierten Überwachungsberichts eine Kopie dieses Hilfethemas hinzuzufügen, das die Berichtsdetails erläutert. Wenn der Prüfer die Richtlinien zur Vorschrifteneinhaltung bestimmen möchte, die Azure derzeit erfüllt, leiten Sie ihn zur [Seite "Compliance"](http://azure.microsoft.com/support/trust-center/compliance/) im Microsoft Azure Trust Center.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

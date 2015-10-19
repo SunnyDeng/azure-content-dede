@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen"
-   description="Ereignis-Hubs – Preisdetails und häufig gestellte Fragen."
+   pageTitle="Event Hubs – Verfügbarkeit und Support | Microsoft Azure"
+   description="Event Hubs-Verfügbarkeit und -Support – häufig gestellte Fragen"
    services="event-hubs"
    documentationCenter="na"
    authors="sethmanheim"
@@ -12,18 +12,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="06/09/2015"
+   ms.date="10/07/2015"
    ms.author="sethm" />
 
 # Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen
 
 Event Hubs bietet die umfangreiche Aufnahme, Persistenz und Verarbeitung von Datenereignissen aus Datenquellen mit hohem Durchsatz und/oder Millionen von Geräten. Zusammen mit Service Bus-Warteschlangen und -Themen ermöglicht Event Hubs persistente Befehlszeilen- und Steuerelement-Bereitstellungen für Internet der Dinge-Szenarien.
 
-Dieser Abschnitt umfasst Informationen über die Verfügbarkeit und einige häufig gestellte Fragen.
+Dieser Artikel bietet Informationen über die Verfügbarkeit und beantwortet einige häufig gestellte Fragen.
 
 ## Preisinformationen
 
-Informationen zu den Preisen von Event Hubs finden Sie unter [Event Hubs – Preisdetails](http://azure.microsoft.com/pricing/details/event-hubs/).
+Umfassende Informationen zu den Preisen von Event Hubs finden Sie unter [Event Hubs – Preisübersicht](http://azure.microsoft.com/pricing/details/event-hubs/).
 
 ## Wie werden Eingangsereignisse von Event Hubs berechnet?
 
@@ -77,7 +77,7 @@ Für Absender fallen Verbindungsgebühren nur an, wenn das AMQP-Protokoll verwen
 
 ## Was ist der Unterschied zwischen den Event Hubs-Ebenen Basic und Standard?
 
-Ereignis-Hubs der Standard-Ebene bieten mehr Features als der Basic-Ebene sowie einigen konkurrierenden Systemen. Zu diesen Features gehören Aufbewahrungszeiträume von mehr als 24 Stunden und die Fähigkeit, eine einzelne AMQP-Verbindung zum Senden von Befehlen an eine große Anzahl von Geräten mit Wartezeiten von Sekundenbruchteilen sowie Telemetriedaten von diesen Geräten an Event Hubs zu senden. In der [Preisdetails] ([Event Hubs – Preisdetails](http://azure.microsoft.com/pricing/details/event-hubs/)) finden Sie die Liste der Features.
+Ereignis-Hubs der Standard-Ebene bieten mehr Features als der Basic-Ebene sowie einigen konkurrierenden Systemen. Zu diesen Features gehören Aufbewahrungszeiträume von mehr als 24 Stunden und die Fähigkeit, eine einzelne AMQP-Verbindung zum Senden von Befehlen an eine große Anzahl von Geräten mit Wartezeiten von Sekundenbruchteilen sowie Telemetriedaten von diesen Geräten an Event Hubs zu senden. In der [Preisübersicht] ([Event Hubs – Preisübersicht](http://azure.microsoft.com/pricing/details/event-hubs/)) finden Sie die Liste der Features.
 
 ## Geografische Verfügbarkeit
 
@@ -100,15 +100,14 @@ Weitere Informationen zu unserem SLA finden Sie auf der Seite [Vereinbarungen zu
 
 ## Nächste Schritte
 
-Weitere Informationen zu Event Hubs finden Sie unter den folgenden Themen:
+Weitere Informationen zu Event Hubs finden Sie in den folgenden Artikeln:
 
-- [Übersicht über Ereignis-Hubs]
-- Eine vollständige [Beispielanwendung mit Verwendung von Event Hubs].
+- [Übersicht über Event Hubs]
+- Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
 - Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
 
-[Übersicht über Ereignis-Hubs]: event-hubs-overview.md
-[Beispielanwendung mit Verwendung von Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Messaginglösung mit Warteschlange]: ../cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
- 
+[Übersicht über Event Hubs]: event-hubs-overview.md
+[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

@@ -3,7 +3,7 @@
    description="Entwurfsmuster zur Verwendung von Service Fabric Actors zum Modellieren von Anwendungen, die skaliert werden sollen, jedoch beschränkte Ressourcen verwenden"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
@@ -14,12 +14,12 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/11/2015"
-   ms.author="claudioc"/>
+   ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Ressourcenkontrolle
 Dieses Muster und verwandte Szenarien sind leicht erkennbar für Entwickler – in Unternehmen oder anderswo – die über beschränkte Ressourcen auf lokaler Ebene oder in der Cloud verfügen, die sie nicht sofort skalieren können, oder die große Anwendungen und Daten in die Cloud senden möchten.
 
-In Unternehmen werden diese beschränkten Ressourcen, wie z. B. Datenbanken, auf hochskalierbarer Hardware ausgeführt. Wer über eine lange Unternehmenserfahrung verfügt, weiß, dass dies eine gängige Situation in Unternehmen ist. Selbst bei der Skalierung der Cloud ist diese Situation aufgetreten, als ein Cloud-Dienst versucht hat, das TCP-Limit von 64 K für Verbindungen zwischen einem Adress-/Port-Tupel zu überschreiten, oder beim Versuch, eine Verbindung zu einer Cloud-basierten Datenbank herzustellen, die die Anzahl gleichzeitiger Verbindungen beschränkt.
+In Unternehmen werden diese beschränkten Ressourcen, wie z. B. Datenbanken, auf hochskalierbarer Hardware ausgeführt. Wer über eine lange Unternehmenserfahrung verfügt, weiß, dass dies eine gängige Situation in Unternehmen ist. Selbst auf Cloud-Ebene kann diese Situation auftreten, wenn ein Cloud-Dienst versucht, das TCP-Verbindungslimit von 64 K zwischen einem Adresse-Port-Tupel zu cloundbasiert oder eine Verbindung zu einer Cloud-basierten Datenbank herzustellen, die die Anzahl gleichzeitiger Verbindungen beschränkt.
 
 In der Vergangenheit wurde dies in der Regel mithilfe von Drosselung durch nachrichtenbasierte Middleware oder kundenspezifische Pooling- und Fassadenmechanismen gelöst. Diese sind schwer zu realisieren, insbesondere wenn die mittlere Ebene skaliert werden soll, dabei jedoch die korrekte Verbindungsanzahl beibehalten werden soll. Es ist einfach anfällig und komplex.
 
@@ -30,7 +30,7 @@ Das folgende Diagramm zeigt dieses Szenario:
 ![][1]
 
 ## Modellieren von Cache-Szenarien mit Actors
-Im Wesentlichen wird der Zugriff auf Ressourcen als ein oder mehrere Actors modelliert, die als Proxys (also beispielsweise Verbindung) für eine Ressource oder eine Gruppe von Ressourcen fungieren. Die Ressource kann dann entweder direkt über einzelne Actors verwaltet werden, oder es kann ein Koordinierung-Actor verwendet werden, der die Ressourcen-Actors verwaltet. Um dies zu realisieren, müssen wir uns mit damit befassen, warum es häufig erforderlich ist, aus Leistungs und Skalierbarkeitsgründen mit einer partitionierten (aka freigegebenen) Speicherebene zu arbeiten. Die erste Option ist ziemlich grundlegend: Es ist möglich, eine statische Funktion zum Zuordnen und Auflösen der Actors in nachgeschalteten Ressourcen zu verwenden. Eine solche Funktion kann z. B. eine Verbindungszeichenfolge mit gegebener Eingabe zurückgeben. Es steht uns vollkommen frei, wie diese Funktion implementiert wird. Natürlich hat auch dieser Ansatz seine Nachteile, wie z. B. statische Affinität, die die Neupartitionierung von Ressourcen oder die Neuzuordnung eines Actors sehr schwierig macht. Hier ist ein sehr einfaches Beispiel – wir wenden Modulo-Arithmetik an, um den Datenbanknamen mit der Benutzer-ID zu bestimmen, und verwenden die Region, um den Datenbankserver zu identifizieren.
+Im Wesentlichen wird der Zugriff auf Ressourcen als ein oder mehrere Actors modelliert, die als Proxys (also beispielsweise Verbindung) für eine Ressource oder eine Gruppe von Ressourcen fungieren. Die Ressource kann dann entweder direkt über einzelne Actors oder über einen Koordinierung-Actor verwaltet werden, der wiederum die Ressourcen-Actors steuert. Künftig werden wir uns vor allem mit der häufig aus Leistungs- und Skalierbarkeitsgründen entstehenden Notwendigkeit befassen, mit einer partinierten (oder auch fragmentierten) Speicherebene zu arbeiten. Die erste Option ist ziemlich grundlegend: Es ist möglich, eine statische Funktion zum Zuordnen und Auflösen der Actors in nachgeschalteten Ressourcen zu verwenden. Eine solche Funktion kann z. B. eine Verbindungszeichenfolge mit gegebener Eingabe zurückgeben. Es steht uns vollkommen frei, wie diese Funktion implementiert wird. Natürlich hat auch dieser Ansatz seine Nachteile, wie z. B. statische Affinität, die die Neupartitionierung von Ressourcen oder die Neuzuordnung eines Actors sehr schwierig macht. Hier ist ein sehr einfaches Beispiel – wir wenden Modulo-Arithmetik an, um den Datenbanknamen mit der Benutzer-ID zu bestimmen, und verwenden die Region, um den Datenbankserver zu identifizieren.
 
 ## Codebeispiel für Ressourcenkontrolle – Statische Auflösung
 
@@ -417,4 +417,4 @@ Dieses Muster ist sehr gängig in Szenarien, in denen Entwickler entweder über 
 [2]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch3.png
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

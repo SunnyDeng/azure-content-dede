@@ -8,7 +8,7 @@
    * [Microsoft](mobile-services-how-to-register-microsoft-authentication.md)
    * [Azure Active Directory](mobile-services-how-to-register-active-directory-authentication.md). 
    
-   Notieren Sie die Clientidentität und die Werte der geheimen Clientschlüssel, die vom Anbieter generiert wurden. Veröffentlichen Sie den geheimen Clientschlüssel nicht, und geben Sie ihn nicht weiter.
+    Notieren Sie die Clientidentität und die Werte der geheimen Clientschlüssel, die vom Anbieter generiert wurden. Veröffentlichen Sie den geheimen Clientschlüssel nicht, und geben Sie ihn nicht weiter.
 
 3. Klicken Sie im Azure-Portal auf **Mobile Services** > Ihr mobiler Dienst > **Identität** > Ihre Identitätsanbietereinstellungen, und geben Sie die Client-ID und den geheimen Clientschlüssel von Ihrem Anbieter ein. 
  
@@ -16,4 +16,4 @@ Sie haben jetzt sowohl Ihren mobilen Dienst als auch Ihre App so konfiguriert, d
 
 > [AZURE.IMPORTANT]Überprüfen Sie, ob Sie den richtigen URI für die Umleitung auf der Entwicklerwebsite Ihres Identitätsanbieters festgelegt haben. Wie in den verknüpften Anweisungen für die einzelnen Anbieter oben beschrieben, kann sich der Umleitungs-URI für einen .NET-Back-End-Dienst von einem JavaScript-Back-End-Dienst unterscheiden. Bei einem falsch konfigurierten Umleitungs-URI kann der Anmeldebildschirm möglicherweise nicht ordnungsgemäß angezeigt werden und die App weist unerwartete Störungen auf.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

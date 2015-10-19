@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Mobile Services für Xamarin iOS-Apps"
+	pageTitle="Erste Schritte mit Mobile Services für Xamarin iOS-Apps | Microsoft Azure"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Xamarin iOS-Entwicklung."
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -7,30 +7,28 @@
 	manager="dwrede"
 	editor=""/>
 
-
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.topic="hero-article"
+	ms.date="10/06/2015"
 	ms.author="craig.dunn@xamarin.com"/>
-
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
-In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer Xamarin.iOS-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache <em>To-Do-Listen</em>-App, die App-Daten im neuen mobilen Dienst speichert.
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+
+In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer Xamarin.iOS-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert.
 
 Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip unten auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.
 
 Video: "Erste Schritte mit Xamarin und Azure Mobile Services" mit Craig Dunn, Developer Evangelist für Xamarin (Dauer: 10:05 Minuten)
 
 > [AZURE.VIDEO getting-started-with-xamarin-and-mobile-services]
-
-
 
 Unten sehen Sie einen Screenshot aus der fertigen App:
 
@@ -100,17 +98,16 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-* [Erste Schritte mit Daten] <br/>
-Hier erfahren Sie, wie Sie einem mobilen Dienst eine neue Tabelle hinzufügen und anschließend aus dieser Tabelle lesen und in sie schreiben.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine flexible und stabile App zu erstellen.
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>
-Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine flexible und stabile App zu erstellen.
+* [Erste Schritte mit der Authentifizierung] Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
-* [Erste Schritte mit der Authentifizierung] <br/>
-Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
+* [Erste Schritte mit Pushbenachrichtigungen] Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-* [Erste Schritte mit Pushbenachrichtigungen] <br/>
-Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
+* [Verwenden des Clients der Xamarin-Komponente für Azure Mobile Services](partner-xamarin-mobile-services-how-to-use-client-library.md) Erfahren Sie, wie Sie den mobilen Dienst abfragen, mit Daten arbeiten und auf benutzerdefinierte APIs zugreifen.
+  
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -130,7 +127,6 @@ Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: partner-xamarin-mobile-services-ios-get-started-data.md
 [Erste Schritte mit der Synchronisierung von Offlinedaten]: mobile-services-xamarin-ios-get-started-offline-data.md
 [Erste Schritte mit der Authentifizierung]: partner-xamarin-mobile-services-ios-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: partner-xamarin-mobile-services-ios-get-started-push.md
@@ -140,4 +136,4 @@ Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

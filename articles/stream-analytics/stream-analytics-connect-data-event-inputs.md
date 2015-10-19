@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/13/2015" 
+	ms.date="10/05/2015" 
 	ms.author="jeffstok"/>
 
 # Erstellen von Stream Analytics-Eingaben
@@ -56,13 +56,13 @@ Jede Eingabe an einen Stream Analytics Event Hub sollte für eine eigene Consume
     - **Service Bus-Namespace**: Ein Service Bus-Namespace ist ein Container für einen Satz von Nachrichtenentitäten. Sie haben bei der Erstellung eines neuen Event Hubs auch einen Service Bus-Namespace erstellt.  
     - **Event Hub**: Der Name Ihrer Event Hub-Eingabe.  
     - **Event Hub-Richtlinienname**: Die freigegebene Zugriffsrichtlinie, die auf der Registerkarte "Event Hub-Konfiguration" erstellt werden kann. Jede Richtlinie für den gemeinsamen Zugriff umfasst einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel.  
-    - **Event Hub-Consumergruppe** \(optional\): Die Consumergruppe für das Erfassen von Daten aus dem Event Hub. Wenn nichts angegeben wird, verwenden Stream Analytics-Aufträge die Standardverbrauchergruppe, um Daten vom Event Hub zu erfassen. Es wird empfohlen, für jeden Stream Analytics-Auftrag eine eigene Consumergruppe zu verwenden.  
+    - **Event Hub-Consumergruppe** (optional): Die Consumergruppe für das Erfassen von Daten aus dem Event Hub. Wenn nichts angegeben wird, verwenden Stream Analytics-Aufträge die Standardverbrauchergruppe, um Daten vom Event Hub zu erfassen. Es wird empfohlen, für jeden Stream Analytics-Auftrag eine eigene Consumergruppe zu verwenden.  
 
     ![Bild7](./media/stream-analytics-connect-data-event-inputs/07-stream-analytics-create-inputs.png)
 
 4. Geben Sie die folgenden Einstellungen an:
 
-    - **Ereignisserialisierungsformat**: Um sicherzustellen, dass Ihre Abfragen wie erwartet funktionieren, muss Stream Analytics das Serialisierungsformat \(JSON, CSV oder Avro\) kennen, das Sie für eingehende Datenströme verwenden.  
+    - **Ereignisserialisierungsformat**: Um sicherzustellen, dass Ihre Abfragen wie erwartet funktionieren, muss Stream Analytics das Serialisierungsformat (JSON, CSV oder Avro) kennen, das Sie für eingehende Datenströme verwenden.  
     - **Codierung**: UTF-8 ist gegenwärtig das einzige unterstützte Codierungsformat.  
 
     ![Bild8](./media/stream-analytics-connect-data-event-inputs/08-stream-analytics-create-inputs.png)
@@ -97,7 +97,7 @@ Für Szenarios mit großen Mengen unstrukturierter Daten, die in der Cloud gespe
 
 5. Wählen Sie folgende Einstellungen aus:
 
-    - **Ereignisserialisierungsformat**: Um sicherzustellen, dass Ihre Abfragen wie erwartet funktionieren, muss Stream Analytics das Serialisierungsformat \(JSON, CSV oder Avro\) kennen, das Sie für eingehende Datenströme verwenden.  
+    - **Ereignisserialisierungsformat**: Um sicherzustellen, dass Ihre Abfragen wie erwartet funktionieren, muss Stream Analytics das Serialisierungsformat (JSON, CSV oder Avro) kennen, das Sie für eingehende Datenströme verwenden.  
     - **Codierung**: UTF-8 ist gegenwärtig das einzige unterstützte Codierungsformat.  
 
 
@@ -107,11 +107,11 @@ Für Szenarios mit großen Mengen unstrukturierter Daten, die in der Cloud gespe
 
 ## Erstellen von Blobspeicher-Verweisdaten
 ---
-Ein Blobspeicher kann zum Definieren von Verweisdaten für einen Stream Analytics-Auftrag verwendet werden. Dies sind statische oder sich langsam ändernde Daten, die zum Durchführen von Suchvorgängen oder zum Korrelieren von Daten verwendet werden. Die Unterstützung für das Aktualisieren von Verweisdaten kann aktiviert werden, indem in der Eingabekonfiguration ein Pfadmuster angegeben wird, für das die Token {date} und {time} verwendet werden. Stream Analytics aktualisiert Definitionen von Verweisdaten auf der Grundlage dieses Pfadmusters. Beispiel: Das Muster `"/sample/{date}/{time}/products.csv"` mit dem Datumsformat "YYYY-MM-DD" und dem Zeitformat "HH:mm" weist Stream Analytics an, das aktualisierte Blob `"/sample/2015-04-16/17:30/products.csv"` am 16. April 2015 um 17:30 \(UTC-Zeitzone\) abzurufen.
+Ein Blobspeicher kann zum Definieren von Verweisdaten für einen Stream Analytics-Auftrag verwendet werden. Dies sind statische oder sich langsam ändernde Daten, die zum Durchführen von Suchvorgängen oder zum Korrelieren von Daten verwendet werden. Die Unterstützung für das Aktualisieren von Verweisdaten kann aktiviert werden, indem in der Eingabekonfiguration ein Pfadmuster angegeben wird, für das die Token {date} und {time} verwendet werden. Stream Analytics aktualisiert Definitionen von Verweisdaten auf der Grundlage dieses Pfadmusters. Beispiel: Das Muster `"/sample/{date}/{time}/products.csv"` mit dem Datumsformat "YYYY-MM-DD" und dem Zeitformat "HH:mm" weist Stream Analytics an, das aktualisierte Blob `"/sample/2015-04-16/17:30/products.csv"` am 16. April 2015 um 17:30 (UTC-Zeitzone) abzurufen.
 
-> [AZURE.NOTE]Derzeit suchen Stream Analytics-Aufträge nur nach aktualisierten Verweisdaten in einem BLOB, wenn die Uhrzeit mit der Uhrzeit zusammenfällt, die im BLOB-Namen codiert ist: Aufträge suchen z. B. am 16. April 2015 zwischen 17:30 Uhr und 17:30:59,999999999 Uhr \(UTC-Zeitzone\) nach "/beispiel/2015-04-16/17:30/produkte.csv". Wenn die Uhr auf 17:31 Uhr gesprungen ist, wird die Suche nach "/beispiel/2015-04-16/17:30/produkte.csv" beendet und die Suche nach "/beispiel/2015-04-16/17:31/produkte.csv" begonnen.
+> [AZURE.NOTE]Derzeit suchen Stream Analytics-Aufträge nur nach aktualisierten Verweisdaten in einem BLOB, wenn die Uhrzeit mit der Uhrzeit zusammenfällt, die im BLOB-Namen codiert ist: Aufträge suchen z. B. am 16. April 2015 zwischen 17:30 Uhr und 17:30:59,999999999 Uhr (UTC-Zeitzone) nach "/beispiel/2015-04-16/17:30/produkte.csv". Wenn die Uhr auf 17:31 Uhr gesprungen ist, wird die Suche nach "/beispiel/2015-04-16/17:30/produkte.csv" beendet und die Suche nach "/beispiel/2015-04-16/17:31/produkte.csv" begonnen.
 
-Der einzige Zeitpunkt, bei dem frühere Verweisdaten-BLOBs berücksichtigt werden, ist der Zeitpunkt, zu dem der Auftrag gestartet wird. Zu diesem Zeitpunkt sucht der Auftrag nach dem BLOB, in dessen Name der letzte Zeitpunkt \(Datum und Uhrzeit\) codiert ist, der vor dem Startzeitpunkt des Auftrags liegt \(das neueste Verweisdaten-BLOB vor dem Startzeitpunkt des Auftrags\). Dies erfolgt, damit sichergestellt ist, dass es beim Starten des Auftrags kein leeres Verweisdataset gibt. Wird kein BLOB gefunden, schlägt der Auftrag fehl, und es wird eine Diagnosemeldung angezeigt:
+Der einzige Zeitpunkt, bei dem frühere Verweisdaten-BLOBs berücksichtigt werden, ist der Zeitpunkt, zu dem der Auftrag gestartet wird. Zu diesem Zeitpunkt sucht der Auftrag nach dem BLOB, in dessen Name der letzte Zeitpunkt (Datum und Uhrzeit) codiert ist, der vor dem Startzeitpunkt des Auftrags liegt (das neueste Verweisdaten-BLOB vor dem Startzeitpunkt des Auftrags). Dies erfolgt, damit sichergestellt ist, dass es beim Starten des Auftrags kein leeres Verweisdataset gibt. Wird kein BLOB gefunden, schlägt der Auftrag fehl, und es wird eine Diagnosemeldung angezeigt:
 
 ### Hinzufügen von Blobspeicher als Verweisdaten  ###
 
@@ -130,7 +130,7 @@ Der einzige Zeitpunkt, bei dem frühere Verweisdaten-BLOBs berücksichtigt werde
 
 3. Wählen Sie folgende Einstellungen aus:
 
-    - **Ereignisserialisierungsformat**: Um sicherzustellen, dass Ihre Abfragen wie erwartet funktionieren, muss Stream Analytics das Serialisierungsformat \(JSON, CSV oder Avro\) kennen, das Sie für eingehende Datenströme verwenden.  
+    - **Ereignisserialisierungsformat**: Um sicherzustellen, dass Ihre Abfragen wie erwartet funktionieren, muss Stream Analytics das Serialisierungsformat (JSON, CSV oder Avro) kennen, das Sie für eingehende Datenströme verwenden.  
     - **Codierung**: UTF-8 ist gegenwärtig das einzige unterstützte Codierungsformat.  
 
     ![Bild12](./media/stream-analytics-connect-data-event-inputs/12-stream-analytics-create-inputs.png)
@@ -141,14 +141,14 @@ Der einzige Zeitpunkt, bei dem frühere Verweisdaten-BLOBs berücksichtigt werde
 
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2015"
+	ms.date="10/05/2015"
 	ms.author="josephd"/>
 
 
@@ -113,7 +113,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	Datenbankserver:
 	-	Virtual Machine-Abbild: SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
-	-	Größe: A5 (Standard) für Datenbankserver, A0 (Standard) für den Dateifreigabenzeugen.
+	-	Größe: A5 (Standard) für Datenbankserver, A0 (Standard) für den Dateifreigabenzeugen (SQL0).
 	-	Kontoname für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kennwort für das Datenbankzugriffskonto: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontoname für den SQL Server-Dienst: sqlservice (Standard).
@@ -137,8 +137,8 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md)
 
-[SharePoint auf Azure Virtual Machines](http://msdn.microsoft.com/library/azure/dn275955.aspx)
+[In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

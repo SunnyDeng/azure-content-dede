@@ -192,6 +192,9 @@ Um Filter zu kombinieren, müssen Sie die Filternamen, durch Semikolons getrennt
 
 Sie können bis zu 3 Filter kombinieren.
 
+Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support) Blog.
+
+
 ##Bekannte Probleme und Einschränkungen
 
 - Dynamische Manifeste werden in GOP-Grenzen (Keyframes) ausgeführt, daher weisen Kürzungen GOP-Genauigkeit auf. 
@@ -230,4 +233,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

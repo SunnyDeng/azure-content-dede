@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/28/2015"
+   ms.date="09/28/2015"
    ms.author="cherylmc"/>
 
 #  Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter
@@ -231,4 +231,4 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

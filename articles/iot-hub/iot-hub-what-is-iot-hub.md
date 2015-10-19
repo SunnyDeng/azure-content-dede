@@ -48,49 +48,50 @@ Mit Azure IoT Hub werden die Verbindungsanforderungen für Geräte wie folgt erf
 
 -   **Authentifizierung pro Gerät und sichere Verbindung:** Jedes Gerät kann seinen eigenen Sicherheitsschlüssel verwenden, um eine Verbindung mit IoT Hub herzustellen. Das Anwendungs-Back-End kann dann jedes Gerät einzeln einer Whitelist oder Blacklist hinzufügen, um die vollständige Kontrolle über den Gerätezugriff zu haben.
 
--   **Umfassender Satz von Gerätebibliotheken:** Azure IoT-Geräte-SDKs sind für die unterschiedlichsten Sprachen und Plattformen verfügbar und werden dafür unterstützt: C für viele Linux-Distributionen, Windows und RTOS. Verwaltete Sprachen wie C#, Java und JavaScript.
+-   **Umfassender Satz von Gerätebibliotheken:** Azure IoT-Geräte-SDKs sind für die unterschiedlichsten Sprachen und Plattformen verfügbar und werden dafür unterstützt: C für viele Linux-Distributionen, Windows und RTOS. Azure IoT-Geräte-SDKs unterstützen auch verwaltete Sprachen wie C#, Java und JavaScript.
 
--   **IoT-Protokolle und -Erweiterbarkeit:** Falls Ihre Lösung die Gerätebibliotheken nicht nutzen kann, macht Azure IoT Hub ein öffentliches Protokoll verfügbar, mit dem Geräte die HTTP 1.1- und AMQP 1.0-Protokolle auf systemeigene Weise nutzen können. Sie können Azure IoT Hub auch erweitern, um Unterstützung für MQTT v3.1.1 mit der Open Source-Komponente „Azure IoT-Protokollgateway“ bereitzustellen. Sie können das Azure IoT-Protokollgateway in der Cloud oder lokal ausführen und erweitern, um benutzerdefinierte Protokolle zu unterstützen.
+-   **IoT-Protokolle und -Erweiterbarkeit:** Falls Ihre Lösung die Gerätebibliotheken nicht nutzen kann, macht IoT Hub ein öffentliches Protokoll verfügbar, mit dem Geräte die HTTP 1.1- und AMQP 1.0-Protokolle auf systemeigene Weise nutzen können. Sie können Azure IoT Hub auch erweitern, um Unterstützung für MQTT v3.1.1 mit der Open Source-Komponente "Azure IoT-Protokollgateway" bereitzustellen. Sie können das Azure IoT-Protokollgateway in der Cloud oder lokal ausführen und erweitern, um benutzerdefinierte Protokolle zu unterstützen.
 
 -   **Skalierung:** Azure IoT Hub kann auf Millionen von gleichzeitig verbundenen Geräten und Millionen von Ereignissen pro Sekunde skaliert werden.
 
-Zusätzlich zu diesen Vorteilen, die für viele Kommunikationsmuster generisch sind, können Sie mit Azure IoT Hub derzeit die folgenden Kommunikationsmuster implementieren:
+Zusätzlich zu diesen Vorteilen, die für viele Kommunikationsmuster generisch sind, können Sie mit IoT Hub derzeit die folgenden Kommunikationsmuster implementieren:
 
--   **Ereignisbasierte Device-to-Cloud (D2C)-Erfassung:** Geräte können pro Sekunde zuverlässig Millionen von Ereignissen für die Verarbeitung durch Ihr Hot-Path-Ereignisverarbeitungsmodul oder für die Speicherung zur Cold-Path-Analyse senden. Azure IoT Hub behält die Ereignisdaten bis zu sieben Tage bei, um eine zuverlässige Verarbeitung zu garantieren und Auslastungsspitzen zu absorbieren.
+-   **Ereignisbasierte Device-to-Cloud (D2C)-Erfassung:** Geräte können pro Sekunde zuverlässig Millionen von Ereignissen für die Verarbeitung durch Ihr Hot-Path-Ereignisverarbeitungsmodul oder für die Speicherung zur Cold-Path-Analyse senden. IoT Hub behält die Ereignisdaten bis zu sieben Tage bei, um eine zuverlässige Verarbeitung zu garantieren und Auslastungsspitzen auszugleichen.
 
--   **Zuverlässiges Cloud-to-Device (C2D)-Messaging (bzw. *Befehle*):** Das Anwendungs-Back-End kann zuverlässige Nachrichten (mit Garantie für eine mindestens einmalige Zustellung) an einzelne Geräte senden. Jede Nachricht verfügt über eine individuelle Lebensdauer, und das Back-End kann sowohl Zustellungs- als auch Ablaufnachweise anfordern, um die vollständige Transparenz des Lebenszyklus einer C2D-Nachricht sicherzustellen.
+-   **Zuverlässiges Cloud-to-Device (C2D)-Messaging (bzw. *Befehle*):** Das Anwendungs-Back-End kann zuverlässige Nachrichten (mit Garantie für eine mindestens einmalige Zustellung) an einzelne Geräte senden. Jede Nachricht verfügt über eine individuelle Einstellung für die Lebensdauer, und das Back-End kann sowohl Zustellungs- als auch Ablaufnachweise anfordern, um die vollständige Transparenz des Lebenszyklus einer C2D-Nachricht sicherzustellen.
 
-Zusätzlich zu den obigen Kommunikationsmustern können Sie andere gängige Muster implementieren, z. B. Dateiupload und -download, indem Sie die speziellen IoT-Features in Azure IoT Hub nutzen. Beispiele hierfür sind die einheitliche Identitätsverwaltung für Geräte, Verbindungsüberwachung und Skalierung.
+Zusätzlich zu diesen Kommunikationsmustern können Sie andere gängige Muster implementieren, z. B. Dateiupload und -download, indem Sie die speziellen IoT-Features in IoT Hub nutzen. Beispiele hierfür sind die einheitliche Identitätsverwaltung für Geräte, Verbindungsüberwachung und Skalierung.
 
 ## Dienstgestütztes Kommunikationsmuster
+
 Azure IoT Hub vermittelt die Interaktionen zwischen Ihren Geräten und Ihrem Anwendungs-Back-End in einer Implementierung des Musters für die [dienstgestützte Kommunikation][lnk-service-assisted-pattern]. Das Ziel der dienstgestützten Kommunikation ist die Einrichtung von vertrauenswürdigen, bidirektionalen Kommunikationspfaden zwischen Steuersystemen (z. B. IoT Hub) und speziellen Geräten, die im nicht vertrauenswürdigen physischen Raum bereitgestellt werden. Daher gelten für das Muster die folgenden Grundsätze:
 
 - Die Sicherheit hat Vorrang vor allen anderen Funktionen.
 - Geräte akzeptieren keine unerwünschten Netzwerkinformationen. Alle Verbindungen und Routen werden von einem Gerät nur in ausgehender Richtung hergestellt. Damit ein Gerät einen Befehl vom Back-End erhalten kann, muss das Gerät regelmäßig eine Verbindung initiieren, um eine Prüfung auf ausstehende Befehle durchzuführen, die verarbeitet werden müssen.
-- Geräte stellten normalerweise nur Verbindungen mit bekannten Peer-Diensten her bzw. richten Routen dafür ein, z. B. mit einer Azure IoT Hub-Dienstinstanz.
+- Geräte stellen normalerweise nur Verbindungen mit bekannten Peerdiensten her bzw. richten Routen dafür ein, z. B. mit einer IoT Hub-Dienstinstanz.
 - Der Kommunikationspfad zwischen Gerät und Dienst oder Gerät und Gateway wird auf Anwendungsprotokollebene geschützt.
 - Die Autorisierung und Authentifizierung auf Systemebene muss auf gerätebezogenen Identitäten basieren, und Anmeldeinformationen und Berechtigungen für den Zugriff müssen nahezu sofort widerrufbar sein.
-- Die bidirektionale Kommunikation für Geräte, die aufgrund von Stromversorgungs- oder Konnektivitätsaspekten nur sporadisch verbunden sind, kann über Haltebefehle und Benachrichtigungen für die Geräte durchgeführt werden, die nach dem Herstellen der Verbindung abgerufen werden. Azure IoT Hub verfügt über spezielle Gerätewarteschlangen für die Befehle, die an Geräte gesendet werden.
+- Die bidirektionale Kommunikation für Geräte, die aufgrund von Stromversorgungs- oder Konnektivitätsaspekten nur sporadisch verbunden sind, kann über Haltebefehle und Benachrichtigungen für die Geräte durchgeführt werden, die nach dem Herstellen der Verbindung abgerufen werden. IoT Hub verfügt über spezielle Gerätewarteschlangen für die Befehle, die an Geräte gesendet werden.
 - Die Nutzlastdaten der Anwendung können für den geschützten Transit durch Gateways zu einem bestimmten Dienst separat geschützt werden.
 
-Das dienstgestützte Kommunikationsmuster wurde in großem Umfang erfolgreich in der Mobilgerätebranche eingesetzt, um Pushbenachrichtigungsdienste wie [Windows-Benachrichtigungsdienst](https://msdn.microsoft.com/library/windows/apps/mt187203.aspx), [Google Cloud Messaging](https://developers.google.com/cloud-messaging/) und [Apple Push Notification Service](http://go.microsoft.com/fwlink/p/?linkid=272584&clcid=0x409) zu implementieren.
+Das dienstgestützte Kommunikationsmuster wurde in großem Umfang erfolgreich in der Mobilgerätebranche eingesetzt, um Pushbenachrichtigungsdienste wie [Windows-Pushbenachrichtigungsdienst](https://msdn.microsoft.com/library/windows/apps/mt187203.aspx), [Google Cloud Messaging](https://developers.google.com/cloud-messaging/) und [Apple Push Notification Service](http://go.microsoft.com/fwlink/p/?linkid=272584&clcid=0x409) zu implementieren.
 
 ## Nächste Schritte
 
-Weitere Informationen zu Azure IoT Hub finden Sie unter:
+Weitere Informationen zu Azure IoT Hub finden Sie unter den folgenden Links:
 
 * [Entwicklungsleitfaden für IoT Hub]
-* [IoT Hub – Anleitung]
+* [Anleitungen zu IoT Hub]
 * [Unterstützte Geräteplattformen und Sprachen]
 * [Azure IoT Developer Center]
 * [Erste Schritte mit IoT Hub]
 
 [IoT Hub Overview]: iot-hub-what-is-iot-hub.md
-[IoT Hub – Anleitung]: iot-hub-guidance.md
+[Anleitungen zu IoT Hub]: iot-hub-guidance.md
 [Entwicklungsleitfaden für IoT Hub]: iot-hub-devguide.md
 [IoT Hub Supported Devices]: iot-hub-supported-devices.md
 [Erste Schritte mit IoT Hub]: iot-hub-csharp-csharp-getstarted.md
-[Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
+[Unterstützte Geräteplattformen und Sprachen]: iot-hub-sdks-summary.md#os-platforms-and-hardware-compatibility
 [Azure IoT Developer Center]: http://www.azure.com/iotdev
 
 [img-why-use]: media/iot-hub-what-is-iot-hub/image1.png
@@ -98,4 +99,4 @@ Weitere Informationen zu Azure IoT Hub finden Sie unter:
 
 [lnk-service-assisted-pattern]: http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx "Dienstgestützte Kommunikation, Blogbeitrag von Clemens Vasters"
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

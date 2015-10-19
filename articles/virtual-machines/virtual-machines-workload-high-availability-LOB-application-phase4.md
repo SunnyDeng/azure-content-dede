@@ -29,6 +29,8 @@ Diese Phase muss vor Beginn von [Phase 5](virtual-machines-workload-high-availab
 
 Es gibt zwei virtuelle Computer, die als Webserver fungieren. Auf diesen können Sie ASP.NET-Anwendungen oder ältere Anwendungen bereitstellen, die von IIS 8 (Internetinformationsdienste) in Windows Server 2012 R2 gehostet werden können.
 
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Die Azure PowerShell-Befehlsblöcke in diesem Artikel werden gerade getestet und aktualisiert, um auch die neuen Cmdlets in Azure PowerShell Version 1.0.0 und höher zu unterstützen. Vielen Dank für Ihre Geduld.
+
 Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clientdatenverkehr an die Branchenanwendung gleichmäßig auf die zwei Webserver verteilt. Dazu müssen Sie eine interne Lastenausgleichsinstanz konfigurieren, die aus einem Namen und einer eigenen IP-Adresse aus dem Adressraum des Subnetzes besteht, das Sie Ihrem virtuellen Azure-Netzwerk zugewiesen haben. Führen Sie die folgenden Befehle an der Azure PowerShell-Eingabeaufforderung aus, um die Verfügbarkeit einer IP-Adresse zu überprüfen, die Sie für den internen Load Balancer ausgewählt haben: Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg.
 
 	Switch-AzureMode AzureServiceManagement
@@ -36,7 +38,7 @@ Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clien
 	$testIP="<a chosen IP address from the subnet address space, Table S - Item 2 – Subnet address space column>"
 	Test-AzureStaticVNetIP –VNetName $vnet –IPAddress $testIP
 
-Wenn das Feld **IsAvailable** in der Ausgabe des Befehls „Test-AzureStaticVNetIP“ **True** lautet, können Sie die IP-Adresse verwenden.
+Wenn das Feld **IsAvailable** in der Ausgabe des Befehls "Test-AzureStaticVNetIP" **True** lautet, können Sie die IP-Adresse verwenden.
 
 Wechseln Sie mit diesem Befehl zurück zum Ressourcen-Manager-Modus von PowerShell.
 
@@ -135,7 +137,7 @@ Stellen Sie nach dem Neustart unter Verwendung eines Kontos mit lokalen Administ
 Installieren und konfigurieren Sie jetzt für jeden Webserver IIS.
 
 1. Führen Sie Server-Manager aus, und klicken Sie dann auf **Rollen und Features hinzufügen**.
-2. Klicken Sie auf der Seite „Voraussetzungen“ auf **Weiter**.
+2. Klicken Sie auf der Seite "Voraussetzungen" auf **Weiter**.
 3. Klicken Sie auf der Seite "Installationstyp auswählen" auf **Weiter**.
 4. Klicken Sie auf der Seite "Zielserver auswählen" auf **Weiter**.
 5. Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver (IIS)**.
@@ -172,4 +174,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erste
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -21,6 +21,9 @@
 # Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
 In diesem Artikel werden die Entsprechungen für die Befehle der Microsoft Azure-Befehlszeilenschnittstelle (Azure CLI) zum Erstellen und Verwalten von virtuellen Azure-Computern in der Azure-Dienstverwaltung und im Azure-Ressourcen-Manager beschrieben. Verwenden Sie ihn als eine praktische Anleitung zum Migrieren von Skripts aus einem Befehlsmodus in einen anderen.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt Ressourcen, die mit dem Ressourcen-Manager- und dem klassischen (d. h. Service Management) Bereitstellungsmodell erstellt wurden.
+
+
 * Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert und mit Ihrem Abonnement verbunden haben, finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle ](../xplat-cli-install.md) und [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md). Wenn Sie die Befehle des Ressourcen-Manager-Modus verwenden möchten, achten Sie darauf, dass eine Verbindung mit der Anmeldemethode besteht.
 
 * Informationen zu den ersten Schritten mit dem Ressourcen-Manager-Modus der Azure-Befehlszeilenschnittstelle und zum Wechseln der Befehlsmodi finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Die Befehlszeilenschnittstelle wird standardmäßig im Dienstverwaltungsmodus gestartet. Wenn Sie in den Ressourcen-Manager-Modus wechseln möchten, führen Sie `azure config mode arm` aus. Wenn Sie zurück in den Dienstverwaltungsmodus wechseln möchten, führen Sie `azure config mode asm` aus.
@@ -67,4 +70,4 @@ Abrufen Sie aller verfügbaren Größen von virtuellen Computern | Nicht verfüg
 * Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle mit Ressourcen-Manager-Ressourcen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](../role-based-access-control-xplat-cli-install.md).
 * Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](../virtual-machines-command-line-tools.md) und [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

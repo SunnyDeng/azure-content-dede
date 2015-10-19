@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
-	ms.date="06/02/2015"
+	ms.date="10/07/2015"
 	ms.author="sethm"/>
 
 # Hybride lokale/Cloud-.NET-Anwendung mit Azure Service Bus Relay
@@ -551,8 +551,7 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
 
 Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
 
-* [Azure Service Bus][sbmsdn]  
-* [Service Bus-Anleitungen][sbwacom]  
+* [Azure Service Bus][sbwacom]  
 * [Verwenden von Servicebus-Warteschlangen][sbwacomqhowto]  
 
 
@@ -561,7 +560,7 @@ Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
   [Tools und SDK herunterladen]: http://go.microsoft.com/fwlink/?LinkId=271920
   [NuGet]: http://nuget.org
   [2]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-3.png
-  [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-4-2-WebPI.png
+  [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-42-webpi.png
 
 
   [Azure-Portal]: http://manage.windowsazure.com
@@ -607,9 +606,8 @@ Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
   [43]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
   [45]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-45.png
 
-  [sbmsdn]: http://msdn.microsoft.com/library/azure/ee732537.aspx
   [sbwacom]: /documentation/services/service-bus/
   [sbwacomqhowto]: service-bus-dotnet-how-to-use-queues.md
   [executionmodels]: ../cloud-services/fundamentals-application-models.md
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="08/05/2015" 
+	ms.date="10/07/2015" 
 	ms.author="raynew"/>
 
 # Erstellen von Wiederherstellungsplänen
@@ -124,4 +124,4 @@ Sie können unterschiedliche Arten von Failover-Wiederherstellungsplänen ausfü
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

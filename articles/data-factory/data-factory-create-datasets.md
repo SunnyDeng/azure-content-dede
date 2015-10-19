@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erstellen von Datasets"
-	description="Lernen Sie Azure Data Factory-Datasets kennen, und erfahren Sie, wie Sie sie erstellen können."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Erstellen von Datasets" 
+	description="Lernen Sie Azure Data Factory-Datasets kennen, und erfahren Sie, wie Sie sie erstellen können." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/28/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/05/2015" 
 	ms.author="spelluru"/>
 
 # Datasets
@@ -49,11 +49,11 @@ Ein Dataset ist eine logische Beschreibung der Daten. Die Daten, die beschrieben
 | Eigenschaft | Beschreibung | Erforderlich | Standard |
 | -------- | ----------- | -------- | ------- |
 | Name | Name des Datasets | Ja | – |
-| Strukturdefinition | <p>Schema des Datasets</p><p>Im Abschnitt [Dataset: Structure](#Structure) finden Sie weitere Details.</p> | Nein. | – |
+| Struktur | <p>Schema des Datasets</p><p>Im Abschnitt [Dataset: Structure](#Structure) finden Sie weitere Details.</p> | Nein. | – |
 | Typ | Typ des Datasets | Ja | – |
 | typeProperties | <p>Eigenschaften, die dem ausgewählten Typ entsprechen</p><p>Im Abschnitt [Dataset: Type](#Type) finden Sie ausführliche Informationen über die unterstützten Typen und deren Eigenschaften.</p> | Ja | – |
 | external | Boolesches Flag, das angibt, ob ein Dataset explizit durch eine Data Factory-Pipeline erstellt wird oder nicht. | Nein | false | 
-| Availability | <p>Definiert das Verarbeitungsfenster oder das Modell für das Aufteilen in Slices für die Dataset-Produktion. </p><p>Unter [Dataset: Availability](#Availability) finden Sie weitere Informationen.</p><p>Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Informationen zum Modell für das Aufteilen von Datasets in Slices.</p> | Ja | –
+| Verfügbarkeit | <p>Definiert das Verarbeitungsfenster oder das Modell für das Aufteilen in Slices für die Dataset-Produktion. </p><p>Unter [Dataset: Availability](#Availability) finden Sie weitere Informationen.</p><p>Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Informationen zum Modell für das Aufteilen von Datasets in Slices.</p> | Ja | –
 | policy | Definiert die Kriterien oder die Bedingung, die die Dataset-Slices erfüllen müssen. <p>Unter [Dataset: Policy](#Policy) finden Sie weitere Informationen.</p> | Nein | – |
 
 ### Beispiel
@@ -109,13 +109,13 @@ Der Abschnitt "Availability" in einem Dataset definiert das Verarbeitungsfenster
 | -------- | ----------- | -------- | ------- |
 | frequency | Gibt die Zeiteinheit für die Produktion der Dataset-Slices an.<p>** Unterstützte Häufigkeit **: "Minute", "Hour", "Day", "Week", "Month"</p> | Ja | – |
 | interval | Gibt einen Multiplikator für die Häufigkeit an<p>"Frequency x interval" bestimmt, wie oft der Slice erzeugt wird.</p><p>Wenn das Dataset auf Stundenbasis in Slices aufgeteilt werden soll, legen Sie **Frequency** auf **Hour** und **interval** auf **1** fest.</p><p>**Hinweis:** Wenn Sie "Frequency" auf "Minute" festlegen, sollten Sie "interval" auf mindestens 15 festlegen.</p> | Ja | – |
-| style | Gibt an, ob der Slice am Anfang/Ende des Intervalls erzeugt werden soll.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul><p>Wenn "Frequency" auf "Month" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice am letzten Tag des Monats erstellt. Wenn "style" auf "StartOfInterval" festgelegt ist, wird der Slice am ersten Tag des Monats erstellt.<.p><p>Wenn "Frequency" auf "Day" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice in der letzten Stunde des Tages erstellt.</p>Wenn "Frequency" auf "Hour" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice am Ende der Stunde erstellt. Ein Slice für den Zeitraum 13:00–14:00 Uhr wird z. B. u: 14.00 Uhr erstellt.</p> | Nein | EndOfInterval |
-| anchorDateTime | Definiert die absolute Position in der Zeit, die der Scheduler benötigt, um Dataset-Slicegrenzen zu berechnen. <p>**Hinweis:** Wenn "anchorDateTime" über Datumsteile verfügt, die präziser als die Häufigkeit sind, werden die präziseren Teile ignoriert. Wenn z. B. **interval** auf **stündlich** festgelegt ist ("frequency": "hour" und "interval": 1) und **anchorDateTime** **Minuten und Sekunden** enthält, werden die **Minuten- und Sekundenteile** von "anchorDateTime" ignoriert.</p>| Nein | 01/01/0001 |
-| Offset | Zeitspanne, um die Anfang und Ende aller Dataset-Slices verschoben werden. <p>**Hinweis:** Wenn sowohl "anchorDateTime" als auch "Offset" angegeben wird, ist das Ergebnis die kombinierte Verschiebung.</p> | Nein | – |
+| style | Gibt an, ob der Slice am Anfang/Ende des Intervalls erzeugt werden soll.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul><p>Wenn "Frequency" auf "Month" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice am letzten Tag des Monats erstellt. Wenn "style" auf "StartOfInterval" festgelegt ist, wird der Slice am ersten Tag des Monats erstellt.</p><p>Wenn "Frequency" auf "Day" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice in der letzten Stunde des Tages erstellt.</p>Wenn "Frequency" auf "Hour" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice am Ende der Stunde erstellt. Ein Slice für den Zeitraum 13:00–14:00 Uhr wird z. B. um 14.00 Uhr erstellt.</p> | Nein | EndOfInterval |
+| anchorDateTime | Definiert die absolute Position in der Zeit, die der Scheduler benötigt, um DataSet-Slicegrenzen zu berechnen. <p>**Hinweis:** Wenn "anchorDateTime" über Datumsteile verfügt, die präziser als die Häufigkeit sind, werden die präziseren Teile ignoriert. Wenn z. B. ein stündliches **interval** festgelegt ist ("frequency": "hour" und "interval": 1) und **AnchorDateTime** Minuten und Sekunden enthält, werden die Minuten- und Sekundenteile von "AnchorDateTime" ignoriert. </p>| Nein | 01/01/0001 |
+| offset | Zeitspanne, um die Anfang und Ende aller DataSet-Slices verschoben werden. <p>**Hinweis:** Wenn sowohl "anchorDateTime" als auch "offset" angegeben werden, ist das Ergebnis die kombinierte Verschiebung.</p> | Nein | – |
 
 ### Beispiele zu "anchorDateTime"
 
-**Beispiel:** 23-Stunden-Dataset-Slices mit Startbeginn "2007-04-19T08:00:00"
+**Beispiel**: 23-Stunden-DataSet-Slices mit Startbeginn "2007-04-19T08:00:00"
 
 	"availability":	
 	{	
@@ -142,7 +142,7 @@ Für einen zwölfmonatigen Plan ("frequency" = "month"; "interval" = 12) bedeute
 
 
 
-## <a name="Policy"></a>Dataset: Policy
+## <a name="Policy"></a>DataSet: Policy
 
 Der Abschnitt "Policy" im Dataset definiert die Kriterien oder die Bedingung, die die Dataset-Slices erfüllen müssen.
 
@@ -182,14 +182,14 @@ Externe Datasets werden nicht durch eine Pipeline erstellt, die in der Data Fact
 
 | Name | Beschreibung | Erforderlich | Standardwert |
 | ---- | ----------- | -------- | -------------- |
-| dataDelay | <p>Zeit, um die die Prüfung der Verfügbarkeit der externen Daten für den angegebenen Slice verzögert wird. Wenn die Daten z. B. stündlich verfügbar sein sollen, die Überprüfung der externen Daten verfügbar und der entsprechende Slice bereit ist, kann eine Verzögerung durch "dataDelay" ausgeführt werden.</p><p>Diese bezieht sich nur auf die aktuelle Zeit; wenn es z. B. gerade 13:00 Uhr ist und dieser Wert 10 Minuten beträgt, beginnt die Überprüfung um 13:10 Uhr.</p><p>Diese Einstellung wirkt sich nicht auf Slices in der Vergangenheit aus (ohne Verzögerung werden Slices verarbeitet, für die Folgendes gilt: Slice-Endzeit + "dataDelay" < jetzt).</p> <p>Ein Zeitwert von mehr als 23:59 Stunden muss im Format "Tag.Stunden:Minuten:Sekunden" angegeben werden. Um beispielsweise 24 Stunden anzugeben, verwenden Sie nicht 24:00:00, sondern stattdessen 1.00:00:00. Wenn Sie 24:00:00 verwenden, wird dies als 24 Tage (24.00:00:00) gewertet. Für 1 Tag und 4 Stunden geben Sie 1.04:00:00 an. </p>| Nein | 0 |
-| retryInterval | Die Wartezeit zwischen einem Fehler und dem nächsten Wiederholungsversuch. Gilt für die aktuelle Zeit. Wenn der vorherige Versuch fehlgeschlagen ist, ist dies die Wartezeit nach dem letzten Versuch. <p>Wenn es jetzt gerade 13:00 Uhr ist, beginnt der erste Versuch. Wenn die Ausführung der ersten Überprüfung 1 Minute gedauert hat und ein Fehler aufgetreten ist, findet die nächste Wiederholung um 13:00 + 1 Min. (Dauer) + 1 Min. (Wiederholungsintervall) = 1:02 Uhr statt. </p><p>Für Slices in der Vergangenheit gibt es keine Verzögerung. Die Wiederholung erfolgt sofort.</p> | Nein | 00:01:00 (1 Minute) | 
-| retryTimeout | Das Timeout für die einzelnen Wiederholungsversuche.<p>Wenn dieser Wert auf 10 Minuten festgelegt ist, muss die Überprüfung innerhalb von 10 Minuten abgeschlossen werden. Wenn die Ausführung der Überprüfung länger als 10 Minuten dauert, wird das Timeout für die Wiederholung wirksam.</p><p>Wenn für alle Überprüfungsversuche ein Timeout wirksam wird, wird der Slice als "TimedOut" gekennzeichnet.</p> | Nein | 00:10:00 (10 Minuten) |
+| dataDelay | <p>Zeit, um die die Prüfung der Verfügbarkeit der externen Daten für den angegebenen Slice verzögert wird. Wenn die Daten z. B. stündlich verfügbar sein sollen, die Überprüfung der externen Daten verfügbar und der entsprechende Slice bereit ist, kann eine Verzögerung durch "dataDelay" ausgeführt werden.</p><p>Diese bezieht sich nur auf die aktuelle Zeit; wenn es z. B. gerade 13:00 Uhr ist und dieser Wert 10 Minuten beträgt, beginnt die Überprüfung um 13:10 Uhr.</p><p>Diese Einstellung wirkt sich nicht auf Slices in der Vergangenheit aus (ohne Verzögerung werden Slices verarbeitet, für die Folgendes gilt: Slice-Endzeit + "dataDelay" < jetzt).</p> <p>Ein Zeitwert von mehr als 23:59 Stunden muss im Format "Tag.Stunden:Minuten:Sekunden" angegeben werden. Um beispielsweise 24 Stunden anzugeben, verwenden Sie nicht 24:00:00, sondern stattdessen 1.00:00:00. Wenn Sie 24:00:00 verwenden, wird dies als 24 Tage (24.00:00:00) gewertet. Für 1 Tag und 4 Stunden geben Sie "1.04:00:00" an. </p>| Nein | 0 |
+| retryInterval | Die Wartezeit zwischen einem Fehler und dem nächsten Wiederholungsversuch. Gilt für die aktuelle Zeit. Wenn der vorherige Versuch fehlgeschlagen ist, ist dies die Wartezeit nach dem letzten Versuch. <p>Wenn es jetzt gerade 13:00 Uhr ist, beginnt der erste Versuch. Wenn die Ausführung der ersten Überprüfung 1 Minute gedauert hat und ein Fehler aufgetreten ist, findet die nächste Wiederholung um 13:00 + 1 Min. (Dauer) + 1 Min. (Wiederholungsintervall) = 1:02 Uhr statt. </p><p>Für Slices in der Vergangenheit gibt es keine Verzögerung. Die Wiederholung erfolgt sofort.</p> | Nein | 00:01:00 (1 Minute) | 
+| retryTimeout | Das Timeout für die einzelnen Wiederholungsversuche.<p>Wenn dieser Wert auf 10 Minuten festgelegt ist, muss die Überprüfung innerhalb von 10 Minuten abgeschlossen werden. Wenn die Ausführung der Überprüfung länger als 10 Minuten dauert, wird das Timeout für die Wiederholung wirksam.</p><p>Wenn für alle Überprüfungsversuche ein Timeout wirksam wird, wird der Slice als "TimedOut" gekennzeichnet.</p> | Nein | 00:10:00 (10 Minuten) |
 | maximumRetry | Gibt an, wie oft die Verfügbarkeit der externen Daten überprüft werden soll. Der zulässige Höchstwert ist 10. | Nein | 3 | 
 
 #### Weitere Beispiele
 
-Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmten Uhrzeit ausführen müssen (beispielsweise am 3. jedes Monats um 8:00 Uhr), könnten Sie mit dem **offset**-Tag das Datum und die Uhrzeit der Ausführung angeben.
+Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmten Uhrzeit ausführen müssen (beispielsweise am 3. jedes Monats um 8:00 Uhr), könnten Sie mit dem **offset**-Tag das Datum und die Uhrzeit der Ausführung angeben.
 
 	{
 	  "name": "MyDataset",
@@ -217,4 +217,4 @@ Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmt
 
   
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO2-->

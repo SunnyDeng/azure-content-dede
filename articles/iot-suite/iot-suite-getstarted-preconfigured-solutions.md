@@ -13,16 +13,16 @@
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="tbd"
-     ms.date="09/08/2015"
+     ms.date="09/29/2015"
      ms.author="araguila"/>
 
 # Erste Schritte mit den vorkonfigurierten IoT-Lösungen
 
 ## Einführung
 
-Die vorkonfigurierten Lösungen in der Azure IoT-Suite kombinieren eine Reihe von Azure IoT-Diensten, um eine End-to-End-Lösung für ein Geschäftsszenario des Internets der Dinge zu veranschaulichen.
+Die vorkonfigurierten Lösungen in der Azure IoT Suite kombinieren eine Reihe von Azure IoT-Diensten, um eine umfassende Lösung für ein Geschäftsszenario des Internets der Dinge (Internet of Things, IoT) zu veranschaulichen.
 
-In diesem Tutorial wird gezeigt, wie Sie eine vorkonfigurierte Lösung für die Remoteüberwachung bereitstellen. In ihm wird außerdem gezeigt, wie Sie die grundlegenden Funktionen der vorkonfigurierten Lösung für die Remoteüberwachung anzeigen.
+In diesem Lernprogramm wird gezeigt, wie Sie eine vorkonfigurierte Lösung für die **Remoteüberwachung** bereitstellen. In ihm wird außerdem gezeigt, wie Sie die grundlegenden Funktionen der vorkonfigurierten Lösung für die Remoteüberwachung anzeigen.
 
 Zum Durchführen dieses Tutorials benötigen Sie Folgendes:
 
@@ -32,13 +32,13 @@ Zum Durchführen dieses Tutorials benötigen Sie Folgendes:
 
 ## Bereitstellen einer vorkonfigurierten Lösung für die Remoteüberwachung
 
-1.  Melden Sie sich bei <https://azureiotsuite.com> an, und klicken Sie auf **+**, um eine neue Lösung zu erstellen.
+1.  Melden Sie sich bei https://www.azureiotsuite.com an, und klicken Sie auf **+**, um eine neue Lösung zu erstellen.
 
 2.  Wählen Sie als Lösungstyp **Remoteüberwachung** aus.
 
 3.  Geben Sie einen **Lösungsnamen** für die vorkonfigurierte Remoteüberwachungslösung ein.
 
-4.  Überprüfen Sie die **Region** und das **Abonnement**, in denen Sie die Lösung bereitstellen möchten.
+4.  Überprüfen Sie die **Region** und das **Abonnement** für die Bereitstellung der Lösung.
 
 5.  Klicken Sie auf **Lösung erstellen**.
 
@@ -60,7 +60,7 @@ Zum Durchführen dieses Tutorials benötigen Sie Folgendes:
 
 1.  Klicken Sie im Bereich mit den Gerätedetails für das ausgewählte simulierte Gerät auf **Befehl senden**.
 
-2.  Wählen Sie in der Dropdownliste der Befehle **PingDevice** aus.
+2.  Wählen Sie in der Befehlsliste **PingDevice** aus.
 
 3.  Klicken Sie auf **Befehl senden**.
 
@@ -74,7 +74,7 @@ Zum Durchführen dieses Tutorials benötigen Sie Folgendes:
 
 3.  Klicken Sie für **Simuliertes Gerät** auf **Neues hinzufügen**.
 
-4.  Wählen Sie **Ich möchte eine eigene Geräte-ID definieren** aus, und fügen Sie einen eindeutigen Geräte-ID-Namen hinzu.
+4.  Wählen Sie **Let me define my own Device ID** aus, und fügen Sie einen eindeutigen Geräte-ID-Namen hinzu.
 
 5.  Klicken Sie auf **Erstellen**.
 
@@ -84,32 +84,35 @@ Zum Durchführen dieses Tutorials benötigen Sie Folgendes:
 
 ## Anzeigen und Bearbeiten von Lösungsregeln
 
-1.  Beachten Sie im **Lösungsdashboard** die Tabelle **Alarmverlauf**.
+1.  Beachten Sie im **Solution Dashboard** die Tabelle **Alarm History**.
 
-2.  Die Alarme werden durch die in **Regeln** angegebene Ausgabe der Regel **AlarmTemp** ausgelöst.
+2.  Diese Alarme werden durch die in **Regeln** angegebene Ausgabe der Regel **AlarmTemp** ausgelöst.
 
 3.  Klicken Sie im linken Menü auf **Regeln**, um zu den Regeln für diese Lösung zu navigieren.
 
 4.  Bei der Bereitstellung ist eine Regel bereits aktiviert.
 
-5.  Klicken Sie in der Liste der Regeln auf die **Regel** , um die entsprechenden Regeleigenschaften anzuzeigen.
+5.  Klicken Sie in der Liste der Regeln auf die **Regel**, um die zugehörigen Regeleigenschaften anzuzeigen.
 
 6.  Klicken Sie im Eigenschaftenbereich der Regel auf **Bearbeiten**.
 
 7.  Ändern Sie den **Schwellenwert** in 30, und lassen Sie alle anderen Eigenschaften unverändert.
 
-8.  Klicken Sie auf **Regeln anzeigen und speichern**.
+8.  Klicken Sie auf **Save and View Rules**.
 
-9.  Kehren Sie zur Tabelle **Alarmverlauf** im **Lösungsdashboard** zurück, und beachten Sie die durch die aktualisierte Regel verursachte Änderung im Auslöser.
+9.  Kehren Sie zur Tabelle **Alarm History** im **Solution Dashboard** zurück, und beachten Sie die durch die aktualisierte Regel verursachte Änderung beim Auslöser.
 
 ## Nächste Schritte
 
-Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben, können Sie mit den folgenden Szenarien fortfahren:
+Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben, können Sie mit den folgenden Szenarios fortfahren:
 
--   Anleitung zum Anpassen vorkonfigurierter Lösungen
+-   [Anleitung zum Anpassen vorkonfigurierter Lösungen][]
 
--   Übersicht über IoT Suite
+-   [Übersicht über IoT Suite][]
 
 [Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F%20target=
 
-<!---HONumber=Oct15_HO1-->
+[Anleitung zum Anpassen vorkonfigurierter Lösungen]: https://azure.microsoft.com/documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[Übersicht über IoT Suite]: https://azure.microsoft.com/documentation/articles/iot-suite-overview/
+
+<!---HONumber=Oct15_HO2-->

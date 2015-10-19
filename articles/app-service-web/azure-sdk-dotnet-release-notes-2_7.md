@@ -1,21 +1,21 @@
 
 <properties 
-   pageTitle="Versionshinweise zum Azure SDK für .NET 2.7 und .NET 2.7.1"
-	description="Versionshinweise zum Azure SDK für .NET 2.7 und .NET 2.7.1"
-	services="app-service\web"
-	documentationCenter=".net"
-	authors="Juliako"
-	manager="dwrede"
-	editor=""/>
+   pageTitle="Versionshinweise zum Azure SDK für .NET 2.7 und .NET 2.7.1" 
+   description="Versionshinweise zum Azure SDK für .NET 2.7 und .NET 2.7.1" 
+   services="app-service\web" 
+   documentationCenter=".net" 
+   authors="Juliako" 
+   manager="dwrede" 
+   editor=""/>
 
 <tags
    ms.service="app-service"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="integration"
-	ms.date="08/26/2015"
-	ms.author="juliako"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="08/26/2015"
+   ms.author="juliako"/>
 
 
 # Versionshinweise zum Azure SDK für .NET 2.7 und .NET 2.7.1
@@ -150,6 +150,7 @@ Eine ausführlichere Erläuterung zu den Updates für die HDInsight-Tools finden
 
 Bei der Installation des Azure SDK 2.6 oder 2.7.1 für Visual Studio Community 2013 unter einem nichtenglischen Betriebssystem wird eventuell eine Warnung angezeigt, dass die englischen und die nichtenglischen Ressourcen von Visual Studio falsch zugeordnet werden könnten. Diese Warnung kann sicher ignoriert werden. Sie tritt nur auf, wenn der Computer keine vorherige Installation von Visual Studio Community 2013 enthält und das SDK unter einem nichtenglischen Betriebssystem installiert wird. Die Warnung wird angezeigt, nachdem das Sprachpaket die RTM-Ressourcen auf Visual Studio angewendet hat, aber bevor das Update 4 angewendet wird. Wenn Sie die Warnung schließen, kann das Sprachpaket fortgesetzt und das Update 4 des Sprachpakets angewendet werden.
 
+LightSwitch-Projekte sind mit dieser Version nicht kompatibel. Dieses Problem wird in der nächsten SDK-Version behoben.
 
 ##Siehe auch
 [Ankündigungsbeitrag zu Azure SDK 2.7.1](http://go.microsoft.com/fwlink/?LinkId=623850) (in englischer Sprache)
@@ -158,4 +159,4 @@ Bei der Installation des Azure SDK 2.6 oder 2.7.1 für Visual Studio Community 2
 
 [Unterstützungs- und Deaktivierungsinformationen zum Azure SDK für .NET und APIs](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

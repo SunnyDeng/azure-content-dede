@@ -13,14 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/06/2015"
    ms.author="sahajs"/>
 
 # Verwenden von Azure Machine Learning mit SQL Data Warehouse
 
 Azure Machine Learning ist ein vollständig verwalteter Vorhersageanalysedienst, den Sie zum Erstellen von Vorhersagemodellen anhand Ihrer Daten in SQL Data Warehouse verwenden können, die Sie als sofort nutzbare Webdienste veröffentlichen können. Zum Erlernen der Grundlagen von Vorhersageanalysen und vom maschinellen Lernen lesen Sie [Einführung in Machine Learning in Azure][]. Anschließend erfahren Sie im [Lernprogramm zum Erstellen eines Experiments][] wie Sie ein Modell zum maschinellen Lernen erstellen, trainieren, bewerten und testen.
 
-In diesem Artikel erfahren Sie, wie Sie folgende Aktionen mit [Azure Machine Learning Studio][] ausführen: - Lesen von Daten aus der Datenbank zum Erstellen, Trainieren und Bewerten eines Vorhersagemodell - Schreiben von Daten in die Datenbank
+In diesem Artikel erfahren Sie, wie Sie Folgendes mit [Azure Machine Learning Studio][] ausführen:
+
+- Lesen von Daten aus der Datenbank zum Erstellen, Trainieren und Bewerten eines Vorhersagemodells
+- Schreiben von Daten in die Datenbank 
 
 
 ## Lesen von Daten aus SQL Data Warehouse
@@ -72,8 +75,13 @@ FROM dbo.DimProduct;
 
 ## Erstellen, Trainieren und Bewerten eines Modells
 
-Jetzt können Sie dieses DataSet für Folgendes verwenden: - Erstellen eines Modells: Verarbeiten der Daten und Definieren der Funktionen - Trainieren des Modells: Auswählen und Anwenden eines Lernalgorithmus - Bewerten und Testen des Modells "Fahrradpreisvorhersage"
-	
+Sie können das Dataset jetzt für Folgendes verwenden:
+
+- Erstellen eines Modells: Verarbeiten von Daten und Definieren von Funktionen
+- Trainieren des Modells: Auswählen und Anwenden eines Lernalgorithmus
+- Bewerten und Testen des Modells: Vorhersagen eines neuen Fahrradpreises
+ 
+
 ![][model]
 
 Im [Lernprogramm zum Erstellen eines Experiments][] erfahren Sie, wie Sie ein Modell zum maschinellen Lernen erstellen, trainieren, bewerten und testen.
@@ -112,7 +120,7 @@ Wählen Sie das Writer-Modul aus, und füllen Sie das Eigenschaftenfenster aus.
 
 ## Nächste Schritte
 
-Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Integration (Übersicht)][].
+Eine Übersicht über die Integration finden Sie unter [SQL Data Warehouse-Integration (Übersicht)][].
 
 Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklungsübersicht][].
 
@@ -130,8 +138,8 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 [SQL Data Warehouse-Entwicklungsübersicht]: ./sql-data-warehouse-overview-develop/
 [SQL Data Warehouse-Integration (Übersicht)]: ./sql-data-warehouse-overview-integration/
-[Lernprogramm zum Erstellen eines Experiments]: ./machine-learning-create-experiment/
-[Einführung in Machine Learning in Azure]: ./machine-learning-what-is-machine-learning/
+[Lernprogramm zum Erstellen eines Experiments]: https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-create-experiment/
+[Einführung in Machine Learning in Azure]: https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-what-is-machine-learning/
 [Azure Machine Learning Studio]: https://studio.azureml.net/Home
 [Azure-Portal]: https://portal.azure.com/
 
@@ -141,4 +149,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 [Azure Machine Learning documentation]: http://azure.microsoft.com/documentation/services/machine-learning/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->
