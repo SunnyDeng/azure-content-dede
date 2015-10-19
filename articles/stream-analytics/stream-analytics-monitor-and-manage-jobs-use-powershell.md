@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Überwachen und Verwalten von Stream Analytics-Aufträgen mit von PowerShell | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge mithilfe von PowerShell und Cmdlets überwachen und verwalten können." 
+	keywords="azure powershell,azure powershell cmdlets,powershell command"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/04/2015" 
+	ms.date="10/05/2015" 
 	ms.author="jeffstok"/>
 
 
@@ -258,7 +259,7 @@ Testet, ob Stream Analytics eine Verbindung mit einer angegebenen Ausgabe herste
 Dieser PowerShell-Befehl testet den Verbindungsstatus der Ausgabe "Output" in "StreamingJob".
 
 ## Support
-Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 
 ## Nächste Schritte
@@ -287,4 +288,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="10/01/2015"
 	ms.author="anuragdalmia"/>
 
 #BizTalk-Transformation
@@ -22,7 +22,7 @@
 ## Übersicht
 Einfach ausgedrückt, konvertiert die BizTalk-Transformations-API-App Daten von einem Format in ein anderes. Sie können z. B. Versand- und Rechnungsanschrift einer Bestellung entnehmen und in ein Rechnungsdokument einfügen. Oder Sie haben eine eingehende Nachricht, die das aktuelle Datum im *YearMonthDay*-Format enthält. Sie möchten das Datum im *MonthDayYear*-Format neu formatieren.
 
-Dazu können Sie die Transformations-API-App in Microsoft Azure App Service verwenden. Eine Transformation oder Zuordnung besteht aus einem XML-Quellschema (der Eingabe) und einem XML-Zielschema (der Ausgabe). Sie können verschiedene integrierte Funktionen verwenden, um Daten zu ändern oder zu steuern, einschließlich Zeichenfolgenbearbeitungen, bedingter Zuordnungen, arithmetischer Ausdrücke, Datum-Uhrzeit-Formatierungen und sogar Schleifenkonstrukten.
+Dazu können Sie die Transformations-API-App in Microsoft Azure App Service verwenden. Eine Transformation, auch als Zuordnung bezeichnet, besteht aus einem XML-Quellschema (der Eingabe) und einem XML-Zielschema (der Ausgabe). Sie können verschiedene integrierte Funktionen verwenden, um Daten zu ändern oder zu steuern, einschließlich Zeichenfolgenbearbeitungen, bedingter Zuordnungen, arithmetischer Ausdrücke, Datum-Uhrzeit-Formatierungen und sogar Schleifenkonstrukten.
 
 Zuordnungen werden in Visual Studio mithilfe des [Microsoft Azure BizTalk Services SDK](http://www.microsoft.com/download/details.aspx?id=39087) erstellt. Wenn Sie mit dem Erstellen und Testen der Zuordnung fertig sind, laden Sie die Zuordnung (.trfm) in die BizTalk-Transformations-API-App hoch.
 
@@ -116,4 +116,4 @@ Nachdem die Zuordnung erstellt und getestet wurde, steht sie jetzt zur Nutzung b
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

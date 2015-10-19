@@ -14,14 +14,14 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="backup-recovery"
-	ms.date="08/05/2015"
+	ms.date="10/07/2015"
 	ms.author="raynew"/>
 
 #  Einrichten von Schutz mit einem einzelnen VMM-Server
 
 ## Übersicht
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer in einer Vielzahl von Bereitstellungsszenarien aufeinander abgestimmt werden. Eine vollständige Liste der Bereitstellungsszenarien finden Sie unter [Übersicht über Azure Site Recovery](site-recovery-overview.md).
+Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer in einer Vielzahl von Bereitstellungsszenarios aufeinander abgestimmt werden. Eine vollständige Liste der Bereitstellungsszenarien finden Sie unter [Übersicht über Azure Site Recovery](site-recovery-overview.md).
 
 Wenn Ihre Infrastruktur nur einen einzelnen VMM-Server enthält, können Sie Site Recovery bereitstellen, um virtuelle Computer in VMM-Clouds zu Azure zu replizieren oder eine Replikation zwischen Clouds auf einem einzelnen VMM-Server durchzuführen. Diese Bereitstellung sollte nur gewählt werden, wenn Sie nicht zwei VMM-Server (jeweils einen pro Standort) bereitstellen können, da hier keine nahtlosen Failover und Wiederherstellungen möglich sind. Für die Wiederherstellung müssen Sie von außerhalb der Azure Site Recovery-Konsole (mit Hyper-V-Replikat in der Hyper-V-Manager-Konsole) ein manuelles Failover des VMM-Servers durchführen.
 
@@ -100,4 +100,4 @@ Bei einem Notfall können Workloads auf folgende Weise wiederhergestellt werden:
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

@@ -24,7 +24,7 @@
 
 In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um Ihre Serverskripts zu speichern. Sie können Skripts und andere JavaScript-Back-End-Codedateien aus Ihrem lokalen Git-Repository in Ihre Produktionsumgebung im mobilen Dienst befördern. Außerdem erfahren Sie, wie Sie freigegebenen Code definieren, der möglicherweise für mehrere Skripts erforderlich ist, und wie Sie die Datei „package.jason“ verwenden, um Ihrem mobilen Dienst Node.js-Module hinzuzufügen.
 
-Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Bearbeiten eines der Lernprogramme [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben.
+Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus dem Lernprogramm [Erste Schritte mit Mobile Services] erstellt haben.
 
 ##<a name="enable-source-control"></a>Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst
 
@@ -93,9 +93,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 
 	Daraufhin wird eine Reihe von Ausgaben für die Bereitstellung des Commits im mobilen Dienst angezeigt.
 
-6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie anschließend auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
-7. 
-	Beachten Sie, dass das angezeigte Skript für die Einfügen-Operation denselben JavaScript-Code enthält, den Sie soeben in Ihr Repository hochgeladen haben.
+6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie anschließend auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus. Beachten Sie, dass das angezeigte Skript für die Einfügen-Operation denselben JavaScript-Code enthält, den Sie soeben in Ihr Repository hochgeladen haben.
 
 ##<a name="use-npm"></a>Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts.
 
@@ -132,11 +130,7 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
-+ [Arbeiten mit Serverskripts in Mobile Services] <br/>
-Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
-
-+ [Aufrufen einer benutzerdefinierten API vom Client] <br/>
- Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
++ [Arbeiten mit Serverskripts in Mobile Services] <br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
@@ -154,11 +148,9 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [Quellcodeverwaltung]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-ios-get-started-data.md
 [Arbeiten mit Serverskripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Aufrufen einer benutzerdefinierten API vom Client]: mobile-services-ios-call-custom-api.md
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

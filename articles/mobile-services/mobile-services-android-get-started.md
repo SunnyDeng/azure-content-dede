@@ -12,17 +12,21 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
-	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.topic="hero-article"
+	ms.date="10/05/2015"
 	ms.author="ricksal"/>
 
 # Erste Schritte mit Mobile Services für Android (JavaScript-Back-End)
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
-In diesem Tutorial erfahren Sie, wie Sie einen cloudbasierten Back-End-Dienst mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. In diesem Tutorial erstellen Sie einen neuen mobilen Dienst und eine einfache **To-Do-Listen**-App, die App-Daten im neuen mobilen Dienst speichert.
+&nbsp;
 
-> [AZURE.VIDEO android-support-in-windows-azure-mobile-services]
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+
+In diesem Tutorial erfahren Sie, wie Sie einen cloudbasierten Back-End-Dienst mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache **To-Do-Listen**-App, die App-Daten im neuen mobilen Dienst speichert.
+
+> [AZURE.VIDEO mobile-get-started-android]
 
 Unten sehen Sie einen Screenshot aus der fertigen App: ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
@@ -75,7 +79,7 @@ In diesem Abschnitt erstellen Sie eine neue Android-App, die mit Ihrem Mobile Se
 Den Quellcode der fertig gestellten App finden Sie [hier](https://github.com/RickSaling/mobile-services-samples/tree/androidStudio/GettingStarted/AndroidStudio).
 
 
-Die Eclipse-Version dieses Tutorials finden Sie unter [Erste Schritte (Eclipse)](mobile-services-android-get-started-ec.md).
+Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte (Eclipse)](mobile-services-android-get-started-ec.md).
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
@@ -87,7 +91,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 * [Erste Schritte mit Pushbenachrichtigungen] <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 
-
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -117,4 +121,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

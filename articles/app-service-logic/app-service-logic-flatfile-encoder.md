@@ -13,15 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="07/01/2015"
+   ms.date="10/01/2015"
    ms.author="rajram"/>
 
 # BizTalk Flat File Encoder
 
-Der BizTalk Flat File Encode Decode-Connector hilft Ihrer App bei der Interoperation zwischen Flatfile-Daten (Beispiel-Excel, CSV) und XML-Daten Sie können damit eine Flatfile-Instanz in XML konvertieren und umgekehrt.
+Verwenden Sie den BizTalk Flat File Encoder-Connector für die Interoperation zwischen Flatfile-Daten (Beispiel-Excel, CSV) und XML-Daten. Sie können damit eine Flatfile-Instanz in XML konvertieren und umgekehrt.
 
 ##Verwenden des BizTalk Flat File Encoder
-1. Um den BizTalk Flat File Encoder zu verwenden, müssen Sie zunächst eine Instanz der BizTalk Flat File Encoder-API-App erstellen. Dies kann entweder Inline beim Erstellen einer Logik-App oder durch Auswählen der BizTalk Flat File-Encoder-API-App aus dem Azure Marketplace erfolgen.
+Um den BizTalk Flat File Encoder zu verwenden, müssen Sie zunächst eine Instanz der BizTalk Flat File Encoder-API-App erstellen. Dies kann entweder Inline beim Erstellen einer Logik-App oder durch Auswählen der BizTalk Flat File-Encoder-API-App aus dem Azure Marketplace erfolgen.
 
 ###Konfigurieren des BizTalk Flat File Encoder
 BizTalk Flat File Encoder verwendet Schemas als Teil der Konfiguration. Benutzer können das API-App-Konfigurationsblatt entweder durch Starten der API-App direkt aus dem Azure-Portal oder durch Doppelklicken auf die API-App auf der Designeroberfläche starten.
@@ -74,4 +74,4 @@ Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Flatfile. Ausgabe enthäl
 [6]: ./media/app-service-logic-flatfile-encoder/FlatFileEncoder.XmlToFlatFile.PNG
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

@@ -28,7 +28,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Ein aktives Google-Konto
 + [Google Cloud Messaging Client-Komponente] Sie fügen diese Komponente während des Lernprogramms hinzu.
 
-Sie haben [Xamarin.Android] und die [Azure Mobile Services-Komponente] bereits in Ihrem Projekt installiert, wenn Sie entweder [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] abgeschlossen haben.
+Sie haben die Komponenten [Xamarin.Android] und [Azure Mobile Services] bereits in Ihrem Projekt installiert, als Sie [Erste Schritte mit Mobile Services] bearbeitet haben.
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
@@ -65,8 +65,6 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
 Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in den folgenden Themen:
 
-* [Hinzufügen von Mobile Services zu einer vorhandenen App] <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
-
 * [Erste Schritte mit der Authentifizierung](mobile-services-android-get-started-users.md) <br/>Informationen zur Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen mithilfe von mobilen Diensten.
 
 * [Was sind Notification Hubs?](../notification-hubs-overview.md) <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
@@ -79,11 +77,10 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-android-get-started-data.md
 
 [Google Cloud Messaging Client-Komponente]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
-[Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
+[Azure Mobile Services]: http://components.xamarin.com/view/azure-mobile-services/
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

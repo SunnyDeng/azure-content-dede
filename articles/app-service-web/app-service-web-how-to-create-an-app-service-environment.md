@@ -18,7 +18,7 @@
 
 # Erstellen einer App Service-Umgebung #
 
-App Service-Umgebungen sind eine Premium-Dienstoption von Azure App Service, die sich aktuell in der Vorschau befindet. Sie bietet eine erweiterte Konfigurationsmöglichkeit, die in den mehrinstanzenfähigen Verwaltungseinheiten nicht verfügbar ist. Um ein besseres Verständnis von den Möglichkeiten von App Service-Umgebungen zu erhalten, lesen Sie die Dokumentation [Was ist eine App Service-Umgebung][WhatisASE].
+App Service-Umgebungen (App Service Environments, ASEs) sind eine Premium-Dienstoption von Azure App Service mit erweiterten Konfigurationsmöglichkeiten, die in den mehrinstanzenfähigen Verwaltungseinheiten nicht verfügbar sind. Um ein besseres Verständnis von den Möglichkeiten von App Service-Umgebungen zu erhalten, lesen Sie die Dokumentation [Was ist eine App Service-Umgebung][WhatisASE].
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -145,4 +145,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AppServicePricing]: http://azure.microsoft.com/pricing/details/app-service/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

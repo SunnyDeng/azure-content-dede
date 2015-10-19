@@ -21,10 +21,7 @@
 
 In diesem Thema wird gezeigt, wie Sie das Media Services .NET SDK zum Codieren eines Medienobjekts und Generieren von Miniaturansichten mithilfe von Media Encoder Standard verwenden. In dem Thema werden die XML- und JSON-Voreinstellungen für Miniaturansichten definiert, mit denen Sie eine Aufgabe erstellen können, die Miniaturansichten gleichzeitig codiert und generiert. [Dieses](https://msdn.microsoft.com/library/mt269962.aspx) Dokument enthält Beschreibungen der Elemente, die durch diese Voreinstellungen verwendet werden.
 
-Es gelten die folgenden Bedingungen:
-
-- Bei der Verwendung von expliziten Zeitstempeln für "Start"/"Step"/"Range" wird davon ausgegangen, dass die Dauer der Eingabequelle mindestens 1 Minute beträgt.
-
+Lesen Sie unbedingt den Abschnitt [Überlegungen](media-services-dotnet-generate-thumbnail-with-mes.md#considerations).
 
 ##Beispiel
 
@@ -355,6 +352,25 @@ Informationen zum Schema finden Sie in [diesem](https://msdn.microsoft.com/libra
 	  </Outputs>
 	</Preset>
 
+##Überlegungen
+
+Es gelten die folgenden Bedingungen:
+
+- Bei der Verwendung von expliziten Zeitstempeln für "Start"/"Step"/"Range" wird davon ausgegangen, dass die Dauer der Eingabequelle mindestens 1 Minute beträgt.
+- Jpg-/Png-/BmpVideo-Elemente weisen Start-, Step- und Range-Zeichenfolgenattribute auf. Diese können folgendermaßen interpretiert werden:
+
+	- Framenummer, wenn es sich nicht um negative ganze Zahlen handelt, z. B. "Start": "120",
+	- Relativ zur Quelldauer bei Ausdrücken mit dem Suffix "%", z. B. "Start": "15%" ODER
+	- Zeitstempel bei Ausdrücken im Format "HH:MM:SS". Beispiel: "Start" : "00:01:00"
+
+	Sie können die Formate nach Belieben mischen.
+	
+	"Start" unterstützt darüber hinaus auch das spezielle Makro "{Best}", das versucht, den ersten "interessanten" Frame des Inhalts zu ermitteln. (HINWEIS: "Step" und "Range" werden ignoriert, wenn "Start" auf "{Best}" festgelegt ist.)
+	
+	- Standardwerte: Start:{Best}
+- Das Ausgabeformat muss für jedes Bildformat ausdrücklich bereitgestellt werden: "Jpg"/"Png"/"BmpFormat". Wenn vorhanden, ordnet AMS "JpgVideo" "JpgFormat" zu usw. "OutputFormat" führt ein neues Imagecodec-spezifisches Makro ein: "{Index}". Dieses Makro muss für Bildausgabeformate vorhanden sein (genau einmal).
+
+
 ##Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
@@ -366,4 +382,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

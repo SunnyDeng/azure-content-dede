@@ -3,7 +3,7 @@
    description="Beispiele möglicher Fallgruben für Kunden, die sich neu mit Azure Service Fabric Actors befassen"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/11/2015"
-   ms.author="claudioc"/>
+   ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Beispiele für Anti-Muster
 
@@ -30,4 +30,4 @@ Wir haben die folgenden möglichen Fallgruben für Kunden ermittelt, die sich ne
 
 * Blindes Zuordnen von Entitätsmodellen. Dies richtet sich an Entwickler, die aus einer relationalen Welt kommen, in der Probleme mithilfe von Entitäten und deren Beziehungen modelliert werden. Während dieser Ansatz für das Verständnis der Subjektdomäne nach wie vor nützlich ist, sollte er mit dienst-orientierter Denkweise gekoppelt und in das Verhalten aufgenommen werden.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="10/02/2015"
 	ms.author="jgao"/>
 
 # Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop in HDInsight
@@ -174,4 +174,4 @@ Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmt
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

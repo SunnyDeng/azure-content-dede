@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="10/07/2015" 
 	ms.author="tomfitz"/>
 
 # Überwachen von Vorgängen mit dem Ressourcen-Manager
@@ -26,15 +26,15 @@ Sie können Informationen aus den Überwachungsprotokollen über Azure PowerShel
 
 ## PowerShell
 
-Um Protokolleinträge abzurufen, führen Sie den Befehl **Get-AzureResourceGroupLog** aus. Wenn Sie die Liste der Einträge filtern möchten, können Sie dem Befehl Parameter hinzufügen.
+Führen Sie zum Abrufen von Protokolleinträgen den Befehl **Get-AzureRmLog** aus (oder **Get-AzureResourceGroupLog** für PowerShell-Versionen vor 1.0 Preview). Wenn Sie die Liste der Einträge filtern möchten, können Sie dem Befehl Parameter hinzufügen.
 
 Das folgende Beispiel zeigt, wie Sie mithilfe des Überwachungsprotokolls nach Aktionen suchen können, die während der Lebensdauer der Lösung durchgeführt wurden. Sie können sehen, wann die Aktion durchgeführt wurde und wer sie angefordert hat.
 
-    PS C:\> Get-AzureResourceGroupLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00
 
 Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben stehende Befehl eine sehr lange Liste mit Aktionen für diese Ressourcengruppe zurückgeben. Sie können die Ergebnisse filtern, indem Sie Suchkriterien eingeben. Wenn Sie beispielsweise herausfinden möchten, wie eine Web-App angehalten wurde, können Sie folgenden Befehl ausführen, und Sie werden feststellen, dass die Aktion durch someone@example.com durchgeführt wurde.
 
-    PS C:\> Get-AzureResourceGroupLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
 
     Authorization     :
                         Scope     : /subscriptions/xxxxx/resourcegroups/ExampleGroup/providers/Microsoft.Web/sites/ExampleSite
@@ -54,11 +54,11 @@ Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben s
 
 Im nächsten Beispiel suchen wir nach Aktionen, bei denen nach der angegebenen Startzeit ein Fehler aufgetreten ist. Hier wird auch der Parameter **DetailedOutput** einbezogen, damit die Fehlermeldungen angezeigt werden.
 
-    PS C:\> Get-AzureResourceGroupLog -ResourceGroup ExampleGroup -StartTime 2015-08-27T12:00 -Status Failed –DetailedOutput
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-27T12:00 -Status Failed –DetailedOutput
     
 Wenn dieser Befehl zu viele Einträge und Eigenschaften zurückgibt, können Sie die Überwachung genauer fokussieren, indem Sie die **properties**-Eigenschaft abrufen.
 
-    PS C:\> (Get-AzureResourceGroupLog -Status Failed -ResourceGroup ExampleGroup -DetailedOutput).Properties
+    PS C:\> (Get-AzureRmLog -Status Failed -ResourceGroup ExampleGroup -DetailedOutput).Properties
 
     Content
     -------
@@ -68,7 +68,7 @@ Wenn dieser Befehl zu viele Einträge und Eigenschaften zurückgibt, können Sie
 
 Und Sie können die Suchergebnisse weiter eingrenzen, indem Sie die Statusmeldung anzeigen lassen.
 
-    PS C:\> (Get-AzureResourceGroupLog -Status Failed -ResourceGroup ExampleGroup -DetailedOutput).Properties[1].Content["statusMessage"] | ConvertFrom-Json
+    PS C:\> (Get-AzureRmLog -Status Failed -ResourceGroup ExampleGroup -DetailedOutput).Properties[1].Content["statusMessage"] | ConvertFrom-Json
 
     Code       : Conflict
     Message    : Website with given name mysite already exists.
@@ -151,4 +151,4 @@ Sie können jeden Vorgang auswählen, um weitere Details anzuzeigen.
 - Informationen zum Gewähren des Zugriffs für einen Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 - Informationen zum Beschränken von Aktionen für eine Ressource für alle Benutzer finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

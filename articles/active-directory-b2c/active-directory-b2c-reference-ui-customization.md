@@ -33,7 +33,7 @@ Dieser Artikel enthält Folgendes:
 
 ## Anpassungsfeature für die Seitenbenutzeroberfläche (UI)
 
-Mit dem Anpassungsfeature für die Seiten-UI können Sie das Aussehen und Verhalten der Seiten für die Registrierung und Anmeldung von Consumern und für die Profilbearbeitung anpassen (durch Konfigurieren von [Richtlinien](active-directory-b2c-references.policies.md)). Beim Navigieren zwischen der Anwendung und den Seiten, die vom Azure AD B2C-Dienst verarbeitet werden, wird den Consumern eine einheitliche Benutzeroberfläche angeboten.
+Mit dem Anpassungsfeature für die Seiten-UI können Sie das Aussehen und Verhalten der Seiten für die Registrierung und Anmeldung von Consumern und für die Profilbearbeitung anpassen (durch Konfigurieren von [Richtlinien](active-directory-b2c-reference-policies.md)). Beim Navigieren zwischen der Anwendung und den Seiten, die vom Azure AD B2C-Dienst verarbeitet werden, wird den Consumern eine einheitliche Benutzeroberfläche angeboten.
 
 Im Gegensatz zu anderen Diensten, in denen Optionen beschränkt oder nur über APIs verfügbar sind, verwendet Azure AD B2C eine moderne (und einfachere) Vorgehensweise bei der Anpassung der Seiten-UI. So funktioniert es: Azure AD B2C führt Code im Browser des Consumers aus und verwendet einen modernen Ansatz namens [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/) zum Laden des Inhalts von einer URL, die Sie in einer Richtlinie angeben. Sie können verschiedene URLs für unterschiedliche Seiten angeben. Der Code führt den Azure AD B2C-Inhalt (UI-Elemente genannt) und den Inhalt, der von der URL geladen wird, zusammen und zeigt die Seite für den Consumer an. Sie müssen lediglich wohlgeformten HTML5-Inhalt mit einem `<div id="api"></div>`-Element irgendwo in `<body>` erstellen, wo der Azure AD B2C-Inhalt zusammengeführt wird. Hosten Sie diese Inhalte auf einem HTTPS-Endpunkt (auf dem CORS zulässig ist). Sie können zudem Azure AD B2C-UI-Elemente vollständig formatieren.
 
@@ -276,4 +276,4 @@ Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten S
 	- Mozilla Firefox 38.0
 	- Mozilla Firefox 37.0
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

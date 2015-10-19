@@ -24,11 +24,11 @@ Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Dat
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1. Einen verknüpften Dienst des Typs [AzureSqlDatabase](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties)
+1. Einen verknüpften Dienst des Typs [AzureSqlDatabase](#azure-sql-linked-service-properties)
 2. Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) 
-3. Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureSqlTable](data-factory-azure-sql-connector.md#azure-sql-dataset-type-properties) 
+3. Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureSqlTable](#azure-sql-dataset-type-properties) 
 4. Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
-4. Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [SqlSource](data-factory-azure-sql-connector.md#azure-sql-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
+4. Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [SqlSource](#azure-sql-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer Tabelle in einer Azure SQL-Datenbank in ein Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -44,6 +44,8 @@ Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer 
 	  }
 	}
 
+Der Abschnitt [Mit Azure SQL verknüpfter Dienst](#azure-sql-linked-service-properties) enthält eine Liste mit den Eigenschaften, die von diesem verknüpften Dienst unterstützt werden.
+
 **Mit Azure-Blobspeicher verknüpfter Dienst**
 
 	{
@@ -55,6 +57,8 @@ Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer 
 	    }
 	  }
 	}
+
+Der Artikel [Azure-Blob](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) enthält eine Liste mit den Eigenschaften, die von diesem verknüpften Dienst unterstützt werden.
 
 **Azure SQL-Eingabedataset**
 
@@ -84,6 +88,8 @@ Durch Festlegen von "external" auf "true" und Angeben der Richtlinie "externalDa
 	    }
 	  }
 	}
+
+Eine Liste mit den Eigenschaften, die von diesem Dataset-Typ unterstützt werden, finden Sie im Abschnitt [Eigenschaften des Dataset-Typs „Azure SQL“](#azure-sql-dataset-type-properties).
 
 **Azure-Blob-Ausgabedataset**
 
@@ -143,6 +149,8 @@ Daten werden stündlich in ein neues Blob geschrieben ("frequency": "hour", "int
 	  }
 	}
 
+Eine Liste mit den Eigenschaften, die von diesem Dataset-Typ unterstützt werden, finden Sie im Abschnitt [Eigenschaften des Dataset-Typs „Azure-Blob“](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties).
+
 **Pipeline mit Kopieraktivität**
 
 Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben genannten Ein- und Ausgabedatasets und für eine stündliche Ausführung konfiguriert ist. In der JSON-Definition der Pipeline ist der Typ **source** auf **SqlSource** und der Typ **sink** auf **BlobSink** festgelegt. Die für die **SqlReaderQuery**-Eigenschaft angegebene SQL-Abfrage wählt die Daten der letzten Stunde zum Kopieren aus.
@@ -192,6 +200,16 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
+> [AZURE.NOTE]Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage für die Azure SQL-Datenbankquelle ausgeführt, um die Daten abzurufen.
+>  
+> Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (falls die gespeicherten Prozeduren Parameter verwenden).
+>  
+> Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die Azure SQL-Datenbank zu erstellen. Falls die Datasetdefinition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
+
+
+Eine Liste mit den Eigenschaften, die von SqlSource und BlobSink unterstützt werden, finden Sie im Abschnitt [Sql Source](#sqlsource) und unter [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties).
+
+
 ## Beispiel: Kopieren von Daten aus einem Azure-Blob in Azure SQL
 
 Das nachstehende Beispiel zeigt Folgendes:
@@ -217,6 +235,8 @@ Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, 
 	  }
 	}
 
+Der Abschnitt [Mit Azure SQL verknüpfter Dienst](#azure-sql-linked-service-properties) enthält eine Liste mit den Eigenschaften, die von diesem verknüpften Dienst unterstützt werden.
+
 **Mit Azure-Blobspeicher verknüpfter Dienst**
 
 	{
@@ -228,6 +248,8 @@ Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, 
 	    }
 	  }
 	}
+
+Der Artikel [Azure-Blob](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) enthält eine Liste mit den Eigenschaften, die von diesem verknüpften Dienst unterstützt werden.
 
 **Azure-Blob-Eingabedataset**
 
@@ -296,6 +318,8 @@ Daten werden stündlich aus einem neuen Blob übernommen ("frequency": "hour", "
 	  }
 	}
 
+Eine Liste mit den Eigenschaften, die von diesem Dataset-Typ unterstützt werden, finden Sie im Abschnitt [Eigenschaften des Dataset-Typs „Azure-Blob“](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties).
+
 **Azure SQL-Ausgabedataset**
 
 Das Beispiel kopiert Daten in eine Tabelle namens "MyTable" in Azure SQL. Sie sollten die Tabelle in Azure SQL mit der gleichen Anzahl von Spalten erstellen, die Sie in der Blob-CSV-Datei erwarten. Neue Zeilen werden der Tabelle stündlich hinzugefügt.
@@ -314,6 +338,8 @@ Das Beispiel kopiert Daten in eine Tabelle namens "MyTable" in Azure SQL. Sie so
 	    }
 	  }
 	}
+
+Eine Liste mit den Eigenschaften, die von diesem Dataset-Typ unterstützt werden, finden Sie im Abschnitt [Eigenschaften des Dataset-Typs „Azure SQL“](#azure-sql-dataset-type-properties).
 
 **Pipeline mit Kopieraktivität**
 
@@ -364,6 +390,9 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
+Eine Liste mit den Eigenschaften, die von SqlSink und BlobSource unterstützt werden, finden Sie im Abschnitt [Sql Sink](#sqlsink) und unter [BlobSource](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties).
+
+
 ## Eigenschaften des mit Azure SQL verknüpften Diensts
 
 Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den mit Azure SQL verknüpften Dienst spezifisch sind.
@@ -395,13 +424,19 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 ### SqlSource
 
-Wenn bei der Kopieraktivität "source" den Typ **SqlSource** hat, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
+Wenn bei der Kopieraktivität „source“ den Typ **SqlSource** hat, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
 | sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: "select * from MyTable". Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
 | sqlReaderStoredProcedureName | Der Name der gespeicherten Prozedur, die Daten aus der Quelltabelle liest. | Name der gespeicherten Prozedur. | Nein |
-| storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein | 
+| storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein |
+
+Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage für die Azure SQL-Datenbankquelle aus, um die Daten abzurufen.
+
+Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (falls die gespeicherten Prozeduren Parameter verwenden).
+
+Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die Azure SQL-Datenbank zu erstellen. Falls die Datasetdefinition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
 
 ### Beispiel für SqlSource
 
@@ -471,7 +506,7 @@ Wenn bei der Kopieraktivität "source" den Typ **SqlSource** hat, sind im Abschn
 
 ### Typzuordnung für SQL Server und Azure SQL
 
-Wie im Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) beschrieben, führt die Kopieraktivität automatische Typkonvertierungen von Quelltypen in Senkentypen mithilfe des folgenden aus zwei Schritten bestehenden Ansatzes durch:
+Wie im Artikel [Aktivitäten der Datenverschiebung](data-factory-data-movement-activities.md) beschrieben, führt die Kopieraktivität automatische Typkonvertierungen von Quelltypen in Senkentypen mithilfe des folgenden aus zwei Schritten bestehenden Ansatzes durch:
 
 1. Konvertieren von systemeigenen Quelltypen in den .NET-Typ
 2. Konvertieren vom .NET-Typ in systemeigenen Senkentyp
@@ -527,4 +562,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

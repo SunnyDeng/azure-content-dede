@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/06/2015"
+   ms.date="10/01/2015"
    ms.author="bwren" />
 
 # Azure Automation-Verwaltung
@@ -60,4 +60,4 @@ Es ist nicht möglich, den Wert verschlüsselter Variablen oder die Kennwortfeld
 
 Zertifikate können nicht aus Azure Automation exportiert werden. Sie müssen sicherstellen, dass die erforderlichen Zertifikate außerhalb von Azure zur Verfügung stehen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

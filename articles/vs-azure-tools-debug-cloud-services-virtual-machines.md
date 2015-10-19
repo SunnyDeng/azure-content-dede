@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Debuggen eines Azure-Clouddiensts oder virtuellen Computers in Visual Studio | Microsoft Azure"
-	description="Debuggen eines Clouddiensts oder eines virtuellen Computers in Visual Studio"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="patshea123"
-	manager="douge"
-	editor="tlee"/>
+   description="Debuggen eines Clouddiensts oder eines virtuellen Computers in Visual Studio"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="patshea123"
+   manager="douge"
+   editor="tlee" />
 <tags 
    ms.service="visual-studio-online"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="multiple"
-	ms.workload="na"
-	ms.date="08/14/2015"
-	ms.author="patshea"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="multiple"
+   ms.workload="na"
+   ms.date="08/14/2015"
+   ms.author="patshea" />
 
 # Debuggen eines Azure-Clouddiensts oder virtuellen Computers in Visual Studio
 
@@ -190,4 +190,4 @@ Visual Studio ASP.NET-Projekte bieten eine Option, einen praktischen virtuellen 
 - Verwenden Sie **IntelliTrace**, um ein Protokoll der Aufrufe und Ereignisse von einem freigegebenen Server zu sammeln. Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio](http://go.microsoft.com/fwlink/?LinkID=623016).
 - Verwenden Sie die **Azure-Diagnose**, um ausführliche Informationen zu Code, der in Rollen ausgeführt wird, zu protokollieren, unabhängig davon, ob die Rollen in der Entwicklungsumgebung oder in Azure ausgeführt werden. Weitere Informationen finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](http://go.microsoft.com/fwlink/p/?LinkId=400450).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

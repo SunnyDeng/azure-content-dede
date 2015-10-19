@@ -17,11 +17,7 @@
 	ms.author="yuaxu"/>
 
 # Verwenden von Notification Hubs von Java aus
-> [AZURE.SELECTOR] 
-- [Java](notification-hubs-php-backend-how-to.md)
-- [PHP](notification-hubs-python-backend-how-to.md)
-- [Python](notification-hubs-nodejs-how-to-use-notification-hubs.md)
-- [Node.js](notification-hubs-nodejs-how-to-use-notification-hubs.md)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 		
 In diesem Thema werden die wichtigsten Features des neuen, vollständig unterstützten, offiziellen Azure Notification Hub Java-SDKs beschrieben. Dies ist ein Open-Source-Projekt, und Sie können den gesamten SDK-Code unter [Java-SDK] anzeigen.
 
@@ -225,7 +221,7 @@ Manchmal ist es erforderlich, Registrierungen als Massenvorgang auszuführen. In
 
 	List<NotificationHubJob> jobs = hub.getAllNotificationHubJobs();
 
-**URI mit SAS-Signatur:** Dies ist die URL einer bestimmten BLOB-Datei oder eines bestimmten BLOB-Containers, einschließlich bestimmter Parameter, wie Berechtigungen und Ablaufzeitpunkt, sowie Signatur dieser Objekte unter Verwendung des SAS-Schlüssels des Kontos. Das Java-SDK für Azure-Speicher verfügt über umfangreiche Funktionen, beispielsweise zum Erstellen dieser Art von URIs. Als einfache Alternative können Sie sich die Testklasse "ImportExportE2E" (unter Github) anschauen, die über eine sehr einfache und kompakte Implementierung des Signaturalgorithmus verfügt.
+**URI mit SAS-Signatur:** Dies ist die URL einer bestimmten BLOB-Datei oder eines bestimmten BLOB-Containers, einschließlich bestimmter Parameter, wie Berechtigungen und Ablaufzeitpunkt, sowie die Signatur dieser Objekte unter Verwendung des SAS-Schlüssels des Kontos. Das Java-SDK für Azure-Speicher verfügt über umfangreiche Funktionen, beispielsweise zum Erstellen dieser Art von URIs. Als einfache Alternative können Sie sich die Testklasse "ImportExportE2E" (unter Github) anschauen, die über eine sehr einfache und kompakte Implementierung des Signaturalgorithmus verfügt.
 
 ###Senden von Benachrichtigungen
 Das Benachrichtigungsobjekt ist lediglich ein Text mit Headern. Einige Dienstprogrammmethoden helfen beim Erstellen von system- oder vorlagenbasierten Benachrichtigungsobjekten.
@@ -307,4 +303,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Java REST-Client für
 [Maven]: http://maven.apache.org/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

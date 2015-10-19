@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="08/05/2015"
+	ms.date="10/07/2015"
 	ms.author="raynew"/>
 
 
@@ -105,4 +105,4 @@ VM5 | C:\\ClusterStorage\\SourceVolume3 | N/V | Keine Zuordnung, daher Verwendun
 
 Nachdem Sie die Speicherzuordnung nun besser nachvollziehen können, können Sie sich zur Vorbereitung auf die Bereitstellung mit den [bewährten Methoden](site-recovery-best-practices.md) vertraut machen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="10/07/2015" 
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Exportieren aus Application Insights in SQL mit Stream Analytics
@@ -258,7 +258,7 @@ Ersetzen Sie die Standardabfrage durch folgende:
       ,A.context.location.province as province
       ,A.context.location.city as city
     INTO
-      AIOuput
+      AIOutput
     FROM AIinput A
     CROSS APPLY GetElements(A.[view]) as flat
 
@@ -314,4 +314,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="07/27/2015"
+	ms.date="10/06/2015"
 	ms.author="spelluru"/>
 
 # Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor (Azure-Portal)
@@ -32,6 +32,8 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe des [Azure-Vorschauportals](htt
 
 Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie im Artikel [Einführung in Azure Data Factory](data-factory-introduction.md).
 
+> [AZURE.IMPORTANT]Lesen Sie sich den Artikel [Übersicht über das Lernprogramm](data-factory-build-your-first-pipeline.md) durch, und führen Sie die vorbereitenden Schritte aus, bevor Sie mit diesem Lernprogramm beginnen.
+
 ## Schritt 1: Erstellen der Data Factory
 
 1.	Nach der Anmeldung beim [Azure-Vorschauportal](http://portal.azure.com/) gehen Sie wie folgt vor:
@@ -41,7 +43,7 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 
 		![Blatt "Erstellen"](./media/data-factory-build-your-first-pipeline-using-editor/create-blade.png)
 
-2.	Geben Sie auf dem Blatt **Neue Data Factory** unter "Name" **DataFactoryMyFirstPipeline** ein.
+2.	Geben Sie auf dem Blatt **New Data Factory** unter "Name" **DataFactoryMyFirstPipeline** ein.
 
 	![Blatt "Neue Data Factory"](./media/data-factory-build-your-first-pipeline-using-editor/new-data-factory-blade.png)
 
@@ -54,8 +56,8 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 	
 		![Ressourcengruppe erstellen](./media/data-factory-build-your-first-pipeline-using-editor/create-resource-group.png)
 4.	Nachdem Sie die Ressourcengruppe ausgewählt haben, stellen Sie sicher, dass Sie das richtige Abonnement verwenden, in dem die Data Factory erstellt werden soll.
-5.	Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
-6.	Sie sehen die Data Factory, die im **Startmenü** des Azure-Vorschauportals erstellt wurde, wie folgt:   
+5.	Klicken Sie auf dem Blatt **New Data Factory** auf **Erstellen**.
+6.	Sie sehen die erstellte Data Factory im **Startmenü** des Azure-Vorschauportals folgendermaßen:   
 
 	![Erstellen des Data Factory-Status](./media/data-factory-build-your-first-pipeline-using-editor/creating-data-factory-image.png)
 7. Glückwunsch! Sie haben erfolgreich Ihre erste Data Factory erstellt. Nachdem die Data Factory erfolgreich erstellt wurde, sehen Sie die Data Factory-Seite mit dem Inhalt der Data Factory. 	
@@ -68,10 +70,10 @@ In den folgenden Schritten erfahren Sie, wie Sie die verknüpften Dienste, Datas
 In diesem Schritt verknüpfen Sie Ihr Azure-Speicherkonto und einen bedarfsgesteuerten Azure HDInsight-Cluster mit Ihrer Data Factory und erstellen dann ein Dataset, das die Ausgabedaten der Hive-Verarbeitung darstellt.
 
 ### Erstellen des mit Azure Storage verknüpften Diensts
-1.	Klicken Sie auf dem Blatt **DATA FACTORY** für **DataFactoryFirstPipeline** auf **Erstellen und bereitstellen**. Der Data Factory-Editor wird gestartet. 
+1.	Klicken Sie auf dem Blatt **DATA FACTORY** für **DataFactoryFirstPipeline** auf **Author and deploy**. Der Data Factory-Editor wird gestartet. 
 	 
 	![Kachel "Erstellen und bereitstellen"](./media/data-factory-build-your-first-pipeline-using-editor/data-factory-author-deploy.png)
-2.	Klicken Sie auf **Neuer Datenspeicher**, und wählen Sie **Azure-Speicher**.
+2.	Klicken Sie auf **Neuer Datenspeicher**, und wählen Sie **Azure Storage**.
 	
 	![Mit Azure Storage verknüpfter Dienst](./media/data-factory-build-your-first-pipeline-using-editor/azure-storage-linked-service.png)
 
@@ -84,7 +86,7 @@ In diesem Schritt verknüpfen Sie Ihr Azure-Speicherkonto und einen bedarfsgeste
 ### Erstellen des mit Azure-HDInsight verknüpften Diensts
 Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsight-Cluster, der zum Ausführen des Hive-Skripts verwendet wird.
 
-1. Klicken Sie im **Data Factory-Editor** auf der Befehlsleiste auf **Neue Compute-Instanz**, und wählen Sie im Menü **Bedarfsgesteuerter HDInsight-Cluster** aus.
+1. Klicken Sie im **Data Factory Editor** auf der Befehlsleiste auf **New compute**, und wählen Sie im Menü **On-demand HDInsight cluster** aus.
 
 	![Neue Compute-Instanz](./media/data-factory-build-your-first-pipeline-using-editor/new-compute-menu.png)
 2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein. Der JSON-Codeausschnitt beschreibt die Eigenschaften, die zum Erstellen des bedarfsgesteuerten HDInsight-Clusters verwendet werden. 
@@ -118,12 +120,12 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsi
 	![Strukturansicht mit verknüpften Diensten](./media/data-factory-build-your-first-pipeline-using-editor/tree-view-linked-services.png)
  
 ### Erstellen des Ausgabedatasets
-Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeicherten Daten darstellt.
+Jetzt erstellen Sie das Ausgabedataset, das die im Azure-BLOB-Speicher gespeicherten Daten darstellt.
 
-1. Klicken Sie im **Data Factory-Editor** auf der Befehlsleiste auf **Neues Dataset** und dann auf **Azure-Blobspeicher**.  
+1. Klicken Sie im **Data Factory Editor** auf der Befehlsleiste auf **Neues Dataset** und dann auf **Azure-BLOB-Speicher**.  
 
 	![Neues Dataset](./media/data-factory-build-your-first-pipeline-using-editor/new-data-set.png)
-2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein. Im JSON-Codeausschnitt erstellen Sie ein Dataset mit dem Namen **AzureBlobOutput**, und geben Sie die Struktur der Daten an, die vom Hive-Skript erzeugt werden. Darüber hinaus geben Sie an, dass die Ergebnisse im Blobcontainer namens **data** gespeichert werden, und dass der Ordner **partitioneddata** heißt. Der Abschnitt **availability** gibt an, dass das Ausgabedataset monatlich erzeugt wird.
+2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein. Im JSON-Codeausschnitt erstellen Sie ein DataSet mit dem Namen **AzureBlobOutput**, und geben Sie die Struktur der Daten an, die vom Hive-Skript erzeugt werden. Darüber hinaus geben Sie an, dass die Ergebnisse im BLOB-Container **data** und im Ordner **partitioneddata** gespeichert werden. Der Abschnitt **availability** gibt an, dass das Ausgabe-DataSet monatlich erzeugt wird.
 	
 		{
 		  "name": "AzureBlobOutput",
@@ -144,7 +146,7 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 		  }
 		}
 
-3. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das neu erstellte Dataset bereitzustellen.
+3. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das neu erstellte DataSet bereitzustellen.
 4. Überprüfen Sie, ob das Dataset erfolgreich erstellt wurde.
 
 	![Strukturansicht mit verknüpften Diensten](./media/data-factory-build-your-first-pipeline-using-editor/tree-view-data-set.png)
@@ -152,7 +154,7 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 ## Schritt 3: Erstellen Ihrer ersten Pipeline
 In diesem Schritt erstellen Sie Ihre erste Pipeline.
 
-1. Klicken Sie im **Data Factory-Editor** auf **(...)** und dann auf **Neue Pipeline**.
+1. Klicken Sie im **Data Factory Editor** auf **(...)** und dann auf **New pipeline**.
 	
 	![Schaltfläche "Neue Pipeline"](./media/data-factory-build-your-first-pipeline-using-editor/new-pipeline-button.png)
 2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein.
@@ -197,9 +199,9 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
  
 	Im JSON-Codeausschnitt erstellen Sie eine Pipeline, die aus einer einzelnen Aktivität besteht. Diese nutzt Hive, um Daten in einem HDInsight-Cluster Daten zu verarbeiten.
 	
-	Die Hive-Skriptdatei **partitionweblogs.hql** ist im Azure-Speicherkonto (das neben "scriptLinkedService" als **StorageLinkedService** angegeben ist) und in einem Container namens **script** gespeichert.
+	Die Hive-Skriptdatei **partitionweblogs.hql** ist im Azure-Speicherkonto (das durch den scriptLinkedService-Dienst namens **StorageLinkedService** angegeben ist) und in einem Container namens **script** gespeichert.
 
-	Der Abschnitt **extendedProperties** dient zum Angeben der Laufzeiteinstellungen, die als Hive-Konfigurationswerte (z. B. ${hiveconf:PartitionedData}) an das Hive-Skript übergeben werden.
+	Der Abschnitt **extendedProperties** dient zum Angeben der Laufzeiteinstellungen, die als Hive-Konfigurationswerte (z. B. "${hiveconf:PartitionedData}") an das Hive-Skript übergeben werden.
 
 	Die Eigenschaften **start** und **end** der Pipeline geben den aktiven Zeitraum der Pipeline an.
 
@@ -209,28 +211,28 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 
 	![Strukturansicht mit Pipeline](./media/data-factory-build-your-first-pipeline-using-editor/tree-view-pipeline.png)
 5. Glückwunsch, Sie haben Ihre erste Pipeline erfolgreich erstellt!
-6. Klicken Sie auf **X**, um die Data Factory-Editor-Blätter zu schließen. Navigieren Sie zurück zum Blatt "Data Factory", und klicken Sie auf **Diagramm**.
+6. Klicken Sie auf **X**, um die Data Factory Editor-Blätter zu schließen. Navigieren Sie zurück zum Blatt "Data Factory", und klicken Sie auf **Diagramm**.
   
 	![Kachel "Diagramm"](./media/data-factory-build-your-first-pipeline-using-editor/diagram-tile.png)
 7. In der Diagrammansicht sehen Sie eine Übersicht über die in diesem Tutorial verwendeten Pipelines und Datasets.
 	
 	![Diagrammansicht](./media/data-factory-build-your-first-pipeline-using-editor/diagram-view-2.png) 
-8. Doppelklicken Sie in der Diagrammansicht auf das Dataset **AzureBlobOutput**. Sie sehen den Slice, der gerade verarbeitet wird.
+8. Doppelklicken Sie in der Diagrammansicht auf das DataSet **AzureBlobOutput**. Sie sehen den Slice, der gerade verarbeitet wird.
 
 	![Datensatz](./media/data-factory-build-your-first-pipeline-using-editor/dataset-blade.png)
 9. Wenn die Verarbeitung abgeschlossen ist, wird der Slice mit dem Zustand **Bereit** angezeigt. Beachten Sie, dass die bedarfsgesteuerte Erstellung eines HDInsight-Clusters in der Regel einige Zeit dauert. 
 
 	![Datensatz](./media/data-factory-build-your-first-pipeline-using-editor/dataset-slice-ready.png)	
-10. Sobald der Slice den Status **Bereit** hat, überprüfen Sie den Ordner **partitioneddata** im Container **data** in Ihrem Blobspeicher auf die Ausgabedaten.  
+10. Sobald der Slice den Status **Bereit** aufweist, überprüfen Sie den Ordner **partitioneddata** im Container **data** in Ihrem BLOB-Speicher auf die Ausgabedaten.  
  
 
  
 
 ## Nächste Schritte
-In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL](./data-factory-get-started.md).
+In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-BLOB in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-BLOB in Azure SQL](./data-factory-get-started.md).
   
 
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-editor.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erste Schritte mit der Azure AD Reporting-API"
-	description="Vorgehensweise zum Einstieg in die Azure Active Directory Reporting-API"
-	services="active-directory"
-	documentationCenter=""
-	authors="kenhoff"
-	manager="mbaldwin"
-	editor=""/>
+   description="Vorgehensweise zum Einstieg in die Azure Active Directory Reporting-API"
+   services="active-directory"
+   documentationCenter=""
+   authors="kenhoff"
+   manager="mbaldwin"
+   editor=""/>
 
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="07/17/2015"
-	ms.author="kenhoff;yossib"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="07/17/2015"
+   ms.author="kenhoff;yossib"/>
 
 
 # Erste Schritte mit der Azure AD Reporting-API
@@ -157,10 +157,15 @@ Wenn Sie die Bearbeitung des Skripts abgeschlossen haben, führen Sie es aus, un
 
 Das Skript gibt Listen aller verfügbaren Berichte und die Ausgabe des Berichts "AccountProvisioningEvents" im PowerShell-Fenster im JSON-Format zurück. Außerdem erstellt es Dateien mit der gleichen Ausgabe im JSON-, Text- und XML-Format. Sie können mit dem Ändern des Skripts experimentieren, um Daten aus anderen Berichten zurückzugeben, und nicht benötigte Ausgabeformate auskommentieren.
 
+## Hinweise
+
+- Es gibt keine Beschränkung für die Anzahl der von der Azure AD Reporting-API (mithilfe von OData-Paginierung) zurückgegebenen Ereignisse.
+	- Informationen zu den Beschränkungen für die Aufbewahrung von Berichtsdaten finden Sie unter [Aufbewahrungsrichtlinien für Azure Active Directory-Berichte](active-directory-reporting-retention.md).
+
 
 ## Nächste Schritte
 - Möchten Sie wissen, welche Sicherheits-, Überwachungs- und Aktivitätsberichte zur Verfügung stehen? Lesen Sie [Sicherheits-, Überwachungs- und Aktivitätsberichte](active-directory-view-access-usage-reports.md).
 - Unter [Azure AD-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md) finden Sie weitere Informationen zum Überwachungsbericht.
 - Unter [Azure AD-Berichte und -Ereignisse (Vorschau)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

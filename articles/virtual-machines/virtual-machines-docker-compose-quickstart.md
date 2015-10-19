@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Erste Schritte mit Docker und Compose auf einem virtuellen Azure-Computer"
-   description="Kurze Einführung in das Arbeiten mit Compose und Docker in Azure"
+   pageTitle="Docker und Compose auf einem virtuellen Computer | Microsoft Azure"
+   description="Kurze Einführung in das Arbeiten mit Compose und Docker auf virtuellen Azure-Computern."
    services="virtual-machines"
    documentationCenter=""
    authors="dlepow"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager,azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
@@ -20,6 +21,8 @@
 
 In diesem Artikel werden die ersten Schritte mit Docker und [Compose](http://github.com/docker/compose) zum Festlegen und Ausführen einer komplexen Anwendung auf einem virtuellen Linux-Computer in Azure beschrieben. Bei Compose (dem Nachfolger von *Fig*) verwenden Sie eine einfache Textdatei zum Definieren einer Anwendung, die aus mehreren Docker-Containern besteht. Anschließend erstellen Sie Ihre Anwendung mit nur einem Befehl, der alle erforderlichen Schritte zur Ausführung der Anwendung auf dem virtuellen Computer ausführt. In diesem Artikel wird beispielsweise veranschaulicht, wie Sie schnell einen WordPress-Blog mit einer MariaDB SQL-Back-End-Datenbank einrichten. Sie können aber auch Compose verwenden, um komplexere Anwendungen einzurichten.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf virtuelle Computer, die mit dem Ressourcen-Manager-Bereitstellungsmodell und mit dem klassischen Bereitstellungsmodell erstellt wurden.
+
 Wenn Sie mit Docker und Containern noch nicht vertraut sind, lesen Sie die Informationen unter [Docker High Level Whiteboard](http://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/) (Whiteboard auf hoher Ebene zu Docker; in englischer Sprache).
 
 ## Schritt 1: Einrichten eines virtuellen Linux-Computers als Docker-Host
@@ -28,7 +31,7 @@ Im Azure Marketplace stehen Ihnen verschieden Azure-Verfahren und Images zur Ver
 
 ## Schritt 2: Installieren von Compose
 
-Wenn der virtuelle Linux-Computer mit Docker ausgeführt wird, stellen Sie von Ihrem Clientcomputer aus über SSH eine Verbindung mit ihm her. Installieren Sie gegebenenfalls .[Compose](https://github.com/docker/compose/blob/882dc673ce84b0b29cd59b6815cb93f74a6c4134/docs/install.md) mithilfe der folgenden beiden Befehle.
+Wenn der virtuelle Linux-Computer mit Docker ausgeführt wird, stellen Sie von Ihrem Clientcomputer aus über SSH eine Verbindung mit ihm her. Installieren Sie ggf. [Compose](https://github.com/docker/compose/blob/882dc673ce84b0b29cd59b6815cb93f74a6c4134/docs/install.md) mithilfe der folgenden beiden Befehle.
 
 >[AZURE.TIP]Wenn Sie den virtuellen Computer mithilfe der Docker-VM-Erweiterung erstellt haben, wurde Compose bereits für Sie installiert. Überspringen Sie diese Befehle, und fahren Sie mit Schritt 3 fort. Sie müssen Compose nur installieren, wenn Sie Docker selbst auf dem virtuellen Computer installiert haben.
 
@@ -45,8 +48,7 @@ Führen Sie zum Testen der Compose-Installation den folgenden Befehl aus:
 $ docker-compose --version
 ```
 
-Eine Ausgabe ähnlich der folgenden wird angezeigt.
-```
+Eine Ausgabe ähnlich der folgenden wird angezeigt.```
 docker-compose 1.3.2
 ```
 
@@ -57,18 +59,9 @@ Als Nächstes erstellen Sie die Datei `docker-compose.yml` (eine reine Textkonfi
 
 Legen Sie ein Arbeitsverzeichnis auf Ihrem virtuellen Computer an, und erstellen Sie mit Ihrem bevorzugten Texteditor die Datei `docker-compose.yml`. Kopieren Sie probeweise einfach den folgenden Text in die Datei. Diese Konfiguration nutzt Images aus der [Docker-Hub-Registrierung](https://registry.hub.docker.com/_/wordpress/), um WordPress (Open-Source-Blogging- und Content Management-System) und die verknüpfte MariaDB SQL-Back-End-Datenbank zu installieren.
 
- ```
- wordpress:
-  image: wordpress
-  links:
-    - db:mysql
-  ports:
-    - 8080:80
+ ``` wordpress: image: wordpress links: - db:mysql ports: - 8080:80
 
-db:
-  image: mariadb
-  environment:
-    MYSQL_ROOT_PASSWORD: <your password>
+db: image: mariadb environment: MYSQL\_ROOT\_PASSWORD: <your password>
 
 ```
 
@@ -84,9 +77,7 @@ $ docker-compose up -d
 This starts the Docker containers specified in `docker-compose.yml`. You'll see output similar to:
 
 ```
-Creating wordpress_db_1...
-Creating wordpress_wordpress_1...
-```
+Creating wordpress\_db\_1... Creating wordpress\_wordpress\_1... ```
 
 >[AZURE.NOTE]Verwenden Sie zu Beginn die Option **-d**, damit die Container kontinuierlich im Hintergrund ausgeführt werden.
 
@@ -118,11 +109,10 @@ Daraufhin sollte der Startbildschirm von WordPress angezeigt werden, auf dem Sie
 
 * Weitere Beispiele zum Erstellen und Bereitstellen von Anwendungen mit mehreren Containern finden Sie in der [Compose-Befehlsreferenz](http://docs.docker.com/compose/cli/) und im [Compose-Benutzerhandbuch](http://docs.docker.com/compose/).
 * Verwenden Sie eine von Ihnen oder der [Community](http://azure.microsoft.com/documentation/templates/) erstellte Vorlage des Azure-Ressourcen-Managers, um eine Azure-VM mit Docker und eine mit Compose eingerichtete Anwendung bereitzustellen. Die Vorlage [WordPress-Blog mit Docker bereitstellen](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/) verwendet Docker und Compose, um WordPress schnell mit einem MySQL-Back-End auf einem virtuellen Ubuntu-Computer bereitzustellen.
-* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die
-[Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
+* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die [Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
 
 <!--Image references-->
 
 [wordpress_start]: ./media/virtual-machines-docker-compose-quickstart/WordPress.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

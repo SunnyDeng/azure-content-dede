@@ -1,12 +1,13 @@
 <properties
-	pageTitle="DataStax Enterprise auf Ubuntu mit einer Ressourcen-Manager-Vorlage"
+	pageTitle="DataStax Enterprise auf Ubuntu mit einer Ressourcen-Manager-Vorlage | Microsoft Azure"
 	description="Erfahren Sie, wie Sie auf einfache Weise auf Ubuntu-VMs mit Azure PowerShell oder der Azure-CLI und einer Ressourcen-Manager-Vorlage einen neuen DataStax Enterprise-Cluster bereitstellen"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="scoriani"
 	manager="timlt"
-	editor="tysonn"/>
-<!-- In pageTitle, to follow corporate style (sentence-case caps), s/b lowercase "template", correct? This matches what is used later in article too. Also, precede first mention of "Azure" with "Microsoft" -->
+	editor="tysonn"
+	tags="azure-resource-manager"/>
+
 <tags
 	ms.service="virtual-machines"
 	ms.workload="multiple"
@@ -17,6 +18,8 @@
 	ms.author="scoriani"/>
 
 # DataStax Enterprise auf Ubuntu mit einer Ressourcen-Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen, die auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra™ basieren. Diese verteilte NoSQL-Datenbanktechnologie ist weithin anerkannt als agil, immer funktionsbereit und vorhersehbar auf jede Größe skalierbar. DataStax bietet die Versionen Enterprise (DSE) und Community (DSC) an. Zusätzlich zu den Funktionen der Community-Edition bietet DataStax Enterprise Cassandra für die Produktion zertifiziert mit Funktionen wie speicherinternem Computing, unternehmensweiter Sicherheit, schnellen und leistungsfähigen integriertn Analysen und Unternehmensverwaltung an.
 
@@ -46,7 +49,7 @@ Gehen folgendermaßen Sie vor, um einen auf DataStax Enterprise basierenden Apac
 
 ### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\Vorlagen\DataStax").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\DataStax").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie den nächsten Satz von Befehlen aus.
 
@@ -86,7 +89,7 @@ Klonen Sie das komplette Vorlagenrepository mithilfe eines Git-Clients Ihrer Wah
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Sobald dies abgeschlossen ist, suchen Sie im Verzeichnis "C:\Azure\Vorlagen" nach dem Ordner "datastax-enterprise". <!--Wrapping name of folder in bold typeface is not corp style  -->
+Sobald dies abgeschlossen ist, suchen Sie im Verzeichnis "C:\\Azure\\Vorlagen" nach dem Ordner "datastax-enterprise". <!--Wrapping name of folder in bold typeface is not corp style  -->
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
 Wenn Sie schwierige Lösungen wie einen auf DataStax basierenden Apache Cassandra-Cluster bereitstellen, müssen Sie eine Reihe von Konfigurationsparametern für den Umgang mit unterschiedlichen erforderlichen Einstellungen angeben. Durch das Deklarieren dieser Parameter in der Vorlagendefinition ist es möglich, Werte während der Bereitstellung über eine externe Datei oder an der Befehlszeile anzugeben.
@@ -383,7 +386,7 @@ Insbesondere die folgenden verknüpften Vorlagen werden für diese Bereitstellun
 
 Sehen wir uns nun die Verwendung der letzten Vorlage genauer an, da diese aus Sicht der Vorlagenentwicklung am interessantesten ist. Ein wichtiges hervorzuhebendes Konzept ist, wie eine einzelne Vorlagendatei mehrere Kopien eines einzelnen Ressourcentyps bereitstellen und für jede Instanz eindeutige Werte für die erforderlichen Einstellungen festgelegen kann. Dieses Konzept ist als "Ressourcenschleife" bekannt.
 
-Wenn "ephemeral-nodes-resources.json" aus der Hauptdatei "azuredeploy.json" aufgerufen wird, wird der Parameter "nodeCount" als Teil der Parameterliste bereitgestellt. Innerhalb der untergeordneten Vorlage wird dieser Parameter (Anzahl der bereitzustellenden Knoten im Cluster) innerhalb des **copy**-Elements jeder einzelnen Ressource benutzt, die in mehreren Kopien bereitgestellt werden muss, wie im nächsten Beispiel verdeutlicht wird. Für alle Einstellungen, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen der bereitgestellten Ressource anzugeben, kann die **copyindex()**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der bestimmten Ressourcenschleifenerstellung angibt. Im nächsten Beispiel sehen Sie, wie dieses Konzept auf die Erstellung mehrerer VMs für DataStax Enterprise-Clusterknoten angewendet wird.
+Wenn "ephemeral-nodes-resources.json" aus der Hauptdatei "azuredeploy.json" aufgerufen wird, wird der Parameter "nodeCount" als Teil der Parameterliste bereitgestellt. Innerhalb der untergeordneten Vorlage wird dieser Parameter (Anzahl der bereitzustellenden Knoten im Cluster) innerhalb des **copy**-Elements jeder einzelnen Ressource verwendet, die in mehreren Kopien bereitgestellt werden muss, wie im nächsten Beispiel verdeutlicht wird. Für alle Einstellungen, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen der bereitgestellten Ressource anzugeben, kann die **copyindex()**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der bestimmten Ressourcenschleifenerstellung angibt. Im nächsten Beispiel sehen Sie, wie dieses Konzept auf die Erstellung mehrerer VMs für DataStax Enterprise-Clusterknoten angewendet wird.
 
 			   {
 			      "apiVersion": "2015-05-01-preview",
@@ -450,7 +453,7 @@ Angeschlossene Datenträger werden als Teil der Aktivitäten zur Vorbereitung de
 
 	bash vm-disk-utils-0.1.sh
 
-"vm-disk-utils-0.1.sh" ist im Ordner "shared_scripts\ubuntu" im GitHub-Repository "azure-quickstart-tempates" enthalten und bietet nützliche Funktionen für die Bereitstellung von Datenträgern, die Formatierung und das Striping. Diese Funktionen können in allen Vorlagen im Repository verwendet werden.
+"vm-disk-utils-0.1.sh" ist im Ordner "shared\_scripts\\ubuntu" im GitHub-Repository "azure-quickstart-tempates" enthalten und bietet nützliche Funktionen für die Bereitstellung von Datenträgern, die Formatierung und das Striping. Diese Funktionen können in allen Vorlagen im Repository verwendet werden.
 
 Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiterungen CustomScriptForLinux. Diese werden als gesonderter Ressourcentyp mit einer Abhängigkeit auf jedem Clusterknoten (und der OpsCenter-Instanz) installiert. Sie nutzen denselben Ressourcenschleifenmechanismus, der im Zusammenhang mit virtuellen Computern beschrieben wurde.
 
@@ -492,4 +495,4 @@ Dieser Ansatz empfiehlt folgende Schritte:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="scoriani"
 	manager="timlt"
-	editor="tysonn"/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -17,6 +17,8 @@
 	ms.author="scoriani"/>
 
 # DataStax auf Ubuntu mit einer Ressourcen-Manager-Vorlage
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen, die auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra basieren. Diese verteilte NoSQL-Datenbanktechnologie ist weithin anerkannt als agil, immer funktionsbereit und vorhersehbar auf jede Größe skalierbar. DataStax bietet die Versionen Enterprise (DSE) und Community (DSC) an. Zudem beinhaltet es Funktionen wie In-Memory-Computing, unternehmensweite Sicherheit, schnelle und leistungsfähige integrierte Analysen und eine Unternehmenssuche.
 
@@ -84,7 +86,7 @@ Klonen Sie das komplette Vorlagenrepository mithilfe eines Git-Clients Ihrer Wah
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Suchen Sie nach Abschluss des Klonvorgangs unter "C:\\Azure\\Vorlagen" den Ordner **datastax-on-ubuntu**.
+Suchen Sie nach Abschluss des Klonvorgangs unter "C:\\Azure\\Templates" den Ordner **datastax-on-ubuntu**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
@@ -331,7 +333,7 @@ Im zweiten Fragment ist stattdessen die **scripts**-Variable ein JSON-Array, in 
 
 ### Abschnitt "Ressourcen"
 
-Im Abschnitt "resources" geschieht am meisten. Wenn Sie diesen Abschnitt genau überprüfen, erkennen Sie sofort zwei unterschiedliche Fälle. Der erste ist ein vom Typ `Microsoft.Resources/deployments` definiertes Element, das im Wesentlichen eine geschachtelte Bereitstellung innerhalb der Hauptbereitstellung aufruft. Durch das Element **templateLink** (und die zugehörige Versionseigenschaft) kann eine verknüpfte Vorlagendatei bestimmt werden, die zur Übergabe eines Parametersatzes als Eingabe aufgerufen wird, wie Sie in diesem Fragment sehen:
+Im Abschnitt "resources" geschieht am meisten. Wenn Sie diesen Abschnitt genau überprüfen, erkennen Sie sofort zwei unterschiedliche Fälle. Der erste ist ein vom Typ `Microsoft.Resources/deployments` definiertes Element, das im Wesentlichen eine geschachtelte Bereitstellung innerhalb der Hauptbereitstellung aufruft. Durch das **templateLink**-Element (und die zugehörige Versionseigenschaft) kann eine verknüpfte Vorlagendatei bestimmt werden, die zur Übergabe eines Parametersatzes als Eingabe aufgerufen wird, wie Sie in diesem Fragment sehen:
 
 	{
 	      "name": "shared",
@@ -477,4 +479,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

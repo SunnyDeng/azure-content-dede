@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/26/2015" 
+	ms.date="10/06/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in eine und aus einer Azure-Tabelle mithilfe von Azure Data Factory
@@ -384,6 +384,26 @@ azureTableInsertType | Der Modus zum Einfügen von Daten in die Azure-Tabelle. |
 writeBatchSize | Fügt Daten in die Azure-Tabelle ein, wenn "writeBatchSize" oder "writeBatchTimeout" erreicht wird. | Ganzzahl zwischen 1 und 100 (Einheit = Zeilenanzahl) | Nein (Standard = 100) 
 writeBatchTimeout | Fügt Daten in die Azure-Tabelle ein, wenn "writeBatchSize" oder "writeBatchTimeout" erreicht wird. | (Einheit = Zeitspanne) Beispiel: "00:20:00" (20 Minuten). | Nein (Standardmäßiger Timeoutwert von 90 Sekunden für Speicherclient)
 
+### azureTablePartitionKeyName
+Sie müssen einer Zielspalte mithilfe der JSON-translator-Eigenschaft eine Quellspalte zuordnen, bevor Sie die Zielspalte als azureTablePartitionKeyName verwenden können.
+
+Im folgenden Beispiel wird die Quellspalte "DivisionID" der Zielspalte "DivisionID" zugeordnet.
+
+	"translator": {
+		"type": "TabularTranslator",
+		"columnMappings": "DivisionID: DivisionID, FirstName: FirstName, LastName: LastName"
+	} 
+
+Die "EmpID" wird als Partitionsschlüssel angegeben.
+
+	"sink": {
+		"type": "AzureTableSink",
+		"azureTablePartitionKeyName": "DivisionID",
+		"writeBatchSize": 100,
+		"writeBatchTimeout": "01:00:00"
+	}
+
+
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
 ### Typzuordnung für Azure-Tabelle
@@ -484,4 +504,4 @@ In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

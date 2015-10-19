@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="YuriD"
    manager="swadhwa"
-   editor=""/>
+   editor=""
+   tags="azure-service-management,azure-resource-manager"/>
 
 <tags
    ms.service="azure-security"
@@ -17,7 +18,6 @@
    ms.author="yurid"/>
 
 #Best Practices für Softwareupdates in Microsoft Azure IaaS
-
 
 Bevor wir hier näher auf die bewährten Methoden für eine Azure IaaS-Umgebung eingehen, soll zunächst erläutert werden, welche Szenarien für die Verwaltung von Softwareupdates es gibt. Unterstützung hierbei bietet das nachstehende Diagramm:
 
@@ -71,7 +71,7 @@ In großen Organisationen ist es häufig sinnvoll, die Computer in Assetkategori
 
 Nachdem Sie eine anfängliche Überprüfung der Software in Ihrem Unternehmen durchgeführt haben, sollten Sie die beste Methode zum Erhalt von Benachrichtigungen über neue Softwareupdates für alle Softwareprodukte und -versionen ermitteln. Je nach Softwareprodukt kann die Benachrichtigung per E-Mail, auf Websites oder in Form von Computerveröffentlichungen erfolgen.
 
-Beispielsweise reagiert das Microsoft Security Response Center (MSRC) auf alle sicherheitsbezogenen Bedenken zu Microsoft-Produkten und stellt den Microsoft Security Bulletin Service bereit, einen kostenlosen Dienst, bei dem Sie per E-Mail über neu identifizierte Sicherheitsrisiken und Softwareupdates benachrichtigt werden, die diese Sicherheitsrisiken beheben. Sie können diesen Dienst unter <http://www.microsoft.com/technet/security/bulletin/notify.mspx> abonnieren.
+Beispielsweise reagiert das Microsoft Security Response Center (MSRC) auf alle sicherheitsbezogenen Bedenken zu Microsoft-Produkten und stellt den Microsoft Security Bulletin Service bereit, einen kostenlosen Dienst, bei dem Sie per E-Mail über neu identifizierte Sicherheitsrisiken und Softwareupdates benachrichtigt werden, die diese Sicherheitsrisiken beheben. Sie können diesen Dienst unter http://www.microsoft.com/technet/security/bulletin/notify.mspx abonnieren.
 
 ## Überlegungen zu Softwareupdates
 
@@ -99,7 +99,7 @@ Für Azure IaaS stehen folgende Sicherungsoptionen zur Verfügung:
 
 -   [Azure IaaS workload protection using Data Protection Manager](https://azure.microsoft.com/blog/2014/09/08/azure-iaas-workload-protection-using-data-protection-manager/) (in englischer Sprache)
 
--   [Sichern von virtuellen Azure-Computern](https://azure.microsoft.com/de-DE/documentation/articles/backup-azure-vms/)
+-   [Sichern von virtuellen Azure-Computern](../backup/backup-azure-vms.md)
 
 ### Überwachung
 
@@ -119,4 +119,4 @@ Zusätzlich zu den allgemeinen Überlegungen, die in diesem Artikel vorgestellt 
 
 Verwenden Sie die in diesem Artikel beschriebenen Richtlinien, um die optimalen Optionen für Softwareupdates für virtuelle Computer in Azure IaaS zu ermitteln. Es gibt viele Ähnlichkeiten zwischen den Best Practices für Softwareupdates in einem traditionellen Datencenter und in Azure IaaS. Deshalb wird empfohlen, dass Sie Azure-VMs in Ihre aktuellen Richtlinien für Softwareupdates einbeziehen und die relevanten Best Practices aus diesem Artikel in Ihren allgemeinen Softwareupdateprozess einbinden.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

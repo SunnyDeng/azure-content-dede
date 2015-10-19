@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/15/2015"
+	ms.date="10/05/2015"
 	ms.author="szarkos"/>
 
 # Vorbereiten eines CentOS-basierten virtuellen Computers für Azure
@@ -364,4 +364,4 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
 16. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

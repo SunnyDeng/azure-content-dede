@@ -102,6 +102,8 @@ Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedu
 
 Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Testen der Konnektivität](virtual-machines-workload-intranet-sharepoint-phase2.md#testconn) vor, um die Konnektivität der Standorte Ihres Unternehmensnetzwerks zu testen.
 
+> [AZURE.NOTE]Die SharePoint-Server werden aus dem SharePoint Server 2013-Testversion-Image erstellt. Sie müssen die Installation so abändern, dass sie einen Lizenzschlüssel einer Verkaufsversion oder einer Volumenlizenz für die Standard oder Enterprise Edition von SharePoint Server 2013 verwendet.
+
 ## Konfigurieren der SharePoint-Farm
 
 Führen Sie zum Konfigurieren des ersten SharePoint-Servers der Farm folgende Schritte aus:
@@ -195,4 +197,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 5: Erstelle
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -158,7 +158,7 @@ Sie können auch Themenabonnements mit der [`NamespaceManager`](https://msdn.mic
 
 Sie können auch Filter einrichten, durch die Sie angeben können, welche an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen.
 
-Der von Abonnements unterstützte flexibelste Filtertyp ist die [SqlFilter]-Klasse, die eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax [SqlFilter.SqlExpression][].
+Der von Abonnements unterstützte flexibelste Filtertyp ist die [SqlFilter][]-Klasse, die eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax [SqlFilter.SqlExpression][].
 
 Mit dem folgenden Beispiel wird ein Abonnement namens **HighMessages** mit einem [SqlFilter]-Objekt erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **MessageNumber**-Eigenschaft größer ist als 3.
 
@@ -299,4 +299,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen und -Abonnements vertr
   [Servicebus für Brokermessaging im .NET-Lernprogramm]: http://msdn.microsoft.com/library/azure/hh367512.aspx
   [Azure-Beispielen]: https://code.msdn.microsoft.com/windowsazure/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

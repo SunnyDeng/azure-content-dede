@@ -72,7 +72,7 @@ Die Konto-SAS- und Dienst-SAS-Token enthalten einige gemeinsame Parameter sowie 
 - **Startzeit.** Dies ist der Zeitpunkt, ab dem die SAS gültig ist. Die Startzeit für eine Shared Access Signature ist optional. Wenn die Startzeit nicht angegeben wird, ist die SAS sofort gültig. 
 - **Ablaufzeit.** Dies ist der Zeitpunkt, ab dem die SAS nicht mehr gültig ist. Sie sollten nach Möglichkeit entweder eine Ablaufzeit für die SAS angeben oder diese mit einer gespeicherten Zugriffsrichtlinie verknüpfen (siehe unten).
 - **Berechtigungen.** Die in der SAS angegebenen Berechtigungen geben an, welche Operationen der Client mit der SAS auf der Speicherressource ausführen kann. Die verfügbaren Berechtigungen unterscheiden sich für eine Konto-SAS und eine Dienst-SAS.
-- **IP:** Ein optionaler Parameter zum Angeben einer IP-Adresse oder eines Bereichs von IP-Adressen, für die Anforderungen akzeptiert werden. 
+- **IP:** Ein optionaler Parameter, der eine IP-Adresse oder einen Bereich von IP-Adressen außerhalb von Azure angibt (siehe Abschnitt [Konfigurationszustand der Routingsitzung](../expressroute/expressroute-workflows.md#routing-session-configuration-state) für Express Route), aus dem Anforderungen angenommen werden. 
 - **Protokoll:** Ein optionaler Parameter zum Angeben des Protokolls, das für eine Anforderung zulässig ist. Mögliche Werte sind HTTPS und HTTP (https,http), der Standardwert, oder nur HTTPS (https). Beachten Sie, dass HTTP allein kein zulässiger Wert ist.
 - **Signatur:** Die Signatur wird aus den anderen Parametern erstellt, die als Teiltoken angegeben sind, und dann verschlüsselt. Sie wird zum Authentifizieren der SAS verwendet.
 
@@ -320,4 +320,4 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

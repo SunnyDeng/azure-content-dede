@@ -1,5 +1,19 @@
-<properties pageTitle="Lernprogramm: Azure Active Directory-Integration mit Citrix GoToMeeting | Microsoft Azure" description="Erfahren Sie, wie Sie Citrix GoToMeeting mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Lernprogramm: Azure Active Directory-Integration mit Citrix GoToMeeting | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie Citrix GoToMeeting mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." 
+    services="active-directory" 
+    authors="MarkusVi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/01/2015" 
+    ms.author="markvi" />
+
 #Lernprogramm: Azure Active Directory-Integration mit Citrix GoToMeeting  
 Gilt für: Azure
 
@@ -51,7 +65,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cit
     ![Citrix GoToMeeting](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC701012.png "Citrix GoToMeeting")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Citrix GoToMeeting zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Citrix GoToMeeting-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Citrix GoToMeeting zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Citrix GoToMeeting-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -63,29 +77,40 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC768998.png "Einmaliges Anmelden konfigurieren")
 
-3.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei auf Ihrem Computer.
+
+3. Klicken Sie auf der Seite **App-Einstellungen konfigurieren** auf **Weiter**. <br><br>![Einmaliges Anmelden aktivieren](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC7689981.png "Einmaliges Anmelden aktivieren")
+
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC768999.png "Einmaliges Anmelden konfigurieren")
 
-4.  Melden Sie sich in einem anderen Browser-Fenster bei Ihrem Citrix GoToMeeting-Mandanten als Administrator an.
+5.  Melden Sie sich in einem anderen Browserfenster beim Citrix Organization Center an ([https://account.citrixonline.com/organization/administration/](https://account.citrixonline.com/organization/administration/)).
 
-5.  Öffnen Sie die Seite [Set up SAML 2.0 single sign-on configuration \(SSO\)](https://login.citrixonline.com/saml/settings.html), und führen Sie die folgenden Schritte aus:
+6. Führen Sie im Abschnitt **Identitätsanbieter** die folgenden Schritte aus: <br><br>![SAML-Setup](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC6892321.png "SAML-Setup")
 
-    ![SAML-Setup](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC689232.png "SAML-Setup")
+     6\.1. Wählen Sie **Manuell** aus.
 
-    1.  Aktivieren Sie **Configure manually**.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert für **URL der Abmeldeseite**, und fügen Sie ihn in das Textfeld **Sign-out page URL** ein.
-    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn in das Textfeld **Sign-in page URL** ein.
-    4.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
+     6\.2. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn in das Textfeld **Sign-in page URL** ein.
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\).
+     6\.3. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert für **URL der Abmeldeseite**, und fügen Sie ihn in das Textfeld **Sign-out page URL** ein.
 
-    5.  Klicken Sie auf **Replace certificate**, und laden Sie dann Ihre **base-64 encoded certificate file** hoch.
-    6.  Klicken Sie auf **Speichern**.
+     6\.4. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Identity Provider Entity ID** ein.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+     6\.5. Klicken Sie auf **Zertifikat hochladen**, um das heruntergeladene Zertifikat hochzuladen.
+
+     6\.6. Klicken Sie auf **Speichern**.
+
+6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769000.png "Einmaliges Anmelden konfigurieren")
+
+
+7. Klicken Sie auf der Seite **Bestätigung für einmaliges Anmelden** auf **Abschließen**.<br><br>![SAML-Setup](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC7689982.png "SAML-Setup")
+
+
+
+
+
 ##Konfigurieren der Benutzerbereitstellung
 
 In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Directory-Benutzerkonten für Citrix GoToMeeting aktivieren.
@@ -96,11 +121,17 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
     ![Konfigurieren der Benutzerbereitstellung](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769001.png "Konfigurieren der Benutzerbereitstellung")
 
-2.  Geben Sie auf der Seite **Citrix GotoMeeting-Administratorbenutzername** einen Citrix GoToMeeting-Kontonamen ein, der über Administratorrechte für Ihren Citrix GoToMeeting-Mandanten verfügt, und klicken Sie dann auf **Weiter**.
+2.  Führen Sie auf der Seite **Einstellungen und Administrator-Anmeldeinformationen** die folgenden Schritte aus:
 
     ![Konfigurieren der Benutzerbereitstellung](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769002.png "Konfigurieren der Benutzerbereitstellung")
 
-3.  Klicken Sie anschließend auf der Seite **Bestätigung** auf das Häkchen, um die Konfiguration zu speichern.
+     2\.1. Geben Sie im Textfeld **Citrix GotoMeeting-Administratorbenutzername** den Benutzernamen eines Administrators ein.
+
+     2\.2. Geben Sie im Textfeld **Citrix GoToMeeting-Administratorkennwort** das Kennwort des Administrators ein.
+
+     2\.3. Klicken Sie auf **Weiter**.
+
+3.  Klicken Sie auf der Bestätigungsseite auf das Häkchen, um die Konfiguration zu speichern.
 
 4.  Klicken Sie auf die Schaltfläche **Überprüfen**, um die Konfiguration zu überprüfen.
 ##Zuweisen von Benutzern
@@ -115,7 +146,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769003.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC767830.png "Ja")
 
@@ -133,4 +164,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 
 Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

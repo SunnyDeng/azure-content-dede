@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="08/18/2015"
+	ms.date="10/06/2015"
 	ms.author="spelluru"/>
 
 # Erstellen der ersten Azure Data Factory-Pipeline mit Visual Studio
@@ -33,11 +33,13 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe von Visual Studio Ihre erste Pi
 
 Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie im Artikel [Einführung in Azure Data Factory](data-factory-introduction.md).
 
+> [AZURE.IMPORTANT]Lesen Sie sich den Artikel [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md) durch, und führen Sie die vorbereitenden Schritte aus, bevor Sie mit diesem Tutorial beginnen.
+
 ## Exemplarische Vorgehensweise: Erstellen und Bereitstellen von Data Factory-Entitäten mit Visual Studio 
 
 ### Voraussetzungen
 
-Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 2013 – Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie auf **VS 2013 Installieren** im Abschnitt **.NET**.
+Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 2013 – Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf die Option für die **VS 2013-Installation**. - Aktualisieren Sie die „Visual Studio Tools für Azure Data Factory“ auf die aktuelle Version, indem Sie auf Visual Studio 2013 --> Extras --> Updates --> Visual Studio Gallery“ zugreifen und für das Plug-In „Visual Studio Tools für Azure Data Factory“ auf „Aktualisieren“ klicken.
 
 
 ### Erstellen des Visual Studio-Projekts 
@@ -57,7 +59,7 @@ In diesem Schritt verknüpfen Sie Ihr Azure Storage-Konto und einen bedarfsgeste
 #### Erstellen des mit Azure Storage verknüpften Diensts
 
 
-4. Klicken Sie mit der rechten Maustaste auf **verknüpfte Dienste** im Projektmappen-Explorer, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.      
+4. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verknüpfte Dienste**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.      
 5. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Mit Azure-Speicher verknüpfter Dienst** aus der Liste aus, und klicken Sie auf **Hinzufügen**. 
 
 	![Neuer verknüpfter Dienst](./media/data-factory-build-your-first-pipeline-using-vs/new-linked-service-dialog.png)
@@ -199,7 +201,7 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 21. Führen Sie auf der Seite zum Konfigurieren der Data Factory folgende Schritte aus:
 	1. Wählen Sie die Option **Neue Data Factory erstellen**.
 	2. Geben Sie **FirstPipelineUsingVS** als **Name** ein.
-	3. Wählen Sie im Feld das **Abonnement** das richtige Abonnement aus. 
+	3. Wählen Sie im Feld **Abonnement** das richtige Abonnement aus. 
 	4. Wählen Sie die **Ressourcengruppe** für die zu erstellende Data Factory aus. 
 	5. Wählen Sie die **Region** für die Data Factory aus. 
 	6. Klicken Sie auf **Weiter**, um zur Seite **Elemente veröffentlichen** zu wechseln. (Drücken Sie die **TAB-TASTE**, um das Feld „Name“ zu verlassen, wenn die Schaltfläche **Weiter** deaktiviert ist.) 
@@ -230,9 +232,9 @@ Unter [Überwachen von Datasets und Pipelines](data-factory-monitor-manage-pipel
  
 
 ## Nächste Schritte
-In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
+In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zur Verwendung einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-vs.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

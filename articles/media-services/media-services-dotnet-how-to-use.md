@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="10/05/2015"
 	ms.author="juliako"/>
 
 #Media Services-Entwicklung mit .NET 
@@ -28,9 +28,9 @@ Die Bibliothek für das **Azure Media Services .NET SDK** ermöglicht es Ihnen, 
 ##Voraussetzungen
 
 -   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Mediendienstekontos](media-services-create-account.md).
--   Betriebssystem: Windows 7, Windows 2008 R2 oder Windows 8.
+-   Betriebssysteme: Windows 10, Windows 7, Windows 2008 R2 oder Windows 8.
 -   .NET Framework 4.5.
--   Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express). 
+-    Visual Studio 2015, Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express). 
   
 
 ##Erstellen und Konfigurieren eines Visual Studio-Projekts 
@@ -75,15 +75,9 @@ Sie können auch die neuesten Media Services .NET SDK-Komponenten von GitHub ([g
 	Um den **Kontonamen** und Informationen zum **Kontoschlüssel** zu erhalten, öffnen Sie das **Azure-Verwaltungsportal**, wählen Ihr Media Services-Konto aus und klicken auf die Schaltfläche **SCHLÜSSEL VERWALTEN**.
 
 
-	<pre><code>
-&lt;configuration>
-    &lt;appSettings>
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-    &lt;/appSettings>
-&lt;/configuration>
-</code></pre>
-
+	<configuration> ... <appSettings> <add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> </appSettings>
+	  
+	</configuration>
 
 5. Überschreiben Sie die existierenden using-Anweisungen am Anfang von Program.cs durch den folgenden Code.
 
@@ -108,4 +102,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

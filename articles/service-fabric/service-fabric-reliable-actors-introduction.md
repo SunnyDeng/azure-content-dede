@@ -3,10 +3,9 @@
    description="Einführung in das Programmiermodell Service Fabric Reliable Actors"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
-
 
 <tags
    ms.service="service-fabric"
@@ -15,8 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/05/2015"
-   ms.author="claudioc"/>
-
+   ms.author="vturecek"/>
 
 # Einführung in Service Fabric Reliable Actors
 Die Reliable Actor-API ist eines von zwei High-Level-Frameworks, das [Service Fabric](service-fabric-technical-overview.md) neben der [Reliable Services-API](service-fabric-reliable-services-introduction.md) bereitstellt.
@@ -200,4 +198,4 @@ Timer-Rückrufe können mit Attribut `Readonly` auf ähnliche Weise markiert wer
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

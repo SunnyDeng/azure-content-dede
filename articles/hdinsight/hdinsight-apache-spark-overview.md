@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/19/2015" 
+	ms.date="09/30/2015" 
 	ms.author="nitinme"/>
 
 # Übersicht: Apache Spark für Azure HDInsight 
@@ -41,7 +41,7 @@ Azure HDInsight umfasst einen vollständig verwalteten Spark-Dienst. Vorteile de
 | Funktion | Beschreibung |
 |-------------------------------------|-------------------|
 | Einfache Bereitstellung | Sie können einen neuen Spark-Cluster unter HDInsight in wenigen Minuten bereitstellen, indem Sie das Azure-Verwaltungsportal, Azure PowerShell oder das HDInsight .NET SDK verwenden. Weitere Informationen finden Sie unter [Bereitstellen eines Spark-Clusters in HDInsight](hdinsight-apache-spark-provision-clusters.md) |
-| Einfache Bedienung | Spark in HDInsight-Clustern enthält vorkonfigurierte Zeppelin und Jupyter Notebooks. Diese können Sie für die interaktive Datenverarbeitung und -visualisierung verwenden. Sie können diese Notebooks über das Cluster-Dashboard starten, um sie direkt für einen Spark-Cluster zu nutzen.|
+| Einfache Bedienung | Spark in HDInsight-Clustern enthält vorkonfigurierte Zeppelin und Jupyter Notebooks. Diese können Sie für die interaktive Datenverarbeitung und -visualisierung verwenden. Die URLs für diese Notebooks lauten https://CLUSTERNAME.azurehdinsight.net/zeppelin und https://CLUSTERNAME.azurehdinsight.net/jupyter. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres HDInsight-Clusters.|
 | REST-APIs | Spark in HDInsight umfasst einen Spark-Auftragsserver. Hierbei handelt es sich um einen REST-API-Server, mit dem Benutzer Aufträge per Remotezugriff senden und überwachen können. |
 | Gleichzeitige Abfragen | Spark in HDInsight unterstützt gleichzeitige Abfragen. So können mehrere Abfragen von einem Benutzer oder mehrere Abfragen von unterschiedlichen Benutzern und Anwendungen dieselben Clusterressourcen verwenden. |
 | Zwischenspeicherung auf SSDs | Sie können Daten entweder im Arbeitsspeicher oder auf SSDs zwischenspeichern, die an die Clusterknoten angefügt sind. Das Zwischenspeichern im Arbeitsspeicher liefert die beste Abfrageleistung, kann aber teuer sein. Das Zwischenspeichern auf SSDs ist eine hervorragende Möglichkeit zur Verbesserung der Abfrageleistung, ohne dass ein Cluster mit einer Größe erstellt werden muss, die für das Einfügen des gesamten Datasets in den Arbeitsspeicher ausreicht.|
@@ -100,4 +100,4 @@ Spark in HDInsight verfügt auch über einen [ODBC-Treiber](http://go.microsoft.
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

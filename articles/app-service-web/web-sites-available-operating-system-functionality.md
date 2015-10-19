@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/02/2015" 
+	ms.date="09/29/2015" 
 	ms.author="cephalin"/>
 
 # Betriebssystemfunktionen für Web-Apps in Azure App Service #
@@ -111,4 +111,4 @@ Der Schreibzugriff auf die Registrierung ist blockiert, einschließlich des Zugr
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

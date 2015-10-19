@@ -89,8 +89,12 @@ Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [
 	- Sie können jetzt das Apple HTTP Live Streaming-Format (HLS) mit dem Nur-Audio-Filter verwenden. Mit diesem Update können Sie die reine Audiospur durch Angabe (audio-only= false) in der URL entfernen.
 	- Beim Definieren von Filtern für Ihre Assets haben Sie jetzt die Möglichkeit zum Kombinieren mehrerer (bis zu 3) Filter in einer einzelnen URL.
 
+	Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support) Blog.
+
 - AMS unterstützt nun I-Frames in HLS v4. Die I-Frame-Unterstützung optimiert Vorlauf- und Rücklaufvorgänge. Standardmäßig enthalten alle HLS v4-Ausgaben I-Frame-Wiedergabelisten (EXT-X-I-FRAME-STREAM-INF).
  
+	Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support) Blog.
+
 ##<a id="august_changes_15"></a>Version August 2015
 
 - Azure Media Services-SDK für Java Version 0.8.0 und neue Beispiele sind jetzt verfügbar. Weitere Informationen finden Sie unter:
@@ -224,7 +228,7 @@ Durch diese Version wird der Microsoft.WindowsAzure.MediaServices.Client.Content
 
 ### <a id="new_encoder_release"></a>Media Services-Encoder-Version
 
-Hiermit kündigen wir die neue Version des Media Services-Azure-Medienencoders an. Beim neuesten Azure Media Encoder werden Ihnen nur die ausgegebenen GB berechnet. Ansonsten sind die Funktionen des neuen Encoders mit dem vorherigen Encoder kompatibel. Weitere Informationen finden Sie unter [Mediendienste – Preisdetails]).
+Hiermit kündigen wir die neue Version des Media Services-Azure-Medienencoders an. Beim neuesten Azure Media Encoder werden Ihnen nur die ausgegebenen GB berechnet. Ansonsten sind die Funktionen des neuen Encoders mit dem vorherigen Encoder kompatibel. Weitere Informationen finden Sie unter [Mediendienste – Preisübersicht]).
 
 ### <a id="oct_sdk"></a>Media Services .NET SDK 
 
@@ -567,7 +571,7 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 <!-- URLs. -->
 [MSDN-Forum für Azure Media Services]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [Azure Media Services – REST-API-Referenz]: http://msdn.microsoft.com/library/azure/hh973617.aspx
-[Mediendienste – Preisdetails]: http://azure.microsoft.com/pricing/details/media-services/
+[Mediendienste – Preisübersicht]: http://azure.microsoft.com/pricing/details/media-services/
 [Eingeben von Metadaten]: http://msdn.microsoft.com/library/azure/dn783120.aspx
 [Ausgeben von Metadaten]: http://msdn.microsoft.com/library/azure/dn783217.aspx
 [Bereitstellen von Inhalten]: http://msdn.microsoft.com/library/azure/hh973618.aspx
@@ -599,4 +603,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

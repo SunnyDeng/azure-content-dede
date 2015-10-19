@@ -24,7 +24,7 @@
 
 In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um ein .NET-Back-End-Dienstprojekt zu speichern. Ihr Projekt kann veröffentlicht werden, indem Sie es einfach aus Ihrem lokalen Git-Repository in Ihren mobilen Dienst in der Produktionsumgebung hochladen.
 
-Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Bearbeiten eines der Lernprogramme [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben.
+Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus dem Lernprogramm [Erste Schritte mit Mobile Services] erstellt haben.
 
 ##<a name="enable-source-control"></a>Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst
 
@@ -96,9 +96,7 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Source control]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-data.md
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Call a custom API from the client]: mobile-services-dotnet-backend-ios-call-custom-api.md
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

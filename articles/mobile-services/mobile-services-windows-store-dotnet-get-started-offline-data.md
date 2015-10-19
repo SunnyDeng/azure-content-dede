@@ -29,8 +29,6 @@ Wenn Sie sich lieber ein Video ansehen möchten, finden Sie die Schritte dieses 
 In diesem Tutorial aktualisieren Sie das universelle App-Projekt aus dem Tutorial [Erste Schritte mit Mobile Services], um Offlinefunktionen von Azure Mobile Services zu unterstützen. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
 
 >[AZURE.NOTE]In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services verwenden können, um Daten in einer Windows Store-App zu speichern und abzurufen. Falls Sie noch keine Erfahrung mit Mobile Services haben, schließen Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] ab.
->
->Das ältere Windows Phone 8-Lernprogramm für Visual Studio 2012 steht weiterhin unter [Windows Phone 8-Lernprogramm für Visual Studio 2012] zur Verfügung.
 
 ##Voraussetzungen 
 
@@ -253,7 +251,6 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [Next Steps]: #next-steps
 
 <!-- Images -->
-[0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-todoitem-data-browse.png
 [1]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
 [2]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-sqlitestore-nuget.png
 [6]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-data-browse.png
@@ -270,11 +267,9 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [TodoList Offline Sample]: http://go.microsoft.com/fwlink/?LinkId=394777
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
 [Getting Started]: ../mobile-services-dotnet-backend-windows-phone-get-started.md
-[Get started with data]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
 [Erste Schritte mit Mobile Services]: ../mobile-services-windows-store-get-started.md
 [SQLite für Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [SQLite für Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkId=397953
-[Windows Phone 8-Lernprogramm für Visual Studio 2012]: mobile-services-windows-phone-get-started-offline-data.md
 [Soft Delete]: mobile-services-using-soft-delete.md
 [Vorläufiges Löschen]: mobile-services-using-soft-delete.md
 
@@ -283,4 +278,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

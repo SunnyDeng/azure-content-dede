@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="10/01/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Logik-App mithilfe einer Vorlage
@@ -140,4 +140,4 @@ Diese spezifische Definition wird einmal pro Stunde ausgeführt und pingt den im
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

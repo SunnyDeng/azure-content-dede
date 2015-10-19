@@ -1,25 +1,25 @@
 <properties 
    pageTitle="Übersicht über die Event Hubs-API"
-	description="Eine Zusammenfassung einiger wichtiger .NET-Client-APIs für Event Hubs."
-	services="event-hubs"
-	documentationCenter="na"
-	authors="sethmanheim"
-	manager="timlt"
-	editor=""/>
+   description="Eine Zusammenfassung einiger wichtiger .NET-Client-APIs für Event Hubs."
+   services="event-hubs"
+   documentationCenter="na"
+   authors="sethmanheim"
+   manager="timlt"
+   editor="" />
 <tags 
    ms.service="event-hubs"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="tbd"
-	ms.date="07/10/2015"
-	ms.author="sethm"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd"
+   ms.date="07/10/2015"
+   ms.author="sethm" />
 
 # Übersicht über die Event Hubs-API
 
 In diesem Artikel werden einige der wichtigsten .NET-Client-APIs von Event Hubs zusammengefasst. Es gibt zwei Kategorien: Verwaltungs- und Laufzeit-APIs. Runtime-APIs umfassen alle Vorgänge, die zum Senden und Empfangen einer Meldung erforderlich sind. Verwaltungsvorgänge ermöglichen Ihnen das Verwalten des Entitätszustands von Event Hubs durch das Erstellen, Aktualisieren und Löschen von Entitäten.
 
-Überwachungsszenarien umfassen sowohl Verwaltung als auch Laufzeit. Eine ausführliche Referenzdokumentation zu den .NET-APIs finden Sie unter den Referenzen zur [.NET-Klassenbibliothek](https://msdn.microsoft.com/library/jj933431.aspx) und zur [EventProcessorHost-API](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.aspx).
+Überwachungsszenarien umfassen sowohl Verwaltung als auch Laufzeit. Eine ausführliche Referenzdokumentation zu den .NET-APIs finden Sie unter den Referenzen zur [.NET-Klassenbibliothek](https://msdn.microsoft.com/library/azure/jj933431.aspx) und zur [EventProcessorHost-API](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.aspx).
 
 ## Verwaltungs-API
 
@@ -50,7 +50,7 @@ namespaceManager.UpdateEventHubAsync(ehd).Wait();
 ### Löschen
 
 ```
-namespaceManager.DeleteEventHubAsync("event hub name").Wait();
+namespaceManager.DeleteEventHubAsync("Event Hub name").Wait();
 ```
 
 ## Laufzeit-APIs
@@ -59,7 +59,7 @@ namespaceManager.DeleteEventHubAsync("event hub name").Wait();
 
 ```
 // EventHubClient model (uses implicit factory instance, so all links on same connection)
-EventHubClient eventHubClient = EventHubClient.Create("event hub name");
+EventHubClient eventHubClient = EventHubClient.Create("Event Hub name");
 ```
 
 ### Meldung veröffentlichen
@@ -131,7 +131,7 @@ EventProcessorHost host = new EventProcessorHost(WorkerName, EventHubName, defau
 host.UnregisterEventProcessorAsync().Wait();   
 ```
 
-Die[IEventProcessor](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.ieventprocessor.aspx)-Schnittstelle wird wie folgt definiert:
+Die[IEventProcessor](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx)-Schnittstelle wird wie folgt definiert:
 
 ```
 public class SimpleEventProcessor : IEventProcessor
@@ -184,7 +184,7 @@ Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 
 Die .NET-API-Referenzen sind hier verfügbar:
 
-- [Referenz zu Service Bus und .NET-API für Event Hubs](https://msdn.microsoft.com/library/jj933424.aspx)
-- [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
+- [Referenz zu Service Bus und .NET-API für Event Hubs](https://msdn.microsoft.com/library/azure/jj933424.aspx)
+- [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

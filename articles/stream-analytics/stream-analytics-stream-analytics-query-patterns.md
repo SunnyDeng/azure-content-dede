@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Abfragemuster in Azure Stream Analytics | Microsoft Azure"
 	description="Allgemeine Abfragemuster in Azure Stream Analytics"
+	keywords="stream analytics, sample, query, language, guide, patterns"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -13,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="08/19/2015"
+	ms.date="10/05/2015"
 	ms.author="jeffstok"/>
 
 
@@ -454,4 +455,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO2-->

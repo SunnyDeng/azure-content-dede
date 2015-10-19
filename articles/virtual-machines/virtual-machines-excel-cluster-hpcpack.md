@@ -1,13 +1,15 @@
 <properties
- pageTitle="Erste Schritte mit einem HPC Pack-Cluster zum Ausführen von Excel- und SOA-Workloads | Microsoft Azure"
- description="."
+ pageTitle="HPC Pack-Cluster für Excel und SOA | Microsoft Azure"
+ description="Sie erhalten Informationen zu den ersten Schritten mit einem HPC Pack-Cluster zum Ausführen von Excel- und SOA-Workloads unter Verwendung des Ressourcen-Manager-Bereitstellungsmodells."
  services="virtual-machines"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
- editor=""/>
+ editor=""
+ tags="azure-resource-manager"/>
+
 <tags
-ms.service="virtual-machines"
+ ms.service="virtual-machines"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="vm-windows"
@@ -19,7 +21,9 @@ ms.service="virtual-machines"
 
 In diesem Artikel erfahren Sie, wie Sie einen HPC Pack-Cluster mithilfe einer Azure-Schnellstartvorlage oder eines Azure PowerShell-Bereitstellungsskripts für Azure-Infrastrukturdienste (IaaS) bereitstellen. Hierzu werden VM-Images aus Azure Marketplace verwendet, die für die Ausführung von Microsoft Excel- oder SOA-Workloads mit HPC Pack konzipiert sind. Mit dem Cluster können Sie einfache Excel-HPC- und SOA-Dienste über einen lokalen Clientcomputer ausführen. Zu den Excel-HPC-Diensten zählen die Abladung von Excel-Arbeitsmappen sowie benutzerdefinierte Funktionen (User-Defined Functions, UDFs) von Excel.
 
-Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellenden HPC Pack-Cluster:
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Ressourcen behandelt, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt werden.
+
+Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellenden HPC Pack-Cluster.
 
 ![HPC-Cluster mit Knoten, auf denen Excel-Workloads ausgeführt werden][scenario]
 
@@ -27,7 +31,7 @@ Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellende
 
 * **Clientcomputer**: Sie benötigen einen Windows-basierten Clientcomputer, um das Azure PowerShell-Clusterbereitstellungsskript auszuführen (sofern Sie diese Bereitstellungsmethode verwenden) und Excel- und SOA-Beispielaufträge an den Cluster zu übermitteln.
 
-* **Azure-Abonnement**: Falls Sie noch kein Konto haben, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+* **Azure-Abonnement**: Wenn Sie über kein Konto verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
 * **Kernkontingent**: Unter Umständen muss das Kontingent für die Kerne erhöht werden. Dies gilt insbesondere, wenn Sie mehrere Clusterknoten mit Multicore-VM-Größen bereitstellen. Beachten Sie bei Verwendung einer Azure-Schnellstartvorlage, dass das Kernkontingent im Ressourcen-Manager pro Azure-Region gilt und gegebenenfalls in einer bestimmten Region erhöht werden muss. Weitere Informationen finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md). Wenn Sie ein Kontingent erhöhen möchten, können Sie kostenlos eine [Anfrage an den Onlinekundensupport richten](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 
@@ -96,7 +100,7 @@ Das HPC Pack-IaaS-Bereitstellungsskript ist eine weitere vielseitige Bereitstel
 
 **Erstellen der Konfigurationsdatei**
 
- Das HPC Pack-IaaS-Bereitstellungsskript verwendet als Eingabe eine XML-Konfigurationsdatei mit der Beschreibung der Infrastruktur des HPC-Clusters. Geben Sie in der folgenden Beispielkonfigurationsdatei Werte für Ihre Umgebung ein, um einen Cluster mit einem Haupt- und 18 Serverknoten bereitzustellen, die auf der Grundlage des Serverknotenimage mit Microsoft Excel erstellt werden. Weitere Informationen zur Konfigurationsdatei finden Sie in der Datei „Manual.rtf“ im Skriptordner und unter [Erstellen eines HPC-Clusters mit dem HPC Pack-IaaS-Bereitstellungskript](virtual-machines-hpcpack-cluster-powershell-script.md).
+ Das HPC Pack-IaaS-Bereitstellungsskript verwendet als Eingabe eine XML-Konfigurationsdatei mit der Beschreibung der Infrastruktur des HPC-Clusters. Geben Sie in der folgenden Beispielkonfigurationsdatei Werte für Ihre Umgebung ein, um einen Cluster mit einem Haupt- und 18 Serverknoten bereitzustellen, die auf der Grundlage des Serverknotenimage mit Microsoft Excel erstellt werden. Weitere Informationen zur Konfigurationsdatei finden Sie in der Datei „Manual.rtf“ im Skriptordner und unter [Erstellen eines HPC-Clusters mit dem HPC Pack-IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md).
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -384,4 +388,4 @@ Für die SOA-Clientanwendung muss lediglich der Hauptname auf den vollständigen
 [endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

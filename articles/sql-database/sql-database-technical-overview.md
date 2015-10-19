@@ -20,14 +20,11 @@
 
 SQL-Datenbank ist ein relationaler Datenbankdienst in der Cloud, der auf der marktführenden Microsoft SQL Server Engine basiert und betriebsnotwendige Funktionen beinhaltet. SQL-Datenbank bietet vorhersagbare Leistung, Skalierbarkeit ohne Ausfallzeiten, Geschäftskontinuität, Datenschutz und nahezu keinerlei Verwaltungsaufwand. Anstatt auf die Verwaltung virtueller Computer und der Infrastruktur können Sie sich auf die schnelle Entwicklung von Apps und eine beschleunigte Markteinführung konzentrieren. Da SQL-Datenbank auf dem [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx)-Modul basiert, werden vorhandene SQL Server-Tools, -Bibliotheken und -APIs unterstützt, sodass diese einfacher in die Cloud verschoben und auf die Cloud ausgedehnt werden können.
 
-
-Wenn Sie bereit sind, können Sie binnen Minuten loslegen. Wenn Sie tiefer in die Materie eindringen wollen, sehen Sie sich dieses dreißigminütige Video an.
+In diesem Artikel werden die grundlegenden Konzepte und Funktionen von SQL-Datenbank im Hinblick auf Leistung, Skalierbarkeit und Verwaltbarkeit mit Links zu detaillierten Informationen eingeführt. Wenn Sie sich damit vertraut gemacht haben, können Sie binnen Minuten [eine erste SQL-Datenbank erstellen](sql-database-get-started.md) oder [einen Pool für elastische Datenbanken erstellen und verwalten](sql-database-elastic-pool-portal.md). Wenn Sie eingehendere Informationen benötigen, finden Sie diese in diesem 30 Minuten langen Video.
 
 
 > [AZURE.VIDEO azurecon-2015-get-started-with-azure-sql-database]
 
-
-In diesem Artikel werden die grundlegenden Konzepte und Funktionen von SQL-Datenbank im Hinblick auf Leistung, Skalierbarkeit und Verwaltbarkeit mit Links zu detaillierten Informationen eingeführt. Wenn Sie sich damit vertraut gemacht haben, können Sie binnen Minuten [eine erste SQL-Datenbank erstellen](sql-database-get-started.md) oder [einen Pool für elastische Datenbanken erstellen und verwalten](sql-database-elastic-pool-portal.md).
 
 ## Anpassen von Leistung und Skalierung ohne Ausfallzeiten
 Für SQL-Datenbanken sind die *Dienstebenen* Basic, Standard und Premium verfügbar. Jede Dienstebene bietet [verschiedene Leistungsstufen und Funktionen](sql-database-service-tiers.md) zur Unterstützung geringer und hoher Datenbankworkloads. Sie können Ihre erste App mit einer kleinen Datenbank zu einem geringen Preis pro Monat erstellen und dann jederzeit manuell oder programmgesteuert [die Dienstebene ändern](sql-database-scale-up.md), wenn Ihre App weltweit genutzt wird, ohne dass Ausfallzeiten für die App oder Ihre Kunden entstehen.
@@ -42,7 +39,7 @@ Aber wie können Sie nun die relative Leistung von Datenbanken und Datenbankpool
 
 ## Grundlegendes zu DTUs
 
-Die Datenbank-Transaktionseinheit (Database Transaction Unit, DTU) ist die Maßeinheit in SQL-Datenbank, die die relative Leistung von Datenbanken basierend auf einer echten Maßeinheit darstellt: die Datenbanktransaktion. Dazu haben wir eine Reihe von Vorgängen genommen, die typisch für eine Online-Transaktionsverarbeitung (Online Transaction Processing, OLTP) sind, und dann gemessen, wie viele Transaktionen pro Sekunde unter maximaler Belastung vollständig abgeschlossen werden konnten (dies ist die Kurzversion, die Details können Sie in der [Benchmark-Übersicht](https://msdn.microsoft.com/library/azure/dn741327.aspx) nachlesen).
+Die Datenbank-Transaktionseinheit (Database Transaction Unit, DTU) ist die Maßeinheit in SQL-Datenbank, die die relative Leistung von Datenbanken basierend auf einer echten Maßeinheit darstellt: die Datenbanktransaktion. Dazu haben wir eine Reihe von Vorgängen ausgewählt, die typisch für eine Online-Transaktionsverarbeitung (Online Transaction Processing, OLTP) sind, und dann gemessen, wie viele Transaktionen pro Sekunde unter maximaler Belastung vollständig abgeschlossen werden konnten (dies ist die Kurzversion, die Details können Sie in der [Benchmark-Übersicht](https://msdn.microsoft.com/library/azure/dn741327.aspx) nachlesen).
 
 Eine Basic-Datenbank verfügt über 5 DTUs, was bedeutet, dass 5 Transaktionen pro Sekunde abgeschlossen werden können, wohingegen eine Premium-P11-Datenbank über 1.750 DTUs verfügt.
 
@@ -52,7 +49,7 @@ Die DTU für Einzeldatenbanken kann direkt in die eDTU für elastische Datenbank
 
 ![Elastische Pools und eDTUs](./media/sql-database-technical-overview/sqldb_elastic_pools.png)
 
-Ein einfaches Beispiel veranschaulicht dies. Nehmen Sie einen Basic-Pool für elastische Datenbanken mit 1.000 DTUs, in dem Sie 800 Datenbanken ablegen. Solange nur 200 der 800 Datenbanken zu einem beliebigen Zeitpunkt genutzt werden (5 DTU x 200 = 1000), wird die maximale Kapazität des Pools nicht erreicht und die Leistung der Datenbank nicht beeinträchtigt. In diesem Beispiel wird aus Gründen der Übersichtlichkeit vereinfacht. In Wirklichkeit sind die Dinge ein wenig komplizierter. Das Portal erledigt die komplizierten Aufgaben für Sie und gibt eine Empfehlung basierend auf der bisherigen Verwendung der Datenbank ab. Weitere Informationen zu den Empfehlungen oder zum Selbermachen finden Sie unter [Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md).
+Ein einfaches Beispiel veranschaulicht dies. Nehmen Sie einen Basic-Pool für elastische Datenbanken mit 1.000 DTUs, in dem Sie 800 Datenbanken ablegen. Solange nur 200 der 800 Datenbanken zu einem beliebigen Zeitpunkt genutzt werden (5 DTU x 200 = 1000), wird die maximale Kapazität des Pools nicht erreicht und die Leistung der Datenbank nicht beeinträchtigt. In diesem Beispiel wird aus Gründen der Übersichtlichkeit vereinfacht. In Wirklichkeit sind die Dinge ein wenig komplizierter. Das Portal erledigt die komplizierten Aufgaben für Sie und gibt eine Empfehlung basierend auf der bisherigen Verwendung der Datenbank ab. Weitere Informationen zu den Empfehlungen und für eigene Berechnungen finden Sie unter [Überlegungen zum Preis und zur Leistung eines Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md).
 
 ## Aufrechterhalten von App-Ausführung und Geschäftskontinuität
 
@@ -72,4 +69,4 @@ SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mi
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

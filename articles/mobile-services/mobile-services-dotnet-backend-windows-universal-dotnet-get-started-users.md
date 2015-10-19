@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/01/2015" 
+	ms.date="10/05/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App 
@@ -26,7 +26,7 @@ In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ih
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md) abschließen.
 
->[AZURE.NOTE]In diesem Lernprogramm erfahren Sie, wie Sie die servergesteuerte Authentifizierung für Benutzer in Windows Store- und Windows Phone Store 8.1-Apps verwenden können. Informationen zu Windows Phone 8.0- und Windows Phone Silverlight 8.1-Apps finden Sie unter [Erste Schritte bei der Authentifizierung in Mobile Services](mobile-services-dotnet-backend-windows-phone-get-started-users.md). Weitere Informationen zur clientgesteuerten Authentifizierung finden Sie unter [Logging in with Google, Microsoft and Facebook SDKs to Azure Mobile Services](http://azure.microsoft.com/blog/2014/10/27/logging-in-with-google-microsoft-and-facebook-sdks-to-azure-mobile-services/) ("Anmelden bei Azure Mobile Services mit Google-, Microsoft- und Facebook-SDKs", in englischer Sprache).
+>[AZURE.NOTE]In diesem Lernprogramm erfahren Sie, wie Sie die servergesteuerte Authentifizierung für Benutzer in Windows Store- und Windows Phone Store 8.1-Apps verwenden können. Weitere Informationen zur clientgesteuerten Authentifizierung finden Sie unter [Logging in with Google, Microsoft and Facebook SDKs to Azure Mobile Services](http://azure.microsoft.com/blog/2014/10/27/logging-in-with-google-microsoft-and-facebook-sdks-to-azure-mobile-services/) ("Anmelden bei Azure Mobile Services mit Google-, Microsoft- und Facebook-SDKs", in englischer Sprache).
 
 ##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
@@ -84,7 +84,6 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: mobile-services-windows-store-dotnet-single-sign-on.md
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Get started with data]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
 [Get started with authentication]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md
@@ -97,4 +96,4 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Register your Windows Store app package for Microsoft authentication]: ../mobile-services-how-to-register-store-app-package-microsoft-authentication.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

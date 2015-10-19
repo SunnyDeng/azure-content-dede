@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Schnellstart-Lernprogramm für die Sprache R fürMachine Learning | Microsoft Azure"
 	description="Verwenden Sie dieses Lernprogramm für die Programmierung in R, um einen schnellen Einstieg in die Verwendung der Sprache R mit Azure Machine Learning Studio zum Erstellen von Vorhersagelösungen zu erhalten."
+	keywords="quickstart,r language,r programming language,r programming tutorial"
 	services="machine-learning"
 	documentationCenter=""
 	authors="Blackmist"
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="10/08/2015"
 	ms.author="larryfr"/>
 
 # Schnellstart-Lernprogramm für die Programmiersprache R für Azure Machine Learning
@@ -77,7 +78,7 @@ Sehen wir uns unter Bezugnahme auf Abbildung 1 einige der Hauptteile der Machin
 
 Natürlich wird das [Execute R Script][execute-r-script]-Modul ausführlicher im Rest dieses Dokuments behandelt.
 
-Bei der Arbeit mit komplexen R-Funktionen empfiehlt es sich, dass Sie das Bearbeiten, Testen und Debuggen in RStudio durchführen. Wie bei jeder Softwareentwicklung erweitern Sie Ihren Code schrittweise und testen ihn mit kleinen, einfachen Testfällen. Danach schneiden Sie Ihre Funktionen aus und fügen sie in das Fenster des [Execute R Script][execute-r-script]-Moduls ein. Dieser Ansatz erlaubt es Ihnen, sowohl die RStudio-IDE (Integrated Development Environment) als auch die Leistungsfähigkeit von Azure Machine Learning zu nutzen.
+Bei der Arbeit mit komplexen R-Funktionen empfiehlt es sich, dass Sie das Bearbeiten, Testen und Debuggen in RStudio durchführen. Wie bei jeder Softwareentwicklung erweitern Sie Ihren Code schrittweise und testen ihn mit kleinen, einfachen Testfällen. Danach schneiden Sie Ihre Funktionen aus und fügen sie in das Fenster des [Execute R Script][execute-r-script]-Moduls ein. Dieser Ansatz erlaubt es Ihnen, sowohl die RStudio-IDE (Integrated Development Environment, integrierte Entwicklungsumgebung) als auch die Leistungsfähigkeit von Azure Machine Learning zu nutzen.
 
 ####Ausführen von R-Code
 
@@ -112,15 +113,13 @@ Die Ausführung dieses Codes schlägt fehl, was zu einem Fehlerzustand führt. W
 Sie müssen sich anscheinend in der Datei "output.log" die R-Fehlermeldung ansehen. Klicken Sie auf das [Execute R Script][execute-r-script]-Modul und dann rechts im Bereich **Eigenschaften** auf **View output log**. Ein neues Browserfenster wird geöffnet, in dem Folgendes angezeigt wird:
 
 
-	[ModuleOutput] [1] 14000
-	[ModuleOutput]
-	[ModuleOutput] Loading objects:
-	[ModuleOutput]
-	[ModuleOutput]   port1
-	[ModuleOutput]
-	[ModuleOutput] [1] "Loading variable port1..."
-	[ModuleOutput]
-	[ModuleOutput] Error in eval(expr, envir, enclos) : object 'y' not found
+    [Critical]     Error: Error 0063: The following error occurred during evaluation of R script:
+    ---------- Start of error message from R ----------
+    object 'y' not found
+    
+    
+    object 'y' not found
+    ----------- End of error message from R -----------
 
 Diese Fehlermeldung enthält keine Überraschungen, und das Problem wird eindeutig identifiziert.
 
@@ -161,7 +160,7 @@ Wir beginnen damit, dass wir die Datei **csdairydata.csv** in Azure Machine Lear
 
 - Starten der Azure Machine Learning Studio-Umgebung
 
-- Klicken Sie auf das "+" unten links im Bildschirm, und wählen Sie **DataSet** aus.
+- Klicken Sie auf __+ NEU__ unten links auf dem Bildschirm, und wählen Sie **DataSet** aus.
 
 - Klicken Sie auf **Aus lokaler Datei** und anschließend auf **Durchsuchen**, um die Daten auszuwählen.
 
@@ -173,9 +172,9 @@ Wir beginnen damit, dass wir die Datei **csdairydata.csv** in Azure Machine Lear
 
 ####Erstellen eines Experiments
 
-Nachdem wir nun einige Daten in ML Studio geladen haben, erstellen wir ein Experiment, um die Analyse durchführen zu können.
+Nachdem wir nun einige Daten in Machine Learning Studio geladen haben, erstellen wir ein Experiment, um die Analyse durchführen zu können.
 
-- Klicken Sie unten links auf das "+", und wählen Sie **Experiment** und anschließend **Leeres Experiment** aus.
+- Klicken Sie unten links auf __+ NEU__, und wählen Sie **Experiment** und anschließend **Blank Experiment** aus.
 
 - Sie können das Experiment benennen, indem Sie oben auf der Seite den Titel **Experiment erstellt am...** auswählen und bearbeiten. Ändern Sie den Titel beispielsweise zu **CA Dairy Analysis**.
 
@@ -205,7 +204,7 @@ Lassen Sie uns einen Blick auf die Daten werfen, die wir in unser Experiment gel
 
 *Abbildung 4: Zusammenfassung des DataSets "cadairydata.csv".*
 
-In dieser Ansicht sehen wir viele nützliche Informationen. Die Zeile **Feature Type** zeigt an, welche Datentypen Azure Machine Learning Studio den Spalten in unserem DataSet zuweist. Wir sehen auch die ersten Zeilen dieses DataSets. Ein solch kurzer Blick ist eine gute Funktionsüberprüfung, bevor wir mit der wirklichen Arbeit beginnen.
+In dieser Ansicht sehen wir viele nützliche Informationen. Wir sehen die ersten Zeilen dieses DataSets. Wenn wir eine Spalte auswählen, werden im Statistikabschnitt weitere Informationen zu der Spalte angezeigt. Die Zeile "Feature Type" zeigt z. B. an, welche Datentypen Azure Machine Learning Studio den Spalten zuweist. Ein solch kurzer Blick ist eine gute Funktionsüberprüfung, bevor wir mit der wirklichen Arbeit beginnen.
 
 ###	Erstes R-Skript
 
@@ -270,6 +269,17 @@ Sie können mithilfe der Eingabe "Dataset1" eine rechteckige Datentabelle an Ihr
 	cadairydata <- maml.mapInputPort(1)
 
 Führen Sie das Experiment aus, indem Sie auf die Schaltfläche **Ausführen** klicken. Wenn die Ausführung abgeschlossen ist, klicken Sie auf das [Execute R Script][execute-r-script]-Modul und dann im Bereich "Properties" auf **View output log**. In Ihrem Browser sollte eine neue Seite mit dem Inhalt der Datei "Output.log" angezeigt werden. Wenn Sie nach unten scrollen, sollte etwa Folgendes angezeigt werden:
+
+    [ModuleOutput] InputDataStructure
+    [ModuleOutput]
+    [ModuleOutput] {
+    [ModuleOutput]  "InputName":Dataset1
+    [ModuleOutput]  "Rows":228
+    [ModuleOutput]  "Cols":9
+    [ModuleOutput]  "ColumnTypes":System.Int32,3,System.Double,5,System.String,1
+    [ModuleOutput] }
+
+Wenn Sie auf die Seite doppelklicken, werden zusätzliche Daten geladen, die ungefähr wie folgt aussehen.
 
 	[ModuleOutput] [1] "Loading variable port1..."
 	[ModuleOutput]
@@ -377,9 +387,33 @@ Ich haben die Zeile gelöscht, die die Punktdiagrammmatrix erstellt, und eine Ze
 	## Azure Machine Learning Studio
 	maml.mapOutputPort('cadairydata')
 
-Führen wir nun diesen Code aus, und sehen wir und die Ausgabe an. Die Ausgabe von **Visualisieren** im Menü "R Device" wird in Abbildung 9 dargestellt.
+Führen wir nun diesen Code aus, und sehen wir uns die Ausgabe des R-Skripts an. Die relevanten Daten aus dem Protokoll werden in Abbildung 9 gezeigt.
 
-![Zusammenfassung des Dataframes mit einer Faktor-Variable][10]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  9 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Column 0         : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year.Month       : num  1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 14 levels "Apr","April",..: 6 5 9 1 11 8 7 3 14 13 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  4.37 3.69 4.54 4.28 4.47 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  51.6 56.1 68.5 65.7 73.7 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  2.11 1.93 2.16 2.13 2.23 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  0.98 0.892 0.892 0.897 0.897 ...
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving variable  cadairydata  ..."
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving the following item(s):  .maml.oport1"
 
 *Abbildung 9: Zusammenfassung des Dataframes mit einer Faktor-Variable.*
 
@@ -390,9 +424,33 @@ Das Problem ist, dass die Spalte "Month" nicht systematisch codiert wurde. In ei
 	## Ensure the coding is consistent and convert column to a factor
 	cadairydata$Month <- as.factor(substr(cadairydata$Month, 1, 3))
 
-Führen Sie das Experiment erneut aus, und **Visualisieren** Sie die Ausgabe am "R Device"-Port mit den in Abbildung 10 dargestellten Ergebnissen.
+Führen Sie das Experiment erneut aus, und zeigen Sie die Ausgabe an. Die erwarteten Ergebnisse werden in Abbildung 10 dargestellt.
 
-![Zusammenfassung des Dataframes mit korrekter Anzahl von Faktorebenen][11]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  9 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Column 0         : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year.Month       : num  1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  4.37 3.69 4.54 4.28 4.47 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  51.6 56.1 68.5 65.7 73.7 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  2.11 1.93 2.16 2.13 2.23 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  0.98 0.892 0.892 0.897 0.897 ...
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving variable  cadairydata  ..."
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving the following item(s):  .maml.oport1"
 
 *Abbildung 10: Zusammenfassung des Dataframes mit korrekter Anzahl von Faktorebenen.*
 
@@ -411,9 +469,29 @@ Wir fügen die folgende Zeile dem R-Code im [Execute R Script][execute-r-script]
 	# Remove two columns we do not need
 	cadairydata <- cadairydata[, c(-1, -2)]
 
-Führen Sie diesen Code in Ihrem Experiment aus, und überprüfen Sie das Ergebnis mit **Visualisieren** am "R Device"-Port. Die Ergebnisse werden in Abbildung 11 dargestellt.
+Führen Sie diesen Code in Ihrem Experiment aus, und überprüfen Sie das Ergebnis im Ausgabeprotokoll. Die Ergebnisse werden in Abbildung 11 dargestellt.
 
-![Zusammenfassung des Dataframes mit zwei entfernten Spalten][12]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  7 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  4.37 3.69 4.54 4.28 4.47 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  51.6 56.1 68.5 65.7 73.7 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  2.11 1.93 2.16 2.13 2.23 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  0.98 0.892 0.892 0.897 0.897 ...
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving variable  cadairydata  ..."
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving the following item(s):  .maml.oport1"
 
 *Abbildung 11: Zusammenfassung des Dataframes mit zwei entfernten Spalten.*
 
@@ -439,9 +517,31 @@ Zur besseren Organisation des Codes erstellen wir unsere erste einfache Funktion
 	## Compute the new column for the dataframe
 	cadairydata$Month.Count <- num.month(cadairydata$Year, cadairydata$Month.Number)
 
-Führen Sie nun das aktualisierte Experiment aus, und verwenden Sie **Visualisieren** am "R Device"-Port, um die Ergebnisse anzuzeigen. Diese Ergebnisse werden in Abbildung 12 dargestellt.
+Führen Sie nun das aktualisierte Experiment aus, und überprüfen Sie die Ergebnisse im Ausgabeprotokoll. Diese Ergebnisse werden in Abbildung 12 dargestellt.
 
-![Zusammenfassung des Dataframes mit der zusätzlichen Spalte][13]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  8 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  4.37 3.69 4.54 4.28 4.47 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  51.6 56.1 68.5 65.7 73.7 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  2.11 1.93 2.16 2.13 2.23 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  0.98 0.892 0.892 0.897 0.897 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Count      : num  0 1 2 3 4 5 6 7 8 9 ...
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving variable  cadairydata  ..."
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving the following item(s):  .maml.oport1"
 
 *Abbildung 12: Zusammenfassung des Dataframes mit der zusätzlichen Spalte.*
 
@@ -502,9 +602,31 @@ Wenn Sie mit der defensiven Programmierung in R nicht vertraut sind, kann dieser
 
 4. Die logarithmischen Berechnungen sind in `tryCatch()` eingeschlossen, damit Ausnahmen keine abrupte Unterbrechung der Verarbeitung verursachen können. Ohne `tryCatch()` erzeugen die meisten von R-Funktionen ausgelösten Fehler ein Stoppsignal (Beenden), was genau dies bewirkt.
 
-Führen Sie diesen R-Code in Ihrem Experiment aus, und sehen Sie sich die Ausgabe in der Datei "output.log" an. Sie zeigen die transformierten Werte der vier Spalten, wie in Abbildung 13 dargestellt, an, indem Sie im Menü "R Device" die Option **Visualisieren** auswählen.
+Führen Sie diesen R-Code in Ihrem Experiment aus, und sehen Sie sich die Ausgabe in der Datei "output.log" an. Es werden die transformierten Werte der vier Spalten im Protokoll wie in Abbildung 13 dargestellt angezeigt.
 
-![Zusammenfassung der transformierten Werte im Dataframe][14]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  8 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  1.47 1.31 1.51 1.45 1.5 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  5.82 5.9 6.1 6.06 6.17 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  7.66 7.57 7.68 7.66 7.71 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  6.89 6.79 6.79 6.8 6.8 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Count      : num  0 1 2 3 4 5 6 7 8 9 ...
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving variable  cadairydata  ..."
+    [ModuleOutput] 
+    [ModuleOutput] [1] "Saving the following item(s):  .maml.oport1"
 
 *Abbildung 13: Zusammenfassung der transformierten Werte im Dataframe.*
 
@@ -538,9 +660,27 @@ Als ersten Schritt lesen wir einen Dataframe ein und stellen sicher, dass wir di
 	cadairydata <- maml.mapInputPort(1)
 	str(cadairydata) # Check the results
 
-Führen Sie jetzt das Experiment aus. Die Ausgabe, die Sie am "R Device"-Port sehen, sollte wie in Abbildung 14 aussehen.
+Führen Sie jetzt das Experiment aus. Das Protokoll für die neue Form von "Execute R Script" sollte wie in Abbildung 14 aussehen.
 
-![Zusammenfassung des Dataframes im "Execute R Script"-Modul][15]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  8 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  1.47 1.31 1.51 1.45 1.5 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  5.82 5.9 6.1 6.06 6.17 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  7.66 7.57 7.68 7.66 7.71 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  6.89 6.79 6.79 6.8 6.8 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Count      : num  0 1 2 3 4 5 6 7 8 9 ...
 
 *Abbildung 14: Zusammenfassung des Dataframes im "Execute R Script"-Modul.*
 
@@ -559,9 +699,29 @@ Wir müssen unserem Dataframe ein Zeitreihenobjekt hinzufügen. Ersetzen Sie den
 
 	str(cadairydata) # Check the results
 
-Überprüfen Sie nun die "R Device"-Ausgabe. Diese sollte wie in Abbildung 15 aussehen.
+Prüfen Sie jetzt das Protokoll. Diese sollte wie in Abbildung 15 aussehen.
 
-![Zusammenfassung des Dataframes mit einem Zeitreihenobjekt][16]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  9 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  1.47 1.31 1.51 1.45 1.5 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  5.82 5.9 6.1 6.06 6.17 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  7.66 7.57 7.68 7.66 7.71 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  6.89 6.79 6.79 6.8 6.8 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Count      : num  0 1 2 3 4 5 6 7 8 9 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Time             : POSIXct, format: "1995-01-01" "1995-02-01" ...
 
 *Abbildung 15: Zusammenfassung des Dataframes mit einem Zeitreihenobjekt.*
 
@@ -662,9 +822,59 @@ Der Code zum Berechnen der Korrelationen als ccf-Objekte in R lautet wie folgt:
 
 	cadairycorrelations
 
-Das Ausführen des Codes erzeugt die in Abbildung 18 dargestellte Ausgabe.
+Das Ausführen des Codes erzeugt das in Abbildung 18 dargestellte Protokoll.
 
-![Liste der ccf-Objekte aus der paarweisen Korrelationsanalyse][19]
+    [ModuleOutput] Loading objects:
+    [ModuleOutput]   port1
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] [[1]]
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] Autocorrelations of series 'X', by lag
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput]    -1     0     1 
+    [ModuleOutput] 0.148 0.358 0.317 
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] [[2]]
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] Autocorrelations of series 'X', by lag
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput]     -1      0      1 
+    [ModuleOutput] -0.395 -0.186 -0.238 
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] [[3]]
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] Autocorrelations of series 'X', by lag
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput]     -1      0      1 
+    [ModuleOutput] -0.059 -0.089 -0.127 
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] [[4]]
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] Autocorrelations of series 'X', by lag
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput]    -1     0     1 
+    [ModuleOutput] 0.140 0.294 0.293 
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] [[5]]
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput] Autocorrelations of series 'X', by lag
+    [ModuleOutput] 
+    [ModuleOutput] 
+    [ModuleOutput]     -1      0      1 
+    [ModuleOutput] -0.002 -0.074 -0.124 
 
 *Abbildung 18: Liste der ccf-Objekte aus der paarweisen Korrelationsanalyse.*
 
@@ -700,7 +910,7 @@ Der folgende Code extrahiert die Verzögerungswerte aus der Liste der ccf-Objekt
 
 Die erste Codezeile ist etwas schwieriger, doch einige Erläuterungen sollten Ihnen helfen, sie zu verstehen. Wenn wir von innen nach außen vorgehen, erhalten wir Folgendes:
 
-1.  Der "**[[**"-Operator mit dem Argument "**1**" wählt den Vektor der Korrelationen an den Verzögerungen aus dem ersten Element der ccf-Objektliste aus.
+1.  Der "**[[**"-Operator wählt mit dem "**1**"-Argument den Vektor der Korrelationen an den Verzögerungen aus dem ersten Element der ccf-Objektliste aus.
 
 2.  Die `do.call()`-Funktion wendet die `rbind()`-Funktion auf die Elemente der Liste an, die von `lapply()` zurückgegeben wird.
 
@@ -741,9 +951,29 @@ Wie bei der gerade abgeschlossenen Korrelationsanalyse, müssen wir eine Spalte 
 
 	str(cadairydata)
 
-Führen Sie diesen Code aus, und sehen Sie sich den "R Device"-Ausgabeport an. Das Ergebnis sollte wie in Abbildung 21 aussehen.
+Führen Sie diesen Code aus, und überprüfen Sie das Protokoll. Das Ergebnis sollte wie in Abbildung 21 aussehen.
 
-![Eine Zusammenfassung des Dataframes][22]
+    [ModuleOutput] [1] "Loading variable port1..."
+    [ModuleOutput] 
+    [ModuleOutput] 'data.frame':	228 obs. of  9 variables:
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Number     : int  1 2 3 4 5 6 7 8 9 10 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Year             : int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month            : Factor w/ 12 levels "Apr","Aug","Dec",..: 5 4 8 1 9 7 6 2 12 11 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Cotagecheese.Prod: num  1.47 1.31 1.51 1.45 1.5 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Icecream.Prod    : num  5.82 5.9 6.1 6.06 6.17 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Milk.Prod        : num  7.66 7.57 7.68 7.66 7.71 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ N.CA.Fat.Price   : num  6.89 6.79 6.79 6.8 6.8 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Month.Count      : num  0 1 2 3 4 5 6 7 8 9 ...
+    [ModuleOutput] 
+    [ModuleOutput]  $ Time             : POSIXct, format: "1995-01-01" "1995-02-01" ...
 
 *Abbildung 21: Eine Zusammenfassung des Dataframes.*
 
@@ -1116,4 +1346,4 @@ Einige weitere nützliche Internetressourcen:
 <!-- Module References -->
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO2-->

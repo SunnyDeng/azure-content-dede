@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="SQL-Datenbank – Unterstützung von Vorgängerversionsclients für Überwachung und dynamische Datenmaskierung | Microsoft Azure" 
-	description="SQL-Datenbank – Unterstützung von Vorgängerversionsclients für Überwachung und dynamische Datenmaskierung" 
+	description="Sie erhalten Informationen zur Unterstützung von Vorgängerversionsclients bei SQL-Datenbank für Überwachung und dynamische Datenmaskierung." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="nadavhelfman" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/01/2015" 
+	ms.date="09/01/2015" 
 	ms.author="nadavhelfman"/>
  
 # SQL-Datenbank – Unterstützung von Vorgängerversionsclients für Überwachung und dynamische Datenmaskierung 
@@ -25,19 +25,19 @@ Jeder Client, der TDS 7.4 implementiert, sollte auch die Umleitung unterstütze
 
 Für "Vorgängerversionsclients", d. h. Clients, die TDS 7.3 und ältere Versionen unterstützen, sollte der vollqualifizierte Domänenname des Servers in der Verbindungszeichenfolge geändert werden:
 
-Ursprünglicher vollqualifizierter Domänenname des Servers in der Verbindungszeichenfolge: \<*Servername*\>.database.windows.net
+Ursprünglicher vollqualifizierter Domänenname des Servers in der Verbindungszeichenfolge: <*Servername*>.database.windows.net
 
-Geänderter vollqualifizierter Domänenname des Servers in der Verbindungszeichenfolge: \<*Servername*\>.database.**secure**.windows.net
+Geänderter vollqualifizierter Domänenname des Servers in der Verbindungszeichenfolge: <*Servername*>.database.**secure**.windows.net
 
 Eine unvollständige Liste der "Vorgängerversionsclients":
 
 - .NET 4.0 und ältere Versionen
 - ODBC 10.0 und ältere Versionen
-- JDBC 4.0 und ältere Versionen \(JDBC 4.0 unterstützt zwar TDS 7.4, aber die TDS-Umleitungsfunktion wird nicht vollständig unterstützt\)
-- Tedious \(for Node.JS\)
+- JDBC (JDBC unterstützt zwar TDS 7.4, aber die TDS-Umleitungsfunktion wird nicht vollständig unterstützt)
+- Tedious (for Node.JS)
 
-**Anmerkung:** Die oben genannte Änderung des vollqualifizierten Domänennamens des Servers kann sich auch als nützlich erweisen bei der Anwendung einer Richtlinie für die Überwachung auf SQL Server-Ebene, ohne dass ein Konfigurationsschritt in jeder Datenbank ausgeführt werden muss \(temporäre Minderung\).
+**Anmerkung:** Die oben genannte Änderung des vollqualifizierten Domänennamens des Servers kann sich auch als nützlich erweisen bei der Anwendung einer Richtlinie für die Überwachung auf SQL Server-Ebene, ohne dass ein Konfigurationsschritt in jeder Datenbank ausgeführt werden muss (temporäre Minderung).
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

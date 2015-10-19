@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Linux und Open-Source-Computing auf Azure"
-	description="Dieses Thema enthält eine Liste von Linux- und Open Source-Computing auf Azure, darunter die grundlegende Verwendung von Linux, einige grundlegende Konzepte zum Ausführen oder Hochladen von Linux-Images auf Azure und anderen Inhalten zu bestimmten Technologien und Optimierungen."
+	pageTitle="Linux und Open-Source-Computing auf Azure | Microsoft Azure"
+	description="Dieses Thema enthält eine Liste von Artikeln zu Linux- und Open Source-Computing auf Azure, u. a. die grundlegende Verwendung von Linux, einige grundlegende Konzepte zum Ausführen oder Hochladen von Linux-Images auf Azure und anderen Inhalten zu bestimmten Technologien und Optimierungen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -21,6 +22,8 @@
 # Linux und Open-Source-Computing auf Azure
 
 Dieses Dokument versucht, an einem Ort alle Themen aufzulisten, die von Microsoft und seinen Partnern über die Ausführung von Linux-basierten virtuellen Maschinen und anderen Open-Source-Computing-Umgebungen und Anwendungen auf Microsoft Azure erstellt wurden. Da sowohl Azure als auch das Open-Source-Computing einer ständigen Weiterentwicklung unterliegen ist dieses Dokument vermutlich nicht mehr auf dem aktuellen Stand. *Trotz* dieser Tatsache geben wir unser Bestes, kontinuierlich neue Themen hinzuzufügen und veraltete Einträge zu entfernen. Wenn wir ein Thema vergessen haben, senden Sie uns einen Kommentar, oder übermitteln Sie eine Pull-Anforderung an das [Github-Repository](https://github.com/Azure/azure-content/).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Themen ohne Berücksichtigung des Bereitstellungsmodells aufgeführt.
 
 ## Allgemeine Hinweise
 Die Abschnitte werden am rechten Rand dieser Seite aufgeschlüsselt. (Links können in mehr als einem Abschnitt auftreten, da Themen sich mit mehr als einem Konzept, mehr als einer Distribution oder mehr als einer Technologie beschäftigen können.) Darüber hinaus gibt es mehrere Themen, in denen verschiedene Linux-Optionen, Image-Repositorys, Fallstudien und Gewusst-wie-Themen zum Hochladen Ihrer eigenen benutzerdefinierten Images beschrieben werden:
@@ -233,7 +236,7 @@ Dieser Abschnitt enthält Informationen zu mehreren verschiedenen Speicheransät
 
 ## Authentifizierung und Verschlüsselung
 
-Authentifizierung und Verschlüsselung sind wichtige Themen in der Software-Entwicklung, und es gibt sehr viele Themen im Internet, die beschreiben, wie Sie angemessene Sicherheitsverfahren für beides erlernen und verwenden. Wir beschreiben einen Teil der grundlegenden Verwendung, um schnell Linux- und Open-Source-Arbeitsauslastungen verwenden sowie auf Tools verweisen zu können, mit denen Remote-Sicherheitsfeatures zurückgesetzt oder entfernt werden können. Hierbei handelt es sich um grundlegende Verfahren, es werden in Kürze komplexere Szenarien folgen.
+Authentifizierung und Verschlüsselung sind wichtige Themen in der Software-Entwicklung, und es gibt sehr viele Themen im Internet, die beschreiben, wie Sie angemessene Sicherheitsverfahren für beides erlernen und verwenden. Wir beschreiben einen Teil der grundlegenden Verwendung, um schnell Linux- und Open-Source-Workloads verwenden sowie auf Tools verweisen zu können, mit denen Remote-Sicherheitsfeatures zurückgesetzt oder entfernt werden können. Hierbei handelt es sich um grundlegende Verfahren, es werden in Kürze komplexere Szenarien folgen.
 
 4. [Grundlagen: Zertifikatverwendung und -verwaltung](http://msdn.microsoft.com/library/azure/gg981929.aspx)
 7. [Grundlagen: SSH](virtual-machines-linux-use-ssh-key.md)
@@ -307,4 +310,4 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

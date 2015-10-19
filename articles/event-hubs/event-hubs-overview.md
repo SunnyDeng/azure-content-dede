@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Übersicht über Ereignis-Hubs"
+   pageTitle="Übersicht über Azure Event Hubs | Microsoft Azure"
    description="Einführung und Übersicht zu Azure Event Hubs."
    services="event-hubs"
    documentationCenter="na"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="06/09/2015"
+   ms.date="09/30/2015"
    ms.author="sethm" />
 
 # Übersicht über Event Hubs
@@ -41,9 +41,9 @@ In Partitionen werden Daten für eine konfigurierte Dauer beibehalten, die auf E
 
 ![Ereignis-Hubs](./media/event-hubs-overview/IC759858.png)
 
-Die Anzahl der Partitionen wird bei der Erstellung des Event Hubs angegeben und muss zwischen 8 und 32 liegen. Partitionen sind ein Mechanismus zur Datenorganisation und beziehen sich eher auf den für die verarbeitenden Anwendungen erforderlichen Grad der Downstreamparallelität als auf den Event Hubs-Durchsatz. Daher steht die ausgewählte Anzahl der Partitionen in einem Event Hub in direktem Zusammenhang mit der erwarteten Anzahl gleichzeitiger Leser. Nach dem Erstellen des Event Hubs kann die Anzahl der Partitionen nicht mehr geändert werden. Sie sollten für diese Zahl die langfristig erwartete Skalierung berücksichtigen. Das Limit von 32 Partitionen kann in Absprache mit dem Azure Service Bus-Team erhöht werden.
+Die Anzahl der Partitionen wird bei der Erstellung des Event Hubs angegeben und muss zwischen 2 und 32 liegen (der Standardwert ist 4). Partitionen sind ein Mechanismus zur Datenorganisation und beziehen sich eher auf den für die verarbeitenden Anwendungen erforderlichen Grad der Downstreamparallelität als auf den Event Hubs-Durchsatz. Daher steht die ausgewählte Anzahl der Partitionen in einem Event Hub in direktem Zusammenhang mit der erwarteten Anzahl gleichzeitiger Leser. Nach dem Erstellen des Event Hubs kann die Anzahl der Partitionen nicht mehr geändert werden. Sie sollten für diese Zahl die langfristig erwartete Skalierung berücksichtigen. Das Limit von 32 Partitionen kann in Absprache mit dem Azure Service Bus-Team erhöht werden.
 
-Partitionen sind identifizierbar und können direkt adressiert werden, es ist jedoch im Allgemeinen vorzuziehen, Daten nicht an bestimmte Partitionen zu senden. Stattdessen können Sie Konstrukte höherer Ebene verwenden, die in den eingeführt, die den Abschnitten [Ereignisherausgeber](#Event-publisher) und [Herausgeberrichtlinie](#Capacity-and-security) erläutert werden.
+Partitionen sind identifizierbar und können direkt adressiert werden, es ist jedoch im Allgemeinen vorzuziehen, Daten nicht an bestimmte Partitionen zu senden. Stattdessen können Sie Konstrukte höherer Ebene verwenden, die in den eingeführt, die den Abschnitten [Ereignisherausgeber](#event-publisher) und [Herausgeberrichtlinie](#capacity-and-security) erläutert werden.
 
 Im Kontext von Event Hubs werden Nachrichten als *Ereignisdaten* bezeichnet. Ereignisdaten enthalten den Hauptteil des Ereignisses, einen benutzerdefinierten Eigenschaftenbehälter und verschiedene Metadaten über das Ereignis wie den Offset in der Partition und die Nummer in der Streamsequenz. Partitionen werden mit einer Sequenz von Ereignisdaten gefüllt.
 
@@ -51,7 +51,7 @@ Im Kontext von Event Hubs werden Nachrichten als *Ereignisdaten* bezeichnet. Ere
 
 Jede Entität, die Ereignisse oder Daten an einen Event Hub sendet, ist ein *Ereignisherausgeber*. Ereignisherausgeber können Ereignisse über HTTPS oder AMQP 1.0 veröffentlichen. Ereignisherausgeber identifizieren sich mit einem Shared Access Signature (SAS)-Token bei einem Event Hub und können eine eindeutige Identität aufweisen oder ein gemeinsames SAS-Token verwenden, je nach den Anforderungen des Szenarios.
 
-Weitere Informationen zur Arbeit mit SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](https://msdn.microsoft.com/library/dn170477.aspx).
+Weitere Informationen zur Arbeit mit SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](service-bus-shared-access-signature-authentication.md).
 
 ### Allgemeine Herausgeberaufgaben
 
@@ -59,7 +59,7 @@ In diesem Abschnitt werden allgemeine Aufgaben für Ereignisherausgeber beschrie
 
 #### Abrufen eines SAS-Tokens
 
-Shared Access Signature (SAS) ist der Authentifizierungsmechanismus für Event Hubs. Service Bus bietet SAS-Richtlinien auf Namespace- und Event Hub-Ebene. Ein SAS-Token wird aus einem SAS-Schlüssel generiert und ist ein SHA-Hash einer URL, der in einem bestimmten Format codiert ist. Mit dem Namen des Schlüssels (der Richtlinie) und dem Token kann Service Bus den Hash nachgenerieren und somit den Absender authentifizieren. In der Regel werden SAS-Token für Ereignisherausgeber nur mit **Senden**-Berechtigung für einen bestimmten Event Hub erstellt. Dieser SAS-Token-URL-Mechanismus bildet die Grundlage für die Herausgeberidentifizierung, die in der Herausgeberrichtlinie eingeführt wurde. Weitere Informationen zur Arbeit mit SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](https://msdn.microsoft.com/library/dn170477.aspx).
+Shared Access Signature (SAS) ist der Authentifizierungsmechanismus für Event Hubs. Service Bus bietet SAS-Richtlinien auf Namespace- und Event Hub-Ebene. Ein SAS-Token wird aus einem SAS-Schlüssel generiert und ist ein SHA-Hash einer URL, der in einem bestimmten Format codiert ist. Mit dem Namen des Schlüssels (der Richtlinie) und dem Token kann Service Bus den Hash nachgenerieren und somit den Absender authentifizieren. In der Regel werden SAS-Token für Ereignisherausgeber nur mit **Senden**-Berechtigung für einen bestimmten Event Hub erstellt. Dieser SAS-Token-URL-Mechanismus bildet die Grundlage für die Herausgeberidentifizierung, die in der Herausgeberrichtlinie eingeführt wurde. Weitere Informationen zur Arbeit mit SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](service-bus-shared-access-signature-authentication.md).
 
 #### Veröffentlichen eines Ereignisses
 
@@ -132,7 +132,7 @@ Die Durchsatzkapazität von Event Hubs wird durch Durchsatzeinheiten gesteuert. 
 
 - Ausgang: Bis 2 MB pro Sekunde.
 
-Der Eingang wird auf die Kapazität beschränkt, die der erworbenen Anzahl von Durchsatzeinheiten entspricht. Das Senden von Daten über diese Menge hinaus führt zur Ausnahme "Datenträgerkontingent überschritten". Diese Menge ist entweder 1 MB pro Sekunde oder 1000 Ereignisse pro Sekunde, je nachdem, was zuerst eintritt. Am Ausgang erfolgt keine Beschränkung, jedoch ist dieser auf Datenübertragungsmenge anhand der erworbenen Durchsatzeinheiten beschränkt: 2 MB pro Sekunde pro Durchsatzeinheit. Wenn Sie Ausnahmen für die Veröffentlichungsrate erhalten oder einen größeren Ausgang erwarten, überprüfen Sie, wie viele Durchsatzeinheiten Sie für den Namespace erworben haben, in dem der Event Hub erstellt wurde. Um weitere Durchsatzeinheiten zu erhalten, können Sie die Einstellung auf der Seite **Namespaces** auf der Registerkarte **Konfigurieren** im Azure-Verwaltungsportal anpassen. Sie können diese Einstellung auch mit den Azure-APIs ändern.
+Der Eingang wird auf die Kapazität beschränkt, die der erworbenen Anzahl von Durchsatzeinheiten entspricht. Das Senden von Daten über diese Menge hinaus führt zur Ausnahme "Datenträgerkontingent überschritten". Diese Menge ist entweder 1 MB pro Sekunde oder 1000 Ereignisse pro Sekunde, je nachdem, was zuerst eintritt. Am Ausgang erfolgt keine Beschränkung, jedoch ist dieser auf Datenübertragungsmenge anhand der erworbenen Durchsatzeinheiten beschränkt: 2 MB pro Sekunde pro Durchsatzeinheit. Wenn Sie Ausnahmen für die Veröffentlichungsrate erhalten oder einen größeren Ausgang erwarten, überprüfen Sie, wie viele Durchsatzeinheiten Sie für den Namespace erworben haben, in dem der Event Hub erstellt wurde. Um weitere Durchsatzeinheiten zu erhalten, können Sie die Einstellung auf der Seite **Namespaces** auf der Registerkarte **Skalieren** im Azure-Verwaltungsportal anpassen. Sie können diese Einstellung auch mit den Azure-APIs ändern.
 
 Während Partitionen ein Datenorganisationskonzept sind, sind Durchsatzeinheiten ausschließlich ein Kapazitätskonzept. Durchsatzeinheiten werden auf Stundenbasis abgerechnet und im Voraus erworben. Nach dem Erwerb werden Durchsatzeinheiten für mit einem Minimum von einer Stunde in Rechnung gestellt. Bis zu 20 Durchsatzeinheiten können für einen Service Bus-Namespace erworben werden, und für ein Azure-Konto besteht ebenfalls eine Grenze von 20 Durchsatzeinheiten. Diese Durchsatzeinheiten werden für alle Event Hubs in einem bestimmten Namespace gemeinsam genutzt.
 
@@ -148,11 +148,11 @@ Event Hubs ermöglicht eine abgestufte Kontrolle über Ereigniserzeuger durch *H
 
 	//<my namespace>.servicebus.windows.net/<event hub name>/publishers/<my publisher name>
 
-Sie müssen Herausgebernamen nicht im Voraus erstellen, jedoch müssen diese mit dem SAS-Token übereinstimmen, das beim Veröffentlichen eines Ereignisses verwendet wird, um die Identitäten unabhängiger Herausgeber sicherzustellen. Weitere Informationen zu SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](https://msdn.microsoft.com/library/dn170477.aspx). Bei Verwendung von Herausgeberrichtlinien wird der Wert **PartitionKey** auf den Herausgebernamen festgelegt. Für eine ordnungsgemäße Funktion müssen diese Werte übereinstimmen.
+Sie müssen Herausgebernamen nicht im Voraus erstellen, jedoch müssen diese mit dem SAS-Token übereinstimmen, das beim Veröffentlichen eines Ereignisses verwendet wird, um die Identitäten unabhängiger Herausgeber sicherzustellen. Weitere Informationen zu SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](service-bus-shared-access-signature-authentication.md). Bei Verwendung von Herausgeberrichtlinien wird der Wert **PartitionKey** auf den Herausgebernamen festgelegt. Für eine ordnungsgemäße Funktion müssen diese Werte übereinstimmen.
 
 ## Zusammenfassung
 
-Azure Event Hubs bietet einen hyperskalierbaren Ereignis- und Telemetrieverarbeitungsdienst, der für die Überwachung allgemeiner Anwendungs- und Benutzerworkflows in jeder Größenordnung verwendet werden kann. Mit der Möglichkeit, Veröffentlichen-/Abonnieren-Funktionen mit niedriger Latenz und enormem Umfang anzubieten, sind Event Hubs der Einstiegspunkt für Big Data. Durch die Identitäts-und Sperrlisten auf Herausgeberbasis können diese Funktionen in verbreitete Internet of Things-Szenarios erweitert werden. Weitere Informationen zum Entwickeln von Event Hubs-Anwendungen für finden Sie im [Event Hubs-Programmierhandbuch](https://msdn.microsoft.com/library/dn789972.aspx).
+Azure Event Hubs bietet einen hyperskalierbaren Ereignis- und Telemetrieverarbeitungsdienst, der für die Überwachung allgemeiner Anwendungs- und Benutzerworkflows in jeder Größenordnung verwendet werden kann. Mit der Möglichkeit, Veröffentlichen-/Abonnieren-Funktionen mit niedriger Latenz und enormem Umfang anzubieten, sind Event Hubs der Einstiegspunkt für Big Data. Durch die Identitäts-und Sperrlisten auf Herausgeberbasis können diese Funktionen in verbreitete Internet of Things-Szenarios erweitert werden. Weitere Informationen zum Entwickeln von Event Hubs-Anwendungen für finden Sie im [Event Hubs-Programmierhandbuch](event-hubs-programming-guide.md).
 
 ## Nächste Schritte
 
@@ -162,9 +162,9 @@ Nun, da Sie sich mit Event Hubs-Konzepten vertraut gemacht haben, können Sie mi
 - Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
 - Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
 
-[Event Hubs-Lernprogramm]: service-bus-event-hubs-csharp-ephcs-getstarted.md
+[Event Hubs-Lernprogramm]: event-hubs-csharp-ephcs-getstarted.md
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Messaginglösung mit Warteschlange]: ../cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
+[Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

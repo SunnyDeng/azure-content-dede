@@ -7,9 +7,13 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2015" ms.author="sammehta"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/05/2015" ms.author="sammehta"; "jimpark"/>
 
 # Vorbereiten der Sicherung von Workloads in Azure mit DPM
+
+> [AZURE.SELECTOR]
+- [Azure Backup](backup-azure-microsoft-azure-backup.md)
+- [SCDPM](backup-azure-dpm-introduction.md)
 
 Dieser Artikel enthält eine Einführung zur Verwendung von Microsoft Azure Backup zum Schutz von DPM-Servern und -Workloads (System Center Data Protection Manager). In diesem Artikel erfahren Sie Folgendes:
 
@@ -42,7 +46,7 @@ Bereiten Sie Azure Backup wie folgt zum Sichern von DPM-Daten vor:
 
 1. **Erstellen eines Sicherungstresors** – Erstellen Sie einen Tresors in der Azure Backup-Konsole.
 2. **Herunterladen von Tresoranmeldedaten** – Laden Sie in Azure Backup das Verwaltungszertifikat hoch, das Sie für den Tresor erstellt haben.
-3. **Installieren des Azure Backup-Agents und Registrieren des Servers:** Installieren Sie von Azure Backup aus den Agent auf jedem DPM-Server, und registrieren Sie den DPM-Server im Sicherungstresor.
+3. **Installieren des Azure Backup-Agents und Registrieren des Servers** – Installieren Sie von Azure Backup aus, den Agent auf jedem DPM-Server, und registrieren Sie den DPM-Server im Sicherungstresor.
 
 [AZURE.INCLUDE [backup-create-vault](../../includes/backup-create-vault.md)]
 
@@ -81,4 +85,4 @@ Diese werden nicht unterstützt:
 
 >[AZURE.NOTE]Ab System Center 2012 DPM mit SP1 können Sie Workloads, die von DPM geschützt werden, in Azure mithilfe von Microsoft Azure Backup sichern.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

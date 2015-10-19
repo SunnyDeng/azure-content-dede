@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="10/01/2015"
 	ms.author="jhubbard"/>
 
 
@@ -195,11 +195,11 @@ Herzlichen Glückwunsch. Sie haben nun eine Synchronisierungsgruppe erstellt, di
 ## Nächste Schritte
 Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
-* [SQL-Datensynchronisierungsinhalte in der MSDN-Bibliothek](https://msdn.microsoft.com/library/azure/hh456371.aspx)
+* [Download der technischen Dokumentation zur SQL-Datensynchronisierung](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
 * [Übersicht über die SQL-Datenbank](sql-database-technical-overview.md)
 * [Datenbank-Lebenszyklusverwaltung](https://msdn.microsoft.com/library/jj907294.aspx)
  
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

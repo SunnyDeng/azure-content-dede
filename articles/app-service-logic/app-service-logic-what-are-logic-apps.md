@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/08/2015"
+	ms.date="10/08/2015"
 	ms.author="klam"/>
 
 #Was sind Logik-Apps?
@@ -75,4 +75,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [templates]: app-service-logic-use-logic-app-templates.md
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

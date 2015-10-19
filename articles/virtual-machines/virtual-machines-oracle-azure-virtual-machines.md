@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="index-page"
-	ms.date="07/09/2015"
+	ms.date="10/05/2015"
 	ms.author="josephd"/>
 
 # Auf Azure Virtual Machines gehostete Oracle-Software
@@ -43,14 +43,6 @@ In [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](virtual
 
 [Erstellen eines virtuellen Oracle WebLogic Server 12c- und Oracle Database 12c-Computers in Azure](virtual-machines-creating-oracle-weblogic-server-12c-oracle-database-12c-virtual-machine.md) führt Sie schrittweise durch die Erstellung und Konfiguration eines virtuellen Computers und einer Datenbank.
 
-## Oracle WebLogic Server 12c-Cluster
-
-[Erstellen eines Oracle WebLogic Server 12c-Clusters in Azure](virtual-machines-creating-oracle-weblogic-server-12c-cluster.md) führt Sie schrittweise durch die Clustererstellung und Anwendungsbereitstellung.
-
-## Oracle WebLogic Server 11g
-
-[Erstellen eines virtuellen Oracle WebLogic Server 11g-Computers in Azure](virtual-machines-creating-oracle-weblogic-server-11g-virtual-machine.md) führt Sie schrittweise durch die Erstellung und Konfiguration eines virtuellen Computers und die Installation der Anwendung.
-
 ## Vorbereiten eines virtuellen Oracle Linux-Computers
 
 [Vorbereiten eines virtuellen Oracle Linux-Computers für Azure](virtual-machines-prepare-oracle-linux-virtual-machine.md) führt Sie schrittweise durch die Voraussetzungen und die Erstellung eines virtuellen Computers für Oracle Linux 6.4+ und Oracle Linux 7.0+.
@@ -63,4 +55,4 @@ In [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](virtual
 
 [Konfigurieren von Oracle GoldenGate für Azure](virtual-machines-configuring-oracle-goldengate.md) führt Sie schrittweise durch das Datenbank- und Replikationssetup.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -101,7 +101,7 @@ Sie müssen eine Firewallregel auf dem Server einrichten, die Verbindungen von d
 
 	![Hinzufügen der IP-Adresse](./media/sql-database-get-started/firewall_config_new_rule.png)
 
-	>[AZURE.IMPORTANT]Die IP-Adresse kann sich von Zeit zu Zeit ändern, und Sie können dann möglicherweise nicht auf den Server zugreifen, bis Sie eine neue Firewallregel erstellt haben. Überprüfen Sie die IP-Adresse mit [Bing](http://www.bing.com/search?q=my%20ip%20address), und fügen Sie dann eine einzelne IP-Adresse oder einen Bereich von IP-Adressen hinzu. Weitere Einzelheiten finden Sie unter [Konfigurieren der Firewalleinstellungen](sql-database-configure-firewall-settings.md).
+	>[AZURE.IMPORTANT]Die Client-IP-Adresse kann sich von Zeit zu Zeit ändern, und Sie können dann möglicherweise nicht auf den Server zugreifen, bis Sie eine neue Firewallregel erstellt haben. Überprüfen Sie die IP-Adresse mit [Bing](http://www.bing.com/search?q=my%20ip%20address), und fügen Sie dann eine einzelne IP-Adresse oder einen Bereich von IP-Adressen hinzu. Weitere Einzelheiten finden Sie unter [Konfigurieren der Firewalleinstellungen](sql-database-configure-firewall-settings.md).
 
 ## Nächste Schritte
 Nachdem Sie über eine Datenbank mit Beispieldaten verfügen, können Sie diese mit Ihren bevorzugten Tools untersuchen.
@@ -114,4 +114,4 @@ Nachdem Sie über eine Datenbank mit Beispieldaten verfügen, können Sie diese 
 
 - Wenn Sie lokale SQL Server-Datenbanken nach Azure verschieben möchten, finden Sie unter [Migrieren von Datenbanken zu Azure SQL-Datenbank](sql-database-cloud-migrate.md) weitere Informationen.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO2-->

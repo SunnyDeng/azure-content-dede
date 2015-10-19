@@ -28,7 +28,7 @@ In diesem Beispiel verwenden wir drei simulierte Datenquellen: Außentemperatur,
 
 ### Bereitstellen der IoT Suite
 
-Falls Sie Ihre vorkonfigurierte Lösung für die Remoteüberwachung noch nicht bereitgestellt haben, können Sie dies [hier](www.internetofyourthings.com) durchführen.
+Falls Sie Ihre vorkonfigurierte Lösung für die Remoteüberwachung noch nicht bereitgestellt haben, können Sie dies [hier](http://www.microsoft.com/de-DE/server-cloud/internet-of-things/getting-started.aspx) durchführen.
 
 
 ### Bereitstellen des Geräts in der Remoteüberwachungslösung
@@ -149,7 +149,7 @@ Anschließen des Geräts
 
 - Verbinden Sie das Board per Ethernet-Kabel mit Ihrem Netzwerk. Dieser Schritt ist erforderlich, da für das Beispiel Internetzugriff benötigt wird.
 
-- Schließen Sie das Gerät mit einem Micro-USB-Kabel an Ihren Computer an. Achten Sie darauf, dass Sie das Kabel an den richtigen USB-Port des Geräts anschließen, wie dies [hier](https://developer.mbed.org/platforms/IBMEthernetKit/) im Abschnitt „Erste Schritte“ gezeigt wird.
+- Schließen Sie das Gerät mit einem Micro-USB-Kabel an Ihren Computer an. Achten Sie darauf, dass Sie das Kabel an den richtigen USB-Port des Geräts anschließen, wie dies [hier](https://developer.mbed.org/platforms/frdm-k64f/) im Abschnitt "Erste Schritte" gezeigt wird.
 
 - Befolgen Sie die [Anweisungen im mbed-Handbuch](https://developer.mbed.org/handbook/SerialPC), um über den Entwicklungscomputer eine serielle Verbindung mit Ihrem Gerät einzurichten. Wenn Sie unter Windows arbeiten, installieren Sie die Treiber für serielle Windows-Ports, die Sie [hier](http://developer.mbed.org/handbook/Windows-serial-configuration#1-download-the-mbed-windows-serial-port) finden.
 
@@ -199,7 +199,6 @@ Erstellen und Ausführen des Programms
 
 - Stellen Sie mit einer SSH-Clientanwendung eine Verbindung mit dem Gerät her, z. B. PuTTY. Sie können ermitteln, welcher serielle Port von Ihrem Gerät verwendet wird, indem Sie dies im Windows-Geräte-Manager überprüfen:
 
-	![][10]
 
 - Klicken Sie in PuTTY auf den Verbindungstyp **Seriell**. Meistens wird die Verbindung für das Gerät über 115200 hergestellt. Geben Sie also diesen Wert in das Feld **Geschwindigkeit** ein. Klicken Sie anschließend auf **Öffnen**:
 
@@ -207,11 +206,11 @@ Erstellen und Ausführen des Programms
 
 Das Programm wird gestartet. Unter Umständen müssen Sie das Board zurücksetzen (drücken Sie STRG+UNTBR, oder drücken Sie die Reset-Taste des Boards), falls das Programm nach dem Herstellen der Verbindung nicht automatisch gestartet wird.
 
-Visualisieren Sie das registrierte Gerät und die Daten. Wechseln Sie zurück zum Dashboard Ihrer Lösung für die Remoteüberwachung. Sie sehen, dass der Status des Geräts in der Liste „Geräte“ in „Wird ausgeführt“ geändert wurde. ![][18]
+Visualisieren Sie das registrierte Gerät und die Daten. Wechseln Sie zurück zum Dashboard Ihrer Lösung für die Remoteüberwachung. Sie sehen, dass der Status des Geräts in der Liste "Geräte" in "Wird ausgeführt" geändert wurde. ![][18]
 
 8. Klicken Sie auf das Dashboard, um die eingehenden Daten zu verfolgen. Das Beispiel ist so konfiguriert, dass 50 Einheiten für die Innentemperatur, 55 Einheiten für die Außentemperatur und 50 Einheiten für die Luftfeuchtigkeit gesendet werden. Bitte beachten Sie, dass im Dashboard standardmäßig nur die Temperatur und die Luftfeuchtigkeit angezeigt werden.
 
-8. Wechseln Sie in den [Abschnitt](#command) „Befehl und Steuerung“, um zu erfahren, wie Sie die Temperatur auf Ihrem Gerät über die Lösung für die Remoteüberwachung ändern.
+8. Wechseln Sie jetzt zum [Abschnitt](#command) über Befehl und Steuerung, um zu erfahren, wie Sie die Temperatur auf Ihrem Gerät über die Lösung für die Remoteüberwachung ändern.
 
 
 
@@ -293,7 +292,8 @@ Da Ihr Gerät jetzt verbunden ist und selbst generierte Temperaturdaten sendet, 
 - Wählen Sie den Befehl aus, den Sie ausführen möchten: In diesem Fall wählen wir „Temperatur festlegen“, da wir die Temperatur für das Gerät ändern möchten. Wählen Sie diesen Befehl und dann den Temperaturwert aus. Klicken Sie auf „Befehl senden“. Die neue Temperatur wird per Pushvorgang auf das Gerät übertragen. Hinweis: Sie sehen, dass das Ergebnis des Befehls im Befehlsverlauf „Ausstehend“ lautet. Dies liegt daran, dass bei diesen Beispielen der Einfachheit halber keine Logik im Gerät implementiert wurde, mit der auf IoT Hub reagiert werden kann. Sie können dies tun, um die Lösung zu erweitern.
 
 	![][14]
-- Kehren Sie zum Dashboard zurück, und stellen Sie sicher, dass die aktualisierten Daten ankommen. Sie sollten die aktualisierten Statistiken zur Temperatur sehen, und die neuen Daten sollten im Telemetrieverlauf angezeigt werden. ![][15]
+- Kehren Sie zum Dashboard zurück, und stellen Sie sicher, dass die aktualisierten Daten ankommen. Sie sollten die aktualisierten Statistiken zur Temperatur sehen, und die neuen Daten sollten im Telemetrieverlauf angezeigt werden.
+
 
 
 
@@ -305,8 +305,8 @@ Da Ihr Gerät jetzt verbunden ist und selbst generierte Temperaturdaten sendet, 
 [18]: ./media/iot-suite-connecting-devices/suite10.png
 
 
-## Erweitern der Lösung
+## Nächste Schritte
 
-Es gibt mehrere Möglichkeiten, die Funktionalität dieses Beispiels zu erweitern: Verbinden Sie einen echten Sensor mit Ihrem Gerät, damit echte Daten gesendet werden, implementieren Sie die Funktionalität für „Befehl und Steuerung“ usw. Verwenden Sie unseren Leitfaden zur Erweiterung der Lösung für die Remoteüberwachung, um weitere Informationen zu erhalten.
+Es gibt mehrere Möglichkeiten, die Funktionalität dieses Beispiels zu erweitern: Verbinden Sie einen echten Sensor mit Ihrem Gerät, damit echte Daten gesendet werden, implementieren Sie die Funktionalität für "Befehl und Steuerung" usw. Verwenden Sie unseren [Leitfaden](articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions.md) zur Erweiterung der Lösung für die Remoteüberwachung, um weitere Informationen zu erhalten.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

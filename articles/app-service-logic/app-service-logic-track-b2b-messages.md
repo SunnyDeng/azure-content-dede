@@ -13,36 +13,36 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="07/01/2015"
+   ms.date="10/01/2015"
    ms.author="rajram"/>
 
 
 # Nachverfolgen von B2B-Nachrichten
 
 ## B2B-Nachverfolgungsinformationen
-Die B2B-Kommunikation umfasst die Nachrichtenverarbeitung zwischen Handelspartnern. Die Beziehungen werden als Vereinbarungen zwischen zwei Handelspartnern definiert. Nachdem die Kommunikation eingerichtet wurde, wird eine Möglichkeit zur Überwachung benötigt, ob die Kommunikation wie erwartet erfolgt. Im Rahmen der Integration von B2B-API-Apps in Azure App Services haben wir die Nachverfolgung von Daten aktiviert, die auch im Azure-Portal bereitgestellt wird.
+Die B2B-Kommunikation umfasst die Nachrichtenverarbeitung zwischen Handelspartnern. Die Beziehungen werden als Vereinbarungen zwischen zwei Handelspartnern definiert. Nachdem die Kommunikation eingerichtet wurde, wird eine Möglichkeit zur Überwachung benötigt, ob die Kommunikation wie erwartet erfolgt.
+
+Wir haben die Nachrichtennachverfolgung für die folgenden B2B-Szenarios implementiert: AS2, EDIFACT und X12.
 
 ## AS2
-Nachdem Sie eine Instanz einer AS2-API-App erstellt haben, navigieren Sie zu dieser Instanz und dann zum Abschnitt "Nachverfolgung". Hier können Sie alle AS2-Nachverfolgungsinformationen anzeigen und auch auf den eingeblendeten Filterblättern filtern.
+Nachdem Sie eine Instanz einer AS2-API-App erstellt haben, navigieren Sie zu dieser Instanz, und wählen Sie "Nachverfolgung" aus. Hier können Sie sämtliche AS2-Nachverfolgungsinformationen anzeigen und filtern.
 
 ![][1]
 
 ## EDIFACT
-Nachdem Sie eine Instanz einer EDIFACT-API-App erstellt haben, navigieren Sie zu dieser Instanz und dann zum Abschnitt "Nachverfolgung". Hier können Sie alle EDIFACT-Nachverfolgungsinformationen anzeigen und auch auf den eingeblendeten Filterblättern filtern. Darüber hinaus können Sie Daten auf Austauschebene, Gruppenebene und Transaktionssatzebene anzeigen, während Sie die Ansicht durchlaufen.
+Nachdem Sie eine Instanz einer EDIFACT-API-App erstellt haben, navigieren Sie zu dieser Instanz, und wählen Sie "Nachverfolgung" aus. Hier können Sie sämtliche EDIFACT-Nachverfolgungsinformationen anzeigen und filtern. Darüber hinaus können Sie Daten auf Austausch-, Gruppen- und Transaktionssatzebene in einer einzigen Ansicht anzeigen.
 
-Wenn Batches als Teil des EDIFACT-Vereinbarungen in der zugehörigen Trading Partner Management-API-App erstellt wurden, sind all diese Batches im Abschnitt "Batchverarbeitung" enthalten. Bei einer genauen Untersuchung eines Batches lassen sich die Nachricht, die die aktive Nachricht darstellt (falls vorhanden) und auch die Informationen für Batches erkennen, die bislang verarbeitet wurden.
+Wenn Batches als Teil der EDIFACT-Vereinbarungen in der zugehörigen Trading Partner Management-API-App erstellt werden, sind all diese Batches im Abschnitt "Batchverarbeitung" enthalten. Sie können einen Batch auswählen, um die aktive Nachricht (sofern vorhanden) und die Informationen für die abgeschlossenen Batches anzuzeigen.
 
 ![][2]
 
 ## X12
-Nachdem Sie eine Instanz einer X12-API-App erstellt haben, navigieren Sie zu dieser Instanz und dann zum Abschnitt "Nachverfolgung". Hier können Sie alle X12-Nachverfolgungsinformationen anzeigen und auch auf den eingeblendeten Filterblättern filtern. Darüber hinaus können Sie Daten auf Austauschebene, Gruppenebene und Transaktionssatzebene anzeigen, während Sie die Ansicht durchlaufen.
+Nachdem Sie eine Instanz einer X12-API-App erstellt haben, navigieren Sie zu dieser Instanz, und wechseln Sie zu "Nachverfolgung". Hier können Sie sämtliche X12-Nachverfolgungsinformationen anzeigen und filtern. Darüber hinaus können Sie Daten auf Austausch-, Gruppen- und Transaktionssatzebene in einer einzigen Ansicht anzeigen.
 
-Wenn Batches als Teil der X12-Vereinbarungen in der zugehörigen Trading Partner Management-API-App erstellt wurden, sind alle diese Batches im Abschnitt "Batchverarbeitung" enthalten. Bei einer genauen Untersuchung eines Batches lassen sich die Nachricht, die die aktive Nachricht darstellt (falls vorhanden) und auch die Informationen für Batches erkennen, die bislang verarbeitet wurden.
-
-X12 und EDIFACT haben ähnliche Nachverfolgungsansichten.
+Wenn Batches als Teil der X12-Vereinbarungen in der zugehörigen Trading Partner Management-API-App erstellt werden, sind all diese Batches im Abschnitt "Batchverarbeitung" enthalten. Sie können einen Batch auswählen, um die aktive Nachricht (sofern vorhanden) und die Informationen für die abgeschlossenen Batches anzuzeigen.
 
 <!--Image references-->
 [1]: ./media/app-service-logic-track-b2b-messages/AS2Tracking.jpg
 [2]: ./media/app-service-logic-track-b2b-messages/EDIFACTTracking.jpg
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

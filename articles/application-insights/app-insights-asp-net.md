@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="10/05/2015" 
 	ms.author="awills"/>
 
 
@@ -64,9 +64,9 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 
 ####<a name="land"></a> Welche Funktion hat "Application Insights hinzufügen"?
 
-Mit dem Befehl wurden die folgenden Schritte ausgeführt (die Sie stattdessen auch manuell ausführen könnten):
+Mit dem Befehl wurden die folgenden Schritte ausgeführt (die Sie stattdessen auch [manuell ausführen](app-insights-start-monitoring-app-health-usage.md) können):
 
-* Er erstellt eine Application Insights-Ressource im [Azure-Portal][portal]. Hier werden Ihre Daten angezeigt. Es ruft den *Instrumentationsschlüssel*ab, der die Ressource identifiziert.
+* Er erstellt eine Application Insights-Ressource im [Azure-Portal][portal]. Hier werden Ihre Daten angezeigt. Er ruft den *Instrumentationsschlüssel* ab, der die Ressource identifiziert.
 * Er fügt das NuGet-Paket mit dem Application Insights-Web-SDK dem Projekt hinzu. Um es in Visual Studio anzuzeigen, klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten" aus.
 * Fügt den Instrumentationsschlüssel in `ApplicationInsights.config` ein.
 
@@ -99,8 +99,9 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 #### Sie sehen keine Daten?
 
-* Öffnen Sie die Kachel [Suche][diagnostic], um einzelne Ereignisse anzuzeigen.
+* Stellen Sie sicher, dass das richtige Element angezeigt wird. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, klicken Sie auf "Durchsuchen" > "Application Insights", und wählen Sie dann die App aus.
 * Verwenden Sie die Anwendung, und öffnen Sie verschiedene Seiten, damit einige Telemetriedaten generiert werden.
+* Öffnen Sie das Blatt [Suche][diagnostic], um einzelne Ereignisse anzuzeigen. Manchmal dauert es eine Weile, bis Ereignisse über die Metrikpipeline übertragen werden.
 * Warten Sie einige Sekunden, und klicken Sie auf "Aktualisieren".
 * Informationen hierzu finden Sie unter [Problembehandlung][qna].
 
@@ -111,15 +112,13 @@ Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-i
 
 ## Hinzufügen von Browserüberwachung
 
-Durch Browser- oder clientseitige Überwachung erhalten Sie Daten zu Benutzern, Sitzungen, Seitenansichten und allen Ausnahmen oder Abstürzen, die im Browser auftreten.
+Durch Browserüberwachung erhalten Sie Daten zu Benutzern, Sitzungen, Seitenansichten und allen Ausnahmen oder Abstürzen, die im Browser auftreten.
 
 ![Wählen Sie "Neu", "Entwicklerdienste", Application Insights.](./media/app-insights-asp-net/16-page-views.png)
 
 Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer Ihre App verwenden – bis zur Detailebene der Mausklicks und Tastaturanschläge.
 
-#### Wenn Ihre Clients Webbrowser sind
-
-Wenn in Ihrer App Webseiten angezeigt werden, fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
+Fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
 
 ![Öffnen Sie in Ihrer Web-App "Schnellstart", und klicken Sie auf die Option zum Abrufen von Code für die Überwachung von Webseiten](./media/app-insights-asp-net/02-monitor-web-page.png)
 
@@ -127,11 +126,6 @@ Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre An
 
 [Weitere Informationen zur Nachverfolgung von Webseiten.](app-insights-web-track-usage.md)
 
-#### Wenn Ihre Clients Geräte-Apps sind
-
-Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie Ihrer Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
-
-Wenn Sie das Client-SDK mit dem gleichen Instrumentationsschlüssel wie das Server-SDK konfigurieren, werden die beiden Datenströme integriert, damit Sie sie zusammen anzeigen können.
 
 ## Nutzungsverfolgung
 
@@ -196,7 +190,7 @@ Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-
 
 ![In der Web-App: Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/app-insights-asp-net/05-extend.png)
 
-(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+(Sie können die Erweiterung auch einer App hinzufügen, die bereits live ist, auch wenn Sie das SDK nicht in ihr installiert haben.)
 
 #### So überwachen Sie Azure Cloud Services-Rollen
 
@@ -248,4 +242,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

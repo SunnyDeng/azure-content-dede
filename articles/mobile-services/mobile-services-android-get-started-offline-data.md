@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="10/01/2015"
 	ms.author="ricksal"/>
 
 # Hinzufügen von Offlinedatensynchronisierung zur Mobile Services-App für Android
@@ -33,12 +33,11 @@ Immer wenn mehrere Änderungen an den Daten vorgenommen werden, können Konflikt
 
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
 
-
 ## Aktualisieren der App für die Unterstützung von Offlinesynchronisierung
 
-Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrieben und aus dieser gelesen \(mit der *IMobileServiceSyncTable*-Schnittstelle\). Diese ist Teil einer **SQL Light**-Datenbank auf Ihrem Gerät.
+Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrieben und aus dieser gelesen (mit der *IMobileServiceSyncTable*-Schnittstelle). Diese ist Teil einer **SQL Light**-Datenbank auf Ihrem Gerät.
 
-Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure Mobile Services verwenden Sie einen *Synchronisierungskontext* \(*MobileServiceClient.SyncContext*\), den Sie mit der lokalen Datenbank initialisieren, in der Sie die Daten lokal speichern.
+Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure Mobile Services verwenden Sie einen *Synchronisierungskontext* (*MobileServiceClient.SyncContext*), den Sie mit der lokalen Datenbank initialisieren, in der Sie die Daten lokal speichern.
 
 1. Fügen Sie die Berechtigung zum Überprüfen der Netzwerkverbindung hinzu, indem Sie der Datei *AndroidManifest.xml* folgenden Code hinzufügen:
 
@@ -48,14 +47,14 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 2. Fügen Sie *ToDoActivity.java* die folgenden **Import**-Anweisungen hinzu:
 
 		import java.util.Map;
-		
+
 		import android.widget.Toast;
-		
-		import com.microsoft.windowsazure.mobileservices.table.query.Query; 
-		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncContext; 
-		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncTable; 
-		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.ColumnDataType; 
-		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.SQLiteLocalStore; 
+
+		import com.microsoft.windowsazure.mobileservices.table.query.Query;
+		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncContext;
+		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncTable;
+		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.ColumnDataType;
+		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.SQLiteLocalStore;
 
 3. Ändern Sie am Anfang der `ToDoActivity`-Klasse die Deklaration der `mToDoTable`-Variable von einer `MobileServiceTable<ToDoItem>`-Klasse in eine `MobileServiceSyncTable<ToDoItem>`-Klasse.
 
@@ -109,7 +108,7 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 		public void syncAsync(){
 			if (isNetworkAvailable()) {
 				new AsyncTask<Void, Void, Void>() {
-	
+
 					@Override
 					protected Void doInBackground(Void... params) {
 						try {
@@ -136,8 +135,8 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 	Dadurch wird das Gerät beim Starten mit der Azure-Tabelle synchronisiert. Andernfalls wird der letzte Offlineinhalt des lokalen Speichers angezeigt.
 
 
- 
-9. Aktualisieren Sie den Code in der `refreshItemsFromTable`-Methode, um diese Abfrage zu verwenden \(erste Codezeile im `try`-Block\):
+
+9. Aktualisieren Sie den Code in der `refreshItemsFromTable`-Methode, um diese Abfrage zu verwenden (erste Codezeile im `try`-Block):
 
 		final MobileServiceList<ToDoItem> result = mToDoTable.read(mPullQuery).get();
 
@@ -162,8 +161,8 @@ Wenn Sie auf diese Schaltfläche klicken, wird eine neue Hintergrundaufgabe gest
 
 Testen Sie die folgenden Szenarien:
 
-1. Fügen Sie auf dem Gerät einige neue Elemente hinzu. 
-2. Vergewissern Sie sich, dass die Elemente nicht im Portal angezeigt werden. 
+1. Fügen Sie auf dem Gerät einige neue Elemente hinzu.
+2. Vergewissern Sie sich, dass die Elemente nicht im Portal angezeigt werden.
 3. Klicken Sie dann auf **Aktualisieren**, und überprüfen Sie, ob sie anschließend angezeigt werden.
 4. Ändern Sie im Portal ein Element, oder fügen Sie ein Element hinzu, klicken Sie dann auf **Aktualisieren**, und überprüfen Sie, ob die Änderungen auf dem Gerät angezeigt werden.
 
@@ -176,7 +175,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 1. Schalten Sie das Gerät oder den Simulator in den *Flugzeugmodus*. Dies erzeugt ein Offlineszenario.
 
-2. Fügen Sie einige *TODO*-Elemente hinzu, oder markieren Sie einige Elemente als abgeschlossen. Schalten Sie das Gerät oder den Simulator aus \(oder erzwingen Sie das Schließen der App\), und starten Sie das Gerät bzw. den Simulator neu. Vergewissern Sie sich, dass die Änderungen auf dem Gerät beibehalten wurden, da sie im lokalen SQL Light-Speicher gespeichert sind.
+2. Fügen Sie einige *TODO*-Elemente hinzu, oder markieren Sie einige Elemente als abgeschlossen. Schalten Sie das Gerät oder den Simulator aus (oder erzwingen Sie das Schließen der App), und starten Sie das Gerät bzw. den Simulator neu. Vergewissern Sie sich, dass die Änderungen auf dem Gerät beibehalten wurden, da sie im lokalen SQL Light-Speicher gespeichert sind.
 
 3. Zeigen Sie den Inhalt der Azure-Tabelle *TodoItem* an. Stellen Sie sicher, dass die neuen Elemente _nicht_ auf dem Server synchronisiert wurden:
 
@@ -196,7 +195,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 * [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]
 
-* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] \(Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen\)
+* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] (Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen)
 
 
 <!-- URLs. -->
@@ -212,7 +211,6 @@ One thing which is important to point out: if there are pending changes in the l
 
 
 [Get started with Mobile Services]: mobile-services-android-get-started.md
-[Get started with data]: mobile-services-android-get-started-data.md
 [Handling Conflicts with Offline Support for Mobile Services]: mobile-services-android-handling-conflicts-offline-data.md
 [Soft Delete]: mobile-services-using-soft-delete.md
 
@@ -221,4 +219,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: mobile-services-android-get-started.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

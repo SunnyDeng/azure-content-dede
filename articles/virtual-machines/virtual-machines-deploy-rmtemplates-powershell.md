@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager und PowerShell | Microsoft Azure"
+	pageTitle="Verwalten von Azure-Ressourcen-Manager-VMs | Microsoft Azure"
 	description="Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager, Vorlagen und PowerShell"
 	services="virtual-machines"
 	documentationCenter=""
@@ -379,4 +379,4 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -14,12 +14,12 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="vm-multiple"
 	ms.workload="infrastructure-services"
-	ms.date="07/28/2015"
+	ms.date="10/01/2015"
 	ms.author="danlep"/>
 
 # Artikel zu virtuellen Computern in der Dienstverwaltung
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Im Folgenden finden Sie eine Liste mit Artikeln zum Erstellen und Verwalten von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 ## Erste Schritte
 
@@ -39,7 +39,7 @@
 
 [Erstellen und Verwalten eines Windows-basierten virtuellen Computers unter Verwendung von Azure PowerShell](virtual-machines-create-windows-powershell-service-manager.md)
 
-[Erstellen eines virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle (Azure-CLI)](virtual-machines-xplat-getting-started.md)
+[Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure mit der Azure-Befehlszeilenschnittstelle (Azure CLI)](virtual-machines-linux-create-custom.md)
 
 [Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle](virtual-machines-create-multi-vm-deployment-xplat-cli-install.md)
 
@@ -87,11 +87,13 @@
 
 [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md)
 
-## Erstellen von Arbeitsauslastungen
+[Verwalten der virtuellen Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows](virtual-machines-manage-vms-azure-cli.md)
 
-[Active Directory](https://msdn.microsoft.com/library/azure/jj156090.aspx)
+## Erstellen von Workloads
 
-[BizTalk Server](https://msdn.microsoft.com/library/azure/jj248689)
+[Active Directory](../active-directory/active-directory-new-forest-virtual-machine.md)
+
+<!-- [BizTalk Server](https://msdn.microsoft.com/library/azure/jj248689) -->
 
 [Cassandra](virtual-machines-linux-nodejs-running-cassandra.md)
 
@@ -99,11 +101,11 @@
 
 [Exchange Server](https://technet.microsoft.com/library/jj619301.aspx)
 
-[HPC Pack](https://msdn.microsoft.com/library/azure/dn518135.aspx)
+[HPC Pack](virtual-machines-hpcpack-cluster-options.md)
 
 [LAMP-Stack](virtual-machines-linux-install-lamp-stack.md)
 
-[Message Queuing (MSMQ)](https://msdn.microsoft.com/library/azure/dn529082.aspx)
+<!-- [Message Queuing (MSMQ)](https://msdn.microsoft.com/library/azure/dn529082.aspx) -->
 
 [Microsoft Dynamics AX](https://technet.microsoft.com/library/dn741581.aspx)
 
@@ -115,7 +117,7 @@
 
 [Oracle](virtual-machines-oracle-azure-virtual-machines.md)
 
-[SAP](https://msdn.microsoft.com/library/azure/dn745892.aspx)
+<!-- [SAP](https://msdn.microsoft.com/library/azure/dn745892.aspx) -->
 
 [SharePoint Server](virtual-machines-workload-intranet-sharepoint-farm.md)
 
@@ -125,15 +127,15 @@
 
 [System Center Operations Manager](https://technet.microsoft.com/library/dn249696.aspx#BKMK_Azure)
 
-[Team Foundation Server](https://msdn.microsoft.com/library/azure/dn769056.aspx)
+<!-- [Team Foundation Server](https://msdn.microsoft.com/library/azure/dn769056.aspx) -->
 
-[Windows Server Essentials Experience](https://msdn.microsoft.com/library/azure/dn520827.aspx)
+<!-- [Windows Server Essentials Experience](https://msdn.microsoft.com/library/azure/dn520827.aspx) -->
 
 ## Überwachen
 
 [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](../cloud-services/cloud-services-dotnet-diagnostics.md)
 
-[Debuggen eines Cloud-Diensts oder eines virtuellen Computers in Visual Studio](https://msdn.microsoft.com/library/azure/ff683670.aspx)
+<!-- [Debugging a cloud service or virtual machine in Visual Studio](https://msdn.microsoft.com/library/azure/ff683670.aspx) -->
 
 [Veröffentlichung in Entwicklungs- und Testumgebungen mithilfe von Windows PowerShell-Skripts](https://msdn.microsoft.com/library/azure/dn642480.aspx)
 
@@ -147,8 +149,8 @@
 
 [Azure-Dienstverwaltungs-Cmdlets](https://msdn.microsoft.com/library/azure/dn708504.aspx)
 
-[Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
-
 [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md)
 
-<!---HONumber=Oct15_HO1-->
+[Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
+
+<!---HONumber=Oct15_HO2-->

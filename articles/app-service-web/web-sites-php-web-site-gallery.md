@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="hero-article"
-	ms.date="07/02/2015"
+	ms.date="10/01/2015"
 	ms.author="tomfitz"/>
 
 # Erstellen einer WordPress-Web-App in Azure App Service
@@ -32,4 +32,4 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

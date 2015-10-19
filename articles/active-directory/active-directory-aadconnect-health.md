@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="Überwachen Sie Ihre lokalen Identitätsinfrastruktur in der Cloud."
 	description="Auf der Seite ";Azure AD Connect Health"; wird der Dienst beschrieben, und es werden die Gründe für seine Verwendung erörtert."
 	services="active-directory"
@@ -7,7 +7,7 @@
 	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
+<tags
 	ms.service="active-directory"
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
@@ -46,7 +46,7 @@ Azure AD Connect Health für AD FS unterstützt AD FS 2.0 unter Windows Server 2
 - Anzeigen von Leistungsdaten für die Kapazitätsplanung
 - Detaillierte Ansichten Ihrer AD FS-Anmeldemuster, um Abweichungen zu ermitteln und Baselines für die Kapazitätsplanung festzulegen
 
-Das folgende Video bietet einen Überblick über Azure AD Connect Health:
+Das folgende Video bietet eine Übersicht über Azure AD Connect Health:
 
 [AZURE.VIDEO azure-ad-connect-health--monitor-you-identity-bridge]
 
@@ -70,7 +70,7 @@ Im Azure AD Connect Health-Portal können Sie Warnungen, Leistungsüberwachungsd
 ![Azure AD Connect Health-Portal](./media/active-directory-aadconnect-health/portal2.png)
 
 - **Schnellstart** – Bei Auswahl wird das Blatt "Schnellstart" geöffnet. Hier können Sie den Azure AD Connect Health-Agent herunterladen, indem Sie auf "Tools abrufen" klicken, Sie können auf die Dokumentation zugreifen und Feedback geben.
-- **Active Directory-Verbunddienste** – Repräsentiert alle AD FS-Dienste, die aktuell von Azure AD Connect Health überwacht werden. Durch Auswahl einer der Instanzen wird ein Blatt mit Informationen zu dieser Dienstinstanz geöffnet. darunter beispielsweise eine Übersicht, Eigenschaften, Warnungen, Überwachungsinformationen und eine Nutzungsanalyse. 
+- **Active Directory-Verbunddienste** – Repräsentiert alle AD FS-Dienste, die aktuell von Azure AD Connect Health überwacht werden. Durch Auswahl einer der Instanzen wird ein Blatt mit Informationen zu dieser Dienstinstanz geöffnet. darunter beispielsweise eine Übersicht, Eigenschaften, Warnungen, Überwachungsinformationen und eine Nutzungsanalyse.
 - "Konfigurieren" – Ermöglicht das Aktivieren oder Deaktivieren der folgenden Optionen:
 <ol>
 1. Automatische Aktualisierung des Azure AD Connect Health-Agents auf die aktuelle Version – Dies bedeutet, dass eine automatische Aktualisierung auf die aktuelle Version des Azure AD Connect Health-Agents durchgeführt wird, sobald diese verfügbar ist. Diese Einstellung ist standardmäßig aktiviert.
@@ -95,9 +95,10 @@ Nachfolgend wird eine Liste der Voraussetzungen für den Agenten bereitgestellt,
 | Voraussetzung | Beschreibung|
 | ----------- | ---------- |
 |Der Azure AD Connect Health-Agent ist auf jedem Zielserver installiert| Azure AD Connect Health erfordert, dass ein Agent auf den Zielservern installiert wird, um die im Portal angezeigten Daten bereitzustellen. </br></br>Beispielsweise muss zum Abrufen von Daten aus Ihrer lokalen AD FS-Infrastruktur der Agent auf den AD FS-Servern installiert sein. Dies schließt die AD FS-Proxyserver und Webanwendungsproxyserver ein. </br></br>Informationen zur Installation des Agents finden Sie unter [Installation des Azure AD Connect Health-Agents.](active-directory-aadconnect-health-agent-install.md)</br></br>** Wichtig: ** Das bei der Installation des Agents verwendete Konto muss ein Arbeits- oder Organisationskonto und darf kein Microsoft-Konto sein. Weitere Informationen finden Sie unter [Als Unternehmen für Azure registrieren](sign-up-organization.md).|
-|Ausgehende Verbindungen zu den Azure-Dienstendpunkten|Während der Installation und der Laufzeit erfordert der Agent Verbindungen mit den nachfolgend aufgeführten Endpunkten des Azure AD Connect Health-Diensts. Wenn Sie ausgehende Verbindungen blockieren, stellen Sie sicher, dass folgende Einträge der Zulassungsliste hinzugefügt werden: </br></br><li>&#42;.servicebus.windows.net - Port: 5671</li><li>https://&#42;.adhybridhealth.azure.com/</li><li>https://&#42;.table.core.windows.net/</li><li>https://policykeyservice.dc.ad.msft.net/</li><li>https://login.windows.net</li><li>https://login.microsoftonline.com</li><li>https://secure.aadcdn.microsoftonline-p.com</li> |
-|Firewall-Ports auf dem Server, auf dem der Agent ausgeführt wird.| Für den Agenten müssen die folgenden Firewallports geöffnet sein, damit er mit den Azure AD Health-Dienstendpunkten kommunizieren kann: </br></br><li>TCP/UDP-Port 80</li><li>TCP/UDP-Port 443</li>.
-|Zulassen der folgenden Websites, wenn die verstärkte IE-Sicherheit aktiviert ist|Die folgenden Websites müssen zugelassen werden, wenn die verstärkte Sicherheit für den Internet Explorer auf dem Server aktiviert ist, auf dem der Agent installiert werden soll.</br></br><li>https://login.microsoftonline.com</li><li>https://secure.aadcdn.microsoftonline-p.com</li><li>https://login.windows.net</li><li>Der Verbundserver für Ihre Organisation, dem Azure Active Directory vertraut. Beispiel: https://sts.contoso.com</li> 
+|Ausgehende Verbindungen zu den Azure-Dienstendpunkten|Während der Installation und der Laufzeit erfordert der Agent Verbindungen mit den nachfolgend aufgeführten Endpunkten des Azure AD Connect Health-Diensts. Wenn Sie ausgehende Verbindungen blockieren, stellen Sie sicher, dass folgende Einträge zur Zulassungsliste hinzugefügt werden: </br></br><li>**Neu**: &#42;.blob.core.windows.net </li><li>**Neu**: &#42;.queue.core.windows.net</li><li>&#42;.servicebus.windows.net - Port: 5671</li><li>https://&#42;.adhybridhealth.azure.com/</li><li>https://&#42;.table.core.windows.net/</li><li>https://policykeyservice.dc.ad.msft.net/</li><li>https://login.windows.net</li><li>https://login.microsoftonline.com</li><li>https://secure.aadcdn.microsoftonline-p.com</li> |
+|Firewall-Ports auf dem Server, auf dem der Agent ausgeführt wird.| Für den Agenten müssen die folgenden Firewallports geöffnet sein, damit er mit den Azure AD Health-Dienstendpunkten kommunizieren kann: </br></br><li>TCP/UDP-Port 80</li><li>TCP/UDP-Port 443</li><li>TCP/UDP-Port 5671</li>.
+
+|Zulassen der folgenden Websites, wenn die verstärkte IE-Sicherheit aktiviert ist|Die folgenden Websites müssen zugelassen werden, wenn die verstärkte Sicherheit für den Internet Explorer auf dem Server aktiviert ist, auf dem der Agent installiert werden soll.</br></br><li>https://login.microsoftonline.com</li><li>https://secure.aadcdn.microsoftonline-p.com</li><li>https://login.windows.net</li><li>Der Verbundserver für Ihre Organisation, dem Azure Active Directory vertraut. Beispiel: https://sts.contoso.com</li>
 
 ## Herunterladen des Agents
 
@@ -111,7 +112,4 @@ Für die ersten Schritte mit Azure AD Connect Health können Sie die neuste Vers
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-
- 
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

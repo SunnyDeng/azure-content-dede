@@ -53,4 +53,4 @@ Die Instanzgröße der App.
 
 Die Vorlage definiert die Werte, die für diesen Parameter zulässig sind (0, 1 oder 2), und weist einen Standardwert (0) zu, wenn kein Wert angegeben wird. Die Werte entsprechen klein, mittel und groß.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

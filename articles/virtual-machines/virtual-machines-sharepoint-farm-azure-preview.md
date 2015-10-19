@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2015"
+	ms.date="10/05/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Serverfarm
@@ -52,7 +52,8 @@ Gehen Sie wie folgt vor, um eine SharePoint-Farm mit der Vorlage "SharePoint-Ser
 7. Klicken Sie zur Konfiguration des SharePoint-Servers auf den Pfeil. Sie können ein Hostnamenpräfix (standardmäßig der Ressourcengruppenname), die Größe des SharePoint-Servers (standardmäßig A2), Name und Kennwort des SharePoint-Benutzerkontos (Standardname ist "sp\_setup"), Name und Kennwort des SharePoint-Farmkontos (Standardname ist "sp\_farm") sowie die Passphrase der SharePoint-Farm angeben. Standardmäßig wird das Administratorkennwort für das Benutzerkonto, das Farmkonto und die Passphrase von SharePoint verwendet.
 8. Um die optionalen Konfigurationseinstellungen für das virtuelle Netzwerk, das Speicherkonto und die Diagnose zu konfigurieren, klicken Sie auf den entsprechenden Pfeil.
 9. Klicken Sie auf den Pfeil, um das Abonnement anzugeben.
-10. Klicken Sie auf **Erstellen**, wenn Sie fertig sind.
+10. Klicken Sie auf den Pfeil, um den Azure-Standort anzugeben.
+11. Klicken Sie auf **Erstellen**, wenn Sie fertig sind.
 
 > [AZURE.NOTE]Auf dem Domänencontroller werden die Active Directory-Verwaltungstools nicht standardmäßig installiert. Zur Installation führen Sie auf dem virtuellen Domänencontrollercomputer den Befehl **Install-WindowsFeature AD DS-IncludeManagementTools** von einer Windows PowerShell-Eingabeaufforderung mit Administratorrechten aus.
 
@@ -81,9 +82,8 @@ Auf der SharePoint-Website für die Zentraladministration können Sie eigene Web
 
 Hinweise:
 
-- Das Azure-Vorschauportal erstellt diese virtuellen Computer innerhalb des angegebenen Abonnements.
 - Das Azure-Vorschauportal erstellt beide Farmen in einem virtuellen Cloudnetzwerk mit einer über das Internet zugängigen Webpräsenz. Es gibt keine Standort-zu-Standort-VPN- oder ExpressRoute-Verbindung mit Ihrem Unternehmensnetzwerk.
-- Sie können diese Server über Remotedesktopverbindungen verwalten. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](virtual-machines-log-on-windows-server.md).
+- Sie können diese Server über Remotedesktopverbindungen verwalten. Weitere Informationen finden Sie unter [Anmelden beim virtuellen Computer](virtual-machines-windows-tutorial.md#log-on-to-the-virtual-machine).
 
 ## Azure Resource Manager
 
@@ -93,10 +93,8 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [SharePoint-Serverfarm-Konfigurationsdetails](virtual-machines-sharepoint-farm-config-azure-preview.md)
 
-[SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
+[In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-[In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
-
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->
