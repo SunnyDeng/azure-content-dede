@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="10/06/2015" 
 	ms.author="jeannt"/>
 
 
@@ -159,6 +159,11 @@ Optional können Sie einen Satz Gewichtungen für ein gefiltertes Bündel angebe
 
 Gewichtungswerte werden nach dem Zielknotenindex gruppiert. Das heißt, wenn der erste Zielknoten mit K Quellknoten verbunden ist, sind die ersten _K_ Elemente des Tupels **Weights** die Gewichtungen für den ersten Zielknoten in der Reihenfolge des Quellindex. Gleiches gilt für die restlichen Zielknoten.
 
+Es ist möglich, Gewichtungen direkt als Konstantenwerte anzugeben. Falls die Gewichtungen vorher entsprechend eingerichtet wurden, können Sie sie mit der folgenden Syntax als Einschränkungen angeben:
+
+	const Weights_1 = [0.0188045055, 0.130500451, ...]
+
+
 ## Konvolutionsbündel
 Wenn die Trainingsdaten eine homogene Struktur aufweisen, werden Konvolutionsverbindungen üblicherweise eingesetzt, um übergeordnete Merkmale der Daten zu ermitteln. So kann beispielsweise in Bild-, Audio- oder Videodaten die räumliche oder zeitliche Dimensionalität ziemlich einheitlich sein.
 
@@ -218,7 +223,7 @@ Weitere Informationen zu Poolingschichten finden Sie in den folgenden Artikeln (
 -	[http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf](http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf)
 	
 ## Antwortnormalisierungsbündel
-Die **Antwortnormalisierung** ist ein lokales Normalisierungsschema, das erstmals von Geoffrey Hinton et al. in dem Dokument [ImageNet Classiﬁcation with Deep Convolutional Neural Networks](http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) verwendet wurde. Die Antwortnormalisierung unterstützt die Generalisierung in neuronalen Netzwerken. Wenn ein Neuron auf einem sehr hohen Aktivierungsniveau auslöst, unterdrückt eine lokale Antwortnormalisierungsschicht das Aktivierungsniveau der umgebenden Neuronen. Hierzu werden die drei Parameter (***α***, ***β*** und ***k***) sowie eine Konvolutionsstruktur (bzw. eine Umgebungsform) verwendet. Jedes Neuron in der Zielschicht ***y*** entspricht einem Neuron ***x*** in der Quellschicht. Das Aktivierungsniveau ***y*** wird durch die folgende Formel angegeben, wobei ***f*** das Aktivierungsniveau eines Neurons und ***Nx*** der Kernel (bzw. der Satz mit den Neuronen in der Umgebung von ***x***) ist, wie durch die folgende Konvolutionsstruktur definiert:
+Die **Antwortnormalisierung** ist ein lokales Normalisierungsschema, das erstmals von Geoffrey Hinton et al. in dem Dokument [ImageNet Classiﬁcation with Deep Convolutional Neural Networks](http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) verwendet wurde. Die Antwortnormalisierung unterstützt die Generalisierung in neuronalen Netzwerken. Wenn ein Neuron auf einem sehr hohen Aktivierungsniveau auslöst, unterdrückt eine lokale Antwortnormalisierungsschicht das Aktivierungsniveau der umgebenden Neuronen. Hierzu werden drei Parameter (***α***, ***β*** und ***k***) sowie eine Konvolutionsstruktur (bzw. eine Umgebungsform) verwendet. Jedes Neuron in der Zielschicht ***y*** entspricht einem Neuron ***x*** in der Quellschicht. Das Aktivierungsniveau ***y*** wird durch die folgende Formel angegeben, wobei ***f*** das Aktivierungsniveau eines Neurons und ***Nx*** der Kernel (bzw. der Satz mit den Neuronen in der Umgebung von ***x***) ist, wie durch die folgende Konvolutionsstruktur definiert:
 
 ![][1]
 
@@ -392,12 +397,12 @@ Die Definition des folgenden Netzwerks zur Erkennung von Ziffern veranschaulicht
 -	Das Netzwerk hat eine dritte verdeckte Schicht: _Hid3_. Diese ist vollständig mit der zweiten verdeckten Schicht _Conv2_ verbunden.
 -	Die Ausgabeschicht _Digit_ ist nur mit der dritten verdeckten Schicht (_Hid3_) verbunden. Das Schlüsselwort **all** gibt an, dass die Ausgabeschicht vollständig mit _Hid3_ verbunden ist.
 -	Die Arität der Konvolution ist drei (die Länge der Tupel **InputShape**, **KernelShape**, **Stride** und **Sharing**). 
--	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**\[0] * **KernelShape**\[1] * **KernelShape**\[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1300_.
+-	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**[0] * **KernelShape**[1] * **KernelShape**[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1300_.
 -	Sie können die Knoten in jeder verdeckten Schicht wie folgt berechnen:
-	-	**NodeCount**\[0] = (5 - 1) / 1 + 1 = 5.
-	-	**NodeCount**\[1] = (13–5)/2+1 = 5. 
-	-	**NodeCount**\[2] = (13 - 5) / 2 + 1 = 5. 
--	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** * **NodeCount**\[0] * **NodeCount**\[1] * **NodeCount**\[2] = 10 * 5 * 5 * 5_
+	-	**NodeCount**[0] = (5 - 1) / 1 + 1 = 5.
+	-	**NodeCount**[1] = (13–5)/2+1 = 5. 
+	-	**NodeCount**[2] = (13 - 5) / 2 + 1 = 5. 
+-	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** * **NodeCount**[0] * **NodeCount**[1] * **NodeCount**[2] = 10 * 5 * 5 * 5_
 -	Da **Sharing**[d] nur für _d == 0_ „False“ ist, beträgt die Anzahl der Kernel _**MapCount** * **NodeCount**[0] = 10 * 5 = 50_. 
 
 
@@ -409,4 +414,4 @@ Die Net#-Sprache zum Anpassen der Architektur von neuronalen Netzwerken wurde be
 [1]: ./media/machine-learning-azure-ml-netsharp-reference-guide/formula_large.gif
  
 
-<!----HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

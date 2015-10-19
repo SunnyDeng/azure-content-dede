@@ -21,7 +21,7 @@ In den Tabellen in diesem Artikel finden Sie Informationen zu ExpressRoute-Konne
 
 ## ExpressRoute-Konnektivitätsanbieter
 
-ExpressRoute wird in allen Azure-Regionen und an allen Standorten unterstützt. Die folgende Karte zeigt die Azure-Regionen und ExpressRoute-Standorte. ExpressRoute-Standorte beziehen sich auf jene Orte, an denen Microsoft eine Peeringkooperation mit mehreren Dienstanbietern bietet.
+ExpressRoute wird in allen Azure-Regionen und an allen Standorten unterstützt. Die folgende Karte zeigt die Azure-Regionen und ExpressRoute-Standorte. ExpressRoute-Standorte beziehen sich auf jene Orte, an denen Microsoft eine Peeringkooperation mit mehreren Service Providern bietet.
 
 ![](./media/expressroute-locations/expressroute-locations-map.png)
 
@@ -53,7 +53,7 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 
 ### Azure-Produktionsumgebungen
 
-| **Dienstanbieter** |**Microsoft Azure** | **Office 365** | **Standorte** |
+| **Service Provider** |**Microsoft Azure** | **Office 365** | **Standorte** |
 |-----------------------|--------------------|----------------|---------------|
 | **[Aryaka Networks](http://www.aryaka.com/)** | Unterstützt | Nicht unterstützt | Silicon Valley, Singapur, Washington, D.C. |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Unterstützt | In Kürze verfügbar | Amsterdam +, London, Dallas, Silicon Valley, Washington DC. |
@@ -86,14 +86,14 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 
 #### US-Government Cloud
 
-| **Dienstanbieter** |**Microsoft Azure** | **Office 365** | **Standorte** |
+| **Service Provider** |**Microsoft Azure** | **Office 365** | **Standorte** |
 |-----------------------|--------------------|----------------|---------------|
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | In Kürze verfügbar | Nicht unterstützt | Chicago+, Washington DC+ |
 | **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | In Kürze verfügbar | Nicht unterstützt | Chicago, Washington DC |
 | **[Level 3 Communications - IPVPN](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | In Kürze verfügbar | Nicht unterstützt | Chicago, Washington DC |
 | **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | Chicago, Washington DC |
 
-## Konnektivität über nicht aufgeführte Dienstanbieter
+## Konnektivität über nicht aufgeführte Service Provider
 
 Wenn Ihr Konnektivitätsanbieter nicht in den vorherigen Abschnitten enthalten ist, können Sie dennoch eine Verbindung erstellen.
 
@@ -127,4 +127,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

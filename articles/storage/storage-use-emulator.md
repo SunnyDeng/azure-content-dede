@@ -203,6 +203,10 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 
 ## Speicheremulator – Versionshinweise
 
+### Version 4.2
+
+- Der Speicheremulator unterstützt nun Version 2015-04-05 der Speicherdienste auf Blob-, Warteschlangen- und Tabellenspeicherdienst-Endpunkten.
+
 ### Version 4.1
 
 - Der Speicheremulator unterstützt nun Version 2015-02-21 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten, mit Ausnahme der neuen Anfügeblob-Funktionen. 
@@ -228,4 +232,4 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 
 - Version 2013-08-15 der Azure Storage-Dienste wird jetzt vollständig unterstützt. (Zuvor wurde diese Version nur von Version 2.2.1 Preview des Speicheremulators unterstützt.)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

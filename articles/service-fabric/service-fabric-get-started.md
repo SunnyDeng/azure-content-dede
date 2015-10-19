@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/10/2015"
+   ms.date="10/07/2015"
    ms.author="seanmck"/>
 
 # Einrichten der Service Fabric-Entwicklungsumgebung
@@ -66,7 +66,7 @@ Ein lokaler Cluster stellt die Topologie mit mehreren Computern dar, die Sie let
     ```powershell
     cd "$env:ProgramW6432\Microsoft SDKs\Service Fabric\ClusterSetup"
     ```
-    
+
 3. Ausführen
 
     ```powershell
@@ -81,7 +81,7 @@ Nach wenigen Augenblicken sehen Sie eine Ausgabe mit Knoteninformationen und der
 
 Mit dem Explorer-Tool von Service Fabric, das im SDK enthalten ist, können Sie überprüfen, ob der Cluster erfolgreich erstellt wurde.
 
-1. Starten Sie den Service Fabric-Explorer durch Ausführen von 
+1. Starten Sie den Service Fabric-Explorer durch Ausführen von
 
     ```powershell
     . "$env:ProgramW6432\Microsoft SDKs\Service Fabric\Tools\ServiceFabricExplorer\ServiceFabricExplorer.exe"
@@ -106,4 +106,4 @@ Ihre Entwicklungsumgebung ist nun eingerichtet, und Sie können mit der Entwickl
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
 [3]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

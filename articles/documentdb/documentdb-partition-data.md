@@ -1,6 +1,6 @@
 <properties      
     pageTitle="Partitionieren und Skalieren von Daten in DocumentDB mit Sharding | Microsoft Azure"      
-    description="Hier erfahren Sie, wie Sie Daten mit einem als Sharding bezeichneten Verfahren skalieren. Sie erhalten Informationen zu Shards, zum Partitionieren von Daten in DocumentDB und zur Verwendung der Hash-, Bereichs- und Suchpartitionierung."         
+    description="Hier erfahren Sie, wie Sie Daten mit einem als Sharding bezeichneten Verfahren skalieren. Sie erhalten Informationen zu Shards, zum Partitionieren von Daten in DocumentDB und zur Verwendung der Hash- und Bereichspartitionierung."         
     keywords="Scale data, shard, sharding, documentdb, azure, Microsoft azure"
 	services="documentdb"      
     authors="arramac"      
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"      
     ms.devlang="na"      
     ms.topic="article"      
-    ms.date="09/14/2015"      
+    ms.date="10/05/2015"      
     ms.author="arramac"/>
 
 # Partitionieren und Skalieren von Daten in DocumentDB
@@ -24,7 +24,7 @@ Im Hinblick auf Speicher und Durchsatz für Ihre DocumentDB-Anwendung können Si
 
 Nach dem Lesen dieses Artikels zur Datenskalierung können Sie die folgenden Fragen beantworten:
 
- - Was ist eine Hash-, Bereichs- und Suchpartitionierung?
+ - Was ist Hash- und Bereichspartitionierung?
  - Wann verwenden Sie die einzelnen Partitionierungsverfahren und warum?
  - Wie erstellen Sie eine partitionierte Anwendung in Azure DocumentDB?
 
@@ -56,13 +56,13 @@ Ein Sonderfall der Bereichspartitionierung ist ein Bereich mit einem einzelnen W
 
 Bei der Hashpartitionierung werden basierend auf dem Wert einer Hashfunktion Partitionen zugewiesen, sodass Sie Anforderungen und Daten gleichmäßig über eine Anzahl von Partitionen verteilen können. Dies wird häufig zur Partitionierung der Daten verwendet, die aus einer großen Anzahl von unterschiedlichen Clients erstellt oder genutzt werden, und eignet sich zum Speichern von Benutzerprofilen, Katalogelementen und IoT-Gerätetelemetriedaten ("Internet der Dinge").
 
-> [AZURE.TIP]Verwenden Sie die Hashpartitionierung, wenn es zu viele Entitäten gibt, um sie mit der Suchpartitionierung aufzuzählen (z. B. Benutzer oder Geräte), und wenn die Abfragerate zwischen Entitäten einigermaßen gleichmäßig ist.
+> [AZURE.TIP]Verwenden Sie die Hashpartitionierung, wenn es zu viele Entitäten gibt, um sie aufzuzählen (z. B. Benutzer oder Geräte), und wenn die Abfragerate zwischen Entitäten einigermaßen gleichmäßig ist.
 
 ## Auswählen des richtigen Partitionierungsverfahrens
 
 Welches Partitionierungsverfahren ist für Sie geeignet? Die Wahl hängt vom Datentypen und den allgemeinen Zugriffsmustern ab. Durch die Wahl des richtigen Partitionierungsverfahrens zum Entwurfszeitpunkt können Sie technische Schulden vermeiden und das Wachstum der Datengröße und des Anfragevolumens bewältigen.
 
-- Die **Bereichspartitionierung** wird im Allgemeinen im Datenkontext verwendet, da sie Ihnen eine einfache und natürliche Methode bietet, um Partitionen nach Zeitstempel altern zu lassen. Sie ist auch nützlich, wenn Abfragen im Allgemeinen auf einen Zeitraum beschränkt sind, da dies an den Partitionierungsgrenzen ausgerichtet ist. Außerdem können Sie unsortierte und nicht miteinander verbundene Datensätze auf natürliche Weise gruppieren und organisieren, z. B. Gruppieren von Mandanten nach Organisation oder von Staaten nach geografischer Region. Die Suche bietet auch eine präzisere Kontrolle für die Migration von Daten zwischen Sammlungen. 
+- Die **Bereichspartitionierung** wird im Allgemeinen im Datenkontext verwendet, da sie Ihnen eine einfache und natürliche Methode bietet, um Partitionen nach Zeitstempel altern zu lassen. Sie ist auch nützlich, wenn Abfragen im Allgemeinen auf einen Zeitraum beschränkt sind, da dies an den Partitionierungsgrenzen ausgerichtet ist. Außerdem können Sie unsortierte und nicht miteinander verbundene Datensätze auf natürliche Weise gruppieren und organisieren, z. B. Gruppieren von Mandanten nach Organisation oder von Staaten nach geografischer Region. Die Bereichspartitionierung bietet außerdem eine präzisere Kontrolle für die Migration von Daten zwischen Sammlungen. 
 - Die **Hashpartitionierung** eignet sich für den einheitlichen Lastenausgleich von Anforderungen, um den bereitgestellten Speicher und Durchsatz effektiv zu nutzen. Mithilfe von *konsistenten Hash*-Algorithmen können Sie die Datenmenge minimieren, die beim Hinzufügen oder Entfernen einer Partition verschoben werden muss.
 
 Sie müssen sich nicht für ein Partitionierungsverfahren entscheiden. Eine *Mischung* dieser Verfahren kann je nach Szenario ebenfalls sinnvoll sein. Wenn Sie z. B. Fahrzeugtelemetriedaten speichern, wäre eine Partitionierung der Gerätetelemetriedaten nach Zeitstempelbereich ein guter Ansatz, um die Partitionen einfach verwalten zu können. Führen Sie anschließend eine Subpartitionierung nach VIN (Fahrzeugnummer) durch, um für den Durchsatz eine horizontale Skalierung durchzuführen (gemischte Bereichs-Hash-Partitionierung).
@@ -78,7 +78,7 @@ Lassen Sie uns diese Bereiche einmal näher betrachten.
 
 ## Weiterleiten von Erstellungsvorgängen und Abfragen
 
-Das Weiterleiten von Erstellungsanforderungen ist für die Hash- und Bereichspartitionierung unkompliziert. Das Dokument wird auf der Partition aus dem Hash-, Such- oder Bereichswert erstellt, der dem Partitionsschlüssel entspricht.
+Das Weiterleiten von Erstellungsanforderungen ist für die Hash- und Bereichspartitionierung unkompliziert. Das Dokument wird auf der Partition aus dem Hash- oder Bereichswert erstellt, der dem Partitionsschlüssel entspricht.
 
 Abfragen und Lesevorgänge sollten in der Regel auf einen einzelnen Partitionsschlüssel begrenzt werden, damit Abfragen nur auf die entsprechenden Partitionen verteilt werden können. Bei Abfragen für alle Daten müssen Sie jedoch die Abfrage über mehrere Partitionen*verteilen* und dann die Ergebnisse zusammenführen. Beachten Sie, dass einige Abfragen eine benutzerdefinierte Logik durchführen müssen, um die Ergebnisse zusammenzuführen, z. B. beim Abrufen der ersten n Ergebnisse.
 
@@ -92,7 +92,7 @@ Wenn dies nicht der Fall ist, können Sie sie in einem persistenten Speicher spe
 
 Mit DocumentDB können Sie jederzeit Sammlungen hinzufügen und entfernen und sie verwenden, um neue eingehende Daten zu speichern oder in vorhandenen Sammlungen verfügbare Daten neu auszugleichen. Die Anzahl der Sammlungen finden Sie auf der Seite [Grenzen](documentdb-limits.md). Sie können sich jederzeit an uns wenden, um diese Grenzen anzuheben.
 
-Das Hinzufügen und Entfernen einer neuen Partition mithilfe der Such- und Bereichspartitionierung ist einfach. Zum Hinzufügen einer neuen geografischen Region oder eines neuen Zeitbereichs für aktuelle Daten müssen Sie beispielsweise einfach die neuen Partitionen an die Partitionszuordnung anhängen. Für das Aufteilen einer vorhandenen Partition in mehrere Partitionen oder das Zusammenführen von zwei Partitionen ist ein wenig mehr Aufwand erforderlich. Dazu müssen Sie eine der folgenden beiden Aufgaben durchführen:
+Das Hinzufügen und Entfernen einer neuen Partition mithilfe der Bereichspartitionierung ist einfach. Zum Hinzufügen einer neuen geografischen Region oder eines neuen Zeitbereichs für aktuelle Daten müssen Sie beispielsweise einfach die neuen Partitionen an die Partitionszuordnung anhängen. Für das Aufteilen einer vorhandenen Partition in mehrere Partitionen oder das Zusammenführen von zwei Partitionen ist ein wenig mehr Aufwand erforderlich. Dazu müssen Sie eine der folgenden beiden Aufgaben durchführen:
 
 - Offlineschalten des Shards während der Lesevorgänge
 - Weiterleiten der Lesevorgänge an beide Partitionen mithilfe der alten Partitionierungskonfiguration sowie der neuen Partitionskonfiguration während der Migration Beachten Sie, dass bis zum Abschluss der Migration keine Transaktions- oder Konsistenzgarantien verfügbar sein werden.
@@ -112,4 +112,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

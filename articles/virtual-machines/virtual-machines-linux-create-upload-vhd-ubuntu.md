@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/15/2015"
+	ms.date="10/05/2015"
 	ms.author="szarkos"/>
 
 # Vorbereiten eines virtuellen Ubuntu-Computers für Azure
@@ -36,7 +36,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
 
-## <a id="ubuntu"> </a>Ubuntu 12.04+ ##
+## <a id="ubuntu"> </a>Ubuntu 12.04 ##
 
 1. Wählen Sie den virtuellen Computer im mittleren Fensterbereich des Hyper-V-Managers.
 
@@ -44,7 +44,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 3.	Ersetzen Sie die aktuellen Repositorys im Image zum Verwenden der Azure-Repositorys von Ubuntu. Die Schritte können je nach Ubuntu-Version geringfügig abweichen.
 
-	Vor der Bearbeitung von „/etc/apt/sources.list“ sollten Sie eine Sicherung vornehmen.
+	Vor der Bearbeitung von "/etc/apt/sources.list" sollten Sie eine Sicherung vornehmen:
 
 		# sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
@@ -54,38 +54,26 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 		# sudo apt-add-repository 'http://archive.canonical.com/ubuntu precise-backports main'
 		# sudo apt-get update
 
-	Ubuntu 12.10:
-
-		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
-		# sudo apt-add-repository 'http://archive.canonical.com/ubuntu quantal-backports main'
-		# sudo apt-get update
-
-	Ubuntu 14.04+:
+	Ubuntu 14.04:
 
 		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
 		# sudo apt-get update
 
-4. Aktualisieren Sie das Betriebssystem auf den neuesten Kernel, indem Sie die folgenden Befehle ausführen:
+4. Die Ubuntu Azure-Images folgen jetzt dem *HardWare Enablement*-Kernel (HWE). Aktualisieren Sie das Betriebssystem auf den neuesten Kernel, indem Sie die folgenden Befehle ausführen:
 
 	Ubuntu 12.04:
 
 		# sudo apt-get update
-		# sudo apt-get install hv-kvp-daemon-init linux-backports-modules-hv-precise-virtual
+		# sudo apt-get install linux-image-generic-lts-trusty linux-cloud-tools-generic-lts-trusty
+		# sudo apt-get install hv-kvp-daemon-init
 		(recommended) sudo apt-get dist-upgrade
 
 		# sudo reboot
 
-	Ubuntu 12.10:
+	Ubuntu 14.04:
 
 		# sudo apt-get update
-		# sudo apt-get install hv-kvp-daemon-init linux-backports-modules-hv-quantal-virtual
-		(recommended) sudo apt-get dist-upgrade
-
-		# sudo reboot
-
-	Ubuntu 14.04+:
-
-		# sudo apt-get update
+		# sudo apt-get install linux-image-virtual-lts-vivid linux-lts-vivid-tools-common
 		# sudo apt-get install hv-kvp-daemon-init
 		(recommended) sudo apt-get dist-upgrade
 
@@ -124,4 +112,11 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 11. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Sept15_HO4-->
+## Referenzen ##
+
+Ubuntu HardWare Enablement-Kernel (HWE)
+
+- [http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html](http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html)
+- [http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html](http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html)
+
+<!---HONumber=Oct15_HO2-->

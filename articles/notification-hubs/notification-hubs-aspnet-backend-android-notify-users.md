@@ -25,7 +25,7 @@
 
 Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert, In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Zum Authentifizieren von Clients und zum Generieren von Benachrichtigungen wird ein ASP.NET WebAPI-Back-End verwendet, wie im Thema [Registrieren von App-Back-End aus](http://msdn.microsoft.com/library/dn743807.aspx) gezeigt. Dieses Lernprogramm baut auf dem Notification Hub auf, den Sie im Lernprogramm [Erste Schritte mit Notification Hubs (Android)](notification-hubs-android-get-started.md) erstellt haben.
 
-> [AZURE.NOTE]In diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (Android)](notification-hubs-android-get-started.md) beschrieben erstellt und konfiguriert haben. Wenn Sie Mobile Services als Back-End-Dienst verwenden, finden Sie weitere Informationen in der [Mobile Services-Version](../mobile-services-javascript-backend-android-push-notifications-app-users.md) dieses Lernprogramms.
+> [AZURE.NOTE]In diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (Android)](notification-hubs-android-get-started.md) beschrieben erstellt und konfiguriert haben.
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -432,4 +432,4 @@ Im nächsten Schritt erstellen Sie die Android-Anwendung.
 [A1]: ./media/notification-hubs-aspnet-backend-android-notify-users/android-notify-users.png
 [A2]: ./media/notification-hubs-aspnet-backend-android-notify-users/android-notify-users-enter-password.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

@@ -1,11 +1,12 @@
 <properties
-	pageTitle="Erfassen eines Images für einen virtuellen Linux-Computer mithilfe der CLI"
+	pageTitle="Erfassen eines Images für einen virtuellen Linux-Computer mithilfe der CLI | Microsoft Azure"
 	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Linux erfassen können."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="madhana"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+    tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -21,7 +22,7 @@
 
 # Erfassen eines virtuellen Linux-Computers mit der CLI, um ihn als Vorlage zu verwenden##
 
-
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
 
 Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Linux läuft, um ihn wie eine Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage umfasst den Betriebssystemdatenträger und alle an den virtuellen Computer angefügten Datenträger. Da die Vorlage keine Netzwerkkonfiguration enthält, müssen Sie die Konfiguration später vornehmen, wenn Sie die anderen virtuellen Computer erstellen, die auf dieser Vorlage basieren.
 
@@ -162,4 +163,4 @@ Weitere Informationen und zusätzliche Befehlen finden Sie in der [Azure-CLI-Dok
 [Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

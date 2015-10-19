@@ -20,7 +20,7 @@
 #Erstellen von erweiterten Codierungs-Workflows mit Workflow-Designer
 
 ##Übersicht
-Der **Workflow-Designer** ist ein eigenständiges Tool, das zum Erstellen von Workflows/Diagrammen für die Codierung mit dem **Medienencoder-Premium-Workflow** verwendet wird.
+Der **Workflow-Designer** ist ein Windows-Desktoptool, das zum Entwerfen und Erstellen benutzerdefinierter Workflows für die Codierung mit dem **Medienencoder-Premium-Workflow** verwendet wird.
 
 Dieses Tool kann auch zum Ändern [vorhandener Workflows](media-services-workflow-designer.md#existing_workflows) eingesetzt werden
 
@@ -79,4 +79,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Azure Premium Encoder Workflow-Designer – Schulungsvideos](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

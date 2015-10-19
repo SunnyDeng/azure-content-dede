@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/01/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Erste Schritte: Verbinden mit Azure SQL Data Warehouse
@@ -179,9 +179,9 @@ Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben eine
 	Zum Ausführen der Abfrage klicken Sie unten auf den grünen Pfeil, oder Sie verwenden die folgende Tastenkombination: `CTRL`+`SHIFT`+`F5`.
 
 ## Nächste Schritte ##
-Versuchen Sie nun, da Sie eine Verbindung herstellen und Abfragen senden können, [das Laden von Beispieldaten][] oder [Entwickeln von Code][].
+Versuchen Sie nun, da Sie eine Verbindung herstellen und Abfragen senden können, [das Laden von Beispieldaten][].
 
 [das Laden von Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
-[Entwickeln von Code]: ./articles/sql-data-warehouse-overview-develop/
+[developing code]: ./articles/sql-data-warehouse-overview-develop/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

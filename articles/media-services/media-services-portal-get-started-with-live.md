@@ -66,7 +66,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 	>
-	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
+	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Mediendienste – Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 
 ## Erstellen eines Kanals
@@ -190,12 +190,19 @@ Wenn die Streamingereignisse beendet sind und Sie die zuvor bereitgestellten Res
 - Sie können Ihren Streamingendpunkt beenden, sofern Sie das Archiv Ihres Liveereignisses nicht als bedarfsgesteuerten Datenstrom bereitstellen möchten. Durch Kanäle im angehaltenen Zustand fallen keine Kosten an.
 
 
-##Media Services-Lernpfade
+##Nächste Schritte
+
+###Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+### Suchen Sie etwas anderes?
+
+Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
+
 
 ## Zusätzliche Ressourcen
 - [Erste Schritte zum Livestreaming mithilfe des Azure-Verwaltungsportals](http://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/) (in englischer Sprache)
@@ -205,4 +212,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 <!-- Images -->
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in einem Hadoop-Cluster | Microsoft Azure"
-	description="Erfahren Sie, wie Sie HDInsight-Cluster mit Solr anpassen. Sie verwenden eine Script Action-Konfigurationsoption, um mithilfe eines Skripts Solr zu installieren."
+	description="Erfahren Sie, wie Sie mithilfe von Skriptaktionen HDInsight-Cluster mit Solr anpassen können."
 	services="hdinsight"
 	documentationCenter=""
 	authors="nitinme"
@@ -14,36 +14,38 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/07/2015"
+	ms.date="10/02/2015"
 	ms.author="nitinme"/>
 
 # Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern
 
-Sie können Solr in einem beliebigen Clustertyp in Hadoop in Azure HDInsight mithilfe einer Clusteranpassung vom Typ **Skriptaktion** installieren. Mit "Skriptaktion" können Sie nur beim Erstellen eines Clusters Skripts ausführen, um ein Cluster anzupassen. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen][hdinsight-cluster-customize].
+Erfahren Sie, wie Sie mithilfe von Skriptaktionen Windows-basierte HDInsight-Cluster mit Solr anpassen und wie Sie Solr zum Durchsuchen von Daten verwenden. Informationen zur Verwendung von Solr mit einem Linux-basierten Cluster finden Sie unter [Installieren und Verwenden von Solr in HDinsight Hadoop-Clustern (Linux)](hdinsight-hadoop-solr-install-linux.md).
+ 
+Mithilfe von *Skriptaktionen* können Sie Solr in einem beliebigen Clustertyp (Hadoop, Storm, HBase, Spark) in Azure HDInsight installieren. Ein Beispielskript zum Installieren von Solr in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) zur Verfügung.
+
+Das Beispielskript funktioniert nur mit HDInsight-Clustern der Version 3.1. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
+
+Das in diesem Thema verwendete Beispielskript erstellt einen Windows-basierten Solr-Cluster mit einer speziellen Konfiguration. Wenn Sie den Solr-Cluster mit anderen Auflistungen, Shards, Schemas, Replikaten usw. konfigurieren möchten, müssen Sie das Skript und die Solr-Binärdateien entsprechend ändern.
+
+**Verwandte Artikel**
+
+- [Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern (Linux)](hdinsight-hadoop-solr-install-linux.md)
+- [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zur Erstellung von HDInsight-Clustern
+- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zur Anpassung von HDInsight-Clustern mithilfe von Skriptaktionen
+- [Entwickeln von Script Action-Skripts für HDInsight](hdinsight-hadoop-script-actions.md)
+
+
+## Was ist Solr?
+
+<a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> ist eine Unternehmensplattform für die leistungsstarke Volltextsuche in Daten. Während Hadoop das Speichern und Verwalten von großen Datenmengen ermöglicht, bietet Apache Solr die Suchfunktionen, um schnell Daten abzurufen.
+
+## Installieren von Solr mithilfe des Portals
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../../includes/hdinsight-azure-preview-portal.md)]
 
-* [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md)
+* [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-v1.md)
 
-In diesem Thema wird beschrieben, wie Sie Solr mithilfe der Funktion "Skriptaktion" installieren. Solr ist eine leistungsfähige Suchplattform und bietet Suchfunktionen der Unternehmensklasse für von Hadoop verwaltete Daten. Sobald Sie Solr in einem HDInsight-Cluster installiert haben, erfahren Sie auch, wie Sie Daten mithilfe von Solr suchen können.
-
-> [AZURE.NOTE]Das in diesem Thema verwendete Beispielskript erstellt einen Windows-basierten Solr-Cluster mit einer speziellen Konfiguration. Wenn Sie den Solr-Cluster mit anderen Auflistungen, Shards, Schemas, Replikaten usw. konfigurieren möchten, müssen Sie das Skript und die Solr-Binärdateien entsprechend ändern.
->
-> Informationen zur Verwendung von Solr mit einem Linux-basierten Cluster finden Sie unter [Installieren und Verwenden von R in HDinsight Hadoop-Clustern (Linux)](hdinsight-hadoop-solr-install-linux.md).
-
-## <a name="whatis"></a>Was ist Solr?
-
-<a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> ist eine Unternehmensplattform für die leistungsstarke Volltextsuche in Daten. Während Hadoop das Speichern und Verwalten von großen Datenmengen ermöglicht, bietet Apache Solr die Suchfunktionen, um schnell Daten abzurufen. In diesem Thema wird beschrieben, wie Sie ein HDInsight-Cluster zum Installieren von Solr anpassen können.
-
-## <a name="install"></a>Wie installiere ich Solr?
-
-Ein Beispielskript zum Installieren von Solr in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) zur Verfügung. Dieser Abschnitt enthält Anweisungen zur Verwendung des Beispielskripts während der Bereitstellung des Clusters mithilfe des Azure-Portals.
-
-
-> [AZURE.NOTE]Das Beispielskript funktioniert nur mit HDInsight-Clustern der Version 3.1. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
-
-
-1. Beginnen Sie die Bereitstellung eines Clusters mit der Option **BENUTZERDEFINIERT ERSTELLEN**, wie unter [Bereitstellen eines Clusters mit der benutzerdefinierten Erstellungsoption](hdinsight-provision-clusters.md#portal) beschrieben.
+1. Beginnen Sie mit dem Erstellen eines Clusters, indem Sie die Option **BENUTZERDEFINIERT ERSTELLEN** verwenden, die unter [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md#portal) beschrieben ist.
 2. Klicken Sie auf der Seite **Skriptaktionen** des Assistenten auf **Skriptaktion hinzufügen**, um wie unten gezeigt Details zur Skriptaktion bereitzustellen:
 
 	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-solr-install/hdi-script-action-solr.png "Anpassen eines Clusters mit "Skriptaktion"")
@@ -58,10 +60,10 @@ Ein Beispielskript zum Installieren von Solr in einem HDInsight-Cluster steht in
 		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
 	<tr><td>Parameter</td>
 		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Solr sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
-</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
+</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Erstellung des Clusters zu starten.
 
 
-## <a name="usesolr"></a>Wie verwende ich Solr in HDInsight?
+## Verwenden von Solr
 
 Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie können dann Solr verwenden, um Suchabfragen der indizierten Daten auszuführen. Führen Sie die folgenden Schritte aus, um Solr in einem HDInsight-Cluster zu verwenden:
 
@@ -169,12 +171,25 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 
 		Mit diesem Befehl wird die Momentaufnahme in "/example/data/" unter der Container im Standardspeicherkonto kopiert, das dem Cluster zugeordnet ist.
 
+## Installieren von Solr mithilfe von Azure PowerShell
+
+Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md#call_scripts_using_powershell). Das Beispiel veranschaulicht das Installieren von Spark mithilfe von Azure PowerShell. Sie müssen das Skript für die Verwendung von [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) anpassen.
+
+## Installieren von Solr mithilfe des .NET SDK
+
+Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md#call_scripts_using_azure_powershell). Das Beispiel veranschaulicht das Installieren von Spark mithilfe des .NET SDK. Sie müssen das Skript für die Verwendung von [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) anpassen.
+
+
 
 ## Weitere Informationen
 
-- [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark]. Verwenden Sie die Clusteranpassung, um Spark in HDInsight Hadoop-Clustern zu installieren. Spark ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von Big Data zu steigern.
-- [Installieren und Verwenden von R in HDInsight-Clustern][hdinsight-install-r]. Verwenden Sie die Clusteranpassung, um R in HDInsight Hadoop-Clustern zu installieren. R ist eine Open-Source-Sprache und -Umgebung für statistische Berechnungen. Sie bietet Hunderte integrierter Statistikfunktionen und eine eigene Programmiersprache, die Aspekte der funktionalen und objektorientierten Programmierung kombiniert. Darüber hinaus werden umfangreiche Grafikfunktionen geboten.
-- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht Ihnen, mithilfe von Hadoop Graphen zu verarbeiten, und kann mit Azure HDInsight eingesetzt werden.
+- [Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern (Linux)](hdinsight-hadoop-solr-install-linux.md)
+- [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zur Erstellung von HDInsight-Clustern
+- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zur Anpassung von HDInsight-Clustern mithilfe von Skriptaktionen
+- [Entwickeln von Script Action-Skripts für HDInsight](hdinsight-hadoop-script-actions.md)
+- [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark]\: Skriptaktionsbeispiel zum Installieren von Spark
+- [Installieren von R in HDInsight-Clustern][hdinsight-install-r]\: Skriptaktionsbeispiel zum Installieren von R
+- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md): Skriptaktionsbeispiel zum Installieren von Giraph
 
 
 [powershell-install-configure]: ../install-configure-powershell.md
@@ -183,4 +198,4 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

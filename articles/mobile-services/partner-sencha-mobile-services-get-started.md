@@ -12,17 +12,19 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-sencha"
 	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="08/18/2015"
+	ms.topic="get-started-article"
+	ms.date="10/09/2015"
 	ms.author="glenga"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services und Sencha Touch
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
 ##Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihrer Sencha Touch-Anwendung nutzen können. Sie werden mit Sencha Touch eine einfache To-Do-Listen-Anwendung erstellen, die einen Mobile Service verwendet, den Sie über das Verwaltungsportal festlegen. Dieses Lernprogramm richtet sich an Entwickler mit guten bis sehr guten Webanwendungskenntnissen, die in JavaScript bewandert sind und sich mit dem Sencha Touch-Framework auskennen.
+In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihrer Sencha Touch-Anwendung nutzen können. Sie werden mit Sencha Touch eine einfache *To-Do-Listen*-App erstellen, die einen Mobile Service verwendet, den Sie über das Verwaltungsportal festlegen. Dieses Lernprogramm richtet sich an Entwickler mit guten bis sehr guten Webanwendungskenntnissen, die in JavaScript bewandert sind und sich mit dem Sencha Touch-Framework auskennen.
 
 Sie können auch ein Video zu diesem Thema ansehen. In diesem Clip werden dieselben Schritte behandelt wie in diesem Tutorial. Im Video erklärt Arthur Kay, wie Sie eine Sencha Touch-Anwendung mithilfe eines Azure Mobile Services-Back-Ends erstellen.
 
@@ -708,7 +710,10 @@ Das hier gezeigte Beispiel wird im Paket Sencha Touch-Erweiterung für Azure ber
 
 Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie bitte die anderen [Leitfäden](http://docs.sencha.com/touch/#!/guide)
 
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

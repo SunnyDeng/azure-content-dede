@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/30/2015" 
+	ms.date="10/06/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -34,14 +34,18 @@ Nachfolgend sind verschiedene Aspekte aufgeführt, die Ihnen bei der Wahl helfen
 -	**Redis Cluster**: Wenn Sie Caches mit einer Größe über 53 GB erstellen oder Daten über mehrere Redis-Knoten horizontal partitionieren möchten, können Sie das im Premium-Tarif verfügbare Redis-Clustering verwenden. Für die hohe Verfügbarkeit besteht jeder Knoten aus einem Paar aus primärem Cache und Replikatcache. Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
 -	**Erhöhte Sicherheit und Isolation**: Die Bereitstellung von Azure Virtual Network (VNET) bietet verbesserte Sicherheit und Isolation für den Azure Redis Cache sowie Subnetze, Zugriffssteuerungsrichtlinien und andere Features, mit denen der Zugriff weiter eingeschränkt wird. Weitere Informationen finden Sie unter [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
 -	**Konfigurieren von Redis**: Sowohl im Standard- als auch im Premium-Tarif können Sie Redis für Keyspace-Benachrichtigungen konfigurieren.
--	**Maximale Anzahl von Clientverbindungen**: Der Premium-Tarif bietet die maximale Anzahl von Clients, die eine Verbindung mit Redis herstellen können, mit einer größeren Anzahl an Verbindungen für größere Caches. [Angaben zu den Preisen finden Sie in der Preisübersicht](TODO).
+-	**Maximale Anzahl von Clientverbindungen**: Der Premium-Tarif bietet die maximale Anzahl von Clients, die eine Verbindung mit Redis herstellen können, mit einer größeren Anzahl an Verbindungen für größere Caches. [Angaben zu den Preisen finden Sie in der Preisübersicht](https://azure.microsoft.com/pricing/details/cache/).
 -	**Dedizierter Kern für Redis Server**: Im Premium-Tarif verfügen alle Cachegrößen über einen dedizierten Kern für Redis. Im Basic- oder Standard-Tarif verfügen alle Cachegrößen ab C1 über einen dedizierten Kern für Redis-Server.
 -	**Redis verwendet Single-Threading**, deshalb bietet der Einsatz von mehr als zwei Kernen keine zusätzlichen Vorteile gegenüber der Verwendung von nur zwei Kernen. Größere virtuelle Computer besitzen jedoch i. d. R. mehr Bandbreite als kleine virtuelle Computer. Wenn Cacheserver oder -client die Bandbreitengrenzwerte erreichen, kommt es zu Timeouts auf Clientseite.
 -	**Leistungsoptimierungen**: Caches im Premium-Tarif werden auf Hardware mit schnelleren Prozessoren bereitgestellt, die im Vergleich zu den Tarifen Basic oder Standard eine bessere Leistung bieten. Caches im Premium-Tarif erreichen einen höheren Durchsatz und geringere Wartezeiten.
 
 In der folgenden Tabelle sind die maximalen Bandbreitenwerte beim Testen verschiedener Standard- und Premium-Cachegrößen bei Verwendung von `redis-benchmark.exe` aus einem virtuellen IaaS-Computer mit dem Azure Redis Cache-Endpunkt angegeben. Beachten Sie, dass diese Werte nicht garantiert werden und dass keine SLA für diese Werte bereitgestellt wird. Die Werte sollten jedoch typischerweise erreicht werden. Führen Sie Auslastungstests für Ihre Anwendung durch, um die geeignete Cachegröße für Ihre Anwendung zu ermitteln.
 
-Aus dieser Tabelle können folgende Schlussfolgerungen gezogen werden. - Der Durchsatz für Cache derselben Größe ist im Premium-Tarif im Vergleich zum Standard-Tarif höher. Bei einem Cache mit 6 GB liegt der Durchsatz von P1 bei 140.000 RPS im Vergleich zu 49.000 RPS bei C3. - Mit dem Redis-Clustering steigt der Durchsatz linear, je mehr Shards (Knoten) Sie im Cluster verwenden. Wenn Sie z. B. einen P4-Cluster mit 10 Shards erstellen, ergibt sich für den verfügbaren Durchsatz 250.000 * 10 = 2,5 Mio. RPS. - Der Durchsatz für größere Schlüsselgrößen ist im Premium-Tarif höher als im Standard-Tarif.
+Aus dieser Tabelle können folgende Schlussfolgerungen gezogen werden.
+
+-	Der Durchsatz für Cache derselben Größe ist im Tarif "Premium" im Vergleich zum Tarif "Standard" höher. Bei einem Cache mit 6 GB liegt der Durchsatz von P1 bei 140.000 RPS im Vergleich zu 49.000 RPS bei C3.
+-	Mit dem Redis-Clustering steigt der Durchsatz linear, je mehr Shards (Knoten) Sie im Cluster verwenden. Wenn Sie z. B. einen P4-Cluster mit 10 Shards erstellen, beträgt der verfügbare Durchsatz 250 KB * 10 = 2,5 Millionen RPS.
+-	Der Durchsatz für größere Schlüsselgrößen ist im Premium-Tarif höher als im Standard-Tarif.
 
 | Tarif | Größe | Verfügbare Bandbreite (MBit/s) | 1 KB Schlüsselgröße |
 |----------------------|--------|----------------------------|--------------------------------|
@@ -187,4 +191,4 @@ Microsoft Azure Redis Cache basiert auf dem populären quelloffenen Redis Cache 
 
 Da jeder Client anders ist, gibt es nicht nur einen zentralen Klassenverweis in MSDN. Stattdessen verwaltet jeder Client seine eigene Verweisdokumentation. Zusätzlich zur Verweisdokumentation gibt es mehrere Lernprogramme auf "Azure.com". Diese stehen auf der Seite [Redis Cache-Dokumentation](http://azure.microsoft.com/documentatgion/services/redis-cache/) zur Verfügung und erleichtern Ihnen den Einstieg in die Verwendung von Azure Redis Cache mit verschiedenen Sprachen und Cacheclients.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

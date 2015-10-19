@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="10/05/2015" 
 	ms.author="awills"/>
  
 # Was ist Application Insights?
@@ -31,7 +31,7 @@ Er ist für das Entwicklungsteam vorgesehen. Damit können Sie folgende Aktionen
  *  Metriken zur Diagnose von Leistungsproblemen, z. B. Reaktionszeiten, CPU-Auslastung, Nachverfolgung von Abhängigkeiten.
  *  Verfügbarkeitstests für Web-Apps.
  *  Berichte und Warnungen zu Abstürzen und Ausnahmen.
- *  Leistungsstarke Suche für Diagnoseprotokolle \(einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks\).
+ *  Leistungsstarke Suche für Diagnoseprotokolle (einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks).
 
 Das SDK für jede Plattform umfasst eine Reihe von Modulen, die die Anwendung ohne Konfigurationsaufwand überwachen. Darüber hinaus können Sie Ihre eigene Telemetrie für detailliertere und besser abgestimmte Analysen codieren.
 
@@ -115,7 +115,7 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
 * Fragen und Probleme:
  * [Problembehandlung][qna]
- * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
+ * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-DE/home?forum=ApplicationInsights)
  * [StackOverflow](http://stackoverflow.com/questions/tagged/ms-application-insights)
 * Fehler:
  * [Kontakt](https://connect.microsoft.com/VisualStudio/Feedback/LoadSubmitFeedbackForm?FormID=6076)
@@ -152,4 +152,4 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="10/01/2015"
    ms.author="andalmia"/>
 
 #BizTalk-Regeln
@@ -34,11 +34,9 @@ Es gibt drei wichtige Gründe für die Verwendung von BizTalk-Geschäftsregeln i
 
 ##Vokabular
 
-Die zum Definieren von Regelbedingungen und Aktionen verwendeten Begriffe werden in der Regel durch eine domänen- oder branchenspezifischer Terminologie ausgedrückt. Ein E-Mail-Benutzer schreibt zum Beispiel Regeln in Bezug auf Nachrichten "erhalten von" und Nachrichten "erhalten nach", während ein Business Analyst in einer Versicherung Regeln in Bezug auf "Risikofaktoren" und "Deckungsbetrag" schreibt. 
-Dieser fachgebietsspezifischen Terminologie liegen die Technologieartefakte (Objekte, Datenbanktabellen und XML-Dokumente) zugrunde, welche die Regelbedingungen und Regelaktionen implementieren. Vokabulare sollen die Lücke zwischen Geschäftssemantik und Implementierung schließen.
-
-Beispielsweise könnte eine Datenbindung für einen Genehmigungsstatus auf eine bestimmte Spalte in einer bestimmten Zeile in einer bestimmten Datenbank verweisen, die als SQL-Abfrage dargestellt wird. Anstatt diese Art der komplexen Darstellung in eine Regel einzufügen, können Sie stattdessen eine Vokabulardefinition mit dem Anzeigenamen "Status" erstellen, die dieser Datenbindung zugeordnet ist. Anschließend können Sie "Status" in einer beliebigen Anzahl von Regeln verwenden, und das Regelmodul kann die entsprechenden Daten aus der Tabelle abrufen.
 Ein _Vokabular_ ist eine Auflistung von Definitionen, die aus Anzeigenamen für die in Regelbedingungen und Aktionen verwendeten IT-Objekte besteht. Vokabulardefinitionen erleichtern das Lesen, Verstehen und die gemeinsame Nutzung der Regeln von Personen in einem bestimmten Fachbereich.
+
+Vokabulare sollen die Lücke zwischen Geschäftssemantik und Implementierung schließen. Beispielsweise könnte eine Datenbindung für einen Genehmigungsstatus auf eine bestimmte Spalte in einer bestimmten Zeile in einer bestimmten Datenbank verweisen, die als SQL-Abfrage dargestellt wird. Anstatt diese Art der komplexen Darstellung in eine Regel einzufügen, können Sie stattdessen eine Vokabulardefinition mit dem Anzeigenamen "Status" erstellen, die dieser Datenbindung zugeordnet ist. Anschließend können Sie "Status" in einer beliebigen Anzahl von Regeln verwenden, und das Regelmodul kann die entsprechenden Daten aus der Tabelle abrufen.
 
 ##Regel
 
@@ -250,4 +248,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 [10]: ./media/app-service-logic-use-biztalk-rules/APIDef.PNG
 [11]: ./media/app-service-logic-use-biztalk-rules/PublicAnon.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

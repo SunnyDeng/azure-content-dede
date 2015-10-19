@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte zum Bereitstellen von Video-on-Demand-Inhalt (VoD) mit dem .NET SDK"
-	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe von .NET."
+	pageTitle="Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem .NET SDK"
+	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Übermittlung von Inhalten nach Bedarf mit Azure Media Services mithilfe von .NET."
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="09/18/2015"
+	ms.date="10/05/2015"
 	ms.author="juliako"/>
 
 
-# Erste Schritte zum Bereitstellen von Video-on-Demand-Inhalt (VoD) mit dem .NET SDK
+# Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem .NET SDK
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
@@ -34,7 +34,7 @@ Die folgenden Voraussetzungen sind zum Einstieg in die Entwicklung mit dem Media
 
 - Betriebssysteme: Windows 8 oder höher, Windows 2008 R2, Windows 7.
 - .NET Framework 4.5 oder .NET Framework 4.0
-- Visual Studio 2013, Visual Studio 2012, Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express).
+- Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder neuere Versionen.
 
 
 Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
@@ -59,7 +59,7 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
 3. Wählen Sie unter **REGION** die geografische Region aus, in der die Metadaten-Datensätze für Ihr Media Services-Konto gespeichert werden sollen. In der Dropdownliste werden nur die verfügbaren Media Services-Regionen angezeigt.
 
-4. Wählen Sie unter **SPEICHERKONTO** ein Speicherkonto aus, das als Blob-Speicher für die Medieninhalte aus Ihrem Media Services-Konto dienen soll. Sie können ein vorhandenes Speicherkonto in derselben geografischen Region wie Ihr Media Services-Konto auswählen oder ein neues Speicherkonto erstellen. Ein neues Speicherkonto wird in derselben Region erstellt.
+4. Wählen Sie unter **SPEICHERKONTO** ein Speicherkonto aus, das als BLOB-Speicher für die Medieninhalte aus Ihrem Media Services-Konto dienen soll. Sie können ein vorhandenes Speicherkonto in derselben geografischen Region wie Ihr Media Services-Konto auswählen oder ein neues Speicherkonto erstellen. Ein neues Speicherkonto wird in derselben Region erstellt.
 
 5. Wenn Sie ein neues Speicherkonto erstellt haben, geben Sie im Feld **NEUER SPEICHERKONTONAME** einen Namen für das Speicherkonto an. Für Namen von Speicherkonten gelten die gleichen Regeln wie für Namen von Media Services-Konten.
 
@@ -77,7 +77,7 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
-Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Mit adaptivem Bitrate-Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
+Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarios darin, Adaptive Bitrate Streaming an Ihre Clients zu übermitteln. Mit Adaptive Bitrate Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Adaptive Bitrate Streamingtechnologien unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
 Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
@@ -104,7 +104,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 	>
-	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Preisdetails zu Media Services](http://go.microsoft.com/fwlink/?LinkId=275107).
+	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Eine Preisübersicht finden Sie unter [Azure-Preise](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 
 
@@ -118,14 +118,9 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das Azure-Portal, wählen Sie Ihr Media Services-Konto aus, und klicken Sie anschließend auf die Schaltfläche **Schlüssel verwalten**.
 
-	 <pre><code>
-&lt;configuration>
-    &lt;appSettings>
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-    &lt;/appSettings>
-&lt;/configuration>
-</code></pre>
+	<configuration> ... <appSettings> <add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> </appSettings>
+	  
+	</configuration>&gt; </code></pre>
 
 5. Überschreiben Sie die existierenden **using**-Anweisungen am Anfang der Datei "Program.cs" durch den folgenden Code.
 
@@ -144,11 +139,11 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 ##Herstellen einer Verbindung mit dem Media Services-Konto
 
-Wenn Sie Media Services mit .NET verwenden, müssen Sie die **CloudMediaContext**-Klasse für die meisten Media Services-Programmieraufgaben verwenden, z. B. für das Herstellen einer Verbindung mit dem Media Services-Konto, das Erstellen, Aktualisieren, den Zugriff auf und das Löschen der folgenden Objekte: Medienobjekte, Objektdateien, Aufträge, Zugriffsrichtlinien, Locators usw.
+Wenn Sie Media Services mit .NET verwenden, müssen Sie die **CloudMediaContext**-Klasse für die meisten Media Services-Programmieraufgaben verwenden, z. B. für das Herstellen einer Verbindung mit dem Media Services-Konto, das Erstellen, Aktualisieren, Zugreifen auf und Löschen der folgenden Objekte: Medienobjekte, Objektdateien, Aufträge, Zugriffsrichtlinien, Locators usw.
 
-Überschreiben Sie die Standardklasse des Programms durch den folgenden Code. Im Code wird veranschaulicht, wie die Werte aus der App.config-Datei gelesen werden und das **CloudMediaContext**-Objekt erstellt wird, um eine Verbindung zu Media Services herzustellen. Weitere Informationen zum Herstellen einer Verbindung mit Media Services finden Sie unter [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/library/azure/jj129571.aspx).
+Überschreiben Sie die Standardklasse des Programms durch den folgenden Code. Im Code wird veranschaulicht, wie die Werte aus der Datei "App.config" gelesen werden und das **CloudMediaContext**-Objekt erstellt wird, um eine Verbindung zu Media Services herzustellen. Weitere Informationen zum Herstellen einer Verbindung mit Media Services finden Sie unter [Herstellen einer Verbindung zu Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/library/azure/jj129571.aspx).
 
-Die Funktion **Main** ruft Methoden auf, die weiter unten in diesem Abschnitt definiert werden.
+Die **Main**-Funktion ruft Methoden auf, die weiter unten in diesem Abschnitt definiert werden.
 
     class Program
     {
@@ -199,20 +194,20 @@ Die Funktion **Main** ruft Methoden auf, die weiter unten in diesem Abschnitt de
 
 ##Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei
 
-In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtssammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten. Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert. Die Dateien im Medienobjekt heißen **Medienobjektdateien**.
+In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtssammlungen, Texttitel und Untertiteldateien (sowie die Metadaten zu diesen Dateien) enthalten. Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert. Die Dateien im Medienobjekt heißen **Medienobjektdateien**.
 
 Die unten definierte **UploadFile**-Methode ruft **CreateFromFile** auf (in den .NET SDK-Erweiterungen definiert). **CreateFromFile** erstellt ein neues Medienobjekt, in das die angegebene Quelldatei hochgeladen wird.
 
-Die **CreateFromFile**-Methode übernimmt **AssetCreationOptions**, wodurch Sie eine der folgenden Erstellungsoptionen für Medienobjekte angeben können:
+Die **CreateFromFile**-Methode übernimmt **AssetCreationOptions**, sodass Sie eine der folgenden Erstellungsoptionen für Medienobjekte angeben können:
 
 - **None:** Es wird keine Verschlüsselung verwendet. Dies ist der Standardwert. Beachten Sie, dass bei Verwendung dieser Option Ihre Inhalte während der Übertragung oder des Verbleibs im Speicher nicht geschützt sind. Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln, verwenden Sie diese Option.
-- **StorageEncrypted**: Verwenden Sie diese Option, um Ihre unverschlüsselten Inhalte lokal mithilfe der AES-256-Bit-Verschlüsselung (Advanced Encryption Standard) zu verschlüsseln, von der sie dann in Azure Storage hochgeladen werden, wo sie verschlüsselt im Ruhezustand gespeichert werden. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
+- **StorageEncrypted**: Verwenden Sie diese Option, um Ihre unverschlüsselten Inhalte lokal mithilfe der AES-256-Bit-Verschlüsselung (Advanced Encryption Standard) zu verschlüsseln. Anschließend werden sie in Azure Storage hochgeladen, wo sie verschlüsselt im Ruhezustand gespeichert werden. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
 - **CommonEncryptionProtected**: Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch allgemeine Verschlüsselung oder PlayReady-DRM geschützt sind (z. B. mit PlayReady-DRM geschütztem Smooth Streaming).
 - **EnvelopeEncryptionProtected**: Verwenden Sie diese Option, wenn Sie mit AES verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt sein müssen.
 
 Mit der **CreateFromFile**-Methode können Sie auch einen Rückruf angeben, um den Fortschritt des Dateiuploads zu melden.
 
-Im folgenden Beispiel wird **None** für die Medienobjektoptionen angegeben.
+Im folgenden Beispiel wird **Kein** für die Medienobjektoptionen angegeben.
 
 Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 
@@ -236,14 +231,14 @@ Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 
 Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder Auftrag besteht aus atomaren Aufgaben, welche die eigentliche Arbeit für die Medienobjektdatei leisten.
 
-Wie bereits erwähnt, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarios darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Media Services können eine Reihe von MP4-Dateien mit adaptiver Bitrate dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
+Wie bereits erwähnt, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarios darin, Adaptive Bitrate Streaming an Ihre Clients zu übermitteln. Media Services können eine Reihe von MP4-Dateien mit adaptiver Bitrate dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren oder Transcodieren Ihrer Zwischendatei (Quelldatei) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate  
 - Abrufen von mindestens einer Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen
 
-Der folgende Code zeigt, wie Sie einen Codierungsauftrag senden. Der Auftrag enthält einen Task zum Transcodieren der Zwischendatei in eine Reihe von adaptiven MP4s mit **Azure Media Encoder**. Der Code sendet den Auftrag und wartet, bis er abgeschlossen ist.
+Der folgende Code zeigt, wie Sie einen Codierungsauftrag senden. Der Auftrag enthält einen Task zum Transcodieren der Zwischendatei in eine Reihe von adaptiven MP4-Dateien mit **Azure Media Encoder**. Der Code sendet den Auftrag und wartet, bis er abgeschlossen ist.
 
 Wenn der Auftrag abgeschlossen ist, sind Sie in der Lage, das Medienobjekt zu streamen oder MP4-Dateien, die als Ergebnis der Transcodierung erstellt wurden, progressiv herunterzuladen. Beachten Sie, dass Sie keine Streamingeinheiten abrufen müssen, um MP4-Dateien progressiv herunterzuladen.
 
@@ -418,13 +413,18 @@ Verwenden Sie zum Streamen von Videos [Azure Media Services Player](http://amspl
 Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome oder Safari).
 
 
+##Nächste Schritte
 
-##Media Services-Lernpfade
+###Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+### Suchen Sie etwas anderes?
+
+Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
 
 <!-- Anchors. -->
@@ -434,4 +434,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

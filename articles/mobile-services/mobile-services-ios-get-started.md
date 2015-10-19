@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="07/28/2015"
+	ms.date="10/05/2015"
 	ms.author="krisragh"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
@@ -24,7 +24,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen
 
 In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts mit serverseitiger Geschäftslogik in .NET finden Sie in der [.NET-Back-End-Version] dieses Themas.
 
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20 target="\_blank").
+> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20).
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
 
@@ -34,9 +34,9 @@ In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfach
 
 Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunden ist, eine einfache Schnellstartanleitung im Verwaltungsportal befolgen:
 
-1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-2. Klicken Sie auf der Registerkarte "Quickstart" unter **Eine Plattform wählen** auf **iOS**, und erweitern Sie die Option **Eine neue iOS-App erstellen**. Dadurch werden die Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
+2. Klicken Sie auf der Registerkarte "Schnellstart" unter **Eine Plattform wählen** auf **iOS**, und erweitern Sie die Option **Eine neue iOS-App erstellen**. Dadurch werden die Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
 
 3. Klicken Sie auf **TodoItem-Tabelle erstellen**, um eine Tabelle zum Speichern von App-Daten zu erstellen.
 
@@ -50,8 +50,6 @@ Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunde
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
-
-* [Hinzufügen von Mobile Services zu einer vorhandenen App] <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
 * [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
@@ -77,7 +75,6 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
 
 <!-- URLs. -->
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-data.md
 [Erste Schritte mit der Synchronisierung von Offlinedaten]: mobile-services-ios-get-started-offline-data.md
 [Hinzufügen von Authentifizierung zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-push.md
@@ -88,4 +85,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET-Back-End-Version]: mobile-services-dotnet-backend-ios-get-started.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="10/05/2015" 
 	ms.author="awills"/>
 
 #  Application Insights: Codebeispiele und exemplarische Vorgehensweisen
@@ -35,7 +35,7 @@ Dies ist eine Zusammenstellung von Codebeispielen, die die Verwendung von [Visua
 Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-insights-export-telemetry.md) Sie die Daten in den Speicher und analysieren und verarbeiten sie dort.
 
 * [Exportieren nach Power BI](app-insights-export-power-bi.md) 
-* [Exportieren in SQL über eine Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
+* [Analysieren exportierter Daten mithilfe einer Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
 * [Exportieren in SQL mit Stream Analytics](app-insights-code-sample-export-sql-stream-analytics.md)
 * [Aktivieren der Telemetrie für Microsoft CRM](app-insights-sample-mscrm.md)
 
@@ -53,4 +53,4 @@ Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-in
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

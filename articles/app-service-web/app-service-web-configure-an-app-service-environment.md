@@ -20,9 +20,9 @@
 
 ## Übersicht ##
 
-App Service-Umgebungen sind eine neue Funktion des Premium-Tarifs, die in der Vorschau angeboten wird. Sie bietet neue Funktionen für die Skalierung und den Netzwerkzugriff. Diese neue Skalierungsfunktion erlaubt das Platzieren einer Instanz des Azure App Service in Ihrem VNET. Wenn Sie mit der Funktion der App Service-Umgebung nicht vertraut sind, lesen Sie das Dokument [Was ist eine App Service-Umgebung]/app-service-app-service-environment-intro.md). Informationen zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
+App Service-Umgebungen sind ein neues Feature des Premium-Tarifs im Azure App Service, das neue Funktionen für die Skalierung und den Netzwerkzugriff bietet. Diese neue Skalierungsfunktion erlaubt das Platzieren einer Instanz des Azure App Service in Ihrem VNET. Wenn Sie mit der Funktion der App Service-Umgebung nicht vertraut sind, lesen Sie das Dokument [Was ist eine App Service-Umgebung](app-service-app-service-environment-intro.md). Informationen zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
 
-Im Allgemeinen besteht eine App Service-Umgebung aus mehreren Hauptkomponenten:
+Allgemein besteht eine App Service-Umgebung aus mehreren Hauptkomponenten:
 
 - Compute-Ressourcen, die im gehosteten Dienst der Azure App-Umgebung ausgeführt werden
 - Speicher
@@ -133,4 +133,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

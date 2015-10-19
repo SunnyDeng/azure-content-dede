@@ -22,7 +22,7 @@
 
 ##Übersicht
 
-Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines .NET-Clients für mobile Dienste in Azure, in Windows Store-Apps und Windows Phone-Apps. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst das Lernprogramm [Mobile Services-Schnellstart](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md) oder [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md) absolvieren.
+Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines .NET-Clients für mobile Dienste in Azure, in Windows Store-Apps und Windows Phone-Apps. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst das Lernprogramm [Mobile Services-Schnellstart](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md) absolvieren.
 
 [AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
@@ -742,7 +742,6 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [Take]: http://msdn.microsoft.com/library/windowsazure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
-[Call a custom API from the client]: mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api.md
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -124,4 +124,4 @@ Als Nächstes Sie nehmen eine Änderung an der API-Definition vor und sehen sich
 Sie haben gesehen, wie die Visual Studio-Funktionen für die direkte Bereitstellung die Iteration und Bereitstellung vereinfachen und es Ihnen ermöglichen, die ordnungsgemäße Funktion der API zu testen. Im [nächsten Lernprogramm](../app-service-dotnet-remotely-debug-api-app.md) erfahren Sie, wie Sie die API-App debuggen, während sie in Azure ausgeführt wird.
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

@@ -7,7 +7,14 @@
 	manager="jwhit"
 	editor="tysonn"/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/13/2015" ms.author="jimpark"; "aashishr"/>
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/05/2015"
+	ms.author="jimpark; aashishr; giridham"/>
 
 
 # Verwalten von Azure Backup-Tresoren und -Servern
@@ -37,11 +44,14 @@ Klicken Sie auf **Registrierte Elemente**, um die Namen der Server anzuzeigen, d
 
 ![Server gelöscht](./media/backup-azure-manage-windows-server/RS_deletedserver.png)
 
-Hier können Sie die folgenden Aufgaben ausführen: - **Erneute Registrierung zulassen**: Wenn diese Option für einen Server ausgewählt ist, können Sie den **Registrierungs-Assistenten** des Agents verwenden, um den Server erneut für den Sicherungstresor zu registrieren. Eine erneute Registrierung ist möglicherweise nötig, wenn im Zertifikat ein Fehler auftritt oder wenn ein Server erneut erstellt werden muss. Die erneute Registrierung ist nur einmal pro Servername zulässig. - **Löschen**: Löscht einen Server aus dem Sicherungstresor. Alle gespeicherten Daten dieses Servers werden sofort gelöscht.
+Jetzt können Sie folgende Aufgaben ausführen:
+
+- **Erneute Registrierung zulassen** – Wenn diese Option für einen Server ausgewählt ist, können Sie den **Registrierungs-Assistenten** des Agents verwenden, um den Server erneut für den Sicherungstresor zu registrieren. Eine erneute Registrierung ist möglicherweise nötig, wenn im Zertifikat ein Fehler auftritt oder wenn ein Server erneut erstellt werden muss.
+- **Löschen** – Dies wird verwendet, um einen Server aus dem Sicherungstresor zu löschen. Alle gespeicherten Daten dieses Servers werden sofort gelöscht.
 
 ## Nächste Schritte
 - [Wiederherstellen von Windows-Servern oder Windows-Clients aus Azure](backup-azure-restore-windows-server.md)
-- Weitere Informationen zu Azure Backup finden Sie unter [Übersicht über die Windows Azure-Sicherung](backup-introduction-to-azure-backup.md).
+- Weitere Informationen zu Azure Backup finden Sie unter [Azure Backup – Übersicht](backup-introduction-to-azure-backup.md).
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

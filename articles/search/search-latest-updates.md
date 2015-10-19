@@ -13,12 +13,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="10/01/2015" 
 	ms.author="heidist"/>
 
 #Neuerungen im aktuellen Update zu Azure Search#
 
-Azure Search ist nun allgemein verfügbar und bietet für die unterstützten Konfigurationen der [Version 2015-02-28 der API](https://msdn.microsoft.com/library/azure/dn798935.aspx) eine Servicelevel-Vereinbarung (SLA) mit einer Verfügbarkeit von 99,9 %.
+Azure Search ist allgemein verfügbar und bietet für die unterstützten Konfigurationen der [Version 2015-02-28 der API](https://msdn.microsoft.com/library/azure/dn798935.aspx) eine Servicelevel-Vereinbarung (SLA) mit einer Verfügbarkeit von 99,9 %.
 
 ##Versionierung und Freigabe der Funktionen
 
@@ -27,7 +27,15 @@ Die Funktionen werden gemeinsam oder separat über die [REST-API](https://msdn.m
 Sowohl die .NET-Bibliothek als auch die REST-APIs liegen in mehreren Versionen vor. Die älteren APIs funktionieren weiterhin, auch nach Einführung neuerer Features. Nähere Informationen zu unseren Versionierungsrichtlinien erhalten Sie im Artikel [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung des Suchdienstes).
 
 
+##API-Version 2015-02-28-Preview
+**Wiederveröffentlicht: September 2015**
+
+Diese Version bietet neue [Unterstützung der Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx), die für die [Preview-Version der REST-API für den Azure Search-Dienst](search-api-2015-02-28-preview.md) verwendet werden kann. Um die neue Syntax zu verwenden, müssen Sie in einem Search Documents-Vorgang den `queryType` angeben.
+
+Außerdem sind die beiden folgenden Funktionen jetzt nicht mehr Funktionen der Vorschauversion, sondern Teil der offiziellen API in MSDN: – Natural Language Processors – POST in Suchvorgängen, Vorschlägen und Suchabfragen
+
 ##.NET-SDK 0.10.0-preview
+**Veröffentlicht im August 2015**
 
 Dies ist die zweite Iteration der .NET-Clientbibliothek Microsoft.Azure.Search.dll. In dieser Version wurde die Unterstützung zum Erstellen, Verwalten und Verwenden von Indexern über .NET-Klassen eingeführt. Für Azure SQL-Indexer wurde zudem die Unterstützung für die Indizierung geografischer Punkte eingeführt.
 
@@ -117,4 +125,4 @@ Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Ve
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

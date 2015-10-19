@@ -97,7 +97,7 @@ Wenn Sie über eine vorhandene Datenbank verfügen, prüfen Sie, ob diese in SQL
 
 Wenn Ihre Datenbank nicht in SQL-Datenbank V12 gehostet wird, finden Sie weitere Informationen unter [Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12](sql-database-v12-plan-prepare-upgrade.md), und besuchen Sie dann das Azure-Portal, um die Datenbank nach SQL-Datenbank V12 zu migrieren.
 
-Alternativ können Sie eine neue Datenbank in SQL-Datenbank V12 erstellen, indem Sie die unter [Erstellen einer Datenbank in SQL-Datenbank V12](sql-database-create.md) aufgeführten Schritte ausführen. **Tipp**: Lesen Sie die Informationen im nächsten Schritt, bevor Sie ein Abonnement für Ihre neue Datenbank auswählen.
+Alternativ können Sie eine neue Datenbank in SQL-Datenbank V12 erstellen, indem Sie die unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md) aufgeführten Schritte ausführen. **Tipp**: Lesen Sie die Informationen im nächsten Schritt, bevor Sie ein Abonnement für Ihre neue Datenbank auswählen.
 
 ## 3\. Optional: Zuordnen oder Ändern des aktiven Verzeichnisses für Ihr Azure-Abonnement
 
@@ -322,4 +322,4 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

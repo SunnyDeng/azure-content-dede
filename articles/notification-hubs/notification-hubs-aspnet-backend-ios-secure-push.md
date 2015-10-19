@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="10/05/2015"
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs – Sichere Pushbenachrichtigungen
@@ -41,7 +41,7 @@ Der generelle Ablauf sieht folgendermaßen aus:
 
 Beachten Sie, dass im obigen Ablauf (und in diesem Lernprogramm) angenommen wird, dass das Gerät ein Authentifizierungstoken im lokalen Speicher speichert, nachdem sich der Benutzer angemeldet hat. Dies gewährleistet einen vollständig nahtlosen Ablauf, da das Gerät mit diesem Token die sichere Nutzlast der Benachrichtigung abrufen kann. Wenn Ihre Anwendung keine Authentifizierungstoken auf dem Gerät speichert oder diese Token ablaufen können, sollte die Geräte-App nach Erhalt der Benachrichtigung eine generische Benachrichtigung anzeigen, in der der Benutzer zum Starten der App aufgefordert wird. Anschließend authentifiziert die App den Benutzer und zeigt die Nutzlast der Benachrichtigung an.
 
-Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das sichere Senden einer Pushbenachrichtigung. Es baut auf dem Lernprogramm **Benachrichtigen von Benutzern** auf, daher sollten Sie die Schritte in diesem Lernprogramm zuerst durchführen.
+Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das sichere Senden einer Pushbenachrichtigung. Es baut auf dem Lernprogramm [Benachrichtigen von Benutzern](notification-hubs-aspnet-backend-ios-notify-users.md) auf, daher sollten Sie die Schritte in diesem Lernprogramm zuerst durchführen.
 
 > [AZURE.NOTE]In diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (iOS)](notification-hubs-ios-get-started.md) beschrieben erstellt und konfiguriert haben.
 
@@ -158,4 +158,4 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-secure-push/secure-push-ios-1.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

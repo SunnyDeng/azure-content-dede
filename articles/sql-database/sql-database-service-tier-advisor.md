@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Tarifempfehlungen für Azure SQL-Datenbank" 
-   description="Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank empfehlen. Tarife beschreiben die Dienstebene und die Leistungsebene einer SQL-Datenbank." 
+   description="Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung des Workloads einer vorhandenen Azure SQL-Datenbank empfehlen. Tarife beschreiben die Dienstebene und die Leistungsebene einer SQL-Datenbank." 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="09/22/2015"
+   ms.date="10/02/2015"
    ms.author="sstein"/>
 
 # Tarifempfehlungen für SQL-Datenbank
@@ -27,18 +27,22 @@ Sie erhalten Tarifempfehlungen während der folgenden Aufgaben:
 
 - [Ändern der Dienstebene und Leistungsstufe (Tarif) einer SQL-Datenbank](sql-database-scale-up.md)
 - [Upgraden von Azure SQL-Server auf V12](sql-database-v12-upgrade.md)
+- Navigieren Sie zum V12-Server. Wenn Ihre Datenbanken [von einem Pool für elastische Datenbanken profitieren](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools), wird auf dem Serverblatt eine Meldung mit einem empfohlenen Pool angezeigt. Klicken Sie auf die Meldung, um den empfohlenen Pool zu erstellen:
 - [Erstellen eines elastischen Datenbankpools](sql-database-elastic-pool.md#elastic-database-pool-pricing-tier-recommendations)
+
+
+
 
 
 ## Übersicht
 
-Der SQL-Datenbak-Dienst analysiert die aktuellen Leistungs- und Featureanforderungen durch Bewertung der historischen Ressourcennutzung für eine SQL-Datenbank. Darüber hinaus wird der minimal zulässige Tarif basierend auf der Größe der Datenbank und der aktivierten Funktionen für die [Geschäftskontinuität](https://msdn.microsoft.com/library/azure/hh852669.aspx) bestimmt.
+Der SQL-Datenbak-Dienst analysiert die aktuellen Leistungs- und Featureanforderungen durch Bewertung der historischen Ressourcennutzung für eine SQL-Datenbank. Darüber hinaus wird der minimal zulässige Tarif basierend auf der Größe der Datenbank und der aktivierten Funktionen für die [Geschäftskontinuität](sql-database-business-continuity.md) bestimmt.
 
-Diese Informationen werden analysiert, und der Tarif und die Leistungsstufe, die für die Ausführung der typischen Arbeitsauslastung der Datenbank und die Aufrechterhaltung ihrer aktuellen Featuregruppe am besten geeignet sind, werden empfohlen.
+Diese Informationen werden analysiert, und der Tarif und die Leistungsstufe, die für die Ausführung des typischen Workloads der Datenbank und die Aufrechterhaltung ihrer aktuellen Featuregruppe am besten geeignet sind, werden empfohlen.
 
 - Der Dienst überprüft die historischen Daten der letzten 15 bis 30 Tage (Ressourcennutzung, Datenbankgröße und Datenbankaktivität) und führt einen Vergleich zwischen der Menge der verbrauchten Ressourcen und den tatsächlichen Einschränkungen der aktuell verfügbaren Dienstebenen und Leistungsstufen durch.
-- Daten werden in Intervallen von 15 Sekunden analysiert, wobei das Resultset jedes Intervalls in die vorhandene Dienstebene und Leistungsstufe kategorisiert wird, welche für die Handhabung der Arbeitsauslastung dieses Resultsets am besten geeignet sind.
-- Diese 15-Sekunden-Beispiele werden dann in die breitere Analyse von 15 bis 30 Tagen aggregiert, und die Dienstebene und Leistungsstufe, die 95 % der historischen Arbeitsauslastung optimal bewältigen können, werden empfohlen.
+- Daten werden in Intervallen von 15 Sekunden analysiert, wobei das Resultset jedes Intervalls in die vorhandene Dienstebene und Leistungsstufe kategorisiert wird, welche für die Handhabung des Workloads dieses Resultsets am besten geeignet sind.
+- Diese 15-Sekunden-Beispiele werden dann in die breitere Analyse von 15 bis 30 Tagen aggregiert, und die Dienstebene und Leistungsstufe, die 95 % des historischen Workloads optimal bewältigen können, werden empfohlen.
 
 ### Recommendations
 
@@ -48,16 +52,15 @@ Basierend auf Ihrer Datenbanknutzung können derzeit 2 Kategorien von Empfehlung
 | Empfehlungen | Beschreibung |
 | :--- | :--- |
 | Upgrade | Führen Sie ein Upgrade auf eine neue Ebene durch. |
-| Nicht verfügbar | Eine Datenbank erfordert eine minimale Arbeitsauslastung oder ungefähr 14 Tage Aktivität. Es sind nicht genügend Daten vorhanden, um eine gültige Empfehlung abzugeben. |
+| Nicht verfügbar | Eine Datenbank erfordert einen minimalen Workload oder ungefähr 14 Tage Aktivität. Es sind nicht genügend Daten vorhanden, um eine gültige Empfehlung abzugeben. |
 
 ## Abrufen von Tarifempfehlungen
 
-Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, und klicken Sie dann auf die Kachel **Tarif** . (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
+Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, und klicken Sie dann auf die Kachel **Tarif** . (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf Azure SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
-2. Klicken Sie im linken Menü auf **DURCHSUCHEN**.
-3. Klicken Sie im Blatt **Durchsuchen** auf **SQL-Datenbanken**.
-4. Klicken Sie im Blatt **SQL-Datenbanken** auf die Datenbank, die der Dienst analysieren soll.
+2. Klicken auf **DURCHSUCHEN** > **SQL-Datenbanken**.
+4. Klicken Sie im Blatt **SQL-Datenbanken** auf die Datenbank, für die Sie eine Empfehlung anzeigen möchten:
 
     ![Datenbank auswählen][1]
 
@@ -97,4 +100,4 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

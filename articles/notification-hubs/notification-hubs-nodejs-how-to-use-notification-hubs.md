@@ -17,11 +17,7 @@
 	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs mit Node.js
-
-> [AZURE.SELECTOR]
-- [Java](notification-hubs-java-backend-how-to.md)
-- [PHP](notification-hubs-php-backend-how-to.md)
-- [Python](notification-hubs-python-backend-how-to)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
 ##Übersicht
 
@@ -217,4 +213,4 @@ Nachdem Sie nun mit der Verwendung von Notification Hubs grundlegend vertraut si
   [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/
   [Node.js Web Application with Storage]: /develop/nodejs/tutorials/web-site-with-storage/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

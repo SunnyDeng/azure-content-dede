@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="09/16/2015"
+	ms.date="10/07/2015"
 	ms.author="juliako"/>
 
 #Verwenden der dynamischen AES-128-Verschlüsselung und des Schlüsselübermittlungsdiensts
@@ -66,81 +66,13 @@ Wenn Sie die Übermittlungsrichtlinie eines Medienobjekts hinzufügen oder aktua
 
 Damit Sie Ihre Videos verwalten, codieren und streamen können, müssen Sie Ihre Inhalte zuerst in Microsoft Azure Media Services hochladen. Nachdem dies geschehen ist, sind Ihre Inhalte sicher in der Cloud zur weiteren Verarbeitung und zum weiteren Streaming gespeichert.
 
-Der folgende Codeausschnitt zeigt, wie ein Medienobjekt erstellt und die angegebene Datei dann in das Medienobjekt hochgeladen wird.
-	
-	static public IAsset UploadFileAndCreateAsset(string singleFilePath)
-	{
-	    if(!File.Exists(singleFilePath))
-	    {
-	        Console.WriteLine("File does not exist.");
-	        return null;
-	    }
-	
-	    var assetName = Path.GetFileNameWithoutExtension(singleFilePath);
-	    IAsset inputAsset = _context.Assets.Create(assetName, AssetCreationOptions.StorageEncrypted);
-	
-	    var assetFile = inputAsset.AssetFiles.Create(Path.GetFileName(singleFilePath));
-	
-	    Console.WriteLine("Created assetFile {0}", assetFile.Name);
-	
-	    var policy = _context.AccessPolicies.Create(
-	                            assetName,
-	                            TimeSpan.FromDays(30),
-	                            AccessPermissions.Write | AccessPermissions.List);
-	
-	    var locator = _context.Locators.CreateLocator(LocatorType.Sas, inputAsset, policy);
-	
-	    Console.WriteLine("Upload {0}", assetFile.Name);
-	
-	    assetFile.Upload(singleFilePath);
-	    Console.WriteLine("Done uploading {0}", assetFile.Name);
-	
-	    locator.Delete();
-	    policy.Delete();
-	
-	    return inputAsset;
-	}
+Ausführliche Informationen finden Sie unter [Hochladen von Dateien in ein Media Services-Konto ](media-services-dotnet-upload-files.md).
 
 ##<a id="encode_asset"></a>Codieren eines Medienobjekts, das die Sammlung von MP4-Dateien mit adaptiver Bitrate enthält
 
-Bei der dynamischen Verschlüsselung müssen Sie nur ein Medienobjekt erstellen, das eine Sammlung aus MP4-Dateien mit mehreren Bitraten oder Smooth Streaming-Quelldateien mit mehreren Bitraten enthält. Dann wird durch den bedarfsgesteuerten Streamingserver auf Basis des in der Manifest- oder Fragmentanforderung angegebenen Formats sichergestellt, dass Sie den Datenstrom im ausgewählten Protokoll erhalten. So müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Die entsprechende Antwort wird von Media Services basierend auf Clientanforderungen erstellt und verfügbar gemacht. Weitere Informationen finden Sie unter [Dynamische Paketerstellung](media-services-dynamic-packaging-overview.md).
+Bei der dynamischen Verschlüsselung müssen Sie nur ein Medienobjekt erstellen, das eine Sammlung aus MP4-Dateien mit mehreren Bitraten oder Smooth Streaming-Quelldateien mit mehreren Bitraten enthält. Dann wird durch den bedarfsgesteuerten Streamingserver auf Basis des in der Manifest- oder Fragmentanforderung angegebenen Formats sichergestellt, dass Sie den Datenstrom im ausgewählten Protokoll erhalten. So müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Die entsprechende Antwort wird von Media Services basierend auf Clientanforderungen erstellt und verfügbar gemacht. Weitere Informationen finden Sie unter [Dynamische Paketerstellung – Übersicht](media-services-dynamic-packaging-overview.md).
 
-Der folgende Codeausschnitt zeigt das Codieren eines Medienobjekts in eine adaptive MP4-Bitratensammlung:
-	
-	static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
-	{
-	    var encodingPreset = "H264 Adaptive Bitrate MP4 Set 720p";
-	
-	    IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
-	                            inputAsset.Name,
-	                            encodingPreset));
-	
-	    var mediaProcessors = 
-	        _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder")).ToList();
-	
-	    var latestMediaProcessor = 
-	        mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
-	
-	
-	
-	    ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
-	    encodeTask.InputAssets.Add(inputAsset);
-	    encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset), AssetCreationOptions.StorageEncrypted);
-	
-	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
-	    job.Submit();
-	    job.GetExecutionProgressTask(CancellationToken.None).Wait();
-	
-	    return job.OutputMediaAssets[0];
-	}
-	
-	static private void JobStateChanged(object sender, JobStateChangedEventArgs e)
-	{
-	    Console.WriteLine(string.Format("{0}\n  State: {1}\n  Time: {2}\n\n",
-	        ((IJob)sender).Name,
-	        e.CurrentState,
-	        DateTime.UtcNow.ToString(@"yyyy_M_d__hh_mm_ss")));
-	}
+Informationen zum Codieren finden Sie unter [Codieren eines Assets mit Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard.md).
 
 ##<a id="create_contentkey"></a>Erstellen eines Inhaltsschlüssels und Zuordnen des Schlüssels zum codierten Medienobjekt
 
@@ -148,7 +80,7 @@ In Media Services enthält der Inhaltsschlüssel den Schlüssel, mit dem ein Med
 
 Ausführliche Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey.md).
 
-##<a id="configure_key_auth_policy"></a>Konfigurieren der Autorisierungsrichtlinie des Inhaltsschlüssels.
+##<a id="configure_key_auth_policy"></a>Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel
 
 Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Inhaltsschlüssel-Authentifizierungsrichtlinie muss von Ihnen konfiguriert und vom Client (Player) erfüllt werden, damit der Schlüssel an den Client übermittelt wird. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: offen, Tokeneinschränkung oder IP-Einschränkung.
 
@@ -165,7 +97,7 @@ Konfigurieren Sie die Übermittlungsrichtlinie für Medienobjekte. Die Konfigura
 
 Weitere Informationen finden Sie unter [Konfigurieren der Übermittlungsrichtlinie für Medienobjekte](media-services-rest-configure-asset-delivery-policy.md).
 
-##<a id="create_locator"></a>Erstellen eines "OnDemand"-Locators, um eine Streaming-URL zu erhalten
+##<a id="create_locator"></a>Erstellen eines OnDemand-Locators, um eine Streaming-URL abzurufen
 
 Sie müssen die Streaming-URL für Smooth Streaming, DASH oder HLS für Ihre Benutzer bereitstellen.
 
@@ -188,7 +120,7 @@ Rufen Sie ein Testtoken ab, das auf der Tokeneinschränkung basiert, die für di
 	string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 
-Sie können den [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) zum Testen Ihres Streams verwenden.
+Sie können den [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) zum Testen des Datenstroms verwenden.
 
 ##<a id="client_request"></a>Wie kann der Client einen Schlüssel vom Schlüsselübermittlungsdienst anfordern?
 
@@ -196,7 +128,7 @@ Im vorherigen Schritt haben Sie die URL erstellt, die auf eine Manifestdatei ver
 
 ###Manifestdateien
 
-Der Client muss den URL-Wert aus der Manifestdatei extrahieren. Der URL-Wert enthält außerdem die Inhaltsschlüssel-ID ("kid"). Dann versucht der Client, den Verschlüsselungsschlüssel vom Schlüsselübermittlungsdienst abzurufen. Außerdem muss der Client den IV-Wert extrahieren und damit den Stream entschlüsseln. Der folgende Ausschnitt zeigt das <Protection>-Element des Smooth Streaming-Manifests.
+Der Client muss den URL-Wert aus der Manifestdatei extrahieren. Der URL-Wert enthält außerdem die Inhaltsschlüssel-ID ("kid"). Dann versucht der Client, den Verschlüsselungsschlüssel vom Schlüsselübermittlungsdienst abzurufen. Außerdem muss der Client den IV-Wert extrahieren und damit den Datenstrom entschlüsseln. Der folgende Ausschnitt zeigt das <Protection>-Element des Smooth Streaming-Manifests.
 
 	<Protection>
 	  <ProtectionHeader SystemID="B47B251A-2409-4B42-958E-08DBAE7B4EE9">
@@ -671,4 +603,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

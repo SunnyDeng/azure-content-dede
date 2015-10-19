@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwenden von Service Bus-Warteschlangen (Java) | Microsoft Azure"
+	pageTitle="Verwenden von Service Bus-Warteschlangen mit Java | Microsoft Azure"
 	description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure. Die Codebeispiele wurden in Java geschrieben."
 	services="service-bus"
 	documentationCenter="java"
@@ -13,31 +13,36 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="06/19/2015"
+	ms.date="10/07/2015"
 	ms.author="sethm"/>
 
 # Verwenden von Service Bus-Warteschlangen
 
-In diesem Leitfaden wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java][]. Die Szenarien behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
+In diesem Artikel wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java][]. Die Szenarios behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
 
 [AZURE.INCLUDE [service-bus-java-how-to-create-queue](../../includes/service-bus-java-how-to-create-queue.md)]
 
 ## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
-Stellen Sie sicher, dass Sie das [Azure SDK für Java][] vor dem Erstellen dieses Beispiels installiert haben. Wenn Sie Eclipse verwenden, können Sie das [Azure Toolkit für Eclipse][] installieren, das das Azure SDK für Java enthält. Sie können dann die **Microsoft Azure-Bibliotheken für Java** zu Ihrem Projekt hinzufügen: ![](media/service-bus-java-how-to-use-queues/eclipselibs.png)
 
-Fügen Sie die folgenden import-Anweisungen am Anfang der Java-Datei ein:
+Stellen Sie sicher, dass Sie das [Azure SDK für Java][] vor dem Erstellen dieses Beispiels installiert haben. Wenn Sie Eclipse verwenden, können Sie das [Azure Toolkit für Eclipse][] installieren, das das Azure SDK für Java enthält. Sie können dann Ihrem Projekt die **Microsoft Azure-Bibliotheken für Java** hinzufügen:
 
-	// Include the following imports to use Service Bus APIs
-	import com.microsoft.windowsazure.services.servicebus.*;
-	import com.microsoft.windowsazure.services.servicebus.models.*;
-	import com.microsoft.windowsazure.core.*;
-	import javax.xml.datatype.*;
+![](media/service-bus-java-how-to-use-queues/eclipselibs.png)
 
-## Erstellen von Warteschlangen
+Fügen Sie die folgenden `import`-Anweisungen am Anfang der Java-Datei ein:
 
-Sie können Verwaltungsvorgänge für Service Bus-Warteschlangen über die Klasse **ServiceBusContract** durchführen. **ServiceBusContract**-Objekte werden mit einer entsprechenden Konfiguration erstellt, welche die SAS-Token mit Berechtigungen für deren Verwaltung kapselt. Die **ServiceBusContract**-Klasse ist der einzige Kommunikationspunkt mit Azure.
+```
+// Include the following imports to use Service Bus APIs
+import com.microsoft.windowsazure.services.servicebus.*;
+import com.microsoft.windowsazure.services.servicebus.models.*;
+import com.microsoft.windowsazure.core.*;
+import javax.xml.datatype.*;
+```
 
-Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und Löschen von Warteschlangen. Das folgende Beispiel zeigt, wie Sie mit einem **ServiceBusService**-Objekt eine Tabelle mit dem Namen "TestQueue" in einem Namespace mit dem Namen "HowToSample" erstellen können:
+## Erstellen einer Warteschlange
+
+Sie können Verwaltungsvorgänge für Service Bus-Warteschlangen über die Klasse **ServiceBusContract** durchführen. **ServiceBusContract**-Objekte werden mit einer entsprechenden Konfiguration erstellt, die die SAS-Token mit Berechtigungen für deren Verwaltung kapselt. Die **ServiceBusContract**-Klasse ist der einzige Kommunikationspunkt mit Azure.
+
+Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und Löschen von Warteschlangen. Das folgende Beispiel zeigt, wie Sie mit einem **ServiceBusService**-Objekt eine Warteschlange mit dem Namen "TestQueue" in einem Namespace mit dem Namen "HowToSample" erstellen können:
 
 		Configuration config =
 			ServiceBusConfiguration.configureWithSASAuthentication(
@@ -60,7 +65,7 @@ Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und
         System.exit(-1);
     }
 
-Mit den Methoden in QueueInfo können Sie Eigenschaften der Warteschlange einstellen (z. B. den Standardwert "time-to-live", der auf an die Warteschlange gesendete Nachrichten angewendet wird). Das folgenden Beispiel zeigt, wie eine Warteschlange mit der Bezeichnung "TestQueue" mit einer maximalen Größe von 5 GB erstellt wird:
+Mit den Methoden in **QueueInfo** können Sie Eigenschaften der Warteschlange einstellen (z. B. den Standardwert "time-to-live" (TTL), der auf an die Warteschlange gesendete Nachrichten angewendet wird). Das folgende Beispiel zeigt, wie eine Warteschlange mit der Bezeichnung `TestQueue` mit einer maximalen Größe von 5 GB erstellt wird:
 
     long maxSizeInMegabytes = 5120;
     QueueInfo queueInfo = new QueueInfo("TestQueue");
@@ -71,7 +76,7 @@ Sie können die **listQueues**-Methode von **ServiceBusContract**-Objekten verwe
 
 ## Senden von Nachrichten an eine Warteschlange
 
-Um eine Nachricht an eine Service Bus-Warteschlange zu senden, benötigt Ihre Anwendung ein **ServiceBusContract**-Objekt. Der folgende Code zeigt, wie Sie eine Nachricht an die zuvor erstellte Warteschlange "TestQueue" im Dienstnamespace "HowToSample" schicken können:
+Um eine Nachricht an eine Service Bus-Warteschlange zu senden, ruft Ihre Anwendung ein **ServiceBusContract**-Objekt ab. Der folgende Code zeigt, wie Sie eine Nachricht für die zuvor im Namespace `HowToSample` erstellte Warteschlange `TestQueue` senden können.
 
     try
     {
@@ -85,9 +90,9 @@ Um eine Nachricht an eine Service Bus-Warteschlange zu senden, benötigt Ihre An
         System.exit(-1);
     }
 
-Die Nachrichten, die an die Service Bus-Warteschlangen gesendet werden (und von diesen empfangen werden), sind Instanzen der Klasse **BrokeredMessage**. **BrokeredMessage**-Objekte enthalten eine Reihe von Standardmethoden (wie etwa **getLabel** und **getTimeToLive**, **setLabel** und **setTimeToLive**), ein Wörterbuch, für die Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften und einen Körper beliebiger Anwendungsdaten. Eine Anwendung kann den Körper der Nachricht einstellen, indem ein beliebiges serialisierbares Objekt in den Konstruktor von **BrokeredMessage** übergeben wird. Anschließend wird der passende Serialisierer zur Serialisierung des Objekts verwendet. Alternativ kann ein **java.IO.InputStream** angegeben werden.
+Die Nachrichten, die an die Service Bus-Warteschlangen gesendet werden (und von diesen empfangen werden), sind Instanzen der [BrokeredMessage][]-Klasse. [BrokeredMessage][]-Objekte weisen eine Reihe von Standardeigenschaften (wie etwa [Label](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) und [TimeToLive](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), ein Wörterbuch, das zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften verwendet wird, und einen Körper beliebiger Anwendungsdaten auf. Eine Anwendung kann den Körper der Nachricht einstellen, indem ein beliebiges serialisierbares Objekt in den Konstruktor von [BrokeredMessage][] übergeben wird. Anschließend wird der passende Serialisierer zur Serialisierung des Objekts verwendet. Alternativ können Sie ein **java.IO.InputStream**-Objekt bereitstellen.
 
-Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **MessageSender** "TestQueue" gesendet werden, welche über das oben angegebene Code-Teilstück erhalten wurden:
+Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **MessageSender** `TestQueue` gesendet werden, der über den vorherigen Codeausschnitt erhalten wurde:
 
     for (int i=0; i<5; i++)
     {
@@ -105,11 +110,11 @@ Service Bus-Warteschlangen unterstützen eine maximale Nachrichtengröße von 25
 
 Der einfachste Weg zum Empfangen von Nachrichten aus Warteschlangen sind **ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei unterschiedlichen Modi funktionieren: **ReceiveAndDelete** und **PeekLock**.
 
-Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht in eine Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der (standardmäßig verwendete) ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
+Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht in eine Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der (standardmäßig verwendete) ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarios eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
 
 Im **PeekLock**-Modus ist der Empfangsvorgang zweistufig. Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von **Delete** für die empfangene Nachricht durch. Wenn Service Bus den **Delete**-Aufruf erkennt, markiert er die Nachricht als verwendet und entfernt sie aus der Warteschlange.
 
-Das folgende Beispiel zeigt, wie Nachrichten mit dem nicht standardmäßig verwendeten **PeekLock**-Modus empfangen und verarbeitet werden können. Dieses Beispiel verwendet eine Endlosschleife, und die Nachrichten werden entsprechend ihres Eingangs in die "TestQueue" verarbeitet:
+Das folgende Beispiel zeigt, wie Nachrichten mit dem Modus **PeekLock** (nicht dem Standardmodus) empfangen und verarbeitet werden können. Dieses Beispiel verwendet eine Endlosschleife, und die Nachrichten werden entsprechend ihres Eingangs in die "TestQueue" verarbeitet:
 
     	try
 	{
@@ -174,23 +179,14 @@ Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **d
 
 Nachdem Sie mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen unter [Warteschlangen, Themen und Abonnements][].
 
-Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/java/).
+Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
 
   [Azure SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
-  [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/de-DE/library/azure/hh694271.aspx
-  [What are Service Bus Queues?]: #what-are-service-bus-queues
-  [Create a Service Namespace]: #create-a-service-namespace
-  [Obtain the Default Management Credentials for the Namespace]: #obtain-default-credentials
-  [Configure Your Application to Use Service Bus]: #bkmk_ConfigApp
-  [How to: Create a Security Token Provider]: #bkmk_HowToCreateQueue
-  [How to: Send Messages to a Queue]: #bkmk_HowToSendMsgs
-  [How to: Receive Messages from a Queue]: #bkmk_HowToReceiveMsgs
-  [How to: Handle Application Crashes and Unreadable Messages]: #bkmk_HowToHandleAppCrashes
-  [Next Steps]: #bkmk_NextSteps
+  [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/library/azure/hh694271.aspx
   [Azure Management Portal]: http://manage.windowsazure.com/
   [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
- 
+  [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

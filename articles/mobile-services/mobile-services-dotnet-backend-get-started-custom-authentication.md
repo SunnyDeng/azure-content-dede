@@ -390,7 +390,7 @@ In diesem Abschnitt werden die Schritte beschrieben, die Sie ausführen müssen,
 
 	Sie müssen den **CustomRegistration**-Endpunkt nur einmal aufrufen, um ein Konto für einen bestimmten Benutzer zu erstellen, sofern Sie die Anmeldeinformationen des Benutzers in der Tabelle Accounts speichern. Beispiele zum Aufrufen einer benutzerdefinierten API auf den verschiedenen unterstützten Clientplattformen finden Sie im Artikel [Benutzerdefinierte API in Azure Mobile Services – Client SDKs](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx).
 	 
-	> [AZURE.IMPORTANT]Da dieser Schritt für die Benutzerbereitstellung nur einmal vorkommt, sollten Sie das Benutzerkonto auf irgendeine Weise extern erstellen. Für einen öffentlichen Registrierungsendpunkt sollten Sie die Implementierung einer SMS- oder e-Mail-basierten Überprüfung oder andere Schutzmaßnahmen in Betracht ziehen, um zu verhindern, dass Konten in betrügerischer Absicht generiert werden. Sie können die Twilio zum Senden von SMS-Nachrichten von Mobile Services verwenden. Weitere Informationen finden Sie unter [Senden einer SMS-Nachricht](partner-twilio-mobile-services-how-to-use-voice-sms.md#howto_send_sms). Sie können auch SendGrid verwenden, um E-Mail-Nachrichten von Mobile Services aus zu senden. Weitere Informationen finden Sie unter [Senden von E-Mails in Mobile Services mit SendGrid](store-sendgrid-mobile-services-send-email-scripts.md).
+	> [AZURE.IMPORTANT]Da dieser Schritt für die Benutzerbereitstellung nur einmal vorkommt, sollten Sie das Benutzerkonto auf irgendeine Weise extern erstellen. Für einen öffentlichen Registrierungsendpunkt sollten Sie die Implementierung einer SMS- oder e-Mail-basierten Überprüfung oder andere Schutzmaßnahmen in Betracht ziehen, um zu verhindern, dass Konten in betrügerischer Absicht generiert werden. Sie können die Twilio zum Senden von SMS-Nachrichten von Mobile Services verwenden. Sie können auch SendGrid verwenden, um E-Mail-Nachrichten von Mobile Services aus zu senden. Weitere Informationen zum Verwenden von SendGrid finden Sie unter [Senden von E-Mails in Mobile Services mit SendGrid](store-sendgrid-mobile-services-send-email-scripts.md).
 	
 3. Verwenden Sie die entsprechende **invokeApi** Methode erneut, um den **CustomLogin**-Endpunkt aufzurufen, und übergeben Sie die zur Laufzeit bereitgestellten Angaben für Benutzername und Kennwort im Nachrichtentext.
 
@@ -420,4 +420,4 @@ Damit ist dieses Lernprogramm abgeschlossen.
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

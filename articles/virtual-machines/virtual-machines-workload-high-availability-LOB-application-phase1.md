@@ -44,7 +44,7 @@ Element | Konfigurationselement | Beschreibung | Wert
 5\. | VNet-Adressraum | Der Adressraum des virtuellen Netzwerks (definiert in einem einzigen privaten Adresspräfix). Fragen Sie Ihre IT-Abteilung nach diesem Adressraum. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 6\. | Der erste DNS-Server für das virtuelle Netzwerk | Die vierte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks (siehe Tabelle S). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 7\. | Der zweite DNS-Server für das virtuelle Netzwerk | Die fünfte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks (siehe Tabelle S). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-8\. | Gemeinsam verwendeter IPsec-Schlüssel | Eine aus 128 zufällig ausgewählten alphanumerischen Zeichen bestehende Zeichenfolge, die zur Authentifizierung beider Seiten der Site-to-Site-VPN-Verbindung verwendet wird. Fragen Sie Ihre IT- oder Sicherheitsabteilung nach diesem Schlüsselwert. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+8\. | Gemeinsam verwendeter IPsec-Schlüssel | Eine aus 32 zufällig ausgewählten alphanumerischen Zeichen bestehende Zeichenfolge, die zur Authentifizierung beider Seiten der Site-to-Site-VPN-Verbindung verwendet wird. Fragen Sie Ihre IT- oder Sicherheitsabteilung nach diesem Schlüsselwert. Alternativ finden Sie Informationen in diesem [Artikel zum Erstellen einer zufälligen Zeichenfolge für einen vorinstallierten IPsec-Schlüssel](http://social.technet.microsoft.com/wiki/contents/articles/32330.create-a-random-string-for-an-ipsec-preshared-key.aspx).| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 
 **Tabelle V: Konfiguration eines standortübergreifenden virtuellen Netzwerks**
@@ -86,11 +86,9 @@ Element | Adressraum des lokalen Netzwerks
 
 **Tabelle L: Adresspräfixe für das lokale Netzwerk**
 
-Sie benötigen Azure PowerShell, Version 0.9.5 oder höher. Führen Sie diesen Befehl aus, um Ihre Azure PowerShell-Version zu überprüfen.
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für Azure PowerShell ab Version 0.9.5, jedoch *nicht* für Version 1.0.0 und höher. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Die Azure PowerShell-Befehlsblöcke in diesem Artikel werden gerade getestet und aktualisiert, um auch die neuen Cmdlets in Azure PowerShell Version 1.0.0 und höher zu unterstützen. Vielen Dank für Ihre Geduld.
 
-	Get-Module azure | format-table version
-
-Wenn Sie die aktuelle Version von Azure PowerShell installieren müssen, entfernen Sie die vorhandene Version über **Systemsteuerung – Programme und Funktionen**. Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md), um Azure PowerShell auf dem lokalen Computer zu installieren. Öffnen Sie eine Azure PowerShell-Eingabeaufforderung.
+Öffnen Sie eine Azure PowerShell-Eingabeaufforderung.
 
 Wählen Sie zunächst das richtige Azure-Abonnement für diese Befehle aus. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
 
@@ -237,7 +235,7 @@ Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfigura
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
 
 ## Zusätzliche Ressourcen
 
@@ -251,4 +249,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

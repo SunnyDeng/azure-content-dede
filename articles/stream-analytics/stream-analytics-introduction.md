@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/09/2015" 
+	ms.date="10/05/2015" 
 	ms.author="jeffstok"/>
 
 
@@ -53,4 +53,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

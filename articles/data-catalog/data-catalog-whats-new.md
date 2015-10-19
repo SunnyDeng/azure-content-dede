@@ -20,6 +20,16 @@
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
 
+## Neuigkeiten in der Version der Woche ab dem 2. Oktober 2015
+
+Ab der Woche beginnend am 2. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für die manuelle Registrierung bekannter Datenquellentypen. Benutzer können Datenquelleninformationen manuell über das **Azure Data Catalog**-Portal für alle Datentypen eingeben, die von **Azure Data Catalog** unterstützt werden.
+- Unterstützung für die Autorisierung von Azure Active Directory-Sicherheitsgruppen. Katalogadministratoren können den Katalogzugriff auf Sicherheitsgruppen und auf Benutzerkonten ermöglichen, um die Verwaltung des Zugriffs auf **Azure Data Catalog** zu vereinfachen.
+- Unterstützung für das Öffnen von Hive-Datenquellen in Excel über das **Azure Data Catalog**-Portal.
+
+> [AZURE.NOTE]Zum Verwenden des Features „In Excel öffnen“ für Hive-Datenquellen müssen Benutzer den ODBC-Treiber für Hive installieren.
+
 ## Neuigkeiten in der Version der Woche ab dem 25. September 2015
 
 Ab der Woche beginnend am 25. September 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
@@ -31,7 +41,7 @@ Ab der Woche beginnend am 25. September 2015 wurden **Azure Data Catalog** die 
 
 Ab der Woche beginnend am 18. September 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
-- Eine neue Übersicht über die Möglichkeiten zur Ermittlung von Datenquellen im **Azure Data Catalog**-Portal. Wenn Benutzer die Seite „Ermitteln“ des **Azure Data Catalog**-Portals aufrufen, ohne einen Suchbegriff einzugeben, wird eine Übersicht der Kataloginhalte angezeigt, einschließlich der am häufigsten verwendeten Tags, der Experten, Datenquellentypen und Objekttypen.
+- Eine neue Übersicht über die Möglichkeiten zur Ermittlung von Datenquellen im **Azure Data Catalog**-Portal. Wenn Benutzer die Seite „Ermitteln“ des **Azure Data Catalog**-Portals aufrufen, ohne einen Suchbegriff einzugeben, wird eine Übersicht der Kataloginhalte angezeigt, einschließlich der am häufigsten verwendeten Tags sowie der Experten, Datenquellentypen und Objekttypen.
 - Unterstützung für das Registrieren und Ermitteln von Azure SQL Data Warehouse-Objekten und -Datenbanken. Weitere Informationen zu Azure SQL Data Warehouse finden Sie unter [SQL Data Warehouse](http://azure.microsoft.com/services/sql-data-warehouse/).
 - Unterstützung für das Registrieren und Ermitteln von SQL Server Analysis Services-Modellen und SQL Server Reporting Services-Servern als Container. **Azure Data Catalog** erstellt beim Registrieren von SSAS- und SSRS-Objekten einen Eintrag für das SSAS-Modell und den SSRS-Server sowie für die Berichte und andere Objekte. Die Container können über das **Azure Data Catalog**-Portal ermittelt und gekennzeichnet werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte eines Modells oder Servers durchsuchen und filtern.
 
@@ -74,4 +84,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenassets unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure-Blob-Speichern. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

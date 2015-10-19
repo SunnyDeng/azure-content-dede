@@ -50,7 +50,10 @@ Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem d
 ### Anforderungen und Umfang
 
 1.	**Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md).
-2.	**Festplatten:** Für den Import/Export-Dienst werden lediglich 3,5-Zoll-SATA II/III-Festplatten unterstützt.. Es werden Festplatten mit bis zu 6 TB unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
+2.	**Festplatten:** Für den Import/Export-Dienst werden lediglich interne 3,5-Zoll-SATA II/III-Festplatten unterstützt. Es werden Festplatten mit bis zu 6 TB unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen externen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
+
+  >[AZURE.IMPORTANT]Externe Festplattenlaufwerke mit einem integrierten USB-Adapter werden von diesem Dienst nicht unterstützt. Bereiten Sie keine externe Festplatte vor. Der Datenträger im externen Gehäuse kann ebenfalls nicht für das Importieren von Daten verwendet werden. Verwenden Sie eine **interne** 3,5-Zoll-SATA II/III-Festplatte. Wenn Sie die SATA-Festplatte nicht direkt mit Ihrem Computer verbinden können, verwenden Sie einen externen SATA-auf-USB-Adapter. Im Abschnitt zu häufig gestellten Fragen finden Sie eine Liste empfohlener Adapter.
+
 3.	**BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
 4.	**Blobspeicherziele**: Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden. 
 5.	**Anzahl der Aufträge:** Jeder Kunde kann bis zu 20 aktive Aufträge pro Speicherkonto haben.
@@ -78,7 +81,7 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
  
 2.	Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben.
  
-3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Speichern des ausführlichen Protokolls im Blob-Container  'waimportexport'**.
+3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
 4.	Laden Sie im dritten Schritt die Protokolldateien hoch, die Sie während der Vorbereitung des Laufwerks erhalten haben. Sie müssen pro vorbereitetem Laufwerk eine Datei hochladen.
 
@@ -106,7 +109,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 1. 	Navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
 
-2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Speichern des ausführlichen Protokolls im Blob-Container  'waimportexport'**.
+2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
 3.	Legen Sie im dritten Schritt fest, welche Blob-Daten Sie von Ihrem Speicherkonto auf Ihr leeres Laufwerk oder Ihre Laufwerke exportieren möchten. Sie können alle Blob-Daten des Speicherkontos exportieren, oder Sie legen fest, welche Blobs oder Blob-Sätze exportiert werden sollen.
 
@@ -173,7 +176,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 **Wie viel kostet der Import/Export-Dienst?**
 
-- Weitere Informationen hierzu finden Sie unter [Import/Export Preisdetails](http://go.microsoft.com/fwlink/?LinkId=329033).
+- Weitere Informationen hierzu finden Sie unter [Import/Export Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=329033).
 
 **Wie lange dauert der Import oder Export meiner Daten?**
 
@@ -187,6 +190,8 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 	- Startech SATADOCK22UE 
 
 > [AZURE.NOTE]Falls Sie einen Konverter haben, der nicht in der Liste enthalten ist, können Sie versuchen, das Microsoft Azure-Import-/Exporttool mit Ihrem Konverter zur Vorbereitung des Laufwerks auszuführen, bevor Sie einen unterstützten Konverter kaufen.
+
+- Eine externe Festplatte mit einem integrierten USB-Adapter wird nicht unterstützt.
 
 **Was soll ich tun, wenn ich mehr als 10 Laufwerke importieren oder exportieren möchte?**
 
@@ -269,4 +274,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [export-job-bitlocker-keys]: ./media/storage-import-export-service/export-job-bitlocker-keys.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

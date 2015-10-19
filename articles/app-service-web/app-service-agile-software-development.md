@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/24/2015"
+	ms.date="09/24/2015"
 	ms.author="cephalin"/>
 
 
@@ -281,4 +281,4 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

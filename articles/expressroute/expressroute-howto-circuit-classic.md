@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="10/06/2015"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung
@@ -153,21 +153,21 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 	Wenn Sie eine neue ExpressRoute-Verbindung erstellen, hat die Verbindung folgenden Zustand:
 	
-		**ServiceProviderProvisioningState :** NotProvisioned
+		ServiceProviderProvisioningState : NotProvisioned
 		
-		**Status                           :** Enabled
+		Status                           : Enabled
 
-	„ServiceProviderProvisioningState“ enthält Informationen zum aktuellen Status der Bereitstellung auf Service Provider-Seite, und mit „Status“ wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
+	*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Status der Bereitstellung auf Service Provider-Seite, und mit "Status" wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
 
-		**ServiceProviderProvisioningState :** Provisioned
+		ServiceProviderProvisioningState : Provisioned
 		
-		**Status                           :** Enabled
+		Status                           : Enabled
 
 	Die Verbindung wird in den folgenden Zustand versetzt, wenn sie vom Konnektivitätsanbieter für Sie aktiviert wird.
 
-		**ServiceProviderProvisioningState :** Provisioned
+		ServiceProviderProvisioningState : Provisioned
 		
-		**Status                           :** Enabled
+		Status                           : Enabled
 
 
 
@@ -188,7 +188,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 6. **Erstellen Sie die Routingkonfiguration.**
 	
-	Eine Schritt-für-Schritt-Anleitung finden Sie auf der Seite [Routingkonfiguration für ExpressRoute-Verbindung (Erstellen und Ändern von Verbindungs-Peerings)](expressroute-howto-routing-classic.md).
+	Eine Schritt-für-Schritt-Anleitung finden Sie auf der Seite [Routingkonfiguration für ExpressRoute-Verbindung (Erstellen und Ändern von Verbindungspeerings)](expressroute-howto-routing-classic.md).
 
 7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.**
 
@@ -196,7 +196,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 ##  Vorgehensweise: Abrufen des Status einer ExpressRoute-Verbindung
 
-Sie können diese Informationen jederzeit mithilfe des *Get-AzureCircuit*-Cmdlets abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet.
+Sie können diese Informationen jederzeit mithilfe des Cmdlets *Get-AzureCircuit* abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet.
 
 		PS C:\> Get-AzureDedicatedCircuit
 
@@ -276,8 +276,8 @@ Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add
 		ServiceKey                       : *********************************
 		ServiceProviderName              : equinix
 		ServiceProviderProvisioningState : Provisioned
-		Sku                              : Premium
-		Status                           : Standard
+		Sku                              : Standard
+		Status                           : Enabled
 
 Das Premium-Add-On ist jetzt für Ihre Verbindung deaktiviert.
 
@@ -315,13 +315,13 @@ Sie können die ExpressRoute-Verbindung löschen, indem Sie den folgenden Befehl
 
 Beachten Sie, dass Sie die Verknüpfung aller virtuellen Netzwerke für die ExpressRoute aufheben müssen, damit dieser Vorgang erfolgreich ist. Überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind, falls dieser Vorgang nicht erfolgreich ist.
 
-Wenn der Service Provider-Bereitstellungsstatus für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von „enabled“ in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
+Wenn der Service Provider-Bereitstellungsstatus für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von "enabled" in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
 
 Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Service Providers lautet *not provisioned*), bevor Sie das obige Cmdlet ausführen, führen wir die Aufhebung der Verbindungsbereitstellung durch und stellen Ihnen keine Gebühren mehr in Rechnung.
 
 ## Nächste Schritte
 
-- [Konfigurieren des ExpressRoute-Routings (Verwalten von Verbindungs-Peerings)](expressroute-howto-routing-classic.md)
-- [Verknüpfen von virtuellen Netzwerken mit einer ExpressRoute-Verbindung](expresssroute-howto-linkvnet-classic.md) 
+- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
+- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expresssroute-howto-linkvnet-classic.md) 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

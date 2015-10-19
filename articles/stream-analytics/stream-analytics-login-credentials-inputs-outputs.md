@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/04/2015" 
+	ms.date="10/05/2015" 
 	ms.author="jeffstok"/>
 
 #Austauschen der Anmeldeinformationen für die Eingabe-/Ausgabe
@@ -71,7 +71,7 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 10. Klicken Sie auf den Befehl "Verwalten": ![Grafik22][graphic22]
 11. Geben Sie Ihren Benutzernamen und das Kennwort ein, und klicken Sie auf "Anmelden": ![Grafik23][graphic23]
 12. Klicken Sie auf "Neue Abfrage": ![Grafik24][graphic24]
-13. Geben Sie die folgende Abfrage ein, und ersetzen Sie <user_name> mit einem Namen, mit dem diese Anmeldung im Kontext der Datenbank identifiziert werden soll \(Sie können z. B. den gleichen Wert wie für <login_name> eingeben\). Ersetzen Sie anschließend <login_name> mit Ihrem neuen Benutzernamen: `CREATE USER <user_name> FROM LOGIN <login_name>`
+13. Geben Sie die folgende Abfrage ein, und ersetzen Sie <user_name> mit einem Namen, mit dem diese Anmeldung im Kontext der Datenbank identifiziert werden soll (Sie können z. B. den gleichen Wert wie für <login_name> eingeben). Ersetzen Sie anschließend <login_name> mit Ihrem neuen Benutzernamen: `CREATE USER <user_name> FROM LOGIN <login_name>`
 14. Klicken Sie auf "Ausführen": ![Grafik25][graphic25]
 15. Sie sollten nun dem neuen Benutzer die gleichen Rollen und Berechtigungen zuweisen, über die der ursprüngliche Benutzer verfügte.
 16. Fahren Sie mit Teil 2 fort.
@@ -137,14 +137,14 @@ Die folgende Bestätigung wird geöffnet:
 	Command(s) completed successfully.
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
 
@@ -193,4 +193,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

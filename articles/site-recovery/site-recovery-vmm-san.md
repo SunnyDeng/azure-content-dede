@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN" 
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von virtuellen Hyper-V-Computern zwischen lokalen Standorten mithilfe der SAN-Replikation." 
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="rayne-wiselman" 
-	manager="jwhit" 
+<properties
+	pageTitle="Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN"
+	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von virtuellen Hyper-V-Computern zwischen lokalen Standorten mithilfe der SAN-Replikation."
+	services="site-recovery"
+	documentationCenter=""
+	authors="rayne-wiselman"
+	manager="jwhit"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.workload="backup-recovery" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.workload="backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/21/2015"
 	ms.author="raynew"/>
 
 # Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN
@@ -26,7 +26,7 @@ Unternehmen profitieren von folgenden Vorteilen:
 
 - Bereitstellung einer skalierbaren und durch Site Recovery automatisierten Replikationslösung für Unternehmen.
 - Nutzung der SAN-Replikationsfunktionen gewerblicher Speicherpartner (sowohl über Fibre Channel als auch über iSCSI). Eine Liste mit unseren SAN-Speicherpartnern finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=518669).
-- Nutzung Ihrer vorhandenen SAN-Infrastruktur zum Schutz unternehmenskritischer, in Hyper-V-Clustern bereitgestellter Anwendungen. 
+- Nutzung Ihrer vorhandenen SAN-Infrastruktur zum Schutz unternehmenskritischer, in Hyper-V-Clustern bereitgestellter Anwendungen.
 - Unterstützung von Gastclustern.
 - Gewährleistung der Replikationskonsistenz auf verschiedenen Ebenen einer Anwendung mit synchronisierter Replikation für niedrige RTO- und RPO-Werte sowie mit nicht synchronisierter Replikation für hohe Flexibilität (abhängig von den Funktionen des Speicherarrays).  
 - VMM-Integration zur SAN-Verwaltung über die VMM-Konsole und SMI-S in VMM zur Erkennung des vorhandenen Speichers.  
@@ -55,7 +55,7 @@ In diesem Szenario werden virtuelle Hyper-V-Computer eines lokalen VMM-Standorts
 
 ### Voraussetzungen für Azure
 
-- Sie benötigen ein [Microsoft Azure](http://azure.microsoft.com/)-Konto. Für den Einstieg steht eine [kostenlose Testversion](http://aka.ms/try-azure) zur Verfügung. Informationen zu Preisen finden Sie unter [Azure Site Recovery-Preise](http://go.microsoft.com/fwlink/?LinkId=378268).
+- Sie benötigen ein [Microsoft Azure](http://azure.microsoft.com/)-Konto. Für den Einstieg steht eine [kostenlose Testversion](http://aka.ms/try-azure) zur Verfügung. Informationen zu Preisen finden Sie unter [Azure Site Recovery-Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=378268).
 
 ### VMM-Voraussetzungen
 
@@ -64,7 +64,7 @@ In diesem Szenario werden virtuelle Hyper-V-Computer eines lokalen VMM-Standorts
 	- Eine oder mehrere VMM-Hostgruppen.
 	- Einen oder mehrere Hyper-V-Cluster in jeder Hostgruppe.
 	- Einen oder mehrere virtuelle Computer auf dem Hyper-V-Quellserver in der Cloud.
-		
+
 ### Anforderungen für Hyper-V
 
 - Sie benötigen einen am primären und sekundären Standort bereitgestellten Hyper-V-Hostcluster mit mindestens Windows Server 2012 mit den neuesten Updates.
@@ -139,10 +139,10 @@ Gehen Sie wie folgt vor, um SANs in der VMM-Konsole hinzuzufügen und zu klassif
 
 1. Nach der Integration von SAN-Speicher in VMM können Sie logische Einheiten (Logical Units, LUNs) erstellen (bereitstellen):
 
-- [Auswählen einer Methode zum Erstellen von logischen Einheiten in VMM](http://go.microsoft.com/fwlink/?LinkId=518490)
-- [Bereitstellen von logischen Speichereinheiten in VMM](http://go.microsoft.com/fwlink/?LinkId=518491)
+	- [Auswählen einer Methode zum Erstellen von logischen Einheiten in VMM](http://go.microsoft.com/fwlink/?LinkId=518490)
+	- [Bereitstellen von logischen Speichereinheiten in VMM](http://go.microsoft.com/fwlink/?LinkId=518491)
 
-2. Weisen Sie anschließend dem Hyper-V-Hostcluster Speicherkapazität zu, damit VMM Daten auf virtuellen Computern im bereitgestellten Speicher bereitstellen kann: 
+2. Weisen Sie anschließend dem Hyper-V-Hostcluster Speicherkapazität zu, damit VMM Daten auf virtuellen Computern im bereitgestellten Speicher bereitstellen kann:
 
 	- Vor der Zuordnung von Speicher zum Cluster müssen Sie den Speicher der VMM-Hostgruppe zuordnen, in der sich der Cluster befindet. Weitere Informationen finden Sie unter [Zuordnen von logischen Speichereinheiten zu einer Hostgruppe](http://go.microsoft.com/fwlink/?LinkId=518493) sowie unter [Zuordnen von Speicherpools zu einer Hostgruppe](http://go.microsoft.com/fwlink/?LinkId=518492). </a>.
 	- Ordnen Sie dem Cluster Speicherkapazität gemäß den Angaben unter [Konfigurieren von Speicher für einen Hyper-V-Hostcluster in VMM](http://go.microsoft.com/fwlink/?LinkId=513017) zu. </a>.
@@ -162,7 +162,7 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
 
 1. Machen Sie sich mit der [Netzwerkzuordnung](https://msdn.microsoft.com/library/azure/dn801052.aspx) vertraut.
 2. Bereiten Sie VM-Netzwerke in VMM vor:
- 
+
 	- Informieren Sie sich über das [Einrichten von logischen Netzwerken](http://go.microsoft.com/fwlink/?LinkId=386307). Richten Sie logische Netzwerke ein. Weitere Informationen finden Sie unter „Konfigurieren von logischen Netzwerken in VMM“.
 	- [Richten Sie VM-Netzwerke ein](http://go.microsoft.com/fwlink/?LinkId=386308).
 
@@ -176,10 +176,10 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
 
 
 3. Klicken Sie auf **Neu erstellen** > **Schnellerfassung**.
-	
+
 4. Geben Sie unter **Name** einen Anzeigenamen ein, über den der Tresor identifiziert wird.
 
-5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie unter [Azure Site Recovery-Preise](href="http://go.microsoft.com/fwlink/?LinkId=389880) unter „Geografische Verfügbarkeit“.
+5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Sie finden eine Liste der unterstützten Regionen unter Geografische Verfügbarkeit auf der Seite [Azure Site Recovery – Preisübersicht](href="http://go.microsoft.com/fwlink/?LinkId=389880)
 
 6. Klicken Sie auf **Tresor erstellen**.
 
@@ -218,7 +218,7 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
 
 5. Geben Sie auf der Seite **Internetverbindung** an, wie sich der Anbieter auf dem VMM-Server mit dem Internet verbinden soll. Wählen Sie *Proxyeinstellungen des Systems verwenden* aus, um die Standard-Internetverbindungseinstellungen auf dem Server zu verwenden.
 
-	![Interneteinstellungen](./media/site-recovery-vmm-san/VMMASRRegisterProxyDetailsScreen.png) - Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. - Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. - Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. - *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net - Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+	![Interneteinstellungen](./media/site-recovery-vmm-san/VMMASRRegisterProxyDetailsScreen.png) – Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. – Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. – Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. – *.hypervrecoverymanager.windowsazure.com – *.accesscontrol.windows.net – *.backup.windowsazure.com – *.blob.core.windows.net – *.store.core.windows.net – Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
 
@@ -243,7 +243,7 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
 >
 >1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
 >2. Beenden Sie den System Center Virtual Machine Manager-Dienst.
->3. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen. 
+>3. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
 >
     	C:\Windows\System32> CD C:\ASR
     	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
@@ -262,7 +262,7 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
  - **/proxyAddress**: optionaler Parameter, der die Adresse des Proxyservers angibt.
  - **/proxyport**: optionaler Parameter, der den Port des Proxyservers angibt.
  - **/proxyUsername**: optionaler Parameter, der den Proxybenutzernamen angibt (sofern der Proxy eine Authentifizierung erfordert).
- - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert). 
+ - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert).
 
 
 ## Schritt 4: Zuordnen von Speicherarrays und -pools
@@ -329,7 +329,7 @@ Nach der Replikation einer Speichergruppe aktivieren Sie den Schutz für virtuel
 
 
 	![Schutz aktivieren](./media/site-recovery-vmm-san/SRSAN_EnableProtection.png)
-	
+
 
 <P>Nach der Aktivierung des Schutzes für virtuelle Computer werden sie in der Azure Site Recovery-Konsole angezeigt. Sie können die Eigenschaften virtueller Computer anzeigen, den Status nachverfolgen und für Replikationsgruppen, die mehrere virtuelle Computer enthalten, ein Failover ausführen. Beachten Sie, dass bei der SAN-Replikation für alle einer Replikationsgruppe zugeordneten virtuellen Computer das Failover gemeinsam erfolgen muss. Der Grund ist, dass das Failover zuerst auf der Speicherebene erfolgt. Wichtig ist, dass Sie Ihre Replikationsgruppen ordnungsgemäß zusammenstellen und nur zugeordnete virtuelle Computer gemeinsam platzieren.</P>
 
@@ -344,8 +344,8 @@ Testen Sie Ihre Bereitstellung, um sicherzustellen, dass das Failover von virtue
 
 4. Wählen Sie unter **Virtuellen Computer auswählen** Replikationsgruppen aus. Alle der Replikationsgruppe zugeordneten virtuellen Computer werden ausgewählt und dem Wiederherstellungsplan hinzugefügt. Diese virtuellen Computer werden der Standardgruppe im Wiederherstellungsplan, Gruppe 1, hinzugefügt. Sie können bei Bedarf weitere Gruppen hinzufügen. Beachten Sie, dass nach der Replikation virtuelle Computer gemäß der Reihenfolge der Wiederherstellungsplangruppen gestartet werden.
 
-	![Virtuelle Computer hinzufügen](./media/site-recovery-vmm-san/SRSAN_RPlanVM.png)	
-5. Erstellte Wiederherstellungspläne werden auf der Registerkarte **Wiederherstellungspläne** angezeigt. 
+	![Virtuelle Computer hinzufügen](./media/site-recovery-vmm-san/SRSAN_RPlanVM.png)
+5. Erstellte Wiederherstellungspläne werden auf der Registerkarte **Wiederherstellungspläne** angezeigt.
 6. Wählen Sie auf der Registerkarte **Wiederherstellungspläne** den gewünschten Wiederherstellungsplan aus, und klicken Sie auf **Testfailover**.
 7. Wählen Sie auf der Seite **Testfailover bestätigen** den Eintrag **Kein** aus. Bei Aktivierung dieser Option werden nach einem Failover die virtuellen Computer im Replikat mit keinem Netzwerk verbunden. Es wird getestet, ob das Failover für den virtuellen Computer wie erwartet erfolgt, ohne dass Ihre Netzwerkumgebung für die Replikation getestet wird. Wenn Sie ein umfassenderes Testfailover durchführen möchten, lesen Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=522291">Testen einer Bereitstellung zwischen lokalen Standorten in MSDN</a> nach.
 
@@ -381,7 +381,5 @@ Auf der Registerkarte **Jobs** können Sie Aufträge anzeigen, ein Drill-Down zu
 Über das **Dashboard** können Sie die neuesten Versionen der Anbieter- und Agent-Installationsdateien herunterladen, Konfigurationsinformationen für den Tresor erhalten, die Anzahl der virtuellen Computer anzeigen, deren Schutz vom Tresor verwaltet wird, kürzlich ausgeführte Aufträge anzeigen und virtuelle Computer neu synchronisieren.
 
 Weitere Informationen zur Interaktion mit Aufträgen und dem Dashboard finden Sie unter [Betrieb und Überwachung](http://go.microsoft.com/fwlink/?LinkId=398534).
-	
- 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

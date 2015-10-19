@@ -1,24 +1,26 @@
 <properties
- pageTitle="Informationen zum Agent und zu Erweiterungen für virtuelle Computer | Microsoft Azure"
- description="Bietet eine Übersicht über den Agent und die Erweiterungen sowie die Installation des Agents."
+ pageTitle="Azure VM-Agent und -Erweiterungen | Microsoft Azure"
+ description="Bietet eine Übersicht über den Agent und die Erweiterungen sowie die Installation des Agents unter Verwendung des klassischen Bereitstellungsmodells."
  services="virtual-machines"
  documentationCenter=""
  authors="squillace"
  manager="timlt"
- editor=""/>
+ editor=""
+ tags="azure-service-management"/>
+
 <tags
-ms.service="virtual-machines"
+ ms.service="virtual-machines"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
  ms.date="09/22/2015"
  ms.author="rasquill"/>
- 
+
 #Informationen zum Agent und zu Erweiterungen für virtuelle Computer
 Der Azure-Agent für virtuelle Computer (VM-Agent) dient zum Installieren, Konfigurieren, Verwalten und Ausführen von Azure-Erweiterungen für virtuelle Computer (VM-Erweiterungen). VM-Erweiterungen bieten dynamische Features, die von Microsoft und Drittanbietern bereitgestellt werden. Der Agent und die Erweiterungen werden in erster Linie über das Verwaltungsportal hinzugefügt, jedoch können Sie auch die [PowerShell](../install-configure-powershell.md)-Cmdlets oder die [Azure-Befehlszeilenschnittstelle](xplat-install.md) zum Hinzufügen und Konfigurieren verwenden, wenn Sie einen virtuellen Computer erstellen oder vorhandene virtuelle Computer nutzen.
 
-> [AZURE.NOTE]In diesem Thema wird PowerShell und die Azure-Befehlszeilenschnittstelle erläutert. Es behandelt dabei Bereitstellungsaufrufe für das klassische und nicht das Ressourcen-Manager-Bereitstellungsmodell. Weitere Informationen zu Bereitstellungsmodellen finden Sie unter [Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf Bereitstellungsaufrufe für das klassische Bereitstellungsmodell.
 
 
 VM-Erweiterungen helfen Ihnen bei folgenden Aufgaben:
@@ -40,13 +42,13 @@ Es gibt zwei Azure-VM-Agents: einen für virtuelle Windows-Computer und einen f�
 
 Der VM-Agent wird in den folgenden Situationen aktiviert:
 
--   Wenn Sie eine Instanz eines virtuellen Computers mithilfe der Methode **Schnellerfassung** im Verwaltungsportal erstellen oder die Methode **Benutzerdefiniert erstellen** im Verwaltungsportal verwenden und sicherstellen, dass das Kontrollkästchen **VM-Agent installieren** aktiviert ist (wie in der folgenden Abbildung gezeigt). Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](virtual-machines-create-custom.md).
+-   Wenn Sie eine Instanz eines virtuellen Computers mithilfe der **Schnellerfassung** im Verwaltungsportal erstellen oder die Methode **Benutzerdefiniert erstellen** im Verwaltungsportal verwenden und dabei das Kontrollkästchen **VM-Agent installieren** aktiviert ist (wie in der folgenden Abbildung gezeigt). Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](virtual-machines-create-custom.md).
 
     ![Kontrollkästchen "VM-Agent"](./media/virtual-machines-extensions-agent-about/IC719409.png "Kontrollkästchen "VM-Agent"")
 
--   Wenn Sie eine Instanz eines virtuellen Computers mit dem Cmdlet [New-AzureVM](https://msdn.microsoft.com/library/azure/dn495254.aspx) oder [New-AzureQuickVM](https://msdn.microsoft.com/library/azure/dn495183.aspx) erstellen. Sie können einen virtuellen Computer erstellen, ohne dass der VM-Agent installiert wird, indem Sie den Parameter **–DisableGuestAgent** zum Cmdlet [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx) hinzufügen.
+-   Wenn Sie eine Instanz eines virtuellen Computers mit dem Cmdlet [New-AzureVM](https://msdn.microsoft.com/library/azure/dn495254.aspx) oder [New-AzureQuickVM](https://msdn.microsoft.com/library/azure/dn495183.aspx) erstellen. Sie können einen virtuellen Computer erstellen, ohne dass der VM-Agent installiert wird, indem Sie dem Cmdlet [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx) den **–DisableGuestAgent**-Parameter hinzufügen.
 
--   Durch das manuelle Herunterladen und Installieren des VM-Agents (Windows- oder Linux-Version) auf eine vorhandene VM-Instanz und das anschließende Festlegen des **ProvisionGuestAgent**-Werts auf **true** mithilfe der PowerShell oder eines REST-Aufrufs. (Wenn Sie diesen Wert nach der manuellen Installation des VM-Agents nicht festlegen, wird das Hinzufügen des VM-Agents nicht richtig erkannt.) Im folgenden Codebeispiel wird veranschaulicht, wie dies mithilfe von PowerShell ausgeführt wird, wobei die Argumente `$svc` und `$name` bereits ermittelt wurden.
+-   Durch das manuelle Herunterladen und Installieren des VM-Agents (Windows- oder Linux-Version) auf einer vorhandenen VM-Instanz und das anschließende Festlegen des **ProvisionGuestAgent**-Werts auf **true** mithilfe von PowerShell oder eines REST-Aufrufs. (Wenn Sie diesen Wert nach der manuellen Installation des VM-Agents nicht festlegen, wird das Hinzufügen des VM-Agents nicht richtig erkannt.) Im folgenden Codebeispiel wird veranschaulicht, wie dies mithilfe von PowerShell ausgeführt wird, wobei die Argumente `$svc` und `$name` bereits ermittelt wurden.
 
         $vm = Get-AzureVM –serviceName $svc –Name $name
         $vm.VM.ProvisionGuestAgent = $TRUE
@@ -62,4 +64,4 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
 
 Weitere Informationen zu diesen Aufgaben finden Sie unter [Hinzufügen, Suchen, Aktualisieren und Entfernen von Azure-VM-Erweiterungen](virtual-machines-extensions-install.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

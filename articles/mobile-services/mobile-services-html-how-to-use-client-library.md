@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden eines HTML-Clients | Microsoft Azure" 
-	description="Erfahren Sie mehr über die Verwendung eines HTML-Clients für Azure Mobile Services." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Verwenden eines HTML-Clients | Microsoft Azure"
+	description="Erfahren Sie mehr über die Verwendung eines HTML-Clients für Azure Mobile Services."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-html" 
-	ms.devlang="javascript" 
-	ms.topic="article" 
-	ms.date="09/24/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-html"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="09/24/2015"
 	ms.author="glenga"/>
 
 # So verwenden Sie einen HTML-/JavaScript-Client für Azure Mobile Services
@@ -43,7 +43,7 @@ Die Vorgehensweise zum Hinzufügen eines Verweises auf den Mobiles Services-Clie
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-Sie müssen den Platzhalter `AppUrl` durch die Anwendungs-URL Ihres mobilen Dienstes und `AppKey` durch den Anwendungsschlüssel ersetzen. Wie Sie die Anwendungs-URL und den Anwendungsschlüssel für den mobilen Dienst erhalten, erfahren Sie im Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-html-get-started-data.md).
+Sie müssen den Platzhalter `AppUrl` durch die Anwendungs-URL Ihres mobilen Dienstes und `AppKey` durch den Anwendungsschlüssel ersetzen, den Sie aus dem [Azure-Portal](http://manage.windowsazure.com/) abrufen.
 
 >[AZURE.IMPORTANT]Der Anwendungsschlüssel dient dem Herausfiltern zufälliger Anforderungen an den mobilen Dienst und wird mit der Anwendung verteilt. Da dieser Schlüssel nicht verschlüsselt ist, kann er nicht als sicher angesehen werden. Um die Daten des mobilen Dienstes zu schützen, müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Gewusst wie: Authentifizieren von Benutzern](#authentication).
 
@@ -364,7 +364,7 @@ Dieser Abschnitt beschreibt das Anzeigen von Datenobjekten in GUI-Elementen. Zum
 
 In Windows Store-Apps können Sie mit dem Abfrageergebnis ein [WinJS.Binding.List]-Objekt erstellen, das als Datenquelle für ein [ListView]-Objekt gebunden werden kann. Weitere Informationen finden Sie unter [Datenbindung (Windows Store-Apps mit JavaScript und HTML)].
 
-##<a name="#custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
+##<a name="custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
 
 Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats. Ein Beispiel für das Erstellen einer benutzerdefinierten API in Ihrem mobilen Dienst finden Sie unter [Gewusst wie: Definieren eines benutzerdefinierten API-Endpunkts](mobile-services-dotnet-backend-define-custom-api.md).
 
@@ -381,7 +381,7 @@ Sie können eine benutzerdefinierte API vom Client aufrufen, indem Sie die [Invo
         alert(error.message);
     });
 
- 
+
 Beispiele mit mehr Praxisnähe und eine ausführlichere Erörterung von **invokeApi** finden Sie unter [Benutzerdefinierte API in Azure Mobile Services Client SDKs](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx).
 
 ##<a name="authentication"></a>Gewusst wie: Authentifizieren von Benutzern
@@ -465,7 +465,7 @@ Das folgende Beispiel zeigt die Verwendung des Live-SDKs mit WinJS-APIs zum Bere
 					mobileClient.login(result.session.authentication_token)
 				]).done(function (results) {
 					// Build the welcome message from the Microsoft account info.
-					var profile = results[0];                            
+					var profile = results[0];
 					var title = "Welcome " + profile.first_name + "!";
 					var message = "You are now logged in as: "
 						+ mobileClient.currentUser.userId;
@@ -474,7 +474,7 @@ Das folgende Beispiel zeigt die Verwendung des Live-SDKs mit WinJS-APIs zum Bere
 						// Reload items from the mobile service.
 						refreshTodoItems();
 					}).done(complete);
-					
+
 				}, function (error) {
 
 				});
@@ -662,10 +662,7 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [ListView]: http://msdn.microsoft.com/library/windows/apps/br211837.aspx
 [Datenbindung (Windows Store-Apps mit JavaScript und HTML)]: http://msdn.microsoft.com/library/windows/apps/hh758311.aspx
 [login]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L301
-[Authenticate your app with single sign-in]: mobile-services-windows-store-javascript-single-sign-on.md
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502
-[Call a custom API from the client]: mobile-services-html-call-custom-api.md
- 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

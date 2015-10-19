@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Erste Schritte mit der Authentifizierung (Android) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erste Schritte mit der Authentifizierung (Android) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren."
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="09/24/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="10/05/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-Android-App
@@ -41,7 +41,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte zur Aktivierung der Aut
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-3. Öffnen Sie das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services erstellt haben]. 
+3. Öffnen Sie das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services erstellt haben].
 
 4. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) geworfen wird.
 
@@ -76,7 +76,6 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services erstellt haben]: mobile-services-dotnet-backend-android-get-started.md
-[Get started with data]: mobile-services-dotnet-backend-android-get-started-data.md
 [Get started with authentication]: mobile-services-dotnet-backend-android-get-started-users.md
 [Get started with push notifications]: mobile-services-dotnet-backend-android-get-started-push.md
 [Authorize users with scripts]: ../mobile-services-dotnet-backend-android-authorize-users-in-scripts.md
@@ -84,6 +83,5 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
 [Register your Windows Store app package for Microsoft authentication]: ../mobile-services-how-to-register-store-app-package-microsoft-authentication.md
- 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

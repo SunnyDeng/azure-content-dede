@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="10/05/2015"
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs – Benachrichtigen von Benutzern
@@ -26,6 +26,10 @@
 Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert, In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Ein ASP.NET WebAPI-Back-End wird verwendet, um Clients zu authentifizieren. Mit dem authentifizierten Clientbenutzer wird automatisch ein Tag vom Back-End zur Benachrichtigungsregistrierung hinzugefügt. Dieses Tag wird vom Back-End gesendet, um Benachrichtigungen für einen bestimmten Benutzer zu generieren. Weitere Informationen zum Registrieren für Benachrichtigungen mit einem App-Back-End finden Sie im Thema [Registrierung vom App-Back-End aus](http://msdn.microsoft.com/library/dn743807.aspx). Dieses Lernprogramm basiert auf dem Notification Hub und Projekt, den bzw. das Sie im Lernprogramm [Erste Schritte mit Notification Hubs] erstellt haben.
 
 Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm [Sichere Pushbenachrichtigungen]. Nachdem Sie die Schritte in diesem Lernprogramm abgeschlossen haben, können Sie mit dem Lernprogramm [Sichere Pushbenachrichtigungen] fortfahren, in dem Sie erfahren, wie Sie den Code aus diesem Lernprogramm ändern, um eine Pushbenachrichtigung auf sichere Weise zu senden.
+
+
+Den vollständigen Code für dieses Lernprogramm finden Sie [hier](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers) auf GitHub.
+
 
 
 ##Voraussetzungen
@@ -111,7 +115,7 @@ In diesem Abschnitt aktualisieren Sie den Code in dem Projekt, das Sie für das 
                     <TextBox Name="ToUserTagTextBox" Grid.Row="7" Grid.ColumnSpan="3" Margin="20,0,20,0" TextWrapping="Wrap" />
                     <TextBlock Grid.Row="8" Grid.ColumnSpan="3" Text="Enter Notification Message" FontSize="24" Margin="20,0,20,0"/>
                     <TextBox Name="NotificationMessageTextBox" Grid.Row="9" Grid.ColumnSpan="3" Margin="20,0,20,0" TextWrapping="Wrap" />
-                    <Button Grid.Row="10" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="2. Send push" Click="PushClick" />
+                    <Button Grid.Row="10" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="2. Send push" Click="PushClick" Name="SendPushButton" />
                 </Grid>
             </StackPanel>
         </Grid>
@@ -254,7 +258,7 @@ In diesem Abschnitt aktualisieren Sie den Code in dem Projekt, das Sie für das 
 
         public RegisterClient(string backendEndpoint)
         {
-            PostURL = backendEndpoint + "/api/register";
+            POST_URL = backendEndpoint + "/api/register";
         }
 
         public async Task RegisterAsync(string handle, IEnumerable<string> tags)
@@ -373,4 +377,4 @@ In diesem Abschnitt aktualisieren Sie den Code in dem Projekt, das Sie für das 
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

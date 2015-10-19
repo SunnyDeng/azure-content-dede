@@ -1,31 +1,23 @@
-<properties 
-	pageTitle="Ausführen von Cassandra mit Linux in Azure"
-	description="Ausführen eines Cassandra-Clusters unter Linux auf virtuellen Azure-Computern aus einer Node.js-Anwendung."
-	services="virtual-machines"
-	documentationCenter="nodejs"
-	authors="MikeWasson"
-	manager="wpickett"
-	editor=""/>
+<properties pageTitle="Ausführen von Cassandra mit Linux in Azure | Microsoft Azure" description="Ausführen eines Cassandra-Clusters unter Linux auf virtuellen Azure-Computern aus einer Node.js-Anwendung." services="virtual-machines" documentationCenter="nodejs" authors="MikeWasson" manager="wpickett" editor="" azure-service-management"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/30/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/30/2015" 
 	ms.author="mwasson"/>
-
-
-
 
 
 # Ausführen von Cassandra mit Linux auf Azure und Zugreifen aus Node.js 
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-datastax-template.md) unter Verwendung einer Vorlage erstellen.
+
 ## Übersicht
 Microsoft Azure ist eine offene Cloudplattform, die sowohl Microsoft- als auch Nicht-Microsoft-Software ausführt. Dies schließt Betriebssysteme, Anwendungsserver, Messaging-Middleware sowie SQL- und NoSQL-Datenbanken aus kommerziellen und Open-Source-Modellen ein. Das Erstellen von robusten Diensten für öffentliche Clouds einschließlich Azure erfordert eine sorgfältige Planung und eine wohl überlegte Architektur für Anwendungsserver und Speicherebenen. Die verteilte Speicherarchitektur von Cassandra unterstützt auf natürliche Weise das Erstellen von Systemen mit hoher Verfügbarkeit, die bei Clusterfehlern fehlertolerant sind. Cassandra ist eine NoSQL-Datenbank der Cloud-Größenordnung, die von der Apache Software Foundation unter "cassandra.apache.org" verwaltet wird. Cassandra ist in Java geschrieben und kann daher auf Windows- und auf Linux-Plattformen ausgeführt werden.
 
-Dieser Artikel soll schwerpunktmäßig die Cassandra-Bereitstellung unter Ubuntu als Cluster in einem oder in mehreren Rechenzentren unter Nutzung von Microsoft Azure Virtual Machines und Virtual Networks zeigen. Die Clusterbereitstellung für produktionsoptimierte Arbeitsauslastungen ist nicht Gegenstand dieses Artikels, weil Knotenkonfigurationen mit mehreren Datenträgern, ein geeigneter Ringtopologie-Entwurf und Datenmodellierung zur Unterstützung der Anforderungen an die Replikation, die Datenkonsistenz, den Durchsatz und die hohe Verfügbarkeit erforderlich sind.
+Dieser Artikel soll schwerpunktmäßig die Cassandra-Bereitstellung unter Ubuntu als Cluster in einem oder in mehreren Rechenzentren unter Nutzung von Microsoft Azure Virtual Machines und Virtual Networks zeigen. Die Clusterbereitstellung für produktionsoptimierte Workloads ist nicht Gegenstand dieses Artikels, weil Knotenkonfigurationen mit mehreren Datenträgern, ein geeigneter Ringtopologie-Entwurf und Datenmodellierung zur Unterstützung der Anforderungen an die Replikation, die Datenkonsistenz, den Durchsatz und die hohe Verfügbarkeit erforderlich sind.
 
 Dieser Artikel zeigt grundlegende Vorgehensweisen, um zu zeigen, welche Schritte zum Erstellen des Cassandra-Clusters im Vergleich zu Docker, Chef oder Puppet erforderlich sind. Dies kann die Bereitstellung der Infrastruktur entscheidend vereinfachen.
 
@@ -39,7 +31,7 @@ Microsoft Azure-Netzwerke ermöglichen die Bereitstellung von isolierten private
 - Keine anderen öffentlichen Netzwerkendpunkte als SSH-Endpunkte
 - Jeder Cassandra-Knoten benötigt eine feste interne IP-Adresse.
 
-Cassandra kann in einer einzelnen Azure-Region oder in mehreren Regionen basierend auf der dezentralen Natur der Arbeitsauslastung bereitgestellt werden. Das Bereitstellungsmodell für mehrere Regionen kann genutzt werden, um Endbenutzer in geringerer Entfernung zu einem bestimmten geografischen Ort über die gleiche Cassandra-Infrastruktur zu bedienen. Die in Cassandra integrierte Knotenreplikation übernimmt die Synchronisierung von mehreren Masterschreibvorgängen, die aus mehreren Rechenzentren stammen, und stellt Anwendungen eine konsistente Sicht der Daten zur Verfügung. Die Bereitstellung für mehrere Regionen kann auch die Risikominimierung von weit reichenden Azure-Dienstausfällen unterstützen. Die optimierbare Konsistenz- und Replikationstopologie von Cassandra kann verschiedene RPO-Anforderungen von Anwendungen erfüllen.
+Cassandra kann in einer einzelnen Azure-Region oder in mehreren Regionen basierend auf der dezentralen Natur des Workloads bereitgestellt werden. Das Bereitstellungsmodell für mehrere Regionen kann genutzt werden, um Endbenutzer in geringerer Entfernung zu einem bestimmten geografischen Ort über die gleiche Cassandra-Infrastruktur zu bedienen. Die in Cassandra integrierte Knotenreplikation übernimmt die Synchronisierung von mehreren Masterschreibvorgängen, die aus mehreren Rechenzentren stammen, und stellt Anwendungen eine konsistente Sicht der Daten zur Verfügung. Die Bereitstellung für mehrere Regionen kann auch die Risikominimierung von weit reichenden Azure-Dienstausfällen unterstützen. Die optimierbare Konsistenz- und Replikationstopologie von Cassandra kann verschiedene RPO-Anforderungen von Anwendungen erfüllen.
 
 
 ### Bereitstellung in einer Region
@@ -86,7 +78,7 @@ Das oben beschriebene auf das Rechenzentrum ausgelegte Replikations- und Konsist
 
 **Hohe Verfügbarkeit:** Redundanz ist ein Schlüsselfaktor beim Erzielen hoher Verfügbarkeit für Software und Hardware. Einzelheiten finden Sie unter "Erstellen zuverlässiger Cloudsysteme unter Microsoft Azure". Unter Microsoft Azure besteht das einzig zuverlässige Verfahren zum Erreichen echter Redundanz in der Bereitstellung eines Clusters in mehreren Regionen. Anwendungen können in einem Aktiv/Aktiv- oder Aktiv/Passiv-Modus bereitgestellt werden. Wenn eine der Regionen ausfällt, kann Azure Traffic Manager Datenverkehr in die aktive Region umleiten. Bei einer Bereitstellung in einer Region mit einer Verfügbarkeit von 99,9 % kann eine Bereitstellung in zwei Regionen eine Verfügbarkeit von 99,9999 % erzielen. Dieser Wert wird mithilfe der folgenden Formel berechnet: (1-(1-0,999) * (1-0,999))*100). Weitere Informationen finden Sie im vorangegangenen Artikel.
 
-**Notfallwiederherstellung:** Ein Cassandra-Cluster in mehreren Regionen kann bei einem ordnungsgemäßen Entwurf schwerwiegenden Rechenzentrumsausfällen standhalten. Wenn eine Region ausfällt, kann die in anderen Regionen bereitgestellte Anwendung Endbenutzer bedienen. Wie alle anderen Implementierungen für Geschäftskontinuität muss die Anwendung tolerieren, dass einige Daten aufgrund der Daten in der asynchronen Pipeline verloren gehen. Durch Cassandra erfolgt die Wiederherstellung jedoch wesentlich schneller als bei den Wiederherstellungsvorgängen herkömmlicher Datenbanken. Abbildung 2 zeigt ein typisches Bereitstellungsmodell in mehreren Regionen mit acht Knoten in jeder Region. Beide Regionen sind Spiegelbilder voneinander für die gleiche Symmetrie. Echte Entwürfe hängen von den Anforderungen im Hinblick auf die Art der Arbeitsauslastung (z. B. Transaktions- oder Analysedaten), RPO, RTO, Datenkonsistenz und Verfügbarkeit ab.
+**Notfallwiederherstellung:** Ein Cassandra-Cluster in mehreren Regionen kann bei einem ordnungsgemäßen Entwurf schwerwiegenden Rechenzentrumsausfällen standhalten. Wenn eine Region ausfällt, kann die in anderen Regionen bereitgestellte Anwendung Endbenutzer bedienen. Wie alle anderen Implementierungen für Geschäftskontinuität muss die Anwendung tolerieren, dass einige Daten aufgrund der Daten in der asynchronen Pipeline verloren gehen. Durch Cassandra erfolgt die Wiederherstellung jedoch wesentlich schneller als bei den Wiederherstellungsvorgängen herkömmlicher Datenbanken. Abbildung 2 zeigt ein typisches Bereitstellungsmodell in mehreren Regionen mit acht Knoten in jeder Region. Beide Regionen sind Spiegelbilder voneinander für die gleiche Symmetrie. Echte Entwürfe hängen von den Anforderungen im Hinblick auf die Art des Workloads (z. B. Transaktions- oder Analysedaten), RPO, RTO, Datenkonsistenz und Verfügbarkeit ab.
 
 ![Bereitstellung in mehreren Regionen](./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux2.png)
 
@@ -124,7 +116,7 @@ Die folgenden Softwareversionen werden während der Bereitstellung verwendet:
 
 Da für das Herunterladen von JRE eine manuelle Zustimmung zur Oracle-Lizenz erforderlich ist, sollten Sie zur Vereinfachung der Bereitstellung die gesamte erforderliche Software auf den Desktop herunterladen, um sie später in das Ubuntu-Vorlagenimage hochzuladen, das als Vorstufe der Clusterbereitstellung erstellt wird.
 
-Laden Sie die oben aufgeführte Software in ein bekanntes Downloadverzeichnis (z. B. "%TEMP%/downloads" unter Windows oder "~/downloads" unter Linux oder Mac) auf den lokalen Desktop herunter.
+Laden Sie die oben aufgeführte Software in ein bekanntes Downloadverzeichnis (z. B. "%TEMP%/downloads" unter Windows oder "~/downloads" unter den meisten Linux-Distributionen oder Mac) auf den lokalen Computer herunter.
 
 ### ERSTELLEN DES VIRTUELLEN UBUNTU-COMPUTERS
 In diesem Schritt des Vorgangs wird das Ubuntu-Image mit der erforderlichen Software erstellt, damit das Image für die Bereitstellung von mehreren Cassandra-Knoten wiederverwendet werden kann.
@@ -153,7 +145,7 @@ Geben Sie die folgenden Informationen im Bildschirm Nr. 2 "Konfiguration des vi
 
 <table>
 <tr><th>FELDNAME             </th><th> FELDWERT	                   </th><th> ANMERKUNGEN                                 </th></tr>
-<tr><td> CLOUD-DIENST	</td><td> Einen neuen Cloud-Dienst erstellen	</td><td>Der Clouddienst ist eine Containerserverressource wie virtuelle Computer.</td></tr>
+<tr><td> CLOUDDIENST	</td><td> Einen neuen Clouddienst erstellen	</td><td>Der Clouddienst ist eine Containerserverressource wie virtuelle Computer.</td></tr>
 <tr><td> DNS-NAME DES CLOUDDIENSTS	</td><td>ubuntu-template.cloudapp.net	</td><td>Geben Sie dem Lastenausgleichsmodul einen dem Computer nicht bekannten Namen.</td></tr>
 <tr><td> REGION/AFFINITY GROUP/VIRTUAL NETWORK </td><td>	USA (West)	</td><td> Wählen Sie eine Region aus, in der Ihre Webanwendungen auf den Cassandra-Cluster zugreifen.</td></tr>
 <tr><td>STORAGE ACCOUNT </td><td>	Verwenden Sie den Standardwert.	</td><td>Verwenden Sie das Standardspeicherkonto oder ein zuvor erstelltes Speicherkonto in einer bestimmten Region.</td></tr>
@@ -700,4 +692,4 @@ Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- s
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO2-->

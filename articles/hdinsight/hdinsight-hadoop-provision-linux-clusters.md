@@ -83,7 +83,7 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 	![Diagramm der Punkt-zu-Standort-Konfiguration](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-point-to-site.png)
 
-Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
+Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Übersicht über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
 
 > [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster bereitstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Netzwerks](virtual-networks-create-vnet.md).
 >
@@ -166,9 +166,9 @@ HDInsight-Cluster verwenden als Standarddateisystem einen Azure-Blobspeichercont
 
 	Klicken Sie auf **Auswählen**, um die Datenquellenkonfiguration zu speichern.
 
-8. Klicken Sie auf **Knotenpreistarife**, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
+8. Klicken Sie auf **Knotentarife**, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
 
-	![Blatt „Knotenpreistarife“](./media/hdinsight-hadoop-provision-linux-clusters/HDI.CreateCluster.5.png "Anzahl von Clusterknoten angeben")
+	![Blatt „Knotentarife“](./media/hdinsight-hadoop-provision-linux-clusters/HDI.CreateCluster.5.png "Anzahl von Clusterknoten angeben")
 
 	Klicken Sie auf **Auswählen**, um die Konfiguration der Knotenpreise zu speichern.
 
@@ -301,7 +301,7 @@ Mit den folgenden Schritten werden Sie durch die Erstellung eines neuen HDInsigh
 
 ### <a id="powershell"></a> Verwenden von Azure PowerShell
 
-Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Dieser Abschnitt enthält Anweisungen für die Bereitstellung eines HDInsight-Clusters mit Azure PowerShell. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Weitere Informationen zum Verwenden von Azure PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md). Eine Liste der HDInsight Windows PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/dn858087.aspx).
+Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Workloads in Azure steuern und automatisieren können. Dieser Abschnitt enthält Anweisungen für die Bereitstellung eines HDInsight-Clusters mit Azure PowerShell. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Weitere Informationen zum Verwenden von Azure PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md). Eine Liste der HDInsight Windows PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/dn858087.aspx).
 
 
 Die folgenden Prozeduren müssen für die Bereitstellung eines HDInsight-Clusters mithilfe von Azure PowerShell ausgeführt werden:
@@ -386,7 +386,7 @@ Die Bereitstellung des Clusters kann einige Minuten dauern.
 ###<a id="sdk"></a>Verwenden des HDInsight .NET SDK
 Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Arbeit mit HDInsight in einer .NET Framework-Anwendung. Gehen Sie wie im Folgenden beschrieben vor, um ein Visual Studio-Konsolenanwendungsprojekt zu erstellen und den Code zum Erstellen eines Clusters einzufügen.
 
-**Erstellen einer Visual Studio-Konsolenanwendung**
+**So erstellen Sie eine C#-Visual Studio-Konsolenanwendung**
 
 1. Öffnen Sie Visual Studio 2013 oder 2015.
 2. Erstellen Sie ein neues Visual Studio-Projekt mit den folgenden Einstellungen:
@@ -406,6 +406,8 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Ar
 
 6. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **Program.cs**, um sie zu öffnen, fügen Sie den folgenden Code ein, und geben Sie Werte für die Variablen an:
 
+		using System;
+		using System.Security;
 		using Microsoft.Azure;
 		using Microsoft.Azure.Common.Authentication;
 		using Microsoft.Azure.Common.Authentication.Factories;
@@ -512,7 +514,7 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Ar
 
 
 
-##<a id="nextsteps"></a>Nächste Schritte
+## Nächste Schritte
 In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsight-Clusters (Hadoop) unter Linux kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 - [Arbeiten mit HDInsight unter Linux](hdinsight-hadoop-linux-information.md): Einführung in die Nuancen des Arbeitens mit einem HDInsight-Cluster unter Linux.
@@ -571,4 +573,4 @@ In diesem Artikel haben Sie verschiedene Methoden zum Bereitstellen eines HDInsi
 
   [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

@@ -5,14 +5,14 @@
    documentationCenter="na"
    authors="cherylmc"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="vpn-gateway"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/07/2015"
+   ms.date="10/05/2015"
    ms.author="cherylmc" />
 
 # Informationen über sichere, standortübergreifende Verbindungen für virtuelle Netzwerke
@@ -44,7 +44,7 @@ Die folgende Tabelle kann Ihnen dabei helfen, die beste Verbindungsoption für I
 | **Technische Dokumentation**  | [Dokumentation zum VPN-Gateway](https://azure.microsoft.com/documentation/services/vpn-gateway/)                                               | [Dokumentation zum VPN-Gateway](https://azure.microsoft.com/documentation/services/vpn-gateway/)                                                                         | [ExpressRoute-Dokumentation](https://azure.microsoft.com/documentation/services/expressroute/)                                                                                                      | [ExpressRoute-Dokumentation](https://azure.microsoft.com/documentation/services/expressroute/)                                                                                                      |
 | **FAQ**                      | [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md)                                                         | [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md)                                                                                   | [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md)                                                                                                                | [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md)                                                                                                                |
                                                                                  
-                                                                                 
+
 
 
 ## Standort-zu-Standort-Verbindungen
@@ -66,7 +66,7 @@ Mit einem Standort-zu-Standort-VPN können Sie eine sichere Verbindung zwischen 
 
 Informationen zum Konfigurieren einer Standort-zu-Standort-VPN-Gatewayverbindung finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md).
 
-Informationen zum Erstellen einer Standort-zu-Standort-VPN-Gatewayverbindung mit RRAS finden Sie unter [Konfigurieren eines Standort-zu-Standort-VPN mit Windows Server 2012 RRAS \(Routing- und RAS-Dienst\)](https://msdn.microsoft.com/library/dn636917.aspx).
+Informationen zum Erstellen einer Standort-zu-Standort-VPN-Gatewayverbindung mit RRAS finden Sie unter [Konfigurieren eines Standort-zu-Standort-VPN mit Windows Server 2012 RRAS (Routing- und RAS-Dienst)](https://msdn.microsoft.com/library/dn636917.aspx).
 
 
 ## Punkt-zu-Standort-Verbindungen
@@ -93,7 +93,7 @@ Weitere Informationen zum Konfigurieren einer Punkt-zu-Standort-Verbindung finde
 
 Azure ExpressRoute ermöglicht es Ihnen, private Verbindungen zwischen Azure-Datencentern und einer Infrastruktur bei Ihnen vor Ort oder in einer Kollokationsumgebung zu erstellen. ExpressRoute-Verbindungen erfolgen nicht über das öffentliche Internet und bieten eine höhere Sicherheit, größere Zuverlässigkeit und schnellere Geschwindigkeit bei geringerer Latenz als herkömmliche Verbindungen über das Internet.
 
-In einigen Fällen können durch die Verwendung von ExpressRoute-Verbindungen zum Übertragen von Daten zwischen lokalen Standorten und Azure auch drastische Kosteneinsparungen erzielt werden. Mit ExpressRoute können Sie Verbindungen mit Azure an einem ExpressRoute-Standort \(Exchange-Anbietereinrichtung\) oder direkt mit Azure von Ihrem vorhandenen WAN-Netzwerk \(z. B. ein MPLS VPN\) eines Netzwerkdienstanbieters aus herstellen.
+In einigen Fällen können durch die Verwendung von ExpressRoute-Verbindungen zum Übertragen von Daten zwischen lokalen Standorten und Azure auch drastische Kosteneinsparungen erzielt werden. Mit ExpressRoute können Sie Verbindungen mit Azure an einem ExpressRoute-Standort (Exchange-Anbietereinrichtung) oder direkt mit Azure von Ihrem vorhandenen WAN-Netzwerk (z. B. ein MPLS VPN) eines Netzwerkdienstanbieters aus herstellen.
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Technische Übersicht](../expressroute/expressroute-introduction.md).
 
@@ -102,4 +102,4 @@ Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Tech
 
 Weitere Informationen finden Sie unter [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md) und [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

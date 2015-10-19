@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Entwickeln von Service Fabric-Diensten"
+   pageTitle="Entwickeln von Service Fabric-Diensten | Microsoft Azure"
    description="Enthält grundlegende Informationen und Lernprogramme zum Entwickeln eines Service Fabric-Diensts mit dem Reliable Actors- oder Reliable Services-Programmiermodell."
    services="service-fabric"
    documentationCenter=".net"
@@ -87,4 +87,4 @@ Reliable Services geben Ereignisse und Leistungsindikatoren aus, die zur Diagnos
 
 - [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

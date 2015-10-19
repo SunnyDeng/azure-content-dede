@@ -86,9 +86,13 @@ Wir erstellen eine einfache App mit Cordova, um die Integration zu veranschaulic
 	        --variable AZME_REDIRECT_URL=... (URL scheme which triggers the app for deep linking)
 	        --variable AZME_ENABLE_LOG=true|false
 
+*Android Reach Icon* : muss der Name der Ressource ohne Erweiterung oder ziehbares Präfix sein (z. B. "mynotificationicon"), und die Symboldatei muss in Ihr Android-Projekt ("platforms/android/res/drawable") kopiert werden
+
+*iOS Reach Icon* : muss der Name der Ressource mit Erweiterung sein (z. B. "mynotificationicon.png"), und die Symboldatei muss mit XCode (mithilfe des Menüs "Dateien hinzufügen") dem iOS-Projekt hinzugefügt werden
+
 ##<a id="monitor"></a>Aktivieren der Überwachung in Echtzeit
 
-1. Bearbeiten Sie im Cordova-Projekt **www/js/index.js**, um den Aufruf von Mobile Engagement hinzuzufügen und eine neue Aktivität zu deklarieren, wenn das *DeviceReady*-Ereignis empfangen wird.
+1. Bearbeiten Sie im Cordova-Projekt **www/js/index.js**, um den Aufruf Mobile Engagement hinzuzufügen und eine neue Aktivität zu deklarieren, sobald das *deviceReady*-Ereignis empfangen wird.
 
 		 onDeviceReady: function() {
 		        app.receivedEvent('deviceready');
@@ -130,7 +134,7 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern über Pushbenachrichtigung
 
 Damit Mobile Engagement Pushbenachrichtigungen in Ihrem Namen senden darf, müssen Sie den Zugriff auf Ihr Apple iOS-Zertifikat oder den GCM-Server-API-Schlüssel zulassen.
 	
-1. Navigieren Sie zum Mobile Engagement-Portal. Stellen Sie sicher, dass Sie sich in der App befinden, die für dieses Projekt verwendet wird, und klicken Sie dann unten auf die Schaltfläche **Beginnen**:
+1. Navigieren Sie zum Mobile Engagement-Portal. Stellen Sie sicher, dass Sie sich in der App befinden, die für dieses Projekt verwendet wird, und klicken Sie dann unten auf die Schaltfläche **Einbinden**:
 	
 	![][1]
 	
@@ -148,13 +152,13 @@ Damit Mobile Engagement Pushbenachrichtigungen in Ihrem Namen senden darf, müss
 
 	**[Android]**
 
-	a. Klicken Sie vor **API-Schlüssel** im Abschnitt "GCM-Einstellungen" auf das Bearbeitungssymbol, fügen Sie im angezeigten Popupfenster den GCM-Serverschlüssel ein, und klicken Sie auf **OK**.
+	a. Klicken Sie vor **API-Schlüssel** im Abschnitt "GCM Settings" auf das Bearbeitungssymbol, fügen Sie im angezeigten Popupfenster den GCM-Serverschlüssel ein, und klicken Sie auf **OK**.
 		
 	![][4]
 
 ###Aktivieren von Pushbenachrichtigungen in der Cordova-App
 
-Bearbeiten Sie **www/js/index.js**, um den Aufruf von Mobile Engagement zum Anfordern von Pushbenachrichtigungen und Deklarieren einen Handlers hinzuzufügen:
+Bearbeiten Sie **www/js/index.js**, um den Aufruf Mobile Engagement hinzuzufügen und Pushbenachrichtigungen anfordern und einen Handler deklarieren zu können:
 
 	 onDeviceReady: function() {
 	        app.receivedEvent('deviceready');
@@ -169,7 +173,7 @@ Bearbeiten Sie **www/js/index.js**, um den Aufruf von Mobile Engagement zum Anfo
 
 1. Wir erstellen mit XCode die App und stellen sie auf dem Gerät bereit, um Pushbenachrichtigungen zu testen, da iOS nur Pushbenachrichtigungen an ein echtes Gerät unterstützt. Wechseln Sie zu dem Speicherort, an dem das Cordova-Projekt erstellt wurde, und navigieren Sie zu **...\\platforms\\ios**. Öffnen Sie die systemeigene Datei ".xcodeproj" in XCode. 
 	
-2. Erstellen Sie die Cordova-App und stellen Sie sie auf dem iOS-Gerät bereit. Verwenden Sie hierzu das Konto, das über das Bereitstellungsprofil mit dem Zertifikat, das Sie gerade in das Mobile Engagement-Portal hochgeladen haben, und die App-ID verfügt, die mit der beim Erstellen der Cordova-App bereitgestellten ID übereinstimmt. Sie können die *Bündel-ID* in der Datei **Resources*-info.plist** in Xcode nachschlagen, damit die IDs übereinstimmen.
+2. Erstellen Sie die Cordova-App und stellen Sie sie auf dem iOS-Gerät bereit. Verwenden Sie hierzu das Konto, das über das Bereitstellungsprofil mit dem Zertifikat, das Sie gerade in das Mobile Engagement-Portal hochgeladen haben, und die App-ID verfügt, die mit der beim Erstellen der Cordova-App bereitgestellten ID übereinstimmt. Sie können den *Bundle identifier* in der Datei **Resources*-info.plist** in XCode nachschlagen, damit die IDs übereinstimmen.
 
 3. Auf Ihrem Gerät wird das iOS-Standardpopup mit der Information angezeigt, dass die App die Berechtigung zum Senden von Benachrichtigungen anfordert. Erteilen Sie die Berechtigung.
 
@@ -183,15 +187,15 @@ Sie können einfach den Emulator zum Ausführen der Android-App verwenden, da GC
 
 Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbenachrichtigung an die auf dem Gerät ausgeführte App sendet.
 
-1. Navigieren Sie im Mobile Engagement-Portal zur Registerkarte **Reach**.
+1. Navigieren Sie zu der Registerkarte **Reach** in Ihrem Mobile Engagement-Portal.
 
-2. Klicken Sie auf **Neue Ankündigung**, um die Pushkampagne zu erstellen.
+2. Klicken Sie auf **Neue Ankündigung**, um die Push-Kampagne zu erstellen.
 
 	![][6]
 
-3. Stellen Sie Eingaben bereit, um die Kampagne zu erstellen **[Android]**.
+3. Nehmen Sie die Eingaben vor, um Ihre Kampagne **[Android]** zu erstellen.
 	
-	- Geben Sie einen **Namen** für die Kampagne an. 
+	- Geben Sie einen Text für **Name** für die Kampagne an. 
 	- Wählen Sie unter **Übermittlungstyp** für *Systembenachrichtigung* die Option *Einfach* aus.
 	- Wählen Sie für die Übermittlungszeit *Immer* aus.
 	- Geben Sie einen **Titel** für die Benachrichtigung an, der in der ersten Zeile der Pushbenachrichtigung angezeigt wird.
@@ -199,16 +203,16 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 
 	![][11]
 
-4. Stellen Sie Eingaben bereit, um die Kampagne zu erstellen **[iOS]**.
+4. Nehmen Sie die Eingaben vor, um Ihre Kampagne **[iOS]** zu erstellen.
 
-	- Geben Sie einen **Namen** für die Kampagne an. 
-	- Wählen Sie für die Übermittlungszeit *Nur außerhalb App* aus.
+	- Geben Sie einen Text für **Name** für die Kampagne an. 
+	- Wählen Sie für die Übermittlungszeit *Out of app only* aus.
 	- Geben Sie einen **Titel** für die Benachrichtigung an, der in der ersten Zeile der Pushbenachrichtigung angezeigt wird.
 	- Geben Sie eine **Nachricht** für die Benachrichtigung an, die als Nachrichtentext dient. 
  
 	![][12]
 
-5. Scrollen Sie nach unten, und wählen Sie im Inhaltsbereich **Nur Benachrichtigung** aus.
+5. Scrollen Sie nach unten, und wählen Sie im Inhaltsbereich die Option **Nur Benachrichtigung** aus.
 
 	![][8]
 
@@ -241,4 +245,4 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 [11]: ./media/mobile-engagement-cordova-get-started/campaign-first-params-android.png
 [12]: ./media/mobile-engagement-cordova-get-started/campaign-first-params-ios.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

@@ -20,7 +20,7 @@ Verwenden Sie VNets für Folgendes:
 
 ### Wie finde ich heraus, ob ich ein virtuelles Netzwerk benötige?
 
-Auf der Webseite [Virtuelle Netzwerke im Überblick](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
+Auf der Webseite [Virtuelle Netzwerke – Übersicht](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
 
 ### Wie fange ich an?
 
@@ -58,7 +58,7 @@ Sie können eine unbegrenzte Anzahl von Subnetzen in einem VNet verwenden. Alle 
 
 ### Unterliegen die in den Subnetzen verwendeten IP-Adressen bestimmten Beschränkungen?
 
-Einige IP-Adressen innerhalb jedes Subnetzes sind in Azure reserviert. Die erste und letzte IP-Adresse der Subnetze sind aus Gründen der Protokollkonformität reserviert. Darüber hinaus sind zwei weitere für Azure-Dienste verwendete IP-Adressen reserviert.
+Einige IP-Adressen innerhalb jedes Subnetzes sind in Azure reserviert. Die erste und letzte IP-Adresse der Subnetze sind aus Gründen der Protokollkonformität reserviert. Darüber hinaus sind drei weitere für Azure-Dienste verwendete IP-Adressen reserviert.
 
 ### Wie ist die minimale und maximale Größe von VNets und Subnetzen?
 
@@ -175,7 +175,7 @@ Ja. Sie können alle von Azure unterstützten Linux-Distributionen bereitstellen
 
 - **VIP:** Ihrem virtuellen Computer wird auch eine VIP-Adresse zugewiesen. Eine VIP-Adresse wird dem virtuellen Computer jedoch niemals direkt zugewiesen. Eine VIP-Adresse ist eine öffentliche IP-Adresse, die dem Clouddienst zugewiesen werden kann. Sie können optional eine VIP-Adresse für Ihren Clouddienst reservieren. Siehe [Reservierte öffentliche IP-Adresse](virtual-networks-reserved-public-ip.md).
 
-- **ILPIP:** Sie können außerdem eine öffentliche IP-Adresse auf Instanzebene (ILPIP) konfigurieren. ILPIPs sind dem virtuellen Computer direkt zugeordnet und nicht dem Clouddienst. Weitere Informationen zu ILPIPs finden Sie unter [Überblick über die öffentliche IP auf Instanzebene](virtual-networks-instance-level-public-ip.md).
+- **ILPIP:** Sie können außerdem eine öffentliche IP-Adresse auf Instanzebene (ILPIP) konfigurieren. ILPIPs sind dem virtuellen Computer direkt zugeordnet und nicht dem Clouddienst. Weitere Informationen zu ILPIPs finden Sie unter [Übersicht über die öffentliche IP auf Instanzebene](virtual-networks-instance-level-public-ip.md).
 
 ### Kann ich eine interne IP-Adresse für einen virtuellen Computer reservieren, den ich zu einem späteren Zeitpunkt erstelle?
 
@@ -221,7 +221,8 @@ Sie können innerhalb von VNets ausschließlich Compute Services verwenden. Comp
 
 Nein. Eine Azure-Web-App kann nicht in einem VNet bereitgestellt werden. Web-Apps können jedoch eine sichere Verbindung herstellen und auf Ressourcen im Azure-VNet zugreifen, wenn Sie für Ihr VNet "Punkt-zu-Standort" konfiguriert haben. Weitere Informationen finden Sie unter den folgenden Links:
 
-- [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) (in englischer Sprache)
+- [Web Apps Virtual Network Integration] (http://azure.microsoft.com/blog/
+- 014/09/15/azure-websites-virtual-network-integration/)
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (in englischer Sprache)
 
@@ -264,4 +265,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

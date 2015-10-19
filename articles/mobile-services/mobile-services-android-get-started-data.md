@@ -13,12 +13,10 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="09/23/2015"
+	ms.date="10/05/2015"
 	ms.author="ricksal"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen Android-App (JavaScript-Back-End)
-
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)]
 
 ## Zusammenfassung
 
@@ -151,4 +149,4 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

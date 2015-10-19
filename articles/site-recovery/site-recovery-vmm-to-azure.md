@@ -156,7 +156,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 >
 >1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
 >2. Beenden Sie den System Center Virtual Machine Manager-Dienst.
->3. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen. 
+>3. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
 >
     	C:\Windows\System32> CD C:\ASR
     	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
@@ -175,9 +175,9 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
  - **/proxyAddress**: optionaler Parameter, der die Adresse des Proxyservers angibt.
  - **/proxyport**: optionaler Parameter, der den Port des Proxyservers angibt.
  - **/proxyUsername**: optionaler Parameter, der den Proxybenutzernamen angibt (sofern der Proxy eine Authentifizierung erfordert).
- - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert). 
+ - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert).
 
-  
+
 ## Schritt 4: Erstellen eines Azure-Speicherkontos
 
 Wenn Sie noch über kein Azure-Speicherkonto verfügen, klicken Sie auf **Azure Storage-Konto hinzufügen**. Für das Konto muss Georeplikation aktiviert sein. Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein.
@@ -349,6 +349,5 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 
 
 <LI>Wenn Sie Fragen haben, besuchen Sie das <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure Recovery Services-Forum</a>.</LI></UL>
- 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

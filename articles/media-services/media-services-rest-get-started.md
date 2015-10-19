@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit REST-APIs" 
-	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe von REST-APIs." 
+	pageTitle="Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit der REST-API" 
+	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Übermittlung von Inhalten nach Bedarf mit Azure Media Services mithilfe der REST-API." 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -16,7 +16,7 @@
 	ms.date="09/18/2015" 
 	ms.author="juliako"/>
 
-#Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit REST-APIs 
+#Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit der REST-API
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
@@ -557,7 +557,7 @@ Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schrit
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
 
->[AZURE.NOTE]Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
+>[AZURE.NOTE]Informationen zu den Preisen finden Sie unter [Mediendienste – Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Sie folgendermaßen vor:
 	
@@ -1189,15 +1189,18 @@ Verwenden Sie zum Streamen von Videos [Azure Media Services Player](http://amspl
 Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome, Safari).
 
 
+##Nächste Schritte
 
-##Media Services-Lernpfade
+###Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
+### Suchen Sie etwas anderes?
 
+Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
 ##Zusätzliche Ressourcen
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
@@ -1211,4 +1214,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
    ms.workload="search"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.date="07/08/2015"
+   ms.date="10/06/2015"
    ms.author="brjohnst"/>
 
 # Verwenden von Azure Search aus einer .NET-Anwendung #
@@ -31,7 +31,7 @@ Die Clientbibliothek definiert Klassen wie `Index`, `Field` und `Document` sowie
 
 Die aktuelle Version des Azure Search-.NET-SDK ist eine Vorabversion. Wir freuen uns sehr über Ihr Feedback, das wir versuchen, in der ersten stabilen Version des Programms zu berücksichtigen. Sie können uns dieses über die [Seite „Feedback“](http://feedback.azure.com/forums/263029-azure-search) bereitstellen.
 
-Das .NET-SDK unterstützt Version `2015-02-28` der Azure Search-REST-API, die auf [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx) dokumentiert ist. Neue Funktionen, die *nicht* Teil dieser Version sind, wie die Unterstützung für die Natural Language-Prozessoren von Microsoft oder der Suchparameter `moreLikeThis`, befinden sich noch im [Preview](search-api-2015-02-28-preview.md)-Stadium und stehen im SDK noch nicht zur Verfügung. Statusaktualisierungen zu diesen Funktionen finden Sie in den Abschnitten [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung für Suchdienst) oder [Latest updates to Azure Search](search-latest-updates.md) (+++Neueste Aktualisierungen in Azure Search).
+Das .NET-SDK unterstützt Version `2015-02-28` der Azure Search-REST-API, die auf [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx) dokumentiert ist. Diese Version unterstützt jetzt Microsoft-Sprachanalyseprogramme. Neue Funktionen, die *nicht* Teil dieser Version sind, wie die Unterstützung für den Suchparameter `moreLikeThis`, befinden sich noch im [Preview](search-api-2015-02-28-preview.md)-Stadium und stehen im SDK noch nicht zur Verfügung. Statusaktualisierungen zu diesen Funktionen finden Sie in den Abschnitten [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung für Suchdienst) oder [Latest updates to Azure Search](search-latest-updates.md) (+++Neueste Aktualisierungen in Azure Search).
 
 Folgende Funktionen werden in diesem SDK nicht unterstützt:
 
@@ -335,7 +335,9 @@ Vielleicht fragen Sie sich, wie das Azure Search-.NET-SDK Instanzen einer benutz
 
 Das Erste, was Sie sehen, ist, dass jede öffentliche Eigenschaft von `Hotel` einem Feld in der Indexdefinition entspricht, allerdings mit einem bedeutsamen Unterschied: die Namen der Felder beginnen mit einem Kleinbuchstaben („camel-Schreibweise“), während die Namen der öffentlichen Eigenschaften von `Hotel` mit einem Großbuchstaben („Pascal-Schreibweise“) beginnen. Dies ist ein typisches Szenario für .NET-Anwendungen, die Datenbindungen durchführen, wenn das Zielschema außerhalb der Kontrolle des Anwendungsentwicklers liegt. Anstatt nun die Namenskonventionen von .NET mit Eigenschaftsnamen in camel-Schreibweise zu verletzen, können Sie das SDK mit dem Attribut `[SerializePropertyNamesAsCamelCase]` anweisen, Eigenschaftsnamen automatisch der camel-Schreibweise zuzuordnen.
 
-Ebenso bemerkenswert an der Klasse `Hotel` sind die Datentypen der öffentlichen Eigenschaften. Die .NET-Typen dieser Eigenschaften stimmen mit den entsprechenden Feldtypen in der Indexdefinition überein. Die Zeichenfolgeeigenschaft `Category` passt zum Beispiel zum Feld `category`, das den Typ `Edm.String` hat. Ähnliche Zuordnungen bestehen auch zwischen `bool?` und `Edm.Boolean`, `DateTimeOffset?`, `Edm.DateTimeOffset` usw. Die jeweiligen Regeln für die Zuordnung eines Typs sind mit der `Documents.Get`-Methode auf [MSDN](https://msdn.microsoft.com/library/azure/dn931291.aspx) dokumentiert. Beachten Sie, dass in der Klasse `Hotel` für Wertetypen wie `bool` und `int` auch Nullwerte zulässig sind, da in Azure Search für alle primitiven Feldtypen Nullwerte zugelassen sind.
+Ebenso bemerkenswert an der Klasse `Hotel` sind die Datentypen der öffentlichen Eigenschaften. Die .NET-Typen dieser Eigenschaften stimmen mit den entsprechenden Feldtypen in der Indexdefinition überein. Die Zeichenfolgeeigenschaft `Category` passt zum Beispiel zum Feld `category`, das den Typ `Edm.String` hat. Ähnliche Zuordnungen bestehen auch zwischen `bool?` und `Edm.Boolean`, `DateTimeOffset?`, `Edm.DateTimeOffset` usw. Die jeweiligen Regeln für die Zuordnung eines Typs sind mit der `Documents.Get`-Methode auf [MSDN](https://msdn.microsoft.com/library/azure/dn931291.aspx) dokumentiert.
+ 
+> [AZURE.NOTE]Beim Entwerfen eigener Modellklassen für die Zuordnung zum Azure Search-Index müssen Sie Eigenschaften von Werttypen, z. B. `bool` und `int`, als Eigenschaften deklarieren, die NULL-Werte zulassen (z. B. `bool?` anstelle von `bool`). Dies ist erforderlich, da alle primitiven Feldtypen in Azure Search NULL-Werte zulassen. Wenn Sie Typen verwenden, die keine NULL-Werte zulassen, können beim Indizieren von Standardwerten, z. B. `0` und `false`, unerwartete Ergebnisse auftreten.
 
 Diese Möglichkeit, eigene Klassen als Dokumente zu verwenden, funktioniert in beide Richtungen. Denn ebenso können Sie das SDK, wie im nächsten Abschnitt gezeigt, beim Abrufen von Suchergebnissen anweisen, diese automatisch in einen Typ Ihrer Wahl zu deserialisieren.
 
@@ -397,7 +399,7 @@ Mit diesem Schritt ist das Lernprogramm abgeschlossen. Gerne können Sie sich ab
 ## Nächste Schritte ##
 
 - Vertiefen Sie Ihre Kenntnisse mithilfe von [Videos und anderen Beispielen und Lernprogrammen](search-video-demo-tutorial-list.md).
-- Erfahren Sie mehr über die Features und Funktionen in dieser Version des Azure Search-SDK: [Überblick über Azure Search](https://msdn.microsoft.com/library/azure/dn798933.aspx).
+- Erfahren Sie mehr über die Features und Funktionen in dieser Version des Azure Search-SDK: [Übersicht über Azure Search](https://msdn.microsoft.com/library/azure/dn798933.aspx).
 - Lesen Sie den Abschnitt [Namenskonventionen](https://msdn.microsoft.com/library/azure/dn857353.aspx), um sich mit den Namensregeln für Objekte vertraut zu machen.
 - Lesen Sie den Abschnitt zu den in Azure Search [unterstützten Datentypen](https://msdn.microsoft.com/library/azure/dn798938.aspx).
 
@@ -625,4 +627,4 @@ Hotel.cs:
     }
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

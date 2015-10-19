@@ -3,7 +3,7 @@
    description="Dieses Lernprogramm führt Sie durch die Schritte zum Erstellen, Debuggen und Bereitstellen eines kanonischen HelloWorld-Diensts mithilfe von Service Fabric Reliable Actors."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/05/2015"
-   ms.author="claudioc"/>
+   ms.author="vturecek"/>
 
 # Reliable Actors: Das Szenario für die kanonische HelloWorld-Vorgehensweise
 Dieser Artikel erläutert die Grundlagen von Service Fabric Reliable Actors und führt Sie durch das Erstellen, Debuggen und Bereitstellen einer einfachen HelloWorld-Anwendung in Visual Studio.
@@ -158,4 +158,4 @@ Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokal
 [4]: ./media/service-fabric-reliable-actors-get-started/vs-context-menu.png
 [5]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject1.PNG
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

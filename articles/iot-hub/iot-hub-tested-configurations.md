@@ -42,7 +42,7 @@ Die Azure IoT-Bibliotheken wurden auf den folgenden Betriebssystemplattformen ge
 
 |Andere Plattformen | Version|
 |:---------------|:------------:|
-|mbed OS| 2,0 |
+|mbed | 2,0 |
 |TI-RTOS | 2\.x |
 
 
@@ -125,7 +125,7 @@ Weitere Informationen zum Entwickeln von Lösungen mit für IoT zertifizierten G
 |TI CC3200 | TI-RTOS 2.x|C|
 |Intel Edison |Yocto |C, JavaScript|
 |Minnowboard Max |Windows 7, 8, 10 |C#|
-|Arrow Dragonboard |Windows 10 IoT Core | C#|
-|Freescale FRDM K64 |mbedOS | C|
+|Arrow DragonBoard 410c |Windows 10 IoT Core | C#|
+|Freescale FRDM K64 |mbed 2.0 | C|
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

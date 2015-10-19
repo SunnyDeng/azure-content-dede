@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="10/06/2015" 
 	ms.author="sdanie"/>
 
 # Überwachen von Azure Redis Cache
@@ -64,6 +64,8 @@ Um die gespeicherten Metriken anzuzeigen, untersuchen Sie die Tabellen in Ihrem 
 
 Cachemetriken werden in verschiedenen Berichtsintervallen gemeldet, einschließlich **Letzte Stunde**, **Heute**, **Letzte Woche** und**Benutzerdefiniert**. Das Blatt **Metrik** für jedes Metrikdiagramm zeigt die Durchschnitts-, Minimal- und Maximalwerte für jede Metrik im Diagramm an. Einige Metriken zeigen einen Gesamtwert für das Berichtsintervall an.
 
+Jede Metrik umfasst zwei Versionen. Eine Metrik misst die Leistung für den gesamten Cache. Eine zweite Version der Metrik, deren Name `(Shard 0-9)` enthält, misst für Caches, die [Clustering](cache-how-to-premium-clustering.md) verwenden, die Leistung für einen einzelnen Shard in einem Cache. Wenn z. B. ein Cache 4 Shards enthält, ist `Cache Hits` der Gesamtbetrag der Treffer für den gesamten Cache, und `Cache Hits (Shard 3)` gibt lediglich die Treffer für dieses Shard des Caches an.
+
 >[AZURE.NOTE]Selbst wenn keine der mit dem Cache verbundenen Clientanwendungen aktiv ist, wird möglicherweise Cacheaktivität angezeigt, wie z. B. verbundene Clients, Arbeitsspeicherauslastung und Vorgänge, die gerade ausgeführt werden. Diese Aktivität ist beim Betrieb einer Azure Redis Cache-Instanz normal.
 
 | Metrik | Beschreibung |
@@ -77,7 +79,8 @@ Cachemetriken werden in verschiedenen Berichtsintervallen gemeldet, einschließl
 | Redis-Serverlast | Der Prozentsatz der Zyklen, in denen der Redis-Server mit der Verarbeitung beschäftigt ist und nicht auf Nachrichten wartet. Wenn dieser Zähler den Wert 100 erreicht, bedeutet dies, dass der Redis-Server die Leistungsobergrenze erreicht hat und die CPU nicht schneller arbeiten kann. Wenn eine hohe Redis-Serverlast angezeigt wird, bedeutet dies auch Timeoutausnahmen auf dem Client. In diesem Fall sollten Sie erwägen, den Cache zentral hochzuskalieren oder Ihre Daten in mehrere Caches zu partitionieren. |
 | set-Vorgänge | Die Anzahl von set-Vorgängen im Cache während des angegebenen Berichtsintervalls. Dieser Wert ist die Summe der folgenden Werte aus dem Redis-INFO-Befehl "all": `cmdstat_set`, `cmdstat_hset`, `cmdstat_hmset`, `cmdstat_hsetnx`, `cmdstat_lset`, `cmdstat_mset`, `cmdstat_msetnx`, `cmdstat_setbit`, `cmdstat_setex`, `cmdstat_setrange` und `cmdstat_setnx`. |
 | Vorgänge gesamt | Die Gesamtzahl aller Befehle, die während des angegebenen Berichtsintervalls vom Cacheserver verarbeitet wurden. Dieser Wert ist dem Redis-INFO-Befehl `total_commands_processed` zugeordnet. Beachten Sie: Wenn Azure Redis Cache ausschließlich für pub/sub-Vorgänge verwendet wird, sind keine Metriken für `Cache Hits`, `Cache Misses`, `Gets` oder `Sets` vorhanden. Stattdessen sind `Total Operations`-Metriken vorhanden, die die Cachenutzung für pub/sub-Vorgänge widerspiegeln. |
-| Verwendeter Arbeitsspeicher | Die Menge an verwendetem Cachearbeitsspeicher in MB während des angegebenen Berichtsintervalls. Dieser Wert ist dem Redis-INFO-Befehl `used_memory` zugeordnet. |
+| Verwendeter Arbeitsspeicher | Der Betrag von Cachearbeitsspeicher in MB, der während des angegebenen Berichtsintervalls für Schlüssel-Wert-Paare im Cache verwendet wird. Dieser Wert ist dem Redis-INFO-Befehl `used_memory` zugeordnet. Metadaten und Fragmentierung sind hierin nicht enthalten. |
+| Verwendeter Arbeitsspeicher (RSS) | Die Menge an verwendetem Cachearbeitsspeicher in MB während des angegebenen Berichtsintervalls, einschließlich Fragmentierung und Metadaten. Dieser Wert ist dem Redis-INFO-Befehl `used_memory_rss` zugeordnet. |
 | CPU | Die CPU-Auslastung des Azure Redis Cache-Servers in Prozent während des angegebenen Berichtsintervalls. Dieser Wert ist dem Betriebssystem-Leistungsindikator `\Processor(_Total)\% Processor Time` zugeordnet, |
 | Cache-Lesevorgänge | Die Menge an Daten in KB/s, die während des angegebenen Berichtsintervalls im Cache gelesen wurden. Dieser Wert wird von den Netzwerkschnittstellenkarten für die virtuelle Maschine abgeleitet, die den Cache hostet, und ist nicht Redis-spezifisch. |
 | Cache-Schreibvorgänge | Die Menge an Daten in KB/s, die während des angegebenen Berichtsintervalls in den Cache geschrieben wurden. Dieser Wert wird von den Netzwerkschnittstellenkarten für die virtuelle Maschine abgeleitet, die den Cache hostet, und ist nicht Redis-spezifisch. |
@@ -219,4 +222,4 @@ Weitere Informationen zu Warnungen in Azure finden Sie unter [Empfangen von Warn
 
 [redis-cache-add-alert]: ./media/cache-how-to-monitor/redis-cache-add-alert.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

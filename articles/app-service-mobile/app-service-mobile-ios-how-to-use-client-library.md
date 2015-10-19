@@ -1,14 +1,14 @@
 <properties
 	pageTitle="Vorgehensweise beim Verwenden des iOS-SDKs für Azure Mobile Apps"
 	description="Vorgehensweise beim Verwenden des iOS-SDKs für Azure Mobile Apps"
-	services="mobile-services"
+	services="app-service\mobile"
 	documentationCenter="ios"
 	authors="krisragh"
 	manager="dwrede"
 	editor=""/>
 
 <tags
-	ms.service="mobile-services"
+	ms.service="app-service-mobile"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
@@ -249,4 +249,4 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
 [Konflikthandler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!-----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

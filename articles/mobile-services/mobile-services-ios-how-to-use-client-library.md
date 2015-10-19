@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
 
-Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Azure Mobile Services [iOS SDK]. Wenn Sie noch nicht mit Mobile Services vertraut sind, führen Sie zuerst das Lernprogramm[Mobile Services-Schnellstart] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] durch, um Ihr Konto zu konfigurieren, eine Tabelle zu erstellen und einen mobilen Dienst zu erstellen.
+Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Azure Mobile Services [iOS SDK]. Wenn Sie noch nicht mit Mobile Services vertraut sind, führen Sie zuerst das Lernprogramm [Mobile Services-Schnellstart] durch, um Ihr Konto zu konfigurieren, eine Tabelle zu erstellen und einen mobilen Dienst zu erstellen.
 
 > [AZURE.NOTE]Dieses Handbuch verwendet das neueste [iOS-SDK für Mobile Services](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409). Wenn das Projekt eine ältere Version des SDK verwendet, aktualisieren Sie zuerst das Framework in Xcode.
 
@@ -28,7 +28,7 @@ Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Azure Mobil
 
 ##<a name="Setup"></a>Einrichtung und Voraussetzungen
 
-Dieses Lernprogramm setzt voraus, dass Sie einen mobilen Dienst und eine Tabelle erstellt haben. Weitere Informationen finden Sie unter [Erstellen einer Tabelle]. Alternativ können Sie die `TodoItem`-Tabelle verwenden, die Sie im Lernprogramm [Mobile Services-Schnellstart] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben. In dieser Anleitung wird davon ausgegangen, dass die Tabelle das gleiche Schema wie die Tabellen in diesen Lernprogrammen aufweist. Weiter wird davon ausgegangen, dass der Xcode auf `WindowsAzureMobileServices.framework` verweist und `WindowsAzureMobileServices/WindowsAzureMobileServices.h` importiert.
+Dieses Lernprogramm setzt voraus, dass Sie einen mobilen Dienst und eine Tabelle erstellt haben. Weitere Informationen finden Sie unter [Erstellen einer Tabelle]. Alternativ können Sie die `TodoItem`-Tabelle verwenden, die Sie im Lernprogramm [Mobile Services-Schnellstart] erstellt haben. In dieser Anleitung wird davon ausgegangen, dass die Tabelle das gleiche Schema wie die Tabellen in diesen Lernprogrammen aufweist. Weiter wird davon ausgegangen, dass der Xcode auf `WindowsAzureMobileServices.framework` verweist und `WindowsAzureMobileServices/WindowsAzureMobileServices.h` importiert.
 
 ##<a name="create-client"></a>Gewusst wie: Erstellen des Mobile Services-Clients
 
@@ -311,10 +311,8 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 <!-- Images. -->
 
 <!-- URLs. -->
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: /develop/mobile/tutorials/get-started-data
-[Mobile Services-Schnellstart]: /develop/mobile/tutorials/get-started-ios
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-ios
-[Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-ios
+[Mobile Services-Schnellstart]: mobile-services-ios-get-started.md
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
@@ -323,13 +321,11 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Berechtigungen]: http://msdn.microsoft.com/library/windowsazure/jj193161.aspx
 [Dienstseitige Autorisierung]: mobile-services-javascript-backend-service-side-authorization.md
-[Use scripts to authorize users]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
 [dynamische Schema]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-[How to: access custom parameters]: /develop/mobile/how-to-guides/work-with-server-scripts#access-headers
 [Erstellen einer Tabelle]: http://msdn.microsoft.com/library/windowsazure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
 [Konflikthandler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

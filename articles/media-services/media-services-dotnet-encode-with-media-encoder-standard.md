@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/20/2015"    
+	ms.date="10/07/2015"    
 	ms.author="juliako"/>
 
 
@@ -40,7 +40,7 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 - Fügen Sie einen Ereignishandler hinzu, um den Auftragsstatus zu überprüfen.
 - Übermitteln des Auftrags.
 		
-		static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset, string pathToLocalPresetFile)
+		static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset)
 		{
 		    // Declare a new job.
 		    IJob job = _context.Jobs.Create("Media Encoder Standard Job");
@@ -125,4 +125,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Erstellen von Miniaturansichten über Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md) [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

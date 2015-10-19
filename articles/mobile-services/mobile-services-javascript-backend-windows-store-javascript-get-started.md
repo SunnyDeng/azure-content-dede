@@ -12,17 +12,17 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="javascript"
-	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.topic="get-started-article"
+	ms.date="10/06/2015"
 	ms.author="glenga"/>
 
 # Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
-Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst zu einer Windows Store-JavaScript-App mithilfe von Azure Mobile Services hinzufügen.
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
-In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in den unterstützten .NET-Sprachen mithilfe von Visual Studio verfassen können, finden Sie in der [.NET-Back-End-Version dieses Themas](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md).
+Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst zu einer Windows Store-JavaScript-App mithilfe von Azure Mobile Services hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik.
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
@@ -41,8 +41,6 @@ Sobald Sie Ihren mobilen Dienst erstellt haben, können Sie einfach dem Schnells
 
 
 2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue Windows Store-App erstellen**.
-
-   	![](./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-portal-quickstart.png)
 
 3. Laden Sie [Visual Studio 2013][Visual Studio 2013 Express for Windows] auf Ihren lokalen Computer oder virtuellen Computer herunter und installieren Sie es, falls noch nicht geschehen.
 
@@ -72,6 +70,11 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 >[AZURE.NOTE]Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei "default.js" finden und prüfen.
 
+## Nächste Schritte
+Da Sie jetzt den Schnellstart abgeschlossen haben, können Sie anschließend erfahren, wie Sie mit dem [Mobile Services-Client für HTML/JavaScript](mobile-services-html-how-to-use-client-library.md) arbeiten.
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
+
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
 [Create a new mobile service]: #create-new-service
@@ -81,12 +84,9 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 <!-- Images. -->
 
 <!-- URLs. -->
-[Get started with data]: ../mobile-services-javascript-backend-windows-universal-javascript-get-started-data.md
-[Get started with authentication]: mobile-services-windows-store-javascript-get-started-users.md
-[Get started with push notifications]: mobile-services-javascript-backend-windows-store-javascript-get-started-push.md
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Anfügen eines Datenträgers an einen virtuellen Linux-Computer | Microsoft Azure"
-	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Linux-Computer unter Azure anfügen und initialisieren können, damit er betriebsbereit ist."
+	description="Sie erfahren, wie Sie einen Datenträger an einen virtuellen Azure-Computer unter Linux anfügen und initialisieren können, damit er betriebsbereit ist."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -150,7 +150,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 	In auf SUSE Linux basierenden Systemen müssen Sie eventuell ein etwas unterschiedliches Format verwenden:
 
-		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /   ext3   defaults   1   2
+		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext3   defaults   1   2
 
 	Sie können nun testen, ob das Dateisystem korrekt eingebunden wurde, indem Sie die Einbindung aufheben und wiederherstellen. Verwenden Sie dafür den zuvor erstellten Beispielbereitstellungspunkt `/datadrive`:
 
@@ -173,4 +173,4 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 [Agent]: virtual-machines-linux-agent-user-guide.md
 [Logon]: virtual-machines-linux-how-to-log-on.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

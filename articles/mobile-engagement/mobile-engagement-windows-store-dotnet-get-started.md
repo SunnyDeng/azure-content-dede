@@ -103,23 +103,23 @@ Sie haben nun eine neues Projekt für eine Windows Universal-App erstellt, in di
 
 Um mit dem Senden von Daten zu beginnen und sicherzustellen, dass die Benutzer aktiv sind, müssen Sie mindestens einen Bildschirm (Aktivität) an das Mobile Engagement-Back-End schicken.
 
-1. 	Fügen Sie in **MainPage.Xaml.cs** die `using`-Anweisung hinzu:
+1. 	Fügen Sie in **MainPage.Xaml.cs** die folgende `using`-Anweisung hinzu:
 
-		using Microsoft.Azure.Engagement;
+		using Microsoft.Azure.Engagement.Overlay;
 
-2. Ersetzen Sie die **Page**-Basisklasse von **MainPage** durch **EngagementPage**:
+2. Ersetzen Sie die **Page**-Basisklasse von **MainPage** durch **EngagementPageOverlay**:
 
-		class MainPage : EngagementPage
+		class MainPage : EngagementPageOverlay
 
 3. In der Datei `MainPage.xaml`:
 
 	a. Fügen Sie Ihre Namespace-Deklarationen hinzu:
 
-		xmlns:engagement="using:Microsoft.Azure.Engagement"
+		xmlns:engagement="using:Microsoft.Azure.Engagement.Overlay"
 
-	b. Ersetzen Sie **Page** im XML-Tagnamen durch **engagement:EngagementPage**.
+	b. Ersetzen Sie **Page** im XML-Tagnamen durch **engagement:EngagementPageOverlay**.
 	
-> [AZURE.IMPORTANT]Wenn Ihre Seite die Methode `OnNavigatedTo` überschreibt, rufen Sie unbedingt `base.OnNavigatedTo(e)` auf. Andernfalls wird die Aktivität nicht erfasst (`EngagementPage` ruft `StartActivity` innerhalb der `OnNavigatedTo`-Methode auf). Dies ist besonders wichtig in einem Windows Phone-Projekt, in dem die Standardvorlage eine `OnNavigatedTo`-Methode besitzt.
+> [AZURE.IMPORTANT]Wenn Ihre Seite die `OnNavigatedTo`-Methode überschreibt, rufen Sie unbedingt `base.OnNavigatedTo(e)` auf. Andernfalls wird die Aktivität nicht erfasst (`EngagementPage` ruft `StartActivity` innerhalb der `OnNavigatedTo`-Methode auf). Dies ist besonders wichtig in einem Windows Phone-Projekt, in dem die Standardvorlage eine `OnNavigatedTo`-Methode besitzt.
 
 ##<a id="monitor"></a>Verbinden der App mit Überwachung in Echtzeit
 
@@ -171,13 +171,15 @@ Sie sind bereits für das Senden einer Popupbenachrichtigung. und wir werden jet
 
 [AZURE.INCLUDE [Erstellen einer Windows-Pushkampagne](../../includes/mobile-engagement-windows-push-campaign.md)]
 
-Nun sollte eine Popupbenachrichtigung von der Kampagne auf Ihrem Gerät erscheinen – die App sollte geschlossen sein, um sie sehen zu können. Wenn die App ausgeführt wurde, stellen Sie sicher, dass sie vor dem Aktivieren der Kampagne für einige Minuten geschlossen bleibt, um Popupbenachrichtigungen empfangen zu können. Falls Sie In-App-Benachrichtigungen integrieren möchten, sodass die Benachrichtigung in der App angezeigt wird, wenn sie geöffnet ist, schauen Sie nach unter [Windows Universal-Apps - Overlay-Integration].
+Wenn die App ausgeführt wurde, wird eine Benachrichtigung in der App angezeigt. Andernfalls wird eine Popupbenachrichtigung angezeigt, wenn die App geschlossen wurde. Wenn eine Benachrichtigung in der App angezeigt wird, jedoch keine Popupbenachrichtigung, und Sie die App in Visual Studio im Debugmodus ausführen, sollten Sie **Zyklusereignisse -> Anhalten** in der Symbolleiste auswählen, um sicherzustellen, dass die App tatsächlich angehalten wird. Wenn Sie beim Debuggen der Anwendung in Visual Studio auf die Schaltfläche "Anfang" geklickt haben, wird diese nicht immer angehalten, und während die Benachrichtigung in der App angezeigt wird, würde keine Popupbenachrichtigung ausgegeben werden.
+
+![][8]
 
 <!-- URLs. -->
 [Mobile Engagement Windows Universal SDK documentation]: ../mobile-engagement-windows-store-integrate-engagement/
 [MicrosoftAzure.MobileEngagement]: http://go.microsoft.com/?linkid=9864592
 [Windows Store Dev Center]: http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409
-[Windows Universal-Apps - Overlay-Integration]: ../mobile-engagement-windows-store-integrate-engagement-reach/#overlay-integration
+[Windows Universal Apps - Overlay integration]: ../mobile-engagement-windows-store-integrate-engagement-reach/#overlay-integration
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-windows-store-dotnet-get-started/universal-app-creation.png
@@ -186,5 +188,6 @@ Nun sollte eine Popupbenachrichtigung von der Kampagne auf Ihrem Gerät erschein
 [5]: ./media/mobile-engagement-windows-store-dotnet-get-started/manifest-toast.png
 [6]: ./media/mobile-engagement-windows-store-dotnet-get-started/enter-credentials.png
 [7]: ./media/mobile-engagement-windows-store-dotnet-get-started/associate-app-store.png
+[8]: ./media/mobile-engagement-windows-store-dotnet-get-started/vs-suspend.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

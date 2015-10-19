@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer (Universal Windows 8.1) | Microsoft Azure" 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer (Universal Windows 8.1) | Azure Mobile Services" 
 	description="Erfahren Sie, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an einen bestimmten authentifizierten Benutzer senden können, auf dessen Gerät Ihre universelle Windows 8.1-App ausgeführt wird." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/01/2015" 
+	ms.date="10/05/2015" 
 	ms.author="glenga"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
@@ -30,9 +30,9 @@ Dieses Lernprogramm unterstützt Apps für Windows Store und Windows Phone Store
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die folgenden Mobile Services-Lernprogramme abgeschlossen haben:
 
-+ [Erste Schritte mit der Authentifizierung]<br/>Fügt eine Anmeldeanforderung zur Beispiel-App „TodoList“ hinzu.
++ [Erste Schritte mit der Authentifizierung] Fügt der TodoList-Beispiel-App eine Anmeldeanforderung hinzu.
 
-+ [Erste Schritte mit Pushbenachrichtigungen]<br/>Konfiguriert die Beispiel-App „TodoList“ für Pushbenachrichtigungen durch die Verwendung von Notification Hubs.
++ [Erste Schritte mit Pushbenachrichtigungen] Konfiguriert die TodoList-Beispiel-App für Pushbenachrichtigungen durch die Verwendung von Notification Hubs.
 
 Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhindern, dass sich nicht authentifizierte Benutzer für Pushbenachrichtigungen von Ihrem mobilen Dienst registrieren.
 
@@ -66,4 +66,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

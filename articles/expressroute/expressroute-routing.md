@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="10/06/2015"
    ms.author="cherylmc"/>
 
 
@@ -20,9 +20,9 @@
 
 Zum Herstellen einer Verbindung mit Microsoft-Clouddiensten per ExpressRoute müssen Sie das Routing einrichten und verwalten. Einige Konnektivitätsanbieter bieten das Einrichten und Verwalten des Routings als verwalteten Dienst an. Fragen Sie bei Ihrem Konnektivitätsanbieter nach, ob dieser Dienst angeboten wird. Wenn dies nicht der Fall ist, müssen Sie die unten beschriebenen Anforderungen erfüllen.
 
-Der Artikel [Verbindungs- und Routingdomänen](expressroute-circuit-peerings.md) enthält eine Beschreibung der Routingsitzungen, die zum Herstellen der Konnektivität eingerichtet werden müssen.
+Der Artikel [ExpressRoute-Verbindungen und Routingdomänen](expressroute-circuit-peerings.md) enthält eine Beschreibung der Routingsitzungen, die zum Herstellen der Konnektivität eingerichtet werden müssen.
 
-**Hinweis:** Microsoft unterstützt keine Routerredundanzprotokolle (z. B. HSRP, VRRP) für Konfigurationen mit hoher Verfügbarkeit. Wir nutzen ein redundantes Paar mit BGP-Sitzungen pro Peering, um die hohe Verfügbarkeit sicherzustellen.
+**Hinweis**: Microsoft unterstützt keine Routerredundanzprotokolle (z. B. HSRP, VRRP) für Konfigurationen mit hoher Verfügbarkeit. Wir nutzen ein redundantes Paar mit BGP-Sitzungen pro Peering, um die hohe Verfügbarkeit sicherzustellen.
 
 ## IP-Adressen für Peerings
 
@@ -36,9 +36,9 @@ Sie können entweder private IP-Adressen oder öffentliche IP-Adressen verwenden
  - Die für das Routing verwendeten Subnetze können entweder private IP-Adressen oder öffentliche IP-Adressen sein.
  - Die Subnetze dürfen nicht mit dem Bereich in Konflikt stehen, der vom Kunden für die Nutzung in der Microsoft Cloud reserviert ist.
  - Wenn ein /29-Subnetz verwendet wird, wird es in zwei /30-Subnetze unterteilt. 
- - Das erste /30-Subnetz wird für die primäre Verknüpfung verwendet, und das zweite /30-Subnetz wird für die sekundäre Verknüpfung verwendet.
- - Für jedes /30-Subnetz müssen Sie zuerst die IP-Adresse des /30-Subnetzes auf dem Router angeben. Microsoft verwendet die zweite IP-Adresse des /30-Subnetzes zum Einrichten einer BGP-Sitzung.
- - Sie müssen beide BGP-Sitzungen einrichten, damit unser [SLA zur Verfügbarkeit](http://azure.microsoft.com/support/legal/sla/) gültig ist.  
+	 - Das erste /30-Subnetz wird für die primäre Verknüpfung verwendet, und das zweite /30-Subnetz wird für die sekundäre Verknüpfung verwendet.
+	 - Für jedes /30-Subnetz müssen Sie zuerst die IP-Adresse des /30-Subnetzes auf dem Router angeben. Microsoft verwendet die zweite IP-Adresse des /30-Subnetzes zum Einrichten einer BGP-Sitzung.
+	 - Sie müssen beide BGP-Sitzungen einrichten, damit unsere [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/) gültig sind.  
 
 #### Beispiel für privates Peering
 
@@ -46,7 +46,7 @@ Wenn Sie zum Einrichten des Peerings „a.b.c.d/29“ verwenden, wird eine Unter
 
 a.b.c.d/29 wird in a.b.c.d/30 und a.b.c.d+4/30 unterteilt und über die Bereitstellungs-APIs an Microsoft übergeben. Sie verwenden a.b.c.d+1 als VRF-IP für das primäre PE-Element, und Microsoft nutzt a.b.c.d+2 als VRF-IP für den primären MSEE. Sie verwenden a.b.c.d+5 als VRF-IP für das sekundäre PE-Element, und Microsoft nutzt a.b.c.d+6 als VRF-IP für den sekundären MSEE.
 
-Betrachten wir den Fall, in dem Sie 192.168.100.128/29 zum Einrichten des privaten Peerings gewählt haben. 192.168.100.128/29 enthält die Adressen von 192.168.100.128 bis 192.168.100.133, für die Folgendes gilt:
+Betrachten wir den Fall, in dem Sie 192.168.100.128/29 zum Einrichten des privaten Peerings auswählen. 192.168.100.128/29 enthält die Adressen von 192.168.100.128 bis 192.168.100.135, für die Folgendes gilt:
 
 - 192\.168.100.128/30 wird link1 zugewiesen, wobei der Anbieter 192.168.100.129 und Microsoft 192.168.100.130 verwendet.
 - 192\.168.100.132/30 wird link2 zugewiesen, wobei der Anbieter 192.168.100.133 und Microsoft 192.168.100.134 verwendet.
@@ -58,8 +58,8 @@ Sie müssen eigene öffentliche IP-Adressen zum Einrichten der BGP-Sitzungen ver
 - Sie müssen ein eindeutiges /29-Subnetz oder zwei /30-Subnetze verwenden, um das BGP-Peering für jedes Peering pro ExpressRoute-Verbindung einzurichten (falls Sie über mehr als ein Peering verfügen). 
 - Wenn ein /29-Subnetz verwendet wird, wird es in zwei /30-Subnetze unterteilt. 
 	- Das erste /30-Subnetz wird für die primäre Verknüpfung verwendet, und das zweite /30-Subnetz wird für die sekundäre Verknüpfung verwendet.
-	- Für jedes /30-Subnetz müssen Sie zuerst die IP-Adresse des /30-Subnetzes auf dem Router angeben. Microsoft verwendet die zweite IP-Adresse des /30-Subnetzes zum Einrichten einer BGP-Sitzung.
-	- Sie müssen beide BGP-Sitzungen einrichten, damit unser [SLA zur Verfügbarkeit](http://azure.microsoft.com/support/legal/sla/) gültig ist.
+	- Für jedes /30-Subnetz müssen Sie zuerst die IP-Adresse des /30-Subnetzes auf dem Router verwenden. Microsoft verwendet die zweite IP-Adresse des /30-Subnetzes zum Einrichten einer BGP-Sitzung.
+	- Sie müssen beide BGP-Sitzungen einrichten, damit unsere [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/) gültig sind.
 
 Stellen Sie sicher, dass Ihre IP-Adresse und die AS-Nummer für Sie in einer der unten aufgeführten Registrierungen registriert sind.
 
@@ -70,12 +70,12 @@ Stellen Sie sicher, dass Ihre IP-Adresse und die AS-Nummer für Sie in einer der
 - [RIPE NCC](https://www.ripe.net/)
 - [RADB](http://www.radb.net/)
 - [ALTDB](http://altdb.net/)
-- [LEVEL3](rr.Level3.net)
+- [LEVEL3](http://rr.Level3.net/)
 
 
 ## Dynamischer Routenaustausch
 
-Der Routingaustausch verläuft über das eBGP-Protokoll. EBGP-Sitzungen werden zwischen den MSEEs und Ihren Routern eingerichtet. Die Authentifizierung von BGP-Sitzungen ist nicht unbedingt erforderlich. Bei Bedarf kann ein MD5-Hash konfiguriert werden. Sehen Sie sich den Workflow der Routingkonfiguration an, um Informationen zum Konfigurieren von BGP-Sitzungen zu erhalten.
+Der Routingaustausch verläuft über das eBGP-Protokoll. EBGP-Sitzungen werden zwischen den MSEEs und Ihren Routern eingerichtet. Die Authentifizierung von BGP-Sitzungen ist nicht unbedingt erforderlich. Bei Bedarf kann ein MD5-Hash konfiguriert werden. Unter [Konfigurieren des Routings](expressroute-howto-routing-classic.md) und [Bereitstellungsworkflows für ExpressRoute-Verbindungen und Verbindungszustände](expressroute-workflows.md) finden Sie Informationen zum Konfigurieren von BGP-Sitzungen.
 
 ## Autonome Systemnummern
 
@@ -102,7 +102,7 @@ Standardrouten sind nur für Sitzungen mit privatem Azure-Peering zulässig. In 
  - Öffentliches Azure-Peering ist zum Leiten von Datenverkehr an öffentliche Endpunkte aktiviert.
  - Sie verwenden das benutzerdefinierte Routing, um Internetkonnektivität für alle Subnetze zuzulassen, die dies erfordern.
 
-**Hinweis:** Das Ankündigen von Standardrouten führt dazu, dass die Aktivierung von Windows- und anderen VM-Lizenzen verloren geht. Führen Sie die Schritte [dieser Anleitung](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx) aus, um dies zu umgehen.
+**Hinweis**: Das Ankündigen von Standardrouten führt dazu, dass die Aktivierung von Windows- und anderen VM-Lizenzen verloren geht. Führen Sie die Schritte [dieser Anleitung](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx) aus, um dies zu umgehen.
 
 ## Unterstützung für BGP-Communitys
 
@@ -156,13 +156,14 @@ Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basie
 
 ### Ändern von Routingvoreinstellungen
 
-Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt werden. Sie müssen ein BGP-Sitzungspaar pro Peering einrichten, um sicherzustellen, dass die Anforderungen für das [Verfügbarkeits-SLA](http://azure.microsoft.com/support/legal/sla/) erfüllt sind. Sie können Ihr Netzwerk aber so konfigurieren, dass ein bestimmter Link vorrangig behandelt wird, indem Sie standardmäßige Verfahren zur BGP-Routenänderung verwenden. Sie können unterschiedliche lokale BGP-Voreinstellungen auf jeden Link anwenden, damit ein Pfad von Ihrem Netzwerk zu Microsoft gegenüber dem anderen Pfad vorgezogen wird. Sie können den „as-path“ bei Routenankündigungen voranstellen, um den Datenverkehrsfluss von Microsoft in Ihr Netzwerk zu beeinflussen.
+Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt werden. Sie müssen ein BGP-Sitzungspaar pro Peering einrichten, um sicherzustellen, dass die Anforderungen für die [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/) erfüllt sind. Sie können Ihr Netzwerk aber so konfigurieren, dass ein bestimmter Link vorrangig behandelt wird, indem Sie standardmäßige Verfahren zur BGP-Routenänderung verwenden. Sie können unterschiedliche lokale BGP-Voreinstellungen auf jeden Link anwenden, damit ein Pfad von Ihrem Netzwerk zu Microsoft gegenüber dem anderen Pfad vorgezogen wird. Sie können den AS-PATH bei Routenankündigungen voranstellen, um den Datenverkehrsfluss von Microsoft in Ihr Netzwerk zu beeinflussen.
 
 ## Nächste Schritte
 
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung.
+
 	- [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md)
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/07/2015" 
+	ms.date="10/01/2015" 
 	ms.author="nitinme"/>
 
 
@@ -23,7 +23,7 @@
 
 * [Bereitstellen von Apache Spark für HDInsight und Ausführen von interaktiven Abfragen per Spark SQL](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql.md)
 
-Sie erfahren, wie Sie einen Apache Spark-Cluster in HDInsight mit der Option für die Schnellerfassung bereitstellen und dann die webbasierten [Zeppelin](https://zeppelin.incubator.apache.org) und [Jupyter](https://jupyter.org) Notebooks verwenden, um interaktive Spark SQL-Abfragen für den Spark-Cluster auszuführen.
+Hier erfahren Sie, wie Sie einen Apache Spark-Cluster in HDInsight mit der Option „Schnellerfassung“ bereitstellen und dann die webbasierten [Zeppelin](https://zeppelin.incubator.apache.org) und [Jupyter](https://jupyter.org) Notebooks verwenden, um interaktive Spark-SQL-Abfragen für den Spark-Cluster auszuführen.
 
 
    ![Erste Schritte mit Apache Spark in HDInsight](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.GetStartedFlow.Spark.png "Lernprogramm zu den ersten Schritten mit Apache Spark in HDInsight Dargestellte Schritte: Erstellen eines Speicherkontos, Bereitstellen eines Clusters, Ausführen von Spark-SQL-Anweisungen")
@@ -34,7 +34,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie über ein Azure-Abonneme
 
 ##<a name="storage"></a>Erstellen eines Azure-Speicherkontos
 
-Bei der Bereitstellung eines HDInsight-Clusters in HDInsight geben Sie ein Azure-Speicherkonto an. Ein bestimmter Blobspeichercontainer aus diesem Konto wird als Standarddateisystem festgelegt. Der HDInsight-Cluster wird standardmäßig in demselben Rechenzentrum bereitgestellt wie das angegebene Speicherkonto. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
+Bei der Bereitstellung eines HDInsight-Clusters in HDInsight geben Sie ein Azure-Speicherkonto an. Ein bestimmter Blobspeichercontainer aus diesem Konto wird als Standarddateisystem festgelegt. Der HDInsight-Cluster wird standardmäßig in demselben Rechenzentrum bereitgestellt wie das angegebene Speicherkonto. Weitere Informationen finden Sie unter [Verwenden von Azure-BLOB-Speicher mit HDInsight][hdinsight-storage].
 
 
 **So erstellen Sie ein Azure-Speicherkonto**
@@ -70,9 +70,15 @@ Nachdem Sie einen Cluster bereitgestellt haben, können Sie ein webbasiertes Zep
 
 >[AZURE.NOTE]Das Notebook, das Sie gemäß der unten angegebenen Anleitung erstellen, ist standardmäßig auch im Cluster verfügbar. Nach dem Starten von Zeppelin wird dieses Notebook als **Zeppelin HVAC-Tutorial** angezeigt.
 
-1. Starten Sie das Zeppelin Notebook. Wählen Sie Ihren neu erstellten Spark-Cluster im Azure-Portal, und klicken Sie unten auf der Taskleiste des Portals auf **Zeppelin Notebook**. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Folgen Sie den Anweisungen auf der angezeigten Seite, um das Notebook zu starten.
+1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
 
-2. Erstellen Sie ein neues Notebook. Klicken Sie im Headerbereich auf **Notebook**, und wählen Sie die Option **Neue Notiz erstellen**.
+2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Zeppelin Notebook**. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
+
+	> [AZURE.NOTE]Sie können auch das Zeppelin Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
+	>
+	> `https://CLUSTERNAME.azurehdinsight.net/zeppelin`
+
+2. Erstellen Sie ein neues Notebook. Klicken Sie im Headerbereich auf **Notebook**, und wählen Sie die Option **Neue Notiz erstellen** aus.
 
 	![Erstellen eines neuen Zeppelin Notebooks](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.CreateNewNote.png "Erstellen eines neuen Zeppelin Notebooks")
 
@@ -82,7 +88,7 @@ Nachdem Sie einen Cluster bereitgestellt haben, können Sie ein webbasiertes Zep
 
 	![Zeppelin Notebook-Status](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.NewNote.Connected.png "Zeppelin Notebook-Status")
 
-4. Laden Sie Beispieldaten in eine temporäre Tabelle. Wenn Sie einen Spark-Cluster in HDInsight bereitstellen, wird die Beispieldatendatei **hvac.csv** in das zugeordnete Speicherkonto unter **\\HdiSamples\\SensorSampleData\\hvac** kopiert.
+4. Laden Sie Beispieldaten in eine temporäre Tabelle. Wenn Sie einen Spark-Cluster in HDInsight bereitstellen, wird die Beispieldatei **hvac.csv** in das zugeordnete Speicherkonto unter **\\HdiSamples\\SensorSampleData\\hvac** kopiert.
 
 	Fügen Sie in den leeren Absatz, der im neuen Notebook standardmäßig erstellt wird, den folgenden Codeausschnitt ein.
 
@@ -105,26 +111,26 @@ Nachdem Sie einen Cluster bereitgestellt haben, können Sie ein webbasiertes Zep
 		// Register as a temporary table called "hvac"
 		hvac.registerTempTable("hvac")
 		
-	Drücken Sie **UMSCHALT+EINGABE**, oder klicken Sie auf die Wiedergabeschaltfläche für den Absatz, um den Codeausschnitt auszuführen. Der Status in der rechten Ecke des Absatzes sollte sich entsprechend ändern: BEREIT, AUSSTEHEND, WIRD AUSGEFÜHRT bis zu BEENDET. Die Ausgabe wird unten im Absatz angezeigt. Der Screenshot sieht folgendermaßen aus:
+	Drücken Sie UMSCHALT+EINGABETASTE, oder klicken Sie auf die Schaltfläche **Wiedergeben** für den Absatz, um den Codeausschnitt auszuführen. Der Status in der rechten Ecke des Absatzes sollte sich entsprechend ändern: BEREIT, AUSSTEHEND, WIRD AUSGEFÜHRT bis zu BEENDET. Die Ausgabe wird unten im Absatz angezeigt. Der Screenshot sieht folgendermaßen aus:
 
 	![Erstellen einer temporären Tabelle aus Rohdaten](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Note.LoadDataIntoTable.png "Erstellen einer temporären Tabelle aus Rohdaten")
 
 	Sie können auch einen Titel für jeden Absatz angeben. Klicken Sie in der rechten Ecke auf das Symbol **Einstellungen** und dann auf **Titel anzeigen**.
 
-5. Sie können jetzt Spark SQL-Anweisungen für die **hvac**-Tabelle ausführen. Fügen Sie die folgende Abfrage in einen neuen Absatz ein. Mit der Abfrage werden die Gebäude-ID und der Unterschied zwischen den Ziel- und Ist-Temperaturen für jedes Gebäude an einem bestimmten Datum abgerufen. Drücken Sie **UMSCHALT+EINGABE**.
+5. Sie können jetzt Spark-SQL-Anweisungen für die **hvac**-Tabelle ausführen. Fügen Sie die folgende Abfrage in einen neuen Absatz ein. Mit der Abfrage werden die Gebäude-ID und der Unterschied zwischen den Ziel- und Ist-Temperaturen für jedes Gebäude an einem bestimmten Datum abgerufen. Drücken Sie UMSCHALT+EINGABETASTE.
 
 		%sql
 		select buildingID, (targettemp - actualtemp) as temp_diff, date 
 		from hvac
 		where date = "6/1/13" 
 
-	Mit der **%sql**-Anweisung am Anfang wird das Notebook angewiesen, den Spark SQL-Interpreter zu verwenden. Sie können die definierten Interpreter im Notebook-Header auf der Registerkarte **Interpreter** anzeigen.
+	Mit der **%sql**-Anweisung am Anfang wird das Notebook angewiesen, den Spark-SQL-Interpreter zu verwenden. Sie können die definierten Interpreter im Header des Notebooks auf der Registerkarte **Interpreter** anzeigen.
 
 	Im folgenden Screenshot ist die Ausgabe dargestellt.
 
 	![Ausführen einer Spark-SQL-Anweisung mit dem Notebook](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Note.SparkSQLQuery1.png "Ausführen einer Spark-SQL-Anweisung mit dem Notebook")
 
-	 Klicken Sie auf die Anzeigeoptionen (im Rechteck hervorgehoben), um für eine Ausgabe zwischen unterschiedlichen Darstellungen zu wechseln. Klicken Sie auf **Einstellungen**, um auszuwählen, wobei es sich in der Ausgabe um den Schlüssel und die Werte handelt. Im obigen Screenshot werden **buildingID** als Schlüssel und der Mittelwert von **temp\_diff** als Wert verwendet.
+	 Klicken Sie auf die Anzeigeoptionen (im Rechteck hervorgehoben), um für eine Ausgabe zwischen unterschiedlichen Darstellungen zu wechseln. Klicken Sie auf **Einstellungen**, um auszuwählen, worum es sich bei den Schlüsseln und Werten in der Ausgabe handelt. Im obigen Screenshot werden **buildingID** als Schlüssel und der Mittelwert von **temp\_diff** als Wert verwendet.
 
 	
 6. Sie können auch Spark-SQL-Anweisungen ausführen, indem Sie die Variablen in der Abfrage verwenden. Der nächste Codeausschnitt zeigt, wie Sie eine Variable (**Temp**) in der Abfrage mit den möglichen Werten definieren, die für die Abfrage verwendet werden sollen. Beim ersten Ausführen der Abfrage wird automatisch eine Dropdownliste mit den Werten aufgefüllt, die Sie für die Variable angegeben haben.
@@ -134,23 +140,30 @@ Nachdem Sie einen Cluster bereitgestellt haben, können Sie ein webbasiertes Zep
 		from hvac
 		where targettemp > "${Temp = 65,65|75|85}" 
 
-	Fügen Sie diesen Codeausschnitt in einen neuen Absatz ein, und drücken Sie **UMSCHALT+EINGABE**. Im folgenden Screenshot ist die Ausgabe dargestellt.
+	Fügen Sie diesen Codeausschnitt in einen neuen Absatz ein, und drücken Sie UMSCHALT+EINGABETASTE. Im folgenden Screenshot ist die Ausgabe dargestellt.
 
 	![Ausführen einer Spark-SQL-Anweisung mit dem Notebook](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Note.SparkSQLQuery2.png "Ausführen einer Spark-SQL-Anweisung mit dem Notebook")
 
-	Für nachfolgende Abfragen können Sie einen neuen Wert aus der Dropdownliste auswählen und die Abfrage erneut ausführen. Klicken Sie auf **Einstellungen**, um auszuwählen, wobei es sich in der Ausgabe um den Schlüssel und die Werte handelt. Im obigen Screenshot werden **buildingID** als Schlüssel, der Mittelwert von **temp\_diff** als Wert und **targettemp** als Gruppe verwendet.
+	Für nachfolgende Abfragen können Sie einen neuen Wert aus der Dropdownliste auswählen und die Abfrage erneut ausführen. Klicken Sie auf **Einstellungen**, um auszuwählen, worum es sich bei den Schlüsseln und Werten in der Ausgabe handelt. Im obigen Screenshot werden **buildingID** als Schlüssel, der Mittelwert von **temp\_diff** als Wert und **targettemp** als Gruppe verwendet.
 
 7. Starten Sie den Spark-SQL-Interpreter neu, um die Anwendung zu beenden. Klicken Sie oben auf die Registerkarte **Interpreter**, und klicken Sie für den Spark-Interpreter auf **Neu starten**.
 
 	![Neustarten des Zeppelin-Interpreters](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Zeppelin.Restart.Interpreter.png "Neustarten des Zeppelin-Interpreters")
 
-##<a name="jupyter"></a>Ausführen von Spark SQL-Abfragen mit einem Jupyter Notebook
+##<a name="jupyter"></a>Ausführen von Spark-SQL-Abfragen mit einem Jupyter Notebook
 
 In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen für einen Spark-Cluster auszuführen.
 
 >[AZURE.NOTE]Das Notebook, das Sie gemäß der unten angegebenen Anleitung erstellen, ist standardmäßig auch im Cluster verfügbar. Nach dem Starten von Jupyter wird dieses Notebook mit dem Namen **HVACTutorial.ipynb** angezeigt.
 
-1. Starten Sie das Jupyter Notebook. Wählen Sie Ihren Spark-Cluster im Azure-Portal aus, und klicken Sie auf der Taskleiste des Portals auf **Jupyter Notebook**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein.
+1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
+
+2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Jupyter Notebook**. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
+
+	> [AZURE.NOTE]Sie können auch das Jupyter Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
+	>
+	> `https://CLUSTERNAME.azurehdinsight.net/jupyter`
+
 2. Erstellen Sie ein neues Notebook. Klicken Sie auf **Neu** und dann auf **Python2**.
 
 	![Erstellen eines neuen Jupyter Notebooks](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Note.Jupyter.CreateNotebook.png "Erstellen eines neuen Jupyter Notebooks")
@@ -159,7 +172,7 @@ In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen f�
 
 	![Angeben eines neuen Namens für das Notebook](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Note.Jupyter.Notebook.Name.png "Angeben eines neuen Namens für das Notebook")
 
-4. Importieren Sie die erforderlichen Module, und erstellen Sie die Spark- und SQL-Kontexte. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
+4. Importieren Sie die erforderlichen Module, und erstellen Sie die Spark- und SQL-Kontexte. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie UMSCHALT+EINGABETASTE.
 
 		from pyspark import SparkContext
 		from pyspark.sql import SQLContext
@@ -169,13 +182,13 @@ In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen f�
 		sc = SparkContext('spark://headnodehost:7077', 'pyspark')
 		sqlContext = SQLContext(sc)
 
-	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
+	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebooktitel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
 	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Jupyter.Job.Status.png "Status eines Jupyter Notebook-Auftrags")
 
-4. Laden Sie Beispieldaten in eine temporäre Tabelle. Wenn Sie einen Spark-Cluster in HDInsight bereitstellen, wird die Beispieldatendatei **hvac.csv** in das zugeordnete Speicherkonto unter **\\HdiSamples\\SensorSampleData\\hvac** kopiert.
+4. Laden Sie Beispieldaten in eine temporäre Tabelle. Wenn Sie einen Spark-Cluster in HDInsight bereitstellen, wird die Beispieldatei **hvac.csv** in das zugeordnete Speicherkonto unter **\\HdiSamples\\SensorSampleData\\hvac** kopiert.
 
-	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**. Mit diesem Codeausschnitt werden die Daten in einer temporären Tabelle mit dem Namen **hvac** registriert.
+	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie UMSCHALT+EINGABETASTE. Mit diesem Codeausschnitt werden die Daten in einer temporären Tabelle mit dem Namen **hvac** registriert.
 
 
 		# Load the data
@@ -221,7 +234,7 @@ In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen f�
 		9          -9        6/1/13
 		15         -10       6/1/13
 
-6. Starten Sie den Kernel neu, um die Anwendung zu beenden. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie in der Aufforderung dann noch einmal auf **Neu starten**.
+6. Starten Sie den Kernel neu, um die Anwendung zu beenden. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie bei der Aufforderung noch einmal auf **Neu starten**.
 
 	![Neustarten des Jupyter-Kernels](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/HDI.Spark.Jupyter.Restart.Kernel.png "Neustarten des Jupyter-Kernels")
 
@@ -247,4 +260,4 @@ In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen f�
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO2-->

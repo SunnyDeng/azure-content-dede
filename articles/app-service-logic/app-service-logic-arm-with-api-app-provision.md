@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="10/01/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Logik-App und einer API-App mithilfe einer Vorlage
@@ -394,4 +394,4 @@ Beachten Sie, dass die Logik-App das Token verwendet, um das Gateway aufzurufen.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO2-->

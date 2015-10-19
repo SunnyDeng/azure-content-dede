@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="08/13/2015"
+	ms.date="10/05/2015"
 	ms.author="jeffstok"/>
 
 # Vergleich von Apache Storm und Azure Stream Analytics #
@@ -124,7 +124,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
                     Stream Analytics wird nach verarbeiteter Datenmenge und Anzahl der erforderlichen Streamingeinheiten (pro Stunde, die der Auftrag ausgeführt wird) abgerechnet.
                 </p>
                 <p>
-                    <a href="http://azure.microsoft.com/de-de/pricing/details/stream-analytics/">Weitere Preisinformationen finden Sie hier.</a>
+                    <a href="http://azure.microsoft.com/pricing/details/stream-analytics/">Weitere Preisinformationen finden Sie hier.</a>
                 </p>
             </td>
             <td width="246" valign="top">
@@ -132,7 +132,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
                     Für Apache Storm auf HDInsight basiert die Einheit des Kaufs auf einem Cluster und wird basierend auf der Zeit, die der Cluster läuft und unabhängig von den bereitgestellten Aufträgen in Rechnung gestellt.
                 </p>
                 <p>
-                    <a href="http://azure.microsoft.com/de-de/pricing/details/hdinsight/">Weitere Preisinformationen finden Sie hier.</a>
+                    <a href="http://azure.microsoft.com/pricing/details/hdinsight/">Weitere Preisinformationen finden Sie hier.</a>
                 </p>
             </td>
         </tr>
@@ -590,4 +590,4 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
     </tbody>
 </table>
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

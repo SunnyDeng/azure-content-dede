@@ -25,6 +25,7 @@
 - [PowerShell: Resource Manager deployment](virtual-machines-deploy-rmtemplates-powershell.md)
 - [PowerShell: Classic deployment](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-windows-tutorial.md) erstellen.
 
 In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer (VM) im Azure-Portal zu erstellen. Als Beispiel wird ein Windows Server-Image verwendet. Dies ist jedoch nur eines von vielen Images, die Azure bietet. Beachten Sie, dass Ihre Imageauswahl von Ihrem Abonnement abhängt. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
@@ -42,7 +43,7 @@ Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
 
 In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Azure-Portal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
 
-> [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, erweiterte Überwachungs- und Diagnosefeatures zu verwenden, Premium-Speicher einzusetzen und vieles mehr. Die verfügbaren Optionen zum Konfigurieren eines virtuellen Computers sind in den beiden Portalen im Wesentlichen ähnlich, aber nicht identisch. Verwenden Sie z. B. das Vorschauportal, um einen virtuellen Computer mit Premium-Speicher zu konfigurieren.
+> [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, erweiterte Überwachungs- und Diagnosefeatures zu verwenden, Storage Premium einzusetzen und vieles mehr. Die verfügbaren Optionen zum Konfigurieren eines virtuellen Computers sind in den beiden Portalen im Wesentlichen ähnlich, aber nicht identisch. Verwenden Sie z. B. das Vorschauportal, um einen virtuellen Computer mit Premium-Speicher zu konfigurieren.
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
@@ -52,4 +53,4 @@ In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Azure-Po
 
 - Fügen Sie einen Datenträger zum Speichern von Daten hinzu. Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. Anweisungen finden Sie im [Lernprogramm zum Hinzufügen von Datenträgern](storage-windows-attach-disk.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

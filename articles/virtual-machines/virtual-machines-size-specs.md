@@ -1,5 +1,5 @@
 <properties
- pageTitle="Größen virtueller Computer"
+ pageTitle="Größen virtueller Computer | Microsoft Azure"
  description="Listet die verschiedenen Größen für virtuelle Computer und die zugehörigen Kapazitäten auf."
  services="virtual-machines"
  documentationCenter=""
@@ -21,7 +21,7 @@ ms.service="virtual-machines"
 
 ## Übersicht
 
-Dieser Artikel beschreibt die verfügbaren Größen und Optionen für die VM-basierte Rechenressourcen, die Sie verwenden können, um Ihre Apps und Arbeitsauslastungen auszuführen. Darüber hinaus werden Überlegungen zur Bereitstellung angestellt, die Sie berücksichtigen sollten, wenn Sie eine Verwendung dieser Ressourcen planen.
+Dieser Artikel beschreibt die verfügbaren Größen und Optionen für die VM-basierte Rechenressourcen, die Sie verwenden können, um Ihre Apps und Workloads auszuführen. Darüber hinaus werden Überlegungen zur Bereitstellung angestellt, die Sie berücksichtigen sollten, wenn Sie eine Verwendung dieser Ressourcen planen.
 
 Azure Virtual Machines und Azure Cloud Services sind zwei von mehreren unterschiedlichen Typen von Compute-Ressourcen, die über Azure zur Verfügung stehen. Erläuterungen hierzu finden Sie unter [Computehostingoptionen in Azure](http://go.microsoft.com/fwlink/p/?LinkID=311926).
 
@@ -39,17 +39,17 @@ Virtuelle Computer sind in zwei Ebenen verfügbar: Basic und Standard. Beide Typ
 
 *   Virtuelle Computer der DS- und der GS-Serie können Premium-Speicher nutzen, der Hochleistungsspeicher mit geringer Latenz für E/A-intensive Workloads bietet. Diese virtuellen Computer nutzen Solid State Drives (SSDs) zum Hosten der Datenträger eines virtuellen Computers und stellen zudem einen lokalen SSD-Datenträgercache bereit. Premium-Speicher ist in bestimmten Regionen verfügbar. Ausführliche Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal.md).
 
-Die Größe des virtuellen Computers wirkt sich auf den Preis aus. Die Größe beeinflusst auch die Verarbeitung, den Arbeitsspeicher und die Speicherkapazität des virtuellen Computers. Speicherkosten werden separat basierend auf bereits verwendete Seiten im Speicherkonto berechnet. Weitere Informationen finden Sie unter [Virtuelle Computer – Preisdetails](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Preisdetails zu Azure Storage](http://azure.microsoft.com/pricing/details/storage/). Ausführlichere Informationen zu virtuellen Computern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
+Die Größe des virtuellen Computers wirkt sich auf den Preis aus. Die Größe beeinflusst auch die Verarbeitung, den Arbeitsspeicher und die Speicherkapazität des virtuellen Computers. Speicherkosten werden separat basierend auf bereits verwendete Seiten im Speicherkonto berechnet. Weitere Informationen finden Sie unter [Virtuelle Computer – Preisübersicht](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Preisübersicht zu Azure Storage](http://azure.microsoft.com/pricing/details/storage/). Ausführlichere Informationen zu virtuellen Computern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
 
 Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe behilflich sein:
 
 *   Die Größe „A0\\Basic\_A0“ ist nur bei Verwendung von Azure SDK Version 1.3 oder höher verfügbar.  
 
-*   A1\\Basic\_A1 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen.
+*   A1\\Basic\_A1 ist die kleinste empfohlene Größe für Produktionsworkloads.
 
 *   Wählen Sie einen virtuellen Computer mit vier oder acht CPU-Kernen, wenn Sie SQL Server Enterprise Edition verwenden.
 
-*   Einige der physischen Hosts in Azure-Rechenzentren unterstützen möglicherweise keine der größeren VM-Größen, z. B. A5 bis A11. Daher wird möglicherweise die Fehlermeldung **Fehler beim Konfigurieren des virtuellen Computers<machine name>** oder **Fehler beim Erstellen des virtuellen Computers<machine name>** beim Ändern der Größe eines vorhandenen virtuellen Computers, beim Erstellen eines neuen virtuellen Computers in einem virtuellen Netzwerk, das vor dem 16. April 2013 erstellt wurde, oder beim Hinzufügen eines neuen virtuellen Computers zu einem vorhandenen Cloud-Dienst angezeigt. Problemumgehungen für die einzelnen Bereitstellungsszenarien finden Sie im Thema [Fehler: "Fehler beim Konfigurieren des virtuellen Computers"](https://social.msdn.microsoft.com/Forums/de-DE/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) im Supportforum.
+*   Einige der physischen Hosts in Azure-Rechenzentren unterstützen möglicherweise keine der größeren VM-Größen, z. B. A5 bis A11. Daher wird möglicherweise die Fehlermeldung **Fehler beim Konfigurieren des virtuellen Computers<machine name>** oder **Fehler beim Erstellen des virtuellen Computers<machine name>** beim Ändern der Größe eines vorhandenen virtuellen Computers, beim Erstellen eines neuen virtuellen Computers in einem virtuellen Netzwerk, das vor dem 16. April 2013 erstellt wurde, oder beim Hinzufügen eines neuen virtuellen Computers zu einem vorhandenen Clouddienst angezeigt. Problemumgehungen für die einzelnen Bereitstellungsszenarien finden Sie im Thema [Fehler: "Fehler beim Konfigurieren des virtuellen Computers"](https://social.msdn.microsoft.com/Forums/de-DE/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) im Supportforum.
 
 *   Die VM-Größen A8/A10 und A9/A11 haben die gleiche Kapazität. Die VM-Instanzen A8 und A9 umfassen einen zusätzlichen Netzwerkadapter, der mit einem RDMA (Remote Direct Memory Access)-Netzwerk für die schnelle Kommunikation zwischen virtuellen Computern verbunden ist. Die A8- und A9-Instanzen wurden für High Performance Computing-Anwendungen entwickelt, die während der Ausführung eine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern, z. B. MPI (Message Passing Interface)-Anwendungen. Die VM-Instanzen A10 und A11 enthalten keinen zusätzlichen Netzwerkadapter. Die A10- und A11-Instanzen sind für High Performance Computing-Anwendungen vorgesehen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern, auch bekannt als parametrische oder hochgradig parallele Anwendungen.
 
@@ -85,11 +85,11 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|
-|A0\\ extra small (XS, sehr klein)|1|768 MB|<p>BS = 1023 GB</p><p>Temporär = 20 GB</p>|1|1 x 500|
-|A1\\small (S, klein)|1|1,75 GB|<p>BS = 1023 GB</p><p>Temporär = 70 GB</p>|2|2 x 500|
-|A2\\medium (M, mittel)|2|3,5 GB|<p>BS = 1023 GB</p><p>Temporär = 135 GB</p>|4|4 x 500|
-|A3\\large (L, groß)|4|7 GB|<p>BS = 1023 GB</p><p>Temporär = 285 GB</p>|8|8 x 500|
-|A4\\extra large (XL, sehr groß)|8|14 GB|<p>BS = 1023 GB</p><p>Temporär = 605 GB</p>|16|16 x 500|
+|A0\\ExtraSmall|1|768 MB|<p>BS = 1023 GB</p><p>Temporär = 20 GB</p>|1|1 x 500|
+|A1\\Small|1|1,75 GB|<p>BS = 1023 GB</p><p>Temporär = 70 GB</p>|2|2 x 500|
+|A2\\Medium|2|3,5 GB|<p>BS = 1023 GB</p><p>Temporär = 135 GB</p>|4|4 x 500|
+|A3\\Large|4|7 GB|<p>BS = 1023 GB</p><p>Temporär = 285 GB</p>|8|8 x 500|
+|A4\\ExtraLarge|8|14 GB|<p>BS = 1023 GB</p><p>Temporär = 605 GB</p>|16|16 x 500|
 |A5 (identisch)|2|14 GB|<p>BS = 1023 GB</p><p>Temporär = 135 GB</p>|4|4 x 500|
 |A6 (identisch)|4|28 GB|<p>BS = 1023 GB</p><p>Temporär = 285 GB</p>|8|8 x 500|
 |A7 (identisch)|8|56 GB|<p>BS = 1023 GB</p><p>Temporär = 605 GB</p>|16|16 x 500|
@@ -167,4 +167,4 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 
 [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

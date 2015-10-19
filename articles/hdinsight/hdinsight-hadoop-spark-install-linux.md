@@ -22,7 +22,6 @@ In diesem Dokument wird beschrieben, wie Sie Spark mithilfe einer Skriptaktion i
 
 > [AZURE.NOTE]HDInsight verfügt auch über Spark als Clustertyp. Das bedeutet, dass Sie einen Spark-Cluster jetzt direkt bereitstellen können, ohne einen Hadoop-Cluster ändern zu müssen. Dies ist derzeit jedoch auf Windows-basierte Cluster beschränkt. Mit dem Spark-Clustertyp erhalten Sie einen Windows-basierten HDInsight-Cluster der Version 3.2 mit Spark-Version 1.3.1. Weitere Informationen finden Sie unter [Erste Schritte mit Apache Spark für HDInsight](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql.md).
 
-
 ## <a name="whatis"></a>Was ist Spark?
 
 <a href="http://spark.apache.org/docs/latest/index.html" target="_blank">Apache Spark</a> ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von großen Datenmengen zu steigern. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen.
@@ -33,21 +32,21 @@ In diesem Thema wird beschrieben, wie ein HDInsight-Cluster angepasst wird, inde
 
 ## <a name="whatis"></a>Welche Version von Spark kann ich installieren?
 
-In diesem Thema verwenden wir ein benutzerdefiniertes Skript für Aktion-Skript, um Spark auf einen HDInsight-Cluster zu installieren. Dieses Skript installiert Spark 1.5.0.
+In diesem Thema verwenden wir ein benutzerdefiniertes Skript für Aktion-Skript, um Spark auf einen HDInsight-Cluster zu installieren. Dieses Skript installiert Spark 1.5.1.
 
 Sie können dieses Skript ändern oder ein eigenes Skript zum Installieren von anderen Versionen von Spark installieren.
 
 ## Funktion des Skripts
 
-Dieses Skript installiert Spark 1.5.0 unter `/usr/hdp/current/spark`.
+Dieses Skript installiert Spark 1.5.1 unter `/usr/hdp/current/spark`.
 
 ## <a name="install"></a>Installation von Spark mithilfe von Skriptaktionen
 
-Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh](https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh) zur Verfügung. Dieser Abschnitt enthält Anweisungen zur Verwendung des Beispielskripts während der Bereitstellung des Clusters mithilfe des Azure-Portals.
+Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh](https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh) zur Verfügung. Dieser Abschnitt enthält Anweisungen zur Verwendung des Beispielskripts während der Erstellung des Clusters mithilfe des Azure-Portals.
 
 > [AZURE.NOTE]Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
-1. Beginnen Sie die Bereitstellung eines Clusters anhand der Schritte unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
+1. Beginnen Sie die Erstellung eines Clusters anhand der Schritte in [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
 
 2. Wählen Sie auf dem Blatt **Optionale Konfiguration** die Option **Skriptaktionen**, und geben Sie die folgenden Informationen an:
 
@@ -60,11 +59,11 @@ Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht i
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Setzen Sie die Bereitstellung des Clusters wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben fort.
+4. Setzen Sie die Bereitstellung des Clusters wie unter [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben fort.
 
 ## <a name="usespark"></a>Wie wird Spark in HDInsight ausgeführt?
 
-Spark stellt APIs in Scala, Python und Java bereit. Sie können für die Ausführung von Spark-Abfragen auch die interaktive Spark-Shell verwenden. Wenn die Clusterbereitstellung abgeschlossen ist, stellen Sie mithilfe des folgenden Befehls eine Verbindung mit Ihrem HDInsight-Cluster her:
+Spark stellt APIs in Scala, Python und Java bereit. Sie können für die Ausführung von Spark-Abfragen auch die interaktive Spark-Shell verwenden. Wenn die Clustererstellung abgeschlossen ist, stellen Sie mithilfe des folgenden Befehls eine Verbindung mit Ihrem HDInsight-Cluster her:
 
 	ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.net
 	
@@ -109,7 +108,7 @@ Nachdem die Verbindung hergestellt wurde, führen Sie die spezifischen Schritte 
 
 ###<a name="sparksql"></a>Ausführen von Spark-SQL-Abfragen mithilfe der Spark-Shell
 
-Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query Language), HiveQL oder Scala auszuführen. In diesem Abschnitt untersuchen wir, wie mit Spark eine Hive-Abfrage auf einer Hive-Beispieltabelle ausgeführt wird. Die in diesem Abschnitt verwendete Hive-Tabelle (namens **Hivesampletable**) ist standardmäßig verfügbar, wenn Sie einen Cluster bereitstellen.
+Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query Language), HiveQL oder Scala auszuführen. In diesem Abschnitt untersuchen wir, wie mit Spark eine Hive-Abfrage auf einer Hive-Beispieltabelle ausgeführt wird. Die in diesem Abschnitt verwendete Hive-Tabelle (mit dem Namen **hivesampletable**) ist standardmäßig verfügbar, wenn Sie einen Cluster erstellen.
 
 1. Führen Sie den folgenden Befehl aus, um die Spark-Shell zu starten:
 
@@ -235,4 +234,4 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->

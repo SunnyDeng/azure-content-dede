@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/04/2015"
+	ms.date="10/07/2015"
 	ms.author="raynew"/>
 
 # Einrichten von Schutz zwischen lokalen virtuellen VMware-Computern oder physischen Servern und Azure
@@ -38,7 +38,7 @@ Site Recovery trägt in einer Reihe von [Bereitstellungsszenarien](site-recovery
 - Ermöglicht VMware-Benutzern das Replizieren virtueller Computer in Azure.
 - Ermöglicht die Replikation von lokalen physischen Servern in Azure.
 - Bietet einen zentralen Ort zum Einrichten und Verwalten von Replikation, Failover und Wiederherstellung.
-- Bietet einfaches Failover von der lokalen Infrastruktur zu Azure und Failback \(Wiederherstellung\) von Azure zur lokalen Infrastruktur.
+- Bietet einfaches Failover von der lokalen Infrastruktur zu Azure und Failback (Wiederherstellung) von Azure zur lokalen Infrastruktur.
 - Implementiert Wiederherstellungspläne für vereinfachtes Failover von Workloads, die über mehrere Computer mehrstufig verteilt sind.
 - Bietet Konsistenz zwischen mehreren virtuellen Computern, sodass virtuelle Computer und physische Server mit bestimmten Workloads zusammen an einem konsistenten Datenpunkt wiederhergestellt werden können.
 - Unterstützt Datenreplikation über das Internet, über eine Site-to-Site-VPN-Verbindung oder über Azure ExpressRoute.
@@ -56,10 +56,10 @@ Sie benötigen Folgendes:
 **Komponente** | **Bereitstellung** | **Details**
 --- | --- | ---
 **Konfigurationsserver** | <p>Die Bereitstellung erfolgt als virtueller Standard-A3-Azure-Computer in demselben Abonnement wie Site Recovery.</p> <p>Sie führen die Einrichtung im Site Recovery-Portal durch.</p> | Dieser Server koordiniert die Kommunikation zwischen geschützten Computern, dem Prozessserver und den Masterzielservern in Azure. Bei einem Failover richtet er die Replikation ein und koordiniert die Wiederherstellung in Azure.
-**Masterzielserver** | <p>Die Bereitstellung erfolgt als virtueller Azure-Computer – Entweder als Windows-Server, der auf einem Windows Server 2012 R2-Galerie-Image basiert \(zum Schutz von Windows-Computern\), oder als Linux-Server, der auf einem OpenLogic CentOS 6.6-Galerie-Image basiert \(zum Schutz von Linux-Computern\).</p> <p>Es stehen drei Größenoptionen zur Verfügung – Standard A4, Standard D14 und Standard DS4.<p><p>Der Server ist mit demselben Azure-Netzwerk verbunden wie der Konfigurationsserver.</p><p>Sie führen die Einrichtung im Site Recovery-Portal durch.</p> | <p>Er empfängt replizierte Daten von Ihren geschützten Computern und speichert sie mithilfe der angefügten virtuellen Festplatten, die im Blob-Speicher in Ihrem Azure-Speicherkonto erstellt wurden.</p> <p>Wählen Sie speziell zum Konfigurieren des Schutzes für Workloads, die konsistent hohe Leistung und niedrige Latenz erfordern, "Standard DS4" mit "Premium-Speicherkonto" aus.</p>
+**Masterzielserver** | <p>Die Bereitstellung erfolgt als virtueller Azure-Computer – Entweder als Windows-Server, der auf einem Windows Server 2012 R2-Galerie-Image basiert (zum Schutz von Windows-Computern), oder als Linux-Server, der auf einem OpenLogic CentOS 6.6-Galerie-Image basiert (zum Schutz von Linux-Computern).</p> <p>Es stehen drei Größenoptionen zur Verfügung – Standard A4, Standard D14 und Standard DS4.<p><p>Der Server ist mit demselben Azure-Netzwerk verbunden wie der Konfigurationsserver.</p><p>Sie führen die Einrichtung im Site Recovery-Portal durch.</p> | <p>Er empfängt replizierte Daten von Ihren geschützten Computern und speichert sie mithilfe der angefügten virtuellen Festplatten, die im Blob-Speicher in Ihrem Azure-Speicherkonto erstellt wurden.</p> <p>Wählen Sie speziell zum Konfigurieren des Schutzes für Workloads, die konsistent hohe Leistung und niedrige Latenz erfordern, "Standard DS4" mit "Premium-Speicherkonto" aus.</p>
 **Prozessserver** | <p>Die Bereitstellung erfolgt als lokaler virtueller oder physischer Server mit Windows Server 2012 R2</p> <p>Es wird empfohlen, diesen in demselben Netzwerk und LAN-Segment zu platzieren, in dem sich auch die zu schützenden Computer befinden. Er kann jedoch auch in einem anderen Netzwerk ausgeführt werden, solange die geschützten Computer über L3-Netzwerksichtbarkeit verfügen.<p>Die Einrichtung des Servers und seine Registrierung beim Konfigurationsserver führen Sie im Site Recovery-Portal durch.</p> | <p>Geschützte Computer senden Replikationsdaten an den lokalen Prozessserver. Der Server verfügt über einen datenträgerbasierten Cache zum Zwischenspeichern der empfangenen Replikationsdaten. Er führt eine Reihe von Aktionen für diese Daten aus.</p><p>Er optimiert die Daten, indem er sie vor dem Senden an den Masterzielserver zwischenspeichert, komprimiert und verschlüsselt.</p><p>Er behandelt die Pushinstallation des Mobilitätsdiensts.</p><p>Er führt die automatische Ermittlung virtueller VMware-Computer durch.</p>
 **Lokale Computer** | Lokale virtuelle Computer auf einem VMware-Hypervisor oder physische Server, auf denen Windows oder Linux ausgeführt wird. | Sie richten Replikationseinstellungen für virtuelle Computer und Server ein. Failover können für einzelne Computer durchgeführt werden, häufiger erfolgen sie jedoch im Rahmen eines Wiederherstellungsplans mit gemeinsamem Failover mehrerer virtueller Computer.
-**Mobilitätsdienst** | <p>Wird auf jedem virtuellen Computer oder physischen Server installiert, den Sie schützen möchten.</p><p>Kann manuell installiert oder vom Prozessserver automatisch per Pushfunktion installiert werden, wenn der Schutz für den Server aktiviert ist. | Beim Mobilitätsdienst werden Daten im Rahmen der anfänglichen Replikation \(Resync\) an den Prozessserver gesendet. Nachdem der Server einen geschützten Zustand erreicht hat \(nach Abschluss der erneuten Synchronisierung\), führt der Mobilitätsdienst eine In-Memory-Erfassung von Schreibvorgängen auf den Datenträger durch und sendet die Daten an den Prozessserver. Anwendungskonsistenz für Windows-Server wird mit dem VSS-Framework erzielt.
+**Mobilitätsdienst** | <p>Wird auf jedem virtuellen Computer oder physischen Server installiert, den Sie schützen möchten.</p><p>Kann manuell installiert oder vom Prozessserver automatisch per Pushfunktion installiert werden, wenn der Schutz für den Server aktiviert ist. | Beim Mobilitätsdienst werden Daten im Rahmen der anfänglichen Replikation (Resync) an den Prozessserver gesendet. Nachdem der Server einen geschützten Zustand erreicht hat (nach Abschluss der erneuten Synchronisierung), führt der Mobilitätsdienst eine In-Memory-Erfassung von Schreibvorgängen auf den Datenträger durch und sendet die Daten an den Prozessserver. Anwendungskonsistenz für Windows-Server wird mit dem VSS-Framework erzielt.
 **Azure Site Recovery-Tresor** | Führen Sie die Einrichtung durch, nachdem Sie den Site Recovery-Dienst abonniert haben. | Sie registrieren Server in einem Site Recovery-Tresor. Der Tresor koordiniert und orchestriert Datenreplikation, Failover und Wiederherstellung zwischen dem lokalen Standort und Azure.
 **Replikationsmechanismus** | <p>**Über das Internet** – Kommuniziert und repliziert Daten von lokalen geschützten Servern und Azure mithilfe eines sicheren SSL/TLS-Kommunikationskanals über eine öffentliche Internetverbindung. Dies ist die Standardoption.</p><p>**VPN/ExpressRoute** – Kommuniziert und repliziert Daten zwischen lokalen Servern und Azure über eine VPN-Verbindung. Sie müssen eine Site-to-Site-VPN-Verbindung oder eine [ExpressRoute](../expressroute-introduction.md)-Verbindung zwischen dem lokalen Standort und Ihrem Azure-Netzwerk einrichten.</p><p>Sie wählen aus, wie die Replizierung während der Site Recovery-Bereitstellung erfolgen soll. Nachdem der Mechanismus konfiguriert wurde, können Sie ihn nicht ändern, ohne den Schutz bereits geschützter Server zu beeinträchtigen.| <p>Für keine der Optionen müssen Sie eingehende Netzwerkports auf geschützten Computern öffnen. Die gesamte Netzwerkkommunikation wird vom lokalen Standort aus initiiert.</p> 
 
@@ -75,11 +75,11 @@ Wichtige zu berücksichtigende Punkte:
 ### Überlegungen zur Quellumgebung
 
 - **Maximale Datenträgergröße** – Derzeit beträgt die maximale Größe eines Datenträgers, der an einen virtuellen Computer angefügt werden kann, 1 TB. Deshalb ist die maximale Größe eines Quelldatenträgers, der repliziert werden kann, ebenfalls auf 1 TB beschränkt.
-- **Maximale Größe pro Quellcomputer** – Die maximale Größe eines einzelnen Quellcomputers mit einer für den Masterzielserver bereitgestellten D14-Instanz beträgt 31 TB \(mit 31 Datenträgern\). 
+- **Maximale Größe pro Quellcomputer** – Die maximale Größe eines einzelnen Quellcomputers mit einer für den Masterzielserver bereitgestellten D14-Instanz beträgt 31 TB (mit 31 Datenträgern). 
 - **Anzahl von Quellen pro Masterzielserver** – Mit einem einzelnen Masterzielserver können mehrere Quellcomputer geschützt werden. Ein einzelner Quellcomputer kann jedoch nicht über mehrere Masterzielserver geschützt werden, da bei der Datenträgerreplikation eine virtuelle Festplatte, die die Größe des Datenträgers widerspiegelt, in Azure-BLOB-Speicher erstellt und als Datenträger mit dem Masterzielserver verbunden wird.  
 - **Maximale tägliche Änderungsrate pro Quellcomputer** – Bei der empfohlenen Änderungsrate pro Quellcomputer müssen drei Faktoren berücksichtigt werden. Im Hinblick auf den Zieldatenträger sind für jeden Vorgang auf dem Quellcomputer zwei IOPS auf dem Zieldatenträger erforderlich. Der Grund dafür ist, dass auf dem Zieldatenträger ein Lesevorgang für alte Daten und ein Schreibvorgang für neue Daten erfolgen. 
 	- **Vom Prozessserver unterstützte tägliche Änderungsrate** – Ein Quellcomputer kann nicht mehrere Prozessserver umfassen. Ein einzelner Prozessserver unterstützt eine tägliche Änderungsrate von bis zu 1 TB. Daher beträgt die maximale Datenänderungsrate pro Tag, die für einen Quellcomputer unterstützt wird, 1 TB. 
-	- **Maximaler vom Zieldatenträger unterstützter Durchsatz** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag \(mit einer Schreibgröße von 8 K\) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Ziehen Sie beim Konfigurieren des Ziels für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
+	- **Maximaler vom Zieldatenträger unterstützter Durchsatz ** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag (mit einer Schreibgröße von 8 K) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Ziehen Sie beim Konfigurieren des Ziels für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
 	- **Maximaler vom Speicherkonto unterstützter Durchsatz** – Ein Quellcomputer kann nicht mehrere Speicherkonten umfassen. Da ein Speicherkonto bis zu 20.000 Anforderungen pro Sekunde annimmt und jede Quell-IOPS 2 IOPS auf dem Masterzielserver generiert, wird empfohlen, die Anzahl der IOPS für den Quellcomputer auf 10.000 zu beschränken. Ziehen Sie beim Konfigurieren der Quelle für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
 
 ### Überlegungen zu Komponentenservern
@@ -107,17 +107,17 @@ Tabelle 2 enthält eine Zusammenfassung der Richtlinien für den Prozessserver.
 
 **Datenänderungsrate** | **CPU** | **Arbeitsspeicher** | **Größe des Cachedatenträgers**| **Durchsatz des Cachedatenträgers** | **Eingangs-/Ausgangsbandbreite**
 --- | --- | --- | --- | --- | ---
-\< 300 GB | 4 vCPUs \(2 Sockets * 2 Kerne mit 2,5 GHz\) | 4 GB | 600 GB | 7 bis 10 MB pro Sekunde | 30 Mbit/s bzw. 21 Mbit/s
-300 bis 600 GB | 8 vCPUs \(2 Sockets * 4 Kerne mit 2,5 GHz\) | 6 GB | 600 GB | 11 bis 15 MB pro Sekunde | 60 Mbit/s bzw. 42 Mbit/s
-600 GB bis 1 TB | 12 vCPUs \(2 Sockets * 6 Kerne mit 2,5 GHz\) | 8 GB | 600 GB | 16 bis 20 MB pro Sekunde | 100 Mbit/s bzw. 70 Mbit/s
-\> 1 TB | Bereitstellen eines weiteren Prozessservers | | | | 
+< 300 GB | 4 vCPUs (2 Sockets * 2 Kerne mit 2,5 GHz) | 4 GB | 600 GB | 7 bis 10 MB pro Sekunde | 30 Mbit/s bzw. 21 Mbit/s
+300 bis 600 GB | 8 vCPUs (2 Sockets * 4 Kerne mit 2,5 GHz) | 6 GB | 600 GB | 11 bis 15 MB pro Sekunde | 60 Mbit/s bzw. 42 Mbit/s
+600 GB bis 1 TB | 12 vCPUs (2 Sockets * 6 Kerne mit 2,5 GHz) | 8 GB | 600 GB | 16 bis 20 MB pro Sekunde | 100 Mbit/s bzw. 70 Mbit/s
+> 1 TB | Bereitstellen eines weiteren Prozessservers | | | | 
 
 **Tabelle 2**
 
 Hinweis:
 
-- Die Eingangsbandbreite ist die Downloadbandbreite \(Intranet zwischen Quellcomputer und Prozessserver\).
-- Die Ausgangsbandbreite ist die Uploadbandbreite \(Internet zwischen dem Prozessserver und dem Masterzielserver\). Bei den Werten für die Ausgangsbandbreite wird eine durchschnittliche Prozessserverkomprimierung von 30 % angenommen.
+- Die Eingangsbandbreite ist die Downloadbandbreite (Intranet zwischen Quellcomputer und Prozessserver).
+- Die Ausgangsbandbreite ist die Uploadbandbreite (Internet zwischen dem Prozessserver und dem Masterzielserver). Bei den Werten für die Ausgangsbandbreite wird eine durchschnittliche Prozessserverkomprimierung von 30 % angenommen.
 - Für alle Prozessserver wird als Cachedatenträger ein eigener Betriebssystemdatenträger von mindestens 128 GB empfohlen.
 - Als Benchmark für den Durchsatz des Cachedatenträgers wurde folgender Speicher verwendet: 8 SAS-Laufwerke mit 10.000 U/min und RAID 10-Konfiguration.
 
@@ -132,16 +132,16 @@ Der Speicher für jeden Masterzielserver besteht aus einem Betriebssystemdatentr
 **Instanz** | **Betriebssystemdatenträger** | **Aufbewahrung** | **Datenträger**
 --- | --- | --- | ---
  | | **Aufbewahrung** | **Datenträger**
-Standard A4 | 1 Datenträger \(1 * 1023 GB\) | 1 Datenträger \(1 * 1023 GB\) | 15 Datenträger \(15 * 1023 GB\)
-Standard D14 | 1 Datenträger \(1 * 1023 GB\) | 1 Datenträger \(1 * 1023 GB\) | 31 Datenträger \(15 * 1023 GB\)
-Standard DS4 | 1 Datenträger \(1 * 1023 GB\) | 1 Datenträger \(1 * 1023 GB\) | 15 Datenträger \(15 * 1023 GB\)
+Standard A4 | 1 Datenträger (1 * 1023 GB) | 1 Datenträger (1 * 1023 GB) | 15 Datenträger (15 * 1023 GB)
+Standard D14 | 1 Datenträger (1 * 1023 GB) | 1 Datenträger (1 * 1023 GB) | 31 Datenträger (15 * 1023 GB)
+Standard DS4 | 1 Datenträger (1 * 1023 GB) | 1 Datenträger (1 * 1023 GB) | 15 Datenträger (15 * 1023 GB)
 
 **Tabelle 3**
 
 Die Kapazitätsplanung für den Masterzielserver hängt von folgenden Faktoren ab:
 
 - Leistung und Einschränkungen des Azure-Speichers
-	- Die maximale Anzahl der Datenträger mit hoher Auslastung für einen virtuellen Computer im Standard-Tarif liegt bei etwa 40 Datenträgern \(20.000/500 IOPS pro Datenträger\) in einem einzigen Speicherkonto. Weitere Informationen finden Sie unter [Skalierbarkeitsziele für Standardspeicherkonten](../storage/storage-scalability-targets.md#scalability-targets-for-standard-storage-accounts). Weitere Informationen zum Premium-Speicherkonto finden Sie entsprechend unter [Skalierbarkeitsziele für Premium Storage-Konten](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts).
+	- Die maximale Anzahl der Datenträger mit hoher Auslastung für einen virtuellen Computer im Standard-Tarif liegt bei etwa 40 Datenträgern (20.000/500 IOPS pro Datenträger) in einem einzigen Speicherkonto. Weitere Informationen finden Sie unter [Skalierbarkeitsziele für Standardspeicherkonten](../storage/storage-scalability-targets.md#scalability-targets-for-standard-storage-accounts). Weitere Informationen zum Premium-Speicherkonto finden Sie entsprechend unter [Skalierbarkeitsziele für Premium Storage-Konten](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts).
 -	Tägliche Änderungsrate 
 -	Speicher des Aufbewahrungsvolumes
 
@@ -150,10 +150,10 @@ Beachten Sie Folgendes:
 - Ein Quellcomputer kann nicht mehrere Speicherkonten umfassen. Dies gilt für die Datenträger, die für die ausgewählten Speicherkonten verwendet werden, wenn Sie den Schutz konfigurieren. Der Betriebssystem- und Aufbewahrungsdatenträger werden in der Regel automatisch für das bereitgestellte Speicherkonto verwendet.
 - Das erforderliche Aufbewahrungsspeichervolume hängt von der täglichen Änderungsrate und der Anzahl der Aufbewahrungstage ab. Erforderlicher Aufbewahrungsspeicher pro Masterzielserver = gesamte Codeänderung von Quellcomputer pro Tag * Anzahl Aufbewahrungstage. 
 - Jeder Masterzielserver verfügt über nur ein Aufbewahrungsvolume. Das Datenträgervolume wird von den an den Masterzielserver angefügten Datenträgern gemeinsam verwendet. Beispiel:
-	- Wenn ein Quellcomputer über 5 Datenträger verfügt und jeder Datenträger auf dem Quellcomputer 120 IOPS \(mit einer Größe von 8K\) generiert, ergibt dies 240 IOPS pro Datenträger \(2 Vorgänge auf dem Zieldatenträger pro Quell-E/A\). Der Wert von 240 IOPS liegt innerhalb der Azure-Beschränkung von 500 IOPS pro Datenträger.
+	- Wenn ein Quellcomputer über 5 Datenträger verfügt und jeder Datenträger auf dem Quellcomputer 120 IOPS (mit einer Größe von 8K) generiert, ergibt dies 240 IOPS pro Datenträger (2 Vorgänge auf dem Zieldatenträger pro Quell-E/A). Der Wert von 240 IOPS liegt innerhalb der Azure-Beschränkung von 500 IOPS pro Datenträger.
 	- Auf dem Datenträger ergeben sich daraus 120 * 5 = 600 IOPS, und dies kann zu einem Engpass führen. In diesem Fall empfiehlt es sich, dem Aufbewahrungsvolume weitere Datenträger hinzuzufügen und dieses als RAID-Stripekonfiguration auf mehrere Laufwerke zu verteilen. Dadurch wird die Leistung verbessert, da die IOPS auf mehrere Laufwerke verteilt sind. Dem Aufbewahrungsvolume sollte die folgende Anzahl von Laufwerken hinzugefügt werden:
 		- IOPS gesamt aus der Quellumgebung / 500.
-		- Codeänderung gesamt pro Tag aus der Quellumgebung \(unkomprimiert\) / 287 GB. 287 GB beträgt der maximale Durchsatz, der von einem Zieldatenträger pro Tag unterstützt wird. Dieses Maß variiert basierend auf der Schreibgröße mit einem Faktor von 8K, da in diesem Fall als Schreibgröße 8K angenommen wird. Wenn z. B. die Schreibgröße 4K beträgt, ist der Durchsatz 287/2. Und wenn die Schreibgröße 16K beträgt, ist der Durchsatz 287*2.
+		- Codeänderung gesamt pro Tag aus der Quellumgebung (unkomprimiert) / 287 GB. 287 GB beträgt der maximale Durchsatz, der von einem Zieldatenträger pro Tag unterstützt wird. Dieses Maß variiert basierend auf der Schreibgröße mit einem Faktor von 8K, da in diesem Fall als Schreibgröße 8K angenommen wird. Wenn z. B. die Schreibgröße 4K beträgt, ist der Durchsatz 287/2. Und wenn die Schreibgröße 16K beträgt, ist der Durchsatz 287*2.
 - Erforderliche Anzahl von Speicherkonten = Quell-IOPS insgesamt /10.000.
 
 
@@ -165,13 +165,13 @@ Beachten Sie Folgendes:
 **Azure-Speicher** | <p>Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern.</p><p>Das Konto sollte entweder ein [georedundantes Standardspeicherkonto](../storage/storage-redundancy.md#geo-redundant-storage) oder [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) sein.</p><p>Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein.</p><p>Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md)</p>
 **Azure Virtual Network** | Sie benötigen ein virtuelles Azure-Netzwerk, in dem der Konfigurationsserver und der Masterzielserver bereitgestellt werden. Es muss in demselben Abonnement und in derselben Region enthalten sein wie der Azure Site Recovery-Tresor. Wenn Sie Daten über eine ExpressRoute- oder VPN-Verbindung replizieren möchten, muss das virtuelle Azure-Netzwerk mit Ihrem lokalen Netzwerk per ExpressRoute-Verbindung oder Standort-zu-Standort-VPN verbunden sein.
 **Azure-Ressourcen** | Stellen Sie sicher, dass Sie genügend Azure-Ressourcen für die Bereitstellung aller Komponenten besitzen. Weitere Informationen finden Sie unter [Beschränkungen des Azure-Abonnements](../azure-subscription-service-limits.md).
-**Azure Virtual Machines** | <p>Virtuelle Computer, die Sie schützen möchten, sollten die [Voraussetzungen für Azure](site-recovery-best-practices.md) erfüllen.</p><p>**Anzahl der Datenträger** – Auf einem einzelnen geschützten Server werden maximal 31 Datenträger unterstützt.</p><p>**Datenträgergrößen** – Die Kapazität eines einzelnen Datenträgers sollte nicht größer als 1023 GB sein.</p><p>**Clustering** – Gruppierte Server werden nicht unterstützt.</p><p>**Starten** – Das Starten im UEFI-Modus \(Unified Extensible Firmware Interface\)/EFI-Modus \(Extensible Firmware Interface\) wird nicht unterstützt.</p><p>**Volumes** – Mit Bitlocker verschlüsselte Volumes werden nicht unterstützt.</p><p> **Servernamen** – Die Namen müssen zwischen 1 und 63 Zeichen \(Buchstaben, Zahlen und Bindestriche\) enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und mit einem Buchstaben oder einer Zahl enden. Nachdem ein Computer geschützt wurde, können Sie den Azure-Namen ändern.</p>
+**Azure Virtual Machines** | <p>Virtuelle Computer, die Sie schützen möchten, sollten die [Voraussetzungen für Azure](site-recovery-best-practices.md) erfüllen.</p><p>**Anzahl der Datenträger** – Auf einem einzelnen geschützten Server werden maximal 31 Datenträger unterstützt.</p><p>**Datenträgergrößen** – Die Kapazität eines einzelnen Datenträgers sollte nicht größer als 1023 GB sein.</p><p>**Clustering** – Gruppierte Server werden nicht unterstützt.</p><p>**Starten** – Das Starten im UEFI-Modus (Unified Extensible Firmware Interface)/EFI-Modus (Extensible Firmware Interface) wird nicht unterstützt.</p><p>**Volumes** – Mit Bitlocker verschlüsselte Volumes werden nicht unterstützt.</p><p> **Servernamen** – Die Namen müssen zwischen 1 und 63 Zeichen (Buchstaben, Zahlen und Bindestriche) enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und mit einem Buchstaben oder einer Zahl enden. Nachdem ein Computer geschützt wurde, können Sie den Azure-Namen ändern.</p>
 **Konfigurationsserver** | <p>Ein virtueller Standard-A3-Computer wird basierend auf einem Azure Site Recovery Windows Server 2012 R2-Galerie-Image in Ihrem Abonnement für den Konfigurationsserver erstellt. Er wird als erste Instanz in einem neuen Clouddienst erstellt. Wenn Sie „Öffentliches Internet“ als Verbindungstyp für den Konfigurationsserver wählen, wird der Clouddienst mit einer reservierten öffentlichen IP-Adresse erstellt.</p><p>Der Installationspfad sollte nur englische Zeichen enthalten.</p>
 **Masterzielserver** | <p>Virtueller Azure-Computer, Standard A4, D14 oder DS4.</p><p>Der Installationspfad darf nur englische Zeichen enthalten. Für einen Masterzielserver unter Linux sollte der Pfad z. B. **/usr/local/ASR** lauten.</p></p>
 **Prozessserver** | <p>Sie können den Prozessserver auf einem physischen oder virtuellen Computer mit Windows Server 2012 R2 mit den neuesten Updates bereitstellen. Installieren Sie auf Laufwerk C:/.</p><p>Es wird empfohlen, dass Sie den Server im gleichen Netzwerk und Subnetz wie die Computer platzieren, die Sie schützen möchten.</p><p>Installieren Sie VMware vSphere CLI 5.5.0 auf dem Prozessserver. Die Komponente VMware vSphere CLI ist auf dem Prozessserver erforderlich, um virtuelle Computer, die von einem vCenter-Server verwaltet werden, oder virtuelle Computer, die auf einem ESXi-Host ausgeführt werden, zu ermitteln.</p><p>Der Installationspfad darf nur englische Zeichen enthalten.</p>
 **VMware** | <p>Ein VMware vCenter-Server zur Verwaltung Ihrer VMware vSphere-Hypervisoren. Auf ihm sollte vCenter, Version 5.1 oder 5.5, mit den neuesten Updates ausgeführt werden.</p><p>Einer oder mehrere vSphere-Hypervisoren mit virtuellen VMware-Computern, die Sie schützen möchten. Auf dem Hypervisor sollte ESX/ESXi, Version 5.1 oder 5.5, mit den neuesten Updates ausgeführt werden.</p><p>Auf den virtuellen VMware-Computern müssen die VMware-Tools installiert sein und ausgeführt werden.</p>
-**Windows-Computer** | <p>Für geschützte physische Server oder virtuelle VMware-Computer unter Windows gelten eine Reihe von Anforderungen.</p><p>Ein unterstütztes 64-Bit-Betriebssystem: **Windows Server 2012 R2**, **Windows Server 2012** oder **Windows Server 2008 R2 mit mindestens SP1**.</p><p>Der Hostname, die Bereitstellungspunkte, die Gerätenamen und der Windows-Systempfad \(z. B.: "C:\\Windows"\) dürfen nur englische Zeichen enthalten.</p><p>Das Betriebssystem sollte auf Laufwerk C:\\ installiert werden.</p><p>Nur Basisdatenträger werden unterstützt. Dynamische Datenträger werden nicht unterstützt.</p><p><Firewall rules on protected machines should allow them to reach the configuration and master target servers in Azure.p><p>Für die Pushinstallation des Mobilitätsdiensts auf Windows-Servern müssen Sie ein Administratorkonto angeben \(lokaler Administrator auf dem Windows-Computer\). Wenn das bereitgestellte Konto kein Domänenkonto ist, müssen Sie die Remote-Benutzerzugriffssteuerung auf dem lokalen Computer deaktivieren. Fügen Sie hierzu unter "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System" den Registrierungseintrag "LocalAccountTokenFilterPolicy DWORD" mit dem Wert 1 hinzu. Um den Registrierungseintrag über eine Befehlszeilenschnittstelle hinzuzufügen, öffnen Sie eine CMD- oder PowerShell-Befehlszeilenschnittstelle, und geben Sie **`REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`** ein. [Weitere Informationen](https://msdn.microsoft.com/library/aa826699.aspx) über die Zugriffssteuerung.</p><p>Wenn virtuelle Windows-Computer in Azure nach einem Failover mit Remotedesktop eine Verbindung herstellen sollen, stellen Sie sicher, dass Remotedesktop für den lokalen Computer aktiviert ist. Wenn Sie die Verbindung nicht über ein VPN herstellen, sollten die Firewallregeln Remotedesktopverbindungen über das Internet ermöglichen.</p>
-**Linux-Computer** | <p> Ein unterstütztes 64-Bit-Betriebssystem: **Centos 6.4, 6.5, 6.6**; **Oracle Enterprise Linux 6.4, 6.5, auf dem entweder der Red Hat-kompatible Kernel oder UEK3 \(Unbreakable Enterprise Kernel Release 3\) ausgeführt wird**, **SUSE Linux Enterprise Server 11 SP3**.</p><p>Die Firewallregeln auf geschützten Computern sollten diesen den Zugriff auf den Konfigurationsserver und Masterzielserver in Azure ermöglichen.</p><p>„/etc/hosts“-Dateien auf geschützten Computern sollten Einträge enthalten, die den Namen des lokalen Hosts IP-Adressen zuordnen, die allen NICs zugeordnet sind.</p><p>Wenn Sie nach einem Failover eine Verbindung mit einem virtuellen Azure-Computer unter Linux über einen Secure Shell-Client \(SSH\) herstellen möchten, sollten Sie sicherstellen, dass der Secure Shell-Dienst auf dem geschützten Computer beim Systemstart automatisch gestartet wird und dass die Firewallregeln eine SSH-Verbindung zulassen.</p><p>Der Hostname, Bereitstellungspunkte, Gerätenamen und Linux-Systempfade und -Dateinamen \(z. B. /etc/, /usr\) sollten nur englische Zeichen umfassen.</p><p>Der Schutz kann für lokale Computer mit dem folgenden Speicher aktiviert werden: -<br>Dateisystem: EXT3, ETX4, ReiserFS, XFS<br>Multipath-Softwaregeräte-Mapper \(multipath\)<br>Volume-Manager: LVM2<br>Physische Server mit HP CCISS-Controllerspeicher werden nicht unterstützt.</p>
+**Windows-Computer** | <p>Für geschützte physische Server oder virtuelle VMware-Computer unter Windows gelten eine Reihe von Anforderungen.</p><p>Ein unterstütztes 64-Bit-Betriebssystem: **Windows Server 2012 R2**, **Windows Server 2012** oder **Windows Server 2008 R2 mit mindestens SP1**.</p><p>Der Hostname, die Bereitstellungspunkte, die Gerätenamen und der Windows-Systempfad (z. B.: "C:\\Windows") dürfen nur englische Zeichen enthalten.</p><p>Das Betriebssystem sollte auf Laufwerk C:\\ installiert werden.</p><p>Nur Basisdatenträger werden unterstützt. Dynamische Datenträger werden nicht unterstützt.</p><p><Firewall rules on protected machines should allow them to reach the configuration and master target servers in Azure.p><p>Für die Pushinstallation des Mobilitätsdiensts auf Windows-Servern müssen Sie ein Administratorkonto angeben (lokaler Administrator auf dem Windows-Computer). Wenn das bereitgestellte Konto kein Domänenkonto ist, müssen Sie die Remote-Benutzerzugriffssteuerung auf dem lokalen Computer deaktivieren. Fügen Sie hierzu unter "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System" den Registrierungseintrag "LocalAccountTokenFilterPolicy DWORD" mit dem Wert 1 hinzu. Um den Registrierungseintrag über eine Befehlszeilenschnittstelle hinzuzufügen, öffnen Sie eine CMD- oder PowerShell-Befehlszeilenschnittstelle, und geben Sie **`REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`** ein. [Weitere Informationen](https://msdn.microsoft.com/library/aa826699.aspx) über die Zugriffssteuerung.</p><p>Wenn virtuelle Windows-Computer in Azure nach einem Failover mit Remotedesktop eine Verbindung herstellen sollen, stellen Sie sicher, dass Remotedesktop für den lokalen Computer aktiviert ist. Wenn Sie die Verbindung nicht über ein VPN herstellen, sollten die Firewallregeln Remotedesktopverbindungen über das Internet ermöglichen.</p>
+**Linux-Computer** | <p> Ein unterstütztes 64-Bit-Betriebssystem: **Centos 6.4, 6.5, 6.6**; **Oracle Enterprise Linux 6.4, 6.5, auf dem entweder der Red Hat-kompatible Kernel oder UEK3 (Unbreakable Enterprise Kernel Release 3) ausgeführt wird**, **SUSE Linux Enterprise Server 11 SP3**.</p><p>Die Firewallregeln auf geschützten Computern sollten diesen den Zugriff auf den Konfigurationsserver und Masterzielserver in Azure ermöglichen.</p><p>„/etc/hosts“-Dateien auf geschützten Computern sollten Einträge enthalten, die den Namen des lokalen Hosts IP-Adressen zuordnen, die allen NICs zugeordnet sind.</p><p>Wenn Sie nach einem Failover eine Verbindung mit einem virtuellen Azure-Computer unter Linux über einen Secure Shell-Client (SSH) herstellen möchten, sollten Sie sicherstellen, dass der Secure Shell-Dienst auf dem geschützten Computer beim Systemstart automatisch gestartet wird und dass die Firewallregeln eine SSH-Verbindung zulassen.</p><p>Der Hostname, Bereitstellungspunkte, Gerätenamen und Linux-Systempfade und -Dateinamen (z. B. /etc/, /usr) sollten nur englische Zeichen umfassen.</p><p>Der Schutz kann für lokale Computer mit dem folgenden Speicher aktiviert werden: -<br>Dateisystem: EXT3, ETX4, ReiserFS, XFS<br>Multipath-Softwaregeräte-Mapper (multipath)<br>Volume-Manager: LVM2<br>Physische Server mit HP CCISS-Controllerspeicher werden nicht unterstützt.</p>
 **Drittanbieter** | Einige Bereitstellungskomponenten in diesem Szenario sind von Drittanbietersoftware abhängig, um ordnungsgemäß zu funktionieren. Eine vollständige Liste finden Sie unter [Hinweise und Informationen zu Drittanbietersoftware](#third-party).
 
 ## Bereitstellung
@@ -182,13 +182,13 @@ In der Grafik sind die Bereitstellungsschritte zusammengefasst.
 
 ## Typ der Netzwerkkonnektivität
 
-Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen Standort und dem virtuellen Azure-Netzwerk zu konfigurieren, auf dem Ihre Infrastrukturkomponenten \(Konfigurationsserver, Masterzielserver\) bereitgestellt werden. Sie müssen entscheiden, welche Option für die Netzwerkkonnektivität Sie verwenden möchten, bevor Sie den Konfigurationsserver bereitstellen können. Dies ist eine Entscheidung zur Bereitstellungszeit, die später nicht geändert werden kann.
+Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen Standort und dem virtuellen Azure-Netzwerk zu konfigurieren, auf dem Ihre Infrastrukturkomponenten (Konfigurationsserver, Masterzielserver) bereitgestellt werden. Sie müssen entscheiden, welche Option für die Netzwerkkonnektivität Sie verwenden möchten, bevor Sie den Konfigurationsserver bereitstellen können. Dies ist eine Entscheidung zur Bereitstellungszeit, die später nicht geändert werden kann.
 
-**Öffentliches Internet:** Die Kommunikation und Replikation von Daten zwischen den lokalen Servern \(Prozessserver, geschützte Server\) und den Komponentenservern der Azure-Infrastruktur \(Konfigurationsserver, Masterzielserver\) erfolgt über eine sichere SSL/TLS-Verbindung. Sie verläuft vom lokalen Server zu den öffentlichen Endpunkten auf dem Konfigurationsserver und dem Masterzielserver. \(Die einzige Ausnahme ist die Verbindung zwischen dem Prozessserver und dem Masterzielserver auf TCP-Port 9080, die unverschlüsselt ist. Über diese Verbindung werden nur Steuerinformationen ausgetauscht, die sich auf das Replikationsprotokoll für die Einrichtung der Replikation beziehen.\)
+**Öffentliches Internet:** Die Kommunikation und Replikation von Daten zwischen den lokalen Servern (Prozessserver, geschützte Server) und den Komponentenservern der Azure-Infrastruktur (Konfigurationsserver, Masterzielserver) erfolgt über eine sichere SSL/TLS-Verbindung. Sie verläuft vom lokalen Server zu den öffentlichen Endpunkten auf dem Konfigurationsserver und dem Masterzielserver. (Die einzige Ausnahme ist die Verbindung zwischen dem Prozessserver und dem Masterzielserver auf TCP-Port 9080, die unverschlüsselt ist. Über diese Verbindung werden nur Steuerinformationen ausgetauscht, die sich auf das Replikationsprotokoll für die Einrichtung der Replikation beziehen.)
 
 ![Bereitstellungsdiagramm: Internet](./media/site-recovery-vmware-to-azure/ASRVmware_deploymentInternet.png)
 
-**VPN:** Die Kommunikation und Replikation von Daten zwischen den lokalen Servern \(Prozessserver, geschützte Server\) und den Komponentenservern der Azure-Infrastruktur \(Konfigurationsserver, Masterzielserver\) erfolgt über eine VPN-Verbindung zwischen Ihrem lokalen Netzwerk und dem virtuellen Azure-Netzwerk, in dem der Konfigurationsserver und die Masterzielserver bereitgestellt werden. Stellen Sie sicher, dass Ihr lokales Netzwerk mit dem virtuellen Azure-Netzwerk über eine ExpressRoute-Verbindung oder eine Standort-zu-Standort-VPN-Verbindung verbunden ist.
+**VPN:** Die Kommunikation und Replikation von Daten zwischen den lokalen Servern (Prozessserver, geschützte Server) und den Komponentenservern der Azure-Infrastruktur (Konfigurationsserver, Masterzielserver) erfolgt über eine VPN-Verbindung zwischen Ihrem lokalen Netzwerk und dem virtuellen Azure-Netzwerk, in dem der Konfigurationsserver und die Masterzielserver bereitgestellt werden. Stellen Sie sicher, dass Ihr lokales Netzwerk mit dem virtuellen Azure-Netzwerk über eine ExpressRoute-Verbindung oder eine Standort-zu-Standort-VPN-Verbindung verbunden ist.
 
 ![Bereitstellungsdiagramm: VPN](./media/site-recovery-vmware-to-azure/ASRVmware_deploymentVPN.png)
 
@@ -198,10 +198,10 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 1. Melden Sie sich im [Verwaltungsportal](https://portal.azure.com) an.
 
 
-2. Erweitern Sie **Data Services** \> **Recovery Services**, und klicken Sie auf **Site Recovery-Tresor**.
+2. Erweitern Sie **Data Services** > **Recovery Services**, und klicken Sie auf **Site Recovery-Tresor**.
 
 
-3. Klicken Sie auf **Neu erstellen** \> **Schnellerfassung**.
+3. Klicken Sie auf **Neu erstellen** > **Schnellerfassung**.
 
 4. Geben Sie unter **Name** einen Anzeigenamen ein, über den der Tresor identifiziert wird.
 
@@ -222,14 +222,14 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 	![Schnellstart-Symbol](./media/site-recovery-vmware-to-azure/ASRVMWare_QuickStartIcon.png)
 
 2. Wählen Sie in der Dropdownliste den Eintrag **Zwischen einem lokalen Standort mit VMware-/physischen Servern und Azure**.
-3. Klicken Sie unter **Zielressourcen \(Azure-Ressourcen\) vorbereiten** auf **Konfigurationsserver bereitstellen**.
+3. Klicken Sie unter **Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Konfigurationsserver bereitstellen**.
 
 	![Konfigurationsserver bereitstellen](./media/site-recovery-vmware-to-azure/ASRVMWare_DeployCS2.png)
 
 4. Geben Sie unter **Details des neuen Konfigurationsservers** Folgendes an:
 
 	- Einen Namen für den Konfigurationsserver und die Anmeldeinformationen für die Verbindung mit dem Server.
-	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE] Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
+	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
 	- Wählen Sie das Azure-Netzwerk aus, in dem sich der Server befinden soll. Wenn Sie VPN als Netzwerkkonnektivitätstyp angegeben haben, sollten Sie sicherstellen, dass dieses virtuelle Azure-Netzwerk mit Ihrem lokalen Standort über eine ExpressRoute-Verbindung oder ein Standort-zu-Standort-VPN verbunden ist.
 	- Geben Sie die interne IP-Adresse und das Subnetz an, die bzw. das dem Server zugewiesen werden soll. Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Verwenden Sie eine beliebige andere verfügbare IP-Adresse.
 	
@@ -249,14 +249,14 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 	
 	![VM-Endpunkte](./media/site-recovery-vmware-to-azure/ASRVMWare_VMEndpoints.png)
 
-    >[AZURE.WARNING] Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
+    >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
 
-Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst mit einer reservierten IP-Adresse bereitgestellt. Die reservierte Adresse ist erforderlich, um sicherzustellen, dass die IP-Adresse des Konfigurationsserver-Clouddiensts nach Neustarts der virtuellen Computer \(einschließlich des Konfigurationsservers\) im Clouddienst gleich bleibt. Wenn der Konfigurationsserver außer Betrieb gesetzt wird und die Reservierung der öffentlichen IP-Adresse nicht manuell rückgängig gemacht wird, bleibt die öffentliche IP-Adresse reserviert. Standardmäßig sind bis zu 20 reservierte öffentliche IP-Adressen pro Abonnement zulässig. [Weitere Informationen](../virtual-network/virtual-networks-reserved-private-ip.md) über reservierte IP-Adressen.
+Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst mit einer reservierten IP-Adresse bereitgestellt. Die reservierte Adresse ist erforderlich, um sicherzustellen, dass die IP-Adresse des Konfigurationsserver-Clouddiensts nach Neustarts der virtuellen Computer (einschließlich des Konfigurationsservers) im Clouddienst gleich bleibt. Wenn der Konfigurationsserver außer Betrieb gesetzt wird und die Reservierung der öffentlichen IP-Adresse nicht manuell rückgängig gemacht wird, bleibt die öffentliche IP-Adresse reserviert. Standardmäßig sind bis zu 20 reservierte öffentliche IP-Adressen pro Abonnement zulässig. [Weitere Informationen](../virtual-network/virtual-networks-reserved-private-ip.md) über reservierte IP-Adressen.
 
 ### Registrieren des Konfigurationsservers im Tresor
 
-1. Klicken Sie auf der Seite **Schnellstart** auf **Zielressourcen vorbereiten** \> **Registrierungsschlüssel herunterladen**. Die Schlüsseldatei wird automatisch generiert. Sie ist nach der Erstellung 5 Tage lang gültig. Kopieren Sie sie auf den Konfigurationsserver.
-2. Wählen Sie unter **Virtuelle Computer** den Konfigurationsserver aus der Liste der virtuellen Computer aus. Öffnen Sie die Registerkarte **Dashboard**, und klicken Sie auf **Verbinden**. **Öffnen** Sie die heruntergeladene RDP-Datei, um sich über Remotedesktop beim Konfigurationsserver anzumelden. Wenn Ihr Konfigurationsserver in einem VPN-Netzwerk bereitgestellt wird, verwenden Sie die interne IP-Adresse \(die Sie beim Bereitstellen des Konfigurationsservers angegeben haben und die auch auf der Virtual Machines-Dashboardseite für den virtuellen Konfigurationsserver angezeigt wird\) des Konfigurationsservers, um von Ihrem lokalen Netzwerk aus per Remotedesktop eine Verbindung damit herzustellen. Wenn Sie sich zum ersten Mal anmelden, wird der Azure Site Recovery-Assistent zum Einrichten des Konfigurationsservers automatisch ausgeführt.
+1. Klicken Sie auf der Seite **Schnellstart** auf **Zielressourcen vorbereiten** > **Registrierungsschlüssel herunterladen**. Die Schlüsseldatei wird automatisch generiert. Sie ist nach der Erstellung 5 Tage lang gültig. Kopieren Sie sie auf den Konfigurationsserver.
+2. Wählen Sie unter **Virtuelle Computer** den Konfigurationsserver aus der Liste der virtuellen Computer aus. Öffnen Sie die Registerkarte **Dashboard**, und klicken Sie auf **Verbinden**. **Öffnen** Sie die heruntergeladene RDP-Datei, um sich über Remotedesktop beim Konfigurationsserver anzumelden. Wenn Ihr Konfigurationsserver in einem VPN-Netzwerk bereitgestellt wird, verwenden Sie die interne IP-Adresse (die Sie beim Bereitstellen des Konfigurationsservers angegeben haben und die auch auf der Virtual Machines-Dashboardseite für den virtuellen Konfigurationsserver angezeigt wird) des Konfigurationsservers, um von Ihrem lokalen Netzwerk aus per Remotedesktop eine Verbindung damit herzustellen. Wenn Sie sich zum ersten Mal anmelden, wird der Azure Site Recovery-Assistent zum Einrichten des Konfigurationsservers automatisch ausgeführt.
 
 	![Registrierung](./media/site-recovery-vmware-to-azure/ASRVMWare_RegistrationSplashscreen.png)
 
@@ -313,14 +313,14 @@ Site Recovery fordert während der Bereitstellung Anmeldeinformationen für die 
 
 Nachdem Sie den Konfigurationsserver registriert haben, können Sie das Dialogfeld **Konten verwalten** öffnen, um Konten hinzuzufügen und zu verwalten, die für diese Aktionen verwendet werden sollen. Es gibt mehrere Möglichkeiten, dies zu tun:
 
-- Öffnen Sie die Verknüpfung, die Sie auf der letzten Seite des Setups des Konfigurationsservers für das Dialogfeld erstellt haben \(cspsconfigtool\).
+- Öffnen Sie die Verknüpfung, die Sie auf der letzten Seite des Setups des Konfigurationsservers für das Dialogfeld erstellt haben (cspsconfigtool).
 - Öffnen Sie das Dialogfeld beim Beenden der Konfigurationsserversetups.
 
 1. Klicken Sie unter **Konten verwalten** auf **Konto hinzufügen**. Sie können auch vorhandene Konten ändern und löschen.
 
 	![Konten verwalten](./media/site-recovery-vmware-to-azure/ASRVMWare_ManageAccount.png)
 
-2. Geben Sie unter **Kontodetails** einen in Azure zu verwendenden Kontonamen und Anmeldeinformationen \(Domäne/Benutzername\) an.
+2. Geben Sie unter **Kontodetails** einen in Azure zu verwendenden Kontonamen und Anmeldeinformationen (Domäne/Benutzername) an.
 
 	![Konten verwalten](./media/site-recovery-vmware-to-azure/ASRVMWare_AccountDetails.png)
 
@@ -335,35 +335,35 @@ Beachten Sie Folgendes:
 
 - Eine Internetverbindung verwendet die Endpunkte des virtuellen Computers in Verbindung mit der öffentlichen virtuellen IP-Adresse des Servers.
 - Bei einer VPN-Verbindung wird die interne IP-Adresse des Servers zusammen mit den Ports des privaten Endpunkts verwendet.
-- Es kann nur einmal entschieden werden, ob die Verbindung \(zum Senden von Steuerungs- und Replikationsdaten\) der lokalen Server mit den verschiedenen unter Azure ausgeführten Komponentenservern \(Konfigurationsserver, Masterzielserver\) über ein VPN oder über das Internet erfolgt. Sie können diese Einstellung später nicht ändern. Wenn Sie die Einstellung ändern, müssen Sie das Szenario erneut bereitstellen und die Computer erneut schützen.  
+- Es kann nur einmal entschieden werden, ob die Verbindung (zum Senden von Steuerungs- und Replikationsdaten) der lokalen Server mit den verschiedenen unter Azure ausgeführten Komponentenservern (Konfigurationsserver, Masterzielserver) über ein VPN oder über das Internet erfolgt. Sie können diese Einstellung später nicht ändern. Wenn Sie die Einstellung ändern, müssen Sie das Szenario erneut bereitstellen und die Computer erneut schützen.  
 
 
 ## Schritt 3: Bereitstellen des Masterzielservers
 
-1. Klicken Sie unter **Zielressourcen \(Azure-Ressourcen\) vorbereiten** auf **Masterzielserver bereitstellen**.
+1. Klicken Sie unter **Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Masterzielserver bereitstellen**.
 2. Geben Sie die Details und Anmeldeinformationen für den Masterzielserver an. Der Server wird in demselben Azure-Netzwerk wie der Konfigurationsserver bereitgestellt, bei dem er registriert ist. Wenn Sie zum Abschluss klicken, wird ein virtueller Azure-Computer mit einem Windows- oder Linux-Galerie-Image erstellt.
 
 	![Zielservereinstellungen](./media/site-recovery-vmware-to-azure/ASRVMWare_TSDetails.png)
 
 Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Geben Sie eine beliebige andere verfügbare IP-Adresse an.
 
->[AZURE.NOTE] Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
+>[AZURE.NOTE]Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
 
 
-3. Ein virtueller Computer des Windows-Masterzielservers mit den folgenden Endpunkten wird erstellt \(öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet\):
+3. Ein virtueller Computer des Windows-Masterzielservers mit den folgenden Endpunkten wird erstellt (öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet):
 
 	- Benutzerdefiniert: Der öffentliche Port wird vom Prozessserver zum Senden von Replikationsdaten über das Internet verwendet. Der private Port 9443 wird vom Prozessserver zum Senden von Replikationsdaten an den Masterzielserver über ein VPN verwendet.
 	- Benutzerdefiniert1: Der öffentliche Port wird vom Prozessserver zum Senden von Steuerungsmetadaten über das Internet verwendet. Der private Port 9080 wird vom Prozessserver zum Senden von Steuerungsmetadaten an den Masterzielserver über ein VPN verwendet.
 	- PowerShell: privater Port 5986
 	- Remotedesktop: privater Port 3389
 
-4. Ein virtueller Computer des Linux-Masterzielservers mit den folgenden Endpunkten wird erstellt \(öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet\):
+4. Ein virtueller Computer des Linux-Masterzielservers mit den folgenden Endpunkten wird erstellt (öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet):
 
 	- Benutzerdefiniert: Der öffentliche Port wird vom Prozessserver zum Senden von Replikationsdaten über das Internet verwendet. Der private Port 9443 wird vom Prozessserver zum Senden von Replikationsdaten an den Masterzielserver über ein VPN verwendet.
 	- Benutzerdefiniert1: Der öffentliche Port wird vom Prozessserver zum Senden von Steuerungsmetadaten über das Internet verwendet. Der private Port 9080 wird vom Prozessserver zum Senden von Steuerungsdaten an den Masterzielserver über ein VPN verwendet.
 	- SSH: Privater Port 22
 
-    >[AZURE.WARNING] Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Masterzielservers erstellt wurden, nicht ändern oder löschen.
+    >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Masterzielservers erstellt wurden, nicht ändern oder löschen.
 
 5. Warten Sie unter **Virtuelle Computer**, bis der virtuelle Computer gestartet wird.
 
@@ -375,33 +375,33 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 	1. Initiieren Sie eine Remotedesktopverbindung mit dem virtuellen Computer. Beim ersten Anmelden wird ein Skript in einem PowerShell-Fenster ausgeführt. Schließen Sie es nicht. Bei Fertigstellung wird das Host-Agent-Konfigurationstool zum Registrieren des Servers automatisch geöffnet.
 	2. Geben Sie unter **Host-Agent-Konfiguration** die interne IP-Adresse des Konfigurationsservers und Port 443 an. Sie können die interne Adresse und den privaten Port 443 auch dann verwenden, wenn Sie keine Verbindung per VPN herstellen, da der virtuelle Computer demselben Azure-Netzwerk zugeordnet ist wie der Konfigurationsserver. Lassen Sie **HTTPS verwenden** aktiviert. Geben Sie die Passphrase für den Konfigurationsserver ein, die Sie zuvor notiert haben. Klicken Sie auf **OK**, um den Server zu registrieren. Beachten Sie, dass Sie die NAT-Optionen auf der Seite ignorieren können. Sie werden nicht verwendet.
-	3. Wenn das Aufbewahrungslaufwerk schätzungsweise mehr als 1 TB erfordert, können Sie das Aufbewahrungsvolume \(R:\) mit einem virtuellen Datenträger und [Speicherplätzen](http://blogs.technet.com/b/askpfeplat/archive/2013/10/21/storage-spaces-how-to-configure-storage-tiers-with-windows-server-2012-r2.aspx) konfigurieren.
+	3. Wenn das Aufbewahrungslaufwerk schätzungsweise mehr als 1 TB erfordert, können Sie das Aufbewahrungsvolume (R:) mit einem virtuellen Datenträger und [Speicherplätzen](http://blogs.technet.com/b/askpfeplat/archive/2013/10/21/storage-spaces-how-to-configure-storage-tiers-with-windows-server-2012-r2.aspx) konfigurieren.
 	
 	![Windows-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSRegister.png)
 
 8. Wenn Sie Linux verwenden:
-	1. Stellen Sie sicher, dass Sie die aktuellen Linux Integration Services \(LIS\) installiert haben, bevor Sie die Masterzielserver-Software installieren. Die neueste Version von LIS sowie eine Anleitung zur Installation finden Sie [hier](https://www.microsoft.com/de-de/download/details.aspx?id=46842). Starten Sie den Computer nach der LIS-Installation neu.
-	2. Klicken Sie unter **Zielressourcen \(Azure-Ressourcen\) vorbereiten** auf **Weitere Software herunterladen und installieren \(nur für Linux-Masterzielserver\)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
-	2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
-	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64***
+	1. Stellen Sie sicher, dass Sie die aktuellen Linux Integration Services (LIS) installiert haben, bevor Sie die Masterzielserver-Software installieren. Die neueste Version von LIS sowie eine Anleitung zur Installation finden Sie [hier](https://www.microsoft.com/de-DE/download/details.aspx?id=46842). Starten Sie den Computer nach der LIS-Installation neu.
+	2. Klicken Sie unter ** Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Weitere Software herunterladen und installieren (nur für Linux-Masterzielserver)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
+2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
+	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64*** 
 	![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
 	4. Stellen Sie sicher, dass Sie sich in dem Verzeichnis befinden, in das Sie den Inhalt der TAR-Datei extrahiert haben.
-	5. Kopieren Sie die Passphrase für den Konfigurationsserver mit dem Befehl **echo *`<passphrase>`* \>passphrase.txt** in eine lokale Datei.
+	5. Kopieren Sie die Passphrase für den Konfigurationsserver mit dem Befehl **echo *`<passphrase>`* >passphrase.txt** in eine lokale Datei.
 	6. Führen Sie den Befehl „**sudo ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i *`<Configuration server internal IP address>`* -p 443 -s y -c https -P passphrase.txt**“ aus.
 
 	![Zielserver registrieren](./media/site-recovery-vmware-to-azure/Linux-MT-install.png)
 
-9. Warten Sie einige Minuten \(10 bis 15\), und stellen Sie auf der Seite **Server** \> **Konfigurationsserver** sicher, dass der Masterzielserver auf der Registerkarte **Serverdetails** als registriert aufgeführt ist. Wenn Sie Linux verwenden und der Server nicht registriert wurde, führen Sie das Hostkonfigurationstool über "/usr/local/ASR/Vx/bin/hostconfigcli" erneut aus. Sie müssen die Zugriffsberechtigungen festlegen, indem Sie chmod als root ausführen.
+9. Warten Sie einige Minuten (10 bis 15), und stellen Sie auf der Seite **Server** > **Konfigurationsserver** sicher, dass der Masterzielserver auf der Registerkarte **Serverdetails** als registriert aufgeführt ist. Wenn Sie Linux verwenden und der Server nicht registriert wurde, führen Sie das Hostkonfigurationstool über "/usr/local/ASR/Vx/bin/hostconfigcli" erneut aus. Sie müssen die Zugriffsberechtigungen festlegen, indem Sie chmod als root ausführen.
 
 	![Zielserver überprüfen](./media/site-recovery-vmware-to-azure/ASRVMWare_TSList.png)
 
->[AZURE.NOTE] Beachten Sie, dass es bis zu 15 Minuten nach Abschluss der Registrierung dauern kann, bis der Masterzielserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
+>[AZURE.NOTE]Beachten Sie, dass es bis zu 15 Minuten nach Abschluss der Registrierung dauern kann, bis der Masterzielserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
 
 ## Schritt 4: Bereitstellen eines lokalen Prozessservers
 
->[AZURE.NOTE] Es wird empfohlen, eine statische IP-Adresse für den Prozessserver zu konfigurieren, um sicherzustellen, dass diese nach einem Neustart beibehalten wird.
+>[AZURE.NOTE]Es wird empfohlen, eine statische IP-Adresse für den Prozessserver zu konfigurieren, um sicherzustellen, dass diese nach einem Neustart beibehalten wird.
 
-1. Klicken Sie auf „Schnellstart“ \> **Prozessserver lokal installieren** \> **Prozessserver herunterladen und installieren**.
+1. Klicken Sie auf „Schnellstart“ > **Prozessserver lokal installieren** > **Prozessserver herunterladen und installieren**.
 
 	![Prozessserver installieren](./media/site-recovery-vmware-to-azure/ASRVMWare_PSDeploy.png)
 
@@ -449,15 +449,15 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 	![Konfigurationsserver registrieren](./media/site-recovery-vmware-to-azure/ASRVMWare_ProcessServerCacheConfig.png)
 
-12. Beachten Sie, dass Sie möglicherweise den Server neu starten müssen, um die Installation abzuschließen. Überprüfen Sie unter **Konfigurationsserver** \> **Serverdetails**, ob der Prozessserver angezeigt wird und erfolgreich im Tresor registriert wurde.
+12. Beachten Sie, dass Sie möglicherweise den Server neu starten müssen, um die Installation abzuschließen. Überprüfen Sie unter **Konfigurationsserver** > **Serverdetails**, ob der Prozessserver angezeigt wird und erfolgreich im Tresor registriert wurde.
 
->[AZURE.NOTE] Es kann bis zu 15 Minuten nach Abschluss der Registrierung dauern, bis der Prozessserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
+>[AZURE.NOTE]Es kann bis zu 15 Minuten nach Abschluss der Registrierung dauern, bis der Prozessserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
  
 ![Prozessserver überprüfen](./media/site-recovery-vmware-to-azure/ASRVMWare_ProcessServerRegister.png)
 
 Wenn Sie beim Registrieren des Prozessservers die Signaturüberprüfung für den Mobilitätsdienst nicht deaktiviert haben, können Sie dies später nachholen:
 
-1. Melden Sie sich beim Prozessserver als Administrator an, und öffnen Sie die Datei "C:\\pushinstallsvc\\pushinstaller.conf", um sie zu bearbeiten. Fügen Sie im Abschnitt **\[PushInstaller.transport\]** die folgende Zeile hinzu: **SignatureVerificationChecks="0"**. Speichern und schließen Sie die Datei.
+1. Melden Sie sich beim Prozessserver als Administrator an, und öffnen Sie die Datei "C:\\pushinstallsvc\\pushinstaller.conf", um sie zu bearbeiten. Fügen Sie im Abschnitt **[PushInstaller.transport]** die folgende Zeile hinzu: **SignatureVerificationChecks="0"**. Speichern und schließen Sie die Datei.
 2. Starten Sie den InMage PushInstall-Dienst neu.
 
 
@@ -474,10 +474,10 @@ Sie erhalten die Updates im Site Recovery-**Dashboard**. Extrahieren Sie für ei
 Wenn Sie virtuelle Computer oder physische Server ausführen, auf denen der Mobilitätsdienst bereits installiert ist, können Sie die Updates für den Dienst wie folgt abrufen:
 
 - Laden Sie die Updates für den Dienst wie folgt herunter:
-	- [Windows Server \(nur 64 Bit\)](http://download.microsoft.com/download/8/4/8/8487F25A-E7D9-4810-99E4-6C18DF13A6D3/Microsoft-ASR_UA_8.4.0.0_Windows_GA_28Jul2015_release.exe)
-	- [CentOS 6.4, 6.5, 6.6 \(nur 64 Bit\)](http://download.microsoft.com/download/7/E/D/7ED50614-1FE1-41F8-B4D2-25D73F623E9B/Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz)
-	- [Oracle Enterprise Linux 6.4, 6.5 \(nur 64 Bit\)](http://download.microsoft.com/download/5/2/6/526AFE4B-7280-4DC6-B10B-BA3FD18B8091/Microsoft-ASR_UA_8.4.0.0_OL6-64_GA_28Jul2015_release.tar.gz)
-	- [SUSE Linux Enterprise Server SP3 \(nur 64 Bit\)](http://download.microsoft.com/download/B/4/2/B4229162-C25C-4DB2-AD40-D0AE90F92305/Microsoft-ASR_UA_8.4.0.0_SLES11-SP3-64_GA_28Jul2015_release.tar.gz)
+	- [Windows Server (nur 64 Bit)](http://download.microsoft.com/download/8/4/8/8487F25A-E7D9-4810-99E4-6C18DF13A6D3/Microsoft-ASR_UA_8.4.0.0_Windows_GA_28Jul2015_release.exe)
+	- [CentOS 6.4, 6.5, 6.6 (nur 64 Bit)](http://download.microsoft.com/download/7/E/D/7ED50614-1FE1-41F8-B4D2-25D73F623E9B/Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz)
+	- [Oracle Enterprise Linux 6.4, 6.5 (nur 64 Bit)](http://download.microsoft.com/download/5/2/6/526AFE4B-7280-4DC6-B10B-BA3FD18B8091/Microsoft-ASR_UA_8.4.0.0_OL6-64_GA_28Jul2015_release.tar.gz)
+	- [SUSE Linux Enterprise Server SP3 (nur 64 Bit)](http://download.microsoft.com/download/B/4/2/B4229162-C25C-4DB2-AD40-D0AE90F92305/Microsoft-ASR_UA_8.4.0.0_SLES11-SP3-64_GA_28Jul2015_release.tar.gz)
 - Alternativ können Sie nach dem Aktualisieren des Prozessservers die aktualisierte Version des Mobilitätsdiensts aus dem Ordner "C:\\pushinstallsvc\\repository" auf dem Prozessserver abrufen.
 - Wenn Sie einen bereits geschützten Computer mit einer älteren Version des Mobilitätsdiensts installiert haben, können Sie den Mobilitätsdienst auf den geschützten Computern auch automatisch über das Verwaltungsportal aktualisieren. Hierzu wählen Sie die Schutzgruppe aus, zu der der Computer gehört, markieren den geschützten Computer und klicken unten auf die Schaltfläche „Mobilitätsdienst aktualisieren“. Die Schaltfläche „Mobilitätsdienst aktualisieren“ wird nur aktiviert, wenn eine neuere Version des Mobilitätsdiensts verfügbar ist. Stellen Sie sicher, dass auf dem Prozessserver die neueste Version der Prozessserversoftware ausgeführt wird, bevor Sie den Mobilitätsdienst aktualisieren. Der geschützte Server muss alle [Voraussetzungen für die automatische Pushinstallation](#install-the-mobility-service-automatically) erfüllen, damit die Aktualisierung des Mobilitätsdiensts erfolgreich ist.
 
@@ -488,7 +488,7 @@ Geben Sie unter „Konten auswählen“ das Administratorkonto an, das zum Aktua
 
 ## Schritt 6: Hinzufügen von vCenter-Servern oder ESXi-Hosts
 
-1. Wählen Sie auf der Registerkarte **Server** \> **Konfigurationsserver** den Konfigurationsserver aus, und klicken Sie auf **VCENTER-SERVER HINZUFÜGEN**, um einen vCenter-Server oder ESXi-Host hinzuzufügen.
+1. Wählen Sie auf der Registerkarte **Server** > **Konfigurationsserver** den Konfigurationsserver aus, und klicken Sie auf **VCENTER-SERVER HINZUFÜGEN**, um einen vCenter-Server oder ESXi-Host hinzuzufügen.
 
 	![vCenter-Server auswählen](./media/site-recovery-vmware-to-azure/ASRVMWare_AddVCenter.png)
 
@@ -513,7 +513,7 @@ Geben Sie unter „Konten auswählen“ das Administratorkonto an, das zum Aktua
 
 ## Schritt 7: Erstellen einer Schutzgruppe
 
-1. Öffnen Sie **Geschützte Elemente** \> **Schutzgruppe**, und klicken Sie, um eine Schutzgruppe hinzuzufügen.
+1. Öffnen Sie **Geschützte Elemente** > **Schutzgruppe**, und klicken Sie, um eine Schutzgruppe hinzuzufügen.
 
 	![Schutzgruppe erstellen](./media/site-recovery-vmware-to-azure/ASRVMWare_CreatePG1.png)
 
@@ -565,13 +565,13 @@ Beim Hinzufügen von Computern zu einer Schutzgruppe wird der Mobilitätsdienst 
 6. Stellen Sie sicher, dass SSH auf Port 22 aktiviert ist und ausgeführt wird. 
 7. Aktivieren Sie das SFTP-Subsystem und die Kennwortauthentifizierung in der Datei "sshd\_config" wie folgt: 
 
-	- a\) Melden Sie sich als root an.
-	- b\) Suchen Sie in der Datei „/etc/ssh/sshd\_config“ die Zeile, die mit **PasswordAuthentication** beginnt.
-	- c\) Heben Sie die Auskommentierung der Zeile auf, und ändern Sie den Wert von "no" in "yes".
+	- a) Melden Sie sich als root an.
+	- b) Suchen Sie in der Datei „/etc/ssh/sshd\_config“ die Zeile, die mit **PasswordAuthentication** beginnt.
+	- c) Heben Sie die Auskommentierung der Zeile auf, und ändern Sie den Wert von "no" in "yes".
 
 		![Linux-Mobilität](./media/site-recovery-vmware-to-azure/ASRVMWare_LinuxPushMobility1.png)
 
-	- d\) Suchen Sie die Zeile, die mit "Subsystem" beginnt, und heben Sie die Auskommentierung der Zeile auf.
+	- d) Suchen Sie die Zeile, die mit "Subsystem" beginnt, und heben Sie die Auskommentierung der Zeile auf.
 	
 		![Linux-Pushmobilität](./media/site-recovery-vmware-to-azure/ASRVMWare_LinuxPushMobility2.png)
 
@@ -583,10 +583,10 @@ Die Softwarepakete zum Installieren des Mobilitätsdiensts befinden sich auf dem
 
 | Quellbetriebssystem | Mobilitätsdienstpaket auf dem Prozessserver |
 |---------------------------------------------------	|------------------------------------------------------------------------------------------------------	|
-| Windows Server \(nur 64 Bit\) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_Windows_GA_28Jul2015_release.exe` |
-| CentOS 6.4, 6.5, 6.6 \(nur 64 Bit\) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz` |
-| SUSE Linux Enterprise Server 11 SP3 \(nur 64 Bit\) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_SLES11-SP3-64_GA_28Jul2015_release.tar.gz`|
-| Oracle Enterprise Linux 6.4, 6.5 \(nur 64 Bit\) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_OL6-64_GA_28Jul2015_release.tar.gz` |
+| Windows Server (nur 64 Bit) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_Windows_GA_28Jul2015_release.exe` |
+| CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz` |
+| SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_SLES11-SP3-64_GA_28Jul2015_release.tar.gz`|
+| Oracle Enterprise Linux 6.4, 6.5 (nur 64 Bit) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_OL6-64_GA_28Jul2015_release.tar.gz` |
 
 
 **Um den Mobilitätsdienst manuell auf einem Windows Server zu installieren**, gehen Sie folgendermaßen vor:
@@ -638,7 +638,7 @@ So installieren Sie den Dienst auf dem Zielserver:
 
     ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i 104.40.75.37 -p 62519 -s y -c https -P passphrase.txt
 
->[AZURE.NOTE] Wenn Sie einer Schutzgruppe Computer hinzufügen, auf denen bereits eine geeignete Version des Mobilitätsdiensts ausgeführt wird, wird die Pushinstallation übersprungen.
+>[AZURE.NOTE]Wenn Sie einer Schutzgruppe Computer hinzufügen, auf denen bereits eine geeignete Version des Mobilitätsdiensts ausgeführt wird, wird die Pushinstallation übersprungen.
 
 
 ## Schritt 9: Aktivieren des Schutzes
@@ -646,21 +646,21 @@ So installieren Sie den Dienst auf dem Zielserver:
 Zum Aktivieren des Schutzes fügen Sie einer Schutzgruppe virtuelle Computer und physische Server hinzu. Bevor Sie beginnen, beachten Sie Folgendes:
 
 - Virtuelle Computer werden alle 15 Minuten ermittelt, und es kann bis zu 15 Minuten dauern, bis sie nach der Ermittlung in Azure Site Recovery angezeigt werden.
-- Es kann auch bis zu 15 Minuten dauern, bis Umgebungsänderungen auf dem virtuellen Computer \(z. B. Installation von VMware-Tools\) in Site Recovery aktualisiert werden.
+- Es kann auch bis zu 15 Minuten dauern, bis Umgebungsänderungen auf dem virtuellen Computer (z. B. Installation von VMware-Tools) in Site Recovery aktualisiert werden.
 - Sie können auf der Seite **Konfigurationsserver** im Feld **LETZTER KONTAKT UM** für den vCenter-Server/ESXi-Host den Zeitpunkt der letzten Ermittlung überprüfen.
 - Wenn Sie bereits eine Schutzgruppe erstellt haben und anschließend einen vCenter-Server oder ESXi-Host hinzufügen, dauert es 15 Minuten, bis das Azure Site Recovery-Portal aktualisiert wird und virtuelle Computer im Dialogfeld **Hinzufügen von Computern zu einer Schutzgruppe** angezeigt werden.
-- Wenn Sie einer Schutzgruppe sofort Computer hinzufügen möchten, ohne auf die planmäßige Ermittlung zu warten, markieren Sie den Konfigurationsserver \(klicken Sie nicht darauf\), und klicken Sie auf die Schaltfläche **Aktualisieren**.
+- Wenn Sie einer Schutzgruppe sofort Computer hinzufügen möchten, ohne auf die planmäßige Ermittlung zu warten, markieren Sie den Konfigurationsserver (klicken Sie nicht darauf), und klicken Sie auf die Schaltfläche **Aktualisieren**.
 - Wenn Sie einer Schutzgruppe virtuelle oder physische Computer hinzufügen, wird der Mobilitätsdienst automatisch vom Prozessserver auf den Quellserver gepusht und auf diesem installiert, sofern der Dienst nicht bereits installiert ist.
 - Damit der automatische Pushmechanismus funktioniert, stellen Sie sicher, dass Sie die geschützten Computer so eingerichtet haben, wie im vorherigen Schritt beschrieben wurde.
 
 Fügen Sie Computer wie folgt hinzu:
 
-1. **Geschützte Elemente** \> **Schutzgruppe** \> Registerkarte **Computer**. Klicken Sie auf **COMPUTER HINZUFÜGEN**. Als bewährte Methode wird empfohlen, dass Schutzgruppen ihre Workloads spiegeln, damit Sie Computer, auf denen eine bestimmte Anwendung ausgeführt wird, derselben Gruppe hinzufügen.
+1. **Geschützte Elemente** > **Schutzgruppe** > Registerkarte **Computer**. Klicken Sie auf **COMPUTER HINZUFÜGEN**. Als bewährte Methode wird empfohlen, dass Schutzgruppen ihre Workloads spiegeln, damit Sie Computer, auf denen eine bestimmte Anwendung ausgeführt wird, derselben Gruppe hinzufügen.
 2. Wenn Sie physische Server schützen, geben Sie im Assistenten **Physische Computer hinzufügen** unter **Virtuelle Computer auswählen** die IP-Adresse und den Anzeigenamen an. Wählen Sie dann die Betriebssystemfamilie aus.
 
 	![vCenter-Server hinzufügen](./media/site-recovery-vmware-to-azure/ASRVMWare_PhysicalProtect.png)
 
-3. Wenn Sie virtuelle VMware-Computer schützen, wählen Sie unter **Virtuelle Computer auswählen** einen vCenter-Server aus, der die virtuellen Computer verwaltet \(oder den EXSi-Host, auf dem sie ausgeführt werden\), und wählen Sie dann die Computer aus.
+3. Wenn Sie virtuelle VMware-Computer schützen, wählen Sie unter **Virtuelle Computer auswählen** einen vCenter-Server aus, der die virtuellen Computer verwaltet (oder den EXSi-Host, auf dem sie ausgeführt werden), und wählen Sie dann die Computer aus.
 
 	![vCenter-Server hinzufügen](./media/site-recovery-vmware-to-azure/ASRVMWare_SelectVMs.png)
 
@@ -676,7 +676,7 @@ Fügen Sie Computer wie folgt hinzu:
 
 	![vCenter-Server hinzufügen](./media/site-recovery-vmware-to-azure/ASRVMWare_PGJobs2.png)
 
-7. Darüber hinaus können Sie den Schutzstatus überwachen, indem Sie auf **Geschützte Elemente** \> Name der Schutzgruppe \> **Virtuelle Computer** klicken. Nachdem die erste Replikation abgeschlossen ist und die Computer Daten synchronisieren, wird der Status **Geschützt** angezeigt.
+7. Darüber hinaus können Sie den Schutzstatus überwachen, indem Sie auf **Geschützte Elemente** > Name der Schutzgruppe > **Virtuelle Computer** klicken. Nachdem die erste Replikation abgeschlossen ist und die Computer Daten synchronisieren, wird der Status **Geschützt** angezeigt.
 
 	![Aufträge virtueller Computer](./media/site-recovery-vmware-to-azure/ASRVMWare_PGJobs.png)
 
@@ -694,13 +694,13 @@ Beachten Sie Folgendes:
 - Standardmäßig werden replizierte virtuelle Computer in Azure nicht mit einem Azure-Netzwerk verbunden. Wenn repliziere virtuelle Computer kommunizieren sollen, stellen Sie sicher, dass für beide dasselbe Azure-Netzwerk festgelegt wird.
 - Wenn Sie die Größe ein Volumes auf einem virtuellen VMware-Computer oder einem physischen Server ändern, wechselt der virtuelle Computer bzw. der Server in einen kritischen Zustand. Wenn Sie die Größe ändern müssen, führen Sie folgende Schritte aus:
 
-	- a\) Ändern Sie die Größeneinstellung.
-	- b\) Wählen Sie auf der Registerkarte **Virtuelle Computer** den virtuellen Computer aus, und klicken Sie auf **Entfernen**.
-	- c\) Wählen Sie unter **Virtuellen Computer entfernen** die Option **Schutz deaktivieren \(Für Wiederherstellungsdrilloption und Volumegrößenänderung verwenden\)** aus. Mit dieser Option wird der Schutz deaktiviert, die Wiederherstellungspunkte in Azure bleiben jedoch erhalten.
+	- a) Ändern Sie die Größeneinstellung.
+	- b) Wählen Sie auf der Registerkarte **Virtuelle Computer** den virtuellen Computer aus, und klicken Sie auf **Entfernen**.
+	- c) Wählen Sie unter **Virtuellen Computer entfernen** die Option **Schutz deaktivieren (Für Wiederherstellungsdrilloption und Volumegrößenänderung verwenden)** aus. Mit dieser Option wird der Schutz deaktiviert, die Wiederherstellungspunkte in Azure bleiben jedoch erhalten.
 
 		![Eigenschaften für virtuelle Computer festlegen](./media/site-recovery-vmware-to-azure/ASRVMWare_RemoveVM.png)
 
-	- d\) Aktivieren Sie erneut den Schutz für den virtuellen Computer. Wenn Sie den Schutz erneut aktivieren, werden die Daten für das angepasste Volume an Azure übertragen.
+	- d) Aktivieren Sie erneut den Schutz für den virtuellen Computer. Wenn Sie den Schutz erneut aktivieren, werden die Daten für das angepasste Volume an Azure übertragen.
 
 	
 
@@ -725,7 +725,7 @@ Derzeit können nur nicht geplante Failover für geschützte virtuelle VMware-Co
 3. Bei Bedarf können Sie den Plan anpassen und Gruppen erstellen sowie die Reihenfolge anpassen, in der für die Computer im Wiederherstellungsplan ein Failover durchgeführt wird. Sie können auch Aufforderungen für manuelle Aktionen und Skripts hinzufügen. Die Skripts beim Wiederherstellen in Azure können mithilfe von [Azure Automation-Runbooks](site-recovery-runbook-automation.md) hinzugefügt werden.
 
 4. Wählen Sie den Plan auf der Seite **Wiederherstellungspläne** aus, und klicken Sie auf **Nicht geplantes Failover**.
-5. Überprüfen Sie unter **Failover bestätigen** die Failoverrichtung \(auf Azure\), und wählen Sie den Wiederherstellungspunkt für das Failover aus.
+5. Überprüfen Sie unter **Failover bestätigen** die Failoverrichtung (auf Azure), und wählen Sie den Wiederherstellungspunkt für das Failover aus.
 6. Warten Sie, bis der Failoverauftrag abgeschlossen ist, und prüfen Sie dann, ob das Failover wie erwartet durchgeführt wurde und die replizierten virtuellen Computer in Azure erfolgreich gestartet wurden.
 
 
@@ -741,7 +741,7 @@ Derzeit können nur nicht geplante Failover für geschützte virtuelle VMware-Co
 Der Prozessserver sendet Replikationsdaten an den Masterzielserver in Azure und ermittelt neue virtuelle VMware-Computer, die einem vCenter-Server hinzugefügt wurden. In den folgenden Situationen empfiehlt es sich, den Prozessserver in der Bereitstellung zu ändern:
 
 - Wenn der aktuelle Prozessserver ausfällt
-- Wenn die RPO \(Recovery Point Objective\) einen für Ihre Organisation nicht akzeptablen Wert erreicht.
+- Wenn die RPO (Recovery Point Objective) einen für Ihre Organisation nicht akzeptablen Wert erreicht.
 
 Bei Bedarf können Sie die Replikation einiger oder aller lokalen virtuellen VMware-Computer und physischen Server auf einen anderen Prozess-Server verschieben. Beispiel:
 
@@ -765,12 +765,12 @@ Wenn ein Prozessserver in einem kritischen Zustand ist, wird im Site Recovery-Da
 
 Do Not Translate or Localize
 
-The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”).  Microsoft is the not original author of the Third Party Code.  The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
+Die Software und Firmware, die im Microsoft-Produkt oder -Dienst ausgeführt wird, basiert auf oder enthält Material aus den unten aufgeführten Projekten (zusammen " Drittanbietercode") Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Die ursprünglichen Urheberrechtshinweise und die Lizenz, unter der Microsoft der Drittanbietercode überlassen wurde, sind im Folgenden ausgeführt.
 
-The information in Section A is regarding Third Party Code components from the projects listed below. Such licenses and information are provided for informational purposes only.  This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.  
+The information in Section A is regarding Third Party Code components from the projects listed below. Solche Lizenzen und Informationen dienen ausschließlich informativen Zwecken. Der Code von Drittanbietern wird von Microsoft neu lizensiert und Ihnen dann zu den Microsoft-Softwarelizenzvereinbarungen für das Microsoft-Produkt oder den -Dienst zur Verfügung gestellt.
 
 The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
 
-The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
+Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft behält sich alle Rechte vor, die hier nicht ausdrücklich, stillschweigend, durch Rechtsverwirkung oder auf andere Weise gewährt wurden.
 
-<!--------HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO2-->

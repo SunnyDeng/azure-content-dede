@@ -41,7 +41,7 @@ Element | Name des virtuellen Computers | Katalogimage | Mindestgröße
 
 **Tabelle M: Virtuelle Computer für die Branchenanwendung mit hoher Verfügbarkeit in Azure**
 
-Einzelheiten zu den Größen der virtuellen Computer finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+Einzelheiten zu den Größen der virtuellen Computer finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
 Mit dem folgenden Azure PowerShell-Befehlsblock erstellen Sie die virtuellen Computer für die beiden Domänencontroller. Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg. Die Werte für diesen PowerShell-Befehlsblock entnehmen Sie den folgenden Tabellen:
 
@@ -52,6 +52,8 @@ Mit dem folgenden Azure PowerShell-Befehlsblock erstellen Sie die virtuellen Com
 - Tabelle A für Ihre Verfügbarkeitsgruppen
 
 Die Tabellen V, S, ST und A haben Sie in [Phase 1: Konfigurieren von Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md) ausgefüllt.
+
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Die Azure PowerShell-Befehlsblöcke in diesem Artikel werden gerade getestet und aktualisiert, um auch die neuen Cmdlets in Azure PowerShell Version 1.0.0 und höher zu unterstützen. Vielen Dank für Ihre Geduld.
 
 Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
@@ -210,4 +212,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO2-->

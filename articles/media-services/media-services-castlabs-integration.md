@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Übermitteln von DRM-Lizenzen an Azure Media Services mithilfe von castLabs" 
+	pageTitle="Übermitteln von Widevine-Lizenzen an Azure Media Services mithilfe von castLabs" 
 	description="In diesem Artikel wird beschrieben, wie Sie mithilfe von Azure Media Services (AMS) einen Stream übermitteln, der von AMS mit PlayReady- und Widevine-DRMs dynamisch verschlüsselt wird. Die PlayReady-Lizenz stammt vom Media Services PlayReady-Lizenzserver, und die Widevine-Lizenz wird vom castLabs-Lizenzserver übermittelt." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,11 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"  
+	ms.date="10/07/2015"  
 	ms.author="juliako"/>
 
 
-#Übermitteln von DRM-Lizenzen an Azure Media Services mithilfe von castLabs
+#Übermitteln von Widevine-Lizenzen an Azure Media Services mithilfe von castLabs
+
+> [AZURE.SELECTOR]
+- [Axinom](media-services-axinom-integration.md)
+- [castLabs](media-services-castlabs-integration.md)
 
 ##Übersicht
 
@@ -120,4 +124,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO2-->

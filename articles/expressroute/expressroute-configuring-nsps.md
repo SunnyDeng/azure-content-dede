@@ -1,20 +1,20 @@
 <properties 
    pageTitle="Konfigurieren von ExpressRoute mit NSPs"
-	description="Dieses Lernprogramm führt Sie durch die Einrichtung von ExpressRoute über NSPs."
-	documentationCenter="na"
-	services="expressroute"
-	authors="cherylmc"
-	manager="adinah"
-	editor="tysonn"/>
+   description="Dieses Lernprogramm führt Sie durch die Einrichtung von ExpressRoute über NSPs."
+   documentationCenter="na"
+   services="expressroute"
+   authors="cherylmc"
+   manager="adinah"
+   editor="tysonn"/>
 
 <tags 
    ms.service="expressroute"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="06/29/2015"
-	ms.author="cherylmc"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="09/29/2015"
+   ms.author="cherylmc"/>
 
 #  Konfigurieren einer ExpressRoute-Verbindung über einen Netzwerkdienstanbieter
 
@@ -150,4 +150,4 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 		
 		Provisioned 
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO2-->

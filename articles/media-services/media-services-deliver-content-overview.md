@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Bereitstellen von Inhalten für Kunden – Übersicht" 
-	description="Dieses Thema bietet einen Überblick darüber, was zur Bereitstellung von Inhalten mit Azure Media Services erforderlich ist." 
+	description="Dieses Thema bietet eine Übersicht darüber, was zur Bereitstellung von Inhalten mit Azure Media Services erforderlich ist." 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -28,7 +28,7 @@ So erreichen Sie dieses Ziel:
 - Codieren Sie den Stream in einen Videostream mit mehreren Bitraten (mit adaptiver Bitrate) (dies betrifft die Qualität und die Netzwerkbedingungen) und 
 - verwenden Sie [Media Services Dynamic Packaging](media-services-dynamic-packaging-overview.md), um den Stream dynamisch erneut in verschiedene Protokolle zu packen (dies betrifft das Streaming auf verschiedenen Geräten). Media Services unterstützt die Übermittlung der folgenden Streamingtechnologien mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-Dieses Thema bietet einen Überblick über wichtige Content Delivery-Konzepte.
+Dieses Thema bietet eine Übersicht über wichtige Content Delivery-Konzepte.
 
 
 ##Dynamische Paketerstellung
@@ -103,6 +103,9 @@ Beispiel
 Standardmäßig sind reine Tonspuren im HLS-Manifest enthalten. Dies ist für die Apple Store-Zertifizierung für Mobilfunknetze erforderlich. Wenn ein Client in diesem Fall nicht über genügend Bandbreite verfügt oder über eine 2G-Verbindung verbunden ist, wird zur reinen Audiowiedergabe gewechselt. Dadurch wird fortlaufendes Streaming ohne Pufferung gewährleistet, mit dem Nachteil, dass kein Video verfügbar ist. Allerdings könnte es in einigen Szenarios vorteilhafter sein, wenn der Player puffert anstatt nur die Tonspur abzuspielen. Wenn Sie die reine Tonspur entfernen möchten, so fügen Sie (audio-only= false) zur URL hinzu und entfernen Sie sie.
 
 	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
+
+Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support) Blog.
+
 
 **Smooth Streaming-Format**
 
@@ -186,4 +189,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel](media-services-roll-storage-access-keys.md)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO2-->
