@@ -82,7 +82,7 @@ Es spielt keine Rolle, welches VMM-Szenario Sie mit Site Recovery bereitstellen 
 - [Private Cloud-Neuerungen mit System Center 2012 R2 VMM](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=)
 - [VMM 2012 und die Clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)
 - [Konfigurieren der VMM-Cloud-Fabric](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
-- [Erstellen einer Private Cloud in VMM](https://technet.microsoft.com/de-de/library/jj860425.aspx)
+- [Erstellen einer Private Cloud in VMM](https://technet.microsoft.com/de-DE/library/jj860425.aspx)
 - [Exemplarische Vorgehensweise: Erstellen von privaten Clouds mit System Center 2012 SP1 VMM](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 
 
@@ -157,7 +157,7 @@ Anbieter und Agents werden auf lokalen Servern installiert, damit darüber Verbi
 ## Optimieren der Leistung
 
 - **Volumegröße des Betriebssystems**: Wenn Sie einen virtuellen Computer zu Azure replizieren, muss das Volume des Betriebssystems kleiner als 1 TB sein. Falls Sie mehr als ein Volume nutzen, können Sie diese manuell auf einen anderen Datenträger verschieben, bevor Sie mit der Bereitstellung beginnen.
-- **Größe des Datenträgers für Daten**: Wenn Sie zu Azure replizieren, können Sie auf einem virtuellen Computer bis zu 32 Datenträger für Daten nutzen, die jeweils maximal 1 TB groß sind. Für einen virtuellen Computer mit \~32 TB können Sie die Replikation und das Failover effektiv durchführen.
+- **Größe des Datenträgers für Daten**: Wenn Sie zu Azure replizieren, können Sie auf einem virtuellen Computer bis zu 32 Datenträger für Daten nutzen, die jeweils maximal 1 TB groß sind. Für einen virtuellen Computer mit ~32 TB können Sie die Replikation und das Failover effektiv durchführen.
 - **Beschränkungen des Wiederherstellungsplans**: Für Site Recovery ist eine Skalierung auf Tausende von virtuellen Computern möglich. Wiederherstellungspläne wurden als Modell für Anwendungen entwickelt, für die das Failover zusammen erfolgen soll. Die Anzahl von Computern in einem Wiederherstellungsplan wird daher auf 50 beschränkt.
 - **Beschränkungen für Azure-Dienste**: Jedes Azure-Abonnement verfügt über eine Reihe von standardmäßigen Beschränkungen für Kerne, Clouddienste usw. Wir empfehlen Ihnen, ein Testfailover auszuführen, um die Verfügbarkeit von Ressourcen in Ihrem Abonnement zu überprüfen. Sie können diese Beschränkungen über den Azure-Support ändern.
 - **Kapazitätsplanung**: Verwenden Sie als Anleitung den [Kapazitätsplaner für Hyper-V-Replikate](http://www.microsoft.com/en-in/download/details.aspx?id=39057).
@@ -194,4 +194,4 @@ Nachdem Sie diese bewährten Methoden überprüft haben, können Sie mit der Ber
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

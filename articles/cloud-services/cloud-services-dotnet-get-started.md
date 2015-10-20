@@ -813,4 +813,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Verwalten von Cloud Services](cloud-services-how-to-manage.md)
 * [Azure Storage](/documentation/services/storage/) (in englischer Sprache)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,22 +1,22 @@
 <properties
-	pageTitle="Erste Schritte mit IoT Hub | Microsoft Azure"
+	pageTitle="Erste Schritte mit Azure IoT Hub | Microsoft Azure"
 	description="In diesem Lernprogramm werden die ersten Schritte für die Verwendung von Azure IoT Hub mit C# beschrieben."
 	services="iot-hub"
 	documentationCenter=".net"
 	authors="fsautomata"
-	manager="kevinmil"
+	manager="timlt"
 	editor=""/>
 
 <tags
      ms.service="iot-hub"
-     ms.devlang="csharp"
-     ms.topic="article"
+     ms.devlang="dotnet"
+     ms.topic="hero-article"
      ms.tgt_pltfrm="na"
-     ms.workload="tbd"
+     ms.workload="na"
      ms.date="09/29/2015"
      ms.author="elioda"/>
 
-# Erste Schritte mit IoT Hub
+# Tutorial: Erste Schritte mit IoT Hub
 
 ## Einführung
 
@@ -24,13 +24,13 @@ Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige un
 
 Dieses Lernprogramm zeigt, wie Sie mit dem Azure-Portal einen IoT Hub erstellen. Außerdem wird beschrieben, wie Sie eine Geräteidentität in Ihrem IoT Hub erstellen, ein simuliertes Gerät zum Senden von D2C-Nachrichten erstellen und diese Nachrichten vom Cloud-Back-End empfangen.
 
-Am Ende dieses Lernprogramms haben Sie drei Windows-Konsolenanwendungen erstellt:
+Am Ende dieses Tutorials verfügen Sie über drei Windows-Konsolenanwendungen:
 
 * **CreateDeviceIdentity**. Hiermit werden eine Geräteidentität und ein zugehöriger Sicherheitsschlüssel zum Verbinden mit dem simulierten Gerät erstellt.
 * **ReadDeviceToCloudMessages**. Hiermit werden D2C-Nachrichten gelesen und ihr Inhalt angezeigt.
 * **SimulatedDevice**. Hiermit wird mithilfe der zuvor erstellten Geräteidentität eine Verbindung mit Ihrem IoT Hub hergestellt und jede Sekunde eine D2C-Nachricht gesendet.
 
-> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zu Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
+> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center][] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Tutorial sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
@@ -92,17 +92,17 @@ Sie können jetzt die Anwendung ausführen.
 
 In diesem Lernprogramm haben Sie einen neuen IoT Hub eingerichtet, eine Geräteidentität in der Identitätsregistrierung des Hubs erstellt und mit dieser Identität ein simuliertes Gerät programmiert, das Gerät-zu-Cloud-Nachrichten (Device-to-Cloud, D2C) sendet. In den folgenden Lernprogrammen werden weitere Funktionen und Szenarios für IoT Hubs vorgestellt:
 
-- Unter [Senden von C2D-Nachrichten mit IoT Hub] wird erläutert, wie Sie Nachrichten an Geräte senden und das von IoT Hub generierte Feedback zur Übermittlung verarbeiten.
-- In [Verarbeiten von D2C-Nachrichten] wird erläutert, wie Sie zuverlässig Telemetriedaten und interaktive Nachrichten von Geräten verarbeiten können.
-- In [Hochladen von Dateien von Geräten] wird beschrieben, wie mithilfe von C2D-Nachrichten Dateiuploads von Geräten erleichtert werden.
+- Unter [Senden von C2D-Nachrichten mit IoT Hub][] wird erläutert, wie Sie Nachrichten an Geräte senden und das von IoT Hub generierte Feedback zur Übermittlung verarbeiten.
+- In [Verarbeiten von D2C-Nachrichten][] wird erläutert, wie Sie zuverlässig Telemetriedaten und interaktive Nachrichten von Geräten verarbeiten können.
+- In [Hochladen von Dateien von Geräten][] wird beschrieben, wie mithilfe von C2D-Nachrichten Dateiuploads von Geräten erleichtert werden.
 
 Weitere Informationen zu IoT Hub:
 
-* [Übersicht zu IoT Hub]
-* [IoT Hub-Entwicklerhandbuch]
-* [Anleitungen zu IoT Hub]
+* [Übersicht zu IoT Hub][]
+* [IoT Hub-Entwicklerhandbuch][]
+* [IoT Hub – Anleitung][]
 * [Unterstützte Geräteplattformen und Sprachen][Supported devices]
-* [Azure IoT Developer Center]
+* [Azure IoT Developer Center][]
 
 <!-- Images. -->
 [1]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub1.png
@@ -122,15 +122,11 @@ Weitere Informationen zu IoT Hub:
 [Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
 [Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md
-[Anleitungen zu IoT Hub]: iot-hub-guidance.md
+[IoT Hub – Anleitung]: iot-hub-guidance.md
 [IoT Hub-Entwicklerhandbuch]: iot-hub-devguide.md
 [IoT Hub Supported Devices]: iot-hub-supported-devices.md
 [Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
-[Azure IoT Developer Center]: http://www.azure.com/iotdev
+[Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-
-
- 
-
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

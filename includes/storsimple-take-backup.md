@@ -29,4 +29,4 @@ Sie haben die Gerätekonfiguration abgeschlossen.
 
 Sie können sich [hier](http://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/) ein Video anschauen, in dem das Erstellen einer StorSimple-Sicherung demonstriert wird.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

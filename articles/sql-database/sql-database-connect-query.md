@@ -13,12 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
-	ms.date="09/09/2015"
+	ms.date="10/09/2015"
 	ms.author="genemi"/>
 
 
 # Verbinden mit der SQL-Datenbank und Abfragen von dieser mit C&#x23;
 
+> [AZURE.SELECTOR]
+- [C#](sql-database-connect-query.md)
+- [SSMS](sql-database-connect-query-ssms.md)
+- [Excel](sql-database-connect-excel.md)
 
 Sie möchten ein C#-Programm schreiben, das mithilfe von ADO.NET eine Verbindung mit einer Azure SQL-Datenbank in der Cloud herstellt.
 
@@ -41,7 +45,7 @@ Zum Ausführen des C#-Codebeispiels benötigen Sie:
 - Visual Studio 2013, Update 4 (oder höher). Microsoft bietet Visual Studio Community jetzt *kostenlos* an.
  - [Download von Visual Studio Community](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Weitere Optionen für kostenlose Visual Studio-Versionen](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Vorschauportal](http://portal.azure.com/) Sie zur Installation von Visual Studio leitet.
+ - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Vorschauportal](http://portal.azure.com/) Sie durch die Installation von Visual Studio begleitet.
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -70,7 +74,7 @@ Zur Installation von Visual Studio haben Sie folgende Möglichkeiten:
 
 5. Der Einfachheit halber klicken Sie für alle vorherigen Blätter auf das Steuerelement zum Minimieren.
 
-6. Klicken Sie im oberen Bereich des Datenbankblatts auf die Schaltfläche **In Visual Studio öffnen**. Ein neues Blatt zu Visual Studio wird geöffnet. Es enthält Links zu den Speicherorten für die Visual Studio-Installation.
+6. Klicken Sie im oberen Bereich des Blatts "Datenbank" auf die Schaltfläche **In Visual Studio öffnen**. Ein neues Blatt zu Visual Studio wird geöffnet. Es enthält Links zu den Speicherorten für die Visual Studio-Installation.
  
 	![Schaltfläche "In Visual Studio öffnen"][20-OpenInVisualStudioButton]
 
@@ -105,14 +109,14 @@ Erstellen Sie in Visual Studio ein neues Projekt, das auf der Startvorlage für 
 ## Schritt 3: Hinzufügen eines Assemblyverweises für die Konfigurationsverarbeitung
 
 
-Unser C#-Beispiel verwendet die .NET Framework-Assembly **System.Configuration.dll**, deshalb fügen wir einen entsprechenden Verweis hinzu.
+Unser C#-Beispiel verwendet die .NET Framework-Assembly **System.Configuration.dll**. Deshalb fügen wir einen entsprechenden Verweis hinzu.
 
 
-1. Klicken Sie im Bereich **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise** und anschließend auf **Verweis hinzufügen**. Das Fenster **Verweis-Manager** wird angezeigt.
+1. Klicken Sie im Bereich **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise** > **Verweis hinzufügen**. Das Fenster **Verweis-Manager** wird angezeigt.
 
 2. Erweitern Sie **Assemblys** > **Framework**.
 
-3. Scrollen Sie nach unten, und markieren Sie **System.Configuration**. Stellen Sie sicher, dass das Kontrollkästchen aktiviert ist.
+3. Führen Sie einen Bildlauf aus, und markieren Sie **System.Configuration**. Stellen Sie sicher, dass das Kontrollkästchen aktiviert ist.
 
 4. Klicken Sie auf **OK**.
 
@@ -124,7 +128,7 @@ Unser C#-Beispiel verwendet die .NET Framework-Assembly **System.Configuration.d
 
 Verwenden Sie das [Azure-Vorschauportal](http://portal.azure.com/), um die Verbindungszeichenfolge für die Datenbank zu kopieren.
 
-Diese verwenden Sie als erstes, um Visual Studio mit der Azure SQL-Datenbank **AdventureWorksLT** zu verbinden.
+Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Datenbank **AdventureWorksLT**.
 
 
 [AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
@@ -135,7 +139,7 @@ Diese verwenden Sie als erstes, um Visual Studio mit der Azure SQL-Datenbank **A
 
 1. Öffnen Sie in Visual Studio im Bereich "Projektmappen-Explorer" die Datei "App.config".
 
-2. Fügen Sie ein Element **&#x3c;configuration&#x3e; &#x3c;/configuration&#x3e;** hinzu, wie im folgenden "App.config"-Codebeispiel gezeigt.
+2. Fügen Sie das Element **&#x3c;configuration&#x3e; &#x3c;/configuration&#x3e;** hinzu, wie im folgenden "App.config"-Codebeispiel gezeigt.
  - Ersetzen Sie *{Ihre\_Platzhalter}* durch die tatsächlichen Werte:
 
 ```
@@ -292,7 +296,7 @@ namespace ConnectAndQuery_Example
 
 3. Verwendet die Verbindungszeichenfolge und ADO.NET-Klassen, um eine Verbindung mit der **AdventureWorksLT**-Demodatenbank in Azure SQL-Datenbank herzustellen.
 
-4. Gibt den SQL-Befehl **SELECT** aus, um Einträge aus der Tabelle **SalesLT** auszulesen.
+4. Ruft den SQL-Befehl **SELECT** auf, um Einträge aus der Tabelle **SalesLT** auszulesen.
 
 5. Druckt die zurückgegebenen Zeilen an die Konsole.
 
@@ -319,7 +323,7 @@ Sie können die IP-Adresse über das [Azure-Vorschauportal](http://portal.azure.
 
 
 
-Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md)
+Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md).
 
 
 
@@ -353,4 +357,4 @@ Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstell
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

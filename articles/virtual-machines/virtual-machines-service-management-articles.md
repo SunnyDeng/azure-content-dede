@@ -14,12 +14,13 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="vm-multiple"
 	ms.workload="infrastructure-services"
-	ms.date="10/01/2015"
+	ms.date="10/07/2015"
 	ms.author="danlep"/>
 
 # Artikel zu virtuellen Computern in der Dienstverwaltung
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Im Folgenden finden Sie eine Liste mit Artikeln zum Erstellen und Verwalten von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 ## Erste Schritte
 
@@ -87,9 +88,7 @@
 
 [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md)
 
-[Verwalten der virtuellen Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows](virtual-machines-manage-vms-azure-cli.md)
-
-## Erstellen von Workloads
+## Erstellen von Arbeitsauslastungen
 
 [Active Directory](../active-directory/active-directory-new-forest-virtual-machine.md)
 
@@ -153,4 +152,4 @@
 
 [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

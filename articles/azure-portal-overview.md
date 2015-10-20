@@ -87,4 +87,4 @@ Das Microsoft Azure-Vorschauportal vereinfacht die Erstellung und Verwaltung Ihr
 [CustomizeBlades]: ./media/azure-portal-how-to-use/azure_portal_5.png
 [HelpSupport]: ./media/azure-portal-how-to-use/azure_portal_6.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

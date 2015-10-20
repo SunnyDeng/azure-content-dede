@@ -33,4 +33,4 @@ Wenn diese Dateien nicht vorhanden sind, wird von Azure ein temporäres Bereitst
 
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/downloads/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

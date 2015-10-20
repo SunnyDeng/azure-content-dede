@@ -69,7 +69,7 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Nicht unterstützt | Chicago, Dallas, London, Seattle, Silicon Valley, Washington, D.C. |
 | **Megaport** | Unterstützt | Nicht unterstützt | Melbourne, Sydney |
 | **MTN** | Unterstützt | Nicht unterstützt | London |
-| **NTT Communications** | In Kürze verfügbar | Nicht unterstützt | Tokio+ |
+| **NTT Communications** | Unterstützt | Nicht unterstützt | London+, Tokio |
 | **NEXTDC** | Unterstützt | Nicht unterstützt | Melbourne, Sydney+ |
 | **[Orange](http://www.orange-business.com/)** | Unterstützt | Nicht unterstützt | Amsterdam, London, Silicon Valley, Washington, D.C. |
 | **PCCW Global Limited** | Unterstützt | Nicht unterstützt | Hongkong |
@@ -127,4 +127,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

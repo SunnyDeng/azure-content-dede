@@ -14,4 +14,4 @@ In diesem Abschnitt erfahren Sie, wie Sie sicherstellen, dass Ihre App eine Verb
 	
 	 ![](./media/mobile-engagement-connect-app-with-monitor/monitor.png)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

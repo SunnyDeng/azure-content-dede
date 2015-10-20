@@ -11,4 +11,4 @@ In diesem Szenario erstellen Sie ein VNet namens **TestVNet** mit einem reservie
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->
