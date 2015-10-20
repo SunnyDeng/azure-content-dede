@@ -60,7 +60,7 @@ Zusätzliche Optionen zum Konfigurieren des Verwaltungszertifikats finden Sie un
 
 
 
-Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) ((https://technet.microsoft.com/library/gg481758(v=ws.10).aspx):
+Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481758(v=ws.10).aspx) (in englischer Sprache):
 
 * Erstellen einer Azure-Knotenvorlage
 
@@ -70,7 +70,7 @@ Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario ent
 
 Nachdem Sie die Knoten hinzugefügt und gestartet haben, können Sie sie zum Ausführen von Clusteraufträgen verwenden.
 
-Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) (http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) Anweisungen zur Problembehandlung.
+Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack](http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) (in englischer Sprache) Anweisungen zur Problembehandlung.
 
 ## Nächste Schritte
 
@@ -79,4 +79,4 @@ Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unte
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=Oct15_HO1-->
+<!----HONumber=Oct15_HO1-->

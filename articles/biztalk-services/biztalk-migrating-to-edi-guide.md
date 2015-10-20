@@ -118,7 +118,7 @@ Wenn Sie BizTalk Server-Orchestrierungen zu Microsoft Azure migrieren möchten,
 
 - *Windows Workflow Foundation Developer Center bei MSDN*. Klicken Sie [hier](http://go.microsoft.com/fwlink/p/?LinkId=237315).
 
-- *Dokumentation zu Windows Workflow Foundation 4 (WF4) bei MSDN*. Klicken Sie hierhttps://msdn.microsoft.com/library/dd489441(v=vs.100).aspx).
+- *Dokumentation zu Windows Workflow Foundation 4 (WF4) bei MSDN*. Klicken Sie [hier](https://msdn.microsoft.com/library/dd489441(v=vs.100).aspx).
 
 ## Weitere Überlegungen
 
@@ -142,4 +142,4 @@ Microsoft Azure BizTalk Services wird regelmäßig mit weiteren Features und Fun
 
 [EDImessageflow]: ./media/biztalk-migrating-to-edi-guide/IC719455.png
 
-<!---HONumber=Oct15_HO1-->
+<!----HONumber=Oct15_HO1-->
