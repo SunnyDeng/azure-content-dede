@@ -13,38 +13,26 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/22/2015"
+	ms.date="10/09/2015"
 	ms.author="tdykstra"/>
 
 # Erstellen eines .NET-Webauftrags in Azure App Service
 
+Dieses Tutorial zeigt, wie Sie Code für eine einfache ASP.NET MVC 5-Anwendung mit mehreren Ebenen schreiben, die das [WebJobs SDK](websites-dotnet-webjobs-sdk.md) verwendet, um mit [Azure-Warteschlangen](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) und [Azure-Blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) zu arbeiten. Das Tutorial zeigt, wie Sie die Anwendung in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) und [Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336279) bereitstellen.
 
-
-Dieses Lernprogramm zeigt, wie Sie eine ASP.NET-MVC-Anwendung mit mehreren Ebenen erstellen, die das WebJobs-SDK verwendet, um mit [Azure-Warteschlangen](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) und [Azure-Blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) im Web-Apps-Feature in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) zu arbeiten. Die Anwendung verwendet auch die [Azure-SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336279).
-
-Bei dieser Beispielanwendung handelt es sich um ein Bulletin Board für Werbung. Benutzer können eine Werbung erstellen, indem sie Text eingeben und ein Bild hochladen. Die Anwendung zeigt eine Liste von Werbeeinblendungen mit Miniaturbildern an, und Benutzer können auf eine Werbung klicken, um das Bild in voller Größe anzuzeigen. Hier sehen Sie einen Screenshot:
+Bei dieser Beispielanwendung handelt es sich um ein Bulletin Board für Werbung. Benutzer können Bilder für Werbeanzeigen hochladen, und ein Back-End-Prozess konvertiert die Bildern in Miniaturansichten. Auf der Seite mit der Anzeigenliste werden die Miniaturansichten angezeigt, auf der Seite mit den Anzeigendetails sind die Bilder in voller Größe zu sehen. Hier sehen Sie einen Screenshot:
 
 ![Werbungsliste](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
-Sie können das [Visual Studio-Projekt][download] in der MSDN Code Gallery herunterladen.
-
-[download]: http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb
-
 ## <a id="prerequisites"></a>Voraussetzungen
 
-Dieses Lernprogramm setzt voraus, dass Sie mit der Arbeit mit [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)- oder [Web Forms](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)-Projekten in Visual Studio vertraut sind. Die Beispielanwendung verwendet MVC, aber ein Großteil des Lernprogramms gilt auch für Web Forms.
+In diesem Tutorial wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)-Projekten in Visual Studio vertraut sind.
 
-Die Anweisungen im Lernprogramm funktionieren mit den folgenden Produkten:
+Das Tutorial wurde für Visual Studio 2013 geschrieben. Falls Sie noch nicht über Visual Studio verfügen, wird die Anwendung zusammen mit dem Azure SDK für .NET installiert.
 
-* Visual Studio 2013
-* Visual Studio 2013-Community
-* Visual Studio 2013 Express für das Web
+Das Tutorial kann mit Visual Studio 2015 verwendet werden. Bevor Sie die Anwendung jedoch lokal ausführen, müssen Sie den `Data Source`-Teil der Verbindungszeichenfolge "SQL Server LocalDB" in den Dateien "Web.config" und "App.config" von `Data Source=(localdb)\v11.0` zu `Data Source=(LocalDb)\MSSQLLocalDB` ändern.
 
-Falls Sie keines dieser Produkte haben, wird Visual Studio 2013 Express für das Web zusammen mit dem Azure SDK installiert.
-
-[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
-
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note2.md)]
 
 ## <a id="learn"></a>Sie lernen Folgendes
 
@@ -65,24 +53,13 @@ Die Anwendung speichert Werbungen in einer SQL-Datenbank und verwendet Entity Fr
 
 ![Ad-Tabelle](./media/websites-dotnet-webjobs-sdk-get-started/adtable.png)
 
-Wenn ein Benutzer ein Bild hochlädt, speichert das Front-End der Web-App das Bild in einem [Azure-Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) und die Werbeinformationen in der Datenbank zusammen mit einer URL, die auf das Blob zeigt. Gleichzeitig wird eine Nachricht in eine Azure-Warteschlange geschrieben. Ein als Azure WebJob ausgeführter Back-End-Prozess verwendet das WebJobs SDK, um die Warteschlange auf neue Nachrichten zu überprüfen. Wenn eine neue Nachricht vorhanden ist, erstellt der WebJob eine Miniaturansicht für das Bild und aktualisiert das entsprechende Datenbankfeld mit der URL für diese Werbung. Das folgende Diagramm zeigt die Interaktion zwischen den verschiedenen Anwendungskomponenten:
+Wenn ein Benutzer ein Bild hochlädt, speichert die Web-App das Bild in einem [Azure-Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) und die Informationen zur Werbeanzeige in der Datenbank zusammen mit einer URL, die auf das Blob zeigt. Gleichzeitig wird eine Nachricht in eine Azure-Warteschlange geschrieben. In einem Back-End-Prozess, der als Azure-WebJob ausgeführt wird, fragt das WebJobs SDK die Warteschlange nach neuen Nachrichten ab. Wenn eine neue Nachricht vorhanden ist, erstellt der WebJob eine Miniaturansicht für das Bild und aktualisiert das entsprechende Datenbankfeld mit der URL für diese Werbung. Das folgende Diagramm zeigt die Interaktion zwischen den verschiedenen Anwendungskomponenten:
 
 ![Contoso Ads-Architektur](./media/websites-dotnet-webjobs-sdk-get-started/apparchitecture.png)
 
-### Alternative Architektur
+[AZURE.INCLUDE [install-sdk](../../includes/install-sdk-2015-2013.md)]
 
-Webaufträge werden im Kontext einer Web-App ausgeführt und können nicht separat skaliert werden. Wenn Sie z. B. eine Standard-Web-App-Instanz haben, können Sie nur eine Instanz Ihres Hintergrundprozesses ausführen. Dieser Prozess verwendet Serverressourcen (Prozessor, Arbeitsspeicher usw.), die andernfalls für die Auslieferung von Webinhalten zur Verfügung stehen würden.
-
-Wenn der Datenverkehr je nach Tageszeit oder Wochentag schwankt und Ihre Back-End-Verarbeitung nicht zeitkritisch ist, können Sie die Ausführung Ihrer WebJobs in Zeiten mit niedrigem Datenverkehr planen. Wenn die Last immer noch zu hoch für diese Lösung ist, können Sie alternative Umgebungen für Ihr Back-End-Programm in Betracht ziehen:
-
-* Führen Sie das Programm als Webauftrag in einer separaten Web-App aus, die ausschließlich zu diesem Zweck dient. Auf diese Weise können Sie Ihre Back-End-Web-App unabhängig von Ihrer Front-End-Web-App skalieren.
-* Führen Sie das Programm in einer Azure-Clouddienst-Workerrolle aus. Mit dieser Option können Sie das Front-End entweder in einer Clouddienst-Webrolle oder in einer Web-App ausführen.
-
-Dieses Lernprogramm beschreibt, wie Sie das Front-End in einer Web-App und das Back-End als Webauftrag in derselben Web-App ausführen können. Informationen zur Auswahl der optimalen Umgebung für Ihr Szenario finden Sie unter [Vergleich von Web-Apps, Cloud-Diensten und virtuellen Computern in Azure](../choose-web-site-cloud-service-vm/).
-
-[AZURE.INCLUDE [install-sdk-2013-only](../../includes/install-sdk-2013-only.md)]
-
-Die Anleitungen in diesem Lernprogramm gelten für das Azure SDK für .NET 2.5.1 oder höher. Im Abschnitt zum Erstellen von Grund auf, in dem Sie das Webauftragsprojekt erstellen, werden die Webaufträge-SDK-Pakete automatisch in das Projekt eingeschlossen. Bei früheren Versionen des SDK müssen Sie die Pakete manuell installieren.
+Die Anleitungen in diesem Tutorial gelten für das Azure SDK für .NET 2.7.1 oder höher.
 
 ## <a id="storage"></a>Erstellen eines Azure-Speicherkontos
 
@@ -92,14 +69,11 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 1. Öffnen Sie das Fenster **Server-Explorer** in Visual Studio.
 
-2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**. 
-
-![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
+2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**. ![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. Melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
-5. Klicken Sie unter dem Azure-Knoten mit der rechten Maustaste auf **Speicher**, und klicken Sie dann auf **Speicherkonto erstellen**. 
 
-![Speicherkonto erstellen](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
+5. Klicken Sie mit der rechten Maustaste unter dem Azure-Knoten auf **Speicher**, und klicken Sie dann auf **Speicherkonto erstellen**. ![Speicherkonto erstellen](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
 
 3. Geben Sie im Dialogfeld **Speicherkonto erstellen** einen Namen für das Speicherkonto ein.
 
@@ -121,11 +95,11 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 ## <a id="download"></a>Herunterladen der Anwendung
 
-1. Laden Sie die [abgeschlossene Lösung][download] herunter und entzippen Sie das Archiv.
+1. Laden Sie die [abgeschlossene Lösung](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb) herunter und entzippen Sie das Archiv.
 
 2. Starten Sie Visual Studio.
 
-3. Wählen Sie im Menü **Datei** die Option **Öffnen** **Projekt/Lösung**, navigieren Sie zu dem Ort, an dem Sie die Lösung gespeichert haben und öffnen Sie die Lösungsdatei.
+3. Wählen Sie im Menü **Datei** die Option **Öffnen > Projekt/Projektmappe**, navigieren Sie zu dem Verzeichnis, in dem Sie die Projektmappe gespeichert haben, und öffnen Sie die Projektmappendatei.
 
 4. Drücken Sie STRG+UMSCH+B, um die Lösung zu erstellen.
 
@@ -227,9 +201,11 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 	![Azure-Web-App als Veröffentlichungsziel auswählen](./media/websites-dotnet-webjobs-sdk-get-started/pubweb.png)
 
-4. Klicken Sie im Feld **Vorhandene Web-App auswählen** auf **Anmelden**, und geben Sie Ihre Anmeldeinformationen ein, sofern Sie noch nicht angemeldet sind.
+4. Melden Sie sich bei Azure an, falls Sie noch nicht angemeldet sind.
 
-5. Klicken Sie nach der Anmeldung auf **Neu**.
+5. Klicken Sie auf **Neu**.
+
+	Das Dialogfeld sieht möglicherweise ein bisschen anders aus, je nachdem, welche Version des Azure SDK für .NET Sie installiert haben.
 
 	![Klicken auf "Neu"](./media/websites-dotnet-webjobs-sdk-get-started/clicknew.png)
 
@@ -237,7 +213,7 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 	Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und ".azurewebsites.net" (wie neben dem Textfeld **Web-App-Name** angezeigt). Beispiel: Wenn der Web-App-Name "ContosoAds" lautet, ist die URL "ContosoAds.azurewebsites.net".
 
-7. Wählen Sie in der Dropdownliste [App Service-Plan](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) die Option **Neuen App Services-Plan erstellen** aus. Geben Sie einen Namen für den App Service-Plan ein, z. B. ContosoAdsPlan.
+7. Wählen Sie in der Dropdownliste [App Service-Plan](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) die Option **Neuen App Service-Plan erstellen** aus. Geben Sie einen Namen für den App Service-Plan ein, z. B. ContosoAdsPlan.
 
 8. Wählen Sie in der Dropdownliste [Ressourcengruppe](../resource-group-overview.md) die Option **Neue Ressourcengruppe erstellen** aus.
 
@@ -249,7 +225,9 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 11. Wählen Sie in der Dropdownliste **Datenbankserver** die Option **Neuen Server erstellen** aus.
 
-12. Geben Sie einen Namen für den Datenbankserver ein, z. B. ContosoAdsServer.
+12. Geben Sie einen Namen für den Datenbankserver sein, beispielsweise "contosoadsserver" plus eine Zahl oder Ihren Namen, damit der Servername eindeutig ist.
+
+	Ein Servername muss eindeutig sein. Er kann Kleinbuchstaben, Ziffern und Bindestriche enthalten. Ein nachgestellter Bindestrich ist nicht zulässig.
 
 	Falls Ihr Konto bereits einen Server enthält, können Sie auch diesen Server aus der Dropdownliste auswählen.
 
@@ -287,7 +265,7 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 	Sie können die Warnung ignorieren, dass keine Datenbanken veröffentlicht werden. Die Datenbank wird von Entity Framework Code First erstellt und muss daher nicht veröffentlicht werden.
 
-	Im Vorschaufenster wird angezeigt, dass Binär- und Konfigurationsdateien aus dem Webauftragsprojekt in den Ordner *app\_data\\jobs\\continuous* der Web-App kopiert werden.
+	Im Vorschaufenster wird angezeigt, dass Binär- und Konfigurationsdateien aus dem WebJob-Projekt in den Ordner *app\_data\\jobs\\continuous* der Web-App kopiert werden.
 
 	![WebJobs-Dateien im Vorschaufenster](./media/websites-dotnet-webjobs-sdk-get-started/previewwjfiles.png)
 
@@ -299,11 +277,11 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 ### Konfigurieren Sie die Web-App zur Verwendung Ihrer Azure SQL-Datenbank und Ihres Speicherkontos.
 
-Sie sollten es vermeiden [sensible Daten wie Verbindungszeichenfolgen in Dateien zu lagern, die in Quellcode-Repositorys gespeichert werden](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets). Azure bietet hierfür eine Möglichkeit: Sie können die Verbindungszeichenfolge und andere Einstellungswerte in der Azure-Umgebung setzen, und die Konfigurations-APIs von ASP.NET verwenden automatisch diese Werte, wenn die Anwendung in Azure ausgeführt wird. Sie können diese Werte in Azure mithilfe des **Server-Explorers**, dem Portal, Windows PowerShell oder der plattformübergreifenden Befehlszeilenschnittstelle festlegen. Weitere Informationen finden Sie unter [How Application Strings and Connection Strings Work](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) (Funktionsweise von Anwendungs- und Verbindungszeichenfolgen, in englischer Sprache).
+Sie sollten es vermeiden [sensible Daten wie Verbindungszeichenfolgen in Dateien zu lagern, die in Quellcode-Repositorys gespeichert werden](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets). Azure bietet hierfür eine Möglichkeit: Sie können die Verbindungszeichenfolge und andere Einstellungswerte in der Azure-Umgebung setzen, und die Konfigurations-APIs von ASP.NET verwenden automatisch diese Werte, wenn die Anwendung in Azure ausgeführt wird. Sie können diese Werte in Azure über den **Server-Explorer**, das Portal, Windows PowerShell oder die plattformübergreifende Befehlszeilenschnittstelle festlegen. Weitere Informationen finden Sie unter [Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
 
 In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verbindungszeichenfolgen in Azure.
 
-7. Klicken Sie im **Server-Explorer** unter dem Knoten**Web-Apps** mit der rechten Maustaste auf Ihre Web-App, und klicken Sie dann auf **Ansichtseinstellungen**.
+7. Klicken Sie im **Server-Explorer** unter **Azure > {Ihre Ressourcengruppe}** mit der rechten Maustaste auf Ihre Web-App, und klicken Sie dann auf **Ansichtseinstellungen**.
 
 	Das Fenster **Azure-Web-App** wird auf der Registerkarte **Konfiguration** geöffnet.
 
@@ -319,9 +297,9 @@ In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verb
 
 	![Verbindungszeichenfolgen im Azure-Portal](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
 
-10. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf die Web-App, und klicken Sie dann auf **Web-App beenden**.
+10. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf die Web-App, und klicken Sie dann auf **Beenden**.
 
-12. Nachdem die Web-App beendet wurde, klicken Sie mit der rechten Maustaste erneut auf die Web-App, und klicken Sie dann auf **Web-App starten**.
+12. Nachdem die Web-App beendet wurde, klicken Sie mit der rechten Maustaste erneut auf die Web-App, und klicken Sie dann auf **Starten**.
 
 	Der WebJob wird bei der Veröffentlichung automatisch gestartet, wird jedoch bei Änderungen an der Konfiguration angehalten. Für einen Neustart können Sie entweder die Web-App oder den Webauftrag im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) neu starten. Nach einer Konfigurationsänderung sollten Sie jedoch im Allgemeinen die Web-App neu starten.
 
@@ -335,12 +313,11 @@ In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verb
 
 11.	Aktualisieren Sie die Seite nach wenigen Sekunden, und die Miniaturansicht erscheint.
 
-	Wenn die Miniaturansicht nicht angezeigt wird, kann es sein, dass der WebJob nicht automatisch gestartet wurde. Öffnen Sie in diesem Fall die WebJobs-Registerkarte im
-
+	Wenn die Miniaturansicht nicht angezeigt wird, müssen Sie möglicherweise einen Moment warten, bis der WebJob neu gestartet wurde. Wird die Miniaturansicht auch nach einem längeren Zeitraum nicht angezeigt, wenn Sie die Seite aktualisieren, dann wurde der WebJob möglicherweise nicht automatisch gestartet. Wechseln Sie in diesem Fall auf der [Azure-Portalseite](https://manage.windowsazure.com) Ihrer Web-App auf die Registerkarte "WebJobs", und klicken Sie auf **Starten**.
 
 ### Anzeigen des WebJobs SDK-Dashboards
 
-1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com) Ihre Web-App aus.
+1. Wählen Sie Ihre Web-App im [Azure-Portal](https://manage.windowsazure.com) aus.
 
 2. Klicken Sie auf die Registerkarte **WebJobs**.
 
@@ -359,10 +336,6 @@ In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verb
 	Mit der Schaltfläche **Funktion abspielen** auf dieser Seite können Sie veranlassen, dass das WebJobs SDK-Framework die Funktion erneut aufruft, und können die an die Funktion übergebenen Daten zuvor ändern.
 
 >[AZURE.NOTE]Nach Abschluss der Tests löschen Sie die Web-App und die SQL-Datenbankinstanz. Die Web-App ist kostenlos, aber für die SQL-Datenbankinstanz und das Speicherkonto fallen Kosten an (minimal aufgrund der kleinen Größe). Wenn Sie die Web-App laufen lassen, kann außerdem jeder, der die URL findet, Werbungen erstellen und anzeigen. Navigieren Sie im Azure-Portal zur Registerkarte **Dashboard** für Ihre Web-App, und klicken Sie dann am unteren Seitenrand auf **Löschen**. Dort finden Sie auch ein Kontrollkästchen, um die SQL-Datenbankinstanz ebenfalls zu löschen. Klicken Sie stattdessen auf **Anhalten**, um nur vorübergehend zu verhindern, dass andere Personen auf die Web-App zugreifen. In diesem Fall entstehen weiterhin Kosten für SQL-Datenbank und Speicherkonto. Sie können die SQL-Datenbank und das Speicherkonto auf ähnliche Weise löschen, wenn Sie diese nicht mehr benötigen.
-
-### Aktivieren von "AlwaysOn" für lang andauernde Prozesse
-
-Um sicherzustellen, dass Ihre Webaufträge immer ausgeführt werden und auf allen Instanzen der Web-App laufen, muss die Funktion [AlwaysOn](http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx) aktiviert sein.
 
 ## <a id="create"></a>Erstellen der Anwendung von Grund auf
 
@@ -494,7 +467,7 @@ Sie können die Anwendung nun anhand der zuvor in diesem Lernprogramm beschriebe
 
 Die folgenden Abschnitte beschreiben den Code für die Arbeit mit dem WebJobs SDK und Azure-Speicher-Blobs und Warteschlangen.
 
-> [AZURE.NOTE]Den speziellen Code für das WebJobs SDK finden Sie unter [„Program.cs“ und „Functions.cs“](#programcs).
+> [AZURE.NOTE]Den speziellen Code für das WebJobs SDK finden Sie unter ["Program.cs" und "Functions.cs"](#programcs).
 
 ### ContosoAdsCommon - Ad.cs
 
@@ -611,14 +584,14 @@ Ein ähnlicher Codeabschnitt ruft einen Verweis auf die *blobnamerequest*-Wartes
 		var imagesQueue = queueClient.GetQueueReference("blobnamerequest");
 		imagesQueue.CreateIfNotExists();
 
-### ContosoAdsWeb - _Layout.cshtml
+### ContosoAdsWeb - \_Layout.cshtml
 
-Die *_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
+Die *\_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
 
-### ContosoAdsWeb - Views\Home\Index.cshtml
+### ContosoAdsWeb - Views\\Home\\Index.cshtml
 
-Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
-	
+Die *Views\\Home\\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
+
 		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
 		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
@@ -628,7 +601,7 @@ Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Starts
 
 In der *AdController.cs*-Datei ruft der Konstruktor die `InitializeStorage`-Methode auf, um Objekte der Azure-Speicherclient-Bibliothek zu erstellen, die eine API für die Arbeit mit Blobs und Warteschlangen bereitstellen.
 
-Anschließend ruft der Code einen Verweis auf den *images*-Blobcontainer ab, wie weiter oben in *Global.asax.cs* gezeigt. Gleichzeitig wird eine angemessene Standard-[Wiederholungs-Richtlinie](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) für eine Web-App festgelegt. Mit der Standardrichtlinie (exponentiell ansteigende Wartezeiten) kann es passieren, dass die Webanwendung im Fall eines vorübergehenden Fehlers über eine Minute lang stehen bleibt. Die hier gezeigte Richtlinie wartet 3 Sekunden nach jedem Versuch für bis zu 3 Versuche.
+Anschließend ruft der Code einen Verweis auf den *images*-Blobcontainer ab, wie weiter oben in *Global.asax.cs* gezeigt. Gleichzeitig wird eine geeignete standardmäßige [Wiederholungsrichtlinie](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) für eine Web-App festgelegt. Mit der Standardrichtlinie (exponentiell ansteigende Wartezeiten) kann es passieren, dass die Webanwendung im Fall eines vorübergehenden Fehlers über eine Minute lang stehen bleibt. Die hier gezeigte Richtlinie wartet 3 Sekunden nach jedem Versuch für bis zu 3 Versuche.
 
 		var blobClient = storageAccount.CreateCloudBlobClient();
 		blobClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
@@ -706,7 +679,7 @@ Hier sehen Sie den Code, der Blobs löscht, wenn Sie eine Werbung löschen:
 		    await blobToDelete.DeleteAsync();
 		}
 
-### ContosoAdsWeb - Views\Ad\Index.cshtml und Details.cshtml
+### ContosoAdsWeb - Views\\Ad\\Index.cshtml und Details.cshtml
 
 Die Datei *Index.cshtml* zeigt Miniaturansichten zusammen mit den restlichen Werbedaten an:
 
@@ -716,7 +689,7 @@ Die Datei *Details.cshtml* zeigt das Bild in voller Größe an:
 
 		<img src="@Html.Raw(Model.ImageURL)" />
 
-### ContosoAdsWeb - Views\Ad\Create.cshtml und Edit.cshtml
+### ContosoAdsWeb - Views\\Ad\\Create.cshtml und Edit.cshtml
 
 Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das `HttpPostedFileBase`-Objekt abruft.
 
@@ -792,30 +765,38 @@ Weitere Informationen zum Schreiben von Funktionen, die Attribute des Webaufträ
 >
 > * Weitere Informationen zum Implementieren des ordnungsgemäßen Herunterfahrens finden Sie unter [Ordnungsgemäßes Herunterfahren](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#graceful).
 >
-> * Der Code in der `ConvertImageToThumbnailJPG`-Methode (nicht angezeigt) verwendet Klassen aus dem `System.Drawing`-Namespace zur Vereinfachung. Die Klassen in diesem Namespace wurden jedoch für den Einsatz mit Windows Forms entwickelt. Sie werden nicht für die Verwendung in einem Windows- oder ASP.NET-Dienst unterstützt. Weitere Informationen zu Bildverarbeitungsoptionen finden Sie unter [Dynamic Image Generation](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) (Dynamische Imageerstellung; in englischer Sprache) und [Deep Inside Image Resizing](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na) (Ausführliche Informationen zur Bildgrößenanpassung; in englischer Sprache).
+> * Der Code in der `ConvertImageToThumbnailJPG`-Methode (nicht gezeigt) verwendet zur Vereinfachung Klassen aus dem `System.Drawing`-Namespace. Die Klassen in diesem Namespace wurden jedoch für den Einsatz mit Windows Forms entwickelt. Sie werden nicht für die Verwendung in einem Windows- oder ASP.NET-Dienst unterstützt. Weitere Informationen zu Bildverarbeitungsoptionen finden Sie unter [Dynamic Image Generation](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) (Dynamische Imageerstellung; in englischer Sprache) und [Deep Inside Image Resizing](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na) (Ausführliche Informationen zur Bildgrößenanpassung; in englischer Sprache).
 
-### Webaufträge-SDK im Vergleich zu Cloud-Dienst-Workerrolle ohne Webaufträge-SDK
+## Nächste Schritte
 
-Wenn Sie die Menge an Code in der `GenerateThumbnails`-Methode in dieser Beispielanwendung mit dem Workerrollen-Code in der [Clouddienst-Version der Anwendung](../cloud-services-dotnet-get-started.md) vergleichen, können Sie erkennen, wie viel Arbeit das Webaufträge-SDK Ihnen tatsächlich abnimmt. Der tatsächliche Vorteil ist sogar noch größer, da der Code der Clouddienst-Beispielanwendung nicht alle Aufgaben erledigt (z. B. die Behandlung nicht verarbeitbarer Nachrichten), die sie in einer Produktionsanwendung implementieren würden, während das WebJobs SDK diese Aufgaben ausführt.
+In diesem Lernprogramm haben Sie erfahren, wie Sie eine einfache Anwendung mit mehreren Ebenen erstellen können, die das WebJobs SDK für die Hintergrundverarbeitung verwendet. Diese Abschnitte enthalten einige Vorschläge zur Vertiefung Ihrer Kenntnisse zu ASP.NET-Anwendungen und WebJobs.
 
-In der Clouddienst-Version der Anwendung ist die Eintrags-ID die einzige Information in der Warteschlangen-Nachricht, und der Hintergrundprozess ruft die Bild-URL aus der Datenbank ab. In der Webaufträge-SDK-Version der Anwendung enthält die Warteschlangen-Nachricht die Bild-URL, sodass sie an die `Blob`-Attribute weitergegeben werden kann. Wenn die Warteschlangen-Nachricht nicht die Blob-URL enthält, können Sie [das Blob-Attribut im Text der Methode anstatt in der Methodensignatur verwenden](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#blobbody).
+### Fehlende Features
+
+Die Anwendung wurde für dieses Lernprogramm einfach gehalten. In einer echten Anwendung implementieren Sie die [Abhängigkeitseinfügung](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) sowie [Muster für Repository und Arbeitseinheit](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo) und verwenden Folgendes: [eine Schnittstelle für die Protokollierung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), [EF Code First-Migrationen](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) zur Verwaltung von Änderungen an Datenmodellen sowie [EF-Verbindungsresilienz](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) zur Verarbeitung vorübergehender Verbindungsfehler.
+
+### Skalieren von Webaufträgen
+
+Webaufträge werden im Kontext einer Web-App ausgeführt und können nicht separat skaliert werden. Wenn Sie z. B. eine Standard-Web-App-Instanz haben, können Sie nur eine Instanz Ihres Hintergrundprozesses ausführen. Dieser Prozess verwendet Serverressourcen (Prozessor, Arbeitsspeicher usw.), die andernfalls für die Auslieferung von Webinhalten zur Verfügung stehen würden.
+
+Wenn der Datenverkehr je nach Tageszeit oder Wochentag schwankt und Ihre Back-End-Verarbeitung nicht zeitkritisch ist, können Sie die Ausführung Ihrer WebJobs in Zeiten mit niedrigem Datenverkehr planen. Wenn die Last immer noch zu hoch ist, können Sie das Back-End als WebJob in einer separaten, speziell für diesen Zweck erstellten Web-App ausführen. Auf diese Weise können Sie Ihre Back-End-Web-App unabhängig von Ihrer Front-End-Web-App skalieren.
+
+Weitere Informationen finden Sie unter [Skalieren von WebJobs](websites-webjobs-resources.md#scale).
+
+### Verhindern des Herunterfahrens von Web-Apps aufgrund von Zeitüberschreitung
+
+Um sicherzustellen, dass Ihre WebJobs jederzeit und auf allen Instanzen Ihrer Web-App ausgeführt werden, müssen Sie die [AlwaysOn](http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx)-Funktion aktivieren
 
 ### Verwenden des WebJobs-SDK außerhalb von WebJobs
 
-Programme, die das WebJobs SDK verwenden, müssen nicht in einem WebJob in Azure ausgeführt werden. Sie können lokal ausgeführt werden und auch in anderen Umgebungen, wie z. B. einer Cloud-Dienst-Workerrolle oder einem Windows-Dienst. Sie erreichen das Webaufträge-SDK-Dashboard jedoch nur über eine Azure-Web-App. Um das Dashboard zu verwenden, müssen Sie die Web-App mit dem von Ihnen verwendeten Speicherkonto verbinden, indem Sie die „AzureWebJobsDashboard“-Verbindungszeichenfolge auf der Registerkarte **Konfigurieren** im Azure-Portal festlegen. Dann können Sie das Dashboard über die folgende URL abrufen:
+Programme, die das WebJobs SDK verwenden, müssen nicht in einem WebJob in Azure ausgeführt werden. Sie können lokal ausgeführt werden und auch in anderen Umgebungen, wie z. B. einer Cloud-Dienst-Workerrolle oder einem Windows-Dienst. Sie erreichen das Webaufträge-SDK-Dashboard jedoch nur über eine Azure-Web-App. Um das Dashboard zu verwenden, müssen Sie die Web-App mit dem von Ihnen verwendeten Speicherkonto verbinden, indem Sie die AzureWebJobsDashboard-Verbindungszeichenfolge auf der Registerkarte **Konfigurieren** im Azure-Portal festlegen. Dann können Sie das Dashboard über die folgende URL abrufen:
 
 https://{webappname}.scm.azurewebsites.net/azurejobs/#/functions
 
 Weitere Informationen finden Sie unter [Einrichten eines Dashboards für die lokale Entwicklung mit dem WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx). Dieser Artikel enthält jedoch einen veralteten Namen für die Verbindungszeichenfolge.
 
-## Nächste Schritte
+### Weitere WebJobs-Dokumentation
 
-In diesem Lernprogramm haben Sie erfahren, wie Sie eine einfache Anwendung mit mehreren Ebenen erstellen können, die das WebJobs SDK für die Hintergrundverarbeitung verwendet. Die Anwendung wurde für dieses Lernprogramm einfach gehalten. Sie implementiert z. B. keine [Abhängigkeitsinjektion](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) oder [Repository und Arbeitseinheit](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), verwendet keine [Schnittstelle für die Protokollierung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log) und keine [EF Code First-Migrationen](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) zur Verwaltung von Datenmodellen oder [EF-Verbindungsstabilität](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) für vorübergehende Verbindungsfehler, usw.
+Weitere Informationen finden Sie unter [Dokumentationsressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226).
 
-Weitere Informationen finden Sie unter [Azure WebJobs - Empfohlene Ressourcen](http://go.microsoft.com/fwlink/?LinkId=390226).
-
-## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
-
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

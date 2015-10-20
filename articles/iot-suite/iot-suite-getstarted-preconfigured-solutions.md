@@ -1,8 +1,8 @@
 <properties
-	pageTitle="Erste-Schritte-Tutorial für vorkonfigurierte Microsoft Azure IoT Suite-Lösungen | Microsoft Azure"
+	pageTitle="Erste Schritte mit vorkonfigurierten Lösungen | Microsoft Azure"
 	description="In diesem Tutorial erlernen Sie das Bereitstellen einer vorkonfigurierten Azure IoT Suite-Lösung."
 	services=""
-	documentationCenter=".net"
+	documentationCenter=""
 	authors="aguilaaj"
 	manager="timlt"
 	editor=""/>
@@ -12,11 +12,11 @@
      ms.devlang="na"
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
-     ms.workload="tbd"
+     ms.workload="na"
      ms.date="09/29/2015"
      ms.author="araguila"/>
 
-# Erste Schritte mit den vorkonfigurierten IoT-Lösungen
+# Tutorial: Erste Schritte mit den vorkonfigurierten IoT-Lösungen
 
 ## Einführung
 
@@ -115,4 +115,4 @@ Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben,
 [Anleitung zum Anpassen vorkonfigurierter Lösungen]: https://azure.microsoft.com/documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
 [Übersicht über IoT Suite]: https://azure.microsoft.com/documentation/articles/iot-suite-overview/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

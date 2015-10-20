@@ -55,7 +55,7 @@ Ein Blob-Name muss den folgenden Regeln entsprechen:
 - Ein Blob-Name muss mindestens ein Zeichen lang sein und darf nicht mehr als 1024 Zeichen lang sein.
 - Bei Blob-Namen wird Groß-/Kleinschreibung unterschieden.
 - Reservierte URL-Zeichen müssen angemessen durch ein Escapezeichen geschützt werden.
-- Die Anzahl der Pfadsegmente, die den Blob-Namen enthalten, darf 254 nicht überschreiten. Ein Pfadsegment ist die Zeichenfolge zwischen aufeinander folgenden Trennzeichen (\**z. B.*, einen Schrägstrich "/"), die dem Namen eines virtuellen Verzeichnisses entspricht.
+- Die Anzahl der Pfadsegmente, die den Blob-Namen enthalten, darf 254 nicht überschreiten. Ein Pfadsegment ist die Zeichenfolge zwischen aufeinander folgenden Trennzeichen (**z. B.*, einen Schrägstrich "/"), die dem Namen eines virtuellen Verzeichnisses entspricht.
 
 Der Blob-Dienst basiert auf einem flachen Speicherschema. Sie können eine virtuelle Hierarchie erstellen, indem Sie ein Zeichen- oder Zeichenfolgentrennzeichen im Blob-Namen angeben, um eine virtuelle Hierarchie zu erstellen. Die folgende Liste zeigt einige Beispiele für einen gültigen und eindeutigen Blob-Namen:
 
@@ -69,4 +69,4 @@ Sie können das Trennzeichen verwenden, um Blobs hierarchisch aufzulisten.
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

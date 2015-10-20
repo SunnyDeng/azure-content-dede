@@ -452,4 +452,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

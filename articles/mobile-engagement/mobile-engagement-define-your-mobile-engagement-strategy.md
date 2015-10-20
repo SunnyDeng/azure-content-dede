@@ -5,7 +5,7 @@
 	documentationCenter="Mobile"
 	authors="piyushjo"
 	manager="dwrede"
-	editor=""/>
+	editor="" />
 
 <tags
 	ms.service="mobile-engagement"
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/10/2015"
-	ms.author="piyushjo"/>
+	ms.author="piyushjo" />
 
 # Definieren der Mobile Engagement-Strategie
 
@@ -127,4 +127,4 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 [Mobile Engagement-Konzepte]: http://azure.microsoft.com/documentation/articles/mobile-engagement-concepts/
 [Lernprogramme]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

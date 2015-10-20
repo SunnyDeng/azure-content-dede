@@ -104,4 +104,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [Azure App Service und vorhandene Azure-Dienste]: http://go.microsoft.com/fwlink/?LinkId=529714
 [Referenz zur Navigation im Azure-Portal]: http://go.microsoft.com/fwlink/?LinkId=529715
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

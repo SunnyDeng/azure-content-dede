@@ -60,13 +60,13 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 	![Konfigurieren von VM-Grundlagen](./media/virtual-machines-windows-tutorial/create_vm_basics.PNG)
 
-	>[AZURE.NOTE]**Benutzername** bezieht sich auf das Administratorkonto, das Sie zum Verwalten des Servers verwenden. Erstellen Sie ein Kennwort, das schwer zu erraten ist, dass Sie sich aber gut merken können. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
+	>[AZURE.NOTE]**Benutzername** bezieht sich auf das Administratorkonto, das Sie zum Verwalten des Servers verwenden. Erstellen Sie ein Kennwort, das schwer zu erraten ist, das Sie sich aber gut merken können. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
 
 2. Klicken Sie auf **Größe**, und wählen Sie eine für Ihre Anforderungen geeignete Größe für den virtuellen Computer aus. Für jede Größe ist die Anzahl von Prozessorkernen, den Arbeitsspeicher und andere Features angegeben, wie z. B. Unterstützung für Storage Premium, die sich auf den Preis auswirken. Azure empfiehlt anhand des gewählten Images automatisch bestimmte Größen.
 
 	![Konfigurieren der VM-Größe](./media/virtual-machines-windows-tutorial/create_vm_size.PNG)
 
-	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Storage Premium: Hochleistungsspeicher für Azure Virtual Machines-Workloads](storage-premium-storage-preview-portal.md).
+	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium ist die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Storage Premium: Hochleistungsspeicher für Azure Virtual Machines-Workloads](storage-premium-storage-preview-portal.md).
 
 3. Klicken Sie auf **Einstellungen**, um die Speicher- und Netzwerkeinstellungen des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie i. Allg. die Standardeinstellungen übernehmen. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium (SSD)** unter **Datenträgertyp** Storage Premium testen.
 
@@ -107,4 +107,4 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von Images für virtuelle Computer](resource-groups-vm-searching.md).
 * Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Computern und Workloads mithilfe von [Azure-Ressourcen-Manager](virtual-machines-how-to-automate-azure-resource-manager.md) und [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

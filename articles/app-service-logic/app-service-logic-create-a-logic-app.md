@@ -46,7 +46,7 @@ Zunächst müssen Sie die beiden Connectors erstellen, die Sie verwenden möchte
 4. Wählen Sie **Paketeinstellungen** – hier müssen Sie die Informationen aus der Twitter-Anwendung eingeben. Sie können eine kostenlose Anwendung über die folgenden Schritte einrichten:
 	1. Wechseln Sie zur [Twitter-App-Registrierungsseite](http://apps.twitter.com).
 	2. Erstellen Sie eine neue App.
-	3. Benennen Sie die App und fügen Sie eine Beschreibung hinzu. Sie können jeden URL für die Website eingeben und den Rückruf-URL leer lassen.
+	3. Benennen Sie die App und fügen Sie eine Beschreibung hinzu. Sie können eine beliebige URL für die Website eingeben und eine für den Rückruf-URL (nicht leer lassen).
 	4. Kopieren Sie nach der Registrierung den **Verbraucherschlüssel** aus Twitter in das Feld **clientId** in Azure, und den **geheimen Verbraucherschlüssel** aus Twitter in das Feld **clientSecret**.
 	5. Klicken Sie im Bereich "Azure" auf **OK**, um zu den anderen API-Einstellungen zurückzukehren.
 
@@ -184,4 +184,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Use logic app features]: app-service-logic-use-logic-app-features.md
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

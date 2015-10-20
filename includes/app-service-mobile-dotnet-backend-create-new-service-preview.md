@@ -35,4 +35,4 @@ Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren 
 <!-- URLs. -->
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

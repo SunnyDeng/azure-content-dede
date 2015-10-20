@@ -66,4 +66,4 @@ Mit dem Microsoft-Peeringpfad können Sie eine Verbindung mit den Clouddiensten 
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

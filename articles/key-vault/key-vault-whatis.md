@@ -20,7 +20,7 @@
 
 # Was ist der Azure-Schlüsseltresor?
 
-Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisdetails für Schlüsseltresor](../../../../pricing/details/key-vault/).
+Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisübersicht für Schlüsseltresor](../../../../pricing/details/key-vault/).
 
 ## Einführung
 
@@ -65,4 +65,4 @@ Weitere Informationen zur Verwendung von Schlüsseln und geheimen Schlüsseln mi
 <!--Image references-->
 [1]: ./media/key-vault-whatis/AzureKeyVault_overview.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

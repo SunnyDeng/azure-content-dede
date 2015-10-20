@@ -1,19 +1,19 @@
 <properties
    pageTitle="Verwalten von Endpunkten in Azure Traffic Manager | Microsoft Azure"
-	description="Dieser Artikel enthält Informationen zum Hinzufügen, Entfernen, Aktivieren und Deaktivieren von Endpunkten in Azure Traffic Manager."
-	services="traffic-manager"
-	documentationCenter=""
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   description="Dieser Artikel enthält Informationen zum Hinzufügen, Entfernen, Aktivieren und Deaktivieren von Endpunkten in Azure Traffic Manager."
+   services="traffic-manager"
+   documentationCenter=""
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags
    ms.service="traffic-manager"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Hinzufügen, Deaktivieren, Aktivieren oder Löschen von Endpunkten
 
@@ -78,4 +78,4 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

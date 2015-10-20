@@ -27,4 +27,4 @@ Sie können vordefinierte ARM-Vorlagen, die in ein von Microsoft verwaltetes und
 
 	![Erstellen von VNet im Vorschauportal](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

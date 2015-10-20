@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="09/09/2015"
+	ms.date="10/13/2015"
 	ms.author="garye"/>
 
-#Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio
+# Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio
 
 In diesem Lernprogramm für maschinelles Lernen erstellen wir ein Modell für lineare Regression, das den Preis eines Autos anhand verschiedener Variablen wie Hersteller und technischer Angaben prognostiziert. Für dieses Vorgehen verwenden wir Azure Machine Learning Studio, um ein einfaches Vorhersageanalytik-Experiment zu entwickeln und schrittweise zu verfeinern.
 
@@ -29,8 +29,10 @@ Rufen Sie Machine Learning Studio über [https://studio.azureml.net](https://stu
 
 Allgemeine Informationen zu Machine Learning Studio finden Sie unter [Was ist Machine Learning Studio?](machine-learning-what-is-ml-studio.md).
 
+>[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
-##Fünf Schritte zum Erstellen von Hypothesen
+
+## Fünf Schritte zum Erstellen von Hypothesen
 
 In diesem Lernprogramm für maschinelles Lernen führen Sie fünf grundlegende Schritte zur Experimenterstellung in Machine Learning Studio aus, um Ihr Modell zu erstellen, zu trainieren und zu bewerten:
 
@@ -56,7 +58,7 @@ Machine Learning Studio enthält bereits zahlreiche Beispiel-DataSets, unter den
 
 1. Starten Sie ein neues Experiment, indem Sie am unteren Rand des Fensters von Machine Learning Studio auf **+NEU** klicken und anschließend **EXPERIMENT** und dann **Blank Experiment** auswählen. Wählen Sie den Standardnamen am oberen Rand des Bereichs aus, und geben Sie einen aussagekräftigeren Namen ein, z. B. **Automobilpreisvorhersage**.
 
-2. Links vom Experimentbereich finden Sie eine Palette mit Datensätzen und Modulen. Geben Sie **automobile** in das Suchfeld im oberen Bereich dieser Palette ein, um das DataSet mit dem Namen **Automobile price data (Raw)** zu finden.
+2. Links vom Experimentbereich finden Sie eine Palette mit Datensätzen und Modulen. Geben Sie **automobile** in das Suchfeld im oberen Bereich dieser Palette ein, um das Dataset mit dem Namen **Automobile price data (Raw)** zu finden.
 
 	![Palettensuche][screen1a]
 
@@ -64,7 +66,7 @@ Machine Learning Studio enthält bereits zahlreiche Beispiel-DataSets, unter den
 
 	![Datensatz][screen1]
 
-Sie können auf den Ausgabeport im unteren Bereich des Automobil-DataSets klicken und dann **Visualisieren** auswählen, um die enthaltenen Daten anzuzeigen. Die Variablen im Datensatz werden als Spalten angezeigt, und jede Instanz eines Automobils füllt eine Zeile. Die Spalte ganz rechts (Spalte 26 mit dem Titel "price") ist die Zielvariable, die wir vorhersagen möchten.
+Sie können auf den Ausgabeport im unteren Bereich des Automobil-Datasets klicken und dann **Visualisieren** auswählen, um die enthaltenen Daten anzuzeigen. Die Variablen im Datensatz werden als Spalten angezeigt, und jede Instanz eines Automobils füllt eine Zeile. Die Spalte ganz rechts (Spalte 26 mit dem Titel "price") ist die Zielvariable, die wir vorhersagen möchten.
 
 ![Datensatzvisualisierung][screen1b]
 
@@ -78,9 +80,9 @@ DataSets müssen vor der Analyse normalerweise vorverarbeitet werden. Möglicher
 
 Wir entfernen zunächst die Spalte **normalized-losses** und anschließend alle Zeilen, in denen Daten fehlen.
 
-1. Geben Sie **project columns** in das Suchfeld im oberen Bereich der Modulpalette ein, um das Modul [Project Columns][project-columns] zu suchen, ziehen Sie dieses in den Experimentbereich, und verbinden Sie es dann mit dem Ausgangsport des DataSets **Automobile price data (Raw)**. Mit diesem Modul können wir auswählen, welche Daten wir in unserem Modell ein- bzw. ausschließen möchten.
+1. Geben Sie **project columns** in das Suchfeld im oberen Bereich der Modulpalette ein, um das Modul [Project Columns][project-columns] zu suchen, ziehen Sie dieses in den Experimentbereich, und verbinden Sie es dann mit dem Ausgabeport des Datasets **Automobile price data (Raw)**. Mit diesem Modul können wir auswählen, welche Daten wir in unserem Modell ein- bzw. ausschließen möchten.
 
-2. Wählen Sie das Modul [Project Columns][project-columns] aus und klicken Sie im **Eigenschaftenpanel** auf **Spaltenauswahl starten** .
+2. Wählen Sie das Modul [Project Columns][project-columns] aus, und klicken Sie im Bereich **Eigenschaften** auf **Spaltenauswahl starten**.
 
 	- Stellen Sie sicher, dass in der Dropdownliste **Beginnen mit** der Eintrag **Alle Spalten** ausgewählt ist. Damit wird [Project Columns][project-columns] angewiesen, alle Spalten zu durchlaufen (mit Ausnahme derer, die wir jetzt ausschließen werden).
 	- Wählen Sie in der nächsten Zeile **Ausschließend** und **Spaltennamen** aus und klicken Sie in das Textfeld. Eine Liste von Spalten wird angezeigt. Wählen Sie **normalized-losses** aus. Daraufhin wird die Spalte dem Textfeld hinzugefügt.
@@ -148,9 +150,9 @@ Wir möchten den Preis eines Autos vorhersagen, der beliebige Werte annehmen kan
 
 	Wählen Sie für dieses Experiment das [Linear Regression][linear-regression]-Modul unter der Kategorie **Regression** aus (oder geben Sie "linear regression" im Suchfeld der Palette ein), und ziehen Sie das Modul in den Experimentbereich.
 
-4. Ziehen Sie das Modul [Modell trainieren][train-model] ebenfalls in den Experimentbereich. Verbinden Sie die Ausgabe des linken Eingangsports mit dem Ausgang des Moduls [Linear Regression][linear-regression]. Verbinden Sie den rechten Eingangsport mit dem Trainingsdatenausgang (linker Port) des [Split][split]-Moduls.
+4. Suchen Sie das Modul [Modell trainieren][train-model], und ziehen Sie es ebenfalls in den Experimentbereich. Verbinden Sie die Ausgabe des linken Eingangsports mit dem Ausgang des Moduls [Linear Regression][linear-regression]. Verbinden Sie den rechten Eingangsport mit dem Trainingsdatenausgang (linker Port) des [Split][split]-Moduls.
 
-5. Wählen Sie das Modul [Train Model][train-model] aus, klicken Sie im Bereich **Eigenschaften** auf **Spaltenauswahl starten**, und wählen Sie dann die Spalte**price** aus. Dies ist der Wert, den unser Modell vorhersagen wird.
+5. Wählen Sie das Modul [Train Model][train-model] aus, klicken Sie im Bereich **Eigenschaften** auf **Spaltenauswahl starten**, und wählen Sie dann die Spalte **price** aus. Dies ist der Wert, den unser Modell vorhersagen wird.
 
 	![Spaltenauswahl "price"][screen7]
 
@@ -232,4 +234,4 @@ Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersa
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="08/14/2015"
+	ms.date="10/08/2015"
 	ms.author="tdykstra"/>
 
 # Erstellen einer ASP.NET-API-App in Azure App Service
@@ -28,7 +28,7 @@
 
 In diesem Lernprogramm wird gezeigt, wie Sie ein ASP.NET-Web-API-Projekt erstellen, das zur Bereitstellung in der Cloud als [API-App in Azure App Service](app-service-api-apps-why-best-platform.md) konfiguriert wird. Informationen zum Konfigurieren eines vorhandenen Web-API-Projekts zur Bereitstellung als API-App finden Sie unter [Konfigurieren eines Web-API-Projekts als API-App](app-service-dotnet-create-api-app-visual-studio.md).
 
-Nachfolgende Lernprogramme in dieser Reihe zeigen, wie Sie das in diesem Lernprogramm erstellte API-App-Projekt [bereitstellen](app-service-dotnet-deploy-api-app.md) und [debuggen](../app-service-dotnet-remotely-debug-api-app.md).
+Dies ist ein schnelles und einfaches Tutorial, in dem Sie nur erfahren, wie Sie ein Visual Studio-Projekt mit einer Vorlage erstellen. Dies ist das erste Tutorial einer Reihe, in der Sie auch lernen, wie Sie das in diesem Tutorial erstellte API-App-Projekt [bereitstellen](app-service-dotnet-deploy-api-app.md) und [debuggen](../app-service-dotnet-remotely-debug-api-app.md) können. Weitere detaillierte Informationen zum Arbeiten mit API-Apps finden Sie im Abschnitt [Nächste Schritte](#next-steps) am Ende des Tutorials.
 
 [AZURE.INCLUDE [install-sdk-2015-2013](../../includes/install-sdk-2015-2013.md)]
 
@@ -50,4 +50,14 @@ Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt ei
 
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
 
-<!---HONumber=Oct15_HO1-->
+Informationen zur Verwendung von automatisch generiertem Clientcode zum Aufrufen von API-Apps, finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
+
+Informationen über das Anpassen der automatisch generierten Swagger-Metadaten für eine API-App finden Sie unter [Anpassen von mit Swashbuckle generierten API-Definitionen](app-service-api-dotnet-swashbuckle-customize.md).
+
+Informationen zum Erstellen, Löschen und Konfigurieren von API-Apps im Azure-Vorschauportal finden Sie unter [Verwalten von API-Apps in Azure App Service](app-service-api-manage-in-portal.md).
+
+Informationen zur Authentifizierung von API-Apps-Benutzern finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
+
+Informationen zu API-Apps-Funktionen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
+
+<!---HONumber=Oct15_HO3-->

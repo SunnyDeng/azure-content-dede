@@ -18,7 +18,7 @@
 
 # Erstellen, Starten oder Löschen eines Application Gateways mit Azure-Ressourcen-Manager
 
-Application Gateways verfügen über Lastenausgleich der Ebene 7. Sie bieten Failover, wobei mithilfe von HTTP-Anforderungen die Leistung zwischen verschiedenen Servern in der Cloud oder lokalen Servern verteilt wird. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
+Application Gateways verfügen über Lastenausgleich der Ebene 7. Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
 
 
 > [AZURE.SELECTOR]
@@ -414,4 +414,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

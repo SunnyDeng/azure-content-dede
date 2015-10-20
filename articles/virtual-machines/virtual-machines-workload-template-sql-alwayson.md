@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="06/29/2015"
+	ms.date="10/08/2015"
 	ms.author="davidmu"/>
 
 # Bereitstellen von SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Folgen Sie den Anweisungen in diesem Artikel, um SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage bereitzustellen. Mit dieser Vorlage werden fünf virtuelle Computer in einem neuen virtuellen Netzwerk in zwei verschiedenen Subnetzen erstellt.
 
@@ -53,8 +53,8 @@ Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue R
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Beispiel:
 
@@ -62,12 +62,12 @@ Beispiel:
 	$RGName="TestRG"
 	$locname="West US"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Führen Sie anschließend den Befehlsblock in der Azure PowerShell-Eingabeaufforderung aus.
 
-Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von **New-AzureResourceGroupDeployment** erstellt und konfiguriert.
+Beim Ausführen des Befehls **New-AzureRmResourceGroupDeployment** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von **New-AzureRmResourceGroupDeployment** erstellt und konfiguriert.
 
 Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neue SQL Server AlwaysOn-Konfiguration mit fünf Servern in der neuen Ressourcengruppe.
 
@@ -107,4 +107,4 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

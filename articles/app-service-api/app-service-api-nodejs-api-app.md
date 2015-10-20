@@ -172,7 +172,7 @@ In diesem Abschnitt führen Sie die Anwendung lokal aus, um vor der Bereitstellu
 
 In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen Pushvorgang von diesem Repository zu Azure durch, um Ihre Beispielanwendung in der API-App bereitzustellen, die in Azure App Service ausgeführt wird.
 
-1. Falls Git nicht installiert ist, führen Sie die Installation über die [Git-Downloadseite](http://git-scm.com/download%20target="_blank") durch.
+1. Falls Git nicht installiert ist, führen Sie die Installation über die [Git-Downloadseite](http://git-scm.com/download) durch.
 
 1. Wechseln Sie über die Befehlszeile zum Verzeichnis der Beispielanwendung, und geben Sie die folgenden Befehle ein, um ein lokales Git-Repository zu initialisieren.
 
@@ -250,4 +250,4 @@ Sie haben eine Node.js-Web-App bereitgestellt, die ein API-App-Back-End zu Azure
 [sample-api-app-page]: ./media/app-service-api-nodejs-api-app/sample-api-app-page.png
 [browse-api-app-page]: ./media/app-service-api-nodejs-api-app/browse-api-app-page.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

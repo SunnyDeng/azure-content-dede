@@ -1,19 +1,19 @@
 <properties
    pageTitle="Verweisen einer Unternehmensinternetdomäne auf eine Traffic Manager-Domäne | Microsoft Azure"
-	description="In diesem Artikel erfahren Sie, wie Sie mit Ihrem Unternehmensdomänennamen auf einen Traffic Manager-Domänennamen verweisen."
-	services="traffic-manager"
-	documentationCenter=""
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   description="In diesem Artikel erfahren Sie, wie Sie mit Ihrem Unternehmensdomänennamen auf einen Traffic Manager-Domänennamen verweisen."
+   services="traffic-manager"
+   documentationCenter=""
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags
    ms.service="traffic-manager"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Verweisen einer Unternehmensinternetdomäne auf eine Azure Traffic Manager-Domäne
 
@@ -37,4 +37,4 @@ Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.tr
 
 [Was ist Traffic Manager?](traffic-manager-overview.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

@@ -353,4 +353,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

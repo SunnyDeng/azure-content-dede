@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von CDN | Microsoft Azure"
-	description="Erfahren Sie, wie das Azure Content Delivery Network (CDN) für die Übermittlung breitbandiger Inhalte eingesetzt wird, indem Blobs und statische Inhalte zwischengespeichert werden."
-	services="cdn"
-	documentationCenter=".net"
-	authors="zhangmanling"
-	manager="dwrede"
+	pageTitle="Verwenden von CDN | Microsoft Azure" 
+	description="Erfahren Sie, wie das Azure Content Delivery Network (CDN) für die Übermittlung breitbandiger Inhalte eingesetzt wird, indem Blobs und statische Inhalte zwischengespeichert werden." 
+	services="cdn" 
+	documentationCenter=".net" 
+	authors="zhangmanling" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="cdn"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="09/01/2015"
+	ms.service="cdn" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="get-started-article" 
+	ms.date="09/01/2015" 
 	ms.author="mazha"/>
 
 
@@ -54,4 +54,4 @@ Verwenden Sie für den Zugriff auf die im CDN zwischengespeicherten Inhalte den 
 [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

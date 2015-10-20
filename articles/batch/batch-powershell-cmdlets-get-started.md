@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erste Schritte mit Azure PowerShell-Batch-Cmdlets | Microsoft Azure"
-	description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
-	services="batch"
-	documentationCenter=""
-	authors="dlepow"
-	manager="timlt"
-	editor=""/>
+   description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
+   services="batch"
+   documentationCenter=""
+   authors="dlepow"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="batch"
-	ms.devlang="NA"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="powershell"
-	ms.workload="big-compute"
-	ms.date="08/07/2015"
-	ms.author="danlep"/>
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="big-compute"
+   ms.date="08/07/2015"
+   ms.author="danlep"/>
 
 # Erste Schritte mit Azure Batch für PowerShell-Cmdlets
 Dieser Artikel dient als kurze Einführung in die Azure PowerShell-Cmdlets, mit denen Sie Ihre Batch-Konten verwalten und Informationen über Ihre Batch-Aufträge und -Aufgaben sowie weitere Details abrufen können.
@@ -162,4 +162,4 @@ Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Ober
 * [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
 * [Effiziente Listenabfragen](batch-efficient-list-queries.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

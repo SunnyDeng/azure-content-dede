@@ -243,4 +243,4 @@ Der Abschnitt **Analyse** enthält die folgenden vier Registerkarten:
 [api-management-]: ./media/api-management-get-started/api-management-.png
 [api-management-]: ./media/api-management-get-started/api-management-.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

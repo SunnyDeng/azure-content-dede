@@ -178,4 +178,4 @@ Ausführliche Planungsinformationen zu diesen Komponenten finden Sie im Abschnit
 
 Starten Sie die Konfiguration der Komponenten für Ihr Bereitstellungsszenario. [Weitere Informationen](site-recovery-overview.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

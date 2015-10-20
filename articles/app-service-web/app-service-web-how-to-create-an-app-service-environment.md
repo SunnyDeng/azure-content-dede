@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="09/11/2015" 
+	ms.date="10/13/2015" 
 	ms.author="ccompy"/>
 
 # Erstellen einer App Service-Umgebung #
@@ -39,12 +39,12 @@ Jede Bereitstellung einer App Service-Umgebung ist ein gehosteter Dienst, der vo
 Es gibt zwei Möglichkeiten, auf die Benutzeroberfläche zur Erstellung der App Service-Umgebung zuzugreifen. Durchsuchen Sie den Azure Marketplace nach ***App Service-Umgebung***, oder wählen Sie "Neu" -> "Web + Mobil".
 
 ### Schnellerfassung ###
-Nach dem Aufrufen der Benutzeroberfläche zur Erstellung können Sie durch die Eingabe eines Namens für die Bereitstellung schnell eine App Service-Umgebung erstellen. Dadurch werden wiederum ein VNET mit 512 Adressen, ein Subnetz mit 256 Adressen in diesem VNET sowie eine App Service-Umgebung mit zwei Front-Ends und zwei Workern im Workerpool 1 erstellt. Achten Sie darauf, den Standort, an dem sich das System befinden soll, sowie das zugehörige Abonnement auszuwählen. Die einzigen Konten, die die App Service-Umgebung zum Hosten von Inhalten verwenden können, müssen in dem Abonnement enthalten sein, das zur Erstellung verwendet wurde.
+Nach dem Aufrufen der Benutzeroberfläche zur Erstellung können Sie durch die Eingabe eines Namens für die Bereitstellung schnell eine App Service-Umgebung erstellen. Dadurch werden wiederum ein VNET mit 512 Adressen, ein Subnetz mit 256 Adressen in diesem VNET sowie eine App Service-Umgebung mit zwei Front-Ends und zwei Workern im Workerpool 1 erstellt. Achten Sie darauf, einen neuen *App Services-Plan* zu erstellen, oder wählen Sie einen vorhandenen und das Abonnement, dem Sie angehören möchten. Die einzigen Konten, die die App Service-Umgebung zum Hosten von Inhalten verwenden können, müssen in dem Abonnement enthalten sein, das zur Erstellung verwendet wurde.
 
-Der Name, der für die App Service-Umgebung angegeben wurde, wird für die in der App Service-Umgebung erstellten Web-Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname .*appsvcenvdemo.p.azurewebsites.net*. Wenn Sie also eine Web-App mit dem Namen "mytestapp" erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
+Der Name, der für die App Service-Umgebung angegeben wurde, wird für die in der App Service-Umgebung erstellten Web-Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname ".*appsvcenvdemo.p.azurewebsites.net*". Wenn Sie also eine Web-App mit dem Namen "mytestapp" erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
 
 
-![][1]
+![][1] ![][4]
 
 ### Compute-Ressourcenpools ###
 
@@ -138,6 +138,7 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [1]: ./media/app-service-web-how-to-create-an-app-service-environment/createaseblade.png
 [2]: ./media/app-service-web-how-to-create-an-app-service-environment/createasenetwork.png
 [3]: ./media/app-service-web-how-to-create-an-app-service-environment/createasescale.png
+[4]: ./media/app-service-web-how-to-create-an-app-service-environment/createaseappserviceplan.png
 
 <!--Links-->
 [WhatisASE]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-intro/
@@ -145,4 +146,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AppServicePricing]: http://azure.microsoft.com/pricing/details/app-service/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

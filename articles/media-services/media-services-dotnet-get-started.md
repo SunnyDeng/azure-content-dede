@@ -77,7 +77,7 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
-Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarios darin, Adaptive Bitrate Streaming an Ihre Clients zu übermitteln. Mit Adaptive Bitrate Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Adaptive Bitrate Streamingtechnologien unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
+Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarios darin, Adaptive Bitrate Streaming an Ihre Clients zu übermitteln. Mit Adaptive Bitrate Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
 Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
@@ -434,4 +434,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -46,4 +46,4 @@ Sehen Sie sich die Schritte im Video [Erste Schritte mit Azure Backup 3 von 3 â€
 - [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="09/23/2015"
+	ms.date="10/12/2015"
 	ms.author="raynew"/>
 
 #  Einrichten von Schutz zwischen einem lokalen VMM-Standort und Azure
@@ -306,13 +306,10 @@ Es gibt zwei Möglichkeiten, ein Testfailover in Azure auszuführen.
 - Testfailover ohne Azure-Netzwerk – Bei dieser Art von Testfailover wird überprüft, dass der virtuelle Computer in Azure ordnungsgemäß hochgefahren wird. Der virtuelle Computer wird nach einem Failover mit keinem Azure-Netzwerk verbunden.
 - Testfailover mit Azure-Netzwerk – Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Computer mit dem angegebenen Azure-Zielnetzwerk verbunden werden. Bei der Subnetzverarbeitung wird für das Testfailover das Subnetz des virtuellen Testcomputers basierend auf dem Subnetz des virtuellen Replikatcomputers festgelegt. Dies unterscheidet sich von der regulären Replikation, bei der das Subnetz des virtuellen Replikatcomputers auf dem Subnetz des virtuellen Quellcomputers basiert.
 
-Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure), und die Infrastruktur einrichten, damit der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Gehen Sie wie folgt vor, um ein Testfailover durchzuführen:
+Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure). Unter [Ausführen eines Testfailovers](site-recovery-failover.md#run-a-test-failover) finden Sie weitere Details.
 
-1. Führen Sie ein Testfailover des virtuellen Computers mit Domänencontroller und DNS in dem Netzwerk durch, das Sie auch für das eigentliche Testfailover des lokalen virtuellen Computers verwenden möchten.
-2. Notieren Sie sich die IP-Adresse, die dem virtuellen DNS-Computer nach dem Failover zugeordnet wurde.
-3. Fügen Sie dem virtuellen Azure-Netzwerk, das für das Failover verwendet wird, die IP-Adresse als DNS-Serveradresse hinzu.
-4. Führen Sie das Testfailover der lokalen virtuellen Quellcomputer durch, und geben Sie dabei das Azure-Testnetzwerk an.
-5. Vergewissern Sie sich, dass das Testfailover erwartungsgemäß funktioniert hat. Markieren Sie das Testfailover als abgeschlossen – zuerst für den Wiederherstellungsplan und anschließend für die virtuellen Computer mit Domänencontroller und DNS.
+
+Sie müssen außerdem die Infrastruktur so einrichten, dass der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Unter [Überlegungen zum Testfailover für Active Directory](site-recovery-active-directory.md#considerations-for-test-failover) finden Sie weitere Details.
 
 Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 
@@ -327,14 +324,14 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 1. Nach dem Failover können Sie das Testreplikat des virtuellen Computers im Azure-Portal sehen. Wenn Sie den Zugriff auf virtuelle Computer aus Ihrem lokalen Netzwerk eingerichtet haben, können Sie eine Remotedesktopverbindung mit dem virtuellen Computer herstellen. Beachten Sie Folgendes:
 
     1. Prüfen Sie, ob die virtuellen Computer erfolgreich starten.
-    1. Wenn Sie nach dem Failover eine Verbindung mit dem virtuellen Computer in Azure über Remote Desktop herstellen möchten, aktivieren Sie die Remote Desktop-Verbindung auf dem virtuellen Computer, bevor Sie das Test-Failover ausführen. Außerdem müssen Sie dem virtuellen Computer einen RDP-Endpunkt hinzufügen. Hierzu können Sie ein [Azure Automation-Runbook](site-recovery-runbook-automation.md) verwenden.
+    1. Wenn Sie nach dem Failover eine Verbindung mit dem virtuellen Computer in Azure über Remote Desktop herstellen möchten, aktivieren Sie die Remote Desktop-Verbindung auf dem virtuellen Computer, bevor Sie das Test-Failover ausführen. Außerdem müssen Sie dem virtuellen Computer einen RDP-Endpunkt hinzufügen. Hierzu können Sie ein Azure Automation-Runbook[](site-recovery-runbook-automation.md) verwenden.
     1. Falls Sie nach dem Failover über eine öffentliche IP-Adresse eine Remotedesktopverbindung mit dem virtuellen Computer in Azure herstellen, achten Sie darauf, dass keine Domänenrichtlinien vorhanden sind, die dies verhindern.
 
 1.  Gehen Sie nach dem Test wie folgt vor:
 	- Klicken Sie auf **Das Testfailover ist abgeschlossen**. Bereinigen Sie die Testumgebung, um die virtuellen Testcomputer automatisch auszuschalten und zu löschen.
 	- Klicken Sie auf **Notizen**, um alle Beobachtungen im Zusammenhang mit dem Test-Failover aufzuzeichnen und zu speichern.
 
-## <a id="runtest" name="runtest" href="#runtest"></a>Überwachen der Aktivität
+## <a id="runtest" name="runtest" href="#runtest"></a> Überwachen der Aktivität
 <p>Verwenden Sie die Registerkarte *Jobs* und das *Dashboard*, um die wichtigsten Aufträge anzuzeigen und zu überwachen, die vom Azure Site Recovery-Tresor durchgeführt werden. Dazu zählen das Konfigurieren von Schutz für eine Cloud, Aktivieren und Deaktivieren von Schutz für einen virtuellen Computer, Ausführen eines Failovers (geplant, ungeplant oder Test) und Übernehmen eines ungeplanten Failovers.</p>
 
 <p>Auf der Registerkarte *Jobs* können Sie Aufträge anzeigen, ein Drill-Down zu den Auftragsdetails und -fehlern durchführen, Auftragsabfragen ausführen, um Aufträge abzurufen, die bestimmte Kriterien erfüllen, Aufträge nach Excel exportieren und fehlgeschlagene Aufträge neu starten.</p>
@@ -345,9 +342,9 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 
 ##<a id="next" name="next" href="#next"></a>Nächste Schritte
 <UL>
-<LI>Informationen zur Planung und Bereitstellung von Azure Site Recovery in einer realen Produktionsumgebung finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=321294">Planen des Schutzes von VMM-Websites</a> und unter <a href="http://go.microsoft.com/fwlink/?LinkId=321295">Bereitstellen von Schutz zwischen zwei lokalen VMM-Standorten</a>.</LI>
+<LI>Informationen zur Planung und Bereitstellung von Azure Site Recovery in einer realen Produktionsumgebung finden Sie im <a href="http://go.microsoft.com/fwlink/?LinkId=321294">Planungshandbuch für Azure Site Recovery</a> und im <a href="http://go.microsoft.com/fwlink/?LinkId=321295">Bereitstellungshandbuch für Azure Site Recovery</a>.</LI>
 
 
-<LI>Wenn Sie Fragen haben, besuchen Sie das <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure Recovery Services-Forum</a>.</LI></UL>
+<LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

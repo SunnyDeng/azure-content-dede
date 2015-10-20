@@ -13,4 +13,4 @@
 	
 	Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+>[AZURE.TIP]Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [fangen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md) anstatt mit Azure Mobile Services an. Dadurch erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
  
 In diesem Lernprogramm wird gezeigt, wie Sie einer universellen Windows-App einen cloudbasierten Back-End-Dienst unter Verwendung von Azure Mobile Services hinzufügen. Universelle Windows-App-Lösungen beinhalten Projekte für Windows Store 8.1, Windows Phone Store 8.1-Apps und ein gemeinsames, geteiltes Projekt. Weitere Informationen finden Sie unter [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden](http://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx).
 
@@ -128,4 +128,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

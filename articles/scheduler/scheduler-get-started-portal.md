@@ -1,19 +1,19 @@
 <properties
  pageTitle="Erste Schritte mit Azure Scheduler im Azure-Portal | Microsoft Azure"
-	description=""
-	services="scheduler"
-	documentationCenter=".NET"
-	authors="krisragh"
-	manager="dwrede"
-	editor=""/>
+ description=""
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
+ editor=""/>
 <tags
  ms.service="scheduler"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.date="08/18/2015"
-	ms.author="krisragh"/>
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="hero-article"
+ ms.date="08/18/2015"
+ ms.author="krisragh"/>
 
 # Erste Schritte mit Azure Scheduler im Azure-Portal
 
@@ -261,4 +261,4 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

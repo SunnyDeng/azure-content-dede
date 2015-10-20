@@ -12,4 +12,4 @@ Ein Containername muss ein gültiger DNS-Name sein und den folgenden Benennungsr
 
 > [AZURE.IMPORTANT]Beachten Sie, dass der Name eines Containers immer aus Kleinbuchstaben bestehen muss. Wenn der Containername einen Großbuchstaben enthält oder anderweitig gegen die Benennungsregeln für Container verstößt, wird möglicherweise der Fehlercode 400 (Ungültige Anforderung) zurückgegeben.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

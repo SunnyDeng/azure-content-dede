@@ -8,4 +8,4 @@ Wenn Visual Studio nicht installiert ist, wird zusammen mit dem SDK Visual Studi
 
 [Azure SDK für Visual Studio 2013]: http://go.microsoft.com/fwlink/?LinkID=324322
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

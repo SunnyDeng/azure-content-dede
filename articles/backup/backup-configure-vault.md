@@ -34,4 +34,4 @@ Um Dateien und Daten von Ihrem Windows-Server auf Azure zu sichern, müssen Sie 
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 - [Azure Backup – Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

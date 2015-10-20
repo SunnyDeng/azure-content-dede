@@ -118,4 +118,4 @@ Weitere Beispiele finden Sie in der [Video- und Tutorialliste](search-video-demo
 [5]: ./media/search-chrome-postman/upload_documents.png
 [6]: ./media/search-chrome-postman/query.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

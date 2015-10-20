@@ -145,9 +145,9 @@ Dieses Verfahren führt Sie durch das Erstellen eines VNets sowie das Erstellen 
 
 	Ersetzen Sie anhand des folgenden Beispiels die Werte mit Ihren eigenen.
 
-	`New-AzureLocalNetworkGateway -GatewayName MyLocalNetwork -IpAddress <local-network- gateway-public-IP> -AddressSpace <local-network-address-space>`
+	`New-AzureLocalNetworkGateway -GatewayName MyLocalNetwork -IpAddress <MyLocalGatewayIp> -AddressSpace <MyLocalNetworkAddress>`
 
-	**Hinweis:** Wenn Ihr lokales Netzwerk mehrere Routen hat, können Sie diese als ein Array übergeben. $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")
+	> [AZURE.NOTE]Wenn Ihr lokales Netzwerk mehrere Routen hat, können Sie diese als ein Array übergeben. $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")
 
 
 	Verwenden Sie zum Abrufen der Einstellungen des Virtual Network-Gateway, einschließlich der Gateway-ID und der öffentlichen IP, das`Get-AzureVirtualNetworkGateway` Cmdlet. Siehe folgendes Beispiel.
@@ -194,7 +194,7 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
             <AddressPrefix>10.17.159.224/27</AddressPrefix>
           </Subnet>
 
-4. Wenn Ihr vorheriges Gateway ein Standort-zu-Standort-VPN war, müssen Sie auch den Verbindungstyp auf **dediziert** ändern.
+4. Wenn Ihr vorheriges Gateway ein Standort-zu-Standort-VPN war, müssen Sie auch den Verbindungstyp auf **Dediziert** ändern.
 
 		         <Gateway>
 		          <ConnectionsToLocalNetwork>
@@ -210,4 +210,4 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

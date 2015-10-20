@@ -1,6 +1,7 @@
 <properties
 	pageTitle="HBase-Lernprogramm: Erste Schritte mit HBase in Hadoop | Microsoft Azure"
 	description="Führen Sie dieses HBase-Lernprogramm aus, um sich in Apache HBase mit Hadoop in HDInsight einzuarbeiten. Erstellen Sie über die HBase-Shell Tabellen und fragen Sie diese mit Hive ab."
+	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"
@@ -364,4 +365,4 @@ Weitere Informationen finden Sie unter:
 [img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-tabular.png
 [img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-bigtable.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

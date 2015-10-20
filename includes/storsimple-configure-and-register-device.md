@@ -76,4 +76,4 @@ Wenn das Gerät erfolgreich registriert wurde, jedoch nicht online geschaltet wi
 
 Sie können sich [hier](http://azure.microsoft.com/documentation/videos/initialize-the-storsimple-appliance/) ein Video anschauen, dass die Konfiguration und Registrierung Ihres Geräts über Windows PowerShell für StorSimple demonstriert.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -25,16 +25,16 @@
 
 Dieser Artikel führt Sie durch den Erstellungsvorgang eines virtuellen Netzwerks und einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk. Dieser Artikel gilt für das klassische Bereitstellungsmodell.
 
->[AZURE.IMPORTANT]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, stellen Sie sicher, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+>[AZURE.IMPORTANT]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
 Sie können den Artikel für das entsprechende Bereitstellungsmodell und Bereitstellungstool mithilfe der oben befindlichen Registerkarten auswählen. Wenn Sie beispielsweise eine Standort-zu-Standort-VPN-Gatewayverbindung mit dem Azure-Ressourcen-Manager erstellen möchten, anstatt das klassische Bereitstellungsmodell zu verwenden, klicken Sie auf die Registerkarte (oben) **PowerShell – Ressourcen-Manager**, um zu [Erstellen einer Standort-zu-Standort-VPN-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md) zu navigieren.
 
  
 ## Vorbereitungen
 
-Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes verfügen.
+Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes verfügen:
 
-- Ein kompatibles VPN-Gerät und eine Person, die es konfigurieren kann. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md).
+- Ein kompatibles VPN-Gerät (und eine Person, die es konfigurieren kann). Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md).
 - Eine externe öffentliche IP-Adresse für Ihr VPN-Gerät. Diese IP-Adresse darf sich nicht hinter einer NAT befinden.
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 
@@ -99,4 +99,4 @@ Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Info
 
 Wenn Sie eine Verbindung zwischen dem klassischen virtuellen Netzwerk und einem virtuellen Netzwerk konfigurieren möchten, das mit dem Azure-Ressourcen-Manager-Modus erstellt wurde, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und VNets des Azure-Ressourcen-Managers](../virtual-network/virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

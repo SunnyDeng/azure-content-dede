@@ -19,6 +19,12 @@
 
 # Python Flask-Webanwendungsentwicklung mit DocumentDB
 
+> [AZURE.SELECTOR]
+- [.NET](documentdb-dotnet-application.md)
+- [Node.js](documentdb-nodejs-application.md)
+- [Java](documentdb-java-application.md)
+- [Python](documentdb-python-application.md)
+
 Dieses Dokument bietet ein vollständiges Lernprogramm zur Erstellung einer Python-Webanwendung für eine Wahl mithilfe von Azure DocumentDB, um zu zeigen, wie Azure DocumentDB von Kunden effizient zum Speichern und Abfragen von JSON-Dokumenten genutzt werden kann.
 
 Dieses Lernprogramm zeigt, wie Sie den von Azure bereitgestellten DocumentDB-Dienst verwenden, um Daten einer auf Azure gehosteten Python-Webanwendung zu speichern und darauf zuzugreifen. Dabei wird vorausgesetzt, dass Sie bereits über Erfahrung mit Python und Azure-Websites verfügen.
@@ -47,7 +53,7 @@ Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgende
 
 ## Schritt 1: Erstellen eines DocumentDB-Datenbankkontos
 
-Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto verfügen, können Sie mit [Schritt 2: Erstellen einer neuen Python-Flask-Webanwendung](#Step-2:-Create-a-new-Python-Flask-Web-Application) fortfahren.
+Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto verfügen, können Sie mit [Schritt 2: Erstellen einer neuen Python Flask-Webanwendung](#Step-2:-Create-a-new-Python-Flask-Web-Application) fortfahren.
 
 [AZURE.INCLUDE [DocumentDB-Erstellen-DB-Account](../../includes/documentdb-create-dbaccount.md)]
 
@@ -57,7 +63,7 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 ## Schritt 2: Erstellen einer neuen Python Flask-Webanwendung
 
-1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -> **Neues Projekt** -> **Python** ->, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**.
+1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -> **Neues Projekt** -> **Python** -> **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**.
 
 	Möglicherweise kennen Sie Python Flask noch nicht. Dies ist ein Webanwendungsframework, das uns beim schnelleren Erstellen von Webanwendungen in Python unterstützt. [Klicken Sie hier, um Flask-Lernprogramme zu öffnen][].
 
@@ -278,7 +284,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
 
 1. Klicken Sie mit der rechten Maustaste auf den Projektnamen "tutorial", und fügen Sie die Datei **config.py** hinzu. Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Tutorial nicht erforderlich.
 
-2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\\_HOST** und **DOCUMENTDB\\_KEY**.
+2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\_HOST** und **DOCUMENTDB\_KEY**.
 
     	CSRF_ENABLED = True
     	SECRET_KEY = 'you-will-never-guess'
@@ -290,7 +296,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	DOCUMENTDB_COLLECTION = 'voting collection'
     	DOCUMENTDB_DOCUMENT = 'voting document'
 
-3. Ersetzen Sie den Inhalt von **\\_\\_init\\_\\_.py** durch Folgendes.
+3. Ersetzen Sie den Inhalt von **\_\_init\_\_.py** durch Folgendes.
 
     	from flask import Flask
     	app = Flask(__name__)
@@ -355,4 +361,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.com
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -91,4 +91,4 @@ Sie können den Änderungsverlauf für Ihr Traffic Manager-Profil im Azure-Porta
 
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

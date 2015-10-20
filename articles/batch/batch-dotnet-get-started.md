@@ -495,4 +495,4 @@ Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle
 
 2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -3,4 +3,4 @@
 
 2. Wählen Sie den Dienst unter **Existing Web Apps** aus, und klicken Sie auf **OK**. Überprüfen Sie dann die Veröffentlichungsinformationen, und klicken Sie auf **Veröffentlichen**. Wenn das mobile App-Back-End erfolgreich veröffentlicht wurde, wird eine Startseite angezeigt.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

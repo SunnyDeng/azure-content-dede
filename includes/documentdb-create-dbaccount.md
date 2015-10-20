@@ -19,8 +19,7 @@
  
 	- Unter **Standort** können Sie einen geografischen Standort angeben, an dem Ihr DocumentDB-Konto gehostet wird.
 
-4.	Klicken Sie nach der Konfiguration der Optionen für das neue DocumentDB-Konto auf **Erstellen**. Die Erstellung des DocumentDB-Kontos kann einige Minuten dauern. Sie können den Fortschritt im Startmenü überwachen, um den Status zu überprüfen.
-	![Screenshot der Kachel "Erstellen" im Startmenü – Online-Datenbankersteller](media/documentdb-create-dbaccount/ca4.png)
+4.	Klicken Sie nach der Konfiguration der Optionen für das neue DocumentDB-Konto auf **Erstellen**. Die Erstellung des DocumentDB-Kontos kann einige Minuten dauern. Sie können den Fortschritt im Startmenü überwachen, um den Status zu überprüfen.![Screenshot der Kachel "Erstellen" im Startmenü – Online-Datenbankersteller](media/documentdb-create-dbaccount/ca4.png)
   
 	Sie können den Status auch über den Hub "Benachrichtigungen" überwachen.
 
@@ -36,4 +35,4 @@
 [Next steps]: #NextSteps
 [documentdb-manage]: ../articles/documentdb/documentdb-manage.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

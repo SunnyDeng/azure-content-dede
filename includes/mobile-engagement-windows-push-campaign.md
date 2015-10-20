@@ -30,4 +30,4 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->
