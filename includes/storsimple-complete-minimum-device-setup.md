@@ -38,4 +38,4 @@
 
 Sie können sich [hier](http://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/) ein Video anschauen, in dem die mindestens erforderliche Gerätekonfiguration demonstriert wird.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

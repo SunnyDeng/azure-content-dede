@@ -462,4 +462,4 @@ Zur Vertiefung Ihres Verständnisses der Integration von Azure Search und ASP.NE
 - [Azure Search-Fallstudie für Entwickler](search-dev-case-study-whattopedia.md)
 - [Typischer Workflow für die Azure Search-Entwicklung](search-workflow.md) 
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

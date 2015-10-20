@@ -388,4 +388,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Informationen zum Verwalten Ihres virtuellen Geräts finden Sie in der detaillierten Liste der Workflows unter [Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md#administer-storsimple-device-using-storsimple-manager-service).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

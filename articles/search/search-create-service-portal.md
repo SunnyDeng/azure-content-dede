@@ -120,4 +120,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur Erstellung und Ve
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

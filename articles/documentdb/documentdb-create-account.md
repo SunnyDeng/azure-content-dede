@@ -41,9 +41,9 @@ Nachdem eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](docume
 
 Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
--	[Lernkonzept für DocumentDB](documentdb-learning-map.md)
+-	[Lernpfad für DocumentDB](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 -	[Ressourcenmodell und Konzepte von DocumentDB](documentdb-resources.md)
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

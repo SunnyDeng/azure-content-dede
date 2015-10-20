@@ -4,4 +4,4 @@
 
 Eine Version dieses Dokuments, in dem das Azure-Vorschauportal verwendet wird, finden Sie unter folgendem Link:
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

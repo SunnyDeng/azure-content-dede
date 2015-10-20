@@ -48,4 +48,4 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (
 
     ![Konfigurieren von Azure Backup](./media/backup-install-agent/configure.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

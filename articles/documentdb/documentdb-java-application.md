@@ -19,7 +19,13 @@
 
 # Erstellen einer Java-Webanwendung mithilfe von DocumentDB
 
-In diesem Java-Webanwendungs-Lernprogramm erfahren Sie, wie Sie den [Microsoft Azure DocumentDB](https://portal.azure.com/#gallery/Microsoft.DocumentDB)-Dienst verwenden, um Daten von einer auf Azure-Websites gehosteten Java-Anwendung zu speichern und abzurufen. In diesem Abschnitt lernen Sie Folgendes:
+> [AZURE.SELECTOR]
+- [.NET](documentdb-dotnet-application.md)
+- [Node.js](documentdb-nodejs-application.md)
+- [Java](documentdb-java-application.md)
+- [Python](documentdb-python-application.md)
+
+In diesem Tutorial zur Java-Webanwendung erfahren Sie, wie Sie den [Microsoft Azure DocumentDB](https://portal.azure.com/#gallery/Microsoft.DocumentDB)-Dienst verwenden, um Daten von einer auf Azure-Websites gehosteten Java-Anwendung zu speichern und abzurufen. In diesem Abschnitt lernen Sie Folgendes:
 
 - Erstellen einer einfachen JSP-Anwendung in Eclipse.
 - Arbeiten mit dem Azure DocumentDB-Dienst mit dem [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java).
@@ -30,7 +36,7 @@ In diesem Java-Anwendungslernprogramm erfahren Sie, wie Sie eine webbasierte Auf
 
 > [AZURE.TIP]In diesem Lernprogramm zur Anwendungsentwicklung wird davon ausgegangen, dass Sie bereits Erfahrung mit Java haben. Wenn Sie noch nicht mit Java oder den als [Voraussetzung erforderlichen Tools](#Prerequisites) vertraut sind, wird empfohlen, das vollständige [Todo](https://github.com/Azure/azure-documentdb-java/tree/master/tutorial/todo)-Projekt von [GitHub](https://github.com/Azure/azure-documentdb-java) herunterzuladen und gemäß den [Anweisungen am Ende dieses Artikels](#GetProject) erstellen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
 
-##<a id="Prerequisites"></a>Voraussetzungen für dieses Java-Webanwendungs-Lernprogramm
+##<a id="Prerequisites"></a>Voraussetzungen für dieses Tutorial zur Java-Webanwendung
 Bevor Sie mit diesem Lernprogramm zur Anwendungsentwicklung beginnen, benötigen Sie Folgendes:
 
 - Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](../../pricing/free-trial/).
@@ -72,7 +78,7 @@ So erstellen Sie eine JSP-Anwendung
 	    </body>
 
 8. Speichern Sie die Datei „index.jsp“.
-9. Wenn Sie in Schritt 2 eine Ziellaufzeitversion festgelegt haben, können Sie auf **Projekt** und dann auf **Ausführen** klicken, um die JSP-Anwendung lokal auszuführen:
+9. Wenn Sie in Schritt 2 eine Ziellaufzeitversion festgelegt haben, können Sie auf **Projekt** und dann auf **Ausführen** klicken, um die JSP-Anwendung lokal auszuführen:
 
 	![Hello World – Java-Anwendungslernprogramm](./media/documentdb-java-application/image12.png)
 
@@ -89,7 +95,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 4. Gehen Sie im Fenster **Abhängigkeit auswählen** wie folgt vor:
  - Geben Sie in das Feld **Gruppen-ID** „com.microsoft.azure“ ein.
  - Geben Sie in das Feld **Artefakt-ID** „azure-documentdb“ ein.
- - Geben Sie in das Feld **Version** „1.1.0“ ein.
+ - Geben Sie in das Feld **Version** den Wert "1.1.0" ein.
 
 	![Installieren des DocumentDB Java Application SDKs](./media/documentdb-java-application/image13.png)
 
@@ -358,7 +364,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 	    }
 
 
-##<a id="Wire"></a>Schritt 5: Zusammenfügen des Rests im Projekt der Entwicklung der Java-Anwendung
+##<a id="Wire"></a>Schritt 5: Zusammenfügen des Rests im Projekt zur Entwicklung der Java-Anwendung
 
 Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzeroberfläche erstellt und mit unserem DAO verbunden werden.
 
@@ -735,7 +741,7 @@ Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzerober
 
 6. Wenn das Element angezeigt wird, können Sie den Abschlussstatus aktualisieren, indem Sie das Kontrollkästchen umschalten und auf **Update Tasks** klicken.
 
-##<a id="Deploy"></a>Schritt 6: Bereitstellen Ihrer Java-Anwendung auf Azure-Websites
+##<a id="Deploy"></a>Schritt 6: Bereitstellen Ihrer Java-Anwendung auf Azure Websites
 
 Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie das Exportieren Ihrer Anwendung als WAR-Datei und dem anschließenden Hochladen über die Quellcodeverwaltung (z. B. GIT) oder über FTP.
 
@@ -780,4 +786,4 @@ Alle Beispiele in diesem Lernprogramm sind im [Todo](https://github.com/Azure/az
 [1]: media/documentdb-java-application/keys.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

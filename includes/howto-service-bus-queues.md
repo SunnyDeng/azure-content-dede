@@ -10,7 +10,7 @@ Service Bus-Warteschlangen sind eine Allzwecktechnologie für viele unterschiedl
 -   Kommunikation zwischen lokalen Apps und von Azure gehosteten Apps in einer Hybridlösung
 -   Kommunikation zwischen Komponenten einer verteilten lokalen Anwendung, die in verschiedenen Organisationen oder Abteilungen einer Organisation laufen
 
-Warteschlangen unterstützen Sie bei der einfacheren horizontalen Skalierung Ihrer Anwendungen und führen zu einer robusteren Architektur.
+Warteschlangen unterstützen Sie bei der einfacheren Skalierung Ihrer Anwendungen und führen zu einer robusteren Architektur.
 
 ## Erstellen eines Dienstnamespaces
 
@@ -18,27 +18,27 @@ Um mit der Verwendung von Service Bus-Warteschlangen in Azure beginnen zu könne
 
 So erstellen Sie einen Dienstnamespace:
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Portal][] an.
 
-2.  Klicken Sie im linken Navigationsbereich des Verwaltungsportals auf **Servicebus**.
+2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**. ![](./media/howto-service-bus-queues/sb-queues-03.png)
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**. ![](./media/howto-service-bus-queues/sb-queues-03.png)
 
 4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![](./media/howto-service-bus-queues/sb-queues-04.png)
 
-5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der Sie Ihre Rechnerressourcen bereitstellen.)
+5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der sie Ihre Rechnerressourcen einsetzen.)
 
-	WICHTIG: Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
+	 >[AZURE.IMPORTANT]Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
 
-6. 	Übernehmen Sie für die übrigen Felder im Dialogfeld die Standardwerte (**Messaging** und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
+6. 	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte (**Messaging** und **Standardstufe**), und klicken Sie anschließend auf das Häkchen für "OK". Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
 
 	![](./media/howto-service-bus-queues/getting-started-multi-tier-27.png)
 
-Der neue Namespace wird innerhalb kurzer Zeit aktiviert und anschließend im Verwaltungsportal angezeigt. Fahren Sie erst fort, wenn der Status als **Aktiv** angezeigt wird.
+Der neue Namespace wird innerhalb kurzer Zeit aktiviert und anschließend im Azure-Portal angezeigt. Fahren Sie erst fort, wenn der Status als **Aktiv** angezeigt wird.
 
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
-Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer Warteschlange im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Sie finden diese Anmeldeinformationen entweder im Azure Verwaltungsportal oder im Server-Explorer von Visual Studio.
+Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer Warteschlange im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Diese Anmeldeinformation erhalten Sie im Azure-Portal.
 
 ###So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
 
@@ -54,17 +54,6 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
     
 5.  Notieren Sie den Schlüssel oder kopieren Sie ihn in die Zwischenablage.
 
-### So rufen Sie die Anmeldeinformationen im Server-Explorer ab
+  [Azure-Portal]: http://manage.windowsazure.com
 
-Führen Sie die [hier](http://msdn.microsoft.com/library/ff687127.aspx) im Abschnitt **Verbindungsherstellung mit Azure aus Visual Studio** beschriebenen Schritte aus, um Verbindungsinformationen nicht aus dem Verwaltungsportal, sondern über Visual Studio abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Azure**-Struktur im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
-
-Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischenablage:
-
-![][34]
-
-  [Azure Management Portal]: http://manage.windowsazure.com
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-
-  [34]: ./media/howto-service-bus-queues/VSProperties.png
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

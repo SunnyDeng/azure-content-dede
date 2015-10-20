@@ -103,4 +103,4 @@ Führen Sie die folgenden Schritte aus, um die API-Testseite anzuzeigen.
 
 3. Klicken Sie in Visual Studio auf **Debuggen > Debuggen beenden**.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

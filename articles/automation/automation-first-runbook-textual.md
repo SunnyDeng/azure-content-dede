@@ -122,4 +122,4 @@ Unser Runbook startet zwar nun den virtuellen Computer, den wir im Runbook hartc
 
 - [Mein erstes grafisches Runbook](automation-first-runbook-graphical.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

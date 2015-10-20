@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/08/2015"
+	ms.date="10/13/2015"
 	ms.author="garye"/>
 
 
@@ -30,6 +30,8 @@ In dieser ausführlichen Anleitung erstellen Sie ein Predictive Analytics-Modell
 
 Öffnen Sie Machine Learning Studio über folgenden Link: [https://studio.azureml.net/Home](https://studio.azureml.net/Home). Weitere Informationen zu den ersten Schritten mit Machine Learning Studio finden Sie unter [Microsoft Azure Machine Learning Studio Home](https://studio.azureml.net/).
 
+>[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+
 Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgenden Schritte ausführen:
 
 1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
@@ -41,4 +43,4 @@ Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgende
 
 Diese Anleitung basiert auf einer vereinfachten Version des in Machine Learning Studio enthaltenen Artikels [Experiment zur Kreditrisiko-Vorhersage](../machine-learning-sample-credit-risk-prediction.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

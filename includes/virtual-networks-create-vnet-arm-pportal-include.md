@@ -35,4 +35,4 @@ Gehen Sie folgendermaßen vor, um mit dem Azure-Vorschauportal ein VNet basieren
 
 	![Liste der Subnetze im VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

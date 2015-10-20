@@ -332,4 +332,4 @@ Um weitere Informationen zu ILB-Cmdlets zu erhalten, führen Sie die folgenden B
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -36,4 +36,4 @@ Informationen zur Benennung von Freigaben, Verzeichnissen und Dateien finden Sie
 
 [files-concepts]: ./media/storage-file-concepts-include/files-concepts.png
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

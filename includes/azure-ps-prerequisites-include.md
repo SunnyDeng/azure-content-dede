@@ -3,4 +3,4 @@ Damit Sie die Schritte in diesem Artikel ausführen können, müssen Sie [Azure 
 
 > [AZURE.NOTE]Wenn Sie über kein Azure-Konto verfügen, müssen Sie eines erstellen. Sie können sich [hier](sign-up-organization.md) für eine kostenlose Testversion registrieren.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

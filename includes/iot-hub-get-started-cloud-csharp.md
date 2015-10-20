@@ -4,22 +4,24 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die eine neue Gerä
 
 1. Erstellen Sie in Visual Studio mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktopanwendungsprojekt. Nennen Sie das Projekt **CreateDeviceIdentity**.
 
-   	![][10]
+	![][10]
 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **NuGet-Pakete verwalten...**
 
-	Daraufhin wird das Fenster "NuGet-Pakete verwalten" angezeigt.
+	Das Fenster **NuGet-Paket-Manager** wird angezeigt.
 
-3. Suchen Sie nach `Microsoft Azure Devices`, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
+3. Stellen Sie sicher, dass die Option **Vorversion einschließen** aktiviert ist. Suchen Sie dann nach `Microsoft Azure Devices`, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
 
-	Daraufhin wird das [NuGet-Paket mit dem Dienst-SDK für Azure IoT] heruntergeladen, installiert und mit einem Verweis versehen.
+	![][11]
+
+4. Daraufhin wird das [NuGet-Paket mit dem Geräte-SDK für Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices/) heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
 
 4. Fügen Sie am Anfang der Datei **Program.cs** die folgenden `using`-Anweisungen hinzu:
 
 		using Microsoft.Azure.Devices;
         using Microsoft.Azure.Devices.Common.Exceptions;
 
-5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch den Namen des im vorherigen Abschnitt erstellten IoT Hubs und dessen Verbindungszeichenfolge.
+5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch den Namen des im vorherigen Abschnitt erstellten IoT Hubs und dessen Verbindungszeichenfolge:
 
 		static RegistryManager registryManager;
         static string connectionString = "{iothub connection string}";
@@ -53,12 +55,13 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die eine neue Gerä
 
     ![][12]
 
-> [AZURE.NOTE]Es sollte beachtet werden, dass die IoT Hub-Identitätsregistrierung nur zum Speichern von Geräteidentitäten für den sicheren Zugriff verwendet wird, also zum Speichern von Sicherheitsanmeldeinformationen und Aktivieren/Deaktivieren des Zugriffs einzelner Geräte. Metadaten der Geräteanwendung sollten in einem anwendungsspezifischen Speicher gespeichert werden. Weitere Informationen finden Sie im [Entwicklungsleitfaden für IoT Hub][IoT Hub Developer Guide - Identity Registry].
+> [AZURE.NOTE]Es sollte beachtet werden, dass die IoT Hub-Identitätsregistrierung nur zum Speichern von Geräteidentitäten für den sicheren Zugriff verwendet wird, also zum Speichern von Sicherheitsanmeldeinformationen und Aktivieren/Deaktivieren des Zugriffs einzelner Geräte. Metadaten der Geräteanwendung sollten in einem anwendungsspezifischen Speicher gespeichert werden. Weitere Informationen finden Sie im [IoT Hub-Entwicklerhandbuch][IoT Hub Developer Guide - Identity Registry].
 
 ## Empfangen von Gerät-zu-Cloud-Nachrichten
-In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die Gerät-zu-Cloud-Nachrichten von IoT Hub liest. IoT Hub macht einen [Event Hubs][Event Hubs Overview]-kompatiblen Endpunkt zum Lesen von Gerät-zu-Cloud-Nachrichten verfügbar. Der Einfachheit halber wird in diesem Lernprogramms ein vereinfachter Leser erstellt und verwendet, der für Bereitstellungen mit hohem Durchsatz nicht geeignet ist. Weitere Informationen zum Verarbeiten von IoT Hub-Gerät-zu-Cloud-Nachrichten finden Sie im Lernprogramm [Verarbeiten von Gerät-zu-Cloud-Nachrichten]. Weitere Informationen zum Verarbeiten von Nachrichten von Event Hubs finden Sie im Lernprogramm [Erste Schritte mit Event Hubs].
 
-1. Klicken Sie in der aktuellen Visual Studio-Projektmappe auf **Datei -> Hinzufügen -> Projekt**, um mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktop-App-Projekt zu erstellen. Nennen Sie das Projekt **ReadDeviceToCloudMessages**.
+In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die Gerät-zu-Cloud-Nachrichten von IoT Hub liest. IoT Hub macht einen mit [Event Hubs][Event Hubs Overview] kompatiblen Endpunkt zum Lesen von D2C-Nachrichten verfügbar. Der Einfachheit halber wird in diesem Lernprogramms ein vereinfachter Leser erstellt und verwendet, der für Bereitstellungen mit hohem Durchsatz nicht geeignet ist. Weitere Informationen zum Verarbeiten von IoT Hub-Gerät-zu-Cloud-Nachrichten finden Sie im Lernprogramm [Verarbeiten von Gerät-zu-Cloud-Nachrichten]. Weitere Informationen zum Verarbeiten von Nachrichten von Event Hubs finden Sie im Tutorial [Erste Schritte mit Event Hubs].
+
+1. Klicken Sie in der aktuellen Visual Studio-Projektmappe auf **Datei -> Hinzufügen -> Projekt**, um mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktopanwendungsprojekt zu erstellen. Nennen Sie das Projekt **ReadDeviceToCloudMessages**.
 
     ![][10]
 
@@ -72,10 +75,9 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die Gerät-zu-Cloud
 
 4. Fügen Sie am Anfang der Datei **Program.cs** die folgenden `using`-Anweisungen hinzu:
 
-        using Microsoft.Azure.Devices.Common;
         using Microsoft.ServiceBus.Messaging;
 
-5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch den Namen des im vorherigen Abschnitt erstellten IoT Hubs und dessen Verbindungszeichenfolge.
+5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch den Namen des im vorherigen Abschnitt erstellten IoT Hubs und dessen Verbindungszeichenfolge:
 
         static string connectionString = "{iothub connection string}";
         static string iotHubD2cEndpoint = "messages/events";
@@ -114,7 +116,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die Gerät-zu-Cloud
 
 <!-- Links -->
 
-[NuGet-Paket mit dem Dienst-SDK für Azure IoT]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
+[Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 
 [Erste Schritte mit Event Hubs]: event-hubs-csharp-ephcs-getstarted.md
 [IoT Hub Developer Guide - Identity Registry]: iot-hub-devguide.md#identityregistry
@@ -129,6 +131,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die Gerät-zu-Cloud
 
 <!-- Images -->
 [10]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp1.png
+[11]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp2.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

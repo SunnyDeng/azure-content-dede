@@ -41,7 +41,7 @@ Die Anwendung ist eine einfache "Hello World"-Anwendung:
 > [AZURE.NOTE]In diesem Lernprogramm wird Azure PowerShell verwendet, für die Windows installiert sein muss.
 
 - Installieren und konfigurieren Sie [Azure PowerShell](../install-configure-powershell.md).
-- Laden Sie das [Azure SDK für .NET 2.7](http://www.microsoft.com/DE-DE/download/details.aspx?id=48178) herunter, und installieren Sie es. Wählen Sie während der Installationseinrichtung Folgendes:
+- Laden Sie das [Azure SDK für .NET 2.7](http://www.microsoft.com/de-DE/download/details.aspx?id=48178) herunter, und installieren Sie es. Wählen Sie während der Installationseinrichtung Folgendes:
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator
 
@@ -197,4 +197,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/)
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

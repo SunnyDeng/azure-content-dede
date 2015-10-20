@@ -75,4 +75,4 @@ Ziel | Vorgehensweise | Ergebnis
 
 [qna]: app-insights-troubleshoot-faq.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->
