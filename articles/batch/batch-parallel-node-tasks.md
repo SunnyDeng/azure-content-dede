@@ -40,7 +40,7 @@ Die Konfiguration der Computeknoten in Ihrer Batch-Lösung für die parallele Au
 
 Die maximale Anzahl an Aufgaben pro Knoten in Azure Batch beträgt die bis zu vierfache (4x) Menge der Kerne pro Knoten. Ist für die Größe der Knoten im Pool beispielsweise „Groß“ (vier Kerne) konfiguriert, kann für `maxTasksPerNode` 16 festgelegt werden. Details zur Anzahl der Kerne für die einzelnen Knotengrößen finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md), und weitere Informationen zu Diensteinschränkungen finden Sie in [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md).
 
-> [AZURE.TIP]Berücksichtigen Sie unbedingt den `maxTasksPerNode`-Wert, wenn Sie für Ihren Pool eine [Formel für das automatische Skalieren][enable_autoscaling] erstellen. Beispielsweise könnte eine Formel zum Auswerten von `$RunningTasks` erheblich von einer Steigerung der Aufgaben pro Knoten betroffen sein. Weitere Informationen finden Sie unter [￼Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool￼](batch-automatic-scaling.md).
+> [AZURE.TIP]Berücksichtigen Sie unbedingt den `maxTasksPerNode`-Wert, wenn Sie für Ihren Pool eine [Formel für das automatische Skalieren][enable_autoscaling] erstellen. Beispielsweise könnte eine Formel zum Auswerten von `$RunningTasks` erheblich von einer Steigerung der Aufgaben pro Knoten betroffen sein. Weitere Informationen finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
 
 ## Verteilung von Aufgaben
 
@@ -127,4 +127,4 @@ Die zweite Ausführung des Beispiels zeigt eine deutliche Verkürzung der Aufgab
 
 [1]: ./media/batch-parallel-node-tasks\heat_map.png
 
-<!---HONumber=Oct15_HO1-->
+<!----HONumber=Oct15_HO1-->
