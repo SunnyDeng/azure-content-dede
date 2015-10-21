@@ -152,7 +152,7 @@ Aktivieren Sie den Parameter „disk.EnableUUID = TRUE“, um SCSI-IDs für die 
 
 HINWEIS: Vergewissern Sie sich vor dem Herunterladen und Installieren zusätzlicher Pakete, dass das System über eine Internetverbindung verfügt.
 
-#yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
+\#yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
 
 Der obige Befehl lädt die folgenden 15 Pakete aus dem CentOS 6.6-Repository herunter und installiert sie:
 
@@ -558,4 +558,4 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
 
  
 
-<!----HONumber=Oct15_HO2-->
+<!-----HONumber=Oct15_HO2-->
