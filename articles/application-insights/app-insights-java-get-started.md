@@ -352,7 +352,7 @@ Sie senden also Telemetriedaten vom Webserver. Um jetzt eine Rundum-Ansicht Ihre
 
 ## Erfassen von Protokollablaufverfolgungen
 
-Sie können Application Insights verwenden, um Protokolle aus Log4J, Logback oder anderen Frameworks zu segmentieren. Sie können die Protokolle mit HTTP-Anforderungen und anderer Telemetrie in Beziehung setzen. [Weitere Informationen][javalogs]￼.
+Sie können Application Insights verwenden, um Protokolle aus Log4J, Logback oder anderen Frameworks zu segmentieren. Sie können die Protokolle mit HTTP-Anforderungen und anderer Telemetrie in Beziehung setzen. [Weitere Informationen][javalogs].
 
 ## Senden eigener Telemetriedaten
 
