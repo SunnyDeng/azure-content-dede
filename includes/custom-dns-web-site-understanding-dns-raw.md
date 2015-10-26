@@ -50,4 +50,4 @@ Sie können die IP-Adresse sowie den **awverify**-Namen und die **.azurewebsites
 
 	![](./media/custom-dns-web-site/managecustomdomains.png)
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

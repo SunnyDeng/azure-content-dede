@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Traffic Manager – Routingmethoden für Datenverkehr | Microsoft Azure"
-	description="Diese Artikel erläutern Ihnen die verschiedenen Routingmethode für Datenverkehr, die von Traffic Manager verwendet werden"
-	services="traffic-manager"
-	documentationCenter=""
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   description="Diese Artikel erläutern Ihnen die verschiedenen Routingmethode für Datenverkehr, die von Traffic Manager verwendet werden"
+   services="traffic-manager"
+   documentationCenter=""
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Traffic Manager-Routingmethoden
 
@@ -137,4 +137,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

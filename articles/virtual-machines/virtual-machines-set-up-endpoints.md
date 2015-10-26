@@ -96,4 +96,4 @@ Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung ver
 
 [Lastenausgleich für Azure-Infrastrukturdienste](virtual-machines-load-balance.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

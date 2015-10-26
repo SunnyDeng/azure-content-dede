@@ -45,4 +45,4 @@ Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Daten
 - **ZRS**: Zonenredundanter Speicher Derzeit nur für Blockblobs verfügbar. 
 - **LRS**: Lokal redundanter Speicher 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

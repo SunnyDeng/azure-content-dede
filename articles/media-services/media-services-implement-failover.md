@@ -796,7 +796,7 @@ In diesem Abschnitt werden Sie ein C#-Konsolenanwendungsprojekt erstellen und ei
 		    sb.Append(", "AccessPolicyId" : "" + accessPolicyId + """);
 		    sb.Append(", "Type" : "" + locatorType + """);
 		    if (startTime != DateTime.MinValue)
-		        sb.Append(", "StartTime" : "" + startTime.ToString("G", CultureInfo.CreateSpecificCulture("DE-DE")) + """);
+		        sb.Append(", "StartTime" : "" + startTime.ToString("G", CultureInfo.CreateSpecificCulture("de-DE")) + """);
 		    if (!string.IsNullOrEmpty(locatorIdToReplicate))
 		        sb.Append(", "Id" : "" + locatorIdToReplicate + """);
 		    sb.Append("}");
@@ -960,4 +960,4 @@ In diesem Abschnitt werden Sie ein C#-Konsolenanwendungsprojekt erstellen und ei
 
 Sie können nun einen Traffic Manager zum Weiterleiten von Anforderungen zwischen den beiden Datencentern verwenden und auf diese Weise Failoverfunktionen bei Ausfällen bereitstellen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

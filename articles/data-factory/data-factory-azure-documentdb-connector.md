@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten in und aus DocumentDB | Azure Data Factory"
-	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure DocumentDB verschoben werden."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten in und aus DocumentDB | Azure Data Factory" 
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure DocumentDB verschoben werden." 
+	services="data-factory, documentdb" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="multiple" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/14/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus DocumentDB mithilfe von Azure Data Factory
@@ -399,6 +399,21 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 | writeBatchSize | Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten.<p>Sie können die Leistung beim Kopieren von Daten in/aus DocumentDB mithilfe dieser Eigenschaft optimieren. Sie können eine bessere Leistung erwarten, wenn Sie "writeBatchSize" heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Sie müssen jedoch eine Drosselung vermeiden, die zur Ausgabe einer Fehlermeldung führen kann: "Anforderungsrate ist hoch".</p><p>Die Drosselung hängt von einer Reihe von Faktoren ab, einschließlich Größe der Dokumente, Anzahl von Begriffen in Dokumenten, Indizierung der Richtlinie der Zielsammlung usw. Für Kopiervorgänge können Sie eine bessere Sammlung (z. B. S3) verwenden, um den höchsten verfügbaren Durchsatz zu erhalten (2.500 Anforderungseinheiten/Sekunde).</p> | Ganzzahlwert | Nein |
 | writeBatchTimeout | Die Wartezeit für den Abschluss des Vorgangs. | (Einheit = Zeitspanne) Beispiel: "00:30:00" (30 Minuten). | Nein |
  
- 
+## Anhang
+1. **Frage:** Unterstützt die Kopieraktivität das Aktualisieren von vorhandenen Datensätzen?
 
-<!---HONumber=August15_HO9-->
+	**Antwort:** Nein.
+
+2. **Frage:** Wie wird bei einer Wiederholung eines Kopiervorgangs nach "DocumentDB" mit bereits kopierten Datensätzen umgegangen?
+
+	**Antwort:** Wenn Datensätze über ein ID-Feld verfügen und beim Kopiervorgang versucht wird, einen Datensatz mit der gleichen ID einzufügen, löst der Kopiervorgang einen Fehler aus.
+ 
+3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung](https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
+
+	**Antwort:** Nein. 
+4. **Frage:** Können mehrere DocumentDB-Auflistungen für eine Tabelle angegeben werden?
+	
+	**Antwort:** Nein. Zurzeit kann nur eine Auflistung angegeben werden.
+     
+
+<!---HONumber=Oct15_HO3-->

@@ -10,4 +10,4 @@ Zu den Schlüsseleigenschaften eines VPN-Gateway zählen:
 - **Gateway-Typ** - dynamisch oder statisch weitergeleitetes Gateway. 
 - **Adresspool-Präfix des VPN-Client** – IP-Adressen, die den Clients mit Punkt-zu-Standort-Verbindung zuzuweisen sind.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

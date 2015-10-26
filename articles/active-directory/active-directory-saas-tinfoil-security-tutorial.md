@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Tinfoil Security erläuter
 -   Ein gültiges Azure-Abonnement
 -   Ein Tinfoil Security-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Tinfoil Security zugewiesen haben, mittels einmaliger Anmeldung auf der Tinfoil Security-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Tinfoil Security zugewiesen haben, mittels einmaliger Anmeldung auf der Tinfoil Security-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -53,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Tin
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Tinfoil Security zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Tinfoil Security müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Tinfoil Security zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Tinfoil Security müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -65,9 +65,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-tinfoil-security-tutorial/IC798968.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** des Textfeldes **Tinfoil Security-Antwort-URL** Ihre Tinfoil Security Assertion Consumer Service \(ACS\)-URL ein \(z. B.: "**https://www.tinfoilsecurity.com/saml/consume*", und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** des Textfeldes **Tinfoil Security-Antwort-URL** Ihre Tinfoil Security Assertion Consumer Service (ACS)-URL ein (z. B.: "**https://www.tinfoilsecurity.com/saml/consume*", und klicken Sie dann auf **Weiter**.
 
-    >[AZURE.NOTE]Sie sollten in der Lage sein, die ACS-URL aus den Tinfoil Security-Metadaten abzurufen \(https://www.tinfoilsecurity.com/saml/metadata).
+    >[AZURE.NOTE]Sie sollten in der Lage sein, die ACS-URL aus den Tinfoil Security-Metadaten abzurufen (https://www.tinfoilsecurity.com/saml/metadata).
 
     ![App-URL konfigurieren](./media/active-directory-saas-tinfoil-security-tutorial/IC798969.png "App-URL konfigurieren")
 
@@ -94,7 +94,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Tinfoil Security** den Wert der **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **SAML POST-URL** ein.
     4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **SAML-Zertifikatsfingerabdruck** ein.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) \(in englischer Sprache\).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache).
 
     5.  Kopieren Sie **Ihre Konto-ID**.
     6.  Klicken Sie auf **Speichern**.
@@ -148,4 +148,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

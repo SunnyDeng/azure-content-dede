@@ -93,4 +93,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 
 [Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

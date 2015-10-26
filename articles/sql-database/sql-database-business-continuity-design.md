@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="SQL-Datenbank-Entwurf für Geschäftskontinuität"
-	description="In diesem Abschnitt finden Sie Anleitungen für die Auswahl der Features für die Notfallwiederherstellung mit Geschäftskontinuität (BCDR). Dazu gehören Beschreibungen der Funktionen, die Sie automatisch durch Verwendung einer SQL-Datenbank erhalten."
-	services="sql-database"
-	documentationCenter=""
-	authors="elfisher"
-	manager="jeffreyg"
-	editor="monicar"/>
+   pageTitle="SQL-Datenbank-Entwurf für Geschäftskontinuität" 
+   description="In diesem Abschnitt finden Sie Anleitungen für die Auswahl der Features für die Notfallwiederherstellung mit Geschäftskontinuität (BCDR). Dazu gehören Beschreibungen der Funktionen, die Sie automatisch durch Verwendung einer SQL-Datenbank erhalten."
+   services="sql-database" 
+   documentationCenter="" 
+   authors="elfisher" 
+   manager="jeffreyg" 
+   editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-management"
-	ms.date="07/14/2015"
-	ms.author="elfish"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management" 
+   ms.date="07/14/2015"
+   ms.author="elfish"/>
 
 #Entwerfen für Geschäftskontinuität
 
@@ -102,4 +102,4 @@ Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschi
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

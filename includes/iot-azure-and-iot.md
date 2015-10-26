@@ -33,4 +33,4 @@ Mit vielen IoT-Lösungen können die Benutzer die auf den Geräten erfassten Dat
 [lnk-machinelearning]: http://azure.microsoft.com/services/machine-learning/
 [Azure IoT Suite]: http://azure.microsoft.com/solutions/iot
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

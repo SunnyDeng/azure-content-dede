@@ -26,4 +26,4 @@
 
 	![Erstellen einer Dropbox-App](./media/app-service-api-exchange-dropbox-settings/dbappsettings2.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

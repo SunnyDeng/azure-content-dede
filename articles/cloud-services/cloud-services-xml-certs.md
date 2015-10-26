@@ -70,4 +70,4 @@ Hier ist ein Beispiel eines in der Dienstkonfiguration definierten Zertifikats.
 ## Nächste Schritte
 Überprüfen Sie das [XML-Schema der Dienstdefinition](https://msdn.microsoft.com/library/azure/ee758711.aspx) und das [XML-Schema der Dienstkonfiguration](https://msdn.microsoft.com/library/azure/ee758710.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

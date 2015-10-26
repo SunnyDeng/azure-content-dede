@@ -53,7 +53,7 @@ Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Ve
 
 5. Klicken Sie mit der rechten Maustaste auf das Projekt **ProcessDeviceToCloudMessages**, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Klasse**. Geben Sie der neuen Klasse den Namen **StoreEventProcessor**, und klicken Sie auf **OK**, um die Klasse zu erstellen.
 
-6. Fügen Sie die folgenden Anweisungen am Anfang der Datei "SimpleEventProcessor.cs" hinzu:
+6. Fügen Sie die folgenden Anweisungen am Anfang der Datei "StoreEventProcessor.cs" hinzu:
 
         using System.IO;
         using System.Diagnostics;
@@ -96,7 +96,7 @@ Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Ve
 
             Task IEventProcessor.OpenAsync(PartitionContext context)
             {
-                Console.WriteLine("SimpleEventProcessor initialized.  Partition: '{0}', Offset: '{1}'", context.Lease.PartitionId, context.Lease.Offset);
+                Console.WriteLine("StoreEventProcessor initialized.  Partition: '{0}', Offset: '{1}'", context.Lease.PartitionId, context.Lease.Offset);
 
                 if (!long.TryParse(context.Lease.Offset, out currentBlockInitOffset))
                 {
@@ -126,7 +126,7 @@ Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Ve
                         WriteHighlightedMessage(string.Format("Received interactive message: {0}", messageId));
                         continue;
                     }
-                    
+
                     if (toAppend.Length + data.Length > MAX_BLOCK_SIZE || stopwatch.Elapsed > MAX_CHECKPOINT_TIME)
                     {
                         await AppendAndCheckpoint(context);
@@ -229,7 +229,7 @@ Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Ve
 > [AZURE.NOTE]In diesem Lernprogramm wird der Einfachheit halber eine einzelne Instanz von [EventProcessorHost] verwendet. Weitere Informationen zur Verarbeitung von D2C-Nachrichten finden Sie im [Programmierleitfaden für Event Hubs] und im Lernprogramm [Verarbeiten von D2C-Nachrichten].
 
 ## Empfangen von interaktiven Nachrichten
-In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nachrichten aus der Service Bus-Warteschlange empfängt. Weitere Informationen zum Aufbau einer Lösung mit Service Bus finden Sie unter [Erstellen von Anwendungen mit mehreren Ebenen mit Service Bus].
+In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nachrichten aus der Service Bus-Warteschlange empfängt. Weitere Informationen zum Aufbau einer Lösung mit Service Bus finden Sie im Artikel zum [Erstellen von Anwendungen mit mehreren Ebenen mit Service Bus][].
 
 1. Erstellen Sie in der aktuellen Visual Studio-Projektmappe mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktop-App-Projekt. Geben Sie dem Projekt den Namen **ProcessD2cInteractiveMessages**.
 
@@ -309,9 +309,11 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nac
 
 [Service Bus Queue]: ../service-bus/service-bus-dotnet-how-to-use-queues.md
 
+[Erstellen von Anwendungen mit mehreren Ebenen mit Service Bus]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+
 
 <!-- Images -->
-[10]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp1.png
+[10]: ./media/iot-hub-process-d2c-cloud-csharp/create-identity-csharp1.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png
 
 [20]: ./media/iot-hub-getstarted-cloud-csharp/create-storage1.png
@@ -322,4 +324,4 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nac
 [31]: ./media/iot-hub-process-d2c-cloud-csharp/createqueue3.png
 [32]: ./media/iot-hub-process-d2c-cloud-csharp/createqueue4.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -69,4 +69,4 @@ Nach dieser Übersicht über die Funktionsweise von Service Bus können Sie sich
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Eine Messaginglösung mit Warteschlange unter Verwendung von Service Bus-Warteschlangen](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

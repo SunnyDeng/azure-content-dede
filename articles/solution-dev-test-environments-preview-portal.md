@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/17/2015"
+   ms.date="10/08/2015"
    ms.author="jdial"/>
 
 # Entwicklungs- und Testumgebungen in Microsoft Azure
@@ -178,9 +178,9 @@ Alle Azure-Ressourcen müssen innerhalb einer [Azure-Ressourcengruppe](azure-por
 
   **Methode 2:** PowerShell
 
-  Stellen Sie sicher, dass PowerShell auf einem Windows-Computer installiert und mit Ihrem Abonnement verbunden ist, wie im Artikel [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) ausführlich beschrieben wird. Geben Sie an einer PowerShell-Eingabeaufforderung den folgenden Befehl ein, um die Ressourcengruppe für die Entwicklungsumgebung zu erstellen.
+  Stellen Sie sicher, dass PowerShell auf einem Windows-Computer installiert und mit Ihrem Abonnement verbunden ist, wie im Artikel [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) ausführlich beschrieben wird. Geben Sie an einer PowerShell-Eingabeaufforderung den folgenden Befehl ein, um die Ressourcengruppe für die Entwicklungsumgebung zu erstellen. Wenn Sie Azure PowerShell 1.0 Preview verwenden, ist der Befehl **New-AzureRmResourceGroup**, wie unten gezeigt. Wenn Sie eine niedrigere Version von Azure PowerShell als 1.0 Preview verwenden, ist der Befehl **New-AzureResourceGroup**.
 
-	New-AzureResourceGroup -Name TestApp1-Development -Location "Central US"
+	New-AzureRmResourceGroup -Name TestApp1-Development -Location "Central US"
 
   Bei Erfolg gibt der Befehl Folgendes zurück:
 
@@ -200,11 +200,11 @@ Alle Azure-Ressourcen müssen innerhalb einer [Azure-Ressourcengruppe](azure-por
 
   Um die Ressourcengruppe für die Testumgebung zu erstellen, geben Sie den folgenden Befehl ein:
 
-	New-AzureResourceGroup -Name TestApp1-Test -Location "Central US"
+	New-AzureRmResourceGroup -Name TestApp1-Test -Location "Central US"
 
   Um die Ressourcengruppe für die Präproduktionsumgebung zu erstellen, geben Sie den folgenden Befehl ein:
 
-	New-AzureResourceGroup -Name TestApp1-Pre-Production -Location "Central US"
+	New-AzureRmResourceGroup -Name TestApp1-Pre-Production -Location "Central US"
 
  **Schritt 6:** Stellen Sie den Ressourcengruppen für die einzelnen Umgebungen Azure-Ressourcen bereit. Verwenden Sie dazu die Vorlagendatei für die Anwendung und die Parameterdateien für die einzelnen Umgebungen anhand einer der folgenden Methoden. Mit beiden Methoden wird genau dasselbe Ergebnis erzielt.
 
@@ -256,9 +256,9 @@ Alle Azure-Ressourcen müssen innerhalb einer [Azure-Ressourcengruppe](azure-por
   
   **Methode 2:** PowerShell
 
-  Geben Sie an einer PowerShell-Eingabeaufforderung den folgenden Befehl ein, um der Ressourcengruppe, die Sie für die Entwicklungsumgebung erstellt haben, Ressourcen bereitzustellen. Ersetzen Sie dabei [path] durch den Pfad zu den Dateien, die Sie in den vorherigen Schritten gespeichert haben.
+  Geben Sie an einer PowerShell-Eingabeaufforderung den folgenden Befehl ein, um der Ressourcengruppe, die Sie für die Entwicklungsumgebung erstellt haben, Ressourcen bereitzustellen. Ersetzen Sie dabei [path] durch den Pfad zu den Dateien, die Sie in den vorherigen Schritten gespeichert haben. Wenn Sie Azure PowerShell 1.0 Preview verwenden, ist der Befehl **New-AzureRmResourceGroupDeployment**, wie unten gezeigt. Wenn Sie eine niedrigere Version von Azure PowerShell als 1.0 Preview verwenden, ist der Befehl **New-AzureResourceGroupDeployment**.
 
-	New-AzureResourceGroupDeployment -ResourceGroupName TestApp1-Development -TemplateFile [path]TestApp1-Template.json -TemplateParameterFile [path]TestApp1-Parameters-Development.json -Name Deployment1 
+	New-AzureRmResourceGroupDeployment -ResourceGroupName TestApp1-Development -TemplateFile [path]TestApp1-Template.json -TemplateParameterFile [path]TestApp1-Parameters-Development.json -Name Deployment1 
 
   Bei Erfolg gibt der Befehl Folgendes zurück:
 
@@ -292,11 +292,11 @@ Alle Azure-Ressourcen müssen innerhalb einer [Azure-Ressourcengruppe](azure-por
 
   Geben Sie an einer PowerShell-Eingabeaufforderung den folgenden Befehl ein, um der Ressourcengruppe, die Sie für die Testumgebung erstellt haben, Ressourcen bereitzustellen. Ersetzen Sie dabei [path] durch den Pfad zu den Dateien, die Sie in den vorherigen Schritten gespeichert haben.
 
-	New-AzureResourceGroupDeployment -ResourceGroupName TestApp1-Test -TemplateFile [path]TestApp1-Template.json -TemplateParameterFile [path]TestApp1-Parameters-Test.json -Name Deployment1
+	New-AzureRmResourceGroupDeployment -ResourceGroupName TestApp1-Test -TemplateFile [path]TestApp1-Template.json -TemplateParameterFile [path]TestApp1-Parameters-Test.json -Name Deployment1
 
   Geben Sie an einer PowerShell-Eingabeaufforderung den folgenden Befehl ein, um der Ressourcengruppe, die Sie für die Präproduktionsumgebung erstellt haben, Ressourcen bereitzustellen. Ersetzen Sie dabei [path] durch den Pfad zu den Dateien, die Sie in den vorherigen Schritten gespeichert haben.
 
-	New-AzureResourceGroupDeployment -ResourceGroupName TestApp1-Pre-Production -TemplateFile [path]TestApp1-Template.json -TemplateParameterFile [path]TestApp1-Parameters-Pre-Production.json -Name Deployment1
+	New-AzureRmResourceGroupDeployment -ResourceGroupName TestApp1-Pre-Production -TemplateFile [path]TestApp1-Template.json -TemplateParameterFile [path]TestApp1-Parameters-Pre-Production.json -Name Deployment1
 
 Die Vorlage und die Parameterdateien können mit Ihrem Anwendungscode in einem Quellcodeverwaltungssystem versioniert und verwaltet werden. Sie können die oben aufgeführten Befehle auch in Skriptdateien speichern und auch mit Ihrem Code ablegen.
 
@@ -346,9 +346,9 @@ Sobald eine Umgebung fertig ist, sollten Sie sie löschen, damit keine Nutzungsg
   
   **Methode 2:** PowerShell
 
-  Geben Sie an einer PowerShell-Eingabeaufforderung Folgendes ein:
+  Wenn Sie Azure PowerShell 1.0 Preview verwenden, ist der Befehl zum Löschen der Ressourcengruppe **Remove-AzureRmResourceGroup**, wie unten gezeigt. Wenn Sie eine niedrigere Version von Azure PowerShell als 1.0 Preview verwenden, ist der Befehl **Remove-AzureResourceGroup**. Geben Sie an einer PowerShell-Eingabeaufforderung Folgendes ein:
 
-	Remove-AzureResourceGroup -Name TestApp1-Development
+	Remove-AzureRmResourceGroup -Name TestApp1-Development
 
   Der Befehl gibt Folgendes zurück, wenn Sie nach Aufforderung "y" eingeben:
 
@@ -358,8 +358,8 @@ Sobald eine Umgebung fertig ist, sollten Sie sie löschen, damit keine Nutzungsg
 
   Geben Sie an einer PowerShell-Eingabeaufforderung Folgendes ein, um die verbleibenden Umgebungen zu löschen:
 
-	Remove-AzureResourceGroup -Name TestApp1-Test
-	Remove-AzureResourceGroup -Name TestApp1-Pre-Production
+	Remove-AzureRmResourceGroup -Name TestApp1-Test
+	Remove-AzureRmResourceGroup -Name TestApp1-Pre-Production
 
 Unabhängig von der verwendeten Methode sind die Ressourcengruppen und alle darin enthaltenen Ressourcen nach dem Ausführen der Befehle nicht länger vorhanden, sodass keine weiteren Kosten für die Ressourcen entstehen.
 
@@ -384,4 +384,4 @@ Jetzt wissen Sie, wie einfach es ist, Entwicklungs- und Testumgebungen zu erstel
 - Verwenden von [Release Management für Visual Studio](http://msdn.microsoft.com/Library/vs/alm/Release/overview) zum Erstellen verwalteter, kontinuierlicher Bereitstellungspipelines für schnelle, einfache und häufige Releases.
 - Anfordern einer Einladung für die Vorschau von [Azure Dev/Test Lab](http://azure.microsoft.com/campaigns/devtest-lab/). Damit können Sie Ihre Entwicklungs- und Testumgebungen mithilfe von Vorlagen verwalten und Kontingente und Richtlinien zur Verwendung in Ihrer Organisation konfigurieren.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

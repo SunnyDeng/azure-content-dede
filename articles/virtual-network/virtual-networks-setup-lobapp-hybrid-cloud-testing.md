@@ -19,7 +19,8 @@
 
 # Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Thema werden die Schritte zum Erstellen einer Hybrid Cloud-Umgebung zum Testen einer in Microsoft Azure gehosteten Intranetbranchenanwendung erläutert. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -37,7 +38,7 @@ Diese Konfiguration simuliert eine Branchenanwendung in einer Azure-Produktionsu
 Diese Konfiguration bietet eine Grundlage und einen allgemeinen Ausgangspunkt für Folgendes:
 
 - Entwickeln und Testen von Branchenanwendungen, die in Internetinformationsdienste (IIS) gehostet werden und über ein SQL Server 2014-Datenbank-Back-End in Azure verfügen.
-- Ausführen und Testen dieser Hybrid Cloud-basierten IT-Arbeitsauslastung.
+- Ausführen und Testen dieses Hybrid Cloud-basierten IT-Workloads.
 
 Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 
@@ -198,4 +199,4 @@ Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -50,7 +50,7 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 
 	![sendgrid-connection-info][sendgrid-connection-info]
 
-	Um Einstellungen für die Zustellung von E-Mails festzulegen, klicken Sie auf die Schaltfläche **Verwalten**. Daraufhin wird die Weboberfläche "Sendgrid.com" geöffnet. Dort können Sie sich anmelden und die SendGrid-Systemsteuerung öffnen.
+	Um Einstellungen für die Zustellung von E-Mails festzulegen, klicken Sie auf die Schaltfläche **Verwalten**. Hiermit werden Sie zur SendGrid-Systemsteuerung umgeleitet.
 
 	![sendgrid-control-panel][sendgrid-control-panel]
 
@@ -76,4 +76,4 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 [SendGrid-Bereitstellungsvorgang]: https://support.sendgrid.com/hc/articles/200181628-Why-is-my-account-being-provisioned-
 [sämtliche APIs]: https://sendgrid.com/docs/API_Reference/index.html
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

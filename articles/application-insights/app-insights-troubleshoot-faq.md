@@ -230,7 +230,7 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
 ## Weitere Antworten
 
-* [Application Insights-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-DE/home?forum=ApplicationInsights)
+* [Application Insights-Forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
 
 
 <!--Link references-->
@@ -238,9 +238,9 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 [azurediagnostic]: ../insights-how-to-use-diagnostics.md
 [data]: app-insights-data-retention-privacy.md
 [platforms]: app-insights-platforms.md
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
 [windows]: app-insights-windows-get-started.md
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

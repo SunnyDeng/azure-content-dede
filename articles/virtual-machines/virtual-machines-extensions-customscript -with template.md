@@ -19,19 +19,19 @@
 
 # Verwenden der benutzerdefinierten Skripterweiterung mit Azure-Ressourcen-Manager-Vorlagen
 
-Dieser Artikel bietet einen Überblick über das Schreiben von Azure-Ressourcen-Manager-Vorlagen mit der benutzerdefinierten Skripterweiterung zum Starten (Bootstrappen) von Arbeitsauslastungen auf einem virtuellen Linux- oder Windows-Computer.
+Dieser Artikel bietet einen Überblick über das Schreiben von Azure-Ressourcen-Manager-Vorlagen mit der benutzerdefinierten Skripterweiterung zum Starten (Bootstrappen) von Workloads auf einem virtuellen Linux- oder Windows-Computer.
 
 Eine Übersicht über die benutzerdefinierte Skripterweiterung finden Sie in dem Artikel [hier](virtual-machines-extensions-customscript.md).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie haben auch die Möglichkeit, eine Ressource mit dem [klassischen Bereitstellungsmodell](virtual-machines-extensions-customscript.md) zu erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-extensions-customscript.md).
 
-Seit der Einführung der benutzerdefinierten Skripterweiterung wird diese häufig verwendet, um Arbeitsauslastungen auf Windows und Linux-Computern zu konfigurieren. Seit der Einführung von Azure-Ressourcen-Manager-Vorlagen können Benutzer nun eine einzelne Vorlage erstellen, die nicht nur den virtuellen Computer bereitstellt, sondern auch die Arbeitsauslastung auf ihm konfiguriert.
+Seit der Einführung der benutzerdefinierten Skripterweiterung wird diese häufig verwendet, um Workloads auf Windows und Linux-Computern zu konfigurieren. Seit der Einführung von Azure-Ressourcen-Manager-Vorlagen können Benutzer nun eine einzelne Vorlage erstellen, die nicht nur den virtuellen Computer bereitstellt, sondern auch den Workload auf ihm konfiguriert.
 
 ## Übersicht über Azure-Ressourcen-Manager-Vorlagen
 
 Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, deklarativ die Azure IaaS-Infrastruktur in der Json-Sprache anzugeben, indem Sie die Abhängigkeiten zwischen Ressourcen definieren. Eine ausführliche Übersicht über Azure-Ressourcen-Manager-Vorlagen finden Sie in den folgenden Artikeln:
 
-<a href="https://azure.microsoft.com/DE-DE/documentation/articles/resource-group-overview/" target="_blank">Übersicht über Ressourcengruppen</a> <br/> <a href="https://azure.microsoft.com/DE-DE/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI</a> <br/> <a href="https://azure.microsoft.com/DE-DE/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und PowerShell</a>
+<a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/" target="_blank">Übersicht über Ressourcengruppen</a> <br/> <a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Bereitstellen von Vorlagen mit der Azure-Befehlszeilenschnittstelle</a> <br/> <a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Bereitstellen von Vorlagen mit Azure PowerShell</a>
 
 ### Voraussetzungen für das Ausführen der benutzerdefinierten Skripterweiterung
 
@@ -98,6 +98,6 @@ Nachdem Sie die Vorlage geschrieben haben, können Sie sie über die Azure-CLI o
 
 In den nachstehenden Beispielen finden Sie vollständige Beispiele zum Konfigurieren von Anwendungen auf einem virtuellen Computer mithilfe der benutzerdefinierten Skripterweiterung.
 
-<a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Linux-Computer</a> </br><a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer</a>
+<a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Linux-Computer</a> </br> <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer</a>
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

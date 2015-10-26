@@ -70,4 +70,4 @@ Wir sehen die genauen gewählten Parameter in einer Visualisierung des rechten A
 [sweep-parameters]: https://msdn.microsoft.com/library/azure/038d91b6-c2f2-42a1-9215-1f2c20ed1b40/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

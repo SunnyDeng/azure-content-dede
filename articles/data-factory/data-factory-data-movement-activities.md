@@ -13,11 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="10/12/2015" 
 	ms.author="spelluru"/>
 
 # Datenverschiebungsaktivitäten
 Data Factory weist einen [global verfügbaren Dienst](#global) auf, um Datenverschiebungen mit der [Kopieraktivität](#copyactivity) für eine Vielzahl der unten aufgeführten Datenspeicher zu unterstützen. Data Factory verfügt auch über integrierte Unterstützung für [das sichere Verschieben von Daten zwischen lokalen Speicherorten und der Cloud](#moveonpremtocloud) über ein Datenverwaltungsgateway.
+
+Ein kurzes Lernprogramm zur Verwendung der Kopieraktivität finden Sie unter [Lernprogramm: Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline](data-factory-get-started.md). In diesem Lernprogramm kopieren Sie mit der Kopieraktivität Daten aus einem Azure-Blob-Speicher in eine Azure SQL-Datenbank. Im folgenden Abschnitt werden alle Quellen und Senken aufgeführt, die von der Kopieraktivität unterstützt werden.
+
 
 ## Unterstützte Datenspeicher für die Kopieraktivität
 Die Kopieraktivität kopiert die Daten von einem **Quelldatenspeicher** in einen Zieldatenspeicher (**Senke**). Data Factory unterstützt die folgenden Datenspeicher und Kombinationen aus Quelle und Senke. Klicken Sie auf einen Datenspeicher, um zu erfahren, wie Daten in den/aus dem Speicher kopiert werden.
@@ -90,12 +93,12 @@ Sie finden die Zuordnung für ein bestimmtes systemeigenes Typsystem zu .NET fü
 Für dateibasierte Quellen unterstützt die Kopieraktivität verschiedener Dateiformate, einschließlich Binär-, Text- und Avro-Formate. Sie können mit der Kopieraktivität von einem Format in ein anderes konvertieren. Beispiel: Text (CSV) in Avro.
 
 ### Eigenschaften der Kopieraktivität
-Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar. Eigenschaften im Abschnitt **TypeProperties** der Aktivität können dagegen je nach Aktivitätstyp variieren.
+Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar. Eigenschaften im Abschnitt **typeProperties** der Aktivität können dagegen je nach Aktivitätstyp variieren.
 
-Bei der Kopieraktivität hängt der Abschnitt **TypeProperties** von den Typen der Quellen und Senken ab. Auf jeder der oben genannten Seiten für Datenspeicher sind diese Eigenschaften für den jeweiligen Datenspeichertyp dokumentiert.
+Bei der Kopieraktivität hängt der Abschnitt **typeProperties** von den Typen der Quellen und Senken ab. Auf jeder der oben genannten Seiten für Datenspeicher sind diese Eigenschaften für den jeweiligen Datenspeichertyp dokumentiert.
 
 
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-movement-activities.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

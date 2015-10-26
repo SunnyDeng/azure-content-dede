@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/06/2015" 
+	ms.date="10/09/2015" 
 	ms.author="sdanie"/>
 
 # Überwachen von Azure Redis Cache
@@ -143,6 +143,33 @@ Wenn Sie die Metriken für einen bestimmten Zeitraum in einem Diagramm anzeigen 
 
 ![Anzeigen von Diagrammdetails][redis-cache-view-chart-details]
 
+## Überwachen eines Premium-Caches mithilfe des Clusterings
+
+Premium-Caches, für die [Clustering](cache-how-to-premium-clustering.md) aktiviert ist, lassen bis zu 10 Shards zu. Jeder Shard hat eine eigene Metriken, und diese Metriken werden aggregiert, um Metriken für den Cache als Ganzes zu bieten. Jede Metrik umfasst zwei Versionen. Eine Metrik misst die Leistung des gesamten Caches. Eine zweite Version der Metrik, deren Name `(Shard 0-9)` enthält, misst die Leistung eines einzelnen Shards in einem Cache. Wenn z. B. ein Cache 3 Shards enthält, ist `Cache Hits` die Gesamtmenge der Treffer im gesamten Cache, und `Cache Hits (Shard 2)` gibt lediglich die Treffer für den jeweiligen Shard des Caches an.
+
+In jedem Überwachungsdiagramm werden die Metriken auf oberster Ebene für den Cache sowie die Metriken für jeden Shard im Cache angezeigt.
+
+![Überwachen][redis-cache-premium-monitor]
+
+Bei Bewegen der Maus über die Datenpunkte werden die Details für den jeweiligen Zeitpunkt angezeigt.
+
+![Überwachen][redis-cache-premium-point-summary]
+
+Größere Werte sind in der Regel die Aggregatwerte für den Cache, während die kleineren Werte die einzelnen Metriken für den Shard darstellen. Beachten Sie, dass es bei diesem Beispiel drei Shards gibt und dass die Cachetreffer gleichmäßig auf die Shards verteilt sind.
+
+![Überwachen][redis-cache-premium-point-shard]
+
+Zum Anzeigen weiterer Details klicken Sie auf das Diagramm, um auf dem Blatt **Metrik** eine erweiterte Ansicht einzublenden.
+
+![Überwachen][redis-cache-premium-chart-detail]
+
+Standardmäßig zeigt jedes Diagramm den Cacheleistungsindikator der obersten Ebene sowie die Leistungsindikatoren für die einzelnen Shards. Sie können diese auf dem Blatt **Diagramm bearbeiten** anpassen.
+
+![Überwachen][redis-cache-premium-edit]
+
+Weitere Informationen zu den verfügbaren Leistungsindikatoren finden Sie unter [Verfügbare Metriken und Berichtsintervalle](#available-metrics-and-reporting-intervals).
+
+
 ## Vorgänge und Warnungen
 
 Der Abschnitt **Vorgänge** enthält die Abschnitte **Ereignisse** und **Warnungsregeln**.
@@ -222,4 +249,14 @@ Weitere Informationen zu Warnungen in Azure finden Sie unter [Empfangen von Warn
 
 [redis-cache-add-alert]: ./media/cache-how-to-monitor/redis-cache-add-alert.png
 
-<!---HONumber=Oct15_HO2-->
+[redis-cache-premium-monitor]: ./media/cache-how-to-monitor/redis-cache-premium-monitor.png
+
+[redis-cache-premium-edit]: ./media/cache-how-to-monitor/redis-cache-premium-edit.png
+
+[redis-cache-premium-chart-detail]: ./media/cache-how-to-monitor/redis-cache-premium-chart-detail.png
+
+[redis-cache-premium-point-summary]: ./media/cache-how-to-monitor/redis-cache-premium-point-summary.png
+
+[redis-cache-premium-point-shard]: ./media/cache-how-to-monitor/redis-cache-premium-point-shard.png
+
+<!---HONumber=Oct15_HO3-->

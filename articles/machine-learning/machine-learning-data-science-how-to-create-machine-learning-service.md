@@ -2,8 +2,11 @@
 	pageTitle="Erstellen von erweiterten Analyselösungen in Azure | Microsoft Azure" 
 	description="Verwenden Sie diesen Leitfaden, um die Schritte für die Verwendung von Azure für die Datenwissenschaft und Machine Learning in der Cloud zu verstehen." 
 	services="machine-learning,hdinsight" 
+	solutions="" 
 	documentationCenter="" 
 	authors="bradsev" 
+	videoId="" 
+	scriptId="" 
 	manager="paulettm" />
 
 <tags 
@@ -26,4 +29,4 @@ Der Schritt mit der Bezeichnung **Erweiterte Datenverarbeitung in Azure** ist ei
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/machine-learning-how-to-create-ml-service.svg" width="100%" height="100%"> </object>
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

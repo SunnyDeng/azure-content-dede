@@ -5,7 +5,7 @@
 	documentationCenter="mobile"
 	authors="MehrdadMzfr"
 	manager="dwrede"
-	editor=""/>
+	editor="" />
 
 <tags
 	ms.service="mobile-engagement"
@@ -14,9 +14,16 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="08/05/2015"
-	ms.author="MehrdadMzfr"/>
+	ms.author="MehrdadMzfr" />
 
 #Versionshinweise
+
+##3\.2.0 (08.10.2015)
+
+-   Bitcode im SDK aktiviert, um die Verwendung mit **Xcode 7** zu ermöglichen.
+-   Fehler im Zusammenhang mit In-App-Benachrichtigungen behoben.
+-   Die Zuverlässigkeit von In-App-Benachrichtigungen bei niedriger Akkukapazität und in ähnlichen Szenarien verbessert.
+-   Zusätzliche Konsolenprotokolle entfernt, die von Drittanbieterbibliothek generiert werden.
 
 ##3\.1.0 (26.08.2015)
 
@@ -47,4 +54,4 @@
 -   Verbesserungen der Sicherheit.
 -   SmartAd-Verfolgung entfernt.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

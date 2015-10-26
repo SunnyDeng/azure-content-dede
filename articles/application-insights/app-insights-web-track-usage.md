@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Verwendungsanalyse für Webanwendungen mit Application Insights"
-	description="Übersicht über die Verwendungsanalyse mit Application Insights"
-	services="application-insights"
-	documentationCenter=""
-	authors="alancameronwills"
+	pageTitle="Verwendungsanalyse für Webanwendungen mit Application Insights" 
+	description="Übersicht über die Verwendungsanalyse mit Application Insights" 
+	services="application-insights" 
+    documentationCenter=""
+	authors="alancameronwills" 
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="awills"/>
  
 # Verwendungsanalyse für Webanwendungen mit Application Insights
@@ -391,4 +391,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

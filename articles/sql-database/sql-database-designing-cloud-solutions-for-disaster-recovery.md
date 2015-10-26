@@ -3,7 +3,7 @@
    description="Erfahren Sie, wie Sie durch Wahl des richtigen Failovermusters Ihre Cloud-Lösung für die Notfallwiederherstellung entwerfen können."
    services="sql-database"
    documentationCenter="" 
-   authors="sashan" 
+   authors="anosov1960" 
    manager="jeffreyg" 
    editor="monicar"/>
 
@@ -85,8 +85,7 @@ Traffic Manager muss für das Leistungsrouting so konfiguriert werden, dass die 
 Wenn in der primären Region ein Datenbankausfall erkannt wird, lösen Sie das Failover der primären Datenbanken in eine der sekundären Regionen aus, wodurch sich der Standort der primären Datenbank ändert. Traffic Manager schließt automatisch den Endpunkt im Offlinestatus aus der Routingtabelle aus, setzt aber das Routing des Endbenutzerdatenverkehrs an die verbleibenden Online-Instanzen fort. Da sich die primäre Datenbank nun in einer anderen Region befindet, muss bei allen Online-Instanzen die SQL-Verbindungszeichenfolge für den Lese-/Schreibzugriff so geändert werden, dass eine Verbindung mit der neuen primären Datenbank hergestellt wird. Wichtig ist, dass Sie diese Änderung vor dem Auslösen des Datenbankfailovers vornehmen. Schreibgeschützte SQL-Verbindungszeichenfolgen müssen unverändert bleiben, da sie stets auf die Datenbank in derselben Region zeigen. Die Failoverschritte sind wie folgt:
 
 1. Ändern der SQL-Verbindungszeichenfolgen für den Lese-/ Schreibzugriff dergestalt, dass sie auf die neue primäre Datenbank zeigen
-2. Aufrufen der vorgesehenen sekundären Datenbank zum Auslösen des Datenbankfailovers (https://msdn.microsoft.com/
-3. /library/azure/dn509573.aspx) 
+2. Aufrufen der vorgesehenen sekundären Datenbank zum [Auslösen des Datenbankfailovers](https://msdn.microsoft.com/library/azure/dn509573.aspx) 
 
 Das folgende Diagramm veranschaulicht die neue Konfiguration nach dem Failover. ![Abbildung 5](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-2.png)
 
@@ -148,4 +147,4 @@ Für Ihre spezifische Strategie für die Notfallwiederherstellung können diese 
 | Aktiv-/Aktiv-Bereitstellung für den Anwendungslastenausgleich | Lese-/Schreibzugriff < 5 Sek. | Ausfallerkennungszeit + Aufruf der Failover-API + Änderung der SQL-Verbindungszeichenfolge + Anwendungsüberprüfungstest
 | Aktiv-/Passiv-Bereitstellung für die Beibehaltung von Daten | Schreibgeschützter Zugriff < 5 Sek. Lese-/ Schreibzugriff = 0 (null) | Schreibgeschützter Zugriff = Erkennungszeit für Verbindungsausfall + Anwendungsüberprüfungstest <br>Lese-/Schreibzugriff = Zeit zum Beseitigen der Ausfallursache 
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

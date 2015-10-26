@@ -314,4 +314,4 @@ Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit d
 [Abrufen eines Medienprozessors]: media-services-get-media-processor.md
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

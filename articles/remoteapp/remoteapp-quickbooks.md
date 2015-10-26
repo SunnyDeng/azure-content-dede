@@ -44,4 +44,4 @@ Sie können sich auch meine Ignite-Präsentation mit dem Titel [Fundamentals of 
 
 ![QuickBooks- und Azure RemoteApp-Bereitstellung](./media/remoteapp-quickbooks/ra-quickbooks.png)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

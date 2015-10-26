@@ -1,3 +1,3 @@
 Wenn Sie einen Microsoft Azure Traffic Manager für den Lastenausgleich des Datenverkehrs zu Ihrer Azure-Website verwenden, kann auf die Website mit dem durch Azure zugewiesenen Domänennamen ***.trafficmanager.net** zugegriffen werden. Sie können auch einen benutzerdefinierten Domänennamen wie www.contoso.com mit Ihrer Website verknüpfen, um Ihren Benutzern einen einprägsameren Domänennamen zur Verfügung zu stellen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

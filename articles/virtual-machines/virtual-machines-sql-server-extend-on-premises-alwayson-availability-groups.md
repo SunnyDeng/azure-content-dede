@@ -19,9 +19,10 @@
 
 # Erweitern von lokalen AlwaysOn-Verfügbarkeitsgruppen auf Azure
 
-AlwaysOn-Verfügbarkeitsgruppen bieten hohe Verfügbarkeit für Datenbankgruppen durch Hinzufügen sekundärer Replikate. Diese Replikate ermöglichen den Failover von Datenbanken bei Ausfällen. Darüber hinaus können Sie für das Auslagern von Lesearbeitslasten oder Sicherungsaufgaben verwendet werden.
+AlwaysOn-Verfügbarkeitsgruppen bieten hohe Verfügbarkeit für Datenbankgruppen durch Hinzufügen sekundärer Replikate. Diese Replikate ermöglichen den Failover von Datenbanken bei Ausfällen. Darüber hinaus können Sie für das Auslagern von Leseworkloads oder Sicherungsaufgaben verwendet werden.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Sie können lokale Verfügbarkeitsgruppen nach Microsoft Azure erweitern, indem Sie eine oder mehrere Azure-VMs mit SQL Server bereitstellen und diese dann Ihren lokalen Verfügbarkeitsgruppen als Replikate hinzufügen.
 
@@ -65,7 +66,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den **Assistenten zum Hinzufügen von 
 |**VM-Benutzername**|Geben Sie einen Benutzernamen für das Administratorkonto auf dem virtuellen Computer ein|
 |**VM-Administratorkennwort**|Geben Sie ein Kennwort für das neue Konto an|
 |**Kennwort bestätigen**|Bestätigen Sie das Kennwort für das neue Konto|
-|**Virtuelles Netzwerk**|Geben Sie das virtuelle Azure-Netzwerk an, das die neue VM verwenden soll. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Netzwerke](..\virtual-network\virtual-networks-overview.md).|
+|**Virtuelles Netzwerk**|Geben Sie das virtuelle Azure-Netzwerk an, das die neue VM verwenden soll. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Übersicht über virtuelle Netzwerke](..\virtual-network\virtual-networks-overview.md).|
 |**Subnetz des virtuellen Netzwerks**|Geben Sie das Subnetz des virtuellen Netzwerks an, das die neue VM verwenden soll|
 |**Domäne**|Bestätigen Sie, dass der voreingestellte Wert für die Domäne zutreffend ist|
 |**Domänenbenutzername**|Geben Sie ein Konto an, das sich in der lokalen Administratorgruppe auf dem lokalen Clusterknoten befindet|
@@ -99,8 +100,8 @@ Nach dem Erstellen der Verfügbarkeitsgruppe sollten Sie einen Listener für Cli
 
 ## Nächste Schritte
 
-Über die Verwendung des **Assistenten zum Hinzufügen von Azure-Replikaten** zum Erweitern Ihrer AlwaysOn-Verfügbarkeitsgruppe in Azure hinaus können Sie auch einen Teil Ihrer SQL Server-Arbeitslasten vollständig nach Azure auslagern. Informationen zum Einstieg finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
+Über die Verwendung des **Assistenten zum Hinzufügen von Azure-Replikaten** zum Erweitern Ihrer AlwaysOn-Verfügbarkeitsgruppe in Azure hinaus können Sie auch einen Teil Ihrer SQL Server-Workloads vollständig nach Azure auslagern. Informationen zum Einstieg finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

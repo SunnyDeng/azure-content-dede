@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/08/2015"
    ms.author="barbkess;twounder;JRJ@BigBangData.co.uk;"/>
 
 
@@ -68,6 +68,8 @@ SQL Data Warehouse wird problemlos in wenigen Sekunden bereitgestellt. Dieser Di
 ## Nächste Schritte
 Erfahren Sie mehr über die [Data Warehouse-Workload]. [Beispieldaten] [bereitstellen] und laden, um loszulegen.
 
+>[AZURE.NOTE]Wir möchten diesen Artikel verbessern. Wenn Sie auf die Frage „War dieser Artikel hilfreich?“ mit „Nein“ antworten, bitten wir Sie, einen kurzen Vorschlag dazu einzufügen, was fehlt oder wie der Artikel zu verbessern ist. Vielen Dank im Voraus!
+
 <!--Image references-->
 
 <!--Article references-->
@@ -79,4 +81,4 @@ Erfahren Sie mehr über die [Data Warehouse-Workload]. [Beispieldaten] [bereitst
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

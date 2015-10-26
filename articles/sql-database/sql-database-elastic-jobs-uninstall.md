@@ -64,4 +64,4 @@ Weitere Informationen zu Aufträgen für die elastische Datenbank finden Sie unt
 [1]: ./media/sql-database-elastic-job-uninstall/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

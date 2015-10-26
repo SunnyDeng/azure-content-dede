@@ -6,4 +6,4 @@
 
 Sie können die Aktualisierung weicher Grenzwerte anfordern, indem Sie ein Supportticket öffnen.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

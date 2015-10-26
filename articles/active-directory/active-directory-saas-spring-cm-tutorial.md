@@ -67,7 +67,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **SpringCM-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei SpringCM verwenden, und klicken Sie dann auf **Weiter**.
 
-    Bei der App-URL handelt es sich um die URL Ihres SpringCM-Mandanten \(z. B. **https://na11.springcm.com/atlas/SSO/SSOEndpoint.ashx?aid=16826*):
+    Bei der App-URL handelt es sich um die URL Ihres SpringCM-Mandanten (z. B. **https://na11.springcm.com/atlas/SSO/SSOEndpoint.ashx?aid=16826*):
 
     ![App-URL konfigurieren](./media/active-directory-saas-spring-cm-tutorial/IC797049.png "App-URL konfigurieren")
 
@@ -87,7 +87,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     1.  Zum Hochladen Ihres heruntergeladenen Azure Active Directory-Zertifikats hochzuladen, klicken Sie auf **Ausstellerzertifikat auswählen** oder auf **Ausstellerzertifikat ändern**.
     2.  Kopieren Sie im Microsoft Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für SpringCM** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Aussteller** ein.
-    3.  Kopieren Sie im Microsoft Azure-Portal auf der Seite **Einmaliges Anmelden konfigurieren für SpringCM ** den Wert der **SSO-Dienst-URL**, und fügen Sie ihn in das Textfeld **Vom Dienstanbieter \(SP\) initiierter Endpoint** ein.
+    3.  Kopieren Sie im Microsoft Azure-Portal auf der Seite **Einmaliges Anmelden konfigurieren für SpringCM ** den Wert der **SSO-Dienst-URL**, und fügen Sie ihn in das Textfeld **Vom Dienstanbieter (SP) initiierter Endpoint** ein.
     4.  Wählen Sie für **SAML aktiviert** die Option **Aktivieren**.
     5.  Klicken Sie auf **Speichern**.
 
@@ -141,4 +141,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

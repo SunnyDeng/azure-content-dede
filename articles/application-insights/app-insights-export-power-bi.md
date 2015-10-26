@@ -36,7 +36,7 @@ Noam Ben Zeev zeigt, was in diesem Artikel beschrieben wird.
 
 ## Überwachen Ihrer App mit Application Insights
 
-Wenn Sie es noch nicht ausprobiert haben, ist jetzt der richtige Zeitpunkt, um zu beginnen. Mit Application Insights können alle Geräte- oder Web-Apps auf einer Vielzahl von Plattformen überwacht werden, einschließlich Windows, iOS, Android, J2EE und weiteren. [Erste Schritte](app-insights-get-started.md)
+Wenn Sie es noch nicht ausprobiert haben, ist jetzt der richtige Zeitpunkt, um zu beginnen. Mit Application Insights können alle Geräte- oder Web-Apps auf einer Vielzahl von Plattformen überwacht werden, einschließlich Windows, iOS, Android, J2EE und weiteren. [Erste Schritte](app-insights-overview.md)
 
 ## Erstellen von Speicher in Azure
 
@@ -239,4 +239,4 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 * [Application Insights](app-insights-overview.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

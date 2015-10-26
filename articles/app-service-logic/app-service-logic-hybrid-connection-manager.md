@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden des Hybrid Connection Managers | Microsoft Azure App Service"
-	description="Installieren und Konfigurieren des Hybrid Connection Managers und Herstellen von Verbindungen mit lokalen Connectors in Azure App Service"
-	services="app-service\logic"
+	pageTitle="Verwenden des Hybrid Connection Managers | Microsoft Azure App Service" 
+	description="Installieren und Konfigurieren des Hybrid Connection Managers und Herstellen von Verbindungen mit lokalen Connectors in Azure App Service" 
+	services="app-service\logic" 
 	documentationCenter=".net,nodejs,java"
-	authors="MandiOhlinger"
-	manager="dwrede"
+	authors="MandiOhlinger" 
+	manager="dwrede" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="app-service-logic"
-	ms.workload="integration"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/23/2015"
+	ms.service="app-service-logic" 
+	ms.workload="integration" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/23/2015" 
 	ms.author="mandia"/>
 
 # Verbinden eines lokalen Connectors in Azure App Service mithilfe des Hybrid Connection Managers
@@ -133,4 +133,4 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

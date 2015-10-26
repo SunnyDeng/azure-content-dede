@@ -28,6 +28,9 @@ AzCopy ist ein Befehlszeilenprogramm, das zum leistungsstarken Hochladen, Herunt
 > 
 > Beachten Sie, dass sich bei AzCopy 4.x die Befehlszeilenoptionen und ihre Funktionen möglicherweise in zukünftigen Versionen ändern können.
 
+
+Wir haben außerdem eine Open-Source-Bibliothek basierend auf dem Kernframework für die Datenverschiebung veröffentlicht, das Grundlage von AzCopy ist. Weitere Einzelheiten finden Sie unter [Introducing Azure Storage Data Movement Library Preview](https://azure.microsoft.com/de-DE/blog/introducing-azure-storage-data-movement-library-preview-2/).
+
 ## Herunterladen und Installieren von AzCopy
 
 1. Laden Sie die [neueste Version von AzCopy](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter.
@@ -232,15 +235,15 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
   </tr>
   <tr>
     <td><b>/XN</b></td>
-    <td>Schließt eine neuere Quellressource aus. Die Ressource wird nicht kopiert, wenn die Quelle neuer ist als das Ziel.</td>
-    <td>Y</td>
+    <td>Schließt eine neuere Quellressource aus. Die Ressource wird nicht kopiert, wenn der Zeitpunkt der letzten Änderung der Quelle mit dem Ziel identisch oder neuer ist.</td>
+    <td>J</td>
     <td>J<br /> (nur Vorschau)</td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/XO</b></td>
-    <td>Schließt eine ältere Quellressource aus. Die Ressource wird nicht kopiert, wenn die Quellressource älter ist als das Ziel.</td>
-    <td>Y</td>
+    <td>Schließt eine ältere Quellressource aus. Die Ressource wird nicht kopiert, wenn der Zeitpunkt der letzten Änderung der Quelle mit dem Ziel identisch oder älter ist.</td>
+    <td>J</td>
     <td>J<br /> (nur Vorschau)</td>
     <td>N</td>
   </tr>
@@ -737,11 +740,11 @@ Wenn Sie nach der Option `/V` einen relativen Pfad angeben, z. B. `/V:test/azco
 
 Geben Sie die Option `/MT` an, um die Uhrzeit der letzten Änderung des Quellblobs mit der Zieldatei zu vergleichen.
 
-**Ausschließen von Blobs, die neuer sind als die Zieldatei**
+**Ausschließen von Blobs, deren Zeitpunkt der letzten Änderung mit der Zieldatei identisch oder neuer ist**
 
 	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XN
 
-**Ausschließen von Blobs, die älter sind als die Zieldatei**
+**Ausschließen von Blobs, deren Zeitpunkt der letzten Änderung mit der Zieldatei identisch oder älter ist**
 
 	AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XO
 
@@ -822,7 +825,7 @@ Asynchrones Kopieren aus einem Dateispeicher in ein Seitenblob wird nicht unters
 
 ### Synchrones Kopieren von Dateien in den Azure-Dateispeicher
 
-Außer dem asynchronen Kopieren kann ein Benutzer auch die Option `/SyncCopy` angeben, um Daten synchron aus einem Dateispeicher in einen Dateispeicher, aus einem Dateispeicher in einen Blob-Speicher oder aus einem Blob-Speicher in einen Dateispeicher zu kopieren. AzCopy lädt dazu die Quelldaten in den lokalen Arbeitsspeicher herunter und lädt diese Daten dann in das Ziel hoch.
+Außer dem asynchronen Kopieren kann ein Benutzer auch die Option `/SyncCopy` angeben, um Daten synchron aus einem Dateispeicher in einen Dateispeicher, aus einem Dateispeicher in einen Blob-Speicher oder aus einem Blobspeicher in einen Dateispeicher zu kopieren. AzCopy lädt dazu die Quelldaten in den lokalen Arbeitsspeicher herunter und lädt diese Daten dann in das Ziel hoch.
 
 	AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare1/ /Dest:https://myaccount2.file.core.windows.net/myfileshare2/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
 
@@ -830,7 +833,7 @@ Außer dem asynchronen Kopieren kann ein Benutzer auch die Option `/SyncCopy` an
 	
 	AzCopy /Source:https://myaccount1.blob.core.windows.net/mycontainer/ /Dest:https://myaccount2.file.core.windows.net/myfileshare/ /SourceKey:key1 /DestKey:key2 /S /SyncCopy
 
-Der Standard-Blob-Typ beim Kopieren aus einem Dateispeicher in einen Blob-Speicher ist Blockblob. Benutzer können die Option `/BlobType:page` angeben, um den Ziel-Blob-Typ zu ändern.
+Der Standardblobtyp beim Kopieren aus File Storage in einen Blob Storage ist Blockblob. Benutzer können die Option `/BlobType:page` angeben, um den Zielblobtyp zu ändern.
 
 Hinweis: Anders als beim asynchronen Kopieren kann es bei der Verwendung von `/SyncCopy` zu Zusatzkosten für den ausgehenden Datenverkehr kommen. Um dies zu vermeiden, sollten Sie diese Option in dem virtuellen Azure-Computer verwenden, der sich in derselben Region wie das Quellspeicherkonto befindet.
 
@@ -931,23 +934,25 @@ Auf einem Windows-Computer ist der FIPS-konforme Algorithmus standardmäßig dea
 
 ## AzCopy-Versionen
 
-| Version | Neuerungen |
-|---------|-----------------------------------------------------------------------------------------------------------------|
-| **V4.2.0** | **Aktuelle Vorschauversion. Enthält die gesamte Funktionalität von V3.2.0. Unterstützt auch SAS für Dateispeicherfreigaben, asynchrones Kopieren von Dateispeicher, Exportieren von Tabellenentitäten in CSV und Angeben von Manifestnamen, wenn Tabellenentitäten exportiert werden.**
-| **V3.2.0** | **Aktuelle Vorabversion. Unterstützt Anfügeblobs und FIPS-kompatible MD5-Einstellung.**
-| V4.1.0 | Enthält die gesamte Funktionalität von V3.1.0. Unterstützt zudem das synchrone Kopieren von Blobs und Dateien und das Angeben des Inhaltstyps von Ziel-Blobs und -dateien.
-| V3.1.0 | Unterstützt das synchrone Kopieren von Blobs und das Angeben des Inhaltstyps von Ziel-Blobs.
-| V4.0.0 | Enthält alle Funktionalitäten von V3.0.0. Unterstützt zudem das Kopieren zum oder aus dem Azure-Dateispeicher und das Kopieren von Entitäten zum oder aus dem Azure-Tabellenspeicher.
-| V3.0.0 | Ändert die AzCopy-Befehlszeilensyntax dahingehend, dass Parameternamen erforderlich sind, und überarbeitet die Befehlszeilenhilfe. Diese Version unterstützt ausschließlich das Kopieren zum und aus dem Azure-Blob-Speicher.	
-| V2.5.1 | Optimiert die Leistung bei der Verwendung der Optionen /xo und /xn. Behebt Fehler, die mit Fehlern in Bezug auf Sonderzeichen in Quelldateinamen und Journaldateien in Zusammenhang stehen, nachdem der Benutzer eine falsche Befehlszeilensyntax eingegeben hat.	
-| V2.5.0 | Optimiert die Leistung für umfangreiche Kopierszenarien und führt verschiedene wichtige Verbesserungen für Benutzerfunktionen ein.
-| V2.4.1 | Unterstützt die Angabe des Zielordners im Installations-Assistenten.                     			
-| V2.4.0 | Unterstützt das Hochladen und Herunterladen von Dateien für den Azure-Dateispeicher.
-| V2.3.0 | Unterstützt den Lesezugriff für georedundante Speicherkonten.|
-| V2.2.2 | Aktualisierung für die Verwendung der Azure-Speicherclientbibliothek, Version 3.0.3.
-| V2.2.1 | Behobene Leistungsprobleme beim Kopieren großer Dateimengen innerhalb desselben Speicherkontos.
-| V2.2 | Unterstützt das Festlegen des virtuellen Verzeichnistrennzeichens für BLOB-Namen. Unterstützt die Angabe des Journaldateipfades.|
-| V2.1 | Bietet mehr als 20 Optionen zur Unterstützung von BLOB-Vorgängen zum effizienten Hochladen, Herunterladen und Kopieren.|
+> [AZURE.NOTE]Wir empfehlen das Installieren der neuesten Version von AzCopy, um in den Genuss neuer Features und einer besseren Leistung zu kommen.
+
+| Version | Neuerungen | Refenzierte .NET-Clientbibliotheksversioin | Zielversion der Storage-REST-API |
+|---------|-----------------------------------------------------------------------------------------------------------------|--------|----------|
+| [**V4.2.0**](http://xdmrelease.blob.core.windows.net/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi) | **Aktuelle Vorschauversion. Enthält die gesamte Funktionalität von V3.2.0. Unterstützt auch SAS für Dateispeicherfreigaben, asynchrones Kopieren von Dateispeicher, Exportieren von Tabellenentitäten in CSV und Angeben von Manifestnamen, wenn Tabellenentitäten exportiert werden.** | **V5.0.0** | **2015-02-21**
+| [**V3.2.0**](http://xdmrelease.blob.core.windows.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi) | **Aktuelle Vorabversion. Unterstützt Anfügeblobs und FIPS-kompatible MD5-Einstellung.** | **V5.0.0** | **2015-02-21**
+| [V4.1.0](http://xdmrelease.blob.core.windows.net/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi) | Enthält die gesamte Funktionalität von V3.1.0. Unterstützt zudem das synchrone Kopieren von Blobs und Dateien und das Angeben des Inhaltstyps von Ziel-Blobs und -dateien. | V4.3.0 | 2014-02-14
+| [V3.1.0](http://xdmrelease.blob.core.windows.net/azcopy-3-1-0/MicrosoftAzureStorageTools.msi) | Unterstützt das synchrone Kopieren von Blobs und das Angeben des Inhaltstyps von Ziel-Blobs.| V4.3.0 | 2014-02-14
+| [V4.0.0](http://xdmrelease.blob.core.windows.net/azcopy-4-0-0-preview/MicrosoftAzureStorageTools.msi) | Enthält alle Funktionalitäten von V3.0.0. Unterstützt zudem das Kopieren zum oder aus dem Azure-Dateispeicher und das Kopieren von Entitäten zum oder aus dem Azure-Tabellenspeicher.| V4.2.1 | 2014-02-14
+| [V3.0.0](http://xdmrelease.blob.core.windows.net/azcopy-3-0-0/MicrosoftAzureStorageTools.msi) | Ändert die AzCopy-Befehlszeilensyntax dahingehend, dass Parameternamen erforderlich sind, und überarbeitet die Befehlszeilenhilfe. Diese Version unterstützt ausschließlich das Kopieren zum und aus dem Azure-Blob-Speicher.| V4.2.1 | 2014-02-14
+| V2.5.1 | Optimiert die Leistung bei der Verwendung der Optionen /xo und /xn. Behebt Fehler, die mit Fehlern in Bezug auf Sonderzeichen in Quelldateinamen und Journaldateien in Zusammenhang stehen, nachdem der Benutzer eine falsche Befehlszeilensyntax eingegeben hat.| V4.1.0 | 2014-02-14
+| V2.5.0 | Optimiert die Leistung für umfangreiche Kopierszenarien und führt verschiedene wichtige Verbesserungen für Benutzerfunktionen ein.| V4.1.0 | 2014-02-14
+| V2.4.1 | Unterstützt die Angabe des Zielordners im Installations-Assistenten.| V4.0.0 | 2014-02-14
+| V2.4.0 | Unterstützt das Hochladen und Herunterladen von Dateien für den Azure-Dateispeicher.| V4.0.0 | 2014-02-14
+| V2.3.0 | Unterstützt den Lesezugriff für georedundante Speicherkonten.| V3.0.3 | 15\.08.2013
+| V2.2.2 | Aktualisierung für die Verwendung der Azure-Speicherclientbibliothek, Version 3.0.3.| V3.0.3 | 15\.08.2013
+| V2.2.1 | Behobene Leistungsprobleme beim Kopieren großer Dateimengen innerhalb desselben Speicherkontos.| V2.1.0 |
+| V2.2 | Unterstützt das Festlegen des virtuellen Verzeichnistrennzeichens für BLOB-Namen. Unterstützt die Angabe des Journaldateipfades.| V2.1.0 |
+| V2.1 | Bietet mehr als 20 Optionen zur Unterstützung von BLOB-Vorgängen zum effizienten Hochladen, Herunterladen und Kopieren.| V2.0.5 |
 
 
 ## Nächste Schritte
@@ -961,6 +966,7 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 - [Erstellen einer SMB-Dateifreigabe in Azure mit Dateispeicher](storage-dotnet-how-to-use-files.md)
 
 ### Azure Storage-Blogbeiträge:
+- [DML: Introducing Azure Storage Data Movement Library Preview](https://azure.microsoft.com/de-DE/blog/introducing-azure-storage-data-movement-library-preview-2/)
 - [AzCopy: Einführung in das synchrone Kopieren und benutzerdefinierte Inhaltstypen](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
 - [AzCopy: Ab sofort allgemein verfügbar: AzCopy 3.0 sowie die Vorschau auf AzCopy 4.0 mit Tabellen- und Dateiunterstützung](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy: Optimiert für große Kopierszenarien](http://go.microsoft.com/fwlink/?LinkId=507682)
@@ -970,6 +976,4 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 - [AzCopy: Verwenden des kontoübergreifenden Kopierblobs](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy: Hochladen/Herunterladen von Dateien für Windows Azure-Blobs](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
- 
-
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

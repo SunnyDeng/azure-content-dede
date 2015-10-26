@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Erstellen einer Orchard CMS-Web-App über den Azure Marketplace"
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine neue Web-App in Azure erstellen. Sie erfahren außerdem, wie Sie die Web-App über das Azure-Portal starten und verwalten"
+	pageTitle="Erstellen einer Orchard CMS-Web-App über den Azure Marketplace" 
+	description="In diesem Lernprogramm erfahren Sie, wie Sie eine neue Web-App in Azure erstellen. Sie erfahren außerdem, wie Sie die Web-App über das Azure-Portal starten und verwalten" 
 	tags="azure-portal"
-	services="app-service\web"
-	documentationCenter=".net"
-	authors="tfitzmac"
-	manager="wpickett"
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="tfitzmac" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="08/03/2015"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="08/03/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Orchard CMS-Web-App über den Azure Marketplace
@@ -91,4 +91,4 @@ Sie erstellen eine Orchard CMS-Web-App, die eine Standardvorlage verwendet. [Orc
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

@@ -97,4 +97,4 @@ In bestimmten Szenarien ist es erforderlich, ein Netzwerk-ACL-Objekt aus einem E
 
 [Einrichten der Kommunikation mit einem virtuellen Computer](http://go.microsoft.com/fwlink/?LinkId=303938)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

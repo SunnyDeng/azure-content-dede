@@ -5,4 +5,4 @@ Ressource|Standardlimit
 Storage-Kontoverwaltungsvorgänge (Lesen)|800 pro 5 Minuten
 Storage-Kontoverwaltungsvorgänge (Schreiben)|200 pro Stunde
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

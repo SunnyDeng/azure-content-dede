@@ -133,4 +133,4 @@ Als zusätzliche Hilfe beim Verfolgen der Änderungen, die Sie an den Modulparam
 [two-class-boosted-decision-tree]: https://msdn.microsoft.com/library/azure/e3c522f8-53d9-4829-8ea4-5c6a6b75330c/
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

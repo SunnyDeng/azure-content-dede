@@ -1,32 +1,30 @@
 <properties 
-	pageTitle="Verwenden von Azure-Speicher mit einer Jenkins-Lösung für die fortlaufende Integration | Microsoft Azure"
-	description="Dieses Lernprogramm zeigt, wie Sie den Azure-Blobdienst als Repository für Buildartefakte verwenden, die von einer Jenkins-Lösung für die fortlaufende Integration erstellt wurden."
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
+	pageTitle="Verwenden von Azure-Speicher mit einer Jenkins-Lösung für die fortlaufende Integration | Microsoft Azure" 
+	description="Dieses Lernprogramm zeigt, wie Sie den Azure-Blobdienst als Repository für Buildartefakte verwenden, die von einer Jenkins-Lösung für die fortlaufende Integration erstellt wurden." 
+	services="storage" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="10/12/2015" 
 	ms.author="robmcm"/>
 
 # Verwenden von Azure-Speicher mit einer Jenkins-Lösung für die fortlaufende Integration
-
-*Von [Microsoft Open Technologies Inc.][ms-open-tech]*
 
 ## Übersicht
 
 Die folgenden Informationen zeigen die Verwendung des Azure-Blobdienst als Repository von Buildartefakten, die durch eine Jenkins Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Dies ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis der fortlaufenden Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können. Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
 
-In diesem Lernprogramm verwenden Sie das Azure-Speicher-Plug-In für Jenkins CI, das von Microsoft Open Technologies, Inc. zur Verfügung gestellt wird.
+In diesem Lernprogramm verwenden Sie das Azure-Speicher-Plug-In für Jenkins CI, das von Microsoft zur Verfügung gestellt wird.
 
-## Überblick über Jenkins ##
+## Übersicht über Jenkins ##
 
 Jenkins ermöglicht die fortlaufende Integration (Continuous Integration, CI) eines Softwareprojekts, da Entwickler ihre Codeänderungen auf einfache Weise einbinden und Builds automatisch und häufig erstellen lassen können. Dadurch wird die Produktivität der Entwickler gesteigert. Builds werden mit Versionsangaben versehen, und Buildartefakte können in verschiedene Repositorys hochgeladen werden. In diesem Thema wird gezeigt, wie Sie Azure-Blob-Speicher als Repository für die Buildartefakte verwenden. Es zeigt hoch, wie Abhängigkeiten aus dem Azure-Blobspeicher heruntergeladen werden.
 
@@ -162,7 +160,6 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
 
   [How to Create a Storage Account]: http://go.microsoft.com/fwlink/?LinkId=279823
   [Meet Jenkins]: https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
-  [ms-open-tech]: http://msopentech.com
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

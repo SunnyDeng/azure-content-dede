@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Anwendungsszenarios und Entwurf mit Service Fabric"
-	description="Kategorien von Anwendungen Anwendungsentwurf mit zustandsbehafteten und zustandslosen Diensten"
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="msfussell"
-	manager="timlt"
-	editor=""/>
+   pageTitle="Anwendungsszenarios und Entwurf mit Service Fabric" 
+   description="Kategorien von Anwendungen Anwendungsentwurf mit zustandsbehafteten und zustandslosen Diensten" 
+   services="service-fabric" 
+   documentationCenter=".net" 
+   authors="msfussell" 
+   manager="timlt" 
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/21/2015"
-	ms.author="mfussell"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA" 
+   ms.date="08/21/2015"
+   ms.author="mfussell"/>
 
 # Service Fabric-Anwendungsszenarios
 
@@ -68,4 +68,4 @@ Weitere Informationen finden Sie in den folgenden Themen:
  
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

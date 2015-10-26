@@ -58,4 +58,4 @@ Nachdem der virtuelle Computer erstellt wurde, wird er automatisch gestartet. We
 - [Anmelden bei einem mit Linux betriebenen virtuellen Computer](../articles/virtual-machines/virtual-machines-linux-how-to-log-on.md)
 - [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../articles/virtual-machines/virtual-machines-log-on-windows-server.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -23,4 +23,4 @@
 
 Die neuesten häufig gestellte Fragen zu virtuellen Netzwerk-VPNs finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

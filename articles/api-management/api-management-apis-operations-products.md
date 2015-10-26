@@ -62,4 +62,4 @@ Produkte in API Management enthalten eine oder mehrere APIs sowie ein Nutzungsko
 [Importieren einer API-Definition mit Operationen]: api-management-howto-import-api.md
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen]: api-management-howto-product-with-rules.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

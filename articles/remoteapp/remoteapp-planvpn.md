@@ -55,4 +55,4 @@ Folgende Aspekte müssen Sie im Subnetz Ihres virtuellen Netzwerks aktivieren:
 
 [Tunnelerzwingung](vpn-gateway-about-forced-tunneling.md) wird jetzt für alle neuen Azure RemoteApp-Sammlungen unterstützt. Die Migration einer vorhandenen Sammlung zur Unterstützung der Tunnelerzwingung wird zurzeit nicht unterstützt. Sie müssen alle vorhandenen Sammlungen löschen, die das mit Azure RemoteApp verknüpfte VNET nutzen, und ein neues virtuelles Netzwerk erstellen, um die Tunnelerzwingung für Ihre Sammlungen zu aktivieren.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

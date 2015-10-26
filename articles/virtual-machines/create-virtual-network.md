@@ -20,7 +20,7 @@
 # Lernprogramm: Erstellen eines virtuellen Netzwerks nur für die Cloud in Azure
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 
 Dieses Lernprogramm führt Sie durch die Schritte im Azure-Verwaltungsportal zum Erstellen eines virtuellen Azure-Beispielnetzwerks, das ausschließlich für die Cloud gedacht ist und zwei Subnetze enthält. Das resultierende virtuelle Netzwerk sieht wie folgt aus:
@@ -123,4 +123,4 @@ Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie un
 
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

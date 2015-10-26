@@ -46,4 +46,4 @@ Mit dem Zugriffsbereich in Azure AD können Sie Ihre lokalen Anwendungen in Azur
 1. Aktivieren Sie den Anwendungsproxy in Azure AD, und installieren und registrieren Sie den Connector. Ausführliche Informationen finden Sie unter [Aktivieren des Azure AD-Anwendungsproxys](active-directory-application-proxy-enable/#step-1-enable-application-proxy-in-azure-ad.md).
 2. Veröffentlichen von Anwendungen mit dem Azure AD-Anwendungsproxy: Ausführliche Informationen finden Sie unter [Veröffentlichen von Anwendungen mit Azure AD-Anwendungsproxy](active-directory-application-proxy-publish.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Erstellen eines Azure-Projekts mit Visual Studio"
-	description="Erstellen eines Azure-Projekts mit Visual Studio"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
+   description="Erstellen eines Azure-Projekts mit Visual Studio"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
 <tags 
    ms.service="multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Erstellen eines Azure-Projekts mit Visual Studio
 
@@ -62,4 +62,4 @@ Eine Azure-Clouddienstlösung enthält die folgenden Projekttypen:
 
 1. Um eine Rolle umzubenennen, die dem Projekt hinzugefügt wurde, zeigen Sie im Dialogfeld **Neues Azure-Projekt** mit dem Mauszeiger auf die Rolle und klicken rechts neben der Rolle auf das Symbol **Umbenennen**. Sie können auch eine Rolle innerhalb der Projektmappe umbenennen, nachdem sie hinzugefügt wurde.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

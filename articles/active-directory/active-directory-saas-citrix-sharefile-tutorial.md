@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Citrix ShareFile erlä
 -   Ein gültiges Azure-Abonnement
 -   Einen Citrix ShareFile-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Citrix ShareFile zugewiesen haben, mittels einmaligen Anmeldens auf der Citrix ShareFile-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Citrix ShareFile zugewiesen haben, mittels einmaligen Anmeldens auf der Citrix ShareFile-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -102,7 +102,7 @@ Damit sich Azure AD-Benutzer bei Citrix ShareFile anmelden können, müssen sie
 
 1.  Melden Sie sich bei Ihrem **Citrix ShareFile**-Mandanten an.
 
-2.  Klicken Sie auf **Manage Users \> Manage Users Home \> + Create Employee**.
+2.  Klicken Sie auf **Manage Users > Manage Users Home > + Create Employee**.
 
     ![Create Employee](./media/active-directory-saas-citrix-sharefile-tutorial/IC781050.png "Create Employee")
 
@@ -134,4 +134,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

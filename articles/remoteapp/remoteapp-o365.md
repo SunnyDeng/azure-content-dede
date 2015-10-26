@@ -1,20 +1,20 @@
 
 <properties 
-    pageTitle="Verwenden von Office mit Azure RemoteApp"
-	description="Erfahren Sie, wie und Azure RemoteApp zusammenarbeiten."
-	services="remoteapp"
-	documentationCenter=""
-	authors="lizap"
-	manager="mbaldwin"/>
+    pageTitle="Verwenden von Office mit Azure RemoteApp" 
+    description="Erfahren Sie, wie und Azure RemoteApp zusammenarbeiten." 
+    services="remoteapp" 
+    documentationCenter="" 
+    authors="lizap" 
+    manager="mbaldwin" />
 
 <tags 
-    ms.service="remoteapp"
-	ms.workload="compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
-	ms.author="elizapo"/>
+    ms.service="remoteapp" 
+    ms.workload="compute" 
+    ms.tgt_pltfrm="na" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.date="09/02/2015" 
+    ms.author="elizapo" />
 
 # Verwenden von Office mit Azure RemoteApp
 
@@ -50,4 +50,4 @@ Wenn Sie Ihr Konto aktivieren, wirkt sich dies auf alle RemoteApp-Sammlungen in 
 Wenn Sie nach Ablauf des Testzeitraums nicht zum Produktionsmodus wechseln, werden die RemoteApp-Sammlungen deaktiviert. Keine Sorge - Ihre Einstellungen und Benutzerdaten bleiben für weitere 90 Tage gespeichert, sodass Sie Ihren Dienst noch aktivieren und ohne Datenverlust in den Produktionsmodus wechseln können.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -21,7 +21,8 @@
 
 In diesem Artikel wird beschrieben, wie Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) installieren. Die Azure-Befehlszeilenschnittstelle bietet eine Reihe von auf der Open-Source-Shell basierenden Befehlen zum Erstellen und Verwalten von Ressourcen in Microsoft Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen und Verwalten von Ressourcen mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 
 Die Azure-Befehlszeilenschnittstelle ist in JavaScript geschrieben und erfordert [Node.js](https://nodejs.org). Sie wird mithilfe des [Azure SDK für Node.js](https://github.com/azure/azure-sdk-for-node) implementiert und unter einer Apache 2.0-Lizenz veröffentlicht. Das Projekt-Repository befindet sich unter [https://github.com/WindowsAzure/azure-sdk-tools-xplat](https://github.com/azure/azure-xplat-cli).
 
@@ -155,4 +156,4 @@ Jetzt sind Sie soweit. Als Nächstes können Sie sich [von der Azure-Befehlszeil
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

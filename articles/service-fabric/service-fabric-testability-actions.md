@@ -1,20 +1,20 @@
 <properties
    pageTitle="Prüfbarkeitsaktion | Microsoft Azure"
-	description="Dieser Artikel befasst sich mit den Prüfbarkeitsaktionen von Microsoft Azure Service Fabric."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="heeldin"
-	manager="timlt"
-	editor=""/>
+   description="Dieser Artikel befasst sich mit den Prüfbarkeitsaktionen von Microsoft Azure Service Fabric."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="heeldin"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/31/2015"
-	ms.author="heeldin;motanv"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/31/2015"
+   ms.author="heeldin;motanv"/>
 
 # Testability-Aktionen
 Um eine unzuverlässige Infrastruktur simulieren zu können, bietet Service Fabric Entwicklern die Möglichkeit, verschiedene Ausfälle und Statusübergänge aus der Praxis zu simulieren. Dies wird in Form von Testability-Aktionen (Aktionen zur Prüfbarkeit) verfügbar gemacht. Diese Aktionen sind die Low-Level-APIs, die eine bestimmte Fault Injection, einen Statusübergang oder eine Überprüfung bewirken. Wenn ein Dienstentwickler diese Aktionen kombiniert, kann er umfassende Testszenarien für Ihre Dienste schreiben.
@@ -234,4 +234,4 @@ ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(par
    - [Ausfälle bei der Kommunikation von Dienst zu Dienst](service-fabric-testability-scenarios-service-communication.md)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

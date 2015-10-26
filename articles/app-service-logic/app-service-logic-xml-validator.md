@@ -62,4 +62,4 @@ Die Aktion gibt die Ausgabe als Objekt zurück. Die Ausgabe enthält das Modell,
 [4]: ./media/app-service-logic-xml-validator/XmlValidator.ListOfActions.PNG
 [5]: ./media/app-service-logic-xml-validator/XmlValidator.ValidateXml.PNG
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

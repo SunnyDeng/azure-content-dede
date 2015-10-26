@@ -1,12 +1,12 @@
-<properties pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways | Microsoft Azure" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort 'erzwingen'. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="carolz" editor=""/>
+<properties pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways | Microsoft Azure" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort 'erzwingen'. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="carolz" editor="" />
 <tags  
    ms.service="vpn-gateway"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/20/2015"
-	ms.author="cherylmc"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/20/2015"
+   ms.author="cherylmc" />
 
 # Konfigurieren der Tunnelerzwingung
 
@@ -151,4 +151,4 @@ Im folgenden finden Sie einige weitere PowerShell-Cmdlets, die bei der Verwendun
 
 Informationen zum Sichern des Netzwerkverkehrs finden Sie unter [Was ist eine Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md)?
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

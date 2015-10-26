@@ -18,7 +18,8 @@
 
 # DataStax Enterprise auf Ubuntu mit einer Ressourcen-Manager-Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen, die auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra™ basieren. Diese verteilte NoSQL-Datenbanktechnologie ist weithin anerkannt als agil, immer funktionsbereit und vorhersehbar auf jede Größe skalierbar. DataStax bietet die Versionen Enterprise (DSE) und Community (DSC) an. Zusätzlich zu den Funktionen der Community-Edition bietet DataStax Enterprise Cassandra für die Produktion zertifiziert mit Funktionen wie speicherinternem Computing, unternehmensweiter Sicherheit, schnellen und leistungsfähigen integriertn Analysen und Unternehmensverwaltung an.
 
@@ -274,7 +275,7 @@ Sie können den Status der einzelnen Ressourcenbereitstellungen mit dem folgende
 
 	azure group deployment list dsc
 
-## Überblick über die DataStax Enterprise-Vorlagenstruktur und -Dateianordnung
+## Übersicht über die DataStax Enterprise-Vorlagenstruktur und -Dateianordnung
 
 Um eine stabile und wiederverwendbare Ressourcen-Manager-Vorlage zu erstellen, ist es erforderlich, genau über eine Reihe komplexer und zusammenhängender Aufgaben während der Bereitstellung einer komplexen Lösung wie DataStax Enterprise nachzudenken. Durch die Nutzung von ARM-Funktionen zum **Verknüpfen von Vorlagen** und **Ressourcenschleifen** und die zusätzliche Skriptausführung über zugehörige Erweiterungen ist es möglich, einen modularen Ansatz zu implementieren, der bei nahezu allen komplexen vorlagenbasierten Bereitstellungen wiederverwendet werden kann. <!-- In previous paragraph, we can't use bold typeface to show emphasis. You can use italic to denote emphasis. --> Im nächsten Diagramm werden die Beziehungen zwischen allen Dateien beschrieben, die für diese Bereitstellung von GitHub heruntergeladen werden.
 
@@ -494,4 +495,4 @@ Dieser Ansatz empfiehlt folgende Schritte:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

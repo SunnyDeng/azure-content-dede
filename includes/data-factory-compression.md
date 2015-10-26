@@ -40,4 +40,4 @@ Wenn Sie die Komprimierungseigenschaft in einem JSON-Eingabedataset angeben, kan
 - Lesen Sie Daten aus einer Nur-Text-Datei aus einem lokalen Dateisystem, komprimieren Sie sie mithilfe des GZip-Formats, und schreiben Sie die komprimierten Daten in einen Azure-Blob. In diesem Fall definieren Sie ein Azure-Blob-Ausgabedataset mit der JSON-Komprimierungseigenschaft.  
 - Lesen Sie GZIP-komprimierte Daten aus einem Azure-Blob, dekomprimieren Sie sie, komprimieren Sie sie mit BZIP2, und schreiben Sie die resultierenden Daten in einen Azure-Blob. In diesem Fall definieren Sie das Azure-Blob-Eingabedataset mit dem Komprimierungstyp GZIP und das Ausgabedataset mit dem Komprimierungstyp BZIP2.   
 
-<!----HONumber=Sept15_HO1-->
+<!---HONumber=Oct15_HO3-->

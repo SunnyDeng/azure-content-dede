@@ -59,4 +59,4 @@ Erweiterte Themen im Zusammenhang mit Service Fabric finden Sie in den folgenden
 
 - [Platzierungseinschränkungen – Übersicht](service-fabric-placement-constraint.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

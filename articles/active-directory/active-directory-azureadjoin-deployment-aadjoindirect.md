@@ -87,4 +87,4 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 * [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

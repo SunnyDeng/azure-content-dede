@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Häufig gestellte Fragen: Veröffentlichen und Verwenden von Machine Learning-Apps im Azure Marketplace | Microsoft Azure"
-	description="Häufig gestellte Fragen"
-	services="machine-learning"
-	documentationCenter=""
-	authors="LuisCabrer"
-	manager="paulettm"
+	pageTitle="Häufig gestellte Fragen: Veröffentlichen und Verwenden von Machine Learning-Apps im Azure Marketplace | Microsoft Azure" 
+	description="Häufig gestellte Fragen" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="LuisCabrer" 
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="luisca"/>
 
 #Veröffentlichung und Verwendung von Machine Learning-Apps im Azure Marketplace: Häufig gestellte Fragen
@@ -77,4 +77,4 @@ Wenden Sie sich unter <datamarketbd@microsoft.com> an das Azure Marketplace-Team
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

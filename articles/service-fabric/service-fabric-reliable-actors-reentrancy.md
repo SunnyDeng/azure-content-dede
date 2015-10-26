@@ -7,7 +7,6 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -16,7 +15,6 @@
    ms.workload="NA"
    ms.date="08/05/2015"
    ms.author="amanbha"/>
-
 
 
 # Reliable Actor-Eintrittsinvarianz
@@ -42,4 +40,4 @@ class VoicemailBoxActor : Actor<VoicemailBox>, IVoicemailBoxActor
 }
 ```
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

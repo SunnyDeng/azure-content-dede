@@ -18,7 +18,8 @@
 
 # Erstellen eines High Performance Computing (HPC)-Clusters in virtuellen Azure-Computern mit dem HPC Pack-IaaS-Bereitstellungsskript
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 
 Führen Sie das PowerShell-Skript für die HPC Pack-IaaS-Bereitstellung auf einem Clientcomputer aus, um einen vollständigen HPC Pack-Cluster in Azure-Infrastrukturdiensten (IaaS) bereitzustellen. Das Skript bietet mehrere Bereitstellungsoptionen. Sie können Cluster-Computeknoten hinzufügen, auf denen unterstützte Linux-Distributionen oder Windows Server-Betriebssysteme ausgeführt werden.
@@ -389,4 +390,4 @@ Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhand
 
 * Probieren Sie die Tools von HPC Pack zum Starten, Beenden, Hinzufügen und Entfernen von Computeknoten von einem von Ihnen erstellten Cluster aus. Weitere Informationen finden Sie unter [Verwalten von Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

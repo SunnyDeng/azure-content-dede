@@ -29,4 +29,4 @@ Timeoutwert für Wiederholungsversuche | 1 Sekunde | 1 Sekunde
 
 Der Azure-Ressourcen-Manager weist Limits für API-Aufrufe auf. Sie können API-Aufrufe mit einer Rate innerhalb der [API-Limits des Azure-Ressourcen-Managers](azure-subscription-service-limits/#resource-group-limits) ausführen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

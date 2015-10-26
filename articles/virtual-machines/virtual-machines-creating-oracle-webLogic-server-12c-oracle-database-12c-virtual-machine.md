@@ -19,7 +19,7 @@
 
 In diesem Artikel wird gezeigt, wie Sie einen virtuellen Computer in Azure erstellen, der auf einem von Microsoft bereitgestellten Oracle WebLogic Server 12c- und Oracle Database 12-Image unter Windows Server 2012 basiert.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines Oracle WebLogic-Servers und einer Datenbank mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 
 ##So erstellen Sie einen virtuellen Oracle WebLogic Server 12c- und Oracle Database 12c-Computer in Azure
@@ -71,4 +71,4 @@ Folgen Sie den Anweisungen in [Erstellen eines virtuellen Oracle WebLogic Server
 
 [Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

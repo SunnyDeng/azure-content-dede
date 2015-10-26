@@ -68,4 +68,4 @@ Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die 
 - Erlernen Sie das [Entwerfen von Vorlagen](/best-practices-resource-manager-design-templates.md).
 - Wenden Sie [bewährte Methoden](/best-practices-resource-manager-examples.md) an.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

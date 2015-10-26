@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe"
-	description="Erfahren Sie, wie Ressourcen mithilfe von Visual Studio einer Azure-Ressourcengruppe hinzugefügt werden."
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tglee"/>
+   description="Erfahren Sie, wie Ressourcen mithilfe von Visual Studio einer Azure-Ressourcengruppe hinzugefügt werden."
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tglee" />
 <tags 
    ms.service="multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="multiple"
-	ms.date="08/13/2015"
-	ms.author="kempb"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="multiple"
+   ms.date="08/13/2015"
+   ms.author="kempb" />
 
 # Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe
 
@@ -61,4 +61,4 @@ Wenn Sie einer Ressourcengruppe weitere Ressourcen hinzufügen müssen, können 
 
 [Channel 9-Video: Azure-Ressourcen-Manager](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B224#fbid=)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

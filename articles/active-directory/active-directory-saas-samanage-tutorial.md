@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Samanage erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein Samanage-Mandant
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Samanage zugewiesen haben, mittels einmaligen Anmeldens auf der Samanage-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Samanage zugewiesen haben, mittels einmaligen Anmeldens auf der Samanage-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -65,7 +65,7 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
     ![Microsoft Azure AD – einmaliges Anmelden](./media/active-directory-saas-samanage-tutorial/IC771710.png "Microsoft Azure AD – einmaliges Anmelden")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Samanage-Anmelde-URL** die URL im Format „*https://\\<Mandantenname\>.Samanage.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Samanage-Anmelde-URL** die URL im Format „*https://\<Mandantenname>.Samanage.com*“ ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-samanage-tutorial/IC771711.png "App-URL konfigurieren")
 
@@ -86,18 +86,18 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 8.  Führen Sie auf der Dialogfeldseite **Mit SAML anmelden** die folgenden Schritte aus, und klicken Sie dann auf **Änderungen speichern**:
 
     1.  Klicken Sie auf **Einmaliges Anmelden mit SAML aktivieren**.
-        ![Mit SAML anmelden](./media/active-directory-saas-samanage-tutorial/IC771719.png "Mit SAML anmelden")
+    ![Mit SAML anmelden](./media/active-directory-saas-samanage-tutorial/IC771719.png "Mit SAML anmelden")
     2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei Samanage** den Wert der **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Identitätsanbieter-URL** ein.
-        ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-samanage-tutorial/IC771720.png "Einmaliges Anmelden konfigurieren")
-    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Samanage** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-samanage-tutorial/IC771720.png "Einmaliges Anmelden konfigurieren")
+3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Samanage** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
     4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Samanage** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn ins Textfeld **Abmelde-URL** ein.
     5.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
     6.  Öffnen Sie das Base64-codierte Zertifikat in Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **X.509-Zertifikat** ein.
-    7.  Klicken Sie auf **Benutzer erstellen, wenn sie nicht in Samanage vorhanden sind**.
-        ![Aktualisieren](./media/active-directory-saas-samanage-tutorial/IC771722.png "Aktualisieren")
+    7.  Klicken Sie auf **Benutzer erstellen, wenn sie nicht in Samanage vorhanden sind**. 
+    ![Aktualisieren](./media/active-directory-saas-samanage-tutorial/IC771722.png "Aktualisieren")
     8.  Klicken Sie auf **Aktualisieren**.
 
 9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
@@ -111,7 +111,7 @@ Damit sich Azure AD-Benutzer bei Samanage anmelden können, müssen sie in Sama
 
 1.  Melden Sie sich bei Ihrem **Samanage**-Mandanten an.
 
-2.  Wechseln Sie zur **Dashboard \> Setup**.
+2.  Wechseln Sie zur **Dashboard > Setup**.
 
     ![Einrichtung](./media/active-directory-saas-samanage-tutorial/IC771724.png "Einrichtung")
 
@@ -149,4 +149,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!------HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

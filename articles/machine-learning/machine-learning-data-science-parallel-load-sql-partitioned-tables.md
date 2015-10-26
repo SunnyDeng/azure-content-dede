@@ -1,20 +1,21 @@
 <properties 
-	pageTitle="Paralleler Massenimport mithilfe von partitionierten SQL-Tabellen | Microsoft Azure"
-	description="Paralleler Massenimport mithilfe von partitionierten SQL-Tabellen"
-	services="machine-learning"
-	documentationCenter=""
+	pageTitle="Paralleler Massenimport mithilfe von partitionierten SQL-Tabellen | Microsoft Azure" 
+	description="Paralleler Massenimport mithilfe von partitionierten SQL-Tabellen" 
+	services="machine-learning" 
+	solutions="" 
+	documentationCenter="" 
 	authors="msolhab"
-	manager="paulettm"
-	editor="cgronlun"/>
+	manager="paulettm" 
+	editor="cgronlun" />
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="msolhab"/>
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
+	ms.author="msolhab" />
 
 # Paralleler Massenimport mithilfe von partitionierten SQL-Tabellen
 
@@ -184,4 +185,4 @@ oder
 Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analytics Process and Technology (ADAPT) mit einem öffentlichen DataSet finden Sie unter [Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

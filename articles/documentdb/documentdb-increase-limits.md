@@ -7,7 +7,6 @@
 	editor="monicar" 
 	documentationCenter=""/>
 
-
 <tags 
 	ms.service="documentdb" 
 	ms.workload="data-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/28/2015" 
 	ms.author="stbaro"/>
-
 
 # Anfordern von erhöhten DocumentDB-Kontolimits
 
@@ -93,4 +91,4 @@ Sobald das Supportticket erstellt wurde, sollten Sie per E-Mail eine Supportanfo
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

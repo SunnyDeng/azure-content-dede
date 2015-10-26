@@ -51,4 +51,4 @@ Situationen, in denen sich ein Diff-Paket anbietet:
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

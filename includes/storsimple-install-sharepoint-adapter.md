@@ -26,4 +26,4 @@
 
 8. Wechseln Sie zum nächsten Schritt: [Konfigurieren von RBS](#configure-rbs).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

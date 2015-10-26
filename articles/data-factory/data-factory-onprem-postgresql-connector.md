@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Daten aus PostgreSQL | Azure Data Factory"
-	description="Erfahren Sie, wie Sie Daten aus der PostgreSQL-Datenbank mithilfe von Azure Data Factory verschieben."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben von Daten aus PostgreSQL | Azure Data Factory" 
+	description="Erfahren Sie, wie Sie Daten aus der PostgreSQL-Datenbank mithilfe von Azure Data Factory verschieben." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/26/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten aus PostgreSQL mithilfe von Azure Data Factory
@@ -306,4 +306,4 @@ Text | | String
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

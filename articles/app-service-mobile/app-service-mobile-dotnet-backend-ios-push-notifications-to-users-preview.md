@@ -108,4 +108,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Vorlagen]: https://msdn.microsoft.com/de-DE/library/dn530748.aspx
  
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Entwickeln von Java MapReduce-Programmen für Hadoop | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Java MapReduce-Programme auf dem HDInsight-Emulator entwickeln und sie in HDInsight bereitstellen."
+	pageTitle="Entwickeln von Java MapReduce-Programmen für Linux-basiertes HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie MapReduce-Programme entwickeln und in Linux-basiertem HDInsight bereitstellen können."
 	services="hdinsight"
 	editor="cgronlun"
 	manager="paulettm"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="10/09/2015"
 	ms.author="larryfr"/>
 
 # Entwickeln von Java MapReduce-Programmen für Hadoop in HDInsight
@@ -300,4 +300,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

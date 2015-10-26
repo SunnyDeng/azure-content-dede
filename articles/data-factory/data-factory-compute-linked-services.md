@@ -18,7 +18,7 @@
 
 # Verknüpfte Computedienste
 
-In diesem Artikel werden verschiedene Compute-Umgebungen beschrieben, mit denen Sie Daten verarbeiten oder transformieren können. Darüber hinaus werden Einzelheiten zu verschiedenen Konfigurationen beschrieben \(bedarfsgesteuerte Compute-Umgebung im Vergleich zu einer eigenen Compute-Umgebung\). Diese beiden Konfigurationen werden von Data Factory unterstützt, wenn Sie verknüpfte Dienste konfigurieren, um diese Compute-Umgebungen mit Azure Data Factory zu verknüpfen.
+In diesem Artikel werden verschiedene Compute-Umgebungen beschrieben, mit denen Sie Daten verarbeiten oder transformieren können. Darüber hinaus werden Einzelheiten zu verschiedenen Konfigurationen beschrieben (bedarfsgesteuerte Compute-Umgebung im Vergleich zu einer eigenen Compute-Umgebung). Diese beiden Konfigurationen werden von Data Factory unterstützt, wenn Sie verknüpfte Dienste konfigurieren, um diese Compute-Umgebungen mit Azure Data Factory zu verknüpfen.
 
 ## Bedarfsgesteuerte Compute-Umgebung
 
@@ -28,7 +28,7 @@ Bei dieser Konfiguration wird die Compute-Umgebung vollständig vom Azure Data F
 
 ## Bedarfsgesteuerter verknüpfter Azure HDInsight-Dienst
 
-Der bedarfsgesteuerte HDInsight-Cluster wird vom Azure Data Factory-Dienst automatisch zum Verarbeiten von Daten erstellt. Der Cluster wird in derselben Region erstellt wie das Speicherkonto \(Eigenschaft "linkedServiceName" in JSON\), das dem Cluster zugeordnet ist.
+Der bedarfsgesteuerte HDInsight-Cluster wird vom Azure Data Factory-Dienst automatisch zum Verarbeiten von Daten erstellt. Der Cluster wird in derselben Region erstellt wie das Speicherkonto (Eigenschaft "linkedServiceName" in JSON), das dem Cluster zugeordnet ist.
 
 Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknüpften HDInsight-Dienst:
 
@@ -76,14 +76,14 @@ Für eine präzisere Konfiguration des bedarfsgesteuerten HDInsight-Clusters kö
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-coreConfiguration | Gibt die wichtigsten Konfigurationsparameter \(wie in "core-site.xml"\) für den HDInsight-Cluster an, der erstellt werden soll. | Nein
-hBaseConfiguration | Gibt die HBase-Konfigurationsparameter \(hbase-site.xml\) für den HDInsight-Cluster an. | Nein
-hdfsConfiguration | Gibt die HDFS-Konfigurationsparameter \(hdfs-site.xml\) für den HDInsight-Cluster an. | Nein
-hiveConfiguration | Gibt die Hive-Konfigurationsparameter \(hive-site.xml\) für den HDInsight-Cluster an. | Nein
-mapReduceConfiguration | Gibt die MapReduce-Konfigurationsparameter \(mapred-site.xml\) für den HDInsight-Cluster an. | Nein
-oozieConfiguration | Gibt die Oozie-Konfigurationsparameter \(oozie-site.xml\) für den HDInsight-Cluster an. | Nein
-stormConfiguration | Gibt die Storm-Konfigurationsparameter \(storm-site.xml\) für den HDInsight-Cluster an. | Nein
-yarnConfiguration | Gibt die Yarn-Konfigurationsparameter \(yarn-site.xml\) für den HDInsight-Cluster an. | Nein
+coreConfiguration | Gibt die wichtigsten Konfigurationsparameter (wie in "core-site.xml") für den HDInsight-Cluster an, der erstellt werden soll. | Nein
+hBaseConfiguration | Gibt die HBase-Konfigurationsparameter (hbase-site.xml) für den HDInsight-Cluster an. | Nein
+hdfsConfiguration | Gibt die HDFS-Konfigurationsparameter (hdfs-site.xml) für den HDInsight-Cluster an. | Nein
+hiveConfiguration | Gibt die Hive-Konfigurationsparameter (hive-site.xml) für den HDInsight-Cluster an. | Nein
+mapReduceConfiguration | Gibt die MapReduce-Konfigurationsparameter (mapred-site.xml) für den HDInsight-Cluster an. | Nein
+oozieConfiguration | Gibt die Oozie-Konfigurationsparameter (oozie-site.xml) für den HDInsight-Cluster an. | Nein
+stormConfiguration | Gibt die Storm-Konfigurationsparameter (storm-site.xml) für den HDInsight-Cluster an. | Nein
+yarnConfiguration | Gibt die Yarn-Konfigurationsparameter (yarn-site.xml) für den HDInsight-Cluster an. | Nein
 
 #### Beispiel: Konfiguration eines bedarfsgesteuerten HDInsight-Clusters mit erweiterten Eigenschaften
 
@@ -159,7 +159,7 @@ Typ | Legen Sie die Typeigenschaft auf **HDInsight** fest. | Ja
 clusterUri | Der URI des HDInsight-Clusters. | Ja
 username | Geben Sie den Namen des Benutzers ein, der mit einem vorhandenen HDInsight-Cluster verbunden werden soll. | Ja
 password | Geben Sie ein Kennwort für das Benutzerkonto an. | Ja
-location | Geben Sie den Standort des HDInsight-Clusters an \(z. B. "WestUS"\). | Ja
+location | Geben Sie den Standort des HDInsight-Clusters an (z. B. "WestUS"). | Ja
 linkedServiceName | Der Name des verknüpften Diensts für den Blobspeicher, der von diesem HDInsight-Cluster verwendet wird. | Ja
 
 ## Verknüpfter Azure Batch-Dienst
@@ -188,7 +188,7 @@ Lesen Sie die folgenden Themen, wenn Sie noch nicht mit dem Azure Batch-Dienst v
 	  }
 	}
 
-Erweitern Sie den Namen Ihres Batch-Kontos für die Eigenschaft **accountName** um "**.\<Name der Region**". Beispiel:
+Erweitern Sie den Namen Ihres Batch-Kontos für die Eigenschaft **accountName** um "**.<Name der Region**". Beispiel:
 	
 			"accountName": "mybatchaccount.eastus" 
 
@@ -247,4 +247,4 @@ Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der 
  
    
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

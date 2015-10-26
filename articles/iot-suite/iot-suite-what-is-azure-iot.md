@@ -1,8 +1,8 @@
 <properties
- pageTitle="Microsoft Azure IoT Suite und das Internet der Dinge (Internet of Things, IoT) | Microsoft Azure"
- description="Eine Übersicht über IoT in Azure einschließlich einer beispielhaften IoT-Lösungsarchitektur sowie der Beziehung zu Azure IoT Hubs, Geräte-SDKs und vorkonfigurierten Lösungen."
+ pageTitle="Azure-Lösungen für das Internet der Dinge | Microsoft Azure"
+ description="Eine Übersicht über IoT in Azure einschließlich einer beispielhaften Lösungsarchitektur und Informationen zu deren Beziehung zu Azure IoT Suite und vorkonfigurierten Lösungen."
  services=""
- documentationCenter=".net"
+ documentationCenter=""
  authors="dominicbetts"
  manager="timlt"
  editor=""/>
@@ -12,7 +12,7 @@
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
- ms.workload="tbd"
+ ms.workload="na"
  ms.date="09/29/2015"
  ms.author="dobett"/>
 
@@ -43,7 +43,7 @@ Weitere Informationen zu IoT in Azure finden Sie in den folgenden Ressourcen:
 [Azure IoT Hub]: https://azure.microsoft.com/services/iot-hub/
 [Azure Event Hubs]: https://azure.microsoft.com/services/event-hubs/
 [Azure Stream Analytics]: https://azure.microsoft.com/services/stream-analytics/
-[Azure Machine Learning]: https://azure.microsoft.com/de-DE/services/machine-learning/
-[Azure-Speicher]: https://azure.microsoft.com/de-DE/services/storage/
+[Azure Machine Learning]: https://azure.microsoft.com/en-us/services/machine-learning/
+[Azure-Speicher]: https://azure.microsoft.com/en-us/services/storage/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

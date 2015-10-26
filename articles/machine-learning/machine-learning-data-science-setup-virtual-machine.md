@@ -3,9 +3,9 @@
 	description="Richten Sie einen virtuellen Azure-Computer für die Verwendung in einer Data Science-Umgebung mit IPython-Server für eine erweiterte Analyse ein."
 	services="machine-learning"
 	documentationCenter=""
-	authors="msolhab"
+	authors="bradsev"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"  />
 
 <tags
 	ms.service="machine-learning"
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="mohabib;xibingao;bradsev"/>
+	ms.date="10/13/2015"
+	ms.author="mohabib;xibingao;bradsev" />
 
 # Einrichten eines virtuellen Azure-Computers als IPython Notebook-Server für die erweiterte Analyse
 
@@ -122,7 +122,7 @@ Der virtuelle Computer wird freigegeben, aber nicht gelöscht. Sie können den v
 
 ## Ihre Azure-VM ist damit einsatzbereit. Wie lauten die nächsten Schritte?
 
-Sie können Ihren virtuellen Computer jetzt in Ihren Data Science-Übungen verwenden. Der virtuelle Computer kann auch als IPython Notebook-Server für das Durchsuchen und Verarbeiten von Daten und für andere Aufgaben in Verbindung mit Azure Machine Learning und dem Advanced Analytics Process and Technology (ADAPT) verwendet werden.
+Sie können Ihren virtuellen Computer jetzt in Ihren Data Science-Übungen verwenden. Der virtuelle Computer kann auch als IPython Notebook-Server für das Durchsuchen und Verarbeiten von Daten und für andere Aufgaben in Verbindung mit Azure Machine Learning und dem Cortana-Analyseprozess (CAP) verwendet werden.
 
 Die nächsten Schritte in Advanced Analytics Process and Technology sind unter [Leitfaden: Erweiterte Datenverarbeitung in Azure](machine-learning-data-science-advanced-data-processing.md) aufgeführt. Dazu gehören u. a. das Verschieben von Daten nach HDInsight sowie das Verarbeiten und Extrahieren von Stichproben, um anschließend mithilfe von Azure Machine Learning Erkenntnisse aus den Daten zu ziehen.
 
@@ -143,4 +143,4 @@ Die nächsten Schritte in Advanced Analytics Process and Technology sind unter [
 [29]: ./media/machine-learning-data-science-setup-virtual-machine/create-virtual-machine-6.png
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

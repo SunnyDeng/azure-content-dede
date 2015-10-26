@@ -85,9 +85,48 @@ Aktualisieren Sie anschließend die vorhandenen Locator (die vom alten Speichers
 
 ##Schritt 3: Aktualisieren der Locators 
 
-Nach 30 Minuten können Sie die vorhandenen Locator aktualisieren, damit sie den neuen sekundären Speicherschlüssel nutzen.
+Nach 30 Minuten können Sie die OnDemand-Locators neu erstellen, damit sie den neuen sekundären Speicherschlüssel nutzen und die vorhandene URL beibehalten.
 
-Verwenden Sie zum Aktualisieren des Ablaufdatums für einen Locator die [REST](http://msdn.microsoft.com/library/azure/hh974308.aspx#update_a_locator)- oder [.NET](http://go.microsoft.com/fwlink/?LinkID=533259)-APIs. Wenn Sie das Ablaufdatum eines SAS-Locators aktualisieren, ändert sich auch die URL.
+Beachten Sie, dass sich beim Aktualisieren (oder Neuerstellen) eines SAS-Locators die URL immer ändert.
+
+>[AZURE.NOTE]Um sicherzustellen, dass die vorhandenen URLs der OnDemand-Locators beibehalten werden, müssen Sie den vorhandenen Locator löschen und einen neuen mit der gleichen ID erstellen.
+ 
+Im folgenden .NET-Beispiel wird das Neuerstellen eines Locators mit der gleichen ID gezeigt.
+	
+	private static ILocator RecreateLocator(CloudMediaContext context, ILocator locator)
+	{
+	    // Save properties of existing locator.
+	    var asset = locator.Asset;
+	    var accessPolicy = locator.AccessPolicy;
+	    var locatorId = locator.Id;
+	    var startDate = locator.StartTime;
+	    var locatorType = locator.Type;
+	    var locatorName = locator.Name;
+	
+	    // Delete old locator.
+	    locator.Delete();
+	
+	    if (locator.ExpirationDateTime <= DateTime.UtcNow)
+	    {
+	        throw new Exception(String.Format(
+	            "Cannot recreate locator Id={0} because its locator expiration time is in the past",
+	            locator.Id));
+	    }
+	
+	    // Create new locator using saved properties.
+	    var newLocator = context.Locators.CreateLocator(
+	        locatorId,
+	        locatorType,
+	        asset,
+	        accessPolicy,
+	        startDate,
+	        locatorName);
+	
+	
+	
+	    return newLocator;
+	}
+
 
 ##Schritt 5: Erneutes Generieren des primären Speicherzugriffsschlüssels
 
@@ -101,9 +140,9 @@ Wenden Sie das unter [Schritt 2](media-services-roll-storage-access-keys.md#ste
 
 ##Schritt 7: Aktualisieren der Locators  
 
-Nach 30 Minuten können Sie die vorhandenen Locator aktualisieren, damit sie den neuen primären Speicherschlüssel nutzen.
+Nach 30 Minuten können Sie die OnDemand-Locators neu erstellen, damit sie den neuen primären Speicherschlüssel nutzen und die vorhandene URL beibehalten.
 
-Verwenden Sie zum Aktualisieren des Ablaufdatums für einen Locator die [REST](http://msdn.microsoft.com/library/azure/hh974308.aspx#update_a_locator)- oder [.NET](http://go.microsoft.com/fwlink/?LinkID=533259)-APIs. Wenn Sie das Ablaufdatum eines SAS-Locators aktualisieren, ändert sich auch die URL.
+Gehen Sie auf die gleiche Weise wie in [Schritt 3](media-services-roll-storage-access-keys.md#step-3-update-locators) vor.
 
  
 ##Media Services-Lernpfade
@@ -113,4 +152,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

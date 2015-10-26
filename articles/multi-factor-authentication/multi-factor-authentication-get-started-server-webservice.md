@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erste Schritte mit dem Webdienst der mobilen App für den MFA-Server"
-	description="Die Azure Multi-Factor Authentication-App verfügt über eine zusätzliche Out-of-Band-Authentifizierungsoption. Diese ermöglicht es, dass der MFA-Server Pushbenachrichtigungen an Benutzer sendet."
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+	pageTitle="Erste Schritte mit dem Webdienst der mobilen App für den MFA-Server" 
+	description="Die Azure Multi-Factor Authentication-App verfügt über eine zusätzliche Out-of-Band-Authentifizierungsoption. Diese ermöglicht es, dass der MFA-Server Pushbenachrichtigungen an Benutzer sendet." 
+	services="multi-factor-authentication" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit dem Webdienst der mobilen App für den MFA-Server
@@ -89,4 +89,4 @@ Nachdem Sie den Webdienst der mobilen App installiert haben, müssen Sie den Azu
 
 <center>![Setup](./media/multi-factor-authentication-get-started-server-webservice/mobile.png)</center>
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

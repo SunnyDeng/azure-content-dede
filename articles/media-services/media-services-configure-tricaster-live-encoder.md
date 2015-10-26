@@ -26,19 +26,19 @@
 
 In diesem Thema wird beschrieben, wie Sie den [NewTek TriCaster](http://newtek.com/products/tricaster-40.html)-Liveencoder zum Senden eines Single-Bitrate-Livedatenstroms an AMS-Kanäle konfigurieren, für die Livecodierung aktiviert sind. Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden](media-services-manage-live-encoder-enabled-channels.md).
 
-In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das Azure-Verwaltungsportal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
+In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das Azure-Verwaltungsportal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
 
 ##Voraussetzungen
 
 - [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md)
-- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer en Streamingeinheit vorhanden ist. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md) 
+- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer zugeordneten Streamingeinheit ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md) 
 - Installieren Sie die neueste Version des [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer)-Tools. 
 - Starten Sie das Tool, und stellen Sie eine Verbindung mit Ihrem AMS-Konto her.
 
 ##Tipps
 
 - Verwenden Sie nach Möglichkeit eine Kabelverbindung zum Internet. 
-- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.  
+- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.  
 - Bei der Verwendung softwarebasierter Encoder schließen Sie alle nicht benötigten Programme.
  
 ## Erstellen eines Kanals
@@ -69,14 +69,14 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
  
 - Codec: H.264 
 - Profil: Hoch (Level 4.0) 
-- Bitrate: 5000 Kbit/s 
+- Bitrate: 5.000 KBit/s 
 - Keyframe: 2 Sekunden (60 Sekunden) 
 - Bildfrequenz: 30
  
 **Audio**:
 
 - Codec: AAC (LC) 
-- Bitrate: 192 Kbit/s 
+- Bit Rate: 192 Kbit/s 
 - Abtastrate: 44,1 kHz
 
 
@@ -137,7 +137,7 @@ Wenn eine Fehlermeldung angezeigt wird, müssen Sie den Kanal zurücksetzen und 
 
 	![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster9.png)
 
-2. Benennen Sie die Anwendung, und passen Sie ggf. die **Archivfensterlänge** an (standardmäßig auf 4 Stunden festgelegt). Sie können außerdem einen Speicherort angeben oder Standardeinstellung beibehalten.
+2. Benennen Sie die Anwendung, und passen Sie ggf. die **Archivfensterlänge** an (standardmäßig auf 4 Stunden festgelegt). Sie können außerdem einen Speicherort angeben oder die Standardeinstellung beibehalten.
 3. Aktivieren Sie das Kontrollkästchen **Programm jetzt starten**.
 4. Klicken Sie auf **Programm erstellen**.  
   
@@ -160,4 +160,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

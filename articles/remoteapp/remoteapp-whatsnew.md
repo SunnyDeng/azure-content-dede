@@ -61,4 +61,4 @@ Möchten Sie Azure RemoteApp in der Praxis testen? Sehen Sie sich das Lernprogra
 
 Vielen Dank, dass Sie uns treu bleiben. Im nächsten Monat gibt es weitere Updates.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

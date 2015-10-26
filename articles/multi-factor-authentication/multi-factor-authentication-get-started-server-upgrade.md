@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Durchführen eines Upgrades vom PhoneFactor-Agent auf den Azure Multi-Factor Authentication-Server"
-	description="In diesem Dokument werden die ersten Schritte mit dem Azure MFA-Server und das Durchführen eines Upgrades des älteren Phonefactor-Agents beschrieben."
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+	pageTitle="Durchführen eines Upgrades vom PhoneFactor-Agent auf den Azure Multi-Factor Authentication-Server" 
+	description="In diesem Dokument werden die ersten Schritte mit dem Azure MFA-Server und das Durchführen eines Upgrades des älteren Phonefactor-Agents beschrieben." 
+	services="multi-factor-authentication" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 # Durchführen eines Upgrades vom PhoneFactor-Agent auf den Azure Multi-Factor Authentication-Server
@@ -60,4 +60,4 @@ Für das Upgrade von Version 5.x oder früher des PhoneFactor-Agents auf den Azu
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

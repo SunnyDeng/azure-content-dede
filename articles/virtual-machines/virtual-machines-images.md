@@ -57,4 +57,4 @@ Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

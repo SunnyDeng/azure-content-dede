@@ -1,18 +1,18 @@
 <properties
-	pageTitle="Azure IoT-Geräte-SDK für C – Weitere Informationen zu IoTHubClient"
+	pageTitle="Azure IoT-Geräte-SDK für C – IoTHubClient | Microsoft Azure"
 	description="Zusätzliche Informationen zur IoTHubClient-Bibliothek im Azure IoT-Geräte-SDK für C"
 	services="iot-hub"
-	documentationCenter="na"
+	documentationCenter=""
 	authors="MichelBarnett"
 	manager="timlt"
 	editor=""/>
 
 <tags
      ms.service="iot-hub"
-     ms.devlang="na"
+     ms.devlang="cpp"
      ms.topic="article"
      ms.tgt_pltfrm="na"
-     ms.workload="tbd"
+     ms.workload="na"
      ms.date="09/29/2015"
      ms.author="michelb"/>
 
@@ -276,4 +276,4 @@ Die Batchverarbeitung ist eine wichtige Option. Standardmäßig übergibt die Bi
 
 In diesem Artikel wird das Verhalten der **IoTHubClient**-Bibliothek im **Azure IoT-Geräte-SDK für C** ausführlich beschrieben. Diese Informationen sollten Ihnen einen umfassenden Überblick über die Funktionen der **IoTHubClient**-Bibliothek bieten. Im [nächsten Artikel](iot-hub-device-sdk-c-serializer.md) stellen wir ähnliche Details zur Bibliothek des **Serialisierungsprogramms** vor.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

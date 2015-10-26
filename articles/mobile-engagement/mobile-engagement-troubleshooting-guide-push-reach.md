@@ -7,7 +7,6 @@
    manager="dwrede" 
    editor=""/>
 
-
 <tags
    ms.service="mobile-engagement"
    ms.devlang="na"
@@ -16,7 +15,6 @@
    ms.workload="mobile" 
    ms.date="06/18/2015"
    ms.author="piyushjo"/>
-
 
 # Handbuch zur Problembehandlung bei Push und Reach
 
@@ -112,4 +110,4 @@ Im Folgenden finden Sie mögliche Probleme, die beim Senden von Informationen du
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

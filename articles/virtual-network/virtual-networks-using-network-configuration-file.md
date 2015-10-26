@@ -18,7 +18,7 @@
 
 # Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei
 
-Sie können ein virtuelles Netzwerk \(VNet\) mithilfe des Azure-Verwaltungsportals oder einer Netzwerkkonfigurationsdatei konfigurieren.
+Sie können ein virtuelles Netzwerk (VNet) mithilfe des Azure-Verwaltungsportals oder einer Netzwerkkonfigurationsdatei konfigurieren.
 
 ## Erstellen und Ändern einer Netzwerkkonfigurationsdatei 
 Die einfachste Möglichkeit zum Erstellen einer Netzwerkkonfigurationsdatei ist der Export der Netzwerkeinstellungen aus einer vorhandenen Konfiguration eines virtuellen Netzwerks und die anschließende Bearbeitung der Datei, damit sie die Einstellungen enthält, die Sie für Ihre virtuellen Netzwerke konfigurieren möchten.
@@ -44,8 +44,8 @@ Beim Export werden alle Einstellungen für die virtuellen Netzwerke in Ihrem Abo
 ### So importieren Sie die Netzwerkeinstellungen
 
 1. Klicken Sie im Navigationsbereich im **Verwaltungsportal** unten links auf **Neu**.
-2. Klicken Sie auf **Network Services** -\> **Virtuelles Netzwerk** -\> **Konfiguration importieren**.
+2. Klicken Sie auf **Network Services** -> **Virtuelles Netzwerk** -> **Konfiguration importieren**.
 3. Wechseln Sie auf der Seite **Die Netzwerkkonfigurationsdatei importieren** zu Ihrer Netzwerkkonfigurationsdatei, und klicken Sie dann auf den Pfeil für **Weiter**.
 4. Auf der Seite **Netzwerk wird erstellt** wird auf dem Bildschirm angezeigt, welche Teile Ihrer Netzwerkkonfiguration geändert oder erstellt werden. Wenn die Änderungen Ihnen richtig erscheinen, markieren Sie das Häkchen, um mit dem Aktualisieren oder Erstellen Ihres virtuellen Netzwerks fortzufahren. 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

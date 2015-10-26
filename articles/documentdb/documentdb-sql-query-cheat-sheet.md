@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="DocumentDB-Abfragespickzettel | Microsoft Azure"
-	description="Ein druckbarer Abfragespickzettel, der Ihnen hilft, die SQL-ähnliche Grammatik von DocumentDB zur Abfrage von JSON-Dokumenten in der NoSQL-Datenbank zu verwenden."
-	services="documentdb"
-	documentationCenter=""
-	authors="mimig1"
-	manager="jhubbard"
+	pageTitle="DocumentDB-Abfragespickzettel | Microsoft Azure" 
+	description="Ein druckbarer Abfragespickzettel, der Ihnen hilft, die SQL-ähnliche Grammatik von DocumentDB zur Abfrage von JSON-Dokumenten in der NoSQL-Datenbank zu verwenden." 
+	services="documentdb" 
+	documentationCenter="" 
+	authors="mimig1" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/20/2015"
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/20/2015" 
 	ms.author="mimig"/>
 
 # Herunterladbarer SQL-Abfragespickzettel für DocumentDB
@@ -38,4 +38,4 @@ Schreiben Sie Ihre Abfragen schneller, indem Sie den Abfragespickzettel herunter
 - Eine exemplarische Vorgehensweise der Abfrageoptionen, die in DocumentDB verfügbar sind, finden Sie unter [Abfragen von DocumentDB](documentdb-sql-query.md).
 - Die zugehörige Referenzdokumentation finden Sie unter [SQL-Abfragesprache von DocumentDB](https://msdn.microsoft.com/library/azure/dn782250.aspx).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

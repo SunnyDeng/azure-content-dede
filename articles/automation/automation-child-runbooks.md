@@ -94,4 +94,4 @@ Die folgende Tabelle enthält eine Zusammenfassung der Unterschiede zwischen den
 - [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md)
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -193,4 +193,4 @@ In den nächsten Zeilen werden die einzelnen virtuellen Computer schrittweise du
 - [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

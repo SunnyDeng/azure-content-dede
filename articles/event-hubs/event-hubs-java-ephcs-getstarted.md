@@ -119,4 +119,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -40,4 +40,4 @@ Der Verweis auf die Clientbibliothek wurde damit Ihrem Projekt hinzugefügt.
 [1]: ./media/sql-database-elastic-scale-add-references-visual-studio/search-online.png
 <!--anchors-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

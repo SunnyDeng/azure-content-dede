@@ -475,4 +475,4 @@ Lernprogramme mit der Beschreibung von anderen Beispielen und Anweisungen zur Ve
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

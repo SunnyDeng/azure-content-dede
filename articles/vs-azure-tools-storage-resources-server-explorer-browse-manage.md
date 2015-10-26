@@ -199,7 +199,7 @@ Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in 
 
     - Eine Eigenschaft mit dem Namen "Timestamp" kann nicht erstellt werden, da von den Azure Storage-Diensten eine Eigenschaft mit diesem Namen verwendet wird.
 
-    - DateTime-Werte müssen den Regions- und Spracheinstellungen des Computers (Beispiel: TT.MM.JJJJ HH:MM:SS für Deutschland) entsprechend eingegeben werden.
+    - DateTime-Werte müssen den Regions- und Spracheinstellungen des Computers (Beispiel: TT.MM.JJJJ HH:MM:SS für Deutschland) entsprechend eingegeben werden.  
 
 ### So fügen Sie Entitäten hinzu
 
@@ -313,4 +313,4 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
 Weitere Informationen dazu, wie Azure Storage Services verwendet wird, finden Sie unter [Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

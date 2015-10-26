@@ -26,4 +26,4 @@
 
 8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Schritt 4: Beenden des Wartungsmodus](storsimple-update-device.md#step4).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

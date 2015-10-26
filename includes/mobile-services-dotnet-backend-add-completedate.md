@@ -40,4 +40,4 @@ In diesem Abschnitt ändern wir das Modell unserer Datenbank, indem wir ein neue
 
 Als Nächstes aktualisieren Sie die Client-App, um die neuen **CompleteDate**-Daten anzuzeigen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

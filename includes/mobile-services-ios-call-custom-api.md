@@ -34,4 +34,4 @@ Verwenden Sie zum Aufrufen dieser benutzerdefinierten API von einem iOS-Client a
 	     completion:completion ];
 		
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

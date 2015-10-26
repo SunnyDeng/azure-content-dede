@@ -111,7 +111,7 @@ In der folgende Tabelle sind die PHP-Eigenschaftstypen den .NET-Eigenschaftstype
 | integer | int |
 | double | double |
 | boolean | bool |
-| string | string |
+| Zeichenfolge | string |
 | object | Object |
 
 #### .NET-API von Service Bus zu PHP
@@ -180,10 +180,6 @@ Die folgenden Tabellen enthalten die Zuordnung zwischen den Proton-PHP-Standardn
 Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 
 - [Übersicht über Service Bus AMQP]
-- [Verwenden von Service Bus aus .NET mit AMQP]
-- [Verwenden von Service Bus aus Java mit AMQP]
-- [Verwenden von Service Bus aus Python mit AMQP]
-- [Installieren von Apache Qpid Proton-C auf einem virtuellen Azure-Linux-Computer]
 - [AMQP in Service Bus für Windows Server]
 
 
@@ -192,9 +188,5 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 [AMQP in Service Bus für Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
 
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
-[Verwenden von Service Bus aus .NET mit AMQP]: service-bus-amqp-dotnet.md
-[Verwenden von Service Bus aus Java mit AMQP]: service-bus-amqp-java.md
-[Verwenden von Service Bus aus Python mit AMQP]: service-bus-amqp-python.md
-[Installieren von Apache Qpid Proton-C auf einem virtuellen Azure-Linux-Computer]: service-bus-amqp-apache.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

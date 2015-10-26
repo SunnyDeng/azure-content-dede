@@ -70,4 +70,4 @@ Die Hauptvorteile von Azure Fabric Actors sind: (1) **Entwicklerproduktivität**
 
 * *Explizite Asynchronie.* Das Programmiermodell Azure Fabric Actors expliziert die asynchrone Natur einer verteilten Anwendung und weist Programmierern den Weg zum Schreiben von nicht-blockierendem, asynchronem Code. Dadurch wird ein hohes Maß an verteilter Parallelität und Gesamtdurchsatz ermöglicht, ohne dass die explizite Verwendung von Multithreading erforderlich ist.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

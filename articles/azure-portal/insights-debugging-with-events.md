@@ -7,7 +7,6 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-
 <tags 
 	ms.service="azure-portal" 
 	ms.workload="na" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="04/28/2015" 
 	ms.author="hanikn"/>
-
 
 # Anzeigen von Ereignis- und Überwachungsprotokollen
 
@@ -74,4 +72,4 @@ Nachdem Sie ausgewählt haben, was Sie anzeigen möchten, klicken Sie unten auf 
 * [Überwachen von Dienstmetriken](insights-how-to-customize-monitoring.md), um sicherzustellen, dass Ihr Dienst verfügbar und reaktionsfähig ist.
 * [Nachverfolgen der Dienstintegrität](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die in Azure aufgetreten sind.  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

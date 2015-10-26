@@ -7,4 +7,4 @@
 
 * Zuletzt [aktualisieren Sie die Bereitstellungsprofile im Xcode-Schnellstartprojekt](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringPushNotifications/ConfiguringPushNotifications.html#//apple_ref/doc/uid/TP40012582-CH32-SW10) und [überprüfen, ob das Bereitstellungsprofil erstellt oder neu generiert wurde, um Pushbenachrichtigungen zu ermöglichen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringPushNotifications/ConfiguringPushNotifications.html#//apple_ref/doc/uid/TP40012582-CH32-SW12).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

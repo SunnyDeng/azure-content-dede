@@ -13,12 +13,13 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="big-compute"
- ms.date="09/28/2015"
+ ms.date="10/08/2015"
  ms.author="danlep"/>
 
 # Optionen zum Erstellen und Verwalten eines HPC-Clusters (High Performance Computing) in Azure mit Microsoft HPC Pack
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastruktur, um einen HPC-Cluster (High Performance Computing) zu erstellen und zu verwalten. [HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) ist die kostenlose HPC-Lösung von Microsoft, die auf Microsoft Azure und Windows Server-Technologien basiert und sowohl Windows- als auch Linux HPC-Workloads unterstützt. Ein cloudbasierter HPC Pack-Cluster stellt einem Clusteradministrator oder unabhängigen Softwarehersteller (Independent Software Vendor, ISV) eine flexible, skalierbare Plattform zur Ausführung rechenintensiver Anwendungen zur Verfügung, die es ermöglicht, Investitionen in eine lokale Computecluster-Infrastruktur zu reduzieren.
 
@@ -46,7 +47,7 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 ### PowerShell-Bereitstellungsskript
 
-* [Erstellen eines HPC-Clusters mit dem HPC Pack IaaS-Bereitstellungsskript](virtual-machines-hpcpackcluster-powershell-script.md)
+* [Erstellen eines HPC-Clusters mit dem HPC Pack IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md)
 
 ### Lernprogramme
 
@@ -94,4 +95,4 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 <!-- * [Set up a Linux RDMA cluster to run MPI applications](virtual-machines-linux-hpcpack-cluster-rdma.md) -->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

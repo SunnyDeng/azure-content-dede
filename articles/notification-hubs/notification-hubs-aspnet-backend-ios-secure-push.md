@@ -158,4 +158,4 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-secure-push/secure-push-ios-1.png
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

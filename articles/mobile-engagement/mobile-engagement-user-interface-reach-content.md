@@ -50,7 +50,7 @@ Jede URL, die vom Betriebssystem eines Zielgeräts interpretiert werden kann, ka
 
 - **Android + iOS-Aktionen**
     - Öffnen einer Webseite
-    - http://[web-site-domain] 
+    - http://[web-site-domain\] 
     - Beispiel:http://www.azure.com
     - Senden einer E-Mail
     - mailto:[e-mail-recipient]?subject=[subject]&body=[message] 
@@ -74,7 +74,7 @@ Jede URL, die vom Betriebssystem eines Zielgeräts interpretiert werden kann, ka
     - Beispiel:http://itunes.apple.com/fr/app/briquet-virtuel/id430154748?mt=8
     - Windows-Aktionen
     - Öffnen einer Webseite
-    - http://[web-site-domain] 
+    - http://[web-site-domain\] 
     - Beispiel:http://www.azure.com
     - Senden einer E-Mail
     - mailto:[e-mail-recipient]?subject=[subject]&body=[message] 
@@ -230,4 +230,4 @@ Die Kachelnutzlast ist der Text, der auf der Kachel Ihrer App auf Windows Phone-
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

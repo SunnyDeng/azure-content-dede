@@ -69,4 +69,4 @@ Sie benötigen Folgendes:
 
 Veröffentlichen von Kommentaren oder Fragen im [Site Recovery-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

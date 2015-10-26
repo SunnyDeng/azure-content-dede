@@ -56,7 +56,7 @@ HDInsight-Cluster erfordern eine Azure-Ressourcengruppe und einen Blobcontainer 
 
 3. Erstellen Sie eine neue Ressourcengruppe:
 
-	New-AzureResourceGroup -name <AzureResourceGroupName> -Location <AzureDataCente> #  Beispiel: USA Westen
+	New-AzureResourceGroup -name <AzureResourceGroupName> -Location <AzureDataCente> # Beispiel: USA Westen
 
 	[AZURE.INCLUDE [Datencenter-Liste](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
@@ -64,7 +64,7 @@ HDInsight-Cluster erfordern eine Azure-Ressourcengruppe und einen Blobcontainer 
 
 	New-AzureStorageAccount -ResourceGroupName <AzureResourceGroupName> -Name <AzureStorageAccountName> -Location <AzureDataCneter> -Type <AccountType> # account type example: Standard_ZRS for zero redundancy storage
 
-	For a full list of the storage account types, see [https://msdn.microsoft.com/de-de/library/azure/hh264518.aspx](https://msdn.microsoft.com/de-de/library/azure/hh264518.aspx).
+	For a full list of the storage account types, see [https://msdn.microsoft.com/de-DE/library/azure/hh264518.aspx](https://msdn.microsoft.com/de-DE/library/azure/hh264518.aspx).
 
 
 Informationen zum Erstellen von Azure-Speicherkonten mit dem Azure-Vorschauportal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md).
@@ -343,4 +343,4 @@ Informationen finden Sie im Abschnitt [Übermitteln von MapReduce-Aufträgen](#m
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

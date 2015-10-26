@@ -54,4 +54,4 @@ Erstellen Sie einen Cache, und untersuchen Sie die neuen Features des "Premium"-
 -	[Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md)
   
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

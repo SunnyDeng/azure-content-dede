@@ -1,20 +1,21 @@
-<properties
-	pageTitle="Azure Storage-Replikation | Microsoft Azure"
-	description="Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Beständigkeit und hohe Verfügbarkeit sicherzustellen. Die Redundanzoptionen umfassen den lokal redundanten Speicher (LRS), den zonenredundanten Speicher (ZRS), den georedundanten Speicher (GRS) und den georedundanten Speicher mit Lesezugriff (RA-GRS)."
-	services="storage"
-	documentationCenter=""
-	authors="tamram"
-	manager="adinah"
-	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="tamram"/>
+<properties 
+  pageTitle="Azure Storage-Replikation | Microsoft Azure" 
+  description="Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Beständigkeit und hohe Verfügbarkeit sicherzustellen. Die Redundanzoptionen umfassen den lokal redundanten Speicher (LRS), den zonenredundanten Speicher (ZRS), den georedundanten Speicher (GRS) und den georedundanten Speicher mit Lesezugriff (RA-GRS)." 
+  services="storage" 
+  documentationCenter="" 
+  authors="tamram" 
+  manager="adinah" 
+  editor=""/>
+
+<tags 
+  ms.service="storage" 
+  ms.workload="storage" 
+  ms.tgt_pltfrm="na" 
+  ms.devlang="na" 
+  ms.topic="article" 
+  ms.date="10/07/2015" 
+  ms.author="tamram"/>
 
 # Azure Storage-Replikation
 
@@ -55,7 +56,7 @@ Wenngleich georedundanter Speicher (GRS) für die meisten Anwendungen empfohlen 
 Zonenredundanter Speicher (ZRS) repliziert Ihre Daten in zwei bis drei Rechenzentren, entweder innerhalb einer einzelnen Region oder in zwei Regionen, wodurch eine höhere Beständigkeit als bei LRS gewährleistet ist. Wenn für Ihr Speicherkonto ZRS aktiviert ist, sind Ihre Daten selbst bei einem Ausfall eines der Rechenzentren beständig gespeichert.
 
 
->[AZURE.NOTE]ZRS ist derzeit nur für Blockblobs verfügbar. Hinweis: Nachdem Sie Ihr Speicherkonto erstellt und die zonenredundante Replikation ausgewählt haben, ist es nicht mehr möglich, einen anderen Replikationstyp zu wählen. Gleiches gilt für die anderen Replikationstypen.
+>[AZURE.NOTE]ZRS ist derzeit nur für Blockblobs verfügbar und wird nur in Version 2014-02-14 und höher unterstützt. Hinweis: Nachdem Sie Ihr Speicherkonto erstellt und die zonenredundante Replikation ausgewählt haben, ist es nicht mehr möglich, einen anderen Replikationstyp zu wählen. Gleiches gilt für die anderen Replikationstypen.
 
 
 ## Georedundanter Speicher
@@ -103,4 +104,4 @@ Wenn Sie den schreibgeschützten Zugriff auf Ihre Daten in der sekundären Regio
 - [Microsoft Azure Storage Emulator 3.1 with RA-GRS](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx) (in englischer Sprache)
 - [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

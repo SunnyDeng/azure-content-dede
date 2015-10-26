@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="10/08/2015"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory (AD) B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit LinkedIn-Konten
@@ -24,7 +24,7 @@
 
 Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden zu können, müssen Sie zuerst eine LinkedIn-Anwendung erstellen und die entsprechenden Parameter bereitstellen. Sie benötigen dazu ein LinkedIn-Konto. Wenn Sie kein LinkedIn-Konto haben, können Sie ein Konto unter [https://www.linkedin.com/](https://www.linkedin.com/) erstellen.
 
-1. Navigieren Sie zur [LinkedIn-Entwickler-Website](https://www.developer.linkedin.com/), und melden Sie sich mit den Anmeldeinformationen für Ihr LinkedIn-Konto an.
+1. Navigieren Sie zur [LinkedIn-Entwickler-Website](https://www.developer.linkedin.com/)￼, und melden Sie sich mit den Anmeldeinformationen für Ihr LinkedIn-Konto an.
 2. Klicken Sie in der oberen Menüleiste auf **Meine Apps** und dann auf **Anwendung erstellen**.
 
     ![LinkedIn – Neue App](./media/active-directory-b2c-setup-li-app/linkedin-new-app.png)
@@ -45,11 +45,11 @@ Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 ## Konfigurieren von LinkedIn als Identitätsanbieter in Ihrem Verzeichnis
 
 1. [Navigieren Sie zum B2C-Features-Blatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
-2. Klicken Sie auf dem B2C-Feature-Blatt auf **Identitätsanbieter für soziale Medien**.
+2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter**.
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Geben Sie einen aussagekräftigen Namen für die Konfiguration des Identitätsanbieters unter **Name** ein. Geben Sie z. B. "LI" ein.
 5. Klicken Sie auf **Typ des Identitätsanbieters**, wählen Sie **LinkedIn** aus, und klicken Sie auf **OK**.
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie **Client-ID** und **Geheimer Clientschlüssel** der LinkeIn-Anwendung, die Sie zuvor erstellt haben, ein.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für LinkedIn zu speichern.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

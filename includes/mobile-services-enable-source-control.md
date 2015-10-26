@@ -18,4 +18,4 @@
 Mit aktivierter Quellcodeverwaltung für Ihren mobilen Dienst können Sie Git verwenden, um das Repository auf Ihrem lokalen Computer zu klonen.
  
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

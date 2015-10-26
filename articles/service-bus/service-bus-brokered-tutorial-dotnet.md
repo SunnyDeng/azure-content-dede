@@ -649,4 +649,4 @@ Weitere Informationen zum Service Bus finden Sie in den unten angegebenen Themen
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

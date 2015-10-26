@@ -1,5 +1,5 @@
-<properties 
-	pageTitle="Häufig gestellte Fragen zu Azure AD Connect"
+<properties
+	pageTitle="Häufig gestellte Fragen zu Azure AD Connect | Microsoft Azure"
 	description="Auf dieser Seite finden Sie häufig gestellte Fragen zu Azure AD Connect."
 	services="active-directory"
 	documentationCenter=""
@@ -7,23 +7,36 @@
 	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
+<tags
 	ms.service="active-directory"
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.date="10/13/2015"
 	ms.author="billmath"/>
 
 # Häufig gestellte Fragen zu Azure Active Directory Connect
 
+## Expressinstallation
+
+## Benutzerdefinierte Installation
+
+## Netzwerk
+**F: Die maximale Länge für offene Verbindungen in meinem Netzwerk wird durch eine Firewall, ein Netzwerkgerät o. ä. eingeschränkt. Wie hoch sollte der clientseitige Schwellenwert für die Zeitüberschreitung bei der Verwendung von Azure AD Connect sein?**
+
+Für Netzwerksoftware, physische Geräte und alle anderen Komponenten, durch die die maximale Länge von offenen Verbindungen eingeschränkt wird, sollte ein Schwellenwert von mindestens 5 Minuten (300 Sekunden) für die Konnektivität zwischen dem Server, auf dem der Azure AD Connect-Client installiert ist, und Azure Active Directory verwendet werden. Dies gilt auch für alle zuvor veröffentlichten Microsoft Identity-Synchronisierungswerkzeuge.
+
+
+**F: Was muss ich tun, wenn ich eine E-Mail erhalte, die mich auffordert, mein Office 365-Zertifikat zu erneuern?**
+
+Verwenden Sie die Anleitungen, die in [diesem](active-directory-aadconnect-o365-certs.md) Artikel beschrieben sind, um das Zertifikat zu erneuern.
 
 ## Problembehandlung
 
 **F: Wie erhalte ich Hilfe zu Azure AD Connect?**
 
-[Durchsuchen der Microsoft Knowledge Base (KB)](https://www.microsoft.com/de-de/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
+[Durchsuchen der Microsoft Knowledge Base (KB)](https://www.microsoft.com/en-us/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
 
 - Suchen Sie in der Microsoft Knowledge Base (KB) nach technischen Lösungen für häufige Probleme im Zusammenhang mit der Unterstützung von Azure AD Connect.
 
@@ -34,10 +47,6 @@
 
 [Azure AD Connect-Kundensupport](https://manage.windowsazure.com/?getsupport=true)
 
-- Verwenden Sie diesen Link, um Support über das Azure-Portal zu erhalten. 
+- Verwenden Sie diesen Link, um Support über das Azure-Portal zu erhalten.
 
-**F: Was muss ich tun, wenn ich eine E-Mail erhalte, die mich auffordert, mein Office 365-Zertifikat zu erneuern**
-
-Verwenden Sie die Anleitungen, die in [diesem](active-directory-aadconnect-o365-certs.md) Artikel beschrieben sind, um das Zertifikat zu erneuern.
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

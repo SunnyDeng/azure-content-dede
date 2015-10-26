@@ -19,8 +19,6 @@
 
 #Gewusst wie: Verwenden von SSH mit Linux auf Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
-
 Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SSH-Schlüssel, die in einem X509-Zertifikat enthalten sind. Gehen Sie wie nachstehend beschrieben vor, um SSH-Schlüssel mit Azure zu erzeugen und zu verwenden.
 
 ## Erzeugen von Azure-kompatiblen Schlüsseln in Linux ##
@@ -179,4 +177,4 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

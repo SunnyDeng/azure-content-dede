@@ -1,8 +1,8 @@
 <properties
- pageTitle="IoT-Geräteverwaltung | Microsoft Azure"
- description="Ein Überblick über die Azure IoT Hub-Geräteverwaltung"
+ pageTitle="Verwalten von IoT-Geräten | Microsoft Azure"
+ description="Übersicht über die Verwaltung von IoT-Geräten mit IoT Hub und IoT Suite"
  services="iot-hub"
- documentationCenter=".net"
+ documentationCenter=""
  authors="juanjperez"
  manager="timlt"
  editor=""/>
@@ -12,7 +12,7 @@
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
- ms.workload="tbd"
+ ms.workload="na"
  ms.date="09/29/2015"
  ms.author="juanpere"/>
 
@@ -21,7 +21,7 @@
 ## Einführung
 Azure IoT Suite und Azure IoT Hub bieten grundlegende Funktionen, um die Geräteverwaltung für IoT-Lösungen präzise und für verschiedene Geräte und Gerätetopologien zu aktivieren. Geräteverwaltung bezieht sich in diesem Artikel ausdrücklich auf die IoT-Geräteverwaltung.
 
-Dienstanbieter und Unternehmen oder Organisationen, die den IoT-Gerätebestand verwalten, nutzen die Geräteverwaltungsfunktionen, um die folgenden Geschäftsprozesse durchzuführen, z. B. IoT-Geräte registrieren und erkennen, Konnektivität herstellen, Remotekonfiguration und Software auf Geräten aktualisieren. Beim Verwalten von Geräten in Fertigungsstätten oder auf Ölfelder gibt es z. B. Richtlinien für die Remotekonfiguration und -aktualisierung von Geräten, bei denen Bewilligungsketten, behördliche Auditauflagen, das Vorhandensein von physischen Sicherheitsvorkehrungen und mehr berücksichtigt werden müssen.
+Service Provider und Unternehmen oder Organisationen, die den IoT-Gerätebestand verwalten, nutzen die Geräteverwaltungsfunktionen, um die folgenden Geschäftsprozesse durchzuführen, z. B. IoT-Geräte registrieren und erkennen, Konnektivität herstellen, Remotekonfiguration und Software auf Geräten aktualisieren. Beim Verwalten von Geräten in Fertigungsstätten oder auf Ölfelder gibt es z. B. Richtlinien für die Remotekonfiguration und -aktualisierung von Geräten, bei denen Bewilligungsketten, behördliche Auditauflagen, das Vorhandensein von physischen Sicherheitsvorkehrungen und mehr berücksichtigt werden müssen.
 
 Wenn Sie die IoT-Geräteverwaltung für Ihre IoT-Lösung aktivieren, sollten Sie die folgenden Funktionen berücksichtigen und deren Bedeutung im Hinblick auf Ihre Geschäftsziele festlegen:
 
@@ -118,4 +118,4 @@ Die Übermittlung des Updatepakets kann über einen Speicherdienst wie Azure Sto
 
 Nach Abschluss der Aktualisierung einer Firmware, muss das Gerät in der Lage sein, einen funktionierenden Zustand zu überprüfen und zu identifizieren. Wenn das Gerät nicht erfolgreich in den funktionierenden Zustand wechselt, sollte die Software auf dem Gerät ein Rollback auf einen als funktionierend bekannten Zustand initiieren. Der bekannte funktionierende Zustand könnte der letzte als funktionierend bekannte Zustand sein oder ein als "Golden State" bekanntes Gerätefirmware-Image, das in einer Speicherpartition gespeichert wird.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

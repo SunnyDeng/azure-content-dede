@@ -41,15 +41,15 @@ Der Trigger **Neuer Tweet** wurde archiviert. Derzeit ist er noch als erweiterte
 
 ## Erstellen des Twitter-Connectors
 
-> [AZURE.IMPORTANT]Das Erstellen eines Twitter-Connectors erfordert derzeit das Registrieren einer API-App bei Twitter. Sie können eine Anwendung kostenlos auf [http://apps.twitter.com](http://apps.twitter.com) registrieren. Sie benötigen den Twitter-API-Schlüssel und den geheimen Schlüssel zur Erstellung eines Connectors.
+> [AZURE.IMPORTANT]Während Sie einen Twitter-Connector erstellen, können Sie Ihre eigene App bei Twitter registrieren und die App-Schlüssel mit dem Twitter-Connector verwenden. Sie können eine Anwendung kostenlos auf [http://apps.twitter.com](http://apps.twitter.com) registrieren. Stellen Sie beim Registrieren sicher, dass Sie eine Rückruf-URL angeben. Sie können die Rückruf-URL später ändern, sobald der Twitter-Connector erstellt wurde. Sie benötigen den Twitter-API-Schlüssel und den geheimen Schlüssel zur Erstellung eines Connectors.
 
 Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketplace erstellt werden. So erstellen Sie einen Connector aus dem Marketplace:
 
-1. Erstellen Sie eine kostenlose Twitter-Anwendung unter [http://apps.twitter.com](http://apps.twitter.com)
-    * Wenn Sie Ihre App registrieren, können Sie jede URL für die Website eingeben und die Rückruf-URL leer lassen.
+1. [Optional] Erstellen Sie eine kostenlose Twitter-Anwendung unter [http://apps.twitter.com](http://apps.twitter.com).
+    * Wenn Sie Ihre App registrieren, können Sie jede URL für die Website eingeben. Geben Sie eine beliebige Rückruf-URL an (lassen Sie diese Angabe nicht aus). Sie können sie später aktualisieren.
 2. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-3. Suchen Sie nach "Twitter-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-4. Klicken Sie auf "Paketeinstellungen", und fügen Sie den "Verbraucherschlüssel“ aus der Twitter-App in das Feld "ClientId" ein. Fügen Sie den "geheimen Verbraucherschlüssel" aus der Twitter-App in das Feld "clientSecret" ein.
+3. Suchen Sie den Twitter-Connector, wählen Sie den Eintrag aus, und klicken Sie dann auf **Erstellen**.
+4. [Optional] Klicken Sie auf "Paketeinstellungen", und fügen Sie den "Verbraucherschlüssel" aus der Twitter-App in das Feld "clientId" ein. Fügen Sie den "geheimen Verbraucherschlüssel" aus der Twitter-App in das Feld "clientSecret" ein: 
 ![][10]
 5. Geben Sie andere erforderliche Einstellungen im Zusammenhang mit Connectorname, App Service und Ressourcengruppe ein.
 6.	Klicken Sie auf **Erstellen**.
@@ -83,7 +83,7 @@ Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem G
 
 >[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connector- und API-Apps-Referenz](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -99,4 +99,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-twitter/settings.PNG
 [10]: ./media/app-service-logic-connector-twitter/TwitterAPISettings.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

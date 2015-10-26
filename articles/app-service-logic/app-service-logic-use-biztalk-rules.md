@@ -46,8 +46,7 @@ _IF_ _Bedingung_ _THEN_ _Aktion_
 
 Betrachten Sie das folgende Beispiel:
 
-*IF Menge kleiner gleich verfügbare Mittel*  
-*THEN Transaktion durchführen und Beleg drucken*
+*IF Menge kleiner gleich verfügbare Mittel* *THEN Transaktion durchführen und Beleg drucken*
 
 Diese Regel bestimmt, ob eine Transaktion durchgeführt wird, indem sie Geschäftslogik in Form eines Vergleichs zwischen zwei monetären Werten anwendet, einem Transaktionsbetrag und den zur Verfügung stehenden Mitteln. 
 Sie können anhand der Geschäftsregel Geschäftsregeln erstellen, ändern und bereitstellen. Alternativ können Sie die vorherigen Aufgaben programmgesteuert ausführen.
@@ -248,4 +247,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 [10]: ./media/app-service-logic-use-biztalk-rules/APIDef.PNG
 [11]: ./media/app-service-logic-use-biztalk-rules/PublicAnon.PNG
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

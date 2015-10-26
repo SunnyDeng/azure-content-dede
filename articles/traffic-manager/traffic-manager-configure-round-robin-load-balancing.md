@@ -52,4 +52,4 @@ Ein gängiges Muster für das Routing von Datenverkehr besteht darin, eine Reihe
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

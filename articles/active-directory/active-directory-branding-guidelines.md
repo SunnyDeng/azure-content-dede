@@ -94,4 +94,4 @@ Stellen Sie den Benutzern eine Funktion zur Verfügung, über die sie sich abmel
 
 Wenn Ihre App sowohl Azure AD- als auch Microsoft-Konten unterstützt, müssen Sie in Ihrer App zwei separate Schaltflächen bereitstellen. Wir arbeiten derzeit an einem Update, durch das Sie nach einmaliger Integration sowohl persönliche Konten als auch Geschäftskonten von Microsoft unterstützen können. Nach dem Update können Sie in Ihrer App eine einzelne Microsoft-Anmeldeschaltfläche verwenden.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

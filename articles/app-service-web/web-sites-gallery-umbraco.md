@@ -127,4 +127,4 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Web-App mit Umbra
 [17MyPage]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

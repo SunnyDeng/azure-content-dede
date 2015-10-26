@@ -17,7 +17,7 @@
    ms.author="arynes"/>
 
 
-# Cloud Platform Integration Framework \(Azure-Architekturmuster\)
+# Cloud Platform Integration Framework (Azure-Architekturmuster)
 
 Das Cloud Platform Integration Framework bietet Unterstützung für die Arbeitsauslastungsintegration beim Einbinden von Anwendungen in eine Microsoft-Cloudlösung.
 
@@ -31,7 +31,7 @@ Sowohl öffentliche als auch private Cloudumgebungen bieten allgemeine Elemente,
 
 Diese Architekturmuster fallen in die folgenden Kategorien:
 
-- **Infrastructure** – Microsoft Azure ist eine IaaS- \(Infrastructure-as-a-Service\) und PaaS-Lösung \(Platform-as-a-Service\), die verschiedene zugrunde liegende Dienste und Funktionen umfasst. Diese Dienste können allgemein in Computing-, Speicher- und Netzwerkdienste unterteilt werden, es gibt jedoch verschiedene Funktionalitäten, die möglicherweise nicht in diese Definition passen. Infrastrukturmuster bieten Details zu einem bestimmten Funktionsbereich von Microsoft Azure, der für die Bereitstellung eines Diensts für eine oder mehrere Lösungen erforderlich ist, die innerhalb eines Azure-Abonnements gehostet werden. 
+- **Infrastructure** – Microsoft Azure ist eine IaaS- (Infrastructure-as-a-Service) und PaaS-Lösung (Platform-as-a-Service), die verschiedene zugrunde liegende Dienste und Funktionen umfasst. Diese Dienste können allgemein in Computing-, Speicher- und Netzwerkdienste unterteilt werden, es gibt jedoch verschiedene Funktionalitäten, die möglicherweise nicht in diese Definition passen. Infrastrukturmuster bieten Details zu einem bestimmten Funktionsbereich von Microsoft Azure, der für die Bereitstellung eines Diensts für eine oder mehrere Lösungen erforderlich ist, die innerhalb eines Azure-Abonnements gehostet werden. 
 - **Foundation** – Bei der Entwicklung mehrstufiger Anwendungen oder Dienste innerhalb von Azure müssen verschiedene Komponenten kombiniert werden, um eine geeignete Hostingumgebung bereitzustellen. Foundation-Muster stellen einen oder mehrere Dienste von Microsoft Azure zusammen, um eine vorgegebene Funktionsebene innerhalb einer Anwendung zu unterstützen. Hierzu ist möglicherweise die Verwendung von einer oder mehrerer Komponenten erforderlich, die in den oben genannten Infrastrukturmustern beschrieben werden. Beispielsweise erfordert die Darstellungsschicht einer mehrstufigen Anwendung Computing-, Netzwerk- und Speicherfunktionen in Azure, um die gewünschte Funktionalität zu bieten. Foundation-Muster werden als Bestandteil einer vorgegebenen Lösung mit anderen Mustern kombiniert.
 - **Solution** – Solution-Muster werden mit Infrastruktur- und/oder Foundation-Mustern kombiniert, um eine in der Entwicklung befindliche Endanwendung oder einen Dienst zu repräsentieren. Es ist vorgesehen, dass komplexe Lösungen nicht unabhängig von anderen Mustern entwickelt werden. Stattdessen sollten sie die Komponenten und Schnittstellen verwenden, die in jeder der oben genannten Musterkategorien definiert werden.    
 
@@ -46,7 +46,7 @@ Zur Unterstützung der Entwicklung von Lösungsarchitekturen innerhalb von Azure
 - Azure Search 
 
 ##  Zusätzliche Ressourcen
-[CPIF-Architektur \(PDF\)](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-bd1e434a)
+[CPIF-Architektur (PDF)](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-bd1e434a)
 
 ## Siehe auch
 [Global Load Balanced Web Tier](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
@@ -59,4 +59,4 @@ Zur Unterstützung der Entwicklung von Lösungsarchitekturen innerhalb von Azure
 
 [Azure Search](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-e581d65d)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

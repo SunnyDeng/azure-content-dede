@@ -6,7 +6,7 @@ Beachten Sie für die Clientverbindungen folgende Anforderungen:
 
 - Wenn sich die AlwaysOn-Replikate in unterschiedlichen Subnetzen befinden, müssen Clients "MultisubnetFailover=True" in der Verbindungszeichenfolge angeben. Dies führt zu parallelen Verbindungsversuchen mit Replikaten in unterschiedlichen Subnetzen. Beachten Sie, dass zu diesem Szenario eine regionsübergreifende AlwaysOn-Verfügbarkeitsgruppenbereitstellung gehört.
 
-Ein Beispiel wäre die Verbindung mit dem Listener über einen der virtuellen Computer im gleichen Azure-VNet \(jedoch nicht über den, der ein Replikat hostet\). Eine einfache Möglichkeit zum Ausführen dieses Tests besteht darin, SSMS mit dem Verfügbarkeitsgruppenlistener zu verbinden. Eine weitere einfache Methode ist die Ausführung von [SQLCMD.exe](https://technet.microsoft.com/library/ms162773.aspx) wie folgt:
+Ein Beispiel wäre die Verbindung mit dem Listener über einen der virtuellen Computer im gleichen Azure-VNet (jedoch nicht über den, der ein Replikat hostet). Eine einfache Möglichkeit zum Ausführen dieses Tests besteht darin, SSMS mit dem Verfügbarkeitsgruppenlistener zu verbinden. Eine weitere einfache Methode ist die Ausführung von [SQLCMD.exe](https://technet.microsoft.com/library/ms162773.aspx) wie folgt:
 
 	sqlcmd -S "<ListenerName>,<EndpointPort>" -d "<DatabaseName>" -Q "select @@servername, db_name()" -l 15
 
@@ -14,4 +14,4 @@ Ein Beispiel wäre die Verbindung mit dem Listener über einen der virtuellen Co
 
 Führen Sie beim Testen des Listeners ein Failover der Verfügbarkeitsgruppe durch, um sicherzustellen, dass Clients über Failover eine Verbindung mit dem Listener herstellen können.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

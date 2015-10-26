@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/01/2015" 
+	ms.date="10/08/2015" 
 	ms.author="jeffreyg"/>
  
 # Erste Schritte bei der Überwachung von SQL- Datenbank 
@@ -42,15 +42,15 @@ Sie können eine Überwachung für die folgenden Ereigniskategorien einrichten:
 **Einfaches SQL** und **Parametrisiertes SQL**, wobei die erfassten Überwachungsprotokolle folgendermaßen klassifiziert werden:
 
 - **Datenzugriffe**
-- **Schemaänderungen \(DDL\)**
-- **Datenänderungen \(DML\)**
-- **Konten, Rollen und Berechtigungen \(DCL\)**
+- **Schemaänderungen (DDL)**
+- **Datenänderungen (DML)**
+- **Konten, Rollen und Berechtigungen (DCL)**
 
 **Gespeicherte Prozeduren**, **Anmeldung** und **Transaktionsverwaltung**.
 
 Für jede Ereigniskategorie wird die Überwachung auf **Erfolg** und **Fehler** getrennt voneinander konfiguriert.
 
-Weitere Einzelheiten zu den überwachten Aktivitäten und Ereignissen finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=506733" target="_blank">Referenz zu Überwachungsprotokollformaten \(DOC-Datei zum Herunterladen\)</a>.
+Weitere Einzelheiten zu den überwachten Aktivitäten und Ereignissen finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=506733" target="_blank">Referenz zu Überwachungsprotokollformaten (DOC-Datei zum Herunterladen)</a>.
 
 Überwachungsprotokolle werden in Ihrem Azure-Speicherkonto gespeichert. Sie können eine Aufbewahrungsdauer für ein Überwachungsprotokoll definieren.
 
@@ -74,7 +74,7 @@ Eine Überwachungsrichtlinie kann für eine spezifische Datenbank oder als Stand
 4. Klicken Sie unterhalb von **PROTOKOLLIERUNG NACH EREIGNIS** auf **ERFOLG** und **FEHLER**, um alle Ereignisse zu protokollieren, oder wählen Sie einzelne Ereigniskategorien.
 
 
-5. Wenn Sie die Überwachung für eine SQL-Datenbank konfigurieren, klicken Sie auf **Damit die Überwachung durchgesetzt wird, klicken Sie hier...**, und wählen Sie für **SICHERHEITSAKTIVIERTER ZUGRIFF** die Einstellung **ERFORDERLICH**. Wenn Sie die Überwachung für eine SQL Server-Instanz konfigurieren, haben Sie zwei Optionen: \(a\) Navigieren Sie nach Schritt 6 zu jeder SQL-Datenbank auf dem Server, und wenden Sie diesen Schritt an, oder \(2\) [ändern Sie den Server-FQDN in der Verbindungszeichenfolge](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+5. Wenn Sie die Überwachung für eine SQL-Datenbank konfigurieren, klicken Sie auf **Damit die Überwachung durchgesetzt wird, klicken Sie hier...**, und wählen Sie für **SICHERHEITSAKTIVIERTER ZUGRIFF** die Einstellung **ERFORDERLICH**. Wenn Sie die Überwachung für eine SQL Server-Instanz konfigurieren, haben Sie zwei Optionen: (a) Navigieren Sie nach Schritt 6 zu jeder SQL-Datenbank auf dem Server, und wenden Sie diesen Schritt an, oder (2) [ändern Sie den Server-FQDN in der Verbindungszeichenfolge](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
 
 
 	![][5]
@@ -91,7 +91,7 @@ Eine vorkonfigurierte Dashboardberichtvorlage steht als <a href="http://go.micro
 
 Die Vorlage enthält fiktionale Beispieldaten, und Sie können Power Query so einrichten, dass das Überwachungsprotokoll direkt aus Ihrem Azure-Speicherkonto importiert wird.
 
-Ausführlichere Anweisungen zum Arbeiten mit der Berichtvorlage finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=506731">Vorgehensweise \(Dokumentdownload\)</a>.
+Ausführlichere Anweisungen zum Arbeiten mit der Berichtvorlage finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=506731">Vorgehensweise (Dokumentdownload)</a>.
 
 ![][6]
 
@@ -102,7 +102,7 @@ Ausführlichere Anweisungen zum Arbeiten mit der Berichtvorlage finden Sie unter
  
 2.   Klicken Sie auf die SQL-Datenbank / SQL Server-Instanz, die Sie überwachen möchten, und klicken Sie dann auf die Registerkarte **ÜBERWACHUNG & SICHERHEIT**.
 
-3.   Wenn Sie die Überwachung für eine SQL-Datenbank konfigurieren, wählen Sie für **SICHERHEITSAKTIVIERTER ZUGRIFF** die Einstellung **ERFORDERLICH**. Wenn Sie die Überwachung für eine SQL Server-Instanz konfigurieren, haben Sie zwei Optionen: \(a\) Navigieren Sie nach Schritt 7 zu jeder SQL-Datenbank auf dem Server, und wenden Sie diesen Schritt an, oder \(2\) [ändern Sie den Server-FQDN in der Verbindungszeichenfolge](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
+3.   Wenn Sie die Überwachung für eine SQL-Datenbank konfigurieren, wählen Sie für **SICHERHEITSAKTIVIERTER ZUGRIFF** die Einstellung **ERFORDERLICH**. Wenn Sie die Überwachung für eine SQL Server-Instanz konfigurieren, haben Sie zwei Optionen: (a) Navigieren Sie nach Schritt 7 zu jeder SQL-Datenbank auf dem Server, und wenden Sie diesen Schritt an, oder (2) [ändern Sie den Server-FQDN in der Verbindungszeichenfolge](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
 
 4. Klicken Sie im Überwachungsabschnitt auf **AKTIVIERT**.
 
@@ -131,20 +131,23 @@ Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Si
 In der Produktion werden Sie wahrscheinlich Ihre Speicherschlüssel regelmäßig aktualisieren. Sie müssen beim Aktualisieren Ihrer Schlüssel die Richtlinie erneut speichern. Dieser Prozess verläuft wie folgt:
 
 
-1. Wechseln Sie auf dem Blatt für die Überwachungskonfiguration \(oben im Abschnitt zur Einrichtung der Überwachung beschrieben\) die Einstellung **Speicherzugriffsschlüssel** von *Primär* in *Sekundär*, und klicken Sie auf **SPEICHERN**. ![][10]
+1. Wechseln Sie auf dem Blatt für die Überwachungskonfiguration (oben im Abschnitt zur Einrichtung der Überwachung beschrieben) die Einstellung **Speicherzugriffsschlüssel** von *Primär* in *Sekundär*, und klicken Sie auf **SPEICHERN**. ![][10]
 2. Wechseln Sie zum Blatt für die Speicherkonfiguration, und **generieren Sie erneut** den *primären Zugriffsschlüssel*.
 
 3. Wechseln Sie zurück zum Blatt für die Überwachungskonfiguration, ändern Sie den **Speicherzugriffsschlüssel** von *Sekundär* in *Primär*, und klicken Sie auf **SPEICHERN**.
 
-4. Wechseln Sie zurück zur Speicherbenutzeroberfläche, und **generieren Sie erneut** den *sekundären Zugriffsschlüssel* \(als Vorbereitung auf den nächsten Schlüsselaktualisierungszyklus\).
+4. Wechseln Sie zurück zur Speicherbenutzeroberfläche, und **generieren Sie erneut** den *sekundären Zugriffsschlüssel* (als Vorbereitung auf den nächsten Schlüsselaktualisierungszyklus).
   
 ##<a id="subheading-4"></a>Automatisierung
-Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung in Azure SQL-Datenbank verwenden können. Für den Zugriff auf die Cmdlets zur Überwachung muss PowerShell im Azure-Ressourcen-Manager-Modus ausgeführt werden.
+Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung in Azure SQL-Datenbank verwenden können.
 
-> [AZURE.NOTE]Das [Azure-Ressourcen-Manager](https://msdn.microsoft.com/library/dn654592.aspx)-Modul befindet sich derzeit in der Vorschau. Möglicherweise stellt es nicht die gleichen Verwaltungsfunktionen wie das Azure-Modul bereit.
-
-Wenn Sie im Azure-Ressourcen-Manager-Modus arbeiten, führen Sie `Get-Command *AzureSql*` aus, um die verfügbaren Cmdlets aufzulisten.
-
+- [Get-AzureRMSqlDatabaseAuditingPolicy](https://msdn.microsoft.com/library/azure/mt603731.aspx)
+- [Get-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/library/azure/mt619329.aspx)
+- [Remove-AzureRMSqlDatabaseAuditing](https://msdn.microsoft.com/library/azure/mt603796.aspx)
+- [Remove-AzureRMSqlServerAuditing](https://msdn.microsoft.com/library/azure/mt603574.aspx)
+- [Set-AzureRMSqlDatabaseAuditingPolicy](https://msdn.microsoft.com/library/azure/mt603531.aspx)
+- [Set-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/library/azure/mt603794.aspx)
+- [Use-AzureRMSqlServerAuditingPolicy](https://msdn.microsoft.com/library/azure/mt619353.aspx)
 
 
 
@@ -182,4 +185,4 @@ Wenn Sie im Azure-Ressourcen-Manager-Modus arbeiten, führen Sie `Get-Command *A
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

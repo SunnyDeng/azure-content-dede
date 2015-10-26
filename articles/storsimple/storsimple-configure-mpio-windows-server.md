@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Konfigurieren von MPIO für Ihr StorSimple-Gerät | Microsoft Azure"
-	description="Beschreibt, wie Sie Multipfad-E/A für Ihr StorSimple-Gerät konfigurieren, das mit einem Host unter Windows Server 2012 R2 verbunden ist."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie Sie Multipfad-E/A für Ihr StorSimple-Gerät konfigurieren, das mit einem Host unter Windows Server 2012 R2 verbunden ist."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/31/2015"
+   ms.author="alkohli" />
 
 # Konfigurieren von Multipfad-E/A für Ihr StorSimple-Gerät
 
@@ -173,4 +173,4 @@ Das folgende Verfahren beschreibt, wie Sitzungen hinzugefügt werden, wenn ein S
 Erfahren Sie mehr zum Thema [Verwenden des StorSimple Manager-Diensts, um eine StorSimple-Gerätekonfiguration zu ändern](storsimple-modify-device-config.md).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

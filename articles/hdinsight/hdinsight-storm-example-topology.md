@@ -37,6 +37,7 @@ Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight,
 | [C#-Storm-Topologie-Vorlagenprojekt für die Arbeit mit Azure-Diensten über Storm auf HDInsight][ce0c02a2] | Event Hubs, DocumentDb, SQL-Datenbank, HBase, SignalR | C#, Java |
 | [Skalierbarkeits-Benchmarks für das Lesen von Azure-Event Hubs mit Storm auf HDInsight][d6c540e3] | Nachrichtendurchsatz, Event Hubs, SQL-Datenbank | C#, Java |
 | [Zuordnen von Ereignissen mithilfe von Storm und HBase auf HDInsight](hdinsight-storm-correlation-topology.md) | HBase | C# |
+| [Verwenden von Python mit Storm in HDInsight](hdinsight-storm-develop-python-topology.md) | Python-Komponenten mit Java- und Clojure-basierten Storm-Topologien | Python |
 
 ## Nächste Schritte
 
@@ -59,4 +60,4 @@ Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight,
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "Dieses Projekt enthält Vorlagen für Spouts, Bolts und Topologien für die Interaktion mit verschiedenen Azure-Diensten wie Event Hubs, DocumentDB und SQL-Datenbank."
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

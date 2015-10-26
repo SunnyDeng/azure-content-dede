@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/20/2015"
+	ms.date="10/13/2015"
 	ms.author="tdykstra"/>
 
 # Die Azure-Befehlszeilenschnittstelle (CLI) und API-Apps
@@ -288,4 +288,4 @@ Weitere Informationen zur Verwendung von Azure-Befehlszeilenprogrammen mit dem A
 * [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

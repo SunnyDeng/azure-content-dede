@@ -208,7 +208,7 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 6. Geben Sie den folgenden Befehl ein, um das Programm „SimpleApp.scala“ auszuführen:
 
 
-		/usr/hdp/current/spark/bin/spark-submit --class "SimpleApp" --master local target/scala-2.10/simpleapp_2.10-1.0.jar
+		/usr/hdp/current/spark/bin/spark-submit --class "SimpleApp" --master yarn target/scala-2.10/simpleapp_2.10-1.0.jar
 
 4. Nach Ausführung des Programms wird die Ausgabe in der Konsole angezeigt.
 
@@ -234,4 +234,4 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

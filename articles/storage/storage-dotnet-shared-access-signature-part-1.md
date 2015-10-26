@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/27/2015" 
+	ms.date="10/08/2015" 
 	ms.author="tamram"/>
 
 
@@ -50,6 +50,8 @@ Darüber hinaus müssen Sie eine SAS verwenden, um das Quellobjekt in einen Kopi
 - Beim Kopieren eines Blobs in ein anderes Blob, das sich in einem anderen Speicherkonto befindet, müssen Sie eine SAS verwenden, um das Quell-Blob zu authentifizieren. Mit Version 2015-04-05 können Sie optional eine SAS verwenden, um auch das Ziel-Blob zu authentifizieren.
 - Beim Kopieren einer Datei in eine andere Datei, die sich in einem anderen Speicherkonto befindet, müssen Sie eine SAS verwenden, um die Quelldatei zu authentifizieren. Mit Version 2015-04-05 können Sie optional eine SAS verwenden, um auch die Zieldatei zu authentifizieren.
 - Wenn Sie ein Blob in eine Datei oder eine Datei in ein Blob kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn sich die Quell- und Zielobjekte innerhalb desselben Speicherkontos befinden.
+
+>[AZURE.NOTE]Die Konto-SAS wird derzeit nur für den Blob- und Dateidienst unterstützt. In naher Zukunft wird sie auch für den Tabellenspeicher- und Warteschlangendienst unterstützt.
 
 ## Arten von Shared Access Signatures
 
@@ -322,4 +324,4 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
  
 
-<!----HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

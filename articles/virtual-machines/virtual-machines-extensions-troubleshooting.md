@@ -19,7 +19,8 @@
 
 # Problembehandlung für Fehler bei der Azure-VM-Erweiterung.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 ## Übersicht über Azure-Ressourcen-Manager-Vorlagen
 
@@ -84,4 +85,4 @@ Wobei "publsher-name" dem Erweiterungstyp aus der Ausgabe von "azure vm get-inst
 
 Nachdem die Erweiterung entfernt wurde, kann die Vorlage erneut ausgeführt werden, um die Skripts auf dem virtuellen Computer auszuführen.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Standardkommunikationsstapel des Reliable Services-Frameworks"
-	description="Dieser Artikel beschreibt den vom Reliable Services-Framework bereitgestellten Standardkommunikationsstapel für die Kommunikation zwischen Diensten und Clients."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="BharatNarasimman"
-	manager="timlt"
-	editor=""/>
+   description="Dieser Artikel beschreibt den vom Reliable Services-Framework bereitgestellten Standardkommunikationsstapel für die Kommunikation zwischen Diensten und Clients."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="BharatNarasimman"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="required"
-	ms.date="08/27/2015"
-	ms.author="bharatn@microsoft.com"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="required"
+   ms.date="08/27/2015"
+   ms.author="bharatn@microsoft.com"/>
 
 # Standardkommunikationsstapel des Reliable Services-Frameworks
 Für Dienstautoren, die nicht an eine bestimmte Implementierung der Kommunikationsstapel (WebAPI, WCF usw.) gebunden sind, stellt das Framework auf der Client- und Dienstseite Kommunikationsmittel zum Einrichten der Kommunikation zwischen dem Dienst und dem Client bereit.
@@ -107,4 +107,4 @@ Console.WriteLine("Greeting is {0}", message.Content);
 >[AZURE.NOTE]Das Kommunikationsframework gibt vom Dienst ausgegebenen Ausnahmen an den Client weiter. Somit kann die Ausnahmebehandlungslogik auf dem Client, der ServiceProxy verwendet, gegebenenfalls vom Dienst ausgegebene Ausnahmen direkt behandeln.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

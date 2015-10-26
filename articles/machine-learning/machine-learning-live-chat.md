@@ -12,8 +12,8 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/06/2015" 
-    ms.author="luisca"/>
+    ms.date="10/14/2015" 
+    ms.author="olgali"/>
 #Hilfe vom Machine Learning Live-Chat-Support
 
 [Azure Machine Learning Studio](machine-learning-what-is-ml-studio.md) bietet eine intuitive Oberfläche zum Erstellen von Modellen für das maschinelle Lernen. Als Hilfestellung sind ein [Katalog](machine-learning-gallery-how-to-use-contribute-publish.md) und [Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=MachineLearning) verfügbar.
@@ -31,4 +31,4 @@ Ihre Fragen werden von Mitgliedern des Teams live beantwortet. Wenn Sie das Live
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

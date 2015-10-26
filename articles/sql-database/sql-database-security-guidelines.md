@@ -111,4 +111,4 @@ Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendung
 
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

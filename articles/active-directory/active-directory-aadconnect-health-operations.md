@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/14/2015"
+	ms.date="10/15/2015"
 	ms.author="billmath"/>
 
 # Azure AD Connect Health-Vorgänge
@@ -21,7 +21,8 @@
 Das folgende Thema beschreibt die verschiedenen Vorgänge, die mithilfe von Azure AD Connect Health ausgeführt werden können.
 
 ## Aktivieren von E-Mail-Benachrichtigungen
-Sie können Azure AD Connect Health zum Senden von E-Mail-Benachrichtigungen konfigurieren, die beim Generieren von Warnungen gesendet werden und angeben, dass die Identitätsinfrastruktur nicht fehlerfrei ist. Benachrichtigungen werden gesendet, wenn eine Warnung generiert und wenn sie als gelöst markiert wird. Folgen Sie den unten stehenden Anweisungen, um E-Mail-Benachrichtigungen zu konfigurieren. Beachten Sie, dass E-Mail-Benachrichtigungen standardmäßig deaktiviert sind.
+Sie können Azure AD Connect Health zum Senden von E-Mail-Benachrichtigungen konfigurieren, die beim Generieren von Warnungen gesendet werden und angeben, dass die Identitätsinfrastruktur nicht fehlerfrei ist. Benachrichtigungen werden gesendet, wenn eine Warnung generiert und wenn sie als gelöst markiert wird. Folgen Sie den unten stehenden Anweisungen, um E-Mail-Benachrichtigungen zu konfigurieren.
+>[AZURE.NOTE]E-Mail-Benachrichtigungen sind standardmäßig deaktiviert.
 
 
 ### So aktivieren Sie Azure AD Connect Health-E-Mail-Benachrichtigungen
@@ -33,13 +34,9 @@ Sie können Azure AD Connect Health zum Senden von E-Mail-Benachrichtigungen kon
 5. Wenn Sie E-Mail-Benachrichtigungen an andere E-Mail-Adressen senden lassen möchten, können Sie diese im Feld "Weitere E-Mail-Empfänger" angeben. Um eine E-Mail-Adresse aus dieser Liste zu entfernen, klicken Sie mit der rechten Maustaste auf den Eintrag, und wählen Sie "Löschen".
 6. Klicken Sie zum Abschließen der Änderungen auf "Speichern". Alle Änderungen werden erst nach der Auswahl von "Speichern" wirksam.
 
+## Löschen eines Servers oder einer Serverinstanz
 
-
-
-
-
-## Löschen eines Servers aus einem Azure AD Connect Health-Dienst
-
+### Löschen eines Servers aus einem Azure AD Connect Health-Dienst
 In einigen Fällen möchten Sie möglicherweise einen Server aus der Überwachung entfernen. Folgen Sie den unten stehenden Anweisungen, um einen Server aus dem Azure AD Connect Health-Dienst zu entfernen.
 
 Beim Löschen eines Servers sind folgende Punkte zu beachten:
@@ -50,7 +47,7 @@ Beim Löschen eines Servers sind folgende Punkte zu beachten:
 - Wenn Sie nach Ausführung dieser Aktion die Überwachung des gleichen Servers erneut starten möchten, müssen Sie den Connect Health-Agent von diesem Server deinstallieren und anschließend neu installieren.
 
 
-### So löschen Sie einen Server aus dem Azure AD Connect Health-Dienst
+#### So löschen Sie einen Server aus dem Azure AD Connect Health-Dienst
 
 1. Öffnen Sie das Blatt "Server", indem Sie auf dem Blatt "Serverliste" den Namen des Servers auswählen, den Sie entfernen möchten.
 2. Klicken Sie auf der Aktionsleiste des Blatts "Server" auf die Schaltfläche "Löschen".
@@ -58,12 +55,7 @@ Beim Löschen eines Servers sind folgende Punkte zu beachten:
 4. Klicken Sie auf die Schaltfläche "Löschen".
 
 
-
-
-
-
-
-## Löschen einer Dienstinstanz aus dem Azure AD Connect Health-Dienst
+### Löschen einer Dienstinstanz aus dem Azure AD Connect Health-Dienst
 
 In einigen Fällen möchten Sie möglicherweise eine Dienstinstanz entfernen. Folgen Sie den unten stehenden Anweisungen, um eine Dienstinstanz aus dem Azure AD Connect Health-Dienst zu entfernen.
 
@@ -75,57 +67,65 @@ Beim Löschen einer Dienstinstanz sind folgende Punkte zu beachten:
 - Wenn Sie nach Ausführung dieser Aktion die Überwachung dieses Diensts erneut starten möchten, deinstallieren Sie den Connect Health-Agent von allen zu überwachenden Servern, und installieren Sie ihn anschließend erneut. Wenn Sie nach Ausführung dieser Aktion die Überwachung des gleichen Servers erneut starten möchten, müssen Sie den Connect Health-Agent von diesem Server deinstallieren und anschließend neu installieren.
 
 
-### So löschen Sie eine Dienstinstanz aus dem Azure AD Connect Health-Dienst
+#### So löschen Sie eine Dienstinstanz aus dem Azure AD Connect Health-Dienst
 
 1. Öffnen Sie das Blatt "Dienst", indem Sie auf dem Blatt "Dienstliste" die ID des Diensts (Name der Farm) auswählen, den Sie entfernen möchten.
 2. Klicken Sie auf der Aktionsleiste des Blatts "Server" auf die Schaltfläche "Löschen".
 3. Bestätigen Sie den Dienstnamen, indem Sie ihn in das Bestätigungsfeld eingeben (Beispiel: sts.contoso.com).
-4. Klicken Sie auf die Schaltfläche "Löschen".
-
-## Aktivieren der Überwachung für AD FS
-
-Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt der Azure AD Connect Health-Agent die in den AD FS-Überwachungsprotokollen enthaltenen Informationen. Diese Protokolle sind nicht standardmäßig aktiviert. Dies gilt nur für AD FS-Verbundserver. Das Aktivieren der Überwachung ist auf AD FS-Proxyservern oder Webanwendungsproxyservern nicht erforderlich. Führen Sie die nachstehenden Anweisungen aus, um die AD FS-Überwachung zu aktivieren und die AD FS-Überwachungsprotokolle zu ermitteln.
-
-#### So aktivieren Sie die Überwachung für AD FS 2.0
-
-1. Klicken Sie auf **Start**, zeigen Sie auf **Programme** und dann auf **Verwaltung**, und klicken Sie anschließend auf **Lokale Sicherheitsrichtlinie**.
-2. Navigieren Sie zum Ordner **Sicherheitseinstellungen\\Lokale Richtlinien\\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf "Generieren von Sicherheitsüberwachungen".
-3. Stellen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** sicher, dass das AD FS 2.0-Dienstkonto aufgeführt wird. Wenn es nicht vorhanden ist, klicken Sie auf **Benutzer oder Gruppe hinzufügen** und fügen es der Liste hinzu. Klicken Sie dann auf **OK**.
-4. Öffnen Sie ein Eingabeaufforderungsfenster mit erhöhten Rechten, und führen Sie den folgenden Befehl zum Aktivieren der Überwachung aus: <code>auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable</code>.
-5. Schließen Sie "Lokale Sicherheitsrichtlinie", und öffnen Sie dann das Verwaltungs-Snap-In. Klicken Sie zum Öffnen des Verwaltungs-Snap-Ins auf **Start**, zeigen Sie auf **Programme** und dann auf **Verwaltung**, und klicken Sie anschließend auf "AD FS 2.0-Verwaltung".
-6. Klicken Sie im Bereich "Aktionen" auf "Verbunddiensteigenschaften bearbeiten".
-7. Klicken Sie im Dialogfeld **Verbunddiensteigenschaften** auf die Registerkarte **Ereignisse**.
-8. Aktivieren Sie die Kontrollkästchen **Erfolgsüberwachungen** und **Fehlerüberwachungen**.
-9. Klicken Sie auf **OK**.
-
-#### So aktivieren Sie die Überwachung für AD FS unter Windows Server 2012 R2
-
-1. Öffnen Sie **Lokale Sicherheitsrichtlinie**, indem Sie den **Server-Manager** auf dem Startbildschirm oder über die Taskleiste auf dem Desktop öffnen, und klicken Sie dann auf **Tools/Lokale Sicherheitsrichtlinie**.
-2. Navigieren Sie zum Ordner **Sicherheitseinstellungen\\Lokale Richtlinien\\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf **Generieren von Sicherheitsüberwachungen**.
-3. Stellen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** sicher, dass das AD FS-Dienstkonto aufgeführt wird. Wenn es nicht vorhanden ist, klicken Sie auf **Benutzer oder Gruppe hinzufügen** und fügen es der Liste hinzu. Klicken Sie dann auf **OK**.
-4. Öffnen Sie ein Eingabeaufforderungsfenster mit erhöhten Rechten, und führen Sie den folgenden Befehl zum Aktivieren der Überwachung aus: <code>auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable</code>.
-5. Schließen Sie **Lokale Sicherheitsrichtlinie**, und öffnen Sie dann das **AD FS-Verwaltungs**-Snap-In (klicken Sie hierzu im Server-Manager auf "Tools", und wählen Sie dann "AD FS-Verwaltung" aus).
-6. Klicken Sie im Bereich "Aktionen" auf **Verbunddiensteigenschaften bearbeiten**.
-7. Klicken Sie im Dialogfeld "Verbunddiensteigenschaften" auf die Registerkarte **Ereignisse**.
-8. Aktivieren Sie die Kontrollkästchen **Erfolgsüberwachungen und Fehlerüberwachungen**. Klicken Sie anschließend auf **OK**.
+4. Klicken Sie auf die Schaltfläche "Löschen". <br><br>
 
 
+[//]: # "Beginn des RBAC-Abschnitts"
+## Verwalten des Zugriffs mit rollenbasierter Zugriffssteuerung
+### Übersicht
+Die [Rollenbasierte Zugriffssteuerung](role-based-access-control-configure.md) für Azure AD Connect Health stellt den Azure AD Connect Health-Dienst für Benutzer und/oder Gruppen außerhalb der globalen Administratorgruppe bereit. Dies wird erreicht, indem Sie den entsprechenden Benutzern und/oder Gruppen Rollen zuweisen, und bietet einen Mechanismus, um die globalen Administratoren in Ihrem Verzeichnis einzugrenzen.
+
+#### Roles (Rollen)
+Azure AD Connect Health unterstützt die folgenden integrierten Rollen.
+
+| Rolle | Berechtigungen |
+| ----------- | ---------- |
+| Besitzer | Besitzer können innerhalb von Azure AD Connect Health den ***Zugriff verwalten*** (z. B. einem Benutzer/einer Gruppe Rollen zuweisen), im Portal ***alle Informationen anzeigen*** (z. B. Warnungen) und ***Einstellungen ändern*** (z. B. E-Mail-Benachrichtigungen). <br>Standardmäßig wird diese Rolle globalen Azure AD-Administratoren zugewiesen und kann nicht geändert werden. |
+|Mitwirkender| Beitragende können innerhalb von Azure AD Connect Health im Portal ***alle Informationen anzeigen*** und ***Einstellungen ändern*** (z. B. E-Mail-Benachrichtigungen).|
+|Leser| Leser können innerhalb von Azure AD Connect Health ***alle Informationen anzeigen*** (z. B. Warnungen).|
+
+Alle anderen Rollen (z. B. "User Access Administrators" oder "DevTest Lab Users") haben keine Auswirkung auf den Zugriff innerhalb von Azure AD Connect Health, auch wenn sie in der Portalumgebung verfügbar sind.
+
+#### Zugriffsbereich
+
+Azure AD Connect unterstützt Zugriffsverwaltung auf zwei Ebenen:
+
+- ***Verzeichnis***: Dies ist für die meisten Kunden empfohlen und steuert den Zugriff auf alle Dienstinstanzen (z. B. eine AD FS-Farm) für alle Arten von Rollen, die von Azure AD Connect Health überwacht werden.
+
+- ***Dienstinstanz***: In einigen Fällen müssen Sie möglicherweise Zugriff basierend auf Rollentypen oder nach Dienstinstanz aufteilen. In diesem Fall können Sie den Zugriff auf Dienstinstanzebene verwalten.
+
+Berechtigungen werden erteilt, wenn ein Benutzer Zugriff auf Verzeichnisebene oder Dienstinstanzebene hat.
 
 
+### So erteilen Sie Benutzern oder Gruppen Zugriff auf Azure AD Connect Health
+#### Schritt 1: Auswählen des entsprechenden Zugriffsbereichs
+Um einem Benutzer Zugriff auf *Verzeichnisebene* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br> [//]\: # (RBAC\_MainBladeSS)
+#### Schritt 2: Hinzufügen von Benutzern und Gruppen sowie Zuweisen von Rollen
+1. Klicken Sie im Abschnitt "Konfigurieren" auf den Bereich "Benutzer".<br> [//]\: # (RBAC\_MainBladeUserPart)
+2. Wählen Sie "Hinzufügen" aus.
+3. Wählen Sie die "Rolle" aus. <br> [//]\: # (RBAC\_AddRole)
+4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen.
+5. Wählen Sie "OK" aus.<br> [//]\: # (RBAC\_LastStep)
+6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br> [//]\: # (RBAC\_ListofUsersAndGroups)
 
+Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff basierend auf den zugewiesenen Rollen.
+>[AZURE.NOTE]- Globale Administratoren haben immer Vollzugriff auf alle Vorgänge, globale Administratorkonten sind jedoch nicht in der obigen Liste aufgeführt. - Das Feature "Benutzer einladen" wird in Azure AD Connect Health NICHT unterstützt.
 
-#### So ermitteln Sie die AD FS-Überwachungsprotokolle
+#### Schritt 3: Freigeben des Blattspeicherorts für Benutzer oder Gruppen
+1. Nach dem Zuweisen von Berechtigungen kann ein Benutzer auf Azure AD Connect Health zugreifen, indem er [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth) aufruft.
+2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf "An Dashboard anheften" klickt.<br> [//]\: # (RBAC\_PinBlade)
 
+>[AZURE.NOTE]Ein Benutzer mit der Rolle "Leser" kann den Vorgang "Erstellen" nicht ausführen, um die Azure AD Connect Health-Erweiterung aus dem Azure Marketplace abzurufen. Dieser Benutzer kann weiterhin über den oben aufgeführten Link auf das Blatt zugreifen. Für nachfolgende Verwendungen kann der Benutzer das Blatt an das Dashboard anheften.
 
-1. Öffnen Sie die **Ereignisanzeige**.
-2. Wechseln Sie zu "Windows-Protokolle", und wählen Sie **Sicherheit** aus.
-3. Klicken Sie auf der rechten Seite auf **Aktuelle Protokolle filtern**.
-4. Wählen Sie unter "Ereignisquelle" die **AD FS-Überwachung** aus.
+### Entfernen von Benutzern und/oder Gruppen
+Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und "Entfernen" auswählen.<br> [//]\: # (RBAC\_RemoveUser)
 
-![AD FS-Überwachungsprotokolle](./media/active-directory-aadconnect-health-requirements/adfsaudit.png)
-
-> [AZURE.WARNING]Wenn eine Gruppenrichtlinie implementiert ist, die die AD FS-Überwachung deaktiviert, kann der Azure AD Connect Health-Agent keine Informationen sammeln. Stellen Sie sicher, dass die Überwachung nicht durch eine Gruppenrichtlinie deaktiviert wird.
-
+[//]: # "Ende des RBAC-Abschnitts"
 
 ## Verwandte Links
 
@@ -134,4 +134,4 @@ Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt d
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

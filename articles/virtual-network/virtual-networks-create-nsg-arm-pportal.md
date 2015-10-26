@@ -56,4 +56,4 @@ Führen Sie die Schritte unten aus, um im Vorschauportal Regeln in einer vorhand
 
 ![Vorschauportal – Neue Regel](./media/virtual-networks-create-nsg-arm-pportal/figure5.png)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

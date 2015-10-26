@@ -18,7 +18,7 @@ Angenommen, Sie haben Fehler in der Quelldatei gefunden und die Menge von "Down 
 	6	Flat Washer	3			2015-05-01 00:00:00
 	7 	Down Tube	4			2015-05-01 00:00:00
 
-Um dies zu vermeiden, müssen Sie UPSERT-Semantik \(zum Aktualisieren und Einfügen\) angeben, indem Sie eines der beiden folgenden Verfahren nutzen.
+Um dies zu vermeiden, müssen Sie UPSERT-Semantik (zum Aktualisieren und Einfügen) angeben, indem Sie eines der beiden folgenden Verfahren nutzen.
 
 > [AZURE.NOTE]Ein Slice kann in Azure Data Factory automatisch gemäß der angegebenen Wiederholungsrichtlinie wiederholt werden.
 
@@ -47,15 +47,15 @@ Angenommen, der Datensatz "Flat Washer" wurde aus der ursprünglichen CSV-Datei 
 	...	...			...			...
 	7 	Down Tube	4			2015-05-01 00:00:00
 
-Weitere Schritte müssen nicht erfolgen. Die Kopieraktivität hat das Bereinigungsskript ausgeführt, um die dem Slice entsprechenden Daten zu löschen. Dann wurde die Eingabe aus der CSV-Datei \(die jetzt nur noch 1 Datensatz enthielt\) gelesen und in die Tabelle eingefügt.
+Weitere Schritte müssen nicht erfolgen. Die Kopieraktivität hat das Bereinigungsskript ausgeführt, um die dem Slice entsprechenden Daten zu löschen. Dann wurde die Eingabe aus der CSV-Datei (die jetzt nur noch 1 Datensatz enthielt) gelesen und in die Tabelle eingefügt.
 
 ### Verfahren 2
 
-Ein anderes Verfahren zum Erreichen von Wiederholbarkeit sieht eine dedizierte Spalte \(**SliceIdentifierColumnName**\) in der Zieltabelle vor. Diese Spalte wird von Azure Data Factory verwendet, um sicherzustellen, dass Quell- und Zielserver synchron bleiben. Dieser Ansatz funktioniert, wenn das Schema der SQL-Zieltabelle flexibel geändert oder definiert werden kann.
+Ein anderes Verfahren zum Erreichen von Wiederholbarkeit sieht eine dedizierte Spalte (**SliceIdentifierColumnName**) in der Zieltabelle vor. Diese Spalte wird von Azure Data Factory verwendet, um sicherzustellen, dass Quell- und Zielserver synchron bleiben. Dieser Ansatz funktioniert, wenn das Schema der SQL-Zieltabelle flexibel geändert oder definiert werden kann.
 
 Diese Spalte wird von Azure Data Factory zum Zweck der Wiederholbarkeit verwendet, wobei Azure Data Factory keine Änderungen am Schema der Tabelle vornimmt. So setzen Sie dieses Verfahren um:
 
-1.	Definieren Sie in der SQL-Zieltabelle eine Spalte vom Typ "binary \(32\)". Für diese Spalte dürfen keine Einschränkungen gelten. Lassen Sie uns diese Spalte für dieses Beispiel "ColumnForADFuseOnly" nennen.
+1.	Definieren Sie in der SQL-Zieltabelle eine Spalte vom Typ "binary (32)". Für diese Spalte dürfen keine Einschränkungen gelten. Lassen Sie uns diese Spalte für dieses Beispiel "ColumnForADFuseOnly" nennen.
 2.	Verwenden Sie sie wie folgt in der Kopieraktivität:
 
 		"sink":  
@@ -68,4 +68,4 @@ Azure Data Factory füllt diese Spalte den Anforderungen entsprechend auf, um si
 
 Ähnlich wie bei Verfahren 1 bereinigt die Kopieraktivität zunächst automatisch die Daten eines bestimmten Slices in der SQL-Zieltabelle. Anschließend wird die Kopieraktivität normal ausgeführt, um für diesen Slice Daten aus der Quelle im Ziel einzufügen.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

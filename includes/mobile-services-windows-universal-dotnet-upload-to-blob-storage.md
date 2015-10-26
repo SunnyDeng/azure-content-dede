@@ -298,4 +298,4 @@ Im letzten Schritt werden beide Versionen der App getestet. Zudem wird überprü
 
 Damit haben Sie das Lernprogramm zum Hochladen von Bildern abgeschlossen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

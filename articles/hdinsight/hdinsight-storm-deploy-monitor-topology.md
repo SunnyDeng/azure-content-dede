@@ -1,6 +1,6 @@
 <properties
    pageTitle="Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight | Microsoft Azure"
-   description="Erfahren Sie, wie Sie Apache Storm-Topologien mithilfe des Storm-Dashboards bereitstellen, überwachen und verwalten. Hadoop-Tools für Visual Studio verwenden"
+   description="Erfahren Sie, wie Sie Apache Storm-Topologien mithilfe des Storm-Dashboardsin HDInsight bereitstellen, überwachen und verwalten. Hadoop-Tools für Visual Studio verwenden"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
@@ -163,7 +163,7 @@ Anforderungen an die REST-API müssen die **Standardauthentifizierung** und somi
 
 ###Rückgabewerte
 
-Von der REST-API zurückgegebene Informationen sind möglicherweise nur innerhalb des Clusters oder auf den virtuellen Maschinen in demselben Azure Virtual Network wie der Cluster verwendbar. Auf den für Zookeeper-Server zurückgegebenen vollqualifizierten Domänennamen (FQDN) kann z. B. nicht über das Internet zugegriffen werden.
+Von der REST-API zurückgegebene Informationen sind möglicherweise nur innerhalb des Clusters oder auf den virtuellen Computern in demselben Azure Virtual Network wie der Cluster verwendbar. Auf den für Zookeeper-Server zurückgegebenen vollqualifizierten Domänennamen (FQDN) kann z. B. nicht über das Internet zugegriffen werden.
 
 ##Nächste Schritte
 
@@ -179,4 +179,4 @@ Eine Liste weiterer Beispieltopologien finden Sie unter [Beispieltopologien für
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -44,7 +44,7 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
    3. Andere Funktionen Beispiel: FunktionEins(<<argument1>>, FunktionZwei(<<argument2>>))
 
 
-- Bei Zeichenfolgenkonstanten, in denen ein umgekehrter Schrägstrich ( \\ ) oder ein Anführungszeichen ( " ) benötigt wird, muss dieser bzw. dieses mit einem umgekehrten Schrägstrichsymbol ( \\ ) versehen werden. Beispiel: "Firmenname: "Contoso""
+- Bei Zeichenfolgenkonstanten, in denen ein umgekehrter Schrägstrich ( \\ ) oder ein Anführungszeichen ( " ) benötigt wird, muss dieser bzw. dieses mit einem umgekehrten Schrägstrichsymbol ( \\ ) versehen werden. Beispiel: "Firmenname: \"Contoso\""
 
 
 
@@ -307,4 +307,4 @@ Sie müssen die Zeitzone des Benutzers anhand des Bundesstaatscodes festlegen, d
 
 [AZURE.INCLUDE [SaaS – Inhaltsverzeichnis](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

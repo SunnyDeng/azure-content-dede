@@ -19,7 +19,8 @@
 
 # Erstellen eines MongoDB-Clusters unter Ubuntu mithilfe einer Azure-Ressourcen-Manager-Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 MongoDB ist eine Open-Source-Dokumentendatenbank, die hohe Leistung, hohe Verfügbarkeit und automatische Skalierung bereitstellt. MongoDB kann als eigenständige Datenbank oder innerhalb eines Clusters installiert werden und die integrierten Replikationsfunktionen nutzen. In einigen Fällen können Sie mit Replikation die Lesekapazitäten erhöhen. Clients können Lese- und Schreibvorgänge an verschiedene Server senden. Sie können auch Kopien in verschiedenen Datencentern verwalten, um die Positionierung und die Verfügbarkeit von Daten für verteilte Anwendungen zu verbessern. Mit MongoDB bietet die Replikation auch Redundanz und erhöht die Verfügbarkeit von Daten. Durch mehrere Kopien von Daten auf verschiedenen Datenbankservern schützt die Replikation eine Datenbank bei einem Ausfall eines einzelnen Servers. Replikation ermöglicht auch die Wiederherstellung nach Hardwareausfällen und Dienstunterbrechungen. Mit zusätzlichen Kopien der Daten können Sie eine für die Wiederherstellung im Notfall und eine für die Berichterstellung oder Sicherung reservieren.
 
@@ -332,7 +333,7 @@ Sie können den Status der einzelnen Ressourcenbereitstellungen mit dem folgende
 
     azure group deployment list mdbc
 
-## Überblick über die MongoDB-Vorlagenstruktur und -Dateianordnung
+## Übersicht über die MongoDB-Vorlagenstruktur und -Dateianordnung
 
 Um eine stabile und wiederverwendbare Azure Ressourcen-Manager-Vorlage zu erstellen, ist es erforderlich, genau über eine Reihe komplexer und zusammenhängender Aufgaben während der Bereitstellung einer komplexen Lösung wie MongoDB nachzudenken. Durch die Nutzung von Azure Ressourcen-Manager zum *Verknüpfen von Vorlagen* und für *Ressourcenschleifen* und die zusätzliche Skriptausführung über zugehörige Erweiterungen ist es möglich, einen modularen Ansatz zu implementieren, der bei nahezu allen komplexen vorlagenbasierten Bereitstellungen wiederverwendet werden kann.
 
@@ -651,7 +652,7 @@ Ein wichtiges hervorzuhebendes Konzept ist die Möglichkeit, mehrere Kopien eine
 
 Im vorherigen Beispiel wird ein Parameter (Anzahl der im Cluster bereitgestellten Knoten) verwendet, um eine Variable ("numberOfMembers") festzulegen, die dann an das **copy**-Element übergeben wird, um eine Anzahl (Schleife) von untergeordneten Bereitstellungen auszulösen. Jede dieser Bereitstellungen führt zur Instanziierung der Vorlage für jeden Member im Cluster. Damit Sie alle Einstellungen vornehmen können, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen anzugeben, kann die **copyindex()**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der jeweiligen Ressourcenschleifenerstellung angibt.
 
-Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **dependsOn** sehen können. In dieser speziellen Vorlage hängt die Bereitstellung der einzelnen Knoten von der vorherigen erfolgreichen Bereitstellung der **gemeinsam genutzten Ressourcen** ab.
+Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **dependsOn** sehen können. In dieser speziellen Vorlage hängt die Bereitstellung der einzelnen Knoten von der vorherigen erfolgreichen Bereitstellung der **gemeinsamen Ressourcen** ab.
 
 Angeschlossene Datenträger werden als Teil der Aktivitäten zur Vorbereitung der Knoten formatiert, die durch das Ausführen der Skriptdatei "mongodb-ubuntu-install.sh" ausgelöst werden. In dieser Datei finden Sie tatsächlich eine Instanz des folgenden Aufrufs:
 
@@ -693,4 +694,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

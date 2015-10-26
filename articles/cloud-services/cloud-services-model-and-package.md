@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Was ist ein Clouddienstmodell, und wie kann es in Azure gepackt werden?"
+    pageTitle="Was ist ein Clouddienstmodell, und wie kann es gepackt werden? | Microsoft Azure"
     description="Beschreibung des Clouddienstmodells (.csdef, .cscfg) und der Paketdatei (.cspkg) in Azure"
     services="cloud-services"
     documentationCenter=""
@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/06/2015"
+    ms.date="10/09/2015"
     ms.author="adegeo"/>
 
 # Was ist das Clouddienstmodell, und wie kann es gepackt werden?
@@ -251,11 +251,7 @@ Die Variablen sind dabei wie folgt definiert:
 
 Ich erstelle ein Clouddienstpaket und möchte ...
 
-<!--
-* [Configure Sizes for Cloud Services](!!!!!https://msdn.microsoft.com/library/azure/ee814754.aspx)  
-* [Configure Local Storage Resources](!!!!!https://azure.microsoft.com/documentation/articles/cloud-services-configure-local-storage-resources/)
--->
-
+* [Konfigurieren lokaler Speicherressourcen](cloud-services-configure-local-storage-resources.md)
 * [Eine Remotedesktopverbindung für eine Clouddienstinstanz einrichten][remotedesktop]
 * [Ein Clouddienstprojekt bereitstellen][deploy]
 
@@ -269,9 +265,9 @@ Ich verwende Visual Studio und möchte ...
 
 [deploy]: cloud-services-how-to-create-deploy-portal.md
 [remotedesktop]: cloud-services-role-enable-remote-desktop.md
-[vs_remote]: https://msdn.microsoft.com/DE-DE/library/gg443832.aspx
-[vs_deploy]: https://msdn.microsoft.com/DE-DE/library/ee460772.aspx
+[vs_remote]: https://msdn.microsoft.com/library/gg443832.aspx
+[vs_deploy]: https://msdn.microsoft.com/library/ee460772.aspx
 [vs_reconfigure]: https://msdn.microsoft.com/library/ee405486.aspx
-[vs_create]: https://msdn.microsoft.com/DE-DE/library/ee405487.aspx
+[vs_create]: https://msdn.microsoft.com/library/ee405487.aspx
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

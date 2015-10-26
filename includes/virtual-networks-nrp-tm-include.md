@@ -20,4 +20,4 @@ Zu den Schlüsseleigenschaften eines Endpunktes zählen:
 - **Gewichtung** - Endpunkt-Gewichtung, die für die Datenverkehrsverwaltung verwendet wird. 
 - **Priorität** - Priorität des Endpunktes, die zum Definieren einer Failover-Aktion verwendet wird. 
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -13,10 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.date="10/09/2015" 
 	ms.author="spelluru"/>
 
 # Versionshinweise für Azure Data Factory
+Im Artikel zu [Data Factory – .NET-API-Änderungsprotokoll](data-factory-api-change-log.md) finden Sie Informationen zu Änderungen des Data Factory-.NET-SDK in einer bestimmten Version.
 
 ## Anmerkungen zur Version von Data Factory vom 17.7.2015
 Die folgenden JSON-Änderungen wurden mit der Version vom Juli 2015 von Azure PowerShell eingeführt.
@@ -24,21 +25,21 @@ Die folgenden JSON-Änderungen wurden mit der Version vom Juli 2015 von Azure Po
 ## Aktualisierung von Typen verknüpfter Dienste, Tabellen und Aktivitäten
 Ressourcentyp | Aktueller Name in JSON | Neuer Name in JSON
 ------------- | -------------------- | ----------------
-Verknüpfter Dienst \(Datenquelle\) | AzureSqlLinkedService | AzureSqlDatabase
-Verknüpfter Dienst \(Datenquelle\) | AzureStorageLinkedService | AzureStorage
-Verknüpfter Dienst \(Datenquelle\) | DocumentDbLinkedService | DocumentDb
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesFileSystemLinkedService | OnPremisesFileServer
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesOracleLinkedService | OnPremisesOracle
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesSqlLinkedService | OnPremisesSqlServer
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesMySqlLinkedService | OnPremisesMySql
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesDb2LinkedService | OnPremisesDb2
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesTeradataLinkedService | OnPremisesTeradata
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesSybaseLinkedService | OnPremisesSybase
-Verknüpfter Dienst \(Datenquelle\) | OnPremisesPostgreSqlLinkedService | OnPremisesPostgreSql
-Verknüpfter Dienst \(Compute\) | AzureMlLinkedService | AzureML
-Verknüpfter Dienst \(Compute\) | HDInsightBYOCLinkedService | HDInsight
-Verknüpfter Dienst \(Compute\) | HDInsightOnDemandLinkedService | HDInsightOnDemand
-Verknüpfter Dienst \(Compute\) | AzureBatchLinkedService | AzureBatch
+Verknüpfter Dienst (Datenquelle) | AzureSqlLinkedService | AzureSqlDatabase
+Verknüpfter Dienst (Datenquelle) | AzureStorageLinkedService | AzureStorage
+Verknüpfter Dienst (Datenquelle) | DocumentDbLinkedService | DocumentDb
+Verknüpfter Dienst (Datenquelle) | OnPremisesFileSystemLinkedService | OnPremisesFileServer
+Verknüpfter Dienst (Datenquelle) | OnPremisesOracleLinkedService | OnPremisesOracle
+Verknüpfter Dienst (Datenquelle) | OnPremisesSqlLinkedService | OnPremisesSqlServer
+Verknüpfter Dienst (Datenquelle) | OnPremisesMySqlLinkedService | OnPremisesMySql
+Verknüpfter Dienst (Datenquelle) | OnPremisesDb2LinkedService | OnPremisesDb2
+Verknüpfter Dienst (Datenquelle) | OnPremisesTeradataLinkedService | OnPremisesTeradata
+Verknüpfter Dienst (Datenquelle) | OnPremisesSybaseLinkedService | OnPremisesSybase
+Verknüpfter Dienst (Datenquelle) | OnPremisesPostgreSqlLinkedService | OnPremisesPostgreSql
+Verknüpfter Dienst (Compute) | AzureMlLinkedService | AzureML
+Verknüpfter Dienst (Compute) | HDInsightBYOCLinkedService | HDInsight
+Verknüpfter Dienst (Compute) | HDInsightOnDemandLinkedService | HDInsightOnDemand
+Verknüpfter Dienst (Compute) | AzureBatchLinkedService | AzureBatch
 Datensatz | AzureBlobLocation | AzureBlob
 Datensatz | AzureTableLocation | AzureTable
 Datensatz | AzureSqlTableLocation | AzureSqlTable
@@ -48,10 +49,10 @@ Datensatz | OnPremisesOracleTableLocation | OracleTable
 Datensatz | OnPremisesSqlServerTableLocation | SqlServerTable
 Datensatz | RelationTableLocation | RelationalTable
 Aktivität | CopyActivity | Kopieren
-Aktivität | HDInsightActivity \(Hive-Transformation\) | HDInsightHive
-Aktivität | HDInsightActivity \(Pig-Transformation\) | HDInsightPig
-Aktivität | HDInsightActivity \(MapReduce-Transformation\) | HDInsightMapReduce
-Aktivität | HDInsightActivity \(Streaming\) | HDInsightHadoopStreaming
+Aktivität | HDInsightActivity (Hive-Transformation) | HDInsightHive
+Aktivität | HDInsightActivity (Pig-Transformation) | HDInsightPig
+Aktivität | HDInsightActivity (MapReduce-Transformation) | HDInsightMapReduce
+Aktivität | HDInsightActivity (Streaming) | HDInsightHadoopStreaming
 Aktivität | AzureMLBatchScoringActivity | AzureMLBatchScoring
 Aktivität | StoredProcedureActivity | SqlServerStoredProcedure
 
@@ -81,8 +82,8 @@ Das neue **typeProperties**-Element enthält typspezifische Eigenschaften für v
 
 Beachten Sie Folgendes:
 
-- Die **type**-Eigenschaft wurde eine Ebene nach oben verschoben und auf **AzureStorage** festgelegt \(geändert von **AzureStorageLinkedService** in **AzureStorage**\) 
-- Neues **typeProperties**-Element, das Eigenschaften enthält, die von dem mit Azure-Speicher verknüpften Dienst unterstützt werden \(in diesem Beispiel **connectionString**\).  
+- Die **type**-Eigenschaft wurde eine Ebene nach oben verschoben und auf **AzureStorage** festgelegt (geändert von **AzureStorageLinkedService** in **AzureStorage**) 
+- Neues **typeProperties**-Element, das Eigenschaften enthält, die von dem mit Azure-Speicher verknüpften Dienst unterstützt werden (in diesem Beispiel **connectionString**).  
 
 ### Alter JSON-Text für DataSet
 	{
@@ -238,10 +239,10 @@ Das **waitOnExternal**-Element wird durch die neuen Eigenschaften **external** u
 Beachten Sie Folgendes:
 
 - Die **waitOnExternal**-Eigenschaft wurde aus dem **availability**-Abschnitt entfernt. 
-- Eine neue**external**-Eigenschaft wurde um eine Ebene höher hinzugefügt und wird für eine externe Tabelle als **true** festgelegt. 
+- Eine neue **external**-Eigenschaft wurde eine Ebene höher hinzugefügt und wird für eine externe Tabelle auf **true** festgelegt. 
 - Die Eigenschaften des **waitOnExternal**-Elements wie z. B. **retryInterval** wurden dem neuen **externalData**-Abschnitt im **Policy**-Element hinzugefügt.
 - Das **externalData**-Element ist ein optionales Element. 
-- Für die Verwendung des **externalData**-Elements muss die **external**-Eigenschaft als **true** festgelegt sein. 
+- Für die Verwendung des **externalData**-Elements muss die **external**-Eigenschaft auf **true** festgelegt sein. 
  
 
 ## Neue copyBehavior-Eigenschaft für BlobSink
@@ -256,7 +257,7 @@ Beachten Sie Folgendes:
 **MergeFiles**: Alle Dateien aus dem Quellordner werden in einer Datei zusammengeführt. Wenn der Datei-/Blob-Name angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.
  
 ## Neue getDebugInfo-Eigenschaft für alle HDInsight-Aktivitäten
-Die HDInsight-Aktivitäten \(Hive, Pig, MapReduce, Hadoop-Streaming\) unterstützen die neue **getDebugInfo**-Eigenschaft. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft als **Failure** festgelegt wird, werden die Protokolle nur bei Ausführungsfehlern heruntergeladen. Wenn die Eigenschaft als **All** festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus. Wenn die Eigenschaft als **None** festgelegt wird, werden keine Protokolle heruntergeladen.
+Die HDInsight-Aktivitäten (Hive, Pig, MapReduce, Hadoop-Streaming) unterstützen die neue **getDebugInfo**-Eigenschaft. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft auf **Failure** festgelegt wird, werden die Protokolle nur bei Ausführungsfehlern heruntergeladen. Wenn die Eigenschaft auf **All** festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus. Wenn die Eigenschaft auf **None** festgelegt wird, werden keine Protokolle heruntergeladen.
 
   
      
@@ -265,11 +266,11 @@ Die HDInsight-Aktivitäten \(Hive, Pig, MapReduce, Hadoop-Streaming\) unterstüt
 Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** befinden sich nun auf dem Blatt **TABELLE**. Diese Listen werden anhand der Aktualisierungszeit des Slices sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
 
 -  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
--  Der Status des Slices ändert sich aufgrund einer Ausführung \(z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.\).
+-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
 
-Klicken Sie auf den Titel der Listen oder auf **...** \(Auslassungspunkte\), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
+Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
  
-Durch Klicken auf die Kachel **Datenslices \(nach Slicezeit\)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert: - 04.04.2015 17:00 Uhr In Bearbeitung - 04.04.2015 16:00 Uhr Erfolg - 04.04.2015 15:00 Uhr Fehler
+Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert: - 04.04.2015 17:00 Uhr In Bearbeitung - 04.04.2015 16:00 Uhr Erfolg - 04.04.2015 15:00 Uhr Fehler
 
 Wenn jedoch ein älterer Slice erneut ausgeführt wird, wird er nicht oben in dieser Liste angezeigt, obwohl dies vermutlich für den Benutzer interessant wäre.
 
@@ -300,7 +301,7 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 ### Änderungen
 - Das aktualisierte Installationspaket für das **Datenverwaltungsgateway** wurde im [Microsoft Download Center][adf-gateway-download] bereitgestellt. Ab dieser Version finden Sie an dieser Downloadadresse das neueste Datenverwaltungsgateway für den Einsatz mit Azure Data Factory. Dieses Installationspaket umfasst sowohl Azure Data Factory als auch Power BI für Office 365-Dienste. Wenn Sie beide Dienste nutzen, beachten Sie, dass Gateways für Data Factory und Power BI auf verschiedenen Computern installiert und gemäß den Anleitungen in der Data Factory- bzw. Power BI-Dokumentation unterschiedlich konfiguriert werden müssen.
 - Die **Kopieraktivität** unterstützt jetzt das Kopieren von Daten zwischen einer lokalen SQL Server-Datenbank und einer Azure SQL-Datenbank. 
-- **SqlSink** unterstützt die neue Eigenschaft **WriteBatchTimeout**. Mit dieser Eigenschaft können Sie flexibel festlegen, wie lange auf den Abschluss des Batcheinfügevorgangs gewartet werden soll, bis ein Timeout erfolgt. Für einen Hybridkopiervorgang \(der eine lokale und eine Clouddatenquelle umfasst\) benötigen Sie Version 1.4 oder höher des Gateways, um diese Eigenschaft verwenden zu können. 
+- **SqlSink** unterstützt die neue Eigenschaft **WriteBatchTimeout**. Mit dieser Eigenschaft können Sie flexibel festlegen, wie lange auf den Abschluss des Batcheinfügevorgangs gewartet werden soll, bis ein Timeout erfolgt. Für einen Hybridkopiervorgang (der eine lokale und eine Clouddatenquelle umfasst) benötigen Sie Version 1.4 oder höher des Gateways, um diese Eigenschaft verwenden zu können. 
 - Der **mit SQL Server verknüpfte Dienst** unterstützt jetzt die **Windows-Authentifizierung**. 
 	- Beim Erstellen eines mit SQL Server verknüpften Diensts im Portal können Sie jetzt die Windows-Authentifizierung wählen und entsprechende Anmeldeinformationen festlegen. Dazu müssen Sie Version 1.4 oder höher des Gateways verwenden. 
 	- Beim Erstellen eines mit SQL Server verknüpften Diensts mit Azure PowerShell können Sie Verbindungsinformationen unverschlüsselt angeben oder die Verbindung mit dem aktualisierten [Cmdlet "New-AzureDataFactoryEncryptValue"][adf-encrypt-value-cmdlet] verschlüsseln. Anschließend verwenden Sie die verschlüsselte Zeichenfolge für die Eigenschaft mit der Verbindungszeichenfolge in der JSON-Nutzlast des verknüpften Diensts. Unter [Verknüpfte Dienste][adf-msdn-linked-services] finden Sie Details zum Definieren eines verknüpften Diensts in JSON. Die Verschlüsselungsfunktion wird vom Cmdlet "New-AzureDataFactoryEncryptValue" noch nicht unterstützt. 
@@ -310,18 +311,18 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 ### Neue Verbesserungen
 
 - Azure Machine Learning-Integration
-	- Mit dieser Version des Azure Data Factory-Diensts können Sie Azure Data Factory mit Azure Machine Learning \(ML\) mithilfe von **AzureMLLinkedService** und **AzureMLBatchScoringActivity** integrieren. Weitere Informationen finden Sie unter [Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning][adf-azure-ml]. 
+	- Mit dieser Version des Azure Data Factory-Diensts können Sie Azure Data Factory mit Azure Machine Learning (ML) mithilfe von **AzureMLLinkedService** und **AzureMLBatchScoringActivity** integrieren. Weitere Informationen finden Sie unter [Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning][adf-azure-ml]. 
 - Der Status der Gatewayversion wird bereitgestellt.
-	- Der Status "NewVersionAvailable" wird im Azure-Vorschauportal und in der Ausgabe des Cmdlet "Get-AzureDataFactoryGateway" angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei \(MSI\) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
+	- Der Status "NewVersionAvailable" wird im Azure-Vorschauportal und in der Ausgabe des Cmdlet "Get-AzureDataFactoryGateway" angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
 
 ### Änderungen
 
 - "JobsContainer" in "HdInsightOnDemandLinkedService" wird entfernt.
 	- In der JSON-Definition für "HDInsightOnDemandLinkedService" müssen Sie die Eigenschaft **jobsContainer** nicht länger angeben. Wenn Sie die Eigenschaft für einen verknüpften, bedarfsgesteuerten Dienst angegeben haben, wird die Eigenschaft ignoriert. Sie können die Eigenschaft aus der JSON-Definition für den verknüpften Dienst entfernen und die Definition des verknüpften Diensts mithilfe des Cmdlet "New-AzureDataFactoryLinkedService" aktualisieren.
 - Optionale Konfigurationsparameter für "HDInsightOnDemandLinkedService"
-	- Diese Version führt die Unterstützung für einige optionale Konfigurationsparameter für "HDInsightOnDemandLinked" \(bedarfsgesteuerter HDInsight-Cluster\) ein. Weitere Informationen finden Sie unter [ClusterCreateParameters-Eigenschaften][on-demand-hdi-parameters].
+	- Diese Version führt die Unterstützung für einige optionale Konfigurationsparameter für "HDInsightOnDemandLinked" (bedarfsgesteuerter HDInsight-Cluster) ein. Weitere Informationen finden Sie unter [ClusterCreateParameters-Eigenschaften][on-demand-hdi-parameters].
 - Speicherort für Gateway wird entfernt.
-	- Wenn Sie ein Azure Data Factory-Gateway über das Portal oder PowerShell \(New-AzureDataFactoryGateway\) erstellen, müssen Sie den Speicherort für das Gateway nicht länger angeben. Die Region für die Data Factory wird übernommen. Ebenso wird zum Konfigurieren eines verknüpften SQL Server-Diensts mithilfe von JSON die Eigenschaft "gatewayLocation" nicht länger benötigt. Das Data Factory .NET SDK wird ebenfalls aktualisiert, um diese Änderungen widerzuspiegeln.
+	- Wenn Sie ein Azure Data Factory-Gateway über das Portal oder PowerShell (New-AzureDataFactoryGateway) erstellen, müssen Sie den Speicherort für das Gateway nicht länger angeben. Die Region für die Data Factory wird übernommen. Ebenso wird zum Konfigurieren eines verknüpften SQL Server-Diensts mithilfe von JSON die Eigenschaft "gatewayLocation" nicht länger benötigt. Das Data Factory .NET SDK wird ebenfalls aktualisiert, um diese Änderungen widerzuspiegeln.
 	- Wenn Sie eine ältere Version des SDK und von Azure PowerShell verwenden, müssen Sie weiterhin die Standorteinstellung bereitstellen.
  
      
@@ -353,4 +354,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

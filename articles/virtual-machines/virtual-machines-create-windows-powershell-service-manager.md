@@ -21,7 +21,7 @@
 
 Dieser Artikel beschreibt das Erstellen und Verwalten virtueller Windows-Computer mithilfe von Azure PowerShell.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines virtuellen Windows-Computers mit dem klassischen Bereitstellungsmodell. Sie können einen virtuellen Windows-Computer mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-deploy-rmtemplates-powershell.md) erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-deploy-rmtemplates-powershell.md).
 
 
 
@@ -43,7 +43,7 @@ Wenn Sie über mehrere Azure-Abonnements verfügen, müssen Sie als Nächstes Ih
 
 	Get-AzureSubscription | sort SubscriptionName | Select SubscriptionName
 
-Ersetzen Sie nun alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch den korrekten Abonnementnamen und führen Sie die Befehle aus:
+Ersetzen Sie nun alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch den korrekten Abonnementnamen, und führen Sie die folgenden Befehle aus:
 
 	$subscrName="<subscription name>"
 	Select-AzureSubscription -SubscriptionName $subscrName –Current
@@ -209,4 +209,4 @@ Führen Sie den folgenden Befehl zum Anfügen von Datenträgern aus einer vorhan
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -90,4 +90,4 @@ In diesem kurzen Video wird gezeigt, wie Azure-Kunden Cloudyn für Azure und die
 [6]: ./media/billing-usage-rate-card-partner-solution-cloudyn/Cloudyn-Performance-Reports.png
 [7]: ./media/billing-usage-rate-card-partner-solution-cloudyn/Cloudyn-Category-Manager.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

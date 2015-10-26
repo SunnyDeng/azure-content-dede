@@ -35,4 +35,4 @@ Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt registrieren**](
 * [Was ist Azure AD?](active-directory-whatis.md)
 * [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

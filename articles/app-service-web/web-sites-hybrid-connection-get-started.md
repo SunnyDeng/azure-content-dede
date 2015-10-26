@@ -20,7 +20,7 @@
 
 Sie können eine Web-App in Azure App Service mit jeder lokalen Ressource verbinden, die einen statischen TCP-Port verwendet, wie SQL Server, MySQL, HTTP Web-APIs, Mobile Services und die meisten benutzerdefinierten Webdienste. In diesem Artikel erfahren Sie, wie Sie eine Hybridverbindung zwischen einer Web-App in Azure App Service und einer lokalen SQL Server-Datenbank herstellen.
 
-> [AZURE.NOTE] Der Web-Apps-Teil der Funktion "Hybridverbindungen" ist nur im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
+> [AZURE.NOTE]Der Web-Apps-Teil der Funktion "Hybridverbindungen" ist nur im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
 
 ## Voraussetzungen
 - Ein Azure-Abonnement. Hinweise zum kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/). 
@@ -32,12 +32,12 @@ Sie können eine Web-App in Azure App Service mit jeder lokalen Ressource verbin
 	- Sie müssen in der Lage sein, über Port 5671 eine Verbindung mit Azure herzustellen.
 	- Sie müssen in der Lage sein, *Hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
 
-> [AZURE.NOTE] Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
+> [AZURE.NOTE]Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
 
 
 ## Erstellen einer Web-App im Azure-Portal ##
 
-> [AZURE.NOTE] Wenn Sie bereits eine Web-App im Azure-Portal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) wechseln und dort beginnen.
+> [AZURE.NOTE]Wenn Sie bereits eine Web-App im Azure-Portal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) wechseln und dort beginnen.
 
 1. Klicken Sie unten links im [Azure-Portal](https://portal.azure.com) auf **Neu** > **Web + Mobile** > **Website**.
 	
@@ -97,16 +97,16 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 6. Sobald der Prozess abgeschlossen ist, werden Sie im Benachrichtigungsbereich des Portals informiert, dass die Verbindung erfolgreich erstellt wurde.
 	<!-- TODO
 
-    Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the old portal
-	(full portal) and created the BizTalk service but it doesn't seem to let you connnect them - When you finish the
-	Create hybrid conn step, you get the following error
-	Failed to create hybrid connection RelecIoudHC. The 
-	resource type could not be found in the namespace 
-	'Microsoft.BizTaIkServices for api version 2014-06-01'.
+Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the old portal
+(full portal) and created the BizTalk service but it doesn't seem to let you connnect them - When you finish the
+Create hybrid conn step, you get the following error
+Failed to create hybrid connection RelecIoudHC. The 
+resource type could not be found in the namespace 
+'Microsoft.BizTaIkServices for api version 2014-06-01'.
 
-	The error indicates it couldn't find the type, not the instance.
-	![Success notification][CreateHCSuccessNotification]
-	-->
+The error indicates it couldn't find the type, not the instance.
+![Success notification][CreateHCSuccessNotification]
+-->
 7. Im Blatt der Web-App zeigt das Symbol **Hybridverbindungen** jetzt an, dass 1 Hybridverbindung erstellt wurde.
 	
 	![Eine Hybridverbindung wurde erstellt][CreateHCOneConnectionCreated]
@@ -158,7 +158,7 @@ An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktu
 
 Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie eine hybride Anwendung erstellen, die diese verwendet.
 
->[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <a name="NextSteps"></a>
 ## Nächste Schritte ##
@@ -211,4 +211,4 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 [HCStatusConnected]: ./media/web-sites-hybrid-connection-get-started/D10HCStatusConnected.png
  
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

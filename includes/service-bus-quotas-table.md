@@ -3,7 +3,7 @@ In der folgenden Tabelle sind die Kontingentinformationen für das Service Bus M
 |Namen des Kontingents|Umfang|Typ|Verhalten beim Überschreiten|Wert|
 |---|---|---|---|---|
 | Maximale Anzahl von Namespaces pro Azure-Abonnement|Namespace|Statisch|Nachfolgende Anforderungen für zusätzliche Namespaces werden vom Azure-Verwaltungsportal abgelehnt.|100|
-|Warteschlangen-/Themengröße|Entität|Bei der Erstellung der Warteschlange/des Themas definiert.|Eingehende Nachrichten werden abgelehnt und vom aufrufenden Code wird eine Ausnahme empfangen.|1,2,3,4 oder 5 GB.<br /><br />Wenn die [Partitionierung](https://msdn.microsoft.com/library/dn520246.aspx) aktiviert ist, beträgt die maximale Warteschlangen-/Themengröße 80 GB.|
+|Warteschlangen-/Themengröße|Entität|Bei der Erstellung der Warteschlange/des Themas definiert.|Eingehende Nachrichten werden abgelehnt und vom aufrufenden Code wird eine Ausnahme empfangen.|1,2,3,4 oder 5 GB.<br /><br />Wenn die [Partitionierung](service-bus-partitioning.md) aktiviert ist, beträgt die maximale Warteschlangen-/Themengröße 80 GB.|
 |Maximale Anzahl gleichzeitiger Verbindungen in einem Namespace|Namespace|Statisch|Nachfolgende Anforderungen für zusätzliche Verbindungen werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. REST-Vorgänge werden nicht zu den gleichzeitigen TCP-Verbindungen hinzugezählt.|NetMessaging: 1.000<br /><br />AMQP: 5.000|
 |Anzahl der gleichzeitigen Verbindungen für eine Warteschlangen-/Themen-/Abonnement-Entität|Entität|Statisch|Nachfolgende Anforderungen für zusätzliche Verbindungen werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. REST-Vorgänge werden nicht zu den gleichzeitigen TCP-Verbindungen hinzugezählt.|Eingeschränkt durch den Grenzwert der gleichzeitigen Verbindungen pro Namespace.|
 |Anzahl der gleichzeitigen Empfangsanforderungen für eine Warteschlangen-/Themen-/Abonnement-Entität|Entität|Statisch|Nachfolgende Empfangsanforderungen werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. Dieses Kontingent gilt für alle gleichzeitigen Empfangsvorgänge über alle Abonnements eines Themas hinweg.|5\.000|
@@ -24,4 +24,4 @@ In der folgenden Tabelle sind die Kontingentinformationen für das Service Bus M
 |Anzahl der Korrelationsfilter pro Thema|Systemweit|Statisch|Nachfolgende Anforderungen für die Erstellung zusätzlicher Filter für das Thema werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen.|100.000|
 |Größe der SQL-Filter/-Aktionen|Systemweit|Statisch|Nachfolgende Anforderungen für die Erstellung zusätzlicher Filter werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen.|Maximale Länge der Bedingungszeichenfolge für Filter: 1.024 (1 K).<br /><br />Maximale Länge der Zeichenfolge für Regelaktionen: 1.024 (1 K).<br /><br />Maximale Anzahl der Ausdrücke pro Regelaktion: 32.|
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -4,7 +4,7 @@
 	services="iot-hub"
 	documentationCenter=".net"
 	authors="fsautomata"
-	manager="kevinmil"
+	manager="timlt"
 	editor=""/>
 
 <tags
@@ -12,11 +12,11 @@
      ms.devlang="csharp"
      ms.topic="article"
      ms.tgt_pltfrm="na"
-     ms.workload="tbd"
+     ms.workload="na"
      ms.date="09/29/2015"
      ms.author="elioda"/>
 
-# Verarbeiten von D2C-Nachrichten mit IoT Hub
+# Lernprogramm: Verarbeiten von D2C-Nachrichten mit IoT Hub
 
 ## Einführung
 
@@ -41,7 +41,7 @@ Am Ende dieses Lernprogramms führen Sie drei Windows-Konsolenanwendungen aus:
 * **ProcessDeviceToCloudMessages**. Hierbei werden mit [EventProcessorHost] zuverlässig *Datenpunkt*-Nachrichten in einem Azure-Blob gespeichert und *interaktive* Nachrichten an eine Service Bus-Warteschlange weitergeleitet.
 * **ProcessD2cInteractiveMessages**. Hiermit werden Nachrichten aus der Warteschlange entfernt.
 
-> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zu Azure IoT Hub.
+> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub.
 
 > [AZURE.NOTE]Der Inhalt dieses Lernprogramms kann direkt auf andere Möglichkeiten zum Verarbeiten Event Hubs-kompatibler Nachrichten übertragen werden, z. B. [Hadoop]-Projekte wie Storm. Weitere Informationen finden Sie unter [Informationen zu IoT Hub – Kompatibilität mit Event Hubs].
 
@@ -49,7 +49,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio 2015
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Fprocess-d2c%2F target="\_blank").
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fiot%2Ftutorials%2Fprocess-d2c%2F target="\_blank").
 
 Außerdem wird davon ausgegangen, dass Sie über Kenntnisse zu [Azure Storage] und [Azure Service Bus] verfügen.
 
@@ -73,7 +73,7 @@ Sie können jetzt die Anwendung ausführen.
 
 ## Nächste Schritte
 
-In diesem Lernprogramm haben Sie gelernt, wie Sie mit [EventProcessorHost] zuverlässig *Datenpunkt*- und *interaktive* D2C-Nachrichten verarbeiten. Eine analoge Logik für die Nachrichtenverarbeitung kann implementiert werden mit
+In diesem Lernprogramm haben Sie gelernt, wie Sie mit [EventProcessorHost] zuverlässig *Datenpunkt*- und *interaktive* D2C-Nachrichten verarbeiten. Eine analoge Logik für die Nachrichtenverarbeitung kann implementiert werden mit:
 
 - In [Hochladen von Dateien von Geräten] wird beschrieben, wie mithilfe von C2D-Nachrichten Dateiuploads von Geräten erleichtert werden.
 
@@ -91,19 +91,19 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Azure-Blobs]: https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-how-to-use-blobs/
-[Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
-[Hadoop]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
-[Service Bus Queue]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
-[Service Bus-Warteschlange]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
+[Azure-Blobs]: https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/
+[Azure Data Factory]: https://azure.microsoft.com/en-us/documentation/services/data-factory/
+[Hadoop]: https://azure.microsoft.com/en-us/documentation/services/hdinsight/
+[Service Bus Queue]: https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-queues/
+[Service Bus-Warteschlange]: https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
-[Transient Fault Handling]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[Transient Fault Handling]: https://msdn.microsoft.com/en-us/library/hh680901(v=pandp.50).aspx
 
 [Informationen zu IoT Hub – Kompatibilität mit Event Hubs]: iot-hub-guidance.md#eventhubcompatible
 
-[Azure Storage]: https://azure.microsoft.com/de-DE/documentation/services/storage/
-[Azure Service Bus]: https://azure.microsoft.com/de-DE/documentation/services/service-bus/
+[Azure Storage]: https://azure.microsoft.com/en-us/documentation/services/storage/
+[Azure Service Bus]: https://azure.microsoft.com/en-us/documentation/services/service-bus/
 
 [Azure Preview Portal]: https://portal.azure.com/
 
@@ -117,10 +117,6 @@ Weitere Informationen zu IoT Hub:
 [IoT Hub Supported Devices]: iot-hub-supported-devices.md
 [Erste Schritte mit IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
-[Azure IoT Developer Center]: http://www.azure.com/iotdev
+[Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-
-
- 
-
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

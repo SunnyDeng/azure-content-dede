@@ -115,7 +115,7 @@ Das folgende Beispiel zeigt eine Richtlinie, die alle Anfragen ablehnt, deren St
       "if" : {
         "not" : {
           "field" : "location",
-          "in" : ["north europe" , "west europe"]
+          "in" : ["northeurope" , "westeurope"]
         }
       },
       "then" : {
@@ -213,6 +213,26 @@ Der Anforderungstext sollte dem folgenden ähneln:
 
 Die Richtliniendefinition kann als eines der oben aufgeführten Beispiele definiert werden. Verwenden Sie die API-Version *2015-10-01-preview*. Weitere Beispiele und Informationen finden Sie unter [Policy Definitions](https://msdn.microsoft.com/library/azure/mt588471.aspx) (in englischer Sprache).
 
+### Erstellen der Richtliniendefinition mit der PowerShell
+
+Sie können eine neue Richtliniendefinition mithilfe des Cmdlets "New-AzureRmPolicyDefinition" erstellen, wie unten gezeigt. Das unten angeführte Beispiel erstellt eine Richtlinie, um Ressourcen nur in Nordeuropa und Westeuropa zuzulassen.
+
+    $policy = New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation onlyin certain regions" -Policy '{	"if" : {
+    	    			    "not" : {
+    	      			    	"field" : "location",
+    	      			    		"in" : ["northeurope" , "westeurope"]
+    	    			    	}
+    	    		          },
+    	      		    		"then" : {
+    	    			    		"effect" : "deny"
+    	      			    		}
+    	    		    	}'    		
+
+Die Ausgabe der Ausführung wird im "$policy"-Objekt gespeichert, weil dieses später während der Richtlinienzuweisung verwendet werden kann. Als Richtlinienparameter kann auch der Pfad zu einer JSON-Datei, die die Richtlinie enthält, angegeben werden, anstatt die Richtlinie inline anzugeben, wie unten gezeigt.
+
+    New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation only in certain 	regions" -Policy "path-to-policy-json-on-disk"
+
+
 ## Anwenden einer Richtlinie
 
 ### Zuweisen von Richtlinien mit der REST-API
@@ -240,4 +260,20 @@ Der Anforderungstext sollte dem folgenden ähneln:
 
 Weitere Beispiele und Informationen finden Sie unter [Policy Assignments](https://msdn.microsoft.com/library/azure/mt588466.aspx) (Richtlinienzuweisungen, in englischer Sprache).
 
-<!---HONumber=Oct15_HO2-->
+### Zuweisen von Richtlinien mit der PowerShell
+
+Sie können die oben erstellte Richtlinie mithilfe der PowerShell für den gewünschten Bereich erstellen, indem Sie das Cmdlet "New-AzureRmPolicyAssignment" verwenden, wie unten gezeigt:
+
+    New-AzureRmPolicyAssignment -Name regionPolicyAssignment -PolicyDefinition $policy -Scope    /subscriptions/########-####-####-####-############/resourceGroups/<resource-group-name>
+        
+Hierbei ist "$policy" das Richtlinienobjekt, das als Ergebnis der Ausführung des Cmdlets "New-AzureRmPolicyDefinition" zurückgegeben wurde, wie oben gezeigt. Der Bereich ist in diesem Fall der Name der von Ihnen angegebenen Ressourcengruppe.
+
+Wenn Sie die oben genannte Richtlinienzuweisung entfernen möchten, können Sie hierzu wie folgt vorgehen:
+
+    Remove-AzureRmPolicyAssignment -Name regionPolicyAssignment -Scope /subscriptions/########-####-####-####-############/resourceGroups/<resource-group-name>
+
+Sie können Richtliniendefinitionen mithilfe der Cmdlets "Get-AzureRmPolicyDefinition", "Set-AzureRmPolicyDefinition" bzw. "Remove-AzureRmPolicyDefinition" abrufen, ändern oder entfernen.
+
+Ähnlich können Sie Richtlinienzuweisungen mithilfe der Cmdlets "Get-AzureRmPolicyAssignment", "Set-AzureRmPolicyAssignment" bzw. "Remove-AzureRmPolicyAssignment" abrufen, ändern oder entfernen.
+
+<!---HONumber=Oct15_HO3-->

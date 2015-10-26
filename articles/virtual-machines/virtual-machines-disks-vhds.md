@@ -19,7 +19,8 @@
 
 # Informationen zu Datenträgern und VHDs für virtuelle Azure-Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel lernen Sie Ressourcen kennen, die mit dem Ressourcen-Manager- und dem klassischen Bereitstellungsmodell erstellt wurden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 Alle virtuellen Computer in Azure werden mit mindestens zwei Datenträgern konfiguriert: ein Betriebssystem-Datenträger und ein temporärer lokaler Datenträger, der auch als Ressourcendatenträger bezeichnet wird. Der Betriebssystem-Datenträger wird aus einem Image erstellt. Sowohl der Betriebssystem-Datenträger als auch das Image sind virtuelle Festplatten (VHDs), die im Azure-Speicherkonto gespeichert sind. Virtuelle Computer können auch über Datenträger verfügen, die ebenfalls als VHDs gespeichert werden.
 
@@ -67,4 +68,4 @@ Virtuelle Windows-Computer:
 -  [Erfassen eines virtuellen Windows-Computers](virtual-machines-capture-image-windows-server.md)
 -  [Trennen eines Datenträgers](storage-windows-detach-disk.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

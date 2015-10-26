@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Verwenden einer mobilen App als Kontaktmethode mit Azure MFA"
-	description="Auf dieser Seite erfahren Benutzer, wie sie die mobile App als primäre Kontaktmethode für Azure MFA verwenden."
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenp"
+	pageTitle="Verwenden einer mobilen App als Kontaktmethode mit Azure MFA" 
+	description="Auf dieser Seite erfahren Benutzer, wie sie die mobile App als primäre Kontaktmethode für Azure MFA verwenden." 
+	services="multi-factor-authentication" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenp" 
 	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 # Verwenden einer mobilen App als Kontaktmethode mit Azure Multi-Factor Authentication
 
 Wenn Sie die mobile App als primäre Kontaktmethode verwenden möchten, finden Sie weitere Informationen in diesem Artikel. Hier erfahren Sie, wie Sie Multi-Factor Authentication einrichten, um Ihre mobile App als primäre Kontaktmethode zu verwenden.
 
-Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/de-de/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
+Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/de-DE/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
 
 ## So verwenden Sie eine mobile App als Kontaktmethode
 
@@ -73,4 +73,4 @@ Wenn Sie ein Drittanbieterkonto mit der mobilen App verwenden, geben Sie den Kon
 >[AZURE.NOTE]Wenn Sie zum Hinzufügen eines Geschäftskontos aufgefordert werden, gilt dies für die Einbindung in den Arbeitsplatz und nicht für die mehrstufige Authentifizierung. Sie können dies ignorieren.
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

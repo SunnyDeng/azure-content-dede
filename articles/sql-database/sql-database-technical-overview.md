@@ -69,4 +69,4 @@ SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mi
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

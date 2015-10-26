@@ -45,4 +45,4 @@ Sie müssen außerdem die folgenden lokalen Active Directory-Objekte erstellen:
 
 Sie benötigen diese beiden Objekte beim Erstellen Ihrer RemoteApp-Sammlung, daher führen Sie diese Schritte unbedingt zuerst aus.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

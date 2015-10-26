@@ -1,19 +1,19 @@
 <properties
-   pageTitle="Konfigurieren der Traffic Manager-Routingmethode Roundrobin für Datenverkehr | Microsoft Azure"
-	description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode Roundrobin für Ihre Traffic Manager-Endpunkte."
-	services="traffic-manager"
-	documentationCenter=""
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   pageTitle="Konfigurieren der Traffic Manager-Routingmethode ";Roundrobin"; für Datenverkehr | Microsoft Azure"
+   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode ";Roundrobin"; für Ihre Traffic Manager-Endpunkte."
+   services="traffic-manager"
+   documentationCenter=""
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode "Roundrobin"
 
@@ -52,4 +52,4 @@ Ein gängiges Muster für das Routing von Datenverkehr besteht darin, eine Reihe
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

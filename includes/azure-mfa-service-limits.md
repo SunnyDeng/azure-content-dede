@@ -13,4 +13,4 @@ Kontosperrung nach **X** Minuten aufheben|Nicht festgelegt|9999
 
 <sup>1</sup>Dies soll in Zukunft erhöht werden.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

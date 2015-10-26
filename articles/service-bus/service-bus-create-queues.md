@@ -160,4 +160,4 @@ catch (Exception e)
 
 Nun, da Sie sich mit den Grundlagen in Bezug auf Warteschlangen vertraut gemacht haben, finden Sie unter [Erstellen von Anwendungen, die Service Bus-Themen und -Abonnements verwenden](service-bus-create-topics-subscriptions.md) weiterführende Informationen zur Verwendung der Funktionen zum Veröffentlichen/Abonnieren des Service Bus-Brokermessaging.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

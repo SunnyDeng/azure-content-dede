@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Konfigurieren der Traffic Manager-Routingmethode für Datenverkehr Failover| Microsoft Azure"
-	description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Routingmethode für Datenverkehr Failover in Traffic Manager."
-	services="traffic-manager"
-	documentationCenter=""
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   pageTitle="Konfigurieren der Traffic Manager-Routingmethode für Datenverkehr ";Failover";| Microsoft Azure"
+   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Routingmethode für Datenverkehr ";Failover"; in Traffic Manager."
+   services="traffic-manager"
+   documentationCenter=""
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode "Failover"
 
@@ -53,4 +53,4 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits die Funkt
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

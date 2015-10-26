@@ -123,4 +123,4 @@ Verwenden Sie Azure-Warnungen zum Senden von Nachrichten an andere Dienste. Zum 
 
 [Use Logic App to send messages to an Azure Queue](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

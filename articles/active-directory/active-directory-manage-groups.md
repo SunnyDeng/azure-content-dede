@@ -94,4 +94,4 @@ Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Act
 
 * [Graph-API-Referenz für Gruppen](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

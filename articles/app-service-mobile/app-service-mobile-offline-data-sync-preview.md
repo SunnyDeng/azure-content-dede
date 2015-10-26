@@ -127,4 +127,4 @@ Beim Synchronisieren von Tabellen steuert der Clientcode, wann lokale Änderunge
 [Windows 8.1: Aktivieren der Offline-Synchronisierung]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data-preview.md
 [Windows 8.1: Offlinesynchronisierung aktivieren]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data-preview.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

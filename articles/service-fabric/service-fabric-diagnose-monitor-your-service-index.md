@@ -38,4 +38,4 @@ Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible 
 - [Verwenden von Systemintegritätsberichten für die Problembehandlung](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 - [Gewusst wie: Hinzufügen von Service Fabric-Integritätsberichten](service-fabric-report-health.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

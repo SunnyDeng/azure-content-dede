@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="msStevenPo"
+	manager="StevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015"
+	ms.date="10/07/2015"
 	ms.author="rkarlin"/>
 
 # Arbeiten mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy
@@ -35,9 +35,22 @@ F: Kann ich ein bereits hochgeladenes Zertifikat auswählen, ohne es erneut hoch
 
 
 
+## Weitere Informationen
+Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
+
+- [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
+- [Aktivieren der einmaligen Anmeldung](active-directory-application-proxy-sso-using-kcd.md)
+- [Aktivieren des bedingten Zugriffs](active-directory-application-proxy-conditional-access.md)
+- [Arbeiten mit Ansprüche unterstützenden Apps](active-directory-application-proxy-claims-aware-apps.md) - [Problembehandlung von Anwendungsproxys](active-directory-application-proxy-troubleshoot.md)
+
+## Weitere Informationen zum Anwendungsproxy
+- [Onlinehilfe anzeigen](active-directory-application-proxy-enable.md)
+- [Blog zum Anwendungsproxy aufrufen](http://blogs.technet.com/b/applicationproxyblog/)
+- [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
+
 ## Zusätzliche Ressourcen
 
 * [Als Organisation für Azure registrieren](..sign-up-organization.md)
 * [Azure-Identität](..fundamentals-identity.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

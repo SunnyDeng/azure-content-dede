@@ -60,4 +60,4 @@ Definieren Sie in der Datenbank den Tabellentyp mit demselben Namen wie "SqlWrit
 
 Das Feature der gespeicherten Prozedur nutzt [Tabellenwertparameter](https://msdn.microsoft.com/library/bb675163.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

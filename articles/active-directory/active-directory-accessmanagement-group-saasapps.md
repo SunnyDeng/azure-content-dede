@@ -5,7 +5,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="femila"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na" 
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="10/09/2015"
 	ms.author="femila"/>
 
 
@@ -30,7 +30,7 @@ Diese Funktion kann für Hunderte von Anwendungen verwendet werden, die Sie aus 
 1. Öffnen Sie einen Browser Ihrer Wahl, und wechseln Sie zum Azure-Verwaltungsportal. Suchen Sie im Azure-Verwaltungsportal auf der Navigationsleiste links nach der Active Directory-Erweiterung. Klicken Sie auf der Registerkarte **Verzeichnis** auf das Verzeichnis, in dem Sie einer Gruppe den Zugriff auf eine SaaS-Anwendung zuweisen möchten.
 
 
-2. Klicken Sie auf die Registerkarte "Anwendungen" für Ihr Verzeichnis. Klicken Sie auf eine Anwendung, die Sie aus dem Anwendungskatalog hinzugefügt haben, und klicken Sie dann auf die Registerkarte "Benutzer und Gruppen".
+2. Klicken Sie auf die Registerkarte "Anwendungen" für Ihr Verzeichnis. Klicken Sie auf eine Anwendung, die Sie aus dem Anwendungskatalog hinzugefügt haben, und klicken Sie dann auf die Registerkarte **Benutzer und Gruppen**.
 
 3. Geben Sie auf der Registerkarte "Benutzer und Gruppen" im Feld "Beginnend mit" den Namen der Gruppe ein, der Sie Zugriff zuweisen möchten, und klicken Sie auf das Häkchen in der oberen rechten Ecke. Sie müssen nur den ersten Teil des Gruppennamens eingeben. Klicken Sie auf die Gruppe, um sie zu markieren, klicken Sie auf die Schaltfläche **Zugriff zuweisen**, und klicken Sie auf **Ja**, wenn die Bestätigungsmeldung angezeigt wird.
 
@@ -48,4 +48,4 @@ Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Act
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

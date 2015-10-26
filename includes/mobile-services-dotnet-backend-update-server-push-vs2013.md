@@ -46,4 +46,4 @@ Mit diesen Schritten wird ein neuer benutzerdefinierter [ApiController](http://g
 
 	>[AZURE.NOTE]Diese POST-Methode kann von jedem beliebigen Client aufgerufen werden, der den Anwendungsschlüssel kennt. Sie ist nicht sicher. Fügen Sie zur Absicherung des Endpunkts der Methode oder Klasse das Attribut `[AuthorizeLevel(AuthorizationLevel.User)]` hinzu, um die Authentifizierung zu erzwingen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

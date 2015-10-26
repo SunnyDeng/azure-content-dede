@@ -124,4 +124,4 @@ Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Es müssen 
 - [Installieren Sie Update 1.2 auf dem Gerät](storsimple-install-update-1.md).
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

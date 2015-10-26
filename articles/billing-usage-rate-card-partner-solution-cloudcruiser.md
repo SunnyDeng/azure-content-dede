@@ -23,7 +23,7 @@ In diesem Artikel wird beschrieben, wie die mit den neuen Microsoft Azure-Abrech
 ## Azure-RateCard-API
 Mit der RateCard-API werden Gebühren- und Preisinformationen aus Azure bereitgestellt. Nachdem Sie sich mit den richtigen Anmeldeinformationen authentifiziert haben, können Sie die API abfragen, um Metadaten zu den unter Azure verfügbaren Diensten sowie die Gebühren zu erfassen, die Ihrer Angebots-ID zugeordnet sind.
 
-Unten ist ein Beispiel für eine Antwort der API mit den Preisen für die Instanz „A0 \(Windows\)“ angegeben:
+Unten ist ein Beispiel für eine Antwort der API mit den Preisen für die Instanz „A0 (Windows)“ angegeben:
 
     {
 		"MeterId": "0e59ad56-03e5-4c3d-90d4-6670874d7e29",
@@ -42,15 +42,15 @@ Unten ist ein Beispiel für eine Antwort der API mit den Preisen für die Instan
 ### Schnittstelle von Cloud Cruiser für die Azure-RateCard-API
 Cloud Cruiser kann die Informationen der RateCard-API auf unterschiedliche Weise nutzen. In diesem Artikel wird gezeigt, wie damit IaaS-Workload-Kostensimulationen und -Analysen durchgeführt werden können.
 
-Um diesen Anwendungsfall zu demonstrieren, stellen wir uns eine Workload vor, bei der mehrere Instanzen unter Microsoft Azure Pack \(WAP\) ausgeführt werden. Das Ziel besteht darin, diese Workload unter Azure zu simulieren und die Kosten für eine Migration dieser Art zu schätzen. Zum Erstellen dieser Simulation müssen zwei Hauptaufgaben durchgeführt werden:
+Um diesen Anwendungsfall zu demonstrieren, stellen wir uns eine Workload vor, bei der mehrere Instanzen unter Microsoft Azure Pack (WAP) ausgeführt werden. Das Ziel besteht darin, diese Workload unter Azure zu simulieren und die Kosten für eine Migration dieser Art zu schätzen. Zum Erstellen dieser Simulation müssen zwei Hauptaufgaben durchgeführt werden:
 
 1. **Importieren und Verarbeiten der Dienstinformationen, die mit der RateCard-API erfasst werden** – Diese Aufgabe wird auch in den Arbeitsmappen durchgeführt, in denen die per RateCard-API extrahierten Daten transformiert und in einer neuen Gebührenübersicht veröffentlicht werden. Diese neue Gebührenübersicht wird in den Simulationen zum Schätzen der Azure-Preise verwendet.
 
-2. **Normalisieren der WAP-Dienste und Azure-Dienste für IaaS** – Standardmäßig basieren WAP-Dienste auf einzelnen Ressourcen \(CPU, Arbeitsspeichergröße, Datenträgergröße usw.\), während Azure-Dienste auf der Instanzgröße basieren \(A0, A1, A2 usw.\). Diese erste Aufgabe kann vom ETL-Modul \(als Arbeitsmappen bezeichnet\) von Cloud Cruiser durchgeführt werden, wobei diese Ressourcen analog zu Azure-Instanzdiensten für Instanzgrößen gebündelt werden können.
+2. **Normalisieren der WAP-Dienste und Azure-Dienste für IaaS** – Standardmäßig basieren WAP-Dienste auf einzelnen Ressourcen (CPU, Arbeitsspeichergröße, Datenträgergröße usw.), während Azure-Dienste auf der Instanzgröße basieren (A0, A1, A2 usw.). Diese erste Aufgabe kann vom ETL-Modul (als Arbeitsmappen bezeichnet) von Cloud Cruiser durchgeführt werden, wobei diese Ressourcen analog zu Azure-Instanzdiensten für Instanzgrößen gebündelt werden können.
 
 ### Importieren von Daten aus der RateCard-API
 
-Cloud Cruiser-Arbeitsmappen sind eine Möglichkeit, Informationen aus der RateCard-API auf automatisierte Weise zu erfassen und zu verarbeiten. Mit ETL-Arbeitsmappen \(Extrahieren-Transformieren-Laden\) können Sie die Sammlung, Transformation und Veröffentlichung von Daten in der Cloud Cruiser-Datenbank konfigurieren.
+Cloud Cruiser-Arbeitsmappen sind eine Möglichkeit, Informationen aus der RateCard-API auf automatisierte Weise zu erfassen und zu verarbeiten. Mit ETL-Arbeitsmappen (Extrahieren-Transformieren-Laden) können Sie die Sammlung, Transformation und Veröffentlichung von Daten in der Cloud Cruiser-Datenbank konfigurieren.
 
 Jede Arbeitsmappe kann über eine oder mehrere Sammlungen verfügen. So können Sie Informationen aus unterschiedlichen Quellen korrelieren, um die Nutzungsdaten zu erweitern oder zu verbessern. In den beiden folgenden Screenshots sind die Erstellung einer neuen *Sammlung* in einer vorhandenen Arbeitsmappe und das Importieren in die *Sammlung* aus der RateCard-API dargestellt:
 
@@ -58,7 +58,7 @@ Jede Arbeitsmappe kann über eine oder mehrere Sammlungen verfügen. So können 
 
 ![Abbildung 2: Importieren von Daten aus der neuen Sammlung][2]
 
-Nach dem Importieren der Daten in die Arbeitsmappe können Sie mehrere Schritte und Transformationsprozesse erstellen, um die Daten zu ändern und zu modellieren. Da wir nur an Infrastructure-as-a-Service \(IaaS\) interessiert sind, können wir in diesem Beispiel die Transformationsschritte zum Entfernen von nicht benötigten Zeilen oder Datensätzen verwenden, die sich auf andere Dienste als IaaS beziehen.
+Nach dem Importieren der Daten in die Arbeitsmappe können Sie mehrere Schritte und Transformationsprozesse erstellen, um die Daten zu ändern und zu modellieren. Da wir nur an Infrastructure-as-a-Service (IaaS) interessiert sind, können wir in diesem Beispiel die Transformationsschritte zum Entfernen von nicht benötigten Zeilen oder Datensätzen verwenden, die sich auf andere Dienste als IaaS beziehen.
 
 Im folgenden Screenshot sind die Transformationsschritte zu sehen, die zum Verarbeiten von mit der RateCard-API erfassten Daten verwendet werden:
 
@@ -68,7 +68,7 @@ Im folgenden Screenshot sind die Transformationsschritte zu sehen, die zum Verar
 
 Es gibt verschiedene Möglichkeiten, in Cloud Cruiser Dienste zu definieren. Eine der Optionen ist das Importieren der Dienste aus den Nutzungsdaten. Diese Methode wird häufig verwendet, wenn mit Public Clouds gearbeitet wird, bei denen die Dienste bereits vom Anbieter definiert wurden.
 
-Eine Gebührenübersicht umfasst eine Reihe von Gebühren oder Preisen, die z. B. auf unterschiedliche Dienste \(basierend auf Gültigkeitsdaten\) oder Kundengruppen angewendet werden können. Außerdem können Gebührenübersichten in Cloud Cruiser zum Erstellen von Simulationen oder Was-wäre-wenn-Szenarien verwendet werden, um zu ermitteln, wie sich Änderungen von Diensten auf die Gesamtkosten einer Workload auswirken können.
+Eine Gebührenübersicht umfasst eine Reihe von Gebühren oder Preisen, die z. B. auf unterschiedliche Dienste (basierend auf Gültigkeitsdaten) oder Kundengruppen angewendet werden können. Außerdem können Gebührenübersichten in Cloud Cruiser zum Erstellen von Simulationen oder Was-wäre-wenn-Szenarien verwendet werden, um zu ermitteln, wie sich Änderungen von Diensten auf die Gesamtkosten einer Workload auswirken können.
 
 In diesem Beispiel verwenden wir die Dienstinformationen der RateCard-API, um in Cloud Cruiser neue Dienste zu definieren. Ebenso können wir die Gebühren, die den Diensten zugeordnet sind, zum Erstellen einer neuen Gebührenübersicht in Cloud Cruiser verwenden.
 
@@ -94,7 +94,7 @@ In diesem Beispiel müssen wir zum Vergleichen der Kosten für WAP und Azure die
 
 ![Abbildung 7: Transformieren von WAP-Daten zum Normalisieren von Diensten][7]
 
-Der letzte Schritt für die Arbeitsmappe ist die Veröffentlichung der Daten in der Cloud Cruiser-Datenbank. Während dieses Schritts werden die Nutzungsdaten jetzt zu Diensten zusammengefasst \(mit Zuordnung zu den Azure-Diensten\) und mit Standardgebühren verknüpft, um die Gebühren zu erstellen.
+Der letzte Schritt für die Arbeitsmappe ist die Veröffentlichung der Daten in der Cloud Cruiser-Datenbank. Während dieses Schritts werden die Nutzungsdaten jetzt zu Diensten zusammengefasst (mit Zuordnung zu den Azure-Diensten) und mit Standardgebühren verknüpft, um die Gebühren zu erstellen.
 
 Nach Fertigstellung der Arbeitsmappe können Sie die Verarbeitung der Daten automatisieren, indem Sie im Scheduler eine neue Aufgabe hinzufügen und die Häufigkeit und Uhrzeit für die Ausführung der Arbeitsmappe angeben.
 
@@ -108,9 +108,9 @@ Zum Demonstrieren dieses Szenarios haben wir den folgenden Bericht erstellt:
 
 ![Kostenvergleich][9]
 
-Das obere Diagramm zeigt einen Kostenvergleich unterteilt nach Diensten. Darin wird der Preis für die Ausführung der Workload für jeden speziellen Dienst bezogen auf WAP \(dunkelblau\) und Azure \(hellblau\) verglichen.
+Das obere Diagramm zeigt einen Kostenvergleich unterteilt nach Diensten. Darin wird der Preis für die Ausführung der Workload für jeden speziellen Dienst bezogen auf WAP (dunkelblau) und Azure (hellblau) verglichen.
 
-Das untere Diagramm zeigt dieselben Daten, die jetzt jedoch nach Abteilung unterteilt sind. Es werden die Kosten dargestellt, die für jede Abteilung beim Ausführen der Workload unter WAP und Azure anfallen, sowie die jeweilige Differenz \(grüner Balken zu Einsparungen\).
+Das untere Diagramm zeigt dieselben Daten, die jetzt jedoch nach Abteilung unterteilt sind. Es werden die Kosten dargestellt, die für jede Abteilung beim Ausführen der Workload unter WAP und Azure anfallen, sowie die jeweilige Differenz (grüner Balken zu Einsparungen).
 
 ## Azure-Nutzungs-API
 
@@ -119,7 +119,7 @@ Das untere Diagramm zeigt dieselben Daten, die jetzt jedoch nach Abteilung unter
 
 Microsoft hat vor Kurzem die Azure-Nutzungs-API vorgestellt, die Abonnenten den programmgesteuerten Abruf von Nutzungsdaten ermöglicht, um sich einen Einblick in ihre Ressourcennutzung zu verschaffen. Dies ist eine gute Nachricht für Cloud Cruiser-Kunden, die dank dieser API einen umfassenderen Datenbestand nutzen können.
 
-Cloud Cruiser kann von der Integration mit der Nutzungs-API auf verschiedene Weise profitieren. Die über die API verfügbare Granularität \(stündliche Verwendungsinformationen\) und Informationen zu Ressourcenmetadaten liefern die benötigten Daten zur Unterstützung flexibler Showback- und Chargeback-Modelle.
+Cloud Cruiser kann von der Integration mit der Nutzungs-API auf verschiedene Weise profitieren. Die über die API verfügbare Granularität (stündliche Verwendungsinformationen) und Informationen zu Ressourcenmetadaten liefern die benötigten Daten zur Unterstützung flexibler Showback- und Chargeback-Modelle.
 
 In diesem Tutorial zeigen wir ein Beispiel, wie Cloud Cruiser von den Informationen profitieren kann, die die Nutzungs-API liefert. Genauer gesagt erstellen wir eine neue Ressourcengruppe in Azure, ordnen Tags für die Kontostruktur zu und beschreiben den Prozess zum Abrufen von Tag-Informationen in Cloud Cruiser und deren Verarbeitung.
  
@@ -138,11 +138,11 @@ Diese beiden Anforderungen können eine Herausforderung darstellen, und zwar ins
 
 Mithilfe der neuen Azure-Nutzungs-API kann Cloud Cruiser Informationen in Ressourcentags abrufen und über ein ausgeklügeltes ETL-Tool namens "Arbeitsmappen" diese gängigen Taggingfehler korrigieren. Über Transformationsschritte, in denen reguläre Ausdrücke und die Korrelation von Daten zum Einsatz kommen, kann Cloud Cruiser Ressourcen mit falschen Tags bestimmen und die richtigen Tags zuordnen. Dadurch wird die ordnungsgemäße Zuordnung der Ressourcen zum Nutzer sichergestellt.
 
-Auf Abrechnungsseite automatisiert Cloud Cruiser den Showback-/Chargeback-Prozess und kann die Informationen in Tags verwenden, um die Nutzung dem entsprechenden Nutzer \(Abteilung, Geschäftsbereich, Projekt usw.\) zuzuweisen. Diese Automatisierung bietet eine enorme Verbesserung und kann einen konsistenten und überwachbaren Abrechnungsprozess sicherstellen.
+Auf Abrechnungsseite automatisiert Cloud Cruiser den Showback-/Chargeback-Prozess und kann die Informationen in Tags verwenden, um die Nutzung dem entsprechenden Nutzer (Abteilung, Geschäftsbereich, Projekt usw.) zuzuweisen. Diese Automatisierung bietet eine enorme Verbesserung und kann einen konsistenten und überwachbaren Abrechnungsprozess sicherstellen.
  
 
 ### Erstellen einer Ressourcengruppe mit Tags in Microsoft Azure
-Der erste Schritt in diesem Tutorial ist das Erstellen einer neuen Ressourcengruppe im Azure-Portal und anschließende Erstellen neuer Tags, die Ressourcen zugeordnet werden. In diesem Beispiel erstellen wir die folgenden Tags: Department, Environment, Owner, Project \(Abteilung, Umgebung, Besitzer, Projekt\).
+Der erste Schritt in diesem Tutorial ist das Erstellen einer neuen Ressourcengruppe im Azure-Portal und anschließende Erstellen neuer Tags, die Ressourcen zugeordnet werden. In diesem Beispiel erstellen wir die folgenden Tags: Department, Environment, Owner, Project (Abteilung, Umgebung, Besitzer, Projekt).
 
 Das nachstehende Bildschirmfoto des Azure-Portals zeigt ein Beispiel einer Ressourcengruppe mit den zugehörigen Tags.
 
@@ -165,7 +165,7 @@ Der nächste Schritt ist das Abrufen der Informationen aus der Nutzungs-API in C
         "meterCategory": "Virtual Machines",
         "meterSubCategory": "Standard_D1 VM (Non-Windows)",
         "unit": "Hours",
-        "instanceData": "{\"Microsoft.Resources\":{\"resourceUri\":\"/subscriptions/bb678b04-0e48-4b44-XXXX-XXXXXXXX/resourceGroups/DEMOUSAGEAPI/providers/Microsoft.Compute/virtualMachines/MyDockerVM\",\"location\":\"eastus\",\"tags\":{\"Department\":\"Sales\",\"Project\":\"Demo Usage API\",\"Environment\":\"Test\",\"Owner\":\"RSE\"},\"additionalInfo\":{\"ImageType\":\"Canonical\",\"ServiceType\":\"Standard_D1\"}}}",
+        "instanceData": "{"Microsoft.Resources":{"resourceUri":"/subscriptions/bb678b04-0e48-4b44-XXXX-XXXXXXXX/resourceGroups/DEMOUSAGEAPI/providers/Microsoft.Compute/virtualMachines/MyDockerVM","location":"eastus","tags":{"Department":"Sales","Project":"Demo Usage API","Environment":"Test","Owner":"RSE"},"additionalInfo":{"ImageType":"Canonical","ServiceType":"Standard_D1"}}}",
         "meterId": "e60caf26-9ba0-413d-a422-6141f58081d6",
         "infoFields": {},
         "quantity": 8
@@ -176,23 +176,23 @@ Der nächste Schritt ist das Abrufen der Informationen aus der Nutzungs-API in C
 
 ### Importieren von Daten aus der Nutzungs-API in Cloud Cruiser
 
-Cloud Cruiser-Arbeitsmappen sind eine Möglichkeit, Informationen aus der Nutzungs-API auf automatisierte Weise zu erfassen und zu verarbeiten. Mit einer ETL-Arbeitsmappe \(Extrahieren-Transformieren-Laden\) können Sie die Sammlung, Transformation und Veröffentlichung von Daten in der Cloud Cruiser-Datenbank konfigurieren.
+Cloud Cruiser-Arbeitsmappen sind eine Möglichkeit, Informationen aus der Nutzungs-API auf automatisierte Weise zu erfassen und zu verarbeiten. Mit einer ETL-Arbeitsmappe (Extrahieren-Transformieren-Laden) können Sie die Sammlung, Transformation und Veröffentlichung von Daten in der Cloud Cruiser-Datenbank konfigurieren.
 
-Jede Arbeitsmappe kann über eine oder mehrere Sammlungen verfügen. So können Sie Informationen aus unterschiedlichen Quellen korrelieren, um die Nutzungsdaten zu erweitern oder zu verbessern. In diesem Beispiel erstellen wir ein neues Blatt in der Arbeitsmappe mit der Azure-Vorlage \(_UsageAPI\)_ und legen eine neue _Sammlung_ zum Importieren von Informationen aus der Nutzungs-API fest.
+Jede Arbeitsmappe kann über eine oder mehrere Sammlungen verfügen. So können Sie Informationen aus unterschiedlichen Quellen korrelieren, um die Nutzungsdaten zu erweitern oder zu verbessern. In diesem Beispiel erstellen wir ein neues Blatt in der Arbeitsmappe mit der Azure-Vorlage (_UsageAPI)_ und legen eine neue _Sammlung_ zum Importieren von Informationen aus der Nutzungs-API fest.
 
 ![Abbildung 3: In das Blatt "UsageAPI" importierte Nutzungs-API-Daten][12]
 
-Beachten Sie, dass diese Arbeitsmappe bereits andere Blätter zum Importieren von Diensten aus Azure \(_ImportServices_\) enthält und die aus der Abrechnung-API stammenden Nutzungsdaten \(_PublishData_\) verarbeitet.
+Beachten Sie, dass diese Arbeitsmappe bereits andere Blätter zum Importieren von Diensten aus Azure (_ImportServices_) enthält und die aus der Abrechnung-API stammenden Nutzungsdaten (_PublishData_) verarbeitet.
 
 Wir extrahieren und verarbeiten die Informationen aus der Nutzungs-API auf dem Blatt _UsageAPI_ und korrelieren diese Informationen mit den Nutzungsdaten aus der Abrechnung-API auf dem Blatt _PublishData_.
 
 ### Verarbeiten die Tag-Informationen aus der Nutzungs-API
 
-Nach dem Import der Daten in die Arbeitsmappe erstellen wir auf dem Blatt _UsageAPI_ Transformationsschritte, um die von der API gelieferten Informationen zu verarbeiten. Im ersten Schritt verwenden wir einen Prozessor vom Typ "JSON Split" zum Extrahieren der Tags aus einem einzelnen Feld \(entsprechend ihrem Import aus der API\) und erstellen neue Felder für jedes einzelne \(Department, Project, Owner und Environment\).
+Nach dem Import der Daten in die Arbeitsmappe erstellen wir auf dem Blatt _UsageAPI_ Transformationsschritte, um die von der API gelieferten Informationen zu verarbeiten. Im ersten Schritt verwenden wir einen Prozessor vom Typ "JSON Split" zum Extrahieren der Tags aus einem einzelnen Feld (entsprechend ihrem Import aus der API) und erstellen neue Felder für jedes einzelne (Department, Project, Owner und Environment).
 
 ![Abbildung 4: Erstellen neuer Felder für die Tag-Informationen][13]
 
-Beachten Sie, dass beim Dienst "Networking" die Tag-Informationen \(gelb umrahmtes Feld\) fehlen. Doch wir erkennen, dass dieser Dienst Teil derselben Ressourcengruppe ist, indem wir das Feld _ResourceGroupName_ untersuchen. Da wir über Tags für die anderen Ressourcen aus dieser Ressourcengruppe verfügen, können wir diese Informationen nutzen, um dieser Ressource im weiteren Verlauf des Prozesses die fehlenden Tags zuzuordnen.
+Beachten Sie, dass beim Dienst "Networking" die Tag-Informationen (gelb umrahmtes Feld) fehlen. Doch wir erkennen, dass dieser Dienst Teil derselben Ressourcengruppe ist, indem wir das Feld _ResourceGroupName_ untersuchen. Da wir über Tags für die anderen Ressourcen aus dieser Ressourcengruppe verfügen, können wir diese Informationen nutzen, um dieser Ressource im weiteren Verlauf des Prozesses die fehlenden Tags zuzuordnen.
 
 Der nächste Schritt ist die Erstellung einer Nachschlagetabelle, die zum Zuordnen der Informationen in den Tags zu _ResourceGroupName_ dient. Diese Nachschlagetabelle wird im nächsten Schritt verwendet, um die Nutzungsdaten mit Tag-Informationen zu versehen.
 
@@ -210,8 +210,8 @@ Das Beste ist, dass Sie diesen Prozess nur einmal durchlaufen müssen. Wenn die 
 
 ### Nächste Schritte
 
-+ Eine ausführliche Anleitung zur Erstellung von Cloud Cruiser-Arbeitsmappen und -Berichten finden Sie in der Cloud Cruiser-[Onlinedokumentation](http://docs.cloudcruiser.com/) \(gültige Anmeldung erforderlich\). Weitere Informationen zu Cloud Cruiser erhalten Sie, indem Sie sich an [info@cloudcruiser.com](mailto:info@cloudcruiser.com) wenden.
-+ Eine Übersicht über die Azure-APIs zur Ressourcennutzung und Gebührenkarte \(Resource Usage und RateCard\) finden Sie unter [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure](billing-usage-rate-card-overview.md).
++ Eine ausführliche Anleitung zur Erstellung von Cloud Cruiser-Arbeitsmappen und -Berichten finden Sie in der Cloud Cruiser-[Onlinedokumentation](http://docs.cloudcruiser.com/) (gültige Anmeldung erforderlich). Weitere Informationen zu Cloud Cruiser erhalten Sie, indem Sie sich an [info@cloudcruiser.com](mailto:info@cloudcruiser.com) wenden.
++ Eine Übersicht über die Azure-APIs zur Ressourcennutzung und Gebührenkarte (Resource Usage und RateCard) finden Sie unter [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure](billing-usage-rate-card-overview.md).
 + Ausführlichere Informationen zu beiden APIs finden Sie unter [Azure-Abrechnungs-REST-API – Referenz](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c). Sie sind Teil der APIs, die vom Azure-Ressourcen-Manager bereitgestellt werden.
 + Wenn Sie direkt in den Beispielcode eintauchen möchten, können Sie dies unter [Codebeispiele für Microsoft Azure-Abrechnungs-API bei GitHub](https://github.com/Azure/BillingCodeSamples) tun.
 
@@ -234,4 +234,4 @@ Das Beste ist, dass Sie diesen Prozess nur einmal durchlaufen müssen. Wenn die 
 [13]: ./media/billing-usage-rate-card-partner-solution-cloudcruiser/4_NewTagField.png "Abbildung 13: Erstellen neuer Felder für die Tag-Informationen"
 [14]: ./media/billing-usage-rate-card-partner-solution-cloudcruiser/5_PopulateAccountStructure.png "Abbildung 14: Auffüllen der Kontostruktur mit den Informationen aus den Suchvorgängen"
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

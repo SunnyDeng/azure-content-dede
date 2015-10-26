@@ -232,4 +232,4 @@ In diesem Lernprogramm haben Sie wichtige Funktionen der Preview-Version von **A
 [12]: ./media/data-catalog-get-started/ownership.png
 [13]: ./media/data-catalog-get-started/crowdsource.png
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -185,7 +185,7 @@ namespace ContactsList.Controllers
 
 5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	**http://localhost:5001/api/Contacts**
+	****http://localhost:5001/api/Contacts**
 
 	Anschließend können Sie die Inhalte von *Contacts.json* anzeigen. In dieser Datei wird folgender Inhalt angezeigt:
 
@@ -413,8 +413,7 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 
 	![Git-Initialisierung](./media/app-service-create-aspnet-api-app-using-vscode/19-initgit.png)
 
-5. 
-6. Fügen Sie eine Commit-Nachricht hinzu, und aktivieren Sie **Commit für alle**.
+5. Fügen Sie eine Commit-Nachricht hinzu, und aktivieren Sie **Commit für alle**.
 
 	![Git – Commit für alle](./media/app-service-create-aspnet-api-app-using-vscode/20-git-commit.png)
 
@@ -425,19 +424,17 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 cd c:\VSCodeProjects\ContactsList
 </pre>
 
-7. Erstellen Sie einen Remotebezug, um Updates mittels Push an die zuvor erstellte Web-App (API-App-Host) zu übertragen, und verwenden Sie hierbei die zuvor kopierte Git-URL (die auf ".git" endet):
+8. Erstellen Sie einen Remotebezug, um Updates mittels Push an die zuvor erstellte Web-App (API-App-Host) zu übertragen, und verwenden Sie hierbei die zuvor kopierte Git-URL (die auf ".git" endet):
 
 	<pre class="prettyprint">
 git remote add azure [URL for remote repository]
 </pre>
 
-8. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
+9. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
 
 	<pre class="prettyprint">
-	git push azure master
-	</pre>
-
-	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
+git push azure master
+</pre>Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
 
 	Die Ausgabe des oben stehenden Befehls führt zu einer Meldung, dass die Bereitstellung erfolgreich durchgeführt wurde:
 
@@ -466,4 +463,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

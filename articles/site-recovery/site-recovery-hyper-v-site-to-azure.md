@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="09/29/2015"
+	ms.date="10/12/2015"
 	ms.author="raynew"/>
 
 
@@ -49,11 +49,11 @@ Vergewissern Sie sich, dass Sie alle Voraussetzungen erfüllen, ehe Sie starten.
 - Am lokalen Quellstandort muss mindestens ein Server mit Windows Server 2012 R2 und der Hyper-V-Rolle vorhanden sein.
 - Der Hyper-V-Server muss mindestens einen virtuellen Computer enthalten.
 - Hyper-V-Server müssen entweder direkt oder über einen Proxy mit dem Internet verbunden sein.
-- Auf Hyper-V-Servern sollten die in [KB2961977](https://support.microsoft.com/de-DE/kb/2961977 "KB2961977") genannten Fehlerbehebungen installiert sein.
+- Auf Hyper-V-Servern sollten die in [KB2961977](https://support.microsoft.com/en-us/kb/2961977 "KB2961977") genannten Fehlerbehebungen installiert sein.
 
 ### Voraussetzungen für virtuelle Computer
 
-Die zu schützenden virtuellen Computer müssen die [Voraussetzungen für virtuelle Computer](site-recovery-best-practices.md/#virtual-machines) erfüllen.
+Die zu schützenden virtuellen Computer müssen die [Voraussetzungen für virtuelle Computer](site-recovery-best-practices.md#virtual-machines) erfüllen.
 
 ### Voraussetzungen für Anbieter und Agent
 
@@ -62,11 +62,11 @@ Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Serv
 - Verwenden Sie jeweils die neueste Anbieter- und Agent-Version.
 - Alle Hyper-V-Server in einem Tresor müssen die gleiche Version aufweisen.
 - Der Anbieter muss eine Internetverbindung mit Azure Site Recovery herstellen. Hierbei können Sie entweder auf die Verwendung eines Proxys verzichten oder die derzeit auf dem VMM-Server konfigurierten Proxyeinstellungen bzw. die benutzerdefinierten Proxyeinstellungen verwenden, die Sie bei der Anbieterinstallation konfiguriert haben. Wenn Sie einen vorhandenen Proxyserver verwenden möchten, stellen Sie sicher, dass die URLs für die Verbindung mit Azure nicht durch die Firewall blockiert werden.
-	- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
+	- *.hypervrecoverymanager.windowsazure.com
+	- *.accesscontrol.windows.net
+	- *.backup.windowsazure.com
+	- *.blob.core.windows.net
+	- *.store.core.windows.net
  
 - Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Installation des Anbieters ein. Bei der Anbieterinstallation müssen Sie dann die Adresse und den Port des Proxyservers sowie die Anmeldeinformationen für den Zugriff angeben. Beachten Sie, dass HTTPS-basierte Proxys nicht unterstützt werden.
 
@@ -145,11 +145,11 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 	- Wenn für den Standardproxy des Hyper-V-Servers eine Authentifizierung erforderlich ist, müssen Sie die Option für den benutzerdefinierten Proxyserver auswählen. Geben Sie die Details zum Standardproxy sowie die Anmeldeinformationen ein.
 	- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Anbieterinstallation ein.
 	- Der Hyper-V-Host sollte auf die folgenden URLs Zugriff haben:
-		- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
+		- *.hypervrecoverymanager.windowsazure.com
+		- *.accesscontrol.windows.net
+		- *.backup.windowsazure.com
+		- *.blob.core.windows.net
+		- *.store.core.windows.net
 
 	- Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
@@ -192,7 +192,7 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 	> - **/proxyUsername**: optionaler Parameter, der den Proxybenutzernamen angibt (sofern der Proxy eine Authentifizierung erfordert).
 	> - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert).
 
->[AZURE.TIP]Sie können jeden einzelnen Hyper-V-Host so konfigurieren, dass unterschiedliche Netzwerk-Bandbreiteneinstellungen verwendet werden, um virtuelle Computer in Azure zu replizieren. Weitere Informationen über das [Verwalten der Netzwerkbandbreitennutzung für den Schutz zwischen einem lokalen Standort und Azure](https://support.microsoft.com/de-DE/kb/3056159)
+>[AZURE.TIP]Sie können jeden einzelnen Hyper-V-Host so konfigurieren, dass unterschiedliche Netzwerk-Bandbreiteneinstellungen verwendet werden, um virtuelle Computer in Azure zu replizieren. Weitere Informationen über das [Verwalten der Netzwerkbandbreitennutzung für den Schutz zwischen einem lokalen Standort und Azure](https://support.microsoft.com/en-us/kb/3056159)
 
 
 ## Schritt 4: Erstellen der Azure-Ressourcen
@@ -270,14 +270,10 @@ Es gibt zwei Möglichkeiten, ein Testfailover in Azure auszuführen.
 - Testfailover ohne Azure-Netzwerk – Bei dieser Art von Testfailover wird überprüft, dass der virtuelle Computer in Azure ordnungsgemäß hochgefahren wird. Der virtuelle Computer wird nach einem Failover mit keinem Azure-Netzwerk verbunden.
 - Testfailover mit Azure-Netzwerk – Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Computer mit dem angegebenen Azure-Zielnetzwerk verbunden werden. Bei der Subnetzverarbeitung wird für das Testfailover das Subnetz des virtuellen Testcomputers basierend auf dem Subnetz des virtuellen Replikatcomputers festgelegt. Dies unterscheidet sich von der regulären Replikation, bei der das Subnetz des virtuellen Replikatcomputers auf dem Subnetz des virtuellen Quellcomputers basiert.
 
-Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure), und die Infrastruktur einrichten, damit der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Gehen Sie wie folgt vor, um ein Testfailover durchzuführen:
+Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure). Unter [Ausführen eines Testfailovers](site-recovery-failover.md#run-a-test-failover) finden Sie weitere Details.
 
 
-1. Führen Sie ein Testfailover des virtuellen Computers mit Domänencontroller und DNS in dem Netzwerk durch, das Sie auch für das eigentliche Testfailover des lokalen virtuellen Computers verwenden möchten.
-2. Notieren Sie sich die IP-Adresse, die dem virtuellen DNS-Computer nach dem Failover zugeordnet wurde.
-3. Fügen Sie dem virtuellen Azure-Netzwerk, das für das Failover verwendet wird, die IP-Adresse als DNS-Serveradresse hinzu.
-4. Führen Sie das Testfailover der lokalen virtuellen Quellcomputer durch, und geben Sie dabei das Azure-Testnetzwerk an.
-5. Vergewissern Sie sich, dass das Testfailover erwartungsgemäß funktioniert hat. Markieren Sie das Testfailover als abgeschlossen – zuerst für den Wiederherstellungsplan und anschließend für die virtuellen Computer mit Domänencontroller und DNS.
+Sie müssen außerdem die Infrastruktur so einrichten, dass der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Unter [Überlegungen zum Testfailover für Active Directory](site-recovery-active-directory.md#considerations-for-test-failover) finden Sie weitere Details.
 
 Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
 
@@ -309,4 +305,4 @@ Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

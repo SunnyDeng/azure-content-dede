@@ -13,7 +13,7 @@
    ms.workload="search"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.date="10/06/2015"
+   ms.date="10/07/2015"
    ms.author="brjohnst"/>
 
 # Verwenden von Azure Search aus einer .NET-Anwendung #
@@ -337,7 +337,7 @@ Das Erste, was Sie sehen, ist, dass jede öffentliche Eigenschaft von `Hotel` ei
 
 Ebenso bemerkenswert an der Klasse `Hotel` sind die Datentypen der öffentlichen Eigenschaften. Die .NET-Typen dieser Eigenschaften stimmen mit den entsprechenden Feldtypen in der Indexdefinition überein. Die Zeichenfolgeeigenschaft `Category` passt zum Beispiel zum Feld `category`, das den Typ `Edm.String` hat. Ähnliche Zuordnungen bestehen auch zwischen `bool?` und `Edm.Boolean`, `DateTimeOffset?`, `Edm.DateTimeOffset` usw. Die jeweiligen Regeln für die Zuordnung eines Typs sind mit der `Documents.Get`-Methode auf [MSDN](https://msdn.microsoft.com/library/azure/dn931291.aspx) dokumentiert.
  
-> [AZURE.NOTE]Beim Entwerfen eigener Modellklassen für die Zuordnung zum Azure Search-Index müssen Sie Eigenschaften von Werttypen, z. B. `bool` und `int`, als Eigenschaften deklarieren, die NULL-Werte zulassen (z. B. `bool?` anstelle von `bool`). Dies ist erforderlich, da alle primitiven Feldtypen in Azure Search NULL-Werte zulassen. Wenn Sie Typen verwenden, die keine NULL-Werte zulassen, können beim Indizieren von Standardwerten, z. B. `0` und `false`, unerwartete Ergebnisse auftreten.
+> [AZURE.NOTE]Beim Entwerfen eigener Modellklassen für die Zuordnung zum Azure Search-Index müssen Sie Eigenschaften von Werttypen, z. B. `bool` und `int`, als Eigenschaften deklarieren, die NULL-Werte zulassen (z. B. `bool?` anstelle von `bool`). Dies ist erforderlich, da alle primitiven Feldtypen in Azure Search NULL-Werte zulassen. Wenn Sie Typen verwenden, die keine NULL-Werte zulassen, treten beim Indizieren von Standardwerten, z. B. `0` und `false`, unerwartete Ergebnisse auf. Insbesondere werden die Standardwerte während der Indizierung in NULL konvertiert. In einer zukünftigen Version des SDK verursacht stattdessen die Verwendung von Typen, die keine NULL-Werte zulassen, das Auslösen einer Ausnahme.
 
 Diese Möglichkeit, eigene Klassen als Dokumente zu verwenden, funktioniert in beide Richtungen. Denn ebenso können Sie das SDK, wie im nächsten Abschnitt gezeigt, beim Abrufen von Suchergebnissen anweisen, diese automatisch in einen Typ Ihrer Wahl zu deserialisieren.
 
@@ -627,4 +627,4 @@ Hotel.cs:
     }
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

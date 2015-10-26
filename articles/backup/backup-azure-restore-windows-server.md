@@ -109,4 +109,4 @@ In diesen Schritten wird folgende Terminologie verwendet:
 - [Sichern von virtuellen Azure-Computern](backup-azure-vms-introduction.md)
 - [Sichern von Microsoft-Workloads](backup-azure-dpm-introduction.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

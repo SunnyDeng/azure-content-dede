@@ -36,7 +36,7 @@ Ein _vollqualifizierter_ Name umfasst den Zonennamen, ein _relativer_ Name hinge
 
 Es gibt verschiedene Eintragstypen, je nach den darin enthaltenen Daten. Der häufigste Typ ist ein A-Eintrag, der einen Namen einer IPv4-Adresse zuordnet. Ein weiterer Typ ist ein MX-Eintrag, der einen Namen einem Mailserver zuordnet.
 
-Azure DNS unterstützt alle allgemeine DNS-Eintragstypen: A, AAAA, CNAME, MX, NS, SOA, SRV und TXT.
+Azure DNS unterstützt alle allgemeine DNS-Eintragstypen: A, AAAA, CNAME, MX, NS, SOA, SRV und TXT. (Beachten Sie, dass [SPF-Datensätze mit dem TXT-Eintragstyp erstellt werden sollten](http://tools.ietf.org/html/rfc7208#section-3.1).)
 
 In einigen Fällen müssen Sie mehrere DNS-Einträge mit einem bestimmten Namen und Typ erstellen. Angenommen, die Website "www.contoso.com" wird auf zwei verschiedenen IP-Adressen gehostet. Dazu sind zwei verschiedene A-Einträge erforderlich, einer für jede IP-Adresse:
 
@@ -124,4 +124,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

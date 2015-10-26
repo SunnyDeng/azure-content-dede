@@ -311,4 +311,4 @@ Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abs
 [setcname2]: ./media/custom-dns-web-site/dncmntask-cname-6.png
 [setcname3]: ./media/custom-dns-web-site/dncmntask-cname-7.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

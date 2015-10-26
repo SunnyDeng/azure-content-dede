@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Azure AD Connect Sync: Operative Aufgaben und Überlegungen"
+   pageTitle="Azure AD Connect Sync: Operative Aufgaben und Überlegungen | Microsoft Azure"
    description="In diesem Thema werden die operativen Aufgaben für Azure AD Connect Sync und die Vorbereitung dieser Komponente für den Betrieb beschrieben."
    services="active-directory"
    documentationCenter=""
    authors="AndKjell"
-   manager="msStevenPo"
+   manager="StevenPo"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/08/2015"
+   ms.date="10/13/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect Sync: Operative Aufgaben und Überlegungen
@@ -28,7 +28,7 @@ Der Stagingmodus kann für verschiedene Szenarien genutzt werden, darunter:
 
 Mit einem Server im Stagingmodus können Sie Änderungen an der Konfiguration vornehmen und eine Vorschau der Änderungen anzeigen, bevor Sie den Server aktiv schalten. Ein Server im Stagingmodus ermöglicht es Ihnen außerdem, einen vollständigen Import und eine vollständige Synchronisierung durchzuführen und so sicherzustellen, dass alle Änderungen wie erwartet durchgeführt werden, bevor Sie diese in Ihrer Produktionsumgebung implementieren.
 
-Während der Installation können Sie festlegen, dass der Server in den *Stagingmodus* versetzt wird. Auf diese Weise wird der Server für Import und Synchronisierung aktiviert, es werden jedoch keine Exporte durchgeführt. Ein Server im Stagingmodus führt keine Kennwortsynchronisierung oder Kennwortrückschreibung durch – selbst dann nicht, wenn Sie diese Funktionen aktivieren. Wenn Sie den Stagingmodus deaktivieren, beginnt der Server mit dem Export und aktiviert die Kennwortsynchronisierung und die Kennwortrückschreibung (sofern ausgewählt).
+Während der Installation können Sie festlegen, dass der Server in den **Stagingmodus** versetzt wird. Auf diese Weise wird der Server für Import und Synchronisierung aktiviert, es werden jedoch keine Exporte durchgeführt. Ein Server im Stagingmodus führt keine Kennwortsynchronisierung oder Kennwortrückschreibung durch – selbst dann nicht, wenn Sie diese Funktionen aktivieren. Wenn Sie den Stagingmodus deaktivieren, beginnt der Server mit dem Export und aktiviert die Kennwortsynchronisierung und die Kennwortrückschreibung (sofern ausgewählt).
 
 Ein Server im Stagingmodus empfängt weiterhin Änderungen von Active Directory und Azure AD. Er verfügt deshalb stets über eine Kopie der aktuellen Änderungen und kann die Funktionen eines anderen Servers sehr schnell übernehmen. Wenn Sie Konfigurationsänderungen an Ihrem primären Server vornehmen, liegt es in Ihrer Verantwortung, dieselben Änderungen auch auf den Servern im Stagingmodus durchzuführen.
 
@@ -44,15 +44,15 @@ Führen Sie zum Anwenden dieser Methode die folgenden Schritte aus:
 
 **Vorbereiten**
 
-1. Installieren Sie Azure AD Connect, wählen Sie *Stagingmodus* aus, und deaktivieren Sie auf der letzten Seite des Installations-Assistenten die Option *Synchronisierung starten*. Auf diese Weise kann das Synchronisierungsmodul manuell ausgeführt werden.
-2. Melden Sie sich ab und wieder an, und wählen Sie im Startmenü *Synchronisierungsdienst*.
+1. Installieren Sie Azure AD Connect, wählen Sie **Stagingmodus** aus, und deaktivieren Sie auf der letzten Seite des Installations-Assistenten die Option **Synchronisierung starten**. Auf diese Weise kann das Synchronisierungsmodul manuell ausgeführt werden.
+2. Melden Sie sich ab und wieder an, und wählen Sie im Startmenü **Synchronisierungsdienst** aus.
 
 **Importieren und Synchronisieren**
 
-1. Wählen Sie *Connectors*, und wählen Sie dann den ersten Connector mit dem Typ *Active Directory-Domänendienste*. Klicken Sie auf *Ausführen*, wählen Sie *Vollständiger Import*, und klicken Sie auf *OK*. Führen Sie diese Schritte für alle Connectors von diesem Typ aus.
-2. Wählen Sie den Connector mit dem Typ *Azure Active Directory (Microsoft)*. Klicken Sie auf *Ausführen*, wählen Sie *Vollständiger Import*, und klicken Sie auf *OK*.
-4. Stellen Sie sicher, dass "Connectors" weiterhin ausgewählt ist, und klicken Sie für jeden Connector mit dem Typ *Active Directory-Domänendienste* auf *Ausführen*, wählen Sie *Deltasynchronisierung*, und klicken Sie auf *OK*.
-5. Wählen Sie den Connector mit dem Typ *Azure Active Directory (Microsoft)*. Klicken Sie auf *Ausführen*, wählen Sie *Deltasynchronisierung*, und klicken Sie auf "OK".
+1. Wählen Sie **Connectors** aus, und wählen Sie dann den ersten Connector mit dem Typ **Active Directory-Domänendienste** aus. Klicken Sie auf **Ausführen**, wählen Sie **Vollständiger Import** aus, und klicken Sie auf **OK**. Führen Sie diese Schritte für alle Connectors von diesem Typ aus.
+2. Wählen Sie den Connector mit dem Typ **Azure Active Directory (Microsoft)** aus. Klicken Sie auf **Ausführen**, wählen Sie **Vollständiger Import** aus, und klicken Sie auf **OK**.
+4. Stellen Sie sicher, dass "Connectors" weiterhin ausgewählt ist, und klicken Sie für jeden Connector mit dem Typ **Active Directory-Domänendienste** auf **Ausführen**, wählen Sie **Deltasynchronisierung** aus, und klicken Sie auf **OK**.
+5. Wählen Sie den Connector mit dem Typ **Azure Active Directory (Microsoft)** aus. Klicken Sie auf **Ausführen**, wählen Sie **Deltasynchronisierung** aus, und klicken Sie auf "OK".
 
 Sie haben einen Stagingexport der Änderungen an Azure AD und der lokalen Active Directory-Umgebung durchgeführt (wenn Sie eine Exchange-Hybridbereitstellung verwenden). In den nächsten Schritten können Sie überprüfen, was geändert wird, bevor Sie mit dem Export in die Verzeichnisse beginnen.
 
@@ -88,7 +88,7 @@ Ein Bestandteil des Implementierungsentwurfs besteht darin, für den Fall zu pla
 Abhängig von Ihren Antworten auf diese Fragen und Ihrer Organisationsrichtlinie kann eine der folgenden Strategien implementiert werden:
 
 -	Führen Sie ggf. eine Neuerstellung durch.
--	Richten Sie einen Reserveserver im Standbymodus ein, auch bezeichnet als *Stagingmodus*.
+-	Richten Sie einen Reserveserver im Standbymodus ein, auch bezeichnet als **Stagingmodus**.
 -	Verwenden Sie virtuelle Computer.
 
 Da Azure AD Connect Sync von einer SQL-Datenbank abhängt, sollten Sie auch den Abschnitt "Hohe Verfügbarkeit von SQL" lesen, sofern Sie nicht SQL Express verwenden (im Lieferumfang von Azure AD Connect enthalten).
@@ -99,7 +99,7 @@ Eine sinnvolle Strategie besteht darin, eine ggf. erforderliche Neuerstellung de
 Das Synchronisierungsmodul speichert keine Statusinformationen zu den Objekten, deshalb kann die Datenbank mithilfe der Daten in Active Directory und Azure AD neu erstellt werden. Das Attribut **sourceAnchor** wird verwendet, um die lokalen Objekte und die Cloudobjekte miteinander zu verknüpfen. Wenn Sie den Server mit vorhandenen lokalen Objekten und Cloudobjekten neu erstellen, werden diese vom Synchronisierungsmodul bei der Neuinstallation abgeglichen. Dokumentieren und speichern Sie die am Server vorgenommenen Änderungen, beispielsweise die Filter- und Synchronisierungsregeln. Diese müssen erneut angewendet werden, bevor Sie die Synchronisierung starten.
 
 ### Stellen Sie einen Reservestandbyserver bereit (Stagingmodus)
-Wenn Sie über eine komplexere Umgebung verfügen, wird empfohlen, mindestens einen Standbyserver einzurichten. Während der Installation können Sie festlegen, dass ein Server in den *Stagingmodus* versetzt wird.
+Wenn Sie über eine komplexere Umgebung verfügen, wird empfohlen, mindestens einen Standbyserver einzurichten. Während der Installation können Sie festlegen, dass ein Server in den **Stagingmodus** versetzt wird.
 
 Weitere Informationen finden Sie unter [Stagingmodus](#staging-mode).
 
@@ -110,6 +110,8 @@ Eine gängige und unterstützte Methode ist die Ausführung des Synchronisierung
 Falls Sie nicht SQL Server Express verwenden, das im Lieferumfang von Azure AD Connect enthalten ist, sollten Sie auch eine hohe Verfügbarkeit für SQL Server berücksichtigen. Die einzige unterstützte Hochverfügbarkeitslösung ist das SQL-Clustering. Nicht unterstützt werden Spiegelung und Always On-Lösungen.
 
 ## Nächste Schritte
-Weitere Informationen über die Konfiguration für Azure AD Connect Sync finden Sie unter [Azure AD Connect Sync](active-directory-aadconnectsync-whatis.md).
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
 
-<!---HONumber=Sept15_HO2-->
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+
+<!---HONumber=Oct15_HO3-->

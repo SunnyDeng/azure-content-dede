@@ -147,4 +147,4 @@ Ja. Es gibt keine Verbindungsgebühren für das Senden von Ereignissen über HTT
 
 [Service Bus-Preisdetails FAQ](service-bus-pricing-faq.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -32,7 +32,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 Stellen Sie sicher, dass die folgenden Produkte und Versionen installiert sind, um das Beispiel in diesem Artikel erfolgreich abzuschließen:
 
-* Installieren von [Visual Studio 2013](https://www.visualstudio.com/DE-DE/downloads/download-visual-studio-vs.aspx)
+* Installieren von [Visual Studio 2013](https://www.visualstudio.com/de-DE/downloads/download-visual-studio-vs.aspx)
 * Installieren von [Node.js](https://nodejs.org/download/)
 * Installieren von [Python, Version 2.7.10](https://www.python.org/)
 
@@ -174,4 +174,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
   
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

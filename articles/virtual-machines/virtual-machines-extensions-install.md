@@ -16,9 +16,10 @@
  ms.date="08/25/2015"
  ms.author="rasquill"/>
 #Verwalten von Erweiterungen für virtuelle Computer
+
 Beschreibt, wie VM-Erweiterungen mit virtuellen Windows- oder Linux-Computern in Azure gesucht, hinzugefügt, geändert oder entfernt werden.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten von Erweiterungen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modus
 
 
 ##Verwenden von VM-Erweiterungen
@@ -141,4 +142,4 @@ Sie können die folgenden REST-APIs verwenden, um herauszufinden, ob für eine E
 
 >[AZURE.NOTE]Erweiterungen können auch Konfigurationen verwenden, die mit JSON definiert sind. Wenn diese Typen von Erweiterungen verwendet werden, wird nur das **SampleConfig**-Element verwendet.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

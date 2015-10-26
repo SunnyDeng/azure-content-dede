@@ -103,7 +103,11 @@ Sie definieren Parameter mit der folgenden Struktur:
        "<parameterName>" : {
          "type" : "<type-of-parameter-value>",
          "defaultValue": "<optional-default-value-of-parameter>",
-         "allowedValues": [ "<optional-array-of-allowed-values>" ]
+         "allowedValues": [ "<optional-array-of-allowed-values>" ],
+         "minValue": <optional-minimum-value-for-int-parameters>,
+         "maxValue": <optional-maximum-value-for-int-parameters>,
+         "minLength": <optional-minimum-length-for-string-secureString-array-parameters>,
+         "maxLength": <optional-maximum-length-for-string-secureString-array-parameters>
        }
     }
 
@@ -113,6 +117,10 @@ Sie definieren Parameter mit der folgenden Struktur:
 | Typ | Ja | Der Typ des Parameterwerts. Die nachstehende Liste zeigt die zulässigen Typen.
 | defaultValue | Nein | Der Standardwert für den Parameter, wenn kein Wert für den Parameter angegeben wird.
 | allowedValues | Nein | Ein Array der zulässigen Werte für den Parameter, um sicherzustellen, dass der richtige Wert angegeben wird.
+| minValue | Nein | Der Mindestwert für Parameter vom Typ "int", einschließlich des angegebenen Werts.
+| maxValue | Nein | Der Höchstwert für Parameter vom Typ "int", einschließlich des angegebenen Werts.
+| minLength | Nein | Die Mindestlänge für Parameter vom Typ "string", "secureString" und "array", einschließlich des angegebenen Werts.
+| maxLength | Nein | Die Höchstlänge für Parameter vom Typ "string", "secureString" und "array", einschließlich des angegebenen Werts.
 
 Die zulässigen Typen und Werte lauten folgendermaßen:
 
@@ -130,10 +138,13 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie Parameter definieren:
 
     "parameters": {
        "siteName": {
-          "type": "string"
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 60
        },
        "siteLocation": {
-          "type": "string"
+          "type": "string",
+          "minLength": 2
        },
        "hostingPlanName": {
           "type": "string"
@@ -148,6 +159,14 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie Parameter definieren:
             "Premium"
           ],
           "defaultValue": "Free"
+       },
+       "instancesCount": {
+          "type": "int",
+          "maxValue": 10
+       },
+       "numberOfWorkers": {
+          "type": "int",
+          "minValue": 1
        }
     }
 
@@ -410,4 +429,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

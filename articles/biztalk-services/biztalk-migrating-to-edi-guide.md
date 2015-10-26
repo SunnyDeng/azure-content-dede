@@ -142,4 +142,4 @@ Microsoft Azure BizTalk Services wird regelmäßig mit weiteren Features und Fun
 
 [EDImessageflow]: ./media/biztalk-migrating-to-edi-guide/IC719455.png
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

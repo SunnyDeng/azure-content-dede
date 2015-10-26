@@ -19,7 +19,8 @@
 
 # Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Thema lernen Sie Schritt für Schritt, wie Sie eine simulierte Hybrid Cloud-Umgebung mit Microsoft Azure für Tests mithilfe zweier virtueller Azure-Netzwerke erstellen. Verwenden Sie diese Konfiguration als Alternative zum [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md), wenn Sie nicht über eine direkte Internetverbindung und eine erreichbare öffentliche IP-Adresse verfügen. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -35,7 +36,7 @@ Dadurch wird eine Hybrid Cloud-Produktionsumgebung simuliert. Sie besteht aus:
 Diese Konfiguration bietet eine Grundlage und einen allgemeinen Ausgangspunkt für Folgendes:
 
 - Entwickeln und Testen von Anwendungen in einer simulierten Hybrid Cloud-Umgebung
-- Erstellen von Testkonfigurationen für Computer, einige davon im virtuellen Netzwerk TestLab und einige im virtuellen Netzwerks TestVNET, um IT-Arbeitsauslastungen auf Hybrid Cloud-Basis zu simulieren.
+- Erstellen von Testkonfigurationen für Computer, einige davon im virtuellen Netzwerk TestLab und einige im virtuellen Netzwerks TestVNET, um IT-Workloads auf Hybrid Cloud-Basis zu simulieren.
 
 Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus vier Hauptphasen:
 
@@ -81,13 +82,13 @@ Erstellen Sie zunächst ein neues virtuelles Netzwerk mit dem Namen TestVNET.
 
 Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md) zum Installieren von Azure PowerShell auf dem lokalen Computer.
 
-Erstellen Sie dann einen neuen Cloud-Dienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen **TestVNET-***UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Clouddienst **TestVNET-Tailspin** nennen.
+Erstellen Sie dann einen neuen Clouddienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen **TestVNET-***UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Clouddienst **TestVNET-Tailspin** nennen.
 
 Sie können die Eindeutigkeit des Namens mit diesem Azure PowerShell-Befehl auf dem lokalen Computer testen.
 
 	Test-AzureName -Service <Proposed cloud service name>
 
-Wird von diesem Befehl „False“ zurückgegeben, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Cloud-Dienst mit dem folgenden Befehl.
+Wird von diesem Befehl „False“ zurückgegeben, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Clouddienst mit dem folgenden Befehl.
 
 	New-AzureService -Service <Unique cloud service name> -Location "<Same location name as your virtual network>"
 
@@ -275,4 +276,4 @@ Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf
 Klicken Sie auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

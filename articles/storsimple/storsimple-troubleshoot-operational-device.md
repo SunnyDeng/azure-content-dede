@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Problembehandlung bei einem bereitgestellten StorSimple-Gerät | Microsoft Azure"
-	description="Beschreibt die Diagnose und Behebung von Fehlern auf einem StorSimple-Gerät, das bereitgestellt und betriebsbereit ist."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt die Diagnose und Behebung von Fehlern auf einem StorSimple-Gerät, das bereitgestellt und betriebsbereit ist."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/31/2015"
+   ms.author="v-sharos" />
 
 # Problembehandlung bei einem betriebsbereiten StorSimple-Gerät
 
@@ -67,4 +67,4 @@ Wenn das Problem nicht behoben werden kann, [wenden Sie sich an den Support von 
 [1]: https://technet.microsoft.com/de-DE/%5Clibrary/Dn688135(v=WPS.630).aspx
 [2]: https://technet.microsoft.com/de-DE/%5Clibrary/Dn715782(v=WPS.630).aspx
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

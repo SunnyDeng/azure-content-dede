@@ -52,7 +52,6 @@ CREATE TABLE #stats_ddl
 WITH    (   DISTRIBUTION = HASH([seq_nmbr])
         ,   LOCATION     = USER_DB
         )
-WITH t1
 AS
 (
 SELECT
@@ -147,4 +146,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

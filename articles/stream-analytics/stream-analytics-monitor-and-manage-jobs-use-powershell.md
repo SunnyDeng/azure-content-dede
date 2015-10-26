@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="10/05/2015" 
+	ms.date="10/06/2015" 
 	ms.author="jeffstok"/>
 
 
@@ -25,24 +25,23 @@ Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit PowerShell-Cmdlets, die gr
 
 ## Voraussetzungen für das Ausführen von Azure PowerShell-Cmdlets für Stream Analytics
 
-1.	Installieren und konfigurieren Sie Azure PowerShell.
+ - Erstellen Sie in Ihrem Abonnement eine Azure-Ressourcengruppe. Nachfolgend ist ein Azure PowerShell-Beispielskript aufgeführt. Informationen zu Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).  
 
-	Befolgen Sie die Anweisungen unter [How to install and configure Azure PowerShell][powershell-install] (in englischer Sprache), um Azure PowerShell zu installieren.
 
-	So verbinden Sie Ihr Azure-Abonnement mit der Azure Active Directory-Methode
-
+ 		# Log in to your Azure account
 		Add-AzureAccount
 
-	Um Ihr Azure-Abonnement bei aktiviertem Azure Stream Analytics-Dienst auszuwählen, verwenden Sie diese Methode:
+		# Select the Azure subscription you want to use to create the resource group
+		Select-AzureSubscription -SubscriptionName <subscription name>
+ 
+		# Create an Azure resource group	
+			# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
+			#Register-AzureRMProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
 
-		Select-AzureSubscription
+		# Create an Azure resource group
+		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
+		
 
-
-2.	Konfigurieren Sie den Azure-Modus.
-
-	Führen Sie nach dem Installieren von Azure PowerShell das Cmdlet [Switch-AzureMode][msdn-switch-azuremode] zum Festlegen des geeigneten Azure-Modus für den Zugriff auf Stream Analytics-Cmdlets aus:
-
-		Switch-AzureMode AzureResourceManager
 
 > [AZURE.NOTE]Für programmgesteuert erstellte Stream Analytics-Aufträge ist die Überwachung in der Standardeinstellung nicht aktiviert. Sie können die Überwachung manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Zudem können Sie programmgesteuert vorgehen, indem Sie die Schritte unter [Azure Stream Analytics – programmgesteuerte Überwachung von Stream Analytics-Aufträgen](stream-analytics-monitor-jobs.md) durchführen.
 
@@ -288,4 +287,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

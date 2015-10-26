@@ -61,7 +61,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-logicmonitor-tutorial/IC790049.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei LogicMonitor verwendete URL ein \(z. B. **http://company.logicmonitor.com*"\)\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei LogicMonitor verwendete URL ein (z. B. **http://company.logicmonitor.com*")), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-logicmonitor-tutorial/IC790050.png "App-URL konfigurieren")
 
@@ -79,7 +79,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden](./media/active-directory-saas-logicmonitor-tutorial/IC790053.png "Einmaliges Anmelden")
 
-8.  Führen Sie im Abschnitt **Einstellungen für einmaliges Anmelden \(SSO\)** die folgenden Schritte aus:
+8.  Führen Sie im Abschnitt **Einstellungen für einmaliges Anmelden (SSO)** die folgenden Schritte aus:
 
     ![Einstellungen für einmaliges Anmelden](./media/active-directory-saas-logicmonitor-tutorial/IC790054.png "Einstellungen für einmaliges Anmelden")
 
@@ -131,6 +131,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-logicmonitor-tutorial/IC767830.png "Ja")
   
-Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Migration mithilfe von Visual Studio und SSDT"
-	description="Microsoft Azure SQL-Datenbank, Datenbankmigration, Datenbank importieren, Datenbank exportieren, Migrations-Assistent"
-	services="sql-database"
-	documentationCenter=""
-	authors="carlrabeler"
-	manager="jeffreyg"
-	editor=""/>
+   pageTitle="Migration mithilfe von Visual Studio und SSDT" 
+   description="Microsoft Azure SQL-Datenbank, Datenbankmigration, Datenbank importieren, Datenbank exportieren, Migrations-Assistent" 
+   services="sql-database" 
+   documentationCenter="" 
+   authors="carlrabeler" 
+   manager="jeffreyg" 
+   editor=""/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-management"
-	ms.date="08/24/2015"
-	ms.author="carlrab"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management" 
+   ms.date="08/24/2015"
+   ms.author="carlrab"/>
 
 #Lokales Aktualisieren einer Datenbank und Bereitstellen in Azure SQL-Datenbank
 
@@ -82,4 +82,4 @@ Mit dieser Option:
 
 14.	Stellen Sie das mit Azure SQL V12 kompatible Datenbankschema und die Daten mithilfe von SSMS in der Azure SQL-Datenbank bereit. Siehe [Migrieren einer kompatiblen Datenbank mit SSMS](sql-database-migrate-ssms.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

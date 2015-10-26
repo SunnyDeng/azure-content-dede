@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/29/2015" 
+	ms.date="10/13/2015"
 	ms.author="jeffstok"/>
 
 # Grundlegendes zu Stream Analytics-Eingaben
@@ -94,15 +94,15 @@ Wenn Ihre Daten aus einer IoT Hub-Quelle stammen, können Sie auf einige Metadat
 
 | EIGENSCHAFT | BESCHREIBUNG |
 |------|------|
-| System.Input.EventProcessedUtcTime | Das Datum und die Uhrzeit der Verarbeitung des Ereignisses. |
-| System.Input.EventEnqueuedUtcTime | Das Datum und die Uhrzeit des Ereignisempfangs durch den IoT Hub. |
-| System.Input.PartitionId | Die nullbasierte Partitions-ID für den Eingabeadapter. |
-| System.Input.MessageId | Wird verwendet, um die bidirektionale Kommunikation im IoT Hub zu korrelieren. |
-| System.Input.CorrelationId | Wird in Nachrichtenantworten und Feedback im IoT Hub verwendet. |
-| System.Input.ConnectionDeviceId | Die authentifizierte ID zum Senden dieser Nachricht, mit der IoT Hub servicebound-Nachrichten kennzeichnet. |
-| System.Input.ConnectionDeviceGenerationId | Die "generationID" des authentifizierten Geräts, von dem die Nachricht gesendet wurde, die von IoT Hub in servicebound-Nachrichten eingefügt wird. |
-| System.Input.EnqueuedTime | Der Zeitpunkt des Empfangs der Nachricht durch IoT Hub. |
-| System.Input.StreamId | Eine benutzerdefinierte Ereigniseigenschaft, die vom Absendergerät hinzugefügt wird. |
+| EventProcessedUtcTime | Das Datum und die Uhrzeit der Verarbeitung des Ereignisses. |
+| EventEnqueuedUtcTime | Das Datum und die Uhrzeit des Ereignisempfangs durch den IoT Hub. |
+| PartitionId | Die nullbasierte Partitions-ID für den Eingabeadapter. |
+| IoTHub.MessageId | Wird verwendet, um die bidirektionale Kommunikation im IoT Hub zu korrelieren. |
+| IoTHub.CorrelationId | Wird in Nachrichtenantworten und Feedback im IoT Hub verwendet. |
+| IoTHub.ConnectionDeviceId | Die authentifizierte ID zum Senden dieser Nachricht, mit der IoT Hub servicebound-Nachrichten kennzeichnet. |
+| IoTHub.ConnectionDeviceGenerationId | Die "generationID" des authentifizierten Geräts, von dem die Nachricht gesendet wurde, die von IoT Hub in servicebound-Nachrichten eingefügt wird. |
+| IoTHub.EnqueuedTime | Zeitpunkt des Empfangs der Nachricht durch IoT Hub. |
+| IoTHub.StreamId | Eine benutzerdefinierte Ereigniseigenschaft, die vom Absendergerät hinzugefügt wird. |
 
 ## Erstellen eines Blobspeichers als Datenstromeingabe ##
 
@@ -183,7 +183,7 @@ FROM Input
 
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stream Analytics für Daten aus dem Internet der Dinge. Weitere Informationen zu diesem Dienst finden Sie unter:
@@ -201,4 +201,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

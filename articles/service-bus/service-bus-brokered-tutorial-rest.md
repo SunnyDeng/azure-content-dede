@@ -180,7 +180,7 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
 
 Der nächste Schritt ist das Schreiben einer Methode, die zum Erstellen einer Warteschlange den HTTP PUT-Befehl im REST-Stil verwendet.
 
-Fügen Sie den folgenden Code direkt nach dem `GetToken()`-Code ein, den Sie im vorherigen Schritt hinzugefügt haben:
+Fügen Sie den folgenden Code direkt nach dem `GetSASToken()`-Code ein, den Sie im vorherigen Schritt hinzugefügt haben:
 
 ```
 // Uses HTTP PUT to create the queueprivatestaticstring CreateQueue(string queueName, string token)
@@ -629,4 +629,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 - [Azure Service Bus – Grundlagen](fundamentals-service-bus-hybrid-solutions.md)
 - [REST-Lernprogramm zu Service Bus Relay](service-bus-relay-rest-tutorial.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

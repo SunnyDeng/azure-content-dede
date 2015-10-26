@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App | Microsoft Azure"
-	description="Erstellen von benutzerdefinierten Domänen-DNS-Einträgen für die Web-App mithilfe von Azure DNS. Schrittweise Anleitung zum Überprüfen des Domänenbesitzers mithilfe des CNAME- oder A-Eintrags"
-	services="dns"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="carolz"
-	editor=""/>
+   pageTitle="Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App | Microsoft Azure" 
+   description="Erstellen von benutzerdefinierten Domänen-DNS-Einträgen für die Web-App mithilfe von Azure DNS. Schrittweise Anleitung zum Überprüfen des Domänenbesitzers mithilfe des CNAME- oder A-Eintrags" 
+   services="dns" 
+   documentationCenter="na" 
+   authors="joaoma" 
+   manager="carolz" 
+   editor=""/>
 
 <tags
    ms.service="dns"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/23/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="08/23/2015"
+   ms.author="joaoma"/>
 
 # Erstellen von DNS-Einträgen für eine Web-App in einer benutzerdefinierten Domäne
 
@@ -165,4 +165,4 @@ Jetzt können Sie mit der Durchführung der Schritte unter [Konfigurieren eines 
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

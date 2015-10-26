@@ -21,7 +21,7 @@
 
 # Trennen eines Datenträgers von einem virtuellen Computer unter Windows
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird beschrieben, wie Sie einen Datenträger unter Verwendung des klassischen Bereitstellungsmodells trennen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
@@ -32,4 +32,4 @@
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

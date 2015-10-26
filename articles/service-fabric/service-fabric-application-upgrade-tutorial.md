@@ -126,4 +126,4 @@ Sie können auch versuchen, als Übung Version 2 in Version 3 oder gar Version
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

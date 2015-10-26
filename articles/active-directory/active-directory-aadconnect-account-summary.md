@@ -1,36 +1,36 @@
-<properties 
-	pageTitle="Weitere Informationen zu den Anmeldeinformationen und Berechtigungen von Azure AD Connect" 
-	description="Beschreibung der benutzerdefinierten Einstellungen von Azure AD Connect-Anmeldeinformationen und -Berechtigungen." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Weitere Informationen zu den Anmeldeinformationen und Berechtigungen von Azure AD Connect | Microsoft Azure"
+	description="Beschreibung der benutzerdefinierten Einstellungen von Azure AD Connect-Anmeldeinformationen und -Berechtigungen."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/13/2015"
 	ms.author="billmath"/>
 
 
 
-# Weitere Informationen zu den Anmeldeinformationen und Berechtigungen von Azure AD Connect 
+# Weitere Informationen zu den Anmeldeinformationen und Berechtigungen von Azure AD Connect
 
 
 Der Azure AD Connect-Assistent bietet zwei unterschiedliche Pfade mit verschiedenen Berechtigungsanforderungen:
 
-* Für die Express-Einstellungen benötigen Sie mehr Berechtigungen, um die Konfiguration einfach einrichten zu können, ohne Benutzern erstellen oder Berechtigungen einzeln konfigurieren zu müssen. 
+* Für die Express-Einstellungen benötigen Sie mehr Berechtigungen, um die Konfiguration einfach einrichten zu können, ohne Benutzern erstellen oder Berechtigungen einzeln konfigurieren zu müssen.
 
 * Für die benutzerdefinierten Einstellungen stehen mehr Auswahlmöglichkeiten und Optionen zur Verfügung. Es gibt aber einige Situationen, in denen Sie sicherstellen müssen, dass Sie selbst über die richtigen Berechtigungen verfügen.
 
 
 ## Erfasste Anmeldeinformationen und deren Verwendungszweck bei einem Express-Setup
 
-Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
+Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung
 ------------- | ------------- |------------- |------------- |
 Herstellen einer Verbindung mit Azure AD| Azure AD-Verzeichnisanmeldeinformationen | Globale Administratorrolle in Azure AD | <li>Aktivieren der Synchronisierung im Azure AD-Verzeichnis.</li> <li>Erstellen des Azure AD-Kontos, das für die fortlaufenden Synchronisierungsvorgänge in Azure AD verwendet wird.</li>
 Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformationen | Mitglied der Gruppe "Unternehmensadministratoren" in Active Directory| Wird als lokales AD-Connector-Konto verwendet. Das bedeutet, dass es zur Synchronisierung für Lese- und Schreibvorgänge für Verzeichnisinformationen verwendet wird.
@@ -42,9 +42,9 @@ Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformati
 ## Erfasste Anmeldeinformationen und deren Verwendungszweck bei einem benutzerdefinierten Setup
 
 
-Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
-------------- | ------------- |------------- |------------- 
-Nicht verfügbar|Anmeldeinformationen des Benutzers, der den Assistenten ausführt|Administrator des lokalen Servers| <li>Standardmäßig erstellt der Assistent das Active Directory-Konto, das als Anmeldekonto für den Synchronisierungsdienst dient, auf dem lokalen Computer.</li><li>Sie erstellen das Anmeldekonto für den Synchronisierungsdienst nur dann, wenn der Administrator kein bestimmtes Konto angibt.</li> <li>Bei dem Konto handelt es sich um ein lokales Benutzerkonto, es sei denn, es befindet sich auf einem DC. In diesem Fall handelt es sich um Domänenbenutzerkonto.</li> 
+Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung
+------------- | ------------- |------------- |-------------
+Nicht verfügbar|Anmeldeinformationen des Benutzers, der den Assistenten ausführt|Administrator des lokalen Servers| <li>Standardmäßig erstellt der Assistent das Active Directory-Konto, das als Anmeldekonto für den Synchronisierungsdienst dient, auf dem lokalen Computer.</li><li>Sie erstellen das Anmeldekonto für den Synchronisierungsdienst nur dann, wenn der Administrator kein bestimmtes Konto angibt.</li> <li>Bei dem Konto handelt es sich um ein lokales Benutzerkonto, es sei denn, es befindet sich auf einem DC. In diesem Fall handelt es sich um Domänenbenutzerkonto.</li>
 Seite "Synchronisierungsdienste installieren", Option "Dienstkonto" | Anmeldeinformationen für Active Directory- oder lokale Konten | Lokaler Benutzer|Wenn der Administrator ein Konto angibt, wird dieses Konto als Anmeldekonto für den Synchronisierungsdienst verwendet.
 Herstellen einer Verbindung mit Azure AD|Azure AD-Verzeichnisanmeldeinformationen| Globale Administratorrolle in Azure AD|Der Assistent erstellt das AD-Konto, das als Anmeldekonto für den Synchronisierungsdienst auf dem lokalen Computer dient.
 Verzeichnisse verbinden|Lokale Active Directory-Anmeldeinformationen für jede Gesamtstruktur, die mit Azure AD verbunden wird. |<li>Die vom Assistenten geforderte Mindestberechtigung ist "Domänenbenutzer".</li> <li>Jedoch muss das angegebene Konto die erforderlichen Berechtigungen für das gewünschte Szenario aufweisen.</li><li>Wenn Sie beabsichtigen, die Kennwortsynchronisierung zu Azure AD zu konfigurieren, stellen Sie sicher, dass dieses Konto über die folgenden Berechtigungen verfügt: – Verzeichnisänderungen replizieren – Alle Verzeichnisänderungen replizieren</li> <li>Wenn Sie beabsichtigen, die Synchronisierung so zu konfigurieren, dass Informationen von Azure AD in Ihr lokales AD "zurückgeschrieben" werden, stellen Sie sicher, dass das Konto über Schreibberechtigungen für Verzeichnisobjekte und -Attribute verfügt, die zurückgeschrieben werden sollen.</li> <li>Wenn Sie beabsichtigen, AD FS für die Anmeldung zu konfigurieren, stellen Sie sicher, dass das Konto mit den AD-Anmeldeinformationen, die Sie für die Gesamtstruktur bereitstellen, in der sich der AD FS-Server befindet, über Domänenadministratorberechtigungen verfügt.</li><li>In der folgenden Tabelle ist eine Liste mit zusätzlichen Anforderungen für Ihr Szenario aufgeführt.</li>|<li>Dies ist das Konto, das für das lokale Konto des Active Directory Verwaltungs-Agent-Kontos (AD MA-Konto, AD Management Agent-Konto) verwendet wird. Es wird zum Lesen und Schreiben der Objekte und Attribute im lokalen AD für den fortlaufenden Synchronisierungsvorgang verwendet.</li>
@@ -90,6 +90,5 @@ AD FS: GMSA-Konto (aadcsvc$)|Domänenbenutzer|Anmeldekonto für den AD FS-Dienst
 * [Berechtigungen für das Kennwortrückschreiben](https://msdn.microsoft.com/library/azure/dn757602.aspx#pwriteback)
 * [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
 * [Azure AD Connect auf MSDN](active-directory-aadconnect.md)
- 
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

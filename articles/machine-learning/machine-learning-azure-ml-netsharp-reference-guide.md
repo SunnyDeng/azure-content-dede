@@ -414,4 +414,4 @@ Die Net#-Sprache zum Anpassen der Architektur von neuronalen Netzwerken wurde be
 [1]: ./media/machine-learning-azure-ml-netsharp-reference-guide/formula_large.gif
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

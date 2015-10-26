@@ -29,12 +29,14 @@ Dieser Artikel bietet Informationen zum Vorbereiten Ihrer Umgebung für das Sich
 
 Darüber hinaus können Sie den Schutz der verschiedenen geschützten Entitäten (Server und Clients) über eine einzelne lokale Benutzeroberfläche verwalten.
 
+>[AZURE.NOTE]Der Microsoft Azure Backup-Server erbt die Funktionalität des Data Protection Manager (DPM) für die Workload-Sicherung. Sie finden bei einigen dieser Funktionen Verweise auf die DPM-Dokumentation. Microsoft Azure Backup Server stellt jedoch keinen Schutz für Bandspeicher bereit und kann nicht in System Center integriert werden.
+
 Sie können einen Microsoft Azure Backup-Server wie folgt bereitstellen:
 
 - Als physischen eigenständigen Server.
-- Als virtuellen Hyper-V-Computer: Sie können DPM als virtuellen Computer ausführen, der auf einem lokalen Hyper-V-Hostserver gehostet wird, um lokale Daten zu sichern. Eine Liste der Überlegungen in dieser Umgebung finden Sie unter [Installieren von DPM als virtuellen Computer auf einem lokalen Hyper-V-Server](https://technet.microsoft.com/library/dn440941.aspx).
-- Als virtuellen Windows-Computer in VMWare: Sie können DPM zum Schutz von Microsoft-Workloads bereitstellen, die auf virtuellen Windows-Computern in VMWare ausgeführt werden. In diesem Szenario kann DPM als physischer eigenständiger Server, als virtueller Hyper-V-Computer oder als virtueller Windows-Computer in VMWare bereitgestellt werden.
-- Als virtueller Azure-Computer: Sie können DPM als virtuellen Computer in Azure ausführen, um Cloudworkloads zu sichern, die als virtuelle Azure-Computer ausgeführt werden. Weitere Informationen zu dieser Bereitstellung finden Sie unter [Installieren von DPM als virtuellen Azure-Computer](https://technet.microsoft.com/library/hh758176.aspx).
+- Als virtuellen Hyper-V-Computer: Sie können einen Microsoft Azure Backup-Server als virtuellen Computer ausführen, der auf einem lokalen Hyper-V-Hostserver gehostet wird, um lokale Daten zu sichern. Eine Liste der Überlegungen in dieser Umgebung finden Sie unter [Installieren von DPM als virtuellen Computer auf einem lokalen Hyper-V-Server](https://technet.microsoft.com/library/dn440941.aspx).
+- Als virtuellen Windows-Computer in VMWare: Sie können einen Microsoft Azure Backup-Server zum Schutz von Microsoft-Workloads bereitstellen, die auf virtuellen Windows-Computern in VMWare ausgeführt werden. In diesem Szenario kann der Microsoft Azure Backup-Server als physischer eigenständiger Server, als virtueller Hyper-V-Computer oder als virtueller Windows-Computer in VMWare bereitgestellt werden.
+- Als virtueller Azure-Computer: Sie können den Microsoft Azure Backup-Server als virtuellen Computer in Azure ausführen, um Cloudworkloads zu sichern, die als virtuelle Azure-Computer ausgeführt werden. Weitere Informationen zu dieser Bereitstellung finden Sie unter [Installieren von DPM als virtuellen Azure-Computer](https://technet.microsoft.com/library/hh758176.aspx).
 
 Weitere Informationen:
 
@@ -42,7 +44,7 @@ Weitere Informationen:
 - Der Microsoft Azure Backup-Server kann nicht auf einem Computer installiert werden, auf dem der SCDPM- oder der SCDPM RA-Agent installiert ist.
 - Der Microsoft Azure Backup-Server kann nicht auf einem Computer installiert werden, auf dem der Microsoft Azure Backup-Agent installiert ist und der in einem Azure Backup-Tresor registriert wurde.
 
->[AZURE.NOTE]Der Microsoft Azure Backup-Server erbt die Funktionalität von Data Protection Manager (DPM) für die Sicherung von Workloads, bietet jedoch nicht den Schutz auf Band und ist nicht in System Center integriert.
+
 
 Nachdem Sie den Server ausgewählt haben, auf dem Sie Microsoft Azure Backup installieren möchten, müssen Sie folgende Schritte ausführen:
 
@@ -64,7 +66,7 @@ Stellen Sie für eine reibungslose Installation sicher, dass die folgenden Vorau
 - Der Microsoft Azure Backup-Server muss zu einer Domäne gehören.
 - Auf dem Microsoft Azure Backup-Server müssen die Funktionen von .NET  3.5, .NET 4.0 und .NET 3.5 SP1 installiert sein. Weitere Informationen finden Sie unter [Weitere Informationen zum Aktivieren von .NET Framework](https://technet.microsoft.com/library/dn482071.aspx).
 - Auf dem Microsoft Azure Backup-Server sollte Windows Management Framework 4.0 installiert sein. Sie können es [hier](http://www.microsoft.com/download/details.aspx?id=40855) herunterladen.
-- Für den Datenträger, der als dedizierter Speicherplatz für den DPM-Datenspeicher verwendet wird, ist die empfohlene Speicherpoolgröße das 1,5-fache der Größe der geschützten Daten. Weitere Informationen finden Sie im Abschnitt zu Datenträgern und Speicher in [diesem Thema](https://technet.microsoft.com/library/hh758176.aspx#DPM-Server).
+- Für den Datenträger, der als dedizierter Speicherplatz für den Datenspeicher für den Microsoft Azure Backup-Server verwendet wird, ist die empfohlene Speicherpoolgröße das 1,5-fache der Größe der geschützten Daten. Weitere Informationen finden Sie im Abschnitt zu Datenträgern und Speicher in [diesem Thema](https://technet.microsoft.com/library/hh758176.aspx#DPM-Server).
 
 Bereiten Sie den Microsoft Azure Backup-Server mit folgenden Schritten zum Sichern von Daten vor:
 
@@ -286,4 +288,4 @@ In den folgenden Artikeln finden Sie zusätzliche Informationen zum Workloadschu
 - [SharePoint Server-Sicherung](backup-azure-backup-sharepoint.md)
 - [Sicherung eines anderen Servers](backup-azure-alternate-dpm-server.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

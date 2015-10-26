@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Notfallwiederherstellung bei SQL-Datenbank"
-	description="Hier erhalten Sie Informationen zum Wiederherstellen einer Datenbank nach Störungen in einem regionalen Rechenzentrum oder dessen Ausfall mit der Funktionen zur Georeplikation und geografischen Wiederherstellung von Azure SQL-Datenbank."
-	services="sql-database"
-	documentationCenter=""
-	authors="elfisher"
-	manager="jeffreyg"
-	editor="monicar"/>
+   pageTitle="Notfallwiederherstellung bei SQL-Datenbank" 
+   description="Hier erhalten Sie Informationen zum Wiederherstellen einer Datenbank nach Störungen in einem regionalen Rechenzentrum oder dessen Ausfall mit der Funktionen zur Georeplikation und geografischen Wiederherstellung von Azure SQL-Datenbank." 
+   services="sql-database" 
+   documentationCenter="" 
+   authors="elfisher" 
+   manager="jeffreyg" 
+   editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-management"
-	ms.date="07/14/2015"
-	ms.author="elfish"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management" 
+   ms.date="07/14/2015"
+   ms.author="elfish"/>
 
 # Wiederherstellen einer Azure SQL-Datenbank nach einem Ausfall
 
@@ -103,4 +103,4 @@ Verwenden Sie REST für eine programmgesteuerte Durchführung der Datenbankwiede
 Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

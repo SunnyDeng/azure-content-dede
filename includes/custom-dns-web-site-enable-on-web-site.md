@@ -24,4 +24,4 @@ Nachdem die Datensätze für Ihren Domänennamen weitergegeben wurden, müssen S
 
 Jetzt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und und auf diese Weise erfolgreich zu Ihrer Web-App gelangen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

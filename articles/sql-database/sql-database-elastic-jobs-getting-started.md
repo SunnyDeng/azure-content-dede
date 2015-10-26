@@ -17,7 +17,7 @@
 
 # Erste Schritte mit Aufträgen für die elastische Datenbank
 
-Aufträge für die elastische Datenbank \(Vorschau\) für Azure SQL-Datenbank ermöglicht die zuverlässige Ausführung von T-SQL-Skripts, die mehrere Datenbanken überspannen, und stellt automatische Wiederholung und ggf. Abschlussgarantien bereit. Weitere Informationen zu Aufträgen für die elastische Datenbank finden Sie auf der [Übersichtsseite zum Feature](sql-database-elastic-jobs-overview.md).
+Aufträge für die elastische Datenbank (Vorschau) für Azure SQL-Datenbank ermöglicht die zuverlässige Ausführung von T-SQL-Skripts, die mehrere Datenbanken überspannen, und stellt automatische Wiederholung und ggf. Abschlussgarantien bereit. Weitere Informationen zu Aufträgen für die elastische Datenbank finden Sie auf der [Übersichtsseite zum Feature](sql-database-elastic-jobs-overview.md).
 
 Dieses Thema baut auf dem Beispiel unter [Erste Schritte mit den Tools für die elastische Datenbank](sql-database-elastic-scale-get-started.md) auf. Wenn Sie das Beispiel durchgearbeitet haben, haben Sie gelernt, wie Sie Aufträge zum Verwalten einer Gruppe aufeinander bezogener Datenbanken erstellen und verwalten können.
 
@@ -50,7 +50,7 @@ Wir würden hier normalerweise ein Shardzuordnungsziel mithilfe des Cmdlets **Ne
 	New-AzureSqlJobTarget -CustomCollectionName $customCollectionName 
 	$ResourceGroupName = "ddove_samples"
 	$ServerName = "samples"
-	$dbsinserver = Get-AzureSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
+	$dbsinserver = Get-AzureRMSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
 	$dbsinserver | %{
     $currentdb = $_.DatabaseName 
     $ErrorActionPreference = "Stop"
@@ -156,7 +156,7 @@ Verwenden Sie das gleiche Cmdlet **Get-AzureSqlJobExecution** mit dem Parameter 
 	$jobExecutions = Get-AzureSqlJobExecution -JobExecutionId $jobExecutionId -IncludeChildren
 	Write-Output $jobExecutions 
 
-## Anzeigen des Ausführungsstatus über mehrere Aufträge übergreifend
+## Übergreifendes Anzeigen des Ausführungsstatus über mehrere Aufträge
 
 Das Cmdlet **Get-AzureSqlJobExecution** weist mehrere optionale Parameter auf, die zum Anzeigen der Ausführung mehrerer Aufträge verwendet werden können, die anhand der angegebenen Parameter gefiltert werden. Die folgenden Beispiele zeigen einige der möglichen Verwendungsweisen von „Get-AzureSqlJobExecution“:
 
@@ -238,7 +238,7 @@ Ausführungsrichtlinien lassen aktuell die folgenden Definitionen zu:
 * Auftragstimeout: Gesamtzeit bis zum Abbruch eines Auftrags durch die Aufträge für die elastische Datenbank.
 * Anfängliches Wiederholungsintervall: Wartezeit vor dem ersten Wiederholungsversuch.
 * Maximales Wiederholungsintervall: Höchstmenge der zu durchlaufenden Wiederholungsintervalle.
-* Backoffkoeffizient des Wiederholungsintervalls: Koeffizient zur Berechnung des nächsten Intervalls zwischen Wiederholungsversuchen. Dazu wird diese Formel verwendet: \(Anfängliches Wiederholungsintervall\) * Math.pow\(\(Intervallbackoffkoeffizient\), \(Anzahl der Wiederholungsversuche\) - 2\). 
+* Backoffkoeffizient des Wiederholungsintervalls: Koeffizient zur Berechnung des nächsten Intervalls zwischen Wiederholungsversuchen. Dazu wird diese Formel verwendet: (Anfängliches Wiederholungsintervall) * Math.pow((Intervallbackoffkoeffizient), (Anzahl der Wiederholungsversuche) - 2). 
 * Versuche maximal: Die Höchstzahl der im Rahmen eines Auftrags auszuführenden Wiederholungsversuche.
 
 Für die standardmäßige Ausführungsrichtlinie werden diese Werte verwendet:
@@ -304,7 +304,7 @@ Verwenden Sie zum Auslösen der Löschung von Aufträgen das Cmdlet **Remove-Azu
 ## Erstellen eines benutzerdefinierten Datenbankziels
 In Aufträgen für die elastische Datenbank können benutzerdefinierte Datenbankziele definiert werden, die entweder direkt für die Ausführung oder für die Aufnahme in eine benutzerdefinierte Datenbankgruppe verwendet werden können. Da **elastische Datenbankpools** durch die PowerShell-APIs noch nicht direkt unterstützt werden, erstellen Sie einfach ein benutzerdefiniertes Datenbankziel und ein benutzerdefiniertes Datenbanksammlungsziel, das sämtliche Datenbanken im Pool enthält.
 
-Legen Sie die folgen den Variablen fest, um die gewünschten Datenbankinformationen anzugeben:
+Legen Sie die folgenden Variablen fest, um die gewünschten Datenbankinformationen anzugeben:
 
 	$databaseName = "{Database Name}"
 	$databaseServerName = "{Server Name}"
@@ -447,4 +447,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

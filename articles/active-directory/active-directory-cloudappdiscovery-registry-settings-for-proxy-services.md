@@ -48,4 +48,4 @@ In diesem Thema werden die Schritte beschrieben, die Sie ausführen müssen, um 
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md) 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

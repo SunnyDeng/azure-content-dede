@@ -19,7 +19,8 @@
 
 # Häufig gestellte Fragen zu virtuellen Azure-Computern, die mit dem klassischen Bereitstellungsmodell erstellt wurden
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Fragen zu Ressourcen beantwortet, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Artikel werden einige allgemeine Fragen erörtert, die häufig von Benutzern zu virtuellen Computern in Azure gestellt werden, die mit dem klassischen Bereitstellungsmodell erstellt wurden. Die Auswahl basiert auf den Fragen an das Azure-VM-Support-Team sowie Einträgen in Foren, Newsgroups und Kommentaren in anderen Artikeln. Grundlegende Informationen finden Sie unter [Informationen zu virtuellen Computern](virtual-machines-about.md).
 
@@ -27,7 +28,7 @@ In diesem Artikel werden einige allgemeine Fragen erörtert, die häufig von Ben
 
 Alle Abonnenten können Serversoftware auf einem virtuellen Azure-Computer ausführen. Darüber hinaus haben MSDN-Abonnenten Zugriff auf bestimmte Windows-Client-Images, die von Azure bereitgestellt werden.
 
-Als Serversoftware können Sie neuere Versionen von Windows Server sowie eine Vielzahl von Linux-Distributionen mit verschiedenen Serverarbeitslasten und Diensten ausführen. Supportinformationen finden Sie unter:
+Als Serversoftware können Sie neuere Versionen von Windows Server sowie eine Vielzahl von Linux-Distributionen mit verschiedenen Serverworkloads und Diensten ausführen. Supportinformationen finden Sie unter:
 
 • Virtuelle Windows-Computer: [Unterstützung für Microsoft-Serversoftware für virtuelle Azure-Computer](http://go.microsoft.com/fwlink/p/?LinkId=393550)
 
@@ -39,7 +40,7 @@ Für Windows-Client-Images stehen bestimmte Versionen von Windows 7 und Windows
 
 Jeder Datenträger kann bis zu 1 TB groß sein. Die Anzahl der Datenträger, die Sie verwenden können, hängt von der Größe des virtuellen Computers ab. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
 
-Azure-Speicherkonten bieten Speicher für Betriebssystem-Datenträger und Datenträger für Daten. Bei jedem Datenträger handelt es sich um eine VHD-Datei, die als Seiten-Blob gespeichert wird. Ausführliche Informationen zu Preisen finden Sie unter [Speicher – Preisdetails](http://go.microsoft.com/fwlink/p/?LinkId=396819).
+Azure-Speicherkonten bieten Speicher für Betriebssystem-Datenträger und Datenträger für Daten. Bei jedem Datenträger handelt es sich um eine VHD-Datei, die als Seiten-Blob gespeichert wird. Ausführliche Informationen zu Preisen finden Sie unter [Speicherpreisübersicht](http://go.microsoft.com/fwlink/p/?LinkId=396819).
 
 ## Welche Arten von virtuellen Festplatten kann ich verwenden?
 
@@ -150,4 +151,4 @@ Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurier
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

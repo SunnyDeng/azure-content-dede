@@ -38,7 +38,6 @@ Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. G
 Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: 
-
 ![][1]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Online-Connectors erstellen.
@@ -62,7 +61,6 @@ Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumen
 Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: 
-
 ![][2]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Server-Connectors erstellen.
@@ -79,23 +77,18 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 3. Wenn der SharePoint-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf dem SharePoint-Konto über den Connector ausgeführt werden.
 
 4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**: 
-
 ![][3]
 
 5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten: 
-
 ![][4]
 
 6. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen: 
-
 ![][5]
 
 7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten: 
-
 ![][6]
   
 **Für Dokumentbibliothek konfigurierte relative URL**
-
 ![][7]
 
 **Für Dokumentliste konfigurierte relative URL**
@@ -107,7 +100,7 @@ Verwenden Sie Trigger, wenn Sie eine Logik-App starten möchten.
 
 > [AZURE.NOTE]Trigger löschen die Dateien nach dem Lesen. Um diese Dateien zu erhalten, geben Sie einen Wert für den Archivspeicherort ein.
 
-### 1. Neues Dokument in freigegebenen Dokumenten (JSON)
+### 1\. Neues Dokument in freigegebenen Dokumenten (JSON)
 Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumente" verfügbar ist.
 
 #### Eingabe
@@ -130,7 +123,7 @@ ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. 
 **Hinweis:** Alle Spalten des Dokumentelements werden in den Ausgabeeigenschaften "Erweitert" angezeigt.
 
 
-### 2. Neues Element in Aufgaben (JSON)
+### 2\. Neues Element in Aufgaben (JSON)
 Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinzugefügt wird.
 
 #### Eingabe
@@ -148,7 +141,7 @@ Name | Beschreibung
 Die Spalten in der Liste werden dynamisch aufgefüllt und in den Ausgabeparametern angezeigt. | &nbsp;
 
 
-### 3. Neues Dokument in freigegebenen Dokumenten (XML)
+### 3\. Neues Dokument in freigegebenen Dokumenten (XML)
 
 Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumente" verfügbar ist. Das neue Dokument wird als XML-Nachricht zurückgegeben.
 
@@ -169,7 +162,7 @@ Inhalt | Der Inhalt des Dokuments.
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
 
 
-### 4. Neues Element in Aufgaben (XML)
+### 4\. Neues Element in Aufgaben (XML)
 
 Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinzugefügt wird. Das neue Listenelement wird als XML-Nachricht zurückgegeben.
 
@@ -192,7 +185,7 @@ ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. 
 ##  Aktionen
 Für die unten aufgeführten Aktionen wird davon ausgegangen, dass Sie in den Connector-Paketeinstellungen "Freigegebene Dokumente, Listen/Aufgabe" angegeben hat, wobei es sich bei "Freigegebene Dokumente" um eine Dokumentbibliothek und bei "Listen/Aufgabe" um eine Liste handelt.
 
-### 1. Upload in freigegebene Dokumente (JSON)
+### 1\. Upload in freigegebene Dokumente (JSON)
 
 Diese Aktion lädt das neue Dokument in "Freigegebene Dokumente" hoch. Die Eingabe ist ein stark typisiertes JSON-Objekt mit allen Spaltenfeldern der Dokumentbibliothek.
 
@@ -221,7 +214,7 @@ Status | Ein erfolgreicher Upload des Dokuments gibt den Statuscode 200 (OK) zur
 
  
 
-### 2. Abrufen aus freigegebenen Dokumenten (JSON)
+### 2\. Abrufen aus freigegebenen Dokumenten (JSON)
 Diese Aktion ruft das Dokument anhand der relativen URL (Ordnerstruktur) des Dokuments aus der Dokumentbibliothek ab.
 
 #### Eingabe
@@ -244,7 +237,7 @@ Param2* | Dies ist einer der Parameter eines Dokuments in der Dokumentbibliothek
 
  
 
-### 3. Löschen aus freigegebenen Dokumenten
+### 3\. Löschen aus freigegebenen Dokumenten
 
 Diese Aktion löscht das Dokument anhand der relativen URL (Ordnerstruktur) des Dokuments aus der Dokumentbibliothek.
 
@@ -261,7 +254,7 @@ Name | Beschreibung
 Status | Eine erfolgreiche Aktionsausführung gibt den Statuscode 200 (OK) zurück.
 
 
-### 4. Einfügen in Aufgaben (JSON)
+### 4\. Einfügen in Aufgaben (JSON)
 
 Diese Aktion fügt der Elementliste ein Element hinzu.
 
@@ -284,7 +277,7 @@ ItemId | Element-ID des hinzugefügten Listenelements.
 Status | Ein erfolgreicher Einfügevorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 5. Aktualisieren von Aufgaben (JSON)
+### 5\. Aktualisieren von Aufgaben (JSON)
 
 Diese Aktion aktualisiert ein Element in der Elementliste.
 
@@ -307,7 +300,7 @@ Name | Beschreibung
 Status | Eine erfolgreiche Aktualisierung des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 6. Abrufen eines Elements aus Aufgaben (JSON)
+### 6\. Abrufen eines Elements aus Aufgaben (JSON)
 
 Diese Aktion ruft ein Element aus der Liste ab.
 
@@ -328,7 +321,7 @@ Status | Eine erfolgreiche Ausführung der Aktion gibt den Statuscode 200 (OK) z
 **Hinweis:** Die Spalten in der Liste werden dynamisch aufgefüllt und in den Ausgabeparametern angezeigt.
 
 
-### 7. Löschen von Element aus den Aufgaben
+### 7\. Löschen von Element aus den Aufgaben
 
 Diese Aktion löscht ein Element aus der Elementliste.
 
@@ -345,7 +338,7 @@ Name | Beschreibung
 Status | Ein erfolgreicher Löschvorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 8. Auflisten freigegebener Dokumente (JSON)
+### 8\. Auflisten freigegebener Dokumente (JSON)
 
 Diese Aktion listet alle Dokumente in einer Dokumentbibliothek auf. Sie können eine Ansicht oder eine CAML-Abfrage zum Filtern der Dokumente verwenden.
 
@@ -364,7 +357,7 @@ Dokumente | Ein Array aller Dokumente. Jedes Dokument verfügt über die folgend
 Status | Ein erfolgreicher Einfügevorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 9. Hochladen in freigegebene Dokumente (XML)
+### 9\. Hochladen in freigegebene Dokumente (XML)
 
 Diese Aktion lädt das neue Dokument in "Freigegebene Dokumente" hoch. Das Eingabedokument sollte eine XML-Nutzlast sein. Die Antwort der Aktion ist eine XML-Nutzlast.
  
@@ -384,7 +377,7 @@ Name | Beschreibung
 Ausgabe-XML | Die Antwort der Aktion "Hochladen" im XML-Format.
 Status | Ein erfolgreicher Upload des Dokuments gibt den Statuscode 200 (OK) zurück.
 
-### 10. Abrufen aus freigegebenen Dokumenten (XML)
+### 10\. Abrufen aus freigegebenen Dokumenten (XML)
 
 Diese Aktion ruft das Dokument anhand der relativen URL (Ordnerstruktur) des Dokuments aus der Dokumentbibliothek ab.
 
@@ -403,7 +396,7 @@ Ausgabe-XML | Dokumentinhalt
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
 Status | Eine erfolgreiche Aktionsausführung gibt den Statuscode 200 (OK) zurück.
 
-### 11. Einfügen in Aufgaben (XML)
+### 11\. Einfügen in Aufgaben (XML)
 
 Diese Aktion fügt der Elementliste ein Element hinzu. Als Eingabe wird eine XML-Nutzlast erwartet.
 
@@ -423,7 +416,7 @@ ItemId | Element-ID des hinzugefügten Listenelements.
 Status | Ein erfolgreicher Einfügevorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 12. Aktualisieren von Aufgaben (XML)
+### 12\. Aktualisieren von Aufgaben (XML)
 
 Diese Aktion aktualisiert ein Element in der Elementliste. Als Eingabe wird eine XML-Nutzlast erwartet.
 
@@ -443,7 +436,7 @@ Name | Beschreibung
 Status | Eine erfolgreiche Aktualisierung des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 13. Abrufen eines Elements aus Aufgaben (XML)
+### 13\. Abrufen eines Elements aus Aufgaben (XML)
 
 Diese Aktion ruft ein Element aus der Liste ab.
 
@@ -488,4 +481,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

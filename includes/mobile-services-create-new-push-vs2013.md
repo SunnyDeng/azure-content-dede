@@ -26,4 +26,4 @@ Mit den folgenden Schritten werden Ihre App im Windows Store registriert und Ihr
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started/
 [Get started with data]: /develop/mobile/tutorials/get-started-with-data-dotnet/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

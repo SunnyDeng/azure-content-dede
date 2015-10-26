@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC790797.png "Einmaliges Anmelden konfigurieren")
 
-3.  Melden Sie sich in einem anderen Webbrowserfenster auf der Registerkarte https://account.\\<landscape host\>.ondemand.com/cockpit \(z. B.: **https://account.hanatrial.ondemand.com/cockpit*) beim SAP HANA Cloud Platform-Cockpit an.
+3.  Melden Sie sich in einem anderen Webbrowserfenster auf der Registerkarte https://account.\<landscape host>.ondemand.com/cockpit (z. B.: **https://account.hanatrial.ondemand.com/cockpit*) beim SAP HANA Cloud Platform-Cockpit an.
 
 4.  Klicken Sie auf die Registerkarte **Vertrauen**.
 
@@ -82,7 +82,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC790798.png "App-URL konfigurieren")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der** SAP HANA Cloud Platform**-Anwendung verwenden. Dies ist die kontospezifische URL einer geschützten Ressource in der SAP HANA Cloud Platform-Anwendung. Die URL basiert auf dem folgenden Muster: *https://\\<applicationName\>\<accountName\>.\<landscape host\>.ondemand.com/\<path\_to\_protected\_resource\>* \(z. B.: **https://xleavep1941203872trial.hanatrial.ondemand.com/xleave*\)
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der** SAP HANA Cloud Platform**-Anwendung verwenden. Dies ist die kontospezifische URL einer geschützten Ressource in der SAP HANA Cloud Platform-Anwendung. Die URL basiert auf dem folgenden Muster: *https://\<applicationName><accountName>.<landscape host>.ondemand.com/<path\_to\_protected\_resource>* (z. B.: **https://xleavep1941203872trial.hanatrial.ondemand.com/xleave*)
 
 		>[AZURE.NOTE]Dies ist die URL in Ihrer SAP HANA Cloud Platform-Anwendung, für deren Authentifizierung der Benutzer erforderlich ist.
 
@@ -127,9 +127,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
         |Assertion-Attribut| Prinzipal-Attribut|
 		|-------------------|--------------------|
-        \|http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname| firstname\|--------------------\|--------------------\| \|http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname| LastName\|---\| \|http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress|email|
+        |http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname| firstname|--------------------|--------------------| |http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname| LastName|---| |http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress|email|
 
-    >[AZURE.NOTE]Die Konfiguration der Attribute hängt davon ab, wie die Anwendung\(en\) auf HPC entwickelt wurden, d. h. welche Attribute in der SAML-Antwort erwartet wird/werden und unter welchem Namen \(Prinzipal-Attribut\) sie auf dieses Attribut im Code zugreifen.
+    >[AZURE.NOTE]Die Konfiguration der Attribute hängt davon ab, wie die Anwendung(en) auf HPC entwickelt wurden, d. h. welche Attribute in der SAML-Antwort erwartet wird/werden und unter welchem Namen (Prinzipal-Attribut) sie auf dieses Attribut im Code zugreifen.
     >  
     >a. Das **Standard-Attribut** im Screenshot dient nur der Veranschaulichung. Es ist nicht erforderlich, damit das Szenario funktioniert.
     >
@@ -141,9 +141,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
   
 Als optionalen Schritt können Sie Assertion-Gruppen für Ihren Azure Active Directory-Identitätsanbieter konfigurieren.
 
->[AZURE.NOTE]Mithilfe von Gruppen auf SAP HANA Cloud Platform können Sie auf dynamische Weise eine oder mehrere Rollen in Ihren SAP HANA Cloud Platform-Anwendungen zuweisen, durch die Werte der Attribute in der SAML 2.0-Assertion definiert. Beispiel: Wenn die Assertion das Attribut „*contract=temporary*“ enthält, möchten Sie ggf. alle betroffenen Benutzer der Gruppe „*TEMPORÄR*“ hinzufügen. Die Gruppe „*Temporär*“ enthält möglicherweise eine oder mehrere Rollen aus einer oder mehreren Anmeldung\(en\), die auf Ihrem SAP HANA Cloud Platform-Konto bereitgestellt sind.
+>[AZURE.NOTE]Mithilfe von Gruppen auf SAP HANA Cloud Platform können Sie auf dynamische Weise eine oder mehrere Rollen in Ihren SAP HANA Cloud Platform-Anwendungen zuweisen, durch die Werte der Attribute in der SAML 2.0-Assertion definiert. Beispiel: Wenn die Assertion das Attribut „*contract=temporary*“ enthält, möchten Sie ggf. alle betroffenen Benutzer der Gruppe „*TEMPORÄR*“ hinzufügen. Die Gruppe „*Temporär*“ enthält möglicherweise eine oder mehrere Rollen aus einer oder mehreren Anmeldung(en), die auf Ihrem SAP HANA Cloud Platform-Konto bereitgestellt sind.
 >  
->Verwenden Sie Assertion-Gruppen, wenn Sie viele Benutzer einer oder mehreren Rolle\(n\) auf Ihrem SAP HANA Cloud Platform-Konto zuweisen möchten. Wenn Sie nur einen einzelnen Benutzer oder eine geringe Anzahl an Benutzern zu einer \(mehreren\) speziellen Rolle\(n\) zuweisen möchten, empfehlen wir die direkte Zuweisung auf der Registerkarte „**Autorisierungen**“ des SAP HANA Cloud Platform-Cockpits.
+>Verwenden Sie Assertion-Gruppen, wenn Sie viele Benutzer einer oder mehreren Rolle(n) auf Ihrem SAP HANA Cloud Platform-Konto zuweisen möchten. Wenn Sie nur einen einzelnen Benutzer oder eine geringe Anzahl an Benutzern zu einer (mehreren) speziellen Rolle(n) zuweisen möchten, empfehlen wir die direkte Zuweisung auf der Registerkarte „**Autorisierungen**“ des SAP HANA Cloud Platform-Cockpits.
 
 ##Zuweisen einer Rolle an einen Benutzer
   
@@ -181,4 +181,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

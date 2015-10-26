@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/15/2015"
+   ms.date="10/12/2015"
    ms.author="alkohli" />
 
 # Herstellen einer Remoteverbindung mit dem StorSimple-Gerät
@@ -234,7 +234,7 @@ Verwenden Sie Windows PowerShell und SSL, um auf dem Gerät über einen Remoteho
 
 Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windows PowerShell-Remoteverbindung herstellen möchten.
 
-### So starten Sie mithilfe von Windows PowerShell und SSL eine SSAdmin-Sitzung auf dem Gerät
+#### So starten Sie mithilfe von Windows PowerShell und SSL eine SSAdmin-Sitzung auf dem Gerät
 
 1. Starten Sie eine Windows PowerShell-Sitzung als Administrator.
 
@@ -256,7 +256,7 @@ Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windo
 
      `$session = new-pssession -usessl -CN <Serial number of target device> -credential $cred -configurationname "SSAdminConsole"`
 
-    Geben Sie im Cmdlet als CN-Namen *<serial number of target device>* an. Diese Seriennummer wurde der IP-Adresse von DATA 0 in der Datei "hosts" auf dem Remotehost zugeordnet, beispielsweise **SHX0991003G44MT**, wie in der folgenden Abbildung dargestellt.
+    Geben Sie im Cmdlet die <*Seriennummer des Zielgeräts*> als CN-Namen an. Diese Seriennummer wurde der IP-Adresse von DATA 0 in der Datei "hosts" auf dem Remotehost zugeordnet, beispielsweise **SHX0991003G44MT**, wie in der folgenden Abbildung dargestellt.
 
 5. Geben Sie Folgendes ein:
 
@@ -270,6 +270,6 @@ Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windo
 
 - Erfahren Sie mehr zur [Verwendung von Windows PowerShell zum Verwalten Ihres StorSimple-Geräts](storsimple-windows-powershell-administration.md).
 
-- Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+- Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

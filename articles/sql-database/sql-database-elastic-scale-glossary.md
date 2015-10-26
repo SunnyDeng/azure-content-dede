@@ -80,4 +80,4 @@ Die folgenden Begriffe werden für die Tools für elastische Datenbanken von Azu
 [3]: ./media/sql-database-elastic-scale-glossary/h_versus_vert.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

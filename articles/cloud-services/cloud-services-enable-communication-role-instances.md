@@ -359,4 +359,4 @@ Eine XML-Schemareferenz für die oben verwendeten Elemente finden Sie [hier](htt
 ## Nächste Schritte
 Erfahren Sie mehr über das [Clouddienstmodell](cloud-services-model-and-package.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

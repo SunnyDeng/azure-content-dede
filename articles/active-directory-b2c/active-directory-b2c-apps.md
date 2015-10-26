@@ -124,8 +124,8 @@ Apps, die lang andauernde Prozesse enthalten oder ohne das Vorhandensein eines B
 Dieser Ablauf wird derzeit von Azure AD B2C nicht unterstützt, d. h., Apps können nur dann Token abrufen, nachdem ein interaktiver Benutzervorgang aufgetreten ist. Der Vorgang für die Client-Anmeldeinformationen wird in naher Zukunft hinzugefügt.
 
 ### Web-API-Ketten (Im-Auftrag-von)
-Viele Architekturen umfassen eine Web-API, von der eine andere nachgeschaltete Web-API aufgerufen werden muss, wobei beide jeweils per Azure AD B2C gesichert sind. Dieses Szenario kommt häufig in systemeigenen Clients mit Web-API-Back-End vor, das wiederum einen Microsoft Online-Dienst aufruft, z. B. die Azure AD Graph-API.
+Viele Architekturen umfassen eine Web-API, von der eine andere Downstream-Web-API aufgerufen werden muss, wobei beide durch Azure AD B2C gesichert sind. Dieses Szenario kommt häufig in systemeigenen Clients mit Web-API-Back-End vor, das wiederum einen Microsoft Online-Dienst aufruft, z. B. die Azure AD Graph-API.
 
 Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im-Auftrag-von-Vorgang“. Der Im-Auftrag-von-Vorgang ist in der Preview-Version von Azure AD B2C derzeit noch nicht implementiert.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

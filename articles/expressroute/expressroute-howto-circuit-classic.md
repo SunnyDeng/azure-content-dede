@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
+   ms.date="10/13/2015"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung
@@ -322,6 +322,6 @@ Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bere
 ## Nächste Schritte
 
 - [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
-- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expresssroute-howto-linkvnet-classic.md) 
+- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md) 
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

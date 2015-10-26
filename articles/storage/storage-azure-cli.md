@@ -222,4 +222,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 [Image1]: ./media/storage-azure-cli/azure_command.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

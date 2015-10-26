@@ -131,4 +131,4 @@ Sie können das Cmdlet [Publish-AzureAutomationRunbook](https://msdn.microsoft.c
 - [Bearbeiten von Textrunbooks in Azure Automation](automation-edit-textual-runbook.md)
 - [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

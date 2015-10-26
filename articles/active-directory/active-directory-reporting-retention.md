@@ -45,4 +45,4 @@ Aktivste RMS-Benutzer | 30 Tage
 Nutzung von RMS-Geräten | 30 Tage
 Nutzung RMS-fähiger Anwendungen | 30 Tage
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

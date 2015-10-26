@@ -20,7 +20,8 @@
 
 #Herstellen einer Verbindung mit einem virtuellen Microsoft Azure Linux-Computer mithilfe von Remotedesktop
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 ##Übersicht
 
@@ -115,4 +116,4 @@ Melden Sie sich mit dem `user` und dem `password` Ihres virtuellen Linux-Compute
 ##Weiter
 Weitere Informationen zur Verwendung von Xrdp finden Sie [hier](http://www.xrdp.org/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

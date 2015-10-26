@@ -64,4 +64,4 @@ Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Ers
 
 Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

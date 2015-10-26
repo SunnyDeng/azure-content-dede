@@ -60,7 +60,7 @@ Der folgende Screenshot zeigt ein Beispiel für das entsprechende Dialogfeld in 
 
     3.  Geben Sie im Textfeld **Jive-Mandanten-URL** die URL des Jive-Mandanten ein.
 
-        >[AZURE.NOTE]Die Jive-Mandanten-URL ist die URL, die von Ihrer Organisation zum Anmelden bei Jive verwendet wird. In der Regel hat die URL folgendes Format: **www.\<organisation\>.jive.com**.
+        >[AZURE.NOTE]Die Jive-Mandanten-URL ist die URL, die von Ihrer Organisation zum Anmelden bei Jive verwendet wird. In der Regel hat die URL folgendes Format: **www.<organisation>.jive.com**.
 
     4.  Klicken Sie auf **Überprüfen**, um die Konfiguration zu überprüfen.
 
@@ -70,4 +70,4 @@ Der folgende Screenshot zeigt ein Beispiel für das entsprechende Dialogfeld in 
   
 Sie können nun ein Testkonto erstellen und nach 10 Minuten überprüfen, ob das Konto mit „Jive.com“ synchronisiert wurde.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

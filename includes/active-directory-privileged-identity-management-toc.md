@@ -10,4 +10,4 @@
 - [Erfordern von MFA](active-directory-privileged-identity-management-how-to-require-mfa.md)
 - [Verwenden des Überwachungsprotokolls](active-directory-privileged-identity-management-how-to-use-audit-log.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

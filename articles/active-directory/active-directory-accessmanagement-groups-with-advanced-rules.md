@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/21/2015" 
+	ms.date="10/09/2015" 
 	ms.author="femila"/>
 
 
@@ -57,11 +57,20 @@ Die folgende Tabelle enthält alle Ausdrucksregeloperatoren und ihre Syntax zur 
 
 | Abfrageanalysefehler | Fehlerverwendung | Korrigierte Verwendung |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fehler: Das Attribut nicht unterstützt. | (user.invalidProperty -eq "Value") | (user.department -eq "value") Die Eigenschaft sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen. |
-| Fehler: Der Operator wird für das Attribut nicht unterstützt. | (user.accountEnabled -contains true) | (user.accountEnabled -eq true) Die Eigenschaft weist den Typ "boolesch" auf. Verwenden Sie die unterstützten booleschen Operatoren (-eq oder -ne) aus der oben stehenden Liste. |
-| Fehler: Abfragekompilierungsfehler. | (user.department -eq "Sales") -and (user.department -eq "Marketing")(user.userPrincipalName -match "*@domain.ext") | (user.department -eq "Sales") -and (user.department -eq "Marketing") Der logische Operator sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen. (user.userPrincipalName -match ".*@domain.ext") oder (user.userPrincipalName -match "@domain.ext$") Fehler im regulären Ausdruck. |
-| Fehler: Die Binärausdruck weist nicht das richtige Format auf. | (user.department –eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain") Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
-| Fehler: Unbekannter Fehler beim Einrichten dynamischer Mitgliedschaften. | (user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain") Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
+| Fehler: Das Attribut nicht unterstützt. | (user.invalidProperty -eq "Value") | (user.department -eq "value")  
+Die Eigenschaft sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen. |
+| Fehler: Der Operator wird für das Attribut nicht unterstützt. | (user.accountEnabled -contains true) | (user.accountEnabled -eq true)  
+Die Eigenschaft weist den Typ "boolesch" auf. Verwenden Sie die unterstützten booleschen Operatoren (-eq oder -ne) aus der oben stehenden Liste. |
+| Fehler: Abfragekompilierungsfehler. | (user.department -eq "Sales") -and (user.department -eq "Marketing")(user.userPrincipalName -match "*@domain.ext") | (user.department -eq "Sales") -and (user.department -eq "Marketing")
+Der logische Operator sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen.
+(user.userPrincipalName -match ".*@domain.ext")  
+oder  
+(user.userPrincipalName -match "@domain.ext$")  
+Fehler im regulären Ausdruck. |
+| Fehler: Die Binärausdruck weist nicht das richtige Format auf. | (user.department –eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")  
+Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
+| Fehler: Unbekannter Fehler beim Einrichten dynamischer Mitgliedschaften. | (user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")  
+Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
 
 ##Unterstützte Parameter
 Im Folgenden werden alle Benutzereigenschaften aufgelistet, die Sie in der erweiterten Regel verwenden können:
@@ -124,7 +133,7 @@ Zulässige Operatoren
 | passwordPolicies | None DisableStrongPassword DisablePasswordExpiration DisablePasswordExpiration, DisableStrongPassword | (user.passwordPolicies -eq "DisableStrongPassword") |
 | physicalDeliveryOfficeName | Jeder string-Wert oder $null. | (user.physicalDeliveryOfficeName -eq "value") |
 | postalCode | Jeder string-Wert oder $null. | (user.postalCode -eq "value") |
-| preferredLanguage | ISO 639-1 code | (user.preferredLanguage -eq "DE-DE") |
+| preferredLanguage | ISO 639-1 code | (user.preferredLanguage -eq "de-DE") |
 | sipProxyAddress | Jeder string-Wert oder $null. | (user.sipProxyAddress -eq "value") |
 | state | Jeder string-Wert oder $null. | (user.state -eq "value") |
 | streetAddress | Jeder string-Wert oder $null. | (user.streetAddress -eq "value") |
@@ -168,4 +177,4 @@ Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Act
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

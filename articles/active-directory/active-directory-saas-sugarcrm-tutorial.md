@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Sugar CRM erläutert. 
 -   Ein gültiges Azure-Abonnement
 -   Ein Sugar CRM-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Sugar CRM zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Sugar CRM-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) nutzen.
+Nach Abschluss dieses Tutorials können sich die Sugar CRM zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Sugar CRM-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -53,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Sug
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Sugar CRM zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Sugar CRM-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Sugar CRM zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Sugar CRM-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-sugarcrm-tutorial/IC795885.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Sugar CRM-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Sugar CRM verwenden \(z. B. **http://company.sugarondemand.com*", und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Sugar CRM-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Sugar CRM verwenden (z. B. **http://company.sugarondemand.com*", und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-sugarcrm-tutorial/IC795886.png "App-URL konfigurieren")
 
@@ -120,7 +120,7 @@ Damit sich Azure AD-Benutzer bei Sugar CRM anmelden können, müssen sie in Suga
 
     ![Verwaltung](./media/active-directory-saas-sugarcrm-tutorial/IC795893.png "Verwaltung")
 
-4.  Klicken Sie auf **Benutzer \> Neuen Benutzer erstellen**.
+4.  Klicken Sie auf **Benutzer > Neuen Benutzer erstellen**.
 
     ![Neuen Benutzer erstellen](./media/active-directory-saas-sugarcrm-tutorial/IC795894.png "Neuen Benutzer erstellen")
 
@@ -159,4 +159,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Slack erläutert. Das in d
 -   Ein gültiges Azure-Abonnement
 -   Ein Slack-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Slack zugewiesen haben, mittels einmaliger Anmeldung auf der Slack-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Slack zugewiesen haben, mittels einmaliger Anmeldung auf der Slack-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-slack-tutorial/IC794983.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Slack-Anmelde-URL** die URL Ihres Slack-Mandanten ein \(z. B. **https://azuread.slack.com*")\), und klicken Sie auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Slack-Anmelde-URL** die URL Ihres Slack-Mandanten ein (z. B. **https://azuread.slack.com*")), und klicken Sie auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-slack-tutorial/IC794984.png "App-URL konfigurieren")
 
@@ -75,7 +75,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der Slack-Unternehmenswebsite als Administrator an.
 
-6.  Wechseln Sie zu **An Microsoft Azure AD \> Teameinstellungen**.
+6.  Wechseln Sie zu **An Microsoft Azure AD > Teameinstellungen**.
 
     ![Teameinstellungen](./media/active-directory-saas-slack-tutorial/IC794986.png "Teameinstellungen")
 
@@ -87,7 +87,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![SAML-Einstellungen](./media/active-directory-saas-slack-tutorial/IC794988.png "SAML-Einstellungen")
 
-    1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Slack** den Wert der **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **SAML 2.0 Endpoint \(HTTP\)** ein.
+    1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Slack** den Wert der **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **SAML 2.0 Endpoint (HTTP)** ein.
     2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Slack** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Identitätsanbieter-Aussteller** ein.
     3.  Erstellen Sie eine **Base-64-codierte** Datei aus dem heruntergeladenen Zertifikat.
     
@@ -125,6 +125,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-slack-tutorial/IC767830.png "Ja")
   
-Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

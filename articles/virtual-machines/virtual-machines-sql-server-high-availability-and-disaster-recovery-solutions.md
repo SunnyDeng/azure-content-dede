@@ -22,7 +22,8 @@
 
 Virtuelle Microsoft Azure-Computer (VMs) mit SQL Server können die Kosten für Datenbanklösungen mit hoher Verfügbarkeit und Notfallwiederherstellung (High Availability, Disaster Recovery – HADR) senken. Die meisten SQL Server-HADR-Lösungen werden in Azure Virtual Machines sowohl als reine Azure- als auch als Hybridlösungen unterstützt. In einer reinen Azure-Lösung wird das gesamte HADR-System in Azure ausgeführt. In einer Hybridkonfiguration wird ein Teil der Lösung in Azure und der andere Teil lokal in Ihrer Organisation ausgeführt. Die Flexibilität der Azure-Umgebung können Sie teilweise oder vollständig in Azure verschieben, um Budget- und HADR-Anforderungen der SQL Server-Datenbanksysteme zu erfüllen.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 ## Grundlegendes zum Bedarf an einer HADR-Lösung
 
@@ -146,4 +147,4 @@ Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Comput
 - [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](../active-directory/active-directory-new-forest-virtual-machine.md)
 - [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) (in englischer Sprache)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

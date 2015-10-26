@@ -11,4 +11,4 @@ Maximale Anzahl der Indexer|10 pro Search-Dienst
 Maximale Anzahl der Datenquellen|10 pro Search-Dienst
 Maximale Anzahl der Dokumente, die in einem Indexer-Aufruf indiziert werden können|Unbegrenzt
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

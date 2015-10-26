@@ -266,4 +266,4 @@ Sie können den Rückruf in der `Application_Launching`-Methode der Datei `App.x
 [zusätzlichen Anforderungen für bestimmte Anwendungstypen]: http://msdn.microsoft.com/library/windows/apps/hh184838(v=vs.105).aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

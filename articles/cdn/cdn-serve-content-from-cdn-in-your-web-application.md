@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung"
-	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie Inhalte von einem CDN verwenden, um die Leistung Ihrer Webanwendung zu verbessern."
-	services="cdn"
-	documentationCenter=".net"
-	authors="cephalin"
-	manager="wpickett"
+	pageTitle="Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung" 
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie Inhalte von einem CDN verwenden, um die Leistung Ihrer Webanwendung zu verbessern." 
+	services="cdn" 
+	documentationCenter=".net" 
+	authors="cephalin" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="cdn"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="cdn" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="cephalin"/>
 
 # Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung #
@@ -271,4 +271,4 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

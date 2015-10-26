@@ -153,4 +153,4 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

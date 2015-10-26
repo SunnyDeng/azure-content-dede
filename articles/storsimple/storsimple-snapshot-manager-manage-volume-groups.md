@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="10/12/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Manager zum Erstellen und Verwalten von Volumegruppen
@@ -23,7 +23,11 @@ Mit dem Knoten **Volumegruppen** im **Bereichsfenster** können Sie Volumes Volu
 
 Volumegruppen sind Pools zusammengehöriger Volumes, mit denen sichergestellt werden soll, dass Sicherungen anwendungskonsistent sind. Weitere Informationen finden Sie unter [Volumes und Volumegruppen](storsimple-what-is-snapshot-manager.md#volumes-and-volume-groups) und [Integration in den Windows-Volumeschattenkopie-Dienst](storsimple-what-is-snapshot-manager.md#integration-with-windows-volume-shadow-copy-service).
 
->[AZURE.IMPORTANT]Beim Konfigurieren von Volumegruppen sollten Sie nicht freigegebene Clustervolumes (CSV) und nicht freigegebene Clustervolumes in derselben Volumegruppe zusammenfassen. Der StorSimple Snapshot Manager unterstützt nicht das Zusammenfassen von freigegebenen Clustervolumes und nicht freigegebenen Clustervolumes in derselben Momentaufnahme.
+>[AZURE.IMPORTANT]
+>
+> * Alle Volumes in einer Volumegruppe müssen von einem Clouddienstanbieter stammen.
+> 
+> * Beim Konfigurieren von Volumegruppen sollten Sie nicht freigegebene Clustervolumes (CSV) und nicht freigegebene Clustervolumes in derselben Volumegruppe zusammenfassen. Der StorSimple Snapshot Manager unterstützt nicht das Zusammenfassen von freigegebenen Clustervolumes und nicht freigegebenen Clustervolumes in derselben Momentaufnahme.
  
 ![Knoten "Volumegruppen"](./media/storsimple-snapshot-manager-manage-volume-groups/HCS_SSM_Volume_groups.png)
 
@@ -41,7 +45,7 @@ Alle diese Aktionen stehen auch im Bereich **Aktionen** zur Verfügung.
  
 ## Anzeigen von Volumegruppen
 
-Wenn Sie auf den Knoten **Volumegruppen** klicken, werden im **Ergebnisbereich** je nach den ausgewählten Spalten die folgenden Informationen über jede Volumegruppe angezeigt. (Die Spalten im **Ergebnisbereich** sind konfigurierbar. Klicken Sie mit der rechten Maustaste auf den Knoten **Volumes**, und wählen Sie **Ansicht** und dann **Spalten hinzufügen/entfernen** aus.)
+Wenn Sie auf den Knoten **Volumegruppen** klicken, werden im **Ergebnisbereich** je nach den ausgewählten Spalten die folgenden Informationen über jede Volumegruppe angezeigt. (Die Spalten im Bereich **Ergebnis** sind konfigurierbar. Klicken Sie mit der rechten Maustaste auf den Knoten **Volumes**, und wählen Sie **Ansicht** und dann **Spalten hinzufügen/entfernen** aus.)
 
 Ergebnisspalte | Beschreibung 
 :--------------|:------------ 
@@ -60,11 +64,11 @@ Gehen Sie folgendermaßen vor, um eine neue Vorlumegruppe zu erstellen.
 
 1. Klicken Sie auf das Desktopsymbol, um den StorSimple Snapshot Manager zu starten. 
 
-2. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf **Volumegruppen**, und klicken Sie dann auf **Create Volume Group**.
+2. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf **Volumegruppen**, und klicken Sie dann auf **Volumegruppe erstellen**.
 
     ![Erstellen einer Volumegruppe](./media/storsimple-snapshot-manager-manage-volume-groups/HCS_SSM_Create_volume_group.png)
  
-    Das Dialogfeld **Create Volume Group** wird angezeigt.
+    Das Dialogfeld **Volumegruppe erstellen** wird angezeigt.
 
     ![Dialogfeld "Create Volume Group"](./media/storsimple-snapshot-manager-manage-volume-groups/HCS_SSM_CreateVolumeGroup_dialog.png)
 
@@ -140,7 +144,7 @@ Gehen Sie folgendermaßen vor, um eine Volumegruppe zu löschen.
 
 ## Nächste Schritte
 
-- Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
+- Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Weitere Informationen zum [Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Sicherungsrichtlinien](storsimple-snapshot-manager-manage-backup-policies.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

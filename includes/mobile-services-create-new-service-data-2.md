@@ -47,8 +47,8 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
   	Dies ist die Mindestanforderung für eine Tabelle in Mobile Services. 
 
-    > [AZURE.NOTE] Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, werden neue Spalten immer dann automatisch erstellt, wenn JSON-Objekte über einen Einfüge- oder Aktualisierungsvorgang an den mobilen Dienst gesendet werden.
+    > [AZURE.NOTE]Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, werden neue Spalten immer dann automatisch erstellt, wenn JSON-Objekte über einen Einfüge- oder Aktualisierungsvorgang an den mobilen Dienst gesendet werden.
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

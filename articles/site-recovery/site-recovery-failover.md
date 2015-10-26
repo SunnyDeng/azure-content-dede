@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="10/07/2015" 
+	ms.date="10/12/2015" 
 	ms.author="raynew"/>
 
 # Failover in Site Recovery
@@ -70,7 +70,7 @@ Wenn Sie ein Failover zu Azure durchgeführt haben, werden Ihre virtuellen Compu
 ### Überlegungen zum Failover
 
 - **IP-Adresse nach dem Failover**: Standardmäßig besitzt ein Computer nach einem Failover eine andere IP-Adresse als der Quellcomputer. So können Sie die IP-Adresse beibehalten: 
-	- **Sekundärer Standort**: Wenn Sie ein Failover zu einem sekundären Standort durchführen und eine IP-Adresse beibehalten möchten, lesen Sie [diesen Artikel](http://blogs.technet.com/b/scvmm/archive/2014/04/04/retaining-ip-address-after-failover-using-hyper-v-recovery-manager.aspx). Eine öffentliche IP-Adresse können Sie beibehalten, wenn Ihr Internetdienstanbieter dies unterstützt.
+	- **Sekundärer Standort**: Wenn Sie ein Failover zu einem sekundären Standort durchführen und eine IP-Adresse beibehalten möchten, lesen Sie [diesen Artikel](http://blogs.technet.com/b/scvmm/archive/2014/04/04/retaining-ip-address-after-failover-using-hyper-v-recovery-manager.aspx). Eine öffentliche IP-Adresse können Sie beibehalten, wenn Ihr Internet-Service Provider dies unterstützt.
 	- **Azure**: Im Falle eines Failovers zu Azure können Sie in den Eigenschaften des virtuellen Computers auf der Registerkarte **Konfigurieren** die IP-Adresse angeben, die Sie zuweisen möchten. Öffentliche IP-Adressen können nach einem Failover zu Azure nicht beibehalten werden. Als interne Adressen verwendete RFC 1918-fremde Adressräume können beibehalten werden.
 - **Partielles Failover**: Wenn ein Failover nur für einen Teil des Standorts durchgeführt werden soll, gilt Folgendes: 
 	- **Sekundärer Standort**: Wenn Sie für einen Teil eines primären Standorts ein Failover zu einem sekundären Standort durchführen und wieder eine Verbindung mit dem primären Standort herstellen möchten, verwenden Sie eine VPN-Verbindung zwischen den beiden Standorten, um eine Verbindung zwischen Failover-Anwendungen am sekundären Standort und Infrastrukturkomponenten am primären Standort herzustellen. Beim Failover eines gesamten Subnetzes können Sie die IP-Adressen der virtuellen Computer beibehalten. Beim partiellen Failover eines Subnetzes kann die IP-Adresse des virtuellen Computers nicht beibehalten werden, da Subnetze nicht aufgeteilt werden können.
@@ -94,13 +94,7 @@ Beim einem Test-Failover werden Sie zum Auswählen von Netzwerkeinstellungen fü
 **Failover zu einem sekundären VMM-Standort (mit Netzwerk)** | Wählen Sie ein vorhandenes VM-Netzwerk aus. | Beim Failover wird geprüft, ob virtuelle Computer erstellt werden. | <p>Der virtuelle Testcomputer wird auf dem Host erstellt, auf dem sich auch der virtuelle Replikatcomputer befindet. Er wird nicht der Cloud hinzugefügt, in der sich der virtuelle Replikatcomputer befindet.</p><p>Erstellen Sie ein vom Produktionsnetzwerk isoliertes VM-Netzwerk.</p><p>Bei Verwendung eines VLAN-basierten Netzwerks empfiehlt es sich, hierzu in VMM ein separates logisches Netzwerk zu erstellen, das nicht in der Produktionsumgebung verwendet wird. Dieses logische Netzwerk dient zum Erstellen von VM-Netzwerken für das Test-Failover.</p><p>Das logische Netzwerk muss mindestens einem der Netzwerkadapter aller Hyper-V-Server zugeordnet werden, die virtuelle Computer hosten.</p><p>Bei logischen VLAN-basierten Netzwerken müssen die hinzugefügten Netzwerkstandorte isoliert sein.</p><p>Bei Verwendung eines logischen Netzwerks, das auf der Windows-Netzwerkvirtualisierung basiert, erstellt Azure Site Recovery automatisch isolierte VM-Netzwerke.</p>
 **Failover zu einem sekundären VMM-Standort (mit Netzwerkerstellung)** | Auf der Grundlage der Einstellung, die Sie unter **Logisches Netzwerk** angeben, und den zugehörigen Netzwerkstandorten wird automatisch ein temporäres Testnetzwerk erstellt. | Beim Failover wird geprüft, ob virtuelle Computer erstellt werden. | <p>Verwenden Sie diese Option, wenn für den Wiederherstellungsplan mehrere VM-Netzwerke verwendet werden. Im Falle von Netzwerken, die auf der Windows-Netzwerkvirtualisierung basieren, kann diese Option im Netzwerk des virtuellen Replikatcomputers automatisch VM-Netzwerke mit den gleichen Einstellungen (Subnetze und IP-Adresspools) erstellen. Diese VM-Netzwerke werden nach dem Test-Failover automatisch bereinigt.</p><p>Der virtuelle Testcomputer wird auf dem gleichen Host erstellt wie der Host, auf dem sich der virtuelle Replikatcomputer befindet. Er wird nicht der Cloud hinzugefügt, in der sich der virtuelle Replikatcomputer befindet.</p>
 
-Beachten Sie Folgendes:
-
-- Bei einer Replikation an einen sekundären Standort muss der Typ des vom Replikatcomputer verwendeten Netzwerks nicht dem Typ des logischen Netzwerks für das Test-Failover entsprechen. Einige Kombinationen funktionieren aber unter Umständen nicht. Wenn das Replikat DHCP und eine VLAN-basierte Isolation verwendet, benötigt das VM-Netzwerk für das Replikat keinen statischen IP-Adresspool. In diesem Fall könnte für das Test-Failover also keine Windows-Netzwerkvirtualisierung verwendet werden, da keine Adresspools verfügbar sind. Das Test-Failover funktioniert auch nicht, wenn das Replikatnetzwerk nicht isoliert ist und im Testnetzwerk die Windows-Netzwerkvirtualisierung verwendet wird. Der Grund: Das nicht isolierte Netzwerk verfügt nicht über die Subnetze, die zum Erstellen eines Netzwerks mit Windows-Netzwerkvirtualisierung erforderlich sind.
-- Welche Verbindung nach dem Failover zwischen virtuellen Replikatcomputern und zugeordneten VM-Netzwerken besteht, hängt davon ab, wie das VM-Netzwerk in der VMM-Konsole konfiguriert ist:
-	- **VM-Netzwerk ohne Isolation oder VLAN-Isolation**: Bei definiertem DHCP für das VM-Netzwerk wird der virtuelle Replikatcomputer mit der VLAN-ID verbunden. Hierbei kommen die Einstellungen zur Anwendung, die für den Netzwerkstandort im zugeordneten logischen Netzwerk angegeben sind. Der virtuelle Computer erhält seine IP-Adresse vom verfügbaren DHCP-Server. Für das VM-Zielnetzwerk muss kein statischer IP-Adresspool definiert sein. Bei Verwendung eines statischen IP-Adresspools für das VM-Netzwerk wird der virtuelle Replikatcomputer mit der VLAN-ID verbunden. Hierbei kommen die Einstellungen zur Anwendung, die für den Netzwerkstandort im zugeordneten logischen Netzwerk angegeben sind. Der virtuelle Computer erhält seine IP-Adresse aus dem für das VM-Netzwerk definierten Adresspool. Ist für das VM-Zielnetzwerk kein statischer IP-Adresspool definiert, ist die IP-Adresszuweisung nicht erfolgreich. Der IP-Adresspool muss sowohl auf dem Quell- als auch auf dem Ziel-VMM-Server erstellt werden, den Sie für den Schutz und die Wiederherstellung verwenden möchten.
-	- **VM-Netzwerk mit Windows-Netzwerkvirtualisierung**: Wenn ein VM-Netzwerk mit dieser Einstellung konfiguriert ist, muss für das VM-Zielnetzwerk ein statischer Adresspool definiert werden, und zwar unabhängig davon, ob für das VM-Quellnetzwerk die Verwendung von DHCP oder die Verwendung eines statischen IP-Adresspools konfiguriert ist. Bei Verwendung von DHCP fungiert der VMM-Zielserver als DHCP-Server und stellt eine IP-Adresse aus dem für das VM-Zielnetzwerk definierten Pool bereit. Ist für den Quellserver die Verwendung eines statischen IP-Adresspools definiert, weist der VMM-Zielserver eine IP-Adresse aus dem Pool zu. In beiden Fällen ist die IP-Adresszuweisung nicht erfolgreich, wenn kein statischer IP-Adresspool definiert ist.
-
+>[AZURE.NOTE]Die einem virtuellen Computer bei einem Testfailover zugewiesene IP-Adresse ist mit der IP-Adresse identisch, die ihm bei einem geplanten oder nicht geplanten Failover zugewiesen wird, sofern diese im Testfailovernetzwerk verfügbar ist. Wenn im Testfailovernetzwerk nicht dieselbe IP-Adresse verfügbar ist, wird dem virtuellen Computer eine andere IP-Adresse zugewiesen, die im Testfailovernetzwerk verfügbar ist.
 
 
 
@@ -119,58 +113,50 @@ Hier erfahren Sie, wie Sie ein Test-Failover für einen Wiederherstellungsplan d
 
 > [AZURE.NOTE]Sollte das Test-Failover länger als zwei Wochen bestehen bleiben, wird der Abschluss des Vorgangs erzwungen. Alle Elemente und virtuellen Computer, die automatisch im Zuge des Test-Failovers erstellt wurden, werden gelöscht.
   
-#### Beispiel
 
-Führen Sie unter Berücksichtigung der folgenden Vorgaben ein Test-Failover durch:
+### Durchführen eines Testfailovers von einem primären lokalen Standort zu einem sekundären lokalen Standort
 
-1. Führen Sie in dem Netzwerk, das Sie für das Test-Failover des lokalen virtuellen Computers verwenden möchten, ein Test-Failover des virtuellen Active Directory-Computers und des virtuellen DNS-Computers durch.
-2. Notieren Sie sich die IP-Adressen, die den Computern nach dem Failover zugewiesen werden.
-3. Fügen Sie die IP-Adressen dem virtuellen Azure-Netzwerk, das für das Test-Failover verwendet wird, als Adresse des DNS- bzw. des Active Directory-Servers hinzu.
-4. Führen Sie ein Test-Failover des virtuellen Computers durch, und geben Sie dabei das Azure-Netzwerk an.
-5. Vergewissern Sie sich, dass das Test-Failover erwartungsgemäß durchgeführt wurde. Führen Sie dann das Failover für die virtuellen Computer und anschließend für den virtuellen Active Directory- und den virtuellen DNS-Computer durch.
-
-### Durchführen eines Test-Failovers von einem primären lokalen Standort zu einem sekundären Standort
-
-Für ein Test-Failover müssen einige Schritte durchgeführt werden. So müssen Sie unter anderem eine Kopie von Active Directory erstellen und Ihre Testumgebung mit einem DHCP- und DNS-Testserver versehen. Dazu haben Sie mehrere Möglichkeiten:
+Für ein Testfailover müssen einige Schritte durchgeführt werden. So müssen Sie unter anderem eine Kopie des Domänencontrollers erstellen und Ihre Testumgebung mit einem DHCP- und DNS-Testserver versehen. Dazu haben Sie mehrere Möglichkeiten:
 
 - Wenn Sie ein Test-Failover mit einem vorhandenen Netzwerk durchführen möchten, bereiten Sie Active Directory, DHCP und DNS in diesem Netzwerk vor.
 - Wenn Sie ein Test-Failover mit der Option für die automatische Erstellung von VM-Netzwerken durchführen möchten, fügen Sie vor der ersten Gruppe des Wiederherstellungsplans, den Sie für das Test-Failover verwenden möchten, einen manuellen Schritt ein, und fügen Sie dem automatisch erstellten Netzwerk dann vor der Durchführung des Test-Failovers die Infrastrukturressourcen hinzu.
 
-#### Vorbereiten von Active Directory
-Wenn Sie ein Test-Failover durchführen möchten, um eine Anwendung zu testen, muss in der Testumgebung eine Kopie der Active Directory-Produktionsumgebung vorhanden sein. Gehen Sie hierzu wie folgt vor:
+#### Was Sie beachten sollten
 
-1. **Erstellen einer Kopie**: Erstellen Sie mithilfe einer der folgenden Methoden eine Kopie von Active Directory:
+- Bei einer Replikation an einen sekundären Standort muss der Typ des vom Replikatcomputer verwendeten Netzwerks nicht dem Typ des logischen Netzwerks für das Test-Failover entsprechen. Einige Kombinationen funktionieren aber unter Umständen nicht. Wenn das Replikat DHCP und eine VLAN-basierte Isolation verwendet, benötigt das VM-Netzwerk für das Replikat keinen statischen IP-Adresspool. In diesem Fall könnte für das Test-Failover also keine Windows-Netzwerkvirtualisierung verwendet werden, da keine Adresspools verfügbar sind. Das Test-Failover funktioniert auch nicht, wenn das Replikatnetzwerk nicht isoliert ist und im Testnetzwerk die Windows-Netzwerkvirtualisierung verwendet wird. Der Grund: Das nicht isolierte Netzwerk verfügt nicht über die Subnetze, die zum Erstellen eines Netzwerks mit Windows-Netzwerkvirtualisierung erforderlich sind.
+- Welche Verbindung nach dem Failover zwischen virtuellen Replikatcomputern und zugeordneten VM-Netzwerken besteht, hängt davon ab, wie das VM-Netzwerk in der VMM-Konsole konfiguriert ist:
+	- **VM-Netzwerk ohne Isolation oder VLAN-Isolation**: Bei definiertem DHCP für das VM-Netzwerk wird der virtuelle Replikatcomputer mit der VLAN-ID verbunden. Hierbei kommen die Einstellungen zur Anwendung, die für den Netzwerkstandort im zugeordneten logischen Netzwerk angegeben sind. Der virtuelle Computer erhält seine IP-Adresse vom verfügbaren DHCP-Server. Für das VM-Zielnetzwerk muss kein statischer IP-Adresspool definiert sein. Bei Verwendung eines statischen IP-Adresspools für das VM-Netzwerk wird der virtuelle Replikatcomputer mit der VLAN-ID verbunden. Hierbei kommen die Einstellungen zur Anwendung, die für den Netzwerkstandort im zugeordneten logischen Netzwerk angegeben sind. Der virtuelle Computer erhält seine IP-Adresse aus dem für das VM-Netzwerk definierten Adresspool. Ist für das VM-Zielnetzwerk kein statischer IP-Adresspool definiert, ist die IP-Adresszuweisung nicht erfolgreich. Der IP-Adresspool muss sowohl auf dem Quell- als auch auf dem Ziel-VMM-Server erstellt werden, den Sie für den Schutz und die Wiederherstellung verwenden möchten.
+	- **VM-Netzwerk mit Windows-Netzwerkvirtualisierung**: Wenn ein VM-Netzwerk mit dieser Einstellung konfiguriert ist, muss für das VM-Zielnetzwerk ein statischer Adresspool definiert werden, und zwar unabhängig davon, ob für das VM-Quellnetzwerk die Verwendung von DHCP oder die Verwendung eines statischen IP-Adresspools konfiguriert ist. Bei Verwendung von DHCP fungiert der VMM-Zielserver als DHCP-Server und stellt eine IP-Adresse aus dem für das VM-Zielnetzwerk definierten Pool bereit. Ist für den Quellserver die Verwendung eines statischen IP-Adresspools definiert, weist der VMM-Zielserver eine IP-Adresse aus dem Pool zu. In beiden Fällen ist die IP-Adresszuweisung nicht erfolgreich, wenn kein statischer IP-Adresspool definiert ist.
 
-	- Hyper-V-Replikation: Sie können die Active Directory-Replikation genau wie bei anderen virtuellen Computern mithilfe der Hyper-V-Replikation starten. Wenn Sie ein Test-Failover eines Wiederherstellungsplans durchführen, können Sie auch ein Test-Failover des virtuellen Active Directory-Computers durchführen.
-	- Active Directory-Replikation: Über die Active Directory-Replikation können Sie eine Kopie der Active Directory-Installation an Ihrem Replikatstandort erstellen. Wenn Sie ein Test-Failover eines Wiederherstellungsplans durchführen, können Sie mittels einer Momentaufnahme der Active Directory-Replikatinstallation eine Kopie des virtuellen Active Directory-Computers erstellen. Diese Kopie können Sie dann für das Test-Failover verwenden. Nach Abschluss des Test-Failovers können Sie die Kopie von Active Directory löschen.
+#### Durchführen des Tests
 
-2. **Importieren und Exportieren**: Sie können eine Kopie eines virtuellen Active Directory-Computers erstellen, indem Sie ihn exportieren und mit einem neuen GUID importieren.
-3. **Hinzufügen zum Netzwerk**: Fügen Sie Active Directory dem Netzwerk hinzu, das durch das Test-Failover erstellt wird. Beachten Sie Folgendes: 
+Hier erfahren Sie, wie Sie ein Test-Failover für einen Wiederherstellungsplan durchführen. Alternativ können Sie das Failover über die Registerkarte **Virtuelle Computer** auch für einen einzelnen virtuellen Computer oder physischen Server durchführen.
 
-	- Stellen Sie sicher, dass das Netzwerk, dem Sie Active Directory hinzufügen, vollständig vom Produktionsnetzwerk isoliert ist. Wenn Sie als Testnetzwerk ein Windows-Netzwerk verwenden, garantiert das System die Isolation der automatisch erstellten VM-Netzwerke – vorausgesetzt, Sie fügen kein externes Gateway zum Netzwerk hinzu. Bei Verwendung der VLAN-basierten Isolation müssen Sie sicherstellen, dass die erstellten VM-Netzwerke von der Produktionsumgebung isoliert sind.
-	- Abhängig davon, ob Active Directory und DNS auf dem gleichen virtuellen Computer oder auf unterschiedlichen virtuellen Computern ausgeführt werden, müssen möglicherweise etwas andere Schritte durchgeführt werden:
-		- Gleicher virtueller Computer: Wenn sich Active Directory und DNS auf dem gleichen virtuellen Computer befinden, können Sie für das Test-Failover den gleichen virtuellen Computer als DNS-Ressource verwenden. Sie können in DNS alle Einträge bereinigen und die erforderlichen Zonen neu erstellen. 
-		- Unterschiedliche virtuelle Computer: Wenn sich Active Directory und DNS auf unterschiedlichen virtuellen Computern befinden, müssen Sie für das Test-Failover eine DNS-Ressource erstellen. Sie können einen neuen DNS-Server verwenden und alle erforderlichen Zonen erstellen. Wenn Ihre Active Directory-Domäne beispielsweise „contoso.com“ lautet, können Sie eine Zone mit dem Namen „contoso.com“ erstellen. 
+1. Wählen Sie **Wiederherstellungspläne** > *<Name des Wiederherstellungsplans>*. Klicken Sie auf **Failover** > **Test-Failover**.
+2. Geben Sie auf der Seite **Test-Failover bestätigen** an, wie die virtuellen Computer nach dem Test-Failover mit Netzwerken verbunden werden sollen.
+3. Verfolgen Sie den Verlauf des Failovers auf der Registerkarte **Aufträge**. Klicken Sie auf **Test abschließen**, wenn das Failover die Endphase des Tests erreicht.
+4. Klicken Sie auf **Notizen**, um alle Beobachtungen im Zusammenhang mit dem Test-Failover aufzuzeichnen und zu speichern.
+4. Vergewissern Sie sich anschließend, dass die virtuellen Computer erfolgreich starten.
+5. Schließen Sie nach der Prüfung, ob die virtuellen Computer erfolgreich starten, das Test-Failover ab, um die isolierte Umgebung zu bereinigen. Wenn Sie die automatische Erstellung von VM-Netzwerken ausgewählt haben, werden bei der Bereinigung alle virtuellen Testcomputer und -netzwerke gelöscht.
 
-4. **Aktualisieren von Active Directory in DNS**: In beiden Fällen müssen die Einträge für Active Directory in DNS aktualisiert werden. Gehen Sie hierzu wie folgt vor:
+> [AZURE.NOTE]Sollte das Test-Failover länger als zwei Wochen bestehen bleiben, wird der Abschluss des Vorgangs erzwungen. Alle Elemente und virtuellen Computer, die automatisch im Zuge des Test-Failovers erstellt wurden, werden gelöscht.
 
-	- Stellen Sie sicher, dass die folgenden Einstellungen vorhanden sind, bevor ein anderer virtueller Computer im Wiederherstellungsplan online geschaltet wird:
-		- Die Zone muss nach dem Stammnamen der Gesamtstruktur benannt werden.
-		- Der Zone muss eine Datei zugrunde liegen.
-		- Für die Zone müssen sichere und nicht sichere Updates möglich sein.
-		- Wenn sich Active Directory und DNS auf zwei separaten virtuellen Computern befinden, muss der Konfliktlöser des virtuellen Active Directory-Computers auf die IP-Adresse des virtuellen DNS-Computers verweisen.
-	- Führen Sie in Active Directory den folgenden Befehl aus: nltest /dsregdns.
 
 #### Vorbereiten von DHCP
 
 Wenn die am Test-Failover beteiligten virtuellen Computer DHCP nutzen, muss innerhalb des für das Test-Failover erstellten isolierten Netzwerks ein DHCP-Testserver erstellt werden.
 
-#### Vorbereiten von DNS
+
+### Vorbereiten von Active Directory
+Wenn Sie ein Test-Failover durchführen möchten, um eine Anwendung zu testen, muss in der Testumgebung eine Kopie der Active Directory-Produktionsumgebung vorhanden sein. Unter [Überlegungen zum Testfailover für Active Directory](site-recovery-active-directory.md#considerations-for-test-failover]) finden Sie weitere Details.
+
+
+### Vorbereiten von DNS
 
 Gehen Sie wie folgt vor, um einen DNS-Server für das Test-Failover vorzubereiten:
 
-- **DHCP**: Wenn virtuelle Computer DHCP nutzen, muss die IP-Adresse des Test-DNS auf dem DHCP-Testserver aktualisiert werden. Bei Verwendung der Windows-Netzwerkvirtualisierung fungiert der VMM-Server als DHCP-Server. Daher muss die IP-Adresse des DNS im statischen IP-Adresspool für das Test-Failover aktualisiert werden. In diesem Fall werden die virtuellen Computer automatisch beim relevanten DNS-Server registriert.
-- **Statische Adresse**: Wenn virtuelle Computer eine statische IP-Adresse verwenden, muss die IP-Adresse des DNS-Testservers in den statischen IP-Adresspools für das Test-Failover aktualisiert werden. Das DNS muss mit der IP-Adresse der virtuellen Testcomputer aktualisiert werden. Hierzu können Sie das folgende Beispielskript verwenden: 
+- **DHCP**: Wenn virtuelle Computer DHCP nutzen, muss die IP-Adresse des Test-DNS auf dem DHCP-Testserver aktualisiert werden. Bei Verwendung der Windows-Netzwerkvirtualisierung fungiert der VMM-Server als DHCP-Server. Daher sollte die IP-Adresse des DNS im Testfailovernetzwerk aktualisiert werden. In diesem Fall werden die virtuellen Computer automatisch beim relevanten DNS-Server registriert.
+- **Statische Adresse**: Wenn virtuelle Computer eine statische IP-Adresse verwenden, muss die IP-Adresse des DNS-Testservers im Testfailovernetzwerk aktualisiert werden. Das DNS muss eventuell mit der IP-Adresse der virtuellen Testcomputer aktualisiert werden. Hierzu können Sie das folgende Beispielskript verwenden: 
 
 	    Param(
 	    [string]$Zone,
@@ -182,25 +168,7 @@ Gehen Sie wie folgt vor, um einen DNS-Server für das Test-Failover vorzubereite
 	    $newrecord.RecordData[0].IPv4Address  =  $IP
 	    Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
 
-- **Hinzufügen der Zone**: Verwenden Sie das folgende Skript, um auf dem DNS-Server eine Zone hinzufügen, nicht sichere Updates zuzulassen und einen Eintrag für sich selbst hinzuzufügen:
 
-	    dnscmd /zoneadd contoso.com  /Primary 
-	    dnscmd /recordadd contoso.com  contoso.com. SOA %computername%.contoso.com. hostmaster. 1 15 10 1 1 
-	    dnscmd /recordadd contoso.com %computername%  A <IP_OF_DNS_VM> 
-	    dnscmd /config contoso.com /allowupdate 1
-
-#### Durchführen des Tests
-
-Hier erfahren Sie, wie Sie ein nicht geplantes Failover für einen Wiederherstellungsplan durchführen. Alternativ können Sie das Failover über die Registerkarte **Virtuelle Computer** auch für einen einzelnen virtuellen Computer oder physischen Server durchführen.
-
-1. Wählen Sie **Wiederherstellungspläne** > *<Name des Wiederherstellungsplans>*. Klicken Sie auf **Failover** > **Test-Failover**.
-2. Geben Sie auf der Seite **Test-Failover bestätigen** an, wie die virtuellen Computer nach dem Test-Failover mit Netzwerken verbunden werden sollen.
-3. Verfolgen Sie den Verlauf des Failovers auf der Registerkarte **Aufträge**. Klicken Sie auf **Test abschließen**, wenn das Failover die Endphase des Tests erreicht.
-4. Klicken Sie auf **Notizen**, um alle Beobachtungen im Zusammenhang mit dem Test-Failover aufzuzeichnen und zu speichern.
-4. Vergewissern Sie sich anschließend, dass die virtuellen Computer erfolgreich starten.
-5. Schließen Sie nach der Prüfung, ob die virtuellen Computer erfolgreich starten, das Test-Failover ab, um die isolierte Umgebung zu bereinigen. Wenn Sie die automatische Erstellung von VM-Netzwerken ausgewählt haben, werden bei der Bereinigung alle virtuellen Testcomputer und -netzwerke gelöscht.
-
-Hinweis: Sollte das Test-Failover länger als zwei Wochen bestehen bleiben, wird der Abschluss des Failovers erzwungen. Dabei werden alle Elemente und virtuellen Computer gelöscht, die automatisch im Zuge des Test-Failovers erstellt wurden.
 
 ## Durchführen eines geplanten Failovers (primär zu sekundär)
 
@@ -282,4 +250,4 @@ Wenn Sie den Schutz zwischen einem [Hyper-V-Standort und Azure](site-recovery-hy
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

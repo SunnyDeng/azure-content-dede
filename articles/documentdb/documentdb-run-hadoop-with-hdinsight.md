@@ -196,7 +196,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 2. Öffnen Sie die integrierte Azure PowerShell-Skripting-Umgebung:
 	- Sie können die integrierte Suche auf einem Computer verwenden, auf dem Windows 8 oder Windows Server 2012 oder höher ausgeführt wird. Geben Sie auf der Startseite **powershell ise** ein, und drücken Sie die **Eingabetaste**. 
-	- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das Startmenü. Geben Sie im Startmenü **Eingabeaufforderung** in das Suchfeld ein, und klicken Sie in der Ergebnisliste auf **Eingabeaufforderung**. Geben Sie in der Eingabeaufforderung **powershell_ise** ein, und drücken Sie dann die **Eingabetaste**.
+	- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das Startmenü. Geben Sie im Startmenü **Eingabeaufforderung** in das Suchfeld ein, und klicken Sie in der Ergebnisliste auf **Eingabeaufforderung**. Geben Sie in der Eingabeaufforderung **powershell\_ise** ein, und drücken Sie dann die **Eingabetaste**.
 
 3. Fügen Sie Ihr Azure-Konto hinzu.
 	1. Geben Sie im Konsolenbereich **Add-AzureAccount** (Azure-Konto hinzufügen) ein, und drücken Sie auf die **Eingabetaste**. 
@@ -390,7 +390,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 	2. Klicken Sie oben rechts im Suchbereich auf <strong>Alles</strong>. </br>
 	3. Suchen Sie nach und klicken Sie auf <strong>DocumentDB-Konten</strong>. </br>
 	4. Suchen Sie als Nächstes das <strong>DocumentDB-Konto</strong>, anschließend die <strong>DocumentDB-Datenbank</strong> und die <strong>DocumentDB-Sammlung</strong>, die mit der in der Pig-Abfrage angegebenen Ausgabesammlung verknüpft ist.</br>
-	5. Klicken Sie abschließend auf <strong>Dokument-Explorer</strong> unter <strong>Entwicklertools</strong>.</br></p>
+	5. Klicken Sie abschließend auf <strong>Dokument-Explorer</strong> unter <strong>Entwicklertools</strong>. </br></p>
 
 	Sie sehen die Ergebnisse der Pig-Abfrage.
 
@@ -493,4 +493,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

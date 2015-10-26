@@ -1,3 +1,5 @@
-### Storage Service Versions
+### Speicherdienstversionen
 
-The Azure Storage services are regularly updated with support for new features. The Azure Storage services REST API reference describes each supported version and its features. We recommend that you use the latest version whenever possible. For information on the latest version of the Azure Storage services, as well as information on previous versions, see [Versioning for the Azure Storage Services](https://msdn.microsoft.com/library/azure/dd894041.aspx).  
+Die Azure-Speicherdienste werden regelmäßig mit Unterstützung für neue Funktionen aktualisiert. In der Referenz zur REST-API für die Azure-Speicherdienste werden die unterstützten Versionen und ihre Funktionen beschrieben. Sie sollten möglichst immer die neueste Version verwenden. Weitere Informationen zur neuesten Version der Azure-Speicherdienste sowie Informationen zu früheren Versionen finden Sie unter [Versionsverwaltung für die Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd894041.aspx).
+
+<!---HONumber=Oct15_HO3-->

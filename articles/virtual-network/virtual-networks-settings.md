@@ -100,4 +100,4 @@ Nach der Bereitstellung des virtuellen Netzwerks können nur bestimmte Einstellu
 
 [Gewusst wie: Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

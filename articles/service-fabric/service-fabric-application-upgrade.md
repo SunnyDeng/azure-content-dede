@@ -66,4 +66,4 @@ Das Flussdiagramm unten soll dem Verständnis des Upgradevorgangs einer Service 
 [image]: media/service-fabric-application-upgrade/service-fabric-application-upgrade-flowchart.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

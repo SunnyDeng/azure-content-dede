@@ -27,4 +27,4 @@ Die folgenden Informationen können Ihnen bei der Verwendung von Azure RemoteApp
 - RemoteApp meldet Sie automatisch ab, wenn Sie für einen bestimmten Zeitraum inaktiv sind. Um Datenverluste zu vermeiden, wird empfohlen, Ihre Anwendungen zu schließen, wenn Sie die Nutzung des Diensts beenden.
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

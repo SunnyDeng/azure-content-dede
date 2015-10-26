@@ -1,19 +1,19 @@
 <properties 
- pageTitle="Verwalten des Ablaufs von Blobinhalten in Azure CDN (Content Delivery Network)"
-	description=""
-	services="cdn"
-	documentationCenter=".NET"
-	authors="zhangmanling"
-	manager="dwrede"
-	editor=""/>
+ pageTitle="Verwalten des Ablaufs von Blobinhalten in Azure CDN (Content Delivery Network)" 
+ description="" 
+ services="cdn" 
+ documentationCenter=".NET" 
+ authors="zhangmanling" 
+ manager="dwrede" 
+ editor=""/>
 <tags 
- ms.service="cdn"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="mazha"/>
+ ms.service="cdn" 
+ ms.workload="media" 
+ ms.tgt_pltfrm="na" 
+ ms.devlang="dotnet" 
+ ms.topic="article" 
+ ms.date="09/01/2015" 
+ ms.author="mazha"/>
 
 
 #Verwalten des Ablaufs von Blobinhalten im Azure CDN (Content Delivery Network)  
@@ -96,4 +96,4 @@ Falls gewünscht, kann ein Tool wie **wget** oder Fiddler verwendet werden, um d
 
 [Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-cloud-service-content.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

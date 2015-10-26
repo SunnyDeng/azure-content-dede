@@ -109,4 +109,4 @@ Wenn Sie festlegen, welchen Typ Sie für ein bestimmtes Runbook verwenden möcht
 - [Grundlagen des Windows PowerShell-Workflows](automation-powershell-workflow.md)
 - [Erstellen oder Importieren eines Runbooks](http://msdn.microsoft.com/library/azure/dn643637.aspx)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

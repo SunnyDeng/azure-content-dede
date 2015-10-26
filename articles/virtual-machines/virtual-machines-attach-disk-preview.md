@@ -19,12 +19,12 @@
 
 # Anfügen eines Datenträgers für Daten im Azure-Vorschauportal
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie haben auch die Möglichkeit, eine Ressource mit dem [klassischen Bereitstellungsmodell](storage-windows-attach-disk.md) zu erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](storage-windows-attach-disk.md).
 
 In diesem Artikel wird beschrieben, wie Sie über das Azure-Vorschauportal neue und vorhandene Datenträger an einen virtuellen Computer anfügen können. Lesen Sie die folgenden Tipps, bevor Sie mit diesem Vorgang fortfahren:
 
 - Die Größe des virtuellen Computers bestimmt, wie viele Datenträger Sie anfügen können. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
-- Für die Verwendung von Premium-Speicher benötigen Sie einen virtuellen Computer der DS- oder GS-Serie. Sie können Datenträger aus Premium- und aus Standard-Speicherkonten für diese virtuellen Computer verwenden. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
+- Für die Verwendung von Premium-Speicher benötigen Sie einen virtuellen Computer der DS- oder GS-Serie. Sie können Datenträger aus Premium- und aus Standard-Speicherkonten für diese virtuellen Computer verwenden. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
 - Bei Datenträgern, die an virtuelle Computer angefügt werden, handelt es sich um VHD-Dateien in einem Azure-Speicherkonto. Weitere Informationen finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
 - Neue Datenträger werden von Azure beim Anfügen automatisch erstellt. Sie müssen den Datenträger also nicht manuell erstellen.
 - Bei einem bereits vorhandenen Datenträger muss die VHD-Datei in einem Azure-Speicherkonto verfügbar sein. Sie können eine bereits vorhandene Datei verwenden, die noch nicht an einen anderen virtuellen Computer angefügt wurde, oder eine eigene VHD-Datei in das Speicherkonto hochladen.
@@ -79,7 +79,7 @@ Folgen Sie den Anweisungen zum Anfügen eines neuen oder eines vorhandenen Daten
 
 Nach dem Hinzufügen des Datenträgers müssen Sie ihn für die Verwendung im Betriebssystem des virtuellen Computers vorbereiten:
 
-- Informationen für Linux finden Sie unter "Gewusst wie: Initialisieren eines neuen Datenträgers unter Linux" in diesem [Artikel](virtual-machines-linux-how-to-attach-disk.md).
+- Informationen für Linux finden Sie unter "Vorgehensweise: Initialisieren eines neuen Datenträgers unter Linux" in diesem [Artikel](virtual-machines-linux-how-to-attach-disk.md).
 - Informationen für Windows finden Sie unter "Gewusst wie: Initialisieren eines neuen Datenträgers unter Windows Server" in diesem [Artikel](storage-windows-attach-disk.md).
 
 ## Zusätzliche Ressourcen
@@ -90,4 +90,4 @@ Nach dem Hinzufügen des Datenträgers müssen Sie ihn für die Verwendung im Be
 
 [Informationen zu Azure-Speicherkonten]: ../storage-whatis-account/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -66,8 +66,8 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "Box-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: 
-	![][1]
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: !
+	[][1]
 4. Klicken Sie auf **Erstellen**.
 
 
@@ -107,4 +107,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [4]: ./media/app-service-logic-connector-box/image_3.jpg
 [5]: ./media/app-service-logic-connector-box/image_4.jpg
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

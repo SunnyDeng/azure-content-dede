@@ -3,4 +3,4 @@ Um die Schritte in diesem Artikel ausführen zu können, müssen Sie [die Azure-
 
 > [AZURE.NOTE]Wenn Sie über kein Azure-Konto verfügen, müssen Sie eines erstellen. Sie können sich [hier](sign-up-organization.md) für eine kostenlose Testversion registrieren. Um alle Schritte ausführen zu können, muss außerdem [jq](https://stedolan.github.io/jq/) oder ein anderes JSON-Parsing-Tool oder eine Bibliothek installiert sein.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

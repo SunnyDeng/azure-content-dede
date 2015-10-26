@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="10/08/2015"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit Facebook-Konten
@@ -24,7 +24,7 @@
 
 Um Facebook als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden zu können, müssen Sie zuerst eine Facebook-Anwendung erstellen und die entsprechenden Parameter bereitstellen. Sie benötigen dazu ein Facebook-Konto. Wenn Sie kein Facebook-Konto haben, können Sie ein Konto unter [https://www.facebook.com/](https://www.facebook.com/) erstellen.
 
-1. Navigieren Sie zur [Facebook-Entwickler-Website](https://developers.facebook.com/), und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
+1. Navigieren Sie zur [Facebook-Entwickler-Website](https://developers.facebook.com/)￼, und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
 2. Falls Sie dies noch nicht getan haben, klicken Sie auf **Apps** und dann auf **Register as a Developer**, akzeptieren Sie die Richtlinie, und führen Sie die Schritte für die Registrierung aus.
 3. Klicken Sie auf **Apps** und dann auf **Add a new app**. Wählen Sie dann **Website** als Plattform aus, und klicken Sie auf **Skip and Create App ID**.
 
@@ -63,11 +63,11 @@ Um Facebook als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 ## Konfigurieren von Facebook als Identitätsanbieter in Ihrem Verzeichnis
 
 1. [Navigieren Sie zum B2C-Featureblatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
-2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter für soziale Medien**.
+2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter**.
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Geben Sie einen aussagekräftigen Namen für die Konfiguration des Identitätsanbieters unter **Name** ein. Geben Sie z. B. "FB" ein.
 5. Klicken Sie auf **Typ des Identitätsanbieters**, wählen Sie **Facebook** aus, und klicken Sie auf **OK**.
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie die **App-ID** und den **geheimen App-Schlüssel** der Facebook-Anwendung, die Sie zuvor erstellt haben, in den Feldern **Client-ID** und **Geheimer Clientschlüssel** ein.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Facebook-Konfiguration zu speichern.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -69,4 +69,4 @@ Als Nächstes definieren Sie das Azure SQL-Dataset wie folgt. Hinweis: Sie müs
 
 In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschließlich des Datetime-Felds mit dem benutzerdefinierten datetime-Format aus. Dabei wird die Kultur "fr-fr" beim Verschieben von Daten aus dem Blob in Azure SQL verwendet.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

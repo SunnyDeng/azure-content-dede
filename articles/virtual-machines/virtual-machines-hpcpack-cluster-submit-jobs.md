@@ -18,7 +18,7 @@ ms.service="virtual-machines"
 
 # Übermitteln von HPC-Aufträgen von einem lokalen Computer an einen HPC Pack-Cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Verwalten einer Ressource behandelt, die mit dem Ressourcen-Manager-Bereitstellungsmodell oder dem klassischen Bereitstellungsmodell erstellt wird.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 In diesem Artikel wird veranschaulicht, wie Sie einen lokalen Clientcomputer mit Windows konfigurieren, um HPC Pack-Tools für die Auftragsübermittlung auszuführen, die per HTTPS mit einem HPC Pack-Cluster in Azure kommunizieren. Dies ist eine einfache, flexible Möglichkeit für unterschiedliche Clusterbenutzer, Aufträge an einen cloudbasierten HPC Pack-Cluster zu übermitteln, ohne dass eine direkte Verbindung mit dem virtuellen Hauptknotencomputer zum Ausführen von Tools für die Auftragsübermittlung hergestellt werden muss.
 
@@ -183,4 +183,4 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 <!--Image references-->
 [jobsubmit]: ./media/virtual-machines-hpcpack-cluster-submit-jobs/jobsubmit.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

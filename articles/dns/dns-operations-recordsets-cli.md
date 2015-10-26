@@ -34,7 +34,7 @@ Datensatzgruppen werden mit dem Befehl `azure network dns record-set create` ers
 
 >Verwenden Sie für einen Datensatz auf oberster Ebene der Zone "@" als Datensatznamen, einschließlich der Anführungszeichen. Der vollqualifizierte Name der Datensatzgruppe entspricht dann dem Zonennamen, in diesem Fall "contoso.com".
 
-Azure DNS unterstützt die folgenden Eintragstypen: A, AAAA, CNAME, MX, NS, SOA, SRV und TXT. Datensatzgruppen vom Typ SOA werden automatisch mit jeder Zone erstellt; sie können nicht separat erstellt werden.
+Azure DNS unterstützt die folgenden Eintragstypen: A, AAAA, CNAME, MX, NS, SOA, SRV und TXT. Datensatzgruppen vom Typ SOA werden automatisch mit jeder Zone erstellt; sie können nicht separat erstellt werden. Beachten Sie, dass [der SPF-Datensatztyp durch die DNS-Standards zugunsten des Erstellens von SPF-Datensätzen mit dem Datensatztyp TXT verworfen wurde](http://tools.ietf.org/html/rfc7208#section-3.1).
 
 	azure network dns record-set create myresourcegroup contoso.com  www  A --ttl 300
 
@@ -75,7 +75,7 @@ In beiden Fällen geben Sie den Namen der Ressourcengruppe und den der Zone an.
 
 ## Hinzufügen eines Eintrags zu einer Datensatzgruppe
 
-Datensätze werden mithilfe von `azure network dns record-set add-record` Datensatzgruppen hinzugefügt.
+Datensätze werden mithilfe von `azure network dns record-set add-record` zu Datensatzgruppen hinzugefügt.
 
 Die Parameter zum Hinzufügen von Einträgen zu einer Datensatzgruppe variieren je nach Typ der Datensatzgruppe. Wenn Sie beispielsweise eine Datensatzgruppe vom Typ "A" verwenden, können Sie nur Einträge mit dem Parameter "-a `<IPv4 address>`" angeben.
 
@@ -239,4 +239,4 @@ Mit dem optionalen Switch "-q" kann diese Bestätigungsaufforderung unterdrückt
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset-cli.md)<BR> [Durchführen von Vorgängen für DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

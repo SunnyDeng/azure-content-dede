@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und 15Five erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Ein 15Five-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie 15Five zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer 15Five-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie 15Five zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer 15Five-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -88,7 +88,7 @@ Damit sich Azure AD-Benutzer bei 15Five anmelden können, müssen sie in 15Five
 
     ![Manage Company](./media/active-directory-saas-15five-tutorial/IC784675.png "Manage Company")
 
-3.  Wechseln Sie zu **People \> Add People**.
+3.  Wechseln Sie zu **People > Add People**.
 
     ![People](./media/active-directory-saas-15five-tutorial/IC784676.png "People")
 
@@ -121,4 +121,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

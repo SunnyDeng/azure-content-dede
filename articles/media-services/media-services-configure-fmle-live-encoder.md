@@ -71,7 +71,7 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
  
 - Codec: H.264 
 - Profil: Hoch (Level 4.0) 
-- Bitrate: 5000 Kbit/s 
+- Bitrate: 5.000 KBit/s 
 - Keyframe: 2 Sekunden (60 Sekunden) 
 - Bildfrequenz: 30
  
@@ -168,4 +168,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

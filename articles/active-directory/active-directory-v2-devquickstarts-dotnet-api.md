@@ -37,25 +37,28 @@ Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickS
 Die fertige App wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
 
-## 1. Registrieren einer App
-Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die [ausführlichen Schritte aus](active-directory-v2-app-registration.md).  Stellen Sie sicher, dass Sie:
+## 1\. Registrieren einer App
+Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die folgenden [ausführlichen Schritte](active-directory-v2-app-registration.md) aus. Stellen Sie sicher, dass Sie:
 
-- Die der App zugewiesene **Anwendungs-ID** kopieren, da Sie sie demnächst benötigen.
+- die Ihrer App zugewiesene **Anwendungs-ID** kopieren. Sie benötigen Sie in Kürze.
 
-Diese Visual Studio-Lösung enthält auch einen "TodoListClient", der eine einfache WPF-App ist. Der TodoListClient wurde dazu verwendet, um zu zeigen, wie sich ein Benutzer anmeldet und wie ein Client Anforderungen an die Web-API sendet. In diesem Fall werden sowohl der TodoListClient als auch der TodoListService von der gleichen App dargestellt. Um den TodoListClient zu konfigurieren, sollten Sie außerdem:
+Diese Visual Studio-Lösung enthält auch "TodoListClient", eine einfache WPF-App. Anhand von TodoListClient wird veranschaulicht, wie ein Benutzer sich anmeldet und wie ein Client Anforderungen an Ihre Web-API senden kann. In diesem Fall sind TodoListClient und TodoListService in einer App kombiniert. Zum Konfigurieren des TodoListClient sollten Sie außerdem folgende Schritte ausführen:
 
-- die **mobile** Plattform zur App hinzufügen.
-- den **Umleitungs-URI** aus dem Portal kopieren. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
+- Fügen Sie die **Mobile**-Plattform Ihrer App hinzu.
+- Kopieren Sie den **Umleitungs-URI** aus dem Portal. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
 
 
-## 2. Einrichten der App zur Verwendung mit der OWIN-Authentifizierungspipeline
+## 2\. Konfigurieren Ihrer Anwendung für die Verwendung der OWIN-Authentifizierungspipeline
 
-Nachdem Sie eine App registriert haben, müssen Sie sie so einrichten, dass sie mit dem v2.0-Endpunkt kommuniziert, damit eingehende Anforderungen und Token überprüft werden können.
+Nachdem Sie eine App registriert haben, müssen Sie die App für die Kommunikation mit dem v2.0-Endpunkt konfigurieren, damit eingehende Anforderungen und Token überprüft werden können.
 
 -	Öffnen Sie dazu zunächst die Projektmappe, und fügen Sie dem Projekt „TodoListService“ über die Paket-Manager-Konsole die NuGet-Pakete der OWIN-Middleware hinzu.
 
 ```
-PM> Installationspaket Microsoft.Owin.Security.OAuth - Projektname TodoListService PM> Installationspaket Microsoft.Owin.Security.Jwt - Projektname TodoListService PM > Installationspaket Microsoft.Owin.Host.SystemWeb - Projektname TodoListService '''
+PM> Install-Package Microsoft.Owin.Security.OAuth -ProjectName TodoListService
+PM> Install-Package Microsoft.Owin.Security.Jwt -ProjectName TodoListService
+PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
+```
 
 -	Fügen Sie dem Projekt „TodoListService“ eine OWIN-Startklasse mit dem Namen `Startup.cs` hinzu. Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie **Hinzufügen** --> **Neues Element** aus, und suchen Sie nach „OWIN“. Die OWIN-Middleware ruft beim Starten Ihrer Anwendung die Methode `Configuration(…)` auf.
 -	Ändern Sie die Klassendeklaration in `public partial class Startup` – einen Teil dieser Klasse haben wir bereits für Sie in einer anderen Datei implementiert. Rufen Sie in der Methode `Configuration(…)` „ConfigureAuth(...)“ auf, um die Authentifizierung für Ihre Webanwendung einzurichten.
@@ -138,7 +141,7 @@ public IEnumerable<TodoItem> Get()
 ## 3\. Konfigurieren einer Client-App und Ausführen des Dienstes
 Um den Dienst „TodoListService“ in Aktion sehen zu können, müssen Sie den TodoList-Client so konfigurieren, dass er Token vom v2.0-Endpunkt erhält und Aufrufe an den Dienst stellen kann.
 
-- Öffnen Sie im Projekt „TodoListClient“ die Datei `App.config`, und geben Sie Ihre Konfigurationswerte im Abschnitt `<appSettings>` ein.
+- Öffnen Sie im Projekt "TodoListClient" die Datei `App.config`, und geben Sie Ihre Konfigurationswerte im Abschnitt `<appSettings>` ein.
   -	`ida:ClientId` ist die App-ID, die Sie aus dem Portal kopiert haben.
 	- `ida:RedirectUri` ist der **Umleitungs-URI** aus dem Portal.
 
@@ -153,6 +156,6 @@ Sie können sich nun weiteren Themen zuwenden. Wie wäre es zum Beispiel mit Fol
 
 [Aufrufen einer Web-API über eine Web-App mit dem app-Modell v2. 0 >>](active-directory-devquickstarts-webapp-webapi-dotnet.md)
 
-Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
+Weitere Ressourcen: - [App-Modell v2.0 (Vorschauversion) >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->
