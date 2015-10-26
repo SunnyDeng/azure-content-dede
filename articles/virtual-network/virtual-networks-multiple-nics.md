@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten (NICs)"
-	description="Weitere Informationen zum Erstellen und Konfigurieren von virtuellen Computern mit mehreren Netzwerkkarten"
-	services="virtual-network, virtual-machines"
-	documentationCenter="na"
-	authors="telmosampaio"
-	manager="carolz"
-	editor="tysonn"/>
+   description="Weitere Informationen zum Erstellen und Konfigurieren von virtuellen Computern mit mehreren Netzwerkkarten"
+   services="virtual-network, virtual-machines"
+   documentationCenter="na"
+   authors="telmosampaio"
+   manager="carolz"
+   editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/10/2015"
-	ms.author="telmos"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/10/2015"
+   ms.author="telmos" />
 
 # Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten (NICs)
 
@@ -249,4 +249,4 @@ Führen Sie die folgenden Schritte aus, um eine Standardroute für die sekundär
 
 Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden, wird empfohlen, die sekundäre Netzwerkkarte auf Datenverkehrsflüsse im gleichen Subnetz zu beschränken. Wenn es jedoch in bestimmten Szenarien erforderlich ist, Verbindungen mit Adressen außerhalb des Subnetzes herzustellen, sollten Benutzer das richtlinienbasierte Routing aktivieren, um sicherzustellen, dass für eingehenden und ausgehenden Datenverkehr dieselbe Netzwerkkarte verwendet wird.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

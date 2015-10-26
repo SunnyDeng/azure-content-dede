@@ -77,4 +77,4 @@ Anleitungen zum Erstellen Ihrer SQL Data Warehouse-Lösung finden Sie im Artikel
 
 <!--Other web references-->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

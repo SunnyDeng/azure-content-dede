@@ -2,6 +2,7 @@
 	pageTitle="Leitfaden: erweiterte Datenverarbeitung in Azure | Microsoft Azure" 
 	description="Vorbereiten von Daten für die Verwendung in ADAPT (Advanced Analytics Process and Technology) für Azure Machine Learning." 
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="bradsev"  
 	manager="paulettm" />
@@ -24,4 +25,4 @@ Dieses Schema veranschaulicht das Vorbereiten von Daten für ein Azure Machine L
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/machine-learning-prepare-data-for-ml.svg" width="100%" height="100%"> </object>
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

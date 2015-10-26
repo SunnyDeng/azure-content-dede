@@ -256,4 +256,4 @@ Eine allgemeine Übersicht über SAS in Service Bus finden Sie unter [SAS (Share
 
 Weitere Hintergrundinformationen zur Service Bus-Authentifizierung finden Sie unter [Service Bus-Authentifizierung und -Autorisierung](service-bus-authentication-and-authorization.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

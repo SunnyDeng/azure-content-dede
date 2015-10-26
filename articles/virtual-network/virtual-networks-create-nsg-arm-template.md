@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="10/08/2015"
    ms.author="telmos" />
 
 # Erstellen von NSGs mithilfe einer Vorlage
@@ -97,19 +97,10 @@ In der verfügbaren Beispielvorlage im öffentlichen Repository wird eine Parame
 Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-Vorlage die folgenden Schritte aus.
 
 1. Wenn Sie Azure PowerShell zuvor noch nicht verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
-2. Führen Sie das Cmdlet **Switch-AzureMode** aus, um zum Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
-		Switch-AzureMode AzureResourceManager
+3. Führen Sie das Cmdlet **New-AzureRMResourceGroup** aus, um eine Ressourcengruppe mit der Vorlage zu erstellen.
 
-	Hier ist die erwartete Ausgabe des obigen Befehls:
-
-		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
-
-	>[AZURE.WARNING]Das Cmdlet "Switch-AzureMode" ist demnächst veraltet. In diesem Fall werden alle Ressourcen-Manager-Cmdlets umbenannt.
-
-3. Führen Sie das Cmdlet **New-AzureResourceGroup** aus, um eine Ressourcengruppe mit der Vorlage zu erstellen.
-
-		New-AzureResourceGroup -Name TestRG -Location uswest `
+		New-AzureRMResourceGroup -Name TestRG -Location uswest `
 		    -TemplateFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.json' `
 		    -TemplateParameterFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'	
 
@@ -147,7 +138,7 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		                    testvnetstorageprm  Microsoft.Storage/storageAccounts        westus  
 		                    testvnetstoragestd  Microsoft.Storage/storageAccounts        westus  
 		                    
-		ResourceId        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG
+		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
 ## Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilenschnittstelle
 
@@ -175,7 +166,7 @@ Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilensc
 		info:    Initializing template configurations and parameters
 		info:    Creating a deployment
 		info:    Created template deployment "azuredeploy"
-		data:    Id:                  /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG
+		data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 		data:    Name:                TestRG
 		data:    Location:            westus
 		data:    Provisioning State:  Succeeded
@@ -188,4 +179,4 @@ Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilensc
 	- **-f (oder --template-file)**. Pfad zu Ihrer ARM-Vorlagendatei.
 	- **-e (oder --parameters-file)**. Pfad zu Ihrer ARM-Parameterdatei.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in einem Hadoop-Cluster | Microsoft Azure"
-	description="Erfahren Sie, wie Sie HDInsight-Cluster mit Solr anpassen. Sie verwenden eine Script Action-Konfigurationsoption, um mithilfe eines Skripts Solr zu installieren."
+	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in Linux-basiertem HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Solr auf Linux-basierten HDInsight Hadoop-Clustern mit Skriptaktionen installieren."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/20/2015"
+	ms.date="10/09/2015"
 	ms.author="larryfr"/>
 
 # Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern
@@ -294,4 +294,4 @@ Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen fin
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

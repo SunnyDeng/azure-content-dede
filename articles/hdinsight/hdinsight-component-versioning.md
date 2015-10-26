@@ -162,4 +162,4 @@ Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -22,16 +22,12 @@
 
 In der Vergangenheit musste ein App-Entwickler, der sowohl Unterstützung für Microsoft-Konten als auch für Azure Active Directory benötigte, die Integration für zwei separate Systeme bereitstellen. Mit dem App-Modell, Version 2.0 können Sie nun Benutzer mit beiden Kontotypen anmelden. Mit einer einzelnen Implementierung können Sie eine Zielgruppe erreichen, die Millionen von Benutzern sowohl mit privaten als auch geschäftlichen Konten umfasst.
 
-Ihre Apps können auch auf einen [Satz von Office 365-REST-APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) mit einem der Kontentypen zurückgreifen. Derzeit umfasst dies Outlook-APIs für E-Mail, Kontakte und Kalender. Demnächst werden weitere Dienste hinzugefügt.
-<!-- TODO: customer reference article -->
-<!-- Several apps have already begun to bridge the gap between consumer and enterprise accounts, including: [Boomerang](), [TripIt](), & [Uber](). -->
+Ihre Apps können auch auf einen [Satz von Office 365-REST-APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) mit einem der Kontentypen zurückgreifen. Derzeit umfasst dies Outlook-APIs für E-Mail, Kontakte und Kalender. Demnächst werden weitere Dienste hinzugefügt. <!-- TODO: customer reference article --><!-- Several apps have already begun to bridge the gap between consumer and enterprise accounts, including: [Boomerang](), [TripIt](), & [Uber](). -->
 
-Das App-Modell, Version 2.0 befindet sich in der Vorschau. Während der Vorschauphase nehmen wir gerne Feedback entgegen und freuen uns, wenn Sie uns Ihre Erfahrung beim Testen des neuen App-Modells mitteilen. Anhand dieses Feedbacks nehmen wir möglicherweise grundlegende Änderungen zur Verbesserung des Diensts vor. Sie sollten innerhalb dieses Zeitraums keine Produktions-App mithilfe des App-Modells, Version 2.0 veröffentlichen.
-<!-- TODO: Get approval on how it looks  -->
+Das App-Modell, Version 2.0 befindet sich in der Vorschau. Während der Vorschauphase nehmen wir gerne Feedback entgegen und freuen uns, wenn Sie uns Ihre Erfahrung beim Testen des neuen App-Modells mitteilen. Anhand dieses Feedbacks nehmen wir möglicherweise grundlegende Änderungen zur Verbesserung des Diensts vor. Sie sollten innerhalb dieses Zeitraums keine Produktions-App mithilfe des App-Modells, Version 2.0 veröffentlichen. <!-- TODO: Get approval on how it looks  -->
 
 ## Erste Schritte
-Es gibt zwei Möglichkeiten, eine eigene App mit dem App-Modell, Version 2.0 zu erstellen und auszuführen. Sie können Protokollnachrichten direkt mit [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) oder[Open ID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) senden. Wahlweise können Sie auch unsere Bibliotheken dazu verwenden. Wählen Sie im Folgenden Ihre bevorzugte Plattform, und legen Sie los.
-<!-- TODO: Finalize this table  -->
+Es gibt zwei Möglichkeiten, eine eigene App mit dem App-Modell, Version 2.0 zu erstellen und auszuführen. Sie können Protokollnachrichten direkt mit [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) oder[Open ID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) senden. Wahlweise können Sie auch unsere Bibliotheken dazu verwenden. Wählen Sie im Folgenden Ihre bevorzugte Plattform, und legen Sie los. <!-- TODO: Finalize this table  -->
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-v2-quickstart-table.md)]
 
@@ -57,4 +53,4 @@ Die folgenden Links bieten ausführliche Informationen zur Plattform:
 - [v2 Endpoint FAQs](active-directory-v2-faq.md)
 -->
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

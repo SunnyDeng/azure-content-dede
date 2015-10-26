@@ -88,4 +88,4 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 [marketplace]: ./media/website-from-gallery/marketplace-icon.png
 [groupname]: ./media/website-from-gallery/set-rg.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

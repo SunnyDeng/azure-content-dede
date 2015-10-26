@@ -151,4 +151,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](role-based-access-control-powershell.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

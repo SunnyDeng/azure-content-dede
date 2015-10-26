@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/01/2015" 
+	ms.date="10/14/2015" 
 	ms.author="tomfitz"/>
 
 # Sperren von Ressourcen mit dem Azure-Ressourcen-Manager
@@ -93,11 +93,13 @@ Beispiele finden Sie unter [REST-API für Verwaltungssperren](https://msdn.micro
 
 ## Erstellen einer Sperre mit Azure PowerShell
 
-Sie können bereitgestellte Ressourcen mit Azure PowerShell sperren, indem Sie wie unten gezeigt das **New-AzureResourceLock**-Cmdlet verwenden. Mithilfe von PowerShell können Sie **LockLevel** nur auf **CanNotDelete** festlegen.
+[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
-    PS C:\> New-AzureResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites -ResourceGroupName ExampleGroup
+Sie können bereitgestellte Ressourcen mit Azure PowerShell sperren, indem Sie wie unten gezeigt das **New-AzureRmResourceLock**-Cmdlet verwenden. Mithilfe von PowerShell können Sie **LockLevel** nur auf **CanNotDelete** festlegen.
 
-PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-AzureResourceLock**, um eine Sperre zu aktualisieren, und **Remove-AzureResourceLock**, um eine Sperre zu löschen.
+    PS C:\> New-AzureRmResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites
+
+Azure PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-AzureRmResourceLock**, um eine Sperre zu aktualisieren, und **Remove-AzureRmResourceLock**, um eine Sperre zu löschen.
 
 ## Nächste Schritte
 
@@ -105,4 +107,4 @@ PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-
 - Informationen zum logischen Organisieren von Ressourcen finden Sie unter [Verwenden von Tags zum Organisieren von Ressourcen](resource-group-using-tags.md).
 - Informationen dazu, wie Sie die Ressourcengruppe für eine Ressource ändern, finden Sie unter [Verschieben von Ressourcen in eine neue Ressourcengruppe](resource-group-move-resources.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

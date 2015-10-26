@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe der Azure PowerShell"
-	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe der Azure PowerShell."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe der Azure PowerShell" 
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe der Azure PowerShell." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/27/2015" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Azure PowerShell
@@ -229,9 +229,9 @@ Eine Tabelle ist ein rechteckiges Dataset und verfügt über ein Schema. In dies
 
 	Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](http://go.microsoft.com/fwlink/?LinkId=516971).
 
-2.	Führen Sie den folgenden Befehl zum Erstellen der Data Factory-Tabelle aus.
+2.	Führen Sie den folgenden Befehl zum Erstellen des Data Factory-Datensatzes aus.
 
-		New-AzureDataFactoryTable $df -File .\EmpBlobTable.json
+		New-AzureDataFactoryDataset $df -File .\EmpBlobTable.json
 
 ### Erstellen der Ausgabetabelle
 In diesem Teil des Schritts erstellen Sie eine Ausgabetabelle namens **EmpSQLTable**, die auf eine SQL-Tabelle (**emp**) in der Azure SQL-Datenbank verweist, die durch den verknüpften Dienst **AzureSqlLinkedService** dargestellt wird. Die Pipeline kopiert Daten aus dem Eingabeblob in die Tabelle **emp**.
@@ -271,9 +271,9 @@ In diesem Teil des Schritts erstellen Sie eine Ausgabetabelle namens **EmpSQLTab
 	* Die Tabelle "emp" der Datenbank enthält die drei Spalten **ID**, **FirstName** und **LastName**. "ID" ist jedoch eine Identitätsspalte, weshalb Sie hier nur **FirstName** und **LastName** angeben müssen.
 	* Die Verfügbarkeit (**availability**) ist auf **hourly**, (**frequency** auf **hour** und **interval** auf **1**) festgelegt. Der Data Factory-Dienst generiert in der Tabelle **emp** in der Azure SQL-Datenbank stündlich einen Ausgabedatenslice.
 
-2.	Führen Sie den folgenden Befehl zum Erstellen der Data Factory-Tabelle aus.
+2.	Führen Sie den folgenden Befehl zum Erstellen des Data Factory-Datensatzes aus.
 	
-		New-AzureDataFactoryTable $df -File .\EmpSQLTable.json
+		New-AzureDataFactoryDataset $df -File .\EmpSQLTable.json
 
 
 ## <a name="CreateAndRunAPipeline"></a>Schritt 4: Erstellen und Ausführen einer Pipeline
@@ -432,4 +432,4 @@ In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassen
 [sql-management-studio]: ../sql-database-manage-azure-ssms.md#Step2
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

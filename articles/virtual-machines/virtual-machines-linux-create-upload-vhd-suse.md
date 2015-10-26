@@ -19,7 +19,6 @@
 
 # Vorbereiten eines virtuellen SLES- oder openSUSE-Computers für Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 - [Vorbereiten eines virtuellen SLES 11 SP3-Computers für Azure](#sles11)
 - [Vorbereiten eines virtuellen openSUSE 13.1+-Computers für Azure](#osuse)
@@ -179,4 +178,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 13. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

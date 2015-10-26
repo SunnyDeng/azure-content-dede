@@ -1,20 +1,20 @@
 <properties
    pageTitle="Installieren von .NET in einer Clouddienstrolle"
-	description="Dieser Artikel beschreibt die manuelle Installation eines .NET Frameworks in Clouddienstweb- und Workerrollen."
-	services="cloud-services"
-	documentationCenter=".net"
-	authors="sbtron"
-	manager="timlt"
-	editor=""/>
+   description="Dieser Artikel beschreibt die manuelle Installation eines .NET Frameworks in Clouddienstweb- und Workerrollen."
+   services="cloud-services"
+   documentationCenter=".net"
+   authors="sbtron"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="cloud-services"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/03/2015"
-	ms.author="saurabh"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/03/2015"
+   ms.author="saurabh"/>
 
 # Installieren von .NET in einer Clouddienstrolle 
 
@@ -142,4 +142,4 @@ Wenn Sie Ihren Dienst bereitstellen, wird die Startaufgabe ausgeführt und das .
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

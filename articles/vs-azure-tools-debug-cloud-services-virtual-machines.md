@@ -190,4 +190,4 @@ Visual Studio ASP.NET-Projekte bieten eine Option, einen praktischen virtuellen 
 - Verwenden Sie **IntelliTrace**, um ein Protokoll der Aufrufe und Ereignisse von einem freigegebenen Server zu sammeln. Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio](http://go.microsoft.com/fwlink/?LinkID=623016).
 - Verwenden Sie die **Azure-Diagnose**, um ausführliche Informationen zu Code, der in Rollen ausgeführt wird, zu protokollieren, unabhängig davon, ob die Rollen in der Entwicklungsumgebung oder in Azure ausgeführt werden. Weitere Informationen finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](http://go.microsoft.com/fwlink/p/?LinkId=400450).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

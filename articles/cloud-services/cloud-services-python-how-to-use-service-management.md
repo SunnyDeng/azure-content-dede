@@ -445,4 +445,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [Virtual Machines]: http://msdn.microsoft.com/library/windowsazure/jj156003.aspx
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

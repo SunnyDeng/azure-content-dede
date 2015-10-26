@@ -110,4 +110,4 @@ Wenn Sie mehr erfahren möchten, besuchen Sie unseren [Lernpfad](http://azure.mi
 [1]: ./media/documentdb-introduction/resources1.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

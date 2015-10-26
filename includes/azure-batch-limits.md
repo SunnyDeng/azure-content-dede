@@ -7,4 +7,4 @@ Maximale Anzahl der Aufträge pro Serverknoten|4 x Anzahl der Kerne des Knotens|
 
 <sup>1</sup> Die Anzahl der Kerne pro Batch-Konto kann erhöht werden, die maximale Anzahl ist jedoch nicht festgelegt. Wenden Sie sich an den Kundensupport, um Fragen der Erhöhung zu erörtern. <sup>2</sup> Umfasst einmalig ausgeführte aktive Aufträge und aktive Auftragszeitpläne.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

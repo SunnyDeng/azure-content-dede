@@ -13,11 +13,11 @@ Es ist zwar möglich, einen MongoLab-URI in Ihren Code einzufügen, aber wir emp
 1. Wählen Sie in der Dropdown-Liste **Typ** die Option **Benutzerdefiniert** (statt der Standardeinstellung **SQLAzure**).
 1. Klicken Sie in der Symbolleiste auf **Speichern**. ![SaveWebApp][button-website-save]
 
-**Hinweis:** Azure fügt zu dieser Variablen das Präfix **CUSTOMCONNSTR\\\_** hinzu. Aus diesem Grund verweist der Code oben auf **CUSTOMCONNSTR\\\_MONGOLAB\_URI**.
+**Hinweis:** Azure fügt zu dieser Variablen das Präfix **CUSTOMCONNSTR\\_** hinzu. Aus diesem Grund verweist der Code oben auf **CUSTOMCONNSTR\\_MONGOLAB\_URI**.
 
 [entry-website]: ./media/howto-save-connectioninfo-mongolab/entry-website.png
 [focus-mongolab-websitedashboard-config]: ./media/howto-save-connectioninfo-mongolab/focus-mongolab-websitedashboard-config.png
 [focus-mongolab-websiteconnectionstring]: ./media/howto-save-connectioninfo-mongolab/focus-mongolab-websiteconnectionstring.png
 [button-website-save]: ./media/howto-save-connectioninfo-mongolab/button-website-save.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

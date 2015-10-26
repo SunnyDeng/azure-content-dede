@@ -2,4 +2,4 @@
 > 
 > Wenn Ressourcen in einem v1-Netzwerk vorhanden sind und diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können sollen, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Erstellen einer Verbindung zwischen einem virtuellen v2-Netzwerk und einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

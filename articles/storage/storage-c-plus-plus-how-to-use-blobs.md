@@ -242,4 +242,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speichern vertraut gemacht habe
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

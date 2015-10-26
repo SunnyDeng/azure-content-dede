@@ -24,4 +24,4 @@
 
 4. Schalten Sie das System ein, indem Sie die Netzschalter beider PCMs in die Position ON bringen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

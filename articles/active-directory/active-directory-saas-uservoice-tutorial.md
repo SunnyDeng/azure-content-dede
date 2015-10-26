@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und UserVoice erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Ein UserVoice-Mandant
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie UserVoice zugewiesen haben, mittels einmaligen Anmeldens auf der UserVoice-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie UserVoice zugewiesen haben, mittels einmaligen Anmeldens auf der UserVoice-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -53,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Use
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei UserVoice zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für UserVoice müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei UserVoice zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für UserVoice müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-uservoice-tutorial/IC777516.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **UserVoice-Anmelde-URL** die URL im Format "*https://\\<Mandantenname\>.UserVoice.com*" ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **UserVoice-Anmelde-URL** die URL im Format "*https://\<Mandantenname>.UserVoice.com*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-uservoice-tutorial/IC777517.png "App-URL konfigurieren")
 
@@ -87,7 +87,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Benutzerauthentifizierung bearbeiten](./media/active-directory-saas-uservoice-tutorial/IC777521.png "Benutzerauthentifizierung bearbeiten")
 
-    1.  Klicken Sie auf **Einmaliges Anmelden \(SSO\)**.
+    1.  Klicken Sie auf **Einmaliges Anmelden (SSO)**.
     2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei UserVoice** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Einmalige Remoteanmeldung** ein.
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei UserVoice** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Einmalige Remoteabmeldung** ein.
     4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **SHA1-Fingerabdruck des aktuellen Zertifikats** ein.  
@@ -149,4 +149,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

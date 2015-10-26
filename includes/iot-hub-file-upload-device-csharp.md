@@ -74,4 +74,4 @@ In diesem Abschnitt ändern Sie die simulierte Geräteanwendung, die Sie in [Sen
 
 <!-- Images -->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

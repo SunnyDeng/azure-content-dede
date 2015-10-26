@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und AirWatch erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein AirWatch-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die AirWatch zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer AirWatch-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die AirWatch zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer AirWatch-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +51,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Air
     ![AirWatch](./media/active-directory-saas-airwatch-tutorial/IC791915.png "AirWatch")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei AirWatch zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei AirWatch zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-airwatch-tutorial/IC791917.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **AirWatch-Anmelde-URL** die von Ihren Benutzern zur Anmeldung bei der AirWatch-Anwendung verwendete URL ein \(z. B. "*https://companycode.awmdm.com/AirWatch/Login?gid=companycode*"\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **AirWatch-Anmelde-URL** die von Ihren Benutzern zur Anmeldung bei der AirWatch-Anwendung verwendete URL ein (z. B. "*https://companycode.awmdm.com/AirWatch/Login?gid=companycode*"), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-airwatch-tutorial/IC791918.png "App-URL konfigurieren")
 
@@ -114,13 +114,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Attribut](./media/active-directory-saas-airwatch-tutorial/IC791927.png "Attribut")
 
-    1.  Geben Sie im Textfeld **Object Identifier** den Wert **http://schemas.microsoft.com/identity/claims/objectidentifier** ein.
-    2.  Geben Sie im Textfeld **Username** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
-    3.  Geben Sie im Textfeld **Display Name** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
-    4.  Geben Sie im Textfeld **First Name** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
-    5.  Geben Sie im Textfeld **Last Name** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
-    6.  Geben Sie im Textfeld **Email** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
-    7.  Klicken Sie auf **Speichern**.
+    1.  Geben Sie im Textfeld **Object Identifier** den Wert ****http://schemas.microsoft.com/identity/claims/objectidentifier** ein.
+2.  Geben Sie im Textfeld **Username** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+3.  Geben Sie im Textfeld **Display Name** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+4.  Geben Sie im Textfeld **First Name** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+5.  Geben Sie im Textfeld **Last Name** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
+6.  Geben Sie im Textfeld **Email** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+7.  Klicken Sie auf **Speichern**.
 
 14. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
@@ -137,7 +137,7 @@ Damit sich Azure AD-Benutzer bei AirWatch anmelden können, müssen sie in AirW
 
     ![Benutzer](./media/active-directory-saas-airwatch-tutorial/IC791929.png "Benutzer")
 
-3.  Klicken Sie im Menü **Users** auf **List View**, und klicken Sie dann auf **Add \> Add User**.
+3.  Klicken Sie im Menü **Users** auf **List View**, und klicken Sie dann auf **Add > Add User**.
 
     ![Benutzer hinzufügen](./media/active-directory-saas-airwatch-tutorial/IC791930.png "Benutzer hinzufügen")
 
@@ -168,4 +168,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!-------HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

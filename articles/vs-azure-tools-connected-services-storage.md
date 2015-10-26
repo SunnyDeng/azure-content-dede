@@ -1,20 +1,19 @@
 <properties 
    pageTitle="Hinzufügen von Azure Storage mithilfe von verbundenen Diensten in Visual Studio | Microsoft Azure"
-	description="Fügen Sie Ihrer App mithilfe des Dialogfelds Verbundene Dienste hinzufügen in Visual Studio Azure Storage hinzu"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="patshea123"
-	manager="douge"
-	editor="tlee"/>
-
+   description="Fügen Sie Ihrer App mithilfe des Dialogfelds ";Verbundene Dienste hinzufügen"; in Visual Studio Azure Storage hinzu"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="patshea123"
+   manager="douge"
+   editor="tlee" />
 <tags 
    ms.service="visual-studio-online"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="mobile"
-	ms.date="08/12/2015"
-	ms.author="patshea"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="mobile"
+   ms.date="08/12/2015"
+   ms.author="patshea" />
 
 # Hinzufügen von Azure-Speicher mithilfe von verbundenen Visual Studio-Diensten
 
@@ -95,4 +94,4 @@ Wenn Sie die Bearbeitung des Dialogfelds abschließen, fügt Visual Studio Verwe
 
      - [Speicherdokumentation auf "azure.microsoft.com"](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

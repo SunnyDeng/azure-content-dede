@@ -44,7 +44,7 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](activ
 
 - Wählen Sie **Registrierung mit Benutzer-ID** oder **E-Mail-Registrierung** auf dem Blatt für den Identitätsanbieter aus.
 - Wählen Sie den **Anzeigenamen** und einige andere Anmeldeattribute in der Registrierungsrichtlinie aus.
-- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsanspruch in den Richtlinien aus. Sie können auch andere Ansprüche auswählen.
+- Wählen Sie den **Anzeigenamen** und die **Objekt-ID** als Anwendungsanspruch in jeder Richtlinie aus. Sie können auch andere Ansprüche auswählen.
 - Notieren Sie sich den **Namen** der einzelnen Richtlinien nach ihrer Erstellung. Sie benötigen diese Richtliniennamen in Kürze. 
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
@@ -219,10 +219,8 @@ Erstellen Sie abschließend `TaskWebApp` und `TaskService`, und führen Sie beid
 
 ## 8\. Bearbeiten der Richtlinien
 
-Nachdem Sie eine API mit Azure AD B2C gesichert haben, können Sie mit Richtlinien für Ihre App experimentieren und den Effekt (oder dessen Fehlen) auf die API sehen. Sie können die **Anwendungsansprüche** in den Richtlinien bearbeiten und die Benutzerinformationen ändern, die in der Web-API verfügbar sind. Zusätzliche Ansprüche, die Sie hinzufügen, stehen Ihrer .NET MVC-Web-API im `ClaimsPrincipal`-Objekt zur Verfügung, wie oben beschrieben.
-<!--add **identity providers** 
-to the policies, allowing you users to sign into the Task Client using social accounts.  You can also 
--->
+Nachdem Sie eine API mit Azure AD B2C gesichert haben, können Sie mit Richtlinien für Ihre App experimentieren und den Effekt (oder dessen Fehlen) auf die API sehen. Sie können <!--add **identity providers**
+to the policies, allowing you users to sign into the Task Client using social accounts.  You can also -->die **Anwendungsansprüche** in den Richtlinien bearbeiten und die Benutzerinformationen ändern, die in der Web-API verfügbar sind. Zusätzliche Ansprüche, die Sie hinzufügen, stehen Ihrer .NET MVC-Web-API im `ClaimsPrincipal`-Objekt zur Verfügung, wie oben beschrieben.
 
 <!--
 
@@ -236,4 +234,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

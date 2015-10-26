@@ -109,4 +109,4 @@ Sehen Sie sich den [Index Advisor](sql-database-index-advisor.md) an, um weitere
 [2]: ./media/sql-database-query-performance/top-queries.png
 [3]: ./media/sql-database-query-performance/query-details.png
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -153,4 +153,4 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 Weitere Informationen finden Sie in den [Versionshinweisen zu Update 1.2](storsimple-update1-release-notes.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

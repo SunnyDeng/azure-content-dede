@@ -81,4 +81,4 @@ Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen w
 - [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

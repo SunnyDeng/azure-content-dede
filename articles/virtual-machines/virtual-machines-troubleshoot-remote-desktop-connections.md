@@ -19,7 +19,8 @@
 
 # Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel erfahren Sie, wie Sie Probleme bei einem virtuellen Computer behandeln, der mit dem klassischen oder Ressourcen-Manager-Bereitstellungsmodell erstellt wurde.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 Es kann unterschiedliche Gründe haben, warum Remotedesktop (RDP) keine Verbindung mit Ihrem Windows-basierten virtuellen Azure-Computer herstellen kann. Dieser Artikel hilft Ihnen, die Ursachen zu ermitteln und zu korrigieren.
 
@@ -157,4 +158,4 @@ Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem vir
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

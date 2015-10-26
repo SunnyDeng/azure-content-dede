@@ -152,4 +152,4 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
 Einen Vergleich zwischen den in diesem Artikel besprochenen Azure Servicebus-Warteschlangen und den unter [Verwenden des Azure-Warteschlangendiensts](/develop/ruby/how-to-guides/queue-service/) besprochenen Azure-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -10,4 +10,4 @@
 |Archivierung|N/V|Verfügbar|N/V|N/V|Verfügbar|
 |Hohe Verfügbarkeit |N/V|N/V|Verfügbar|Verfügbar|Verfügbar|
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

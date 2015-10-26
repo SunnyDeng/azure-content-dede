@@ -24,4 +24,4 @@
 
 & #42; Der maximale Durchsatz pro E/A-Typ wurde mit 100 %-Lese- und 100 %-Schreibszenarien gemessen. Der tatsächliche Durchsatz kann geringer sein und hängt von der E/A-Mischung und den Netzwerkbedingungen ab.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/26/2015" 
+	ms.date="08/18/2015" 
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Managed Cache Service
@@ -485,4 +485,4 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 [Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

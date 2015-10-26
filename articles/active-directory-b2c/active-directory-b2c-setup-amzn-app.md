@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="10/08/2015"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit Amazon-Konten
@@ -49,11 +49,11 @@ Um Amazon als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden z
 ## Konfigurieren von Amazon als Identitätsanbieter in Ihrem Verzeichnis
 
 1. [Navigieren Sie zum B2C-Featureblatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
-2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter für soziale Medien**.
+2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter**.
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Geben Sie einen aussagekräftigen Namen für die Konfiguration des Identitätsanbieters unter **Name** ein. Geben Sie z. B. "Amzn" ein.
 5. Klicken Sie auf **Typ des Identitätsanbieters**, wählen Sie **Amazon** aus, und klicken Sie auf **OK**.
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie die **App-ID** und den **geheimen App-Schlüssel** der Amazon-Anwendung ein, die Sie zuvor erstellt haben.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für Amazon zu speichern.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

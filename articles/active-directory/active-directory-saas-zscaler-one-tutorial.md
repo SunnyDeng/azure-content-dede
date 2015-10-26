@@ -50,7 +50,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Zsc
 
 7.  Wählen Sie im Ergebnisbereich **Zscaler One** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen.
 
-	![Zscaler One](./media/active-directory-saas-zscaler-one-tutorial/IC800216.png "Zscaler One")
+	![ZScaler One](./media/active-directory-saas-zscaler-one-tutorial/IC800216.png "ZScaler One")
 
 ##Konfigurieren der einmaligen Anmeldung
 
@@ -188,4 +188,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

@@ -19,7 +19,8 @@
 
 # Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Das folgende Skript zeigt, wie Sie eine Dienstbereitstellung mit mehreren virtuellen Computern und mehreren Clouds in einem VNET über die Azure-Befehlszeilenschnittstelle (Azure-CLI) konfigurieren.
 
@@ -32,12 +33,12 @@ Das Skript erstellt im Clouddienst **servercs** einen virtuellen Computer (**ser
 ## Dafür erforderliches CLI-Skript
 Der Code für diese Einrichtung ist relativ einfach:
 
->[AZURE.NOTE]Sie müssen wahrscheinlich die Namen der Cloud-Dienste servercs und workercs ändern, sodass es sich um eindeutige Cloud-Dienstnamen handelt.
+>[AZURE.NOTE]Sie müssen wahrscheinlich die Namen der Clouddienste servercs und workercs ändern, sodass es sich um eindeutige Clouddienstnamen handelt.
 
     azure network vnet create samplevnet -l "West US"
-    azure vm create -l "West US" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB azureuser Password@1
-    azure vm create -l "West US" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB azureuser Password@1
-    azure vm create -l "West US" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-DE-DE-30GB azureuser Password@1
+    azure vm create -l "West US" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
+    azure vm create -l "West US" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
+    azure vm create -l "West US" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
     azure vm disk attach-new servervm 100
     azure vm disk attach-new servervm 500
     azure vm endpoint create servervm 443 443 -n https -o tcp
@@ -70,4 +71,4 @@ Während Sie weitere Informationen zu jedem der Azure-CLI-Befehle mithilfe der O
 * [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md)
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

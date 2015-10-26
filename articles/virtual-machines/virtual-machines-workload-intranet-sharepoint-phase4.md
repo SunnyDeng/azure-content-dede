@@ -19,7 +19,8 @@
 
 # SharePoint-Intranetfarm-Workload Phase 4: Konfigurieren der SharePoint-Server
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten richten Sie die Anwendungs- und Webebenen der SharePoint-Farm ein und erstellen die Farm unter Verwendung des SharePoint-Konfigurations-Assistenten.
 
@@ -197,4 +198,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 5: Erstelle
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

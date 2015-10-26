@@ -19,7 +19,8 @@
 
 # Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Durch das Verwenden von Ressourcengruppen und Vorlagen, können Sie alle Ressourcen verwalten, die zusammen Ihre Anwendung unterstützen. In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in der Azure-Ressourcenverwaltungsbibliothek verwenden und eine Vorlage zum Bereitstellen eines virtuellen Computers, virtuellen Netzwerks und Speicherkontos erstellen können.
 
@@ -29,7 +30,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/DE-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/DE-DE/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/en-us/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 - [Azure PowerShell](../powershell-install-configure.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
@@ -38,31 +39,23 @@ Die Durchführung dieser Schritte dauert etwa 30 Minuten.
 
 Um Azure AD zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manager zu verwenden, muss dem Standardverzeichnis eine Anwendung hinzugefügt werden. Gehen Sie zum Hinzufügen einer Anwendung folgendermaßen vor:
 
-1. Öffnen Sie eine Azure PowerShell-Eingabeaufforderung, und führen Sie dann diesen Befehl aus:
+1. Öffnen Sie eine Azure PowerShell-Eingabeaufforderung, führen Sie dann diesen Befehl aus, und geben Sie die Anmeldeinformationen für Ihr Abonnement nach Aufforderung ein:
 
-        Switch-AzureMode –Name AzureResourceManager
+	    Login-AzureRmAccount
 
-2. Legen Sie das Azure-Konto fest, das Sie für dieses Lernprogramm verwenden möchten. Führen Sie diesen Befehl aus, und geben Sie die Anmeldeinformationen für Ihr Abonnement nach Aufforderung ein:
+2. Ersetzen Sie im folgenden Befehl {password} durch das Kennwort, das Sie verwenden möchten, und führen Sie ihn anschließend aus, um die Anwendung zu erstellen:
 
-	    Add-AzureAccount
+	    New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-3. Ersetzen Sie im folgenden Befehl {password} durch das Kennwort, das Sie verwenden möchten, und führen Sie ihn anschließend aus, um die Anwendung zu erstellen:
+	>[AZURE.NOTE]Notieren Sie die Anwendungs-ID, die nach dem Erstellen der Anwendung zurückgegeben wird, da Sie diese für den nächsten Schritt benötigen. Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Active Directory-Bereich des Verwaltungsportals.
 
-	    New-AzureADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
+3. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
 
-4. Notieren Sie den Wert des ApplicationId-Werts in der Antwort aus dem vorherigen Schritt. Sie werden ihn später im Lernprogramm benötigen:
+        New-AzureRmADServicePrincipal -ApplicationId {application-id}
 
-	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/azureapplicationid.png)
+4. Legen Sie die Berechtigung zum Verwenden der Anwendung fest:
 
-	>[AZURE.NOTE]Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Verwaltungsportal.
-
-5. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
-
-        New-AzureADServicePrincipal -ApplicationId {application-id}
-
-6. Legen Sie die Berechtigung zum Verwenden der Anwendung fest:
-
-	    New-AzureRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
+	    New-AzureRmRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
 
 ## Schritt 2: Erstellen des Visual Studio-Projekts, der Vorlagendatei und der Parameterdatei
 
@@ -304,7 +297,7 @@ Um Werte für die Ressourcenparameter anzugeben, die in der Vorlage definiert wu
           }
         }
 
-    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Informationen zu Images für virtuelle Computer](https://azure.microsoft.com/DE-DE/documentation/articles/virtual-machines-images/). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
+    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Informationen zu Images für virtuelle Computer](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-images/). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
 
 
 4.	Speichern Sie Parameterdatei, die Sie erstellt haben.
@@ -453,4 +446,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

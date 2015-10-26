@@ -8,7 +8,6 @@
    editor=""
    tags=""/>
 
-
 <tags
    ms.service="best-practice"
    ms.devlang="rest-api"
@@ -17,7 +16,6 @@
    ms.workload="na"
    ms.date="04/28/2015"
    ms.author="masashin"/>
-
 
 # Leitfaden zum API-Design
 
@@ -525,4 +523,4 @@ Dieser Ansatz ist wohl der ursprünglichste Mechanismus zur Versionsverwaltung u
 - Das [RESTful-Cookbook](http://restcookbook.com/) enthält eine Einführung zum Erstellen von RESTful-APIs.
 - Die [Web-API-Checkliste](https://mathieu.fenniak.net/the-api-checklist/) enthält eine nützliche Liste der zu berücksichtigenden Punkte beim Entwerfen und Implementieren einer Web-API.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

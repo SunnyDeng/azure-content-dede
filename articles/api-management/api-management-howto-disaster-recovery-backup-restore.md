@@ -189,4 +189,4 @@ Sehen Sie sich die folgenden Microsoft-Blogs für zwei verschiedene Vorgehenswei
 [api-management-endpoint]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-endpoint.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

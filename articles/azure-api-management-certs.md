@@ -52,4 +52,4 @@ Sobald Sie ein Verwaltungszertifikat erstellt haben (CER-Datei nur mit dem öffe
 
 Da Sie jetzt einem Abonnement ein Verwaltungszertifikat zugeordnet haben, können Sie (nachdem Sie das entsprechende Zertifikat lokal installiert haben) programmgesteuert eine Verbindung mit der [Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/mt420159.aspx) herstellen und die verschiedenen Azure-Ressourcen automatisieren, die auch diesem Abonnement zugeordnet sind.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

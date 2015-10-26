@@ -19,7 +19,8 @@
 
 # Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie haben auch die Möglichkeit, diese Ressourcen mit dem [klassischen Bereitstellungsmodell](virtual-machines-base-configuration-test-environment.md) zu erstellen.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-base-configuration-test-environment.md).
 
 Dieser Artikel enthält Schritt-für-Schritt-Anleitungen zum Erstellen der Testumgebung „Basiskonfiguration“ in einem Microsoft Azure Virtual Network mit virtuellen Computern, die im Ressourcen-Manager erstellt wurden.
 
@@ -65,7 +66,7 @@ Wählen Sie als Nächstes das richtige Azure-Abonnement für diese Befehle aus. 
 	$subscr="<Subscription name>"
 	Select-AzureSubscription -SubscriptionName $subscr –Current
 
-Sie erhalten den Abonnementnamen aus der Eigenschaft "SubscriptionName" in der Anzeige des Befehls **Get-AzureSubscription**.
+Sie erhalten den Abonnementnamen aus der SubscriptionName-Eigenschaft in der Anzeige des Befehls **Get-AzureSubscription**.
 
 Wechseln Sie in Azure PowerShell jetzt in den Ressourcen-Manager-Modus.
 
@@ -95,7 +96,7 @@ Um zu testen, ob ein gewählter Speicherkontenname global eindeutig ist, müssen
 	Switch-AzureMode AzureServiceManagement
 	Test-AzureName -Storage <Proposed storage account name>
 
-Wenn der Befehl "Test-AzureName" als Ergebnis **False** zurückgibt, ist der vorgeschlagene Name eindeutig. Wenn Sie einen eindeutigen Namen ermittelt haben, wechseln Sie mit dem folgenden Befehl wieder in den Ressourcen-Manager-Modus von Azure PowerShell.
+Wenn der Befehl „Test-AzureName“ als Ergebnis **False** zurückgibt, ist der vorgeschlagene Name eindeutig. Wenn Sie einen eindeutigen Namen ermittelt haben, wechseln Sie mit dem folgenden Befehl wieder in den Ressourcen-Manager-Modus von Azure PowerShell.
 
 	Switch-AzureMode AzureResourceManager 
 
@@ -335,4 +336,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

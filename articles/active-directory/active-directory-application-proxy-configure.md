@@ -31,4 +31,4 @@ Für erste Schritte mit dem Anwendungsproxy gehen Sie folgendermaßen vor: 1. [A
 
 [Microsoft Azure-Blog](http://azure.microsoft.com/blog/) [Anwendungsproxydienste aktivieren](active-directory-application-proxy-enable.md) [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md) [Problembehandlung Anwendungsproxy](active-directory-application-proxy-troubleshoot.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

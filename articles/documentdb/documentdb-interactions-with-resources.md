@@ -205,4 +205,4 @@ Lesen Sie die [Azure DocumentDB-REST-API-Referenz](https://msdn.microsoft.com/li
 [1]: ./media/documentdb-interactions-with-resources/interactions-with-resources2.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

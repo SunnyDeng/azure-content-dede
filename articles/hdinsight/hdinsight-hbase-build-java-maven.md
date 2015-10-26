@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen einer HBase-Anwendung mit Maven | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit Apache Maven eine Java-basierte Apache HBase-Anwendung erstellen und anschließend in Azure HDInsight bereitstellen können."
+	pageTitle="Erstellen einer HBase-Anwendung mit Maven und Bereitstellen in Windows-basiertem HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit Apache Maven eine Java-basierte Apache HBase-Anwendung erstellen und anschließend in einem Windows-basiertem Azure HDInsight-Cluster bereitstellen können."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="10/09/2015"
 	ms.author="larryfr"/>
 
 #Verwenden von Maven zur Entwicklung von Java-Anwendungen, die HBase mit HDInsight (Hadoop) nutzen
@@ -592,4 +592,4 @@ Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 
 Verwenden Sie den Parameter `-showErr`, wenn Sie den Standardfehler (STDERR) sehen möchten, der während der Ausführung des Auftrags erzeugt wurde.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

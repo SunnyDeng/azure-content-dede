@@ -18,9 +18,11 @@
  ms.author="rasquill"/>
 
 #Informationen zum Agent und zu Erweiterungen für virtuelle Computer
+
 Der Azure-Agent für virtuelle Computer (VM-Agent) dient zum Installieren, Konfigurieren, Verwalten und Ausführen von Azure-Erweiterungen für virtuelle Computer (VM-Erweiterungen). VM-Erweiterungen bieten dynamische Features, die von Microsoft und Drittanbietern bereitgestellt werden. Der Agent und die Erweiterungen werden in erster Linie über das Verwaltungsportal hinzugefügt, jedoch können Sie auch die [PowerShell](../install-configure-powershell.md)-Cmdlets oder die [Azure-Befehlszeilenschnittstelle](xplat-install.md) zum Hinzufügen und Konfigurieren verwenden, wenn Sie einen virtuellen Computer erstellen oder vorhandene virtuelle Computer nutzen.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf Bereitstellungsaufrufe für das klassische Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 
 VM-Erweiterungen helfen Ihnen bei folgenden Aufgaben:
@@ -64,4 +66,4 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
 
 Weitere Informationen zu diesen Aufgaben finden Sie unter [Hinzufügen, Suchen, Aktualisieren und Entfernen von Azure-VM-Erweiterungen](virtual-machines-extensions-install.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -7,14 +7,7 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags 
-	ms.service="backup" 
-	ms.workload="storage-backup-recovery" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
-	ms.author="jimpark"; "aashishr"; "sammehta"; "anuragm"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="jimpark"; "aashishr"; "sammehta"; "anuragm"/>
 
 
 # Bereitstellen und Verwalten der Sicherung in Azure für Data Protection Manager (DPM)-Server mit PowerShell
@@ -37,16 +30,35 @@ Sample DPM scripts: Get-DPMSampleScript
 ```
 
 ## Einrichtung und Registrierung
+Vorbereitung:
 
-### Erstellen eines Sicherungstresors
-Sie können mit dem Cmdlet **New-AzureBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+1. [Laden Sie die aktuelle PowerShell-Version herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
+2. Aktivieren Sie die Azure Backup-Cmdlets, indem Sie über das Cmdlet **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
 
 ```
-PS C:\> New-AzureResourceGroup –Name “test-rg” –Location “West US”
+PS C:\> Switch-AzureMode AzureResourceManager
+```
+
+Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell automatisiert werden:
+
+- Erstellen eines Sicherungstresors
+- Installieren des Azure Backup-Agents
+- Registrieren beim Azure Backup-Dienst
+- Netzwerkeinstellungen
+- Verschlüsselungseinstellungen
+
+### Erstellen eines Sicherungstresors
+
+> [AZURE.WARNING]Kunden, die Azure Backup zum ersten Mal verwenden, müssen den Azure Backup-Anbieter registrieren, der mit ihrem Abonnement verwendet werden soll. Führen Sie hierzu den folgenden Befehl aus: Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
+
+Sie können mit dem Cmdlet **New-AzureRMBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+
+```
+PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “West US”
 PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
 ```
 
-Mit dem Cmdlet **Get-AzureBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
+Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
 
 
 ### Installieren des Azure Backup-Agents auf einem DPM-Server
@@ -75,16 +87,7 @@ Die verfügbaren Optionen umfassen:
 
 | Option | Details | Standard |
 | ---- | ----- | ----- |
-| /q | Unbeaufsichtigte Installation | - |
-| /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent |
-| /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
-| /m | Microsoft Update abonnieren | - |
-| /nu | Nach Abschluss der Installation nicht nach Updates suchen | - |
-| /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - |
-| /ph | Proxyhostadresse | - |
-| /po | Proxyhost-Portnummer | - |
-| /pu | Proxyhost-Benutzername | - |
-| /pw | Proxykennwort | - |
+| /q | Unbeaufsichtigte Installation | - | | /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent || /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch || /m | Microsoft Update abonnieren | - | | /nu | Nach Abschluss der Installation nicht nach Updates suchen | - | | /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - | | /ph | Proxyhostadresse | - | | /po | Proxyhost-Portnummer | - | | /pu | Proxyhost-Benutzername | - | | /pw | Proxykennwort | - |
 
 ### Registrieren beim Azure Backup-Dienst
 Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass die [Voraussetzungen](backup-azure-dpm-introduction.md) erfüllt sind. Die Voraussetzungen lauten wie folgt:
@@ -213,7 +216,7 @@ PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 Wiederholen Sie diesen Schritt, bis Sie der Schutzgruppe alle ausgewählten Datenquellen hinzugefügt haben. Sie können auch mit einer Datenquelle beginnen, die Schritte zum Erstellen der Schutzgruppe durchführen und der Schutzgruppe später weitere Datenquellen hinzufügen.
 
 ### Auswählen der Datenschutzmethode
-Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet. Sie müssen auch die zu schützende Datenquelle mit dem Cmdlet [Add-DPMChildDatasource](https://technet.microsoft.com/DE-DE/library/hh881732.aspx) und dem "-Online"-Flag angeben.
+Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet. Sie müssen auch die zu schützende Datenquelle mit dem Cmdlet [Add-DPMChildDatasource](https://technet.microsoft.com/en-us/library/hh881732.aspx) und dem "-Online"-Flag angeben.
 
 ```
 PS C:\> Set-DPMProtectionType -ProtectionGroup $MPG -ShortTerm Disk –LongTerm Online
@@ -268,7 +271,7 @@ Wenn Sie eine Datenquelle zum ersten Mal sichern, muss DPM ein erstes Replikat e
 PS C:\> Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
 ```
 ### Ändern der Größe des DPM-Replikat- und des Wiederherstellungspunktvolumes
-Mit dem Cmdlet [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/DE-DE/library/hh881618(v=sc.20).aspx) können Sie auch die Größe des DPM-Replikatvolumes sowie des Schattenkopievolumes ändern, wie im folgenden Beispiel gezeigt: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
+Mit dem Cmdlet [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/en-us/library/hh881618(v=sc.20).aspx) können Sie auch die Größe des DPM-Replikatvolumes sowie des Schattenkopievolumes ändern, wie im folgenden Beispiel gezeigt: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
 
 ### Commit für Änderungen an der Schutzgruppe
 Zum Schluss muss für die Änderungen ein Commit ausgeführt werden, bevor DPM die Sicherung für die neue Schutzgruppenkonfiguration durchführen kann. Dazu wird das [Set-DPMProtectionGroup](https://technet.microsoft.com/library/hh881758)-Cmdlet verwendet.
@@ -307,6 +310,6 @@ PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -Recovery
 Die Befehle können mühelos für beliebige Datenquellentypen erweitert werden.
 
 ## Nächste Schritte
-Weitere Informationen zu Azure Backup für DPM finden Sie unter [Einführung in Azure DPM Backup](backup-azure-dpm-introduction.md)
+Weitere Informationen zu Azure Backup für DPM finden Sie unter [Einführung in DPM Backup](backup-azure-dpm-introduction.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="WCF-basierter Kommunikationsstapel der Reliable Services-API"
-	description="Dieser Artikel beschreibt den WCF-basierten Kommunikationsstapel, der von der Reliable Services-API bereitgestellt wird."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="BharatNarasimman"
-	manager="vipulm"
-	editor=""/>
+   description="Dieser Artikel beschreibt den WCF-basierten Kommunikationsstapel, der von der Reliable Services-API bereitgestellt wird."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="BharatNarasimman"
+   manager="vipulm"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="required"
-	ms.date="08/27/2015"
-	ms.author="bharatn@microsoft.com"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="required"
+   ms.date="08/27/2015"
+   ms.author="bharatn@microsoft.com"/>
 
 # WCF-basierter Kommunikationsstapel für Reliable Services
 Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den gewünschten Kommunikationsstapel als Plug-In über `ICommunicationListener` verwenden, der von der Methode [`CreateCommunicationListener`](../service-fabric-reliable-service-communication.md) zurückgegeben wird. Das Framework bietet eine WCF-basierten Implementierung des Kommunikationstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
@@ -114,4 +114,4 @@ var result = calculatorServicePartitionClient.InvokeWithRetryAsync(
 ```
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

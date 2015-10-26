@@ -7,7 +7,7 @@
 	manager="shreeshd"
 	editor="tysonn"/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/18/2015" ms.author="trinadhk"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="aashishr"; "trinadhk"; "jimpark"/>
 
 # Einführung in Azure Backup
 Dieser Artikel bietet eine allgemeine Übersicht über die in die Cloud integrierte Sicherungslösung von Microsoft, mit der Kunden ihre Daten entweder lokal oder in Azure sichern können.
@@ -43,22 +43,31 @@ Wichtigste Funktionen dieser Lösung:
 7. **Backup in der Cloud:** Azure Backup bietet eine VSS-basierte anwendungskonsistente Sicherung von virtuellen Azure IaaS-Computern, ohne dass die virtuellen Computer heruntergefahren werden müssen. Darüber hinaus können virtuelle Linux-Computer mit Dateisystemkonsistenz in Azure gesichert werden.
 
 
-## Anwendung und Workloads
+## Bereitstellungsszenarien
+| Komponente | Bereitstellung in Azure möglich? | Lokale Bereitstellung möglich? | Unterstützter Zielspeicher|
+| --- | --- | --- | --- |
+| Azure Backup-Agent | **Ja** <br><br>Der Azure Backup-Agent kann auf allen virtuellen Windows Server-Computern bereitgestellt werden, die in Azure ausgeführt werden. | **Ja** <br><br>Der Azure Backup-Agent kann auf allen virtuellen Windows Server-Computern oder physischen Computern bereitgestellt werden. | Azure-Sicherungstresor |
+| System Center Data Protection Manager (SCDPM) | **Ja** <br><br>Weitere Informationen zum [Schutz von Workloads in Azure mithilfe von SCDPM](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx). | **Ja** <br><br>Weitere Informationen zum [Schutz von Workloads und virtuellen Computer im Datencenter](https://technet.microsoft.com/en-us/library/hh758173.aspx). | Lokal angefügter Datenträger, <br>Azure-Sicherungstresor, <br>Band (nur lokal) |
+| Azure Backup (VM-Erweiterung) | **Ja** <br><br>Speziell für die [Sicherung von Azure IaaS-VMs](backup-azure-vms-introduction.md). | **Nein** <br><br>Sichern Sie virtuelle Computer in Ihrem Rechenzentrum mit SCDPM. | Azure-Sicherungstresor |
+
+
+## Anwendungen und Workloads
 
 | Workload | Quellcomputer | Azure Backup-Lösung |
 | --- | --- |---|
-| Datei und Ordner | Windows Server, Windows-Client | Azure Backup-Agent |
-| Datei und Ordner | Windows Server, Windows-Client | System Center DPM |
+| Dateien und Ordner | Windows Server | [Azure Backup-Agent](backup-configure-vault.md),<br> [System Center DPM](backup-azure-dpm-introduction.md) |
+| Dateien und Ordner | Windows-Client | [Azure Backup-Agent](backup-configure-vault.md),<br> [System Center DPM](backup-azure-dpm-introduction.md) |
 | Virtueller Hyper-V-Computer (Windows) | Windows Server | System Center DPM |
 | Virtueller Hyper-V-Computer (Linux) | Windows Server | System Center DPM |
-| Microsoft SQL Server | Windows Server | System Center DPM |
-| Microsoft SharePoint | Windows Server | System Center DPM |
+| Microsoft SQL Server | Windows Server | [System Center DPM](backup-azure-backup-sql.md) |
+| Microsoft SharePoint | Windows Server | [System Center DPM](backup-azure-backup-sharepoint.md) |
 | Microsoft Exchange | Windows Server | System Center DPM |
-| Azure IaaS-VMs (Windows)| - | Azure Backup | | Azure IaaS-VMs (Linux) | - | Azure Backup |
+| Azure IaaS-VMs (Windows)| - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | | Azure IaaS VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+
 
 ## Nächste Schritte
 - [Azure Backup testen](backup-try-azure-backup-in-10-mins.md)
 - Häufig gestellte Fragen zum Azure Backup-Dienst sind [hier](backup-azure-backup-faq.md) aufgeführt.
 - Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

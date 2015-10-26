@@ -1,8 +1,8 @@
 | Compute-Optionen | Audience (Zielgruppe) |
 | ------------------ | --------   |
-| [App Service](../app-service-web-overview.md) | Skalierbare Web-Apps, Mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
-| [Cloud-Dienste](services/cloud-services/) | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle über das Betriebssystem |
-| [Virtuelle Computer](https://msdn.microsoft.com/library/azure/jj156143.aspx) | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
+| [App Service] | Skalierbare Web-Apps, Mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
+| [Cloud-Dienste] | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle über das Betriebssystem |
+| [Virtuelle Computer] | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
 
 <a name="tellmevm"></a>
 ## Weitere Informationen über virtuelle Computer
@@ -24,7 +24,7 @@ Wie andere virtuelle Computer verfügt eine VM in Azure über ein Betriebssystem
 
 Virtuelle Computer verwenden virtuelle Festplatten (VHDs), um ihr Betriebssystem (OS) und die Daten zu speichern. VHDs werden auch für die Images verwendet, die Sie auswählen können, um ein Betriebssystem zu installieren. Die folgende Abbildung stellt dies dar sowie zwei Tools zum Erstellen und Verwalten Ihrer VMs.
 
-<a name="fig_createvms"></a> ![vm_diagram](./media/virtual-machines-choose-me-content/diagram.png)
+<a name="fig_createvms"></a> ![vm\_diagram](./media/virtual-machines-choose-me-content/diagram.png)
 
 **Abbildung: Azure Virtual Machines bietet IaaS (Infrastructure as a Service).**
 
@@ -42,4 +42,4 @@ Zu den weiteren Vorteilen von VMs gehören:
 
 **Resilienz** – Azure überwacht die physische Hardware, die einen virtuellen Computer hostet. Wenn ein physischer Server, auf dem eine VM ausgeführt wird, ausfällt, erkennt Azure dies, verschiebt die VM auf neue Hardware und startet sie erneut. Dieser Vorgang wird manchmal als Dienstreparatur bezeichnet. Azure schützt auch die Daten eines virtuellen Computers durch redundante Kopien der virtuellen Festplatten im Blob-Speicher.
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

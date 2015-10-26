@@ -283,4 +283,4 @@ Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 	{"birthdate":"1983-12-07","gender":"female"}
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

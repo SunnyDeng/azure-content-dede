@@ -55,18 +55,16 @@ Sie können dieses Skript ändern oder ein eigenes Skript zum Installieren von a
 	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-spark-install/HDI.CustomProvision.Page6.png "Anpassen eines Clusters mit "Skriptaktion"")
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Name</td>
-			<td>Geben Sie einen Namen für die Skriptaktion an. Z. B. <b>Spark installieren</b>.</td></tr>
-		<tr><td>Skript-URI</td>
-			<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen. Beispielsweise <i>https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1</i></td></tr>
-		<tr><td>Knotentyp</td>
-			<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
-		<tr><td>Parameter</td>
-			<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
-	</table>
-
-	Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Name</td>
+		<td>Geben Sie einen Namen für die Skriptaktion an. Z. B. <b>Spark installieren</b>.</td></tr>
+	<tr><td>Skript-URI</td>
+		<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen. Beispielsweise <i>https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1</i></td></tr>
+	<tr><td>Knotentyp</td>
+		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
+	<tr><td>Parameter</td>
+		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
+</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Erstellung des Clusters zu starten.
 
 Sie können das Skript auch zum Installieren von Giraph auf HDInsight mit Azure PowerShell oder dem HDInsight .NET SDK verwenden. Anweisungen zu diesen Verfahren finden Sie nachfolgend in diesem Thema.
 
@@ -279,7 +277,7 @@ Führen Sie die folgenden Schritte aus:
 </td></tr>
 </table>
 
-4. Beginnen Sie mit der Erstellung eines angepassten Clusters mit installiertem Spark.
+4. Beginnen Sie mit dem Erstellen eines angepassten Clusters mit installiertem Spark.
 
 		# Start creating a cluster with Spark installed
 		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version
@@ -311,4 +309,4 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [powershell-install-configure]: ../install-configure-powershell.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

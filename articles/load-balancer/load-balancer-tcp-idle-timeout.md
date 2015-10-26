@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/01/2015"
+   ms.date="08/12/2015"
    ms.author="joaoma" />
 
 # Ändern von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich
@@ -166,4 +166,4 @@ Aktualisieren der Konfiguration der angegebenen Eingabeendpunkte mit Lastenausgl
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

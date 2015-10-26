@@ -121,4 +121,4 @@ Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei w
 	    except:
 	        print "something wrong happened when downloading the data %s"%blob.name
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

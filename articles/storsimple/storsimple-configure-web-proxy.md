@@ -151,4 +151,4 @@ Sind die Webproxyeinstellungen nicht korrekt konfiguriert, werden in Windows Pow
 
 - Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

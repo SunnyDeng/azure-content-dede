@@ -53,4 +53,4 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits die Funkt
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

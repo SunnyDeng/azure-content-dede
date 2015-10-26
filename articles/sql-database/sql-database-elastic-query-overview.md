@@ -265,4 +265,4 @@ Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittwe
 
 <!--anchors-->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

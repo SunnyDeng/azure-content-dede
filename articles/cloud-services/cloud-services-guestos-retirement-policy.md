@@ -90,4 +90,4 @@ Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zu
 ## Nächste Schritte
 Überprüfen Sie die neuesten [Gastbetriebssystemreleases](cloud-services-guestos-update-matrix.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

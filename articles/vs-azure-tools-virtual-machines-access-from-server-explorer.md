@@ -53,4 +53,4 @@ Wenn Sie in Azure gehostete virtuelle Computer verwenden, können Sie über den 
 
 Weitere Informationen zum Verwenden von Azure-Rollen in Visual Studio finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](vs-azure-tools-remote-desktop-roles.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

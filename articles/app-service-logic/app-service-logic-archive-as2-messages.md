@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Archivieren von AS2-Connector-Nachrichten | Microsoft Azure App Service"
-	description="Archivieren oder Speichern von AS2-Connector-Nachrichten in Azure App Service"
-	services="app-service\logic"
-	documentationCenter=".net,nodejs,java"
-	authors="rajram"
-	manager="dwrede"
-	editor=""/>
+   pageTitle="Archivieren von AS2-Connector-Nachrichten | Microsoft Azure App Service" 
+   description="Archivieren oder Speichern von AS2-Connector-Nachrichten in Azure App Service" 
+   services="app-service\logic" 
+   documentationCenter=".net,nodejs,java" 
+   authors="rajram" 
+   manager="dwrede" 
+   editor=""/>
 
 <tags
    ms.service="app-service-logic"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="integration"
-	ms.date="08/23/2015"
-	ms.author="rajram"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="08/23/2015"
+   ms.author="rajram"/>
 
 
 # Übersicht über das Archivieren von AS2-Connector-Nachrichten
@@ -39,4 +39,4 @@ Verwenden Sie die oben abgerufene URL, um die archivierte Nachricht aus dem Azur
 [1]: ./media/app-service-logic-archive-as2-messages/Tracking.jpg
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

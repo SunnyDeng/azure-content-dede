@@ -2,4 +2,4 @@ Sie können eine Netzwerksicherheitsgruppe (NSG) verwenden, um in Ihrem virtuell
 
 Weitere Informationen zu NSGs finden Sie unter [Was ist eine NSG](virtual-networks-nsg).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

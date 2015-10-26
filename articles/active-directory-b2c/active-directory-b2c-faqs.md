@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="10/08/2015"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Häufig gestellte Fragen
@@ -22,9 +22,9 @@ Auf dieser Seite werden häufig gestellte Fragen zur Preview-Version von Azure A
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-### Kann ich Azure AD B2C in meiner vorhanden mitarbeiterbasierten Azure AD Directory-Umgebung nutzen?
+### Kann ich Azure AD B2C in meinem vorhanden mitarbeiterbasierten Azure AD Directory-Mandanten nutzen?
 
-Derzeit können Azure AD B2C-Features in Ihrem vorhandenen Azure AD-Verzeichnis noch nicht aktiviert werden. Es wird empfohlen, ein separates Verzeichnis zu erstellen, um Azure AD B2C-Features zu nutzen, z. B. zum Verwalten der Consumer.
+Derzeit können Azure AD B2C-Features in Ihrem vorhandenen Azure AD-Mandanten noch nicht aktiviert werden. Es wird empfohlen, einen separaten Mandanten zu erstellen, um Azure AD B2C-Features zu nutzen, z. B. zum Verwalten der Consumer.
 
 ### Kann ich Azure AD B2C zum Bereitstellen der Anmeldung für soziale Netzwerke (Facebook und Google+) in Office 365 verwenden?
 
@@ -32,9 +32,9 @@ Azure AD B2C kann nicht mit Office 365 verwendet werden. Die Anwendung kann gen
 
 ### Was sind „Lokale Konten“ in Azure AD B2C? Wie unterscheiden sie sich von „Geschäfts- oder Schulkonten“ in Azure AD?
 
-In einem Azure AD-Verzeichnis meldet sich jeder Benutzer im Verzeichnis (mit Ausnahme von Benutzern mit vorhandenen Microsoft-Konten) mit einer E-Mail-Adresse im Format `<xyz>@<directory domain>` an. Hierbei ist `<directory domain>` eine der überprüften Domänen im Verzeichnis oder die ursprüngliche `<...>.onmicrosoft.com`-Domäne. Diese Art von Konto ist ein „Geschäfts- oder Schulkonto“, das auch als „Organisationskonto“ bezeichnet wird.
+In einem Azure AD-Mandanten meldet sich jeder Benutzer im Mandanten (mit Ausnahme von Benutzern mit vorhandenen Microsoft-Konten) mit einer E-Mail-Adresse im Format `<xyz>@<tenant domain>` an. Hierbei ist `<tenant domain>` eine der überprüften Domänen im Mandanten oder die ursprüngliche `<...>.onmicrosoft.com`-Domäne. Diese Art von Konto ist ein „Geschäfts- oder Schulkonto“, das auch als „Organisationskonto“ bezeichnet wird.
 
-In einem Azure AD B2C-Verzeichnis ist es bei den meisten Apps üblich, dass Benutzer sich mit einer beliebigen E-Mail-Adresse anmelden (z. B. joe@comcast.net, bob@gmail.com, sarah@contoso.com oder jim@live.com)). Diese Art von Konto ist ein „Lokales Konto“. Jetzt werden auch beliebige Benutzernamen (einfache Zeichenfolgen) als lokale Konten unterstützt (z. B. joe, bob, sarah oder jim). Sie können eine dieser beiden lokalen „Kontotypen“ im Azure AD B2C-Dienst auswählen.
+In einem Azure AD B2C-Mandanten ist es bei den meisten Apps üblich, dass Benutzer sich mit einer beliebigen E-Mail-Adresse anmelden (z. B. joe@comcast.net, bob@gmail.com, sarah@contoso.com oder jim@live.com)). Diese Art von Konto ist ein „Lokales Konto“. Jetzt werden auch beliebige Benutzernamen (einfache Zeichenfolgen) als lokale Konten unterstützt (z. B. joe, bob, sarah oder jim). Sie können eine dieser beiden lokalen „Kontotypen“ im Azure AD B2C-Dienst auswählen.
 
 ### Welche sozialen Identitätsanbieter werden derzeit unterstützt? Welche sollen in Zukunft unterstützt werden?
 
@@ -55,7 +55,7 @@ Nein, Sie können Ihre Anwendung überall hosten (in der Cloud oder lokal). Für
 
 ### Ich habe mehrere Azure AD B2C-Verzeichnisse. Wie kann ich sie im Azure-Vorschauportal verwalten?
 
-Jedes Azure AD B2C-Verzeichnis hat im Azure-Vorschauportal ein eigenes Blatt mit B2C-Features. Sie können [hier](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade) nachlesen, wie Sie im Azure-Vorschauportal zum Blatt mit den B2C-Features für ein bestimmtes Verzeichnis navigieren können. Beim Wechseln zwischen Azure AD B2C-Verzeichnissen im Azure-Vorschauportal bleibt das Blatt mit den B2C-Features in den meisten Browsern nicht geöffnet.
+Jeder Azure AD B2C-Mandant hat im Azure-Vorschauportal ein eigenes Blatt mit B2C-Features. Sie können [hier](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade) nachlesen, wie Sie im Azure-Vorschauportal zum Blatt mit den B2C-Features für einen bestimmten Mandanten navigieren können. Beim Wechseln zwischen Azure AD B2C-Verzeichnissen im Azure-Vorschauportal bleibt das Blatt mit den B2C-Features in den meisten Browsern nicht geöffnet.
 
 ### Wie kann ich Bestätigungs-E-Mails (Inhalt und Absenderfeld, also das Feld „Von:“) anpassen, die von Azure AD B2C gesendet werden?
 
@@ -87,7 +87,7 @@ Derzeit ist Azure AD B2C nur für Englisch optimiert. Es ist geplant, die Lokali
 
 ### Kann ich auf meinen Seiten für die Registrierung und Anmeldung, die von Azure AD B2C bereitgestellt werden, meine eigenen URLs verwenden? Beispielsweise per Änderung der URLs von „login.microsoftonline.com“ in „login.contoso.com“?
 
-Derzeit ist dies nicht möglich. Dieses Feature ist aber geplant.
+Derzeit ist dies nicht möglich. Dieses Feature ist aber geplant. Beachten Sie auch, dass dies nicht durch das "Bestätigen" Ihrer Domäne auf der Registerkarte **Domänen** für den Mandanten im Azure-Portal erfolgt.
 
 ### Kann ich Azure AD B2C als Teil der Enterprise Mobility Suite (EMS) erwerben?
 
@@ -103,6 +103,6 @@ Derzeit können wir noch keine Angaben zum Datum der allgemeinen Verfügbarkeit 
 
 ## Weitere Informationen
 
-Es kann hilfreich sein, sich auch über die aktuellen [Einschränkungen der Preview-Version](active-directory-b2c-limitations.md) zu informieren.
+Es kann hilfreich sein, sich auch über die aktuellen [Einschränkungen der Vorschauversion](active-directory-b2c-limitations.md) zu informieren.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

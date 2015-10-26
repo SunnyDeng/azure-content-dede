@@ -21,7 +21,8 @@
 
 Mit dieser Erweiterung kann SQL Server auf virtuellen Azure-Computern bestimmte Dienste nutzen. Diese Dienste sind in diesem Artikel aufgeführt und können nur verwendet werden, wenn die Erweiterung installiert ist. Diese Erweiterung wird automatisch für SQL Server-Galerie-Images im Azure-Vorschauportal installiert. Sie kann auf allen virtuellen SQL Server-Computern in Azure installiert werden, auf denen auch der Gast-Agent für virtuelle Azure-Computer installiert ist.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwenden einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
  
 ## Voraussetzungen
 Anforderungen für die Verwendung von Powershell-Cmdlets:
@@ -37,7 +38,7 @@ Anforderungen für die Verwendung der Erweiterung auf Ihrem virtuellen Computer:
 ## Mit der Erweiterung verfügbare Dienste
 
 - **Automatisierte SQL-Sicherung**: Dieser Dienst automatisiert die Planung von Sicherungen für alle Datenbanken für die Standardinstanz von SQL Server auf dem virtuellen Computer. Weitere Informationen zu diesem Dienst finden Sie unter [Automatische Sicherung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-automated-backup.md).
-- **Automatische Anwendung von Patches für SQL**: Mit diesem Dienst können Sie ein Wartungsfenster konfigurieren, in dem Updates für den virtuellen Computer ausgeführt werden. Auf diese Weise werden Updates während der Spitzenzeiten für Ihre Arbeitsauslastung vermieden. Weitere Informationen zu diesem Dienst finden Sie unter [Automatisierte Anwendung von Patches für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-automated-patching.md).
+- **Automatische Anwendung von Patches für SQL**: Mit diesem Dienst können Sie ein Wartungsfenster konfigurieren, in dem Updates für den virtuellen Computer ausgeführt werden. Auf diese Weise werden Updates während der Spitzenzeiten für Ihren Workload vermieden. Weitere Informationen zu diesem Dienst finden Sie unter [Automatisierte Anwendung von Patches für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-automated-patching.md).
 
 ## Hinzufügen der Erweiterung mit Powershell
 Wenn Sie den virtuellen SQL Server-Computer mit dem [Azure-Vorschauportal](https://portal.azure.com/) bereitstellen, wird die Erweiterung automatisch installiert. Auf virtuellen SQL Server-Computern, die mit dem [Azure-Verwaltungsportal](https://manage.windowsazure.com) bereitgestellt werden, oder bei virtuellen Computern, auf denen eigene SQL-Lizenzen bereitgestellt werden, können Sie diese Erweiterung einem vorhandenen virtuellen Computer hinzufügen. Verwenden Sie dazu das folgende Azure PowerShell-Cmdlet:
@@ -77,4 +78,4 @@ Wenn Sie diese Erweiterung vom virtuellen Computer entfernen möchten, können S
 ### Syntax
 Remove-AzureVMSqlServerExtension -VM <IPersistentVM> [<CommonParameters>]
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

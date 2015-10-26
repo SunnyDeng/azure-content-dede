@@ -440,4 +440,4 @@ Diese Konfiguration umfasst:
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

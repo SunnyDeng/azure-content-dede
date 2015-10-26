@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015" 
+	ms.date="10/14/2015" 
 	ms.author="tomfitz"/>
 
 # Überwachen von Vorgängen mit dem Ressourcen-Manager
@@ -25,6 +25,8 @@ Ein Überwachungsprotokoll enthält alle Aktionen, die mit Ihren Ressourcen durc
 Sie können Informationen aus den Überwachungsprotokollen über Azure PowerShell, die Azure-Befehlszeilenschnittstelle, eine REST-API oder das Azure-Vorschauportal abrufen.
 
 ## PowerShell
+
+[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
 Führen Sie zum Abrufen von Protokolleinträgen den Befehl **Get-AzureRmLog** aus (oder **Get-AzureResourceGroupLog** für PowerShell-Versionen vor 1.0 Preview). Wenn Sie die Liste der Einträge filtern möchten, können Sie dem Befehl Parameter hinzufügen.
 
@@ -151,4 +153,4 @@ Sie können jeden Vorgang auswählen, um weitere Details anzuzeigen.
 - Informationen zum Gewähren des Zugriffs für einen Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 - Informationen zum Beschränken von Aktionen für eine Ressource für alle Benutzer finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

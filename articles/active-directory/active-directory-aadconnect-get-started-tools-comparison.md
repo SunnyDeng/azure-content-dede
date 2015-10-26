@@ -1,5 +1,5 @@
-<properties 
-	pageTitle="Vergleich von Tools für die Verzeichnisintegration"
+<properties
+	pageTitle="Vergleich von Tools für die Verzeichnisintegration | Microsoft Azure"
 	description="Diese Seite enthält umfassende Tabellen zum Vergleich der verschiedenen Tools für die Verzeichnisintegration."
 	services="active-directory"
 	documentationCenter=""
@@ -7,18 +7,18 @@
 	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
+<tags
 	ms.service="active-directory"
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.date="10/13/2015"
 	ms.author="billmath"/>
 
 # Vergleich von Tools für die Verzeichnisintegration
 
-Im Laufe der Jahre sind die Tools für die Verzeichnisintegration umfangreicher geworden und wurden weiterentwickelt. Das vorliegende Dokument bietet einen Überblick über diese Tools und einen Vergleich der Features, die jedes der Tools bietet.
+Im Laufe der Jahre sind die Tools für die Verzeichnisintegration umfangreicher geworden und wurden weiterentwickelt. Das vorliegende Dokument bietet eine Übersicht über diese Tools und einen Vergleich der Features, die jedes der Tools bietet.
 
 >[AZURE.NOTE]Azure AD Connect umfasst die Komponenten und Funktionen, die zuvor als DirSync und AAD Sync veröffentlicht wurden. Diese Tools werden nicht mehr einzeln veröffentlicht, und alle künftigen Verbesserungen werden in den Updates von Azure AD Connect enthalten sein, sodass Sie immer wissen, wo Sie die aktuellsten Funktionen bekommen.
 >
@@ -82,10 +82,13 @@ Verwenden Sie den folgenden Schlüssel für jede der Tabellen.
 Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool (DirSync) | Forefront Identity Manager 2010 R2 (FIM)  
 :-------- |:--------:|:--------:|:--------:|:--------:|
 Filterung nach für Domänen und Organisationseinheiten | ● | ● | ● | ●  
-Filterung nach den Attributwerten eines Objekts | ● | ● | ● | ● 
-Zulassen eines minimalen Attributsatzes für die Synchronisierung (MinSync) | ● | ● | |   
-Zulassen der Anwendung verschiedener Dienstvorlagen auf Attributflüsse |● | ● | |   
+Filterung nach den Attributwerten eines Objekts | ● | ● | ● | ●
+Zulassen eines minimalen Attributsatzes für die Synchronisierung (MinSync) | ● | ● | |
+Zulassen der Anwendung verschiedener Dienstvorlagen auf Attributflüsse |● | ● | |
 Zulassen der Entfernung von Attributen aus dem Attributfluss von AD nach Azure AD | ● | ● | |  
 Zulassen einer erweiterten Anpassung des Attributflusses | ● | ● | | ●  
 
-<!---HONumber=August15_HO9-->
+## Nächste Schritte
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+
+<!---HONumber=Oct15_HO3-->

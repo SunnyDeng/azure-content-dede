@@ -27,7 +27,11 @@ Azure Virtual Machines und Azure Cloud Services sind zwei von mehreren unterschi
 
 Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe behilflich sein:
 
-* Instanzen können jetzt für die Verwendung von VMs der D-Serie konfiguriert werden. Diese dienen zum Ausführen von Anwendungen, die eine höhere Rechenleistung und eine höhere temporäre Datenträgerleistung erfordern. VMs der D-Serie bieten schnellere Prozessoren, ein höheres Verhältnis von Speicher zu Kern und ein SSD (Solid State Drive) für den temporären Datenträger. Einzelheiten finden Sie in der Ankündigung im Azure-Blog unter [New D-Series Virtual Machine Sizes](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/) (Neue VM-Größen der D-Serie, in englischer Sprache).  
+* VM-Instanzen der D-Serie dienen zum Ausführen von Anwendungen, die eine höhere Rechenleistung und eine höhere temporäre Datenträgerleistung erfordern. VMs der D-Serie bieten schnellere Prozessoren, ein höheres Verhältnis von Speicher zu Kern und ein SSD (Solid State Drive) für den temporären Datenträger. Einzelheiten finden Sie in der Ankündigung im Azure-Blog unter [New D-Series Virtual Machine Sizes](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/) (Neue VM-Größen der D-Serie, in englischer Sprache).  
+
+*   Die Dv2-Serie, eine Nachfolgerin der ursprünglichen D-Serie, hat eine leistungsfähigere CPU. Die CPU der Dv2-Serie ist ca. 35 % schneller als die CPU der D-Serie. Sie basiert auf der neuesten Generation des 2,4-GHz-Intel Xeon ® E5-2673 v3-Prozessors (Haswell) und kann mit der Intel Turbo Boost Technology 2.0 bis auf 3,2 GHz gebracht werden. Der Dv2-Serie hat die gleichen Arbeitsspeicher- und Datenträgerkonfigurationen wie die D-Serie.
+
+    Die regionale Verfügbarkeit der Dv2-Serie basiert auf diesem Zeitplan: Okt. 2015: USA, Osten 2, USA, Mitte, USA, Norden-Mitte, USA, Westen Nov. 2015: USA, Osten, Europa, Norden, Europa, Westen Jan. 2016: USA, Süden-Mitte, Asien-Pazifik, Osten, Asien-Pazifik, Südosten, Japan, Osten, Japan, Westen, Australien, Osten, Australien, Südosten, Brazilien, Süden
 
 * Web- und Workerrollen erfordern aufgrund der Systemanforderungen mehr temporären Speicherplatz als Azure Virtual Machines. Die Systemdateien reservieren 4 GB Speicherplatz für die Windows-Auslagerungsdatei und 2 GB Speicherplatz für die Windows-Dumpdatei.
 
@@ -61,7 +65,15 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 |Standard\_D12|4|28 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 199704 MB<br/>Apps = ca. 1,5 GB|
 |Standard\_D13|8|56 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 404504 MB<br/>Apps = ca. 1,5 GB|
 |Standard\_D14|16|112 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 814104 MB<br/>Apps = ca. 1,5 GB|
-
+|Standard\_D1\_v2|1|3,5 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 46104 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D2\_v2|2|7 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 97304 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D3\_v2|4|14 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 199704 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D4\_v2|8|28 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 404504 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D5\_v2|16|56 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 814104 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D11\_v2|2|14 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 97304 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D12\_v2|4|28 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 199704 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D13\_v2|8|56 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 404504 MB<br/>Apps = ca. 1,5 GB|
+|Standard\_D14\_v2|16|112 GB|Betriebssystem = Größe des Gastbetriebssystems<br/>Lokale Ressource = 814104 MB<br/>Apps = ca. 1,5 GB|
 ## Konfigurieren von Größen für Cloud Services
 
 Sie können die Größe des virtuellen Computers einer Rolleninstanz als Teil des Service-Modells angeben, wie durch die Dienstdefinitionsdatei beschrieben. Die Größe einer Rolle bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die einer aktiven Instanz zugeordnet werden. Wählen Sie die Rollengröße basierend auf der Ressourcenanforderung Ihrer Anwendung.
@@ -78,4 +90,4 @@ Achten Sie darauf, dass die angegebene lokale Ressourcengröße kleiner gleich d
 
 [Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/hh124108)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

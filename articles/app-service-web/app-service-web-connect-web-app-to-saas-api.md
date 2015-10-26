@@ -81,9 +81,7 @@ Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink
         &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
     }
 &lt;/ul> 
-	</pre>
-
-	![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
+</pre>![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
 ## Bereitstellen der Webanwendung in Web-Apps in App Service
 
@@ -96,4 +94,4 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

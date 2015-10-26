@@ -61,7 +61,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Microsoft Azure AD – einmaliges Anmelden](./media/active-directory-saas-rally-software-tutorial/IC769528.png "Microsoft Azure AD – einmaliges Anmelden")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Rally Software-Mandanten-URL** die URL im Format „*https://\\<Mandantenname\>.rally.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Rally Software-Mandanten-URL** die URL im Format „*https://\<Mandantenname>.rally.com*“ ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-rally-software-tutorial/IC769529.png "App-URL konfigurieren")
 
@@ -96,7 +96,7 @@ Damit sich AAD-Benutzer anmelden können, müssen sie in der Rally Software-Anwe
 
 1.  Melden Sie sich bei Ihrem Rally Software-Mandanten an.
 
-2.  Navigieren Sie zu **Einrichtung \> BENUTZER**, und klicken Sie auf **+ Neuen Benutzer hinzufügen**.
+2.  Navigieren Sie zu **Einrichtung > BENUTZER**, und klicken Sie auf **+ Neuen Benutzer hinzufügen**.
 
     ![Benutzer](./media/active-directory-saas-rally-software-tutorial/IC781039.png "Benutzer")
 
@@ -104,7 +104,7 @@ Damit sich AAD-Benutzer anmelden können, müssen sie in der Rally Software-Anwe
 
 4.  Führen Sie im Abschnitt **Benutzer erstellen** die folgenden Schritte aus:
 
-    ![Benutzer erstellen](./media/active-directory-saas-rally-software-tutorial/IC781040.png "Benutzer erstellen")
+    ![Create User](./media/active-directory-saas-rally-software-tutorial/IC781040.png "Benutzer erstellen")
 
     1.  Geben Sie im Textfeld **Benutzername** den Namen des Azure AD-Benutzers ein, den Sie bereitstellen möchten.
     2.  Geben Sie im Textfeld **E-Mail-Adresse** die E-Mail-Adresse des Azure AD-Benutzers ein, den Sie bereitstellen möchten.
@@ -130,4 +130,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

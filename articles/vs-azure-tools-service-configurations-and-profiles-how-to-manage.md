@@ -131,4 +131,4 @@ Wenn Sie den Assistenten zum ersten Mal ausführen, wird ein Standardprofil erst
 
 Informationen zum Konfigurieren anderer Teile des Azure-Projekts in Visual Studio finden Sie unter [Konfigurieren eines Azure-Projekts](http://go.microsoft.com/fwlink/p/?LinkID=623075).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

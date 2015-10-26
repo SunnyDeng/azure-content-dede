@@ -268,4 +268,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -378,4 +378,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

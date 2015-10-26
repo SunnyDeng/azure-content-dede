@@ -20,7 +20,8 @@
 
 # Gewusst wie: Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erfassen eines Images mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Linux läuft, um ihn wie eine Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage umfasst den Betriebssystem-Datenträger und die an den virtuellen Computer angefügten Datenträger. Da die Vorlage keine Netzwerkkonfiguration enthält, müssen Sie die Konfiguration später vornehmen, wenn Sie die anderen virtuellen Computer erstellen, die auf dieser Vorlage basieren.
 
@@ -99,4 +100,4 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

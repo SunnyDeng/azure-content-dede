@@ -44,4 +44,4 @@ Sie können Befehlszeilentools wie z. B. PowerShell zur Verwaltung und zur Auto
 Für weitere Informationen zum Verwalten von Azure SQL-Datenbanken mit Befehlszeilentools [klicken Sie hier](sql-database-command-line-tools.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

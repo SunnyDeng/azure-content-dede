@@ -147,4 +147,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [Übersicht über dynamische Manifeste](media-services-dynamic-manifest-overview.md)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

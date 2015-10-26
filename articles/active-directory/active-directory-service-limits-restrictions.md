@@ -27,4 +27,4 @@ Einen vollständigen Überblick über die Microsoft Azure-Diensteinschränkungen
 - [Verknüpfung von Azure-Abonnements mit Azure AD](active-directory-how-subscriptions-associated-directory.md)
 - [Azure AD-Terminologie](active-directory-terminology.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

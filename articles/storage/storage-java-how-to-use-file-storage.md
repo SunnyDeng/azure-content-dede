@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden des Dateispeichers mit Java | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Azure-Dateispeicherdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Dateien verwenden. Die Beispiele wurden in Java geschrieben."
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor="jimbe"/>
+	pageTitle="Verwenden des Dateispeichers mit Java | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie den Azure-Dateispeicherdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Dateien verwenden. Die Beispiele wurden in Java geschrieben." 
+	services="storage" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="jimbe" />
 
 <tags 
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="v-dedomi"/>
 
 # Verwenden des Dateispeichers mit Java
@@ -221,4 +221,4 @@ Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

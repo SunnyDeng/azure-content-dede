@@ -25,7 +25,8 @@ PostgreSQL ist eine erweiterte Open-Source-Datenbank, die Oracle und DB2 ähnlic
 In diesem Artikel erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Azure-Computer, auf dem Linux ausgeführt wird, installieren und konfigurieren.
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 ## Installieren von PostgreSQL
 
@@ -254,4 +255,4 @@ Mit dem folgenden Befehl können Sie Daten in einer Tabelle aktualisieren: In di
 ##Abrufen weiterer Informationen zu PostgreSQL
 Sie haben die Installation von PostgreSQL auf einem virtuellen Linux-Computer in Azure abgeschlossen und können die Datenbank nun in Azure nutzen. Weitere Informationen zu PostgreSQL finden Sie auf der [PostgreSQL-Website](http://www.postgresql.org/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/28/2015"
+	ms.date="10/14/2015"
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden
@@ -47,7 +47,9 @@ Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein S
 
 ##<a id="scenario"></a>Allgemeines Livestreamingszenario
 
-Im folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreaming-Anwendungen erläutert.
+Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreaminganwendungen erläutert.
+
+>[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
 
 1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein **Single**-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
@@ -260,6 +262,8 @@ Es können bis zu 8 Audiodatenstrom-Sätze angegeben werden, wenn die Eingabe an
 
 Hier ist die Voreinstellung angegeben, die vom Liveencoder in diesem Kanal verwendet werden soll. Derzeit lautet der einzig zulässige Wert **Default720p** (Standard).
 
+Beachten Sie, dass Sie sich an amslived at Microsoft Punkt com wenden müssen, wenn Sie benutzerdefinierte Voreinstellungen verwenden müssen.
+
 Durch **Default720p** wird das Video in die folgenden 7 Ebenen codiert:
 
 
@@ -267,13 +271,13 @@ Durch **Default720p** wird das Video in die folgenden 7 Ebenen codiert:
 
 BitRate|Breite|Höhe|Max. Bilder/s|Profil|Name des Ausgabedatenstroms
 ---|---|---|---|---|---
-3500|1280|720|30|Hoch|Video\_1280x720\_30fps\_3500kbps
-2200|960|540|30|Main|Video\_960x540\_30fps\_2200kbps
-1350|704|396|30|Main|Video\_704x396\_30fps\_1350kbps
-850|512|288|30|Main|Video\_512x288\_30fps\_850kbps
-550|384|216|30|Main|Video\_384x216\_30fps\_550kbps
-350|340|192|30|Grundwert|Video\_340x192\_30fps\_350kbps
-200|340|192|30|Grundwert|Video\_340x192\_30fps\_200kbps
+3500|1280|720|30|Hoch|Video\_1280x720\_3500kbps
+2200|960|540|30|Main|Video\_960x540\_2200kbps
+1350|704|396|30|Main|Video\_704x396\_1350kbps
+850|512|288|30|Main|Video\_512x288\_850kbps
+550|384|216|30|Main|Video\_384x216\_550kbps
+350|340|192|30|Grundwert|Video\_340x192\_350kbps
+200|340|192|30|Grundwert|Video\_340x192\_200kbps
 
 
 ####Ausgabe-Audiodatenstrom
@@ -282,7 +286,7 @@ Audio wird mit einer Samplingrate von 44,1 kHz in Stereo-AAC-LC mit 64 KBit/s c
 
 ##Signalisieren von Werbespots
 
-Wenn Livecodierung bei Ihrem Kanal aktiviert ist, verfügen Sie über eine videoverarbeitende Komponente in der Pipeline, die Sie bearbeiten können. Sie können durch den Kanal Slates und/oder Werbespots in den ausgehenden Datenstrom mit adaptiver Bitrate einfügen lassen. Bei Slates handelt es sich um Standbilder, mit denen Sie den Live-Eingabefeed in bestimmten Situationen (z. B. bei Werbepausen) verdecken können. Bei Werbesignalen handelt es sich um zeitlich synchronisierte Signale, die Sie in den ausgehenden Datenstrom einbinden, damit vom Videoplayer bestimmte Aktionen ausgeführt werden, z. B. Umschalten zu einem Werbespot um eine bestimmte Zeit. In diesem [Blog](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/) finden Sie einen Überblick über den SCTE-35-Signalmechanismus, der zu diesem Zweck verwendet wird. Im Folgenden wird ein typisches Szenario beschrieben, das Sie in Ihr Liveereignis implementieren könnten.
+Wenn Livecodierung bei Ihrem Kanal aktiviert ist, verfügen Sie über eine videoverarbeitende Komponente in der Pipeline, die Sie bearbeiten können. Sie können durch den Kanal Slates und/oder Werbespots in den ausgehenden Datenstrom mit adaptiver Bitrate einfügen lassen. Bei Slates handelt es sich um Standbilder, mit denen Sie den Live-Eingabefeed in bestimmten Situationen (z. B. bei Werbepausen) verdecken können. Bei Werbesignalen handelt es sich um zeitlich synchronisierte Signale, die Sie in den ausgehenden Datenstrom einbinden, damit vom Videoplayer bestimmte Aktionen ausgeführt werden, z. B. Umschalten zu einem Werbespot um eine bestimmte Zeit. In diesem [Blog](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/) finden Sie eine Übersicht über den SCTE-35-Signalmechanismus, der zu diesem Zweck verwendet wird. Im Folgenden wird ein typisches Szenario beschrieben, das Sie in Ihr Liveereignis implementieren könnten.
 
 1. Zeigen Sie Ihren Zuschauern ein PRE-EVENT-Bild an, bevor das Programmereignis beginnt.
 1. Zeigen Sie Ihren Zuschauern ein POST-EVENT-Bild an, wenn das Programmereignis endet.
@@ -391,6 +395,8 @@ Beendet|Beendet|Nein
 - In der Standardeinstellung können Sie Ihrem Media Services-Konto nicht mehr als 5 Livekanäle hinzufügen. Hierbei handelt es sich um eine weiche Kontingentgrenze bei allen neuen Konten. Weitere Informationen finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal.
 - Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
+- Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
+- Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
 
 ##Bekannte Probleme
 
@@ -426,4 +432,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

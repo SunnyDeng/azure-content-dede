@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Installieren einer Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk"
-	description="Ein Lernprogramm, in dem erläutert wird, wie Sie eine neue Active Directory-Gesamtstruktur auf einer virtuellen Maschine (VM) in einem virtuellen Azure-Netzwerk erstellen"
-	services="active-directory, virtual-network"
-	documentationCenter=""
-	authors="markusvi"
-	manager="TerryLan"
+	pageTitle="Installieren einer Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk" 
+	description="Ein Lernprogramm, in dem erläutert wird, wie Sie eine neue Active Directory-Gesamtstruktur auf einer virtuellen Maschine (VM) in einem virtuellen Azure-Netzwerk erstellen" 
+	services="active-directory, virtual-network" 
+	documentationCenter="" 
+	authors="markusvi" 
+	manager="TerryLan" 
 	editor="LisaToft"
 	tags="azure-classic-portal"/>
 
 <tags 
-	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="07/23/2015"
+	ms.service="active-directory" 
+	ms.devlang="na" 
+	ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+	ms.date="07/23/2015" 
 	ms.author="markusvi"/>
 
 
@@ -138,4 +138,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

@@ -48,4 +48,4 @@ Sobald die Sammlung erstellt ist, können Sie mithilfe des Dokument-Explorers im
 
 Nachdem eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Vorschauportal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

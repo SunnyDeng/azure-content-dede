@@ -10,4 +10,4 @@ Application Gateways enthalten die folgenden untergeordneten Ressourcen:
 - **Listener**: Der Listener umfasst einen Front-End-Port, ein Protokoll (HTTP oder HTTPS, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
 - **Regel:** Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel "basic" unterstützt. Die Regel "basic" ist eine Round-Robin-Lastverteilung.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

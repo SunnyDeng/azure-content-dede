@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Microsoft Azure Service Bus-Kontingente"
-   description="Service Bus-Einschränkungen und -Kontingente."
+   pageTitle="Microsoft Azure Service Bus – Kontingente und Grenzwerte | Microsoft Azure"
+   description="Grenzwerte und Kontingente für Azure Service Bus"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
@@ -11,8 +11,8 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="07/10/2015"
+   ms.workload="na"
+   ms.date="10/14/2015"
    ms.author="sethm" />
 
 # Service Bus-Kontingente
@@ -23,4 +23,4 @@ Dieser Abschnitt enthält die grundlegenden Kontingente und Drosselungsschwellen
 
 [AZURE.INCLUDE [service-bus-quotas-table](../../includes/service-bus-quotas-table.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -7,7 +7,6 @@
 	manager="wpickett" 
 	editor=""/>
 
-
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.workload="multiple" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/15/2015" 
 	ms.author="tomfitz"/>
-
 
 # Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager
 
@@ -379,4 +377,4 @@ Das AzureResourceManager-Modul umfasst Cmdlets, mit denen Sie Fehler vermeiden k
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./resource-group-template-deploy.md).
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

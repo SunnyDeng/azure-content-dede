@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Ersetzen des Gehäuses eines StorSimple-Geräts | Microsoft Azure"
-	description="Beschreibt das Entfernen und Ersetzen des Gehäuses in Ihrem primären StorSimple-Gerät oder EBOD-Gehäuse."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt das Entfernen und Ersetzen des Gehäuses in Ihrem primären StorSimple-Gerät oder EBOD-Gehäuse."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/31/2015"
+   ms.author="alkohli" />
 
 # Ersetzen des Gehäuses des StorSimple-Geräts
 
@@ -63,4 +63,4 @@ Führen Sie die folgenden Schritte aus, um das Gehäuse in einem Microsoft Azure
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

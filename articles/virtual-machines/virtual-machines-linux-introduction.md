@@ -19,8 +19,6 @@
 
 #Einführung in Linux in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
-
 Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtueller Linux-Computer in der Azure-Cloud. Die Bereitstellung eines virtuellen Linux-Computers ist ein unkomplizierter Prozess, wenn Sie ein Image aus dem Katalog verwenden.
 
 ## Authentifizierung: Benutzernamen, Kennwörter und SSH-Schlüssel
@@ -93,10 +91,10 @@ An jeden virtuellen Computer ist ein temporärer lokaler *Ressourcendatenträger
 Unter Linux wird der Ressourcendatenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt.
 
 
-	>[AZURE.NOTE] Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und möglicherweise gelöscht oder neu formatiert wird, wenn der virtuelle Computer neu gestartet wird.
+	>[AZURE.NOTE] Note that the resource disk is a **temporary** disk, and might be deleted and reformatted when the VM is rebooted.
 
 Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dieser Vorgang wird Schritt für Schritt im Lernprogramm [Anfügen eines Datenträgers an einen virtuellen Computer](virtual-machines-linux-how-to-attach-disk.md) beschrieben.
 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

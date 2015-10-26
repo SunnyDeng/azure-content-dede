@@ -1,10 +1,10 @@
 <properties
    pageTitle="Azure IoT-Protokollgateway | Microsoft Azure"
-   description="Beschreibt, wie die Funktionalität von Azure IoT Hub mithilfe des Azure IoT-Protokollgateways erweitert wird."
+   description="Beschreibt, wie die Funktionalität und Protokollunterstützung von Azure IoT Hub mithilfe des Azure IoT-Protokollgateways erweitert wird."
    services="iot-hub"
    documentationCenter=""
    authors="kdotchkoff"
-   manager="kevinmil"
+   manager="timlt"
    editor=""/>
 
 <tags
@@ -12,9 +12,9 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="na"
+   ms.workload="nana"
    ms.date="09/29/2015"
-   ms.author="kdotchkoff"/>
+   ms.author="kdotchko"/>
 
 # Unterstützung zusätzlicher Protokolle für IoT Hub
 
@@ -27,14 +27,14 @@ Das Azure IoT-Protokollgateway ist ein Framework zur Protokollanpassung für die
 Das Protokollgateway kann in Azure auf hochgradig skalierbare Weise mit Cloud Services-Workerrollen bereitgestellt werden. Darüber hinaus kann das Protokollgateway in lokalen Umgebungen wie Feldgateways bereitgestellt werden.
 
 Das Azure IoT-Protokollgateway enthält einen MQTT-Adapter, um die Kommunikation mit Geräten über das MQTT v3.1.1-Protokoll zu ermöglichen. Das Protokollgateway und die MQTT-Implementierung werden als OSS-Projekt bereitgestellt und ermöglichen bei Bedarf die flexible Anpassung der Implementierung.
-   
+
 Der MQTT-Adapter veranschaulicht außerdem das Programmiermodell zum Erstellen von Protokolladaptern für andere Protokolle. Darüber hinaus unterstützt das Programmiermodell des IoT-Protokollgateways die Integration benutzerdefinierter Komponenten für spezialisierte Verarbeitungsaufgaben, wie benutzerdefinierte Authentifizierung, Nachrichtentransformationen, Komprimierung/Dekomprimierung oder Verschlüsselung/Entschlüsselung des Datenverkehrs zwischen Geräten und IoT Hub.
 
-## Nächste Schritte 
+## Nächste Schritte
 
 Weitere Informationen über das Azure IoT-Protokollgateway und zu dessen Verwendung und Bereitstellung als Teil Ihrer IoT-Lösung finden Sie unter:
 
 * [Repository für das Azure IoT-Protokollgateway auf GitHub](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md)
 * [Entwicklungsleitfaden für das Azure IoT-Protokollgateway](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/docs/DeveloperGuide.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Data Factory – Terminologie"
-	description="Dieser Artikel bietet eine Einführung in die von Azure Data Factory verwendete Terminologie zum Erstellen von Data Factorys."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Azure Data Factory – Terminologie" 
+	description="Dieser Artikel bietet eine Einführung in die von Azure Data Factory verwendete Terminologie zum Erstellen von Data Factorys." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/25/2015" 
 	ms.author="spelluru"/>
 
 #Azure Data Factory – Terminologie
@@ -110,4 +110,4 @@ Ein wichtiges Merkmal eines Hubs besteht darin, dass eine Pipeline auf einem ein
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

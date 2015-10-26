@@ -53,4 +53,4 @@ Dieser Schritt betrifft nur angepasste Ressourcen. Wenn Sie die Ressourcen, die 
 
 Siehe [Upgrade-Verfahren](mobile-engagement-windows-store-upgrade-procedure/)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

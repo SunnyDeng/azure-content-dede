@@ -46,4 +46,4 @@ Wenn Sie Benachrichtigungen zur Kontobereitstellung aktiviert haben, erhalten Si
 [1]: ./media/active-directory-saas-account-provisioning-notifications/ic766307.png
 [2]: ./media/active-directory-saas-account-provisioning-notifications/ic766308.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

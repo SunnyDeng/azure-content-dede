@@ -88,4 +88,4 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdef
 
 - Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

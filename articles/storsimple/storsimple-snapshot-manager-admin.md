@@ -1,19 +1,19 @@
 <properties 
    pageTitle="StorSimple Snapshot Manager-Verwaltung | Microsoft Azure"
-	description="Bietet eine Übersicht und Links zu weiteren Informationen zu Verwaltungsaufgaben und -workflows in der StorSimple Snapshot Manager-Lösung."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Bietet eine Übersicht und Links zu weiteren Informationen zu Verwaltungsaufgaben und -workflows in der StorSimple Snapshot Manager-Lösung."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/28/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/28/2015"
+   ms.author="v-sharos" />
 
 # Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung
 
@@ -60,4 +60,4 @@ Sie können StorSimple Snapshot Manager zum Überwachen und Verwalten bevorstehe
 
 [StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

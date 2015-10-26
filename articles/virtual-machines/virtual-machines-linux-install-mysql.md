@@ -23,8 +23,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie MySQL auf einem virtuellen Azure-Computer, auf dem Linux ausgeführt wird, installieren und konfigurieren.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
-
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 ##Installieren von MySQL auf dem virtuellen Computer
@@ -186,4 +185,4 @@ Wir verwenden hier eine Linux-VM mit OpenSUSE.
 ###Nächster Schritt
 Weitere Informationen zur Verwendung von MySQL finden Sie [hier](https://www.mysql.com/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

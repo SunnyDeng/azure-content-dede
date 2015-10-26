@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/22/2015" 
+	ms.date="10/13/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management
@@ -29,6 +29,8 @@ API Management umfasst die folgenden unveränderlichen Systemgruppen.
 Zusätzlich zu diesen Systemgruppen können Administratoren benutzerdefinierte Gruppen erstellen oder [externe Gruppen in zugeordneten Azure Active Directory-Mandanten verwenden][]. Benutzerdefinierte und externe Gruppen können gemeinsam mit Systemgruppen verwendet werden, um API-Produkte für Entwickler sichtbar zu machen und ihnen den Zugriff auf die API-Produkte zu ermöglichen. Beispielsweise können Sie eine benutzerdefinierte Gruppe für Entwickler eines spezifischen Partnerunternehmens erstellen und diesen Entwicklern Zugriff auf die APIs über ein Produkt erteilen, das nur die relevanten APIs enthält. Ein Benutzer kann Mitglied von mehr als einer Gruppe sein.
 
 Diese Anleitung beschreibt, wie Administrator einer API Management-Instanz neue Gruppen hinzufügen und diese zu Produkten und Entwicklern zuordnen können.
+
+>[AZURE.NOTE]Zusätzlich zum Erstellen und Verwalten von Gruppen im Herausgeberportal können Sie Ihre Gruppen mithilfe der Entität [Gruppe](https://msdn.microsoft.com/library/azure/dn776329.aspx) der API Management-REST-API erstellen und verwalten.
 
 ## <a name="create-group"> </a>Erstellen einer Gruppe
 
@@ -80,9 +82,11 @@ Markieren Sie die gewünschten Entwickler und klicken Sie anschließend auf die 
 
 Sobald Sie die Zuordnung zwischen Entwickler und Gruppe erstellt haben, können Sie diese auf der Registerkarte **Benutzer** anzeigen.
 
+
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Sobald ein Entwickler zu einer Gruppe hinzugefügt wurde, können diese die zu dieser Gruppe zugeordneten Produkte anzeigen und abonnieren. Weitere Informationen finden Sie unter [Erstellen und Veröffentlichen eines Produkts in Azure API Management][].
+-	Sobald ein Entwickler zu einer Gruppe hinzugefügt wurde, können diese die zu dieser Gruppe zugeordneten Produkte anzeigen und abonnieren. Weitere Informationen finden Sie unter [Erstellen und Veröffentlichen eines Produkts in Azure API Management][].
+-	Zusätzlich zum Erstellen und Verwalten von Gruppen im Herausgeberportal können Sie Ihre Gruppen mithilfe der Entität [Gruppe](https://msdn.microsoft.com/library/azure/dn776329.aspx) der API Management-REST-API erstellen und verwalten.
 
 
 [api-management-management-console]: ./media/api-management-howto-create-groups/api-management-management-console.png
@@ -107,4 +111,4 @@ Sobald ein Entwickler zu einer Gruppe hinzugefügt wurde, können diese die zu d
 [Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
 [externe Gruppen in zugeordneten Azure Active Directory-Mandanten verwenden]: api-management-howto-aad.md#how-to-add-an-external-azure-active-directory-group
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

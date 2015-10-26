@@ -1,18 +1,18 @@
 <properties
-   pageTitle="Verbinden Ihres Geräts mit der vorkonfigurierten Remoteüberwachungslösung von Azure IoT Suite | Microsoft Azure"
-   description="Es wird beschrieben, wie Sie Ihr Gerät mit der vorkonfigurierten Remoteüberwachungslösung von Azure IoT Suite verbinden, indem Sie ein Beispiel mit Daten zur Temperatur und Luftfeuchtigkeit verwenden."
-   services="iot-hub"
+   pageTitle="Verbinden eines Geräts mit einer vorkonfigurierten Lösung | Microsoft Azure"
+   description="Es wird beschrieben, wie Sie ein Gerät mit der vorkonfigurierten Remoteüberwachungslösung von Azure IoT Suite verbinden, indem Sie ein Beispiel mit Daten zur Temperatur und Luftfeuchtigkeit verwenden."
+   services=""
    documentationCenter="na"
    authors="hegate"
-   manager="jamesosb"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="iot-hub"
+   ms.service="na"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="na"
+   ms.workload="nana"
    ms.date="09/29/2015"
    ms.author="hegate"/>
 
@@ -28,7 +28,7 @@ In diesem Beispiel verwenden wir drei simulierte Datenquellen: Außentemperatur,
 
 ### Bereitstellen der IoT Suite
 
-Falls Sie Ihre vorkonfigurierte Lösung für die Remoteüberwachung noch nicht bereitgestellt haben, können Sie dies [hier](http://www.microsoft.com/de-DE/server-cloud/internet-of-things/getting-started.aspx) durchführen.
+Falls Sie Ihre vorkonfigurierte Lösung für die Remoteüberwachung noch nicht bereitgestellt haben, können Sie dies [hier](http://www.microsoft.com/en-us/server-cloud/internet-of-things/getting-started.aspx) durchführen.
 
 
 ### Bereitstellen des Geräts in der Remoteüberwachungslösung
@@ -309,4 +309,4 @@ Da Ihr Gerät jetzt verbunden ist und selbst generierte Temperaturdaten sendet, 
 
 Es gibt mehrere Möglichkeiten, die Funktionalität dieses Beispiels zu erweitern: Verbinden Sie einen echten Sensor mit Ihrem Gerät, damit echte Daten gesendet werden, implementieren Sie die Funktionalität für "Befehl und Steuerung" usw. Verwenden Sie unseren [Leitfaden](articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions.md) zur Erweiterung der Lösung für die Remoteüberwachung, um weitere Informationen zu erhalten.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

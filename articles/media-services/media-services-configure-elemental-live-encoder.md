@@ -26,21 +26,21 @@
   
 In diesem Thema wird beschrieben, wie Sie den [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live)-Encoder zum Senden eines Single-Bitrate-Livedatenstroms an AMS-Kanäle konfigurieren, die für das Live Encoding aktiviert sind. Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die zum Ausführen von Live Encoding mit Azure Media Services aktiviert wurden](media-services-manage-live-encoder-enabled-channels.md).
 
-In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das Azure-Verwaltungsportal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
+In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das Azure-Verwaltungsportal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
 
 ##Voraussetzungen
 
 - Zum Erstellen von Liveereignissen müssen Sie über ausreichende Kenntnisse in Bezug auf die Verwendung der Elemental Live-Webschnittstelle verfügen.
 - [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md)
-- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer Streamingeinheit vorhanden ist. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md). 
+- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer zugeordneten Streamingeinheit ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md). 
 
 - Installieren Sie die neueste Version des [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer)-Tools.
 - Starten Sie das Tool, und stellen Sie eine Verbindung mit Ihrem AMS-Konto her.
 
 ##Tipps
 
-- Verwenden Sie nach Möglichkeit eine kabelgebundene Internetverbindung. 
-- Eine Faustregel zum Bestimmen der erforderlichen Bandbreite ist die Verdoppelung der Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber es ist hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.  
+- Verwenden Sie nach Möglichkeit eine Kabelverbindung zum Internet. 
+- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.  
 - Bei Verwendung softwarebasierter Encoder sollten Sie alle nicht benötigten Programme schließen.
 
 ## Elemental Live mit RTP Ingest
@@ -60,7 +60,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie den Elemental Live-Encoder kon
  
 3. Klicken Sie auf **Kanal erstellen**. ![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental12.png)
 
->[AZURE.NOTE]Das Starten des Kanals kann bis zu 20 Minuten dauern.
+>[AZURE.NOTE]Das Starten des Kanals kann bis zu 20 Minuten dauern.
 
 Während der Kanal gestartet wird, können Sie [den Encoder konfigurieren](media-services-configure-elemental-live-encoder.md#configure_elemental_rtp).
 
@@ -73,16 +73,16 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
 **Video**:
  
 - Codec: H.264 
-- Profil: Hoch (Level 4.0) 
+- Profil: Hoch (Level 4.0) 
 - Bitrate: 5.000 KBit/s 
-- Keyframe: 2 Sekunden (60 Sekunden) 
+- Keyframe: 2 Sekunden (60 Sekunden) 
 - Bildfrequenz: 30
  
 **Audio**:
 
 - Codec: AAC (LC) 
-- Bitrate: 192 KBit/s 
-- Abtastrate: 44,1 kHz
+- Bit Rate: 192 Kbit/s 
+- Abtastrate: 44,1 kHz
 
 
 ####Konfigurationsschritte
@@ -171,4 +171,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

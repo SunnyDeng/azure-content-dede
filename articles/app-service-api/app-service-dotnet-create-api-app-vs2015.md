@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/19/2015" 
+	ms.date="08/14/2015" 
 	ms.author="tdykstra"/>
 
 # Erstellen einer ASP.NET-API-App in Azure App Service mithilfe von Visual Studio 2015
@@ -25,7 +25,7 @@
 
 ## Übersicht
 
-In diesem Lernprogramm erstellen Sie ein ASP.NET-Web-API 2-Projekt mithilfe von [Visual Studio 2015 RC](https://www.visualstudio.com/de-de/downloads/visual-studio-2015-downloads-vs.aspx) und konfigurieren es zur Bereitstellung in der Cloud als [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md). Sie stellen das Projekt auch für Azure bereit. Am Ende des Lernprogramms haben Sie eine API-App, die in der Azure-Cloud ausgeführt wird.
+In diesem Lernprogramm erstellen Sie ein ASP.NET-Web-API 2-Projekt mithilfe von [Visual Studio 2015 RC](https://www.visualstudio.com/de-DE/downloads/visual-studio-2015-downloads-vs.aspx) und konfigurieren es zur Bereitstellung in der Cloud als [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md). Sie stellen das Projekt auch für Azure bereit. Am Ende des Lernprogramms haben Sie eine API-App, die in der Azure-Cloud ausgeführt wird.
 
 Für das Lernprogramm wird davon ausgegangen, dass Sie die Arbeit mit Dateien und Ordnern im Visual Studio **Projektmappen-Explorer** beherrschen.
 
@@ -297,4 +297,4 @@ In diesem Abschnitt navigieren Sie zum Portal, um die API-Definition für die so
 Sie haben nun eine API-Anwendung mithilfe von Visual Studio 2015 RC erstellt und bereitgestellt. Zusätzliche Dokumentation zu API-Apps finden Sie unter den Einträgen im Navigationsbereich auf der linken Seite der Seite (bei breiten Browserfenstern) oder am oberen Rand der Seite (bei schmalen Browserfenstern). Der Großteil der API-App-Dokumentation zeigt derzeit Visual Studio 2013, aber vieles davon gilt auch für VS 2015, da die Benutzeroberfläche ähnlich ist. Der Code, den Sie schreiben, ist derselbe und auch die Portalbenutzeroberfläche ist identisch.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

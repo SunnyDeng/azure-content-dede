@@ -14,19 +14,26 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/07/2015"
+	ms.date="10/12/2015"
 	ms.author="garye;bradsev" />
 
 
 # Importieren von Trainingsdaten aus verschiedenen Datenquellen in Azure Machine Learning Studio
 
-[AZURE.INCLUDE [import-data-into-aml-studio-selector](../../includes/machine-learning-import-data-into-aml-studio.md)]
+Dieses **Menü** bietet Links zu Themen, in denen beschrieben wird, wie Daten in Zielumgebungen erfasst werden, in denen die Daten während des Cortana-Analyseprozesses (CAP) gespeichert und verarbeitet werden.
+
+[AZURE.INCLUDE [cap-ingest-data-selector](../../includes/cap-ingest-data-selector.md)]
+
+
+## Einführung
 
 Um Ihre eigenen Daten in Machine Learning Studio zum Entwickeln und Trainieren einer Predictive Analytics-Lösung zu verwenden, können Sie folgende Aktionen ausführen:
 
 - Hochladen von Daten aus einer **lokalen Datei** von der Festplatte im Voraus, um damit ein DataSet-Modul in Ihrem Arbeitsbereich zu erstellen  
 - Zugreifen auf Daten aus einer von mehreren **Onlinedatenquellen**, während Ihr Experiment mit dem [Reader][reader]-Modul ausgeführt wird 
 - Verwenden von Daten aus einem anderen Azure Machine Learning-Experiment, die als **DataSet** gespeichert sind 
+
+[AZURE.INCLUDE [import-data-into-aml-studio-selector](../../includes/machine-learning-import-data-into-aml-studio.md)]
 
 Diese Optionen werden in den Themen im Menü oben beschrieben. In diesen Themen wird das Importieren von Daten aus verschiedenen Datenquellen für die Verwendung in Machine Learning Studio veranschaulicht.
 
@@ -89,4 +96,4 @@ Bei Bedarf können Sie das Data Table-Format mit anderen Konvertierungsmodulen w
 [metadata-editor]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

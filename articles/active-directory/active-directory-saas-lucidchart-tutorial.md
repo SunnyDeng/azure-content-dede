@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Lucidchart erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Ein Lucidchart-Software-Abonnement, für das das einmalige Anmelden aktiviert ist.
   
-Nach Abschluss dieses Tutorials können sich die Lucidchart zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Lucidchart-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) nutzen.
+Nach Abschluss dieses Tutorials können sich die Lucidchart zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Lucidchart-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-lucidchart-tutorial/IC791187.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Lucidchart-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Lucidchart verwenden \(z. B. **https://chart2.office.lucidchart.com/saml/sso/azure*")\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Lucidchart-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Lucidchart verwenden (z. B. **https://chart2.office.lucidchart.com/saml/sso/azure*")), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-lucidchart-tutorial/IC791188.png "App-URL konfigurieren")
 
@@ -77,7 +77,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Team](./media/active-directory-saas-lucidchart-tutorial/IC791190.png "Team")
 
-7.  Klicken Sie auf **Anwendung \> SAML verwalten**.
+7.  Klicken Sie auf **Anwendung > SAML verwalten**.
 
     ![SAML verwalten](./media/active-directory-saas-lucidchart-tutorial/IC791191.png "SAML verwalten")
 
@@ -112,4 +112,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

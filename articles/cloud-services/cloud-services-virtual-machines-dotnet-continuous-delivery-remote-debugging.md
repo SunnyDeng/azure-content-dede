@@ -28,7 +28,7 @@ In diesem Thema:
 ## <a name="cloudservice"></a>Aktivieren von Remotedebuggen für Clouddienste
 
 1. Richten Sie im Build-Agent die initiale Umgebung für Azure ein, wie in [Befehlszeilentool für Azure](http://msdn.microsoft.com/library/hh535755.aspx) dargestellt.
-2. Da die Remotedebugging-Laufzeit (msvsmon.exe) für das Paket erforderlich ist, müssen Sie [Remote Tools für Visual Studio 2015](http://www.microsoft.com/download/details.aspx?id=46874) (oder [Remote Tools für Visual Studio 2013 Update 5 RC](https://www.microsoft.com/DE-DE/download/details.aspx?id=46870) bei Verwendung von Visual Studio 2013) installieren. Alternativ können Sie auch die Remotedebugging-Binärdateien aus einem System kopieren, auf dem Visual Studio installiert ist.
+2. Da die Remotedebugging-Laufzeit (msvsmon.exe) für das Paket erforderlich ist, müssen Sie [Remote Tools für Visual Studio 2015](http://www.microsoft.com/download/details.aspx?id=46874) (oder [Remote Tools für Visual Studio 2013 Update 5 RC](https://www.microsoft.com/de-DE/download/details.aspx?id=46870) bei Verwendung von Visual Studio 2013) installieren. Alternativ können Sie auch die Remotedebugging-Binärdateien aus einem System kopieren, auf dem Visual Studio installiert ist.
 3. Erstellen Sie ein Zertifikat, wie in [Erstellen eines Dienstzertifikats für Azure](cloud-services-certs-create.md) gezeigt. Bewahren Sie die .pfx-Datei und den RDP-Zertifikatfingerabdruck auf, und laden Sie das Zertifikat in den Zielclouddienst hoch.
 4. Verwenden Sie folgende Optionen in der MSBuild-Befehlszeile, um ein Build und ein Paket mit aktiviertem Remotedebugging zu erstellen. (Ersetzen Sie die Elemente in spitzen Klammern durch tatsächliche Pfade zu Ihren System- und Projektdateien).
 
@@ -94,4 +94,4 @@ $vm | Update-AzureVM
 
 6. Importieren Sie das Zertifikat (PFX-Datei) auf den Computer, auf dem Visual Studio mit dem Azure-SDK für .NET installiert ist.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

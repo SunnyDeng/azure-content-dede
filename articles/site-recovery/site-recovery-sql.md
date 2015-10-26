@@ -148,16 +148,111 @@ Die folgende Abbildung veranschaulicht dieses Setup:
 
 
 
-##Erstellen von Wiederherstellungsplänen
+##Integration mit SQL AlwaysOn in Azure
 
-Wiederherstellungspläne dienen zum Gruppieren von Computern, für die ein gemeinsames Failover durchgeführt werden soll. Machen Sie sich zunächst mit [Wiederherstellungsplänen](site-recovery-create-recovery-plans.md) und [Failover](site-recovery-failover.md) vertraut, bevor Sie fortfahren.
+Azure Site Recovery (ASR) bietet systemeigene Unterstützung von SQL AlwaysOn. Wenn Sie eine SQL-Verfügbarkeitsgruppe mit einem virtuellen Azure-Computer erstellt haben, der als "Sekundär" eingerichtet ist, können Sie anschließend mithilfe von ASR das Failover der Verfügbarkeitsgruppen verwalten.
+
+Diese Funktionalität ist derzeit in der Vorschauphase und verfügbar, wenn das primäre Datencenter von System Center Virtual Machine Manager (VMM) verwaltet wird.
+
+### Vom VMM-Server verwaltete Umgebungen
+Im ASR-Tresor sollte unter der Registerkarte "Geschützte Elemente" die Registerkarte "SQL Server" angezeigt werden.
+
+![Geschützte Elemente](./media/site-recovery-sql/protected-items.png)
+
+Es folgen die Schritte zum Integrieren von SQL AlwaysOn in ASR.
+
+#### Voraussetzungen
+- Lokale SQL Server-Instanz auf einem eigenständigen Server oder in einem Failovercluster. 
+- Mindestens ein virtueller Azure-Computer, auf dem SQL Server installiert ist.
+- SQL-Verfügbarkeitsgruppe, die zwischen der lokalen und in Azure ausgeführten SQL Server-Instanz eingerichtet ist.
+- PowerShell-Remoting muss für die lokale SQL Server-Instanz aktiviert sein. Der VMM-Server muss PowerShell-Remoteaufrufe an SQL Server richten können.
+- Für die lokale SQL Server-Instanz muss ein Benutzerkonto in SQL-Benutzergruppen mit mindestens den folgenden Berechtigungen hinzugefügt werden:
+	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/de-DE/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/de-DE/library/ff878601.aspx#Anchor_3)
+	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/de-DE/library/ff877956.aspx#Security)
+- Ein ausführendes Konto muss auf dem VMM-Server für das Konto aus dem vorherigen Schritt erstellt werden.
+- Das SQL PS-Modul muss für SQL Server-Instanzen installiert werden, die lokal oder in virtuellen Azure-Computern ausgeführt werden.
+- Der VM-Agent muss in virtuellen Computern installiert werden, die in Azure ausgeführt werden.
+- NTAUTHORITY\\System benötigt folgende Berechtigungen für eine in virtuellen Computern in Azure ausgeführte SQL Server-Instanz:
+	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/de-DE/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/de-DE/library/ff878601.aspx#Anchor_3)
+	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/de-DE/library/ff877956.aspx#Security)
+
+#### Hinzufügen einer SQL Server-Instanz
+
+Klicken Sie auf "SQL hinzufügen", um eine neue SQL Server-Instanz hinzufügen.
+
+![SQL hinzufügen](./media/site-recovery-sql/add-sql.png)
+
+Geben Sie die Details der SQL Server-Instanz, von VMM und Anmeldeinformationen zum Verwalten der SQL Server-Instanz ein.
+
+![Dialogfeld "SQL hinzufügen"](./media/site-recovery-sql/add-sql-dialog.png)
+
+##### Parameter
+1. Name: Anzeigename, den Sie zum Verweisen auf diese SQL Server-Instanz verwenden möchten
+2. SQL Server (FQDN): Vollqualifizierter Domänenname (FQDN) der SQL Server-Quellinstanz, die Sie hinzufügen möchten. Für den Fall, dass die SQL Server-Instanz in einem Failovercluster installiert ist, geben Sie den FQDN des Clusters und nicht den eines der Clusterknoten an. 
+3. SQL Server-Instanz: Wählen Sie die Standard-SQL-Instanz, oder geben Sie den Namen der benutzerdefinierten SQL Server-Instanz an.
+4. VMM-Server: Wählen Sie einen der VMM-Server, der bereits bei Azure Site Recovery (ASR) registriert wurde. ASR nutzt diesen VMM-Server für die Kommunikation mit der SQL Server-Instanz.
+5. Ausführendes Konto: Geben Sie den Namen eines der ausführenden Konten an, die auf dem oben ausgewählten VMM-Server erstellt wurden. Dieses ausführende Konto wird verwendet, um auf die SQL Server-Instanz zuzugreifen und muss über die Berechtigungen "Lesen" und "Failover" für Verfügbarkeitsgruppen in dieser SQL Server-Instanz verfügen. 
+
+Nach dem Hinzufügen der SQL Server-Instanz wird sie auf der Registerkarte "SQL Server" angezeigt.
+
+![SQL Server-Liste](./media/site-recovery-sql/sql-server-list.png)
+
+#### Hinzufügen einer SQL-Verfügbarkeitsgruppe
+
+Nach dem Hinzufügen der SQL Server-Instanz ist der nächste Schritt das Hinzufügen der Verfügbarkeitsgruppen zu ASR. Führen Sie hierfür eine Detailsuche innerhalb der im vorherigen Schritt hinzugefügten SQL Server-Instanz durch, und klicken Sie dann auf "SQL-Verfügbarkeitsgruppe hinzufügen".
+
+![SQL-Verfügbarkeitsgruppe hinzufügen](./media/site-recovery-sql/add-sqlag.png)
+
+Eine SQL-Verfügbarkeitsgruppe kann in einen oder mehrere virtuelle Computer in Azure repliziert werden. Beim Hinzufügen der SQL-Verfügbarkeitsgruppe müssen Sie den Namen und das Abonnement des virtuellen Azure-Computers angeben, auf den durch ASR das Failover der Verfügbarkeitsgruppe erfolgen soll.
+
+![Dialogfeld "SQL-Verfügbarkeitsgruppe hinzufügen"](./media/site-recovery-sql/add-sqlag-dialog.png)
+
+Bei einem Failover würde im obigen Beispiel die Verfügbarkeitsgruppe DB1-AG zur primären Verfügbarkeitsgruppe auf dem virtuellen Computer SQLAGVM2 im Abonnement DevTesting2.
+
+>[AZURE.NOTE]Nur die Verfügbarkeitsgruppen, die in der im vorigen Schritt hinzugefügten SQL Server-Instanz primär sind, stehen für das Hinzufügen zu ASR zur Verfügung. Wenn Sie in der SQL Server-Instanz eine Verfügbarkeitsgruppe als primär eingestuft haben oder der SQL Server-Instanz nach deren Hinzufügen mehrere Verfügbarkeitsgruppen hinzugefügt haben, aktualisieren Sie sie über die SQL Server-Option "Aktualisieren".
+
+#### Erstellen eines Wiederherstellungsplans
+
+Der nächste Schritt ist die Erstellung eines Wiederherstellungsplans mit virtuellen Computern und Verfügbarkeitsgruppen. Wählen Sie denselben in Schritt 1 verwendeten VMM-Server als Quelle und Microsoft Azure als Ziel aus.
+
+![Wiederherstellungsplan erstellen](./media/site-recovery-sql/create-rp1.png)
+
+![Wiederherstellungsplan erstellen](./media/site-recovery-sql/create-rp2.png)
+
+In diesem Beispiel besteht die SharePoint-Anwendung aus drei virtuellen Computern, die eine SQL-Verfügbarkeitsgruppe als Back-End verwenden. Bei diesem Wiederherstellungsplan können Sie sowohl die Verfügbarkeitsgruppe als auch den virtuellen Computer auswählen, die die Anwendung bilden.
+
+Sie können den Wiederherstellungsplan weiter anpassen, indem Sie virtuelle Computer in verschiedene Failovergruppen verschieben, um die Reihenfolge des Failovers festzulegen. Für die Verfügbarkeitsgruppe erfolgt das Failover immer zuerst, da sie als Back-End einer beliebigen Anwendung verwendet wird.
+
+![Wiederherstellungsplan anpassen](./media/site-recovery-sql/customize-rp.png)
+
+#### Failover
+
+Andere Failoveroptionen sind verfügbar, nachdem eine Verfügbarkeitsgruppe einem Wiederherstellungsplan hinzugefügt wurde.
+
+##### Geplantes Failover
+
+Ein geplantes Failover impliziert ein Failover ohne Datenverlust. Hierfür wird der Verfügbarkeitsmodus der SQL-Verfügbarkeitsgruppe zunächst auf "Synchron" festgelegt. Dann wird ein Failover ausgelöst, um die Verfügbarkeitsgruppe auf dem bereitgestellten virtuellen Computer als "Primär" zu markieren, während die Verfügbarkeitsgruppe zu ASR hinzugefügt wird. Sobald das Failover abgeschlossen ist, wird der Verfügbarkeitsmodus auf den gleichen Wert wie vor dem Auslösen des geplanten Failovers festgelegt.
+
+##### Ungeplantes Failover
+
+Ein ungeplantes Failover kann zum Verlust von Daten führen. Beim Auslösen eines ungeplanten Failovers wird der Verfügbarkeitsmodus der Verfügbarkeitsgruppe nicht geändert, und diese wird als "Primär" auf dem bereitgestellten virtuellen Computer markiert, während die Verfügbarkeitsgruppe zu ASR hinzugefügt wird. Sobald ein ungeplantes Failover abgeschlossen ist und der lokale Server mit SQL Server wieder zur Verfügung steht, muss für die Verfügbarkeitsgruppe "Replikation rückgängig machen" ausgelöst werden. Beachten Sie, dass diese Aktion für den Wiederherstellungsplan nicht verfügbar ist und für die SQL-Verfügbarkeitsgruppe auf der Registerkarte "SQL Server" ausgeführt werden kann.
+
+##### Testfailover
+Ein Testfailover für SQL-Verfügbarkeitsgruppen wird nicht unterstützt. Wenn Sie ein Testfailover für einen Wiederherstellungsplan mit einer SQL-Verfügbarkeitsgruppe auslösen, wird das Failover für die Verfügbarkeitsgruppe übersprungen.
+
+##### Failback
+
+Wenn Sie die Verfügbarkeitsgruppe für die lokale SQL Server-Instanz wieder als "Primär" festlegen möchten, müssen Sie dazu ein geplantes Failover für den Wiederherstellungsplan auslösen und die Richtung von Microsoft Azure zum lokalen VMM-Server wählen.
+
+##### Umgekehrte Replikation
+
+Nach einem ungeplanten Failover muss die umgekehrte Replikation für die Verfügbarkeitsgruppe ausgelöst werden, um die Replikation fortzusetzen. Bis dahin bleibt die Replikation unterbrochen.
 
 
-### Erstellen eines Wiederherstellungsplans für SQL Server-Cluster (SQL Server 2012/2014 Enterprise)
+### Nicht von VMM verwaltete Umgebungen
 
-#### Konfigurieren von SQL Server-Skripts für das Failover zu Azure
+Für Umgebungen, die nicht von einem VMM-Server verwaltet werden, können Azure Automation-Runbooks verwendet werden, um ein skriptgesteuertes Failover von SQL-Verfügbarkeitsgruppen zu konfigurieren. Es folgen die entsprechenden Schritte:
 
-In diesem Szenario nutzen wir benutzerdefinierte Skripts und Azure Automation für Wiederherstellungspläne, um ein geskriptetes Failover von SQL Server-Verfügbarkeitsgruppen zu konfigurieren.
 
 1.	Erstellen Sie eine lokale Datei für das Failoverskript einer Verfügbarkeitsgruppe. Dieses Beispielskript gibt einen Pfad zur Verfügbarkeitsgruppe im Azure-Replikat an und führt ein Failover der Gruppe zu dieser Replikatinstanz durch. Dieses Skript wird auf dem virtuellen SQL Server-Replikatcomputer ausgeführt, indem es zusammen mit der Erweiterung des benutzerdefinierten Skripts übergeben wird.
 
@@ -243,120 +338,25 @@ In diesem Szenario nutzen wir benutzerdefinierte Skripts und Azure Automation f�
 
 2. Fügen Sie beim Erstellen eines Wiederherstellungsplans für die Anwendung einen geskripteten Startschritt vor der ersten Gruppe ein, der das Skript für das Failover von Verfügbarkeitsgruppen aufruft.
 
-### Erstellen eines Wiederherstellungsplans für SQL Server-Cluster (Standard)
-
-#### Konfigurieren von SQL Server-Skripts für das Failover zu Azure
-
-1.	Erstellen Sie eine lokale Datei für das Failoverskript für die SQL Server-Datenbankspiegelung. Verwenden Sie das folgende Beispielskript:
-
-    	Param(
-    	[string]$database
-    	)
-    	Import-module sqlps
-    	Invoke-sqlcmd –query “ALTER DATABASE $database SET PARTNER FORCE_SERVICE_ALLOW_DATA_LOSS”
-
-2.	Laden Sie das Skript an ein Blob im Azure-Speicherkonto hoch. Verwenden Sie das folgende Beispielskript:
-
-    	$context = New-AzureStorageContext -StorageAccountName "Account" -StorageAccountKey "Key"
-    	Set-AzureStorageBlobContent -Blob "AGFailover.ps1" -Container "script-container" -File "ScriptLocalFilePath" -context $context
-
-3.	Erstellen Sie ein Azure Automation-Runbook, um das Skript auf dem virtuellen SQL Server-Replikatcomputer in Azure aufzurufen. Verwenden Sie dazu dieses Beispielskript. Weitere Informationen zur Verwendung von Automation-Runbooks in Wiederherstellungsplänen finden Sie [hier](site-recovery-runbook-automation.md). Vergewissern Sie sich zuvor, dass der VM-Agent nach dem Failover auf dem virtuellen SQL Server-Computer ausgeführt wird.
-
-    	workflow SQLAvailabilityGroupFailover
-		{
-    		param (
-        		[Object]$RecoveryPlanContext
-    		)
-
-    	$Cred = Get-AutomationPSCredential -name 'AzureCredential'
-	
-    	#Connect to Azure
-    	$AzureAccount = Add-AzureAccount -Credential $Cred
-    	$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
-    	Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
-    
-    	InLineScript
-    	{
-     	#Update the script with name of your storage account, key and blob name
-     	$context = New-AzureStorageContext -StorageAccountName "Account" -StorageAccountKey "Key";
-     	$sasuri = New-AzureStorageBlobSASToken -Container "script-container" -Blob "AGFailover.ps1" -Permission r -FullUri -Context $context;
-     
-     	Write-output "failovertype " + $Using:RecoveryPlanContext.FailoverType;
-               
-     	if ($Using:RecoveryPlanContext.FailoverType -eq "Test")
-       		{
-           		#Skipping TFO in this version.
-           		#We will update the script in a follow-up post with TFO support
-           		Write-output "tfo: Skipping SQL Failover";
-       		}
-     	else
-       			{
-           		Write-output "pfo/ufo";
-           		#Get the SQL Azure Replica VM.
-           		#Update the script to use the name of your VM and Cloud Service
-           		$VM = Get-AzureVM -Name "SQLAzureVM" -ServiceName "SQLAzureReplica";     
-       
-           		Write-Output "Installing custom script extension"
-           		#Install the Custom Script Extension on teh SQL Replica VM
-           		Set-AzureVMExtension -ExtensionName CustomScriptExtension -VM $VM -Publisher Microsoft.Compute -Version 1.3| Update-AzureVM; 
-                    
-           		Write-output "Starting AG Failover";
-           		#Execute the SQL Failover script
-           		#Pass the SQL AG path as the argument.
-       
-           		$AGArgs="-SQLAvailabilityGroupPath sqlserver:\sql\sqlazureVM\default\availabilitygroups\testag";
-       
-           		Set-AzureVMCustomScriptExtension -VM $VM -FileUri $sasuri -Run "AGFailover.ps1" -Argument $AGArgs | Update-AzureVM;
-       
-           		Write-output "Completed AG Failover";
-
-       			}
-        
-    		}
-		}
-
-
-
-4. Fügen Sie dem Wiederherstellungsplan die folgenden Schritte hinzu, um ein Failover der SQL Server-Ebene durchzuführen:
-
-	- Fügen Sie für ein geplantes Failover ein primärseitiges Skript hinzu, um den primären Cluster nach dem Herunterfahren der Gruppe herunterzufahren.
-	- Fügen Sie dem Wiederherstellungsplan den virtuellen, für die Datenbankspiegelung verwendeten SQL Server-Computer hinzu (vorzugsweise in der ersten Startgruppe).
-3.	Fügen Sie ein Skript hinzu, das nach dem Failover ausgeführt wird und innerhalb dieses virtuellen Computers mithilfe des obigen Automation-Skripts ein Failover der Spiegelkopie durchführt. Hinweis: Da sich der Name der Datenbankinstanz geändert hat, muss die Anwendungsebene für die Verwendung der neuen Datenbank konfiguriert werden.
-
-
-#### Konfigurieren von SQL Server-Skripts für das Failover zu einem sekundären Standort
-
-1.	Fügen Sie dieses Beispielskript der VMM-Bibliothek am primären und sekundären Standort hinzu.
-
-    	Param(
-    	[string]$database
-    	)
-    	Import-module sqlps
-    	Invoke-sqlcmd –query “ALTER DATABASE $database SET PARTNER FORCE_SERVICE_ALLOW_DATA_LOSS”
-
-2.	Fügen Sie dem Wiederherstellungsplan den virtuellen, für die Datenbankspiegelung verwendeten SQL Server-Computer hinzu (vorzugsweise in der ersten Startgruppe).
-3.	Fügen Sie ein Skript hinzu, das nach dem Failover ausgeführt wird und innerhalb dieses virtuellen Computers mithilfe des obigen VMM-Skripts ein Failover der Spiegelkopie durchführt. Hinweis: Da sich der Name der Datenbankinstanz geändert hat, muss die Anwendungsebene für die Verwendung der neuen Datenbank konfiguriert werden.
-
-
-
-
 
 ## Überlegungen zum Test-Failover
 
 Bei Verwendung von AlwaysOn-Verfügbarkeitsgruppen ist kein Test-Failover der SQL Server-Ebene möglich. Alternativen:
 
-- Option 1:
+###Option 1:
 
-	1. Führen Sie ein Test-Failover für die Anwendungs- und die Front-End-Ebene durch.
-	2. Aktualisieren Sie die Anwendungsebene für den Zugriff auf die Replikatkopie im schreibgeschützten Modus, und führen Sie einen schreibgeschützten Test der Anwendung durch.
 
-- Option 2:
+
+1. Führen Sie ein Test-Failover für die Anwendungs- und die Front-End-Ebene durch.
+
+2. Aktualisieren Sie die Anwendungsebene für den Zugriff auf die Replikatkopie im schreibgeschützten Modus, und führen Sie einen schreibgeschützten Test der Anwendung durch.
+
+###Option 2:
+
 1.	Erstellen Sie eine Kopie der virtuellen SQL Server-Replikatcomputerinstanz (mit VMM-Klon bei Standort zu Standort oder mit Azure Backup), und machen Sie sie in einem Testnetzwerk verfügbar.
 2.	Führen Sie das Test-Failover mit dem Wiederherstellungsplan durch.
 
-## Überlegungen zum Failback
 
-Bei SQL-Standardclustern ist für das Failback nach einem nicht geplanten Failover eine SQL Server-Sicherung und -Wiederherstellung der Spiegelinstanz im ursprünglichen Cluster und eine anschließende Wiederherstellung der Spiegelung erforderlich.
 
 
 
@@ -364,4 +364,4 @@ Bei SQL-Standardclustern ist für das Failback nach einem nicht geplanten Failov
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

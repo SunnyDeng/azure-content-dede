@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/14/2015"
+   ms.date="10/13/2015"
    ms.author="tomfitz"/>
 
 # Funktionen von Azure Resource Manager-Vorlagen
@@ -493,6 +493,41 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Großbuc
     }
 
 
+## uniqueString
+
+**uniqueString (stringForCreatingUniqueString, ...)**
+
+Führt einen 64-Bit-Hash mit den bereitgestellten Zeichenfolgen durch, um eine eindeutige Zeichenfolge zu erstellen. Diese Funktion ist hilfreich, wenn Sie einen eindeutigen Namen für eine Ressource erstellen müssen. Sie geben Parameterwerte an, die die Ebene der Eindeutigkeit für das Ergebnis darstellen. Sie können angeben, ob der Name für Ihr Abonnement, die Ressourcengruppe oder die Bereitstellung eindeutig ist.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringForCreatingUniqueString | Ja | Die Basiszeichenfolge, die in der Hashfunktion verwendet wird, um eine eindeutige Zeichenfolge zu erstellen.
+| Zusätzliche Parameter nach Bedarf. | Nein | Sie können beliebig viele Zeichenfolgen hinzufügen, ganz wie sie zum Erstellen des Werts benötigt werden, der die Ebene der Eindeutigkeit angibt.
+
+Der zurückgegebene Wert ist keine vollständig zufällige Zeichenfolge, sondern eher das Ergebnis einer Hashfunktion. Der zurückgegebene Wert ist 13 Zeichen lang. Es ist nicht garantiert, dass er global eindeutig ist. Möglicherweise sollten Sie den Wert mit einem Präfix aus Ihren Benennungskonventionen kombinieren, um einen besser geeigneten Anzeigenamen zu erstellen.
+
+Die folgenden Beispiele zeigen, wie Sie mithilfe von uniqueString einen eindeutigen Wert für verschiedene, häufig verwendete Ebenen erstellen können.
+
+Eindeutig auf Grundlage des Abonnements
+
+    "[uniqueString(subscription().subscriptionId)]"
+
+Eindeutig auf Grundlage der Ressourcengruppe
+
+    "[uniqueString(resourceGroup().id)]"
+
+Eindeutig auf Grundlage der Bereitstellung für eine Ressourcengruppe
+
+    "[uniqueString(resourceGroup().id, deployment().name)]"
+    
+Das folgende Beispiel zeigt, wie Sie einen eindeutigen Namen für ein Speicherkonto auf Grundlage seiner Ressourcengruppe erstellen.
+
+    "resources": [{ 
+        "name": "[concat('ContosoStorage', uniqueString(resourceGroup().id))]", 
+        "type": "Microsoft.Storage/storageAccounts", 
+        ...
+
+
 ## Variablen
 
 **Variablen (variableName)**
@@ -510,4 +545,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

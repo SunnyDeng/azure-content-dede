@@ -299,4 +299,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

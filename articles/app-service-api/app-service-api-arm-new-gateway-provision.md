@@ -7,7 +7,6 @@
 	manager="wpickett" 
 	editor=""/>
 
-
 <tags 
 	ms.service="app-service-api" 
 	ms.workload="web" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="08/04/2015" 
 	ms.author="tomfitz"/>
-
 
 # Bereitstellen einer API-App mit einem neuen Gateway
 
@@ -310,4 +308,4 @@ Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigensch
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -70,4 +70,4 @@ Nehmen wir nun an, dass John Doe sich am Azure-Verwaltungsportal anmelden und di
 ##Nächste Schritte
 Weitere Informationen über die Beziehung zwischen Abonnements und Verzeichnissen finden Sie unter [Zuordnung zwischen einem Abonnement und einem Verzeichnis](active-directory-how-subscriptions-associated-directory.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

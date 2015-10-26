@@ -56,4 +56,4 @@ Weitere Informationen zu Datenbank-Warnungsregeln finden Sie unter [Vorgehenswei
 Wenn für den Zugriff auf die Datenbank Überwachung erforderlich ist, müssen Sie nach der Wiederherstellung der Datenbank die Überwachung aktivieren. Es ist ein guter Indikator für die Notwendigkeit von Überwachung, wenn Clientanwendungen sichere Verbindungszeichenfolgen in einem Muster von *.database.secure.windows.net verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung](sql-database-auditing-get-started.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

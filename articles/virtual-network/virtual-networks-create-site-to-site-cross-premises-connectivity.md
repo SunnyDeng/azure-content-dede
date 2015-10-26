@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen"
-	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein virtuelles Azure-Netzwerk mit standortübergreifender Konnektivität erstellen."
-	services="virtual-network"
-	documentationCenter=""
-	authors="cherylmc"
-	manager="adinah"
+	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen" 
+	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein virtuelles Azure-Netzwerk mit standortübergreifender Konnektivität erstellen." 
+	services="virtual-network" 
+	documentationCenter="" 
+	authors="cherylmc" 
+	manager="adinah" 
 	editor="tysonn"/>
 
 <tags 
-	ms.service="virtual-network"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/17/2015"
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/17/2015" 
 	ms.author="cherylmc"/>
 
 
@@ -64,8 +64,7 @@ Wenn Sie anhand dieses Lernprogramms ein funktionsfähiges, standortübergreifen
 
 -  VPN-Gerät mit einer öffentlichen IPv4-Adresse. Sie benötigen die IP-Adresse, um den Assistenten abzuschließen. Das VPN-Gerät darf sich nicht hinter der Netzwerkadressübersetzung (Network Address Translator, NAT) befinden und muss den Mindestgerätestandards entsprechen. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=248098).
 
-	Hinweis: Sie können den Routing- und RAS-Dienst (Routing and Remote Access Service, RRAS) in Windows Server als Teil Ihrer VPN-Lösung verwenden. In diesem Lernprogramm werden Sie jedoch nicht durch die RRAS-Konfigurationsschritte geführt. 
-	Informationen zur RRAS-Konfiguration finden Sie unter [Vorlagen für den Routing- und RAS-Dienst (RRAS)](http://msdn.microsoft.com/library/windowsazure/dn133801.aspx).
+	Hinweis: Sie können den Routing- und RAS-Dienst (Routing and Remote Access Service, RRAS) in Windows Server als Teil Ihrer VPN-Lösung verwenden. In diesem Lernprogramm werden Sie jedoch nicht durch die RRAS-Konfigurationsschritte geführt. Informationen zur RRAS-Konfiguration finden Sie unter [Vorlagen für den Routing- und RAS-Dienst (RRAS)](http://msdn.microsoft.com/library/windowsazure/dn133801.aspx).
 
 -  Kenntnisse in der Konfiguration eines Routers für eine Verbindung im IPsec-Tunnelmodus bzw. fachliche Unterstützung für diesen Schritt
 
@@ -272,4 +271,4 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

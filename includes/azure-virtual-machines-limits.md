@@ -7,4 +7,4 @@ Eingabeendpunkte pro Clouddienst<sup>2</sup>|150|150
 
 <sup>2</sup>Eingabeendpunkte ermöglichen die Kommunikation mit einem virtuellen Computer von außerhalb des Clouddiensts des virtuellen Computers. Virtuelle Computer im gleichen Clouddienst oder virtuellen Netzwerk können automatisch miteinander kommunizieren. Siehe [Einrichten von Endpunkten für einen virtuellen Computer](../articles/virtual-machines/virtual-machines-set-up-endpoints.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

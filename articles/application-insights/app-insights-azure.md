@@ -28,7 +28,7 @@ Welche Art von App verwenden Sie?
 
 * [Azure Web-App – Web- und Workerrollen](app-insights-cloudservices.md)
 * [Web-App unter IIS in Azure VM](../insights-perf-analytics.md)
-* [Anwendung außerhalb von Azure](app-insights-get-started.md)
+* [Anwendung außerhalb von Azure](app-insights-overview.md)
 
 
 
@@ -39,4 +39,4 @@ Welche Art von App verwenden Sie?
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -62,4 +62,4 @@ Wenn Sie ein alternatives Verzeichnis zur Speicherung des Pakets und der Konfigu
 
 Nach dem Erstellen des Pakets können Sie es in Azure bereitstellen. Ein Tutorial, das diesen Prozess veranschaulicht, finden Sie auf der Azure-Website. Weitere Informationen zur Automatisierung dieses Prozesses finden Sie unter [Kontinuierliche Bereitstellung für Clouddienste in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

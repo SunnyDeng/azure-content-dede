@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Konfigurieren der Routingmethode für Leistungsdatenverkehr | Microsoft Azure"
-	description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Routingmethode für Leistungsdatenverkehr in Traffic Manager."
-	services="traffic-manager"
-	documentationCenter=""
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Routingmethode für Leistungsdatenverkehr in Traffic Manager."
+   services="traffic-manager"
+   documentationCenter=""
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode für Leistungsdatenverkehr
 
@@ -51,4 +51,4 @@ Wenn Sie ein Datenverkehrsrouting für Clouddienste und Websites (Endpunkte) in 
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

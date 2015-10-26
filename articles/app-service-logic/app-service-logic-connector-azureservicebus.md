@@ -36,8 +36,7 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "Azure Service Bus-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein:  
-	![][1]
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: ![][1]
 
 4. Geben Sie die folgenden Paketeinstellungen ein:
 
@@ -52,31 +51,26 @@ Abonnementname | Geben Sie den Namen des Abonnements ein, von dem Nachrichten em
 ## Verwenden des Service Bus-Connectors in Logik-Apps
 Sobald Ihr Connector erstellt wurde, können Sie jetzt den Azure Service Bus-Connector als Trigger oder Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
 
-1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der Azure Service Bus-Connector befindet:  
-	![][2]
+1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der Azure Service Bus-Connector befindet: ![][2]
 
-2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren:  
-	![][3]
+2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren: ![][3]
 
-3. Der Azure Service Bus-Connector wird im Katalog auf der rechten Seite im Abschnitt "API-Apps in dieser Ressourcengruppe" angezeigt:  
-	![][4]
+3. Der Azure Service Bus-Connector wird im Katalog auf der rechten Seite im Abschnitt "API-Apps in dieser Ressourcengruppe" angezeigt: ![][4]
 
 4. Sie können den Azure Service Bus-Connector im Editor bearbeiten, indem Sie auf "Azure Service Bus-Connector" klicken.
 
-5.	Sie können nun den Azure Service Bus-Connector im Workflow verwenden. Sie können die aus dem Azure Service Bus-Trigger ("Nachricht verfügbar") abgerufene Nachricht für andere Aktionen im Workflow verwenden:  
-	![][5]  
+5.	Sie können nun den Azure Service Bus-Connector im Workflow verwenden. Sie können die aus dem Azure Service Bus-Trigger ("Nachricht verfügbar") abgerufene Nachricht für andere Aktionen im Workflow verwenden: ![][5]
 
 	![][6]
 
-Sie können auch die Azure-Service Bus-Aktion "Nachricht senden" verwenden:  
-![][7]
+Sie können auch die Azure-Service Bus-Aktion "Nachricht senden" verwenden: ![][7]
 
 ![][8]
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -93,4 +87,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [7]: ./media/app-service-logic-connector-azureservicebus/img7.PNG
 [8]: ./media/app-service-logic-connector-azureservicebus/img8.PNG
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

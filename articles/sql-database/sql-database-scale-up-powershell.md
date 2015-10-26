@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="09/10/2015"
+	ms.date="10/08/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -45,15 +45,14 @@ Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQ
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 - Eine Azure SQL-Datenbank. Wenn Sie nicht über eine SQL-Datenbank verfügen, können Sie die Erstellung anhand der Schritte im folgenden Artikel durchführen: [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
-- Azure PowerShell. Sie können die Azure PowerShell-Module herunterladen und installieren, indem Sie den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) ausführen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+- Azure PowerShell.
 
-Die Cmdlets zum Ändern der Dienststufe von Azure SQL-Datenbanken befinden sich im Azure-Ressourcen-Manager-Modul. Wenn Sie Azure PowerShell starten, werden die Cmdlets im Azure-Modul standardmäßig importiert. Um zum Azure-Ressourcen-Manager-Modul zu wechseln, verwenden Sie das Cmdlet "Switch-AzureMode".
+> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr verfügbar. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
-	Switch-AzureMode -Name AzureResourceManager
 
-Wenn beim Ausführen von **Switch-AzureMode** die Warnung „Das Cmdlet *Switch-AzureMode* ist veraltet und wird in zukünftigen Versionen nicht mehr enthalten sein“ angezeigt wird, liegt kein Problem vor. Fahren Sie einfach mit dem nächsten Schritt fort, um Ihre Anmeldeinformationen zu konfigurieren.
+Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
-Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md).
+
 
 ## Konfigurieren der Anmeldeinformationen und Auswählen des Abonnements
 
@@ -66,7 +65,7 @@ Nach der erfolgreichen Anmeldung werden einige Informationen auf dem Bildschirm 
 
 ### Auswählen des Azure-Abonnements
 
-Um das Abonnement auszuwählen, benötigen Sie Ihre Abonnement-ID oder den Anmeldenamen für das Abonnement (**-SubscriptionName**). Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das **Get-AzureSubscription**-Cmdlet ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Wenn Sie Ihre Abonnementinformationen haben, führen Sie das folgende Cmdlet aus:
+Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID oder den Anmeldenamen für das Abonnement (**-SubscriptionName**). Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das **Get-AzureSubscription**-Cmdlet ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Wenn Sie Ihre Abonnementinformationen haben, führen Sie das folgende Cmdlet aus:
 
 	$SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
     Select-AzureSubscription -SubscriptionId $SubscriptionId
@@ -79,7 +78,7 @@ Nach dem erfolgreichen Ausführen von **Select-AzureSubscription** kehren Sie zu
 
 ## Ändern der Dienstebene und Leistungsstufe Ihrer SQL-Datenbank
 
-Führen Sie das **Set-AzureSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedServiceObjectiveName** auf die Leistungsstufe des gewünschten Tarifs fest; z. B. *S0*, *S1*, *S2*, *S3*, *P1*, *P2*, ...
+Führen Sie das **Set-AzureRMSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedServiceObjectiveName** auf die Leistungsstufe des gewünschten Tarifs fest; z. B. *S0*, *S1*, *S2*, *S3*, *P1*, *P2*, ...
 
     $ResourceGroupName = "resourceGroupName"
     
@@ -100,7 +99,7 @@ Führen Sie das **Set-AzureSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedS
 ## PowerShell-Beispielskript zum Ändern der Dienstebene und Leistungsstufe Ihrer SQL-Datenbank
 
     
-	Switch-AzureMode -Name AzureResourceManager
+
     
     $SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
     
@@ -116,7 +115,7 @@ Führen Sie das **Set-AzureSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedS
     Add-AzureAccount
     Select-AzureSubscription -SubscriptionId $SubscriptionId
     
-    $ScaleRequest = Set-AzureSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
+    $ScaleRequest = Set-AzureRMSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
     
     $ScaleRequest
     
@@ -132,6 +131,7 @@ Führen Sie das **Set-AzureSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedS
 ## Zusätzliche Ressourcen
 
 - [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md)
-- [SQL-Datenbank-Dokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
+- [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
+- [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt163521.aspx)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

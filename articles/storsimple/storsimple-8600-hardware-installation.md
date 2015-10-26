@@ -289,4 +289,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

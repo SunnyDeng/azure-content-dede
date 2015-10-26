@@ -1,4 +1,4 @@
-In diesem Schritt erstellen Sie eine Firewallregel, um den Testport für den Endpunkt mit Lastenausgleich \(59999 wie bereits angegeben\) zu öffnen, und eine weitere Regel, um den Port des Verfügbarkeitsgruppenlisteners zu öffnen. Da Sie den Endpunkt mit Lastenausgleich auf den Azure-VMs erstellt haben, die Verfügbarkeitsgruppenreplikate enthalten, müssen Sie den Testport und den Listenerport auf den entsprechenden Azure-VMs öffnen.
+In diesem Schritt erstellen Sie eine Firewallregel, um den Testport für den Endpunkt mit Lastenausgleich (59999 wie bereits angegeben) zu öffnen, und eine weitere Regel, um den Port des Verfügbarkeitsgruppenlisteners zu öffnen. Da Sie den Endpunkt mit Lastenausgleich auf den Azure-VMs erstellt haben, die Verfügbarkeitsgruppenreplikate enthalten, müssen Sie den Testport und den Listenerport auf den entsprechenden Azure-VMs öffnen.
 
 1. Starten Sie auf virtuellen Computern, die Replikate hosten, **Windows-Firewall mit erweiterter Sicherheit**.
 
@@ -14,6 +14,6 @@ In diesem Schritt erstellen Sie eine Firewallregel, um den Testport für den End
 
 1. Geben Sie auf der Seite **Name** einen Regelnamen, z. B.**AlwaysOn-Listenertestport**, in das Textfeld **Name** ein, und klicken Sie auf **Fertig stellen**.
 
-1. Wiederholen Sie die oben genannten Schritte für den Port des Verfügbarkeitsgruppenlisteners \(wie weiter oben im $EndpointPort-Parameter des Skripts angegeben\), und geben Sie einen geeigneten Regelnamen an, z. B.**AlwaysOn-Listenerport**.
+1. Wiederholen Sie die oben genannten Schritte für den Port des Verfügbarkeitsgruppenlisteners (wie weiter oben im $EndpointPort-Parameter des Skripts angegeben), und geben Sie einen geeigneten Regelnamen an, z. B.**AlwaysOn-Listenerport**.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

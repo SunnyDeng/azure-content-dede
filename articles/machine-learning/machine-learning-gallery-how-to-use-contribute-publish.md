@@ -136,4 +136,4 @@ Beschreibungen mit Rich Text-Renderingfunktionen sind nicht für alle Katalogben
 
 **[ZUM KATALOG >>](http://gallery.cortanaanalytics.com)**
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

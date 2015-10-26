@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure"
-	description="Ein Tutorial, das auf der Web-App mit dem Express-Tutorial basiert, und Azure-Speicherdienste sowie das Azure-Modul hinzufügt."
-	services="cloud-services, storage"
-	documentationCenter="nodejs"
-	authors="TomArcher"
-	manager="wpickett"
+	pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" 
+	description="Ein Tutorial, das auf der Web-App mit dem Express-Tutorial basiert, und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." 
+	services="cloud-services, storage" 
+	documentationCenter="nodejs" 
+	authors="TomArcher" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="tarcher"/>
 
 
@@ -408,4 +408,4 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
  
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

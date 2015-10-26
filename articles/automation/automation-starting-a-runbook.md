@@ -240,4 +240,4 @@ Wenn der Benutzernamen in den Anmeldeinformationen *jsmith* lautet, erhalten Sie
 
 - [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx) 
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

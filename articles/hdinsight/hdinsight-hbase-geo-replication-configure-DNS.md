@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="07/08/2015"
+   ms.date="07/28/2015"
    ms.author="jgao"/>
 
 # Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure
@@ -220,4 +220,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Namensauflösungen in virtuellen 
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

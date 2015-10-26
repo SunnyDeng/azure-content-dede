@@ -1,20 +1,20 @@
 
 <properties 
-	pageTitle="Anmelden über das Büro- oder Mobiltelefon mit Azure Multi-Factor Authentication"
-	description="Auf dieser Seite wird beschrieben, wie ein Benutzer sich mithilfe seines Mobiltelefons anmelden kann."
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+	pageTitle="Anmelden über das Büro- oder Mobiltelefon mit Azure Multi-Factor Authentication" 
+	description="Auf dieser Seite wird beschrieben, wie ein Benutzer sich mithilfe seines Mobiltelefons anmelden kann." 
+	services="multi-factor-authentication" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 # Anmelden über das Büro- oder Mobiltelefon mit Azure Multi-Factor Authentication
@@ -38,4 +38,4 @@ Im Folgenden wird der Vorgang für Multi-Factor Authentication mit dem Büro- od
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

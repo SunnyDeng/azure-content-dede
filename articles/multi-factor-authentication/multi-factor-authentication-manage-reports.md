@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication-Berichte"
-	description="Beschreibt, wie Sie das Berichte-Feature für Multi-Factor Authentication verwenden."
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+	pageTitle="Azure Multi-Factor Authentication-Berichte" 
+	description="Beschreibt, wie Sie das Berichte-Feature für Multi-Factor Authentication verwenden." 
+	services="multi-factor-authentication" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 # Berichte in Azure Multi-Factor Authentication
@@ -50,4 +50,4 @@ In Warteschlange|Hier werden Berichte aufgelistet, die zur Verarbeitung und aufg
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

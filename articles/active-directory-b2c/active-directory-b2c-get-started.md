@@ -70,4 +70,4 @@ Führen Sie die folgenden Schritte aus, um einen neuen Azure AD B2C-Mandanten zu
 
 Fahren Sie mit dem [Registrieren einer Anwendung bei Azure AD B2C und dem Erstellen einer Schnellstartanwendung](active-directory-b2c-app-registration.md) fort.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

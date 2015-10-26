@@ -891,16 +891,7 @@ Zuerst schreiben wir unser `getTask`-Element:
  
  **In derselben Datei** mit dem Namen `ToDoActivity.java`
  
- ```
-    private URL getEndpointUrl() {
-        URL endpoint = null;
-        try {
-            endpoint = new URL(Constants.SERVICE_URL);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        return endpoint;
-    }
+ ``` private URL getEndpointUrl() { URL endpoint = null; try { endpoint = new URL(Constants.SERVICE\_URL); } catch (MalformedURLException e) { e.printStackTrace(); } return endpoint; }
 
  ```
 
@@ -973,9 +964,7 @@ Beachten Sie, wie die Aufgaben pro Benutzer in der API gespeichert werden, da di
 
 Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https://github.com/AzureADQuickStarts/B2C-NativeClient-Android/archive/complete.zip) bereit. Sie können es auch aus GitHub klonen:
 
-```
-git clone --branch complete https://github.com/AzureADQuickStarts/B2C-NativeClient-Android
-```
+```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-NativeClient-Android```
 
 
 ### Wichtige Informationen
@@ -995,4 +984,4 @@ CookieSyncManager.getInstance().sync();
 ``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

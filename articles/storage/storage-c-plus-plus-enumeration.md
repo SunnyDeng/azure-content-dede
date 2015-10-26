@@ -184,4 +184,4 @@ Weitere Informationen zu Azure Storage und zur Client Library for C++ finden Sie
 -	[Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

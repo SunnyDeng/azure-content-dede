@@ -96,4 +96,4 @@ So stellen Sie Daten von einem anderen DPM-Server wieder her
 ## Nächste Schritte:
 • [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

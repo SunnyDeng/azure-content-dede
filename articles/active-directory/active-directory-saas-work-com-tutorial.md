@@ -9,7 +9,7 @@ In diesem Tutorial wird die Integration von Azure und Work.com erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein Work.com-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die AAD-Benutzer, denen Sie den Zugriff auf Work.com zugewiesen haben, mittels einmaliger Anmeldung auf der Work.com-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die AAD-Benutzer, denen Sie den Zugriff auf Work.com zugewiesen haben, mittels einmaliger Anmeldung auf der Work.com-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -84,7 +84,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-work-com-tutorial/IC794110.png "Einmaliges Anmelden konfigurieren")
 
-8.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Work.com-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Work.com verwenden \(z. B. **http://company.my.salesforce.com*”), und klicken Sie dann auf **Weiter**.
+8.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Work.com-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Work.com verwenden (z. B. **http://company.my.salesforce.com*”), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-work-com-tutorial/IC794111.png "App-URL konfigurieren")
 
@@ -155,7 +155,7 @@ Damit sich Azure Active Directory-Benutzer anmelden können, müssen sie in Work
 
     ![Einrichtung](./media/active-directory-saas-work-com-tutorial/IC794108.png "Einrichtung")
 
-3.  Navigieren Sie zu **Benutzer verwalten \> Benutzer**.
+3.  Navigieren Sie zu **Benutzer verwalten > Benutzer**.
 
     ![Benutzer verwalten](./media/active-directory-saas-work-com-tutorial/IC784369.png "Benutzer verwalten")
 
@@ -195,4 +195,4 @@ Nach 10 Minuten können Sie überprüfen, ob das Konto mit Work.com synchronisi
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

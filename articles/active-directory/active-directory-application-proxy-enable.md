@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="msStevenPo"
+	manager="StevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015"
+	ms.date="10/12/2015"
 	ms.author="rkarlin"/>
 
 # Aktivieren des Azure AD-Anwendungsproxys
@@ -49,26 +49,36 @@ Wenn Ihre Firewall Datenverkehr gemäß Ursprungsbenutzern erzwingt, öffnen Sie
 2. Gehen Sie zu Active Directory, und wählen Sie das Verzeichnis aus, in dem Sie den Anwendungsproxy aktivieren möchten.
 3. Klicken Sie auf "Konfigurieren", führen Sie einen Bildlauf nach unten zu "Anwendungsproxy" aus, und stellen Sie "Anwendungsproxydienste für dieses Verzeichnis aktivieren" auf "Aktiviert" ein.
 
-	![Aktivieren des Anwendungsproxys](http://i.imgur.com/87woFzq.png) <p>
+	![Aktivieren des Anwendungsproxys](./media/active-directory-application-proxy-enable/app_proxy_enable.png) <p>
 4. Klicken Sie im unteren Bildschirmbereich auf "Jetzt herunterladen". Damit gelangen Sie zur Downloadseite. Lesen und akzeptieren Sie die Lizenzbedingungen, und klicken Sie auf "Herunterladen", um die Windows Installer-Datei (.exe) für den Anwendungsproxy-Connector herunterzuladen. 
 
 ##Schritt 2: Installieren und Registrieren des Connectors
 1. Führen Sie die Datei "AADApplicationProxyConnectorInstaller.exe" auf dem Server aus, den Sie vorbereitet haben (siehe Voraussetzungen für den Anwendungsproxy).
 2. Befolgen Sie die Anweisungen des Assistenten für die Installation.
 3. Während der Installation werden Sie aufgefordert, den Connector bei Ihrem aktiven Anwendungsproxy-Konto zu registrieren.
-<p>Geben Sie Ihre globalen Azure AD-Administratoranmeldeinformationen ein:
-- Stellen Sie sicher, dass sich der Administrator, der den Connector registriert, im gleichen Verzeichnis befindet, in dem Sie den Anwendungsproxydienst aktiviert haben. Wenn die Mandantendomäne beispielsweise "contoso.com" lautet, sollte der Administrator sich als admin@contoso.com oder mit einem anderen Aliasnamen in dieser Domäne anmelden. Außerdem ist ein globaler Administrator des Azure AD-Mandanten erforderlich. Ihr globaler Administratormandant kann von Ihren Microsoft Azure-Anmeldeinformationen abweichen.
-- Wenn auf dem Server, auf dem Sie den Azure AD-Connector installieren, die Option "Verstärkte Sicherheitskonfiguration für IE" aktiviert ist, wird der Registrierungsbildschirm möglicherweise gesperrt. Befolgen Sie in diesem Fall die Anweisungen in der Fehlermeldung, um den Zugriff zuzulassen. Stellen Sie sicher, dass die verstärkte Sicherheitskonfiguration für Internet Explorer deaktiviert ist.
-- Wenn die Connectorregistrierung nicht erfolgreich ist, lesen Sie "Problembehandlung von Anwendungsproxys".
+<p>Geben Sie Ihre globalen Azure AD-Administratoranmeldeinformationen ein: Stellen Sie sicher, dass sich der Administrator, der den Connector registriert, im gleichen Verzeichnis befindet, in dem Sie den Anwendungsproxydienst aktiviert haben. Wenn die Mandantendomäne beispielsweise "contoso.com" lautet, sollte der Administrator sich als admin@contoso.com oder mit einem anderen Aliasnamen in dieser Domäne anmelden. Außerdem ist ein globaler Administrator des Azure AD-Mandanten erforderlich. Ihr globaler Administratormandant kann von Ihren Microsoft Azure-Anmeldeinformationen abweichen: Wenn auf dem Server, auf dem Sie den Azure AD-Connector installieren, die Option "Verstärkte Sicherheitskonfiguration für IE" aktiviert ist, wird der Registrierungsbildschirm möglicherweise gesperrt. Befolgen Sie in diesem Fall die Anweisungen in der Fehlermeldung, um den Zugriff zuzulassen. Stellen Sie sicher, dass die verstärkte Sicherheitskonfiguration für Internet Explorer deaktiviert ist: Wenn die Connectorregistrierung nicht erfolgreich ist, lesen Sie "Problembehandlung von Anwendungsproxys".
 
-4. Nach Abschluss der Installation werden zwei neue Dienste auf dem Server hinzugefügt, wie unten dargestellt. Diese sind der Connectordienst, der Konnektivität ermöglicht, und ein automatischer Updatedienst, der in regelmäßigen Abständen prüft, ob neue Versionen des Connectors verfügbar sind, und den Connector bei Bedarf aktualisiert. Klicken Sie im Installationsfenster auf "Fertig stellen", um die Installation abzuschließen.
-	![Anwendungsproxyconnectordienst](http://i.imgur.com/zsVJKOz.png) <p>
-
+4. Nach Abschluss der Installation werden zwei neue Dienste auf dem Server hinzugefügt, wie unten dargestellt. Diese sind der Connectordienst, der Konnektivität ermöglicht, und ein automatischer Updatedienst, der in regelmäßigen Abständen prüft, ob neue Versionen des Connectors verfügbar sind, und den Connector bei Bedarf aktualisiert. Klicken Sie im Installationsfenster auf "Fertig stellen", um die Installation abzuschließen. ![Anwendungsproxy-Connectordienst](./media/active-directory-application-proxy-enable/app_proxy_services.png) <p>
 5. Sie sind nun bereit für den Schritt "Veröffentlichen von Anwendungen mit einem Anwendungsproxy".
 
 Wenn Sie den Connector deinstallieren möchten, stellen Sie nach der Deinstallation des Connector- und Updatediensts sicher, dass der Computer neu gestartet wird, um den Dienst vollständig zu entfernen. <p>Wenn hohe Verfügbarkeit gewünscht wird, müssen Sie mindestens einen weiteren Connector bereitstellen. Wiederholen Sie zum Bereitstellen eines weiteren Connectors die oben beschriebenen Schritte 2 und 3. Jeder Connector muss separat registriert werden.
 
 
+
+## Weitere Informationen
+Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
+
+- [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
+- [Veröffentlichen von Anwendungen mit Ihrem eigenen Domänennamen](active-directory-application-proxy-custom-domains.md)
+- [Aktivieren der einmaligen Anmeldung](active-directory-application-proxy-sso-using-kcd.md)
+- [Aktivieren des bedingten Zugriffs](active-directory-application-proxy-conditional-access.md)
+- [Arbeiten mit Anwendungen, die Ansprüche unterstützen](active-directory-application-proxy-claims-aware-apps.md)
+- [Problembehandlung von Anwendungsproxys](active-directory-application-proxy-troubleshoot.md)
+
+## Weitere Informationen zum Anwendungsproxy
+- [Onlinehilfe anzeigen](active-directory-application-proxy-enable.md)
+- [Blog zum Anwendungsproxy aufrufen](http://blogs.technet.com/b/applicationproxyblog/)
+- [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
 ## Zusätzliche Ressourcen
 
@@ -76,4 +86,4 @@ Wenn Sie den Connector deinstallieren möchten, stellen Sie nach der Deinstallat
 * [Azure-Identität](..fundamentals-identity.md)
 * [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

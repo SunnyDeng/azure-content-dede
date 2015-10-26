@@ -140,4 +140,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

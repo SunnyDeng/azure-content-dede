@@ -68,4 +68,4 @@ Das Azure SDK für .NET 2.5.1 enthält die nachfolgend beschriebenen neuen Funk
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

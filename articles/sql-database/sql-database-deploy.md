@@ -593,4 +593,4 @@ Ein Lernprogramm zum Erstellen einer neuen Azure SQL-Datenbank finden Sie unter 
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

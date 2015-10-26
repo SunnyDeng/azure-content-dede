@@ -1,3 +1,14 @@
+<properties services="virtual-machines" title="Using Azure CLI with Azure Resource Manager" authors="squillace" solutions="" manager="timlt" editor="tysonn" />
+
+<tags
+   ms.service="virtual-machine"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="linux"
+   ms.workload="infrastructure"
+   ms.date="04/13/2015"
+   ms.author="rasquill" />
+
 ## Verwenden der Azure-CLI mit dem Azure-Ressourcen-Manager (ARM)
 
 Bevor Sie die Azure-CLI mit Ressourcen-Manager-Befehlen und -Vorlagen zur Bereitstellung von Azure-Ressourcen und -Workloads über Ressourcengruppen verwenden können, benötigen Sie (natürlich) ein Azure-Konto. Wenn Sie noch kein Konto haben, erhalten Sie [hier eine kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
@@ -53,4 +64,4 @@ Um den ARM (Azure-Ressourcen-Manager)-Modus mit der Azure-Befehlszeilenschnittst
 
 > [AZURE.NOTE]Sie können wieder zurück zu ASM-Befehlen (Azure Service Management) wechseln, indem Sie `azure config mode asm` eingeben.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -100,4 +100,4 @@ Möglicherweise benötigen Sie den Ziel-IQN des Geräts, wenn Sie das Challenge 
 - Erfahren Sie mehr über das [StorSimple Manager-Dienstdashboard](storsimple-service-dashboard.md).
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

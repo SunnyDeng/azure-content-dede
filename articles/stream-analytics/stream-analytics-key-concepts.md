@@ -207,4 +207,4 @@ Nachdem Sie nun mit den Schlüsselkonzepten von Stream Analytics vertraut sind, 
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

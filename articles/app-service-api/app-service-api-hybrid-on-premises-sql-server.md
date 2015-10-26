@@ -32,11 +32,11 @@ Zum Durchführen des Lernprogramms benötigen Sie folgende Produkte: Alle Produk
 
 - **Visual Studio** – Zum Herunterladen einer kostenlosen Testversion von Visual Studio 2013 und Visual Studio 2015 besuchen Sie [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs). Installieren Sie eines dieser Produkte, bevor Sie fortfahren. (Die Screenshots in diesem Tutorial wurden mit Visual Studio 2013 erstellt.)
 
-- **SQL Server 2014 Express with Tools** - Laden Sie Microsoft SQL Server Express kostenlos von der [Microsoft Web Platform Datenbank-Seite](https://www.microsoft.com/de-de/download/details.aspx?id=42299) herunter. Später in diesem Tutorial erfahren Sie, wie Sie [SQL Server installieren](#InstallSQLDB), sodass eine ordnungsgemäße Konfiguration sichergestellt ist.
+- **SQL Server 2014 Express with Tools** - Laden Sie Microsoft SQL Server Express kostenlos von der [Microsoft Web Platform Datenbank-Seite](https://www.microsoft.com/de-DE/download/details.aspx?id=42299) herunter. Später in diesem Tutorial erfahren Sie, wie Sie [SQL Server installieren](#InstallSQLDB), sodass eine ordnungsgemäße Konfiguration sichergestellt ist.
 
-- **SQL Server Management Studio Express** - Dieses Produkt ist im oben angegebenen Download "SQL Server 2014 Express with Tools" enthalten, Sie müssen es jedoch getrennt installieren. Sie können es von der [Download-Seite für SQL Server Express](https://www.microsoft.com/de-de/download/details.aspx?id=42299) herunterladen und installieren.
+- **SQL Server Management Studio Express** - Dieses Produkt ist im oben angegebenen Download "SQL Server 2014 Express with Tools" enthalten, Sie müssen es jedoch getrennt installieren. Sie können es von der [Download-Seite für SQL Server Express](https://www.microsoft.com/de-DE/download/details.aspx?id=42299) herunterladen und installieren.
 
-In diesem Lernprogramm wird davon ausgegangen, dass Sie ein Azure-Abonnement besitzen, Visual Studio 2013 installiert haben und .NET Framework 3.5 installiert oder aktiviert haben. In diesem Lernprogramm wird gezeigt, wie Sie SQL Server 2014 Express in einer Konfiguration installieren, die sich gut für die Azure-Funktion "Hybridverbindungen" eignet (eine Standardinstanz mit einem statischen TCP-Port). Bevor Sie mit dem Tutorial beginnen, laden Sie "SQL Server 2014 Express with Tools" vom oben angegebenen Speicherort herunter (installieren Sie das Programm aber nicht), sofern Sie SQL Server nicht installiert haben.
+In diesem Tutorial wird davon ausgegangen, dass Sie ein Azure-Abonnement besitzen, Visual Studio 2013 installiert haben und .NET Framework 3.5 installiert oder aktiviert haben. In diesem Lernprogramm wird gezeigt, wie Sie SQL Server 2014 Express in einer Konfiguration installieren, die sich gut für die Azure-Funktion "Hybridverbindungen" eignet (eine Standardinstanz mit einem statischen TCP-Port). Bevor Sie mit dem Tutorial beginnen, laden Sie "SQL Server 2014 Express with Tools" vom oben angegebenen Speicherort herunter (installieren Sie das Programm aber nicht), sofern Sie SQL Server nicht installiert haben.
 
 ### Hinweise
 Um eine lokale SQL Server- oder SQL Server Express-Datenbank mit einer Hybridverbindung verwenden zu können, muss TCP/IP an einem statischen Port aktiviert werden. Standardinstanzen von SQL Server verwenden den statischen Port 1433, benannte Instanzen dagegen nicht.
@@ -100,7 +100,7 @@ In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TC
 	
 	![Konfiguration des Datenbankmoduls](./media/app-service-api-hybrid-on-premises-sql-server/database-engine-configuration.png)
 	
-	In diesem Lernprogramm verwenden Sie die SQLServer-Authentifizierung. Merken Sie sich unbedingt das Kennwort, das Sie angeben, weil Sie es später benötigen werden.
+	In diesem Tutorial verwenden Sie die SQLServer-Authentifizierung. Merken Sie sich unbedingt das Kennwort, das Sie angeben, weil Sie es später benötigen werden.
 	
 8. Bearbeiten Sie die restlichen Schritte des Assistenten, und übernehmen Sie dabei die Standardeinstellungen, um die Installation abzuschließen.
 
@@ -430,4 +430,4 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, können Sie d
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

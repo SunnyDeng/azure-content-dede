@@ -70,4 +70,4 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
 [Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: virtual-machines-how-to-configure-availability.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

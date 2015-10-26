@@ -47,8 +47,8 @@ Im Folgenden die grundlegende Vorgehensweise:
 
 1.	Ein Internetclient fragt einen Domänennamen ab, der einem Webdienst entspricht.
 2.	DNS leitet die Namensabfrage an den Traffic Manager weiter.
-3.	Traffic Manager wählt den nächsten Cloud-Dienst in der Round-Robin-Liste und sendet den DNS-Namen zurück. Der DNS-Server des Internetclients löst den Namen in eine IP-Adresse auf und sendet diese an den Internetclient.
-4.	Der Internetclient wählt eine Verbindung mit dem Cloud-Dienst von Traffic Manager aus.
+3.	Traffic Manager wählt den nächsten Clouddienst in der Round-Robin-Liste und sendet den DNS-Namen zurück. Der DNS-Server des Internetclients löst den Namen in eine IP-Adresse auf und sendet diese an den Internetclient.
+4.	Der Internetclient wählt eine Verbindung mit dem Clouddienst von Traffic Manager aus.
 
 Weitere Informationen finden Sie unter [Traffic Manager](../traffic-manager/traffic-manager-overview.md).
 
@@ -84,4 +84,4 @@ Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgl
 
 <!-- LINKS -->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

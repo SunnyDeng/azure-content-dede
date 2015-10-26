@@ -38,20 +38,7 @@ Bei Azure Site Recovery-Features wurde auf den Schutz und die Wiederherstellung 
 
 Die ASR-Replikationstechnologien sind mit jeder Anwendung kompatibel, die auf einem virtuellen Computer ausgeführt wird. Wir haben in Zusammenarbeit mit Anwendungsproduktteams zusätzliche Tests durchgeführt, um die Unterstützung der einzelnen Anwendungen noch weiter zu optimieren.
 
-**Workload** | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: Azure)**</p> | <p>**Replizieren virtueller VMware-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller VMware-Computer**</p><p>**(Ziel: Azure)****</p>
----|---|---|---|---
-Active Directory, DNS | J | J | J | J
-Web-Apps (IIS, SQL) | J | J | J | J
-SCOM | J | J | J | J
-SharePoint | J | J | J | J
-<p>SAP</p><p>Replizieren eines SAP-Standorts zu Azure (kein Cluster)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
-Exchange (kein DAG) | J | In Kürze verfügbar | J | J
-Remotedesktop/VDI | J | J | J | N/A
-<p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
-Dynamics AX | J | J | J | J
-Dynamics CRM | J | In Kürze verfügbar | J | In Kürze verfügbar
-Oracle | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
-Windows-Dateiserver | J | J | J | J
+**Workload** | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: Azure)**</p> | <p>**Replizieren virtueller VMware-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller VMware-Computer**</p><p>**(Ziel: Azure)****</p> ---|---|---|---|--- Active Directory, DNS | J | J | J | J Web-Apps (IIS, SQL) | J | J | J | J SCOM | J | J | J | J SharePoint | J | J | J | J <p>SAP</p><p>Replizieren eines SAP-Standorts zu Azure (kein Cluster)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) Exchange (kein DAG) | J | In Kürze verfügbar | J | J Remotedesktop/VDI | J | J | J | N/A <p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) Dynamics AX | J | J | J | J Dynamics CRM | J | In Kürze verfügbar | J | In Kürze verfügbar Oracle | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) Windows-Dateiserver | J | J | J | J
 
 ##Active Directory und DNS
 
@@ -120,4 +107,4 @@ SAP ist eine führende Enterprise Resource Planning (ERP)-Software, die weltweit
 
 Ausführliche Informationen zum [Bereitstellen von Azure Site Recovery für SAP NetWeaver](http://aka.ms/asr-sap) finden Sie im verlinkten Dokument.
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

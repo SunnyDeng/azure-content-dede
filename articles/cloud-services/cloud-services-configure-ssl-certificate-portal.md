@@ -162,4 +162,4 @@ Jetzt wird die Bereitstellung in Azure ausgeführt, und Sie können eine HTTPS-V
 * Konfigurieren eines [benutzerdefinierten Domänennamens](cloud-services-custom-domain-name-portal.md)
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

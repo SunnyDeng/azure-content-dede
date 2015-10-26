@@ -250,4 +250,4 @@ Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.
 In diesem Artikel wurde erläutert, wie die Generierung von Vorgangs-IDs und von gültigen Antwortcodes in Swashbuckle angepasst werden kann. Weitere Informationen finden Sie unter [Swashbuckle auf GitHub](https://github.com/domaindrivendev/Swashbuckle).
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

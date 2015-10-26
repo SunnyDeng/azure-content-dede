@@ -562,4 +562,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -39,10 +39,8 @@ Im Gegensatz zu Webanwendungen und vielen Branchenanwendungen ist für Batch- un
 
 Typ | Merkmale | Beispiele
 ------------- | ----------- | ---------------
-**Intrinsisch parallel**<br/><br/>![Intrinsisch parallel][parallel] |• Einzelcomputer führen Anwendungslogik unabhängig aus.<br/><br/>
-• Durch Hinzufügen von Computern kann die Anwendung skaliert und die Rechenzeit verkürzt werden.<br/><br/>• Anwendung besteht aus separaten ausführbaren Dateien oder aus einer Gruppe von Diensten, die von einem Client aufgerufen werden (Anwendung in einer serviceorientierten Architektur). |• Risikomodelle im Finanzbereich<br/><br/>• Bildrendering und -verarbeitung<br/><br/>• Codierung und Transcodierung von Medien<br/><br/>• Monte Carlo-Simulationen<br/><br/>• Softwaretests
-**Enge Kopplung**<br/><br/>![Eng gekoppelt][coupled] |• Anwendung benötigt Compute-Knoten für die Interaktion oder den Austausch von Zwischenergebnissen.<br/><br/>• Compute-Knoten können per MPI (Message Passing Interface; gängiges Kommunikationsprotokoll für paralleles Computing) kommunizieren.<br/><br/>
-• Die Anwendung berücksichtigt Netzwerklatenz und Bandbreite.<br/><br/>• Die Anwendungsleistung kann durch die Verwendung einer Compute-Infrastruktur verbessert werden, die Technologien für Hochgeschwindigkeitsnetzwerke wie etwa InfiniBand und RDMA (Remote Direct Memory Access) unterstützt. |• Modelle für Öl- und Gasvorkommen<br/><br/>• Technische Entwicklung und Analyse (beispielsweise Strömungssimulationen)<br/><br/>• Physiksimulationen (beispielsweise für Autounfälle und Kernreaktionen)<br/><br/>• Wettervorhersage
+**Intrinsisch parallel**<br/><br/>![Intrinsisch parallel][parallel] |• Einzelcomputer führen Anwendungslogik unabhängig aus.<br/><br/>• Durch Hinzufügen von Computern kann die Anwendung skaliert und die Rechenzeit verkürzt werden.<br/><br/>• Anwendung besteht aus separaten ausführbaren Dateien oder aus einer Gruppe von Diensten, die von einem Client aufgerufen werden (Anwendung in einer serviceorientierten Architektur). |• Risikomodelle im Finanzbereich<br/><br/>• Bildrendering und -verarbeitung<br/><br/>• Codierung und Transcodierung von Medien<br/><br/>• Monte Carlo-Simulationen<br/><br/>• Softwaretests
+**Enge Kopplung**<br/><br/>![Eng gekoppelt][coupled] |• Anwendung benötigt Compute-Knoten für die Interaktion oder den Austausch von Zwischenergebnissen.<br/><br/>• Compute-Knoten können per MPI (Message Passing Interface; gängiges Kommunikationsprotokoll für paralleles Computing) kommunizieren.<br/><br/>• Die Anwendung berücksichtigt Netzwerklatenz und Bandbreite.<br/><br/>• Die Anwendungsleistung kann durch die Verwendung einer Compute-Infrastruktur verbessert werden, die Technologien für Hochgeschwindigkeitsnetzwerke wie etwa InfiniBand und RDMA (Remote Direct Memory Access) unterstützt. |• Modelle für Öl- und Gasvorkommen<br/><br/>• Technische Entwicklung und Analyse (beispielsweise Strömungssimulationen)<br/><br/>• Physiksimulationen (beispielsweise für Autounfälle und Kernreaktionen)<br/><br/>• Wettervorhersage
 
 ### Überlegungen zur Ausführung von Batch- und HPC-Anwendungen in der Cloud
 
@@ -224,4 +222,4 @@ Die folgende Abbildung zeigt einen typischen Workflow, den ein Entwickler mit Ba
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

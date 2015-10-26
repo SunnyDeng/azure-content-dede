@@ -4,7 +4,7 @@
    services="active-directory"
    documentationCenter=""
    authors="AndKjell"
-   manager="msStevenPo"
+   manager="StevenPo"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/09/2015"
+   ms.date="10/13/2015"
    ms.author="andkjell"/>
 
 # Verhindern von versehentlichen Löschungen
@@ -33,7 +33,7 @@ Wenn Sie diese Nachricht unerwartet erhalten haben, untersuchen Sie die Grunde d
 2. Gehen Sie zu **Connectors**.
 3. Wählen Sie den Connector mit dem Typ **Azure Active Directory**.
 4. Klicken Sie unter **Aktionen** wählen Sie auf der rechten Seite **Suche Connectorbereich**.
-5. Wählen Sie im Popupfenster unter **Bereich** die Option **Getrennt seit** aus, und wählen Sie einen Zeitpunkt in der Vergangenheit. Klicken Sie auf **Suchen**. Dadurch wird ein Überblick über alle zu löschenden Objekte angezeigt. Klicken Sie auf die einzelnen Objekte, um zusätzliche Informationen dazu zu erhalten. Sie können auch auf **Spalteneinstellung** klicken, um zusätzliche Attribute hinzuzufügen, die im Raster angezeigt werden.
+5. Wählen Sie im Popupfenster unter **Bereich** die Option **Getrennt seit** aus, und wählen Sie einen Zeitpunkt in der Vergangenheit. Klicken Sie auf **Suchen**. Dadurch wird eine Übersicht über alle zu löschenden Objekte angezeigt. Klicken Sie auf die einzelnen Objekte, um zusätzliche Informationen dazu zu erhalten. Sie können auch auf **Spalteneinstellung** klicken, um zusätzliche Attribute hinzuzufügen, die im Raster angezeigt werden.
 
 ![Connectorbereich durchsuchen](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/searchcs.png)
 
@@ -44,7 +44,8 @@ Wenn alle Löschvorgänge gewünscht sind, gehen Sie folgendermaßen vor:
 3. Führen Sie zum erneuten Aktivieren des Schutzes folgendes PowerShell-Cmdlet aus: `Enable-ADSyncExportDeletionThreshold`
 
 ## Nächste Schritte
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
 
-Weitere Informationen über die Konfiguration für die Azure AD Connect-Synchronisierung finden Sie unter [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

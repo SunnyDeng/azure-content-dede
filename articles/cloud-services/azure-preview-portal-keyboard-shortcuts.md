@@ -37,17 +37,11 @@
 | J | Vorheriges geöffnetes Blatt |
 | K | Nächstes geöffnetes Blatt |
 | L | Letztes geöffnetes Blatt |
-| - | Blatt minimieren oder aus maximiertem Zustand wiederherstellen |
-| + | Blatt maximieren oder aus minimiertem Zustand wiederherstellen |
-| # | Aktuelles Blatt schließen |
-| ¦ | Alle Blätter schließen |
-| , | Fokus in Befehlsleiste verschieben |
-| . | Fokus in Navigationsleiste verschieben |
-| ? | Tastenkombinationen anzeigen |
+| - | Blatt minimieren oder aus maximiertem Zustand wiederherstellen | | + | Blatt maximieren oder aus minimiertem Zustand wiederherstellen | | # | Aktuelles Blatt schließen | | ¦ | Alle Blätter schließen | | , | Fokus in Befehlsleiste verschieben | | . | Fokus in Navigationsleiste verschieben | | ? | Tastenkombinationen anzeigen |
 
 
 ## Nächste Schritte
 
 Weitere Informationen zum Azure-Portal: http://azure.microsoft.com.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

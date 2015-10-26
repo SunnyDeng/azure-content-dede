@@ -19,7 +19,8 @@
 
 # Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer im klassischen Bereitstellungsmodell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Eine Verfügbarkeitsgruppe hilft, dass Ihre virtuellen Computer während eines Ausfalls wie während einer Wartung verfügbar bleiben. Das Platzieren von mindestens zwei ähnlich konfigurierten virtuellen Computern in einer Verfügbarkeitsgruppe erstellt die Redundanz, die zum Wahren der Verfügbarkeit der Anwendungen oder Dienste erforderlich ist, die auf Ihrem virtuellen Computer ausgeführt werden. Ausführliche Informationen hierzu finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer][].
 
@@ -30,7 +31,7 @@ Mithilfe einer der beiden folgenden Optionen können Sie einen virtuellen Comput
 - [Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe][]. Fügen Sie der Gruppe anschließend die neuen virtuellen Computer hinzu, wenn Sie diese virtuellen Computer erstellen.
 - [Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu][].
 
->[AZURE.NOTE]Virtuelle Computer, die Sie in dieselbe Verfügbarkeitsgruppe versetzen möchten, müssen zum selben Cloud-Dienst gehören.
+>[AZURE.NOTE]Virtuelle Computer, die Sie in dieselbe Verfügbarkeitsgruppe versetzen möchten, müssen zum selben Clouddienst gehören.
 
 ## <a id="createset"> </a>Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe##
 
@@ -48,7 +49,7 @@ So verwenden Sie das Portal:
 
 5. Im dritten Bildschirm können Sie die Ressourcen für Netzwerk, Speicher und Verfügbarkeit konfigurieren. Gehen Sie wie folgt vor:
 
-	1. Wählen Sie den entsprechenden Clouddienst. Lassen Sie die Option **Einen neuen Clouddienst erstellen** ausgewählt (es sei denn, Sie fügen diesen neuen virtuellen Computer einem vorhandenen VM-Clouddienst hinzu). Geben Sie dann unter **DNS-Name des Cloud-Diensts** einen Namen ein. Der DNS-Name wird ein Teil des URI, der zum Kontaktieren des virtuellen Computers verwendet wird. Der Cloud-Dienst fungiert als eine Kommunikations- und Isolationsgruppe. Alle virtuellen Computer im selben Cloud-Dienst können miteinander kommunizieren, für den Lastenausgleich eingerichtet werden und in derselben Verfügbarkeitsgruppe platziert werden.
+	1. Wählen Sie den entsprechenden Clouddienst. Lassen Sie die Option **Einen neuen Clouddienst erstellen** ausgewählt (es sei denn, Sie fügen diesen neuen virtuellen Computer einem vorhandenen VM-Clouddienst hinzu). Geben Sie dann unter **DNS-Name des Clouddiensts** einen Namen ein. Der DNS-Name wird ein Teil des URI, der zum Kontaktieren des virtuellen Computers verwendet wird. Der Clouddienst fungiert als eine Kommunikations- und Isolationsgruppe. Alle virtuellen Computer im selben Clouddienst können miteinander kommunizieren, für den Lastenausgleich eingerichtet werden und in derselben Verfügbarkeitsgruppe platziert werden.
 
 	2. Geben Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** ein virtuelles Netzwerk an, wenn Sie eins einsetzen möchten. **Wichtig**: Wenn der virtuelle Computer ein virtuelles Netzwerk verwenden soll, müssen Sie ihn bei seiner Erstellung in das virtuelle Netzwerk einbinden. Sie können den virtuellen Computer nicht in ein virtuelles Netzwerk einbinden, nachdem Sie den virtuellen Computer erstellt haben. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick][].
 
@@ -71,7 +72,7 @@ Beachten Sie Folgendes, wenn Sie einen virtuellen Azure-Computer mithilfe von Az
 
 ## <a id="addmachine"> </a>Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu##
 
-Im Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Cloud-Dienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
+Im Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Clouddienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
 
 1. Melden Sie sich beim [Portal](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben.
 
@@ -111,4 +112,4 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
 [Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

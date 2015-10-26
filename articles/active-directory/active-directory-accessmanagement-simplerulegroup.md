@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="10/09/2015" 
 	ms.author="femila"/>
 
 
@@ -28,12 +28,10 @@
 
 3. Anschließend wählen Sie eine Bedingung (Not Equals, Equals, Not Starts With, Starts With, Not Contains, Contains, Not Match, Match) und geben zum Schluss den Wert für die ausgewählte Benutzereigenschaft an. Beispiel: Wenn eine Gruppe einer SaaS-Anwendung zugewiesen ist und Sie die dynamische Mitgliedschaft für diese Gruppe aktivieren, indem Sie eine Regel einrichten, in der **Benutzer hinzufügen, wobei** auf die Position festgelegt ist, für die "Equals(-eq)Sales Rep" gilt, erhalten alle Benutzer in Ihrem Azure AD-Verzeichnis Zugriff auf diese SaaS-Anwendung, deren jobTitle-Eigenschaft auf "Sales Rep" festgelegt ist.
 
-Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Directory bieten:
+Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Active Directory bieten:
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
-
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
-
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -170,4 +170,4 @@ Wenn Sie dies darüber hinaus vollständig in Ihrem eigenen Code implementieren 
 
 Sie müssen dennoch die obigen Schritte ausführen, um die Anwendungsidentität für Ihre Logik-App zu erstellen und diese zum Aufrufen der API zu verwenden.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -20,7 +20,8 @@
 
 Dieser Artikel veranschaulicht die Verwendung eines Azure PowerShell-Skripts zum Einrichten eines Microsoft HPC Pack-Clusters in Azure, das einen Head-Knoten unter Windows Server sowie mehrere Compute-Knoten unter einer CentOS Linux-Distribution enthält. Wir zeigen außerdem verschiedene Methoden zum Verschieben von Datendateien auf den Linux-Compute-Knoten. Mit diesem Cluster können Sie Linux HPC-Workloads in Azure ausführen.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Ressourcen behandelt, die mit dem klassischen Bereitstellungsmodell erstellt werden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellenden HPC Pack-Cluster.
 
@@ -312,4 +313,4 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 [nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
 [nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

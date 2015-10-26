@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Cherwell erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein Cherwell-Software-Abonnement, für das das einmalige Anmelden aktiviert ist.
 
-Nach Abschluss dieses Lernprogramms können sich die Cherwell zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Cherwell-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Cherwell zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Cherwell-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -65,8 +65,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-cherwell-tutorial/IC798992.png "App-URL konfigurieren")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei **Cherwell** verwenden \(z. B. **https://pictdev.cherwellondemand.com/cherwellclient*).
-    2.  Klicken Sie auf **Weiter**.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei **Cherwell** verwenden (z. B. **https://pictdev.cherwellondemand.com/cherwellclient*).
+2.  Klicken Sie auf **Weiter**.
 
 4.  Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren um Cherwell** die folgenden Schritte aus.
 
@@ -108,4 +108,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

@@ -19,7 +19,7 @@
 
 # Azure SQL-Datenbank – Transact-SQL-Informationen
 
-Die meisten SQL Server 2016 Transact-SQL-Anweisungen werden in Microsoft Azure SQL-Datenbank vollständig unterstützt. Dies umfasst die Datentypen, Operatoren, Zeichenfolgen-, arithmetischen, logischen und Cursorfunktionen sowie die anderen Transact-SQL-Elemente von SQL Server, mit denen die meisten Programme arbeiten. Teilweise oder nicht unterstützte Funktionen steht meist in Zusammenhang mit den Unterschieden bei der Verwaltung der Datenbank durch Azure SQL-Datenbank \(z. B. Datei-, Hochverfügbarkeits- und Sicherheitsfunktionen\) und bei speziellen Features wie dem Service Broker. Da Azure SQL-Datenbank viele Features von der Abhängigkeit von der master-datenbank isoliert, sind viele Aktivitäten auf Serverebene ungeeignet und werden nicht unterstützt. Features, die in SQL Server veraltet sind, werden im Allgemeinen von Azure SQL-Datenbank nicht unterstützt.
+Die meisten SQL Server 2016 Transact-SQL-Anweisungen werden in Microsoft Azure SQL-Datenbank vollständig unterstützt. Dies umfasst die Datentypen, Operatoren, Zeichenfolgen-, arithmetischen, logischen und Cursorfunktionen sowie die anderen Transact-SQL-Elemente von SQL Server, mit denen die meisten Programme arbeiten. Teilweise oder nicht unterstützte Funktionen steht meist in Zusammenhang mit den Unterschieden bei der Verwaltung der Datenbank durch Azure SQL-Datenbank (z. B. Datei-, Hochverfügbarkeits- und Sicherheitsfunktionen) und bei speziellen Features wie dem Service Broker. Da Azure SQL-Datenbank viele Features von der Abhängigkeit von der master-datenbank isoliert, sind viele Aktivitäten auf Serverebene ungeeignet und werden nicht unterstützt. Features, die in SQL Server veraltet sind, werden im Allgemeinen von Azure SQL-Datenbank nicht unterstützt.
 
 ## Upgrade auf Azure SQL-Datenbank V12
 
@@ -37,7 +37,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - Anmeldungen: [CREATE](https://msdn.microsoft.com/library/ms189751.aspx)/[ALTER LOGIN](https://msdn.microsoft.com/library/ms189828.aspx)
 - Gespeicherte Prozeduren: [CREATE](https://msdn.microsoft.com/library/ms187926.aspx)/[ALTER PROCEDURE](https://msdn.microsoft.com/library/ms189762.aspx)
 - Tabellen: [CREATE](https://msdn.microsoft.com/library/dn305849.aspx)/[ALTER](https://msdn.microsoft.com/library/ms190273.aspx)
-- Typen \(benutzerdefiniert\): [CREATE TYPE](https://msdn.microsoft.com/library/ms175007.aspx)
+- Typen (benutzerdefiniert): [CREATE TYPE](https://msdn.microsoft.com/library/ms175007.aspx)
 - Benutzer: [CREATE](https://msdn.microsoft.com/library/ms173463.aspx)/[ALTER USER](https://msdn.microsoft.com/library/ms176060.aspx)
 - Sichten: [CREATE](https://msdn.microsoft.com/library/ms187956.aspx)/[ALTER VIEW](https://msdn.microsoft.com/library/ms173846.aspx)
 
@@ -49,7 +49,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - Datensammler
 - Datenbankdiagramme
 - Datenbank-E-Mail
-- DATABASEPROPERTY \(verwenden Sie stattdessen DATABASEPROPERTYEX\)
+- DATABASEPROPERTY (verwenden Sie stattdessen DATABASEPROPERTYEX)
 - Verteilte Transaktionen
 - EXECUTE AS-Anmeldungen
 - Verschlüsselung: erweiterbare Schlüsselverwaltung
@@ -76,7 +76,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - SHUTDOWN
 - sp\_addmessage
 - sp\_configure-Optionen und die RECONFIGURE
-- SQL Server-Überwachung \(verwenden Sie stattdessen die SQL-Datenbank-Überwachung\)
+- SQL Server-Überwachung (verwenden Sie stattdessen die SQL-Datenbank-Überwachung)
 - SQL Server Profiler
 - SQL Server-Ablaufverfolgung
 - Ablaufverfolgungskennzeichen
@@ -86,12 +86,12 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 
 ## Vollständige Transact-SQL-Referenz
 
-Weitere Informationen zu Transact-SQL-Grammatik und -Syntax sowie Beispiele finden Sie unter [Transact-SQL-Referenz \(Datenbankmodul\)](https://msdn.microsoft.com/library/bb510741.aspx) in der SQL Server-Onlinedokumentation.
+Weitere Informationen zu Transact-SQL-Grammatik und -Syntax sowie Beispiele finden Sie unter [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx) in der SQL Server-Onlinedokumentation.
 
 ### Informationen zu Tags vom Typ "Gilt für"
 
-Die Transact-SQL-Referenz enthält Themen im Zusammenhang mit SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014 und Microsoft Azure SQL-Datenbank. Am oberen Rand jedes Themas ist ein Abschnitt, der angibt, welche Produkte den Betreff des Themas unterstützen. Wenn ein Produkt fehlt, ist das im Thema beschriebene Feature in diesem Produkt nicht verfügbar. Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server \(SQL Server 2012 bis zur aktuellen Version\)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Microsoft Azure SQL-Datenbank.
+Die Transact-SQL-Referenz enthält Themen im Zusammenhang mit SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014 und Microsoft Azure SQL-Datenbank. Am oberen Rand jedes Themas ist ein Abschnitt, der angibt, welche Produkte den Betreff des Themas unterstützen. Wenn ein Produkt fehlt, ist das im Thema beschriebene Feature in diesem Produkt nicht verfügbar. Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server (SQL Server 2012 bis zur aktuellen Version)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Microsoft Azure SQL-Datenbank.
 
 In einigen Fällen kann der allgemeine Betreff eines Themas in einem Produkt verwendet werden, ohne dass alle Argumente unterstützt werden. Eigenständige Datenbanken wurden z. B. in SQL Server 2012 eingeführt. Die **CREATE USER**-Anweisung kann in allen SQL Server-Produkten, die **WITH PASSWORD**-Syntax jedoch nicht in älteren Versionen verwendet werden. In diesem Fall wurden zusätzliche **Gilt für**-Abschnitte in die entsprechenden Argumentbeschreibungen im Text des Themas eingefügt.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

@@ -1,5 +1,5 @@
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
+1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
 2. Klicken Sie auf die Registerkarte **Push**, wählen Sie **Nur authentifizierte Benutzer** für **Berechtigungen** aus, klicken Sie auf **Speichern** und anschließend auf **Skript bearbeiten**.
 	
@@ -42,4 +42,4 @@
 
 4. Klicken Sie nacheinander auf den Pfeil für "Zurück", auf die Registerkarte **Daten**, auf **TodoItem** und auf **Skript**. Wählen Sie anschließend **Einfügen** aus.
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

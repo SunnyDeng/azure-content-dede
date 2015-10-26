@@ -127,4 +127,4 @@ Die zweite Ausführung des Beispiels zeigt eine deutliche Verkürzung der Aufgab
 
 [1]: ./media/batch-parallel-node-tasks\heat_map.png
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

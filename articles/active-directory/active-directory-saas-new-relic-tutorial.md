@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **New Relic-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei New Relic verwenden, und klicken Sie dann auf **Weiter**.
 
-    Bei der App-URL handelt es sich um die URL Ihres New Relic-Mandanten \(z. B. **https://rpm.newrelic.com*):
+    Bei der App-URL handelt es sich um die URL Ihres New Relic-Mandanten (z. B. **https://rpm.newrelic.com*):
 
     ![App-URL konfigurieren](./media/active-directory-saas-new-relic-tutorial/IC797034.png "App-URL konfigurieren")
 
@@ -137,6 +137,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-new-relic-tutorial/IC767830.png "Ja")
   
-Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

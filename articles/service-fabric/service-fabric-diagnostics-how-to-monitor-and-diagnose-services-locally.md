@@ -79,4 +79,4 @@ Der Ablaufverfolgungscode, den Sie zu Ihrer Anwendung für die lokale Diagnose h
 * [Diagnose und Leistungsüberwachung für Actors in Azure Service Fabric](service-fabric-reliable-actors-diagnostics.md)
 * [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

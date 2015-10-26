@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Clever erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Einen Clever-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Clever zugewiesen haben, mittels einmaligen Anmeldens auf der Clever-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Clever zugewiesen haben, mittels einmaligen Anmeldens auf der Clever-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clever-tutorial/IC798981.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Clever-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Clever verwenden \(z. B. **https://clever.com/in/azsandbox*), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Clever-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Clever verwenden (z. B. **https://clever.com/in/azsandbox*), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-clever-tutorial/IC798982.png "App-URL konfigurieren")
 
@@ -98,9 +98,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Attribute](./media/active-directory-saas-clever-tutorial/IC795920.png "Attribute")
 
-10. So fügen Sie die erforderlichen Attributzuordnungen hinzu
+10. So fügen Sie die erforderlichen Attributzuordnungen hinzu:
 
-    ![Saml Token Attributes](./media/active-directory-saas-clever-tutorial/IC795921.png "Saml Token Attributes")
+    ![SAML-Tokenattribute](./media/active-directory-saas-clever-tutorial/IC795921.png "SAML-Tokenattribute")
 
 	|Attributname|Attributwert|
     |---|---|
@@ -137,4 +137,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

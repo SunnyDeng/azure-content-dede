@@ -133,4 +133,4 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Vorschau
 * [Interpretieren von Fehlermeldungen](hdinsight-debug-jobs.md)
 * [Hilfe im Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

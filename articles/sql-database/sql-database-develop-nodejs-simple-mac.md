@@ -170,4 +170,4 @@ Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweis
 		connection.execSql(request);
 	}
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

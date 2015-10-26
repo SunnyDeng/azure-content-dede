@@ -13,4 +13,4 @@
 
 	Weitere Informationen finden Sie unter [Verbinden mit Azure in Visual Studio](http://go.microsoft.com/fwlink/?LinkId=324796).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

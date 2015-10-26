@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Service Bus-Warteschlangen (PHP) | Microsoft Azure" 
+	pageTitle="Verwenden von Service Bus-Warteschlangen mit PHP | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure. Die Codebeispiele wurden in PHP geschrieben." 
 	services="service-bus" 
 	documentationCenter="php" 
@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.workload="tbd" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="07/06/2015" 
+	ms.date="10/14/2015" 
 	ms.author="sethm"/>
 
 # Verwenden von Service Bus-Warteschlangen
@@ -198,21 +198,13 @@ Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **d
 
 ## Nächste Schritte
 
-Nachdem Sie nun mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen unter [Warteschlangen, Themen und Abonnements][].
+Nachdem Sie mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen unter [Warteschlangen, Themen und Abonnements][].
 
-Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/php/).
+Weitere Informationen finden Sie auch im [PHP Developer Center](/develop/php/).
 
-[Service Bus Queue Diagram]: ../../../DevCenter/Java/Media/SvcBusQueues_01_FlowDiagram.jpg
-[Azure Management Portal]: http://manage.windowsazure.com/
-[Service Bus Node screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_02_SvcBusNode.jpg
-[Create a New Namespace screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_03_CreateNewSvcNamespace.jpg
-[Available Namespaces screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_04_SvcBusNode_AvailNamespaces.jpg
-[Namespace List screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_05_NamespaceList.jpg
-[Properties Pane screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_06_PropertiesPane.jpg
-[Default Key screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_07_DefaultKey.jpg
 [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
 [require_once]: http://php.net/require_once
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

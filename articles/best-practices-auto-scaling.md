@@ -133,4 +133,4 @@ Die folgenden Muster und Anleitungen können auch für Ihr Szenario relevant sei
 - [Microsoft.WindowsAzure.Management.Monitoring.Autoscale-Namespace](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.management.monitoring.autoscale.aspx)
 - Die Dokumentation zur [automatischen Anwendungsblockskalierung](http://msdn.microsoft.com/library/hh680892%28v=pandp.50%29.aspx) und Schlüsselszenarien auf MSDN.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

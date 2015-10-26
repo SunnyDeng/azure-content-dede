@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="09/28/2015" 
+	ms.date="10/08/2015" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
@@ -37,7 +37,7 @@ Sie können das [Azure-Vorschauportal](https://portal.azure.com) oder PowerShell
 - [Upgrade auf SQL-Datenbank V12 (PowerShell)](sql-database-upgrade-server.md)
 
 
-Ein wichtiger Faktor dabei ist, dass Ihre SQL-Datenbank nicht auf eine bestimmte Dienstebene oder Leistungsstufe beschränkt ist. Wenn sich die Anforderungen Ihrer Datenbank ändern, können Sie also einfach zwischen den verfügbaren Dienstebenen und Leistungsstufen wechseln. SQL-Datenbanken der Editionen Basic, Standard und Premium werden nach Stunden berechnet. Sie haben die Möglichkeit, jede Datenbank innerhalb eines 24-Stunden-Intervalls viermal auf eine höhere oder niedrigere Stufe zu skalieren. Sie können die Dienstebene und Leistungsstufe also anpassen, um die Leistungsanforderungen, den Funktionsumfang und die Kosten für die Datenbank abhängig von den Anwendungsanforderungen und schwankender Arbeitsauslastung zu maximieren. Gleichzeitig bedeutet dies aber auch, dass die Evaluierung und Anpassung der Dienstebene und Leistungsstufe Ihrer Datenbank (nach oben und unten) ein fortlaufender Prozess ist, der in Ihre planmäßige Wartung und Leistungsoptimierung eingebettet werden sollte.
+Ein wichtiger Faktor dabei ist, dass Ihre SQL-Datenbank nicht auf eine bestimmte Dienstebene oder Leistungsstufe beschränkt ist. Wenn sich die Anforderungen Ihrer Datenbank ändern, können Sie also einfach zwischen den verfügbaren Dienstebenen und Leistungsstufen wechseln. SQL-Datenbanken der Editionen Basic, Standard und Premium werden nach Stunden berechnet. Sie haben die Möglichkeit, jede Datenbank innerhalb eines 24-Stunden-Intervalls viermal auf eine höhere oder niedrigere Stufe zu skalieren. Sie können die Dienstebene und Leistungsstufe also anpassen, um die Leistungsanforderungen, den Funktionsumfang und die Kosten für die Datenbank abhängig von den Anwendungsanforderungen und schwankenden Workloads zu maximieren. Gleichzeitig bedeutet dies aber auch, dass die Evaluierung und Anpassung der Dienstebene und Leistungsstufe Ihrer Datenbank (nach oben und unten) ein fortlaufender Prozess ist, der in Ihre planmäßige Wartung und Leistungsoptimierung eingebettet werden sollte.
  
 Weitere Informationen zu den Unterschieden zwischen Web/Business und den neuen Dienstebenen und weitere Migrationsdetails erhalten Sie, indem Sie das [Cookbook mit Anleitungen für die Migration von Web- und Business-Datenbanken](http://download.microsoft.com/download/3/C/9/3C9FF3D8-E702-4F5D-A38C-5EFA1DBA73E6/Azure_SQL_Database_Migration_Cookbook.pdf) herunterladen.
 
@@ -45,9 +45,9 @@ Weitere Informationen zu den Unterschieden zwischen Web/Business und den neuen D
 
 ## Übersicht
 
-<p> Azure Web- und Business-SQL-Datenbanken werden in einer gemeinsamen, mehrinstanzenfähigen Umgebung ohne jede reservierte Ressourcenkapazität für die Datenbank ausgeführt. Die Aktivität anderer Datenbanken in dieser gemeinsam genutzten Ressourcenumgebung kann sich auf die Leistung auswirken. Die Verfügbarkeit von Ressourcen hängt zu jedem Zeitpunkt wesentlich von anderen parallelen Arbeitsauslastungen ab, die im System ausgeführt werden. Dies kann zu einer sehr unterschiedlichen und unvorhersehbaren Datenbankanwendungsleistung führen. Das Feedback von Kunden besagt, dass diese unvorhersehbare Leistung schwierig zu verwalten ist und eine besser vorhersagbare Leistung wünschenswert wäre.
+<p> Azure Web- und Business-SQL-Datenbanken werden in einer gemeinsamen, mehrinstanzenfähigen Umgebung ohne jede reservierte Ressourcenkapazität für die Datenbank ausgeführt. Die Aktivität anderer Datenbanken in dieser gemeinsamen Ressourcenumgebung kann sich auf die Leistung auswirken. Die Verfügbarkeit von Ressourcen hängt zu jedem Zeitpunkt wesentlich von anderen parallelen Workloads ab, die im System ausgeführt werden. Dies kann zu einer sehr unterschiedlichen und unvorhersehbaren Datenbankanwendungsleistung führen. Das Feedback von Kunden besagt, dass diese unvorhersehbare Leistung schwierig zu verwalten ist und eine besser vorhersagbare Leistung wünschenswert wäre.
 
-Aufgrund dieses Feedbacks wurden für den Azure SQL-Datenbankdienst neue Datenbank-Dienstebenen [(Basic, Standard und Premium)](sql-database-service-tiers.md) eingeführt, die vorhersagbare Leistung und eine Fülle neuer Funktionen für Geschäftskontinuität und Sicherheit bieten. Diese neuen Dienstebenen stellen eine angegebene Ressourcenebene für die Arbeitsauslastung einer Datenbank unabhängig von anderen Arbeitsauslastung von Kunden zur Verfügung, die in dieser Umgebung ausgeführt werden. Dies führt zu einem hochgradig vorhersagbaren Leistungsverhalten.
+Aufgrund dieses Feedbacks wurden für den Azure SQL-Datenbankdienst neue Datenbank-Dienstebenen [(Basic, Standard und Premium)](sql-database-service-tiers.md) eingeführt, die vorhersagbare Leistung und eine Fülle neuer Funktionen für Geschäftskontinuität und Sicherheit bieten. Diese neuen Dienstebenen stellen eine angegebene Ressourcenebene für den Workload einer Datenbank unabhängig von anderen Workloads von Kunden zur Verfügung, die in dieser Umgebung ausgeführt werden. Dies führt zu einem hochgradig vorhersagbaren Leistungsverhalten.
 
 Diese Änderungen werfen jedoch auch neue Fragen auf. Sie müssen evaluieren und entscheiden, welche neue Dienstebene am besten für die aktuellen Web- und Business-Datenbanken geeignet ist und wie das eigentliche Upgrade erfolgen soll.
 
@@ -66,7 +66,7 @@ Das Upgrade einer Web- oder Business-Datenbank auf eine neue Dienstebene umfasst
 1. Ermitteln der Dienstebene basierend auf dem Funktionsumfang
 2. Ermitteln einer angemessenen Leistungsstufe basierend auf der bisherigen Ressourcennutzung
 3. Warum entspricht die aktuelle Leistung meiner Web- oder Business-Datenbank höheren Premium-Stufen?
-4. Optimieren der Arbeitsauslastung in Anpassung an eine niedrigere Leistungsstufe
+4. Optimieren des Workloads in Anpassung an eine niedrigere Leistungsstufe
 5. *Upgrade auf die neue Dienstebene/Leistungsstufe*
 6. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
 7. Überwachen der Datenbank nach dem Upgrade
@@ -91,11 +91,11 @@ Die Funktionen und Leistungsstufen der neuen Dienstebene werden in der folgenden
 |:--|:--|
 |[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md)| Übersicht, Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im Verwaltungsportal und mithilfe von DMVs). |
 |[Geschäftskontinuität in Azure SQL-Datenbank](sql-database-business-continuity.md)|Details zu den Funktionen für die Geschäftskontinuität und Notfallwiederherstellung (Zeitpunktwiederherstellung, Geowiederherstellung, Georeplikation) der unterschiedlichen Dienstebenen.|
-|[SQL-Datenbank – Preisdetails](http://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
+|[SQL-Datenbank – Preisübersicht](http://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
 
 <br>
 
-Nach Auswahl einer geeigneten Dienstebene, die die Anforderungen der Datenbank erfüllt, besteht der nächste Schritt in der Auswahl einer Leistungsstufe, die auf Ihre tatsächliche Datenbank-Arbeitsauslastung abgestimmt ist.
+Nach Auswahl einer geeigneten Dienstebene, die die Anforderungen der Datenbank erfüllt, besteht der nächste Schritt in der Auswahl einer Leistungsstufe, die auf Ihren tatsächlichen Datenbankworkloads abgestimmt ist.
 
 
 
@@ -140,7 +140,7 @@ Außerdem ist zu beachten, dass diese Daten dem Mittelwert der Stichproben entsp
 
 ![Daten zum DTU-Prozentsatz][2]
 
-Die Daten im vorangehenden Beispiel zeigen die durchschnittliche Auslastung von ca. 10 DTUs (19,23 % von 50) und einen maximalen DTU-Prozentwert von ~ 28 DTUs (55,83 % x 50). Wenn diese Daten eine typische Arbeitsauslastung widerspiegeln, empfiehlt sich für das erste Upgrade die Standardstufe S1. Standard(S0) umfasst 10 DTUs, was im konkreten Fall der durchschnittlichen Nutzung entspricht. Das bedeutet jedoch auch, dass die Datenbank im Durchschnitt immer bei 100 % Auslastung läuft. Ein solcher Nutzungsplan ist sicher keine gute Wahl. Wahrscheinlich ist S1 die richtige Wahl für die gegebene durchschnittliche Auslastung. Was passiert aber in den Zeiten, wenn der maximale Grenzwert erreicht wird? Es kann sein, dass diese Spitzen durch einen nachts durchgeführten Wartungsprozess verursacht werden, der sich nicht auf die Nutzung des Kunden auswirkt. In diesem Fall ist ein zeitlich beschränkter Leistungsabfall akzeptabel. Genau so gut kann aber auch unklar sein, wann der prozentuale DTU-Verbrauch den Maximalwert erreicht. Eine weitergehende Analyse schafft hier Klarheit.
+Die Daten im vorangehenden Beispiel zeigen die durchschnittliche Auslastung von ca. 10 DTUs (19,23 % von 50) und einen maximalen DTU-Prozentwert von ~ 28 DTUs (55,83 % x 50). Wenn diese Daten einen typischen Workload widerspiegeln, empfiehlt sich für das erste Upgrade die Standardstufe S1. Standard(S0) umfasst 10 DTUs, was im konkreten Fall der durchschnittlichen Nutzung entspricht. Das bedeutet jedoch auch, dass die Datenbank im Durchschnitt immer bei 100 % Auslastung läuft. Ein solcher Nutzungsplan ist sicher keine gute Wahl. Wahrscheinlich ist S1 die richtige Wahl für die gegebene durchschnittliche Auslastung. Was passiert aber in den Zeiten, wenn der maximale Grenzwert erreicht wird? Es kann sein, dass diese Spitzen durch einen nachts durchgeführten Wartungsprozess verursacht werden, der sich nicht auf die Nutzung des Kunden auswirkt. In diesem Fall ist ein zeitlich beschränkter Leistungsabfall akzeptabel. Genau so gut kann aber auch unklar sein, wann der prozentuale DTU-Verbrauch den Maximalwert erreicht. Eine weitergehende Analyse schafft hier Klarheit.
 
 Über die bereitgestellten Systemsichten können Sie detaillierte Informationen zum Ressourcenverbrauch einer Datenbank abrufen.
 
@@ -170,15 +170,15 @@ Die Daten, die von [resource\_stats](https://msdn.microsoft.com/library/dn269979
 
 Die DTU-Verbrauchsinformationen für eine S2-Datenbankstufe ermöglichen Ihnen das Normalisieren des aktuellen Verbrauchs Ihrer Web- und Business-Datenbanken im Hinblick auf Datenbanken der neuen Ebene sowie eine Beurteilung der besseren Eignung. Wenn Ihr durchschnittlicher prozentualer DTU-Verbrauch z. B. einen Wert von 80 % anzeigt, besagt dies, dass die Datenbank DTU mit einer Rate von 80 % des Grenzwerts einer Datenbank auf der S2-Leistungsstufe verbraucht. Wenn in der Sicht **sys.resource\_stats** Werte angezeigt werden, die größer als 100 % sind, bedeutet dies, dass Sie eine Leistungsstufe benötigen, die größer als S2 ist. Nehmen Sie z. B. an, dass ein Spitzenwert für den DTU-Prozentsatz von 300 % angezeigt wird. Dies bedeutet, dass Sie drei Mal mehr Ressourcen verwenden als in der S2-Stufe verfügbar wären. Zum Bestimmen einer angemessenen Anfangsgröße vergleichen Sie die in einer S2-Stufe verfügbaren DTUs (50 DTUs) mit den nächsthöheren Stufen (S3/P1 = 100 DTUs oder 200 % von S2, P2 = 200 DTUs oder 400 % von S2). Da Sie bei 300 % der S2-Stufe liegen, können Sie in diesem Fall mit einer P2-Stufe beginnen und dann erneut einen Test durchführen.
 
-Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für Ihre Arbeitsauslastung benötigt wird, können Sie ermitteln, welche Dienstebene und Leistungsstufe für die Arbeitsauslastung Ihrer Datenbank am besten geeignet ist (wie durch den prozentualen DTU-Wert und die relativen DTU-Potenzen verschiedener [Leistungsstufen](sql-database-service-tiers.md) angegeben). Die folgende Tabelle zeigt eine Zuordnung des prozentualen Web-/Business-Ressourcenverbrauchs zu den entsprechenden Leistungsstufen der neuen Ebene:
+Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für Ihren Workload benötigt wird, können Sie ermitteln, welche Dienstebene und Leistungsstufe für den Workload Ihrer Datenbank am besten geeignet ist (wie durch den prozentualen DTU-Wert und die relativen DTU-Potenzen verschiedener [Leistungsstufen](sql-database-service-tiers.md) angegeben). Die folgende Tabelle zeigt eine Zuordnung des prozentualen Web-/Business-Ressourcenverbrauchs zu den entsprechenden Leistungsstufen der neuen Ebene:
 
 ![Ressourcenverbrauch][4]
 
-> **Hinweis:** Relative DTU-Werte zwischen verschiedenen Leistungsstufen basieren auf der Arbeitsauslastung [Azure SQL-Datenbankvergleichstest](http://msdn.microsoft.com/library/azure/dn741327.aspx). Da die Arbeitsauslastung Ihrer Datenbank wahrscheinlich von diesem Vergleichstest abweicht, sollten Sie die oben aufgeführten Berechnungen als Richtlinie für eine anfängliche Einordnung Ihrer Web-/Business-Datenbank in die neuen Dienstebenen verwenden. Nachdem Sie die Datenbank in die neue Ebene verschoben haben, verwenden Sie den im vorherigen Abschnitt beschriebenen Vorgang, um die richtigen Dienstebene zu überprüfen/optimieren, die für die Anforderungen Ihrer Arbeitsauslastung geeignet ist.
+> **Hinweis:** Relative DTU-Werte zwischen verschiedenen Leistungsstufen basieren auf dem Workload [Azure SQL-Datenbankvergleichstest](http://msdn.microsoft.com/library/azure/dn741327.aspx). Da der Workload Ihrer Datenbank wahrscheinlich von diesem Vergleichstest abweicht, sollten Sie die oben aufgeführten Berechnungen als Richtlinie für eine anfängliche Einordnung Ihrer Web-/Business-Datenbank in die neuen Dienstebenen verwenden. Nachdem Sie die Datenbank in die neue Ebene verschoben haben, verwenden Sie den im vorherigen Abschnitt beschriebenen Vorgang, um die richtigen Dienstebene zu überprüfen/optimieren, die für die Anforderungen Ihres Workloads geeignet ist.
 > 
 > Während die vorgeschlagene Dienstebene/Leistungsstufe der neuen Edition Ihre Datenbankaktivität innerhalb der letzten 14 Tage berücksichtigt, basieren diese Daten auf den Datenstichproben für den Ressourcenverbrauch, gemittelt über 5 Minuten. Aus diesem Grund können ggf. kurzfristige Aktivitätsspitzen unberücksichtigt bleiben, die weniger als 5 Minuten dauern. Diese Anleitung sollte daher beim Upgrade der Datenbank als Ausgangspunkt verwendet werden. Nachdem Sie das Upgrade der Datenbank auf die empfohlene Ebene ausgeführt haben, sind weitere Überwachungs-, Test- und Überprüfungsvorgänge erforderlich, und die Datenbank kann nach Bedarf nach oben oder unten in eine andere Ebene/Leistungsstufe verschoben werden.
 
-Die folgende Abfrage für die Masterdatenbank führt die Berechnung für die Datenbank der Web-/Business-Ebene aus und schlägt vor, welche Edition wahrscheinlich für die Arbeitsauslastung für jedes dieser Datenbeispielintervalle von 5 Minuten geeignet ist.
+Die folgende Abfrage für die Masterdatenbank führt die Berechnung für die Datenbank der Web-/Business-Ebene aus und schlägt vor, welche Edition wahrscheinlich für den Workload für jedes dieser Datenbeispielintervalle von 5 Minuten geeignet ist.
 
 > **Hinweis**: Diese Abfrage eignet sich nur für Web-/Business-Datenbanken und ergibt **keine** korrekten Ergebnisse für Datenbanken in den neuen Dienstebenen.
 
@@ -222,7 +222,7 @@ Web- und Business-Datenbanken verfügen über keine reservierte Ressourcenkapazi
 
 Das Ziel der Azure SQL-Datenbankdienste besteht jedoch ohne Zweifel darin, auf allen Web- und Business-Datenbanken möglichst 100 % Leistung zu erzielen. Inzwischen halten Web- und Business-Datenbanken ihre durchschnittliche Leistungsstufe erfolgreich auf dem Premium-Level. Das ist der Grund, warum die Leistung vorhandener Datenbanken den aktuellen Premium-Stufen entsprechen kann. Bei der Evaluierung des geeigneten Dienstebenen-Upgrades führt dies jedoch leider auch zu unrealistischen Erwartungen, wenn Web- und Business-Datenbanken mit den neuen Dienstebenen/Leistungsstufen verglichen werden.
 
-Die folgende Abbildung hilft Ihnen dabei, die Unterschiede zwischen Web-/Business-Datenbanken und den Dienstebenen Basic, Standard und Premium besser zu verstehen. Hier sehen Sie neun SQL-Datenbanken im Web-/Business-Modell mit gemeinsamer Ressourcennutzung im Vergleich zu neun SQL-Datenbanken im Basic-, Standard- und Premium-Dienstebenenmodell. Beim Web-/Business-Modell erkennen Sie eindeutig die Auswirkungen, die "Noisy Neighbors" auf die anderen Datenbanken haben können, die dem Pool für die gemeinsame Ressourcennutzung ebenfalls angehören. Wenn auf einer Datenbank eine ressourcenintensive Arbeitsauslastung ausgeführt wird, wirkt sich dies auf alle anderen Datenbanken im Pool aus, und die Ressourcenverfügbarkeit nimmt ab. Auf der Dienstebene "Basic", "Standard" und "Premium" ***wird*** jeder Datenbank eine bestimmte Ressourcenkapazität zugeordnet, sodass andere Datenbanken innerhalb der gemeinsam genutzten Umgebung isoliert von "Noisy Neighbors" ausgeführt werden und nur den Grenzen der für die Datenbank ausgewählten Leistungsstufe unterliegen.
+Die folgende Abbildung hilft Ihnen dabei, die Unterschiede zwischen Web-/Business-Datenbanken und den Dienstebenen Basic, Standard und Premium besser zu verstehen. Hier sehen Sie neun SQL-Datenbanken im Web-/Business-Modell mit gemeinsamer Ressourcennutzung im Vergleich zu neun SQL-Datenbanken im Basic-, Standard- und Premium-Dienstebenenmodell. Beim Web-/Business-Modell erkennen Sie eindeutig die Auswirkungen, die "Noisy Neighbors" auf die anderen Datenbanken haben können, die dem Pool für die gemeinsame Ressourcennutzung ebenfalls angehören. Wenn auf einer Datenbank ein ressourcenintensiver Workload ausgeführt wird, wirkt sich dies auf alle anderen Datenbanken im Pool aus, und die Ressourcenverfügbarkeit nimmt ab. Auf der Dienstebene "Basic", "Standard" und "Premium" ***wird*** jeder Datenbank eine bestimmte Ressourcenkapazität zugeordnet, sodass andere Datenbanken innerhalb der gemeinsam genutzten Umgebung isoliert von "Noisy Neighbors" ausgeführt werden und nur den Grenzen der für die Datenbank ausgewählten Leistungsstufe unterliegen.
 
 ![Vorhersagbare Leistung der neuen Dienstebenen][3]
 
@@ -232,7 +232,7 @@ Wenn der prozentuale DTU-Gesamtwert sehr hoch ist, sollten Sie die Metriken der 
 ## 4\. Optimieren der Datenbankauslastung in Anpassung an eine niedrigere Leistungsstufe
 Wenn die Analyse des historischen Ressourcenverbrauchs einer Datenbank ein Upgrade auf eine Leistungsstufe nahe legt, die Ihr Budget übersteigt, können Sie sich auch erst über weitere Möglichkeiten der Leistungsoptimierung informieren.
 
-Wenn Ihnen der Ressourcenverbrauch Ihrer Anwendung gemessen an Ihren Erfahrungswerten sehr hoch erscheint und weit über der typischen Arbeitsauslastung liegt, können Sie u. U. einige weitere Möglichkeiten der Leistungsoptimierung für die Anwendung ausschöpfen.
+Wenn Ihnen der Ressourcenverbrauch Ihrer Anwendung gemessen an Ihren Erfahrungswerten sehr hoch erscheint und weit über dem typischen Workload liegt, können Sie u. U. einige weitere Möglichkeiten der Leistungsoptimierung für die Anwendung ausschöpfen.
 
 Im Prinzip können alle Datenbanken von einer weiteren Leistungsoptimierung profitieren.
 
@@ -254,9 +254,9 @@ Nachdem Sie die geeignete Dienstebene/Leistungsstufe für die Web-/Business-Date
 | Verwaltungstool | So ändern Sie die Dienstebene und Leistungsstufe einer Datenbank|
 | :---| :---|
 | [Azure-Verwaltungsportal](https://manage.windowsazure.com) | Klicken Sie auf der Seite "Dashboard" der Datenbank auf die Registerkarte **SKALIEREN**. |
-| [Azure PowerShell](http://msdn.microsoft.com/library/azure/dn546726.aspx) | Verwenden Sie das Cmdlet [Set-AzureSqlDatabase](http://msdn.microsoft.com/library/azure/dn546732.aspx). |
-| [Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn505719.aspx) | Verwenden Sie den Befehl [Datenbank aktualisieren](http://msdn.microsoft.com/library/dn505718.aspx).|
-| [Transact-SQL](http://msdn.microsoft.com/library/bb510741.aspx) | Verwenden Sie die Anweisung [ALTER DATABASE (Transact-SQL)](http://msdn.microsoft.com/library/ms174269.aspx). |
+| [Azure PowerShell](http://msdn.microsoft.com/library/azure/dn546726.aspx) | Verwenden Sie das Cmdlet [Set-AzureRMSqlDatabase](https://msdn.microsoft.com/library/azure/mt619433.aspx). |
+| [REST-API](https://msdn.microsoft.com/library/azure/mt163571.aspx) | Verwenden Sie den Befehl [Datenbank erstellen](https://msdn.microsoft.com/library/azure/mt163685.aspx) oder "Daten aktualisieren".|
+| [Transact-SQL](http://msdn.microsoft.com/library/azure/bb510741.aspx) | Verwenden Sie die Anweisung [ALTER DATABASE (Transact-SQL)](http://msdn.microsoft.com/library/azure/ms174269.aspx). |
 
 Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen und -Leistungsstufen](sql-database-scale-up.md)
 
@@ -317,4 +317,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

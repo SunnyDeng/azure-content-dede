@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und OfficeSpace Software erlä
 -   Ein gültiges Azure-Abonnement
 -   Ein OfficeSpace Software-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie OfficeSpace Software zugewiesen haben, mittels einmaliger Anmeldung auf der OfficeSpace Software-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie OfficeSpace Software zugewiesen haben, mittels einmaliger Anmeldung auf der OfficeSpace Software-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-officespace-software-tutorial/IC777767.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **OfficeSpace Software-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei OfficeSpace Software verwenden \(z. B. **https://company.officespacesoftware.com*")\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **OfficeSpace Software-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei OfficeSpace Software verwenden (z. B. **https://company.officespacesoftware.com*")), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-officespace-software-tutorial/IC775556.png "App-URL konfigurieren")
 
@@ -73,7 +73,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der OfficeSpace Software-Unternehmenswebsite als Administrator an.
 
-6.  Wechseln Sie zu **Administrator \> Connectors**.
+6.  Wechseln Sie zu **Administrator > Connectors**.
 
     ![Admin](./media/active-directory-saas-officespace-software-tutorial/IC777769.png "Admin")
 
@@ -118,6 +118,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-officespace-software-tutorial/IC767830.png "Ja")
   
-Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

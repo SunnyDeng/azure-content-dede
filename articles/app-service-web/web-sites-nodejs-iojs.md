@@ -61,4 +61,4 @@ In diesem Artikel haben Sie erfahren, wie io.js sowohl mithilfe der vorhandenen 
 [io.js-Bereitstellungsskript]: https://github.com/felixrieseberg/iojs-azure
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

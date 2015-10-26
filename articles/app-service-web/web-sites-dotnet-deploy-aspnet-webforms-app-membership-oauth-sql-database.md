@@ -98,7 +98,7 @@ Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. A
 ###Aktualisieren der Masterseite
 In ASP.NET Web Forms können Sie mit Masterseiten ein einheitliches Layout für die Seiten in Ihrer Anwendung erstellen. Eine einzige Masterdseite definiert das Aussehen und das Standardverhalten, das Sie für alle Seiten (oder eine Gruppe von Seiten) in Ihrer Anwendung wünschen. Anschließend können Sie die einzelnen Inhaltsseiten mit dem anzuzeigenden Inhalt erstellen. Wenn Benutzer Inhaltsseiten anfordern, werden diese in ASP.NET mit der Masterseite zusammengeführt, um eine Ausgabe zu erstellen, in der das Layout der Masterseite mit dem Inhalt der Inhaltsseite kombiniert wird. Für die neue Seite muss der Anwendungsname und der Link aktualisiert werden. Dieser Link verweist auf die Seite, welche die Kontaktdetails enthält. Um diese Änderungen vorzunehmen, ändern Sie das HTML auf der Masterseite.
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*.
+1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*. 
 2. Falls diese Seite sich in der **Entwurfsansicht** befindet, wechseln Sie zur **Quellansicht**.
 3. Aktualisieren Sie die Masterseite durch Ändern oder Hinzufügen des Markups, sodass es für die Seite wie folgt aussieht:
 
@@ -419,16 +419,16 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		{
 		    public partial class Startup {
 		
-		// Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter "http://go.microsoft.com/fwlink/?LinkId=301883".
+		        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
 		        public void ConfigureAuth(IAppBuilder app)
 		        {
-		// DB-Kontext und Benutzer-Manager für die Verwendung einer einzelnen Instanz pro Anforderung konfigurieren
+		            // Configure the db context and user manager to use a single instance per request
 		            app.CreatePerOwinContext(ApplicationDbContext.Create);
 		            app.CreatePerOwinContext(ApplicationUserManager.Create);
 		
-		// Anwendung kann Cookie zum Speichern von Informationen zum angemeldeten Benutzer
-		// sowie ein Cookie verwenden, um Informationen zu einem über einen externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern.
-		// Anmeldecookie konfigurieren
+		            // Enable the application to use a cookie to store information for the signed in user
+		            // and to use a cookie to temporarily store information about a user logging in with a third party login provider
+		            // Configure the sign in cookie
 		            app.UseCookieAuthentication(new CookieAuthenticationOptions
 		            {
 		                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
@@ -440,10 +440,10 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
 		                }
 		            });
-		            // Cookie verwenden, um Infos über externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern
+		            // Use a cookie to temporarily store information about a user logging in with a third party login provider
 		            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 		
-		            // Heben Sie die Auskommentierung der folgenden Zeilen auf, um die Anmeldung mit externen Anmeldeanbietern zu ermöglichen.
+		            // Uncomment the following lines to enable logging in with third party login providers
 		            //app.UseMicrosoftAccountAuthentication(
 		            //    clientId: "",
 		            //    clientSecret: "");
@@ -701,4 +701,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

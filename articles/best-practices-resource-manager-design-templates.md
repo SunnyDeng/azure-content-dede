@@ -49,7 +49,7 @@ Unternehmen möchten, dass Entwicklungsteams eine Vorlage für eine einheitliche
 
 ### IT-Abteilungen von Unternehmen
 
-IT-Abteilungen von Unternehmen nutzen Vorlagen zumeist für die Bereitstellung von Cloudkapazität und in der Cloud gehostete Funktionen.
+IT-Abteilungen von Unternehmen nutzen Vorlagen zumeist für die Bereitstellung von Cloudkapazität und in der Cloud gehosteten Funktionen.
 
 #### Cloudkapazität
 
@@ -76,7 +76,7 @@ Wenn Sie Ihr Angebot in Ihrem eigenen Azure-Abonnement hosten, sind zwei Hosting
 
 ### In Kundenabonnement einfließendes Angebot eines Clouddienstanbieters
 
-Möglicherweise möchten Ihre Software in Abonnements bereitstellen, die im Besitz von Endkunden sind. Mithilfe von Vorlagen können Sie verschiedene Bereitstellungen im Azure-Konto eines Kunden einrichten.
+Möglicherweise möchten Sie Ihre Software in Abonnements bereitstellen, die im Besitz von Endkunden sind. Mithilfe von Vorlagen können Sie verschiedene Bereitstellungen im Azure-Konto eines Kunden einrichten.
 
 Diese Bereitstellungen unterliegen der rollenbasierten Zugriffsteuerung, damit Sie die Bereitstellung im Konto des Kunden aktualisieren und verwalten können.
 
@@ -92,7 +92,7 @@ In den folgenden Abschnitten werden die Punkte beschrieben, die vor dem Entwurf 
 
 ## Bestimmen, was sich außerhalb und innerhalb einer VM befindet
 
-Wie Sie Ihre Vorlage entwerfen, ist es hilfreich, sich die Anforderungen dahingehend anzusehen, was sich außerhalb und innerhalb der virtuellen Computer (VMs) befindet:
+Achten Sie beim Erstellen der Vorlagen auf die Anforderungen dahingehend, was sich außerhalb und innerhalb der virtuellen Computer (VMs) befindet:
 
 - Außerhalb bedeutet die VMs und andere Ressourcen Ihrer Bereitstellung, wie z. B. Netzwerktopologie, Kategorisierung, Verweise auf Zertifikate/geheime Schlüssel und rollenbasierte Zugriffssteuerung. Alle diese Ressourcen sind Teil Ihrer Vorlage.
 - Innerhalb bedeutet die installierte Software und der allgemein gewünschte Zustand der Konfiguration. Andere Mechanismen, wie z. B. VM-Erweiterungen oder Skripts, werden vollständig oder teilweise verwendet. Diese Mechanismen werden von der Vorlage bestimmt und ausgeführt, ohne sich in ihr zu befinden.
@@ -153,7 +153,7 @@ Es ist üblich, dass eine Bereitstellung ggf. mehrere Typen von Knoten, z. B. Ma
 
 Sobald Sie mit dem Bereitstellen von Clustern einer gewissen Größe anfangen, beginnen Sie mit Vielfachen all dieser Werte zu arbeiten. Wenn Sie z. B. einen Hadoop-Cluster mit 8 Masterknoten und 200 Datenknoten bereitstellen möchten und mit Pools von 4 angefügten Datenträgern für jeden Masterknoten und 16 angefügten Datenträgern für jeden Datenknoten arbeiten, müssen Sie 208 VMs und 3.232 Datenträger verwalten.
 
-Bei Speicherkonten werden Anforderungen über dem definierten Grenzwert von 20.000 Transaktionen pro Sekunde eingeschränkt. Deshalb müssen Sie die Speicherkontenpartitionierung erwägen und Berechnungen anstellen, um die geeignete Anzahl von Speicherkonten zur Unterstützung dieser Topologie zu bestimmen. Angesichts der Vielzahl von Kombinationen, die vom Ansatz mit freier Form unterstützt werden, sind dynamische Berechnungen erforderlich, um die entsprechende Partitionierung zu bestimmen. Der Vorlagensprache von Azure-Ressourcen-Manager bietet derzeit keine mathematische Funktionen. Deshalb müssen Sie diese Berechnungen im Code ausführen, um eine eindeutige, hartcodierte Vorlage mit den entsprechenden Details zu erstellen.
+Bei Speicherkonten werden Anforderungen über dem definierten Grenzwert von 20.000 Transaktionen pro Sekunde eingeschränkt. Deshalb müssen Sie die Speicherkontenpartitionierung erwägen und Berechnungen anstellen, um die geeignete Anzahl von Speicherkonten zur Unterstützung dieser Topologie zu bestimmen. Angesichts der Vielzahl von Kombinationen, die vom Ansatz mit freier Form unterstützt werden, sind dynamische Berechnungen erforderlich, um die entsprechende Partitionierung zu bestimmen. Die Vorlagensprache von Azure-Ressourcen-Manager bietet derzeit keine mathematische Funktionen. Deshalb müssen Sie diese Berechnungen im Code ausführen, um eine eindeutige, hartcodierte Vorlage mit den entsprechenden Details zu erstellen.
 
 In IT-Abteilungs- und SI-Szenarien muss jemand die Vorlagen verwalten und für die Topologien Unterstützung bieten, die einer oder mehreren Organisationen bereitgestellt wurden. Dieser zusätzliche Aufwand aufgrund verschiedener Konfigurationen und Vorlagen für jeden Kunden ist alles andere als wünschenswert.
 
@@ -231,7 +231,7 @@ Einige Ressourcen werden unabhängig von der angegebenen bekannten Konfiguration
 
 ### Vorlage für freigegebene Ressourcen
 
-Diese Vorlage bietet Ressourcen, die alle bekannten Konfigurationen gemeinsam haben. Sie enthält das virtuelle Netzwerk, Verfügbarkeitsgruppen und anderen Ressourcen, die unabhängig von der Vorlage der bekannten Konfiguration erforderlich sind, die bereitgestellt wird.
+Diese Vorlage bietet Ressourcen, die alle bekannten Konfigurationen gemeinsam haben. Sie enthält das virtuelle Netzwerk, Verfügbarkeitsgruppen und andere Ressourcen, die unabhängig von der Vorlage der bekannten Konfiguration erforderlich sind, die bereitgestellt wird.
 
 ![Vorlagenressourcen](./media/best-practices-resource-manager-design-templates/template-resources.png)
 
@@ -251,7 +251,7 @@ Eine Vorlage für optionale Ressourcen können Sie z. B. zum Konfigurieren einer
 
 Sie können die Vorlage für optionale Ressourcen von mehreren Stellen aus verknüpfen:
 
--	Falls für jede Bereitstellung zutreffend, erstellen Sie einen parametergesteuerter Link über die Vorlage für freigegebene Ressourcen.
+-	Falls für jede Bereitstellung zutreffend, erstellen Sie einen parametergesteuerten Link über die Vorlage für freigegebene Ressourcen.
 -	Falls für ausgewählte bekannte Konfigurationen zutreffend, z. B. ausschließliche Installation in großen Bereitstellungen, erstellen Sie einen parameter- oder variablengesteuerten Link über die Vorlage für eine bekannte Konfiguration.
 
 Ob eine bestimmte Ressource optional ist, hängt möglicherweise nicht vom Vorlagennutzer, sondern vom Vorlagenanbieter ab. Angenommen, Sie müssen die Anforderung eines bestimmten Produkts oder eines Produkt-Add-Ons (gängig bei Clouddienstanbietern) erfüllen oder Richtlinien erzwingen (gängig bei SIs und IT-Abteilungen von Unternehmen). In diesen Fällen können Sie eine Variable verwenden, um zu ermitteln, ob die Ressource bereitgestellt werden soll.
@@ -383,4 +383,4 @@ Wenn Sie Ihre Vorlage im Marketplace veröffentlichen möchten, richten Sie einf
 - Empfehlungen für die Sicherheitseinstellungen im Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

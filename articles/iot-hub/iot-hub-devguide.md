@@ -1,5 +1,5 @@
 <properties
- pageTitle="Entwicklungsleitfaden für Azure IoT Hub | Microsoft Azure"
+ pageTitle="Entwicklungsleitfaden für IoT Hub | Microsoft Azure"
  description="In diesem Entwicklungsleitfaden für Azure IoT Hub werden Themen wie IoT Hub-Endpunkte, Sicherheit, Geräteidentitätsregistrierung und Messaging abgedeckt."
  services="iot-hub"
  documentationCenter=".net"
@@ -9,10 +9,10 @@
 
 <tags
  ms.service="iot-hub"
- ms.devlang="na"
+ ms.devlang="multiple"
  ms.topic="article"
  ms.tgt_pltfrm="na"
- ms.workload="tbd"
+ ms.workload="na"
  ms.date="09/29/2015"
  ms.author="elioda"/>
 
@@ -405,7 +405,7 @@ Jede C2D-Nachricht verfügt über eine Gültigkeitsdauer. Diese kann (in der Eig
 
 Beim Senden einer C2D-Nachricht kann der Dienst das Übermitteln von Feedback auf Nachrichtenbasis anfordern, um über den finalen Status dieser Nachricht informiert zu werden. Wenn die **Ack**-Eigenschaft auf **positive** festgelegt wird, generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Abgeschlossen** erreicht hat. Bei Festlegung der **Ack**-Eigenschaft auf **negative** generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Unzustellbar** erreicht. Bei Festlegung der **Ack**-Eigenschaft auf **full** generiert IoT Hub in beiden Fällen eine Feedbacknachricht.
 
-Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen [Nachrichtenlebenszyklus aufweisen](#message lifecycle). Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen Nachrichtenlebenszyklus aufweisen. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
 
 Jede vom Feedbackendpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
 
@@ -489,6 +489,7 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 
 - [Erste Schritte mit IoT Hubs (Tutorial)][lnk-get-started]
 - [Betriebssystemplattformen und Hardwarekompatibilität][lnk-compatibility]
+- [Azure IoT Developer Center][lnk-iotdev]
 - [Planen Ihrer IoT-Implementierung][lnk-guidance]
 
 [Event Hubs-Ereignisprozessorhost]: http://blogs.msdn.com/b/servicebus/archive/2015/01/16/event-processor-host-best-practices-part-1.aspx
@@ -532,5 +533,6 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-sasl-plain]: http://tools.ietf.org/html/rfc4616
 [lnk-servicebus]: http://azure.microsoft.com/services/service-bus/
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
+[lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!----HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

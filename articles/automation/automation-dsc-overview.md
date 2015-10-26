@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="TBD" 
-   ms.date="09/24/2015"
+   ms.date="10/09/2015"
    ms.author="coreyp"/>
 
 # Azure Automation DSC – Übersicht #
@@ -107,9 +107,9 @@ Ein Kompilierungsauftrag in Azure Automation DSC ist eine Instanz einer Konfigur
 
 Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/mt244122.aspx) bereit:
 
--	`Get-AzureAutomationDscCompilationJob`
--	`Get-AzureAutomationDscCompilationJobOutput`
--	`Start-AzureAutomationDscCompilationJob`
+-	`Get-AzureRmAutomationDscCompilationJob`
+-	`Get-AzureRmAutomationDscCompilationJobOutput`
+-	`Start-AzureRmAutomationDscCompilationJob`
 
 ##Azure Automation DSC – Lebenszyklus##
 Der Weg von einem leeren Automation-Konto zu einer verwalteten und ordnungsgemäß konfigurierten Knotengruppe umfasst eine Reihe von Verfahren zum Definieren von Konfigurationen, zum Umwandeln dieser Konfigurationen in Knotenkonfigurationen und zum Integrieren von Knoten und Knotenkonfigurationen in Azure Automation DSC. Das folgende Diagramm veranschaulicht den Azure Automation DSC-Lebenszyklus:
@@ -143,5 +143,6 @@ Der Weg von einem leeren Automation-Konto zu einer verwalteten und ordnungsgemä
 
 - [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 - [Azure Automation DSC – Preise](http://azure.microsoft.com/pricing/details/automation/)
+- [Kontinuierliche Bereitstellung für IaaS-VMs mit Azure Automation DSC und Chocolatey](automation-dsc-cd-chocolatey.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

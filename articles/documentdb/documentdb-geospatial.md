@@ -355,4 +355,4 @@ Nachdem Sie die ersten Schritte mit räumlichen Daten in DocumentDB ausgeführt 
 - Weitere Informationen zu [DocumentDB-Abfragen](documentdb-sql-query.md)
 - Weitere Informationen zu [DocumentDB-Indizierungsrichtlinien](documentdb-indexing-policies.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

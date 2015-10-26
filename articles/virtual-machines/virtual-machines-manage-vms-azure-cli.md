@@ -1,12 +1,12 @@
 <properties
-   pageTitle="Verwalten der virtuellen Azure-Computer mithilfe der Azure-Befehlszeilenschnittstelle | Microsoft Azure"
-   description="Beschreibt, wie Sie Ihre virtuellen Azure-Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwalten."
+   pageTitle="Verwalten von virtuellen Computern mit der Befehlszeilenschnittstelle | Microsoft Azure"
+   description="Sie können die Verwaltung Ihrer virtuellen Azure-Ressourcen-Manager-Computer mit der Azure-Befehlszeilenschnittstelle (CLI) automatisieren."
    services="virtual-machines"
-   documentationCenter="virtual-machines"
+   documentationCenter=""
    authors="dlepow"
    manager="timlt"
    editor=""
-   tags="azure-service-management"/>
+   tags="azure-resource-manager"/>
 
    <tags
    ms.service="virtual-machines"
@@ -14,16 +14,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
-   ms.date="06/09/2015"
+   ms.date="10/07/2015"
    ms.author="danlep"/>
 
-# Verwalten der virtuellen Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
+# Verwalten der virtuellen Ressourcen-Manager-Computer mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource, die mit dem klassischen Bereitstellungsmodell erstellt wurde. Sie können auch eine Ressource verwalten, die mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-how-to-automate-azure-resource-manager.md) erstellt wurde.
 
-Viele täglich ausgeführte Aufgaben zur Verwaltung Ihrer virtuellen Computer können mithilfe der Azure-Befehlszeilenschnittstelle automatisiert werden. In diesem Artikel finden Sie Beispiele für Befehle für einfachere Aufgaben und Links zu Artikeln, die die Befehle für komplexere Aufgaben behandeln.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-machines-how-to-automate-azure-resource-manager.md).
 
->[AZURE.NOTE]Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert und konfiguriert haben, finden Sie [hier](../xplat-cli-install.md) Anweisungen dazu. Eine Schnellstartanleitung für die gleichen Aufgaben in PowerShell finden Sie unter [Verwalten Ihrer VMs mit Azure PowerShell](virtual-machines-manage-vms-powershell.md).
+Viele täglich ausgeführte Aufgaben zur Verwaltung Ihrer virtuellen Computer können mithilfe der Azure-Befehlszeilenschnittstelle (Command-Line Interface, CLI) für Mac, Linux und Windows automatisiert werden. In diesem Artikel finden Sie Beispiele für Befehle für einfachere Aufgaben und Links zu Artikeln, die die Befehle für komplexere Aufgaben behandeln.
+
+>[AZURE.NOTE]Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie [hier](../xplat-cli-install.md) Anweisungen. [Hier](../xplat-cli-connect.md) finden Sie Informationen zum Verbinden mit Ihrem Abonnement. Sie müssen die Befehlszeilenschnittstelle außerdem im Azure-Ressourcen-Manager-Modus (arm) konfigurieren.
 
 ## So verwenden Sie die Beispielbefehle
 Sie müssen einen Teil des Texts in den Befehlen durch Text ersetzen, der für Ihre Umgebung geeignet ist. Die < and >-Symbole zeigen Text an, der ersetzt werden muss. Wenn Sie den Text ersetzen, entfernen Sie die Symbole, behalten jedoch die Anführungszeichen bei.
@@ -81,6 +82,8 @@ Wenn Sie diese Werte bereits kennen, finden Sie die entsprechenden Schalter zur 
 
 ## Nächste Schritte
 
-Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Manager](../xplat-cli-resource-manager.md). Weitere Informationen über die Konzepte und Azure-Ressourcen erhalten Sie unter [Übersicht über Azure Resource Manager](../resource-group-overview.md).
+* Weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle im Azure-Ressourcen-Manager-Modus finden Sie unter [Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
 
-<!---HONumber=Oct15_HO1-->
+* Weitere Informationen über die Konzepte und Azure-Ressourcen erhalten Sie unter [Übersicht über Azure Resource Manager](../resource-group-overview.md).
+
+<!---HONumber=Oct15_HO3-->

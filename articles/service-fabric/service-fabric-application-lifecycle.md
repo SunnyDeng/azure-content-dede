@@ -118,4 +118,4 @@ Weitere Informationen zum Entwickeln, Testen und Verwalten von Service Fabric-An
 - [REST-Based Application Lifecycle Sample](service-fabric-rest-based-application-lifecycle-sample.md) (in englischer Sprache)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

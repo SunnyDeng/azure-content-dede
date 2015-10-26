@@ -21,7 +21,8 @@
 
 Mit Azure können Sie einen virtuellen Computer zum Verarbeiten rechenintensiver Aufgaben verwenden. Ein virtueller Computer kann beispielsweise Aufgaben verarbeiten und Clientcomputern oder mobilen Anwendungen Ergebnisse bereitstellen. Nach Abschluss dieses Tutorials wissen Sie, wie ein virtueller Computer erstellt wird, der eine rechenintensive .NET-Anwendung ausführt, die durch eine andere .NET-Anwendung überwacht werden kann.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Dieses Lernprogramm setzt voraus, dass Sie wissen, wie .NET-Konsolenanwendungen erstellt werden. Wissen über Azure ist keine Voraussetzung.
 
@@ -549,4 +550,4 @@ Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, k�
 [namespace_list]: ./media/virtual-machines-dotnet-run-compute-intensive-task/NamespaceList.png
 [access_key_button]: ./media/virtual-machines-dotnet-run-compute-intensive-task/AccessKey.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

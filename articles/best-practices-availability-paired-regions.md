@@ -84,4 +84,4 @@ Wie in Abbildung 2 dargestellt.
 
 ![9Orange](./media/best-practices-availability-paired-regions/9Orange.png) **Speicherort von Daten** – Eine Region befindet sich innerhalb desselben Gebiets wie ihr Paar (mit Ausnahme von Brasilien, Süden), um steuerliche und rechtliche Anforderungen an den Speicherort von Daten zu erfüllen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -21,7 +21,7 @@
 
 Apache Spark ist eine schnelles Modul zur Verarbeitung von umfangreichen Daten. Spark verfügt über ein erweitertes DAG-Ausführungsmodul, das zyklischen Datenfluss und In-Memory-Computing unterstützt sowie auf verschiedene Datenquellen, einschließlich HDFS, Spark, HBase und S3 zugreifen kann.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Bereitstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell bereitstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell bereitstellen.
 
 
 Zusätzlich zur Ausführung auf den Cluster-Managern Mesos oder YARN bietet Spark einen einfachen eigenständigen Bereitstellungsmodus. Dieses Lernprogramm führt Sie durch die Verwendung einer Beispielvorlage für Azure-Ressourcen-Manager zum Bereitstellen eines Spark-Clusters auf Ubuntu-VMs über [Azure PowerShell](../powershell-install-configure.md) oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
@@ -847,4 +847,4 @@ Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md)
 
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

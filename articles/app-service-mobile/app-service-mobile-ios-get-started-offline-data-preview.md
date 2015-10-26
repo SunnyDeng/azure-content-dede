@@ -18,9 +18,7 @@
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-offline-preview](../../includes/app-service-mobile-selector-offline-preview.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-offline-preview](../../includes/app-service-mobile-selector-offline-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
 ## Übersicht
 
@@ -90,7 +88,7 @@ Mit der Funktion zur Offlinesynchronisierung von Azure Mobile Apps können Endbe
 
     Der zweite Parameter für `pullWithQuery` ist eine Abfrage-ID, die für die *inkrementelle Synchronisierung* verwendet wird. Die inkrementelle Synchronisierung ruft nur die Datensätze ab, die seit der letzten Synchronisierung geändert wurden. Dafür wird der Zeitstempel `UpdatedAt` (im lokalen Speicher `ms_updatedAt`) des Datensatzes verwendet. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `nil`. Beachten Sie, dass dies möglicherweise ineffizient ist, da auf diese Weise bei jedem Pullvorgang alle Datensätze abgerufen werden.
 
-	<!--     >[AZURE.NOTE] Um Datensätze aus dem lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank des mobilen Diensts gelöscht wurden, aktivieren Sie [Vorläufiges Löschen]. Andernfalls sollte Ihre App in regelmäßigen Abständen {MSSyncTable.purgeWithQuery} aufrufen, um den lokalen Speicher zu löschen.
+	<!--     >[AZURE.NOTE] To remove records from the device local store when they have been deleted in your mobile service database, you should enable [Soft Delete]. Otherwise, your app should periodically call `MSSyncTable.purgeWithQuery` to purge the local store.
  -->
 
 5. In der `QSTodoService`-Klasse wird die `syncData`-Methode nach den Vorgängen zum Ändern von Daten, `addItem` und `completeItem`, aufgerufen. Sie wird auch von `QSTodoListViewController.refresh` aufgerufen, sodass Benutzer die aktuellsten Daten abrufen, wenn sie die Akualisierungsbewegung durchführen. Die App führt außerdem eine Synchronisierung beim Start durch, da `QSTodoListViewController.init` einen Aufruf von `refresh` durchführt.
@@ -160,9 +158,7 @@ Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tab
     | id | Zeichenfolge, als erforderlich gekennzeichnet | Primärschlüssel im Remotespeicher |
     | complete | Boolean | Todo-Elementfeld |
     | Text | String | Todo-Elementfeld |
-    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | 
-	| ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | 
-	| ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
+    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | | ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | | ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
 
 
 ## <a name="setup-sync"></a>Ändern des Synchronisierungsverhaltens der App
@@ -226,14 +222,14 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
     Wenn Sie die inkrementelle Synchronisierung deaktivieren möchten, übergeben Sie `nil` als Abfrage-ID. In diesem Fall werden alle Datensätze bei jedem Aufruf von `pullWithQuery` abgerufen, was möglicherweise ineffizient ist.
 
-<!-- * Um Datensätze aus dem lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank des mobilen Diensts gelöscht wurden, aktivieren Sie [Vorläufiges Löschen]. Otherwise, your app should periodically call `MSSyncTable.purgeWithQuery` to remove records from the local database, in case they have been deleted in the remote service.
+<!-- * To remove records from the device local store when they have been deleted in your mobile service database, you should enable [Soft Delete]. Otherwise, your app should periodically call `MSSyncTable.purgeWithQuery` to remove records from the local database, in case they have been deleted in the remote service.
  -->
 
 ## Zusätzliche Ressourcen
 
 * [Offlinedatensynchronisierung in Azure Mobile Apps]
 
-* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] \(Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
+* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] (Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
 
 <!-- URLs. -->
 
@@ -250,4 +246,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!------HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

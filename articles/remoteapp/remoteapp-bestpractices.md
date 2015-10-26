@@ -44,4 +44,4 @@ Die folgenden Informationen sollen Ihnen bei der Konfiguration und der produktiv
 	- Deaktivieren Sie automatische Softwareupdates für veröffentlichte Anwendungen – wenden Sie Updates stattdessen manuell auf das Vorlagenimage an, und testen Sie sie, bevor Sie sie über die Vorlage bereitstellen.
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

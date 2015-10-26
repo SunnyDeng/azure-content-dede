@@ -48,7 +48,7 @@ Benutzerlizenz ändern | Die einem Benutzer im Verzeichnis zugewiesene Lizenz ge
 Benutzer aktualisieren | Einen Benutzer im Verzeichnis aktualisiert. Informationen zu Attributen, die aktualisiert werden können, [finden Sie weiter unter](#quotupdate-userquot-attributes).
 Änderung des Benutzerkennworts erzwingen | Eigenschaft festgelegt, die einen Benutzer zwingt, sein Kennwort bei der Anmeldung zu ändern.
 **Gruppenereignisse** |
-Gruppe erstellen | Eine Gruppe wurde im Verzeichnis erstellt.
+Gruppe hinzufügen | Eine Gruppe wurde im Verzeichnis erstellt.
 Gruppe aktualisieren | Eine Gruppe wurde im Verzeichnis aktualisiert.
 Gruppe löschen | Eine Gruppe wurde im Verzeichnis gelöscht.
 Mitglied zur Gruppe hinzufügen | Einer Gruppe im Verzeichnis wurde ein Mitglied hinzugefügt.
@@ -108,4 +108,4 @@ TelephoneNumber | Die Telefonnummer des Benutzers.
 
 Überwachungsdatensätze sind ein erforderliches Steuerelement in vielen Richtlinien zur Einhaltung von Vorschriften. Kunden, die den Azure Active Directory-Überwachungsbericht zum Erfüllen dieser Vorschriften nutzen, wird empfohlen, der Kopie des exportierten Überwachungsberichts eine Kopie dieses Hilfethemas hinzuzufügen, das die Berichtsdetails erläutert. Wenn der Prüfer die Richtlinien zur Vorschrifteneinhaltung bestimmen möchte, die Azure derzeit erfüllt, leiten Sie ihn zur [Seite "Compliance"](http://azure.microsoft.com/support/trust-center/compliance/) im Microsoft Azure Trust Center.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

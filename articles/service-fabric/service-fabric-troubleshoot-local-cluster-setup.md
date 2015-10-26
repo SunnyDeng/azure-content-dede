@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Problembehandlung bei der Einrichtung Ihres lokalen Clusters"
+   pageTitle="Behandeln von Problemen beim Service Fabric-Clustersetup | Microsoft Azure"
    description="Dieser Artikel enthält eine Reihe von Vorschlägen für die Problembehandlung Ihres lokalen Entwicklungsclusters."
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="timlt"
+   manager="coreysa"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/09/2015"
+   ms.date="10/13/2015"
    ms.author="seanmck"/>
 
 # Problembehandlung beim Einrichten des Clusters für die lokale Entwicklung
@@ -86,4 +86,4 @@ Stellen Sie sicher, dass in Ihrer Projektmappe keine Dienstprojekte als Startpro
 - [Grundlagen und Problembehandlung für Cluster mit Systemintegritätsberichten](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 - [Visualisieren Ihres Clusters mit Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

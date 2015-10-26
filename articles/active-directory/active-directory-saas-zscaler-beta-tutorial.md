@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und ZScaler Beta erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein ZScaler Beta-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die ZScaler Beta zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer ZScaler Beta-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) nutzen.
+Nach Abschluss dieses Tutorials können sich die ZScaler Beta zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer ZScaler Beta-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -137,7 +137,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     2.  Geben Sie in das Textfeld "Adresse" **gateway.zscalerBeta.net** ein.
     3.  Geben Sie im Textfeld "Port" **80** ein.
     4.  Wählen Sie **Proxyserver für lokale Adressen umgehen**.
-    5.  Klicken Sie zum Schließen des Dialogfelds **Local Area Network \(LAN\) Settings** auf **OK**.
+    5.  Klicken Sie zum Schließen des Dialogfelds **Local Area Network (LAN) Settings** auf **OK**.
 
 6.  Klicken Sie zum Schließen des Dialogfelds **Internetoptionen** auf **OK**.
 
@@ -188,4 +188,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

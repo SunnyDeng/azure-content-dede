@@ -301,4 +301,4 @@ Sobald die Pipeline ausgeführt wird, sollten Sie die Daten sehen können, die i
 
 Beachten Sie, dass wir nicht die Funktionalität von ADF zum inkrementellen Übertragen von Daten per Pipe genutzt haben. Weitere Detailinformationen zur Vorgehensweise sowie zu weiteren von ADF bereitgestellten Funktionen finden Sie in der [ADF-Dokumentation](http://azure.microsoft.com/services/data-factory/).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

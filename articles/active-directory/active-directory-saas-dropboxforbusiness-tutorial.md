@@ -70,17 +70,17 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
 3.  Führen Sie auf der Seite **App-URL konfigurieren** die folgenden Schritte aus:
 
-     3.1. Melden Sie sich bei Ihrem Dropbox für Unternehmen-Mandanten an. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769509.png "Einmaliges Anmelden konfigurieren")
+     3\.1. Melden Sie sich bei Ihrem Dropbox für Unternehmen-Mandanten an. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769509.png "Einmaliges Anmelden konfigurieren")
 
-     3.2. Klicken Sie im Navigationsbereich auf der linken Seite auf **Verwaltungskonsole**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769510.png "Einmaliges Anmelden konfigurieren")
+     3\.2. Klicken Sie im Navigationsbereich auf der linken Seite auf **Verwaltungskonsole**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769510.png "Einmaliges Anmelden konfigurieren")
 
-     3.3. Klicken Sie in der **Verwaltungskonsole** im linken Navigationsbereich auf **Authentifizierung**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769511.png "Einmaliges Anmelden konfigurieren")
+     3\.3. Klicken Sie in der **Verwaltungskonsole** im linken Navigationsbereich auf **Authentifizierung**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769511.png "Einmaliges Anmelden konfigurieren")
 
-     3.4. Wählen Sie im Abschnitt **Einmaliges Anmelden** die Option **Einmaliges Anmelden aktivieren**, und klicken Sie dann auf **Mehr**, um diesen Abschnitt zu erweitern. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769512.png "Einmaliges Anmelden konfigurieren")
+     3\.4. Wählen Sie im Abschnitt **Einmaliges Anmelden** die Option **Einmaliges Anmelden aktivieren**, und klicken Sie dann auf **Mehr**, um diesen Abschnitt zu erweitern. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769512.png "Einmaliges Anmelden konfigurieren")
 
-     3.5. Kopieren Sie die URL neben **Benutzer können sich durch die Eingabe ihrer E-Mail-Adresse anmelden oder direkt gelangen zu**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769513.png "Einmaliges Anmelden konfigurieren")
+     3\.5. Kopieren Sie die URL neben **Benutzer können sich durch die Eingabe ihrer E-Mail-Adresse anmelden oder direkt gelangen zu**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769513.png "Einmaliges Anmelden konfigurieren")
 
-     3.6. Fügen Sie die URL im Azure-Portal im Textfeld **Anmelde-URL für DropBox für Unternehmen** ein. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769514.png "Einmaliges Anmelden konfigurieren")
+     3\.6. Fügen Sie die URL im Azure-Portal im Textfeld **Anmelde-URL für DropBox für Unternehmen** ein. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769514.png "Einmaliges Anmelden konfigurieren")
 
 
 
@@ -89,23 +89,21 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
 5. Gehen Sie auf Ihrem Dropbox für Unternehmen-Mandanten im Abschnitt **Einmaliges Anmelden** der Seite **Authentifizierung** folgendermaßen vor: <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769516.png "Einmaliges Anmelden konfigurieren")
 
-     5.1. Klicken Sie auf **Erforderlich**.
+     5\.1. Klicken Sie auf **Erforderlich**.
 
-     5.2. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Dropbox für Unternehmen** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
-
-
-     5.3. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat. > [AZURE.TIP] Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+     5\.2. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Dropbox für Unternehmen** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
 
 
-     5.4. Klicken Sie auf **Zertifikat wählen**, und wechseln Sie dann zu Ihrer **Base-64-codierten Zertifikatdatei**.
+     5\.3. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
 
-     5.5. Klicken Sie auf **Änderungen speichern**, um die Konfiguration für Ihren DropBox für Unternehmen-Mandanten abzuschließen.
+     5\.4. Klicken Sie auf **Zertifikat wählen**, und wechseln Sie dann zu Ihrer **Base-64-codierten Zertifikatdatei**.
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen. <br><br> 
+     5\.5. Klicken Sie auf **Änderungen speichern**, um die Konfiguration für Ihren DropBox für Unternehmen-Mandanten abzuschließen.
 
-![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC749329.png "Einmaliges Anmelden konfigurieren")
+
+6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-dropboxforbusiness-tutorial/IC749329.png "Einmaliges Anmelden konfigurieren")
 
 
 
@@ -175,4 +173,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 * [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 
-<!-----HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

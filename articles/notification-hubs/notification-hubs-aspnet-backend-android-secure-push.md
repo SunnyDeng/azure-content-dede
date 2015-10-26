@@ -131,4 +131,4 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 
 4. Klicken Sie in der Android-App-UI auf **Log in**. Klicken Sie anschließend auf **Send push**.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

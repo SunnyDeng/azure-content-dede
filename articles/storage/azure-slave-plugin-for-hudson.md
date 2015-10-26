@@ -1,19 +1,19 @@
 <properties
     pageTitle="Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration"
-	description="Beschreibt das Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration."
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor="jimbe"/>
+    description="Beschreibt das Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration."
+	services="storage" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="jimbe" />
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="v-dedomi"/>
 
 #Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration
@@ -213,4 +213,4 @@ Hudson erstellt dann einen untergeordneten Knoten mithilfe der im vorherigen Abs
 
   
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -91,4 +91,4 @@ Ich denke, ich habe jetzt alles erklärt, was Sie wissen müssen. Jetzt bleibt n
 
 [Erstellen Sie eine Cloudsammlung](remoteapp-create-cloud-deployment.md), oder [erstellen Sie eine Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md) – fangen Sie einfach an.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

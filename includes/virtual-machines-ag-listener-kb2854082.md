@@ -8,4 +8,4 @@ Laden Sie in der Remotedesktopsitzung für jeden Clusterknoten [KB2854082](http:
 > - Vor der Installation des Hotfixes auf einem Knoten sind alle Clusterknoten online.
 > - Die Installation des Hotfixes auf einem Knoten wird vollständig abgeschlossen, einschließlich des Neustarts des Servers, bevor die Installation des Hotfixes auf einem anderen Knoten im Cluster ausgeführt wird.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

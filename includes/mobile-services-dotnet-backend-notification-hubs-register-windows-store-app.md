@@ -56,4 +56,4 @@
 [Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

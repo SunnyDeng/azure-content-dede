@@ -1,20 +1,20 @@
 <properties
    pageTitle="Verfügbarkeit der Service Fabric-Dienste"
-	description="Beschreibt Fehlererkennung, Failover und Wiederherstellung für Dienste"
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="appi101"
-	manager="timlt"
-	editor=""/>
+   description="Beschreibt Fehlererkennung, Failover und Wiederherstellung für Dienste"
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="appi101"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/26/2015"
-	ms.author="aprameyr"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2015"
+   ms.author="aprameyr"/>
 
 # Verfügbarkeit der Service Fabric-Dienste
 Service Fabric-Dienste können zustandsbehaftet oder zustandslos sein. Dieser Artikel bietet eine Übersicht darüber, wie Service Fabric die Verfügbarkeit eines Diensts bei einem Ausfall aufrechterhält.
@@ -51,4 +51,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 - [Definieren und Verwalten von Zuständen](service-fabric-concepts-state.md)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

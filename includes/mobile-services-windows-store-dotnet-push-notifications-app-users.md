@@ -69,4 +69,4 @@ Bei dieser Methode fügen Sie Registrierungscode aus dem Lernprogramm direkt in 
 	
 	Dadurch wird sichergestellt, dass vor der Push-Registrierung eine Authentifizierung erfolgt.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

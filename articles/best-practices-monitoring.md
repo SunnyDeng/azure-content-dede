@@ -1,21 +1,21 @@
 <properties
    pageTitle="Anleitung zur Überwachung und Diagnose | Microsoft Azure"
-	description="Bewährte Methoden für die Überwachung verteilter Anwendungen in der Cloud."
-	services=""
-	documentationCenter="na"
-	authors="dragon119"
-	manager="masimms"
-	editor=""
-	tags=""/>
+   description="Bewährte Methoden für die Überwachung verteilter Anwendungen in der Cloud."
+   services=""
+   documentationCenter="na"
+   authors="dragon119"
+   manager="masimms"
+   editor=""
+   tags=""/>
 
 <tags
    ms.service="best-practice"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="04/28/2015"
-	ms.author="masashin"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="04/28/2015"
+   ms.author="masashin"/>
 
 # Anleitung zur Überwachung und Diagnose
 
@@ -612,4 +612,4 @@ In vielen Fällen können Berichte in Batchprozessen nach einem bestimmten Zeitp
 - Die Seite [Grundlegendes zur Überwachung von Warnungen und Benachrichtigungen in Azure](https://msdn.microsoft.com/library/azure/dn306639.aspx) auf der Microsoft-Website.
 - Die Seite [Application Insights](app-insights-get-started/) auf der Microsoft-Website.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

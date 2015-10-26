@@ -151,9 +151,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
    &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
    &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
    &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.azurewebsites.net/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-&lt;/appSettings></pre>
-
-	Stellen Sie sicher, dass der Wert von "ida:PostLogoutRedirectUri" mit einem Schrägstrich "/" endet.
+&lt;/appSettings></pre>Stellen Sie sicher, dass der Wert von "ida:PostLogoutRedirectUri" mit einem Schrägstrich "/" endet.
 
 1. Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **Veröffentlichen**.
 
@@ -246,17 +244,12 @@ public class WorkItemsController : Controller
     public async Task&lt;ActionResult> Delete(int? id)
     ...
 
-       <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-       public async Task&lt;ActionResult> DeleteConfirmed(int id)
-       ...
-       }</pre>
+    <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
+    public async Task&lt;ActionResult> DeleteConfirmed(int id)
+    ...
+}</pre>Da Sie die Rollenzuordnungen im Controller "Rollen" vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
 
-	Da Sie die Rollenzuordnungen im Controller "Roles" vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
-
-	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht:
-	> + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird.
-	> + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht. Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. 
-	> Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
+	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht: + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird. + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht. Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
 
 12.  Fügen Sie in der Datei "App\_Start\\Startup.Auth.cs" der `ConfigureAuth`-Methode die folgende Codezeile hinzu:
 
@@ -264,9 +257,7 @@ public class WorkItemsController : Controller
 	
 	Mit `ClaimTypes.NameIdentifies` wird der Anspruch `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` angegeben, der von Azure Active Directory nicht bereitgestellt wird. Da Sie nun die Autorisierung vorgenommen haben (die gewiss nicht lange gedauert hat), können Sie sich der eigentlichen Funktionalität der Aktionen zuwenden.
 
-13.	Fügen Sie in Create() und Edit() den folgenden Code hinzu, um für Ihr JavaScript später einige Variablen zur Verfügung zu stellen: 
-            ViewData["token"] = GraphHelper.AcquireToken(ClaimsPrincipal.Current.FindFirst(Globals.ObjectIdClaimType).Value);
-            ViewData["tenant"] = ConfigHelper.Tenant;
+13.	Fügen Sie in Create() und Edit() den folgenden Code hinzu, um für Ihr JavaScript später einige Variablen zur Verfügung zu stellen: ViewData["token"] = GraphHelper.AcquireToken(ClaimsPrincipal.Current.FindFirst(Globals.ObjectIdClaimType).Value); ViewData["tenant"] = ConfigHelper.Tenant;
 
 14.	Suchen Sie in "Views\\WorkItems\\Create.cshtml" (einem automatisch erstellten Gerüstelement) die Hilfsmethode `Html.BeginForm`, und ändern Sie sie folgendermaßen:
 	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
@@ -371,4 +362,4 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

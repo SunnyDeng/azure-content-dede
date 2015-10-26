@@ -2,6 +2,7 @@
 	pageTitle="Planen einer erweiterten Azure Machine Learning-Analyseumgebung | Microsoft Azure" 
 	description="Planen Sie Ihre erweiterte Analyseumgebung unter Berücksichtigung von Kernfragen." 
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="msolhab"
 	manager="paulettm" 
@@ -79,4 +80,4 @@ Je nach Szenario benötigen Sie möglicherweise einige der folgenden Tools und R
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

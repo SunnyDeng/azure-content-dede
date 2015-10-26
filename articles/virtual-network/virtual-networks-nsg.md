@@ -164,4 +164,4 @@ Sehen Sie sich alle [Einschränkungen an, die es hinsichtlich der Netzwerkdienst
 - [Bereitstellen von NSGs im klassischen Bereitstellungsmodell](virtual-networks-create-nsg-classic-ps.md)
 - [Bereitstellen von NSGs im Ressourcen-Manager](virtual-networks-create-nsg-arm-pportal.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

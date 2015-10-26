@@ -15,4 +15,4 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Projekteinstellungen in der Datei "Web.config" bei der Ausführung in Azure mit den Portaleinstellungen überschrieben werden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

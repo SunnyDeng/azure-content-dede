@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Projectplace erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein Projectplace-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Projectplace zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Projectplace-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Projectplace zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Projectplace-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-projectplace-tutorial/IC790221.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Projectplace-Anmelde-URL** die URL Ihres Projectplace-Mandanten ein \(z. B. **http://company.projectplace.com*")\), und klicken Sie auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Projectplace-Anmelde-URL** die URL Ihres Projectplace-Mandanten ein (z. B. **http://company.projectplace.com*")), und klicken Sie auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-projectplace-tutorial/IC790222.png "App-URL konfigurieren")
 
@@ -123,4 +123,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

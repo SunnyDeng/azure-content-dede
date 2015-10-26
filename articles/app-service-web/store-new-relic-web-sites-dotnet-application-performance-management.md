@@ -1,19 +1,19 @@
 <properties 
-	pageTitle=".NET Web-App in Azure App Service mit Verwaltung der Anwendungsleistung mit New Relic"
-	description="Erfahren Sie, wie Sie die Leistungsüberwachung von New Relic für ASP.NET-Anwendungen in Azure App Service verwenden."
-	services="app-service\web"
-	documentationCenter=".net"
-	authors="cephalin"
-	manager="wpickett"
+	pageTitle=".NET Web-App in Azure App Service mit Verwaltung der Anwendungsleistung mit New Relic" 
+	description="Erfahren Sie, wie Sie die Leistungsüberwachung von New Relic für ASP.NET-Anwendungen in Azure App Service verwenden." 
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="cephalin" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="07/30/2015"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="07/30/2015" 
 	ms.author="stepsic"/>
 
 
@@ -38,8 +38,7 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Marketplace](/ma
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Marketplace 
---
+Anmelden bei New Relic über den Azure Marketplace --
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen sowie Azure App Service integriert werden.
 
@@ -179,4 +178,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
  
 
-<!----HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

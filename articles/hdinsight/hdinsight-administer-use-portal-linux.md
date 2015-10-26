@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie den HDInsight-Dienst verwalten. Erstellen Sie ein HDInsight-Cluster, öffnen Sie die interaktive JavaScript-Konsole, und öffnen Sie die Hadoop-Befehlszeile."
+	pageTitle="Verwalten von Linux-basierten Hadoop-Clustern in HDInsight mit dem Azure-Portal | Microsoft Azure"
+	description="Hier erhalten Sie Informationen zum Erstellen und Verwalten von Linux-basierten HDInsight-Clustern mithilfe des Azure-Portals."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/06/2015"
+	ms.date="10/09/2015"
 	ms.author="larryfr"/>
 
 # Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal
@@ -195,4 +195,4 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 
 [preview-portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

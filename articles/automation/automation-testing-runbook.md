@@ -55,4 +55,4 @@ Sie können im Azure-Portal nur [PowerShell-Workflow-Runbooks](automation-runboo
 - [Bearbeiten von Textrunbooks in Azure Automation](automation-edit-textual-runbook.md)
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

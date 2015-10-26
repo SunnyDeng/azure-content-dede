@@ -19,7 +19,8 @@
 
 # Bereitstellen von Redis-Clustern mithilfe einer Ressourcen-Manager-Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines Redis-Clusters mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Redis ist ein Open-Source-Schlüsselwertcache und -speicher, bei dem Schlüssel Datenstrukturen wie Zeichenfolgen, Hashes, Listen, Sätze und sortierte Sätze enthalten können. Redis unterstützt einen Satz automatischer Vorgänge für diese Datentypen. Mit der Veröffentlichung von Version 3.0 von Redis ist Redis Cluster jetzt in der neuesten stabilen Version von Redis verfügbar. Redis Cluster ist eine verteilte Implementierung von Redis, in der Daten automatisch auf mehreren Knoten von Redis freigegeben werden, sodass Vorgänge fortgesetzt werden können, wenn einige Knoten ausfallen.
 
@@ -380,7 +381,7 @@ Sie können den Status der einzelnen Ressourcenbereitstellungen mit dem folgende
 azure group deployment list TestRG
 ```
 
-## Überblick über die Redis-Vorlagenstruktur und -Dateianordnung
+## Übersicht über die Redis-Vorlagenstruktur und -Dateianordnung
 
 Um eine stabile und wiederverwendbare Ressourcen-Manager-Vorlage zu erstellen, ist es erforderlich, genau über eine Reihe komplexer und zusammenhängender Aufgaben während der Bereitstellung einer komplexen Lösung wie eines Redis-Clusters nachzudenken. Durch die Nutzung von Ressourcen-Manager-Funktionen zum Verknüpfen von Vorlagen, Ressourcenschleifen und die Skriptausführung über zugehörige Erweiterungen ist es möglich, einen modularen Ansatz zu implementieren, der bei nahezu allen komplexen vorlagenbasierten Bereitstellungen wiederverwendet werden kann.
 
@@ -581,7 +582,7 @@ Wenn "node-resources.json" in der Hauptdatei "azuredeploy.json" aufgerufen wird,
 },
 ```
 
-Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array `dependsOn` sehen können. In dieser speziellen Vorlage sehen Sie, dass die Redis-Clusterknoten von den zuerst erstellten freigegebenen Ressourcen abhängig sind.
+Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array `dependsOn` sehen können. In dieser speziellen Vorlage sehen Sie, dass die Redis-Clusterknoten von den zuerst erstellten gemeinsamen Ressourcen abhängig sind.
 
 Wie bereits erwähnt, darf der letzte Knoten erst bereitgestellt werden, wenn auf allen anderen Knoten im Redis-Cluster der Redis Server bereitgestellt wurde und ausgeführt wird. Dies erfolgt in "azuredeploy.json" über die Ressource `lastnode-resources`, die von der `copy`-Schleife `memberNodesLoop` aus dem Vorlagenausschnitt oben abhängt. Nach Abschluss der Bereitstellung von `memberNodesLoop` kann `lastnode-resources` bereitgestellt werden:
 
@@ -669,4 +670,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

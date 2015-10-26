@@ -3,7 +3,7 @@
         description="Erstellen Sie eine Dateifreigabe in der Cloud, und binden Sie die Freigabe aus einem virtuellen Azure-Computer oder einer lokalen Anwendung ein, die unter Linux ausgeführt wird."
         services="storage"
         documentationCenter="na"
-        authors="jutang"
+        authors="jasontang501"
         manager="jahogg"
         editor="" />
 
@@ -12,7 +12,7 @@
       ms.tgt_pltfrm="na"
       ms.devlang="na"
       ms.topic="article"
-      ms.date="09/28/2015"
+      ms.date="10/06/2015"
       ms.author="jutang;tamram" />
 
 
@@ -28,7 +28,7 @@ Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuel
 
 Weil der Linux-SMB-Client noch keine Verschlüsselung unterstützt, muss sich der Client, wenn eine Dateifreigabe aus Linux eingebunden wird, in derselben Azure-Region befinden wie die Dateifreigabe. Allerdings arbeiten die Linux-Entwickler, die für die SMB-Funktionalität verantwortlich sind, an der Verschlüsselungsunterstützung für Linux. Linux-Distributionen, in denen zukünftig Verschlüsselung unterstützt wird, werden ebenfalls von überall eine Azure-Dateifreigabe einbinden können.
 
-## Welche Linux-Distribution sollte verwendet werden ##
+## Wählen einer zu verwendenden Linux-Distribution ##
 
 Wenn Sie in Azure einen virtuellen Linux-Computer erstellen, können Sie im Azure-Image-Katalog ein Linux-Image angeben, das SMB 2.1 oder höher unterstützt. Dies ist die Liste der empfohlenen Linux-Images:
 
@@ -57,9 +57,7 @@ Soll eine Dateifreigabe nach einem Neustart weiterhin eingebunden sein, fügen S
 
     //myaccountname.file.core.windows.net/mysharename /mymountpoint cifs vers=3.0,username= myaccountname,password= StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
-Es folgt ein Beispiel, um dies genauer darzustellen.
-
-Wenn Sie mit dem Linux-Image Ubuntu Server 15.04, das im Azure Marketplace verfügbar ist, einen virtuellen Azure-Computer erstellt haben, können Sie die Datei wie folgt einbinden:
+Wenn Sie z. B. mit dem Linux-Image Ubuntu Server 15.04, das im Azure-Imagekatalog verfügbar ist, einen virtuellen Azure-Computer erstellt haben, können Sie die Datei wie folgt einbinden:
 
     azureuser@azureconubuntu:~$ sudo apt-get install apt-file
     azureuser@azureconubuntu:~$ sudo mkdir /mnt/mountpoint
@@ -85,6 +83,28 @@ Wenn Sie die Open SUSE 13.2 verwenden, können Sie die Datei wie folgt einbinden
     Filesystem  Size  Used Avail Use% Mounted on
     //myaccountname.file.core.windows.net/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
 
+## Verwalten der Dateifreigabe ##
+
+Das [Azure-Vorschauportal](https://portal.azure.com/) bietet nun eine Benutzeroberfläche zum Verwalten von Azure File Storage. Sie können in Ihrem Webbrowser die folgenden Aktionen ausführen:
+
+- Hoch- und Herunterladen von Dateien für die Dateifreigabe
+- Überwachen der tatsächlichen Nutzung der einzelnen Dateifreigaben
+- Anpassen des Kontingents für die Dateifreigabegröße
+- Kopieren Sie den `net use`-Befehl, der zum Einbinden Ihrer Dateifreigabe auf einem Windows-Client verwendet werden soll. 
+
+Sie können auch die plattformübergreifende Azure-Befehlszeilenschnittstelle (Azure CLI) von Linux verwenden, um die Dateifreigabe zu verwalten. Die Azure-Befehlszeilenschnittstelle bietet eine Reihe plattformübergreifender Open-Source-Befehle für die Arbeit mit Azure Storage, einschließlich File Storage. Sie bietet im Wesentlichen die gleiche Funktionalität wie das Azure-Portal sowie umfangreiche Datenzugriffsfunktionen. Beispiele finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit Azure Storage](storage-azure-cli.md).
+
+## Entwickeln mit Dateispeicher ##
+
+Als Entwickler können Sie eine Anwendung mit File Storage erstellen, indem Sie die [Azure Storage-Clientbibliothek für Java](https://github.com/azure/azure-storage-java) verwenden. Codebeispiele finden Sie unter [Verwenden von File Storage aus Java](storage-java-how-to-use-file-storage.md).
+
+Sie können auch die [Azure Storage-Clientbibliothek für Node.js](https://github.com/Azure/azure-storage-node) zum Entwickeln für File Storage verwenden.
+
+## Feedback und weitere Informationen ##
+
+Linux-Benutzer, wir möchten von Ihnen hören!
+
+Der Gruppe "Azure File Storage for Linux users" bietet ein Forum, in dem Sie Ihr Feedback zu File Storage für Linux geben können. Senden Sie eine E-Mail an [Azure File Storage for Linux Users](mailto:azurefileslinuxusers@microsoft.com), um der Benutzergruppe beizutreten.
 
 ## Nächste Schritte
 
@@ -110,4 +130,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -27,11 +27,12 @@
 
 Dieser Artikel enthält Schritte zum Erstellen eines virtuellen Computers mit SQL Server in Azure durch Verwenden von PowerShell-Cmdlets.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Wenn Sie einen virtuellen Computer mit SQL Server mit dem Ressourcen-Manager in PowerShell erstellen möchten, sollten Sie die generischen Anleitungen für virtuelle Ressourcen-Manager-Computer im folgenden Thema lesen: [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 ## Installieren und Konfigurieren von PowerShell
 
-1. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/DE-DE/pricing/free-trial/) besuchen. 
+1. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/en-us/pricing/free-trial/) besuchen. 
  
 2. [Installieren Sie die neuesten Azure PowerShell-Cmdlets](../powershell-install-configure.md/#how-to-install-azure-powershell).
 
@@ -171,6 +172,6 @@ In vielen Fällen ist der nächste Schritt, die Datenbanken auf diese neue SQL S
 
 Wenn Sie auch wissen möchten, wie diese Schritte aus dem Azure-Verwaltungsportal ausgeführt werden, lesen Sie [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
 
-Zusätzlich zu diesen Ressourcen wird empfohlen, dass Sie sich die [anderen Themen im Zusammenhang mit Ausführen von SQL Server auf virtuellen Azure Computern ansehen](virtual-machines-sql-server-infrastructure-services.md).
+Zusätzlich zu diesen Ressourcen wird empfohlen, dass Sie sich die [anderen Themen im Zusammenhang mit Ausführen von SQL Server auf virtuellen Azure Computern](virtual-machines-sql-server-infrastructure-services.md) ansehen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

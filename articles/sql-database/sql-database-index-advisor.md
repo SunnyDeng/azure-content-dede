@@ -171,4 +171,4 @@ Indexempfehlungen bieten eine automatisierte Lösung für die Indexerstellung un
 [3]: ./media/sql-database-index-advisor/recommended-indexes.png
 [4]: ./media/sql-database-index-advisor/index-operations.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

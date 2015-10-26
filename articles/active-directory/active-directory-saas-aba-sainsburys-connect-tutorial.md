@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und ABa Sainsburys Connect
 -   Ein gültiges Azure-Abonnement
 -   Ein ABa Sainsburys Connect-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die ABa Sainsburys Connect zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer ABa Sainsburys Connect-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die ABa Sainsburys Connect zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer ABa Sainsburys Connect-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -67,8 +67,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-aba-sainsburys-connect-tutorial/IC807728.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Aba Sainsburys Connect-Anwendung verwenden \(z. B. **https://myaba.co.uk/client-access/sainsburys/saml.php*).
-    2.  Klicken Sie auf **Weiter**.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Aba Sainsburys Connect-Anwendung verwenden (z. B. **https://myaba.co.uk/client-access/sainsburys/saml.php*).
+2.  Klicken Sie auf **Weiter**.
 
 4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Aba Sainsburys Connect** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei auf Ihrem Computer.
 
@@ -105,4 +105,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!------HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

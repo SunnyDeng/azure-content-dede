@@ -31,7 +31,7 @@ Das Erstellen eines virtuellen Azure-Computers (VM), auf dem Linux ausdeführt w
 
 ## Auswählen des Images
 
-Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows-Server-Image zu finden.
+Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows Server-VM-Image zu finden.
 
 1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
 
@@ -57,9 +57,9 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 	> [AZURE.NOTE]Außerdem können Sie hier die Authentifizierung mit Benutzername und Kennwort auswählen und die betreffenden Daten eingeben, falls Sie Ihre **SSH**-Sitzung nicht mit dem Austausch eines öffentlichen und privaten Schlüssels schützen möchten.
 
-2. Klicken Sie auf **Größe**, und wählen Sie eine für Ihre Anforderungen geeignete Größe für den virtuellen Computer aus. Für jede Größe ist die Anzahl von Prozessorkernen, den Arbeitsspeicher und andere Features angegeben, wie z. B. Unterstützung für Storage Premium, die sich auf den Preis auswirken. Azure empfiehlt anhand des gewählten Abbilds automatisch bestimmte Größen. Klicken Sie anschließend auf ![Schaltfläche auswählen](media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png).
+2. Klicken Sie auf **Größe**, und wählen Sie eine für Ihre Anforderungen geeignete Größe für den virtuellen Computer aus. Für jede Größe sind die Anzahl von Prozessorkernen, der Arbeitsspeicher und andere Features angegeben, wie z. B. Unterstützung für Storage Premium, die sich auf den Preis auswirken. Azure empfiehlt anhand des gewählten Abbilds automatisch bestimmte Größen. Klicken Sie anschließend auf ![Schaltfläche auswählen](media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png).
 
-	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium ist die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
 3. Klicken Sie auf **Einstellungen**, um die Einstellungen für Hauptspeicher und Netzwerkfähigkeit des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie im Allgemeinen die Standardeinstellungen akzeptieren. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium (SSD)** unter **Datenträgertyp** Storage Premium testen. Klicken Sie anschließend auf ![Schaltfläche "OK"](media/virtual-machines-linux-tutorial-portal-rm/okbutton.png).
 
@@ -128,4 +128,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

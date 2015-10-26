@@ -7,7 +7,6 @@
 	manager="mblythe" 
 	editor=""/>
 
-
 <tags 
 	ms.service="search" 
 	ms.devlang="rest-api" 
@@ -16,7 +15,6 @@
 	ms.tgt_pltfrm="na" 
 	ms.date="07/08/2015" 
 	ms.author="heidist"/>
-
 
 # Erstellen einer geografischen Suchanwendung mit Azure Search
 
@@ -169,4 +167,4 @@ Um Ihr Selbststudium zu vertiefen, fügen Sie beispielsweise weitere Funktionen 
 [7]: ./media/search-create-geospatial/AzureSearch-geo1-App.PNG
 [12]: ./media/search-create-geospatial/AzureSearch_Create2_CodeplexDownload.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

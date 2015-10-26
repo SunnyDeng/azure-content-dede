@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="storage-backup-recovery" 
-   ms.date="07/24/2015"
+   ms.date="10/08/2015"
    ms.author="elfish; v-romcal; v-stste"/>
 
 # Wiederherstellen einer gelöschten Azure SQL-Datenbank in Azure PowerShell
@@ -38,17 +38,19 @@ Siehe [Wiederherstellen einer gelöschten Azure SQL-Datenbank im Azure-Portal](s
 
 Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authentifizierung verwenden. Weitere Informationen finden Sie im Abschnitt *Verwenden der Zertifikatmethode* unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md#use-the-certificate-method).
 
+> [AZURE.IMPORTANT]Dieser Artikel enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen.
+
 1. Rufen Sie die Liste der wiederherstellbaren Datenbanken mithilfe des Cmdlets [Get-AzureSqlDatabase](http://msdn.microsoft.com/library/azure/dn546735.aspx) ab.
 	* Verwenden Sie den Schalter **RestorableDropped**, und geben Sie unter **ServerName** den Namen des Servers an, von dem die Datenbank gelöscht wurde.
 	* Mit dem folgenden Befehl werden die Ergebnisse in einer Variablen namens **$RecoverableDBs** gespeichert.
 	
-	`PS C:\>$RecoverableDBs = Get-AzureSqlDatabase -ServerName "myserver" –RestorableDropped`
+	`$RecoverableDBs = Get-AzureSqlDatabase -ServerName "myserver" –RestorableDropped`
 
 2. Wählen Sie in der Liste der gelöschten Datenbanken die gelöschte Datenbank aus, die Sie wiederherstellen möchten.
 
 	* Geben Sie die Nummer der gelöschten Datenbank mithilfe der Liste **$RecoverableDBs** ein.  
 
-	`PS C:\>$Database = $RecoverableDBs[<deleted database number>]`
+	`$Database = $RecoverableDBs[<deleted database number>]`
 
 	* Weitere Informationen zum Abrufen eines wiederherstellbaren gelöschten Datenbankobjekts finden Sie unter [Get-AzureSqlDatabase](http://msdn.microsoft.com/library/dn546735.aspx).
 
@@ -58,14 +60,14 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 
 	Speichern Sie die Rückgabe in einer Variablen namens **$RestoreRequest**. Diese Variable enthält die Wiederherstellungsanforderungs-ID zum Überwachen des Status einer Wiederherstellung.
 	
-	`PS C:\>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName “myrestoredDB”`
+	`$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName “myrestoredDB”`
 
 Eine Wiederherstellung kann einige Zeit in Anspruch nehmen. Verwenden Sie zum Überwachen des Status der Wiederherstellung das Cmdlet [Get-AzureSqlDatabaseOperation](http://msdn.microsoft.com/library/azure/dn546738.aspx), und geben Sie die folgenden Parameter an:
 
 * **ServerName**: Name des Servers, auf dem die Datenbank wiederhergestellt werden soll.
 * **OperationGuid**: GUID des Vorgangs, wobei es sich um die Wiederherstellungsanforderungs-ID handelt, die in Schritt 3 in der Variablen **$RestoreRequest** gespeichert wurde.
 
-	`PS C:\>Get-AzureSqlDatabaseOperation –ServerName "myserver" –OperationGuid $RestoreRequest.RequestID`
+	`Get-AzureSqlDatabaseOperation –ServerName "myserver" –OperationGuid $RestoreRequest.RequestID`
 
 Die Felder **Status** und **ProzentAbgeschlossen** zeigen den Status der Wiederherstellung.
 
@@ -73,10 +75,8 @@ Die Felder **Status** und **ProzentAbgeschlossen** zeigen den Status der Wiederh
 
 Weitere Informationen finden Sie unter den folgenden Links:
 
-[Geschäftskontinuität in Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/hh852669.aspx)
-
-[Sichern und Wiederherstellen der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/jj650016.aspx)
+[Geschäftskontinuität in Azure SQL-Datenbank](sql-database-business-continuity.md)
 
 [Azure PowerShell](http://msdn.microsoft.com/library/azure/jj156055.aspx)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

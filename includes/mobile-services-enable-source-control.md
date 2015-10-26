@@ -1,5 +1,5 @@
 
-1. Loggen Sie sich in das [Azure-Verwaltungsportal](https://manage.windowsazure.com/) ein, klicken Sie auf **Mobile Services**, klicken Sie auf Ihren mobilen Dienst, klicken Sie dann auf die Registerkarte **Dashboard**.
+1. Loggen Sie sich in das [Azure-Verwaltungsportal] ein, klicken Sie auf **Mobile Services**, klicken Sie auf Ihren mobilen Dienst, klicken Sie dann auf die Registerkarte **Dashboard**.
 
 2. (Optional) Wenn Sie bereits die Anmeldeinformationen für Mobile Services oder die Websites-Quellcodeverwaltung für Ihr Azure-Abonnement festgelegt haben, können Sie zu Schritt 4 wechseln. Klicken Sie andererseits unter **Auf einen Blick **auf **Quellcodeverwaltung einrichten**, und klicken Sie zum Bestätigen auf **Ja**.
 
@@ -18,4 +18,4 @@
 Mit aktivierter Quellcodeverwaltung für Ihren mobilen Dienst können Sie Git verwenden, um das Repository auf Ihrem lokalen Computer zu klonen.
  
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

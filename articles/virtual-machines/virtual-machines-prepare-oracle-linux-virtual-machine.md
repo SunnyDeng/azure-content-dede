@@ -18,7 +18,8 @@ ms.author="bbenz" />
 
 #Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf virtuelle Computer, die mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell erstellt wurden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 -   [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
 
@@ -221,4 +222,4 @@ Das Vorbereiten eines virtuellen Oracle Linux 7-Computers für Azure ähnelt de
 
 15.  Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

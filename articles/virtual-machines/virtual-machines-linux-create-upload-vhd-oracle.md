@@ -19,7 +19,6 @@
 
 # Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 - [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](#oracle6)
 - [Vorbereiten eines virtuellen Oracle Linux 7.0+-Computers für Azure](#oracle7)
@@ -230,4 +229,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

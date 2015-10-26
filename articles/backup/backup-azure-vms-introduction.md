@@ -7,7 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/24/2015" ms.author="trinadhk";"aashishr";"jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/07/2015" ms.author="trinadhk";"aashishr";"jimpark"/>
 
 # Sichern virtueller Azure-Computer
 
@@ -87,7 +87,7 @@ In der folgenden Abbildung sind die Beziehungen zwischen den verschiedenen Azure
 
 5. Klicken Sie auf **Tresor erstellen**. Es kann eine Weile dauern, bis der Sicherungstresor fertiggestellt wird. Unten im Portal können Sie anhand der Benachrichtigungen den Status prüfen. ![Popupbenachrichtigung zur Erstellung des Tresors](./media/backup-azure-vms-introduction/creating-vault.png)
 
-6. In einer Meldung wird bestätigt, dass der Tresor erfolgreich erstellt wurde. Er wird dann auf der Seite "Recovery Services" als aktiv aufgeführt. Vergewissern Sie sich nach der Erstellung des Tresors, dass die entsprechende Speicherredundanzoption ausgewählt ist. Weitere Informationen finden Sie unter [Festlegen der Speicherredundanzoption im Sicherungstresor](../backup-azure-backup-create-vault.md#storage-redundancy-options). ![Liste der Sicherungstresore](./media/backup-azure-vms-introduction/backup_vaultslist.png)
+6. In einer Meldung wird bestätigt, dass der Tresor erfolgreich erstellt wurde. Er wird dann auf der Seite "Recovery Services" als aktiv aufgeführt. Vergewissern Sie sich nach der Erstellung des Tresors, dass die entsprechende Speicherredundanzoption ausgewählt ist. Weitere Informationen finden Sie unter [Festlegen der Speicherredundanzoption im Sicherungstresor](backup-configure-vault.md#azure-backup---storage-redundancy-options). ![Liste der Sicherungstresore](./media/backup-azure-vms-introduction/backup_vaultslist.png)
 
 7. Durch Klicken auf den Sicherungstresor wird die Seite **Schnellstart** geöffnet, auf der die Anweisungen für die Sicherung von virtuellen Azure-Computern angezeigt werden. ![Anweisungen zur Sicherung von virtuellen Computern auf der Dashboard-Seite](./media/backup-azure-vms-introduction/vmbackup-instructions.png)
 
@@ -104,7 +104,8 @@ Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=3
 - Die Sicherung von virtuellen Computern mithilfe von Storage-Premium wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehreren reservierten IPs wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit einer reservierten IP und ohne definierten Endpunkt wird nicht unterstützt.
-- Die Sicherung von virtuellen Computern mit mehreren NICs oder in einer Konfiguration mit Lastenausgleich wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern mithilfe von mehreren NICs wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern in einer Konfiguration mit Lastenausgleich wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird in allen öffentlichen Azure-Regionen unterstützt. Dies ist eine [Liste der unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
@@ -122,4 +123,4 @@ Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Compute
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

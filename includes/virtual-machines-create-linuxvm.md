@@ -39,4 +39,4 @@
 
 Ausführliche Informationen zu diesen Azure-CLI-Befehlen für virtuelle Computer finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](../articles/virtual-machines/virtual-machines-command-line-tools.md).
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

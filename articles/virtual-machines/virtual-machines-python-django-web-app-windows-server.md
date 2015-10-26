@@ -27,7 +27,8 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Microsoft Azure mithilfe eines virtuellen Windows Server-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
 
@@ -52,7 +53,7 @@ Nachstehend finden Sie einen Screenshot der vollständigen Anwendung:
  - Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte **ENDPUNKTE**.
  - Klicken Sie unten auf der Seite auf **HINZUFÜGEN**. ![Endpunkt hinzufügen](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
 
- - Öffnen Sie **ÖFFENTLICHER PORT 80**  des **TCP**-Protokolls als **PRIVATER PORT 80**. ![][port80]
+ - Öffnen Sie **ÖFFENTLICHER PORT 80 ** des **TCP**-Protokolls als **PRIVATER PORT 80**. ![][port80]
 1. Klicken Sie auf der Registerkarte **DASHBOARD** auf **Verbinden** zum Verwenden von **Remotedesktop**, um sich beim neu erstellten virtuellen Azure-Computer remote anzumelden.  
 
 **Wichtiger Hinweis:** Für alle nachfolgend aufgeführten Anweisungen müssen Sie ordnungsgemäß beim virtuellen Computer angemeldet sein und Befehle dort anstatt von Ihrem lokalen Computer aus eingeben.
@@ -183,4 +184,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 [python.org]: https://www.python.org/downloads/
 [wfastcgi]: https://pypi.python.org/pypi/wfastcgi
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

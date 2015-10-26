@@ -7,7 +7,7 @@
    manager="shreeshd"
    editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/26/2015" ms.author="trinadhk";"giridham"; "arunak"; "jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/07/2015" ms.author="trinadhk";"giridham"; "arunak"; "jimpark"; "aashishr"/>
 
 # Azure Backup – Häufig gestellte Fragen
 Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zu Azure Backup können im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) gestellt werden. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
@@ -46,7 +46,7 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F9. Wie registriere ich meinen Server bei einem anderen Datencenter?**<br/> A9. Im Allgemeinen werden die Sicherungsdaten an das Datencenter des Backup-Diensts gesendet, bei dem er registriert ist. Die einfachste Methode zum Ändern des Datencenters besteht darin, den Agent zu deinstallieren, neu zu installieren und bei einem neuen Datencenter zu registrieren.
 
-**F10. Was geschieht, wenn ich einen Windows-Server umbenenne, der Daten in Azure sichert?** <br/> A10. Alle derzeit konfigurierten Sicherungen werden beendet. Sie müssen den Server erneut beim Sicherungstresor registrieren, und er wird von Recovery Services als neuer Server betrachtet. Der erste Sicherungsvorgang nach der Registrierung ist daher eine vollständige Sicherung aller in der Sicherung enthaltenen Daten, nicht nur der Änderungen seit der letzten Sicherung. Wenn Sie einen Wiederherstellungsvorgang durchführen müssen, können Sie jedoch die gesicherten Daten wiederherstellen, indem Sie die Option zur Wiederherstellung von einem anderen Server wählen. Weitere Informationen finden Sie unter "Umbenennen eines Servers".
+**F10. Was geschieht, wenn ich einen Windows-Server umbenenne, der Daten in Azure sichert?** <br/> A10. Alle derzeit konfigurierten Sicherungen werden beendet. Sie müssen den Server erneut beim Sicherungstresor registrieren, und er wird von Recovery Services als neuer Server betrachtet. Der erste Sicherungsvorgang nach der Registrierung ist daher eine vollständige Sicherung aller in der Sicherung enthaltenen Daten, nicht nur der Änderungen seit der letzten Sicherung. Wenn Sie einen Wiederherstellungsvorgang durchführen müssen, können Sie jedoch die gesicherten Daten wiederherstellen, indem Sie die Option zur Wiederherstellung von einem anderen Server wählen.
 
 **F11. Von welchen Laufwerkstypen kann ich Dateien und Ordner sichern?** <br/> A11. Die folgenden Laufwerke/Volumes können nicht als Backup dienen:
 
@@ -99,10 +99,10 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 |Nr. |	Betriebssystem |	Maximale Größe der Datenquelle |
 | :-------------: |:-------------| :-----|
 |1| Windows Server 2012 oder höher| 54\.400 GB|
-|2| Windows Server 8 oder höher| 54\.400 GB|
+|2| Windows 8 oder höher| 54\.400 GB|
 |3| Windows Server 2008, Windows Server 2008 R2 | 1\.700 GB|
 |4| Windows 7 | 1\.700 GB|
- 
+
 Die Größe der Datenquelle wird wie folgt gemessen.
 
 |	Datenquelle |	Details |
@@ -120,7 +120,7 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 **F4. Gibt es einen Unterschied zwischen den Aufbewahrungsrichtlinien von DPM und Azure Backup (d. h. auf Windows Server ohne DPM)?**<br/> A4. Nein, es stehen dieselben Funktionen zur Verfügung. Sie können tägliche, wöchentliche, monatliche und jährliche Aufbewahrungsrichtlinien angeben.
 
-**F5. Kann ich meine Aufbewahrungsrichtlinien selektiv konfigurieren – d. h. wöchentlich und täglich, jedoch nicht jährlich und monatlich?**<br/> A5. Ihnen steht die vollständige Optionsauswahl zur Verfügung, um Richtlinien zu erstellen, die Ihre Compliance-/Aufbewahrungsanforderungen optimal definieren.
+**F5. Kann ich meine Aufbewahrungsrichtlinien selektiv konfigurieren – d. h. wöchentlich und täglich, jedoch nicht jährlich und monatlich?**<br/> A5. Ja, durch die Struktur der Azure Backup-Aufbewahrungsrichtlinie können Sie die Aufbewahrungsrichtlinie entsprechend Ihren Anforderungen flexibel definieren.
 
 **F6. Kann ich eine Sicherung um 18:00 Uhr planen und Aufbewahrungsrichtlinien für einen anderen Zeitpunkt festlegen?**<br/> A6. Nein. Aufbewahrungsrichtlinien können nur bei den Sicherungspunkten angewendet werden. In der folgenden Abbildung wird die Aufbewahrungsrichtlinie für Sicherungen festgelegt, die um 12:00 Uhr und um 18:00 Uhr erfolgen. <br/>
 
@@ -175,4 +175,4 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

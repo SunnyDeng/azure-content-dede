@@ -4,4 +4,4 @@
 > 
 > Die im Azure-Vorschauportal erstellten Dienste und Ressourcen werden im Azure-Portal nicht angezeigt, da sie ein neues Ressourcenmodell verwenden.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

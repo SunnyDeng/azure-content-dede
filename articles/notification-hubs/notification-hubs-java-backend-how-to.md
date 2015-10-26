@@ -303,4 +303,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Java REST-Client für
 [Maven]: http://maven.apache.org/
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

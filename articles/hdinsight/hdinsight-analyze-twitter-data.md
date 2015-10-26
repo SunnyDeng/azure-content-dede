@@ -50,13 +50,13 @@ HDInsight verwendet zur Datenspeicherung Azure-Blobspeicher. Azure-Blobspeicher 
 
 Wenn Sie ein HDInsight-Cluster bereitstellen, wird ein Blobspeichercontainer ebenso wie HDFS als Standarddateisystem festgelegt. Zusätzlich zu diesem Container können Sie während des Bereitstellungsprozesses weitere Container aus demselben Azure-Speicherkonto oder anderen Azure-Speicherkonten hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
-> [AZURE.NOTE] Um das in diesem Lernprogramm verwendete Windows PowerShell-Skript zu vereinfachen, werden alle Dateien im Container des Standarddateisystems unter */tutorials/twitter* gespeichert. Dieser Container hat standardmäßig denselben Namen wie der HDInsight-Cluster. Falls Sie einen anderen Container zum Speichern dieser Dateien verwenden, müssen Sie das Skript entsprechend anpassen.
+> [AZURE.NOTE]Um das in diesem Lernprogramm verwendete Windows PowerShell-Skript zu vereinfachen, werden alle Dateien im Container des Standarddateisystems unter */tutorials/twitter* gespeichert. Dieser Container hat standardmäßig denselben Namen wie der HDInsight-Cluster. Falls Sie einen anderen Container zum Speichern dieser Dateien verwenden, müssen Sie das Skript entsprechend anpassen.
 
 Die Syntax des Azure-Blobspeichers lautet:
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.windows.net/<path>/<filename>
 
-> [AZURE.NOTE] In der HDInsight-Clusterversion 3.0 wird nur die \**wasb://*-Syntax unterstützt. Die ältere \**asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern; sie wird auch in späteren Versionen nicht unterstützt.
+> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die **wasb://*-Syntax unterstützt. Die ältere **asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern. Sie wird auch in späteren Versionen nicht unterstützt.
 
 > Der Azure-Blobspeicherpfad ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
 
@@ -105,7 +105,7 @@ Description|MyHDInsightApp
 Website|http://www.myhdinsightapp.com
 
 4. Aktivieren Sie **Yes, I agree**, und klicken Sie dann auf **Create your Twitter application**.
-5. Klicken Sie auf die Registerkarte **Permissions**. Die Standardberechtigung ist **Read only**. Diese Berechtigung reicht für dieses Lernprogramm aus. 
+5. Klicken Sie auf die Registerkarte **Permissions**. Die Standardberechtigung ist **Read only**. Diese Berechtigung reicht für dieses Lernprogramm aus.
 6. Klicken Sie auf die Registerkarte **Keys and Access Tokens**.
 7. Klicken Sie auf **Create my access token**.
 8. Klicken Sie oben rechts auf der Seite auf **Test OAuth**.
@@ -113,7 +113,7 @@ Website|http://www.myhdinsightapp.com
 
 In diesem Lernprogramm verwenden Sie Windows PowerShell, um einen Webdienstaufruf zu tätigen. Ein .NET C#-Beispiel finden Sie unter [Analysieren der Twitter-Stimmung in Echtzeit mit HBase in HDInsight][hdinsight-hbase-twitter-sentiment]. Ein weiteres beliebtes Tool zum Erstellen von Webdienstaufrufen ist [*Curl*][curl]. Curl können Sie [hier][curl-download] herunterladen.
 
->[AZURE.NOTE] Wenn Sie den Curl-Befehl in Windows verwenden, geben Sie die Optionswerte in doppelten anstelle von einfachen Anführungszeichen ein.
+>[AZURE.NOTE]Wenn Sie den Curl-Befehl in Windows verwenden, geben Sie die Optionswerte in doppelten anstelle von einfachen Anführungszeichen ein.
 
 **So rufen Sie Tweets ab**
 
@@ -123,67 +123,67 @@ In diesem Lernprogramm verwenden Sie Windows PowerShell, um einen Webdienstaufru
 
 		#region - variables and constants
 		$clusterName = "<HDInsightClusterName>" # Enter the HDInsight cluster name
-		
+
 		# Enter the OAuth information for your Twitter application
 		$oauth_consumer_key = "<TwitterAppConsumerKey>";
 		$oauth_consumer_secret = "<TwitterAppConsumerSecret>";
 		$oauth_token = "<TwitterAppAccessToken>";
 		$oauth_token_secret = "<TwitterAppAccessTokenSecret>";
-		
-		$destBlobName = "tutorials/twitter/data/tweets.txt" # This script saves the tweets into this blob. 
-		
+
+		$destBlobName = "tutorials/twitter/data/tweets.txt" # This script saves the tweets into this blob.
+
 		$trackString = "Azure, Cloud, HDInsight" # This script gets the tweets containing these keywords.
 		$track = [System.Uri]::EscapeDataString($trackString);
 		$lineMax = 10000  # The script will get this number of tweets. It is about 3 minutes every 100 lines.
 		#endregion
-		
+
 		#region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 		Add-AzureAccount
 		#endregion
-			
+
 		#region - Create a block blob object for writing tweets into Blob storage
 		Write-Host "Get the default storage account name and Blob container name using the cluster name ..." -ForegroundColor Green
 		$myCluster = Get-AzureHDInsightCluster -Name $clusterName
-		$storageAccountName = $myCluster.DefaultStorageAccount.StorageAccountName.Replace(".blob.core.windows.net", "")	
+		$storageAccountName = $myCluster.DefaultStorageAccount.StorageAccountName.Replace(".blob.core.windows.net", "")
 		$containerName = $myCluster.DefaultStorageAccount.StorageContainerName
 		Write-Host "`tThe storage account name is $storageAccountName." -ForegroundColor Yellow
 		Write-Host "`tThe blob container name is $containerName." -ForegroundColor Yellow
-		
+
 		Write-Host "Define the Azure storage connection string ..." -ForegroundColor Green
 		$storageAccountKey = get-azurestoragekey $storageAccountName | %{$_.Primary}
 		$storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey"
 		Write-Host "`tThe connection string is $storageConnectionString." -ForegroundColor Yellow
-		
+
 		Write-Host "Create block blob object ..." -ForegroundColor Green
 		$storageAccount = [Microsoft.WindowsAzure.Storage.CloudStorageAccount]::Parse($storageConnectionString)
 		$storageClient = $storageAccount.CreateCloudBlobClient();
 		$storageContainer = $storageClient.GetContainerReference($containerName)
 		$destBlob = $storageContainer.GetBlockBlobReference($destBlobName)
 		#end region
-				
-		# region - Format OAuth strings	
+
+		# region - Format OAuth strings
 		Write-Host "Format oauth strings ..." -ForegroundColor Green
 		$oauth_nonce = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes([System.DateTime]::Now.Ticks.ToString()));
 		$ts = [System.DateTime]::UtcNow - [System.DateTime]::ParseExact("01/01/1970", "dd/MM/yyyy", $null)
 		$oauth_timestamp = [System.Convert]::ToInt64($ts.TotalSeconds).ToString();
-				
+
 		$signature = "POST&";
 		$signature += [System.Uri]::EscapeDataString("https://stream.twitter.com/1.1/statuses/filter.json") + "&";
 		$signature += [System.Uri]::EscapeDataString("oauth_consumer_key=" + $oauth_consumer_key + "&");
-		$signature += [System.Uri]::EscapeDataString("oauth_nonce=" + $oauth_nonce + "&"); 
+		$signature += [System.Uri]::EscapeDataString("oauth_nonce=" + $oauth_nonce + "&");
 		$signature += [System.Uri]::EscapeDataString("oauth_signature_method=HMAC-SHA1&");
 		$signature += [System.Uri]::EscapeDataString("oauth_timestamp=" + $oauth_timestamp + "&");
 		$signature += [System.Uri]::EscapeDataString("oauth_token=" + $oauth_token + "&");
 		$signature += [System.Uri]::EscapeDataString("oauth_version=1.0&");
 		$signature += [System.Uri]::EscapeDataString("track=" + $track);
-				
+
 		$signature_key = [System.Uri]::EscapeDataString($oauth_consumer_secret) + "&" + [System.Uri]::EscapeDataString($oauth_token_secret);
-				
+
 		$hmacsha1 = new-object System.Security.Cryptography.HMACSHA1;
 		$hmacsha1.Key = [System.Text.Encoding]::ASCII.GetBytes($signature_key);
 		$oauth_signature = [System.Convert]::ToBase64String($hmacsha1.ComputeHash([System.Text.Encoding]::ASCII.GetBytes($signature)));
-				
+
 		$oauth_authorization = 'OAuth ';
 		$oauth_authorization += 'oauth_consumer_key="' + [System.Uri]::EscapeDataString($oauth_consumer_key) + '",';
 		$oauth_authorization += 'oauth_nonce="' + [System.Uri]::EscapeDataString($oauth_nonce) + '",';
@@ -192,31 +192,31 @@ In diesem Lernprogramm verwenden Sie Windows PowerShell, um einen Webdienstaufru
 		$oauth_authorization += 'oauth_timestamp="' + [System.Uri]::EscapeDataString($oauth_timestamp) + '",'
 		$oauth_authorization += 'oauth_token="' + [System.Uri]::EscapeDataString($oauth_token) + '",';
 		$oauth_authorization += 'oauth_version="1.0"';
-				
-		$post_body = [System.Text.Encoding]::ASCII.GetBytes("track=" + $track); 
-		#endregion 
-					
-		#region - Read tweets	
+
+		$post_body = [System.Text.Encoding]::ASCII.GetBytes("track=" + $track);
+		#endregion
+
+		#region - Read tweets
 		Write-Host "Create HTTP web request ..." -ForegroundColor Green
 		[System.Net.HttpWebRequest] $request = [System.Net.WebRequest]::Create("https://stream.twitter.com/1.1/statuses/filter.json");
 		$request.Method = "POST";
 		$request.Headers.Add("Authorization", $oauth_authorization);
 		$request.ContentType = "application/x-www-form-urlencoded";
 		$body = $request.GetRequestStream();
-				
+
 		$body.write($post_body, 0, $post_body.length);
 		$body.flush();
 		$body.close();
 		$response = $request.GetResponse() ;
-				
+
 		Write-Host "Start stream reading ..." -ForegroundColor Green
-		
+
 		Write-Host "Define a MemoryStream and a StreamWriter for writing ..." -ForegroundColor Green
 		$memStream = New-Object System.IO.MemoryStream
 		$writeStream = New-Object System.IO.StreamWriter $memStream
-				
+
 		$sReader = New-Object System.IO.StreamReader($response.GetResponseStream())
-				
+
 		$inrec = $sReader.ReadLine()
 		$count = 0
 		while (($inrec -ne $null) -and ($count -le $lineMax))
@@ -224,24 +224,24 @@ In diesem Lernprogramm verwenden Sie Windows PowerShell, um einen Webdienstaufru
 			if ($inrec -ne "")
 			{
 				Write-Host "`n`t $count tweets received." -ForegroundColor Yellow
-				
+
 				$writeStream.WriteLine($inrec)
 				$count ++
 			}
-				
+
 			$inrec=$sReader.ReadLine()
 		}
 		#endregion
-				
+
 		#region - Write tweets to Blob storage
 		Write-Host "Write to the destination blob ..." -ForegroundColor Green
 		$writeStream.Flush()
 		$memStream.Seek(0, "Begin")
-		$destBlob.UploadFromStream($memStream) 
-				
+		$destBlob.UploadFromStream($memStream)
+
 		$sReader.close()
 		#endregion
-		
+
 		Write-Host "Completed!" -ForegroundColor Green
 
 3. Legen Sie die ersten fünf bis acht Variablen im Skript fest:
@@ -269,7 +269,7 @@ Zur Validierung können Sie die Ausgabedatei **/tutorials/twitter/data/tweets.tx
 
 Mit Azure PowerShell können Sie mehrere HiveQL-Anweisungen gleichzeitig ausführen oder die HiveQL-Anweisung in eine Skriptdatei paketieren. In diesem Lernprogramm erstellen Sie ein HiveQL-Skript. Die Skriptdatei muss in den Azure-Blobspeicher hochgeladen werden. Im nächsten Abschnitt wird die Skriptdatei mit Azure PowerShell ausgeführt.
 
->[AZURE.NOTE] Die Hive-Skriptdatei und eine Datei mit 10.000 Tweets wurden in einen öffentlichen Blobcontainer hochgeladen. Wenn Sie die hochgeladenen Dateien verwenden möchten, können Sie diesen Abschnitt überspringen.
+>[AZURE.NOTE]Die Hive-Skriptdatei und eine Datei mit 10.000 Tweets wurden in einen öffentlichen Blobcontainer hochgeladen. Wenn Sie die hochgeladenen Dateien verwenden möchten, können Sie diesen Abschnitt überspringen.
 
 Das HiveQL-Skript führt folgende Schritte aus:
 
@@ -288,21 +288,21 @@ Das HiveQL-Skript führt folgende Schritte aus:
 
 		#region - variables and constants
 		$clusterName = "<HDInsightClusterName>" # Enter your HDInsight cluster name
-		
+
 		$sourceDataPath = "/tutorials/twitter/data"
 		$outputPath = "/tutorials/twitter/output"
 		$hqlScriptFile = "tutorials/twitter/twitter.hql"
-				
+
 		$hqlStatements = @"
 		set hive.exec.dynamic.partition = true;
 		set hive.exec.dynamic.partition.mode = nonstrict;
-				
+
 		DROP TABLE tweets_raw;
 		CREATE EXTERNAL TABLE tweets_raw (
 			json_response STRING
-		) 
+		)
 		STORED AS TEXTFILE LOCATION '$sourceDataPath';
-				
+
 		DROP TABLE tweets;
 		CREATE TABLE tweets
 		(
@@ -337,7 +337,7 @@ Das HiveQL-Skript führt folgende Schritte aus:
 			profile_image_url STRING,
 			json_response STRING
 		);
-				
+
 		FROM tweets_raw
 		INSERT OVERWRITE TABLE tweets
 		SELECT
@@ -370,7 +370,7 @@ Das HiveQL-Skript führt folgende Schritte aus:
 			get_json_object(json_response, '$.source'),
 			cast (get_json_object(json_response, '$.retweet_count') as INT),
 			get_json_object(json_response, '$.entities.display_url'),
-			array(	
+			array(
 				trim(lower(get_json_object(json_response, '$.entities.hashtags[0].text'))),
 				trim(lower(get_json_object(json_response, '$.entities.hashtags[1].text'))),
 				trim(lower(get_json_object(json_response, '$.entities.hashtags[2].text'))),
@@ -395,52 +395,52 @@ Das HiveQL-Skript führt folgende Schritte aus:
 			get_json_object(json_response, '$.user.profile_image_url'),
 			json_response
 		WHERE (length(json_response) > 500);
-				
+
 		INSERT OVERWRITE DIRECTORY '$outputPath'
-		SELECT name, screen_name, count(1) as cc 
-			FROM tweets 
-			WHERE text like "%Azure%" 
-			GROUP BY name,screen_name 
+		SELECT name, screen_name, count(1) as cc
+			FROM tweets
+			WHERE text like "%Azure%"
+			GROUP BY name,screen_name
 			ORDER BY cc DESC LIMIT 10;
 		"@
-		#endregion		
-		
+		#endregion
+
 		#region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 		Add-AzureAccount
 		#endregion
-			
+
 		#region - Create a block blob object for writing the Hive script file
 		Write-Host "Get the default storage account name and container name based on the cluster name ..." -ForegroundColor Green
 		$myCluster = Get-AzureHDInsightCluster -Name $clusterName
-		$storageAccountName = $myCluster.DefaultStorageAccount.StorageAccountName.Replace(".blob.core.windows.net", "")	
+		$storageAccountName = $myCluster.DefaultStorageAccount.StorageAccountName.Replace(".blob.core.windows.net", "")
 		$containerName = $myCluster.DefaultStorageAccount.StorageContainerName
 		Write-Host "`tThe storage account name is $storageAccountName." -ForegroundColor Yellow
 		Write-Host "`tThe blob container name is $containerName." -ForegroundColor Yellow
-				
+
 		Write-Host "Define the connection string ..." -ForegroundColor Green
 		$storageAccountKey = get-azurestoragekey $storageAccountName | %{$_.Primary}
 		$storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey"
-				
+
 		Write-Host "Create block blob objects referencing the hql script file" -ForegroundColor Green
 		$storageAccount = [Microsoft.WindowsAzure.Storage.CloudStorageAccount]::Parse($storageConnectionString)
 		$storageClient = $storageAccount.CreateCloudBlobClient();
 		$storageContainer = $storageClient.GetContainerReference($containerName)
 		$hqlScriptBlob = $storageContainer.GetBlockBlobReference($hqlScriptFile)
-				
+
 		Write-Host "Define a MemoryStream and a StreamWriter for writing ... " -ForegroundColor Green
 		$memStream = New-Object System.IO.MemoryStream
 		$writeStream = New-Object System.IO.StreamWriter $memStream
 		$writeStream.Writeline($hqlStatements)
 		#endregion
-		
-		#region - Write the Hive script file to Blob storage		
+
+		#region - Write the Hive script file to Blob storage
 		Write-Host "Write to the destination blob ... " -ForegroundColor Green
 		$writeStream.Flush()
 		$memStream.Seek(0, "Begin")
 		$hqlScriptBlob.UploadFromStream($memStream)
 		#endregion
-				
+
 		Write-Host "Completed!" -ForegroundColor Green
 
 
@@ -467,26 +467,26 @@ Damit haben Sie sämtliche Vorbereitungen abgeschlossen. Jetzt können Sie das H
 
 Verwenden Sie das folgende Windows PowerShell-Skript, um das Hive-Skript auszuführen. Sie müssen die erste Variable festlegen.
 
->[AZURE.NOTE] Um die Tweets und das HiveQL-Skript, das Sie in den letzten beiden Abschnitten hochgeladen haben, zu verwenden, legen Sie "$hqlScriptFile" auf "/ tutorials/twitter/twitter.hql" fest. Um diejenigen zu verwenden, die in einen öffentlichen Blob hochgeladen wurden, legen Sie "$hqlScriptFile" auf "wasb://twittertrend@hditutorialdata.blob.core.windows.net/twitter.hql" fest.
+>[AZURE.NOTE]Um die Tweets und das HiveQL-Skript, das Sie in den letzten beiden Abschnitten hochgeladen haben, zu verwenden, legen Sie "$hqlScriptFile" auf "/ tutorials/twitter/twitter.hql" fest. Um diejenigen zu verwenden, die in einen öffentlichen Blob hochgeladen wurden, legen Sie "$hqlScriptFile" auf "wasb://twittertrend@hditutorialdata.blob.core.windows.net/twitter.hql" fest.
 
 	#region variables and constants
 	$clusterName = "<HDInsightClusterName>"
-	
+
 	#use one of the following
 	$hqlScriptFile = "wasbs://twittertrend@hditutorialdata.blob.core.windows.net/twitter.hql"
 	$hqlScriptFile = "/tutorials/twitter/twitter.hql"
 
 	$statusFolder = "/tutorials/twitter/jobstatus"
 	#endregion
-	
+
 	#region - Invoke Hive
 	Write-Host "Invoke Hive ... " -ForegroundColor Green
 	Use-AzureHDInsightCluster $clusterName
 	$response = Invoke-Hive -file $hqlScriptFile -StatusFolder $statusFolder -OutVariable $outVariable
-	
+
 	Write-Host "Display the standard error log ... " -ForegroundColor Green
 	$jobID = ($response | Select-String job_ | Select-Object -First 1) -replace ‘\s*$’ -replace ‘.*\s’
-	Get-AzureHDInsightJobOutput -cluster $clusterName -JobId $jobID -StandardError 
+	Get-AzureHDInsightJobOutput -cluster $clusterName -JobId $jobID -StandardError
 	#endregion
 
 ### Prüfen der Ergebnisse
@@ -495,35 +495,35 @@ Verwenden Sie das folgende Windows PowerShell-Skript, um die Ausgabe des Hive-Au
 
 	#region variables and constants
 	$clusterName = "<HDInsightClusterName>"
-	
+
 	$blob = "tutorials/twitter/output/000000_0" # The name of the blob to be downloaded.
 	#engregion
-	
+
 	#region - Create an Azure storage context object
 	Write-Host "Get the default storage account name and container name based on the cluster name ..." -ForegroundColor Green
 	$myCluster = Get-AzureHDInsightCluster -Name $clusterName
-	$storageAccountName = $myCluster.DefaultStorageAccount.StorageAccountName.Replace(".blob.core.windows.net", "")	
+	$storageAccountName = $myCluster.DefaultStorageAccount.StorageAccountName.Replace(".blob.core.windows.net", "")
 	$containerName = $myCluster.DefaultStorageAccount.StorageContainerName
 	Write-Host "`tThe storage account name is $storageAccountName." -ForegroundColor Yellow
 	Write-Host "`tThe blob container name is $containerName." -ForegroundColor Yellow
-	
+
 	Write-Host "Create a context object ... " -ForegroundColor Green
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
 	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-	#endregion 
-	
+	#endregion
+
 	#region - Download blob and display blob
 	Write-Host "Download the blob ..." -ForegroundColor Green
 	cd $HOME
 	Get-AzureStorageBlobContent -Container $ContainerName -Blob $blob -Context $storageContext -Force
-	
+
 	Write-Host "Display the output ..." -ForegroundColor Green
 	Write-Host "==================================" -ForegroundColor Green
 	cat "./$blob"
 	Write-Host "==================================" -ForegroundColor Green
 	#end region
 
-> [AZURE.NOTE] In der Hive-Tabelle wird \\001 als Feldtrennzeichen verwendet. Das Trennzeichen ist in der Ausgabe nicht sichtbar.
+> [AZURE.NOTE]In der Hive-Tabelle wird \\001 als Feldtrennzeichen verwendet. Das Trennzeichen ist in der Ausgabe nicht sichtbar.
 
 Nachdem die Analyseergebnisse in den Azure-Blobspeicher abgelegt wurden, können Sie die Daten in eine Azure-SQL-Datenbank bzw. auf einen SQL-Server exportieren, die Daten mit Power Query nach Excel exportieren oder Ihre Anwendung mit dem Hive ODBC-Treiber mit den Daten verbinden. Weitere Informationen finden Sie unter [Verwenden von Sqoop mit HDInsight][hdinsight-use-sqoop], [Analysieren von Daten zu Flugverspätungen mit HDInsight][hdinsight-analyze-flight-delay-data], [Verbinden von Excel mit HDInsight mithilfe von Power Query][hdinsight-power-query] und [Verbinden von Excel mit HDInsight mithilfe des Microsoft Hive ODBC-Treibers][hdinsight-hive-odbc].
 
@@ -561,4 +561,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie ein unstrukturiertes JSON-Dat
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
 [hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

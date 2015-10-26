@@ -19,13 +19,14 @@
 
 # Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Der Zweck dieses Artikels besteht darin, die unterschiedlichen verfügbaren Ansätze für die Bereitstellung hoch verfügbarer Linux-basierter Dienste auf Microsoft Azure zu untersuchen und zu veranschaulichen, wobei primär die hohe Verfügbarkeit von MySQL Server untersucht wird. Ein Video, das diesen Ansatz veranschaulicht, steht unter [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL) zur Verfügung.
 
 Wir beschreiben eine auf DRBD, Corosync und Pacemaker basierende hoch verfügbare Einzelmaster-MYSQL-Lösung mit zwei Knoten, die nichts gemeinsam nutzen. Nur auf einem Knoten wird jeweils MySQL ausgeführt. Das Lesen und Schreiben von der DRBD-Ressource wird auch nur jeweils auf einen Knoten begrenzt.
 
-Es besteht keine Notwendigkeit für eine VIP-Lösung wie LVS, da wir die Gruppen mit Lastenausgleich von Microsoft Azure verwenden, um eine Roundrobin-Funktionalität und die Endpunktermittlung sowie die Entfernung und die normale Wiederherstellung der VIP bereitzustellen. Die VIP ist eine globale routfähige IPv4-Adresse, die beim ersten Erstellen des Cloud-Diensts durch Microsoft Azure zugewiesen wird.
+Es besteht keine Notwendigkeit für eine VIP-Lösung wie LVS, da wir die Gruppen mit Lastenausgleich von Microsoft Azure verwenden, um eine Roundrobin-Funktionalität und die Endpunktermittlung sowie die Entfernung und die normale Wiederherstellung der VIP bereitzustellen. Die VIP ist eine globale routfähige IPv4-Adresse, die beim ersten Erstellen des Clouddiensts durch Microsoft Azure zugewiesen wird.
 
 Es gibt weitere mögliche Architekturen für MySQL, einschließlich NBD Cluster, Percona und Galera, sowie verschiedene Middleware-Lösungen, worunter mindestens eine als ein virtueller Computer auf [VM Depot](http://vmdepot.msopentech.com) verfügbar ist. Solange diese Lösungen auf Unicast gegenüber Multicast repliziert werden können oder Übertragungen vornehmen und nicht auf dem gemeinsamen Speicher oder mehreren Netzwerkschnittstellen aufbauen, sollten die Szenarien auf Microsoft Azure einfach bereitzustellen sein.
 
@@ -33,7 +34,7 @@ Diese Clusteringarchitekturen können natürlich auf andere Produkte wie Postgre
 
 ## Vorbereitung
 
-Sie benötigen ein Microsoft Azure-Konto mit einem gültigen Abonnement, das in der Lage ist, mindestens zwei (2) virtuelle Computer (in diesem Beispiel wurde XS verwendet), ein Netzwerk, ein Subnetz, eine Affinitätsgruppe und eine Verfügbarkeitsgruppe zu erstellen. Zudem muss es das Erstellen neuer VHDs in derselben Region wie der Cloud-Dienst ermöglichen und sie an die virtuellen Linux-Computer anfügen können.
+Sie benötigen ein Microsoft Azure-Konto mit einem gültigen Abonnement, das in der Lage ist, mindestens zwei (2) virtuelle Computer (in diesem Beispiel wurde XS verwendet), ein Netzwerk, ein Subnetz, eine Affinitätsgruppe und eine Verfügbarkeitsgruppe zu erstellen. Zudem muss es das Erstellen neuer VHDs in derselben Region wie der Clouddienst ermöglichen und sie an die virtuellen Linux-Computer anfügen können.
 
 ### Getestete Umgebung
 
@@ -339,4 +340,4 @@ Es gelten die folgenden Einschränkungen:
 - Die MySQL-Feinabstimmung ist erforderlich, um sicherzustellen, dass der Schreibvorgang in einer vernünftigen Geschwindigkeit erfolgt und Zwischenspeicherungen möglichst häufig auf den Datenträger übertragen werden, um Speicherverluste zu vermeiden.
 - Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

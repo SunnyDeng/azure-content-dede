@@ -1,20 +1,20 @@
 <properties
    pageTitle="Migrieren zu einer SQL-Datenbank mithilfe von SSMS"
-	description="Microsoft Azure SQL-Datenbank, SQL-Datenbank migrieren, Migrieren mithilfe von SSMS"
-	services="sql-database"
-	documentationCenter=""
-	authors="carlrabeler"
-	manager="jeffreyg"
-	editor=""/>
+   description="Microsoft Azure SQL-Datenbank, SQL-Datenbank migrieren, Migrieren mithilfe von SSMS"
+   services="sql-database"
+   documentationCenter=""
+   authors="carlrabeler"
+   manager="jeffreyg"
+   editor=""/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-management"
-	ms.date="08/24/2015"
-	ms.author="carlrab"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="08/24/2015"
+   ms.author="carlrab"/>
 
 #Migrieren einer kompatiblen Datenbank mit SSMS
 
@@ -76,4 +76,4 @@ Der Bereitstellungsprozess kann in zwei Schritte unterteilt werden: Export und I
 ##Alternativen
 Sie können auch das Befehlszeilen-Dienstprogramm "sqlpackage.exe" zum Bereitstellen der Datenbank oder zum Importieren bzw. Exportieren einer BACPAC-Datei verwenden. "sqlpackage.exe" verwendet die gleiche DAC-Technologie wie SSMS, sodass das Ergebnis identisch ist. Weitere Informationen finden Sie [in MSDN unter „SqlPackage.exe“](https://msdn.microsoft.com/library/hh550080.aspx).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

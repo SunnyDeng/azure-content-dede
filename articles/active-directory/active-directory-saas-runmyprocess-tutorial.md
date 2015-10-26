@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und RunMyProcess erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein RunMyProcess-Mandant
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie RunMyProcess zugewiesen haben, mittels einmaliger Anmeldung auf der RunMyProcess-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie RunMyProcess zugewiesen haben, mittels einmaliger Anmeldung auf der RunMyProcess-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +51,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Run
     ![RunMyProcess](./media/active-directory-saas-runmyprocess-tutorial/IC789616.png "RunMyProcess")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei RunMyProcess zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei RunMyProcess zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -73,7 +73,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der RunMyProcess-Unternehmenswebsite als Administrator an.
 
-6.  Wechseln Sie zur **Konto \> Konfiguration**.
+6.  Wechseln Sie zur **Konto > Konfiguration**.
 
     ![Konto](./media/active-directory-saas-runmyprocess-tutorial/IC789625.png "Konto")
 
@@ -105,7 +105,7 @@ Damit sich Azure AD-Benutzer bei RunMyProcess anmelden können, müssen sie in R
 
 1.  Melden Sie sich bei der **RunMyProcess**-Unternehmenswebsite als Administrator an.
 
-2.  Wechseln Sie zu **Konto \> Benutzer**, und klicken Sie dann auf **Neuer Benutzer**.
+2.  Wechseln Sie zu **Konto > Benutzer**, und klicken Sie dann auf **Neuer Benutzer**.
 
     ![Neuer Benutzer](./media/active-directory-saas-runmyprocess-tutorial/IC789631.png "Neuer Benutzer")
 
@@ -136,6 +136,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-runmyprocess-tutorial/IC767830.png "Ja")
   
-Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Skalierbarkeit der Service Fabric-Dienste"
-	description="Beschreibt, wie Sie die Service Fabric-Dienste skalieren."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="appi101"
-	manager="timlt"
-	editor=""/>
+   description="Beschreibt, wie Sie die Service Fabric-Dienste skalieren."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="appi101"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/26/2015"
-	ms.author="aprameyr"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2015"
+   ms.author="aprameyr"/>
 
 # Skalieren von Service Fabric-Anwendungen
 Service Fabric erleichtert das Erstellen von skalierbaren Anwendungen durch den Lastenausgleich von Diensten, Partitionen und Replikaten auf allen Knoten in einem Cluster. Dies ermöglicht eine maximale Ressourcenverwendung.
@@ -61,4 +61,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 - [Definieren und Verwalten von Zuständen](service-fabric-concepts-state.md)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

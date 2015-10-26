@@ -192,4 +192,4 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 
 [azure_runtime_ref_dotnet]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

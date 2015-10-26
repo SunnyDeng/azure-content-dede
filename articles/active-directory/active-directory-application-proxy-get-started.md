@@ -61,4 +61,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](../sign-up-organization.md)
 * [Azure-Identität](../fundamentals-identity.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

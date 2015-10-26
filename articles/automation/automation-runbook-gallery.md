@@ -106,4 +106,4 @@ Sie können Anforderungen an [User Voice](http://feedback.azure.com/forums/24629
 - [Erstellen und Importieren eines Runbooks in Azure Automation](automation-creating-importing-runbook.md)
 - [Grundlagen des PowerShell-Workflows](automation-powershell-workflow.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

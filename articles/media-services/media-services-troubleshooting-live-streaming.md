@@ -67,4 +67,4 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 	
 >[AZURE.NOTE]Wenn Sie nach dem Ausführen der Problembehandlungsschritte immer noch nicht streamen können, senden Sie über das Azure-Verwaltungsportal ein Supportticket.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

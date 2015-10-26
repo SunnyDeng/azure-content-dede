@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="10/06/2015"
+	ms.date="10/09/2015"
 	ms.author="spelluru"/>
 
 # Erstellen der ersten Azure Data Factory-Pipeline mit Visual Studio
@@ -39,12 +39,17 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 
 ### Voraussetzungen
 
-Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 2013 – Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf die Option für die **VS 2013-Installation**. - Aktualisieren Sie die „Visual Studio Tools für Azure Data Factory“ auf die aktuelle Version, indem Sie auf Visual Studio 2013 --> Extras --> Updates --> Visual Studio Gallery“ zugreifen und für das Plug-In „Visual Studio Tools für Azure Data Factory“ auf „Aktualisieren“ klicken.
+Folgendes muss auf Ihrem Computer installiert sein:
 
+- Visual Studio 2013 oder Visual Studio 2015
+- Laden Sie das Azure-SDK für Visual Studio 2013 oder Visual Studio 2015 herunter. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie auf **VS 2013** oder**VS 2015** im Abschnitt **.NET**.
+- Laden Sie das neueste Azure Data Factory-Plug-In für Visual Studio herunter: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) oder [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Bei Verwendung von Visual Studio 2013 können Sie das Plug-In auch wie folgt aktualisieren: Klicken Sie im Menü auf **Tools** -> **Erweiterungen und Updates** -> **Online** -> **Visual Studio-Katalog** -> **Microsoft Azure Data Factory-Tools für Visual Studio** -> **Aktualisieren**. 
+	
+	
 
 ### Erstellen des Visual Studio-Projekts 
-1. Starten Sie **Visual Studio 2013**. Klicken Sie auf **Datei**, zeigen Sie auf **Neu**, und klicken Sie auf **Projekt**. Das Dialogfeld **Neues Projekt** sollte angezeigt werden.  
-2. Wählen Sie im Dialogfeld **Neues Projekt** die Vorlage **DataFactory** aus, und klicken Sie auf **Leeres Data Factory-Projekt**. Wenn die Vorlage DataFactory nicht angezeigt wird, schließen Sie Visual Studio, installieren Sie Azure SDK für Visual Studio 2013, und öffnen Sie Visual Studio erneut.  
+1. Starten Sie **Visual Studio 2013** oder **Visual Studio 2015**. Klicken Sie auf **Datei**, zeigen Sie auf **Neu**, und klicken Sie auf **Projekt**. Das Dialogfeld **Neues Projekt** sollte angezeigt werden.  
+2. Wählen Sie im Dialogfeld **Neues Projekt** die Vorlage **DataFactory** aus, und klicken Sie auf **Leeres Data Factory-Projekt**.   
 
 	![Dialogfeld "Neues Projekt"](./media/data-factory-build-your-first-pipeline-using-vs/new-project-dialog.png)
 
@@ -107,7 +112,7 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Hinzufügen**, und klicken Sie auf **Neues Element**. 
 2. Wählen Sie **Azure-Blob** in der Liste aus, und klicken Sie auf **Hinzufügen**. 
-3. Ersetzen Sie den **JSON**-Code im Editor durch folgenden Code: Im JSON-Codeausschnitt erstellen Sie ein Dataset mit dem Namen **AzureBlobOutput**, und geben Sie die Struktur der Daten an, die vom Hive-Skript erzeugt werden. Darüber hinaus geben Sie an, dass die Ergebnisse im Blobcontainer namens **data** gespeichert werden und dass der Ordner **partitioneddata** heißt. Der Abschnitt **availability** gibt an, dass das Ausgabedataset monatlich erzeugt wird.
+3. Ersetzen Sie den **JSON**-Code im Editor durch folgenden Code: Im JSON-Codeausschnitt erstellen Sie ein Dataset mit dem Namen **AzureBlobOutput**, und geben Sie die Struktur der Daten an, die vom Hive-Skript erzeugt werden. Darüber hinaus geben Sie an, dass die Ergebnisse im BLOB-Container **data** und im Ordner **partitioneddata** gespeichert werden. Der Abschnitt **availability** gibt an, dass das Ausgabe-DataSet monatlich erzeugt wird.
 	
 		{
 		  "name": "AzureBlobOutput",
@@ -176,7 +181,7 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 	
 	Die Hive-Skriptdatei **partitionweblogs.hql** ist im Azure-Speicherkonto (das durch den scriptLinkedService-Dienst namens **AzureStorageLinkedService1** angegeben ist) und in einem Container namens **script** gespeichert.
 
-	Der Abschnitt **extendedProperties** dient zum Angeben der Laufzeiteinstellungen, die als Hive-Konfigurationswerte (z. B. ${hiveconf:PartitionedData}) an das Hive-Skript übergeben werden.
+	Der Abschnitt **extendedProperties** dient zum Angeben der Laufzeiteinstellungen, die als Hive-Konfigurationswerte (z. B. "${hiveconf:PartitionedData}") an das Hive-Skript übergeben werden.
 
 	Die Eigenschaften **start** und **end** der Pipeline geben den aktiven Zeitraum der Pipeline an.
 
@@ -224,7 +229,7 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 
 Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie folgende Schritte aus:
 
-1. Klicken Sie im Menü auf **Tools**, und wählen Sie**Erweiterungen und Updates** aus.
+1. Klicken Sie im Menü auf **Tools**, und wählen Sie **Erweiterungen und Updates** aus.
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
 3. Wählen Sie **Azure Data Factory-Tools für Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
@@ -232,9 +237,9 @@ Unter [Überwachen von Datasets und Pipelines](data-factory-monitor-manage-pipel
  
 
 ## Nächste Schritte
-In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zur Verwendung einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
+In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-vs.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

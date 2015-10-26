@@ -7,7 +7,6 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -16,7 +15,6 @@
    ms.workload="NA"
    ms.date="08/05/2015"
    ms.author="abhisram"/>
-
 
 # Verwendung der Service Fabric-Plattform durch Reliable Actors
 
@@ -72,7 +70,7 @@ Nachfolgend eine teilweise Auflistung des oben genannten Speicherorts (auf die v
     │   │   │   VoiceMailBox.exe.config
     │   │   │   VoiceMailBox.Interfaces.dll
     │   │   │
-    │   │   └───de-de
+    │   │   └───de-DE
     │   │           System.Fabric.Common.Internal.Strings.resources.dll
     │   │
     │   └───Config
@@ -93,7 +91,7 @@ Nachfolgend eine teilweise Auflistung des oben genannten Speicherorts (auf die v
             │   VoicemailBoxWebService.exe
             │   VoicemailBoxWebService.exe.config
             │
-            └───de-de
+            └───de-DE
                     System.Fabric.Common.Internal.Strings.resources.dll
 
 Die obige Auflistung zeigt die Assemblys, die den VoicemailBox-Actor implementieren und in das Code-Paket, das im Dienstpaket und dieses wiederum im Anwendungspaket enthalten ist, eingefügt werden.
@@ -244,4 +242,4 @@ Bitte beachten Sie, dass bei Änderungen des Status-Anbieters der Actor-Dienst n
 [3]: ./media/service-fabric-reliable-actors-platform/actor-partition-info.png
 [4]: ./media/service-fabric-reliable-actors-platform/actor-replica-role.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -51,4 +51,4 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 [Azure Data Factory-Dokumentation]: https://azure.microsoft.com/documentation/services/data-factory/
 [Copy data with Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/articles/data-factory-data-movement-activities/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

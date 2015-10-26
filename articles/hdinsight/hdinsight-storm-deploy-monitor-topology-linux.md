@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight | Microsoft Azure"
-   description="Erfahren Sie, wie Sie Apache Storm-Topologien mithilfe des Storm-Dashboardsin HDInsight bereitstellen, überwachen und verwalten. Hadoop-Tools für Visual Studio verwenden"
+   pageTitle="Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Linux | Microsoft Azure"
+   description="Erfahren Sie, wie Sie Apache Storm-Topologien mithilfe des Storm-Dashboards in Linux-basiertem HDInsight bereitstellen, überwachen und verwalten. Hadoop-Tools für Visual Studio verwenden"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/14/2015"
+   ms.date="10/04/2015"
    ms.author="larryfr"/>
 
 # Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Linux
@@ -161,4 +161,4 @@ Nachdem Sie erfahren haben, wie Sie Topologien mithilfe des Storm-Dashboards ber
 
 Eine Liste weiterer Beispieltopologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

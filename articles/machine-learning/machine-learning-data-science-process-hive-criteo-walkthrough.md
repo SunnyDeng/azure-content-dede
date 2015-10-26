@@ -127,7 +127,7 @@ Mit folgendem Code werden die Datenbank "criteo" und anschließend vier Tabellen
 
 Wir teilen die Test-DataSets in zwei verschiedene Tabellen auf, da ein Tag ein Feiertag ist und wir anhand der Klickrate feststellen möchten, ob das Modell Unterschiede zwischen einem Feier- und einem Arbeitstag erkennen kann.
 
-Im Folgenden wird als Referenz das Skript [sample&\#95;hive&\#95;create&\#95;criteo&\#95;database&\#95;and&\#95;tables.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_criteo_database_and_tables.hql) angeführt:
+Im Folgenden wird als Referenz das Skript [sample&#95;hive&#95;create&#95;criteo&#95;database&#95;and&#95;tables.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_criteo_database_and_tables.hql) angeführt:
 
 	CREATE DATABASE IF NOT EXISTS criteo;
 	DROP TABLE IF EXISTS criteo.criteo_count;
@@ -169,7 +169,7 @@ Wir weisen darauf hin, dass all diese Tabellen extern sind, da wir einfach auf A
 
  	Wenn Sie die Abfrage nun in der REPL-Befehlszeile ausschneiden und einfügen, wird sie ausgeführt.
 
-2. **Speichern von Abfragen in einer Datei und Ausführen des Befehls:** Die zweiten Methode besteht im Speichern der Abfragen in einer HQL-Datei ([sample&\#95;hive&\#95;create&\#95;criteo&\#95;database&\#95;and&\#95;tables.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_criteo_database_and_tables.hql)). Anschließend wird zum Ausführen der Abfrage folgender Befehl ausgegeben:
+2. **Speichern von Abfragen in einer Datei und Ausführen des Befehls:** Die zweiten Methode besteht im Speichern der Abfragen in einer HQL-Datei ([sample&#95;hive&#95;create&#95;criteo&#95;database&#95;and&#95;tables.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_criteo_database_and_tables.hql)). Anschließend wird zum Ausführen der Abfrage folgender Befehl ausgegeben:
 
 		hive -f C:\temp\sample_hive_create_criteo_database_and_tables.hql
 
@@ -206,7 +206,7 @@ Nun können wir in Hive einige grundlegende Datenuntersuchungen vornehmen. Zunä
 
 ### Anzahl der Trainingsbeispiele
 
-Im Folgenden werden die Inhalte für [sample&\#95;hive&\#95;count&\#95;train&\#95;table&\#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_train_table_examples.hql) dargestellt:
+Im Folgenden werden die Inhalte für [sample&#95;hive&#95;count&#95;train&#95;table&#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_train_table_examples.hql) dargestellt:
 
 		SELECT COUNT(*) FROM criteo.criteo_train;
 
@@ -221,7 +221,7 @@ Sie können auch den folgenden Befehl an der Eingabeaufforderung im Hive-Verzeic
 
 ### Anzahl der Testbeispiele in den beiden Test-DataSets
 
-Nun zählen wir die Anzahl der Beispiele in den beiden Test-DataSets. Im Folgenden werden die Inhalte für [sample&\#95;hive&\#95;count&\#95;criteo&\#95;test&\#95;day&\#95;22&\#95;table&\#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_criteo_test_day_22_table_examples.hql) dargestellt:
+Nun zählen wir die Anzahl der Beispiele in den beiden Test-DataSets. Im Folgenden werden die Inhalte für [sample&#95;hive&#95;count&#95;criteo&#95;test&#95;day&#95;22&#95;table&#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_criteo_test_day_22_table_examples.hql) dargestellt:
 
 		SELECT COUNT(*) FROM criteo.criteo_test_day_22;
 
@@ -236,7 +236,7 @@ Wie immer können wir das Skript zudem über die Hive-Eingabeaufforderung "/bin"
 
 Abschließend untersuchen wir die Anzahl der Testbeispiele im Test-DataSet für "day\_23".
 
-Der hierfür verwendete Befehl ähnelt dem oben angeführten (siehe [sample&\#95;hive&\#95;count&\#95;criteo&\#95;test&\#95;day&\#95;23&\#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_criteo_test_day_23_examples.hql)):
+Der hierfür verwendete Befehl ähnelt dem oben angeführten (siehe [sample&#95;hive&#95;count&#95;criteo&#95;test&#95;day&#95;23&#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_criteo_test_day_23_examples.hql)):
 
 		SELECT COUNT(*) FROM criteo.criteo_test_day_23;
 
@@ -247,7 +247,7 @@ Dies ergibt:
 
 ### Bezeichnungsverteilung im Trainings-DataSet
 
-Die Bezeichnungsverteilung im Trainings-DataSet ist von Interesse. Hierzu führen wir die Inhalte von [sample&\#95;hive&\#95;criteo&\#95;label&\#95;distribution&\#95;train&\#95;table.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_label_distribution_train_table.hql) an:
+Die Bezeichnungsverteilung im Trainings-DataSet ist von Interesse. Hierzu führen wir die Inhalte von [sample&#95;hive&#95;criteo&#95;label&#95;distribution&#95;train&#95;table.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_label_distribution_train_table.hql) an:
 
 		SELECT Col1, COUNT(*) AS CT FROM criteo.criteo_train GROUP BY Col1;
 
@@ -261,7 +261,7 @@ Beachten Sie, dass der Prozentsatz der positiven Bezeichnungen etwa 3,3 % betr�
 		
 ### Histogrammverteilungen für einige numerische Variablen des Trainings-DataSets
 
-Mit der systemeigenen Funktion "histogram\_numeric" von Hive können wir herausfinden, wie die Verteilung numerischer Variablen aussieht. Im Folgenden finden Sie die Inhalte von [sample&\#95;hive&\#95;criteo&\#95;histogram&\#95;numeric.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_histogram_numeric.hql):
+Mit der systemeigenen Funktion "histogram\_numeric" von Hive können wir herausfinden, wie die Verteilung numerischer Variablen aussieht. Im Folgenden finden Sie die Inhalte von [sample&#95;hive&#95;criteo&#95;histogram&#95;numeric.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_histogram_numeric.hql):
 
 		SELECT CAST(hist.x as int) as bin_center, CAST(hist.y as bigint) as bin_height FROM 
 			(SELECT
@@ -299,7 +299,7 @@ Die Kombination von Seitenansicht und Auflösung in Hive ermöglicht anstelle de
 
 ### Ungefähre Prozentwerte für einige numerische Variablen des Trainings-DataSets
 
-Im Zusammenhang mit numerischen Variablen ist auch die Berechnung der ungefähren Prozentwerte interessant. Dies wird von der systemeigenen Hive-Funktion "percentile\_approx" übernommen. Die Inhalte von [sample&\#95;hive&\#95;criteo&\#95;approximate&\#95;percentiles.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_approximate_percentiles.hql) lauten:
+Im Zusammenhang mit numerischen Variablen ist auch die Berechnung der ungefähren Prozentwerte interessant. Dies wird von der systemeigenen Hive-Funktion "percentile\_approx" übernommen. Die Inhalte von [sample&#95;hive&#95;criteo&#95;approximate&#95;percentiles.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_approximate_percentiles.hql) lauten:
 
 		SELECT MIN(Col2) AS Col2_min, PERCENTILE_APPROX(Col2, 0.1) AS Col2_01, PERCENTILE_APPROX(Col2, 0.3) AS Col2_03, PERCENTILE_APPROX(Col2, 0.5) AS Col2_median, PERCENTILE_APPROX(Col2, 0.8) AS Col2_08, MAX(Col2) AS Col2_max FROM criteo.criteo_train;
 
@@ -312,7 +312,7 @@ Wir weisen darauf hin, dass die Verteilung der Prozentwerte in der Regel eng mit
 
 ### Ermitteln der Anzahl der eindeutigen Werte für bestimmte Kategoriespalten im Trainings-DataSet
 
-Im weiteren Verlauf unserer Datenuntersuchung ermitteln wir nun für einige Kategoriespalten die Anzahl der übernommenen eindeutigen Werte. Hierzu führen wir die Inhalte von [sample&\#95;hive&\#95;criteo&\#95;unique&\#95;values&\#95;categoricals.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_unique_values_categoricals.hql) an:
+Im weiteren Verlauf unserer Datenuntersuchung ermitteln wir nun für einige Kategoriespalten die Anzahl der übernommenen eindeutigen Werte. Hierzu führen wir die Inhalte von [sample&#95;hive&#95;criteo&#95;unique&#95;values&#95;categoricals.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_unique_values_categoricals.hql) an:
 
 		SELECT COUNT(DISTINCT(Col15)) AS num_uniques FROM criteo.criteo_train;
 
@@ -323,7 +323,7 @@ Dies ergibt:
 
 Beachten Sie, dass "Col15" über 19 Mio. eindeutige Werte verfügt! Mit systemeigenen Techniken wie z. B. "one-hot-encoding" können derartige Mengen an Kategorievariablen nicht sinnvoll codiert werden. Wir erläutern und veranschaulichen zum effizienten Umgang mit diesem Problem insbesondere die leistungsfähige, zuverlässige Technik [Lernen durch Anzahl](http://blogs.technet.com/b/machinelearning/archive/2015/02/17/big-learning-made-easy-with-counts.aspx).
 
-Zum Abschluss dieses Unterabschnitts betrachten wir die Anzahl an eindeutigen Werten für einige weitere Kategoriespalten. Die Inhalte von [sample&\#95;hive&\#95;criteo&\#95;unique&\#95;values&\#95;multiple&\#95;categoricals.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_unique_values_multiple_categoricals.hql) lauten:
+Zum Abschluss dieses Unterabschnitts betrachten wir die Anzahl an eindeutigen Werten für einige weitere Kategoriespalten. Die Inhalte von [sample&#95;hive&#95;criteo&#95;unique&#95;values&#95;multiple&#95;categoricals.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_unique_values_multiple_categoricals.hql) lauten:
 
 		SELECT COUNT(DISTINCT(Col16)), COUNT(DISTINCT(Col17)), 
 		COUNT(DISTINCT(Col18), COUNT(DISTINCT(Col19), COUNT(DISTINCT(Col20))
@@ -338,7 +338,7 @@ Wieder erkennen wir, dass mit Ausnahme von "Col20" alle Spalten viele eindeutige
 
 ### Zusammentreffende Anzahlen von Kategorievariablenpaaren im Trainings-DataSet
 
-Auch zusammentreffende Anzahlen von Kategorievariablenpaaren sind von Interesse. Dies kann mit dem Code in [sample&\#95;hive&\#95;criteo&\#95;paired&\#95;categorical&\#95;counts.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_paired_categorical_counts.hql) ermittelt werden:
+Auch zusammentreffende Anzahlen von Kategorievariablenpaaren sind von Interesse. Dies kann mit dem Code in [sample&#95;hive&#95;criteo&#95;paired&#95;categorical&#95;counts.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_paired_categorical_counts.hql) ermittelt werden:
 
 		SELECT Col15, Col16, COUNT(*) AS paired_count FROM criteo.criteo_train GROUP BY Col15, Col16 ORDER BY paired_count DESC LIMIT 15;
 
@@ -365,7 +365,7 @@ Wir kehren die Anzahlwerte anhand des Auftretens um und betrachten in diesem Fal
 
 Nachdem wir die DataSets untersucht und aufgezeigt haben, wie wir diese Art der Untersuchung für beliebige Variablen (einschließlich Kombinationen) durchführen können, komprimieren wir nun die DataSets, damit wir in Azure Machine Learning Modelle erstellen können. Denken Sie an unser Hauptthema: Wir sagen anhand von Beispielattributen (Funktionswerte von "Col2" bis "Col40") vorher, ob "Col1" den Wert "0" (kein Klick) oder "1" (Klick) ergibt.
 
-Um unsere Trainings- und Test-DataSets auf 1 % der ursprünglichen Größe zu komprimieren, verwenden wir die systemeigene Hive-Funktion "RAND()". Dies wird vom folgenden Skript für das Trainings-DataSet übernommen: [sample&\#95;hive&\#95;criteo&\#95;downsample&\#95;train&\#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_train_dataset.hql).
+Um unsere Trainings- und Test-DataSets auf 1 % der ursprünglichen Größe zu komprimieren, verwenden wir die systemeigene Hive-Funktion "RAND()". Dies wird vom folgenden Skript für das Trainings-DataSet übernommen: [sample&#95;hive&#95;criteo&#95;downsample&#95;train&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_train_dataset.hql).
 
 		CREATE TABLE criteo.criteo_train_downsample_1perc (
 		col1 string,col2 double,col3 double,col4 double,col5 double,col6 double,col7 double,col8 double,col9 double,col10 double,col11 double,col12 double,col13 double,col14 double,col15 string,col16 string,col17 string,col18 string,col19 string,col20 string,col21 string,col22 string,col23 string,col24 string,col25 string,col26 string,col27 string,col28 string,col29 string,col30 string,col31 string,col32 string,col33 string,col34 string,col35 string,col36 string,col37 string,col38 string,col39 string,col40 string)
@@ -382,7 +382,7 @@ Dies ergibt:
 		Time taken: 12.22 seconds
 		Time taken: 298.98 seconds
 
-Das Skript [sample&\#95;hive&\#95;criteo&\#95;downsample&\#95;test&\#95;day&\#95;22&\#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_22_dataset.hql) gilt für die Testdaten für "day\_22":
+Das Skript [sample&#95;hive&#95;criteo&#95;downsample&#95;test&#95;day&#95;22&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_22_dataset.hql) gilt für die Testdaten für "day\_22":
 
 		--- Now for test data (day_22)
 
@@ -400,7 +400,7 @@ Dies ergibt:
 		Time taken: 317.66 seconds
 
 
-Und abschließend verfügen wir für die Testdaten für "day\_23" über das Skript [sample&\#95;hive&\#95;criteo&\#95;downsample&\#95;test&\#95;day&\#95;23&\#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_23_dataset.hql):
+Und abschließend verfügen wir für die Testdaten für "day\_23" über das Skript [sample&#95;hive&#95;criteo&#95;downsample&#95;test&#95;day&#95;23&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_23_dataset.hql):
 
 		--- Finally test data day_23
 		CREATE TABLE criteo.criteo_test_day_23_downsample_1perc (
@@ -658,4 +658,4 @@ Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework
 
 Damit sind wir am Ende unser ausführlichen exemplarischen Vorgehensweise zum Behandeln umfangreicher DataSets mithilfe von Azure Machine Learning angekommen. Wir haben mit einem Terabyte an Daten begonnen, ein Vorhersagemodell erstellt und dieses als Webdienst in der Cloud bereitgestellt.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

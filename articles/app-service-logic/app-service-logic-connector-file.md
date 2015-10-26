@@ -85,4 +85,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [File Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn936296.aspx
 [Hybrid Connection Manager verwenden]: app-service-logic-hybrid-connection-manager.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

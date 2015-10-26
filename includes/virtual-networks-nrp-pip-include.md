@@ -1,5 +1,5 @@
 ## Öffentliche IP-Adresse
-Eine öffentliche IP-Adresse bietet entweder eine reservierte oder dynamische öffentliche IP-Adresse. Obwohl Sie eine öffentliche IP-Adresse als eigenständiges Objekt erstellen können, müssen Sie die Adresse einem anderen Objekt zuweisen, um sie verwenden zu können. Sie können eine öffentliche IP-Adresse einem Lastenausgleich, einem Anwendungsgateway oder einer NIC zuweisen, um den Internetzugriff für diese Ressourcen bereitzustellen.
+Eine öffentliche IP-Adresse stellt entweder eine reservierte oder dynamische Internet-IP-Adresse bereit. Obwohl Sie eine öffentliche IP-Adresse als eigenständiges Objekt erstellen können, müssen Sie die Adresse einem anderen Objekt zuweisen, um sie verwenden zu können. Sie können eine öffentliche IP-Adresse einem Lastenausgleich, einem Anwendungsgateway oder einer NIC zuweisen, um den Internetzugriff für diese Ressourcen bereitzustellen.
 
 |Eigenschaft|Beschreibung|Beispielwerte|
 |---|---|---|
@@ -40,4 +40,4 @@ Beispiel für eine öffentliche IP-Adresse im JSON-Format:
 - Weitere Informationen zu [öffentlichen IP-Adressen auf Instanzebene](virtual-networks-instance-level-public-ip.md).
 - Lesen Sie die [REST-API-Referenzdokumentation](https://msdn.microsoft.com/library/azure/mt163638.aspx) für Informationen zu öffentlichen IP-Adressen.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

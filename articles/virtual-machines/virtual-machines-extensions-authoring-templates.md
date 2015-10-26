@@ -19,7 +19,8 @@
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen mit VM-Erweiterungen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+ 
 
 ## Übersicht über Azure-Ressourcen-Manager-Vorlagen
 
@@ -88,4 +89,4 @@ Eine vollständige Vorlage mit VM-Erweiterungen finden Sie in der folgenden Doku
 
 Nachdem Sie die Vorlage geschrieben haben, können Sie sie über die Azure-Befehlszeilenschnittstelle oder über Azure Powershell bereitstellen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

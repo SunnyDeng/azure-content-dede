@@ -65,4 +65,4 @@
 
 > [AZURE.NOTE]In bestimmten Fällen werden Meldungen, die anzeigen, dass Updates des Wartungsmodus verfügbar sind, bis zu 24 Stunden nach erfolgreichem Anwenden dieser Updates auf dem Gerät angezeigt.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

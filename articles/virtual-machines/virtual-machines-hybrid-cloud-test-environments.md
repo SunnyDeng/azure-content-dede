@@ -19,9 +19,10 @@
 
 # Testumgebungen für Azure-Hybridclouds
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
-Für Dev/Test oder eine Machbarkeitsstudie verwenden hybride Cloud-Testumgebungen Ihre lokale Internetverbindung und eine Ihrer öffentlichen IP-Adressen, und führen Sie schrittweise zur Einrichtung eines funktionsfähigen standortübergreifenden Azure Virtual Network (VNet). Sobald Sie fertig sind, können Sie Anwendungen entwickeln und testen, mit einfachen IT-Arbeitslasten experimentieren und die relative Leistung einer Standort-zu-Standort-VPN (VPN)-Verbindung im Vergleich zu Ihrem Standort im Internet zu messen.
+
+Für Dev/Test oder eine Machbarkeitsstudie verwenden hybride Cloud-Testumgebungen Ihre lokale Internetverbindung und eine Ihrer öffentlichen IP-Adressen, und führen Sie schrittweise zur Einrichtung eines funktionsfähigen standortübergreifenden Azure Virtual Network (VNet). Sobald Sie fertig sind, können Sie Anwendungen entwickeln und testen, mit einfachen IT-Workloads experimentieren und die relative Leistung einer Standort-zu-Standort-VPN (VPN)-Verbindung im Vergleich zu Ihrem Standort im Internet zu messen.
 
 ## Hybride Cloud-Basiskonfiguration
 
@@ -58,4 +59,4 @@ Für Organisationen und Einzelpersonen, für die eine direkte Internetverbindung
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

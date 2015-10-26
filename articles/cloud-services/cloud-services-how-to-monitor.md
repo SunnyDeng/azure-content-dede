@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Überwachen eines Clouddiensts| Microsoft Azure"
-	description="Hier erfahren Sie mehr über die Überwachung von Clouddiensten im Azure-Verwaltungsportal."
-	services="cloud-services"
-	documentationCenter=""
-	authors="rboucher"
-	manager="jwhit"
+	pageTitle="Überwachen eines Clouddiensts| Microsoft Azure" 
+	description="Hier erfahren Sie mehr über die Überwachung von Clouddiensten im Azure-Verwaltungsportal." 
+	services="cloud-services" 
+	documentationCenter="" 
+	authors="rboucher" 
+	manager="jwhit" 
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/04/2015"
+	ms.service="cloud-services" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/04/2015" 
 	ms.author="robb"/>
 
 
@@ -192,4 +192,4 @@ Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregie
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

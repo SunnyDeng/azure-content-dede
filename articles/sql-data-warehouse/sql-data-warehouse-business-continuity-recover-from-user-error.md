@@ -132,8 +132,8 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 [Datenbank-Betriebsstatus]: http://msdn.microsoft.com/library/azure/dn720371.aspx
 [Wiederherstellbare gelöschte Datenbank abrufen]: http://msdn.microsoft.com/library/azure/dn509574.aspx
 [Wiederherstellbare gelöschte Datenbanken auflisten]: http://msdn.microsoft.com/library/azure/dn509562.aspx
-[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/DE-DE/library/dn720218.aspx
+[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/de-DE/library/dn720218.aspx
 
 <!--Other Web references-->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

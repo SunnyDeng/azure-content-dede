@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/23/2015"
+	ms.date="10/12/2015"
 	ms.author="raynew"/>
 
 # Einrichten von Schutz zwischen lokalen VMM-Standorten
@@ -77,8 +77,7 @@ Informationen zur Netzwerkzuordnung finden Sie unter:
 - [Konfiguration von VM-Netzwerken und Gateways in VMM](http://go.microsoft.com/fwlink/?LinkId=386308)
 
 ### Voraussetzungen für die Speicherzuordnung
-Standardmäßig werden beim Replizieren eines virtuellen Computers auf einem Hyper-V-Host-Quellserver auf einen Hyper-V-Host-Zielserver die replizierten Daten am Standardspeicherort gespeichert, der für den Hyper-V-Zielhost in Hyper-V-Manager angegeben wurde. Um die Ablage von Replikationsdaten zu steuern, können Sie eine Speicherzuordnung konfigurieren. Zu diesem Zweck müssen Sie die Speicherklassifizierungen auf dem Quell- und dem Ziel-VMM-Server einrichten, bevor Sie mit der Bereitstellung beginnen.
-Anweisungen hierzu finden Sie unter [Erstellen von Speicher-Klassifizierungen in VMM](http://go.microsoft.com/fwlink/?LinkId=400937).
+Standardmäßig werden beim Replizieren eines virtuellen Computers auf einem Hyper-V-Host-Quellserver auf einen Hyper-V-Host-Zielserver die replizierten Daten am Standardspeicherort gespeichert, der für den Hyper-V-Zielhost in Hyper-V-Manager angegeben wurde. Um die Ablage von Replikationsdaten zu steuern, können Sie eine Speicherzuordnung konfigurieren. Zu diesem Zweck müssen Sie die Speicherklassifizierungen auf dem Quell- und dem Ziel-VMM-Server einrichten, bevor Sie mit der Bereitstellung beginnen. Anweisungen hierzu finden Sie unter [Erstellen von Speicher-Klassifizierungen in VMM](http://go.microsoft.com/fwlink/?LinkId=400937).
 
 
 ## Schritt 1: Erstellen eines Site Recovery-Tresors
@@ -127,26 +126,15 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	![Microsoft Updates](./media/site-recovery-vmm-to-vmm/VMMASRInstallMUScreen.png)
 
 
-1.  Der Installationspfad ist auf **<SystemDrive>\\Programme\\Microsoft System Center 2012 R2\\Virtual Machine Manager\\bin** festgelegt. Klicken Sie auf die Schaltfläche "Installieren", um die Installation des Anbieters zu starten.
-	![InstallLocation](./media/site-recovery-vmm-to-vmm/VMMASRInstallLocationScreen.png)
+1.  Der Installationspfad ist auf **<SystemDrive>\\Programme\\Microsoft System Center 2012 R2\\Virtual Machine Manager\\bin** festgelegt. Klicken Sie auf die Schaltfläche "Installieren", um die Installation des Anbieters zu starten. ![InstallLocation](./media/site-recovery-vmm-to-vmm/VMMASRInstallLocationScreen.png)
 
 
 
-1. Klicken Sie nach der Installation des Anbieters auf die Schaltfläche "Registrieren", um den Server im Tresor zu registrieren.
-	![InstallComplete](./media/site-recovery-vmm-to-vmm/VMMASRInstallComplete.png)
+1. Klicken Sie nach der Installation des Anbieters auf die Schaltfläche "Registrieren", um den Server im Tresor zu registrieren. ![InstallComplete](./media/site-recovery-vmm-to-vmm/VMMASRInstallComplete.png)
 
 5. Geben Sie auf der Seite **Internetverbindung** an, wie sich der Anbieter auf dem VMM-Server mit dem Internet verbinden soll. Wählen Sie *Proxyeinstellungen des Systems verwenden* aus, um die Standard-Internetverbindungseinstellungen auf dem Server zu verwenden.
 
-	![Interneteinstellungen](./media/site-recovery-vmm-to-vmm/VMMASRRegisterProxyDetailsScreen.png)
-	- Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen.
-	- Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben.
-	- Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben.
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
-	- Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+	![Interneteinstellungen](./media/site-recovery-vmm-to-vmm/VMMASRRegisterProxyDetailsScreen.png) - Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. - Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. - Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. - *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net - Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
 
@@ -162,8 +150,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 
 8. Geben Sie unter **Servername** einen Anzeigenamen ein, um den VMM-Server im Tresor zu identifizieren. Geben Sie in einer Clusterkonfiguration den Rollennamen des VMM-Clusters an.
 
-8. Wählen Sie unter **Erste Cloudmetadaten-Synchronisierung** aus, ob Sie Metadaten für alle Clouds auf dem VMM-Server mit dem Tresor synchronisieren möchten. Diese Aktion muss für jeden VMM-Server nur einmal ausgeführt werden. Wenn Sie nicht alle Clouds synchronisieren möchten, können Sie diese Einstellung deaktiviert lassen und die Clouds in den Cloudeigenschaften in der VMM-Konsole einzeln synchronisieren.
-	![Serverregistrierung](./media/site-recovery-vmm-to-vmm/VMMASRRegisterFriendlyName.png)
+8. Wählen Sie unter **Erste Cloudmetadaten-Synchronisierung** aus, ob Sie Metadaten für alle Clouds auf dem VMM-Server mit dem Tresor synchronisieren möchten. Diese Aktion muss für jeden VMM-Server nur einmal ausgeführt werden. Wenn Sie nicht alle Clouds synchronisieren möchten, können Sie diese Einstellung deaktiviert lassen und die Clouds in den Cloudeigenschaften in der VMM-Konsole einzeln synchronisieren. ![Serverregistrierung](./media/site-recovery-vmm-to-vmm/VMMASRRegisterFriendlyName.png)
 
 
 8. Klicken Sie auf *Weiter*, um den Prozess abzuschließen. Nach der Registrierung werden die Metadaten vom VMM-Server von Azure Site Recovery abgerufen. Der Server wird im Tresor auf der Registerkarte *VMM-Server* der Seite **Server** angezeigt.
@@ -306,10 +293,7 @@ Erstellte Wiederherstellungspläne werden auf der Registerkarte **Wiederherstell
 ###Durchführen eines Test-Failovers
 
 1. Wählen Sie auf der Registerkarte **Wiederherstellungspläne** den gewünschten Wiederherstellungsplan aus, und klicken Sie auf **Testfailover**.
-2. Wählen Sie auf der Seite **Testfailover bestätigen** den Eintrag **Kein** aus. Bei Aktivierung dieser Option werden nach einem Failover die virtuellen Computer im Replikat mit keinem Netzwerk verbunden. Es wird getestet, ob das Failover für den virtuellen Computer wie erwartet erfolgt, ohne dass Ihre Netzwerkumgebung für die Replikation getestet wird. Wenn Sie ein umfassenderes Testfailover durchführen möchten, lesen Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=522291">Testen einer Bereitstellung zwischen lokalen Standorten in MSDN</a> nach.
-
-	![Testnetzwerk auswählen](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_TestFailover1.png)
-
+2. Wählen Sie auf der Seite **Testfailover bestätigen** den Eintrag **Kein** aus. Bei Aktivierung dieser Option werden nach einem Failover die virtuellen Computer im Replikat mit keinem Netzwerk verbunden. Es wird getestet, ob das Failover für den virtuellen Computer wie erwartet erfolgt, ohne dass Ihre Netzwerkumgebung für die Replikation getestet wird. Sehen Sie sich an, wie [ein Testfailover ausgeführt wird](site-recovery-failover.md#run-a-test-failover), um mehr über das Verwenden verschiedener Netzwerkoptionen zu erfahren.
 
 7. Der virtuelle Computer für den Test wird auf dem Host erstellt, auf dem auch der replizierte virtuelle Computer vorhanden ist. Er wird der gleichen Cloud hinzugefügt, in der sich der replizierte virtuelle Computer befindet.
 
@@ -344,14 +328,14 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 **Feature: Registrierung**
 
-- **Funktionsbeschreibung**: registriert Server beim Dienst, sodass virtuelle Computer geschützt werden können.
-- **Gesammelte Informationen**: sammelt, verarbeitet und überträgt nach dem Registrieren des Diensts Informationen zum Verwaltungszertifikat von dem VMM-Server, der für die Bereitstellung der Notfallwiederherstellung festgelegt wurde. Dies geschieht anhand des Dienstnamens des VMM-Servers und der Namen der Clouds für virtuelle Computer auf dem VMM-Server.
+- **Funktionsbeschreibung**: Registriert Server beim Dienst, sodass virtuelle Computer geschützt werden können.
+- **Gesammelte Informationen**: Sammelt, verarbeitet und überträgt nach dem Registrieren des Diensts Informationen zum Verwaltungszertifikat von dem VMM-Server, der für die Bereitstellung der Notfallwiederherstellung festgelegt wurde. Dies geschieht anhand des Dienstnamens des VMM-Servers und der Namen der Clouds für virtuelle Computer auf dem VMM-Server.
 - **Nutzung von Informationen**:
 	- Verwaltungszertifikat – Wird verwendet, um den registrierten VMM-Server für den Zugriff auf den Dienst zu identifizieren und zu authentifizieren. Der Dienst verwendet den öffentlichen Schlüsselteil des Zertifikats zum Sichern eines Tokens, auf das nur der registrierte VMM-Server zugreifen kann. Der Server muss dieses Token für den Zugriff auf die Dienstfunktionen verwenden.
 	- Name des VMM-Servers – Der VMM-Servername ist für die Identifizierung und die Kommunikation mit dem entsprechenden VMM-Server erforderlich, auf dem sich die Clouds befinden.
 	- Namen der Clouds auf dem VMM-Server – Der Cloudname wird bei Verwendung der unten beschriebenen Funktion zur Dienst-Cloud-Kopplung/-Entkopplung benötigt. Wenn Sie eine Cloud von einem primären Rechenzentrum aus mit einer anderen Cloud im Wiederherstellungsrechenzentrum koppeln möchten, werden die Namen aller Clouds im Wiederherstellungsrechenzentrum aufgeführt.
 
-- **Wahl**: Diese Informationen sind ein wesentlicher Bestandteil des Dienstregistrierungsprozesses, da sie Sie und den Dienst bei der Identifikation des VMM-Servers, für den Sie den Azure Site Recovery-Schutz bereitstellen möchten, sowie bei der Identifikation des richtigen registrierten VMM-Servers unterstützen. Wenn Sie nicht möchten, dass diese Informationen an den Dienst gesendet werden, verwenden Sie diesen Dienst nicht. Wenn Sie den Server registrieren und die Registrierung dann später aufheben möchten, können Sie dazu die VMM-Serverinformationen im Dienstportal (dem Azure-Portal) löschen.
+- **Wahl**: Diese Informationen sind ein wesentlicher Bestandteil des Dienstregistrierungsprozesses, da Sie sie und den Dienst bei der Identifikation des VMM-Servers, für den Sie den Azure Site Recovery-Schutz bereitstellen möchten, sowie bei der Identifikation des richtigen registrierten VMM-Servers unterstützen. Wenn Sie nicht möchten, dass diese Informationen an den Dienst gesendet werden, verwenden Sie diesen Dienst nicht. Wenn Sie den Server registrieren und die Registrierung dann später aufheben möchten, können Sie dazu die VMM-Serverinformationen im Dienstportal (dem Azure-Portal) löschen.
 
 **Feature: Azure Site Recovery-Schutz aktivieren**
 
@@ -365,7 +349,7 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 **Feature: Wiederherstellungsplan**
 
-- **Funktionsbeschreibung**: Diese Funktion unterstützt Sie beim Erstellen eines Orchestrierungsplans für das "Wiederherstellungs"-Rechenzentrum. Sie können die Reihenfolge definieren, in der die virtuellen Computer oder eine Gruppe virtueller Computer am Wiederherstellungsstandort gestartet werden sollen. Außerdem können Sie die Ausführung beliebiger automatisierter Skripts oder manueller Aktionen angeben, die zum Zeitpunkt der Wiederherstellung für jeden virtuellen Computer ausgeführt werden. Failover (im nächsten Abschnitt behandelt) wird in der Regel auf der Ebene des Wiederherstellungsplans ausgelöst, um eine koordinierte Wiederherstellung einzuleiten.
+- **Funktionsbeschreibung**: Diese Funktion unterstützt Sie beim Erstellen eines Orchestrierungsplans für das Datencenter für die „Wiederherstellung. Sie können die Reihenfolge definieren, in der die virtuellen Computer oder eine Gruppe virtueller Computer am Wiederherstellungsstandort gestartet werden sollen. Außerdem können Sie die Ausführung beliebiger automatisierter Skripts oder manueller Aktionen angeben, die zum Zeitpunkt der Wiederherstellung für jeden virtuellen Computer ausgeführt werden. Failover (im nächsten Abschnitt behandelt) wird in der Regel auf der Ebene des Wiederherstellungsplans ausgelöst, um eine koordinierte Wiederherstellung einzuleiten.
 
 - **Gesammelte Informationen**: Der Dienst sammelt, verarbeitet und überträgt Metadaten für den Wiederherstellungsplan, einschließlich der Metadaten für virtuelle Computer sowie der Metadaten von Automatisierungsskripts und Hinweisen für manuelle Aktionen.
 
@@ -375,9 +359,9 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 **Feature: Netzwerkzuordnung**
 
-- **Funktionsbeschreibung**: Mithilfe dieser Funktion können Sie Netzwerkinformationen aus dem primären Rechenzentrum dem Rechenzentrum für die Wiederherstellung zuordnen. Wenn die virtuellen Computer am Wiederherstellungsstandort wiederhergestellt werden, hilft diese Zuordnung beim Herstellen der Netzwerkkonnektivität.
+- **Funktionsbeschreibung**: Mithilfe dieser Funktion können Sie Netzwerkinformationen aus dem primären Datencenter dem Datencenter für die Wiederherstellung zuordnen. Wenn die virtuellen Computer am Wiederherstellungsstandort wiederhergestellt werden, hilft diese Zuordnung beim Herstellen der Netzwerkkonnektivität.
 
-- **Gesammelte Informationen**: Im Rahmen der Funktion für die Netzwerkzuordnung erfasst, verarbeitet und überträgt der Dienst die Metadaten der logischen Netzwerke für die einzelnen Standorte (primär und Rechenzentrum).
+- **Gesammelte Informationen**: Im Rahmen der Funktion für die Netzwerkzuordnung erfasst, verarbeitet und überträgt der Dienst die Metadaten der logischen Netzwerke für die einzelnen Standorte (primär und Datencenter).
 
 - **Nutzung von Informationen**: Der Dienst verwendet die Metadaten zum Auffüllen des Dienstportals, in dem Sie die Netzwerkinformationen zuordnen können.
 
@@ -385,7 +369,7 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 **Feature: Failover – geplant, ungeplant, Test**
 
-- **Funktionsweise**: Mit dieser Funktion erfolgt ein Failover eines virtuellen Computers aus einem VMM-verwalteten Rechenzentrum auf ein anderes VMM-verwaltetes Rechenzentrum. Die Failoveraktion wird durch den Benutzer in ihrem Dienstportal ausgelöst. Mögliche Gründe für ein Failover sind ein ungeplantes Ereignis (z. B. im Fall einer Naturkatastrophe), ein geplantes Ereignis (z. B. ein Lastenausgleich im Rechenzentrum) oder ein Testfailover (z. B. ein Probelauf für einen Wiederherstellungsplan).
+- **Funktionsweise**: Mit dieser Funktion erfolgt ein Failover eines virtuellen Computers aus einem VMM-verwalteten Datencenter in ein anderes VMM-verwaltetes Datencenter. Die Failoveraktion wird durch den Benutzer in ihrem Dienstportal ausgelöst. Mögliche Gründe für ein Failover sind ein ungeplantes Ereignis (z. B. im Fall einer Naturkatastrophe), ein geplantes Ereignis (z. B. ein Lastenausgleich im Rechenzentrum) oder ein Testfailover (z. B. ein Probelauf für einen Wiederherstellungsplan).
 
 Der Anbieter auf dem VMM-Server wird vom Dienst über das Ereignis benachrichtigt und führt über VMM-Schnittstellen eine Failoveraktion auf dem Hyper-V-Host durch. Das eigentliche Failover des virtuellen Computers von einem Hyper-V-Host auf einen anderen (der in der Regel in einem anderen "Recovery"-Rechenzentrum ausgeführt wird) erfolgt über die Hyper-V-Replikationstechnologie von Windows Server 2012 oder Windows Server 2012 R2. Nachdem das Failover abgeschlossen ist, sendet der auf dem VMM-Server des "Recovery"-Rechenzentrums installierte Anbieter die Erfolgsinformationen an den Dienst.
 
@@ -399,4 +383,4 @@ Der Anbieter auf dem VMM-Server wird vom Dienst über das Ereignis benachrichtig
 
 - **Wahl**: Dies ist ein wesentlicher Bestandteil des Diensts und kann nicht deaktiviert werden. Wenn Sie nicht möchten, dass diese Informationen an den Dienst gesendet werden, verwenden Sie diesen Dienst nicht.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

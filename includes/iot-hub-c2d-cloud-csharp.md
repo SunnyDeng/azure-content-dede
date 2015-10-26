@@ -8,7 +8,7 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die Cloud-zu-Gerät
 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **NuGet-Pakete verwalten...**
 
-	Daraufhin wird das Fenster "NuGet-Pakete verwalten" angezeigt.
+	Daraufhin wird das Fenster „NuGet-Pakete verwalten“ angezeigt.
 
 3. Suchen Sie nach `Microsoft Azure Devices`, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
 
@@ -102,4 +102,4 @@ In diesem Abschnitt ändern Sie die **SendCloudToDevice**-App so, dass sie Feedb
 [21]: ./media/iot-hub-c2d-cloud-csharp/sendc2d1.png
 [22]: ./media/iot-hub-c2d-cloud-csharp/sendc2d2.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

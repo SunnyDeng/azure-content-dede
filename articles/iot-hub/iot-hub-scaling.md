@@ -2,9 +2,9 @@
  pageTitle="Skalieren von Azure IoT Hub | Microsoft Azure"
  description="Beschreibt das Skalieren von Azure IoT Hub."
  services="iot-hub"
- documentationCenter=".net"
+ documentationCenter=""
  authors="fsautomata"
- manager="kevinmil"
+ manager="timlt"
  editor=""/>
 
 <tags
@@ -12,7 +12,7 @@
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
- ms.workload="tbd"
+ ms.workload="na"
  ms.date="10/02/2015"
  ms.author="elioda"/>
 
@@ -36,14 +36,14 @@ Die beste Methode zum Skalieren einer IoT Hub-Lösung ist die Auswertung des Dat
 
 D2C-Nachrichten basieren auf diesen Richtlinien für den anhaltenden Durchsatz:
 
-| Preisstufe | Anhaltender Durchsatz | Anhaltende Senderate |
+| Tarif | Anhaltender Durchsatz | Anhaltende Senderate |
 | ---- | -------------------- | ------------------- |
 | S1 | Bis zu 8 KBit/Stunde pro Gerät | Durchschnitt von 4 Nachrichten/Stunde pro Gerät |
 | S2 | Bis zu 4 KBit/Min. pro Gerät | Durchschnitt von 2 Nachrichten/Min. pro Gerät |
 
 Beim Empfangen von D2C-Nachrichten kann das Anwendungs-Back-End den folgenden maximalen Durchsatz erwarten (über alle Reader).
 
-| Preisstufe | Anhaltender Durchsatz |
+| Tarif | Anhaltender Durchsatz |
 | ---- | -------------------- |
 | S1 | Bis zu 120 KBit/Min. pro Einheit, Minimum von 2 MBit/s |
 | S2 | Bis zu 4 MBit/Min. pro Einheit, Minimum von 2 MBit/s |
@@ -73,4 +73,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -2,4 +2,4 @@ Ein benutzerdefinierter Domänenname kann nur für die Modi **Shared**, **Basic*
 
 Weitere Informationen zu den Modi des App Service-Plans, darunter auch Informationen zum Ändern des Websitemodus, finden Sie unter [Skalieren von Web-Apps](../article/app-service-web/web-sites-scale.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

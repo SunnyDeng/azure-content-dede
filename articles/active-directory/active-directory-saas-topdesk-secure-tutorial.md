@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und TOPdesk - Secure erläuter
 -   Ein gültiges Azure-Abonnement
 -   Ein TOPdesk - Secure-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie TOPdesk - Secure zugewiesen haben, mittels einmaliger Anmeldung auf der TOPdesk - Secure-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie TOPdesk - Secure zugewiesen haben, mittels einmaliger Anmeldung auf der TOPdesk - Secure-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -95,9 +95,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-topdesk-secure-tutorial/IC790604.png "App-URL konfigurieren")
 
-    1.  Geben Sie in das Textfeld **TOPdesk - Secure-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der „TOPdesk - Secure“-Anwendung verwenden \(z. B. „**https://qssolutions.topdesk.net*").
-    2.  Fügen Sie in das Textfeld **TOPdesk – öffentliche Antwort-URL** die **TOPdesk - Secure-AssertionConsumerService-URL** ein \(z. B.: "*https://qssolutions.topdesk.net/tas/public/login/saml*")
-    3.  Klicken Sie auf **Weiter**.
+    1.  Geben Sie in das Textfeld **TOPdesk - Secure-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der „TOPdesk - Secure“-Anwendung verwenden (z. B. „**https://qssolutions.topdesk.net*").
+2.  Fügen Sie in das Textfeld **TOPdesk – öffentliche Antwort-URL** die **TOPdesk - Secure-AssertionConsumerService-URL** ein (z. B.: "**https://qssolutions.topdesk.net/tas/public/login/saml*")
+3.  Klicken Sie auf **Weiter**.
 
 10. Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für TOPdesk - Secure** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
 
@@ -133,7 +133,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![SAML Configuration Assistant](./media/active-directory-saas-topdesk-secure-tutorial/IC790608.png "SAML Configuration Assistant")
 
     1.  Klicken Sie zum Hochladen der heruntergeladenen Metadatendatei unter **Verbundmetadaten** auf **Durchsuchen**.
-    2.  Klicken Sie zum Hochladen Ihrer Zertifikatdatei unter **Zertifkat \(RSA\)** auf **Durchsuchen**.
+    2.  Klicken Sie zum Hochladen Ihrer Zertifikatdatei unter **Zertifkat (RSA)** auf **Durchsuchen**.
     3.  Klicken Sie z um Hochladen der Logodatei, die Sie vom TOPdesk-Supportteam erhalten haben, unter **Logosymbol** auf **Durchsuchen**.
     4.  Geben Sie in das Textfeld **Benutzernamen-Attribut** ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
 5.  Geben Sie in das Textfeld **Anzeigenname** einen Namen für die Konfiguration ein.
@@ -151,7 +151,7 @@ Damit sich Azure AD-Benutzer bei TOPdesk - Secure anmelden können, müssen sie 
 
 1.  Melden Sie sich bei Ihrer **TOPdesk - Secure**-Unternehmenswebsite als Administrator an.
 
-2.  Klicken Sie im Menü oben auf **TOPdesk \> Neu \> Support-Dateien \> Operator**.
+2.  Klicken Sie im Menü oben auf **TOPdesk > Neu > Support-Dateien > Operator**.
 
     ![Operator](./media/active-directory-saas-topdesk-secure-tutorial/IC790610.png "Operator")
 
@@ -183,6 +183,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-topdesk-secure-tutorial/IC767830.png "Ja")
   
-Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!------HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

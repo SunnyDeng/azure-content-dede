@@ -38,4 +38,4 @@ Im Azure-Portal enthält die Registerkarte **Konfiguration** der Anwendung, die 
 
 (Die Antwort-URL im Screenshot zeigt zweimal dieselbe URL, einmal mit `http:` und einmal mit `https:`.)
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

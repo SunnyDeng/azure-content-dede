@@ -271,4 +271,4 @@ Der Burst-Modus verlängert leicht die Akkulaufzeit, wirkt sich jedoch auf den E
 [NuGet website]: http://docs.nuget.org/docs/start-here/overview
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

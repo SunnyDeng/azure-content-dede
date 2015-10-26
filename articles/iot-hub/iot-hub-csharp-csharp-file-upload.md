@@ -4,19 +4,19 @@
 	services="iot-hub"
 	documentationCenter=".net"
 	authors="fsautomata"
-	manager="kevinmil"
+	manager="timlt"
 	editor=""/>
 
 <tags
      ms.service="iot-hub"
-     ms.devlang="csharp"
+     ms.devlang="dotnet"
      ms.topic="article"
      ms.tgt_pltfrm="na"
-     ms.workload="tbd"
+     ms.workload="na"
      ms.date="09/29/2015"
      ms.author="elioda"/>
 
-# Hochladen von Dateien von Geräten in die Cloud mit IoT Hub
+# Lernprogramm: Hochladen von Dateien von Geräten in die Cloud mit IoT Hub
 
 ## Einführung
 
@@ -33,13 +33,13 @@ Am Ende dieses Lernprogramms führen Sie zwei Windows-Konsolenanwendungen aus:
 * **SimulatedDevice**, eine geänderte Version der in [Senden von C2D-Nachrichten mit IoT Hub] erstellten Anwendung. Diese stellt eine Verbindung mit IoT Hub her und empfängt C2D-Nachrichten mit Azure-Blob-URIs. Für jede empfangene C2D-Nachricht wird ein Dateiupload zum angegebenen Blob-URI ausgelöst.
 * **SendCloudToDevice**. Hiermit wird ein Azure-Blob-URI (wie in [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](../storage/storage-dotnet-shared-access-signature-part-2.md) beschrieben) erstellt, in einer C2D-Nachricht über IoT Hub an das simulierte Gerät gesendet und dann die Übermittlungsbestätigung empfangen.
 
-> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zu Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
+> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio 2015
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Ffile-upload%2F target="\_blank").
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fiot%2Ftutorials%2Ffile-upload%2F target="\_blank").
 
 
 [AZURE.INCLUDE [iot-hub-file-upload-cloud-csharp](../../includes/iot-hub-file-upload-cloud-csharp.md)]
@@ -82,8 +82,8 @@ Weitere Informationen zu IoT Hub:
 
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-[Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
-[Hadoop]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
+[Azure Data Factory]: https://azure.microsoft.com/en-us/documentation/services/data-factory/
+[Hadoop]: https://azure.microsoft.com/en-us/documentation/services/hdinsight/
 
 [Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 [Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
@@ -96,10 +96,6 @@ Weitere Informationen zu IoT Hub:
 [IoT Hub Supported Devices]: iot-hub-supported-devices.md
 [Erste Schritte mit IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
-[Azure IoT Developer Center]: http://www.azure.com/iotdev
+[Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-
-
- 
-
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

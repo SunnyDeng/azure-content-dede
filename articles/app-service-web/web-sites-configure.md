@@ -76,10 +76,10 @@ Bei .NET-Apps werden diese Verbindungszeichenfolgen zur Laufzeit in die `connect
 
 Bei PHP-, Python-, Java- und Node-Anwendungen sind diese Einstellungen als Umgebungsvariablen zur Laufzeit mit dem Verbindungstyp als Präfix verfügbar. Die Präfixe der Umgebungsvariable lauten wie folgt:
 
-- SQL Server: SQLCONNSTR_
-- MySQL: MYSQLCONNSTR_
-- SQL-Datenbank: SQLAZURECONNSTR_
-- Benutzerdefiniert: CUSTOMCONNSTR_
+- SQL Server: SQLCONNSTR\_
+- MySQL: MYSQLCONNSTR\_
+- SQL-Datenbank: SQLAZURECONNSTR\_
+- Benutzerdefiniert: CUSTOMCONNSTR\_
 
 Wenn beispielsweise eine MySQL-Verbindungszeichenfolge "`connectionstring1`" heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
 
@@ -178,4 +178,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

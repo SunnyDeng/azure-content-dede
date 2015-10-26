@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (Azure PowerShell)"
+	pageTitle="Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (Azure PowerShell)" 
 	description="Diese exemplarische Vorgehensweise baut auf dem Tutorial mit Verwendung der Azure PowerShell auf, indem die Pipeline Ausgabedaten in eine SQL Server-Datenbank kopiert."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/25/2015" 
 	ms.author="spelluru"/>
 
 
@@ -116,10 +116,10 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 ### Erstellen der lokalen logischen Tabelle
 
 1.	Wechseln Sie in **Azure PowerShell** zum Ordner **C:\\ADFWalkthrough\\OnPremises**. 
-2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **MarketingCampaignEffectivenessOnPremSQLTable.json** wie folgt zu erstellen.
+2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryDataset**, um die Tabellen für **MarketingCampaignEffectivenessOnPremSQLTable.json** wie folgt zu erstellen.
 
 			
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessOnPremSQLTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessOnPremSQLTable.json
 	 
 #### Erstellen der Pipeline zum Kopieren der Daten aus dem Azure-BLOB auf SQL Server
 
@@ -170,4 +170,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

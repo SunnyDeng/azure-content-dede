@@ -26,13 +26,13 @@ Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 - Welche Vorteile bietet die Verwendung von DocumentDB als Katalogdatenspeicher?
 - Welche Vorteile bietet die Verwendung von DocumentDB als Ereignisprotokollspeicher?
 - Welche Vorteile bietet die Verwendung von DocumentDB als Datenspeicher für Benutzereinstellungen?
-- Welche Vorteile bietet die Verwendung von DocumentDB als Datenspeicher für Systeme für das Internet der Dinge \(Internet of Things, IoT\)?
+- Welche Vorteile bietet die Verwendung von DocumentDB als Datenspeicher für Systeme für das Internet der Dinge (Internet of Things, IoT)?
 
     
 ## Benutzergenerierte Inhalte
 Ein häufiger Anwendungsfall für DocumentDB ist die Speicherung und Abfrage von benutzergenerierten Inhalten für Web- und mobile Anwendungen, insbesondere Anwendungen für soziale Medien. Einige Beispiele für benutzergenerierte Inhalte sind Chatsitzungen, Tweets, Blogbeiträge, Bewertungen und Kommentare. Benutzergenerierte Inhalte in Anwendungen für soziale Medien sind eine Mischung aus Freitext, Eigenschaften, Tags und Beziehungen, die nicht durch eine starre Struktur begrenzt sind.
 
-Inhalte wie Chats, Kommentare und Beiträge können in DocumentDB gespeichert werden, ohne dass hierzu Transformationen oder komplexe ORM-Ebenen \(Object Relational Mapping\) erforderlich sind. Dateneigenschaften können beim Durchlaufen des Anwendungscodes ganz einfach hinzugefügt oder geändert werden, um die jeweiligen Anforderungen zu erfüllen. Auf diese Weise wird die Entwicklung erheblich beschleunigt.
+Inhalte wie Chats, Kommentare und Beiträge können in DocumentDB gespeichert werden, ohne dass hierzu Transformationen oder komplexe ORM-Ebenen (Object Relational Mapping) erforderlich sind. Dateneigenschaften können beim Durchlaufen des Anwendungscodes ganz einfach hinzugefügt oder geändert werden, um die jeweiligen Anforderungen zu erfüllen. Auf diese Weise wird die Entwicklung erheblich beschleunigt.
 
 Anwendungen, die in verschiedene soziale Netzwerke integriert werden, müssen auf Schemaänderungen dieser Netzwerke reagieren. Da Daten in DocumentDB standardmäßig und automatisch indiziert werden, können Daten jederzeit abgefragt werden. Daher verfügen diese Anwendungen über die Flexibilität, Projektionen entsprechend ihren jeweiligen Anforderungen abzurufen.
 
@@ -64,11 +64,11 @@ Azure Event Hubs bietet einen hohen Durchsatz bei geringer Latenz und kann daher
 
 Eine Beispiellösung für das Internet der Dinge unter Verwendung von DocumentDB, EventHubs und Storm finden Sie im [Beispielrepository "hdinsight-storm" in GitHub](https://github.com/hdinsight/hdinsight-storm-examples/).
 
-Weitere Informationen zu den Azure-Angeboten für das Internet der Dinge finden Sie unter [Ihr eigenes Internet der Dinge](http://www.microsoft.com/de-de/server-cloud/internet-of-things.aspx).
+Weitere Informationen zu den Azure-Angeboten für das Internet der Dinge finden Sie unter [Ihr eigenes Internet der Dinge](http://www.microsoft.com/en-us/server-cloud/internet-of-things.aspx).
 
 ## Nächste Schritte
  
-Um mit DocumentDB zu beginnen, können Sie ein [Konto](http://azure.microsoft.com/pricing/free-trial/) erstellen und dann unserem [Lernkonzept](documentdb-learning-map.md) folgen, um die Informationen zu DocumentDB zu erhalten, die Sie benötigen.
+Um mit DocumentDB zu beginnen, können Sie ein [Konto](http://azure.microsoft.com/pricing/free-trial/) erstellen und dann unserem [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/) folgen, um die Informationen zu DocumentDB zu erhalten, die Sie benötigen.
 
 Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihnen folgende Kundenberichte zur Verfügung:
 
@@ -79,4 +79,4 @@ Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihne
 - [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667). Der Speicher der Zukunft basiert auf schnellen Suchvorgängen und problemlosem Datenfluss.
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

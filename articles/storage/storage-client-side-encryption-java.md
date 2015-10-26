@@ -13,14 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="10/07/2015" 
 	ms.author="tamram"/>
 
 
 # Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage   
 
+[AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
+
 ## Übersicht  
-Die [Azure Storage-Clientbibliothek für Java](https://www.nuget.org/packages/WindowsAzure.Storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure Key Vault](http://azure.microsoft.com/services/key-vault/).
+Die [Azure Storage-Clientbibliothek für Java](https://www.nuget.org/packages/WindowsAzure.Storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure-Schlüsseltresor](http://azure.microsoft.com/services/key-vault/).
 
 ## Verschlüsselung und Entschlüsselung über das Umschlagverfahren    
 Die Prozesse bei der Verschlüsselung und Entschlüsselung folgen dem Umschlagverfahren.
@@ -98,7 +100,7 @@ Bei Batchvorgängen wird derselbe KEK für alle Zeilen in einem Batchvorgang ver
 Zum Ausführen von Abfragevorgängen müssen Sie einen Schlüsselresolver angeben, der alle Schlüssel im Resultset auflösen kann. Wenn eine im Abfrageergebnis enthaltene Entität nicht in einen Anbieter aufgelöst werden kann, löst die Clientbibliothek einen Fehler aus. Für jede Abfrage, die serverseitige Projektionen ausführt, fügt die Clientbibliothek den ausgewählten Spalten standardmäßig die spezifischen Verschlüsselungsmetadateneigenschaften ("\_ClientEncryptionMetadata1" und "\_ClientEncryptionMetadata2") hinzu.
 
 ## Azure-Schlüsseltresor  
-Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Azure-Schlüsseltresors können Benutzer Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden. Weitere Informationen finden Sie unter [Was ist der Azure-Schlüsseltresor?](https://azure.microsoft.com/de-DE/documentation/articles/key-vault-whatis/).
+Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Azure-Schlüsseltresors können Benutzer Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden. Weitere Informationen finden Sie unter [Was ist der Azure-Schlüsseltresor?](../articles/key-vault-whatis.md).
 
 Die Speicherclientbibliothek verwendet die Schlüsseltresor-Kernbibliothek, um ein gemeinsames Framework zum Verwalten von Schlüsseln innerhalb von Azure bereitzustellen. Ein zusätzlicher Vorteil für die Benutzer besteht in der Verwendung der Schlüsseltresor-Erweiterungsbibliothek. Die Erweiterungsbibliothek bietet nützliche Funktionen für die einfache und nahtlose Nutzung von lokalen und Cloudschlüsselanbietern von symmetrischen/RSA-Schlüsseln sowie für Aggregation und Zwischenspeicherung.
 
@@ -230,6 +232,6 @@ Wenn die Entität "TableEntity" implementiert, können der Getter und Setter der
 Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Leistungsaufwand verursacht. Der Inhaltsschlüssel und der IV müssen generiert, der Inhalt selbst muss verschlüsselt, und zusätzliche Metadaten müssen formatiert und hochgeladen werden. Dieser Aufwand variiert abhängig von der Menge der zu verschlüsselnden Daten. Es empfiehlt sich, dass Kunden ihre Anwendungen während der Entwicklung immer hinsichtlich der Leistung testen.
 
 ## Nächste Schritte  
-Laden Sie das [Maven-Paket mit der Azure Storage-Clientbibliothek für Java] herunter(<fix URL>) Laden Sie die [Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunter Laden Sie die Maven-Pakete mit der [Azure-Schlüsseltresor-Kernbibliothek](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Azure-Schlüsseltresor-Clientbibliothek](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und den [Azure-Schlüsseltresor-Erweiterungen](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) herunter <fix URL> Besuchen Sie die [Dokumentation zum Azure-Schlüsseltresor](https://azure.microsoft.com/de-DE/documentation/articles/key-vault-whatis/)
+[Maven-Paket mit der Azure Storage-Clientbibliothek für Java] herunterladen(<fix URL>) [Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

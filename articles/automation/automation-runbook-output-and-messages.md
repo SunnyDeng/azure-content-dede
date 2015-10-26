@@ -168,4 +168,4 @@ Im folgenden Beispiel wird ein Beispielrunbook gestartet und anschließend auf s
 - [Nachverfolgen eines Runbookauftrags](automation-runbook-execution.md)
 - [Untergeordnete Runbooks](http://msdn.microsoft.com/library/azure/dn857355.aspx)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

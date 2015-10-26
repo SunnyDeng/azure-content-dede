@@ -3,13 +3,12 @@
 #Tutorial: Azure Active Directory-Integration mit TimeOffManager
 >[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=534748), um Feedback abzugeben.
   
-In diesem Tutorial wird die Integration von Azure und TimeOffManager erläutert.  
-Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und TimeOffManager erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein TimeOffManager-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie TimeOffManager zugewiesen haben, mittels einmaligen Anmeldens auf der TimeOffManager-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie TimeOffManager zugewiesen haben, mittels einmaligen Anmeldens auf der TimeOffManager-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -54,9 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Tim
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei TimeOffManager zu authentifizieren.  
-Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren TimeOffManager-Mandanten hochladen.  
-Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei TimeOffManager zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren TimeOffManager-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -68,7 +65,7 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-timeoffmanager-tutorial/IC795913.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** in das Textfeld **TimeOffManager-Antwort-URL** die TimeOffManager AssertionConsumerService-URL ein \(z. B.: "*Beispiel: https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company\_id=IC34216*", und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** in das Textfeld **TimeOffManager-Antwort-URL** die TimeOffManager AssertionConsumerService-URL ein (z. B.: "* Beispiel: https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company\_id=IC34216*", und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-timeoffmanager-tutorial/IC795914.png "App-URL konfigurieren")
 
@@ -82,7 +79,7 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der TimeOffManager-Unternehmenswebsite als Administrator an.
 
-6.  Wechseln Sie zu **Konto \>-Kontooptionen \> Einstellungen für einmaliges Anmelden**.
+6.  Wechseln Sie zu **Konto >-Kontooptionen > Einstellungen für einmaliges Anmelden**.
 
     ![Einstellungen für einmaliges Anmelden](./media/active-directory-saas-timeoffmanager-tutorial/IC795917.png "Einstellungen für einmaliges Anmelden")
 
@@ -92,7 +89,7 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
     1.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP] Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
     2.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie anschließend das gesamte Zertifikat in das Textfeld **X.509-Zertifikat** ein.
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei TimeOffManager** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **IdP-Aussteller** ein.
@@ -128,11 +125,9 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
 ##Konfigurieren der Benutzerbereitstellung
   
-Damit sich Azure AD-Benutzer bei TimeOffManager anmelden können, müssen sie in TimeOffManager bereitgestellt werden.  
-TimeOffManager unterstützt die bedarfsabhängige Benutzerbereitstellung. Für Sie steht kein Aktionselement zur Verfügung.  
-Die Benutzer werden automatisch während der erstmaligen und einmaligen Anmeldung hinzugefügt.
+Damit sich Azure AD-Benutzer bei TimeOffManager anmelden können, müssen sie in TimeOffManager bereitgestellt werden. TimeOffManager unterstützt die bedarfsabhängige Benutzerbereitstellung. Für Sie steht kein Aktionselement zur Verfügung. Die Benutzer werden automatisch während der erstmaligen und einmaligen Anmeldung hinzugefügt.
 
->[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von TimeOffManager-Benutzerkonten oder mithilfe der von TimeOffManager bereitgestellten APIs erstellen.
+>[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von TimeOffManager-Benutzerkonten oder mithilfe der von TimeOffManager bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
   
@@ -152,4 +147,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

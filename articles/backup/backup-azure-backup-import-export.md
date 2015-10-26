@@ -1,11 +1,11 @@
 <properties
    pageTitle="Azure Backup – Offlinesicherung oder anfängliches Seeding mithilfe des Azure Import/Export-Diensts | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit Azure Backup mithilfe des Azure Import/Export-Diensts Daten aus dem Netzwerk senden können. Dieser Artikel beschreibt das Offlineseeding der ersten Sicherungsdaten über den Azure Import/Export-Dienst."
-	services="backup"
-	documentationCenter=""
-	authors="aashishr"
-	manager="shreeshd"
-	editor=""/>
+   description="Erfahren Sie, wie Sie mit Azure Backup mithilfe des Azure Import/Export-Diensts Daten aus dem Netzwerk senden können. Dieser Artikel beschreibt das Offlineseeding der ersten Sicherungsdaten über den Azure Import/Export-Dienst."
+   services="backup"
+   documentationCenter=""
+   authors="aashishr"
+   manager="shreeshd"
+   editor=""/>
 <tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="08/28/2015" ms.author="aashishr"; "jimpark"/>
 
 # Workflow zur Offlinesicherung in Azure Backup
@@ -108,4 +108,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

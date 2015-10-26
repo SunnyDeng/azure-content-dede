@@ -1,20 +1,20 @@
 <properties
  pageTitle="Verwalten von Azure-Redis-Cache mit Azure PowerShell | Microsoft Azure"
-	description="Erfahren Sie, wie Sie administrative Aufgaben für Azure-Redis-Cache mit Azure PowerShell ausführen."
-	services="redis-cache"
-	documentationCenter=""
-	authors="Rick-Anderson"
-	manager="wpickett"
-	editor="v-lincan"/>
+ description="Erfahren Sie, wie Sie administrative Aufgaben für Azure-Redis-Cache mit Azure PowerShell ausführen."
+ services="redis-cache"
+   documentationCenter=""
+   authors="Rick-Anderson"
+   manager="wpickett"
+   editor="v-lincan"/>
 
 <tags
    ms.service="cache"
-	ms.devlang="all"
-	ms.topic="article"
-	ms.tgt_pltfrm="cache-redis"
-	ms.workload="multiple"
-	ms.date="08/26/2015"
-	ms.author="riande"/>
+   ms.devlang="all"
+   ms.topic="article"
+   ms.tgt_pltfrm="cache-redis"
+   ms.workload="multiple"
+   ms.date="08/26/2015"
+   ms.author="riande"/>
 
 # Verwalten von Azure-Redis-Cache mit Azure PowerShell
 
@@ -95,4 +95,4 @@ Weitere Informationen zur Verwendung von Windows PowerShell mit Azure finden Sie
 - [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Informationen zu neuen Funktionen in Windows PowerShell.
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

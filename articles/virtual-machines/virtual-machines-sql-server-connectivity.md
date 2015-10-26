@@ -18,7 +18,8 @@
 
 # Verbinden mit SQL Server-Instanzen auf virtuellen Azure-Computern
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwenden einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
  
 ## Übersicht
 
@@ -32,11 +33,11 @@ Es gibt jedoch einige Aspekte bei SQL Server-Verbindungen, die insbesondere Azur
 
 Die Weise, wie ein Client Verbindungen mit SQL Server auf einem virtuellen Computer herstellt, unterscheidet sich je nach dem Standort des Clients und der Konfiguration des Computers und/oder Netzwerks. Zu diesen Szenarien gehören:
 
-- [Verbinden mit SQL Server im selben Cloud-Dienst](#connect-to-sql-server-in-the-same-cloud-service)
+- [Verbinden mit SQL Server im selben Clouddienst](#connect-to-sql-server-in-the-same-cloud-service)
 - [Verbinden mit SQL Server über das Internet](#connect-to-sql-server-over-the-internet)
 - [Verbinden mit SQL Server innerhalb des gleichen virtuellen Netzwerks](#connect-to-sql-server-in-the-same-virtual-network)
 
-### Verbinden mit SQL Server im selben Cloud-Dienst
+### Verbinden mit SQL Server im selben Clouddienst
 
 Im gleichen Clouddienst können mehrere virtuelle Computer erstellt werden. Das Konzept dieses Szenarios mit virtuellen Computern ist unter [Verbinden virtueller Computer mit einem virtuellen Netzwerk oder Clouddienst](cloud-services-connect-virtual-machine.md) erläutert.
 
@@ -86,4 +87,4 @@ Es ist wichtig, alle bewährten Sicherheitsmethoden für SQL Server bei der Ausf
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

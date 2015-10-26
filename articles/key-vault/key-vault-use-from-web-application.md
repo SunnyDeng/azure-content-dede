@@ -243,4 +243,4 @@ Eine Referenz zur Programmierung finden Sie unter [C#-Client-API-Referenz für d
 [2]: ./media/key-vault-use-from-web-application/PortalAddCertificate.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

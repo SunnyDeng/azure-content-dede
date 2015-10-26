@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden des E-Mail-Diensts SendGrid (Node.js) | Microsoft Azure"
-	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden mithilfe der Node.js-API geschrieben."
-	services=""
-	documentationCenter="nodejs"
-	authors="erikre"
-	manager="wpickett"
+	pageTitle="Verwenden des E-Mail-Diensts SendGrid (Node.js) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden mithilfe der Node.js-API geschrieben." 
+	services="" 
+	documentationCenter="nodejs" 
+	authors="erikre" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="08/31/2015" 
 	ms.author="erikre"/>
 # Senden von E-Mails mit SendGrid aus Node.js
 
@@ -21,7 +21,7 @@ Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufg
 
 ## Was ist der SendGrid-E-Mail-Dienst?
 
-SendGrid ist ein [cloudbasierter E-Mail-Dienst](https://sendgrid.com/email-solutions), der zuverlässige [transaktionale E-Mail-Übermittlung](https://sendgrid.com/transactional-email), Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
+SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
 
 -   Automatisches Versenden von Empfangsbestätigungen an Kunden
 -   Verwalten von Verteilungslisten zum Senden von monatlichen e-Flyern und speziellen Angeboten an Kunden
@@ -65,7 +65,7 @@ Sie können auch eine HTML-Nachricht für Clients festlegen, bei denen dies durc
 
 Wenn die Text- und die HTML-Option ausgewählt sind, wird die Nachricht auf Clients, die keine HTML-Nachrichten unterstützen, im Textformat angezeigt.
 
-Weitere Informationen zu allen von der Funktion "Email" unterstützten Eigenschaften finden Sie unter [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs).
+Weitere Informationen zu allen von der Funktion "Email" unterstützten Eigenschaften finden Sie unter [sendgrid-nodejs][].
 
 ## Senden von E-Mails
 
@@ -114,7 +114,7 @@ Anhänge können zu einer Nachricht hinzugefügt werden, indem die entsprechende
 
 ## Verwenden von Filtern zur Aktivierung von Fußzeilen und zur Nachverfolgung
 
-SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von Filtern. Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen. Eine vollständige Liste der verfügbaren Filter finden Sie unter [Filtereinstellungen](https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html).
+SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von Filtern. Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen. Eine vollständige Liste der verfügbaren Filter finden Sie unter [Filtereinstellungen][].
 
 Filter können mithilfe der Eigenschaft **filters** auf eine Nachricht angewendet werden. Jeder Filter wird durch einen Hash mit filterspezifischen Einstellungen festgelegt. Die folgenden Beispiele veranschaulichen die Filter für die Fußzeile und die Klickprotokollierung:
 
@@ -168,27 +168,18 @@ einen Filter verwenden oder festlegen.
     email.addFilter('footer', 'enable', 1);
     email.addFilter('footer', 'text/html', '<strong>boo</strong>');
 
-Weitere Informationen finden Sie unter [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs).
+Weitere Informationen finden Sie unter [sendgrid-nodejs][].
 
 ## Verwenden zusätzlicher SendGrid-Dienste
 
-SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation](https://sendgrid.com/docs).
+SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation][].
 
 ## Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, finden Sie unter diesen Links weitere Informationen.
 
--   Repository für das SendGrid Node.js-Modul:
-    <https://sendgrid-nodejs>
--   SendGrid API-Dokumentation:
-    <https://sendgrid.com/docs>
--   Spezielles SendGrid-Angebot für Azure-Kunden:
-    [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html) 
-  [Sonderangebot]: https://sendgrid.com/windowsazure.html
-  [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs
-  [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html
-  [SendGrid-API-Dokumentation]: https://sendgrid.com/docs
-  [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
-  [Transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
+-   Repository für das SendGrid Node.js-Modul: [sendgrid-nodejs][]
+-   SendGrid API-Dokumentation: <https://sendgrid.com/docs>
+-   Spezielles SendGrid-Angebot für Azure-Kunden: [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html) [Sonderangebot]: https://sendgrid.com/windowsazure.html [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html [SendGrid-API-Dokumentation]: https://sendgrid.com/docs [Cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions [Transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

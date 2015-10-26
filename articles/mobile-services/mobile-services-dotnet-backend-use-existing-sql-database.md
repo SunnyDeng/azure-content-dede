@@ -615,4 +615,4 @@ Beachten Sie, dass beide Controllerimplementierungen die DTOs **MobileCustomer**
 
 Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

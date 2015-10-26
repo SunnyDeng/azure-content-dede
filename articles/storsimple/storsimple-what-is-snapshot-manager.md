@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="10/12/2015"
    ms.author="v-sharos" />
 
 # Was ist der StorSimple Snapshot Manager?
@@ -23,7 +23,7 @@ StorSimple Snapshot Manager ist ein Microsoft Management Console (MMC)-Snap-In, 
 
 Diese Übersicht bietet eine Einführung in den StorSimple Snapshot Manager, eine Beschreibung der Features und eine Erläuterung seiner Rolle in Microsoft Azure StorSimple.
 
-Eine Übersicht über das gesamte Microsoft Azure StorSimple-System, einschließlich StorSimple-Gerät, StorSimple Manager-Dienst, StorSimple Snapshot Manager und StorSimple-Adapter für SharePoint, finden Sie unter [Was ist StorSimple?](storsimple-overview.md) und [Was sind die Komponenten von StorSimple?](storsimple-components.md).
+Eine Übersicht über das gesamte Microsoft Azure StorSimple-System, einschließlich StorSimple-Gerät, StorSimple Manager-Dienst, StorSimple Snapshot Manager und StorSimple-Adapter für SharePoint, finden Sie unter [StorSimple 8000-Serie: eine Hybridcloud-Speicherlösung](storsimple-overview.md).
  
 ## Zweck und Architektur des StorSimple Snapshot Managers
 
@@ -46,15 +46,15 @@ StorSimple Snapshot Manager-Sicherungen sind inkrementelle Momentaufnahmen, die 
 
 Sie können den StorSimple Snapshot Manager zum Konfigurieren und Sichern der folgenden Volumetypen verwenden:
 
-- **Basisvolumes:** Ein Basisvolume ist eine einzelne Partition auf einem Basisdatenträger. 
+- **Basisvolumes**: Ein Basisvolume ist eine einzelne Partition auf einem Basisdatenträger. 
 
-- **Einfache Volumes:** Ein einfaches Volume ist ein dynamisches Volume, das den Speicherplatz von einem einzelnen dynamischen Datenträger enthält. Ein einfaches Volume besteht aus einem einzelnen Bereich auf einem Datenträger oder aus mehreren Bereichen auf demselben Datenträger, die miteinander verknüpft sind. (Sie können einfache Volumes nur auf dynamischen Datenträgern erstellen.) Einfache Volumes bieten keine Fehlertoleranz.
+- **Einfache Volumes**: Ein einfaches Volume ist ein dynamisches Volume, das den Speicherplatz von einem einzelnen dynamischen Datenträger enthält. Ein einfaches Volume besteht aus einem einzelnen Bereich auf einem Datenträger oder aus mehreren Bereichen auf demselben Datenträger, die miteinander verknüpft sind. (Sie können einfache Volumes nur auf dynamischen Datenträgern erstellen.) Einfache Volumes bieten keine Fehlertoleranz.
 
-- **Dynamische Volumes:** Ein dynamisches Volume ist ein Volume, das auf einem dynamischen Datenträger erstellt wird. Dynamische Datenträger verwenden eine Datenbank zum Nachverfolgen von Informationen zu den Volumes auf den dynamischen Datenträgern in einem Computer.
+- **Dynamische Volumes**: Ein dynamisches Volume ist ein Volume, das auf einem dynamischen Datenträger erstellt wird. Dynamische Datenträger verwenden eine Datenbank zum Nachverfolgen von Informationen zu den Volumes auf den dynamischen Datenträgern in einem Computer.
 
-- **Dynamische Volumes mit Spiegelung:** Dynamische Volumes mit Spiegelung basieren auf der RAID-1-Architektur. Bei RAID 1 werden identische Daten auf zwei oder mehr Datenträger geschrieben, wodurch ein gespiegelter Satz entsteht. Eine Leseanforderung kann dann von einem beliebigen Datenträger behandelt werden, der die angeforderten Daten enthält.
+- **Dynamische Volumes mit Spiegelung**: Dynamische Volumes mit Spiegelung basieren auf der RAID-1-Architektur. Bei RAID 1 werden identische Daten auf zwei oder mehr Datenträger geschrieben, wodurch ein gespiegelter Satz entsteht. Eine Leseanforderung kann dann von einem beliebigen Datenträger behandelt werden, der die angeforderten Daten enthält.
 
-- **Freigegebene Clustervolumes:** Bei freigegebenen Clustervolumes (CSV) können mehrere Knoten in einem Failovercluster gleichzeitig auf demselben Datenträger lesen oder schreiben. Failover von einem Knoten auf einen anderen Knoten können sehr schnell durchgeführt werden, ohne dass eine Änderung am Besitz für das Laufwerk erforderlich ist oder dass ein Volume bereitgestellt, seine Bereitstellung aufgehoben oder ein Volume entfernt werden muss.
+- **Freigegebene Clustervolumes**: Bei freigegebenen Clustervolumes (CSV) können mehrere Knoten in einem Failovercluster gleichzeitig auf demselben Datenträger lesen oder schreiben. Failover von einem Knoten auf einen anderen Knoten können sehr schnell durchgeführt werden, ohne dass eine Änderung am Besitz für das Laufwerk erforderlich ist oder dass ein Volume bereitgestellt, seine Bereitstellung aufgehoben oder ein Volume entfernt werden muss.
 
 >[AZURE.IMPORTANT]Mischen Sie keine freigegebene Clustervolumes mit nicht freigegebenen Clustervolumes in derselben Momentaufnahme. Das Vermischen von freigegebenen Clustervolumes mit nicht freigegebenen Clustervolumes in einer Momentaufnahme wird nicht unterstützt.
  
@@ -71,7 +71,9 @@ Mit dem StorSimple Snapshot Manager können Sie Volumes erstellen und dann in Vo
 
 Der StorSimple Snapshot Manager verwendet Volumegruppen zum Erstellen von anwendungskonsistenten Sicherungskopien. Anwendungskonsistenz ist gegeben, wenn alle zugehörigen Dateien und Datenbanken synchron sind und den tatsächlichen Zustand einer Anwendung zu einem bestimmten Zeitpunkt darstellen. Volumegruppen (auch als *Konsistenzgruppen* bezeichnet) bilden die Basis von Sicherungs- oder Wiederherstellungsaufträgen.
 
->[AZURE.NOTE]Volumegruppen sind nicht dasselbe wie Volumecontainer. Ein Volumecontainer enthält ein oder mehrere Volumes, die gemeinsame Einstellungen für das Cloudspeicherkonto und andere Attribute wie die Verschlüsselung und die Bandbreitenauslastung haben. Ein Volumecontainer kann bis zu 256 nach Bedarf bereitgestellte StorSimple-Volumes enthalten. Weitere Informationen zu Volumecontainern finden Sie unter [Verwalten von Volumecontainern](storsimple-manage-volume-containers.md). Volumegruppen sind Sammlungen von Volumes, die Sie für Sicherungsvorgänge konfigurieren. Wenn Sie zwei Volumes, die zu verschiedenen Volumecontainern gehören, in einer einzelnen Volumegruppe platzieren und dann eine Sicherungsrichtlinie für diese Volumegruppe erstellen, wird jedes Volume mithilfe des zugehörigen Speicherkontos im entsprechenden Volumecontainer gesichert.
+Volumegruppen sind nicht dasselbe wie Volumecontainer. Ein Volumecontainer enthält ein oder mehrere Volumes, die gemeinsame Einstellungen für das Cloudspeicherkonto und andere Attribute wie die Verschlüsselung und die Bandbreitenauslastung haben. Ein Volumecontainer kann bis zu 256 nach Bedarf bereitgestellte StorSimple-Volumes enthalten. Weitere Informationen zu Volumecontainern finden Sie unter [Verwalten von Volumecontainern](storsimple-manage-volume-containers.md). Volumegruppen sind Sammlungen von Volumes, die Sie für Sicherungsvorgänge konfigurieren. Wenn Sie zwei Volumes, die zu verschiedenen Volumecontainern gehören, in einer einzelnen Volumegruppe platzieren und dann eine Sicherungsrichtlinie für diese Volumegruppe erstellen, wird jedes Volume mithilfe des zugehörigen Speicherkontos im entsprechenden Volumecontainer gesichert.
+
+>[AZURE.NOTE]Alle Volumes in einer Volumegruppe müssen von einem Cloud-Service Provider stammen.
 
 ## Integration in den Windows-Volumeschattenkopie-Dienst
 
@@ -109,7 +111,7 @@ Mit StorSimple Snapshot Manager können Sie Daten sichern und lokal und in der C
 
 Sie können mit StorSimple Snapshot Manager die folgenden Typen von Sicherungen erstellen:
 
-- **Lokale Momentaufnahmen:** Lokale Momentaufnahmen sind Zeitpunktkopien der Volumedaten, die auf dem StorSimple-Gerät gespeichert sind. Diese Art der Sicherung kann i. d. R. schnell erstellt und wiederhergestellt werden. Sie können eine lokale Momentaufnahme wie eine lokale Sicherungskopie verwenden.
+- **Lokale Momentaufnahmen**: Lokale Momentaufnahmen sind Zeitpunktkopien der Volumedaten, die auf dem StorSimple-Gerät gespeichert sind. Diese Art der Sicherung kann i. d. R. schnell erstellt und wiederhergestellt werden. Sie können eine lokale Momentaufnahme wie eine lokale Sicherungskopie verwenden.
 
 - **Cloudmomentaufnahmen:** Cloudmomentaufnahmen sind Zeitpunktkopien der Volumedaten, die in der Cloud gespeichert werden. Eine Cloudmomentaufnahme entspricht einer Momentaufnahme, die auf einem anderen, externen Speichersystem repliziert wird. Cloudmomentaufnahmen sind besonders nützlich für Notfallwiederherstellungszenarios.
 
@@ -123,15 +125,15 @@ Sie können mit dem StorSimple Snapshot Manager bei Bedarf jederzeit Sicherungsr
 
 Sie konfigurieren die folgenden Informationen für jede von Ihnen erstellte Sicherungsrichtlinie:
 
-- **Name:** der eindeutige Name der ausgewählten Sicherungsrichtlinie.
+- **Name**: der eindeutige Name der ausgewählten Sicherungsrichtlinie.
 
-- **Typ:** der Typ der Sicherungsrichtlinie – lokale Momentaufnahme oder Cloudmomentaufnahme.
+- **Typ**: der Typ der Sicherungsrichtlinie – lokale Momentaufnahme oder Cloudmomentaufnahme.
 
-- **Volumegruppe:** die Volumegruppe, der die ausgewählte Sicherungsrichtlinie zugewiesen wird.
+- **Volumegruppe**: die Volumegruppe, der die ausgewählte Sicherungsrichtlinie zugewiesen wird.
 
-- **Aufbewahrung:** die Anzahl von beizubehaltenden Sicherungskopien. Wenn Sie die Option **Alle** aktivieren, werden alle Sicherungskopien aufbewahrt, bis die maximale Anzahl von Sicherungskopien pro Volume erreicht ist. Zu diesem Zeitpunkt schlägt die Richtlinie fehl und generiert eine Fehlermeldung. Sie können auch eine Anzahl von Sicherungen angeben, die beibehalten werden sollen (zwischen 1 und 64).
+- **Aufbewahrung**: die Anzahl von beizubehaltenden Sicherungskopien. Wenn Sie die Option **Alle** aktivieren, werden alle Sicherungskopien aufbewahrt, bis die maximale Anzahl von Sicherungskopien pro Volume erreicht ist. Zu diesem Zeitpunkt schlägt die Richtlinie fehl und generiert eine Fehlermeldung. Sie können auch eine Anzahl von Sicherungen angeben, die beibehalten werden sollen (zwischen 1 und 64).
 
-- **Datum:** das Datum, an dem die Sicherungsrichtlinie erstellt wurde.
+- **Datum**: das Datum, an dem die Sicherungsrichtlinie erstellt wurde.
 
 Informationen zum Konfigurieren von Sicherungsrichtlinien finden Sie unter [Erstellen und Verwalten von Sicherungsrichtlinien mit dem StorSimple Snapshot Manager](storsimple-snapshot-manager-manage-backup-policies.md).
 
@@ -148,4 +150,4 @@ Informationen zum Überwachen von Sicherungsaufträgen finden Sie unter [Anzeige
 
 - [StorSimple Snapshot Manager](https://www.microsoft.com/download/details.aspx?id=44220) herunterladen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

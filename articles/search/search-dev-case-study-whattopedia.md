@@ -421,4 +421,4 @@ Der folgende Code erstellt den Indexer, der im Abschnitt über die Erstellung de
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

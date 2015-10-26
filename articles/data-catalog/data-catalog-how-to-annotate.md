@@ -57,4 +57,4 @@ Genau wie die Metadaten, die bei der Registrierung aus der Datenquelle extrahier
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die darin enthaltenen Daten leichter auffindbar sind. Sobald eine Datenquelle registriert wurde, können Benutzer im **Azure Data Catalog**-Portal Anmerkungen hinzufügen, um das Verständnis der Daten zu erleichtern und die Ermittlung zu vereinfachen.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

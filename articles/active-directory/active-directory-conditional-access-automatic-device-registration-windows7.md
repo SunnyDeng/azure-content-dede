@@ -52,4 +52,4 @@ Sie können die Registrierung Ihrer in eine Domäne eingebundenen Windows 7-Ger�
 
 Das Windows-Ereignisprotokoll auf dem Windows 7-Computer zeigt Meldungen im Zusammenhang mit der Arbeitsbereichverknüpfung an. Sie finden dort sowohl Meldungen zu erfolgreichen als auch fehlgeschlagenen Arbeitsbereichverknüpfungs-Ereignissen. Das Ereignisprotokoll finden Sie in der Ereignisanzeige unter "Anwendungs- und Dienstprotokolle > Microsoft -Arbeitsbereichverknüpfung".
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

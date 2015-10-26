@@ -6,7 +6,6 @@
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-
 <tags 
    ms.service="load-balancer"
    ms.devlang="na"
@@ -15,7 +14,6 @@
    ms.workload="infrastructure-services"
    ms.date="08/02/2015"
    ms.author="joaoma" />
-
 
 
 # Load Balancer-Verteilungsmodus (Quell-IP-Affinität)
@@ -85,17 +83,14 @@ Sie können das Azure SDK für .NET 2.5 (wird im November veröffentlicht) nutz
 	<WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
   	<Endpoints>
     <InputEndpoint name="input-endpoint-name" protocol="[http|https|tcp|udp]" localPort="local-port-number" port="port-number" certificate="certificate-name" loadBalancerProbe="load-balancer-probe-name" loadBalancerDistribution="sourceIP" />
-
   	</Endpoints>
 	</WorkerRole>
 	<NetworkConfiguration>
   	<VirtualNetworkSite name="VNet"/>
-
   	<AddressAssignments>
     <InstanceAddress roleName="VMRolePersisted">
       <PublicIPs>
         <PublicIP name="public-ip-name" idleTimeoutInMinutes="timeout-in-minutes"/>
-
       </PublicIPs>
     </InstanceAddress>
   	</AddressAssignments>
@@ -154,4 +149,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

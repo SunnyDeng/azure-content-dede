@@ -12,7 +12,7 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="article" 
 	ms.date="09/02/2015"
 	ms.author="stbaro"/>
 
@@ -106,4 +106,4 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

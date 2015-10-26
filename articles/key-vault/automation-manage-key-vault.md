@@ -45,4 +45,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz 
 * Weitere Informationen erhalten Sie im Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation.
 * Weitere Informationen finden Sie in den [PowerShell-Skripts des Azure-Schlüsseltresors](https://gallery.technet.microsoft.com/scriptcenter/Azure-Key-Vault-Powershell-1349b091).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

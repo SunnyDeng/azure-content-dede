@@ -167,4 +167,4 @@ Sie können "PartitionResolver" verketten, indem Sie Ihren eigenen "IPartitionRe
 * [DocumentDB-Blog mit Leistungstipps](http://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -10,7 +10,7 @@ Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits ü
 -   Ein gültiges Azure-Abonnement
 -   Ein ThousandEyes-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die AAD-Benutzer, denen Sie den Zugriff auf ThousandEyes zugewiesen haben, mittels einmaliger Anmeldung auf der ThousandEyes-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe „Einführung in den AAD-Zugriffsbereich“\).
+Nach Abschluss dieses Tutorials können sich die AAD-Benutzer, denen Sie den Zugriff auf ThousandEyes zugewiesen haben, mittels einmaliger Anmeldung auf der ThousandEyes-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe „Einführung in den AAD-Zugriffsbereich“).
 
 1.  Aktivieren der Anwendungsintegration für ThousandEyes
 2.  [Konfigurieren des einmaligen Anmeldens](https://msdn.microsoft.com/library/eae8a61c-8e48-4f15-974d-867adbaf40ca#configuresso)
@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-thousandeyes-tutorial/IC790063.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ThousandEyes-Anmelde-URL** die URL-Benutzer ein, welche die Benutzer zur Anmeldung bei ThousandEyes verwenden \(z. B. **https://app.thousandeyes.com/login/sso*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ThousandEyes-Anmelde-URL** die URL-Benutzer ein, welche die Benutzer zur Anmeldung bei ThousandEyes verwenden (z. B. **https://app.thousandeyes.com/login/sso*"), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-thousandeyes-tutorial/IC790064.png "App-URL konfigurieren")
 
@@ -151,4 +151,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

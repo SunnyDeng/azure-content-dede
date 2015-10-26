@@ -21,7 +21,8 @@
 
 Dieser Artikel führt Sie durch die Bereitstellung eines [Deis](http://deis.io/)-Clusters in Azure. Er umfasst alle Schritte von der Erstellung der erforderlichen Zertifikate bis zur Bereitstellung und Skalierung der Beispielanwendung **Go** im neu bereitgestellten Cluster.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Das folgende Diagramm zeigt die Architektur des bereitgestellten Systems. Der Systemadministrator verwaltet den Cluster mit Deis-Tools wie **deis** und **deisctl**. Die Verbindungen werden über einen Azure-Load Balancer hergestellt, der die Verbindungen auf einen der Mitgliedsknoten im Cluster weiterleitet. Der Clientzugriff auf bereitgestellte Anwendungen erfolgt ebenfalls über den Load Balancer. In diesem Fall leitet der Load Balancer den Datenverkehr an ein Router-Netz weiter, in dem der Datenverkehr zu entsprechenden im Cluster gehosteten Docker-Containern weitergeleitet wird.
 
@@ -257,4 +258,4 @@ In diesem Artikel wurden Sie durch alle Schritte der Bereitstellung eines neuen 
 [resource-group-overview]: ../resource-group-overview.md
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

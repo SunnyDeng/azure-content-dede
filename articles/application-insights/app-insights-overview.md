@@ -12,16 +12,18 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="10/13/2015" 
 	ms.author="awills"/>
  
 # Was ist Application Insights?
 
-Application Insights ist ein erweiterbarer Analysedienst, der Ihnen dabei hilft, die Leistung und die Verwendung der Liveanwendung zu verstehen. Der Dienst ist für Entwickler konzipiert und dient dazu, die Leistung und Benutzerfreundlichkeit Ihrer App kontinuierlich zu verbessern.
+Application Insights ist ein erweiterbarer Analysedienst, der Live-Anwendungen überwacht. Sie können hiermit Leistungsprobleme erkennen und diagnostizieren und nachvollziehen, wie die Benutzer Ihre App nutzen. Der Dienst ist für Entwickler konzipiert und dient dazu, die Leistung und Benutzerfreundlichkeit Ihrer App kontinuierlich zu verbessern.
+
+![Erstellen Sie ein Diagramm mit der Statistik zur Benutzeraktivität, oder führen Sie eine Detailsuche bei bestimmten Ereignissen aus.](./media/app-insights-overview/00-sample.png)
 
 Er funktioniert mit Web-Apps und eigenständigen Apps auf einer Vielzahl von Plattformen: .NET oder J2EE, lokal gehostet oder in der Cloud, Geräteapps für Windows, iOS, Android, OS X und andere Plattformen.
 
-Er ist für das Entwicklungsteam vorgesehen. Damit können Sie folgende Aktionen ausführen:
+Application Insights ist für das Entwicklungsteam konzipiert. Damit können Sie folgende Aktionen ausführen:
 
 * [Analysieren von Verwendungsmustern][knowUsers], um Ihre Benutzer besser zu verstehen und Ihre App kontinuierlich zu verbessern. 
  * Zähler für Seitenansichten, neue und wiederkehrende Benutzer, Geolocation, Plattformen und andere zentrale Nutzungsanalysen.
@@ -37,7 +39,7 @@ Das SDK für jede Plattform umfasst eine Reihe von Modulen, die die Anwendung oh
 
 Von der Anwendung gesammelte Telemetriedaten werden im Azure-Portal gespeichert und analysiert, wo intuitive Ansichten und leistungsstarke Tools für eine schnelle Diagnose und Analyse zur Verfügung stehen.
 
-![Erstellen Sie ein Diagramm mit der Statistik zur Benutzeraktivität, oder führen Sie eine Detailsuche bei bestimmten Ereignissen aus.](./media/app-insights-overview/00-sample.png)
+
 
 Benötigen Sie noch tiefer gehende Analysen? [Exportieren Sie](app-insights-export-telemetry.md) Ihre Daten [nach SQL](app-insights-code-sample-export-telemetry-sql-database.md), [Power BI](app-insights-export-power-bi.md) oder eigenen Tools.
 
@@ -115,7 +117,7 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
 * Fragen und Probleme:
  * [Problembehandlung][qna]
- * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-DE/home?forum=ApplicationInsights)
+ * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
  * [StackOverflow](http://stackoverflow.com/questions/tagged/ms-application-insights)
 * Fehler:
  * [Kontakt](https://connect.microsoft.com/VisualStudio/Feedback/LoadSubmitFeedbackForm?FormID=6076)
@@ -135,13 +137,13 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
 <!--Link references-->
 
-[android]: app-insights-android.md
+[android]: https://github.com/Microsoft/ApplicationInsights-Android
 [azure]: ../insights-perf-analytics.md
 [client]: app-insights-javascript.md
 [desktop]: app-insights-windows-desktop.md
 [detect]: app-insights-detect-triage-diagnose.md
 [greenbrown]: app-insights-start-monitoring-app-health-usage.md
-[ios]: app-insights-ios.md
+[ios]: https://github.com/Microsoft/ApplicationInsights-iOS
 [java]: app-insights-java-get-started.md
 [knowUsers]: app-insights-overview-usage.md
 [platforms]: app-insights-platforms.md
@@ -152,4 +154,4 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -201,7 +201,7 @@ Führen Sie die folgenden Schritte aus, um eine Kopie der StorSimple Snapshot Ma
 
         ![Stop the StorSimple Manager service](./media/storsimple-snapshot-manager-deployment/HCS_SSM_stop_service.png)
 
-2. Navigieren Sie zu „C:\ProgramData\Microsoft\StorSimple\BACatalog“.
+2. Navigieren Sie zu „C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog“.
 
     >[AZURE.NOTE]„ProgramData“ ist ein versteckter Ordner.
 
@@ -255,4 +255,4 @@ Um den StorSimple Snapshot Manager erneut zu installieren, führen Sie die Schri
 
 - Weitere Informationen zum Verwenden von StorSimple Snapshot Manager finden Sie unter [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

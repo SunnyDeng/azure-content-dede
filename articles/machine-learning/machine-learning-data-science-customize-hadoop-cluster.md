@@ -1,24 +1,28 @@
 <properties 
-	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure"
+	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure" 
 	description="Beliebte Python-Module, die in benutzerdefinierten Azure HDInsight Hadoop-Clustern zur Verfügung gestellt werden."
-	services="machine-learning"
-	documentationCenter=""
-	authors="hangzh-msft"
-	manager="paulettm"
-	editor="cgronlun"/>
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="hangzh-msft" 
+	manager="paulettm" 
+	editor="cgronlun"  />
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="hangzh;bradsev"/>
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/13/2015" 
+	ms.author="hangzh;bradsev" />
 
 # Anpassen von Azure Hdinsight Hadoop-Clustern für erweiterte Analyseprozesse und -technologien
 
-In diesem Artikel wird beschrieben, wie HDInsight Hadoop-Cluster durch die Installation von 64-Bit-Anaconda (Python 2.7) auf jedem Knoten angepasst werden, wenn sie im HDInsight-Dienst bereitgestellt werden. Diese Anpassung bereitet das Cluster für die Verwendung mit erweiterten Analyseprozessen und -technologien (ADAPT) vor, die für Azure Machine Learning genutzt werden. Es wird auch gezeigt, wie Sie auf den Hauptknoten zugreifen, um benutzerdefinierte Aufträge an den Cluster zu übermitteln.
+Dieses Menü enthält Links zu Themen, in denen das Einrichten der verschiedenen Data Science-Umgebungen, die vom Cortana-Analyseprozess (CAP) verwendet werden, beschrieben wird.
+
+[AZURE.INCLUDE [data-science-environment-setup](../../includes/cap-setup-environments.md)]
+
+In diesem Artikel wird beschrieben, wie HDInsight Hadoop-Cluster durch die Installation von 64-Bit-Anaconda (Python 2.7) auf jedem Knoten angepasst werden, wenn sie im HDInsight-Dienst bereitgestellt werden. Diese Anpassung bereitet den Cluster für die Verwendung mit dem Cortana-Analyseprozess vor. Es wird auch gezeigt, wie Sie auf den Hauptknoten zugreifen, um benutzerdefinierte Aufträge an den Cluster zu übermitteln.
 
 Diese Anpassung macht viele beliebte Python-Module verfügbar, die Bestandteil von Anaconda sind. Dies geschieht sehr benutzerfreundlich in UDFs (User Defined Function, benutzerdefinierte Funktion), die entwickelt wurden, um Hive-Datensätze im Cluster zu verarbeiten. Eine Anleitung für in diesem Szenario verwendeten Prozeduren finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-hive-queries.md).
 
@@ -51,7 +55,7 @@ Klicken Sie auf der letzten Konfigurationsseite zu **Script Actions** auf die Sc
  
 * **NAME** - eine beliebige Zeichenfolge als Name für diese Skriptaktion. 
 * **NODE TYPE** - wählen Sie **All nodes** aus. 
-* **SKRIPT-URI** - **http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
+* **SCRIPT URI** - **http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
 	* *publicscripts* ist ein öffentlicher Container im Speicherkonto. 
 	* *getgoing* wird für die Freigabe der PowerShell-Skriptdateien verwendet, um den Benutzern die Arbeit in Azure zu vereinfachen. 
 * **PARAMETERS** - (leer lassen)
@@ -98,4 +102,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

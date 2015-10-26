@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="10/13/2015"
 	ms.author="brohrer;garye" />
 
 
@@ -42,6 +42,8 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 * Eine eingehendere Erläuterung der verschiedenen Typen von Algorithmen für maschinelles Lernen, ihrer Verwendung und der Verwendung dieses Cheat Sheets für die Auswahl des richtigen Algorithmus finden Sie unter [Auswählen von Algorithmen für Microsoft Azure Machine Learning](machine-learning-algorithm-choice.md).
 * Eine in Kategorien unterteilte Liste aller in Machine Learning verfügbaren Algorithmen für maschinelles Lernen finden Sie in der Hilfe zu den Algorithmen und Modulen in Machine Learning unter [Modell initialisieren][initialize-model].
 * Eine vollständige Liste aller in Machine Learning Studio verfügbaren Algorithmen und Module finden Sie in der Hilfe zu den Algorithmen und Modulen in Machine Learning Studio unter [Modulliste von A bis Z für Machine Learning Studio][a-z-list].
+* Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+
 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
@@ -85,4 +87,4 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 [k-means-clustering]: https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/
 [one-vs-all-multiclass]: https://msdn.microsoft.com/library/azure/7191efae-b4b1-4d03-a6f8-7205f87be664/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -179,4 +179,4 @@ Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Servi
 [.NET-API für Service Bus]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.aspx
 [NamespaceManager]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

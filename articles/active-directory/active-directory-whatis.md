@@ -44,7 +44,7 @@ Wenn Sie Office 365-, Azure- oder Dynamics CRM Online-Kunde sind, haben Sie mö
 
 ## Wie zuverlässig ist Azure AD?
 
-Das mehrinstanzenfähige, geografisch verteilte Azure AD-Design mit hoher Verfügbarkeit bedeutet, die Sie sich für Ihre wichtigsten Geschäftsanforderungen auf Azure AD verlassen können. Azure AD wird in 28 Datencentern auf der ganzen Welt mit automatischen Failover ausgeführt – so können Sie sicher sein, dass Azure AD hochgradig zuverlässig funktioniert. Selbst wenn einmal ein Datencenter ausfällt, befinden sich Kopien Ihrer Verzeichnisdaten in mindestens zwei weiteren regional verteilten Datencentern und stehen für den sofortigen Zugriff zur Verfügung.
+Dank der mehrinstanzenfähigen, geografisch verteilten Azure AD-Struktur mit hoher Verfügbarkeit können Sie sich bei Ihren wichtigsten Geschäftsanforderungen auf Azure AD verlassen. Azure AD wird in 28 Datencentern auf der ganzen Welt mit automatischen Failover ausgeführt – so können Sie sicher sein, dass Azure AD hochgradig zuverlässig funktioniert. Selbst wenn einmal ein Datencenter ausfällt, befinden sich Kopien Ihrer Verzeichnisdaten in mindestens zwei weiteren regional verteilten Datencentern und stehen für den sofortigen Zugriff zur Verfügung.
 
 Weitere Einzelheiten finden Sie unter [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/).
 
@@ -55,11 +55,11 @@ Weitere Einzelheiten finden Sie unter [Vereinbarungen zum Servicelevel](https://
 Ihr Unternehmen kann Azure AD verwenden, um in vielerlei Hinsicht die Mitarbeiterproduktivität zu verbessern, IT-Prozesse zu optimieren, die Sicherheit zu erhöhen und die Kosten zu senken:
 
 -	Führen Sie Clouddienste in kürzester Zeit ein, um Mitarbeitern und Partnern den Zugriff über die einmalige Anmeldung zu vereinfachen, und profitieren Sie von den vollständig automatisierten Azure AD-Funktionen für die SaaS-App-Zugriffsverwaltung und die Bereitstellung von Diensten.
--	Bieten Sie Mitarbeitern Zugriff auf erstklassige Cloudanwendungen und -dienste sowie Self-Services-Funktionen – von jedem Ort der Welt und mit allen Geräten, die Ihre Mitarbeiter gerne nutzen.
+-	Bieten Sie Mitarbeitern Zugriff auf erstklassige Cloudanwendungen und -dienste sowie Self-Service-Funktionen – von jedem Ort der Welt und mit allen Geräten, die Ihre Mitarbeiter gerne nutzen.
 -	Verwalten Sie den Zugriff Ihrer Mitarbeiter und Lieferanten auf Ihre Unternehmenskonten für soziale Medien.
 -	Erhöhen Sie die Sicherheit von Anwendungen mit der mehrstufigen Authentifizierung und dem bedingten Zugriff von Azure AD.
 -	Implementieren Sie eine konsistente Self-Service-Verwaltung des Anwendungszugriffs, sodass Geschäftsinhaber schnell reagieren und gleichzeitig IT-Aufwand und -Kosten senken können.
--	Überwachen Sie die Anwendungsnutzung, und schützen Sie Ihr Unternehmen mit Sicherheits-, Berichterstellungs- und Überwachungsfunktionen vor Bedrohungen.
+-	Überwachen Sie die Anwendungsnutzung, und schützen Sie Ihr Unternehmen mit Funktionen für Sicherheitsberichte und -überwachung vor Bedrohungen.
 -	Sichern Sie den mobilen bzw. Remotezugriff auf lokale Anwendungen.
 
 
@@ -104,4 +104,4 @@ Wir haben viele hervorragende Ressourcen online gestellt, in denen Sie alles Wis
 
 - [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

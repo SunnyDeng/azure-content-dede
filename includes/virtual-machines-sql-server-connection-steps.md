@@ -73,7 +73,7 @@ Für den Zugriff auf SQL Server über das Internet benötigt der virtuelle Compu
 
 ### Konfigurieren von SQL Server für das Lauschen des TCP-Protokolls
 
-1. Geben Sie während der Verbindung mit dem virtuellen Computer auf der Startseite SQL Server-Konfigurations-Manager ein, und drücken Sie die EINGABETASTE.
+1. Geben Sie während der Verbindung mit dem virtuellen Computer auf der Startseite **SQL Server-Konfigurations-Manager ** ein, und drücken Sie die EINGABETASTE.
 	
 	![SSCM öffnen](./media/virtual-machines-sql-server-connection-steps/9Click-SSCM.png)
 
@@ -183,4 +183,4 @@ Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verb
 
 	![Verbinden mit SSMS](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

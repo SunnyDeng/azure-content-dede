@@ -149,7 +149,7 @@ Hadoop MapReduce ist ein Softwareframework zum Schreiben von Anwendungen für di
 
 Apache YARN ist die nächste Generation von MapReduce (MapReduce 2.0 oder MRv2) und teilt die beiden Hauptaufgaben von JobTracker - Ressourcenverwaltung und Planung/Überwachung von Aufgaben - in separate Entitäten auf.
 
-Weitere Informationen zu MapReduce finden Sie unter <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a> im Hadoop-Wiki. Weitere Informationen zu YARN finden Sie unter <a target="_blank" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop NextGen MapReduce (YARN)</a>.
+Weitere Informationen zu MapReduce finden Sie unter <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a> im Hadoop-Wiki. Weitere Informationen zu YARN finden Sie unter <a target="_blank" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop NextGen MapReduce (YARN)</a>￼.
 
 ### <a name="oozie"></a>Oozie
 <a target="_blank" href="http://oozie.apache.org/">Apache Oozie</a> ist ein Koordinationssystem für Workflows zur Verwaltung von Hadoop-Aufträgen. Es ist in den Hadoop-Stack integriert und unterstützt Hadoop-Jobs für MapReduce, Pig, Hive und Sqoop. Es kann auch dazu verwendet werden, bestimmte Jobs für ein System zu planen, beispielsweise Java-Programme oder Shellskripts. Siehe [Verwenden des zeitbasierten Oozie-Koordinators mit Hadoop](hdinsight-use-oozie-coordinator-time.md).
@@ -274,4 +274,4 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [zookeeper]: http://zookeeper.apache.org/
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

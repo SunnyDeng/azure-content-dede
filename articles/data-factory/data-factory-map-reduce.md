@@ -102,4 +102,4 @@ Sie können ein Beispiel zur Verwendung der HDInsight-Aktivität mit MapReduce-T
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

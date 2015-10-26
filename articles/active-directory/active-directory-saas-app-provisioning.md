@@ -100,7 +100,7 @@ Klicken Sie auf die App, um ein Lernprogramm zum Konfigurieren der automatisiert
 - [Salesforce](http://go.microsoft.com/fwlink/?LinkId=286017)
 - [Salesforce Sandbox](http://go.microsoft.com/fwlink/?LinkId=327869)
 - [ServiceNow](http://go.microsoft.com/fwlink/?LinkId=309587)
-- [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx) (eingehende Bereitstellung)
+- [Workday](http://go.microsoft.com/fwlink/?LinkId=690250) (eingehende Bereitstellung)
 
 Damit eine Anwendung die automatisierte Benutzerbereitstellung unterstützt, müssen zunächst die erforderlichen Endpunkte bereitgestellt werden, die es externen Programmen erlauben, die Erstellung, Wartung und Entfernung von Benutzern zu automatisieren. Daher sind nicht alle SaaS-Apps mit diesem Feature kompatibel. Für Apps, die diese Unterstützung bieten, kann das Azure AD-Entwicklerteam anschließend einen Bereitstellungsconnector erstellen. Dieser Tätigkeit wird in Abhängigkeit von den Anforderungen bestehender und potenzieller Kunden Priorität eingeräumt.
 
@@ -108,4 +108,4 @@ Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungs
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

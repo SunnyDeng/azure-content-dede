@@ -246,4 +246,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 [29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
 [30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

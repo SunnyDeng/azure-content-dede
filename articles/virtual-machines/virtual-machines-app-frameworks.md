@@ -21,7 +21,8 @@
 
 Verwenden Sie diese Methoden, um Ideen rasch umzusetzen.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 | Vorlage | Beschreibung | Anzeigen der Vorlage | Direkte Bereitstellung |
 |:---|:---|:---:|:---:|
@@ -52,4 +53,4 @@ Auf [GitHub](https://github.com/Azure/azure-quickstart-templates) finden Sie all
 
 Hier finden Sie weitere Informationen zum [Azure-Ressourcen-Manager](../resource-group-template-deploy.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

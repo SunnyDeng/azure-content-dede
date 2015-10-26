@@ -19,7 +19,8 @@
 
 # Erstellen eines standortübergreifenden virtuellen Netzwerks mithilfe von Konfigurationstabellen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 In diesem Thema erfahren Sie Schritt für Schritt, wie ein standortübergreifendes virtuelles Netzwerk mit den Einstellungen erstellt wird, die zuvor in den folgenden Konfigurationstabellen festgelegt wurden:
 
@@ -28,7 +29,7 @@ In diesem Thema erfahren Sie Schritt für Schritt, wie ein standortübergreifend
 - Tabelle D: Lokale DNS-Server
 - Tabelle L: Adresspräfixe für das lokale Netzwerk
 
-Diese Tabellen werden in der Regel in einem Thema ausgefüllt, in dem die Konfiguration einer IT-Arbeitsauslastung in Azure beschrieben wird, die auch ein standortübergreifendes virtuelles Netzwerk umfasst. Ein Beispiel finden Sie unter [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
+Diese Tabellen werden in der Regel in einem Thema ausgefüllt, in dem die Konfiguration eines IT-Workloads in Azure beschrieben wird, die auch ein standortübergreifendes virtuelles Netzwerk umfasst. Ein Beispiel finden Sie unter [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
 In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des virtuellen Netzwerks führen, wird auf die Informationen in diesen Tabellen verwiesen. Wenn Sie die Einstellungen in diesen Tabellen noch nicht in einem anderen Thema angegeben haben, aber dennoch ein standortübergreifendes virtuelles Netzwerk konfigurieren möchten, lesen Sie das Thema [Configure a Cross-Premises Site-to-Site connection to an Azure Virtual Network](../vpn-gateway/vpn-gateway-site-to-site-create.md) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung zu einem virtuellen Azure-Netzwerk).
 
@@ -69,4 +70,4 @@ In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des 
 
 [Configure a cross-premises site-to-site connection to an Azure virtual network](../vpn-gateway/vpn-gateway-site-to-site-create.md) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung mit einem virtuellen Azure-Netzwerk).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

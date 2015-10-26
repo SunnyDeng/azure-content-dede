@@ -54,7 +54,7 @@ Die folgende Dienstdefinitionsdatei zeigt zwei lokale Speicherressourcen, die f�
       </WebRole>
     </ServiceDefinition>
 
-Unter [Azure-Dienstdefinitionsschema \(CSDEF-Datei\)](https://msdn.microsoft.com/library/azure/ee758711.aspx) finden Sie weitere Informationen zur Dienstdefinitionsdatei.
+Unter [Azure-Dienstdefinitionsschema (CSDEF-Datei)](https://msdn.microsoft.com/library/azure/ee758711.aspx) finden Sie weitere Informationen zur Dienstdefinitionsdatei.
 
 > [AZURE.NOTE]Bei Verwendung der Azure-Tools für Microsoft Visual Studio können Sie eine lokale Speicherressource auf den Seiten mit den **Eigenschaften** der Rolle definieren. Weitere Informationen finden Sie unter [Konfigurieren der Azure-Anwendung mit Visual Studio](https://msdn.microsoft.com/library/ee405486.aspx).
 
@@ -104,4 +104,4 @@ In einer Rolleninstanz ausgeführter Code kann auf eine lokale Speicherressource
 
 - [Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/azure/hh124108.aspx)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

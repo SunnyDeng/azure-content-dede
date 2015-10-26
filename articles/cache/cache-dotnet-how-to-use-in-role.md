@@ -411,4 +411,4 @@ Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben
 [Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

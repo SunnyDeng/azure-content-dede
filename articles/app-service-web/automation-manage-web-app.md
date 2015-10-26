@@ -43,4 +43,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation vertraut gemacht ha
 * Lernprogramm [Erste Schritte](../automation-intro.md) zu Azure Automation
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

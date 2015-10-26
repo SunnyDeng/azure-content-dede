@@ -37,4 +37,4 @@ Informationen zu Verwendungseinschränkungen und anderen Dienstbeschränkungen f
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

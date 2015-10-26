@@ -17,4 +17,4 @@ Die nachfolgenden Anweisungen und Screenshots gelten für das Testen eines Windo
 
     ![](./media/mobile-services-aad-rbac-test-app/success.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

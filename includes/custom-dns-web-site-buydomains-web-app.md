@@ -32,4 +32,4 @@ Wenn Sie eine Domäne benötigen, können Sie diese direkt im [Azure-Verwaltungs
 
 Zu diesem Zeitpunkt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und sehen, dass er Sie erfolgreich zu Ihrer Web-App bringt.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

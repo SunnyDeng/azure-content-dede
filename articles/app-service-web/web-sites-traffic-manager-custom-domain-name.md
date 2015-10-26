@@ -70,4 +70,4 @@ Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweis
  
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

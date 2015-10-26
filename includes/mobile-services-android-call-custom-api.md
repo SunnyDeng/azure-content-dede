@@ -112,4 +112,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

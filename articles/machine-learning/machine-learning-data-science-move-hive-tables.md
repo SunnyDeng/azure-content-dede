@@ -1,26 +1,31 @@
 <properties 
-	pageTitle="Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blobspeicher | Microsoft Azure"
-	description="Erstellen von Hive-Tabellen und Laden von Daten aus Blobs in Hive-Tabellen"
-	services="machine-learning,storage"
-	documentationCenter=""
-	authors="hangzh-msft"
-	manager="jacob.spoelstra"
-	editor="cgronlun"/>
+	pageTitle="Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blobspeicher | Microsoft Azure" 
+	description="Erstellen von Hive-Tabellen und Laden von Daten aus Blobs in Hive-Tabellen" 
+	services="machine-learning,storage" 
+	documentationCenter="" 
+	authors="hangzh-msft" 
+	manager="jacob.spoelstra" 
+	editor="cgronlun"  />
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/26/2015"
-	ms.author="hangzh;bradsev"/>
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/12/2015" 
+	ms.author="hangzh;bradsev" />
 
  
 #Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blob-Speicher
+
+Dieses **Menü** bietet Links zu Themen, in denen beschrieben wird, wie Daten in Zielumgebungen erfasst werden, in denen die Daten während des Cortana-Analyseprozesses (CAP) gespeichert und verarbeitet werden.
+
+[AZURE.INCLUDE [cap-ingest-data-selector](../../includes/cap-ingest-data-selector.md)]
+
  
 ## Einführung
-In diesem Dokument werden generische Hive-Abfragen beschrieben, die Hive-Tabellen erstellen und Daten aus dem Azure-Blob-Speicher laden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats (Optimized Row Columnar) zur Verbesserung der Abfrageleistung bereitgestellt.
+In **diesem Dokument** werden allgemeine Hive-Abfragen beschrieben, mit denen Hive-Tabellen erstellt und Daten aus dem Azure-Blobspeicher geladen werden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats (Optimized Row Columnar) zur Verbesserung der Abfrageleistung bereitgestellt.
 
 ## Voraussetzungen
 In diesem Artikel wird davon ausgegangen, dass Sie Folgendes abgeschlossen haben:
@@ -34,7 +39,7 @@ Wenn Sie einen virtuellen Azure-Computer mithilfe der Anweisungen in [Einrichten
 
 Es wird davon ausgegangen, dass die Daten für die Hive-Tabellen in einem **unkomprimierten** Tabellenformat vorliegen und dass die Daten in den Standardcontainer (oder einen zusätzlichen Container) des Speicherkontos hochgeladen wurden, das vom Hadoop-Cluster verwendet wird.
 
-Wenn Sie mit den _NYC Taxi Trip-Daten_ üben möchten, müssen Sie zuerst alle 24 <a href="http://www.andresmh.com/nyctaxitrips/" target="_blank">NYC Taxi Trip-Daten</a>-Dateien herunterladen (12 Fahrtendateien und 12 Preisdateien), alle Dateien als CSV-Dateien **entpacken** und diese dann in den Standardcontainer (oder einen geeigneten Container) des Azure-Speicherkontos hochladen, das für das Verfahren im Thema [Anpassen des Azure HDInsight Hadoop-Clusters für den erweiterten Analyseprozess](machine-learning-data-science-customize-hadoop-cluster.md) erstellt wurde. Den Prozess zum Hochladen der CSV-Dateien in den Standardcontainer für das Speicherkonto finden Sie auf dieser [Seite](machine-learning-data-science-process-hive-walkthrough/#upload).
+Wenn Sie mit den _NYC Taxi Trip-Daten_ üben möchten, müssen Sie zuerst alle 24 <a href="http://www.andresmh.com/nyctaxitrips/" target="_blank">NYC Taxi Trip-Daten</a>-Dateien herunterladen (12 Fahrtendateien und 12 Preisdateien), alle Dateien als CSV-Dateien **entzippen** und diese dann in den Standardcontainer (oder einen geeigneten Container) des Azure-Speicherkontos hochladen, das für das Verfahren im Thema [Anpassen des Azure HDInsight Hadoop-Clusters für den erweiterten Analyseprozess](machine-learning-data-science-customize-hadoop-cluster.md) erstellt wurde. Den Prozess zum Hochladen der CSV-Dateien in den Standardcontainer für das Speicherkonto finden Sie auf dieser [Seite](machine-learning-data-science-process-hive-walkthrough/#upload).
 
 ## Übermitteln von Hive-Abfragen
 Hive-Abfragen können an der Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermittelt werden. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Anweisungen dazu finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-process-hive-tables.md).
@@ -160,4 +165,4 @@ Sie können nicht direkt Daten im ORC-Speicherformat aus dem Blob in Hive-Tabell
 
 Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

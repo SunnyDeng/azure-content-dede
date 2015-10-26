@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory (Azure PowerShell)"
-	description="In diesem fortgeschrittenen Tutorial wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und Azure PowerShell implementiert."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory (Azure PowerShell)" 
+	description="In diesem fortgeschrittenen Tutorial wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und Azure PowerShell implementiert." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/25/2015" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory [PowerShell]
@@ -156,7 +156,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 ## <a name="MainStep2"></a> Schritt 2: Erstellen einer Azure Data Factory
 In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProcessingFactory**.
 
-1.	Klicken Sie nach der Anmeldung beim [Azure-Vorschauportal][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
+1.	Klicken Sie nach der Anmeldung beim Azure-Vorschauportal[][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
 
 	![Neu -> Data Factory][image-data-factory-new-datafactory-menu]
 	
@@ -204,7 +204,7 @@ In diesem Schritt werden die folgenden verknüpften Dienste erstellt: „Storage
 
 2. Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf der Befehlsleiste auf **Neuer Datenspeicher**.
 
-	![Verknüpfte Dienste – Speicher hinzufügen][image-data-factory-tutorial-linkedservices-add-datstore]
+	![Verknüpfte Dienste – Store hinzufügen][image-data-factory-tutorial-linkedservices-add-datstore]
 
 3. Geben Sie auf dem Blatt **Neuer Datenspeicher** unter **Name** die Zeichenfolge **StorageLinkedService** ein, klicken Sie auf **TYP (Einstellungen erforderlich)**, und wählen Sie **Azure-Speicherkonto** aus.
 
@@ -297,26 +297,26 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 ### So erstellen Sie die Tabellen
 
 1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\\ADFWalkthrough\\Tables\\**).
-2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **RawGameEventsTable.json** wie folgt zu erstellen.	
+2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryDataset**, um die Datensätze für **RawGameEventsTable.json** wie folgt zu erstellen.	
 
 
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\RawGameEventsTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\RawGameEventsTable.json
 
 	Wenn Sie einen anderen Namen für ResourceGroupName und DataFactoryName verwenden, müssen Sie im Cmdlet oben darauf verweisen. Geben Sie außerdem den vollständigen Dateipfad der Tabellen-JSON-Datei an, wenn die Datei vom Cmdlet nicht gefunden wird.
 
 3. Wiederholen Sie den vorherigen Schritt, um die folgenden Tabellen zu erstellen:
 		
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\PartitionedGameEventsTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\PartitionedGameEventsTable.json
 		
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\RefGeoCodeDictionaryTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\RefGeoCodeDictionaryTable.json
 			
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\RefMarketingCampaignTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\RefMarketingCampaignTable.json
 			
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\EnrichedGameEventsTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\EnrichedGameEventsTable.json
 			
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessSQLTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessSQLTable.json
 			
-		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessBlobTable.json
+		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessBlobTable.json
 
 
 
@@ -326,7 +326,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 
 	Sie können auch den folgenden Befehl in Azure PowerShell verwenden:
 			
-		Get-AzureDataFactoryTable –ResourceGroupName ADF –DataFactoryName $df
+		Get-AzureDataFactoryDataset –ResourceGroupName ADF –DataFactoryName $df
 
 	
 
@@ -558,4 +558,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

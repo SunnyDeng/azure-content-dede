@@ -1,20 +1,20 @@
 <properties
    pageTitle="Azure Data Catalog – Was ist der Data Catalog?"
-	description="Übersicht über Microsoft Azure Data Catalog, einschließlich seiner Funktionen und der Probleme, die er beheben soll. Azure Data Catalog enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können."
-	services="data-catalog"
-	documentationCenter=""
-	authors="steelanddata"
-	manager="NA"
-	editor=""
-	tags=""/>
+   description="Übersicht über Microsoft Azure Data Catalog, einschließlich seiner Funktionen und der Probleme, die er beheben soll. Azure Data Catalog enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können."
+   services="data-catalog"
+   documentationCenter=""
+   authors="steelanddata"
+   manager="NA"
+   editor=""
+   tags=""/>
 <tags
    ms.service="data-catalog"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-catalog"
-	ms.date="08/21/2015"
-	ms.author="maroche"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-catalog"
+   ms.date="08/21/2015"
+   ms.author="maroche"/>
 
 # Was ist Azure Data Catalog?
 
@@ -122,4 +122,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
 
 > [AZURE.NOTE]Für die Vorschauversion von Azure Data Catalog werden nur Microsoft Excel und der SQL Server Reporting Services-Berichts-Manager direkt unterstützt. Beide Optionen sind im Menü **Öffnen in** verfügbar.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

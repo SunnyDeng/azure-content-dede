@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Canvas erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Einen Canvas-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Canvas zugewiesen haben, mittels einmaligen Anmeldens auf der Canvas-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Canvas zugewiesen haben, mittels einmaligen Anmeldens auf der Canvas-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +51,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Can
     ![Zeichenbereich](./media/active-directory-saas-canvas-lms-tutorial/IC775986.png "Zeichenbereich")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Canvas zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Canvas müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Canvas zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Canvas müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -73,7 +73,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der Canvas-Unternehmenswebsite als Administrator an.
 
-6.  Wechseln Sie zu **Courses \> Managed Accounts \> Microsoft**.
+6.  Wechseln Sie zu **Courses > Managed Accounts > Microsoft**.
 
     ![Zeichenbereich](./media/active-directory-saas-canvas-lms-tutorial/IC775990.png "Zeichenbereich")
 
@@ -91,7 +91,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Canvas** den Wert für **Kennwort-URL ändern**, und fügen Sie ihn in das Textfeld **Change Password Link** ein.
     5.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Certificate Fingerprint** ein.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) \(in englischer Sprache\).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache).
 
     6.  Wählen Sie in der Liste **Login Attribute** die Option **NameID** aus.
     7.  Wählen Sie in der Liste **Identifier Format** die Option **emailAddress** aus.
@@ -108,7 +108,7 @@ Damit sich Azure AD-Benutzer bei Canvas anmelden können, müssen sie in Canvas
 
 1.  Melden Sie sich bei Ihrem **Canvas**-Mandanten an.
 
-2.  Wechseln Sie zu **Courses \> Managed Accounts \> Microsoft**.
+2.  Wechseln Sie zu **Courses > Managed Accounts > Microsoft**.
 
     ![Zeichenbereich](./media/active-directory-saas-canvas-lms-tutorial/IC775990.png "Zeichenbereich")
 
@@ -150,4 +150,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

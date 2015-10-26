@@ -104,4 +104,4 @@ Sie können auch das Gruppenrichtlinienverwaltungstool verwenden, um die USB-Uml
 7. Wählen Sie **Aktiviert** und anschließend unter **Zugriffsrechte für RemoteFX USB-Umleitung** die Option für Administratoren und Benutzer aus.
 8. Klicken Sie auf **OK**.  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

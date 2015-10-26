@@ -30,4 +30,4 @@
 Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die Änderungen an der Richtlinie zu speichern.
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

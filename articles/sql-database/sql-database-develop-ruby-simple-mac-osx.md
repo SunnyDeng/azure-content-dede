@@ -38,7 +38,7 @@ Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Macintosh-Computer mi
 
 **3) TinyTDS:** Führen Sie den folgenden Befehl über das Terminal aus. Dadurch wird TinyTDS auf Ihrem Computer installiert.
 
-    sudo ARCHFLAGS="-arch x86_64" gem install tiny_tds
+    gem install tiny_tds
 
 ## Erstellen einer Datenbank und Abrufen der Verbindungszeichenfolge
 
@@ -104,4 +104,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -35,7 +35,7 @@ Der mobile Dienst, der in diesem Lernprogramm erstellt wird, ist ein mobiler .NE
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> \(Update 3 oder eine höhere Version\). 
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> (Update 3 oder eine höhere Version). 
 
 ##Download des GetStartedWithData-Projekts
 
@@ -111,14 +111,14 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [Erste Schritte mit der Authentifizierung]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md
 
-[Erste Schritte mit der Synchronisierung von Offlinedaten]: mobile-services-windows-store-dotnet-get-started-offline-data.md
+[Get started with offline data sync]: mobile-services-windows-store-dotnet-get-started-offline-data.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[Website mit den Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkID=510826
+[Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
   
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

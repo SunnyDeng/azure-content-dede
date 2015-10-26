@@ -10,4 +10,4 @@ Die DTU für Einzeldatenbanken kann direkt in die eDTU für elastische Datenbank
 
 Ein einfaches Beispiel veranschaulicht dies. Nehmen Sie einen elastischen Basic-Datenbankpool mit 1.000 DTUs, in dem Sie 800 Datenbanken ablegen. Solange nur 200 der 800 Datenbanken zu einem beliebigen Zeitpunkt genutzt werden (5 DTU X 200 = 1.000), wird die maximale Kapazität des Pools nicht erreicht wird und die Leistung der Datenbank nicht beeinträchtigt. In diesem Beispiel wird aus Gründen der Übersichtlichkeit vereinfacht. In Wirklichkeit sind die Dinge ein wenig komplizierter. Das Portal erledigt die komplizierten Aufgaben für Sie und gibt eine Empfehlung basierend auf der bisherigen Verwendung der Datenbank ab. Weitere Informationen zu den Empfehlungen oder zum Selbermachen finden Sie unter [Überlegungen zum Preis und zur Leistung für einen elastischen Datenbankpool](../articles/sql-database/sql-database-elastic-pool-guidance.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -50,4 +50,4 @@ Wenn Sie den oben beschriebenen Schritt 2 nicht durchführen und versuchen, ein
 
 ![Support – Kein Abonnement](./media/active-directory-b2c-support/support-no-sub.png)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

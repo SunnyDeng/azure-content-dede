@@ -1,18 +1,18 @@
-<properties 
-	pageTitle="Aktivieren des Geräterückschreibens in Azure AD Connect" 
-	description="Dieses Dokument erläutert das Aktivieren des Geräterückschreibens mit Azure AD Connect" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="msStevenPo" 
+<properties
+	pageTitle="Aktivieren des Geräterückschreibens in Azure AD Connect | Microsoft Azure"
+	description="Dieses Dokument erläutert das Aktivieren des Geräterückschreibens mit Azure AD Connect"
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="StevenPo"
 	editor="curtand"/>
 
-<tags 
+<tags
 	ms.service="active-directory"  
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="09/15/2015"
 	ms.author="billmath"/>
 
@@ -62,7 +62,7 @@ Beschreibung:
 Parameter:
 
 
-- DomainName: Active Directory-Domäne, in der Geräteobjekte erstellt werden. Hinweis: Alle Geräte für eine bestimmte Active Directory-Gesamtstruktur werden in einer einzelnen Domäne erstellt. 
+- DomainName: Active Directory-Domäne, in der Geräteobjekte erstellt werden. Hinweis: Alle Geräte für eine bestimmte Active Directory-Gesamtstruktur werden in einer einzelnen Domäne erstellt.
 
 
 - AdConnectorAccount: Active Directory-Konto, das von Azure AD Connect zum Verwalten von Objekten im Verzeichnis verwendet wird.
@@ -83,17 +83,18 @@ Ausführliche Informationen zum Aktivieren dieses Szenarios finden Sie unter [Ei
 
 ## Überprüfen, ob die Geräte mit Active Directory synchronisiert werden
 Das Geräterückschreiben sollte jetzt ordnungsgemäß ausgeführt werden. Bedenken Sie, dass es bis zu drei Stunden dauern kann, bis Geräteobjekte in Active Directory zurückgeschrieben werden. Um sicherzustellen, dass Ihre Geräte ordnungsgemäß synchronisiert werden, gehen Sie nach Abschluss der Synchronisierungsregeln wie folgt vor:
- 
-1.	Starten Sie das Active Directory-Verwaltungscenter. 
+
+1.	Starten Sie das Active Directory-Verwaltungscenter.
 2.	Erweitern Sie "RegisteredDevices" innerhalb der Verbunddomäne. ![Benutzerdefinierte Installation](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback5.png)
-3.	Die gegenwärtig registrierten Geräte werden hier aufgeführt. 
+3.	Die gegenwärtig registrierten Geräte werden hier aufgeführt.
 
 ![Benutzerdefinierte Installation](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback6.png)
 
-## Zusätzliche Informationen 
-
-
+## Zusätzliche Informationen
 - [Verwalten von Risiken mit bedingtem Zugriff](active-directory-conditional-access.md)
 - [Einrichten des lokalen bedingten Zugriffs mithilfe der Azure Active Directory-Geräteregistrierung](https://msdn.microsoft.com/library/azure/dn788908.aspx)
 
-<!---HONumber=Sept15_HO3-->
+## Nächste Schritte
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+
+<!---HONumber=Oct15_HO3-->

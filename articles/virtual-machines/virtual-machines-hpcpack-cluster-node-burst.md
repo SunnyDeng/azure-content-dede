@@ -10,7 +10,8 @@ ms.service="virtual-machines"
 
 # Hinzufügen von bedarfsgesteuerten Burstknoten (Workerrolleninstanzen) als Computeressourcen zu einem HPC Pack-Cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf die Erstellung einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Artikel wird erläutert, wie Sie Azure-Burstknoten (Workerrolleninstanzen, die in einem Clouddienst ausgeführt werden) bedarfsgesteuert als Computeressourcen zu einem vorhandenen HPC Pack-Hauptknoten in Azure hinzufügen So können Sie die Computekapazität des HPC-Clusters in Azure zentral hochskalieren, ohne mehrere vorkonfigurierte virtuelle Computer für Computeknoten verwalten zu müssen.
 
@@ -60,7 +61,7 @@ Zusätzliche Optionen zum Konfigurieren des Verwaltungszertifikats finden Sie un
 
 
 
-Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481758(v=ws.10).aspx) (in englischer Sprache):
+Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) ((https://technet.microsoft.com/library/gg481758(v=ws.10).aspx):
 
 * Erstellen einer Azure-Knotenvorlage
 
@@ -70,13 +71,13 @@ Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario ent
 
 Nachdem Sie die Knoten hinzugefügt und gestartet haben, können Sie sie zum Ausführen von Clusteraufträgen verwenden.
 
-Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack](http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) (in englischer Sprache) Anweisungen zur Problembehandlung.
+Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) (http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) Anweisungen zur Problembehandlung.
 
 ## Nächste Schritte
 
-* Wenn Sie die Azure-Computeressourcen entsprechend der aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster entsprechend der Clusterarbeitsauslastung](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
+* Wenn Sie die Azure-Computeressourcen entsprechend dem aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster entsprechend dem Clusterworkload](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
 
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

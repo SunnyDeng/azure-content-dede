@@ -77,4 +77,4 @@ Weitere Informationen finden Sie unter [Konfigurieren von Authentifizierungsrich
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

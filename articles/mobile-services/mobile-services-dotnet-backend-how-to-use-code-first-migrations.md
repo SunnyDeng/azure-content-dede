@@ -176,4 +176,4 @@ Dieser Code ruft die Hilfserweiterungsmethode [AddOrUpdate] auf, um Seed-Daten i
 [EntityData]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.entitydata.aspx
 [DbSet<T>]: https://msdn.microsoft.com/library/azure/gg696460.aspx
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

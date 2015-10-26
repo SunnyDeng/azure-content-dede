@@ -112,4 +112,4 @@ Vor dem Deinstallieren der App müssen auf einem Samsung Android-Gerät Gerätea
 
 Wenn Sie die Fehlermeldung **Schlüsselspeicherfehler** sehen, liegt dies möglicherweise daran, dass Sie den Sperrbildschirm nicht mit einer PIN eingerichtet haben. Um dieses Problem zu umgehen, deinstallieren Sie die Azure Authenticator-App, konfigurieren Sie eine PIN für den Sperrbildschirm, und installieren Sie die App neu.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

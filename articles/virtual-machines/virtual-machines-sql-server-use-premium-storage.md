@@ -22,9 +22,10 @@
 
 ## Übersicht
 
-[Azure Premium-Speicher](../storage-premium-storage-preview-portal.md) ist die nächste Speichergeneration mit geringer Latenz und hohem E/A-Durchsatz. Er ist ideal geeignet für hohe E/A-Arbeitsauslastung, wie z. B. SQL Server auf [virtuellen IaaS-Computern](http://azure.microsoft.com/services/virtual-machines/).
+[Azure Premium-Speicher](../storage-premium-storage-preview-portal.md) ist die nächste Speichergeneration mit geringer Latenz und hohem E/A-Durchsatz. Er ist ideal geeignet für hohe E/A-Workloads, wie z. B. SQL Server auf [virtuellen IaaS-Computern](http://azure.microsoft.com/services/virtual-machines/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwenden einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Dieser Artikel enthält die Planung und Anleitungen zum Migrieren eines virtuellen Computers für die Verwendung mit Premium-Speicher. Dies umfasst Schritte für die Azure-Infrastruktur (Netzwerk, Speicher) und virtuelle Windows-Gastsysteme. Das Beispiel im [Anhang](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) zeigt eine vollständige End-to-End-Migration zum Verschieben größerer virtueller Computer mit PowerShell, um die verbesserten lokalen SSD-Speicher zu nutzen.
 
@@ -88,7 +89,7 @@ Um diese in ein regionales VNET in Westeuropa zu verschieben, ändern Sie die Ko
 
 Sie müssen ein neues Speicherkonto erstellen, das für Premium-Speicher konfiguriert ist. Beachten Sie, dass die Verwendung von Premium-Speicher für das Speicherkonto, nicht aber für einzelne VHDs festgelegt wird. Wenn Sie jedoch virtuelle Computer der DS*-Serie verwenden, können Sie VHDs aus Premium- und Standard- Speicherkonten anfügen. Sie sollten dies in Erwägung ziehen, wenn Sie die Betriebssystem-VHD nicht im Premium-Speicherkonto platzieren möchten.
 
-Durch den folgenden **New-AzureStorageAccountPowerShell**-Befehl mit dem **Typ** "Premium_LRS" wird ein Premium-Speicherkonto erstellt:
+Durch den folgenden **New-AzureStorageAccountPowerShell**-Befehl mit dem **Typ** "Premium\_LRS" wird ein Premium-Speicherkonto erstellt:
 
     $newstorageaccountname = "danpremstor" 
     New-AzureStorageAccount -StorageAccountName $newstorageaccountname -Location "West Europe" -Type "Premium_LRS"   
@@ -148,13 +149,13 @@ Wenn Sie virtuelle Festplatten physikalischen Datenträgern in Speicherpools zug
 
 Die Höhe der Speicherleistung hängt von der angegebenen Größe des virtuellen Computers der DS*-Serie und der Größe der virtuellen Festplatte ab. Die virtuellen Computer haben verschiedene Beschränkungen für die Anzahl von VHDs, die angefügt werden können, und für die maximal unterstützte Bandbreite (MB/s). Ausführliche Informationen zu den Bandbreitenbeschränkungen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](virtual-machines-size-specs.md).
 
-Höhere IOPS werden mit größeren Datenträgern erreicht. Sie sollten dies berücksichtigen, wenn Sie Ihren Migrationspfad planen. Weitere Informationen finden Sie in der [Tabelle für IOPS und Datenträgertypen](../storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage).
+Höhere IOPS werden mit größeren Datenträgern erreicht. Sie sollten dies berücksichtigen, wenn Sie Ihren Migrationspfad planen. Weitere Informationen finden Sie in der [Tabelle für IOPS und Datenträgertypen](../storage-premium-storage-preview-portal.md#scalability-and-performance-targets-when-using-premium-storage).
 
-Bedenken Sie, dass virtuelle Computer unterschiedliche maximale Datenträgerbandbreiten haben, die sie für alle verbundenen Datenträger unterstützen. Unter hoher Last könnten Sie die maximale Bandbreite für diese VM-Rollengröße auslasten. Beispielsweise unterstützt eine Standard_DS14 bis zu 512 MB/s. Daher könnten Sie mit drei P30-Datenträgern die Bandbreite des Datenträgers des virtuellen Computers auslasten. In diesem Beispiel kann jedoch der Durchsatzgrenzwert je nach E/A-Lese- und Schreibvorgängen überschritten werden.
+Bedenken Sie, dass virtuelle Computer unterschiedliche maximale Datenträgerbandbreiten haben, die sie für alle verbundenen Datenträger unterstützen. Unter hoher Last könnten Sie die maximale Bandbreite für diese VM-Rollengröße auslasten. Beispielsweise unterstützt eine Standard\_DS14 bis zu 512 MB/s. Daher könnten Sie mit drei P30-Datenträgern die Bandbreite des Datenträgers des virtuellen Computers auslasten. In diesem Beispiel kann jedoch der Durchsatzgrenzwert je nach E/A-Lese- und Schreibvorgängen überschritten werden.
 
 ## Neue Bereitstellungen
 
-In den nächsten beiden Abschnitten wird veranschaulicht, wie Sie SQL Server-VMs in Premium-Speicher bereitstellen können. Wie bereits erwähnt, müssen Sie Betriebssystemdatenträger nicht zwingend in Premium-Speicher platzieren. Sie sollten dies jedoch in Erwägung ziehen, wenn Sie beabsichtigen, alle hohen E/A-Arbeitsauslastungen auf die Betriebssystem-VHD zu verlagern.
+In den nächsten beiden Abschnitten wird veranschaulicht, wie Sie SQL Server-VMs in Premium-Speicher bereitstellen können. Wie bereits erwähnt, müssen Sie Betriebssystemdatenträger nicht zwingend in Premium-Speicher platzieren. Sie sollten dies jedoch in Erwägung ziehen, wenn Sie beabsichtigen, alle hohen E/A-Workloads auf die Betriebssystem-VHD zu verlagern.
 
 Im ersten Beispiel werden vorhandene Images aus dem Azure-Katalog verwendet. Im zweiten Beispiel wird veranschaulicht, wie Sie ein benutzerdefiniertes VM-Image verwenden, das sich in einem vorhandenen Speicherkonto befindet.
 
@@ -379,7 +380,7 @@ Es gibt zwei Strategien zum Migrieren von AlwaysOn-Bereitstellungen, die Ausfall
 1. **Hinzufügen weiterer sekundärer Replikate zu einem vorhandenen AlwaysOn-Cluster**
 1. **Migrieren zu einem neuen AlwaysOn-Cluster**
 
-#### 1. Hinzufügen weiterer sekundärer Replikate zu einem vorhandenen AlwaysOn-Cluster
+#### 1\. Hinzufügen weiterer sekundärer Replikate zu einem vorhandenen AlwaysOn-Cluster
 
 Eine Strategie ist das Hinzufügen weiterer sekundärer Replikate zur AlwaysOn-Verfügbarkeitsgruppe. Sie müssen diese Replikate in einem neuen Clouddienst hinzufügen und den Listener mit der neuen IP-Adresse des Lastenausgleichsmoduls aktualisieren.
 
@@ -401,7 +402,7 @@ Sie sollten Zeit für die Durchführung manueller Failover- und Chaostests auf d
 1. Kopieren Sie VOLLSTÄNDIGE Sicherungen, und stellen Sie sie mit **NORECOVERY** wieder her.
 1. Kopieren Sie abhängige Objekte aus der Benutzerdatenbank, wie z. B. Anmeldungen usw.
 1. Erstellen Sie einen neuen internen Lastenausgleich (ILB) oder verwenden Sie einen externen Lastenausgleich (ELB), und richten Sie Lastenausgleichs-Endpunkte auf beiden neuen Knoten ein.
-> [AZURE.NOTE] Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen
+> [AZURE.NOTE]Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen.
 
 1. Beenden Sie den Benutzer-/Anwendungszugriff auf SQL Server (bei Verwendung von Speicherpools).
 1. Beenden Sie SQL Server-Datenbankmoduldienste auf allen Knoten (bei Verwendung von Speicherpools).
@@ -426,7 +427,7 @@ Sie sollten Zeit für die Durchführung manueller Failover- und Chaostests auf d
 - Es können lange SQL-Datenübertragungen beim Einrichten der sekundären Replikate auftreten.
 - Es entstehen zusätzliche Kosten bei der Migration, während Sie neue Computer parallel ausführen.
 
-#### 2. Migrieren zu einem neuen AlwaysOn-Cluster
+#### 2\. Migrieren zu einem neuen AlwaysOn-Cluster
 
 Eine andere Strategie ist die Erstellung eines völlig neuen AlwaysOn-Clusters mit neuen Knoten im neuen Clouddienst, an den die Clients weitergeleitet werden.
 
@@ -457,7 +458,7 @@ Es gibt zwei Strategien für die Migration von AlwaysOn-Bereitstellungen mit min
 1. **Verwenden von vorhandenen sekundären Replikaten: Einzelstandort**
 1. **Verwenden von vorhandenen sekundären Replikaten: Mehrere Standorte**
 
-#### 1. Verwenden von vorhandenen sekundären Replikaten: Einzelstandort
+#### 1\. Verwenden von vorhandenen sekundären Replikaten: Einzelstandort
 
 Eine Strategie für minimale Ausfallzeiten ist die sekundäre Verwendung einer vorhandenen Cloud mit anschließender Entfernung aus dem aktuellen Clouddienst. Sie kopieren dann die VHDs in das neue Premium-Speicherkonto und erstellen den virtuellen Computer im neuen Clouddienst. Aktualisieren Sie dann den Listener für Cluster und Failover.
 
@@ -503,7 +504,7 @@ In diesem Dokument ist kein vollständiges End-to-End-Beispiel dargestellt. Im [
 - Wenn Sie die Schritte 5ii verwenden, fügen Sie SQL1 als möglichen Besitzer für die hinzugefügte IP-Adressressource hinzu.
 - Testen Sie die Failover.
 
-#### 2. Verwenden von vorhandenen sekundären Replikaten: Mehrere Standorte
+#### 2\. Verwenden von vorhandenen sekundären Replikaten: Mehrere Standorte
 
 Wenn Sie über Knoten in mehreren Azure-Datencentern (DC) oder über eine Hybridumgebung verfügen, können Sie eine AlwaysOn-Konfiguration in dieser Umgebung nutzen, um Ausfallzeiten zu minimieren.
 
@@ -526,7 +527,7 @@ Die Ausfallzeit besteht in der Zeit für das Failover zum alternativen DC und zu
 ##### Nachteile
 
 - Je nach Clientzugriff auf SQL Server liegt möglicherweise eine erhöhte Latenz vor, wenn SQL Server in einem anderen DC als die Anwendung ausgeführt wird.
-- Die Zeit für das Kopieren der virtuellen Festplatten in den Premium-Speicher kann sehr lang sein. Dies kann Ihre Entscheidung beeinträchtigen, ob der Knoten in der Verfügbarkeitsgruppe bleiben soll oder nicht. Bedenken Sie dies bei der Ausführung stark protokollierter, erforderlicher Arbeitsauslastung während der Migration, da der primäre Knoten die nicht replizierten Transaktionen im Transaktionsprotokoll speichern muss. Aus diesem Grund könnte dieses Protokoll erheblich anwachsen.
+- Die Zeit für das Kopieren der virtuellen Festplatten in den Premium-Speicher kann sehr lang sein. Dies kann Ihre Entscheidung beeinträchtigen, ob der Knoten in der Verfügbarkeitsgruppe bleiben soll oder nicht. Bedenken Sie dies bei der Ausführung stark protokollierter, erforderlicher Workloads während der Migration, da der primäre Knoten die nicht replizierten Transaktionen im Transaktionsprotokoll speichern muss. Aus diesem Grund könnte dieses Protokoll erheblich anwachsen.
 - Dieses Szenario wird mithilfe des asynchronen Azure-Cmdlets **Start-AzureStorageBlobCopy** ausgeführt. Es gibt nach dem Abschluss keine SLA. Die Dauer der Kopiervorgänge hängt von der Wartezeit in der Warteschlange sowie der Menge der zu übertragenden Daten ab. Wenn Sie nur über einen Knoten im zweiten Rechenzentrum verfügen, sollten Sie daher Abhilfeschritte für den Fall planen, dass das Kopieren länger als beim Testen dauert. Dies könnte die folgenden Umgehungen umfassen.
 	- Fügen Sie einen temporären zweiten SQL Server-Knoten für hohe Verfügbarkeit vor der Migration mit erwarteter Ausfallzeit hinzu.
 	- Führen Sie die Migration außerhalb von geplanten Azure-Wartungen aus. 
@@ -679,7 +680,7 @@ Da Sie mindestens einen SQL Server offline schalten, sollten Sie die Clusterquo
 
     Set-ClusterQuorum -NodeMajority  
 
-Weitere Informationen zur Verwaltung und zum Konfigurieren des Clusterquorums finden Sie unter [Konfigurieren und Verwalten des Quorums in einem Windows Server 2012-Failovercluster](https://technet.microsoft.com/de-DE/library/jj612870.aspx).
+Weitere Informationen zur Verwaltung und zum Konfigurieren des Clusterquorums finden Sie unter [Konfigurieren und Verwalten des Quorums in einem Windows Server 2012-Failovercluster](https://technet.microsoft.com/en-us/library/jj612870.aspx).
 
 #### Schritt 6: Extrahieren vorhandener Endpunkte und ACLs
     #GET Endpoint info
@@ -1148,4 +1149,4 @@ Informationen zum Hinzufügen einer IP-Adresse finden Sie im [Anhang](#appendix-
 [25]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_15.png
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

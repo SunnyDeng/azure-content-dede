@@ -12,21 +12,26 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="10/13/2015" 
 	ms.author="awills"/>
 
 
-# Application Insights für ASP.NET
+# Einrichten von Application Insights für ASP.NET
 
 *Application Insights befindet sich in der Vorschau.*
 
-[AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
+<a name="selector1"></a>
+
+[Visual Studio Application Insights](http://azure.microsoft.com/services/application-insights) überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Hierfür müssen Sie ein SDK in Ihrer App installieren. Das SDK sendet Telemetriedaten über Ihre App an den Application Insights-Dienst, mit dem Sie das Verhalten der App analysieren und darstellen können.
 
 
-[Visual Studio Application Insights](http://azure.microsoft.com/services/application-insights) überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für Apps, die auf den eigenen lokalen IIS-Servern oder Azure-VMs gehostet werden, sowie für Azure-Web-Apps. ([Dies funktioniert auch für Geräte-Apps und Java-Server][start].)
+[AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
+
+Wenn Sie das SDK in Visual Studio zu Ihrer App hinzufügen, erhalten Sie Diagramme zu Serveranforderungen, Antwortzeiten und Fehlern.
 
 ![Beispiel für Leistungsüberwachungsdiagramm](./media/app-insights-asp-net/10-perf.png)
 
+Sie können mit der API auch die Nutzung im Detail überwachen.
 
 #### Vorbereitung
 
@@ -35,7 +40,7 @@ Erforderlich:
 * Ein Abonnement für [Microsoft Azure](http://azure.com) Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie mit Ihrem [Microsoft-Konto](http://live.com) hinzufügen.
 * Visual Studio 2013, Update 3 oder höher.
 
-## <a name="ide"></a>Hinzufügen von Application Insights zu Ihrem Projekt in Visual Studio
+## <a name="ide"></a> Hinzufügen von Application Insights zu Ihrem Projekt in Visual Studio
 
 #### Falls es sich um ein neues Projekt handelt …
 
@@ -68,7 +73,7 @@ Mit dem Befehl wurden die folgenden Schritte ausgeführt (die Sie stattdessen au
 
 * Er erstellt eine Application Insights-Ressource im [Azure-Portal][portal]. Hier werden Ihre Daten angezeigt. Er ruft den *Instrumentationsschlüssel* ab, der die Ressource identifiziert.
 * Er fügt das NuGet-Paket mit dem Application Insights-Web-SDK dem Projekt hinzu. Um es in Visual Studio anzuzeigen, klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten" aus.
-* Fügt den Instrumentationsschlüssel in `ApplicationInsights.config` ein.
+* Er fügt den Instrumentationsschlüssel in `ApplicationInsights.config` ein.
 
 
 ## <a name="run"></a> Ausführen des Projekts
@@ -79,25 +84,33 @@ In Visual Studio sehen Sie eine Anzahl der gesendeten Ereignisse.
 
 ![](./media/app-insights-asp-net/appinsights-09eventcount.png)
 
-## <a name="monitor"></a>Öffnen von Application Insights
+## <a name="monitor"></a> Öffnen von Application Insights
 
 Öffnen Sie die Application Insights-Ressource im [Azure-Portal][portal].
 
 ![Klicken Sie mit der rechten Maustaste auf Ihr Projekt und öffnen Sie das Azure-Portal](./media/app-insights-asp-net/appinsights-04-openPortal.png)
 
+### Metriken: Aggregierte Daten
 
 Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich einen oder zwei Punkte. Zum Beispiel:
 
 ![Klicken Sie, um weitere Daten anzuzeigen](./media/app-insights-asp-net/12-first-perf.png)
 
-Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen. [Hier finden Sie weitere Informationen zu Metriken.][perf]
+Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen. [Weitere Informationen zu Metriken.][perf]
 
-Stellen Sie jetzt Ihre Anwendung bereit, und sehen Sie zu, wie Daten gesammelt werden.
+* *Keine Daten zu Benutzern oder Seiten?* - [Hinzufügen von Daten zu Benutzern und Seiten](../article/application-insights/app-insights-asp-net-client.md)
 
+### Suche: Einzelne Ereignisse
 
-Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass Ihnen innerhalb von wenigen Sekunden Daten angezeigt werden. Sobald Sie Ihre Anwendung bereitstellen, sammeln sich die Daten langsamer an.
+Öffnen Sie die Suche, um einzelne Anforderungen und die zugeordneten Ereignisse zu untersuchen.
 
-#### Sie sehen keine Daten?
+![](./media/app-insights-asp-net/21-search.png)
+
+[Weitere Informationen zur Suche](app-insights-diagnostic-search.md)
+
+* *Keine zugeordneten Ereignisse?* Richten Sie [Serverausnahmen](../article/application-insights/app-insights-asp-net-exception-mvc.md) und [Abhängigkeiten](../article/application-insights/app-insights-asp-net-dependencies.md) ein.
+
+### Sie sehen keine Daten?
 
 * Stellen Sie sicher, dass das richtige Element angezeigt wird. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, klicken Sie auf "Durchsuchen" > "Application Insights", und wählen Sie dann die App aus.
 * Verwenden Sie die Anwendung, und öffnen Sie verschiedene Seiten, damit einige Telemetriedaten generiert werden.
@@ -105,110 +118,29 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 * Warten Sie einige Sekunden, und klicken Sie auf "Aktualisieren".
 * Informationen hierzu finden Sie unter [Problembehandlung][qna].
 
+
+## Veröffentlichen der App
+
+Stellen Sie jetzt Ihre Anwendung bereit, und sehen Sie zu, wie Daten gesammelt werden.
+
+Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass Ihnen innerhalb von wenigen Sekunden Daten angezeigt werden. Sobald Sie Ihre Anwendung bereitstellen, sammeln sich die Daten langsamer an.
+
 #### Probleme auf dem Buildserver?
 
 Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
 
+## Nächste Schritte
 
-## Hinzufügen von Browserüberwachung
-
-Durch Browserüberwachung erhalten Sie Daten zu Benutzern, Sitzungen, Seitenansichten und allen Ausnahmen oder Abstürzen, die im Browser auftreten.
-
-![Wählen Sie "Neu", "Entwicklerdienste", Application Insights.](./media/app-insights-asp-net/16-page-views.png)
-
-Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer Ihre App verwenden – bis zur Detailebene der Mausklicks und Tastaturanschläge.
-
-Fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
-
-![Öffnen Sie in Ihrer Web-App "Schnellstart", und klicken Sie auf die Option zum Abrufen von Code für die Überwachung von Webseiten](./media/app-insights-asp-net/02-monitor-web-page.png)
-
-Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre Anwendungsressource identifiziert.
-
-[Weitere Informationen zur Nachverfolgung von Webseiten.](app-insights-web-track-usage.md)
-
-
-## Nutzungsverfolgung
-
-Wenn Sie eine neue User Story bereitgestellt haben, möchten Sie wissen, wie viele Ihrer Kunden sie verwenden und ob sie ihre Ziele erreichen oder Schwierigkeiten haben. Sie erhalten ein genaues Bild der Benutzeraktivität durch Einfügen von TrackEvent() und anderen Aufrufen in Ihren Code auf dem Client und auf dem Server.
-
-[Verwenden Sie die API zum Nachverfolgen der Verwendung.][api]
-
-
-## Diagnoseprotokolle
-
-[Erfassen Sie Protokollablaufverfolgungen][netlogs] aus Ihrem bevorzugten Protokollierungsframework, um Probleme zu diagnostizieren. Die Protokolleinträge werden in der [Diagnosesuche][diagnostic] zusammen mit Application Insights-Telemetrieereignissen angezeigt.
-
-## Veröffentlichen der App
-
-Wenn Sie Ihre App noch nicht veröffentlicht haben (seit Sie Application Insights hinzugefügt haben), holen Sie dies jetzt nach. Beobachten Sie die Datenzunahme in den Diagrammen, wenn Personen Ihre App verwenden.
-
-
-#### Keine Daten nach dem Veröffentlichen auf Ihrem Server?
-
-Öffnen Sie diese Ports für den ausgehenden Datenverkehr in der Firewall des Servers:
-
-+ `dc.services.visualstudio.com:443`
-+ `f5.services.visualstudio.com:443`
-
-
-## Entwickeln, Testen und Freigeben
-
-Bei größeren Anwendungen ist es ratsam, Telemetriedaten von verschiedenen Stempeln (Debuggen, Testen und Produktionsbuilds) an [getrennte Ressourcen](app-insights-separate-resources.md) zu senden.
-
-## Nachverfolgen der Anwendungsversion
-
-Stellen Sie sicher, dass `buildinfo.config` von Ihrem Buildprozess generiert wird. Fügen Sie in Ihrer CSPROJ-Datei Folgendes hinzu:
-
-```XML
-
-    <PropertyGroup>
-      <GenerateBuildInfoConfigFile>true</GenerateBuildInfoConfigFile>    <IncludeServerNameInBuildInfo>true</IncludeServerNameInBuildInfo>
-    </PropertyGroup> 
-```
-
-Wenn das Webmodul Application Insights über die Buildinformationen verfügt, fügt es jedem Telemetrieelement automatisch die **Anwendungsversion** als Eigenschaft hinzu. Dies ermöglicht es Ihnen, nach Version zu filtern, wenn Sie [Diagnosesuchen][diagnostic] ausführen oder [Metriken untersuchen][metrics].
-
-
-
-## Hinzufügen der Nachverfolgung von Abhängigkeiten und von Systemleistungsindikatoren
-
-[Abhängigkeitsmetriken](app-insights-dependencies.md) können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren. Sie messen Aufrufe von Ihrer App an Datenbanken, REST-APIs und andere externe Komponenten.
-
-![](./media/app-insights-asp-net/04-dependencies.png)
-
-Dieser Schritt ermöglicht außerdem [Berichte zu Leistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters) wie z. B. CPU, Arbeitsspeicher, Netzwerkauslastung.
-
-#### Wenn Ihre App in IIS-Server ausgeführt wird
-
-Melden Sie sich auf dem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
-
-Sie müssen sicherstellen, dass einige [zusätzliche Ports in der Firewall des Servers geöffnet sind](app-insights-monitor-performance-live-website-now.md#troubleshooting).
-
-#### Wenn Ihre App eine Azure-Web-App ist
-
-Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
-
-![In der Web-App: Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/app-insights-asp-net/05-extend.png)
-
-(Sie können die Erweiterung auch einer App hinzufügen, die bereits live ist, auch wenn Sie das SDK nicht in ihr installiert haben.)
-
-#### So überwachen Sie Azure Cloud Services-Rollen
-
-Es gibt auch ein [manuelles Verfahren zum Hinzufügen des Statusmonitors](app-insights-cloudservices.md).
-
-## Verfügbarkeitswebtests
-
-[Richten Sie Webtests ein][availability], um von außen zu testen, ob Ihre Anwendung aktiv ist und reagiert.
-
-
-![](./media/app-insights-asp-net/appinsights-10webtestresult.png)
+- [Daten zu Seiten und Benutzern](../article/application-insights/app-insights-asp-net-client.md#selector1)
+- [Exceptions](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
+- [Abhängigkeiten](../article/application-insights/app-insights-asp-net-dependencies.md#selector1)
+- [Verfügbarkeit](../article/application-insights/app-insights-monitor-web-app-availability.md#selector1)
 
 
 
 
 
-
-## So aktualisieren Sie auf zukünftige SDK-Versionen
+## So upgraden Sie auf zukünftige SDK-Versionen
 
 Für ein Upgrade auf eine [neue Version des SDK](app-insights-release-notes-dotnet.md) öffnen Sie wieder den NuGet-Paket-Manager und filtern die Ansicht nach installierten Paketen. Wählen Sie "Microsoft.ApplicationInsights.Web" und dann "Upgrade" aus.
 
@@ -238,8 +170,8 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 [qna]: app-insights-troubleshoot-faq.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [roles]: app-insights-resources-roles-access-control.md
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

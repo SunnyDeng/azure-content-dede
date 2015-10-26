@@ -14,18 +14,19 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/10/2015"
+	ms.date="10/08/2015"
 	ms.author="davidmu"/>
 
 # Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager und PowerShell
 
 > [AZURE.SELECTOR]
-- [Portal](virtual-machines-windows-tutorial.md)
-- [PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+- [Preview Portal](virtual-machines-windows-tutorial.md)
+- [PowerShell - Windows](virtual-machines-deploy-rmtemplates-powershell.md)
+- [Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
 Die Verwendung von Azure PowerShell und Ressourcen-Manager-Vorlagen bietet große Flexibilität beim Verwalten von Ressourcen in Microsoft Azure. Über die in diesem Artikel beschriebenen Aufgaben können Sie VM-Ressourcen erstellen und verwalten.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel ist das Verwalten von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell beschrieben. Sie haben auch die Möglichkeit, Ressourcen mit dem [klassischen Bereitstellungsmodell](virtual-machines-windows-tutorial-classic-portal.md) zu verwalten.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-windows-tutorial-classic-portal.md).
 
 Für diese Aufgaben wird eine Ressourcen-Manager-Vorlage und PowerShell verwendet:
 
@@ -66,7 +67,7 @@ Für Aufgaben, mit denen eine Ressource erstellt wird, ist eine Ressourcengruppe
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der neuen Ressourcengruppe und *Azure location* durch den Standort des Azure-Datencenters, in dem die Ressource erstellt werden soll, und führen Sie den Befehl aus:
 
-	New-AzureResourceGroup -Name "resource group name" -Location "Azure location"
+	New-AzureRmResourceGroup -Name "resource group name" -Location "Azure location"
 
 ## <a id="windowsvm"></a>AUFGABE: Erstellen eines virtuellen Computers
 
@@ -76,15 +77,15 @@ Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere 
 
 Ersetzen Sie im folgenden Befehl *deployment name* durch den Namen der Bereitstellung und *resource group name* durch den Namen der vorhandenen Ressourcengruppe, und führen Sie den Befehl aus:
 
-	New-AzureResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
+	New-AzureRmResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
 
 Hier sehen Sie ein Beispiel:
 
-	New-AzureResourceGroupDeployment -Name "TestDeployment" -ResourceGroupName "TestRG" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
+	New-AzureRmResourceGroupDeployment -Name "TestDeployment" -ResourceGroupName "TestRG" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
 
 Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben.
 
-	cmdlet New-AzureResourceGroupDeployment at command pipeline position 1
+	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
 	(Type !? for Help.)
 	newStorageAccountName: saacct
@@ -133,15 +134,15 @@ Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere 
 
 Ersetzen Sie im folgenden Befehl *deployment name* durch den Namen der Bereitstellung und *resource group name* durch den Namen der vorhandenen Ressourcengruppe, und führen Sie den Befehl aus:
 
-	New-AzureResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
+	New-AzureRmResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
 
 Hier sehen Sie ein Beispiel:
 
-	New-AzureResourceGroupDeployment -Name "TestDeployment" -ResourceGroupName "TestRG" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
+	New-AzureRmResourceGroupDeployment -Name "TestDeployment" -ResourceGroupName "TestRG" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
 
 Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben.
 
-	cmdlet New-AzureResourceGroup at command pipeline position 1
+	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
 	(Type !? for Help.)
 	osDiskVhdUri: http://saacct.blob.core.windows.net/vhds/osdiskforwindows.vhd
@@ -164,11 +165,11 @@ Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere 
 
 Ersetzen Sie im folgenden Befehl *deployment name* durch den Namen der Bereitstellung und *resource group name* durch den Namen der vorhandenen Ressourcengruppe, und führen Sie den Befehl aus:
 
-	New-AzureResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json"
+	New-AzureRmResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json"
 
 Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben.
 
-	cmdlet New-AzureResourceGroup at command pipeline position 1
+	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
 	(Type !? for Help.)
 	newStorageAccountName: saTest
@@ -187,7 +188,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Ressourcengruppe, die entfernt werden soll, und führen Sie den Befehl aus:
 
-	Remove-AzureResourceGroup  -Name "resource group name"
+	Remove-AzureRmResourceGroup  -Name "resource group name"
 
 > [AZURE.NOTE]Mit dem Parameter **- Force** können Sie die Bestätigungsaufforderung überspringen.
 
@@ -205,7 +206,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Ressourcengruppe, die den virtuellen Computer enthält, und *VM name* durch den Namen des Computers, und führen Sie den Befehl aus:
 
-	Get-AzureVM -ResourceGroupName "resource group name" -Name "VM name"
+	Get-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
 
 Folgendes sollte angezeigt werden:
 
@@ -276,7 +277,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Ressourcengruppe, die den virtuellen Computer enthält, und *VM name* durch den Namen des Computers, und führen Sie den Befehl aus:
 
-	Start-AzureVM -ResourceGroupName "resource group name" -Name "VM name"
+	Start-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
 
 Folgendes sollte angezeigt werden:
 
@@ -297,7 +298,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Ressourcengruppe, die den virtuellen Computer enthält, und *VM name* durch den Namen des Computers, und führen Sie den Befehl aus:
 
-	Stop-AzureVM -ResourceGroupName "resource group name" -Name "VM name"
+	Stop-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
 
 Sie werden aufgefordert, den Vorgang zu bestätigen:
 
@@ -324,7 +325,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Ressourcengruppe, die den virtuellen Computer enthält, und *VM name* durch den Namen des Computers, und führen Sie den Befehl aus:
 
-	Restart-AzureVM -ResourceGroupName "resource group name" -Name "VM name"
+	Restart-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
 
 Folgendes sollte angezeigt werden:
 
@@ -345,7 +346,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Ressourcengruppe, die den virtuellen Computer enthält, und *VM name* durch den Namen des Computers, und führen Sie den Befehl aus:
 
-	Remove-AzureVM -ResourceGroupName "resource group name" –Name "VM name"
+	Remove-AzureRmVM -ResourceGroupName "resource group name" –Name "VM name"
 
 > [AZURE.NOTE]Mit dem Parameter **- Force** können Sie die Bestätigungsaufforderung überspringen.
 
@@ -379,4 +380,4 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

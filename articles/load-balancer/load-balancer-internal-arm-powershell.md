@@ -245,4 +245,4 @@ In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Co
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

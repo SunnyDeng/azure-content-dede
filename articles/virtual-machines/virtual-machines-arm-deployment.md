@@ -17,11 +17,12 @@
 	ms.date="07/28/2015"
 	ms.author="davidmu"/>
 
-# Bereitstellen von Azure-Ressourcen mithilfe der Computing-, Netzwerk- und Speicherbibliotheken von .NET
+# Bereitstellen von Azure-Ressourcen mithilfe der Compute-, Netzwerk- und Speicherbibliotheken von .NET
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Verwalten einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell beschrieben.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
-In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in den Computing-, Netzwerk- und Speicherbibliotheken von .NET zum Erstellen und Löschen von Ressourcen in Microsoft Azure verwenden. Außerdem erfahren Sie, wie Sie die Anforderungen an den Azure-Ressourcen-Manager mithilfe von Azure Active Directory authentifizieren.
+
+In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in den Compute-, Netzwerk- und Speicherbibliotheken von .NET zum Erstellen und Löschen von Ressourcen in Microsoft Azure verwenden. Außerdem erfahren Sie, wie Sie die Anforderungen an den Azure-Ressourcen-Manager mithilfe von Azure Active Directory authentifizieren.
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
@@ -29,7 +30,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-DE/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/en-us/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 - [Azure PowerShell](../install-configure-powershell.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
@@ -38,31 +39,23 @@ Die Durchführung dieser Schritte dauert etwa 30 Minuten.
 
 Um Azure AD zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manager zu verwenden, muss dem Standardverzeichnis eine Anwendung hinzugefügt werden. Gehen Sie zum Hinzufügen einer Anwendung folgendermaßen vor:
 
-1. Öffnen Sie eine Azure PowerShell-Eingabeaufforderung, und führen Sie dann diesen Befehl aus:
+1. Öffnen Sie eine Azure PowerShell-Eingabeaufforderung, führen Sie dann diesen Befehl aus, und geben Sie die Anmeldeinformationen für Ihr Abonnement nach Aufforderung ein:
 
-        Switch-AzureMode –Name AzureResourceManager
+	    Login-AzureRmAccount
 
-2. Legen Sie das Azure-Konto fest, das Sie für dieses Lernprogramm verwenden möchten. Führen Sie diesen Befehl aus, und geben Sie die Anmeldeinformationen für Ihr Abonnement nach Aufforderung ein:
+2. Ersetzen Sie im folgenden Befehl {password} durch das Kennwort, das Sie verwenden möchten, und führen Sie ihn anschließend aus, um die Anwendung zu erstellen:
 
-	    Add-AzureAccount
+	    New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-3. Ersetzen Sie im folgenden Befehl {password} durch das Kennwort, das Sie verwenden möchten, und führen Sie ihn anschließend aus, um die Anwendung zu erstellen:
+	>[AZURE.NOTE]Notieren Sie die Anwendungs-ID, die nach dem Erstellen der Anwendung zurückgegeben wird, da Sie diese für den nächsten Schritt benötigen. Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Active Directory-Bereich des Verwaltungsportals.
 
-	    New-AzureADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
+3. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
 
-4. Notieren Sie den ApplicationId-Wert in der Antwort aus dem vorherigen Schritt. Sie werden ihn später im Lernprogramm benötigen:
+        New-AzureRmADServicePrincipal -ApplicationId {application-id}
 
-	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/azureapplicationid.png)
+4. Legen Sie die Berechtigung zum Verwenden der Anwendung fest:
 
-	>[AZURE.NOTE]Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Verwaltungsportal.
-
-5. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
-
-        New-AzureADServicePrincipal -ApplicationId {application-id}
-
-6. Legen Sie die Berechtigung zum Verwenden der Anwendung fest:
-
-	    New-AzureRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
+	    New-AzureRmRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
 
 ## Schritt 2: Erstellen eines Visual Studio-Projekts und Installation der Bibliotheken
 
@@ -76,7 +69,7 @@ NuGet-Pakete sind die einfachste Möglichkeit, um die Bibliotheken zu installier
 
 4. Geben Sie *Active Directory* in das Suchfeld ein, klicken Sie für das Active Directory-Authentifizierungsbibliothek-Paket auf **Installieren**, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
 
-5. Wählen Sie am oberen Rand der Seite **Vorabversion einschließen** aus. Geben Sie *Azure Compute* in das Suchfeld ein, klicken Sie für die Computing-Bibliotheken von .NET auf **Installieren**, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
+5. Wählen Sie am oberen Rand der Seite **Vorabversion einschließen** aus. Geben Sie *Azure Compute* in das Suchfeld ein, klicken Sie für die Compute-Bibliotheken von .NET auf **Installieren**, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
 
 6. Geben Sie *Azure-Netzwerk* in das Suchfeld ein, klicken Sie für die Netzwerkbibliotheken von .NET auf **Installieren**, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
 
@@ -390,4 +383,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties 
-    pageTitle="Erstellen einer Azure SQL-Datenbank mithilfe von PowerShell"
-	description="Erstellen einer Azure SQL-Datenbank mithilfe von PowerShell"
-	services="sql-database"
-	documentationCenter=""
-	authors="stevestein"
-	manager="jeffreyg"
-	editor=""/>
+    pageTitle="Erstellen einer Azure SQL-Datenbank mithilfe von PowerShell" 
+    description="Erstellen einer Azure SQL-Datenbank mithilfe von PowerShell" 
+    services="sql-database" 
+    documentationCenter="" 
+    authors="stevestein" 
+    manager="jeffreyg" 
+    editor=""/>
 
 <tags
     ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="powershell"
-	ms.workload="data-management"
-	ms.date="09/01/2015"
-	ms.author="sstein"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="powershell"
+    ms.workload="data-management" 
+    ms.date="10/08/2015"
+    ms.author="sstein"/>
 
 # Erstellen einer SQL-Datenbank mithilfe von PowerShell
 
@@ -30,19 +30,12 @@
 
 In diesem Artikel wird das Erstellen einer SQL-Datenbank mithilfe von PowerShell veranschaulicht.
 
+> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr verfügbar. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
-Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie Folgendes:
 
-- Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
-- Azure PowerShell. Sie können die Azure PowerShell-Module herunterladen und installieren, indem Sie den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) ausführen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
-Die Cmdlets zum Erstellen und Verwalten von Azure SQL-Datenbanken befinden sich im Azure-Ressourcen-Manager-Modul. Wenn Sie Azure PowerShell starten, werden die Cmdlets im Azure-Modul standardmäßig importiert. Um zum Azure-Ressourcen-Manager-Modul zu wechseln, verwenden Sie das Cmdlet "Switch-AzureMode".
-
-	Switch-AzureMode -Name AzureResourceManager
-
-Wenn beim Ausführen von **Switch-AzureMode** die Warnung „Das Cmdlet *Switch-AzureMode* ist veraltet und wird in zukünftigen Versionen nicht mehr enthalten sein“ angezeigt wird, liegt kein Problem vor. Fahren Sie einfach mit dem nächsten Schritt fort, um Ihre Anmeldeinformationen zu konfigurieren.
-
-Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md).
+- Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 
 
 ## Konfigurieren der Anmeldeinformationen und Auswählen des Abonnements
@@ -70,16 +63,16 @@ Nachdem Sie Zugriff auf Cmdlets für Ihr ausgewähltes Azure-Abonnement haben, k
 
 Führen Sie den folgenden Befehl aus, um eine neue Ressourcengruppe zu erstellen:
 
-	New-AzureResourceGroup -Name "resourcegroupsqlgsps" -Location "West US"
+	New-AzureRMResourceGroup -Name "resourcegroupsqlgsps" -Location "West US"
 
 Nachdem Sie die neue Ressourcengruppe erstellt haben, werden auf dem Bildschirm Informationen angezeigt, darunter die Meldung **ProvisioningState: erfolgreich**.
 
 
 ### Erstellen eines Servers 
 
-SQL-Datenbanken werden innerhalb von Azure SQL-Datenbankservern erstellt. Führen Sie **New-AzureSqlServer** aus, um einen neuen Server zu erstellen. Ersetzen Sie "ServerName" durch den Namen des Servers. Der muss für alle Azure SQL-Server eindeutig sein. Wenn der Servername bereits vergeben ist, wird ein Fehler ausgeben. Sie sollten auch berücksichtigen, dass dieser Befehl mehrere Minuten in Anspruch nehmen kann. Sie können den Befehl bearbeiten und einen beliebigen gültigen Speicherort auswählen. Sie sollten jedoch denselben Speicherort verwenden wie für die im vorhergehenden Schritt erstellte Ressourcengruppe.
+SQL-Datenbanken werden innerhalb von Azure SQL-Datenbankservern erstellt. Führen Sie **New-AzureRMSqlServer** aus, um einen neuen Server zu erstellen. Ersetzen Sie "ServerName" durch den Namen des Servers. Der muss für alle Azure SQL-Server eindeutig sein. Wenn der Servername bereits vergeben ist, wird ein Fehler ausgeben. Sie sollten auch berücksichtigen, dass dieser Befehl mehrere Minuten in Anspruch nehmen kann. Sie können den Befehl bearbeiten und einen beliebigen gültigen Speicherort auswählen. Sie sollten jedoch denselben Speicherort verwenden wie für die im vorhergehenden Schritt erstellte Ressourcengruppe.
 
-	New-AzureSqlServer -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -Location "West US" -ServerVersion "12.0"
+	New-AzureRMSqlServer -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -Location "West US" -ServerVersion "12.0"
 
 Beim Ausführen dieses Befehls wird ein Fenster zur Eingabe von **Benutzername** und **Kennwort** geöffnet. Dabei handelt es sich nicht um Ihre Azure-Anmeldeinformationen. Geben Sie den Benutzernamen und das Kennwort ein, die Sie als Anmeldeinformationen für das Administratorkonto des neuen Servers erstellen möchten.
 
@@ -89,7 +82,7 @@ Die Serverdetails werden angezeigt, nachdem der Server erfolgreich erstellt wurd
 
 Richten Sie eine Firewallregel für den Zugriff auf den Server ein. Führen Sie den folgenden Befehl aus, der die Start- und End-IP-Adressen durch gültige Werte für Ihren Computer ersetzt.
 
-	New-AzureSqlServerFirewallRule -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -FirewallRuleName "rule1" -StartIpAddress "192.168.0.0" -EndIpAddress "192.168.0.0"
+	New-AzureRMSqlServerFirewallRule -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -FirewallRuleName "rule1" -StartIpAddress "192.168.0.0" -EndIpAddress "192.168.0.0"
 
 Die Details der Firewallregel werden angezeigt, nachdem die Regel erfolgreich erstellt wurde.
 
@@ -105,7 +98,7 @@ Sie haben jetzt eine Ressourcengruppe, einen Server und eine Firewallregel konfi
 Der folgende Befehl erstellt eine neue (leere) SQL-Datenbank auf der Standard-Dienstebene mit der Leistungsstufe S1:
 
 
-	New-AzureSqlDatabase -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -DatabaseName "database1" -Edition "Standard" -RequestedServiceObjectiveName "S1"
+	New-AzureRMSqlDatabase -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -DatabaseName "database1" -Edition "Standard" -RequestedServiceObjectiveName "S1"
 
 
 Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstellt wurde.
@@ -130,13 +123,13 @@ Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstell
     Add-AzureAccount
     Select-AzureSubscription -SubscriptionId $SubscriptionId
     
-    $ResourceGroup = New-AzureResourceGroup -Name $ResourceGroupName -Location $Location
+    $ResourceGroup = New-AzureRMResourceGroup -Name $ResourceGroupName -Location $Location
     
-    $Server = New-AzureSqlServer -ResourceGroupName $ResourceGroupName -ServerName $ServerName -Location $Location -ServerVersion "12.0"
+    $Server = New-AzureRMSqlServer -ResourceGroupName $ResourceGroupName -ServerName $ServerName -Location $Location -ServerVersion "12.0"
     
-    $FirewallRule = New-AzureSqlServerFirewallRule -ResourceGroupName $ResourceGroupName -ServerName $ServerName -FirewallRuleName $FirewallRuleName -StartIpAddress $FirewallStartIP -EndIpAddress $FirewallEndIp
+    $FirewallRule = New-AzureRMSqlServerFirewallRule -ResourceGroupName $ResourceGroupName -ServerName $ServerName -FirewallRuleName $FirewallRuleName -StartIpAddress $FirewallStartIP -EndIpAddress $FirewallEndIp
     
-    $SqlDatabase = New-AzureSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName -Edition $DatabaseEdition -RequestedServiceObjectiveName $DatabasePerfomanceLevel
+    $SqlDatabase = New-AzureRMSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName -Edition $DatabaseEdition -RequestedServiceObjectiveName $DatabasePerfomanceLevel
     
     $SqlDatabase
     
@@ -151,4 +144,4 @@ Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstell
 
 - [Azure SQL-Datenbank](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

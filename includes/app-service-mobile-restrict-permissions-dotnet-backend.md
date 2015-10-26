@@ -13,4 +13,4 @@ Standardmäßig können APIs auf mobilen App-Back-Ends anonym aufgerufen werden.
    
 3. Veröffentlichen Sie Ihr Serverprojekt erneut.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

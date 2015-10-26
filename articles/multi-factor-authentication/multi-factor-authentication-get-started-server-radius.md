@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="RADIUS-Authentifizierung und Azure Multi-Factor Authentication-Server"
-	description="Dies ist die Azure Multi-Factor Authentication-Seite, die bei der Bereitstellung der RADIUS-Authentifizierung und des Azure Multi-Factor Authentication-Servers Unterstützung bietet."
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+	pageTitle="RADIUS-Authentifizierung und Azure Multi-Factor Authentication-Server" 
+	description="Dies ist die Azure Multi-Factor Authentication-Seite, die bei der Bereitstellung der RADIUS-Authentifizierung und des Azure Multi-Factor Authentication-Servers Unterstützung bietet." 
+	services="multi-factor-authentication" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 
@@ -56,4 +56,4 @@ Verwenden Sie die folgenden Richtlinien, um den RADIUS-Client zu konfigurieren:
 - Verwenden Sie den gleichen gemeinsamen geheimen Schlüssel, der weiter oben konfiguriert wurde. 
 - Konfigurieren Sie den RADIUS-Timeout auf 30 bis 60 Sekunden, sodass genug Zeit ist, die Anmeldeinformationen des Benutzers zu überprüfen, die mehrstufige Authentifizierung auszuführen, deren Antwort zu empfangen, und dann auf die RADIUS-Zugriffsanforderung zu reagieren.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

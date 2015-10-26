@@ -1,8 +1,9 @@
 <properties 
+	title="How to add a users to an elastic database pool" 
 	pageTitle="Hinzufügen von Benutzern zu einem elastischen Datenbankpool" 
 	description="Sie müssen einen Benutzer mit Berechtigungen für jede Datenbank im Pool hinzufügen." 
-	services="sql-database" 
-	documentationCenter=""  
+	metaKeywords="azure sql database elastic databases credentials" 
+	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
 	authors="sidneyh"/>
 
@@ -17,7 +18,7 @@
 
 # Hinzufügen von Benutzern zu einem elastischen Datenbankpool
 
-Das \(in der Vorschau verfügbare\) Feature **Elastische Datenbankaufträge** ermöglicht das Anwenden eines Transact-SQL-Skripts auf eine Gruppe von Datenbanken, einschließlich einer benutzerdefinierten Sammlung von Datenbanken, einen **elastischen Datenbankpool** oder einen **elastischen Datenbank-Shardsatz** in Azure SQL-Datenbank. Um ein Skript für elastische Datenbankaufträge ausführen zu können, muss ein Benutzer mit den entsprechenden Berechtigungen jeder Datenbank hinzugefügt werden, in denen der Auftrag ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx) oder [Adding Users to Your SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/) \(Hinzufügen von Benutzern zur Azure SQL-Datenbank, in englischer Sprache\).
+Das (in der Vorschau verfügbare) Feature **Elastische Datenbankaufträge** ermöglicht das Anwenden eines Transact-SQL-Skripts auf eine Gruppe von Datenbanken, einschließlich einer benutzerdefinierten Sammlung von Datenbanken, einen **elastischen Datenbankpool** oder einen **elastischen Datenbank-Shardsatz** in Azure SQL-Datenbank. Um ein Skript für elastische Datenbankaufträge ausführen zu können, muss ein Benutzer mit den entsprechenden Berechtigungen jeder Datenbank hinzugefügt werden, in denen der Auftrag ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx) oder [Adding Users to Your SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/) (Hinzufügen von Benutzern zur Azure SQL-Datenbank, in englischer Sprache).
 
 ## Voraussetzungen
 * Installieren Sie die [Komponenten für elastische Aufträge](sql-database-elastic-jobs-service-installation.md). 
@@ -44,4 +45,4 @@ Informationen zum Erstellen und Verwalten von Aufträgen finden Sie unter [Erste
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

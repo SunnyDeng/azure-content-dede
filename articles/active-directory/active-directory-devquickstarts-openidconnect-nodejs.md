@@ -10,10 +10,10 @@
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
-	ms.tgt_pltfrm="na"
+  ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="10/13/2015"
 	ms.author="brandwe"/>
 
 # An- und Abmeldung bei Webanwendungen mit Azure AD
@@ -40,18 +40,18 @@ Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickS
 
 Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
-## 1. Registrieren einer App
+## 1\. Registrieren einer App
 - Melden Sie sich beim Azure-Verwaltungsportal an.
-- Klicken Sie in der linken Navigationsleiste auf **Active Directory**..
+- Klicken Sie in der linken Navigationsleiste auf **Active Directory**.
 - Wählen Sie den Mandanten aus, in dem die Beispielanwendung registriert werden soll.
-- Klicken Sie auf die Registerkarte Anwendungen und dann in der unteren Schublade auf **Hinzufügen**.
+- Klicken Sie auf die Registerkarte **Anwendungen** und dann in der unteren Schublade auf „Hinzufügen“.
 - Folgen Sie den Bildschirmaufforderungen, und erstellen Sie eine neue **Webanwendung und/oder Web-API**.
-    - Am **Namen** der Anwendung sollten die Endbenutzer die Funktion der Anwendung ablesen können
-    -	Die **Anmelde-URL** ist die Basis-URL Ihrer Anwendung.  Der Standardwert des Gerüsts lautet `http://localhost:3000/auth/openid/return`.
-    - Die **App-ID-URI** ist eine eindeutige Kennung für die Anwendung.  Üblicherweise wird `https://<tenant-domain>/<app-name>` verwendet, zum Beispiel: `https://contoso.onmicrosoft.com/my-first-aad-app`
+    - Am **Namen** der Anwendung sollten die Endbenutzer die Funktion der Anwendung ablesen können.
+    -	Die **Anmelde-URL** ist die Basis-URL Ihrer Anwendung. Der Standardwert des Gerüsts lautet http://localhost:3000/auth/openid/return``.
+    - Die **App-ID-URI** ist eine eindeutige Kennung für die Anwendung. Üblicherweise wird `https://<tenant-domain>/<app-name>` verwendet, zum Beispiel: `https://contoso.onmicrosoft.com/my-first-aad-app`
 - Nach Abschluss der Registrierung weist AAD Ihrer Anwendung eine eindeutige Client-ID zu. Diesen Wert benötigen Sie in den nächsten Abschnitten, weswegen Sie ihn aus der Registerkarte „Konfigurieren“ kopieren sollten.
 
-## 2. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
+## 2\. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
 
 Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn dies noch nicht der Fall ist, und führen Sie die folgenden Befehle aus:
 
@@ -64,29 +64,32 @@ Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn 
 - `npm install assert-plus`
 - `npm install passport`
 
-- Dadurch werden die Bibliotheken installiert, von denen `passport-azure-ad` abhängt:
+- Darüber hinaus benötigen Sie außerdem unser `passport-azure-ad`:
 
 - `npm install passport-azure-ad`
 
 Dadurch werden die Bibliotheken installiert, von denen "passport-azure-ad" abhängt.
 
-## 3. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein
-Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect.  Passport wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
+## 3\. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
+Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect. Passport wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
--	Öffnen Sie zunächst die Datei `web.config` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `<appSettings>` ein.
-    -	`clientID`: ist die **Anwendungs-ID**, die Ihrer App im Registrierungsportal zugewiesen ist.
+-	Öffnen Sie zunächst die Datei `config.js` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `exports.creds` ein.
+    -	`clientID:` ist die **Anwendungs-ID**, die Ihrer App im Registrierungsportal zugewiesen ist.
     -	`returnURL` ist der **Umleitungs-URI**, den Sie im Portal eingegeben haben.
     - `clientSecret` ist der geheime Schlüssel, den Sie im Portal generiert haben.
 
-- Öffnen Sie als Nächstes die Datei `app.js`  im Stammverzeichnis des Projekts, und fügen Sie den Aufruf hinzu, um die `OIDCStrategy`-Strategie aufzurufen, die zu `passport-azure-ad` gehört.
+- Öffnen Sie als Nächstes die Datei `app.js` im Stammverzeichnis des Projekts, und fügen Sie den Aufruf hinzu, um die `OIDCStrategy`-Strategie aufzurufen, die zu `passport-azure-ad` gehört.
 
 
 ```JavaScript
 var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
 
-// Hinzufügen einer Protokollierung
+// add a logger
 
-var log = bunyan.createLogger({ name: 'Beispiel für eine Microsoft OIDC-Webanwendung' }); ```
+var log = bunyan.createLogger({
+    name: 'Microsoft OIDC Example Web Application'
+});
+```
 
 - Verwenden Sie danach die Strategie, auf die gerade verwiesen wurde, um die Anmeldeanforderungen zu verarbeiten.
 
@@ -274,7 +277,7 @@ app.get('/logout', function(req, res){ req.logout(); res.redirect('/'); });
 
 // Verwenden Sie diese Routenmiddleware für jede Ressource, die geschützt werden muss. Wenn // die Anforderung authentifiziert ist (in der Regel über eine permanente Anmeldesitzung), // wird die Anforderung fortgesetzt. Andernfalls wird der Benutzer zur // Anmeldeseite umgeleitet. function ensureAuthenticated(req, res, next) { if (req.isAuthenticated()) { return next(); } res.redirect('/login') } ```
 
-- Erstellen wir schließlich den Server selbst in `app.js`:
+- Erstellen wir schließlich den eigentlichen Server in `app.js`:
 
 ```JavaScript
 
@@ -299,7 +302,7 @@ exports.index = function(req, res){
 };
 ```
 
-- Erstellen Sie die Route `/routes/user.js` im Stammverzeichnis.
+- Erstellen der Route `/routes/user.js` im Stammverzeichnis
 
 ```JavaScript
 /*
@@ -313,7 +316,7 @@ exports.list = function(req, res){
 
 Diese einfachen Routen übergeben lediglich die Anforderung an die Ansichten, einschließlich des Benutzers, falls vorhanden.
 
-- Erstellen Sie die Ansicht `/views/index.ejs` im Stammverzeichnis. Dies ist eine einfache Seite, die die Anmelde- und Abmeldemethoden aufruft und es ermöglicht, Kontoinformationen zu erfassen. Beachten Sie, dass eine bedingte `if (!user)`-Anweisung verwendet werden kann, da belegt ist, dass der in der Anforderung übergebene Benutzer ein angemeldeter Benutzer ist.
+- Erstellen Sie die Ansicht `/views/index.ejs` im Stammverzeichnis. Dies ist eine einfache Seite, die die Anmelde- und Abmeldemethoden aufruft und es ermöglicht, Kontoinformationen zu erfassen. Beachten Sie, dass eine bedingte `if (!user)`-Anweisung verwendet werden kann, da das Übergeben des Benutzers in der Anforderung belegt, dass er ein angemeldeter Benutzer ist.
 
 ```JavaScript
 <% if (!user) { %>
@@ -351,36 +354,16 @@ Diese einfachen Routen übergeben lediglich die Anforderung an die Ansichten, ei
 
 ```HTML
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Passport-OpenID Example</title>
-	</head>
-	<body>
-		<% if (!user) { %>
-			<p>
-			<a href="/">Home</a> | 
-			<a href="/login">Log In</a>
-			</p>
-		<% } else { %>
-			<p>
-			<a href="/">Home</a> | 
-			<a href="/account">Account</a> | 
-			<a href="/logout">Log Out</a>
-			</p>
-		<% } %>
-		<%- body %>
-	</body>
-</html>```
+<!DOCTYPE html> <html> <head> <title>Passport-OpenID Example</title> </head> <body> <% if (!user) { %> <p> <a href="/">Home</a> | <a href="/login">Log In</a> </p> <% } else { %> <p> <a href="/">Home</a> | <a href="/account">Account</a> | <a href="/logout">Log Out</a> </p> <% } %> <%- body %> </body> </html>```
 
-Finally, build and run your app! 
+Erstellen und führen Sie Ihre Anwendung zum Schluss aus!
 
-Run `node app.js` and navigate to `http://localhost:3000`
+Führen Sie `node app.js` aus, und navigieren Sie zu `http://localhost:3000`.
 
 
-Sign in with either a personal Microsoft Account or a work or school account, and notice how the user's identity is reflected in the /account list.  You now have a web app secured using industry standard protocols that can authenticate users with both their personal and work/school accounts.
+Melden Sie sich entweder mit einem persönlichen Microsoft-Konto oder einem Geschäfts- oder Schulkonto an, und beachten Sie, wie die Identität des Benutzers in der Liste "/account" dargestellt wird. Sie verfügen jetzt über eine mit branchenüblichen Protokollen gesicherte Web-App, die Benutzer mit ihren persönlichen Konten oder ihren Geschäfts- oder Schulkonten authentifizieren kann.
 
-For reference, the completed sample (without your configuration values) [is provided as a .zip here](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/complete.zip), or you can clone it from GitHub:
+Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswerte) [hier als ZIP-Datei bereit](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/complete.zip). Sie können es alternativ aus GitHub klonen:
 
 ```git clone --branch complete https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS.git```
 
@@ -391,4 +374,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

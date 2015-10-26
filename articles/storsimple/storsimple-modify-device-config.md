@@ -45,11 +45,11 @@ Sie können auch eine Gerätebeschreibung angeben. Eine Gerätebeschreibung erle
  
 ## Ändern von Zeiteinstellungen
 
-Ihr Gerät muss die Zeit synchronisieren, damit es sich beim Cloud-Speicherdienstanbieter authentifizieren kann. Wählen Sie eine Zeitzone in der Dropdownliste aus, und geben Sie bis zu zwei NTP-Server (Network Time Protocol) an. Der primäre NTP-Server ist erforderlich und wird angegeben, wenn Sie das Gerät über Windows PowerShell für StorSimple konfigurieren. Sie können den standardmäßigen Windows-Server **time.windows.com** als Ihren NTP-Server angeben. Sie können die Konfiguration des primären NTP-Servers zwar über das Verwaltungsportal anzeigen, wenn Sie die Konfiguration ändern möchten, müssen Sie aber die Windows PowerShell-Schnittstelle verwenden.
+Ihr Gerät muss die Zeit synchronisieren, damit es sich beim Cloudspeicher-Dienstanbieter authentifizieren kann. Wählen Sie eine Zeitzone in der Dropdownliste aus, und geben Sie bis zu zwei NTP-Server (Network Time Protocol) an. Der primäre NTP-Server ist erforderlich und wird angegeben, wenn Sie das Gerät über Windows PowerShell für StorSimple konfigurieren. Sie können den standardmäßigen Windows-Server **time.windows.com** als Ihren NTP-Server angeben. Sie können die Konfiguration des primären NTP-Servers zwar über das Verwaltungsportal anzeigen, wenn Sie die Konfiguration ändern möchten, müssen Sie aber die Windows PowerShell-Schnittstelle verwenden.
 
 Die Konfiguration des sekundären NTP-Servers ist optional. Sie können mit dem Verwaltungsportal einen sekundären NTP-Server konfigurieren.
 
-Wenn Sie den NTP-Server konfigurieren, müssen Sie sich vergewissern, dass Ihr Netzwerk zulässt, dass der NTP-Datenverkehr von Ihrem Rechenzentrum in das Internet fließt. Wenn Sie einen öffentlichen NTP-Server angeben, müssen Sie sicherstellen, dass Ihre Netzwerkfirewalls und anderen Sicherheitseinrichtungen so konfiguriert sind, dass NTP-Datenverkehr in das externe und aus dem externen Netzwerk fließen kann. Wenn bidirektionaler NTP-Datenverkehr nicht zugelassen ist, müssen Sie einen internen NTP-Server verwenden (ein Windows-Domänencontroller bietet diese Funktion). Wenn Ihr Gerät die Zeit nicht synchronisieren kann, kann es möglicherweise nicht mit Ihrem Cloud-Speicheranbieter kommunizieren.
+Wenn Sie den NTP-Server konfigurieren, müssen Sie sich vergewissern, dass Ihr Netzwerk zulässt, dass der NTP-Datenverkehr von Ihrem Rechenzentrum in das Internet fließt. Wenn Sie einen öffentlichen NTP-Server angeben, müssen Sie sicherstellen, dass Ihre Netzwerkfirewalls und anderen Sicherheitseinrichtungen so konfiguriert sind, dass NTP-Datenverkehr in das externe und aus dem externen Netzwerk fließen kann. Wenn bidirektionaler NTP-Datenverkehr nicht zugelassen ist, müssen Sie einen internen NTP-Server verwenden (ein Windows-Domänencontroller bietet diese Funktion). Wenn Ihr Gerät die Zeit nicht synchronisieren kann, kann es möglicherweise nicht mit Ihrem Cloudspeicheranbieter kommunizieren.
 
 Um eine Liste der öffentlichen NTP-Server anzuzeigen, wechseln Sie zu [NTP.Servers Web](http://support.ntp.org/bin/view/Servers/WebHome).
 
@@ -92,7 +92,7 @@ Für jede Netzwerkschnittstelle werden die folgenden Parameter angezeigt:
     - **Cloud aktiviert** – Ist diese Einstellung aktiviert, verwendet das Gerät diese Schnittstelle, um mit der Cloud zu kommunizieren.
     - **iSCSI-aktiviert** – Ist diese Einstellung aktiviert, verwendet das Gerät diese Schnittstelle, um mit dem iSCSI-Host zu kommunizieren.
 
-    Es wird empfohlen, dass Sie iSCSI-Datenverkehr und Cloud-Speicherdatenverkehr voneinander trennen. Beachten Sie auch, Sie kein Gateway zuweisen müssen, wenn sich der Host und Ihr Gerät im selben Subnetz befinden. Befindet sich der Host aber in einem anderen Subnetz als Ihr Gerät, müssen Sie ein Gateway zuweisen.
+    Es wird empfohlen, dass Sie iSCSI-Datenverkehr und Cloudspeicher-Datenverkehr voneinander trennen. Beachten Sie auch, Sie kein Gateway zuweisen müssen, wenn sich der Host und Ihr Gerät im selben Subnetz befinden. Befindet sich der Host aber in einem anderen Subnetz als Ihr Gerät, müssen Sie ein Gateway zuweisen.
 
 - **IP-Adresse** – Diese kann IPv4 oder IPv6 oder beides sein. Für die Netzwerkschnittstellen eines Geräts werden sowohl die IPv4- als auch die IPv6-Adressenfamilie unterstützt. Wenn Sie IPv4 verwenden, geben Sie eine 32-Bit-IP-Adresse (*xxx.xxx.xxx.xxx*) in Dezimalschreibweise mit Punkten an. Wenn Sie IPv6 verwenden, geben Sie einfach ein Präfix aus vier Ziffern an. Ausgehend von diesem Präfix wird dann automatisch eine 128-Bit-Adresse für die Netzwerkschnittstelle Ihres Geräts generiert.
 
@@ -129,4 +129,4 @@ Führen Sie die folgenden Schritte aus, wenn Sie die VIPs für eine der Netzwerk
 - Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
      
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

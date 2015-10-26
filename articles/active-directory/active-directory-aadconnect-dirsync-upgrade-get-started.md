@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Microsoft Azure AD Connect – Upgrade vom Windows Azure AD-Synchronisierungstool (DirSync)"
+   pageTitle="Microsoft Azure AD Connect – Upgrade vom Windows Azure AD-Synchronisierungstool (DirSync) | Microsoft Azure"
    description="Informationen Sie zum Aktualisieren von DirSync auf Azure AD Connect. Dieser Artikel beschreibt die Schritte zur Aktualisierung Ihres aktuellen Windows Azure AD-Synchronisierungstools (DirSync) auf Azure AD Connect."
    services="active-directory"
    documentationCenter=""
    authors="shoatman"
-   manager="terrylanfear"
+   manager="stevenpo"
    editor="billmath"/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="09/02/2015" 
+   ms.date="09/02/2015"
    ms.author="shoatman"/>
 
 # Aktualisieren des Windows Azure Active Directory-Synchronisierungstools (DirSync) auf Azure Active Directory Connect
@@ -143,7 +143,7 @@ Diese Optionen finden Sie in der folgenden Benutzeroberfläche:
 
 ![Geben Sie Ihre Azure AD-Anmeldeinformationen ein.](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
 
-7. Klicken Sie auf "Weiter". 
+7. Klicken Sie auf "Weiter".
 8. Lassen Sie auf der Seite "Bereit zur Konfiguration" das Kontrollkästchen "Starten Sie den Synchronisierungsvorgang, sobald die Konfiguration abgeschlossen wurde" aktiviert.[AZURE.NOTE]Die Synchronisierung zwischen Windows Server Active Directory und Azure Active Directory wird gestartet, es werden aber keine Änderungen an Azure AD exportiert. Nur ein Synchronisierungstool kann jeweils aktiv Änderungen exportieren.
 9. Klicken Sie auf "Installieren".
 
@@ -193,7 +193,7 @@ Die folgende Liste enthält die erforderlichen und unterstützenden Komponenten,
 - Microsoft SQL Server 2012 Native Client
 - Microsoft SQL Server 2012 Express LocalDB
 - Azure Active Directory-Modul für Windows PowerShell
-- Microsoft Online Services-Anmeldeassistent für IT-Experten
+- Microsoft Online Services-Anmelde-Assistent für IT-Experten
 - Microsoft Visual C++ 2013 Redistributionspaket
 
 
@@ -205,4 +205,4 @@ Die folgende Liste enthält die erforderlichen und unterstützenden Komponenten,
 * [Weitere Informationen](active-directory-aadconnect-learn-more.md)
 * [Azure AD Connect auf MSDN](active-directory-aadconnect.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

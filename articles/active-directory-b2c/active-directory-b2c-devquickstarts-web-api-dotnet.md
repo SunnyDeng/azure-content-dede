@@ -89,7 +89,7 @@ Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem g
 
 Dieser Artikel behandelt nicht die Details der Sicherung von `TaskService`. Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
 
-## 6. Konfigurieren der Aufgaben-Web-App
+## 6\. Konfigurieren der Aufgaben-Web-App
 
 Damit die `TaskWebApp` mit Azure AD B2C kommunizieren kann, müssen Sie einige allgemeine Parameter angeben. Öffnen Sie im `TaskWebApp`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`. Diese Werte werden in der gesamten Web-App verwendet.
 
@@ -373,9 +373,7 @@ Erstellen Sie abschließend `TaskClient` und `TaskService`, und führen Sie beid
 
 Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet/archive/complete.zip) bereit. Sie können es auch aus GitHub klonen:
 
-```
-git clone --branch complete https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet.git
-```
+```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-WebApp-WebAPI-OpenIDConnect-DotNet.git```
 
 <!--
 
@@ -389,4 +387,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

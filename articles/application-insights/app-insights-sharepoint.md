@@ -102,10 +102,10 @@ Klicken Sie durch die Benutzer, um Informationen über neue Benutzer und deren S
 
 * [Webtests](app-insights-monitor-web-app-availability.md) zur Überwachung der Verfügbarkeit Ihrer Website.
 
-* [Application Insights](app-insights-get-started.md) für andere App-Typen.
+* [Application Insights](app-insights-overview.md) für andere App-Typen.
 
 
 
 <!--Link references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

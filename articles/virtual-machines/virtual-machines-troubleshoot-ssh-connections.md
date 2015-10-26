@@ -19,7 +19,8 @@
 
 # Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel erfahren Sie, wie Sie Probleme bei SSH-Verbindungen auf einem virtuellen Computer behandeln, der mit dem klassischen oder Ressourcen-Manager-Bereitstellungsmodell erstellt wurde.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 
 Es kann verschiedene Ursachen für SSH-Fehler auf einem Linux-basierten virtuellen Azure-Computer geben. Dieser Artikel hilft Ihnen, die Ursachen zu ermitteln und die Fehler zu beheben.
@@ -33,20 +34,17 @@ Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötig
 Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
 
 
-## Grundlegende Schritte
-
-
-### Klassisches Bereitstellungsmodell
+## Grundlegende Schritte – Klassisches Bereitstellungsmodell
 
 Führen Sie die folgenden Schritte aus, um häufige SSH-Verbindungsfehler für virtuelle Computer zu beheben, die mit dem klassischen Bereitstellungsmodell erstellt werden:
 
-1. Setzen Sie den Remotezugriff über das [Azure-Portal](https://portal.azure.com) zurück. Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Remotezugriff zurücksetzen**.
+1. **Setzen Sie den Remotezugriff** über das [Azure-Vorschauportal](https://portal.azure.com) zurück. Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Remotezugriff zurücksetzen**.
 
 	![Remotezugriff zurücksetzen](./media/virtual-machines-troubleshoot-ssh-connections/Portal-SSH-Reset-Windows.png)
 
-2. Starten Sie den virtuellen Computer neu, indem Sie ähnlich wie oben vorgehen. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) die Option **Virtuelle Computer** > **Instanzen**, und klicken Sie auf **Neustart**.
+2. Führen Sie einen **Neustart** des virtuellen Computers aus. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) die Option **Virtuelle Computer** > **Instanzen**, und klicken Sie auf **Neustart**.
 
-3. [Ändern Sie die Größe des virtuellen Computers.](https://msdn.microsoft.com/library/dn168976.aspx)
+3. [**Ändern Sie die Größe** des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
 
 4. Führen Sie dazu auf dem virtuellen Computer die unter [Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md) beschriebenen Anweisungen für folgende Schritte aus:
 
@@ -55,94 +53,113 @@ Führen Sie die folgenden Schritte aus, um häufige SSH-Verbindungsfehler für v
 	- Zurücksetzen der SSH-Konfiguration
 
 
-### Ressourcen-Manager-Bereitstellungsmodell
+## Grundlegende Schritte – Ressourcen-Manager-Bereitstellungsmodell
 
 Führen Sie die folgenden Schritte aus, um häufige SSH-Probleme für virtuelle Computer zu beheben, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt werden.
 
-1. Setzen Sie die SSH-Verbindung mit Ihrem virtuellen Linux-Computer in der Befehlszeile zurück. Stellen Sie sicher, dass [Microsoft Azure Linux Agent](virtual-machines-linux-agent-user-guide.md) Version 2.0.5 oder höher installiert ist.
+1. **Setzen Sie die SSH-Verbindung** mit Ihrem virtuellen Linux-Computer in der Befehlszeile zurück, indem Sie entweder die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwenden. Stellen Sie sicher, dass [Microsoft Azure Linux Agent](virtual-machines-linux-agent-user-guide.md) Version 2.0.5 oder höher installiert ist.
 
-	[A] Verwenden der Azure-Befehlszeilenschnittstelle:
+	**Verwenden der Azure-Befehlszeilenschnittstelle**
 
-	Schritt 1: [Installieren Sie die Azure-Befehlszeilenschnittstelle, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../xplat-cli-install.md), indem Sie den Befehl `azure login` verwenden (falls noch nicht geschehen).
+	a. [Installieren Sie die Azure-Befehlszeilenschnittstelle, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../xplat-cli-install.md), indem Sie den Befehl `azure login` verwenden (falls noch nicht geschehen).
 
-	Schritt 2: Wechseln Sie in den Ressourcen-Manager-Modus.
+	b. Wechseln Sie in den Ressourcen-Manager-Modus.
 
-		azure config mode arm
+	```
+	azure config mode arm
+	```
 
-	Schritt 3: Sie können die SSH-Verbindung mit einer der folgenden Methoden zurücksetzen.
+	c. Setzen Sie die SSH-Verbindung mit einer der folgenden Methoden zurück.
 
-	(i) Verwenden Sie den Befehl `vm reset-access` wie im folgenden Beispiel.
+	* Verwenden Sie den Befehl `vm reset-access` wie im folgenden Beispiel.
 
-		azure vm reset-access -g TestRgV2 -n TestVmV2 -r
+	```
+	azure vm reset-access -g TestRgV2 -n TestVmV2 -r
+	```
 
 	Die `VMAccessForLinux`-Erweiterung wird auf Ihrem virtuellen Computer installiert.
 
-	(ii) Alternativ dazu können Sie eine Datei mit dem Namen „PrivateConf.json“ und dem folgenden Inhalt erstellen:
+	* Alternativ dazu können Sie eine Datei mit dem Namen „PrivateConf.json“ und dem folgenden Inhalt erstellen:
 
-		{
-			"reset_ssh":"True"
-		}
+	```
+	{  
+	"reset_ssh":"True"
+	}
+	```
 
 	Führen Sie anschließend manuell die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung zurückzusetzen.
 
-		azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+	```
+	azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+	```
 
-	[B] Verwenden von Azure PowerShell:
+	**Verwenden von Azure PowerShell**
 
-	Schritt 1: [Installieren Sie die Azure PowerShell, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../powershell-install-configure.md), indem Sie die Azure AD-Methode verwenden.
+	a. [Installieren Sie Azure PowerShell, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../powershell-install-configure.md), indem Sie die Azure AD-Methode verwenden.
 
-	Schritt 2: Wechseln Sie in den Ressourcen-Manager-Modus.
+	b. Wechseln Sie in den Ressourcen-Manager-Modus.
 
-		Switch-AzureMode -Name AzureResourceManager
+	```
+	Switch-AzureMode -Name AzureResourceManager
+	```
 
-	Schritt 3: Führen Sie die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung wie im folgenden Beispiel zurückzusetzen.
+	c. Führen Sie die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung wie im folgenden Beispiel gezeigt zurückzusetzen.
 
-		Set-AzureVMExtension -ResourceGroupName "testRG" -VMName "testVM" -Location "West US" -Name "VMAccessForLinux" -Publisher "Microsoft.OSTCExtensions" -ExtensionType "VMAccessForLinux" -TypeHandlerVersion "1.2" -SettingString "{}" -ProtectedSettingString '{"reset_ssh":true}'
+	```
+	Set-AzureVMExtension -ResourceGroupName "testRG" -VMName "testVM" -Location "West US" -Name "VMAccessForLinux" -Publisher "Microsoft.OSTCExtensions" -ExtensionType "VMAccessForLinux" -TypeHandlerVersion "1.2" -SettingString "{}" -ProtectedSettingString '{"reset_ssh":true}'
+	```
 
-2. Starten Sie den virtuellen Linux-Computer über das Portal neu. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer** > Ihr virtueller Windows-Computer > **Neustart**.
+2. Führen Sie einen **Neustart** des virtuellen Linux-Computers über das Portal aus. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer** > Ihr virtueller Windows-Computer > **Neustart**.
 
 	![V2 neu starten](./media/virtual-machines-troubleshoot-ssh-connections/Portal-SSH-Restart-V2-Windows.png)
 
-3. Setzen Sie Ihr Kennwort bzw. den SSH-Schlüssel für den virtuellen Linux-Computer in der Befehlszeile zurück. Sie können auch wie im folgenden Beispiel einen neuen Benutzernamen bzw. ein Kennwort mit sudo-Berechtigung erstellen.
+3. **Setzen Sie Ihr Kennwort oder den SSH-Schlüssel** mit Ihrem virtuellen Linux-Computer in der Befehlszeile zurück, indem Sie entweder die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwenden. Sie können auch wie im folgenden Beispiel gezeigt einen neuen Benutzernamen und ein neues Kennwort mit sudo-Berechtigung erstellen.
 
-	[A] Verwenden der Azure-Befehlszeilenschnittstelle:
+	**Verwenden der Azure-Befehlszeilenschnittstelle**
 
 	Installieren und konfigurieren Sie die Azure-Befehlszeilenschnittstelle wie oben erwähnt. Wechseln Sie in den Ressourcen-Manager-Modus, und führen Sie die Erweiterung mit einem der folgenden Verfahren aus.
 
-	(i) Führen Sie den Befehl `vm reset-access` aus, um die SSH-Anmeldeinformationen festzulegen.
+	* Führen Sie den Befehl `vm reset-access` aus, um die SSH-Anmeldeinformationen festzulegen.
 
-		azure vm reset-access TestRgV2 TestVmV2 -u NewUser -p NewPassword
+	```
+	azure vm reset-access TestRgV2 TestVmV2 -u NewUser -p NewPassword
+	```
 
 	Weitere Informationen hierzu erhalten Sie, indem Sie in der Befehlszeile `azure vm reset-access -h` eingeben.
 
-	(ii) Alternativ dazu können Sie eine Datei mit dem Namen „PrivateConf.json“ und dem folgenden Inhalt erstellen.
-
-		{
-			"username":"NewUsername", "password":"NewPassword", "expiration":"2016-01-01", "ssh_key":"", "reset_ssh":false, "remove_user":""
-		}
+	* Alternativ dazu können Sie eine Datei mit dem Namen „PrivateConf.json“ und dem folgenden Inhalt erstellen. ```
+	{
+	"username":"NewUsername", "password":"NewPassword", "expiration":"2016-01-01", "ssh_key":"", "reset_ssh":false, "remove_user":""
+	}
+	```
 
 	Führen Sie anschließend die Linux-Erweiterung mithilfe der oben angegebenen Datei aus.
 
-		$azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+	```
+	$azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+	```
 
 	Beachten Sie, dass Sie Schritte wie unter [Zurücksetzen eines Kennworts oder einer SSH für Linux-basierte virtuelle Computer](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md) ausführen können, um andere Varianten auszuprobieren. Denken Sie hierbei daran, die Anweisungen der Azure-Befehlszeilenschnittstelle für den Ressourcen-Manager-Modus zu ändern.
 
-	[B] Verwenden von Azure PowerShell:
+	**Verwenden von Azure PowerShell**
 
 	Installieren und konfigurieren Sie Azure PowerShell wie oben erwähnt. Wechseln Sie in den Ressourcen-Manager-Modus, und führen Sie die Erweiterung dann wie folgt aus.
 
-		$RGName = 'testRG'
-		$VmName = 'testVM'
-		$Location = 'West US'
+	```
+	$RGName = 'testRG'
+	$VmName = 'testVM'
+	$Location = 'West US'
 
-		$ExtensionName = 'VMAccessForLinux'
-		$Publisher = 'Microsoft.OSTCExtensions'
-		$Version = '1.2'
+	$ExtensionName = 'VMAccessForLinux'
+	$Publisher = 'Microsoft.OSTCExtensions'
+	$Version = '1.2'
 
-		$PublicConf = '{}'
-		$PrivateConf = '{"username":"NewUsername", "password":"NewPassword", "ssh_key":"", "reset_ssh":false, "remove_user":""}'
+	$PublicConf = '{}'
+	$PrivateConf = '{"username":"NewUsername", "password":"NewPassword", "ssh_key":"", "reset_ssh":false, "remove_user":""}'
 
-		Set-AzureVMExtension -ResourceGroupName $RGName -VMName $VmName -Location $Location -Name $ExtensionName -Publisher $Publisher -ExtensionType $ExtensionName -TypeHandlerVersion $Version -SettingString $PublicConf -ProtectedSettingString $PrivateConf
+	Set-AzureVMExtension -ResourceGroupName $RGName -VMName $VmName -Location $Location -Name $ExtensionName -Publisher $Publisher -ExtensionType $ExtensionName -TypeHandlerVersion $Version -SettingString $PublicConf -ProtectedSettingString $PrivateConf
+
+	```
 
 	Achten Sie darauf, die Werte von $RGName, $VmName, $Location und die SSH-Anmeldeinformationen durch die jeweiligen Werte für Ihre Installation zu ersetzen.
 
@@ -269,4 +286,4 @@ Für virtuelle Computer im klassischen Bereitstellungsmodell: [Zurücksetzen ein
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

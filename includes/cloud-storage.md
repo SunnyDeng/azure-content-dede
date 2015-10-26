@@ -181,4 +181,4 @@ Da generell gesehen alle Arten von Daten wichtig sind, enthält Azure verschiede
 [SQL-tblstor]: ./media/cloud-storage/Data_06_TblStorage.png
 [hadoop]: ./media/cloud-storage/Data_07_Hadoop.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -8,7 +8,6 @@
    editor=""
    tags=""/>
 
-
 <tags
    ms.service="best-practice"
    ms.devlang="na"
@@ -17,7 +16,6 @@
    ms.workload="na"
    ms.date="04/28/2015"
    ms.author="masashin"/>
-
 
 # Leitfaden zur Datenpartitionierung
 
@@ -479,4 +477,4 @@ Die folgenden Muster können auch für Ihr Szenario relevant sein, wenn Sie Stra
 - Ein Beispiel für die Erstellung und Konfiguration eines Redis-Knoten, der als virtueller Azure-Computer ausgeführt wird, finden Sie unter [Ausführen von Redis auf einem virtuellem CentOS Linux Computer in Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) auf der Microsoft-Website.
 - Unter [Datentypen](http://redis.io/topics/data-types) auf der Redis-Website werden die Datentypen beschrieben, die mit Redis und Azure Redis Cache verfügbar sind.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

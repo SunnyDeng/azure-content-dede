@@ -3,7 +3,7 @@
 
 2. Melden Sie sich mithilfe des ausgewählten Identitätsanbieters an, und überprüfen Sie, ob die Authentifizierung erfolgreich verläuft.
 
-3. Geben Sie in der App einen Text in **TodoItem einfügen** ein, und klicken Sie dann auf **Speichern**.
+3. Geben Sie in der App einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Save**.
 
    	Bitte beachten Sie, dass die App nach dem Einfügen eine Pushbenachrichtigung von WNS erhält.
 
@@ -11,4 +11,4 @@
 
 	Vergewissern Sie sich, dass die Benachrichtigung nur auf diesem Gerät empfangen wird, da das vorherige Gerät nicht mit der aktuellen Benutzer-ID markiert wurde.
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

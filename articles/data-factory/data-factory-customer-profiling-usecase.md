@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/26/2015" 
 	ms.author="spelluru"/>
-
 
 # Anwendungsfall – Erstellen von Kundenprofilen
 
@@ -50,4 +48,4 @@ In diesem Beispielanwendungsfall wird Azure Data Factory verwendet, um die Aktiv
 
 Durch Optimieren der Benutzerprofilanalysen und deren Ausrichtung auf die Unternehmensziele kann das Spieleunternehmen schnell Verwendungsmuster sammeln und die Effektivität der Marketingkampagnen für alle Spiele analysieren.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

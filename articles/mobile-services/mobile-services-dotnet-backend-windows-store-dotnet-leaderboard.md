@@ -308,7 +308,7 @@ Fügen Sie anschließend den folgenden Code zu `PlayerRankController` hinzu:
         return Ok();
     }
 
-Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
+Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`￼￼￼-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
 
 1.	Fügt einen neuen Wert für `PlayerRank` für den Spieler hinzu, falls er nicht bereits in der Datenbank vorhanden ist.
 2.	Aktualisiert das Ergebnis des Spielers.
@@ -762,4 +762,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 
  
 
-<!----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

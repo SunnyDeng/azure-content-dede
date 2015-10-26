@@ -19,7 +19,8 @@
 
 # Verwalten Ihrer virtuellen Computer mithilfe von Azure PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Viele Aufgaben, die Sie jeden Tag zur Verwaltung der virtuellen Computer ausführen, können mithilfe von Azure PowerShell-Cmdlets automatisiert werden. In diesem Artikel finden Sie Beispiele für Befehle für einfachere Aufgaben und Links zu Artikeln, die die Befehle für komplexere Aufgaben behandeln.
 
@@ -96,4 +97,4 @@ Zum Erstellen eines auf Windows basierenden virtuellen Computers in Azure folgen
 - Als Mitglied in einer vorhandenen Lastenausgleichsgruppe.
 - Mit einer statischen IP-Adresse.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Python-Web-Apps mit Bottle in Azure"
-	description="In diesem Tutorial werden Sie in die Ausführung einer Python-App-Web in Azure App Service-Web-Apps eingeführt."
-	services="app-service\web"
-	documentationCenter="python"
+	pageTitle="Python-Web-Apps mit Bottle in Azure" 
+	description="In diesem Tutorial werden Sie in die Ausführung einer Python-App-Web in Azure App Service-Web-Apps eingeführt." 
+	services="app-service\web" 
+	documentationCenter="python" 
 	tags="python"
-	authors="huguesv"
-	manager="wpickett"
+	authors="huguesv" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="article"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
 	ms.date="08/30/2015"
 	ms.author="huguesv"/>
 
@@ -399,4 +399,4 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

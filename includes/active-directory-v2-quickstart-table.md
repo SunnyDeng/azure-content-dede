@@ -7,4 +7,4 @@
 | [Aufrufen von Office 365-Rest-APIs aus einer App](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) | [Schützen einer NodeJS-Web-API](active-directory-v2-devquickstarts-node-api.md) | Serverseitige Daemons (in Kürze) |
 | | [Aufrufen von Office 365-Rest-APIs aus dem Web](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) |
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

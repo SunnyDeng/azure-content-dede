@@ -475,4 +475,4 @@ Der „Im-Auftrag-von-Vorgang“ oder die JWT-Bearer-Anmeldeinformationsberechti
 
 Der Vorgang wird derzeit von der Vorschauversion des App-Modells v2.0 nicht unterstützt. Um zu sehen, wie dies im allgemein verfügbaren Azure AD-Dienst funktioniert, schauen Sie sich [dieses Azure AD-Codebeispiel](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet) an.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -131,7 +131,7 @@ In diesem Schritt erfahren Sie, wie Sie mit Windows Identity Foundation (WIF) un
 
 5. Geben Sie der Datei im Dialogfeld **Neue PHP-Datei** den Namen **secureResource.php**, und klicken Sie auf **Fertig stellen**.
 
-6. Geben Sie in der neuen Datei **secureResource.php** den folgenden Code ein. Ersetzen sie dabei den Pfad **c:\phpLibraries** durch das Stammverzeichnis, in das Sie den Beispielcode heruntergeladen haben. Das Stammverzeichnis sollte die Datei **simpleSAML.php** und den Ordner **federation** enthalten:
+6. Geben Sie in der neuen Datei **secureResource.php** den folgenden Code ein. Ersetzen sie dabei den Pfad **c:\\phpLibraries** durch das Stammverzeichnis, in das Sie den Beispielcode heruntergeladen haben. Das Stammverzeichnis sollte die Datei **simpleSAML.php** und den Ordner **federation** enthalten:
 
 		<?php
 		ini_set('include_path', ini_get('include_path').';c:\phpLibraries\;');
@@ -206,4 +206,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [PHP-Beispielcode für Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

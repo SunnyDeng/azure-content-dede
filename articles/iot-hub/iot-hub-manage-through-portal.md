@@ -1,18 +1,18 @@
 <properties
- pageTitle="Verwalten von Azure IoT Hubs über das Azure-Portal | Microsoft Azure"
+ pageTitle="Verwalten von IoT Hubs mit dem Azure-Portal | Microsoft Azure"
  description="Eine Übersicht zum Erstellen und Verwalten von Azure IoT Hubs über das Azure-Portal"
  services="iot-hub"
- documentationCenter=".net"
+ documentationCenter=""
  authors="nasing"
  manager="timlt"
  editor=""/>
 
 <tags
- ms.service="azure-iot"
+ ms.service="iot-hub"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
- ms.workload="tbd"
+ ms.workload="na"
  ms.date="09/29/2015"
  ms.author="nasing"/>
 
@@ -42,23 +42,23 @@ Sie können einen Azure IoT Hub mit den im vorherigen Abschnitt beschriebenen Me
 
 Um einen IoT Hub zu erstellen, muss der Benutzer den Hub benennen. Bitte beachten Sie, dass dieser Name für die Hubs eindeutig sein muss. Da im Backend keine Duplizierung von Hubs zulässig ist, wird eine möglichst eindeutige Benennung dieses Hubs empfohlen.
 
-### Auswählen des Tarifs 
+### Auswählen des Tarifs
 
 Kunden können zwischen 3 Tarifen wählen: **Free**, **Standard 1** und **Standard 2**. Mit dem Free-Tarif können nur 10 Geräte mit dem IoT Hub verbunden sein.
 
 **S1 (Low Frequency)**: IoT Hubs S1 (Low Frequency) ist auf IoT-Lösungen ausgelegt, die eine große Anzahl von Geräten umfassen, die relativ kleine Datenmengen pro Gerät generieren. Jede Einheit von S1 (Low Frequency) ermöglicht die Konnektivität von bis zu 500 Geräten oder bis zu 50.000 Nachrichten pro Tag auf allen verbundenen Geräten.
 
 **S2 (High Frequency)**: IoT Hub S2 (High Frequency) ist auf IoT-Lösungen ausgelegt, in denen Geräte große Datenmengen generieren. Jede Einheit von S2 (Low Frequency) ermöglicht die Konnektivität von bis zu 500 Geräten oder bis zu 1,5 Millionen Nachrichten pro Tag auf allen verbundenen Geräten.
- 
+
 ![][4]
 
 > [AZURE.NOTE]IoT Hub ermöglicht nur einen Free-Hub pro Abonnement.
 
-### IoT-Hub-Einheiten 
+### IoT-Hub-Einheiten
 
 Eine IoT-Einheit enthält 500 Geräte. Die Anzahl der IoT-Einheiten bedeutet also, dass die Gesamtanzahl der für diesen Hub unterstützten Geräte der Anzahl der Einheiten multipliziert mit 500 entspricht. Soll der IoT Hub beispielsweise 1000 Geräte unterstützen, so wählen Sie 2 Einheiten.
 
-### Gerät für Cloud-Partitionen und Ressourcengruppe 
+### Gerät für Cloud-Partitionen und Ressourcengruppe
 
 Sie können die Anzahl der Partitionen für einen IoT Hub ändern. Standardmäßig sind 4 Partitionen festgelegt, Sie können jedoch eine andere Anzahl von Partitionen aus einer Dropdownliste auswählen.
 
@@ -66,7 +66,7 @@ Für Ressourcengruppen muss nicht zwingend eine leere Ressourcengruppe erstellt 
 
 ![][5]
 
-### Auswählen von Abonnements 
+### Auswählen von Abonnements
 
 Azure IoT Hub zeigt automatisch die Liste der Abonnements an, mit denen das Benutzerkonto verknüpft ist. Sie können eine dieser Optionen auswählen, um den IoT Hub diesem Abonnement zuzuordnen.
 
@@ -89,23 +89,23 @@ Sie können die Einstellungen eines vorhandenen IoT Hub nach dessen Erstellung �
 **Freigegebene Zugriffsrichtlinien**: Hierbei handelt es sich um die Richtlinien, die die Berechtigungen für Geräte und Dienste zum Herstellen einer Verbindung mit dem IoT Hub definieren. Sie finden diese Richtlinien, indem Sie unter **Einstellungen** auf **Freigegebene Zugriffsrichtlinien** klicken. Auf diesem Blatt können Sie vorhandene Richtlinien ändern oder eine neue Richtlinie hinzufügen.
 
 ### Erstellen einer neuen Richtlinie
- 
+
 - Klicken Sie auf die Schaltfläche **Hinzufügen**, um ein Blatt zu öffnen, auf dem Sie den Namen der neuen Richtlinie und die Berechtigungen, die dieser Richtlinie zugeordnet werden sollen, wie in der folgenden Abbildung gezeigt eingeben können.
- 
+
 	Diesen freigegebenen Richtlinien können mehrere Berechtigungen zugeordnet werden. Die ersten beiden Richtlinien, **Registry lesen** und **Registry schreiben**, berechtigen zum Lesen und Schreiben im Geräteidentitätsspeicher oder Identitätsregistry. Bitte beachten Sie, dass beim Auswählen der Option mit Schreibzugriff die Option mit Lesezugriff automatisch ausgewählt wird.
 
  	Die Richtlinie für die Serververbindung gewährt der Consumergruppe Zugriff auf Dienste mit Verbindung zum IoT Hub, und die Geräteverbindung gewährt Zugriff auf Geräte des IoT Hubs.
-     
+
 - Klicken Sie auf „Richtlinie erstellen“, um der vorhandenen Liste diese neu erstellte Richtlinie hinzuzufügen.
 
 ![][10]
 
-## Nachrichten 
+## Nachrichten
 
 Klicken Sie auf die **Messaging**-Richtlinien, um eine Liste der Messaging-Eigenschaften für den IoT Hub anzuzeigen, der verändert wird. Zwei wichtige Eigenschaften können geändert oder kopiert werden: **C2D** (Cloud to device, Cloud zu Gerät) und **C2D** (Device to Cloud, Gerät zu Cloud).
 
 - **C2D-Einstellungen**: Diese Option hat 2 untergeordnete Einstellungen: **C2D-TTL** (Time to Live, Gültigkeitsdauer) und **Aufbewahrungszeit** für Nachrichten. Bei der ersten Erstellung des IoT Hubs werden diese beiden Einstellungen mit einem Standardwert von 1 Stunde erstellt. Allerdings können Sie diese mithilfe der Schieberegler oder durch Eingeben der Werten anpassen.
- 
+
 - **D2C-Einstellungen**: Diese Option hat mehrere untergeordnete Einstellungen, von denen einige bei Erstellung des IoT Hubs benannt bzw. zugewiesen werden und nur in andere untergeordneten Einstellungen kopiert werden können, die angepasst werden können. Diese sind alle im nächsten Abschnitt aufgeführt.
 
 **Partitionen**: Dieser Wert wird bei Erstellung des IoT Hubs festgelegt und kann durch diese Einstellung geändert werden.
@@ -135,7 +135,7 @@ Der Wechsel von einem hohen Tarif (S2) in einen niedrigen Tarif (S1) ist nur zul
 
 Klicken Sie zum Suchen des zu löschenden IoT Hubs auf **Durchsuchen** und wählen Sie dann den löschenden Hub aus. Durch Klicken auf die Schaltfläche **Löschen** wird der HubName gelöscht.
 
-  
+
   [4]: ./media/iot-hub-manage-through-portal/create-iothub.png
   [5]: ./media/iot-hub-manage-through-portal/location1.png
   [8]: ./media/iot-hub-manage-through-portal/portal-settings.png
@@ -143,4 +143,4 @@ Klicken Sie zum Suchen des zu löschenden IoT Hubs auf **Durchsuchen** und wähl
   [11]: ./media/iot-hub-manage-through-portal/messaging-settings.png
   [12]: ./media/iot-hub-manage-through-portal/pricing-error.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

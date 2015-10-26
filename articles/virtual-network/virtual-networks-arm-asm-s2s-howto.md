@@ -130,4 +130,4 @@ Befolgen Sie die Anweisungen unten, um ein VPN-Gateway für das ARM-VNet zu erst
 - Weitere Informationen zum [Netzwerkressourcenanbieter (Network Resource Provider, NRP) für ARM](../resource-groups-networking.md).
 - Erstellen einer [End-to-End-Lösung, die ein klassisches VNet mit einem ARM-VNet mithilfe einer S2S-VPN-Verbindung verbindet](../virtual-networks-arm-asm-s2s.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -20,9 +20,9 @@
 
 # Automatisieren mit dem Azure-Ressourcen-Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
-Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von komplexen Anwendungen, die in Azure-Infrastrukturdiensten ausgeführt werden. Viele Anwendungen erfordern eine Kombination von Computing-, Netzwerk- und Speicherressourcen, z. B. ein virtuelles Netzwerk, ein Speicherkonto und virtuelle Maschinen mit Netzwerkschnittstellen. Mit dem Azure-Ressourcen-Manager können Sie eine JSON-Vorlage verwenden oder erstellen, um alle Ressourcen gemeinsam als eine Anwendung bereitzustellen und zu verwalten.
+Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von komplexen Anwendungen, die in Azure-Infrastrukturdiensten ausgeführt werden. Viele Anwendungen erfordern eine Kombination von Compute-, Netzwerk- und Speicherressourcen, z. B. ein virtuelles Netzwerk, ein Speicherkonto und virtuelle Maschinen mit Netzwerkschnittstellen. Mit dem Azure-Ressourcen-Manager können Sie eine JSON-Vorlage verwenden oder erstellen, um alle Ressourcen gemeinsam als eine Anwendung bereitzustellen und zu verwalten.
 
 ## Beginnen Sie hier
 
@@ -74,4 +74,4 @@ Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von k
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

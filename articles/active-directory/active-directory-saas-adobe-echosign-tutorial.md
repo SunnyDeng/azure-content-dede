@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Adobe EchoSign erläut
 -   Ein gültiges Azure-Abonnement
 -   Ein Adobe EchoSign-Abonnement, für das einmaliges Anmelden aktiviert ist.
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Adobe EchoSign zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer Adobe EchoSign-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Adobe EchoSign zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer Adobe EchoSign-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +51,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ado
     ![Adobe EchoSign](./media/active-directory-saas-adobe-echosign-tutorial/IC789515.png "Adobe EchoSign")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Adobe EchoSign zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Adobe EchoSign zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -79,7 +79,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 7.  Führen Sie im Abschnitt für die SAML-Einstellungen die folgenden Schritte aus:
 
-    ![SAML Settings](./media/active-directory-saas-adobe-echosign-tutorial/IC789521.png "SAML Settings")
+    ![SAML Settings](./media/active-directory-saas-adobe-echosign-tutorial/IC789521.png "SAML-Einstellungen")
 
     1.  Wählen Sie als **SAML Mode** die Option **SAML Mandatory**.
     2.  Aktivieren Sie **Allow EchoSign Account Administrators to log in using their EchoSign Credentials**.
@@ -87,14 +87,14 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 8.  Fahren Sie mit den folgenden Schritten fort:
 
-    ![SAML Settings](./media/active-directory-saas-adobe-echosign-tutorial/IC789522.png "SAML Settings")
+    ![SAML-Einstellungen](./media/active-directory-saas-adobe-echosign-tutorial/IC789522.png "SAML-Einstellungen")
 
     1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Adobe EchoSign** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **IdP Entity ID** ein.
     2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Adobe EchoSign** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **IdP Login URL** ein.
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Adobe EchoSign** den Wert der **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **IdP Logout URL** ein.
     4.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-		>[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\).
+		>[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
     5.  Öffnen Sie das Base64-codierte Zertifikat in Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **IdP Certificate** ein.
     6.  Klicken Sie auf **Save Changes**.
 
@@ -115,7 +115,7 @@ Damit sich Azure AD-Benutzer bei Adobe EchoSign anmelden können, müssen sie i
 
 3.  Führen Sie im Abschnitt **Create New User** die folgenden Schritte aus:
 
-    ![Create User](./media/active-directory-saas-adobe-echosign-tutorial/IC789525.png "Create User")
+    ![Create User](./media/active-directory-saas-adobe-echosign-tutorial/IC789525.png "Benutzer erstellen")
 
     1.  Geben Sie in die Textfelder **Email Address**, **First Name** und **Last Name** die entsprechenden Informationen eines gültigen Azure Active Directory-Benutzerkontos ein, das Sie bereitstellen möchten.
     2.  Klicken Sie auf **Create User**.
@@ -142,4 +142,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

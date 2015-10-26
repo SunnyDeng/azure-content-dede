@@ -18,7 +18,8 @@
 
 # Verwenden von PowerShell zum Erstellen einer Azure-VM mit einem Berichtsserver im einheitlichen Modus
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Server Reporting Services-Berichtsserver im einheitlichen Modus auf einem virtuellen Azure Computer (Azure Virtual Machine, Azure-VM) bereitgestellt und konfiguriert wird. Die Schritte in diesem Dokument bestehen aus einer Kombination von manuellen Schritten zum Erstellen des virtuellen Computers und einem Windows PowerShell-Skript zum Konfigurieren von Reporting Services auf dem virtuellen Computer. Das Konfigurationsskript umfasst das Öffnen eines Firewallports für HTTP oder HTTPS.
 
@@ -66,7 +67,7 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 									
 	- Gibt es mehr als ein **VERÖFFENTLICHUNGSDATUM DER VERSION**, wählen Sie die neueste Version aus.
 	
-	- **Name des virtuellen Computers**: Der Name des Computers wird auch auf der nächsten Konfigurationsseite als Standardname für „DNS-Name des Cloud-Diensts“ verwendet. Der DNS-Name muss im gesamten Azure-Dienst eindeutig sein. Sie sollten den virtuellen Computer mit einem Computernamen konfigurieren, der beschreibt, wofür der virtuelle Computer verwendet wird. Zum Beispiel: ssrsnativecloud.
+	- **Name des virtuellen Computers**: Der Name des Computers wird auch auf der nächsten Konfigurationsseite als Standardname für „DNS-Name des Clouddiensts“ verwendet. Der DNS-Name muss im gesamten Azure-Dienst eindeutig sein. Sie sollten den virtuellen Computer mit einem Computernamen konfigurieren, der beschreibt, wofür der virtuelle Computer verwendet wird. Zum Beispiel: ssrsnativecloud.
 	
 	- **Stufe**: Standard
 	
@@ -80,9 +81,9 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 1. Bearbeiten Sie auf der nächsten Seite die folgenden Felder:
 
-	- **Cloud-Dienst**: Wählen Sie **Einen neuen Cloud-Dienst erstellen** aus.
+	- **Clouddienst**: Wählen Sie **Einen neuen Clouddienst erstellen** aus.
 	
-	- **DNS-Name des Cloud-Diensts**: Dies ist der öffentliche DNS-Name des Clouddiensts, der dem virtuellen Computer zugeordnet ist. Der Standardname ist der Name, den Sie als Namen des virtuellen Computers eingegeben haben. In späteren Schritten dieses Themas erstellen Sie ein vertrauenswürdiges SSL-Zertifikat, und dann wird der DNS-Name als Wert für die „Ausgestellt für“-Eigenschaft des Zertifikats verwendet.
+	- **DNS-Name des Clouddiensts**: Dies ist der öffentliche DNS-Name des Clouddiensts, der dem virtuellen Computer zugeordnet ist. Der Standardname ist der Name, den Sie als Namen des virtuellen Computers eingegeben haben. In späteren Schritten dieses Themas erstellen Sie ein vertrauenswürdiges SSL-Zertifikat, und dann wird der DNS-Name als Wert für die „Ausgestellt für“-Eigenschaft des Zertifikats verwendet.
 	
 	- **Region/Affinitätsgruppe/Virtuelles Netzwerk**: Wählen Sie die Region aus, die am nächsten zu den Endbenutzern liegt.
 	
@@ -128,7 +129,7 @@ Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ei
 
 	[Security Tools to Administer Windows Server 2012](https://technet.microsoft.com/library/jj730960.aspx)
 
-	>[AZURE.NOTE]Der Wert des Felds **Ausgestellt für** muss mit dem Namen übereinstimmen, den Sie in **DNS-Name des Cloud-Diensts** für den neuen virtuellen Computer verwendet haben.
+	>[AZURE.NOTE]Der Wert des Felds **Ausgestellt für** muss mit dem Namen übereinstimmen, den Sie in **DNS-Name des Clouddiensts** für den neuen virtuellen Computer verwendet haben.
 
 1. **Installieren Sie das Serverzertifikat auf dem Webserver**. In diesem Fall ist der Webserver der virtuelle Computer, der den Berichtsserver hostet, und die Website wird in späteren Schritten erstellt, wenn Sie Reporting Services konfigurieren. Weitere Informationen zum Installieren des Serverzertifikats auf dem Webserver mithilfe des MMC-Snap-Ins „Zertifikate“ finden Sie unter [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
 	
@@ -704,4 +705,4 @@ In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorh
 
 [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

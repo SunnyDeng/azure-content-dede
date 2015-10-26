@@ -224,4 +224,4 @@ Sie können die Anwendung (in der die node.js-App enthalten ist) bereitstellen, 
 [9]: ./media/service-fabric-node-and-reliable-actors-app/application-project-reference.PNG
 [10]: ./media/service-fabric-node-and-reliable-actors-app/solution-deploy.PNG
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

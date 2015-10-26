@@ -183,4 +183,4 @@ Aktivieren Sie den Schutz für virtuelle Computer in den VMM-Clouds:
 
 Für Fragen oder Kommentare zu diesem Szenario steht das [Site Recovery-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr/) zur Verfügung.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

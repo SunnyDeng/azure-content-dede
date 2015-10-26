@@ -20,16 +20,16 @@
 
 ## Übersicht
 
-In diesem Lernprogramm wird gezeigt, wie Sie einen [SaaS-Connector \(Software-as-a-Service\)](../app-service-logic-what-are-bizTalk-api-apps.md) in [Azure App Service](/documentation/services/app-service/) installieren, konfigurieren und testen, um ihn programmgesteuert aufzurufen, beispielsweise aus einer mobilen App. Ein SaaS-Connector ist eine [API-App](app-service-api-apps-why-best-platform.md), welche die Interaktion mit einer SaaS-Plattform wie z. B. Office 365, Salesforce, Facebook und Dropbox vereinfacht wird. Wenn Sie anstatt einen vorgefertigten Connector zu verwenden, eine benutzerdefinierte .NET API-App erstellen möchten, lesen Sie [Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App](app-service-api-dotnet-connect-to-saas.md).
+In diesem Lernprogramm wird gezeigt, wie Sie einen [SaaS-Connector (Software-as-a-Service)](../app-service-logic-what-are-bizTalk-api-apps.md) in [Azure App Service](/documentation/services/app-service/) installieren, konfigurieren und testen, um ihn programmgesteuert aufzurufen, beispielsweise aus einer mobilen App. Ein SaaS-Connector ist eine [API-App](app-service-api-apps-why-best-platform.md), welche die Interaktion mit einer SaaS-Plattform wie z. B. Office 365, Salesforce, Facebook und Dropbox vereinfacht wird. Wenn Sie anstatt einen vorgefertigten Connector zu verwenden, eine benutzerdefinierte .NET API-App erstellen möchten, lesen Sie [Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App](app-service-api-dotnet-connect-to-saas.md).
 
 Wenn Sie beispielsweise HTTP-Anforderungen zum Lesen und Schreiben von Dateien in Ihrem Dropbox-Konto schreiben möchten, ist der Authentifizierungsprozess zum direkten Arbeiten mit Dropbox kompliziert. Ein Dropbox-Connector übernimmt die Authentifizierung, sodass Sie sich darauf konzentrieren können, Ihren geschäftsspezifischen Code zu schreiben.
 
-> [AZURE.NOTE]Die hier beschriebenen Anleitungen sind nicht erforderlich, wenn Sie einen SaaS-Connector aus einer Logik-App verwenden möchten. Informationen zur Verwendung eines SaaS-Connectors innerhalb von Logik-Apps finden Sie unter [Erstellen einer neuen Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md) und im Artikel über das [Verwenden der benutzerdefinierten OAUTH-Anwendung in Connectors](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps&announcementId=4af1e4c5-d220-4457-97d8-d08e427ae6c1).
+> [AZURE.NOTE]Die hier beschriebenen Anleitungen sind nicht erforderlich, wenn Sie einen SaaS-Connector aus einer Logik-App verwenden möchten. Informationen zur Verwendung eines SaaS-Connectors innerhalb von Logik-Apps finden Sie unter [Erstellen einer neuen Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md) und im Artikel über das [Verwenden der benutzerdefinierten OAUTH-Anwendung in Connectors](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurelogicapps&announcementId=4af1e4c5-d220-4457-97d8-d08e427ae6c1).
  
 Dieses Lernprogramm verwendet einen Dropbox-Connector als Beispiel und leitet Sie durch die folgenden Schritte:
 
 * Installieren des Dropbox-Connectors in einer [Ressourcengruppe](../resource-group-overview.md) Ihres Azure-Abonnements 
-* Konfigurieren des Dropbox-Connectors, sodass er sich mit dem Dropbox-Dienst verbinden kann \(für diesen Schritt ist ein Dropbox-Konto erforderlich\)
+* Konfigurieren des Dropbox-Connectors, sodass er sich mit dem Dropbox-Dienst verbinden kann (für diesen Schritt ist ein Dropbox-Konto erforderlich)
 * Konfigurieren der Ressourcengruppe, sodass nur authentifizierte Benutzer auf die API-Apps zugreifen können, die in der Ressourcengruppe enthalten sind
 * Testen, ob sowohl Benutzerauthentifizierung als auch Dropbox-Authentifizierung funktionieren
 
@@ -57,7 +57,7 @@ Weitere Informationen zur Authentifizierung in App Service finden Sie unter [Aut
 
 	Weitere Informationen über Ressourcengruppen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](../resource-group-overview.md).
 
-7. Wählen Sie die **Preisstufe** "Free". \(Wenn diese nicht in der Liste angezeigt wird, klicken Sie auf **Alle anzeigen**. Nachdem Sie auf **F1 Free** geklickt haben, klicken Sie auf die Schaltfläche **Auswählen**.\)
+7. Wählen Sie die **Preisstufe** "Free". (Wenn diese nicht in der Liste angezeigt wird, klicken Sie auf **Alle anzeigen**. Nachdem Sie auf **F1 Free** geklickt haben, klicken Sie auf die Schaltfläche **Auswählen**.)
 
 	Sie können eine kostenpflichtige Preisstufe wählen, im Rahmen dieses Lernprogramms ist dies jedoch nicht erforderlich.
  
@@ -71,7 +71,7 @@ Weitere Informationen zur Authentifizierung in App Service finden Sie unter [Aut
 
 	Sie können den Fortschritt der Ressourcenerstellung überprüfen, indem Sie auf der Startseite des Azure-Vorschauportals auf **Benachrichtigungen** klicken.
 
-3. Wenn Azure die Erstellung des Connectors abgeschlossen hat, klicken Sie auf **Durchsuchen \> Ressourcengruppen \> DropboxRG**.
+3. Wenn Azure die Erstellung des Connectors abgeschlossen hat, klicken Sie auf **Durchsuchen > Ressourcengruppen > DropboxRG**.
  
 	Das Blatt **Ressourcengruppe** für DropboxRG zeigt den Connector und das Gateway in der Ressourcengruppe.
 
@@ -95,9 +95,9 @@ Standardmäßig ist die **Zugriffsebene** für den Connector auf **Intern** fest
 
 1. Wechseln Sie zurück zum Blatt **Einstellungen**, und klicken Sie auf **Anwendungseinstellungen**.
 
-2. Ändern Sie auf dem Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich \(authentifiziert\)**, und klicken Sie dann auf **Speichern**.
+2. Ändern Sie auf dem Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**, und klicken Sie dann auf **Speichern**.
 	
-	![Festlegung auf "Öffentlich \(authentifiziert\)"](./media/app-service-api-connnect-your-app-to-saas-connector/pubauth.png)
+	![Festlegung auf "Öffentlich (authentifiziert)"](./media/app-service-api-connnect-your-app-to-saas-connector/pubauth.png)
 
 Sie haben den Dropbox-Connector jetzt so konfiguriert, dass ausgehende Aufrufe auf Ihr Dropbox-Konto zugreifen können, eingehende Aufrufe müssen von authentifizierten Benutzern ausgeführt werden. Im nächsten Abschnitt geben Sie an, welchen Authentifizierungsanbieter Sie zum Authentifizieren von Benutzern verwenden möchten.
 
@@ -123,11 +123,11 @@ Führen Sie die folgenden Schritte in einem neuen Browserfenster aus. Je nach ge
 
     	http://[gatewayurl]/login/[providername]
 
-	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. \(Sie gelangen zum Blatt **Gateway**, indem Sie auf dem Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.\)
+	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. (Sie gelangen zum Blatt **Gateway**, indem Sie auf dem Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.)
 
 	![Gateway-URL](./media/app-service-api-connnect-your-app-to-saas-connector/gatewayurl.png)
 
-	Der \[providername\]-Wert lautet "facebook" für Facebook, "twitter" für Twitter, "aad" für Azure Active Directory usw.
+	Der [providername]-Wert lautet "facebook" für Facebook, "twitter" für Twitter, "aad" für Azure Active Directory usw.
 
 	Nachfolgend wird eine beispielhafte Anmelde-URL für Azure Active Directory gezeigt:
 
@@ -153,7 +153,7 @@ Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthal
 
 	- Drücken Sie F12, um die Entwicklertools zu öffnen.
 	- Wechseln Sie zur Registerkarte **Ressourcen**.
-	- Suchen Sie die Cookies für Ihre Gatewaysite, und klicken Sie dreimal auf den **Wert** des `x-zumo-auth`-Cookies, um alle Daten auszuwählen. \(Stellen Sie sicher, dass Sie den gesamten Cookiewert abrufen. Bei einem Doppelklick wird möglicherweise nur der erste Teil ausgewählt.\)  
+	- Suchen Sie die Cookies für Ihre Gatewaysite, und klicken Sie dreimal auf den **Wert** des `x-zumo-auth`-Cookies, um alle Daten auszuwählen. (Stellen Sie sicher, dass Sie den gesamten Cookiewert abrufen. Bei einem Doppelklick wird möglicherweise nur der erste Teil ausgewählt.)  
 
 	![Kopieren des Tokens](./media/app-service-api-connnect-your-app-to-saas-connector/copytoken.png)
 
@@ -179,7 +179,7 @@ Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthal
 
 	![Senden einer Zustimmungs-URL](./media/app-service-api-connnect-your-app-to-saas-connector/sendforconsent.png)
 
-	Die Antwort enthält eine URL, die Sie zum Einleiten der Anmeldung des Benutzers bei Dropbox verwenden können. \(Wenn Sie eine Fehlermeldung erhalten, die angibt, dass die "Get"-Methode nicht unterstützt wird, obwohl Sie die Methode auf **Post** festgelegt haben, müssen Sie sicherstellen, dass Ihre Gateway-URL auf HTTPS und nicht auf HTTP festgelegt ist.\)
+	Die Antwort enthält eine URL, die Sie zum Einleiten der Anmeldung des Benutzers bei Dropbox verwenden können. (Wenn Sie eine Fehlermeldung erhalten, die angibt, dass die "Get"-Methode nicht unterstützt wird, obwohl Sie die Methode auf **Post** festgelegt haben, müssen Sie sicherstellen, dass Ihre Gateway-URL auf HTTPS und nicht auf HTTP festgelegt ist.)
 
 	![Zustimmungs-URL](./media/app-service-api-connnect-your-app-to-saas-connector/getconsenturl.png)
 
@@ -187,7 +187,7 @@ Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthal
 
 	Die Antwort auf diese URL leitet den Browser zur Dropbox-Website weiter, auf der der Benutzer sich anmeldet und der App die Zustimmung für den Zugriff auf das Konto des Benutzers gibt.
 	
-	Nach erfolgtem Anmeldungs- und Zustimmungsprozess leitet Dropbox den Browser an die Umleitungs-URL weiter, die Sie angegeben haben \(z. B. zum Azure-Vorschauportal, wenn Sie dem Beispiel gefolgt sind und https://portal.azure.com) verwendet haben\). Wenn der Aufruf aus einer Web-App erfolgt, wäre dies die nächste Seite, die in der Web-App angezeigt wird. Die App muss die URL überprüfen, da die Umleitungs-URL bei einem Fehler im Anmeldungs- oder Zustimmungsprozess eine Abfragezeichenfolgen-Variable vom Typ `error` enthalten könnte.
+	Nach erfolgtem Anmeldungs- und Zustimmungsprozess leitet Dropbox den Browser an die Umleitungs-URL weiter, die Sie angegeben haben (z. B. zum Azure-Vorschauportal, wenn Sie dem Beispiel gefolgt sind und https://portal.azure.com) verwendet haben). Wenn der Aufruf aus einer Web-App erfolgt, wäre dies die nächste Seite, die in der Web-App angezeigt wird. Die App muss die URL überprüfen, da die Umleitungs-URL bei einem Fehler im Anmeldungs- oder Zustimmungsprozess eine Abfragezeichenfolgen-Variable vom Typ `error` enthalten könnte.
 
 3. Lassen Sie das Browserfenster geöffnet, da Sie es im nächsten Abschnitt benötigen.
 
@@ -195,9 +195,9 @@ Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthal
 
 Azure verwaltet jetzt drei Authentifizierungstoken für Sie:
 
-- Ein Token vom Authentifizierungsanbieter, den Sie für das Gateway konfiguriert haben \(z. B. Azure Active Directory\).
+- Ein Token vom Authentifizierungsanbieter, den Sie für das Gateway konfiguriert haben (z. B. Azure Active Directory).
 - Ein Token von Dropbox.
-- Ein Token, das Azure erstellt \(das Token "zumo"\).
+- Ein Token, das Azure erstellt (das Token "zumo").
 
 Das einzige Token, dass Sie für HTTP-Anforderungen zum Arbeiten mit Dropbox verwenden müssen, ist das zumo-Token. Azure hat dieses Token im Hintergrund den zwei weiteren Token zugeordnet, und der Connector stellt die zwei weiteren Token in Ihrem Namen bereit, wenn Aufrufe an Dropbox gesendet werden.
 
@@ -237,4 +237,4 @@ Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und 
 [Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

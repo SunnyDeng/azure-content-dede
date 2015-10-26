@@ -14,7 +14,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="09/28/2015"
+	ms.date="10/13/2015"
 	ms.author="brohrer;garye" />
 
 # Auswählen von Algorithmen für Microsoft Azure Machine Learning
@@ -36,6 +36,8 @@ Diese Empfehlungen sind eine Zusammenstellung aus Feedback und Tipps von zahlrei
 Die Pfad- und Algorithmusbezeichnungen in den Diagrammen sind wie folgt zu lesen: "Für *&lt;Pfadbezeichnung&gt;* verwenden Sie *&lt;Algorithmus&gt;*". Beispiel: "Für *Geschwindigkeit* verwenden Sie *Logistische Regression mit zwei Klassen*". Manchmal ist mehr als eine Verzweigung gültig. Manchmal ist keine davon eine optimale Lösung. Sie dienen als Faustregelempfehlungen. Machen Sie sich also keine Sorgen über ihre Exaktheit. Einige Datenanalysten, mit denen ich gesprochen habe, haben mir gesagt, dass die einzige sichere Methode zum Herausfinden des idealen Algorithmus darin besteht, alle auszuprobieren.
 
 Es folgt ein Beispiel aus dem [Cortana Analytics-Katalog](http://gallery.azureml.net/). Dabei handelt es sich um ein Experiment, mit dem mehrere Algorithmen auf dieselben Daten angewendet und die Ergebnisse verglichen werden: [Vergleichen von Multiklassen-Klassifizierungen: Buchstabenerkennung](http://gallery.azureml.net/Details/a635502fc98b402a890efe21cec65b92).
+
+>[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich eine Übersicht über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 ## Ausprägungen des maschinellen Lernens
 
@@ -75,11 +77,11 @@ Viele Algorithmen für maschinelles Lernen nutzen Linearität. Lineare Klassifiz
 
 ![Nicht lineare Klassengrenze][1]
 
-***Nicht lineare Klassengrenze*** *– die Verwendung eines linearen Klassifizierungsalgorithmus würde zu einer verringerten Genauigkeit führen*
+***Nicht lineare Klassengrenze*** *– Die Verwendung eines linearen Klassifizierungsalgorithmus würde zu einer verringerten Genauigkeit führen.*
 
 ![Daten mit einem nicht linearen Trend][2]
 
-***Daten mit einem nicht linearen Trend*** *– die Verwendung einer linearen Regressionsmethode würde wesentlich höhere Fehler erzeugen als nötig*
+***Daten mit einem nicht linearen Trend*** *– Die Verwendung einer linearen Regressionsmethode würde wesentlich höhere Fehler erzeugen als nötig.*
 
 Trotz ihrer Gefahren sind lineare Algorithmen als erster Ansatzpunkt sehr beliebt. Sie sind tendenziell algorithmisch einfach und lassen sich schnell trainieren.
 
@@ -87,7 +89,7 @@ Trotz ihrer Gefahren sind lineare Algorithmen als erster Ansatzpunkt sehr belieb
 
 Parameter sind die Knöpfe, an denen ein Datenanalyst drehen kann, wenn er einen Algorithmus einrichtet. Es handelt sich dabei um Zahlen, die das Verhalten des Algorithmus beeinflussen, z. B. Fehlertoleranz oder Anzahl von Iterationen oder Optionen zwischen Varianten der Verhaltensweisen des Algorithmus. Die Trainingsdauer und die Genauigkeit des Algorithmus können beim Finden der richtigen Einstellungen manchmal sehr empfindlich reagieren. Normalerweise erfordern Algorithmen mit vielen Parametern die meisten Testversuche, um eine gute Kombination zu finden.
 
-Alternativ enthält Azure Machine Learning einen [Parameter Sweeping](machine-learning-algorithm-parameters-optimize.md)-Modulblock, der automatisch alle Parameterkombinationen bei der von Ihnen beliebig auswählbaren Granularität ausprobiert. Zwar stellt dies eine hervorragende Möglichkeit dar, um sicherzustellen, dass Sie den gesamten Parameterbereich abgedeckt haben, doch die Zeit, die zum Trainieren eines Modells erforderlich ist, steigt exponentiell mit der Anzahl der Parameter.
+Alternativ biete Azure Machine Learning den Modulblock [Parameter Sweeping](machine-learning-algorithm-parameters-optimize.md), der automatisch alle Parameterkombinationen bei der von Ihnen beliebig auswählbaren Granularität ausprobiert. Zwar stellt dies eine hervorragende Möglichkeit dar, um sicherzustellen, dass Sie den gesamten Parameterbereich abgedeckt haben, doch die Zeit, die zum Trainieren eines Modells erforderlich ist, steigt exponentiell mit der Anzahl der Parameter.
 
 Der Vorteil ist, dass das Vorhandensein vieler Parameter normalerweise darauf hindeutet, dass ein Algorithmus über größere Flexibilität verfügt. Mit ihm kann man häufig eine sehr gute Genauigkeit erzielen. Vorausgesetzt, dass Sie die richtige Kombination von Parametereinstellungen finden.
 
@@ -129,7 +131,7 @@ Einige Lernalgorithmen treffen bestimmte Annahmen über die Struktur der Daten o
 
 ### Lineare Regression
 
-Wie zuvor erwähnt, passt die [lineare Regression](https://msdn.microsoft.com/library/azure/dn905978.aspx) eine Linie (oder Ebene oder Hyperebene) an das Dataset an. Es handelt sich um ein Arbeitspferd, einfach und schnell, aber möglicherweise ein wenig zu stark vereinfachend für einige Probleme. Hier finden Sie ein [Lernprogramm zur linearen Regression](machine-learning-linear-regression-in-azure.md).
+Wie zuvor erwähnt, passt die [lineare Regression](https://msdn.microsoft.com/library/azure/dn905978.aspx) eine Linie (oder Ebene oder Hyperebene) an das Dataset an. Es handelt sich um ein Arbeitspferd, einfach und schnell, aber möglicherweise ein wenig zu stark vereinfachend für einige Probleme. Hier finden Sie ein [Tutorial zur linearen Regression](machine-learning-linear-regression-in-azure.md).
 
 ![Daten mit einem linearen Trend][3]
 
@@ -145,7 +147,7 @@ Obwohl es verwirrenderweise "Regression" im Namen trägt, handelt es sich bei de
 
 ### Bäume, Wälder und Dschungel
 
-Decision Forests (Entscheidungswälder; [Regression](https://msdn.microsoft.com/library/azure/dn905862.aspx), [zweiklassig](https://msdn.microsoft.com/library/azure/dn906008.aspx) und [mehrklassig](https://msdn.microsoft.com/library/azure/dn906015.aspx)), Decision Jungles (Entscheidungsdschungel; [zweiklassig](https://msdn.microsoft.com/library/azure/dn905976.aspx) und [mehrklassig](https://msdn.microsoft.com/library/azure/dn905963.aspx)) und Boosted Decision Trees (verstärkte Entscheidungsbäume; [Regression](https://msdn.microsoft.com/library/azure/dn905801.aspx) und [zweiklassig](https://msdn.microsoft.com/library/azure/dn906025.aspx)) basieren alle auf Entscheidungsbäumen (Decision Trees), einem grundlegenden Konzept des maschinellen Lernens. Es gibt viele Varianten von Entscheidungsbäumen, aber alle machen dasselbe – sie unterteilen den Merkmalsraum in Bereiche mit größtenteils derselben Bezeichnung. Dies können Bereiche mit konsistenter Kategorie oder mit konstantem Wert sein, je nachdem, ob Sie eine Klassifizierung oder Regression durchführen.
+Decision Forests (Entscheidungswälder; [Regression](https://msdn.microsoft.com/library/azure/dn905862.aspx), [zweiklassig](https://msdn.microsoft.com/library/azure/dn906008.aspx) und [mehrklassig](https://msdn.microsoft.com/library/azure/dn906015.aspx)), Decision Jungles (Entscheidungsdschungel; [zweiklassig](https://msdn.microsoft.com/library/azure/dn905976.aspx) und [mehrklassig](https://msdn.microsoft.com/library/azure/dn905963.aspx)) und Boosted Decision Trees (verstärkte Entscheidungsbäume; [Regression](https://msdn.microsoft.com/library/azure/dn905801.aspx) und [zweiklassig](https://msdn.microsoft.com/library/azure/dn906025.aspx)) basieren alle auf Entscheidungsbäumen (Decision Trees), einem grundlegenden Machine Learning-Konzept. Es gibt viele Varianten von Entscheidungsbäumen, aber alle machen dasselbe – sie unterteilen den Merkmalsraum in Bereiche mit größtenteils derselben Bezeichnung. Dies können Bereiche mit konsistenter Kategorie oder mit konstantem Wert sein, je nachdem, ob Sie eine Klassifizierung oder Regression durchführen.
 
 ![Entscheidungsbaum unterteilt einen Merkmalsraum][5]
 
@@ -222,4 +224,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

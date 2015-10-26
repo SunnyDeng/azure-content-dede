@@ -46,4 +46,4 @@ Das benutzerdefinierte Attribut steht jetzt in der Liste der **Benutzerattribute
 
 Mit dem Feature "Jetzt ausführen" für die Richtlinie können Sie die Benutzererfahrung überprüfen. "ShoeSize" sollte jetzt in der Liste der Attribute angezeigt werden, die während der Registrierung von Kunden erfasst werden, sowie in dem Token, das zurück an die Anwendung gesendet wird.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

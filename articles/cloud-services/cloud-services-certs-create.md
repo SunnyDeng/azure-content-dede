@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure Cloud Services – Alles über Zertifikate" 
+	pageTitle="Clouddienste und Verwaltungszertifikate | Microsoft Azure" 
 	description="Informationen zum Erstellen und Verwenden von Zertifikaten mit Microsoft Azure" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -7,16 +7,14 @@
 	manager="timlt" 
 	editor=""/>
 
-
 <tags 
 	ms.service="cloud-services" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/16/2015"
+	ms.date="10/09/2015"
 	ms.author="adegeo"/>
-
 
 # Übersicht über Zertifikate für Azure Cloud Services
 Zertifikate werden in Azure für Clouddienste ([Dienstzertifikate](#what-are-service-certificates)) und für die Authentifizierung mit der Verwaltungs-API ([Verwaltungszertifikate](#what-are-management-certificates)) verwendet. Dieses Thema bietet eine allgemeine Übersicht über beide Zertifikattypen sowie über deren [Erstellung](#create) und [Bereitstellung](#deploy) in Azure.
@@ -71,6 +69,9 @@ Im Internet wird auf vielen Seiten erläutert, wie mit IIS Zertifikate erstellt 
 ### Java
 Auch mit Java können Sie [ein Zertifikat erstellen](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate).
 
+### Linux
+In [diesem](..\virtual-machines\virtual-machines-linux-use-ssh-key.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
+
 ## Nächste Schritte
 
 [Hochladen des Dienstzertifikats in das Azure-Portal](cloud-services-configure-ssl-certificate.md) (oder das [Vorschauportal](cloud-services-configure-ssl-certificate-portal.md)) und [Konfigurieren](cloud-services-xml-certs.md) des Zertifikats für den Clouddienst.
@@ -79,4 +80,4 @@ Hochladen des [Verwaltungs-API-Zertifikats](../azure-api-management-certs.md) in
 
 >[AZURE.NOTE]Im Azure-Vorschauportal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

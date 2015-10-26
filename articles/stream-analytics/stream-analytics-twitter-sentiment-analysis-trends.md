@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="10/05/2015"
+	ms.date="10/09/2015"
 	ms.author="jeffstok"/>
 
 
@@ -55,7 +55,7 @@ Wir haben eine Clientanwendung bereitgestellt, die über die [Streaming-APIs von
 
 Gehen Sie folgendermaßen vor, um die Anwendung einzurichten:
 
-1.	[Laden Sie die TwitterClient-Lösung herunter.](https://github.com/streamanalytics/samples/tree/master/TwitterClient)
+1.	[Laden Sie die TwitterClient-Lösung herunter.](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TwitterClient)
 2.	Öffnen Sie App.config und ersetzen Sie oauth\_consumer\_key, oauth\_consumer\_secret, oauth\_token und oauth\_token\_secret mit den Twitter-Token mit Ihren Werten.  
 
 	[Schritte zum Generieren eines OAuth-Zugriffstokens](https://dev.twitter.com/oauth/overview/application-owner-access-tokens)
@@ -236,4 +236,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

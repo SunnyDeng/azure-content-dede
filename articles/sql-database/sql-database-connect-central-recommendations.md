@@ -167,4 +167,4 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
 - [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

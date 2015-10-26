@@ -10,79 +10,61 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="09/28/2015"
+	ms.date="10/08/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"/>
 
 
-# Erstellen und Verwalten eines elastischen Azure SQL-Datenbankpools
+# Erstellen eines elastischen Datenbankpools
 
 > [AZURE.SELECTOR]
 - [Azure portal](sql-database-elastic-pool-portal.md)
 - [C#](sql-database-client-library.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
-Dieser Artikel beschreibt, wie Sie einen elastischen Datenbankpool mit dem [Azure-Vorschauportal](https://portal.azure.com) erstellen.
-
-Elastische Datenbankpools vereinfachen die Erstellung, Wartung und Verwaltung von sowohl der Leistung als auch der Kosten für eine große Anzahl von Datenbanken.
+In diesem Artikel wird das Erstellen eines elastischen Datenbankpools veranschaulicht, der den Prozess des Erstellens, Wartens und Verwaltens von Leistung und Kosten mehrerer Datenbanken vereinfacht. Bevor Sie beginnen, benötigen Sie mindestens eine Datenbank auf einem SQL-Datenbankserver V12. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md).
 
 
-> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit Azure SQL-Datenbank V12 verfügbar.
+> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar.
 
 
-
-
-## Voraussetzungen
-
-Zur Erstellung eines elastischen Datenbankpools benötigen Sie Folgendes:
-
-- Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
-- Einen Azure SQL-Datenbank V12-Server Wenn Sie keinen V12-Server haben, erstellen Sie ihn anhand der Schritte in dem Artikel [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md), oder [aktualisieren Sie einen vorhandenen Server auf V12](sql-database-v12-upgrade.md).
-
-
-## Erstellen eines elastischen Datenbankpools
+## Schritt 1: Hinzufügen eines Pools zu einem Server
 
 Erstellen Sie einen elastischen Datenbankpool, indem Sie einen neuen Pool zu einem Server hinzufügen. Sie können mehrere Pools zu einem Server hinzufügen, aber jedem Pool kann jeweils nur ein (1) Server zugeordnet werden. Darüber hinaus können alle oder einige der Datenbanken auf einem Server zu einem Pool hinzugefügt werden.
 
 
-1.	Wählen Sie den Server mit SQL-Datenbank V12 mit den Datenbanken, die Sie dem Pool hinzufügen möchten.
-2.	Erstellen Sie einen Pool, indem Sie **Pool hinzufügen** am oberen Rand des Blatts **SQL Server** auswählen.
+Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) auf **SQL-Server**, klicken Sie auf Server, die die Datenbanken hosten, die Sie zum Pool hinzufügen möchten, und klicken Sie dann auf **Pool hinzufügen**.
+
+![Hinzufügen eines Pools zu einem Server](./media/sql-database-elastic-pool-portal/elastic-pool-add-pool.png)
+
+Oder
+
+Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für einen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
+   
+  
+![Erstellen eines elastischen Pools][1]
 
 
-     Oder
+Das Blatt **Pool für elastische Datenbanken** stellt Optionen zum Festlegen des Tarifs, Hinzufügen von Datenbanken und Konfigurieren der Leistungsmerkmale des Pools bereit.
 
-    Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für diesen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
-    
-    
-    ![Erstellen eines elastischen Pools][1]
-
-
-
-
-## Konfigurieren eines elastischen Datenbankpools
-
-Konfigurieren Sie den Pool, indem Sie den Tarif festlegen, Datenbanken hinzufügen und die Leistungsmerkmale des Pools einrichten.
-
-> [AZURE.NOTE]Bei der Auswahl des Befehls **Pool hinzufügen** müssen Sie den Bedingungen der Vorschau zustimmen, indem Sie **VORSCHAUBESTIMMUNGEN** auswählen und das Blatt **Vorschaubestimmungen** ausfüllen. Sie müssen diesen Bedingungen nur einmal für jedes Abonnement zustimmen.
+> [AZURE.NOTE]Bei der ersten Auswahl des Befehls **Pool hinzufügen** müssen Sie den Bedingungen der Vorschau zustimmen, indem Sie **VORSCHAUBESTIMMUNGEN** auswählen und das Blatt **Vorschaubestimmungen** ausfüllen. Sie müssen dies nur einmal für jedes Abonnement tun.
 
    ![Konfigurieren eines elastischen Pools][2]
 
-## Konfigurieren des Tarifs
+## Schritt 2: Auswählen eines Tarifs
 
-Der Tarif für einen elastischen Datenbankpool legt die Features für die elastischen Datenbanken im Pool, die maximale Anzahl von eDTUs (eDTU MAX) und den für jede Datenbank verfügbaren Speicher (GB) fest. Details finden Sie unter [eDTUs und Speicherbeschränkungen für elastische Pools und elastische Datenbanken](sql-database-elastic-pool-reference.md#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
+Der Tarif für den Pool legt die Features für die elastischen Datenbanken im Pool, die maximale Anzahl von eDTUs (eDTU MAX) und den für jede Datenbank verfügbaren Speicher (GB) fest. Weitere Informationen finden Sie unter [Tarife](sql-database-service-tiers.md#Service-tiers-for-elastic-database-pools).
 
 >[AZURE.NOTE]Aktuell können Sie in der Vorschau den Tarif eines elastischen Datenbankpools nach dessen Erstellung nicht mehr ändern. Um den Tarif für einen vorhandenen elastischen Pool zu ändern, erstellen Sie einen neuen elastischen Pool im gewünschten Tarif, und migrieren Sie dann die elastischen Datenbanken zu diesem neuen Pool.
 
    ![Preisstufe][9]
 
 
-## Tarifempfehlungen für den elastischen Datenbankpool.
+### Tarifempfehlungen
 
 Der SQL-Datenbankdienst bewertet den Nutzungsverlauf und empfiehlt einen oder mehrere elastische Datenbankpools, wenn dies kostengünstiger als die Verwendung einzelner Datenbanken ist.
-
-
 
 Tarife mit einem Stern (![Stern][10]) stellen Empfehlungen auf der Grundlage Ihrer Datenbankworkloads dar.
 
@@ -92,7 +74,7 @@ Wenn mehrere Tarife empfohlen werden, bedeutet dies, dass mehrere elastische Dat
 
 - Tarif für den Pool (Basic, Standard oder Premium).
 - Angemessenes Niveau der Pool-eDTUs.
-- Die Minimal-/Maximalwerte der Datenbank-eDTU-Einstellungen.  
+- Die Minimal-/Maximalwerte der elastischen Datenbank-eDTU-Einstellungen.  
 - Eine Liste der empfohlenen Datenbanken.
 
 Der Dienst berücksichtigt bei der Empfehlung von elastischen Datenbankpools die Telemetrie der letzten 30 Tage. Damit eine Datenbank als Kandidat für einen elastischen Datenbankpool berücksichtigt wird, muss sie seit mindestens 7 Tagen existieren. Datenbanken, die sich bereits in einem elastischen Datenbankpool befinden, werden nicht als Empfehlungskandidaten für elastische Datenbankpools angesehen.
@@ -102,7 +84,7 @@ Der Dienst bewertet den Ressourcenbedarf und die Kosteneffizienz beim Verschiebe
 >[AZURE.NOTE]Web- und Geschäftsdatenbanken werden ausgehend von ihrem Nutzungsverlauf und der Datenbankgröße den neuen Basic-, Standard- und Premium-Tarifen zugeordnet. Die Zuordnung zu den neuen Tarifen stellt eine Empfehlung für Web- und Geschäftsdatenbanken für die passenden Pools dar.
 
 
-### Hinzufügen von Datenbanken
+## Schritt 3: Hinzufügen von Datenbanken zum Pool
 
 Sie können zu jedem Zeitpunkt bestimmte Datenbanken auswählen, die in den Pool aufgenommen werden sollen. Wenn Sie einen neuen Pool erstellen, empfiehlt Azure die Datenbanken, die von einem Pool profitieren, und kennzeichnet diese für die Aufnahme. Sie können alle auf dem Server verfügbaren Datenbanken hinzufügen, oder Sie aktivieren oder deaktivieren Datenbanken aus der ursprünglichen Liste nach Bedarf.
 
@@ -114,7 +96,7 @@ Bei Auswahl einer Datenbank für einen Pool müssen die folgenden Bedingungen er
 - Die aktuellen Features, die von der Datenbank verwendet werden, müssen im Pool verfügbar sein.
 
 
-### Konfigurieren der Leistung
+## Schritt 4: Anpassen der Leistungsmerkmale
 
 Sie konfigurieren die Leistung des Pools, indem Sie die Leistungsparameter für den Pool und die elastischen Datenbanken im Pool einrichten. Denken Sie daran, dass die **elastischen Datenbankeinstellungen** für alle Datenbanken im Pool gelten.
 
@@ -151,15 +133,11 @@ Navigieren Sie zu einem SQL-Datenbank V12-Server. Möglicherweise wird dann eine
     ![Empfohlener Pool][11]
 
 
-
-
-
-
-## Hinzufügen von Datenbanken zu einem Pool und Entfernen elastischer Datenbanken aus einem Pool
+## Hinzufügen zum und Entfernen von Datenbanken aus dem Pool
 
 Nachdem der Pool erstellt wurde, können Sie Datenbank zum Pool hinzufügen oder daraus entfernen, indem Sie Datenbanken auf der Seite **Datenbanken hinzufügen** aktivieren oder deaktivieren.
 
-*Nach dem Erstellen eines Pools können Sie Transact-SQL auch zum Erstellen von neuen elastischen Datenbanken im Pool verwenden und vorhandene Datenbanken in und aus Pools verschieben. Weitere Informationen finden Sie unter [Referenz für Pools für elastische Datenbanken – Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
+Nach dem Erstellen eines Pools können Sie Transact-SQL auch zum Erstellen von neuen elastischen Datenbanken im Pool verwenden und Datenbanken in und aus Pools verschieben. Weitere Informationen finden Sie unter [Referenz für Pools für elastische Datenbanken – Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
 
 
 ## Überwachen und Verwalten elastischer Datenbankpools
@@ -169,7 +147,7 @@ Nach dem Erstellen eines elastischen Datenbankpools können Sie den Pool im Port
 Nach dem Erstellen eines Pools können Sie folgende Aktionen ausführen:
 
 - Wählen Sie **Pool konfigurieren**, um die Einstellungen für Pool-eDTU und eDTU pro Datenbank zu ändern.
-- Wählen Sie **Auftrag erstellen**, und verwalten Sie die Datenbanken im Pool durch elastische Aufträge. Elastische Aufträge erleichtern die Ausführung von Transact-SQL-Skripts für eine beliebige Anzahl von Datenbanken im Pool. Weitere Informationen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
+- Wählen Sie **Auftrag erstellen**, und verwalten Sie die Datenbanken im Pool durch elastische Aufträge. Elastische Aufträge ermöglichen die Ausführung von Transact-SQL-Skripts für eine beliebige Anzahl von Datenbanken im Pool. Weitere Informationen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
 - Wählen Sie **Aufträge verwalten**, um vorhandene elastische Aufträge zu verwalten.
 
 
@@ -221,4 +199,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [11]: ./media/sql-database-elastic-pool-portal/recommended-pool.png
 [12]: ./media/sql-database-elastic-pool-portal/pools-message.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

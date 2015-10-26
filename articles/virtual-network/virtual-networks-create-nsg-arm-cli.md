@@ -68,10 +68,7 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-FrontEnd* basierend auf d
 		data:    DenyAllOutBound                *                  *            *               *                 *         Outbound   Deny    65500   
 		info:    network nsg create command OK
 
-	Parameter:
-	- **-g (oder --resource-group)**. Name der Ressourcengruppe, in der die NSG erstellt wird. In diesem Szenario *TestRG*.
-	- **-l (oder --location)**. Azure-Region, in der die neue NSG erstellt wird. In diesem Szenario *westus*. 
-	- **-n (oder --name)**. Name der neuen NSG. In diesem Szenario *NSG-FrontEnd*.
+	Parameter: - **-g (oder --resource-group)**. Name der Ressourcengruppe, in der die NSG erstellt wird. In diesem Szenario *TestRG*. - **-l (oder --location)**. Azure-Region, in der die neue NSG erstellt wird. In diesem Szenario *westus*. - **-n (oder --name)**. Name der neuen NSG. In diesem Szenario *NSG-FrontEnd*.
 
 4. Führen Sie den Befehl **azure network nsg rule create** aus, um eine Regel zu erstellen, die den Zugriff auf Port 3389 (RDP) über das Internet zulässt.
 
@@ -105,7 +102,7 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-FrontEnd* basierend auf d
 	- **-n (oder --name)**. Name der neuen Regel. In diesem Szenario *rdp-rule*.
 	- **-c (oder --access)**. Zugriffsebene für die Regel (Deny oder Allow).
 	- **-p (oder --protocol)**. Protokoll (Tcp, Udp oder *) für die Regel.
-	- **-r (oder --direction)**. Richtung der Verbindung (Inbound oder Outbound).
+- **-r (oder --direction)**. Richtung der Verbindung (Inbound oder Outbound).
 	- **-y (oder --priority)**. Priorität für die Regel.
 	- **-f (oder --source-address-prefix)**. Quelladresspräfix in CIDR oder Verwendung von Standardtags.
 	- **-o (oder --source-port-range)**. Quellport oder Portbereich.
@@ -269,4 +266,4 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-BackEnd* basierend auf de
 		data:    
 		info:    network vnet subnet set command OK
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

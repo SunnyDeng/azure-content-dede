@@ -7,4 +7,4 @@ Zu den Schlüsseleigenschaften von Azure DNS zählen:
 - ** DNS-Zonen ** – Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne.
 - ** DNS-Eintragssätze ** – eine Auflistung der Einträge eines bestimmten Typs. Unterstützte Typen sind A, AAAA, CNAME, MX, NS, SOA, SRV und TXT.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

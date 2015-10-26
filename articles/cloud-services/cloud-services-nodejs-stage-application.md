@@ -75,4 +75,4 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
 [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
 [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]: cloud-services-how-to-manage.md#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

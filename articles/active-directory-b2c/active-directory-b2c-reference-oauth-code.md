@@ -272,4 +272,4 @@ Wenn Sie diese Anfragen selbst ausprobieren möchten, müssen Sie zunächst dies
 - [Erstellen einer Anwendung](active-directory-b2c-app-registration.md) zum Abrufen einer Anwendungs-ID und eines Umleitungs-URIs. Sie können Ihrer App einen **systemeigenen Client** hinzufügen.
 - [Erstellen der Richtlinien](active-directory-b2c-reference-policies.md) zum Abrufen der Richtliniennamen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

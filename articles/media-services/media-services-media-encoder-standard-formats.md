@@ -58,6 +58,7 @@ Codecs für Videoeingang|Unterstützt
 AVC 8-Bit/10-Bit, bis zu 4:2:2, einschließlich AVCIntra |8-Bit 4:2:0 und 4:2:2 
 Avid DNxHD (in MXF) |Ja 
 DVCPro/DVCProHD (in MXF) |Ja 
+Digitales Video (DV) (in AVI-Dateien) |Ja
 JPEG 2000 |Ja 
 MPEG-2 (bis zu 422 Profile und High Level; Varianten wie XDCAM, XDCAM HD, XDCAM IMX, CableLabs® und D10 eingeschlossen)|Bis zu 422 Profile 
 MPEG-1 |Ja 
@@ -109,7 +110,7 @@ MPEG2-TS |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
 ##Weitere Informationen
@@ -118,4 +119,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Gewusst wie: Codieren mit Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

@@ -14,7 +14,7 @@
 
           Select-AzureSubscription -SubscriptionID <YourSubscriptionId>
 
-3. Wechseln Sie zum AzureResourceManager-Modul.
+3. Wechseln Sie zum Azure-Ressourcen-Manager-Modul.
 
           Switch-AzureMode AzureResourceManager
 
@@ -68,4 +68,4 @@
 
         Get-AzureResourceGroupLog -ResourceGroup ExampleResourceGroup -Status Failed -DetailedOutput
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

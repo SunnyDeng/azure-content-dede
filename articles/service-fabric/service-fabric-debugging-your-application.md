@@ -1,20 +1,20 @@
 <properties
    pageTitle="Debuggen einer Service Fabric-Anwendung in Visual Studio mit F5"
-	description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste mithilfe von Visual Studio und einem lokalen Entwicklungscluster."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="jessebenson"
-	manager="timlt"
-	editor=""/>
+   description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste mithilfe von Visual Studio und einem lokalen Entwicklungscluster."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="jessebenson"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/26/2015"
-	ms.author="jesseb"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/26/2015"
+   ms.author="jesseb"/>
 
 # Debuggen einer Service Fabric-Anwendung in Visual Studio mit F5
 
@@ -66,4 +66,4 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in ein
 [breakpoint]: ./media/service-fabric-debugging-your-application/breakpoint.png
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

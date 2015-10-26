@@ -21,4 +21,4 @@ Länge von Metriknamen | 100 | 100
  
 [Informationen zu Preisen und Kontingenten für Application Insights](app-insights-pricing.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

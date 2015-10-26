@@ -14,4 +14,4 @@ Datenträgergröße | 128 GB | 512 GB | 1\.024 GiB (1 TB)
 IOPS pro Datenträger | 500 | 2\.300 | 5\.000
 Durchsatz pro Datenträger | 100 MB pro Sekunde | 150 MB pro Sekunde | 200 MB pro Sekunde
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

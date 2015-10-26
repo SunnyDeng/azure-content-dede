@@ -7,7 +7,6 @@
     manager="jhubbard" 
     editor="mimig"/>
 
-
 <tags 
     ms.service="documentdb" 
     ms.devlang="rest-api" 
@@ -16,7 +15,6 @@
     ms.workload="data-services" 
     ms.date="06/16/2015" 
     ms.author="andrl"/>
-
 
 #Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern
 
@@ -272,4 +270,4 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
  - Klicken Sie [hier](/services/search/), um weitere Informationen zu Azure Search zu erhalten.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

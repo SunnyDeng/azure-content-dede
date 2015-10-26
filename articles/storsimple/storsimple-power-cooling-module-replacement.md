@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Austauschen eines PCM im StorSimple-Gerät | Microsoft Azure"
-	description="In diesem Thema wird erläutert, wie Sie ein oder beide Module für Stromversorgung und Kühlung (PCM) in einem StorSimple-Gerät austauschen oder ausbauen."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="In diesem Thema wird erläutert, wie Sie ein oder beide Module für Stromversorgung und Kühlung (PCM) in einem StorSimple-Gerät austauschen oder ausbauen."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/31/2015"
+   ms.author="alkohli" />
 
 # Austauschen eines Moduls für Stromversorgung und Kühlung eines StorSimple-Geräts
 
@@ -152,4 +152,4 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

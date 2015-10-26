@@ -26,4 +26,4 @@ Wenn Sie Ihre Web-App noch nicht als Traffic Manager-Endpunkt hinzugefügt haben
 
 Jetzt sollten Sie den Traffic Manager-Domänennamen (contoso.trafficmanager.net) in Ihren Browser eingeben können und auf diese Weise erfolgreich zu Ihrer Web-App gelangen.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

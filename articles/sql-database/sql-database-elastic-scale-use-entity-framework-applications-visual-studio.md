@@ -281,4 +281,4 @@ Entity Framework-Anwendungen können problemlos von den Tools für elastische Da
 [1]: ./media/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/sample.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

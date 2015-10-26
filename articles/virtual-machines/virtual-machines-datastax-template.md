@@ -18,7 +18,8 @@
 
 # DataStax auf Ubuntu mit einer Ressourcen-Manager-Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen, die auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra basieren. Diese verteilte NoSQL-Datenbanktechnologie ist weithin anerkannt als agil, immer funktionsbereit und vorhersehbar auf jede Größe skalierbar. DataStax bietet die Versionen Enterprise (DSE) und Community (DSC) an. Zudem beinhaltet es Funktionen wie In-Memory-Computing, unternehmensweite Sicherheit, schnelle und leistungsfähige integrierte Analysen und eine Unternehmenssuche.
 
@@ -479,4 +480,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

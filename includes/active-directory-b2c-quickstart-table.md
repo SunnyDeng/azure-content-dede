@@ -7,4 +7,4 @@
 | | [Schützen einer NodeJS-Web-API](active-directory-b2c-devquickstarts-api-node.md) | Serverseitige Daemons (in Kürze) |
 | | [Aufrufen einer Web-API aus einer .NET-Web-App](active-directory-b2c-devquickstarts-web-api-dotnet.md) | Serverseitige Daemons (in Kürze) |
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

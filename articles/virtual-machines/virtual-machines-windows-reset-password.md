@@ -19,7 +19,8 @@
 
 # Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt mit dem Ressourcen-Manager-Bereitstellungsmodell erstellte virtuelle Computer.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Wenn Sie ein Kennwort vergessen haben oder ein Problem mit der Konfiguration des Remotedesktopdiensts vorliegt und Sie daher keine Verbindung mit einem virtuellen Windows-Computer herstellen können, verwenden Sie das Azur-Vorschauportal oder die VMAccess-Erweiterung zum Zurücksetzen des lokalen Administratorkennworts oder zum Zurücksetzen der Konfiguration des Remotedesktopdiensts.
 
@@ -45,7 +46,7 @@ Bevor Sie beginnen, benötigen Sie Folgendes:
 
 Die Erweiterung "VMAccess" muss installiert sein, bevor Sie es verwenden können. Solange der VM-Agent auf dem virtuellen Computer installiert ist, wird die Erweiterung beim Ausführen eines Azure PowerShell-Befehls, der das Cmdlet **Set-AzureVMExtension** verwendet, automatisch geladen.
 
-Überprüfen Sie zunächst, ob der VM-Agent bereits installiert ist. Fügen Sie den Cloud-Dienstnamen und den Namen des virtuellen Computers hinzu, und führen Sie dann die folgenden Befehle an einer Azure PowerShell-Eingabeaufforderung mit Administratorrechten aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
+Überprüfen Sie zunächst, ob der VM-Agent bereits installiert ist. Fügen Sie den Clouddienstnamen und den Namen des virtuellen Computers hinzu, und führen Sie dann die folgenden Befehle an einer Azure PowerShell-Eingabeaufforderung mit Administratorrechten aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
 	$csName = "<cloud service name>"
 	$vmName = "<virtual machine name>"
@@ -113,4 +114,4 @@ Wenn Sie das Azure IaaS-Diagnosepaket (Windows) nicht ausführen konnten oder da
 
 [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

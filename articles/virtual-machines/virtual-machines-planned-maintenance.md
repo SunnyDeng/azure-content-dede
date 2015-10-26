@@ -118,4 +118,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->
