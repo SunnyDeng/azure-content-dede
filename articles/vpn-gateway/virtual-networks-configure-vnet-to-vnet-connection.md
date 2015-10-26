@@ -1,20 +1,20 @@
 <properties
    pageTitle="Konfigurieren einer VNet-zu-VNet-Verbindung | Microsoft Azure"
-	description="Herstellen von Verbindungen zwischen virtuellen Azure-Netzwerken im gleichen Abonnement oder in der gleichen Region oder in verschiedenen Abonnements oder Regionen"
-	services="vpn-gateway"
-	documentationCenter="na"
-	authors="cherylmc"
-	manager="carolz"
-	editor=""/>
+   description="Herstellen von Verbindungen zwischen virtuellen Azure-Netzwerken im gleichen Abonnement oder in der gleichen Region oder in verschiedenen Abonnements oder Regionen"
+   services="vpn-gateway"
+   documentationCenter="na"
+   authors="cherylmc"
+   manager="carolz"
+   editor=""/>
 
 <tags
    ms.service="vpn-gateway"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/20/2015"
-	ms.author="cherylmc"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/20/2015"
+   ms.author="cherylmc"/>
 
 
 # Konfigurieren einer VNet-zu-VNet-Verbindung im Azure-Portal
@@ -232,4 +232,4 @@ Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema f√
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

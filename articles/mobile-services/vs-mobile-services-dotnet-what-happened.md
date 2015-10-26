@@ -43,4 +43,4 @@ Wenn ein .NET Mobile Service im Anbieter für verbundene Dienste erstellt wird, 
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

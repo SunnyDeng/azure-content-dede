@@ -131,7 +131,6 @@ Von der Hive-Aktion im Workflow wird eine HiveQL-Skriptdatei aufgerufen. Die Skr
 		<workflow-app name="useooziewf" xmlns="uri:oozie:workflow:0.2">
 		    <start to = "RunHiveScript"/>
 
-
 		    <action name="RunHiveScript">
 		        <hive xmlns="uri:oozie:hive-action:0.2">
 		            <job-tracker>${jobTracker}</job-tracker>
@@ -148,9 +147,7 @@ Von der Hive-Aktion im Workflow wird eine HiveQL-Skriptdatei aufgerufen. Die Skr
 		            <param>hiveOutputFolder=${hiveOutputFolder}</param>
 		        </hive>
 		        <ok to="RunSqoopExport"/>
-
 		        <error to="fail"/>
-
 		    </action>
 
 		    <action name="RunSqoopExport">
@@ -176,9 +173,7 @@ Von der Hive-Aktion im Workflow wird eine HiveQL-Skriptdatei aufgerufen. Die Skr
 			    <arg>"\001"</arg>
 		        </sqoop>
 		        <ok to="end"/>
-
 		        <error to="fail"/>
-
 		    </action>
 
 		    <kill name="fail">
@@ -186,7 +181,6 @@ Von der Hive-Aktion im Workflow wird eine HiveQL-Skriptdatei aufgerufen. Die Skr
 		    </kill>
 
 		   <end name="end"/>
-
 		</workflow-app>
 
 	Im Workflow sind zwei Aktionen definiert. Die Startaktion lautet *RunHiveScript*. Wenn die Ausführung der Aktion *OK* ist, wird als nächste Aktion *RunSqoopExport* ausgeführt.
@@ -260,7 +254,7 @@ Während des Prozesses zur Bereitstellung eines HDInsight-Clusters werden wie in
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.windows.net/<path>/<filename>
 
-> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die \**wasb://*-Syntax unterstützt. Die ältere \**asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern.
+> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die **wasb://*-Syntax unterstützt. Die ältere **asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern.
 
 > [AZURE.NOTE]Der Pfad "wasb://" ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
 
@@ -564,7 +558,7 @@ Azure PowerShell stellt derzeit keine Cmdlets zum Definieren von Oozie-Jobs bere
 		    return $oozieJobId
 		}
 
-	> [AZURE.NOTE] Wenn Sie einen Workflowauftrag übermitteln, müssen Sie einen weiteren Webdienstaufruf ausführen, um den Auftrag nach dessen Erstellung auszuführen. In diesem Fall wird der Koordinator-Job durch die Uhrzeit ausgelöst. Der Job wird automatisch gestartet.
+	> [AZURE.NOTE]Wenn Sie einen Workflowauftrag übermitteln, müssen Sie einen weiteren Webdienstaufruf ausführen, um den Auftrag nach dessen Erstellung auszuführen. In diesem Fall wird der Koordinator-Job durch die Uhrzeit ausgelöst. Der Job wird automatisch gestartet.
 
 6. Hängen Sie die folgenden Codezeilen an das Skript. In diesem Teil wird der Status des Oozie-Jobs geprüft:
 
@@ -748,4 +742,4 @@ In diesem Lernprogramm haben Sie einen Oozie-Workflow und einen Oozie-Koordinato
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

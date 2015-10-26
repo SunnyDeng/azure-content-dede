@@ -13,15 +13,17 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="10/07/2015" 
 	ms.author="tamram"/>
 
 
 # Clientseitige Verschlüsselung und Azure Key Vault für Microsoft Azure Storage
 
+[AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
+
 ## Übersicht
 
-Die [Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure Key Vault](http://azure.microsoft.com/services/key-vault/).
+Die [Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure-Schlüsseltresor](http://azure.microsoft.com/services/key-vault/).
 
 Informationen zur clientseitigen Verschlüsselung mit Java finden Sie unter [Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage](storage-client-side-encryption-java.md).
 
@@ -134,7 +136,7 @@ Verschlüsselungsunterstützung ist nur in der Speicherclientbibliothek für .NE
 >- Verwenden Sie beim Lesen aus einem verschlüsselten Blob oder beim Schreiben in diesen Befehle zum Hochladen des vollständigen Blobs und zum Herunterladen des bereichsbasierten oder vollständigen Blobs. Vermeiden Sie beim Schreiben in einen verschlüsselten Blob Protokollvorgänge wie z. B. "Put Block", "Put Block List", "Write Pages", "Clear Pages" oder "Append Block". Andernfalls wird der verschlüsselte Blob möglicherweise beschädigt und kann nicht mehr gelesen werden.
 >- Für Tabellen gilt eine ähnliche Einschränkung. Achten Sie darauf, dass Sie beim Aktualisieren verschlüsselter Eigenschaften auch die Verschlüsselungsmetadaten aktualisieren.
 >- Wenn Sie Metadaten für den verschlüsselten Blob festlegen, werden die für die Entschlüsselung erforderlichen verschlüsselungsbezogenen Metadaten möglicherweise überschrieben, da das Festlegen von Metadaten kein additiver Vorgang ist. Dies gilt auch für Momentaufnahmen: Geben Sie während der Erstellung einer Momentaufnahme eines verschlüsselten Blobs keine Metadaten an. Müssen Metadaten festgelegt werden, müssen Sie zunächst die **FetchAttributes**-Methode aufrufen, um die aktuellen Verschlüsselungsmetadaten abzurufen. Außerdem sollten Sie gleichzeitige Schreibvorgänge vermeiden, während Metadaten festgelegt werden.
->- Aktivieren Sie die **RequireEncryption**-Eigenschaft in Standardanforderungsoptionen für Benutzer, die nur mit verschlüsselte Daten arbeiten sollen. Weitere Details finden Sie nachstehend.
+>- Aktivieren Sie die **RequireEncryption**-Eigenschaft in Standardanforderungsoptionen für Benutzer, die nur mit verschlüsselten Daten arbeiten sollen. Weitere Details finden Sie nachstehend.
 
 
 ## Client-API/Schnittstelle
@@ -154,7 +156,7 @@ Benutzer können optional einen Betriebsmodus aktivieren, in dem alle hoch- oder
 
 ### Blob-Diensterschlüsselung
 
-Erstellen Sie ein **BlobEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder auf einer Clientebene über **DefaultRequestOptions**). Alles Weitere wird intern von der Clientbibliothek behandelt.
+Erstellen Sie ein **BlobEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder mit **DefaultRequestOptions** auf einer Clientebene). Alles Weitere wird intern von der Clientbibliothek behandelt.
 
 	// Create the IKey used for encryption.
  	RsaKey key = new RsaKey("private:key1" /* key identifier */);
@@ -174,7 +176,7 @@ Erstellen Sie ein **BlobEncryptionPolicy**-Objekt, und legen Sie es in den Anfor
 
 ### Warteschlangendienst-Verschlüsselung
 
-Erstellen Sie ein **QueueEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder auf einer Clientebene über **DefaultRequestOptions**). Alles Weitere wird intern von der Clientbibliothek behandelt.
+Erstellen Sie ein **QueueEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder mit **DefaultRequestOptions** auf einer Clientebene). Alles Weitere wird intern von der Clientbibliothek behandelt.
 
 
 	// Create the IKey used for encryption.
@@ -244,4 +246,4 @@ Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Le
 
 [Azure-Speicherclientbibliothek für .NET – NuGet-Paket](http://www.nuget.org/packages/WindowsAzure.Storage/5.0.0) herunterladen [Azure-Speicherclientbibliothek für .NET-Quellcode von GitHub](https://github.com/Azure/azure-storage-net) herunterladen NuGet-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

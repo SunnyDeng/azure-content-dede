@@ -10,4 +10,4 @@ Nachstehend finden Sie die Verwendungs- und andere Einschränkungen für den Azu
 | Anpassung des Zugriffsbereichs | <ul><li>Für Benutzer mit zugewiesenen Lizenzen für Azure AD Premium oder der Enterprise Mobility Suite gibt es keine Beschränkung der Anzahl von Anwendungen, die pro Endbenutzer im Zugriffsbereich angezeigt werden können.</li><li>Bei Benutzern mit zugewiesenen Lizenzen für die Edition "Free" oder "Basic" von Azure AD werden für jeden Endbenutzer maximal 10 App-Titel (z. B. "Box", "Salesforce" oder "Dropbox") im Zugriffsbereich angezeigt. Diese Beschränkung gilt nicht für Administratorkonten.</li></ul> |
 | Berichte | In einem Bericht können maximal 1.000 Zeilen angezeigt oder heruntergeladen werden. Weitere Daten werden abgeschnitten. |
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

@@ -56,4 +56,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 - [Verwenden von Service Bus-Themen](service-bus-dotnet-how-to-use-topics-subscriptions.md)
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

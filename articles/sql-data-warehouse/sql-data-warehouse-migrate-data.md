@@ -194,4 +194,4 @@ Weitere Informationen zur Migration finden Sie unter [Migrieren Ihrer Lösung na
 [ADO.NET-Zieladapter]: https://msdn.microsoft.com/de-DE/library/bb934041.aspx
 [SSIS-Dokumentation]: https://msdn.microsoft.com/de-DE/library/ms141026.aspx
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

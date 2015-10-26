@@ -19,7 +19,8 @@
 
 #Bereitstellen einer LAMP-App mithilfe der Azure-CustomScript-Erweiterung für Linux#
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel beschreibt die Behandlung von Problemen beim Anwendungszugriff auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Die Microsoft Azure-CustomScript-Erweiterung für Linux bietet eine Möglichkeit, Ihre virtuellen Computer anzupassen, indem Sie beliebigen, in einer vom virtuellen Computer unterstützten Skriptsprache geschriebenen Code ausführen (z. B. Python, Bash usw.) Dies bietet eine sehr flexible Möglichkeit zum Automatisieren der Anwendungsbereitstellung auf verschiedenen Computern.
 
@@ -109,4 +110,4 @@ Nachfolgend finden Sie einige zusätzliche Ressourcen für die Azure-CLI, Linux 
 
 [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

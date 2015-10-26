@@ -165,4 +165,4 @@ Die folgenden Schritte sind erforderlich, um eine geschützte Entität (SQL-Date
 
 • [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

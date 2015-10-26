@@ -241,4 +241,4 @@ Sie können über die serielle Gerätekonsole oder über Windows PowerShell-Remo
 
 [Kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md), wenn beim Einschalten oder Herunterfahren eines StorSimple-Geräts Probleme auftreten.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

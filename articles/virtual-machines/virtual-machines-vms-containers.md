@@ -22,7 +22,8 @@
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Virtuelle Computer und Container in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+ 
 
 Azure bietet Ihnen hervorragende Cloudlösungen auf Basis virtueller Computer – beruhend auf der Emulation physischer Computerhardware – und ermöglicht Ihnen so hohe Flexibilität bei der Softwarebereitstellung und eine deutlich bessere Ressourcenkonsolidierung als mit physischer Hardware. Insbesondere dank des [Docker](https://www.docker.com)-Ansatzes für Container und des Docker-Ökosystems hat die Linux-Containertechnologie in den letzten Jahren immer mehr Möglichkeiten erschlossen, wie Sie verteilte Software entwickeln und verwalten können. Der Anwendungscode in einem Container wird vom virtuellen Azure-Hostcomputer sowie von anderen Containern auf demselben virtuellen Computer isoliert. Auf diese Weise erhalten Sie mehr Flexibilität für die Entwicklung und Bereitstellung auf Anwendungsebene – zusätzlich zu der Flexibilität, die Ihnen die virtuellen Azure-Computer bereits bieten.
 
@@ -239,4 +240,4 @@ Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

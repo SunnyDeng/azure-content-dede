@@ -112,4 +112,4 @@ Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](http
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
  
 
-<!-----HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

@@ -19,7 +19,7 @@
 
 # Testumgebung für die Basiskonfiguration
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell. Sie haben auch die Möglichkeit, diese Ressourcen mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-base-configuration-test-environment-resource-manager.md) zu erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-base-configuration-test-environment-resource-manager.md).
 
 Dieser Artikel enthält schrittweise Anweisungen zum Erstellen der Testumgebung für die Basiskonfiguration in einem Azure Virtual Network.
 
@@ -81,7 +81,7 @@ Dann erstellen Sie einen Azure-Clouddienst. Der Clouddienst fungiert als Sicherh
 
 Wählen Sie einen eindeutigen Namen für den Clouddienst aus. *Der Name des Clouddiensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.*
 
-Sie könnten den Clouddienst beispielsweise "TestLab-*UniqueSequence*" nennen, wobei *UniqueSequence* eine Abkürzung Ihrer Organisation ist. Wenn Ihre Organisation beispielsweise „Tailspin Toys“ heißt, könnten Sie den Clouddienst „TestLab-Tailspin“ nennen.
+Sie könnten den Clouddienst beispielsweise „TestLab-*UniqueSequence*“ nennen, wobei *UniqueSequence* eine Abkürzung Ihrer Organisation ist. Wenn Ihre Organisation beispielsweise „Tailspin Toys“ heißt, könnten Sie den Clouddienst „TestLab-Tailspin“ nennen.
 
 Die Eindeutigkeit des Namens können Sie mit dem folgenden Azure PowerShell-Befehl auf dem lokalen Computer überprüfen:
 
@@ -288,4 +288,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

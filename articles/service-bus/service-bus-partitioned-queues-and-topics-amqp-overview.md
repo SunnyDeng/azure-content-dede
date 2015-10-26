@@ -111,4 +111,4 @@ Das Senden von Nachrichten an ein partitioniertes Thema und das Empfangen von Na
 *    [Verwenden der JMS (Java Message Service)-API mit Service Bus und AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
 *    [Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus](service-bus-dotnet-advanced-message-queuing.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

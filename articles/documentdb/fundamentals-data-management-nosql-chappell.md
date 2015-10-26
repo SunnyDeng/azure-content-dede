@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="NoSQL-Technologien in Azure | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen."
-	editor="cgronlun"
-	manager="jhubbard"
-	services="documentdb, storage, hdinsight"
-	documentationCenter=""
+	pageTitle="NoSQL-Technologien in Azure | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen." 
+	editor="cgronlun" 
+	manager="jhubbard" 
+	services="documentdb, storage, hdinsight" 
+	documentationCenter="" 
 	authors="mimig1"/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/21/2015"
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/21/2015" 
 	ms.author="mimig"/>
 
 # NoSQL auf Microsoft Azure
@@ -31,4 +31,4 @@ In diesem Whitepaper werden die folgenden Themen behandelt:
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

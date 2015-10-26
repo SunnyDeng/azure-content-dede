@@ -91,4 +91,4 @@ Auf CodePlex finden Sie mehrere Beispiele, die während der öffentlichen Vorsch
 - [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer lokalen eingebetteten Datenbank lädt.
 - [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) ist eine Windows-Konsolenanwendung, die Bewertungsprofile für die Optimierung der Suchergebnisse definiert, ausführt und aktualisiert.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

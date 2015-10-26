@@ -24,4 +24,4 @@ Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Andr
 
 	![Anzeigen der Benachrichtigung im Notification Center](./media/mobile-services-android-push-notifications-test/notification-area-received.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

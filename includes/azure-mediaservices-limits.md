@@ -25,4 +25,4 @@ Speicherkonten | |1\.000<sup>5</sup>
 
 <sup>5</sup> Die Speicherkonten müssen aus demselben Azure-Abonnement stammen.
 
-<!----HONumber=Sept15_HO1-->
+<!---HONumber=Oct15_HO3-->

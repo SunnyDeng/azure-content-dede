@@ -665,4 +665,4 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

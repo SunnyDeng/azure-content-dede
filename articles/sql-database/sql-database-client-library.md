@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Erstellen und Verwalten von Azure SQL-Datenbanken mit C#"
-	description="In diesem Artikel wird gezeigt, wie Sie eine Azure SQL-Datenbank mithilfe von C# und der Azure SQL-Datenbankbibliothek für .NET erstellen und verwalten."
-	services="sql-database"
-	documentationCenter=""
-	authors="stevestein"
-	manager="jeffreyg"
-	editor=""/>
+   pageTitle="Erstellen und Verwalten von Azure SQL-Datenbanken mit C#" 
+   description="In diesem Artikel wird gezeigt, wie Sie eine Azure SQL-Datenbank mithilfe von C# und der Azure SQL-Datenbankbibliothek für .NET erstellen und verwalten." 
+   services="sql-database" 
+   documentationCenter="" 
+   authors="stevestein" 
+   manager="jeffreyg" 
+   editor=""/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="powershell"
-	ms.workload="data-management"
-	ms.date="08/25/2015"
-	ms.author="sstein"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="data-management" 
+   ms.date="08/25/2015"
+   ms.author="sstein"/>
 
 # Erstellen und Verwalten von SQL-Datenbanken mit C&#x23;
 
@@ -798,4 +798,4 @@ So löschen Sie eine Ressourcengruppe:
 [8]: ./media/sql-database-client-library/add-application2.png
 [9]: ./media/sql-database-client-library/clientid.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

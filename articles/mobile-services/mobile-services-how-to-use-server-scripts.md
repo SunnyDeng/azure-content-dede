@@ -1056,4 +1056,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!------HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

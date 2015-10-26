@@ -109,4 +109,4 @@ Weitere Informationen zur Notfallwiederherstellung finden Sie in diesen Artikeln
   [Geschäftskontinuität in Azure SQL-Datenbank]: https://msdn.microsoft.com/library/azure/hh852669.aspx
   [Azure-Geschäftskontinuität – Technische Anleitung]: https://msdn.microsoft.com/library/azure/hh873027.aspx
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -79,4 +79,4 @@ Wenn Sie z. B. in Ihrer Organisation zwei UPN-Suffixe namens "@contoso.com" und
 
 Sie können Ihre Windows 7- und Windows 8.1-Geräte, die einer Domäne angehören, mit der Azure AD-Geräteregistrierung registrieren. Das folgende Thema enthält weitere Informationen zu den Voraussetzungen und den zum Konfigurieren der Geräteregistrierung für Windows 7- und Windows 8.1-Geräte erforderlichen Schritte. Automatische Geräteregistrierung mit Azure Active Directory für in Domänen eingebundene Windows-Geräte
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

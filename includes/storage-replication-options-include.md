@@ -9,7 +9,7 @@ Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Bes
 
 	ZRS liefert eine höhere Stabilität als LRS. Für maximale Stabilität empfehlen wir jedoch, dass Sie georedundanten Speicher (nachfolgend beschrieben) verwenden.
 
-	> [AZURE.NOTE]ZRS ist derzeit nur für Blockblobs verfügbar.
+	> [AZURE.NOTE]ZRS ist derzeit nur für Blockblobs verfügbar und wird nur in Version 2014-02-14 und höher unterstützt.
 	> 
 	> Sobald Sie Ihr Speicherkonto erstellt und die ZRS ausgewählt haben, ist die Wahl eines anderen Replikationstyps nicht mehr möglich.
 
@@ -26,4 +26,4 @@ Preisinformationen für die Speicherkontoreplikation finden Sie unter [Preise f�
 
 Architekturdetails zur Beständigkeit von Azure Storage finden Sie im [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

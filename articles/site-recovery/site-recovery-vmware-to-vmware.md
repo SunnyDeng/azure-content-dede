@@ -117,4 +117,4 @@ Dieses neueste Update enthält Fehlerbehebungen und neue Funktionen:
 
 Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.<
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

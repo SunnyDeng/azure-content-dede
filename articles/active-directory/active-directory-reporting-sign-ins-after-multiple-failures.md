@@ -22,4 +22,4 @@ Dieser Bericht weist die Benutzer aus, die sich nach mehreren aufeinander folgen
 
 ![Anmeldungen nach mehreren Fehlern](./media/active-directory-reporting-sign-ins-after-multiple-failures/signInsAfterMultipleFailures.PNG)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

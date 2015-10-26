@@ -42,4 +42,4 @@ Die API-Hilfeseite enthält Beispiele für die Programmiersprachen R, C# und Pyt
 
 Weitere Informationen zum Zugreifen auf und Verwenden des Webdienstes finden Sie unter [Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus veröffentlicht wurde](machine-learning-consume-web-services.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

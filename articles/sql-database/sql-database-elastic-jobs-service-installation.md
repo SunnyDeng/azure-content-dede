@@ -23,17 +23,17 @@ Wenn Sie **Aufträge für die elastische Datenbank** bereits aus einem vorhanden
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
-* Azure PowerShell, Version \>= 0.8.16. Installieren Sie die neueste Version \(0.9.5\) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 * Zum Installieren des Pakets der Aufträge für die elastische Datenbank wird das [NuGet-Befehlszeilenhilfsprogramm](https://nuget.org/nuget.exe) verwendet. Weitere Informationen finden Sie unter http://docs.nuget.org/docs/start-here/installing-nuget.
 
 ## Herunterladen und Importieren des PowerShell-Pakets der Aufträge für die elastische Datenbank
-1. Öffnen Sie das Microsoft Azure PowerShell-Befehlsfenster, und navigieren Sie zu dem Verzeichnis, in das Sie das NuGet-Befehlszeilenhilfsprogramm \(„nuget.exe“\) heruntergeladen haben.
+1. Öffnen Sie das Microsoft Azure PowerShell-Befehlsfenster, und navigieren Sie zu dem Verzeichnis, in das Sie das NuGet-Befehlszeilenhilfsprogramm („nuget.exe“) heruntergeladen haben.
 
 2. Mit dem folgenden Befehl laden Sie das Paket der **Aufträge für die elastische Datenbank** in das aktuelle Verzeichnis herunter und importieren es:
 
 		PS C:\>.\nuget install Microsoft.Azure.SqlDatabase.Jobs -prerelease
 
-    Die Dateien der **Aufträge für die elastische Datenbank** werden im lokalen Verzeichnis in einem Ordner mit dem Namen **Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x** platziert, wobei *x.x.xxxx.x* für die Versionsnummer steht. Die PowerShell-Cmdlets \(einschließlich der erforderlichen Client-DLLs\) befinden sich im Unterverzeichnis **tools\\ElasticDatabaseJobs**, und die PowerShell-Skripts für Installation, Upgrade und Deinstallation befinden sich ebenfalls im Unterverzeichnis **tools**.
+    Die Dateien der **Aufträge für die elastische Datenbank** werden im lokalen Verzeichnis in einem Ordner mit dem Namen **Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x** platziert, wobei *x.x.xxxx.x* für die Versionsnummer steht. Die PowerShell-Cmdlets (einschließlich der erforderlichen Client-DLLs) befinden sich im Unterverzeichnis **tools\\ElasticDatabaseJobs**, und die PowerShell-Skripts für Installation, Upgrade und Deinstallation befinden sich ebenfalls im Unterverzeichnis **tools**.
 
 3. Navigieren Sie zum Unterverzeichnis „tools“ unter dem Ordner „Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x“, indem Sie „cd tools“ eingeben, z. B. in dieser Weise:
 
@@ -166,7 +166,7 @@ Nachdem Sie einen [elastischen Datenbankpool erstellt](sql-database-elastic-pool
 
 	![Erstellen von Benutzername und Kennwort][2]
 
-6. Klicken Sie auf die Schaltfläche "OK". Die Komponenten werden in wenigen Minuten in einer neuen [Ressourcengruppe](../resource-group-portal.md) erstellt. Die neue Ressourcengruppe wird an Start angeheftet, wie unten dargestellt. Nach der Erstellung werden alle Aufträge für die elastische Datenbank \(Cloud Service, SQL-Datenbank, Service Bus und Storage\) in der Gruppe erstellt.
+6. Klicken Sie auf die Schaltfläche "OK". Die Komponenten werden in wenigen Minuten in einer neuen [Ressourcengruppe](../resource-group-portal.md) erstellt. Die neue Ressourcengruppe wird an Start angeheftet, wie unten dargestellt. Nach der Erstellung werden alle Aufträge für die elastische Datenbank (Cloud Service, SQL-Datenbank, Service Bus und Storage) in der Gruppe erstellt.
 
 	![Ressourcengruppe unter Start][3]
 
@@ -187,4 +187,4 @@ Stellen Sie sicher, dass Anmeldeinformationen mit den passenden Rechten für die
 [4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

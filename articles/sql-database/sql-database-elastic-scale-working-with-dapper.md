@@ -174,4 +174,4 @@ Anwendungen, die Dapper und DapperExtensions verwenden, können auch leicht von 
 [1]: ./media/sql-database-elastic-scale-working-with-dapper/dapperimage1.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

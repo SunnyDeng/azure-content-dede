@@ -432,4 +432,4 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Batchauftrag anhan
 	    }
 	}
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

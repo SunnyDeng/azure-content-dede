@@ -18,7 +18,8 @@
 
 # Schneller Einstieg in Docker in Azure Marketplace
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Die schnellste Möglichkeit für die ersten Schritte mit [Docker] besteht darin, Azure Marketplace aufzurufen und einen virtuellen Computer mit der Imagevorlage **Docker on Ubuntu Server** zu erstellen, die von [Canonical] in Verbindung mit [MSOpenTech] erstellt wurde. Damit wird eine Ubuntu Server-VM erstellt und automatisch die [Docker-VM-Erweiterung](virtual-machines-docker-vm-extension.md) zusammen mit dem **neuesten** Docker-Modul, das bereits auf Azure installiert und aktiv ist, installiert.
 
@@ -77,4 +78,4 @@ Sie könnten mit der Verwendung von [Docker] beginnen!
 [MSOpenTech]: http://msopentech.com/
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

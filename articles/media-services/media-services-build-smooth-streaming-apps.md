@@ -980,4 +980,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

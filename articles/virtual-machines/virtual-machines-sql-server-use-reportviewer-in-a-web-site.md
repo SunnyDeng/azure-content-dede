@@ -18,7 +18,8 @@
 
 # Verwenden von ReportViewer auf einer in Azure gehosteten Website
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Sie können eine Microsoft Azure-Website mit dem Visual Studio-Steuerelement „ReportViewer“ erstellen, in dem ein Bericht angezeigt wird, der auf einem virtuellen Microsoft Azure-Computer gespeichert ist. Das ReportViewer-Steuerelement ist eine Webanwendung, die Sie mithilfe der Vorlage für ASP.NET-Webanwendungen erstellen.
 
@@ -94,7 +95,7 @@ Das ReportViewer-Steuerelement muss geeignete Anmeldeinformationen verwenden, um
 
 Anleitungen zum Veröffentlichen einer ASP.NET Web-Anwendung in Azure finden Sie unter [Vorgehensweise: Migrieren und Veröffentlichen einer Web-Anwendung in Azure aus Visual Studio](https://msdn.microsoft.com/library/azure/hh420322.aspx) und [Erste Schritte mit Web-Apps und ASP.NET](../app-service-web/web-sites-dotnet-get-started.md).
 
->[AZURE.IMPORTANT]Wenn der Befehl „Azure-Bereitstellungsprojekt hinzufügen“ oder „Azure Cloud-Dienst-Projekt hinzufügen“ nicht im Kontextmenü im Projektmappen-Explorer angezeigt wird, müssen Sie das Zielframework für das Projekt in .NET Framework 4 ändern.
+>[AZURE.IMPORTANT]Wenn der Befehl „Azure-Bereitstellungsprojekt hinzufügen“ oder „Azure-Clouddienst-Projekt hinzufügen“ nicht im Kontextmenü im Projektmappen-Explorer angezeigt wird, müssen Sie das Zielframework für das Projekt in .NET Framework 4 ändern.
 >
 >Die beiden Befehle bieten im Wesentlichen die gleiche Funktionalität. Je nachdem, welche Version von Microsoft Azure SDK Sie installiert haben, wird der entsprechende dieser beiden Befehle im Kontextmenü angezeigt.
 
@@ -108,4 +109,4 @@ Anleitungen zum Veröffentlichen einer ASP.NET Web-Anwendung in Azure finden Sie
 
 [ReportViewer-Steuerelement von Reporting Services und Berichtsserver, die auf virtuellen Microsoft Azure-Computern basieren](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

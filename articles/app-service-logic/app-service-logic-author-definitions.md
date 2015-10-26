@@ -723,4 +723,4 @@ Sie verfügen möglicherweise über eine API, die Sie aufrufen, und Sie möchten
 
 In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

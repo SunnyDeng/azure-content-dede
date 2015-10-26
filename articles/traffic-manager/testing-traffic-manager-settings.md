@@ -21,11 +21,11 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 
 ## Grundlegende Testschritte
 
-\- **Stellen Sie die DNS-Gültigkeitsdauer (TTL) sehr niedrig ein**, sodass die Änderungen schnell propagiert werden, beispielsweise auf 30 Sekunden.
+- **Stellen Sie die DNS-Gültigkeitsdauer (TTL) sehr niedrig ein**, sodass die Änderungen schnell propagiert werden, beispielsweise auf 30 Sekunden.
 
-\- **Halten Sie die IP-Adressen Ihrer Azure Cloud-Dienste und Websites** für das Profil bereit, das Sie testen.
+- **Halten Sie die IP-Adressen Ihrer Azure Cloud-Dienste und Websites** für das Profil bereit, das Sie testen.
 
-\- **Verwenden Sie Tools, mit denen Sie einen DNS-Namen in eine IP-Adresse auflösen können**, und zeigen Sie diese Adresse an. Überprüfen Sie, ob der Name Ihrer Unternehmensdomäne in IP-Adressen der im Profil enthaltenen Endpunkte aufgelöst wird. Die Auflösung sollte in Übereinstimmung mit der Lastenausgleichsmethode Ihres Traffic Manager-Profils erfolgen. Wenn Sie einen Computer verwenden, der Windows ausführt, können Sie das Tool Nslookup.exe an einer Befehls- oder Windows PowerShell-Eingabeaufforderung ausführen. Weitere öffentlich verfügbare Tools, mit denen Sie eine IP-Adresse herausfinden können, sind ebenfalls im Internet verfügbar.
+- **Verwenden Sie Tools, mit denen Sie einen DNS-Namen in eine IP-Adresse auflösen können**, und zeigen Sie diese Adresse an. Überprüfen Sie, ob der Name Ihrer Unternehmensdomäne in IP-Adressen der im Profil enthaltenen Endpunkte aufgelöst wird. Die Auflösung sollte in Übereinstimmung mit der Lastenausgleichsmethode Ihres Traffic Manager-Profils erfolgen. Wenn Sie einen Computer verwenden, der Windows ausführt, können Sie das Tool Nslookup.exe an einer Befehls- oder Windows PowerShell-Eingabeaufforderung ausführen. Weitere öffentlich verfügbare Tools, mit denen Sie eine IP-Adresse herausfinden können, sind ebenfalls im Internet verfügbar.
 
 ### So überprüfen Sie ein Traffic Manager-Profil mit "nslookup"
 
@@ -57,4 +57,4 @@ Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit ei
 [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](../about-traffic-manager-balancing-methods.md) [Traffic Manager](../traffic-manager.md)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

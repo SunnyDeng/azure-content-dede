@@ -115,4 +115,4 @@ Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

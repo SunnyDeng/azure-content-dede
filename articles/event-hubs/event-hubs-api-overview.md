@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Übersicht über die Event Hubs-API"
+   pageTitle="Übersicht über die Azure Event Hubs-APIs | Microsoft Azure"
    description="Eine Zusammenfassung einiger wichtiger .NET-Client-APIs für Event Hubs."
    services="event-hubs"
    documentationCenter="na"
@@ -8,20 +8,20 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.devlang="na"
+   ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="07/10/2015"
+   ms.workload="na"
+   ms.date="10/14/2015"
    ms.author="sethm" />
 
 # Übersicht über die Event Hubs-API
 
-In diesem Artikel werden einige der wichtigsten .NET-Client-APIs von Event Hubs zusammengefasst. Es gibt zwei Kategorien: Verwaltungs- und Laufzeit-APIs. Runtime-APIs umfassen alle Vorgänge, die zum Senden und Empfangen einer Meldung erforderlich sind. Verwaltungsvorgänge ermöglichen Ihnen das Verwalten des Entitätszustands von Event Hubs durch das Erstellen, Aktualisieren und Löschen von Entitäten.
+In diesem Artikel werden einige der wichtigsten .NET-Client-APIs von Event Hubs zusammengefasst. Es gibt zwei Kategorien: Verwaltungs- und Laufzeit-APIs. Runtime-APIs umfassen alle Vorgänge, die zum Senden und Empfangen einer Meldung erforderlich sind. Verwaltungsvorgänge ermöglichen das Verwalten des Entitätszustands von Event Hubs durch das Erstellen, Aktualisieren und Löschen von Entitäten.
 
-Überwachungsszenarien umfassen sowohl Verwaltung als auch Laufzeit. Eine ausführliche Referenzdokumentation zu den .NET-APIs finden Sie unter den Referenzen zur [.NET-Klassenbibliothek](https://msdn.microsoft.com/library/azure/jj933431.aspx) und zur [EventProcessorHost-API](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.aspx).
+Überwachungsszenarien umfassen sowohl Verwaltung als auch Laufzeit. Eine ausführliche Referenzdokumentation zu den .NET-APIs finden Sie unter den Referenzen zur [.NET-Klassenbibliothek](https://msdn.microsoft.com/library/azure/mt419900.aspx) und zur [EventProcessorHost-API](https://msdn.microsoft.com/library/azure/mt445521.aspx).
 
-## Verwaltungs-API
+## Verwaltungs-APIs
 
 Zum Ausführen der folgenden Verwaltungsvorgänge benötigen Sie **Verwaltungsberechtigungen** für den Service Bus-Namespace:
 
@@ -115,7 +115,7 @@ msg = UnicodeEncoding.UTF8.GetString(info);
 
 ## Ereignisprozessorhost-APIs
 
-Diese APIs bieten Flexibilität für Arbeitsprozesse, die möglicherweise nicht mehr verfügbar sind, jedoch Shards auf verfügbare Worker aufteilen.
+Diese APIs bieten Flexibilität für Arbeitsprozesse, die möglicherweise nicht mehr verfügbar sind, indem Shards auf verfügbare Worker aufgeteilt werden.
 
 ```
 // Checkpointing is done within the SimpleEventProcessor and on a per-consumerGroup per-partition basis, workers resume from where they last left off.
@@ -178,13 +178,14 @@ public class SimpleEventProcessor : IEventProcessor
 
 Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 
-- [Programmierleitfaden für Event Hubs](event-hubs-programming-guide.md)
+- [Was ist Azure Event Hubs?](event-hubs-what-is-event-hubs.md)
 - [Übersicht über Event Hubs](event-hubs-overview.md)
-- [Codebeispiele für Event Hubs](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
+- [Programmierleitfaden für Event Hubs](event-hubs-programming-guide.md)
+- [Codebeispiele für Event Hubs](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hubs&f[0].Type=SearchText&ac=5)
 
 Die .NET-API-Referenzen sind hier verfügbar:
 
-- [Referenz zu Service Bus und .NET-API für Event Hubs](https://msdn.microsoft.com/library/azure/jj933424.aspx)
-- [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
+- [Referenz zu Service Bus und .NET-API für Event Hubs](https://msdn.microsoft.com/library/azure/mt419900.aspx)
+- [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/azure/mt445521.aspx)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -133,6 +133,9 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 + [Arbeiten mit Serverskripts in Mobile Services] <br/>
 Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
++ [Aufrufen einer benutzerdefinierten API vom Client] <br/>
+ Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
+
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
 [Install Git and create the local repository]: #clone-repo
@@ -154,4 +157,4 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

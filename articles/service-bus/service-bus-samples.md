@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="service-bus-samples"
+   pageTitle="Service Bus-Beispiele – Übersicht | Microsoft Azure"
    description="Kategorisiert und beschreibt Service Bus-Beispiele und bietet entsprechende Links."
    services="service-bus"
    documentationCenter="na"
@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/09/2015"
+   ms.date="10/08/2015"
    ms.author="sethm" />
 
 # Service Bus-Beispiele:
 
-In den Service Bus-Beispielen werden die Hauptfeatures in Service Bus (Clouddienst) und Service Bus für Windows Server veranschaulicht. Dieses Thema kategorisiert und beschreibt die verfügbaren Beispiele und stellt Links zu jedem der Beispiele zur Verfügung.
+In den Service Bus-Beispielen werden die Hauptfeatures in Service Bus (Clouddienst) und Service Bus für Windows Server veranschaulicht. Dieser Artikel kategorisiert und beschreibt die verfügbaren Beispiele und stellt Links zu jedem der Beispiele zur Verfügung.
 
->[AZURE.NOTE]Die Service Bus-Beispiele werden nicht zusammen mit dem SDK installiert. Zum Abrufen der Beispiele besuchen Sie die [Azure SDK-Beispielseite](https://code.msdn.microsoft.com/windowsazure).
+>[AZURE.NOTE]Die Service Bus-Beispiele werden nicht zusammen mit dem SDK installiert. Zum Abrufen der Beispiele besuchen Sie die [Azure SDK-Beispielseite](https://code.msdn.microsoft.com).
 
 ## Service Bus-Brokermessaging
 
@@ -57,7 +57,7 @@ Diese Beispiele beschreiben grundlegende Messaging- und Relayfunktionen.
 |---|---|---|---|
 |[Erste Schritte: Messaging mit Warteschlangen](http://code.msdn.microsoft.com/Getting-Started-Brokered-aa7a0ac3)|Zeigt, wie Microsoft Azure Service Bus zum Senden und Empfangen von Nachrichten aus einer Warteschlange verwendet wird.|1\.8|Microsoft Azure Service Bus; Service Bus für Windows Server|
 |[Erste Schritte: Messaging mit Themen](http://code.msdn.microsoft.com/Getting-Started-Brokered-614d42e5)|Zeigt, wie Microsoft Azure Service Bus zum Senden und Empfangen von Nachrichten aus einer Thema mit mehreren Abonnements verwendet wird.|1\.8|Microsoft Azure Service Bus; Service Bus für Windows Server|
-|[Erste Schritte mit Event Hubs](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097)|Stellt die grundlegenden Möglichkeiten von Event Hubs vor, wie etwa das Erstellen eines Event Hubs, das Senden von Ereignissen an einen Event Hub und das Nutzen von Ereignissen mithilfe des Ereignisprozessors.|2\.4|Microsoft Azure Servicebus|
+|[Erste Schritte mit Event Hubs](http://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097)|Stellt die grundlegenden Möglichkeiten von Event Hubs vor, wie etwa das Erstellen eines Event Hubs, das Senden von Ereignissen an einen Event Hub und das Nutzen von Ereignissen mithilfe des Ereignisprozessors.|2\.4|Microsoft Azure Servicebus|
 
 ### Erkunden von Features
 
@@ -65,9 +65,9 @@ Die folgenden Beispiele zeigen verschiedene Features von Service Bus.
 
 |Name des Beispiels|Beschreibung|Mindestversion des SDK|Verfügbarkeit|
 |---|---|---|---|
-|[HTTP-Tokenanbieter](http://code.msdn.microsoft.com/windowsazure/Service-Bus-HTTP-Token-38f2cfc5)|Zeigt die verschiedenen Arten der Authentifizierung eines HTTP/REST-Clients bei Service Bus.|2\.1|Microsoft Azure Service Bus; Service Bus für Windows Server|
-|[Service Bus-HTTP-Client](http://code.msdn.microsoft.com/windowsazure/Service-Bus-HTTP-client-fe7da74a)|Zeigt, wie Nachrichten über HTTP/REST an Service Bus gesendet und von Service Bus empfangen werden.|2\.3|Microsoft Azure Service Bus; Service Bus für Windows Server|
-|[Automatische Service Bus-Weiterleitung](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Autoforwarding-b9df470b)|Zeigt, wie Nachrichten von einer Warteschlange, einem Abonnement oder einer Warteschlange für unzustellbare Nachrichten automatisch an eine andere Warteschlange oder an ein anderes Thema weitergeleitet werden. Außerdem wird gezeigt, wie eine Nachricht über eine Übertragungswarteschlange an eine Warteschlange oder ein Thema gesendet wird.|2\.3|Microsoft Azure Service Bus; Service Bus für Windows Server|
+|[HTTP-Tokenanbieter](http://code.msdn.microsoft.com/Service-Bus-HTTP-Token-38f2cfc5)|Zeigt die verschiedenen Arten der Authentifizierung eines HTTP/REST-Clients bei Service Bus.|2\.1|Microsoft Azure Service Bus; Service Bus für Windows Server|
+|[Service Bus-HTTP-Client](http://code.msdn.microsoft.com/Service-Bus-HTTP-client-fe7da74a)|Zeigt, wie Nachrichten über HTTP/REST an Service Bus gesendet und von Service Bus empfangen werden.|2\.3|Microsoft Azure Service Bus; Service Bus für Windows Server|
+|[Automatische Service Bus-Weiterleitung](http://code.msdn.microsoft.com/Service-Bus-Autoforwarding-b9df470b)|Zeigt, wie Nachrichten von einer Warteschlange, einem Abonnement oder einer Warteschlange für unzustellbare Nachrichten automatisch an eine andere Warteschlange oder an ein anderes Thema weitergeleitet werden. Außerdem wird gezeigt, wie eine Nachricht über eine Übertragungswarteschlange an eine Warteschlange oder ein Thema gesendet wird.|2\.3|Microsoft Azure Service Bus; Service Bus für Windows Server|
 |[Brokermessaging: Beispiel für eine WCF-Kanalsitzung](http://code.msdn.microsoft.com/Brokered-Messaging-WCF-0a526451)|Zeigt, wie Microsoft Azure Service Bus mithilfe von WCF-Kanälen (Windows Communication Foundation) verwendet wird. Das Beispiel zeigt, wie WCF-Kanäle zum Senden und Empfangen von Nachrichten über eine Service Bus-Warteschlange verwendet werden. Das Beispiel zeigt die sitzungsbasierte und nicht sitzungsbasierte Kommunikation über Service Bus.|1\.8|Microsoft Azure Service Bus; Service Bus für Windows Server|
 |[Brokermessaging: Transaktionen](http://code.msdn.microsoft.com/Brokered-Messaging-8cd41d1e)|Zeigt die Verwendung von Microsoft Azure Service Bus-Messagingfunktionen in einem Transaktionsbereich, um sicherzustellen, dass das Commit für Batches von Messagingvorgängen atomar erfolgt.|1\.8|Microsoft Azure Service Bus; Service Bus für Windows Server|
 |[Brokermessaging: Verwaltungsvorgänge mithilfe von REST](http://code.msdn.microsoft.com/Brokered-Messaging-569cff88)|Zeigt, wie Verwaltungsvorgänge für Service Bus mithilfe von REST ausgeführt werden.|1\.8|Microsoft Azure Service Bus; Service Bus für Windows Server|
@@ -132,4 +132,4 @@ Weitere Übersichten über Service Bus finden Sie in den folgenden Themen.
 - [Service Bus-Architektur](service-bus-architecture.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

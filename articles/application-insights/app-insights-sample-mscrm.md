@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Exemplarische Vorgehensweise: Überwachen von Microsoft Dynamics CRM mit Application Insights"
-	description="Abrufen von Telemetriedaten aus Microsoft Dynamics CRM Online mithilfe von Application Insights Exemplarische Vorgehensweise für das Einrichten, Abrufen von Daten, Visualisieren und Exportieren."
-	services="application-insights"
-	documentationCenter=""
-	authors="mazharmicrosoft"
+	pageTitle="Exemplarische Vorgehensweise: Überwachen von Microsoft Dynamics CRM mit Application Insights" 
+	description="Abrufen von Telemetriedaten aus Microsoft Dynamics CRM Online mithilfe von Application Insights Exemplarische Vorgehensweise für das Einrichten, Abrufen von Daten, Visualisieren und Exportieren." 
+	services="application-insights" 
+    documentationCenter=""
+	authors="mazharmicrosoft" 
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/04/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Aktivieren von Telemetriedaten für Microsoft Dynamics CRM Online mithilfe von Application Insights
@@ -60,7 +60,7 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 
     ![](./media/app-insights-sample-mscrm/08.png)
     
-4. Kopieren Sie den Code aus Application Insights.
+4. Kopieren Sie den Code aus Application Insights. Achten Sie beim Kopieren darauf, <script>-Tags zu ignorieren. Siehe Screenshot unten:
 
     ![](./media/app-insights-sample-mscrm/09.png)
 
@@ -161,4 +161,4 @@ Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten 
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

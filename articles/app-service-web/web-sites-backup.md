@@ -222,4 +222,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

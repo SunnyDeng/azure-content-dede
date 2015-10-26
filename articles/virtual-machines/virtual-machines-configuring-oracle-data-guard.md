@@ -16,7 +16,8 @@
 
 #Konfigurieren von Oracle Data Guard für Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource, die mit dem klassischen Bereitstellungsmodell erstellt wurde.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Dieses Lernprogramm zeigt, wie Sie Oracle Data Guard für virtuelle Computer in einer Azure-Umgebung für hohe Verfügbarkeit und Notfallwiederherstellung einrichten und implementieren. Das Lernprogramm konzentriert sich auf die unidirektionale Replikation für Oracle-Datenbanken ohne RAC.
 
@@ -624,4 +625,4 @@ Es wird empfohlen, für die primäre und Standbydatenbank "flashback database" z
 ##Zusätzliche Ressourcen
 [Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Aha! erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein Aha!-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Aha! zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer Aha!-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Aha! zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer Aha!-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-aha-tutorial/IC798947.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** in das Textfeld **Aha!- Anmelde-URL** den URL ein, den Ihre Benutzer zur Anmeldung bei der Aha!- Anwendung verwenden \(z. B. "**https://company.aha.io/session/new*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** in das Textfeld **Aha!- Anmelde-URL** den URL ein, den Ihre Benutzer zur Anmeldung bei der Aha!- Anwendung verwenden (z. B. "**https://company.aha.io/session/new*"), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-aha-tutorial/IC798948.png "App-URL konfigurieren")
 
@@ -127,4 +127,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

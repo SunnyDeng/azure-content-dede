@@ -65,7 +65,7 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 	Sie sehen, dass der Code einfach eine Authentifizierungsaufforderung ausgibt, um den Benutzer mithilfe des WS-Verbunds zu authentifizieren. Die gesamte Authentifizierung wird in der Datei "App\_Start\\Startup.Auth.cs" konfiguriert.
 
-4.  Öffnen Sie die Datei "App_Start\\Startup.Auth.cs". Beachten Sie in der `ConfigureAuth`-Methode die folgende Zeile:
+4.  Öffnen Sie die Datei "App\_Start\\Startup.Auth.cs". Beachten Sie in der `ConfigureAuth`-Methode die folgende Zeile:
 
         app.UseWsFederationAuthentication(
             new WsFederationAuthenticationOptions
@@ -79,7 +79,7 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 	-	RP-ID: `https://contoso.com/MyLOBApp`
 	-	Metadaten-Adresse: `http://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
 
-5.	Ändern Sie in der Datei "App_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
+5.	Ändern Sie in der Datei "App\_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
 	<pre class="prettyprint">
 private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
 <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
@@ -103,10 +103,8 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
   <mark>&lt;add key="ida:RPIdentifier" value="[ID für vertrauende Seite gemäß Konfiguration in AD&#160;FS eingeben, z.&#160;B. https://localhost:44320/]" /></mark>
   <mark>&lt;add key="ida:ADFS" value="[FQDN des AD&#160;FS-Diensts eingeben, z.&#160;B. adfs.contoso.com]" /></mark>
 
-	&lt;/appSettings&gt;
-	</pre>
-
-	Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
+&lt;/appSettings>
+</pre>Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
 
 7.	Erstellen Sie die Anwendung, um sicherzustellen, dass keine Fehler vorliegen.
 
@@ -253,7 +251,7 @@ Bisher haben Sie Folgendes erreicht:
 - AD FS hat einen Active Directory-Benutzer authentifiziert und leitet Sie zur Startseite der Anwendung zurück.
 - AD FS hat den Namensanspruch (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) an Ihre Anwendung gesendet. Dies geht daraus hervor, dass der Benutzername in der Ecke angezeigt wird. 
 
-Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei "Views\\Shared\\_LoginPartial.cshtml" betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
+Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei „Views\\Shared\\_LoginPartial.cshtml“ betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
 
 ![](./media/web-sites-dotnet-lob-application-adfs/12-test-debugging-all-claims.png)
 
@@ -265,18 +263,18 @@ Da Sie Gruppenmitgliedschaften als Rollenansprüche in die RP-Vertrauensstellung
 1. Öffnen Sie die Datei "Controllers\\HomeController.cs".
 2. Dekorieren Sie die Aktionsmethoden `About` und `Contact` ähnlich wie unten mit Mitgliedschaften in Sicherheitsgruppen, über die Ihr authentifizierter Benutzer verfügt.  
 	<pre class="prettyprint">
-<mark>[Authorize(Roles="Test Group")]</mark>
-public ActionResult About()
-{
-    ViewBag.Message = "Your application description page.";
+    <mark>[Authorize(Roles="Test Group")]</mark>
+    public ActionResult About()
+    {
+        ViewBag.Message = "Your application description page.";
 
-    return View();
-}
+        return View();
+    }
 
-<mark>[Authorize(Roles="Domain Admins")]</mark>
-public ActionResult Contact()
-{
-    ViewBag.Message = "Your contact page.";
+    <mark>[Authorize(Roles="Domain Admins")]</mark>
+    public ActionResult Contact()
+    {
+        ViewBag.Message = "Your contact page.";
 
         return View();
     }
@@ -357,4 +355,4 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
  
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

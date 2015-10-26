@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Mimecast Personal Portal e
 -   Ein gültiges Azure-Abonnement
 -   Ein Mimecast Personal Portal-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Mimecast Personal Portal zugewiesen haben, mittels einmaliger Anmeldung auf der Mimecast Personal Portal-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Mimecast Personal Portal zugewiesen haben, mittels einmaliger Anmeldung auf der Mimecast Personal Portal-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +51,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Mim
     ![Mimecast Personal Portal](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC794993.png "Mimecast Personal Portal")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Mimecast Personal Portal zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Mimecast Personal Portal zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###Führen Sie zum Konfigurieren des einmaligen Anmeldens die folgenden Schritte aus:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC794995.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Mimecast Personal Portal-Anmelde-URL** die von den Benutzern für die Anmeldung bei Mimecast Personal Portal verwendete URL ein \(z. B. „https://webmail-uk.mimecast.com“ oder „https://webmail-us.mimecast.com“\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Mimecast Personal Portal-Anmelde-URL** die von den Benutzern für die Anmeldung bei Mimecast Personal Portal verwendete URL ein (z. B. „https://webmail-uk.mimecast.com“ oder „https://webmail-us.mimecast.com“), und klicken Sie dann auf **Weiter**.
 
     >[AZURE.NOTE]Die Anmelde-URL ist regionsspezifisch.
 
@@ -75,7 +75,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei Mimecast Personal Portal als Administrator an.
 
-6.  Wechseln Sie zu **Dienste \> Anwendung**.
+6.  Wechseln Sie zu **Dienste > Anwendung**.
 
     ![Anwendungen](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC794998.png "Anwendungen")
 
@@ -104,11 +104,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
         >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
-    8.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, entfernen Sie die erste Zeile \(*--*\) und die letzte Zeile \(*--*\), und kopieren Sie den übrigen Inhalt in die Zwischenablage. Fügen Sie ihn anschließend in das Textfeld **Zertifikat des Identitätsanbieters \(Metadaten\)** ein.
-    9.  Wählen Sie **Einmaliges Anmelden zulassen**.
+    8.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, entfernen Sie die erste Zeile (*--*) und die letzte Zeile (*--*), und kopieren Sie den übrigen Inhalt in die Zwischenablage. Fügen Sie ihn anschließend in das Textfeld **Zertifikat des Identitätsanbieters (Metadaten)** ein.
+    9.  Wählen Sie **Einmaliges Anmelden zulassen** aus.
     10. Klicken Sie auf **Speichern**.
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC795002.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -121,7 +121,7 @@ Sie müssen eine Domäne registrieren, bevor Sie Benutzer erstellen können.
 
 1.  Melden Sie sich bei **Mimecast Personal Portal** als Administrator an.
 
-2.  Wechseln Sie zu **Verzeichnisse \> Intern**.
+2.  Wechseln Sie zu **Verzeichnisse > Intern**.
 
     ![Verzeichnisse](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC795003.png "Verzeichnisse")
 
@@ -133,7 +133,7 @@ Sie müssen eine Domäne registrieren, bevor Sie Benutzer erstellen können.
 
     ![Neue Adresse](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC795005.png "Neue Adresse")
 
-5.  Führen Sie im Dialogfeld für die neue Adresse die folgenden Schritte aus:
+5.  Führen Sie im Dialogfeld „Neue Adresse“ die folgenden Schritte aus:
 
     ![Speichern](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC795006.png "Speichern")
 
@@ -154,10 +154,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC795007.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

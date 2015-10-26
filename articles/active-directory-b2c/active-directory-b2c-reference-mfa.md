@@ -53,4 +53,4 @@ Mit dem Feature "Jetzt ausführen" für die Richtlinie können Sie die Benutzere
 
 Wenn sich der Kunde (mit einem lokalen Konto oder dem Konto eines sozialen Netzwerks) anmeldet und eine bestätigte Telefonnummer an das Kundenkonto angefügt wurde, wird der aufgefordert, diese zu bestätigen. Wenn keine Telefonnummer angefügt ist, wird der Kunde aufgefordert, eine anzugeben und zu bestätigen. Bei erfolgreicher Bestätigung wird die Telefonnummer zur späteren Verwendung an das Kundenkonto angefügt.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

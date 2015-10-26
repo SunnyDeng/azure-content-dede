@@ -23,7 +23,8 @@
 
 Dieses Dokument versucht, an einem Ort alle Themen aufzulisten, die von Microsoft und seinen Partnern über die Ausführung von Linux-basierten virtuellen Maschinen und anderen Open-Source-Computing-Umgebungen und Anwendungen auf Microsoft Azure erstellt wurden. Da sowohl Azure als auch das Open-Source-Computing einer ständigen Weiterentwicklung unterliegen ist dieses Dokument vermutlich nicht mehr auf dem aktuellen Stand. *Trotz* dieser Tatsache geben wir unser Bestes, kontinuierlich neue Themen hinzuzufügen und veraltete Einträge zu entfernen. Wenn wir ein Thema vergessen haben, senden Sie uns einen Kommentar, oder übermitteln Sie eine Pull-Anforderung an das [Github-Repository](https://github.com/Azure/azure-content/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Themen ohne Berücksichtigung des Bereitstellungsmodells aufgeführt.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 ## Allgemeine Hinweise
 Die Abschnitte werden am rechten Rand dieser Seite aufgeschlüsselt. (Links können in mehr als einem Abschnitt auftreten, da Themen sich mit mehr als einem Konzept, mehr als einer Distribution oder mehr als einer Technologie beschäftigen können.) Darüber hinaus gibt es mehrere Themen, in denen verschiedene Linux-Optionen, Image-Repositorys, Fallstudien und Gewusst-wie-Themen zum Hochladen Ihrer eigenen benutzerdefinierten Images beschrieben werden:
@@ -310,4 +311,4 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

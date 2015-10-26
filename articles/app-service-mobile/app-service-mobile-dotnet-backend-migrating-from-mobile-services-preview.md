@@ -145,4 +145,4 @@ Sobald Ihre Kunden diese Updates erhalten haben, können Sie die Mobile Services
 [Senden von plattformübergreifenden Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-push-notifications-to-user-preview.md
 [Verwenden des .NET-Server-SDKs]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

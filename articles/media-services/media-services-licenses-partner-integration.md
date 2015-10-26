@@ -46,4 +46,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Blog von Mingfei](https://azure.microsoft.com/de-DE/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

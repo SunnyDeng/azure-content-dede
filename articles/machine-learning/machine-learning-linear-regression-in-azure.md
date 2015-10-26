@@ -9,7 +9,6 @@
 	manager="paulettm" 
 	editor="cgronlun"  />
 
-
 <tags 
 	ms.service="machine-learning" 
 	ms.workload="data-services" 
@@ -18,7 +17,6 @@
 	ms.topic="article" 
 	ms.date="07/14/2015" 
 	ms.author="kbaroni;garye" />
-
 
 # Verwenden der linearen Regression in Azure Machine Learning
 
@@ -146,4 +144,4 @@ Im Folgenden finden Sie einige Ressourcen für Ihre Arbeit mit Regression:
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

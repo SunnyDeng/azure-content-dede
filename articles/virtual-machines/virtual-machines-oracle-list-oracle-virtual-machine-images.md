@@ -11,7 +11,8 @@ ms.author="bbenz" />
 
 #Liste der Images virtueller Oracle-Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 Um auf Oracle-Images basierende virtuelle Computer zu erstellen, melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an, klicken Sie auf **Marketplace**, klicken Sie auf **Compute**, und geben Sie dann im Suchfeld **Oracle** ein. Wählen Sie ein Image aus, und folgen Sie den Anweisungen zum Einrichten des Images in Microsoft Azure. Beachten Sie, dass Oracle-Images von Microsoft im [Azure-Portal](https://ms.portal.azure.com/) unter Windows und Oracle-Images von Oracle unter Oracle Linux ausgeführt werden.
 
@@ -62,4 +63,4 @@ Die folgende Liste enthält die verfügbaren vorkonfigurierten Images virtueller
 
 [Images virtueller Oracle-Computer – verschiedene Überlegungen](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

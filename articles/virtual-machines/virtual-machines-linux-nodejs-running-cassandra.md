@@ -12,7 +12,7 @@
 
 # Ausführen von Cassandra mit Linux auf Azure und Zugreifen aus Node.js 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-datastax-template.md) unter Verwendung einer Vorlage erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-datastax-template.md).
 
 ## Übersicht
 Microsoft Azure ist eine offene Cloudplattform, die sowohl Microsoft- als auch Nicht-Microsoft-Software ausführt. Dies schließt Betriebssysteme, Anwendungsserver, Messaging-Middleware sowie SQL- und NoSQL-Datenbanken aus kommerziellen und Open-Source-Modellen ein. Das Erstellen von robusten Diensten für öffentliche Clouds einschließlich Azure erfordert eine sorgfältige Planung und eine wohl überlegte Architektur für Anwendungsserver und Speicherebenen. Die verteilte Speicherarchitektur von Cassandra unterstützt auf natürliche Weise das Erstellen von Systemen mit hoher Verfügbarkeit, die bei Clusterfehlern fehlertolerant sind. Cassandra ist eine NoSQL-Datenbank der Cloud-Größenordnung, die von der Apache Software Foundation unter "cassandra.apache.org" verwaltet wird. Cassandra ist in Java geschrieben und kann daher auf Windows- und auf Linux-Plattformen ausgeführt werden.
@@ -692,4 +692,4 @@ Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- s
 
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

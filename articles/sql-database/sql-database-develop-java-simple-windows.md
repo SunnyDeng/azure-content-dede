@@ -230,4 +230,4 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 
 Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

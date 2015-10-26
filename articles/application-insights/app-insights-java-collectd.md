@@ -6,7 +6,6 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
@@ -15,7 +14,6 @@
 	ms.topic="article" 
 	ms.date="07/14/2015" 
 	ms.author="awills"/>
-
  
 # collectd: Unix-Leistungsmetriken in Application Insights
 
@@ -145,4 +143,4 @@ Trennen Sie Direktiven mit einem Zeilenumbruch.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

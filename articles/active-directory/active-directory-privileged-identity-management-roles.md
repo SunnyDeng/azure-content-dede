@@ -30,7 +30,7 @@ Azure PIM verwendet die folgenden Rollen als Standardadministratorrollen.
 - Benutzeradministrator
 - Kennwortadministrator
 
-Klicken Sie hier, um weitere Informationen über die Rollen aus Office 365, Exchange Online, SharePoint Online und Skype for Business zu erhalten.[Zuweisen von Administratorrollen in Office 365](https://support.office.com/DE-DE/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504?ui=DE-DE&rs=DE-DE&ad=US)
+Klicken Sie hier, um weitere Informationen über die Rollen aus Office 365, Exchange Online, SharePoint Online und Skype for Business zu erhalten.[Zuweisen von Administratorrollen in Office 365](https://support.office.com/de-DE/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504?ui=de-DE&rs=de-DE&ad=US)
 
 <!--**PLACEHOLDER: The above article may not be the one we want since PIM gets roles from places other that Office 365**-->
 
@@ -57,4 +57,4 @@ Klicken Sie hier, um weitere Informationen über die Rollen aus Office 365, Exch
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

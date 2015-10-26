@@ -74,4 +74,4 @@ Führen Sie die folgenden Schritte aus, um den Verschlüsselungsschlüssel für 
 
 3. Geben Sie den Verschlüsselungsschlüssel für Dienstdaten ein, den Sie in [Schritt2: Verwenden Sie Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.](#to-initiate-the-service-data-encryption-key-change) erhalten haben.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

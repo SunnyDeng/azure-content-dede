@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="bradsev"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun" />
 
 <tags
 	ms.service="machine-learning"
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/01/2015"
-	ms.author="msolhab;bradsev"/>
+	ms.author="msolhab;bradsev" />
 
 
 # Vorbereiten von Dateien für Machine Learning
@@ -104,4 +104,4 @@ Das **Durchsuchen von Daten** ermöglicht einen frühzeitigen Einblick in die Da
 >Jiawei Han, Micheline Kamber und Jian Pei: _Data Mining: Concepts and Techniques_, 3. Auflage, Morgan Kaufmann, 2011
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

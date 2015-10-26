@@ -13,14 +13,22 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
-	ms.author="cephalin"/>
+	ms.date="10/14/2015"
+	ms.author="byvinyal"/>
 
 #<a name="howtomonitor"></a>Überwachen von Web-Apps in Azure App Service
 
 [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) bieten über die Verwaltungsseite "Überwachung" Überwachungsfunktionen für die Standard- und Premium-Pläne von App Service. Die Verwaltungsseite "Überwachung" enthält Leistungsstatistiken für eine Web-App, die unten beschrieben sind.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+
+##Aufbewahrungsrichtlinien für Metriken
+
+>[AZURE.NOTE]Die Aufbewahrungsrichtlinien für App-Metriken variieren je nach Granularität.
+
+- Metriken mit der Granularität **Minute** werden für **24 Stunden** beibehalten.
+- Metriken mit der Granularität **Stunde** werden für **7 Tage** beibehalten.
+- Metriken mit der Granularität **Tag** werden für **30 Tage** beibehalten.
 
 ##<a name="websitemetrics"></a>Vorgehensweise: Hinzufügen von Web-App-Kennzahlen
 
@@ -36,15 +44,17 @@
 
 6. Um Kennzahlen von der Seite **Monitor** zu entfernen, wählen Sie die zu entfernende Kennzahl aus und klicken auf das Symbol **Metrik löschen** unten auf der Seite.
 
+
+
 ##<a name="howtoreceivealerts"></a>Vorgehensweise: Empfangen von Warnungen mittels Web-App-Kennzahlen
 
 Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst einen Web-Endpunkt zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Sie können auch festlegen, dass eine E-Mail gesendet wird, wenn eine ausgewählte Metrik den angegebenen Wert erreicht. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
 
 ##<a name="howtoviewusage"></a>Vorgehensweise: Anzeigen der Nutzungskontingente für eine Web-App
 
-Web-Apps können im [Azure-Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Freigegeben** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Freigegeben** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
+Web-Apps können im [Azure-Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Shared** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Shared** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
 
->[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
+>[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Clouddienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
 
 ### Vorgehensweise: Anzeigen der Nutzungskontingente für Web-Apps, die für den Modus "Freigegeben" konfiguriert sind ###
 Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungskontingente auswirkt, führen Sie folgende Schritte aus:
@@ -59,10 +69,10 @@ Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungsk
 
 ##<a name="resourceusage"></a> Vorgehensweise: Kontingentüberschreitungen vermeiden
 
-Kontingente sind keine Angelegenheit von Leistung oder Kosten, sondern stellen die Art und Weise da, wie Azure die Ressourcennutzung in einem Umfeld mit vielen Mandanten handhabt. So wird die übermäßige Nutzung von Ressourcen durch einzelne Mandanten unterbunden. Weil das Überschreiten Ihres Kontingents Ausfallzeiten oder eingeschränkte Funktionalität Ihrer Web-App bedeutet, sollten Sie Folgendes berücksichtigen, damit Ihre Website funktionsfähig bleibt, wenn Sie dabei sind, das Kontingent auszuschöpfen:
+Kontingente sind keine Angelegenheit von Leistung oder Kosten, sondern stellen die Art und Weise da, wie Azure die Ressourcennutzung in einem Umfeld mit vielen Mandanten handhabt. So wird die übermäßige Nutzung von gemeinsamen Ressourcen durch einzelne Mandanten unterbunden. Weil das Überschreiten Ihres Kontingents Ausfallzeiten oder eingeschränkte Funktionalität Ihrer Web-App bedeutet, sollten Sie Folgendes berücksichtigen, damit Ihre Website funktionsfähig bleibt, wenn Sie dabei sind, das Kontingent auszuschöpfen:
 
 - Verschieben Sie die Web-App(s) in einen größeren App Service-Plan und nutzen Sie das höhere Kontingent dort. Das einzige Kontingent bei den Plänen **Basic** und **Standard** gilt für den Dateisystemspeicher.
-- Je mehr die Anzahl der Instanzen einer Web-App wächst, desto wahrscheinlicher werden die gemeinsam genutzten Ressourcenkontingente ausgeschöpft. Wenn machbar, können Sie zusätzliche Instanzen einer Web-App zurückfahren, wenn eine Überschreitung der gemeinsam genutzten Ressourcenkontingente droht.
+- Je mehr die Anzahl der Instanzen einer Web-App wächst, desto wahrscheinlicher werden die gemeinsamen Ressourcenkontingente ausgeschöpft. Wenn machbar, können Sie zusätzliche Instanzen einer Web-App zurückfahren, wenn eine Überschreitung der gemeinsamen Ressourcenkontingente droht.
 
 ##<a name="howtoconfigdiagnostics"></a>Vorgehensweise: Konfigurieren der Diagnose und Herunterladen von Protokollen für eine Web-App
 
@@ -279,4 +289,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

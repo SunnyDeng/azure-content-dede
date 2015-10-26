@@ -529,4 +529,4 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
 [14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

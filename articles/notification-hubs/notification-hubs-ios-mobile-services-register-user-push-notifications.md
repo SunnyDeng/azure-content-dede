@@ -59,7 +59,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
 	> [AZURE.NOTE]Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der **registerNativeWithDeviceToken**-Methode aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/"%20target="_blank") haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
 
-5.  \(Optional\) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
+5.  (Optional) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
 
 			- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 			    NSLog(@"%@", userInfo);
@@ -74,7 +74,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 6. Fügen Sie in der Datei "QSTodoListViewController.m" die **registerForNotificationsWithBackEnd**-Methode hinzu:
 
 			- (void)registerForNotificationsWithBackEnd {
-			    NSString* json = [NSString  stringWithFormat:@"{\"platform\":\"ios\", \"deviceToken\":\"%@\"}", [self.todoService getDeviceTokenInHex] ];
+			    NSString* json = [NSString  stringWithFormat:@"{"platform":"ios", "deviceToken":"%@"}", [self.todoService getDeviceTokenInHex] ];
 
 			    [self.todoService.client invokeAPI:@"register_notifications" data:[json dataUsingEncoding:NSUTF8StringEncoding] HTTPMethod:@"POST" parameters:nil headers:nil completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
 			        if (error != nil) {
@@ -122,4 +122,4 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

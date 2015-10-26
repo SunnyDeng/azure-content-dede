@@ -18,7 +18,8 @@ ms.service="virtual-machines"
 
 # Einrichten eines Windows RDMA-Clusters mit HPC Pack sowie A8- und A9-Instanzen zum Ausführen von MPI-Anwendungen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Artikel wird beschrieben, wie Sie einen Windows RDMA-Cluster mit [Microsoft HPC Pack](https://technet.microsoft.com/library/cc514029) und [rechenintensiven Instanzen der Größe A8 und A9](virtual-machines-a8-a9-a10-a11-specs.md) in Azure einrichten, um parallele MPI-Anwendungen (Message Passing Interface) auszuführen. Wenn Sie Windows Server-basierte A8- und A9-Instanzen zum Ausführen einer unterstützten MPI-Implementierung konfigurieren, erfolgt die Kommunikation der MPI-Anwendungen in Azure effizient über ein auf RDMA-Technologie (Remote Direct Memory Access) basierendem Netzwerk mit niedriger Latenz und hohem Durchsatz.
 
@@ -26,7 +27,7 @@ In diesem Artikel wird beschrieben, wie Sie einen Windows RDMA-Cluster mit [Micr
 >
 > Azure bietet zudem rechenintensive A10- und A11-Instanzen mit Verarbeitungskapazitäten ähnlich denjenigen von A8- und A9-Instanzen, aber ohne eine Verbindung zu einem RDMA-Back-End-Netzwerk. Wenn Sie MPI-Workloads in Azure ausführen möchten, erzielen Sie in der Regel mit den A8- und A9-Instanzen eine optimale Leistung.
 
-Weitere Informationen zum Ausführen von MPI-Arbeitslasten auf virtuellen Linux-Computern, die auf das Azure RDMA-Netzwerk zugreifen, finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
+Weitere Informationen zum Ausführen von MPI-Workloads auf virtuellen Linux-Computern, die auf das Azure RDMA-Netzwerk zugreifen, finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
 
 ## Optionen für die Bereitstellung von Windows HPC-Clustern
 Microsoft HPC Pack ist ein empfohlenes Tool zum Erstellen von Windows Server-basierten HPC-Clustern in Azure. Bei Verwendung mit A8- und A9-Instanzen bietet HPC Pack eine effiziente Methode zum Ausführen Windows-basierter MPI-Anwendungen, die auf das RDMA-Netzwerk in Azure zugreifen. HPC Pack enthält eine Laufzeitumgebung für die Microsoft-Implementierung des Message Passing Interface für Windows.
@@ -245,4 +246,4 @@ Im Folgenden finden Sie Überlegungen zum Ausführen von MPI-Anwendungen auf Azu
 [pingpong1]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong1.png
 [pingpong2]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong2.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

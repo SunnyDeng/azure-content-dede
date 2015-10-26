@@ -234,4 +234,4 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 - Weitere Informationen zu [StorSimple-Fehlern](storsimple-troubleshoot-operational-device.md).
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

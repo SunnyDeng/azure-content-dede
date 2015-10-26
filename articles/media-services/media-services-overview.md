@@ -227,4 +227,4 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

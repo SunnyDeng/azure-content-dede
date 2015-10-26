@@ -1,8 +1,9 @@
-<properties  
+<properties 
+    title="Elastic Scale Security Configurations" 
     pageTitle="Elastic Scale – Sicherheitskonfigurationen" 
     description="Einrichten von x409-Zertifikaten für die Verschlüsselung" 
-    services="sql-database" 
-	documentationCenter="" 
+    metaKeywords="Elastic Database certificates security" 
+    services="sql-database" documentationCenter="" 
     manager="jhubbard" 
     authors="sidneyh"/>
 
@@ -473,4 +474,4 @@ In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Ste
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

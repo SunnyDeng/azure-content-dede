@@ -16,4 +16,4 @@ Sie haben jetzt sowohl Ihren mobilen Dienst als auch Ihre App so konfiguriert, d
 
 > [AZURE.IMPORTANT]Überprüfen Sie, ob Sie den richtigen URI für die Umleitung auf der Entwicklerwebsite Ihres Identitätsanbieters festgelegt haben. Wie in den verknüpften Anweisungen für die einzelnen Anbieter oben beschrieben, kann sich der Umleitungs-URI für einen .NET-Back-End-Dienst von einem JavaScript-Back-End-Dienst unterscheiden. Bei einem falsch konfigurierten Umleitungs-URI kann der Anmeldebildschirm möglicherweise nicht ordnungsgemäß angezeigt werden und die App weist unerwartete Störungen auf.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

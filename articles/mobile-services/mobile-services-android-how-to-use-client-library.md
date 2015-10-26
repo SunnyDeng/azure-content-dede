@@ -933,4 +933,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Erste Schritte mit Mobile Services]: mobile-services-android-get-started.md
 [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -208,4 +208,4 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 	![Demofeed für Azure RemoteApp](./media/remoteapp-clients/WinPhone8.png)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

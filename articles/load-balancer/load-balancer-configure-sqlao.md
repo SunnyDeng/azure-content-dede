@@ -67,4 +67,4 @@ Weitere Details zum Erstellen einer SQL-AlwaysOn-Verfügbarkeitsgruppe finden Si
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

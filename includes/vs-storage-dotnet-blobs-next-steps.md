@@ -9,4 +9,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
   - Verwenden Sie den [Warteschlangenspeicher](./storage-dotnet-how-to-use-queues.md) zum Speichern unstrukturierter Daten.
   - Verwenden Sie eine [SQL-Datenbank](../sql-database/sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

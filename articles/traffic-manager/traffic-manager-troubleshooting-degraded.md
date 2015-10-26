@@ -80,4 +80,4 @@ Wenn bei dem Test das HTTPs-Protokoll verwendet wird, sollten Sie in Wget den Pa
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

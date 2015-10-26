@@ -81,4 +81,4 @@ Dieses Tool konvertiert Orchestrator-Runbooks in [grafische Runbooks](automation
 - [Orchestrator-Standardaktivitäten](http://technet.microsoft.com/library/hh403832.aspx)
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

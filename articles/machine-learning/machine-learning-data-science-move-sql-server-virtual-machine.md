@@ -1,63 +1,50 @@
 <properties 
-	pageTitle="Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer | Azure"
-	description="Verschieben von Daten aus Flatfiles oder von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer"
-	services="machine-learning"
-	documentationCenter=""
-	authors="msolhab"
-	manager="paulettm"
-	editor="cgronlun"/>
+	pageTitle="Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer | Azure" 
+	description="Verschieben von Daten aus Flatfiles oder von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="bradsev" 
+	manager="paulettm" 
+	editor="cgronlun" />
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="fashah;mohabib;bradsev"/>
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/12/2015" 
+	ms.author="fashah;mohabib;bradsev" />
 
 # Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer
 
-In diesem Dokument beschreiben wir die Optionen zum Verschieben von Daten aus Flatfiles (CSV- oder TSV-Formate) oder von einem lokalen SQL Server in SQL Server auf einem virtuellen Azure-Computer. Diese Aufgaben zum Verschieben von Daten in die Cloud gehören zur Advanced Analytics Process and Technology (ADAPT), die von Azure Machine Learning bereitgestellt wird.
+Dieses **Menü** bietet Links zu Themen, in denen beschrieben wird, wie Daten in Zielumgebungen erfasst werden, in denen die Daten während des Cortana-Analyseprozesses (CAP) gespeichert und verarbeitet werden.
+
+[AZURE.INCLUDE [cap-ingest-data-selector](../../includes/cap-ingest-data-selector.md)]
+
+
+## Einführung
+**In diesem Dokument** beschreiben wir die Optionen zum Verschieben von Daten aus Flatfiles (CSV- oder TSV-Format) oder von einem lokalen SQL Server in SQL Server auf einem virtuellen Azure-Computer. Diese Aufgaben zum Verschieben von Daten in die Cloud gehören zum Cortana-Analyseprozess, der von Azure bereitgestellt wird.
 
 Ein Thema, in dem die Optionen für das Verschieben von Daten in eine Azure SQL-Datenbank für Machine Learning beschrieben werden, finden Sie unter [Verschieben von Daten in eine Azure SQL-Datenbank für Azure Machine Learning](machine-learning-data-science-move-sql-azure.md).
 
-In der folgende Tabelle sind die Optionen zum Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer zusammengefasst. <table>
+In der folgenden Tabelle sind die Optionen zum Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer zusammengefasst.
 
-<tr>
-<td><b>QUELLE</b></td>
-<td colspan="2" align="center"><b>ZIEL: SQL&#160;Server auf virtuellem Azure-Computer</b></td>
-</tr>
-
-<tr>
-  <td><b>Flatfile</b></td>  
-  <td>
-    1. <a href="#insert-tables-bcp">Befehlszeilenprogramm zum Massenkopieren (BCP)</a><br>
-    2. <a href="#insert-tables-bulkquery">SQL-Abfrage zum Masseneinfügen</a><br>
-    3. <a href="#sql-builtin-utilities">Integrierte grafische Hilfsprogramme in SQL Server</a>
-  </td>
-</tr>
-<tr>
-  <td><b>Lokaler SQL Server</b></td>
-  <td>
-    1. <a href="#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard">Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer</a><br>
-    2. <a href="#export-flat-file">Exportieren in eine Flatfile</a><br>
-    3. <a href="#sql-migration">SQL-Datenbankmigrations-Assistent</a> <br>    
-    4. <a href="#sql-backup">Datenbanksicherung und -wiederherstellung</a> <br>
-  </td>
-</tr>
-</table>
+<b>QUELLE</b> |<b>ZIEL: SQL Server auf virtuellem Azure-Computer</b> |
+------------------ |-------------------- |
+<b>Flatfile</b> |1\. <a href="#insert-tables-bcp">Befehlszeilenprogramm zum Massenkopieren (BCP) </a><br> 2. <a href="#insert-tables-bulkquery">SQL-Abfrage zum Masseneinfügen </a><br>3. <a href="#sql-builtin-utilities">Integrierte grafische Hilfsprogramme in SQL Server</a>
+<b>Lokaler SQL Server</b> | 1\. <a href="#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard">Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer</a><br> 2. <a href="#export-flat-file">Exportieren in eine Flatfile </a><br> 3. <a href="#sql-migration">SQL-Datenbankmigrations-Assistent </a><br> 4. <a href="#sql-backup">Datenbanksicherung und -wiederherstellung </a><br>
 
 Beachten Sie, dass in diesem Dokument davon ausgegangen wird, dass die SQL-Befehle in SQL Server Management Studio oder im Datenbank-Explorer von Visual Studio ausgeführt werden.
 
-> [AZURE.TIP]Alternativ dazu können Sie [Azure Data Factory](https://azure.microsoft.com/de-DE/services/data-factory/) verwenden, um eine Pipeline zu erstellen und zu planen, die Daten in eine SQL Server-VM auf Azure verschiebt. Weitere Informationen hierzu finden Sie unter [Kopieren von Daten mit Azure Data Factory (Kopieraktivität)](../data-factory/data-factory-copy-activity.md).
+> [AZURE.TIP]Alternativ dazu können Sie [Azure Data Factory](https://azure.microsoft.com/en-us/services/data-factory/) verwenden, um eine Pipeline zu erstellen und zu planen, die Daten in eine SQL Server-VM auf Azure verschiebt. Weitere Informationen hierzu finden Sie unter [Kopieren von Daten mit Azure Data Factory (Kopieraktivität)](../data-factory/data-factory-copy-activity.md).
 
 
 ## <a name="prereqs"></a>Voraussetzungen
 In diesem Tutorial wird Folgendes vorausgesetzt:
 
 * Ein **Azure-Abonnement**. Wenn Sie nicht über ein Abonnement verfügen, können Sie sich für ein [kostenloses Testabonnement](https://azure.microsoft.com/pricing/free-trial/) registrieren.
-* Ein **Azure-Speicherkonto**. Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+* Ein **Azure-Speicherkonto** Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 * Bereitgestellter **SQL Server auf einem virtuellen Azure-Computer**. Anleitungen finden Sie unter [Einrichten eines virtuellen Azure SQL Server-Computers als IPython Notebook-Server für die erweiterte Analyse](machine-learning-data-science-setup-sql-server-virtual-machine.md).
 * Lokal installierte und konfigurierte **Azure PowerShell**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
@@ -236,4 +223,4 @@ Einen Screenshot der Optionen für das Sichern/Wiederherstellen von Datenbanken 
 [1]: ./media/machine-learning-data-science-move-sql-server-virtual-machine/sqlserver_builtin_utilities.png
 [2]: ./media/machine-learning-data-science-move-sql-server-virtual-machine/database_migration_wizard.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

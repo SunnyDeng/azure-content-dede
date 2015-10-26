@@ -39,4 +39,4 @@ Unter `services\mobileServices\settings` wurde eine neue JavaScript-Datei (JS-Da
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

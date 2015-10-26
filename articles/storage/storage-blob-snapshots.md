@@ -125,4 +125,4 @@ In Szenario 4 wurde das Basis-Blob vollständig aktualisiert und enthält keine
 
 ![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

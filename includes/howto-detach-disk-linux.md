@@ -1,3 +1,5 @@
+<properties writer="kathydav" editor="tysonn" manager="timlt" />
+
 
 Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nicht mehr benötigen, können Sie ihn leicht trennen. Dadurch wird der Datenträger von dem virtuellen Computer entfernt, aber nicht aus dem Speicher. Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, können Sie ihn erneut an denselben virtuellen Computer oder an einen anderen anfügen.
 
@@ -7,7 +9,7 @@ Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nic
 
 Bevor Sie einen Datenträger von einem virtuellen Computer trennen können, müssen Sie die LUN-Nummer herausfinden, die als Bezeichner des zu trennenden Datenträgers fungiert. Gehen Sie dazu folgendermaßen vor:
 
-1. 	Öffnen Sie die Azure-Befehlszeilenschnittstelle \(CLI\) für Mac, Linux und Windows, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-connect.md).
+1. 	Öffnen Sie die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-connect.md).
 
 2.  Stellen Sie sicher, dass Sie sich im standardmäßigen Azure-Dienstverwaltungsmodus befinden, indem Sie `azure config
  	mode asm` eingeben.
@@ -27,7 +29,7 @@ Bevor Sie einen Datenträger von einem virtuellen Computer trennen können, müs
 		data:    0    30        ubuntuVMasm-76f7ee1ef0f6dddc.vhd
 		info:    vm disk list command OK
 
-4. 	Notieren Sie sich die LUN **Logical Unit Number \(logische Gerätenummer\)** des Datenträgers, den Sie trennen möchten.
+4. 	Notieren Sie sich die LUN **Logical Unit Number (logische Gerätenummer)** des Datenträgers, den Sie trennen möchten.
 
 
 ## Trennen des Datenträgers
@@ -58,4 +60,4 @@ Nachdem Sie die LUN des Datenträgers gefunden haben, sind Sie bereit, ihn zu tr
 
 Der getrennte Datenträger verbleibt im Speicher, ist jedoch nicht mehr an einen virtuellen Computer angefügt.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

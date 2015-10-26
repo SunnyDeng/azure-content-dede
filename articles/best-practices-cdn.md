@@ -8,7 +8,6 @@
    editor=""
    tags=""/>
 
-
 <tags
    ms.service="best-practice"
    ms.devlang="na"
@@ -17,7 +16,6 @@
    ms.workload="na"
    ms.date="04/28/2015"
    ms.author="masashin"/>
-
 
 # Anleitungen zum Content Delivery Network (CDN)
 
@@ -118,7 +116,6 @@ Das Verwenden des CDN ist eine gute Möglichkeit, um die Belastung Ihrer Anwendu
 
   ```
   <img src="http://[your-cdn-instance].vo.msecnd.net/Images/image.jpg" />
-
   ```
 
 - **Bereitstellung** Statische Inhalte müssen möglicherweise unabhängig von der Anwendung bereitgestellt werden, wenn Sie sie nicht in das Anwendungsbereitstellungspaket oder den Anwendungsbereitstellungsprozess einschließen. Berücksichtigen Sie, wie sich dies auf den Versionierungsansatz auswirkt, den Sie zum Verwalten der Anwendungskomponenten und des statischen Ressourceninhalts verwenden.
@@ -137,8 +134,7 @@ Das Verwenden des CDN ist eine gute Möglichkeit, um die Belastung Ihrer Anwendu
 
 - Das Bereitstellen neuer Versionen von statischen Inhalten beim Aktualisieren einer Anwendung kann eine Herausforderung darstellen, wenn die vorherigen Ressourcen im CDN zwischengespeichert sind. Weitere Informationen finden Sie im Abschnitt "<a href="#cachecontrol" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">Cachesteuerung</a>".
 
-<a name="cachecontrol" href="#" xmlns:xlink="http://www.w3.org/1999/xlink"><span />
-</a>\*\*Cachesteuerung\*\*+ Berücksichtigen Sie, wie und auf welchen Anwendungsebenen das Zwischenspeichern verwaltet werden soll. Wenn Sie beispielsweise einen Ordner als CDN-Ursprung verwenden, können Sie die Cachefähigkeit von Seiten, die Inhalte generieren, und den Inhaltsablauf für alle Ressourcen in einem bestimmten Ordner angeben. Sie können auch Cacheeigenschaften für das CDN und für den Client mithilfe von standardmäßigen HTTP-Headern angeben. Obwohl Sie das Zwischenspeichern wahrscheinlich bereits auf dem Server und dem Client verwalten, kann das CDN Sie darauf aufmerksam machen, wie Ihre Inhalte wo zwischengespeichert werden.
+<a name="cachecontrol" href="#" xmlns:xlink="http://www.w3.org/1999/xlink"><span /></a>**Cachesteuerung**+ Berücksichtigen Sie, wie und auf welchen Anwendungsebenen das Zwischenspeichern verwaltet werden soll. Wenn Sie beispielsweise einen Ordner als CDN-Ursprung verwenden, können Sie die Cachefähigkeit von Seiten, die Inhalte generieren, und den Inhaltsablauf für alle Ressourcen in einem bestimmten Ordner angeben. Sie können auch Cacheeigenschaften für das CDN und für den Client mithilfe von standardmäßigen HTTP-Headern angeben. Obwohl Sie das Zwischenspeichern wahrscheinlich bereits auf dem Server und dem Client verwalten, kann das CDN Sie darauf aufmerksam machen, wie Ihre Inhalte wo zwischengespeichert werden.
 
 - Um zu verhindern, dass Objekte im CDN verfügbar sind, können Sie sie aus dem Ursprung (Blob-Container oder **cdn**-Stammordner der Anwendung) entfernen oder den CDN-Endpunkt löschen. Sie können den Container oder Blob aber auch im Falle des Blob-Speichers privat machen. Allerdings werden Elemente nur aus dem CDN entfernt, wenn ihre Lebenszeit (Time-To-Live, TTL) abläuft.
 
@@ -195,33 +191,23 @@ Der folgende Ausschnitt aus einer Web.config-Datei im Stammverzeichnis einer von
     <rules>
       <rule name="VersionedResource" stopProcessing="false">
         <match url="(.*)_v(.*)\.(.*)" ignoreCase="true" />
-
         <action type="Rewrite" url="{R:1}.{R:3}" appendQueryString="true" />
-
       </rule>
       <rule name="CdnImages" stopProcessing="true">
         <match url="cdn/Images/(.*)" ignoreCase="true" />
-
         <action type="Rewrite" url="/Images/{R:1}" appendQueryString="true" />
-
       </rule>
       <rule name="CdnContent" stopProcessing="true">
         <match url="cdn/Content/(.*)" ignoreCase="true" />
-
         <action type="Rewrite" url="/Content/{R:1}" appendQueryString="true" />
-
       </rule>
       <rule name="CdnScript" stopProcessing="true">
         <match url="cdn/Scripts/(.*)" ignoreCase="true" />
-
         <action type="Rewrite" url="/Scripts/{R:1}" appendQueryString="true" />
-
       </rule>
       <rule name="CdnScriptBundles" stopProcessing="true">
         <match url="cdn/bundles/(.*)" ignoreCase="true" />
-
         <action type="Rewrite" url="/bundles/{R:1}" appendQueryString="true" />
-
       </rule>
     </rules>
   </rewrite>
@@ -248,4 +234,4 @@ Bündelung und Minimierung können von ASP.NET verarbeitet werden. In einem MVC-
 + [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md)
 + [Bewährte Methoden für das Azure Content Delivery Network](http://azure.microsoft.com/blog/2011/03/18/best-practices-for-the-windows-azure-content-delivery-network/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -103,4 +103,4 @@ Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliot
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
 3. Weisen Sie "serviceUri" die Anforderungs-URI zu. Weitere Informationen finden Sie unter "Abrufen einer Anforderungs-URI".
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

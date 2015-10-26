@@ -19,7 +19,8 @@
 
 # Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Dieses Thema führt Sie durch die Erstellung einer Hybrid Cloud-Umgebung mit Microsoft Azure für Tests. Die resultierende Konfiguration sieht folgendermaßen aus.
 
@@ -35,7 +36,7 @@ Damit wird eine echte hybride Produktionsumgebung von Ihrem Standort im Internet
 Diese Konfiguration bietet eine Grundlage und einen allgemeinen Ausgangspunkt für Folgendes:
 
 -  Entwickeln und Testen von Anwendungen in einer Hybrid Cloud-Umgebung
--  Erstellen von Testkonfigurationen der Computer im Subnetz „Corpnet“ und im virtuellen Netzwerk TestVNET für Hybrid Cloud-basierte IT-Arbeitsauslastungen
+-  Erstellen von Testkonfigurationen der Computer im Subnetz „Corpnet“ und im virtuellen Netzwerk TestVNET für Hybrid Cloud-basierte IT-Workloads
 
 Das Einrichten dieser Hybrid Cloud-Testumgebung umfasst folgenden fünf Phasen:
 
@@ -77,7 +78,7 @@ Installieren Sie zunächst das Betriebssystem für RRAS1.
 3.	Stellen Sie eine Verbindung zwischen RRAS1 und einem Netzwerk her, das über Internetzugriff verfügt, und führen Sie Windows Update aus, um die neuesten Updates für Windows Server 2012 R2 zu installieren.
 4.	Verbinden Sie eine Netzwerkkarte mit dem Subnetz „Corpnet“ und die andere direkt mit dem Internet. RRAS1 darf sich hinter einer Internetfirewall befinden, jedoch nicht hinter einer Netzwerkadressenübersetzung (network address translator, NAT).
 
-Als Nächstes konfigurieren Sie die TCP/IP-Eigenschaften von RRAS1. Sie benötigen eine öffentliche IP-Adresskonfiguration, einschließlich einer Adresse, Subnetzmaske (oder Präfixlänge), und das Standardgateway und DNS-Server von Ihrem Internetdienstanbieter (ISP).
+Als Nächstes konfigurieren Sie die TCP/IP-Eigenschaften von RRAS1. Sie benötigen eine öffentliche IP-Adresskonfiguration, einschließlich einer Adresse, Subnetzmaske (oder Präfixlänge), und das Standardgateway und DNS-Server von Ihrem Internet-Service Provider (ISP).
 
 Verwenden Sie diese Befehle in einer Windows PowerShell-Eingabeaufforderung auf Administratorebene für RRAS1. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < and >. Sie können die aktuellen Namen der Netzwerkkarten der Anzeige des Befehls **Get-NetAdapter** entnehmen.
 
@@ -131,13 +132,13 @@ Melden Sie sich zunächst beim [Azure-Verwaltungsportal](https://manage.windowsa
 
 Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md) zum Installieren von Azure PowerShell auf dem lokalen Computer.
 
-Erstellen Sie dann einen neuen Cloud-Dienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen TestVNET-*UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Cloud-Dienst TestVNET-Tailspin nennen.
+Erstellen Sie dann einen neuen Clouddienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen TestVNET-*UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Clouddienst TestVNET-Tailspin nennen.
 
 Mit dem folgenden Azure PowerShell-Befehl können Sie den Namen auf seine Eindeutigkeit auf dem lokalen Computer testen.
 
 	Test-AzureName -Service <Proposed cloud service name>
 
-Wenn dieser Befehl „False“ zurückgibt, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Cloud-Dienst mit dem folgenden Befehl.
+Wenn dieser Befehl „False“ zurückgibt, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Clouddienst mit dem folgenden Befehl.
 
 	New-AzureService -Service <Unique cloud service name> -Location "<Same location name as your virtual network>"
 
@@ -328,4 +329,4 @@ Melden Sie sich als Nächstes bei RRAS1 als lokaler Administrator an, und führe
 Wechseln Sie zum Azure-Verwaltungsportal auf dem lokalen Computer, und warten Sie, bis das virtuelle Netzwerk TestVNET den Status „Verbunden“ aufweist.
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

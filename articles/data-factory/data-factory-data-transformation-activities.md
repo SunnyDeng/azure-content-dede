@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Transformationsaktivitäten von Daten | Microsoft Azure"
-	description="Erfahren Sie, wie Sie die Azure Data Factory verwenden können, um Daten zu transformieren und zu analysieren."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Transformationsaktivitäten von Daten | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie die Azure Data Factory verwenden können, um Daten zu transformieren und zu analysieren." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/26/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/26/2015" 
 	ms.author="spelluru"/>
 
 # Transformation und Analyse mit Azure Data Factory
@@ -42,4 +42,4 @@ Unter dem Artikel [Verknüpfte Computedienste](data-factory-compute-linked-servi
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-transformation-activities.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

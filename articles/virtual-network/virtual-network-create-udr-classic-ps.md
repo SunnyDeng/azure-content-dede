@@ -119,4 +119,4 @@ Führen Sie zum Aktivieren der IP-Weiterleitung auf dem virtuellen Computer "FW1
 		Get-AzureVM -Name FW1 -ServiceName TestRGFW `
 			| Set-AzureIPForwarding -Enable
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

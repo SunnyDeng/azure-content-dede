@@ -46,7 +46,7 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 
 		C:\mongodb\bin>mongod --logpath F:\MongoLogs\mongolog.log --logappend --dbpath F:\MongoData\ --install
 
-	Dadurch wird der Dienst "Mongo DB" mit der Beschreibung "Mongo DB" erstellt. Zur Festlegung einer Protokolldatei muss die Option **--logpath** verwendet werden, da der laufende Dienst kein Befehlsfenster zur Anzeige der Ausgabe hat. Die Option **--logappend** legt fest, dass ein Neustart des Diensts eine Ausgabe generiert, die an die vorhandene Protokolldatei angehängt wird. Die Option **--dbpath** gibt den Ort des Datenverzeichnisses an. Weitere dienstbezogene Befehlszeilenoptionen finden Sie unter [Service-related command line options][MongoWindowsSvcOptions] \(Dienstbezogene Befehlszeilenoptionen, in englischer Sprache\).
+	Dadurch wird der Dienst "Mongo DB" mit der Beschreibung "Mongo DB" erstellt. Zur Festlegung einer Protokolldatei muss die Option **--logpath** verwendet werden, da der laufende Dienst kein Befehlsfenster zur Anzeige der Ausgabe hat. Die Option **--logappend** legt fest, dass ein Neustart des Diensts eine Ausgabe generiert, die an die vorhandene Protokolldatei angehängt wird. Die Option **--dbpath** gibt den Ort des Datenverzeichnisses an. Weitere dienstbezogene Befehlszeilenoptionen finden Sie unter [Service-related command line options][MongoWindowsSvcOptions] (Dienstbezogene Befehlszeilenoptionen, in englischer Sprache).
 
 	Führen Sie zum Starten des Diensts den folgenden Befehl aus:
 
@@ -108,4 +108,4 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 [Image8]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint2.png
 [Image9]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint3.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

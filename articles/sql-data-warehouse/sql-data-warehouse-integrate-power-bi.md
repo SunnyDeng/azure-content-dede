@@ -63,4 +63,4 @@ Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im Azure-Verwa
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

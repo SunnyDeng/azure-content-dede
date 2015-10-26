@@ -48,4 +48,4 @@ Im weiteren Verlauf dieses Themas werden die umfassenden Kennwortverwaltungsfunk
 - [Erstellen oder Bearbeiten von Benutzern in Azure AD](active-directory-create-users.md)
 - [Verwalten von Gruppen in Azure AD](active-directory-manage-groups.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

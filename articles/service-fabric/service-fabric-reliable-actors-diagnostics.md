@@ -7,7 +7,6 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -16,7 +15,6 @@
    ms.workload="NA"
    ms.date="08/05/2015"
    ms.author="abhisram"/>
-
 
 # Diagnose und Leistungsüberwachung für Reliable Actors
 Die Reliable Actors-Laufzeit gibt [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx)-Ereignisse und [Leistungsindikatoren](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx) aus, die Aufschluss über den Laufzeitbetrieb sowie Unterstützung bei der Problembehebung und Leistungsüberwachung bieten.
@@ -157,4 +155,4 @@ Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit d
 |ActorActivated|5|Information|0x1|Ein Actor wurde aktiviert.|
 |ActorDeactivated|6|Information|0x1|Ein Actor wurde deaktiviert.|
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

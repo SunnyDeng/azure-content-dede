@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Herunterladen des Azure SDK für Java (Windows)" 
-	description="Laden Sie das Azure SDK für Java herunter. Der Code wird für Maven bereitgestellt. Die Installationsschritte werden für das Azure-Plug-In für Eclipse mit Java bereitgestellt." 
+	description="Laden Sie das Azure SDK für Java herunter. Der Code wird für Maven bereitgestellt. Die Installationsschritte für das Azure Tookit für Eclipse werden bereitgestellt." 
 	services="" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="08/14/2015" 
+	ms.date="10/12/2015" 
 	ms.author="robmcm"/>
 
 #Herunterladen des Azure SDK für Java
@@ -26,4 +26,4 @@
 
 Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

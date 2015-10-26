@@ -21,7 +21,7 @@
 
 In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von virtuellen Azure-Computern automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Bereitstellung und Verwaltung virtueller Computer mithilfe von Vorlagen im Ressourcen-Manager-Bereitstellungsmodell. Im klassischen Bereitstellungsmodell können Sie keine Vorlagen verwenden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Im klassischen Bereitstellungsmodell können Sie keine Vorlagen verwenden.
 
 
 - [Schnelles Erstellen eines virtuellen Computers in Azure](#quick-create-a-vm-in-azure)
@@ -1306,4 +1306,4 @@ Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

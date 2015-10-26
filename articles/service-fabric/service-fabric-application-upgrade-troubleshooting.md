@@ -225,4 +225,4 @@ Die Upgradezeit für eine Upgradedomäne wird durch *UpgradeDomainTimeout* begre
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

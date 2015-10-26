@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Allgemeine Vorgänge in der Machine Learning-Empfehlungen-API | Microsoft Azure"
-	description="Azure ML Recommendation-Beispielanwendung"
-	services="machine-learning"
-	documentationCenter=""
-	authors="jaymathe"
-	manager="paulettm"
+	pageTitle="Allgemeine Vorgänge in der Machine Learning-Empfehlungen-API | Microsoft Azure" 
+	description="Azure ML Recommendation-Beispielanwendung" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="jaymathe" 
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="luisca"/>
 
 
@@ -89,4 +89,4 @@ Eine vollständige Beschreibung der APIs finden Sie in der Dokumentation zum Mic
 Die Beispiel-App ist nicht für die Ausführung in einer Produktionsumgebung gedacht. Der Katalog umfasst nur sehr wenige Daten, die kein sinnvolles Empfehlungsmodell ergeben. Die Daten werden als Beispiel bereitgestellt.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

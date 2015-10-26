@@ -260,4 +260,4 @@ Ein Team kann also Application Insights nicht nur nutzen, um einzelne Probleme z
 [usage]: app-insights-web-track-usage.md
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

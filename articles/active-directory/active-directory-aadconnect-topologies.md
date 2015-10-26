@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/08/2015"
+   ms.date="10/13/2015"
    ms.author="andkjell"/>
 
 # Topologien für Azure AD Connect
@@ -108,8 +108,8 @@ Für einige Office 365-Workloads gelten bestimmte Einschränkungen für unterst
 
 | Workload | |
 | --------- | --------- |
-| Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/DE-DE/library/jj873754.aspx) |
-| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/DE-DE/library/dn933910.aspx) |
+| Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/en-us/library/jj873754.aspx) |
+| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/en-us/library/dn933910.aspx) |
 
 ## Stagingserver
 ![StagingServer](./media/active-directory-aadconnect-topologies/MultiForestStaging.png)
@@ -159,7 +159,12 @@ Azure AD-Verzeichnisse sind als isoliert konzipiert. Es wird nicht unterstützt,
 
 Es wird unterstützt, FIM2010/MIM2016 lokal für GALsync zum Synchronisieren von Benutzern zwischen zwei Exchange-Organisationen zu verwenden. Die Benutzer in der einen Organisation werden in der anderen Organisation als fremde Benutzer/Kontakte angezeigt. Diese anderen lokalen ADs können dann mit ihren eigenen Azure AD-Verzeichnissen synchronisiert werden.
 
-## Nächste Schritte
-Weitere Informationen zum Installieren von Azure AD-Connect für diese Szenarios finden Sie unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md). Weitere Informationen über die Konfiguration für die Azure AD Connect-Synchronisierung finden Sie unter [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
 
-<!---HONumber=Sept15_HO4-->
+## Nächste Schritte
+Weitere Informationen zum Installieren von Azure AD-Connect für diese Szenarios finden Sie unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md).
+
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
+
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+
+<!---HONumber=Oct15_HO3-->

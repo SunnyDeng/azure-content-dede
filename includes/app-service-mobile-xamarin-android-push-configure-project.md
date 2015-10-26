@@ -43,4 +43,4 @@
 
 Die **ToDoActivity** ist damit für das Hinzufügen von Pushbenachrichtigungen vorbereitet.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

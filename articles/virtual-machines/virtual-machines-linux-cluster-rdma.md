@@ -18,7 +18,8 @@ ms.service="virtual-machines"
 
 # Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Konfigurieren von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Artikel wird beschrieben, wie Sie einen Linux RDMA-Cluster mit [virtuellen Computern der Größe A8 und A9](virtual-machines-a8-a9-a10-a11-specs.md) in Azure einrichten, um parallele MPI (Message Passing Interface)-Anwendungen auszuführen. Wenn Sie Linux-basierte A8- und A9-VMs zum Ausführen einer unterstützten MPI-Implementierung konfigurieren, erfolgt die Kommunikation der MPI-Anwendungen in Azure effizient über ein auf RDMA-Technologie (Remote Direct Memory Access) basierenden Netzwerk mit niedriger Latenz und hohem Durchsatz.
 
@@ -51,7 +52,7 @@ Die folgenden Schritte helfen Ihnen beim Bereitstellen einer SLES-12-VM, beim In
 
 *   **Azure-CLI** – [Installieren](../xplat-cli-install.md) Sie die Azure-Befehlszeilenschnittstelle, und [konfigurieren](../xplat-cli-connect.md) Sie sie, um auf dem Clientcomputer eine Verbindung mit dem Azure-Abonnement herzustellen.
 
-*   **Intel MPI** – Wenn Sie ein Image für einen virtuellen Linux-Computer für Ihren Cluster anpassen (Informationen hierzu finden Sie weiter unten im Artikel), müssen Sie die Intel MPI Library 5-Laufzeit von der Website [Intel.com](https://software.intel.com/de-DE/intel-mpi-library/) auf einen bereitgestellten virtuellen Azure Linux-Computer herunterladen. Folgen Sie als Vorbereitung dazu nach der Registrierung bei Intel dem Link in der Bestätigungs-E-Mail auf die entsprechende Webseite, und kopieren Sie den Downloadlink der TGZ-Datei für die entsprechende Version von Intel MPI. Dieser Artikel basiert auf Intel MPI-Version 5.0.3.048.
+*   **Intel MPI** – Wenn Sie ein Image für einen virtuellen Linux-Computer für Ihren Cluster anpassen (Informationen hierzu finden Sie weiter unten im Artikel), müssen Sie die Intel MPI Library 5-Laufzeit von der Website [Intel.com](https://software.intel.com/en-us/intel-mpi-library/) auf einen bereitgestellten virtuellen Azure Linux-Computer herunterladen. Folgen Sie als Vorbereitung dazu nach der Registrierung bei Intel dem Link in der Bestätigungs-E-Mail auf die entsprechende Webseite, und kopieren Sie den Downloadlink der TGZ-Datei für die entsprechende Version von Intel MPI. Dieser Artikel basiert auf Intel MPI-Version 5.0.3.048.
 
 ### Bereitstellen einer SLES 12-VM
 
@@ -367,6 +368,6 @@ In einem funktionierenden Cluster mit zwei Knoten wird eine Ausgabe angezeigt, d
 
 * Versuchen Sie, Ihre Linux-MPI-Anwendungen im Linux-Cluster bereitzustellen und auszuführen.
 
-* Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/de-DE/articles/intel-mpi-library-documentation/).
+* Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/en-us/articles/intel-mpi-library-documentation/).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

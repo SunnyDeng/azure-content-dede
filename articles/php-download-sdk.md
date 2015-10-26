@@ -130,4 +130,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

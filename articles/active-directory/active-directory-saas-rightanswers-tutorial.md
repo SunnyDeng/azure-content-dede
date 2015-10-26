@@ -61,7 +61,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-rightanswers-tutorial/IC802928.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **RightAnswers-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei RightAnswers verwenden \(z. B. „**https://fortify.rightanswers.com/portal/ss/*), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **RightAnswers-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei RightAnswers verwenden (z. B. „**https://fortify.rightanswers.com/portal/ss/*), und klicken Sie dann auf **Weiter**.
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-rightanswers-tutorial/IC802929.png "Konfigurieren von App-Einstellungen")
 
@@ -102,4 +102,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

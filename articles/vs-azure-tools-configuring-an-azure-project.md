@@ -61,4 +61,4 @@ Die folgende Abbildung zeigt das Auswählen einer Konfiguration, die beim lokale
 
 Weitere Informationen zum Konfigurieren von Azure-Clouddienstprojekten in Visual Studio finden Sie im Artikel zum [Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen](vs-azure-tools-multiple-services-project-configurations.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

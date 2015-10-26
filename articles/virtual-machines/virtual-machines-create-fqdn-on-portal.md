@@ -19,7 +19,8 @@
 
 # Erstellen eines vollständig qualifizierten Domänennamens im Azure-Vorschauportal
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen eines FQDN mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Beim Erstellen eines virtuellen Computers im [Azure-Vorschauportal](https://portal.azure.com) mit dem Bereitstellungsmodell **Ressourcen-Manager** erstellt das Portal eine öffentliche IP als Ressource für den virtuellen Computer. Mit dieser IP-Adresse können Sie per Remotezugriff auf den virtuellen Computer zugreifen. Das Portal erstellt standardmäßig aber keinen [vollqualifizierten Domänennamen](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) (FQDN). Da es einfacher ist, sich anstelle einer IP-Adresse einen FQDN zu merken und zu verwenden, wird in diesem Artikel beschrieben, wie Sie ihn dem virtuellen Computer hinzufügen.
 
@@ -53,4 +54,4 @@ Im Artikel wird vorausgesetzt, dass Sie sich an Ihrem Abonnement im Portal angem
 
     Sie können jetzt eine Remoteverbindung mit dem virtuellen Computer herstellen, indem Sie diesen DNS-Namen verwenden. Verwenden Sie beispielsweise `SSH adminuser@testdnslabel.eastus.cloudapp.azure.com` beim Herstellen einer Verbindung mit einem virtuellen Linux-Computer, der über den vollqualifizierten Domänennamen `testdnslabel.eastus.cloudapp.azure.com` und den Benutzernamen `adminuser` verfügt.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -20,4 +20,4 @@ Als Nächstes ändern Sie die App so, dass Pushbenachrichtigungen unterstützt w
 <!-- URLs -->
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -191,4 +191,4 @@ Führen Sie zum Aktivieren der IP-Weiterleitung in der von **FW1** verwendeten N
 
 	- **-f (oder --enable-ip-forwarding)**. *true* oder *false*.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -120,4 +120,4 @@ SAP ist eine führende Enterprise Resource Planning (ERP)-Software, die weltweit
 
 Ausführliche Informationen zum [Bereitstellen von Azure Site Recovery für SAP NetWeaver](http://aka.ms/asr-sap) finden Sie im verlinkten Dokument.
 
-<!----HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

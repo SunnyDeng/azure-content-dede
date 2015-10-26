@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Vorkonfigurieren eines virtuellen Computers | Microsoft Azure"
-	description="Sie können virtuelle Windows-Computer mit dem klassischen Bereitstellungsmodell und PowerShell erstellen und vorkonfigurieren."
+	pageTitle="Erstellen eines virtuellen Windows-Computers mit PowerShell | Microsoft Azure"
+	description="Sie können virtuelle Windows-Computer mit Azure PowerShell und dem klassischen Bereitstellungsmodell erstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -14,17 +14,21 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/10/2015"
+	ms.date="10/13/2015"
 	ms.author="cynthn"/>
 
-# Sie können einen virtuellen Windows-Computer mit dem klassischen Bereitstellungsmodell und PowerShell erstellen und vorkonfigurieren.
+# Sie können virtuelle Windows-Computer mit PowerShell und dem klassischen Bereitstellungsmodell erstellen. 
 
 > [AZURE.SELECTOR]
-- [Portal](virtual-machines-windows-tutorial-classic-portal.md)
+- [Portal - Windows](virtual-machines-windows-tutorial-classic-portal.md)
+- [Powershell - Windows](virtual-machines-ps-create-preconfigure-windows-vms.md)
+- [PowerShell - Linux](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell. Sie können Ressourcen auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-deploy-rmtemplates-powershell.md) erstellen.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md).
+
 
 Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen, mit denen ein Windows-basierter virtueller Azure-Computer mit einem Bausteinansatz erstellt und vorab konfiguriert wird. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
 
@@ -32,9 +36,6 @@ Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure Po
 
 Das Begleitthema zum Konfigurieren der Linux-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md).
 
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
-
-- [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
 
 ## Schritt 1: Installieren von Azure PowerShell
 
@@ -53,11 +54,7 @@ Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft "SubscriptionName
 
 ## Schritt 3: Bestimmen der ImageFamily
 
-Als Nächstes müssen Sie den Wert "ImageFamily" oder "Beschriftung" für das Image bestimmen, das dem virtuellen Computer in Azure entspricht, den Sie erstellen möchten. Hier finden Sie einige Beispiele aus dem Katalog im Azure-Verwaltungsportal.
-
-![](./media/virtual-machines-ps-create-preconfigure-windows-vms/PSPreconfigWindowsVMs_1.png)
-
-Sie können die Liste der verfügbaren ImageFamily-Werte mit diesem Befehl abrufen.
+Als Nächstes müssen Sie den Wert "ImageFamily" oder "Beschriftung" für das Image bestimmen, das dem virtuellen Computer in Azure entspricht, den Sie erstellen möchten. Sie können die Liste der verfügbaren ImageFamily-Werte mit diesem Befehl abrufen.
 
 	Get-AzureVMImage | select ImageFamily -Unique
 
@@ -160,7 +157,7 @@ Option 1: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-Der kurze Name des Cloud-Diensts ist der Name in der Liste der Cloud-Dienste im Azure-Verwaltungsportal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
+Der kurze Name des Clouddiensts ist der Name in der Liste der Clouddienste im Azure-Verwaltungsportal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
 
 Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst und virtuellen Netzwerk.
 
@@ -268,8 +265,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-[Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md)
-
-[Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
-
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

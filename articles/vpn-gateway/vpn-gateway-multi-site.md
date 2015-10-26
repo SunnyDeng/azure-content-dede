@@ -6,7 +6,6 @@
    authors="cherylmc"
    manager="carolz"
    editor="tysonn" />
-
 <tags 
    ms.service="vpn-gateway"
    ms.devlang="na"
@@ -15,7 +14,6 @@
    ms.workload="infrastructure-services"
    ms.date="08/04/2015"
    ms.author="cherylmc" />
-
 
 # Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk
 
@@ -100,7 +98,6 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 		          <ConnectionsToLocalNetwork>
 		            <LocalNetworkSiteRef name="Site1">
 		              <Connection type="IPsec" />
-
 		            </LocalNetworkSiteRef>
 		          </ConnectionsToLocalNetwork>
 		        </Gateway>
@@ -113,8 +110,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 		<Gateway>
           <ConnectionsToLocalNetwork>
-            <LocalNetworkSiteRef name="Site1"><Connection type="IPsec" />
-</LocalNetworkSiteRef>
+            <LocalNetworkSiteRef name="Site1"><Connection type="IPsec" /></LocalNetworkSiteRef>
           </ConnectionsToLocalNetwork>
         </Gateway>
 
@@ -122,10 +118,8 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
         <Gateway>
           <ConnectionsToLocalNetwork>
-            <LocalNetworkSiteRef name="Site1"><Connection type="IPsec" />
-</LocalNetworkSiteRef>
-            <LocalNetworkSiteRef name="Site2"><Connection type="IPsec" />
-</LocalNetworkSiteRef>
+            <LocalNetworkSiteRef name="Site1"><Connection type="IPsec" /></LocalNetworkSiteRef>
+            <LocalNetworkSiteRef name="Site2"><Connection type="IPsec" /></LocalNetworkSiteRef>
           </ConnectionsToLocalNetwork>
         </Gateway>
 
@@ -177,4 +171,4 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 Weitere Informationen zu VPN Gateways finden Sie unter [Informationen zu VPN Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

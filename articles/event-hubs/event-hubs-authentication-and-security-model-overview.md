@@ -154,4 +154,4 @@ Weitere Informationen zu Event Hubs finden Sie unter den folgenden Themen:
 [Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

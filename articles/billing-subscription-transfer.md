@@ -71,7 +71,7 @@ Ist Ihr Konto in den USA, können Sie dies jetzt problemlos im Microsoft Azure A
 
     Dies ist keine vollständige Liste. Der Empfänger sollte sich überlegen, ob er dem Dienst zugeordnete Schlüssel aktualisiert, wenn der Zugriff auf die Ressourcen eingeschränkt werden soll. Die meisten Ressourcen können wie folgt aktualisiert werden:
 
-    1.   Öffnen Sie das Azure-Portal: [*https://portal.azure.com*](https://portal.azure.com)
+    1.   Öffnen Sie das Azure-Portal: [**https://portal.azure.com*](https://portal.azure.com)
 
     2.    Klicken Sie auf alle „Browse All -&gt; All Resources“.
 
@@ -111,4 +111,4 @@ Ist Ihr Konto in den USA, können Sie dies jetzt problemlos im Microsoft Azure A
 4. Aktualisieren Sie die Abrechnungswarnungen für dieses Abonnement im [Azure Account Center](https://account.windowsazure.com/Subscriptions) ([weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533292)).
 5. 	Wenn Sie mit einem Partner arbeiten, sollten Sie die Partner-ID für dieses Abonnement aktualisieren. Sie können diese im [Azure Account Center](https://account.windowsazure.com/Subscriptions) durchführen.
 
-<!-----HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="CDN-Cachingrichtlinie in der Media Services-Erweiterung"
-	description="Dieses Thema bietet einen Überblick über CDN-Cachingrichtlinien in der Media Services-Erweiterung."
-	services="cdn"
-	documentationCenter=".NET"
-	authors="juliako"
-	manager="dwrede"
+	pageTitle="CDN-Cachingrichtlinie in der Media Services-Erweiterung" 
+	description="Dieses Thema bietet einen Überblick über CDN-Cachingrichtlinien in der Media Services-Erweiterung." 
+	services="cdn" 
+	documentationCenter=".NET" 
+	authors="juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="cdn"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="cdn" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="juliako"/>
 
 #CDN-Cachingrichtlinie in der Media Services-Erweiterung
@@ -43,4 +43,4 @@ Sie können das Azure Verwaltungsportal oder Azure Media Services-APIs verwenden
 3. Cacheheader zum Zwischenspeichern für 2 Sekunden werden unabhängig von der Azure Media- oder Azure Storage-Konfiguration auf Livestreamingmanifeste (Wiedergabelisten) angewendet. Dieser Wert kann nicht überschrieben werden.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

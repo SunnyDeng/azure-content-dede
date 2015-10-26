@@ -7,7 +7,6 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -16,7 +15,6 @@
    ms.workload="required"
    ms.date="07/23/2015"
    ms.author="vturecek"/>
-
 
 # Erste Schritte mit Web-API-Diensten von Microsoft Azure Service Fabric mit selbstgehostetem OWIN-Server
 
@@ -345,7 +343,6 @@ Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\\ServiceManifest.xml:
 <Resources>
     <Endpoints>
         <Endpoint Name="ServiceEndpoint" Type="Input" Protocol="http" Port="80" />
-
     </Endpoints>
 </Resources>
 
@@ -573,7 +570,7 @@ Nachdem nun alle Komponenten vorhanden sind, sollte Ihr Projekt wie eine typisch
 Falls Sie dies nicht bereits getan haben, [richten Sie die Entwicklungsumgebung ein](service-fabric-get-started.md).
 
 
-Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte eine Meldung angezeigt sein, dass der Webserver auf \*\***http://localhost:80/api** geöffnet wurde
+Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte eine Meldung angezeigt sein, dass der Webserver auf ****http://localhost:80/api** geöffnet wurde
 
 
 ![](media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
@@ -601,7 +598,6 @@ Oder beim Definieren eines Standarddiensts in einem Visual Studio-Projekt mit ei
   <Service Name="WebService">
     <StatelessService ServiceTypeName="WebServiceType" InstanceCount="-1">
       <SingletonPartition />
-
     </StatelessService>
   </Service>
 </DefaultServices>
@@ -618,4 +614,4 @@ In ASP.NET 5 bleiben das Konzept und das Programmiermodell, bei dem die *Anwendu
 
 [Debuggen einer Service Fabric-Anwendung in Visual Studio](service-fabric-debugging-your-application.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

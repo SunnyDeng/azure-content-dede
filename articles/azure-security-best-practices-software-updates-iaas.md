@@ -119,4 +119,4 @@ Zusätzlich zu den allgemeinen Überlegungen, die in diesem Artikel vorgestellt 
 
 Verwenden Sie die in diesem Artikel beschriebenen Richtlinien, um die optimalen Optionen für Softwareupdates für virtuelle Computer in Azure IaaS zu ermitteln. Es gibt viele Ähnlichkeiten zwischen den Best Practices für Softwareupdates in einem traditionellen Datencenter und in Azure IaaS. Deshalb wird empfohlen, dass Sie Azure-VMs in Ihre aktuellen Richtlinien für Softwareupdates einbeziehen und die relevanten Best Practices aus diesem Artikel in Ihren allgemeinen Softwareupdateprozess einbinden.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

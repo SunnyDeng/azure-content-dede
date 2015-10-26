@@ -36,4 +36,4 @@ Weitere Informationen zu Softwareanforderungen und der Installation des Azure AD
 ## Nächste Schritte
 [Azure Active Directory-Editionen](active-directory-editions.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

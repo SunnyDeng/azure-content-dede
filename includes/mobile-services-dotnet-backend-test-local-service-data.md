@@ -18,4 +18,4 @@ In diesem Abschnitt verwenden Sie Visual Studio, um den mobilen Dienst lokal auf
 
     ![](./media/mobile-services-dotnet-backend-test-local-service-data/vs-show-local-table-data.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

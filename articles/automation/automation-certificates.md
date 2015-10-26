@@ -107,4 +107,4 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

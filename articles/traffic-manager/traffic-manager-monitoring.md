@@ -119,4 +119,4 @@ Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei de
 [Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

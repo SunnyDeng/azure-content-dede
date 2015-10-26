@@ -41,7 +41,7 @@ Gehen Sie folgendermaßen vor, um die PHP-Clientbibliotheken für Azure über Co
 
 1. [Installieren von Git][install-git]
 
-	> [AZURE.NOTE] Unter Windows muss die ausführbare Git-Datei zu Ihrer PATH-Umgebungsvariable hinzugefügt werden.
+	> [AZURE.NOTE]Unter Windows muss die ausführbare Git-Datei zu Ihrer PATH-Umgebungsvariable hinzugefügt werden.
 
 2. Erstellen Sie im Stammverzeichnis Ihres Projekts eine Datei namens **composer.json**, und fügen Sie zu dieser den folgenden Code hinzu:
 
@@ -280,7 +280,7 @@ Die Tasklist-Anwendung bietet die Möglichkeit, ein Element als "abgeschlossen" 
 
 * Der erste Schritt bei der Aktualisierung einer Entität ist der Abruf aus der Tabelle:
 		
-		$result = $tableRestProxy->queryEntities('tasks', 'PartitionKey eq ''.$_GET['pk'].'' and RowKey eq ''.$_GET['rk'].''');		
+		$result = $tableRestProxy->queryEntities('tasks', 'PartitionKey eq \''.$_GET['pk'].'\' and RowKey eq \''.$_GET['rk'].'\'');		
 		$entities = $result->getEntities();		
 		$entity = $entities[0];
 
@@ -430,4 +430,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [git-instructions]: ./media/web-sites-php-storage/git-instructions.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

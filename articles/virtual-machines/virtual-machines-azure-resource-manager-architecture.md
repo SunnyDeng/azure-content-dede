@@ -19,7 +19,9 @@
 
 # Architektur des Azure-Ressourcen-Managers
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
+
 
 Dieser Artikel bietet einen Überblick über die Architektur der Dienstverwaltung und des Ressourcen-Managers zum Erstellen infrastrukturbasierter Anwendungen und Workloads.
 
@@ -81,4 +83,4 @@ Sie können die Komponentisierung sowie die Abhängigkeitsbeziehungen zwischen R
 
 [Azure Resource Manager-Übersicht](resource-group-overview.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

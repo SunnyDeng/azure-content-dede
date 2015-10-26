@@ -90,4 +90,4 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 Weitere Informationen zur Kapazität von DocumentDB finden Sie unter [Verwalten der Kapazität von DocumentDB](documentdb-manage.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

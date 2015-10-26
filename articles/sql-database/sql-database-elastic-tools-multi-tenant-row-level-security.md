@@ -1,6 +1,8 @@
-<properties  
+<properties 
+	title="Multi-tenant applications with elastic database tools and row-level security" 
 	pageTitle="Mehrinstanzenfähige Anwendungen mit elastischen Datenbanktools und zeilenbasierter Sicherheit" 
 	description="Erfahren Sie, wie Sie mithilfe von elastischen Datenbanktools in Verbindung mit zeilenbasierter Sicherheit eine Anwendung mit einer hochgradig skalierbaren Datenebene in einer Azure SQL-Datenbank erstellen, die mehrinstanzenfähige Shards unterstützt." 
+	metaKeywords="azure sql database elastic tools multi tenant row level security rls" 
 	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
 	authors="tmullaney"/>
@@ -339,4 +341,4 @@ Elastische Datenbanktools und zeilenbasierte Sicherheit können zusammen zum hor
 [1]: ./media/sql-database-elastic-tools-multi-tenant-row-level-security/blogging-app.png
 <!--anchors-->
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

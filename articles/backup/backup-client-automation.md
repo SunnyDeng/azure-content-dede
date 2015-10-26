@@ -7,14 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/21/2015" 
-	ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="aashishr"; "jimpark"/>
 
 
 # Bereitstellen und Verwalten der Sicherung in Azure für Windows Server-/Windows-Clientcomputer mit PowerShell
@@ -23,6 +16,15 @@ In diesem Artikel erfahren Sie, wie Sie PowerShell zum Einrichten von Azure Back
 [AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
 ## Einrichtung und Registrierung
+Vorbereitung:
+
+1. [Laden Sie die aktuelle PowerShell-Version herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
+2. Aktivieren Sie die Azure Backup-Cmdlets, indem Sie über das Cmdlet **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
+
+```
+PS C:\> Switch-AzureMode AzureResourceManager
+```
+
 Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell automatisiert werden:
 
 - Erstellen eines Sicherungstresors
@@ -32,14 +34,17 @@ Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell a
 - Verschlüsselungseinstellungen
 
 ### Erstellen eines Sicherungstresors
-Sie können mit dem Cmdlet **New-AzureBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+
+> [AZURE.WARNING]Kunden, die Azure Backup zum ersten Mal verwenden, müssen den Azure Backup-Anbieter registrieren, der mit ihrem Abonnement verwendet werden soll. Führen Sie hierzu den folgenden Befehl aus: Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
+
+Sie können mit dem Cmdlet **New-AzureRMBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
-PS C:\> New-AzureResourceGroup –Name “test-rg” –Location “West US”
-PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “West US”
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
 ```
 
-Mit dem Cmdlet **Get-AzureBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
+Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
 
 
 ### Installieren des Azure Backup-Agents
@@ -87,7 +92,7 @@ Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass d
 - Gültiges Azure-Abonnement
 - Ein Sicherungstresor
 
-Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureBackupVaultCredentials** in einer Azure PowerShell-Konsole aus, und speichern Sie sie an einem geeigneten Speicherort, z. B. *C:\\Downloads*.
+Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureRMBackupVaultCredentials** in einer Azure PowerShell-Konsole aus, und speichern Sie sie an einem geeigneten Speicherort, z. B. *C:\\Downloads*.
 
 ```
 PS C:\> $credspath = "C:"
@@ -110,7 +115,7 @@ Region              : West US
 Machine registration succeeded.
 ```
 
-> [AZURE.IMPORTANT] Verwenden Sie keine relativen Pfade, um die Tresoranmeldedatendatei anzugeben. Sie müssen einen absoluten Pfad als Eingabe für das Cmdlet angeben.
+> [AZURE.IMPORTANT]Verwenden Sie keine relativen Pfade, um die Tresoranmeldedatendatei anzugeben. Sie müssen einen absoluten Pfad als Eingabe für das Cmdlet angeben.
 
 ### Netzwerkeinstellungen
 Wenn die Konnektivität des Windows-Computers mit dem Internet über einen Proxyserver hergestellt wird, können die Proxyeinstellungen auch dem Agent bereitgestellt werden. Da es in diesem Beispiel keinen Proxyserver gibt, löschen wir explizit alle Proxy-bezogenen Informationen.
@@ -135,7 +140,7 @@ PS C:\> ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force 
 Server properties updated successfully
 ```
 
-> [AZURE.IMPORTANT] Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
+> [AZURE.IMPORTANT]Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
 
 ## Sichern von Dateien und Ordnern
 All Ihre Sicherungen von Windows-Servern und -Clients in Azure Backup werden durch eine Richtlinie gesteuert. Die Richtlinie besteht aus drei Teilen:
@@ -177,7 +182,7 @@ Die Aufbewahrungsrichtlinie definiert, wie lange durch Sicherungsaufträge erste
 PS C:\> $retentionpolicy = New-OBRetentionPolicy -RetentionDays 7
 ```
 
-> [AZURE.NOTE] Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
+> [AZURE.NOTE]Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
 
 Die Aufbewahrungsrichtlinie muss der Hauptrichtlinie mithilfe des [Set-OBRetentionPolicy](https://technet.microsoft.com/library/hh770405)-Cmdlets zugeordnet werden:
 
@@ -587,7 +592,7 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ## Nächste Schritte
 Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Sie unter
 
-- [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
+- [Einführung in Azure Backup](backup-configure-vault.md)
 - [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -86,4 +86,4 @@ Der globale Administrator hat Zugriff auf alle administrativen Funktionen. Stand
 - [Verwalten von Kennwörtern](active-directory-manage-passwords.md)
 - [Gruppen verwalten](active-directory-manage-groups.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

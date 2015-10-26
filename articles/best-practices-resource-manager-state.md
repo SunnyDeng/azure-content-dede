@@ -389,4 +389,4 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
 - [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

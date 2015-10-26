@@ -90,4 +90,4 @@ Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transa
  
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

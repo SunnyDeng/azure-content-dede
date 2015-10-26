@@ -232,4 +232,4 @@ Weitere Informationen und Beispiele zum Verwenden dieser Parameter finden Sie un
 <!--Image references-->
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

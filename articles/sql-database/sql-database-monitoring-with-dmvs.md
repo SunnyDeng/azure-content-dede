@@ -41,7 +41,7 @@ Bei einer lokalen Instanz von SQL Server geben dynamische Verwaltungssichten Inf
 
 ## Berechnen der Datenbankgröße
 
-Die folgende Abfrage gibt die Größe Ihrer Datenbank in Megabyte zurück:
+Die folgende Abfrage gibt die Größe Ihrer Datenbank (in Megabyte) zurück:
 
 ```
 -- Berechnet die Größe der Datenbank. 
@@ -137,4 +137,4 @@ ORDER BY highest_cpu_queries.total_worker_time DESC;
 
 [Einführung in SQL-Datenbank](sql-database-technical-overview.md)
 
-<!------HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

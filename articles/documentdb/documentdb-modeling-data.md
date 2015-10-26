@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Modellieren von Daten in Azure DocumentDB | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Daten für eine NoSQL-Dokumentendatenbank wie Azure DocumentDB modellieren."
-	services="documentdb"
-	authors="ryancrawcour"
-	manager="jhubbard"
-	editor="mimig1"
+	pageTitle="Modellieren von Daten in Azure DocumentDB | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie Daten für eine NoSQL-Dokumentendatenbank wie Azure DocumentDB modellieren." 
+	services="documentdb" 
+	authors="ryancrawcour" 
+	manager="jhubbard" 
+	editor="mimig1" 
 	documentationCenter=""/>
 
 <tags 
-	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="ryancraw"/>
 
 #Modellieren von Daten in DocumentDB#
@@ -392,4 +392,4 @@ Informationen zur horizontalen Partitionierung („Sharding“) Ihrer Daten auf 
 Anleitungen für die Datenmodellierung und das Sharding für mehrinstanzenfähige Anwendungen finden Sie unter [Skalieren einer mehrinstanzenfähigen Anwendung mit Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

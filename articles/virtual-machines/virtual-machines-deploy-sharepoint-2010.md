@@ -20,7 +20,8 @@
 
 # SharePoint 2010-Bereitstellung auf Azure Virtual Machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Microsoft SharePoint Server 2010 bietet eine umfangreiche Bereitstellungsflexibilität, die Organisationen bei der Ermittlung der passenden Einsatzszenarien für ihre geschäftlichen Anforderungen und Ziele unterstützen kann. Das Angebot von Azure Virtual Machines, das in Microsoft Azure gehostet und verwaltet wird, umfasst eine vollständige, zuverlässige und verfügbare Infrastruktur für die Unterstützung zahlreicher On-Demand-Anwendungs- und -Datenbankworkloads, z. B. Microsoft SQL Server- und SharePoint-Bereitstellungen.
 
@@ -287,4 +288,4 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf vi
 
 [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (auf Englisch)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

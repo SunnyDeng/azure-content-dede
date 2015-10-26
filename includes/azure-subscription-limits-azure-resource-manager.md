@@ -16,4 +16,4 @@ Ressourcen-Manager-API-Anforderungsgröße|4\.194.304 Bytes|4\.194.304 Bytes
 
 <sup>3</sup> Diese Features sind für Azure-Ressourcengruppen und den Azure-Ressourcen-Manager nicht mehr erforderlich.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

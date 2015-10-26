@@ -173,4 +173,4 @@ Unter Umständen müssen Sie bestimmte Dateien in Ihr Dienstpaket einschließen,
 
 Weitere Informationen zum Veröffentlichen in Azure aus Visual Studio finden Sie unter [Assistent zur Veröffentlichung einer Azure-Anwendung](vs-azure-tools-publish-azure-application-wizard.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

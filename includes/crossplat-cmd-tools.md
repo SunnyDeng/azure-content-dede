@@ -171,7 +171,7 @@ Ein virtueller Azure-Computer wird aus einem Image eines virtuellen Computers (V
 
 Sie können einen virtuellen Computer mit dem Befehl `vm create` über eines der verfügbaren Images bereitstellen oder starten. Das folgende Beispiel zeigt, wie Sie einen virtuellen Linux-Computer (genannt `myVM`) aus einem Image im Imagekatalog (CentOS 6.2) starten. Der Root-Benutzername und das -Kennwort für den virtuellen Computer lauten `myusername` bzw. `Mypassw0rd`. (Beachten Sie, dass der Parameter `--location` das Datencenter angibt, in dem der virtuelle Computer erstellt wird. Wenn Sie den Parameter `--location` auslassen, werden Sie aufgefordert, einen Standort auszuwählen.)
 
-	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-de-de-30GB.vhd myusername --location "West US"
+	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-de-DE-30GB.vhd myusername --location "West US"
 
 Möglicherweise möchten Sie das `--ssh`-Flag (Linux) oder das `--rdp`-Flag (Windows) an `vm create` übergeben, um Remoteverbindungen mit dem neu erstellten virtuellen Computer zu ermöglichen.
 
@@ -220,4 +220,4 @@ Eine vollständige Liste der Befehle zum Erstellen und Verwalten von virtuellen 
 [reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
 [windowsazuredotcom]: http://www.windowsazure.com
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -21,11 +21,11 @@ Wenn Sie wissen, wie Benutzer Ihre Anwendung verwenden, können Sie Ihre Entwick
 
 Application Insights kann Ihnen ein klares Bild der Nutzung Ihrer Anwendung bieten und Sie dabei unterstützen, die Benutzererfahrung zu verbessern und Ihre geschäftlichen Ziele zu erreichen.
 
-Application Insights funktioniert sowohl für eigenständige Apps \(unter iOS, Android und Windows\) als auch für \(in .NET oder J2EE gehostete\) Web-Apps.
+Application Insights funktioniert sowohl für eigenständige Apps (unter iOS, Android und Windows) als auch für (in .NET oder J2EE gehostete) Web-Apps.
 
 ## Hinzufügen von Application Insights zu Ihrem Projekt
 
-Zum Einstieg benötigen Sie ein [Microsoft Azure-Abonnement](https://azure.com). \(Es gibt eine kostenlose Testversion. Nach Ablauf des Testzeitraums können Sie den Tarif "Free" des Diensts weiter nutzen.\)
+Zum Einstieg benötigen Sie ein [Microsoft Azure-Abonnement](https://azure.com). (Es gibt eine kostenlose Testversion. Nach Ablauf des Testzeitraums können Sie den Tarif "Free" des Diensts weiter nutzen.)
 
 Erstellen Sie im [Azure-Portal](https://portal.azure.com) eine Application Insights-Ressource. Dort werden Leistungs- und Nutzungsdaten zu Ihrer App angezeigt.
 
@@ -53,7 +53,7 @@ Veröffentlichen Sie Ihre App, um weitere Telemetriedaten zu erhalten, und finde
 
 Klicken Sie auf die Kachel "Seitenaufrufe", um Verwendungsdetails einzublenden.
 
-![Rufen Sie in Azure "Durchsuchen" \> Application Insights \> Ihr Projekt" auf, und führen Sie einen Bildlauf nach unten zur Kachel "Seitenaufrufe" durch.](./media/app-insights-overview-usage/01-overview.png)
+![Rufen Sie in Azure "Durchsuchen" > Application Insights > Ihr Projekt" auf, und führen Sie einen Bildlauf nach unten zur Kachel "Seitenaufrufe" durch.](./media/app-insights-overview-usage/01-overview.png)
 
 Bewegen Sie den Mauszeiger im dem leeren Bereich über einem Diagramm, um die Anzahlen an einem bestimmten Punkt anzuzeigen. Andernfalls weisen die Zahlen den Wert aus, der über den Zeitraum aggregiert wurde, z. B. einen Mittelwert, eine Summe oder Anzahl eindeutiger Benutzer im jeweiligen Zeitraum.
 
@@ -65,7 +65,7 @@ Klicken Sie sich durch ein beliebiges Diagramm, um weitere Details anzuzeigen. Z
 
 ![Klicken Sie auf dem Blatt "Übersicht" auf das Diagramm "Sitzung"](./media/app-insights-overview-usage/02-sessions.png)
 
-\(Dieses Beispiel gehört zu einer Website, aber die Diagramme sind ähnlich für Apps, die auf Geräten ausgeführt werden.\)
+(Dieses Beispiel gehört zu einer Website, aber die Diagramme sind ähnlich für Apps, die auf Geräten ausgeführt werden.)
 
 Führen Sie einen Vergleich mit der Vorwoche durch, um zu prüfen, ob sich etwas geändert hat:
 
@@ -75,7 +75,7 @@ Vergleichen Sie zwei Metriken, z. B. Benutzer und neue Benutzer:
 
 ![Wählen Sie ein Diagramm aus, suchen Sie Metriken, und aktivieren oder deaktivieren Sie diese.](./media/app-insights-overview-usage/031-dual.png)
 
-Gruppieren \(Segmentieren\) Sie Daten anhand einer Eigenschaft, z. B. Browser, Betriebssystem oder Ort:
+Gruppieren (Segmentieren) Sie Daten anhand einer Eigenschaft, z. B. Browser, Betriebssystem oder Ort:
 
 ![Wählen Sie ein Diagramm mit einer einzelnen Metrik, schalten Sie "Gruppierung" ein, und wählen Sie eine Eigenschaft](./media/app-insights-overview-usage/03-browsers.png)
 
@@ -105,16 +105,16 @@ Aber dennoch soll Application Insights weiter protokollieren, wie oft jedes Spie
 
 Sie können Telemetrie in vielerlei Hinsicht nutzen, um zu verstehen, wie Ihre Anwendung verwendet wird. Aber Sie möchten nicht immer die Nachrichten mit Seitenaufrufen durcheinanderbringen. Verwenden Sie stattdessen benutzerdefinierte Ereignisse. Sie können diese von Geräte-Apps, Webseiten oder einem Webserver senden:
 
-\(JavaScript\)
+(JavaScript)
 
     telemetryClient.trackEvent("GameEnd");
 
-\(C\#\)
+(C#)
 
     var tc = new Microsoft.ApplicationInsights.TelemetryClient();
     tc.TrackEvent("GameEnd");
 
-\(VB\)
+(VB)
 
     Dim tc = New Microsoft.ApplicationInsights.TelemetryClient()
     tc.TrackEvent("GameEnd")
@@ -158,7 +158,7 @@ Wir können bis auf Seitenaufrufe alle Arten von Telemetriedaten für diese Sitz
 
 ![](./media/app-insights-overview-usage/10-filter.png)
 
-Jetzt können wir erkennen, dass sich dieser Benutzer nur angemeldet, um die neuesten Punktstände zu überprüfen. Vielleicht sollten wir eine User Story entwickeln, die dies vereinfacht. \(Und wir sollten ein benutzerdefiniertes Ereignis implementieren, das meldet, wenn diese bestimmte User Story auftritt.\)
+Jetzt können wir erkennen, dass sich dieser Benutzer nur angemeldet, um die neuesten Punktstände zu überprüfen. Vielleicht sollten wir eine User Story entwickeln, die dies vereinfacht. (Und wir sollten ein benutzerdefiniertes Ereignis implementieren, das meldet, wenn diese bestimmte User Story auftritt.)
 
 ## Filtern, Suchen und Segmentieren der Daten mit Eigenschaften
 Sie können beliebige Tags und numerische Werte an Ereignisse anfügen.
@@ -173,7 +173,7 @@ JavaScript auf Client
         {Score: currentGame.score, Opponents: currentGame.opponentCount}
     );
 
-C\# auf Server
+C# auf Server
 
     // Set up some properties:
     var properties = new Dictionary <string, string>
@@ -223,9 +223,9 @@ Wenn Sie nicht wissen, welche Variante eines Features erfolgreicher sein wird, v
 
 Für dieses Verfahren fügen Sie unterschiedliche Tags an alle Telemetriedaten an, die von jeder Version Ihrer App gesendet wird. Dazu definieren Sie Eigenschaften im aktiven "TelemetryContext"-Element. Diese Standardeigenschaften werden jeder Telemetrienachricht hinzugefügt, die die Anwendung sendet, nicht nur Ihren benutzerdefinierten Nachrichten, sondern auch den Standardtelemetriedaten.
 
-Im Application Insights-Portal können Sie anschließend Ihre Daten anhand der Tags filtern und gruppieren \(segmentieren\), um die verschiedenen Versionen zu vergleichen.
+Im Application Insights-Portal können Sie anschließend Ihre Daten anhand der Tags filtern und gruppieren (segmentieren), um die verschiedenen Versionen zu vergleichen.
 
-C\# auf Server
+C# auf Server
 
     using Microsoft.ApplicationInsights.DataContracts;
 
@@ -289,7 +289,7 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
 <!--Link references-->
 
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

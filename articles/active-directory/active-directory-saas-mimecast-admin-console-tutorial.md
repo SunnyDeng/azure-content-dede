@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Mimecast Admin Console erl
 -   Ein gültiges Azure-Abonnement
 -   Ein Mimecast Admin Console-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Mimecast Admin Console zugewiesen haben, mittels einmaliger Anmeldung auf der Mimecast Admin Console-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Mimecast Admin Console zugewiesen haben, mittels einmaliger Anmeldung auf der Mimecast Admin Console-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +51,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Mim
     ![Mimecast Admin Console](./media/active-directory-saas-mimecast-admin-console-tutorial/IC795010.png "Mimecast Admin Console")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Mimecast Admin Console zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Mimecast Admin Console zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-mimecast-admin-console-tutorial/IC795012.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Mimecast Admin Console-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Mimecast Admin Console verwenden \(z. B. „https://webmail-uk.mimecast.com“ oder „https://webmail-us.mimecast.com“\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Mimecast Admin Console-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Mimecast Admin Console verwenden (z. B. „https://webmail-uk.mimecast.com“ oder „https://webmail-us.mimecast.com“), und klicken Sie dann auf **Weiter**.
 
     >[AZURE.NOTE]Die Anmelde-URL ist regionsspezifisch.
 
@@ -75,7 +75,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei Mimecast Admin Console als Administrator an.
 
-6.  Wechseln Sie zu **Dienste \> Anwendung**.
+6.  Wechseln Sie zu **Dienste > Anwendung**.
 
     ![Dienste](./media/active-directory-saas-mimecast-admin-console-tutorial/IC794998.png "Dienste")
 
@@ -104,7 +104,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
         >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
-    8.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, entfernen Sie die erste Zeile \(*--*\) und die letzte Zeile \(*--*\), und kopieren Sie den übrigen Inhalt in die Zwischenablage. Fügen Sie ihn anschließend in das Textfeld **Zertifikat des Identitätsanbieters \(Metadaten\)** ein.
+    8.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, entfernen Sie die erste Zeile (*--*) und die letzte Zeile (*--*), und kopieren Sie den übrigen Inhalt in die Zwischenablage. Fügen Sie ihn anschließend in das Textfeld **Zertifikat des Identitätsanbieters (Metadaten)** ein.
     9.  Wählen Sie **Einmaliges Anmelden zulassen** aus.
     10. Klicken Sie auf **Speichern**.
 
@@ -121,7 +121,7 @@ Sie müssen eine Domäne registrieren, bevor Sie Benutzer erstellen können.
 
 1.  Melden Sie sich bei **Mimecast Admin Console** als Administrator an.
 
-2.  Wechseln Sie zu **Verzeichnisse \> Intern**.
+2.  Wechseln Sie zu **Verzeichnisse > Intern**.
 
     ![Verzeichnisse](./media/active-directory-saas-mimecast-admin-console-tutorial/IC795003.png "Verzeichnisse")
 
@@ -160,4 +160,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

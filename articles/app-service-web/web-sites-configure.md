@@ -66,7 +66,7 @@ Dieser Abschnitt enthält Name-Wert-Paare, die Ihre Web-App beim Start lädt.
 
 - Bei .NET-Apps werden diese Einstellungen zur Laufzeit in die `AppSettings` der .NET-Konfiguration eingefügt, wobei vorhandene Einstellungen überschrieben werden. 
 
-- PHP-, Python-, Java- und Node-Anwendungen können auf diese Einstellungen als Umgebungsvariablen zur Laufzeit zugreifen. Für jede App-Einstellung werden zwei Umgebungsvariablen erstellt: eine mit dem Namen, der für die App-Einstellung eingegeben wurde, und eine weitere mit dem Präfix APPSETTING\_. Beide enthalten denselben Wert.
+- PHP-, Python-, Java- und Node-Anwendungen können auf diese Einstellungen als Umgebungsvariablen zur Laufzeit zugreifen. Für jede App-Einstellung werden zwei Umgebungsvariablen erstellt: eine mit dem Namen, der für die App-Einstellung eingegeben wurde, und eine weitere mit dem Präfix APPSETTING_. Beide enthalten denselben Wert.
 
 ### Verbindungszeichenfolgen
 
@@ -132,7 +132,7 @@ Zum Anzeigen der Protokolldateien müssen Sie die FTP-Anmeldeinformationen wie f
 ![](./media/web-sites-configure/configure03.png)
 
 
-Der vollständige FTP-Benutzername lautet "App\\Benutzername". Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
+Der vollständige FTP-Benutzername lautet "App\Benutzername". Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
 
 ![](./media/web-sites-configure/configure02.png)
 
@@ -178,4 +178,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

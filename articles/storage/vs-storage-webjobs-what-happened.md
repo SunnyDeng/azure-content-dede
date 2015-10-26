@@ -41,4 +41,4 @@ In der Datei "App.config" Ihres Projekts wurden die Einträge **AzureWebJobsStor
 
 Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

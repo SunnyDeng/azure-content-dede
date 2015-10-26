@@ -385,4 +385,4 @@ Jeder Knoten in einem Pool erhält einen eindeutigen Namen, und der Knoten, auf 
 
 [Azure Batch – Technische Übersicht]: batch-technical-overview.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

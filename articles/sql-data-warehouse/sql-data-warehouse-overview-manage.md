@@ -48,4 +48,4 @@ Um mit der Verwendung dieser Tools zu beginnen, lesen Sie das Thema [Verbindunge
 <!--Other web references-->
 [Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

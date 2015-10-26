@@ -129,4 +129,4 @@ Sie können die JSON-Konfigurationsdatei bearbeiten, um den Umfang der Bereitste
 
 Weitere Informationen finden Sie unter [Publish-WebApplicationWebSite (Windows PowerShell-Skript)](vs-azure-tools-publish-webapplicationvm.md).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -337,4 +337,4 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 - Informationen zum Konfigurieren von Routing und der IP-Weiterleitung finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](virtual-network/virtual-networks-udr-how-to.md). 
 - Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

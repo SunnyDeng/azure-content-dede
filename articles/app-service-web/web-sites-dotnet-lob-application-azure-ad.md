@@ -83,7 +83,12 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-GroupClaims-DotNet](https:
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/select-user-group.png)
 
-	> [AZURE.NOTE]In "Views\\Roles\\Index.cshtml" sehen Sie, dass in der Ansicht das JavaScript-Objekt <code>AadPicker</code> verwendet wird (in "Scripts\\AadPickerLibrary.js" definiert), um im Controller <code>Roles</code> auf die Aktion <code>Search</code> zuzugreifen. <pre class="prettyprint">var searchUrl = window.location.protocol + "//" + window.location.host + "<mark>/Roles/Search</mark>"; ... var picker = new <mark>AadPicker(searchUrl, maxResultsPerPage, input, token, tenant)</mark>;</pre> Unter "Controllers\\RolesController.cs" sehen Sie die Aktion <code>Search</code>, mit der die eigentliche Anforderung an die Azure Active Directory Graph-API gesendet und die Antwort an die Seite zurückgegeben wird. Später verwenden Sie dieselbe Methode, um einfache Funktionen in Ihrer Anwendung zu erstellen.
+	> [AZURE.NOTE]In „Views\\Roles\\Index.cshtml“ sehen Sie, dass in der Ansicht das JavaScript-Objekt <code>AadPicker</code> verwendet wird (in „Scripts\\AadPickerLibrary.js“ definiert), um im Controller <code>Roles</code> auf die Aktion <code>Search</code> zuzugreifen.
+		<pre class="prettyprint">var searchUrl = window.location.protocol + "//" + window.location.host + "<mark>/Roles/Search</mark>";
+	...
+	var picker = new <mark>AadPicker(searchUrl, maxResultsPerPage, input, token, tenant)</mark>;</pre>
+		Unter „Controllers\\RolesController.cs“ sehen Sie die Aktion <code>Search</code>, mit der die eigentliche Anforderung an die Azure Active Directory Graph-API gesendet und die Antwort an die Seite zurückgegeben wird. 
+		Später verwenden Sie dieselbe Methode, um einfache Funktionen in Ihrer Anwendung zu erstellen.
 
 6.	Wählen Sie in der Dropdownliste einen Benutzer oder eine Gruppe aus, wählen Sie eine Rolle aus, und klicken Sie auf **Rolle zuweisen**.
 
@@ -264,9 +269,7 @@ public class WorkItemsController : Controller
 	
 	Mit `ClaimTypes.NameIdentifies` wird der Anspruch `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` angegeben, der von Azure Active Directory nicht bereitgestellt wird. Da Sie nun die Autorisierung vorgenommen haben (die gewiss nicht lange gedauert hat), können Sie sich der eigentlichen Funktionalität der Aktionen zuwenden.
 
-13.	Fügen Sie in Create() und Edit() den folgenden Code hinzu, um für Ihr JavaScript später einige Variablen zur Verfügung zu stellen: 
-            ViewData["token"] = GraphHelper.AcquireToken(ClaimsPrincipal.Current.FindFirst(Globals.ObjectIdClaimType).Value);
-            ViewData["tenant"] = ConfigHelper.Tenant;
+13.	Fügen Sie in Create() und Edit() den folgenden Code hinzu, um für Ihr JavaScript später einige Variablen zur Verfügung zu stellen: ViewData["token"] = GraphHelper.AcquireToken(ClaimsPrincipal.Current.FindFirst(Globals.ObjectIdClaimType).Value); ViewData["tenant"] = ConfigHelper.Tenant;
 
 14.	Suchen Sie in "Views\\WorkItems\\Create.cshtml" (einem automatisch erstellten Gerüstelement) die Hilfsmethode `Html.BeginForm`, und ändern Sie sie folgendermaßen:
 	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
@@ -306,33 +309,35 @@ public class WorkItemsController : Controller
             &lt;div class="col-md-10">
                 @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-            &lt;/div>
-        &lt;/div>
-
-        &lt;div class="form-group">
-            &lt;div class="col-md-offset-2 col-md-10">
-                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> />
-            &lt;/div>
-        &lt;/div>
-    &lt;/div>
-
-    <mark>&lt;script>
-            // Code für Personen-/Gruppenauswahl
-            var maxResultsPerPage = 14;
-            var searchUrl = window.location.protocol + "//" + window.location.host + "/Roles/Search";
-            var input = document.getElementById("AssignedToName");
-            var token = "@ViewData["token"]";
-            var tenant = "@ViewData["tenant"]";
-
-            var picker = new AadPicker(searchUrl, maxResultsPerPage, input, token, tenant);
-
-            // Übermitteln Sie den ausgewählten Benutzer bzw. die Gruppe für die Zuweisung.
-            $("#submit-button").click({ picker: picker }, function () {
-                if (!picker.Selected())
-                    return;
-                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
-            });
-    &lt;/script></mark>
+	            &lt;/div>
+	        &lt;/div>
+	
+	        &lt;div class="form-group">
+	            &lt;div class="col-md-offset-2 col-md-10">
+	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> />
+	            &lt;/div>
+	        &lt;/div>
+	    &lt;/div>
+	
+	    <mark>&lt;script>
+	            // Code für Personen-/Gruppenauswahl
+	            var maxResultsPerPage = 14;
+	            var searchUrl = window.location.protocol + "//" + window.location.host + "/Roles/Search";
+	            var input = document.getElementById("AssignedToName");
+	            var token = "@ViewData["token"]";
+	            var tenant = "@ViewData["tenant"]";
+	
+	            var picker = new AadPicker(searchUrl, maxResultsPerPage, input, token, tenant);
+	
+	            // Übermitteln Sie den ausgewählten Benutzer bzw. die Gruppe für die Zuweisung.
+	            $("#submit-button").click({ picker: picker }, function () {
+	                if (!picker.Selected())
+	                    return;
+	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
+	            });
+	    &lt;/script></mark>
+	
+	}</pre>
 
 }</pre>Im Skript durchsucht das AadPicker-Objekt die Aktion `~/Roles/Search` nach Azure Active Directory-Benutzern und -Gruppen, die der Eingabe entsprechen. Wenn Sie auf die Schaltfläche "Senden" klicken, speichert das AadPicker-Objekt die Benutzer-ID im verborgenen Feld `AssignedToID`.
 
@@ -371,4 +376,4 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

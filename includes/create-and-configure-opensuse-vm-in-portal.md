@@ -1,3 +1,5 @@
+<properties writer="kathydav" editor="tysonn" manager="timlt" />
+
 1. Melden Sie sich beim [Azure-Portal](http://manage.windowsazure.com) an. Testen Sie das [kostenlose Testkonto](http://azure.microsoft.com/pricing/free-trial/), wenn Sie noch kein Abonnement haben.
 
 2. Klicken Sie in der Befehlsleiste am unteren Ende des Fensters auf **Neu**.
@@ -62,4 +64,4 @@ In Abhängigkeit von dem Betriebssystem auf dem Computer, über den Sie eine Ver
 
 [Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

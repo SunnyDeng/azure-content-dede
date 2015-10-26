@@ -18,7 +18,7 @@
 
 # Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 Dieses Thema führt Sie schrittweise durch die Struktur der Vorlagendatei "azuredeploy.json" für die SharePoint-Farm mit drei Servern. Von [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json) aus können Sie den Inhalt dieser Vorlage in Ihrem Browser anzeigen.
 
@@ -370,10 +370,10 @@ Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Man
 
 ## Zusätzliche Ressourcen
 
-[Azure Computing-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md) [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
+[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md) [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
 [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

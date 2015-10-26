@@ -44,11 +44,11 @@ Weitere Informationen zu "keytool" finden Sie unter <http://docs.oracle.com/java
 
 ## Azure-Stammzertifikate
 
-Anwendungen, bei denen Azure-Dienste (z. B. Azure Service Bus) zum Einsatz kommen, müssen das Baltimore CyberTrust-Stammzertifikat als vertrauenswürdig einstufen. (Am 15. April 2013 begann Azure mit der Migration von "GTE CyberTrust Global Root" zu "Baltimore CyberTrust Root". Bis diese Migration letztendlich abgeschlossen war, vergingen mehrere Monate.
+Anwendungen, bei denen Azure-Dienste (z. B. Azure Service Bus) zum Einsatz kommen, müssen das Baltimore CyberTrust-Stammzertifikat als vertrauenswürdig einstufen. (Am 15. April 2013 begann Azure mit der Migration von "GTE CyberTrust Global Root" zu "Baltimore CyberTrust Root". Bis diese Migration letztendlich abgeschlossen war, vergingen mehrere Monate.)
 
 Das Baltimore-Zertifikat ist ggf. im cacerts-Speicher vorhanden. Führen Sie also zunächst den Befehl **keytool -list** aus, um herauszufinden, ob dieses Zertifikat bereits installiert wurde.
 
-Wenn Sie das Zertifikat "Baltimore CyberTrust Root" hinzufügen müssen: es verwendet die Seriennummer "02:00:00:b9" und den SHA1-Fingerabdruck "d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74". Es kann über <https://cacert.omniroot.com/bc2025.crt> heruntergeladen, mit der Erweiterung **.cer** gespeichert und dann mithilfe von **keytool** wie oben gezeigt importiert werden.
+Wenn Sie das Zertifikat "Baltimore CyberTrust Root" hinzufügen müssen, sei darauf hingewiesen, dass es die Seriennummer "02:00:00:b9" und den SHA1-Fingerabdruck "d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74" verwendet. Es kann über <https://cacert.omniroot.com/bc2025.crt> heruntergeladen, mit der Erweiterung **.cer** gespeichert und dann mithilfe von **keytool** wie oben gezeigt importiert werden.
 
 ## Nächste Schritte
 
@@ -56,4 +56,4 @@ Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie 
 
 Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

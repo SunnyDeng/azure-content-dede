@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="10/12/2015" 
 	ms.author="genemi"/>
 
 # Verwenden der Azure SQL-Datenbank in Java
@@ -37,7 +37,7 @@ In den folgenden Schritten werden die Voraussetzungen für die Verwendung von SQ
 
 * Ein Java Developer Kit (JDK), Version 1.6 oder höher.
 * Ein Azure-Abonnement, das von <http://www.microsoft.com/windowsazure/offers/> bezogen werden kann.
-* Falls Sie Eclipse verwenden, brauchen Sie die Eclipse IDE für Java EE-Entwickler, Indigo oder höher. Dies kann von <http://www.eclipse.org/downloads/> heruntergeladen werden. Außerdem brauchen Sie das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies). Stellen Sie bei der Installation des Plug-Ins sicher, dass der Microsoft JDBC-Treiber 4.0 für SQL Server enthalten ist. Weitere Informationen finden Sie unter [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx).
+* Falls Sie Eclipse verwenden, brauchen Sie die Eclipse IDE für Java EE-Entwickler, Indigo oder höher. Dies kann von <http://www.eclipse.org/downloads/> heruntergeladen werden. Sie benötigen außerdem das Azure Toolkit für Eclipse. Stellen Sie bei der Installation des Plug-Ins sicher, dass der Microsoft JDBC-Treiber 4.0 für SQL Server enthalten ist. Weitere Informationen finden Sie unter [Installation des Azure Toolkit für Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx).
 * Wenn Sie nicht mit Eclipse arbeiten, benötigen Sie den Microsoft JDBC-Treiber 4.0 für SQL Server, den Sie von <http://www.microsoft.com/download/details.aspx?id=11774> herunterladen können.
 
 ## Erstellen einer Azure SQL-Datenbank
@@ -688,7 +688,7 @@ Um SQL-Datenbanken in Java mit einer Azure-Bereitstellung zu verwenden, müssen 
 3. Klicken Sie im Dialogfeld **New Assembly Directive** auf **Java Build Path Entries** und anschließend auf **Next**.
 4. Wählen Sie **Microsoft JDBC Driver 4.0 for SQL Server** aus und klicken Sie auf **Finish**.
 5. Klicken Sie auf **OK**, um das Dialogfeld **Properties** zu schließen.
-6. Exportieren Sie die WAR-Datei Ihres Projekts in Ihren approot-Ordner und erstellen Sie Ihr Azure-Projekt neu. Siehe dazu die Schritte unter [Erstellen einer Hello World-Anwendung mithilfe des Azure-Plug-Ins für Eclipse with Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx). Dieser Artikel beschreibt außerdem, wie Sie Ihre Anwendung im Serveremulator und in Azure ausführen können.
+6. Exportieren Sie die WAR-Datei Ihres Projekts in Ihren approot-Ordner, und erstellen Sie Ihr Azure-Projekt neu. Siehe dazu die Schritte unter [Erstellen einer Hello World-Anwendung mithilfe des Azure Toolkit für Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx). Dieser Artikel beschreibt außerdem, wie Sie Ihre Anwendung im Serveremulator und in Azure ausführen können.
 
 **Verpacken des Microsoft JDBC-Treibers 4.0 für SQL Server, falls Sie Eclipse nicht verwenden**
 
@@ -728,4 +728,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [allowed_ips_dialog]: ./media/sql-data-java-how-to-use-sql-database/WA_Allowed_IPs.png
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

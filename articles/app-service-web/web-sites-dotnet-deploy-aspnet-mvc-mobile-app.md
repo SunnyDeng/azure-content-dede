@@ -115,7 +115,7 @@ Die Ansicht mit den ASP.NET-Tags wird automatisch von Bootstrap auf Bildschirmgr
 
 Integrierte Bootstrap-Unterstützung ist eine neue Funktion in der MVC 5-Vorlage. Sie haben bereits gesehen, wie prompt die verschiedenen Ansichten in Ihrer Anwendung optimiert werden. Die Navigationsleiste am oberen Rand wird beispielsweise automatisch reduziert, wenn sich die Browserbreite verringert. Ändern Sie im Desktopbrowser die Größe des Browserfensters, und verfolgen Sie, wie sich das Erscheinungsbild der Navigationsleiste ändert. Das ist das in Bootstrap integrierte Responsive Webdesign.
 
-Um das Erscheinungsbild der Web-App in Bootstrap zu überprüfen, öffnen Sie *App_Start\BundleConfig.cs* und kommentieren die Zeilen aus, die *bootstrap.js* und *bootstrap.css* enthalten. Der folgende Code zeigt die letzten beiden Anweisungen der `RegisterBundles`-Methode nach der Änderung:
+Um das Erscheinungsbild der Web-App in Bootstrap zu überprüfen, öffnen Sie *App\_Start\\BundleConfig.cs* und kommentieren die Zeilen aus, die *bootstrap.js* und *bootstrap.css* enthalten. Der folgende Code zeigt die letzten beiden Anweisungen der `RegisterBundles`-Methode nach der Änderung:
 
      bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
               //"~/Scripts/bootstrap.js",
@@ -141,11 +141,11 @@ Im nächsten Abschnitt erfahren Sie, wie Sie Ansichten speziell für mobile Brow
 
 ##<a name="bkmk_overrideviews"></a>Überschreiben der Ansichten, Layouts und Teilansichten
 
-Sie können beliebige Ansichten (einschließlich Layouts und Teilansichten) für alle mobilen Browser, für einzelne mobile Browser oder für einen beliebigen spezifischen Browser überschreiben. Um eine mobiltaugliche Ansicht zu erstellen, können Sie eine Ansichtsdatei kopieren und *.Mobile* zum Dateinamen hinzufügen. Um beispielsweise eine mobile *Index*-Ansicht zu erstellen, können Sie *Views\Home\Index.cshtml* nach *Views\Home\Index.Mobile.cshtml* kopieren.
+Sie können beliebige Ansichten (einschließlich Layouts und Teilansichten) für alle mobilen Browser, für einzelne mobile Browser oder für einen beliebigen spezifischen Browser überschreiben. Um eine mobiltaugliche Ansicht zu erstellen, können Sie eine Ansichtsdatei kopieren und *.Mobile* zum Dateinamen hinzufügen. Um beispielsweise eine mobile *Index*-Ansicht zu erstellen, können Sie *Views\\Home\\Index.cshtml* nach *Views\\Home\\Index.Mobile.cshtml* kopieren.
 
 In diesem Abschnitt erstellen Sie eine Layoutdatei speziell für mobile Zwecke.
 
-Kopieren Sie zunächst *Views\Shared\_Layout.cshtml* in *Views\Shared\_Layout.Mobile.cshtml*. Öffnen Sie *_Layout.Mobile.cshtml* und ändern Sie den Titel von **MVC5-Anwendung** in **MVC5-Anwendung (Mobile)**.
+Kopieren Sie zunächst *Views\\Shared\\_Layout.cshtml* in *Views\\Shared\\_Layout.Mobile.cshtml*. Öffnen Sie *\_Layout.Mobile.cshtml* und ändern Sie den Titel von **MVC5-Anwendung** in **MVC5-Anwendung (Mobile)**.
 
 Entfernen Sie in jedem `Html.ActionLink`-Aufruf für die Navigationsleiste "Durchsuchen nach" in jedem *ActionLink*. Der folgende Code zeigt das fertige `<ul class="nav navbar-nav">`-Tag der mobilen Layoutdatei.
 
@@ -156,15 +156,15 @@ Entfernen Sie in jedem `Html.ActionLink`-Aufruf für die Navigationsleiste "Durc
         <li>@Html.ActionLink("Tag", "AllTags", "Home")</li>
     </ul>
 
-Kopieren Sie die Datei *Views\Home\AllTags.cshtml* in *Views\Home\AllTags.Mobile.cshtml*. Öffnen Sie die neue Datei, und ändern Sie das `<h2>`-Element von "Tags" in "Tags (M)":
+Kopieren Sie die Datei *Views\\Home\\AllTags.cshtml* in *Views\\Home\\AllTags.Mobile.cshtml*. Öffnen Sie die neue Datei, und ändern Sie das `<h2>`-Element von "Tags" in "Tags (M)":
 
     <h2>Tags (M)</h2>
 
-Navigieren Sie in einem Desktopbrowser und über einen Emulator für mobile Browser zur Tags-Seite. Der Emulator für mobile Browser zeigt die beiden Änderungen an (den Titel von *_Layout.Mobile.cshtml* und den Titel von *AllTags.Mobile.cshtml*).
+Navigieren Sie in einem Desktopbrowser und über einen Emulator für mobile Browser zur Tags-Seite. Der Emulator für mobile Browser zeigt die beiden Änderungen an (den Titel von *\_Layout.Mobile.cshtml* und den Titel von *AllTags.Mobile.cshtml*).
 
 ![][AllTagsMobile_LayoutMobile]
 
-Die Desktopanzeige (mit den Titeln von *_Layout.cshtml* und *AllTags.cshtml*) hat sich im Gegensatz dazu nicht geändert.
+Die Desktopanzeige (mit den Titeln von *\_Layout.cshtml* und *AllTags.cshtml*) hat sich im Gegensatz dazu nicht geändert.
 
 ![][AllTagsMobile_LayoutMobileDesktop]
 
@@ -192,9 +192,9 @@ Alternativ können Sie dem Abschnitt `using` der Datei die folgende Zeile manuel
 
     using System.Web.WebPages;
 
-Speichern Sie die Änderungen. Kopieren Sie die Datei *Views\Shared\_Layout.Mobile.cshtml* nach *Views\Shared\_Layout.iPhone.cshtml*. Öffnen Sie die neue Datei, und ändern Sie den Titel von `MVC5 Application (Mobile)` in `MVC5 Application (iPhone)`.
+Speichern Sie die Änderungen. Kopieren Sie die Datei *Views\\Shared\\_Layout.Mobile.cshtml* nach *Views\\Shared\\_Layout.iPhone.cshtml*. Öffnen Sie die neue Datei, und ändern Sie den Titel von `MVC5 Application (Mobile)` in `MVC5 Application (iPhone)`.
 
-Kopieren Sie die Datei *Views\Home\AllTags.Mobile.cshtml* nach *Views\Home\AllTags.iPhone.cshtml*. Ändern Sie in der neuen Datei das `<h2>`-Element von "Tags (M)" in "Tags (iPhone)".
+Kopieren Sie die Datei *Views\\Home\\AllTags.Mobile.cshtml* nach *Views\\Home\\AllTags.iPhone.cshtml*. Ändern Sie in der neuen Datei das `<h2>`-Element von "Tags (M)" in "Tags (iPhone)".
 
 Führen Sie die Anwendung aus. Führen Sie einen Emulator für mobile Browser aus, stellen Sie sicher, dass für den zugehörigen Benutzer-Agent die Option "iPhone" festgelegt ist, und navigieren Sie zur Ansicht *AllTags*. Wenn Sie den Emulator in den Internet Explorer 11 F12-Entwicklertools verwenden, konfigurieren Sie die Emulation wie folgt:
 
@@ -206,22 +206,22 @@ Der folgende Screenshot zeigt die Ansicht *AllTags*, die im Emulator der Interne
 
 ![][AllTagsIPhone_LayoutIPhone]
 
-Wählen Sie im mobilen Browser den Link **Speakers** aus. Da es keine mobile Ansicht (*AllSpeakers.Mobile.cshtml*) gibt, wird die Speakers-Standardansicht (*AllSpeakers.cshtml*) mit der mobilen Layoutansicht (*_Layout.Mobile.cshtml*) gerendert. Wie im Folgenden angezeigt, ist der Titel **MVC5 Application (Mobile)** in *_Layout.Mobile.cshtml* definiert.
+Wählen Sie im mobilen Browser den Link **Speakers** aus. Da es keine mobile Ansicht (*AllSpeakers.Mobile.cshtml*) gibt, wird die Speakers-Standardansicht (*AllSpeakers.cshtml*) mit der mobilen Layoutansicht (*\_Layout.Mobile.cshtml*) gerendert. Wie im Folgenden angezeigt, ist der Titel **MVC5 Application (Mobile)** in *\_Layout.Mobile.cshtml* definiert.
 
 ![][AllSpeakers_LayoutMobile]
 
-Sie können eine standardmäßige (nicht mobile) Ansicht global deaktivieren, sodass sie in einem mobilen Layout nicht gerendert wird. Dazu legen Sie für `RequireConsistentDisplayMode` in der Datei *Views\_ViewStart.cshtml* den Wert `true` fest wie folgt:
+Sie können eine standardmäßige (nicht mobile) Ansicht global deaktivieren, sodass sie in einem mobilen Layout nicht gerendert wird. Dazu legen Sie für `RequireConsistentDisplayMode` in der Datei *Views\\_ViewStart.cshtml* den Wert `true` fest wie folgt:
 
     @{
         Layout = "~/Views/Shared/_Layout.cshtml";
         DisplayModeProvider.Instance.RequireConsistentDisplayMode = true;
     }
 
-Wenn Sie für `RequireConsistentDisplayMode` den Wert `true` festlegen, wird das mobile Layout (*_Layout.Mobile.cshtml*) nur für mobile Ansichten verwendet (die Ansichtsdatei hat also das Format ***ViewName**.Mobile.cshtml*). Sie können für `RequireConsistentDisplayMode` auch den Wert `true` festlegen, wenn Ihr mobiles Layout mit den nicht mobilen Ansichten nicht zufriedenstellend funktioniert. Der folgende Screenshot zeigt, wie die Seite *Speakers* gerendert wird, wenn für `RequireConsistentDisplayMode` der Wert `true` festgelegt wird (ohne die Zeichenfolge "(Mobile)" oben in der Navigationsleiste).
+Wenn Sie für `RequireConsistentDisplayMode` den Wert `true` festlegen, wird das mobile Layout (*\_Layout.Mobile.cshtml*) nur für mobile Ansichten verwendet (die Ansichtsdatei hat also das Format ****ViewName**.Mobile.cshtml*). Sie können für `RequireConsistentDisplayMode` auch den Wert `true` festlegen, wenn Ihr mobiles Layout mit den nicht mobilen Ansichten nicht zufriedenstellend funktioniert. Der folgende Screenshot zeigt, wie die Seite *Speakers* gerendert wird, wenn für `RequireConsistentDisplayMode` der Wert `true` festgelegt wird (ohne die Zeichenfolge "(Mobile)" oben in der Navigationsleiste).
 
 ![][AllSpeakers_LayoutMobileOverridden]
 
-Sie können den konsistenten Anzeigemodus in einer spezifischen Ansicht deaktivieren, indem Sie in der Ansichtsdatei für `RequireConsistentDisplayMode` den Wert `false` festlegen. Durch das folgende Markup in der Datei *Views\Home\AllSpeakers.cshtml* wird für `RequireConsistentDisplayMode` der Wert `false` festgelegt:
+Sie können den konsistenten Anzeigemodus in einer spezifischen Ansicht deaktivieren, indem Sie in der Ansichtsdatei für `RequireConsistentDisplayMode` den Wert `false` festlegen. Durch das folgende Markup in der Datei *Views\\Home\\AllSpeakers.cshtml* wird für `RequireConsistentDisplayMode` der Wert `false` festgelegt:
 
     @model IEnumerable<string>
 
@@ -236,7 +236,7 @@ In diesem Abschnitt haben wir gesehen, wie man mobile Layouts und Ansichten erst
 
 Wie Sie gerade gesehen haben, ist die Ansicht *Speakers* gut lesbar, aber die Links sind klein und können auf mobilen Geräten schlecht angetippt werden. In diesem Abschnitt erstellen Sie die für Mobiltelefone optimierte Ansicht *AllSpeakers*, die große, einfach anzutippende Links sowie ein Suchfeld zum schnellen Auffinden der Speakers enthält.
 
-Sie können den Bootstrap-Stil [linked list group][] verwenden, um die Ansicht *Speakers* zu verbessern. Ersetzen Sie in *Views\Home\AllSpeakers.cshtml* den Inhalt der Razor-Datei durch den folgenden Code.
+Sie können den Bootstrap-Stil [linked list group][] verwenden, um die Ansicht *Speakers* zu verbessern. Ersetzen Sie in *Views\\Home\\AllSpeakers.cshtml* den Inhalt der Razor-Datei durch den folgenden Code.
 
      @model IEnumerable<string>
 
@@ -263,7 +263,7 @@ Der Bootstrap-Stil [linked list group][] ermöglicht es, dass für jeden Link da
 
 ![][AllSpeakersFixedDesktop]
 
-Obwohl die Ansicht des mobilen Browsers optimiert wurde, ist es schwierig, zur langen Speaker-Liste zu navigieren. Bootstrap bietet standardmäßig keine Suchfilterfunktion. Sie können diese jedoch durch wenige Codezeilen hinzufügen. Zunächst fügen Sie der Ansicht ein Suchfeld hinzu und binden dann den JavaScript-Code für die Filterfunktion ein. Fügen Sie in *Views\Home\AllSpeakers.cshtml* direkt nach dem \<h2\> Tag ein \<form\> Tag hinzu, wie unten dargestellt:
+Obwohl die Ansicht des mobilen Browsers optimiert wurde, ist es schwierig, zur langen Speaker-Liste zu navigieren. Bootstrap bietet standardmäßig keine Suchfilterfunktion. Sie können diese jedoch durch wenige Codezeilen hinzufügen. Zunächst fügen Sie der Ansicht ein Suchfeld hinzu und binden dann den JavaScript-Code für die Filterfunktion ein. Fügen Sie in *Views\\Home\\AllSpeakers.cshtml* direkt nach dem <h2>-Tag ein <form>-Tag hinzu, wie unten dargestellt:
 
     @model IEnumerable<string>
 
@@ -318,13 +318,13 @@ Fügen Sie im Ordner *Scripts* die JavaScript-Datei *filter.js* hinzu. Öffnen S
         });
     });
 
-Außerdem müssen Sie "filter.js" in Ihre registrierten Bundle einschließen. Öffnen Sie *App_Start\BundleConfig.cs*, und ändern Sie die ersten Bundles. Ändern Sie die erste `bundles.Add`-Anweisung (für das**jquery**-Bundle), um *Scripts\filter.js* wie folgt einzuschließen:
+Außerdem müssen Sie "filter.js" in Ihre registrierten Bundle einschließen. Öffnen Sie *App\_Start\\BundleConfig.cs*, und ändern Sie die ersten Bundles. Ändern Sie die erste `bundles.Add`-Anweisung (für das**jquery**-Bundle), um *Scripts\\filter.js* wie folgt einzuschließen:
 
      bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/filter.js"));
 
-Das **jquery**-Bundle wird bereits von der *_Layout*-Standardansicht gerendert. Später können Sie denselben JavaScript-Code verwenden, um die Filterfunktionalität auf andere Listenansichten anzuwenden.
+Das **jquery**-Bundle wird bereits von der *\_Layout*-Standardansicht gerendert. Später können Sie denselben JavaScript-Code verwenden, um die Filterfunktionalität auf andere Listenansichten anzuwenden.
 
 Aktualisieren Sie den mobilen Browser, und wechseln Sie zur Ansicht *AllSpeakers*. Geben Sie im Suchfeld "sc" ein. Die Speakers-Liste sollte jetzt gemäß Ihrer Suchzeichenfolge gefiltert sein.
 
@@ -332,7 +332,7 @@ Aktualisieren Sie den mobilen Browser, und wechseln Sie zur Ansicht *AllSpeakers
 
 ##<a name="bkmk_improvetags"></a> Verbessern der Tags-Liste
 
-Wie die *Speakers*-Ansicht ist auch die *Tags*-Ansicht gut lesbar, aber die Links sind klein und auf mobilen Geräten schwer anzutippen. Sie können die *Tags*-Ansicht auf die gleiche Weise reparieren wie die *Speakers*-Ansicht, indem Sie die weiter oben beschriebenen Codeänderungen vornehmen, wobei Sie allerdings die folgende `Html.ActionLink`-Methodensyntax in *Views\Home\AllTags.cshtml* verwenden:
+Wie die *Speakers*-Ansicht ist auch die *Tags*-Ansicht gut lesbar, aber die Links sind klein und auf mobilen Geräten schwer anzutippen. Sie können die *Tags*-Ansicht auf die gleiche Weise reparieren wie die *Speakers*-Ansicht, indem Sie die weiter oben beschriebenen Codeänderungen vornehmen, wobei Sie allerdings die folgende `Html.ActionLink`-Methodensyntax in *Views\\Home\\AllTags.cshtml* verwenden:
 
     @Html.ActionLink(tag, 
                      "SessionsByTag", 
@@ -351,7 +351,7 @@ Der aktualisierte mobile Browser sieht wie folgt aus:
 
 ##<a name="bkmk_improvedates"></a> Verbessern der Dates-Liste
 
-Sie können die *Dates*-Ansicht auf die gleiche Weise verbessern wie die *Speakers*- und die *Tags*-Ansicht. Dazu verwenden Sie die oben beschriebenen Codeänderungen mit der folgenden `Html.ActionLink`-Methodensyntax in *Views\Home\AllDates.cshtml*:
+Sie können die *Dates*-Ansicht auf die gleiche Weise verbessern wie die *Speakers*- und die *Tags*-Ansicht. Dazu verwenden Sie die oben beschriebenen Codeänderungen mit der folgenden `Html.ActionLink`-Methodensyntax in *Views\\Home\\AllDates.cshtml*:
 
     @Html.ActionLink(date.ToString("ddd, MMM dd, h:mm tt"), 
                      "SessionsByDate", 
@@ -362,7 +362,7 @@ Daraufhin wird die folgende aktualisierte Ansicht im mobilen Browser angezeigt:
 
 ![][AllDatesFixed]
 
-Sie können die *Dates*-Ansicht weiter verbessern, indem Sie die date-time-Werte nach Datum organisieren. Zu diesem Zweck kann der Bootstrap-Stil [panels][] verwendet werden. Ersetzen Sie den Inhalt der Datei *Views\Home\AllDates.cshtml* durch den folgenden Code:
+Sie können die *Dates*-Ansicht weiter verbessern, indem Sie die date-time-Werte nach Datum organisieren. Zu diesem Zweck kann der Bootstrap-Stil [panels][] verwendet werden. Ersetzen Sie den Inhalt der Datei *Views\\Home\\AllDates.cshtml* durch den folgenden Code:
 
     @model IEnumerable<DateTime>
 
@@ -410,7 +410,7 @@ Tippen Sie auf den Link **ASP.NET**.
 
 ![][SessionsTableTagASP.NET]
 
-Wie Sie sehen, ist die Anzeige als Tabelle formatiert, die aktuell für die Anzeige im Desktopbrowser konzipiert ist. Die Tabelle ist in einem mobilen Browser jedoch etwas schwer zu lesen. Um dies zu beheben, öffnen Sie *Views\Home\SessionsTable.cshtml* und ersetzen dann den Inhalt der Datei durch den folgenden Code:
+Wie Sie sehen, ist die Anzeige als Tabelle formatiert, die aktuell für die Anzeige im Desktopbrowser konzipiert ist. Die Tabelle ist in einem mobilen Browser jedoch etwas schwer zu lesen. Um dies zu beheben, öffnen Sie *Views\\Home\\SessionsTable.cshtml* und ersetzen dann den Inhalt der Datei durch den folgenden Code:
 
     @model IEnumerable<Mvc5Mobile.Models.Session>
 
@@ -477,7 +477,7 @@ Aktivieren Sie den Link **Erstellen einer Anwendung mit einer Seite mithilfe von
 
 Die Desktop-Standardansicht ist bereits einwandfrei, Sie können sie jedoch leicht verbessern, indem Sie einige Komponenten der Bootstrap-Benutzeroberfläche verwenden.
 
-Öffnen Sie *Views\Home\SessionByCode.cshtml*, und ersetzen Sie den Inhalt durch das folgende Markup:
+Öffnen Sie *Views\\Home\\SessionByCode.cshtml*, und ersetzen Sie den Inhalt durch das folgende Markup:
 
     @model Mvc5Mobile.Models.Session
 
@@ -618,4 +618,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 [SessionByCodeFixed3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-Fixed-3-644.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

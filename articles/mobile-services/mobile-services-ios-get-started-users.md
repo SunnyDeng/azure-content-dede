@@ -85,4 +85,4 @@ Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgeg
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

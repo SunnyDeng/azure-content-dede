@@ -1,19 +1,20 @@
 <properties 
-	pageTitle="Unterstützte Browser und Geräte"
-	description=""
-	services=""
-	documentationCenter=""
-	authors="flanakin"
-	manager="lwelicki"
+	pageTitle="Unterstützte Browser und Geräte" 
+	description="" 
+	services="" 
+	documentationCenter="" 
+	authors="flanakin" 
+	writer="flanakin" 
+	manager="lwelicki" 
 	editor=""/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/23/2015"
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/23/2015" 
 	ms.author="micflan"/>
 
 #Unterstützte Browser und Geräte
@@ -33,4 +34,4 @@ Die neuesten Versionen der folgenden Browser werden unterstützt:
 
 *Safari 6 und niedriger wird nicht unterstützt. Wenn Sie OS X verwenden, können Sie entweder Chrome bzw. Firefox verwenden oder auf OS X Mavericks aktualisieren, um Safari 7 zu erhalten.*
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

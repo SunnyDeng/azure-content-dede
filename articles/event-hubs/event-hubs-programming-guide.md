@@ -185,4 +185,4 @@ Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 - [Codebeispiele für Event Hubs](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

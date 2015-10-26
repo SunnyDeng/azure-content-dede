@@ -9,4 +9,4 @@
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

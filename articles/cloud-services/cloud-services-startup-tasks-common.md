@@ -1,19 +1,19 @@
 <properties 
-pageTitle="Häufige Startaufgaben für Clouddienste | Microsoft Azure"
-	description="Enthält einige Beispiele für häufige Startaufgaben, die Sie vielleicht in der Web- oder Workerrolle des Clouddiensts ausführen möchten."
-	services="cloud-services"
-	documentationCenter=""
-	authors="Thraka"
-	manager="timlt"
-	editor=""/>
+pageTitle="Häufige Startaufgaben für Clouddienste | Microsoft Azure" 
+description="Enthält einige Beispiele für häufige Startaufgaben, die Sie vielleicht in der Web- oder Workerrolle des Clouddiensts ausführen möchten." 
+services="cloud-services" 
+documentationCenter="" 
+authors="Thraka" 
+manager="timlt" 
+editor=""/>
 <tags 
-ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
-	ms.author="adegeo"/>
+ms.service="cloud-services" 
+ms.workload="tbd" 
+ms.tgt_pltfrm="na" 
+ms.devlang="na" 
+ms.topic="article" 
+ms.date="08/24/2015" 
+ms.author="adegeo"/>
 
 # Allgemeine Startaufgaben für Clouddienste
 
@@ -503,4 +503,4 @@ Führen Sie das [Erstellen und Bereitstellen](cloud-services-how-to-create-deplo
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

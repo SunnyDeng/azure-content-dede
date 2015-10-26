@@ -1,20 +1,20 @@
 <properties
    pageTitle="Azure Data Catalog – Entwicklerkonzepte"
-	description="Eine Einführung in die wichtigsten Konzepte im konzeptionellen Modell von Azure Data Catalog, die durch die Catalog-REST-API verfügbar gemacht werden."
-	services="data-catalog"
-	documentationCenter=""
-	authors="dvana"
-	manager="mblythe"
-	editor=""
-	tags=""/>
+   description="Eine Einführung in die wichtigsten Konzepte im konzeptionellen Modell von Azure Data Catalog, die durch die Catalog-REST-API verfügbar gemacht werden."
+   services="data-catalog"
+   documentationCenter=""
+   authors="dvana"
+   manager="mblythe"
+   editor=""
+   tags=""/>
 <tags 
    ms.service="data-catalog"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-catalog"
-	ms.date="07/13/2015"
-	ms.author="derrickv"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-catalog"
+   ms.date="07/13/2015"
+   ms.author="derrickv"/>
 
 # Azure Data Catalog – Entwicklerkonzepte
 
@@ -258,4 +258,4 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 <!--Image references-->
 [1]: ./media/data-catalog-developer-concepts/concept2.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

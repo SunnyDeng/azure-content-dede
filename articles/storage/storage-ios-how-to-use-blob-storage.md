@@ -358,4 +358,4 @@ Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://soc
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -19,4 +19,4 @@
 
 5. Sie werden aufgefordert, diesen Schritt zu bestätigen. Geben Sie **J** ein, um mit der Installation des Hotfixes fortzufahren.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -19,16 +19,16 @@
 
 # Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-linux-tutorial.md) erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] []Ressourcen-Manager-Modell](virtual-machines-linux-tutorial.md).
 
-Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle und des klassischen Bereitstellungsmodells. Wir verwenden ein Linux-Image von den verfügbaren **IMAGES**in Azure. Die Azure-Befehlszeilenschnittstelle enthält u. a. folgende Konfigurationsoptionen:
+Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle und des klassischen Bereitstellungsmodells. Wir verwenden ein Linux-Image aus den verfügbaren **IMAGES**in Azure. Die Azure-Befehlszeilenschnittstelle enthält u. a. folgende Konfigurationsoptionen:
 
 - Verbinden des virtuellen Computers mit einem virtuellen Netzwerk
-- Hinzufügen des virtuellen Computers zu einem vorhandenen Cloud-Dienst
+- Hinzufügen des virtuellen Computers zu einem vorhandenen Clouddienst
 - Hinzufügen des virtuellen Computers zu einem vorhandenen Speicherkonto
 - Hinzufügen des virtuellen Computers zu einer Verfügbarkeitsgruppe oder einem Speicherort
 
-> [AZURE.IMPORTANT]Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, damit Sie sich direkt über den Hostnamen oder über eine lokal eingerichtete Verbindung mit ihm verbinden können, stellen Sie sicher, dass Sie das virtuelle Netzwerk schon dann angeben, wenn Sie den virtuellen Computer erstellen. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Ausführliche Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über Azure Virtual Network](http://go.microsoft.com/fwlink/p/?LinkID=294063).
+> [AZURE.IMPORTANT]Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, damit Sie sich direkt über den Hostnamen oder über eine lokal eingerichtete Verbindung mit ihm verbinden können, stellen Sie sicher, dass Sie das virtuelle Netzwerk schon dann angeben, wenn Sie den virtuellen Computer erstellen. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Ausführliche Informationen über virtuelle Netzwerke erhalten Sie unter [Übersicht über Azure Virtual Network](http://go.microsoft.com/fwlink/p/?LinkID=294063).
 
 <p/>
 
@@ -40,4 +40,4 @@ Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* vi
 
 [AZURE.INCLUDE [virtual-machines-create-LinuxVM](../../includes/virtual-machines-create-linuxvm.md)]
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

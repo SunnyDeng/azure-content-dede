@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verarbeiten von Ereignissen aus Event Hubs mit Storm in HDInsight | Azure"
+   pageTitle="Verarbeiten von Ereignissen aus Event Hubs mit Storm in HDInsight mit Java | Azure"
    description="Erfahren Sie, wie Sie Daten von Event Hubs mit einer mit Maven erstellten Java Storm-Topologie erstellen."
    services="hdinsight,notification hubs"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/12/2015"
+   ms.date="10/09/2015"
    ms.author="larryfr"/>
 
 # Verarbeiten von Ereignissen aus Azure Event Hubs mit Storm in HDInsight (Java)
@@ -476,4 +476,4 @@ Weitere Informationen zur Storm-Benutzeroberfläche finden Sie den folgenden The
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

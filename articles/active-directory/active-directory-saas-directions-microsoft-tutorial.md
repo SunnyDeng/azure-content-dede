@@ -99,4 +99,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-directions-microsoft-tutorial/IC767830.png "Ja")
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

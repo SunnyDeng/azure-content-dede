@@ -22,7 +22,8 @@
 
 Das Einfügen eines Skripts oder anderer Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird, ist ein sehr häufiges Szenario, unabhängig davon, ob es sich bei dem Betriebssystem um Windows oder eine Linux-Distribution handelt.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Thema wird Folgendes beschrieben:
 
@@ -82,4 +83,4 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 
 [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

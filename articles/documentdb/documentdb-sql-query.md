@@ -2089,4 +2089,4 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: documentdb-consistency-levels.md
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

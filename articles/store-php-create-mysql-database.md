@@ -27,4 +27,4 @@ Unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tas
 
 Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

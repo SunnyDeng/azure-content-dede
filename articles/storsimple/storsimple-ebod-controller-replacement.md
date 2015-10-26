@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Austauschen von StorSimple-EBOD-Controllern | Microsoft Azure"
-	description="In diesem Thema wird erläutert, wie Sie ein oder beide EBOD-Controllermodule in einem StorSimple 8600-Gerät ausbauen oder austauschen."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="In diesem Thema wird erläutert, wie Sie ein oder beide EBOD-Controllermodule in einem StorSimple 8600-Gerät ausbauen oder austauschen."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/12/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/12/2015"
+   ms.author="alkohli" />
 
 # Austauschen des EBOD-Controllers eines StorSimple-Geräts
 
@@ -107,4 +107,4 @@ Im folgenden Verfahren sowie in der Tabelle wird erläutert, wie ein EBOD-Contro
 
 Erfahren Sie mehr zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

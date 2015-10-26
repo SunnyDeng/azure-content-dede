@@ -206,4 +206,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [PHP-Beispielcode für Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

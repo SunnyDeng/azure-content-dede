@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Ausführen der Hadoop-Beispiele in HDInsight | Microsoft Azure"
+	pageTitle="Ausführen der Hadoop-Beispiele in Linux-basiertem HDInsight | Microsoft Azure"
 	description="Erste Schritte bei der Verwendung von MapReduce-Beispielen mit Linux-basierten HDInsight-Clustern. Verwenden Sie SSH, um eine Verbindung mit dem Cluster herzustellen, und verwenden Sie dann den Hadoop-Befehl, um Beispielaufträge auszuführen."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
 	editor="cgronlun"
-	tags="azure-portal"/>
+    tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="10/09/2015"
 	ms.author="larryfr"/>
 
 
@@ -243,4 +243,4 @@ In diesem Artikel haben Sie gelernt, wie die Beispiele ausgeführt werden, die i
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

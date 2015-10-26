@@ -20,4 +20,4 @@
 
 1. Geben Sie mit dem zuvor verwendeten "$EndpointPort" im Feld **Port** die Portnummer für den Verfügbarkeitsgruppenlistener an (in diesem Lernprogramm war 1433 der Standardwert), und klicken Sie dann auf **OK**.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

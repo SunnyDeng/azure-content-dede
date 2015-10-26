@@ -20,7 +20,8 @@
 
 # Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Suchen von Images virtueller Computer im Ressourcen-Manager-Bereitstellungsmodell. Sie haben auch die Möglichkeit, Images im [klassischen Bereitstellungsmodell](https://msdn.microsoft.com/library/azure/dn499770.aspx) zu suchen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Dieser Artikel beschreibt das Navigieren sowie das Auswählen von Images virtueller Computer mit einer aktuellen Installation der Azure-Befehlszeilenschnittstelle oder von Azure PowerShell. Als Voraussetzung müssen Sie in den Ressourcen-Manager-Modus wechseln. Wechseln Sie über die Azure-Befehlszeilenschnittstelle durch Eingabe von `azure config mode arm` in diesen Modus. Geben Sie bei Verwendung von PowerShell `Switch-AzureMode AzureResourceManager` ein. Ausführlichere Informationen zum Aktualisieren und Konfigurieren finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 
@@ -70,7 +71,7 @@ Der schnellste und einfachste Weg ein Datenträgerabbild zu suchen, um es entwed
 
 Die **URN**-Spalte ist das Formular, dass Sie an `azure vm quick-create` weiterleiten.
 
-Oftmals ist jedoch noch unbekannt, was verfügbar ist. In diesem Fall können Sie durch Images navigieren, indem Sie mithilfe von `azure vm image list-publishers` zuerst Herausgeber ermitteln und auf die Standortaufforderung mit dem Standort des Rechenzentrums antworten, das Sie voraussichtlich für Ihre Ressourcengruppe verwenden werden. Beispielsweise werden im Folgenden alle Herausgeber von Datenträgerabbildern am Speicherort „West US“ aufgelistet (übergeben Sie das Speicherort-Argument mit Kleinbuchstaben und Entfernen von Leerzeichen von Standardspeicherorten).
+Oftmals ist jedoch noch unbekannt, was verfügbar ist. In diesem Fall können Sie durch Images navigieren, indem Sie mithilfe von `azure vm image list-publishers` zuerst Herausgeber ermitteln und auf die Speicherort-Eingabeaufforderung mit dem Datencenter-Speicherort antworten, den Sie voraussichtlich für Ihre Ressourcengruppe verwenden werden. Beispielsweise werden im Folgenden alle Herausgeber von Datenträgerabbildern am Speicherort „West US“ aufgelistet (übergeben Sie das Speicherort-Argument mit Kleinbuchstaben und Entfernen von Leerzeichen von Standardspeicherorten).
 
     azure vm image list-publishers
     info:    Executing command vm image list-publishers
@@ -84,7 +85,7 @@ Oftmals ist jedoch noch unbekannt, was verfügbar ist. In diesem Fall können Si
     data:    AlertLogic.Extension                            westus  
 
 
-Diese Listen können sehr umfangreich sein, daher zeigt die oben dargestellte Beispielliste lediglich einen Ausschnitt. Angenommen, Sie würden bemerken, dass Canonical tatsächlich ein Herausgeber am Speicherort „West US“ ist, Nun können Sie seine Angebote finden, indem Sie `azure vm image list-offers` aufrufen und den Standort und den Herausgeber über die Eingabeaufforderung übergeben. Dies ist im folgenden Beispiel dargestellt:
+Diese Listen können sehr umfangreich sein, daher zeigt die oben dargestellte Beispielliste lediglich einen Ausschnitt. Angenommen, Sie würden bemerken, dass Canonical tatsächlich ein Herausgeber am Speicherort „West US“ ist, dann könnten Sie nun seine Angebote finden, indem Sie `azure vm image list-offers` aufrufen und den Speicherort und den Herausgeber über die Eingabeaufforderung übergeben. Dies ist im folgenden Beispiel dargestellt:
 
     azure vm image list-offers
     info:    Executing command vm image list-offers
@@ -96,7 +97,7 @@ Diese Listen können sehr umfangreich sein, daher zeigt die oben dargestellte Be
     data:    canonical  UbuntuServer  westus  
     info:    vm image list-offers command OK
 
-Jetzt wissen wir, dass in der Region „West US“ Canonical das **UbuntuServer**-Angebot in Azure herausgibt. Aber welche SKUs? Rufen Sie `azure vm image list-skus` auf, und antworten Sie auf die Eingabeaufforderung mit dem Standort, dem Herausgeber und dem von Ihnen entdeckten Angebot, um diese zu erhalten.
+Jetzt wissen wir, dass in der Region „West US“ Canonical das **UbuntuServer**-Angebot in Azure herausgibt. Aber welche SKUs? Rufen Sie `azure vm image list-skus` ab, und antworten Sie auf die Eingabeaufforderung mit dem Standort, Herausgeber und dem von Ihnen entdeckten Angebot, um diese zu erhalten.
 
     azure vm image list-skus
     info:    Executing command vm image list-skus
@@ -137,7 +138,7 @@ Mit diesen Informationen können Sie nun genau das von Ihnen gewünschte Image f
     data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201504270  westus    canonical:ubuntuserver:14.04.2-LTS:14.04.201504270
     info:    vm image list command OK
 
-Jetzt können Sie genau das Datenträgerabbild auswählen, das Sie verwenden möchten. Um schnell mithilfe der soeben gefundenen URN-Informationen einen virtuellen Computer zu erstellen oder eine Vorlage mit diesen URN-Informationen zu verwenden, lesen Sie die Informationen unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
+Jetzt können Sie genau das Datenträgerabbild auswählen, das Sie verwenden möchten. Um schnell mithilfe der von Ihnen soeben gefundenen URN-Informationen einen virtuellen Computer zu erstellen oder eine Vorlage mit diesen URN-Informationen zu verwenden, lesen Sie die Informationen unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
 
 ### Exemplarische Vorgehensweise per Video
 
@@ -223,7 +224,7 @@ Für das Angebot „WindowsServer“:
 	2012-R2-Datacenter
 	Windows-Server-Technical-Preview
 
-Wenn Sie den gewählten SKU-Namen aus dieser Liste kopieren, erhalten Sie alle Informationen für das PowerShell-Cmdlet **Set-AzureVMSourceImage** oder für eine Vorlagendatei einer Ressourcengruppe, für die Sie den Herausgeber, das Angebot und die SKU für ein Image angeben müssen.
+Wenn Sie den gewählten SKU-Namen aus dieser Liste kopieren, erhalten Sie alle Informationen für das PowerShell-Cmdlet **Set-AzureVMSourceImage** oder für eine Vorlagendatei einer Ressourcengruppe, für die Sie den Herausgeber, das Angebot und die SKU für ein Images angeben müssen.
 
 ### Exemplarische Vorgehensweise per Video
 
@@ -243,4 +244,4 @@ Dieses Video zeigt die oben genannten Schritte mithilfe von PowerShell.
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

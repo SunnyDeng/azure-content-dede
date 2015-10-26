@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Kontinuierliche Bereitstellung in Azure mit Git und Visual Studio Online"
+	pageTitle="Kontinuierliche Bereitstellung in Azure mit Git und Visual Studio Online" 
 	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online zur Verwendung von Git so konfigurieren, dass sie automatisch für die Web-App-Funktion in Azure App Service oder in Clouddiensten erstellt und bereitgestellt werden."
 	services="cloud-services"
 	documentationCenter=".net"
@@ -272,4 +272,4 @@ Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Online finden Sie un
 [47]: ./media/cloud-services-continuous-delivery-use-vso-git/SourceSettingsPage.PNG
 [48]: ./media/cloud-services-continuous-delivery-use-vso-git/IncludeWorkingBranch.PNG
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

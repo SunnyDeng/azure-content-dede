@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen eines virtuellen Computers mit ARM-Vorlage | Microsoft Azure"
-	description="Verwenden Sie eine Resource Manager-Vorlage, um ganz einfach einen neuen virtuellen Windows-Computer mit PowerShell oder der Azure-CLI zu erstellen."
+	pageTitle="Erstellen eines virtuellen Computers mit einer Vorlage | Microsoft Azure"
+	description="Verwenden Sie eine Ressourcen-Manager-Vorlage, um ganz einfach einen neuen virtuellen Windows-Computer mit PowerShell zu erstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -14,22 +14,20 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/28/2015"
+	ms.date="10/08/2015"
 	ms.author="davidmu"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer mit einer Resource Manager-Vorlage
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Sie können diese Ressource nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
-Sie können ganz leicht einen neuen Windows-basierten virtuellen Computer in Azure mit einer Ressourcen-Manager-Vorlage mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle erstellen. Diese Vorlage erstellt einen einzelnen virtuellen Computer unter Windows in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in einer neuen Ressourcengruppe.
+Sie können ganz einfach einen neuen Windows-basierten virtuellen Computer erstellen, indem Sie eine Ressourcen-Manager-Vorlage und Azure PowerShell verwenden. Von dieser Vorlage wird ein einzelner virtueller Computer unter Windows in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in einer neuen Ressourcengruppe erstellt.
 
 ![](./media/virtual-machines-create-windows-powershell-resource-manager-template/windowsvm.png)
 
-Bevor es losgeht, stellen Sie sicher, dass Azure, PowerShell und Azure-CLI konfiguriert und einsatzbereit sind.
+Stellen Sie zunächst sicher, dass Azure PowerShell konfiguriert und einsatzbereit ist.
 
-[AZURE.INCLUDE [Arm-Setup-einrichten-Powershell](../../includes/arm-getting-setup-powershell.md)]
-
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
 ## Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage mit Azure PowerShell
 
@@ -224,10 +222,10 @@ Geben Sie einen Azure-Bereitstellungsnamen, einen Ressourcengruppennamen und den
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
-Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, Parameterwerte im Abschnitt „Parameter“ der JSON-Datei anzugeben. Wenn Sie alle Parameterwerte angegeben haben, erstellt der Befehl die Ressourcengruppe und den virtuellen Computer.
+Beim Ausführen des Befehls **New-AzureRmResourceGroupDeployment** werden Sie aufgefordert, Parameterwerte im Abschnitt „Parameter“ der JSON-Datei anzugeben. Wenn Sie alle Parameterwerte angegeben haben, erstellt der Befehl die Ressourcengruppe und den virtuellen Computer.
 
 Beispiel:
 
@@ -235,12 +233,12 @@ Beispiel:
 	$RGName="TestRG"
 	$locname="West US"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Folgendes sollte angezeigt werden:
 
-	cmdlet New-AzureResourceGroupDeployment at command pipeline position 1
+	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
 	(Type !? for Help.)
 	newStorageAccountName: newsaacct
@@ -278,49 +276,6 @@ Folgendes sollte angezeigt werden:
 
 Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in Ihrer neuen Ressourcengruppe vorhanden.
 
-## Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage mit der Azure-Befehlszeilenschnittstelle
-
-Gehen Sie folgendermaßen vor, um einen virtuellen Windows-Computer mit einer Ressourcen-Manager-Vorlage im Github-Vorlagenrepository mit Befehlen der Azure-Befehlszeilenschnittstelle zu erstellen.
-
-Geben Sie einen Namen und Azure-Speicherort (z. B. westus für den Westen der USA) ein, entfernen Sie die eckigen Klammern, und führen Sie anschließend diese Befehle aus.
-
-	azure group create [resource group] [location]
-	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json [resource group] firstdeployment
-
-Hier ist ein Beispiel vom Azure CLI-Befehlssatz für die Vorlage.
-
-	azure group create testrg westus
-	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json testrg firstdeployment
-
-Die Ausgabe sollte folgendermaßen aussehen:
-
-	azure group create testrg westus
-	info:    Executing command group create
-	+ Getting resource group testrg
-	+ Creating resource group testrg
-	info:    Created resource group testrg
-	data:    Id:                  /subscriptions/2c73c582-4b11-4800-96f9-a9bd790a861c/resourceGroups/testrg
-	data:    Name:                testrg
-	data:    Location:            westus
-	data:    Provisioning State:  Succeeded
-	data:    Tags:
-	data:
-	info:    group create command OK
-
-	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json testrg firstdeployment
-	info:    Executing command group deployment create
-	info:    Supply values for the following parameters
-	newStorageAccountName: newstorage
-	adminUsername: ops
-	adminPassword: Pa$$W0rd1
-	dnsNameForPublicIP: contoso
-	windowsOSVersion: 2012-R2-Datacenter
-	+ Initializing template configurations and parameters
-	+ Creating a deployment
-	info:    Created template deployment "firstdeployment"
-	+ Registering providers
-
-
 ## Zusätzliche Ressourcen
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
@@ -335,4 +290,4 @@ Die Ausgabe sollte folgendermaßen aussehen:
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

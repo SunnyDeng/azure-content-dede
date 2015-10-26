@@ -573,7 +573,7 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 | -------- | ----------- | -------------- | -------- |
 | copyBehavior | Definiert das Verhalten beim Kopieren, wenn die Quelle "BlobSource" oder "FileSystem" ist. | <p>Es gibt drei mögliche Werte für die copyBehavior-Eigenschaft. </p><ul><li>**PreserveHierarchy:** Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</li><li>**FlattenHierarchy:** Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Die Namen der Zieldateien werden automatisch generiert. </li><li>**MergeFiles:** Führt alle Dateien aus dem Quellordner in einer Datei zusammen. Wenn der Datei-/Blob-Name angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.</li></ul> | Nein |
 
-### Beispiele für „recursive“ und „copyBehavior“
+### Beispiele für "recursive" und "copyBehavior"
 Dieser Abschnitt beschreibt das resultierende Verhalten des Kopiervorgangs für verschiedene Kombinationen von rekursiven und CopyBehavior-Werten.
 
 recursive | copyBehavior | Resultierendes Verhalten
@@ -599,4 +599,4 @@ false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden S
 
  
 
-<!------HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

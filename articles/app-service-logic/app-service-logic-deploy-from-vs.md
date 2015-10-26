@@ -7,7 +7,6 @@
 	services="app-service\logic" 
 	documentationCenter=""/>
 
-
 <tags
 	ms.service="app-service-logic"
 	ms.workload="integration"
@@ -16,7 +15,6 @@
 	ms.topic="article"
 	ms.date="07/30/2015"
 	ms.author="stepsic"/>
-
 	
 # Bereitstellen von Visual Studio aus
 
@@ -67,4 +65,4 @@ In Zukunft können Sie Ihre Logik-App in der Quellcodeverwaltung überarbeiten u
 
 Wenn Sie nicht Visual Studio verwenden, aber dennoch die Werkzeuge zur Verfügung haben möchten, um Ihre Logik-App von der Quellcodesteuerung aus bereitzustellen, können Sie immer die [API](https://msdn.microsoft.com/library/azure/dn948510.aspx) oder [Powershell](../powershell-azure-resource-manager.md) direkt verwenden, um Ihre Bereitstellungen zu automatisieren.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Automatisieren von DNS- und Datensatzgruppenvorgängen mit dem .NET SDK | Microsoft Azure"
-	description="Automatisieren aller DNS-Vorgänge für Azure DNS mithilfe des .NET SDK."
-	services="dns"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="adinah"
-	editor=""/>
+   pageTitle="Automatisieren von DNS- und Datensatzgruppenvorgängen mit dem .NET SDK | Microsoft Azure" 
+   description="Automatisieren aller DNS-Vorgänge für Azure DNS mithilfe des .NET SDK." 
+   services="dns" 
+   documentationCenter="na" 
+   authors="joaoma" 
+   manager="adinah" 
+   editor=""/>
 
 <tags
    ms.service="dns"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/20/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="08/20/2015"
+   ms.author="joaoma"/>
 # Erstellen von DNS-Zonen und -Datensatzgruppen mithilfe des .NET SDK
 Sie können die Vorgänge zum Erstellen, Löschen oder Aktualisieren von DNS-Zonen, Datensatzgruppen und Einträgen mithilfe des DNS SDK mit .NET DNS Management-Bibliothek automatisieren. Ein vollständiges Visual Studio-Projekt steht Ihnen [hier](http://download.microsoft.com/download/2/A/C/2AC64449-1747-49E9-B875-C71827890126/AzureDnsSDKExample_2015_05_05.zip) zur Verfügung.
 
@@ -108,4 +108,4 @@ Das folgende Beispiel zeigt, wie Sie eine Liste der DNS-Zonen und Datensatzgrupp
 
 [Visual Studio SDK-Beispielprojekt](http://download.microsoft.com/download/2/A/C/2AC64449-1747-49E9-B875-C71827890126/AzureDnsSDKExample_2015_05_05.zip)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

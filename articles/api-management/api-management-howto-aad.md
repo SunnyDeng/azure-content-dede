@@ -228,4 +228,4 @@ Der Benutzer ist jetzt beim Entwicklerportal für Ihre API Management-Dienstinst
 
 [Anmelden beim Entwicklerportal mit einem Azure Active Directory-Konto]: #Log-in-to-the-Developer-portal-using-an-Azure-Active-Directory-account
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

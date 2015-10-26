@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="09/11/2015"
+   ms.date="10/13/2015"
    ms.author="shkurhek"/>
 
 # SQL-Datenbank – Dienstebenen
 
 ## Übersicht
-[Azure SQL-Datenbank](sql-database-technical-overview.md) umfasst mehrere Dienstebenen für unterschiedliche Workloads. Sie haben die Möglichkeit, eine Einzeldatenbank mit definierten Merkmalen und Preisen zu erstellen. Oder Sie können mehrere Datenbanken in einem Pool für elastische Datenbanken erstellen. In beiden Fällen sind die Dienstebenen **Basic**, **Standard** und **Premium** verfügbar. Die Merkmale dieser Ebenen unterscheiden sich jedoch abhängig davon, ob Sie eine Einzeldatenbank oder eine Datenbank in einem Pool für elastische Datenbanken erstellen. Dieser Artikel bietet eine Übersicht über die Dienstebenen in beiden Kontexten.
+[Azure SQL-Datenbank](sql-database-technical-overview.md) umfasst mehrere Dienstebenen für unterschiedliche Workloads. Sie haben die Möglichkeit zum [Erstellen einer Einzeldatenbank](sql-database-get-started.md) mit definierten Merkmalen und Preisen. Oder Sie können mehrere Datenbanken verwalten, indem Sie einen [Pool für elastische Datenbanken erstellen](sql-database-elastic-pool-portal.md). In beiden Fällen sind die Dienstebenen **Basic**, **Standard** und **Premium** verfügbar. Die Merkmale dieser Ebenen unterscheiden sich jedoch abhängig davon, ob Sie eine Einzeldatenbank oder eine Datenbank in einem Pool für elastische Datenbanken erstellen. Dieser Artikel bietet eine Übersicht über die Dienstebenen in beiden Kontexten.
 
 ## Dienstebenen
 Die Dienstebenen "Basic", "Standard" und "Premium" haben alle eine Betriebszeit-SLA von 99,99 % und bieten vorhersagbare Leistung, flexible Optionen für Geschäftskontinuität, Sicherheitsfeatures und stündliche Abrechnung. In der folgenden Tabelle sind Beispiele für Dienstebenen aufgeführt, die sich für unterschiedliche Anwendungsworkloads am besten eignen.
@@ -90,4 +90,4 @@ Wenn Sie mehrere Datenbanken als Gruppe verwalten möchten, finden Sie entsprech
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

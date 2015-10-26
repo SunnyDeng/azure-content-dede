@@ -1,19 +1,19 @@
 <properties 
     pageTitle="So migrieren Sie von einem RemoteApp-VNET auf ein Azure-VNET"
-	description="Erfahren Sie, wie Sie von einem RemoteApp-VNET auf ein Azure-VNET migrieren"
-	services="remoteapp"
-	documentationCenter=""
-	authors="lizap"
-	manager="mbaldwin"/>
+    description="Erfahren Sie, wie Sie von einem RemoteApp-VNET auf ein Azure-VNET migrieren" 
+    services="remoteapp" 
+	documentationCenter="" 
+    authors="lizap" 
+    manager="mbaldwin" />
 
 <tags 
-    ms.service="remoteapp"
-	ms.workload="compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
-	ms.author="elizapo"/>
+    ms.service="remoteapp" 
+    ms.workload="compute" 
+    ms.tgt_pltfrm="na" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.date="09/02/2015" 
+    ms.author="elizapo" />
 
 
 
@@ -50,4 +50,4 @@ Und jetzt haben Sie es geschafft!
 Wenn Sie Fragen haben oder besondere Unterstützung benötigen, senden Sie eine E-Mail an [remoteappforum@microsoft.com](mailto:remoteappforum@microsoft.com?subject=Azure%20RemoteApp%20VNET%20migration%20help).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

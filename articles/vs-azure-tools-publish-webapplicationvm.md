@@ -189,4 +189,4 @@ In der JSON-Konfigurationsdatei sind die Details angegeben, was bereitgestellt w
 
 Sie können die JSON-Konfigurationsdatei bearbeiten, um die Elemente zu ändern, die bereitgestellt werden. Ein virtueller Computer und ein Clouddienst sind erforderlich, aber der Datenbankabschnitt ist optional.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

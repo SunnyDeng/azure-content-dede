@@ -44,4 +44,4 @@ Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll,
  
 Weitere Informationen zum Erstellen von Images für Azure RemoteApp finden Sie unter [Erstellen von Azure RemoteApp-Images](remoteapp-imageoptions.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

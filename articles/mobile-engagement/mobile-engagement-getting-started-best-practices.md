@@ -403,4 +403,4 @@ Nachdem Sie einige Erfahrungen gesammelt haben, könnten Sie Ihren Einbindungspr
 <!--Link references-->
 [Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

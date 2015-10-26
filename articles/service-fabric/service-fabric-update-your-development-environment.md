@@ -53,4 +53,4 @@ Das ist alles! Sie können Visual Studio jetzt starten und mit dem Erstellen von
 
  [1]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

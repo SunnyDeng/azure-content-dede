@@ -1,4 +1,4 @@
-In diesem Schritt erstellen Sie manuell den Verfügbarkeitsgruppenlistener im Failovercluster-Manager und in SQL Server Management Studio \(SSMS\).
+In diesem Schritt erstellen Sie manuell den Verfügbarkeitsgruppenlistener im Failovercluster-Manager und in SQL Server Management Studio (SSMS).
 
 1. Öffnen Sie den Failovercluster-Manager über den Knoten, der das primäre Replikat hostet.
 
@@ -6,7 +6,7 @@ In diesem Schritt erstellen Sie manuell den Verfügbarkeitsgruppenlistener im Fa
 
 1. Erweitern Sie den Clusternamen, und klicken Sie dann auf **Rollen**.
 
-1. Klicken Sie im Bereich **Rollen** mit der rechten Maustaste auf den Verfügbarkeitsgruppennamen, und wählen Sie dann **Ressource hinzufügen** \> **Clientzugriffspunkt** aus.
+1. Klicken Sie im Bereich **Rollen** mit der rechten Maustaste auf den Verfügbarkeitsgruppennamen, und wählen Sie dann **Ressource hinzufügen** > **Clientzugriffspunkt** aus.
 
 	![Hinzufügen eines Clientzugriffspunkts für die Verfügbarkeitsgruppe](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678769.gif)
 
@@ -23,4 +23,4 @@ In diesem Schritt erstellen Sie manuell den Verfügbarkeitsgruppenlistener im Fa
 
 1. Ändern Sie im gleichen Eigenschaftenfenster **IP-Adresse** den Wert für **IP-Adressname**. Dieser IP-Adressname wird in der Variablen **$IPResourceName** des PowerShell-Skripts verwendet. Wiederholen Sie diesen Schritt für jede IP-Ressource, wenn die Lösung mehrere Azure-VNets umfasst.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

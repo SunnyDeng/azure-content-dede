@@ -21,7 +21,8 @@
 
 Es gibt viele Faktoren, die die MySQL-Leistung unter Azure beeinträchtigen, sowohl in Bezug auf die Auswahl der virtuellen Hardware als auch auf die Softwarekonfiguration. Dieser Artikel befasst sich mit der Leistungsoptimierung über die Speicher-, System- und Datenbankkonfiguration.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 ##Verwenden von RAID auf einem virtuellen Azure-Computer
 Speicher ist der wichtigste Faktor, der sich auf die Leistung der Datenbank in Cloudumgebungen auswirkt. Im Vergleich zu einem einzelnen Datenträger kann RAID schnelleren Zugriff über Parallelität bereitstellen. Unter [Standard-RAID-Stufen](http://en.wikipedia.org/wiki/Standard_RAID_levels) finden Sie weitere Details.
@@ -263,7 +264,7 @@ Im folgenden Beispiel werden Leistungstestdaten für eine gezielte Lab-Umgebung 
 
 	fio -filename=/path/test -iodepth=64 -ioengine=libaio -direct=1 -rw=randwrite -bs=4k -size=5G -numjobs=64 -runtime=30 -group_reporting -name=test-randwrite
 
->AZURE.NOTE: Die Arbeitsauslastung dieses Tests verwendet 64 Threads, um die Obergrenze des RAID zu erreichen.
+>AZURE.NOTE: Der Workload dieses Tests verwendet 64 Threads, um die Obergrenze des RAID zu erreichen.
 
 <a name="AppendixB"></a>Anhang B: **MySQL-Leistungsvergleich (Durchsatz) bei verschiedenen RAID-Stufen** (XFS-Dateisystem)
 
@@ -347,4 +348,4 @@ Weitere und detailliertere Konfigurationsparameter für die Optimierung finden S
 [13]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-13.png
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

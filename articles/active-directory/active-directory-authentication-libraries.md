@@ -63,4 +63,4 @@ In diesem Szenario verwendet ein Entwickler eine Anwendung, die auf einem Server
 
 [Azure Active Directory-Codebeispiele](active-directory-code-samples.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

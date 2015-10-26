@@ -6,7 +6,6 @@
     documentationCenter=""
 	manager="douge"/>
 
-
 <tags
 	ms.service="application-insights"
 	ms.workload="tbd"
@@ -15,7 +14,6 @@
 	ms.topic="article" 
 	ms.date="08/04/2015"
 	ms.author="awills"/>
-
 
 # Erkennung, Eingrenzung und Diagnose mit Application Insights
 
@@ -262,4 +260,4 @@ Ein Team kann also Application Insights nicht nur nutzen, um einzelne Probleme z
 [usage]: app-insights-web-track-usage.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

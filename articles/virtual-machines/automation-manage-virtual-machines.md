@@ -22,7 +22,6 @@
 
 Dieser Leitfaden bietet eine Einführung in den Azure Automation-Dienst und zeigt, wie Azure Automation zur Vereinfachung der Verwaltung Ihrer virtuellen Azure-Computer genutzt werden kann.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 ## Was ist Azure Automation?
 
@@ -44,4 +43,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz 
 
 [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

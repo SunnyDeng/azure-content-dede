@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/15/2015"
+   ms.date="10/07/2015"
    ms.author="tomfitz"/>
 
 # Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung
@@ -46,13 +46,17 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
         ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
 
-        Für Compute-, Storage- und Netzwerkressourcen haben Sie die Möglichkeit, entweder den Ressourcen-Manager oder die klassische Bereitstellung zu nutzen. Wählen Sie **Ressourcen-Manager**
+        For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
-  - PowerShell-Befehle, die im Modus **AzureResourceManager** ausgeführt werden.
+  - In Azure PowerShell-Versionen vor 1.0 Preview werden Befehle im Modus **AzureResourceManager** ausgeführt.
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
+
+  - Verwenden Sie in Azure PowerShell 1.0 Preview für Befehle die Version mit dem Ressourcen-Manager. Diese Befehle haben das Format *Verb-AzureRm*, wie unten dargestellt.
+
+            PS C:\> Get-AzureRmResourceGroupDeployment
 
   - [Azure-Ressourcen-Manager-REST-API](https://msdn.microsoft.com/library/azure/dn790568.aspx) für REST-Vorgänge.
   - Befehle der Azure-Befehlszeilenschnittstelle, die im Modus **arm** ausgeführt werden.
@@ -73,13 +77,17 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
         ![Azure portal](./media/resource-manager-deployment-model/azure-portal.png)
 
-        Alternativ können Sie das Vorschauportal nutzen und eine **klassische** Bereitstellung (für Compute-, Speicher- und Netzwerkressourcen) festlegen.
+        Or, the preview portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
 
         ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 
-  - PowerShell-Befehle, die im Modus **AzureServiceManagement** ausgeführt werden (dies ist der Standardmodus, wenn Sie also nicht speziell zu "AzureResourceManager" wechseln, befinden Sie sich bereits im AzureServiceManagement-Modus).
+  - In Azure PowerShell-Versionen vor 1.0 Preview werden Befehle im Modus **AzureServiceManagement** ausgeführt (dies ist der Standardmodus, wenn Sie also nicht speziell zu "AzureResourceManager" wechseln, befinden Sie sich bereits im AzureServiceManagement-Modus).
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
+
+  - Verwenden Sie in Azure PowerShell 1.0 Preview die Dienstverwaltungsversion der Befehle. Diese Befehlsnamen haben **nicht** das Format *Verb-AzureRm*, wie unten dargestellt.
+
+            PS C:\> Get-AzureDeployment
 
   - [Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/ee460799.aspx) für REST-Vorgänge.
   - Befehle der Azure-Befehlszeilenschnittstelle, die im Modus **asm** oder im Standardmodus ausgeführt werden.
@@ -117,7 +125,7 @@ Weitere Informationen zur Verwendung von Tags im Ressourcen-Manager finden Sie u
 
 Ressourcen, die Sie im klassischen Bereitstellungsmodell erstellen, unterstützen keine Ressourcen-Manager-Vorgänge. In einigen Fällen können Sie mithilfe eines Ressourcen-Manager-Befehls Informationen zu einer mit der klassischen Bereitstellung erstellten Ressource abrufen oder administrative Aufgaben ausführen, z. B. eine klassische Ressource in eine andere Ressourcengruppe verschieben. Dies sollte jedoch nicht zu der Annahme verleiten, dass der entsprechende Ressourcentyp Ressourcen-Manager-Vorgänge unterstützt. Nehmen Sie beispielsweise an, Sie verfügen über eine Ressourcengruppe, die sowohl mit dem Ressourcen-Manager als auch mit dem klassischen Modell erstellte virtuelle Computer enthält. Wenn Sie folgenden PowerShell-Befehl ausführen, werden alle virtuellen Computer angezeigt:
 
-    PS C:\> Get-AzureResourceGroup -Name ExampleGroup
+    PS C:\> Get-AzureRmResourceGroup -Name ExampleGroup
     ...
     Resources :
      Name                 Type                                          Location
@@ -158,4 +166,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

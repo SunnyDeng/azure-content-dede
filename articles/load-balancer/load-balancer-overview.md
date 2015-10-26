@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Übersicht über Azure-Lastenausgleich | Microsoft Azure"
-	description="Übersicht über Funktionen, Architektur und Implementierung des Azure-Lastenausgleichsmoduls. Dieser Artikel dient dem Verständnis der Arbeitsweise und der Nutzung des Lastenausgleichs in der Cloud."
-	services="load-balancer"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="adinah"
-	editor="tysonn"/>
+   description="Übersicht über Funktionen, Architektur und Implementierung des Azure-Lastenausgleichsmoduls. Dieser Artikel dient dem Verständnis der Arbeitsweise und der Nutzung des Lastenausgleichs in der Cloud."
+   services="load-balancer"
+   documentationCenter="na"
+   authors="joaoma"
+   manager="adinah"
+   editor="tysonn" />
 <tags 
    ms.service="load-balancer"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="07/10/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="07/10/2015"
+   ms.author="joaoma" />
 
 
 # Übersicht über den Lastenausgleich 
@@ -99,4 +99,4 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 [Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

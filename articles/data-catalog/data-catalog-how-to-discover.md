@@ -60,4 +60,4 @@ In der standardmäßigen Kachelansicht enthält jede in den Suchergebnissen ange
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie mithilfe der Filter- und Suchfunktionen im **Azure Data Catalog**-Portal von Benutzern ermittelt werden.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

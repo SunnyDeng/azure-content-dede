@@ -158,4 +158,4 @@ Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokal
 [4]: ./media/service-fabric-reliable-actors-get-started/vs-context-menu.png
 [5]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject1.PNG
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

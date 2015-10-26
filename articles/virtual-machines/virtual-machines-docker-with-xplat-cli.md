@@ -18,9 +18,11 @@
 
 # Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle (Azure-CLI)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
-Dieses Thema beschreibt das Erstellen eines virtuellen Computers mit der Docker-VM-Erweiterung im ASM-Modus (Azure Service Management) in der Azure-Befehlszeilenschnittstelle auf einer beliebigen Plattform. [Docker](https://www.docker.com/) ist einer der beliebtesten Virtualisierungsansätze, der für das Isolieren von Daten und Computing auf gemeinsam genutzten Ressourcen [Linux-Container](http://en.wikipedia.org/wiki/LXC) statt virtueller Computer verwendet. Verwenden Sie die Docker-VM-Erweiterung des [Azure Linux Agent](virtual-machines-linux-agent-user-guide.md), um einen virtuellen Docker-Computer zu erstellen, der eine beliebige Anzahl von Containern für Ihre Anwendungen in Azure hostet. Eine allgemeine Diskussion über die Container und ihre Vorteile finden Sie unter [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard) (Whiteboard auf hoher Ebene zu Docker) (in englischer Sprache).
+
+
+Dieses Thema beschreibt das Erstellen eines virtuellen Computers mit der Docker-VM-Erweiterung im ASM-Modus (Azure Service Management) in der Azure-Befehlszeilenschnittstelle auf einer beliebigen Plattform. [Docker](https://www.docker.com/) ist einer der beliebtesten Virtualisierungsansätze, der für das Isolieren von Daten und Computing auf gemeinsamen Ressourcen [Linux-Container](http://en.wikipedia.org/wiki/LXC) statt virtueller Computer verwendet. Verwenden Sie die Docker-VM-Erweiterung des [Azure Linux Agent](virtual-machines-linux-agent-user-guide.md), um einen virtuellen Docker-Computer zu erstellen, der eine beliebige Anzahl von Containern für Ihre Anwendungen in Azure hostet. Eine allgemeine Diskussion über die Container und ihre Vorteile finden Sie unter [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard) (Whiteboard auf hoher Ebene zu Docker) (in englischer Sprache).
 
 + [Verwenden der Docker-VM-Erweiterung mit Azure]
 + [Erweiterungen für virtuelle Linux- und Windows-Computer]
@@ -65,10 +67,10 @@ Verwenden Sie in einer Bash- oder Terminalsitzung den folgenden Azure-CLI-Befehl
 
 `azure vm image list | grep Ubuntu-14_04`
 
-ein, oder wählen Sie einen der Imagenamen aus, z. B. `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-DE-DE-30GB`. Erstellen Sie anschließend mithilfe des folgenden Befehls eine VM mit diesem Image.
+ein, oder wählen Sie einen der Imagenamen aus, z. B. `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`. Erstellen Sie anschließend mithilfe des folgenden Befehls eine VM mit diesem Image.
 
 ```
-azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-DE-DE-30GB" <username> <password>
+azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
 ```
 
 Hinweis:
@@ -85,18 +87,59 @@ War die Eingabe erfolgreich, sollte Ihnen in etwa das Folgende angezeigt werden,
 
 ![](./media/virtual-machines-docker-with-xplat-cli/dockercreateresults.png)
 
-> [AZURE.NOTE]Das Erstellen eines virtuellen Computers kann einige Minuten in Anspruch nehmen. Nach der Bereitstellung wird der Docker-Daemon (der Docker-Dienst) jedoch gestartet, und Sie können eine Verbindung zum Docker-Containerhost herstellen.
+> [AZURE.NOTE]Das Erstellen eines virtuellen Computers kann einige Minuten in Anspruch nehmen. Nach der Bereitstellung (Zustandswert `ReadyRole`) wird der Docker-Daemon (der Docker-Dienst) jedoch gestartet, und Sie können eine Verbindung zum Docker-Containerhost herstellen.
 
 Um den virtuellen Docker-Computer, den Sie in Azure erstellt haben, zu testen, geben Sie Folgendes ein:
 
 `docker --tls -H tcp://<vm-name-you-used>.cloudapp.net:2376 info`
 
-*<vm-name-you-used>* ist der Name des virtuellen Computers, den Sie in Ihrem Aufruf von `azure vm docker create` verwendet haben. Es sollte etwas angezeigt werden, das in etwa dem Folgenden entspricht, welches angibt, dass Ihr virtueller Docker-Hostcomputer betriebsbereit ist, in Azure ausgeführt wird und auf Ihre Befehle wartet.
+*&lt;vm-name-you-used&gt;* ist der Name des virtuellen Computers, den Sie in Ihrem Aufruf von `azure vm docker create` verwendet haben. Es sollte etwas angezeigt werden, das in etwa dem Folgenden entspricht, welches angibt, dass Ihr virtueller Docker-Hostcomputer betriebsbereit ist, in Azure ausgeführt wird und auf Ihre Befehle wartet.
 
-![](./media/virtual-machines-docker-with-xplat-cli/connectingtodockerhost.png)
+Sie können jetzt versuchen, über den Docker-Client eine Verbindung herzustellen, um Informationen abzurufen (bei einigen Docker-Client-Einrichtungen, z. B. auf dem Mac, müssen Sie möglicherweise `sudo` verwenden):
+
+	sudo docker --tls -H tcp://testsshasm.cloudapp.net:2376 info
+	Password:
+	Containers: 0
+	Images: 0
+	Storage Driver: devicemapper
+	Pool Name: docker-8:1-131781-pool
+	Pool Blocksize: 65.54 kB
+	Backing Filesystem: extfs
+	Data file: /dev/loop0
+	Metadata file: /dev/loop1
+	Data Space Used: 1.821 GB
+	Data Space Total: 107.4 GB
+	Data Space Available: 28 GB
+	Metadata Space Used: 1.479 MB
+	Metadata Space Total: 2.147 GB
+	Metadata Space Available: 2.146 GB
+	Udev Sync Supported: true
+	Deferred Removal Enabled: false
+	Data loop file: /var/lib/docker/devicemapper/devicemapper/data
+	Metadata loop file: /var/lib/docker/devicemapper/devicemapper/metadata
+	Library Version: 1.02.77 (2012-10-15)
+	Execution Driver: native-0.2
+	Logging Driver: json-file
+	Kernel Version: 3.19.0-28-generic
+	Operating System: Ubuntu 14.04.3 LTS
+	CPUs: 1
+	Total Memory: 1.637 GiB
+	Name: testsshasm
+	WARNING: No swap limit support
+
+Um sicherzustellen, dass alles funktioniert, können Sie auf dem virtuellen Computer die Docker-Erweiterung suchen:
+
+	azure vm extension get testsshasm
+	info: Executing command vm extension get
+	+ Getting virtual machines
+	data: Publisher Extension name ReferenceName Version State
+	data: -------------------- --------------- ------------------------- ------- ------
+	data: Microsoft.Azure.E... DockerExtension DockerExtension 1.* Enable
+	info: vm extension get command OK
 
 ### Authentifizierung des virtuellen Docker-Hostcomputers
-Neben dem virtuellen Docker-Computer erstellt der Befehl `azure vm docker create` automatisch auch die nötigen Zertifikate, um Ihrem Docker-Clientcomputer über HTTPS die Verbindung mit dem Azure-Containerhost zu ermöglichen. Die Zertifikate werden auf dem Client- und dem Hostcomputer gespeichert. Bei den nachfolgenden Ausführungen werden die Zertifikate erneut verwendet und an den neuen Host freigegeben.
+
+Neben dem virtuellen Docker-Computer erstellt der Befehl `azure vm docker create` automatisch auch die nötigen Zertifikate, um Ihrem Docker-Clientcomputer über HTTPS die Verbindung mit dem Azure-Containerhost zu ermöglichen. Die Zertifikate werden auf dem Client- und dem Hostcomputer gespeichert. Bei den nachfolgenden Versuchen werden die Zertifikate erneut verwendet und für den neuen Host freigegeben.
 
 Standardmäßig werden die Zertifikate unter `~/.docker` abgelegt, und Docker wird für die Ausführung an Port **2376** konfiguriert. Wenn Sie einen anderen Port oder ein anderes Verzeichnis verwenden möchten, können Sie eine der folgenden Befehlszeilenoptionen `azure vm docker create` verwenden, damit der virtuelle Docker-Containerhost einen anderen Port oder andere Zertifikate verwendet, um eine Verbindung mit Clients herzustellen:
 
@@ -108,9 +151,6 @@ Standardmäßig werden die Zertifikate unter `~/.docker` abgelegt, und Docker wi
 Der Docker-Daemon auf dem Host ist so konfiguriert, dass er Clientverbindungen auf dem angegebenen Port mithilfe der durch den Befehl `azure vm docker create` generierten Zertifikate abhört und authentifiziert. Der Clientcomputer muss über diese Zertifikate verfügen, um Zugriff auf den Docker-Host zu erlangen.
 
 > [AZURE.NOTE]Ein vernetzter Host ist ohne diese Zertifikate anfällig für jeden, der sich mit dem Computer verbindet. Bevor Sie die Standardkonfiguration ändern, setzen Sie sich mit den Risiken für Ihre Computer und Anwendungen auseinander.
-
-
-
 
 ## Nächste Schritte
 
@@ -141,4 +181,4 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

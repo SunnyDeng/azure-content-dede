@@ -19,7 +19,8 @@
 
 # Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Dieses Thema enthält Links zu schrittweisen Anweisungen für die Bereitstellung einer Intranet-internen SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen mit dem klassischen Bereitstellungsmodell. Die Farm enthält die folgenden Computer:
 
@@ -37,7 +38,7 @@ Zwei Computer pro Rolle stellen eine hohe Verfügbarkeit sicher. Alle virtuellen
 
 Sie stellen diese Konfiguration in den folgenden Phasen bereit:
 
-- [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md): Erstellen Sie ein Speicherkonto, Cloud-Dienste und ein standortübergreifendes virtuelles Netzwerk.
+- [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md): Erstellen Sie ein Speicherkonto, Clouddienste und ein standortübergreifendes virtuelles Netzwerk.
 - [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md): Erstellen und konfigurieren Sie Replikate der Domänencontroller für Active Directory Domain Services (AD DS).
 - [Phase 3: Konfigurieren der SQL Server-Infrastruktur](virtual-machines-workload-intranet-sharepoint-phase3.md): Erstellen und konfigurieren Sie die virtuellen Computer für SQL Server, bereiten Sie sie für die Verwendung mit SharePoint vor und erstellen Sie einen Cluster.
 - [Phase 4: Konfigurieren der SharePoint-Server](virtual-machines-workload-intranet-sharepoint-phase4.md): Erstellen und konfigurieren Sie die vier virtuellen SharePoint-Computer.
@@ -61,7 +62,7 @@ Weitere Informationen zu SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgrupp
 
 ## Nächster Schritt
 
-Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
+Zum Starten der Konfiguration für diesen Workload gehen Sie zu [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
 
 ## Zusätzliche Ressourcen
@@ -76,4 +77,4 @@ Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

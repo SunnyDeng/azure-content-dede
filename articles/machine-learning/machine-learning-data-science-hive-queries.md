@@ -2,6 +2,7 @@
 	pageTitle="Übermitteln von Hive-Abfragen an Hadoop-Cluster im erweiterten Analysevorgang | Microsoft Azure" 
 	description="Verarbeiten von Daten aus Hive-Tabellen" 
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="hangzh-msft" 
 	manager="paulettm" 
@@ -325,4 +326,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

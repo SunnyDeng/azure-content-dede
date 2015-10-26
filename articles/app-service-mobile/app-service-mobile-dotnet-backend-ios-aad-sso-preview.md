@@ -123,4 +123,4 @@ Jetzt können Sie auf die Active Directory-Authentifizierungsbibliothek in Ihrem
  [Erste Schritte mit mobilen Apps]: app-service-mobile-dotnet-backend-ios-get-started-preview.md
  [Hinzufügen von Authentifizierung zur App]: app-service-mobile-dotnet-backend-ios-get-started-users-preview.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

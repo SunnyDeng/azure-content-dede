@@ -17,9 +17,10 @@
 	ms.date="07/21/2015"
 	ms.author="josephd"/>
 
-# SharePoint-Intranetfarm-Arbeitsauslastung Phase 1: Konfigurieren von Azure
+# SharePoint-Intranetfarm-Workload Phase 1: Konfigurieren von Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie die Azure Netzwerk- und Speicherinfrastruktur in der Azure-Dienstverwaltung. Diese Phase muss vor Beginn von [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md).
 
@@ -104,29 +105,29 @@ Wählen Sie zunächst das richtige Azure-Abonnement für diese Befehle aus. Erse
 
 Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft **SubscriptionName** der Ausgabe des Befehls **Get-AzureSubscription**.
 
-Erstellen Sie als Nächstes die drei für diese SharePoint-Farm erforderlichen Cloud-Dienste. Füllen Sie Tabelle C aus.
+Erstellen Sie als Nächstes die drei für diese SharePoint-Farm erforderlichen Clouddienste. Füllen Sie Tabelle C aus.
 
-Element | Zweck | Name des Cloud-Diensts
+Element | Zweck | Name des Clouddiensts
 --- | --- | ---
 1\. | Domänencontroller | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 2\. | SQL-Server | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 3\. | SharePoint-Server | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Tabelle C: Namen der Cloud-Dienste**
+**Tabelle C: Namen der Clouddienste**
 
-Wählen Sie für jeden Cloud-Dienst einen eindeutigen Namen aus. *Der Name eines Cloud-Diensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.*
+Wählen Sie für jeden Clouddienst einen eindeutigen Namen aus. *Der Name eines Clouddiensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.*
 
-So können Sie den ersten Cloud-Dienst beispielsweise „DCs-*EindeutigeZeichenfolge*“ nennen, wobei *EindeutigeZeichenfolge* eine Abkürzung Ihres Unternehmens ist. Heißt Ihr Unternehmen beispielsweise „Tailspin Toys“, so können Sie den Cloud-Dienst „DCs-Tailspin“ nennen.
+So können Sie den ersten Clouddienst beispielsweise „DCs-*EindeutigeZeichenfolge*“ nennen, wobei *EindeutigeZeichenfolge* eine Abkürzung Ihres Unternehmens ist. Heißt Ihr Unternehmen beispielsweise „Tailspin Toys“, so können Sie den Clouddienst „DCs-Tailspin“ nennen.
 
 Mit dem folgenden Azure PowerShell-Befehl können Sie den Namen auf seine Eindeutigkeit auf dem lokalen Computer testen.
 
 	Test-AzureName -Service <Proposed cloud service name>
 
-Wenn dieser Befehl „False“ zurückgibt, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Cloud-Dienst dann mit dem folgenden Befehl:
+Wenn dieser Befehl „False“ zurückgibt, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Clouddienst dann mit dem folgenden Befehl:
 
 	New-AzureService -Service <Unique cloud service name> -Location "<Table V – Item 2 – Value column>"
 
-Notieren Sie die Namen der neu erstellten Cloud-Dienste in Tabelle C.
+Notieren Sie die Namen der neu erstellten Clouddienste in Tabelle C.
 
 Erstellen Sie als Nächstes ein Speicherkonto für die SharePoint-Farm. *Geben Sie einen eindeutigen Namen nur mit Kleinbuchstaben und Zahlen ein.* Mit dem folgenden Azure PowerShell-Befehl können Sie überprüfen, ob der Name des Speicherkontos eindeutig ist:
 
@@ -157,7 +158,7 @@ Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfigura
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md).
+Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md).
 
 ## Zusätzliche Ressourcen
 
@@ -173,4 +174,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

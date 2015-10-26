@@ -585,4 +585,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zum Erstellen von HDInsight-C
 
 [apache-hive]: http://hive.apache.org/
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

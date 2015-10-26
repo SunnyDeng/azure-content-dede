@@ -195,4 +195,4 @@ Anpassungen wurden auch an einigen Variablennamen und Buildaufgaben vorgenommen,
 
 Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe](vs-azure-tools-resource-group-adding-resources.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

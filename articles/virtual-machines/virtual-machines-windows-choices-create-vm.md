@@ -99,4 +99,4 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 
 [Testumgebungen für Azure-Hybridclouds]: virtual-machines-hybrid-cloud-test-environments.md
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

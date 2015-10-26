@@ -78,7 +78,7 @@ Um die Interoperabilität mit Nicht-.NET-Clients zu erleichtern, verwenden Sie n
 | string | string | AMQP Value |
 | System.Collections.IList | list | AMQP Value: Diese Auflistung kann nur Elemente enthalten, die in dieser Tabelle definiert sind. |
 | System.Array | array | AMQP Value: Diese Auflistung kann nur Elemente enthalten, die in dieser Tabelle definiert sind. |
-| System.Collections.IDictionary | map | AMQP Value: Diese Auflistung kann nur Elemente enthalten, die in dieser Tabelle definiert sind.Hinweis: nur "String"-Schlüssel werden unterstützt. |
+| System.Collections.IDictionary | map | AMQP Value: Diese Auflistung kann nur Elemente enthalten, die in dieser Tabelle definiert sind. Hinweis: nur "String"-Schlüssel werden unterstützt. |
 | Uri | Beschriebene Zeichenfolge (siehe die folgende Tabelle) | AMQP Value |
 | DateTimeOffset | Lange Beschreibung (siehe die folgende Tabelle) | AMQP Value |
 | TimeSpan | Lange Beschreibung (siehe die folgende Tabelle) | AMQP Value |
@@ -168,10 +168,6 @@ Die .NET-APIs machen mehrere Einstellungen zum Steuern des Verhaltens des AMQP-P
 Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 
 - [Übersicht über Service Bus AMQP]
-- [Verwenden von Service Bus aus Java mit AMQP]
-- [Verwenden von Service Bus aus Python mit AMQP]
-- [Verwenden von Service Bus aus PHP mit AMQP]
-- [Installieren von Apache Qpid Proton-C auf einem virtuellen Azure-Linux-Computer]
 - [AMQP in Service Bus für Windows Server]
 
   [Verwenden von Azure Service Bus-Warteschlangen]: service-bus-dotnet-how-to-use-queues.md
@@ -203,10 +199,6 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
-[Verwenden von Service Bus aus Java mit AMQP]: service-bus-amqp-java.md
-[Verwenden von Service Bus aus Python mit AMQP]: service-bus-amqp-python.md
-[Verwenden von Service Bus aus PHP mit AMQP]: service-bus-amqp-php.md
-[Installieren von Apache Qpid Proton-C auf einem virtuellen Azure-Linux-Computer]: service-bus-amqp-apache.md
 [AMQP in Service Bus für Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

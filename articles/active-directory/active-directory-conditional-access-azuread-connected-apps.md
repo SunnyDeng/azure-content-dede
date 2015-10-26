@@ -86,4 +86,4 @@ Im folgenden Beispiel wird veranschaulicht, wie lokale MFA mithilfe des [Set-Mso
 
 Zusätzlich zum Festlegen dieses Kennzeichens muss die AD FS-Instanz des Verbundmandanten für die Ausführung der mehrstufigen Authentifizierung konfiguriert werden. Befolgen Sie die Anleitungen für die lokale Bereitstellung von Azure Multi-Factor Authentication.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

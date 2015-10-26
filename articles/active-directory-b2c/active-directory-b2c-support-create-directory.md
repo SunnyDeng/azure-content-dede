@@ -34,4 +34,4 @@ Es gibt bekannte Probleme, die beim [Erstellen eines Azure AD B2C-Mandanten](act
 	- Löschen Sie den soeben erstellten Mandanten, und versuchen Sie es noch mal.
 - Wenn keine der oben aufgeführten Lösungen für Sie funktioniert, wenden Sie sich an den Support. In [diesem Artikel](active-directory-b2c-support.md) erhalten Sie Informationen zum Senden von Supportanfragen für Azure AD B2C.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

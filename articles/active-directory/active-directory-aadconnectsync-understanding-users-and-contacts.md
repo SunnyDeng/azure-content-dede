@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Azure AD Connect-Synchronisierung: Grundlegendes zu Benutzern und Kontakten"
+	pageTitle="Azure AD Connect-Synchronisierung: Grundlegendes zu Benutzern und Kontakten | Microsoft Azure"
 	description="Erläutert Benutzer und Kontakte in der Azure AD Connect-Synchronisierung."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.date="10/13/2015"
 	ms.author="markusvi"/>
 
 
@@ -72,7 +72,7 @@ Nachdem ein Objekt nach Azure AD exportiert wurde, kann der Wert für "sourceAn
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
- 
+
 <!--Image references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

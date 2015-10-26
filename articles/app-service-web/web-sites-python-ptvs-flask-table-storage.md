@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Flask und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio"
-	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Flask-Web-App erstellen, die Daten in Azure Table Storage speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen."
+	pageTitle="Flask und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio" 
+	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Flask-Web-App erstellen, die Daten in Azure Table Storage speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen." 
 	services="app-service\web"
 	tags="python"
-	documentationCenter="python"
-	authors="huguesv"
-	manager="wpickett"
+	documentationCenter="python" 
+	authors="huguesv" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="article"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
 	ms.date="08/30/2015"
 	ms.author="huguesv"/>
 
@@ -210,4 +210,4 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -211,4 +211,4 @@ Diese Sequenz kann auch weitergeleitet werden:
 [Erste Schritte mit Azure-Cmdlets](https://msdn.microsoft.com/library/jj554332.aspx)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

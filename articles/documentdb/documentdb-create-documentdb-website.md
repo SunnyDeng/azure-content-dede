@@ -7,7 +7,6 @@
 	editor="monicar" 
 	documentationCenter=""/>
 
-
 <tags 
 	ms.service="documentdb" 
 	ms.workload="data-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/28/2015" 
 	ms.author="stbaro"/>
-
 
 # Bereitstellen von DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers #
 
@@ -142,7 +140,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	![Screenshot der Blätter „Ressourcengruppe“ und „Kontoblätter“ mit der hervorgehobenen Kachel „Abfrage-Explorer“.](./media/documentdb-create-documentdb-website/image8.png)
 
-11. Führen Sie die Standardabfrage "SELECT \* FROM c" aus, und überprüfen Sie die Ergebnisse. Beachten Sie, dass die Abfrage die JSON-Darstellung der Aufgaben abgerufen hat, die Sie in Schritt 7 oben erstellt haben. Sie können gerne mit Abfragen experimentieren; führen Sie z. B. SELECT \* FROM c WHERE c.isComplete = true aus, um alle Aufgaben zurückzugeben, die als abgeschlossen gekennzeichnet wurden.
+11. Führen Sie die Standardabfrage "SELECT * FROM c" aus, und überprüfen Sie die Ergebnisse. Beachten Sie, dass die Abfrage die JSON-Darstellung der Aufgaben abgerufen hat, die Sie in Schritt 7 oben erstellt haben. Sie können gerne mit Abfragen experimentieren; führen Sie z. B. SELECT * FROM c WHERE c.isComplete = true aus, um alle Aufgaben zurückzugeben, die als abgeschlossen gekennzeichnet wurden.
 
 
 	![Screenshot der Blätter „Abfrage-Explorer“ und „Ergebnisse“ mit Anzeige der Abfrageergebnisse](./media/documentdb-create-documentdb-website/image5.png)
@@ -212,4 +210,4 @@ Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwe
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

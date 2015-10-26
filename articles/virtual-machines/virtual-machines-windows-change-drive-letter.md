@@ -20,7 +20,8 @@
 
 #Ändern des Laufwerkbuchstabens des temporären Windows-Datenträgers auf einem mit dem klassischen Bereitstellungsmodell erstellten virtuellen Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Wenn Sie Laufwerk "D" zum Speichern der Daten verwenden müssen, befolgen Sie diese Anweisungen, um für den temporären Datenträger ein anderes Laufwerk zu verwenden. Verwenden Sie niemals den temporären Datenträger zum Speichern von Daten, die Sie behalten müssen.
 
@@ -74,4 +75,4 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 
 [Storage]: ../storage-whatis-account.md
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

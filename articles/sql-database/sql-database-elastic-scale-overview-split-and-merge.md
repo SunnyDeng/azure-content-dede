@@ -238,4 +238,4 @@ Darüber hinaus ermöglicht die Eindeutigkeit des Shardingschlüssels als führe
 [3]: ./media/sql-database-elastic-scale-overview-split-and-merge/diagnostics-config.png
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

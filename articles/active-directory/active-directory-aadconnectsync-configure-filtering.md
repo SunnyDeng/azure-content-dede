@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.date="10/13/2015"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -276,10 +276,9 @@ In diesem Beispiel wird die Filterung so geändert, dass nur Benutzer synchronis
 7. Führen Sie eine vollständige Synchronisierung aus: Klicken Sie auf der Registerkarte "Connectors" mit der rechten Maustaste auf "SourceAD". Klicken Sie auf "Ausführen", auf "Vollständige Synchronisierung" und dann auf "OK".
 
 
+## Nächste Schritte
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
 
-## Zusätzliche Ressourcen
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-* [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
-* [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

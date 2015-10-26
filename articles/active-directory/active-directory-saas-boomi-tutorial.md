@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Boomi erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Ein Boomi-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Boomi zugewiesen haben, mittels einmaligen Anmeldens auf der Boomi-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Boomi zugewiesen haben, mittels einmaligen Anmeldens auf der Boomi-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-boomi-tutorial/IC790825.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** des Textfelds **Boomi-Antwort-URL** Ihre **Boomi AtomSphere Anmelde-URL** \(z. B. "*https://platform.boomi.com/sso/AccountName/saml*”) ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** des Textfelds **Boomi-Antwort-URL** Ihre **Boomi AtomSphere Anmelde-URL** (z. B. "*https://platform.boomi.com/sso/AccountName/saml*”) ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-boomi-tutorial/IC790826.png "App-URL konfigurieren")
 
@@ -102,7 +102,7 @@ Damit sich Azure AD-Benutzer bei Boomi anmelden können, müssen sie in Boomi b
 
 1.  Melden Sie sich bei der **Boomi**-Unternehmenswebsite als Administrator an.
 
-2.  Wechseln Sie zu **User Management \> Users**.
+2.  Wechseln Sie zu **User Management > Users**.
 
     ![Benutzer](./media/active-directory-saas-boomi-tutorial/IC790831.png "Benutzer")
 
@@ -137,4 +137,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

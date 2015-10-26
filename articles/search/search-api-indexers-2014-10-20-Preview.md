@@ -1,4 +1,4 @@
-<properties pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" />
+<properties title="" pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" metaKeywords="" services="search" solutions="" documentationCenter="" authors="HeidiSteen" manager="mblythe" videoId="" scriptId="" />
 
 <tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/08/2015" ms.author="heidist" />
 
@@ -657,4 +657,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

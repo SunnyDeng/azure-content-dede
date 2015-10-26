@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="10/12/2015" 
 	ms.author="spelluru"/>
 
 # Datasets
@@ -103,25 +103,25 @@ Die unterstützten Datenquellen und die Dataset-Typen werden ausgerichtet. Infor
 
 ## <a name="Availability"></a> Dataset: Availability
 
-Der Abschnitt "Availability" in einem Dataset definiert das Verarbeitungsfenster oder das Modell für das Aufteilen in Slices für die Dataset-Produktion. Unter "Dataset: Slice" finden Sie weitere Informationen zum Modell für das Aufteilen von Datasets in Slices und Abhängigkeit.
+Der Abschnitt "Availability" in einem Dataset definiert das Verarbeitungsfenster oder das Modell für das Aufteilen in Slices für die Dataset-Produktion. Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Informationen zum Modell für das Aufteilen von Datasets in Slices und Abhängigkeit.
 
 | Eigenschaft | Beschreibung | Erforderlich | Standard |
 | -------- | ----------- | -------- | ------- |
-| frequency | Gibt die Zeiteinheit für die Produktion der Dataset-Slices an.<p>** Unterstützte Häufigkeit **: "Minute", "Hour", "Day", "Week", "Month"</p> | Ja | – |
+| frequency | Gibt die Zeiteinheit für die Erstellung der Datasetslices an.<p>** Unterstützte Häufigkeit **: "Minute", "Hour", "Day", "Week", "Month"</p> | Ja | – |
 | interval | Gibt einen Multiplikator für die Häufigkeit an<p>"Frequency x interval" bestimmt, wie oft der Slice erzeugt wird.</p><p>Wenn das Dataset auf Stundenbasis in Slices aufgeteilt werden soll, legen Sie **Frequency** auf **Hour** und **interval** auf **1** fest.</p><p>**Hinweis:** Wenn Sie "Frequency" auf "Minute" festlegen, sollten Sie "interval" auf mindestens 15 festlegen.</p> | Ja | – |
 | style | Gibt an, ob der Slice am Anfang/Ende des Intervalls erzeugt werden soll.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul><p>Wenn "Frequency" auf "Month" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice am letzten Tag des Monats erstellt. Wenn "style" auf "StartOfInterval" festgelegt ist, wird der Slice am ersten Tag des Monats erstellt.</p><p>Wenn "Frequency" auf "Day" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice in der letzten Stunde des Tages erstellt.</p>Wenn "Frequency" auf "Hour" und "style" auf "EndOfInterval" festgelegt ist, wird der Slice am Ende der Stunde erstellt. Ein Slice für den Zeitraum 13:00–14:00 Uhr wird z. B. um 14.00 Uhr erstellt.</p> | Nein | EndOfInterval |
-| anchorDateTime | Definiert die absolute Position in der Zeit, die der Scheduler benötigt, um DataSet-Slicegrenzen zu berechnen. <p>**Hinweis:** Wenn "anchorDateTime" über Datumsteile verfügt, die präziser als die Häufigkeit sind, werden die präziseren Teile ignoriert. Wenn z. B. ein stündliches **interval** festgelegt ist ("frequency": "hour" und "interval": 1) und **AnchorDateTime** Minuten und Sekunden enthält, werden die Minuten- und Sekundenteile von "AnchorDateTime" ignoriert. </p>| Nein | 01/01/0001 |
-| offset | Zeitspanne, um die Anfang und Ende aller DataSet-Slices verschoben werden. <p>**Hinweis:** Wenn sowohl "anchorDateTime" als auch "offset" angegeben werden, ist das Ergebnis die kombinierte Verschiebung.</p> | Nein | – |
+| anchorDateTime | Definiert die absolute Position in der Zeit, die der Scheduler benötigt, um Dataset-Slicegrenzen zu berechnen. <p>**Hinweis:** Wenn "anchorDateTime" über Datumsteile verfügt, die präziser als die Häufigkeit sind, werden die präziseren Teile ignoriert. Wenn z. B. ein **stündliches** **interval** festgelegt ist ("frequency": "hour" und "interval": 1) und **AnchorDateTime** **Minuten und Sekunden** enthält, werden die **Minuten- und Sekundenteile** von "AnchorDateTime" ignoriert. </p>| Nein | 01/01/0001 |
+| offset | Zeitspanne, um die Anfang und Ende aller Datasetslices verschoben werden. <p>**Hinweis:** Wenn sowohl "anchorDateTime" als auch "offset" angegeben werden, ist das Ergebnis die kombinierte Verschiebung.</p> | Nein | – |
 
 ### Beispiele zu "anchorDateTime"
 
-**Beispiel**: 23-Stunden-DataSet-Slices mit Startbeginn "2007-04-19T08:00:00"
+**Beispiel**: 23-Stunden-Datasetslices mit Startbeginn "2007-04-19T08:00:00"
 
 	"availability":	
 	{	
 		"frequency": "Hour",		
 		"interval": "23",	
-		"anchorDataTime":"2007-04-19T08:00:00"	
+		"anchorDateTime":"2007-04-19T08:00:00"	
 	}
 
 
@@ -142,7 +142,7 @@ Für einen zwölfmonatigen Plan ("frequency" = "month"; "interval" = 12) bedeute
 
 
 
-## <a name="Policy"></a>DataSet: Policy
+## <a name="Policy"></a>Dataset-Richtlinie
 
 Der Abschnitt "Policy" im Dataset definiert die Kriterien oder die Bedingung, die die Dataset-Slices erfüllen müssen.
 
@@ -217,4 +217,4 @@ Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmt
 
   
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

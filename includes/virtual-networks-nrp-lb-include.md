@@ -11,4 +11,4 @@ Lastenausgleichsmodule enthalten die folgenden untergeordneten Ressourcen:
 - **Überprüfungen** – Mit Überprüfungen können Sie die Integrität der VM-Instanzen nachverfolgen. Schlägt eine Integritätsüberprüfung fehl, wird die VM-Instanz automatisch aus der Rotation entfernt.
 - **Eingehende NAT-Regeln** – NAT-Regeln definieren den Eingangsdatenverkehr, der durch die Front-End-IP fließt und an die Back-End-IP verteilt wird.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

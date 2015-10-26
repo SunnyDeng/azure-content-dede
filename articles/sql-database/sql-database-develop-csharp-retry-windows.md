@@ -281,4 +281,4 @@ Führen Sie das Programm mit dem Parameter "test" aus, und überprüfen Sie, ob 
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -1,9 +1,9 @@
 <properties
 	pageTitle="Konfigurieren der Google-Authentifizierung für Ihre App Services-Anwendung"
 	description="Erfahren Sie, wie Sie die Google-Authentifizierung für Ihre App Services-Anwendung konfigurieren."
-	services="app-service\mobile"
+    services="app-service\mobile"
 	documentationCenter=""
-	authors="mattchenderson"
+	authors="mattchenderson" 
 	manager="dwrede"
 	editor=""/>
 
@@ -67,4 +67,4 @@ Sie können nun Google für die Authentifizierung in Ihrer App verwenden.
 [Azure-Verwaltungsportal]: https://portal.azure.com/
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

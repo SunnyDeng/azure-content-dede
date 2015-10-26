@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="msStevenPo"
+	manager="StevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015"
+	ms.date="10/07/2015"
 	ms.author="rkarlin"/>
 
 
@@ -81,13 +81,22 @@ Wenn während der Connector-Installation durch den Assistenten ein Fehler bei de
 
 
 ## Weitere Informationen
+Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
-[Mithilfe des Anwendungsproxys Anwendungen für sicheren Remotezugriff veröffentlichen](active-directory-application-proxy-configure.md)
 
-[Aktivieren von Anwendungsproxy-Diensten](active-directory-application-proxy-enable.md)
+- [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
+- [Veröffentlichen von Anwendungen mit Ihrem eigenen Domänennamen](active-directory-application-proxy-custom-domains.md)
+- [Aktivieren der einmaligen Anmeldung](active-directory-application-proxy-sso-using-kcd.md)
+- [Aktivieren des bedingten Zugriffs](active-directory-application-proxy-conditional-access.md)
+- [Arbeiten mit Anwendungen, die Ansprüche unterstützen](active-directory-application-proxy-claims-aware-apps.md)
+
+## Weitere Informationen zum Anwendungsproxy
+- [Onlinehilfe anzeigen](active-directory-application-proxy-enable.md)
+- [Blog zum Anwendungsproxy aufrufen](http://blogs.technet.com/b/applicationproxyblog/)
+- [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
 <!--Image references-->
 [1]: ./media/active-directory-application-proxy-troubleshoot/connectorproperties.png
 [2]: ./media/active-directory-application-proxy-troubleshoot/sessionlog.png
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

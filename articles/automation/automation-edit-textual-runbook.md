@@ -144,4 +144,4 @@ Die folgenden Beispielbefehle zeigen, wie der vorhandene Inhalt eines Runbooks d
 - [Zeitpläne](automation-schedules.md)
 - [Variablen](automation-variables.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

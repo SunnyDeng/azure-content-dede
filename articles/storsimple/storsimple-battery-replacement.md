@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Austauschen von Akkus bei StorSimple-Geräten | Microsoft Azure"
-	description="Beschreibt das Entfernen, Ersetzen und Warten des Notfallakkus auf dem StorSimple-Gerät."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt das Entfernen, Ersetzen und Warten des Notfallakkus auf dem StorSimple-Gerät."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/31/2015"
+   ms.author="alkohli" />
 
 # Ersetzen des Notfallakkus auf dem StorSimple-Gerät
 
@@ -115,4 +115,4 @@ Wenn der Status **HERUNTERGESTUFT** angezeigt wird, empfehlen wir die folgende V
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

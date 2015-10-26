@@ -17,9 +17,10 @@
 	ms.date="07/21/2015"
 	ms.author="josephd"/>
 
-# SharePoint-Intranetfarm-Arbeitsauslastung Phase 3: Konfigurieren der SQL Server-Infrastruktur
+# SharePoint-Intranetfarm-Workload Phase 3: Konfigurieren der SQL Server-Infrastruktur
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen und konfigurieren Sie die beiden SQL Server-Computer und den Mehrheitsknotencomputer des Clusters in der Dienstverwaltung und fassen diese in einem Windows-Servercluster zusammen.
 
@@ -216,7 +217,7 @@ Im folgenden Diagramm ist die aus dem erfolgreichen Abschluss dieser Phase resul
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 4: Konfigurieren der SharePoint-Server](virtual-machines-workload-intranet-sharepoint-phase4.md).
+Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 4: Konfigurieren der SharePoint-Server](virtual-machines-workload-intranet-sharepoint-phase4.md).
 
 ## Zusätzliche Ressourcen
 
@@ -232,4 +233,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 4:
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

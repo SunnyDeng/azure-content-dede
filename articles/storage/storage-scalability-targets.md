@@ -76,4 +76,4 @@ Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

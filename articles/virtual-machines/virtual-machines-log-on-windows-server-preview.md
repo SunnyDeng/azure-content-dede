@@ -19,7 +19,7 @@
 
 # Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Anmeldung bei einem virtuellen Windows-Computer mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können eine Ressource auch mit dem [klassischen Bereitstellungsmodell](virtual-machines-log-on-windows-server.md) erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-log-on-windows-server.md).
 
 Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal zum Starten einer Remotedesktopsitzung. Zuerst stellen Sie eine Verbindung mit dem virtuellen Computer her, und dann melden Sie sich an.
 
@@ -47,4 +47,4 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal z
 
 Wenn die Tipps zum Anmelden nicht hilfreich oder nicht das Gesuchte sind, finden Sie entsprechende Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md). Dieser Artikel führt Sie durch die Diagnose und Behebung von häufigen Problemen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

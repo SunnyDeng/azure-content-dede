@@ -8,7 +8,7 @@ In diesem Lernprogramm wird die Integration von Azure und Clarizen erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein Clarizen-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Clarizen zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Clarizen-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Sie können aber auch den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Lernprogramms können sich die Clarizen zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Clarizen-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -67,7 +67,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clarizen-tutorial/IC784684.png "Einmaliges Anmelden konfigurieren")
 
-4.  Melden Sie sich in einem anderen Webbrowserfenster bei der **Clarizen**-Unternehmenswebsite als Administrator an \(z. B. **https://app2.clarizen.com/Clarizen/Pages/Service/Login.aspx*).
+4.  Melden Sie sich in einem anderen Webbrowserfenster bei der **Clarizen**-Unternehmenswebsite als Administrator an (z. B. **https://app2.clarizen.com/Clarizen/Pages/Service/Login.aspx*).
 
 5.  Klicken Sie auf Ihren Benutzernamen, und klicken Sie dann auf **Settings**.
 
@@ -108,7 +108,7 @@ Damit sich Azure AD-Benutzer bei Clarizen anmelden können, müssen sie in Clar
 
 4.  Führen Sie auf der Dialogfeldseite "Invite People" die folgenden Schritte aus:
 
-    ![Invite People](./media/active-directory-saas-clarizen-tutorial/IC784691.png "Invite People")
+    ![Invite People](./media/active-directory-saas-clarizen-tutorial/IC784691.png "Personen einladen")
 
     1.  Geben Sie im Textfeld **Email** die E-Mail-Adresse eines gültigen Azure Active Directory-Kontos ein, das Sie bereitstellen möchten.
     2.  Klicken Sie auf **Invite**.
@@ -133,4 +133,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

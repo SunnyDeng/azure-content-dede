@@ -1,3 +1,7 @@
+<properties title="Load Balancing for Azure Infrastructure Services" pageTitle="Lastenausgleich für Azure-Infrastrukturdienste" description="Beschreibt die Funktionen zum Ausführen des Lastenausgleichs mit Traffic Manager und dem Lastenausgleich." metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="cherylmc" videoId="" scriptId="" manager="adinah" />
+
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="cherylmc" />
+
 #Lastenausgleich für Azure-Infrastrukturdienste#
 
 Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
@@ -58,4 +62,4 @@ Weitere Informationen finden Sie unter [Interner Lastenausgleich](../load-balanc
 
 <!-- LINKS -->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

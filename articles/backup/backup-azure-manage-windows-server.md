@@ -54,4 +54,4 @@ Jetzt können Sie folgende Aufgaben ausführen:
 - Weitere Informationen zu Azure Backup finden Sie unter [Azure Backup – Übersicht](backup-introduction-to-azure-backup.md).
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -1,12 +1,12 @@
 <properties
 	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des Ressourcen-Manager-Bereitstellungsmodus verwalten."
-	services="virtual-machines"
+	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des Azure Ressourcen-Manager-Modus verwalten."
+	services="virtual-machines,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor="tysonn"
-	tags="azure-resource-mangaer"/>
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="multiple"
@@ -14,31 +14,34 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/09/2015"
+	ms.date="10/07/2015"
 	ms.author="danlep"/>
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager-Bereitstellungsmodell. Sie können eine Ressource auch mit dem [klassischen Bereitstellungsmodell](virtual-machines-command-line-tools.md) erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-command-line-tools.md)
 
+In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure SDKs, mit PowerShell und über das Azure-Vorschauportal ausführen.
 
-In diesem Thema wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure-CLI) im **ARM-Modus** Dienste in der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können die gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs mit PowerShell und dem Azure-Portal ausführen.
+Azure-Ressourcen-Manager ermöglicht Ihnen, eine Gruppe von Ressourcen – virtuelle Computer, Websites, Datenbanken usw. – als einzelne bereitstellbare Einheit zu erstellen. Sie können dann alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. Für die Bereitstellung beschreiben Sie die Gruppenressourcen in einer JSON-Vorlage, die Sie dann für unterschiedliche Umgebungen, wie z. B. Test, Staging und Produktion, verwenden können.
 
-Die Azure-Ressourcenverwaltung ermöglicht es Ihnen, eine Gruppe von Ressourcen – virtuelle Computer, Websites, Datenbanken usw. – als einzelne bereitstellbare Einheit zu erstellen. Sie können dann alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. Für die Bereitstellung beschreiben Sie die Gruppenressourcen in einer JSON-Vorlage, die Sie dann für unterschiedliche Umgebungen, wie z. B. Tests, Staging und Produktion, verwenden können.
+## Inhalt dieses Artikels
+
+Dieser Artikel enthält die Syntax und Optionen für häufig verwendete Azure CLI-Befehle für das Ressourcen-Manager-Bereitstellungsmodell. Er bietet keine vollständige Referenz, und Ihre CLI-Version weist möglicherweise einige andere Befehle oder Parameter auf. Geben Sie zum Anzeigen der aktuellen Befehlssyntax und Optionen in der Befehlszeile im Ressourcen-Manager-Modus `azure help` oder der Hilfe für einen bestimmten Befehl `azure help [command]` ein. In der Dokumentation finden Sie auch CLI-Beispiele zum Erstellen und Verwalten bestimmter Azure-Dienste.
+
+Optionale Parameter werden in eckigen Klammern angezeigt (z. B. [Parameter]). Alle anderen Parameter müssen angegeben werden.
+
+Neben den hier dokumentierten befehlsspezifischen optionalen Parametern gibt es drei weitere optionale Parameter für die Anzeige detaillierter Ausgaben wie z. B. Anforderungsoptionen und Statuscodes. Der Parameter -v bietet ausführliche Ausgaben, und der Parameter -vv bietet noch detailliertere ausführliche Ausgaben. Mit der Option --json erfolgt die Ausgabe im reinen JSON-Format. Die Nutzung mit dem "--json"-Switch ist sehr häufig und ein wichtiger Teil für das Abrufen und Verstehen von Ergebnissen von Azure-CLI-Vorgängen, die Ressourceninformationen, Status und Protokolle zurückgeben, und auch für das Verwenden von Vorlagen. Sie können JSON-Parser-Tools installieren, z. B. **jq** oder **jsawk** oder Ihre bevorzugte Sprachbibliothek verwenden.
 
 ## Imperative und deklarative Ansätze
 
-Wie beim [Dienstverwaltungsmodus (**asm**)](../virtual-machines-command-line-tools.md) bietet der **arm**-Modus der Azure-Befehlszeilenschnittstelle Ihnen Befehle, mit denen Sie imperativ Ressourcen in der Befehlszeile erstellen können. Wenn Sie beispielsweise `azure group create <groupname> <location>` eingeben, fordern Sie Azure auf, eine Ressourcengruppe zu erstellen, und mit `azure group deployment create <resourcegroup> <deploymentname>` weisen Sie Azure an, eine Bereitstellung einer beliebigen Anzahl von Elementen zu erstellen, die in einer Gruppe abgelegt werden sollen. Da jede Art von Ressource über imperative Befehle verfügt, können Sie sie miteinander verbinden, um recht komplexe Bereitstellungen zu erstellen.
+Wie beim [Azure Service Management-Modus](../virtual-machines-command-line-tools.md) bietet der Ressourcen-Manager-Modus der Azure-Befehlszeilenschnittstelle Ihnen Befehle, mit denen Sie Ressourcen über die Befehlszeile imperativ erstellen können. Wenn Sie beispielsweise `azure group create <groupname> <location>` eingeben, fordern Sie Azure auf, eine Ressourcengruppe zu erstellen, und mit `azure group deployment create <resourcegroup> <deploymentname>` weisen Sie Azure an, eine Bereitstellung einer beliebigen Anzahl von Elementen zu erstellen, die in einer Gruppe abgelegt werden sollen. Da jede Art von Ressource über imperative Befehle verfügt, können Sie sie miteinander verbinden, um recht komplexe Bereitstellungen zu erstellen.
 
 Der Einsatz von Ressourcengruppen-_Vorlagen_, die eine Ressource beschreiben, ist jedoch ein deklarativer Ansatz, der sehr viel wirksamer ist und der es Ihnen ermöglicht, komplexe Bereitstellungen einer (fast) beliebigen Anzahl von Ressourcen für (nahezu) jeden Zweck zu automatisieren. Wenn Sie Vorlagen verwenden, ist der einzige imperative Befehl die Bereitstellung. Eine allgemeine Übersicht über Vorlagen, Ressourcen und Ressourcengruppen finden Sie unter [Übersicht über Azure-Ressourcengruppe](resource-groups-overview).
 
-> [AZURE.NOTE]Neben den hier dokumentierten befehlsspezifischen Optionen gibt es drei weitere Optionen für die Anzeige detaillierter Ausgaben wie z. B. Anforderungsoptionen und Statuscodes. Der Parameter -v bietet ausführliche Ausgaben, und der Parameter -vv bietet noch detailliertere ausführliche Ausgaben. Mit der Option "--json" werden die Ergebnisse im reinen JSON-Format ausgegeben. Diese Option ist sehr nützlich für Skripterstellungsszenarien.
->
-> Die Nutzung mit dem "--json"-Switch ist sehr häufig und ein wichtiger Teil für das Abrufen und Verstehen von Ergebnissen von Azure-CLI-Vorgängen, die Ressourceninformationen, Status und Protokolle zurückgeben, und auch für das Verwenden von Vorlagen. Sie können JSON-Parser-Tools installieren, z. B. **jq** oder **jsawk** oder Ihre bevorzugte Sprachbibliothek verwenden.
-
 ##Nutzungsanforderungen
 
-Die Setupanforderungen für die Verwendung des **arm**-Modus mit der Azure-Befehlszeilenschnittstellen sind folgende:
+Die Einrichtungsanforderungen für die Verwendung des Ressourcen-Manager-Modus mit der Azure-Befehlszeilenschnittstelle sind wie folgt:
 
 - ein Azure-Konto ([hier erhalten Sie eine kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/))
 - [Installation der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
@@ -46,10 +49,9 @@ Die Setupanforderungen für die Verwendung des **arm**-Modus mit der Azure-Befeh
 
 Sobald Sie über ein Konto verfügen, und die Azure-Befehlszeilenschnittstelle installiert haben, müssen Sie
 
-- in den **arm**-Modus wechseln, indem Sie `azure config mode arm` eingeben.
+- Wechseln Sie durch Eingabe von `azure config mode arm` in den Ressourcen-Manager-Modus.
 - Melden Sie sich bei Ihrem Azure-Konto durch Eingabe von `azure login` an, und geben Sie an den Eingabeaufforderungen Ihre Geschäfts- oder Schulidentität ein.
 
-Geben Sie nun `azure` ein, um eine Liste der Befehle auf oberster Ebene anzuzeigen, die in den folgenden Abschnitten beschrieben sind.
 
 ## azure account: Verwalten Ihrer Kontoinformationen und Veröffentlichen von Einstellungen
 Das Tool verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden. Sie finden diese Informationen im Azure-Portal in einer Einstellungsveröffentlichungsdatei, wie hier beschrieben. Sie können die Einstellungsveröffentlichungsdatei als persistente lokale Konfigurationseinstellung importieren, die das Tool dann in späteren Operationen verwendet. Sie müssen Ihre Veröffentlichungseinstellungen nur einmal importieren.
@@ -1740,4 +1742,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

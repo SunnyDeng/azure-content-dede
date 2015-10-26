@@ -274,4 +274,4 @@ Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Servi
 [.NET-API für Service Bus]: https://msdn.microsoft.com/library/microsoft.servicebus.aspx
 [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

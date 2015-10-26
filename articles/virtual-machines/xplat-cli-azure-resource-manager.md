@@ -16,7 +16,8 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel ist das Verwalten von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell beschrieben.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 In diesem Artikel erfahren Sie, wie Sie Ihre Azure-Ressourcen und Ihre virtuellen Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows im Azure-Ressourcen-Manager-Modus erstellen, verwalten und löschen können.
 
@@ -341,4 +342,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [clisetup]: ../xplat-cli-install.md
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

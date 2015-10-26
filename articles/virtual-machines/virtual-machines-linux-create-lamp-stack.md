@@ -21,7 +21,8 @@
 
 Ein "LAMP"-Stapel ist eine Gruppe von Open-Source-Software, die in der Regel zusammen installiert wird, um einem Server das Hosten dynamischer Websites und Webanwendungen zu ermöglichen. Dieser Begriff ist ein Akronym (Linux, Apache, MySQL-Datenbank, PHP), das das Linux-Betriebssystem mit dem Apache-Webserver darstellt. Die Websitedaten werden in einer MySQL-Datenbank gespeichert, und dynamische Inhalte werden von PHP verarbeitet.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 In diesem Handbuch installieren Sie einen LAMP-Stapel in einem Linux-Image und stellen dieses unter Microsoft Azure bereit.
 
@@ -101,7 +102,7 @@ Klicken Sie auf **OK** , um den Endpunkt Ihrem virtuellen Computer hinzuzufügen
 ###Schritt 2: Herstellen einer Verbindung mit dem Image, das Sie erstellt haben
 Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihrem neuen virtuellen Computer auswählen. In diesem Beispiel wird Putty verwendet.
 
-Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Portal ab. Klicken Sie auf **Durchsuchen -> Virtuelle Computer ->** Name Ihres virtuellen Computers **-> Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
+Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Portal ab. Klicken Sie auf **Durchsuchen -> Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
 
 Rufen Sie die Portnummer für SSH-Verbindungen aus dem Feld **SSH** ab. Beispiel:
 
@@ -349,7 +350,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 		sudo chgrp lampappgroup /var/www/html/  # Change the ownership to group lampappgroup
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
-	>[AZURE.NOTE] Möglicherweise müssen Sie sich erneut anmelden, wenn Sie eine Datei in "/var/www/html/" ändern möchten.
+	>[AZURE.NOTE]Möglicherweise müssen Sie sich erneut anmelden, wenn Sie eine Datei in "/var/www/html/" ändern möchten.
 -	Verwenden Sie zum Herstellen einer Verbindung mit dem DNS-Namen Ihres virtuellen Computers (z. B. "lampdemo.cloudapp.net") einen beliebigen SFTP-Client (z. B. FileZilla), und navigieren Sie dann zu "/**var/www/html**", um Ihre Website zu veröffentlichen. ![][18]
 
 
@@ -455,4 +456,4 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

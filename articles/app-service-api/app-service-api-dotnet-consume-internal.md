@@ -265,4 +265,4 @@ Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu 
 Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

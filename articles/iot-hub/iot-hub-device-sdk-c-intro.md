@@ -1,18 +1,18 @@
 <properties
-	pageTitle="Einführung in das Azure IoT-Geräte-SDK für C"
+	pageTitle="Verwenden des Azure IoT-Geräte-SDK für C | Microsoft Azure"
 	description="Erfahren Sie mehr über den Beispielcode im Azure IoT-Geräte-SDK für C sowie über die ersten Schritte."
 	services="iot-hub"
-	documentationCenter="na"
+	documentationCenter=""
 	authors="MichelBarnett"
 	manager="timlt"
 	editor=""/>
 
 <tags
      ms.service="iot-hub"
-     ms.devlang="na"
+     ms.devlang="cpp"
      ms.topic="article"
      ms.tgt_pltfrm="na"
-     ms.workload="tbd"
+     ms.workload="na"
      ms.date="09/30/2015"
      ms.author="michelb"/>
 
@@ -455,4 +455,4 @@ Jede dieser drei Funktionen ist auf die drei zuvor beschriebenen Initialisierung
 
 Dieser Artikel beschreibt die Grundlagen der Arbeit mit Bibliotheken im **Azure IoT-Geräte-SDK für C**. Nach Lesen dieses Artikels sollten Sie genügend Informationen haben, um zu wissen, was im SDK enthalten ist, und um die Architektur zu verstehen. Dank der Windows-Beispiele sollten Sie in der Lage sein, direkt mit der Arbeit zu beginnen. Im nächsten Artikel wird das SDK näher vorgestellt. Sie erhalten [weitere Informationen zur IoTHubClient-Bibliothek](iot-hub-device-sdk-c-iothubclient.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

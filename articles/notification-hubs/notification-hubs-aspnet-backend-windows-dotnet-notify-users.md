@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/05/2015"
+	ms.date="10/15/2015"
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs – Benachrichtigen von Benutzern
@@ -28,7 +28,14 @@ Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff a
 Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm [Sichere Pushbenachrichtigungen]. Nachdem Sie die Schritte in diesem Lernprogramm abgeschlossen haben, können Sie mit dem Lernprogramm [Sichere Pushbenachrichtigungen] fortfahren, in dem Sie erfahren, wie Sie den Code aus diesem Lernprogramm ändern, um eine Pushbenachrichtigung auf sichere Weise zu senden.
 
 
-Den vollständigen Code für dieses Lernprogramm finden Sie [hier](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers) auf GitHub.
+
+
+
+## Voraussetzungen
+
+Wir nehmen Ihr Feedback ernst. Wenn Sie beim Durcharbeiten dieses Themas Probleme oder Vorschläge zur Verbesserung dieses Inhalts haben, würden wir uns über Ihr Feedback unten auf der Seite freuen.
+
+Den vollständigen Code für dieses Tutorial finden Sie [hier](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers) auf GitHub.
 
 
 
@@ -377,4 +384,4 @@ In diesem Abschnitt aktualisieren Sie den Code in dem Projekt, das Sie für das 
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

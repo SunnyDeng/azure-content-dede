@@ -93,4 +93,4 @@ Virtuelle Geräte sind von [benutzerdefinierten Routen und IP-Weiterleitung](../
 - [Reservieren einer öffentlichen IP-Adresse](../virtual-networks-reserved-public-ip.md)
 - Weitere Informationen zu [benutzerdefinierten Routen und IP-Weiterleitung](virtual-networks-udr-overview.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Entwurfskonzepte für Azure AD Connect | Microsoft Azure"
-	description="In diesem Thema werden bestimmte Aspekte des Implementierungsentwurfs beschrieben."
-	services="active-directory"
-	documentationCenter=""
-	authors="AndKjell"
-	manager="stevenpo"
-	editor=""/>
+   description="In diesem Thema werden bestimmte Aspekte des Implementierungsentwurfs beschrieben."
+   services="active-directory"
+   documentationCenter=""
+   authors="AndKjell"
+   manager="stevenpo"
+   editor=""/>
 
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="Identity"
-	ms.date="09/03/2015"
-	ms.author="andkjell"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="Identity"
+   ms.date="10/13/2015"
+   ms.author="andkjell"/>
 
 # Entwurfskonzepte für Azure AD Connect
 Dieses Themas beschreibt, welche Aspekte bei der Planung der Implementierung von Azure AD Connect berücksichtigt werden müssen. Bestimmte Aspekte werden hier sehr gründlich behandelt, und diese Konzepte werden in anderen Themen auch kurz beschrieben.
@@ -66,4 +66,7 @@ Aus diesem Grund gelten die folgenden Einschränkungen für Azure AD Connect:
 - Wenn Sie einen anderen Azure AD Connect-Server installieren, müssen Sie das gleiche Attribut sourceAnchor wie zuvor auswählen. Wenn Sie zuvor bereits DirSync verwendet haben und zu Azure AD wechseln, müssen Sie **objectGUID** verwenden, da dieses Attribut von DirSync verwendet wird.
 - Wenn der Wert für sourceAnchor geändert wird, nachdem das Objekt nach Azure AD exportiert wurde, meldet die Azure AD Connect-Synchronisierung einen Fehler, und lässt keine weiteren Änderungen am Objekt zu, bevor das Problem behoben und die Änderung von sourceAnchor im Quellverzeichnis wieder rückgängig gemacht worden ist.
 
-<!---HONumber=September15_HO1-->
+## Nächste Schritte
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+
+<!---HONumber=Oct15_HO3-->

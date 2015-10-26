@@ -99,7 +99,6 @@ Microsoft unterstützt mindestens zwei aktuelle Versionen jeder unterstützten G
 
 > [AZURE.WARNING]Die Deaktivierung der Gastbetriebssystemfamilie 1 begann am 1. Juni 2013 und wird voraussichtlich in Kürze abgeschlossen sein. Erstellen Sie mit dieser Gastbetriebssystemfamilie keine neuen Installationen, und führen Sie für ältere Systeme, die diese Gastbetriebssystemfamilie verwenden, ein Upgrade durch. Weitere Informationen finden Sie in den [Deaktivierungsinformationen zur Azure-Gastbetriebssystemfamilie 1][fam1retire].
 
-Das Gastbetriebssystem umfasst eine Konfiguration, die sich von den Standardeinstellungen von Windows Server unterscheidet. Weitere Informationen finden Sie unter [Unterschiede zwischen dem Azure-Gastbetriebssystem und Windows Server (Standardinstallation)][server and gos].
 
 ### Erläuterung zu Gastbetriebssystemfamilie, -version und -release
 Die Gastbetriebssystemfamilien basieren auf veröffentlichten Versionen von Microsoft Windows Server. Das Gastbetriebssystem ist das zugrunde liegende Betriebssystem, auf dem Azure Cloud Services ausgeführt werden. Jedes Gastbetriebssystem verfügt über eine Familien-, eine Versions- und eine Releasenummer.
@@ -232,7 +231,7 @@ Diese Seite enthält Informationen zu anstehenden Gastbetriebssystemreleases. Ku
 
 Für Microsoft Azure werden ständig Updates veröffentlicht. Das Gastbetriebssystem ist nur ein solches Update in der Pipeline. Ein Release kann durch eine Reihe von Faktoren beeinflusst werden, die zu zahlreich sind, um hier aufgeführt zu werden. Darüber hinaus wird Azure auf Hunderttausenden von Computern ausgeführt. Daher ist es unmöglich, ein genaues Datum und eine Uhrzeit anzugeben, zu der Ihre Rollen neu gestartet werden. Wir aktualisieren den [RSS-Feed zu Gastbetriebssystemupdates][rss] mit den neuesten Informationen, wir uns vorliegen. Dabei handelt es sich jedoch um ungefähre Zeitfenster. Uns ist bekannt, dass dies für Kunden problematisch ist, und arbeiten an einem Plan zur Begrenzung oder zeitlichen Planung von Neustarts.
 
-Wenn eine neue Version des Gastbetriebssystems veröffentlicht wird, kann die vollständige Verteilung über Azure einige Zeit in Anspruch nehmen. Während Dienste auf das neue Gastbetriebssystem aktualisiert werden, werden sie den Updatedomänen entsprechend neu gestartet. Dienste, für die automatische Updates festgelegt wurden, erhalten zuerst ein Release. Nach dem Update wird die neue Gastbetriebssystemversion für Ihren Dienst im Azure-Verwaltungsportal aufgeführt. Erneute Releases können während dieses Zeitraums auftreten. Einige Versionen können über einen längeren Zeitraum bereitgestellt werden, und es finden möglicherweise für viele Wochen nach dem offiziellen Veröffentlichungsdatum keine automatischen Upgradeneustarts statt. Sobald ein Gastbetriebssystem verfügbar ist, können Sie diese Version explizit im Portal oder in der Konfigurationsdatei auswählen. Weitere Informationen finden Sie unter [Aktualisieren des Azure-Gastbetriebssystems über das Verwaltungsportal][update guest os portal] und unter [Aktualisieren des Azure-Gastbetriebssystems durch Ändern der Dienstkonfigurationsdatei][update guest os svc].
+Wenn eine neue Version des Gastbetriebssystems veröffentlicht wird, kann die vollständige Verteilung über Azure einige Zeit in Anspruch nehmen. Während Dienste auf das neue Gastbetriebssystem aktualisiert werden, werden sie den Updatedomänen entsprechend neu gestartet. Dienste, für die automatische Updates festgelegt wurden, erhalten zuerst ein Release. Nach dem Update wird die neue Gastbetriebssystemversion für Ihren Dienst im Azure-Verwaltungsportal aufgeführt. Erneute Releases können während dieses Zeitraums auftreten. Einige Versionen können über einen längeren Zeitraum bereitgestellt werden, und es finden möglicherweise für viele Wochen nach dem offiziellen Veröffentlichungsdatum keine automatischen Upgradeneustarts statt. Sobald ein Gastbetriebssystem verfügbar ist, können Sie diese Version explizit im Portal oder in der Konfigurationsdatei auswählen.
 
 Viele wertvolle Informationen zu Neustarts und Verweise auf weitere technische Informationen zu Gast- und Hostbetriebssystemupdates finden Sie im MSDN-Blogbeitrag [Role Instance Restarts Due to OS Upgrades][restarts].
 
@@ -324,7 +323,7 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 | 2\.19 rel1 | WA-GUEST-OS-2.19\_201309-01 | 23\. September 2013 | N/V | 14\. Mai 2014 |
 
 
-[Updateeinstellungen für Azure-Gastbetriebssysteme]: https://msdn.microsoft.com/library/azure/ff729420.aspx
+[Updateeinstellungen für Azure-Gastbetriebssysteme]: cloud-services-how-to-configure.md
 [rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft-Sicherheitsempfehlung 3009008]: https://technet.microsoft.com/library/security/3009008.aspx
@@ -344,4 +343,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

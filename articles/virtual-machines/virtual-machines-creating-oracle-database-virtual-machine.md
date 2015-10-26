@@ -17,7 +17,8 @@
 	
 #Erstellen eines virtuellen Oracle Database-Computers in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine, VM) auf der Grundlage eines von Microsoft bereitgestellten Oracle Database-Image unter Windows Server 2012 in Azure erstellen. Der Vorgang umfasst zwei Schritte: die Erstellung des virtuellen Computers und die Erstellung der Oracle-Datenbank auf dem virtuellen Computer. In diesem Beispiel wird Oracle Database Version 12c verwendet, die Schritte sind jedoch für Version 11g nahezu identisch.
 
@@ -199,4 +200,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

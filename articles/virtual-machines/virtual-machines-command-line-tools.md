@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltung | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit den Befehlszeilentools für Mac, Linux und Windows Azure unter Verwendung der Azure-Befehlszeilenschnittstelle im klassischen (Dienstverwaltung) Bereitstellungsmodus verwalten."
+	description="Erfahren Sie, wie Sie mit den Befehlszeilentools für Mac, Linux und Windows Azure unter Verwendung der Azure-Befehlszeilenschnittstelle im klassischen (Azure Service Management-) Modus verwalten."
 	services="virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
 	authors="dlepow"
@@ -14,24 +14,26 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="10/07/2015"
 	ms.author="danlep"/>
 
 # Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell. Sie können eine Ressource auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-deploy-rmtemplates-azure-cli.md) erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Erstellen und Verwalten einer Ressource mithilfe von CLI-Befehlen (Command-Line Interface, Befehlszeilenschnittstelle) im klassischen Bereitstellungsmodell behandelt. Sie können eine Ressource auch mit CLI-Befehlen im [Bereitstellungsmodell des Ressourcen-Managers](azure-cli-arm-commands.md) erstellen und verwalten.
 
-In diesem Thema wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle im **ASM-Modus** Dienste in der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Die Funktionen ähneln denen der Dienstverwaltungs-Cmdlets von Windows PowerShell, die mit den Azure SDKs für .NET, Node.JS und PHP installiert werden.
+In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle im Azure Service Management-Modus (ASM) Dienste an der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs mit PowerShell und über das Azure-Portal ausführen. Das Verwenden von Azure-Diensten im Azure Service Management-Modus ähnelt konzeptuell dem Erstellen und Verwalten individueller Azure-Konzepte und -Dienste (Websites, virtuelle Computer, virtuelle Netzwerke, Speicher usw.).
 
-> [AZURE.NOTE]Das Verwenden von Azure-Diensten im **ASM-Modus** ähnelt begrifflich individuellen Azure-Konzepten und -Diensten wie Websites, virtuellen Computern, virtuellen Netzwerken, Speicher usw. Im **ARM-Modus** stehen Ihnen in der Befehlszeile umfangreichere Funktionen mit einem logisch gruppierten und hierarchischen Ressourcenmodell zur Verfügung. Weitere Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
+> [AZURE.NOTE]Für den Einstieg müssen Sie die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) installieren und [sich für die Verwendung der mit Ihrem Konto verknüpften Azure-Ressourcen anmelden](../xplat-cli-connect.md).
 
-Eine Installationsanleitung finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
+## Inhalt dieses Artikels
+
+Dieser Artikel enthält die Syntax und Optionen für häufig verwendete Azure CLI-Befehle für das klassische (Service Management) Bereitstellungsmodell. Er bietet keine vollständige Referenz, und Ihre CLI-Version weist möglicherweise einige andere Befehle oder Parameter auf. Geben Sie zum Anzeigen der aktuellen Befehlssyntax und Optionen in der Befehlszeile im Service Management-Modus `azure help` oder der Hilfe für einen bestimmten Befehl `azure help [command]` ein. In der Dokumentation finden Sie auch CLI-Beispiele zum Erstellen und Verwalten bestimmter Azure-Dienste.
 
 Optionale Parameter werden in eckigen Klammern angezeigt (z. B. [Parameter]). Alle anderen Parameter müssen angegeben werden.
 
 Neben den hier dokumentierten befehlsspezifischen optionalen Parametern gibt es drei weitere optionale Parameter für die Anzeige detaillierter Ausgaben wie z. B. Anforderungsoptionen und Statuscodes. Der Parameter -v bietet ausführliche Ausgaben, und der Parameter -vv bietet noch detailliertere ausführliche Ausgaben. Mit der Option --json erfolgt die Ausgabe im reinen JSON-Format.
 
-## Festlegen des **asm-Modus**
+## Festlegen des Service Management-Modus
 
 Der Dienstverwaltungsmodus wird bei der Erstinstallation der Befehlszeilenschnittstelle standardmäßig aktiviert. Verwenden Sie bei Bedarf den folgenden Befehl, um die Dienstverwaltungsbefehle der Azure-Befehlszeilenschnittstelle zu aktivieren:
 
@@ -789,7 +791,7 @@ Dieser Befehl tauscht zwei Web-App-Steckplätze.
 
 Dieser Befehl unterstützt die folgende zusätzliche Option:
 
-**** "-q" oder **--quiet**: Keine Bestätigungsaufforderungen. Verwenden Sie diese Option in automatisierten Skripts.
+****-q oder **--quiet**: Keine Bestätigungsaufforderungen. Verwenden Sie diese Option in automatisierten Skripts.
 
 
 **site start [Optionen] [Name]**
@@ -2348,4 +2350,4 @@ Löscht einen DNS-Servereintrag aus der Netzwerkkonfiguration.
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -2,10 +2,11 @@
 	pageTitle="Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blobspeicher | Microsoft Azure" 
 	description="Erstellen von Hive-Tabellen und Laden von Daten aus Blobs in Hive-Tabellen" 
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="hangzh-msft" 
 	manager="paulettm" 
-	editor="cgronlun" />
+	editor="cgronlun"  />
 
 <tags 
 	ms.service="machine-learning" 
@@ -145,4 +146,4 @@ Sie können nicht direkt Daten im ORC-Speicherformat aus dem Blob in Hive-Tabell
 Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

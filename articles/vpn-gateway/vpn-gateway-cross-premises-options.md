@@ -102,4 +102,4 @@ Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Tech
 
 Weitere Informationen finden Sie unter [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md) und [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

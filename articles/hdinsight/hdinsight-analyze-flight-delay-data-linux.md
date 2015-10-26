@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Analysieren von Daten zu Flugverspätungen mit Hadoop in HDInsight | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mithilfe eines PowerShell-Skripts einen HDInsight-Cluster bereitstellen, einen Hive-Auftrag ausführen, einen Sqoop-Auftrag ausführen und den Cluster löschen können." 
+	pageTitle="Analysieren von Daten zu Flugverspätungen mit Hive in Linux-basiertem HDInsight | Microsoft Azure" 
+	description="Hier erfahren Sie, wie Sie Flugverspätungsdaten mithilfe von Hive in einem Linux-basierten HDInsight-Cluster analysieren und anschließend die Daten mithilfe von Sqoop in SQL-Datenbank exportieren." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="Blackmist" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="10/09/2015" 
 	ms.author="larryfr"/>
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
@@ -305,4 +305,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

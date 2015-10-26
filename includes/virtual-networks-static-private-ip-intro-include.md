@@ -2,4 +2,4 @@ Die virtuellen IaaS-Computer (VMs) und PaaS-Rolleninstanzen in einem virtuellen 
 
 In bestimmten Fällen sollte ein virtueller Computer oder eine Rolleninstanz eine statische IP-Adresse besitzen, wenn beispielsweise auf Ihrem virtuellen Computer DNS ausgeführt wird oder der virtuelle Computer als Domänencontroller fungieren soll. Dazu können Sie eine statische private IP-Adresse festlegen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

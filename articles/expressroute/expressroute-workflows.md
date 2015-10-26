@@ -12,10 +12,10 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
+   ms.date="10/12/2015"
    ms.author="cherylmc"/>
 
-# Bereitstellungsworkflows für ExpressRoute-Verbindungen und Verbindungszustände
+# ExpressRoute-Workflows für die Verbindungsbereitstellung und Verbindungszustände
 Auf dieser Seite erhalten Sie einen Überblick über die Workflows zur Dienstbereitstellung und Routingkonfiguration.
 
 ![](./media/expressroute-workflows/expressroute-circuit-workflow.png)
@@ -121,4 +121,4 @@ Wenn der Zustand der angekündigten öffentlichen Präfixe *validation needed* l
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

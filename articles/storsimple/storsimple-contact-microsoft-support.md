@@ -76,4 +76,4 @@ Führen Sie zum Starten einer Supportsitzung die folgenden Schritte aus:
 
 > [AZURE.IMPORTANT]Sie können den Supportzugriff deaktivieren, indem Sie `Disable-HcsSupportAccess` deaktivieren. Das StorSimple-Gerät versucht acht Stunden nach dem Initiieren der Sitzung ebenfalls, den Supportzugriff zu deaktivieren. Es wird empfohlen, die Anmeldeinformationen für das StorSimple-Gerät nach dem Initiieren einer Supportsitzung zu ändern.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

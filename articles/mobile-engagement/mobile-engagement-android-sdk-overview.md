@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Integration des Azure Mobile Engagement Android SDKs"
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
 	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
-	services="mobile-engagement"
-	documentationCenter="mobile"
-	authors="piyushjo"
-	manager="dwrede"
-	editor=""/>
+	services="mobile-engagement" 
+	documentationCenter="mobile" 
+	authors="piyushjo" 
+	manager="dwrede" 
+	editor="" />
 
 <tags 
-	ms.service="mobile-engagement"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/10/2015"
-	ms.author="piyushjo"/>
+	ms.service="mobile-engagement" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-android" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="08/10/2015" 
+	ms.author="piyushjo" />
 
 
 #Android SDK für Azure Mobile Engagement
@@ -48,4 +48,4 @@ Frühere Versionen finden Sie unter [Vollständige Versionshinweise](mobile-enga
 
 Wenn Sie bereits eine ältere Version unseres SDKs in die Anwendung integriert haben, finden Sie Informationen dazu in [Upgrade-Verfahren](mobile-engagement-android-upgrade-procedure.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

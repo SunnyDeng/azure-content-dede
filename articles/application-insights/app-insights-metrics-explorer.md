@@ -207,9 +207,9 @@ Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Pow
 <!--Link references-->
 
 [alerts]: app-insights-alerts.md
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
 [track]: app-insights-api-custom-events-metrics.md
 
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

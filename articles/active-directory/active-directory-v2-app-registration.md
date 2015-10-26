@@ -41,4 +41,4 @@ Nun, da Sie über eine Microsoft-App verfügen, können Sie eines unserer Schnel
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-v2-quickstart-table.md)]
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

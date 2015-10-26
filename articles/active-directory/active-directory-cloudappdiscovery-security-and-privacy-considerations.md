@@ -177,4 +177,4 @@ Um die Sicherheit der erfassten Metadaten zu gewährleisten, haben standardmäß
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

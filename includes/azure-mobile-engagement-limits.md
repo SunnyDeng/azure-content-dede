@@ -9,4 +9,4 @@ Kriterien pro Segment|10
 Aktive Pushkampagnen|50 pro App
 Pushkampagnen insgesamt (einschließlich aktiv und abgeschlossen)|1\.000 pro App
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

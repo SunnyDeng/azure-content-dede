@@ -1,19 +1,19 @@
 <properties 
-pageTitle="Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services"
-	description="Konfigurieren einer Azure-Clouddienstanwendung für Remotedesktopverbindungen."
-	services="cloud-services"
-	documentationCenter=""
-	authors="sbtron"
-	manager="timlt"
-	editor=""/>
+pageTitle="Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services" 
+description="Konfigurieren einer Azure-Clouddienstanwendung für Remotedesktopverbindungen." 
+services="cloud-services" 
+documentationCenter="" 
+authors="sbtron" 
+manager="timlt" 
+editor=""/>
 <tags 
-ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/06/2015"
-	ms.author="saurabh"/>
+ms.service="cloud-services" 
+ms.workload="tbd" 
+ms.tgt_pltfrm="na" 
+ms.devlang="na" 
+ms.topic="article" 
+ms.date="10/14/2015" 
+ms.author="saurabh"/>
 
 # Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services
 
@@ -147,4 +147,4 @@ Die Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg
 
 [Konfigurieren von Clouddiensten](cloud-services-how-to-configure.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

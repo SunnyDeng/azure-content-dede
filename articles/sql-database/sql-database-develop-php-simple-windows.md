@@ -126,11 +126,11 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
-\- Starten von Transaktionen
+- Starten von Transaktionen
 
-\- Hinzufügen einer Zeile mit Daten und Aktualisieren einer anderen Datenzeile
+- Hinzufügen einer Zeile mit Daten und Aktualisieren einer anderen Datenzeile
 
-\- Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
+- Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
 
 
 	function Transactions()
@@ -180,4 +180,4 @@ Weitere Informationen über die Installation und Verwendung von PHP finden Sie u
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

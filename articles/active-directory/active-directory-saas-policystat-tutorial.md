@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und PolicyStat erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Einen PolicyStat-Mandanten
   
-Nach Abschluss dieses Tutorials können sich die PolicyStat zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer PolicyStat-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die PolicyStat zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer PolicyStat-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -65,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-policystat-tutorial/IC808630.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-Einstellungen konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei PolicyStat verwendete URL ein \(z. B. *https://demo-azure.policystat.com*\), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-Einstellungen konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei PolicyStat verwendete URL ein (z. B. *https://demo-azure.policystat.com*), und klicken Sie dann auf **Weiter**.
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-policystat-tutorial/IC808631.png "Konfigurieren von App-Einstellungen")
 
@@ -100,7 +100,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     1.  Öffnen Sie die heruntergeladene Metadatendatei, kopieren Sie den Inhalt, und fügen Sie ihn in das Textfeld **Ihre Identitätsanbietermetadaten** ein.
     2.  Klicken Sie auf **Änderungen speichern**.
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-policystat-tutorial/IC771723.png "Einmaliges Anmelden konfigurieren")
 
@@ -108,13 +108,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Attribute](./media/active-directory-saas-policystat-tutorial/IC795920.png "Attribute")
 
-13. Führen Sie zum Hinzufügen der erforderlichen Attributzuordnungen die folgenden Schritte aus:
+13. So fügen Sie die erforderlichen Attributzuordnungen hinzu:
 
     ![Attribute](./media/active-directory-saas-policystat-tutorial/IC804823.png "Attribute")
 
     1.  Klicken Sie auf **Benutzerattribut hinzufügen**.
     2.  Geben Sie im Textfeld **Attributname** die Zeichenfolge **uid** ein.
-    3.  Wählen Sie im Textfeld **Attributwert** die Option **ExtractMailPrefix\(\)** aus.
+    3.  Wählen Sie im Textfeld **Attributwert** die Option **ExtractMailPrefix()** aus.
     4.  Wählen Sie in der Liste **E-Mail** die Option **User.mail** aus.
     5.  Klicken Sie auf **Fertig stellen**.
 ##Konfigurieren der Benutzerbereitstellung
@@ -141,4 +141,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

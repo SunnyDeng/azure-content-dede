@@ -47,4 +47,4 @@ Laden Sie das Diagramm **Übersicht der Microsoft Azure Machine Learning Studio-
 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

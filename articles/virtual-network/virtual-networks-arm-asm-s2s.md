@@ -363,4 +363,4 @@ Da die beiden VNets nun verbunden sind, müssen Sie die Konnektivität testen, i
 - Weitere Informationen zum [Netzwerkressourcenanbieter (Network Resource Provider, NRP) für ARM](../resource-groups-networking.md).
 - Anzeigen der allgemeinen Richtlinien zum [Erstellen einer S2S-VPN-Verbindung zwischen einem klassischen VNet und einem ARM-VNet](../virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

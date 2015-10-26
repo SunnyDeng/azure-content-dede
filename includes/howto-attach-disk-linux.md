@@ -5,7 +5,7 @@ Weitere Detailinformationen zu Datenträgern finden Sie unter [Informationen zu 
 ## Gewusst wie: Anfügen eines leeren Datenträgers
 Eine einfachere Methode zum Hinzufügen eines Datenträgers besteht im Anfügen eines leeren Datenträgers, weil Azure die VHD-Datei automatisch erstellt und sie im Speicherkonto ablegt.
 
-1.  Öffnen Sie die Azure-Befehlszeilenschnittstelle \(CLI\) für Mac, Linux und Windows, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-connect.md).
+1.  Öffnen Sie die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-connect.md).
 
 2.  Stellen Sie sicher, dass Sie sich im standardmäßigen Azure-Dienstverwaltungsmodus befinden, indem Sie `azure config
  	mode asm` eingeben.
@@ -33,7 +33,7 @@ Eine einfachere Methode zum Hinzufügen eines Datenträgers besteht im Anfügen 
 
 Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkonto benötigt.
 
-1. 	Öffnen Sie die Azure-Befehlszeilenschnittstelle \(CLI\) für Mac, Linux und Windows, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-connect.md).
+1. 	Öffnen Sie die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-connect.md).
 
 2.  Stellen Sie sicher, dass Sie sich im standardmäßigen Azure-Dienstverwaltungsmodus befinden. Wenn Sie zuvor in den Ressourcenverwaltungsmodus gewechselt waren, stellen Sie den Standardmodus durch Eingeben von `azure config mode asm` wieder her.
 
@@ -92,4 +92,4 @@ Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkont
 
 > [AZURE.NOTE]Wenn Sie einen Datenträger angefügt haben, müssen Sie sich auf dem virtuellen Computer anmelden und den Datenträger initialisieren, damit der virtuelle Computer ihn zur Speicherung verwenden kann.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

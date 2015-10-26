@@ -1,19 +1,19 @@
 <properties
-	pageTitle="Grundlegendes zum Schutz von Standort auf Azure"
-	description="Verwenden Sie diesen Artikel, um die technischen Konzepte zu verstehen, mit denen Sie Azure Site Recovery erfolgreich installieren, konfigurieren und verwalten können."
-	services="site-recovery"
-	documentationCenter=""
-	authors="anbacker"
-	manager="mkjain"
+	pageTitle="Grundlegendes zum Schutz von Standort auf Azure" 
+	description="Verwenden Sie diesen Artikel, um die technischen Konzepte zu verstehen, mit denen Sie Azure Site Recovery erfolgreich installieren, konfigurieren und verwalten können." 
+	services="site-recovery" 
+	documentationCenter="" 
+	authors="anbacker" 
+	manager="mkjain" 
 	editor=""/>
 
 <tags 
-	ms.service="site-recovery"
+	ms.service="site-recovery" 
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="09/01/2015"
+	ms.workload="storage-backup-recovery" 
+	ms.date="09/01/2015" 
 	ms.author="anbacker"/>
 
 
@@ -79,4 +79,4 @@ Es gibt eine integrierte Wiederholungslogik, wenn Replikationsfehler auftreten. 
 - [Microsoft-Support](./site-recovery-monitoring-and-troubleshooting.md#reaching-out-for-microsoft-support)
 - [Häufige Fehler bei der automatischen Systemwiederherstellung und deren Lösungen](./site-recovery-monitoring-and-troubleshooting.md#common-asr-errors-and-their-resolutions)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

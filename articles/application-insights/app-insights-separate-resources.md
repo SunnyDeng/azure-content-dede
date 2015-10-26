@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Trennen von Application Insights-Ressourcen für Entwicklung, Test und Produktion"
-	description="Überwachen der Leistung und Nutzung Ihrer Anwendung in verschiedenen Entwicklungsphasen"
-	services="application-insights"
-	documentationCenter=""
-	authors="alancameronwills"
+	pageTitle="Trennen von Application Insights-Ressourcen für Entwicklung, Test und Produktion" 
+	description="Überwachen der Leistung und Nutzung Ihrer Anwendung in verschiedenen Entwicklungsphasen" 
+	services="application-insights" 
+    documentationCenter=""
+	authors="alancameronwills" 
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/02/2015" 
 	ms.author="awills"/>
 
 # Trennen von Application Insights-Ressourcen für Entwicklung, Test und Produktion
@@ -94,8 +94,8 @@ Der iKey wird auch in Webseiten Ihrer App in dem [Skript verwendet, das Sie auf 
 [api]: app-insights-api-custom-events-metrics.md
 [diagnostic]: app-insights-diagnostic-search.md
 [metrics]: app-insights-metrics-explorer.md
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

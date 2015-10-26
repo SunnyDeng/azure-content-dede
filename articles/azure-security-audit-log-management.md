@@ -614,4 +614,4 @@ Die folgenden Ressourcen bieten allgemeine Informationen zu Microsoft Azure und 
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

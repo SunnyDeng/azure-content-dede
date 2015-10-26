@@ -33,4 +33,4 @@
  
 2. Installieren Sie den StorSimple-Adapter für SharePoint. Der neue Adapter erkennt automatisch die Inhaltsdatenbanken, die zuvor mit RBS verwendet wurden, und verwendet die vorherigen Einstellungen.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

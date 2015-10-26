@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Replicon erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein Replicon-Mandant
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Replicon zugewiesen haben, mittels einmaliger Anmeldung auf der Replicon-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Replicon zugewiesen haben, mittels einmaliger Anmeldung auf der Replicon-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -67,10 +67,10 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-replicon-tutorial/IC777803.png "App-URL konfigurieren")
 
-    1.  Geben Sie in das Textfeld **Replicon-Anmelde- URL** Ihre Replicon-Mandanten-URL ein \(z. B.: **https://na2.replicon.com/company/saml2/sp-sso/post*).
-2.  Geben Sie im Textfeld **Replicon-Antwort-URL** Ihre **AssertionConsumerService-URL** für Replicon ein \(z. B. **https://global.replicon.com/!/saml2/company/sso/post*).
+    1.  Geben Sie in das Textfeld **Replicon-Anmelde- URL** Ihre Replicon-Mandanten-URL ein (z. B.: **https://na2.replicon.com/company/saml2/sp-sso/post*).
+2.  Geben Sie im Textfeld **Replicon-Antwort-URL** Ihre **AssertionConsumerService-URL** für Replicon ein (z. B. **https://global.replicon.com/!/saml2/company/sso/post*).
 
-        >[AZURE.NOTE]Sie können die URL aus den Replicon-Metadaten unter: **https://global.replicon.com/!/saml2/\\< YourCompanyKey \>** abrufen.
+        >[AZURE.NOTE]Sie können die URL aus den Replicon-Metadaten unter: **https://global.replicon.com/!/saml2/\< YourCompanyKey >** abrufen.
 
     3.  Klicken Sie auf **Weiter**.
 
@@ -84,7 +84,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Klicken Sie auf „SAML-Authentifizierung aktivieren“.](./media/active-directory-saas-replicon-tutorial/IC777805.png "Klicken Sie auf „SAML-Authentifizierung aktivieren“.")
 
-    1.  Zum Anzeigen des Dialogfeldes **EnableSAML Authentication2** hängen Sie Folgendes hinter Ihrem Firmenschlüssel. **/services/SecurityService1.svc/help/test/EnableSAMLAuthentication2** an. Nachfolgend wird das Schema das Schema der vollständigen URL angezeigt: **https://na2.replicon.com/\\< YourCompanyKey \> /services/SecurityService1.svc/help/test/EnableSAMLAuthentication2**
+    1.  Zum Anzeigen des Dialogfeldes **EnableSAML Authentication2** hängen Sie Folgendes hinter Ihrem Firmenschlüssel. **/services/SecurityService1.svc/help/test/EnableSAMLAuthentication2** an. Nachfolgend wird das Schema das Schema der vollständigen URL angezeigt: **https://na2.replicon.com/\< YourCompanyKey > /services/SecurityService1.svc/help/test/EnableSAMLAuthentication2**
     2.  Klicken Sie auf **+**, um den Abschnitt **v20Configuration** auszuklappen.
     3.  Klicken Sie auf **+**, um den Abschnitt **metaDataConfiguration** auszuklappen.
     4.  Klicken Sie auf **Datei auswählen**, um die Metadaten-XML-Datei Ihres Identitätsanbieters auszuwählen. Klicken Sie dann auf **Senden**.
@@ -100,7 +100,7 @@ Damit sich Azure AD-Benutzer bei Replicon anmelden können, müssen sie in Repli
 
 1.  Melden Sie sich in einem Webbrowserfenster bei der Replicon-Unternehmenswebsite als Administrator an.
 
-2.  Wechseln Sie zu **Verwaltung \> Benutzer**.
+2.  Wechseln Sie zu **Verwaltung > Benutzer**.
 
     ![Benutzer](./media/active-directory-saas-replicon-tutorial/IC777806.png "Benutzer")
 
@@ -132,10 +132,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-replicon-tutorial/IC777809.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-replicon-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

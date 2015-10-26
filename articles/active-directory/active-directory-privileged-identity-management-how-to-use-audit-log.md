@@ -57,4 +57,4 @@ Wenn Sie alle Filter für das Überwachungsprotokoll festgelegt haben, klicken S
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -294,4 +294,4 @@ Weitere Informationen finden Sie unter [Entwickeln von Skriptaktionsskripts für
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Phasen während der Clustererstellung"
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

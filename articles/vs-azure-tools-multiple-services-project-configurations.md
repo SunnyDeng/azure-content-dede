@@ -110,4 +110,4 @@ Zum Konfigurieren von für ein gesamtes Azure-Clouddienstprojekt gültigen Einst
 |Entwicklung|Auf dieser Seite geben Sie Buildkonfigurationsanweisungen und die Bedingungen an, unter denen Postbuildereignisse ausgeführt werden.|
 |Web|Auf dieser Seite konfigurieren Sie Einstellungen für den Webserver.|
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -30,4 +30,4 @@ REST-API | Zum Erstellen, Überwachen und Verwalten von Azure Data Factorys kön
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

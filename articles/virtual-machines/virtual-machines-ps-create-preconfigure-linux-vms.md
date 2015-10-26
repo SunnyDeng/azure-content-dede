@@ -25,7 +25,8 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Mit den folgenden Schritten können Sie mithilfe einer Reihe von Azure PowerShell-Befehlen einen virtuellen Linux-Computer mit dem klassischen Verwaltungsmodell erstellen und vorkonfigurieren. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Linux-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
 
@@ -141,7 +142,7 @@ Option 1: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-Der kurze Name des Cloud-Diensts ist der Name in der Liste der Azure Cloud Services im Azure-Portal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
+Der kurze Name des Clouddiensts ist der Name in der Liste der Azure Cloud Services im Azure-Portal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
 
 Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst und virtuellen Netzwerk.
 
@@ -155,7 +156,7 @@ Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 Wenn Sie einen Texteditor verwenden, kopieren Sie den Befehlssatz schließlich in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Führen Sie alternativ den Befehlssatz in der PowerShell ISE aus.
 
-Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Cloud-Diensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus.
+Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Clouddiensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus.
 
 Informieren Sie sich nach dem Erstellen des virtuellen Computers unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).
 
@@ -264,4 +265,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

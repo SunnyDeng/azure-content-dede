@@ -219,4 +219,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: mobile-services-android-get-started.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

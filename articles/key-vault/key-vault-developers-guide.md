@@ -67,4 +67,4 @@ Die folgenden Artikel bieten aufgabenspezifische Anleitungen:
 
 - Dieser Download enthält sowohl die Beispielanwendung „HelloKeyVault“ als auch ein Azure-Webdienstbeispiel. [Codebeispiele für Azure-Schlüsseltresor](http://www.microsoft.com/download/details.aspx?id=45343)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

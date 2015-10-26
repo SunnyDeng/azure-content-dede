@@ -115,4 +115,4 @@ Um die Profilbearbeitung in Ihrer Anwendung zu ermöglichen, müssen Sie eine Ri
 
     > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

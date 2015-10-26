@@ -16,11 +16,11 @@
 	ms.date="08/12/2015"
 	ms.author="dastrock"/>
 
-# App-Modell v2.0 \(Vorschauversion\): Was ist anders?
+# App-Modell v2.0 (Vorschauversion): Was ist anders?
 
 Wenn Sie mit dem allgemeinen Azure AD-Dienst vertraut sind oder in der Vergangenheit Apps in Azure AD integriert haben, gibt es möglicherweise einige Unterschiede im App-Modell v2.0, die Sie nicht erwarten. In diesem Dokument werden die Unterschiede zu Ihrem Verständnis erläutert.
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 
 ## Microsoft-Konten und Azure AD-Konten
@@ -108,7 +108,7 @@ Wenn Sie einer App erlauben, Berechtigungen dynamisch über den `scope`-Paramete
 ## Offline-Zugriff
 Das App-Modell v2.0 führt eine neue, altbekannte Berechtigung für Apps ein – den `offline_access`-Bereich. Alle Apps müssen diese Berechtigung anfordern, wenn sie im Auftrag eines Benutzers für einen längeren Zeitraum auf Ressourcen zugreifen wollen, selbst, wenn der Benutzer die App nicht aktiv verwendet. Der `offline_access`-Bereich wird dem Benutzer in den Zustimmungsdialogfeldern als "Auf Ihre Daten offline zugreifen" angezeigt, wofür der Benutzer seine Zustimmung gewähren muss. Durch Anfordern der `offline_access`-Berechtigung kann Ihre Web-App OAuth 2.0-Aktualisierungstoken vom v2. 0-Endpunkt erhalten. Aktualisierungstoken sind langlebig und können durch neue OAuth 2.0-Zugriffstoken für längere Zugriffszeiten ausgetauscht werden.
 
-Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Aktualisierungstoken empfangen. Dies bedeutet, dass Sie beim Einlösen eines Autorisierungscodes im [OAuth 2.0-Authorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) nur ein Zugriffstoken vom `/oauth2/token`-Endpunkt erhalten. Dieses Zugriffstoken bleibt für einen kurzen Zeitraum \(in der Regel eine Stunde\) gültig, läuft aber anschließend ab. Zu diesem Zeitpunkt muss Ihre App den Benutzer zurück auf den `/oauth2/authorize`-Endpunkt leiten, um einen neuen Autorisierungscode abzurufen. Während dieser Umleitung muss der Benutzer möglicherweise seine Anmeldeinformationen erneut eingeben oder den Berechtigungen erneut zustimmen, je nach Apptyp.
+Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Aktualisierungstoken empfangen. Dies bedeutet, dass Sie beim Einlösen eines Autorisierungscodes im [OAuth 2.0-Authorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) nur ein Zugriffstoken vom `/oauth2/token`-Endpunkt erhalten. Dieses Zugriffstoken bleibt für einen kurzen Zeitraum (in der Regel eine Stunde) gültig, läuft aber anschließend ab. Zu diesem Zeitpunkt muss Ihre App den Benutzer zurück auf den `/oauth2/authorize`-Endpunkt leiten, um einen neuen Autorisierungscode abzurufen. Während dieser Umleitung muss der Benutzer möglicherweise seine Anmeldeinformationen erneut eingeben oder den Berechtigungen erneut zustimmen, je nach Apptyp.
 
 Um mehr über OAuth 2.0, Aktualisierungstoken und Zugriffstoken zu erfahren, lesen Sie die [App-Modell v2.0-Protokollreferenz](active-directory-v2-protocols.md).
 
@@ -121,4 +121,4 @@ Weitere Informationen zu den spezifischen Ansprüchen, die in App-Modell v2.0-To
 ## Einschränkungen der Vorschau
 Es gibt eine Reihe von Einschränkungen beim Erstellen einer App mit dem App-Modell v2. 0 in der öffentlichen Vorschau, die Sie berücksichtigen sollten. Sehen Sie im [Dokument „App-Modell v2.0 - Einschränkungen](active-directory-v2-limitations.md) nach, um zu prüfen, ob diese Einschränkungen für Ihr spezielles Szenario gelten.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

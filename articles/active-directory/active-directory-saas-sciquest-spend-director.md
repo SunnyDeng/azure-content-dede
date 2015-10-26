@@ -19,13 +19,13 @@
 
 # Lernprogramm: Azure Active Directory-Integration mit SciQuest Spend Director
 
-In diesem Tutorial erfahren Sie, wie Sie SciQuest Spend Director in Azure Active Directory \(Azure AD\) integrieren können.<br>Die Integration von SciQuest Spend Director in Azure AD bietet Ihnen folgende Vorteile:
+In diesem Tutorial erfahren Sie, wie Sie SciQuest Spend Director in Azure Active Directory (Azure AD) integrieren können.<br>Die Integration von SciQuest Spend Director in Azure AD bietet Ihnen folgende Vorteile:
 
 - Sie können in Azure AD steuern, wer auf SciQuest Spend Director Zugriff hat. 
-- Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch für SciQuest Spend Director anzumelden \(einmaliges Anmelden\).
+- Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch für SciQuest Spend Director anzumelden (einmaliges Anmelden).
 - Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal
 
-Weitere Informationen zur Integration von Saas-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
+Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
 ## Voraussetzungen 
 
@@ -103,7 +103,7 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
 5. Wenden Sie sich an den SciQuest-Support, um diese Authentifizierungsmethode mithilfe der oben genannten heruntergeladenen Metadaten zu aktivieren.
 
 6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.<br><br>![Was ist Azure AD Connect?][15]
-10. Klicken Sie auf der Seite **Bestätigung für einmaliges Anmelden** auf **Abschließen**. <br><br>!\[What is Azure AD Connect\]\[16\]
+10. Klicken Sie auf der Seite **Bestätigung für einmaliges Anmelden** auf **Abschließen**. <br><br>![What is Azure AD Connect][16]
 
 
 
@@ -195,4 +195,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-sciquest-spend-director/tutorial_general_19.png
 [205]: ./media/active-directory-saas-sciquest-spend-director/tutorial_general_20.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

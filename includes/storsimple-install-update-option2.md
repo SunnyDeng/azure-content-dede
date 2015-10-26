@@ -12,4 +12,4 @@
 
 7. Sie können nun [das Verwaltungsportal zum Installieren von Update 1.2 verwenden](#use-the-management-portal-to-install-update-1). Befolgen Sie die Anleitung beginnend mit Schritt 3 dieses Verfahrens. Nachdem Sie alle Updates installiert haben, können Sie die deaktivierte Netzwerkschnittstelle wieder aktivieren.
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

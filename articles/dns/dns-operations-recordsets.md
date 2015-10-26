@@ -36,7 +36,7 @@ Datensatzgruppen werden mit dem Cmdlet "New-AzureDnsRecordSet" erstellt. Sie mü
 
 >Verwenden Sie für einen Datensatz auf oberster Ebene der Zone "@" als Datensatznamen, einschließlich der Anführungszeichen. Der vollqualifizierte Name der Datensatzgruppe entspricht dann dem Zonennamen, in diesem Fall "contoso.com".
 
-Azure DNS unterstützt die folgenden Eintragstypen: A, AAAA, CNAME, MX, NS, SOA, SRV und TXT. Datensatzgruppen vom Typ SOA werden automatisch mit jeder Zone erstellt; sie können nicht separat erstellt werden.
+Azure DNS unterstützt die folgenden Eintragstypen: A, AAAA, CNAME, MX, NS, SOA, SRV und TXT. Datensatzgruppen vom Typ SOA werden automatisch mit jeder Zone erstellt; sie können nicht separat erstellt werden. Beachten Sie, dass [der SPF-Datensatztyp durch die DNS-Standards zugunsten des Erstellens von SPF-Datensätzen mit dem Datensatztyp TXT verworfen wurde](http://tools.ietf.org/html/rfc7208#section-3.1).
 
 	PS C:\> $rs = New-AzureDnsRecordSet -Name www -Zone $zone -RecordType A -Ttl 300 [-Tag $tags] [-Overwrite] [-Force]
 
@@ -271,4 +271,4 @@ Das Datensatzgruppenobjekt kann auch weitergeleitet werden, anstatt als Paramete
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](../dns-getstarted-create-recordset)<BR> [Durchführen von Vorgängen für DNS-Zonen](../dns-operations-dnszones)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](../dns-sdk)
  
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

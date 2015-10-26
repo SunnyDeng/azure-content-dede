@@ -98,4 +98,4 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

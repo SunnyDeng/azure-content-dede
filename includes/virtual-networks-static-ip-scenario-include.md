@@ -8,4 +8,4 @@ In diesem Szenario erstellen Sie einen virtuellen Computer mit der Bezeichnung *
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

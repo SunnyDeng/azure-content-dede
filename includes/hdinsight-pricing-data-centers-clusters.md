@@ -1,4 +1,4 @@
 
 > [AZURE.IMPORTANT]Das Speicherkonto muss sich im selben Rechenzentrum wie der HDInsight-Cluster befinden. Verfügbare Rechenzentren finden Sie im Menü **Regionen** auf der Seite [HDInsight-Preisdetails](/pricing/details/hdinsight/).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

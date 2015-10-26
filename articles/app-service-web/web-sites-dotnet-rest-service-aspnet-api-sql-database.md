@@ -1,36 +1,37 @@
 <properties 
-	pageTitle="Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service"
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine App bereitstellen, die die ASP.NET-Web-API mithilfe von Visual Studio für eine Azure-Web-App verwendet."
-	services="app-service\web"
-	documentationCenter=".net"
-	authors="Rick-Anderson"
-	manager="wpickett"
+	pageTitle="Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service" 
+	description="In diesem Tutorial erfahren Sie, wie Sie eine App bereitstellen, die die ASP.NET-Web-API mithilfe von Visual Studio für eine Azure-Web-App verwendet." 
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="Rick-Anderson" 
+	writer="Rick-Anderson" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="08/31/2015" 
 	ms.author="riande"/>
 
 # Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service
 
-In diesem Lernprogramm wird die Bereitstellung einer ASP.NET-Web-App für einen [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mit dem Assistenten "Web veröffentlichen" in Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt.
+In diesem Tutorial wird die Bereitstellung einer ASP.NET-Web-App für einen [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mit dem Assistenten "Web veröffentlichen" in Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt.
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Auf diese Weise können Sie völlig kostenlos mit der Entwicklung für Azure beginnen.
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine einfache Web-App, die in der Cloud ausgeführt wird.
+Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Tutorials verfügen Sie über eine einfache Web-App, die in der Cloud ausgeführt wird.
  
 Sie lernen Folgendes:
 
 * Ermöglichen der Azure-Entwicklung auf Ihrem Computer durch Installieren des Azure SDK
-* Erstellen eines Visual Studio ASP.NET MVC 5-Projekts und Veröffentlichen dieses Projekts in einer Azure App.
+* Erstellen eines Visual Studio ASP.NET MVC 5-Projekts und Veröffentlichen dieses Projekts in einer Azure-App.
 * Verwenden des ASP.NET Web-API zum Aktivieren von Restful API-Aufrufen
 * Verwenden einer SQL-Datenbank zum Speichern von Daten in Azure
-* Veröffentlichen von Azure-Anwendungsaktualisierungen
+* Veröffentlichen von Anwendungsaktualisierungen in Azure
 
 Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 beruht und für den Datenbankzugriff ADO.NET Entity Framework verwendet. In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
@@ -59,7 +60,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 b
 
 1. Klicken Sie im Dialogfeld **Neues ASP.Net-Projekt** auf **OK**.
 
-	![Dialogfeld "New ASP.NET Project"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
+	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
 
 Wenn Sie sich noch nicht in Azure angemeldet haben, werden Sie dazu aufgefordert.
 
@@ -68,7 +69,7 @@ Wenn Sie sich noch nicht in Azure angemeldet haben, werden Sie dazu aufgefordert
 
 	![Konfigurieren von Azure Websites](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configAz.PNG)
 
-Wenn Sie über einen Datenbankserver verfügen, verwenden Sie diesen, um eine neue Datenbank zu erstellen. Datenbankserver sind wertvolle Ressourcen, und Sie möchten in der Regel zwecks Test und Entwicklung mehrere Datenbanken auf demselben Server erstellen, anstatt einen Datenbankserver pro Datenbank zu erstellen. Vergewissern Sie sich, dass sich Website und Datenbank in derselben Region befinden.
+Wenn Sie über einen Datenbankserver verfügen, verwenden Sie diesen, um eine neue Datenbank zu erstellen. Datenbankserver sind wertvolle Ressourcen. Sie sollten in der Regel zwecks Test und Entwicklung mehrere Datenbanken auf demselben Server erstellen, anstatt einen Datenbankserver pro Datenbank zu erstellen. Vergewissern Sie sich, dass sich Website und Datenbank in derselben Region befinden.
 
 ![Konfigurieren von Azure Websites](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
 
@@ -540,12 +541,12 @@ in:
 
 	![Web-API-Speicherdialog][addwebapi007]
 
-	**Sicherheitswarnung**: Ihre Anwendung ist unsicher und anfällig für CSRF-Angriffe. Im Verlauf des Lernprogramms korrigieren wir diese Schwachstelle. Weitere Informationen erhalten Sie unter [Verhindern von Cross-Site Request Forgery (CSRF)-Angriffen][prevent-csrf-attacks].
+	**Sicherheitswarnung**: Ihre Anwendung ist unsicher und anfällig für CSRF-Angriffe. Im Verlauf des Tutorials korrigieren wir diese Schwachstelle. Weitere Informationen erhalten Sie unter [Verhindern von Cross-Site Request Forgery (CSRF)-Angriffen][prevent-csrf-attacks].
 ## Hinzufügen von XSRF-Schutz
 
 Bei der websiteübergreifenden Anforderungsfälschung (auch bekannt als XSRF oder CSRF) handelt es sich um einen Angriff auf eine im Web gehostete Anwendung, bei der eine schädliche Website die Interaktion zwischen einem Clientbrowser und einer Website, der der Browser vertraut, beeinflussen kann. Diese Angriffe sind möglich, da Webbrowser bei jeder Anforderung an eine Website automatisch Authentifizierungstoken senden. Ein typisches Beispiel ist ein Authentifizierungscookie, wie das Authentifizierungsticket von ASP.NET. Websites, die einen persistenten Authentifizierungsmechanismus verwenden (wie Windows-Authentifizierung, HTTP-Basic usw.), sind für derartige Angriffe anfällig.
 
-Ein XSRF-Angriff unterscheidet sich von einem Phishing-Angriff. Bei Phishing-Angriffen ist die Beihilfe des Opfers erforderlich. Bei Phishing-Angriffen wird die Zielwebsite durch eine schädliche Website imitiert und dazu gebracht, geheime Daten an den Angreifer zu übermitteln. Bei einem XSRF-Angriff ist häufig keinerlei Aktion des Opfers erforderlich. Der Angreifer geht davon aus, dass der Browser automatisch alle relevanten Cookies an die Zielwebsite sendet.
+Ein XSRF-Angriff unterscheidet sich von einem Phishing-Angriff. Bei Phishing-Angriffen ist die Beihilfe des Opfers erforderlich. Bei Phishing-Angriffen wird die Zielwebsite durch eine schädliche Website imitiert und das Opfer dazu verleitet, geheime Daten an den Angreifer zu übermitteln. Bei einem XSRF-Angriff ist häufig keinerlei Aktion des Opfers erforderlich. Der Angreifer geht davon aus, dass der Browser automatisch alle relevanten Cookies an die Zielwebsite sendet.
 
 Weitere Informationen finden Sie unter [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) XSRF(https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 
@@ -717,7 +718,7 @@ Wenn der Eintrag auf der Contact Manager Seite gespeichert und angezeigt wird, w
 
 ![Indexseite mit Kontakten][addwebapi004]
 
-Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank zum Speichern von Daten. Löschen Sie die Anwendung, sobald Sie das Testing in Azure abgeschlossen haben. Die Anwendung ist öffentlich und der Zugriff auf sie kann nicht beschränkt werden.
+Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank zum Speichern von Daten. Löschen Sie die Anwendung, sobald Sie die Tests in Azure abgeschlossen haben. Die Anwendung ist öffentlich und der Zugriff auf sie kann nicht beschränkt werden.
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -725,7 +726,7 @@ Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank 
 
 Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank ](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Web-Anwendung mithilfe der Mitgliedsdatenbank bereitstellen.
 
-Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespeichert werden. Dieser Speicher bietet nichtrelationale Datenspeicherung in Form von Blobs und Tabellen. Die folgenden Links bieten weitere Informationen zu WEB API, ASP.NET MVC und Windows Azure.
+Ferner können Daten in einer Azure-Anwendung mithilfe von Azure Storage gespeichert werden, das nichtrelationale Datenspeicherung in Form von Blobs und Tabellen bietet. Die folgenden Links bieten weitere Informationen zu WEB API, ASP.NET MVC und Microsoft Azure.
  
 
 * [Erste Schritte in Entity Framework mit MVC][EFCodeFirstMVCTutorial]
@@ -735,7 +736,7 @@ Daten können außerdem über den Azure-Speicher in einer Azure-Anwendung gespei
 
 Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) sowie Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) geschrieben.
 
-Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert werden kann, und zwar nicht nur bezüglich des Lernprogramms, sondern auch bezüglich der Produkte, die darin vorgestellt werden. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Wir interessieren uns vor allem dafür, wie groß das Interesse an weiteren Automatisierungen in Bezug auf die Konfiguration und Bereitstellung der Mitgliedsdatenbank ist.
+Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den darin vorgestellten Produkten gelungen ist und was vielleicht verbessert werden kann. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Wir interessieren uns vor allem dafür, wie groß das Interesse an weiteren Automatisierungen in Bezug auf die Konfiguration und Bereitstellung der Mitgliedsdatenbank ist.
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -810,4 +811,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

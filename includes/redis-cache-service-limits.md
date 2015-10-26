@@ -9,4 +9,4 @@ Die erhältliche Größe und die Konfigurationsbeschränkungen von Azure Redis C
 
 Weitere Informationen zu den Konfigurationsbeschränkungen von Azure Redis Cache finden Sie unter [Standardardmäßige Redis-Server-Konfiguration](redis-cache/cache-configure.md#default-redis-server-configuration).
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

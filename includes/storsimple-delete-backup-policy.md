@@ -12,4 +12,4 @@
 Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die neue Liste der Richtlinien anzuzeigen.
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

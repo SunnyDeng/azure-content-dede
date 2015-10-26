@@ -21,7 +21,8 @@
 
 In diesem Artikel erfahren Sie, wie Sie einen HPC Pack-Cluster mithilfe einer Azure-Schnellstartvorlage oder eines Azure PowerShell-Bereitstellungsskripts für Azure-Infrastrukturdienste (IaaS) bereitstellen. Hierzu werden VM-Images aus Azure Marketplace verwendet, die für die Ausführung von Microsoft Excel- oder SOA-Workloads mit HPC Pack konzipiert sind. Mit dem Cluster können Sie einfache Excel-HPC- und SOA-Dienste über einen lokalen Clientcomputer ausführen. Zu den Excel-HPC-Diensten zählen die Abladung von Excel-Arbeitsmappen sowie benutzerdefinierte Funktionen (User-Defined Functions, UDFs) von Excel.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel werden Ressourcen behandelt, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt werden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
 
 Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellenden HPC Pack-Cluster.
 
@@ -234,7 +235,7 @@ Führen Sie die folgenden Schritte durch, um eine Excel-Arbeitsmappe für die Au
 ```
 4.	Laden Sie die gesamte [HPC Pack 2012 R2 Update 2-Installation](http://www.microsoft.com/download/details.aspx?id=47755) herunter, und installieren Sie den HPC Pack-Client. Alternativ können Sie auch die [HPC Pack 2012 R2 Update 2-Clienthilfsprogramme](https://www.microsoft.com/download/details.aspx?id=47754) und die entsprechende weitervertreibbare Visual C++ 2010-Komponente für Ihren Computer ([x64](http://www.microsoft.com/download/details.aspx?id=14632) oder [x86](https://www.microsoft.com/download/details.aspx?id=5555)) herunterladen und installieren.
 
-5.	In diesem Beispiel verwenden wir eine Excel-Beispielarbeitsmappe namens „ConvertiblePricing\_Complete.xlsb“, die Sie [hier](https://www.microsoft.com/de-DE/download/details.aspx?id=2939) herunterladen können.
+5.	In diesem Beispiel verwenden wir eine Excel-Beispielarbeitsmappe namens „ConvertiblePricing\_Complete.xlsb“, die Sie [hier](https://www.microsoft.com/en-us/download/details.aspx?id=2939) herunterladen können.
 
 6.	Kopieren Sie die Excel-Arbeitsmappe in einen Ordner (beispielsweise „D:\\Excel\\Run“).
 
@@ -271,7 +272,7 @@ Führen Sie die folgenden Schritte durch, um eine Excel-Arbeitsmappe für die Au
 
 Wenn Sie Excel-UDFs verwenden möchten, führen Sie zur Einrichtung des Clientcomputers die weiter oben angegebenen Schritte 1 bis 3 durch. Für Excel-UDFs muss die Excel-Anwendung nicht auf den Serverknoten installiert sein. Sie können in Schritt 1 also anstelle des Serverknotenimage mit Excel ein normales Serverknotenimage auswählen.
 
->[AZURE.NOTE]Im Clusterconnector-Dialogfeld von Excel 2010 und 2013 sind maximal 34 Zeichen zulässig. Längere Clusternamen wie etwa „hpcexcelhn01.southeastasia.cloudapp.azure.com“ passen nicht in das Dialogfeld. Dies kann folgendermaßen umgangen werden: Wenden Sie QFE-Update 2 (KB3085833, [hier](http://www.microsoft.com/de-DE/download/details.aspx?id=48725) als Download verfügbar) für die SOA-Sitzungs-API auf dem Clientcomputer an, und legen Sie dann im Dialogfeld als Name des Clusterhauptknotens eine computerweite Variable wie etwa *CCP\_IAASHN* mit dem Wert des langen Clusternamens und der Eingabe *%CCP\_IAASHN%* fest.
+>[AZURE.NOTE]Im Clusterconnector-Dialogfeld von Excel 2010 und 2013 sind maximal 34 Zeichen zulässig. Längere Clusternamen wie etwa „hpcexcelhn01.southeastasia.cloudapp.azure.com“ passen nicht in das Dialogfeld. Dies kann folgendermaßen umgangen werden: Wenden Sie QFE-Update 2 (KB3085833, [hier](http://www.microsoft.com/en-us/download/details.aspx?id=48725) als Download verfügbar) für die SOA-Sitzungs-API auf dem Clientcomputer an, und legen Sie dann im Dialogfeld als Name des Clusterhauptknotens eine computerweite Variable wie etwa *CCP\_IAASHN* mit dem Wert des langen Clusternamens und der Eingabe *%CCP\_IAASHN%* fest.
 
 Führen Sie nach erfolgreicher Bereitstellung des Clusters die folgenden Schritte durch, um eine integrierte Beispiel-Excel-UDF auszuführen. Wenn Sie angepasste Excel-UDFs benötigen, sehen Sie sich [diese Ressourcen](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx) an, um die XLLs zu erstellen und auf dem IaaS-Cluster bereitzustellen.
 
@@ -388,4 +389,4 @@ Für die SOA-Clientanwendung muss lediglich der Hauptname auf den vollständigen
 [endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

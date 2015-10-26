@@ -50,4 +50,4 @@ Sie können ein vorhandenes Traffic Manager-Profil so deaktivieren, dass keine B
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

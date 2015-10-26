@@ -810,4 +810,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

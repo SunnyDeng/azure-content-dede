@@ -21,7 +21,8 @@
 
 Apache Tomcat (oder einfach Tomcat, früher auch Jakarta Tomcat) ist ein Open-Source-Webserver und Servlet-Container und wurde von der Apache Software Foundation (ASF) entwickelt. Tomcat implementiert das Java-Servlet und die JavaServer Pages (JSP)-Spezifikationen von Sun Microsystems und bietet eine reine Java-HTTP-Webserverumgebung zum Ausführen von Java-Code. In der einfachsten Konfiguration wird Tomcat in einem einzelnen Betriebssystem-Prozess ausgeführt. Dieser Prozess führt eine Java Virtual Machine (JVM) aus. Jede HTTP-Anforderung von einem Browser an Tomcat wird als separater Thread im Tomcat-Prozess verarbeitet.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Handbuch installieren Sie tomcat7 in einem Linux-Image und stellen dieses unter Microsoft Azure bereit.
 
@@ -68,7 +69,7 @@ Konfigurieren Sie weitere Einstellungen wie erforderlich, und klicken Sie dann a
 ##Phase 2: Vorbereiten des virtuellen Computers für Tomcat7
 In dieser Phase konfigurieren Sie einen Endpunkt für Tomcat-Datenverkehr und stellen dann eine Verbindung mit dem neuen virtuellen Computer her.
 ###Schritt 1: Öffnen des HTTP-Ports, um Webzugriff zu erlauben
-Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem öffentlichen und einem privaten Port. Der private Port ist der Port, an dem der Dienst auf dem virtuellen Computer lauscht. Der öffentliche Port ist der Port, an dem der Azure-Cloud-Dienst extern auf internetbasierten Datenverkehr lauscht.
+Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem öffentlichen und einem privaten Port. Der private Port ist der Port, an dem der Dienst auf dem virtuellen Computer lauscht. Der öffentliche Port ist der Port, an dem der Azure-Clouddienst extern auf internetbasierten Datenverkehr lauscht.
 
 TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen Port mit einem Azure-Endpunkt öffnen, können Sie und andere Internetclients auf die Tomcat-Seiten zugreifen.
 
@@ -305,4 +306,4 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 [17]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-17.png
 [18]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-18.png
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

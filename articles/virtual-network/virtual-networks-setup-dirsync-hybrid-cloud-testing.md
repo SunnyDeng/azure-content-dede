@@ -19,7 +19,8 @@
 
 # Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+ 
 
 Dieses Thema führt Sie durch die Erstellung einer hybriden Cloud-Umgebung zum Testen von Office 365-Verzeichnissynchronisierung (DirSync) mit Kennwortsynchronisierung in Microsoft Azure gehostet. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -36,7 +37,7 @@ Diese Konfiguration simuliert einen Dirsync-Server in Azure-Produktionsumgebung 
 Diese Konfiguration bietet eine Grundlage und einen allgemeinen Ausgangspunkt für Folgendes:
 
 - Entwickeln und Testen von Anwendungen für Office 365, die Synchronisierung mit lokalen Active Directory-Domäne mithilfe der Kennwortsynchronisierung abhängen.
-- Durchführen Sie diese Cloud-basierten IT-Arbeitsauslastung Tests.
+- Testen dieses cloudbasierten IT-Workloads
 
 Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 
@@ -199,4 +200,4 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

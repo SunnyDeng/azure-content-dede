@@ -137,4 +137,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Azure Management Portal]: https://manage.windowsazure.com/
 [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

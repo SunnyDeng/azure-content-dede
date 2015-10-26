@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="10/12/2015"
 	ms.author="raynew"/>
 
 # Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN
@@ -347,7 +347,8 @@ Testen Sie Ihre Bereitstellung, um sicherzustellen, dass das Failover von virtue
 	![Virtuelle Computer hinzufügen](./media/site-recovery-vmm-san/SRSAN_RPlanVM.png)
 5. Erstellte Wiederherstellungspläne werden auf der Registerkarte **Wiederherstellungspläne** angezeigt.
 6. Wählen Sie auf der Registerkarte **Wiederherstellungspläne** den gewünschten Wiederherstellungsplan aus, und klicken Sie auf **Testfailover**.
-7. Wählen Sie auf der Seite **Testfailover bestätigen** den Eintrag **Kein** aus. Bei Aktivierung dieser Option werden nach einem Failover die virtuellen Computer im Replikat mit keinem Netzwerk verbunden. Es wird getestet, ob das Failover für den virtuellen Computer wie erwartet erfolgt, ohne dass Ihre Netzwerkumgebung für die Replikation getestet wird. Wenn Sie ein umfassenderes Testfailover durchführen möchten, lesen Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=522291">Testen einer Bereitstellung zwischen lokalen Standorten in MSDN</a> nach.
+7. Wählen Sie auf der Seite **Testfailover bestätigen** den Eintrag **Kein** aus. Bei Aktivierung dieser Option werden nach einem Failover die virtuellen Computer im Replikat mit keinem Netzwerk verbunden. Es wird getestet, ob das Failover für den virtuellen Computer wie erwartet erfolgt, ohne dass Ihre Netzwerkumgebung für die Replikation getestet wird. Sehen Sie sich an, wie [ein Testfailover ausgeführt wird](site-recovery-failover.md#run-a-test-failover), um mehr über das Verwenden verschiedener Netzwerkoptionen zu erfahren.
+
 
 	![Testnetzwerk auswählen](./media/site-recovery-vmm-san/SRSAN_TestFailover1.png)
 
@@ -382,4 +383,4 @@ Auf der Registerkarte **Jobs** können Sie Aufträge anzeigen, ein Drill-Down zu
 
 Weitere Informationen zur Interaktion mit Aufträgen und dem Dashboard finden Sie unter [Betrieb und Überwachung](http://go.microsoft.com/fwlink/?LinkId=398534).
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

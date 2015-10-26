@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="08/18/2015" 
 	ms.author="mandia"/>
 
 
@@ -39,7 +39,7 @@ Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http:
 
 - Die EDI-Kontrollnummern werden gesichert, um ihre Kontinuität aufrechtzuerhalten. Wenn Nachrichten nach der letzten Sicherung verarbeitet werden, kann es bei der Wiederherstellung dieses Sicherungsinhalts zu doppelten Kontrollnummern kommen.
 
-- Wenn in einem Batch aktive Nachrichten vorliegen, verarbeiten Sie den Batch, **bevor** Sie eine Sicherung durchführen. Beim Erstellen \(bedarfsgesteuerter oder geplanter\) Sicherungen werden Nachrichten in Batches niemals gespeichert.
+- Wenn in einem Batch aktive Nachrichten vorliegen, verarbeiten Sie den Batch, **bevor** Sie eine Sicherung durchführen. Beim Erstellen (bedarfsgesteuerter oder geplanter) Sicherungen werden Nachrichten in Batches niemals gespeichert.
 
 	**Wenn eine Sicherung mit aktiven Nachrichten in einem Batch durchgeführt wird, werden diese Nachrichten nicht gesichert und gehen deshalb verloren.**
 
@@ -96,7 +96,7 @@ Sie können eine Sicherung entweder über das Azure-Verwaltungsportal oder über
 
 #### Wiederherstellen einer Sicherung
 
-1. Wählen Sie im Azure-Verwaltungsportal **Neu** \> **App Services** \> **BizTalk Service** \> **Wiederherstellen** aus:
+1. Wählen Sie im Azure-Verwaltungsportal **Neu** > **App Services** > **BizTalk Service** > **Wiederherstellen** aus:
 
 	![Wiederherstellen einer Sicherung][Restore]
 
@@ -127,7 +127,7 @@ Wenn die Wiederherstellung erfolgreich abgeschlossen wurde, wird auf der Seite "
 
 BizTalk Services werden immer im Status **Angehalten** wiederhergestellt. In diesem Status können Sie vor Inbetriebnahme der neuen Umgebung beliebige Konfigurationsänderungen vornehmen. Beispiele:
 
-- Wenn Sie BizTalk Service-Anwendungen mithilfe des Azure BizTalk Services SDK erstellt haben, müssen Sie eventuell die ACS-Anmeldeinformationen \(Access Control Service, Zugriffssteuerungsdienst\) in diesen Anwendungen aktualisieren, damit diese in der wiederhergestellten Umgebung funktionieren.
+- Wenn Sie BizTalk Service-Anwendungen mithilfe des Azure BizTalk Services SDK erstellt haben, müssen Sie eventuell die ACS-Anmeldeinformationen (Access Control Service, Zugriffssteuerungsdienst) in diesen Anwendungen aktualisieren, damit diese in der wiederhergestellten Umgebung funktionieren.
 
 - Sie stellen einen BizTalk Service wieder her, um eine vorhandene BizTalk Service-Umgebung zu replizieren. Wenn Sie in einem solchen Fall im ursprünglichen BizTalk Services-Portal Vereinbarungen konfiguriert haben, die FTP-Quellordner verwenden, müssen Sie unter Umständen die Vereinbarungen in der wiederhergestellten Umgebung auf die Verwendung eines anderen FTP-Quellordners aktualisieren. Ansonsten versuchen möglicherweise zwei unterschiedliche Vereinbarungen, dieselbe Nachricht abzurufen.
 
@@ -233,4 +233,4 @@ Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie 
 [RestoreBizTalkService]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

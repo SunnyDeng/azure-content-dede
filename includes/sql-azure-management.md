@@ -3,7 +3,7 @@
 
 Sie können SQL Server Management Studio (SSMS) verwenden, um logische Server und Datenbanken der Azure SQL-Datenbank zu verwalten. Dieses Thema enthält Anleitungen für häufige Aufgaben mit SSMS. Sie sollten bereits einen logischen Server und eine logische Datenbank in der Azure SQL-Datenbank erstellt haben, bevor Sie beginnen. Um zu beginnen, lesen Sie [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md) und kehren dann zurück.
 
-Es wird empfohlen, dass Sie die neueste Version von SSMS verwenden, wenn Sie mit der Azure SQL-Datenbank arbeiten. Klicken Sie hierfür auf [Herunterladen von SQL Server Management Studio](https://msdn.microsoft.com/de-de/library/mt238290.aspx).
+Es wird empfohlen, dass Sie die neueste Version von SSMS verwenden, wenn Sie mit der Azure SQL-Datenbank arbeiten. Klicken Sie hierfür auf [Herunterladen von SQL Server Management Studio](https://msdn.microsoft.com/de-DE/library/mt238290.aspx).
 
 
 ## Herstellen einer Verbindung mit einem logischen SQL-Datenbankserver
@@ -125,7 +125,7 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
 
 ## Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten</h2>
 
-SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine einzelne Datenbank überwachen können. Im Folgenden finden Sie einige wenige Beispiele für die Art Überwachungsdaten, die Sie mit diesen Ansichten abrufen können. Umfassende Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](https://msdn.microsoft.com/library/azure/ff394114.aspx).
+SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine Einzeldatenbank überwachen können. Im Folgenden finden Sie einige wenige Beispiele für die Art Überwachungsdaten, die Sie mit diesen Ansichten abrufen können. Umfassende Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](https://msdn.microsoft.com/library/azure/ff394114.aspx).
 
 -   Die Abfrage einer dynamischen Verwaltungsansicht erfordert die Berechtigung **VIEW DATABASE STATE**. Wenn Sie einem bestimmten Benutzer die Berechtigung **VIEW DATABASE STATE** zuweisen möchten, stellen Sie mit Ihrer Hauptanmeldung für die Serverebene eine Verbindung zu der Datenbank her, die Sie verwalten möchten, und führen Sie bezogen auf sie die folgende Anweisung aus:
 
@@ -166,4 +166,4 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
         GROUP BY query_stats.query_hash
         ORDER BY 2 DESC;
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

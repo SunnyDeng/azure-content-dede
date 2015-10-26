@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Importieren einer BACPAC-Datei in eine Azure SQL-­Datenbank"
-	description="Importieren einer BACPAC-Datei in eine Azure SQL-­Datenbank"
+	pageTitle="Importieren einer BACPAC-Datei zum Erstellen einer neuen Azure SQL-Datenbank"
+	description="Erstellen Sie eine neue Azure SQL-Datenbank, indem Sie eine vorhandene BACPAC-Datei importieren."
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -10,14 +10,15 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="09/05/2015"
+	ms.date="10/13/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"/>
 
 
-# Importieren einer BACPAC-Datei in eine SQL-­Datenbank
+# Importieren einer BACPAC-Datei zum Erstellen einer neuen Azure SQL-Datenbank
+
 
 **Einzeldatenbank**
 
@@ -25,11 +26,11 @@
 - [Azure Preview Portal](sql-database-import.md)
 - [PowerShell](sql-database-import-powershell.md)
 
-Dieser Artikel veranschaulicht, wie Sie eine SQL-Datenbank erstellen, indem Sie mithilfe des [Azure-Vorschauportals](https://portal.azure.com) eine BACPAC-Datei importieren.
+Dieser Artikel enthält Anweisungen zum Erstellen einer neuen Azure SQL-Datenbank aus einer BACPAC-Datei mithilfe des [Azure-Vorschauportals](https://portal.azure.com).
 
 Ein „BACPAC“ ist eine BACPAC-Datei, die ein Datenbankschema und Daten enthält. Weitere Informationen finden Sie unter „Sicherungspaket (.bacpac)“ in [Datenebenenanwendungen](https://msdn.microsoft.com/library/ee210546.aspx).
 
-Die Datenbank wird aus einer BACPAC-Datei erstellt, die aus einem Azure-Speicherblobcontainer importiert wurde. Wenn im Azure-Speicher keine BACPAC-Datei vorhanden ist, können Sie eine erstellen, indem Sie in [Erstellen und Exportieren der BACPAC-Datei einer Azure SQL-Datenbank](sql-database-backup.md) beschriebenen Schritte ausführen.
+Die Datenbank wird aus einer BACPAC-Datei erstellt, die aus einem Azure-Speicherblobcontainer importiert wurde. Wenn im Azure-Speicher keine BACPAC-Datei vorhanden ist, können Sie eine erstellen, indem Sie die in [Erstellen und Exportieren der BACPAC-Datei einer Azure SQL-Datenbank](sql-database-export.md) beschriebenen Schritte ausführen.
 
 
 > [AZURE.NOTE]Azure SQL-Datenbank erstellt und verwaltet automatisch Sicherungen für jede Benutzerdatenbank, die Sie wiederherstellen können. Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
@@ -58,9 +59,9 @@ Zum Importieren einer SQL-­Datenbank aus einer BACPAC-Datei benötigen Sie Folg
 
     ![Speicheroptionen konfigurieren][2]
 
-1.  Wählen Sie den Preisstufe für die neue Datenbank aus, und klicken Sie auf **Auswählen**.
+1.  Wählen Sie den Tarif für die neue Datenbank aus, und klicken Sie auf **Auswählen**.
 
-    ![Preisstufe auswählen][3]
+    ![Tarif auswählen][3]
 
 1.  Geben Sie einen **DATENBANKNAMEN** ein.
 2.  Geben Sie die **Serveradministratoranmeldung** und das **Kennwort** für den SQL Azure-Server ein, auf den Sie die Datenbank importieren.
@@ -109,4 +110,4 @@ Durch Klicken auf **Erstellen** wird eine Anforderung zum Importieren der Datenb
 [5]: ./media/sql-database-import/import-history.png
 [6]: ./media/sql-database-import/import-status.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

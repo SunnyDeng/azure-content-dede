@@ -25,7 +25,8 @@ Zum Aktualisieren Ihres [Azure Linux-Agent](https://github.com/Azure/WALinuxAgen
 1. einen laufenden virtuellen Linux-Computer in Azure
 2. Sie sind mit diesem virtuellen Linux-Computer über SSH verbunden.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Verwalten einer Ressource mit dem Ressourcen-Manager- oder klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 
 > [AZURE.NOTE]Wenn Sie diese Aufgabe von einem Windows-Computer ausführen, können Sie mit Putty eine SSH-Verbindung zum Linux-Computer herstellen. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird](virtual-machines-linux-how-to-log-on.md).
 
@@ -125,4 +126,4 @@ Sie sehen, dass die Linux Agent-Version auf die neue Version aktualisiert wurde.
 
 Weitere Informationen zu Azure Linux Agent finden Sie in der [Azure Linux Agent-Infodatei](https://github.com/Azure/WALinuxAgent).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

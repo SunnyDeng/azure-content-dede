@@ -85,4 +85,4 @@ Sie können diese Version des Experiments nun weiterhin ändern und ausführen, 
 [linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

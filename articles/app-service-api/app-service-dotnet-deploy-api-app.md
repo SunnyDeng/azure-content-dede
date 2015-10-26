@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/14/2015" 
+	ms.date="10/08/2015" 
 	ms.author="tdykstra"/>
 
 # Bereitstellen einer API-App in Azure App Service 
@@ -121,7 +121,10 @@ Als Nächstes Sie nehmen eine Änderung an der API-Definition vor und sehen sich
 
 ## Nächste Schritte
 
-Sie haben gesehen, wie die Visual Studio-Funktionen für die direkte Bereitstellung die Iteration und Bereitstellung vereinfachen und es Ihnen ermöglichen, die ordnungsgemäße Funktion der API zu testen. Im [nächsten Lernprogramm](../app-service-dotnet-remotely-debug-api-app.md) erfahren Sie, wie Sie die API-App debuggen, während sie in Azure ausgeführt wird.
- 
+Sie haben gesehen, wie die Visual Studio-Funktionen für die direkte Bereitstellung es Ihnen ermöglichen, die ordnungsgemäße Funktion der API zu testen. Im [nächsten Lernprogramm](../app-service-dotnet-remotely-debug-api-app.md) erfahren Sie, wie Sie die API-App debuggen, während sie in Azure ausgeführt wird.
 
-<!---HONumber=Oct15_HO2-->
+API-Apps sind Web-Apps mit zusätzlichen Funktionen für das Hosten von APIs. Sie können daher jede geeignete Bereitstellungsmethode für Web-Apps verwenden. Weitere Informationen zu Bereitstellungsoptionen für Web-Apps finden Sie unter [Bereitstellen von Web-Apps in Azure App Service](../app-service-web/web-sites-deploy.md).
+
+Informationen zu API-Apps-Funktionen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
+
+<!---HONumber=Oct15_HO3-->

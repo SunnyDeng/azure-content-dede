@@ -12,8 +12,8 @@ Die folgende Tabelle informiert über die einzelnen zentralen Kontingente, Einsc
 |**Auftragsverlauf**|Die maximale Größe des im Auftragsverlauf gespeicherten Antworttexts beträgt 2048 Bytes.|
 |**Frequency**|Das Standardkontingent für die maximale Häufigkeit beträgt eine Stunde (kostenlose Auftragssammlung) bzw. eine Minute (Standard-Auftragssammlung). Die maximale Häufigkeit kann für eine Auftragssammlung auf einen Wert unterhalb des Maximalwerts festgelegt werden. Der für die Auftragssammlung festgelegte Wert gilt für alle Aufträge in der Auftragssammlung. Beim Versuch, einen Auftrag mit einer Häufigkeit zu erstellen, die die maximal zulässige Häufigkeit der Auftragssammlung übersteigt, ist die Anforderung nicht erfolgreich, und der Statuscode 409 (Konflikt) wird zurückgegeben.|
 |**Aufträge**|Das Standardkontingent für die maximale Auftragsanzahl liegt bei fünf Aufträgen (kostenlose Auftragssammlung) bzw. bei 50 Aufträgen (Standard-Auftragssammlung). Die maximale Auftragsanzahl kann für eine Auftragssammlung konfiguriert werden. Der für die Auftragssammlung festgelegte Wert gilt für alle Aufträge in der Auftragssammlung. Bei Überschreitung des maximalen Auftragskontingents wird der Statuscode 409 (Konflikt) zurückgegeben.|
-|**Speicherung des Auftragsverlaufs**|Der Auftragsverlauf wird bis zu zwei Monate lang gespeichert.|
+|**Speicherung des Auftragsverlaufs**|Der Auftragsverlauf wird bis zu 2 Monate lang oder maximal für die letzten 1000 Ausführungen beibehalten.|
 |**Speicherung abgeschlossener und fehlerhafter Aufträge**|Abgeschlossene und fehlerhafte Aufträge werden 60 Tage lang gespeichert.|
 |**Timeout**|Bei HTTP-Aktionen gilt ein statisches (nicht konfigurierbares) Anforderungstimeout von 30 Sekunden. Greifen Sie bei länger dauernden Vorgängen auf asynchrone HTTP-Protokolle zurück, bei denen beispielsweise umgehend der Statuscode 202 zurückgegeben und der Vorgang im Hintergrund fortgesetzt wird.|
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

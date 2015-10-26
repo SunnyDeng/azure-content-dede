@@ -168,4 +168,4 @@ Das Skript gibt Listen aller verfügbaren Berichte und die Ausgabe des Berichts 
 - Unter [Azure AD-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md) finden Sie weitere Informationen zum Überwachungsbericht.
 - Unter [Azure AD-Berichte und -Ereignisse (Vorschau)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -24,7 +24,7 @@ Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen A
 
 ## Verschieben einer Vorlage aus dem Bereich "Funktionalität" in eine Vorlage aus dem Bereich "Komplettlösung"
 
-Das Muster für die Entwicklung einer Vorlage aus dem Bereich "Funktionalität" wurde bereits zuvor erläutert. Eine Frage, die sich ggf. stellen, ist, ob es Unterschiede gibt, wenn Sie diese Vorlage aus dem Bereich "Funktionalität" eigenständig oder als Teil einer Vorlage aus dem Bereich "Komplettlösung" verwenden.
+Das Muster für die Entwicklung einer Vorlage aus dem Bereich "Funktionalität" wurde bereits zuvor erläutert. Möglicherweise stellen Sie sich die Frage, ob es Unterschiede gibt, wenn Sie diese Vorlage aus dem Bereich "Funktionalität" eigenständig oder als Teil einer Vorlage aus dem Bereich "Komplettlösung" verwenden.
 
 Angenommen, es gibt eine Vorlage mit Technologiefokus für die Bereitstellung von SQL Server als Funktionalität. Worin bestehen die Unterschiede, sofern vorhanden, wenn diese Vorlage unabhängig oder als Teil einer Vorlage aus dem umfassenderen Bereich der Komplettlösungen verwendet wird, bei der SQL Server zur Unterstützung einer Webanwendung genutzt wird?
 
@@ -52,7 +52,7 @@ Für die zusätzlichen Ressourcen, die Sie hinzufügen möchten, befolgen Sie ei
 
 Beim Hinzufügen freigegebener Ressourcen, wie z. B. dem freigegebenen Speicherkonto, sollten Sie auch überprüfen, ob eine Ressourcensperre dafür erforderlich ist, was dazu beitragen kann, unbeabsichtigte Löschvorgänge zu vermeiden.
 
-Wenn Sie neue Ressourcen hinzufügen, sollten Sie auch prüfen, ob Ressourcen, die der Vorlage aus dem Bereich "End-to-End"-Lösung hinzugefügt werden, als eigene Vorlagen aus dem Bereich "Funktionalität" isoliert werden könnten. Ist dies der Fall, sollte dies unbedingt für eine weitere Aufgliederung erwägt werden, die Vorteile für sowohl die Wiederverwendung als auch Tests bringen kann.
+Wenn Sie neue Ressourcen hinzufügen, sollten Sie auch prüfen, ob Ressourcen, die der Vorlage aus dem Bereich "End-to-End"-Lösung hinzugefügt werden, da eigene Vorlagen aus dem Bereich "Funktionalität" isoliert werden könnten. Ist dies der Fall, sollte dies unbedingt für eine weitere Aufgliederung erwägt werden, die Vorteile für sowohl die Wiederverwendung als auch Tests bringen kann.
 
 Bei einer Integration in Ihre Lösungsblöcke bestehen Ihre nächsten Aufgaben (wie im vorherigen Beispiel angegeben) im Prüfen, ob sich der Lebenszyklus der einzelnen Vorlagen aus dem Bereich "Funktionalität" sich von dem der übergeordneten Lösung unterscheidet. Ferner ist zu prüfen, ob Anforderungen an die rollenbasierte Zugriffssteuerung es erfordern, diese auf getrennte Ressourcengruppen zu verteilen.
 
@@ -120,7 +120,7 @@ Dienste können in mehreren Regionen und für mehrere Branchen zur Verfügung ge
 
 Die Trennung von Rollen und Aufgaben ist eine wesentliche Voraussetzung dafür, dass interne Dienste interne Richtlinien befolgen. Viele kommerzielle Dienste verlangen dies auch, um gesetzliche und Branchenvorschriften einzuhalten. Dienste müssen den Zugriff auf Dienste und deren zugrunde liegenden Ressourcen unter bestimmten Umständen auf autorisierte Rollen beschränken. Viele Dienste verfügen über ein integriertes Gerüst für die Bereitstellung zweier Funktionen: rollenbasierte Zugriffssteuerung und Überwachung.
 
-#### Anwendungsfälle für die rollenbasierten Zugriffssteuerung
+#### Anwendungsfälle für die rollenbasierte Zugriffssteuerung
 
 Wenn die Einhaltung von Vorschriften wichtig ist, muss der Zugriff auf bestimmte Ressourcen beschränkt werden können.
 
@@ -184,7 +184,7 @@ Wie bei den vorherigen Beispielen müssen Einschränkungen hinsichtlich Ressourc
 
 ## Schützen von Ressourcen gegen interne Angreifer
 
-Ein Anlieger einer Organisation ist möglicherweise der Schutz ihrer Ressourcen und Vorlagen vor internen Angreifern.
+Ein Anliegen einer Organisation ist möglicherweise der Schutz ihrer Ressourcen und Vorlagen vor internen Angreifern.
 
 Ein Beispiel hierfür ist eine Bank, die sicherstellen möchte, dass ein böswilliger Softwareentwickler oder Mitarbeiter der IT-Abteilung keine Änderungen vornehmen oder Schlüsselinformationen extrahieren darf, um zu verhindern, dass Daten für kriminelle Zwecke genutzt werden.
 
@@ -206,7 +206,7 @@ Ein Beispiel einer Implementierung dieses Ansatzes ist im Abschnitt "Geheime Sch
 
 IT-Abteilungen von Unternehmen, Systemintegratoren und Clouddienstanbieter können bei ihren Kunden ein BYOS-Modell einsetzen. Dabei stellt die Organisation einem Endkunden einen Dienst bereit und nutzt dessen Azure-Abonnement auf beliebige Weise.
 
-Es gibt wie nachstehend beschrieben mehrere Varianten mit leicht abweichende Anforderungen.
+Es gibt wie nachstehend beschrieben mehrere Varianten mit leicht abweichenden Anforderungen.
 
 ### Aktivieren des Drittanbieterzugriffs zur Überwachung von Ressourcen innerhalb eines Kontos
 
@@ -254,4 +254,4 @@ Schließlich kann es wünschenswert sein, sicherzustellen, dass bestimmte Ressou
 - Empfehlungen für die Sicherheitseinstellungen in Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

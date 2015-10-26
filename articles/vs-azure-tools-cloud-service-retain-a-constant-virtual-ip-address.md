@@ -45,4 +45,4 @@ Die VIP eines Clouddiensts wird zugeordnet, wenn der Clouddienst erstmalig in ei
 
 Weitere Informationen zur Veröffentlichung in Azure über Visual Studio finden Sie unter [Assistent zum Veröffentlichen der Azure-Anwendung](vs-azure-tools-publish-azure-application-wizard.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

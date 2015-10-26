@@ -82,4 +82,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

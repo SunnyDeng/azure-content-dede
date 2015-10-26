@@ -13,14 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="09/22/2015"
+    ms.date="10/12/2015" 
     ms.author="robmcm" />
 
 # Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse
 
-Diese Anleitung zeigt, wie der Azure Access Control Service (ACS) im Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies) verwendet wird. Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps).
+Diese Anleitung zeigt, wie der Azure Access Control Service (ACS) im Azure Toolkit für Eclipse verwendet wird. Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps).
 
-> [AZURE.NOTE]Der Azure Access Control Service-Filter (von Microsoft Open Technologies) ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft Open Technologies oder Microsoft nicht offiziell unterstützt.
+> [AZURE.NOTE]Der Azure Access Control Service-Filter ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft nicht offiziell unterstützt.
 
 ## Was ist der ACS?
 
@@ -44,9 +44,9 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, sollte
 
 **Client** - Im Kontext dieses Leitfadens ein Browser, der auf Ihre Webanwendung zuzugreifen versucht.
 
-**Anwendung der vertrauenden Seite (Relying Party, RP)** – Eine RP-Anwendung ist eine Website oder ein Dienst, die/der die Authentifizierung an eine externe Stelle auslagert. Im Identitätskontext sagt man, dass die RP der Authentifizierungsstelle vertraut. In dieser Anleitung wird erklärt, wie Sie eine Anwendung so konfigurieren, dass sie dem ACS vertraut.
+**Anwendung der vertrauenden Seite (Relying Party, RP)** – Eine Anwendung der vertrauenden Seite ist eine Website oder ein Dienst, die/der die Authentifizierung an eine externe Stelle auslagert. Im Identitätskontext sagt man, dass die RP der Authentifizierungsstelle vertraut. In dieser Anleitung wird erklärt, wie Sie eine Anwendung so konfigurieren, dass sie dem ACS vertraut.
 
-**Token** - Ein Token ist eine Sammlung von Sicherheitsdaten, die im Normalfall bei der erfolgreichen Authentifizierung eines Benutzers ausgegeben werden. Es enthält einen Satz von *Ansprüchen*. Dies sind Attribute des authentifizierten Benutzers. Ein Anspruch kann ein Benutzername, ein Bezeichner für eine Rolle, zu der der Benutzer gehört, das Alter des Benutzers usw. sein. Ein Token ist normalerweise digital signiert. Dies bedeutet, dass es jederzeit zum Benutzer zurückverfolgt werden kann und sein Inhalt fälschungssicher ist. Ein Benutzer erlangt Zugriff auf eine RP-Anwendung, indem er ein gültiges Token vorweist, das von einer Stelle ausgestellt wurde, der die RP-Anwendung vertraut.
+**Token** - Ein Token ist eine Sammlung von Sicherheitsdaten, die im Normalfall bei der erfolgreichen Authentifizierung eines Benutzers ausgegeben werden. Es enthält einen Satz von *Ansprüchen*. Dies sind Attribute des authentifizierten Benutzers. Ein Anspruch kann ein Benutzername, ein Bezeichner für eine Rolle, zu der der Benutzer gehört, das Alter des Benutzers usw. sein. Ein Token ist normalerweise digital signiert. Dies bedeutet, dass es jederzeit zum Benutzer zurückverfolgt werden kann und sein Inhalt fälschungssicher ist. Ein Benutzer erlangt Zugriff auf eine Anwendung der vertrauenden Seite, indem er ein gültiges Token vorweist, das von einer Stelle ausgestellt wurde, der die Anwendung der vertrauenden Seite vertraut.
 
 **Identitätsanbieter (Identity Provider, IP)** - Ein IP ist eine Stelle, die Benutzeridentitäten authentifiziert und Sicherheitstokens ausgibt. Der tatsächliche Vorgang der Tokenausgabe wird über einen speziellen Dienst namens Security Token Service (STS) ausgeführt. Typische Beispiele für IPs sind Windows Live ID, Facebook, geschäftliche Benutzer-Repositorys (wie Active Directory) usw. Wenn zwischen dem ACS und einem IP ein Vertrauensverhältnis konfiguriert worden ist, akzeptiert und validiert das System die von diesem IP vergebenen Tokens. ACS kann mehreren IPs gleichzeitig vertrauen. Dies bedeutet, dass Sie, wenn Ihre Anwendung dem ACS vertraut, Ihre Anwendung sofort allen authentifizierten Benutzern aller IPs zur Verfügung stellen können, denen ACS stellvertretend für Sie vertraut.
 
@@ -54,7 +54,7 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, sollte
 
 **ACS-Regelmodul** - Die Logik, die eingehende Tokens von vertrauenswürdigen IPs in Tokens transformiert, die von einer RP verwendet werden können, ist in Form einfacher Anspruchstransformationsregeln kodifiziert. Der ACS funktioniert als Regelmodul, das jede Transformationsregel anwendet, die Sie für Ihre RP festgelegt haben.
 
-**ACS-Namespace** - Ein Namespace ist eine Partition auf der obersten Ebene des ACS, die Sie zur Organisation Ihrer Einstellungen verwenden. Ein Namespace enthält eine Liste der IPs, denen Sie vertrauen, die RP-Anwendungen, die Sie bereitstellen möchten, und die Regeln, die das Regelmodul auf eingehende Tokens anwenden soll. Ein Namespace weist verschiedene Endpunkte auf, die von der Anwendung und dem Entwickler verwendet werden, damit der ACS seine Funktion ausführt.
+**ACS-Namespace** - Ein Namespace ist eine Partition auf der obersten Ebene des ACS, die Sie zur Organisation Ihrer Einstellungen verwenden. Ein Namespace enthält eine Liste der IPs, denen Sie vertrauen, die Anwendungen der vertrauenden Seite, die Sie bereitstellen möchten, und die Regeln, die das Regelmodul auf eingehende Tokens anwenden soll. Ein Namespace weist verschiedene Endpunkte auf, die von der Anwendung und dem Entwickler verwendet werden, damit der ACS seine Funktion ausführt.
 
 Die folgende Abbildung zeigt, wie die ACS-Authentifizierung bei einer Webanwendung abläuft:
 
@@ -76,7 +76,7 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauch
 - Eclipse IDE für Java EE-Entwickler, Indigo oder höher. Dies kann von <http://www.eclipse.org/downloads/> heruntergeladen werden. 
 - Eine Distribution eines Java-basierten Webservers oder Anwendungsservers wie Apache Tomcat, GlassFish, JBoss Application Server oder Jetty.
 - Ein Azure-Abonnement, das Sie unter <http://www.microsoft.com/windowsazure/offers/> erhalten.
-- Das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies) - Release vom April 2014. Weitere Informationen finden Sie unter [Installieren des Azure-Plug-Ins für Eclipse mit Java (von Microsoft Open Technologies)](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx).
+- Das Azure Toolkit für Eclipse, Version von April 2014 oder höher. Weitere Informationen finden Sie unter [Installation des Azure Toolkit für Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx).
 - Ein X.509-Zertifikat, das von Ihrer Anwendung verwendet werden kann. Dieses Zertifikat wird sowohl als öffentliches Zertifikat (.cer) als auch im Format Personal Information Exchange (.PFX) benötigt. (Optionen zur Erstellung dieses Zertifikats finden Sie weiter unten in diesem Lernprogramm).
 - Außerdem sollten Sie mit dem Azure-Serveremulator und den Einsatztechniken vertraut sein, die unter [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx) diskutiert werden.
 
@@ -96,7 +96,7 @@ Azure erstellt und aktiviert den Namespace. Warten Sie, bis der Status des neuen
 
 ## Hinzufügen von Identitätsanbietern
 
-In dieser Aufgabe fügen Sie IPs hinzu, die mit Ihrer RP-Anwendung zur Authentifizierung verwendet werden. Zu Demonstrationszwecken wird in dieser Aufgabe gezeigt, wie Windows Live als IP hinzugefügt wird, aber Sie können jeden IP verwenden, der im ACS-Verwaltungsportal aufgelistet wird.
+In dieser Aufgabe fügen Sie IPs hinzu, die mit Ihrer Anwendung der vertrauenden Seite zur Authentifizierung verwendet werden. Zu Demonstrationszwecken wird in dieser Aufgabe gezeigt, wie Windows Live als IP hinzugefügt wird, aber Sie können jeden IP verwenden, der im ACS-Verwaltungsportal aufgelistet wird.
 
 
 1.  Klicken Sie im [Azure-Verwaltungsportal][] auf **Active Directory**, wählen Sie einen Access Control-Namespace aus, und klicken Sie dann auf **Verwalten**. Das ACS-Verwaltungsportal wird geöffnet.
@@ -107,7 +107,7 @@ Windows Live ID wird nun als IP für Ihren ACS-Namespace aktiviert. Als Nächste
 
 ## Hinzufügen einer Anwendung der vertrauenden Seite
 
-In dieser Aufgabe konfigurieren Sie den ACS zur Erkennung Ihrer Java-Webanwendung als gültige RP-Anwendung.
+In dieser Aufgabe konfigurieren Sie den ACS zur Erkennung Ihrer Java-Webanwendung als gültige Anwendung der vertrauenden Seite.
 
 1.  Klicken Sie im ACS-Verwaltungsportal auf **Relying party applications**.
 2.  Klicken Sie auf der Seite **Relying Party Applications** auf **Hinzufügen**.
@@ -141,7 +141,7 @@ In dieser Aufgabe laden Sie ein .PFX-Zertifikat hoch, das verwendet wird, um von
 3.  Führen Sie auf der Seite **Add Token-Signing Certificate or Key** folgende Aktionen aus:
     1. Klicken Sie im Abschnitt **Used for** auf **Relying Party Application**, und wählen Sie **Azure Web App** aus (dies wurde zuvor als Name Ihrer Anwendung der vertrauenden Seite festgelegt).
     2. Wählen Sie im Abschnitt **Typ** die Option **X.509-Zertifikat** aus.
-    3. Klicken Sie im Abschnitt **Zertifikat** auf die Schaltfläche "Durchsuchen", und navigieren Sie zur X.509 Zertifikat-Datei, die Sie verwenden möchten. Dies ist eine PFX-Datei. Wählen Sie die Datei, klicken Sie auf **Öffnen**, und geben Sie im Textfeld **Kennwort** das Zertifikatkennwort ein. Bitte beachten Sie, dass Sie zu Testzwecken ein selbstsigniertes Zertifikat verwenden können. Klicken Sie zum Erstellen eines selbstsignierten Zertifikats im Dialogfeld **ACS Filter Library** (dieses wird später beschrieben) auf die Schaltfläche **Neu**, oder verwenden Sie das Hilfsprogramm **encutil.exe** auf der [Projektwebsite][] des Azure-Starterkits für Java (von Microsoft Open Technologies).
+    3. Klicken Sie im Abschnitt **Zertifikat** auf die Schaltfläche "Durchsuchen", und navigieren Sie zur X.509 Zertifikat-Datei, die Sie verwenden möchten. Dies ist eine PFX-Datei. Wählen Sie die Datei, klicken Sie auf **Öffnen**, und geben Sie im Textfeld **Kennwort** das Zertifikatkennwort ein. Bitte beachten Sie, dass Sie zu Testzwecken ein selbstsigniertes Zertifikat verwenden können. Klicken Sie zum Erstellen eines selbstsignierten Zertifikats im Dialogfeld **ACS Filter Library** (dieses wird später beschrieben) auf die Schaltfläche **Neu**, oder verwenden Sie das Hilfsprogramm **encutil.exe** auf der [Projektwebsite][] des Azure-Starterkits für Java.
     4. Stellen Sie sicher, dass **Make Primary** aktiviert ist. Die Seite **Zertifikat oder Schlüssel für Tokensignierung hinzufügen** sollte nun in etwas wie folgt aussehen.![Tokensignaturzertifikat hinzufügen][add_token_signing_cert]
     5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern und die Seite **Add Token-Signing Certificate or Key** zu schließen.
 
@@ -149,7 +149,7 @@ Prüfen Sie als Nächstes die Informationen auf der Seite "Anwendungsintegration
 
 ## Prüfen der Seite "Anwendungsintegration"
 
-Sie können alle Informationen und den Code, der zur Konfiguration Ihrer Java-Webanwendung (der RP-Anwendung) für die Arbeit mit dem ACS erforderlich ist, auf der Seite "Anwendungsintegration" des ACS-Verwaltungsportals finden. Sie benötigen diese Informationen, wenn Sie Ihre Java-Webanwendung für eine Verbundauthentifizierung konfigurieren.
+Sie können alle Informationen und den Code, der zur Konfiguration Ihrer Java-Webanwendung (der Anwendung der vertrauenden Seite) für die Arbeit mit dem ACS erforderlich ist, auf der Seite "Anwendungsintegration" des ACS-Verwaltungsportals finden. Sie benötigen diese Informationen, wenn Sie Ihre Java-Webanwendung für eine Verbundauthentifizierung konfigurieren.
 
 1.  Klicken Sie im ACS-Verwaltungsportal auf **Application integration**.  
 2.  Klicken Sie auf der Seite **Application Integration** auf **Login Pages**.
@@ -241,7 +241,7 @@ Für eine Bereitstellung in Azure müssen Sie den RP-Bereich und die Rückgabe-U
 14. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaften für MyACSHelloWorld** zu schließen.
 15. Klicken Sie in Eclipse auf die Schaltfläche **Publish to Azure Cloud**. Befolgen Sie die Anweisungen ähnlich wie im Abschnitt **Bereitstellen der Anwendung in Azure** des Themas [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx). 
 
-Schließen Sie nach der Bereitstellung Ihrer Webanwendung alle offenen Browser-Sitzungen, und führen Sie Ihre Webanwendung aus. Sie sollten nun die Aufforderung erhalten, sich mit Ihren Anmeldeinformationen für Windows Live ID anzumelden, und danach zur Rückgabe-URL Ihrer RP-Anwendung weitergeleitet werden.
+Schließen Sie nach der Bereitstellung Ihrer Webanwendung alle offenen Browser-Sitzungen, und führen Sie Ihre Webanwendung aus. Sie sollten nun die Aufforderung erhalten, sich mit Ihren Anmeldeinformationen für Windows Live ID anzumelden, und danach zur Rückgabe-URL Ihrer Anwendung der vertrauenden Seite weitergeleitet werden.
 
 Wenn Sie Ihre ACS-Hallo-Welt-Anwendung nicht mehr benötigen, denken Sie daran, die Bereitstellung zu löschen (Informationen dazu finden Sie im Thema [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx).
 
@@ -287,7 +287,7 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [Deploy to Azure]: #deploy_azure
 [Next steps]: #next_steps
 [Projektwebsite]: http://wastarterkit4java.codeplex.com/releases/view/61026
-[How to view SAML returned by the Azure Access Control Service (Anzeigen der vom Azure Access Control Service zurückgegebenen SAML, in englischer Sprache)]: /de-DE/develop/java/how-to-guides/view-saml-returned-by-acs/
+[How to view SAML returned by the Azure Access Control Service (Anzeigen der vom Azure Access Control Service zurückgegebenen SAML, in englischer Sprache)]: /en-us/develop/java/how-to-guides/view-saml-returned-by-acs/
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
 [Windows Identity Foundation]: http://www.microsoft.com/download/en/details.aspx?id=17331
 [Windows Identity Foundation SDK]: http://www.microsoft.com/download/en/details.aspx?id=4451
@@ -310,4 +310,4 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

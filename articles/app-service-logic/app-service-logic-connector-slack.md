@@ -49,24 +49,20 @@ Nachdem der Slack-Connector erstellt wurde, können Sie ihn als Aktion Ihrer Log
 1.	Öffnen Sie in der Logik-App **Trigger und Aktionen**. [Erstellen einer neuen Logik-App](app-service-logic-create-a-logic-app.md)
 
 2.	Der Slack-Connector wird im Katalog auf der rechten Seite aufgeführt: 
-
 ![][2]
 
 3.	Wählen Sie den Slack-Connector aus, den Sie erstellt haben, um ihn automatisch Ihrer Logik-App hinzuzufügen.
 4.	Wählen Sie **Autorisieren** aus. Melden Sie sich bei Ihrem Slack-Konto an. Am Ende werden Sie aufgefordert, dem Connector die Zugriffsberechtigung für Ihr Slack-Konto zu erteilen. Wählen Sie **Autorisieren** aus: 
-
 ![][3] 
 ![][4] 
 ![][5] 
 ![][6]  
 	
 5.	Jetzt können den Slack-Connector im Workflow verwenden. Die Aktion "Nachricht veröffentlichen" ist verfügbar: 
-
 ![][7]
 
 
 Sehen wir uns die Benutzeroberfläche von "Nachricht veröffentlichen" an. Sie können diese Aktion zum Veröffentlichen einer Nachricht über einen beliebigen Slack-Kanal verwenden: 
-
 ![][8]
 
 Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht veröffentlichen" wie folgt:
@@ -79,7 +75,6 @@ Erweiterte Eigenschaften | **Bot-Benutzername**: Name des Bots, der für diese N
 
 
 Für den Slack-Connector stehen REST-APIs zur Verfügung, sodass Sie den Connector außerhalb einer Logik-App verwenden können. Öffnen Sie den Slack-Connector, und wählen Sie **API-Definition** aus: 
-
 ![][9]
 
 
@@ -104,4 +99,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-slack/img8.PNG
 [9]: ./media/app-service-logic-connector-slack/img9.PNG
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

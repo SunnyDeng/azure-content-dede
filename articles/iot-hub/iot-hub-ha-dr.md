@@ -1,10 +1,10 @@
 <properties
- pageTitle="Hochverfügbarkeit und Notfallwiederherstellung für Azure IoT Hub | Microsoft Azure"
- description="Es werden Funktionen zum Erstellen von Lösungen mit Notfallwiederherstellung beschrieben."
+ pageTitle="Hohe Verfügbarkeit und Notfallwiederherstellung für IoT Hub | Microsoft Azure"
+ description="Es werden Funktionen zum Erstellen von Lösungen mit hoher Verfügbarkeit und Notfallwiederherstellung beschrieben."
  services="iot-hub"
- documentationCenter=".net"
+ documentationCenter=""
  authors="fsautomata"
- manager="kevinmil"
+ manager="timlt"
  editor=""/>
 
 <tags
@@ -12,7 +12,7 @@
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
- ms.workload="tbd"
+ ms.workload="na"
  ms.date="10/02/2015"
  ms.author="elioda"/>
 
@@ -48,4 +48,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

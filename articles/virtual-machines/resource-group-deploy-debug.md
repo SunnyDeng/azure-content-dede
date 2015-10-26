@@ -3,8 +3,8 @@
    description="Hier werden allgemeine Probleme beim Bereitstellen von Ressourcen beschrieben, die mithilfe des Ressourcen-Manager-Bereitstellungsmodells erstellt wurden. Zudem wird erläutert, wie Sie diese Probleme ermitteln und beheben."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
-   authors="squillace"
-   manager="timlt"
+   authors="tfitzmac"
+   manager="wpickett"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-multiple"
    ms.workload="infrastructure"
-   ms.date="09/18/2015"
-   ms.author="rasquill"/>
+   ms.date="10/14/2015"
+   ms.author="tomfitz;rasquill"/>
 
 # Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure
 
@@ -26,14 +26,16 @@ In diesem Thema wird das Abrufen von Informationen zur Problembehandlung mit Azu
 
 Lösungen für allgemeine Fehler bei der Verwendung werden ebenfalls in diesem Thema beschrieben.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Beheben von Problemen mit Ressourcengruppen erläutert, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden. Sie können Ressourcengruppen nicht mit dem klassischen Bereitstellungsmodell erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]klassisches Bereitstellungsmodell. Sie können Ressourcengruppen nicht mit dem klassischen Bereitstellungsmodell erstellen.
 
 
 ## Problembehandlung mit PowerShell
 
-Sie können den allgemeinen Status einer Bereitstellung mit dem Befehl **Get-AzureResourceGroupDeployment** abrufen. Im folgenden Beispiel ist die Bereitstellung fehlgeschlagen.
+[AZURE.INCLUDE [powershell-preview-inline-include](../../includes/powershell-preview-inline-include.md)]
 
-    PS C:\> Get-AzureResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment
+Sie können den allgemeinen Status einer Bereitstellung mit dem Befehl **Get-AzureRmResourceGroupDeployment** abrufen. Im folgenden Beispiel ist die Bereitstellung fehlgeschlagen.
+
+    PS C:\> Get-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment
 
     DeploymentName    : ExampleDeployment
     ResourceGroupName : ExampleGroup
@@ -52,9 +54,9 @@ Sie können den allgemeinen Status einer Bereitstellung mit dem Befehl **Get-Azu
 
     Outputs           :
 
-Jede Bereitstellung besteht in der Regel aus mehreren Vorgängen. Dabei stellt jeder Vorgang einen Schritt im Bereitstellungsprozess dar. Um einen Bereitstellungsfehler zu ermitteln, benötigen Sie in der Regel Einzelheiten zu den Bereitstellungsvorgängen. Den Status der Vorgänge können Sie mit **Get-AzureResourceGroupDeploymentOperation** abrufen.
+Jede Bereitstellung besteht in der Regel aus mehreren Vorgängen. Dabei stellt jeder Vorgang einen Schritt im Bereitstellungsprozess dar. Um einen Bereitstellungsfehler zu ermitteln, benötigen Sie in der Regel Einzelheiten zu den Bereitstellungsvorgängen. Den Status der Vorgänge können Sie mit **Get-AzureRmResourceGroupDeploymentOperation** abrufen.
 
-    PS C:\> Get-AzureResourceGroupDeploymentOperation -DeploymentName ExampleDeployment -ResourceGroupName ExampleGroup
+    PS C:\> Get-AzureRmResourceGroupDeploymentOperation -DeploymentName ExampleDeployment -ResourceGroupName ExampleGroup
     Id                        OperationId          Properties         
     -----------               ----------           -------------
     /subscriptions/xxxxx...   347A111792B648D8     @{ProvisioningState=Failed; Timestam...
@@ -64,7 +66,7 @@ Es werden zwei Vorgänge in der Bereitstellung angezeigt. Für einen Vorgang lau
 
 Sie können die Statusmeldung mit dem folgenden Befehl abrufen:
 
-    PS C:\> (Get-AzureResourceGroupDeploymentOperation -DeploymentName ExampleDeployment -ResourceGroupName ExampleGroup).Properties.StatusMessage
+    PS C:\> (Get-AzureRmResourceGroupDeploymentOperation -DeploymentName ExampleDeployment -ResourceGroupName ExampleGroup).Properties.StatusMessage
 
     Code       : Conflict
     Message    : Website with given name mysite already exists.
@@ -157,7 +159,7 @@ Die Ressourcen-Manager-REST-API stellt URIs zum Abrufen von Informationen zu ein
 
 Bei der Bereitstellung tritt ein Fehler auf, wenn Ihre Azure-Anmeldedaten abgelaufen sind oder Sie sich nicht bei Ihrem Azure-Konto angemeldet haben. Ihre Anmeldeinformationen können ablaufen, wenn die Sitzung zu lange geöffnet ist. Sie können Ihre Anmeldeinformationen mit den folgenden Optionen aktualisieren:
 
-- Verwenden Sie bei PowerShell das Cmdlet **Add-AzureAccount**. Die Anmeldeinformationen in einer Datei mit Veröffentlichungseinstellungen sind für die Cmdlets im AzureResourceManager-Modul nicht ausreichend.
+- Verwenden Sie für PowerShell das Cmdlet **Login-AzureRmAccount** (oder **Add-AzureAccount** für PowerShell-Versionen vor 1.0 Preview). Die Anmeldeinformationen in einer Datei mit Veröffentlichungseinstellungen sind für die Cmdlets im AzureResourceManager-Modul nicht ausreichend.
 - Verwenden Sie bei der Azure-Befehlszeilenschnittstelle **azure login**. Stellen Sie für Hilfe mit Authentifizierungsfehlern sicher, dass Sie die [Azure-Befehlszeilenschnittstelle korrekt konfiguriert](../xplat-cli-connect.md) haben.
 
 ## Überprüfen des Formats von Vorlagen und Parametern
@@ -166,9 +168,9 @@ Liegt die Vorlage oder der Parameter im falschen Format vor, tritt bei der Berei
 
 ### PowerShell
 
-Verwenden Sie bei PowerShell den Befehl **Test-AzureResourceGroupTemplate**.
+Verwenden Sie bei PowerShell den Befehl **Test-AzureRmResourceGroupDeployment** (oder **Test-AzureResourceGroupTemplate** für Versionen von PowerShell vor 1.0 Preview).
 
-    PS C:\> Test-AzureResourceGroupTemplate -ResourceGroupName ExampleGroup -TemplateFile c:\Azure\Templates\azuredeploy.json -TemplateParameterFile c:\Azure\Templates\azuredeploy.parameters.json
+    PS C:\> Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile c:\Azure\Templates\azuredeploy.json -TemplateParameterFile c:\Azure\Templates\azuredeploy.parameters.json
     VERBOSE: 12:55:32 PM - Template is valid.
 
 ### Azure-Befehlszeilenschnittstelle
@@ -198,7 +200,7 @@ Verwenden Sie beim Angeben eines Standorts für eine Ressource einen von der Res
 
 ### PowerShell
 
-Bei PowerShell können Sie die vollständige Liste der Ressourcen und Standorte mit dem Befehl **Get-AzureLocation** anzeigen.
+Bei Versionen von PowerShell vor 1.0 Preview können Sie die vollständige Liste der Ressourcen und Standorte mit dem Befehl **Get-AzureLocation** anzeigen.
 
     PS C:\> Get-AzureLocation
 
@@ -218,6 +220,33 @@ Sie können folgendermaßen einen bestimmten Ressourcentyp angeben:
     Microsoft.Compute/virtualMachines                           East US, East US 2, West US, Central US, South Central US,
                                                                 North Europe, West Europe, East Asia, Southeast Asia,
                                                                 Japan East, Japan West
+
+Verwenden Sie bei PowerShell 1.0 Preview den Befehl **Get-AzureRmResourceProvider**, um unterstützte Standorte abzurufen.
+
+    PS C:\> Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web
+
+    ProviderNamespace RegistrationState ResourceTypes               Locations
+    ----------------- ----------------- -------------               ---------
+    Microsoft.Web     Registered        {sites/extensions}          {Brazil South, ...
+    Microsoft.Web     Registered        {sites/slots/extensions}    {Brazil South, ...
+    Microsoft.Web     Registered        {sites/instances}           {Brazil South, ...
+    ...
+
+Sie können folgendermaßen einen bestimmten Ressourcentyp angeben:
+
+    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
+
+    Brazil South
+    East Asia
+    East US
+    Japan East
+    Japan West
+    North Central US
+    North Europe
+    South Central US
+    West Europe
+    West US
+    Southeast Asia
 
 ### Azure-Befehlszeilenschnittstelle
 
@@ -239,7 +268,7 @@ Bei einigen Ressourcen, insbesondere Speicherkonten, Datenbankservern und Websit
 
 ## Probleme mit Authentifizierung, Abonnement, Rolle und Kontingent
 
-Es gibt ein oder mehrere mögliche Probleme, die eine erfolgreiche Bereitstellung mit Authentifizierung, Autorisierung und Azure Active Directory verhindern. Unabhängig davon, wie Sie Ihre Azure-Ressourcengruppen verwalten, muss die Identität, die Sie nutzen, um sich bei Ihrem Konto anzumelden, entweder Azure Active Directory-Objekten oder Dienstprinzipalen entsprechen. Diese werden auch Geschäfts- oder Schulkonten bzw. Organisations-IDs genannt.
+Es gibt ein oder mehrere mögliche Probleme, die eine erfolgreiche Bereitstellung mit Authentifizierung, Autorisierung und Azure Active Directory verhindern. Unabhängig davon, wie Sie Ihre Azure-Ressourcengruppen verwalten, muss die von Ihnen zur Anmeldung in Ihrem Konto verwendete Identität ein Azure Active Directory-Objekt sein. Diese Identität kann ein Geschäfts- oder Schulkonto sein, das Sie erstellt haben oder Ihnen zugewiesen wurde, oder Sie können einen Dienstprinzipal für Anwendungen erstellen.
 
 Doch mit Azure Active Directory können Sie oder Ihr Verwalter sehr genau kontrollieren, welche Identitäten auf welche Ressourcen Zugriff haben. Falls Ihre Bereitstellungen nicht erfolgreich sind, überprüfen Sie die eigentlichen Anfragen auf Anzeichen von Authentifizierungs- oder Autorisierungsproblemen sowie die Bereitstellungsprotokolle für Ihre Ressourcengruppen. Dabei stellen Sie unter Umständen fest, dass Sie nicht für alle Ressourcen über Berechtigungen verfügen. Mithilfe der Azure-Befehlszeilenschnittstelle können Sie über die `azure ad` Befehle Azure Active Directory-Mandanten und -Benutzer überprüfen. (Eine vollständige Liste mit den Befehlen der Azure-Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md).)
 
@@ -263,25 +292,7 @@ Wenn Sie versuchen, eine Vorlage bereitzustellen, die mehr als vier Kerne in der
 
 In diesen Fällen sollten Sie zum Portal navigieren und ein Supportproblem einreichen, um Ihr Kontingent für die Region, in der Sie diese bereitstellen möchten, zu erhöhen.
 
-> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. 
-<!-- --> 
-Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: 
-<!-- --> 
-        azure provider show Microsoft.Compute --json | jq '.resourceTypes[] | select(.name == "virtualMachines") | { name,apiVersions, locations}'
-        {
-          "name": "virtualMachines",
-          "apiVersions": [
-            "2015-05-01-preview",
-            "2014-12-01-preview"
-          ],
-          "locations": [
-            "East US",
-            "West US",
-            "West Europe",
-            "East Asia",
-            "Southeast Asia"
-          ]
-        }
+> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. <!-- --> Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: <!-- --> azure provider show Microsoft.Compute --json | jq '.resourceTypes | select(.name == "virtualMachines") | { name,apiVersions, locations}' { "name": "virtualMachines", "apiVersions": [ "2015-05-01-preview", "2014-12-01-preview" ], "locations": [ "East US", "West US", "West Europe", "East Asia", "Southeast Asia" ] }
 
 
 ## Überprüfen der Ressourcenanbieterregistrierung
@@ -290,7 +301,7 @@ Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonneme
 
 ### PowerShell
 
-Verwenden Sie zum Abrufen einer Liste der Ressourcenanbieter und Ihres Registrierungsstatus **Get-AzureProvider**.
+Verwenden Sie zum Abrufen einer Liste der Ressourcenanbieter und Ihres Registrierungsstatus **Get-AzureProvider** für PowerShell-Versionen vor 1.0 Preview.
 
     PS C:\> Get-AzureProvider
 
@@ -301,7 +312,19 @@ Verwenden Sie zum Abrufen einer Liste der Ressourcenanbieter und Ihres Registrie
     microsoft.cache                         Registered                              {Redis, checkNameAvailability, opera...
     ...
 
-Für die Registrierung bei einem Anbieter verwenden Sie **Register-AzureProvider**.
+Für die Registrierung eines Anbieters verwenden Sie **Register-AzureProvider**.
+
+Verwenden Sie bei Powershell 1.0 **Get-AzureRmResourceProvider**.
+
+    PS C:\> Get-AzureRmResourceProvider -ListAvailable
+
+    ProviderNamespace               RegistrationState ResourceTypes
+    -----------------               ----------------- -------------
+    Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
+    Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
+    Microsoft.Batch                 Registered        {batchAccounts}
+
+Für die Registrierung eines Anbieters verwenden Sie **Register-AzureRmResourceProvider**.
 
 ### Azure-Befehlszeilenschnittstelle
 
@@ -393,4 +416,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

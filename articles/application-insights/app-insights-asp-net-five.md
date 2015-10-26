@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Application Insights für ASP.NET 5"
-	description="Überwachen Sie Webanwendungen auf Verfügbarkeit, Leistung und Auslastung."
-	services="application-insights"
-	documentationCenter=".net"
-	authors="alancameronwills"
+	pageTitle="Application Insights für ASP.NET 5" 
+	description="Überwachen Sie Webanwendungen auf Verfügbarkeit, Leistung und Auslastung." 
+	services="application-insights" 
+    documentationCenter=".net"
+	authors="alancameronwills" 
 	manager="ronmart"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="05/27/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="05/27/2015" 
 	ms.author="awills"/>
 
 # Application Insights für ASP.NET 5
@@ -172,7 +172,7 @@ Kehren Sie zum [Azure-Portal][portal] zurück, und navigieren Sie zur Applicatio
 [portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
 [roles]: app-insights-resources-roles-access-control.md
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

@@ -54,4 +54,4 @@
 
 	> [AZURE.TIP]Mit den Standardberechtigungen kann jeder Benutzer mit dem App-Schlüssel die benutzerdefinierte API aufrufen. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Erwägen Sie, den Zugriff nur authentifizierten Benutzern zu gestatten, um die Sicherheit zu erhöhen.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

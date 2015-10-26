@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Erstellen einer Web-App in Azure App Service mithilfe des Azure SDK für Java"
-	description="Erfahren Sie, wie Sie mithilfe des Azure SDK für Java programmgesteuert eine Web-App in Azure App Service erstellen."
+	pageTitle="Erstellen einer Web-App in Azure App Service mithilfe des Azure SDK für Java" 
+	description="Erfahren Sie, wie Sie mithilfe des Azure SDK für Java programmgesteuert eine Web-App in Azure App Service erstellen." 
 	tags="azure-classic-portal"
-	services="app-service\web"
-	documentationCenter="Java"
-	authors="donntrenton"
-	manager="wpickett"
+	services="app-service\web" 
+	documentationCenter="Java" 
+	authors="donntrenton" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="10/12/2015" 
 	ms.author="v-donntr"/>
 
 
@@ -432,7 +432,7 @@ Weitere Informationen zum Bereitstellen von WAR-Dateien finden Sie unter [Hinzuf
 
 Wählen Sie einen Drittanbieter-FTP-Client zum Veröffentlichen der Anwendung aus. In dieser Vorgehensweise werden zwei Optionen beschrieben: die in Azure integrierte Kudu-Konsole und FileZilla, ein beliebtes Tool mit einer benutzerfreundlichen grafischen Oberfläche.
 
-> **Hinweis:** Das Azure-Plug-In für Eclipse mit Java 2.4 unterstützt die Bereitstellung in Speicherkonten und Clouddiensten, eine Bereitstellung in Web-Apps wird derzeit jedoch nicht unterstützt. Sie können mithilfe eines Azure-Bereitstellungsprojekts, wie in [Erstellen einer Hello World-Anwendung für Azure in Eclipse](http://msdn.microsoft.com/library/azure/hh690944.aspx) beschrieben, eine Bereitstellung in Speicherkonten und Clouddiensten durchführen. Eine Bereitstellung in Web-Apps ist jedoch nicht möglich. Verwenden Sie andere Methoden, z. B. FTP oder GitHub, um Ihre Dateien in die Web-App zu übertragen.
+> **Hinweis:** Das Azure-Toolkit für Eclipse unterstützt die Bereitstellung in Speicherkonten und Clouddiensten, eine Bereitstellung in Web-Apps wird derzeit jedoch nicht unterstützt. Sie können mithilfe eines Azure-Bereitstellungsprojekts, wie in [Erstellen einer Hello World-Anwendung für Azure in Eclipse](http://msdn.microsoft.com/library/azure/hh690944.aspx) beschrieben, eine Bereitstellung in Speicherkonten und Clouddiensten durchführen. Eine Bereitstellung in Web-Apps ist jedoch nicht möglich. Verwenden Sie andere Methoden, z. B. FTP oder GitHub, um Ihre Dateien in die Web-App zu übertragen.
 
 > **Hinweis:** Es wird nicht empfohlen, FTP über die Windows-Eingabeaufforderung zu verwenden (das Befehlszeilenprogramm FTP.EXE, das im Lieferumfang von Windows enthalten ist). FTP-Clients, die aktive FTP-Verbindungen nutzen, wie beispielsweise FTP.EXE, funktionieren häufig nicht, wenn Firewalls vorhanden sind. Beim aktiven FTP wird eine interne LAN-basierte Adresse angegeben, mit der ein FTP-Server wahrscheinlich keine Verbindung herstellen kann.
 
@@ -601,4 +601,4 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
 [WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

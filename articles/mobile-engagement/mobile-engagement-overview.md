@@ -52,4 +52,4 @@ Microsoft bekennt sich seit langer Zeit zum Datenschutz, einem wichtigen Teil un
 [Erste Schritte (Entwickler)](/documentation/services/mobile-engagement/)
  
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

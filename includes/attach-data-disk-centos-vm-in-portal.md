@@ -114,4 +114,4 @@ Melden Sie sich beim virtuellen Computer an, um die Einrichtung des Datenträger
 [Image8]: ./media/attach-data-disk-centos-vm-in-portal/fdisk4.png
 [Image9]: ./media/attach-data-disk-centos-vm-in-portal/mkfs.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

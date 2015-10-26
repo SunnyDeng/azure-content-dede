@@ -1,20 +1,20 @@
 <properties
-    pageTitle="Entwickeln von Skriptaktionen mit HDInsight | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit Skriptaktionen Hadoop-Cluster anpassen können."
-	services="hdinsight"
-	documentationCenter=""
-	authors="Blackmist"
-	manager="paulettm"
-	editor="cgronlun"/>
+    pageTitle="Entwickeln von Skriptaktionen mit Linux-basiertem HDInsight | Microsoft Azure"
+    description="Erfahren Sie, wie Sie mit Skriptaktionen Linux-basierte HDInsight-Cluster anpassen können."
+    services="hdinsight"
+    documentationCenter=""
+    authors="Blackmist"
+    manager="paulettm"
+    editor="cgronlun"/>
 
 <tags
     ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/18/2015"
-	ms.author="larryfr"/>
+    ms.workload="big-data"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/09/2015"
+    ms.author="larryfr"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight
 
@@ -213,4 +213,4 @@ Ersetzen Sie den oben aufgeführten Befehl __INFILE__ durch die Datei mit Bytere
 
 [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Oct15_HO3-->

@@ -19,11 +19,11 @@
 
 # Anfügen eines Datenträgers an einen virtuellen Windows-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell. Sie können Ressourcen auch mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-attach-disk-preview.md) erstellen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-attach-disk-preview.md).
 
 Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann.
 
-> [AZURE.NOTE]Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. **Verwenden Sie zum Speichern von Daten nicht Laufwerk D.** Wie der Name schon sagt, bietet Laufwerk D nur eine temporäre Speicherung. Es ermöglicht keine Redundanz oder Sicherung, da es sich nicht im Azure-Speicher befindet.
+Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. **Verwenden Sie zum Speichern von Daten nicht Laufwerk D.** Wie der Name schon sagt, bietet Laufwerk D nur eine temporäre Speicherung. Es ermöglicht keine Redundanz oder Sicherung, da es sich nicht im Azure-Speicher befindet.
 
 ## Video zur exemplarischen Vorgehensweise
 
@@ -33,7 +33,7 @@ Hier finden Sie eine exemplarische Vorgehensweise für die Schritte dieses Tutor
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
 
-## <a id="initializeinWS"></a>Gewusst wie: Initialisieren eines neues Datenträgers unter Windows Server
+## <a id="initializeinWS"></a>Gewusst wie: Initialisieren eines neuen Datenträgers unter Windows Server
 
 1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][logon].
 
@@ -61,4 +61,4 @@ Hier finden Sie eine exemplarische Vorgehensweise für die Schritte dieses Tutor
 
 [logon]: virtual-machines-log-on-windows-server.md
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

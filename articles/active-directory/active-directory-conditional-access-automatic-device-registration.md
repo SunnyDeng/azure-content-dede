@@ -85,4 +85,4 @@ Unternehmen, die sowohl mobile als auch herkömmliche Geräte oder Office 365, A
 
 [Hier](https://technet.microsoft.com/de-DE/library/dn486831.aspx) erfahren Sie mehr über das Bereitstellen der Geräteregistrierung mit AD FS.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Oct15_HO3-->

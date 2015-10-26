@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Jobscience erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Ein Jobscience-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Jobscience zugewiesen haben, mittels einmaliger Anmeldung auf der Jobscience-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Jobscience zugewiesen haben, mittels einmaliger Anmeldung auf der Jobscience-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -134,7 +134,7 @@ Klicken Sie zum Abrufen der Anmelde-URL für vom Dienstanbieter initiiertes einm
 
 ![Sicherheitskontrollen](./media/active-directory-saas-jobscience-tutorial/IC784368.png "Sicherheitskontrollen")
   
-Klicken Sie auf das SSO-Profil, das Sie im obigen Schritt erstellt haben. Auf dieser Seite wird die SSO-URL für Ihr Unternehmen angezeigt \(z. B. **https://companyname.my.salesforce.com?so=companyid*).
+Klicken Sie auf das SSO-Profil, das Sie im obigen Schritt erstellt haben. Auf dieser Seite wird die SSO-URL für Ihr Unternehmen angezeigt (z. B. **https://companyname.my.salesforce.com?so=companyid*).
 ##Konfigurieren der Benutzerbereitstellung
   
 Damit sich Azure AD-Benutzer bei Jobscience anmelden können, müssen sie in Jobscience bereitgestellt werden. Im Fall von Jobscience ist die Bereitstellung eine manuelle Aufgabe.
@@ -147,7 +147,7 @@ Damit sich Azure AD-Benutzer bei Jobscience anmelden können, müssen sie in Job
 
     ![Einrichtung](./media/active-directory-saas-jobscience-tutorial/IC784358.png "Einrichtung")
 
-3.  Navigieren Sie zu **Benutzer verwalten \> Benutzer**.
+3.  Navigieren Sie zu **Benutzer verwalten > Benutzer**.
 
     ![Benutzer](./media/active-directory-saas-jobscience-tutorial/IC784369.png "Benutzer")
 
@@ -184,4 +184,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!------HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

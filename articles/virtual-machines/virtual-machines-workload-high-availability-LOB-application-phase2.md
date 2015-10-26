@@ -19,7 +19,8 @@
 
 # Branchenanwendungs-Workload, Phase 2: Konfigurieren der Domänencontroller
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+ 
 
 In dieser Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten konfigurieren Sie zwei Replikatdomänencontroller im virtuellen Azure-Netzwerk, sodass Webanforderungen der Clients nach Webressourcen im virtuellen Azure-Netzwerk authentifiziert werden können. Die für die Authentifizierung erforderlichen Daten müssen dann nicht über die Verbindung mit Ihrem lokalen Netzwerk gesendet werden.
 
@@ -212,4 +213,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -21,7 +21,7 @@
 
 Wenn der Azure-Ressourcen-Manager um Rechen-, Netzwerk- und Speicherkapazitäten erweitert wird, stellt dies eine erhebliche Vereinfachung der Bereitstellung und Verwaltung komplexer Anwendungen dar, die in IaaS ausgeführt werden. Für viele Anwendungen ist eine Kombination von Ressourcen wie virtuellen Netzwerken, Speicherkonten, virtuellen Computern und Netzwerkschnittstellen erforderlich. Mit dem Azure-Ressourcen-Manager können Sie eine JSON-Vorlage erstellen, um alle Ressourcen gemeinsam als eine einzige Anwendung bereitzustellen und zu verwalten.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem Ressourcen-Manager- oder dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 ## Vorteile der Integration von Computing-, Netzwerk- und Speicherkapazitäten unter dem Azure-Ressourcen-Manager
@@ -116,4 +116,4 @@ Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager
 
 Einen umfassenden Satz von Startervorlagen finden Sie unter [Schnellstartvorlagen für den Azure-Ressourcen-Manager](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

@@ -97,4 +97,4 @@ Sie können das StorSimple-Gerät (vom normalen Modus) in den Wartungsmodus vers
 
 Hier erfahren Sie, wie Sie auf Ihrem StorSimple-Gerät [Updates im normalen Modus und im Wartungsmodus installieren](storsimple-update-device.md).
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

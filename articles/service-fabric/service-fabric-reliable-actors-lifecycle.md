@@ -7,7 +7,6 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -16,7 +15,6 @@
    ms.workload="NA"
    ms.date="08/05/2015"
    ms.author="amanbha"/>
-
 
 
 # Actor-Lebenszyklus und Garbage Collection
@@ -92,4 +90,4 @@ Bitte beachten Sie, dass für einen Actor nie eine Garbage Collection durchgefü
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-lifecycle/garbage-collection.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

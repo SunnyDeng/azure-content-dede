@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/14/2015" 
+	ms.date="10/08/2015" 
 	ms.author="tdykstra"/>
 
 # Debuggen einer API-App in Azure App Service
 
 ## Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Das Debugging wird sowohl lokal als auch remote (während der Ausführung in Azure) durchgeführt.
+In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Sie debuggen den Code, während er lokal und remote in Azure ausgeführt wird.
 
 Im Lernprogramm wird die API-App verwendet, die Sie in den vorherigen Lernprogrammen in dieser Reihe [erstellt](app-service-dotnet-create-api-app.md) und [bereitgestellt](app-service-dotnet-deploy-api-app.md) haben.
 
@@ -132,8 +132,8 @@ Unter Umständen ist es erforderlich, Ihre API-App lokal zu debuggen, wenn z. B.
 
 ## Nächste Schritte
 
-In diesem Lernprogramm haben Sie erfahren, wie das Debuggen bei API-Apps erfolgt. Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung einer Web-App in Azure App Service mithilfe von Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md). Da API-Apps Web-Apps sind, die über zusätzliche Features zum Hosten von Webdiensten verfügen, können Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden, die Sie für Web-Apps nutzen.
+In diesem Lernprogramm haben Sie erfahren, wie das Debuggen bei API-Apps erfolgt.
 
- 
+Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md). Da API-Apps Web-Apps sind, die über zusätzliche Features zum Hosten von Webdiensten verfügen, können Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden, die Sie für Web-Apps nutzen.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

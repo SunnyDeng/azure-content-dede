@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/04/2015"
+   ms.date="10/12/2015"
    ms.author="telmos" />
 
 # Benutzerdefinierte Routen und IP-Weiterleitung
@@ -32,9 +32,11 @@ Die folgende Abbildung zeigt ein einfaches Setup mit einem VNet, zwei Subnetzen 
 
 Obwohl durch die Verwendung von Systemrouten der Datenverkehr für Ihre Bereitstellung automatisch ermöglicht wird, gibt es Fälle, in denen Sie das Routing von Paketen über ein virtuelles Gerät steuern möchten. Hierzu können Sie benutzerdefinierte Routen erstellen, die den nächsten Hop für Pakete in ein bestimmtes Subnetz angeben, und festlegen, dass die Pakete stattdessen an Ihre virtuelle Anwendung gesendet werden sollen. Außerdem können Sie die IP-Weiterleitung für den virtuellen Computer aktivieren, der als virtuelles Gerät ausgeführt wird.
 
-Die folgende Abbildung zeigt ein Beispiel für benutzerdefinierte Routen und IP-Weiterleitung, um zu erzwingen, dass Pakete aus einem Front-End-Subnetz ins Internet durch eine virtuelles Gerät weitergeleitet werden und alle Pakete aus dem Front-End-Subnetz in das Back-End-Subnetz ein anderes virtuelles Gerät durchlaufen. Beachten Sie, dass Datenverkehr aus dem Back-End-Subnetz in das Front-End-Subnetz weiterhin über die Systemroute gesendet wird und das Gerät umgeht.
+Die folgende Abbildung zeigt ein Beispiel für benutzerdefinierte Routen und IP-Weiterleitung, mit denen erzwungen wird, dass an ein Subnetz gesendete Pakete durch ein virtuelles Gerät in ein drittes Subnetz gesendet werden.
 
 ![Systemrouten in Azure](./media/virtual-networks-udr-overview/Figure2.png)
+
+>[AZURE.IMPORTANT]Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
 
 ## Routing
 Pakete werden über ein TCP/IP-Netzwerk weitergeleitet, das auf einer Routentabelle beruht, die auf den einzelnen Knoten im physischen Netzwerk definiert wird. Eine Routentabelle ist eine Sammlung der einzelnen Routen, anhand derer entschieden wird, wohin die Pakete beruhend auf der Ziel-IP-Adresse weitergeleitet werden. Eine Route besteht aus den folgenden Elementen:
@@ -83,11 +85,9 @@ Wie oben angeführt, ist einer der wichtigsten Gründe für das Erstellen einer 
 
 Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der nicht an ihn selbst adressiert ist. Damit ein virtueller Computer an andere Ziele gerichteten Datenverkehr empfangen kann, müssen Sie für den virtuellen Computer die IP-Weiterleitung aktivieren. Hierbei handelt es sich um eine Azure-Einstellung, keine Einstellung im Gastbetriebssystem.
 
-Informationen zum Aktivieren der IP-Weiterleitung für einen virtuellen Computer in Azure finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](../virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding).
-
 ## Nächste Schritte
 
 - Erfahren Sie, wie Sie [Routen im Ressourcen-Manager-Bereitstellungsmodell erstellen](../virtual-network-create-udr-arm-template) und diese Subnetzen zuordnen. 
 - Erfahren Sie, wie Sie [Routen im klassischen Bereitstellungsmodell erstellen](../virtual-network-create-udr-classic-ps) und diese Subnetzen zuordnen.
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

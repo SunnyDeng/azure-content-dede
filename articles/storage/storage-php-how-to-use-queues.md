@@ -385,4 +385,4 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [Azure Management Portal]: http://manage.windowsazure.com/
 [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

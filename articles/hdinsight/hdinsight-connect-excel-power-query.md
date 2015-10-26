@@ -88,4 +88,4 @@ In diesem Artikel haben Sie gelernt, wie Sie Daten aus HDInsight mithilfe von Po
 
 [powerquery-download]: http://go.microsoft.com/fwlink/?LinkID=286689
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

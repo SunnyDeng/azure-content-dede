@@ -87,4 +87,4 @@ Reliable Services geben Ereignisse und Leistungsindikatoren aus, die zur Diagnos
 
 - [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -172,4 +172,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

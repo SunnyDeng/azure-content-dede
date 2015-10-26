@@ -203,4 +203,4 @@ Weitere Tipps zur Verwaltung von SQL Data Warehouse finden Sie unter [Verwaltung
 
 <!--MSDN references-->
 
-<!---HONumber=Sept15_HO4-->
+<!---HONumber=Oct15_HO3-->

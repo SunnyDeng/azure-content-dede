@@ -270,4 +270,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

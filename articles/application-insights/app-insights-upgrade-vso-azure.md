@@ -68,9 +68,9 @@ Oder sehen Sie sich Ihr Projekt im Projektmappen-Explorer von Visual Studio an, 
 [greenbrown]: app-insights-start-monitoring-app-health-usage.md
 [java]: app-insights-java-get-started.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
-[track]: app-insights-custom-events-metrics-api.md
+[track]: app-insights-api-custom-events-metrics.md
 [usage]: app-insights-web-track-usage.md
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

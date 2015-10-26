@@ -71,7 +71,7 @@ id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource.
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.
  
 ###Adressieren einer Ressource
-Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed\>/{\_rid}-Pfadsegmenten:
+Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /<feed>/{\_rid}-Pfadsegmenten:
 
 |Wert von "_self" |Beschreibung
 |-------------------|-----------
@@ -86,7 +86,7 @@ Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eig
   
 Eine Ressource verfügt ebenfalls über einen eindeutigen benutzerdefinierten Namen, der über die ID-Eigenschaft der Ressource bereitgestellt wird. Die ID ist eine benutzerdefinierte Zeichenfolge mit bis zu 256 Zeichen Länge, die innerhalb des Kontexts einer bestimmten übergeordneten Ressource eindeutig ist. Der Wert der ID-Eigenschaft aller Dokumente innerhalb einer bestimmten Sammlung ist z. B. eindeutig, ist jedoch sammlungsübergreifend möglicherweise nicht eindeutig. Der Wert der ID-Eigenschaft aller Berechtigungen eines bestimmten Benutzers ist ebenso eindeutig, ist jedoch benutzerübergreifend möglicherweise eindeutig. Die \_rid-Eigenschaft wird zum Erstellen eines aufrufbaren \_self-Links einer Ressource verwendet.
 
-Jede Ressource verfügt ebenfalls über eine systemgenerierte hierarchische Ressourcen-ID \(auch als RID bezeichnet\), die über die \_rid-Eigenschaft verfügbar ist. Die RID codiert die gesamte Hierarchie einer bestimmten Ressource und ist eine einfache interne Darstellung, die zum Erzwingen einer dezentralen refentiellen Integrität verwendet. Die RID ist innerhalb eines Datenbankkontos eindeutig und wird von DocumentDB intern für effiziente Weiterleitung ohne getrenntes Nachschlagen verwendet.
+Jede Ressource verfügt ebenfalls über eine systemgenerierte hierarchische Ressourcen-ID (auch als RID bezeichnet), die über die \_rid-Eigenschaft verfügbar ist. Die RID codiert die gesamte Hierarchie einer bestimmten Ressource und ist eine einfache interne Darstellung, die zum Erzwingen einer dezentralen refentiellen Integrität verwendet. Die RID ist innerhalb eines Datenbankkontos eindeutig und wird von DocumentDB intern für effiziente Weiterleitung ohne getrenntes Nachschlagen verwendet.
 
 Bei den Werten der \_self- und \_rid-Eigenschaften handelt es sich um alternative und kanonische Darstellungen einer Ressource.
 
@@ -100,10 +100,10 @@ Sie können die folgenden Eigenschaften im Rahmen der Bereitstellung und Verwalt
 
 Eigenschaftenname|Beschreibung
 ---|---
-Konsistenzrichtlinie|Legen Sie diese Eigenschaft fest, um die Standardkonsistenzebene für alle Sammlungen unter Ihrem Datenbankkonto zu konfigurieren. Sie können die Konsistenzebene mithilfe des Anforderungsheaders \[x-ms-consistency-level\] anforderungsbasiert außer Kraft setzen. Zukünftig wird möglicherweise die Außerkraftsetzung der Konsistenzebene auf Sammlungsbasis unterstützt. <p><p>Beachten Sie, dass diese Eigenschaft nur für <i>benutzerdefinierte Ressourcen</i> gilt. Alle systemdefinierten Ressourcen werden konfiguriert, um Lese-/Abfragevorgänge mit hoher Konsistenz zu unterstützen.
+Konsistenzrichtlinie|Legen Sie diese Eigenschaft fest, um die Standardkonsistenzebene für alle Sammlungen unter Ihrem Datenbankkonto zu konfigurieren. Sie können die Konsistenzebene mithilfe des Anforderungsheaders [x-ms-consistency-level] anforderungsbasiert außer Kraft setzen. Zukünftig wird möglicherweise die Außerkraftsetzung der Konsistenzebene auf Sammlungsbasis unterstützt. <p><p>Beachten Sie, dass diese Eigenschaft nur für <i>benutzerdefinierte Ressourcen</i> gilt. Alle systemdefinierten Ressourcen werden konfiguriert, um Lese-/Abfragevorgänge mit hoher Konsistenz zu unterstützen.
 Primärer und sekundärer Schlüssel|Dies sind die primären und sekundären Schlüssel, die den Administratorzugriff auf alle Ressourcen unter dem Datenbankkonto bereitstellen.
-MaxMediaStorageUsageInMB \(READ\)|Maximale Medienspeichermenge, die für das Datenbankkonto zur Verfügung steht.
-MediaStorageUsageInMB \(READ\)|Aktuelle Medienspeichernutzung für das Datenbankkonto.
+MaxMediaStorageUsageInMB (READ)|Maximale Medienspeichermenge, die für das Datenbankkonto zur Verfügung steht.
+MediaStorageUsageInMB (READ)|Aktuelle Medienspeichernutzung für das Datenbankkonto.
 
 Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwaltung Ihres Datenbankkontos über das Azure-Portal die DocumentDB-Datenbankkonten auch über [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) programmgesteuert erstellen und verwalten können.
 
@@ -138,9 +138,9 @@ DocumentDB ist ein echtes schemaloses Datenbanksystem. Es setzt kein Schema für
 ###Konfigurieren der Indizierungsrichtlinie einer Sammlung
 Die Indizierungsrichtlinie der einzelnen Sammlungen gestattet es Ihnen, Kompromisse bei der Leistung und Speicherung einzugehen, die mit der Indizierung einhergehen. Die folgende Optionen stehen Ihnen im Rahmen der Indexkonfiguration zur Verfügung:
 
--	Wählen Sie, ob die Sammlung automatisch alle Dokumente indiziert oder nicht. Standardmäßig werden automatisch alle Dokumente indiziert. Sie können die automatische Indizierung deaktivieren und wahlweise nur bestimmte Dokumente zum Index hinzufügen. Umgekehrt können Sie wahlweise auch nur bestimmte Dokumente ausschließen. Sie können dies erreichen, indem Sie für die Indizierungsrichtlinie einer Sammlung für die "automatic"-Eigenschaft den Wert "true" oder "false" festlegen und beim Einfügen, Ersetzen oder Löschen eines Dokuments den Anforderungsheader "\[x-ms-indexingdirective\]" verwenden.  
+-	Wählen Sie, ob die Sammlung automatisch alle Dokumente indiziert oder nicht. Standardmäßig werden automatisch alle Dokumente indiziert. Sie können die automatische Indizierung deaktivieren und wahlweise nur bestimmte Dokumente zum Index hinzufügen. Umgekehrt können Sie wahlweise auch nur bestimmte Dokumente ausschließen. Sie können dies erreichen, indem Sie für die Indizierungsrichtlinie einer Sammlung für die "automatic"-Eigenschaft den Wert "true" oder "false" festlegen und beim Einfügen, Ersetzen oder Löschen eines Dokuments den Anforderungsheader "[x-ms-indexingdirective]" verwenden.  
 -	Wählen Sie, ob bestimmte Pfade oder Muster in Ihren Dokumenten in den Index einbezogen oder aus diesem ausgeschlossen werden sollen. Dies können Sie durch die entsprechende Festlegung von "includedPaths" und "excludedPaths" für die Indizierungsrichtlinie einer Sammlung erreichen. Sie können auch die Speicher- und Leistungsabstriche für Bereichs- und Hashabfragen für bestimmte Pfadmuster konfigurieren. 
--	Wählen Sie zwischen synchronen \(konsistenten\) und asynchronen \(flexiblen\) Indexaktualisierungen. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die flexible Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien für Sammlungen mit hauptsächlich übermäßigen Lesevorgängen geeignet.
+-	Wählen Sie zwischen synchronen (konsistenten) und asynchronen (flexiblen) Indexaktualisierungen. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die flexible Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien für Sammlungen mit hauptsächlich übermäßigen Lesevorgängen geeignet.
 
 Die Indizierungsrichtlinie kann nur während der Erstellung einer Sammlung konfiguriert werden. Nachdem die Sammlung erstellt wurde, kann die Richtlinie nicht aktualisiert werden.
 
@@ -149,7 +149,7 @@ Die Dokumente in einer Sammlung können beliebige Schemas aufweisen, und Sie kö
 
 1.	Eine kleine Auswahl von Abfragevorgängen, die natürlich zur Baumstruktur zugeordnet werden, einschließlich hierarchischer Abfragen und Projektionen. 
 2.	Eine Teilmenge von relationalen Vorgängen, einschließlich der Kompositionen, Filter, Projektionen, Aggregaten und Selbstverknüpfungen. 
-3.	Rein auf JavaScript basierende UDFs, die mit \(1\) und \(2\) funktionieren.  
+3.	Rein auf JavaScript basierende UDFs, die mit (1) und (2) funktionieren.  
 
 Das Abfragemodell von DocumentDB versucht die Balance zwischen Funktionalität, Effizienz und Einfachheit zu finden. Das Datenbankmodul von DocumentDB kompiliert die SQL-Abfrageanweisungen und führt sie aus. Sie können eine Sammlung mithilfe der [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) abfragen. Das .NET-SDK verfügt über einen LINQ-Anbieter.
 
@@ -164,13 +164,13 @@ Datenbanktransaktionen bieten ein sicheres und berechenbares Programmiermodell z
 Aufgrund seiner direkt im Datenbankmodul verankerten starken Bindung an JavaScript und JSON bietet DocumentDB ein intuitives Programmiermodell zur Ausführung von JavaScript-basierter Anwendungslogik, die über gespeicherte Prozeduren und Trigger direkt in den Sammlungen erfolgt. Dies ermöglicht Folgendes:
 
 - Effiziente Implementierung der Nebenläufigkeitssteuerung, Wiederherstellung und automatischen Indizierung der JSON-Objektdiagramme direkt im Datenbankmodul. 
-- Natürliches Ausdrücken des Steuerungsablaufs, der Zuweisung und der Integration von Grundtypen zur Ausnahmeverarbeitung direkt mit Datenbanktransaktionen \(im Sinne der JavaScript-Programmiersprache\).   
+- Natürliches Ausdrücken des Steuerungsablaufs, der Zuweisung und der Integration von Grundtypen zur Ausnahmeverarbeitung direkt mit Datenbanktransaktionen (im Sinne der JavaScript-Programmiersprache).   
 
 Die auf Sammlungsebene registrierte JavaScript-Logik kann dann Datenbankvorgänge für die Dokumente der angegebenen Sammlung auslösen. Die auf JavaScript basierten gespeicherten Prozeduren und Trigger von DocumentDB werden implizit in eine umgebende ACID-Transaktion eingefasst, die die Momentaufnahmeisolation zwischen den Dokumenten in einer Sammlung einbezieht. Während des Ausführungsverlaufs wird die gesamte Transaktion abgebrochen, wenn JavaScript eine Ausnahme auslöst. Das sich ergebende Programmiermodell ist sehr einfach, aber dennoch leistungsstark. JavaScript-Entwickler erhalten ein "beständiges" Programmiermodell, während sie weiterhin ihre vertrauten Sprachkonstruktr und Bibliotheksstammfunktionen verwenden können.
 
 Die Möglichkeit zur direkten Ausführung von JavaScript innerhalb des Datenbankmoduls im gleichen Adressraum wie der Pufferpool gestattet die leistungsfähige und transaktionale Ausführung von Datenbankvorgängen für die Dokumente einer Sammlung. Des Weiteren werden alle Impedanzabweichungen zwischen den Typsystemen von Anwendung und Datenbank aufgrund der starken Bindung des DocumentDB-Datenbankmoduls an JSON und JavaScript beseitigt.
 
-Nach der Erstellung einer Sammlung können Sie gespeicherte Prozeduren, Trigger und UDFs für eine Sammlung registrieren. Verwenden Sie dazu die [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx). Im Anschluss an die Registrierung können Sie sie referenzieren und ausführen. Betrachten Sie die folgende gespeicherte Prozedur, die vollständig in JavaScript geschrieben ist, zwei Argumente \(Buchtitel und Autorenname\) übernimmt, ein neues Dokument erstellt, Abfragen für ein Dokument ausführt und dieses dann aktualisiert – alles unter dem Schutz einer impliziten ACID-Transaktion. Die gesamte Transaktion wird an einem beliebigen Punkt der Ausführung abgebrochen, wenn eine JavaScript-Ausnahme ausgelöst wird.
+Nach der Erstellung einer Sammlung können Sie gespeicherte Prozeduren, Trigger und UDFs für eine Sammlung registrieren. Verwenden Sie dazu die [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx). Im Anschluss an die Registrierung können Sie sie referenzieren und ausführen. Betrachten Sie die folgende gespeicherte Prozedur, die vollständig in JavaScript geschrieben ist, zwei Argumente (Buchtitel und Autorenname) übernimmt, ein neues Dokument erstellt, Abfragen für ein Dokument ausführt und dieses dann aktualisiert – alles unter dem Schutz einer impliziten ACID-Transaktion. Die gesamte Transaktion wird an einem beliebigen Punkt der Ausführung abgebrochen, wenn eine JavaScript-Ausnahme ausgelöst wird.
 
 	function businessLogic(name, author) {
 	    var context = getContext();
@@ -413,4 +413,4 @@ Weitere Informationen zum Arbeiten mit Ressourcen mithilfe von HTTP-Befehlen fin
 [3]: media/documentdb-resources/resources3.png
  
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

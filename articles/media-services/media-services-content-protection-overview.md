@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="09/08/2015" 
 	ms.author="juliako"/>
 
 #Schützen von Inhalten – Übersicht
@@ -54,7 +54,7 @@ Um ein speicherverschlüsseltes Medienobjekt zu übermitteln, müssen Sie die Ü
 
 ###Dynamische Verschlüsselung
 
-Mit Microsoft Azure Media Services können Sie Inhalte dynamisch verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM.
+Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady- und/oder Widevine-DRM.
 
 Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
@@ -86,7 +86,7 @@ Bei der Konfiguration der Richtlinie mit Token-Einschränkung müssen die Parame
 
 ###Widevine
 
-AMS ermöglicht Ihnen auch, DASH mit Widevine-DRM-Verschlüsselung bereitzustellen. PlayReady und Widewine werden gemäß der Common Encryption (CENC)-Spezifikation verschlüsselt. Sie können das [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/) (ab Version 3.5.1) oder die REST-API verwenden, um AssetDeliveryConfiguration für die Verwendung von Widevine zu konfigurieren.
+AMS ermöglicht Ihnen auch, MPEG DASH mit Widevine-DRM-Verschlüsselung bereitzustellen. PlayReady und Widevine werden gemäß der Common Encryption (CENC)-Spezifikation verschlüsselt. Sie können das [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/) (ab Version 3.5.1) oder die REST-API verwenden, um AssetDeliveryConfiguration für die Verwendung von Widevine zu konfigurieren.
 
 Media Services bietet derzeit keinen Widevine-Lizenzserver. Die folgenden AMS-Partner unterstützen Sie bei der Übermittlung von Widevine-Lizenzen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
@@ -136,4 +136,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
  
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -19,7 +19,8 @@
 
 # Gewusst wie: Installieren und Konfigurieren von Symantec Endpoint Protection auf einem virtuellen Azure-Computer
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Installation von Anwendungen auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Artikel wird beschrieben, wie der Symantec Endpoint Protection-Client auf einem neuen oder vorhandenen virtuellen Windows Server-Computer installiert und konfiguriert wird. Dies ist der vollständige Client, der Dienste wie Viren- und Spywareschutz, Firewall und Eindringschutz enthält.
 
@@ -52,7 +53,7 @@ Bevor Sie beginnen, benötigen Sie Folgendes:
 
 - Der VM-Agent muss auf dem virtuellen Azure-Computer ausgeführt werden.
 
-Stellen Sie zunächst sicher, dass der VM-Agent bereits auf dem virtuellen Computer installiert ist. Füllen Sie den Cloud-Dienstnamen und den Namen des virtuellen Computers aus, und führen Sie dann die folgenden Befehle an einer Azure PowerShell-Eingabeaufforderung mit Administratorrechten aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
+Stellen Sie zunächst sicher, dass der VM-Agent bereits auf dem virtuellen Computer installiert ist. Füllen Sie den Clouddienstnamen und den Namen des virtuellen Computers aus, und führen Sie dann die folgenden Befehle an einer Azure PowerShell-Eingabeaufforderung mit Administratorrechten aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
 > [AZURE.TIP]Wenn Sie den Namen des Clouddiensts und des virtuellen Computers nicht kennen, führen Sie **Get-AzureVM** aus, um die Namen aller virtuellen Computer im aktuellen Abonnement aufzulisten.
 
@@ -97,4 +98,4 @@ So überprüfen Sie, ob die Symantec-Sicherheitserweiterung installiert wurde un
 
 [Ext]: http://go.microsoft.com/fwlink/p/?linkid=390493
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

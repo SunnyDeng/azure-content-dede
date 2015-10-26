@@ -58,4 +58,4 @@ Beispielsweise könnten Sie eine Webdienstrolle entfernen und diese Rolle späte
 
 Weitere Informationen zum Konfigurieren von Rollen in Visual Studio finden Sie unter [Konfigurieren der Rollen für einen Azure-Clouddienst mit Visual Studio](vs-azure-tools-configure-roles-for-cloud-service.md).
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

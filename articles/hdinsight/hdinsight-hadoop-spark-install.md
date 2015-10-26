@@ -279,7 +279,7 @@ Führen Sie die folgenden Schritte aus:
 </td></tr>
 </table>
 
-4. Beginnen Sie mit der Erstellung eines angepassten Clusters mit installiertem Spark.
+4. Beginnen Sie mit dem Erstellen eines angepassten Clusters mit installiertem Spark.
 
 		# Start creating a cluster with Spark installed
 		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version
@@ -311,4 +311,4 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [powershell-install-configure]: ../install-configure-powershell.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -48,4 +48,4 @@ Data Factory ist ein cloudbasierter Dienst zur Verwaltung von Informationen, der
 
 [Durch Cloud Machine Learning den Kundenkontakt stärken](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11257)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

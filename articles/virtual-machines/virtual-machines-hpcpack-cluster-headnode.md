@@ -18,7 +18,8 @@ ms.service="virtual-machines"
 
 # Erstellen des Hauptknotens eines HPC Pack-Clusters auf einem virtuellen Azure-Computer mit einem Marketplace-Image
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel bezieht sich auf das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 In diesem Artikel wird veranschaulicht, wie Sie das [Microsoft HPC Pack-Image für einen virtuellen Computer](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) im Azure Marketplace verwenden, um den Hauptknoten eines Windows HPC-Clusters in Azure mit dem klassischen Bereitstellungsmodell (Service Management) zu erstellen. Für den Hauptknoten muss der Beitritt zu einer Active Directory-Domäne in einem virtuellen Azure-Netzwerk durchgeführt werden. Sie können diesen Hauptknoten für eine Machbarkeitsstudien-Bereitstellung von HPC Pack in Azure verwenden und dem Cluster zum Ausführen von HPC-Workloads Compute-Ressourcen hinzufügen.
 
@@ -101,4 +102,4 @@ Unten sind die allgemeinen Schritte zum Erstellen eines virtuellen Azure-Compute
 <!--Image references-->
 [headnode]: ./media/virtual-machines-hpcpack-cluster-headnode/headnode.png
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

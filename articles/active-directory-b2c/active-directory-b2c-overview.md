@@ -62,4 +62,4 @@ Unter den folgenden Links finden Sie ausführliche Informationen zum Dienst:
 - [Häufig gestellte Fragen zu Azure Active Directory B2C](active-directory-b2c-faqs.md)
 - [Senden von Supportanfragen zu Azure Active Directory B2C](active-directory-b2c-support.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

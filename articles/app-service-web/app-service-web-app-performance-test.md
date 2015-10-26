@@ -112,4 +112,4 @@ A: Sie finden Ihr neues Konto hier: ```https://{accountname}.visualstudio.com```
 [AzureFreeTrial]: https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F
 [WhatIsVSO]: https://www.visualstudio.com/products/what-is-visual-studio-online-vs
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

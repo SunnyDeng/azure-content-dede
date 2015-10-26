@@ -69,8 +69,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-benefitsolver-tutorial/IC804826.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Benefitsolver-Anwendung verwenden \(z. B. "*http://azure-dev.benefitsolver.com*.
-    2.  Geben Sie im Textfeld **Antwort-URL** Ihre AssertionConsumerService-URL für Benefitsolver ein \(z. B. "*https://dev.benefitsolver.com/benefits/BenefitSolverView?page\_name=single\_signon\_saml*”).  
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Benefitsolver-Anwendung verwenden (z. B. "*http://azure-dev.benefitsolver.com*.
+    2.  Geben Sie im Textfeld **Antwort-URL** Ihre AssertionConsumerService-URL für Benefitsolver ein (z. B. "*https://dev.benefitsolver.com/benefits/BenefitSolverView?page\_name=single\_signon\_saml*”).  
 
         >[AZURE.NOTE]Sie erhalten den tatsächlichen Wert für Ihre Umgebung von Ihrem Benefitsolver-Supportteam.
 
@@ -92,7 +92,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Attribute](./media/active-directory-saas-benefitsolver-tutorial/IC795920.png "Attribute")
 
-8.  So fügen Sie die erforderlichen Attributzuordnungen hinzu
+8.  So fügen Sie die erforderlichen Attributzuordnungen hinzu:
 
     ![Attribute](./media/active-directory-saas-benefitsolver-tutorial/IC804823.png "Attribute")
 
@@ -133,4 +133,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

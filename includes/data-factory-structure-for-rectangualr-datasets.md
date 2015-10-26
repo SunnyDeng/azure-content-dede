@@ -7,7 +7,7 @@ Jede Spalte enthält die folgenden Eigenschaften:
 | -------- | ----------- | -------- |
 | name | Name der Spalte. | Ja |
 | type | Datentyp der Spalte. Im nachstehenden Abschnitt "Typkonvertierungen" finden Sie Details zur Angabe von Typinformationen. | Nein |
-| culture | Zu verwendendes .NET-basiertes Gebietsschema, wenn "type" angegeben ist und den .NET-Typ "Datetime" oder "Datetimeoffset" hat. Die Standardeinstellung ist "de-de". | Nein |
+| culture | Zu verwendendes .NET-basiertes Gebietsschema, wenn "type" angegeben ist und den .NET-Typ "Datetime" oder "Datetimeoffset" hat. Die Standardeinstellung ist "de-DE". | Nein |
 | format | Zu verwendende Formatzeichenfolge, wenn "type" angegeben ist und den .NET-Typ "Datetime" oder "Datetimeoffset" hat. | Nein |
 
 Das folgende Beispiel zeigt den Abschnitt "structure" der JSON für eine Tabelle mit den drei Spalten "userid", "name" und "lastlogindate".
@@ -47,4 +47,4 @@ Data Factory unterstützt die folgenden CLS-konformen auf .NET basierenden Typwe
 
 Für "Datetime" und "Datetimeoffset" können Sie optional auch die Zeichenfolgen "culture" und "format" angeben, um das Analysieren Ihrer benutzerdefinierten "Datetime"-Zeichenfolge zu erleichtern. Nachstehend sehen Sie ein Beispiel einer Typumwandlung.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

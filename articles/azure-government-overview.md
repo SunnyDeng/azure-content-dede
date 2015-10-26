@@ -104,4 +104,4 @@ Wenn Sie mehr über Azure Government erfahren möchten, nutzen Sie einige der un
 [Link 2 to another azure.microsoft.com documentation topic]: app-service-web/web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

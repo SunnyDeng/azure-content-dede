@@ -292,4 +292,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

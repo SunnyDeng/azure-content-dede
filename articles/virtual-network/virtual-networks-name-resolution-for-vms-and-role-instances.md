@@ -177,4 +177,4 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -153,4 +153,4 @@ Der letzte Schritt im Runbook ist das Senden einer Ausgabe mit der Information, 
 - [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->

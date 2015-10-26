@@ -21,18 +21,18 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
 
 |Cmdlet|Beschreibung des Cmdlets|
 |---|---|
-|**[Get-AzureSchedulerJob](https://msdn.microsoft.com/de-de/library/azure/dn722516.aspx)**|Ruft eine Liste der Scheduler-Aufträge oder einen bestimmten Scheduler-Auftrag ab.|
-|**[Get-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-de/library/azure/dn722471.aspx)**|Ruft Scheduler-Auftragssammlungen ab.|
-|**[Get-AzureSchedulerJobHistory](https://msdn.microsoft.com/de-de/library/azure/dn722514.aspx)**|Ruft den Verlauf für einen Scheduler-Auftrag ab.|
-|**[Get-AzureSchedulerLocation](https://msdn.microsoft.com/de-de/library/azure/dn722505.aspx)**|Ruft verfügbare Scheduler-Speicherorte ab.|
-|**[New-AzureSchedulerHttpJob](https://msdn.microsoft.com/de-de/library/azure/dn722492.aspx)**|Erstellt einen Scheduler-Auftrag, der über eine HTTP-Aktion verfügt.|
-|**[New-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-de/library/azure/dn759640.aspx)**|Erstellt eine Scheduler-Auftragssammlung.|
-|**[New-AzureSchedulerStorageQueueJob](https://msdn.microsoft.com/de-de/library/azure/dn722518.aspx)**|Erstellt einen Scheduler-Auftrag, der über eine Speicheraktion verfügt.|
-|**[Remove-AzureSchedulerJob](https://msdn.microsoft.com/de-de/library/azure/dn722477.aspx)**|Löscht einen Scheduler-Auftrag.|
-|**[Remove-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-de/library/azure/dn722530.aspx)**|Löscht eine Scheduler-Auftragssammlung.|
-|**[Set-AzureSchedulerHttpJob](https://msdn.microsoft.com/de-de/library/azure/dn722474.aspx)**|Aktualisiert einen Scheduler-Auftrag, der über eine HTTP-Aktion verfügt.|
-|**[Set-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-de/library/azure/dn759626.aspx)**|Aktualisiert eine Scheduler-Auftragssammlung.|
-|**[Set-AzureSchedulerStorageQueueJob](https://msdn.microsoft.com/de-de/library/azure/dn722476.aspx)**|Aktualisiert einen Scheduler-Auftrag, der über eine Speicheraktion verfügt.|
+|**[Get-AzureSchedulerJob](https://msdn.microsoft.com/de-DE/library/azure/dn722516.aspx)**|Ruft eine Liste der Scheduler-Aufträge oder einen bestimmten Scheduler-Auftrag ab.|
+|**[Get-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-DE/library/azure/dn722471.aspx)**|Ruft Scheduler-Auftragssammlungen ab.|
+|**[Get-AzureSchedulerJobHistory](https://msdn.microsoft.com/de-DE/library/azure/dn722514.aspx)**|Ruft den Verlauf für einen Scheduler-Auftrag ab.|
+|**[Get-AzureSchedulerLocation](https://msdn.microsoft.com/de-DE/library/azure/dn722505.aspx)**|Ruft verfügbare Scheduler-Speicherorte ab.|
+|**[New-AzureSchedulerHttpJob](https://msdn.microsoft.com/de-DE/library/azure/dn722492.aspx)**|Erstellt einen Scheduler-Auftrag, der über eine HTTP-Aktion verfügt.|
+|**[New-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-DE/library/azure/dn759640.aspx)**|Erstellt eine Scheduler-Auftragssammlung.|
+|**[New-AzureSchedulerStorageQueueJob](https://msdn.microsoft.com/de-DE/library/azure/dn722518.aspx)**|Erstellt einen Scheduler-Auftrag, der über eine Speicheraktion verfügt.|
+|**[Remove-AzureSchedulerJob](https://msdn.microsoft.com/de-DE/library/azure/dn722477.aspx)**|Löscht einen Scheduler-Auftrag.|
+|**[Remove-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-DE/library/azure/dn722530.aspx)**|Löscht eine Scheduler-Auftragssammlung.|
+|**[Set-AzureSchedulerHttpJob](https://msdn.microsoft.com/de-DE/library/azure/dn722474.aspx)**|Aktualisiert einen Scheduler-Auftrag, der über eine HTTP-Aktion verfügt.|
+|**[Set-AzureSchedulerJobCollection](https://msdn.microsoft.com/de-DE/library/azure/dn759626.aspx)**|Aktualisiert eine Scheduler-Auftragssammlung.|
+|**[Set-AzureSchedulerStorageQueueJob](https://msdn.microsoft.com/de-DE/library/azure/dn722476.aspx)**|Aktualisiert einen Scheduler-Auftrag, der über eine Speicheraktion verfügt.|
 
 
 ## Siehe auch
@@ -55,4 +55,4 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
 
   
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

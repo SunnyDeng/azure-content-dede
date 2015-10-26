@@ -8,7 +8,7 @@ In diesem Tutorial wird die Integration von Azure und Onit erläutert. Das in di
 -   Ein gültiges Azure-Abonnement
 -   Ein Onit-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Onit zugewiesen haben, mittels einmaliger Anmeldung auf der Onit-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Onit zugewiesen haben, mittels einmaliger Anmeldung auf der Onit-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -88,7 +88,7 @@ Die Onit-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. Dah
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-onit-tutorial/IC791171.png "Einmaliges Anmelden konfigurieren")
 
-7.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Onit-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Onit verwenden \(z. B. **https://ms-sso-test.onit.com*”)\), und klicken Sie dann auf **Weiter**.
+7.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Onit-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Onit verwenden (z. B. **https://ms-sso-test.onit.com*”)), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-onit-tutorial/IC791172.png "App-URL konfigurieren")
 
@@ -117,7 +117,7 @@ Die Onit-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. Dah
     1.  Wählen Sie als **Authentifizierungsstrategie** die Option **Einmaliges Anmelden und Kennwort**.
     2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Onit** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **IDP-Ziel-URL** ein.
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Onit** den Wert der **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Idp-Abmelde-URL** ein.
-    4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Fingerabdruck des IDP-Zertifikats \(SHA1\)** ein.  
+    4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Fingerabdruck des IDP-Zertifikats (SHA1)** ein.  
 
         >[AZURE.TIP]Weitere Informationen finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI).
 
@@ -169,4 +169,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Oct15_HO3-->

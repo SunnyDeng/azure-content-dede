@@ -51,4 +51,4 @@ Um es einfacher zu machen für Benutzer, die eine Datenquelle finden, aber keine
 ##Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die darin enthaltenen Daten leichter auffindbar sind. Nachdem eine Datenquelle registriert und gefunden wurde, können Benutzer über das Menü „Öffnen in“ im **Azure Data Catalog**-Portal oder mit ihren bevorzugten Tools eine Verbindung mit der Datenquelle herstellen.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Oct15_HO3-->

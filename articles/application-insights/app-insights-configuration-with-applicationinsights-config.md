@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Konfigurieren des Application Insights-SDK mit &quot;ApplicationInsights.config&quot; oder XML" 
+	pageTitle="Konfigurieren des Application Insights-SDK mit ";ApplicationInsights.config"; oder XML" 
 	description="Aktivieren oder deaktivieren Sie Datensammlungsmodule, und fügen Sie Leistungsindikatoren und andere Parameter hinzu" 
 	services="application-insights"
     documentationCenter="" 
@@ -311,6 +311,6 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [netlogs]: app-insights-asp-net-trace-logs.md
 [new]: app-insights-create-new-resource.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
-[start]: app-insights-get-started.md
+[start]: app-insights-overview.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Oct15_HO3-->

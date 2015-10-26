@@ -5,4 +5,4 @@ Endpunkte pro Profil| 200
 
 Sie können sich an den Support wenden, falls Sie das Standardlimit erhöhen möchten.
 
-<!---HONumber=Sept15_HO3-->
+<!---HONumber=Oct15_HO3-->

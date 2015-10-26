@@ -3,7 +3,7 @@
 	description="In diesem Artikel wird beschrieben, wie Sie mithilfe von Azure Media Services (AMS) einen Stream übermitteln, der von AMS mit PlayReady- und Widevine-DRMs dynamisch verschlüsselt wird. Die PlayReady-Lizenz stammt vom Media Services PlayReady-Lizenzserver, und die Widevine-Lizenz wird vom Axinom-Lizenzserver bereitgestellt." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="willzhan,Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015"  
+	ms.date="10/14/2015"  
 	ms.author="juliako"/>
 
 #Bereitstellen von Widevine-Lizenzen für Azure Media Services mithilfe von Axinom  
@@ -24,7 +24,7 @@
 
 ##Übersicht
 
-Azure Media Services (AMS) bietet nun dynamischen Google Widevine-Schutz (im [Blog von Mingfei](https://azure.microsoft.com/de-DE/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) finden Sie Einzelheiten). Darüber hinaus bietet Azure Media Player (AMP) nun auch Unterstützung für Widevine (Details finden Sie im [AMP-Dokument](http://amp.azure.net/libs/amp/latest/docs/)). Dies ist eine wichtige Neuerung für das Streamen von durch CENC geschützte Inhalte mit Multi-Native-DRM (PlayReady und Widevine) in modernen Browsern, die mit MSE und EME ausgestattet sind.
+Azure Media Services (AMS) bietet nun dynamischen Google Widevine-Schutz (im [Blog von Mingfei](https://azure.microsoft.com/en-us/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) finden Sie Einzelheiten). Darüber hinaus bietet Azure Media Player (AMP) nun auch Unterstützung für Widevine (Details finden Sie im [AMP-Dokument](http://amp.azure.net/libs/amp/latest/docs/)). Dies ist eine wichtige Neuerung für das Streamen von durch CENC geschützte Inhalte mit Multi-Native-DRM (PlayReady und Widevine) in modernen Browsern, die mit MSE und EME ausgestattet sind.
 
 >[AZURE.NOTE]Media Services bietet derzeit keinen Widevine-Lizenzserver. Sie können mithilfe der folgenden AMS-Partner Widevine-Lizenzen bereitstellen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/) und [castLabs](http://castlabs.com/company/partners/azure/).
 
@@ -56,7 +56,7 @@ Im Abschnitt [Generierung von JWT-Token](media-services-axinom-integration.md#jw
 
 ##Vorbereiten von Azure Media Player
 
-AMP 1.4.0 unterstützt die Wiedergabe von AMS-Inhalten, die dynamisch mit sowohl PlayReady als auch Widevine DRM gepackt sind. Wenn der Widevine-Lizenzserver keine Authentifizierung mittels Token verlangt, sind zum Testen von DASH-Inhalten, die mit Widevine geschützt sind, keine weiteren Schritte erforderlich. Das AMP-Team bietet ein einfaches Beispiel [http://amp.azure.net/libs/amp/latest/samples/dynamic\_multiDRM\_PlayReadyWidevine\_notoken.html](http://amp.azure.net/libs/amp/latest/samples/dynamic_multiDRM_PlayReadyWidevine_notoken.html), mit dem die Funktionsweise in Edge und IE11 mit PlayReady und in Chrome mit Widevine erläutert wird. Der von Axinom bereitgestellte Widevine-Lizenzserver verlangt die Authentifizierung mittels JWT-Token. Das JWT-Token muss mit der Lizenzanforderung über einen HTTP-Header vom Typ "X-AxDRM-Message" übermittelt werden. Zu diesem Zweck müssen Sie das folgende Javascript auf der Webseite hinzufügen, die AMP hostet, ehe Sie die Quelle festlegen:
+AMP 1.4.0 unterstützt die Wiedergabe von AMS-Inhalten, die dynamisch mit sowohl PlayReady als auch Widevine DRM gepackt sind. Wenn der Widevine-Lizenzserver keine Authentifizierung mittels Token verlangt, sind zum Testen von DASH-Inhalten, die mit Widevine geschützt sind, keine weiteren Schritte erforderlich. Das AMP-Team bietet ein einfaches [Beispiel](http://amp.azure.net/libs/amp/latest/samples/dynamic_multiDRM_PlayReadyWidevine_notoken.html), mit dem die Funktionsweise in Edge und IE11 mit PlayReady und in Chrome mit Widevine erläutert wird. Der von Axinom bereitgestellte Widevine-Lizenzserver verlangt die Authentifizierung mittels JWT-Token. Das JWT-Token muss mit der Lizenzanforderung über einen HTTP-Header vom Typ "X-AxDRM-Message" übermittelt werden. Zu diesem Zweck müssen Sie das folgende Javascript auf der Webseite hinzufügen, die AMP hostet, ehe Sie die Quelle festlegen:
 
 	<script>AzureHtml5JS.KeySystem.WidevineCustomAuthorizationHeader = "X-AxDRM-Message"</script>
 
@@ -188,14 +188,22 @@ Dank der jüngsten Hinzufügung der Widevine-Unterstützung in Azure Media Servi
 Die folgenden Parameter sind in der Minilösung erforderlich, die den Widevine-Lizenzserver von Axinom nutzt. Mit Ausnahme der Schlüssel-ID werden die restlichen Parameter von Axinom basierend auf der Einrichtung des Widevine-Servers bereitgestellt.
 
 
-![Parameter](./media/media-services-axinom-integration/media-services-axinom2.png)
+Parameter|Verwendung
+---|---
+Kommunikationsschlüssel-ID|Muss als Wert des Anspruchs "com\_key\_id" in das JWT-Token eingeschlossen werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt).
+Kommunikationsschlüssel|Muss als Signaturschlüssel des JWT-Tokens verwendet werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt).
+Schlüsselwert|Muss verwendet werden, um den Inhaltsschlüssel mit einer angegebenen Inhaltsschlüssel-ID zu generieren (siehe [diesen](media-services-axinom-integration.md#content-protection) Abschnitt).
+Widevine-Lizenzerwerbs-URL|Muss beim Konfigurieren der Übermittlungsrichtlinie für Medienobjekte für DASH-Streaming verwendet werden (siehe [diesen](media-services-axinom-integration.md#content-protection) Abschnitt).
+Inhaltsschlüssel-ID|Muss als Teil des Werts des Anspruchs "entitlement\_message" des JWT-Tokens eingeschlossen werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt). 
+
+
 
 
 ##Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
-- [Media Services – Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services – On-Demand-Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

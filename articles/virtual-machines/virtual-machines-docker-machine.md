@@ -21,7 +21,8 @@
 
 Dieses Thema beschreibt die Verwendung von [Docker](https://www.docker.com/) mit [Machine](https://github.com/docker/machine) und der [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-xplat-cli) (Azure-CLI) zum schnellen Erstellen eines virtuellen Azure-Computers, um Linux-Container von einem Ubuntu-Computer aus schnell und einfach zu verwalten. Zur Demonstration zeigt das Lernprogramm, wie die Docker Hub-Images [busybox](https://registry.hub.docker.com/_/busybox/) und [nginx](https://registry.hub.docker.com/_/nginx/) bereitgestellt werden und der Container zum Routen von Webanforderungen an den nginx-Container konfiguriert wird. (Die Docker-Dokumentation zu **machine** beschreibt, wie diese Anweisungen für andere Plattformen angepasst werden.)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen einer Ressource mit dem klassischen Bereitstellungsmodell.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
 Für das Abschließen dieses Lernprogramms müssen verschiedene Voraussetzungen erfüllt sein. Sie müssen folgende Komponenten installieren:
@@ -213,4 +214,4 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
 
-<!---HONumber=Oct15_HO2-->
+<!---HONumber=Oct15_HO3-->

@@ -47,4 +47,4 @@ In der Datei config.json Ihres Projekts wurde ein Element mit der Verbindungszei
 
 Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Oct15_HO3-->

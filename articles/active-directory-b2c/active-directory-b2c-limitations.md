@@ -88,4 +88,4 @@ Wenn Sie das Kennwort für einen Consumer mit einem lokalen Konto im Azure-Porta
 
 Sie können keinen Azure AD B2C-Mandanten im Azure-Portal löschen.
 
-<!---HONumber=Oct15_HO1-->
+<!---HONumber=Oct15_HO3-->
