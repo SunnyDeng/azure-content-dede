@@ -38,7 +38,9 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -	Ein aktives [Microsoft Azure-Konto](http://azure.microsoft.com/account/)
 -	Visual Studio 2013 mit [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
 
-> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: + Sie können [kostenlos ein Azure-Konto erstellen](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-App nutzen, wenn das Guthaben aufgebraucht ist. + Sie können von [Vorteilen für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) profitieren. – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen:
+> + Sie können [kostenlos ein Azure-Konto erstellen](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-App nutzen, wenn das Guthaben aufgebraucht ist.
+> + Sie können von [Vorteilen für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) profitieren. – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 
 ## Bereitstellen einer Azure-Web-App mit einem integrierten CDN-Endpunkt ##
 
@@ -160,7 +162,7 @@ Sie verfügen über eine einfache `Index`-Aktion, mit der die Kunden die Superla
 
 Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichten:
 
-1. Erstellen Sie im Ordner *\\Controllers* eine neue CS-Datei namens *MemeGeneratorController.cs*, und ersetzen Sie den Inhalt durch den folgenden Code. Ersetzen Sie den Dateipfad durch `~/Content/chuck.bmp` und den CDN-Namen durch `yourCDNName`.
+1. Erstellen Sie im Ordner *\Controllers* eine neue CS-Datei namens *MemeGeneratorController.cs*, und ersetzen Sie den Inhalt durch den folgenden Code. Ersetzen Sie den Dateipfad durch `~/Content/chuck.bmp` und den CDN-Namen durch `yourCDNName`.
 
 
         using System;

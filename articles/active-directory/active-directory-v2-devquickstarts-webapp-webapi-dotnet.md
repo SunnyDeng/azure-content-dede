@@ -18,7 +18,8 @@
 
 # App-Modell v2.0 Vorschau: Aufrufen einer Web-API von einer .NET-Web-App
 
-> [AZURE.NOTE]Diese Informationen gelten für Endpunkt v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+	Diese Informationen gelten für Endpunkt v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 Mit dem App-Modell v2.0 können Sie schnell eine Authentifizierung zu Ihren Web-Apps und Web-APIs hinzufügen, die sowohl persönliche Microsoft-Konten als auch Geschäfts- oder Schulkonten unterstützen. Wir erstellen hier eine MVC-Web-App, die:
 
@@ -118,7 +119,9 @@ In der `AuthorizationCodeReceived`-Benachrichtigung möchten wir [OAuth 2.0 zusa
 
 - Installieren Sie zunächst die Vorschauversion von ADAL:
 
-```PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease``` – Und fügen Sie eine weitere `using`-Anweisung zu der `App_Start\Startup.Auth.cs`-Datei für ADAL hinzu. – Fügen Sie nun eine neue Methode hinzu, den `OnAuthorizationCodeReceived`-Ereignishandler. Dieser Handler nutzt ADAL zum Abrufen eines Zugriffstokens auf die To-Do List-API und speichert das Token im Tokencache von ADAL für spätere Zwecke:
+```PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease```
+- And add another `using` statement to the `App_Start\Startup.Auth.cs` file for ADAL.
+- Now add a new method, the `OnAuthorizationCodeReceived` event handler.  This handler will use ADAL to acquire an access token to the To-Do List API, and will store the token in ADAL's token cache for later:
 
 ```C#
 private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotification notification)
@@ -200,6 +203,8 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/AppModelv2
 
 ## Nächste Schritte
 
-Weitere Ressourcen: – [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"adal"-Tag >>](http://stackoverflow.com/questions/tagged/adal)
+Weitere Ressourcen: 
+- [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md)
+- [StackOverflow-"adal"-Tag \>\>](http://stackoverflow.com/questions/tagged/adal)
 
 <!---HONumber=Oct15_HO3-->

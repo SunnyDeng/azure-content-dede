@@ -689,7 +689,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
 	>[AZURE.NOTE]In diesem Lernprogramm sendet der mobile Dienst eine Popupbenachrichtigung an das Gerät. Wenn Sie eine Kachelbenachrichtigung senden, müssen Sie stattdessen die **BindToShellTile**-Methode für den Kanal aufrufen.
 
-4. Fügen Sie in der Datei "App.xaml.cs" am Anfang des **Application\_Launching**-Ereignishandlers den folgenden Aufruf der neuen **AcquirePushChannel**-Methode hinzu:
+4. Fügen Sie in der Datei "App.xaml.cs" am Anfang des **Application_Launching**-Ereignishandlers den folgenden Aufruf der neuen **AcquirePushChannel**-Methode hinzu:
 
         AcquirePushChannel();
 

@@ -110,7 +110,8 @@ Daraufhin sollte der Startbildschirm von WordPress angezeigt werden, auf dem Sie
 
 * Weitere Beispiele zum Erstellen und Bereitstellen von Anwendungen mit mehreren Containern finden Sie in der [Compose-Befehlsreferenz](http://docs.docker.com/compose/cli/) und im [Compose-Benutzerhandbuch](http://docs.docker.com/compose/).
 * Verwenden Sie eine von Ihnen oder der [Community](http://azure.microsoft.com/documentation/templates/) erstellte Vorlage des Azure-Ressourcen-Managers, um eine Azure-VM mit Docker und eine mit Compose eingerichtete Anwendung bereitzustellen. Die Vorlage [WordPress-Blog mit Docker bereitstellen](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/) verwendet Docker und Compose, um WordPress schnell mit einem MySQL-Back-End auf einem virtuellen Ubuntu-Computer bereitzustellen.
-* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die [Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
+* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die
+[Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
 
 <!--Image references-->
 

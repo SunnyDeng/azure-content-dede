@@ -45,7 +45,7 @@ Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regi
 
 	**Neuer Wert:** <VirtualNetworkSitename="VNetUSWest" Location="West US">
 
-1. Speichern Sie die Änderungen, und importieren[](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
+1. Speichern Sie die Änderungen, und [importieren](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
 
 >[AZURE.INFO]Bei dieser Migration kommt es zu keinerlei Ausfallzeiten für Ihre Dienste.
 

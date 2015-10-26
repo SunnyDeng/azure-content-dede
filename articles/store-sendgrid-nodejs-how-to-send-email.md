@@ -21,7 +21,7 @@ Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufg
 
 ## Was ist der SendGrid-E-Mail-Dienst?
 
-SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
+SendGrid ist ein [cloudbasierter E-Mail-Dienst](https://sendgrid.com/email-solutions), der zuverlässige [transaktionale E-Mail-Übermittlung](https://sendgrid.com/transactional-email), Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
 
 -   Automatisches Versenden von Empfangsbestätigungen an Kunden
 -   Verwalten von Verteilungslisten zum Senden von monatlichen e-Flyern und speziellen Angeboten an Kunden
@@ -65,7 +65,7 @@ Sie können auch eine HTML-Nachricht für Clients festlegen, bei denen dies durc
 
 Wenn die Text- und die HTML-Option ausgewählt sind, wird die Nachricht auf Clients, die keine HTML-Nachrichten unterstützen, im Textformat angezeigt.
 
-Weitere Informationen zu allen von der Funktion "Email" unterstützten Eigenschaften finden Sie unter [sendgrid-nodejs][].
+Weitere Informationen zu allen von der Funktion "Email" unterstützten Eigenschaften finden Sie unter [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs).
 
 ## Senden von E-Mails
 
@@ -114,7 +114,7 @@ Anhänge können zu einer Nachricht hinzugefügt werden, indem die entsprechende
 
 ## Verwenden von Filtern zur Aktivierung von Fußzeilen und zur Nachverfolgung
 
-SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von Filtern. Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen. Eine vollständige Liste der verfügbaren Filter finden Sie unter [Filtereinstellungen][].
+SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von Filtern. Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen. Eine vollständige Liste der verfügbaren Filter finden Sie unter [Filtereinstellungen](https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html).
 
 Filter können mithilfe der Eigenschaft **filters** auf eine Nachricht angewendet werden. Jeder Filter wird durch einen Hash mit filterspezifischen Einstellungen festgelegt. Die folgenden Beispiele veranschaulichen die Filter für die Fußzeile und die Klickprotokollierung:
 
@@ -168,11 +168,11 @@ einen Filter verwenden oder festlegen.
     email.addFilter('footer', 'enable', 1);
     email.addFilter('footer', 'text/html', '<strong>boo</strong>');
 
-Weitere Informationen finden Sie unter [sendgrid-nodejs][].
+Weitere Informationen finden Sie unter [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs).
 
 ## Verwenden zusätzlicher SendGrid-Dienste
 
-SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation][].
+SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation](https://sendgrid.com/docs).
 
 ## Nächste Schritte
 

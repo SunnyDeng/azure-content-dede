@@ -19,7 +19,8 @@
 
 # Bereitstellen einer mobilen ASP.NET MVC 5-Web-App in Azure App Service.
 
-In diesem Lernprogramm lernen Sie die grundlegenden Schritte kennen, mit denen Sie eine für Mobiltelefone optimierte ASP.NET MVC-5-Web-App erstellen und in Azure App Service bereitstellen. Für dieses Lernprogramm benötigen Sie [Visual Studio Express 2013 für Web][Visual Studio Express 2013] oder Visual Studio Professional, falls bereits vorhanden. Sie können [Visual Studio 2015] verwenden, allerdings unterscheiden sich die Screenshots und Sie müssen ASP.NET 4.x-Vorlagen nutzen.
+In diesem Lernprogramm lernen Sie die grundlegenden Schritte kennen, mit denen Sie eine für Mobiltelefone optimierte ASP.NET MVC-5-Web-App erstellen und in Azure App Service bereitstellen. Für dieses Lernprogramm benötigen Sie [Visual Studio Express 2013 für Web][Visual Studio Express 2013] oder Visual Studio Professional, falls bereits vorhanden.
+Sie können [Visual Studio 2015] verwenden, allerdings unterscheiden sich die Screenshots und Sie müssen ASP.NET 4.x-Vorlagen nutzen.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 

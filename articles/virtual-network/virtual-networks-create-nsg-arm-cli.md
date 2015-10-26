@@ -68,7 +68,10 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-FrontEnd* basierend auf d
 		data:    DenyAllOutBound                *                  *            *               *                 *         Outbound   Deny    65500   
 		info:    network nsg create command OK
 
-	Parameter: - **-g (oder --resource-group)**. Name der Ressourcengruppe, in der die NSG erstellt wird. In diesem Szenario *TestRG*. - **-l (oder --location)**. Azure-Region, in der die neue NSG erstellt wird. In diesem Szenario *westus*. - **-n (oder --name)**. Name der neuen NSG. In diesem Szenario *NSG-FrontEnd*.
+	Parameter:
+	- **-g (oder --resource-group)**. Name der Ressourcengruppe, in der die NSG erstellt wird. In diesem Szenario *TestRG*.
+	- **-l (oder --location)**. Azure-Region, in der die neue NSG erstellt wird. In diesem Szenario *westus*. 
+	- **-n (oder --name)**. Name der neuen NSG. In diesem Szenario *NSG-FrontEnd*.
 
 4. Führen Sie den Befehl **azure network nsg rule create** aus, um eine Regel zu erstellen, die den Zugriff auf Port 3389 (RDP) über das Internet zulässt.
 

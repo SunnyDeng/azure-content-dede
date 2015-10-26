@@ -28,7 +28,10 @@ Wenn Sie das Azure-Verwaltungsportal zum ersten Mal öffnen, ist automatisch die
 Dadurch wird ein neues Fenster mit den folgenden Registerkarten geöffnet. In diesem Thema werden diese Registerkarten beschrieben.
 
 ## Schnellstart (![Schnellstart][QuickStart])
-Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services-Editionen zur Verfügung. <table border="1"> <tr> <td><strong>Tools herunterladen</strong></td>
+Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services-Editionen zur Verfügung. 
+<table border="1">
+    <tr>
+        <td><strong>Tools herunterladen</strong></td>
 
         <td>Download the BizTalk Services SDK to install the Visual Studio project templates on your on-premises development computer. These templates create the <strong>BizTalk Services</strong> (bridge) and the <strong>BizTalk Service Artifacts</strong> (Transform) Visual Studio projects that are deployed to your BizTalk Service.
         <br/><br/>

@@ -99,7 +99,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784746.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
 
-Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS bereitgestellt werden. Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
+Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS bereitgestellt werden.  
+Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
 
 ###So konfigurieren Sie die Benutzerbereitstellung
 

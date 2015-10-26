@@ -20,9 +20,13 @@
 
 Mit dem App-Modell v2. 0 können Sie schnell eine Authentifizierung zu Ihren Web-Apps hinzufügen, die sowohl persönliche Microsoft-Konten als auch Geschäfts- oder Schulkonten unterstützt. Für ASP.NET-Webanwendungen erreichen Sie das Gleiche durch die in .NET Framework 4.5 enthaltenen OWIN-Middleware von Microsoft.
 
-  >[AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+>[AZURE.NOTE]
+Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
- Hier verwenden wir OWIN für Folgendes: – Anmelden eines Benutzers bei der Anwendung mit Azure AD und dem App-Modell v2.0. – Anzeigen von Informationen zum Benutzer. – Abmelden des Benutzers von der Anwendung.
+ Hier verwenden wir OWIN für Folgendes:
+-	Anmelden eines Benutzers bei der Anwendung mit Azure AD und dem App-Modell v2.0.
+-	Anzeigen von Informationen zum Benutzer.
+-	Abmelden des Benutzers von der Anwendung.
 
 Dazu müssen Sie folgende Schritte ausführen:
 

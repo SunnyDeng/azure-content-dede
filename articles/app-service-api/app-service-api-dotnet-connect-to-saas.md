@@ -376,7 +376,12 @@ Weitere Hinweise:
 
 		browser.Navigate(string.Format(@"{0}/login/aad", GATEWAY_URL));
 
-	Hier die Werte für andere Anbieter: * "microsoftaccount" * "facebook" * "twitter" * "google" <br/><br/>
+	Hier die Werte für andere Anbieter: 
+	* "microsoftaccount" 
+	* "facebook" 
+	* "twitter" 
+	* "google"
+<br/><br/>
 
 * Der zweite Parameter für die `GetConsentLinkAsync()`-Methode ist die Rückruf-URL, zu der der Zustimmungsserver umgeleitet wird, nachdem sich der Benutzer bei Dropbox angemeldet und die Zustimmung für den Zugriff auf das Konto des Benutzers gegeben hat.
 

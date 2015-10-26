@@ -83,7 +83,12 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-GroupClaims-DotNet](https:
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/select-user-group.png)
 
-	> [AZURE.NOTE]In "Views\\Roles\\Index.cshtml" sehen Sie, dass in der Ansicht das JavaScript-Objekt <code>AadPicker</code> verwendet wird (in "Scripts\\AadPickerLibrary.js" definiert), um im Controller <code>Roles</code> auf die Aktion <code>Search</code> zuzugreifen. <pre class="prettyprint">var searchUrl = window.location.protocol + "//" + window.location.host + "<mark>/Roles/Search</mark>"; ... var picker = new <mark>AadPicker(searchUrl, maxResultsPerPage, input, token, tenant)</mark>;</pre> Unter "Controllers\\RolesController.cs" sehen Sie die Aktion <code>Search</code>, mit der die eigentliche Anforderung an die Azure Active Directory Graph-API gesendet und die Antwort an die Seite zurückgegeben wird. Später verwenden Sie dieselbe Methode, um einfache Funktionen in Ihrer Anwendung zu erstellen.
+	> [AZURE.NOTE]In „Views\\Roles\\Index.cshtml“ sehen Sie, dass in der Ansicht das JavaScript-Objekt <code>AadPicker</code> verwendet wird (in „Scripts\\AadPickerLibrary.js“ definiert), um im Controller <code>Roles</code> auf die Aktion <code>Search</code> zuzugreifen.
+		<pre class="prettyprint">var searchUrl = window.location.protocol + "//" + window.location.host + "<mark>/Roles/Search</mark>";
+	...
+	var picker = new <mark>AadPicker(searchUrl, maxResultsPerPage, input, token, tenant)</mark>;</pre>
+		Unter „Controllers\\RolesController.cs“ sehen Sie die Aktion <code>Search</code>, mit der die eigentliche Anforderung an die Azure Active Directory Graph-API gesendet und die Antwort an die Seite zurückgegeben wird. 
+		Später verwenden Sie dieselbe Methode, um einfache Funktionen in Ihrer Anwendung zu erstellen.
 
 6.	Wählen Sie in der Dropdownliste einen Benutzer oder eine Gruppe aus, wählen Sie eine Rolle aus, und klicken Sie auf **Rolle zuweisen**.
 
@@ -151,7 +156,9 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
    &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
    &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
    &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.azurewebsites.net/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-&lt;/appSettings></pre>Stellen Sie sicher, dass der Wert von "ida:PostLogoutRedirectUri" mit einem Schrägstrich "/" endet.
+&lt;/appSettings></pre>
+
+	Stellen Sie sicher, dass der Wert von "ida:PostLogoutRedirectUri" mit einem Schrägstrich "/" endet.
 
 1. Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **Veröffentlichen**.
 
@@ -244,12 +251,17 @@ public class WorkItemsController : Controller
     public async Task&lt;ActionResult> Delete(int? id)
     ...
 
-    <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-    public async Task&lt;ActionResult> DeleteConfirmed(int id)
-    ...
-}</pre>Da Sie die Rollenzuordnungen im Controller "Rollen" vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
+       <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
+       public async Task&lt;ActionResult> DeleteConfirmed(int id)
+       ...
+       }</pre>
 
-	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht: + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird. + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht. Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
+	Da Sie die Rollenzuordnungen im Controller "Roles" vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
+
+	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht:
+	> + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird.
+	> + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht. Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. 
+	> Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
 
 12.  Fügen Sie in der Datei "App\_Start\\Startup.Auth.cs" der `ConfigureAuth`-Methode die folgende Codezeile hinzu:
 
@@ -297,33 +309,35 @@ public class WorkItemsController : Controller
             &lt;div class="col-md-10">
                 @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-            &lt;/div>
-        &lt;/div>
-
-        &lt;div class="form-group">
-            &lt;div class="col-md-offset-2 col-md-10">
-                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> />
-            &lt;/div>
-        &lt;/div>
-    &lt;/div>
-
-    <mark>&lt;script>
-            // Code für Personen-/Gruppenauswahl
-            var maxResultsPerPage = 14;
-            var searchUrl = window.location.protocol + "//" + window.location.host + "/Roles/Search";
-            var input = document.getElementById("AssignedToName");
-            var token = "@ViewData["token"]";
-            var tenant = "@ViewData["tenant"]";
-
-            var picker = new AadPicker(searchUrl, maxResultsPerPage, input, token, tenant);
-
-            // Übermitteln Sie den ausgewählten Benutzer bzw. die Gruppe für die Zuweisung.
-            $("#submit-button").click({ picker: picker }, function () {
-                if (!picker.Selected())
-                    return;
-                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
-            });
-    &lt;/script></mark>
+	            &lt;/div>
+	        &lt;/div>
+	
+	        &lt;div class="form-group">
+	            &lt;div class="col-md-offset-2 col-md-10">
+	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> />
+	            &lt;/div>
+	        &lt;/div>
+	    &lt;/div>
+	
+	    <mark>&lt;script>
+	            // Code für Personen-/Gruppenauswahl
+	            var maxResultsPerPage = 14;
+	            var searchUrl = window.location.protocol + "//" + window.location.host + "/Roles/Search";
+	            var input = document.getElementById("AssignedToName");
+	            var token = "@ViewData["token"]";
+	            var tenant = "@ViewData["tenant"]";
+	
+	            var picker = new AadPicker(searchUrl, maxResultsPerPage, input, token, tenant);
+	
+	            // Übermitteln Sie den ausgewählten Benutzer bzw. die Gruppe für die Zuweisung.
+	            $("#submit-button").click({ picker: picker }, function () {
+	                if (!picker.Selected())
+	                    return;
+	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
+	            });
+	    &lt;/script></mark>
+	
+	}</pre>
 
 }</pre>Im Skript durchsucht das AadPicker-Objekt die Aktion `~/Roles/Search` nach Azure Active Directory-Benutzern und -Gruppen, die der Eingabe entsprechen. Wenn Sie auf die Schaltfläche "Senden" klicken, speichert das AadPicker-Objekt die Benutzer-ID im verborgenen Feld `AssignedToID`.
 

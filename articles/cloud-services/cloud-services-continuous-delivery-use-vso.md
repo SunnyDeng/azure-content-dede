@@ -22,7 +22,8 @@ Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
-> [AZURE.NOTE]Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können. Sie können [ein Visual Studio Online-Konto kostenlos eröffnen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> [AZURE.NOTE]Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können.
+> Sie können [ein Visual Studio Online-Konto kostenlos eröffnen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
 Wenn Sie einen Clouddienst für das automatische Erstellen und Bereitstellen in Azure mithilfe von Visual Studio Online einrichten möchten, führen Sie die folgenden Schritte aus:
 
@@ -32,7 +33,11 @@ Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=51298
 
 ## Schritt 2: Einchecken eines Projekts in der Quellcodeverwaltung
 
-1. Öffnen Sie in Visual Studio die Anwendung, die Sie bereitstellen möchten, oder erstellen Sie eine neue Anwendung. Sie können eine Web-App oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen. Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Clouddienstprojekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus. Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NET Web Application" und anschließend "MVC" aus. Siehe [Erstellen einer ASP.NET-Web-App in Azure App Service](../web-sites-dotnet-get-started.md).
+1. Öffnen Sie in Visual Studio die Anwendung, die Sie bereitstellen möchten, oder erstellen Sie eine neue Anwendung.
+Sie können eine Web-App oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
+Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Clouddienstprojekt oder ein neues ASP.NET MVC-Projekt. 
+Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus. 
+Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NET Web Application" und anschließend "MVC" aus. Siehe [Erstellen einer ASP.NET-Web-App in Azure App Service](../web-sites-dotnet-get-started.md).
 
 	> [AZURE.NOTE]Visual Studio Online unterstützt derzeit nur CI-Bereitstellungen von Visual Studio-Webanwendungen. Websiteprojekte werden nicht unterstützt.
 

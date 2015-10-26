@@ -23,15 +23,17 @@ So erstellen Sie einen Dienstnamespace:
 
 2.  Klicken Sie im linken Navigationsbereich des Verwaltungsportals auf **Servicebus**.
 
-3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**. ![](./media/service-bus-java-how-to-create-queue/sb-queues-03.png)
+3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**. 
+	![](./media/service-bus-java-how-to-create-queue/sb-queues-03.png)
 
-4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![](./media/service-bus-java-how-to-create-queue/sb-queues-04.png)
+4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.
+	![](./media/service-bus-java-how-to-create-queue/sb-queues-04.png)
 
 5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der Sie Ihre Rechnerressourcen bereitstellen.)
 
 	WICHTIG: Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
 
-6. 	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte (**Messaging** und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
+6. 	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte ("Messaging" und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
 
 	![](./media/service-bus-java-how-to-create-queue/getting-started-multi-tier-27.png)
 
@@ -43,11 +45,13 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
 
 ###So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
 
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen: ![](./media/service-bus-java-how-to-create-queue/sb-queues-13.png)
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen: 
+	![](./media/service-bus-java-how-to-create-queue/sb-queues-13.png)
 
 2.  Klicken Sie in der angezeigten Liste auf den Namespace, den Sie gerade erstellt haben.
 
-3.  Klicken Sie auf **Konfigurieren**, um die Richtlinien für den gemeinsamen Zugriff auf Ihren Namespace anzuzeigen. ![](./media/service-bus-java-how-to-create-queue/sb-queues-14.png)
+3.  Klicken Sie auf **Konfigurieren**, um die Richtlinien für den gemeinsamen Zugriff auf Ihren Namespace anzuzeigen. 
+	![](./media/service-bus-java-how-to-create-queue/sb-queues-14.png)
 
 4.  Notieren Sie den Primärschlüssel oder kopieren Sie ihn in die Zwischenablage.
 

@@ -18,7 +18,8 @@
 
 # App-Modell v2.0 (Vorschauversion): Schützen einer Web-API mit "node.js"
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 Mit dem App-Modell v2.0 können Sie eine Web-API mit [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow)-Zugriffstoken schützen, sodass sowohl Benutzer mit persönlichen Microsoft-Konten als auch solche mit Geschäfts- oder Schulkonten sicher auf Ihre Web-API zugreifen können.
 
@@ -271,7 +272,8 @@ identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-c
 
 *audience*: Die Umleitungs-URI aus dem Portal.
 
-> [AZURE.NOTE]Wir setzen unsere Schlüssel in regelmäßigen Abständen zurück. Stellen Sie sicher, dass Sie Ihre Schlüssel immer über die „openid\_keys“-URL abrufen und die Anwendung auf das Internet zugreifen kann.
+> [AZURE.NOTE]
+Wir setzen unsere Schlüssel in regelmäßigen Abständen zurück. Stellen Sie sicher, dass Sie Ihre Schlüssel immer über die „openid\_keys“-URL abrufen und die Anwendung auf das Internet zugreifen kann.
 
 
 ## 11: Hinzufügen der Konfiguration zur Datei "server.js"
@@ -714,7 +716,8 @@ server.use(passport.initialize()); // Starts passport
 server.use(passport.session()); // Provides session support
 ```
 
-> [AZURE.TIP]Beim Schreiben von APIs sollten Sie die Daten immer mit einem eindeutigen Element aus dem Token verknüpfen, das der Benutzer nicht spoofen kann. Wenn dieser Server TODO-Elemente speichert, speichert er sie entsprechend der Abonnement-ID des Benutzers im Token (wird "token.sub" genannt), die wir in das Feld "owner" aufnehmen. Dadurch wird sichergestellt, dass nur dieser Benutzer auf seine TODOs zugreifen kann und dass sonst niemand auf die eingegebenen TODOs zugreifen kann. Es ist keine Offenlegung in den APIs von "owner" vorgesehen, also kann ein externer Benutzer TODOs von anderen anfordern, selbst wenn eine Authentifizierung erfolgt ist.
+> [AZURE.TIP]
+Beim Schreiben von APIs sollten Sie die Daten immer mit einem eindeutigen Element aus dem Token verknüpfen, das der Benutzer nicht spoofen kann. Wenn dieser Server TODO-Elemente speichert, speichert er sie entsprechend der Abonnement-ID des Benutzers im Token (wird "token.sub" genannt), die wir in das Feld "owner" aufnehmen. Dadurch wird sichergestellt, dass nur dieser Benutzer auf seine TODOs zugreifen kann und dass sonst niemand auf die eingegebenen TODOs zugreifen kann. Es ist keine Offenlegung in den APIs von "owner" vorgesehen, also kann ein externer Benutzer TODOs von anderen anfordern, selbst wenn eine Authentifizierung erfolgt ist.
 
 Als Nächstes verwenden wir die Strategie "Open ID Connect Bearer", die zu "passport-azure-ad" gehört. Sehen wir uns jetzt nur den Code an, den ich kurz erläutern werde. Fügen Sie ihn nach dem ein, was Sie weiter oben hinzugefügt haben:
 
@@ -763,7 +766,8 @@ passport.use(oidcStrategy);
 
 Passport verwendet ein ähnliches Muster für alle Strategien (Twitter, Facebook usw.), das beim Schreiben aller Strategien eingehalten wird. Beim Betrachten der Strategie sehen Sie, dass ein function()-Element übergeben wird, das Token- und done-Elemente als Parameter aufweist. Die Strategie kehrt wieder an den Ausgangspunkt zurück, sobald die gesamte Arbeit abgeschlossen ist. Sobald dies der Fall ist, speichern wir den Benutzer und das Token, damit wir beides nicht mehr erfragen müssen.
 
-> [AZURE.IMPORTANT]Der obige Code erfasst alle Benutzer, die sich an unserem Server authentifizieren. Dies wird als automatische Registrierung bezeichnet. Bei Produktionsservern müssten die Benutzer zunächst einen Registrierungsprozess durchlaufen, den Sie festlegen. Dies ist normalerweise das Muster, das Sie bei Consumer-Apps finden, die es Ihnen ermöglichen, sich bei Facebook zu registrieren, aber dann dazu auffordern, zusätzliche Informationen anzugeben. Wenn dies nicht ein Befehlszeilenprogramm wäre, könnten wir einfach die E-Mail aus dem Tokenobjekt extrahieren, das zurückgegeben wird, und dann dazu auffordern, zusätzliche Informationen einzugeben. Da es sich um einen Testserver handelt, fügen wir sie einfach der Datenbank im Arbeitsspeicher hinzu.
+> [AZURE.IMPORTANT]
+Der obige Code erfasst alle Benutzer, die sich an unserem Server authentifizieren. Dies wird als automatische Registrierung bezeichnet. Bei Produktionsservern müssten die Benutzer zunächst einen Registrierungsprozess durchlaufen, den Sie festlegen. Dies ist normalerweise das Muster, das Sie bei Consumer-Apps finden, die es Ihnen ermöglichen, sich bei Facebook zu registrieren, aber dann dazu auffordern, zusätzliche Informationen anzugeben. Wenn dies nicht ein Befehlszeilenprogramm wäre, könnten wir einfach die E-Mail aus dem Tokenobjekt extrahieren, das zurückgegeben wird, und dann dazu auffordern, zusätzliche Informationen einzugeben. Da es sich um einen Testserver handelt, fügen wir sie einfach der Datenbank im Arbeitsspeicher hinzu.
 
 ### 2\. Schützen einiger Endpunkte
 
@@ -851,6 +855,8 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [Sichern einer Web-App mit dem App-Modell v2.0 in "Node.js" >>](active-directory-v2-devquickstarts-node-web.md)
 
-Weitere Ressourcen: - [App-Modell v2.0 (Vorschauversion) >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
+Weitere Ressourcen:
+- [App-Modell, Version 2.0, Vorschau >>](active-directory-appmodel-v2-overview.md)
+- [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
 <!---HONumber=Oct15_HO3-->

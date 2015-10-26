@@ -270,7 +270,9 @@ Durch das Festlegen dieser Berechtigungen kann das MA-Dienstkonto für jede Gesa
 8.	Wählen Sie in der Dropdownliste oben den Eintrag **Nachfolgerbenutzerobjekt**.
 9.	Aktivieren Sie im nun angezeigten Dialogfeld **Berechtigungseintrag** die Kontrollkästchen für **Kennwort zurücksetzen**, **Kennwort ändern**, **Berechtigungen schreiben** für `lockoutTime` sowie **Berechtigungen schreiben** für `pwdLastSet`.
 
-    ![][026] ![][027] ![][028]
+    ![][026]
+    ![][027]
+    ![][028]
 
 10.	Klicken Sie anschließend in allen geöffneten Dialogfeldern auf **Anwenden/OK**.
 

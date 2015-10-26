@@ -18,7 +18,9 @@
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-offline-preview](../../includes/app-service-mobile-selector-offline-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-offline-preview](../../includes/app-service-mobile-selector-offline-preview.md)]
+&nbsp;  
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
 ## Übersicht
 
@@ -158,7 +160,9 @@ Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tab
     | id | Zeichenfolge, als erforderlich gekennzeichnet | Primärschlüssel im Remotespeicher |
     | complete | Boolean | Todo-Elementfeld |
     | Text | String | Todo-Elementfeld |
-    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | | ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | | ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
+    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | 
+	| ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | 
+	| ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
 
 
 ## <a name="setup-sync"></a>Ändern des Synchronisierungsverhaltens der App
@@ -229,7 +233,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 * [Offlinedatensynchronisierung in Azure Mobile Apps]
 
-* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] (Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
+* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] \(Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
 
 <!-- URLs. -->
 

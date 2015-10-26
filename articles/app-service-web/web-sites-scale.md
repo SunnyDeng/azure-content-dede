@@ -30,7 +30,8 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 
 > [AZURE.NOTE]Bevor Sie Web-Apps vom Modus **Kostenlos** in den Modus **Basic**, **Standard** oder **Premium** ändern, müssen Sie zuerst das für Ihr Microsoft Azure App Service-Abonnement geltende Ausgabenlimit entfernen. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
-<a name="scalingsharedorbasic"></a> <!-- ===================================== -->
+<a name="scalingsharedorbasic"></a>
+<!-- ===================================== -->
 ## Skalierung auf Modus "Freigegeben" oder "Basic"
 <!-- ===================================== -->
 
@@ -50,7 +51,8 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-<a name="scalingstandard"></a> <!-- ================================= -->
+<a name="scalingstandard"></a>
+<!-- ================================= -->
 ## Skalieren auf Standard- oder Premium-Modus
 <!-- ================================= -->
 

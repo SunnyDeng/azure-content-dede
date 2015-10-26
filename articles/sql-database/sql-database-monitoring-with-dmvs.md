@@ -33,7 +33,9 @@ Ausführliche Informationen zu dynamischen Verwaltungssichten finden Sie unter [
 
 Die Abfrage einer dynamischen Verwaltungsansicht erfordert in der SQL-Datenbank die Berechtigung **VIEW DATABASE STATE**. Die Berechtigung **VIEW DATABASE STATE** gibt Informationen zu allen Objekten innerhalb der aktuellen Datenbank zurück. Zum Erteilen der Berechtigung **VIEW DATABASE STATE** für einen bestimmten Benutzer führen Sie die folgende Abfrage aus:
 
-```GRANT VIEW DATABASE STATE TO database_user; ```
+```
+GRANT VIEW DATABASE STATE TO database_user;
+```
 
 Bei einer lokalen Instanz von SQL Server geben dynamische Verwaltungssichten Informationen zum Serverstatus zurück. In SQL-Datenbank geben sie lediglich Informationen zur aktuellen logischen Datenbank zurück.
 
@@ -42,9 +44,9 @@ Bei einer lokalen Instanz von SQL Server geben dynamische Verwaltungssichten Inf
 Die folgende Abfrage gibt die Größe Ihrer Datenbank (in Megabyte) zurück:
 
 ```
--- Calculates the size of the database. 
-SELECT SUM(reserved_page_count)*8.0/1024
-FROM sys.dm_db_partition_stats; 
+-- Berechnet die Größe der Datenbank. 
+SELECT SUM(reserved\_page\_count)*8.0/1024
+FROM sys.dm\_db\_partition\_stats; 
 GO
 ```
 

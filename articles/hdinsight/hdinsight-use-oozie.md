@@ -77,12 +77,14 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 - **Eine Azure SQL-Datenbank**. Sie müssen eine Firewallregel für die Azure SQL-Datenbank konfigurieren, um Zugriff von Ihrer Arbeitsstation zu erlauben. Anweisungen zur Erstellung einer Azure SQL-Datenbank und zur Konfiguration der Firewall erhalten Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank][sqldatabase-get-started]. Dieser Artikel beschreibt ein Windows PowerShell-Skript zur Erstellung der Azure SQL-Datenbanktabelle, die Sie für dieses Lernprogramm benötigen.
 
 	<table border = "1">
-<tr><th>SQL-Datenbankeigenschaft</th><th>Windows PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
-<tr><td>Servername der SQL-Datenbank</td><td>$sqlDatabaseServer</td><td></td><td>Azure SQL-Datenbank, in die Sqoop Daten exportiert. </td></tr>
-<tr><td>Anmeldename der SQL-Datenbank</td><td>$sqlDatabaseLogin</td><td></td><td>Anmeldename der Azure SQL-Datenbank.</td></tr>
-<tr><td>Anmeldekennwort der SQL-Datenbank</td><td>$sqlDatabaseLoginPassword</td><td></td><td>Anmeldekennwort der Azure SQL-Datenbank.</td></tr>
-<tr><td>SQL-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Azure SQL-Datenbank, in die Sqoop Daten exportiert. </td></tr>
-</table>> [AZURE.NOTE]Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewalleinstellung deaktiviert ist, müssen Sie sie im Azure-Vorschauportal aktivieren. Anweisungen zum Erstellen einer SQL-Datenbank und zum Konfigurieren von Firewallregeln finden Sie unter [Erstellen und Konfigurieren einer Azure SQL-Datenbank][sqldatabase-create-configue].
+	<tr><th>SQL-Datenbankeigenschaft</th><th>Windows PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
+	<tr><td>Servername der SQL-Datenbank</td><td>$sqlDatabaseServer</td><td></td><td>Azure SQL-Datenbank, in die Sqoop Daten exportiert. </td></tr>
+	<tr><td>Anmeldename der SQL-Datenbank</td><td>$sqlDatabaseLogin</td><td></td><td>Anmeldename der Azure SQL-Datenbank.</td></tr>
+	<tr><td>Anmeldekennwort der SQL-Datenbank</td><td>$sqlDatabaseLoginPassword</td><td></td><td>Anmeldekennwort der Azure SQL-Datenbank.</td></tr>
+	<tr><td>SQL-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Azure SQL-Datenbank, in die Sqoop Daten exportiert. </td></tr>
+	</table>
+
+	> [AZURE.NOTE]Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewall-Einstellung deaktiviert ist, müssen Sie sie im Azure-Portal aktivieren. Anweisungen zum Erstellen einer SQL-Datenbank und zum Konfigurieren von Firewallregeln finden Sie unter [Erstellen und Konfigurieren einer Azure SQL-Datenbank][sqldatabase-create-configue].
 
 
 > [AZURE.NOTE]Tragen Sie die Werte in die Tabellen ein. Das wird Ihnen helfen, wenn Sie dieses Lernprogramm durcharbeiten.
@@ -184,21 +186,27 @@ Es ist bekannt, dass es ein Problem mit dem Hive-Pfad gibt. Dieses Problem tritt
 	Das RunHiveScript enthält mehrere Variablen. Die Werte werden übergeben, wenn Sie den Oozie-Auftrag mit Windows PowerShell von Ihrer Arbeitsstation senden.
 
 	<table border = "1">
-<tr><th>Workflow-Variablen</th><th>Beschreibung</th></tr>
-<tr><td>${jobTracker}</td><td>Gibt die URL des Hadoop-JobTrackers an. Verwenden Sie in HDInsight der Versionen 3.0 und 2.1 <strong>jobtrackerhost:9010</strong>.</td></tr>
-<tr><td>${nameNode}</td><td>Gibt die URL des Hadoop-NameNode an. Verwenden Sie die Standarddateisystemadresse, zum Beispiel <i>wasb://&lt;containerName>@&lt;storageAccountName>.blob.core.windows.net</i>.</td></tr>
-<tr><td>${queueName}</td><td>Gibt den Namen der Warteschlange an, an die der Auftrag gesendet wird. Verwenden Sie den <strong>Standardwert</strong>.</td></tr>
-</table><table border = "1">
-<tr><th>Hive-Aktionsvariable</th><th>Beschreibung</th></tr>
-<tr><td>${hiveDataFolder}</td><td>Gibt das Quellverzeichnis für den Befehl zum Erstellen der Hive-Tabelle an.</td></tr>
-<tr><td>${hiveOutputFolder}</td><td>Gibt den Ausgabeordner für die Anweisung INSERT OVERWRITE an.</td></tr>
-<tr><td>${hiveTableName}</td><td>Gibt den Namen der Hive-Tabelle an, die auf die log4j-Datendateien verweist.</td></tr>
-</table><table border = "1">
-<tr><th>Sqoop-Aktionsvariable</th><th>Beschreibung</th></tr>
-<tr><td>${sqlDatabaseConnectionString}</td><td>Gibt die Verbindungszeichenfolge für die Azure SQL-Datenbank an.</td></tr>
-<tr><td>${sqlDatabaseTableName}</td><td>Gibt die Azure SQL-Datenbanktabelle an, in die die Daten exportiert werden.</td></tr>
-<tr><td>${hiveOutputFolder}</td><td>Gibt den Ausgabeordner für die Hive-Anweisung INSERT OVERWRITE an. Dieser entspricht dem für den Sqoop-Export angegebenen Ordner (export-dir).</td></tr>
-</table>Weitere Informationen über den Oozie-Workflow und die Verwendung von Workflowaktionen finden Sie in der [Apache Oozie 4.0-Dokumentation][apache-oozie-400] (für HDInsight der Version 3.0) oder in der [Apache Oozie 3.3.2-Dokumentation][apache-oozie-332] (für HDInsight der Version 2.1).
+	<tr><th>Workflow-Variablen</th><th>Beschreibung</th></tr>
+	<tr><td>${jobTracker}</td><td>Gibt die URL des Hadoop-JobTrackers an. Verwenden Sie in HDInsight der Versionen 3.0 und 2.1 <strong>jobtrackerhost:9010</strong>.</td></tr>
+	<tr><td>${nameNode}</td><td>Gibt die URL des Hadoop-NameNode an. Verwenden Sie die Standarddateisystemadresse, zum Beispiel <i>wasb://&lt;containerName>@&lt;storageAccountName>.blob.core.windows.net</i>.</td></tr>
+	<tr><td>${queueName}</td><td>Gibt den Namen der Warteschlange an, an die der Auftrag gesendet wird. Verwenden Sie den <strong>Standardwert</strong>.</td></tr>
+	</table>
+
+	<table border = "1">
+	<tr><th>Hive-Aktionsvariable</th><th>Beschreibung</th></tr>
+	<tr><td>${hiveDataFolder}</td><td>Gibt das Quellverzeichnis für den Befehl zum Erstellen der Hive-Tabelle an.</td></tr>
+	<tr><td>${hiveOutputFolder}</td><td>Gibt den Ausgabeordner für die Anweisung INSERT OVERWRITE an.</td></tr>
+	<tr><td>${hiveTableName}</td><td>Gibt den Namen der Hive-Tabelle an, die auf die log4j-Datendateien verweist.</td></tr>
+	</table>
+
+	<table border = "1">
+	<tr><th>Sqoop-Aktionsvariable</th><th>Beschreibung</th></tr>
+	<tr><td>${sqlDatabaseConnectionString}</td><td>Gibt die Verbindungszeichenfolge für die Azure SQL-Datenbank an.</td></tr>
+	<tr><td>${sqlDatabaseTableName}</td><td>Gibt die Azure SQL-Datenbanktabelle an, in die die Daten exportiert werden.</td></tr>
+	<tr><td>${hiveOutputFolder}</td><td>Gibt den Ausgabeordner für die Hive-Anweisung INSERT OVERWRITE an. Dieser entspricht dem für den Sqoop-Export angegebenen Ordner (export-dir).</td></tr>
+	</table>
+	
+	Weitere Informationen über den Oozie-Workflow und die Verwendung von Workflowaktionen finden Sie in der [Apache Oozie 4.0-Dokumentation][apache-oozie-400] (für HDInsight der Version 3.0) oder in der [Apache Oozie 3.3.2-Dokumentation][apache-oozie-332] (für HDInsight der Version 2.1).
 
 2. Speichern Sie die Datei al **C:\\Tutorials\\UseOozie\\workflow.xml** mit ANSI (ASCII)-Codierung. (Verwenden Sie Editor, falls Ihr Texteditor diese Option nicht zur Verfügung stellt.)
 

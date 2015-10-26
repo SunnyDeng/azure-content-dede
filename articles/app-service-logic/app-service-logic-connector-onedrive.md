@@ -26,7 +26,13 @@ Zur Verwendung des OneDrive-Connectors müssen Sie zunächst eine Instanz der On
 2.	Suchen Sie unter „Alles“ nach „OneDrive-Connector“.
 3.	Konfigurieren Sie den OneDrive-Connector wie folgt:
 
-	![][1] – **Name** – Geben Sie einen Namen für den OneDrive-Connector an – **App Service-Plan** – Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen – **Tarif** – Wählen Sie einen Tarif für den Connector aus – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+	![][1]
+	- **Name** - Geben Sie einen Namen für den OneDrive-Connector an
+	- **App Service-Plan** - Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen 
+	- **Tarif** - Wählen Sie einen Tarif für den Connector aus 
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll 
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll 
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
 
 4. Klicken Sie auf "Erstellen". Ein neuer OneDrive-Connector wird erstellt.
 5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des OneDrive-Connectors erstellen.
@@ -43,7 +49,8 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 	![][2]
 4.	Sie können die OneDrive-Connector-API-App im Editor bearbeiten, indem Sie auf den "OneDrive-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an (falls Sie nicht automatisch angemeldet werden). Klicken Sie auf "Ja", um den Zugriff zuzulassen.
 
-	![][3] ![][4]
+	![][3]
+	![][4]
 
 5.	Sie können nun den OneDrive-Connector im Datenfluss verwenden. Trigger sind derzeit nicht im OneDrive-Connector verfügbar. Die verfügbaren Aktionen sind: Abrufen einer Datei, Hochladen einer Datei, Löschen einer Datei und Auflisten von Dateien.
 

@@ -51,7 +51,9 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Net
     ![NetDocuments](./media/active-directory-saas-netdocuments-tutorial/IC795042.png "NetDocuments")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei NetDocuments zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für NetDocuments müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei NetDocuments zu authentifizieren.  
+Zum Konfigurieren des einmaligen Anmeldens für NetDocuments müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen.  
+Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
 
 ###Führen Sie zum Konfigurieren des einmaligen Anmeldens die folgenden Schritte aus:
 

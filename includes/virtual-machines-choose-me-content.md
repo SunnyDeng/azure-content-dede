@@ -1,8 +1,8 @@
 | Compute-Optionen | Audience (Zielgruppe) |
 | ------------------ | --------   |
-| [App Service] | Skalierbare Web-Apps, Mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
-| [Cloud-Dienste] | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle über das Betriebssystem |
-| [Virtuelle Computer] | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
+| [App Service](../app-service-web-overview.md) | Skalierbare Web-Apps, Mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
+| [Cloud-Dienste](services/cloud-services/) | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle über das Betriebssystem |
+| [Virtuelle Computer](https://msdn.microsoft.com/library/azure/jj156143.aspx) | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
 
 <a name="tellmevm"></a>
 ## Weitere Informationen über virtuelle Computer

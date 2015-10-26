@@ -67,7 +67,7 @@ Sie müssen Ihre Anwendungsstellvertretung ändern:
 
 ### Empfohlene Methode: Überladen der `UIViewController`-Klassen
 
-Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\\> `EngagementTableViewController`).
+Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\> `EngagementTableViewController`).
 
 **Ohne Engagement:**
 

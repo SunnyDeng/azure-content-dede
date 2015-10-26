@@ -197,18 +197,20 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurier
 10.	Wählen Sie **Ansprüche per benutzerdefinierter Regel senden**, und klicken Sie auf **Weiter**.
 11.	Fügen Sie in das Feld **Benutzerdefinierte Regel** die folgende Regelsprache ein, geben Sie der Regel den Namen **Sitzungsspezifische ID**, und klicken Sie auf **Fertig stellen**.  
 	<pre class="prettyprint">
-c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
-c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
-	=> add(
-		store = "_OpaqueIdStore",
-		types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
-		query = "{0};{1};{2};{3};{4}",
-		param = "useEntropy",
-		param = c1.Value,
-		param = c1.OriginalIssuer,
-		param = "",
-		param = c2.Value);
-</pre>Die benutzerdefinierte Regel sollte wie folgt aussehen:
+	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
+	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
+		=> add(
+			store = "_OpaqueIdStore",
+			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
+			query = "{0};{1};{2};{3};{4}",
+			param = "useEntropy",
+			param = c1.Value,
+			param = c1.OriginalIssuer,
+			param = "",
+			param = c2.Value);
+	</pre>
+
+	Die benutzerdefinierte Regel sollte wie folgt aussehen:
 
 	![](./media/web-sites-dotnet-lob-application-adfs/6-per-session-identifier.png)
 
@@ -249,7 +251,7 @@ Bisher haben Sie Folgendes erreicht:
 - AD FS hat einen Active Directory-Benutzer authentifiziert und leitet Sie zur Startseite der Anwendung zurück.
 - AD FS hat den Namensanspruch (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) an Ihre Anwendung gesendet. Dies geht daraus hervor, dass der Benutzername in der Ecke angezeigt wird. 
 
-Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei "Views\\Shared\\_LoginPartial.cshtml" betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
+Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei „Views\\Shared\\_LoginPartial.cshtml“ betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
 
 ![](./media/web-sites-dotnet-lob-application-adfs/12-test-debugging-all-claims.png)
 
@@ -261,29 +263,39 @@ Da Sie Gruppenmitgliedschaften als Rollenansprüche in die RP-Vertrauensstellung
 1. Öffnen Sie die Datei "Controllers\\HomeController.cs".
 2. Dekorieren Sie die Aktionsmethoden `About` und `Contact` ähnlich wie unten mit Mitgliedschaften in Sicherheitsgruppen, über die Ihr authentifizierter Benutzer verfügt.  
 	<pre class="prettyprint">
-<mark>[Authorize(Roles="Test Group")]</mark>
-public ActionResult About()
-{
-    ViewBag.Message = "Your application description page.";
+    <mark>[Authorize(Roles="Test Group")]</mark>
+    public ActionResult About()
+    {
+        ViewBag.Message = "Your application description page.";
 
-    return View();
-}
+        return View();
+    }
 
-<mark>[Authorize(Roles="Domain Admins")]</mark>
-public ActionResult Contact()
-{
-    ViewBag.Message = "Your contact page.";
+    <mark>[Authorize(Roles="Domain Admins")]</mark>
+    public ActionResult Contact()
+    {
+        ViewBag.Message = "Your contact page.";
 
-    return View();
-}
-</pre>Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
+        return View();
+    }
+	</pre>
+
+
+	Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
 
 3. Starten Sie den Debugger durch Drücken von `F5`, melden Sie sich an, und klicken Sie auf **Info**. Sie sollten jetzt die Seite `~/About/Index` sehen können, wenn der authentifizierte Benutzer für diese Aktion berechtigt ist.
 4. Klicken Sie nun auf **Kontakt**. In meinem Fall sollte keine Autorisierung von **Testbenutzer** für die Aktion erfolgen. Allerdings wird der Browser zu AD FS umgeleitet, und schließlich wird diese Meldung angezeigt:
 
 	![](./media/web-sites-dotnet-lob-application-adfs/13-authorize-adfs-error.png)
 
-	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung: <pre class="prettyprint"> Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Ausführliche Informationen erhalten Sie bei Ihrem Administrator unter Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context) unter Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context) </pre>
+	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung:   
+	<pre class="prettyprint">
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
+	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
+	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)
+	</pre>
 
 	Der Grund hierfür ist, dass MVC standardmäßig die Fehlermeldung "401 - Nicht autorisiert" zurückgibt, wenn die Rollen des Benutzers nicht autorisiert sind. Dadurch wird eine Anforderung zur erneuten Authentifizierung an Ihren Identitätsanbieter (AD FS) ausgelöst. Da der Benutzer bereits authentifiziert ist, kehrt AD FS zur selben Seite zurück- Diese gibt dann wiederum eine 401-Fehlermeldung aus, sodass eine Umleitungsschleife entsteht. Überschreiben Sie die `HandleUnauthorizedRequest`-Methode von "AuthorizeAttribute" mit einfacher Logik, um etwas Sinnvolles anzuzeigen, anstatt die Umleitungsschleife fortzusetzen.
 

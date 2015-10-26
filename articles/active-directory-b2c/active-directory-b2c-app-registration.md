@@ -30,7 +30,7 @@ Zum Erstellen einer Anwendung, die Registrierungen und Anmeldungen von Kunden ak
 
 Sie haben zwei Möglichkeiten, zum B2C-Featureblatt zu navigieren.
 
-### 1\. Direkt im Azure-Vorschauportal
+### 1. Direkt im Azure-Vorschauportal
 
 Wenn das Blatt "B2C-Features" an Ihr Startmenü angeheftet ist, sehen Sie es, sobald Sie sich als globaler Administrator des B2C-Mandanten beim [Azure-Vorschauportal](https://portal.azure.com/) anmelden.
 
@@ -52,7 +52,8 @@ Sie finden den Link **B2C-Einstellungen verwalten** außerdem auf der Registerka
 3. Der **Name** der Anwendung sollte die Funktion der Anwendung für Kunden beschreiben. Geben Sie z. B. "Contoso B2C-App" ein.
 4. Wenn Sie eine webbasierte Anwendung entwickeln, stellen Sie den Schalter **Web-App/Web-API einschließen** auf **Ja**. Die **Antwort-URLs** sind Endpunkte, an denen von Azure AD B2C von Ihrer Anwendung angeforderte Token zurückgegeben werden. Geben Sie z. B. Folgendes ein: `https://localhost:44321/`. Wenn Ihre Anwendung eine serverseitige Komponente (API) umfasst, die geschützt werden muss, sollten Sie jetzt ein **Anwendungsgeheimnis** erstellen (und kopieren), indem Sie auf die Schaltfläche **Schlüssel erzeugen** klicken.
 
-    > [AZURE.NOTE]Das **Anwendungsgeheimnis** ist eine wichtige Sicherheitsanmeldeinformation.
+    > [AZURE.NOTE]
+    Das **Anwendungsgeheimnis** ist eine wichtige Sicherheitsanmeldeinformation.
 
 5. Wenn Sie eine mobile Anwendung entwickeln, stellen Sie den Schalter **Systemeigenen Client einschließen** auf **Ja**. Notieren Sie sich den standardmäßigen **Umleitungs-URI**, der automatisch für Sie erstellt wurde.
 6. Klicken Sie auf **Erstellen**, um Ihre Anwendung zu registrieren.

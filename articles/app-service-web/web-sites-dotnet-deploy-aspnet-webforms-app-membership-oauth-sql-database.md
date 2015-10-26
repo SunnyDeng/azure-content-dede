@@ -419,16 +419,16 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		{
 		    public partial class Startup {
 		
-		        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
+		// Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter "http://go.microsoft.com/fwlink/?LinkId=301883".
 		        public void ConfigureAuth(IAppBuilder app)
 		        {
-		            // Configure the db context and user manager to use a single instance per request
+		// DB-Kontext und Benutzer-Manager für die Verwendung einer einzelnen Instanz pro Anforderung konfigurieren
 		            app.CreatePerOwinContext(ApplicationDbContext.Create);
 		            app.CreatePerOwinContext(ApplicationUserManager.Create);
 		
-		            // Enable the application to use a cookie to store information for the signed in user
-		            // and to use a cookie to temporarily store information about a user logging in with a third party login provider
-		            // Configure the sign in cookie
+		// Anwendung kann Cookie zum Speichern von Informationen zum angemeldeten Benutzer
+		// sowie ein Cookie verwenden, um Informationen zu einem über einen externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern.
+		// Anmeldecookie konfigurieren
 		            app.UseCookieAuthentication(new CookieAuthenticationOptions
 		            {
 		                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
@@ -440,10 +440,10 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
 		                }
 		            });
-		            // Use a cookie to temporarily store information about a user logging in with a third party login provider
+		            // Cookie verwenden, um Infos über externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern
 		            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 		
-		            // Uncomment the following lines to enable logging in with third party login providers
+		            // Heben Sie die Auskommentierung der folgenden Zeilen auf, um die Anmeldung mit externen Anmeldeanbietern zu ermöglichen.
 		            //app.UseMicrosoftAccountAuthentication(
 		            //    clientId: "",
 		            //    clientSecret: "");

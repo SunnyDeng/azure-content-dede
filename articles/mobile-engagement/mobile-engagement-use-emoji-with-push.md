@@ -38,7 +38,8 @@ Sie können in Pushbenachrichtigungen Emoticons einfügen. Azure Mobile Engageme
 
 7. Wenn Sie einen Test ausführen oder die Ankündigung aktivieren, wird eine Benachrichtigung mit dem Emoticon entsprechend Ihren Festlegungen angezeigt.
 
-	![][3] ![][4]
+	![][3] 
+	![][4]
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-use-emoji-with-push/emoji.png

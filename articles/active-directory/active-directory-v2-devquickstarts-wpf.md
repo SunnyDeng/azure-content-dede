@@ -20,7 +20,8 @@
 
 Mit dem App-Modell v2.0 können Sie schnell eine Authentifizierung zu Ihren Desktop-Apps hinzufügen, die sowohl persönliche Microsoft-Konten als auch Geschäfts- oder Schulkonten unterstützt. Dadurch kann Ihre App außerdem sicher mit einer Back-End-Web-API sowie einigen [Office 365-Unified-APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) kommunizieren.
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+	Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 Für [systemeigene .NET- Apps, die auf einem Gerät ausgeführt werden](active-directory-v2-flows.md#mobile-and-native-apps), bietet Azure AD die Active Directory-Authentifizierungsbibliothek (ADAL). Die einzige Aufgabe von ADAL besteht darin, Ihrer Anwendung das Abrufen von Token für den Aufruf von Webdiensten zu erleichtern. Um Ihnen zu zeigen, wie einfach das geht, wollen wir nun eine .NET-WPF-App mit einer Aufgabenliste entwickeln, die folgende Aktionen ausführt:
 
@@ -245,6 +246,8 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 - [Sichern der TodoListService-Web-API mit dem App-Modell v2.0 >>](active-directory-v2-devquickstarts-dotnet-api.md)
 
-Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"adal"-Tag >>](http://stackoverflow.com/questions/tagged/adal)
+Weitere Ressourcen:
+- [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md)
+- [StackOverflow-"adal"-Tag \>\>](http://stackoverflow.com/questions/tagged/adal)
 
 <!---HONumber=Oct15_HO3-->

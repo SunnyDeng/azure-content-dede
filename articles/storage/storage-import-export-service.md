@@ -223,7 +223,8 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 - Nein, alle Laufwerke müssen mit BitLocker vorbereitet sein.
  
-**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?** – Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
+**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?**
+- Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
 
 ### Versand
 

@@ -155,6 +155,7 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) [Vorschauportal]: https://portal.azure.com/
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) 
+[Vorschauportal]: https://portal.azure.com/
 
 <!---HONumber=Oct15_HO3-->

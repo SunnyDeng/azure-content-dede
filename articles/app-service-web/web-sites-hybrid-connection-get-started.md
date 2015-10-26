@@ -77,7 +77,11 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 	
 	![Hybridverbindung erstellen][TwinCreateHCBlades]
 	
-	Im Blatt **Hybridverbindung erstellen**: – Geben Sie für **Name** einen Namen für die Verbindung an. – Geben Sie für **Hostname** den Namen des lokalen Computers ein, der Ihre Ressourcen hostet. – Geben Sie für **Port** die Portnummer ein, die Ihre lokale Ressource verwendet (1433 für eine Standardinstanz von SQL Server). – Klicken Sie auf **Biz Talk Service**.
+	Im Blatt **Hybridverbindung erstellen**:
+	- Geben Sie für **Name** einen Namen für die Verbindung an.
+	- Geben Sie für **Hostname** den Namen des lokalen Computers ein, der Ihre Ressourcen hostet.
+	- Geben Sie für **Port** die Portnummer ein, die Ihre lokale Ressource verwendet (1433 für eine Standardinstanz von SQL Server).
+	- Klicken Sie auf **Biz Talk Service**.
 
 
 4. Das Blatt **BizTalk Service erstellen** wird geöffnet. Geben Sie einen Namen für den BizTalk-Dienst ein, und klicken Sie auf **OK**.

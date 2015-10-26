@@ -67,7 +67,7 @@ Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn 
 - `npm install express-session`
 - `npm install cookie-parser`
 
-- Zusätzlich haben wir `passport-azure-ad` für unsere Vorschau im Gerüst des Schnellstarts verwendet.
+- Zusätzlich haben wir `passport-azure-ad` für unsere Vorschau im Skeleton des Schnellstarts verwendet.
 
 - `npm install passport-azure-ad`
 

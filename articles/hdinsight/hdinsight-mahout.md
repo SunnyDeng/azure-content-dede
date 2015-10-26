@@ -42,7 +42,7 @@ Mahout ist eine [Bibliothek für maschinelles Lernen][ml] für Apache Hadoop. Ma
 
 * **Ein Windows-basierter Hadoop-Cluster in HDInsight**. Weitere Informationen zur Erstellung finden Sie unter [Erste Schritte mit Hadoop in HDInsight][getstarted].
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) \(Installieren und Verwenden von Azure PowerShell, in englischer Sprache\).
 
 
 ##<a name="recommendations"></a>Generieren von Empfehlungen mithilfe von PowerShell
@@ -81,7 +81,7 @@ Praktischerweise stellt [GroupLens Research][movielens] Bewertungsdaten für Fil
 
     	PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
 
-    Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Sie können dann über den \_\___wasb:///example/data/u.data__URI von HDInsight-Aufträgen auf diese Daten zugreifen.
+    Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Sie können dann über den __wasb:///example/data/u.data__URI von HDInsight-Aufträgen auf diese Daten zugreifen.
 
 ###Ausführen des Auftrags
 
@@ -93,7 +93,7 @@ Verwenden Sie das folgende Windows PowerShell-Skript zum Ausführen eines Auftra
 	# NOTE: The version number portion of the file path
 	# may change in future versions of HDInsight.
 	# So dynamically grab it using Hive.
-	$mahoutPath = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar' | where {$_.startswith("C:\apps\dist")}
+	$mahoutPath = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target\*-job.jar' | where {$_.startswith("C:\apps\dist")}
 	$noCRLF = $mahoutPath -replace "`r`n", ""
 	$cleanedPath = $noCRLF -replace "\", "/"
 	$jarFile = "file:///$cleanedPath"
@@ -355,9 +355,9 @@ Mahout ist in HDInsight 3.1-Clustern bereits installiert. Die Installation kann 
 
 			mvn -Dhadoop2.version=2.2.0 -DskipTests clean package
 
-    	After the build completes, you can find the JAR file at __mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__.
+    	Nachdem der Build abgeschlossen wurde, finden Sie die JAR-Datei unter „__mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__“.
 
-    	> [AZURE.NOTE] When Mahout 1.0 is released, you should be able to use the prebuilt packages with HDInsight 3.0.
+    	> [AZURE.NOTE] Wenn Mahout 1.0 veröffentlicht wird, sollten Sie die vorgefertigten Pakete mit HDInsight 3.0 verwenden können.
 
 2. Laden Sie die jar-Datei hoch in __example/jars__ in den Standardspeicher Ihres Clusters. Im folgenden Beispiel wird die Datei mit "add-hdinsightfile" aus den [HDInsight-Tools][tools] hochgeladen:
 
@@ -374,7 +374,7 @@ Um Fehler beim Ausführen von Mahout-Aufträgen zu vermeiden, löschen Sie tempo
 Mahout ist in HDInsight 3.1-Clustern enthalten. Der Pfad- und der Dateiname enthalten die Versionsnummer der im Cluster installierten Mahout-Version. Das Windows PowerShell-Beispielskript in diesem Lernprogramm verwendet einen Pfad, der seit Juli 2014 gültig ist. Die Versionsnummer wird sich aber mit künftigen Updates von HDInsight ändern. Den aktuellen Pfad zur Mahout-JAR-Datei für Ihren Cluster können Sie mit dem folgenden Windows PowerShell-Befehl ermitteln. Ändern Sie dann das Skript, um den ausgegebenen Pfad zu referenzieren.
 
 	Use-AzureHDInsightCluster -Name $clusterName
-	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
+	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target\*-job.jar'
 
 ###<a name="nopowershell"></a>Klassen, die nicht mit Windows PowerShell funktionieren
 

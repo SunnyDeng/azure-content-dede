@@ -518,7 +518,7 @@ Sie können die Azure-Befehlszeilenschnittstelle entweder über NPM oder Windows
 
 		npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
 
-	> [AZURE.NOTE]Wenn die Fehlermeldung angezeigt wird, dass der NPM-Befehl nicht gefunden wurde, überprüfen Sie, ob sich die folgenden Pfade in der Path-Umgebungsvariablen PATH befinden: <i>C:\\Program Files (X 86) \\nodejs; C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i> oder <i>C:\\Program Files\\nodejs; C:\\Users[Benutzername]\\AppData\\Roaming\\npm￼</i>
+	> [AZURE.NOTE]Wenn die Fehlermeldung angezeigt wird, dass der NPM-Befehl nicht gefunden wurde, überprüfen Sie, ob sich die folgenden Pfade in der Path-Umgebungsvariablen PATH befinden: <i>C:\\Program Files (X 86) \\nodejs; C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i> oder <i>C:\\Program Files\\nodejs; C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i>
 
 5.	Führen Sie den folgenden Befehl aus, um die Installation zu überprüfen:
 

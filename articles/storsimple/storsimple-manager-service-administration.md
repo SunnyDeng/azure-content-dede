@@ -57,7 +57,11 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| ||Sicherungskatalog|Volumecontainer→|Volumes| ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| ||Aufträge|Konfigurieren (Gerät)| ||Warnungen|Wartung|
+||Geräte →|Überwachen| |
+||Sicherungskatalog|Volumecontainer→|Volumes| 
+||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
+||Aufträge|Konfigurieren (Gerät)||
+||Warnungen|Wartung|
 
 
 ## Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
