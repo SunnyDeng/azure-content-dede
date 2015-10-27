@@ -4,8 +4,9 @@
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="jdial"
-   editor="tysonn"/>
+   manager="carolz"
+   editor=""
+   tags="azure-service-management"/>
 
 <tags
    ms.service="vpn-gateway"
@@ -13,13 +14,15 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/11/2015"
+   ms.date="10/21/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren einer Punkt-zu-Site-VPN-Verbindung mit einem Azure Virtual Network
 
 
->[AZURE.NOTE]Dieser Artikel gilt für Punkt-zu-Standort-Verbindungen für virtuelle Netzwerke, die im klassischen Bereitstellungsmodus erstellt werden. Punkt-zu-Standort-Verbindungen zu einem virtuellen Netzwerk, das im Azure-Ressourcen-Manager-Bereitstellungsmodus erstellt wurde, werden derzeit nicht unterstützt.
+>[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+
+Dieser Artikel gilt für Punkt-zu-Standort-Verbindungen für virtuelle Netzwerke, die mit dem klassischen Bereitstellungsmodell (Dienstverwaltung) erstellt werden. Punkt-zu-Standort-Verbindungen mit einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Bereitstellungsmodell erstellt wurde, werden derzeit nicht unterstützt.
 
 Das folgende Verfahren führt Sie schrittweise durch den Erstellungsprozess einer sicheren Punkt-zu-Standort-Verbindung zu einem virtuellen Netzwerk. Auch wenn zum Konfigurieren einer Punkt-zu-Standort-Verbindung mehrere Schritte erforderlich sind, ist es eine hervorragende Möglichkeit, eine sichere Verbindung von Ihrem Computer mit dem virtuellen Netzwerk herzustellen, ohne ein VPN-Gerät kaufen und konfigurieren zu müssen. Das Konfigurieren eines Punkt-zu-Standort-VPNs umfasst drei Hauptteile: das virtuelle Netzwerk und das VPN-Gateway, die Zertifikate für die Authentifizierung und der VPN-Client, der für die Verbindung mit dem virtuellen Netzwerk verwendet wird. Da die Reihenfolge wichtig ist, in der Sie diese Komponenten konfigurieren, dürfen Sie keine Schritte überspringen oder vorgreifen.
 
@@ -29,7 +32,6 @@ Das folgende Verfahren führt Sie schrittweise durch den Erstellungsprozess eine
 3. [Konfigurieren Ihres VPN-Clients](#configure-your-vpn-client).
 
 ## Erstellen eines virtuelles Netzwerks und eines VPN-Gateways
-
 
 
 Eine Punkt-zu-Standort-Verbindung erfordert ein virtuelles Netzwerk mit einem Gateway mit dynamischem Routing. Die folgenden Schritte führen Sie durch die beiden Erstellungsprozesse:
@@ -66,7 +68,7 @@ Zertifikate werden zur Authentifizierung von VPN-Clients für Punkt-zu-Standort-
 
 1. [Generieren eines selbstsignierten Stammzertifikats](#generate-a-self-signed-root-certificate): Derzeit werden nur selbstsignierte Stammzertifikate unterstützt.
 2. [Hochladen der Stammzertifikatdatei in das Azure-Portal](#upload-the-root-certificate-file-to-the-management-portal).
-3. [Generieren eines Clientzertifikats](#generate-a-client-certificate).
+3. [Generieren eines Client-Zertifikats](#generate-a-client-certificate).
 4. [Exportieren und Installieren des Clientzertifikats](#export-and-install-the-client-certificate).
 
 ### Generieren eines selbstsigniertes Stammzertifikats
@@ -108,7 +110,7 @@ Zum Herstellen einer Verbindung mit dem virtuellen Netzwerk müssen Sie auch den
 
 ### Erstellen des VPN-Clientkonfigurationspakets
 
-1. Navigieren Sie im Azure-Portal auf der Seite **Dashboard** für Ihr virtuelles Netzwerk zum Menü "Auf einen Blick" in der rechten Ecke, und klicken Sie auf das VPN-Paket für den Client, den Sie mit Ihrem virtuellen Netzwerk verbinden möchten. Die folgenden Clientbetriebssysteme werden unterstützt:
+1. Navigieren Sie im Azure-Portal auf der Seite **Dashboard** für Ihr virtuelles Netzwerk zum Menü „Auf einen Blick“ in der rechten Ecke, und klicken Sie auf das VPN-Paket für den Client, den Sie mit Ihrem virtuellen Netzwerk verbinden möchten. Die folgenden Clientbetriebssysteme werden unterstützt:
  - Windows 7 (32 Bit und 64 Bit)
  - Windows Server 2008 R2 (nur 64 Bit)
  - Windows 8 (32 Bit und 64 Bit)
@@ -117,8 +119,8 @@ Zum Herstellen einer Verbindung mit dem virtuellen Netzwerk müssen Sie auch den
  - Windows Server 2012 R2 (nur 64 Bit)
 
 1. Wählen Sie das Downloadpaket für das Clientbetriebssystem aus, unter dem es installiert wird:
- - Wählen Sie für 32-Bit-Clients **32-Bit-Client-VPN-Paket herunterladen**.
- - Wählen Sie für 64-Bit-Clients **64-Bit-Client-VPN-Paket herunterladen**.
+ - Wählen Sie für 32-Bit-Clients **32-Bit-Client-VPN-Paket herunterladen** aus.
+ - Wählen Sie für 64-Bit-Clients **64-Bit-Client-VPN-Paket herunterladen** aus.
 1. Die Erstellung des Clientpakets kann einige Minuten in Anspruch nehmen. Sobald das Paket fertiggestellt wurde, können Sie die Datei herunterladen. Die heruntergeladene *EXE*-Datei kann sicher auf dem lokalen Computer gespeichert werden.
 1. Nachdem Sie das VPN-Clientpaket generiert und aus dem Azure-Portal heruntergeladen haben, können Sie das Clientpaket auf dem Clientcomputer installieren, von dem Sie eine Verbindung mit dem virtuellen Netzwerk herstellen möchten. Wenn Sie das VPN-Clientpaket auf mehreren Clientcomputern installieren möchten, stellen Sie sicher, dass auf diesen auch ein Clientzertifikat installiert worden ist. Das VPN-Clientpaket enthält Konfigurationsinformationen zum Konfigurieren der VPN-Client-Software, die in Windows integriert. Das Paket installiert keine zusätzlichen Software.
 
@@ -162,4 +164,4 @@ Wenn Sie eine Standort-zu-Standort-VPN-Verbindung konfigurieren möchten, lesen 
 
 Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

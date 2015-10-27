@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/07/2015"
+   ms.date="10/21/2015"
    ms.author="lodipalm"/>
 
 #Erstellen eines SQL Data Warehouse mit TSQL 
@@ -30,7 +30,7 @@ In diesem Artikel erfahren Sie, wie Sie ein SQL Data Warehouse mithilfe von Tran
 - Visual Studio. Eine kostenlose Version von Visual Studio finden Sie auf der Seite [Visual Studio-Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs).
 - Einen V12-SQL-Server. Sie benötigen einen V12-SQL-Server zum Erstellen des SQL Data Warehouse. Wenn Ihnen kein V12-SQL-Server zur Verfügung steht, wird empfohlen, einen im Vorschauportal zu erstellen, damit Sie Ihr SQL Data Warehouse auf einem neuen Server erstellen können.
 
-In diesem Artikel wird nicht behandelt, wie eine Datenbank ordnungsgemäß eingerichtet und eine Verbindung mit Visual Studio hergestellt wird. Eine vollständige Beschreibung der Vorgehensweise finden in der Dokumentation unter [Herstellen der Verbindung und Abfragen][]. Zum Starten müssen Sie den SQL Server-Objekt-Explorer in Visual Studio öffnen und eine Verbindung mit dem Server herstellen, mit dessen Hilfe Sie Ihr SQL Data Warehouse erstellen möchten. Nachdem dies erfolgt ist, können Sie ein SQL Data Warehouse erstellen, indem Sie den folgenden Befehl auf die Datenbank "master" anwenden:
+In diesem Artikel wird nicht behandelt, wie eine Datenbank ordnungsgemäß eingerichtet und eine Verbindung mit Visual Studio hergestellt wird. Eine vollständige Beschreibung der Vorgehensweise finden Sie in der Dokumentation zu [Verbindungsherstellung und Abfragen][]. Zum Starten müssen Sie den SQL Server-Objekt-Explorer in Visual Studio öffnen und eine Verbindung mit dem Server herstellen, mit dessen Hilfe Sie Ihr SQL Data Warehouse erstellen möchten. Nachdem dies erfolgt ist, können Sie ein SQL Data Warehouse erstellen, indem Sie den folgenden Befehl auf die Datenbank "master" anwenden:
 
         CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>);
 
@@ -64,16 +64,16 @@ SERVICE\_OBJECTIVE gibt die Anzahl der DWUs an, mit der Ihre Instanz gestartet w
 + DW1500
 + DW2000
 
-Informationen zur Auswirkung dieser Parameter auf die Abrechnung finden Sie auf unserer [Preisseite][].
+Informationen zur Auswirkung dieser Parameter auf die Abrechnung finden Sie auf unserer Seite zur [Preisgestaltung][].
 
 ## Nächste Schritte
-Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] oder die Schritte zum [Entwickeln][], [Laden][] oder [Migrieren][] lernen.
+Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] oder die Schritte zum [Entwickeln][], [Laden][] oder [Migrieren][] erlernen.
 
-[Herstellen der Verbindung und Abfragen]: ./sql-data-warehouse-get-started-connect-query.md
-[Migrieren]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwickeln]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
-[Laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-load/
-[Beispieldaten laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[Preisseite]: https://azure.microsoft.com/de-DE/pricing/details/sql-data-warehouse/
+[Verbindungsherstellung und Abfragen]: ./sql-data-warehouse-get-started-connect.md
+[Migrieren]: ./sql-data-warehouse-overview-migrate.md
+[Entwickeln]: ./sql-data-warehouse-overview-develop.md
+[Laden]: ./sql-data-warehouse-overview-load.md
+[Beispieldaten laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
+[Preisgestaltung]: https://azure.microsoft.com/pricing/details/sql-data-warehouse/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen einer Logik-App | Microsoft Azure"
-	description="Erfahren Sie, wie Sie eine grundlegende App Services-Logik-App erstellen"
+	description="Informationen zum Erstellen einer Logik-App zum Verbinden von SaaS-Diensten"
 	authors="stepsic-microsoft-com"
 	manager="dwrede"
 	editor=""
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/10/2015"
+	ms.date="10/16/2015"
 	ms.author="stepsic"/>
 
-# Erstellen einer neuen Logik-App
+# Erstellen einer Logik-App zum Verbinden von SaaS-Diensten
 
 | Kurzübersicht |
 | --------------- |
@@ -94,15 +94,19 @@ Trigger sind die Grundlage der Ausführung Ihrer Logik-App. Als Nächstes fügen
 
 1. Klicken Sie immer noch in der Ansicht **Logik-App erstellen** auf **Trigger und Aktionen**.
 
-	Ein Designer wird als Vollbild eingeblendet, der Ihren Datenfluss zeigt. Auf der rechten Seite finden Sie eine Liste aller Dienste, die Trigger haben können.
+	Ein Designer wird als Vollbild eingeblendet, der Ihren Datenfluss und einige Vorlagen zeigt, mit denen Sie starten können.
+	
+2. Für dieses Tutorial **starten wir die Erstellung von Grund auf**. Sie können stets eine Vorlage nutzen, wenn dies sinnvoll erscheint.
+    
+    Auf der rechten Seite finden Sie nun eine Liste aller Dienste, die Trigger haben können.
 
-2. Klicken Sie im oberen Abschnitt auf **Wiederholung**.
+3. Klicken Sie im oberen Abschnitt auf **Wiederholung**.
 
 	Dadurch wird ein Feld hinzugefügt, in dem Sie die Wiederholungseinstellungen angeben können.
 
 	![Serie](./media/app-service-logic-create-a-logic-app/recurrence.png)
 
-3.  Wählen Sie für die Wiederholung eine **Frequenz** und ein **Intervall** (z. B. einmal pro Stunde) aus, und klicken Sie dann auf das grüne Häkchen.
+4.  Wählen Sie für die Wiederholung eine **Frequenz** und ein **Intervall** (z. B. einmal pro Stunde) aus, und klicken Sie dann auf das grüne Häkchen.
 
 Nun fügen Sie dem Datenfluss eine Aktion hinzu.
 
@@ -118,7 +122,7 @@ Aktionen sind das, was in Ihrem Workflow stattfindet. Sie können eine beliebige
 
 	![Aktionen](./media/app-service-logic-create-a-logic-app/actions.png)
 
-	> [AZURE.NOTE]Die Schaltfläche **Autorisieren** verwendet OAuth-Sicherheitseinstellungen, um mit SaaS-Diensten wie Twitter eine Verbindung herzustellen. Mehr zu OAuth finden Sie unter [OAuth-Sicherheit](app-service-logic-oauth-security.md).
+	> [AZURE.NOTE]Die Schaltfläche **Autorisieren** verwendet OAuth-Sicherheitseinstellungen, um mit SaaS-Diensten wie Twitter eine Verbindung herzustellen. Mehr zu OAUTH finden Sie unter [OAUTH-Sicherheit](app-service-logic-oauth-security.md).
 
 3. Klicken Sie auf **Tweets durchsuchen**, geben Sie dann in **Abfrage eingeben** beispielsweise `#MicrosoftAzure` ein, und klicken Sie auf das grüne Häkchen.
 
@@ -184,4 +188,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Use logic app features]: app-service-logic-use-logic-app-features.md
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->
