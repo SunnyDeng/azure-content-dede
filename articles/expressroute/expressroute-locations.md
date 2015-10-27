@@ -31,9 +31,9 @@ Wenn Sie mit mindestens einem ExpressRoute-Standort innerhalb der geopolitischen
 |---|---|---|
 |**USA**|Alle US-Regionen: Osten USA, Westen USA, Osten USA 2, USA Süd Mitte, USA Nord Mitte|Atlanta, Chicago, Dallas, Los Angeles, New York, Seattle, Silicon Valley, Washington DC|
 |**Südamerika**|Brasilien Süd|Sao Paulo|
-|**Europa**|Nordeuropa, Westeuropa|Amsterdam, London|
+|**Europa**|Nordeuropa, Westeuropa|Amsterdam, Dublin+, London|
 |**Asien**|Ostasien, Südostasien|Hongkong, Singapur|
-|**Japan**|Japan West, Japan Ost|Tokio|
+|**Japan**|Japan West, Japan Ost|Osaka, Tokio|
 |**Australien**|Südostaustralien, Ostaustralien|Melbourne, Sydney|
 |**Indien**|Indien, Westen, Indien, Mitte, Indien, Süden|Chennai, Mumbai|
 
@@ -55,13 +55,14 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 
 | **Service Provider** |**Microsoft Azure** | **Office 365** | **Standorte** |
 |-----------------------|--------------------|----------------|---------------|
-| **[Aryaka Networks](http://www.aryaka.com/)** | Unterstützt | Nicht unterstützt | Silicon Valley, Singapur, Washington, D.C. |
-| **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Unterstützt | In Kürze verfügbar | Amsterdam +, London, Dallas, Silicon Valley, Washington DC. |
-| **[British Telecom](http://www.globalservices.bt.com/uk/en/news/bt_to_provide_connectivity_to_microsoft_azure)** | Unterstützt | Unterstützt | Amsterdam, London, Silicon Valley+, Washington, D.C. |
+| **[Aryaka Networks](http://www.aryaka.com/)** | Unterstützt | Nicht unterstützt | Amsterdam, Silicon Valley, Singapur, Washington, D.C. |
+| **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Unterstützt | Unterstützt | Amsterdam, London, Dallas, Silicon Valley, Washington, D.C. |
+| **[British Telecom](http://www.globalservices.bt.com/uk/en/news/bt_to_provide_connectivity_to_microsoft_azure)** | Unterstützt | Unterstützt | Amsterdam, London, Silicon Valley, Singapur, Tokio, Washington, D.C. |
 |**China Telecom Global** | In Kürze verfügbar | Nicht unterstützt | Hongkong+ |
 | **[Colt](http://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** | Unterstützt | Nicht unterstützt | Amsterdam, London |
 | **Comcast** | Unterstützt | Nicht unterstützt | Silicon Valley, Washington, D.C. |
-| **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Unterstützt | Unterstützt | Amsterdam, Atlanta, Chicago, Dallas, Hongkong, London, Los Angeles, Melbourne, New York, São Paulo, Seattle, Silicon Valley, Singapur, Sydney, Tokio, Washington, D.C. |
+| **CoreSite** | Unterstützt | Nicht unterstützt | Los Angeles | 
+| **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Unterstützt | Unterstützt | Amsterdam, Atlanta, Chicago, Dallas, Hongkong, London, Los Angeles, Melbourne, New York, Osaka, São Paulo, Seattle, Silicon Valley, Singapur, Sydney, Tokio, Washington, D.C. |
 | **[Internet Initiative Japan Inc. - IIJ](http://www.iij.ad.jp/en/news/pressrelease/2013/pdf/Azure_E.pdf)** | Unterstützt | Nicht unterstützt | Tokio |
 | **[InterCloud](https://www.intercloud.com/)** | Unterstützt | Nicht unterstützt | Amsterdam, London, Singapur, Washington, D.C. |
 | **Internet Solutions – Cloud Connect** | Unterstützt | Nicht unterstützt | Amsterdam, London |
@@ -71,14 +72,15 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **MTN** | Unterstützt | Nicht unterstützt | London |
 | **NTT Communications** | Unterstützt | Nicht unterstützt | London+, Tokio |
 | **NEXTDC** | Unterstützt | Nicht unterstützt | Melbourne, Sydney+ |
-| **[Orange](http://www.orange-business.com/)** | Unterstützt | Nicht unterstützt | Amsterdam, London, Silicon Valley, Washington, D.C. |
+| **[Orange](http://www.orange-business.com/)** | Unterstützt | Nicht unterstützt | Amsterdam, Hongkong, London, Silicon Valley, Singapur, Washington, D.C. |
 | **PCCW Global Limited** | Unterstützt | Nicht unterstützt | Hongkong |
 | **[SingTel](http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** | Unterstützt | Nicht unterstützt | Singapur |
-| **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Unterstützt | Unterstützt | Amsterdam, Chennai+, Hongkong, London, Mumbai+, Singapur |
+| **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Unterstützt | Unterstützt | Amsterdam, Chennai+, Hongkong, London, Mumbai, Singapur |
 | **[TeleCity Group](http://www.telecitygroup.com/investor-centre/news_details.htm?locid=03100500400b00d&xml)** | Unterstützt | Unterstützt | Amsterdam, London |
-| **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Unterstützt | Nicht unterstützt | Melbourne+, Sydney |
-| **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** | Unterstützt | Unterstützt | London, Hongkong, Silicon Valley, Washington, D.C. |
-| **[Zayo Group](http://www.zayo.com/)** | Unterstützt | Nicht unterstützt | Washington DC |
+| **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Unterstützt | Nicht unterstützt | Melbourne, Sydney |
+| **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** | Unterstützt | Unterstützt | Hongkong, London, Silicon Valley, Sydney, Washington, D.C. |
+| **Vodafone** | Unterstützt | Nicht unterstützt | London | 
+| **[Zayo Group](http://www.zayo.com/)** | Unterstützt | Nicht unterstützt | Chicago, Silicon Valley, Washington, D.C. |
 
  **+** steht für "In Kürze"
 
@@ -127,4 +129,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

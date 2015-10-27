@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Installieren von Visual Studio 2015 | Microsoft Azure"
-   description="Installieren von Visual Studio und SSDT für Azure SQL Data Warehouse"
+   pageTitle="Installieren von Visual Studio und/oder SSDT für SQL Data Warehouse | Microsoft Azure"
+   description="Installieren von Visual Studio und/oder SSDT für Azure SQL Data Warehouse"
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="twounder"
-   manager=""
+   manager="barbkess"
    editor=""/>
 
 <tags
@@ -13,36 +13,40 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/07/2015"
-   ms.author="twounder"/>
+   ms.date="10/21/2015"
+   ms.author="twounder;barbkess"/>
 
-# Installieren von Visual Studio 2015
+# Installieren von Visual Studio 2015 und/oder SSDT für SQL Data Warehouse
 
-Das Azure SQL Data Warehouse-Team empfiehlt, für die Entwicklung Visual Studio 2013 oder höher in Verbindung mit SQL Server Data Tools (SSDT) zu verwenden. Im Folgenden wird beschrieben, wie Sie Visual Studio 2015 herunterladen und aktualisieren, wenn nicht bereits eine geeignete Version von Visual Studio installiert ist. Die folgenden Schritte unterstützen Sie beim Herunterladen und Installieren der erforderlichen Komponenten für die Arbeit mit Azure SQL Data Warehouse.
+Für die Entwicklung von Anwendungen für SQL Data Warehouse empfiehlt es sich, Visual Studio 2013 oder höher in Verbindung mit der neuesten Version von SQL Server Data Tools (SSDT) zu verwenden.
 
-+ [Herunterladen und Installieren von Visual Studio 2015](#Download-and-Install-Visual-Studio-2015)
-+ [Herunterladen und Installieren von SQL Server Data Tools (SSDT) Preview] (#Download-and-Install-SQL-Server-Data-Tools-(SSDT)-Preview)
- 
-> [AZURE.NOTE]Visual Studio 2013 und SQL Server Data Tools (SSDT) Preview können auch mit Azure SQL Data Warehouse verwendet werden.
- 
-##Herunterladen und Installieren von Visual Studio 2015
+Zum Ausführen von Abfragen von der integrierten Visual Studio-Entwicklungsumgebung (IDE) aus müssen Sie nur SSDT installieren. Zusammen mit SSDT wird die Visual Studio-IDE installiert, sodass Sie den SQL Server-Objekt-Explorer für die Verbindung mit Ihrer Azure SQL Server-Instanz verwenden können. Daraufhin können Sie Ihre SQL Data Warehouse-Datenbanken anzeigen und Abfragen ausführen.
 
-Führen Sie zum Installieren von Visual Studio 2015 die folgenden Schritte aus.
 
-1. [Laden Sie Visual Studio 2015 aus Visual Studio Online herunter](https://www.visualstudio.com/downloads).
-2. Befolgen Sie die Anleitung [Installation von Visual Studio](https://msdn.microsoft.com/library/e2h7fzkw.aspx) in MSDN, und wählen Sie Standardkonfigurationen aus. 
+## Schritt 1: Herunterladen und Installieren von Visual Studio
 
-##Herunterladen und Installieren von SQL Server Data Tools (SSDT) Preview
+Wenn Sie sich für die Installation von Visual Studio entscheiden, können Sie entweder Visual Studio 2013 oder Visual Studio 2015 mit SQL Data Warehouse verwenden. Wenn Sie bereits Visual Studio 2013 oder 2015 installiert haben, fahren Sie mit Schritt 2 fort, um SSDT zu installieren.
 
-Azure SQL Data Warehouse nutzt die neueste Preview-Version von der SQL Server Data Tools (SSDT), die zur Verfügung steht.
+So installieren Sie Visual Studio 2015
 
-1. [Laden Sie SQL Server Data Tools Preview für Visual Studio 2013 oder 2015 herunter.](https://msdn.microsoft.com/mt429383.aspx)
-2. Befolgen Sie die Hinweise zum Installieren der Datentools.
+1. [Laden Sie Visual Studio 2015 aus Visual Studio Online herunter](https://www.visualstudio.com/downloads). 
+2. Befolgen Sie die Anleitung [Installieren von Visual Studio](https://msdn.microsoft.com/library/e2h7fzkw.aspx) in MSDN, und wählen Sie die Standardkonfigurationen aus.
 
+## Schritt 2: Herunterladen und Installieren der neuesten SQL Server Data Tools (SSDT) 
+
+Unabhängig davon, ob Sie Visual Studio installiert haben, benötigen Sie die neueste Version von SQL Server Data Tools (SSDT), die SQL Data Warehouse unterstützt.
+
+So installieren Sie die neueste Version von SSDT
+
+1. [Laden Sie die SQL Server Data Tools-Vorschau für Visual Studio 2013 oder 2015 herunter.](https://msdn.microsoft.com/library/mt204009.aspx)
+2. Installieren Sie sie gemäß den Installationsanleitungen auf der Downloadwebsite.
+
+## Nächste Schritte
+
+Da Sie jetzt die neueste Version von SSDT verwenden, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
 <!--Anchors-->
 
 <!--Image references-->
-[1]: ./media/sql-data-warehouse-auditing-get-started/sql-data-warehouse-auditing.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

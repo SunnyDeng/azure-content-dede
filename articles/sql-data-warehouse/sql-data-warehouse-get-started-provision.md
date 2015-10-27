@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/08/2015"
+   ms.date="10/21/2015"
    ms.author="lodipalm;barbkess"/>
 
 # Erstellen eines SQL Data Warehouse im Azure-Vorschauportal#
@@ -48,7 +48,12 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 ## Schritt 2: Konfigurieren und Erstellen eines Servers
 In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server und jeder Server einem geografischen Standort zugewiesen. Der Server wird als logischer SQL Server bezeichnet.
 
-> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server: >> + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts. > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*. > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten. > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
+> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server:
+  >
+  > + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts.
+  > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*.
+  > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten.
+  > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
 
 1. Klicken Sie auf **Server** > **Neuen Server erstellen**. Es fallen keine Gebühren für den Server ein. Wenn Sie einen bereits vorhandenen logischen V12-Server verwenden möchten, wählen Sie den vorhandenen Server aus und fahren mit dem nächsten Schritt fort. 
 
@@ -121,6 +126,6 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 ## Nächste Schritte
 
-Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, erfahren Sie unter [Herstellen der Verbindung und Abfragen](./sql-data-warehouse-get-started-connect-query.md), wie SQL Data Warehouse genutzt wird.
+Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

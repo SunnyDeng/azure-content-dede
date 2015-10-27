@@ -10,10 +10,10 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/08/2015"
+   ms.date="10/20/2015"
    ms.author="lodipalm"/>
 
 # Erstellen von SQL Data Warehouse mithilfe von Powershell
@@ -61,14 +61,14 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 <!--Image references-->
 
 <!--Article references-->
-[Migrieren]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwickeln]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-develop/
-[Laden]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-load/
-[Beispieldaten laden]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[Powershell]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
+[Migrieren]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
+[Entwickeln]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
+[Laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-load/
+[Beispieldaten laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[Powershell]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [REST-API]: https://msdn.microsoft.com/library/azure/dn505719.aspx
-[MSDN]: https://msdn.microsoft.com/en-us/library/azure/dn546722.aspx
-[firewall rules]: https://azure.microsoft.com/en-us/documentation/articles/sql-database-configure-firewall-settings/
+[MSDN]: https://msdn.microsoft.com/de-DE/library/azure/dn546722.aspx
+[firewall rules]: https://azure.microsoft.com/de-DE/documentation/articles/sql-database-configure-firewall-settings/
 [Installieren und Konfigurieren von Azure PowerShell]: powershell-install-configure.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

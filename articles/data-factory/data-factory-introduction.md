@@ -29,6 +29,8 @@ Data Factory arbeitet mit lokalen und Clouddatenquellen und SaaS, um Daten zu er
 
 Sie können Data Factory immer dann einsetzen, wenn Sie Daten verschiedener Formen und Größen sammeln, umwandeln und veröffentlichen müssen, um sich weitreichende Erkenntnisse zu verschaffen, um zwar gemäß einem zuverlässigen Zeitplan. Daten-Factory wird zur Erstellung von Datenflusspipelines für hohe Verfügbarkeit für viele Szenarien und in verschiedenen Branchen mit Analysen-Pipeline-Anforderungen verwendet. Online-Einzelhandelsunternehmen verwenden sie zum Generieren personalisierter [Produktempfehlungen](data-factory-product-reco-usecase.md) basierend auf dem Surfverhalten der Kunden. Game Studios verwenden sie, um die[Effektivität ihrer Marketing](data-factory-customer-profiling-usecase.md)-Kampagnen zu überprüfen. Erfahren Sie direkt von unseren Kunden wie und warum sie Data Factory verwenden, indem Sie die [Kundenfallstudien](data-factory-customer-case-studies.md) durchsehen.
 
+> [AZURE.VIDEO azure-data-factory-overview]
+
 ## Wichtige Begriffe
 
 Azure Data Factory verfügt über einige wichtige Entitäten, die zusammenarbeiten, um die Ein- und Ausgabedaten, Verarbeitungsereignisse sowie den Zeitplan und die Ressourcen zu bestimmen, die für den Ablauf des gewünschten Datenflusses erforderlich sind.
@@ -55,7 +57,4 @@ Verknüpfte Dienste definieren die Informationen, die für Data Factory für das
 
 Mit diesen vier einfachen Konzepten (Datasets, Aktivitäten, Pipelines und verknüpfte Dienste) sind Sie startklar! Sie können von Grund auf [Ihre erste Pipeline erstellen](data-factory-build-your-first-pipeline.md) oder ein vordefiniertes Beispiel bereitstellen, indem Sie die Anweisungen in unseren [Data Factory-Beispielen](data-factory-samples.md) befolgen.
 
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-introduction.md).
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

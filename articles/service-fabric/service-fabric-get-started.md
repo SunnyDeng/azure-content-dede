@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Einrichten der Service Fabric-Entwicklungsumgebung | Microsoft Azure"
-   description="Installieren Sie Laufzeit, SDK und Tools für Service Fabric und erstellen Sie einen lokalen Entwicklungscluster."
+   pageTitle="Einrichten der Entwicklungsumgebung | Microsoft Azure"
+   description="Installieren Sie Laufzeit, SDK und Tools, und erstellen Sie einen lokalen Entwicklungscluster. Nach Abschluss des Setups können Sie mit der Erstellung von Clientanwendungen beginnen."
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="samgeo"
+   manager="coreysa"
    editor=""/>
 
 <tags
@@ -13,13 +13,13 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/07/2015"
+   ms.date="10/15/2015"
    ms.author="seanmck"/>
 
-# Einrichten der Service Fabric-Entwicklungsumgebung
- Dieser Artikel befasst sich mit allem, was Sie zum Erstellen von [Service Fabric][1]-Apps benötigen, einschließlich Installation von Laufzeit, SDK, Tools sowie Einrichtung eines lokalen Clusters.
+# Vorbereiten Ihrer Entwicklungsumgebung
+ Zum Entwickeln und Ausführen von [Service Fabric-Anwendungen][1] auf dem Entwicklungscomputer müssen Sie die Laufzeit, das SDK und Tools installieren sowie einen lokalen Cluster einrichten.
 
- >[AZURE.NOTE]Diese Anweisungen beziehen sich auf die Einrichtung neuer PCs. Wenn Sie eine frühere Version von Service Fabric auf Ihrem PC installiert haben, folgen Sie den [Anweisungen zum Aktualisieren der Entwicklungsumgebung](service-fabric-update-your-development-environment.md).
+ >[AZURE.NOTE]Diese Anweisungen beziehen sich auf die Einrichtung neuer Computer. Wenn Sie eine frühere Version von Service Fabric installiert haben, folgen Sie den [Anweisungen zum Aktualisieren der Entwicklungsumgebung](service-fabric-update-your-development-environment.md).
 
 ## Voraussetzungen
 ### Unterstützte Betriebssystemversionen
@@ -106,4 +106,4 @@ Ihre Entwicklungsumgebung ist nun eingerichtet, und Sie können mit der Entwickl
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
 [3]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->
