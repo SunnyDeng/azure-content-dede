@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erste Schritte mit Azure PowerShell-Batch-Cmdlets | Microsoft Azure"
-   description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
+   pageTitle="Erste Schritte mit Azure Batch PowerShell | Microsoft Azure"
+   description="Schnelle Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
    services="batch"
    documentationCenter=""
    authors="dlepow"
@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="powershell"
    ms.workload="big-compute"
-   ms.date="08/07/2015"
+   ms.date="10/13/2015"
    ms.author="danlep"/>
 
 # Erste Schritte mit Azure Batch für PowerShell-Cmdlets
@@ -21,75 +21,64 @@ Dieser Artikel dient als kurze Einführung in die Azure PowerShell-Cmdlets, mit 
 
 Die ausführliche Cmdlet-Syntax erhalten Sie durch Eingabe von `get-help <Cmdlet_name>` oder in der [Referenz zu Azure Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx).
 
+[AZURE.INCLUDE [powershell-preview-include](../../includes/powershell-preview-include.md)]
+
 ## Voraussetzungen
 
-* **Azure PowerShell**: Anweisungen zu erforderlichen Komponenten, zum Download und zur Installation finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Batch-Cmdlets wurden ab Version 0.8.10 eingeführt. Die Batch-Cmdlets wurden aktualisiert, um die allgemein verfügbare API in Version 0.9.6 zu verwenden.
+* **Azure PowerShell**: Die Batch-Cmdlets befinden sich im Modul Azure-Ressourcen-Manager. Unter [Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/azure/mt125356.aspx) finden Sie erforderliche Komponenten, Installationsanweisungen und Informationen zur grundlegenden Verwendung.
 
-## Verwenden der Batch-Cmdlets
 
-Starten Sie Azure PowerShell entsprechend dem Standardverfahren, und [stellen Sie eine Verbindung mit Ihren Azure-Abonnements her](../powershell-install-configure.md#Connect). Weitere Vorgänge:
 
-* **Auswählen eines Azure-Abonnements** – Falls Sie mehrere Abonnements besitzen, wählen Sie ein Abonnement aus:
+* **Registrieren beim Batch-Anbieternamespace (einmalig)**: Bevor Sie mit Batch-Konten arbeiten können, müssen Sie sich beim Batch-Anbieternamespace registrieren. Dieser Vorgang muss nur einmal pro Abonnement ausgeführt werden.
 
     ```
-    Select-AzureSubscription -SubscriptionName <SubscriptionName>
-    ```
-
-* **Wechseln in den AzureResourceManage-Modus**: Die Batch-Cmdlets befinden sich im Modul Azure-Ressourcen-Manager. Ausführliche Informationen siehe [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager.md). Führen Sie zur Verwendung dieses Moduls das Cmdlet [Switch-AzureMode](https://msdn.microsoft.com/library/dn722470.aspx) aus:
-
-    ```
-    Switch-AzureMode -Name AzureResourceManager
-    ```
-
-* **Registrieren beim Batch-Anbieternamespace (einmalig)** – Bevor Sie Batch-Konten verwalten können, müssen Sie sich beim Batch-Anbieternamespace registrieren. Dieser Vorgang muss nur einmal pro Abonnement ausgeführt werden.
-
-    ```
-    Register-AzureProvider -ProviderNamespace Microsoft.Batch
+    Register-AzureRMResourceProvider -ProviderNamespace Microsoft.Batch
     ```
 
 ## Verwalten von Batch-Konten und Schlüsseln
 
-Mit Azure PowerShell-Cmdlets können Sie Batch-Konten und Schlüssel erstellen und verwalten.
 
 ### Erstellen eines Batch-Kontos
 
-**New-AzureBatchAccount** erstellt ein neues Batch-Konto in einer angegebenen Ressourcengruppe. Wenn Sie noch keine Ressourcengruppe erstellt haben, erstellen Sie sie durch Ausführen des Cmdlets [New-AzureResourceGroup](https://msdn.microsoft.com/library/dn654594.aspx). Geben Sie dabei eine der Azure-Regionen im **Location**-Parameter an. (Verfügbare Regionen für verschiedene Azure-Ressourcen finden Sie durch Ausführen von [Get-AzureLocation](https://msdn.microsoft.com/library/dn654582.aspx).) Beispiel:
+**New-AzureRmBatchAccount** erstellt ein neues Batch-Konto in einer angegebenen Ressourcengruppe. Wenn Sie noch keine Ressourcengruppe erstellt haben, erstellen Sie sie durch Ausführen des Cmdlets [New-AzureRmResourceGroup](https://msdn.microsoft.com/library/azure/mt603739.aspx). Geben Sie dabei eine der Azure-Regionen im **Location**-Parameter an, z. B. „Central US“. Beispiel:
 
 ```
-New-AzureResourceGroup –Name MyBatchResourceGroup –location "Central US"
+New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "Central US"
 ```
 
-Erstellen Sie dann ein neues Batch-Konto in der Ressourcengruppe. Geben Sie zudem einen Kontonamen für <*account\_name*> und einen Speicherort an, an dem der Batch-Dienst verfügbar ist. Die Erstellung des Kontos kann mehrere Minuten in Anspruch nehmen. Beispiel:
+Erstellen Sie dann ein neues Batch-Konto in der Ressourcengruppe. Geben Sie zudem einen Kontonamen für <*account\_name*> und einen Standort an, an dem der Batch-Dienst verfügbar ist. Die Erstellung des Kontos kann mehrere Minuten in Anspruch nehmen. Beispiel:
 
 ```
-New-AzureBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup
+New-AzureRmBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup
 ```
 
 > [AZURE.NOTE]Der Batch-Kontoname muss in Azure eindeutig sein, zwischen 3 und 24 Zeichen umfassen und kann nur Kleinbuchstaben und Zahlen enthalten.
 
 ### Abrufen von Kontozugriffsschlüsseln
-**Get-AzureBatchAccountKeys** zeigt die Zugriffsschlüssel an, die einem Azure Batch-Konto zugeordnet sind. Führen Sie beispielsweise Folgendes aus, um den primären und sekundären Schlüssel des Kontos abzurufen, das Sie erstellt haben.
+**Get-AzureRmBatchAccountKeys** zeigt die Zugriffsschlüssel an, die einem Azure Batch-Konto zugeordnet sind. Führen Sie beispielsweise Folgendes aus, um den primären und sekundären Schlüssel des Kontos abzurufen, das Sie erstellt haben.
 
 ```
 $Account = Get-AzureBatchAccountKeys –AccountName <accountname>
+
 $Account.PrimaryAccountKey
+
 $Account.SecondaryAccountKey
 ```
 
 ### Generieren eines neuen Zugriffsschlüssels
-**New-AzureBatchAccountKey** generiert einen neuen primären oder sekundären Kontoschlüssel für ein Azure Batch-Konto. Geben Sie zum Generieren eines neuen primären Schlüssels für Ihr Batch-Konto z. B. Folgendes ein:
+**New-AzureRmBatchAccountKey** generiert einen neuen primären oder sekundären Kontoschlüssel für ein Azure Batch-Konto. Geben Sie zum Generieren eines neuen primären Schlüssels für Ihr Batch-Konto z. B. Folgendes ein:
 
 ```
-New-AzureBatchAccountKey -AccountName <account_name> -KeyType Primary
+New-AzureRmBatchAccountKey -AccountName <account_name> -KeyType Primary
 ```
 
 > [AZURE.NOTE]Um einen neuen sekundären Schlüssel zu generieren, geben Sie "Secondary" für den **KeyType**-Parameter ein. Sie müssen den primären und sekundären Schlüssel separat neu generieren.
 
 ### Löschen eines Batch-Kontos
-**Remove-AzureBatchAccount** löscht ein Batch-Konto. Beispiel:
+**Remove-AzureRmBatchAccount** löscht ein Batch-Konto. Zum Beispiel:
 
 ```
-Remove-AzureBatchAccount -AccountName <account_name>
+Remove-AzureRmBatchAccount -AccountName <account_name>
 ```
 
 Bestätigen Sie bei der entsprechenden Aufforderung, dass Sie das Konto entfernen möchten. Das Entfernen des Kontos kann einige Zeit in Anspruch nehmen.
@@ -101,7 +90,7 @@ Verwenden Sie Cmdlets wie **Get-AzureBatchJob**, **Get-AzureBatchTask** und **Ge
 Um diese Cmdlets verwenden zu können, müssen Sie zunächst ein AzureBatchContext-Objekt erstellen, um Ihren Kontonamen und Ihre Schlüssel zu speichern:
 
 ```
-$context = Get-AzureBatchAccountKeys "<account_name>"
+$context = Get-AzureRmBatchAccountKeys -AccountName <account_name>
 ```
 
 Sie übergeben diesen Kontext in Cmdlets, die über den **BatchContext**-Parameter mit dem Batch-Dienst interagieren.
@@ -111,7 +100,7 @@ Sie übergeben diesen Kontext in Cmdlets, die über den **BatchContext**-Paramet
 
 ### Abfragen von Daten
 
-Verwenden Sie beispielsweise **Get-AzureBatchPools** zum Suchen Ihrer Pools. Damit werden standardmäßig alle Pools unter Ihrem Konto abgefragt, sofern Sie das BatchAccountContext-Objekt bereits in *$context* gespeichert haben:
+Verwenden Sie beispielsweise **Get-AzureBatchPools** zum Suchen Ihrer Pools. Damit werden standardmäßig alle Pools unter Ihrem Konto abgefragt, sofern Sie das „BatchAccountContext“-Objekt bereits in *$context* gespeichert haben:
 
 ```
 Get-AzureBatchPool -BatchContext $context
@@ -122,6 +111,7 @@ Mit dem **Filter**-Parameter können Sie einen OData-Filter angeben, um nur best
 
 ```
 $filter = "startswith(id,'myPool')"
+
 Get-AzureBatchPool -Filter $filter -BatchContext $context
 ```
 
@@ -139,7 +129,7 @@ Der **Id**-Parameter unterstützt ausschließlich die Suche nach der vollständi
 
 ### Verwenden der Pipeline
 
-Batch-Cmdlets können die PowerShell-Pipeline zum Senden von Daten zwischen Cmdlets nutzen. Dies hat dieselbe Auswirkung wie die Angabe eines Parameters, vereinfacht jedoch das Auflisten mehrerer Entitäten. Sie können beispielsweise alle Aufgaben unter Ihrem Konto suchen:
+Batch-Cmdlets können die PowerShell-Pipeline zum Senden von Daten zwischen Cmdlets nutzen. Dies hat dieselbe Auswirkung wie die Angabe eines Parameters, vereinfacht jedoch das Auflisten mehrerer Entitäten. Der folgende Befehl findet z. B. alle Aufgaben unter Ihrem Konto:
 
 ```
 Get-AzureBatchJob -BatchContext $context | Get-AzureBatchTask -BatchContext $context
@@ -157,9 +147,9 @@ Get-AzureBatchTask -MaxCount 2500 -BatchContext $context
 Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Obergrenze zu entfernen.
 
 ## Verwandte Themen
-* [Batch – Technische Übersicht](batch-technical-overview.md)
-* [Azure PowerShell herunterladen](http://go.microsoft.com/p/?linkid=9811175)
+* [Azure PowerShell herunterladen](http://go.microsoft.com/?linkid=9811175)
+* [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 * [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
-* [Effiziente Listenabfragen](batch-efficient-list-queries.md)
+* [Effizientes Abfragen des Batch-Diensts](batch-efficient-list-queries.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

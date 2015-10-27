@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/08/2015"
+   ms.date="10/21/2015"
    ms.author="lodipalm;barbkess"/>
 
 # Erstellen eines SQL Data Warehouse im Azure-Vorschauportal#
@@ -121,6 +121,6 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 ## Nächste Schritte
 
-Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, erfahren Sie unter [Herstellen der Verbindung und Abfragen](./sql-data-warehouse-get-started-connect-query.md), wie SQL Data Warehouse genutzt wird.
+Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

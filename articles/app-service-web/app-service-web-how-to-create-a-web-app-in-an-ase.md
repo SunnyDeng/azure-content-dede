@@ -1,14 +1,14 @@
 <properties
 	pageTitle="Erstellen einer Web-App in einer App Service-Umgebung"
 	description="Vorgehensweise zum Erstellen von Web-Apps und App Service-Plänen in einer App Service-Umgebung"
-	services="app-service\web"
+	services="app-service"
 	documentationCenter=""
 	authors="ccompy"
 	manager="stefsch"
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
@@ -100,4 +100,4 @@ Nach dem Erstellen der Web-App und des App Service-Plans, sollten Sie eine Skali
 [ResourceGroups]: http://azure.microsoft.com/documentation/articles/resource-group-portal/
 [AzurePowershell]: http://azure.microsoft.com/documentation/articles/powershell-install-configure/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

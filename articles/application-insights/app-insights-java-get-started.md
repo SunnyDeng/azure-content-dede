@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/09/2015"
+	ms.date="10/15/2015"
 	ms.author="awills"/>
 
 # Erste Schritte mit Application Insights in einem Java-Webprojekt
@@ -25,7 +25,7 @@
 
 ![Beispieldaten](./media/app-insights-java-get-started/5-results.png)
 
-[Application Insights-Webtests][availability] überwachen die Verfügbarkeit der Anwendung.
+Application Insights unterstützt Java-Apps, die unter Linux, Unix oder Windows ausgeführt werden.
 
 Sie benötigen Folgendes:
 
@@ -80,7 +80,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
     </dependencies>
 
 
-* *Build- oder Prüfsummenvalidierungsfehler?* Versuchen Sie es mit einer bestimmten Version, z. B. `<version>1.0.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
+* *Build- oder Prüfsummenvalidierungsfehler?* Versuchen Sie es mit einer bestimmten Version, z. B.: `<version>1.0.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
 * *Sie müssen auf ein neues SDK aktualisieren?* Aktualisieren Sie die Abhängigkeiten des Projekts.
 
 #### Wenn Sie Gradle verwenden...
@@ -271,7 +271,7 @@ Nicht behandelte Ausnahmen werden automatisch gesammelt:
 
 Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
-* [Fügen Sie trackException()-Aufrufe in den Code ein][apiexceptions]. 
+* [Fügen Sie „trackException()“-Aufrufe in den Code ein][apiexceptions]. 
 * [Installieren Sie den Java-Agent auf dem Server](app-insights-java-agent.md). Sie geben die Methoden an, die Sie überwachen möchten.
 
 
@@ -341,7 +341,7 @@ Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefin
 
 ### Unix-Leistungsindikatoren
 
-* [Installieren Sie collectd mit dem Application Insights-Plug-In](app-insights-java-collectd.md), um eine Vielzahl von System- und Netzwerkdaten abzurufen.
+* [Installieren Sie „collectd“ mit dem Application Insights-Plug-In](app-insights-java-collectd.md), um eine Vielzahl von System- und Netzwerkdaten abzurufen.
 
 ## Abrufen von Benutzer- und Sitzungsdaten
 
@@ -352,7 +352,7 @@ Sie senden also Telemetriedaten vom Webserver. Um jetzt eine Rundum-Ansicht Ihre
 
 ## Erfassen von Protokollablaufverfolgungen
 
-Sie können Application Insights verwenden, um Protokolle aus Log4J, Logback oder anderen Frameworks zu segmentieren. Sie können die Protokolle mit HTTP-Anforderungen und anderer Telemetrie in Beziehung setzen. [Weitere Informationen][javalogs].
+Sie können Application Insights verwenden, um Protokolle aus Log4J, Logback oder anderen Frameworks zu segmentieren. Sie können die Protokolle mit HTTP-Anforderungen und anderer Telemetrie in Beziehung setzen. [Weitere Informationen][javalogs]￼.
 
 ## Senden eigener Telemetriedaten
 
@@ -396,4 +396,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->
