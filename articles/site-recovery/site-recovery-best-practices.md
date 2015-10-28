@@ -63,7 +63,11 @@ Typ des virtuellen Computers | <p>Generation 1</p> <p>Generation 2 – Windows
 
 ## VMM-Server
 
-Mit Site Recovery kann die Replikation für virtuelle Computer, die sich auf Hyper-V-Hostservern in System Center Virtual Machine Manager (VMM)-Clouds befinden, wie folgt gesteuert werden: - Replizieren von einem lokalen VMM-Server zu Azure (per Hyper-V-Replikat) - Replizieren zu einem sekundären lokalen Standort (per Hyper-V-Replikat). Wir empfehlen Ihnen, die Bereitstellung mit einem VMM-Server am primären Standort und einem VMM-Server am sekundären Standort durchzuführen. Falls erforderlich, können Sie aber auch für beide Standorte [nur einen VMM-Server bereitstellen](site-recovery-single-vmm.md). - Replizieren zu einem sekundären lokalen Standort (per SAN). Sie benötigen an jedem Standort ein primäres und sekundäres Rechenzentrum mit einem VMM-Server. Wenn Sie VMM mit Site Recovery bereitstellen möchten, müssen Sie Ihre VMM-Infrastruktur einrichten. Lesen Sie [diese Informationen ](site-recovery-hyper-v-site-to-azure.md), wenn Sie keinen VMM-Server haben.
+Mit Site Recovery kann die Replikation für virtuelle Computer, die sich auf Hyper-V-Hostservern in System Center Virtual Machine Manager (VMM)-Clouds befinden, wie folgt gesteuert werden:
+	- Replizieren von einem lokalen VMM-Server zu Azure (per Hyper-V-Replikat)
+	- Replizieren zu einem sekundären lokalen Standort (per Hyper-V-Replikat). Wir empfehlen Ihnen, die Bereitstellung mit einem VMM-Server am primären Standort und einem VMM-Server am sekundären Standort durchzuführen. Falls erforderlich, können Sie aber auch für beide Standorte [nur einen VMM-Server bereitstellen](site-recovery-single-vmm.md).
+	- Replizieren zu einem sekundären lokalen Standort (per SAN). Sie benötigen an jedem Standort ein primäres und sekundäres Rechenzentrum mit einem VMM-Server.
+Wenn Sie VMM mit Site Recovery bereitstellen möchten, müssen Sie Ihre VMM-Infrastruktur einrichten. Lesen Sie [diese Informationen ](site-recovery-hyper-v-site-to-azure.md), wenn Sie keinen VMM-Server haben.
 
 
 ### Überprüfen der VMM-Version
@@ -103,11 +107,11 @@ Anbieter und Agents werden auf lokalen Servern installiert, damit darüber Verbi
 
 	- Richten Sie den benutzerdefinierten Proxyserver ein, bevor Sie den Anbieter installieren.
 	- Lassen Sie die folgenden URLs für die Firewall zu:
-		- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
+		- *.hypervrecoverymanager.windowsazure.com
+		- *.accesscontrol.windows.net
+		- *.backup.windowsazure.com
+		- *.blob.core.windows.net
+		- *.store.core.windows.net
 
 	- Wenn Sie Site Recovery mit VMM bereitstellen und einen benutzerdefinierten Proxy verwenden, wird automatisch ein VMM-RunAs-Konto (DRAProxyAccount) erstellt. Hierfür werden die Proxyanmeldeinformationen genutzt, die Sie im Site Recovery-Portal in den Einstellungen für den benutzerdefinierten Proxy angegeben haben. Sie müssen den Proxyserver so konfigurieren, dass für dieses Konto eine erfolgreiche Authentifizierung möglich ist.
 
@@ -194,4 +198,4 @@ Nachdem Sie diese bewährten Methoden überprüft haben, können Sie mit der Ber
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->
