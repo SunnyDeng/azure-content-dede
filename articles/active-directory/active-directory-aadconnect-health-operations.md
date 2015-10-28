@@ -104,26 +104,34 @@ Berechtigungen werden erteilt, wenn ein Benutzer Zugriff auf Verzeichnisebene od
 
 ### So erteilen Sie Benutzern oder Gruppen Zugriff auf Azure AD Connect Health
 #### Schritt 1: Auswählen des entsprechenden Zugriffsbereichs
-Um einem Benutzer Zugriff auf *Verzeichnisebene* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br> [//]\: # (RBAC\_MainBladeSS)
+Um einem Benutzer Zugriff auf *Verzeichnisebene* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br>
+[//]: # (RBAC\_MainBladeSS)
 #### Schritt 2: Hinzufügen von Benutzern und Gruppen sowie Zuweisen von Rollen
-1. Klicken Sie im Abschnitt "Konfigurieren" auf den Bereich "Benutzer".<br> [//]\: # (RBAC\_MainBladeUserPart)
+1. Klicken Sie im Abschnitt "Konfigurieren" auf den Bereich "Benutzer".<br>
+[//]: # (RBAC\_MainBladeUserPart)
 2. Wählen Sie "Hinzufügen" aus.
-3. Wählen Sie die "Rolle" aus. <br> [//]\: # (RBAC\_AddRole)
+3. Wählen Sie die "Rolle" aus.<br>
+[//]: # (RBAC\_AddRole)
 4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen.
-5. Wählen Sie "OK" aus.<br> [//]\: # (RBAC\_LastStep)
-6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br> [//]\: # (RBAC\_ListofUsersAndGroups)
+5. Wählen Sie "OK" aus.<br>
+[//]: # (RBAC\_LastStep)
+6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br>
+[//]: # (RBAC\_ListofUsersAndGroups)
 
 Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff basierend auf den zugewiesenen Rollen.
->[AZURE.NOTE]- Globale Administratoren haben immer Vollzugriff auf alle Vorgänge, globale Administratorkonten sind jedoch nicht in der obigen Liste aufgeführt. - Das Feature "Benutzer einladen" wird in Azure AD Connect Health NICHT unterstützt.
+>[AZURE.NOTE]
+- Globale Administratoren haben immer Vollzugriff auf alle Vorgänge, globale Administratorkonten sind jedoch nicht in der obigen Liste aufgeführt. - Das Feature "Benutzer einladen" wird in Azure AD Connect Health NICHT unterstützt.
 
 #### Schritt 3: Freigeben des Blattspeicherorts für Benutzer oder Gruppen
 1. Nach dem Zuweisen von Berechtigungen kann ein Benutzer auf Azure AD Connect Health zugreifen, indem er [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth) aufruft.
-2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf "An Dashboard anheften" klickt.<br> [//]\: # (RBAC\_PinBlade)
+2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf "An Dashboard anheften" klickt.<br>
+[//]: # (RBAC\_PinBlade)
 
 >[AZURE.NOTE]Ein Benutzer mit der Rolle "Leser" kann den Vorgang "Erstellen" nicht ausführen, um die Azure AD Connect Health-Erweiterung aus dem Azure Marketplace abzurufen. Dieser Benutzer kann weiterhin über den oben aufgeführten Link auf das Blatt zugreifen. Für nachfolgende Verwendungen kann der Benutzer das Blatt an das Dashboard anheften.
 
 ### Entfernen von Benutzern und/oder Gruppen
-Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und "Entfernen" auswählen.<br> [//]\: # (RBAC\_RemoveUser)
+Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und "Entfernen" auswählen.<br>
+[//]: # (RBAC\_RemoveUser)
 
 [//]: # "Ende des RBAC-Abschnitts"
 
@@ -134,4 +142,4 @@ Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung 
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->
