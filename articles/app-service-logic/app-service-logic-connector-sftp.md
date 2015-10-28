@@ -71,7 +71,7 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	- **Ordnerpfad** – Geben Sie den Pfad des Ordners ein, aus dem die Dateien abgerufen werden sollen.
 	- **Typ der Datei: Text oder binär** – Wählen Sie den Dateityp aus.
 	- **Dateimaske** – Geben Sie die Dateimaske an, die für das Abrufen von Dateien angewendet werden soll. Mit "*" werden alle Dateien im angegebenen Ordner abgerufen.
-- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
+	- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
 
 
 	![][9]  
@@ -84,7 +84,7 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	- **Dateipfad** – Geben Sie den Dateipfad der Datei an, die hochgeladen werden soll.
 	- **Überschreiben** – Legen Sie dies auf "True" fest, um die Datei ggf. zu überschreiben.
 	- ****Anfügen, falls vorhanden** – Legen Sie hierfür "True" oder "False" fest. Wenn diese Option auf "True" festgelegt ist, werden die Daten an die Datei angefügt, wenn sie vorhanden ist. Ist "False" angegeben, wird eine ggf. vorhandene Datei überschrieben.
-- **Temporärer Ordner** – Falls angegeben, lädt der Adapter die Datei in den "Pfad des temporären Ordners". Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
+	- **Temporärer Ordner** – Falls angegeben, lädt der Adapter die Datei in den "Pfad des temporären Ordners". Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
 
 	![][11]  
 	![][12]
@@ -113,4 +113,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->
