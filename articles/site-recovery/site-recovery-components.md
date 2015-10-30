@@ -111,10 +111,10 @@ Der Anbieter wird auf Ihren VMM-Servern, Ihren Hyper-V-Hostservern, wenn Sie kei
 - Wenn der Server, auf dem der Anbieter ausgeführt wird, eine Verbindung mit dem Internet über einen Proxyserver herstellen soll, können Sie die vorhandenen Proxyeinstellungen verwenden oder einen benutzerdefinierten Proxy angeben.
 - Der Proxy muss diese Adressen durch die Firewall zulassen:
 
-	-  **.accesscontrol.windows.net
--  .backup.windowsazure.com
-	-  **.blob.core.windows.net
--  **.store.core.windows.net
+	-  *.accesscontrol.windows.net
+	-  .backup.windowsazure.com
+	-  *.blob.core.windows.net
+	-  *.store.core.windows.net
 
 - Wenn Sie IP-Adressen basierende Regeln in der Firewall verwenden, stellen Sie sicher, dass die Kommunikation zwischen dem Konfigurationsserver und den in den [IP-Bereichen des Azure-Rechenzentrums](https://www.microsoft.com/download/details.aspx?id=41653) beschriebenen IP-Adressen sowie für HTTPS (443) zulässig ist. Sie müssen eine Positivliste der IP-Adressbereiche der Azure-Region, die Sie verwenden möchten, und für den Westen der USA erstellen.
 - Wenn Sie Site Recovery mit VMM bereitstellen und einen benutzerdefinierten Proxy verwenden, wird automatisch ein VMM-RunAs-Konto (DRAProxyAccount) erstellt. Hierfür werden die Proxyanmeldeinformationen genutzt, die Sie im Site Recovery-Portal in den Einstellungen für den benutzerdefinierten Proxy angegeben haben. Sie müssen den Proxyserver so konfigurieren, dass für dieses Konto eine erfolgreiche Authentifizierung möglich ist.
@@ -178,4 +178,4 @@ Ausführliche Planungsinformationen zu diesen Komponenten finden Sie im Abschnit
 
 Starten Sie die Konfiguration der Komponenten für Ihr Bereitstellungsszenario. [Weitere Informationen](site-recovery-overview.md).
 
-<!----HONumber=Oct15_HO3-->
+<!-----HONumber=Oct15_HO3-->
