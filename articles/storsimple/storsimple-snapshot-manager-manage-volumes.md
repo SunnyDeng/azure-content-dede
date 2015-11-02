@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/21/2015"
+   ms.date="10/15/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes
@@ -39,7 +39,7 @@ In diesem Lernprogramm wird erläutert, wie Sie Volumes bereitstellen, initialis
  
 ## Bereitstellen von Volumes
 
-Gehen Sie folgendermaßen vor, um Azure StorSimple-Volumes bereitzustellen, zu initialisieren und zu formatieren.
+Gehen Sie folgendermaßen vor, um Azure StorSimple-Volumes bereitzustellen, zu initialisieren und zu formatieren. Bei diesem Verfahren wird die Datenträgerverwaltung verwendet. Dies ist ein Systemprogramm zum Verwalten von Festplatten und den darauf enthaltenen Volumes oder Partitionen. Weitere Informationen zur Datenträgerverwaltung finden Sie unter [Disk Management](https://technet.microsoft.com/library/cc770943.aspx) (in englischer Sprache) auf der Microsoft TechNet-Website.
 
 #### So stellen Sie Volumes bereit
 
@@ -47,11 +47,11 @@ Gehen Sie folgendermaßen vor, um Azure StorSimple-Volumes bereitzustellen, zu i
 
 2. Geben Sie die IP-Adresse einer der Schnittstellen als Zielportal oder IP-Adresse zur Ermittlung an, und stellen Sie eine Verbindung mit dem Gerät her. Nachdem das Gerät verbunden ist, kann vom Windows-System auf die Volumes zugegriffen werden. Weitere Informationen zum Verwenden des Microsoft iSCSI-Initiators finden Sie im Abschnitt zum Herstellen einer Verbindung mit einem iSCSI-Zielgerät unter [Installieren und Konfigurieren des Microsoft iSCSI-Initiators][1].
 
-3. Starten Sie das Datenträgerverwaltungs-Snap-In mithilfe einer der folgenden Vorgehensweisen:
+3. Starten Sie die Datenträgerverwaltung mithilfe einer der folgenden Vorgehensweisen:
 
-    - Geben Sie "Diskmgmt.msc" im Feld **Ausführen** ein.
+    - Geben Sie im Feld **Ausführen** "Diskmgmt.msc" ein.
 
-    - Starten Sie den Server-Manager, erweitern Sie den Knoten **Storage**, und wählen Sie dann **Datenträgerverwaltung** aus.
+    - Starten Sie den Server-Manager, erweitern Sie den Knoten **Speicher**, und wählen Sie dann **Datenträgerverwaltung** aus.
 
     - Starten Sie **Verwaltung**, erweitern Sie den Knoten **Computerverwaltung**, und wählen Sie dann **Datenträgerverwaltung** aus.
 
@@ -61,7 +61,7 @@ Gehen Sie folgendermaßen vor, um Azure StorSimple-Volumes bereitzustellen, zu i
 
    1. Klicken Sie in der Datenträgerverwaltung mit der rechten Maustaste auf ein Volume, für das **Offline** angezeigt wird.
 
-   2. Klicken Sie auf **Datenträger reaktivieren**. Der Datenträger sollte nach dem Reaktivieren als **Online** gekennzeichnet sein.
+   2. Klicken Sie auf **Datenträger reaktivieren**. Der Datenträger sollte nach dem erneuten Aktivieren als **Online** angezeigt werden.
 
 5. Initialisieren Sie die Volumes:
 
@@ -101,16 +101,18 @@ Gehen Sie folgendermaßen vor, um Informationen zu lokalen und Azure StorSimple-
 
     Ergebnisspalte | Beschreibung 
     :--------------|:-------------
-    Name | Die Spalte **Name** enthält den Laufwerkbuchstaben, der den jeweiligen ermittelten Volumes zugewiesen wurde.
+    Name | Die Spalte **Name** enthält den Laufwerkbuchstaben, der den jeweiligen ermittelten Volumes zugeordnet wurde.
     Gerät | Die Spalte **Gerät** enthält die IP-Adresse des mit dem Hostcomputer verbundenen Geräts.
     Device Volume Name | Die Spalte **Device Volume Name** enthält den Namen des Gerätevolumes, zu dem das ausgewählte Volume gehört. Dies ist der im Azure-Verwaltungsportal für das Volume festgelegte Volumename.
-    Access Paths | In der Spalte **Access Paths** wird der Zugriffspfad zum Volume angezeigt. Dies ist der Laufwerkbuchstabe oder der Bereitstellungspunkt, über den auf dem Hostcomputer auf das Volume zugegriffen werden kann.
+    Access Paths | Die Spalte **Access Paths** zeigt den Zugriffspfad zum Volume an. Dies ist der Laufwerkbuchstabe oder der Bereitstellungspunkt, über den auf dem Hostcomputer auf das Volume zugegriffen werden kann.
  
 ## Löschen von Volumes
 
 Wenden Sie das folgende Verfahren zum Löschen eines Volumes aus dem StorSimple Snapshot Manager an.
 
->[AZURE.NOTE]Sie können kein Volume löschen, wenn dieses Teil einer Volumegruppe ist. (Die Löschoption ist für Volumes, die Mitglieder einer Volumegruppe sind, nicht verfügbar.) Löschen Sie die gesamte Volumegruppe, um das Volume zu löschen.<br>
+>[AZURE.NOTE]Sie können kein Volume löschen, wenn dieses Teil einer Volumegruppe ist. (Die Löschoption ist für Volumes, die Mitglieder einer Volumegruppe sind, nicht verfügbar.) Löschen Sie die gesamte Volumegruppe, um das Volume zu löschen.
+
+
 #### So löschen Sie ein Volume
 
 1. Klicken Sie auf das Desktopsymbol, um den StorSimple Snapshot Manager zu starten.
@@ -123,7 +125,7 @@ Wenden Sie das folgende Verfahren zum Löschen eines Volumes aus dem StorSimple 
 
     ![Löschen von Volumes](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_Delete_volume.png)
 
-5. Das Dialogfeld **Volume löschen** wird angezeigt. Geben Sie in das Textfeld **Bestätigen** ein, und klicken Sie dann auf **OK**.
+5. Das Dialogfeld **Volume löschen** wird angezeigt. Geben Sie in das Textfeld den Text **Bestätigen** ein, und klicken Sie dann auf **OK**.
 
 6. Standardmäßig sichert der StorSimple Snapshot Manager ein Volume vor dem Löschen. Diese Vorsichtsmaßnahme schützt im Fall einer unbeabsichtigten Löschung vor Datenverlust. In StorSimple Snapshot Manager wird eine Statusmeldung für die **automatische Momentaufnahme** angezeigt, während das Volume gesichert wird.
 
@@ -137,7 +139,7 @@ Gehen Sie folgendermaßen vor, um die mit dem StorSimple Snapshot Manager verbun
 
 1. Klicken Sie auf das Desktopsymbol, um den StorSimple Snapshot Manager zu starten.
 
-2. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf **Volumes**, und klicken Sie dann auf **Rescan volumes**.
+2. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf **Volumes**, und klicken Sie dann auf **Volumes neu scannen**.
 
     ![Erneutes Einlesen von Volumes](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_Rescan_volumes.png)
  
@@ -163,13 +165,13 @@ Vorbereitungen
 
 3. Klicken Sie auf das Desktopsymbol des StorSimple Snapshot Managers. Das Fenster des StorSimple Snapshot Managers wird angezeigt.
 
-4. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten **Volumes**, und wählen Sie dann **Rescan volumes** aus. Wenn die Überprüfung abgeschlossen ist, wird im **Ergebnisbereich** eine Liste der Volumes angezeigt.
+4. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten **Volumes**, und wählen Sie dann **Volumes erneut scannen** aus. Wenn die Überprüfung abgeschlossen ist, wird im **Ergebnisbereich** eine Liste der Volumes angezeigt.
 
-5. Klicken Sie im **Ergebnisbereich** mit der rechten Maustaste auf das Volume, und wählen Sie dann **Create Volume Group** aus.
+5. Klicken Sie im **Ergebnisbereich** mit der rechten Maustaste auf das Volume, und wählen Sie dann **Volumegruppe erstellen** aus.
 
     ![Erstellen einer Volumegruppe](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_Create_volume_group.png)
 
-6. Geben Sie im Dialogfeld **Create Volume Group** einen Namen für die Volumegruppe ein, weisen Sie Volumes zu, und klicken Sie dann auf **OK**.
+6. Geben Sie im Dialogfeld **Volumegruppe erstellen** einen Namen für die Volumegruppe ein, weisen Sie Volumes zu, und klicken Sie dann auf **OK**.
 
 7. Erweitern Sie im **Bereichsfenster** den Knoten **Volumegruppen**. Die neue Volumegruppe sollte unter dem Knoten **Volumegruppen** angezeigt werden.
 
@@ -197,7 +199,7 @@ Vorbereitungen
 
 - Installieren und konfigurieren Sie den StorSimple Snapshot Manager. Weitere Informationen finden Sie unter [Bereitstellen des StorSimple Snapshot Managers](storsimple-snapshot-manager-deployment.md).
 
-- Konfigurieren Sie zwei Volumes auf dem StorSimple-Gerät. (In den Beispielen sind die verfügbaren Volumes **Disk 1** und **Disk 2**.)
+- Konfigurieren Sie zwei Volumes auf dem StorSimple-Gerät. (In den Beispielen lauten die verfügbaren Volumes **Disk 1** und **Disk 2**.)
 
 ### Schritt 1: Erstellen eines dynamisch gespiegelten Volumes mithilfe der Datenträgerverwaltung
 
@@ -213,7 +215,7 @@ Die Datenträgerverwaltung ist ein Systemprogramm zum Verwalten von Festplatten 
 
    - Starten Sie **Verwaltung**, erweitern Sie den Knoten **Computerverwaltung**, und wählen Sie dann **Datenträgerverwaltung** aus.
 
-2. Vergewissern Sie sich, dass auf dem StorSimple-Gerät zwei Volumes verfügbar sind. (Im Beispiel sind die verfügbaren Volumes **Disk 1** und **Disk 2**.) 
+2. Vergewissern Sie sich, dass auf dem StorSimple-Gerät zwei Volumes verfügbar sind. (Im Beispiel lauten die verfügbaren Volumes **Disk 1** und **Disk 2**.) 
 
 3. Klicken Sie im Fenster der Datenträgerverwaltung in der rechten Spalte des unteren Bereichs mit der rechten Maustaste auf **Disk 1**, und wählen Sie **Neues gespiegeltes Volume** aus.
 
@@ -221,7 +223,7 @@ Die Datenträgerverwaltung ist ein Systemprogramm zum Verwalten von Festplatten 
 
 4. Klicken Sie auf der Seite **Neues gespiegeltes Volume** des Assistenten auf **Weiter**.
 
-5. Wählen Sie auf der Seite **Datenträger auswählen** im Bereich **Ausgewählt** den Eintrag **Disk 2** aus, klicken Sie auf **Hinzufügen** und dann auf **Weiter**.
+5. Wählen Sie auf der Seite **Datenträger auswählen** im Bereich **Ausgewählt** den Eintrag **Disk 2** aus, und klicken Sie auf **Hinzufügen** und dann auf **Weiter**.
 
 6. Übernehmen Sie auf der Seite **Laufwerkbuchstaben oder -pfad zuordnen** die Standardeinstellungen, und klicken Sie dann auf **Weiter**.
 
@@ -257,16 +259,16 @@ Verwenden Sie das folgende Verfahren zum Konfigurieren eines dynamisch gespiegel
 
     - Um einen interaktiven (bedarfsgesteuerten) Sicherungsauftrag zu starten, klicken Sie auf **Sicherung anlegen**. 
 
-    - Um eine automatische Sicherung zu planen, klicken Sie auf **Sicherungsrichtlinie erstellen**. Wählen Sie auf der Seite **Allgemein** die Volumegruppe in der Liste aus. Geben Sie auf der Seite **Zeitplan** Details zum Zeitplan ein. Wenn Sie fertig sind, klicken Sie auf **OK**.
+    - Um eine automatische Sicherung zu planen, klicken Sie auf **Sicherungsrichtlinie erstellen**. Wählen Sie auf der Seite **Allgemein** die Volumegruppe aus der Liste aus. Geben Sie auf der Seite **Zeitplan** Details zum Zeitplan ein. Wenn Sie fertig sind, klicken Sie auf **OK**.
 
 7. Sie können den Sicherungsauftrag während der Ausführung überwachen. Erweitern Sie im **Bereichsfenster** den Knoten **Aufträge**, und klicken Sie dann auf **Wird ausgeführt**. Die Auftragsdetails werden im **Ergebnisbereich** angezeigt. Nach Abschluss des Sicherungsauftrags werden die Details an die Auftragsliste **Letzte 24 Stunden** übertragen.
 
 ## Nächste Schritte
 
-- Erfahren Sie mehr über das [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
+- Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Erfahren Sie mehr über das [Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Volumegruppen](storsimple-snapshot-manager-manage-volume-groups.md).
 
 <!--Reference links-->
 [1]: https://msdn.microsoft.com/library/ee338480(v=ws.10).aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

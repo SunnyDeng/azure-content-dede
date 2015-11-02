@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Arbeiten mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy"
+	pageTitle="Arbeiten mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy | Microsoft Azure"
 	description="In diesem Artikel wird erläutert, wie Sie mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy arbeiten."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/07/2015"
+	ms.date="10/19/2015"
 	ms.author="rkarlin"/>
 
 # Arbeiten mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy
@@ -50,7 +50,7 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
 ## Zusätzliche Ressourcen
 
-* [Als Organisation für Azure registrieren](..sign-up-organization.md)
-* [Azure-Identität](..fundamentals-identity.md)
+* [Als Organisation für Azure registrieren](sign-up-organization.md)
+* [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="09/23/2015" 
+	ms.date="10/16/2015" 
 	ms.author="larryfr"/>
 
 #Verwenden von Python mit Hive und Pig in HDInsight
@@ -227,14 +227,31 @@ In diesen Schritten wird Microsoft Azure PowerShell verwendet. Wen es nicht bere
 		$pathToStreamingFile = "C:\path\to\streaming.py"
 		$pathToJythonFile = "C:\path\to\jython.py"
 
-		$hdiStore = get-azurehdinsightcluster -name $clusterName
-		$storageAccountName = $hdiStore.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
-		$storageAccountKey = $hdiStore.defaultstorageaccount.storageaccountkey
-		$defaultContainer = $hdiStore.DefaultStorageAccount.StorageContainerName
+		$clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
 
-		$destContext = new-azurestoragecontext -storageaccountname $storageAccountName -storageaccountkey $storageAccountKey
-		set-azurestorageblobcontent -file $pathToStreamingFile -Container $defaultContainer -Blob "streaming.py" -context $destContext
-		set-azurestorageblobcontent -file $pathToJythonFile -Container $defaultContainer -Blob "jython.py" -context $destContext
+		#Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+        
+        Set-AzureStorageBlobContent `
+            -File $pathToStreamingFile `
+            -Blob "streaming.py" `
+            -Container $container `
+            -Context $context
+		
+        Set-AzureStorageBlobContent `
+            -File $pathToJythonFile `
+            -Blob "jython.py" `
+            -Container $container `
+            -Context $context
 
 	Dieses Skript ruft Informationen für Ihren HDInsight-Cluster ab, extrahiert dann das Konto und den Schlüssel für das standardmäßigen Speicherkonto und lädt die Dateien in den Stamm des Containers.
 
@@ -244,9 +261,25 @@ Verwenden Sie nach dem Hochladen der Dateien die folgenden PowerShell-Skripts zu
 
 ####Hive
 
+Das folgende Skript führt das Skript __streaming.py__ aus. Vor dem Ausführen werden Sie nach den HTTPS-/Administratorkontoinformationen für Ihren HDInsight-Cluster gefragt.
+
     # Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-
+    $creds=Get-Credential
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+        -ResourceGroupName $resourceGroup `
+        | %{ $_.Key1 }
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+            
 	$HiveQuery = "add file wasb:///streaming.py;" +
 	             "SELECT TRANSFORM (clientid, devicemake, devicemodel) " +
 	               "USING 'D:\Python27\python.exe streaming.py' AS " +
@@ -254,15 +287,35 @@ Verwenden Sie nach dem Hochladen der Dateien die folgenden PowerShell-Skripts zu
 	             "FROM hivesampletable " +
 	             "ORDER BY clientid LIMIT 50;"
 
-	$jobDefinition = New-AzureHDInsightHiveJobDefinition -Query $HiveQuery -StatusFolder '/hivepython'
+	$jobDefinition = New-AzureRmHDInsightHiveJobDefinition `
+        -Query $HiveQuery
 
-	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+	$job = Start-AzureRmHDInsightJob `
+        -ClusterName $clusterName `
+        -JobDefinition $jobDefinition `
+        -HttpCredential $creds
 	Write-Host "Wait for the Hive job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob -Job $job
+	Wait-AzureRmHDInsightJob `
+        -JobId $job.JobId `
+        -ClusterName $clusterName `
+        -HttpCredential $creds
     # Uncomment the following to see stderr output
-    # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+    # Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds `
+        -DisplayOutputType StandardError
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
+	Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds
 
 Die Ausgabe für den **Hive**-Job sollte ungefähr wie folgt aussehen:
 
@@ -274,24 +327,62 @@ Die Ausgabe für den **Hive**-Job sollte ungefähr wie folgt aussehen:
 
 ####Pig
 
+Im Folgenden wird das Skript __jython.py__ verwendet. Vor dem Ausführen werden Sie nach den HTTPS-/Administratorinformationen für den HDInsight-Cluster gefragt.
+
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
 
+    $creds = Get-Credential
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+        -ResourceGroupName $resourceGroup `
+        | %{ $_.Key1 }
+    
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+            
 	$PigQuery = "Register wasb:///jython.py using jython as myfuncs;" +
 	            "LOGS = LOAD 'wasb:///example/data/sample.log' as (LINE:chararray);" +
 	            "LOG = FILTER LOGS by LINE is not null;" +
 	            "DETAILS = foreach LOG generate myfuncs.create_structure(LINE);" +
 	            "DUMP DETAILS;"
 
-	$jobDefinition = New-AzureHDInsightPigJobDefinition -Query $PigQuery -StatusFolder '/pigpython'
+	$jobDefinition = New-AzureRmHDInsightPigJobDefinition -Query $PigQuery
 
-	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+	$job = Start-AzureRmHDInsightJob `
+        -ClusterName $clusterName `
+        -JobDefinition $jobDefinition `
+        -HttpCredential $creds
+        
 	Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob -Job $job
+	Wait-AzureRmHDInsightJob `
+        -Job $job.JobId `
+        -ClusterName $clusterName `
+        -HttpCredential $creds
     # Uncomment the following to see stderr output
-    # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+    # Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds `
+        -DisplayOutputType StandardError
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
+	Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds
 
 Die Ausgabe für den **Pig**-Job sollte ungefähr wie folgt aussehen:
 
@@ -305,7 +396,14 @@ Die Ausgabe für den **Pig**-Job sollte ungefähr wie folgt aussehen:
 
 Beide für das Ausführen der Beispiele verwendete PowerShell-Beispielskripte enthalten eine Kommentarzeile, die Fehler bei der Ausgabe des Jobs anzeigt. Wenn Sie nicht die erwartete Ausgabe für den Job sehen, kommentieren Sie die folgende Zeile aus und sehen Sie nach, ob die Fehlerinformation auf ein Problem hinweist.
 
-	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+	# Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $job.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            -DisplayOutputType StandardError
 
 Die Fehlermeldung (STDERR) und das Ergebnis des Jobs (STDERR) werden ebenfalls im standardmäßigen BLOB-Container an folgenden Orten für Ihren Cluster protokolliert.
 
@@ -326,4 +424,4 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

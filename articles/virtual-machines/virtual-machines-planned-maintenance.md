@@ -20,6 +20,8 @@
 
 # Geplante Wartung für virtuelle Azure-Computer
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 ## Gründe für das Ausführen einer geplanten Wartung durch Azure
 
 Microsoft Azure führt regelmäßig weltweit Updates aus, um die Zuverlässigkeit, Leistung und Sicherheit der Hostinfrastruktur zu verbessern, die virtuellen Computern unterliegt. Viele dieser Updates werden ohne Beeinträchtigung der virtuellen Computer oder Clouddienste ausgeführt. Dazu zählen auch speichererhaltende Updates.
@@ -48,7 +50,7 @@ Weitere Informationen über das Konfigurieren Ihrer virtuellen Computer für hoh
 
 Im Gegensatz dazu wird eine Einzelinstanz-Konfiguration für eigenständige virtuelle Computer verwendet, die nicht in einer Verfügbarkeitsgruppe platziert wurden. Diese virtuellen Computer fallen nicht unter die Vereinbarung zum Servicelevel (SLA), denn hier ist es erforderlich, dass mindestens zwei virtuelle Computer in derselben Verfügbarkeitsgruppe bereitgestellt werden.
 
-Weitere Informationen zur SLA finden Sie im Abschnitt "Cloud Services und Virtual Machines" von [Vereinbarungen zum Servicelevel (SLAs)](http://azure.microsoft.com/support/legal/sla/).
+Weitere Informationen zur SLA finden Sie im Abschnitt „Clouddienste, virtuelle Computer und virtuelles Netzwerk“ unter [Vereinbarungen zum Servicelevel (SLAs)](http://azure.microsoft.com/support/legal/sla/).
 
 
 ## Konfigurationsupdates bei mehreren Instanzen
@@ -97,7 +99,7 @@ Region 1 | Region 2
 :----- | ------:
 USA (Mitte/Norden) | USA (Mitte/Süden)
 USA (Ost) | USA (West)
-USA (Ost 2) | USA (Mitte)
+USA, Osten 2 | USA (Mitte)
 Nordeuropa | Westeuropa
 Südostasien | Ostasien
 Ostchina | Nordchina
@@ -118,4 +120,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

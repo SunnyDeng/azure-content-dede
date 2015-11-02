@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/22/2015"
+	ms.date="10/18/2015"
 	ms.author="msolhab;bradsev" />
 
 
 # Szenarien für die erweiterte Analyse in Azure Machine Learning
 
-Dieser Artikel beschreibt die verschiedenen Beispieldatenquellen und -zielszenarien, die mit der Advanced Analytics Process and Technology (ADAPT) in Azure Machine Learning verarbeitet werden können. Das Beispiel veranschaulicht einige der Optionen in den Verarbeitungssequenzen, die von den Datenmerkmalen, Quellspeicherorten und Zielrepositorys in Azure abhängen.
+Dieser Artikel beschreibt die verschiedenen Beispieldatenquellen und Zielszenarios, die mit dem Cortana-Analyseprozess (CAP) verarbeitet werden können. Das Beispiel veranschaulicht einige der Optionen in den Verarbeitungssequenzen, die von den Datenmerkmalen, Quellspeicherorten und Zielrepositorys in Azure abhängen.
 
 Die **Entscheidungsstruktur**, mit deren Hilfe Sie die für Ihre Daten und Ziele geeigneten Beispielszenarien auswählen, wird im letzten Abschnitt vorgestellt.
 
@@ -32,8 +32,6 @@ In jedem der folgenden Abschnitte wird ein Beispielszenario vorgestellt. Für je
 
 *   [Erstellen eines Speicherkontos](storage-whatis-account.md)
 *   [Erstellen eines Azure ML-Arbeitsbereichs](machine-learning/machine-learning-create-workspace.md)
-
-
 
 
 ## <a name="smalllocal"></a>Szenario 1: Kleines bis mittelgroßes tabellarisches Dataset in lokalen Dateien
@@ -298,8 +296,8 @@ Das folgende Diagramm fasst die oben beschriebenen Szenarien sowie die Advanced 
 Umfassende exemplarische Vorgehensweisen zu Azure Machine Learning, die die Advanced Analytics Process and Technology (ADAPT) mit öffentlichen DataSets verwenden, finden Sie hier:
 
 
-* [Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning/machine-learning-data-science-process-sql-walkthrough.md)
-* [Advanced Analytics Process and Technology in Aktion – Verwenden von HDInsight-Hadoop-Clustern](machine-learning/machine-learning-data-science-process-hive-walkthrough.md)
+* [Cortana-Analyseprozess (CAP) in Aktion: Verwenden von SQL Server](machine-learning/machine-learning-data-science-process-sql-walkthrough.md)
+* [Cortana-Analyseprozess (CAP) in Aktion: Verwenden von HDInsight Hadoop-Clustern](machine-learning/machine-learning-data-science-process-hive-walkthrough.md)
 
 
 [1]: ./media/machine-learning-data-science-plan-sample-scenarios/dsp-plan-small-in-aml.png
@@ -316,4 +314,4 @@ Umfassende exemplarische Vorgehensweisen zu Azure Machine Learning, die die Adva
 <!-- Module References -->
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

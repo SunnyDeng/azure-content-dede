@@ -57,6 +57,7 @@ Sie können diese Warnungsregel natürlich bearbeiten und **deaktivieren** und w
 
 ## Nächste Schritte
 
+* [Konfigurieren Sie Webhooks für Ihre Warnungen](insights-webhooks-alerts.md), um Benachrichtigungen an verschiedene Kanäle weiterzuleiten.
 * [Überwachen von Dienstmetriken](insights-how-to-customize-monitoring.md), um sicherzustellen, dass Ihr Dienst verfügbar und reaktionsfähig ist.
 * [Aktivieren von Überwachung und Diagnose](insights-how-to-use-diagnostics.md), um detaillierte Hochfrequenzmetriken zu Ihrem Dienst zu sammeln.
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
@@ -65,4 +66,4 @@ Sie können diese Warnungsregel natürlich bearbeiten und **deaktivieren** und w
 * [Nachverfolgen des Dienststatus](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die bei Azure aufgetreten sind.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

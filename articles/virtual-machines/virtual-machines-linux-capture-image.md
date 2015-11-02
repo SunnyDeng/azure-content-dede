@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/16/2015"
+	ms.date="10/14/2015"
 	ms.author="dkshir"/>
 
 
@@ -95,9 +95,9 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 
 [Verwaltungsportal]: http://manage.windowsazure.com
 [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird]: virtual-machines-linux-how-to-log-on.md
-[Informationen zu virtuellen Computern in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
-[Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
+[Informationen zu virtuellen Computern in Azure]: virtual-machines-images.md
+[Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-linux-create-custom.md
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

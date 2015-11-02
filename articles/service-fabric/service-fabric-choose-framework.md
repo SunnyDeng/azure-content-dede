@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Auswählen eines Service Fabric-Frameworks | Microsoft Azure"
-   description="Service Fabric bietet zwei High-Level-Frameworks zum Erstellen von Diensten: das Actors-Framework und das Services-Framework. Wenn Sie beide Frameworks kennen, verfügen Sie über die notwendigen Grundlagen, um sich für die richtige Architektur für Ihre Anwendung entscheiden zu können."
+   pageTitle="Service Fabric-Programmiermodelle | Microsoft Azure"
+   description="Service Fabric bietet zwei Frameworks zum Erstellen von Diensten: das Actors-Framework und das Services-Framework. Sie bieten unterschiedliche Kompromisse im Hinblick auf Einfachheit und Steuerung."
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/13/2015"
+   ms.date="10/15/2015"
    ms.author="seanmck"/>
 
 # Auswählen eines Frameworks für den Dienst
@@ -36,4 +36,4 @@ Bedenken Sie, dass es durchaus sinnvoll ist, verschiedenen Frameworks für versc
 - [Erfahren Sie mehr über Reliable Actors-APIs](service-fabric-reliable-actors-introduction.md)
 - [Erfahren Sie mehr über Reliable Services-APIs](../Service-Fabric/service-fabric-reliable-services-introduction.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

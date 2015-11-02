@@ -3,7 +3,7 @@
 	description="In diesem Thema wird veranschaulicht, wie Sie .NET mithilfe von Media Encoder Standard verwenden, um ein Asset zu codieren." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015"    
+	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
 
@@ -125,4 +125,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Erstellen von Miniaturansichten über Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md) [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

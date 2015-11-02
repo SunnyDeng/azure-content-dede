@@ -14,13 +14,13 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/22/2015"
+   ms.date="10/19/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren eines virtuellen Netzwerks für ExpressRoute
 
-Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks und eines Gateways zur Verwendung mit ExpressRoute. Dazu wird das klassische Bereitstellungsmodell verwendet. Diese Konfiguration nicht derzeit nicht für virtuelle Netzwerke und für Gateways unterstützt, die mit dem Ressourcen-Manager-Modell erstellt wurden. Sobald sie verfügbar ist, werden wir auf dieser Seite einen Link zu der Dokumentation bereitstellen.
- 
+Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks und eines Gateways zur Verwendung mit ExpressRoute. Dazu wird das klassische Bereitstellungsmodell und die Dienstverwaltung verwendet. Wir haben derzeit keine Dokumentation zum Konfigurieren eines VNETs für ExpressRoute mit dem Ressourcen-Manager-Bereitstellungsmodell. Sobald ein Artikel veröffentlicht wird, fügen wir einen Link hinzu.
+
 >[AZURE.IMPORTANT]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
 1. Melden Sie sich beim **Azure-Portal** an.
@@ -60,14 +60,14 @@ Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks un
 
 10. Bei Beginn der Gatewayerstellung erhalten Sie eine entsprechende Nachricht. Es kann bis zu 15 Minuten dauern, bis das Gateway erstellt ist.
 
-11. Verknüpfen Sie Ihr Netzwerk mit einer Verbindung. Gehen Sie gemäß den Anweisungen im Artikel [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnets-classic.md) vor.
+11. Verknüpfen Sie Ihr Netzwerk mit einer Verbindung. Gehen Sie gemäß den Anweisungen im Artikel [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-classic.md) vor.
 
 ## Nächste Schritte
 
-- Informationen zum Hinzufügen virtueller Computer zu Ihrem virtuellen Netzwerk finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines-create-custom.md).
+- Informationen zum Hinzufügen virtueller Computer zu Ihrem virtuellen Netzwerk finden Sie unter [Virtual Machines-Lernpfade](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/).
 - Weitere Informationen zu ExpressRoute finden Sie unter [ExpressRoute – Technische Übersicht](expressroute-introduction.md).
 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,19 +1,19 @@
-<properties
-	pageTitle="Funktionsweise: Azure AD-Kennwortverwaltung | Microsoft Azure"
-	description="Lernen Sie die verschiedenen Komponenten der Azure AD-Kennwortverwaltung kennen und erfahren Sie, wo Benutzer sich registrieren, ihre Kennwörter zurücksetzen und ändern, wo Administratoren die Verwaltung lokaler Active Directory-Kennwörter konfigurieren, aktivieren und Berichte zur Kennwortverwaltung anzeigen können."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Funktionsweise: Azure AD-Kennwortverwaltung | Microsoft Azure" 
+	description="Lernen Sie die verschiedenen Komponenten der Azure AD-Kennwortverwaltung kennen und erfahren Sie, wo Benutzer sich registrieren, ihre Kennwörter zurücksetzen und ändern, wo Administratoren die Verwaltung lokaler Active Directory-Kennwörter konfigurieren, aktivieren und Berichte zur Kennwortverwaltung anzeigen können." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/08/2015" 
 	ms.author="asteen"/>
 
 # Funktionsweise der Kennwortverwaltung  
@@ -39,7 +39,8 @@ Sie können im [Azure-Verwaltungsportal](https://manage.windowsazure.com) Richtl
  - Sicherheitsfragen (informationsbasierte Authentifizierung)
 - Festlegen der Anzahl von Fragen, die ein Benutzer registrieren muss, damit die Authentifizierungsmethode "Sicherheitsfragen" verwenden kann (nur sichtbar, wenn Sicherheitsfragen aktiviert sind)
 - Festlegen der Anzahl von Fragen, die ein Benutzer beim Zurücksetzen beantworten muss, um die Authentifizierungsmethode "Sicherheitsfragen" zu verwenden (nur sichtbar, wenn Sicherheitsfragen aktiviert sind)
-- Definieren der benutzerdefinierten Sicherheitsfragen, die ein Benutzer auswählen kann, um sich für die Authentifizierungsmethode "Sicherheitsfragen" zu registrieren (nur sichtbar, wenn Sicherheitsfragen aktiviert sind)
+- Anhand vordefinierter, lokalisierter Sicherheitsfragen, aus denen ein Benutzer beim Registrieren für das Kennwortzurücksetzen auswählen kann (nur sichtbar, wenn Sicherheitsfragen aktiviert sind)
+- Anhand der benutzerdefinierten Sicherheitsfragen, die ein Benutzer beim Registrieren für das Kennwortzurücksetzen auswählen kann (nur sichtbar, wenn Sicherheitsfragen aktiviert sind)
 - Erzwingen der Benutzerregistrierung für die Kennwortzurücksetzung, wenn Benutzer zum Zugriffsbereich der Anwendung unter [http://myapps.microsoft.com](http://myapps.microsoft.com) wechseln
 - Erzwingen der erneuten Bestätigung von zuvor registrierten Daten durch die Benutzer, nachdem eine bestimmte Anzahl von Tagen vergangen ist (nur sichtbar, wenn die erzwungene Registrierung aktiviert ist)
 - Bereitstellen einer benutzerdefinierten Helpdesk-E-Mail-Adresse oder -URL, die Benutzern angezeigt wird, wenn beim Zurücksetzen von Kennwörtern Probleme auftreten
@@ -83,7 +84,7 @@ In beiden Fällen werden die geänderten Kennwörter – sofern die Kennwortrüc
 Weitere Informationen dazu, wie Benutzer ihre eigenen, lokalen Active Directory-Kennwörter zurücksetzen können, finden Sie unter [Erste Schritte: Azure AD-Kennwortverwaltung](active-directory-passwords-getting-started.md).
 
 ##Berichte zur Kennwortverwaltung
-Wenn Sie zur Registerkarte **Berichte** navigieren und sich den Abschnitt **Aktivitätsprotokolle** ansehen, werden unterhalb dieses Abschnitts zwei Berichte zur Kennwortverwaltung angezeigt: **Aktivität "Zurücksetzen des Kennworts"** und **Aktivität "Registrierung für Zurücksetzen des Kennworts"**. Diese zwei Berichte liefern einen Überblick über Benutzer innerhalb Ihrer Organisation, die sich für das Zurücksetzen von Kennwörtern registrieren und die Kennwortzurücksetzung verwenden. Diese Berichte sehen im [Azure-Verwaltungsportal](https://manage.windowsazure.com) folgendermaßen aus:
+Wenn Sie zur Registerkarte **Berichte** navigieren und sich den Abschnitt **Aktivitätsprotokolle** ansehen, werden unterhalb dieses Abschnitts zwei Berichte zur Kennwortverwaltung angezeigt: **Aktivität "Zurücksetzen des Kennworts"** und **Aktivität "Registrierung für Zurücksetzen des Kennworts"**. Diese zwei Berichte liefern eine Übersicht über Benutzer innerhalb Ihrer Organisation, die sich für das Zurücksetzen von Kennwörtern registrieren und die Kennwortzurücksetzung verwenden. Diese Berichte sehen im [Azure-Verwaltungsportal](https://manage.windowsazure.com) folgendermaßen aus:
 
   ![][006]
 
@@ -122,4 +123,4 @@ Weitere Informationen zu Azure AD Connect finden Sie unter [Erste Schritte: Azur
 [006]: ./media/active-directory-passwords-how-it-works/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-how-it-works/007.jpg "Image_007.jpg"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

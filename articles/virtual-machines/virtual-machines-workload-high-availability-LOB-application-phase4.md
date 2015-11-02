@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="10/20/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 4: Konfigurieren der Webserver
@@ -30,36 +30,26 @@ Diese Phase muss vor Beginn von [Phase 5](virtual-machines-workload-high-availab
 
 Es gibt zwei virtuelle Computer, die als Webserver fungieren. Auf diesen können Sie ASP.NET-Anwendungen oder ältere Anwendungen bereitstellen, die von IIS 8 (Internetinformationsdienste) in Windows Server 2012 R2 gehostet werden können.
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Die Azure PowerShell-Befehlsblöcke in diesem Artikel werden gerade getestet und aktualisiert, um auch die neuen Cmdlets in Azure PowerShell Version 1.0.0 und höher zu unterstützen. Vielen Dank für Ihre Geduld.
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Um diese Befehle in Azure PowerShell 0.9.8 und früheren Versionen auszuführen, ersetzen Sie alle Instanzen von „-AzureRM“ durch „-Azure“, und fügen Sie vor dem Ausführen von Befehlen den Befehl **Switch-AzureMode AzureResourceManager** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
-Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clientdatenverkehr an die Branchenanwendung gleichmäßig auf die zwei Webserver verteilt. Dazu müssen Sie eine interne Lastenausgleichsinstanz konfigurieren, die aus einem Namen und einer eigenen IP-Adresse aus dem Adressraum des Subnetzes besteht, das Sie Ihrem virtuellen Azure-Netzwerk zugewiesen haben. Führen Sie die folgenden Befehle an der Azure PowerShell-Eingabeaufforderung aus, um die Verfügbarkeit einer IP-Adresse zu überprüfen, die Sie für den internen Load Balancer ausgewählt haben: Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg.
+Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clientdatenverkehr an die Branchenanwendung gleichmäßig auf die zwei Webserver verteilt. Dazu müssen Sie eine interne Lastenausgleichsinstanz konfigurieren, die aus einem Namen und einer eigenen IP-Adresse aus dem Adressraum des Subnetzes besteht, das Sie Ihrem virtuellen Azure-Netzwerk zugewiesen haben.
 
-	Switch-AzureMode AzureServiceManagement
-	$vnet="<Table V – Item 1 – Value column>"
-	$testIP="<a chosen IP address from the subnet address space, Table S - Item 2 – Subnet address space column>"
-	Test-AzureStaticVNetIP –VNetName $vnet –IPAddress $testIP
+Geben Sie die Variablen ein, und führen Sie die folgenden Befehle aus:
 
-Wenn das Feld **IsAvailable** in der Ausgabe des Befehls "Test-AzureStaticVNetIP" **True** lautet, können Sie die IP-Adresse verwenden.
-
-Wechseln Sie mit diesem Befehl zurück zum Ressourcen-Manager-Modus von PowerShell.
-
-	Switch-AzureMode AzureResourceManager
-
-Als Nächstes füllen Sie die Variablen und führen die folgenden Befehle aus:
-
+	# Set up key variables
 	$rgName="<resource group name>"
 	$locName="<Azure location of your resource group>"
 	$vnetName="<Table V – Item 1 – Value column>"
 	$privIP="<available IP address on the subnet>"
-	$vnet=Get-AzureVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 
-	$frontendIP=New-AzureLoadBalancerFrontendIpConfig -Name WebServers-LBFE -PrivateIPAddress $privIP -SubnetId $vnet.Subnets[1].Id
-	$beAddressPool=New-AzureLoadBalancerBackendAddressPoolConfig -Name WebServers-LBBE
+	$frontendIP=New-AzureRMLoadBalancerFrontendIpConfig -Name WebServers-LBFE -PrivateIPAddress $privIP -SubnetId $vnet.Subnets[1].Id
+	$beAddressPool=New-AzureRMLoadBalancerBackendAddressPoolConfig -Name WebServers-LBBE
 
 	# This example assumes unsecured (HTTP-based) web traffic to the web servers.
-	$healthProbe=New-AzureLoadBalancerProbeConfig -Name WebServersProbe -Protocol "TCP" -Port 80 -IntervalInSeconds 15 -ProbeCount 2
-	$lbrule=New-AzureLoadBalancerRuleConfig -Name "WebTraffic" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "TCP" -FrontendPort 80 -BackendPort 80
-	New-AzureLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure" -Location $locName -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe -FrontendIpConfiguration $frontendIP
+	$healthProbe=New-AzureRMLoadBalancerProbeConfig -Name WebServersProbe -Protocol "TCP" -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+	$lbrule=New-AzureRMLoadBalancerRuleConfig -Name "WebTraffic" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "TCP" -FrontendPort 80 -BackendPort 80
+	New-AzureRMLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure" -Location $locName -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe -FrontendIpConfiguration $frontendIP
 
 Fügen Sie danach der DNS-Infrastruktur Ihres Unternehmens einen DNS-Adresseintrag hinzu, der den vollständig qualifizierten Domänennamen der Branchenanwendung (z. B. "lobapp.corp.contoso.com") in die dem internen Load Balancer zugewiesene IP-Adresse auflöst (der Wert von "$privIP" im vorangegangenen Azure PowerShell-Befehlsblock).
 
@@ -75,13 +65,10 @@ Die Tabelle M haben Sie in [Phase 2](virtual-machines-workload-high-availabilit
 
 Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
-	# Set up subscription and key variables
-	$subscr="<name of the Azure subscription>"
-	Set-AzureSubscription -SubscriptionName $subscr
-	Switch-AzureMode AzureResourceManager
+	# Set up key variables
 	$rgName="<resource group name>"
 	$locName="<Azure location of your resource group>"
-	$webLB=Get-AzureLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure"	
+	$webLB=Get-AzureRMLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure"	
 	
 	# Use the standard storage account
 	$saName="<Table ST – Item 2 – Storage account name column>"
@@ -89,37 +76,37 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$vnetName="<Table V – Item 1 – Value column>"
 	$beSubnetName="<Table S - Item 2 - Name column>"
 	$avName="<Table A – Item 3 – Availability set name column>"
-	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
-	$backendSubnet=Get-AzureVirtualNetworkSubnetConfig -Name $beSubnetName -VirtualNetwork $vnet
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$backendSubnet=Get-AzureRMVirtualNetworkSubnetConfig -Name $beSubnetName -VirtualNetwork $vnet
 	
 	# Create the first web server virtual machine
 	$vmName="<Table M – Item 6 - Virtual machine name column>"
 	$vmSize="<Table M – Item 6 - Minimum size column>"
-	$nic=New-AzureNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
-	$avSet=Get-AzureAvailabilitySet -Name $avName –ResourceGroupName $rgName 
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$nic=New-AzureRMNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
+	$avSet=Get-AzureRMAvailabilitySet -Name $avName –ResourceGroupName $rgName 
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the first web server." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Create the second web server virtual machine
 	$vmName="<Table M – Item 7 - Virtual machine name column>"
 	$vmSize="<Table M – Item 7 - Minimum size column>"
-	$nic=New-AzureNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$nic=New-AzureRMNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second second SQL Server computer." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
 > [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit aus dem Azure-Vorschauportal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen.
 
@@ -138,14 +125,14 @@ Stellen Sie nach dem Neustart unter Verwendung eines Kontos mit lokalen Administ
 Installieren und konfigurieren Sie jetzt für jeden Webserver IIS.
 
 1. Führen Sie Server-Manager aus, und klicken Sie dann auf **Rollen und Features hinzufügen**.
-2. Klicken Sie auf der Seite "Voraussetzungen" auf **Weiter**.
+2. Klicken Sie auf der Seite „Voraussetzungen“ auf **Weiter**.
 3. Klicken Sie auf der Seite "Installationstyp auswählen" auf **Weiter**.
-4. Klicken Sie auf der Seite "Zielserver auswählen" auf **Weiter**.
-5. Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver (IIS)**.
+4. Klicken Sie auf der Seite „Zielserver auswählen“ auf **Weiter**.
+5. Klicken Sie auf der Seite „Serverrollen“ in der Liste **Rollen** auf **Webserver (IIS)**.
 6. Klicken Sie bei der entsprechenden Aufforderung auf **Features hinzufügen** und anschließend auf **Weiter**.
-7. Klicken Sie auf der Seite "Features auswählen" auf **Weiter**.
-8. Klicken Sie auf der Seite "Webserver (IIS)" auf **Weiter**.
-9. Aktivieren oder deaktivieren Sie auf der Seite "Rollendienste auswählen" die Kontrollkästchen für die Dienste, die Sie für Ihre Branchenanwendung benötigen, und klicken Sie dann auf **Weiter**. 10. Klicken Sie auf der Seite "Installationsauswahl bestätigen" auf **Installieren**.
+7. Klicken Sie auf der Seite „Features auswählen“ auf **Weiter**.
+8. Klicken Sie auf der Seite „Webserver (IIS)“ auf **Weiter**.
+9. Aktivieren oder deaktivieren Sie auf der Seite „Rollendienste auswählen“ die Kontrollkästchen für die Dienste, die Sie für Ihre Branchenanwendung benötigen, und klicken Sie dann auf **Weiter**. 10. Klicken Sie auf der Seite „Installationsauswahl bestätigen“ auf **Installieren**.
 
 ## Bereitstellen Ihrer Branchenanwendung auf den virtuellen Computern, die als Webserver fungieren
 
@@ -175,4 +162,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erste
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

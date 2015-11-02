@@ -3,7 +3,7 @@
     description="Dieser Artikel veranschaulicht die Verwendung des Azure-Such-Indexers mit DocumentDB als Datenquelle."
     services="documentdb" 
     documentationCenter="" 
-    authors="aliuy" 
+    authors="AndrewHoh" 
     manager="jhubbard" 
     editor="mimig"/>
 
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA" 
     ms.workload="data-services" 
     ms.date="06/16/2015" 
-    ms.author="andrl"/>
+    ms.author="anhoh"/>
 
 #Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern
 
@@ -270,4 +270,4 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
  - Klicken Sie [hier](/services/search/), um weitere Informationen zu Azure Search zu erhalten.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

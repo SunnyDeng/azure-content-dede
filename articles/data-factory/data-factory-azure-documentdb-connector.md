@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/14/2015" 
+	ms.date="10/15/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus DocumentDB mithilfe von Azure Data Factory
@@ -411,9 +411,9 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung](https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
 
 	**Antwort:** Nein. 
-4. **Frage:** Können mehrere DocumentDB-Auflistungen für eine Tabelle angegeben werden?
+4. **Frage**: Können mehrere DocumentDB-Auflistungen für eine Tabelle angegeben werden?
 	
 	**Antwort:** Nein. Zurzeit kann nur eine Auflistung angegeben werden.
      
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

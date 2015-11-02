@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" y
-	ms.date="07/28/2015" 
+	ms.date="10/20/2015" 
 	ms.author="spelluru"/>
 
 # Grundlegendes zu Pipelines und Aktivitäten
@@ -336,4 +336,4 @@ Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

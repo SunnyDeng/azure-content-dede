@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="10/16/2015"
 	ms.author="cephalin"/>
 
 
@@ -40,7 +40,7 @@ In diesem Lernprogramm verwenden Sie die folgenden Tools. Da dies keine umfassen
 
 ### Azure-Ressourcen-Manager-Vorlagen (JSON) ###
  
-Jedes Mal, wenn Sie beispielsweise eine Web-App in Azure App Service erstellen, verwendet der Azure-Ressourcen-Manager eine JSON-Vorlage zum Erstellen der gesamten Ressourcengruppe mit den Komponentenressourcen. Eine komplexe Vorlage aus [Azure Marketplace](/marketplace) wie die App [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) kann die MySQL-Datenbank, Speicherkonten, den App Service-Plan, die Web-App selbst, Warnregeln, App-Einstellungen, Einstellungen für die automatische Skalierung und mehr enthalten, und alle diese Vorlagen stehen Ihnen über PowerShell zur Verfügung. Informationen zum Herunterladen und Verwenden dieser Vorlagen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+Jedes Mal, wenn Sie beispielsweise eine Web-App in Azure App Service erstellen, verwendet der Azure-Ressourcen-Manager eine JSON-Vorlage zum Erstellen der gesamten Ressourcengruppe mit den Komponentenressourcen. Eine komplexe Vorlage aus [Azure Marketplace](/marketplace) wie die App [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) kann die MySQL-Datenbank, Speicherkonten, den App Service-Plan, die Web-App selbst, Warnregeln, App-Einstellungen, Einstellungen für die automatische Skalierung und mehr enthalten, und alle diese Vorlagen stehen Ihnen über PowerShell zur Verfügung. Informationen zum Herunterladen und Verwenden dieser Vorlagen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 
 Weitere Informationen zu den Azure-Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
@@ -288,16 +288,16 @@ In DevOps sind Wiederholbarkeit und Vorhersagbarkeit der Schlüssel für eine er
 
 ## Nächste Schritte ##
 
-Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices bestehende Anwendung problemlos kontinuierlich veröffentlichen](app-service-agile-software-development.md).
+Erfahren Sie, wie Sie [agile Methoden umsetzen und eine aus Microservices bestehende Anwendung problemlos kontinuierlich veröffentlichen können](app-service-agile-software-development.md), und lesen Sie mehr zu erweiterten Bereitstellungstechniken wie [Flighting-Bereitstellung](app-service-web-test-in-production-controlled-test-flight.md).
 
 <a name="resources"></a>
 ## Weitere Ressourcen ##
 
--	[Azure Resource Manager-Vorlagensprache](../resource-group-authoring-templates.md)
+-	[Azure-Ressourcen-Manager-Vorlagensprache](../resource-group-authoring-templates.md)
 -	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 -	[Vorlagenfunktionen im Azure-Ressourcen-Manager](../resource-group-template-functions.md)
 -	[Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](../resource-group-template-deploy.md)
--	[Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
+-	[Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
 -	[Troubleshooting Resource Group Deployments in Azure](../resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)
 
 
@@ -305,4 +305,4 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices besteh
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

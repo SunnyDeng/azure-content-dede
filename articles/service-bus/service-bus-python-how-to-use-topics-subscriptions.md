@@ -18,11 +18,13 @@
 
 # Verwenden von Service Bus-Themen und -Abonnements
 
-In diesem Artikel erfahren Sie, wie Sie Service Bus-Themen und -Abonnements verwenden. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die behandelten Szenarios umfassen das **Erstellen von Themen und Abonnements**, das **Erstellen von Abonnementfiltern**, das **Senden von Nachrichten an ein Thema**, das **Empfangen von Nachrichten von einem Abonnement** und das **Löschen von Themen und Abonnements**. Weitere Informationen zu Themen und Abonnements finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
+
+In diesem Artikel erfahren Sie, wie Sie Service Bus-Themen und -Abonnements verwenden. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die behandelten Szenarien umfassen das **Erstellen von Themen und Abonnements**, das **Erstellen von Abonnementfiltern**, das **Senden von Nachrichten an ein Thema**, das **Empfangen von Nachrichten von einem Abonnement** und das **Löschen von Themen und Abonnements**. Weitere Informationen zu Themen und Abonnements finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
 [AZURE.INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
 
-**Hinweis:** Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie im [Python-Installationshandbuch](../python-how-to-install.md).
+**Hinweis:** Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie in den [Installationsanweisungen für Python](../python-how-to-install.md).
 
 ## Erstellen eines Themas
 
@@ -32,7 +34,7 @@ Das **ServiceBusService**-Objekt ermöglicht Ihnen, mit Themen zu arbeiten. Füg
 from azure.servicebus import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
 ```
 
-Der folgende Code erstellt ein **ServiceBusService**-Objekt. Ersetzen Sie `mynamespace`, `sharedaccesskeyname` und `sharedaccesskey` durch Ihren tatsächlichen Namespace, SAS-Schlüsselnamen und -wert (Shared Access Signature).
+Der folgende Code erstellt ein **ServiceBusService**-Objekt. Ersetzen Sie `mynamespace`, `sharedaccesskeyname` und `sharedaccesskey` durch Ihren tatsächlichen Namespace, Shared Access Signature (SAS)-Schlüsselnamen und Schlüsselwert.
 
 ```
 bus_service = ServiceBusService(
@@ -75,13 +77,13 @@ bus_service.create_subscription('mytopic', 'AllMessages')
 
 Sie können auch Filter definieren, durch die Sie angeben können, welche an ein Thema gesendeten Nachrichten in einem bestimmten Themenabonnement angezeigt werden sollen.
 
-Der von Abonnements unterstützte flexibelste Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der [SqlFilter.SqlExpression][]-Syntax.
+Der von Abonnements unterstützte flexibelste Filtertyp ist **SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax [SqlFilter.SqlExpression][].
 
 Sie können einem Abonnement mithilfe der **create\_rule**-Methode des **ServiceBusService**-Objekts Filter hinzufügen. Durch diese Methode können Sie neue Filter zu einem vorhandenen Abonnement hinzufügen.
 
 > [AZURE.NOTE]Da der Standardfilter automatisch auf alle neuen Abonnements angewendet wird, müssen Sie zuerst den Standardfilter entfernen. Ansonsten überschreibt **MatchAll** alle Filter, die Sie angeben. Sie können die Standardregel mithilfe der **delete\_rule**-Methode des **ServiceBusService**-Objekts entfernen.
 
-Mit dem folgenden Beispiel wird ein Abonnement namens `HighMessages` mit einem **SqlFilter** erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **messagenumber**-Eigenschaft größer als 3 ist:
+Mit dem folgenden Beispiel wird ein Abonnement namens `HighMessages` mit einem **SqlFilter** erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **messagenumber**-Eigenschaft größer ist als 3:
 
 ```
 bus_service.create_subscription('mytopic', 'HighMessages')
@@ -94,7 +96,7 @@ bus_service.create_rule('mytopic', 'HighMessages', 'HighMessageFilter', rule)
 bus_service.delete_rule('mytopic', 'HighMessages', DEFAULT_RULE_NAME)
 ```
 
-Ebenso erstellt das folgende Beispiel ein Abonnement namens `LowMessages` mit einem **SqlFilter**, der nur Nachrichten auswählt, deren benutzerdefinierte **messagenumber**-Eigenschaft kleiner gleich 3 ist:
+Ebenso erstellt das folgende Beispiel ein Abonnement namens `LowMessages` mit einem **SqlFilter**, der nur Nachrichten auswählt, deren benutzerdefinierte **messagenumber**-Eigenschaft kleiner oder gleich 3 ist:
 
 ```
 bus_service.create_subscription('mytopic', 'LowMessages')
@@ -121,7 +123,7 @@ for i in range(5):
 	bus_service.send_topic_message('mytopic', msg)
 ```
 
-Servicebus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten, die ein Thema enthält. Es gibt jedoch eine Obergrenze für die Gesamtgröße der Nachrichten eines Themas. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB. Weitere Informationen zu Kontingenten finden Sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen][].
+Service Bus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten, die ein Thema enthält. Es gibt jedoch eine Obergrenze für die Gesamtgröße der Nachrichten eines Themas. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB. Weitere Informationen zu Kontingenten finden Sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen][].
 
 ## Empfangen von Nachrichten aus einem Abonnement
 
@@ -155,7 +157,7 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 ## Löschen von Themen und Abonnements
 
-Themen und Abonnements sind persistent und müssen über das Azure-Portal oder programmgesteuert explizit gelöscht werden. Im folgenden Beispiel wird das Thema namens `mytopic` gelöscht:
+Themen und Abonnements sind persistent und müssen über das Azure-Portal oder programmgesteuert explizit gelöscht werden. Im folgenden Beispiel wird das Thema `mytopic` gelöscht:
 
 ```
 bus_service.delete_topic('mytopic')
@@ -171,14 +173,14 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Siehe [Warteschlangen, Themen und Abonnements][].
+-   Siehe [Service Bus-Warteschlangen, -Themen und -Abonnements][].
 -   Referenz für [SqlFilter.SqlExpression][].
 
 [Azure-Portal]: http://manage.windowsazure.com
 [Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
-[Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
+[Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

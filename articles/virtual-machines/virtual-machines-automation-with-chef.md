@@ -17,6 +17,8 @@ ms.author="diviso"/>
 
 # Automatisieren der Bereitstellung virtueller Azure-Computer mit Chef
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 Chef ist ein hervorragendes Tool zur Automatisierung und für Konfigurationen mit gewünschten Zuständen.
 
 Mit unserer aktuellen Veröffentlichung der Cloud-API bietet Chef eine problemlose Integration in Azure und ermöglicht es Ihnen, bietet Ihnen die Möglichkeit, Konfigurationszustände über einen einzelnen Befehl bereitzustellen und zu implementieren.
@@ -200,7 +202,7 @@ Im Anschluss sehen Sie ein Beispiel für den Befehl.
 
 Die Parameter sind selbsterklärend. Ersetzen Sie Ihre bestimmten Variablen, und führen Sie den Befehl dann aus.
 
-> [AZURE.NOTE]Über die Befehlszeile automatisiere ich mithilfe des Parameters „–tcp-endpoints“ auch die Filterregeln für mein Endpunktnetzwerk. Ich habe die Ports 80 und 3389 geöffnet, um den Zugriff auf meine Webseite und die RDP-Sitzung zu gestatten.
+> [AZURE.NOTE]Über die Befehlszeile automatisiere ich mithilfe des Parameters „–tcp-endpoints“ auch die Filterregeln für mein Endgerätenetzwerk. Ich habe die Ports 80 und 3389 geöffnet, um den Zugriff auf meine Webseite und die RDP-Sitzung zu gestatten.
 
 Nachdem Sie den Befehl ausgeführt haben, wechseln Sie zum Azure-Portal, wo Sie die Bereitstellung des virtuellen Computers verfolgen können.
 
@@ -237,4 +239,4 @@ Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

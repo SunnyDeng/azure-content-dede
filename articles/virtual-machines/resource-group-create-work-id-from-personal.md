@@ -19,10 +19,9 @@
 
 # Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 Wenn Sie ein persönliches Azure-Konto erstellt oder ein persönliches MSDN-Abonnement besitzen und das Azure-Konto erstellt haben, um das MSDN Azure-Guthaben nutzen zu können, haben Sie zum Erstellen als Identität ein *Microsoft-Konto* verwendet. Viele hervorragende Funktionen von Azure – beispielsweise [Ressourcengruppenvorlagen](../resource-group-overview.md) – erfordern ein Arbeits- oder Schulkonto (eine Identität, die von Azure Active Directory verwaltet wird).
-
-
-> [AZURE.NOTE]Azure verfügt über zwei verschiedene Bereitstellungsmodelle für das Erstellen und Verwenden von Ressourcen: [Ressourcen-Manager und klassische Bereitstellungen](../resource-manager-deployment-model.md). Dieser Artikel behandelt die Verwendung beider Modelle, Microsoft empfiehlt jedoch für die meisten neuen Bereitstellungen die Verwendung des Ressourcen-Manager-Modells.
 
 
 Glücklicherweise ist einer der größten Vorteile Ihres persönlichen Azure-Kontos, dass eine Azure Active Directory-Standarddomäne enthalten ist, mit der Sie ein neues Arbeits- oder Schulkonto für die Azure-Funktionen, die dies erfordern, erstellen können.
@@ -45,7 +44,7 @@ Nun werden Sie einige weitere Informationen darüber herausfinden. Klicken Sie a
 
 ![](./media/resource-group-create-work-id-from-personal/defaultdirectorypage.png)
 
-Um den Standarddomänennamen anzuzeigen, klicken Sie auf **DOMÄNEN**.
+Um den Standarddomänennamen anzuzeigen, klicken Sie auf **Domänen**.
 
 ![](./media/resource-group-create-work-id-from-personal/domainclicktoseeyourdefaultdomain.png)
 
@@ -145,4 +144,4 @@ Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität
     data:
     info:    group create command OK
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

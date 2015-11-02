@@ -2,7 +2,7 @@
 	pageTitle="Importieren von Daten in DocumentDB | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure-Tabellenspeicher, Amazon DynamoDB und DocumentDB-Sammlungen, in DocumentDB zu importieren." 
 	services="documentdb" 
-	authors="stephbaron" 
+	authors="andrewhoh" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/10/2015" 
-	ms.author="stbaro"/>
+	ms.date="10/16/2015" 
+	ms.author="anhoh"/>
 
 # Importieren von Daten in DocumentDB #
 
@@ -35,7 +35,7 @@ Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes installiert ist:
 
-- [Microsoft .NET Framework 4.51](http://www.microsoft.com/net/downloads) oder höher.
+- [Microsoft .NET Framework 4.51](https://www.microsoft.com/download/developer-tools.aspx) oder höher.
 
 ##<a id="Overviewl"></a>Übersicht über das DocumentDB-Datenmigrationstool ##
 
@@ -57,8 +57,8 @@ Das Importtool enthält zwar eine grafische Benutzeroberfläche (dtui.exe), kann
 
 Der Quellcode des Migrationstools ist in GitHub in [diesem Repository](https://github.com/azure/azure-documentdb-datamigrationtool) und eine kompilierte Version ist im [Microsoft Download Center](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) verfügbar. Sie können die Projektmappe kompilieren oder einfach die kompilierte Version in ein Verzeichnis Ihrer Wahl herunterladen und extrahieren. Führen Sie anschließend eine dieser Dateien aus:
 
-- Dtui.exe: GUI-Version des Tools
-- Dt.exe: Befehlszeilenversion des Tools
+- **Dtui.exe**: GUI-Version des Tools
+- **Dt.exe**: Befehlszeilenversion des Tools
 
 ##<a id="JSON"></a>Importieren von JSON-Dateien ##
 
@@ -477,4 +477,4 @@ Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Prot
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

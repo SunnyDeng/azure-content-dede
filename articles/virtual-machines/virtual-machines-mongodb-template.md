@@ -36,7 +36,7 @@ Nachdem die Bereitstellung abgeschlossen ist, können Sie mithilfe der konfiguri
 
 Bevor wir zu näheren Einzelheiten zum Azure-Ressourcen-Manager und der für diese Bereitstellung verwendeten Vorlage kommen, stellen Sie sicher, dass Azure PowerShell oder die Azure-Befehlszeilenschnittstelle konfiguriert und einsatzbereit ist.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/powershell-preview-inline-include.md)]
 
 [AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
 
@@ -694,4 +694,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

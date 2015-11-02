@@ -76,7 +76,7 @@ Azure Automation DSC ermöglicht Ihnen das Importieren, Erstellen und Kompiliere
 
 ###Knotenkonfiguration###
 
-Wenn eine DSC-Konfiguration kompiliert wird, werden in Abhängigkeit von den Node-Blöcken in der Konfiguration eine oder mehrere Knotenkonfigurationen erstellt. Eine Knotenkonfiguration ist dasselbe wie ein MOF- oder Konfigurationsdokument (wenn Sie mit diesen PS DSC-Begriffen vertraut sind) und repräsentiert eine "Rolle", wie z. B. einen Webserver oder Worker, deren gewünschten Zustand einer oder mehrere Knoten annehmen sollen. Namen von Knotenkonfigurationen in Azure Automation DSC weisen das Format "<Configuration-name>.<Node configuration-block-name>" auf.
+Wenn eine DSC-Konfiguration kompiliert wird, werden in Abhängigkeit von den Node-Blöcken in der Konfiguration eine oder mehrere Knotenkonfigurationen erstellt. Eine Knotenkonfiguration ist dasselbe wie ein MOF- oder Konfigurationsdokument (wenn Sie mit diesen PS DSC-Begriffen vertraut sind) und repräsentiert eine "Rolle", wie z. B. einen Webserver oder Worker, deren gewünschten Zustand einer oder mehrere Knoten annehmen sollen. Namen von Knotenkonfigurationen in Azure Automation DSC weisen das Format „Konfigurationsname.NodeConfigurationBlockName“ auf.
 
 PS DSC-Knoten erkennen Knotenkonfigurationen, die entweder per DSC-Push oder mithilfe von Pullmethoden angewendet werden sollen. Azure Automation DSC basiert auf der DSC-Pullmethode, bei der Knoten Knotenkonfigurationen anfordern, die sie von Azure Automation DSC-Pullservern anwenden sollen. Da die Knoten die Anforderung an Azure Automation DSC senden, können sich die Knoten hinter Firewalls befinden, keine eingehenden Ports geöffnet haben usw. Die Knoten benötigen lediglich ausgehenden Zugriff auf das Internet.
 
@@ -97,7 +97,7 @@ Zum Lieferumfang von Azure Automation DSC gehören dieselben integrierten DSC-Re
 
 
 ###Kompilierungsauftrag###
-Ein Kompilierungsauftrag in Azure Automation DSC ist eine Instanz einer Konfigurationskompilierung, um eine oder mehrere Knotenkonfigurationen zu erstellen. Sie ähneln Runbookaufträgen in Azure Automation, führen jedoch abgesehen von der Erstellung von Knotenkonfigurationen keine wirklichen Aufgaben aus. Alle durch einen Kompilierungsauftrag erstellten Knotenkonfigurationen werden automatisch auf dem Azure Automation DSC-Pullserver platziert und überschreiben vorherige Versionen der Knotenkonfigurationen, sofern vorhanden. Der Name einer über einen Kompilierungsauftrag erstellten Knotenkonfiguration weist das Format "<Configuration-name>.<Node configuration-block-name>" auf. Beispielsweise würde durch das Kompilieren der nachstehenden Konfiguration eine einzelne Knotenkonfiguration mit dem Namen "MyConfiguration.webserver" erstellt werden.
+Ein Kompilierungsauftrag in Azure Automation DSC ist eine Instanz einer Konfigurationskompilierung, um eine oder mehrere Knotenkonfigurationen zu erstellen. Sie ähneln Runbookaufträgen in Azure Automation, führen jedoch abgesehen von der Erstellung von Knotenkonfigurationen keine wirklichen Aufgaben aus. Alle durch einen Kompilierungsauftrag erstellten Knotenkonfigurationen werden automatisch auf dem Azure Automation DSC-Pullserver platziert und überschreiben vorherige Versionen der Knotenkonfigurationen, sofern vorhanden. Der Name einer über einen Kompilierungsauftrag erstellten Knotenkonfiguration weist das Format „Konfigurationsname.NodeConfigurationBlockName“ auf. Beispielsweise würde durch das Kompilieren der nachstehenden Konfiguration eine einzelne Knotenkonfiguration mit dem Namen "MyConfiguration.webserver" erstellt werden.
 
 
 ![alt text](./media/automation-dsc-overview/AADSC_5.png)
@@ -121,7 +121,7 @@ Der Weg von einem leeren Automation-Konto zu einer verwalteten und ordnungsgemä
 
 - Azure Automation DSC bietet zurzeit keine Unterstützung für teilweise oder zusammengesetzte DSC-Konfigurationen.
 
-- Für den PowerShell DSC-Agent für Windows muss die neueste Version von WMF 5 installiert werden, um eine Kommunikation mit Azure Automation zu ermöglichen. Der PowerShell DSC-Agent für Linux bietet zurzeit keine Unterstützung für die Kommunikation mit Azure Automation. Dies soll in Kürze geändert werden.
+- Für den PowerShell DSC-Agent für Windows muss die neueste Version von WMF 5 installiert werden, um eine Kommunikation mit Azure Automation zu ermöglichen. Die neueste Version des PowerShell DSC-Agents für Linux muss installiert sein, um unter Linux eine Kommunikation mit Azure Automation zu ermöglichen.
 
 - Azure Automation bietet keine Unterstützung für die parallele Verwendung von PowerShell-Modulen. Dies bedeutet, dass alle Konfigurationen innerhalb eines Automation-Kontos mit der neuesten Version eines in dieses Automation-Konto importierten PowerShell-Moduls sowie mit der letzten Version aller PowerShell DSC-Ressourcen arbeiten müssen, die im Modul enthalten sind und von der Konfiguration verwendet werden.
 
@@ -145,4 +145,4 @@ Der Weg von einem leeren Automation-Konto zu einer verwalteten und ordnungsgemä
 - [Azure Automation DSC – Preise](http://azure.microsoft.com/pricing/details/automation/)
 - [Kontinuierliche Bereitstellung für IaaS-VMs mit Azure Automation DSC und Chocolatey](automation-dsc-cd-chocolatey.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

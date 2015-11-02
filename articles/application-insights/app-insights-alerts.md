@@ -48,9 +48,9 @@ Der Name, den Sie der Warnung zuweisen, muss innerhalb der Ressourcengruppe (nic
 
 Sie erhalten eine E-Mail, wenn sich ein Warnungsstatus von "Inaktiv" in "Aktiv" ändert und umgekehrt.
 
-Der aktuelle Status jeder Warnung wird im Fenster "Warnungsregeln" angezeigt.
+Der aktuelle Status jeder Warnung wird auf dem Blatt "Warnungsregeln" angezeigt.
 
-Die Dropdownliste "Warnungen" enthält einen Überblick über die letzten Aktivitäten:
+Die Dropdownliste "Warnungen" enthält eine Übersicht über die letzten Aktivitäten:
 
 ![](./media/app-insights-alerts/010-alert-drop.png)
 
@@ -106,14 +106,22 @@ In den meisten Fällen reicht es aus, Warnungen manuell festzulegen. Wenn Sie je
 
 Wenn Sie PowerShell noch nicht mit Ihrem Azure-Abonnement verwendet haben:
 
-1. Installieren Sie das Azure-PowerShell-Modul auf dem Computer, auf dem die Skripts ausgeführt werden sollen. 
- * Installieren Sie [Microsoft-Webplattform-Installer (v5 oder höher)](http://www.microsoft.com/web/downloads/platform.aspx).
- * Installieren Sie hiermit Microsoft Azure PowerShell.
-2. Starten Sie Azure PowerShell, und [stellen Sie eine Verbindung mit Ihrem Abonnement her](powershell-install-configure.md):
+Installieren Sie das Azure PowerShell-Modul auf dem Computer, auf dem die Skripts ausgeführt werden sollen.
 
-    ```
+ * Installieren Sie [Microsoft-Webplattform-Installer (Version 5 oder höher)](http://www.microsoft.com/web/downloads/platform.aspx).
+ * Installieren Sie hiermit Microsoft Azure PowerShell.
+
+
+#### Herstellen einer Verbindung mit Azure
+
+Starten Sie Azure PowerShell, und [stellen Sie eine Verbindung mit Ihrem Abonnement her](powershell-install-configure.md):
+
+```PowerShell
+
     Add-AzureAccount
-    ```
+    Switch-AzureMode AzureResourceManager
+```
+
 
 #### Abrufen von Warnungen
 
@@ -155,7 +163,7 @@ Die GUID ist die Abonnement-ID (nicht der Instrumentierungsschlüssel der Anwend
 
 #### Beispiel 2
 
-Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik namens "salesPerHour" melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
+Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik namens „salesPerHour“ melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
 
     Add-AlertRule -Name "poor sales" `
      -Description "slow sales alert" `
@@ -188,7 +196,7 @@ Metrikname | Anzeigename | Beschreibung
 `performanceCounter.percentage_processor_total.value`|Prozessorzeit|Der Prozentsatz der Zeit, die der Prozessor nicht im Leerlauf in Threads verbringt.
 `performanceCounter.process_private_bytes.value`|Private Bytes für Prozess|Speicher, der exklusiv den überwachten Anwendungsprozessen zugewiesen ist.
 `performanceCounter.request_execution_time.value`|Ausführungsdauer für ASP.NET-Anforderungen|Ausführungszeit der aktuellen Anforderung.
-`performanceCounter.requests_in_application_queue.value`|ASP.NET-Anforderungen in Ausführungswarteschlange|Länge der Anwendungsanforderungswarteschleife.
+`performanceCounter.requests_in_application_queue.value`|ASP.NET-Anforderungen in Ausführungswarteschlange|Länge der Anwendungsanforderungswarteschlange.
 `performanceCounter.requests_per_sec`|ASP.NET-Anforderungsrate|Rate aller Anforderungen an die Anwendung pro Sekunde von ASP.NET.
 `remoteDependencyFailed.durationMetric.count`|Abhängigkeitsfehler|Anzahl der Aufrufe mit Fehlern von der Serveranwendung an externe Ressourcen.
 `request.duration`|Serverantwortzeit|Zeit zwischen dem Empfang einer HTTP-Anforderung und dem Abschluss des Sendevorgangs der Antwort.
@@ -217,4 +225,4 @@ request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-appli
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

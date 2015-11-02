@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/09/2015"
+    ms.date="10/19/2015"
     ms.author="larryfr"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight
@@ -36,11 +36,14 @@ Wenn Sie ein benutzerdefiniertes Skript für einen HDInsight-Cluster entwickeln,
 
 - [Auswählen der Hadoop-Version](#bPS1)
 - [Einrichten stabiler Verknüpfungen mit Skriptressourcen](#bPS2)
+- [Verwenden vorkompilierter Ressourcen](#bPS4)
 - [Sicherstellen, dass das Clusteranpassungsskript idempotent ist](#bPS3)
 - [Sicherstellen einer hohen Verfügbarkeit der Clusterarchitektur](#bPS5)
 - [Konfigurieren benutzerdefinierter Komponenten zur Verwendung von Azure-Blobspeicher](#bPS6)
 - [Schreiben von Informationen in STDOUT und STDERR](#bPS7)
 - [Speichern von Dateien im ASCII-Format mit LF-Zeilenenden](#bps8)
+
+> [AZURE.IMPORTANT]Skriptaktionen müssen innerhalb von 15 Minuten abgeschlossen sein, andernfalls werden sie mit Timeout abgebrochen. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
 
 ### <a name="bPS1"></a>Auswählen der Hadoop-Version
 
@@ -55,6 +58,10 @@ Die bewährte Methode ist das Herunterladen und Archivieren aller Daten in einem
 > [AZURE.IMPORTANT]Bei dem verwendeten Speicherkonto muss es sich um das Standardspeicherkonto des Clusters oder um einen öffentlichen, schreibgeschützten Container eines anderen Speicherkontos handeln.
 
 Die von Microsoft bereitgestellten Beispiele sind beispielsweise im Speicherkonto [https://hdiconfigactions.blob.core.windows.net/](https://hdiconfigactions.blob.core.windows.net/) gespeichert, einem öffentlichen, schreibgeschützten Container, der vom HDInsight-Team verwaltet wird.
+
+### Verwenden vorkompilierter Ressourcen<a name="bPS4"></a>
+
+Zur Verringerung des Zeitraums, der für die Ausführung des Skripts benötigt wird, sollten Sie Vorgänge vermeiden, mit denen Ressourcen aus dem Quellcode kompiliert werden. Führen Sie stattdessen eine Vorkompilierung der Ressourcen durch, und speichern Sie die binäre Version im Azure-BLOB-Speicher, damit sie per Skript schnell in den Cluster heruntergeladen werden kann.
 
 ### <a name="bPS3"></a>Sicherstellen, dass das Clusteranpassungsskript idempotent ist
 
@@ -213,4 +220,4 @@ Ersetzen Sie den oben aufgeführten Befehl __INFILE__ durch die Datei mit Bytere
 
 [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

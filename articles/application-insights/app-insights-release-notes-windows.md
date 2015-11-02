@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Versionshinweise für Application Insights für Windows" 
-	description="Die neuesten Updates." 
+	description="Die neuesten Updates für das Windows Store SDK." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -94,4 +94,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

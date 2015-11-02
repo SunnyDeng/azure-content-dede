@@ -18,13 +18,15 @@
 
 # Verwenden von Service Bus-Warteschlangen
 
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+
 In diesem Artikel wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele sind in JavaScript geschrieben und verwenden das Azure-Modul Node.js. Die Szenarien behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
 
 [AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## Erstellen einer Node.js-Anwendung
 
-Erstellen Sie eine leere Node.js-Anwendung. Anleitungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][] oder [Node.js-Clouddienst][] (mithilfe von Windows PowerShell).
+Erstellen Sie eine leere Node.js-Anwendung. Anweisungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website][] oder [Node.js-Clouddienst][] (mithilfe von Windows PowerShell).
 
 ## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 
@@ -32,9 +34,9 @@ Damit Azure Service Bus verwendet werden kann, laden Sie das Node.js-Azure-Paket
 
 ### Verwenden von Node Package Manager (NPM) zum Beziehen des Pakets
 
-1. Verwenden Sie das Befehlsfenster von **Windows PowerShell für Node.js**, um zum Ordner **c:\\\node\\\sbqueues\\\WebRole1** zu navigieren, in dem Sie Ihre Beispielanwendung erstellt haben.
+1. Verwenden Sie das Befehlsfenster von **Windows PowerShell für Node.js**, um zum Ordner **c:\\node\\sbqueues\\WebRole1** zu navigieren, in dem Sie Ihre Beispielanwendung erstellt haben.
 
-2. Geben Sie **npm install azure** in das Befehlsfenster ein. Die Ausgabe sollte in etwa wie folgt aussehen:
+2. Geben Sie **npm install azure** im Befehlsfenster ein. Die Ausgabe sollte in etwa wie folgt aussehen:
 
 	```
 	azure@0.7.5 node_modules\azure
@@ -50,7 +52,7 @@ Damit Azure Service Bus verwendet werden kann, laden Sie das Node.js-Azure-Paket
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3. Sie können den Befehl **ls** manuell aufrufen, um sich davon zu überzeugen, dass der Ordner **node\_modules** erstellt wurde. Suchen Sie in diesem Ordner nach dem Paket **azure**. Dieses Paket enthält die Bibliotheken, die Sie benötigen, um auf Service Bus-Warteschlangen zuzugreifen.
+3. Sie können den Befehl **ls** manuell aufrufen, um sich davon zu überzeugen, dass der Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das **azure**-Paket, das die für den Zugriff auf Service Bus-Warteschlangen benötigten Bibliotheken enthält.
 
 ### Importieren des Moduls
 
@@ -66,11 +68,11 @@ Das Azure-Modul liest die Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_
 
 Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher][].
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Website finden Sie unter [Node.js-Web-App mit Storage][].
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
 
 ## Erstellen einer Warteschlange
 
-Das **ServiceBusService**-Objekt ermöglicht es Ihnen, mit Service Bus-Warteschlangen zu arbeiten. Der folgende Code erstellt ein **ServiceBusService**-Objekt. Fügen Sie ihn am Anfang der Datei **server.js** hinzu, nach der Anweisung zum Importieren des Azure-Moduls:
+Das **ServiceBusService**-Objekt ermöglicht Ihnen, mit Service Bus-Warteschlangen zu arbeiten. Der folgende Code erstellt ein **ServiceBusService**-Objekt. Fügen Sie ihn am Anfang der Datei **server.js** hinzu, und zwar nach der Anweisung zum Importieren des Azure-Moduls:
 
 ```
 var serviceBusService = azure.createServiceBusService();
@@ -109,7 +111,7 @@ Mit **ServiceBusService** können Sie optionale Filteroperationen auf Operatione
 function handle (requestOptions, next)
 ```
 
-Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, muss die Methode `next` aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
+Nachdem die Vorverarbeitung der Anforderungsoptionen abgeschlossen ist, muss die Methode `next` aufrufen und hierbei eine Rückruffunktion mit der folgenden Signatur übergeben:
 
 ```
 function (returnObject, finalCallback, next)
@@ -196,8 +198,8 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
   [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
   [Node.js-Clouddienst mit Speicher]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
-  [Node.js-Web-App mit Storage]: ../storage/storage-nodejs-how-to-use-table-storage.md
+  [Node.js-Webanwendung mit Speicher]: ../storage/storage-nodejs-how-to-use-table-storage.md
   [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

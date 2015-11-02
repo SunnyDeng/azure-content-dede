@@ -20,6 +20,8 @@
 
 # Verwenden von Stammberechtigungen auf virtuellen Linux-Computern in Azure
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 Standardmäßig ist der Benutzer `root` auf virtuellen Linux-Computern in Azure deaktiviert. Benutzer können Befehle mit dem Befehl `sudo` mit erweiterten Rechten ausführen. Das Verhalten kann je nachdem, wie das System bereitgestellt wurde, unterschiedlich sein.
 
 1. **SSH-Schlüssel und Kennwort ODER nur Kennwort** – Der virtuelle Computer wurde mit einem Zertifikat (`.CER`-Datei) oder einem SSH-Schlüssel sowie einem Kennwort oder nur mit einem Benutzernamen und einem Kennwort bereitgestellt. In diesem Fall fordert `sudo` den Benutzer zur Eingabe des Kennworts auf, bevor der Befehl ausgeführt wird.
@@ -53,4 +55,4 @@ In diesem Fall wird der Benutzer **nicht** zur Eingabe eines Kennworts aufgeford
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

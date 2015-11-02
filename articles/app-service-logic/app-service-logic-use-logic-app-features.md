@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/19/2015"
+	ms.date="10/15/2015"
 	ms.author="stepsic"/>
 	
 # Verwenden von Logik-App-Features
@@ -117,7 +117,7 @@ Es gibt mehrere Möglichkeiten zum Starten des Workflows, der in der Logik-App d
 Ein Wiederholungstrigger wird in einem von Ihnen angegebenen Intervall ausgeführt. Wenn der Trigger bedingte Logik aufweist, bestimmt der Trigger, ob der Workflow ausgeführt werden muss oder nicht. Ein Trigger gibt an, dass er ausgeführt werden sollte, indem der Statuscode `200` zurückgegeben wird. Wenn er nicht ausgeführt werden muss, wird der Statuscode `202` zurückgegeben.
 
 ### Rückruf mit REST-APIs
-Dienste können einen Logik-App-Endpunkt zum Starten eines Workflows aufrufen. Sie finden den Endpunkt, auf den Sie zugreifen möchten, indem Sie in Ihrer Logik-App über die Befehlsleistenschaltfläche **Einstellungen** zum Blatt **Eigenschaften** navigieren.
+Dienste können ein Logik-App-Endgerät zum Starten eines Workflows aufrufen. Sie finden das Endgerät, auf das Sie zugreifen möchten, indem Sie in Ihrer Logik-App über die Befehlsleistenschaltfläche **Einstellungen** zum Blatt **Eigenschaften** navigieren.
 
 Über diesen Rückruf können Sie eine Logik-App in Ihrer benutzerdefinierten Anwendung aufrufen. Sie müssen die **Standardauthentifizierung** verwenden. Der Benutzername `default` wird für Sie erstellt, und das Kennwort ist das Feld **Primärer Zugriffsschlüssel** auf dem Blatt **Eigenschaften**. Zum Beispiel:
 
@@ -143,4 +143,4 @@ Um eine Logik-App bei Bedarf zu starten, klicken Sie auf der Befehlsleiste auf d
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

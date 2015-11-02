@@ -69,7 +69,7 @@ Das Tokendienstmuster ist der empfohlene Weg zum Implementieren einer benutzerde
 
 Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 
-- [Erste Schritte mit IoT Hubs (Tutorial)][lnk-get-started]
+- [Erste Schritte mit IoT Hub (Lernprogramm)][lnk-get-started]
 - [Was ist Azure IoT Hub?][]
 
 [img-tokenservice]: ./media/iot-hub-guidance/tokenservice.png
@@ -88,4 +88,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

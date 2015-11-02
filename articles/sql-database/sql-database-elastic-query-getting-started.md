@@ -1,8 +1,6 @@
 <properties
-	title="Getting started with elastic database query"
-	pageTitle="Erste Schritte mit Abfragen für elastische Datenbanken"
-	description="Verwenden von Abfragen für elastische Datenbanken"
-	metaKeywords="azure sql database elastic queries"
+	pageTitle="Erste Schritte mit Abfragen für elastische Datenbanken bei Sharding (horizontaler Partitionierung) | Microsoft Azure"
+	description="Verwenden datenbankübergreifender Datenbankabfragen"
 	services="sql-database"
 	documentationCenter=""  
 	manager="jeffreyg"
@@ -14,10 +12,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/23/2015"
-	ms.author="sidneyh" />
+	ms.date="10/15/2015"
+	ms.author="SilviaDoomra" />
 
-# Erste Schritte mit Abfragen für elastische Datenbanken
+# Erste Schritte mit Abfragen für elastische Datenbanken bei Sharding (horizontaler Partitionierung)
 
 Mit Abfragen für elastische Datenbanken (Vorschau) für Azure SQL-Datenbank können Sie T-SQL-Abfragen ausführen, die sich mit einem einzigen Verbindungspunkt über mehrere Datenbanken erstrecken. Weitere Informationen zu Abfragen für elastische Datenbanken finden Sie auf der [Übersichtsseite zum Feature](sql-database-elastic-query-overview.md).
 
@@ -41,7 +39,7 @@ Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen a
 
 	Zum diesem Zeitpunkt werden datenbankübergreifende Abfragen durch die Clientbibliotheken für elastische Datenbanken unterstützt. Verwenden Sie z. B. Option 4 im Eingabeaufforderungsfenster. Die Ergebnisse einer Abfrage mit mehreren Shards sind immer ein **UNION ALL** der Ergebnisse aus allen Shards.
 
-	Im nächsten Abschnitt erstellen wir einen Endpunkt für eine Beispieldatenbank, der umfangreichere Abfragen der Daten über Shards hinweg unterstützt.
+	Im nächsten Abschnitt erstellen wir einen Endgerät für eine Beispieldatenbank, der umfangreichere Abfragen der Daten über Shards hinweg unterstützt.
 
 ## Erstellen einer elastischen Datenbankabfrage
 
@@ -126,7 +124,7 @@ Sie werden feststellen, dass die Abfrage Ergebnisse aus allen Shards aggregiert 
 Die Excel-Tabelle wird mit allen Zeilen aus der Tabelle **Customers** gefüllt, die in verschiedenen Shards gespeichert sind.
 
 ## Nächste Schritte
-Sie können jetzt die leistungsstarken Datenfunktionen von Excel verwenden. Sie können die Verbindungszeichenfolge mit dem Servernamen, Datenbanknamen und den Anmeldeinformationen zur Verbindung der BI und der Datenintegrationstools mit der elastischen Abfragedatenbank verwenden. Stellen Sie sicher, dass SQL Server als Datenquelle für das Tool unterstützt wird. Sie können auf die elastische Abfragedatenbank und die externen Tabellen wie auf jede andere SQL Server-Datenbank und SQL Server-Tabelle verweisen, zu denen Sie mit dem Tool eine Verbindung herstellen würden.
+Sie können jetzt die leistungsstarken Funktionen von Excel zur Datenvisualisierung verwenden. Sie können die Verbindungszeichenfolge mit dem Servernamen, Datenbanknamen und den Anmeldeinformationen zur Verbindung der BI und der Datenintegrationstools mit der elastischen Abfragedatenbank verwenden. Stellen Sie sicher, dass SQL Server als Datenquelle für das Tool unterstützt wird. Sie können auf die elastische Abfragedatenbank und die externen Tabellen wie auf jede andere SQL Server-Datenbank und SQL Server-Tabelle verweisen, zu denen Sie mit dem Tool eine Verbindung herstellen würden.
 
 ### Kosten
 Es gibt keine zusätzlichen Gebühren für die Verwendung der Abfragefunktion für elastische Datenbanken. Zum jetzigen Zeitpunkt steht dieses Feature nur für Premium-Datenbanken als Endpunkt zur Verfügung, die Shards können jedoch aus jeder Dienstebene stammen.
@@ -144,4 +142,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

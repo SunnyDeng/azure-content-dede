@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/13/2015"
+	ms.date="10/20/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -43,7 +43,9 @@ Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 ## Exportieren der Datenbank
 
-Öffnen Sie das Blatt „SQL-Datenbank“ für die Datenbank, die Sie als BACPAC-Datei exportieren möchten:
+Öffnen Sie das Blatt „SQL-Datenbank“ für die Datenbank, die Sie als BACPAC-Datei exportieren möchten.
+
+> [AZURE.IMPORTANT]Um eine im Hinblick auf Transaktionen konsistente BACPAC-Datei sicherzustellen, sollten Sie zunächst [eine Kopie Ihrer Datenbank erstellen](sql-database-copy.md) und dann die Datenbankkopie exportieren.
 
 1.	Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
 2.	Klicken Sie auf **ALLE DURCHSUCHEN**.
@@ -53,7 +55,7 @@ Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
     ![Schaltfläche „Exportieren“][1]
 
-1.  Klicken Sie auf **Storage**, und wählen Sie Ihr Speicherkonto und den Blobcontainer aus, in dem die BACPAC-Datei gespeichert wird:
+1.  Klicken Sie auf **Storage**, und wählen Sie Ihr Speicherkonto und den Blob-Container aus, in dem die BACPAC-Datei gespeichert wird:
 
     ![Datenbank exportieren][2]
 
@@ -101,4 +103,4 @@ Durch Klicken auf **Erstellen** wird eine Anforderung zum Exportieren der Datenb
 [4]: ./media/sql-database-export/export-status.png
 [5]: ./media/sql-database-export/bacpac-details.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

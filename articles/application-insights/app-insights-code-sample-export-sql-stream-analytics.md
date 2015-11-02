@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Exemplarische Vorgehensweise: Exportieren von Telemetriedaten in SQL-Datenbank mit Application Insights" 
-	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
+	description="Exportiere Sie Application Insights-Daten kontinuierlich in SQL mit Stream Analytics." 
 	services="application-insights" 
     documentationCenter=""
 	authors="noamben" 
@@ -314,4 +314,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

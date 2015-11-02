@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Azure On-Demand Media Encoder – Überblick und Vergleich" 
+	pageTitle="Azure On-Demand Media Encoder – Übersicht und Vergleich" 
 	description="Dieses Thema bietet eine Übersicht und einen Vergleich über Azure On-Demand-Media Encoder." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,25 +13,23 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015"  
+	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
-#Azure On-Demand Media Encoder – Überblick und Vergleich
+#Azure On-Demand Media Encoder – Übersicht und Vergleich
 
 ##Übersicht über die Codierung
 
-Encoder komprimieren digitale Medien mithilfe von Codecs. Encoder bieten üblicherweise verschiedene Einstellungen, mit denen Sie Eigenschaften der generierten Medien angeben können, z. B. verwendete Codecs, Dateiformat, Auflösung und Bitrate. Dateiformate sind Container, die das komprimierte Video sowie Informationen zu den Codecs enthalten, die für dessen Komprimierung verwendet wurden.
+Azure Media Services bietet verschiedene Optionen für die Codierung von Medien in der Cloud.
 
-Codecs verfügen über zwei Komponenten: eine zum Komprimieren digitaler Mediendateien für die Übertragung und die andere zum Dekomprimieren digitaler Mediendateien für die Wiedergabe. Für die Komprimierung und Dekomprimierung von Audiodaten existieren Audiocodecs, und für Videodaten entsprechend Videocodecs. Codecs können entweder verlustfreie oder verlustbehaftete Komprimierung verwenden. Verlustfreie Codecs erhalten bei der Komprimierung alle Informationen. Das Ergebnis der Dekomprimierung ist eine Datei, die identisch mit dem Eingabemedium ist. Verlustfreie Codecs eignen sich daher gut für Archivierung und Speicherung. Verlustbehaftete Codecs verlieren beim Komprimieren einen Teil der Informationen, produzieren kleinere Dateien (im Vergleich zum Original) auf Kosten der Videoqualität und eignen sich gut zum Streaming über das Internet.
-
-Es ist wichtig, den Unterschied zwischen Codecs und Dateiformaten zu kennen. Bei Codecs handelt es sich um die Software, die die Algorithmen für die Komprimierung/Dekomprimierung implementiert. Dateiformate dagegen sind die Container, die das komprimierte Video enthalten. Weitere Informationen finden Sie unter [Codierung im Vergleich zur Paketerstellung](http://blog-ndrouin.azurewebsites.net/streaming-media-terminology-explained/).
+Bei Verwendung von Media Services ist es wichtig, den Unterschied zwischen Codecs und Dateiformaten zu kennen. Bei Codecs handelt es sich um die Software, die die Algorithmen für die Komprimierung/Dekomprimierung implementiert. Dateiformate dagegen sind die Container, die das komprimierte Video enthalten.
 
 Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
 Um die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben)
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendgerät, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
 
 Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artikel beschrieben werden:
 
@@ -41,7 +39,7 @@ Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artik
 
 Dieser Artikel enthält eine kurze Übersicht über On-Demand-Media Encoder und stellt Links zu Artikeln bereit, die detailliertere Informationen bieten. Das Thema enthält auch einen Encodervergleich.
 
-Beachten Sie, dass jedes Media Services-Konto standardmäßig je eine aktive Codierungsaufgabe gleichzeitig aufweisen kann. Sie können Einheiten für die Codierung reservieren, mit denen Sie mehrere Codierungsaufgaben gleichzeitig ausführen kennen – jeweils eine für jede reservierte Einheit für die Codierung, die Sie erwerben. Weitere Informationen finden Sie unter [Skalieren von Codierungseinheiten](media-services-portal-encoding-units.md).
+Beachten Sie, dass jedes Media Services-Konto standardmäßig je eine aktive Codierungsaufgabe gleichzeitig aufweisen kann. Sie können Einheiten für die Codierung reservieren, mit denen Sie mehrere Codierungsaufgaben gleichzeitig ausführen kennen – jeweils eine für jede reservierte Einheit für die Codierung, die Sie erwerben. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units.md).
 
 ##Media Encoder Standard
 
@@ -66,7 +64,7 @@ Im Vergleich zu Azure Media Encoder unterstützt dieser Encoder weitere Eingabe-
 
 ###Voreinstellungen
 
-Media Encoder Standard wird mithilfe einer der Encoder-Voreinstellungen konfiguriert, die [hier](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409) beschrieben sind.
+Media Encoder Standard wird mithilfe von Encoder-Voreinstellungen konfiguriert, die [hier](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409) beschrieben sind.
 
 ###Eingabe- und Ausgabemetadaten
 
@@ -76,7 +74,7 @@ Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/li
 
 ###Miniaturansicht
 
-Informationen dazu, wie Miniaturansichten erstellt werden, finden Sie unter [Erstellen von Miniaturansichten über Media Encoder Standard](media-services-dotnet-generate-thumbnail-with-mes.md).
+Informationen dazu, wie Miniaturansichten erstellt werden, finden Sie unter [Generieren von Miniaturansichten mithilfe von Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md).
 
 ###Audio- und/oder Videoüberlagerungen
 
@@ -144,9 +142,9 @@ Media Encoder Premium Workflow ist mit komplexen Workflows konfiguriert. Workflo
 
 Medienprozessorname|Geltende Preise|Hinweise
 ---|---|---
-**Media Encoder Standard** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
-**Azure Media Encoder** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
-**Media Encoder Premium Workflow** |PREMIUM ENCODER|Codierungsaufgaben werden gemäß der Größe von Ausgabemedienobjekten in GB angegeben, und zwar zur [hier][1] angegebenen Rate in der Spalte PREMIUM ENCODER.
+**Media Encoder Standard** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabeassets in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
+**Azure Media Encoder** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabeassets in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
+**Media Encoder Premium Workflow** |PREMIUM ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabeassets in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte PREMIUM ENCODER.
 
 
 In diesem Abschnitt werden die Codierungsfunktionen von **Media Encoder Standard**, **Azure Media Encoder** und **Media Encoder Premium Workflow** verglichen.
@@ -256,4 +254,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

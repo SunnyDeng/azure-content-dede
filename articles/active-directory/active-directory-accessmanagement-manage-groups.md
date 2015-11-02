@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="10/21/2015" 
 	ms.author="femila"/>
 
 
@@ -25,9 +25,9 @@
 
 **So erstellen Sie eine Gruppe im Azure-Verwaltungsportal**
 
-1. Klicken Sie im Verwaltungsportal auf "Active Directory", und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
+1. Klicken Sie im Verwaltungsportal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
 2. Klicken Sie auf die Registerkarte **Gruppen**.
-3. Klicken Sie auf der Seite "Gruppen" auf **Gruppe hinzufügen**.
+3. Klicken Sie auf der Seite „Gruppen“ auf **Gruppe hinzufügen**.
 4. Geben Sie im Fenster **Gruppe hinzufügen** den Namen und die Beschreibung einer Gruppe ein.
 5. Diese Aufgabe kann entweder unter Verwendung des Office 365-Kontoportals, des Windows Intune-Kontoportals oder des Azure-Verwaltungsportals ausgeführt werden, je nachdem, welche Dienste Ihre Organisation abonniert hat. Weitere Informationen zur Verwendung von Portalen zum Verwalten von Azure Active Directory finden Sie unter "Verwalten Ihres Azure AD-Verzeichnisses".
 
@@ -39,7 +39,7 @@
 2. Klicken Sie auf die Registerkarte **Gruppen**.
 3. Klicken Sie auf der Seite **Gruppen** auf den Namen der Gruppe, der Sie Mitglieder hinzufügen möchten. Standardmäßig wird hier die Registerkarte **Mitglieder** der ausgewählten Gruppe angezeigt.
 4. Klicken Sie auf der Seite dieser Gruppe auf **Mitglieder hinzufügen**.
-5. Klicken Sie auf der Seite **Mitglieder hinzufügen** auf den Namen des Benutzers oder einer Gruppe, den bzw. die Sie als Mitglied dieser Gruppe hinzufügen möchten, und stellen Sie sicher, dass dieser Name dem Bereich "Ausgewählt" hinzugefügt wird.
+5. Klicken Sie auf der Seite **Mitglieder hinzufügen** auf den Namen des Benutzers oder einer Gruppe, den bzw. die Sie als Mitglied dieser Gruppe hinzufügen möchten, und stellen Sie sicher, dass dieser Name dem Bereich „Ausgewählt“ hinzugefügt wird.
 
 
 **So entfernen Sie im Azure-Verwaltungsportal ein Mitglied aus einer Gruppe**
@@ -48,7 +48,7 @@
 2. Klicken Sie auf die Registerkarte **Gruppen**.
 3. Klicken Sie auf der Seite "Gruppen" auf den Namen der Gruppe, aus der Sie Mitglieder entfernen möchten.
 4. Klicken Sie auf der Seite dieser Gruppe auf die Registerkarte **Mitglieder**.
-5. Klicken Sie auf der Seite dieser Gruppe auf den Namen des Mitglieds, das Sie aus dieser Gruppe entfernen möchten, und klicken Sie dann auf**Entfernen**.
+5. Klicken Sie auf der Seite dieser Gruppe auf den Namen des Mitglieds, das Sie aus dieser Gruppe entfernen möchten, und klicken Sie dann auf **Entfernen**.
 6. Überprüfen Sie, ob Sie dieses Mitglied aus der Gruppe entfernen möchten, indem Sie bei der Überprüfungsfrage für die Aktion auf **Ja** klicken.
 
 
@@ -68,4 +68,4 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

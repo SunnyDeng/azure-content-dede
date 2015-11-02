@@ -2,7 +2,6 @@
 	pageTitle="Verarbeiten von Daten aus SQL Azure | Microsoft Azure" 
 	description="Verarbeiten von Daten aus SQL Azure" 
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
 	authors="fashah" 
 	manager="paulettm" 
@@ -127,7 +126,7 @@ Die neu generierte Funktion kann als Spalte einer vorhandenen Tabelle hinzugefü
 
 ##<a name="python"></a>Mit einer Programmiersprache wie Python
 
-Die Verwendung von Python zum Durchsuchen von Daten und zum Generieren von Funktionen mit Daten in SQL Server ähnelt der Datenverarbeitung in Azure-Blobs mit Python, die [hier](machine-learning-data-science-process-data-blob.md) beschrieben ist. Die Daten müssen aus der Datenbank in ein Pandas-DataFrame geladen werden, um dann weiter verarbeitet werden zu können. In diesem Abschnitt werden das Herstellen einer Verbindung mit der Datenbank und das Laden der Daten in den DataFrame beschrieben.
+Die Verwendung von Python zum Durchsuchen von Daten und zum Generieren von Funktionen mit Daten in SQL Server ähnelt der Datenverarbeitung in Azure-Blobs mit Python, die unter [Verarbeiten von Azure-Blob-Daten in Ihrer Data Science-Umgebung](machine-learning-data-science-process-data-blob.md) beschrieben ist. Die Daten müssen aus der Datenbank in ein Pandas-DataFrame geladen werden, um dann weiter verarbeitet werden zu können. In diesem Abschnitt werden das Herstellen einer Verbindung mit der Datenbank und das Laden der Daten in den DataFrame beschrieben.
 
 Das folgende Format für die Verbindungszeichenfolge kann verwendet werden, um aus Python mit "pyodbc" eine Verbindung mit einer SQL Server-Datenbank herzustellen (ersetzen Sie "servername", "dbname", "username" und "password" durch Ihre Daten):
 
@@ -153,4 +152,4 @@ Ein umfassendes Beispiel für den Azure Data Science Process anhand eines öffen
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

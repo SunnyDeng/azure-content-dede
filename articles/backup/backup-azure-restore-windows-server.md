@@ -7,7 +7,7 @@
    manager="jwhit"
    editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/13/2015" ms.author="jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/21/2015" ms.author="jimpark"; "aashishr"/>
 
 # Wiederherstellen von Windows Server- oder Windows-Clientcomputern
 In diesem Artikel werden die erforderlichen Schritte für zwei Arten von Wiederherstellungsvorgängen erläutert:
@@ -109,4 +109,4 @@ In diesen Schritten wird folgende Terminologie verwendet:
 - [Sichern von virtuellen Azure-Computern](backup-azure-vms-introduction.md)
 - [Sichern von Microsoft-Workloads](backup-azure-dpm-introduction.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

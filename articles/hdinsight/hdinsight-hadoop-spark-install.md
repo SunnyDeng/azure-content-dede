@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in einem Hadoop-Cluster | Microsoft Azure"
+	pageTitle="Verwenden von Skriptaktionen zum Installieren von Spark in einem Hadoop-Cluster | Microsoft Azure"
 	description="Erfahren Sie, wie Sie HDInsight-Cluster mit Spark per Skriptaktion anpassen."
 	services="hdinsight"
 	documentationCenter=""
@@ -13,21 +13,29 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/02/2015"
+	ms.date="10/15/2015"
 	ms.author="nitinme"/>
 
-# Installieren und Verwenden von Spark in HDInsight-Clustern
+# Installieren und Verwenden von Spark in HDInsight-Clustern mithilfe von Script Action
 
+> [AZURE.IMPORTANT]Dieser Artikel ist jetzt veraltet. HDInsight verfügt jetzt über Spark als erstklassigen Clustertyp für Windows-basierte Cluster. Dies bedeutet, dass Sie einen Spark-Cluster jetzt direkt erstellen können, ohne einen Hadoop-Cluster mithilfe von Skriptaktionen ändern zu müssen. Mit dem Spark-Clustertyp erhalten Sie einen HDInsight-Cluster der Version 3.2 mit Spark-Version 1.3.1. Sie können Skriptaktionen verwenden, um verschiedene Versionen von Spark zu installieren. HDInsight verfügt über ein Beispielskript für Skriptaktionen.
 
 Erfahren Sie, wie Sie Spark für HDInsight auf Windows-Basis installieren, indem Sie Skriptaktionen verwenden, und wie Sie Spark-Abfragen auf HDInsight-Clustern ausführen.
 
-HDInsight verfügt über Spark als erstklassigen Clustertyp für Windows-basierte Cluster. Dies bedeutet, dass Sie einen Spark-Cluster jetzt direkt erstellen können, ohne einen Hadoop-Cluster ändern zu müssen. Mit dem Spark-Clustertyp erhalten Sie einen HDInsight-Cluster der Version 3.2 mit Spark-Version 1.3.1. Sie können Skriptaktionen verwenden, um verschiedene Versionen von Spark zu installieren. HDInsight verfügt über ein Beispielskript für Skriptaktionen.
 
-**Verwandte Artikel** - [Installieren von Spark auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-spark-install-linux.md). - [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zur Erstellung von HDInsight-Clustern. - [Erste Schritte mit Apache Spark für HDInsight](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql.md): Erstellen eines Clusters vom Typ „Spark“ unter Windows. - [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zur Anpassung von HDInsight-Clustern mithilfe von Skriptaktionen. - [Entwickeln von Script Action-Skripts für HDInsight](hdinsight-hadoop-script-actions.md).
+**Verwandte Artikel**: [Installieren von Spark auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-spark-install-linux.md).
+
+- [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zum Erstellen von HDInsight-Clustern.
+
+- [Erste Schritte mit Apache Spark für HDInsight](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql.md): Erstellen eines Clusters vom Typ „Spark“ unter Windows.
+
+- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zum Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen.
+
+- [Entwickeln von Script Action-Skripts für HDInsight](hdinsight-hadoop-script-actions.md)
 
 ## Was ist Spark?
 
-<a href="http://spark.apache.org/docs/latest/index.html" target="_blank">Apache Spark</a> ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von großen Datenmengen zu steigern. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen.
+<a href="http://spark.apache.org/docs/latest/index.html" target="_blank">Apache Spark</a> ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von Big Data zu steigern. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen.
 
 Spark kann auch für die herkömmliche datenträgerbasierte Datenverarbeitung genutzt werden. Spark hat einen Vorteil gegenüber dem herkömmlichen MapReduce-Framework, da in den Zwischenstufen Schreibvorgänge auf den Datenträger vermieden werden. Außerdem ist Spark kompatibel mit dem Hadoop Distributed File System (HDFS) und Azure-Blob-Speicher, damit die vorhandenen Daten problemlos über Spark bearbeitet werden können.
 
@@ -68,7 +76,7 @@ Sie können dieses Skript ändern oder ein eigenes Skript zum Installieren von a
 
 	Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
 
-Sie können das Skript auch zum Installieren von Giraph auf HDInsight mit Azure PowerShell oder dem HDInsight .NET SDK verwenden. Anweisungen zu diesen Verfahren finden Sie nachfolgend in diesem Thema.
+Sie können das Skript auch zum Installieren von Spark auf HDInsight mit Azure PowerShell oder dem HDInsight .NET SDK verwenden. Anweisungen zu diesen Verfahren finden Sie nachfolgend in diesem Thema.
 
 ## Verwenden von Spark in HDInsight
 Spark stellt APIs in Scala, Python und Java bereit. Sie können für die Ausführung von Spark-Abfragen auch die interaktive Spark-Shell verwenden. Dieser Abschnitt bietet eine Einführung in diese beiden Ansätze zum Arbeiten mit Spark:
@@ -110,7 +118,7 @@ Führen Sie die folgenden Schritte aus, um Spark-Abfragen über eine interaktive
 
 ###<a name="sparksql"></a>Ausführen von Spark-SQL-Abfragen mithilfe der Spark-Shell
 
-Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query Language), HiveQL oder Scala auszuführen. In diesem Abschnitt untersuchen wir, wie mit Spark eine Hive-Abfrage auf einer Hive-Beispieltabelle ausgeführt wird. Die in diesem Abschnitt verwendete Hive-Tabelle (namens **hivesampletable**) ist standardmäßig verfügbar, wenn Sie einen Cluster erstellen.
+Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query Language), HiveQL oder Scala auszuführen. In diesem Abschnitt untersuchen wir, wie mit Spark eine Hive-Abfrage auf einer Hive-Beispieltabelle ausgeführt wird. Die in diesem Abschnitt verwendete Hive-Tabelle (mit dem Namen **hivesampletable**) ist standardmäßig verfügbar, wenn Sie einen Cluster erstellen.
 
 >[AZURE.NOTE]Das folgende Beispiel wurde für **Spark 1.2.0** erstellt, das installiert wird, wenn Sie die Skriptaktion beim Erstellen von HDInsight 3.2-Clustern ausführen.
 
@@ -300,7 +308,7 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 - [Installieren von Spark auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-spark-install-linux.md): Installieren Sie Spark auf Linux-basierten HDInsight-Clustern.
 - [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Erstellen Sie HDInsight-Cluster.
 - [Erste Schritte mit Apache Spark auf HDInsight](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql.md): Führen Sie die ersten Schritte mit Spark für HDInsight aus.
-- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion][hdinsight-cluster-customize]\: Passen Sie HDInsight-Cluster mithilfe von Skriptaktionen an.
+- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Passen Sie HDInsight-Cluster mithilfe von Skriptaktionen an.
 - [Entwickeln von Script Action-Skripts für HDInsight](hdinsight-hadoop-script-actions.md): Entwickeln Sie Script Action-Skripts.
 - Unter [Installieren und Verwenden von R für HDInsight-Cluster][hdinsight-install-r] finden Sie Anweisungen bezüglich der Clusteranpassung zum Installieren und Verwenden von R in HDInsight Hadoop-Clustern. R ist eine Open-Source-Sprache und -Umgebung für statistische Berechnungen. Sie bietet Hunderte integrierter Statistikfunktionen und eine eigene Programmiersprache, die Aspekte der funktionalen und objektorientierten Programmierung kombiniert. Darüber hinaus werden umfangreiche Grafikfunktionen geboten.
 - [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht Ihnen, mithilfe von Hadoop Graphen zu verarbeiten, und kann mit Azure HDInsight verwendet werden.
@@ -311,4 +319,4 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [powershell-install-configure]: ../install-configure-powershell.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -272,9 +272,9 @@ Sie müssen das klassische VNet für die Verwendung der IP-Adresse des Gateways 
 
 4. Öffnen Sie die Datei, die Sie soeben heruntergeladen haben, und bearbeiten Sie das Element **LocalNetworkSite** für **vnet02**, um die IP-Adresse des Gateways für das neue VNet hinzuzufügen, die Sie in Schritt 1 weiter oben abgerufen haben. Das Element sollte ähnlich wie das folgende Beispiel aussehen.
 
-	      <LocalNetworkSite name="vnet03">
+	      <LocalNetworkSite name="vnet02">
 	        <AddressSpace>
-	          <AddressPrefix>10.3.0.0/16</AddressPrefix>
+	          <AddressPrefix>10.2.0.0/16</AddressPrefix>
 	        </AddressSpace>
 	        <VPNGatewayAddress>23.99.213.28</VPNGatewayAddress>
 	      </LocalNetworkSite>
@@ -363,4 +363,4 @@ Da die beiden VNets nun verbunden sind, müssen Sie die Konnektivität testen, i
 - Weitere Informationen zum [Netzwerkressourcenanbieter (Network Resource Provider, NRP) für ARM](../resource-groups-networking.md).
 - Anzeigen der allgemeinen Richtlinien zum [Erstellen einer S2S-VPN-Verbindung zwischen einem klassischen VNet und einem ARM-VNet](../virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

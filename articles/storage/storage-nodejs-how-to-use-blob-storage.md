@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Verwenden des Blob-Speichers mit Node.js | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blobinhalten verwenden. Die Beispiele sind in Node.js geschrieben."
+	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blobinhalten verwenden. Die Beispiele sind in Node.js geschrieben."
 	services="storage"
 	documentationCenter="nodejs"
 	authors="MikeWasson"
@@ -24,7 +24,7 @@
 
 ## Übersicht
 
-Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blobdienstes. Die Beispiele werden über die Node.js-API geschrieben. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
+Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blob-Dienstes. Die Beispiele werden über die Node.js-API geschrieben. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -32,7 +32,7 @@ Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azur
 
 ## Erstellen einer Node.js-Anwendung
 
-Anleitungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Cloud-Dienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder [Web-App mit WebMatrix].
+Anleitungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Cloudsienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder [Web-App mit WebMatrix].
 
 ## Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -201,7 +201,7 @@ Das `result` enthält eine `entries`-Sammlung. Hierbei handelt es sich um ein Ar
 
 Verwenden Sie zum Herunterladen von Daten aus einem Blob Folgendes:
 
-* **getBlobToFile** – schreibt die Blobinhalte in die Datei.
+* **getBlobToLocalFile** – schreibt die Blobinhalte in eine Datei.
 
 * **getBlobToStream** – schreibt die Blobinhalte in einen Datenstrom.
 
@@ -378,4 +378,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

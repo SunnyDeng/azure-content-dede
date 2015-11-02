@@ -19,15 +19,17 @@
 
 # Verwenden von Service Bus-Warteschlangen
 
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+
 In diesem Artikel wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die Szenarien behandeln die Themen **Erstellen von Warteschlangen, Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
 
 [AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
-> [AZURE.NOTE]Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie im [Python-Installationshandbuch](../python-how-to-install.md).
+> [AZURE.NOTE]Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie in den [Installationsanweisungen für Python](../python-how-to-install.md).
 
 ## Erstellen einer Warteschlange
 
-Das **ServiceBusService**-Objekt ermöglicht es Ihnen, mit Warteschlangen zu arbeiten. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Service Bus zugreifen möchten, den folgenden Code hinzu:
+Das **ServiceBusService**-Objekt ermöglicht Ihnen, mit Warteschlangen zu arbeiten. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Service Bus zugreifen möchten, den folgenden Code hinzu:
 
 ```
 from azure.servicebus import ServiceBusService, Message, Queue
@@ -105,13 +107,13 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Siehe [Warteschlangen, Themen und Abonnements][].
+-   Siehe [Service Bus-Warteschlangen, -Themen und -Abonnements][].
 
 [Eigenschaftenbereich]: http://manage.windowsazure.com
 [Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
-[Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
+[Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
 [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

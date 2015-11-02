@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/03/2015"
+   ms.date="10/15/2015"
    ms.author="larryfr"/>
 
 #Ausführen von Hive-Abfragen mit PowerShell
@@ -39,19 +39,19 @@ Azure PowerShell stellt *cmdlets* bereit, mit denen Sie Hive-Abfragen in HDInsig
 
 Die folgenden Cmdlets werden zum Ausführen der Hive-Abfragen auf einem HDInsight-Remotecluster verwendet:
 
-* **Add-AzureAccount**: Authentifiziert PowerShell für Ihr Azure-Abonnement
+* **Login-AzureRmAccount**: Authentifiziert Azure PowerShell für Ihr Azure-Abonnement
 
-* **New-AzureHDInsightHiveJobDefinition**: Erstellt mithilfe der angegebenen HiveQL-Anweisungen eine neue *Auftragsdefinition*
+* **New-AzureRmHDInsightHiveJobDefinition**: Erstellt mithilfe der angegebenen HiveQL-Anweisungen eine neue *Auftragsdefinition*
 
-* **Start-AzureHDInsightJob**: Sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrags*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
+* **Start-AzureRmHDInsightJob**: sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrags*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
 
-* **Wait-AzureHDInsightJob**: Verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
+* **Wait-AzureRmHDInsightJob**: verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
 
-* **Get-AzureHDInsightJobOutput**: Wird zum Abrufen des Auftrags verwendet
+* **Get-AzureRmHDInsightJobOutput**: wird zum Abrufen der Ausgabe des Auftrags verwendet
 
-* **Invoke-AzureHDInsightHiveJob**: wird zum Ausführen von HiveQL-Anweisungen verwendet. Dadurch wird die Abfrage vollständig blockiert und anschließend die Ergebnisse zurückgegeben
+* **Invoke-AzureRmHDInsightHiveJob**: wird zum Ausführen von HiveQL-Anweisungen verwendet. Dadurch wird die Abfrage vollständig blockiert und anschließend die Ergebnisse zurückgegeben
 
-* **Use-AzureHDInsightCluster**: Legt den aktuellen Cluster für die Verwendung mit dem Befehl **Invoke-Hive** fest
+* **Use-AzureRmHDInsightCluster**: Legt den aktuellen Cluster für die Verwendung mit dem Befehl **Invoke-Hive** fest
 
 Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines Auftrags auf dem HDInsight-Cluster verwendet werden:
 
@@ -59,19 +59,14 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 
 		#Specify the values
 		$clusterName = "CLUSTERNAME"
-		$resourceGroupName = "RESOURCEGROUPNAME"
-		$httpUsername = "HTTPUSERNAME"
-		$httpUserPassword  = "HTTPUSERPASSWORD"
-
-		# Switch to the ARM mode
-		Switch-AzureMode -Name AzureResourceManager
-		
+		$creds=Get-Credential
+        		
 		# Login to your Azure subscription
 		# Is there an active Azure subscription?
-		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
+		$sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Login-AzureRmAccount
 		}
 
 		#HiveQL
@@ -80,28 +75,43 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 				       "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
 
 		#Create an HDInsight Hive job definition
-		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString 
+		$hiveJobDefinition = New-AzureRmHDInsightHiveJobDefinition -Query $queryString 
 
 		#Submit the job to the cluster
 		Write-Host "Start the Hive job..." -ForegroundColor Green
 
-		$passwd = ConvertTo-SecureString $httpUserPassword -AsPlainText -Force
-		$creds = New-Object System.Management.Automation.PSCredential ($httpUsername, $passwd)
-		$hiveJob = Start-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
+		$hiveJob = Start-AzureRmHDInsightJob -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
 
 
 		#Wait for the Hive job to complete
 		Write-Host "Wait for the job to complete..." -ForegroundColor Green
-		Wait-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
+		Wait-AzureRmHDInsightJob -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
 
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
-		Get-AzureHDInsightJobOutput -ClusterName $clusterName -JobId $hiveJob.JobId -StandardOutput 
-
+		Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $hiveJob.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            
 2. Öffnen Sie eine neue **Azure PowerShell**-Befehlsaufforderung. Navigieren Sie zum Speicherort der Datei **hivejob.ps1**, und verwenden Sie folgenden Befehl zum Ausführen des Skripts:
 
 		.\hivejob.ps1
 
+    Beim Ausführen des Skripts werden Sie aufgefordert, die Anmeldeinformationen für das HTTPS-/Administratorkonto für den Cluster einzugeben. Sie werden außerdem möglicherweise dazu aufgefordert, sich bei Ihrem Azure-Abonnement anzumelden.
+    
 7. Nachdem der Auftrag abgeschlossen ist, muss er Informationen zurückgeben, die den folgenden ähneln:
 
 		Display the standard output...
@@ -110,7 +120,21 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 4. Wie bereits erwähnt, kann **Invoke-Hive** dazu verwendet werden, um eine Abfrage auszuführen und auf die Antwort zu warten. Verwenden Sie die folgenden Befehle, wobei Sie **CLUSTERNAME** durch den Namen des Clusters ersetzen.
 
 		Use-AzureHDInsightCluster CLUSTERNAME
-		Invoke-Hive -Query @"
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
+		Invoke-AzureRmHDInsightHiveJob `
+            -StatusFolder "wasb:///example/statusout" `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -Query @"
 		CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
 		INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
 		SELECT * FROM errorLogs;
@@ -133,8 +157,14 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 Wenn nach Abschluss des Auftrags keine Informationen zurückgegeben werden, ist während der Verarbeitung möglicherweise ein Fehler aufgetreten. Um Fehlerinformationen für diesen Auftrag anzuzeigen, fügen Sie Folgendes am Ende der Datei **hivejob.ps1** hinzu. Speichern Sie die Datei anschließend und führen Sie sie erneut aus.
 
 	# Print the output of the Hive job.
-	Write-Host "Display the standard output ..." -ForegroundColor Green
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardError
+	Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $job.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            -DisplayOutputType StandardError
 
 Dadurch werden die beim Ausführen des Auftrags an STDERR auf dem Server geschriebenen Informationen zurückgegeben, die möglicherweise hilfreich sind, um festzustellen, warum der Auftrag fehlgeschlagen ist.
 
@@ -154,4 +184,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Service Fabric-Anwendungslebenszyklus | Microsoft Azure"
+   pageTitle="Anwendungslebenszyklus in Service Fabric | Microsoft Azure"
    description="Beschreibt das Entwickeln, Bereitstellen, Testen, Aktualisieren, Verwalten und Entfernen von Service Fabric-Anwendungen."
    services="service-fabric"
    documentationCenter=".net"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/17/2015"
+   ms.date="10/15/2015"
    ms.author="ryanwi; mani-ramaswamy"/>
 
 
@@ -118,4 +118,4 @@ Weitere Informationen zum Entwickeln, Testen und Verwalten von Service Fabric-An
 - [REST-Based Application Lifecycle Sample](service-fabric-rest-based-application-lifecycle-sample.md) (in englischer Sprache)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -42,6 +42,7 @@ Die folgenden Zahlen stellen Näherungswerte dar.
 - CPU-Auslastung: ~ 1 % Zunahme
 - Arbeitsspeichernutzung: bis zu 10 % des insgesamt verfügbaren Systemarbeitsspeichers
 - Nutzung der Netzwerkbandbreite: ~ 1 MB pro 1000 AD FS-Anforderungen
+
 >[AZURE.NOTE]Falls der Agent nicht mit Azure kommunizieren kann, speichert er die Daten bis zu einem definierten maximalen Grenzwert lokal. Sobald der Agent diesen Grenzwert erreicht, überschreiben die neuen ADFS-Transaktionen alle zwischengespeicherten Transaktionen, falls der Agent die Daten nicht auf den Dienst hochladen konnte. Die am seltensten verwendeten Transaktionen werden dabei zuerst überschrieben.
 
 - Lokaler Pufferspeicher für AD Connect Health-Agent: ca. 20 MB
@@ -61,7 +62,7 @@ Beispielsweise erfordert die Installation des .NET 4.5-Frameworks unter Windows
 
 Ja. Für laufende Vorgänge können Sie den Health-Agent zum Weiterleiten ausgehender HTTP-Anforderungen mithilfe eines HTTP-Proxys konfigurieren. Weitere Informationen finden Sie unter [Konfigurieren des Azure AD Connect Health-Agents zur Verwendung eines HTTP-Proxys](active-directory-aadconnect-health-agent-install-adfs.md#configure-azure-ad-connect-health-agent-to-use-http-proxy).
 
-Wenn Sie einen Proxy während der Agent-Registrierung konfigurieren müssen, müssen Sie die Proxyeinstellungen Ihres Internet Explorers ändern. <br> Öffnen Sie "Internet Explorer -> Einstellungen -> Internetoptionen -> Verbindungen -> LAN-Einstellungen".<br> Wählen Sie "Proxyserver für LAN verwenden" aus.<br> Wählen Sie "Erweitert" aus, wenn Sie über unterschiedliche Proxyports für HTTP und HTTPS/Secure verfügen.<br>
+Wenn Sie einen Proxy während der Agent-Registrierung konfigurieren müssen, müssen Sie die Proxyeinstellungen Ihres Internet Explorers ändern. <br> Öffnen Sie Internet Explorer -> Einstellungen -> Internetoptionen -> Verbindungen -> LAN-Einstellungen.<br> Wählen Sie „Proxyserver für das LAN verwenden“ aus.<br> Wählen Sie „Erweitert“ aus, wenn Sie über unterschiedliche Proxyports für HTTP und HTTPS/Secure verfügen.<br>
 
 
 **F: Unterstützt der Azure AD Connect Health-Dienst die Standardauthentifizierung bei der Verbindung mit HTTP-Proxys?**
@@ -98,4 +99,4 @@ Sie müssen die TCP/UDP-Ports 80, 443 und 5671 öffnen, damit der Azure AD Con
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Azure AD Connect Health-Vorgänge](active-directory-aadconnect-health-operations.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

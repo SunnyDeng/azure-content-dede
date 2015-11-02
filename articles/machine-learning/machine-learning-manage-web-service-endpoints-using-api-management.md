@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Erfahren Sie, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten | Microsoft Azure"
 	description="Diese Leitfaden zeigt, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten."
-	keywords="machine learning,api management"
+	keywords="Maschinelles Lernen,API Management"
 	services="machine-learning"
 	documentationCenter=""
 	authors="roalexan"
@@ -26,7 +26,7 @@ Dieser Leitfaden beschreibt die ersten Schritte mit API Management zur Verwaltun
 
 ##Was ist Azure API Management?
 
-Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endpunkte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](http://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
+Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endgeräte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](http://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
 
 ##Was ist Azure ML?
 
@@ -68,7 +68,7 @@ Klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![manage-service](./media/machine-learning-manage-web-service-endpoints-using-api-management/manage-service.png)
 
-Klicken Sie auf der linken Seite im Menü **API Management** auf **APIs**, und klicken Sie anschließend auf **API hinzufügen**.
+Klicken Sie auf **APIs** im Menü **API Management** auf der linken Seite, und klicken Sie anschließend auf **API hinzufügen**.
 
 ![api-management-menu](./media/machine-learning-manage-web-service-endpoints-using-api-management/api-management-menu.png)
 
@@ -124,7 +124,7 @@ Klicken Sie im Hauptmenü auf **APIs** und anschließend auf **Azure ML-Demo-AP
 
 ![demoazureml-api](./media/machine-learning-manage-web-service-endpoints-using-api-management/demoazureml-api.png)
 
-Wählen Sie als Vorgang **RRS Execute** aus. Klicken auf **Ausprobieren**.
+Wählen Sie als Vorgang **RRS Execute** aus. Klicken Sie auf **Testen**.
 
 ![try-it](./media/machine-learning-manage-web-service-endpoints-using-api-management/try-it.png)
 
@@ -198,7 +198,7 @@ Klicken Sie auf **Yes**, um das Experiment zu veröffentlichen.
 
 ###Testen des Webdiensts
 
-Ein Azure ML-Webdienst besteht aus RRS-Endpunkten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endpunkten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python ](python-how-to-install.md)).
+Ein Azure ML-Webdienst besteht aus RRS-Endgeräten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endgeräten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python und SDK](python-how-to-install.md)).
 
 Sie benötigen auch den **Arbeitsbereich**, den **Dienst** und den **API-Schlüssel** Ihres Experiments für den unten stehenden Beispielcode. Sie finden den Arbeitsbereich und den Dienst, indem Sie im Webdienstdashboard für Ihr Experiment entweder auf **Anforderung/Antwort** oder auf **Batchausführung** klicken.
 
@@ -208,11 +208,11 @@ Den **API-Schlüssel** finden Sie, indem Sie im Webdienstdashboard auf Ihr Exper
 
 ![find-api-key](./media/machine-learning-manage-web-service-endpoints-using-api-management/find-api-key.png)
 
-####Testen des RRS-Endpunkts
+####Testen des RRS-Endgeräts
 
 #####Schaltfläche "Test"
 
-Um den RRS-Endpunkt zu testen, können Sie ganz einfach auf dem Webdienstdashboard auf **Test** klicken.
+Um das RRS-Endgerät zu testen, können Sie ganz einfach auf dem Webdienstdashboard auf **Test** klicken.
 
 ![test](./media/machine-learning-manage-web-service-endpoints-using-api-management/test.png)
 
@@ -257,7 +257,7 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
     	print(error.info())
     	print(json.loads(error.read()))
 
-####Testen des BES-Endpunkts
+####Testen des BES-Endgeräts
 Klicken Sie auf dem Dashboard auf **Batchausführung**, und scrollen Sie bis zum Ende. Sie sehen Beispielcode für C#, Python und R. Sie sehen auch die Syntax der BES-Anforderungen zum Übermitteln, Starten, Abrufen des Status und Löschen eines Auftrags.
 
 Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses Beispiel mit dem **Arbeitsbereich**, dem **Dienst** und dem **API-Schlüssel** Ihres Experiments bearbeiten. Darüber hinaus müssen Sie den **Speicherkontonamen**, den **Speicherkontoschlüssel** und den **Speichercontainernamen** ändern. Und schließlich müssen Sie den Speicherort der **Eingabedatei** und den Speicherort der **Ausgabedatei** bearbeiten.
@@ -384,4 +384,4 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	return
 	invokeBatchExecutionService()
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

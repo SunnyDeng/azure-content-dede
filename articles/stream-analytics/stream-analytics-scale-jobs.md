@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Skalieren von Stream Analytics-Aufträge zur Erhöhung des Durchsatzes | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Auftrags-Streaming-Einheiten skalieren."
-	keywords="analytics jobs,data stream,data streaming"
+	keywords="Analytics-Aufträge,Datenstrom,Datenstreaming"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -164,7 +164,7 @@ Im Azure-Vorschauportal können Sie unter „Einstellungen“ auf die Skalierung
 
 ![Überwachen von Aufträgen in Azure Stream Analytics][img.stream.analytics.monitor.job]
 
-Berechnen Sie den erwarteten Durchsatz der Arbeitsauslastung in Ereignissen/Sekunde. Für den Fall, dass der Durchsatz kleiner als erwartet ist, optimieren Sie die Eingabepartition und die Abfrage, und fügen Sie dem Auftrag zusätzliche Streaming-Einheiten hinzu.
+Berechnen Sie den erwarteten Durchsatz der Workload in Ereignissen/Sekunde. Für den Fall, dass der Durchsatz kleiner als erwartet ist, optimieren Sie die Eingabepartition und die Abfrage, und fügen Sie dem Auftrag zusätzliche Streaming-Einheiten hinzu.
 
 ## Skalierter ASA-Durchsatz – Raspberry Pi-Szenario ##
 
@@ -265,4 +265,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

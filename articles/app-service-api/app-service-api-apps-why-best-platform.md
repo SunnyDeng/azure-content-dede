@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/30/2015" 
+	ms.date="10/15/2015" 
 	ms.author="tdykstra"/>
 
 # Was sind API-Apps?
 
-API-Apps bieten eine leistungsfähige Plattform sowie ein Ökosystem zum Erstellen, Hosten, Nutzen und Bereitstellen von APIs in der Cloud und in lokalen Systemen. Stellen Sie Ihre API als API-App bereit, und profitieren Sie von einer für Unternehmen geeigneten Sicherheit, einfacher Zugriffssteuerung, hybrider und SaaS-Konnektivität, automatischer SDK-Generierung und nahtloser Integration in [Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
+API-Apps bieten eine leistungsfähige Plattform zum Erstellen, Hosten und Nutzen von APIs in der Cloud und in lokalen Systemen. Stellen Sie Ihre API als API-App bereit, und profitieren Sie von einer für Unternehmen geeigneten Sicherheit, einfacher Zugriffssteuerung, hybrider und SaaS-Konnektivität, automatischer SDK-Generierung und nahtloser Integration in [Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
 
 API-Apps sind Teil des [Azure App Service](../app-service/app-service-value-prop-what-is.md), der auch Web-Apps, mobile Apps und Logik-Apps umfasst.
 
@@ -42,21 +42,9 @@ Nutzen Sie eigene APIs in unveränderter Form: Es ist nicht erforderlich, den Co
 
 Darüber hinaus enthalten API-Apps [Features von App Service-Web-Apps](../app-service-web/app-service-web-overview.md).
 
->[AZURE.NOTE] [Azure API Management](/services/api-management/) ist ein separater Dienst, der Features wie Endpunktkonsolidierung und Drosselung bereitstellt. Sie können API Management mit API-Apps einsetzen.
+>[AZURE.NOTE] [Azure API Management](/services/api-management/) ist ein separater Dienst, der Features wie Endgerätkonsolidierung und Drosselung bereitstellt. Sie können API Management mit API-Apps einsetzen.
 >
 >API-Apps befindet sich derzeit in der öffentlichen Vorschau. [App Service-Web-Apps](../app-service-web/app-service-web-overview.md) ist ein allgemein verfügbaren Dienst zum weltweiten Erstellen und Hosten sicherer, unternehmenskritischer Anwendungen. Wenn Sie jetzt nach einem allgemein verfügbaren Dienst zum Erstellen Ihrer API suchen, ist Web-Apps eine hervorragende Option. Sobald API-Apps allgemein verfügbar ist, wird eine Möglichkeit bereitgestellt, vorhandene Web-Apps zu migrieren und die zusätzlichen Features von API-Apps zu nutzen.
-
-### API-Apps-Features, die in Zukunft verfügbar sein werden
-
-Bald wird für die API-Apps-Plattform ein umfangreiches Ökosystem an APIs bereitstehen, über das die Freigabe Ihres Codes ganz einfach ist:
-
-- **Öffentlicher und privater Marketplace** – Mit dem [Azure Marketplace](http://azure.microsoft.com/marketplace/) wird die Suche nach und das Bereitstellen vorkonfigurierter, von Microsoft und Drittanbietern entwickelten API-Apps für Ihr Azure-Abonnement vereinfacht. Es wird außerdem möglich sein, selbstentwickelte API-Apps zu paketieren und zu veröffentlichen, damit andere Entwickler diese für ihre Azure-Abonnements bereitstellen können. Wenn Sie Ihre APIs im Azure Marketplace veröffentlichen, können Sie festlegen, dass sie nur für Mitglieder Ihrer Organisation sichtbar sind. 
-
-- **Automatisches Bereitstellen von Abhängigkeiten** – Immer dann, wenn Sie eine API-App aus dem Marketplace für Ihr Azure-Abonnement bereitstellen, stellt Azure automatisch abhängige API-Apps bereit und erstellt die erforderlichen Ressourcen. Ein API-App-Paket gibt an, von welchen API-Apps es abhängt und welche Azure-Ressourcen erforderlich sind.
-
-- **Automatische Updates** – Wenn Sie den Code für ein API-App-Paket aktualisieren, das Sie freigegeben haben, können Sie das Update per Push an alle Benutzer weitergeben, die Ihre API-App installiert haben und ausführen. Dies funktioniert für Änderungen ohne Funktionsbeeinträchtigung (non-breaking) und für Benutzer, die den Empfang von Updates aktiviert haben.
-
-Viele dieser Features, beispielsweise Marketplace und automatische Updates, stehen für die von Microsoft bereitgestellten API-Apps bereits zur Verfügung.
 
 ## API-Apps – Konzepte ##
 
@@ -76,4 +64,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

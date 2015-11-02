@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="10/16/2015" 
 	ms.author="robb"/>
 
 #Anwendungsarchitektur in Microsoft Azure
@@ -95,7 +95,7 @@ Die CnE-Symbole liegen im Visio- und PNG-Format vor. Weitere Anweisungen zur Ver
 
 Der Symbolsatz wird vierteljährlich herausgegeben und aktualisiert, wenn neue Dienste erscheinen.
 
-Zusätzliche Symbole für Microsoft Office und zugehörige Technologien stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/en-us/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
+Zusätzliche Symbole für Microsoft Office und zugehörige Technologien stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/de-DE/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
 
 **Feedback:** Wenn Sie die CnE-Symbole verwendet haben, beantworten Sie die fünf Fragen unserer [Umfrage](http://aka.ms/azuresymbolssurveyv2). Wenn Sie Fragen oder Anliegen haben, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com). Ihre Meinung und Ihr Feedback interessieren uns, damit wir weiter an Verbesserungen arbeiten können.
 
@@ -108,4 +108,4 @@ Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu 
 
 ![Infografiken zur Azure-Architektur](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="10/15/2015" 
 	ms.author="spelluru"/>
 
 # Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors
@@ -58,9 +58,11 @@ In diesem Schritt erstellen Sie im Azure-Vorschauportal eine Azure Data Factory 
 7. Auf dem Blatt **Neue Data Factory** ist **Zum Startmenü hinzufügen** aktiviert.
 8. Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
 
-	Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data Factory-Name "ADFTutorialDataFactory" ist nicht verfügbar** ändern Sie den Namen der Data Factory (z. B.in "IhrNameADFTutorialDataFactory") und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialFactory". Im Thema [Data Factory – Benennungsregeln][data-factory-naming-rules] finden Sie Benennungsregeln für Data Factory-Artefakte.
+	Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data Factory-Name "ADFTutorialDataFactory" ist nicht verfügbar** ändern Sie den Namen der Data Factory (z. B.in "IhrNameADFTutorialDataFactory") und wiederholen den Vorgang. Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
 	 
 	![Data Factory-Name nicht verfügbar][image-data-factory-name-not-available]
+	
+	> [AZURE.NOTE]Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 
 9. Klicken Sie auf der linken Seite auf **BENACHRICHTIGUNGEN**, und suchen Sie nach Benachrichtigungen zum Erstellungsprozess. Klicken Sie auf **X**, um das Blatt **Benachrichtigungen** zu schließen, falls es geöffnet ist.
 10. Nach Abschluss der Erstellung wird das Blatt **DATA FACTORY** wie unten dargestellt angezeigt:
@@ -98,7 +100,7 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService
 
 	![Editor – Azure SQL-Einstellungen][image-editor-azure-sql-settings]
 
-2. Ersetzen Sie **servername**, **databasename**, ****username@servername** und **password** durch die Namen von Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.
+2. Ersetzen Sie **servername**, **databasename**, ****username@servername** und **password** durch die Namen des Azure SQL-Servers und der Datenbank bzw. durch Benutzerkonto und Kennwort.
 3. Klicken Sie auf der Symbolleiste auf **Bereitstellen**, um den verknüpften Dienst „AzureSqlLinkedService“ zu erstellen und bereitzustellen. 
    
 
@@ -145,12 +147,12 @@ Eine Tabelle ist ein rechteckiges Dataset und verfügt über ein Schema. In dies
 		
      Beachten Sie Folgendes:
 	
-	- Dataset **type** ist auf **AzureBlob** festgelegt.
+	- **dataset type** ist auf **AzureBlob** festgelegt.
 	- **linkedServiceName** ist auf **StorageLinkedService** festgelegt. Sie haben diesen verknüpften Dienst in Schritt 2 erstellt.
 	- **folderPath** ist auf den Container **adftutorial** festgelegt. Sie können auch den Namen eines Blobs innerhalb des Ordners angeben. Da Sie nicht den Namen des Blobs angeben, werden Daten aus allen Blobs im Container als Eingabedaten betrachtet.  
 	- **format: type** ist auf **TextFormat** festgelegt.
 	- Die Textdatei enthält die beiden Felder **FirstName** und **LastName**, die durch ein Komma getrennt sind (**columnDelimiter**).	
-	- Die Verfügbarkeit (**availability**) ist auf **hourly** festgelegt (**frequency** auf **hour** und **interval** auf **1**), sodass der Data Factory-Dienst den Stammordner im angegebenen Blobcontainer (**adftutorial**) stündlich auf Eingabedaten untersucht. 
+	- Die Verfügbarkeit (**availability**) ist auf **hourly** festgelegt (**frequency** auf **hour** und **interval** auf **1**), sodass der Data Factory-Dienst den Stammordner im angegebenen Blob-Container (**adftutorial**) stündlich auf Eingabedaten untersucht. 
 	
 
 	Wenn Sie keinen **fileName** für eine **Eingabe****tabelle** angeben, werden alle Dateien/Blobs aus dem Eingabeordner (**folderPath**) als Eingaben angesehen. Wenn Sie einen Dateinamen in der JSON-Datei angeben, wird nur die angegebene Datei/der angegebene Blob als Eingabe betrachtet. Beispiele finden Sie in den Beispieldateien des [Lernprogramms][adf-tutorial].
@@ -207,7 +209,7 @@ In diesem Teil des Schritts erstellen Sie eine Ausgabetabelle namens **EmpSQLTab
 		
      Beachten Sie Folgendes:
 	
-	* Dataset **type** ist auf **AzureSQLTable** festgelegt.
+	* **dataset type** ist auf **AzureSQLTable** festgelegt.
 	* **linkedServiceName** ist auf **AzureSqlLinkedService** festgelegt (diesen verknüpften Dienst haben Sie in Schritt 2 erstellt).
 	* **tablename** ist auf **emp** festgelegt.
 	* Die Tabelle "emp" der Datenbank enthält die drei Spalten **ID**, **FirstName** und **LastName**. "ID" ist jedoch eine Identitätsspalte, weshalb Sie hier nur **FirstName** und **LastName** angeben müssen.
@@ -278,7 +280,7 @@ In diesem Schritt erstellen Sie eine Pipeline mit einer **Kopieraktivität**, di
 	
 	Die Start- und Endzeit von Datums-/Uhrzeitangaben müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Angabe für **end** ist optional, wird aber in diesem Lernprogramm verwendet.
 	
-	Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an.
+	Wenn für die **end**-Eigenschaft kein Wert angegeben wird, wird sie als „**start + 48 Stunden**“ berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an.
 	
 	Im obigen Beispiel ergeben sich 24 Datenslices, da jede Stunde ein Datenslice erstellt wird.
 	
@@ -312,7 +314,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 
 1. Navigieren Sie zum [Azure-Vorschauportal][azure-preview-portal], sofern noch nicht geöffnet. 
 2. Wenn das Blatt für **ADFTutorialDataFactory** nicht geöffnet ist, klicken Sie zum Öffnen im **Startmenü** auf **ADFTutorialDataFactory**. 
-3. In diesem Fenster sollten die Anzahl und Namen der erstellten Tabellen und der Pipeline angezeigt werden.
+3. Auf diesem Blatt sollten die Anzahl und Namen der erstellten Tabellen und der Pipeline angezeigt werden.
 
 	![Startseite mit Namen][image-data-factory-get-started-home-page-pipeline-tables]
 
@@ -361,7 +363,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 	![Aktivitätsausführung – Details][image-data-factory-get-started-activity-run-details]
 
 	
-12. Klicken Sie auf **X**, um alle Blätter zu schließen, bis Sie such wieder im Startfenster für **ADFTutorialDataFactory** befinden.
+12. Klicken Sie auf **X**, um alle Blätter zu schließen, bis Sie such wieder auf dem Startblatt für **ADFTutorialDataFactory** befinden.
 14. (Optional) Klicken Sie auf der Startseite von **ADFTutorialDataFactory** auf **Pipelines**, dann auf dem Blatt **Pipelines** auf **ADFTutorialPipeline**, und führen Sie eine Detailsuche in den Eingabetabellen (**Consumed**) oder Ausgabetabellen (**Produced**) aus.
 15. Starten Sie **SQL Server Management Studio**, stellen Sie eine Verbindung mit der Azure SQL-Datenbank her, und überprüfen Sie, ob die Zeilen in die Tabelle **emp** der Datenbank eingefügt wurden.
 
@@ -501,4 +503,4 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 [image-data-factory-name-not-available]: ./media/data-factory-get-started-using-editor/getstarted-data-factory-not-available.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

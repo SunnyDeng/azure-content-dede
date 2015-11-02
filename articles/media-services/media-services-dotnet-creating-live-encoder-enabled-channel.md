@@ -1,9 +1,9 @@
 <properties 
 	pageTitle="Verwenden von .NET SDK, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird" 
-	description="In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines Kanals geführt, von dem ein Single-Bitrate-Livedatenstrom empfangen und in einen Multi-Bitrate-Datenstrom codiert wird." 
+	description="In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines Kanals mithilfe von .NET SDK geführt, von dem ein Single-Bitrate-Livedatenstrom empfangen und in einen Multi-Bitrate-Datenstrom codiert wird." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -11,9 +11,9 @@
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
+	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/14/2015"
+	ms.date="10/18/2015"  
 	ms.author="juliako"/>
 
 
@@ -51,20 +51,20 @@ Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestre
 
 	Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgemäß vom Kanal empfangen wird.
 
-2. Erstellen Sie ein Medienobjekt.
-3. Wenn das Medienobjekt während der Wiedergabe dynamisch verschlüsselt werden soll, führen Sie folgende Schritte aus:
+2. Erstellen Sie ein Asset.
+3. Wenn das Asset während der Wiedergabe dynamisch verschlüsselt werden soll, führen Sie folgende Schritte aus:
 	1. Erstellen Sie einen Inhaltsschlüssel.
 	1. Konfigurieren Sie eine Autorisierungsrichtlinie für Inhaltsschlüssel.
-	1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
-3. Erstellen Sie ein Programm, und legen Sie fest, dass das erstellte Medienobjekt verwendet werden soll.
-1. Veröffentlichen Sie das dem Programm zugeordnete Medienobjekt, indem Sie einen OnDemand-Locator erstellen.
+	1. Konfigurieren Sie Übermittlungsrichtlinien für Assets (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
+3. Erstellen Sie ein Programm, und legen Sie fest, dass das erstellte Asset verwendet werden soll.
+1. Veröffentlichen Sie das dem Programm zugeordnete Asset, indem Sie einen OnDemand-Locator erstellen.
 
-	Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
+	Stellen Sie sicher, dass auf dem Streamingendgerät, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
 
 1. Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm.
 2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt.
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
-1. Löschen Sie das Programm (und optional das Medienobjekt).
+1. Löschen Sie das Programm (und optional das Asset).
 
 ##In diesem Thema
 
@@ -73,11 +73,11 @@ In diesem Thema wird erläutert, wie mithilfe von Media Services .NET SDK versch
 In diesem Thema erfahren Sie, wie Sie die folgenden Aufgaben ausführen:
 
 1. Erstellen Sie einen Kanal, und starten Sie ihn. Verwenden Sie langfristige APIs.
-1. Erfassen Sie den Eingabeendpunkt der Kanäle. Dieser Endpunkt muss dem Encoder bereitgestellt werden, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
-1. Rufen Sie den Vorschauendpunkt ab. Dieser Endpunkt wird verwendet, um Ihren Datenstrom in der Vorschau anzuzeigen.
-1. Erstellen Sie ein Medienobjekt, das zum Speichern Ihrer Inhalte verwendet wird. Konfigurieren Sie außerdem Übermittlungsrichtlinien für Medienobjekte wie in diesem Beispiel gezeigt.
-1. Erstellen Sie ein Programm, und legen Sie fest, dass das zuvor erstellte Medienobjekt verwendet werden soll. Starten Sie das Programm. Verwenden Sie langfristige APIs.
-1. Erstellen Sie einen Locator für das Medienobjekt, damit der Inhalt veröffentlicht wird und an Ihre Kunden gestreamt werden kann.
+1. Erfassen Sie das Eingabeendgerät der Kanäle. Dieses Endgerät muss dem Encoder bereitgestellt werden, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
+1. Rufen Sie das Vorschauendgerät ab. Dieses Endgerät wird verwendet, um Ihren Datenstrom in der Vorschau anzuzeigen.
+1. Erstellen Sie ein Asset, das zum Speichern Ihrer Inhalte verwendet wird. Konfigurieren Sie außerdem Übermittlungsrichtlinien für Assets wie in diesem Beispiel gezeigt.
+1. Erstellen Sie ein Programm, und legen Sie fest, dass das zuvor erstellte Asset verwendet werden soll. Starten Sie das Programm. Verwenden Sie langfristige APIs.
+1. Erstellen Sie einen Locator für das Asset, damit der Inhalt veröffentlicht wird und an Ihre Kunden gestreamt werden kann.
 1. Blenden Sie Slates ein und aus. Starten und Beenden Sie Werbespots. Verwenden Sie langfristige APIs.
 1. Bereinigen Sie den Kanal und alle zugehörigen Ressourcen.
 
@@ -85,7 +85,7 @@ In diesem Thema erfahren Sie, wie Sie die folgenden Aufgaben ausführen:
 ##Überlegungen
 
 - Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
-- Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
+- Stellen Sie sicher, dass auf dem Streamingendgerät, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
 
 ##Voraussetzungen
 Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt sein:
@@ -517,4 +517,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

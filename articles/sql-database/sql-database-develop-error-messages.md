@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="10/15/2015" 
 	ms.author="genemi"/>
 
 
@@ -55,8 +55,6 @@ Vorübergehende Fehler werden mitunter auch als „Übergangsfehler“ bezeichne
 | Fehlernummer | Schweregrad | Beschreibung |
 | ---: | ---: | :--- |
 | 4060 | 16 | Die von der Anmeldung angeforderte „%.&#x2a;ls“-Datenbank kann nicht geöffnet werden. Fehler bei der Anmeldung. |
-|10928|20|Ressourcen-ID: %d. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637).<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Arbeitsthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx). |
-|10929|20|Ressourcen-ID: %d. Die %s-Mindestgarantie beträgt %d, der maximale Wert beträgt %d und die aktuelle Nutzung für die Datenbank beträgt %d. Der Server ist jedoch derzeit zu stark ausgelastet, um Anforderungen über %d für diese Datenbank zu unterstützen. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637). Versuchen Sie es andernfalls später noch einmal.<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Arbeitsthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx).|
 |40197|17|Dienstfehler beim Verarbeiten Ihrer Anforderung. Wiederholen Sie den Vorgang. Fehlercode %d.<br/><br/>Sie erhalten diesen Fehler, wenn der Dienst aufgrund von Software- oder Hardwareupgrades, Hardwarefehlern oder sonstigen Failoverproblemen ausgefallen ist. Der Fehlercode (%d), der in der Meldung zum Fehler 40197 enthalten ist, liefert weitere Informationen zur Art des aufgetretenen Fehlers oder Failovers. Beispiele für Fehlercodes, die in die Meldung zum Fehler 40197 eingebettet sind, lauten 40020, 40143, 40166 und 40540.<br/><br/>Wenn Sie erneut eine Verbindung mit Ihrem SQL-Datenbank-Server herstellen, werden Sie automatisch mit einer intakten Kopie Ihrer Datenbank verbunden. Ihre Anwendung muss den Fehler 40197 abfangen, den für die Problembehandlung in der Meldung enthaltenen Fehlercode (%d) protokollieren und versuchen, eine neue Verbindung mit SQL-Datenbank herzustellen, bis die Ressourcen verfügbar sind, damit Ihre Verbindung wiederhergestellt wird.|
 |40501|20|Der Dienst ist derzeit ausgelastet. Wiederholen Sie die Anforderung in 10 Sekunden. Vorgangs-ID: %ls. Code: %d.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zur Fehlerbehebung finden Sie unter:<br/>•[Azure SQL-Datenbankeinschränkung](http://msdn.microsoft.com/library/azure/dn338079.aspx).
 |40613|17|Die „%.&#x2a;ls“-Datenbank auf Server „%.&#x2a;ls“ ist zurzeit nicht verfügbar. Wiederholen Sie den Verbindungsversuch später. Falls das Problem weiterhin besteht, wenden Sie sich an den Kundensupport und geben als Ablaufverfolgungs-ID der Sitzung „%.&#x2a;ls“ an.|
@@ -110,6 +108,8 @@ In der folgende Tabelle sind die Fehler enthalten, die beim Arbeiten mit Azure S
 
 |Fehlernummer|Schweregrad|Beschreibung|
 |---:|---:|:---|
+|10928|20|Ressourcen-ID: %d. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637).<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Workerthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx). |
+|10929|20|Ressourcen-ID: %d. Die %s-Mindestgarantie beträgt %d, der maximale Wert beträgt %d und die aktuelle Nutzung für die Datenbank beträgt %d. Der Server ist jedoch derzeit zu stark ausgelastet, um Anforderungen über %d für diese Datenbank zu unterstützen. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637). Versuchen Sie es andernfalls später noch einmal.<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Workerthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx).|
 |40544|20|Das Datenbankkontingent wurde erreicht. Partitionieren oder löschen Sie Daten, löschen Sie Indizes, oder informieren Sie sich in der Dokumentation über mögliche Lösungen.|
 |40549|16|Die Sitzung wird aufgrund einer Transaktion mit langer Laufzeit beendet. Verkürzen Sie die Transaktion.|
 |40550|16|Die Sitzung wurde beendet, da zu viele Sperren abgerufen wurden. Reduzieren Sie die Anzahl der in einer einzelnen Transaktion gelesenen oder geänderten Zeilen.|
@@ -208,7 +208,7 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40607|16|Windows-Anmeldungen werden in dieser SQL Server-Version nicht unterstützt.|
 |40611|16|Für Server können maximal 128 Firewallregeln definiert werden.|
 |40614|16|Die IP-Endadresse der Firewallregel darf nicht vor der IP-Startadresse liegen.|
-|40615|16|Der bei der Anmeldung angeforderte Server „{0}“ kann nicht geöffnet werden. Der Client mit der IP-Adresse „{1}“ hat keine Zugriffsberechtigung für den Server. Aktivieren Sie den Zugriff über das SQL Azure-Portal, oder indem Sie „sp\_set\_firewall\_rule“ für die master-Datenbank ausführen, um eine Firewallregel für diese IP-Adresse bzw. diesen IP-Adressbereich zu erstellen. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird.|
+|40615|16|Der bei der Anmeldung angeforderte Server „{0}“ kann nicht geöffnet werden. Der Client mit der IP-Adresse „{1}“ hat keine Zugriffsberechtigung für den Server. Aktivieren Sie den Zugriff über das SQL-Datenbank-Portal, oder indem Sie „sp\_set\_firewall\_rule“ für die master-Datenbank ausführen, um eine Firewallregel für diese IP-Adresse bzw. diesen IP-Adressbereich zu erstellen. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird.|
 |40617|16|Der mit <rule name> beginnende Name der Firewallregel ist zu lang. Die maximale Länge beträgt 128.|
 |40618|16|Der Name für die Firewallregel darf nicht leer sein.|
 |40620|16|Fehler bei der Anmeldung für den Benutzer „%.&#x2a;ls“. Fehler bei der Kennwortänderung. Kennwortänderungen während der Anmeldung werden in dieser SQL Server-Version nicht unterstützt.|
@@ -242,4 +242,4 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 - [Allgemeine Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/ee336245.aspx)
 - [Ressourcenverwaltung](http://msdn.microsoft.com/library/azure/dn338083.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

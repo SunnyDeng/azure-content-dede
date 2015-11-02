@@ -34,6 +34,8 @@ Eine Übersicht darüber, wie App Service-Umgebungen hochskalierbaren und sicher
 
 Eine ausführliche Betrachtung von horizontaler Skalierung mit mehreren App Service-Umgebungen finden Sie im Artikel zum Einrichten einer [geografisch verteilten App][GeodistributedAppFootprint].
 
+Informationen darüber, wie die in AzureCon Deep Dive gezeigte Sicherheitsarchitektur konfiguriert wurde, finden Sie im Artikel über das Implementieren einer [Mehrschicht-Sicherheitsarchitektur](app-service-app-service-environment-layered-security.md) in App Service-Umgebungen.
+
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Dedizierte Serverressourcen ##
@@ -52,15 +54,15 @@ Ausführliche Informationen über die Menge von Computeressourcen, die den Front
 Weitere Informationen zu den verfügbaren Computeressourcengrößen, die in einer App Service-Umgebung unterstützt werden, finden Sie auf der Seite [App Service-Preise][AppServicePricing]. Sehen Sie sich die verfügbaren Optionen für App Service-Umgebungen im Premium-Tarif an.
 
 ## Unterstützung für virtuelle Netzwerke ##
-Eine App Service-Umgebung kann entweder in einem bereits vorhandenen oder in einem neuen regionalen, klassischen virtuellen v1-Netzwerk erstellt werden ([weitere Informationen zu virtuellen Netzwerken][MoreInfoOnVirtualNetworks]). Da eine App Service-Umgebung sich immer in einem regionalen virtuellen Netzwerk, genauer gesagt in einem Subnetz eines regionalen virtuellen Netzwerks befindet, können Sie die Sicherheitsfunktionen virtueller Netzwerke zum Steuern sowohl der eingehenden als auch der ausgehenden Netzwerkkommunikation nutzen.
+Eine App Service-Umgebung kann entweder in einem bereits vorhandenen oder in einem neuen regionalen, klassischen virtuellen „v1“-Netzwerk erstellt werden ([weitere Informationen zu virtuellen Netzwerken][MoreInfoOnVirtualNetworks]). Da eine App Service-Umgebung sich immer in einem regionalen virtuellen Netzwerk, genauer gesagt in einem Subnetz eines regionalen virtuellen Netzwerks befindet, können Sie die Sicherheitsfunktionen virtueller Netzwerke zum Steuern sowohl der eingehenden als auch der ausgehenden Netzwerkkommunikation nutzen.
 
 Mithilfe von [Netzwerksicherheitsgruppen][NetworkSecurityGroups] können Sie die eingehende Netzwerkkommunikation mit dem Subnetz einschränken, das eine App Service-Umgebung enthält. Dadurch können Sie Apps hinter Upstreamgeräten und -diensten ausführen wie z. B. Web Application Firewalls und Netzwerk-SaaS-Anbietern.
 
-Apps müssen häufig auch auf Unternehmensressourcen wie interne Datenbanken und Webdienste zugreifen. Ein gängiger Ansatz besteht darin, diese Endpunkte nur für internen Netzwerkdatenverkehr verfügbar zu machen, der innerhalb eines virtuellen Azure-Netzwerks fließt. Sobald eine App Service-Umgebung demselben virtuellen Netzwerk angeschlossen wird wie die internen Dienste, können die in der Umgebung ausgeführten Apps auf diese zugreifen. Dies gilt auch für Endpunkte, die über [Site-to-Site-][SiteToSite] und [Azure ExpressRoute][ExpressRoute]-Verbindungen erreichbar sind.
+Apps müssen häufig auch auf Unternehmensressourcen wie interne Datenbanken und Webdienste zugreifen. Ein gängiger Ansatz besteht darin, diese Endgeräte nur für internen Netzwerkdatenverkehr verfügbar zu machen, der innerhalb eines virtuellen Azure-Netzwerks fließt. Sobald eine App Service-Umgebung demselben virtuellen Netzwerk angeschlossen wird wie die internen Dienste, können die in der Umgebung ausgeführten Apps auf diese zugreifen. Dies gilt auch für Endgeräte, die über [Site-to-Site-][SiteToSite] und [Azure ExpressRoute][ExpressRoute]-Verbindungen erreichbar sind.
 
-Für weitere Details zur Funktionsweise der App Service-Umgebungen mit virtuellen und lokalen Netzwerken finden Sie in den folgenden Artikeln zu [Netzwerkarchitektur][NetworkArchitectureOverview], [Steuern des eingehenden Datenverkehrs][ControllingInboundTraffic] und [Sichere Verbindung mit Back-Ends][SecurelyConnectingToBackends].
+Für weitere Details zur Funktionsweise der App Service-Umgebungen mit virtuellen und lokalen Netzwerken finden Sie in den folgenden Artikeln [Übersicht über die Netzwerkarchitektur von App Service-Umgebungen][NetworkArchitectureOverview], [Steuern von eingehendem Datenverkehr in eine App Service-Umgebung][ControllingInboundTraffic] und [Sicheres Verbinden mit Back-End-Ressourcen von einer App Service-Umgebung aus][SecurelyConnectingToBackends].
 
-**Hinweis:** Eine App Service-Umgebung kann nicht in einem virtuellen v2-Netzwerk erstellt werden.
+**Hinweis:** Eine App Service-Umgebung kann nicht in einem „v2“ virtuellen Netzwerk erstellt werden.
 
 ## Erste Schritte
 
@@ -68,9 +70,9 @@ Informationen zum Einstieg in App Service-Umgebungen finden Sie unter [Erstellen
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service][AzureAppService].
 
-Eine Übersicht über die Netzwerkarchitektur der App Service-Umgebung finden Sie im Artikel [Übersicht über die Netzwerkarchitektur][NetworkArchitectureOverview].
+Eine Übersicht über die Netzwerkarchitektur der App Service-Umgebung finden Sie im Artikel [Übersicht über die Netzwerkarchitektur von App Service-Umgebungen][NetworkArchitectureOverview].
 
-Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden Sie im folgenden Artikel zu [ExpressRoute und App Service-Umgebungen][NetworkConfigDetailsForExpressRoute].
+Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden Sie im folgenden Artikel [Details zur Netzwerkkonfiguration für App Service-Umgebungen mit ExpressRoute][NetworkConfigDetailsForExpressRoute].
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
@@ -101,4 +103,4 @@ Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden 
 
 <!-- IMAGES -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

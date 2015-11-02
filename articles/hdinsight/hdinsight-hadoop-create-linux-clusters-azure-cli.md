@@ -1,6 +1,6 @@
 <properties
-   	pageTitle="Bereitstellen von Hadoop-, HBase- oder Storm-Clustern unter Linux in HDInsight mithilfe der Azure-Befehlszeilenschnittstelle | Microsoft Azure"
-   	description="Erfahren Sie, wie Hadoop-, HBase- oder Storm-Cluster unter Linux für HDInsight mithilfe der Azure-Befehlszeilenschnittstelle erstellt werden."
+   	pageTitle="Bereitstellen von Hadoop-, HBase- oder Storm-Clustern unter Linux in HDInsight mithilfe der plattformübergreifenden Azure-Befehlszeilenschnittstelle | Microsoft Azure"
+   	description="Erfahren Sie, wie Sie Linux-basierte HDInsight-Cluster mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle, Azure-Ressourcen-Manager-Vorlagen und der Azure-REST-API erstellen. Sie können den Cluster-Typ (Hadoop, HBase oder Storm) angeben oder Skripts verwenden, um benutzerdefinierte Komponenten zu installieren."
    	services="hdinsight"
    	documentationCenter=""
    	authors="Blackmist"
@@ -117,4 +117,4 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 * [Verwenden von Python-Komponenten im Storm in HDInsight](hdinsight-storm-develop-python.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

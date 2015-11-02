@@ -3,7 +3,7 @@
 	description="In diesem Artikel wird beschrieben, wie Sie mithilfe von Azure Media Services (AMS) einen Stream übermitteln, der von AMS mit PlayReady- und Widevine-DRMs dynamisch verschlüsselt wird. Die PlayReady-Lizenz stammt vom Media Services PlayReady-Lizenzserver, und die Widevine-Lizenz wird vom castLabs-Lizenzserver übermittelt." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Mingfeiy,Juliako" 
+	authors="Mingfeiy,willzhan,Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -26,6 +26,8 @@
 ##Übersicht
 
 In diesem Artikel wird beschrieben, wie Sie mithilfe von Azure Media Services (AMS) einen Stream übermitteln, der von AMS mit PlayReady- und Widevine-DRMs dynamisch verschlüsselt wird. Die PlayReady-Lizenz stammt vom Media Services PlayReady-Lizenzserver, und die Widevine-Lizenz wird vom **castLabs**-Lizenzserver übermittelt.
+
+Für die Wiedergabe von durch CENC (PlayReady und/oder Widevine) geschützten Streaminginhalten können Sie [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) verwenden. Ausführliche Informationen dazu finden Sie in der [AMP-Dokumentation](http://amp.azure.net/libs/amp/latest/docs/) (in englischer Sprache).
 
 In der folgenden Abbildung ist eine allgemeine Azure Media Services- und castLabs-Integrationsarchitektur dargestellt.
 
@@ -63,7 +65,7 @@ In der folgenden Tabelle wird das in castLabs verwendete JWT-Token beschrieben.
 Name|Beschreibung
 ---|---
 optData|Eine JSON-Zeichenfolge, die Informationen über Sie enthält. 
-crt|Eine JSON-Zeichenfolge mit Angaben zum Medienobjekt, den zugehörigen Lizenzinformationen und Wiedergaberechten.
+crt|Eine JSON-Zeichenfolge mit Angaben zum Asset, den zugehörigen Lizenzinformationen und Wiedergaberechten.
 iat|Aktuelles Datum und aktuelle Uhrzeit in der Epoche.
 jti|Ein eindeutiger Bezeichner des Tokens (jedes Token kann im castLabs-System nur einmal verwendet werden).
 
@@ -71,19 +73,19 @@ jti|Ein eindeutiger Bezeichner des Tokens (jedes Token kann im castLabs-System n
 
 Die [Beispiellösung](https://github.com/AzureMediaServicesSamples/CastlabsIntegration) besteht aus zwei Projekten:
 
--	Einer Konsolenanwendung, mit der DRM-Einschränkungen für ein bereits eingefügtes Medienobjekt für PlayReady und Widevine festgelegt werden können.
+-	Einer Konsolenanwendung, mit der DRM-Einschränkungen für ein bereits eingefügtes Asset für PlayReady und Widevine festgelegt werden können.
 -	Einer Webanwendung, die Token ausgibt und als SEHR VEREINFACHTE Version eines STS aufgefasst werden kann.
 
 
 So verwenden Sie die Konsolenanwendung
 
 1.	Ändern Sie die Datei "app.config", und richten Sie die AMS-Anmeldeinformationen, die castLabs-Anmeldeinformationen, die STS-Konfiguration und den gemeinsam verwendeten Schlüssel ein.
-2.	Laden Sie ein Medienobjekt in AMS hoch.
-3.	Rufen Sie die UUID aus dem hochgeladenen Medienobjekt ab, und ändern Sie die Zeile 32 in der Datei "Program.cs":
+2.	Laden Sie ein Asset in AMS hoch.
+3.	Rufen Sie die UUID aus dem hochgeladenen Asset ab, und ändern Sie die Zeile 32 in der Datei "Program.cs":
 
 		 var objIAsset = _context.Assets.Where(x => x.Id == "nb:cid:UUID:dac53a5d-1500-80bd-b864-f1e4b62594cf").FirstOrDefault();
 
-4.	Verwenden Sie zur Benennung des Medienobjekts im castLabs-System eine AssetId (Zeile 44 in der Datei "Program.cs").
+4.	Verwenden Sie zur Benennung des Assets im castLabs-System eine AssetId (Zeile 44 in der Datei "Program.cs").
 
 	Für die AssetId für **castLabs** müssen Sie eine eindeutige alphanumerische Zeichenfolge festlegen.
 
@@ -98,24 +100,18 @@ So verwenden Sie die Webanwendung (STS)
 
 ##Wiedergeben eines Videos
 
-Ein durch allgemeine Verschlüsselung (PlayReady) verschlüsseltes Video können Sie mit dem [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) wiedergeben. Wenn Sie die Konsolenanwendung ausführen, werden die Inhaltsschlüssel-ID und die Manifest-URL ausgegeben.
+Ein durch allgemeine Verschlüsselung (PlayReady und/oder Widevine) verschlüsseltes Video können Sie mit dem [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) wiedergeben. Wenn Sie die Konsolenanwendung ausführen, werden die Inhaltsschlüssel-ID und die Manifest-URL ausgegeben.
 
 1.	Öffnen Sie eine neue Registerkarte, und starten Sie das STS: http://[yourStsName].azurewebsites.net/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid].
 2.	Wechseln Sie zu [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
 3.	Fügen Sie die Streaming-URL ein.
 4.	Klicken Sie auf das Kontrollkästchen **Erweiterte Optionen**.
-5.	Wählen Sie in der Dropdownliste **Schutz** die Option "PlayReady" aus.
-6.	Fügen Sie im Textfeld "Token" das Token ein, das Sie vom STS abgerufen haben.
+5.	Wählen Sie in der Dropdownliste **Schutz** die Option „PlayReady and/or Widevine“ aus.
+6.	Fügen Sie im Textfeld "Token" das Token ein, das Sie vom STS abgerufen haben. 
+	
+	Für den castLabs-Lizenzserver ist das Präfix "Bearer=" vor dem Token nicht erforderlich. Entfernen Sie dieses Präfix vor dem Übermitteln des Tokens.
 7.	Aktualisieren Sie den Player.
 8.	Das Video sollte wiedergegeben werden.
-
-Wenn Sie das geschützte Video in HTML5 in Chrome mit dem castLabs-Player wiedergeben möchten, wenden Sie sich an yanmf@microsoft.com, um Zugriff auf den Player zu erhalten. Wenn Sie Zugriff haben, sind zwei Punkte zu berücksichtigen:
-
-1.	Der castLabs-Player benötigt Zugriff auf die MPEG-DASH-Manifestdatei. Hängen Sie daher (format=mpd-time-csf) an Ihre Manifestdatei an, um anstelle der Smooth Streaming-Standarddatei die MPEG-DASH-Manifestdatei abzurufen.
-
-2.	Für den castLabs-Lizenzserver ist das Präfix "Bearer=" vor dem Token nicht erforderlich. Entfernen Sie dieses Präfix vor dem Übermitteln des Tokens.
-
- 
 
 ##Media Services-Lernpfade
 
@@ -124,4 +120,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

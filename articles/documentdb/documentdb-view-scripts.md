@@ -2,7 +2,7 @@
 	pageTitle="Anzeigen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer | Microsoft Azure"
 	description="Erfahren Sie mehr über den DocumentDB-Skript-Explorer, ein Azure-Vorschauportaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen."
 	services="documentdb"
-	authors="stephbaron"
+	authors="AndrewHoh"
 	manager="jhubbard"
 	editor="monicar"
 	documentationCenter=""/>
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article" 
 	ms.date="09/02/2015"
-	ms.author="stbaro"/>
+	ms.author="anhoh"/>
 
 # Anzeigen, Bearbeiten und Erstellen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer
 
@@ -106,4 +106,4 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

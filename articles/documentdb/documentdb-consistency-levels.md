@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Konsistenzebenen in DocumentDB | Microsoft Azure" 
 	description="Erfahren Sie, wie DocumentDB über vier Konsistenzebenen mit zugehörigen Leistungsstufen verfügt, um vorhersehbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz eingehen zu können." 
-	keywords="eventual consistency, documentdb, azure, Microsoft azure"
+	keywords="Eventual Consistency,DocumentDB,Azure,Microsoft Azure"
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
@@ -40,9 +40,9 @@ Sie können eine Standardkonsistenzebene für Ihr Datenbankkonto konfigurieren, 
  
 Mit der Konsistenzebene "Strong" wird eine absolute Datenkonsistenz gewährleistet, jedoch die niedrigste Stufe an Lese- und Schreibleistung geboten.
 
-**Bounded staleness**: Mit der Konsistenzebene "Bounded staleness" wird die Gesamtreihenfolge bei der Weitergabe von Schreibvorgängen gewährleistet, wobei die Lesevorgänge gegenüber den Schreibvorgängen um höchstens K-Präfixe verzögert sein können. Der Lesevorgang wird immer vom Mehrheitsquorum der Replikate bestätigt. Die Antwort auf diese Leseanforderung gibt ihre relative Aktualität (in Form von K) an.
+**Bounded staleness**: Mit der Konsistenzebene "Bounded staleness" wird die Gesamtreihenfolge bei der Weitergabe von Schreibvorgängen gewährleistet, wobei die Lesevorgänge gegenüber den Schreibvorgängen um höchstens K-Präfixe verzögert sein können. Der Lesevorgang wird immer vom Mehrheitsquorum der Replikate bestätigt. Die Antwort auf diese Leseanforderung gibt ihre relative Aktualität (in Form von K) an. Mit Bounded Staleness können Sie konfigurierbare Schwellenwerte für die Alterung (als Präfixe oder Zeitwerte) von Lesevorgängen einstellen, um einen Kompromiss zwischen Latenz und Konsistenz im stabilen Zustand herzustellen.
 
-"Bounded staleness" bietet besser vorhersagbares Verhalten für die Lesekonsistenz mit der niedrigsten Latenz bei Schreibvorgängen. Da Lesevorgänge von einem Mehrheitsquorum bestätigt werden, ist die Leselatenz nicht die niedrigste, die vom System geboten wird.
+"Bounded staleness" bietet besser vorhersagbares Verhalten für die Lesekonsistenz mit der niedrigsten Latenz bei Schreibvorgängen. Da Lesevorgänge von einem Mehrheitsquorum bestätigt werden, ist die Leselatenz nicht die niedrigste, die vom System geboten wird. Bounded Staleness ist eine Option für Szenarios, bei denen starke Konsistenz gefragt, jedoch nicht praktikabel ist. Wenn Sie das „Staleness Interval“ in der Konsistenzebene „Bounded Staleness“ beliebig hoch konfigurieren, wird dabei die globale Größenordnung der Schreibvorgänge beibehalten. Dadurch entsteht eine stärkere Gewährleistung als bei „Session“ oder „Eventual“.
 
 >[AZURE.NOTE]"Bounded staleness" garantiert gleichbleibende Lesevorgänge nur auf explizite Leseanforderungen. Die wiederholte Serverantwort für Schreibanforderungen bietet keine Garantien für "Bounded staleness".
 
@@ -68,7 +68,7 @@ Die Konsistenzebene "Eventual" bietet die schwächste Lesekonsistenz, jedoch die
 
 ## Konsistenzebenen für Abfragen
 
-Bei benutzerdefinierten Ressourcen entspricht die Konsistenzebene der Abfragen standardmäßig der der Lesevorgänge. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die verzögerte Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien mit einer starken Lesearbeitsauslastung geeignet.
+Bei benutzerdefinierten Ressourcen entspricht die Konsistenzebene der Abfragen standardmäßig der der Lesevorgänge. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die verzögerte Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien mit einer starken Leseworkload geeignet.
 
 Indizierungsmodus|	Lesevorgänge|	Abfragen  
 -------------|-------|---------
@@ -88,4 +88,4 @@ Wenn Sie weitere Informationen zu Konsistenzebenen und deren Vor- und Nachteile 
 -	Werner Vogels. Eventual Consistent - Revisited. [http://allthingsdistributed.com/2008/12/eventually\_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

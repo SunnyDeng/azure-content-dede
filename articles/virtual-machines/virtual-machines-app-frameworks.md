@@ -14,12 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="infrastructure"
-   ms.date="07/02/2015"
+   ms.date="10/21/2015"
    ms.author="rasquill"/>
 
 # Erstellen von Anwendungsframeworks mithilfe von Vorlagen
 
-Verwenden Sie diese Methoden, um Ideen rasch umzusetzen.
+Verwenden Sie diese Methoden, um Ideen rasch umzusetzen. Zusätzlich zu diesen Vorlagen können Sie Vorlagen auch durchsuchen](https://azure.microsoft.com/documentation/templates/).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
@@ -27,7 +27,7 @@ Verwenden Sie diese Methoden, um Ideen rasch umzusetzen.
 | Vorlage | Beschreibung | Anzeigen der Vorlage | Direkte Bereitstellung |
 |:---|:---|:---:|:---:|
 | Schnelles Bereitstellen von *n* virtuellen Computern | Dies ist eine von Microsoft erstellte Vorlage, mit deren Hilfe sich bis zu *n* neue virtuelle Computer (sowie ein neues virtuelles Netzwerk und Speicherkonto) bereitstellen lassen. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/resource-loop-vms-vnet-aset/) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fresource-loop-vms-vnet-aset%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
-| Active Directory-Gesamtstruktur und -Domäne | Von dieser Vorlage werden zwei neue virtuelle Computer (mit neuem virtuellem Netzwerk, Speicherkonto und Lastenausgleich) bereitgestellt sowie eine neue Gesamtstruktur und Domäne in Active Directory erstellt. Jeder virtuelle Computer wird als Domänencontroller für die neue Domäne erstellt und in einer Verfügbarkeitsgruppe platziert. Jedem virtuellen Computer wird zudem ein RDP-Endpunkt mit einer öffentlichen IP-Adresse mit Lastenausgleich hinzugefügt. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
+| Active Directory-Gesamtstruktur und -Domäne | Von dieser Vorlage werden zwei neue virtuelle Computer (mit neuem virtuellem Netzwerk, Speicherkonto und Lastenausgleich) bereitgestellt sowie eine neue Gesamtstruktur und Domäne in Active Directory erstellt. Jeder virtuelle Computer wird als Domänencontroller für die neue Domäne erstellt und in einer Verfügbarkeitsgruppe platziert. Jedem virtuellen Computer wird zudem ein RDP-Endgerät mit einer öffentlichen IP-Adresse mit Lastenausgleich hinzugefügt. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
 | Apache-Webserver | Von dieser Vorlage wird die Azure Linux CustomScript-Erweiterung verwendet, um einen Apache-Webserver bereitzustellen. Von der Vorlage wird ein virtueller Ubuntu-Computer erstellt, Apache2 installiert und eine einfache HTML-Datei erstellt.| [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/apache2-on-ubuntu-vm) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fapache2-on-ubuntu-vm%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 | Couchbase-Cluster | Von dieser Vorlage wird ein Couchbase-Cluster auf Ubuntu-VMs bereitgestellt. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/couchbase-on-ubuntu) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcouchbase-on-ubuntu%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
 | DataStax-Cluster | Von dieser Vorlage wird mithilfe der Azure Linux CustomScript-Erweiterung ein DataStax-Cluster auf virtuellen Ubuntu-Computern installiert. [Detaillierte Vorgehensweise.](virtual-machines-datastax-template.md)| [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax-on-ubuntu) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fdatastax-on-ubuntu%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
@@ -53,4 +53,4 @@ Auf [GitHub](https://github.com/Azure/azure-quickstart-templates) finden Sie all
 
 Hier finden Sie weitere Informationen zum [Azure-Ressourcen-Manager](../resource-group-template-deploy.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

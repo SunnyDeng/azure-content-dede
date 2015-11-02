@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Vergleich: Apache Storm vs. Azure Stream Analytics | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Stream Analytics für Twitter-Stimmungsanalysen in Echtzeit verwenden. Schrittweise Anleitung von der Ereignisgenerierung bis hin zu Daten im Live-Dashboard."
-	keywords="real-time twitter,sentiment analysis,social media analysis,social media analytics tools"
+	keywords="Echtzeit-Twitter,Stimmungsanalyse,Analyse von sozialen Medien,Analyse-Tools für soziale Medien"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -328,7 +328,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
             </td>
             <td width="246" valign="top">
                 <p>
-                    Unterstützung für viele Ausgaben in einer Topologie, jede Ausgabe kann eine benutzerdefinierte Logik für die Downstreamverarbeitung haben. Standardmäßig enthält Storm Connectors für PowerBI, Ereignis-Hubs von Azure, Azure-Blob-Speicher, Azure-DocumentDB, SQL und HBase. Nicht unterstützte Connectors können über benutzerdefinierten Code implementiert werden.
+                    Unterstützung für viele Ausgaben in einer Topologie, jede Ausgabe kann eine benutzerdefinierte Logik für die Downstreamverarbeitung haben. Standardmäßig enthält Storm Connectors für PowerBI, Azure Event Hubs, Azure-Blob-Speicher, Azure-DocumentDB, SQL und HBase. Nicht unterstützte Connectors können über benutzerdefinierten Code implementiert werden.
                 </p>
             </td>
         </tr>
@@ -405,7 +405,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
             </td>
             <td width="204" valign="top">
                 <p>
-                    Überwachung wird über Azure Portal und REST-APIs implementiert.
+                    Überwachung wird über das Azure-Portal und REST-APIs implementiert.
                 </p>
                 <p>
                     Der Benutzer kann auch Azure-Warnungen konfigurieren.
@@ -590,4 +590,4 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
     </tbody>
 </table>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

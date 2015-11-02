@@ -18,7 +18,9 @@
 
 # Verwenden von Service Bus-Warteschlangen
 
-In diesem Artikel wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java][]. Die Szenarios behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+
+In diesem Artikel wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele wurden in Java geschrieben und verwenden das [Azure-SDK für Java][]. Die Szenarien behandeln die Themen **Erstellen von Warteschlangen**, **Senden und Empfangen von Nachrichten** und **Löschen von Warteschlangen**.
 
 [AZURE.INCLUDE [service-bus-java-how-to-create-queue](../../includes/service-bus-java-how-to-create-queue.md)]
 
@@ -42,7 +44,7 @@ import javax.xml.datatype.*;
 
 Sie können Verwaltungsvorgänge für Service Bus-Warteschlangen über die Klasse **ServiceBusContract** durchführen. **ServiceBusContract**-Objekte werden mit einer entsprechenden Konfiguration erstellt, die die SAS-Token mit Berechtigungen für deren Verwaltung kapselt. Die **ServiceBusContract**-Klasse ist der einzige Kommunikationspunkt mit Azure.
 
-Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und Löschen von Warteschlangen. Das folgende Beispiel zeigt, wie Sie mit einem **ServiceBusService**-Objekt eine Warteschlange mit dem Namen "TestQueue" in einem Namespace mit dem Namen "HowToSample" erstellen können:
+Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und Löschen von Warteschlangen. Das folgende Beispiel zeigt, wie Sie mit einem **ServiceBusService**-Objekt eine Tabelle mit dem Namen "TestQueue" in einem Namespace mit dem Namen "HowToSample" erstellen können:
 
 		Configuration config =
 			ServiceBusConfiguration.configureWithSASAuthentication(
@@ -92,7 +94,7 @@ Um eine Nachricht an eine Service Bus-Warteschlange zu senden, ruft Ihre Anwendu
 
 Die Nachrichten, die an die Service Bus-Warteschlangen gesendet werden (und von diesen empfangen werden), sind Instanzen der [BrokeredMessage][]-Klasse. [BrokeredMessage][]-Objekte weisen eine Reihe von Standardeigenschaften (wie etwa [Label](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) und [TimeToLive](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), ein Wörterbuch, das zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften verwendet wird, und einen Körper beliebiger Anwendungsdaten auf. Eine Anwendung kann den Körper der Nachricht einstellen, indem ein beliebiges serialisierbares Objekt in den Konstruktor von [BrokeredMessage][] übergeben wird. Anschließend wird der passende Serialisierer zur Serialisierung des Objekts verwendet. Alternativ können Sie ein **java.IO.InputStream**-Objekt bereitstellen.
 
-Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **MessageSender** `TestQueue` gesendet werden, der über den vorherigen Codeausschnitt erhalten wurde:
+Das folgende Beispiel veranschaulicht, wie fünf Testnachrichten an den **MessageSender** `TestQueue` gesendet werden, der im vorherigen Codeausschnitt abgerufen wurde:
 
     for (int i=0; i<5; i++)
     {
@@ -108,9 +110,9 @@ Service Bus-Warteschlangen unterstützen eine maximale Nachrichtengröße von 25
 
 ## Empfangen von Nachrichten aus einer Warteschlange
 
-Der einfachste Weg zum Empfangen von Nachrichten aus Warteschlangen sind **ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei unterschiedlichen Modi funktionieren: **ReceiveAndDelete** und **PeekLock**.
+Der einfachste Weg zum Empfangen von Nachrichten aus Warteschlangen sind **ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei unterschiedlichen Modi verwendet werden: **ReceiveAndDelete** und **PeekLock**.
 
-Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht in eine Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der (standardmäßig verwendete) ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarios eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
+Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht in eine Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der (standardmäßig verwendete) ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
 
 Im **PeekLock**-Modus ist der Empfangsvorgang zweistufig. Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von **Delete** für die empfangene Nachricht durch. Wenn Service Bus den **Delete**-Aufruf erkennt, markiert er die Nachricht als verwendet und entfernt sie aus der Warteschlange.
 
@@ -177,7 +179,7 @@ Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **d
 
 ## Nächste Schritte
 
-Nachdem Sie mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen unter [Warteschlangen, Themen und Abonnements][].
+Nachdem Sie nun mit den Grundlagen von Service Bus-Warteschlangen vertraut sind, finden Sie weitere Informationen unter [Service Bus-Warteschlangen, -Themen und -Abonnements][].
 
 Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
@@ -186,7 +188,7 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
   [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/library/azure/hh694271.aspx
   [Azure Management Portal]: http://manage.windowsazure.com/
-  [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
+  [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
   [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

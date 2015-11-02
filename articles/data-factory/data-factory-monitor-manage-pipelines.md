@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.date="10/20/2015" 
 	ms.author="spelluru"/>
 
 # Überwachen und Verwalten von Azure Data Factory-Pipelines
@@ -475,4 +475,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-monitor-manage-pipelines.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

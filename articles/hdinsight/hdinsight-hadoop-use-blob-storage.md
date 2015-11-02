@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Abfragen von Daten aus HDFS-kompatiblen Blobspeicher | Microsoft Azure"
 	description="HDInsight verwendet Blobspeicher als Big Data-Speicher für HDFS. Erfahren Sie, wie Sie Daten aus Blobspeicher abfragen und die Ergebnisse der Analyse speichern."
-	keywords="blob storage,hdfs,structured data,unstructured data"
+	keywords="Blob-Speicher,HDFS,strukturierte Daten,unstrukturierte Daten"
 	services="hdinsight,storage"
 	documentationCenter=""
 	tags="azure-portal"
@@ -27,7 +27,7 @@ Azure-Blobspeicher stellt eine robuste, universelle Speicherlösung dar, die pro
 
 Die Speicherung von Daten im Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
 
-> [AZURE.NOTE]Die **asv://*-Syntax wird in HDInsight-Clustern der Version 3.0 nicht unterstützt. Dies bedeutet, dass alle an einen HDInsight-Cluster der Version 3.0 übermittelten Aufträge, die explizit die **asv://*-Syntax verwenden, fehlschlagen. Stattdessen sollte die **wasb://*-Syntax verwendet werden. An HDInsight-Cluster der Version 3.0 gesendete Aufträge, die mithilfe eines vorhandenen Metastores erstellt wurden, der explizite Verweise auf Ressourcen mit der asv://-Syntax enthält, schlagen ebenfalls fehl. Diese Metastores müssen mit der wasb://-Syntax neu erstellt werden, um die Ressourcen zu adressieren.
+> [AZURE.NOTE]Die **asv://*-Syntax wird in HDInsight-Clustern der Version 3.0 nicht unterstützt. Das bedeutet, dass alle an einen HDInsight-Cluster der Version 3.0 übermittelten Aufträge, die explizit die **asv://*-Syntax verwenden, fehlschlagen. Stattdessen sollte die **wasb://*-Syntax verwendet werden. An HDInsight-Cluster der Version 3.0 gesendete Aufträge, die mithilfe eines vorhandenen Metastores erstellt wurden, der explizite Verweise auf Ressourcen mit der asv://-Syntax enthält, schlagen ebenfalls fehl. Diese Metastores müssen mit der wasb://-Syntax neu erstellt werden, um die Ressourcen zu adressieren.
 
 > HDInsight unterstützt aktuell nur Blockblobs.
 
@@ -37,7 +37,7 @@ Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erst
 
 
 ## <a id="architecture"></a>HDInsight-Speicherarchitektur
-Das folgende Diagramm bietet einen zusammenfassenden Überblick über die HDInsight-Speicherarchitektur.
+Das folgende Diagramm bietet eine zusammenfassende Übersicht über die HDInsight-Speicherarchitektur.
 
 ![Hadoop-Cluster verwenden die HDFS-API, um auf strukturierte und unstrukturierte Daten im Blobspeicher zuzugreifen und diese zu speichern.](./media/hdinsight-hadoop-use-blob-storage/HDI.WASB.Arch.png "HDInsight-Speicherarchitektur")
 
@@ -60,7 +60,7 @@ Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsproz
 
 	> [AZURE.NOTE]> Öffentliche Container erlauben das Abrufen einer Liste aller im Container verfügbaren Blobs und der Container-Metadaten. Auf öffentliche Blobs haben Sie nur Zugriff, wenn Sie die exakte URL kennen. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/dd179354.aspx">Beschränken des Zugriffs auf Container und Blobs</a>.
 
-- **Private Container in Speicherkonten, die NICHT mit einem Cluster verbunden sind:** Sie können nicht auf die Blobs in den Containern zugreifen, es sei denn Sie definieren beim Senden der WebHCat-Aufträge das Speicherkonto. Dies wird weiter unten im Artikel erläutert.
+- **Private Container in Speicherkonten, die NICHT mit einem Cluster verbunden sind**: Sie können nicht auf die Blobs in den Containern zugreifen, es sei denn, Sie definieren beim Senden der WebHCat-Aufträge das Speicherkonto. Dies wird weiter unten im Artikel erläutert.
 
 
 Das beim Einrichtungsprozess definierte Speicherkonto und die Schlüssel werden in %HADOOP\_HOME%/conf/core-site.xml auf den Clusterknoten gespeichert. Standardmäßig verwendet HDInsight die in der Datei core-site.xml definierten Speicherkonten. Die Datei core-site.xml sollte nicht manuell bearbeitet werden, da der Cluster-Stammknoten (Master) jederzeit neu aus einem Abbild erstellt oder migriert werden kann, und die Änderungen an den Dateien in diesem Fall verloren gehen.
@@ -70,15 +70,15 @@ Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und P
 Blobspeicher kann für strukturierte und unstrukturierte Daten verwendet werden. In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen der Schrägstrich (/) verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Das Verzeichnis *input* existiert zwar nicht, wegen des Schrägstrichs (/) im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad.
 
 ###<a id="benefits"></a>Vorteile von Blobspeicher
-Der Leistungsaufwand, der damit verbunden ist, dass die Rechencluster und Speicherressourcen nicht am selben Ort vorliegen, wird dadurch abgeschwächt, dass die Cluster nahe an den Speicherkontoressourcen im Azure-Datencenter bereitgestellt werden, wo das Hochgeschwindigkeitsnetzwerk den Zugriff auf die Daten im Azure-Blobspeicher für die Rechenknoten sehr effizient macht.
+Der Leistungsaufwand, der damit verbunden ist, dass die Computecluster und Speicherressourcen nicht am selben Ort vorliegen, wird dadurch abgeschwächt, dass die Cluster nahe an den Speicherkontoressourcen im Azure-Datencenter bereitgestellt werden, wo das Hochgeschwindigkeitsnetzwerk den Zugriff auf die Daten im Azure-Blobspeicher für die Rechenknoten sehr effizient macht.
 
 Die Speicherung von Daten im Azure-Blobspeicher statt im HDFS hat mehrere Vorteile:
 
-* **Datenfreigabe und -wiederverwendung:** Die Daten im HDFS befinden sich innerhalb des Rechenclusters. Nur die Anwendungen, die Zugriff auf den Rechencluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien im Azure-Blobspeicher kann entweder über die HDFS-APIs oder über die [Blobspeicher-REST-APIs][blob-storage-restAPI] zugegriffen werden. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
+* **Datenfreigabe und -wiederverwendung:** Die Daten im HDFS befinden sich innerhalb des Computeclusters. Nur die Anwendungen, die Zugriff auf den Computecluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien im Azure-Blobspeicher kann entweder über die HDFS-APIs oder über die [Blobspeicher-REST-APIs][blob-storage-restAPI] zugegriffen werden. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
 * **Datenarchivierung:** Die Speicherung von Daten im Azure-Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
-* **Datenspeicherkosten:**Die langfristige Datenspeicherung in DFS ist kostspieliger als die Datenspeicherung im Azure-Blobspeicher, da die Kosten eines Rechenclusters höher liegen als diejenigen eines Azure-Blobspeichercontainers. Da die Daten nicht für jede Erzeugung eines neues Rechenclusters neu geladen werden, sparen Sie auch Kosten für das Laden von Daten.
+* **Datenspeicherkosten:**Die langfristige Datenspeicherung in DFS ist kostspieliger als die Datenspeicherung im Azure-Blobspeicher, da die Kosten eines Computeclusters höher liegen als diejenigen eines Azure-Blobspeichercontainers. Da die Daten nicht für jede Erzeugung eines neues Computeclusters neu geladen werden, sparen Sie auch Kosten für das Laden von Daten.
 * **Elastische horizontale Skalierung:** Obwohl Ihnen HDFS ein horizontal skaliertes Dateisystem bietet, wird die Skalierung durch die Anzahl der Knoten bestimmt, die Sie für Ihren Cluster bereitstellen. Eine Änderung der Skalierung kann weitaus schwieriger werden, als auf die flexiblen Speicherkapazitäten zu vertrauen, die Ihnen der Azure-Blobspeicher automatisch bietet.
-* **Georeplikation:** Ihre Azure-Blobspeichercontainer können georepliziert werden. Obwohl Sie dadurch von geographischer Wiederherstellung und Datenredundanz profitieren, wirkt sich ein Ausfall des georeplizierten Standorts schwer auf Ihre Leistung aus und kann zusätzliche Kosten nach sich ziehen. Deshalb empfehlen wir, die Georeplikation mit Bedacht auszuwählen und nur dann anzuwenden, wenn der Wert der Daten die zusätzlichen Kosten rechtfertigt.
+* **Georeplikation**: Ihre Azure-Blob-Speichercontainer können georepliziert werden. Obwohl Sie dadurch von geographischer Wiederherstellung und Datenredundanz profitieren, wirkt sich ein Ausfall des georeplizierten Standorts schwer auf Ihre Leistung aus und kann zusätzliche Kosten nach sich ziehen. Deshalb empfehlen wir, die Georeplikation mit Bedacht auszuwählen und nur dann anzuwenden, wenn der Wert der Daten die zusätzlichen Kosten rechtfertigt.
 
 Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die Sie nicht wirklich im Azure-Blobspeicher speichern möchten. In diesem Fall können Sie die Dateien auch im lokalen HDFS speichern. Tatsächlich verwendet HDInsight DFS für einige dieser Zwischenergebnisse in Hive-Jobs und anderen Prozessen.
 
@@ -119,7 +119,7 @@ Zum Erstellen eines Containers verwenden Sie den folgenden Befehl:
 
 ### Verwenden von Azure PowerShell
 
-Nach der [Installation und Konfiguration von Azure PowerShell][powershell-install] können Sie Speicherkonto und Container wie folgt an der Azure PowerShell-Eingabeaufforderung erstellen:
+Nach dem [Installieren und Konfigurieren von Azure PowerShell][powershell-install] können Sie ein Speicherkonto und einen Container wie folgt an der Azure PowerShell-Eingabeaufforderung erstellen:
 
 	$subscriptionName = "<SubscriptionName>"	# Azure subscription name
 	$storageAccountName = "<AzureStorageAccountName>" # The storage account that you will create
@@ -316,4 +316,4 @@ Weitere Informationen finden Sie unter:
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

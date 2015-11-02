@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/06/2015"
+   ms.date="10/16/2015"
    ms.author="kareni"/>
 
 
@@ -229,7 +229,7 @@ Zusätzlich zu einigen neuen Feldern und Namensänderungen für CSV-Version 2 w
 
 ![additionalinfo\_csv2](./media/billing-understand-your-bill/AdditionaInfo_csv2.png)
 
-- **Tags**: Diese Spalte enthält die vom Benutzer angegebenen Ressourcentags. Die Tags können zum Gruppieren von Abrechnungsdatensätzen verwendet werden. Beispielsweise können Sie Tags verwenden, um Kosten nach den Abteilungen zu unterteilen, die den Dienst nutzen. Weitere Informationen finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](/resource-group-using-tags.md/). Dienste, die das Ausgeben von Tags unterstützen, sind:
+- **Tags**: Diese Spalte enthält die vom Benutzer angegebenen Ressourcentags. Die Tags können zum Gruppieren von Abrechnungsdatensätzen verwendet werden. Beispielsweise können Sie Tags verwenden, um Kosten nach den Abteilungen zu unterteilen, die den Dienst nutzen. Weitere Informationen finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md). Dienste, die das Ausgeben von Tags unterstützen, sind:  
     - Virtual Machines
     - Storage und
     - Netzwerkdienste, die mit der [Azure-Ressourcen-Manager-API](https://msdn.microsoft.com/library/azure/dn790567.aspx) bereitgestellt werden
@@ -262,4 +262,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

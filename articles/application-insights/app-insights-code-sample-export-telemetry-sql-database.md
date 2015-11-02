@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Codebeispiel: Analysieren von Daten, die aus Application Insights exportiert wurden" 
-	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
+	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export. Speichern Sie Daten in SQL." 
 	services="application-insights" 
     documentationCenter=""
 	authors="mazharmicrosoft" 
@@ -126,11 +126,11 @@ Erstellen Sie in Visual Studio ein neues Projekt für die Workerrolle.
 
 #### Verbinden mit dem Speicherkonto
 
-Rufen Sie in Azure die Verbindungszeichenfolge aus Ihrem Storage-Konto ab:
+Rufen Sie in Azure die Verbindungszeichenfolge aus Ihrem Speicherkonto ab:
 
-![Wählen Sie im Storage-Konto "Schlüssel" aus, und kopieren Sie die primäre Verbindungszeichenfolge](./media/app-insights-code-sample-export-telemetry-sql-database/055-get-connection.png)
+![Wählen Sie im Speicherkonto "Schlüssel" aus, und kopieren Sie die primäre Verbindungszeichenfolge](./media/app-insights-code-sample-export-telemetry-sql-database/055-get-connection.png)
 
-Konfigurieren Sie die Workerrolleneinstellungen in Visual Studio mit der Verbindungszeichenfolge für das Storage-Konto:
+Konfigurieren Sie die Workerrolleneinstellungen in Visual Studio mit der Verbindungszeichenfolge für das Speicherkonto:
 
 
 ![Erweitern Sie im Projektmappen-Explorer unter dem Cloud Service-Projekt die Option "Rollen", und öffnen Sie die" Workerrolle". Öffnen Sie die Registerkarte "Einstellungen", wählen Sie "Einstellung hinzufügen", und legen Sie "name=StorageConnectionString" und "type=Verbindungszeichenfolge" fest. Klicken Sie, um den Wert festzulegen. Legen Sie ihn manuell fest, und fügen Sie die Verbindungszeichenfolge ein.](./media/app-insights-code-sample-export-telemetry-sql-database/130-connection-string.png)
@@ -543,4 +543,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

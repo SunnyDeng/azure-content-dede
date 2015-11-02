@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Was ist HBase in HDInsight | Microsoft Azure"
 	description="Eine Einführung in Apache HBase in HDInsight, ein NoSQL-Datenbankbuild auf Hadoop. Erfahren Sie mehr über Anwendungsfälle, und vergleichen Sie HBase mit anderen Hadoop-Clustern."
-	keywords="bigtable,nosql,what is hbase"
+	keywords="bigtable,nosql,was ist hbase"
 	services="hdinsight"
 	documentationCenter=""
 	tags="azure-portal"
@@ -20,7 +20,7 @@
 
 
 
-# Überblick über HBase in HDInsight: Eine NoSQL-Datenbank, die BigTable-ähnliche Funktionen für Hadoop bereitstellt
+# Übersicht über HBase in HDInsight: Eine NoSQL-Datenbank, die BigTable-ähnliche Funktionen für Hadoop bereitstellt
 
 Apache HBase ist eine Open-Source-NoSQL-Datenbank, die auf Hadoop basiert und nach dem Vorbild von Google BigTable erstellt wurde. HBase bietet wahlfreien Zugriff und starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten in einer schemalosen Datenbank, die nach Spaltenfamilien gegliedert ist.
 
@@ -94,4 +94,4 @@ Der kanonische Anwendungsfall, für den BigTable (und daher auch HBase) erstellt
 
 [apache-hadoop]: http://hadoop.apache.org/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

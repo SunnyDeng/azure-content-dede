@@ -46,9 +46,9 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 ## Azure PowerShell
 
-Stellen Sie zunächst sicher, dass die richtige Version von Azure PowerShell installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Nähere Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-powershell.md#setting-up-powershell-for-resource-manager-templates).
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
-Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
+Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
@@ -98,14 +98,14 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
+[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

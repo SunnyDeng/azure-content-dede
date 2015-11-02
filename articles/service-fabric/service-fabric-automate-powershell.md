@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/16/2015"
 	ms.author="ryanwi"/>
 
 # Bereitstellen, Aktualisieren, Testen und Entfernen von Service Fabric-Anwendungen mithilfe von PowerShell
@@ -34,13 +34,13 @@ Connect-ServiceFabricCluster
 
 ## AUFGABE: Bereitstellen einer Service Fabric-Anwendung
 
-Nachdem Sie die Anwendung erstellt haben, und der Anwendungstyp gepackt wurde, können Sie die Anwendung in einem Service Fabric-Cluster bereitstellen. Packen Sie zuerst die HelloWorldStateful-Anwendung in Visual Studio, indem Sie im Projektmappen-Explorer mit der rechten Maustaste auf **HelloWorldStatefulApplication** klicken und **Paket** auswählen. Unter [Modellieren von Anwendungen in Service Fabric](service-fabric-application-model.md) finden Sie Informationen zu den Dienst- und Anwendungsmanifesten und zum Paketlayout. Die Bereitstellung umfasst das Hochladen des Anwendungspakets, das Registrieren des Anwendungstyps und das Erstellen der Anwendungsinstanz. Verwenden Sie die Anweisungen in diesem Abschnitt, um eine neue Anwendung in einem Cluster bereitzustellen.
+Nachdem Sie die Anwendung erstellt haben, und der Anwendungstyp gepackt wurde, können Sie die Anwendung in einem lokalen Service Fabric-Cluster bereitstellen. Packen Sie zuerst die HelloWorldStateful-Anwendung in Visual Studio, indem Sie im Projektmappen-Explorer mit der rechten Maustaste auf **HelloWorldStatefulApplication** klicken und **Paket** auswählen. Unter [Modellieren von Anwendungen in Service Fabric](service-fabric-application-model.md) finden Sie Informationen zu den Dienst- und Anwendungsmanifesten und zum Paketlayout. Die Bereitstellung umfasst das Hochladen des Anwendungspakets, das Registrieren des Anwendungstyps und das Erstellen der Anwendungsinstanz. Verwenden Sie die Anweisungen in diesem Abschnitt, um eine neue Anwendung in einem Cluster bereitzustellen.
 
 ### Schritt 1: Hochladen des Anwendungspakets
 Beim Hochladen des Anwendungspakets in den ImageStore wird das Paket an einem Speicherort gespeichert, an dem interne Service Fabric-Komponenten auf das Paket zugreifen können. Das Anwendungspaket enthält die erforderlichen Anwendungs- und Dienstmanifeste sowie Code-/Konfigurations-/Datenpakete zum Erstellen der Anwendungs- und Dienstinstanzen. Mit dem Befehl [Copy-ServiceFabricApplicationPackage](https://msdn.microsoft.com/library/azure/mt125905.aspx) wird das Paket hochgeladen. Beispiel:
 
 ```powershell
-Copy-ServiceFabricApplicationPackage C:\ServiceFabricSamples\Services\VS2015\HelloWorldStateful\HelloWorldStatefulApplication\pkg\Debug -ImageStoreConnectionString file:C:\SfDevCluster\Data\ImageStore -ApplicationPackagePathInImageStore HelloWorldStateful
+Copy-ServiceFabricApplicationPackage C:\ServiceFabricSamples\Services\VS2015\HelloWorldStateful\HelloWorldStatefulApplication\pkg\Debug -ImageStoreConnectionString fabric:ImageStore -ApplicationPackagePathInImageStore HelloWorldStateful
 ```
 
 ### Schritt 2: Registrieren des Anwendungstyps
@@ -107,7 +107,7 @@ Die Anwendung ist nun erstellt und gepackt und kann aktualisiert werden. Wenn Si
 Kopieren Sie jetzt das aktualisierte Anwendungspaket in den Service Fabric-ImageStore (in dem die Anwendungspakete von Service Fabric gespeichert werden). Der *ApplicationPackagePathInImageStore*-Parameter informiert Service Fabric darüber, wo sich das Anwendungspaket befindet. Der folgende Befehl kopiert das Anwendungspaket nach *HelloWorldStatefulV2* im ImageStore:
 
 ```powershell
-Copy-ServiceFabricApplicationPackage  -ApplicationPackagePath C:\ServiceFabricSamples\Services\VS2015\HelloWorldStateful\HelloWorldStatefulApplication\pkg\Debug -ImageStoreConnectionString file:C:\SfDevCluster\Data\ImageStore   -ApplicationPackagePathInImageStore HelloWorldStatefulV2
+Copy-ServiceFabricApplicationPackage  -ApplicationPackagePath C:\ServiceFabricSamples\Services\VS2015\HelloWorldStateful\HelloWorldStatefulApplication\pkg\Debug -ImageStoreConnectionString fabric:ImageStore -ApplicationPackagePathInImageStore HelloWorldStatefulV2
 ```
 
 Im nächsten Schritt wird die neue Version der Anwendung bei Service Fabric registriert. Dazu kann das Cmdlet [Register-ServiceFabricApplicationType](https://msdn.microsoft.com/library/azure/mt125958.aspx) verwendet werden:
@@ -190,7 +190,7 @@ Unregister-ServiceFabricApplicationType HelloWorldStatefulApplication 1.0.0.0
 Nachdem die Registrierung des Anwendungstyps aufgehoben wurde, kann das Anwendungspaket mit dem Cmdlet [Remove-ServiceFabricApplicationPackage](https://msdn.microsoft.com/library/azure/mt163532.aspx) aus dem ImageStore entfernt werden.
 
 ```powershell
-Remove-ServiceFabricApplicationPackage -ImageStoreConnectionString file:C:\SfDevCluster\Data\ImageStore -ApplicationPackagePathInImageStore HelloWorldStateful
+Remove-ServiceFabricApplicationPackage -ImageStoreConnectionString fabric:ImageStore -ApplicationPackagePathInImageStore HelloWorldStateful
 ```
 
 ## Zusätzliche Ressourcen
@@ -202,4 +202,4 @@ Remove-ServiceFabricApplicationPackage -ImageStoreConnectionString file:C:\SfDev
 
 [Azure Service Fabric-Testability-Cmdlets](https://msdn.microsoft.com/library/azure/mt125844.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

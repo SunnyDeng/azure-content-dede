@@ -132,7 +132,7 @@ Wenn Sie mit dem Azure-Schlüsseltresor einen softwaregeschützten Schlüssel er
 
 Wenn Sie jedoch einen vorhandenen Schlüssel in einer PEM-Datei als lokale Datei in einer Datei namens softkey.pem gespeichert haben, die Sie in Azure-Schlüsseltresor hochladen möchten, geben Sie Folgendes ein, um den Schlüssel aus der PEM-Datei zu importieren, die den Schlüssel durch Software im Schlüsseltresor-Dienst schützt:
 
-    azure keyvault key import --vaultName 'ContosoKeyVault' --key-name 'ContosoFirstKey' --pem-file './softkey.pem' –-password 'PaSSWORD' --destination software
+    azure keyvault key import --vaultName 'ContosoKeyVault' --key-name 'ContosoFirstKey' --pem-file './softkey.pem' --password 'PaSSWORD' --destination software
 
 Jetzt können Sie mittels seiner URI auf den Schlüssel verweisen, den Sie erstellt oder in Azure-Schlüsseltresor hochgeladen haben. Verwenden Sie ****https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie ****https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
 
@@ -145,7 +145,7 @@ Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie d
 Zeigen wir den Schlüssel oder geheimen Schlüssel an, den Sie soeben erstellt haben:
 
 - Geben Sie Folgendes ein, um Ihren Schlüssel anzuzeigen: `azure keyvault key list --vault-name 'ContosoKeyVault'`
-- Geben Sie Folgendes ein, um Ihren geheimen Schlüssel anzuzeigen: `azure keyvault secret list -–vault-name 'ContosoKeyVault'`
+- Geben Sie Folgendes ein, um Ihren geheimen Schlüssel anzuzeigen: `azure keyvault secret list --vault-name 'ContosoKeyVault'`
 
 
 ## Registrieren einer Anwendung mit Azure Active Directory
@@ -207,7 +207,7 @@ Sie können diesem Tresor softwaregeschützte Schlüssel (wie weiter oben gezeig
 
 Sie können mit dem folgenden Befehl einen Schlüssel aus einer PEM-Datei auf Ihren Computer importieren. Dieser Befehl importiert den Schlüssel in HSMs im Schlüsseltresordienst:
 
-    azure keyvault key import --vault-name 'ContosoKeyVaultHSM' --key-name 'ContosoFirstHSMKey' --pem-file '/.softkey.pem' --destination 'HSM' –-password 'PaSSWORD'
+    azure keyvault key import --vault-name 'ContosoKeyVaultHSM' --key-name 'ContosoFirstHSMKey' --pem-file '/.softkey.pem' --destination 'HSM' --password 'PaSSWORD'
 
 Der nächste Befehl importiert ein BYOK-Paket (Bring Your Own Key). Auf diese Weise können Sie Ihren Schlüssel im lokalen HSM generieren und ihn in HSMs im Schlüsseltresordienst übertragen, ohne dass der Schlüssel die HSM-Grenzen verlässt:
 
@@ -237,7 +237,7 @@ Dieser Befehl ruft eine tabellarische Anzeige aller Schlüssel und ausgewählten
 
 Dieser Befehl zeigt eine vollständige Liste der Eigenschaften für den angegebenen Schlüssel an:
 
-    azure keyvault key show --vault-name 'ContosoKeyVault' –-key-name 'ContosoFirstKey'
+    azure keyvault key show --vault-name 'ContosoKeyVault' --key-name 'ContosoFirstKey'
 
 Dieser Befehl ruft eine tabellarische Anzeige der Namen aller geheimen Schlüssel und ausgewählten Eigenschaften ab:
 
@@ -256,4 +256,4 @@ Hier ist ein Beispiel, wie ein bestimmten geheimer Schlüssel entfernt werden ka
 
 Eine Referenz zur Programmierung finden Sie im [Entwicklerhandbuch für den Azure-Schlüsseltresor](key-vault-developers-guide.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

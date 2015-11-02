@@ -21,6 +21,12 @@
 
 [MySQL][MySQL] ist eine beliebte Open-Source-SQL-Datenbank. In diesem Tutorial erfahren Sie, wie Sie einen virtuellen Computer mit OpenSUSE Linux erstellen und anschließend MySQL installieren.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
+
+<br>
+
+
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 ## Erstellen eines virtuellen Computers mit OpenSUSE Linux
@@ -38,4 +44,4 @@ Einzelheiten zu MySQL finden Sie in der [MySQL-Dokumentation][MySQLDocs].
 [MySQL]: http://www.mysql.com
 [AzurePortal]: http://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

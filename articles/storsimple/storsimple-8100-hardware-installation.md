@@ -12,16 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/23/2015"
+   ms.date="10/13/2015"
    ms.author="alkohli" />
 
 # Auspacken, Einbauen und Verkabeln des StorSimple 8100-Geräts
 
 ## Übersicht
 
-Microsoft Azure StorSimple 8100 ist ein Gerät mit einem Gehäuse, das in ein Rack eingebaut wird.
-
-In diesem Lernprogramm wird erläutert, wie die StorSimple 8100-Gerätehardware vor dem Konfigurieren der StorSimple-Software ausgepackt, in ein Rack eingebaut und verkabelt wird.
+Microsoft Azure StorSimple 8100 ist ein Gerät mit einem Gehäuse, das in ein Rack eingebaut wird. In diesem Tutorial wird erläutert, wie die StorSimple 8100-Gerätehardware vor dem Konfigurieren und Bereitstellen des StorSimple-Geräts ausgepackt, in ein Rack eingebaut und verkabelt wird.
 
 ## Auspacken des StorSimple 8100-Geräts
 
@@ -31,19 +29,18 @@ Die folgenden Schritte bieten klare und ausführliche Anweisungen zum Auspacken 
 
 Lesen Sie die folgenden Informationen, bevor Sie das Gerät auspacken.
 
->[AZURE.WARNING]![Symbol für hohes Gewicht](./media/storsimple-8100-hardware-installation/HCS_HeavyWeight_Icon.png)
->
-> 1. Stellen Sie aufgrund des Gewichts des Geräts sicher, dass zwei Personen verfügbar sind, wenn Sie den Vorgang manuell durchführen. Ein vollständig konfiguriertes Gerät kann bis zu 32 kg wiegen.
->
-> 2. Legen Sie den Karton auf einen flachen, ebenen Untergrund.
+![Symbol "Warnung"](./media/storsimple-safety/IC740879.png)![Symbol für hohes Gewicht](./media/storsimple-8100-hardware-installation/HCS_HeavyWeight_Icon.png) **WARNUNG!**
 
+1. Stellen Sie aufgrund des Gewichts des Gehäuses sicher, dass zwei Personen verfügbar sind, wenn Sie den Vorgang manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
+1. Legen Sie den Karton auf einen flachen, ebenen Untergrund.
+ 
 Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
 
 #### So packen Sie das Gerät aus
 
-1. Überprüfen Sie den Karton und das Verpackungsmaterial auf Risse, Schnitte, Wasserschäden oder anderweitige offensichtliche Beschädigungen. Wenn der Karton oder die Verpackung stark beschädigt sind, öffnen Sie den Karton nicht. Wenden Sie sich an den Microsoft Support, um zu ermitteln, ob sich das Gerät in funktionsfähigem Zustand befindet. 
+1. Überprüfen Sie den Karton und das Verpackungsmaterial auf Risse, Schnitte, Wasserschäden oder anderweitige offensichtliche Beschädigungen. Wenn der Karton oder die Verpackung stark beschädigt sind, öffnen Sie den Karton nicht. [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), um zu ermitteln, ob sich das Gerät in funktionsfähigem Zustand befindet. 
 
-2. Packen Sie den Karton aus. Die folgende Abbildung zeigt das ausgepackte Azure StorSimple-Gerät.
+2. Packen Sie den Karton aus. Die folgende Abbildung zeigt das ausgepackte StorSimple-Gerät.
 
      ![Auspacken des Speichergeräts](./media/storsimple-8100-hardware-installation/HCSUnpackyour2Udevice.png)
 
@@ -57,6 +54,7 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
      4 | Obere Styroporeinlage
      5 | Zubehörkarton
 
+
 3. Stellen Sie nach dem Auspacken des Kartons sicher, dass Folgendes vorhanden ist:
 
    - Ein Gerät mit einem Gehäuse
@@ -65,11 +63,11 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
    - Zwei serielle Konsolenkabel
    - Ein Seriell-USB-Konverter für seriellen Zugriff
    - Ein T10-Sicherheitsschraubendreher
-   - Vier einzelne QSFP-zu-SFP+-Adapter
+   - Vier QSFP-zu-SFP+-Adapter für die Verwendung mit 10-GbE-Netzwerkschnittstellen
    - Ein Rackmontagekit (zwei Seitenschienen mit Befestigungsteilen)
    - Dokumentation "Erste Schritte"
 
-    Wenn Sie eines der oben aufgeführten Teile nicht erhalten haben, wenden Sie sich an den Microsoft Support.
+    Wenn Sie eines der oben aufgeführten Teile nicht erhalten haben, [wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md).
 
 Im nächsten Schritt bauen Sie das Gerät in ein Rack ein.
 
@@ -91,9 +89,9 @@ Das Gerät wird in ein 19-Zoll-Standardrack mit Pfosten an Vorder- und Rückseit
 
 3. Vergewissern Sie sich, dass das Rack, in das Sie das Gerät einbauen möchten, Platz für einen Einschub mit 2 HE bietet.
 
->[AZURE.WARNING]![Symbol für hohes Gewicht](./media/storsimple-8100-hardware-installation/HCS_HeavyWeight_Icon.png)
-> 
-> Stellen Sie aufgrund des Gewichts des Geräts sicher, dass zwei Personen verfügbar sind, wenn Sie die Einrichtung des Geräts manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
+![Symbol "Warnung"](./media/storsimple-safety/IC740879.png)![Symbol für hohes Gewicht](./media/storsimple-8100-hardware-installation/HCS_HeavyWeight_Icon.png) **WARNUNG!**
+ 
+Stellen Sie aufgrund des Gewichts des Geräts sicher, dass zwei Personen verfügbar sind, wenn Sie die Einrichtung des Geräts manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
 
 ### Voraussetzungen
 
@@ -107,22 +105,22 @@ Das Gehäuse des 8100-Geräts ist für den Einbau in einen 19-Zoll-Standardracks
 
 Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zoll-Rackschrank enthalten. Die Schienen wurden für das maximale Gehäusegewicht getestet. Mit den Schienen können auch mehrere Gehäuse in das Rack eingebaut werden, ohne dass dabei Platz verloren geht.
 
+
 #### So befestigen Sie das Gerät an den Schienen
 
-1. Legen Sie das Gehäuse auf die Arbeitsfläche, und ziehen Sie die Kappen vom rechten und linken vorderen Flansch ab. Die Flanschkappen sind einfach an den Flanschen eingerastet.
-
-2. In der Regel sind die Schienen bereits werkseitig installiert. Ist dies nicht der Fall, bringen Sie die linke und die rechte Gleitschiene an den Seiten des Gehäuses an. Sie werden auf jeder Seite mit sechs metrischen Schrauben befestigt. Als Hilfe bei der Ausrichtung sind die Gleitschienen mit **LH – Front** (Vorne links) und **RH – Front** (Vorne rechts) gekennzeichnet. Darüber hinaus weisen die Schienen jeweils an dem Ende, das in Richtung der Rückseite des Gehäuses befestigt wird, eine Verjüngung auf.<br/>
+2. Führen Sie diesen Schritt nur aus, wenn in Ihrem Gerät keine inneren Schienen installiert sind. In der Regel sind die inneren Schienen bereits werkseitig installiert. Ist dies nicht der Fall, bringen Sie die linke und die rechte Gleitschiene an den Seiten des Gehäuses an. Sie werden auf jeder Seite mit sechs metrischen Schrauben befestigt. Als Hilfe bei der Ausrichtung sind die Gleitschienen mit **LH – Front** (Vorne links) und **RH – Front** (Vorne rechts) gekennzeichnet. Darüber hinaus weisen die Schienen jeweils an dem Ende, das in Richtung der Rückseite des Gehäuses befestigt wird, eine Verjüngung auf.<br/>
 
     ![Befestigen von Gleitschienen am Gehäuse](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
 
-   **Befestigen der Gleitschienen an den Seiten des Gehäuses**
+   **Befestigen der inneren Gleitschienen an den Seiten des Gehäuses**
 
-    Label | Description
-    ----- | -----------
-    1     | M 3x4 button-head screws
-    2     | Chassis slides
+    	Label | Description
+    	----- | -----------
+    	1     | M 3x4 button-head screws
+   		2     | Chassis slides
 
-3. Befestigen Sie die linke und die rechte Schienenbaugruppe an den vertikalen Blechwinkeln des Rackschranks. Die Halterungen sind mit **LH** (Links), **RH** (Rechts) und **This side up** (Diese Seite nach oben) gekennzeichnet, um Sie bei der richtigen Ausrichtung zu unterstützen.
+
+3. Befestigen Sie die linke und die rechte äußere Schienenbaugruppe an den vertikalen Blechwinkeln des Rackschranks. Die Halterungen sind mit **LH** (Links), **RH** (Rechts) und **This side up** (Diese Seite nach oben) gekennzeichnet, um Sie bei der richtigen Ausrichtung zu unterstützen. 
 
 4. Suchen Sie die Fixierungsstifte, die sich vorne und hinten an der Schienenbaugruppe befinden. Verlängern Sie die Schiene, sodass sie zwischen die Rackpfosten passt, und führen Sie die Stifte in die Bohrungen der vertikalen Blechwinkel am vorderen und hinteren Pfosten ein. Achten Sie darauf, dass die Schienenbaugruppe waagerecht ausgerichtet ist.
 
@@ -132,15 +130,16 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
      ![Befestigen von Gleitschienen am Rackschrank](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoRackCabinet.png)
 
-    **Befestigen der Schienenbaugruppen am Rack**
+    **Befestigen der äußeren Schienenbaugruppen am Rack**
 
      Bezeichnung | Beschreibung
      ----- | -----------
      1 | Klemmschraube
      2 | Vierkantloch-Schraube für vorderen Rackpfosten
-     3 | Vordere Fixierungsstifte der linken Schienenbaugruppe
+     3 | Linke Schiene vorn, Fixierungsstifte
      4 | Klemmschraube
-     5 | Hintere Fixierungsstifte der linken Schienenbaugruppe
+     5 | Linke Schiene hinten, Fixierungsstifte
+
 
 ### Einbauen des Geräts in das Rack
 
@@ -156,7 +155,10 @@ Führen Sie die folgenden Schritte aus, um das Gerät unter Verwendung der soebe
 
     **Einbauen des Geräts in das Rack**
 
-3. Sichern Sie das Gehäuse im Rack am linken und am rechten Flansch mit je einer der mitgelieferten Kreuzschlitzschrauben.
+
+3. Entfernen Sie links und rechts die vorderen Flanschkappen, indem Sie sie abziehen. Die Flanschkappen sind einfach an den Flanschen eingerastet.
+
+5. Sichern Sie das Gehäuse im Rack am linken und am rechten Flansch mit je einer der mitgelieferten Kreuzschlitzschrauben.
 
 4. Bringen Sie die Flanschkappen an, indem Sie diese an der vorgesehenen Position andrücken und einrasten lassen.<br/>
 
@@ -178,7 +180,7 @@ Im Folgenden wird erläutert, wie Sie das StorSimple 8100-Gerät für die Strom
 
 Bevor Sie mit dem Verkabeln des Geräts beginnen können, benötigen Sie Folgendes:
 
-- Vollständig ausgepacktes Speichergerät
+- Speichergerät, vollständig ausgepackt und im Rack eingebaut
 
 - Zwei Netzkabel, die zum Lieferumfang des Geräts gehören
 
@@ -190,7 +192,7 @@ Bevor Sie mit dem Verkabeln des Geräts beginnen können, benötigen Sie Folgend
 
 - Seriell-USB-Konverter, für den der entsprechende Treiber auf dem PC installiert ist (sofern erforderlich)
 
-- Mitgelieferte einzelne QSFP-zu-SFP+-Adapter für die Verwendung mit 10-GbE-Netzwerkschnittstellen
+- Vier beigefügte QSFP-zu-SFP+-Adapter für die Verwendung mit 10-GbE-Netzwerkschnittstellen
 
 - [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
 
@@ -223,30 +225,45 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
      2,3 | 10-GbE-Netzwerkschnittstellen
      6 | Serielle Anschlüsse
 
-2. Um eine hohe Verfügbarkeit sicherzustellen, sind für das Gerät mindestens zwei Verbindungen pro Controller erforderlich.
-    1. Der DATA 0-Anschluss wird automatisch über die serielle Konsole des Geräts aktiviert und konfiguriert. Zusätzlich zu DATA 0 muss ein weiterer Datenanschluss über das Verwaltungsportal konfiguriert werden. 
-    2. Identifizieren Sie identische Netzwerkschnittstellen auf jedem Controller. Wenn Sie z. B. DATA 0 und DATA 3 bei einem der Controller verbinden, müssen Sie DATA 0 und DATA 3 auch am anderen Controller verbinden. 
+2. Die Netzwerkverkabelung ist im folgenden Diagramm dargestellt. (Die Mindestkonfiguration des Netzwerks ist durch durchgängige blaue Linien gekennzeichnet. Die für hohe Verfügbarkeit und Leistung zusätzlich erforderliche Konfiguration wird durch die gepunkteten Linien dargestellt.)
 
-3. Stellen Sie folgende Verbindungen her, um eine hohe Verfügbarkeit sicherzustellen:
-    1. Verbinden Sie identische Schnittstellen an jedem Controller mit dem relevanten Netzwerk, um die Verfügbarkeit bei einem Controllerfehler sicherzustellen.
-    2. Verbinden Sie die Schnittstellen an jedem Controller mit mindestens zwei unterschiedlichen Switches, um die Verfügbarkeit bei einem Switchfehler sicherzustellen.
-    3. Verbinden Sie den DATA 0-Anschluss mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
-
-    Konfigurieren Sie mindestens eine Netzwerkschnittstelle für den Cloudzugriff und eine für iSCSI. Konfigurieren Sie für hohe Verfügbarkeit und Leistung zwei Paare von Netzwerkschnittstellen auf jedem Controller. Die Netzwerkverkabelung ist im folgenden Diagramm dargestellt. (Die Mindestkonfiguration des Netzwerks ist durch durchgängige blaue Linien gekennzeichnet. Die für hohe Verfügbarkeit und Leistung zusätzlich erforderliche Konfiguration wird durch die gepunkteten Linien dargestellt.)
-	
+		
     ![Netzwerkverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
 
     **Netzwerkverkabelung des Geräts**
 
-    Bezeichnung | Beschreibung
-    ----- | -----------
-     Eine Datei | LAN mit Internetzugriff
-     B | Controller 0
-     C | PCM 0
-     D | Controller 1
-     E | PCM 1
-     F, G | Host
-     0-5 | Netzwerkschnittstellen
+   
+	|Bezeichnung | Beschreibung |
+    |----- | ----------- |
+    | Eine Datei | LAN mit Internetzugriff |
+    | B | Controller 0 |
+    | C | PCM 0 |
+    | D | Controller 1 |
+    | E | PCM 1 |
+    | F, G | Host |
+    | 0-5 | Netzwerkschnittstellen |
+
+
+	
+Beim Verkabeln des Geräts ist die folgende Mindestkonfiguration erforderlich:
+
+
+- Mindestens zwei Netzwerkschnittstellen pro Controller – eine für den Cloudzugriff und eine für iSCSI. Der DATA 0-Anschluss wird automatisch über die serielle Konsole des Geräts aktiviert und konfiguriert. Zusätzlich zu DATA 0 muss ein weiterer Datenanschluss über das Verwaltungsportal konfiguriert werden. Verbinden Sie den DATA 0-Anschluss in diesem Fall mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
+
+- Verbinden Sie identische Schnittstellen an jedem Controller mit demselben Netzwerk, um die Verfügbarkeit bei einem Controllerfailover sicherzustellen. Wenn Sie z. B. DATA 0 und DATA 3 bei einem der Controller verbinden, müssen Sie DATA 0 und DATA 3 auch am anderen Controller verbinden.
+	
+Beachten Sie zur Sicherstellung der hohen Verfügbarkeit und Leistung Folgendes:
+
+
+- Konfigurieren Sie auf jedem Controller nach Möglichkeit ein Netzwerkschnittstellenpaar für den Cloudzugriff (1 GbE) und ein weiteres Paar für iSCSI (10 GbE empfohlen). 
+
+- Verbinden Sie die Netzwerkschnittstellen jedes Controllers nach Möglichkeit mit zwei unterschiedlichen Switches, um sicherzustellen, dass die Verfügbarkeit auch bei einem Switchausfall gewährleistet ist. Die Abbildung zeigt die beiden 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, jedes Controllers, die mit zwei unterschiedlichen Switches verbunden sind.
+
+Weitere Informationen finden Sie im Abschnitt **Netzwerkschnittstellen** unter [Anforderungen an die hohe Verfügbarkeit für Ihr StorSimple-Gerät](storsimple-system-requirements/#high-availability-requirements-for-storsimple.md).
+
+>[AZURE.NOTE]Verwenden Sie die beigefügten QSFP-SFP+-Adapter, wenn Sie SFP+-Transceiver mit Ihren 10 GbE-Netzwerkschnittstellen nutzen. Weitere Informationen finden Sie unter [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
+    
+
    
 ### Verkabelung des seriellen Anschlusses
 
@@ -268,11 +285,10 @@ Führen Sie die folgenden Schritte aus, um den seriellen Anschluss zu verkabeln.
 
 >[AZURE.NOTE]**Lights-Out-Management:** Wenn das Gerät in einem Remoterechenzentrum oder in einem Computerraum mit beschränktem Zugriff installiert ist, stellen Sie sicher, dass die seriellen Verbindungen zu beiden Controllern immer mit einem Switch einer seriellen Konsole oder einem ähnlichen Gerät verbunden sind. Dies ermöglicht bei Netzwerkunterbrechungen oder unerwarteten Fehlern Out-of-Band-Remotesteuerungs- und -Supportvorgänge.
 
-Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnektivität verkabelt. Im nächsten Schritt konfigurieren Sie die Software auf Ihrem Gerät.
+Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnektivität verkabelt. Im nächsten Schritt konfigurieren Sie die Software und stellen das Gerät bereit.
 
 ## Nächste Schritte
 
-Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
- 
+Erfahren Sie, wie Sie [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

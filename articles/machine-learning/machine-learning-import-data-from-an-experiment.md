@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Importieren von Daten in Azure Machine Learning Studio aus einem anderen Experiment | Microsoft Azure"
 	description="Speichern von Trainingsdaten in Azure Machine Learning Studio und Verwenden der Daten in einem anderen Experiment."
-	keywords="import data,data,data sources,training data"
+	keywords="Importieren von Daten,Daten,Datenquellen,Trainingsdaten"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -35,4 +35,4 @@ Hin und wieder wird ein Zwischenergebnis aus einem Experiment benötigt, um es a
 
 Wenn der Speichervorgang abgeschlossen ist, ist das Dataset für die Verwendung in allen Experimenten in Ihrem Arbeitsbereich verfügbar. Sie finden es in der Liste **Saved Datasets** in der Modulpalette.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

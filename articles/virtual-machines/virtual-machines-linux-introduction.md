@@ -21,6 +21,8 @@
 
 Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtueller Linux-Computer in der Azure-Cloud. Die Bereitstellung eines virtuellen Linux-Computers ist ein unkomplizierter Prozess, wenn Sie ein Image aus dem Katalog verwenden.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 ## Authentifizierung: Benutzernamen, Kennwörter und SSH-Schlüssel
 
 Wenn Sie mithilfe des Azure-Verwaltungsportals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort oder einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B. 'root'.
@@ -97,4 +99,4 @@ Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die 
 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Workload Phase 1: Konfigurieren von Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
-
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie die Azure Netzwerk- und Speicherinfrastruktur in der Azure-Dienstverwaltung. Diese Phase muss vor Beginn von [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md).
 
@@ -174,4 +173,4 @@ Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 2: Konfigu
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

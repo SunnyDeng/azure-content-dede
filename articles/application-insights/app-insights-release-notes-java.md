@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Versionshinweise für Application Insights für Java" 
-	description="Die neuesten Updates." 
+	description="Die neuesten Updates für das Java SDK." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -20,7 +20,7 @@ Das [Application Insights-SDK für Java](app-insights-java-get-started.md) sende
 
 #### So installieren Sie das SDK in Ihrer Anwendung
 
-Informationen dazu finden Sie unter [Erste Schritte mit Application Insights in einem Java-Webprojekt](app-insights-java-get-started.md).
+Informationen dazu finden Sie unter [Erste Schritte mit dem SDK für Java](app-insights-java-get-started.md).
 
 #### So aktualisieren Sie auf das neueste SDK 
 
@@ -68,4 +68,4 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

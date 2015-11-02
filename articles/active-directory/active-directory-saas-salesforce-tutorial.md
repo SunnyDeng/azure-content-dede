@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/15/2015"
+   ms.date="10/20/2015"
    ms.author="liviodlc"/>
 
 #Tutorial: Integrieren von Salesforce in Azure Active Directory
@@ -84,7 +84,7 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 
 	![Wählen Sie "Azure AD – einmaliges Anmelden".][7]
 
-	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
+	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](https://msdn.microsoft.com/library/azure/dn308588.aspx).
 
 4. Tragen Sie auf der Seite **App-Einstellungen konfigurieren** die **Anmelde-URL** durch Eingabe Ihrer Salesforce-Domänen-URL in folgendem Format ein:
  - Enterprise-Konto:`https://<domain>.my.salesforce.com`
@@ -253,4 +253,4 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 [28]: ./media/active-directory-saas-salesforce-tutorial/assign-confirm.png
 [29]: ./media/active-directory-saas-salesforce-tutorial/assign-sf-profile.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

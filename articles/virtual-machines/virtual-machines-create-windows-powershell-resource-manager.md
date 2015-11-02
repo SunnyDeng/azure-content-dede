@@ -29,7 +29,7 @@ Wenn Sie bereits Azure PowerShell installiert haben, benötigen Sie Version 1.0.
 
 	Get-Module azure | format-table version
 
-Wenn Sie dies noch nicht getan haben oder die installierte Version von Azure PowerShell aktualisieren müssen, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 Zunächst müssen Sie sich mit dem folgenden Befehl in Azure anmelden.
 
@@ -125,9 +125,9 @@ Es erscheint beispielsweise Folgendes:
 
 ## Zusätzliche Ressourcen
 
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](resource-group-overview.md)
+[Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md)
 
 [Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple.md)
 
@@ -137,4 +137,4 @@ Es erscheint beispielsweise Folgendes:
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

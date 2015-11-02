@@ -8,7 +8,9 @@
 
         azure vm image list | grep "Linux"
 
-4. Erstellen Sie mithilfe von `azure vm create` einen neuen virtuellen Computer mit dem Linux-Image aus der obigen Liste. Dadurch werden ein neuer Clouddienst und ein neues Speicherkonto erstellt. Sie können auch mithilfe der Option `-c` eine Verbindung zwischen diesem virtuellen Computer und einem vorhandenen Clouddienst herstellen. Zudem wird ein SSH-Endpunkt zum Anmelden beim virtuellen Linux-Computer mit der Option `-e` erstellt.
+   In einem Windows-Eingabeaufforderungsfenster verwenden Sie „find“ anstelle von „grep“.
+
+4. Erstellen Sie mithilfe von `azure vm create` einen neuen virtuellen Computer mit dem Linux-Image aus der obigen Liste. Dadurch werden ein neuer Clouddienst und ein neues Speicherkonto erstellt. Sie können auch mithilfe der Option `-c` eine Verbindung zwischen diesem virtuellen Computer und einem vorhandenen Clouddienst herstellen. Zudem wird ein SSH-Endgerät zum Anmelden beim virtuellen Linux-Computer mit der Option `-e` erstellt.
 
         ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "West US"
         info:    Executing command vm create
@@ -39,4 +41,4 @@
 
 Ausführliche Informationen zu diesen Azure-CLI-Befehlen für virtuelle Computer finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](../articles/virtual-machines/virtual-machines-command-line-tools.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwalten von Azure Automation-Daten"
+   pageTitle="Verwalten von Azure Automation-Daten | Microsoft Azure"
    description="Dieser Artikel enthält mehrere Themen zum Verwalten einer Azure Automation-Umgebung. Er enthält derzeit die Themen ";Datenaufbewahrung";, ";Sichern von Azure Automation"; und ";Notfallwiederherstellung in Azure Automation";."
    services="automation"
    documentationCenter=""
@@ -62,26 +62,18 @@ Zertifikate können nicht aus Azure Automation exportiert werden. Sie müssen si
 
 ##Georeplikation in Azure Automation
 
-Azure Automation unterstützt die Georeplikation. Bei der Georeplikation werden Ihre Daten von Azure Automation in zwei Regionen beständig gespeichert. Beim Erstellen des Azure Automation-Kontos in Azure-Portal wählen Sie eine Region, in dem es erstellt werden soll. Dies ist die primäre Region. Die Region, in die Ihre Daten per Georeplikation übertragen werden, wird als sekundäre Region bezeichnet. Die primäre und sekundäre Region kommunizieren miteinander, um die Aktualisierungen am Automation-Konto zu georeplizieren. Da in der sekundären Region eine Kopie der Informationen gespeichert wird, stehen bei einem Failover eines Azure Automation-Kontos aus der primären Region in die sekundäre Region die Automation-Kontoinformationen in der sekundären Region weiter zur Verfügung.
+Über die für Azure Automation-Konten standardmäßig eingerichtete Georeplikation werden die Kontodaten für mehr Redundanz an einer geografisch unterschiedlichen Region gespeichert. Hierzu können Sie beim Einrichten des Kontos eine primäre Region auswählen, der dann automatisch eine sekundäre Region zugeordnet wird. Die aus der primären Region kopierten sekundären Daten werden bei einem Datenverlust kontinuierlich aktualisiert.
 
-Die Georeplikation ist in Automation-Kontos integriert und wird kostenlos geboten. Sie haben keine Kontrolle über die Auswahl der sekundären Region, die basierend auf Ihrer Wahl der primären Region automatisch bestimmt wird.
-
- 
-###Speicherorte von Georeplikaten
-
-Derzeit können Automation-Konten in den folgenden fünf Regionen erstellt werden. Weitere Regionen sollen in Zukunft unterstützt werden. In der folgenden Tabelle werden die Paare primärer und sekundärer Regionen gezeigt:
+In der folgenden Tabelle werden die verfügbaren Paare primärer und sekundärer Regionen gezeigt:
 
 |Primär |Sekundär
 | ---------------   |----------------
 |USA (Mitte/Süden) |USA (Mitte/Norden)
-|USA (Ost 2) |USA (Mitte)
+|USA, Osten 2 |USA (Mitte)
 |Westeuropa |Nordeuropa
 |Südostasien |Ostasien
 |Japan Ost |Japan (Westen)
 
+Microsoft versucht im unwahrscheinlichen Fall, dass Daten der primären Region verloren gehen, diese wiederherzustellen. Wenn die Daten der primären Region nicht wiederhergestellt werden können, erfolgt ein Geofailover, über das die betroffenen Kunden durch ihr Abonnement benachrichtigt werden.
 
-###Notfallwiederherstellung in Azure Automation
-
-Wenn ein schwerwiegender Notfall die primäre Region beeinträchtigt, versucht das Automation-Team als Erstes, die primäre Region wiederherzustellen. Wenn es in bestimmten Fällen nicht möglich ist, die primäre Region wiederherzustellen, erfolgt ein Geofailover, worüber die betroffenen Kunden über ihr Abonnement benachrichtigt werden.
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

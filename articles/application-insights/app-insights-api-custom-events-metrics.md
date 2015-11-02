@@ -535,133 +535,47 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
     // ...
 
 
+## Leeren von Daten
 
-## Telemetrieinitialisierer
-
-Mithilfe von Telemetrieinitialisierern definieren Sie globale Eigenschaften, die mit allen Telemetriedaten gesendet werden, und setzen das ausgewählte Verhalten der Standardtelemetriemodule außer Kraft.
-
-Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
-
-Wenn Sie einen Telemetrieinitialisierer angeben, wird dieser immer aufgerufen, wenn eine der Track*()-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von den Standardtelemetriemodulen aufgerufen werden. Nach Abmachung legen diese Module keine Eigenschaft fest, die bereits durch einen Initialisierer festgelegt wurde.
-
-**Definieren des Initialisierers**
+Normalerweise sendet das SDK Daten zu ausgewählten Zeiten, um den Benutzer möglichst wenig zu beeinträchtigen. In einigen Fällen empfiehlt es sich jedoch, den Puffer zu leeren – wenn Sie das SDK beispielsweise in einer Anwendung verwenden, die heruntergefahren wird.
 
 *C#*
 
-```C#
+    telemetry.Flush();
 
-    using System;
-    using Microsoft.ApplicationInsights.Channel;
-    using Microsoft.ApplicationInsights.DataContracts;
-    using Microsoft.ApplicationInsights.Extensibility;
+    // Allow some time for flushing before shutdown.
+    System.Threading.Thread.Sleep(1000);
 
-    namespace MvcWebRole.Telemetry
-    {
-      /*
-       * Custom TelemetryInitializer that overrides the default SDK 
-       * behavior of treating response codes >= 400 as failed requests
-       * 
-       */
-      public class MyTelemetryInitializer : ITelemetryInitializer
-      {
-        public void Initialize(ITelemetry telemetry)
-        {
-            var requestTelemetry = telemetry as RequestTelemetry;
-            // Is this a TrackRequest() ?
-            if (requestTelemetry == null) return;
-            int code;
-            bool parsed = Int32.TryParse(requestTelemetry.ResponseCode, out code);
-            if (!parsed) return;
-            if (code >= 400 && code < 500)
-            {
-                // If we set the Success property, the SDK won't change it:
-                requestTelemetry.Success = true;
-                // Allow us to filter these requests in the portal:
-                requestTelemetry.Context.Properties["Overridden400s"] = "true";
-            }
-            // else leave the SDK to set the Success property      
-        }
-      }
-    }
-```
-
-**Laden des Initialisierers**
-
-In "ApplicationInsights.config":
-
-    <ApplicationInsights>
-      <TelemetryInitializers>
-        <!-- Fully qualified type name, assembly name: -->
-        <Add Type="MvcWebRole.Telemetry.MyTelemetryInitializer, MvcWebRole"/> 
-        ...
-      </TelemetryInitializers>
-    </ApplicationInsights>
-
-*Alternativ* können Sie den Initialisierer im Code instanziieren, z. B. in "Global.aspx.cs":
+Beachten Sie, dass die Funktion für speicherinterne Kanäle asynchron ist, allerdings synchron, wenn Sie den [persistenten Kanal](app-insights-windows-desktop.md#persistence-channel) wählen.
 
 
-```C#
-    protected void Application_Start()
-    {
-        // ...
-        TelemetryConfiguration.Active.TelemetryInitializers
-        .Add(new MyTelemetryInitializer());
-    }
-```
+
+## Telemetrieinitialisierer und -prozessoren
+
+Sie können Plug-Ins für das Application Insights SDK schreiben und konfigurieren, um anzupassen, wie Telemetriedaten erfasst und verarbeitet werden, bevor sie an den Application Insights-Dienst gesendet werden.
+
+[Weitere Informationen](app-insights-telemetry-processors.md)
 
 
-[Weitere Informationen zu diesem Beispiel anzeigen.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
+## Deaktivieren der Standardtelemetrie
 
-<a name="js-initializer"></a>
-### JavaScript-Telemetrieinitialisierer
+Sie können [ausgewählte Teile der Standardtelemetrie deaktivieren][config], indem Sie `ApplicationInsights.config` bearbeiten. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
 
-*JavaScript*
-
-Fügen Sie einen Telemetrieinitialisierer unmittelbar nach dem Initialisierungscode ein, den Sie vom Portal abgerufen haben:
-
-```JS
-
-    <script type="text/javascript">
-        // ... initialization code
-        ...({
-            instrumentationKey: "your instrumentation key"
-        });
-        window.appInsights = appInsights;
+[Weitere Informationen][config].
 
 
-        // Adding telemetry initializer.
-        // This is called whenever a new telemetry item
-        // is created.
+## <a name="debug"></a>Entwicklermodus
 
-        appInsights.queue.push(function () {
-            appInsights.context.addTelemetryInitializer(function (envelope) {
-                var telemetryItem = envelope.data.baseData;
+Während des Debuggens ist es sinnvoll, die Telemetriedaten beschleunigt über die Pipeline zu senden, damit die Ergebnisse sofort angezeigt werden. Sie erhalten außerdem zusätzliche Meldungen, mit denen Sie alle Probleme mit der Telemetrie verfolgen können. Schalten Sie ihn in der Produktion aus, da er Ihre App beeinträchtigen kann.
 
-                // To check the telemetry item’s type - for example PageView:
-                if (envelope.name == Microsoft.ApplicationInsights.Telemetry.PageView.envelopeType) {
-                    // this statement removes url from all page view documents
-                    telemetryItem.url = "URL CENSORED";
-                }
 
-                // To set custom properties:
-                telemetryItem.properties = telemetryItem.properties || {};
-                telemetryItem.properties["globalProperty"] = "boo";
+*C#*
+    
+    TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = true;
 
-                // To set custom metrics:
-                telemetryItem.measurements = telemetryItem.measurements || {};
-                telemetryItem.measurements["globalMetric"] = 100;
-            });
-        });
+*VB*
 
-        // End of inserted code.
-
-        appInsights.trackPageView();
-    </script>
-```
-
-Eine Übersicht der für "telemetryItem" verfügbaren nicht benutzerdefinierten Eigenschaften finden Sie im [Datenmodell](app-insights-export-data-model.md/#lttelemetrytypegt).
-
-Sie können beliebig viele Initialisierer hinzufügen.
+    TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
 
 ## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
 
@@ -700,42 +614,6 @@ Auf Webseiten empfiehlt es sich, ihn über den Zustand des Webservers festzulege
     }) // ...
 
 
-
-## Leeren von Daten
-
-Normalerweise sendet das SDK Daten zu ausgewählten Zeiten, um den Benutzer möglichst wenig zu beeinträchtigen. In einigen Fällen empfiehlt es sich jedoch, den Puffer zu leeren – wenn Sie das SDK beispielsweise in einer Anwendung verwenden, die heruntergefahren wird.
-
-*C#*
-
-    telemetry.Flush();
-
-    // Allow some time for flushing before shutdown.
-    System.Threading.Thread.Sleep(1000);
-
-Beachten Sie, dass die Funktion für speicherinterne Kanäle asynchron ist, allerdings synchron, wenn Sie den [persistenten Kanal](app-insights-windows-desktop.md#persistence-channel) wählen.
-
-
-
-## Deaktivieren der Standardtelemetrie
-
-Sie können [ausgewählte Teile der Standardtelemetrie deaktivieren][config], indem Sie `ApplicationInsights.config` bearbeiten. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
-
-[Weitere Informationen][config].
-
-
-## <a name="debug"></a>Entwicklermodus
-
-Während des Debuggens ist es sinnvoll, die Telemetriedaten beschleunigt über die Pipeline zu senden, damit die Ergebnisse sofort angezeigt werden. Sie erhalten außerdem zusätzliche Meldungen, mit denen Sie alle Probleme mit der Telemetrie verfolgen können. Schalten Sie ihn in der Produktion aus, da er Ihre App beeinträchtigen kann.
-
-
-*C#*
-    
-    TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = true;
-
-*VB*
-
-    TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
-
 ## TelemetryContext
 
 TelemetryClient besitzt eine Eigenschaft "Context", die eine Reihe von Werten enthält, die zusammen mit allen Telemetriedaten gesendet werden. Sie werden normalerweise von den Standardtelemetriemodulen festgelegt, aber Sie können sie auch selbst einstellen. Beispiel:
@@ -754,93 +632,7 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
  * **SyntheticSource**: Wenn sie nicht null oder leer ist, gibt diese Zeichenfolge an, dass die Quelle der Anforderung als Roboter oder Webtest identifiziert wurde. Standardmäßig wird sie von Berechnungen im Metrik-Explorer ausgeschlossen.
 * **Properties** Eigenschaften, die mit allen Telemetriedaten gesendet werden. Kann in einzelnen Track*-Aufrufen außer Kraft gesetzt werden.
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
-* **User** Benutzerinformationen. 
-
-
-## <a name="default-properties"></a>Kontextinitialisierer – Festlegen von Standardeigenschaften für alle Telemetriedaten
-
-Sie können einen universellen Initialisierer einrichten, damit alle neuen "TelemetryClient"-Elemente automatisch Ihren Kontext verwenden. Dies schließt die standardmäßigen Telemetriedaten ein, die von plattformspezifischen Telemetriemodulen gesendet werden, wie z. B. die Nachverfolgung von Webserveranforderungen.
-
-Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach der Eigenschaft "Application Version" filtern oder gruppieren.
-
-Im Allgemeinen [empfehlen wir die Verwendung von Telemetrieinitialisierern anstelle von Kontextinitialisierern](http://apmtips.com/blog/2015/06/09/do-not-use-context-initializers/).
-
-#### Definieren eines Kontextinitialisierers
-
-
-*C#*
-
-```C#
-
-    using System;
-    using Microsoft.ApplicationInsights.Channel;
-    using Microsoft.ApplicationInsights.DataContracts;
-    using Microsoft.ApplicationInsights.Extensibility;
-
-    namespace MyNamespace
-    {
-      // Context initializer class
-      public class MyContextInitializer : IContextInitializer
-      {
-        public void Initialize (TelemetryContext context)
-        {
-            if (context == null) return;
-
-            context.Component.Version = "v2.1";
-        }
-      }
-    }
-```
-
-*Java*
-
-```Java
-
-    import com.microsoft.applicationinsights.extensibility.ContextInitializer;
-    import com.microsoft.applicationinsights.telemetry.TelemetryContext;
-
-    public class MyContextInitializer implements ContextInitializer {
-      @Override
-      public void initialize(TelemetryContext context) {
-        context.Component.Version = "2.1";
-      }
-    }
-```
-
-#### Laden eines Kontextinitialisierers
-
-In "ApplicationInsights.config":
-
-    <ApplicationInsights>
-      <ContextInitializers>
-        <!-- Fully qualified type name, assembly name: -->
-        <Add Type="MyNamespace.MyContextInitializer, MyAssemblyName"/> 
-        ...
-      </ContextInitializers>
-    </ApplicationInsights>
-
-*Alternativ* können Sie den Initialisierer im Code instanziieren:
-
-*C#*
-
-```C#
-
-    protected void Application_Start()
-    {
-        // ...
-        TelemetryConfiguration.Active.ContextInitializers
-        .Add(new MyContextInitializer());
-    }
-```
-
-*Java*
-
-```Java
-
-    // load the context initializer
-    TelemetryConfiguration.getActive().getContextInitializers().add(new MyContextInitializer());
-```
-
+* **User**: Benutzerinformationen. 
 
 
 
@@ -916,4 +708,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

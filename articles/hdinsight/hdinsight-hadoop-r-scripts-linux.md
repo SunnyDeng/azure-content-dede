@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/20/2015"
 	ms.author="larryfr"/>
 
 # Installieren und Verwenden von R in HDInsight Hadoop-Clustern
@@ -62,7 +62,7 @@ Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxrconfigact
 
 > [AZURE.NOTE]Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
-1. Beginnen Sie die Bereitstellung eines Clusters anhand der Schritte in [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
+1. Beginnen Sie die Bereitstellung eines Clusters anhand der Schritte in [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-hadoop-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
 
 2. Wählen Sie auf dem Blatt **Optionale Konfiguration** die Option **Skriptaktionen**, und geben Sie die folgenden Informationen an:
 
@@ -75,7 +75,7 @@ Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxrconfigact
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Stellen Sie den Cluster weiterhin wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben bereit.
+4. Setzen Sie die Bereitstellung des Clusters wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-hadoop-provision-linux-clusters.md#portal) beschrieben fort.
 
 ## Ausführen von R-Skripts
 
@@ -148,4 +148,4 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

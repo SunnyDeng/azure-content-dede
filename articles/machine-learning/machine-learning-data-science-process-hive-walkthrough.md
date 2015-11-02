@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Advanced Analytics Process and Technology (ADAPT) in Aktion: Verwenden von Hadoop-Clustern | Microsoft Azure"
+	pageTitle="Cortana-Analyseprozess (CAP) in Aktion: Verwenden von Hadoop-Clustern | Microsoft Azure"
 	description="Verwenden von ADAPT (Advanced Analytics Process and Technology) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Entwickeln und Bereitstellen eines Modells unter Verwendung eines öffentlich zugänglichen Datasets."
 	services="machine-learning,hdinsight"
 	documentationCenter=""
@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="10/18/2015"
 	ms.author="hangzh;bradsev" />
 
 
-# Advanced Analytics Process and Technology (ADAPT) in Aktion – Verwenden von HDInsight-Hadoop-Clustern
+# Cortana-Analyseprozess (CAP) in Aktion: Verwenden von HDInsight Hadoop-Clustern
 
-In dieser exemplarischen Vorgehensweise nutzen Sie ADAPT (Advanced Analytics Process and Technology) in einem End-to-End-Szenario mit einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/), um Daten aus dem öffentlich zugänglichen [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/)-Dataset zu speichern und zu untersuchen, um Funktionen zu entwickeln und die Daten zu komprimieren. Modelle der Daten werden mit Azure Machine Learning entwickelt, um eine binäre Klassifizierung und eine Multiklassenklassifizierung sowie Regressionsvorhersageaufgaben durchzuführen.
+In dieser exemplarischen Vorgehensweise nutzen Sie den Cortana-Analyseprozess in einem End-to-End-Szenario mit einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/), um Daten aus dem öffentlich zugänglichen [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/)-DataSet zu speichern und zu untersuchen, um Funktionen zu entwickeln und die Daten zu komprimieren. Modelle der Daten werden mit Azure Machine Learning entwickelt, um eine binäre Klassifizierung und eine Multiklassenklassifizierung sowie Regressionsvorhersageaufgaben durchzuführen.
 
-Eine exemplarische Vorgehensweise, die zeigt, wie ein größeres Dataset (mit 1 TB) für ein ähnliches Szenario mit Verwendung von HDInsight Hadoop-Clustern für die Datenverarbeitung nutzt, finden Sie unter [Advanced Analytics Process and Technology (ADAPT) in Aktion – Verwenden von Azure HDInsight Hadoop-Clustern in einem 1-TB-Dataset](machine-learning-data-science-process-hive-criteo-walkthrough.md).
+Eine exemplarische Vorgehensweise, die zeigt, wie ein größeres DataSet (mit 1 TB) für ein ähnliches Szenario mit Verwendung von HDInsight Hadoop-Clustern für die Datenverarbeitung nutzt, finden Sie unter [Cortana-Analyseprozess (CAP) in Aktion – Verwenden von Azure HDInsight Hadoop-Clustern in einem 1-TB-DataSet](machine-learning-data-science-process-hive-criteo-walkthrough.md).
 
 Es ist auch möglich, die in der exemplarischen Vorgehensweise mit 1-TB-Dataset vorgestellten Aufgaben mit einem IPython Notebook umzusetzen. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
 
@@ -810,4 +810,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts werden von Micro
 [project-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

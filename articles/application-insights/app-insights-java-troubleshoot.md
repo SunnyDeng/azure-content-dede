@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Problembehandlung bei Application Insights in einem Java-Webprojekt" 
-	description="Anleitung zur Problembehandlung sowie Fragen und Antworten." 
+	description="Handbuch zur Problembehandlung – Überwachen von Live-Java-Apps mit Application Insights" 
 	services="application-insights" 
     documentationCenter="java"
 	authors="alancameronwills" 
@@ -34,7 +34,7 @@ Fragen oder Probleme im Zusammenhang mit [Visual Studio Application Insights in 
 * Prüfen Sie, ob Sie in der Datei "ApplicationInsights.xml" (im Ordner "Ressourcen" Ihres Projekts) einen Instrumentationsschlüssel definiert haben.
 * Stellen Sie sicher, dass es in der XML-Datei keinen Knoten `<DisableTelemetry>true</DisableTelemetry>` gibt.
 * In Ihrer Firewall müssen Sie möglicherweise die TCP-Ports 80 und 443 für ausgehenden Datenverkehr zu "dc.services.visualstudio.com" und "f5.services.visualstudio.com" öffnen.
-* Schauen Sie sich auf der Startseite von Microsoft Azure die Dienststatusübersicht an. Falls es eine Warnungsanzeige gibt, warten Sie, bis sie wieder "OK" anzeigt, und schließen Sie das Application Insights-Anwendungsfenster, bevor Sie es erneut öffnen.
+* Schauen Sie sich im Startmenü von Microsoft Azure die Dienststatusübersicht an. Falls es eine Warnungsanzeige gibt, warten Sie, bis sie wieder "OK" anzeigt, und schließen Sie das Application Insights-Anwendungsblatt, bevor Sie es erneut öffnen.
 * Aktivieren Sie die Protokollierung im IDE-Konsolenfenster durch Hinzufügen eines `<SDKLogger />`-Elements unter dem Stammknoten in der Datei "ApplicationInsights.xml" (im Ordner "Ressourcen" Ihres Projekts), und suchen Sie nach Einträgen, denen [Fehler] vorangestellt ist.
 * Stellen Sie sicher, dass die richtige Datei "ApplicationInsights.xml" vom Java-SDK geladen wurde, indem Sie die von der Konsole ausgegebenen Meldungen auf den Hinweis untersuchen, dass die Konfigurationsdatei gefunden wurde.
 * Wenn die Konfigurationsdatei nicht gefunden wird, stellen Sie anhand der Ausgabemeldungen fest, wo nach der Konfigurationsdatei gesucht wird, und stellen Sie sicher, dass sich die Datei "ApplicationInsights.xml" an einem dieser durchsuchten Speicherorte befindet. Als Faustregel können Sie die Konfigurationsdatei bei den JAR-Dateien des Application Insights-SDK ablegen. Beispiel: In Tomcat wäre dies der Ordner "WEB-INF/lib".
@@ -95,7 +95,7 @@ Nein, sie zeigt die Integrität der Azure-Server auf der ganzen Welt.
 
 *Wie finde ich im Azure-Startmenü (Startbildschirm) Daten über meine App?*
 
-Wenn Sie Ihre App für [Application Insights eingerichtet][java] haben, klicken Sie auf "Durchsuchen". Wählen Sie "Application Insights" und dann die App-Ressource aus, die Sie für Ihre Anwendung erstellt haben. Um in Zukunft schneller dorthin zu gelangen, können Sie Ihre App an die Startseite anheften.
+Wenn Sie Ihre App für [Application Insights eingerichtet][java] haben, klicken Sie auf "Durchsuchen". Wählen Sie "Application Insights" und dann die App-Ressource aus, die Sie für Ihre Anwendung erstellt haben. Um in Zukunft schneller dorthin zu gelangen, können Sie Ihre App an das Startmenü anheften.
 
 ## Intranetserver
 
@@ -138,4 +138,4 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

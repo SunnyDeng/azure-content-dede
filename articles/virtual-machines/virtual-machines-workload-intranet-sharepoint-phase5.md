@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Workload Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der SharePoint-Datenbanken
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
- 
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 In dieser letzten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie eine neue AlwaysOn-Verfügbarkeitsgruppe und fügen dieser die Datenbanken Ihrer SharePoint-Farm hinzu.
 
@@ -129,4 +128,4 @@ Weitere Informationen zu SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgrupp
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

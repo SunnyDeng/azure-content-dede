@@ -3,7 +3,7 @@
 	description="In diesem Artikel lernen Sie, wie Sie Media Services nach dem Austausch der Speicherzugriffsschlüssel aktualisieren." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="Juliako,milangada,cenkdin" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="10/15/2015"
 	ms.author="juliako"/>
 
 #Gewusst wie: Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel
@@ -22,7 +22,7 @@ Wenn Sie ein neues Azure Media Services-Konto erstellen, müssen Sie auch ein Az
 
 Wenn ein neues Speicherkonto erstellt wird, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die zum Authentifizieren des Zugriffs auf das Speicherkonto verwendet werden. Um Ihre Speicherverbindungen sicherer zu gestalten, sollten Sie Ihre Speicherzugriffsschlüssel in regelmäßigen Abständen neu generieren und austauschen. Zwei Zugriffsschlüssel (primär und sekundär) werden zugewiesen, damit Sie Verbindungen zum Speicherkonto mit einem Zugriffsschlüssel aufrechterhalten können, während Sie den anderen Zugriffsschlüssel neu generieren. Dieser Vorgang wird als Austausch der Zugriffsschlüssel bezeichnet.
 
-Media Services ist auf einen der Speicherschlüssel angewiesen (primär oder sekundär). Insbesondere hängen die Locator, mit denen Ihre Medienobjekte gestreamt oder heruntergeladen werden, vom Zugriffsschlüssel ab. Beim Austausch der Speicherzugriffsschlüssel müssen Sie auch sicherstellen, dass Ihre Locator aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten.
+Media Services ist auf einen der Speicherschlüssel angewiesen (primär oder sekundär). Insbesondere hängen die Locator, mit denen Ihre Assets gestreamt oder heruntergeladen werden, vom Zugriffsschlüssel ab. Beim Austausch der Speicherzugriffsschlüssel müssen Sie auch sicherstellen, dass Ihre Locator aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten.
 
 >[AZURE.NOTE]Nachdem Sie einen Speicherschlüssel neu generiert haben, müssen Sie diese Aktualisierung mit Media Services synchronisieren.
 
@@ -152,4 +152,9 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO3-->
+
+###Danksagungen 
+
+Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Cenk Dingiloglu, Milan Gada, Seva Titov.
+
+<!---HONumber=Oct15_HO4-->

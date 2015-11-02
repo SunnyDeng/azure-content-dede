@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Azure Machine Learning – häufig gestellte Fragen (FAQ) | Microsoft Azure"
 	description="Einführung in Azure Machine Learning: häufig gestellte Fragen (FAQ) zu Abrechnung, Funktionen und Einschränkungen von Clouddiensten für die optimierte Vorhersagemodellierung."
-	keywords="machine learning introduction,predictive modeling,what is machine learning"
+	keywords="Einführung in maschinelles Lernen,Vorhersagemodellierung,was ist maschinelles Lernen"
 	services="machine-learning"
 	documentationCenter=""
 	authors="pablissima"
@@ -179,7 +179,7 @@ Derzeit nicht, mit dem Python-Standardmodul kann jedoch das gleiche Ergebnis erz
 
 **Gibt es eine REPL-Umgebung für Python?**
 
-Sie können die „Jupyter Notebooks“ in Machine Learning Studio verwenden. Weitere Informationen finden Sie unter [Einführung in Jupyter Notebooks in Azure ML Studio](http://blogs.technet.com/b/machinelearning/archive/2015/07/24/introducing-jupyter-notebooks-in-azure-ml-studio.aspx)
+Sie können die „Jupyter Notebooks“ in Machine Learning Studio verwenden. Weitere Informationen finden Sie unter [Introducing Jupyter Notebooks in Azure ML Studio](http://blogs.technet.com/b/machinelearning/archive/2015/07/24/introducing-jupyter-notebooks-in-azure-ml-studio.aspx) (Einführung in Jupyter Notebooks in Azure ML Studio, in englischer Sprache).
 
 ## Webdienst
 ###Programmgesteuertes erneutes Trainieren von Modellen
@@ -198,7 +198,7 @@ Informationen hierzu finden Sie unter [Einschränkungen für Azure-Abonnements](
 ###Verwenden Sie
 **Wann sollte ich mein Vorhersagemodell als Stapelausführungsdienst oder als Anfrage-Antwort-Dienst ausführen?**
 
-Der Anfrage-Antwort-Dienst (Request Response Service, RRS) ist ein hoch skalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in der Experimentumgebung erstellt und bereitgestellt wurden. Der Stapelausführungsdienst (Batch Execution Service, BES) dient zur asynchronen Bewertung eines Stapels von Datensätzen. Die Eingaben für RRS und BES sind einander sehr ähnlich. BES liest im Gegensatz zu RRS einen Block von Einträgen aus einer Vielzahl von Quellen wie z. B. dem Blobdienst und dem Tabellenspeicherdienst in Azure, Azure SQL-Datenbank, HDInsight (Hive-Abfrage) und HTTP-Quellen. Weitere Informationen finden Sie unter [Verwenden von Machine Learning-Webdiensten](machine-learning-consume-web-services.md).
+Der Anfrage-Antwort-Dienst (Request Response Service, RRS) ist ein hoch skalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in der Experimentumgebung erstellt und bereitgestellt wurden. Der Stapelausführungsdienst (Batch Execution Service, BES) dient zur asynchronen Bewertung eines Stapels von Datensätzen. Die Eingaben für RRS und BES sind einander sehr ähnlich. BES liest im Gegensatz zu RRS einen Block von Einträgen aus einer Vielzahl von Quellen wie z. B. dem Blob-Dienst und dem Tabellenspeicherdienst in Azure, Azure SQL-Datenbank, HDInsight (Hive-Abfrage) und HTTP-Quellen. Weitere Informationen finden Sie unter [Verwenden von Machine Learning-Webdiensten](machine-learning-consume-web-services.md).
 
 **Wie aktualisiere ich das Modell für den bereitgestellten Webdienst?**
 
@@ -265,7 +265,7 @@ Nr.
 
 **Wer hat standardmäßig Zugriff auf den HTTP-Endpunkt für den Webdienst in der Produktionsumgebung? Wie kann ich den Zugriff auf den Endpunkt einschränken?**
 
-Nach der Bereitstellung eines Webdiensts wird ein Standardendpunkt für den Dienst erstellt. Dieser Standardendpunkt wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endpunkte können im Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
+Nach der Bereitstellung eines Webdiensts wird ein Standardendgerät für den Dienst erstellt. Dieses Standardendgerät wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endgeräte können im Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
 
 
 **Was geschieht, wenn mein Speicherkonto nicht gefunden werden kann?**
@@ -309,4 +309,4 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

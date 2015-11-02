@@ -19,9 +19,11 @@
 
 # Detaillierte Problembehandlung für Remotedesktopverbindungen mit Windows-basierten virtuellen Azure-Computern
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 Dieser Artikel enthält detaillierte Schritte zur Problembehandlung bei komplexen Remotedesktopfehlern.
 
-> [AZURE.IMPORTANT]Um allgemeine Remotedesktopfehler als Ursache auszuschließen, lesen Sie zunächst die [Grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md), bevor Sie mit dieser Problembehandlung fortfahren.
+> [AZURE.IMPORTANT]Um allgemeine Remotedesktopfehler als Ursache auszuschließen, lesen Sie zunächst die [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md), bevor Sie mit dieser Problembehandlung fortfahren.
 
 ## Azure-Kundensupport kontaktieren
 
@@ -112,10 +114,10 @@ Ist kein anderer virtueller Computer in demselben Clouddienst oder virtuellen Ne
 
 Wenn Sie mit einem virtuellen Computer in demselben Clouddienst oder virtuellen Netzwerk eine Remotedesktopverbindung herstellen können, überprüfen Sie Folgendes:
 
-- Die Endpunktkonfiguration für den Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss mit dem TCP-Port übereinstimmen, der vom Dienst der Remotedesktopdienste auf dem virtuellen Computer überwacht wird. In der Standardeinstellung ist dies Port 3389.
-- Die ACL für den Endpunkt des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endpunkt gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
+- Die Endgerätkonfiguration für den Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endgeräts muss mit dem TCP-Port übereinstimmen, der vom Dienst der Remotedesktopdienste auf dem virtuellen Computer überwacht wird. In der Standardeinstellung ist dies Port 3389.
+- Die ACL für das Endgerät des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endgerät gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
 
-Um den Endpunkt als Problemquelle auszuschließen, entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
+Um das Endgerät als Problemquelle auszuschließen, entfernen Sie das aktuelle Endgerät, und erstellen Sie ein neues Endgerät. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endgeräten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 
 ### <a id="nsgs"></a>Quelle 4: Netzwerksicherheitsgruppen
 
@@ -145,7 +147,7 @@ Um diese möglichen Probleme für virtuelle Computer zu beheben, die mit der Die
 
 Installieren Sie dann Azure PowerShell, sofern noch nicht geschehen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
 
-Als Nächstes öffnen Sie eine Azure PowerShell-Eingabeaufforderung. Ändern Sie dann den aktuellen Ordner auf den Speicherort der Skriptdatei **InstallWinRMCertAzureVM.ps1**. Um ein Azure PowerShell-Skript auszuführen, müssen Sie die richtige Ausführungsrichtlinie festlegen. Führen Sie den Befehl **Get-ExecutionPolicy** aus, um die aktuelle Richtlinienebene zu ermitteln. Weitere Informationen zum Festlegen der geeigneten Ebene finden Sie unter [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx).
+Als Nächstes öffnen Sie eine Azure PowerShell-Eingabeaufforderung. Ändern Sie dann den aktuellen Ordner in den Speicherort der Skriptdatei **InstallWinRMCertAzureVM.ps1**. Um ein Azure PowerShell-Skript auszuführen, müssen Sie die richtige Ausführungsrichtlinie festlegen. Führen Sie den Befehl **Get-ExecutionPolicy** aus, um die aktuelle Richtlinienebene zu ermitteln. Weitere Informationen zum Festlegen der geeigneten Ebene finden Sie unter [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx).
 
 Als Nächstes tragen Sie den Namen Ihres Azure-Abonnements, den Namen des Clouddiensts und den Namen des virtuellen Computers ein (entfernen Sie die < and >-Zeichen). Führen Sie dann diese Befehle aus.
 
@@ -190,7 +192,7 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 	Exit-PSSession
 
-Überprüfen Sie, ob der Remotedesktop-Endpunkt für den virtuellen Azure-Computer auch den TCP-Port 3398 als internen Port verwendet. Starten Sie den virtuellen Azure-Computer dann neu, und versuchen Sie erneut, die Remotedesktopverbindung herzustellen.
+Überprüfen Sie, ob das Remotedesktop-Endgerät für den virtuellen Azure-Computer auch den TCP-Port 3398 als internen Port verwendet. Starten Sie den virtuellen Azure-Computer dann neu, und versuchen Sie erneut, die Remotedesktopverbindung herzustellen.
 
 
 ## Zusätzliche Ressourcen
@@ -205,4 +207,4 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -13,12 +13,23 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="09/14/2015"
+   ms.date="10/18/2015"
    ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystem 
 
 Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MSRC), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
+
+## Gastbetriebssystem Oktober
+
+| Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-106 | [3096441] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.25, 3.32, 2.44 | 13\. Oktober 2015 |
+| MS15-108 | [3089659] | Sicherheitsupdate für JScript und VBScript, um potenzielle Remotecodeausführung zu beheben | 2\.44 | 13\. Oktober 2015 |
+| MS15-109 | [3096443] | Sicherheitsupdate für Windows-Shell, um Remotecodeausführung zu beheben | 4\.25, 3.32, 2.44 | 13\. Oktober 2015 |
+| MS15-111 | [3096447] | Sicherheitsupdate für Windows-Kernel, um Erhöhung von Berechtigungen zu beheben | 4\.25, 3.32, 2.44 | 13\. Oktober 2015 |
+| Microsoft-Sicherheitsempfehlung | [3092627] | Update von September 2015 zur Behebung von Windows- oder Anwendungsabstürzen nach Installation von Security Update 3076895 | 4\.25, 3.32, 2.44 | 13\. Oktober 2015 |
+
 
 ## Gastbetriebssystem September
 
@@ -172,6 +183,12 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 | – | [2896881][2896881] | Lange Anmeldezeit bei der Verwendung des VBScript-Befehls "AddPrinterConnection" zum Zuordnen von Druckern zu Benutzern während des Anmeldeprozesses in Windows | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 
 
+[3096441]: http://support.microsoft.com/kb/3096441
+[3089659]: http://support.microsoft.com/kb/3089659
+[3096443]: http://support.microsoft.com/kb/3096443
+[3096447]: http://support.microsoft.com/kb/3096447
+[3092627]: http://support.microsoft.com/kb/3092627
+
 [3088903]: http://support.microsoft.com/kb/3088903
 [3089548]: http://support.microsoft.com/kb/3089548
 [3072595]: http://support.microsoft.com/kb/3072595
@@ -288,4 +305,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

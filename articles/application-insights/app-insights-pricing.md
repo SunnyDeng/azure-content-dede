@@ -88,7 +88,7 @@ Es gibt drei Buckets, die getrennt gezählt werden:
 * [Ausnahmen](app-insights-api-custom-events-metrics.md#track-exception), begrenzt auf 50 Punkte/s
 * Alle anderen Telemetriedaten (Seitenaufrufe, Sitzungen, Anforderungen, Abhängigkeiten, Metriken, benutzerdefinierte Ereignisse).
 
-Wenn die App mehr Daten sendet, als der Grenzwert zulässt, werden einige Daten gelöscht. Sie erhalten zur Warnung eine Benachrichtigung, dass dies erfolgt ist.
+Wenn die App mehrere Minuten lang mehr Daten sendet, als der Grenzwert zulässt, können einige Daten gelöscht werden. Sie erhalten zur Warnung eine Benachrichtigung, dass dies erfolgt ist.
 
 ### Tipps zur Reduzierung der Datenrate
 
@@ -135,4 +135,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

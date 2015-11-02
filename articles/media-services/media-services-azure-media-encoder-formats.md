@@ -3,7 +3,7 @@
 	description="Dieses Thema bietet eine Übersicht über Azure Media Encoder-Formate und -Codecs." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/05/2015" 
+	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
 #Azure Media Encoder-Formate und -Codecs
@@ -142,4 +142,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

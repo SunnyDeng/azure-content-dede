@@ -25,9 +25,7 @@ Sie können ganz einfach einen neuen Windows-basierten virtuellen Computer erste
 
 ![](./media/virtual-machines-create-windows-powershell-resource-manager-template/windowsvm.png)
 
-Stellen Sie zunächst sicher, dass Azure PowerShell konfiguriert und einsatzbereit ist.
-
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 ## Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage mit Azure PowerShell
 
@@ -278,7 +276,7 @@ Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in
 
 ## Zusätzliche Ressourcen
 
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
 [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md)
 
@@ -290,4 +288,4 @@ Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

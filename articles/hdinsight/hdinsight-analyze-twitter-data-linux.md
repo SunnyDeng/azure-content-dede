@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Analysieren von Twitter-Daten mit Hadoop in HDInsight | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Twitterdaten mit Hive in Hadoop und HDInsight analysieren können, um die Häufigkeit bestimmter Wörter zu ermitteln."
+	pageTitle="Analysieren von Twitter-Daten mit Apache Hive in HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit Python Tweets speichern, die bestimmte Schlüsselwörter enthalten, und dann mit Hive und Hadoop in HDInsight die Twitter-Rohdaten in eine durchsuchbare Hive-Tabelle umwandeln."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/19/2015"
 	ms.author="larryfr"/>
 
 # Analysieren von Twitter-Daten mit Hive in HDInsight
@@ -319,4 +319,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie ein unstrukturiertes JSON-Dat
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

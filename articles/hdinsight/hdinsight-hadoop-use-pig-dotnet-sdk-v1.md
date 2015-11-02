@@ -161,4 +161,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

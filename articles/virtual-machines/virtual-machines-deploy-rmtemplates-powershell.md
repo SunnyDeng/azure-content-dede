@@ -43,11 +43,7 @@ Für diese Aufgaben wird ausschließlich PowerShell verwendet:
 - [Neustarten eines virtuellen Computers](#restart)
 - [Löschen eines virtuellen Computers](#delete)
 
-Stellen Sie vor dem Loslegen sicher, dass Azure PowerShell bereit ist.
-
-[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
-
-
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 ## Azure-Ressourcen-Manager-Vorlagen und -Ressourcengruppen
 
@@ -65,13 +61,13 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 
 Für Aufgaben, mit denen eine Ressource erstellt wird, ist eine Ressourcengruppe erforderlich. Erstellen Sie diese gegebenenfalls, wenn Sie noch nicht über eine Ressourcengruppe verfügen.
 
-Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der neuen Ressourcengruppe und *Azure location* durch den Standort des Azure-Datencenters, in dem die Ressource erstellt werden soll, und führen Sie den Befehl aus:
+Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der neuen Ressourcengruppe und *Azure location* durch den Standort des Azure-Rechenzentrums, in dem die Ressource erstellt werden soll, und führen Sie den Befehl aus:
 
 	New-AzureRmResourceGroup -Name "resource group name" -Location "Azure location"
 
 ## <a id="windowsvm"></a>AUFGABE: Erstellen eines virtuellen Computers
 
-Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere Informationen zu dieser Vorlage finden Sie unter [Bereitstellen eines einfachen virtuellen Windows-Computers in der Region "USA, Westen"](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/).
+Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere Informationen zu dieser Vorlage finden Sie unter [Bereitstellen eines einfachen virtuellen Windows-Computers in der Region „USA, Westen“](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/).
 
 ![](./media/virtual-machines-deploy-rmtemplates-powershell/windowsvm.png)
 
@@ -83,7 +79,7 @@ Hier sehen Sie ein Beispiel:
 
 	New-AzureRmResourceGroupDeployment -Name "TestDeployment" -ResourceGroupName "TestRG" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
 
-Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben.
+Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben:
 
 	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
@@ -140,7 +136,7 @@ Hier sehen Sie ein Beispiel:
 
 	New-AzureRmResourceGroupDeployment -Name "TestDeployment" -ResourceGroupName "TestRG" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
 
-Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben.
+Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben:
 
 	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
@@ -157,7 +153,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [AZURE.VIDEO create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell]
 
-## <a id="multivm"></a>AUFGABE: Erstellen von mehreren virtuellen Computern in einem virtuellen Netzwerk mit externem Lastenausgleich
+## <a id="multivm"></a>AUFGABE: Erstellen von mehreren virtuellen Computern in einem virtuellen Netzwerk mit externem Load Balancer
 
 Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere Informationen zu dieser Vorlage finden Sie unter [Erstellen eines virtuellen Computers anhand eines spezialisierten VHD-Datenträgers](https://azure.microsoft.com/documentation/templates/201-2-vms-loadbalancer-lbrules/).
 
@@ -167,7 +163,7 @@ Ersetzen Sie im folgenden Befehl *deployment name* durch den Namen der Bereitste
 
 	New-AzureRmResourceGroupDeployment -Name "deployment name" -ResourceGroupName "resource group name" -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json"
 
-Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben.
+Sie werden aufgefordert, im Abschnitt **parameters** der JSON-Datei Parameterwerte anzugeben:
 
 	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
@@ -380,4 +376,4 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

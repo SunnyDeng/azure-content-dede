@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # Erstellen eines standortübergreifenden virtuellen Netzwerks mithilfe von Konfigurationstabellen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
- 
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 In diesem Thema erfahren Sie Schritt für Schritt, wie ein standortübergreifendes virtuelles Netzwerk mit den Einstellungen erstellt wird, die zuvor in den folgenden Konfigurationstabellen festgelegt wurden:
 
@@ -64,10 +63,10 @@ In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des 
 
 ## Zusätzliche Ressourcen
 
-[Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md)
+[Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md)
 
 [Konfigurationsaufgaben für virtuelle Netzwerke](../documentation/services/virtual-machines/)
 
 [Configure a cross-premises site-to-site connection to an Azure virtual network](../vpn-gateway/vpn-gateway-site-to-site-create.md) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung mit einem virtuellen Azure-Netzwerk).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

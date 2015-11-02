@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/20/2015"
+   ms.date="10/19/2015"
    ms.author="telmos" />
 
 # FAQs zu virtuellen Netzwerken
@@ -23,4 +23,4 @@
 
 Die neuesten häufig gestellte Fragen zu virtuellen Netzwerk-VPNs finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -14,11 +14,11 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/15/2015"
+	ms.date="10/14/2015"
 	ms.author="dkshir"/>
 
 
-# Installieren und Konfigurieren von Trend Micro Deep Security als Dienst auf einem virtuellen Azure-Computer
+# Installieren und Konfigurieren von Trend Micro Deep Security als Dienst auf einem virtuellen Windows-Computer
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
@@ -87,4 +87,4 @@ Es dauert einige Minuten, bis der Agent gestartet wird, wenn er installiert ist.
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: virtual-machines-log-on-windows-server.md
 [Azure-VM-Erweiterungen und -Features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->
