@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Versionshinweise für Application Insights für .NET" 
-	description="Die neuesten Updates." 
+	description="Die neuesten Updates für das .NET SDK." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -74,7 +74,7 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 - Abhängigkeit von EventSource NuGet für die Framework 4.5-Anwendungen wurde entfernt.
 - Anonyme Benutzer und Sitzungscookies werden serverseitig nicht generiert. Für die Nachverfolgung von Benutzern und Sitzungen für Web-Apps ist jetzt die Instrumentation mit dem JS-SDK erforderlich – Cookies des JavaScript-SDK werden weiterhin beachtet. Die Telemetriemodule ```WebSessionTrackingTelemetryModule``` und ```WebUserTrackingTelemetryModule``` werden nicht mehr unterstützt und wurden aus der Datei "ApplicationInsights.config" entfernt. Beachten Sie, dass diese Änderung zu einer erheblichen Anpassung von Benutzer- und Sitzungszahlen führen kann, da nun nur von Benutzern initiierte Sitzungen gezählt werden.
 - OSVersion wird nicht mehr standardmäßig vom SDK angegeben. Ohne eine Angabe werden OS und OSVersion von der Application Insights-Pipeline basierend auf dem Benutzer-Agent berechnet. 
-- Der für Szenarios mit hoher Belastung optimierte Persistenz-Kanal wird für das Web SDK verwendet. Das "Spiral of death"-Problem wurde behoben. "Spiral of death" ist eine Bedingung, bei der die Spitze bei der Anzahl der Telemetrieelemente, die den Einschränkungsgrenzwert am Endpunkt erheblich überschreitet, zu einem erneuten Versuch führt und beim erneuten Versuch wieder eingeschränkt wird.
+- Der für Szenarios mit hoher Belastung optimierte Persistenz-Kanal wird für das Web SDK verwendet. Das "Spiral of death"-Problem wurde behoben. "Spiral of death" ist eine Bedingung, bei der die Spitze bei der Anzahl der Telemetrieelemente, die den Einschränkungsgrenzwert am Endgerät erheblich überschreitet, zu einem erneuten Versuch führt und beim erneuten Versuch wieder eingeschränkt wird.
 - Der Entwicklermodus wurde für die Produktion optimiert. Wenn dieser Modus versehentlich aktiviert bleibt, verursacht der Versuch, zusätzliche Informationen auszugeben, keinen so großen Overhead wie zuvor.
 - Der Entwicklermodus wird standardmäßig nur aktiviert, wenn für die Anwendung der Debugger aktiviert ist. Sie können ihn durch Verwenden der ```DeveloperMode```-Eigenschaft der ```ITelemetryChannel```-Schnittstelle überschreiben.
 
@@ -97,4 +97,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

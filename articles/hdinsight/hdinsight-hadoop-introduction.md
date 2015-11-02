@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Was ist Hadoop in HDInsight?: Big Data-Analyse in der Cloud | Microsoft Azure"
 	description="Eine Einführung in Hadoop-Komponenten in der Cloud in HDInsight. Erfahren Sie, wie HDInsight Hadoop-Cluster nutzt, um Big Data zu verwalten, zu analysieren und dazugehörige Berichte zu erstellen."
-	keywords="big data,big data analysis,hadoop,introduction to hadoop,what is hadoop"
+	keywords="Big Data,Big Data-Analyse,Hadoop,Einführung in Hadoop,was ist Hadoop"
 	services="hdinsight"
 	documentationCenter=""
 	authors="cjgronlund"
@@ -24,7 +24,7 @@ Lesen Sie eine Einführung in Hadoop, sein Ökosystem und Big Data in Azure HDIn
 
 ## Was ist Hadoop in HDInsight?
 
-Azure HDInsight verwendet Apache Hadoop-Cluster in der Cloud und stellt ein Software-Framework für die zuverlässige und hochverfügbare Verwaltung, Analyse und Berichtserstellung für große Datenmengen (Big Data) bereit. HDInsight verwendet die **Hortonworks Data Platform (HDP)**-Hadoop-Distribution. Hadoop bezieht sich häufig auf das gesamte Hadoop-Ökosystem mit all seinen Komponenten, einschließlich Storm und HBase-Clustern sowie anderen Technologien unter dem Dach Hadoop. Weitere Informationen finden Sie nachfolgend unter [Übersicht über das Hadoop-Ökosystem in HDInsight](#overview).
+Azure HDInsight verwendet Apache Hadoop-Cluster in der Cloud und stellt ein Software-Framework für die zuverlässige und hochverfügbare Verwaltung, Analyse und Berichtserstellung für Big Data bereit. HDInsight verwendet die **Hortonworks Data Platform (HDP)**-Hadoop-Distribution. Hadoop bezieht sich häufig auf das gesamte Hadoop-Ökosystem mit all seinen Komponenten, einschließlich Storm und HBase-Clustern sowie anderen Technologien unter dem Dach Hadoop. Weitere Informationen finden Sie nachfolgend unter [Übersicht über das Hadoop-Ökosystem in HDInsight](#overview).
 
 
 ## Was versteht man unter "Big Data"?
@@ -43,7 +43,7 @@ HDInsight ist eine Cloudimplementierung in Microsoft Azure des schnell wachsende
 
 Azure HDInsight stellt Hadoop-Cluster mithilfe von entweder **Linux** oder **Windows** als zugrunde liegendes Betriebssystem in der Cloud bereit.
 
-* **HDInsight unter Linux** – Ein Hadoop-Cluster unter Ubuntu. Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix und der Migration von einer vorhandenen Linux-basierten Hadoop-Lösung vertraut sind oder Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert sind.
+* **HDInsight unter Linux**: ein Hadoop-Cluster unter Ubuntu. Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix und der Migration von einer vorhandenen Linux-basierten Hadoop-Lösung vertraut sind oder Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert sind.
 
 * **HDInsight unter Windows** – Ein Hadoop-Cluster unter Windows Server. Verwenden Sie diese Option, wenn Sie mit Windows vertraut sind, von einer vorhandenen Windows-basierten Hadoop-Lösung migrieren oder .NET bzw. eine andere reine Windows-Technologie im Cluster ausführen möchten.
 
@@ -63,11 +63,11 @@ Kategorie | Hadoop unter Linux | Hadoop unter Windows
 
 HDInsight bietet Clusterkonfigurationen für Hadoop, HBase oder Storm. Alternativ können Sie [Cluster mit Skriptaktionen anpassen](hdinsight-hadoop-customize-cluster-linux.md).
 
-* **Hadoop** (die "Abfrage"-Arbeitslast): Bietet eine zuverlässige Datenspeicherung mithilfe von [HDFS](#HDFS) und ein einfaches [MapReduce](#mapreduce)-Programmiermodell zum parallelen Verarbeiten und Analysieren von Daten.
+* **Hadoop** (die "Abfrage"-Workload): Bietet eine zuverlässige Datenspeicherung mithilfe von [HDFS](#HDFS) und ein einfaches [MapReduce](#mapreduce)-Programmiermodell zum parallelen Verarbeiten und Analysieren von Daten.
 
-* **<a target="_blank" href="http://hbase.apache.org/">HBase</a>** (die "NoSQL"-Arbeitslast): Eine auf Hadoop basierende NoSQL-Datenbank, die wahlfreien Zugriff und starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet – in einer Dimension von Milliarden von Zeilen multipliziert mit Milliarden von Spalten. Siehe [Übersicht über HBase in HDInsight](hdinsight-hbase-overview.md).
+* **<a target="_blank" href="http://hbase.apache.org/">HBase</a>** (die "NoSQL"-Workload): Eine auf Hadoop basierende NoSQL-Datenbank, die wahlfreien Zugriff und starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet – in einer Dimension von Milliarden von Zeilen multipliziert mit Milliarden von Spalten. Siehe [Übersicht über HBase in HDInsight](hdinsight-hbase-overview.md).
 
-* **<a  target="_blank" href="https://storm.incubator.apache.org/">Apache Storm</a>** (die "Stream"-Arbeitslast): Ein verteiltes Echtzeitberechnungssystem für die schnelle Verarbeitung großer Datenströme. Storm wird als verwalteter Cluster in HDInsight angeboten. Siehe [Analysieren von Echtzeit-Sensordaten mit Storm und Hadoop](hdinsight-storm-sensor-data-analysis.md).
+* **<a  target="_blank" href="https://storm.incubator.apache.org/">Apache Storm</a>** (die "Stream"-Workload): Ein verteiltes Echtzeitberechnungssystem für die schnelle Verarbeitung großer Datenströme. Storm wird als verwalteter Cluster in HDInsight angeboten. Siehe [Analysieren von Echtzeit-Sensordaten mit Storm und Hadoop](hdinsight-storm-sensor-data-analysis.md).
 
 #### Beispielskripts für die Anpassung
 
@@ -78,7 +78,7 @@ Die folgenden Beispielskripts werden vom HDInsight-Team bereitgestellt:
 * [Hue](hdinsight-hadoop-hue-linux.md)
 
 	> [AZURE.NOTE]Das Hue-Skript steht nur für Linux-basierte Cluster zur Verfügung.
-	
+
 * [Giraph](hdinsight-hadoop-giraph-install-linux.md)
 
 * [R](hdinsight-hadoop-r-scripts-linux.md)
@@ -169,7 +169,7 @@ Weitere Informationen zu MapReduce finden Sie unter <a target="_blank" href="htt
 
 
 ### <a name="zookeeper"></a>ZooKeeper
-<a  target="_blank" href="http://zookeeper.apache.org/">Apache ZooKeeper</a> koordiniert Prozesse in großen verteilten Systemen mithilfe eines hierarchischen Namespace von Datenregistern (znodes). Znodes enthalten kleine Mengen an Metainformationen, die für die Koordination von Prozessen erforderlich sind: Status, Speicherort, Konfiguration usw.
+<a  target="_blank" href="http://zookeeper.apache.org/">Apache Zookeeper</a> koordiniert Prozesse in großen verteilten Systemen mithilfe eines hierarchischen Namespace von Datenregistern (znodes). Znodes enthalten kleine Mengen an Metainformationen, die für die Koordination von Prozessen erforderlich sind: Status, Speicherort, Konfiguration usw.
 
 ## <a name="advantage"></a>Vorzüge von Hadoop in der Cloud
 
@@ -183,7 +183,7 @@ Hadoop in HDInsight ist Teil des Azure Cloud-Ökosystems und bietet eine Vielzah
 
 * Effiziente und wirtschaftliche Datenspeicherung im Azure-Blobspeicher, eine Hadoop-kompatible Option. Siehe [Verwenden des Azure-Blobspeichers mit Hadoop in HDInsight](hdinsight-hadoop-use-blob-storage.md).
 
-* Integration mit anderen Azure-Diensten wie [Web-Apps](../documentation/services/app-service/web/) und [SQL Database](../documentation/services/sql-database/).
+* Integration mit anderen Azure-Diensten wie [Web-Apps](../documentation/services/app-service/web/) und [SQL-Datenbank](../documentation/services/sql-database/).
 
 * Niedrige Einstiegskosten. Probieren Sie die [kostenlose Testversion](/pricing/free-trial/) aus oder entdecken Sie die [HDInsight-Preisdetails](/pricing/details/hdinsight/).
 
@@ -229,11 +229,11 @@ Lesen Sie im Anschluss an diese Einführung in Hadoop in HDInsight und die Big D
 
 * <a target="_blank" href="http://hadoop.apache.org/">Apache Hadoop</a>: Erfahren Sie mehr über die Apache Hadoop-Softwarebibliothek, ein Framework, das die verteilte Verarbeitung großer Datasets in Computerclustern ermöglicht.
 
-* <a target="_blank" href="http://hadoop.apache.org/docs/r0.18.1/hdfs_design.html">HDFS</a>: Erfahren Sie mehr über die Architektur und das Design von Hadoop Distributed File System (HDFS), dem primären Speichersystem, das von Hadoop-Anwendungen verwendet wird.
+* <a target="_blank" href="http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html">HDFS</a>: Erfahren Sie mehr über die Architektur und das Design von Hadoop Distributed File System (HDFS), dem primären Speichersystem, das von Hadoop-Anwendungen verwendet wird.
 
 * <a target="_blank" href="http://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html">MapReduce Tutorial</a>: Erfahren Sie mehr über das Programmierframework für das Schreiben von Hadoop-Anwendungen, die riesige Datenmengen auf großen Compute-Knoten parallel verarbeiten.
 
-### SQL Database in Azure
+### SQL-Datenbank in Azure
 
 * [Azure SQL-Datenbank](http://msdn.microsoft.com/library/windowsazure/ee336279.aspx): MSDN-Dokumentation zur SQL-Datenbank.
 
@@ -272,6 +272,5 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [marketing-page]: ../services/hdinsight/
 [component-versioning]: hdinsight-component-versioning.md
 [zookeeper]: http://zookeeper.apache.org/
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

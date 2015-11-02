@@ -1,14 +1,14 @@
 <properties 
 	pageTitle="Verbinden einer Web-App mit einer API-App in Azure App Service" 
 	description="In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in Azure App Service gehosteten ASP.NET-Web-App genutzt wird." 
-	services="app-service" 
+	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="syntaxc4" 
 	manager="yochayk" 
 	editor="jimbe"/>
 
 <tags
-	ms.service="app-service"
+	ms.service="app-service-web"
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
@@ -96,4 +96,4 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

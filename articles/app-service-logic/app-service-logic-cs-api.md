@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/16/2015"
+   ms.date="10/17/2015"
    ms.author="jehollan"/>
 
 #C#-API-App
@@ -96,7 +96,7 @@ return YammerAttachments;
 Die Aktion gibt das Objekt zurück, das Sie von Ihrer Funktion in einem Ergebnisobjekt zurückgegeben haben. So können Sie in der Yammer-API-App auf `@body('csapi').results` für die **Attachments**-Eigenschaft verweisen.
 
 ## Mehr mit Ihrem Connector machen
-Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+Nachdem der Connector nun erstellt ist, können Sie ihn mit einer Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
@@ -105,4 +105,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

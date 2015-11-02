@@ -23,6 +23,8 @@
 - [Vorbereiten eines virtuellen CentOS 6.x-Computers für Azure](#centos6)
 - [Vorbereiten eines virtuellen CentOS 7.0+-Computers für Azure](#centos7)
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 ##Voraussetzungen##
 
 In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betriebssystem (oder eine ähnliche Ableitung) auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
@@ -363,4 +365,4 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
 16. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="10/19/2015"
 	ms.author="billmath"/>
 
 # Azure AD Connect Health-Vorgänge
@@ -95,7 +95,7 @@ Alle anderen Rollen (z. B. "User Access Administrators" oder "DevTest Lab Users
 
 Azure AD Connect unterstützt Zugriffsverwaltung auf zwei Ebenen:
 
-- ***Verzeichnis***: Dies ist für die meisten Kunden empfohlen und steuert den Zugriff auf alle Dienstinstanzen (z. B. eine AD FS-Farm) für alle Arten von Rollen, die von Azure AD Connect Health überwacht werden.
+- ***Alle Dienstinstanzen***: Dies ist für die meisten Kunden empfohlen und steuert den Zugriff auf alle Dienstinstanzen (z. B. eine AD FS-Farm) für alle Arten von Rollen, die von Azure AD Connect Health überwacht werden.
 
 - ***Dienstinstanz***: In einigen Fällen müssen Sie möglicherweise Zugriff basierend auf Rollentypen oder nach Dienstinstanz aufteilen. In diesem Fall können Sie den Zugriff auf Dienstinstanzebene verwalten.
 
@@ -142,4 +142,4 @@ Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung 
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

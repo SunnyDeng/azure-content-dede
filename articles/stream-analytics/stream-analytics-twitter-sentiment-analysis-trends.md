@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Twitter-Stimmungsanalyse in Echtzeit mit Stream Analytics | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Stream Analytics für Twitter-Stimmungsanalysen in Echtzeit verwenden. Schrittweise Anleitung von der Ereignisgenerierung bis hin zu Daten im Live-Dashboard."
-	keywords="real-time twitter,sentiment analysis,social media analysis,social media analytics tools"
+	keywords="Echtzeit-Twitter,Stimmungsanalyse,Analyse von sozialen Medien,Analyse-Tools für soziale Medien"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -34,7 +34,7 @@ Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhal
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
-Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
+Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hubs-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
@@ -236,4 +236,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

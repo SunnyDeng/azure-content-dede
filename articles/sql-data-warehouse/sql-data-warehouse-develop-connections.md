@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/21/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Herstellen einer Verbindung mit SQL Data Warehouse 
@@ -151,11 +151,11 @@ Nach dem Herstellen der Verbindung können Sie mit dem Entwerfen der Tabellen be
 <!--Image references-->
 
 <!--Azure.com references-->
-[Herstellen einer Verbindung und Durchführen von Abfragen]: sql-data-warehouse-get-started-connect-query.md
-[Tabellenentwurf]: sql-data-warehouse-develop-table-design.md
+[Herstellen einer Verbindung und Durchführen von Abfragen]: ./sql-data-warehouse-get-started-connect.md
+[Tabellenentwurf]: ./sql-data-warehouse-develop-table-design.md
 
 <!--MSDN references-->
 
 <!--Other references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

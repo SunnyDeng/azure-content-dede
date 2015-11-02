@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Workload Phase 3: Konfigurieren der SQL Server-Infrastruktur
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
-
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen und konfigurieren Sie die beiden SQL Server-Computer und den Mehrheitsknotencomputer des Clusters in der Dienstverwaltung und fassen diese in einem Windows-Servercluster zusammen.
 
@@ -42,7 +41,7 @@ Mit dem folgenden PowerShell-Befehlsblock erstellen Sie die virtuellen Computer 
 
 Tabelle M haben Sie in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) ausgefüllt und die Tabellen V, S, A und C in [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
-Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
 	# Create the first SQL server
 	$vmName="<Table M – Item 3 - Virtual machine name column>"
@@ -144,7 +143,7 @@ Gehen Sie jeweils für beide SQL-Server nach den Anweisungen der folgenden Proze
 
 Für SQL Server ist ein Port erforderlich, über den die Clients auf den Datenbankserver zugreifen. Zwei weitere Ports sind erforderlich für die Verbindung mit SQL Server Management Studio und die Verwaltung der Hochverfügbarkeitsgruppe. Führen Sie als Nächstes jeweils für beide SQL-Server den folgenden Befehl an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene aus, um eine Firewallregel hinzuzufügen, die eingehenden Datenverkehr zum SQL-Server erlaubt.
 
-	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 4234, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
+	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 1434, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
 
 Melden Sie sich bei beiden virtuellen SQL Server-Computern als lokaler Administrator ab.
 
@@ -164,7 +163,7 @@ SQL Server AlwaysOn-Verfügbarkeitsgruppen basieren auf dem Windows Server-Featu
 - Der sekundäre SQL-Server
 - Der Mehrheitsknoten des Clusters
 
-Für einen Failovercluster sind mindestens drei virtuelle Computer erforderlich. Auf zwei Computern wird SQL Server bereitgestellt. Der zweite virtuelle Computer mit SQL Server ist ein synchrones sekundäres Replikat, das bei einem Ausfall des primären Computers sicherstellt, dass keine Daten verloren gehen. Der dritte Computer muss kein SQL Server bereitstellen. Der Mehrheitsknoten des Clusters fungiert innerhalb des WSFC als Quorumzeuge. Da der WSFC-Cluster zur Überwachung seines Zustands ein Quorum benötigt, muss immer eine Mehrheit vorhanden sein, die sicherstellt, dass der WSFC-Cluster online ist. Wenn ein Cluster nur aus zwei Computern besteht und einer von beiden ausfällt, gibt es keine Mehrheit mehr. Weitere Informationen finden Sie unter [WSFC-Quorummodi und Abstimmungskonfiguration (SQL Server)](http://msdn.microsoft.com/library/hh270280.aspx).
+Für einen Failovercluster sind mindestens drei virtuelle Computer erforderlich. Auf zwei Computern wird SQL Server bereitgestellt. Der zweite virtuelle Computer mit SQL Server ist ein synchrones sekundäres Replikat, das bei einem Ausfall des primären Computers sicherstellt, dass keine Daten verloren gehen. Der dritte Computer muss kein SQL Server bereitstellen. Der Mehrheitsknoten des Clusters bietet ein Quorum im WSFC. Da der WSFC-Cluster zur Überwachung seines Zustands ein Quorum benötigt, muss immer eine Mehrheit vorhanden sein, die sicherstellt, dass der WSFC-Cluster online ist. Wenn ein Cluster nur aus zwei Computern besteht und einer von beiden ausfällt, gibt es keine Mehrheit mehr. Weitere Informationen finden Sie unter [WSFC-Quorummodi und Abstimmungskonfiguration (SQL Server)](http://msdn.microsoft.com/library/hh270280.aspx).
 
 Führen Sie für beide SQL Server-Computer und für den Mehrheitsknoten des Clusters an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene den folgenden Befehl aus.
 
@@ -233,4 +232,4 @@ Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 4: Konfigu
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/08/2015" 
+	ms.date="10/08/2015" 
 	ms.author="asteen"/>
 
 # Anpassen der Kennwortverwaltung an die Anforderungen Ihrer Organisation
@@ -393,7 +393,56 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
             </tr>
             <tr>
               <td>
-                <p>Sicherheitsfrage</p>
+                <p>Informationsbasierte Sicherheitsfragen</p>
+              </td>
+              <td>
+                <p>Definiert die vordefinierten Sicherheitsfragen, aus denen Ihre Benutzer auswählen können, wenn sie sich für die Kennwortzurücksetzung registrieren und wenn sie ihre Kennwörter zurücksetzen.</p>
+                <p>
+                  
+                </p>
+                <p>(Nur sichtbar, wenn das Kontrollkästchen <strong>Sicherheitsfragen</strong> aktiviert ist).</p>
+              </td>
+              <td>
+                <p>
+                  <strong>Hinweis:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Alle Fragen der Wissensdatenbank werden anhand des Gebietsschemas im Browser in den vollständigen Satz von Office&#160;365-Sprachen lokalisiert. <br><br></li>
+                  <li class="unordered">
+												Insgesamt können bis zu 20&#160;Fragen definiert werden (Summe aus benutzerdefinierten und Wissensdatenbank-Fragen).<br><br></li>
+                 <li class="unordered">
+												Die Mindestanzahl von Zeichen für Antworten ist 3 Zeichen.<br><br></li>
+                  <li class="unordered">
+												Die maximale Zeichenanzahl für Antworten ist 40 Zeichen.<br><br></li>
+                  <li class="unordered">
+												Benutzer können nicht zweimal dieselbe Frage beantworten.<br><br></li>
+                  <li class="unordered">
+												Benutzer können für zwei verschiedene Fragen nicht dieselbe Antwort angeben.<br><br></li>
+                  <li class="unordered">
+												Beim Definieren der Antworten kann ein beliebiger Zeichensatz verwendet werden (einschließlich Unicode).<br><br></li>
+                  <li class="unordered">
+												Die Anzahl der definierten Fragen muss größer als oder gleich der Anzahl der für die Registrierung erforderlichen Fragen sein.<br><br></li>
+                </ul>
+                <p>
+                  <strong>Registrierungsportal:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Legt fest, für welche Fragen ein Benutzer Antworten bereitstellen kann, wenn er sich für die Kennwortzurücksetzung registriert.<br><br></li>
+                </ul>
+                <p>
+                  <strong>Kennwortzurücksetzungsportal:</strong>
+                </p>
+                <ul>
+                  <li class="unordered">
+												Legt fest, welche Fragen ein Benutzer zum Zurücksetzen eines Kennworts verwenden kann.<br><br></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Benutzerdefinierte Sicherheitsfragen</p>
               </td>
               <td>
                 <p>Definiert die Sicherheitsfragen, aus denen Ihre Benutzer auswählen können, wenn sie sich für die Kennwortzurücksetzung registrieren und wenn sie ihre Kennwörter zurücksetzen.</p>
@@ -408,7 +457,7 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
                 </p>
                 <ul>
                   <li class="unordered">
-												Bis zu 20 Fragen können definiert werden.<br><br></li>
+												Insgesamt können bis zu 20&#160;Fragen definiert werden (Summe aus benutzerdefinierten und Wissensdatenbank-Fragen).<br><br></li>
                   <li class="unordered">
 												Die maximale Zeichenanzahl für Fragen ist 200 Zeichen.<br><br></li>
                   <li class="unordered">
@@ -424,7 +473,7 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
                   <li class="unordered">
 												Die Anzahl der definierten Fragen muss größer als oder gleich der Anzahl der für die Registrierung erforderlichen Fragen sein.<br><br></li>
                   <li class="unordered">
-												Die Definition verschiedener Fragen für verschiedene Gebietsschemas wird noch nicht unterstützt. Dies ist jedoch in Planung.<br><br></li>
+												Die Definition verschiedener Fragen für verschiedene Gebietsschemas wird für benutzerdefinierte Fragen nicht unterstützt. Alle benutzerdefinierten Fragen werden auch bei abweichendem Gebietsschema im Browser in der Sprache angezeigt, in der sie in der administrativen Benutzeroberfläche eingegeben wurden. Falls diese Fragen lokalisiert werden sollen, verwenden Sie bitte stattdessen wissensbasierte Fragen.<br><br></li>
                 </ul>
                 <p>
                   <strong>Registrierungsportal:</strong>
@@ -727,6 +776,6 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
 * [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
 * [Problembehandlung für die Kennwortverwaltung](active-directory-passwords-troubleshoot.md)
 * [Weitere Informationen](active-directory-passwords-learn-more.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
+* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

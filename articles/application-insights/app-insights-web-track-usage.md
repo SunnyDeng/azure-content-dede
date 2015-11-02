@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwendungsanalyse für Webanwendungen mit Application Insights" 
-	description="Übersicht über die Verwendungsanalyse mit Application Insights" 
+	description="Übersicht über die Verwendungsanalyse für Web-Apps mit Application Insights" 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -391,4 +391,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="09/11/2015"
+   ms.date="10/12/2015"
    ms.author="maroche"/>
 
 
@@ -52,7 +52,7 @@ In der aktuellen Vorschauversion unterstützt **Azure Data Catalog** die Registr
 ## Strukturelle Metadaten
 Wenn Sie eine Datenquelle registrieren, extrahiert das Registrierungstool Informationen zur Struktur des ausgewählten Objekts, die als strukturelle Metadaten bezeichnet werden.
 
-Für alle Objekte enthalten diese strukturellen Metadaten den Speicherort des Objekts, damit Clienttools die Daten ermitteln können. Andere strukturelle Metadaten sind der Objektname und -typ, der Attribut-/Spaltenname und der Datentyp.
+Für alle Objekte enthalten diese strukturellen Metadaten den jeweiligen Speicherort des Objekts, damit Benutzer, die diese Daten ermitteln, mit ihrer Hilfe die Verbindung mit dem Objekt in den Clienttools ihrer Wahl herstellen können. Andere strukturelle Metadaten sind der Objektname und -typ, der Attribut-/Spaltenname und der Datentyp.
 
 ## Beschreibende Metadaten
 Zusätzlich zu den aus der Datenquelle extrahierten strukturellen Metadaten extrahiert das Registrierungstool für Datenquellen auch beschreibende Metadaten. Für SQL Server Analysis Services und SQL Server Reporting Services stammen diese aus den Beschreibungseigenschaften, die von diesen Diensten verfügbar gemacht werden. Für SQL Server werden Werte extrahiert, die von der erweiterten Eigenschaft "ms\_description" bereitgestellt werden. Für Oracle Database extrahiert das Registrierungstool für Datenquellen die Spalte COMMENTS aus der Sicht ALL\_TAB\_COMMENTS.
@@ -94,4 +94,4 @@ Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue O
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

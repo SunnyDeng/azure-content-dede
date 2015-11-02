@@ -1,6 +1,6 @@
 <properties 
-pageTitle="Ermöglichen der Kommunikation für Rolleninstanzen in Clouddiensten | Microsoft Azure" 
-description="" 
+pageTitle="Kommunikation für Rollen in Clouddiensten | Microsoft Azure" 
+description="Rolleninstanzen in Clouddiensten können Endgeräte (HTTP, HTTPS, TCP und UDP) besitzen, die mit der Außenseite oder anderen Rolleninstanzen kommunizieren." 
 services="cloud-services" 
 documentationCenter="" 
 authors="Thraka" 
@@ -17,15 +17,15 @@ ms.author="adegeo"/>
 
 # Ermöglichen der Kommunikation für Rolleninstanzen in Azure
 
-Clouddienstrollen kommunizieren über interne und externe Verbindungen miteinander. Externe Verbindungen werden als **Eingabeendpunkte** bezeichnet, interne Verbindungen dagegen als **interne Endpunkte**. In diesem Thema wird beschrieben, wie Sie die [Dienstdefinition](cloud-services-model-and-package.md#csdef) zum Erstellen von Endpunkten ändern.
+Clouddienstrollen kommunizieren über interne und externe Verbindungen miteinander. Externe Verbindungen werden als **Eingabeendgeräte** bezeichnet, interne Verbindungen dagegen als **interne Endgeräte**. In diesem Thema wird beschrieben, wie Sie die [Dienstdefinition](cloud-services-model-and-package.md#csdef) zum Erstellen von Endgeräten ändern.
 
 
-## Eingabeendpunkt
-Eingabeendpunkte werden verwendet, wenn Sie einen Port für externe Verbindungen verfügbar machen möchten. Sie geben den Protokolltyp und den Port des Endpunkts an, der dann sowohl für die externen als auch die internen Ports für den Endpunkt gilt. Wenn Sie möchten, können Sie mit dem [localPort](https://msdn.microsoft.com/library/azure/gg557552.aspx#InputEndpoint)-Attribut einen anderen internen Port für den Endpunkt angeben.
+## Eingabeendgerät
+Eingabeendgeräte werden verwendet, wenn Sie einen Port für externe Verbindungen verfügbar machen möchten. Sie geben den Protokolltyp und den Port des Endgeräts an, der dann sowohl für die externen als auch die internen Ports für das Endgerät gilt. Wenn Sie möchten, können Sie mit dem [localPort](https://msdn.microsoft.com/library/azure/gg557552.aspx#InputEndpoint)-Attribut einen anderen internen Port für das Endgerät angeben.
 
-Der Eingabeendpunkt kann die folgenden Protokolle verwenden: **http, https, tcp, udp**.
+Das Eingabeendgerät kann die folgenden Protokolle verwenden: **http, https, tcp, udp**.
 
-Um einen Eingabeendpunkt zu erstellen, fügen Sie dem **Endpoints**-Element einer Web- oder Workerrolle das untergeordnete Element **InputEndpoint** hinzu.
+Um ein Eingabeendgerät zu erstellen, fügen Sie dem **Endpoints**-Element einer Web- oder Workerrolle das untergeordnete Element **InputEndpoint** hinzu.
 
 ```xml
 <Endpoints>
@@ -33,12 +33,12 @@ Um einen Eingabeendpunkt zu erstellen, fügen Sie dem **Endpoints**-Element eine
 </Endpoints> 
 ```
 
-## Instanz-Eingabeendpunkt
-Instanz-Eingabeendpunkte ähneln Eingabeendpunkten, bieten Ihnen aber die Möglichkeit, mithilfe der Portweiterleitung des Load Balancers bestimmte öffentliche Ports für jede einzelne Rolleninstanz zuzuordnen. Sie können einen einzelnen öffentlichen Port oder einen Portbereich angeben.
+## Instanz-Eingabeendgerät
+Instanz-Eingabeendgeräte ähneln Eingabeendgeräten, bieten Ihnen aber die Möglichkeit, mithilfe der Portweiterleitung des Load Balancers bestimmte öffentliche Ports für jede einzelne Rolleninstanz zuzuordnen. Sie können einen einzelnen öffentlichen Port oder einen Portbereich angeben.
 
-Der Instanz-Eingabeendpunkt kann nur die Protokolle **tcp** oder **udp** verwenden.
+Das Instanz-Eingabeendgerät kann nur die Protokolle **tcp** oder **udp** verwenden.
 
-Um einen Instanz-Eingabeendpunkt zu erstellen, fügen Sie dem **Endpoints**-Element einer Web- oder Workerrolle das untergeordnete Element **InstanceInputEndpoint** hinzu.
+Um ein Instanz-Eingabeendgerät zu erstellen, fügen Sie dem **Endpoints**-Element einer Web- oder Workerrolle das untergeordnete Element **InstanceInputEndpoint** hinzu.
 
 ```xml
 <Endpoints>
@@ -50,12 +50,12 @@ Um einen Instanz-Eingabeendpunkt zu erstellen, fügen Sie dem **Endpoints**-Elem
 </Endpoints>
 ```
 
-## Interner Endpunkt
-Interne Endpunkte stehen für die Kommunikation zwischen Instanzen zur Verfügung. Der Port ist bei diesem Endpunkttyp optional. Wird er nicht angegeben, wird dem Endpunkt ein dynamischer Port zugewiesen. Es kann auch ein Portbereich verwendet werden. Pro Rolle sind maximal fünf interne Endpunkte zulässig.
+## Internes Endgerät
+Interne Endgeräte stehen für die Kommunikation zwischen Instanzen zur Verfügung. Der Port ist bei diesem Endgerättyp optional. Wird er nicht angegeben, wird dem Endgerät ein dynamischer Port zugewiesen. Es kann auch ein Portbereich verwendet werden. Pro Rolle sind maximal fünf interne Endgeräte zulässig.
 
-Der interne Endpunkt kann die folgenden Protokolle verwenden: **http, tcp, udp, any**.
+Das interne Endgerät kann die folgenden Protokolle verwenden: **http, tcp, udp, any**.
 
-Um einen internen Eingabeendpunkt zu erstellen, fügen Sie dem **Endpoints**-Element einer Web- oder Workerrolle das untergeordnete Element **InternalEndpoint** hinzu.
+Um ein internes Eingabeendgerät zu erstellen, fügen Sie dem **Endpoints**-Element einer Web- oder Workerrolle das untergeordnete Element **InternalEndpoint** hinzu.
 
 ```xml
 <Endpoints>
@@ -76,7 +76,7 @@ Sie können auch einen Portbereich verwenden.
 
 ## Workerrollen im Vergleich zu Webrollen
 
-Wenn Sie sowohl Worker- als auch Webrollen verwenden, ist bezüglich der Endpunkte ein kleiner Unterschied zu beachten. Die Webrolle muss mindestens über einen einzigen Eingabeendpunkt mit dem **HTTP**-Protokoll verfügen.
+Wenn Sie sowohl Worker- als auch Webrollen verwenden, ist bezüglich der Endgeräte ein kleiner Unterschied zu beachten. Die Webrolle muss mindestens über einen einzigen Eingabeendgerät mit dem **HTTP**-Protokoll verfügen.
 
 
 ```xml
@@ -86,24 +86,24 @@ Wenn Sie sowohl Worker- als auch Webrollen verwenden, ist bezüglich der Endpunk
 </Endpoints>
 ```
 
-## Verwenden des .NET-SDK zum Zugreifen auf einen Endpunkt
-Die verwaltete Azure-Bibliothek enthält Methoden, mit deren Hilfe Rolleninstanzen zur Laufzeit kommunizieren können. Sie können über Code, der in einer Rolleninstanz ausgeführt wird, Informationen zum Vorhandensein anderer Rolleninstanzen und zu ihren Endpunkten sowie Informationen zur aktuellen Rolleninstanz abrufen.
+## Verwenden des .NET-SDK zum Zugreifen auf einen Endgerät
+Die verwaltete Azure-Bibliothek enthält Methoden, mit deren Hilfe Rolleninstanzen zur Laufzeit kommunizieren können. Sie können über Code, der in einer Rolleninstanz ausgeführt wird, Informationen zum Vorhandensein anderer Rolleninstanzen und zu ihren Endgeräten sowie Informationen zur aktuellen Rolleninstanz abrufen.
 
-> [AZURE.NOTE]Es können nur Informationen über Rolleninstanzen abgerufen werden, die im Clouddienst ausgeführt werden und mindestens einen internen Endpunkt definieren. Es ist nicht möglich, Daten über Rolleninstanzen abzurufen, die in einem anderen Dienst ausgeführt werden.
+> [AZURE.NOTE]Es können nur Informationen über Rolleninstanzen abgerufen werden, die im Clouddienst ausgeführt werden und mindestens einen internen Endgerät definieren. Es ist nicht möglich, Daten über Rolleninstanzen abzurufen, die in einem anderen Dienst ausgeführt werden.
 
 Sie können die [Instances](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.role.instances.aspx)-Eigenschaft verwenden, um Instanzen einer Rolle abzurufen. Verwenden Sie zuerst [CurrentRoleInstance](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.currentroleinstance.aspx), um einen Verweis auf die aktuelle Rolleninstanz zurückzugeben, und anschließend die [Role](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.role.aspx)-Eigenschaft, um einen Verweis auf die Rolle selbst zurückzugeben.
 
-Wenn Sie programmgesteuert über das .NET-SDK eine Verbindung mit einer Rolleninstanz herstellen, ist es relativ einfach, auf die Endpunktinformationen zuzugreifen. Nachdem Sie eine Verbindung mit einer bestimmten Rollenumgebung hergestellt haben, können Sie z. B. mit folgendem Code den Port eines bestimmten Endpunkts abrufen:
+Wenn Sie programmgesteuert über das .NET-SDK eine Verbindung mit einer Rolleninstanz herstellen, ist es relativ einfach, auf die Endgerätinformationen zuzugreifen. Nachdem Sie eine Verbindung mit einer bestimmten Rollenumgebung hergestellt haben, können Sie z. B. mit folgendem Code den Port eines bestimmten Endgeräts abrufen:
 
 ```csharp
 int port = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["StandardWeb"].IPEndpoint.Port;
 ```
 
-Die **Instances**-Eigenschaft gibt eine Sammlung von **RoleInstance**-Objekten zurück. Diese Sammlung enthält immer die aktuelle Instanz. Falls die Rolle keinen internen Endpunkt definiert, enthält die Sammlung die aktuelle Instanz, aber keine anderen Instanzen. Die Anzahl von Rolleninstanzen in der Sammlung ist immer 1, wenn kein interner Endpunkt für die Rolle definiert ist. Wenn die Rolle einen internen Endpunkt definiert, können ihre Instanzen zur Laufzeit ermittelt werden. In diesem Fall entspricht die Anzahl von Instanzen in der Sammlung der Anzahl von Instanzen, die in der Dienstkonfigurationsdatei für die Rolle angegeben ist.
+Die **Instances**-Eigenschaft gibt eine Sammlung von **RoleInstance**-Objekten zurück. Diese Sammlung enthält immer die aktuelle Instanz. Falls die Rolle kein internes Endgerät definiert, enthält die Sammlung die aktuelle Instanz, aber keine anderen Instanzen. Die Anzahl von Rolleninstanzen in der Sammlung ist immer 1, wenn kein internes Endgerät für die Rolle definiert ist. Wenn die Rolle ein internes Endgerät definiert, können ihre Instanzen zur Laufzeit ermittelt werden. In diesem Fall entspricht die Anzahl von Instanzen in der Sammlung der Anzahl von Instanzen, die in der Dienstkonfigurationsdatei für die Rolle angegeben ist.
 
 > [AZURE.NOTE]Die verwaltete Azure-Bibliothek bietet nicht die Möglichkeit, die Integrität anderer Rolleninstanzen zu ermitteln. Sie können aber selbst Integritätsbewertungen implementieren, wenn diese Funktion für Ihren Dienst erforderlich ist. Informationen zu ausgeführten Rolleninstanzen können mithilfe der [Azure-Diagnose](https://msdn.microsoft.com/library/azure/gg433048.aspx) abgerufen werden.
 
-Um die Portnummer für einen internen Endpunkt einer Rolleninstanz zu bestimmen, können Sie mithilfe der [InstanceEndpoints](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.instanceendpoints.aspx)-Eigenschaft ein Dictionary-Objekt zurückgeben, das Endpunktnamen und die entsprechenden IP-Adressen und Ports enthält. Die [IPEndpoint](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstanceendpoint.ipendpoint.aspx)-Eigenschaft gibt die IP-Adresse und den Port für einen angegebenen Endpunkt zurück. Die **PublicIPEndpoint**-Eigenschaft gibt den Port für einen Endpunkt mit Lastenausgleich zurück. Der IP-Adressteil der **PublicIPEndpoint**-Eigenschaft wird nicht verwendet.
+Um die Portnummer für ein interne Endgerät einer Rolleninstanz zu bestimmen, können Sie mithilfe der [InstanceEndpoints](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.instanceendpoints.aspx)-Eigenschaft ein Dictionary-Objekt zurückgeben, das Endgerätenamen und die entsprechenden IP-Adressen und Ports enthält. Die [IPEndpoint](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstanceendpoint.ipendpoint.aspx)-Eigenschaft gibt die IP-Adresse und den Port für ein angegebenes Endgerät zurück. Die **PublicIPEndpoint**-Eigenschaft gibt den Port für ein Endgerät mit Lastenausgleich zurück. Der IP-Adressteil der **PublicIPEndpoint**-Eigenschaft wird nicht verwendet.
 
 Hier sehen Sie ein Beispiel, das Rolleninstanzen durchläuft.
 
@@ -118,9 +118,9 @@ foreach (RoleInstance roleInst in RoleEnvironment.CurrentRoleInstance.Role.Insta
 }
 ```
 
-Das folgende Beispiel zeigt eine Workerrolle, die den über die Dienstdefinition verfügbar gemachten Endpunkt abruft und dann auf Verbindungen lauscht.
+Das folgende Beispiel zeigt eine Workerrolle, die das über die Dienstdefinition verfügbar gemachte Endgerät abruft und dann auf Verbindungen lauscht.
 
-> [AZURE.WARNING]Dieser Code funktioniert nur bei einem bereitgestellten Dienst. Bei der Ausführung im Azure-Serveremulator werden Dienstkonfigurationselemente, die direkte Portendpunkte erstellen (**InstanceInputEndpoint**-Elemente) ignoriert.
+> [AZURE.WARNING]Dieser Code funktioniert nur bei einem bereitgestellten Dienst. Bei der Ausführung im Azure-Serveremulator werden Dienstkonfigurationselemente, die direkte Portendgeräte erstellen (**InstanceInputEndpoint**-Elemente) ignoriert.
 
 ```csharp
 using System;
@@ -207,11 +207,11 @@ namespace WorkerRole1
 ```
 
 ## Netzwerkdatenverkehrsregeln zum Steuern der Kommunikation zwischen Rollen
-Nachdem Sie interne Endpunkte definiert haben, können Sie (basierend auf den erstellten Endpunkten) Netzwerkdatenverkehrsregeln hinzufügen, um zu steuern, wie Rolleninstanzen miteinander kommunizieren können. Das folgende Diagramm zeigt einige allgemeine Szenarien zum Steuern der Rollenkommunikation:
+Nachdem Sie interne Endgeräte definiert haben, können Sie (basierend auf den erstellten Endgeräten) Netzwerkdatenverkehrsregeln hinzufügen, um zu steuern, wie Rolleninstanzen miteinander kommunizieren können. Das folgende Diagramm zeigt einige allgemeine Szenarien zum Steuern der Rollenkommunikation:
 
 ![Szenarien für Netzwerkdatenverkehrsregeln](./media/cloud-services-enable-communication-role-instances/scenarios.png "Szenarien für Netzwerkdatenverkehrsregeln")
 
-Das folgende Codebeispiel zeigt Rollendefinitionen für die im obigen Diagramm dargestellten Rollen. Jede Rollendefinition enthält mindestens einen definierten internen Endpunkt:
+Das folgende Codebeispiel zeigt Rollendefinitionen für die im obigen Diagramm dargestellten Rollen. Jede Rollendefinition enthält mindestens ein definiertes internes Endgerät:
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -242,9 +242,9 @@ Das folgende Codebeispiel zeigt Rollendefinitionen für die im obigen Diagramm d
 </ServiceDefinition>
 ```
 
-> [AZURE.NOTE]Bei internen Endpunkten mit festen und automatisch zugewiesenen Ports kann die Kommunikation zwischen Rollen eingeschränkt sein.
+> [AZURE.NOTE]Bei internen Endgeräten mit festen und automatisch zugewiesenen Ports kann die Kommunikation zwischen Rollen eingeschränkt sein.
 
-Standardmäßig ist der Kommunikationsfluss von beliebigen Rollen zum internen Endpunkt einer Rolle ohne Einschränkungen möglich, nachdem ein interner Endpunkt definiert wurde. Wenn Sie die Kommunikation einschränken möchten, fügen Sie dem **ServiceDefinition**-Element in der Dienstdefinitionsdatei ein **NetworkTrafficRules**-Element hinzu.
+Standardmäßig ist der Kommunikationsfluss von beliebigen Rollen zum internen Endgerät einer Rolle ohne Einschränkungen möglich, nachdem ein internes Endgerät definiert wurde. Wenn Sie die Kommunikation einschränken möchten, fügen Sie dem **ServiceDefinition**-Element in der Dienstdefinitionsdatei ein **NetworkTrafficRules**-Element hinzu.
 
 ### Szenario 1
 Dieses Beispiel lässt nur Netzwerkdatenverkehr von **WebRole1** zu **WorkerRole1** zu.
@@ -359,4 +359,4 @@ Eine XML-Schemareferenz für die oben verwendeten Elemente finden Sie [hier](htt
 ## Nächste Schritte
 Erfahren Sie mehr über das [Clouddienstmodell](cloud-services-model-and-package.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

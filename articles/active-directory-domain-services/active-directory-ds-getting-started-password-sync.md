@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/12/2015"
+	ms.date="10/16/2015"
 	ms.author="maheshu"/>
 
 # Azure AD-Domänendienste *(Vorschau)* – Erste Schritte
@@ -55,6 +55,18 @@ Sie müssen die GA-Version von Azure AD Connect auf einem in die Domäne eingebu
 Installationshinweise für Azure AD Connect finden Sie im folgenden Artikel: [Erste Schritte mit Azure AD Connect](../active-directory/active-directory-aadconnect.md)
 
 
+#### Aktivieren der Synchronisierung älterer Anmeldeinformationen in Azure AD
+
+Aktivieren der Synchronisierung älterer Anmeldeinformationen für NTLM-Authentifizierung in Azure AD-Domänendienste. Erstellen Sie hierzu den folgenden Registrierungsschlüssel auf dem Computer, auf dem Azure AD Connect installiert wurde.
+
+Erstellen Sie den folgenden DWORD-Registrierungsschlüssel, und setzen Sie ihn auf „1“.
+
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSOLCoExistence\PasswordSync\EnableWindowsLegacyCredentialsSync
+
+Set its value to 1.
+```
+
 #### Erzwingen der vollständigen Kennwortsynchronisierung mit Azure AD
 
 Um eine vollständige Kennwortsynchronisierung zu erzwingen und die Synchronisierung der Kennworthashes aller lokalen Benutzer (einschließlich der Anmeldeinformationshashes, die für die NTLM-/Kerberos-Authentifizierung erforderlich sind) mit Ihrem Azure AD-Mandanten zu aktivieren, führen Sie für jede Active Directory-Gesamtstruktur das folgende PowerShell-Skript aus.
@@ -75,4 +87,4 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 
 Abhängig von der Größe Ihres Verzeichnisses (Anzahl der Benutzer, Gruppen usw.) nimmt die Synchronisierung von Anmeldeinformationen mit Azure AD und anschließend mit den Azure Active Directory-Domänendiensten Zeit in Anspruch.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

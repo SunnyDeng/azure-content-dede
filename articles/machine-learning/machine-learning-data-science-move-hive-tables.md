@@ -41,8 +41,102 @@ Es wird davon ausgegangen, dass die Daten für die Hive-Tabellen in einem **unko
 
 Wenn Sie mit den _NYC Taxi Trip-Daten_ üben möchten, müssen Sie zuerst alle 24 <a href="http://www.andresmh.com/nyctaxitrips/" target="_blank">NYC Taxi Trip-Daten</a>-Dateien herunterladen (12 Fahrtendateien und 12 Preisdateien), alle Dateien als CSV-Dateien **entzippen** und diese dann in den Standardcontainer (oder einen geeigneten Container) des Azure-Speicherkontos hochladen, das für das Verfahren im Thema [Anpassen des Azure HDInsight Hadoop-Clusters für den erweiterten Analyseprozess](machine-learning-data-science-customize-hadoop-cluster.md) erstellt wurde. Den Prozess zum Hochladen der CSV-Dateien in den Standardcontainer für das Speicherkonto finden Sie auf dieser [Seite](machine-learning-data-science-process-hive-walkthrough/#upload).
 
-## Übermitteln von Hive-Abfragen
-Hive-Abfragen können an der Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermittelt werden. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Anweisungen dazu finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-process-hive-tables.md).
+## <a name="submit"></a>Übermitteln von Hive-Abfragen
+Hive-Abfragen können folgendermaßen übermittelt werden:
+
+* an der Hadoop-Befehlszeile auf dem Hauptknoten des Clusters
+* in einem IPython Notebook
+* im Hive-Editor
+* mit Azure PowerShell-Skripts
+
+Hive-Abfragen sind ähnlich wie SQL-Abfragen. Mit SQL vertraute Benutzer finden möglicherweise das <a href="http://hortonworks.com/wp-content/uploads/downloads/2013/08/Hortonworks.CheatSheet.SQLtoHive.pdf" target="_blank">Cheat Sheet „Hive for SQL Users“</a> nützlich.
+
+Beim Übermitteln von Hive-Abfragen können Sie auch das Ziel der Ausgabe der Hive-Abfragen steuern. Diese kann auf den Bildschirm, in eine lokale Datei auf dem Hauptknoten oder in ein Azure-Blob erfolgen.
+
+### Über die Hadoop-Befehlszeile im Hauptknoten des Hadoop-Clusters
+
+Wenn die Abfrage komplex ist, führen Hive-Abfragen direkt am Hauptknoten des Hadoop-Clusters i. d. R. schneller zu Ergebnissen als das Senden im Hive-Editor oder über Azure PowerShell-Skripts.
+
+Melden Sie sich am Hauptknoten des Hadoop-Clusters an, öffnen Sie die Hadoop-Befehlszeile auf dem Desktop des Hauptknotens, und geben Sie den folgenden Befehl ein:
+
+    cd %hive_home%\bin
+
+Es gibt drei Möglichkeiten zum Übermitteln von Hive-Abfragen an der Hadoop-Befehlszeile.
+
+* direkt über die Hadoop-Befehlszeile
+* mithilfe von HQL-Dateien
+* an der Hive-Befehlskonsole
+
+#### Übermitteln der Hive-Abfragen direkt an der Hadoop-Befehlszeile
+
+Sie können z. B. folgende Befehle ausführen:
+
+	hive -e "<your hive query>;
+
+Damit übermitteln sie die Hive-Abfragen direkt an der Hadoop-Befehlszeile. Hier ist ein Beispiel. Das rote Kästchen enthält den Befehl, der die Hive-Abfrage übermittelt, und das grüne Kästchen umschließt die Ausgabe der Hive-Abfrage.
+
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/run-hive-queries-1.png)
+
+#### Übermitteln der Hive-Abfragen in HQL-Dateien
+
+Wenn die Hive-Abfrage sehr komplex ist und aus mehreren Zeilen besteht, ist das direkte Bearbeiten der Abfragen an der Hadoop-Befehlszeile oder an der Hive-Konsole nicht sehr praktikabel. Alternativ können die Hive-Abfragen mit einem Text-Editor auf dem Hauptknoten des Hadoop-Clusters in einer HQL-Datei in einem lokalen Verzeichnis auf dem Hauptknoten gespeichert werden. Anschließend kann die Hive-Abfrage in der HQL-Datei mithilfe des `-f`-Arguments im `hive`-Befehl übermittelt werden:
+
+	`hive -f "<path to the .hql file>"`
+
+
+#### Unterdrücken der Fortschrittsanzeige bei Hive-Abfragen
+
+Standardmäßig wird bei Hive-Abfragen, die über die Hadoop-Befehlszeile übermittelt werden, der Fortschritt des Map/Reduce-Auftrags auf dem Bildschirm angezeigt. Um diese Fortschrittsanzeige zum Map/Reduce-Auftrag zu unterdrücken, können Sie das Argument `-S` (mit Unterscheidung von Groß-/Kleinschreibung) wie folgt an der Befehlszeile angeben:
+
+	hive -S -f "<path to the .hql file>"
+	hive -S -e "<Hive queries>"
+
+#### Übermitteln von Hive-Abfragen an der Hive-Befehlskonsole
+
+Sie können auch die Hive-Befehlskonsole starten, indem Sie den `hive`-Befehl an der Hadoop-Befehlszeile eingeben und dann Hive-Abfragen über die Hive-Befehlskonsole an der Eingabeaufforderung **hive>** übermitteln. Beispiel:
+
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/run-hive-queries-2.png)
+
+In diesem Beispiel kennzeichnen die beiden roten Kästchen die Befehle, die zum Starten der Hive-Befehlskonsole verwendet werden, und die Hive-Abfrage, die über die Hive-Befehlskonsole übermittelt wird. Das grüne Kästchen markiert die Ausgabe der Hive-Abfrage.
+
+In den vorherigen Beispielen wurden die Ergebnisse der Hive-Abfrage direkt auf den Bildschirm ausgeben. Sie können die Ausgabe aber auch in eine lokale Datei auf dem Hauptknoten oder in ein Azure-Blob schreiben. Sie können dann andere Tools verwenden, um die Ausgabe der Hive-Abfragen weiter zu analysieren.
+
+#### Ausgeben der Hive-Abfrageergebnisse in eine lokale Datei
+
+Für die Ausgabe der Hive-Abfrageergebnisse in ein lokales Verzeichnis auf dem Hauptknoten müssen Sie die Hive-Abfrage an der Hadoop-Befehlszeile wie folgt übermitteln:
+
+	`hive -e "<hive query>" > <local path in the head node>`
+
+
+#### Ausgeben der Hive-Abfrageergebnisse in ein Azure-Blob
+
+Sie können die Hive-Abfrageergebnisse auch in ein Azure-Blob im Standardcontainer des Hadoop-Clusters ausgeben. Die Hive-Abfrage hierfür sieht folgendermaßen aus:
+
+	insert overwrite directory wasb:///<directory within the default container> <select clause from ...>
+
+Im folgenden Beispiel wird die Ausgabe der Hive-Abfrage in das Blob-Verzeichnis `queryoutputdir` innerhalb des Standardcontainer des Hadoop-Cluster geschrieben. Hier müssen Sie nur den Namen des Verzeichnisses ohne den Namen des Blobs angeben. Es wird ein Fehler ausgelöst, wenn Sie sowohl den Verzeichnis- als auch den Blobnamen angeben, z. B. **wasb:///queryoutputdir/queryoutput.txt*.
+
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/output-hive-results-2.png)
+
+Sie können die Ausgabe der Hive-Abfrage im Blob-Speicher anzeigen, indem Sie den Standardcontainer des Hadoop-Clusters mithilfe des Azure-Speicher-Explorers (oder eines ähnlichen Tools) öffnen. Sie können Filter (markiert durch den roten Kasten) anwenden, um nur das Blob mit den angegebenen Buchstaben im Namen abzurufen.
+
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/output-hive-results-3.png)
+
+### Über den Hive-Editor oder Azure PowerShell-Befehle
+
+Sie können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL
+
+*https://&#60;Hadoop Clustername>.azurehdinsight.net/Home/HiveEditor*
+
+in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinformationen für den Hadoop-Cluster aufgefordert werden. Alternativ können Sie [Hive-Aufträge mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
+
+
+## Übermitteln von Hive-Abfragen (alt)
+
+In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. (old intro – TBD incorporate)
+
+
+Hive-Abfragen können an der Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermittelt werden. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Anweisungen hierzu finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-process-hive-tables.md).
 
 Sie können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL
 
@@ -53,7 +147,7 @@ in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinfo
 Alternativ können Sie [Hive-Aufträge mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
 
 
-## <a name="create-tables"></a> Erstellen von Hive-Datenbanken und -Tabellen
+## <a name="create-tables"></a>Erstellen von Hive-Datenbanken und -Tabellen
 
 Die Hive-Abfragen wurden im [GitHub-Repository](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_db_tbls_load_data_generic.hql) freigegeben und können von dort heruntergeladen werden.
 
@@ -86,7 +180,7 @@ Mit dieser Hive-Abfrage laden Sie Daten eine Hive-Tabelle.
 
     LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
 
-- **&#60;Pfad zu Blobdaten>**: Wenn sich die in die Hive-Tabelle hochzuladende Blobdatei im Standardcontainer des HDInsight Hadoop-Clusters befindet, sollte *&#60;Pfad zu Blobdaten>* das Format *'wasb:///&#60;Verzeichnis in diesem Container>/&#60;Blobdateiname>'* haben. Die Blobdatei kann sich auch in einem zusätzlichen Container des HDInsight Hadoop-Clusters befinden. In diesem Fall muss *& #60; Pfad zu Blobdaten >* das Format *'wasb://&#60;Containername>@&#60;Speicherkontoname>.blob.core.windows.net/&#60;Blobdateiname>'* haben.
+- **&#60;Pfad zu Blobdaten>**: Wenn sich die in die Hive-Tabelle hochzuladende Blobdatei im Standardcontainer des HDInsight Hadoop-Clusters befindet, sollte *&#60;Pfad zu Blobdaten>* das Format *'wasb:///&#60;Verzeichnis in diesem Container>/&#60;Blobdateiname>'* haben. Die Blobdatei kann sich auch in einem zusätzlichen Container des HDInsight Hadoop-Clusters befinden. In diesem Fall muss *& #60;Pfad zu Blobdaten>* das Format *'wasb://&#60;Containername>@&#60;Speicherkontoname>.blob.core.windows.net/&#60;Blobdateiname>'* haben.
 
 	>[AZURE.NOTE]Die Blobdaten, die in die Hive-Tabelle hochgeladen werden sollen, müssen sich im Standard- oder einem zusätzlichen Container des Speicherkontos für den Hadoop-Cluster befinden. Andernfalls misslingt die Abfrage *LOAD DATA*, weil sie keinen Zugriff auf die Daten hat.
 
@@ -165,4 +259,9 @@ Sie können nicht direkt Daten im ORC-Speicherformat aus dem Blob in Hive-Tabell
 
 Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
 
-<!---HONumber=Oct15_HO3-->
+
+##Abschnitte zur Optimierung hier einfügen.
+
+Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
+
+<!---HONumber=Oct15_HO4-->

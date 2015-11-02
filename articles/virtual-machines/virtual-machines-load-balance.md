@@ -19,6 +19,7 @@
 
 # Lastenausgleich für Azure-Infrastrukturdienste#
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
 
@@ -84,4 +85,4 @@ Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgl
 
 <!-- LINKS -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

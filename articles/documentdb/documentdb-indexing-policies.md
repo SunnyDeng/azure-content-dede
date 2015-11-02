@@ -1,7 +1,7 @@
 <properties 
     pageTitle="Indizierungsrichtlinien für DocumentDB | Microsoft Azure" 
     description="Erfahren Sie, wie die Indizierung in DocumentDB funktioniert, und wie Sie die Indizierungsrichtlinie konfigurieren und ändern können. Konfigurieren Sie die Indizierungsrichtlinie innerhalb von DocumentDB für die automatische Indizierung und eine bessere Leistung." 
-	keywords="how indexing works, automatic indexing, indexing database, documentdb, azure, Microsoft azure"
+	keywords="Funktionsweise von Indizierung,automatische Indizierung,Indizierungsdatenbank,DocumentDB,Azure,Microsoft Azure"
     services="documentdb" 
     documentationCenter="" 
     authors="arramac" 
@@ -33,13 +33,13 @@ Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 - Wie nehme ich Änderungen an der Indizierungsrichtlinie einer Sammlung vor?
 - Wie vergleiche ich die Speicherung und Leistung verschiedener Indizierungsrichtlinien?
 
-##<a id="CustomizingIndexingPolicy"></a> Anpassen der Indizierungsrichtlinie einer Sammlung
+##<a id="CustomizingIndexingPolicy"></a> Anpassen der Indizierungsrichtlinie einer Sammlung.
 
 Entwickler können die Kompromisse zwischen Speicher, Schreib-/Abfrageleistung und Abfragekonsistenz durch Überschreiben der Standardindizierungsrichtlinie in einer DocumentDB-Sammlung und durch Konfigurieren die folgenden Aspekte anpassen.
 
-- **Ein-/Auschließen von Dokumenten und Pfaden in den/aus dem Index** Entwickler können bestimmte Dokumente zum Zeitpunkt des Einfügens oder Ersetzens in der Sammlung ausschließen oder einschließen. Entwickler können auch bestimmte JSON-Eigenschaften – auch als „Pfade“ bezeichnet – (einschließlich Platzhaltermustern) bei der Indizierung in Dokumenten ein- bzw. ausschließen, die in einem Index enthalten sind.
+- **Ein-/Auschließen von Dokumenten und Pfaden in den/aus dem Index**. Entwickler können bestimmte Dokumente zum Zeitpunkt des Einfügens oder Ersetzens in der Sammlung ausschließen oder einschließen. Entwickler können auch bestimmte JSON-Eigenschaften – auch als „Pfade“ bezeichnet – (einschließlich Platzhaltermustern) bei der Indizierung in Dokumenten ein- bzw. ausschließen, die in einem Index enthalten sind.
 - **Konfigurieren verschiedener Indextypen**. Für jeden eingeschlossenen Pfad können Entwickler auch den erforderlichen Indextyp über Sammlung angeben, die auf ihren Daten basiert, sowie die erwartete Abfrage-Workload und Systemlast und die numerische/Zeichenfolge-„Genauigkeit“ für jeden Pfad.
-- **Konfigurieren von Indexaktualisierungsmodi** DocumentDB unterstützt drei Indizierungsmodi, welche über die Indizierungsrichtlinie in einer DocumentDB-Sammlung konfiguriert werden können: Konsistent, Verzögert und Keine. 
+- **Konfigurieren von Indexaktualisierungsmodi**. DocumentDB unterstützt drei Indizierungsmodi, welche über die Indizierungsrichtlinie in einer DocumentDB-Sammlung konfiguriert werden können: Konsistent, Verzögert und Keine. 
 
 Mit dem folgenden .NET-Codeausschnitt wird gezeigt, wie eine benutzerdefinierte Indizierungsrichtlinie während der Erstellung einer Sammlung festgelegt wird. Hier wird die Richtlinie mit dem Bereichsindex für Zeichenfolgen und Zahlen mit maximaler Genauigkeit festgelegt. Mit dieser Richtlinie können Order By-Abfragen für Zeichenfolgen ausgeführt werden.
 
@@ -301,7 +301,7 @@ Das folgende Codebeispiel zeigt die Erstellung einer DocumentDB-Sammlung mithilf
 
 ### Indexpfade
 
-DocumentDB modelliert JSON-Dokumente und den Index als Strukturen und ermöglicht es Ihnen, die Richtlinien für Pfade innerhalb der Struktur zu optimieren. Weitere Informationen finden Sie in dieser [Einführung in die DocumentDB Indizierung](documentdb-indexing.md). Innerhalb von Dokumenten können Sie auswählen, welche Pfade bei der Indizierung ein- oder ausgeschlossen werden müssen. Dies kann bessere Schreibleistungen und geringeren Indexspeicherbedarf für Szenarien bieten, in denen die Abfragemuster im Voraus bekannt sind.
+DocumentDB modelliert JSON-Dokumente und den Index als Strukturen und ermöglicht es Ihnen, die Richtlinien für Pfade innerhalb der Struktur zu optimieren. Weitere Informationen finden Sie in der [Einführung in die DocumentDB Indizierung](documentdb-indexing.md). Innerhalb von Dokumenten können Sie auswählen, welche Pfade bei der Indizierung ein- oder ausgeschlossen werden müssen. Dies kann bessere Schreibleistungen und geringeren Indexspeicherbedarf für Szenarien bieten, in denen die Abfragemuster im Voraus bekannt sind.
 
 Indexpfade beginnen mit dem Stamm (/) und enden in der Regel mit dem Platzhalterzeichen "?", das angibt, dass mehrere mögliche Werte für das Präfix verfügbar sind. Für SELECT * FROM Families F WHERE F.familyName = "Andersen" müssen Sie z. B. einen Indexpfad für /familyName/? in die Indexrichtlinie der Sammlung einbinden.
 
@@ -478,7 +478,7 @@ Nachdem wir uns mit der Angabe von Pfaden beschäftigt haben, wenden wir uns jet
 DocumentDB unterstützt die Indextypen "Hash" und "Range" für alle Pfade (die für Zeichenfolgen, Zahlen oder beides konfiguriert sein können).
 
 - **Hash** unterstützt effiziente Gleichheits- und JOIN-Abfragen. In den meisten Fällen benötigen Hashindizes keine höhere Genauigkeit als den Standardwert von 3 Bytes.
-- **Range** unterstützt effizienten Gleichheitsabfragen, Bereichsabfragen (mit >, <, >=, <=, !=) und Order By-Abfragen. Bei Order By-Abfragen muss standardmäßig auch die maximale Indexgenauigkeit (–1) angegeben werden.
+- **Range** unterstützt effiziente Gleichheitsabfragen, Bereichsabfragen (mit >, <, >=, <=, !=) und Order By-Abfragen. Bei Order By-Abfragen muss standardmäßig auch die maximale Indexgenauigkeit (–1) angegeben werden.
 
 DocumentDB unterstützt auch den Indextyp "Spatial" für alle Pfade, die für den Datentyp "Point" angegeben werden können. Der Wert im angegebenen Pfad muss ein gültiger GeoJSON-Punkt wie `{"type": "Point", "coordinates": [0.0, 10.0]}` sein.
 
@@ -679,7 +679,7 @@ Um das Speicherkontingent und die Verwendung einer Sammlung zu überprüfen, fü
      Console.WriteLine("Document size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 
 
-Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren oder Löschen) zu messen, überprüfen Sie den Header "x-ms-request-charge" (oder die entsprechende [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx)-Eigenschaft in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) im .NET SDK). Hier können Sie die Anzahl der Anforderungseinheiten messen, die von diesen Vorgängen genutzt werden.
+Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren oder Löschen) zu messen, überprüfen Sie den Header „x-ms-request-charge“ (oder die entsprechende [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx)-Eigenschaft in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) im .NET SDK). Hier können Sie die Anzahl der Anforderungseinheiten messen, die von diesen Vorgängen genutzt werden.
 
      // Measure the performance (request units) of writes.     
      ResourceResponse<Document> response = await client.CreateDocumentAsync(collectionSelfLink, myDocument);              
@@ -769,4 +769,4 @@ Verwenden Sie die unten angegebenen Links, um auf Beispiele für die Verwaltung 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

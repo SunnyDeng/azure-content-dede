@@ -74,7 +74,7 @@ Die folgenden Tabellen enthalten häufige Fehler, die auftreten können, wenn Si
 | 4 | Invoke-HcsSetupWizard: Fehler in einer Clusterressource. (Ausnahme von HRESULT:0x800713AE). | Doppelte VIP. Die angegebene IP-Adresse wird bereits verwendet.| Geben Sie eine neue IP-Adresse an, die nicht belegt ist.|
 | 5 | Invoke-HcsSetupWizard: Ungültige IPv4-Adresse. | Die IP-Adresse hat das falsche Format.| Überprüfen Sie das Format, und geben Sie die IP-Adresse erneut an. Weitere Informationen finden Sie unter [Ipv4 Addressing][1] (in englischer Sprache). |
 | 6 | Invoke-HcsSetupWizard: Ungültige IPv6-Adresse. | Die IP-Adresse hat das falsche Format.| Überprüfen Sie das Format, und geben Sie die IP-Adresse erneut an. Weitere Informationen finden Sie unter [Ipv6 Addressing][2] (in englischer Sprache).|
-| 7 | Invoke-HcsSetupWizard: Es sind keine Endpunkte mehr von der Endpunktzuordnung verfügbar. (Ausnahme von HRESULT:0x800706D9). | Die Clusterfunktionalität ist nicht funktionsfähig. | [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md) für weitere Schritte.
+| 7 | Invoke-HcsSetupWizard: Es sind keine Endgeräte mehr von der Endgerätzuordnung verfügbar. (Ausnahme von HRESULT:0x800706D9). | Die Clusterfunktionalität ist nicht funktionsfähig. | [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md) für weitere Schritte.
 
 ## Fehler während der optionalen Webproxyeinstellungen
 
@@ -257,7 +257,9 @@ Im Folgenden finden Sie die Ausgabe von Controller 1 (aktiver Controller). Nur 
 
 Mit dem Cmdlet `Test-Connection` können Sie bestimmen, ob Ihr StorSimple-Gerät mit dem externen Netzwerk eine Verbindung herstellen kann. Wenn alle Netzwerkparameter, einschließlich DNS, im Setup-Assistenten korrekt konfiguriert sind, können Sie das Cmdlet `Test-Connection` verwenden, um einen Ping-Befehl an eine bekannte Adresse außerhalb des Netzwerks, z. B. outlook.com, zu senden.
 
-Im Folgenden sind einige Ausgabebeispiele für das Cmdlet `Test-Connection` aufgeführt.
+Aktivieren Sie Ping zum Beheben von Verbindungsproblemen mit diesem Cmdlet, wenn Ping deaktiviert ist.
+
+Im Folgenden sind Beispiele für die Ausgabe des Cmdlets `Test-Connection` aufgeführt.
 
 > [AZURE.NOTE]Im ersten Beispiel wird das Gerät mit einem falschen DNS konfiguriert. Im zweiten Beispiel ist der DNS richtig.
  
@@ -285,7 +287,7 @@ Im folgenden Beispiel gibt der DNS die IPv4-Adresse zurück. Dies bedeutet, dass
 
 ## Problembehandlung mit dem Cmdlet "Test-HcsmConnection"
 
-Verwenden Sie das Cmdlet `Test-HcsmConnection` für ein Gerät, das bereits verbunden und mit dem StorSimple-Manager-Dienst registriert ist. Mit diesem Cmdlet können Sie die Verbindung zwischen einem registrierten Gerät und dem entsprechenden StorSimple-Manager-Dienst überprüfen. Sie können diesen Befehl in Windows PowerShell für StorSimple ausführen.
+Verwenden Sie das Cmdlet `Test-HcsmConnection` für ein Gerät, das bereits verbunden und mit dem StorSimple Manager-Dienst registriert ist. Mit diesem Cmdlet können Sie die Verbindung zwischen einem registrierten Gerät und dem entsprechenden StorSimple-Manager-Dienst überprüfen. Sie können diesen Befehl in Windows PowerShell für StorSimple ausführen.
 
 ### So führen Sie das Cmdlet "Test-HcsmConnection" aus
 
@@ -311,7 +313,7 @@ Verwenden Sie das Cmdlet `Test-HcsmConnection` für ein Gerät, das bereits verb
    
     Wenn keine Webausnahme ausgelöst wird, überprüfen Sie auf ErrorCode.CiSApplianceFailure. Dies gibt an, dass das Gerät fehlgeschlagen ist.
 
-5. Überprüfen Sie die Verbindung des Cloud-Diensts. Wenn der Dienst eine Webausnahme auslöst, werden möglicherweise die folgenden Fehler angezeigt:
+5. Überprüfen Sie die Verbindung des Clouddiensts. Wenn der Dienst eine Webausnahme auslöst, werden möglicherweise die folgenden Fehler angezeigt:
 
   - ErrorCode.CiSApplianceGateway – weist auf eine HttpStatusCode.BadGateway-Ausnahme hin: Ein zwischengeschalteter Proxyserver hat von einem anderen Proxy oder dem ursprünglichen Server eine ungültige Anforderung erhalten.
   - ErrorCode.CiSApplianceProxy – weist auf eine HttpStatusCode.ProxyAuthenticationRequired-Ausnahme (HTTP-Statuscode 407) hin: Der Client konnte nicht beim Proxyserver authentifiziert werden. 
@@ -328,7 +330,7 @@ Weitere Informationen zur Verwendung des Cmdlets finden Sie unter [Test-HcsmConn
 
 > [AZURE.IMPORTANT]Sie können dieses Cmdlet für den aktiven und den passiven Controller ausführen.
  
-Im Folgenden sind einige Ausgabebeispiele für das Cmdlet `Test-HcsmConnection` aufgeführt.
+Im Folgenden sind Beispiele für die Ausgabe des Cmdlets `Test-HcsmConnection` aufgeführt.
 
 **Beispielausgabe – erfolgreich registriertes Gerät mit StorSimple-Version (Juli 2014)**
 
@@ -447,7 +449,7 @@ Wenn Sie z. B. über zwei mit dem Internet verbundene Netzwerkschnittstellen ver
 
 Wenn Sie Update 1 auf dem StorSimple-Gerät ausführen, hat die Netzwerkschnittstelle von DATA 0 die höchste Einstellung für den Cloud-Datenverkehr. Das bedeutet, dass der Cloud-Datenverkehr durch DATA 0 weitergeleitet wird, selbst wenn es andere cloudfähige Schnittstellen gibt.
 
-Wenn Sie das Cmdlet `Get-HcsRoutingTable` ausführen, ohne Parameter anzugeben (wie im folgenden Beispiel gezeigt), gibt das Cmdlet sowohl IPv4 als auch IPv6-Routingtabellen aus. Alternativ können Sie zum Abrufen einer entsprechenden Routingtabelle `Get-HcsRoutingTable -IPv4` oder `Get-HcsRoutingTable -IPv6` angeben.
+Wenn Sie das Cmdlet `Get-HcsRoutingTable` ausführen, ohne Parameter anzugeben (wie im folgenden Beispiel gezeigt), gibt das Cmdlet sowohl IPv4- als auch IPv6-Routingtabellen aus. Alternativ können Sie zum Abrufen einer entsprechenden Routingtabelle `Get-HcsRoutingTable -IPv4` oder `Get-HcsRoutingTable -IPv6` angeben.
 
       Controller0>
       Controller0>Get-HcsRoutingTable
@@ -565,7 +567,7 @@ Der Fehler kann eine der folgenden Ursachen haben:
 
 8. Überprüfen Sie die Protokolle. Gehen Sie zu [Für die Problembehandlung verfügbare Supportpakete und Geräteprotokolle](#support-packages-and-device-logs-available-for-troubleshooting).
 
-9. Wenn die vorhergehenden Schritte das Problem nicht beheben, [wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), um Hilfe zu erhalten.
+9. Wenn das Problem durch die vorhergehenden Schritte nicht behoben wird, [wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), um Hilfe zu erhalten.
 
 ## Nächste Schritte
 Informationen zur [Problembehandlung bei einem betriebsbereiten Gerät](storsimple-troubleshoot-operational-device.md)
@@ -575,4 +577,4 @@ Informationen zur [Problembehandlung bei einem betriebsbereiten Gerät](storsimp
 [1]: https://technet.microsoft.com/library/dd379547(v=ws.10).aspx
 [2]: https://technet.microsoft.com/library/dd392266(v=ws.10).aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

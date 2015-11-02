@@ -47,15 +47,15 @@ Nach der Aktivierung von Verbindungen zu den virtuellen Computern oder Rollenins
 
 Gehen Sie auf einem REST-Client wie folgt vor:
 
-1. Stellen Sie sicher, dass Sie über ein Clientzertifikat für die Verbindung zum Azure-Portal verfügen. Um ein Clientzertifikat zu erhalten, führen Sie die Schritte unter [Gewusst wie: Herunterladen und Importieren von Veröffentlichungseinstellungen und Abonnementinformationen] (https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)) aus.
+1. Stellen Sie sicher, dass Sie über ein Clientzertifikat für die Verbindung zum Azure-Portal verfügen. Um ein Clientzertifikat zu erhalten, führen Sie die Schritte unter [How to: Download and Import Publish Settings and Subscription Information](https://msdn.microsoft.com/library/dn385850.aspx) (in englischer Sprache) aus. 
 
 1. Legen Sie einen Headereintrag mit dem Namen "x-ms-version" mit einem Wert von "2013-11-01" fest.
 
-1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/\<Abonnements-ID>/services/hostedservices/<Dienstname>?embed-detail=true
+1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/\<Abonnement-ID>/services/hostedservices/<Dienstname>?embed-detail=true
 
 1. Suchen Sie das **HostName**-Element für jedes **RoleInstance**-Element.
 
->[AZURE.WARNING]Sie können auch das interne Domänensuffix für Ihren Clouddienst über die Antwort auf den REST-Aufruf anzeigen, indem Sie das **InternalDnsSuffix**-Element überprüfen. Alternativ können Sie "ipconfig /all" an einer Eingabeaufforderung in einer Remotedesktopsitzung (Windows) oder "running cat /etc/resolv.conf" in einem SSH-Terminal ausführen (Linux).
+>[AZURE.WARNING]Sie können auch das interne Domänensuffix für Ihren Clouddienst über die Antwort auf den REST-Aufruf anzeigen, indem Sie das **InternalDnsSuffix**-Element überprüfen. Alternativ können Sie „ipconfig /all“ an einer Eingabeaufforderung in einer Remotedesktopsitzung (Windows) oder „cat /etc/resolv.conf“ in einem SSH-Terminal ausführen (Linux).
 
 ## Ändern eines Hostnamens
 
@@ -65,10 +65,10 @@ Sie können den Hostnamen für einen virtuellen Computer oder eine Rolleninstanz
 
 [Namensauflösung (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances.md)
 
-[Azure-Dienstkonfigurationsschema (CSCFG)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
+[Azure-Dienstkonfigurationsschema (.cscfg)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
 
 [Konfigurationsschema für virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/?LinkId=248093)
 
 [Angeben von DNS-Einstellungen mit Netzwerkkonfigurationsdateien](virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

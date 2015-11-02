@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Web-API-Dienste von Service Fabric mit selbstgehostetem OWIN-Server | Microsoft Azure"
-   description="In diesem Artikel über Service Fabric wird erläutert, wie die Dienstkommunikation mithilfe der ASP.NET Web-API mit einem selbstgehosteten OWIN-Server in Reliable Services implementiert wird."
+   pageTitle="Dienstkommunikation mit der ASP.NET Web-API | Microsoft Azure"
+   description="Erfahren Sie, wie die Dienstkommunikation mithilfe der ASP.NET Web-API schrittweise mit einem selbstgehosteten OWIN-Server in der Reliable Services-API implementiert wird."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -229,7 +229,7 @@ Angesichts der Tatsache, dass der Anwendungscode für die Web-API in einem eigen
 
 In diesem Artikel wird als OWIN-Host für die Web-API-Anwendung Katana verwendet. Katana ist eine Open-Source-Owin-Host-Implementierung.
 
-> [AZURE.NOTE]Weitere Informationen zu Katana erhalten Sie auf der [Katana-Website](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Einen schnellen Überblick über die Verwendung von Katana zum Selbsthosten der Web-API finden Sie im Artikel [Use OWIN to Self-Host ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api) (Selbsthosting der ASP.NET Web-API 2, in englischer Sprache).
+> [AZURE.NOTE]Weitere Informationen zu Katana erhalten Sie auf der [Katana-Website](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Eine schnelle Übersicht über die Verwendung von Katana zum Selbsthosten der Web-API finden Sie im Artikel [Use OWIN to Self-Host ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api) (Selbsthosting der ASP.NET Web-API 2, in englischer Sprache).
 
 
 ## Einrichten des Webservers
@@ -334,9 +334,9 @@ Hier wird die Webserver-URL eingerichtet. Hierzu benötigen Sie die folgenden In
  + **Präfix für URL-Pfad**: Obwohl dies optional ist, sollte es jetzt eingerichtet werden, damit Sie mehrere Webdienste sicher in Ihrer Anwendung hosten können.
  + **Port**:
 
-Bevor Sie einen Port für den Webserver wählen, ist es wichtig zu verstehen, dass Service Fabric eine Anwendungsebene bereitstellt, die als Puffer zwischen der Anwendung und dem zugrunde liegenden Betriebssystem fungiert. Service Fabric bietet somit eine Möglichkeit zum Konfigurieren von *Endpunkten* für Ihre Dienste. Service Fabric stellt sicher, dass der Endpunkt für den Dienst verfügbar ist, damit Sie ihn nicht selbst mit der zugrunde liegenden Betriebssystemumgebung konfigurieren müssen. Dies ermöglicht es Ihnen, die Service Fabric-Anwendung auf einfache Weise in verschiedenen Umgebungen zu hosten, ohne Änderungen an Ihrer Anwendung vorzunehmen. (Sie können z. B. die gleiche Anwendung in Azure oder in Ihrem eigenen Rechenzentrum hosten.)
+Bevor Sie einen Port für den Webserver wählen, ist es wichtig zu verstehen, dass Service Fabric eine Anwendungsebene bereitstellt, die als Puffer zwischen der Anwendung und dem zugrunde liegenden Betriebssystem fungiert. Service Fabric bietet somit eine Möglichkeit zum Konfigurieren von *Endgeräten* für Ihre Dienste. Service Fabric stellt sicher, dass das Endgerät für den Dienst verfügbar ist, damit Sie ihn nicht selbst mit der zugrunde liegenden Betriebssystemumgebung konfigurieren müssen. Dies ermöglicht es Ihnen, die Service Fabric-Anwendung auf einfache Weise in verschiedenen Umgebungen zu hosten, ohne Änderungen an Ihrer Anwendung vorzunehmen. (Sie können z. B. die gleiche Anwendung in Azure oder in Ihrem eigenen Rechenzentrum hosten.)
 
-Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\\ServiceManifest.xml:
+Konfigurieren Sie ein HTTP-Endgerät in PackageRoot\\ServiceManifest.xml:
 
 ```xml
 
@@ -348,9 +348,9 @@ Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\\ServiceManifest.xml:
 
 ```
 
-Dieser Schritt ist wichtig, da der Diensthostprozess mit eingeschränkten Anmeldeinformationen (Netzwerkdienst unter Windows) ausgeführt wird. Das bedeutet, dass der Dienst keinen Zugriff hat, um eigenständig einen HTTP-Endpunkt einrichten zu können. Mithilfe der Endpunktkonfiguration kann Service Fabric die ACL (Access Control List, Zugriffssteuerungsliste) für die vom Dienst zu überwachende URL ordnungsgemäß einrichten. Gleichzeitig bietet sie einen Standardort zum Konfigurieren von Endpunkten.
+Dieser Schritt ist wichtig, da der Diensthostprozess mit eingeschränkten Anmeldeinformationen (Netzwerkdienst unter Windows) ausgeführt wird. Das bedeutet, dass der Dienst keinen Zugriff hat, um eigenständig ein HTTP-Endgerät einrichten zu können. Mithilfe der Endgerätkonfiguration kann Service Fabric die ACL (Access Control List, Zugriffssteuerungsliste) für die vom Dienst zu überwachende URL ordnungsgemäß einrichten. Gleichzeitig bietet sie einen Standardort zum Konfigurieren von Endgeräten.
 
-In OwinCommunicationListener.cs können Sie die Endpunktinformationen mit der Methode "Initialize" zum Abrufen des Ports beziehen. Erstellen Sie die vom Dienst zu überwachende URL, und speichern Sie sie in der zuvor erstellte Klassenmembervariablen. Diese wird in "OpenAsync" verwendet, um den Webserver zu starten.
+In OwinCommunicationListener.cs können Sie die Endgerätinformationen mit der Methode "Initialize" zum Abrufen des Ports beziehen. Erstellen Sie die vom Dienst zu überwachende URL, und speichern Sie sie in der zuvor erstellte Klassenmembervariablen. Diese wird in "OpenAsync" verwendet, um den Webserver zu starten.
 
 ```csharp
 
@@ -575,14 +575,14 @@ Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erste
 
 ![](media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
 
-> [AZURE.NOTE]Wenn der Port bereits von einem anderen Prozess auf Ihrem Computer geöffnet wurde, wird möglicherweise eine Fehlermeldung angezeigt, dass der Listener nicht geöffnet werden konnte. Wenn dies der Fall ist, verwenden Sie einen anderen Port in der Endpunktkonfiguration in ServiceManifest.xml.
+> [AZURE.NOTE]Wenn der Port bereits von einem anderen Prozess auf Ihrem Computer geöffnet wurde, wird möglicherweise eine Fehlermeldung angezeigt, dass der Listener nicht geöffnet werden konnte. Wenn dies der Fall ist, verwenden Sie einen anderen Port in der Endgerätkonfiguration in ServiceManifest.xml.
 
 
 Sobald der Dienst ausgeführt wird, öffnen Sie einen Browser. Testen Sie diesen auf [http://localhost/api](http://localhost/api).
 
 ## Skalieren
 
-Zum Skalieren zustandsloser Webanwendungen werden in der Regel weitere Computer hinzufügen, und die Webanwendung wird darauf ausgedehnt. Das Orchestrierungsmodul von Service Fabric kann dies für Sie übernehmen, wenn einem Cluster neue Knoten hinzugefügt werden. Beim Erstellen von Instanzen eines zustandslosen Diensts können Sie angeben, wie viele Instanzen Sie erstellen möchten. Service Fabric platziert diese Anzahl von Instanzen entsprechend auf Knoten im Cluster. Dies gewährleistet, dass jeweils nur eine Instanz auf einem Knoten erstellt wird. Sie können durch die Angabe von "-1" für die Instanzanzahl auch festlegen, dass Service Fabric stets auf jedem Knoten eine Instanz erstellen. Dadurch wird sichergestellt, dass bei jedem Hinzufügen von Knoten zum Skalieren Ihres Clusters eine Instanz des zustandslosen Diensts auf den neuen Knoten erstellt wird. Dieser Wert ist eine Eigenschaft der Dienstinstanz. Er wird beim Erstellen einer Serviceinstanz über PowerShell festgelegt:
+Zum Skalieren zustandsloser Web-Apps werden in der Regel weitere Computer hinzufügen, und die Web-App wird darauf ausgedehnt. Das Orchestrierungsmodul von Service Fabric kann dies für Sie übernehmen, wenn einem Cluster neue Knoten hinzugefügt werden. Beim Erstellen von Instanzen eines zustandslosen Diensts können Sie angeben, wie viele Instanzen Sie erstellen möchten. Service Fabric platziert diese Anzahl von Instanzen entsprechend auf Knoten im Cluster. Dies gewährleistet, dass jeweils nur eine Instanz auf einem Knoten erstellt wird. Sie können durch die Angabe von "-1" für die Instanzanzahl auch festlegen, dass Service Fabric stets auf jedem Knoten eine Instanz erstellen. Dadurch wird sichergestellt, dass bei jedem Hinzufügen von Knoten zum Skalieren Ihres Clusters eine Instanz des zustandslosen Diensts auf den neuen Knoten erstellt wird. Dieser Wert ist eine Eigenschaft der Dienstinstanz. Er wird beim Erstellen einer Serviceinstanz über PowerShell festgelegt:
 
 ```powershell
 
@@ -614,4 +614,4 @@ In ASP.NET 5 bleiben das Konzept und das Programmiermodell, bei dem die *Anwendu
 
 [Debuggen einer Service Fabric-Anwendung in Visual Studio](service-fabric-debugging-your-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

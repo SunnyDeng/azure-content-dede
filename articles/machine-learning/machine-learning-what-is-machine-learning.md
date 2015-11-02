@@ -1,7 +1,7 @@
 <properties
     pageTitle="Was ist Machine Learning in Azure ? | Microsoft Azure"
     description="Dieser Artikel erläutert die grundlegenden Konzepte des vollständig verwalteten Machine Learning-Diensts, eine Cloudtechnologie, mit der Sie Lösungen erstellen, operationalisieren und vermarkten können."
-	keywords="what is machine learning,cloud technology,predictive,what is predictive analytics,operationalize"
+	keywords="Was ist Machine Learning,Cloudtechnologie,Predictive,Vorhersage,Was ist Predictive Analytics,Operationalisieren"
 	services="machine-learning"
     documentationCenter=""
     authors="cjgronlund"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/28/2015"
+    ms.date="10/20/2015"
     ms.author="cgronlun;tedway;olgali"/>
 
 
@@ -32,13 +32,15 @@ Azure Machine Learning ist ein leistungsfähiger cloudbasierter Predictive Analy
 
 Azure Machine Learning bietet nicht nur Tools zur Modellierung von Predictive Analytics-Lösungen, sondern auch einen vollständig verwalteten Dienst, über den Sie Ihre Vorhersagemodelle als sofort nutzbare Webdienste bereitstellen können. Azure Machine Learning bietet Tools zum Erstellen vollständiger Predictive Analytics-Lösungen in der Cloud: Erstellen, testen, operationalisieren und verwalten Sie Vorhersagemodelle schnell und mühelos. Sie müssen weder Hardware kaufen noch virtuelle Computer manuell verwalten.
 
+![Was ist maschinelles Lernen? Ein grundlegender Workflow zum Operationalisieren von Predictive Analytics im Rahmen von Azure Machine Learning.](./media/machine-learning-what-is-machine-learning/machine-learning-service-parts-and-workflow.png)
+
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 ## Was ist Predictive Analytics?
 
 Predictive Analytics verwendet verschiedene statistische Verfahren – in diesem Fall maschinelle Lernprozesse –, um gesammelte oder aktuelle Daten auf Muster oder Trends zu untersuchen und anschließend zukünftige Ereignisse vorhersagen zu können.
 
-Azure Machine Learning ist eine besonders leistungsstarke Predictive Analytics-Lösung: Sie können mit einer sofort nutzbaren Algorithmusbibliothek arbeiten, Modelle auf einem mit dem Internet verbundenen Computer erstellen – ohne weitere Geräte oder Infrastruktur erwerben zu müssen – und Ihre Vorhersagelösung schnell bereitstellen. Im [Microsoft Azure Marketplace](https://datamarket.azure.com/browse?query=machine+learning) und dem [Cortana Analytics-Katalog](http://gallery.azureml.net/) finden Sie sofort nutzbare Beispiele und Lösungen.
+Azure Machine Learning ist eine besonders leistungsstarke Predictive Analytics-Lösung: Sie können mit einer sofort nutzbaren Algorithmusbibliothek arbeiten, Modelle auf einem mit dem Internet verbundenen Computer erstellen – ohne weitere Geräte oder Infrastruktur erwerben zu müssen – und Ihre Vorhersagelösung schnell bereitstellen. Im [Microsoft Azure Marketplace](https://datamarket.azure.com/browse?query=machine+learning) und im [Cortana Analytics-Katalog](http://gallery.azureml.net/) finden Sie sofort nutzbare Beispiele und Lösungen.
 
 ## Entwickeln von vollständigen Lösungen für das maschinelle Lernen in der Cloud
 
@@ -50,10 +52,10 @@ Erstellen Sie Vorhersagemodelle in [Machine Learning Studio](machine-learning-wh
 
 ![Was ist Predictive Analytics? Beispiel eines Predictive Analytics-Experiments in Azure Machine Learning Studio](./media/machine-learning-what-is-machine-learning/azure-machine-learning-studio-predictive-score-experiment.png)
 
-* Nutzen Sie die umfangreiche Bibliothek mit [Algorithmen und Modulen zum maschinellen Lernen](https://msdn.microsoft.com/library/azure/f5c746fd-dcea-4929-ba50-2a79c4c067d7) in Machine Learning Studio, um sofort mit dem Entwickeln von Vorhersagemodellen zu beginnen. Wählen Sie aus einer Bibliothek mit Beispielexperimenten, R- und Python-Paketen sowie erstklassigen Algorithmen aus Microsoft-Produktbereichen wie Xbox und Bing aus. Erweitern Sie Studio-Module mit Ihren eigenen benutzerdefinierten [R](machine-learning-r-quickstart.md)- und [Python](machine-learning-execute-python-scripts.md)-Skripts.
-* Der [Cortana Analytics-Katalog](machine-learning-gallery-how-to-use-contribute-publish.md) macht Benutzern den Einstieg in Azure Machine Learning leichter und ermöglicht ihnen, von anderen in der Community zu lernen. Probieren Sie Experimente anderer Benutzer aus, stellen Sie Fragen, posten Sie Kommentare zu Experimenten, oder veröffentlichen Sie Ihre eigenen Experimente. Sie können auch Links zu Experimenten über soziale Netzwerke wie z. B. LinkedIn und Twitter teilen.  
+* Nutzen Sie die umfangreiche Bibliothek mit [Machine Learning-Algorithmen und -Modulen](https://msdn.microsoft.com/library/azure/f5c746fd-dcea-4929-ba50-2a79c4c067d7) in Machine Learning Studio, um sofort mit dem Entwickeln von Vorhersagemodellen zu beginnen. Wählen Sie aus einer Bibliothek mit Beispielexperimenten, R- und Python-Paketen sowie erstklassigen Algorithmen aus Microsoft-Produktbereichen wie Xbox und Bing aus. Erweitern Sie Studio-Module mit Ihren eigenen benutzerdefinierten [R](machine-learning-r-quickstart.md)- und [Python](machine-learning-execute-python-scripts.md)-Skripts.
+* Der [Cortana Analytics-Katalog](machine-learning-gallery-how-to-use-contribute-publish.md) macht Benutzern den Einstieg in Azure Machine Learning leichter und ermöglicht es ihnen, von anderen in der Community zu lernen. Probieren Sie Experimente anderer Benutzer aus, stellen Sie Fragen, posten Sie Kommentare zu Experimenten, oder veröffentlichen Sie Ihre eigenen Experimente. Sie können auch Links zu Experimenten über soziale Netzwerke wie z. B. LinkedIn und Twitter teilen.  
 
-	![Probieren Sie Beispiele für Vorhersageanalyse-Experimente aus, oder ergänzen Sie den Azure Cortana Analytics-Katalog durch eigene Experimente](./media/machine-learning-what-is-machine-learning/azure-machine-learning-gallery-resources.png)
+	![Probieren Sie Beispiele für Vorhersageanalyse-Experimente aus, oder ergänzen Sie den Azure Cortana Analytics-Katalog durch eigene Experimente](./media/machine-learning-what-is-machine-learning/machine-learning-cortana-analytics-gallery.png)
 
 ### Operationalisieren von Predictive Analytics-Lösungen: Erwerben von Webdiensten oder Veröffentlichen eigener Dienste
 
@@ -73,7 +75,7 @@ Beim **Durchsuchen von Daten** werden Informationen über ein umfangreiches und 
 
 Bei der **beschreibenden Analyse** wird ein Dataset analysiert, um Vorgänge zusammenzufassen. Bei den weitaus meisten Business Analytics-Prozessen – z. B. Verkaufsberichten, Webmetriken und Analysen sozialer Netzwerke – handelt es sich um beschreibende Analysen.
 
-Bei der **Predictive Analytics** werden Modelle basierend auf vergangenen oder aktuellen Daten entwickelt, um zukünftige Ergebnisse vorhersagen zu können.
+Bei **Predictive Analytics** werden Modelle basierend auf vergangenen oder aktuellen Daten entwickelt, um zukünftige Ergebnisse vorhersagen zu können.
 
 
 ### Überwachtes und nicht überwachtes Lernen
@@ -99,10 +101,10 @@ Nachdem Sie das Modell trainiert haben, werden Sie es mithilfe der verbleibenden
 * **Klassifizierung**: Ein Modell für die Einordnung von Datenpunkten in Kategorien, basierend auf einem Dataset, für das die Kategoriegruppierungen bereits bekannt sind.
 * **Featureentwicklung**: Der Prozess des Extrahierens oder Auswählens von Features in Zusammenhang mit einem Dataset, um das Dataset zu erweitern und die Ergebnisse zu verbessern. Flugpreisdaten könnten z. B. durch Wochentage und Ferien erweitert werden. Siehe [Entwicklung und Auswahl von Features in Azure Machine Learning](machine-learning-feature-selection-and-engineering.md).
 * **Modul**: Ein Funktionselement in einem Machine Learning Studio-Modell, wie beispielsweise das Modul zur Dateneingabe, das die Eingabe und Bearbeitung kleiner Datasets ermöglicht. Auch bei einem Algorithmus handelt es sich um eine Art Modul in Machine Learning Studio.
-* **Modell**: Beim überwachten Lernen ist ein Modell das Produkt eines Maschinenlernexperiments, das aus einem Trainingsdataset, einem Algorithmusmodul und Funktionsmodulen – wie z. B. einem Bewertungsmodellmodul – besteht.
+* **Modell**: Beim überwachten Lernen ist ein Modell das Produkt eines Machine Learning-Experiments, das aus einem Trainingsdataset, einem Algorithmusmodul und Funktionsmodulen – z. B. einem Bewertungsmodellmodul – besteht.
 * **Numerische Daten**: Daten, die eine Bedeutung als Messung (kontinuierliche Daten) oder Zählung (diskrete Daten) haben. Diese Daten werden auch als *quantitative Daten* bezeichnet.
 * **Partitionieren**: Die Methode, mit der Sie Daten in Stichproben unterteilen. Weitere Informationen finden Sie unter [Partition and Sample](https://msdn.microsoft.com/library/azure/dn905960.aspx).
-* **Vorhersage**: Eine Vorhersage ist die Prognose eines oder mehrerer Werte aus einem Maschinenlernmodell. Ihnen wird möglicherweise auch der Begriff "vorhergesagte Bewertung" begegnen, hierbei handelt es sich jedoch nicht um die finalen Ergebnisse eines Modells. Der Bewertung folgt eine Auswertung des Modells.
+* **Vorhersage**: Eine Vorhersage ist die Prognose eines oder mehrerer Werte aus einem Machine Learning-Modell. Ihnen wird möglicherweise auch der Begriff "vorhergesagte Bewertung" begegnen, hierbei handelt es sich jedoch nicht um die finalen Ergebnisse eines Modells. Der Bewertung folgt eine Auswertung des Modells.
 * **Regression**: Ein Modell zur Vorhersage eines kontinuierlichen Werts basierend auf unabhängigen Variablen, um z. B. den Preis eines Autos anhand des Baujahrs und der Marke vorherzusagen.
 * **Bewertung**: Ein vorhergesagter Wert, der mithilfe des Moduls [Score Model](https://msdn.microsoft.com/library/azure/dn905995.aspx) in Machine Learning Studio aus einem trainierten Klassifizierungs- oder Regressionsmodell generiert wurde. Klassifizierungsmodelle geben auch eine Bewertung für die Wahrscheinlichkeit des vorhergesagten Werts zurück. Sobald Sie Bewertungen aus einem Modell generiert haben, können Sie die Genauigkeit des Modells mithilfe des Moduls [Evaluate Model](https://msdn.microsoft.com/library/azure/dn905915.aspx) auswerten.
 * **Stichprobe**: Ein Teil eines Datasets, das repräsentativ für das gesamte Dataset steht. Stichproben können nach dem Zufallsprinzip oder basierend auf bestimmten Features des Datasets ausgewählt werden.
@@ -116,4 +118,4 @@ Die Grundlagen der Vorhersageanalyse und des maschinellen Lernens werden anhand 
 <!-- Module References -->
 [learning-with-counts]: https://msdn.microsoft.com/library/azure/81c457af-f5c0-4b2d-922c-fdef2274413c/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -3,7 +3,7 @@
 	description="In diesem Thema wird beschrieben, wie ein Kanal eingerichtet wird, von dem ein Single-Bitrate-Livedatenstrom aus einem lokalen Encoder empfangen und eine Livecodierung zu einem Datenstrom mit adaptiver Bitrate mit Media Services ausgeführt wird. Der Stream kann über einen oder mehrere Streamingendpunkte an Wiedergabe-Clientanwendungen übermittelt werden. Dazu dienen die folgenden adaptiven Streamingprotokolle: HLS, Smooth Stream, MPEG DASH, HDS." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -11,9 +11,9 @@
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
+	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/14/2015"
+	ms.date="10/20/2015"  
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden
@@ -29,10 +29,37 @@ Mit Media Services-Version 2.10 können Sie beim Erstellen eines Kanals angeben,
 
 - **None** (Keine): Geben Sie diesen Wert an, wenn ein lokaler Liveencoder verwendet werden soll, von dem ein Multi-Bitrate-Datenstrom ausgegeben wird. In diesem Fall wird der Eingabedatenstrom ohne Codierung an die Ausgabe geleitet. Bis zur Version 2.10 ist dies das Standardkanalverhalten. Ausführlichere Informationen zum Arbeiten mit Kanälen dieses Typs finden Sie unter [Arbeiten mit Kanälen, von denen Multi-Bitrate-Livedatenströme aus lokalen Encodern empfangen werden](media-services-manage-channels-overview.md).
 
-- **Standard**: Wählen Sie diesen Wert, wenn Sie Media Services verwenden möchten, um einen Single-Bitrate-Livedatenstrom in einen Multi-Bitrate-Datenstrom zu codieren.
+- **Standard**: Wählen Sie diesen Wert, wenn Sie Media Services verwenden möchten, um einen Single-Bitrate-Livedatenstrom in einen Multi-Bitrate-Datenstrom zu codieren. Beachten Sie, dass das Live Encoding sich auf die Abrechnung auswirkt und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 >[AZURE.NOTE]In diesem Thema werden die Attribute der Kanäle erläutert, welche zum Ausführen der Livecodierung aktiviert sind (Codierungstyp **Standard**). Informationen zum Arbeiten mit Kanälen, die nicht zum Ausführen der Livecodierung aktiviert sind, finden Sie unter [Arbeiten mit Kanälen, von denen Multi-Bitrate-Livedatenströme aus lokalen Encodern empfangen werden](media-services-manage-channels-overview.md).
 
+
+##Hinweise zur Gebührenberechnung
+
+Für einen Live Encoding-Kanal beginnt die Berechnung von Gebühren, sobald der Status über die API in „Wird ausgeführt“ geändert wird. Sie können den Status auch im Azure-Portal oder im Azure Media Services-Explorer anzeigen (http://aka.ms/amse).
+
+In der folgenden Tabelle ist dargestellt, wie Kanalzustände den Abrechnungszuständen in der API und im Portal zugeordnet werden. Beachten Sie, dass sich die Zustände zwischen der API und der Benutzeroberfläche des Portals leicht unterscheiden. Sobald ein Kanal über die API in den Zustand „Wird ausgeführt“ oder im Azure-Portal in den Zustand „Bereit“ oder „Streaming“ versetzt wird, wird die Abrechnung aktiv. Um die weitere Gebührenberechnung für den Kanal zu beenden, müssen Sie den Kanal über die API oder im Azure-Portal beenden. Sie sind für das Beenden Ihrer Kanäle verantwortlich, wenn Sie die Nutzung des Live Encoding-Kanals abgeschlossen haben. Wenn Sie einen Codierkanal nicht beenden, werden weiter Gebühren berechnet.
+
+###<a id="states"></a>Kanalstatus und ihre Zuordnung zum Abrechnungsmodus 
+
+Dies ist der aktuelle Status des Kanals. Mögliche Werte sind:
+
+- **Stopped** (Beendet): Dies ist der anfängliche Status des Kanals nach seiner Erstellung (es sei denn, im Portal wurde das automatische Starten gewählt). In diesem Status werden keine Gebühren berechnet. In diesem Status können die Eigenschaften des Kanals aktualisiert werden. Ein Streaming ist jedoch nicht zulässig.
+- **Starting** (Wird gestartet): Der Kanal wird gestartet. In diesem Status werden keine Gebühren berechnet. In diesem Status sind weder Updates noch Streaming zulässig. Wenn ein Fehler auftritt, wird der Kanal in den Status „Stopped“ (Angehalten) geschaltet.
+- **Running** (Wird ausgeführt): Vom Kanal können Livestreams verarbeitet werden. Die Nutzung wird jetzt berechnet. Sie müssen den Kanal beenden, um zu verhindern, dass weiter Gebühren berechnet werden. 
+- **Stopping** (Wird beendet): Der Kanal wird beendet. In diesem Übergangszustand erfolgt keine Berechnung. In diesem Status sind weder Updates noch Streaming zulässig.
+- **Deleting** (Wird gelöscht): Der Kanal wird gelöscht. In diesem Übergangszustand erfolgt keine Berechnung. In diesem Status sind weder Updates noch Streaming zulässig.
+
+In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmodi aufgeführt.
+ 
+Kanalstatus|Portal-UI-Indikatoren|Werden Gebühren berechnet?
+---|---|---
+Wird gestartet|Wird gestartet|Nein (Übergangsstatus)
+Wird ausgeführt|Bereit (keine ausgeführten Programme)<br/>oder<br/>Streaming (mindestens ein laufendes Programm)|JA
+Wird beendet|Wird beendet|Nein (Übergangsstatus)
+Beendet|Beendet|Nein
+
+##Live Encoding-Workflow
 Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein Single-Bitrate-Datenstrom empfangen (in einem der folgenden Protokolle: RTMP, Smooth Streaming oder RTP (MPEG-TS)) und dann in einen Multi-Bitrate-Datenstrom codiert wird.
 
 ![Liveworkflow][live-overview]
@@ -49,7 +76,7 @@ Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein S
 
 Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreaminganwendungen erläutert.
 
->[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
+>[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD@microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen. Beachten Sie, dass für das Live Encoding Gebühren berechnet werden und dass diese Gebühren stundenweise anfallen, wenn Sie einen Live Encoding-Kanal im Zustand „Wird ausgeführt“ belassen. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein **Single**-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
@@ -76,6 +103,9 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt.
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
 1. Löschen Sie das Programm (und optional das Medienobjekt).   
+
+>[AZURE.NOTE]Es ist sehr wichtig, das Beenden eines Live Encoding-Kanals nicht zu vergessen. Beachten Sie, dass das Live Encoding stundenweise abgerechnet wird und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
+
 
 Im Abschnitt [Livestreaming-Aufgaben](media-services-manage-channels-overview.md#tasks) finden Sie Verknüpfungen zu Themen, in welchen veranschaulicht wird, wie die beschriebenen Aufgaben auszuführen sind.
 
@@ -286,7 +316,7 @@ Audio wird mit einer Samplingrate von 44,1 kHz in Stereo-AAC-LC mit 64 KBit/s c
 
 ##Signalisieren von Werbespots
 
-Wenn Livecodierung bei Ihrem Kanal aktiviert ist, verfügen Sie über eine videoverarbeitende Komponente in der Pipeline, die Sie bearbeiten können. Sie können durch den Kanal Slates und/oder Werbespots in den ausgehenden Datenstrom mit adaptiver Bitrate einfügen lassen. Bei Slates handelt es sich um Standbilder, mit denen Sie den Live-Eingabefeed in bestimmten Situationen (z. B. bei Werbepausen) verdecken können. Bei Werbesignalen handelt es sich um zeitlich synchronisierte Signale, die Sie in den ausgehenden Datenstrom einbinden, damit vom Videoplayer bestimmte Aktionen ausgeführt werden, z. B. Umschalten zu einem Werbespot um eine bestimmte Zeit. In diesem [Blog](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/) finden Sie eine Übersicht über den SCTE-35-Signalmechanismus, der zu diesem Zweck verwendet wird. Im Folgenden wird ein typisches Szenario beschrieben, das Sie in Ihr Liveereignis implementieren könnten.
+Wenn Livecodierung bei Ihrem Kanal aktiviert ist, verfügen Sie über eine videoverarbeitende Komponente in der Pipeline, die Sie bearbeiten können. Sie können durch den Kanal Slates und/oder Werbespots in den ausgehenden Datenstrom mit adaptiver Bitrate einfügen lassen. Bei Slates handelt es sich um Standbilder, mit denen Sie den Live-Eingabefeed in bestimmten Situationen (z. B. bei Werbepausen) verdecken können. Bei Werbesignalen handelt es sich um zeitlich synchronisierte Signale, die Sie in den ausgehenden Datenstrom einbinden, damit vom Videoplayer bestimmte Aktionen ausgeführt werden, z. B. Umschalten zu einem Werbespot um eine bestimmte Zeit. In diesem [Blog](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/) finden Sie einen Überblick über den SCTE-35-Signalmechanismus, der zu diesem Zweck verwendet wird. Im Folgenden wird ein typisches Szenario beschrieben, das Sie in Ihr Liveereignis implementieren könnten.
 
 1. Zeigen Sie Ihren Zuschauern ein PRE-EVENT-Bild an, bevor das Programmereignis beginnt.
 1. Zeigen Sie Ihren Zuschauern ein POST-EVENT-Bild an, wenn das Programmereignis endet.
@@ -305,9 +335,9 @@ Dies ist der eindeutige Bezeichner einer Werbepause, der von nachgeschalteten An
 
 ###Show slate (Slate anzeigen)
 
-Optional. Hierdurch wird dem Liveencoder signalisiert, bei Werbepausen zum [Standard-Slate-Bild](media-services-manage-live-encoder-enabled-channels.md#default_slate) zu wechseln und den eingehenden Videodatenstrom auszublenden. Im Slatezustand wird auch die Audioausgabe stummgeschaltet. Die Standardeinstellung lautet **false**.
+Optional. Hierdurch wird dem Liveencoder signalisiert, bei Werbepausen zum [Standard-Slatebild](media-services-manage-live-encoder-enabled-channels.md#default_slate) zu wechseln und den eingehenden Videodatenstrom auszublenden. Im Slatezustand wird auch die Audioausgabe stummgeschaltet. Die Standardeinstellung lautet **false**.
  
-Das zu verwendende Bild wird zum Zeitpunkt der Kanalerstellung über die Eigenschaft „Default slate asset Id“ angegeben. Das Slate-Bild wird gestreckt, um es an die Anzeigebildgröße anzupassen.
+Das zu verwendende Bild wird zum Zeitpunkt der Kanalerstellung über die Eigenschaft „Default slate asset Id“ angegeben. Das Slatebild wird gestreckt, um es an die Anzeigebildgröße anzupassen.
 
 
 ##Einfügen von Slatebildern
@@ -328,7 +358,7 @@ Wenn für diese Einstellung der Wert „true“ festgelegt ist, wird der Liveenc
 
 Optional. Hier wird die ID des Media Services-Medienobjekts angegeben, welches das Slatebild enthält. Der Standardwert lautet null.
 
-**Hinweis**: Vor dem Erstellen des Kanals muss das Slate-Bild mit den folgenden Einschränkungen als dediziertes Medienobjekt hochgeladen werden (in diesem Medienobjekt dürfen sich keine anderen Dateien befinden).
+**Hinweis**: Vor dem Erstellen des Kanals muss das Slatebild mit den folgenden Einschränkungen als dediziertes Medienobjekt hochgeladen werden (in diesem Medienobjekt dürfen sich keine anderen Dateien befinden).
 
 - Auflösung von höchstens 1920 x 1080
 - Größe von maximal 3 MB
@@ -383,7 +413,7 @@ Wird beendet|Wird beendet|Nein (Übergangsstatus)
 Beendet|Beendet|Nein
 
 
->[AZURE.NOTE]Derzeit kann der Kanalstart bis zu 20 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
+>[AZURE.NOTE]Derzeit beträgt die durchschnittliche Dauer bis zum Start des Kanals ca. 2 Minuten, aber in Einzelfällen kann dies auch mehr als 20 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
 
 
 ##<a id="Considerations"></a>Überlegungen
@@ -397,12 +427,14 @@ Beendet|Beendet|Nein
 - Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
 - Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
 - Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
+- Vergessen Sie nicht, IHRE KANÄLE ZU BEENDEN, wenn Sie fertig sind. Wenn Sie dies nicht tun, werden weiter Gebühren berechnet. 
 
 ##Bekannte Probleme
 
-- Der Kanalstart kann 20 Minuten und länger dauern.
+- Die durchschnittliche Dauer bis zum Start des Kanals wurde auf ca. 2 Minuten verkürzt, aber in Einzelfällen kann dies immer noch mehr als 20 Minuten dauern.
 - Die RTP-Unterstützung zielt auf professionelle Sendeanstalten ab. Bitte lesen Sie die Hinweise zu RTP in [diesem](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/) Blog.
-- Die Slate-Bilder sollten den [hier](media-services-manage-live-encoder-enabled-channels.md#default_slate) beschriebenen Einschränkungen entsprechen. Wenn Sie versuchen, einen Kanal mit einem Standard-Slate-Bild zu erstellen, das größer ist als 1920 x 1080, tritt bei der Anforderung ein Fehler auf.
+- Die Slatebilder sollten den [hier](media-services-manage-live-encoder-enabled-channels.md#default_slate) beschriebenen Einschränkungen entsprechen. Wenn Sie versuchen, einen Kanal mit einem Standard-Slatebild zu erstellen, das größer ist als 1920 x 1080, tritt bei der Anforderung ein Fehler auf.
+- Wir weisen noch einmal darauf hin: Vergessen Sie nicht, IHRE KANÄLE ZU BEENDEN, wenn Sie mit dem Streaming fertig sind. Wenn Sie dies nicht tun, werden weiter Gebühren berechnet.
 
 ###Erstellen von Kanälen, von denen eine Livecodierung eines Single-Bitrate-Datenstroms in einen Datenstrom mit adaptiver Bitrate ausgeführt wird 
 
@@ -432,4 +464,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

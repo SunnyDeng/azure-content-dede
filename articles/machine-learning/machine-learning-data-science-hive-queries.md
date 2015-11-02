@@ -1,8 +1,7 @@
 <properties 
-	pageTitle="Übermitteln von Hive-Abfragen an Hadoop-Cluster im erweiterten Analysevorgang | Microsoft Azure" 
+	pageTitle="Übermitteln von Hive-Abfragen an Hadoop-Cluster im Cortana-Analyseprozess | Microsoft Azure" 
 	description="Verarbeiten von Daten aus Hive-Tabellen" 
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
 	authors="hangzh-msft" 
 	manager="paulettm" 
@@ -14,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
+	ms.date="10/18/2015" 
 	ms.author="hangzh;bradsev" />
 
-#<a name="heading"></a>Übermitteln von Hive-Abfragen an HdInsight Hadoop-Cluster im erweiterten Analysevorgang
+#<a name="heading"></a>Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im Cortana-Analyseprozess
 
 In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. Hive-Abfragen können folgendermaßen übermittelt werden:
 
@@ -37,7 +36,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie Folgendes abgeschlossen haben
  
 * Sie haben ein Azure-Speicherkonto erstellt. Eine Anleitung zu dieser Aufgabe finden Sie unter [Erstellen eines Azure-Speicherkontos](../hdinsight-get-started.md#storage). 
 * Sie haben einen Hadoop-Cluster mit dem HDInsight-Dienst bereitgestellt. Anweisungen finden Sie unter [Bereitstellen eines HDInsight-Clusters](../hdinsight-get-started.md#provision).
-* Sie haben die Daten in Hive-Tabellen auf Azure HDInsight Hadoop-Clustern hochgeladen. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
+* Sie haben die Daten in Hive-Tabellen in Azure HDInsight Hadoop-Clustern hochgeladen. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
 * Sie haben den Remotezugriff auf den Cluster aktiviert. Anweisungen finden Sie unter [Zugreifen auf den Hauptknoten von Hadoop-Clustern](machine-learning-data-science-customize-hadoop-cluster.md#remoteaccess). 
 
 
@@ -326,4 +325,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

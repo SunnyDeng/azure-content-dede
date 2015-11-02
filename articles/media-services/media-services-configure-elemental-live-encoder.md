@@ -3,7 +3,7 @@
 	description="In diesem Thema wird beschrieben, wie Sie den Elemental Live-Encoder zum Senden eines Single-Bitrate-Livedatenstroms an AMS-Kanäle konfigurieren, die für das Live Encoding aktiviert sind." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako,cenkdin,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -11,9 +11,9 @@
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
+	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/29/2015"    
+	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
 #Verwenden des Elemental Live-Encoders zum Senden eines Single-Bitrate-Livedatenstroms 
@@ -171,4 +171,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

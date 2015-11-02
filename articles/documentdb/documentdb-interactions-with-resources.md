@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="RESTful-Interaktionen mit DocumentDB-Ressourcen | Microsoft Azure" 
 	description="Sehen Sie sich die HTTP-Methoden in diesem Lernprogramm zu RESTful-Webdiensten an. Erfahren Sie, wie Sie RESTful-Interaktionen mit Microsoft Azure DocumentDB-Ressourcen unter Verwendung von HTTP-Verben durchführen."
-	keywords="http methods, restful services tutorial, restful web services tutorial, http verbs, documentdb, azure, Microsoft azure"
+	keywords="HTTP-Methoden,Lernprogramm zu Restful Services,Lernprogramm zu Restful Webdiensten,HTTP-Verben,DocumentDB,Azure,Microsoft Azure"
 	services="documentdb" 
 	authors="h0n" 
 	manager="jhubbard" 
@@ -188,7 +188,7 @@ Direkte Konnektivität|HTTPS und TCP|Die Anwendungen können direkt auf die Rout
 
 
 ## Nächste Schritte
-Lesen Sie die [Azure DocumentDB-REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn781481.aspx), die weitere Informationen zum Arbeiten mit Ressourcen über die REST-API bietet.
+Lesen Sie die [Referenz zur Azure DocumentDB-REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx), die weitere Informationen zum Arbeiten mit Ressourcen über die REST-API bietet.
 
 ## Referenzen
 - [Referenz zur Azure DocumentDB-REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 
@@ -205,4 +205,4 @@ Lesen Sie die [Azure DocumentDB-REST-API-Referenz](https://msdn.microsoft.com/li
 [1]: ./media/documentdb-interactions-with-resources/interactions-with-resources2.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

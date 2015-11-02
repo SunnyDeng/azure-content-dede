@@ -62,11 +62,11 @@ Das Core SDK stellt nur eine API bereit: Im Gegensatz zu den Web- oder Geräte-S
 
     * Wenn Sie nur das Core-API-Paket "Microsoft.ApplicationInsights" installiert haben, müssen Sie den Schlüssel im Code festlegen, beispielsweise in "main()": 
 
-     `TelemetryConfiguration.Active.InstrumentationKey = "`*Ihr Schlüssel*`";`
+    `TelemetryConfiguration.Active.InstrumentationKey = "`*Ihr Schlüssel*`";`
 
     * Wenn Sie eines der anderen Pakete installiert haben, können Sie den Schlüssel entweder im Code oder in "ApplicationInsights.config" festlegen:
  
-     `<InstrumentationKey>`*Ihr Schlüssel*`</InstrumentationKey>`
+    `<InstrumentationKey>`*Ihr Schlüssel*`</InstrumentationKey>`
 
 
 
@@ -299,4 +299,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

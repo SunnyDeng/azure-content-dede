@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="10/20/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 1: Konfigurieren von Azure
  
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
-
+[AZURE.INCLUDE [learn-about-deployment-models-rm-include](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
  
 In dieser Phase der Bereitstellung einer nur im Intranet verfügbaren Branchenanwendung mit hoher Verfügbarkeit in den Azure-Infrastrukturdiensten erstellen Sie die Azure-Netzwerk- und Speicherinfrastruktur. Diese Phase muss vor Beginn von [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md).
 
@@ -46,7 +45,6 @@ Element | Konfigurationselement | Beschreibung | Wert
 6\. | Der erste DNS-Server für das virtuelle Netzwerk | Die vierte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks (siehe Tabelle S). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 7\. | Der zweite DNS-Server für das virtuelle Netzwerk | Die fünfte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks (siehe Tabelle S). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 8\. | Gemeinsam verwendeter IPsec-Schlüssel | Eine aus 32 zufällig ausgewählten alphanumerischen Zeichen bestehende Zeichenfolge, die zur Authentifizierung beider Seiten der Site-to-Site-VPN-Verbindung verwendet wird. Fragen Sie Ihre IT- oder Sicherheitsabteilung nach diesem Schlüsselwert. Alternativ finden Sie Informationen in diesem [Artikel zum Erstellen einer zufälligen Zeichenfolge für einen vorinstallierten IPsec-Schlüssel](http://social.technet.microsoft.com/wiki/contents/articles/32330.create-a-random-string-for-an-ipsec-preshared-key.aspx).| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
 
 **Tabelle V: Konfiguration eines standortübergreifenden virtuellen Netzwerks**
 
@@ -87,44 +85,28 @@ Element | Adressraum des lokalen Netzwerks
 
 **Tabelle L: Adresspräfixe für das lokale Netzwerk**
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für Azure PowerShell ab Version 0.9.5, jedoch *nicht* für Version 1.0.0 und höher. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Die Azure PowerShell-Befehlsblöcke in diesem Artikel werden gerade getestet und aktualisiert, um auch die neuen Cmdlets in Azure PowerShell Version 1.0.0 und höher zu unterstützen. Vielen Dank für Ihre Geduld.
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Um diese Befehle in Azure PowerShell 0.9.8 und früheren Versionen auszuführen, ersetzen Sie alle Instanzen von „-AzureRM“ durch „-Azure“, und fügen Sie vor dem Ausführen von Befehlen den Befehl **Switch-AzureMode AzureResourceManager** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 Öffnen Sie eine Azure PowerShell-Eingabeaufforderung.
-
-Wählen Sie zunächst das richtige Azure-Abonnement für diese Befehle aus. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
-
-	$subscr="<Subscription name>"
-	Select-AzureSubscription -SubscriptionName $subscr –Current
-
-Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft **SubscriptionName** der Ausgabe des Befehls **Get-AzureSubscription**.
-
-Wechseln Sie in Azure PowerShell mit diesem Befehl in den Ressourcen-Manager-Modus.
-
-	Switch-AzureMode AzureResourceManager 
 
 Erstellen Sie eine neue Ressourcengruppe für Ihre Branchenanwendung.
 
 Um einen eindeutigen Namen für die Ressourcengruppe zu finden, verwenden Sie diesen Befehl zum Auflisten der vorhandenen Ressourcengruppen.
 
-	Get-AzureResourceGroup | Sort ResourceGroupName | Select ResourceGroupName
-
-Verwenden Sie diese Befehle, um die Azure-Speicherorte aufzulisten, in denen Sie virtuelle Computer auf Ressourcen-Manager-Basis erstellen können.
-
-	$loc=Get-AzureLocation | where { $_.Name –eq "Microsoft.Compute/virtualMachines" }
-	$loc.Locations
+	Get-AzureRMResourceGroup | Sort ResourceGroupName | Select ResourceGroupName
 
 Erstellen Sie die neue Ressourcengruppe mit diesen Befehlen.
 
 	$rgName="<resource group name>"
 	$locName="<an Azure location, such as West US>"
-	New-AzureResourceGroup -Name $rgName -Location $locName
+	New-AzureRMResourceGroup -Name $rgName -Location $locName
 
 Virtuelle Computer auf Ressourcen-Manager-Basis benötigen ein Speicherkonto auf Ressourcen-Manager-Basis.
 
 Item | Speicherkontoname | Zweck 
 --- | --- | ---
-1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Storage Premium-Konto, das von den virtuellen SQL Server-Computern verwendet wird.
-2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Storage Standard-Konto, das von allen anderen virtuellen Computern in der Workload verwendet wird. 
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Premium-Speicherkonto, das von den virtuellen SQL Server-Computern verwendet wird.
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Standard-Speicherkonto, das von allen anderen virtuellen Computern in der Workload verwendet wird. 
 
 **Tabelle ST: Speicherkonten**
 
@@ -132,30 +114,19 @@ Sie benötigen diesen Namen beim Erstellen der virtuellen Computer in den Phasen
 
 Sie müssen für jedes Speicherkonto einen global eindeutigen Namen angeben, der nur aus Kleinbuchstaben und Zahlen besteht. Mit diesem Befehl können Sie die vorhandenen Speicherkonten auflisten.
 
-	Get-AzureStorageAccount | Sort Name | Select Name
-
-Um zu testen, ob ein gewählter Speicherkontenname global eindeutig ist, müssen Sie den Befehl **Test-AzureName** im Azure-Dienstverwaltungsmodus von PowerShell ausführen. Verwenden Sie diese Befehle.
-
-	Switch-AzureMode AzureServiceManagement
-	Test-AzureName -Storage <Proposed storage account name>
-
-Wenn der Befehl "Test-AzureName" als Ergebnis **False** zurückgibt, ist der vorgeschlagene Name eindeutig. Wenn Sie einen eindeutigen Namen für jedes der beiden Speicherkonten festgelegt haben, aktualisieren Sie Tabelle ST, und wechseln Sie mit dem folgenden Befehl wieder in den Ressourcen-Manager-Modus von Azure PowerShell.
-
-	Switch-AzureMode AzureResourceManager 
+	Get-AzureRMStorageAccount | Sort Name | Select Name
 
 Führen Sie folgende Befehle aus, um das erste Speicherkonto zu erstellen.
 
 	$rgName="<your new resource group name>"
 	$locName="<the location of your new resource group>"
 	$saName="<Table ST – Item 1 - Storage account name column>"
-	New-AzureStorageAccount -Name $saName -ResourceGroupName $rgName –Type Premium_LRS -Location $locName
+	New-AzureRMStorageAccount -Name $saName -ResourceGroupName $rgName –Type Premium_LRS -Location $locName
 
 Führen Sie folgende Befehle aus, um das zweite Speicherkonto zu erstellen.
 
-	$rgName="<your new resource group name>"
-	$locName="<the location of your new resource group>"
 	$saName="<Table ST – Item 2 - Storage account name column>"
-	New-AzureStorageAccount -Name $saName -ResourceGroupName $rgName –Type Standard_LRS -Location $locName
+	New-AzureRMStorageAccount -Name $saName -ResourceGroupName $rgName –Type Standard_LRS -Location $locName
 
 Erstellen Sie das virtuelle Azure-Netzwerk, in dem Ihre Branchenanwendung gehostet werden soll.
 
@@ -167,42 +138,42 @@ Erstellen Sie das virtuelle Azure-Netzwerk, in dem Ihre Branchenanwendung gehost
 	$lobSubnetPrefix="<Table S – Item 2 – Subnet address space column>"
 	$gwSubnetPrefix="<Table S – Item 1 – Subnet address space column>"
 	$dnsServers=@( "<Table D – Item 1 – DNS server IP address column>", "<Table D – Item 2 – DNS server IP address column>" )
-	$gwSubnet=New-AzureVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix $gwSubnetPrefix
-	$lobSubnet=New-AzureVirtualNetworkSubnetConfig -Name $lobSubnetName -AddressPrefix $lobSubnetPrefix
-	New-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $locName -AddressPrefix $vnetAddrPrefix -Subnet $gwSubnet,$lobSubnet -DNSServer $dnsServers
+	$gwSubnet=New-AzureRMVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix $gwSubnetPrefix
+	$lobSubnet=New-AzureRMVirtualNetworkSubnetConfig -Name $lobSubnetName -AddressPrefix $lobSubnetPrefix
+	New-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $locName -AddressPrefix $vnetAddrPrefix -Subnet $gwSubnet,$lobSubnet -DNSServer $dnsServers
 
 Verwenden Sie diese Befehle, um die Gateways für die Site-to-Site-VPN-Verbindung zu erstellen.
 
 	$vnetName="<Table V – Item 1 – Value column>"
-	$vnet=Get-AzureVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 	
 	# Attach a virtual network gateway to a public IP address and the gateway subnet
 	$publicGatewayVipName="LOBAppPublicIPAddress"
 	$vnetGatewayIpConfigName="LOBAppPublicIPConfig"
-	New-AzurePublicIpAddress -Name $vnetGatewayIpConfigName -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
-	$publicGatewayVip=Get-AzurePublicIpAddress -Name $vnetGatewayIpConfigName -ResourceGroupName $rgName
-	$vnetGatewayIpConfig=New-AzureVirtualNetworkGatewayIpConfig -Name $vnetGatewayIpConfigName -PublicIpAddressId $publicGatewayVip.Id -SubnetId $vnet.Subnets[0].Id
+	New-AzureRMPublicIpAddress -Name $vnetGatewayIpConfigName -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
+	$publicGatewayVip=Get-AzureRMPublicIpAddress -Name $vnetGatewayIpConfigName -ResourceGroupName $rgName
+	$vnetGatewayIpConfig=New-AzureRMVirtualNetworkGatewayIpConfig -Name $vnetGatewayIpConfigName -PublicIpAddressId $publicGatewayVip.Id -SubnetId $vnet.Subnets[0].Id
 
 	# Create the Azure gateway
 	$vnetGatewayName="LOBAppAzureGateway"
-	$vnetGateway=New-AzureVirtualNetworkGateway -Name $vnetGatewayName -ResourceGroupName $rgName -Location $locName -GatewayType Vpn -VpnType RouteBased -IpConfigurations $vnetGatewayIpConfig
+	$vnetGateway=New-AzureRMVirtualNetworkGateway -Name $vnetGatewayName -ResourceGroupName $rgName -Location $locName -GatewayType Vpn -VpnType RouteBased -IpConfigurations $vnetGatewayIpConfig
 	
 	# Create the gateway for the local network
 	$localGatewayName="LOBAppLocalNetGateway"
 	$localGatewayIP="<Table V – Item 4 – Value column>"
 	$localNetworkPrefix=@( <comma-separated, double-quote enclosed list of the local network address prefixes from Table L, example: "10.1.0.0/24", "10.2.0.0/24"> )
-	$localGateway=New-AzureLocalNetworkGateway -Name $localGatewayName -ResourceGroupName $rgName -Location $locName -GatewayIpAddress $localGatewayIP -AddressPrefix $localNetworkPrefix
+	$localGateway=New-AzureRMLocalNetworkGateway -Name $localGatewayName -ResourceGroupName $rgName -Location $locName -GatewayIpAddress $localGatewayIP -AddressPrefix $localNetworkPrefix
 	
 	# Define the Azure virtual network VPN connection
 	$vnetConnectionName="LOBAppS2SConnection"
 	$vnetConnectionKey="<Table V – Item 8 – Value column>"
-	$vnetConnection=New-AzureVirtualNetworkGatewayConnection -Name $vnetConnectionName -ResourceGroupName $rgName -Location $locName -ConnectionType IPsec -SharedKey $vnetConnectionKey -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localGateway
+	$vnetConnection=New-AzureRMVirtualNetworkGatewayConnection -Name $vnetConnectionName -ResourceGroupName $rgName -Location $locName -ConnectionType IPsec -SharedKey $vnetConnectionKey -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localGateway
 
 Konfigurieren Sie das lokale VPN-Gerät für die Verbindung zum Azure-VPN-Gateway. Weitere Informationen finden Sie unter [Konfigurieren des VPN-Geräts](../virtual-networks/vpn-gateway-configure-vpn-gateway-mp.md#configure-your-vpn-device).
 
 Zum Konfigurieren des lokalen VPN-Geräts benötigen Sie Folgendes:
 
-- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways für Ihr virtuelles Netzwerk (aus der Ergebnisanzeige des Befehls **Get-AzurePublicIpAddress -Name $publicGatewayVipName -ResourceGroupName $rgName**)
+- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways für Ihr virtuelles Netzwerk (aus der Ergebnisanzeige des Befehls **Get-AzureRMPublicIpAddress -Name $publicGatewayVipName -ResourceGroupName $rgName**)
 - Den vorinstallierten IPsec-Schlüssel für die Site-to-Site-VPN-Verbindung (Tabelle V – Element 8 – Spalte "Wert")
 
 Stellen Sie anschließend sicher, dass der Adressraum des virtuellen Netzwerks aus Ihrem lokalen Netzwerk erreichbar ist. Dies erfolgt in der Regel durch Hinzufügen einer Route zwischen dem Adressraum des virtuellen Netzwerks und Ihrem VPN-Gerät und der Bekanntgabe dieser Route für den Rest der Routinginfrastruktur Ihres Unternehmensnetzwerks. Erarbeiten Sie diese Lösung gemeinsam mit Ihrer IT-Abteilung.
@@ -224,11 +195,11 @@ Erstellen Sie diese neuen Verfügbarkeitsgruppen mit folgenden Azure PowerShell-
 	$rgName="<your new resource group name>"
 	$locName="<the Azure location for your new resource group>"
 	$avName="<Table A – Item 1 – Availability set name column>"
-	New-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
+	New-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
 	$avName="<Table A – Item 2 – Availability set name column>"
-	New-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
+	New-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
 	$avName="<Table A – Item 3 – Availability set name column>"
-	New-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
+	New-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName -Location $locName
 
 Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfiguration.
 
@@ -236,7 +207,7 @@ Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfigura
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
 
 ## Zusätzliche Ressourcen
 
@@ -250,4 +221,4 @@ Zum Fortsetzen der Konfiguration dieses Workloads gehen Sie zu [Phase 2: Konfigu
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -570,7 +570,21 @@ Der **nArithmetic**-Parameter hat mehr mit der internen Funktionsweise der Makro
 
 Um diese Parameter zu ändern, bearbeiten Sie die Werte in der Datei "macro\_utils.tt", kompilieren Sie die Projektmappe "macro\_utils\_h\_generator.sln" neu, und führen Sie das kompilierte Programm erneut aus. In diesem Fall wird eine neue Datei "macro\_utils.h" generiert und im Verzeichnis ".\\common\\inc directory" abgelegt.
 
-Beachten Sie, dass eine massive Erhöhung dieser Werte zu einer Überschreitung der Compilergrenzwerte führen kann. Hierbei ist **nMacroParameters** der wichtigste Parameter. Die Spezifikation C99 gibt an, dass in einer Makrodefinition mindestens 127 Parameter zulässig sind. Der Microsoft-Compiler hält diese Spezifikation exakt ein (und weist einen Grenzwert von 127 auf), daher können Sie **nMacroParameters** nicht über den Standardgrenzwert hinaus erhöhen. Bei anderen Compilern ist dies möglicherweise zulässig (der GNU-Compiler beispielsweise unterstützt einen höheren Grenzwert).
+Um die neue Version von „macro\_utils.h“ zu verwenden, müssen Sie das NuGet-Paket des **Serialisierungsprogramms** aus Ihrer Lösung entfernen und stattdessen das Visual Studio-Projekt des **Serialisierungsprogramms** einbinden. So kann Ihr Code die Kompilierung anhand des Quellcodes der Serialisierungsprogrammbibliothek durchführen, in der die aktualisierte Datei „macro\_utils.h“ enthalten ist. Angenommen, Sie möchten dies für **simplesample\_amqp** durchführen. Zuerst würden Sie das NuGet-Paket für die Serialisierungsprogrammbibliothek aus der Projektmappe entfernen:
+
+   ![](media/iot-hub-device-sdk-c-serializer/04-serializer-github-package.PNG)
+
+Anschließend fügen Sie dieses Projekt Ihrer Visual Studio-Projektmappe hinzu:
+
+> .\\c\\serializer\\build\\windows\\serializer.vcxproj
+
+Wenn Sie hiermit fertig sind, sollte Ihre Projektmappe wie folgt aussehen:
+
+   ![](media/iot-hub-device-sdk-c-serializer/05-serializer-project.PNG)
+
+Wenn Sie die Projektmappe jetzt kompilieren, wird die aktualisierte Datei „macro\_utils.h“ in Ihre Binärdaten eingefügt.
+
+Beachten Sie, dass eine massive Erhöhung dieser Werte zu einer Überschreitung der Compilergrenzwerte führen kann. Hierbei ist **nMacroParameters** der wichtigste Parameter. Die Spezifikation C99 gibt an, dass in einer Makrodefinition mindestens 127 Parameter zulässig sind. Da der Microsoft-Compiler diese Spezifikation exakt einhält (und einen Grenzwert von 127 aufweist), können Sie **nMacroParameters** nicht über den Standardgrenzwert hinaus erhöhen. Bei anderen Compilern ist dies möglicherweise zulässig (der GNU-Compiler beispielsweise unterstützt einen höheren Grenzwert).
 
 In diesem Artikel haben wir so ziemlich alle Informationen zusammengestellt, die Sie benötigen, um Code mit der Bibliothek des **Serialisierungsprogramms** zu schreiben. Bevor wir zum Abschluss kommen, möchten wir im Folgenden noch einige Themen aus vorherigen Artikeln aufgreifen, bei denen möglicherweise Fragen offen geblieben sind.
 
@@ -600,13 +614,13 @@ Es gibt jedoch auch eine analoge Gruppe von Low-Level-APIs:
 
 -   IoTHubClient\_LL\_Destroy
 
-Das Entscheidende hier ist: Die Low-Level-APIs funktionieren genauso wie in den vorherigen Artikeln beschrieben. Sie können die erste Gruppe von APIs verwenden, wenn Sie einen Hintergrundthread zum Senden von Ereignissen und Empfangen von Nachrichten einrichten möchten. Wenn Sie dagegen genau steuern möchten, wie Daten an IoT Hub gesendet und von IoT Hub empfangen werden, sollten Sie die zweite API-Gruppe verwenden Beide API-Gruppen funktionieren gleichermaßen mit der Bibliothek des **Serialisierungsprogramms**.
+Das Entscheidende hier ist: Die Low-Level-APIs funktionieren genauso wie in den vorherigen Artikeln beschrieben. Sie können die erste Gruppe von APIs verwenden, wenn Sie einen Hintergrundthread zum Senden von Ereignissen und Empfangen von Nachrichten einrichten möchten. Wenn Sie dagegen genau steuern möchten, wie Daten an IoT Hub gesendet und von IoT Hub empfangen werden, sollten Sie die zweite API-Gruppe verwenden Beide API-Gruppen funktionieren mit der Bibliothek des **Serialisierungsprogramms** gleichermaßen gut.
 
 Ein Beispiel der Verwendung der Low-Level-APIs mit der Bibliothek des **Serialisierungsprogramms** finden Sie in der **simplesample\_http**-Anwendung.
 
 ## Weitere Themen
 
-Einige weitere erwähnenswerte Themen sind die Behandlung von Eigenschaften, die Verwendung von alternativen Geräteanmeldedaten sowie Konfigurationsoptionen. All diese Themen werden in einem [vorherigen Artikel](iot-hub-device-sdk-c-iothubclient.md) erläutert. Das Entscheidende hier ist, dass diese Features mit der Bibliothek des **Serialisierungsprogramms** genauso funktionieren wie mit der **IoTHubClient**-Bibliothek. Wenn Sie beispielsweise Eigenschaften aus dem Modell an ein Ereignis anfügen möchten, verwenden Sie dafür **IoTHubMessage\_Properties** und **Map\_AddorUpdate** so wie zuvor beschrieben:
+Einige weitere erwähnenswerte Themen sind die Behandlung von Eigenschaften, die Verwendung von alternativen Geräteanmeldedaten sowie Konfigurationsoptionen. All diese Themen werden in einem [vorherigen Artikel](iot-hub-device-sdk-c-iothubclient.md) erläutert. Das Entscheidende hierbei ist, dass diese Features mit der Bibliothek des **Serialisierungsprogramms** genauso funktionieren wie mit der **IoTHubClient**-Bibliothek. Wenn Sie beispielsweise Eigenschaften aus dem Modell an ein Ereignis anfügen möchten, verwenden Sie dafür **IoTHubMessage\_Properties** und **Map\_AddorUpdate** wie zuvor beschrieben:
 
 ```
 MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
@@ -642,4 +656,4 @@ Dieser Artikel geht detailliert auf die einzigartigen Aspekte der Bibliothek des
 
 Dies ist auch der Abschluss der dreiteiligen Artikelserie zur Entwicklung von Anwendungen mit dem **Azure IoT-Geräte-SDK für C**. Diese Informationen sollten nicht nur für den Einstieg genügen, sondern vermitteln auch tiefgreifende Kenntnisse zur Funktionsweise der APIs. Falls Sie weitere Details wünschen – das SDK enthält noch einige weitere Beispiele, die im vorliegenden Artikel nicht erläutert wurden. Darüber hinaus ist die [SDK-Dokumentation](https://github.com/Azure/azure-iot-sdks) eine hervorragende Informationsquelle.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Dynamische Verschlüsselung: Konfigurieren von Autorisierungsrichtlinien für Inhaltsschlüssel mit .NET" 
-	description="Erfahren Sie, wie Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfigurieren." 
+	pageTitle="Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel mit dem .NET-SDK" 
+	description="Erfahren Sie, wie Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel mit Media Services .NET SDK konfigurieren." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,Mingfeiy" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015"
+	ms.date="10/18/2015"
 	ms.author="juliako"/>
 
 
@@ -28,7 +28,7 @@ Mit Microsoft Azure Media Services können Sie Inhalte dynamisch verschlüsselt 
 
 Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
-Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-dotnet-create-contentkey.md) beschrieben) und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben).
+Wenn ein Asset durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-dotnet-create-contentkey.md) beschrieben) und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben).
 
 Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
@@ -47,11 +47,11 @@ Weitere Informationen finden Sie unter
 ###Folgende Überlegungen sollten berücksichtigt werden:
 
 - Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine reservierte Einheit für das Streaming verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints). 
-- Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Medienobjekten](media-services-encode-asset.md).  
-- Zum Hochladen und Codieren Ihrer Medienobjekte verwenden Sie die Option **AssetCreationOptions.StorageEncrypted**.
+- Ihr Asset muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Assets](media-services-encode-asset.md).  
+- Zum Hochladen und Codieren Ihrer Assets verwenden Sie die Option **AssetCreationOptions.StorageEncrypted**.
 - Wenn Sie mehrere Inhaltsschlüssel verwenden möchten, die dieselbe Richtlinienkonfiguration erfordern, wird empfohlen, eine einzelne Autorisierungsrichtlinie zu erstellen und für mehrere Inhaltsschlüssel wiederzuverwenden.
 - ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine „Token“-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine „Open“-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur „Open“-Version der Richtlinie wechselt.
-- Wenn Sie die Übermittlungsrichtlinie eines Medienobjekts hinzufügen oder aktualisieren, müssen Sie einen vorhandenen Locator (sofern vorhanden) löschen und einen neuen Locator erstellen.
+- Wenn Sie die Übermittlungsrichtlinie eines Assets hinzufügen oder aktualisieren, müssen Sie einen vorhandenen Locator (sofern vorhanden) löschen und einen neuen Locator erstellen.
 
 
 ##Dynamische AES-128-Verschlüsselung 
@@ -400,7 +400,7 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 
 ##Nächste Schritte
-Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) fort.
+Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Assets](media-services-dotnet-configure-asset-delivery-policy.md) fort.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

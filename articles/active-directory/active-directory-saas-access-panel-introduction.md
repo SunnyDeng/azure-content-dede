@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Einführung in den Zugriffsbereich"
+	pageTitle="Einführung in den Zugriffsbereich | Microsoft Azure"
 	description="Erfahren Sie, wie Sie die verschiedenen Varianten des Zugriffsbereichs (Webbrowser, Android-App, iPhone- und iPad-App) verwenden, um auf die Ihnen zugewiesenen SaaS-Apps zuzugreifen."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	ms.author="markusvi"/>
 
 
@@ -32,7 +32,7 @@ Der Zugriffsbereich ermöglicht Benutzern, einige ihrer Profileinstellungen zu b
 
 - Bearbeiten der Einstellungen zum Zurücksetzen des Kennworts.
 
-- Bearbeiten der Kontakt- und Voreinstellungen, die sich auf die mehrstufige Authentifizierung beziehen (für Konten, für die dies vom Administrator verlangt wird).
+- Bearbeiten der Kontakt- und Voreinstellungen, die sich auf die Multi-Factor Authentication beziehen (für Konten, für die dies vom Administrator verlangt wird).
 
 - Anzeigen von Kontodetails wie z. B. Benutzer-ID, alternative E-Mail-Adresse, Mobil- und geschäftliche Telefonnummern.
 
@@ -158,7 +158,7 @@ Wenn ein Benutzer erstmals auf eine Anwendungskachel für eine dieser Anwendunge
 
 Wenn der Benutzer das nächste Mal auf die Anwendungskachel klickt, wird er automatisch bei der Anwendung angemeldet. Er muss nicht nochmals Anmeldeinformationen eingeben oder das Plug-In für kennwortbasiertes SSO erneut installieren.
 
-Wenn sich die Anmeldeinformationen in der Drittanbieteranwendung geändert haben, muss der Benutzer seine in Azure AD gespeicherten Anmeldeinformationen aktualisieren. Zu diesem Zweck wählt der Benutzer das Symbol in der unteren rechten Ecke der Anwendungskachel und dann "Anmeldeinformationen aktualisieren" aus, um den Benutzernamen und das Kennwort für die betreffende Anwendung erneut einzugeben.
+Wenn sich die Anmeldeinformationen in der Drittanbieter-Anwendung geändert haben, muss der Benutzer seine in Azure AD gespeicherten Anmeldeinformationen aktualisieren. Zu diesem Zweck wählt der Benutzer das Symbol in der unteren rechten Ecke der Anwendungskachel und dann "Anmeldeinformationen aktualisieren" aus, um den Benutzernamen und das Kennwort für die betreffende Anwendung erneut einzugeben.
 
 ### Kennwortbasiertes SSO mit Identitätsbereitstellung
 
@@ -166,7 +166,7 @@ Dabei handelt es sich um Anwendungen, die der Administrator im Abschnitt "Active
 
 Wenn ein Benutzer erstmals auf eine Anwendungskachel für eine dieser Anwendungen klickt, wird er aufgefordert, das Plug-In für kennwortbasiertes SSO für Internet Explorer oder Chrome zu installieren. Dies erfordert ggf. einen Neustart des Webbrowsers. Wenn der Benutzer in den Zugriffsbereich zurückkehrt und nochmals auf die Anwendungskachel klickt, wird automatisch bei der Anwendung angemeldet.
 
-Bei einigen Anwendungen kann es erforderlich sein, dass ein Benutzer sein Kennwort bei der ersten Anmeldung ändert. Wenn sich die Anmeldeinformationen in der Drittanbieteranwendung geändert haben, muss der Benutzer seine in Azure AD gespeicherten Anmeldeinformationen aktualisieren. Zu diesem Zweck wählt der Benutzer das Symbol in der unteren rechten Ecke der Anwendungskachel und dann "Anmeldeinformationen aktualisieren" aus, um den Benutzernamen und das Kennwort für die betreffende Anwendung erneut einzugeben.
+Bei einigen Anwendungen kann es erforderlich sein, dass ein Benutzer sein Kennwort bei der ersten Anmeldung ändert. Wenn sich die Anmeldeinformationen in der Drittanbieter-Anwendung geändert haben, muss der Benutzer seine in Azure AD gespeicherten Anmeldeinformationen aktualisieren. Zu diesem Zweck wählt der Benutzer das Symbol in der unteren rechten Ecke der Anwendungskachel und dann "Anmeldeinformationen aktualisieren" aus, um den Benutzernamen und das Kennwort für die betreffende Anwendung erneut einzugeben.
 
 ### Anwendung mit vorhandenen SSO-Lösungen
 
@@ -181,4 +181,4 @@ Beim Konfigurieren der einmaligen Anmeldung für eine Anwendung bietet das Azure
 [3]: ./media/active-directory-saas-access-panel-introduction/ic767168.png
 [4]: ./media/active-directory-saas-access-panel-introduction/ic767169.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

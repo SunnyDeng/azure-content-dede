@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
-	ms.author="mebha"/>
+	ms.date="10/20/2015" 
+	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Node.js mit Tedious unter Mac OS X
@@ -170,4 +170,4 @@ Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweis
 		connection.execSql(request);
 	}
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

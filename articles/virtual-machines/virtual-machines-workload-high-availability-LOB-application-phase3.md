@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="10/20/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 3: Konfigurieren der SQL Server-Infrastruktur
@@ -26,7 +26,7 @@ In dieser Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in d
 
 Diese Phase muss vor Beginn von [Phase 4](virtual-machines-workload-high-availability-LOB-application-phase4.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md).
 
-> [AZURE.NOTE]In den vorliegenden Anweisungen wird ein SQL Server-Image aus dem Azure-Imagekatalog verwendet, und es werden Ihnen laufende Kosten für die Nutzung der SQL Server-Lizenz berechnet. Es ist auch möglich, virtuelle Computer in Azure zu erstellen und eigene SQL Server-Lizenzen zu installieren. Allerdings müssen Sie in dem Fall über Software Assurance und Lizenzmobilität verfügen, um die SQL Server-Lizenz auf einem virtuellen Computer einschließlich des virtuellen Computers in Azure verwenden zu können. Weitere Informationen zum Installieren von SQL Server auf einem virtuellen Computer finden Sie unter [Installation für SQL Server](https://msdn.microsoft.com/library/bb500469.aspx).
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Um diese Befehle in Azure PowerShell 0.9.8 und früheren Versionen auszuführen, ersetzen Sie alle Instanzen von „-AzureRM“ durch „-Azure“, und fügen Sie vor dem Ausführen von Befehlen den Befehl **Switch-AzureMode AzureResourceManager** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 ## Erstellen der virtuellen Computer des SQL Server-Clusters in Azure
 
@@ -42,14 +42,9 @@ Mit dem folgenden PowerShell-Befehlsblock erstellen Sie die virtuellen Computer 
 
 Die Tabelle M haben Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md), die Tabellen V, S, ST und A haben Sie in [Phase 1](virtual-machines-workload-high-availability-LOB-application-phase1.md) ausgefüllt.
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Die Azure PowerShell-Befehlsblöcke in diesem Artikel werden gerade getestet und aktualisiert, um auch die neuen Cmdlets in Azure PowerShell Version 1.0.0 und höher zu unterstützen. Vielen Dank für Ihre Geduld.
-
 Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
-	# Set up subscription and key variables
-	$subscr="<name of the Azure subscription>"
-	Set-AzureSubscription -SubscriptionName $subscr
-	Switch-AzureMode AzureResourceManager
+	# Set up key variables
 	$rgName="<your resource group name>"
 	$locName="<Azure location of your resource group>"
 	# Change to the premium storage account
@@ -60,45 +55,45 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	# Create the first SQL server
 	$vmName="<Table M – Item 3 - Virtual machine name column>"
 	$vmSize="<Table M – Item 3 - Minimum size column>"
-	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
-	$avSet=Get-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName 
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
+	$avSet=Get-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName 
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for SQL data in GB>
 	$diskLabel="<the label on the disk>"
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-SQLDataDisk.vhd"
-	Add-AzureVMDataDisk -VM $vm -Name $diskLabel -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
+	Add-AzureRMVMDataDisk -VM $vm -Name $diskLabel -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 	
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the first SQL Server computer." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftSQLServer -Offer SQL2014-WS2012R2 -Skus Enterprise -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftSQLServer -Offer SQL2014-WS2012R2 -Skus Enterprise -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Create the second SQL Server virtual machine
 	$vmName="<Table M – Item 4 - Virtual machine name column>"
 	$vmSize="<Table M – Item 4 - Minimum size column>"
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for SQL data in GB>
 	$diskLabel="<the label on the disk>"
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-ADDSDisk.vhd"
-	Add-AzureVMDataDisk -VM $vm -Name $diskLabel -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
+	Add-AzureRMVMDataDisk -VM $vm -Name $diskLabel -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 	
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second SQL Server computer." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftSQLServer -Offer SQL2014-WS2012R2 -Skus Enterprise -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftSQLServer -Offer SQL2014-WS2012R2 -Skus Enterprise -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Change to the standard storage account
 	$saName="<Table ST – Item 2 – Storage account name column>"
@@ -106,16 +101,16 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	# Create the cluster majority node server
 	$vmName="<Table M – Item 5 - Virtual machine name column>"
 	$vmSize="<Table M – Item 5 - Minimum size column>"
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the cluster majority node server." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
 > [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit aus dem Azure-Vorschauportal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen. Verwenden Sie die Remotedesktopverbindung oder ein anderes Remotedesktoptool zum Herstellen einer Verbindung mit dem virtuellen Computer über seine private IP-Adresse oder den Intranet-DNS-Namen.
 
@@ -167,7 +162,7 @@ Gehen Sie jeweils für beide virtuellen SQL Server-Computer nach den Anweisungen
 6.	Klicken Sie auf **OK**, um das Fenster zu schließen.
 7.	Erweitern Sie im linken Bereich den **Ordner Sicherheit**.
 8.	Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und klicken Sie dann auf **Neue Anmeldung**.
-9.	Geben Sie unter **Anmeldename** die Zeichenfolge "*Domäne*\\sqladmin" ein (wobei *Domäne* der Name der Domäne ist, in der in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) das Konto "\\sqladmin" erstellt wurde). 
+9.	Geben Sie unter **Anmeldename** die Zeichenfolge „*Domäne*\\sqladmin“ ein (wobei *Domäne* der Name der Domäne ist, in der in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) das Konto „\\sqladmin“ erstellt wurde). 
 10.	Klicken Sie unter **Seite auswählen** auf **Serverrollen**, klicken Sie auf **sysadmin**, und klicken Sie dann auf **OK**.
 11.	Schließen Sie SQL Server 2014 Management Studio.
 
@@ -176,11 +171,11 @@ Gehen Sie jeweils für beide virtuellen SQL Server-Computer nach den Anweisunge
 1.	Klicken Sie auf dem Startbildschirm mit der rechten Maustaste auf **Dieser PC**, und klicken Sie dann auf **Eigenschaften**.
 2.	Klicken Sie im Fenster **System** auf **Remoteeinstellungen**.
 3.	Klicken Sie im Abschnitt **Remotedesktop** auf **Benutzer auswählen**, und klicken Sie dann auf **Hinzufügen**.
-4.	Geben Sie unter **Geben Sie die Namen der auszuwählenden Objekte ein** die Zeichenfolge "[Domäne]**\\sqladmin**" ein, und klicken Sie dann dreimal auf **OK**.
+4.	Geben Sie unter **Geben Sie die Namen der auszuwählenden Objekte ein** die Zeichenfolge „[Domäne]**\\sqladmin**“ ein, und klicken Sie dann dreimal auf **OK**.
 
 Für den SQL Server-Dienst ist ein Port erforderlich, über den die Clients auf den Datenbankserver zugreifen. Zwei weitere Ports sind erforderlich für die Verbindung mit SQL Server Management Studio und die Verwaltung der Hochverfügbarkeitsgruppe. Führen Sie als Nächstes jeweils für beide virtuellen SQL Server.-Computer den folgenden Befehl an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene aus, um eine Firewallregel hinzuzufügen, die diese Art von eingehendem Datenverkehr zulässt.
 
-	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 4234, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
+	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 1434, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
 
 Melden Sie sich bei beiden virtuellen SQL Server-Computern als lokaler Administrator ab.
 
@@ -208,7 +203,7 @@ SQL Server AlwaysOn-Verfügbarkeitsgruppen basieren auf dem Windows Server-Featu
 - Der sekundäre virtuelle Computer mit SQL Server
 - Der Hauptknoten des Clusters
 
-Für einen Failovercluster sind mindestens drei virtuelle Computer erforderlich. Zwei Computer hosten SQL Server, wobei der sekundäre virtuelle Computer ein synchrones sekundäres Replikat ist, das bei einem Ausfall des primären Computers sicherstellt, dass keine Daten verloren gehen. Der dritte Computer muss kein SQL Server bereitstellen. Der Hauptknoten des Clusters fungiert innerhalb des WSFC als Quorumzeuge. Da der WSFC-Cluster zur Überwachung seines Zustands ein Quorum benötigt, muss immer eine Mehrheit vorhanden sein, die sicherstellt, dass der WSFC-Cluster online ist. Wenn ein Cluster nur aus zwei Computern besteht und einer von beiden ausfällt, gibt es keine Mehrheit mehr. Weitere Informationen finden Sie unter [WSFC-Quorummodi und Abstimmungskonfiguration (SQL Server)](http://msdn.microsoft.com/library/hh270280.aspx).
+Für einen Failovercluster sind mindestens drei virtuelle Computer erforderlich. Zwei Computer hosten SQL Server, wobei der sekundäre virtuelle Computer ein synchrones sekundäres Replikat ist, das bei einem Ausfall des primären Computers sicherstellt, dass keine Daten verloren gehen. Der dritte Computer muss kein SQL Server bereitstellen. Der Mehrheitsknoten des Clusters bietet ein Quorum im WSFC. Da der WSFC-Cluster zur Überwachung seines Zustands ein Quorum benötigt, muss immer eine Mehrheit vorhanden sein, die sicherstellt, dass der WSFC-Cluster online ist. Wenn ein Cluster nur aus zwei Computern besteht und einer von beiden ausfällt, gibt es keine Mehrheit mehr. Weitere Informationen finden Sie unter [WSFC-Quorummodi und Abstimmungskonfiguration (SQL Server)](http://msdn.microsoft.com/library/hh270280.aspx).
 
 Führen Sie für beide virtuellen SQL Server-Computer und für den Hauptknoten des Clusters an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene den folgenden Befehl aus.
 
@@ -216,15 +211,15 @@ Führen Sie für beide virtuellen SQL Server-Computer und für den Hauptknoten d
 
 Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erstellung eines Clusters mit Windows Server-Failoverclustering (WSFC) fehlschlagen. Nähere Informationen hierzu finden Sie im Artikel „Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern“ unter „WSFC-Clusterverhalten in Azure-Netzwerken“. Dieses Problem kann jedoch umgangen werden. Führen Sie zum Erstellen des Clusters die folgenden Schritte aus:
 
-1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
+1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto „sqladmin“ an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
 2.	Geben Sie auf dem Startbildschirm **Failover** ein, und klicken Sie dann auf **Failovercluster-Manager**.
 3.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Failovercluster-Manager**, und klicken Sie dann auf **Cluster erstellen**.
 4.	Klicken Sie auf der Seite **Voraussetzungen** auf **Weiter**.
-5.	Geben Sie auf der Seite **Server auswählen** den Namen des primären SQL Server-Computers ein, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Weiter**.
+5.	Geben Sie auf der Seite **Server auswählen** den Namen des primären SQL Server-Computers ein, und klicken Sie auf **Hinzufügen** und dann auf **Weiter**.
 6.	Klicken Sie auf der Seite **Validierungswarnung** auf **Nein. Microsoft-Support für diesen Cluster nicht nötig. Validierungstests nicht durchführen. Beim Klicken auf „Weiter“ Erstellung des Clusters fortsetzen.** Klicken Sie danach auf **Weiter**.
 7.	Geben Sie auf der Seite **Zugriffspunkt für die Verwaltung des Clusters** im Textfeld **Clustername** den Namen Ihres Clusters ein, und klicken Sie dann auf **Weiter**.
-8.	Klicken Sie auf der Bestätigungsseite auf **Weiter**, um den Cluster zu erstellen. 
-9.	Klicken Sie auf der Zusammenfassungsseite auf **Fertig stellen**.
+8.	Klicken Sie auf der **Bestätigungsseite** auf **Weiter**, um den Cluster zu erstellen. 
+9.	Klicken Sie auf der **Zusammenfassungsseite** auf **Fertig stellen**.
 10.	Klicken Sie im linken Bereich auf den neuen Cluster. Öffnen Sie im Inhaltsbereich im Abschnitt **Hauptressourcen des Clusters** den Namen Ihres Serverclusters. Zur Ressource **IP-Adresse** wird der Status **Fehlgeschlagen** angezeigt. Die IP-Adressressource kann nicht online geschaltet werden, da dem Cluster die gleiche IP-Adresse wie dem Computer selbst zugewiesen ist. Damit ist die IP-Adresse nicht mehr eindeutig. 
 11.	Klicken Sie mit der rechten Maustaste auf die fehlgeschlagene Ressource **IP-Adresse**, und klicken Sie dann auf **Eigenschaften**.
 12.	Klicken Sie im Dialogfeld **Eigenschaften von IP-Adressen** auf **Statische IP-Adresse**.
@@ -236,8 +231,8 @@ Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erst
 18.	Klicken Sie auf der Seite **Voraussetzungen** auf **Weiter**. 
 19.	Geben Sie auf der Seite **Server auswählen** den Namen ein, und klicken Sie dann auf **Hinzufügen**, um sowohl den sekundären SQL-Server als auch den Mehrheitsknoten des Clusters zum Cluster hinzuzufügen. Klicken Sie nach dem Hinzufügen beider Computer auf **Weiter**. Wenn ein Computer nicht hinzugefügt werden kann und die Fehlermeldung darauf hinweist, dass die Remoteregistrierung nicht ausgeführt wird, führen Sie folgende Schritte aus. Melden Sie sich bei dem Computer an, öffnen Sie das Snap-in „Dienste“ (services.msc), und aktivieren Sie die Remoteregistrierung. Weitere Informationen finden Sie unter [Mit dem Remoteregistrierungsdienst kann keine Verbindung hergestellt werden](http://technet.microsoft.com/library/bb266998.aspx). 
 20.	Klicken Sie auf der Seite **Validierungswarnung** auf **Nein. Microsoft-Support für diesen Cluster nicht nötig. Validierungstests nicht durchführen. Beim Klicken auf „Weiter“ Erstellung des Clusters fortsetzen.** Klicken Sie danach auf **Weiter**. 
-21.	Klicken Sie auf der Bestätigungsseite auf **Weiter**.
-22.	Klicken Sie auf der Zusammenfassungsseite auf **Fertig stellen**.
+21.	Klicken Sie auf der **Bestätigungsseite** auf **Weiter**.
+22.	Klicken Sie auf der **Zusammenfassungsseite** auf **Fertig stellen**.
 23.	Klicken Sie im linken Bereich auf **Knoten**. Alle drei Computer sollten nun aufgelistet werden.
 
 ## Aktivieren von AlwaysOn-Verfügbarkeitsgruppen
@@ -246,12 +241,12 @@ Als Nächstes aktivieren Sie AlwaysOn-Verfügbarkeitsgruppen mit dem SQL Server-
 
 Führen Sie zur Aktivierung von Verfügbarkeitsgruppen in SQL Server folgende Schritte aus.
 
-1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
+1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto „sqladmin“ an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
 2.	Geben Sie auf dem Startbildschirm **SQL Server-Konfiguration** ein, und klicken Sie dann auf **SQL Server-Konfigurations-Manager**.
 3.	Klicken Sie im linken Bereich auf **SQL Server-Dienste**.
 4.	Doppelklicken Sie im Inhaltsbereich auf **SQL Server (MSSQLSERVER)**.
 5.	Klicken Sie im Fenster **Eigenschaften von SQL Server (MSSQLSERVER)** auf die Registerkarte **Hohe Verfügbarkeit mit AlwaysOn**, wählen Sie **AlwaysOn-Verfügbarkeitsgruppen aktivieren** aus, klicken Sie auf **Übernehmen**, und klicken Sie auf Aufforderung auf **OK**. Lassen Sie das Eigenschaftenfenster noch offen. 
-6.	Klicken Sie auf die Registerkarte "virtual-machines-manage-availability", und geben Sie unter **Kontoname** [Domäne]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto "sqlservice" ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
+6.	Klicken Sie auf die Registerkarte „virtual-machines-manage-availability“, und geben Sie unter **Kontoname** [Domäne]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto „sqlservice“ ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
 7.	Klicken Sie im Meldungsfenster auf **Ja**, um den SQL Server-Dienst neu zu starten.
 8.	Melden Sie sich beim sekundären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, und wiederholen Sie die Schritte 2 bis 7. 
 
@@ -275,4 +270,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 4: Konfi
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

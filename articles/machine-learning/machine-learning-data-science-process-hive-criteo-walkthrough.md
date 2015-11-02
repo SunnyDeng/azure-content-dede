@@ -1,9 +1,7 @@
 <properties 
-	pageTitle="Erweiterte Analyseprozesse und -technologien in Aktion – mithilfe von HDInsight-Hadoop-Clustern in einem 1-TB-DataSet | Microsoft Azure" 
+	pageTitle="Cortana-Analyseprozess in Aktion – Verwenden von HDInsight Hadoop-Clustern in einem 1-TB-DataSet | Microsoft Azure" 
 	description="Verwenden der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Erstellen und Bereitstellen eines Modells unter Verwendung eines großen (1 TB) öffentlich zugänglichen DataSets" 
-	metaKeywords="" 
 	services="machine-learning,hdinsight" 
-	solutions="" 
 	documentationCenter="" 
 	authors="bradsev" 
 	manager="paulettm" 
@@ -15,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/21/2015" 
-	ms.author="ginathan;mohabib;bradsev" />
+	ms.date="10/18/2015" 
+	ms.author="ginathan;bradsev" />
 
-# Erweiterte Analyseprozesse und -technologien in Aktion – mithilfe von Azure HDInsight-Hadoop-Clustern in einem 1-TB-DataSet
+# Cortana-Analyseprozess in Aktion – Verwenden von Azure HDInsight Hadoop-Clustern in einem 1-TB-DataSet
 
-In dieser exemplarischen Vorgehensweise wird die End-to-End-Verwendung der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) mit einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/) zum Speichern, Durchsuchen, Entwickeln von Funktionen sowie zum Komprimieren von Daten aus einem der öffentlich zugänglichen [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSets veranschaulicht. Mithilfe von Azure Machine Learning erstellen wir ein binäres Klassifizierungsmodell für diese Daten. Zudem zeigen wir auf, wie eines dieser Modelle als Webdienst veröffentlicht wird.
+In dieser exemplarischen Vorgehensweise wird die End-to-End-Verwendung des Cortana-Analyseprozesses (CAP) in einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/) zum Speichern, Durchsuchen, Verarbeiten und Komprimieren von Daten aus einem der öffentlich zugänglichen [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSets veranschaulicht. Mithilfe von Azure Machine Learning erstellen wir ein binäres Klassifizierungsmodell für diese Daten. Zudem zeigen wir auf, wie eines dieser Modelle als Webdienst veröffentlicht wird.
 
-Die in dieser exemplarischen Vorgehensweise vorgestellten Aufgaben können auch mit einem IPython-Notizbuch umgesetzt werden. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
+Die in dieser exemplarischen Vorgehensweise vorgestellten Aufgaben können auch mit einem IPython-Notebook umgesetzt werden. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
 
 
 ## <a name="dataset"></a>Beschreibung des Criteo-DataSets
@@ -78,7 +76,7 @@ Richten Sie Ihre Azure Data Science-Umgebung ein, um in drei Schritten Lösungen
 
 Um auf das [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSet zuzugreifen, klicken Sie auf den Link, akzeptieren Sie die Nutzungsbedingungen, und geben Sie einen Namen an. Im Folgenden finden Sie eine Beispielmomentaufnahme:
 
-![Criteo-Bestimmungen akzeptieren](http://i.imgur.com/hLxfI2E.png)
+![Criteo-Bestimmungen akzeptieren](./media/machine-learning-data-science-process-hive-criteo-walkthrough/hLxfI2E.png)
 
 Klicken Sie auf **Download fortsetzen**, um weitere Informationen über das DataSet und seine Verfügbarkeit zu erhalten.
 
@@ -100,7 +98,8 @@ Um sich beim Hauptknoten des Clusters anzumelden, suchen Sie im [Azure-Verwaltun
 
 Im Folgenden wird eine typische Erstanmeldung am Cluster-Hauptknoten dargestellt:
 
-![Am Cluster anmelden](http://i.imgur.com/Yys9Vvm.png)
+![Am Cluster anmelden](./media/machine-learning-data-science-process-hive-criteo-walkthrough/Yys9Vvm.png)
+
 
 Auf der linken Seite sehen Sie die "Hadoop-Befehlszeile", mit der wir die Daten untersuchen werden. Zudem finden Sie zwei nützliche URLs: "Hadoop Yarn Status" und "Hadoop Name Node". Erstere führt zum Auftragsstatus, während Sie über die zweite zu Einzelheiten über die Clusterkonfiguration gelangen.
 
@@ -447,7 +446,7 @@ Wählen Sie zunächst **+ NEU** -> **EXPERIMENT**->**Leeres Experiment**. Suchen
 
 So sieht der **Reader** beim Abrufen von Daten aus der Hive-Tabelle aus:
 
-![Reader erhält Daten](http://i.imgur.com/i3zRaoj.png)
+![Reader erhält Daten](./media/machine-learning-data-science-process-hive-criteo-walkthrough/i3zRaoj.png)
 
 Für das **Reader**-Modul sind die Werte der in der Grafik enthaltenen Parameter nur Beispiele für Werte, die Sie bereitstellen müssen. Im Folgenden finden Sie allgemeine Anleitungen zum Ausfüllen des Parametersatzes für das **Reader**-Modul.
 
@@ -464,14 +463,13 @@ Für das **Reader**-Modul sind die Werte der in der Grafik enthaltenen Parameter
 
 Sobald der **Reader** das Abrufen von Daten beendet (das grüne Häkchen für das Modul wird angezeigt), speichern Sie diese Daten als DataSet (mit einem Namen Ihrer Wahl). Dies sieht folgendermaßen aus:
 
-![Reader speichert Daten](http://i.imgur.com/oxM73Np.png)
-
+![Reader speichert Daten](./media/machine-learning-data-science-process-hive-criteo-walkthrough/oxM73Np.png)
 
 Klicken Sie mit der rechten Maustaste auf den Ausgabeport des **Reader**-Moduls. Es werden die Optionen **Als Dataset speichern** und **Visualisieren** angezeigt. Wenn die Option **Visualisieren** ausgewählt wurde, werden 100 Datenzeilen sowie rechts eine für einige zusammenfassende Statistiken nützliche Leiste angezeigt. Um Daten zu speichern, wählen Sie einfach **Als Dataset speichern** aus, und befolgen Sie die Anweisungen.
 
 Um das gespeicherte DataSet für die Verwendung in einem Machine Learning-Experiment zu verwenden, suchen Sie die DataSets mithilfe des unten dargestellten Felds **Suche**. Geben Sie dann einfach teilweise den Namen ein, den Sie dem DataSets gegeben haben, um darauf zuzugreifen, und ziehen es in den Hauptbereich. Durch das Ziehen in den Hauptbereich wird es zur Verwendung für die Machine Learning-Modellierung ausgewählt.
 
-![](http://i.imgur.com/cl5tpGw.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/cl5tpGw.png)
 
 ***WICHTIGER HINWEIS:*** **Dies gilt sowohl für Trainings- als auch Test-DataSets. Achten Sie außerdem darauf, den Datenbanknamen und die Tabellennamen zu verwenden, die Sie für diesen Zweck angegeben haben. Die in der Abbildung verwendeten Werte dienen lediglich zur Veranschaulichung.**
  
@@ -479,7 +477,7 @@ Um das gespeicherte DataSet für die Verwendung in einem Machine Learning-Experi
 
 Unser Azure ML-Experiment sieht wie folgt aus:
 
-![](http://i.imgur.com/xRpVfrY.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/xRpVfrY.png)
 
 Zunächst betrachten wir die Hauptkomponenten dieses Experiments. Denken Sie daran, dass wir zuerst unsere gespeicherten Trainings- und Test-DataSets auf die Experiment-Canvas ziehen müssen.
 
@@ -487,7 +485,7 @@ Zunächst betrachten wir die Hauptkomponenten dieses Experiments. Denken Sie dar
 
 Das anpassbare **Clean Missing Data**-Modul bereinigt fehlende Daten. Die Methode wird vom Benutzer festgelegt. In diesem Modul sehen wir dies:
 
-![Fehlende Daten bereinigen](http://i.imgur.com/0ycXod6.png)
+![Fehlende Daten bereinigen](./media/machine-learning-data-science-process-hive-criteo-walkthrough/0ycXod6.png)
 
 Hier haben wir alle fehlenden Werte durch "0" ersetzt. Es gibt weitere Optionen, die mithilfe der Dropdownlisten im Modul angezeigt werden.
 
@@ -499,20 +497,22 @@ Für einige kategorische Features von großen DataSets können Millionen von ein
 
 Zum Erstellen von Zählfunktionen verwenden wir das **Build Counting Transform**-Modul, das in Azure Machine Learning verfügbar ist. Das Modul sieht wie folgt aus:
 
-![](http://i.imgur.com/e0eqKtZ.png) ![](http://i.imgur.com/OdDN0vw.png)
+
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/e0eqKtZ.png) ![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/OdDN0vw.png)
+
 
 **Wichtiger Hinweis**: Im Feld **Spalten zählen** geben wir die Spalten ein, die wir zählen möchten. In der Regel handelt es sich dabei (wie bereits erwähnt) um hochdimensionale kategorische Spalten. Zu Beginn wurde erwähnt, dass das Criteo-DataSet über 26 Kategoriespalten verfügt: von Col15 bis Col40. Hier führen wir für alle eine Zählung durch und geben die Indizes (von 15 bis 40, durch Kommas getrennt, wie gezeigt) an.
 
 Zur Verwendung des Moduls im MapReduce-Modus (geeignet für große DataSets) benötigen wir Zugriff auf einen HDInsight Hadoop-Cluster (dazu kann auch der oben zum Durchsuchen von Funktionen genutzte Cluster verwendet werden) und die Anmeldeinformationen. Die Abbildungen oben veranschaulichen die ausgefüllten Werte (ersetzen Sie die Beispielwerte durch die entsprechenden Werte für Ihren Anwendungsfall).
 
-![](http://i.imgur.com/05IqySf.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/05IqySf.png)
 
 In der Abbildung oben wird das Eingeben des Eingabe-BLOB-Speicherorts gezeigt. Dieser Speicherort enthält die Daten, die zum Erstellen von Zähltabellen reserviert sind.
 
 
 Nachdem die Ausführung dieses Moduls abgeschlossen ist, können wir die Transformation für später speichern, indem wir mit der rechten Maustaste auf das Modul klicken und die Option **Als Transformation speichern**:
 
-![](http://i.imgur.com/IcVgvHR.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/IcVgvHR.png)
 
 In unserer oben gezeigten Experimentarchitektur entspricht das DataSet „ytransform2“ genau einer gespeicherten Zähltransformation. Für den Rest dieses Experiments wird angenommen, dass der Reader ein **Build Counting Transform**-Modul für einige Daten zum Generieren von Zahlen verwendet und mit diesen dann Zählfunktionen für die Trainings- und Test-DataSets generiert.
 
@@ -520,7 +520,7 @@ In unserer oben gezeigten Experimentarchitektur entspricht das DataSet „ytrans
 
 Sobald eine Zähltransformation bereitsteht kann der Benutzer auswählen, welche Funktionen mithilfe des **Modify Count Table Parameters**-Moduls in seine Trainings- und Test-DataSets aufgenommen werden. Der Vollständigkeit halber zeigen wir dieses Modul unten, verwenden es aber aus Gründen der Einfachheit nicht tatsächlich in unserem Experiment.
 
-![](http://i.imgur.com/PfCHkVg.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/PfCHkVg.png)
 
 In diesem Fall haben wir uns, wie man sehen kann, dafür entschieden, nur die logarithmischen Wahrscheinlichkeiten zu verwenden und die Backoff-Spalte ignorieren. Wir können auch Parameter festlegen, z. B. den Schwellenwert für Papierkorb, die Anzahl der hinzuzufügenden vorhergehenden Pseudobeispiele für die Glättung, und ob Laplace-Rauschen verwendet wird. Dabei handelt es sich um erweiterte Funktionen, und es ist darauf hinzuweisen, dass die Standardwerte ein guter Ausgangspunkt für Benutzer sind, die noch nicht mit dieser Art von Funktionsgenerierung vertraut sind.
 
@@ -528,17 +528,18 @@ In diesem Fall haben wir uns, wie man sehen kann, dafür entschieden, nur die lo
 
 Jetzt konzentrieren wir uns auf einen wichtigen Aspekt der Transformation unserer Trainings- und Testdaten vor dem tatsächlichen Generieren der Zählfunktionen. Beachten Sie, dass zwei **Execute R Script**-Module verwendet werden, bevor wir die Zähltransformation auf unsere Daten anwenden.
 
-![](http://i.imgur.com/aF59wbc.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/aF59wbc.png)
 
 Hier ist das erste R-Skript:
 
-![](http://i.imgur.com/3hkIoMx.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/3hkIoMx.png)
+
 
 In diesem R-Skript benennen wir unsere Spalten in „Col1“ bis „Col40“ um, da die Zähltransformation Namen dieses Formats erwartet.
 
 Im zweiten R-Skript gleichen wir die Verteilung zwischen positiven und negativen Klassen (Klasse 1 bzw. 0) durch die Verkleinerung der negativen Klasse aus. Dieser Vorgang wird anhand des folgenden R-Skripts veranschaulicht:
 
-![](http://i.imgur.com/91wvcwN.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/91wvcwN.png)
 
 In diesem einfachen R-Skript verwenden wir „pos\_neg\_ratio“, um den Ausgleich zwischen den positiven und den negativen Klassen festzulegen. Dies ist wichtig, da das Verringern der Diskrepanz zwischen Klassen in der Regel Leistungsvorteile bei Klassifizierungsproblemen mit sich bringt, wenn die Klassenverteilung verzerrt ist (beachten Sie, dass in unserem Fall wir 3,3 % positive und 96,7 % negative Klassen vorhanden sind).
 
@@ -546,13 +547,13 @@ In diesem einfachen R-Skript verwenden wir „pos\_neg\_ratio“, um den Ausglei
 
 Schließlich können wir das **Apply Transformation**-Modul zum Anwenden der Zähltransformationen auf unsere Trainings- und Test-DataSets verwenden. Dieses Modul nimmt die gespeicherte Zähltransformation als eine Eingabe und die Trainings- oder Test-DataSets als die andere Eingabe auf und gibt Daten mit Zählfunktionen zurück. Dies wird nachfolgend gezeigt:
 
-![](http://i.imgur.com/xnQvsYf.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/xnQvsYf.png)
 
 ##### Ein Auszug des Erscheinungsbilds der Zählfunktionen
 
 Es ist hilfreich zu sehen, wie die Zählfunktionen in unserem Fall aussehen. Unten sehen Sie einen Auszug dieser Funktion:
 
-![](http://i.imgur.com/FO1nNfw.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/FO1nNfw.png)
 
 In diesem Ausschnitt wird gezeigt, dass für die Spalten, für die wir Zählungen durchgeführt haben, neben den relevanten Backoffs auch die Zahlen und logarithmischen Wahrscheinlichkeiten erhalten.
 
@@ -564,7 +565,7 @@ Wir können nun mithilfe dieser transformierten DataSets ein Azure Machine Learn
 
 Zunächst müssen wir einen Lerner auswählen. Als Lerner verwenden wir eine verstärkte Entscheidungsstruktur mit zwei Klassen. Dies sind die Standardoptionen für diesen Lerner:
 
-![](http://i.imgur.com/bH3ST2z.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/bH3ST2z.png)
 
 Für unser Experiment wählen wir einfach die Standardwerte. Wir stellen fest, dass die Standardwerte in der Regel aussagekräftig und eine gute Möglichkeit zum schnellen Erzielen einer Leistungsbasis sind. Sie können die Leistung verbessern, indem Sie Parameter auswählen, sobald Sie eine Basislinie haben.
 
@@ -572,23 +573,25 @@ Für unser Experiment wählen wir einfach die Standardwerte. Wir stellen fest, d
 
 Für das Training rufen wir einfach ein **Train Model**-Modul auf. Bei den zwei Eingaben handelt es sich um die verstärkte Entscheidungsstruktur mit zwei Klassen und unser Trainings-DataSet. Dies wird nachfolgend gezeigt:
 
-![](http://i.imgur.com/2bZDZTy.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/2bZDZTy.png)
+
 
 #### Bewertung des Modells
 
 Sobald wir über ein trainiertes Modell verfügen, sind wir bereit, das Test-DataSet und seine Leistung zu bewerten. Wir verwenden dafür das unten gezeigte **Score Model**-Modul zusammen mit einem **Evaluate Model**-Modul:
 
-![](http://i.imgur.com/fydcv6u.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/fydcv6u.png)
+
 
 ### <a name="step5"></a> Schritt 5: Bewerten des Modells
 
 Abschließend möchten wir die Leistung des Modells analysieren. Wenn bei zwei Klassen (binäre) Klassifizierungsprobleme auftreten, eignet sich AUC gewöhnlich als Maßstab. Um dies zu veranschaulichen, ordnen wir das Modul **Score Model** dem Modul **Evaluate Model** zu. Wenn Sie im Modul **Evaluate Model** auf **Visualisieren** klicken, ergibt dies ungefähr folgende Grafik:
 
-!["Evaluate"-Modul für BDT-Modell](http://i.imgur.com/0Tl0cdg.png)
+!["Evaluate"-Modul für BDT-Modell](./media/machine-learning-data-science-process-hive-criteo-walkthrough/0Tl0cdg.png)
 
 Bei binären (oder zweiklassigen) Klassifizierungsproblemen, eignet sich AUC (Area Under Curve, Bereich unter der Kurve) als guter Maßstab für die Vorhersagegenauigkeit. Im Folgenden finden Sie unsere Ergebnisse dieses Modells für unser Test-DataSet. Um diese zu erhalten, klicken mit der rechten Maustaste auf den Ausgangsport des Moduls **Evaluate Model** und anschließend auf **Visualisieren**.
 
-!["Visualize Evaluate Model"-Modul](http://i.imgur.com/IRfc7fH.png)
+!["Visualize Evaluate Model"-Modul](./media/machine-learning-data-science-process-hive-criteo-walkthrough/IRfc7fH.png)
 
 ### <a name="step6"></a> Schritt 6: Veröffentlichen des Modells als Webdienst
 Die Möglichkeit zum Veröffentlichen eines Azure Machine Learning-Modells als Webdienst ohne hohen Aufwand ist eine nützliche Funktion, um es allgemein verfügbar zu machen. Sobald dies erfolgt ist, kann jeder mit den Daten, für die Vorhersagen benötigt werden, Aufrufe an den Webdienst durchführen. Der Webdienst nutzt dann das Modell für das Zurückgeben dieser Vorhersagen.
@@ -604,7 +607,7 @@ Als Nächstes müssen wir Eingabe und Ausgabeports für unseren Webdienst erstel
 
 Die Verwendung eines **Apply SQL Transformation**-Moduls ist eine komfortable Methode zum Auswählen von nur 10 Zeilen, die als Eingabeportdaten fungieren. Wählen Sie mithilfe der unten gezeigten SQL-Abfrage nur diese Datenzeilen für unseren Eingabeport aus.
 
-![Eingangsportdaten](http://i.imgur.com/XqVtSxu.png)
+![Eingangsportdaten](./media/machine-learning-data-science-process-hive-criteo-walkthrough/XqVtSxu.png)
 
 #### Webdienst
 Jetzt können wir ein kleines Experiment ausführen, das wir in unserem Webdienst veröffentlichen möchten.
@@ -613,29 +616,30 @@ Jetzt können wir ein kleines Experiment ausführen, das wir in unserem Webdiens
 
 Als nullten Schritt wählen wir, da die Zahlentabelle groß ist, einige wenige Zeilen mit Testdaten aus und generieren aus diesen mit den Zählfunktionen Ausgabedaten. Diese können als Eingabedatenformat für unseren Webdienst dienen. Dies wird nachfolgend gezeigt:
 
-![BDT-Eingangsdaten erstellen](http://i.imgur.com/OEJMmst.png)
+![BDT-Eingangsdaten erstellen](./media/machine-learning-data-science-process-hive-criteo-walkthrough/OEJMmst.png)
 
 Hinweis: Für das Eingabedatenformat verwenden wir nun die AUSGABE des **Count Featurizer**-Moduls. Nach Abschluss der Ausführung dieses Experiments speichern Sie die Ausgabe des **Count Featurizer**-Moduls als DataSet.
 
 **Wichtiger Hinweis:** Dieses DataSet wird für die Eingabedaten des Webdiensts verwendet.
 
-#### Abstimmung des Experiments für den Veröffentlichungswebdienst
+#### Bewertungsexperiment für den Veröffentlichungswebdienst
 
 Zunächst wird im Folgenden gezeigt, wie dies aussieht. Die grundlegende Struktur ist ein **Score Model**-Modul, das unsere trainierten Modellobjekte und einige Zeilen der in den vorherigen Schritten mit dem **Count Featurizer**-Modul generierten Eingabedaten akzeptiert. Wir verwenden "Project Colums" um die bewerteten Bezeichnungen sowie die Bewertungswahrscheinlichkeiten auszublenden.
 
-![Project Columns](http://i.imgur.com/kRHrIbe.png)
+![Project Columns](./media/machine-learning-data-science-process-hive-criteo-walkthrough/kRHrIbe.png)
 
 Beachten Sie, dass das **Project Columns**-Modul zum Filtern von Daten aus einem DataSet verwendet werden kann. Im Folgenden finden Sie die Inhalte:
 
-![Filterung mit dem "Project Columns"-Modul](http://i.imgur.com/oVUJC9K.png)
+![Filterung mit dem "Project Columns"-Modul](./media/machine-learning-data-science-process-hive-criteo-walkthrough/oVUJC9K.png)
 
 Um die blauen E/A-Ports zu erhalten, klicken Sie einfach unten rechts auf **Webdienst vorbereiten**. Wenn wir dieses Experiment ausführen, können wir zudem den Webdienst veröffentlichen, indem wir unten rechts auf das im Folgenden dargestellte Symbol **PREPARE WEBSERVICE** klicken.
 
-![Webdienst veröffentlichen](http://i.imgur.com/WO0nens.png)
+![Webdienst veröffentlichen](./media/machine-learning-data-science-process-hive-criteo-walkthrough/WO0nens.png)
+
 
 Sobald der Webdienst veröffentlicht wurde, werden wir auf eine Seite umgeleitet, die folgendermaßen aussieht:
 
-![](http://i.imgur.com/YKzxAA5.png)
+![](./media/machine-learning-data-science-process-hive-criteo-walkthrough/YKzxAA5.png)
 
 Auf der linken Seite befinden sich zwei Links zu Webdiensten:
 
@@ -644,18 +648,19 @@ Auf der linken Seite befinden sich zwei Links zu Webdiensten:
 
 Wenn Sie auf den Link **REQUEST/RESPONSE** klicken, gelangen Sie zu einer Seite mit vorprogrammiertem Code in C#, Python und R. Dieser Code kann problemlos für Aufrufe an den Webdienst verwendet werden. Beachten Sie, dass der API-Schlüssel auf dieser Seite für die Authentifizierung verwendet werden muss.
 
-Es empfiehlt sich, diesen Python-Code in eine neue Zelle des IPython-Notizbuchs zu kopieren.
+Es empfiehlt sich, diesen Python-Code in eine neue Zelle des IPython-Notebooks zu kopieren.
 
 Im Folgenden finden Sie einen Python-Codeabschnitt mit dem richtigen API-Schlüssel.
 
-![Python-Code](http://i.imgur.com/f8N4L4g.png)
+![Python-Code](./media/machine-learning-data-science-process-hive-criteo-walkthrough/f8N4L4g.png)
 
-Beachten Sie, dass wir den Standard-API-Schlüssel durch den API-Schlüssel unseres Webdienstes ersetzt haben. Wenn Sie in einem IPython-Notizbuch für diese Zelle auf **Ausführen** klicken, wird folgende Antwort zurückgegeben:
 
-![IPython-Antwort](http://i.imgur.com/KSxmia2.png)
+Beachten Sie, dass wir den Standard-API-Schlüssel durch den API-Schlüssel unseres Webdienstes ersetzt haben. Wenn Sie in einem IPython-Notebook für diese Zelle auf **Ausführen** klicken, wird folgende Antwort zurückgegeben:
+
+![IPython-Antwort](./media/machine-learning-data-science-process-hive-criteo-walkthrough/KSxmia2.png)
 
 Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework oder Python-Skript) Antworten im Format "Bewertete Bezeichnungen, bewertete Wahrscheinlichkeiten" erhalten. Beachten Sie, dass wir in diesem Fall die Standardwerte des vorab erstellten Codes ausgewählt haben (Nullen für alle numerischen Spalten und die Zeichenfolge „value“ für alle Kategoriespalten).
 
 Damit sind wir am Ende unser ausführlichen exemplarischen Vorgehensweise zum Behandeln umfangreicher DataSets mithilfe von Azure Machine Learning angekommen. Wir haben mit einem Terabyte an Daten begonnen, ein Vorhersagemodell erstellt und dieses als Webdienst in der Cloud bereitgestellt.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

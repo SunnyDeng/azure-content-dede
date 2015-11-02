@@ -55,4 +55,4 @@ Führen Sie die folgenden Konfigurationsschritte durch, um ein virtuelles Azure-
 ---
 [**Nächster Schritt: Aktivieren der Azure AD-Domänendienste**](active-directory-ds-getting-started-enableaadds.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

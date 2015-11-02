@@ -1,19 +1,19 @@
-<properties
-	pageTitle="Best Practices: Azure AD-Kennwortverwaltung | Microsoft Azure"
-	description="Best Practices für die Bereitstellung und Nutzung, Beispieldokumentation für Endbenutzer und Schulungshandbücher für die Kennwortverwaltung in Azure Active Directory."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Best Practices: Azure AD-Kennwortverwaltung | Microsoft Azure" 
+	description="Best Practices für die Bereitstellung und Nutzung, Beispieldokumentation für Endbenutzer und Schulungshandbücher für die Kennwortverwaltung in Azure Active Directory." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/08/2015" 
 	ms.author="asteen"/>
 
 # Bereitstellen der Kennwortverwaltung und Schulen der Benutzer zu deren Verwendung
@@ -24,6 +24,7 @@ Nachdem Sie die Kennwortzurücksetzung aktiviert haben, müssen Sie als Nächste
   * [Methoden zum selbstständigen Auffüllen der Authentifizierungsdaten](#ways-to-populate-authentication-data)
 * [**Die besten Methoden zum Einführen der Kennwortzurücksetzung in Ihrer Organisation**](#what-is-the-best-way-to-roll-out-password-reset-for-users)
   * [E-Mail-basierte Einführung und Beispiele für die E-Mail-Kommunikation](#email-based-rollout)
+  * [Erstellen eines benutzerdefinierten Portals zur Kennwortverwaltung für Ihre Benutzer](#creating-your-own-password-portal)
   * [Verwenden der erzwungenen Registrierung zum Durchsetzen der Benutzerregistrierung bei der Anmeldung](#using-enforced-registration)
   * [Hochladen von Authentifizierungsdaten für Benutzerkonten](#uploading-data-yourself)
 * [**Beispielschulungsunterlagen für Benutzer und Support (demnächst verfügbar!)**](#sample-training-materials)
@@ -71,7 +72,18 @@ Der einfachste Ansatz zum Informieren Ihrer Benutzer über die Registrierung fü
 
   ![][001]
 
-Sie können die E-Mail-Vorlage [hier](http://1drv.ms/1xWFtQM) herunterladen.
+Sie können [die E-Mail-Vorlage hier herunterladen](http://1drv.ms/1xWFtQM).
+
+### Erstellen eines eigenen Kennwortportals
+Eine für größere Kunden gut geeignete Strategie zur Bereitstellung der Möglichkeit einer Kennwortverwaltung ist die Einrichtung eines einheitlichen „Kennwortportals“, auf dem die Benutzer alle Aufgaben in Bezug auf Kennwörter an einem zentralen Ort durchführen können.
+
+Viele der größten Microsoft-Kunden entscheiden sich für das Erstellen eines Stamm-DNS-Eintrags wie beispielsweise https://passwords.contoso.com mit Links auf das Azure AD-Kennwortzurücksetzungsportal, das Kennwortzurücksetzungs-Registrierungsportal und auf Seiten zur Kennwortänderung. Auf diese Weise lässt sich in alle ausgesendeten E-Mails oder Flyer ein kurzer, einprägsamer URL einfügen, auf den Benutzer im Bedarfsfall klicken können, um die Nutzung des Diensts zu beginnen.
+
+Um einen Einstieg zu schaffen, haben wir eine einfache Seite erstellt, in der aktuelle Konzepte für reaktionsfähige Benutzeroberflächen eingesetzt werden und die auf allen Browsern und mobilen Geräten lauffähig ist.
+
+  ![][007]
+  
+Sie können [die Website-Vorlage hier herunterladen](https://github.com/kenhoff/password-reset-page). Es wird empfohlen, das Logo und die Farben dem Bedarf Ihrer Organisation anpassen.
 
 ### Verwenden der erzwungenen Registrierung
 Wenn Ihre Benutzer sich selbst für die Kennwortzurücksetzung registrieren sollen, können Sie sie auch zur Registrierung zwingen, sobald sie sich im Zugriffsbereich unter [http://myapps.microsoft.com](http://myapps.microsoft.com) anmelden. Aktivieren Sie diese Option auf der Registerkarte **Konfigurieren** des Verzeichnisses, indem Sie die Option **Sollen sich Benutzer bei der Anmeldung im Zugriffsbereich registrieren müssen?** aktivieren.
@@ -98,12 +110,12 @@ Sie können die Authentifizierungsdaten über das [Azure-Verwaltungsportal](http
 1.	Navigieren Sie im **Azure-Verwaltungsportal** in der [Active Directory-Erweiterung](https://manage.windowsazure.com) zu Ihrem Verzeichnis.
 2.	Klicken Sie auf die Registerkarte **Benutzer**.
 3.	Wählen Sie den für Sie relevanten Benutzer aus der Liste aus.
-4.	Auf der ersten Registerkarte finden Sie **Alternative E-Mail-Adresse**, die als Eigenschaft zum Aktivieren der Kennwortzurücksetzung verwendet werden kann.
+4.	Auf der ersten Registerkarte finden Sie **Alternative E-Mail-Adresse**, die als Eigenschaft zum Aktivieren der Kennwortzurücksetzung verwendet werden kann. 
 
     ![][005]
 
 5.	Klicken Sie auf die Registerkarte **Arbeitsinformationen**.
-6.	Auf dieser Seite finden Sie **Bürotelefon**, **Mobiltelefon**, **Telefon für Authentifizierung** und **Authentifizierungs-E-Mail**. Diese Eigenschaften können auch so festgelegt werden, dass sie einem Benutzer das Zurücksetzen des Kennworts ermöglichen.
+6.	Auf dieser Seite finden Sie **Bürotelefon**, **Mobiltelefon**, **Telefon für Authentifizierung** und **Authentifizierungs-E-Mail**. Diese Eigenschaften können auch so festgelegt werden, dass sie einem Benutzer das Zurücksetzen des Kennworts ermöglichen. 
 
     ![][006]
 
@@ -136,5 +148,6 @@ Wir arbeiten an Beispielschulungsmaterial, mit dem Sie Ihre IT-Organisation und 
 [004]: ./media/active-directory-passwords-best-practices/004.jpg "Image_004.jpg"
 [005]: ./media/active-directory-passwords-best-practices/005.jpg "Image_005.jpg"
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
+[007]: ./media/active-directory-passwords-best-practices/007.jpg "Image_007.jpg"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

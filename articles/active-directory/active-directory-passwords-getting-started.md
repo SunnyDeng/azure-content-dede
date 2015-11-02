@@ -1,19 +1,19 @@
-<properties
-	pageTitle="Erste Schritte: Azure AD-Kennwortverwaltung | Microsoft Azure"
-	description="Ermöglichen Sie es Benutzern, ihre eigenen Kennwörter zurückzusetzen, ermitteln Sie Voraussetzungen für die Kennwortzurücksetzung, und aktivieren Sie das Zurückschreiben von Kennwörtern zum Verwalten lokaler Kennwörter in Active Directory."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Erste Schritte: Azure AD-Kennwortverwaltung | Microsoft Azure" 
+	description="Ermöglichen Sie es Benutzern, ihre eigenen Kennwörter zurückzusetzen, ermitteln Sie Voraussetzungen für die Kennwortzurücksetzung, und aktivieren Sie das Zurückschreiben von Kennwörtern zum Verwalten lokaler Kennwörter in Active Directory." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/08/2015" 
 	ms.author="asteen"/>
 
 # Erste Schritte mit der Kennwortverwaltung
@@ -50,13 +50,13 @@ Bevor Sie die Self-Service-Kennwortzurücksetzung aktivieren und verwenden könn
 - Führen Sie ein Upgrade auf Azure AD Premium oder Basic durch. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](http://azure.microsoft.com/pricing/details/active-directory/).
 
   >[AZURE.NOTE]Um die Self-Service-Kennwortzurücksetzung zu aktivieren, müssen Sie ein Upgrade auf Azure AD Premium oder Basic durchführen. Weitere Informationen finden Sie im Artikel zu den verschiedenen Azure Active Directory-Editionen. Hier finden Sie u. a. ausführliche Informationen dazu, wie Sie sich für Azure AD Premium oder Basic registrieren, wie Sie Ihren Lizenzplan und den Azure AD-Zugriff aktivieren, und wie Sie Administratoren und Benutzerkonten Zugriff gewähren.
-
+  
 - Erstellen Sie mindestens ein Administratorkonto und ein Benutzerkonto in Ihrem AAD-Verzeichnis.
 - Weisen Sie dem erstellten Administrator- und Benutzerkonto eine AAD Premium- oder Basic-Lizenz zu.
 
 ### Schritt 1: Konfigurieren der Richtlinie für die Kennwortzurücksetzung
 Führen Sie die folgenden Schritte aus, um die Richtlinie für das Zurücksetzen von Benutzerkennwörtern zu konfigurieren:
-
+ 
 1.	Öffnen Sie einen Browser Ihrer Wahl, und wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).
 2.	Suchen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) auf der Navigationsleiste links nach der **Active Directory-Erweiterung**.
 
@@ -179,16 +179,16 @@ Bevor Sie das Zurückschreiben von Kennwörtern aktivieren und verwenden können
 - Sie verfügen über mindestens ein Administratorkonto und ein Testbenutzerkonto mit einer Azure AD Premium-Lizenz zum Testen dieser Funktion. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
   >[AZURE.NOTE]Stellen Sie sicher, dass es sich bei dem zum Aktivieren der Kennwortrückschreibung verwendeten Administratorkonto um ein Cloudadministratorkonto handelt (erstellt in Azure AD), und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).
-
+  
 - Sie verfügen über eine lokale AD-Bereitstellung mit einer oder mehreren Gesamtstrukturen, in der Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 oder Windows Server 2012 R2 mit den aktuellen Service Packs ausgeführt wird.
 
   >[AZURE.NOTE]Wenn Sie eine ältere Version von Windows Server 2008 oder 2008 R2 ausführen, können Sie diese Funktion verwenden, müssen aber [KB 2386717 herunterladen und installieren](https://support.microsoft.com/kb/2386717), bevor Sie Ihre lokale AD-Kennwortrichtlinie in der Cloud erzwingen können.
-
+  
 - Sie haben Azure AD Connect installiert und Ihre AD-Umgebung für eine Synchronisierung mit der Cloud vorbereitet. Weitere Informationen finden Sie unter [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md).
 - Wenn Sie DirSync verwenden, müssen Sie sicherstellen, dass die Unternehmensfirewall so konfiguriert ist, dass ausgehende Verbindungen blockiert werden und **TCP-Port 828 oder 818** geöffnet ist, um das Zurückschreiben von Kennwörtern zu aktivieren und zu nutzen. Wenn Sie Azure AD Sync oder Azure AD Connect verwenden, ist dieser Schritt nicht erforderlich, da nur **TCP 443** ausgehend (und in einigen Fällen **TCP 9350-9354**) geöffnet werden müssen.
 
   >[AZURE.NOTE]Es wird dringend empfohlen, bei Verwendung von Azure AD Sync oder DirSync ein Upgrade auf die neueste Version von Azure AD Connect durchzuführen, um eine bestmögliche Funktionalität sicherzustellen und von neuen Features zu profitieren.
-
+  
 
 ### Schritt 1: Herunterladen der aktuellen Version von Azure AD Connect
 Das Zurückschreiben von Kennwörtern steht in Versionen von Azure AD Connect oder im Azure AD Sync-Tool mit Versionsnummer **1.0.0419.0911** oder höher zur Verfügung. Das Zurückschreiben von Kennwörtern mit automatischer Entsperrung von Konten steht in Versionen von Azure AD Connect oder im Azure AD Sync-Tool mit Versionsnummer **1.0.0485.0222** oder höher zur Verfügung. Wenn Sie eine ältere Version verwenden, führen Sie ein Upgrade auf diese oder eine höhere Version durch, bevor Sie fortfahren. [Klicken Sie hier, um die aktuelle Version von Azure AD Connect herunterzuladen](active-directory-aadconnect.md#download-azure-ad-connect).
@@ -228,7 +228,8 @@ Nun, da Sie das Azure AD Connect-Tool heruntergeladen haben, können Sie das Zur
 4.	Rufen Sie den aktuellen Status der Rückschreibung für den aktuellen Connector ab, indem Sie das folgende Cmdlet ausführen: `Get-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName`
 5.	Aktivieren Sie das Zurückschreiben von Kennwörtern, indem Sie dieses Cmdlet ausführen: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName –Enable $true`
 
-> [AZURE.NOTE]Stellen Sie bei der Aufforderung zur Eingabe von Anmeldeinformationen sicher, dass es sich bei dem für "AzureADCredential" angegebenen Administratorkonto um ein **Cloudadministratorkonto (erstellt in Azure AD)** handelt, und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).[AZURE.NOTE]Sie können die Funktion zum Zurückschreiben von Kennwörtern über PowerShell deaktivieren, indem Sie die obigen Anweisungen erneut ausführen, aber hierbei `$false` übergeben, oder indem Sie die Einstellung [Kennwörter in das lokale Verzeichnis zurückschreiben](https://manage.windowsazure.com) auf **Nein** festlegen. Sie finden diese Einstellung im **Azure-Verwaltungsportal** auf der Registerkarte **Konfigurieren** im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts**.
+> [AZURE.NOTE]Stellen Sie bei der Aufforderung zur Eingabe von Anmeldeinformationen sicher, dass es sich bei dem für "AzureADCredential" angegebenen Administratorkonto um ein **Cloudadministratorkonto (erstellt in Azure AD)** handelt, und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).
+> [AZURE.NOTE]Sie können die Funktion zum Zurückschreiben von Kennwörtern über PowerShell deaktivieren, indem Sie die obigen Anweisungen erneut ausführen, aber hierbei `$false` übergeben, oder indem Sie die Einstellung [Kennwörter in das lokale Verzeichnis zurückschreiben](https://manage.windowsazure.com) auf **Nein** festlegen. Sie finden diese Einstellung im **Azure-Verwaltungsportal** auf der Registerkarte **Konfigurieren** im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts**.
 
 #### Überprüfen, ob die Konfiguration erfolgreich war
 Nachdem Sie die Konfiguration abgeschlossen haben, wird im Windows PowerShell-Fenster die Meldung "Das Zurückschreiben der Kennwortzurücksetzung ist aktiviert" angezeigt, in der Konfigurationsoberfläche wird eine Erfolgsmeldung eingeblendet.
@@ -242,13 +243,19 @@ Nachdem Sie das Zurückschreiben von Kennwörtern in Azure AD Connect aktiviert 
 
 1.	Wenn Sie nach dem Abschluss der Installation in Ihrer Umgebung unbekannte ausgehende Verbindungen blockieren, müssen Sie außerdem Änderungen an den folgenden Regeln Ihrer Firewall vornehmen. Stellen Sie sicher, dass Sie Ihren AAD Connect-Computer nach dem Durchführen dieser Änderungen neu starten:
    - Lassen Sie ausgehende Verbindungen über TCP-Port 443 zu.
-   - Lassen Sie ausgehende Verbindungen mit https://ssprsbprodncu-sb.accesscontrol.windows.net/ zu.
-   - Wenn Sie einen Proxy verwenden oder allgemeine Verbindungsprobleme vorliegen, lassen Sie ausgehende Verbindungen über TCP-Port 9350-9534 zu.
+   - Lassen Sie ausgehende Verbindungen mit https://ssprsbprodncu-sb.accesscontrol.windows.net/ zu. 
+   - Wenn Sie einen Proxy verwenden oder allgemeine Verbindungsprobleme vorliegen, lassen Sie ausgehende Verbindungen über TCP-Port 9350-9354 zu.
 
 ### Schritt 4: Einrichten der geeigneten Active Directory-Berechtigungen
 Bei der anfänglichen Konfiguration mit dem Konfigurations-Assistenten wird ein Konto X eingerichtet. Für jede Gesamtstruktur, die Benutzer enthält, deren Kennwörter zurückgesetzt werden, müssen X die Berechtigungen **Kennwort zurücksetzen**, **Kennwort ändern**, **Kennwort schreiben** für `lockoutTime` sowie die erweiterten Rechte **Berechtigungen schreiben** für `pwdLastSet` für das Stammobjekt jeder Domäne in dieser Gesamtstruktur erteilt werden. Die Rechte müssen hierbei so festgelegt werden, dass sie an alle Benutzerobjekte vererbt werden.
 
-Durch das Festlegen dieser Berechtigungen kann das MA-Dienstkonto für jede Gesamtstruktur Kennwörter im Namen der Benutzerkonten innerhalb dieser Gesamtstruktur verwalten. Wenn Sie diese Berechtigungen nicht gewähren, erhalten die Benutzer – obwohl das Zurückschreiben scheinbar ordnungsgemäß konfiguriert ist – Fehler bei dem Versuch, ihre lokalen Kennwörter über die Cloud verwalten. Nachfolgend finden Sie eine detaillierte Schrittanleitung zum Gewähren dieser Berechtigungen im MMC-Snap-In **Active Directory-Benutzer und -Gruppen**.
+Wenn Sie nicht sicher sind, auf welches Konto sich die oben genannten Angaben beziehen, öffnen Sie die Azure Active Directory Connect-Konfigurationsoberfläche, und klicken Sie auf die Option **Lösung prüfen**. Das Konto, dem Sie die Berechtigung hinzufügen müssen, ist im Screenshot unten rot unterstrichen.
+
+**<font color="red">Achten Sie darauf, diese Berechtigung für jede Domäne in jeder Gesamtstruktur des Systems einzurichten, da sonst das Kennwortrückschreiben nicht richtig funktioniert.</font>**
+
+  ![][032]
+
+  Durch das Festlegen dieser Berechtigungen kann das MA-Dienstkonto für jede Gesamtstruktur Kennwörter im Namen der Benutzerkonten innerhalb dieser Gesamtstruktur verwalten. Wenn Sie diese Berechtigungen nicht gewähren, erhalten die Benutzer – obwohl das Zurückschreiben scheinbar ordnungsgemäß konfiguriert ist – Fehler bei dem Versuch, ihre lokalen Kennwörter über die Cloud verwalten. Nachfolgend finden Sie eine detaillierte Schrittanleitung zum Gewähren dieser Berechtigungen im MMC-Snap-In **Active Directory-Benutzer und -Gruppen**.
 
 >[AZURE.NOTE]Es kann bis zu einer Stunde dauern, bis diese Berechtigungen auf alle Objekte in Ihrem Verzeichnis repliziert wurden.
 
@@ -278,7 +285,7 @@ Durch das Festlegen dieser Berechtigungen kann das MA-Dienstkonto für jede Gesa
 
 ### Schritt 5: Zurücksetzen Ihres AD-Kennworts als Benutzer
 Jetzt, da das Zurückschreiben von Kennwörtern aktiviert ist, können Sie die ordnungsgemäße Funktion testen, indem Sie das Kennwort eines Benutzers zurücksetzen, dessen Konto mit Ihrem Cloudmandanten synchronisiert wurde.
-
+ 
 #### So prüfen Sie, ob das Zurückschreiben von Kennwörtern ordnungsgemäß funktioniert
 1.	Navigieren Sie zu [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com), oder wechseln Sie zu einem beliebigen Organisations-ID-Anmeldebildschirm, und klicken Sie auf den Link **Können Sie nicht auf Ihr Konto zugreifen?**.
 
@@ -342,5 +349,6 @@ Jetzt, da das Zurückschreiben von Kennwörtern aktiviert ist, können Sie die o
 [029]: ./media/active-directory-passwords-getting-started/029.jpg "Image_029.jpg"
 [030]: ./media/active-directory-passwords-getting-started/030.jpg "Image_030.jpg"
 [031]: ./media/active-directory-passwords-getting-started/031.jpg "Image_031.jpg"
+[032]: ./media/active-directory-passwords-getting-started/032.jpg "Image_032.jpg"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

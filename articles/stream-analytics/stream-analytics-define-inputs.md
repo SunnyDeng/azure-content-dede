@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Definieren von Eingaben | Microsoft Azure" 
 	description="Grundlegendes zu Stream Analytics-Eingaben" 
-	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
+	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -21,8 +21,8 @@
 
 Azure Stream Analytics-Eingaben sind als Verbindung mit einer Datenquelle definiert. Stream Analytics verfügt über eine hervorragende Integration in die Azure-Quellen Event Hub, IoT Hub und Blobspeicher von innerhalb und außerhalb des Azure-Abonnements, unter dem Ihr Auftrag ausgeführt wird. Werden Daten mittels Push an diese Datenquelle übertragen, werden sie von dem Stream Analytics-Auftrag übernommen und in Echtzeit verarbeitet. Eingaben werden in zwei unterschiedliche Typen unterteilt: Datenstromeingaben und Verweisdateneingaben.
 
-- **Datenstromeingaben**: Ein Datenstrom ist eine ungebundene Abfolge von eingehenden Ereignisse im Verlauf der Zeit. Stream Analytics-Aufträge müssen mindestens eine Datenstromeingabe enthalten, die vom Auftrag genutzt und umgewandelt werden soll. Blobspeicher, Event Hubs und IoT Hubs werden als Datenstrom-Eingabequellen unterstützt. Event Hubs werden verwendet, um Ereignisdatenströme von mehreren Geräten und Diensten, z. B. Aktivitätsfeeds in sozialen Medien, Börseninformationen oder Daten von Sensoren, zu sammeln. IoT Hubs sind zum Sammeln von Daten von verbundenen Geräten in IoT-Szenarien (Internet of Things) optimiert. Der Blobspeicher kann als Eingabequelle für das Erfassen von Massendaten als Datenstrom verwendet werden.  
-- **Verweisdaten**: Stream Analytics unterstützt einen zweiten Eingabetyp, der als Verweisdaten bezeichnet wird. Dabei handelt es sich um zusätzliche Daten, die in der Regel statisch sind oder sich nur selten ändern. Sie werden üblicherweise dazu verwendet, um Korrelationen und Suchvorgänge auszuführen. Azure-BLOB-Speicher ist derzeit die einzige unterstützte Eingabequelle für Verweisdaten. Blobs für Verweisdatenquellen sind auf eine Größe von 50 MB beschränkt. Informationen zum Erstellen von Verweisdateneingaben finden Sie unter [Verwenden von Verweisdaten](stream-analytics-use-reference-data.md).  
+- **Datenstromeingaben**: Ein Datenstrom ist eine ungebundene Abfolge von eingehenden Ereignissen im Verlauf der Zeit. Stream Analytics-Aufträge müssen mindestens eine Datenstromeingabe enthalten, die vom Auftrag genutzt und umgewandelt werden soll. Blobspeicher, Event Hubs und IoT Hubs werden als Datenstrom-Eingabequellen unterstützt. Event Hubs werden verwendet, um Ereignisdatenströme von mehreren Geräten und Diensten, z. B. Aktivitätsfeeds in sozialen Medien, Börseninformationen oder Daten von Sensoren, zu sammeln. IoT Hubs sind zum Sammeln von Daten von verbundenen Geräten in IoT-Szenarien (Internet of Things) optimiert. Der Blobspeicher kann als Eingabequelle für das Erfassen von Massendaten als Datenstrom verwendet werden.  
+- **Verweisdaten**: Stream Analytics unterstützt einen zweiten Eingabetyp, der als „Verweisdaten“ bezeichnet wird. Dabei handelt es sich um zusätzliche Daten, die in der Regel statisch sind oder sich nur selten ändern. Sie werden üblicherweise dazu verwendet, um Korrelationen und Suchvorgänge auszuführen. Azure-BLOB-Speicher ist derzeit die einzige unterstützte Eingabequelle für Verweisdaten. Blobs für Verweisdatenquellen sind auf eine Größe von 50 MB beschränkt. Informationen zum Erstellen von Verweisdateneingaben finden Sie unter [Verwenden von Verweisdaten](stream-analytics-use-reference-data.md).  
 
 ## Erstellen einer Event Hub-Datenstromeingabe
 
@@ -83,7 +83,7 @@ In der folgenden Tabelle wird jede Eigenschaft auf der IoT Hub-Eingaberegisterka
 |------|------|
 | Eingabealias | Ein Anzeigename, der in der Auftragsabfrage verwendet wird, um auf diese Eingabe zu verweisen. |
 | IoT Hub | Ein IoT Hub ist ein Container für einen Satz von Nachrichtenentitäten. |
-| Endpunkt | Der Name des IoT Hub-Endpunkts. |
+| Endgerät | Der Name des IoT Hub-Endgeräts. |
 | Der Name der SAS-Richtlinie | Die SAS-Richtlinie zum Gewähren des Zugriffs auf den IoT Hub. Jede Richtlinie für den gemeinsamen Zugriff umfasst einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel. |
 | SAS-Richtlinienschlüssel | Der Schlüssel für den gemeinsamen Zugriff, der für die Authentifizierung des Zugriffs auf den IoT Hub verwendet wird. |
 | Consumergruppe (optional) | Die Consumergruppe für das Erfassen von Daten aus dem IoT Hub. Wenn nichts angegeben wird, verwenden Stream Analytics-Aufträge die Standardconsumergruppe, um Daten vom IoT Hub zu erfassen. Es wird empfohlen, für jeden Stream Analytics-Auftrag eine eigene Consumergruppe zu verwenden. |
@@ -106,9 +106,9 @@ Wenn Ihre Daten aus einer IoT Hub-Quelle stammen, können Sie auf einige Metadat
 
 ## Erstellen eines Blobspeichers als Datenstromeingabe ##
 
-Für Szenarios mit großen Mengen unstrukturierter Daten, die in der Cloud gespeichert werden sollen, bietet BLOB-Speicher eine kostengünstige und skalierbare Lösung. Daten im [Blobspeicher](http://azure.microsoft.com/services/storage/blobs/) werden im Allgemeinen als "ruhende" Daten angesehen, können aber als Datenstrom von Stream Analytics verarbeitet werden. Ein häufiges Szenario für Blobspeichereingaben mit Stream Analytics ist die Verarbeitung von Protokollen, wobei Telemetriedaten von einem System erfasst werden und analysiert und verarbeitet werden müssen, um aussagekräftige Daten zu extrahieren.
+Für Szenarios mit großen Mengen unstrukturierter Daten, die in der Cloud gespeichert werden sollen, bietet BLOB-Speicher eine kostengünstige und skalierbare Lösung. Daten im [Blobspeicher](http://azure.microsoft.com/services/storage/blobs/) werden im Allgemeinen als „ruhende“ Daten angesehen, können aber als Datenstrom von Stream Analytics verarbeitet werden. Ein häufiges Szenario für Blobspeichereingaben mit Stream Analytics ist die Verarbeitung von Protokollen, wobei Telemetriedaten von einem System erfasst werden und analysiert und verarbeitet werden müssen, um aussagekräftige Daten zu extrahieren.
 
-Es ist wichtig zu beachten, dass der Standardzeitstempel von Blobspeicherereignissen in Stream Analytics der Zeitstempel ist, an dem das Blob zuletzt geändert wurde, sprich *BlobLastModifiedUtcTime*. Zum Verarbeiten der Daten als Datenstrom mit einem Zeitstempel in der Ereignisnutzlast muss das Schlüsselwort [TIMESTAMP BY](https://msdn.microsoft.com/library/azure/dn834998.aspx) verwendet werden.
+Es ist wichtig zu beachten, dass der Standardzeitstempel von Blob-Speicherereignissen in Stream Analytics der Zeitstempel ist, an dem das Blob zuletzt geändert wurde, sprich *BlobLastModifiedUtcTime*. Zum Verarbeiten der Daten als Datenstrom mit einem Zeitstempel in der Ereignisnutzlast muss das Schlüsselwort [TIMESTAMP BY](https://msdn.microsoft.com/library/azure/dn834998.aspx) verwendet werden.
 
 In der folgenden Tabelle wird jede Eigenschaft in der Blobspeicher-Eingaberegisterkarte mit einer entsprechenden Beschreibung erläutert:
 
@@ -133,7 +133,7 @@ In der folgenden Tabelle wird jede Eigenschaft in der Blobspeicher-Eingaberegist
 <tr>
 <td>Speichercontainer
 </td>
-<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blobdienst gespeichert sind. Wenn Sie ein Blob in den Blobdienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
+<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blob-Dienst gespeichert sind. Wenn Sie ein Blob in den Blob-Dienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
 </tr>
 <tr>
 <td>Präfixmusters des Pfads [optional]</td>
@@ -183,7 +183,7 @@ FROM Input
 
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stream Analytics für Daten aus dem Internet der Dinge. Weitere Informationen zu diesem Dienst finden Sie unter:
@@ -201,4 +201,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

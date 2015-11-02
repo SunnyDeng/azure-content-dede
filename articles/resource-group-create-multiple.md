@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/27/2015"
+   ms.date="10/20/2015"
    ms.author="tomfitz"/>
 
 # Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager
@@ -61,12 +61,14 @@ Verwenden Sie die folgende Vorlage:
           "name": "[concat('examplecopy-', copyIndex())]", 
           "type": "Microsoft.Web/sites", 
           "location": "East US", 
-          "apiVersion": "2014-06-01",
+          "apiVersion": "2015-08-01",
           "copy": { 
              "name": "websitescopy", 
              "count": "[parameters('count')]" 
           }, 
-          "properties": {} 
+          "properties": {
+              "serverFarmId": "hostingPlanName"
+          }
       } 
     ]
 
@@ -103,20 +105,55 @@ Verwenden Sie die folgende Vorlage:
           "name": "[concat('examplecopy-', parameters('org')[copyIndex()])]", 
           "type": "Microsoft.Web/sites", 
           "location": "East US", 
-          "apiVersion": "2014-06-01",
+          "apiVersion": "2015-08-01",
           "copy": { 
              "name": "websitescopy", 
              "count": "[length(parameters('org'))]" 
           }, 
-          "properties": {} 
+          "properties": {
+              "serverFarmId": "hostingPlanName"
+          } 
       } 
     ]
 
 Natürlich legen Sie die copy-Anzahl auf einen anderen Wert fest als die Länge des Arrays. Sie können beispielsweise ein Array mit vielen Werten erstellen und dann einen Parameterwert übergeben, der festlegt, wie viele der Arrayelemente bereitgestellt werden sollen. In diesem Fall legen Sie die copy-Anzahl wie im ersten Beispiel gezeigt fest.
+
+## Abhängigkeit von Ressourcen in einer Schleife
+
+Sie können angeben, dass eine Ressource nach einer anderen Ressource bereitgestellt wird, indem Sie das **dependsOn**-Element verwenden. Wenn Sie eine Ressource bereitstellen möchten, die von der Sammlung von Ressourcen in einer Schleife abhängt, können Sie den Namen der Kopierschleife im **dependsOn**-Element angeben. Das folgende Beispiel zeigt, wie 3 Speicherkonten vor dem Bereitstellen des virtuellen Computers bereitgestellt werden. Die vollständige Definition des virtuellen Computers ist dabei nicht angegeben. Beachten Sie, dass **name** für das copy-Element auf **storagecopy** und auch das **dependsOn**-Element für die virtuellen Computer auf **storagecopy** gesetzt ist.
+
+    {
+	    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	    "contentVersion": "1.0.0.0",
+	    "parameters": {},
+	    "resources": [
+	        {
+		        "apiVersion": "2015-06-15",
+		        "type": "Microsoft.Storage/storageAccounts",
+		        "name": "[concat('storage', uniqueString(resourceGroup().id), copyIndex())]",
+		        "location": "[resourceGroup().location]",
+		        "properties": {
+                    "accountType": "Standard_LRS"
+            	 },
+		        "copy": { 
+         	        "name": "storagecopy", 
+         	        "count": 3 
+      		    }
+	        },
+           {
+               "apiVersion": "2015-06-15", 
+               "type": "Microsoft.Compute/virtualMachines", 
+               "name": "[concat('VM', uniqueString(resourceGroup().id))]",  
+               "dependsOn": ["storagecopy"],
+               ...
+           }
+	    ],
+	    "outputs": {}
+    }
 
 ## Nächste Schritte
 - Informationen zu den Abschnitten einer Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
 - Unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md) finden Sie alle Funktionen, die Sie in einer Vorlage verwenden können.
 - Informationen zum Bereitstellen Ihrer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

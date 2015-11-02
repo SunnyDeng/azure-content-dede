@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="index-page"
-	ms.date="09/08/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
-
+[AZURE.INCLUDE [learn-about-deployment-models-both-include](../../includes/learn-about-deployment-models-both-include.md)]
 
 Richten Sie Ihre erste oder nächste Entwicklungs-/Test- oder Produktions-SharePoint-Farm in Microsoft Azure-Infrastrukturdiensten ein. Dadurch erhalten Sie eine einfache Konfiguration und die Möglichkeit, die Farm schnell mit neuen Kapazitäten zu erweitern oder die wichtigsten Funktionen zu optimieren.
 
@@ -28,19 +27,25 @@ Richten Sie Ihre erste oder nächste Entwicklungs-/Test- oder Produktions-ShareP
 
 ## Grundlegende SharePoint-Farm für Entwicklung/Tests
 
-Bei virtuellen Computern, die mit dem klassischen Bereitstellungsmodell erstellt wurden, können Sie die [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md)-Funktion aus dem Azure-Vorschauportal verwenden, um eine grundlegende Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetverbindung zu erstellen.
+Für virtuelle Computer, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, können Sie das Element [SharePoint 2013 non-HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) im Azure Marketplace des Azure-Vorschauportals verwenden. Damit wird eine grundlegende Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetverbindung erstellt.
+
+Sie können zudem eine Azure-Ressourcen-Manager-Vorlage verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit drei Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-three-server-sharepoint-farm).
 
 Die automatisch erstellte Umgebung besteht aus drei Servern für einen Domänencontroller, einer SQL Server-Instanz und dem SharePoint-Server in einem ausschließlich virtuellen Azure-Cloud-Netzwerk.
 
-Verwenden Sie eine Vorlage, um eine ähnliche Konfiguration mit dem Bereitstellungsmodell des Ressourcen-Managers zu erstellen. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit drei Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-three-server-sharepoint-farm).
+Um eine ähnliche Konfiguration mit dem klassischen Bereitstellungsmodell zu erstellen, verwenden Sie das Element [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md) im Azure Marketplace des Azure-Vorschauportals.
+
 
 ## Hochverfügbare SharePoint-Test-/Entwicklungsfarm
 
-Bei klassischen virtuellen Computern können Sie außerdem die [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md)-Funktion aus dem Azure-Vorschauportal verwenden, um eine SharePoint-Test-/Entwicklungsfarm mit hoher Verfügbarkeit für eine SharePoint-Website mit Internetverbindung zu erstellen.
+Für virtuelle Computer, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, können Sie das Element [SharePoint 2013 HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) im Azure Marketplace des Azure-Vorschauportals verwenden. Damit wird eine hochverfügbare Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetverbindung erstellt.
 
-Die automatisch erstellte Umgebung besteht aus neun Servern in einem ausschließlich virtuellen Azure-Cloud-Netzwerk: zwei für Domänencontroller, drei für ein SQL Server-Cluster, zwei SharePoint-Server auf Anwendungsebene und zwei SharePoint-Server auf Webebene.
+Sie können zudem eine Azure-Ressourcen-Manager-Vorlage verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit neun Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-nine-server-sharepoint-farm).
 
-Verwenden Sie eine Vorlage, um eine ähnliche Konfiguration mit virtuellen Computern zu erstellen, die im Ressourcen-Manager erstellt wurden. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit neun Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-nine-server-sharepoint-farm).
+Die automatisch erstellte Umgebung besteht aus neun Servern in einem ausschließlich virtuellen Azure-Cloud-Netzwerk: zwei für Domänencontroller, drei für einen SQL Server-Cluster, zwei SharePoint-Server auf Anwendungsebene und zwei SharePoint-Server auf Webebene.
+
+Um eine ähnliche Konfiguration mit dem klassischen Bereitstellungsmodell zu erstellen, verwenden Sie das Element [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md) im Azure Marketplace des Azure-Vorschauportals.
+
 
 ## Hybrid-Cloud-Entwicklungs-/Testfarm
 
@@ -56,16 +61,14 @@ Diese Konfiguration verwendet klassische virtuelle Computer.
 
 ## Zusätzliche Ressourcen
 
-Zusätzliche Informationen und Konfigurationen zu SharePoint in Azure finden Sie unter diesen Ressourcen:
+[Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
 
-- [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
+[Internetwebsites in Microsoft Azure mit SharePoint Server 2013](https://technet.microsoft.com/library/dn635307.aspx)
 
-- [Internetwebsites in Microsoft Azure mit SharePoint Server 2013](https://technet.microsoft.com/library/dn635307.aspx)
+[SharePoint Server 2013 – Notfallwiederherstellung in Microsoft Azure](https://technet.microsoft.com/library/dn635313.aspx)
 
-- [SharePoint Server 2013 – Notfallwiederherstellung in Microsoft Azure](https://technet.microsoft.com/library/dn635313.aspx)
+[Verwenden von Microsoft Azure Active Directory für die SharePoint 2013-Authentifizierung](https://technet.microsoft.com/library/dn635311.aspx)
 
-- [Verwenden von Microsoft Azure Active Directory für die SharePoint 2013-Authentifizierung](https://technet.microsoft.com/library/dn635311.aspx)
+[Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
 
-- [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

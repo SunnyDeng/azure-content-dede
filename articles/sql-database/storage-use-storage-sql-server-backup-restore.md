@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="vm-windows-sql-server"
 	ms.topic="article"
-	ms.date="07/16/2015"
+	ms.date="10/20/2015"
 	ms.author="carlrab"/>
 
 
@@ -22,15 +22,15 @@
 
 ## Übersicht
 
-Die Funktion, die das Schreiben von SQL Server-Sicherungen in den Azure-Blob-Speicherdienst ermöglicht, wurde in SQL Server 2012 SP1 CU2 eingeführt. Mithilfe dieser Funktion können Sie Daten aus einer lokalen SQL Server-Datenbank oder einer SQL Server-Datenbank auf einem virtuellen Azure-Computer im Azure-Blob-Dienst sichern und daraus wiederherstellen. Die Sicherung in der Cloud bietet zahlreiche Vorteile: Verfügbarkeit, unbegrenzter georeplizierter Offsitespeicher und problemlose Migration von Daten in die und aus der Cloud. In dieser Version können Sie BACKUP- und RESTORE-Anweisungen mithilfe von T-SQL oder SMO aufrufen.
+Die Funktion, die das Schreiben von SQL Server-Sicherungen in den Azure-Blob-Speicherdienst ermöglicht, wurde in SQL Server 2012 SP1 CU2 eingeführt. Mithilfe dieser Funktion können Sie Daten vom Azure-Blob-Dienst mit einer lokalen SQL Server-Datenbank oder einer SQL Server-Datenbank auf einem virtuellen Azure-Computer sichern und daraus wiederherstellen. Die Sicherung in der Cloud bietet zahlreiche Vorteile: Verfügbarkeit, unbegrenzter georeplizierter Offsitespeicher und problemlose Migration von Daten in die und aus der Cloud. Sie können BACKUP- und RESTORE-Anweisungen mithilfe von T-SQL oder SMO aufrufen.
 
 ## Vorteile der Verwendung des Azure-Blob-Diensts für SQL Server-Sicherungen
 
 Speicherverwaltung, Risiko eines Speicherausfalls, Zugriff auf Offsitespeicher und Konfiguration von Geräten – dies sind nur einige der generellen Probleme bei Sicherungen. Bei einem auf einem virtuellen Azure-Computer ausgeführten SQL Server stellen die Konfiguration und Sicherung einer VHD oder die Konfiguration angeschlossener Laufwerke zusätzliche Herausforderungen dar. Im Folgenden werden einige der wichtigsten Vorteile aufgeführt, die die Verwendung des Azure-Blob-Speicherdiensts für SQL Server-Sicherungen bietet:
 
-* Flexibler, zuverlässiger und unbegrenzter Offsitespeicher: Das Speichern von Sicherungen im Azure-Blob-Dienst ist eine praktische, flexible und leicht zugängliche Option für die Offsitespeicherung. Die Erstellung von Offsitespeicher für SQL Server-Sicherungen erfordert ggf. lediglich das Ändern vorhandener Skripts/Jobs. Offsitespeicher sollte normalerweise weit genug vom Standort der Produktionsdatenbank entfernt sein, um zu verhindern, dass ein einziger Notfall sich auf beide Standorte (den des Offsitespeichers und den der Produktionsdatenbank) auswirkt. Die geografische Replikation des Blob-Speichers bietet zusätzlichen Schutz im Fall eines Notfalls, der sich auf die gesamte Region auswirkt. Außerdem stehen Sicherungen überall und jederzeit zur Verfügung und können problemlos für Wiederherstellungen aufgerufen werden.
+* Flexibler, zuverlässiger und unbegrenzter Offsitespeicher: Das Speichern von Sicherungen im Azure-Blob-Dienst ist eine praktische, flexible und leicht zugängliche Option für die Offsitespeicherung. Die Erstellung von Offsitespeicher für SQL Server-Sicherungen erfordert ggf. lediglich das Ändern vorhandener Skripts/Jobs. Offsitespeicher sollte normalerweise weit genug vom Standort der Produktionsdatenbank entfernt sein, um zu verhindern, dass ein einziger Notfall sich auf beide Standorte (den des Offsitespeichers und den der Produktionsdatenbank) auswirkt. Die Georeplikation des Blob-Speichers bietet zusätzlichen Schutz im Fall eines Notfalls, der sich auf die gesamte Region auswirkt. Außerdem stehen Sicherungen überall und jederzeit zur Verfügung und können problemlos für Wiederherstellungen aufgerufen werden.
 * Sicherungsarchiv: Der Azure-Blob-Speicherdienst bietet eine bessere Alternative als die sonst übliche Archivierung von Sicherungen auf Bändern. Bandspeicher muss ggf. physisch an einen Offsitestandort transportiert werden und erfordert Schutzmaßnahmen für die Medien. Die Speicherung von Sicherungen im Azure-Blob-Speicher stellt eine sofortige, hochverfügbare und dauerhafte Archivierungsoption dar.
-* Kein Mehraufwand für Hardwareverwaltung: Bei Azure-Diensten fällt kein Mehraufwand für Hardwareverwaltung an. Azure-Dienste verwalten die Hardware und stellen geografische Replikation für Redundanz und Schutz vor Hardwareausfällen zur Verfügung.
+* Kein Mehraufwand für Hardwareverwaltung: Bei Azure-Diensten fällt kein Mehraufwand für Hardwareverwaltung an. Azure-Dienste verwalten die Hardware und stellen Georeplikation für Redundanz und Schutz vor Hardwareausfällen zur Verfügung.
 * SQL Server-Instanzen, die auf einem virtuellen Windows Azure-Computer ausgeführt werden, können derzeit durch Erstellung angeschlossener Datenträger in Azure-Blob-Speicherdiensten gesichert werden. Die Anzahl der Datenträger, die an einen virtuellen Azure-Computer angeschlossen werden können, ist allerdings begrenzt. Bei einer sehr großen Instanz beträgt die maximale Anzahl 16 Datenträger, während kleinere Instanzen weniger Datenträger unterstützen. Die Beschränkung auf 16 Datenträger kann durch eine direkte Sicherung im Azure-Blob-Speicher umgangen werden.
 * Darüber hinaus steht die Sicherungsdatei, die jetzt im Azure-Blob-Speicherdienst gespeichert wird, einem lokalen SQL Server oder einem anderen, auf einem virtuellen Windows Azure-Computer ausgeführten SQL Server direkt zur Verfügung, ohne dass Datenbanken angefügt/getrennt werden müssen oder die VHD heruntergeladen und angeschlossen werden muss.
 * Kostenvorteile: Sie zahlen nur für den tatsächlich genutzten Dienst. Die Option kann genauso kosteneffizient wie eine Offsitesicherungs-/-archivierungslösung sein. Weitere Informationen finden Sie im [Azure-Preisrechner](http://go.microsoft.com/fwlink/?LinkId=277060 "Preisrechner") und in der [Azure-Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=277059 "Preisübersicht").
@@ -73,4 +73,4 @@ Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen
 
 [Bewährte Methoden für die Sicherung und Wiederherstellung (Windows Azure-BLOB-Speicherdienst)](http://go.microsoft.com/fwlink/?LinkId=272394)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

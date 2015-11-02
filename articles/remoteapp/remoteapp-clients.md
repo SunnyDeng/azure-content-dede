@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/09/2015"
+    ms.date="10/10/2015"
     ms.author="elizapo" />
 
 
 
-# Zugreifen auf Anwendungen in Azure RemoteApp
+# Zugreifen auf Apps in Azure RemoteApp
 
 Einer der unschlagbaren Vorteile von Azure RemoteApp ist, dass Sie über sämtliche Ihrer Geräte auf Apps zugreifen können. Und was noch besser ist: Sie können mit der Arbeit auf einem Gerät beginnen und dann nahtlos zu einem zweiten Gerät wechseln und an dem Punkt weiterarbeiten, an dem Sie aufgehört haben. Zuerst müssen Sie hierzu den entsprechenden Client für Ihr Gerät herunterladen und sich am Dienst anmelden.
 
@@ -28,11 +28,10 @@ Dieses Thema enthält die derzeit unterstützten Clients sowie Informationen zum
 
 Sie können mit einem der folgenden Schritte auf RemoteApp zugreifen, wenn auf dem Gerät eines dieser Betriebssysteme ausgeführt wird:
 
- - Windows 10 Preview
+ - Windows 10 
  - Windows 8.1
  - Windows 8
  - Windows 7 Service Pack 1
- - Windows RT
  - Windows Phone 8,1
  - iOS
  - Mac OS X
@@ -49,7 +48,7 @@ Sie können mit einem der folgenden Schritte auf RemoteApp zugreifen, wenn auf d
 
 ## Herunterladen des Clients
 
-Es spielt keine Rolle, welche Plattform Sie verwenden: Der Client, den Sie zum Zugreifen auf RemoteApp benötigen, befindet sich auf der Seite [Remotedesktopclient-Download](https://www.remoteapp.windowsazure.com/ClientDownload/AllClients.aspx).
+Es spielt keine Rolle, welche Plattform Sie verwenden: Der Client, den Sie zum Zugreifen auf RemoteApp benötigen, befindet sich auf der Seite zum Herunterladen des [Remotedesktopclients](https://www.remoteapp.windowsazure.com/ClientDownload/AllClients.aspx).
 
 Wenn Sie auf die Links klicken, wird der Download des Clients entweder direkt gestartet, oder Sie gelangen auf die Clientdownloadseite im App Store für die Plattform. Installieren Sie den Client gemäß der Anleitung auf dem Bildschirm.
 
@@ -119,7 +118,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem App Store installiert haben,
 
 Nachdem Sie die Microsoft Remotedesktop-App aus dem App Store installiert haben, wird sie in Ihrer App-Liste unter **Microsoft Remotedesktop** aufgeführt.
 
-1. Wenn Sie die App starten, gelangen Sie zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Klicken Sie auf die Schaltfläche **Azure RemoteApp**, um mit der Verwendung von Azure RemoteApp zu beginnen.
+1. Wenn Sie die App starten, gelangen Sie zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, klicken Sie auf die Schaltfläche **Azure RemoteApp**.
 
 	![Leeres Connection Center](./media/remoteapp-clients/Mac1.png)
 
@@ -208,4 +207,4 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 	![Demofeed für Azure RemoteApp](./media/remoteapp-clients/WinPhone8.png)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

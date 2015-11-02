@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="Bereitstellen einer Redis Cache-Instanz" 
 	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um einen Azure Redis Cache bereitzustellen." 
-	services="redis-cache" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="cache" 
+	ms.service="app-service" 
 	ms.workload="web" 
-	ms.tgt_pltfrm="cache-redis" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/02/2015" 
@@ -131,4 +131,4 @@ Erstellt den Azure Redis Cache.
 
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

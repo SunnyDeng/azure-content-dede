@@ -1,8 +1,8 @@
 <properties 
 	pageTitle="Stellen Sie DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers bereit | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie ein DocumentDB-Konto, eine Azure App-Service-Web-App und eine Beispielwebanwendung mithilfe einer Vorlage des Azure-Ressourcen-Managers bereitstellen." 
+	description="Erfahren Sie, wie Sie ein DocumentDB-Konto, eine Azure App Service-Web-App und eine Beispielwebanwendung mithilfe einer Vorlage des Azure-Ressourcen-Managers bereitstellen." 
 	services="documentdb, app-service\web" 
-	authors="stephbaron" 
+	authors="ryancrawcour" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/28/2015" 
-	ms.author="stbaro"/>
+	ms.date="10/16/2015" 
+	ms.author="ryancraw"/>
 
 # Bereitstellen von DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers #
 
@@ -33,7 +33,7 @@ Vor dem Ausführen der Anweisungen zu diesem Lernprogramm, müssen Sie sicherste
 
 - Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Azure erwerben](http://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) oder [Einen Monat kostenlos testen!](http://azure.microsoft.com/pricing/free-trial/).
 - Ein Azure-Speicherkonto. Anweisungen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-whatis-account.md).
-- Eine Arbeitsstation mit Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+- Eine Arbeitsstation mit Azure PowerShell 0.9.8. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Dieses Lernprogramm wurde noch nicht für Azure PowerShell 1.0 Vorschau aktualisiert. 
 
 ##<a id="CreateDB"></a>Schritt 1: Herunterladen und Extrahieren der Beispieldateien ##
 Als Erstes laden wir die Beispieldateien herunter, die in diesem Lernprogramm verwendet werden.
@@ -119,7 +119,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	- Ein WebDeploy-Paket wurde für die App Service-Web-App bereitgestellt.
 
-	- Die Konfiguration der Web-App wurde so geändert, dass der DocumentDB-Endpunkt und der primäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
+	- Die Konfiguration der Web-App wurde so geändert, dass das DocumentDB-Endgerät und der primäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
 
 	- Eine Reihe von standardmäßigen Überwachungsregeln wurde erstellt.
 
@@ -178,7 +178,7 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 
 	- Ein DocumentDB-Konto wurde erstellt.
 
-	- 	Die Konfiguration der Web-App wurde so geändert, dass der Azure DocumentDB-Endpunkt, der primäre Hauptschlüssel und der sekundäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
+	- 	Die Konfiguration der Web-App wurde so geändert, dass das Azure DocumentDB-Endgerät, der primäre Hauptschlüssel und der sekundäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
 
 	- 	Eine Reihe von standardmäßigen Überwachungsregeln wurde erstellt.
 
@@ -186,7 +186,7 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 7. Klicken Sie im Bereich „Zusammenfassung“ auf die soeben bereitgestellte Web-App.
 
 	![Screenshot der Zusammenfassung mit der hervorgehobenen Web-Apps „Myotherdocumentdbwebapp“](./media/documentdb-create-documentdb-website/image6.png)
-8. Klicken Sie auf dem Blatt „Web-App“ auf **Alle Einstellungen** und dann auf **Anwendungseinstellungen**. Beachten Sie, dass Anwendungseinstellungen für den DocumentDB-Endpunkt und jeden der DocumentDB-Hauptschlüssel vorhanden sind.
+8. Klicken Sie auf dem Blatt „Web-App“ auf **Alle Einstellungen** und dann auf **Anwendungseinstellungen**. Beachten Sie, dass Anwendungseinstellungen für das DocumentDB-Endgerät und jeden der DocumentDB-Hauptschlüssel vorhanden sind.
 
 	![Screenshot der Blätter „Web-App“, „Einstellungen“ und „Anwendungseinstellungen“](./media/documentdb-create-documentdb-website/image7.png)
 9. Sie können das Azure-Vorschauportal gerne weiter erkunden oder eines der DocumentDB-[Beispiele](http://go.microsoft.com/fwlink/?LinkID=402386) durcharbeiten, um Ihre eigene DocumentDB-Anwendung zu erstellen.
@@ -199,7 +199,7 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwebanwendung mithilfe von Vorlagen des Azure-Ressourcen-Managers bereitgestellt.
 
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
-- Weitere Informationen zu Azure App Service Web-Apps erhalten Sie, indem Sie [hier](http://go.microsoft.com/fwlink/?LinkId=325362) klicken.
+- Weitere Informationen zu Azure App Service-Web-Apps erhalten Sie, indem Sie [hier](http://go.microsoft.com/fwlink/?LinkId=325362) klicken.
 - Weitere Informationen zu Vorlagen des Azure-Ressourcen-Managers erhalten Sie, indem Sie [hier](https://msdn.microsoft.com/library/azure/dn790549.aspx) klicken.
 
 
@@ -210,4 +210,4 @@ Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwe
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

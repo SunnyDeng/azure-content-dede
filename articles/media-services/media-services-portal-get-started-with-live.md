@@ -3,17 +3,17 @@
 	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren von grundlegenden Media Services-Anwendungen zum Livestreamen, in denen ein Kanal einen Livestream mit mehreren Bitraten von lokalen Encodern empfängt."
 	services="media-services"
 	documentationCenter=""
-	authors="Juliako"
-	manager="dwrede"
+	authors="Juliako,cenkdin" 
+	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="ne"
-	ms.topic="get-started-article"
-	ms.date="09/07/2015"  
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
 
@@ -212,4 +212,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 <!-- Images -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

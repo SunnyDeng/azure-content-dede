@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="10/16/2015"
 	ms.author="cephalin"/>
 
 
@@ -29,7 +29,7 @@ Die folgende Tabelle enthält eine kurze Liste der Anforderungen an die agile En
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | – Build mit jedem Commit<br>– Automatischer und schneller Build | Bei Konfiguration mit fortlaufender Bereitstellung kann Azure App Service basierend auf einer Entwicklungsverzweigung als aktiv ausgeführte Builds fungieren. Jedes Mal, wenn Code per Push in die Verzweigung übertragen wird, erfolgt automatisch ein Build und die aktive Ausführung in Azure.|
 | – Builds mit Selbsttests gestalten | Auslastungstests, Webtests usw. können mit der Azure-Ressourcen-Manager-Vorlage bereitgestellt werden.|
-| – Tests in einem Klon der Produktionsumgebung durchführen | Azure Ressourcen-Manager-Vorlagen können verwendet werden, um Klone der Azure-Produktionsumgebung (einschließlich App-Einstellungen, Vorlagen mit Verbindungszeichenfolgen, Skalierung usw.) für schnelle und vorhersagbare Tests zu erstellen.|
+| – Tests in einem Klon der Produktionsumgebung durchführen | Azure-Ressourcen-Manager-Vorlagen können verwendet werden, um Klone der Azure-Produktionsumgebung (einschließlich App-Einstellungen, Vorlagen mit Verbindungszeichenfolgen, Skalierung usw.) für schnelle und vorhersagbare Tests zu erstellen.|
 | – Ergebnis des neuesten Builds problemlos anzeigen | Die kontinuierliche Bereitstellung in Azure aus einem Repository bedeutet, dass Sie unmittelbar nach dem Commit Ihrer Änderungen neuen Code in einer aktiven Anwendung testen können. |
 | – Täglicher Commit in der MAIN-Verzweigung<br> – Bereitstellung automatisieren | Durch die fortlaufende Integration einer Produktionsanwendung mit der MAIN-Verzweigung eines Repositorys wird jeder Commit-/Zusammenführungsvorgang automatisch in der MAIN-Verzweigung in der Produktion bereitgestellt. |
 
@@ -264,7 +264,7 @@ Da Sie Ihre Entwicklungs- und Testumgebungen absichtlich als eigenständige Ress
 
 ## Zusammenfassung ##
 
-Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azure als Anwendungsplattform übernehmen möchten. In diesem Tutorial haben Sie erfahren, wie Sie exakte bzw. nahezu exakte Replikate der Produktionsumgebung selbst für komplexe Anwendungen mühelos erstellen. Sie haben auch gelernt, wie Sie diese Fähigkeit nutzen können, um einen Entwicklungsprozess einzurichten, in dem Sie Builds erstellen und jeden einzelnen Commit in Azure testen können. Dieses Tutorial konnte Ihnen hoffentlich zeigen, wie Sie Azure App Service und den Azure-Ressourcen-Manager gemeinsam zum Erstellen einer DevOps-Lösung optimal einsetzen, die agile Methoden befolgt.
+Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azure als Anwendungsplattform übernehmen möchten. In diesem Tutorial haben Sie erfahren, wie Sie exakte bzw. nahezu exakte Replikate der Produktionsumgebung selbst für komplexe Anwendungen mühelos erstellen. Sie haben auch gelernt, wie Sie diese Fähigkeit nutzen können, um einen Entwicklungsprozess einzurichten, in dem Sie Builds erstellen und jeden einzelnen Commit in Azure testen können. Dieses Tutorial konnte Ihnen hoffentlich zeigen, wie Sie Azure App Service und den Azure-Ressourcen-Manager gemeinsam zum Erstellen einer DevOps-Lösung optimal einsetzen, die agile Methoden befolgt. Als Nächstes können Sie dieses Szenario durch Ausführen erweiterter DevOps-Techniken wie z. B. [Testen in Produktion](app-service-web-test-in-production-get-start.md) ergänzen. Ein häufiges Szenario für Tests in der Produktion finden Sie unter [Flighting-Bereitstellung (Betatestversion) in Azure App Service](app-service-web-test-in-production-controlled-test-flight.md).
 
 ## Weitere Ressourcen ##
 
@@ -281,4 +281,4 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

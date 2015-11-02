@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
-	ms.author="mebha"/>
+	ms.date="10/20/2015" 
+	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Windows
@@ -118,4 +118,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
 Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

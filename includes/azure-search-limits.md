@@ -7,8 +7,9 @@ Maximale Speichergröße|25 GB pro Partition
 Maximale Anzahl der Partitionen|12 pro Search-Dienst
 Maximale Anzahl der Replikate|6 pro Search-Dienst
 Maximale Anzahl der Sucheinheiten|36 pro Search-Dienst
+Maximale Anzahl der Suchdienste|12 pro Azure-Abonnement
 Maximale Anzahl der Indexer|10 pro Search-Dienst
 Maximale Anzahl der Datenquellen|10 pro Search-Dienst
 Maximale Anzahl der Dokumente, die in einem Indexer-Aufruf indiziert werden können|Unbegrenzt
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

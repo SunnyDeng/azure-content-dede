@@ -1,14 +1,14 @@
 <properties 
 	pageTitle="Verwenden von Active Directory für die Authentifizierung in Azure App Service" 
 	description="Lernen Sie die verschiedenen Optionen zur Authentifizierung und Autorisierung von Branchenanwendungen kennen, die in Azure App Service-Web-Apps bereitgestellt werden." 
-	services="app-service\web" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
@@ -53,4 +53,4 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

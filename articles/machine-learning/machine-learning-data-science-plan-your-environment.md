@@ -2,9 +2,8 @@
 	pageTitle="Planen einer erweiterten Azure Machine Learning-Analyseumgebung | Microsoft Azure" 
 	description="Planen Sie Ihre erweiterte Analyseumgebung unter Berücksichtigung von Kernfragen." 
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
-	authors="msolhab"
+	authors="bradsev"
 	manager="paulettm" 
 	editor="cgronlun" />
 
@@ -14,15 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/22/2015" 
-	ms.author="mohabib;bradsev" />
+	ms.date="10/18/2015" 
+	ms.author="bradsev" />
 
 
-# Planen einer erweiterten Azure Machine Learning-Analyseumgebung
+# Planen Sie Ihre Umgebung für den Cortana-Analyseprozess
 
-Welches Szenario entspricht Ihrem Analyseproblem, wenn Sie sich darauf vorbereiten, eine Umgebung für erweiterte Analysen mit Azure Machine Learning einzurichten? Ihre Entscheidungen hinsichtlich der benötigten Ressourcen basieren auf der Art, der Größe und dem Quellspeicherort Ihrer Daten sowie dem Zielspeicherort dieser Daten in der Cloud. In diesem Artikel werden die Fragen behandelt, die Ihnen helfen sollen, Ihr Szenario zu bestimmen.
+Welches Szenario entspricht Ihrem Analyseproblem, wenn Sie sich darauf vorbereiten, eine Umgebung für erweiterte Analyseverarbeitung einzurichten? Ihre Entscheidungen hinsichtlich der benötigten Ressourcen basieren auf der Art, der Größe und dem Quellspeicherort Ihrer Daten sowie dem Zielspeicherort dieser Daten in der Cloud. In diesem Artikel werden die Fragen behandelt, die Ihnen helfen sollen, Ihr Szenario zu bestimmen.
 
-Nachdem Sie das relevante Szenario ermittelt haben, begleitet Sie der ADAPT-Workflow (Advanced Analytics Process and Technology), der im [Lernpfad: Erstellen von erweiterten Analyselösungen in Azure](machine-learning-data-science-how-to-create-machine-learning-service.md) vorgestellt wurde, durch eine Reihe von Aufgaben. Dazu zählen das Abrufen eines Datasets über die Erstellung und Veröffentlichung eines Modells als Azure-Webdienst, den Anwendungen nutzen können.
+Nachdem Sie das relevante Szenario ermittelt haben, begleitet Sie der Workflow des Cortana-Analyseprozesses, der im [Lernpfad: Erstellen von erweiterten Analyselösungen in Azure](machine-learning-data-science-how-to-create-machine-learning-service.md) vorgestellt wurde, durch eine Reihe von Aufgaben. Dazu zählen das Abrufen eines DataSets über die Erstellung und Veröffentlichung eines Modells als Azure-Webdienst, den Anwendungen nutzen können.
 
 In diesem Thema werden auch einige der Ressourcen und Tools aufgelistet, die bei diesem erweiterten Analyseprozess verwendet werden.
 
@@ -80,4 +79,4 @@ Je nach Szenario benötigen Sie möglicherweise einige der folgenden Tools und R
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

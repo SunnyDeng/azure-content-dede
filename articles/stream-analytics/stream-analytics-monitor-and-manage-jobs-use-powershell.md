@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Überwachen und Verwalten von Stream Analytics-Aufträgen mit von PowerShell | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge mithilfe von PowerShell und Cmdlets überwachen und verwalten können." 
-	keywords="azure powershell,azure powershell cmdlets,powershell command"	
+	keywords="Azure PowerShell,Azure PowerShell-Cmdlets,PowerShell-Befehl"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -287,4 +287,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

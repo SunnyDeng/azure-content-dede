@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Schnellstart-Lernprogramm für die Sprache R fürMachine Learning | Microsoft Azure"
 	description="Verwenden Sie dieses Lernprogramm für die Programmierung in R, um einen schnellen Einstieg in die Verwendung der Sprache R mit Azure Machine Learning Studio zum Erstellen von Vorhersagelösungen zu erhalten."
-	keywords="quickstart,r language,r programming language,r programming tutorial"
+	keywords="Schnellstart,Sprache R,Programmiersprache R,R-Programmierungs-Lernprogramm"
 	services="machine-learning"
 	documentationCenter=""
 	authors="Blackmist"
@@ -160,7 +160,7 @@ Wir beginnen damit, dass wir die Datei **csdairydata.csv** in Azure Machine Lear
 
 - Starten der Azure Machine Learning Studio-Umgebung
 
-- Klicken Sie auf __+ NEU__ unten links auf dem Bildschirm, und wählen Sie **DataSet** aus.
+- Klicken Sie unten links auf dem Bildschirm auf __+ NEU__, und wählen Sie **DataSet** aus.
 
 - Klicken Sie auf **Aus lokaler Datei** und anschließend auf **Durchsuchen**, um die Daten auszuwählen.
 
@@ -910,7 +910,7 @@ Der folgende Code extrahiert die Verzögerungswerte aus der Liste der ccf-Objekt
 
 Die erste Codezeile ist etwas schwieriger, doch einige Erläuterungen sollten Ihnen helfen, sie zu verstehen. Wenn wir von innen nach außen vorgehen, erhalten wir Folgendes:
 
-1.  Der "**[[**"-Operator wählt mit dem "**1**"-Argument den Vektor der Korrelationen an den Verzögerungen aus dem ersten Element der ccf-Objektliste aus.
+1.  Der **[[**-Operator wählt mit dem **1**-Argument den Vektor der Korrelationen an den Verzögerungen aus dem ersten Element der ccf-Objektliste aus.
 
 2.  Die `do.call()`-Funktion wendet die `rbind()`-Funktion auf die Elemente der Liste an, die von `lapply()` zurückgegeben wird.
 
@@ -1346,4 +1346,4 @@ Einige weitere nützliche Internetressourcen:
 <!-- Module References -->
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

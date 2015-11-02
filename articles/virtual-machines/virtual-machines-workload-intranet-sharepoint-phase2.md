@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Workload Phase 2: Konfigurieren von Domänencontrollern
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
-
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten konfigurieren Sie zwei Domänencontroller im virtuellen Azure-Netzwerk in der Dienstverwaltung. Clientwebanforderungen für SharePoint-Farmressourcen können dann im virtuellen Azure-Netzwerk authentifiziert werden, anstatt diesen Authentifizierungsdatenverkehr über die VPN- oder Azure ExpressRoute-Verbindung an Ihr lokales Netzwerk zu senden.
 
@@ -36,7 +35,7 @@ Element | Name des virtuellen Computers | Katalogimage | Mindestgröße
 2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter Domänencontroller, Beispiel: DC2) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
 3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster SQL Server-Computer, Beispiel: SQL1) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	A7
 4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter SQL Server-Computer, Beispiel: SQL2) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	A7
-5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (Mehrheitsknotenzeuge des Clusters, Beispiel: MN1) | Windows Server 2012 R2 Datacenter | A1 (Klein)
+5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (Mehrheitsknoten des Clusters, Beispiel: MN1) | Windows Server 2012 R2 Datacenter | A1 (Klein)
 6\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster SharePoint-Anwendungsserver, Beispiel: APP1) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
 7\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter SharePoint-Anwendungsserver, Beispiel: APP2) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
 8\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster SharePoint-Webserver, Beispiel: WEB1) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
@@ -56,7 +55,7 @@ Mit dem folgenden Azure PowerShell-Befehlsblock erstellen Sie die virtuellen Com
 
 Die Tabellen V, S, A und C haben Sie in [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md) ausgefüllt.
 
-Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
 	# Create the first domain controller
 	$vmName="<Table M – Item 1 - Virtual machine name column>"
@@ -186,7 +185,7 @@ Melden Sie sich nun bei einem Computer mit einem Domänenadministratorkonto für
 
 	New-ADUser -SamAccountName sp_install -AccountPassword (read-host "Set user password" -assecurestring) -name "sp_install" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 
-	New-	ADUser -SamAccountName sqlservice -AccountPassword (read-host "Set user password" -assecurestring) -name "sqlservice" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
+	New-ADUser -SamAccountName sqlservice -AccountPassword (read-host "Set user password" -assecurestring) -name "sqlservice" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 
 Sie werden bei jedem Befehl zur Eingabe eines Kennworts aufgefordert. Notieren Sie sich diese Kontonamen und Kennwörter, und bewahren Sie sie an einem sicheren Ort auf.
 
@@ -249,4 +248,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

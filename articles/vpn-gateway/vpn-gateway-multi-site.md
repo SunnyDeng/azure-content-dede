@@ -5,17 +5,23 @@
    documentationCenter="na"
    authors="cherylmc"
    manager="carolz"
-   editor="tysonn" />
+   editor=""
+   tags="azure-service-management"/>
+
 <tags 
    ms.service="vpn-gateway"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/04/2015"
+   ms.date="10/21/2015"
    ms.author="cherylmc" />
 
 # Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk
+
+>[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+
+Dieser Artikel bezieht sich auf die VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells (Dienstverwaltung) erstellt wurden.
 
 Sie können mehrere lokale Standorte mit einem einzigen virtuellen Netzwerk verbinden. Dies ist besonders beim Erstellen von Hybrid Cloud-Lösungen interessant. Das Erstellen einer Multisite-Verbindung mit Ihrem virtuellen Azure-Netzwerkgateway ähnelt dem Erstellen anderer Standort-zu-Standort-Verbindungen. Tatsächlich können Sie ein vorhandenes Azure-VPN Gateway verwenden, sofern Sie ein routenbasiertes VPN Gateway (d. h. ein Gateway mit dynamischem Routing) für Ihr virtuelles Netzwerk konfiguriert haben.
 
@@ -171,4 +177,4 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 Weitere Informationen zu VPN Gateways finden Sie unter [Informationen zu VPN Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

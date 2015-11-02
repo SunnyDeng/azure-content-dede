@@ -13,14 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="10/18/2015" 
 	ms.author="fashah;garye;bradsev" />
 
 #<a name="heading"></a>Erstellen von Datenstichproben aus SQL Server in Azure
 
-Dieses Dokument beschreibt die Erstellung von Stichproben für SQL Server-Daten in Azure unter Verwendung von SQL und der Programmiersprache Python.
+Dieses Dokument beschreibt die Erstellung von Stichproben für SQL Server-Daten in Azure unter Verwendung von SQL und der Programmiersprache Python. Es wird gezeigt, wie erfasste Daten in Azure Machine Learning verschoben werden, indem Sie sie in einer Datei speichern, diese in einen Azure-Blob hochladen und anschließend in Azure ML lesen.
 
->[AZURE.NOTE]Beim SQL-Beispielcode in diesem Dokument wird davon ausgegangen, dass die Daten auf einem SQL Server in Azure gespeichert sind. Wenn dies nicht der Fall ist, finden Sie im Thema [Verschieben von Daten nach SQL Server in Azure](machine-learning-data-science-move-sql-server-virtual-machine.md) im [Leitfaden: Erweiterte Datenverarbeitung in Azure](machine-learning-data-science-advanced-data-processing.md) Anweisungen zum Verschieben von Daten auf einen SQL Server in Azure .
+Die Python-Stichprobe verwendet die [pyodbc](https://code.google.com/p/pyodbc/)-ODBC-Bibliothek für die Verbindung mit SQL Server auf Azure und die [Pandas](http://pandas.pydata.org/)-Bibliothek zum Ausführen der Stichprobe.
+
+>[AZURE.NOTE]Beim SQL-Beispielcode in diesem Dokument wird davon ausgegangen, dass die Daten auf einem SQL Server in Azure gespeichert sind. Wenn dies nicht der Fall ist, finden Sie im Thema [Verschieben von Daten nach SQL Server in Azure](machine-learning-data-science-move-sql-server-virtual-machine.md) Anweisungen zum Verschieben von Daten auf einen SQL Server in Azure.
 
 ##<a name="SQL"></a>Mit SQL
 
@@ -55,13 +57,13 @@ Sie können die Beispielabfragen oben direkt im Reader-Modul von Azure ML verwen
 
 ##<a name="python"></a>Mit der Programmiersprache Python 
 
-In diesem Abschnitt wird veranschaulicht, wie die pyodbc-Bibliothek in Python für das Herstellen einer Verbindung mit einer SQL Server-Datenbank verwendet wird. Die Datenbankverbindungszeichenfolge lautet wie folgt (ersetzen Sie "servername", "dbname", "username" und "password" durch die entsprechenden Werte Ihrer Konfiguration):
+In diesem Abschnitt wird veranschaulicht, wie die [pyodbc-Bibliothek](https://code.google.com/p/pyodbc/) in Python für das Herstellen einer ODBC-Verbindung mit einer SQL Server-Datenbank verwendet wird. Die Datenbankverbindungszeichenfolge lautet wie folgt (ersetzen Sie "servername", "dbname", "username" und "password" durch die entsprechenden Werte Ihrer Konfiguration):
 
 	#Set up the SQL Azure connection
 	import pyodbc	
 	conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>;UID=<username>;PWD=<password>')
 
-Die [Pandas](http://pandas.pydata.org/)-Bibliothek in Python bietet eine Vielzahl an Datenstrukturen und Datenanalysetools für die Datenbearbeitung durch Python-Programmierung. Der folgende Code liest eine Datenstichprobe von 0,1 % aus einer Tabelle in einer Azure SQL-Datenbank in ein Pandas-DataFrame:
+Die [Pandas](http://pandas.pydata.org/)-Bibliothek in Python bietet eine Vielzahl von Datenstrukturen und Datenanalysetools für die Datenbearbeitung durch Python-Programmierung. Der folgende Code liest eine Datenstichprobe von 0,1 % aus einer Tabelle in einer Azure SQL-Datenbank in ein Pandas-DataFrame:
 
 	import pandas as pd
 
@@ -104,13 +106,13 @@ Mit dem folgenden Beispielcode können Sie die Stichprobendaten in einer Datei s
  
 ![Reader-Blob][2]
 
-## Advanced Analytics Process and Technology (ADAPT) in Aktion – Beispiel
+## Beispiel: Cortana-Analyseprozess (CAP) in Aktion
 
-Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analytics Process and Technology (ADAPT) mit einem öffentlichen DataSet finden Sie unter [Azure Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
+Eine umfassende exemplarische Vorgehensweise zur Verwendung des Cortana-Analyseprozesses mit einem öffentlichen DataSet finden Sie unter [Cortana-Analyseprozess in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
 
 [1]: ./media/machine-learning-data-science-sample-sql-server-virtual-machine/reader_database.png
 [2]: ./media/machine-learning-data-science-sample-sql-server-virtual-machine/reader_blob.png
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

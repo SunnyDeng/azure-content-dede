@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure" 
+	pageTitle="Anpassen von Hadoop-Clustern für den Cortana-Analyseprozess| Microsoft Azure" 
 	description="Beliebte Python-Module, die in benutzerdefinierten Azure HDInsight Hadoop-Clustern zur Verfügung gestellt werden."
 	services="machine-learning" 
 	documentationCenter="" 
@@ -16,7 +16,7 @@
 	ms.date="10/13/2015" 
 	ms.author="hangzh;bradsev" />
 
-# Anpassen von Azure Hdinsight Hadoop-Clustern für erweiterte Analyseprozesse und -technologien
+# Anpassen von Azure HDInsight Hadoop-Clustern für den Cortana-Analyseprozess 
 
 Dieses Menü enthält Links zu Themen, in denen das Einrichten der verschiedenen Data Science-Umgebungen, die vom Cortana-Analyseprozess (CAP) verwendet werden, beschrieben wird.
 
@@ -102,4 +102,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

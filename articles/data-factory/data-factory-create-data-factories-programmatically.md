@@ -378,11 +378,8 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 18. Stellen Sie sicher, dass im Ordner **apifactoryoutput** im **adftutorial**-Container eine Ausgabedatei erstellt wird.
 
 
-## Siehe auch
 
-Artikel | Beschreibung
------- | ---------------
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für die .NET-Klassenbibliothek, Cmdlets, JSON-Skripts, Funktionen usw. 
+> [AZURE.NOTE]Der obige Beispielcode startet ein Dialogfeld zur Eingabe der Azure-Anmeldeinformationen. Weitere Informationen für den Fall, dass die Anmeldung programmgesteuert ohne ein Dialogfeld erfolgen soll, finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md#authenticate-service-principal-with-certificate---powershell).
 
 
 [data-factory-introduction]: data-factory-introduction.md
@@ -395,4 +392,4 @@ Artikel | Beschreibung
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

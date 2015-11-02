@@ -169,7 +169,7 @@ Das folgende Beispiel-Runbook akzeptiert die Anforderung aus dem vorherigen Beis
 
 ## Erstellen von Runbooks als Antwort auf Azure-Warnungen
 
-Webhook-fähige Runbooks können verwendet werden, um auf [Azure-Warnungen](Azure-portal/insights-receive-alert-notifications.md) zu reagieren. Durch das Sammeln von Statistiken wie Leistung, Verfügbarkeit und Nutzung mithilfe der Azure-Warnungen können Ressourcen in Azure überwacht werden. Sie können auf der Grundlage von Überwachungsmetriken oder Ereignissen für Ihre Azure-Ressourcen eine Warnung empfangen. Wenn der Wert einer angegebenen Metrik den zugewiesenen Schwellenwert überschreitet oder wenn das konfigurierte Ereignis ausgelöst wird, wird eine Benachrichtigung an den Dienstadministrator oder an die Co-Administratoren gesendet, um die Warnung zu beheben. Weitere Informationen zu Metriken und Ereignissen finden Sie unter [Azure-Warnungen](Azure-portal/insights-receive-alert-notifications.md).
+Webhook-fähige Runbooks können verwendet werden, um auf [Azure-Warnungen](Azure-portal/insights-receive-alert-notifications.md) zu reagieren. Durch das Sammeln von Statistiken wie Leistung, Verfügbarkeit und Nutzung mithilfe der Azure-Warnungen können Ressourcen in Azure überwacht werden. Sie können auf der Grundlage von Überwachungsmetriken oder Ereignissen für Ihre Azure-Ressourcen eine Warnung empfangen, derzeit unterstützen Automation-Konten nur Metriken. Wenn der Wert einer angegebenen Metrik den zugewiesenen Schwellenwert überschreitet oder wenn das konfigurierte Ereignis ausgelöst wird, wird eine Benachrichtigung an den Dienstadministrator oder an die Co-Administratoren gesendet, um die Warnung zu beheben. Weitere Informationen zu Metriken und Ereignissen finden Sie unter [Azure-Warnungen](Azure-portal/insights-receive-alert-notifications.md).
 
 Neben der Verwendung von Azure-Warnungen als Benachrichtigungssystem können Sie auch Runbooks als Reaktion auf Warnungen erstellen. Azure Automation bietet die Möglichkeit, Webhook-fähige Runbooks mit Azure-Warnungen auszuführen. Wenn eine Metrik den konfigurierten Schwellenwert überschreitet, wird die Warnregel aktiv und löst den Automation-Webhook aus, der wiederum das Runbook ausführt.
 
@@ -255,4 +255,4 @@ Das folgende Beispiel-Runbook wird immer dann ausgelöst, wenn die Warnregel akt
 - [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md)
 - [Ausführen von Aktionen nach Azure-Warnungen mithilfe von Azure Automation](https://azure.microsoft.com/blog/using-azure-automation-to-take-actions-on-azure-alerts/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

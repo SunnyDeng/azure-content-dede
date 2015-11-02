@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Importieren von Daten in Machine Learning Studio aus einer lokalen Datei | Microsoft Azure"
 	description="Importieren von Trainingsdaten in Azure Machine Learning Studio aus einer lokalen Datei."
-	keywords="import data,data format,data types,data sources,training data"
+	keywords="Importieren von Daten,Datenformat,Datentypen,Datenquellen,Trainingsdaten"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -40,4 +40,4 @@ Während des Uploads sehen Sie eine Meldung, dass die Datei hochgeladen wird. Di
 
 Sobald Ihre Daten hochgeladen wurden, werden sie in einem Datasetmodul gespeichert und stehen für alle Experimente im Arbeitsbereich zur Verfügung. Sie finden das Dataset und alle vorab geladenen Beispieldatasets in der Liste **Saved Datasets** in der Modulpalette, wenn Sie ein Experiment bearbeiten. Sie können das Dataset in den Experimentbereich ziehen und dort ablegen, wenn Sie es für weitere Analysen und Machine Learning verwenden möchten.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

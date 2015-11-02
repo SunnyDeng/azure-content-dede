@@ -18,18 +18,6 @@
 
 # Azure AD-Domänendienste *(Vorschau)*
 
-## Unterstützte Azure-Regionen
-Azure Active Directory-Domänendienste sind in den folgenden Azure-Regionen verfügbar:
+Informationen dazu, wo Azure-Dienste verfügbar sind, finden Sie unter [Dienste nach Region](https://azure.microsoft.com/de-DE/regions/#services).
 
-- USA
-  - USA (Mitte)
-  - USA (Ost)
-  - USA (Ost 2)
-  - USA (Mitte/Süden)
-  - USA (West)
-
-- Asien
-  - Ostasien
-  - Südostasien
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

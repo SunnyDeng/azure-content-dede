@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/15/2015"
+   ms.date="10/20/2015"
    ms.author="mmercuri"/>
 
 # Definieren von Abhängigkeiten in Azure-Ressourcen-Manager-Vorlagen
@@ -43,7 +43,9 @@ Sie könnten geneigt sein, dependsOn zu verwenden, um Abhängigkeiten zwischen R
 
 Dieses Element ist nicht erforderlich, wenn die reference-Funktion verwendet wird, um eine Darstellung einer Ressource abzurufen, da ein reference-Objekt eine Abhängigkeit von der Ressource bedeutet. Wenn die Option besteht, zwischen einem Verweis oder dependsOn zu wählen, empfiehlt sich die Verwendung der reference-Funktion und impliziter Verweise. Der Grund ist wieder die Leistung. Mit Verweisen werden implizite Abhängigkeiten definiert, die bekanntermaßen erforderlich sind, da in der Vorlage auf sie verwiesen wird. Durch ihr Vorhandensein sind sie relevant, vermeiden wiederum das Optimieren der Leistung und das potenzielle Risiko, das Bereitstellungsmodul unnötigerweise von Parallelität abzuhalten.
 
-## resources
+Wenn Sie eine Abhängigkeit zwischen einer Ressource und Ressourcen definieren möchten, die über eine Kopierschleife erstellt werden, können Sie das dependsOn-Element auf den Namen der Schleife festlegen. Ein Beispiel finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+
+## angeben
 
 Mit der resources-Eigenschaft können Sie untergeordnete Ressourcen angeben, die mit der definierten Ressource verknüpft sind. Untergeordnete Ressourcen können nur mit fünf Ebenen definiert werden. Es ist wichtig zu beachten, dass keine implizite Abhängigkeit zwischen einer untergeordneten Ressource und der übergeordneten Ressource erstellt wird. Wenn die untergeordnete Ressource nach der übergeordneten Ressource bereitgestellt werden muss, müssen Sie diese Abhängigkeit explizit mit der dependsOn-Eigenschaft angeben.
 
@@ -60,6 +62,6 @@ Weitere Informationen finden Sie unter [reference-Funktion](../resource-group-te
 ## Nächste Schritte
 
 - Weitere Informationen zum Erstellen von Azure-Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Vorlagen](resource-group-authoring-templates.md). 
-- Eine Liste der verfügbaren Funktionen in einer Vorlage finden Sie unter [Vorlagenfunktionen](resource-group-template-functions.md).
+- Eine Liste der verfügbaren Funktionen in einer Vorlage finden Sie unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](resource-group-template-functions.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

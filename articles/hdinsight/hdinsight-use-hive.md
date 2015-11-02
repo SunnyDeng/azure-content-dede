@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Erfahren Sie, was Hive ist und wie Sie HiveQL verwenden | Microsoft Azure"
 	description="Informieren Sie sich über Apache Hive und dessen Verwendung mit Hadoop in HDInsight. Wählen Sie die richtige Ausführung von Hive-Aufträgen, und verwenden Sie HiveQL zum Analysieren einer Apache-Log4j-Beispieldatei."
-	keywords="hiveql,what is hive"
+	keywords="HiveQL,was ist Hive"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -56,7 +56,7 @@ Die Beispieldaten werden in einem Azure-Blobspeicher gespeichert, den HDInsight 
 
 Da Azure-Blobspeicher der Standardspeicher für HDInsight ist, können Sie auch über **/example/data/sample.log** von HiveQL aus auf die Datei zugreifen.
 
-> [AZURE.NOTE]Die Syntax ****wasb:///** wird für den Zugriff auf Dateien verwendet, die im Standardspeichercontainer für Ihren HDInsight-Cluster gespeichert werden. Wenn Sie beim Bereitstellen Ihres Clusters weitere Speicherkonten angegeben haben und auf die unter diesen Konten gespeicherten Dateien zugreifen möchten, können Sie den Containernamen und die Speicherkontoadresse angeben, um auf diese Daten zuzugreifen, beispielsweise: ****wasb://mycontainer@mystorage.blob.core.windows.net/example/data/sample.log**
+> [AZURE.NOTE]Die Syntax ****wasb:///** wird für den Zugriff auf Dateien verwendet, die im Standardspeichercontainer für Ihren HDInsight-Cluster gespeichert werden. Wenn Sie beim Bereitstellen Ihres Clusters weitere Speicherkonten angegeben haben und auf die unter diesen Konten gespeicherten Dateien zugreifen möchten, können Sie den Containernamen und die Speicherkontoadresse angeben, um auf diese Daten zuzugreifen, beispielsweise: ****wasb://mycontainer@mystorage.blob.core.windows.net/example/data/sample.log**.
 
 ##<a id="job"></a>Beispielauftrag: Projizieren von Spalten auf durch Trennzeichen getrennte Daten
 
@@ -74,8 +74,8 @@ Im vorherigen Beispiel führen die HiveQL-Anweisungen die folgenden Aktionen aus
 * **EXTERNE TABELLE ERSTELLEN**: Erstellt eine neue **externe** Tabelle in Hive. Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort und im ursprünglichen Format.
 * **ZEILENFORMAT**: Teilt Hive mit, wie die Daten formatiert werden. In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
 * **SPEICHERORT DER TEXTDATEI**: Teilt Hive den Speicherort der Daten (das Verzeichnis "Beispiel/Daten") und die Information mit, dass die Speicherung als Text erfolgt. Die Daten können sich in einer Datei befinden oder auf mehrere Dateien im Verzeichnis verteilt sein.
-* **AUSWÄHLEN**: Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[FEHLER]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
-* **INPUT\_\_FILE\_\_NAME LIKE '%.log'**: Teilt Hive mit, dass nur Daten aus Dateien mit der Erweiterung ".log" zurückgeben werden sollen. Dies schränkt die Suche auf die Datei "sample.log" ein, die die Daten enthält, und verhindert, dass Daten aus anderen Beispieldatendateien zurückgegeben werden, die nicht dem von uns definierten Schema entsprechen.
+* **AUSWÄHLEN**: wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[ERROR]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+* **INPUT\_\_FILE\_\_NAME LIKE '%.log'**: teilt Hive mit, dass nur Daten aus Dateien mit der Erweiterung ".log" zurückgeben werden sollen. Dies schränkt die Suche auf die Datei "sample.log" ein, die die Daten enthält, und verhindert, dass Daten aus anderen Beispieldatendateien zurückgegeben werden, die nicht dem von uns definierten Schema entsprechen.
 
 > [AZURE.NOTE]Externe Tabellen sollten verwendet werden, wenn zu erwarten ist, dass die zugrunde liegenden Daten über eine externe Quelle (z. B. einen automatisierten Prozess zum Hochladen von Daten) oder über einen anderen MapReduce-Vorgang aktualisiert werden und wenn Sie möchten, dass Hive immer die neuesten Daten verwendet werden.
 >
@@ -92,7 +92,7 @@ Diese Anweisungen führen die folgenden Aktionen aus:
 
 * **TABELLE ERSTELLEN, FALLS NICHT VORHANDEN**: Erstellt eine Tabelle, sofern diese noch nicht vorhanden ist. Da das Schlüsselwort **EXTERN** nicht verwendet wird, ist dies eine interne Tabelle, die im Hive-Data-Warehouse gespeichert und vollständig von Hive verwaltet wird.
 * **ALS ORC GESPEICHERT**: Speichert die Daten im ORC-Format (Optimized Row Columnar). Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
-* **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN**: Wählt Zeilen in der Tabelle **log4jLogs** aus, die **[FEHLER]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
+* **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN**: wählt Zeilen in der Tabelle **log4jLogs** aus, die **[ERROR]** enthalten, und fügt die Daten in die Tabelle **errorLogs** ein.
 
 > [AZURE.NOTE]Anders als bei externen Tabellen werden beim Löschen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
 
@@ -113,7 +113,7 @@ Die [Hive mit Tez-Designdokumente](https://cwiki.apache.org/confluence/display/H
 
 HDInsight kann HiveQL-Aufträge mithilfe verschiedener Methoden ausführen. Die folgende Tabelle hilft Ihnen bei der Entscheidung, welche Methode für Sie geeignet ist. Folgen Sie anschließend dem Link für eine exemplarische Vorgehensweise.
 
-| **Verwenden Sie dies** auf Wunsch... | ... eine **interaktive** Shell | ...**Batch**verarbeitung | ...mit diesem **Clusterbetriebssystem** | ...von diesem **Clusterbetriebssystem** |
+| **Verwenden Sie dies** auf Wunsch... | ... eine **interaktive** Shell | ...**Batchverarbeitung** | ...mit diesem **Clusterbetriebssystem** | ...von diesem **Clusterbetriebssystem** |
 |:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
 | [Beeline-Befehl (in einer SSH-Sitzung)](hdinsight-hadoop-use-hive-beeline.md) | ✔ | ✔ | Linux | Linux, Unix, Mac OS X oder Windows |
 | [Hive-Befehl (in einer SSH-Sitzung)](hdinsight-hadoop-use-hive-ssh.md) | ✔ | ✔ | Linux | Linux, Unix, Mac OS X oder Windows |
@@ -132,7 +132,7 @@ Sie können auch mit den SQL Server Integration Services (SSIS) einen Hive-Auftr
 - [Verbindungs-Manager für Azure-Abonnements][connectionmanager]
 
 
-Erfahren Sie [hier][ssispack] mehr über das Azure Feature Pack für SSIS.
+Greifen Sie [hier][ssispack] auf weitere Informationen zum Azure Feature Pack für SSIS zu.
 
 
 ##<a id="nextsteps"></a>Nächste Schritte
@@ -183,4 +183,4 @@ Nachdem Sie erfahren haben, was Hive ist und wie Sie es mit Hadoop in HDInsight 
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

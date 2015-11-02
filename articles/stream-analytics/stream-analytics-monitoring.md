@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Grundlegendes zur Stream Analytics-Auftragsüberwachung | Microsoft Azure" 
 	description="Grundlegendes zur Stream Analytics-Auftragsüberwachung" 
-	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
+	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -64,7 +64,7 @@ Sie können Regeln festlegen, dass Sie per E-Mail benachrichtigt werden, falls f
 
 ## Anpassen der Überwachung im Azure-Vorschauportal ##
 
-Sie können den Diagrammtyp, die angezeigten Metriken und den Uhrzeitbereich in den Einstellungen unter "Diagramm bearbeiten" anpassen. Informationen finden Sie unter [Anpassen der Überwachung](./azure-portal/insights-how-to-customize-monitoring.md).
+Sie können den Diagrammtyp, die angezeigten Metriken und den Uhrzeitbereich in den Einstellungen unter "Diagramm bearbeiten" anpassen. Ausführliche Informationen finden Sie unter [Anpassen der Überwachung](./azure-portal/insights-how-to-customize-monitoring.md).
 
   ![Azure-Vorschauportal, Zeitachse](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)
 
@@ -104,4 +104,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

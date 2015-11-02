@@ -1,14 +1,20 @@
-<properties pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways | Microsoft Azure" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort 'erzwingen'. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="carolz" editor="" />
+<properties pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways | Microsoft Azure" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort „erzwingen“. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="carolz" editor="" tags="azure-service-management"/>
 <tags  
    ms.service="vpn-gateway"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/20/2015"
+   ms.date="10/21/2015"
    ms.author="cherylmc" />
 
 # Konfigurieren der Tunnelerzwingung
+
+Dieser Artikel bezieht sich auf VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden. Wenn eine Anleitung zum Konfigurieren der Tunnelerzwingung für VNETs und VPN-Gateways verfügbar ist, die mit dem Ressourcen-Manager-Modell erstellt wurde, werden wir am Anfang dieser Seite einen Link hinzufügen.
+
+>[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+
+## Informationen zur Tunnelerzwingung
 
 Über die Tunnelerzwingung können Sie die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort "erzwingen". Sie verwenden dazu einen Standort-zu-Standort-VPN-Tunnel für die Kontrolle und Überwachung. Dies ist eine wichtige Sicherheitsvoraussetzung der IT-Richtlinien für die meisten Unternehmen. Ohne die Tunnelerzwingung wird der Internetdatenverkehr Ihrer virtuellen Computer in Azure immer direkt von der Azure-Netzwerkinfrastruktur an das Internet geleitet, ohne dass Sie die Möglichkeit haben, diesen zu überprüfen oder zu überwachen. Nicht autorisierter Zugriff auf das Internet kann potenziell zur Offenlegung von Informationen oder anderen Arten von Sicherheitsverletzungen führen.
 
@@ -26,7 +32,7 @@ Das erzwungene Tunneln in Azure wird über benutzerdefinierte Routen in Virtual 
 
 -  Jedes Subnetz des virtuellen Netzwerks verfügt über eine integrierte Systemroutingtabelle. Die Systemroutingtabelle verfügt über die folgenden drei Gruppen von Routen:
 
-	- **Lokale VNet-Routen:** direkt zu den virtuelle Zielcomputern im gleichen virtuellen Netzwerk
+	- **Lokale VNET-Routen:** direkt zu den virtuelle Zielcomputern im gleichen virtuellen Netzwerk
 	
 	- **Lokale Routen:** zum Azure-VPN-Gateway
 	
@@ -88,7 +94,7 @@ Im Beispiel verfügt das virtuelle Netzwerk "MultiTier-VNet" über drei Subnetze
 
 - Ein konfiguriertes virtuelles Netzwerk.
 
-- Die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+- Die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version im Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
 
 ## Konfigurieren der Tunnelerzwingung
 
@@ -149,6 +155,9 @@ Im folgenden finden Sie einige weitere PowerShell-Cmdlets, die bei der Verwendun
 
 ## Nächste Schritte
 
-Informationen zum Sichern des Netzwerkverkehrs finden Sie unter [Was ist eine Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md)?
 
-<!---HONumber=Oct15_HO3-->
+Weitere Informationen zu UDR finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../virtual-network/virtual-networks-udr-overview.md).
+
+Informationen zum Sichern des Netzwerkverkehrs finden Sie unter [Was ist eine Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md). Bedenken Sie, dass Sie nie eine Netzwerksicherheitsgruppe auf ein Azure VNET-Gatewaysubnetz anwenden sollten.
+
+<!---HONumber=Oct15_HO4-->
