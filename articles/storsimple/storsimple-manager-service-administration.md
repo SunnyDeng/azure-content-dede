@@ -57,9 +57,11 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| ||Sicherungskatalog|Volumecontainer→|Volumes| ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| ||Aufträge|Konfigurieren (Gerät)| ||Warnungen|Wartung|
-
-![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
+||Geräte →|Überwachen| |
+||Sicherungskatalog|Volumecontainer→|Volumes| 
+||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
+||Aufträge|Konfigurieren (Gerät)||
+||Warnungen|Wartung|
 
 Um sich ein Video anzusehen, das Sie durch die Benutzeroberfläche des StorSimple Manager-Diensts führt, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
 
@@ -101,6 +103,7 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Unterstützungspaket erstellen|StorSimple Manager-Dienst → Geräte → Wartung|[Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md)|
 |Softwareupdates installieren|StorSimple Manager-Dienst → Geräte → Wartung|[Aktualisieren Ihres Geräts](storsimple-update-device.md)|
 
+![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
 
 ##Nächste Schritte
 Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts oder zu Problemen mit dessen Hardwarekomponenten finden Sie hier:
