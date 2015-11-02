@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/15/2015"
    ms.author="sahajs"/>
 
 # Sichern einer Datenbank in SQL Data Warehouse
@@ -78,7 +78,7 @@ Die Verwaltung von Datenbanken und logischen Servern über das Azure-Verwaltungs
 
 ## Verschlüsselung
 
-Durch [Transparent Data Encryption][] kann die Azure SQL-Datenbank zum Schutz Ihrer Daten beitragen, indem ruhende oder in Datenbankdateien und Sicherungen gespeicherte Daten verschlüsselt werden. Um Ihre Datenbank zu verschlüsseln, stellen Sie als Datenbankbesitzer eine Verbindung her und führen Folgendes aus:
+Durch [Transparent Data Encryption][] kann SQL Data Warehouse zum Schutz Ihrer Daten beitragen, indem ruhende oder in Datenbankdateien und Sicherungen gespeicherte Daten verschlüsselt werden. Um Ihre Datenbank zu verschlüsseln, stellen Sie auf Ihrem Server eine Verbindung mit der Masterdatenbank her und führen Folgendes aus:
 
 
 ```
@@ -119,4 +119,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 <!--Other Web references-->
 [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal]: http://azure.microsoft.com/documentation/articles/role-based-access-control-configure.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

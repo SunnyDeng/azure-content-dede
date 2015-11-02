@@ -3,7 +3,7 @@
 	description="Erläutert den Zweck der Auswahl und Entwicklung von Features und stellt Beispiele ihrer Rolle im Datenaufbereitungsprozess für das maschinelle Lernen vor."
 	services="machine-learning"
 	documentationCenter=""
-	authors="YanZhangADS"
+	authors="bradsev"
 	manager="paulettm"
 	editor="cgronlun"/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/14/2015"
+	ms.date="10/20/2015"
 	ms.author="zhangya;bradsev" />
 
 
@@ -135,4 +135,4 @@ Beachten Sie, dass die Entwicklung bzw. Auswahl von Features nicht immer unbedin
 [fisher-linear-discriminant-analysis]: https://msdn.microsoft.com/library/azure/dcaab0b2-59ca-4bec-bb66-79fd23540080/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

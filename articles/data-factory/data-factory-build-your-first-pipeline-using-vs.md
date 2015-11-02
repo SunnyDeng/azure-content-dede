@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="10/09/2015"
+	ms.date="10/15/2015"
 	ms.author="spelluru"/>
 
 # Erstellen der ersten Azure Data Factory-Pipeline mit Visual Studio
@@ -205,12 +205,16 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 
 21. Führen Sie auf der Seite zum Konfigurieren der Data Factory folgende Schritte aus:
 	1. Wählen Sie die Option **Neue Data Factory erstellen**.
-	2. Geben Sie **FirstPipelineUsingVS** als **Name** ein.
+	2. Geben Sie **FirstPipelineUsingVS** als **Name** ein. 
+	
+		> [AZURE.IMPORTANT]Der Name der Azure Data Factory muss global eindeutig sein. Wenn die Fehlermeldung **Data factory name “FirstPipelineUsingVS” is not available** beim Veröffentlichen angezeigt wird, ändern Sie den Namen (z. B. in „IhrNameFirstPipelineUsingVS“). Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
+		> 
+		> Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 	3. Wählen Sie im Feld **Abonnement** das richtige Abonnement aus. 
-	4. Wählen Sie die **Ressourcengruppe** für die zu erstellende Data Factory aus. 
+	4. Wählen Sie die **Ressourcengruppe** für die zu erstellende Data Factory aus. 
 	5. Wählen Sie die **Region** für die Data Factory aus. 
-	6. Klicken Sie auf **Weiter**, um zur Seite **Elemente veröffentlichen** zu wechseln. (Drücken Sie die **TAB-TASTE**, um das Feld „Name“ zu verlassen, wenn die Schaltfläche **Weiter** deaktiviert ist.) 
-23. Stellen Sie auf der Seite **Elemente veröffentlichen** sicher, dass alle Data Factory-Entitäten ausgewählt sind, und klicken Sie auf **Weiter**, um zur Seite **Zusammenfassung** zu wechseln.     
+	6. Klicken Sie auf **Weiter**, um zur Seite **Publish Items** zu wechseln. (Drücken Sie die **TAB-TASTE**, um das Feld „Name“ zu verlassen, wenn die Schaltfläche **Weiter** deaktiviert ist.) 
+23. Stellen Sie auf der Seite **Publish Items** sicher, dass alle Data Factory-Entitäten ausgewählt sind, und klicken Sie auf **Weiter**, um zur Seite **Zusammenfassung** zu wechseln.     
 24. Prüfen Sie die Zusammenfassung, und klicken Sie auf **Weiter**, um den Bereitstellungsprozess zu starten und den **Bereitstellungsstatus** anzuzeigen.
 25. Auf der Seite **Bereitstellungsstatus** sollte der Status des Bereitstellungsprozesses angezeigt werden. Klicken Sie auf „Fertig stellen“, nachdem die Bereitstellung abgeschlossen ist. 
  
@@ -218,10 +222,10 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 ## Verwenden Sie Server-Explorer, um Data Factory-Entitäten zu überprüfen
 
 1. Klicken Sie in **Visual Studio** im Menü auf **Ansicht** und dann auf **Server-Explorer**.
-2. Erweitern Sie im Server-Explorer-Fenster erst die Option **Azure** und dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory-Aufgabenliste** angezeigt.
+2. Erweitern Sie im Server-Explorer-Fenster erst die Option **Azure** und dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory Task List** angezeigt.
 
 	![Server-Explorer](./media/data-factory-build-your-first-pipeline-using-vs/server-explorer.png)
-3. Durch Klicken mit der rechten Maustaste auf eine Data Factory und Auswählen von **Data Factory in neues Projekt exportieren** können Sie anhand einer vorhandenen Data Factory ein Visual Studio-Projekt erstellen.
+3. Durch Klicken mit der rechten Maustaste auf eine Data Factory und Auswählen von **Export Data Factory to New Project** können Sie anhand einer vorhandenen Data Factory ein Visual Studio-Projekt erstellen.
 
 	![Data Factory exportieren](./media/data-factory-build-your-first-pipeline-using-vs/export-data-factory-menu.png)
 
@@ -229,11 +233,11 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 
 Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie folgende Schritte aus:
 
-1. Klicken Sie im Menü auf **Tools**, und wählen Sie **Erweiterungen und Updates** aus.
+1. Klicken Sie im Menü auf **Extras**, und wählen Sie**Erweiterungen und Updates** aus.
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
-3. Wählen Sie **Azure Data Factory-Tools für Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
+3. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Aktualisieren**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
-Unter [Überwachen von Datasets und Pipelines](data-factory-monitor-manage-pipelines.md) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und Datasets über das Azure-Vorschauportal.
+Unter [Überwachen von DataSets und Pipelines](data-factory-monitor-manage-pipelines.md) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
  
 
 ## Nächste Schritte
@@ -242,4 +246,4 @@ In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (H
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-vs.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

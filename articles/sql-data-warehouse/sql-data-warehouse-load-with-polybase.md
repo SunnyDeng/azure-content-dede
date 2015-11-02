@@ -36,7 +36,13 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Als Erstes erstellen Sie die Objekte, die in PolyBase zum Herstellen einer Verbindung mit dem Azure-Blob-Speicher und zum Abfragen von Daten in diesem erforderlich sind.
 
-> [AZURE.IMPORTANT]Von PolyBase werden die folgenden Azure-Speicherkontotypen unterstützt: lokal redundanter Standardspeicher (Standard-LRS), georedundanter Standardspeicher (Standard-GRS), georedundanter Standardspeicher mit Lesezugriff (Standard-RAGRS). Die Kontotypen zonenredundanter Standardspeicher (Standard-ZRS) und lokal redundanter Storage Premium (Premium-LRS) werden von PolyBase NICHT unterstützt. Wenn Sie ein neues Azure-Speicherkonto erstellen, müssen Sie in "Tarif" einen von PolyBase unterstützten Speicherkontotyp auswählen.
+> [AZURE.IMPORTANT]Von PolyBase werden die folgenden Azure-Speicherkontotypen unterstützt:
+> 
+> + Lokal redundanter Standardspeicher (Standard-LRS)
+> + Georedundanter Standardspeicher (Standard-GRS)
+> + Georedundanter Standardspeicher mit Lesezugriff (Standard-RAGRS)
+>
+> Die Kontotypen „Zonenredundanter Standardspeicher (Standard-ZRS)“ und „lokal redundanter Storage Premium (Premium-LRS)“ werden von PolyBase NICHT unterstützt. Wenn Sie ein neues Azure-Speicherkonto erstellen, müssen Sie in "Tarif" einen von PolyBase unterstützten Speicherkontotyp auswählen.
 
 
 ## Erstellen des Datenbank-Hauptschlüssels
@@ -177,7 +183,7 @@ DROP EXTERNAL TABLE [ext].[CarSensor_Data]
 
 > [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` **kann nicht** verwendet werden.
 
-Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][]
+Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][].
 
 Es ist auch zu erwähnen, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
 
@@ -319,13 +325,13 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/library/dn935026(v=sql.130).aspx
 [CREATE EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/library/dn935021(v=sql.130).aspx
 
-[DROP EXTERNAL DATA SOURCE (Transact-SQL)]: https://msdn.microsoft.com/en-us/library/mt146367.aspx
-[DROP EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/en-us/library/mt146379.aspx
-[DROP EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/en-us/library/mt130698.aspx
+[DROP EXTERNAL DATA SOURCE (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/mt146367.aspx
+[DROP EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/mt146379.aspx
+[DROP EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/mt130698.aspx
 
 [CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/library/mt204041.aspx
-[CREATE MASTER KEY (Transact-SQL)]: https://msdn.microsoft.com/en-us/library/ms174382.aspx
-[CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/en-us/library/ms189522.aspx
-[DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/en-us/library/ms189450.aspx
+[CREATE MASTER KEY (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms174382.aspx
+[CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189522.aspx
+[DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189450.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

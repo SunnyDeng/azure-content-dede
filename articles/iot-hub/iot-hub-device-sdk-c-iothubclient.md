@@ -73,7 +73,7 @@ Sehen Sie sich zur Veranschaulichung das folgende Beispiel an:
 
 Beim Aufruf von **IoTHubClient\_SendEventAsync** wird im Grunde das Ereignis in einem Puffer platziert. Der beim Aufrufen von **IoTHubClient\_CreateFromConnectionString** erstellte Hintergrundthread überwacht diesen Puffer kontinuierlich und sendet alle darin enthaltenen Daten an IoT Hub. Dies geschieht im Hintergrund, während der Hauptthread gleichzeitig andere Aufgaben durchführt.
 
-Gleichermaßen gilt: Beim Registrieren einer Rückruffunktion für Nachrichten mit **IoTHubClient\_SetMessageCallback** rufen Sie das SDK auf, damit der Hintergrundthread die Rückruffunktion aufruft, wenn eine Nachricht empfangen wird, und das unabhängig vom Hauptthread.
+Gleichermaßen gilt: Beim Registrieren einer Rückruffunktion für Nachrichten mit **IoTHubClient\_SetMessageCallback** rufen Sie das SDK auf, damit der Hintergrundthread die Rückruffunktion aufruft, wenn eine Nachricht empfangen wird – und das unabhängig vom Hauptthread.
 
 Die "LL"-APIs erstellen keinen Hintergrundthread. Stattdessen muss eine neue API aufgerufen werden, um explizit Daten zu senden und vom IoT Hub zu empfangen. Sehen Sie sich erneut ein Beispiel an …
 
@@ -274,6 +274,6 @@ Die Batchverarbeitung ist eine wichtige Option. Standardmäßig übergibt die Bi
 
 ## Nächste Schritte
 
-In diesem Artikel wird das Verhalten der **IoTHubClient**-Bibliothek im **Azure IoT-Geräte-SDK für C** ausführlich beschrieben. Diese Informationen sollten Ihnen einen umfassenden Überblick über die Funktionen der **IoTHubClient**-Bibliothek bieten. Im [nächsten Artikel](iot-hub-device-sdk-c-serializer.md) stellen wir ähnliche Details zur Bibliothek des **Serialisierungsprogramms** vor.
+In diesem Artikel wird das Verhalten der **IoTHubClient**-Bibliothek im **Azure IoT-Geräte-SDK für C** ausführlich beschrieben. Diese Informationen sollten Ihnen eine umfassende Übersicht über die Funktionen der **IoTHubClient**-Bibliothek bieten. Im [nächsten Artikel](iot-hub-device-sdk-c-serializer.md) stellen wir ähnliche Details zur Bibliothek des **Serialisierungsprogramms** vor.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

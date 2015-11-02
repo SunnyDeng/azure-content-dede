@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/26/2015" 
+	ms.date="10/20/2015" 
 	ms.author="tdykstra"/>
 
 # Aufrufen einer Azure API-App von einem durch Azure Active Directory authentifizierten Web-App-Client
@@ -227,4 +227,4 @@ Sie haben eine Clientflussauthentifizierung für App Service API-Apps kennengele
 [Azure-Portal]: https://manage.windowsazure.com/
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

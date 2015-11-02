@@ -17,7 +17,11 @@
    ms.date="09/01/2015"
    ms.author="kundanap"/>
 
-# Konfigurationsbeispiele für Windows-VM-Erweiterungen in Azure.
+# Konfigurationsbeispiele für Windows-VM-Erweiterungen in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+
+
 
 Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für virtuelle Windows-Computer.
 
@@ -304,4 +308,4 @@ Dies ist ein Beispiel für eine vollständige VM-Vorlage mit einer benutzerdefin
 
 [Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

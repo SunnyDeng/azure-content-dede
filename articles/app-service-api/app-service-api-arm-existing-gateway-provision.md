@@ -1,14 +1,14 @@
 <properties 
 	pageTitle="Bereitstellen einer API-App mit einem vorhandenen Gateway" 
 	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage zum Bereitstellen einer API-App, die ein vorhandenes Gateway und einen App Service-Plan verwendet." 
-	services="app-service\api" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-api" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
@@ -191,4 +191,4 @@ Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigensch
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

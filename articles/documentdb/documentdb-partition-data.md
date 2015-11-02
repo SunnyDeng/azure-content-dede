@@ -1,7 +1,7 @@
 <properties      
     pageTitle="Partitionieren und Skalieren von Daten in DocumentDB mit Sharding | Microsoft Azure"      
     description="Hier erfahren Sie, wie Sie Daten mit einem als Sharding bezeichneten Verfahren skalieren. Sie erhalten Informationen zu Shards, zum Partitionieren von Daten in DocumentDB und zur Verwendung der Hash- und Bereichspartitionierung."         
-    keywords="Scale data, shard, sharding, documentdb, azure, Microsoft azure"
+    keywords="Staffelungsdaten,Shard,Sharding,DocumentDB,Azure,Microsoft Azure"
 	services="documentdb"      
     authors="arramac"      
     manager="jhubbard"      
@@ -38,7 +38,7 @@ Sammlungen sind nicht identisch mit Tabellen in relationalen Datenbanken. Sammlu
 
 ## Partitionieren mit DocumentDB
 
-Es gibt zwei Ansätze für das Partitionieren von Daten mit Azure-DocumentDB (bzw. jedem verteilten System) – hierbei handelt es sich um die *Bereichspartitionierung* und die *Hashpartitionierung*. Dies umfasst die Auswahl eines einzelnen JSON-Eigenschaftennamens im Dokument als *Partitionsschlüssel*, im Allgemeinen die normale ID-Eigenschaft, z. B. "userID" für Benutzerstorage oder "deviceId" für IoT-Szenarien. Für Zeitreihendaten wird "Timestamp" als Partitionsschlüssel verwendet, da Daten in der Regel nach Zeitabschnitten eingefügt und gesucht werden. Es ist üblich, eine einzelne Eigenschaft zu verwenden, diese könnte jedoch auch eine andere Eigenschaft aus unterschiedlichen Arten von Dokumenten sein. Verwenden Sie z. B. "id" für Benutzerdokumente und "ownerUserId" für Kommentare. Der nächste Schritt besteht darin, alle Vorgänge wie Aktionen zum Erstellen und Abfragen an die richtigen Sammlungen weiterzuleiten, wobei der Partitionsschlüssel in einer Anforderung eingeschlossen wird.
+Es gibt zwei Ansätze für das Partitionieren von Daten mit Azure-DocumentDB (bzw. jedem verteilten System) – hierbei handelt es sich um die *Bereichspartitionierung* und die *Hashpartitionierung*. Dies umfasst die Auswahl eines einzelnen JSON-Eigenschaftennamens im Dokument als *Partitionsschlüssel*, im Allgemeinen die normale ID-Eigenschaft, z. B. „userID“ für Benutzerspeicher oder „deviceId“ für IoT-Szenarios. Für Zeitreihendaten wird "Timestamp" als Partitionsschlüssel verwendet, da Daten in der Regel nach Zeitabschnitten eingefügt und gesucht werden. Es ist üblich, eine einzelne Eigenschaft zu verwenden, diese könnte jedoch auch eine andere Eigenschaft aus unterschiedlichen Arten von Dokumenten sein. Verwenden Sie z. B. "id" für Benutzerdokumente und "ownerUserId" für Kommentare. Der nächste Schritt besteht darin, alle Vorgänge wie Aktionen zum Erstellen und Abfragen an die richtigen Sammlungen weiterzuleiten, wobei der Partitionsschlüssel in einer Anforderung eingeschlossen wird.
 
 Lassen Sie uns diese Verfahren einmal näher betrachten.
 
@@ -112,4 +112,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

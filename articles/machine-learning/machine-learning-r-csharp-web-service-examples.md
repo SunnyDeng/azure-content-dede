@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Beispiele für mit R entwickelte Machine Learning-Webdienste | Microsoft Azure" 
 	description="Hier finden Sie einige nützliche Beispiele für Machine Learning-Webdienste, die mit R-Code erstellt und im Azure Marketplace veröffentlicht wurden." 
-	keywords="csharp,r code,web services examples"
+	keywords="C-Sharp,R-Code,Webdienste-Beispiele"
 	services="machine-learning" 
 	documentationCenter="" 
 	authors="jaymathe" 
@@ -74,4 +74,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

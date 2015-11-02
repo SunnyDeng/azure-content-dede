@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/22/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Workload Phase 4: Konfigurieren der SharePoint-Server
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
- 
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten richten Sie die Anwendungs- und Webebenen der SharePoint-Farm ein und erstellen die Farm unter Verwendung des SharePoint-Konfigurations-Assistenten.
 
@@ -40,7 +39,7 @@ Mit dem folgenden Azure PowerShell-Befehlsblock erstellen Sie die virtuellen Com
 
 Tabelle M haben Sie in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) ausgefüllt und die Tabellen V, S, A und C in [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
-Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
 	# Create the first SharePoint application server
 	$vmName="<Table M – Item 6 - Virtual machine name column>"
@@ -198,4 +197,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 5: Erstelle
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

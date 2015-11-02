@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Abfragemuster in Azure Stream Analytics | Microsoft Azure"
 	description="Allgemeine Abfragemuster in Azure Stream Analytics"
-	keywords="stream analytics, sample, query, language, guide, patterns"
+	keywords="Stream Analytics, Beispiel, Abfrage, Sprache, Anleitung, Muster"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -26,7 +26,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 ## Grundlagen ##
 
 ## Konvertierung von Datentypen ##
-**Beschreibung**: Definieren der Arten von Eigenschaften im Eingabestream. Beispiel: Das Fahrzeuggewicht ist im Eingabestream als Zeichenfolge angegeben und muss zur Summenbildung in INT konvertiert werden.
+**Beschreibung**: Definieren der Arten von Eigenschaften im Eingabedatenstrom. Beispiel: Das Fahrzeuggewicht ist im Eingabedatenstrom als Zeichenfolge angegeben und muss zur Summenbildung in INT konvertiert werden.
 
 **Eingabe**:
 
@@ -52,7 +52,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 		Make,
     	TumblingWindow(second, 10)
 
-**Erläuterung**: Verwenden Sie eine CAST-Anweisung für das Gewichtsfeld, um dessen Typ anzugeben. (Eine Liste mit unterstützten Datentypen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn835065.aspx).)
+**Erläuterung**: Verwenden Sie eine CAST-Anweisung für das Gewichtsfeld (Weight), um dessen Typ anzugeben. (Eine Liste mit unterstützten Datentypen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn835065.aspx).)
 
 ## Musterabgleich mithilfe von „Like“/„Not like“ ##
 **Beschreibung**: Sicherstellen, dass ein Feldwert des Ereignisses einem bestimmten Muster entspricht. Beispiel: Zurückgeben von Nummernschildern, die mit „A“ beginnen und mit „9“ enden.
@@ -253,7 +253,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	WHERE
 		LAG(Make, 1) OVER (LIMIT DURATION(minute, 1)) <> Make
 
-**Erläuterung**: Verwenden Sie „LAG“, um im Eingabestream einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, und geben Sie das Ereignis aus, falls sich die Werte unterscheiden.
+**Erläuterung**: Verwenden Sie „LAG“, um im Eingabedatenstrom einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, und geben Sie das Ereignis aus, falls sich die Werte unterscheiden.
 
 ## Ermitteln des ersten Ereignisses in einem Zeitraum ##
 **Beschreibung**: Ermitteln des jeweils ersten Fahrzeugs in einem Zehn-Minuten-Intervall.
@@ -385,7 +385,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	WHERE
 	    LAG(Make, 1) OVER (LIMIT DURATION(second, 90)) = Make
 
-**Erläuterung**: Verwenden Sie „LAG“, um im Eingabestream einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, geben Sie das Ereignis aus, falls die Werte identisch sind, und rufen Sie mithilfe von „LAG“ Daten zum vorherigen Fahrzeug ab.
+**Erläuterung**: Verwenden Sie „LAG“, um im Eingabedatenstrom einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, geben Sie das Ereignis aus, falls die Werte identisch sind, und rufen Sie mithilfe von „LAG“ Daten zum vorherigen Fahrzeug ab.
 
 ## Ermitteln der Dauer einer Bedingung ##
 **Beschreibung**: Ermitteln, wie lange eine Bedingung angedauert hat. Beispiel: Aufgrund eines Fehlers wurde für alle Fahrzeuge ein Gewicht von über 20.000 Pfund erfasst, und wir möchten nun ermitteln, wie lange dieser Fehler aufgetreten ist.
@@ -455,4 +455,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

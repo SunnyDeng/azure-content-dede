@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/13/2015"
+   ms.date="10/20/2015"
    ms.author="andkjell"/>
 
 # Verhindern von versehentlichen Löschungen
@@ -39,13 +39,13 @@ Wenn Sie diese Nachricht unerwartet erhalten haben, untersuchen Sie die Grunde d
 
 Wenn alle Löschvorgänge gewünscht sind, gehen Sie folgendermaßen vor:
 
-1. Um den Schutz vorübergehend zu deaktivieren und diese Löschvorgänge zuzulassen, führen Sie folgendes PowerShell-Cmdlet aus: `Disable-ADSyncExportDeletionThreshold`
-2. Lassen Sie Azure Active Directory Connector weiterhin ausgewählt, wählen Sie die Aktion **Ausführen** und anschließend **Exportieren**.
-3. Führen Sie zum erneuten Aktivieren des Schutzes folgendes PowerShell-Cmdlet aus: `Enable-ADSyncExportDeletionThreshold`
+1. Um den Schutz vorübergehend zu deaktivieren und diese Löschvorgänge zuzulassen, führen Sie folgendes PowerShell-Cmdlet aus: `Disable-ADSyncExportDeletionThreshold`. Geben Sie bei der Eingabeaufforderung für die Anmeldeinformationen das Konto und das Kennwort eines globalen Azure AD-Administrators ein. ![Anmeldeinformationen](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/credentials.png)
+2. Lassen Sie Azure Active Directory Connector weiterhin ausgewählt, wählen Sie die Aktion **Ausführen** und anschließend **Exportieren** aus.
+3. Führen Sie zum erneuten Aktivieren des Schutzes folgendes PowerShell-Cmdlet aus: `Enable-ADSyncExportDeletionThreshold`.
 
 ## Nächste Schritte
-Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
 
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

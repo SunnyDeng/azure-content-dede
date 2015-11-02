@@ -14,13 +14,12 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="10/20/2015"
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: SharePoint-Intranetfarm
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
-
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
 
 Richten Sie Ihre erste bzw. nächste SharePoint-Farm in Microsoft Azure ein. Dadurch erhalten Sie eine einfache Konfiguration und die Möglichkeit, die Farm schnell mit neuen Kapazitäten zu erweitern oder die wichtigsten Funktionen zu optimieren. Viele SharePoint-Farmen wachsen von einer standardmäßigen hochverfügbaren Konfiguration mit drei Ebenen zu einer Farm an, die unter Umständen über ein Dutzend oder mehr Server mit Optimierung für Performance oder separate Rollen verfügt, z. B. Distributed Caching oder Search.
 
@@ -129,4 +128,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -2,7 +2,7 @@
 	pageTitle="Anfordern von erhöhten DocumentDB-Kontolimits | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Anpassung der DocumentDB-Limits wie z. B. der Anzahl der zulässigen Sammlungen, gespeicherten Prozeduren und Abfrageklauseln anfordern." 
 	services="documentdb" 
-	authors="stephbaron" 
+	authors="AndrewHoh" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/28/2015" 
-	ms.author="stbaro"/>
+	ms.author="anhoh"/>
 
 # Anfordern von erhöhten DocumentDB-Kontolimits
 
@@ -91,4 +91,4 @@ Sobald das Supportticket erstellt wurde, sollten Sie per E-Mail eine Supportanfo
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

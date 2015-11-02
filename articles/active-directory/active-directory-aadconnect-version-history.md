@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/13/2015"
+   ms.date="10/20/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect: Versionsveröffentlichungsverlauf
@@ -42,12 +42,32 @@ Veröffentlicht im August 2015
 - Das Rückschreiben von Kennwörtern schlägt in einigen Konfigurationen aufgrund eines falschen Kennworts für den Active Directory Connector fehl.
 - DirSync kann nicht aktualisiert werden, wenn DN bei der Attributfilterung verwendet wird.
 
+**Entfernte Vorschaufunktionen:**
+
+- Die Vorschaufunktion [Benutzerrückschreiben](active-directory-aadconnect-feature-preview.md#user-writeback) wurde aufgrund von Rückmeldungen unserer Vorschaukunden vorübergehend entfernt. Sie wird später erneut hinzugefügt werden, wenn das bereitgestellte Feedback umgesetzt wurde.
+
 ## 1\.0.8641.0
 Veröffentlicht im Juni 2015
 
 **Erste Version von Azure AD Connect.**
 
 Änderung des Namens von Azure AD Sync zu Azure AD Connect.
+
+**Neue Features:**
+
+- [Installation mit Express-Einstellungen](active-directory-aadconnect-get-started-express.md)
+- Funktion [ADFS konfigurieren](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs)
+- Funktion [Von DirSync aktualisieren](active-directory-aadconnect-dirsync-upgrade-get-started.md)
+- [Verhindern von versehentlichen Löschungen](active-directory-aadconnectsync-feature-prevent-accidental-deletes.md)
+- Neuer [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode)
+
+**Neue Vorschaufeatures:**
+
+- [Rückschreiben von Benutzern](active-directory-aadconnect-feature-preview.md#user-writeback)
+- [Gruppenrückschreiben](active-directory-aadconnect-feature-preview.md#group-writeback)
+- [Geräterückschreiben](active-directory-aadconnect-get-started-custom-device-writeback.md)
+- [Verzeichniserweiterungen](active-directory-aadconnect-feature-preview.md#directory-extensions)
+
 
 ## 1\.0.494.0501
 Veröffentlicht im Mai 2015
@@ -96,7 +116,7 @@ Veröffentlicht im Dezember 2014
 
 **Neue Features:**
 
-- Die Synchronisierung von Kennwörtern mit attributbasierter Filterung wird jetzt unterstützt. Weitere Informationen finden Sie unter "Synchronisierung von Kennwörtern mit Filterung".
+- Die Synchronisierung von Kennwörtern mit attributbasierter Filterung wird jetzt unterstützt. Weitere Informationen finden Sie unter [Synchronisierung von Kennwörtern mit Filterung](active-directory-aadconnectsync-configure-filtering.md).
 - Das Attribut msDS-ExternalDirectoryObjectID wird nach AD zurückgeschrieben. Damit wird Unterstützung für Office 365-Anwendungen hinzugefügt, die in einer Hybrid-Exchange-Bereitstellung mithilfe von OAuth2 sowohl auf Online- als auch lokale Postfächer zugreifen.
 
 **Behobene Upgrade-Probleme:**
@@ -138,6 +158,6 @@ Veröffentlicht im September 2014
 **Erste Version von Azure AD Sync**
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

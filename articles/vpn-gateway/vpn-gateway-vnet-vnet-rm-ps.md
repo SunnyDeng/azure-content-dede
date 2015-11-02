@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/13/2015"
+   ms.date="10/20/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren einer VNet-zu-VNet-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell
@@ -38,7 +38,7 @@ Das Verbinden eines virtuellen Netzwerks mit einem anderen virtuellen Netzwerk (
 Aus den folgenden Gründen empfiehlt sich das Herstellen von Verbindungen zwischen virtuellen Netzwerken:
 
 - **Regionsübergreifende Georedundanz und Geopräsenz**
-	- Sie können Ihre eigene Georeplikation oder -synchronisierung mit sicheren Verbindungen einrichten, ohne Endpunkte mit Internetzugriff verwenden zu müssen.
+	- Sie können Ihre eigene Georeplikation oder -synchronisierung mit sicheren Verbindungen einrichten, ohne Endgeräte mit Internetzugriff verwenden zu müssen.
 	- Mit dem Azure-Load Balancer und Clustertechnologie von Microsoft oder Drittanbietern können Sie Workloads mit hoher Verfügbarkeit mit Georedundanz über mehrere Azure-Regionen hinweg einrichten. Ein wichtiges Beispiel ist die Einrichtung von SQL Always On mit Verfügbarkeitsgruppen, die sich über mehrere Azure-Regionen erstrecken.
 
 - **Regionale Anwendungen mit mehreren Ebenen mit starker Isolierungsgrenze**
@@ -54,7 +54,7 @@ In diesem Artikel erstellen Sie schrittweise eine Verbindung zwischen zwei virtu
 
 - Die virtuellen Netzwerke können sich in der gleichen Azure-Region oder in verschiedenen Azure-Regionen (Standorte) befinden.
 
-- Ein Clouddienst oder Endpunkt mit Lastenausgleich darf auch dann NICHT mehrere virtuelle Netzwerke umfassen, wenn diese verbunden sind.
+- Ein Clouddienst oder Endgerät mit Lastenausgleich darf auch dann NICHT mehrere virtuelle Netzwerke umfassen, wenn diese verbunden sind.
 
 - Für das Verbinden virtueller Azure-Netzwerke sind keine lokalen VPN-Gateways erforderlich. Diese werden nur benötigt, wenn standortübergreifende Konnektivität erforderlich ist.
 
@@ -78,9 +78,11 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-- Die neueste Version von Azure PowerShell-Cmdlets. Sie können die neueste Version im Abschnitt [Windows PowerShell](http://azure.microsoft.com/downloads/) der Downloadseite herunterladen und installieren. Dieser Artikel bezieht sich auf Azure PowerShell *0.9.8*.
+- Azure PowerShell 0.9.8-Cmdlets. Sie können diese Version aus dem Windows PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren. Dieser Artikel wurde für 0.9.8 geschrieben, es ist aber auch möglich, diese Schritte (mit geringfügigen Änderungen an den Cmdlets) mit der Vorschau für PowerShell 1.0 zu verwenden.
 
->[AZURE.NOTE]Wenn Sie geschäftswichtige Apps ausführen, nutzen Sie von nun an Azure PowerShell 0.9.8. In den meisten Fällen ist der einzige Unterschied zwischen den beiden Versionen, dass die Cmdlet-Namen der Version 1.0 Preview das Format "{Verb}-AzureRm{Nomen}" haben, während der Name der Version 0.9.8 nicht "Rm" enthält. Beispiel: "New-AzureRmResourceGroup" anstelle von "New-AzureResourceGroup". Informationen zu Azure PowerShell 1.0 Preview finden Sie in diesem [Blogbeitrag](https://azure.microsoft.com/blog/azps-1-0-pre/). Weitere Informationen zu den Cmdlets in Azure PowerShell 1.0 Preview finden Sie unter [Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/mt125356.aspx).
+**Informationen zu diesen Schritten mit der Vorschau für Azure PowerShell 1.0**
+
+	[AZURE.INCLUDE [powershell-preview-inline-include](../../includes/powershell-preview-inline-include.md)] 
 
 
 ## 1\. Planen der IP-Adressbereiche
@@ -113,9 +115,7 @@ Werte für VNet2:
 
 ## 2\. Verbinden mit Ihrem Abonnement 
 
-Öffnen Sie die PowerShell-Konsole, und stellen Sie eine Verbindung mit Ihrem Konto her. Die folgenden Anweisungen gelten für Azure PowerShell Version 0.9.8. Sie können diese Version aus dem Abschnitt [Windows PowerShell](http://azure.microsoft.com/downloads/) der Downloadseite herunterladen und installieren.
-
-Verwenden Sie das folgende Beispiel, um eine Verbindung herzustellen:
+Öffnen Sie die PowerShell-Konsole, und stellen Sie eine Verbindung mit Ihrem Konto her. Verwenden Sie das folgende Beispiel, um eine Verbindung herzustellen:
 
 		Add-AzureAccount
 
@@ -172,7 +172,7 @@ In diesem Schritt erstellen Sie das virtuelle Netzwerkgateway für Ihr VNet. VNe
 ## 7\. Erstellen von VNet2
 
 
-Nachdem Sie VNet1 konfiguriert haben, wiederholen Sie die vorherigen Schritte, um VNet2 und das Gateway zu konfigurieren. Nachdem Sie die Konfiguration der beiden VNets und ihrer jeweiligen Gateways abgeschlossen haben, fahren Sie mit dem Abschnitt **Schritt 8. Verbinden der Gateways** fort.
+Nachdem Sie VNet1 konfiguriert haben, wiederholen Sie die vorherigen Schritte, um VNet2 und das Gateway zu konfigurieren. Nachdem Sie die Konfiguration der beiden VNETs und ihrer jeweiligen Gateways abgeschlossen haben, fahren Sie mit dem Abschnitt **Schritt 8. Verbinden der Gateways** fort.
 
 ## 8\. Verbinden der Gateways
 
@@ -200,9 +200,9 @@ Nach einigen Minuten sollte die Verbindung hergestellt sein. Beachten Sie, dass 
 
 ## Überprüfen der Verbindungen
 
-Zu diesem Zeitpunkt sind die VPN-Verbindungen, die mit dem Ressourcen-Manager erstellt wurden, im Vorschauportal nicht sichtbar. Sie können aber überprüfen, ob Ihre Verbindung erfolgreich war, indem Sie *get-azurevirtualnetworkgatewayconnection –Debug* verwenden. In Zukunft wird hierfür ein Cmdlet verfügbar sein, und Sie können Ihre Verbindung dann auch im Vorschauportal anzeigen.
+Zu diesem Zeitpunkt sind die VPN-Verbindungen, die mit dem Ressourcen-Manager erstellt wurden, im Vorschauportal nicht sichtbar. Sie können aber überprüfen, ob Ihre Verbindung erfolgreich war, indem Sie *Get-AzureVirtualNetworkGatewayConnection –Debug* verwenden. In Zukunft wird hierfür ein Cmdlet verfügbar sein, und Sie können Ihre Verbindung dann auch im Vorschauportal anzeigen.
 
-Sie können das folgende Cmdlet-Beispiel verwenden. Ändern Sie die Werte entsprechend allen Verbindungen, die Sie überprüfen möchten. Wählen Sie bei Aufforderung die Option *A* für "Alle ausführen".
+Sie können das folgende Cmdlet-Beispiel verwenden. Ändern Sie die Werte entsprechend allen Verbindungen, die Sie überprüfen möchten. Wählen Sie bei Aufforderung die Option *A* für „Alle ausführen“ aus.
 
 		Get-AzureVirtualNetworkGatewayConnection -Name vnet2connection -ResourceGroupName vnet2vnetrg -Debug 
 
@@ -249,8 +249,8 @@ Nachdem Sie sich vergewissert haben, dass Ihre Gatewaysubnetze richtig konfiguri
 
 ## Nächste Schritte
 
-Sie können Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
+Sie können Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. [Erstellen Sie einen virtuellen Computer](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-Weitere Informationen zu VPN Gateway-Typen finden Sie unter [Häufig gestellte Fragen zu VPN Gateway](vpn-gateway-faq.md).
+Weitere Informationen zu VPN-Gateways finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-faq.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

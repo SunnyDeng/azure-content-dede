@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Indizieren von Mediendateien mit Azure Media Indexer" 
-	description="Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. In diesem Thema wird die Verwendung von Media Indexer erläutert." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+<properties
+	pageTitle="Indizieren von Mediendateien mit Azure Media Indexer"
+	description="Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. In diesem Thema wird die Verwendung von Media Indexer erläutert."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako,johndeu"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/21/2015"   
+<tags
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="10/15/2015"   
 	ms.author="juliako"/>
 
 
@@ -29,99 +29,99 @@ Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuc
 >[AZURE.IMPORTANT]Stellen Sie beim Indizieren von Inhalten sicher, dass Mediendateien verwendet werden, die sehr klare Sprache enthalten (ohne Hintergrundmusik, Lärm, Effekte oder Mikrofonrauschen). Die folgenden Beispiele sind geeignete Inhalte: aufgezeichnete Besprechungen, Vorträge oder Präsentationen. Folgende Inhalte sind für die Indizierung ggf. nicht geeignet: Filme, Fernsehsendungen, Material mit gemischten Audio- und Soundeffekten, schlecht aufgezeichnete Inhalte mit Hintergrundgeräuschen (Rauschen).
 
 
-Ein Indizierungsauftrag generiert die folgenden Ausgaben:
+Ein Indizierungsauftrag kann die folgenden Ausgaben generieren:
 
 - Untertiteldateien in den folgenden Formaten: **SAMI**, **TTML** und **WebVTT**.
 
 	Eine Untertiteldatei enthält ein Tag namens „Recognizability“, das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist. Sie können den Wert von Recognizability nutzen, um Dateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.
 - Schlüsselwortdatei (XML).
 - AID-Datei (Audio Indexing Blob) zur Verwendung mit SQL Server.
-	
+
 	Weitere Informationen finden Sie unter [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/).
 
 
-In diesem Thema wird das Erstellen von Indizierungsaufträgen zum **Indizieren eines Medienobjekts** und zum **Indizieren mehrerer Dateien** beschrieben.
+In diesem Thema wird das Erstellen von Indizierungsaufträgen zum **Indizieren eines Assets** und zum **Indizieren mehrerer Dateien** beschrieben.
 
 Die neuesten Updates zu Azure Media Indexer finden Sie in den [Media Services-Blogs](http://azure.microsoft.com/blog/topics/media-services/).
 
-##Verwenden von Konfigurations- und Manifestdateien für Indizierungsaufgaben
+## Verwenden von Konfigurations- und Manifestdateien für Indizierungsaufgaben
 
-Sie können weitere Details für Ihre Indizierungsaufgaben mithilfe einer Aufgabenkonfiguration angeben. Beispielsweise können Sie angeben, welche Metadaten für Ihre Mediendatei verwendet werden sollen. Diese Metadaten werden durch das Sprachmodul zum Erweitern des Vokabulars verwendet und verbessern erheblich die Spracherkennungsgenauigkeit.
+Sie können weitere Details für Ihre Indizierungsaufgaben mithilfe einer Aufgabenkonfiguration angeben. Beispielsweise können Sie angeben, welche Metadaten für Ihre Mediendatei verwendet werden sollen. Diese Metadaten werden durch das Sprachmodul zum Erweitern des Vokabulars verwendet und verbessern erheblich die Spracherkennungsgenauigkeit. Sie können zudem die gewünschten Ausgabedateien angeben.
 
 Sie können auch mehrere Mediendateien gleichzeitig mithilfe einer Manifestdatei verarbeiten.
 
 Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
-##Indizieren eines Medienobjekts
+## Indizieren eines Assets
 
-Mit der folgenden Methode werden eine Mediendatei als Medienobjekt hochgeladen und ein Auftrag zum Indizieren des Medienobjekts erstellt.
+Mit der folgenden Methode werden eine Mediendatei als Asset hochgeladen und ein Auftrag zum Indizieren des Assets erstellt.
 
 Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wird, wenn keine Konfigurationsdatei angegeben ist.
-	
+
 	static bool RunIndexingJob(string inputMediaFilePath, string outputFolder, string configurationFile = "")
 	{
 	    // Create an asset and upload the input media file to storage.
 	    IAsset asset = CreateAssetAndUploadSingleFile(inputMediaFilePath,
 	        "My Indexing Input Asset",
 	        AssetCreationOptions.None);
-	
+
 	    // Declare a new job.
 	    IJob job = _context.Jobs.Create("My Indexing Job");
-	
+
 	    // Get a reference to the Azure Media Indexer.
 	    string MediaProcessorName = "Azure Media Indexer",
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
-	
+
 	    // Read configuration from file if specified.
 	    string configuration = string.IsNullOrEmpty(configurationFile) ? "" : File.ReadAllText(configurationFile);
-	
+
 	    // Create a task with the encoding details, using a string preset.
 	    ITask task = job.Tasks.AddNew("My Indexing Task",
 	        processor,
 	        configuration,
 	        TaskOptions.None);
-	
+
 	    // Specify the input asset to be indexed.
 	    task.InputAssets.Add(asset);
-	
-	    // Add an output asset to contain the results of the job. 
+
+	    // Add an output asset to contain the results of the job.
 	    task.OutputAssets.AddNew("My Indexing Output Asset", AssetCreationOptions.None);
-	
+
 	    // Use the following event handler to check job progress.  
 	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);
-	
+
 	    // Launch the job.
 	    job.Submit();
-	
-	    // Check job execution and wait for job to finish. 
+
+	    // Check job execution and wait for job to finish.
 	    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
 	    progressJobTask.Wait();
-	
-	    // If job state is Error, the event handling 
-	    // method for job progress should log errors.  Here we check 
+
+	    // If job state is Error, the event handling
+	    // method for job progress should log errors.  Here we check
 	    // for error state and exit if needed.
 	    if (job.State == JobState.Error)
 	    {
 	        Console.WriteLine("Exiting method due to job error.");
 	        return false;
 	    }
-	
+
 	    // Download the job outputs.
 	    DownloadAsset(task.OutputAssets.First(), outputFolder);
-	
+
 	    return true;
 	}
-	
+
 	static IAsset CreateAssetAndUploadSingleFile(string filePath, string assetName, AssetCreationOptions options)
 	{
 	    IAsset asset = _context.Assets.Create(assetName, options);
-	
+
 	    var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
 	    assetFile.Upload(filePath);
-	
+
 	    return asset;
 	}
-	        
+
 	static void DownloadAsset(IAsset asset, string outputDirectory)
 	{
 	    foreach (IAssetFile file in asset.AssetFiles)
@@ -129,7 +129,7 @@ Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wir
 	        file.Download(Path.Combine(outputDirectory, file.Name));
 	    }
 	}
-	
+
 	static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{
 	    var processor = _context.MediaProcessors
@@ -137,17 +137,17 @@ Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wir
 	    .ToList()
 	    .OrderBy(p => new Version(p.Version))
 	    .LastOrDefault();
-	
+
 	    if (processor == null)
 	        throw new ArgumentException(string.Format("Unknown media processor",
 	                                                   mediaProcessorName));
-	
-	    return processor;
-	} 
-	
-###<a id="output_files"></a>Ausgabedateien
 
-Der Indizierungsauftrag generiert die folgenden Ausgabedateien. Die Dateien werden im ersten Ausgabemedienobjekt gespeichert.
+	    return processor;
+	}
+
+### <a id="output_files"></a>Ausgabedateien
+
+Ein Indizierungsauftrag generiert standardmäßig die folgenden Ausgabedateien. Die Dateien werden im ersten Ausgabeasset gespeichert.
 
 
 <table border="1">
@@ -162,105 +162,110 @@ Sie erfordert die Installation des Indexer SQL-Add-Ons auf einem Computer unter 
 Klicken Sie zum Herunterladen des Add-Ons auf <a href="http://aka.ms/indexersql">Azure Media Indexer-SQL-Add-On</a>.
 <br/><br/>
 Es ist auch möglich, andere Suchmaschinen wie Apache Lucene/Solr zu verwenden, um das Video einfach auf Basis der Untertitel- und Stichwort-XML-Dateien zu indizieren. Dies hat jedoch ungenauere Suchergebnisse zur Folge.</td></tr>
-<tr><td>InputFileName.smi<br/>InputFileName.ttml</td>
+<tr><td>InputFileName.smi<br/>InputFileName.ttml<br/>InputFileName.vtt</td>
 <td>Untertiteldateien (Closed Caption, CC) im SAMI-, TTML-, und WebVTT-Format.
 <br/><br/>
 Sie können verwendet werden, um Hörgeschädigten Audio- und Videodateien zugänglich zu machen.
 <br/><br/>
 Eine Untertiteldatei enthält ein Tag namens <b>Recognizability</b>, das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist. Sie können den Wert von <b>Recognizability</b> nutzen, um Ausgabedateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.</td></tr>
-<tr><td>InputFileName.kw.xml</td>
-<td>Stichwortdatei
+<tr><td>InputFileName.kw.xml
+<br/>
+InputFileName.info
+</td>
+<td>Stichwort- und Informationsdateien.
 <br/><br/>
 Die Stichwortdatei ist eine XML-Datei, die Stichwörter enthält, welche aus dem Sprachinhalt mit Frequenz- und Abstandsinformationen extrahiert wurden.
 <br/><br/>
-Die Datei kann für unterschiedliche Zwecke verwendet werden, beispielsweise zum Ausführen einer Sprachanalyse, oder sie kann Suchmaschinen wie Bing, Google oder Microsoft SharePoint zur Verfügung gestellt werden, damit die Mediendateien leichter auffindbar sind, oder sie kann zum Bereitstellen wirkungsvollerer Werbeanzeigen verwendet werden.</td></tr>
+Die Informationsdatei ist eine Nur-Text-Datei und enthält detaillierte Informationen zu jedem erkannten Begriff. Die erste Zeile unterscheidet sich von den anderen Zeilen und enthält die Bewertung für „Recognizability“. Jede nachfolgende Zeile ist eine tabstoppgetrennte Auflistung der folgenden Daten: Startzeit, Endzeit, Word/Ausdruck, Konfidenz. Die Zeiten sind in Sekunden und die Konfidenzwerte als Zahl zwischen 0 und 1 angegeben.  <br/><br/>Beispielzeile: „1.20 &#160;&#160;&#160;1.45 &#160;&#160;&#160;word &#160;&#160;&#160;0.67“
+<br/><br/>
+Diese Dateien können für unterschiedliche Zwecke verwendet werden, beispielsweise zum Ausführen einer Sprachanalyse. Zudem können sie für Suchmaschinen wie Bing, Google oder Microsoft SharePoint zur Verfügung gestellt werden, damit die Mediendateien leichter auffindbar sind, oder auch zum Bereitstellen wirkungsvollerer Werbeanzeigen verwendet werden.</td></tr>
 </table>
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
-##Indizieren mehrerer Dateien
+## Indizieren mehrerer Dateien
 
-Mit der folgenden Methode werden mehrere Mediendateien als Medienobjekt hochgeladen und ein Auftrag zum Indizieren all dieser Dateien in einem Batch erstellt.
+Mit der folgenden Methode werden mehrere Mediendateien als Asset hochgeladen und ein Auftrag zum Indizieren all dieser Dateien in einem Batch erstellt.
 
-Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobjekt hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Medienobjektdateien. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
-	
+Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Asset hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Assetdateien. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
+
 	static bool RunBatchIndexingJob(string[] inputMediaFiles, string outputFolder)
 	{
 	    // Create an asset and upload to storage.
 	    IAsset asset = CreateAssetAndUploadMultipleFiles(inputMediaFiles,
 	        "My Indexing Input Asset - Batch Mode",
 	        AssetCreationOptions.None);
-	
+
 	    // Create a manifest file that contains all the asset file names and upload to storage.
 	    string manifestFile = "input.lst";            
 	    File.WriteAllLines(manifestFile, asset.AssetFiles.Select(f => f.Name).ToArray());
 	    var assetFile = asset.AssetFiles.Create(Path.GetFileName(manifestFile));
 	    assetFile.Upload(manifestFile);
-	
+
 	    // Declare a new job.
 	    IJob job = _context.Jobs.Create("My Indexing Job - Batch Mode");
-	
+
 	    // Get a reference to the Azure Media Indexer.
 	    string MediaProcessorName = "Azure Media Indexer";
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
-	
+
 	    // Read configuration.
 	    string configuration = File.ReadAllText("batch.config");
-	
+
 	    // Create a task with the encoding details, using a string preset.
 	    ITask task = job.Tasks.AddNew("My Indexing Task - Batch Mode",
 	        processor,
 	        configuration,
 	        TaskOptions.None);
-	
+
 	    // Specify the input asset to be indexed.
 	    task.InputAssets.Add(asset);
-	
+
 	    // Add an output asset to contain the results of the job.
 	    task.OutputAssets.AddNew("My Indexing Output Asset - Batch Mode", AssetCreationOptions.None);
-	
+
 	    // Use the following event handler to check job progress.  
 	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);
-	
+
 	    // Launch the job.
 	    job.Submit();
-	
-	    // Check job execution and wait for job to finish. 
+
+	    // Check job execution and wait for job to finish.
 	    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
 	    progressJobTask.Wait();
-	
-	    // If job state is Error, the event handling 
-	    // method for job progress should log errors.  Here we check 
+
+	    // If job state is Error, the event handling
+	    // method for job progress should log errors.  Here we check
 	    // for error state and exit if needed.
 	    if (job.State == JobState.Error)
 	    {
 	        Console.WriteLine("Exiting method due to job error.");
 	        return false;
 	    }
-	
+
 	    // Download the job outputs.
 	    DownloadAsset(task.OutputAssets.First(), outputFolder);
-	
+
 	    return true;
 	}
-	
+
 	private static IAsset CreateAssetAndUploadMultipleFiles(string[] filePaths, string assetName, AssetCreationOptions options)
 	{
 	    IAsset asset = _context.Assets.Create(assetName, options);
-	
+
 	    foreach (string filePath in filePaths)
 	    {
 	        var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
 	        assetFile.Upload(filePath);
 	    }
-	
+
 	    return asset;
 	}
 
 
-###Ausgabedateien
+### Ausgabedateien
 
-Wenn mehr als eine Eingabemediendatei vorhanden ist, generiert WAMI die Manifestdatei „JobResult.txt“ für die Auftragsausgaben. Die sich daraus ergebenden AIB-, SAMI-, TTML-, WebVTT- und Stichwortdateien werden für jede Eingabemediendatei sequenziell nummeriert, wie dies im Folgenden aufgelistet ist.
+Wenn mehrere Eingabemediendateien vorhanden sind, generiert Indexer die Manifestdatei „JobResult.txt“ für die Auftragsausgaben. Die sich daraus ergebenden AIB-, SAMI-, TTML-, WebVTT- und Stichwortdateien werden für jede Eingabemediendatei sequenziell nummeriert, wie dies im Folgenden aufgelistet ist.
 
 Beschreibungen der Ausgabedateien finden Sie unter [Ausgabedateien](#output_files).
 
@@ -280,7 +285,7 @@ Beschreibungen der Ausgabedateien finden Sie unter [Ausgabedateien](#output_file
 </table><br/>
 Jede Zeile stellt eine Eingabemediendatei dar:
 <br/><br/>
-InputFile: Medienobjekt-Dateiname oder URL der Eingabemediendatei.
+InputFile: Assetdateiname oder URL der Eingabemediendatei.
 <br/><br/>
 Alias: Entsprechender Ausgabedateiname.
 <br/><br/>
@@ -300,7 +305,7 @@ Fehler: Gibt an, ob diese Mediendatei erfolgreich indiziert wurde. 0 für Erfolg
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
-###Teilweise erfolgreicher Auftrag
+### Teilweise erfolgreicher Auftrag
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
@@ -314,7 +319,7 @@ Es werden die gleichen Ausgaben (wie bei erfolgreichen Aufträgen) generiert. Si
 <table border="1">
 <tr><th>Code</th><th>Name</th><th>Mögliche Ursachen</th></tr>
 <tr><td>2000</td><td>Ungültige Konfiguration</td><td>Ungültige Konfiguration</td></tr>
-<tr><td>2001</td><td>Ungültige Eingabemedienobjekte</td><td>Fehlende Eingabemedienobjekte oder leeres Medienobjekt</td></tr>
+<tr><td>2001</td><td>Ungültige Eingabeassets</td><td>Fehlende Eingabeassets oder leeres Asset</td></tr>
 <tr><td>2002</td><td>Ungültiges Manifest</td><td>Manifest ist leer oder enthält ungültige Elemente</td></tr>
 <tr><td>2003</td><td>Fehler beim Herunterladen der Mediendatei</td><td>Ungültige URL in Manifestdatei</td></tr>
 <tr><td>2004</td><td>Nicht unterstütztes Protokoll</td><td>Protokoll der Medien-URL wird nicht unterstützt</td></tr>
@@ -354,4 +359,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 <!-- URLs. -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

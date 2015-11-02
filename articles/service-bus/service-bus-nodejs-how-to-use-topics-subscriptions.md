@@ -19,13 +19,15 @@
 
 # Verwenden von Service Bus-Themen und -Abonnements
 
+[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
+
 In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Themen und -Abonnements über Node.js-Anwendungen verwenden. Die behandelten Szenarios umfassen das **Erstellen von Themen und Abonnements**, das **Erstellen von Abonnementfiltern**, das **Senden von Nachrichten** an ein Thema, das **Empfangen von Nachrichten von einem Abonnement** und das **Löschen von Themen und Abonnements**. Weitere Informationen zu Themen und Abonnements finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
 [AZURE.INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
 
 ## Erstellen einer Node.js-Anwendung
 
-Erstellen Sie eine leere Node.js-Anwendung. Anleitungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Clouddienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder Website mit WebMatrix.
+Erstellen Sie eine leere Node.js-Anwendung. Anweisungen zum Erstellen von Node.js-Anwendungen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website], [Node.js-Clouddienst][Node.js Cloud Service] (mithilfe von Windows PowerShell) oder Website mit WebMatrix.
 
 ## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 
@@ -65,13 +67,13 @@ var azure = require('azure');
 
 Das Azure-Modul liest die Umgebungsvariablen AZURE\_SERVICEBUS\_NAMESPACE und AZURE\_SERVICEBUS\_ACCESS\_KEY nach Informationen aus, die für eine Verbindung zu Service Bus benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie beim Aufruf von **createServiceBusService** die Kontoinformationen angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Storage][].
+Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher][].
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Storage][].
+Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
 
 ## Erstellen eines Themas
 
-Das **ServiceBusService**-Objekt ermöglicht es Ihnen, mit Themen zu arbeiten. Der folgende Code erstellt ein **ServiceBusService**-Objekt. Fügen Sie ihn am Anfang der Datei **server.js** hinzu, nach der Anweisung zum Importieren des Azure-Moduls:
+Das **ServiceBusService**-Objekt ermöglicht Ihnen, mit Themen zu arbeiten. Der folgende Code erstellt ein **ServiceBusService**-Objekt. Fügen Sie ihn am Anfang der Datei **server.js** hinzu, nach der Anweisung zum Importieren des Azure-Moduls:
 
 ```
 var serviceBusService = azure.createServiceBusService();
@@ -111,7 +113,7 @@ Mit **ServiceBusService** können Sie optionale Filteroperationen auf Operatione
 function handle (requestOptions, next)
 ```
 
-Nachdem die Vorverarbeitung der Anforderungsoptionen angeschlossen ist, ruft die Methode `next` auf und übergibt dabei eine Rückruffunktion mit der folgenden Signatur:
+Nachdem die Vorverarbeitung der Anforderungsoptionen abgeschlossen ist, ruft die Methode `next` auf und übergibt dabei eine Rückruffunktion mit der folgenden Signatur:
 
 ```
 function (returnObject, finalCallback, next)
@@ -290,7 +292,7 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 ## Löschen von Themen und Abonnements
 
-Themen und Abonnements sind dauerhaft und müssen explizit über das Azure-Verwaltungsportal oder programmgesteuert gelöscht werden. Das folgende Beispiel demonstriert das Löschen des Themas `MyTopic`.
+Themen und Abonnements sind dauerhaft und müssen explizit über das Azure-Verwaltungsportal oder programmgesteuert gelöscht werden. Das folgende Beispiel zeigt das Löschen des Themas `MyTopic`:
 
     serviceBusService.deleteTopic('MyTopic', function (error) {
         if (error) {
@@ -310,19 +312,19 @@ Durch das Löschen eines Themas werden auch alle Abonnements gelöscht, die mit 
 
 Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Siehe [Warteschlangen, Themen und Abonnements][].
+-   Siehe [Service Bus-Warteschlangen, -Themen und -Abonnements][].
 -   API-Referenz für [SqlFilter][].
 -   Besuchen Sie das [Azure SDK für Node][]-Repository auf GitHub.
 
   [Azure SDK für Node]: https://github.com/WindowsAzure/azure-sdk-for-node
   [Azure portal]: http://manage.windowsazure.com
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
+  [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
   [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
-  [Node.js-Clouddienst mit Storage]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
-  [Node.js-Webanwendung mit Storage]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
+  [Node.js-Clouddienst mit Speicher]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
+  [Node.js-Webanwendung mit Speicher]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

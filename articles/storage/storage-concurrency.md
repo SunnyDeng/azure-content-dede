@@ -3,8 +3,8 @@
 	description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste" 
 	services="storage" 
 	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
+	authors="jasonnewyork" 
+	manager="tadb" 
 	editor=""/>
 
 <tags 
@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/03/2015" 
-	ms.author="tamram"/>
+	ms.author="jahogg"/>
 
 # Verwalten von Nebenläufigkeit Microsoft Azure Storage
 
@@ -273,4 +273,4 @@ Weitere Informationen zu Azure Storage finden Sie unter:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

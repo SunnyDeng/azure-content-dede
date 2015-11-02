@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/19/2015" 
+	ms.date="10/20/2015" 
 	ms.author="arramac"/>
 
 # Sortieren von DocumentDB-Daten mit "Order By"
@@ -125,7 +125,7 @@ Hier erfahren Sie, wie Sie eine Sammlung mit der Indizierung für „Order By“
         });
 
 ## Beispiele
-Sehen Sie sich dieses [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/orderby) an, das veranschaulicht, wie "Order By" verwendet wird, einschließlich Erstellen von Richtlinien für die Indizierung und Paging mit "Order By". Diese Beispiele sind Open-Source-basiert, und wir freuen uns, wenn Sie Pullanforderungen mit Beiträgen senden, von denen andere DocumentDB-Entwickler profitieren können. In den [Anleitungen für Beiträge](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md) finden Sie Informationen dazu, wie Sie beitragen können.
+Sehen Sie sich dieses [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy) an, das veranschaulicht, wie "Order By" verwendet wird, einschließlich Erstellen von Richtlinien für die Indizierung und Paging mit "Order By". Diese Beispiele sind Open-Source-basiert, und wir freuen uns, wenn Sie Pullanforderungen mit Beiträgen senden, von denen andere DocumentDB-Entwickler profitieren können. In den [Anleitungen für Beiträge](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md) finden Sie Informationen dazu, wie Sie beitragen können.
 
 ## Neue Entwicklungen
 
@@ -152,7 +152,7 @@ Die Indizierungsspeicheraufwand verhält sich proportional zur Anzahl der Eigens
 
 **Wie frage ich vorhandene Daten in DocumentDB mit "Order By" ab?**
 
-Dies wird durch die Verfügbarkeit der Verbesserung der dynamischen Indizierungsrichtlinien unterstützt, die im Abschnitt [Neue Entwicklungen](what's-coming-next) erwähnt werden. Heute müssen Sie dazu Ihre Daten exportieren und erneut in eine neue DocumentDB-Auflistung importieren, die mit einem Bereichs-/"Order By"-Index erstellt wurde. Das DocumentDB-Importtool kann zum Migrieren der Daten zwischen Auflistungen verwendet werden.
+Um die Ergebnisse der Abfrage mit „Order By“ zu sortieren, muss die Indizierungsrichtlinie der Sammlung so geändert werden, dass ein Bereichsindextyp auf die Eigenschaft angewendet wird, nach der sortiert wird. Weitere Informationen finden Sie unter [Ändern der Indizierungsrichtlinie](documentdb-indexing-policies.md#modifying-the-indexing-policy-of-a-collection).
 
 **Was sind die aktuellen Einschränkungen von "Order By"?**
 
@@ -168,13 +168,13 @@ Sie können Folgendes nicht durchführen:
 
 ## Nächste Schritte
 
-Verwenden Sie das [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/orderby) und starten Sie die Sortierung Ihrer Daten!
+Verwenden Sie das [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy) und starten Sie die Sortierung Ihrer Daten!
 
 ## Referenzen
 * [DocumentDB-Abfragereferenz](documentdb-sql-query.md)
 * [DocumentDB-Indizierungsrichtlinienreferenz](documentdb-indexing-policies.md)
 * [DocumentDB-SQL-Referenz](https://msdn.microsoft.com/library/azure/dn782250.aspx)
-* [DocumentDB-"Order By"-Beispiele](https://github.com/Azure/azure-documentdb-net/tree/master/samples/orderby)
+* [DocumentDB-"Order By"-Beispiele](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

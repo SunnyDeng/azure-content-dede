@@ -28,10 +28,37 @@ In Release 0.9.8 waren sämtliche Parameter für die Vorlagenbereitstellung auc
 
 Für Überwachungsprotokolle waren diverse Cmdlets verfügbar, um Protokolle für verschiedene Bereiche abzurufen. Dazu zählten u. a. die folgenden Cmdlets: "Get-AzureResourceProviderLog", "Get-AzureResourceGroupLog", "Get-AzureSubscriptionIdLog" und "Get-AzureResourceLog". Häufig musste zum Abrufen von Protokollen eine Kombination dieser Cmdlets ausgeführt werden. Dadurch war die Benutzerfreundlichkeit beeinträchtigt. Wir haben diese Funktionalität nun in einem einzigen Cmdlet konsolidiert, das mithilfe von Parametern für verschiedene Bereiche aufgerufen werden kann. "Get-AzureRmLog" kann nun mit verschiedenen Parametern aufgerufen werden, um den Bereich anzugeben.
 
+In Version 0.9.8 würden Sie Code ausführen, der dem Beispiel unten ähnelt, um die Protokolle für eine bestimmte Ressourcengruppe abzurufen:
+
+    Get-AzureResourceGroupLog -ResourceGroup <resource-group-name>
+
+Sie würden wie folgt vorgehen, um die Protokolle für eine bestimmte Ressource abzurufen:
+
+     Get-AzureResourceLog -ResourceId
+     /subscriptions/#######-####-####-####-############/resourcegroups/<resource-group-name>/providers/<provider-namespace>/
+     <resource-name>
+
+In Vorschau-Version 1.0 erhalten Sie die gleichen Informationen, indem Sie die unten angegebenen Cmdlets ausführen. Zum Abrufen von Protokollen für eine Ressourcengruppe führen Sie Folgendes aus:
+
+     Get-AzureRmLog -ResourceGroup <resource-group-name>
+     
+Zum Abrufen einer bestimmten Ressource führen Sie Folgendes aus:
+
+     Get-AzureRmLog -ResourceId /subscriptions/#######-####-####-####-############/resourcegroups/<resource-group-name>
+     /providers/<provider-namespace>/<resource-name>
+
 ##Änderungen am Get-Cmdlet für Ressourcen und Ressourcengruppen
 
 Die Cmdlets "Get-AzureRmResource" und "Get-AzureRmResourceGroup" wurden so geändert, dass die Abfragen dieser Cmdlets nun direkt und ausschließlich für den Ressourcenanbieter ausgeführt werden. Wir haben die Funktionalität für Abfragen, die für den Cache ausgeführt werden, von diesen Cmdlets getrennt und in den neuen Cmdlets "Find-AzureRmResource*" zusammengefasst. Wenn Sie nach einer Ressourcengruppe mit einem bestimmten Tag suchen möchten, können Sie zu diesem Zweck das neue Cmdlet "Find-AzureRmResourceGroup" nutzen. Mit dieser Änderung wurden die Parameter für Abfragen, die für Tags ausgeführt werden, aus den Cmdlets "Get-AzureRmResource" und "Get-AzureRmResourceGroup" entfernt.
 
+In Version 0.9.8 können Sie Folgendes ausführen, um nach allen Ressourcengruppen zu suchen, die ein bestimmtes Tag enthalten:
+
+    Get-AzureResourceGroup -Tag <tag-object>
+
+In Vorschau-Version 1.0 führen Sie das folgende Cmdlet aus, um das oben beschriebene Szenario zu erreichen:
+
+    Find-AzureRmResourceGroup -Tag <tag-object>
+    
 ##Die Cmdlets "Test-AzureResource" und "Test-AzureResourceGroup" wurden entfernt
 
 Diese Cmdlets konnten nicht für alle Szenarien und Ressourcentypen zuverlässig ausgeführt werden. Wir arbeiten an einer besseren Lösung, um diese Funktionalität bereitzustellen. Bis zur Verfügbarkeit dieser neuen Lösung sollen keine Cmdlets weiterverwendet werden, die nicht zuverlässig sind. Wir haben diese Cmdlets in diesem Release entfernt und werden in einem zukünftigen Release eine zuverlässige Lösung hinzufügen.
@@ -40,8 +67,28 @@ Diese Cmdlets konnten nicht für alle Szenarien und Ressourcentypen zuverlässig
 
 Sie können das Cmdlet "Get-AzureRmResourceProvider" nun verwenden, um Standortinformationen für Ressourcenanbieter abzurufen. Als Ergebnis werden die verfügbaren Anbieter und Typen für eine bestimmte Region angezeigt. Darüber hinaus können Sie dieses Cmdlet zum Abrufen der Liste verfügbarer Standorte für einen bestimmten Anbieter nutzen. Das Cmdlet "Get-AzureLocation" wurde entfernt, da sämtliche Standortinformationen nun mit dem Cmdlet "Get-AzureRmResourceProvider" abgerufen werden können.
 
+In Version 0.9.8 führen Sie zum Abrufen der Liste mit allen unterstützten Standorten Folgendes aus:
+
+     Get-AzureLocation
+
+Zum Abrufen des Registrierungsstatus der Anbieter führen Sie Folgendes aus:
+
+     Get-AzureProvider -ListAvailable
+
+In Vorschau-Version 1.0 erreichen Sie dies, indem Sie wie unten gezeigt nur ein Cmdlet verwenden:
+
+     Get-AzureRmResourceProvider -Location <location>
+
+Hierbei wird das Ergebnis gefiltert, um nur die Anbieter und Typen anzuzeigen, die am angegebenen Ort verfügbar sind.
+
+Sie können das Ergebnis auch nach einem bestimmten Anbieter filtern, wie hier gezeigt:
+
+     Get-AzureRmResourceProvider -ProviderNamespace <provider-namespace>
+
+Hiermit wird das Ergebnis gefiltert, um nur die Orte anzuzeigen, die für den angegebenen Anbieter unterstützt werden.
+
 ##Richtlinien-Cmdlets
 
 Der Azure-Ressourcen-Manager bietet nun Richtlinienunterstützung. In diesem Release wurden PowerShell-Cmdlets für die Richtlinienverwaltung hinzugefügt. Weitere Einzelheiten zu Richtlinien finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

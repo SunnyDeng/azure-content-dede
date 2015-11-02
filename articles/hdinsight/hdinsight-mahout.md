@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/16/2015"
 	ms.author="larryfr"/>
 
 #Erstellen von Filmempfehlungen mithilfe von Apache Mahout mit Hadoop in HDInsight
@@ -42,7 +42,7 @@ Mahout ist eine [Bibliothek für maschinelles Lernen][ml] für Apache Hadoop. Ma
 
 * **Ein Windows-basierter Hadoop-Cluster in HDInsight**. Weitere Informationen zur Erstellung finden Sie unter [Erste Schritte mit Hadoop in HDInsight][getstarted].
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) \(Installieren und Verwenden von Azure PowerShell, in englischer Sprache\).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache).
 
 
 ##<a name="recommendations"></a>Generieren von Empfehlungen mithilfe von PowerShell
@@ -77,11 +77,35 @@ Praktischerweise stellt [GroupLens Research][movielens] Bewertungsdaten für Fil
 		166	346	1	886397596
 
 
-3. Laden Sie die Datei __u.data__ in __example/data/u.data__ in Ihrem HDInsight-Cluster hoch. Mit [Azure PowerShell][aps] können Sie das [HDInsight-Tools][tools]-Modul zum Hochladen der Datei verwenden. Andere Möglichkeiten zum Hochladen von Dateien finden Sie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight][upload]. Der folgende Befehl verwendet `Add-HDInsightFile` zum Hochladen der Datei:
+3. Laden Sie die Datei __u.data__ in __example/data/u.data__ in Ihrem HDInsight-Cluster hoch. Der folgende Befehl verwendet PowerShell zum Hochladen der Datei. Andere Möglichkeiten zum Hochladen von Dateien finden Sie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight][upload].
 
-    	PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
-
-    Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Sie können dann über den __wasb:///example/data/u.data__URI von HDInsight-Aufträgen auf diese Daten zugreifen.
+        # Put your cluster name below
+        $clusterName="Your HDInsight cluster name"
+        # Put the path to the u.data file below
+        $fileToUpload="The path to the u.data file"
+        
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
+        
+        #Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+            
+        Set-AzureStorageBlobContent `
+            -File $fileToUpload `
+            -Blob "example/data/u.data" `
+            -Container $container `
+            -Context $context
+    
+    Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Sie können dann über den \_\___wasb:///example/data/u.data__ URI von HDInsight-Aufträgen auf diese Daten zugreifen.
 
 ###Ausführen des Auftrags
 
@@ -89,14 +113,27 @@ Verwenden Sie das folgende Windows PowerShell-Skript zum Ausführen eines Auftra
 
 	# The HDInsight cluster name.
 	$clusterName = "the cluster name"
-
+    
+    #Get HTTPS/Admin credentials for submitting the job later
+    $creds = Get-Credential
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+        -ResourceGroupName $resourceGroup `
+        | %{ $_.Key1 }
+            
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+            
 	# NOTE: The version number portion of the file path
 	# may change in future versions of HDInsight.
-	# So dynamically grab it using Hive.
-	$mahoutPath = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target\*-job.jar' | where {$_.startswith("C:\apps\dist")}
-	$noCRLF = $mahoutPath -replace "`r`n", ""
-	$cleanedPath = $noCRLF -replace "\", "/"
-	$jarFile = "file:///$cleanedPath"
+	$jarFile = "file:///C:/apps/dist/mahout-0.9.0.2.1.15.1-1234/examples/target/mahout-examples-0.9.0.2.1.15.1-1234-job.jar"
     #
 	# If you are using an earlier version of HDInsight,
 	# set $jarFile to the jar file you
@@ -108,35 +145,51 @@ Verwenden Sie das folgende Windows PowerShell-Skript zum Ausführen eines Auftra
 	# * input - the path to the data uploaded to HDInsight
 	# * output - the path to store output data
 	# * tempDir - the directory for temp files
-	$jobArguments = "-s", "SIMILARITY_COOCCURRENCE",
+	$jobArguments = "--similarityClassname", "recommenditembased", `
+                    "-s", "SIMILARITY_COOCCURRENCE", `
 	                "--input", "wasb:///example/data/u.data",
 	                "--output", "wasb:///example/out",
-	                "--tempDir", "wasb:///temp/mahout"
+	                "--tempDir", "wasb:///example/temp"
 
 	# Create the job definition
-	$jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
+	$jobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
 	  -JarFile $jarFile `
 	  -ClassName "org.apache.mahout.cf.taste.hadoop.item.RecommenderJob" `
 	  -Arguments $jobArguments
 
 	# Start the job
-	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+	$job = Start-AzureRmHDInsightJob `
+        -ClusterName $clusterName `
+        -JobDefinition $jobDefinition `
+        -HttpCredential $creds
 
 	# Wait on the job to complete
 	Write-Host "Wait for the job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob -Job $job
-
+	Wait-AzureRmHDInsightJob `
+            -ClusterName $clusterName `
+            -JobId $job.JobId `
+            -HttpCredential $creds
+    # Download the output
+    Get-AzureStorageBlobContent `
+            -Blob example/out/part-r-00000 `
+            -Container $container `
+            -Destination output.txt `
+            -Context $context
+            
 	# Write out any error information
 	Write-Host "STDERR"
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardError
+	Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $job.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            -DisplayOutputType StandardError
 
-> [AZURE.NOTE]Mahout-Aufträge entfernen keine temporären Daten, die bei der Verarbeitung des Auftrags erstellt wurden. Der `--tempDir`-Parameter wird im Beispielauftrag festgelegt, sodass die temporären Dateien zum einfachen Löschen in einem spezifischen Pfad isoliert abgelegt werden.
->
-> Zum Entfernen dieser Dateien können Sie eines der unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight][upload] erwähnten Tools einsetzen. Verwenden Sie alternativ die `Remove-HDInsightFile`-Funktion im Modul [HDInsight-Tools][tools].
->
-> Wenn Sie die temporären Dateien oder die Ausgabedatei nicht entfernen, erhalten Sie beim erneuten Ausführen des Auftrags eine Fehlermeldung.
+> [AZURE.NOTE]Mahout-Aufträge entfernen keine temporären Daten, die bei der Verarbeitung des Auftrags erstellt wurden. Der `--tempDir`-Parameter wird im Beispielauftrag festgelegt, sodass die temporären Dateien in einem spezifischen Pfad isoliert abgelegt werden.
 
-Der Mahout-Auftrag gibt keine Ausgabe an STDOUT zurück. Stattdessen wird diese im angegebenen Ausgabeverzeichnis unter __part-r-00000__ gespeichert. Verwenden Sie die Funktion `Get-HDInsightFile` im Modul [HDInsight-Tools][tools] zum Herunterladen und Anzeigen der Datei.
+Der Mahout-Auftrag gibt keine Ausgabe an STDOUT zurück. Stattdessen wird diese im angegebenen Ausgabeverzeichnis unter __part-r-00000__ gespeichert. Das Skript lädt diese Datei in __output.txt__ in das aktuelle Verzeichnis auf Ihrer Arbeitsstation herunter.
 
 Im Folgenden sehen Sie ein Beispiel für den Inhalt der Datei:
 
@@ -233,7 +286,7 @@ Obwohl die generierte Ausgabe in einer Anwendung verwendet werden kann, ist sie 
 	                        @{Expression={$_.Value};Label="Score"}
 	$recommendations | format-table $recommendationFormat
 
-Damit Sie dieses Skript nutzen können, müssen Sie zuvor den Ordner __ml-100k__ extrahieren. Sie benötigen außerdem eine lokale Kopie der Ausgabedatei __part-r-00000__, die vom Mahout-Auftrag generiert wurde. Nachfolgend sehen Sie ein Beispiel für das Ausführen des Skripts:
+Um dieses Skript verwenden zu können, müssen Sie zuvor den Ordner __ml-100k__ extrahiert haben. Nachfolgend sehen Sie ein Beispiel für das Ausführen des Skripts:
 
 	PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
 
@@ -282,7 +335,31 @@ Eine der in Mahout verfügbaren Klassifizierungsmethoden besteht darin, einen [R
 
 2. Öffnen Sie jede Datei und entfernen Sie die Zeilen oben, die mit '@' beginnen. Speichern Sie dann die Dateien. Werden sie nicht entfernt, erhalten Sie Fehlermeldungen, wenn Sie die Daten mit Mahout verwenden.
 
-2. Laden Sie die Dateien in __example/data__ hoch. Dazu können Sie die `Add-HDInsightFile`-Funktion im Modul [HDInsight-Tools][tools] verwenden.
+2. Laden Sie die Dateien in __example/data__ hoch. Sie können einen Container mit dem folgenden Skript erstellen. Ersetzen Sie __CLUSTERNAME__ durch den Namen des HDInsight-Clusters. Ersetzen Sie „FILENAME“ durch den Namen der hochzuladenden Datei.
+
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterName="CLUSTERNAME"
+        $fileToUpload="FILENAME"
+        $blobPath="example/data/FILENAME"
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
+        
+        #Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+            
+        Set-AzureStorageBlobContent `
+            -File $fileToUpload `
+            -Blob $blobPath `
+            -Container $container `
+            -Context $context
 
 ###Ausführen des Auftrags
 
@@ -344,7 +421,7 @@ Eine der in Mahout verfügbaren Klassifizierungsmethoden besteht darin, einen [R
 
 Mahout ist in HDInsight 3.1-Clustern bereits installiert. Die Installation kann mit folgenden Schritten manuell in HDInsight 3.0- oder HDInsight 2.1-Clustern durchgeführt werden:
 
-1. Die zu verwendende Version von Mahout hängt von der Mahout-Version auf Ihrem Cluster ab. Die Clusterversion finden Sie heraus, wenn Sie den folgenden [Azure PowerShell][aps]-Befehl verwenden:
+1. Die zu verwendende Version von Mahout hängt von der HDInsight-Version auf Ihrem Cluster ab. Die Clusterversion finden Sie heraus, wenn Sie den folgenden [Azure PowerShell][aps]-Befehl verwenden:
 
     	PS C:\> Get-AzureHDInsightCluster -Name YourClusterName | Select version
 
@@ -355,13 +432,34 @@ Mahout ist in HDInsight 3.1-Clustern bereits installiert. Die Installation kann 
 
 			mvn -Dhadoop2.version=2.2.0 -DskipTests clean package
 
-    	Nachdem der Build abgeschlossen wurde, finden Sie die JAR-Datei unter „__mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__“.
+    	After the build completes, you can find the JAR file at __mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__.
 
-    	> [AZURE.NOTE] Wenn Mahout 1.0 veröffentlicht wird, sollten Sie die vorgefertigten Pakete mit HDInsight 3.0 verwenden können.
+    	> [AZURE.NOTE] When Mahout 1.0 is released, you should be able to use the prebuilt packages with HDInsight 3.0.
 
-2. Laden Sie die jar-Datei hoch in __example/jars__ in den Standardspeicher Ihres Clusters. Im folgenden Beispiel wird die Datei mit "add-hdinsightfile" aus den [HDInsight-Tools][tools] hochgeladen:
+2. Laden Sie die jar-Datei hoch in __example/jars__ in den Standardspeicher Ihres Clusters. Ersetzen Sie „CLUSTERNAME“ im folgenden Skript durch den Namen des HDInsight-Clusters, und ersetzen Sie „FILENAME“ durch den Pfad zur __mahout-coure-0.9-job.jar__-Datei.
 
-    	PS C:\> .\Add-HDInsightFile -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterName = "CLUSTERNAME"
+        $fileToUpload = "FILENAME"
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
+        
+        #Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+            
+        Set-AzureStorageBlobContent `
+            -File $fileToUpload `
+            -Blob "example/jars/mahout-core-0.9-job.jar" `
+            -Container $container `
+            -Context $context
 
 ###Dateien können nicht überschrieben werden
 
@@ -374,7 +472,7 @@ Um Fehler beim Ausführen von Mahout-Aufträgen zu vermeiden, löschen Sie tempo
 Mahout ist in HDInsight 3.1-Clustern enthalten. Der Pfad- und der Dateiname enthalten die Versionsnummer der im Cluster installierten Mahout-Version. Das Windows PowerShell-Beispielskript in diesem Lernprogramm verwendet einen Pfad, der seit Juli 2014 gültig ist. Die Versionsnummer wird sich aber mit künftigen Updates von HDInsight ändern. Den aktuellen Pfad zur Mahout-JAR-Datei für Ihren Cluster können Sie mit dem folgenden Windows PowerShell-Befehl ermitteln. Ändern Sie dann das Skript, um den ausgegebenen Pfad zu referenzieren.
 
 	Use-AzureHDInsightCluster -Name $clusterName
-	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target\*-job.jar'
+	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
 
 ###<a name="nopowershell"></a>Klassen, die nicht mit Windows PowerShell funktionieren
 
@@ -422,4 +520,4 @@ Nachdem Sie sich mit Mahout vertraut gemacht haben, können Sie sich anderen Met
 [tools]: https://github.com/Blackmist/hdinsight-tools
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

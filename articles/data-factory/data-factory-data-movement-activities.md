@@ -56,7 +56,7 @@ Der Dienst für Datenverschiebungen, der die Kopieraktivität unterstützt, ist 
 | ------ | --------- | 
 | USA (Mitte) | US |
 | USA (Ost) | US |
-| USA (Ost 2) | US |
+| USA, Osten 2 | US |
 | USA (Mitte/Norden) | US |
 | USA (Mitte/Süden) | US |
 | USA (West) | US |
@@ -90,7 +90,7 @@ Verschiedene Datenspeicher weisen unterschiedliche systemeigene Typsysteme auf. 
 Sie finden die Zuordnung für ein bestimmtes systemeigenes Typsystem zu .NET für den Datenspeicher im entsprechenden Artikel zum Connector des Datenspeichers. Über diese Zuordnung können Sie beim Erstellen von Tabellen die geeigneten Typen bestimmen, damit die richtigen Konvertierungen während der Kopieraktivität ausgeführt werden.
 
 ### Arbeiten mit unterschiedlichen Dateiformaten
-Für dateibasierte Quellen unterstützt die Kopieraktivität verschiedener Dateiformate, einschließlich Binär-, Text- und Avro-Formate. Sie können mit der Kopieraktivität von einem Format in ein anderes konvertieren. Beispiel: Text (CSV) in Avro.
+Bei der Kopieraktivität werden verschiedene Dateiformate unterstützt, einschließlich Binär-, Text- und Avro-Formate für dateibasierte Speicher. Sie können über die Kopieraktivität Daten von einem Format in ein anderes konvertieren. Beispiel: Text (CSV) in Avro.
 
 ### Eigenschaften der Kopieraktivität
 Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar. Eigenschaften im Abschnitt **typeProperties** der Aktivität können dagegen je nach Aktivitätstyp variieren.
@@ -101,4 +101,4 @@ Bei der Kopieraktivität hängt der Abschnitt **typeProperties** von den Typen d
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-movement-activities.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

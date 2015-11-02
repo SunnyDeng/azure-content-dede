@@ -23,20 +23,6 @@ Sie erhalten den folgenden Informationstyp:
 
 Überprüfen Sie, dass der Wert der **PSVersion** 3.0 oder 4.0 ist. Falls nicht, finden Sie weitere Informationen unter [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
 
-Außerdem müssen Sie über die Azure PowerShell-Version 1.0.0 oder höher verfügen. Falls Azure PowerShell noch nicht installiert und konfiguriert ist, klicken Sie für die Anleitung bitte [hier](powershell-install-configure.md).
-
-Sie können die von Ihnen installierte Azure Power Shell-Version mit diesem Befehl über die Azure PowerShell-Eingabeaufforderung prüfen.
-
-	Get-Module azure | format-table version
-
-Sie erhalten den folgenden Informationstyp:
-
-	Version
-	-------
-	1.0.0
-
-Falls Sie nicht über Version 1.0.0 oder höher verfügen, müssen Sie Azure PowerShell über "Programme und Funktionen" in der Systemsteuerung entfernen und anschließend die aktuelle Version installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
-
 ### Festlegen Ihres Azure-Kontos und -Abonnements
 
 Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
@@ -69,4 +55,4 @@ Sie können das aktuelle Azure-Abonnement durch Ausführen dieser Befehle in der
 
 Weitere Informationen zu Azure-Abonnements und -Konten finden Sie unter [Verbindung mit Ihrem Abonnement](powershell-install-configure.md#Connect).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Aktivieren von Remotedebugging mit kontinuierlicher Zustellung"
+	pageTitle="Aktivieren von Remotedebugging mit kontinuierlicher Zustellung | Microsoft Azure"
 	description="Hier erfahren Sie, wie Sie Remotedebugging aktivieren, wenn kontinuierliche Zustellung für die Bereitstellung in Azure verwendet wird."
 	services="cloud-services"
 	documentationCenter=".net"
@@ -13,39 +13,35 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/09/2015"
+	ms.date="10/19/2015"
 	ms.author="kempb"/>
 # Aktivieren von Remotedebuggen, wenn kontinuierliche Zustellung für die Veröffentlichung in Azure verwendet wird
 
-Sie können mithilfe folgender Schritte Remotedebuggen in Azure aktivieren, wenn Sie [kontinuierliche Zustellung](cloud-services-dotnet-continuous-delivery.md) für die Veröffentlichung in Azure verwenden.
+Sie können mithilfe folgender Schritte das Remotedebuggen in Azure, für Clouddienste oder virtuelle Computer aktivieren, wenn Sie [kontinuierliche Zustellung](cloud-services-dotnet-continuous-delivery.md) für die Veröffentlichung in Azure verwenden.
 
-In diesem Thema:
-
-[Aktivieren von Remotedebuggen für Clouddienste](#cloudservice)
-
-[Aktivieren von Remotedebuggen für virtuelle Computer](#virtualmachine)
-
-## <a name="cloudservice"></a>Aktivieren von Remotedebuggen für Clouddienste
+## Aktivieren von Remotedebuggen für Clouddienste
 
 1. Richten Sie im Build-Agent die initiale Umgebung für Azure ein, wie in [Befehlszeilentool für Azure](http://msdn.microsoft.com/library/hh535755.aspx) dargestellt.
-2. Da die Remotedebugging-Laufzeit (msvsmon.exe) für das Paket erforderlich ist, müssen Sie [Remote Tools für Visual Studio 2015](http://www.microsoft.com/download/details.aspx?id=46874) (oder [Remote Tools für Visual Studio 2013 Update 5 RC](https://www.microsoft.com/de-DE/download/details.aspx?id=46870) bei Verwendung von Visual Studio 2013) installieren. Alternativ können Sie auch die Remotedebugging-Binärdateien aus einem System kopieren, auf dem Visual Studio installiert ist.
-3. Erstellen Sie ein Zertifikat, wie in [Erstellen eines Dienstzertifikats für Azure](cloud-services-certs-create.md) gezeigt. Bewahren Sie die .pfx-Datei und den RDP-Zertifikatfingerabdruck auf, und laden Sie das Zertifikat in den Zielclouddienst hoch.
+2. Da die Remotedebugging-Laufzeit (msvsmon.exe) für das Paket erforderlich ist, müssen Sie [Remote Tools für Visual Studio 2015](http://www.microsoft.com/de-DE/download/details.aspx?id=48155) (oder [Remote Tools für Microsoft Visual Studio 2013 Update 5](https://www.microsoft.com/de-DE/download/details.aspx?id=48156) bei Verwendung von Visual Studio 2013) installieren. Alternativ können Sie auch die Remotedebugging-Binärdateien aus einem System kopieren, auf dem Visual Studio installiert ist.
+3. Erstellen Sie ein Zertifikat, wie in [Übersicht über Zertifikate für Azure Cloud Services](cloud-services-certs-create.md) gezeigt. Bewahren Sie die .pfx-Datei und den RDP-Zertifikatfingerabdruck auf, und laden Sie das Zertifikat in den Zielclouddienst hoch.
 4. Verwenden Sie folgende Optionen in der MSBuild-Befehlszeile, um ein Build und ein Paket mit aktiviertem Remotedebugging zu erstellen. (Ersetzen Sie die Elemente in spitzen Klammern durch tatsächliche Pfade zu Ihren System- und Projektdateien).
 
-		msbuild /TARGET:PUBLISH /PROPERTY:Configuration=Debug;EnableRemoteDebugger=true;VSX64RemoteDebuggerPath="<remote tools path>";RemoteDebuggerConnectorCertificateThumbprint="<thumbprint of the certificate added to the cloud service>";RemoteDebuggerConnectorVersion="2.6" "<path to your VS solution file>"
+		msbuild /TARGET:PUBLISH /PROPERTY:Configuration=Debug;EnableRemoteDebugger=true;VSX64RemoteDebuggerPath="<remote tools path>";RemoteDebuggerConnectorCertificateThumbprint="<thumbprint of the certificate added to the cloud service>";RemoteDebuggerConnectorVersion="2.7" "<path to your VS solution file>"
 
 	`VSX64RemoteDebuggerPath` ist der Pfad zu dem Ordner, der "msvsmon.exe" in den Remote Tools für Visual Studio enthält.
 
 5. Veröffentlichen Sie zum Zielclouddienst, indem Sie das Paket und die .cscfg-Datei verwenden, die im vorherigen Schritt generiert wurden.
 6. Importieren Sie das Zertifikat (PFX-Datei) auf den Computer, auf dem Visual Studio mit Azure SDK für .NET installiert ist.
 
-## <a name="virtualmachine"></a>Aktivieren von Remotedebuggen für virtuelle Computer
+## Aktivieren von Remotedebuggen für virtuelle Computer
 
-1. Erstellen Sie einen virtuellen Azure-Computer. Informationen finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial.md) oder [Erstellen virtueller Azure-Computer in Visual Studio](http://msdn.microsoft.com/library/azure/dn569263.aspx).
-2. Sehen Sie sich auf der [Azure-Portalseite](http://go.microsoft.com/fwlink/p/?LinkID=269851) das Dashboard des virtuellen Computers an, um den RDP-Zertifikatfingerabdruck des virtuellen Computers anzuzeigen. Dies wird für den `ServerThumbprint`-Wert in der Erweiterungskonfiguration verwendet.
-3. Erstellen Sie ein Clientzertifikat, wie in [Erstellen eines Dienstzertifikats für Azure](cloud-services-certs-create.md) gezeigt (behalten Sie die .pfx-Datei und den RDP-Zertifikatfingerabdruck bei).
-4. Installieren Sie [Azure Powershell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (Version 0.7.4 oder höher) aus dem Microsoft Download Center.
-5. Führen Sie folgendes Skript aus, um die RemoteDebug-Erweiterung zu aktivieren. Ersetzen Sie die Pfade und persönlichen Daten mit Ihren eigenen Daten, zum Beispiel Abonnementname, Dienstname und Fingerabdruck. (HINWEIS: Dieses Skript wurde für Visual Studio 2015 RC konfiguriert. Wenn Sie Visual Studio 2013 verwenden, verwenden Sie "RemoteDebugVS2013" als "ReferenceName" und "ExtensionName".)
+1. Erstellen Sie einen virtuellen Azure-Computer. Informationen finden Sie unter [Erstellen eines virtuellen Computer mit Windows Server](virtual-machines-windows-tutorial.md) oder [Erstellen virtueller Azure-Computer in Visual Studio](vs-azure-tools-virtual-machines-create-manage.md).
+2. Sehen Sie sich auf der [Azure-Portalseite](http://go.microsoft.com/fwlink/p/?LinkID=269851) das Dashboard des virtuellen Computers an, um den **RDP-ZERTIFIKATFINGERABDRUCK** des virtuellen Computers anzuzeigen. Dieser Wert wird für den `ServerThumbprint`-Wert in der Erweiterungskonfiguration verwendet.
+3. Erstellen Sie ein Clientzertifikat, wie in [Übersicht über Zertifikate für Azure Cloud Services](cloud-services-certs-create.md) gezeigt (behalten Sie die .pfx-Datei und den RDP-Zertifikatfingerabdruck bei).
+4. Installieren Sie Azure PowerShell (ab Version 0.7.4) wie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) beschrieben.
+5. Führen Sie folgendes Skript aus, um die RemoteDebug-Erweiterung zu aktivieren. Ersetzen Sie die Pfade und persönlichen Daten mit Ihren eigenen Daten, zum Beispiel Abonnementname, Dienstname und Fingerabdruck.
+
+	>[AZURE.NOTE]Dieses Skript wird für Visual Studio 2015 konfiguriert. Wenn Sie Visual Studio 2013 verwenden, verwenden Sie „RemoteDebugVS2013“ als „ReferenceName“ und „ExtensionName“.
 
 	<pre>
 Add-AzureAccount
@@ -94,4 +90,4 @@ $vm | Update-AzureVM
 
 6. Importieren Sie das Zertifikat (PFX-Datei) auf den Computer, auf dem Visual Studio mit dem Azure-SDK für .NET installiert ist.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

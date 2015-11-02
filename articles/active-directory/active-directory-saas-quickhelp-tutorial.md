@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="10/16/2015"
 	ms.author="markusvi"/>
 
 
@@ -64,8 +64,7 @@ Zum Konfigurieren der Integration von QuickHelp in Azure AD müssen Sie QuickHe
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld das Wort **QuickHelp** ein.<br><br> ![Anwendungen][5]<br>
-7. Wählen Sie im Ergebnisbereich **QuickHelp** aus, und klicken Sie dann auf **Fertig stellen**, um die Anwendung hinzuzufügen.<br>
-
+7. Wählen Sie im Ergebnisbereich **QuickHelp** aus, und klicken Sie dann auf **Fertig stellen**, um die Anwendung hinzuzufügen. <br><br>![Anwendungen][500]<br>
 
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
@@ -75,11 +74,11 @@ Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprech
  
 Zum Konfigurieren und Testen des einmaligen Anmeldens mit Azure AD bei QuickHelp müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren der einmaligen Anmeldung in Azure AD](#configuring-azure-ad-single-single-sign-on)** – um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
-2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)** – um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
-4. **[Erstellen eines QuickHelp-Testbenutzers](#creating-a-halogen-software-test-user)** – um eine Entsprechung von Britta Simon in QuickHelp zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
-5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)** – um Britta Simon für das einmalige Anmelden in Azure AD zu aktivieren.
-5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)** – um zu überprüfen, ob die Konfiguration funktioniert.
+1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
+4. **[Erstellen eines QuickHelp-Testbenutzers](#creating-a-halogen-software-test-user)**, um eine Entsprechung von Britta Simon in QuickHelp zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
+5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
+5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
 ### Konfigurieren der einmaligen Anmeldung in Azure AD
 
@@ -89,7 +88,7 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
 
 1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **QuickHelp** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei QuickHelp anmelden?** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][7]<br>
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei QuickHelp anmelden?** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Azure AD – einmaliges Anmelden][7] <br>
 
 3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Konfigurieren von App-Einstellungen][8] <br>
  
@@ -101,7 +100,7 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
 
 4. Laden Sie die **QuickHelp**-Metadatendatei auf Ihren Computer herunter: [https://quickhelp.blob.core.windows.net/metadata/QuickhelpSamlMetadataBS.xml](https://quickhelp.blob.core.windows.net/metadata/QuickhelpSamlMetadataBS.xml).
  
-4. Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um QuickHelp** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer. <br><br>![Was ist Azure AD Connect?][9] <br>
+4. Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für QuickHelp** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer. <br><br>![Was ist Azure AD Connect?][9] <br>
 
 
 
@@ -114,17 +113,17 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
 
 1. Klicken Sie auf **Authentifizierungseinstellungen**.
 
-1. Führen Sie auf der Dialogseite **Authentifizierungseinstellungen** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren][23]<br>
+1. Führen Sie auf der Seite **Authentifizierungseinstellungen** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren][23]<br>
 
     a. Wählen Sie für **SSO-Typ** die Option **WSFederation** aus.
 
-    b. Klicken Sie zum Hochladen der heruntergeladenen Azure-Metadatendatei auf **Durchsuchen**, navigieren Sie zur Datei, und klicken Sie dann auf **Upload Metadata**.
+    b. Klicken Sie zum Hochladen der heruntergeladenen Azure-Metadatendatei auf **Durchsuchen**, navigieren Sie zur Datei, und klicken Sie dann auf **Metadaten hochladen**.
 
     d. Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
 
 6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][10]<br>
 
-7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**.<br><br>![Was ist Azure AD Connect?][11]
+7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Was ist Azure AD Connect?][11]
 
 
 
@@ -152,17 +151,17 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-quickhelp-tutorial/create_aaduser_06.png) <br>
  
-    a. Geben Sie in das Textfeld **Vorname** **Britta** ein.
+    a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
     b. Geben Sie in das Textfeld **Nachname** den Namen **Simon** ein.
 
-    c. Geben Sie in das Textfeld **Anzeigename** **Britta Simon** ein.
+    c. Geben Sie in das Textfeld **Anzeigename** den Namen **Britta Simon** ein.
 
-    d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. Klicken Sie auf **Weiter**.
+    d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-quickhelp-tutorial/create_aaduser_07.png) <br>
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-quickhelp-tutorial/create_aaduser_07.png) <br>
  
-8. Führen Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-quickhelp-tutorial/create_aaduser_08.png) <br>
+8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-quickhelp-tutorial/create_aaduser_08.png) <br>
   
     a. Notieren Sie den Wert von **Neues Kennwort**.
 
@@ -193,14 +192,14 @@ Sie müssen in der Azure Active Directory-Testumgebung eine CSV-Datei mit dieser
 2. Melden Sie sich bei Ihrer QuickHelp-Unternehmenswebsite als Administrator an. <br><br>![Erstellen eines QuickHelp-Testbenutzers][21]<br>
 
 
-3. Klicken Sie im Menü **QuickHelp Admin** auf **Users** und dann auf **New**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][24]<br>
+3. Klicken Sie im Menü **QuickHelp-Admin** auf **Benutzer** und dann auf **Neu**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][24]<br>
 
 
-4. Wählen Sie als **Content** **User** aus, und klicken Sie dann auf **Import**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][25]<br>
+4. Wählen Sie als **Inhalt** die Option **Benutzer** aus, und klicken Sie dann auf **Importieren**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][25]<br>
 
 5. Um Ihre CSV-Datei zu importieren, klicken Sie auf **Durchsuchen**, navigieren Sie zu der Datei, und klicken Sie dann auf **Weiter**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][26]<br>
 
-6. Überprüfen Sie auf der Seite mit der Zusammenfassung die Einstellungen und klicken Sie dann auf **Fertig stellen**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][27]<br>
+6. Überprüfen Sie auf der Seite mit der Zusammenfassung die Einstellungen, und klicken Sie dann auf **Fertig stellen**. <br><br>![Erstellen eines QuickHelp-Testbenutzers][27]<br>
 
 
 Wenn Britta erfolgreich importiert wurde, sehen Sie den Eintrag in der Liste der Benutzer. <br><br>![Erstellen eines QuickHelp-Testbenutzers][28]<br>
@@ -209,15 +208,15 @@ Wenn Britta erfolgreich importiert wurde, sehen Sie den Eintrag in der Liste der
 
 ### Zuweisen des Azure AD-Testbenutzers
 
-Das Ziel dieses Abschnitts ist, Britta Simon für das einmalige Anmelden bei Azure zu aktivieren, indem sie Zugriff auf QuickHelp erhält. <br><br>![Benutzer zuweisen][200]<br>
+Das Ziel dieses Abschnitts ist, Britta Simon für das einmalige Anmelden bei Azure zu aktivieren, indem sie Zugriff auf QuickHelp erhält. <br><br>![Benutzer zuweisen][200] <br>
 
 **Um Britta Simon QuickHelp zuzuweisen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br> <br>![Benutzer zuweisen][201]<br>
+1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
 
-2. Wählen Sie in der Anwendungsliste **QuickHelp** aus. <br><br>![Benutzer zuweisen][202]<br>
+2. Wählen Sie in der Anwendungsliste **QuickHelp** aus. <br><br>![Benutzer zuweisen][202] <br>
 
-1. Klicken Sie im oberen Menü auf **Benutzer**.<br> <br>![Benutzer zuweisen][203]<br>
+1. Klicken Sie im oberen Menü auf **Benutzer**. <br><br>![Benutzer zuweisen][203] <br>
 
 1. Wählen Sie in der Benutzerliste **Britta Simon** aus.
 
@@ -243,6 +242,8 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [3]: ./media/active-directory-saas-quickhelp-tutorial/tutorial_general_03.png
 [4]: ./media/active-directory-saas-quickhelp-tutorial/tutorial_general_04.png
 [5]: ./media/active-directory-saas-quickhelp-tutorial/tutorial_quickhelp_01.png
+[500]: ./media/active-directory-saas-quickhelp-tutorial/tutorial_quickhelp_14.png
+
 
 [6]: ./media/active-directory-saas-quickhelp-tutorial/tutorial_general_05.png
 [7]: ./media/active-directory-saas-quickhelp-tutorial/tutorial_quickhelp_02.png
@@ -272,4 +273,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [401]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_401.png
 [402]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_402.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

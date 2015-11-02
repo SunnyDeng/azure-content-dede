@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Versionshinweise für das Application Insights C++-SDK" 
-	description="Die neuesten Updates." 
+	description="Die neuesten Updates für das C++ SDK." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -37,4 +37,4 @@ Vorschau vom 05.06.2015
 Erste Version
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

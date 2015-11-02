@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/23/2015"
+   ms.date="10/20/2015"
    ms.author="larryfr"/>
 
 #Verwalten von HDInsight-Clustern mit Ambari (Vorschau)
@@ -27,7 +27,11 @@ Erfahren Sie, wie Sie Ambari zum Verwalten und Überwachen von Linux-basierten A
 
 <a href="http://ambari.apache.org" target="_blank">Apache Ambari</a> vereinfacht die Hadoop-Verwaltung durch die Bereitstellung einer benutzerfreundlichen Webbenutzeroberfläche, die zum Bereitstellen, Verwalten und Überwachen von Hadoop-Clustern verwendet werden kann. Entwickler können diese Funktionen mithilfe der <a href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md" target="_blank">Ambari-REST-APIs</a> in ihre Anwendungen integrieren.
 
-Ambari wird standardmäßig mit Linux-basierten Clustern bereitgestellt. Windows-basierte HDInsight-Cluster bieten Überwachungsfunktionen über die Ambari-REST-APIs.
+Ambari wird standardmäßig mit Linux-basierten HDInsight-Clustern bereitgestellt. Windows-basierte HDInsight-Cluster bieten Überwachungsfunktionen über die Ambari-REST-APIs.
+
+##Konnektivität
+
+Die Verbindung mit Ambari auf Ihrem HDInsight-Cluster erfordert die Verwendung von HTTPS. Sie müssen sich bei Ambari auch mit dem Administratorkontonamen (standardmäßig __Admin__) und dem Kennwort authentifizieren, die Sie bei der Erstellung des Clusters angegeben haben.
 
 ##SSH-Proxy
 
@@ -113,7 +117,7 @@ Ausführlichere Informationen zu den Knoten im Cluster finden Sie unter **Hosts*
 
 ###Dienste
 
-Die Seitenleiste **Services** des Dashboards bietet einen schnellen Überblick über den Status der Dienste, die im Cluster aktiv sind. Es werden verschiedene Symbole verwendet, um den Status oder auszuführende Aktionen anzuzeigen, z. B. ein gelbes Recycling-Symbol, wenn ein Dienst wiederverwendet werden muss.
+Die Seitenleiste **Services** des Dashboards bietet eine schnelle Übersicht über den Status der Dienste, die im Cluster aktiv sind. Es werden verschiedene Symbole verwendet, um den Status oder auszuführende Aktionen anzuzeigen, z. B. ein gelbes Recycling-Symbol, wenn ein Dienst wiederverwendet werden muss.
 
 ![Seitenleiste "Services"](./media/hdinsight-hadoop-manage-ambari/service-bar.png)
 
@@ -183,7 +187,7 @@ Die Seite **Hosts** listet alle Hosts im Cluster auf. Gehen Sie folgendermaßen 
 
 ###<a id="service"></a>Dienste
 
-Verwenden Sie auf der Seite **Dashboard **oder **Services** am Ende der Dienstliste die Schaltfläche **Actions**, um alle Dienste zu beenden und zu starten.
+Verwenden Sie auf der Seite **Dashboard** oder **Dienste** am Ende der Dienstliste die Schaltfläche **Aktionen**, um alle Dienste zu beenden und zu starten.
 
 ![Dienstaktionen](./media/hdinsight-hadoop-manage-ambari/service-actions.png)
 
@@ -228,4 +232,4 @@ Ambari Web basiert auf einer zugrunde liegenden REST-API, die Sie zum Erstellen 
 
 Eine vollständige Referenz der REST-API finden Sie unter [Referenz zur Ambari-API V1](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

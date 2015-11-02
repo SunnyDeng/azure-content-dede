@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
+   ms.service="multiple"
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
@@ -52,4 +52,4 @@ Dieses Dokument beschreibt ein Muster für die Offsite-Batchverarbeitung mithilf
 
 [Azure Search Tier](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-e581d65d)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -30,8 +30,9 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/en-us/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
-- [Azure PowerShell](../powershell-install-configure.md)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-DE/download/details.aspx?id=40855)
+
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
 
@@ -297,7 +298,7 @@ Um Werte für die Ressourcenparameter anzugeben, die in der Vorlage definiert wu
           }
         }
 
-    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Informationen zu Images für virtuelle Computer](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-images/). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
+    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Informationen zu Images für virtuelle Computer](https://azure.microsoft.com/de-DE/documentation/articles/virtual-machines-images/). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
 
 
 4.	Speichern Sie Parameterdatei, die Sie erstellt haben.
@@ -446,4 +447,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,14 +1,14 @@
 <properties
 	pageTitle="Verschieben von Web-App-Ressourcen in eine andere Ressourcengruppe"
 	description="Beschreibt die Szenarien, in denen Sie Web-Apps und App Services aus einer Ressourcengruppe in eine andere verschieben können."
-	services="app-service\web"
+	services="app-service"
 	documentationCenter=""
 	authors="ZainRizvi"
 	manager="wpickett"
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
@@ -26,4 +26,4 @@ Azure-Web-Apps unterstützen derzeit die folgenden Szenarien beim Verschieben:
 	* Hinweis: In diesem Szenario darf die Zielressourcengruppe keine Microsoft.Web-Ressourcen enthalten.
 * Verschieben einzelner Web-Apps in eine andere Ressourcengruppe, während sie weiterhin im aktuellen App Service-Plan gehostet werden (Der App Service-Plan bleibt in der alten Ressourcengruppe.)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

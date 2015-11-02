@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen einer neuen Application Insights-Ressource" 
-	description="Richten Sie eine neue Anwendung ein, und erhalten Sie einen neuen Instrumentationsschlüssel. Application Insights überwacht die Leistung und Verwendung von Live-Anwendungen." 
+	description="Richten Sie Application Insights-Überwachung für eine neue Liveanwendung ein. Web-basierter Ansatz." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -94,4 +94,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

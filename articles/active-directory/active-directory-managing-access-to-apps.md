@@ -13,13 +13,13 @@
   ms.tgt_pltfrm="na"
   ms.devlang="na"
   ms.topic="article"
-  ms.date="10/12/2015"
+  ms.date="10/16/2015"
   ms.author="stevenpo"/>
 
 
 # Verwalten des Zugriffs auf Apps
 
-Die fortwährende Zugriffsverwaltung sowie die Nutzungsauswertung und Berichterstellung bleiben auch nach Integration einer Anwendung in das Identitätssystem der Organisation eine Herausforderung. In vielen Fällen muss der IT-Administrator oder Helpdesk eine fortlaufende aktive Rolle in der Verwaltung des Zugriffs auf Ihre Apps ausüben. Manchmal erfolgt die Zuweisung durch das allgemeine oder abteilungsinterne IT-Team. In vielen Fällen soll die Zuweisungsentscheidung an einen kommerziellen Entscheidungsträger delegiert werden, da die IT-Abteilung ohnehin dessen Genehmigung einholen muss. Andere Organisationen investieren in die Integration in ein vorhandenes automatisiertes Identitäts- und Zugriffsverwaltungssystem wie rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) oder attributbasierte Zugriffssteuerung (Attribute-Based Access Control, ABAC). Sowohl die Integration als auch die Entwicklung der Regeln sind häufig spezifisch und kostspielig. Auch die Überwachung oder Berichterstattung stellt bei beiden Verwaltungsansätzen eine eigene Investition dar, die komplex und teuer ist.
+Die fortwährende Zugriffsverwaltung sowie die Nutzungsauswertung und Berichterstellung bleiben auch nach Integration einer Anwendung in das Identitätssystem der Organisation eine Herausforderung. In vielen Fällen muss der IT-Administrator oder Helpdesk eine fortlaufende aktive Rolle in der Verwaltung des Zugriffs auf Ihre Apps ausüben. Manchmal erfolgt die Zuweisung durch das allgemeine oder abteilungsinterne IT-Team. Oft soll die Zuweisungsentscheidung an einen kommerziellen Entscheidungsträger delegiert werden, da die IT-Abteilung ohnehin dessen Genehmigung einholen muss. Andere Organisationen investieren in die Integration in ein vorhandenes automatisiertes Identitäts- und Zugriffsverwaltungssystem wie rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) oder attributbasierte Zugriffssteuerung (Attribute-Based Access Control, ABAC). Sowohl die Integration als auch die Entwicklung der Regeln sind häufig spezifisch und kostspielig. Auch die Überwachung oder Berichterstattung stellt bei beiden Verwaltungsansätzen eine eigene Investition dar, die komplex und teuer ist.
 
 ## In welcher Weise hilft Azure Active Directory?
 
@@ -28,7 +28,10 @@ Die fortwährende Zugriffsverwaltung sowie die Nutzungsauswertung und Berichters
  - [Hinzufügen von neuen Anwendungen](active-directory-sso-newly-acquired-saas-apps.md)
  - [Hinzufügen von vorhandenen Anwendungen](active-directory-sso-integrate-existing-apps)
 
- Die Anwendungszuweisung in Azure AD stützt sich hauptsächlich auf zwei primäre Zuweisungsmodi: individuelle Zuweisung, bei der ein IT-Administrator mit globalen, benutzerspezifischen oder AU-Rechten individuelle Benutzerkonten auswählt und ihnen Zugriff auf die Anwendung gewährt, und gruppenbasierte Zuweisung (nur kostenpflichtiges Azure AD), bei der ein IT-Administrator mit globalen, benutzerspezifischen oder AU-Rechten der Anwendung eine Gruppe zuweist. Die Zugriffsmöglichkeit eines bestimmten Benutzers ergibt sich daraus, ob dieser zum Zeitpunkt des Zugriffs auf die Anwendung Mitglied der festgelegten Gruppe ist. In diesem Modus kann der Administrator also im Grunde folgende Zuweisungsregel erstellen: "Jedes derzeitige Mitglied der zugewiesenen Gruppe hat Zugriff auf die Anwendung". Mit dieser Zuweisungsoption können Administratoren alle zur Verfügung stehenden Optionen zur Gruppenverwaltung nutzen, einschließlich attributbasierter dynamischer Gruppen, externer Systemgruppen (z. B. lokales AD oder werktags) und Administratorgruppen oder Gruppen mit Self-Service-Verwaltung. Eine einzelne Gruppe kann problemlos mehreren Apps zugewiesen werden, sodass sichergestellt wird, dass Anwendungen mit Zuweisungsaffinität dieselben Zuweisungsregeln verwenden, um die Verwaltungskomplexität insgesamt zu verringern.
+ Die Anwendungszuweisung von Azure AD konzentriert sich auf zwei primäre Zuordnungsmodi:
+
+- **Einzelne Zuweisung**: Ein IT-Administrator mit globalen, Benutzer- oder AU-Berechtigungen kann einzelne Benutzerkonten auswählen und ihnen Zugriff auf die Anwendung gewähren.
+- **Gruppenbasierte Zuweisung (nur kostenpflichtiges Azure AD)**: Ein IT-Administrator mit globalen, Benutzer- oder AU-Berechtigungen kann der Anwendung eine Gruppe zuweisen. Die Zugriffsmöglichkeit eines bestimmten Benutzers ergibt sich daraus, ob dieser zum Zeitpunkt des Zugriffs auf die Anwendung Mitglied der festgelegten Gruppe ist. In diesem Modus kann der Administrator also im Grunde folgende Zuweisungsregel erstellen: "Jedes derzeitige Mitglied der zugewiesenen Gruppe hat Zugriff auf die Anwendung". Mit dieser Zuweisungsoption können Administratoren alle zur Verfügung stehenden Optionen zur Gruppenverwaltung nutzen, einschließlich attributbasierter dynamischer Gruppen, externer Systemgruppen (z. B. lokales AD oder werktags) und Administratorgruppen oder Gruppen mit Self-Service-Verwaltung. Eine einzelne Gruppe kann problemlos mehreren Apps zugewiesen werden, sodass sichergestellt wird, dass Anwendungen mit Zuweisungsaffinität dieselben Zuweisungsregeln verwenden, um die Verwaltungskomplexität insgesamt zu verringern.
 
 Durch Einsatz dieser beiden Zuweisungsmodi können Administratoren jeden gewünschten Ansatz zur Zuweisungsverwaltung realisieren.
 
@@ -49,7 +52,6 @@ In diesem Fall würde allen zugewiesenen Benutzern automatisch Salesforce bereit
 
  Administratoren können den [bedingten Zugriff von Azure AD](active-directory-conditional-access.md) einsetzen, um Zugriffsrichtlinien für bestimmte Rollen festzulegen. In diesen Richtlinien kann enthalten sein, ob der Zugriff von außerhalb der Unternehmensumgebung erlaubt ist, und sogar, ob Multi-Factor Authentication oder bestimmte Geräteanforderungen für verschiedene Anwendungsfälle zur Anwendung kommen.
 
-
 ## Wie fange ich an?
 
 Falls Sie Azure AD noch nicht nutzen und IT-Administrator sind:
@@ -69,4 +71,4 @@ Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende Fu
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

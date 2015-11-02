@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/11/2015" 
+	ms.date="10/15/2015" 
 	ms.author="nitinme"/>
 
 # Installieren und Verwenden von Hue in HDInsight Hadoop-Clustern
@@ -49,8 +49,9 @@ Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxhueconfiga
 	* __HEAD__: Aktivieren Sie diese Option.
 	* __WORKER__: Belassen Sie diese Option deaktiviert.
 	* __ZOOKEEPER__: Belassen Sie diese Option deaktiviert.
-	* __PARAMETER__: Für das Skript muss das **Administratorkennwort für den Cluster** als Parameter angegeben werden. Dies ist das Kennwort, das Sie bei der Bereitstellung des Clusters angegeben haben. Sie müssen das Kennwort in einfachen Anführungszeichen angeben.
-
+	* __PARAMETER__: Für das Skript muss das **Administratorkennwort für den Cluster** als Parameter angegeben werden. Dies ist das Kennwort, das Sie bei der Bereitstellung des Clusters angegeben haben. Wichtige Hinweise zum Bereitstellen des Kennworts:
+		* Wenn der Cluster-Benutzername „Admin“ lautet, müssen Sie das Kennwort nur in einfachen Anführungszeichen angeben.
+		* Wenn der Cluster-Benutzername etwas anderes als „Admin“ ist, müssen Sie den Parameter als `-u [username] [password in single quotes]` angeben.
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
@@ -62,7 +63,7 @@ SSH-Tunneling ist die einzige Möglichkeit für den Zugriff auf Hue auf dem Clus
 
 1. Nutzen Sie die Informationen unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md), um einen SSH-Tunnel von Ihrem Clientsystem an das HDInsight-Cluster zu erstellen und anschließend Ihren Webbrowser für die Verwendung des SSH-Tunnels als Proxy zu konfigurieren.
 
-2. Sobald Sie einen SSH-Tunnel erstellt und Ihren Browser für den Proxy-Datenverkehr konfiguriert haben, verwenden Sie den Browser zum Öffnen des Hue-Portals unter http://headnode0:8888.
+2. Sobald Sie einen SSH-Tunnel erstellt und Ihren Browser für den Proxy-Datenverkehr konfiguriert haben, öffnen Sie mit dem Browser das Hue-Portal unter http://headnode0:8888.
 
     > [AZURE.NOTE]Wenn Sie sich zum ersten Mal anmelden, werden Sie aufgefordert, ein Konto für die Anmeldung beim Hue-Portal zu erstellen. Die hier angegebenen Anmeldeinformationen gelten nur für das Portal und beziehen sich nicht auf die Administrator- oder SSH-Benutzeranmeldeinformationen, die Sie beim Bereitstellen des Clusters angegeben haben.
 
@@ -126,4 +127,4 @@ SSH-Tunneling ist die einzige Möglichkeit für den Zugriff auf Hue auf dem Clus
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

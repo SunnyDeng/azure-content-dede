@@ -1,23 +1,23 @@
-<properties
-	pageTitle="Weitere Informationen: Azure AD-Kennwortverwaltung | Microsoft Azure"
-	description="Weiterführende Themen zur Azure AD-Kennwortverwaltung, einschließlich Kennwortrückschreibung, Sicherheit bei der Kennwortrückschreibung, Funktionsweise des Portals für die Kennwortzurücksetzung und der zur Kennwortzurücksetzung verwendeten Daten."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Weitere Informationen: Azure AD-Kennwortverwaltung | Microsoft Azure" 
+	description="Weiterführende Themen zur Azure AD-Kennwortverwaltung, einschließlich Kennwortrückschreibung, Sicherheit bei der Kennwortrückschreibung, Funktionsweise des Portals für die Kennwortzurücksetzung und der zur Kennwortzurücksetzung verwendeten Daten." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/18/2015" 
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/08/2015" 
 	ms.author="asteen"/>
 
 # Weitere Informationen zur Kennwortverwaltung
-Wenn Sie die Kennwortverwaltung bereits bereitgestellt haben oder vor der Bereitstellung einfach nur mehr über die technischen Grundlagen erfahren möchten, liefert dieser Abschnitt einen guten Überblick über die technischen Konzepte, die hinter dem Dienst stehen. In diesem Artikel werden die folgenden Themen abgedeckt:
+Wenn Sie die Kennwortverwaltung bereits bereitgestellt haben oder vor der Bereitstellung einfach nur mehr über die technischen Grundlagen erfahren möchten, liefert dieser Abschnitt eine gute Übersicht über die technischen Konzepte, die hinter dem Dienst stehen. In diesem Artikel werden die folgenden Themen abgedeckt:
 
 * [**Übersicht über die Kennwortrückschreibung**](#password-writeback-overview)
   - [Funktionsweise der Kennwortrückschreibung](#how-password-writeback-works)
@@ -45,7 +45,7 @@ Die Kennwortrückschreibung umfasst drei Hauptkomponenten:
 
 - Einen Clouddienst für das Zurücksetzen von Kennwörtern (auch integriert in die Azure AD-Seiten für die Kennwortzurücksetzung)
 - Ein mandantenspezifisches Azure Service Bus Relay
-- Einen lokalen Endpunkt für die Kennwortzurücksetzung
+- Ein lokales Endgerät für die Kennwortzurücksetzung
 
 Diese Komponenten arbeiten folgendermaßen zusammen:
 
@@ -58,7 +58,7 @@ Wenn ein Verbundbenutzer oder ein Benutzer mit Kennworthashsynchronisierung ihr 
 3.	Der Benutzer wählt ein neues Kennwort aus und bestätigt es.
 4.	Beim Klicken auf "Senden" wird das Klartextkennwort mit einem symmetrischen Schlüssel verschlüsselt, der beim Einrichten der Kennwortrückschreibung erstellt wurde.
 5.	Nachdem das Kennwort verschlüsselt wurde, wird es in eine Nutzlast eingeschlossen, die über einen HTTPS-Kanal an das mandantenspezifische Service Bus Relay gesendet wird (dieses wurde ebenfalls beim Einrichten der Kennwortrückschreibung festgelegt). Dieses Relay wird durch ein zufällig generiertes Kennwort geschützt, das nur der lokalen Installation bekannt ist.
-6.	Sobald die Nachricht vom Service Bus empfangen wird, wird der Endpunkt für die Kennwortzurücksetzung automatisch aktiviert und erkennt, dass eine Anforderung zur Kennwortzurücksetzung aussteht.
+6.	Sobald die Nachricht vom Service Bus empfangen wird, wird das Endgerät für die Kennwortzurücksetzung automatisch aktiviert und erkennt, dass eine Anforderung zur Kennwortzurücksetzung aussteht.
 7.	Der Dienst sucht anschließend unter Verwendung des Cloudankerattributs nach dem betreffenden Benutzer. Wenn diese Suche erfolgreich war, muss das Benutzerobjekt im AD-Connectorbereich vorliegen, dem entsprechenden MV-Objekt und dem entsprechenden AAD-Connectorobjekt zugeordnet sein. Und schließlich muss – damit dieses Benutzerkonto über das Synchronisierungsmodul gefunden wird – für die Verbindung zwischen AD-Connectorobjekt und MV die Synchronisierungsregel `Microsoft.InfromADUserAccountEnabled.xxx` gelten. Dies ist erforderlich, weil der Aufruf von der Cloud eingeht, das Synchronisierungsmodul das cloudAnchor-Attribut verwendet, um das AAD-Connectorbereichsobjekt zu ermitteln, der Verbindung zum MV-Objekt und anschließend der Verbindung zurück zum AD-Objekt folgt. Da mehrere AD-Objekte (mehrere Gesamtstrukturen) für denselben Benutzer vorliegen können, wählt das Synchronisierungsmodul das richtige Objekt basierend auf der `Microsoft.InfromADUserAccountEnabled.xxx`-Verbindung aus.
 8.	Sobald das Benutzerkonto ermittelt wurde, wird versucht, das Kennwort direkt in der geeigneten AD-Gesamtstruktur zurückzusetzen.
 9.	Wenn die Kennwortzurücksetzung erfolgreich war, wird der Benutzer darüber informiert, dass das Kennwort geändert wurde, und der Vorgang ist damit abgeschlossen.
@@ -73,7 +73,7 @@ In der nachstehenden Tabelle wird beschrieben, welche Szenarien für welche Vers
 Die Kennwortrückschreibung ist ein äußerst sicherer und zuverlässiger Dienst. Zum Schutz Ihrer Informationen wird ein vierstufiges Sicherheitsmodell angewendet, das nachfolgend beschrieben wird.
 
 - **Mandantenspezifisches Service Bus Relay** – Beim Einrichten des Diensts wird ein mandantenspezifisches Service Bus Relay eingerichtet, das durch ein zufällig generiertes, sicheres Kennwort geschützt wird, auf das Microsoft keinen Zugriff hat.
-- **Nicht zugänglicher, sicherer Kryptografieschlüssel für die Kennwortverschlüsselung** – Nach der Erstellung des Service Bus Relays wird ein sicherer symmetrischer Schlüssel erstellt, mit dem das Kennwort verschlüsselt wird, bevor es gesendet wird. Dieser Schlüssel liegt ausschließlich im Mandantenspeicher für geheime Schlüssel in der Cloud vor, der streng geschützt und überwacht wird, wie jedes Kennwort im Verzeichnis.
+- **Nicht zugänglicher, sicherer Kryptografieschlüssel für die Kennwortverschlüsselung** – Nach der Erstellung des Service Bus Relays wird ein sicherer symmetrischer Schlüssel erstellt, mit dem das Kennwort verschlüsselt wird, bevor es gesendet wird. Dieser Schlüssel liegt ausschließlich im Speicher für geheime Schlüssel Ihres Unternehmens in der Cloud vor, der streng geschützt und überwacht wird, wie jedes Kennwort im Verzeichnis.
 - **TLS nach Industriestandard** – Beim Zurücksetzen oder Ändern eines Kennworts in der Cloud wird das Klartextkennwort mit Ihrem öffentlichen Schlüssel verschlüsselt. Anschließend wird es in eine HTTPS-Nachricht eingefügt und über einen mithilfe der SSL-Zertifikate von Microsoft verschlüsselten Kanal an Ihre Service Bus Relay gesendet. Nachdem die Nachricht vom Service Bus empfangen wurde, wird der lokale Agent aktiviert, authentifiziert sich beim Service Bus mit dem zuvor generierten sicheren Kennwort, nimmt die verschlüsselte Nachricht entgegen, entschlüsselt diese mit dem generierten privaten Schlüssel und versucht anschließend, das Kennwort über die AD DS-SetPassword-API festzulegen. In diesem Schritt kann Ihre lokale AD-Kennwortrichtlinie (Komplexität, Alter, Verlauf, Filter usw.) in der Cloud erzwungen werden.
 - **Richtlinien zum Nachrichtenablauf** – Falls die Nachricht im Service Bus verbleibt, weil der lokale Dienst nicht verfügbar ist, kommt es nach wenigen Minuten zu einem Timeout, und die Nachricht wird entfernt, um die Sicherheit weiter zu erhöhen.
 
@@ -281,4 +281,4 @@ In der folgenden Tabelle wird beschrieben, wo und wie diese Daten während des V
 [001]: ./media/active-directory-passwords-learn-more/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

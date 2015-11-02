@@ -1,90 +1,127 @@
-<properties 
-    pageTitle="Kann ich Azure AD verwenden, um einmaliges Anmelden (SSO) für meine gesamten Anwendungen zu aktivieren | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie mit Azure Active Directory den Geltungsbereich einer Identität und deren Verwaltung erweitern können." 
-    services="active-directory" 
-    authors="markusvi"  
-    documentationCenter="na" 
-    manager="stevenpo"/>
+<properties
+   pageTitle="Verwalten von Anwendungen mit Azure Active Directory | Microsoft Azure"
+   description="Dieser Artikel erläutert die Vorteile der Integration von Azure Active Directory in lokale, Cloud- und SaaS-Anwendungen."
+   services="active-directory"
+   documentationCenter=""
+   authors="ihenkel"
+   manager="stevenpo"
+   editor=""/>
 
-<tags 
-    ms.service="active-directory" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.tgt_pltfrm="na" 
-    ms.workload="identity" 
-    ms.date="10/12/2015" 
-    ms.author="markvi" />
+   <tags
+      ms.service="active-directory"
+      ms.devlang="na"
+      ms.topic="article"
+      ms.tgt_pltfrm="na"
+      ms.workload="identity"
+      ms.date="10/16/2015"
+      ms.author="inhenk"/>
 
+# Verwalten von Anwendungen mit Azure Active Directory (AD)
 
-# Kann ich Azure AD verwenden, um einmaliges Anmelden (SSO) für meine gesamten Anwendungen zu aktivieren
-Dieser Artikel richtet sich an IT-Entscheidungsträger, die sich über den geschäftlichen Nutzen informieren möchten, den Azure Active Directory für Anwendungen der Organisation bietet.
+## Übersicht
 
-## Ausführen von Apps in einer cloudbasierten Umgebung  
+Abgesehen vom eigentlichen Workflow oder Inhalt gibt es für Unternehmen zwei grundlegende Anforderungen für alle Anwendungen:
 
-In der heutigen cloudbasierten Zeit finden Sie Tausende von Apps für jede Aufgabe. IT-Abteilungen kennen häufig nicht einmal die SaaS-Apps, die in ihren Organisationen verwendet werden. In vielen Fällen ist die Verwendung der App bekannt, aber die Einrichtung von Governance und Sicherheit ist teuer und zeitaufwändig. Viele der Anwendungen unterstützen die Integration in Identitätssysteme der Unternehmen nicht. In anderen Fällen werden einmalige Integrationen aufgrund der Kosten und der Komplexität vermieden.
+1. Für eine gesteigerte Produktivität sollte es einfach sein, Anwendungen zu ermitteln und darauf zuzugreifen.
 
-Daraus ergibt sich:
+2. Um Sicherheit und Governance zu ermöglichen, benötigt die Organisation die Kontrolle und einen Überblick darüber, wer auf die einzelnen Anwendungen zugreifen kann und diese Möglichkeit auch nutzt.
 
-- Viele Organisationen haben Bedenken in Bezug auf nicht autorisierten Zugriff auf Unternehmensdaten, mögliche Datenverluste und andere Sicherheitsrisiken der Anwendung, die durch die Einführung nicht verwalteter Anwendungen entstehen. Da sie nicht wissen, welche und wie viele Apps verwendet werden, scheint bereits die Erstellung eines Plans zum Umgang mit diesen Risiken eine schier unlösbare Aufgabe.
-- Administratoren müssen alle IAM-Dienstanbieter einzeln verwalten, die von den verwalteten Apps in Ihre Umgebung eingeführt werden. Dies umfasst Aufgaben wie das Erstellen und Löschen von Benutzern und Gruppen sowie das Gewähren oder Aufheben von Zugriff auf diese Apps.
-- Die Benutzer müssen sich für den Zugriff auf die Apps, mit denen sie arbeiten müssen, verschiedene Anmeldeinformationen merken. Vergessene Kennwörter haben für viele Organisationen einen großen Einfluss auf die Betriebskosten. Gemeinsam ist all diesen Problemen, dass sie sich negativ auf die Produktivität Ihrer Benutzer und die Betriebskosten auswirken.  
- 
-## Wie hilft Azure Active Directory?
-Azure Active Directory hilft Ihnen, diese Probleme zu beheben, indem Sie einfach die vorhandene Identitätsinfrastruktur auf die Cloud erweitern können. Dadurch erreichen Sie Folgendes:
+In Bezug auf Cloudanwendungen gelingt dies am besten über Identitäten, mit denen gesteuert wird, „*WER zu WAS berechtigt ist“*.
 
-- Erweitern der Reichweite Ihrer mobilen Benutzer für Apps 
-- Erweitern der Reichweite der Zugriffsverwaltung für Cloud-Apps 
-- Erkennen der Apps, auf die Ihre Benutzer zugreifen
+In Computerterminologie:
 
+- Das *Wer* wird als *Identität* bezeichnet – ein Datenspeicher, der aus Benutzern und Gruppen besteht.
 
-### Erweitern der Reichweite Ihrer Identität für Apps 
+- Das *Was* nennt man *Zugriffsverwaltung* – die Verwaltung des Zugriffs auf geschützte Ressourcen.
 
-Standardmäßig bietet Azure Active Directory SSO für Cloud-Apps, die in Azure und anderen Microsoft-Onlinediensten wie Office 365, CRM Online und Intune gehostet werden.
+Beide Komponenten werden zusammen als *Identity and Access Management (IAM)* (Identitäts- und Zugriffsverwaltung) bezeichnet, was durch die [Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam)-Gruppe definiert wird als „die Sicherheitsdisziplin, die den richtigen Personen zur rechten Zeit und aus den richtigen Gründen den Zugriff auf die richtigen Ressourcen ermöglicht*“.
 
-Darüber hinaus kann Azure Active Directory der Identitätsbroker für einmaliges Anmelden bei Apps in anderen öffentlichen Clouds wie Google, Amazon, IBM und anderen sein. <br> Wenn eine App allgemein bekannt oder beliebt ist, wird sie vorab in den App-Katalog von Azure Active Directory integriert. Heute finden Sie etwa 2500 vorab integrierte Apps im App-Katalog, und die Anzahl wächst kontinuierlich. <br> Das Konfigurieren von SSO für eine der vorab integrierten Apps im App-Katalog ist mit wenigen Klicks möglich. Was geschieht, wenn meine App noch nicht im App-Katalog aufgeführt ist? Alle öffentlichen Apps können mithilfe eines Assistenten in Azure Active Directory integriert werden, und auf diese Weise kann SSO für sie aktiviert werden. Weitere Informationen finden Sie unter [Bereitstellen des einmaligen Anmeldens mithilfe von Azure Active Directory für neu erworbenen SaaS-Apps](active-directory-single-sign-on-newly-acquired-saas-apps.md) und [Integrieren von Azure Active Directory-SSO in vorhandenen Apps](active-directory-sso-integrate-existing-apps.md).<br> Welche Apps werden von Ihrer Organisation entwickelt? Wir bieten Ihnen die entsprechende Dokumentation, damit die Entwickler die von Ihrer Organisation entwickelten Apps einfach in Azure Active Directory integrieren können. Weitere Informationen finden Sie unter [Azure AD und Anwendungen: Leitfaden für Entwickler](active-directory-applications-guiding-developers-for-lob-applications.md).
+Wo liegt also das Problem? Wenn IAM *nicht zentral mit einer integrierten Lösung verwaltet* wird:
 
-Um Ihnen Unterstützung für vorab integrierte Apps, öffentliche Apps, die nicht im App-Katalog enthalten sind, und die Apps, die von Ihrer Organisation entwickelt wurden, zu bieten, kann mit Azure Active Directory SSO für alle Cloud-Apps bereitgestellt werden.
+- Identitätsadministratoren müssen die einzelnen Benutzerkonten in allen Anwendungen separat erstellen und aktualisieren – eine redundante und zeitaufwändig Aktivität.
 
-Der Nutzen von Azure Active Directory geht über Cloud-Apps hinaus. Mit Azure Active Directory können Sie die Reichweite von Azure-Identitäten erweitern, indem Sie über SSO sicheren Remotezugriff auf lokale Apps bereitstellen. Dies bedeutet, dass für Remotezugriff keine Technologien wie VPNs oder andere herkömmliche Remotezugriffsinfrastrukturen erforderlich sind, um auf lokale Web-Apps zuzugreifen. Azure Active Directory bietet diese Funktionalität über App-Proxyfunktionen.
+- Benutzer müssen sich für den Zugriff auf die Anwendungen, die sie für ihre Arbeit benötigen, mehrere Anmeldeinformationen merken, da sie insbesondere dazu aufgefordert werden, aus Sicherheitsgründen nicht dasselbe Kennwort für jede Anwendung zu verwenden. Demzufolge neigen Benutzer dazu, ihre Kennwörter aufzuschreiben oder andere Lösungen zur Kennwortverwaltung zu verwenden, was zu weiteren Risiken für die Datensicherheit führt.
 
-Das herkömmliche SSO-Modell basiert auf einer Zuordnung von zwei einzelnen Konten in zwei Identitätsrepositorys. Mit Azure Active Directory können Sie auch ein einzelnes Konto einem freigegebenen Unternehmenskonto wie dem Twitter-Konto Ihres Unternehmens zuordnen. Durch das Implementieren von SSO für Ihre freigegebenen Unternehmenskonten müssen die Kontoanmeldeinformationen nicht tatsächlich für Ihre Benutzer freigegeben werden, was den Schutz dieser Konten deutlich verbessert. Weitere Informationen dazu finden Sie unter [Freigeben von Konten in Azure AD](active-directory-sharing-accounts.md).
+- Durch redundante, zeitaufwändige Aktivitäten verringert sich der Zeitraum, in dem Benutzer und Administratoren sich den Geschäftsaktivitäten widmen, die das Betriebsergebnis Ihres Unternehmens erhöhen.
 
-Durch die Erweiterung der Reichweite Ihrer Identitäten erhalten Sie mit einem Kennwort Zugriff auf Tausende Apps.
+Was hält Organisationen im Allgemeinen davon ab, integrierte IAM-Lösungen einzuführen?
 
+- Die technischsten Lösungen basieren auf Softwareplattformen, die bereitgestellt und von jeder Organisation für ihre eigenen Anwendungen angepasst werden müssen.
 
+- Cloudanwendungen werden häufig schneller eingeführt als die IT-Organisation vorhandene IAM-Lösungen integrieren kann.
 
-### Erweitern der Reichweite der Zugriffsverwaltung für Cloud-Apps
+- Tools für Sicherheit und Überwachung erfordern eine zusätzliche Anpassung und Integration, um umfassende E2E-Szenarien zu erzielen.
 
-Das Verwalten des Zugriffs auf Ihre Cloud-Apps ist teuer, wenn Sie es manuell App für App durchführen müssen. Mit Azure Active Directory können Sie den Zugriff auf Ihre Cloud-Apps basierend auf Gruppen über eine zentrale Stelle, dem Azure-Portal, verwalten. Sie können einzelnen Benutzern oder sogar Gruppen Zugriff gewähren. Weitere Informationen finden Sie unter [Verwalten des Zugriffs auf Apps](active-directory-managing-access-to-apps.md).
+## Azure Active Directory-Integration in Anwendungen
 
-Einige Apps wie Salesforce, Box, Google Apps und Concur bieten Automatisierungsschnittstellen für die Erstellung und Entfernung (oder Deaktivierung) von Konten. Wenn ein Anbieter eine solche Schnittstelle anbietet, wird sie von Azure Active Directory genutzt. Anders ausgedrückt, unterstützt Azure Active Directory die automatisierte Benutzerbereitstellung für Apps, die eine entsprechende Automatisierungsschnittstelle bieten.
+Azure Active Directory (AD) ist die umfassende (IDaaS)-Lösung (Identity-as-a-Service) von Microsoft, die IAM als Clouddienst ermöglicht und eine integrierte Zugriffsverwaltung, einmaliges Anmelden (Single Sign-On, SSO) und Berichtfunktionen [vorinstalliert in Tausenden von Anwendungen](https://azure.microsoft.com/marketplace/active-directory/) bereitstellt, einschließlich Salesforce, Google Apps, Box, Concur und vielen mehr. Mit Azure AD gelten für Anwendungen, die Sie für Ihre Partner und Kunden (Business oder Consumer) veröffentlichen, dieselben Identitäts- und Zugriffsverwaltungsfunktionen, sodass Sie sich auf Ihr Hauptgeschäft konzentrieren können.
 
-Mit der automatisierten Benutzerbereitstellung:
+Der Nutzen von Azure AD geht über Cloudanwendungen hinaus. Sie können es auch mit lokalen Anwendungen einsetzen, indem Sie sicheren Remotezugriff bereitstellen. Somit sind VPNs oder andere herkömmliche Systeme zur Remotezugriffsverwaltung nicht erforderlich.
 
-- Wenn einem Benutzer Zugriff auf eine zugehörige App gewährt wurde, wird von Azure Active Directory automatisch der App das erforderliche SSO-Konto bereitgestellt.
-- Wenn das Konto eines Benutzers in Azure Active Directory gelöscht wird, wird das Konto in der App entweder deaktiviert oder gelöscht. Das Konfigurieren der automatisierten Benutzerbereitstellung bietet Ihnen die folgenden Vorteile:
-- 	Es reduziert die Betriebskosten, da administrative Aufgaben automatisiert werden, die andernfalls von Ihrem IT-Personal durchgeführt werden müssten.
-- Es verbessert die Sicherheit Ihrer Umgebung, da das Risiko verringert wird, dass nicht erforderlicher Zugriff auf Apps möglich ist.
+Was geschieht, wenn Sie eine Anwendung implementieren müssen, die im Anwendungskatalog noch nicht aufgeführt ist? Auch wenn es etwas zeitaufwändiger ist als das Konfigurieren von SSO für Anwendungen über den Katalog, bietet Azure AD einen Assistenten, der Sie bei der Konfiguration unterstützt.
 
-Weitere Informationen zur automatisierten Benutzerbereitstellung finden Sie unter [Automatisieren der Bereitstellung und Bereitstellungsaufhebung von Benutzern für SaaS-Anwendungen mit Azure Active Directory](active-directory-saas-app-provisioning.md).
+Durch die Bereitstellung einer zentralen Zugriffsverwaltung und der einmaligen Anmeldung (SSO) für all Ihre Anwendungen bietet Azure AD die Lösung für Probleme mit der Datensicherheit und Produktivität.
 
+- Benutzer können mit einer einzigen Anmeldung auf mehrere Anwendungen zugreifen und mehr Zeit auf Verdienstmöglichkeiten oder Geschäftsvorgänge verwenden.
 
-### Erkennen der Apps, auf die Ihre Benutzer zugreifen
+- Identitätsadministratoren können den Zugriff auf Anwendungen an zentraler Stelle verwalten.
 
-Mit SSO und Kontobereitstellung bietet Azure Active Directory leistungsfähige Mechanismen, um zu verbessern, wie Ihre Benutzer und Administratoren mit den Ihnen bekannten Apps in Ihrer Umgebung arbeiten können. In modernen Unternehmen sind jedoch den IT-Abteilungen häufig nicht alle verwendeten Cloud-Apps. Mit Cloud App Discovery bietet Azure Active Directory auch eine Lösung zum Erkennen dieser Apps. Cloud App Discovery ermöglicht Ihnen Folgendes:
+Der Vorteil für den Benutzer und für Ihr Unternehmen liegt auf der Hand. Werfen wir einen Blick auf die Vorteile für einen Identitätsadministrator und die Organisation.
 
-- Ermitteln von verwendeten Apps und Messen der Nutzung anhand der Benutzeranzahl, dem Datenverkehrsvolumen oder der Anzahl von Webanforderungen in der App.
-- Identifizieren der Benutzer, die eine App verwenden.
-- Exportieren der Daten zur zusätzlichen Offlineanalyse.
-- Priorisieren von Apps, die der Kontrolle durch die IT-Abteilung unterliegen sollen, und einfaches Integrieren von Apps, um das einmalige Anmelden und die Benutzerverwaltung zu ermöglichen.
+## Vorteile der integrierten Anwendung
 
-Weitere Informationen zu Cloud App Discovery finden Sie unter [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
+Der SSO-Vorgang besteht aus zwei Schritten:
 
+- Authentifizierung: der Prozess zur Überprüfung der Benutzeridentität.
 
-## Wie fange ich an?
+- Autorisierung: die Entscheidung, den Zugriff auf eine Ressource durch eine Zugriffsrichtlinie zu ermöglichen oder zu sperren.
 
-Wenn Sie Azure AD noch nicht nutzen und ein IT-Administrator sind:
+Bei Verwendung von Azure AD zum Verwalten von Anwendungen und zum Aktivieren der einmaligen Anmeldung:
 
-- [Probieren Sie es aus!](https://azure.microsoft.com/trial/get-started-active-directory) – Registrieren Sie sich noch heute über diesen Link für eine kostenlose 30-Tage-Testversion, und stellen Sie Ihre erste Cloudlösung in weniger als 5 Minuten bereit.
+- Die Authentifizierung erfolgt über das lokale (z. B. AD) oder das Azure AD-Konto des Benutzers.
 
-<!---HONumber=Oct15_HO3-->
+- Die Autorisierung wird anhand der Azure AD-Zuweisungs- und Schutzrichtlinie ausgeführt und gewährleistet eine konsistente Endbenutzeroberfläche. Sie ermöglicht Ihnen das Hinzufügen von Zuweisungs-, Standort- und MFA-Bedingungen für beliebige Anwendungen, unabhängig von deren internen Funktionen.
+
+Es wichtig zu verstehen, dass die Anwendung der Autorisierung auf die Zielanwendung davon abhängt, wie die Anwendung in Azure AD integriert wurde.
+
+- **Vom Dienstanbieter vorinstallierte Anwendungen** Wie Office 365 und Azure handelt es sich hierbei um Anwendungen, die direkt auf Azure AD aufbauen und es für ihre umfassenden Identitäts- und Zugriffsverwaltungsfunktionen verwenden. Der Zugriff auf diese Anwendungen wird über Verzeichnisinformationen und die Ausstellung von Token aktiviert.
+
+- **Von Microsoft vorinstallierte und benutzerdefinierte Anwendungen** Hierbei handelt es sich um unabhängige Cloudanwendungen, die auf einem internen Anwendungsverzeichnis basieren und unabhängig von Azure AD verwendet werden können. Der Zugriff auf diese Anwendungen wird durch das Ausgeben anwendungsspezifischer Anmeldeinformationen ermöglicht, die einem Anwendungskonto zugeordnet werden. Abhängig von den Anwendungsfunktionen handelt es sich bei den Anmeldeinformationen um ein Verbundtoken oder um einen Benutzernamen und ein Kennwort für ein Konto, das zuvor in der Anwendung bereitgestellt wurde.
+
+- **Lokale Anwendungen** Anwendungen, die über den Azure AD-Anwendungsproxy veröffentlicht werden und damit hauptsächlich den Zugriff auf lokale Anwendungen ermöglichen. Diese Anwendungen basieren auf einem zentralen lokalen Verzeichnis wie Windows Server Active Directory. Der Zugriff auf diese Anwendungen wird durch Auslösen des Proxys ermöglicht, um den Anwendungsinhalt für den Endbenutzer bereitzustellen und dabei die lokale Anmeldungsanforderung zu berücksichtigen.
+
+Wenn ein Benutzer Ihrer Organisation beitritt, müssen Sie z. B. für die primären Anmeldevorgänge ein Konto für den Benutzer in Azure AD erstellen. Wenn dieser Benutzer den Zugriff auf eine verwaltete Anwendung wie Salesforce benötigt, müssen Sie auch ein Konto für diesen Benutzer in Salesforce erstellen und mit dem Azure-Konto verknüpfen, damit SSO funktioniert. Wenn der Benutzer die Organisation verlässt, ist es ratsam, das Azure AD-Konto und alle entsprechenden Konten in den IAM-Speichern der Anwendungen zu löschen, auf die der Benutzer zugreifen konnte.
+
+## Zugriffserkennung
+
+In modernen Unternehmen sind die IT-Abteilungen häufig nicht über alle verwendeten Cloudanwendungen unterrichtet. Mit Cloud App Discovery bietet Azure Active Directory Ihnen auch eine Lösung zum Erkennen dieser Apps.
+
+## Kontenverwaltung
+
+Ursprünglich ist das Verwalten von Konten in den verschiedenen Anwendungen ein manueller Prozess, der von IT- oder Supportpersonal in der Organisation durchgeführt wird. Azure AD hat die Kontenverwaltung vollständig über alle von Dienstanbietern integrierten Anwendungen und über solche vorinstallierten Anwendungen von Microsoft hinweg automatisiert, die eine automatische Benutzerbereitstellung oder SAML JIT unterstützen.
+
+## Automatisierte Benutzerbereitstellung
+
+Einige Anwendungen bieten Automatisierungsschnittstellen für die Erstellung und Entfernung (oder Deaktivierung) von Konten. Wenn ein Anbieter eine solche Schnittstelle anbietet, wird sie von Azure AD genutzt. Dadurch werden die Betriebskosten reduziert, da Verwaltungsaufgaben automatisch ausgeführt werden, und die Sicherheit Ihrer Umgebung verbessert sich, da das Risiko eines unbefugten Zugriffs sinkt.
+
+## Zugriffsverwaltung
+
+Mithilfe von Azure AD können Sie den Zugriff auf Anwendungen mit individuellen oder regelgesteuerten Zuweisungen verwalten. Sie können die Zugriffsverwaltung auch an die richtigen Personen in der Organisation delegieren, um eine optimale Aufsicht sicherzustellen und die Belastung des Helpdesks zu reduzieren.
+
+## Lokale Anwendungen
+
+Mit dem integrierten Anwendungsproxy können Sie lokale Anwendungen für Ihre Benutzer veröffentlichen, um sowohl von einer konsistenten Zugriffsoberfläche mit moderner Cloudanwendung als auch von den Vorteilen der Azure AD-Überwachungs-, Berichterstellungs- und Sicherheitsfunktionen zu profitieren.
+
+## Berichterstellung und Überwachung
+
+Azure AD bietet integrierte Berichterstellungs- und Überwachungsfunktionen, mit denen Sie feststellen können, wer auf Anwendungen zugreifen kann und wer sie verwendet hat.
+
+## Zugehörige Funktionen
+
+Mit Azure AD können Sie Ihre Anwendungen mit fein abgestimmten Zugriffsrichtlinien und vorinstallierter MFA sichern. Weitere Informationen zu Azure MFA finden Sie unter [Azure MFA](https://azure.microsoft.com/services/multi-factor-authentication/).
+
+## Erste Schritte
+
+Erste Schritte in die Anwendungsintegration in Azure AD finden Sie unter [Erste Schritte zur Integration von Azure Active Directory in Anwendungen](active-directory-integrating-applications-getting-started.md).
+
+<!---HONumber=Oct15_HO4-->

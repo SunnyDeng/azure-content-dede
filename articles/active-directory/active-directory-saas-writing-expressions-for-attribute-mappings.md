@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Schreiben von Ausdrücken für Attributzuordnungen in Azure Active Directory"
+	pageTitle="Schreiben von Ausdrücken für Attributzuordnungen in Azure Active Directory | Microsoft Azure"
 	description="Erfahren Sie, wie Ausdruckszuordnungen verwendet werden können, um Attributwerte während der automatisierten Bereitstellung von SaaS-App-Objekten in Azure Active Directory in ein akzeptables Format zu transformieren."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	ms.author="markusvi"/>
 
 
@@ -305,6 +305,6 @@ Sie müssen die Zeitzone des Benutzers anhand des Bundesstaatscodes festlegen, d
 - **AUSGABE**: "Australien/Brisbane"
 
 
-[AZURE.INCLUDE [SaaS – Inhaltsverzeichnis](../../includes/active-directory-saas-toc.md)]
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

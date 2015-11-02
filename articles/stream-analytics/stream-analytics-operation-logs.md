@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Vorgangsprotokolle | Microsoft Azure" 
 	description="Stream Analytics-Vorgangsprotokolle" 
-	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
+	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -39,7 +39,7 @@ Auf der Dashboard-Registerkarte eines Stream Analytics-Auftrags wird eine Verkn
 So navigieren Sie manuell zu den Vorgangsprotokollen für Stream Analytics und andere Dienste im Azure-Portal:
 
 1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com) auf **Verwaltungsdienste**.
-2.	Wählen Sie **Stream Analytics** für **Typ** und den Namen des Auftrags für **Dienstname** aus.  
+2.	Wählen Sie **Stream Analytics** als **Typ** und den Namen des Auftrags als **Dienstname** aus.  
 
   ![Stream Analytics auswählen](./media/stream-analytics-operation-logs/02-stream-analytics-operation-logs.png)
 
@@ -57,7 +57,7 @@ Dadurch wird ein Blatt mit den Ereignissen der letzten 7 Tage für alle Ressourc
 
 Sie können nach Zeitraum und Status filtern, um die Protokolle für Ihren Auftrag anzuzeigen.
 
-Klicken Sie im Azure-Verwaltungsportal am unteren Fensterrand auf die Schaltfläche **Details**, um weitere Details zu einem ausgewählten Ereignis anzuzeigen.
+Klicken Sie im Azure-Verwaltungsportal unten im Fenster auf die Schaltfläche **Details**, um weitere Details zu einem ausgewählten Ereignis anzuzeigen.
 
   ![Details auswählen](./media/stream-analytics-operation-logs/03-stream-analytics-operation-logs.png)
 
@@ -83,7 +83,7 @@ Wählen Sie einen der Fehler aus, und klicken Sie auf **Details**, um weitere In
 
   ![Vorgangsdetails](./media/stream-analytics-operation-logs/05-stream-analytics-operation-logs.png)
 
-Falls Sie den [Support](http://azure.microsoft.com/support/options/) kontaktieren oder dem Team über das [MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics) Informationen bereitstellen müssen, beachten Sie die Vorgangsdetails, insbesondere die **Korrelations-ID**.
+Wenn Sie den [Support](http://azure.microsoft.com/support/options/) kontaktieren oder dem Team über das [MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics) Informationen bereitstellen möchten, beachten Sie die Vorgangsdetails, insbesondere die **Korrelations-ID**.
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -96,4 +96,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

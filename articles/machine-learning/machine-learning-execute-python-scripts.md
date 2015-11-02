@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Ausführen von Python-Machine Learning-Skripts | Microsoft Azure" 
 	description="Beschreibt die Entwurfsprinzipien, die der Unterstützung für Python-Skripts in Azure Machine Learning zugrunde liegen, sowie die grundlegenden Verwendungsszenarien, Funktionen und Einschränkungen." 
-	keywords="python machine learning,pandas,python pandas,python scripts, execute python scripts"
+	keywords="maschinelles Lernen in Python,Pandas,Python Pandas,Python-Skripts,Ausführen von Python-Skripts"
 	services="machine-learning"
 	documentationCenter="" 
 	authors="bradsev" 
@@ -45,12 +45,12 @@ Ebenso wie sein R-Äquivalent, das [Execute R Script][execute-r-script]-Modul, a
 3.	*Muss eine nahtlos mit anderen Azure Machine Learning-Modulen einsetzbar sein.* Das Modul [Execute Python Script][execute-python-script] akzeptiert Azure Machine Learning-Standard-Datasets als Eingabe und Ausgabe. Das zugrunde liegende Framework verbindet transparent und effizient die Laufzeiten von Azure Machine Learning und Python (mit Unterstützung von Features wie z. B. fehlenden Werten). Python kann daher in Verbindung mit vorhandenen Azure Machine Learning-Workflows eingesetzt werden, auch mit solchen, die R- und SQLite-Aufrufe verwenden. Daher kann man sich Workflows vorstellen, die folgende Aktionen ausführen:
   * Verwenden von Python und Pandas zur Datenvorbereitung und -bereinigung 
   * Einführen von Daten in eine SQL-Transformation, wobei mehrere Datasets zu Features verknüpft werden 
-  * Trainieren von Modellen mit der umfassenden Sammlung von Algorithmen in Azure Maschine Learning 
+  * Trainieren von Modellen mit der umfassenden Sammlung von Algorithmen in Azure Machine Learning 
   * Evaluieren und Nachverarbeiten der Ergebnisse mit R.
 
 
 ## Grundlegende Verwendungsszenarien für Python-Skripts in Machine Learning
-In diesem Abschnitt untersuchen wir einige der grundlegenden Anwendungsmöglichkeiten des Moduls [Execute Python Script][execute-python-script]. Wie bereits erwähnt, werden alle Eingaben in das Python-Modul als Pandas-Datenrahmen verfügbar gemacht. Weitere Informationen zu Python Pandas und wie es zum effektiven und effizienten Verarbeiten von Daten verwendet werden kann, finden Sie in *Python for Data Analysis* (Sebastopol, CA.: O' Reilly, 2012) von W. McKinney. Die Funktion muss einen einzigen Pandas-Datenrahmen zurückgeben, der in eine Python-[Sequenz](https://docs.python.org/2/c-api/sequence.html) wie z. B. ein Tupel, eine Liste oder ein NumPy-Array eingebettet ist. Das erste Element der Sequenz wird anschließend am ersten Ausgabeport des Moduls zurückgegeben. Dieses Schema wird in Abbildung 2 dargestellt.
+In diesem Abschnitt untersuchen wir einige der grundlegenden Anwendungsmöglichkeiten des Moduls [Execute Python Script][execute-python-script]. Wie bereits erwähnt, werden alle Eingaben in das Python-Modul als Pandas-Datenrahmen verfügbar gemacht. Weitere Informationen zu Python Pandas und wie es zum effektiven und effizienten Verarbeiten von Daten verwendet werden kann, finden Sie in *Python for Data Analysis* (in englischer Sprache; Sebastopol (Kalifornien, USA): O' Reilly, 2012) von W. McKinney. Die Funktion muss einen einzigen Pandas-Datenrahmen zurückgeben, der in eine Python-[Sequenz](https://docs.python.org/2/c-api/sequence.html) wie z. B. ein Tupel, eine Liste oder ein NumPy-Array eingebettet ist. Das erste Element der Sequenz wird anschließend am ersten Ausgabeport des Moduls zurückgegeben. Dieses Schema wird in Abbildung 2 dargestellt.
 
 ![image3](./media/machine-learning-execute-python-scripts/map-of-python-script-inputs-outputs.png)
 
@@ -72,7 +72,7 @@ Wie bereits erwähnt, werden Eingabedatasets in Azure Machine Learning in Datenr
 3.	Azure Machine Learning-Datasets können keine doppelten Spaltennamen aufweisen und keine Spaltennamen, die keine Zeichenfolgen sind. Wenn ein Ausgabedatenrahmen nicht-numerische Spalten enthält, ruft das Framework `str` für die Spaltennamen auf. Ebenso werden alle doppelten Spaltennamen automatisch geändert, um sicherzustellen, dass die Namen eindeutig sind. Das Suffix (2) wird dem ersten Duplikat, das Suffix (3) dem zweiten Duplikat usw. hinzugefügt.
 
 ## Operationalisieren von Python-Skripts
-Alle [Execute Python Script][execute-python-script]-Module in einem Bewertungsversuch werden bei der Veröffentlichung als Webdienst aufgerufen. Abbildung 3 zeigt beispielsweise einen Bewertungsversuch, der den Code zum Auswerten eines einzelnen Python-Ausdrucks enthält.
+Alle [Execute Python Script][execute-python-script]-Module in einem Bewertungsexperiment werden bei der Veröffentlichung als Webdienst aufgerufen. Abbildung 3 zeigt beispielsweise ein Bewertungsexperiment, das den Code zum Auswerten eines einzelnen Python-Ausdrucks enthält.
 
 ![image4](./media/machine-learning-execute-python-scripts/figure3a.png)
 
@@ -145,7 +145,7 @@ Die Python-Funktion zum Berechnen der Wichtigkeitsbewertungen und zum Sortieren 
 
 ![Bild11](./media/machine-learning-execute-python-scripts/figure8.png)
 
-Abbildung 10. Funktion zum Klassifizieren von Features nach Bewertungen. Der folgende Versuch berechnet anschließend die Wichtigkeitsbewertungen der Features und gibt sie im Dataset "Pima Indian Diabetes" in Azure Maschine Learning aus:
+Abbildung 10. Funktion zum Klassifizieren von Features nach Bewertungen. Der folgende Versuch berechnet anschließend die Wichtigkeitsbewertungen der Features und gibt sie im Dataset "Pima Indian Diabetes" in Azure Machine Learning aus:
 
 ![Bild12](./media/machine-learning-execute-python-scripts/figure9a.png) ![Bild13](./media/machine-learning-execute-python-scripts/figure9b.png)
 	
@@ -174,4 +174,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

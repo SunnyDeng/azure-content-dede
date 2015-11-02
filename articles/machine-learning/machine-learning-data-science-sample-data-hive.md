@@ -1,8 +1,7 @@
 <properties
 	pageTitle="Extrahieren von Stichproben aus Daten in Azure HDInsight Hive-Tabellen | Microsoft Azure"
-	description="Komprimieren von Daten in Azure HDInsight Hive-Tabellen"
+	description="Komprimieren von Daten in Azure HDInsight (Hadoop) Hive-Tabellen"
 	services="machine-learning,hdinsight"
-	solutions=""
 	documentationCenter=""
 	authors="hangzh-msft"
 	manager="paulettm" 
@@ -14,12 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="10/20/2015"
 	ms.author="hangzh;bradsev" />
 
 # Extrahieren von Stichproben aus Daten in Azure HDInsight Hive-Tabellen
 
-Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie i. d. R. eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Auf diese Weise wird über Advanced Analytics Process and Technology (ADAPT) in Azure Machine Learning eine schnelle Entwicklung von Prototypen aus den Datenverarbeitungsfunktionen und Machine Learning-Modellen ermöglicht.
+Dieses **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
+
+[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
+
+## Einführung
+
+Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie i. d. R. eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Die Funktion besteht innerhalb des Cortana-Analyseprozesses darin, schnell Prototypen der Funktionen zur Datenverarbeitung und Modelle für das maschinelle Lernen zu erstellen.
 
 In diesem Artikel wird das Komprimieren von Daten in Azure HDInsight Hive-Tabellen mithilfe von Hive-Abfragen beschrieben. Dabei werden drei häufig verwendete Samplingmethoden behandelt:
 
@@ -100,4 +105,4 @@ Dies ist eine Beispielabfrage:
 Informationen zu komplexeren Methoden für das Extrahieren von Stichproben, die in Hive verfügbar sind, finden Sie unter [LanguageManual Sampling](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Sampling) (in englischer Sprache).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

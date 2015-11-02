@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Definieren von Ausgaben | Microsoft Azure" 
 	description="Grundlegendes zu Stream Analytics-Ausgaben" 
-	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
+	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
 	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -39,7 +39,7 @@ Um verschiedene Anwendungsmuster zu aktivieren, stellt Azure Stream Analytics si
 
 ## Blob-Speicher ##
 
-Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blobspeicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](./articles/storage-dotnet-how-to-use-blobs.md).
+Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blob-Speicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](./articles/storage-dotnet-how-to-use-blobs.md).
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Blobausgabe.
 
@@ -63,7 +63,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Speichercontainer</td>
-<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blobdienst gespeichert sind. Wenn Sie ein Blob in den Blobdienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
+<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blob-Dienst gespeichert sind. Wenn Sie ein Blob in den Blob-Dienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
 </tr>
 <tr>
 <td>Präfixmusters des Pfads [optional]</td>
@@ -169,7 +169,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 | Tabellenname | Der Name der Tabelle. Die Tabelle wird erstellt, wenn sie noch nicht vorhanden ist. |
 | Partitionsschlüssel | Der Name der Ausgabespalte mit dem Partitionsschlüssel. Der Partitionsschlüssel ist ein eindeutiger Bezeichner für die Partition innerhalb einer Tabelle, die den ersten Teil des Primärschlüssels einer Entität bildet. Dabei handelt es sich um einen Zeichenfolgenwert, der bis zu 1 KB groß sein kann. |
 | Zeilenschlüssel | Der Name der Ausgabespalte, die den Zeilenschlüssel enthält. Der Zeilenschlüssel ist ein eindeutiger Bezeichner für eine Entität innerhalb einer Partition. Sie bildet den zweiten Teil des Primärschlüssels einer Entität. Der Zeilenschlüssel ist ein Zeichenfolgenwert, der bis zu 1 KB groß sein kann. |
-| Batchgröße | Dies ist die Anzahl von Datensätzen für einen Batchvorgang. In der Regel ist die Standardeinstellung für die meisten Aufträge ausreichend. Ausführlichere Informationen zum Ändern dieser Einstellung finden Sie unter [TableBatchOperation-Klasse](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx). |
+| Batchgröße | Dies ist die Anzahl von Datensätzen für einen Batchvorgang. In der Regel ist die Standardeinstellung für die meisten Aufträge ausreichend. Ausführlichere Informationen zum Ändern dieser Einstellung finden Sie in der [TableBatchOperation-Spezifikation](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx) (in englischer Sprache). |
 
 ## Service Bus-Warteschlangen
 
@@ -191,7 +191,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 
 ## Service Bus-Themen
 
-Während Service Bus-Warteschlangen eine 1: 1-Kommunikationsmethode vom Absender zum Empfänger bereitstellen, bieten [Service Bus-Themen](https://msdn.microsoft.com/library/azure/hh367516.aspx) eine 1: n-Form der Kommunikation.
+Während Service Bus-Warteschlangen eine 1:1-Kommunikationsmethode vom Absender zum Empfänger bereitstellen, bieten [Service Bus-Themen](https://msdn.microsoft.com/library/azure/hh367516.aspx) eine 1:n-Form der Kommunikation.
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Tabellenausgabe.
 
@@ -220,7 +220,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Kontoname</td>
-<td>Der Name des DocumentDB-Kontos. Dies kann auch der Endpunkt für das Konto sein.</td>
+<td>Der Name des DocumentDB-Kontos. Dies kann auch das Endgerät für das Konto sein.</td>
 </tr>
 <tr>
 <td>Kontoschlüssel</td>
@@ -265,4 +265,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

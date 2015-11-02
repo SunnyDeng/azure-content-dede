@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="DocumentDB-Programmierung: Gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie DocumentDB dazu verwenden, gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen in JavaScript zu schreiben. Erhalten Sie Tipps zur Datenbankprogrammierung und mehr." 
-	keywords="Database triggers, stored procedure, stored procedure, database program, sproc, documentdb, azure, Microsoft azure"
+	keywords="Datenbanktrigger, gespeicherte Prozedur, Datenbankprogramm, sproc, documentdb, Azure, Microsoft Azure"
 	services="documentdb" 
 	documentationCenter="" 
 	authors="aliuy" 
@@ -36,11 +36,11 @@ Kehren Sie dann zurück zu diesem Artikel, in dem Sie die Antworten auf die folg
 
 ## Einführung in die Programmierung von gespeicherten Prozeduren und die UDF-Programmierung
 
-Dieser Ansatz von *„JavaScript als modernes T-SQL„* befreit die Anwendungsentwickler von der Komplexität durch nicht übereinstimmende Systeme und objektrelationale Zuordnungstechnologien. Er hat auch eine Reihe spezifischer Vorteile, die zum Erstellen funktionsreicher Anwendungen genutzt werden können:
+Dieser Ansatz von *„JavaScript als modernes T-SQL“* befreit die Anwendungsentwickler von der Komplexität durch nicht übereinstimmende Systeme und objektrelationale Zuordnungstechnologien. Er hat auch eine Reihe spezifischer Vorteile, die zum Erstellen funktionsreicher Anwendungen genutzt werden können:
 
 -	**Prozedurale Logik:** JavaScript bietet als Programmiersprache auf höherer Ebene eine umfangreiche und vertraute Benutzeroberfläche zur Darstellung der Geschäftslogik. Sie können komplexe Abfolgen von Vorgängen mit direkterem Zugriff auf die Daten ausführen.
 
--	**Atomare Transaktionen:** DocumentDB gewährleistet, dass die innerhalb einer einzelnen gespeicherten Prozedur oder in einem Trigger ausgeführten Datenbankvorgänge atomarisch sind.. Dadurch kann eine Anwendung zusammengehörige Vorgänge in einem einzelnen Batch kombinieren, damit entweder alle Vorgänge oder keiner dieser Vorgänge erfolgreich ausgeführt werden kann.
+-	**Atomarische Transaktionen:** DocumentDB gewährleistet, dass die innerhalb einer einzelnen gespeicherten Prozedur oder in einem Trigger ausgeführten Datenbankvorgänge atomarisch sind. Dadurch kann eine Anwendung zusammengehörige Vorgänge in einem einzelnen Batch kombinieren, damit entweder alle Vorgänge oder keiner dieser Vorgänge erfolgreich ausgeführt werden kann.
 
 -	**Leistung:** Die Tatsache, dass JSON an sich dem JavaScript-Sprachsystem zugeordnet ist und auch die Basiseinheit für die Speicherung in DocumentDB darstellt, ermöglicht eine Reihe von Optimierungen wie die bequeme Realisierung von JSON-Dokumenten im Pufferpool und deren bedarfsgesteuerte Bereitstellung für den ausführenden Code. Es gibt weitere Leistungsvorteile, die der Übertragung der Geschäftslogik auf die Datenbank zugeordnet sind:
 	-	Batchverarbeitung – Entwickler können Vorgänge wie Einlagen gruppieren und dann zusammen übermitteln. Der Aufwand für die Latenz des Netzwerkdatenverkehrs und der erhöhte Speicheraufwand beim Erstellen separater Transaktionen werden erheblich verringert. 
@@ -50,7 +50,7 @@ Dieser Ansatz von *„JavaScript als modernes T-SQL„* befreit die Anwendungsen
 	-	Es wird eine Abstraktionsschicht über den Rohdaten hinzugefügt, die es Datenarchitekten gestattet, ihre Anwendungen unabhängig von den Daten zu entwickeln. Dies ist aufgrund der komplizierten Annahmen, die bei der direkten Behandlung der Daten zur Anwendung hinzugefügt werden müssen, insbesondere bei schemafreien Daten von Vorteil.  
 	-	Durch diese Abstraktion können Unternehmen ihre Daten schützen, indem sie den Zugriff über die Scripts optimieren.  
 
-Die Erstellung und Ausführung von Datenbanktriggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, einschließlich .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. <b>In diesem Lernprogramm wird das [Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)</b> verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
+Die Erstellung und Ausführung von Datenbanktriggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, z. B. .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. **In diesem Tutorial wird das [Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)** verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
 
 ## Gespeicherte Prozeduren
 
@@ -475,67 +475,9 @@ Die UDF kann anschließend wie im folgenden Beispiel in Abfragen verwendet werde
 ## JavaScript-Language Integrated Query (LINQ)-API
 Zusätzlich zu Abfragen mithilfe der SQL-Grammatik von DocumentDB ermöglicht das serverseitige SDK die Durchführung optimierter Abfragen mithilfe einer flüssigen JavaScript-Schnittstelle, die keinerlei SQL-Kenntnisse voraussetzt. Mit der JavaScript-Abfrage-API können Sie programmgesteuert Abfragen erstellen, indem Sie unter Verwendung einer Syntax, die mit den integrierten und weit verbreiteten JavaScript-Bibliotheken von ECMAScript5 wie lodash vergleichbar ist, Prädikatfunktionen in verkettbare Funktionsaufrufe übergeben. Abfragen werden von der JavaScript-Laufzeit zur effizienten Ausführung mithilfe von DocumentDB-Indizes analysiert.
 
-> [AZURE.NOTE]`__` (doppelter Unterstrich) ist ein Alias für `getContext().getCollection()`.
-> <br/>
-> Sie können also `__` oder `getContext().getCollection()` verwenden, um auf die JavaScript-Abfrage-API zuzugreifen.
+> [AZURE.NOTE]`__` (doppelter Unterstrich) ist ein Alias für `getContext().getCollection()`. <br/> Sie können also `__` oder `getContext().getCollection()` verwenden, um auf die JavaScript-Abfrage-API zuzugreifen.
 
-Folgende Funktionen werden unterstützt:
-<ul>
-<li>
-<b>chain() ... .value([callback] [, options])</b>
-<ul>
-<li>
-Startet einen verketteten Aufruf, der mit „value()“ abgeschlossen werden muss.
-</li>
-</ul>
-</li>
-<li>
-<b>filter(predicateFunction [, options] [, callback])</b>
-<ul>
-<li>
-Filtert die Eingabe anhand einer Prädikatfunktion, die „true/false“ zurückgibt, um Eingabedokumente in den resultierenden Satz einzuschließen oder auszuschließen. Diese Funktion verhält sich ähnlich wie eine WHERE-Klausel in SQL.
-</li>
-</ul>
-</li>
-<li>
-<b>map(transformationFunction [, options] [, callback])</b>
-<ul>
-<li> Wendet anhand einer angegebenen Transformationsfunktion eine Projektion an, die jedes Eingabeelement einem JavaScript-Objekt oder -Wert zuordnet. Diese Funktion verhält sich ähnlich wie eine SELECT-Klausel in SQL.
-</li>
-</ul>
-</li>
-<li>
-<b>pluck([propertyName] [, options] [, callback])</b>
-<ul>
-<li>
-Dies ist eine Kurzform für eine Zuordnung, die den Wert einer einzelnen Eigenschaft aus jedem Eingabeelement extrahiert.
-</li>
-</ul>
-</li>
-<li>
-<b>flatten([isShallow] [, options] [, callback])</b>
-<ul>
-<li> Kombiniert und vereinfacht Arrays aus jedem Eingabeelement zu einem einzigen Array. Diese Funktion verhält sich ähnlich wie „SelectMany“ in LINQ.
-</li>
-</ul>
-</li>
-<li>
-<b>sortBy([predicate] [, options] [, callback])</b>
-<ul>
-<li>
-Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-Datenstrom anhand des angegebenen Prädikats in aufsteigender Reihenfolge sortiert werden. Diese Funktion verhält sich ähnlich wie eine ORDER BY-Klausel in LINQ.
-</li>
-</ul>
-</li>
-<li>
-<b>sortByDescending([predicate] [, options] [, callback])</b>
-<ul>
-<li>
-Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-Datenstrom anhand des angegebenen Prädikats in absteigender Reihenfolge sortiert werden. Diese Funktion verhält sich ähnlich wie eine ORDER BY X DESC-Klausel in SQL.
-</li>
-</ul>
-</li>
-</ul>
+Folgende Funktionen werden unterstützt: <ul> <li> <b>chain() ... .value([callback] [, options])</b> <ul> <li> Startet einen verketteten Aufruf, der mit „value()“ abgeschlossen werden muss. </li> </ul> </li> <li> <b>filter(predicateFunction [, options] [, callback])</b> <ul> <li> Filtert die Eingabe anhand einer Prädikatfunktion, die „true/false“ zurückgibt, um Eingabedokumente in den resultierenden Satz einzuschließen oder auszuschließen. Diese Funktion verhält sich ähnlich wie eine WHERE-Klausel in SQL. </li> </ul> </li> <li> <b>map(transformationFunction [, options] [, callback])</b> <ul> <li> Wendet anhand einer angegebenen Transformationsfunktion eine Projektion an, die jedes Eingabeelement einem JavaScript-Objekt oder -Wert zuordnet. Diese Funktion verhält sich ähnlich wie eine SELECT-Klausel in SQL. </li> </ul> </li> <li> <b>pluck([propertyName] [, options] [, callback])</b> <ul> <li> Dies ist eine Kurzform für eine Zuordnung, die den Wert einer einzelnen Eigenschaft aus jedem Eingabeelement extrahiert. </li> </ul> </li> <li> <b>flatten([isShallow] [, options] [, callback])</b> <ul> <li> Kombiniert und vereinfacht Arrays aus jedem Eingabeelement zu einem einzigen Array. Diese Funktion verhält sich ähnlich wie „SelectMany“ in LINQ. </li> </ul> </li> <li> <b>sortBy([predicate] [, options] [, callback])</b> <ul> <li> Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-Datenstrom anhand des angegebenen Prädikats in aufsteigender Reihenfolge sortiert werden. Diese Funktion verhält sich ähnlich wie eine ORDER BY-Klausel in LINQ. </li> </ul> </li> <li> <b>sortByDescending([predicate] [, options] [, callback])</b> <ul> <li> Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-Datenstrom anhand des angegebenen Prädikats in absteigender Reihenfolge sortiert werden. Diese Funktion verhält sich ähnlich wie eine ORDER BY X DESC-Klausel in SQL. </li> </ul> </li> </ul>
 
 
 Bei der Verwendung innerhalb von Prädikat- und/oder Selektorfunktionen werden die folgenden JavaScript-Konstrukte automatisch optimiert, damit sie direkt für DocumentDB-Indizes ausgeführt werden:
@@ -610,140 +552,9 @@ Das folgende Codebeispiel zeigt, wie die JavaScript-Abfrage-API im Kontext einer
 ## Cheat Sheet für SQL und Javascript
 In der folgenden Tabelle sind verschiedene SQL-Abfragen und die entsprechenden JavaScript-Abfragen aufgeführt.
 
-Wie bei SQL-Abfragen muss bei Key-Eigenschaften von Dokumenten (z. B. `doc.id`) die Groß-/Kleinschreibung beachtet werden.
+Wie bei SQL-Abfragen muss bei Key-Eigenschaften von Dokumenten (z. B. `doc.id`) die Groß-/Kleinschreibung beachtet werden.
 
-<br/>
-<table border="1" width="100%">
-<colgroup>
-<col span="1" style="width: 40%;">
-<col span="1" style="width: 40%;">
-<col span="1" style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<th>SQL</th>
-<th>JavaScript-Abfrage-API</th>
-<th>Details</th>
-</tr>
-<tr>
-<td>
-<pre>
-SELECT *
-FROM docs
-</pre>
-</td>
-<td>
-<pre>
-__.map(function(doc) {
-    return doc;
-});
-</pre>
-</td>
-<td>Alle Dokumente (umgebrochen mit Fortsetzungstoken) bleiben unverändert.</td>
-</tr>
-<tr>
-<td>
-<pre>
-SELECT docs.id, docs.message AS msg, docs.actions FROM docs
-</pre>
-</td>
-<td>
-<pre>
-__.map(function(doc) {
-    return {
-        id: doc.id,
-        msg: doc.message,
-        actions: doc.actions
-    };
-});
-</pre>
-</td>
-<td>Projiziert die ID, Meldung (Alias für „msg“) und Aktion aus allen Dokumenten.</td>
-</tr>
-<tr>
-<td>
-<pre>
-SELECT * 
-FROM docs 
-WHERE docs.id="X998\_Y998"
-</pre>
-</td>
-<td>
-<pre>
-__.filter(function(doc) {
-    return doc.id === "X998\_Y998";
-});
-</pre>
-</td>
-<td>Fragt Dokumente mit dem folgenden Prädikat ab: id = "X998\_Y998".</td>
-</tr>
-<tr>
-<td>
-<pre>
-SELECT *
-FROM docs WHERE ARRAY_CONTAINS(docs.Tags, 123)
-</pre>
-</td>
-<td>
-<pre>
-__.filter(function(x) {
-    return x.Tags && x.Tags.indexOf(123) > -1;
-});
-</pre>
-</td>
-<td>Fragt Dokumente mit einer Tags-Eigenschaft ab, wobei „Tags“ ein Array mit dem Wert 123 ist.</td>
-</tr>
-<tr>
-<td>
-<pre>
-SELECT docs.id, docs.message AS msg
-FROM docs WHERE docs.id="X998_Y998"
-</pre>
-</td>
-<td>
-<pre>
-__.chain()
-    .filter(function(doc) {
-        return doc.id === "X998\_Y998";
-    })
-    .map(function(doc) {
-        return {
-            id: doc.id,
-            msg: doc.message
-        };
-    })
-    .value();
-</pre>
-</td>
-<td>Fragt Dokumente mit einem Prädikat, id = "X998\_Y998", ab und projiziert anschließend die ID und die Meldung (Alias für „msg“).</td>
-</tr>
-<tr>
-<td>
-<pre>
-SELECT VALUE tag
-FROM docs
-JOIN tag IN docs.Tags
-ORDER BY docs._ts
-</pre>
-</td>
-<td>
-<pre>
-__.chain()
-    .filter(function(doc) {
-        return doc.Tags && Array.isArray(doc.Tags);
-    })
-    .sortBy(function(doc) {
-    	return doc._ts;
-    })
-    .pluck("Tags")
-    .flatten()
-    .value()
-</pre>
-</td>
-<td>Filtert nach Dokumenten mit einer Array-Eigenschaft „Tags“, sortiert die resultierenden Dokumente anhand der Zeitstempel-Systemeigenschaft „_ts“ und projiziert und vereinfacht anschließend das Tags-Array.</td>
-</tr>
-</tbody>
-</table>
+<br/> <table border="1" width="100%"> <colgroup> <col span="1" style="width: 40%;"> <col span="1" style="width: 40%;"> <col span="1" style="width: 20%;"> </colgroup> <tbody> <tr> <th>SQL</th> <th>JavaScript-Abfrage-API</th> <th>Details</th> </tr> <tr> <td> <pre> SELECT * FROM docs </pre> </td> <td> <pre> \_\_.map(function(doc) { return doc; }); </pre> </td> <td>Alle Dokumente (umgebrochen mit Fortsetzungstoken) bleiben unverändert.</td> </tr> <tr> <td> <pre> SELECT docs.id, docs.message AS msg, docs.actions FROM docs </pre> </td> <td> <pre> \_\_.map(function(doc) { return { id: doc.id, msg: doc.message, actions: doc.actions }; }); </pre> </td> <td>Projiziert die ID, Meldung (Alias für „msg“) und Aktion aus allen Dokumenten.</td> </tr> <tr> <td> <pre> SELECT * FROM docs WHERE docs.id="X998\_Y998" </pre> </td> <td> <pre> \_\_.filter(function(doc) { return doc.id === "X998\_Y998"; }); </pre> </td> <td>Fragt Dokumente mit dem folgenden Prädikat ab: id = "X998\_Y998".</td> </tr> <tr> <td> <pre> SELECT * FROM docs WHERE ARRAY\_CONTAINS(docs.Tags, 123) </pre> </td> <td> <pre> \_\_.filter(function(x) { return x.Tags && x.Tags.indexOf(123) > -1; }); </pre> </td> <td>Fragt Dokumente mit einer Tags-Eigenschaft ab, wobei „Tags“ ein Array mit dem Wert 123 ist.</td> </tr> <tr> <td> <pre> SELECT docs.id, docs.message AS msg FROM docs WHERE docs.id="X998\_Y998" </pre> </td> <td> <pre> \_\_.chain() .filter(function(doc) { return doc.id === "X998\_Y998"; }) .map(function(doc) { return { id: doc.id, msg: doc.message }; }) .value(); </pre> </td> <td>Fragt Dokumente mit einem Prädikat, id = "X998\_Y998", ab und projiziert anschließend die ID und die Meldung (Alias für „msg“).</td> </tr> <tr> <td> <pre> SELECT VALUE tag FROM docs JOIN tag IN docs.Tags ORDER BY docs.\_ts </pre> </td> <td> <pre> \_\_.chain() .filter(function(doc) { return doc.Tags && Array.isArray(doc.Tags); }) .sortBy(function(doc) { return doc.\_ts; }) .pluck("Tags") .flatten() .value() </pre> </td> <td>Filtert nach Dokumenten mit einer Array-Eigenschaft „Tags“, sortiert die resultierenden Dokumente anhand der Zeitstempel-Systemeigenschaft „\_ts“ und projiziert und vereinfacht anschließend das Tags-Array.</td> </tr> </tbody> </table>
 
 ## Laufzeitunterstützung
 Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](documentdb-interactions-with-resources.md)-Standard.
@@ -755,7 +566,7 @@ Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlö
 Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen (UDFs) werden implizit in das Bytecodeformat vorkompiliert, um den Kompilierungsaufwand zum Zeitpunkt des jeweiligen Skriptaufrufs zu vermeiden. Dadurch wird sichergestellt, dass gespeicherte Prozeduren schnell aufgerufen werden können und kompakt sind.
 
 ## Client-SDK-Unterstützung
-Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn783362.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-,[ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python](http://dl.windowsazure.com/documentDB/pythondocs/)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
+Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn783362.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-, [ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python](http://dl.windowsazure.com/documentDB/pythondocs/)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
 
 	var markAntiquesSproc = new StoredProcedure
 	{
@@ -850,8 +661,7 @@ Alle DocumentDB-Vorgänge können RESTful-basiert ausgeführt werden. Gespeicher
 	}
 
 
-Die gespeicherte Prozedur wird durch Ausführung einer POST-Anforderung für den URI "dbs/sehcAA==/colls/sehcAIE2Qy4=/sprocs" registriert, wobei der Textteil die zu erstellende gespeicherte Prozedur enthält. Trigger und UDFs können auf ähnliche Weise registriert werden: durch einen POST bezüglich /triggers bzw. /udfs.
-Diese gespeicherte Prozedur kann dann durch Anlegen einer POST-Anforderung für ihren Ressourcenlink ausgeführt werden:
+Die gespeicherte Prozedur wird durch Ausführung einer POST-Anforderung für den URI "dbs/sehcAA==/colls/sehcAIE2Qy4=/sprocs" registriert, wobei der Textteil die zu erstellende gespeicherte Prozedur enthält. Trigger und UDFs können auf ähnliche Weise registriert werden: durch einen POST bezüglich /triggers bzw. /udfs. Diese gespeicherte Prozedur kann dann durch Anlegen einer POST-Anforderung für ihren Ressourcenlink ausgeführt werden:
 
 	POST https://<url>/sprocs/<sproc> HTTP/1.1
 	authorization: <<auth>>
@@ -916,4 +726,4 @@ Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie au
 -	[Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 -	[Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

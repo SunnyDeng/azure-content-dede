@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/15/2015"
+   ms.date="10/20/2015"
    ms.author="liviodlc"/>
 
 #Tutorial: Integrieren von NetSuite in Azure Active Directory
@@ -66,13 +66,13 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
 
-3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Anmelde-URL** Ihre NetSuite-Mandanten-URL in einem der folgenden Formate ein:
-	- `https://<tenant-name>.netsuite.com`
-	- `https://<tenant-name>.na1.netsuite.com`
-	- `https://<tenant-name>.na2.netsuite.com`
-	- `https://<tenant-name>.sandbox.netsuite.com`
-	- `https://<tenant-name>.na1.sandbox.netsuite.com`
-	- `https://<tenant-name>.na2.sandbox.netsuite.com`
+3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Antwort-URL** Ihre NetSuite-Mandanten-URL in einem der folgenden Formate ein:
+	- `https://<tenant-name>.netsuite.com/saml2/acs`
+	- `https://<tenant-name>.na1.netsuite.com/saml2/acs`
+	- `https://<tenant-name>.na2.netsuite.com/saml2/acs`
+	- `https://<tenant-name>.sandbox.netsuite.com/saml2/acs`
+	- `https://<tenant-name>.na1.sandbox.netsuite.com/saml2/acs`
+	- `https://<tenant-name>.na2.sandbox.netsuite.com/saml2/acs`
 
 	![Geben Sie Ihre Mandanten-URL ein.][8]
 
@@ -142,43 +142,43 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 	- Klicken Sie im oberen Navigationsmenü auf **Setup** und dann auf **Setup-Manager**.
 
-	![Wechseln Sie zum Setup-Manager.][10]
+		![Wechseln Sie zum Setup-Manager.][10]
 
-	- Wählen Sie im linken Navigationsmenü **Benutzer/Rollen**, und klicken Sie auf **Rollen verwalten**.
+	- Wählen Sie im linken Navigationsmenü **Benutzer/Rollen** aus, und klicken Sie auf **Rollen verwalten**.
 
-	![Wechseln Sie zum Verwalten von Rollen.][22]
+		![Wechseln Sie zum Verwalten von Rollen.][22]
 
 	- Klicken Sie auf **Neue Rolle**.
 
 	- Geben Sie einen **Namen** für die neue Rolle ein, und aktivieren Sie das Kontrollkästchen **Nur einmaliges Anmelden**.
 
-	![Benennen Sie die neue Rolle.][23]
+		![Benennen Sie die neue Rolle.][23]
 
 	- Klicken Sie auf **Speichern**.
 
 	- Klicken Sie im oberen Menü auf **Berechtigungen**. Klicken Sie dann auf **Setup**.
 
-	![Wechseln Sie zu Berechtigungen.][24]
+		![Wechseln Sie zu Berechtigungen.][24]
 
-	- Wählen Sie **Einrichten der einmaligen Anmeldung für SAM**, und klicken Sie dann auf **Hinzufügen**.
+	- Wählen Sie **Set Up SAM Single Sign-on**, und klicken Sie dann auf **Hinzufügen**.
 
 	- Klicken Sie auf **Speichern**.
 
 	- Klicken Sie im oberen Navigationsmenü auf **Setup** und dann auf **Setup-Manager**.
 
-	![Wechseln Sie zum Setup-Manager.][10]
+		![Wechseln Sie zum Setup-Manager.][10]
 
 	- Wählen Sie im linken Navigationsmenü **Benutzer/Rollen**, und klicken Sie auf **Benutzer verwalten**.
 
-	![Wechseln Sie zum Verwalten von Benutzern.][25]
+		![Wechseln Sie zum Verwalten von Benutzern.][25]
 
 	- Wählen Sie einen Testbenutzer. Klicken Sie dann auf **Bearbeiten**.
 
-	![Wechseln Sie zum Verwalten von Benutzern.][26]
+		![Wechseln Sie zum Verwalten von Benutzern.][26]
 
-	- Wählen Sie im Dialogfeld "Rollen" die Rolle, die Sie erstellt haben, und klicken Sie auf **Hinzufügen**.
+	- Wählen Sie im Dialogfeld „Rollen“ die Rolle aus, die Sie erstellt haben, und klicken Sie auf **Hinzufügen**.
 
-	![Wechseln Sie zum Verwalten von Benutzern.][27]
+		![Wechseln Sie zum Verwalten von Benutzern.][27]
 
 	- Klicken Sie auf **Speichern**.
 
@@ -186,7 +186,9 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 ##Schritt 3: Aktivieren der automatisierten Benutzerbereitstellung
 
-1. Klicken Sie in Azure Active Directory auf der Seite "Schnellstart" für NetSuite auf **Benutzerbereitstellung konfigurieren**.
+> [AZURE.NOTE]Standardmäßig werden die bereitgestellten Benutzer der Stammniederlassung Ihrer NetSuite-Umgebung hinzugefügt.
+
+1. Klicken Sie in Azure Active Directory auf der Seite „Schnellstart“ für NetSuite auf **Benutzerbereitstellung konfigurieren**.
 
 	![Konfigurieren der Benutzerbereitstellung][28]
 
@@ -204,11 +206,11 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 1. Um Ihre Konfiguration zu testen, beginnen Sie mit dem Erstellen eines neuen Testkontos im Verzeichnis.
 
-2. Klicken Sie auf der Seite "Schnellstart" für NetSuite auf die Schaltfläche **Benutzer zuweisen**.
+2. Klicken Sie auf der Seite „Schnellstart“ für NetSuite auf die Schaltfläche **Benutzer zuweisen**.
 
 	![Klicken Sie auf "Benutzer zuweisen".][31]
 
-3. Wählen Sie Ihren Testbenutzer, und klicken Sie am unteren Bildschirmrand auf die Schaltfläche **Zuweisen**:
+3. Wählen Sie Ihren Testbenutzer aus, und klicken Sie am unteren Bildschirmrand auf die Schaltfläche **Zuweisen**:
 
  - Wenn Sie die automatisierte Benutzerbereitstellung nicht aktiviert haben, werden Sie aufgefordert, Folgendes zu bestätigen:
 
@@ -254,4 +256,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 [31]: ./media/active-directory-saas-netsuite-tutorial/assign-users.png
 [32]: ./media/active-directory-saas-netsuite-tutorial/assign-confirm.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

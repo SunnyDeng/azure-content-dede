@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verfügbarkeit von Hadoop-Clustern in HDInsight | Microsoft Azure"
-	description="Linux-basierte HDInsight-Cluster bieten durch die Verwendung eines zusätzlichen Hauptknotens eine höhere Zuverlässigkeit und Verfügbarkeit."
+	pageTitle="Funktionen für hohe Verfügbarkeit bei Linux-basiertem HDInsight (Hadoop) | Microsoft Azure"
+	description="Erfahren Sie, wie Linux-basierte HDInsight-Cluster durch die Verwendung eines zusätzlichen Hauptknotens eine höhere Zuverlässigkeit und Verfügbarkeit bieten. Sie erfahren, wie dies Hadoop-Dienste wie Ambari und Hive beeinflusst und wie eine Verbindung mit jedem Hauptknoten über SSH hergestellt wird."
 	services="hdinsight"
 	editor="cgronlun"
 	manager="paulettm"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="10/19/2015"
 	ms.author="larryfr"/>
 
 #Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

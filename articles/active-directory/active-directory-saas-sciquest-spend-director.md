@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Lernprogramm: Azure Active Directory-Integration mit SciQuest Spend Director"
+	pageTitle="Lernprogramm: Azure Active Directory-Integration mit SciQuest Spend Director | Microsoft Azure"
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und HSciQuest Spend Director konfigurieren."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/30/2015"
+	ms.date="10/20/2015"
 	ms.author="markusvi"/>
 
 
@@ -195,4 +195,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-sciquest-spend-director/tutorial_general_19.png
 [205]: ./media/active-directory-saas-sciquest-spend-director/tutorial_general_20.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

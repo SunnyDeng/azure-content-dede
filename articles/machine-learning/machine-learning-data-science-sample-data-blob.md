@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Erstellen von Datenstichproben im Azure-Blobspeicher | Microsoft Azure" 
+	pageTitle="Datenstichproben im Azure-Blob-Speicher | Microsoft Azure" 
 	description="Erstellen von Datenstichproben im Azure-Blobspeicher" 
 	services="machine-learning,storage" 
 	documentationCenter="" 
-	authors="msolhab" 
+	authors="bradsev" 
 	manager="paulettm" 
 	editor="cgronlun" />
 
@@ -13,15 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="sunliangms;fashah;msolhab;garye;bradsev" />
+	ms.date="10/20/2015" 
+	ms.author="sunliangms;fashah;garye;bradsev" />
 
-#<a name="heading"></a>Datensampling im Azure-Blobspeicher
+#<a name="heading"></a>Datenstichproben im Azure-Blob-Speicher
 
-Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blobspeicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
+Dieses **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
+
+[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
+
+## Einführung
+
+Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blob-Speicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
 
 ## Download und Downsampling von Daten
-1. Laden Sie die Daten aus dem Azure-Blobspeicher mithilfe des Blobdiensts aus dem folgenden Python-Beispielcode herunter: 
+1. Laden Sie die Daten aus dem Azure-Blobspeicher mithilfe des Blob-Diensts aus dem folgenden Python-Beispielcode herunter: 
 
 	    from azure.storage import BlobService
     	import tables
@@ -46,7 +52,7 @@ Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blobs
 	    #directly ready from file on disk
     	dataframe_blobdata = pd.read_csv(LOCALFILE)
 
-3. Erstellen Sie mit der `numpy`-Funktion `random.choice` wie folgt Stichproben:
+3. Erstellen Sie mit der `random.choice`-Funktion von `numpy` wie folgt Stichproben:
 
 	    # A 1 percent sample
     	sample_ratio = 0.01 
@@ -97,4 +103,4 @@ Mit dem folgenden Beispielcode können Sie ein Downsampling der Daten durchführ
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/21/2015"
    ms.author="lodipalm;barbkess"/>
 
 #Laden von Beispieldaten in SQL Data Warehouse
@@ -42,7 +42,7 @@ Nachdem Sie eine SQL Data Warehouse-Instanz eingerichtet haben, können Sie auf 
 
 ## Herstellen einer Verbindung mit und Abfragen der Beispieldatenbank
 
-Wie in der Dokumentation zum [Herstellen der Verbindung und Abfragen][] beschrieben, können Sie mit Visual Studio und SSDT eine Verbindung mit dieser Datenbank herstellen. Nachdem Sie einige Beispieldaten in SQL Data Warehouse geladen haben, können Sie als Einsteig schnell einige Abfragen ausführen.
+Wie in der Dokumentation zum [Herstellen der Verbindung][] beschrieben, können Sie mit Visual Studio und SSDT eine Verbindung mit dieser Datenbank herstellen. Nachdem Sie einige Beispieldaten in SQL Data Warehouse geladen haben, können Sie als Einsteig schnell einige Abfragen ausführen.
 
 Sie können eine einfache SELECT-Anweisung ausführen, um alle Informationen zu den Mitarbeitern abzurufen:
 
@@ -71,16 +71,16 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 <!--Image references-->
 
 <!--Article references-->
-[Migrieren]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwicklung]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
-[Laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-load/
-[Herstellen der Verbindung und Abfragen]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-connect-query/
-[Migrieren von Code]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-migrate-code/
+[Migrieren]: ./sql-data-warehouse-overview-migrate.md
+[Entwicklung]: ./sql-data-warehouse-overview-develop.md
+[Laden]: ./sql-data-warehouse-overview-load.md
+[Herstellen der Verbindung]: ./sql-data-warehouse-get-started-connect.md
+[Migrieren von Code]: ./sql-data-warehouse-migrate-code.md
 
 <!--MSDN references-->
-[Microsoft-Befehlszeilenprogramme für SQL Server]: http://www.microsoft.com/de-DE/download/details.aspx?id=36433
+[Microsoft-Befehlszeilenprogramme für SQL Server]: http://www.microsoft.com/download/details.aspx?id=36433/
 
 <!--Other Web references-->
-[hier]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksPDW2012.zip
+[hier]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksPDW2012.zip/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

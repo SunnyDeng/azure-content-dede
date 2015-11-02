@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/30/2015"
+	ms.date="10/15/2015"
 	ms.author="stepsic"/>
 	
 # Bereitstellen von Visual Studio aus
@@ -31,7 +31,7 @@ Sie müssen das Azure SDK 2.7 oder höher installiert haben, um die folgenden Sc
 
 2. Finden Sie im Dialogfeld den Eintrag **Cloud**, und wählen Sie dann **Azure-Ressourcengruppe**. Geben Sie einen **Namen** ein, und klicken Sie dann auf **OK**. ![Neues Projekt hinzufügen](./media/app-service-logic-deploy-from-vs/addnewproject.png)
 
-3. Jetzt müssen Sie auswählen, ob Sie eine **Logik-App** oder eine **Logik-App + API-App** erstellen möchten. Bei Auswahl von **Logik-App** müssen Sie auf vorhandene APIs verweisen. Wenn Sie die Option **Logik-App + API-App** auswählen, können Sie gleichzeitig auch eine neue, leere API-App erstellen. ![Azure-Vorlage auswählen](./media/app-service-logic-deploy-from-vs/selectazuretemplate.png)
+3. Wählen Sie nun aus, ob Sie eine **Logik-App** oder eine **Logik-App + API-App** erstellen möchten. Bei Auswahl von **Logik-App** müssen Sie auf vorhandene APIs verweisen. Wenn Sie die Option **Logik-App + API-App** auswählen, können Sie gleichzeitig auch eine neue, leere API-App erstellen. ![Azure-Vorlage auswählen](./media/app-service-logic-deploy-from-vs/selectazuretemplate.png)
 
 4. Nachdem Sie die **Vorlage** ausgewählt haben, klicken Sie auf **OK**.
 
@@ -43,9 +43,9 @@ Sobald Sie ein Projekt erstellt haben, können Sie die Definition der Logik-App 
 
 Es wird empfohlen, in der gesamten Definition **Parameter** zu verwenden. Das ist nützlich, wenn Sie ein Projekt sowohl in einer Entwicklungs- als auch in einer Produktionsumgebung bereitstellen möchten. In diesem Fall sollten Sie die gesamte umgebungsspezifische Konfiguration in die `.param`-Datei eingeben und die Parameter anstelle der eigentlichen Zeichenfolgen verwenden.
 
-Derzeit bietet Visual Studio keinen integrierten Designer. Wenn Sie daher eine grafische Benutzeroberfläche nutzen möchten (statt JSON zu schreiben), müssen Sie das Azure-Portal verwenden.
+Derzeit bietet Visual Studio keinen integrierten JSON-Designer. Wenn Sie daher eine grafische Benutzeroberfläche nutzen möchten (statt JSON zu schreiben), müssen Sie das Azure-Portal verwenden.
 
-Wenn Sie zuvor eine Logik-App innerhalb des Azure-Portals erstellt haben und diese jetzt in die Quellcodeverwaltung einchecken möchten, haben Sie drei verschiedene Möglichkeiten: – Wechseln Sie im Portal zur **Codeansicht**, und kopieren Sie die Definition. – Verwenden Sie die [REST-API](https://msdn.microsoft.com/library/azure/dn948510.aspx) für Logik-Apps, um die Definition abzurufen. – Verwenden Sie die [Powershell des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md), insbesondere den [`Get-AzureResource`-Befehl](https://msdn.microsoft.com/library/dn654579.aspx), um die Definition herunterzuladen.
+Wenn Sie zuvor eine Logik-App innerhalb des Azure-Portals erstellt haben und diese jetzt in die Quellcodeverwaltung einchecken möchten, haben Sie drei verschiedene Möglichkeiten: – Wechseln Sie im Portal zur **Codeansicht**, und kopieren Sie die Definition. – Verwenden Sie die [REST-API](https://msdn.microsoft.com/library/azure/dn948510.aspx) für Logik-Apps, um die Definition abzurufen. – Verwenden Sie die [PowerShell des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md), insbesondere den [`Get-AzureResource`-Befehl](https://msdn.microsoft.com/library/dn654579.aspx), um die Definition herunterzuladen.
 
 ## Bereitstellen Ihrer Logik-App
 
@@ -63,6 +63,6 @@ Nach der Konfiguration Ihrer App können Sie sie in nur wenigen Schritten direkt
 
 In Zukunft können Sie Ihre Logik-App in der Quellcodeverwaltung überarbeiten und Visual Studio zum Bereitstellen neuer Versionen verwenden. Wenn Sie die Definition direkt im Azure-Portal ändern, beachten Sie, dass diese Änderungen bei der nächsten Bereitstellung in Visual Studio außer Kraft gesetzt werden.
 
-Wenn Sie nicht Visual Studio verwenden, aber dennoch die Werkzeuge zur Verfügung haben möchten, um Ihre Logik-App von der Quellcodesteuerung aus bereitzustellen, können Sie immer die [API](https://msdn.microsoft.com/library/azure/dn948510.aspx) oder [Powershell](../powershell-azure-resource-manager.md) direkt verwenden, um Ihre Bereitstellungen zu automatisieren.
+Wenn Sie nicht Visual Studio verwenden, aber dennoch die Werkzeuge zur Verfügung haben möchten, um Ihre Logik-App von der Quellcodesteuerung aus bereitzustellen, können Sie auch die [API](https://msdn.microsoft.com/library/azure/dn948510.aspx) oder [PowerShell](../powershell-azure-resource-manager.md) direkt verwenden, um Ihre Bereitstellungen zu automatisieren.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

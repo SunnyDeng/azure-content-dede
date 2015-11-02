@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/13/2015"
+   ms.date="10/19/2015"
    ms.author="tomfitz"/>
 
-# Unterstützung des Azure-Ressourcen-Managers für Dienste und Regionen
+# Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen
 
 Der Azure-Ressourcen-Manager bietet eine neue Möglichkeit, die Dienste, aus denen Ihre Anwendungen bestehen, bereitzustellen und zu verwalten. Die meisten (jedoch nicht alle) Dienste unterstützen den Ressourcen-Manager, und einige Dienste unterstützen ihn nur teilweise. Microsoft ermöglicht den Ressourcen-Manager für jeden Dienst, der für zukünftige Lösungen wichtig ist. Bis diese Unterstützung jedoch konsistent ist, müssen Sie den aktuellen Status jedes Diensts kennen. Dieses Thema enthält eine Liste der unterstützten Ressourcenanbieter für den Azure-Ressourcen-Manager.
 
-Beim Bereitstellen von Ressourcen müssen Sie wissen, in welchen Regionen diese Ressourcen unterstützt werden. Der Abschnitt [Unterstützte Regionen](#supported-regions) zeigt, wie Sie herausfinden, in welchen Regionen Ihr Abonnement und Ihre Ressourcen verwendet werden können.
+Beim Bereitstellen der Ressourcen müssen Sie auch wissen, welche Bereiche diese Ressourcen unterstützen und welche API-Versionen für die Ressourcen verfügbar sind. Der Abschnitt [Unterstützte Regionen](#supported-regions) zeigt, wie Sie herausfinden, in welchen Regionen Ihr Abonnement und Ihre Ressourcen verwendet werden können. Im Abschnitt [Unterstützte API-Versionen](#supported-api-versions) wird gezeigt, wie Sie ermitteln, welche API-Versionen Sie verwenden können.
 
 Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung über den Ressourcen-Manager unterstützen und welche nicht. Die Spalte mit der Bezeichnung **Ressourcen verschieben** bezieht sich darauf, ob Ressourcen dieses Typs in eine neue Ressourcengruppe und ein neues Abonnement verschoben werden können. Die Spalte mit der Bezeichnung **Vorschauportal** gibt an, ob Sie den Dienst über das Vorschauportal erstellen können.
 
@@ -32,7 +32,7 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Virtual Machines | Ja | Ja | Nein | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
 | Batch | Ja | Nein | | [Batch REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) (in englischer Sprache) | |
 | Dynamics Lifecycle Services | Ja | Nein | | | |
-| Virtuelle Computer (klassisch) | Eingeschränkt | Nein | Teilweise (siehe unten) | - | - | | Remote-App | Nein | - | - | - | - | | Service Fabric | Nein | - | - | - | - |
+| Virtuelle Computer (klassisch) | Eingeschränkt | Ja | Teilweise (siehe unten) | - | - | | Remote-App | Nein | - | - | - | - | | Service Fabric | Nein | - | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -86,7 +86,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Lastenausgleichsmodul | Ja | | | [Erstellen oder Aktualisieren eines Lastenausgleichs](https://msdn.microsoft.com/library/azure/mt163574.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
 | Virtuelle Netzwerke | Ja | Ja | Nein | [Erstellen eines virtuellen Netzwerks](https://msdn.microsoft.com/library/azure/mt163661.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
 | Traffic Manager | Ja | Nein | | [Erstellen oder Aktualisieren eines Traffic Manager-Profils](https://msdn.microsoft.com/library/azure/mt163581.aspx) | |
-| Express Route | Nein | Nein | - | - | - |
+| ExpressRoute | Ja | Nein | Nein | [ExpressRoute REST](https://msdn.microsoft.com/library/azure/mt586720.aspx) | |
 
 ## Medien und CDN
 
@@ -135,7 +135,7 @@ Bei der Bereitstellung von Ressourcen müssen Sie in der Regel eine Region für 
 
 ### REST-API
 
-Die beste Möglichkeit zur Ermittlung der verfügbaren Regionen für einen bestimmten Ressourcentyp ist der Vorgang zum [Auflisten aller Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790524.aspx). Dieser Vorgang gibt nur die Regionen zurück, die für Ihr Abonnement und den Ressourcentyp zur Verfügung stehen.
+Verwenden Sie für die Ermittlung der verfügbaren Regionen für einen bestimmten Ressourcentyp im Abonnement den Vorgang [Auflisten aller Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790524.aspx).
 
 ### PowerShell
 
@@ -165,7 +165,7 @@ Im folgenden Beispiel werden alle unterstützten Orte für jeden Ressourcentyp z
 
     azure location list
 
-Sie können die Ergebnisse auch mit einem Tool wie **jq** filtern. Informationen zu Tools wie "jq" finden Sie unter [Nützliche Tools für die Interaktion mit Azure](/virtual-machines/resource-group-deploy-debug/#useful-tools-to-interact-with-azure).
+Sie können die Ergebnisse auch mit einem Tool wie **jq** filtern. Informationen zu Tools wie „jq“ finden Sie unter [Nützliche Tools für die Interaktion mit Azure](/virtual-machines/resource-group-deploy-debug/#useful-tools-to-interact-with-azure).
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 
@@ -177,4 +177,44 @@ Ausgabe des Befehls:
             North Europe,South Central US,West Europe,West US,Southeast Asia,Central US,East US 2"
     }
 
-<!---HONumber=Oct15_HO3-->
+## Unterstützte API-Versionen
+
+Beim Bereitstellen einer Vorlage müssen Sie eine API-Version angeben, die zum Erstellen der einzelnen Ressourcen verwendet werden soll. Die API-Version entspricht einer Version von REST-API-Vorgängen, die vom Ressourcenanbieter freigegeben werden. Wenn ein Ressourcenanbieter neue Features aktiviert, wird eine neue Version der REST-API veröffentlicht. Deshalb wirkt sich die Version der API, die Sie in Ihrer Vorlage angeben, darauf aus, welche Eigenschaften Sie in der Vorlage angeben können. Im Allgemeinen sollten Sie die neueste Version der API wählen, wenn Sie neue Vorlagen erstellen. Für vorhandene Vorlagen können Sie entscheiden, ob Sie weiterhin eine frühere Version der API verwenden oder die Vorlage für die aktuelle Version aktualisieren möchten, um die neuen Features zu nutzen.
+
+### REST-API
+
+Verwenden Sie den Vorgang zum [Auflisten aller Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790524.aspx), um zu ermitteln, welche API-Versionen für Ressourcentypen verfügbar sind.
+
+### PowerShell
+
+Im folgenden Beispiel wird veranschaulicht, wie Sie die verfügbaren API-Versionen für einen bestimmten Ressourcentyp mit Azure PowerShell 1.0 Preview abrufen.
+
+    ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).ApiVersions
+    
+Die Ausgabe ähnelt der folgenden:
+    
+    2015-08-01
+    2015-07-01
+    2015-06-01
+    2015-05-01
+    2015-04-01
+    2015-02-01
+    2014-11-01
+    2014-06-01
+    2014-04-01-preview
+    2014-04-01
+
+### Azure-Befehlszeilenschnittstelle
+
+Sie können die Informationen (einschließlich der verfügbaren API-Versionen) für einen Ressourcenanbieter mit dem folgenden Befehl in einer Datei speichern.
+
+    azure provider show Microsoft.Web -vv --json > c:\temp.json
+
+Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
+
+## Nächste Schritte
+
+- Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
+- Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./azure-portal/resource-group-template-deploy.md).
+
+<!---HONumber=Oct15_HO4-->

@@ -1,11 +1,10 @@
 <properties 
-	pageTitle="Cloud App Discovery-Registrierungseinstellungen für Proxydienste" 
+	pageTitle="Cloud App Discovery-Registrierungseinstellungen für Proxydienste | Microsoft Azure" 
 	description="In diesem Thema werden die Schritte beschrieben, die Sie ausführen müssen, um den erforderlichen Port auf den Computern mit dem Cloud App Discovery-Agent festzulegen." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="swadhwa" 
-	editor="lisatoft"/>
+	manager="stevenpo"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -13,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="10/20/2015" 
 	ms.author="markusvi"/>
 
 # Cloud App Discovery-Registrierungseinstellungen für Proxydienste
@@ -48,4 +47,4 @@ In diesem Thema werden die Schritte beschrieben, die Sie ausführen müssen, um 
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

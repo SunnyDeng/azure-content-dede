@@ -1,8 +1,7 @@
 <properties
-	pageTitle="Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server | Microsoft Azure"
+	pageTitle="Cortana-Analyseprozess (CAP) in Aktion: Verwenden von SQL Server | Microsoft Azure"
 	description="Advanced Analytics Process and Technology in Aktion"  
 	services="machine-learning"
-	solutions=""
 	documentationCenter=""
 	authors="msolhab"
 	manager="paulettm"
@@ -14,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015" 
+	ms.date="10/18/2015" 
 	ms.author="mohabib;fashah;bradsev"/>
 
 
-# Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server
+# Cortana-Analyseprozess (CAP) in Aktion: Verwenden von SQL Server
 
 In diesem Tutorial werden Sie durch die Erstellung und Bereitstellung eines Modells geleitet. Hierbei wird das öffentlich verfügbare DataSets [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) verwendet. Das Verfahren folgt dem Leitfaden "Advanced Analytics Process and Technology (ADAPT)".
 
@@ -287,7 +286,7 @@ Die folgende Abfrage führt die Tabellen **nyctaxi\_trip** und **nyctaxi\_fare**
 
 In diesem Abschnitt werden wir Daten durchsuchen und Funktionen generieren, und zwar sowohl mit Python als auch mit SQL-Abfragen in der zuvor erstellten SQL Server-Datenbank. Ein Beispiel-IPython Notebook namens **machine-Learning-data-science-process-sql-story.ipynb** ist im Ordner **Sample IPython Notebooks** enthalten. Dieses Notebook ist auch auf [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/iPythonNotebooks) verfügbar.
 
-Die empfohlene Reihenfolge beim Arbeiten mit großen Datenmengen lautet wie folgt:
+Die empfohlene Reihenfolge beim Arbeiten mit Big Data lautet wie folgt:
 
 - Einlesen eines kleinen Teils der Daten in ein DataFrame im Speicher
 - Durchführen von Visualisierungen und Suchvorgängen mit den Beispieldaten
@@ -715,4 +714,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [project-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

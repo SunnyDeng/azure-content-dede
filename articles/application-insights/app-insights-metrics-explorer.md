@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Untersuchen von Metriken in Application Insights" 
-	description="Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Webanwendung mit Application Insights." 
+	description="Interpretieren von Metrik-Explorer-Diagrammen und Anpassen von Metrik-Explorer-Blättern" 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -161,7 +161,7 @@ Um das Blatt erneut zu verwenden, **wechseln Sie zum Blatt "Übersicht"** und ö
 
 ![Wählen Sie "Favoriten" auf dem Blatt "Übersicht" aus](./media/app-insights-metrics-explorer/22-favorite-get.png)
 
-Wenn Sie beim Speichern den Zeitbereich "Relativ" ausgewählt haben, wird das Fenster mit den neuesten Metriken aktualisiert. Wenn Sie den Zeitraum "Absolut" gewählt haben, werden jedes Mal dieselben Daten gezeigt.
+Wenn Sie beim Speichern den Zeitbereich "Relativ" ausgewählt haben, wird das Blatt mit den neuesten Metriken aktualisiert. Wenn Sie den Zeitraum "Absolut" gewählt haben, werden jedes Mal dieselben Daten gezeigt.
 
 ## Zurücksetzen des Blatts
 
@@ -212,4 +212,4 @@ Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Pow
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

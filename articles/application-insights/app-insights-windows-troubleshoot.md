@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Problembehandlung bei Application Insights auf Windows-Geräten" 
-	description="Anleitung zur Problembehandlung sowie Fragen und Antworten." 
+	description="Handbuch zur Problembehandlung und Frage und Antwort für Application Insights auf Windows-Geräten." 
 	services="application-insights" 
     documentationCenter="windows"
 	authors="alancameronwills" 
@@ -29,7 +29,7 @@ Fragen zu oder Probleme mit [Visual Studio Application Insights in Windows][wind
 * Stellen Sie sicher, dass Sie einen Instrumentationsschlüssel in der Datei "ApplicationInsights.config" definiert haben und dass dieser mit dem Schlüssel im Application Insights-Portal identisch ist. Um den Schlüssel anzuzeigen, klicken Sie auf dem Blatt "Übersicht" auf "Essentials".
 * Stellen Sie sicher, dass Ihre App [ausgehenden Netzwerkzugriff anfordert](https://msdn.microsoft.com/library/windows/apps/hh452752.aspx).
 * Gibt es eine Firewall zwischen dem Emulator oder Testgerät und dem Application Insights-Portal? Sie müssen möglicherweise die TCP-Ports 80 und 443 für ausgehenden Datenverkehr zu "dc.services.visualstudio.com" und "f5.services.visualstudio.com" öffnen.
-* Schauen Sie sich auf der Startseite von Microsoft Azure die Dienststatusübersicht an. Falls es eine Warnungsanzeige gibt, warten Sie, bis sie wieder "OK" anzeigt, und schließen Sie das Application Insights-Anwendungsfenster, bevor Sie es erneut öffnen.
+* Schauen Sie sich im Startmenü von Microsoft Azure die Dienststatusübersicht an. Falls es eine Warnungsanzeige gibt, warten Sie, bis sie wieder "OK" anzeigt, und schließen Sie das Application Insights-Anwendungsblatt, bevor Sie es erneut öffnen.
 
 
 #### Zuvor wurden Daten angezeigt, jetzt jedoch nicht mehr.
@@ -120,4 +120,4 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/23/2015"
+   ms.date="10/16/2015"
    ms.author="larryfr"/>
 
 #Ausführen von Pig-Aufträgen mit PowerShell
@@ -40,27 +40,39 @@ Azure PowerShell stellt *Cmdlets* bereit, mit denen Sie Pig-Aufträge in HDInsig
 
 Die folgenden Cmdlets werden zum Ausführen der Pig-Aufträge in einem HDInsight-Remotecluster verwendet:
 
-* **Add-AzureAccount**: Authentifiziert PowerShell für Ihr Azure-Abonnement
+* **Login-AzureRmAccount**: authentifiziert Azure PowerShell für Ihr Azure-Abonnement
 
-* **New-AzureHDInsightPigJobDefinition**: Erstellt mithilfe der angegebenen Pig Latin-Anweisungen eine neue *Auftragsdefinition*
+* **New-AzureRmHDInsightPigJobDefinition**: erstellt mithilfe der angegebenen Pig Latin-Anweisungen eine neue *Auftragsdefinition*
 
-* **Start-AzureHDInsightJob**: Sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrags*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
+* **Start-AzureRmHDInsightJob**: sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrags*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
 
-* **Wait-AzureHDInsightJob**: Verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
+* **Wait-AzureRmHDInsightJob**: verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
 
-* **Get-AzureHDInsightJobOutput**: Wird zum Abrufen des Auftrags verwendet
+* **Get-AzureRmHDInsightJobOutput**: wird zum Abrufen der Ausgabe des Auftrags verwendet
 
 Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines Auftrags auf dem HDInsight-Cluster verwendet werden.
 
 1. Speichern Sie den folgenden Code mithilfe eines Editors als **pigjob.ps1**. Ersetzen Sie **CLUSTERNAME** durch den Namen des HDInsight-Clusters.
 
 		#Login to your Azure subscription
-		Add-AzureAccount
+		Login-AzureRmAccount
+        #Get credentials for the admin/HTTPs account
+        $creds=Get-Credential
 
 		#Specify the cluster name
 		$clusterName = "CLUSTERNAME"
 		#Where the output will be saved
 		$statusFolder = "/tutorial/pig/status"
+        
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
 
 		#Store the Pig Latin into $QueryString
 		$QueryString =  "LOGS = LOAD 'wasb:///example/data/sample.log';" +
@@ -72,50 +84,62 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 		"DUMP RESULT;"
 
 		#Create a new HDInsight Pig Job definition
-		$pigJobDefinition = New-AzureHDInsightPigJobDefinition -Query $QueryString -StatusFolder $statusFolder
+		$pigJobDefinition = New-AzureRmHDInsightPigJobDefinition `
+            -Query $QueryString `
 
 		# Start the Pig job on the HDInsight cluster
 		Write-Host "Start the Pig job ..." -ForegroundColor Green
-		$pigJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $pigJobDefinition
+		$pigJob = Start-AzureRmHDInsightJob `
+            -ClusterName $clusterName `
+            -JobDefinition $pigJobDefinition `
+            -ClusterCredential $creds
 
 		# Wait for the Pig job to complete
 		Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
-		Wait-AzureHDInsightJob -Job $pigJob -WaitTimeoutInSeconds 3600
+		Wait-AzureRmHDInsightJob `
+            -ClusterName $clusterName `
+            -JobId $pigJob.JobId `
+            -HttpCredential $creds
 
-		# Print the output of the Pig job.
+		# Display the output of the Pig job.
 		Write-Host "Display the standard output ..." -ForegroundColor Green
-		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardOutput
+		Get-AzureRmHDInsightJobOutput `
+            -ClusterName $clusterName `
+            -JobId $pigJob.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds
 
 2. Öffnen Sie eine neue Azure PowerShell-Eingabeaufforderung. Navigieren Sie zum Speicherort der Datei **pigjob.ps1**, und verwenden Sie folgenden Befehl zum Ausführen des Skripts:
 
 		.\pigjob.ps1
+        
+    Sie werden zunächst dazu aufgefordert, sich bei Ihrem Azure-Abonnement anzumelden. Außerdem werden Sie aufgefordert, den HTTPS-/Administratorkontonamen und das Kennwort für den HDInsight-Cluster bereitzustellen.
 
 7. Nachdem der Auftrag abgeschlossen ist, muss er Informationen zurückgeben, die den folgenden ähneln:
 
 		Start the Pig job ...
 		Wait for the Pig job to complete ...
 
-		Cluster         : CLUSTERNAME
-		ExitCode        : 0
-		Name            :
-		PercentComplete : 100% complete
-		Query           : LOGS = LOAD 'wasb:///example/data/sample.log';LEVELS = foreach LOGS generate REGEX_EXTRACT($0,
-			'(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is
-			not null;GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;FREQUENCIES = foreach GROUPEDLEVELS
-			generate group as LOGLEVEL, COUNT(FILTEREDLEVELS.LOGLEVEL) as COUNT;RESULT = order FREQUENCIES by
-			COUNT desc;DUMP RESULT;
-			State           : Completed
-			StatusDirectory : /tutorial/pig/status
-			SubmissionTime  : 11/20/2014 4:04:58 PM
-			JobId           : job_1415949758166_0023
-
-			Display the standard output ...
-			(TRACE,816)
-			(DEBUG,434)
-			(INFO,96)
-			(WARN,11)
-			(ERROR,6)
-			(FATAL,2)
+		Cluster         : CLUSTERNAME.
+        HttpEndpoint    : CLUSTERNAME.azurehdinsight.net
+        State           : SUCCEEDED
+        JobId           : job_1444852971289_0018
+        ParentId        :
+        PercentComplete : 100% complete
+        ExitValue       : 0
+        User            : admin
+        Callback        :
+        Completed       : done
+        
+        Display the standard output ...
+        (TRACE,816)
+        (DEBUG,434)
+        (INFO,96)
+        (WARN,11)
+        (ERROR,6)
+        (FATAL,2)
 
 ##<a id="troubleshooting"></a>Problembehandlung
 
@@ -123,7 +147,14 @@ Wenn nach Abschluss des Auftrags keine Informationen zurückgegeben werden, ist 
 
 	# Print the output of the Pig job.
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardError
+    Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $pigJob.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds
+            -DisplayOutputType StandardError
 
 Dadurch werden die beim Ausführen des Auftrags an STDERR auf dem Server geschriebenen Informationen zurückgegeben, die möglicherweise hilfreich sind, um festzustellen, warum der Auftrag fehlgeschlagen ist.
 
@@ -143,4 +174,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

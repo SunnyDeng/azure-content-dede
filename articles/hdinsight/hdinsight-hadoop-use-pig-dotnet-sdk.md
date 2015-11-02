@@ -43,7 +43,7 @@ Um die Anwendung für Azure HDInsight zu authentifizieren, müssen Sie ein selbs
 
 Anweisungen hierzu finden Sie unter [Erstellen eines selbstsignierten Zertifikats](http://go.microsoft.com/fwlink/?LinkId=511138).
 
-> [AZURE.NOTE] Stellen Sie beim Erstellen des Zertifikats sicher, dass Sie sich den verwendeten Anzeigenamen notieren, da dieser später verwendet wird.
+> [AZURE.NOTE]Stellen Sie beim Erstellen des Zertifikats sicher, dass Sie sich den verwendeten Anzeigenamen notieren, da dieser später verwendet wird.
 
 ##<a id="subscriptionid"></a>Ermitteln Ihrer Abonnement-ID
 
@@ -155,7 +155,6 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
-[Vorschauportal]: https://portal.azure.com/
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) [Vorschauportal]: https://portal.azure.com/
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

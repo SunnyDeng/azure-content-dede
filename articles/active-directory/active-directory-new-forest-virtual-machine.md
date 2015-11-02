@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Installieren einer Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk" 
+	pageTitle="Installieren einer Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk | Microsoft Azure" 
 	description="Ein Lernprogramm, in dem erläutert wird, wie Sie eine neue Active Directory-Gesamtstruktur auf einer virtuellen Maschine (VM) in einem virtuellen Azure-Netzwerk erstellen" 
 	services="active-directory, virtual-network" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="TerryLan" 
-	editor="LisaToft"
-	tags="azure-classic-portal"/>
+	manager="stevenpo" 
+	tags=""/>
 
 <tags 
 	ms.service="active-directory" 
@@ -14,7 +13,7 @@
 	ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-	ms.date="07/23/2015" 
+	ms.date="10/20/2015" 
 	ms.author="markusvi"/>
 
 
@@ -124,7 +123,7 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 -  [Installieren eines Active Directory-Replikatdomänencontrollers in einem virtuellen Azure-Netzwerk](../virtual-networks-install-replica-active-directory-domain-controller.md)
 -  [Microsoft Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 -  [Microsoft Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
--  [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md)
+-  [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md)
 -  [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 -  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
 -  [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/jj554330.aspx)
@@ -138,4 +137,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

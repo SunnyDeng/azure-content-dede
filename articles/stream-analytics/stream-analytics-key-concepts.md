@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Erfahren Sie mehr über die Schlüsselkonzepte von Stream Analytics | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Schlüsselkonzepte von Azure Stream Analytics: Komponenten von Stream Analytics-Aufträgen, einschließlich unterstützte Eingaben und Ausgaben, Auftragskonfiguration und Metriken." 
-	keywords="event processing,data stream,key concepts,serialization"	
+	keywords="Ereignisverarbeitung,Datenstrom,Schlüsselkonzepte,Serialisierung"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -39,7 +39,7 @@ Ein Stream Analytics-Auftrag umfasst alle der folgenden Angaben: - Ein oder mehr
 
 ### Datenstrom
 
-Jede Stream Analytics-Auftragsdefinition muss mindestens eine Datenstrom-Eingabequelle enthalten, die vom Auftrag genutzt und umgewandelt werden soll. [Azure-Blob-Speicher](http://azure.microsoft.com/documentation/services/storage/) und [Azure Event Hubs](http://azure.microsoft.com/services/event-hubs/) werden als Datenstrom-Eingabequellen unterstützt. Event Hub-Eingabequellen dienen zum Sammeln von Ereignisströmen von mehreren verschiedenen Geräten und Diensten, während Blob-Speicher als Eingabequelle für die Erfassung von großen Datenmengen verwendet werden können. Da Blobs keine Daten per Stream übertragen, sind Stream Analytics-Aufträge über Blobs nicht zeitbezogen, es sei denn, die Datensätze im Blob enthalten Zeitstempel.
+Jede Stream Analytics-Auftragsdefinition muss mindestens eine Datenstrom-Eingabequelle enthalten, die vom Auftrag genutzt und umgewandelt werden soll. [Azure-Blob-Speicher](http://azure.microsoft.com/documentation/services/storage/) und [Azure Event Hubs](http://azure.microsoft.com/services/event-hubs/) werden als Datenstrom-Eingabequellen unterstützt. Event Hubs-Eingabequellen dienen zum Sammeln von Ereignisströmen von mehreren verschiedenen Geräten und Diensten, während Blob-Speicher als Eingabequelle für die Erfassung von großen Datenmengen verwendet werden können. Da Blobs keine Daten per Stream übertragen, sind Stream Analytics-Aufträge über Blobs nicht zeitbezogen, es sei denn, die Datensätze im Blob enthalten Zeitstempel.
 
 ### Verweisdaten
 Stream Analytics unterstützt auch einen zweiten Eingabequellentyp: Verweisdaten. Dies sind zusätzliche Daten zum Durchführen von Korrelationen und Suchvorgängen, und die Daten hier sind in der Regel statisch oder ändern sich selten. [Azure-Blob-Speicher](http://azure.microsoft.com/documentation/services/storage/) sind die einzige unterstützte Eingabequelle für Verweisdaten. Blobs für Verweisdatenquellen sind auf eine Größe von 50 MB beschränkt.
@@ -140,7 +140,7 @@ Die Ausgabequelle ist der Ort, an den die Ergebnisse des Stream Analytics-Auftra
 - Azure-SQL-Datenbank – diese Ausgabequelle eignet sich für relationale Daten oder für Anwendungen, die von dem in einer Datenbank gehosteten Inhalt abhängig sind.
 
 ## Streaming-Einheiten
-Im Rahmen der Bereitstellung einer besser vorhersagbaren Leistung für Kunden verwendet Azure Stream Analytics Streaming-Einheiten (SUs) zur Darstellung der Ressourcen und Leistung für die Ausführung eines Auftrags. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Für jeden Azure Stream Analytics-Auftrag wird mindestens eine Streaming-Einheit benötigt. Dies ist der Standardwert für sämtliche Aufträge. Weitere Informationen zum Auswählen der richtigen Anzahl an SUs für einen Auftrag finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
+Im Rahmen der Bereitstellung einer besser vorhersagbaren Leistung für Kunden verwendet Azure Stream Analytics Streaming-Einheiten (SUs) zur Darstellung der Ressourcen und Leistung für die Ausführung eines Auftrags. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Für jeden Azure Stream Analytics-Auftrag wird mindestens eine Streaming-Einheit benötigt. Dies ist der Standardwert für sämtliche Aufträge. Weitere Informationen zum Auswählen der richtigen Anzahl an SUs für einen Auftrag finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md).
 
 ## Skalieren von Aufträgen
 
@@ -207,4 +207,4 @@ Nachdem Sie nun mit den Schlüsselkonzepten von Stream Analytics vertraut sind, 
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -14,11 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="10/15/2015"
 	ms.author="jgao"/>
-
-
-
 
 #Ausführen der Hadoop-Beispiele in HDInsight
 
@@ -90,4 +87,4 @@ In diesem Artikel und den Artikeln zu den einzelnen Beispielen haben Sie gelernt
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

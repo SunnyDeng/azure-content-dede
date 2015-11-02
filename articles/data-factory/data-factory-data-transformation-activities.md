@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/26/2015" 
+	ms.date="10/20/2015" 
 	ms.author="spelluru"/>
 
 # Transformation und Analyse mit Azure Data Factory
@@ -24,11 +24,7 @@ Anhand von Transformationsaktivitäten werden in Azure Data Factory Ihre Rohdate
 
 Transformationsaktivität | Compute-Umgebung 
 ----------------------- | --------------------
-[Hive](data-factory-hive-activity.md) | HDInsight \[Hadoop\] 
-[Pig](data-factory-pig-activity.md) | HDInsight [Hadoop]  
-[MapReduce](data-factory-map-reduce.md) | HDInsight [Hadoop]  
-[Hadoop-Streaming](https://msdn.microsoft.com/library/mt185698.aspx) | HDInsight [Hadoop]
-[Machine Learning Batch Scoring](data-factory-create-predictive-pipelines.md) | Azure-VM 
+[Hive](data-factory-hive-activity.md) | HDInsight [Hadoop] [Pig](data-factory-pig-activity.md) | HDInsight [Hadoop] [MapReduce](data-factory-map-reduce.md) | HDInsight [Hadoop] [Hadoop-Streaming](https://msdn.microsoft.com/library/mt185698.aspx) | HDInsight [Hadoop] [Machine Learning-Batchausführung](data-factory-azure-ml-batch-execution-activity.md) | Azure-VM 
 [Gespeicherte Prozedur](data-factory-stored-proc-activity.md) | Azure SQL | 
 [DotNet](data-factory-use-custom-activities.md) | HDInsight [Hadoop] oder Azure Batch    
 
@@ -42,4 +38,4 @@ Unter dem Artikel [Verknüpfte Computedienste](data-factory-compute-linked-servi
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-transformation-activities.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

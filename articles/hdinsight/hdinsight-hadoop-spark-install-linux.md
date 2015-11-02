@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in einem Hadoop-Cluster | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie HDInsight-Cluster mit Spark anpassen. Sie verwenden eine Script Action-Konfigurationsoption, um mithilfe eines Skripts Spark zu installieren." 
+	pageTitle="Verwenden der Skriptaktion zum Installieren von Apache Spark unter Linux-basiertem HDInsight (Hadoop) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie Spark auf einem Linux-basierten HDInsight-Cluster mit Skriptaktionen installieren. Mit Skriptaktionen können Sie den Cluster während der Erstellung anpassen, indem Sie die Clusterkonfiguration ändern oder Dienste und Hilfsprogramme installieren." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="Blackmist" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/01/2015" 
+	ms.date="10/19/2015" 
 	ms.author="larryfr"/>
 
 # Installieren und Verwenden von Spark in HDInsight-Clustern
@@ -40,22 +40,26 @@ Sie können dieses Skript ändern oder ein eigenes Skript zum Installieren von a
 
 Dieses Skript installiert Spark 1.5.1 unter `/usr/hdp/current/spark`.
 
+> [AZURE.WARNING]Vielleicht fällt Ihnen auf, dass einige Spark 1.3.1-Binärdateien standardmäßig in Ihrem HDInsight-Cluster installiert werden. Diese sollten nicht verwendet werden und werden im Rahmen eines zukünftigen Updates aus dem HDInsight-Clusterimage entfernt.
+
 ## <a name="install"></a>Installation von Spark mithilfe von Skriptaktionen
 
 Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh](https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh) zur Verfügung. Dieser Abschnitt enthält Anweisungen zur Verwendung des Beispielskripts während der Erstellung des Clusters mithilfe des Azure-Portals.
 
 > [AZURE.NOTE]Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
-1. Beginnen Sie die Erstellung eines Clusters anhand der Schritte in [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
+1. Beginnen Sie die Erstellung eines Clusters anhand der Schritte in [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal), aber schließen Sie sie nicht ab.
 
 2. Wählen Sie auf dem Blatt **Optionale Konfiguration** die Option **Skriptaktionen**, und geben Sie die folgenden Informationen an:
 
 	* __NAME__: Geben Sie einen Anzeigenamen für die Skriptaktion ein.
 	* __SCRIPT URI__: https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh
 	* __HEAD__: Aktivieren Sie diese Option.
-	* __WORKER__: Aktivieren Sie diese Option.
-	* __ZOOKEEPER__: Aktivieren Sie diese Option für die Installation auf dem Zookeeper-Knoten.
+	* __WORKER__: Deaktivieren Sie diese Option.
+	* __ZOOKEEPER__: Deaktivieren Sie diese Option.
 	* __PARAMETERS__: Lassen Sie dieses Feld leer.
+    
+    > [AZURE.NOTE]Im Spark-Beispielskript werden Komponenten nur auf den Hauptknoten installiert, sodass die anderen Knotentypen deaktiviert bleiben können.
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
@@ -122,7 +126,7 @@ Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query
 
 		val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
 
-	> [AZURE.NOTE]Beachten Sie, dass `sc` der Spark-Standardkontext ist, der beim Starten der Shell-Spark festgelegt ist.
+	> [AZURE.NOTE]Beachten Sie, dass `sc` der Spark-Standardkontext ist, der beim Starten der Spark-Shell festgelegt ist.
 
 5. Führen Sie eine Hive-Abfrage mit dem Hive-Kontext aus, und drucken Sie die Ausgabe an die Konsole. Die Abfrage ruft Daten auf Geräten eines bestimmten Herstellers ab und beschränkt die Anzahl der abgerufenen Datensätze auf 20.
 
@@ -148,7 +152,7 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 		sudo apt-get update
 		sudo apt-get install sbt
 		
-	Wählen Sie bei entsprechender Aufforderung __J__, um den Vorgang fortzusetzen.
+	Wählen Sie bei entsprechender Aufforderung __Y__, um den Vorgang fortzusetzen.
 
 2. Erstellen Sie die Verzeichnisstruktur für das Scala-Projekt:
 
@@ -172,7 +176,7 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 
 	> [AZURE.NOTE]Stellen Sie sicher, dass Sie die leeren Zeilen zwischen den einzelnen Einträgen beibehalten.
 	
-	Drücken Sie zum Speichern der Datei __STRG+X__, __J__ und die EINGABETASTE.
+	Drücken Sie zum Speichern der Datei __STRG+X__, __Y__ und dann __EINGABE__.
 
 4. Verwenden Sie den folgenden Befehl zum Erstellen einer neuen Datei mit dem Namen __SimpleApp.scala__ im Verzeichnis __SimpleScalaApp/src/main/scala__:
 
@@ -197,7 +201,7 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 		  }
 		}
 
-	Drücken Sie zum Speichern der Datei __STRG+X__, __J__ und dann die EINGABETASTE.
+	Drücken Sie zum Speichern der Datei __STRG+X__, __Y__ und dann __EINGABE__.
 
 5. Verwenden Sie im Verzeichnis __SimpleScalaApp__ den folgenden Befehl, um die Anwendung zu erstellen, und speichern Sie sie in einer JAR-Datei:
 
@@ -234,4 +238,4 @@ In diesem Abschnitt erstellen Sie eine Scala-Anwendung, die die Anzahl der Zeile
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

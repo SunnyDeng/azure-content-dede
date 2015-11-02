@@ -5,7 +5,7 @@
    documentationCenter="NA"
    authors="TwoUnder"
    manager="barbkess"
-   editor="JRJ@BigBangData.co.uk"/>
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="10/21/2015"
    ms.author="mausher;barbkess"/>
 
 
@@ -22,12 +22,22 @@
 
 bcp bietet eine schnelle und einfache Möglichkeit, um kleinere DataSets in und aus einer SQL Data Warehouse-Datenbank zu verschieben. Die genaue Empfehlung für die mit bcp zu ladende/extrahierte Datenmenge hängt von der Netzwerkverbindung mit dem Azure-Rechenzentrum ab. Im Allgemeinen können Dimensionstabellen geladen und extrahiert werden, relativ große Faktentabellen können jedoch viel Zeit zum Laden oder Extrahieren benötigen.
 
-Mit bcp haben Sie folgende Möglichkeiten: - Verwenden eines einfachen Befehlszeilenprogramms zum Laden von Daten in SQL Data Warehouse. - Verwenden eines einfachen Befehlszeilenprogramms zum Extrahieren von Daten aus SQL Data Warehouse.
+Mit bcp haben Sie folgende Möglichkeiten:
 
-In diesem Lernprogramm lernen Sie Folgendes: - Importieren von Daten in eine Tabelle mithilfe des "bcp in"-Befehls - Exportieren von Daten aus einer Tabelle mithilfe des "bcp out"-Befehls
+- Verwenden eines einfachen Befehlszeilenprogramms zum Laden von Daten in SQL Data Warehouse.
+- Verwenden eines einfachen Befehlszeilenprogramms zum Extrahieren von Daten aus SQL Data Warehouse.
+
+In diesem Lernprogramm lernen Sie Folgendes:
+ 
+- Importieren von Daten in eine Tabelle mithilfe des „bcp in“-Befehls
+- Exportieren von Daten aus einer Tabelle mithilfe des „bcp out“-Befehls
 
 ## Voraussetzungen
-Für dieses Lernprogramm benötigen Sie Folgendes: - Eine SQL Data Warehouse-Datenbank - Eine Installation des bcp-Befehlszeilenprogramms - Eine Installation des SQLCMD-Befehlszeilenprogramms
+Für dieses Lernprogramm ist Folgendes erforderlich:
+
+- Eine SQL Data Warehouse-Datenbank
+- Eine Installation des bcp-Befehlszeilenprogramms
+- Eine Installation des SQLCMD-Befehlszeilenprogramms
 
 >[AZURE.NOTE]Sie können die Dienstprogramme bcp und sqlcmd im [Microsoft Download Center][] herunterladen.
 
@@ -152,4 +162,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

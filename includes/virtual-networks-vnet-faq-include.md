@@ -8,7 +8,7 @@ Verwenden Sie VNets für Folgendes:
 
 - Erstellen eines dedizierten privaten virtuellen Nur-Cloud-Netzwerks
 									
-	Manchmal benötigen Sie keine standortübergreifende Konfiguration für Ihre Lösung. Wenn Sie ein VNet erstellen, können die Dienste und virtuellen Computer des VNet direkt und sicher in der Cloud miteinander kommunizieren. Auf diese Weise verbleibt der Datenverkehr sicher im VNet, Sie können jedoch trotzdem in Ihrer Lösung Endpunktverbindungen für die virtuellen Computer und Dienste konfigurieren, die eine Internetkommunikation erfordern.
+	Manchmal benötigen Sie keine standortübergreifende Konfiguration für Ihre Lösung. Wenn Sie ein VNet erstellen, können die Dienste und virtuellen Computer des VNet direkt und sicher in der Cloud miteinander kommunizieren. Auf diese Weise verbleibt der Datenverkehr sicher im VNet, Sie können jedoch trotzdem in Ihrer Lösung Endgerätverbindungen für die virtuellen Computer und Dienste konfigurieren, die eine Internetkommunikation erfordern.
 
 - Sicheres Erweitern des Rechenzentrums
 									
@@ -20,7 +20,7 @@ Verwenden Sie VNets für Folgendes:
 
 ### Wie finde ich heraus, ob ich ein virtuelles Netzwerk benötige?
 
-Auf der Webseite [Virtuelle Netzwerke – Übersicht](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
+Auf der Webseite [Virtuelle Netzwerke – Übersicht](virtual-networks-overview.md) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
 
 ### Wie fange ich an?
 
@@ -106,7 +106,7 @@ Ja. Sie können die in einem VNet verwendeten CIDR-Blöcke hinzufügen, entferne
 
 ### Kann eine Verbindung mit dem Internet hergestellt werden, wenn Dienste in einem VNet ausgeführt werden?
 
-Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Jeder in Azure bereitgestellte Clouddienst verfügt über eine öffentlich adressierbare, zugewiesene VIP-Adresse. Sie müssen Eingabeendpunkte für PaaS-Rollen und Endpunkte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
+Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Jeder in Azure bereitgestellte Clouddienst verfügt über eine öffentlich adressierbare, zugewiesene VIP-Adresse. Sie müssen Eingabeendgeräte für PaaS-Rollen und Endgeräte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
 
 ### Unterstützen VNets IPv6?
 
@@ -209,7 +209,7 @@ Nein. Die MAC-Adresse eines virtuellen Computers kann sich aus verschiedenen Gr�
 
 ### Kann ich von einem virtuellen Computer in einem VNet eine Verbindung mit dem Internet herstellen?
 
-Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Zusätzlich verfügt jeder in Azure bereitgestellte Clouddienst über eine öffentlich adressierbare zugewiesene VIP-Adresse. Sie müssen Eingabeendpunkte für PaaS-Rollen und Endpunkte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
+Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Zusätzlich verfügt jeder in Azure bereitgestellte Clouddienst über eine öffentlich adressierbare zugewiesene VIP-Adresse. Sie müssen Eingabeendgeräte für PaaS-Rollen und Endgeräte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
 
 ## VNets und Dienste
 
@@ -249,7 +249,7 @@ VNets werden von anderen VNets und anderen in der Azure-Infrastruktur gehosteten
 
 ### Können ACLs oder NSGs für VNets definiert werden?
 
-Nein. Sie können VNets keine ACLs oder NSGs zuordnen. ACLs können jedoch für Eingabeendpunkte virtueller Computer definiert werden, die in einem VNet bereitgestellt wurden. NSGs können Subnetzen oder NICs zugeordnet werden.
+Nein. Sie können VNets keine ACLs oder NSGs zuordnen. ACLs können jedoch für Eingabeendgeräte virtueller Computer definiert werden, die in einem VNet bereitgestellt wurden. NSGs können Subnetzen oder NICs zugeordnet werden.
 
 ### Gibt es ein Whitepaper zum Thema VNet-Sicherheit?
 
@@ -265,4 +265,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Was ist Azure Machine Learning Studio? | Microsoft Azure"
 	description="Übersicht über Azure ML Studio, ein Drag &amp; Drop-Tool zum schnellen Erstellen von Modellen aus einer verwendungsbereiten Bibliothek mit Algorithmen und Modulen."
-	keywords="azure machine learning,azure ml, ml studio"
+	keywords="Azure Machine Learning,Azure ML,ML Studio"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -31,7 +31,7 @@ Für die Entwicklung eines prädiktiven Analysemodells verwendet man typischerwe
 
 **Azure Machine Learning Studio** stellt Ihnen einen interaktiven, visuellen Arbeitsbereich zur Verfügung, in dem Sie einfach ein Vorhersageanalysemodell entwickeln, testen und durchlaufen können. Sie fügen per Drag & Drop ***DataSets*** und ***Analysemodule*** in einen interaktiven ***Arbeitsbereich*** ein und verbinden sie zu einem ***Experiment***, das in Machine Learning Studio ***ausgeführt*** werden kann. Für das Iterieren an Ihrem Modelldesign ***bearbeiten*** Sie das Experiment, ***speichern*** auf Wunsch eine Kopie und führen es erneut aus. Wenn Sie bereit sind, können Sie Ihr ***Trainingsexperiment*** in ein ***Vorhersageexperiment*** konvertieren und anschließend als ***Webdienst*** ***veröffentlichen***, damit andere Benutzer auf das Modell zugreifen können.
 
->[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+>[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich eine Übersicht über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 Es ist keine Programmierung erforderlich, sondern einfach nur das visuelle Verbinden von Datasets und Modulen zum Erstellen eines prädiktiven Analysemodells.
 
@@ -50,9 +50,9 @@ Klicken Sie auf die Registerkarte **Studio**. Sie werden aufgefordert, sich mit 
 - **EXPERIMENTS**: Experimente, die erstellt, ausgeführt und als Entwürfe gespeichert wurden
 - **WEB SERVICES**: Webdienste, die Sie über Ihre Experimente bereitgestellt haben
 - **NOTEBOOKS**: Jupyter-Notebooks, die Sie erstellt haben
-- **DATASETS**: Datasets, die Sie in Studio hochgeladen haben
+- **DATASETS**: DataSets, die Sie in Studio hochgeladen haben
 - **TRAINED MODELS**: Modelle, die Sie in Experimenten trainiert und in Studio gespeichert haben
-- **SETTINGS**: eine Sammlung von Einstellungen, mit denen Sie Ihr Konto und Ihre Ressourcen konfigurieren
+- **EINSTELLUNGEN** – eine Sammlung von Einstellungen, mit denen Sie Ihr Konto und Ihre Ressourcen konfigurieren
 
 ### Katalog
 
@@ -86,7 +86,7 @@ Ein DataSet besteht aus Daten, die in Machine Learning Studio hochgeladen wurden
 
 Beim Erstellen eines Experiments können Sie links neben dem Arbeitsbereich aus der Liste der Datasets auswählen.
 
-Eine Liste der in Machine Learning Studio enthaltenen Beispieldatasets finden Sie unter [Verwenden von Beispieldatasets in Azure Machine Learning Studio](machine-learning-use-sample-datasets.md).
+Eine Liste der in Machine Learning Studio enthaltenen Beispiel-DataSets finden Sie unter [Verwenden von Beispiel-DataSets in Azure Machine Learning Studio](machine-learning-use-sample-datasets.md).
 
 ### Module
 
@@ -115,4 +115,4 @@ Wenn Ihr Predictive Analytics-Modell bereit ist, können Sie es als Webdienst di
 [linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
 [score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

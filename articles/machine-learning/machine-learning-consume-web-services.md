@@ -2,7 +2,6 @@
 	pageTitle="Nutzen eines Machine Learning-Webdiensts | Microsoft Azure"
 	description="Sobald ein Machine Learning-Dienst bereitgestellt wurde, kann der zur Verfügung gestellte RESTFul-Webdienst als Antwort-/Anfrage-Dienst oder als Stapelausführungsdienst genutzt werden."
 	services="machine-learning"
-	solutions="big-data"
 	documentationCenter=""
 	authors="bradsev"
 	manager="paulettm"
@@ -14,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="tbd"
-	ms.date="09/09/2015" 
+	ms.date="10/19/2015"
 	ms.author="bradsev" />
 
 
@@ -34,11 +33,13 @@ Dies bedeutet, dass die Dienste von Webanwendungen, mobilen Anwendungen, benutze
 
 Ein Azure Machine Learning-Webdienst kann auf zwei unterschiedliche Arten verarbeitet werden, als Antwort-/Anfrage-Dienst oder als Stapelausführungsdienst. In jedem Szenario wird die Funktionalität über den RESTFul-Webdienst bereitgestellt, der für die Nutzung verfügbar gemacht wird, sobald das Experiment bereitgestellt wurde. Durch Bereitstellen eines Machine Learning-Webdiensts in Azure mit einem Azure-Webdienst-Endpunkt, bei dem der Dienst automatisch anhand der Nutzung skaliert wird, können Sie im Vorfeld anfallende und fortlaufende Kosten für Hardwareressourcen vermeiden.
 
+> [AZURE.TIP]Eine einfache Möglichkeit zum Erstellen einer Web-App für den Zugriff auf Ihren Vorhersagewebdienst finden Sie unter [Verwenden eines Azure Machine Learning-Webdiensts mit einer Web-App-Vorlage](machine-learning-consume-web-service-with-web-app-template.md).
+
 <!-- When this article gets published, fix the link and uncomment
 For more information on how to manage Azure Machine Learning web service endpoints using the REST API, see **Azure machine learning web service endpoints**.
 -->
 
-Weitere Informationen zum Erstellen und Bereitstellen eines Machine Learning-Webdiensts finden Sie unter [Bereitstellen eines Azure Machine Learning-Webdiensts][publish]. Eine schrittweise Anleitung zum Erstellen und Bereitstellen eines Machine Learning-Experiments finden Sie unter [Entwickeln einer vorhersehbaren Lösung mit Azure Machine Learning][walkthrough].
+Weitere Informationen zum Erstellen und Bereitstellen eines Machine Learning-Webdiensts finden Sie unter [Bereitstellen eines Azure Machine Learning-Webdiensts][publish]. Eine schrittweise Anleitung zum Erstellen und Bereitstellen eines Machine Learning-Experiments finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning][walkthrough].
 
 [publish]: machine-learning-publish-a-machine-learning-web-service.md
 [walkthrough]: machine-learning-walkthrough-develop-predictive-solution.md
@@ -55,7 +56,7 @@ Ein Beispiel für RRS ist das Überprüfen der Authentizität einer Anwendung. H
 
 ## Stapelausführungsdienst (Batch Execution Service BES)
 
-Ein Stapelausführungsdienst (Batch Execution Service, BES) ist ein Dienst zur asynchronen Bewertung eines umfangreichen Stapels von Datensätzen. Die Eingabe für den BES enthält einen Stapel von Datensätzen aus verschiedenen Quellen, z. B. Blobs, Tabellen in Azure, SQL Azure, HDInsight (beispielsweise Ergebnisse einer Hive-Abfrage) oder HTTP-Quellen. Die Ausgabe des BES enthält die Ergebnisse der Wertung. Die Ergebnisse werden in eine Datei im Azure-Blob-Speicher geschrieben, und Daten aus dem Speicherendpunkt werden in der Antwort zurückgegeben.
+Ein Stapelausführungsdienst (Batch Execution Service, BES) ist ein Dienst zur asynchronen Bewertung eines umfangreichen Stapels von Datensätzen. Die Eingabe für den BES enthält einen Stapel von Datensätzen aus verschiedenen Quellen, z. B. Blobs, Tabellen in Azure, SQL Azure, HDInsight (beispielsweise Ergebnisse einer Hive-Abfrage) oder HTTP-Quellen. Die Ausgabe des BES enthält die Ergebnisse der Wertung. Die Ergebnisse werden in eine Datei im Azure-Blob-Speicher geschrieben, und Daten aus dem Speicherendgerät werden in der Antwort zurückgegeben.
 
 Ein BES ist nützlich, wenn Antworten nicht sofort benötigt werden, z. B. für regelmäßig geplante Bewertungen für einzelne Benutzer oder Geräte im Internet der Dinge (IOT).
 
@@ -432,4 +433,4 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Batchauftrag anhan
 	    }
 	}
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

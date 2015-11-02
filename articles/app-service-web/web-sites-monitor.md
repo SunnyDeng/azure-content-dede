@@ -27,8 +27,8 @@
 >[AZURE.NOTE]Die Aufbewahrungsrichtlinien für App-Metriken variieren je nach Granularität.
 
 - Metriken mit der Granularität **Minute** werden für **24 Stunden** beibehalten.
-- Metriken mit der Granularität **Stunde** werden für **7 Tage** beibehalten.
-- Metriken mit der Granularität **Tag** werden für **30 Tage** beibehalten.
+- Metriken mit der Granularität **Stunde** werden für **7 Tage** beibehalten.
+- Metriken mit der Granularität **Tag** werden für **30 Tage** beibehalten.
 
 ##<a name="websitemetrics"></a>Vorgehensweise: Hinzufügen von Web-App-Kennzahlen
 
@@ -48,7 +48,7 @@
 
 ##<a name="howtoreceivealerts"></a>Vorgehensweise: Empfangen von Warnungen mittels Web-App-Kennzahlen
 
-Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst einen Web-Endpunkt zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Sie können auch festlegen, dass eine E-Mail gesendet wird, wenn eine ausgewählte Metrik den angegebenen Wert erreicht. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
+Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst ein Web-Endgerät zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Sie können auch festlegen, dass eine E-Mail gesendet wird, wenn eine ausgewählte Metrik den angegebenen Wert erreicht. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
 
 ##<a name="howtoviewusage"></a>Vorgehensweise: Anzeigen der Nutzungskontingente für eine Web-App
 
@@ -242,42 +242,42 @@ Die HTM-Dateien umfassen die folgenden Abschnitte:
 - Lesen Sie Dateien mit: Log Parser. Dient zum Analysieren und Abfragen von IIS-Protokolldateien. Log Parser 2.2 ist im Microsoft Download Center unter <a href="http://go.microsoft.com/fwlink/?LinkId=246619">http://go.microsoft.com/fwlink/?LinkId=246619</a> verfügbar.
 
 
-##<a name="webendpointstatus"></a> Vorgehensweise: Überwachen des Web-Endpunktstatus
+##<a name="webendpointstatus"></a> Vorgehensweise: Überwachen des Web-Endgerätestatus
 
-Mit dieser Funktion, die im **Standard**-Modus verfügbar ist, können Sie bis zu 2 Endpunkte von 3 geografischen Standorten aus überwachen.
+Mit dieser Funktion, die im **Standard**-Modus verfügbar ist, können Sie bis zu 2 Endgeräte von 3 geografischen Standorten aus überwachen.
 
-Endpunktüberwachung konfiguriert Webtests von geografisch verteilten Standorten zum Testen der Reaktionszeit und der Verfügbarkeit von Web-URLs. Der Test führt einen HTTP GET-Aufruf der Web-URL durch, um die Reaktionszeit und Verfügbarkeit von jedem Standort zu bestimmen. Jeder konfigurierte Standort führt alle fünf Minuten einen Test aus.
+Endgerätüberwachung konfiguriert Webtests von geografisch verteilten Standorten zum Testen der Reaktionszeit und der Verfügbarkeit von Web-URLs. Der Test führt einen HTTP GET-Aufruf der Web-URL durch, um die Reaktionszeit und Verfügbarkeit von jedem Standort zu bestimmen. Jeder konfigurierte Standort führt alle fünf Minuten einen Test aus.
 
 Die Verfügbarkeit wird mit HTTP-Antwortcodes überwacht, und die Reaktionszeit wird in Millisekunden gemessen. Die Verfügbarkeit gilt als 100 %, wenn die Reaktionszeit unter 30 Sekunden beträgt und der HTTP-Statuscode unter 400 liegt. Die Verfügbarkeit beträgt 0%, wenn die Reaktionszeit über 30 Sekunden beträgt und der HTTP-Statuscode über 400 liegt.
 
-Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu den einzelnen Endpunkten aufrufen, um die Reaktionszeit und den Verfügbarkeitsstatus für das Überwachungsintervall von jedem der Teststandorte anzuzeigen. Sie können beispielsweise auch eine Warnungsregel einrichten, wenn der Endpunkt zu lange für eine Reaktion braucht.
+Nachdem Sie die Endgerätüberwachung konfiguriert haben, können Sie Details zu den einzelnen Endgeräten aufrufen, um die Reaktionszeit und den Verfügbarkeitsstatus für das Überwachungsintervall von jedem der Teststandorte anzuzeigen. Sie können beispielsweise auch eine Warnungsregel einrichten, wenn das Endgerät zu lange für eine Reaktion braucht.
 
-**So konfigurieren Sie die Endpunktüberwachung:**
+**So konfigurieren Sie die Endgerätüberwachung:**
 
-1.	Öffnen Sie **Web- Apps**. Klicken Sie auf den Namen der Web-App, die Sie konfigurieren möchten.
+1.	Öffnen Sie **Web-Apps**. Klicken Sie auf den Namen der Web-App, die Sie konfigurieren möchten.
 2.	Klicken Sie auf die Registerkarte **Konfigurieren**.
-3.     Wechseln Sie zum Abschnitt **Überwachung**, um Ihre Endpunkteinstellungen einzugeben.
-4.	Geben Sie einen Namen für den Endpunkt ein.
+3.     Wechseln Sie zum Abschnitt **Überwachung**, um Ihre Endgeräteinstellungen einzugeben.
+4.	Geben Sie einen Namen für das Endgerät ein.
 5.	Geben Sie die URL für den Teil der Web-App ein, den Sie überwachen möchten. Zum Beispiel: [http://contoso.azurewebsites.net/archive](http://contoso.azurewebsites.net/archive)
 6.	Wählen Sie einen oder mehrere geografische Standorte aus der Liste aus.
-7.	Sie können optional die vorherigen Schritte wiederholen, um einen zweiten Endpunkt zu erstellen.
-8.	Klicken Sie auf **Speichern**. Es kann einige Zeit dauern, bis die Daten der Web-Endpunktüberwachung auf den Registerkarten **Dashboard** und **Monitor** verfügbar sind.
+7.	Sie können optional die vorherigen Schritte wiederholen, um ein zweites Endgerät zu erstellen.
+8.	Klicken Sie auf **Speichern**. Es kann einige Zeit dauern, bis die Daten der Web-Endgerätüberwachung auf den Registerkarten **Dashboard** und **Monitor** verfügbar sind.
 
 	Gehen Sie folgendermaßen vor, um eine E-Mail-Regel zu erstellen:
 
 9.	Klicken Sie in der Diensteleiste links auf **Verwaltungsdienste**.
 10.	Klicken Sie unten auf **Regel hinzufügen**.
-11.	Wählen Sie in **Diensttyp** die Option **Web-App** aus und dann die Web-App, für die Sie zuvor die Endpunktüberwachung konfiguriert haben. Klicken Sie auf **Weiter**.
-12.	In **Metrik** können Sie jetzt weitere Kennzahlen für den von Ihnen konfigurierten Endpunkt auswählen. Beispiel: **Reaktionszeit (Homepage/USA: IL-Chicago)**. Wählen Sie die Metrik "Reaktionszeit", und geben Sie in **Schwellenwert** den Wert "3" ein. Dadurch werden 3 Sekunden als Grenzwert festlegt.
+11.	Wählen Sie in **Diensttyp** die Option **Web-App** aus und dann die Web-App, für die Sie zuvor die Endgerätüberwachung konfiguriert haben. Klicken Sie auf **Weiter**.
+12.	In **Metrik** können Sie jetzt weitere Kennzahlen für das von Ihnen konfigurierte Endgerät auswählen. Beispiel: **Reaktionszeit (Homepage/USA: IL-Chicago)**. Wählen Sie die Metrik "Reaktionszeit", und geben Sie in **Schwellenwert** den Wert "3" ein. Dadurch werden 3 Sekunden als Grenzwert festlegt.
 13.	Wählen Sie**E-Mail an Dienstadministrator und Co-Administratoren senden**. Klicken Sie auf **Fertig stellen**.
 
-	Azure überwacht nun aktiv den Endpunkt und sendet eine E-Mail-Mitteilung, wenn die Antwortzeit 3 Sekunden überschreitet.
+	Azure überwacht nun aktiv das Endgerät und sendet eine E-Mail-Mitteilung, wenn die Antwortzeit 3 Sekunden überschreitet.
 
-Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folgenden Videos:
+Weitere Informationen zur Web-App-Endgerätüberwachung erhalten Sie in den folgenden Videos:
 
-- [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
+- [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endgerätüberwachung](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
 
-- [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
+- [Pflegen von Azure-Websites plus Endgerätüberwachung - mit Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -289,4 +289,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

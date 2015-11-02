@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="10/15/2015" 
 	ms.author="mandia"/>
 
 # Business-to-Business-Connectors und API-Apps in Microsoft Azure App Service
@@ -206,4 +206,4 @@ Wenn Sie in Ihrer App die B2B-API-Apps aus dem Katalog auswählen, werden sie au
 
 [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

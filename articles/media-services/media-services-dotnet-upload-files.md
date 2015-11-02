@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="10/17/2015" 
 	ms.author="juliako"/>
 
 
@@ -314,4 +314,4 @@ Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit d
 [Abrufen eines Medienprozessors]: media-services-get-media-processor.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

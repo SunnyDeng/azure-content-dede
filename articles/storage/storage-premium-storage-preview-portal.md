@@ -17,7 +17,7 @@
 	ms.author="tamram;selcint"/>
 
 
-# Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern
+# Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern
 
 ## Übersicht
 
@@ -201,6 +201,7 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 	- Wenn Sie **XFS** verwenden, deaktivieren Sie Sperren mithilfe der Bereitstellungsoption „nobarrier“ (verwenden Sie zum Aktivieren von Sperren „barrier“).
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
+- Damit die Volumebezeichnungen nach dem Neustart des virtuellen Computers beibehalten werden, müssen Sie „/etc/fstab“ mit den UUID-Verweisen auf die Datenträger aktualisieren. Weitere Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-how-to-attach-disk).
 
 Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Workloadmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Workload optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Distribution</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-de-DE-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-de-DE-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14\_10-amd64-server-20150202-de-DE-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15\_04-amd64-server-20150422-de-DE-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 6.7, 7.0</td> <td></td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich </a> </br> *Siehe Hinweis unten</td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a> <br/> *Siehe Hinweis unten </td> </tr>
 
@@ -259,12 +260,12 @@ In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto mit dem Azure-Vo
 
 3.	Klicken Sie unter **Neu** auf **Alles**. Wählen Sie **Speicher, Cache und Sicherung** aus. Klicken Sie nun auf **Speicher** und dann auf **Erstellen**.
 
-4.	Geben Sie im Bereich "Speicherkonto" einen Namen für Ihr Speicherkonto ein. Klicken Sie auf **Tarif**. Klicken Sie im Bereich **Empfohlene Tarife** auf **Alle Tarife durchsuchen**. Wählen Sie im Bereich **Tarif auswählen** die Option **Premium lokal redundant** aus. Klicken Sie auf **Auswählen**. Beachten Sie, dass der Bereich **Speicherkonto** standardmäßig **Standard-GRS** als **Tarif** anzeigt. Nachdem Sie auf **Auswählen** geklickt haben, wird der **Tarif** als **Premium LRS** angezeigt.
+4.	Geben Sie auf dem Blatt "Speicherkonto" einen Namen für Ihr Speicherkonto ein. Klicken Sie auf **Preisstufe**. Klicken Sie auf dem Blatt **Empfohlene Preisstufen** auf **Alle Preisstufen durchsuchen**. Wählen Sie auf dem Blatt **Preisstufe auswählen** die Option **Premium lokal redundant** aus. Klicken Sie auf **Auswählen**. Beachten Sie, dass das Blatt **Speicherkonto** standardmäßig **Standard-GRS** als **Preisstufe** anzeigt. Nachdem Sie auf **Auswählen** geklickt haben, wird die **Preisstufe** als **Premium LRS** angezeigt.
 
 	![Tarif][Image1]
 
 
-5.	Behalten Sie im Bereich **Speicherkonto** die Standardwerte für **Ressourcengruppe**, **Abonnement**, **Standort** und **Diagnose** bei. Klicken Sie auf **Erstellen**.
+5.	Behalten Sie auf dem Blatt **Speicherkonto** die Standardwerte für **Ressourcengruppe**, **Abonnement**, **Standort** und **Diagnose** bei. Klicken Sie auf **Erstellen**.
 
 Eine vollständige exemplarische Vorgehensweise in einer Azure-Umgebung finden Sie unter [Erstellen eines virtuellen Computers mit Windows im Azure-Vorschauportal](../virtual-machines-windows-tutorial-azure-preview.md).
 
@@ -342,4 +343,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

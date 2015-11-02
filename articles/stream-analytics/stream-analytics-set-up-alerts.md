@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Stream Analytics-Warnungen | Microsoft Azure" 
 	description="Grundlegendes zu Stream Analytics-Warnungen" 
-	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
+	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -26,7 +26,7 @@ Sie können eine Regel einrichten, die eine Warnung auslöst, wenn eine Metrik e
 
 Zum Beispiel: "Wenn Ausgabeereignisse in den letzten 15 Minuten < 100, wird eine E-Mail-Benachrichtigung an die folgende E-Mail-ID gesendet: xyz@company.com”.
 
-Regeln können auf Metriken über das Portal eingerichtet oder [programmgesteuert](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a) über Ereignisprotokolldaten konfiguriert werden.
+Regeln können für Metriken über das Portal eingerichtet oder [programmgesteuert](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a) über Ereignisprotokolldaten konfiguriert werden.
 
 ## Einrichten von Warnungen über das Azure-Portal
 
@@ -37,7 +37,7 @@ Es gibt zwei Möglichkeiten, Warnungen im Azure-Verwaltungsportal einzurichten:
 
 ## Warnungen über die Registerkarte "Überwachen" des Auftrags im Portal
 
-1.	Wählen Sie die Metrik in der Registerkarte "Überwachen", klicken Sie auf die Schaltfläche **Regel hinzufügen** im unteren Teil des Dashboards, und richten Sie dann die Regeln ein.  
+1.	Wählen Sie die Metrik auf der Registerkarte „Überwachen“ aus, klicken Sie auf die Schaltfläche **Regel hinzufügen** im unteren Teil des Dashboards, und richten Sie dann die Regeln ein.  
 
     ![Dashboard](./media/stream-analytics-set-up-alerts/01-stream-analytics-set-up-alerts.png)
 
@@ -51,8 +51,8 @@ Es gibt zwei Möglichkeiten, Warnungen im Azure-Verwaltungsportal einzurichten:
 
 ## Einrichten von Warnungen über die Vorgangsprotokolle
 
-1.	Wechseln Sie zur Registerkarte **Warnungen** in den Verwaltungsdiensten im [Azure-Portal](https://manage.windowsazure.com)  
-2.	Klicken Sie auf **Regel hinzufügen**  
+1.	Wechseln Sie zur Registerkarte **Warnungen** in den Verwaltungsdiensten im [Azure-Portal](https://manage.windowsazure.com).  
+2.	Klicken Sie auf **Regel hinzufügen**.  
 
     ![Kriterien](./media/stream-analytics-set-up-alerts/04-stream-analytics-set-up-alerts.png)
 
@@ -62,7 +62,7 @@ Es gibt zwei Möglichkeiten, Warnungen im Azure-Verwaltungsportal einzurichten:
 
 ## Einrichten von Warnungen im Azure-Vorschauportal ##
 
-Navigieren Sie im Azure-Vorschauportal zum Stream Analytics-Auftrag, für dessen Metriken Sie Warnungen einrichten möchten, und klicken Sie auf den Abschnitt **Überwachung**. Klicken Sie im Blatt **Metrik**, das geöffnet wird, auf den Befehl **Benachrichtigung hinzufügen**.
+Navigieren Sie im Azure-Vorschauportal zum Stream Analytics-Auftrag, für dessen Metriken Sie Warnungen einrichten möchten, und klicken Sie auf den Abschnitt **Überwachung**. Klicken Sie im dann geöffneten Blatt **Metrik** auf den Befehl **Benachrichtigung hinzufügen**.
 
   ![Azure-Vorschauportal, Einrichtung](./media/stream-analytics-set-up-alerts/06-stream-analytics-set-up-alerts.png)
 
@@ -72,7 +72,7 @@ Bei Auswahl von „Metrics“ geben Sie eine Bedingung und einen Schwellenwert f
 
   ![Azure-Vorschauportal, Auswählen von Metriken](./media/stream-analytics-set-up-alerts/07-stream-analytics-set-up-alerts.png)
 
-Weitere Informationen über das Konfigurieren von Warnungen im Azure-Vorschauportal finden Sie unter [Empfangen von Warnbenachrichtigungen](./azure-portal/insights-receive-alert-notifications.md).
+Weitere Informationen zum Konfigurieren von Warnungen im Azure-Vorschauportal finden Sie unter [Empfangen von Warnbenachrichtigungen](./azure-portal/insights-receive-alert-notifications.md).
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -85,4 +85,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

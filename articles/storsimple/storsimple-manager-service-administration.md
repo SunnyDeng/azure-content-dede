@@ -57,12 +57,11 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| |
-||Sicherungskatalog|Volumecontainer→|Volumes| 
-||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
-||Aufträge|Konfigurieren (Gerät)||
-||Warnungen|Wartung|
+||Geräte →|Überwachen| ||Sicherungskatalog|Volumecontainer→|Volumes| ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| ||Aufträge|Konfigurieren (Gerät)| ||Warnungen|Wartung|
 
+![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
+
+Um sich ein Video anzusehen, das Sie durch die Benutzeroberfläche des StorSimple Manager-Diensts führt, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
 
 ## Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
 
@@ -85,7 +84,7 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Über Bandbreitenvorlagen informieren</br>Bandbreitenvorlage hinzufügen</br>Bandbreitenvorlage bearbeiten</br>Bandbreitenvorlage löschen</br>Standard-Bandbreitenvorlage verwenden</br>Ganztägige Bandbreitenvorlage mit definiertem Startzeitpunkt erstellen|StorSimple Manager-Dienst → Konfigurieren|[Verwalten von Bandbreitenvorlagen](storsimple-manage-bandwidth-templates.md)|
 |Über Zugriffssteuerungsdatensätze informieren</br>Zugriffssteuerungsdatensatz erstellen</br>Zugriffssteuerungsdatensatz bearbeiten</br>Zugriffssteuerungsdatensatz löschen|StorSimple Manager-Dienst → Konfigurieren|[Verwalten von Zugriffssteuerungsdatensätzen](storsimple-manage-acrs.md)|
 |Auftragsdetails anzeigen</br>Auftrag abbrechen|StorSimple Manager-Dienst → Aufträge|[Verwalten von Aufträgen](storsimple-manage-jobs.md)
-|Warnungsbenachrichtigungen erhalten</br>Benachrichtigungen verwalten</br>Warnungen prüfen|StorSimple Manager-Dienst → Warnungen|[Anzeigen und Verwalten von StorSimple-Warnungen](storsimple-manage-alerts.md)
+|Warnungsbenachrichtigungen empfangen</br>Benachrichtigungen verwalten</br>Warnungen prüfen|StorSimple Manager-Dienst → Warnungen|[Anzeigen und Verwalten von StorSimple-Warnungen](storsimple-manage-alerts.md)
 |Verbundene Initiatoren anzeigen</br>Seriennummer des Geräts ermitteln</br>Ziel-IQN ermitteln|StorSimple Manager-Dienst → Geräte → Dashboard|[Verwenden des StorSimple-Gerätedashboards](storsimple-device-dashboard.md)|
 |Überwachungsdiagramme erstellen|StorSimple Manager-Dienst → Geräte → Überwachen|[Überwachen von StorSimple-Geräten](storsimple-monitor-device.md)|
 |Volumecontainer hinzufügen</br>Volumecontainer ändern</br>Volumecontainer löschen|StorSimple Manager-Dienst → Geräte → Volumecontainer|[Verwalten von Volumecontainern](storsimple-manage-volume-containers.md)|
@@ -102,9 +101,6 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Unterstützungspaket erstellen|StorSimple Manager-Dienst → Geräte → Wartung|[Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md)|
 |Softwareupdates installieren|StorSimple Manager-Dienst → Geräte → Wartung|[Aktualisieren Ihres Geräts](storsimple-update-device.md)|
 
-![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
-
-Um sich ein Video anzuschauen, dass Sie durch die Benutzeroberfläche des StorSimple-Manager-Diensts führt, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
 
 ##Nächste Schritte
 Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts oder zu Problemen mit dessen Hardwarekomponenten finden Sie hier:
@@ -116,4 +112,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -3,7 +3,7 @@
 	description="Dieses Thema bietet eine Übersicht über Azure Media Services." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="Juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015"
+	ms.date="10/15/2015"
 	ms.author="juliako"/>
 
 #Azure Media Services – Übersicht und häufige Szenarios
@@ -54,7 +54,7 @@ Um mit Azure Media Services loszulegen, sollten Sie Folgendes haben:
 3. (Optional) Eine eingerichtete Entwicklungsumgebung. Wählen Sie .NET oder REST-API für Ihre Entwicklungsumgebung. Weitere Informationen finden Sie unter [Einrichten der Umgebung](media-services-dotnet-how-to-use.md). 
 
 	Erfahren Sie darüber hinaus, wie Sie programmgesteuert eine [Verbindung](media-services-dotnet-connect_programmatically.md) herstellen können.
-4. (Empfohlen) Eine oder mehrere zugewiesene Skalierungseinheiten. Es wird empfohlen, für Anwendungen in der Produktionsumgebung eine oder mehrere Skalierungseinheiten zu reservieren. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten](media-services-manage-origins.md).
+4. (Empfohlen) Eine oder mehrere zugewiesene Skalierungseinheiten. Es wird empfohlen, für Anwendungen in der Produktionsumgebung eine oder mehrere Skalierungseinheiten zu reservieren. Weitere Informationen finden Sie unter [Verwalten von Streamingendgeräten](media-services-manage-origins.md).
 
 ##Konzepte
 
@@ -70,39 +70,39 @@ Dieser Abschnitt erläutert allgemeine Szenarien und enthält Links zu relevante
 
 ###Schützen von Inhalte im Speicher und Übermitteln von Streamingmedien ohne Verschlüsselung
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
+1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Asset hoch.
 	
-	Es wird empfohlen, eine Speicherverschlüsselung auf Medienobjekte anzuwenden, um Ihre Inhalte beim Hochladen und während der Speicherung zu schützen.
+	Es wird empfohlen, eine Speicherverschlüsselung auf Assets anzuwenden, um Ihre Inhalte beim Hochladen und während der Speicherung zu schützen.
  
-1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate durch.
+1. Codieren Sie das Medienobjekt in einen Satz von MP4-Dateien mit adaptiver Bitrate.
 
-	Es wird empfohlen, eine Speicherverschlüsselung das Ausgabemedienobjekt anzuwenden, um Ihre Inhalte während der Speicherung zu schützen.
+	Es wird empfohlen, eine Speicherverschlüsselung das Ausgabeasset anzuwenden, um Ihre Inhalte während der Speicherung zu schützen.
 	
-1. Konfigurieren Sie eine Übermittlungsrichtlinie für Medienobjekte (wird zur dynamischen Paketerstellung verwendet).
+1. Konfigurieren Sie eine Übermittlungsrichtlinie für Assets (wird zur dynamischen Paketerstellung verwendet).
 	
-	Wenn Ihr Medienobjekt speicherverschlüsselt ist, **müssen** Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren.
+	Wenn Ihr Asset speicherverschlüsselt ist, **müssen** Sie die Übermittlungsrichtlinien für Assets konfigurieren.
 
-1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand-Locators.
+1. Veröffentlichen Sie das Asset durch Erstellen eines OnDemand-Locators.
 
-	Vergewissern Sie sich, dass auf dem Streamingendpunkt, von dem aus Inhalte gestreamt werden sollen, mindestens eine reservierte Einheit für das Streaming vorhanden ist.
+	Vergewissern Sie sich, dass auf dem Streamingendgerät, von dem aus Inhalte gestreamt werden sollen, mindestens eine reservierte Einheit für das Streaming vorhanden ist.
 
 1. Streamen Sie die veröffentlichten Inhalte.
 
 ###Schützen von Inhalten im Speicher, Übermitteln dynamisch verschlüsselter Streamingmedien  
 
-Damit Sie die dynamische Verschlüsselung verwenden können, müssen Sie zunächst mindestens eine reservierte Einheit für das Streaming auf dem Streamingendpunkt abrufen, auf dem Sie verschlüsselte Inhalte streamen möchten.
+Damit Sie die dynamische Verschlüsselung verwenden können, müssen Sie zunächst mindestens eine reservierte Einheit für das Streaming auf dem Streamingendgerät abrufen, auf dem Sie verschlüsselte Inhalte streamen möchten.
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch. Wenden Sie die Speicherverschlüsselung auf das Medienobjekt an.
-1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate durch. Wenden Sie die Speicherverschlüsselung auf das Ausgabemedienobjekt an.
-1. Erstellen Sie einen Inhaltsverschlüsselungsschlüssel für das Medienobjekt, das während der Wiedergabe dynamisch verschlüsselt werden soll.
+1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Asset hoch. Wenden Sie die Speicherverschlüsselung auf das Asset an.
+1. Codieren Sie das Medienobjekt in einen Satz von MP4-Dateien mit adaptiver Bitrate. Wenden Sie die Speicherverschlüsselung auf das Ausgabeasset an.
+1. Erstellen Sie einen Inhaltsverschlüsselungsschlüssel für das Asset, das während der Wiedergabe dynamisch verschlüsselt werden soll.
 2. Konfigurieren Sie Autorisierungsrichtlinien für Inhaltsschlüssel.
-1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
-1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand-Locators.
+1. Konfigurieren Sie Übermittlungsrichtlinien für Assets (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
+1. Veröffentlichen Sie das Asset durch Erstellen eines OnDemand-Locators.
 1. Streamen Sie die veröffentlichten Inhalte. 
 
 ###Indizieren von Inhalten
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
+1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Asset hoch.
 1. Indizieren Sie die Inhalte.
 
 	Der Indizierungsauftrag erstellt Dateien, die bei der Videowiedergabe als Untertitel (Closed Captions, CC) verwendet werden können. Er generiert außerdem die Dateien, mit denen Sie im Video suchen und an den genauen Zeitpunkt im Video springen können.
@@ -112,11 +112,11 @@ Damit Sie die dynamische Verschlüsselung verwenden können, müssen Sie zunäch
 
 ###Bereitstellen eines progressiven Downloads 
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
-1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate oder eine einzelne MP4-Datei durch.
-1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand- oder SAS-Locators.
+1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Asset hoch.
+1. Codieren Sie das Medienobjekt in eine einzelne MP4-Datei.
+1. Veröffentlichen Sie das Asset durch Erstellen eines OnDemand- oder SAS-Locators.
 
-	Vergewissern Sie sich bei Verwendung eines OnDemand-Locators, dass auf dem Streamingendpunkt, von dem aus Inhalte gestreamt werden sollen, mindestens eine reservierte Einheit für das progressive Herunterladen von Inhalten vorhanden ist.
+	Vergewissern Sie sich bei Verwendung eines OnDemand-Locators, dass auf dem Streamingendgerät, von dem aus Inhalte gestreamt werden sollen, mindestens eine reservierte Einheit für das progressive Herunterladen von Inhalten vorhanden ist.
 
 	Wenn Sie einen SAS-Locator verwenden, wird der Inhalt aus dem Azure-Blob-Speicher heruntergeladen. In diesem Fall benötigen Sie keine reservierten Einheiten für das Streaming.
   
@@ -151,9 +151,9 @@ Beim Arbeiten mit Livestreaming werden normalerweise die folgenden Komponenten v
 		
 Mit **Microsoft Azure Media Services** (AMS) können Sie Livestreaming-Inhalte erfassen, codieren, in der Vorschau anzeigen, speichern und bereitstellen.
 
-Bei der Übermittlung Ihrer Inhalte für Kunden besteht Ihr Ziel darin, qualitativ hochwertige Videos für unterschiedliche Geräte unter verschiedenen Netzwerkbedingungen bereitzustellen. Damit Qualität und Netzwerkbedingungen sichergestellt werden, codieren Sie den Datenstrom mit Live-Encodern in einen Videodatenstrom mit mehreren Bitraten (adaptive Bitrate). Verwenden Sie die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) von Media Services, um den Datenstrom dynamisch erneut in verschiedene Protokolle zu packen. Media Services unterstützt die Übermittlung der folgenden Streamingtechnologien mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
+Bei der Übermittlung Ihrer Inhalte für Kunden besteht Ihr Ziel darin, qualitativ hochwertige Videos für unterschiedliche Geräte unter verschiedenen Netzwerkbedingungen bereitzustellen. Damit Qualität und Netzwerkbedingungen sichergestellt werden, codieren Sie den Datenstrom mit Live-Encodern in einen Videodatenstrom mit mehreren Bitraten (adaptive Bitrate). Verwenden Sie für Streaming auf verschiedenen Geräten die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) von Media Services, um den Datenstrom dynamisch erneut in verschiedene Protokolle zu packen. Media Services unterstützt die Übermittlung der folgenden Streamingtechnologien mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-in Azure Media Services verarbeiten die **Kanäle**, **Programme** und **Streamingendpunkte** alle Livestreaming-Funktionen, einschließlich Erfassung, Formatierung, DVR, Sicherheit, Skalierbarkeit und Redundanz.
+in Azure Media Services verarbeiten die **Kanäle**, **Programme** und **Streamingendgeräte** alle Livestreaming-Funktionen, einschließlich Erfassung, Formatierung, DVR, Sicherheit, Skalierbarkeit und Redundanz.
 
 Ein **Kanal** stellt eine Pipeline zum Verarbeiten von Livestreaming-Inhalten dar. Derzeit kann ein Kanal Live-Eingabedatenströme auf folgende Weise empfangen:
 
@@ -191,7 +191,7 @@ Azure Media Services stellt die Tools zur Verfügung, die zum Erstellen leistung
 
 ##Aktivieren von Azure CDN
 
-Von Media Services wird die Integration mit Azure CDN unterstützt. Informationen zum Aktivieren von Azure CDN finden Sie unter [Verwalten von Streamingendpunkten in Media Services-Konten](media-services-manage-origins.md#enable_cdn).
+Von Media Services wird die Integration mit Azure CDN unterstützt. Informationen zum Aktivieren von Azure CDN finden Sie unter [Verwalten von Streamingendgeräten in Media Services-Konten](media-services-manage-origins.md#enable_cdn).
 
 ##Skalieren eines Media Services-Kontos
 
@@ -227,4 +227,4 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

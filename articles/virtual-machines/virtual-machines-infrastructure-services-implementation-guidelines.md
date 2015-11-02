@@ -14,18 +14,20 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="10/21/2015"
 	ms.author="rasquill"/>
 
 # Implementierungsrichtlinien für Azure-Infrastrukturdienste
 
-Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen für Entwicklung, Tests und Machbarkeitsstudien, da nur geringe Investitionen erforderlich sind, um einen bestimmten Implementierungsansatz für Lösungen zu testen. Sie müssen jedoch zwischen den einfachen Verfahren für Entwicklungs-/Testumgebungen und den schwierigeren und umfangreicheren Methoden für eine voll funktionsfähige, einsatzbereite Implementierung einer IT-Arbeitsauslastung unterscheiden.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
+Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen für Entwicklung, Tests und Machbarkeitsstudien, da nur geringe Investitionen erforderlich sind, um einen bestimmten Implementierungsansatz für Lösungen zu testen. Sie müssen jedoch zwischen den einfachen Verfahren für Entwicklungs-/Testumgebungen und den schwierigeren und umfangreicheren Methoden für eine voll funktionsfähige, einsatzbereite Implementierung einer IT-Workload unterscheiden.
 
 In diesem Leitfaden werden viele Bereiche behandelt, bei denen Planung der Schlüssel zum Erfolg einer IT-Workload in Azure ist. Darüber hinaus sorgt die Planung für eine strukturierte Reihenfolge für die Erstellung der erforderlichen Ressourcen. Es gibt zwar eine gewisse Flexibilität, aber wir empfehlen dennoch, dass Sie die Struktur in diesem Artikel bei der Planung und Entscheidungsfindung anwenden.
 
 Dieser Artikel basiert auf dem Inhalt im Blogbeitrag [Azure Implementation Guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) (in englischer Sprache). Vielen Dank an Santiago Cánepa (Application Development Manager bei Microsoft), Hugo Salcedo (Application Development Manager bei Microsoft) für ihr ursprüngliches Material.
 
-> [AZURE.NOTE]Affinitätsgruppen sind veraltet. Ihre Verwendung wird hier nicht beschrieben. Weitere Informationen finden Sie unter [Informationen zu regionalen VNets und Affinitätsgruppen](../virtual-network/virtual-networks-migrate-to-regional-vnet.md).
+> [AZURE.NOTE]Affinitätsgruppen sind veraltet. Ihre Verwendung wird hier nicht beschrieben. Weitere Informationen finden Sie unter [Informationen zu regionalen VNETs und Affinitätsgruppen](../virtual-network/virtual-networks-migrate-to-regional-vnet.md).
 
 ## 1\. Benennungskonventionen
 
@@ -76,9 +78,9 @@ Sie sollten die einzelnen Ressourcentypen in der Benennungskonvention definieren
 - Subnetze
 - Verfügbarkeitsgruppen
 - Ressourcengruppen
-- Cloud-Dienste
+- Clouddienste
 - Virtuelle Computer
-- Endpunkte
+- Endgeräte
 - Netzwerksicherheitsgruppen
 - Rollen
 
@@ -159,7 +161,7 @@ Azure-Speicher sind ein wesentlicher Bestandteil vieler Azure-Lösungen. Azure-S
 
 Es sind zwei Arten von Speicherkonten in Azure verfügbar. Mit einem Standardspeicherkonto erhalten Sie Zugriff auf Blobspeicher (zum Speichern von Datenträgern in virtuellen Azure-Computern) sowie auf Tabellen-, Warteschlangen- und Dateispeicher. Premium-Speicher wurde für Anwendungen mit hoher Leistung, wie z. B. SQL Server in einem AlwaysOn-Cluster, entworfen und unterstützt derzeit nur virtuelle Azure-Datenträger.
 
-Speicherkonten sind an Skalierbarkeitsziele gebunden. Machen Sie sich unter [Microsoft Azure-Abonnement- und -Dienstgrenzen, -Kontingente und -Einschränkungen](../azure-subscription-service-limits.md#storage-limits) mit den aktuellen Azure-Speichergrenzwerten vertraut. Informationen hierzu finde Sie auch unter [Skalierbarkeits- und Leistungsziele für Azure-Speicher](../storage-scalability-targets.md).
+Speicherkonten sind an Skalierbarkeitsziele gebunden. Machen Sie sich unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md#storage-limits) mit den aktuellen Azure-Speichergrenzwerten vertraut. Informationen hierzu finden Sie auch unter [Skalierbarkeits- und Leistungsziele für Azure Storage](../storage-scalability-targets.md).
 
 Azure erstellt virtuelle Computer mit Betriebssystem-Datenträger, einem temporären Datenträger und null oder mehreren optionalen Datenträgern. Der Betriebssystem-Datenträger und Datenträger mit Daten sind Azure-Seitenblobs, während der temporäre Datenträger sich im lokalen Speicher des Knotens befindet, in dem auch der Computer gespeichert ist. Dadurch eignet sich der temporäre Datenträger nicht für Daten, die während eines Systemneustarts beibehalten werden müssen, da der Computer im Hintergrund von einem Knoten zu einem anderen migriert werden kann, wodurch Daten auf diesem Datenträger verloren gehen. Speichern Sie keine Daten im temporären Laufwerk.
 
@@ -204,13 +206,13 @@ Aufgabe:
 
 - Erstellen Sie die Gruppe von Speicherkonten mit Ihrer Benennungskonvention. Sie können das Azure-Vorschauportal, das Azure-Portal oder das PowerShell-Cmdlet **New-AzureStorageAccount** verwenden.
 
-## 4\. Cloud-Dienste
+## 4\. Clouddienste
 
 Clouddienste sind ein wesentlicher Baustein der Azure-Dienstverwaltung, sowohl für PaaS- als für auch IaaS-Dienste. Bei PaaS stellen Clouddienste eine Zuordnung von Rollen dar, deren Instanzen untereinander kommunizieren können. Clouddienste werden mit einer öffentlichen virtuellen IP-Adresse (VIP) und einem Lastenausgleich verknüpft, der eingehenden Datenverkehr aus dem Internet akzeptiert und diesen für die Rollen ausgleicht, die den Datenverkehr empfangen.
 
 Clouddienste bieten bei IaaS ähnliche Funktionalität, obwohl in den meisten Fällen die Lastenausgleichsfunktionen zum Weiterleiten von Datenverkehr an bestimmte TCP- oder UDP-Ports aus dem Internet an die vielen virtuellen Computer innerhalb des Clouddiensts verwendet wird.
 
-> [AZURE.NOTE]Clouddienste sind im Azure-Ressourcen-Manager nicht vorhanden. Eine Einführung in die Vorteile des Ressourcen-Managers finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+> [AZURE.NOTE]Clouddienste sind im Azure-Ressourcen-Manager nicht vorhanden. Eine Einführung in die Vorteile des Ressourcen-Managers finden Sie unter [Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
 
 Clouddienstnamen sind in IaaS besonders wichtig, da Azure sie als Teil der Standard-Benennungskonvention für Datenträger verwendet. Der Name des Clouddiensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.
 
@@ -236,7 +238,7 @@ Aufgabe:
 
 Der nächste logische Schritt ist die Erstellung der virtuellen Netzwerke, die für die Kommunikation zwischen den virtuellen Computern in der Lösung erforderlich sind. Obwohl es möglich ist, mehrere virtuelle Computer einer IT-Workload in nur einem Clouddienst zu hosten, werden virtuelle Netzwerke empfohlen.
 
-Virtuelle Netzwerke sind Container für virtuelle Computer, für die auch Subnetze, benutzerdefinierte Adressierung und DNS-Konfigurationsoptionen festgelegt werden können. Virtuelle Computer können unabhängig davon, welchem Clouddienst sie angehören, direkt mit anderen Computern im gleichen virtuellen Netzwerk kommunizieren. Innerhalb des virtuellen Netzwerks bleibt diese Kommunikation privat, ohne dass sie über die öffentlichen Endpunkte übermittelt werden muss. Diese Kommunikation kann mithilfe der IP-Adresse oder des Namens über einen DNS-Server im virtuellen Netzwerk oder lokal erfolgen, wenn der virtuelle Computer mit dem Unternehmensnetzwerk verbunden ist.
+Virtuelle Netzwerke sind Container für virtuelle Computer, für die auch Subnetze, benutzerdefinierte Adressierung und DNS-Konfigurationsoptionen festgelegt werden können. Virtuelle Computer können unabhängig davon, welchem Clouddienst sie angehören, direkt mit anderen Computern im gleichen virtuellen Netzwerk kommunizieren. Innerhalb des virtuellen Netzwerks bleibt diese Kommunikation privat, ohne dass sie über die öffentlichen Endgeräte übermittelt werden muss. Diese Kommunikation kann mithilfe der IP-Adresse oder des Namens über einen DNS-Server im virtuellen Netzwerk oder lokal erfolgen, wenn der virtuelle Computer mit dem Unternehmensnetzwerk verbunden ist.
 
 ### Standortkonnektivität
 Wenn lokale Benutzer und Computer nicht kontinuierlich mit virtuellen Computern im virtuellen Azure-Netzwerk verbunden sein müssen, erstellen Sie ein virtuelles Netzwerk auf ausschließlicher Cloudbasis.
@@ -438,6 +440,6 @@ Diese Konfiguration umfasst:
 
 [Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84) (in englischer Sprache)
 
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manage](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

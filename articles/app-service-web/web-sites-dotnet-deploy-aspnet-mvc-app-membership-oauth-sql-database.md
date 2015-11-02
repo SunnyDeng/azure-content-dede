@@ -35,7 +35,7 @@ Sie lernen Folgendes:
 * Speichern relationaler Daten in der Cloud mithilfe der Azure SQL-Datenbank.
 * Bereitstellen eines Webprojekts, das eine Datenbank für eine [Web-App](http://go.microsoft.com/fwlink/?LinkId=529714) in Azure App Service verwendet.
 
->[AZURE.NOTE]Dies ist ein langes Lernprogramm. Wenn Sie eine schnelle Einführung in Azure App Service und Visual Studio-Webprojekte wünschen, informieren Sie sich unter [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md).
+>[AZURE.NOTE]Dies ist ein langes Lernprogramm. Wenn Sie eine schnelle Einführung in Azure App Service und Visual Studio-Webprojekte wünschen, informieren Sie sich unter [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md). Weitere Informationen zur Problembehandlung finden Sie im Abschnitt [Problembehandlung](#troubleshooting).
 >
 >Wenn Sie Azure App Service ausprobieren möchten, bevor Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -75,11 +75,11 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 	Der Name muss innerhalb der Domäne "azurewebsites.net" eindeutig sein, da die URL der Web-App "{name}.azurewebsites.net" lauten wird. Der Konfigurations-Assistent schlägt einen eindeutigen Namen vor, für den eine Nummer an Projektnamen "ContactManager" angefügt wird, was für dieses Tutorial in Ordnung ist.
 
-5. Wählen Sie in der Dropdownliste **App Service-Plan** die Option **Neuen App Service-Plan erstellen** aus, und geben Sie einen Namen ein, z. B. "StandardWeb" wie in der Abbildung.
+5. Wählen Sie in der Dropdownliste **App Service-Plan** die Option **Neuen App Service-Plan erstellen** aus, und geben Sie einen Namen ein, z. B. „StandardWeb“ wie in der Abbildung.
 
 	Falls gewünscht, können Sie einen App Service-Plan auswählen, über den Sie bereits verfügen. Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-5. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. "ExampleMVC" wie in der Abbildung.
+5. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. „ExampleMVC“ wie in der Abbildung.
 
 	Falls gewünscht, können Sie eine Ressourcengruppe auswählen, über die Sie bereits verfügen. Doch wenn Sie eine neue Ressourcengruppe erstellen, die Sie nur für dieses Tutorial verwenden, können Sie einfach alle Azure-Ressourcen für das Tutorial löschen, wenn Sie sie nicht mehr benötigen. Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
@@ -390,6 +390,8 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 ## Hinzufügen eines OAuth2-Anbieters
 
+>[AZURE.NOTE]Für detaillierte Anweisungen zur Verwendung der Portalwebsites für Google- und Facebook-Entwickler bietet dieses Tutorial Links zu Tutorials auf der ASP.NET-Website. Google und Facebook ändern jedoch ihre Websites öfter, als diese Tutorials aktualisiert werden, sodass sie nun veraltet sind. Wenn Sie Probleme beim Befolgen der Anweisungen haben, finden Sie im Disqus-Kommentar am Ende dieses Tutorials eine Liste der Änderungen.
+
 [OAuth](http://oauth.net/ "http://oauth.net/") ist ein offenes Protokoll, das die sichere Autorisierung in einer einfachen und Standardmethode von Web-, Mobil- und Desktopanwendungen ermöglicht. OAuth wird von der ASP.NET MVC-Internetvorlage verwendet, um Facebook, Twitter, Google und Microsoft als Authentifizierungsanbieter verfügbar zu machen. Auch wenn in diesem Lernprogramm nur Google als Authentifizierungsanbieter eingesetzt wird, können Sie den Code problemlos für die Verwendung einer der anderen Anbieter anpassen. Die Schritte zur Implementierung anderer Anbieter unterscheiden sich kaum von den Schritten in diesem Tutorial. Informationen zum Verwenden von Facebook als Authentifizierungsanbieter finden Sie im Tutorial [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on) (in englischer Sprache).
 
 Abgesehen von der Authentifizierung werden in diesem Tutorial auch Rollen verwendet, um die Autorisierung zu implementieren. Nur Benutzer, die Sie der Rolle *canEdit* hinzufügen, können Daten ändern (d. h. Kontakte erstellen, bearbeiten oder löschen).
@@ -503,7 +505,7 @@ Mit dem **Update-Database**-Befehl wird die **Seed**-Methode ausgeführt, und mi
 
 ## Schützen der Anwendung durch SSL und das Attribut "Authorize" ##
 
-In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx)-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die **Index**-Aktionsmethode des Controllers "Home" anzeigen. Registrierten Benutzern werden die Kontaktdaten (die Seiten **Index** und **Details** des Controllers "Cm") sowie die Info- und Kontaktseiten angezeigt. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
+In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx)-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die **Index**-Aktionsmethode des Controllers „Home“ anzeigen. Registrierten Benutzern werden die Kontaktdaten (die Seiten **Index** und **Details** des Controllers „Cm“) sowie die Info- und Kontaktseiten angezeigt. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
 
 1. Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code (damit werden die zwei Filter hinzugefügt):
 
@@ -586,7 +588,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Klicken Sie auf einen Bearbeitungslink auf der Seite. Sie werden zur Anmeldeseite weitergeleitet (da kein neuer lokaler Benutzer zur Rolle *canEdit* hinzugefügt wurde).
 
-1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort "P\_assw0rd1" an (das "0" in "word" ist eine Null). Sie werden zu der Bearbeitungsseite weitergeleitet, die Sie zuvor ausgewählt haben.
+1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort „P\_assw0rd1“ an (das „0“ in „word“ ist eine Null). Sie werden zu der Bearbeitungsseite weitergeleitet, die Sie zuvor ausgewählt haben.
 
 	Wenn Sie sich nicht mit diesem Konto und Kennwort anmelden können, versuchen Sie, das Kennwort aus dem Quellcode zu kopieren und einzufügen. Sollten Sie sich dennoch nicht anmelden können, überprüfen Sie in der Spalte **UserName** der Tabelle **AspNetUsers**, ob **user1@contoso.com* wirklich hinzugefügt wurde.
 
@@ -612,7 +614,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Klicken Sie auf **Veröffentlichen**.
 
-1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort "P\_assw0rd1" an, und überprüfen Sie, ob Sie die Daten bearbeiten können.
+1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort „P\_assw0rd1“ an, und überprüfen Sie, ob Sie die Daten bearbeiten können.
 
 1. Melden Sie sich ab.
 
@@ -706,6 +708,16 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
  
 3. Stellen Sie sicher, dass die **UserId** von **user1@contoso.com* und dem registrierten Google-Konto stammt.
 
+## Problembehandlung
+
+Falls Probleme auftreten, finden Sie hier einige Vorschläge für Lösungsansätze.
+
+* Fehler bei der Bereitstellung der SQL-Datenbank – Stellen Sie sicher, dass das aktuelle SDK installiert ist. Versionen vor 2.7.1 haben einen Programmierfehler, der in einigen Szenarien Fehler verursacht, wenn Visual Studio versucht, den Datenbankserver oder die Datenbank zu erstellen.
+* Fehlermeldung „Der Vorgang wird für Ihren Abonnementangebotstyp nicht unterstützt“ beim Erstellen von Azure-Ressourcen – Siehe oben.
+* Fehler bei der Bereitstellung – Erwägen Sie, den Artikel [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md) durchzugehen. Dieses Bereitstellungsszenario ist einfacher. Wenn Sie dort das gleiche Problem haben, ist es möglicherweise einfacher zu isolieren. Beispielsweise kann in bestimmten Unternehmensumgebungen eine Unternehmensfirewall Web Deploy am Herstellen erforderlicher Verbindungen mit Azure hindern.
+* Keine Option zum Auswählen der Verbindungszeichenfolge im Assistenten „Web veröffentlichen“ bei der Bereitstellung – Wenn Sie eine andere Methode zum Erstellen Ihrer Azure-Ressourcen verwendet haben (z. B. versuchen, eine im Portal erstellte Web-App und SQL-Datenbank bereitzustellen), ist die SQL-Datenbank ggf. nicht der Web-App zugeordnet. Die einfachste Lösung ist das Erstellen einer neuen Web-App und Datenbank mit Visual Studio, wie in diesem Tutorial gezeigt. Sie müssen das Tutorial nicht von vorn durchlaufen. Im Assistenten „Web veröffentlichen“ finden Sie die Option zum Erstellen einer neuen Web-App, über die Ihnen dasselbe Dialogfeld zum Erstellen von Azure-Ressourcen wie beim Erstellen des Projekts angezeigt wird.
+* Anweisungen für das Google- und Facebook-Entwicklerportal sind veraltet. Siehe den Disqus-Kommentar am Ende dieses Tutorials.
+
 ## Nächste Schritte
 
 Sie haben eine einfache ASP.NET MVC-Web-Anwendung erstellt, die Benutzer authentifiziert. Weitere Informationen zu allgemeinen Authentifizierungsaufgaben und zum Schutz vertraulicher Daten finden Sie in den folgenden Tutorials.
@@ -786,4 +798,4 @@ Dieses Tutorial wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (T
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

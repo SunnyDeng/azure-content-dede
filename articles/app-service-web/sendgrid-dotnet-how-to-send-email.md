@@ -52,9 +52,13 @@ Der einfachste Weg, die SendGrid-API abzurufen und Ihre Anwendung mit allen Abh�
 
 Gehen Sie folgendermaßen vor, um das SendGrid NuGet-Paket in Ihrer Anwendung zu installieren:
 
-1.  Erstellen Sie ein neues Projekt. ![Erstellen eines neuen Projekts][create-new-project]
+1.  Erstellen Sie ein neues Projekt.
 
-2.  Wählen Sie eine Vorlage aus: ![Vorlage auswählen][select-a-template]
+    ![Erstellen eines neuen Projekts][create-new-project]
+
+2.  Wählen Sie eine Vorlage aus.
+
+    ![Vorlage auswählen][select-a-template]
 
 3.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und klicken Sie dann auf **Manage NuGet Packages**.
 
@@ -257,4 +261,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

@@ -14,7 +14,7 @@
   ms.tgt_pltfrm="na" 
   ms.devlang="na" 
   ms.topic="article" 
-  ms.date="10/07/2015" 
+  ms.date="10/20/2015" 
   ms.author="tamram"/>
 
 # Azure Storage-Replikation
@@ -76,8 +76,8 @@ Wenn Sie ein Speicherkonto erstellen, wählen Sie die primäre Region für das K
 |USA (Mitte/Süden) |USA (Mitte/Norden)
 |USA (Ost) |USA (West)
 |USA (West) |USA (Ost)
-|USA (Ost 2) |USA (Mitte)
-|USA (Mitte) |USA (Ost 2)
+|USA, Osten 2 |USA (Mitte)
+|USA (Mitte) |USA, Osten 2
 |Nordeuropa |Westeuropa
 |Westeuropa |Nordeuropa
 |Südostasien |Ostasien
@@ -88,20 +88,22 @@ Wenn Sie ein Speicherkonto erstellen, wählen Sie die primäre Region für das K
 |Japan (Westen) |Japan Ost
 |Brasilien Süd |USA (Mitte/Süden)
 |Australien (Ost) |Australien (Südost)
-|Australien (Südost)|Australien (Ost)  
-
+|Australien (Südost)|Australien (Ost)
+|Indien, Süden |Indien, Mitte
+|Indien, Mitte |Indien, Süden
+  
 
 ## Georedundanter Speicher mit Lesezugriff
 
 Georedundanter Speicher mit Lesezugriff (RA-GRS) maximiert die Verfügbarkeit für das Speicherkonto, indem ein schreibgeschützter Zugriff auf Daten am sekundären Standort zusätzlich zur von GRS gebotenen Replikation in zwei Regionen bereitgestellt wird. Falls Daten in der primären Region nicht verfügbar sind, kann Ihre Anwendung Daten aus der sekundären Region lesen.
 
-Wenn Sie den schreibgeschützten Zugriff auf Ihre Daten in der sekundären Region aktivieren, sind Ihre Daten zusätzlich zum primären Endpunkt für Ihr Speicherkonto auf einem sekundären Endpunkt verfügbar. Der sekundäre Endpunkt ähnelt dem primären Endpunkt, wobei das Suffix `–secondary` an den Kontonamen angefügt wird. Wenn Ihr primärer Endpunkt für den Blob-Dienst z. B. `myaccount.blob.core.windows.net` ist, dann ist Ihr sekundärer Endpunkt `myaccount-secondary.blob.core.windows.net`. Die Zugriffsschlüssel für das Speicherkonto sind für die primären und sekundären Endpunkte identisch.
+Wenn Sie den schreibgeschützten Zugriff auf Ihre Daten in der sekundären Region aktivieren, sind Ihre Daten zusätzlich zum primären Endgerät für Ihr Speicherkonto auf einem sekundären Endgerät verfügbar. Das sekundäre Endgerät ähnelt dem primären Endgerät, wobei das Suffix `–secondary` an den Kontonamen angefügt wird. Wenn Ihr primäres Endgerät für den Blob-Dienst z. B. `myaccount.blob.core.windows.net` ist, dann ist Ihr sekundäres Endgerät `myaccount-secondary.blob.core.windows.net`. Die Zugriffsschlüssel für das Speicherkonto sind für die primären und sekundären Endgeräte identisch.
 
 ## Nächste Schritte
 
 - [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md)
 - [Microsoft Azure Storage Redundancy Options and Read Access Geo Redundant Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx) (in englischer Sprache)  
-- [Microsoft Azure Storage Emulator 3.1 with RA-GRS](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx) (in englischer Sprache)
+- [Microsoft AzureSpeicheremulator 3.1 with RA-GRS](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx) (in englischer Sprache)
 - [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

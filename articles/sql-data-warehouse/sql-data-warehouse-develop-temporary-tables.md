@@ -3,7 +3,7 @@
    description="Tipps für die Verwendung von temporären Tabellen in Azure SQL Data Warehouse zum Entwickeln von Lösungen."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="jrowlandjones"
+   authors="twounder"
    manager="barbkess"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="10/19/2015"
+   ms.author="twounder;JRJ@BigBangData.co.uk;barbkess"/>
 
 # Temporäre Tabellen in SQL Data Warehouse
 Temporäre Tabellen befinden sich in SQL Data Warehouse auf Sitzungsebene. Sie sind als lokale temporäre Tabellen definiert, und im Gegensatz zu SQL Server-Tabellen kann von überall innerhalb der Sitzung auf sie zugegriffen werden.
@@ -34,7 +34,7 @@ Die folgende gespeicherte Prozedur generiert die DDL-Anweisungen, die zum Aktual
 ```
 CREATE PROCEDURE    [dbo].[prc_sqldw_update_stats]
 (   @update_type    tinyint -- 1 default 2 fullscan 3 sample 4 resample
-,   @sample_pct     tinyint
+	,@sample_pct     tinyint
 )
 AS
 
@@ -49,9 +49,10 @@ BEGIN;
 END;
 
 CREATE TABLE #stats_ddl
-WITH    (   DISTRIBUTION = HASH([seq_nmbr])
-        ,   LOCATION     = USER_DB
-        )
+WITH
+(
+	DISTRIBUTION = HASH([seq_nmbr])
+)
 AS
 (
 SELECT
@@ -146,4 +147,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->

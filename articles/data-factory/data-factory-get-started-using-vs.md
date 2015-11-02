@@ -207,12 +207,16 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 
 21. Führen Sie auf der Seite zum Konfigurieren der Data Factory folgende Schritte aus:
 	1. Wählen Sie die Option **Neue Data Factory erstellen**.
-	2. Geben Sie **VSTutorialFactory** als **Name** ein.
+	2. Geben Sie **VSTutorialFactory** als **Name** ein.  
+	
+		> [AZURE.NOTE]Der Name der Azure Data Factory muss global eindeutig sein. Wenn beim Veröffentlichen ein Fehler bezüglich des Namens der Data Factory auftritt, ändern Sie den Namen der Data Factory (z. B. in „IhrNameVSTutorialFactory“), und versuchen Sie erneut, sie zu veröffentlichen. Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
+		> 
+		> Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 	3. Wählen Sie im Feld **Abonnement** das richtige Abonnement aus. 
 	4. Wählen Sie die **Ressourcengruppe** für die zu erstellende Data Factory aus. 
 	5. Wählen Sie die **Region** für die Data Factory aus. 
-	6. Klicken Sie auf **Weiter**, um zur Seite **Elemente veröffentlichen** zu wechseln. 
-23. Stellen Sie auf der Seite **Elemente veröffentlichen** sicher, dass alle Data Factory-Entitäten ausgewählt sind, und klicken Sie auf **Weiter**, um zur Seite **Zusammenfassung** zu wechseln.     
+	6. Klicken Sie auf **Weiter**, um zur Seite **Publish Items** zu wechseln. 
+23. Stellen Sie auf der Seite **Publish Items** sicher, dass alle Data Factory-Entitäten ausgewählt sind, und klicken Sie auf **Weiter**, um zur Seite **Zusammenfassung** zu wechseln.     
 24. Prüfen Sie die Zusammenfassung, und klicken Sie auf **Weiter**, um den Bereitstellungsprozess zu starten und den **Bereitstellungsstatus** anzuzeigen.
 25. Auf der Seite **Bereitstellungsstatus** sollte der Status des Bereitstellungsprozesses angezeigt werden. Klicken Sie auf „Fertig stellen“, nachdem die Bereitstellung abgeschlossen ist. 
 
@@ -226,14 +230,14 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 ## Aktualisieren von Data Factory-Tools für Visual Studio
 Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie folgende Schritte aus:
 
-1. Klicken Sie im Menü auf **Tools**, und wählen Sie**Erweiterungen und Updates** aus. 
+1. Klicken Sie im Menü auf **Extras**, und wählen Sie**Erweiterungen und Updates** aus. 
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
-4. Wählen Sie **Azure Data Factory-Tools für Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
+4. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Aktualisieren**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
-Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und Datasets über das Azure-Vorschauportal.
+Unter [Überwachen von DataSets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
 
 
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-get-started-using-vs.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Oct15_HO4-->
