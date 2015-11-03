@@ -129,7 +129,7 @@ Nachdem Sie die Web-App erstellt und alle erforderlichen NuGet-Pakete abgerufen 
 
 2. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	****http://localhost:5000**
+	**http://localhost:5000**
 
 	> [AZURE.NOTE]Der in der Datei *project.json* angegebene Befehl "kestrel" zeigt auf eine Datei mit Hostingdetails (*hosting.ini*), die den lokalen App-Speicherort angibt. In diesem Fall kann die App über die zuvor genannte URL angezeigt werden.
 
@@ -258,12 +258,12 @@ Dies kann auf zwei Arten erfolgen:
 
 		http://SampleWebAppDemo.azurewebsites.net
  
-* Navigieren Sie im Azure-Vorschauportal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App in Ihrem Standardbrowser anzuzeigen.
-* 
+* Navigieren Sie im Azure-Vorschauportal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App 
+* in Ihrem Standardbrowser anzuzeigen.
 
 ![Azure-Web-App](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## Zusammenfassung
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Web-App in VS Code erstellen und in Azure bereitstellen. Weitere Informationen zu VS Code finden Sie im Artikel [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) (Argumente für Visual Studio Code; in englischer Sprache). Informationen zu App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->

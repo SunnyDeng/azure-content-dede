@@ -77,7 +77,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 	- Wählen Sie im Feld **Clouddienst** die Option **Einen neuen Clouddienst erstellen** aus.
 	- Geben Sie im Feld **DNS-Name des Clouddiensts** den ersten Teil eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des Formats **TESTNAME.cloudapp.net** entsteht. 
 	- Wählen Sie ein **ABONNEMENT** aus, wenn Sie über mehrere Abonnements verfügen. Die Auswahl bestimmt, welche **Speicherkonten** verfügbar sind.
-- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
+	- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
 	- Erstellen Sie in **Speicherkonto** automatisch ein Konto, oder wählen Sie ein Konto aus der Liste aus. Ändern Sie das **ABONNEMENT**, um weitere Konten anzuzeigen. 
 	- Wählen Sie im Feld **AVAILABILITY SET** den Eintrag **(none)**.
 	- Lesen Sie sich die Bedingungen durch, und bestätigen Sie diese.
@@ -155,4 +155,4 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->
