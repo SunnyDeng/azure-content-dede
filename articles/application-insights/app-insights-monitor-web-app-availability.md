@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/13/2015"
+	ms.date="10/21/2015"
 	ms.author="awills"/>
 
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
@@ -21,7 +21,7 @@ Nachdem Sie die Webanwendung bereitgestellt haben, können Sie Webtests einricht
 
 ![Beispiel für Webtest](./media/app-insights-monitor-web-app-availability/appinsights-10webtestresult.png)
 
-Sie können für jeden HTTP-Endpunkt, der über das öffentliche Internet zugänglich ist, Webtests einrichten.
+Sie können für jeden HTTP- oder HTTPS-Endpunkt, der über das öffentliche Internet zugänglich ist, Webtests einrichten.
 
 Es gibt zwei Arten von Webtests:
 
@@ -246,4 +246,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/19/2015"
+	ms.date="10/26/2015"
 	ms.author="genemi"/>
 
 
@@ -23,186 +23,7 @@
 In diesem Thema wird beschrieben, wie Sie Verbindungsfehler und vorübergehende Fehler verhindern, diagnostizieren und behandeln, die bei Ihrem Clientprogramm während der Interaktion mit Azure SQL-Datenbank auftreten.
 
 
-## Verbindung: Verbindungszeichenfolge
-
-
-Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichenfolge unterscheidet sich geringfügig von der Zeichenfolge für die Verbindung mit Microsoft SQL Server. Sie können die Verbindungszeichenfolge für Ihre Datenbank aus dem [Azure-Vorschauportal](http://portal.azure.com/) kopieren.
-
-
-[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
-
-
-
-#### 30 Sekunden für Verbindungstimeout
-
-
-Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, für Ihre Verbindungszeichenfolge die folgenden Schritte auszuführen: Legen Sie den Parameter **Verbindungstimeout** auf **30** Sekunden fest (anstelle von 15 Sekunden).
-
-
-## Verbindung: IP-Adresse
-
-
-Der SQL-Datenbankserver muss so konfiguriert werden, dass er Verbindungen von der IP-Adresse des Computers akzeptiert, auf dem Ihr Clientprogramm gehostet wird. Bearbeiten Sie dazu die Firewalleinstellungen über das [Azure-Vorschauportal](http://portal.azure.com/).
-
-
-Wenn Sie die IP-Adresse nicht konfigurieren, tritt bei Ihrem Programm ein Fehler auf, und in einer Fehlermeldung wird die erforderliche IP-Adresse angezeigt.
-
-
-[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
-
-
-Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen für SQL-Datenbank](sql-database-configure-firewall-settings.md)
-
-
-## Verbindung: Ports
-
-
-Üblicherweise muss lediglich auf dem Computer, auf dem Ihr Clientprogramm gehostet wird, sichergestellt werden, dass Port 1433 für die ausgehende Kommunikation geöffnet ist.
-
-
-Wenn Ihr Clientprogramm z. B. auf einem Windows-Computer gehostet wird, kann Port 1433 über die Windows-Firewall auf dem Host geöffnet werden:
-
-
-1. Öffnen Sie die Systemsteuerung.
-2. &gt; Alle Systemsteuerungselemente
-3. &gt; Windows-Firewall
-4. &gt; Erweiterte Einstellungen
-5. &gt; Ausgehende Regeln
-6. &gt; Aktionen
-7. &gt; Neue Regel
-
-
-Wenn Ihr Clientprogramm auf einem virtuellen Azure-Computer gehostet wird, sollten Sie den folgenden Artikel lesen:<br/>[Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
-
-
-Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie hier: [Firewall für Azure SQL-Datenbank](sql-database-firewall-configure.md)
-
-
-## Verbindung: ADO.NET 4.5
-
-
-Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.5 oder höher verwenden.
-
-
-ADO.NET 4.5: für Unterstützung des TDS 7.4-Protokolls. Dies umfasst Verbindungserweiterungen, die über die Erweiterungen in ADO.NET 4.0 hinausgehen. Bietet Unterstützung für Verbindungspooling. Dies umfasst eine effiziente Überprüfung, ob das für Ihr Programm zur Verfügung gestellte Verbindungsobjekt funktioniert.
-
-
-Bei Verwendung eines Verbindungsobjekts aus einem Verbindungspool sollte Ihr Programm die Verbindung vorübergehend schließen, wenn diese nicht umgehend verwendet wird. Das erneute Öffnen einer Verbindung ist weniger kostenintensiv als das Erstellen einer neuen Verbindung.
-
-
-Wenn Sie ADO.NET 4.0 oder früher verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen. Seit Juli 2015 können Sie [ADO.NET 4.6 herunterladen](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
-
-
-## Diagnose: Testen, ob Hilfsprogramme eine Verbindung herstellen können
-
-
-Wenn Ihr Programm keine Verbindung mit Azure SQL-Datenbank herstellen kann, können Sie zu Diagnosezwecken versuchen, eine Verbindung mit einem Hilfsprogramm herzustellen. Idealerweise verwendet das Hilfsprogramm für die Verbindung dieselbe Bibliothek wie Ihr Programm.
-
-
-Auf einem Windows-Computer können Sie die folgenden Hilfsprogramme nutzen: SQL Server Management Studio (ssms.exe), das ADO.NET für die Verbindung nutzt, oder sqlcmd.exe, das [ODBC](http://msdn.microsoft.com/library/jj730308.aspx) für die Verbindung nutzt.
-
-
-Sobald die Verbindung hergestellt wurde, testen Sie, ob eine kurze SQL SELECT-Abfrage erfolgreich ausgeführt wird.
-
-
-## Diagnose: Überprüfen der offenen Ports
-
-
-Angenommen, Sie vermuten, dass aufgrund von Portproblemen keine Verbindung hergestellt werden kann. Sie können auf Ihrem Computer ein Hilfsprogramm ausführen, das Informationen zu den Portkonfigurationen zurückgibt.
-
-
-Unter Linux sind die folgenden Hilfsprogramme nützlich: `netstat -nap` und `nmap -sS -O 127.0.0.1` (ersetzen Sie den Beispielwert durch Ihre IP-Adresse.)
-
-
-Unter Windows kann das Hilfsprogramm [PortQry.exe](http://www.microsoft.com/download/details.aspx?id=17148) nützliche Informationen liefern. Nachfolgend finden Sie eine Beispielabfrage der Portinformationen für einen Azure SQL-Datenbankserver, die auf einem Laptop ausgeführt wurde.
-
-
-```
-[C:\Users\johndoe]
->> portqry.exe -n johndoesvr9.database.windows.net -p tcp -e 1433
-
-Querying target system called:
- johndoesvr9.database.windows.net
-
-Attempting to resolve name to IP address...
-Name resolved to 23.100.117.95
-
-querying...
-TCP port 1433 (ms-sql-s service): LISTENING
-
-[C:\Users\johndoe]
->>
-```
-
-
-## Diagnose: Protokollieren Ihrer Fehler
-
-
-Periodische Probleme lassen sich mitunter am besten diagnostizieren, indem Sie für mehrere Tage oder Wochen ein allgemeines Muster ermitteln.
-
-
-Dabei kann es hilfreich sein, sämtliche Fehler auf dem Client zu protokollieren. Möglicherweise lassen sich die Protokolleinträge mit den Fehlerdaten in Zusammenhang bringen, die Azure SQL-Datenbank intern protokolliert.
-
-
-Zur Unterstützung bei der Protokollierung bietet Enterprise Library 6 (EntLib60) von .NET verwaltete Klassen: – [5 – Protokollierung leicht gemacht: mit dem Protokollierungsanwendungsblock](http://msdn.microsoft.com/library/dn440731.aspx)
-
-
-## Diagnose: Überprüfen der Systemprotokolle auf Fehler
-
-
-Nachfolgend finden Sie einige Transact-SQL-SELECT-Anweisungen, mit denen Fehler- und andere Informationen aus Protokollen abgefragt werden.
-
-
-| Protokollabfrage | Beschreibung |
-| :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter Verbindungsfehler im Zusammenhang mit der Neukonfiguration, mit einer Drosselung und mit einer übermäßigen Ressourcenanhäufung.<br/><br/>Idealerweise können Sie die **start\_time**- oder **end\_time**-Werte mit Informationen zu Problemen bei Ihrem Clientprogramm in Zusammenhang bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
-| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Für eine weitere Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
-
-
-### Diagnose: Suche nach Problemereignissen im Protokoll von SQL-Datenbank
-
-
-Sie können im Protokoll von Azure SQL-Datenbank nach Einträgen zu Problemereignissen suchen. Führen Sie die folgende Transact-SQL-SELECT-Anweisung in der **Masterdatenbank** aus:
-
-
-```
-SELECT
-   object_name
-  ,CAST(f.event_data as XML).value
-      ('(/event/@timestamp)[1]', 'datetime2')                      AS [timestamp]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="error"]/value)[1]', 'int')             AS [error]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="state"]/value)[1]', 'int')             AS [state]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="is_success"]/value)[1]', 'bit')        AS [is_success]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
-FROM
-  sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
-WHERE
-  object_name != 'login_event'  -- Login events are numerous.
-  and
-  '2015-06-21' < CAST(f.event_data as XML).value
-        ('(/event/@timestamp)[1]', 'datetime2')
-ORDER BY
-  [timestamp] DESC
-;
-```
-
-
-#### Zurückgegebene Zeilen aus „sys.fn\_xe\_telemetry\_blob\_target\_read\_file“
-
-
-Nachfolgend wird ein Beispiel einer zurückgegebenen Zeile gezeigt. Die gezeigten Nullwerte sind in anderen Zeilen häufig keine Nullwerte.
-
-
-```
-object_name                   timestamp                    error  state  is_success  database_name
-
-database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL        AdventureWorks
-```
-
+<a id="i-transient-faults" name="i-transient-faults"></a>
 
 ## Vorübergehende Fehler
 
@@ -210,7 +31,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 Ein vorübergehender Fehler ist ein Fehler, dessen Ursache von selbst behoben wird. Wenn das Azure-System Hardwareressourcen für einen besseren Lastenausgleich bei verschiedenen Workloads rasch verschiebt, treten gelegentlich vorübergehende Fehler auf. Während dieser Neukonfiguration werden Verbindungen mit Azure SQL-Datenbank möglicherweise unterbrochen.
 
 
-Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme aufgelöst, um das Programm über den vorübergehenden Fehler zu informieren. Die **Number**-Eigenschaft kann mit der Liste der vorübergehenden Fehler im oberen Bereich des Themas verglichen werden: [Fehlermeldungen für Clientprogramme mit SQL-Datenbank](sql-database-develop-error-messages).
+Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme ausgelöst, um das Programm über den vorübergehenden Fehler zu informieren. Die **Number**-Eigenschaft kann mit der Liste der vorübergehenden Fehler im oberen Bereich des Themas verglichen werden: [Fehlermeldungen für Clientprogramme mit SQL-Datenbank](sql-database-develop-error-messages).
 
 
 ### Vorübergehende Fehler bei Verbindungsherstellung und Befehlen
@@ -221,6 +42,8 @@ Wenn beim Versuch, eine Verbindung herzustellen, ein vorübergehender Fehler auf
 
 Wenn während eines SQL-Abfragebefehls ein vorübergehender Fehler auftritt, sollte nicht umgehend versucht werden, den Befehl erneut auszuführen. Stattdessen sollte die Verbindung nach einer Verzögerungszeit neu hergestellt werden. Anschließend kann der Befehl erneut ausgeführt werden.
 
+
+<a id="j-retry-logic-transient-faults" name="j-retry-logic-transient-faults"></a>
 
 ## Wiederholungslogik für vorübergehende Fehler
 
@@ -281,6 +104,8 @@ Auf der folgenden Seite finden Sie Codebeispiele mit Wiederholungslogik in diver
 - [Schnellstart-Codebeispiele](sql-database-develop-quick-start-client-code-samples.md) 
 
 
+<a id="k-test-retry-logic" name="k-test-retry-logic"></a>
+
 ## Testen der Wiederholungslogik
 
 
@@ -290,7 +115,7 @@ Um Ihre Wiederholungslogik zu testen, müssen Sie einen Fehler simulieren oder v
 ### Testen der Logik, indem der Computer vom Netzwerk getrennt wird
 
 
-Eine Möglichkeit, um Ihre Wiederholungslogik zu testen, besteht darin, Ihren Clientcomputer vom Netzwerk zu trennen, während das Programm ausgeführt wird. Bei diesem Problem wird der folgende Fehler ausgegeben: – **SqlException.Number** = 11001 – Fehlermeldung: „Der Host ist nicht bekannt“
+Eine Möglichkeit, um Ihre Wiederholungslogik zu testen, besteht darin, Ihren Clientcomputer vom Netzwerk zu trennen, während das Programm ausgeführt wird. Bei diesem Problem wird der folgende Fehler ausgegeben: – **SqlException.Number** = 11001 – Fehlermeldung: „Der Host ist nicht bekannt“.
 
 
 Beim ersten Wiederholungsversuch kann Ihr Programm den Namen korrigieren und erneut versuchen, eine Verbindung herzustellen.
@@ -311,16 +136,218 @@ Beim ersten Wiederholungsversuch kann Ihr Programm den Namen korrigieren und ern
 In der Praxis könnte Ihr Programm einen Laufzeitparameter ermitteln, der folgende Auswirkungen hat: 1. 18456 wird zeitweilig zur Liste der Fehler hinzugefügt, die als vorübergehend betrachtet werden. 2. Der Benutzername wird mit Absicht um „WRONG\_“ ergänzt. 3. Nachdem der Fehler ermittelt wurde, wird 18456 aus der Liste entfernt. 4. „WRONG\_“ wird vom Benutzernamen entfernt. 5. Es wird erneut versucht, eine Verbindung herzustellen (dieser Versuch sollte erfolgreich sein).
 
 
+<a id="a-connection-connection-string" name="a-connection-connection-string"></a>
+
+## Verbindung: Verbindungszeichenfolge
+
+
+Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichenfolge unterscheidet sich geringfügig von der Zeichenfolge für die Verbindung mit Microsoft SQL Server. Sie können die Verbindungszeichenfolge für Ihre Datenbank aus dem [Azure-Vorschauportal](http://portal.azure.com/) kopieren.
+
+
+[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
+
+
+
+#### 30 Sekunden für Verbindungstimeout
+
+
+Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, für Ihre Verbindungszeichenfolge Folgendes auszuführen: Legen Sie den Parameter **Connection Timeout** auf **30** Sekunden fest (anstatt 15 Sekunden).
+
+
+<a id="b-connection-ip-address" name="b-connection-ip-address"></a>
+
+## Verbindung: IP-Adresse
+
+
+Der SQL-Datenbankserver muss so konfiguriert werden, dass er Verbindungen von der IP-Adresse des Computers akzeptiert, auf dem Ihr Clientprogramm gehostet wird. Bearbeiten Sie dazu die Firewalleinstellungen über das [Azure-Vorschauportal](http://portal.azure.com/).
+
+
+Wenn Sie die IP-Adresse nicht konfigurieren, tritt bei Ihrem Programm ein Fehler auf, und in einer Fehlermeldung wird die erforderliche IP-Adresse angezeigt.
+
+
+[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
+
+
+Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md)
+
+
+<a id="c-connection-ports" name="c-connection-ports"></a>
+
+## Verbindung: Ports
+
+
+Üblicherweise muss lediglich auf dem Computer, auf dem Ihr Clientprogramm gehostet wird, sichergestellt werden, dass Port 1433 für die ausgehende Kommunikation geöffnet ist.
+
+
+Wenn Ihr Clientprogramm z. B. auf einem Windows-Computer gehostet wird, kann Port 1433 über die Windows-Firewall auf dem Host geöffnet werden:
+
+
+1. Öffnen Sie die Systemsteuerung.
+2. &gt; Alle Systemsteuerungselemente
+3. &gt; Windows-Firewall
+4. &gt; Erweiterte Einstellungen
+5. &gt; Ausgehende Regeln
+6. &gt; Aktionen
+7. &gt; Neue Regel
+
+
+Wenn Ihr Clientprogramm auf einem virtuellen Azure-Computer gehostet wird, sollten Sie den folgenden Artikel lesen:<br/>[Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
+
+
+Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie hier: [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md).
+
+
+<a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
+
+## Verbindung: ADO.NET 4.5
+
+
+Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.5 oder höher verwenden.
+
+
+ADO.NET 4.5: für Unterstützung des TDS 7.4-Protokolls. Dies umfasst Verbindungserweiterungen, die über die Erweiterungen in ADO.NET 4.0 hinausgehen. Bietet Unterstützung für Verbindungspooling. Dies umfasst eine effiziente Überprüfung, ob das für Ihr Programm zur Verfügung gestellte Verbindungsobjekt funktioniert.
+
+
+Bei Verwendung eines Verbindungsobjekts aus einem Verbindungspool sollte Ihr Programm die Verbindung vorübergehend schließen, wenn diese nicht umgehend verwendet wird. Das erneute Öffnen einer Verbindung ist weniger kostenintensiv als das Erstellen einer neuen Verbindung.
+
+
+Wenn Sie ADO.NET 4.0 oder früher verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen. Seit Juli 2015 können Sie [ADO.NET 4.6 herunterladen](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
+
+
+<a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
+
+## Diagnose: Testen, ob Hilfsprogramme eine Verbindung herstellen können
+
+
+Wenn Ihr Programm keine Verbindung mit Azure SQL-Datenbank herstellen kann, können Sie zu Diagnosezwecken versuchen, eine Verbindung mit einem Hilfsprogramm herzustellen. Idealerweise verwendet das Hilfsprogramm für die Verbindung dieselbe Bibliothek wie Ihr Programm.
+
+
+Auf einem Windows-Computer können Sie die folgenden Hilfsprogramme nutzen: SQL Server Management Studio (ssms.exe), das ADO.NET für die Verbindung nutzt, oder sqlcmd.exe, das [ODBC](http://msdn.microsoft.com/library/jj730308.aspx) für die Verbindung nutzt.
+
+
+Sobald die Verbindung hergestellt wurde, testen Sie, ob eine kurze SQL SELECT-Abfrage erfolgreich ausgeführt wird.
+
+
+<a id="f-diagnostics-check-open-ports" name="f-diagnostics-check-open-ports"></a>
+
+## Diagnose: Überprüfen der offenen Ports
+
+
+Angenommen, Sie vermuten, dass aufgrund von Portproblemen keine Verbindung hergestellt werden kann. Sie können auf Ihrem Computer ein Hilfsprogramm ausführen, das Informationen zu den Portkonfigurationen zurückgibt.
+
+
+Unter Linux sind die folgenden Hilfsprogramme nützlich: `netstat -nap` und `nmap -sS -O 127.0.0.1` (ersetzen Sie den Beispielwert durch Ihre IP-Adresse.)
+
+
+Unter Windows kann das Hilfsprogramm [PortQry.exe](http://www.microsoft.com/download/details.aspx?id=17148) nützliche Informationen liefern. Nachfolgend finden Sie eine Beispielabfrage der Portinformationen für einen Azure SQL-Datenbankserver, die auf einem Laptop ausgeführt wurde.
+
+
+```
+[C:\Users\johndoe]
+>> portqry.exe -n johndoesvr9.database.windows.net -p tcp -e 1433
+
+Querying target system called:
+ johndoesvr9.database.windows.net
+
+Attempting to resolve name to IP address...
+Name resolved to 23.100.117.95
+
+querying...
+TCP port 1433 (ms-sql-s service): LISTENING
+
+[C:\Users\johndoe]
+>>
+```
+
+
+<a id="g-diagnostics-log-your-errors" name="g-diagnostics-log-your-errors"></a>
+
+## Diagnose: Protokollieren Ihrer Fehler
+
+
+Periodisch auftretende Probleme lassen sich mitunter am besten diagnostizieren, indem Sie über mehrere Tage oder Wochen hinweg ein allgemeines Muster ermitteln.
+
+
+Dabei kann es hilfreich sein, sämtliche Fehler auf dem Client zu protokollieren. Möglicherweise lassen sich die Protokolleinträge mit den Fehlerdaten in Zusammenhang bringen, die Azure SQL-Datenbank intern protokolliert.
+
+
+Zur Unterstützung bei der Protokollierung bietet Enterprise Library 6 (EntLib60) von .NET verwaltete Klassen: – [5 – Protokollierung leicht gemacht: mit dem Protokollierungsanwendungsblock](http://msdn.microsoft.com/library/dn440731.aspx)
+
+
+<a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
+
+## Diagnose: Überprüfen der Systemprotokolle auf Fehler
+
+
+Nachfolgend finden Sie einige Transact-SQL-SELECT-Anweisungen, mit denen Fehler- und andere Informationen aus Protokollen abgefragt werden.
+
+
+| Protokollabfrage | Beschreibung |
+| :-- | :-- |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter Verbindungsfehler im Zusammenhang mit der Neukonfiguration, mit einer Drosselung und mit einer übermäßigen Ressourcenanhäufung.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zu Problemen bei Ihrem Clientprogramm korrelieren.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
+| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Zur weiteren Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
+
+
+### Diagnose: Suche nach Problemereignissen im Protokoll von SQL-Datenbank
+
+
+Sie können im Protokoll von Azure SQL-Datenbank nach Einträgen zu Problemereignissen suchen. Führen Sie die folgende Transact-SQL SELECT-Anweisung in der **Masterdatenbank** aus:
+
+
+```
+SELECT
+   object_name
+  ,CAST(f.event_data as XML).value
+      ('(/event/@timestamp)[1]', 'datetime2')                      AS [timestamp]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="error"]/value)[1]', 'int')             AS [error]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="state"]/value)[1]', 'int')             AS [state]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="is_success"]/value)[1]', 'bit')        AS [is_success]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
+FROM
+  sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
+WHERE
+  object_name != 'login_event'  -- Login events are numerous.
+  and
+  '2015-06-21' < CAST(f.event_data as XML).value
+        ('(/event/@timestamp)[1]', 'datetime2')
+ORDER BY
+  [timestamp] DESC
+;
+```
+
+
+#### Zurückgegebene Zeilen aus „sys.fn\_xe\_telemetry\_blob\_target\_read\_file“
+
+
+Nachfolgend wird ein Beispiel einer zurückgegebenen Zeile gezeigt. Die gezeigten Nullwerte sind in anderen Zeilen häufig keine Nullwerte.
+
+
+```
+object_name                   timestamp                    error  state  is_success  database_name
+
+database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL        AdventureWorks
+```
+
+
+<a id="l-enterprise-library-6" name="l-enterprise-library-6"></a>
+
 ## Enterprise Library 6
 
 
-Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist: – [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx)
+Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist: – [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx).
 
 
-Einer dieser Bereiche, in denen EntLib60 nützlich ist, ist die Wiederholungslogik für die Behandlung von vorübergehenden Fehlern: – [4 – Durchhaltevermögen, der Schlüssel zum Erfolg: Verwenden des Anwendungsblocks für die Behandlung von vorübergehenden Fehlern](http://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx)
+Ein Bereich, in dem EntLib60 nützlich sein kann, ist die Wiederholungslogik für die Behandlung von vorübergehenden Fehlern: – [4 – Ausdauer, der Schlüssel zum Erfolg: Verwenden des Anwendungsblocks für die Behandlung von vorübergehenden Fehlern](http://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx).
 
 
-Ein kurzes C#-Codebeispiel unter Verwendung von EntLib60 in der Wiederholungslogik finden Sie hier: – [Codebeispiel: Wiederholungslogik von Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md)
+Ein kurzes C#-Codebeispiel unter Verwendung von EntLib60 in der Wiederholungslogik finden Sie hier: – [Codebeispiel: Wiederholungslogik von Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md).
+
+
+> [AZURE.NOTE]Der Quellcode für EntLib60 steht zum öffentlichen [Download](http://go.microsoft.com/fwlink/p/?LinkID=290898) bereit. Microsoft plant keine weiteren Funktions- oder Wartungsupdates für EntLib.
 
 
 ### EntLib60-Klassen für vorübergehende Fehler und Wiederholungsversuche
@@ -353,7 +380,7 @@ Im Namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Test
 
 Unter folgenden Links finden Sie weitere Informationen zu EntLib60:
 
-- Kostenloses E-Book: [Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
+- Kostenloses [E-Book zum Download: Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
 
 - Bewährte Methoden: [Allgemeiner Leitfaden zum Wiederholen von Vorgängen](best-practices-retry-general.md) bietet eine detaillierte Erläuterung wichtiger Aspekte im Zusammenhang mit Wiederholungslogik.
 
@@ -378,9 +405,9 @@ Einzelheiten finden Sie hier: [5 – Protokollierung leicht gemacht: mit dem Pro
 ### Quellcode der IsTransient-Methode von EntLib60
 
 
-Nachfolgend wird der C#-Quellcode für die Methode **IsTransient** der Klasse **SqlDatabaseTransientErrorDetectionStrategy** gezeigt. Anhand dieses Quellcodes wird ermittelt, welche Fehler als vorübergehend eingestuft werden und einen Wiederholungsversuch rechtfertigen.
+Nachfolgend wird der C#-Quellcode für die Methode **IsTransient** der Klasse **SqlDatabaseTransientErrorDetectionStrategy** gezeigt. Anhand dieses Quellcodes wird ermittelt, welche Fehler als vorübergehend eingestuft werden und einen Wiederholungsversuch rechtfertigen (April 2013).
 
-Zur Verbesserung der Lesbarkeit wurden eine Reihe von **//comment**-Zeilen aus diesem Code entfernt.
+Zur Verbesserung der Lesbarkeit wurden verschiedene **//comment**-Zeilen aus diesem Code entfernt.
 
 
 ```
@@ -450,15 +477,12 @@ public bool IsTransient(Exception ex)
 ```
 
 
-Es ist nicht erforderlich, den Quellcode für EntLib60 herunterzuladen. Wenn Sie den Quellcode dennoch herunterladen möchten, können Sie das folgende Thema aufrufen und auf [Code herunterladen](http://go.microsoft.com/fwlink/p/?LinkID=290898) klicken: – [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx)
-
-
 ## Weitere Informationen
 
 
 - [SQL Server-Verbindungspooling (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx)
 
 
-- [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
+- [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jedem Element vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

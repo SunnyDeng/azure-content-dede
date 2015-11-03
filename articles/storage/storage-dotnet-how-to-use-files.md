@@ -12,10 +12,12 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="09/28/2015"
+      ms.date="10/26/2015"
       ms.author="tamram" />
 
 # Verwenden des Azure-Dateispeichers unter Windows
+
+[AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 
 ## Übersicht
 
@@ -35,9 +37,15 @@ Informationen zu Skalierbarkeitszielen für den Dateispeicher finden Sie unter [
 
 [AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
-## Informationen zu diesem Lernprogramm
+## Video: Verwenden des Azure-Dateispeichers unter Windows
 
-In diesem Lernprogramm für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Lernprogramm wird Folgendes beschrieben:
+Dieses Video veranschaulicht das Erstellen und Verwenden von Azure-Dateifreigaben unter Windows.
+
+> [AZURE.VIDEO azure-file-storage-with-windows]
+
+## Informationen zu diesem Tutorial
+
+In diesem Tutorial für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Tutorial wird Folgendes beschrieben:
 
 - Verwenden von Azure PowerShell, um die Erstellung einer neuen Azure-Dateifreigabe, das Hinzufügen eines Verzeichnisses, das Hochladen einer lokalen Datei in die Freigabe und das Auflisten der Dateien in dem Verzeichnis zu veranschaulichen.
 - Bereitstellen der Dateifreigabe von einem virtuellen Azure-Computer, genau wie bei der Bereitstellung einer SMB-Freigabe.
@@ -189,15 +197,15 @@ Um die Dateifreigabe über einen lokalen Client bereitzustellen, müssen Sie zue
 
 ## Entwickeln mit Dateispeicher
 
-Zum programmgesteuerten Verwenden des Dateispeichers können Sie Speicherclientbibliotheken für .NET und Java oder die Azure Storage-REST-API verwenden. Mit dem Beispiel in diesem Abschnitt wird veranschaulicht, wie Sie mit einer Dateifreigabe arbeiten, indem Sie die [Azure .NET-Speicherclientbibliothek](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) über eine einfache Konsolenanwendung verwenden, die auf dem Desktop ausgeführt wird.
+Zum programmgesteuerten Verwenden des Dateispeichers können Sie Speicherclientbibliotheken für .NET und Java oder die Azure Storage-REST-API verwenden. Das Beispiel in diesem Abschnitt veranschaulicht, wie Sie mit einer Dateifreigabe arbeiten, indem Sie die [Azure .NET-Speicherclientbibliothek](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) über eine einfache Konsolenanwendung verwenden, die auf dem Desktop ausgeführt wird.
 
 ### Erstellen der Konsolenanwendung und Abrufen der Assembly
 
 So erstellen Sie eine neue Konsolenanwendung in Visual Studio und installieren das Azure Storage NuGet-Paket:
 
-1. Wählen Sie in Visual Studio **Datei -> Neues Projekt**, und wählen Sie dann **Windows -> Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
+1. Wählen Sie in Visual Studio **Datei -> Neues Projekt** und dann **Windows -> Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
 2. Stellen Sie einen Namen für die Konsolenanwendung bereit, und klicken Sie dann auf **OK**.
-3. Nachdem Ihr Projekt erstellt wurde, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+3. Nachdem Ihr Projekt erstellt wurde, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach „WindowsAzure.Storage“, und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
 ### Speichern Ihrer Speicherkonto-Anmeldeinformationen in der Datei „app.config“
 
@@ -518,8 +526,9 @@ Sie können Metriken für Dateispeicher über das Azure-Portal aktivieren. Sie k
 
 Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
-### Konzeptionelle Artikel
+### Konzeptionelle Artikel und Videos
 
+- [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Verwenden des Azure-Dateispeichers unter Linux](storage-how-to-use-files-linux.md)
 
 ### Toolunterstützung für Dateispeicher
@@ -540,4 +549,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

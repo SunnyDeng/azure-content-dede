@@ -38,7 +38,7 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 2. Klicken Sie auf **Neu** > **Daten + Speicher** > **SQL Data Warehouse**.
 
-	![Erstellen eines Data Warehouse](./media/sql-data-warehouse-get-started-provision/new-data-warehouse.png)
+    ![Erstellen](./media/sql-data-warehouse-get-started-provision/create-sample.gif)
 
 1. Geben Sie auf dem Blatt "SQL Data Warehouse-Datenbank" einen Namen für Ihre Datenbank ein. In diesem Beispiel nennen wir die Datenbank "AdventureWorksDW".
 
@@ -48,12 +48,7 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 ## Schritt 2: Konfigurieren und Erstellen eines Servers
 In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server und jeder Server einem geografischen Standort zugewiesen. Der Server wird als logischer SQL Server bezeichnet.
 
-> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server:
-  >
-  > + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts.
-  > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*.
-  > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten.
-  > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
+> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server: >> + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts. > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*. > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten. > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
 
 1. Klicken Sie auf **Server** > **Neuen Server erstellen**. Es fallen keine Gebühren für den Server ein. Wenn Sie einen bereits vorhandenen logischen V12-Server verwenden möchten, wählen Sie den vorhandenen Server aus und fahren mit dem nächsten Schritt fort. 
 
@@ -128,4 +123,4 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

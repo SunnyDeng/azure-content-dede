@@ -24,7 +24,10 @@
 + Verbinden von Ressourcen mit Azure Data Factory.
 + Erstellen einer Pipeline zum Verschieben von Daten aus Storage-Blobs in SQL Data Warehouse.
 
+>[AZURE.VIDEO loading-azure-sql-data-warehouse-with-azure-data-factory]
+
 ## Ressourcen
+
 Für dieses Tutorial benötigen Sie folgende Ressourcen:
 
    + **Azure Storage-Blob**: Ihr Azure Storage-Blob dient als Quelle der Daten für die Pipeline. Sie können ein vorhandenes Blob verwenden oder [ein neues bereitstellen](../storage/storage-create-storage-account/).
@@ -36,6 +39,7 @@ Für dieses Tutorial benötigen Sie folgende Ressourcen:
 Sobald alle Komponenten bereit stehen, können Sie Ihre Daten vorbereiten und Ihre Azure Data Factory-Pipeline erstellen.
 
 ## Beispieldaten
+
 Zusätzlich zu den einzelnen Teilen der Pipeline benötigen wir auch einige Beispieldaten, mit denen Sie das Laden von Daten in Azure Data Factory üben können.
 
 1. Laden Sie als erstes die [Beispieldaten](https://migrhoststorage.blob.core.windows.net/adfsample/FactInternetSales.csv) herunter. Diese Daten funktionieren in Verbindung mit den Beispieldaten, die sich bei den vorhandenen Beispieldaten befinden, und stellen weitere Vertriebsdaten für drei Jahre bereit.
@@ -49,11 +53,13 @@ Zusätzlich zu den einzelnen Teilen der Pipeline benötigen wir auch einige Beis
 Nun stehen unsere Daten bereit, und wir können zu Data Factory wechseln und die Pipeline erstellen, mit der die Daten aus Ihrem Speicherkonto in Ihr SQL Data Warehouse verschoben werden.
 
 ## Verwenden von Azure Data Factory
+
 Nachdem wir alle Teile eingerichtet haben, können wir mit dem Einrichten der Pipeline beginnen, indem wir im Azure-Vorschauportal zu Ihrer Azure Data Factory-Instanz wechseln. Wechseln Sie hierfür zum [Azure-Portal](portal.azure.com), und wählen Sie im Menü auf der linken Seite Ihre Data Factory aus.
 
 Von hier aus sind drei Schritte zur Einrichtung einer Azure Data Factory-Pipeline erforderlich, um Daten in Ihr Data Warehouse zu übertragen: das Verknüpfen Ihrer Dienste, das Definieren Ihrer Datasets und das Erstellen der Pipeline.
 
 ### Erstellen von verknüpften Diensten
+
 Der erste Schritt besteht darin, das Azure-Speicherkonto und SQL Data Warehouse mit Ihrer Data Factory zu verknüpfen.
 
 1. Starten Sie zunächst den Registrierungsvorgang, indem Sie auf den Abschnitt „Verknüpfte Dienste“ Ihrer Data Factory und dann auf „Neuer Datenspeicher“ klicken. Wählen Sie dann einen Namen aus, unter dem Sie Ihren Azure-Speicher registrieren möchten, wählen Sie Azure Storage als Typ aus, und geben Sie dann Ihren Kontonamen und Kontoschlüssel ein.
@@ -72,6 +78,7 @@ Der erste Schritt besteht darin, das Azure-Speicherkonto und SQL Data Warehouse 
 		}
 
 ### Registrieren von Datasets
+
 Nach dem Erstellen der verknüpften Dienste müssen Sie die Datasets definieren. Dies bedeutet in diesem Fall, dass die Struktur der Daten definiert wird, die aus dem Speicher in das Data Warehouse verschoben werden. Informationen zur Erstellung
 
 1. Um diesen Prozess zu starten, wechseln Sie zum Abschnitt „Erstellen und Bereitstellen“ Ihrer Data Factory.
@@ -142,6 +149,7 @@ Nach dem Erstellen der verknüpften Dienste müssen Sie die Datasets definieren.
 		}
 
 ### Einrichten Ihrer Pipeline
+
 Zuletzt richten wir die Pipeline in Azure Data Factory ein und führen sie aus. Dies ist der Vorgang, durch den die eigentliche Datenverschiebung abgeschlossen wird. [Hier](../data-factory/data-factory-azure-sql-data-warehouse-connector/) finden Sie eine vollständige Ansicht der Vorgänge, die Sie mit SQL Data Warehouse und Azure Data Factory durchführen können.
 
 Klicken Sie im Abschnitt „Erstellen und Bereitstellen“ nun auf „Weitere Befehle“ und dann auf „Neue Pipeline“. Nachdem Sie die Pipeline erstellt haben, können Sie die Daten mit dem folgenden Code in das Data Warehouse übertragen:
@@ -193,4 +201,4 @@ Klicken Sie im Abschnitt „Erstellen und Bereitstellen“ nun auf „Weitere Be
 	}
 	
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

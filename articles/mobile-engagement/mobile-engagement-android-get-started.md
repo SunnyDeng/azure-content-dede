@@ -135,9 +135,15 @@ Herunterladen und Integrieren der SDK-Bibliothek
 
 Um mit dem Senden von Daten zu beginnen und sicherzustellen, dass die Benutzer aktiv sind, müssen Sie mindestens einen Bildschirm (Aktivität) an das Mobile Engagement-Back-End schicken.
 
-Wechseln Sie zu **mainactivity.Java**, und fügen Sie Folgendes hinzu, um die **ActionBarActivity**-Basisklasse von **MainActivity** durch **EngagementActivity** zu ersetzen:
+Wechseln Sie zu **Mainactivity.java**, und fügen Sie Folgendes hinzu, um die Basisklasse von **MainActivity** durch **EngagementActivity** zu ersetzen:
 
 	public class MainActivity extends EngagementActivity {
+
+Für dieses einfache Beispielszenario können Sie die folgende Zeile auskommentieren (ausschließen):
+
+    // setSupportActionBar(toolbar);
+
+Wenn Sie diese um beibehalten möchten, sollten Sie das Szenario „Grundlegende Berichterstellung“ in unserem Artikel zur [erweiterten Android-Integration] lesen.
 
 ##<a id="monitor"></a>Verbinden der App mit Überwachung in Echtzeit
 
@@ -149,7 +155,7 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern interagieren und diese mit
 
 ### Aktivieren von In-App-Messaging
 
-1. Kopieren Sie die nachfolgenden In-App-Messaging-Ressourcen in die Datei "Manifest.xml" zwischen die Tags `<application>` und `</application>`.
+1. Kopieren Sie die nachfolgenden In-App-Messaging-Ressourcen in die Datei „Manifest.xml“ zwischen die Tags `<application>` und `</application>`.
 
 		<activity android:name="com.microsoft.azure.engagement.reach.activity.EngagementTextAnnouncementActivity" android:theme="@android:style/Theme.Light">
   			<intent-filter>
@@ -204,23 +210,27 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern interagieren und diese mit
 
 ###Geben Sie ein Symbol für Benachrichtigungen an.
 
-Fügen Sie den folgenden XML-Codeausschnitt in die Datei "Manifest.xml" zwischen die Tags `<application>` und `</application>` ein.
+Fügen Sie den folgenden XML-Codeausschnitt in die Datei „Manifest.xml“ zwischen die Tags `<application>` und `</application>` ein.
 
 		<meta-data android:name="engagement:reach:notification:icon" android:value="engagement_close"/>
 
 Dies definiert das Symbol, das in System- und In-App-Benachrichtigungen angezeigt wird. Es ist für In-App-Benachrichtigungen optional, für Systembenachrichtigungen jedoch obligatorisch. Android weist Systembenachrichtigungen mit ungültigen Symbolen zurück.
 
-Stellen Sie sicher, dass Sie ein Symbol in einem der **ziehbaren** Ordner verwenden (z. B. ``engagement_close.png``). **Mipmap**-Ordner werden nicht unterstützt.
+Stellen Sie sicher, dass Sie ein Symbol in einem der **ziehbaren** Ordner verwenden (z. B. ``engagement_close.png``). Ordner vom Typ **mipmap** werden nicht unterstützt.
 
 >[AZURE.NOTE]Sie sollten das Symbol für das **Startprogramm** nicht verwenden. Es weist eine andere Auflösung auf und befindet sich in der Regel in den Mipmap-Ordnern, die nicht unterstützt werden.
 
 Für reale Apps können Sie ein Symbol verwenden, das entsprechend den [Android-Entwurfsrichtlinien](http://developer.android.com/design/patterns/notifications.html) für Benachrichtigungen geeignet ist.
 
->[AZURE.TIP]Um sicherzustellen, dass Sie die richtigen Auflösungen für Symbole verwenden, betrachten Sie [diese Beispiele](https://www.google.com/design/icons). Scrollen Sie nach unten zum Abschnitt **Benachrichtigung**, klicken Sie auf ein Symbol, und klicken Sie dann auf `PNGS`, um den ziehbaren Symbolsatz herunterzuladen. Es wird für jede Version des Symbols angezeigt, welche ziehbaren Ordner für welche Auflösung verwendet werden.
+>[AZURE.TIP]Um sicherzustellen, dass Sie die richtigen Auflösungen für Symbole verwenden, betrachten Sie [diese Beispiele](https://www.google.com/design/icons). Führen Sie einen Bildlauf nach unten zum Abschnitt **Benachrichtigung** durch, klicken Sie auf ein Symbol, und klicken Sie dann auf `PNGS`, um den ziehbaren Symbolsatz herunterzuladen. Es wird für jede Version des Symbols angezeigt, welche ziehbaren Ordner für welche Auflösung verwendet werden.
+
+##Erstellen eines Google Cloud Messaging-Projekts mit API-Schlüssel 
+
+[AZURE.INCLUDE [mobile-engagement-enable-Google-cloud-messaging](../../includes/mobile-engagement-enable-google-cloud-messaging.md)]
 
 ###Aktivieren der App für den Empfang von GCM-Pushbenachrichtigungen
 
-1. Fügen Sie in "Manifest.xml" Folgendes zwischen die Tags `<application>` und `</application>` ein, nachdem Sie die aus der Google Play-Konsole abgerufene `project number` ersetzt haben. \\n ist beabsichtigt, stellen Sie daher sicher, dass Sie die Projektnummer damit endet.
+1. Fügen Sie in Ihrer Datei „Manifest.xml“ Folgendes zwischen die Tags `<application>` und `</application>` ein, nachdem Sie die aus der Google Play-Konsole abgerufene `project number` ersetzt haben. \\n ist beabsichtigt, stellen Sie daher sicher, dass Sie die Projektnummer damit endet.
 
 		<meta-data android:name="engagement:gcm:sender" android:value="************\n" />
 
@@ -265,7 +275,7 @@ Damit Mobile Engagement Pushbenachrichtigungen in Ihrem Namen senden kann, müss
 	  
 	![][17]
 
-4. Fügen Sie den im Abschnitt [Aktivieren von Google Cloud Messaging](#register) erhaltenen GCM-Serverschlüssel ein, und klicken Sie dann auf **OK**.
+4. Fügen Sie im Popupfenster den GCM-Serverschlüssel ein, den Sie zuvor bezogen haben, und klicken Sie auf **OK**.
 
 	![][18]
 
@@ -275,7 +285,7 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 
 1. Navigieren Sie zu der Registerkarte **REACH** in Ihrem Mobile Engagement-Portal.
 	 
-2. Klicken Sie auf **Neue Ankündigung**, um die Push-Benachrichtigungskampagne zu erstellen.
+2. Klicken Sie auf **Neue Ankündigung**, um die Pushbenachrichtigungskampagne zu erstellen.
 	 
 	![][20]
 
@@ -285,7 +295,7 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 
 	a. Benennen der Kampagne.
 
-	b. Wählen Sie für **Übermittlungstyp** *Systembenachrichtigung/Einfach*: Dies ist der einfache Android-Pushbenachrichtigungstyp, der einen Titel und eine kleine Textzeile unterstützt.
+	b. Wählen Sie *Systembenachrichtigung/Einfach* für **Übermittlungstyp**: Dies ist der einfache Android-Pushbenachrichtigungstyp, der einen Titel und eine kleine Textzeile unterstützt.
 
 	c. Wählen Sie für **Lieferzeit** die Option *Jederzeit* aus, um eine Benachrichtigung darüber zu erhalten, ob die App gestartet wurde oder nicht.
 
@@ -293,11 +303,11 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 
 	e. Geben Sie dann Ihre **Nachricht** ein.
 
-4. Scrollen Sie nach unten, und wählen Sie im **Inhaltsbereich** die Option **Nur Benachrichtigung** aus.
+4. Navigieren Sie nach unten, und wählen Sie im Bereich **Inhalt** die Option **Nur Benachrichtigung** aus.
 
 	![][22]
 
-5. Sie haben das Festlegen der Basiskampagne abgeschlossen. Scrollen Sie nun wieder nach unten, und klicken Sie auf die Schaltfläche **Erstellen**, um Ihre Kampagne zu speichern.
+5. Sie haben das Festlegen der Basiskampagne abgeschlossen. Navigieren Sie nun wieder nach unten, und klicken Sie auf die Schaltfläche **Erstellen**, um Ihre Kampagne zu speichern.
 
 6. Als letzten Schritt klicken Sie auf **Aktivieren**, um die Kampagne zu aktivieren, damit Pushbenachrichtigungen gesendet werden.
     
@@ -306,6 +316,8 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 <!-- URLs. -->
 [Mobile Engagement Android SDK]: http://go.microsoft.com/?linkid=9863935
 [Mobile Engagement Android SDK documentation]: http://go.microsoft.com/?linkid=9874682
+[erweiterten Android-Integration]: https://azure.microsoft.com/de-DE/documentation/articles/mobile-engagement-android-integrate-engagement/#basic-reporting
+
 <!-- Images. -->
 [1]: ./media/mobile-engagement-android-get-started/android-studio-new-project.png
 [2]: ./media/mobile-engagement-android-get-started/android-studio-project-props.png
@@ -327,4 +339,4 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 [22]: ./media/mobile-engagement-android-get-started/campaign-content.png
 [24]: ./media/mobile-engagement-android-get-started/campaign-activate.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

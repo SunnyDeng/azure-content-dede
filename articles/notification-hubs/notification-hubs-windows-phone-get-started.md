@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/21/2015"
+	ms.date="10/23/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Windows Phone
@@ -51,8 +51,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Benachrichtigungen für Windows Phone gesendet werden.
 
-> [AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. Im nicht authentifizierten MPNS-Modus liegen Einschränkungen für Benachrichtigungen vor, die Sie an jeden Kanal senden können. Benachrichtigungshubs unterstützen den [authentifizierten MPNS-Modus](http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx).
-<!--Refer to [Notification Hubs How-To for Windows Phone 8] for more information on how to use MPNS authenticated mode.-->
+> [AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. Im nicht authentifizierten MPNS-Modus liegen Einschränkungen für Benachrichtigungen vor, die Sie an jeden Kanal senden können. Notification Hubs unterstützt den [authentifizierten MPNS-Modus](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx), wodurch Sie Ihr Zertifikat hochladen können.
 
 ##Verbinden Ihrer App mit dem Notification Hub
 
@@ -119,7 +118,7 @@ Sie können Benachrichtigungen mit Notification Hubs von jedem beliebigen Back-E
 
 	Damit wird der Projektmappe eine neue Visual C#-Konsolenanwendung hinzugefügt. Sie können dies auch in einer separaten Projektmappe durchführen.
 
-4. Klicken Sie mit der rechten Maustaste auf **Extras**, auf **Bibliothekspaket-Manager** und klicken Sie dann auf **Paket-Manager-Konsole**.
+4. Klicken Sie auf **Extras**, auf **Bibliothekspaket-Manager** und dann auf **Paket-Manager-Konsole**.
 
 	Daraufhin wird die Paket-Manager-Konsole angezeigt.
 
@@ -199,4 +198,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an all Ihre Windows Ph
 [Kachelkatalog]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
 [Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="09/09/2015"
+	ms.date="10/26/2015"
 	ms.author="anhoh"/>
 
 # Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer #
@@ -56,7 +56,7 @@ Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und
 
 	![Screenshot des Dokument-Explorers – Befehl "Speichern"](./media/documentdb-view-JSON-document-explorer/savedocument1.png)
 
-	> [AZURE.NOTE]Wenn Sie keine "id"-Eigenschaft angegebn, fügt Dokument-Explorer automatisch eine id-Eigenschaft hinzu und generiert eine GUID als id-Wert.
+	> [AZURE.NOTE]Wenn Sie keine „id“-Eigenschaft angeben, fügt Dokument-Explorer automatisch eine „id“-Eigenschaft hinzu und generiert eine GUID als „id“-Wert.
 
 - Wenn Sie bereits über Daten aus JSON-Dateien, MongoDB, SQL Server, CSV-Dateien, Azure-Tabellenspeichern, Amazon DynamoDB, HBase oder anderen DocumentDB-Sammlungen verfügen, können Sie das [Datenmigrationstool](documentdb-import-data.md) von DocumentDB verwenden, um Ihre Daten schnell zu importieren.
 
@@ -141,7 +141,8 @@ Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokument
 ##<a name="NextSteps"></a>Nächste Schritte
 
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
+- Um mit Code zu beginnen, klicken Sie [hier](documentdb-get-started.md).
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->
