@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-chrome"
 	ms.devlang="JavaScript"
 	ms.topic="hero-article"
-	ms.date="09/03/2015"
+	ms.date="10/20/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Chrome-Apps
@@ -416,13 +416,13 @@ Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs i
 
 3. Führen Sie im Konsolenfenster folgenden Befehl aus:
 
-        Install-Package WindowsAzure.ServiceBus
+        Install-Package Microsoft.Azure.NotificationHubs
 
    	Damit wird ein Verweis auf das Azure Service Bus-SDK mit dem <a href="http://nuget.org/packages/  WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet-Paket</a> hinzugefügt.
 
 4. Öffnen Sie die Datei **Program.cs**, und fügen Sie die folgende `using`-Anweisung hinzu:
 
-        using Microsoft.ServiceBus.Notifications;
+        using Microsoft.Azure.NotificationHubs;
 
 5. Fügen Sie in der Klasse **Program** folgende Methode hinzu:
 
@@ -493,4 +493,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an Ihre Chrome-App ges
 [Azure Notification Hubs – Benachrichtigen von Benutzern]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
 [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

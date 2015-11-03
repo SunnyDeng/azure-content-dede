@@ -18,13 +18,13 @@
 
 # Verbinden Ihrer mobilen App mit SaaS-APIs
 
-In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung (Software-as-a-Service). Sie aktualisieren die App mithilfe der Informationen unter [Authentifizieren Ihrer App mit der Azure Active Directory-Bibliothek für einmaliges Anmelden], um immer dann ein Microsoft Word-Dokument in SharePoint Online zu erstellen, wenn ein neues "TodoItem" hinzugefügt wird.
+In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung (Software-as-a-Service). Sie aktualisieren die App mithilfe der [einmaligen Anmeldung über die Azure Active Directory Authentication Library], um immer dann ein Microsoft Word-Dokument in SharePoint Online zu erstellen, wenn ein neues „TodoItem“ hinzugefügt wird.
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 * Visual Studio 2013 unter Windows 8.1
 * Ein aktives Abonnement von [SharePoint Online]
-* Sie haben das Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden] durchlaufen. Sie sollten das Mandat verwenden, das von Ihrem SharePoint-Abonnement bereitgestellt wird.
+* Sie haben das Tutorial zur [einmaligen Anmeldung über die Azure Active Directory Authentication Library ] abgeschlossen. Sie sollten das Mandat verwenden, das von Ihrem SharePoint-Abonnement bereitgestellt wird.
 
 [AZURE.INCLUDE [app-service-mobile-to-web-and-api](../../includes/app-service-mobile-to-web-and-api.md)]
 
@@ -182,10 +182,10 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 <!-- URLs. -->
 
-[Preview Azure Management Portal]: https://portal.azure.com/
 [Azure-Verwaltungsportals]: https://manage.windowsazure.com/
 [SharePoint Online]: http://office.microsoft.com/de-DE/sharepoint/
-[Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: app-service-mobile-dotnet-backend-ios-aad-sso-preview.md
+[einmaligen Anmeldung über die Azure Active Directory Authentication Library]: app-service-mobile-ios-aad-sso.md
+[einmaligen Anmeldung über die Azure Active Directory Authentication Library ]: app-service-mobile-ios-aad-sso.md
 [Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

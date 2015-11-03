@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Erste Schritte: Verbinden mit Azure SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Herstellen einer Verbindung mit SQL Data Warehouse über Visual Studio | Microsoft Azure"
    description="Erste Schritte zum Herstellen von Verbindungen mit SQL Data Warehouse für das Ausführen von Abfragen."
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="twounder"
-   manager=""
+   manager="barbkess"
    editor=""/>
 
 <tags
@@ -13,82 +13,99 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/20/2015"
-   ms.author="twounder"/>
+   ms.date="10/22/2015"
+   ms.author="twounder;barbkess"/>
 
-# Verbinden und Abfragen mit Visual Studio
+# Herstellen einer Verbindung mit SQL Data Warehouse über Visual Studio
 
 > [AZURE.SELECTOR]
 - [Visual Studio](sql-data-warehouse-get-started-connect.md)
 - [SQLCMD](sql-data-warehouse-get-started-connect-sqlcmd.md)
 
-In dieser exemplarischen Vorgehensweise wird das Verbinden mit und Abfragen einer Azure SQL Data Warehouse-Datenbank veranschaulicht, was in Visual Studio nur wenige Minuten dauert. In dieser exemplarischen Vorgehensweise führen Sie folgende Aktionen aus:
-
-+ Installieren der erforderlichen Software
-+ Verbinden mit einer Datenbank, die die Beispieldatenbank "AdventureWorksDW" enthält
-+ Anwenden einer Abfrage auf die Beispieldatenbank  
+In dieser exemplarischen Vorgehensweise wird das Verbinden mit einer Azure SQL Data Warehouse-Datenbank veranschaulicht, was mit den SQL Server Data Tools in Visual Studio nur wenige Minuten dauert. Nachdem die Verbindung hergestellt wurde, führen Sie eine einfache Abfrage aus.
 
 ## Voraussetzungen
 
-+ Visual Studio 2013/2015: Informationen zum Herunterladen und Installieren von Visual Studio 2015 und/oder SSDT finden Sie unter [Installieren von Visual Studio und SSDT](sql-data-warehouse-install-visual-studio.md).
++ AdventureWorksDW-Beispieldatenbank in SQL Data Warehouse Informationen zum Erstellen dieser Datenbank finden Sie unter [Erstellen einer SQL Data Warehouse-Datenbank](sql-data-warehouse-get-started-create.md). 
++ SQL Server Data Tools für Visual Studio Installationshinweise und Optionen finden Sie unter [Installieren von Visual Studio und/oder SSDT](sql-data-warehouse-install-visual-studio.md).
 
-## Abrufen des vollqualifizierten Namens des SQL Azure-Servers
+## Schritt 1: Ermitteln des vollqualifizierten Namens des SQL Azure-Servers
 
-Um eine Verbindung mit Ihrer Datenbank herzustellen, benötigen Sie den vollständigen Namen des Servers (****Servername**.database.windows.net*), auf dem sich die Datenbank befindet.
+Ihre Datenbank ist einem Azure SQL-Server zugeordnet. Um eine Verbindung mit Ihrer Datenbank herzustellen, benötigen Sie den vollqualifizierten Namen des Servers (**Servername**.database.windows.net*).
+
+So ermitteln Sie den vollqualifizierten Servername:
 
 1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
-2. Navigieren Sie zu der Datenbank, mit der Sie eine Verbindung herstellen möchten.
-3. Suchen Sie den vollständigen Servernamen (der in den folgenden Schritten verwendet wird):
+2. Klicken Sie auf **SQL-Datenbanken**, und klicken Sie auf die Datenbank, mit der Sie eine Verbindung herstellen möchten. In diesem Beispiel wird die AdventureWorksDW-Beispieldatenbank verwendet.
+3. Suchen Sie den vollständigen Servernamen.
 
-![][1]
+    ![Vollständiger Servername][1]
 
-## Herstellen von Verbindungen mit der SQL-Datenbank
+## Schritt 2: Herstellen einer Verbindung mit der SQL-Datenbank
 
 1. Öffnen Sie Visual Studio.
-2. Öffnen Sie im Menü "Ansicht" den **SQL Server-Objekt-Explorer**.
+2. Öffnen Sie den SQL Server-Objekt-Explorer. Wählen Sie zu diesem Zweck **Ansicht** > **SQL Server-Objekt-Explorer** aus.
  
-![][2]
+    ![SQL Server-Objekt-Explorer][2]
 
-3. Klicken Sie auf die Schaltfläche **SQL Server hinzufügen**
+3. Klicken Sie auf das Symbol **SQL Server hinzufügen**.
 
-![][3]
+    ![SQL Server-Instanz hinzufügen][3]
 
-4. Geben Sie den zuvor erfassten *Servernamen* ein.
-5. Wählen Sie in der Liste **Authentifizierung** den Eintrag **SQL Server-Authentifizierung** aus.
-6. Geben Sie den **Benutzernamen** und das **Kennwort** ein, den/das Sie beim Erstellen des SQL-Datenbankservers angegeben haben, und klicken Sie auf **Verbinden**.
+1. Füllen Sie die Felder im Fenster zum Herstellen einer Verbindung mit dem Server aus.
 
-## Durchführen von Beispielabfragen
+    ![Mit Server verbinden][4]
 
-Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben einer Abfrage fort.
+    - **Servername**. Geben Sie den zuvor ermittelten *Servernamen* ein.
+    - **Authentifizierung**. Wählen Sie SQL Server-Authentifizierung.
+    - **Benutzername** und **Kennwort**. Geben Sie den Benutzernamen und das Kennwort für den Azure SQL-Server ein.
+    - Klicken Sie auf **Verbinden**.
 
-1. Klicken Sie auf die Benutzerdatenbank in SSDT.
+1. Erweitern Sie den Azure SQL-Server. Sie können die dem Server zugeordneten Datenbanken anzeigen. Erweitern Sie „AdventureWorksDW“, um die Tabellen in Ihrer Beispieldatenbank anzuzeigen.
 
-2. Klicken Sie auf die Schaltfläche **Neue Abfrage**. Ein neues Fenster wird geöffnet.
+    ![AdventureWorksDW erkunden][5]
 
-![][4]
 
-3. Geben Sie den folgenden Code in das Abfragefenster ein.
+## Schritt 3: Ausführen einer Beispielabfrage
+
+Nachdem jetzt eine Verbindung mit dem Server hergestellt wurde, fahren wir mit dem Schreiben einer Abfrage fort.
+
+1. Klicken Sie mit der rechten Maustaste im SQL Server-Objekt-Explorer auf Ihre Datenbank. 
+
+2. Wählen Sie **Neue Abfrage** aus. Ein neues Abfragefenster wird geöffnet.
+
+    ![Neue Abfrage][6]
+
+3. Kopieren Sie die folgende TSQL-Abfrage in das Abfragefenster:
 
 	```
 	SELECT COUNT(*) FROM dbo.FactInternetSales;
 	```
 
-4. Führen Sie die Abfrage aus.
+4. Führen Sie die Abfrage aus. Zu diesem Zweck klicken Sie auf den grünen Pfeil oder verwenden die folgende Tastenkombination: `CTRL`+`SHIFT`+`E`.
 
-	Zum Ausführen der Abfrage klicken Sie auf den grünen Pfeil oder verwenden die folgende Tastenkombination: `CTRL`+`SHIFT`+`E`.
+    ![Abfrage ausführen][7]
+
+1. Sehen Sie sich die Abfrageergebnisse an. In diesem Beispiel weist die Tabelle „FactInternetSales“ 60398 Zeilen auf.
+
+    ![Abfrageergebnisse][8]
 
 ## Nächste Schritte
 
-Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versuchen Sie, [eine Verbindung mit Power BI herzustellen][].
+Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versuchen Sie, [die Daten mit Power BI zu visualisieren][].
 
-[eine Verbindung mit Power BI herzustellen]: ./sql-data-warehouse-integrate-power-bi.md
+[die Daten mit Power BI zu visualisieren]: ./sql-data-warehouse-get-started-visualize-with-power-bi.md
 
 
 <!--Image references-->
 
 [1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png
 [2]: ./media/sql-data-warehouse-get-started-connect/open-ssdt.png
-[3]: ./media/sql-data-warehouse-get-started-connect/connection-dialog.png
-[4]: ./media/sql-data-warehouse-get-started-connect/new-query.png
+[3]: ./media/sql-data-warehouse-get-started-connect/add-server.png
+[4]: ./media/sql-data-warehouse-get-started-connect/connection-dialog.png
+[5]: ./media/sql-data-warehouse-get-started-connect/explore-sample.png
+[6]: ./media/sql-data-warehouse-get-started-connect/new-query2.png
+[7]: ./media/sql-data-warehouse-get-started-connect/run-query.png
+[8]: ./media/sql-data-warehouse-get-started-connect/query-results.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

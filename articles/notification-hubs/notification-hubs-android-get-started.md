@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="hero-article"
-	ms.date="10/21/2015"
+	ms.date="10/23/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Android-Apps
@@ -86,7 +86,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 1. Laden Sie das <a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">Notification Hubs Android SDK</a> herunter. Extrahieren Sie die ZIP-Datei, und kopieren Sie die Dateien **notificationhubs\\notification-hubs-0.3.jar** und **notifications\\notifications-1.0.1.jar** in das Verzeichnis **app\\libs** Ihres Projekts. Dazu können Sie die Dateien direkt in den Ordner **libs** im Fenster "Project View" von Android Studio ziehen. Aktualisieren Sie den Ordner **libs**.
 
 
-    > [AZURE.NOTE] Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
+    > [AZURE.NOTE]Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
 
 2. Richten Sie ein, dass die Anwendung eine Registrierungs-ID von GCM erhält, und verwenden Sie diese, um die App-Instanz beim Notification Hub zu registrieren.
 
@@ -156,7 +156,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
     	}
 
 
-7. Fügen Sie der Aktivität die Methode **DialogNotify** hinzu, um die Benachrichtigung anzuzeigen, wenn die App ausgeführt wird und sichtbar ist. Überschreiben Sie außerdem **onStart** und **onStop**, um zu ermitteln, ob die Aktivität sichtbar ist und das Dialogfeld anzeigen kann.
+7. Fügen Sie der Aktivität die `DialogNotify`-Methode hinzu, um die Benachrichtigung anzuzeigen, wenn die App ausgeführt wird und sichtbar ist. Überschreiben Sie außerdem `onStart`,`onPause`,`onResume` und `onStop`, um zu ermitteln, ob die Aktivität sichtbar ist und das Dialogfeld anzeigen kann.
 
 	    @Override
 	    protected void onStart() {
@@ -165,11 +165,22 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 	    }
 	
 	    @Override
+	    protected void onPause() {
+	        super.onPause();
+	        isVisible = false;
+	    }
+	
+	    @Override
+	    protected void onResume() {
+	        super.onResume();
+	        isVisible = true;
+	    }
+	
+	    @Override
 	    protected void onStop() {
 	        super.onStop();
 	        isVisible = false;
 	    }
-
 
 		/**
 		  * A modal AlertDialog for displaying a message on the UI thread
@@ -207,7 +218,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 
 8. Da Android keine Benachrichtigungen anzeigt, müssen Sie einen eigenen Empfänger schreiben. Fügen Sie in **AndroidManifest.xml** das folgende Element im `<application>`-Element ein.
 
-	> [AZURE.NOTE] Ersetzen Sie den Platzhalter mit dem Namen Ihres Pakets.
+	> [AZURE.NOTE]Ersetzen Sie den Platzhalter mit dem Namen Ihres Pakets.
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -218,7 +229,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
         </receiver>
 
 
-9. Erweitern Sie in der Projektansicht die Knoten **app** > **src** > **main** > **java**. Klicken Sie mit der rechten Maustaste auf Ihren Paketordner unter **java**, klicken Sie auf **Neu** und dann auf **Java Class**.
+9. Erweitern Sie in der Projektansicht **app** > **src** > **main** > **java**. Klicken Sie mit der rechten Maustaste auf Ihren Paketordner unter **java**, klicken Sie auf **Neu** und dann auf **Java Class**.
 
 	![][6]
 
@@ -316,7 +327,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         android:layout_marginBottom="42dp"
         android:hint="@string/notification_message_hint" />
 
-2. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von dem neuen `Button`- und `EditText`-Steuerelement verwiesen wird. Fügen Sie die Werte am Ende der Datei unmittelbar vor `</resources>` ein.
+2. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von den neuen Steuerelementen `Button` und `EditText` verwiesen wird. Fügen Sie die Werte am Ende der Datei unmittelbar vor `</resources>` ein.
 
         <string name="send_button">Send Notification</string>
         <string name="notification_message_hint">Enter notification message text</string>
@@ -431,7 +442,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         }
 
 
-6. Fügen Sie in **MainActivity.java** der `MainActivity`-Klasse die folgende Methode hinzu, um das Click-Ereignis der Schaltfläche **Send Notification** zu verarbeiten und die Benachrichtigungsmeldung über die REST-API an den Hub zu senden.
+6. Fügen Sie in **MainActivity.java** der `MainActivity`-Klasse die folgende Methode hinzu, um das „Click“-Ereignis der Schaltfläche **Send Notification** zu verarbeiten und die Benachrichtigungsmeldung über die REST-API an den Hub zu senden.
 
         /**
          * Send Notification button click handler. This method parses the
@@ -486,7 +497,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 
 ####Testen mit einem Emulator
 
-Wenn Sie die App mit einem Emulator testen möchten, müssen Sie sicherstellen, dass das Emulatorabbild die Google-API-Ebene unterstützt, die Sie für die API auswählen. Wenn das Abbild die Google-APIs nicht unterstützt, wird die Ausnahme **SERVICE\_NOT\_AVAILABLE** ausgegeben.
+Wenn Sie die App mit einem Emulator testen möchten, müssen Sie sicherstellen, dass das Emulatorabbild die Google-API-Ebene unterstützt, die Sie für die API auswählen. Wenn Ihr Image die Google-APIs nicht unterstützt, wird die Ausnahme **SERVICE\_NOT\_AVAILABLE** ausgegeben.
 
 Stellen Sie außerdem sicher, dass Ihr Google-Konto dem ausgeführten Emulator unter **Einstellungen** > **Konten** hinzugefügt ist. Andernfalls führt die Registrierung bei GCM möglicherweise zur Ausnahme **AUTHENTICATION\_FAILED**.
 
@@ -549,4 +560,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!----HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="hero-article"
-	ms.date="08/31/2015"
+	ms.date="10/20/2015"
 	ms.author="robmcm"/>
 
 # Erstellen einer Java Web-App in Azure App Service
@@ -43,45 +43,45 @@ Dieser Abschnitt zeigt, wie der Azure Marketplace zum Erstellen einer Java-Web-A
 
 	![](./media/web-sites-java-get-started/newmarketplace.png)
 
-5. Klicken Sie auf **Web und mobil**.
+3. Klicken Sie auf **Web und mobil**.
 
 	Sie müssen möglicherweise nach links scrollen, um das Blatt **Marketplace** anzuzeigen, auf dem Sie **Web und mobil** auswählen können.
 
-6. Geben Sie im Suchfeld den Namen eines Java-Anwendungsservers ein, beispielsweise **Apache Tomcat** oder **Jetty**, und drücken Sie dann die EINGABETASTE.
+4. Geben Sie im Suchfeld den Namen eines Java-Anwendungsservers ein, beispielsweise **Apache Tomcat** oder **Jetty**, und drücken Sie dann die EINGABETASTE.
 
-4. Klicken Sie in den Suchergebnissen auf den Java-Anwendungsserver.
+5. Klicken Sie in den Suchergebnissen auf den Java-Anwendungsserver.
 
 	![](./media/web-sites-java-get-started/webmobilejetty.png)
 
-5. Klicken Sie im ersten **Apache Tomcat**- oder **Jetty**-Blatt auf **Erstellen**.
+6. Klicken Sie im ersten **Apache Tomcat**- oder **Jetty**-Blatt auf **Erstellen**.
 
 	![](./media/web-sites-java-get-started/jettyblade.png)
 
-4. Geben Sie im nächsten **Apache Tomcat**- oder **Jetty**-Blatt im Feld **Web-App** einen Namen für die Web-App ein.
+7. Geben Sie im nächsten **Apache Tomcat**- oder **Jetty**-Blatt im Feld **Web-App** einen Namen für die Web-App ein.
 
 	Der Name muss innerhalb der Domäne "azurewebsites.net" eindeutig sein, da die URL der Web-App "{name}.azurewebsites.net" lauten wird. Wenn der eingegebene Name nicht eindeutig ist, wird im Textfeld ein rotes Ausrufezeichen angezeigt.
 
-5. Wählen Sie eine **Ressourcengruppe** aus, oder erstellen Sie eine neue.
+8. Wählen Sie eine **Ressourcengruppe** aus, oder erstellen Sie eine neue.
 
 	Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../resource-group-portal.md).
 
-5. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
+9. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
 
 	Weitere Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-6. Klicken Sie auf **Erstellen**.
+10. Klicken Sie auf **Erstellen**.
 
 	![](./media/web-sites-java-get-started/jettyportalcreate2.png)
 
 	Azure beendet die Erstellung der neuen Web-App innerhalb kurzer Zeit, üblicherweise in weniger als einer Minute.
 
-7. Klicken Sie auf **Web-Apps > {Ihre neue Web-App}**.
+11. Klicken Sie auf **Web-Apps > {Ihre neue Web-App}**.
 
-8. Klicken Sie auf die **URL**, um zur neuen Website zu wechseln.
+12. Klicken Sie auf die **URL**, um zur neuen Website zu wechseln.
 
 	![](./media/web-sites-java-get-started/jettyurl.png)
 
-	Wenn Sie Tomcat wählen, wird eine Seite ähnlich der folgenden angezeigt.
+	Wenn Sie Tomcat wählen, sehen Sie eine ähnliche Seite wie im folgenden Beispiel.
 
 	![Web-App mit Apache Tomcat](./media/web-sites-java-get-started/tomcat.png)
 
@@ -99,7 +99,8 @@ In diesem Abschnitt wird gezeigt, wie Sie eine Web-App erstellen und manuell fü
 
 2. Klicken Sie auf **Neu > Web und mobil**.
 
-6. Klicken Sie auf **Web-App**.
+
+3. Klicken Sie auf **Web-App**.
 
 4. Geben Sie im Feld **Web-App** einen Namen für die Web-App ein.
 
@@ -109,29 +110,29 @@ In diesem Abschnitt wird gezeigt, wie Sie eine Web-App erstellen und manuell fü
 
 	Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../resource-group-portal.md).
 
-5. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
+6. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
 
 	Weitere Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-6. Klicken Sie auf **Erstellen**.
+7. Klicken Sie auf **Erstellen**.
  
-11. Nachdem die Web-App erstellt wurde, klicken Sie auf **Web-Apps > {Ihre Web-App}**.
+8. Nachdem die Web-App erstellt wurde, klicken Sie auf **Web-Apps > {Ihre Web-App}**.
  
-13. Klicken Sie auf dem Blatt **Web-App** auf **Einstellungen**.
+9. Klicken Sie auf dem Blatt **Web-App** auf **Einstellungen**.
 
-12. Klicken Sie auf **Anwendungseinstellungen**.
+10. Klicken Sie auf **Anwendungseinstellungen**.
 
-13. Klicken Sie auf die gewünschte **Java-Version**.
+11. Klicken Sie auf die gewünschte **Java-Version**.
 
-14. Wählen Sie den gewünschten **Webcontainer** aus.
+12. Wählen Sie den gewünschten **Webcontainer** aus.
 
-15. Klicken Sie auf **Speichern**.
+13. Klicken Sie auf **Speichern**.
 
 	Nach einem kurzen Augenblick ist Ihre Web-App Java-basiert.
 
-7. Klicken Sie auf **Web-Apps > {Ihre neue Web-App}**.
+14. Klicken Sie auf **Web-Apps > {Ihre neue Web-App}**.
 
-8. Klicken Sie auf die **URL**, um zur neuen Website zu wechseln.
+15. Klicken Sie auf die **URL**, um zur neuen Website zu wechseln.
 
 	Diese Webseite bestätigt, dass Sie eine auf Java basierende Web-App erstellt haben.
 
@@ -147,4 +148,4 @@ Weitere Informationen zum Entwickeln von Java-Anwendungen in Azure finden Sie im
 
 [Azure App Service-App erstellen]: http://go.microsoft.com/fwlink/?LinkId=523751
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

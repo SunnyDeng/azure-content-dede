@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="08/10/2015"
+	ms.date="10/16/2015"
 	ms.author="tdykstra"/>
 
 # Erstellen von ASP.NET-Web-Apps in Azure App Service
@@ -28,7 +28,7 @@
 
 ## Übersicht
 
-In diesem Lernprogramm wird die Erstellung einer ASP.NET-Webanwendung und deren Bereitstellung in einer [Web-App in Azure App Service](app-service-web-overview.md) mit Visual Studio 2015 oder Visual Studio 2013 gezeigt. Das Lernprogramm geht davon aus, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss des Lernprogramms verfügen Sie über eine einfache Webanwendung, die in der Cloud ausgeführt wird.
+In diesem Tutorial wird die Bereitstellung einer ASP.NET-Webanwendung in einer [Web-App in Azure App Service](app-service-web-overview.md) mit Visual Studio 2015 oder Visual Studio 2013 gezeigt. Das Tutorial geht davon aus, dass Sie ein ASP.NET-Entwickler sind, der noch keine Erfahrung mit der Verwendung von Azure hat. Nach Abschluss des Lernprogramms verfügen Sie über eine einfache Webanwendung, die in der Cloud ausgeführt wird.
 
 In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
@@ -39,9 +39,12 @@ Sie lernen Folgendes:
 * Vorbereiten Ihres Computers für die Azure-Entwicklung durch Installieren des [Azure SDK für .NET](../dotnet-sdk/)
 * Einrichten von Visual Studio zum Erstellen einer neuen App Service-Web-App beim Erstellen eines ASP.NET MVC 5-Webprojekts
 * Bereitstellen eines Webprojekts für eine App Service-Web-App mit Visual Studio
+* Verwenden von Visual Studio **Server-Explorer** zum Öffnen von Remotedateien und Starten einer Remotedebugsitzung 
 * Überwachen und Verwalten der Web-App im [Azure-Portal](/overview/preview-portal/)
 
-Dies ist ein schnelles und einfaches Tutorial, in dem das erstellte Webprojekt nicht angepasst wird. Eine Einführung in die Entwicklung von ASP.NET MVC 5-Webanwendungen finden Sie unter [Erste Schritte mit ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) auf der [ASP-NET](http://asp.net/)-Website. Links zu anderen Artikeln mit eingehenderen Details zu Webanwendungen in Azure App Service finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+> [AZURE.NOTE]In diesem Tutorial wird die Verwendung von ASP.NET mit Azure App Service beschrieben; die Entwicklung einer ASP.NET-Webanwendung wird darin nicht behandelt. Eine Einführung zu ASP.NET MVC 5 finden Sie unter [Erste Schritte mit ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) auf der [ASP.NET](http://asp.net/)-Website. Links zu anderen Artikeln, in denen die Anwendung des Azure App Service ausführlicher beschrieben wird, finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+> 
+> Unterstützen Sie uns dabei, Umfang und Ansatz dieses Tutorials zu gestalten – wenn Sie wünschen, dass ein Erste-Schritte-Tutorial weitere Themen abdeckt, hinterlassen Sie Ihr Feedback am Ende des Tutorials in einem [Disqus-Kommentar](#comments).
 
 ##<a name="video"></a>Anmelden bei Microsoft Azure
 
@@ -50,9 +53,9 @@ Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu k
 * [Kostenloses Anlegen eines Azure-Kontos](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, mit dem Sie andere kostenpflichtige Azure-Dienste ausprobieren können. Selbst, nachdem Sie dieses Guthaben aufgebraucht haben, können Sie das Konto behalten und kostenlose Azure-Dienste und -Features nutzen, z. B. das Web-Apps-Feature in Azure App Service.
 * [Aktivieren der Vorteile für MSDN-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.
 
-> [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
-In diesem Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose Testversion von Microsoft Azure anmelden können. (Dauer: 1:58)
+Im folgenden Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose Testversion von Microsoft Azure anmelden können. (Dauer: 1:58)
 
 > [AZURE.VIDEO sign-up-for-microsoft-azure]
 
@@ -96,7 +99,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 	![Keine Authentifizierung](./media/web-sites-dotnet-get-started/GS13noauth.png)
 
-	Die von Ihnen erstellte Beispielanwendung erlaubt keine Anmeldung durch Benutzer. Der Abschnitt [Nächste Schritte](#next-steps) verlinkt auf ein Tutorial, in dem die Authentifizierung und Autorisierung implementiert werden.
+	Die von Ihnen erstellte Beispielanwendung erlaubt keine Anmeldung durch Benutzer. Der Abschnitt [Nächste Schritte](#next-steps) stellt eine Verknüpfung mit einem Tutorial her, das die Authentifizierung und Autorisierung implementiert.
 
 5. Lassen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Einstellungen für **Microsoft Azure** unverändert, und klicken Sie dann auf **OK**.
 
@@ -184,7 +187,7 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 	![](./media/web-sites-dotnet-get-started/GS13previewoutput.png)
 
-	Wenn Sie auf **Veröffentlichen** klicken, werden die Dateien von Visual Studio auf den Azure-Server kopiert.
+	Wenn Sie auf **Veröffentlichen** klicken, kopiert Visual Studio die Dateien auf den Azure-Server.
 
 	In den Fenstern **Ausgabe** und **Azure App Service-Aktivität** wird angezeigt, welche Bereitstellungsaktionen ausgeführt wurden, und es wird die erfolgreiche Durchführung der Bereitstellung gemeldet.
 
@@ -194,11 +197,39 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 	![In Azure ausgeführte Web-App](./media/web-sites-dotnet-get-started/GS13deployedsite.png)
 
-13. Schließen Sie den Browser.
+13. Lassen Sie dieses Browserfenster für die Verwendung im nächsten Abschnitt geöffnet.
 
 **Tipp:** Für eine schnelle Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Auf der Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche zum Veröffentlichen klicken oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
 
 ![Symbolleiste "Webveröffentlichung mit einem Klick"](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
+
+## Öffnen von Remotedateien im Server-Explorer
+
+Wenn Sie eine Web-App testen und debuggen, können Sie Dateien im **Server-Explorer** öffnen und bearbeiten, um schnelle temporäre Änderungen auf der Remotewebsite vorzunehmen.
+
+1.  Navigieren Sie im **Server-Explorer** zu **Azure > App Service > MyExampleGroup**, und erweitern Sie dann den Knoten für Ihre Web-App.
+
+2. Erweitern Sie **Dateien > Ansichten > Startseite**, und doppelklicken Sie dann auf die Datei *Index.cshtml*.
+
+	![](./media/web-sites-dotnet-get-started/indexfileinse.png)
+
+3. Ändern Sie `<h1>ASP.NET</h1>` in `<h1>Azure App Service</h1>`.
+
+4. Speichern Sie die Datei .
+
+5. Aktualisieren Sie das Browserfenster, das die in Azure ausgeführte Website enthält.
+
+	![](./media/web-sites-dotnet-get-started/afterindexedit.png)
+
+Diese Änderung ist jetzt in der bereitgestellten Website vorhanden, jedoch nicht das lokale Projekt. Wenn Sie das Projekt erneut bereitstellen, wird die Website auf den Stand vor Durchführung dieser Änderung zurückgesetzt.
+
+Dieses Feature eignet sich gut für [vorübergehendes Deaktivieren von „customErrors“ in der Datei Web.config, um eine detaillierte Fehlermeldung zu erhalten](web-sites-dotnet-troubleshoot-visual-studio.md).
+
+Im **Server-Explorer** können Sie auch mit der rechten Maustaste auf den Web-App-Knoten klicken und so in einem Visual Studio-Fenster Zugriff auf Web-App-Einstellungen erhalten, eine Remotedebugsitzung starten und Anwendungsprotokolle in Echtzeit anzeigen, während die Anwendung sie schreibt.
+
+![](./media/web-sites-dotnet-get-started/sewebappmenu.png)
+
+Weitere Informationen finden Sie unter [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 ## Überwachen und Verwalten der Web-App im Azure-Portal
 
@@ -261,7 +292,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 * Auswählen zwischen App Service, Azure Cloud Services und Azure Virtual Machines für Webanwendungen
 
-	In Azure können Sie Webanwendungen in App Service-Web-Apps (wie in diesem Lernprogramm gezeigt), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure Web-Apps, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
+	In Azure können Sie Webanwendungen in App Service-Web-Apps (wie in diesem Lernprogramm gezeigt), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure App Service, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
 
 * [Auswählen oder Erstellen eines App Service-Plans](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)
 
@@ -269,6 +300,6 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 ## Änderungen
 * Hinweise zu den Änderungen in App Service im Vergleich zu Websites finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Änderungen im Azure-Portal gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen im Azure-Portal gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->
