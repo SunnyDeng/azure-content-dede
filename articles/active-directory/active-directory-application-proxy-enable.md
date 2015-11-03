@@ -17,7 +17,7 @@
 	ms.author="rkarlin"/>
 
 # Aktivieren des Azure AD-Anwendungsproxys
-> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
+> [AZURE.NOTE] Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Der Microsoft Azure AD-Anwendungsproxy ermöglicht Ihnen das Veröffentlichen von Anwendungen, z. B. SharePoint-Websites, Outlook Web Access und IIS-basierten Apps innerhalb Ihres privaten Netzwerks und bietet den sicheren Zugriff für Benutzer außerhalb Ihres Netzwerks. Mitarbeiter können sich auf ihren eigenen Geräten von zu Hause aus bei Ihren Apps anmelden und sich über diesen cloudbasierten Proxy authentifizieren.
 
@@ -91,4 +91,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Azure-Identität](fundamentals-identity.md)
 * [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
 
-<!---HONumber=Oct15_HO4-->
+<!----HONumber=Oct15_HO4-->

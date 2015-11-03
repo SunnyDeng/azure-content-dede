@@ -194,7 +194,13 @@ Der Tabelle fasst die Leistungsmetriken und -indikatoren zusammen, die für die 
 
 |Metrik|Indikator|
 |---|---|
-|CPU|\\Prozessor(\_Gesamt)\\% Prozessorzeit| |Verfügbarer Speicher|\\Speicher\\Verfügbar MBytes| |IOPS|\\PhysicalDisk(\_Total)\\Übertragungen/Sek.| |VM-Lesevorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesevorgänge/Sek.| |VM-Schreibvorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schrebvorgänge/S| |VM-Lesedurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesen Bytes/Sek.| |VM-Scheibdurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schreiben Bytes/Sek.|
+|CPU|\\Prozessor(\_Gesamt)\\% Prozessorzeit|
+|Verfügbarer Speicher|\\Speicher\\Verfügbar MBytes|
+|IOPS|\\PhysicalDisk(\_Total)\\Übertragungen/Sek.|
+|VM-Lesevorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesevorgänge/Sek.|
+|VM-Schreibvorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schrebvorgänge/S|
+|VM-Lesedurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesen Bytes/Sek.|
+|VM-Scheibdurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schreiben Bytes/Sek.|
 
 
 ## Nächste Schritte
@@ -208,4 +214,4 @@ So stellen Sie ASR bereit:
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->
