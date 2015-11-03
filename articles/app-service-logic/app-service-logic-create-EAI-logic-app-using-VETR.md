@@ -51,12 +51,12 @@ Als Nächstes fügen wir Trigger und Aktionen hinzu.
 
 
 ## Hinzufügen eines HTTP-Triggers
-
+1. Wählen Sie **Von Grund auf neu erstellen**.
 1. Wählen Sie im Katalog **HTTP-Listener** aus, um einen neuen Listener zu erstellen. Nennen Sie ihn **HTTP1**.
 2. Belassen Sie die Einstellung **Antwort automatisch senden?** auf "False" festgelegt. Konfigurieren Sie die Triggeraktion, indem Sie _HTTP-Methode_ auf _POST_ und die Einstellung _Relative URL_ auf _\\OneWayPipeline_ festlegen:  
 
 	![HTTP-Trigger][2]
-
+3. Klicken Sie auf das grüne Häkchen.
 
 ## Hinzufügen der Überprüfungsaktion
 
@@ -74,8 +74,8 @@ Auf ähnliche Weise fügen wir den Rest der Aktionen hinzu.
 ## Hinzufügen der Transformationsaktion
 Nun wollen wir Transformationen zum Normalisieren der eingehenden Daten konfigurieren.
 
-1. Fügen Sie **Transformation** aus dem Katalog hinzu.
-2. Um eine Transformation zum Transformieren der eingehenden XML-Nachrichten zu konfigurieren, wählen Sie die Aktion **Transformation** als die Aktion aus, die ausgeführt wird, wenn diese API aufgerufen wird. Wählen Sie ```triggers(‘httplistener’).outputs.Content``` als Wert für _inputXml_ aus. *Map* ist ein optionaler Parameter, da die eingehenden Daten mit allen konfigurierten Transformationen abgeglichen werden. Nur diejenigen, die mit dem Schema übereinstimmen, werden angewendet.
+1. Fügen Sie aus dem Katalog **BizTalk-Transformationsdienst** hinzu.
+2. Um eine Transformation zum Transformieren der eingehenden XML-Nachrichten zu konfigurieren, wählen Sie die Aktion **Transformation** als die Aktion aus, die beim Aufrufen dieser API ausgeführt wird. Wählen Sie ```triggers(‘httplistener’).outputs.Content``` als Wert für _inputXml_ aus. *Map* ist ein optionaler Parameter, da die eingehenden Daten mit allen konfigurierten Transformationen abgeglichen werden. Nur diejenigen, die mit dem Schema übereinstimmen, werden angewendet.
 3. Schließlich erfolgt die Transformation nur nach erfolgreicher Überprüfung. Um diese Bedingung zu konfigurieren, klicken Sie rechts oben auf das Zahnradsymbol, und wählen Sie _Eine zu erfüllende Bedingung hinzufügen_. Legen Sie die Bedingung auf ```equals(actions('xmlvalidator').status,'Succeeded')``` fest:  
 
 ![BizTalk-Transformationen][4]
@@ -85,7 +85,8 @@ Nun wollen wir Transformationen zum Normalisieren der eingehenden Daten konfigur
 Als Nächstes fügen wir eine Service Bus-Warteschlange als das Ziel hinzu, in das Daten geschrieben werden.
 
 1. Fügen Sie einen **Service Bus-Connector** aus dem Katalog hinzu. Legen Sie **Name** auf _Servicebus1_, **Verbindungszeichenfolge** auf die Verbindungszeichenfolge für Ihre Service Bus-Instanz und **Entitätsname** auf _Warteschlange_ fest. Überspringen Sie **Abonnementname**.
-2. Wählen Sie die Aktion **Nachricht senden**, und legen das Feld **Nachricht** für die Aktion auf _actions('transformservice').outputs.OutputXml_ fest.
+2. Wählen Sie die Aktion **Nachricht senden**, und legen das Feld **Inhalt** für die Aktion auf _actions('transformservice').outputs.OutputXml_ fest.
+3. Legen Sie das Feld **Inhaltstyp** auf „application/xml“ fest.
 
 ![Service Bus][5]
 
@@ -94,14 +95,17 @@ Als Nächstes fügen wir eine Service Bus-Warteschlange als das Ziel hinzu, in d
 Nach Abschluss der Pipelineverarbeitung senden Sie eine HTTP-Antwort für "Erfolg" und "Fehler" mit den folgenden Schritten zurück:
 
 1. Fügen Sie einen **HTTP-Listener** aus dem Katalog hinzu, und wählen Sie die Aktion **HTTP-Antwort senden**.
-2. Legen Sie **Antwortinhalt** auf *Pipelineverarbeitung abgeschlossen* und **Antwortstatuscode** auf *200* fest, um "HTTP 200 OK" anzugeben, und legen Sie die **Bedingung** auf den folgenden Ausdruck fest: ```@equals(actions('servicebusconnector').status,'Succeeded')``` <br/>
+2. Legen Sie die **Antwort-ID** auf *Nachricht senden* fest.
+2. Legen Sie den **Antwortinhalt** auf *Pipelineverarbeitung abgeschlossen* fest.
+3. Legen Sie **Antwortstatuscode** auf *200* fest, um „HTTP 200 OK“ anzuzeigen.
+4. Klicken Sie oben rechts auf das Dropdownmenü, und wählen Sie **Eine zu erfüllende Bedingung hinzufügen** aus. Ändern Sie die Bedingung in den folgenden Ausdruck: ```@equals(actions('azureservicebusconnector').status,'Succeeded')``` <br/>
+5. Wiederholen Sie diese Schritte, um eine HTTP-Antwort auch bei einem Fehler zu senden. Ändern Sie **Bedingung** in den folgenden Ausdruck: ```@not(equals(actions('azureservicebusconnector').status,'Succeeded'))``` <br/>
+6. Klicken Sie auf **OK**, und klicken Sie dann auf **Erstellen**.
 
-
-Wiederholen Sie diese Schritte, um eine HTTP-Antwort auch bei einem Fehler zu senden. Ändern Sie die **Bedingung** auf den folgenden Ausdruck: ```@not(equals(actions('servicebusconnector').status,'Succeeded'))``` <br/>
 
 
 ## Abschluss
-Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App ausgelöst und die gerade erstellten Aktionen werden ausgeführt. Zum Verwalten solcher Logik-Apps, die Sie erstellen, klicken Sie im Azure-Portal auf **Durchsuchen** und wählen dann **Logik-Apps** aus. Wählen Sie die App aus, um weitere Informationen anzuzeigen.
+Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App ausgelöst und die gerade erstellten Aktionen werden ausgeführt. Zum Verwalten solcher von Ihnen erstellter Logik-Apps klicken Sie im Azure-Portal auf **Durchsuchen**, und wählen Sie dann **Logik-Apps** aus. Wählen Sie die App aus, um weitere Informationen anzuzeigen.
 
 Einige hilfreichen Themen:
 
@@ -114,4 +118,4 @@ Einige hilfreichen Themen:
 [4]: ./media/app-service-logic-create-EAI-logic-app-using-VETR/BizTalkTransforms.PNG
 [5]: ./media/app-service-logic-create-EAI-logic-app-using-VETR/AzureServiceBus.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

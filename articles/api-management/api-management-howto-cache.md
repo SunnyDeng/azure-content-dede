@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/05/2015"
+	ms.date="10/27/2015"
 	ms.author="sdanie"/>
 
 # Hinzufügen der Zwischenspeicherung zum Verbessern der Leistung in Azure API Management
@@ -160,4 +160,4 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie dann auf **HTTP Get
 [Call an operation and test the caching]: #test-operation
 [Next steps]: #next-steps
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

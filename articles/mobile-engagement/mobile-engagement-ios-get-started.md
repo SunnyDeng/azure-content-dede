@@ -32,7 +32,6 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Xcode 6 oder Xcode 7, den Sie aus dem MAC App Store installieren können
 + Das [Mobile Engagement iOS SDK]
-+ Ein Pushbenachrichtigungszertifikat (P12), das Sie im Apple Dev Center abrufen können.
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für iOS-Apps.
 
@@ -44,7 +43,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen M
 
 ##<a id="connecting-app"></a>Verbinden Sie Ihre App mit dem Mobile Engagement-Back-End
 
-In diesem Lernprogramm wird eine "einfache Integration" dargestellt. Dabei handelt es sich um den minimalen erforderlichen Satz zur Sammlung von Daten und zum Senden einer Pushbenachrichtigung. Die vollständige Dokumentation zur Integration finden Sie im Artikel [Integrieren von Mobile Engagement unter iOS](../mobile-engagement-ios-sdk-overview/).
+In diesem Lernprogramm wird eine "einfache Integration" dargestellt. Dabei handelt es sich um den minimalen erforderlichen Satz zur Sammlung von Daten und zum Senden einer Pushbenachrichtigung. Die vollständige Dokumentation zur Integration finden Sie im Artikel [Integrieren des Mobile Engagement iOS SDK](../mobile-engagement-ios-sdk-overview/).
 
 Wir erstellen eine einfache App mit Xcode, um die Integration zu veranschaulichen.
 
@@ -68,17 +67,17 @@ Wir erstellen eine einfache App mit Xcode, um die Integration zu veranschauliche
 
 	![][3]
 
-6. Für **Xcode 7** – Fügen Sie `libxml2.tbd` anstelle von `libxml2.dylib` hinzu.
+6. Für **XCode 7** -Fügen Sie `libxml2.tbd` anstelle von `libxml2.dylib` hinzu.
 
-7. Wechseln Sie zurück zum Azure-Portal auf der Seite **Verbindungsinformationen** Ihrer App, und kopieren Sie die Verbindungszeichenfolge.
+7. Wechseln Sie zurück zum Azure-Portal zur Seite **Verbindungsinformationen** Ihrer App, und kopieren Sie die Verbindungszeichenfolge.
 
 	![][4]
 
-8. Fügen Sie in der Datei **AppDelegate.m** die folgende Codezeile hinzu.
+8. Fügen Sie der Datei **AppDelegate.m** die folgende Codezeile hinzu.
 
 		#import "EngagementAgent.h"
 
-9. Fügen Sie jetzt die Verbindungszeichenfolge in den `didFinishLaunchingWithOptions`-Delegaten ein.
+9. Fügen Sie die Verbindungszeichenfolge in den `didFinishLaunchingWithOptions`-Delegaten ein.
 
 		- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 		{
@@ -125,7 +124,7 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern und mit REACH mit Push-Ben
 
 ### Ändern des Anwendungsdelegaten
 
-1. Importieren Sie in der Datei **AppDeletegate.m** das Engagement Reach-Modul.
+1. Importieren Sie zurück in der Datei **AppDeletegate.m** das Engagement Reach-Modul.
 
 		#import "AEReachModule.h"
 
@@ -186,4 +185,4 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern und mit REACH mit Push-Ben
 [3]: ./media/mobile-engagement-ios-get-started/xcode-build-phases.png
 [4]: ./media/mobile-engagement-ios-get-started/app-connection-info-page.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

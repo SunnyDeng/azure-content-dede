@@ -26,9 +26,9 @@ Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine
 
 	- **Azure-Konto**: Sie können in wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
-	- **Batch-Konto**: Weitere Informationen finden Sie unter [Azure Batch – Technische Übersicht](batch-technical-overview.md) im Abschnitt **Batch-Konto**.
+	- **Batch-Konto**: Siehe [Erstellen und Verwalten eines Batch Azure-Kontos](batch-account-create-portal.md).
 
-	- **Speicherkonto**: Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md) im Abschnitt **Erstellen eines Speicherkontos**. In diesem Tutorial erstellen Sie einen Container im Konto **testcon1**.
+	- **Speicherkonto**: Siehe unter **Erstellen eines Speicherkontos** den Abschnitt [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md). In diesem Tutorial erstellen Sie einen Container im Konto **testcon1**.
 
 - Ein Projekt für eine Visual Studio-Konsolenanwendung:
 
@@ -339,7 +339,7 @@ Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede A
 		}
 
 
-	**[account-name]** muss durch den Namen des Speicherkontos ersetzt werden, das Sie zuvor erstellt haben. Aktualisieren Sie im vorangehenden Beispiel alle vier Instanzen von **[account-name]**.
+	**[account-name]** muss durch den Namen des Speicherkontos ersetzt werden, das Sie zuvor erstellt haben. Aktualisieren Sie im vorangehenden Beispiel alle vier Vorkommen von **[account-name]**.
 
 
 2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
@@ -495,4 +495,4 @@ Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle
 
 2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

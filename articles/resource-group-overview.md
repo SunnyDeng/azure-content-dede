@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/02/2015"
+   ms.date="10/27/2015"
    ms.author="tomfitz"/>
 
 # Übersicht über den Azure-Ressourcen-Manager
@@ -97,15 +97,19 @@ Weitere Informationen zu Tags finden Sie unter [Verwenden von Tags zum Organisie
 
 Mit dem Ressourcen-Manager können Sie steuern, wer Zugriff auf spezielle Aktionen für Ihre Organisation hat. OAuth und die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) sind standardmäßig in die Verwaltungsplattform integriert, und diese Zugriffssteuerung wird auf alle Dienste in der Ressourcengruppe angewendet. Sie können Benutzer vordefinierten Plattformrollen und ressourcenspezifischen Rollen hinzufügen und diese Rollen auf ein Abonnement, eine Ressourcengruppe oder eine Ressource anwenden, um den Zugriff zu beschränken. Beispielsweise können Sie die vordefinierte Rolle „SQL DB Contributor“ verwenden, mit der Benutzer Datenbanken verwalten können, aber keine Datenbankserver oder Sicherheitsrichtlinien. Sie fügen Benutzer Ihrer Organisation, die diese Art von Zugriff benötigen, der Rolle „SQL DB Contributor“ hinzu und wenden die Rolle auf das Abonnement, die Ressourcengruppe oder die Ressource an.
 
-Der Ressourcen-Manager protokolliert automatisch Benutzeraktionen zu Überwachungszwecken.
+Der Ressourcen-Manager protokolliert automatisch Benutzeraktionen zu Überwachungszwecken. Informationen zum Arbeiten mit den Überwachungsprotokollen finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](resource-group-audit.md).
 
 Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](role-based-access-control-configure.md). Dieses Thema enthält eine Liste der integrierten Rollen und zulässigen Aktionen. Integrierte Rollen sind allgemeine Rollen, wie z. B. Besitzer, Leser und Mitwirkender, sowie servicespezifische Rollen, wie z. B. Virtual Machine Contributor, Virtual Network Contributor und SQL Security Manager (um nur einige der verfügbaren Rollen zu nennen).
 
-Beispiele zum Festlegen von Zugriffsrichtlinien finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md).
+Beispiele zum Zuweisen von Rollen finden Sie unter [Verwalten des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md).
 
 Sie können kritische Ressourcen auch explizit sperren, um zu verhindern, dass sie von Benutzern gelöscht oder geändert werden. Weitere Informationen finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
 Bewährte Methoden finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
+
+## Verwalten von Ressourcen mit benutzerdefinierten Richtlinien
+
+Mit dem Ressourcen-Manager können Sie benutzerdefinierte Richtlinien zum Verwalten Ihrer Ressourcen erstellen. Die von Ihnen erstellten Richtlinien können verschiedenste Szenarien abdecken. Sie können z. B. festlegen, dass bestimmte Namenskonventionen zwingend einzuhalten sind, oder einschränken, welche Regionen einen bestimmten Typ von Ressourcen hosten können. Oder Sie können einen Tagwert für Ressourcen als erforderlich deklarieren, um eine Abrechnung nach Abteilungen zu ermöglichen. Weitere Informationen finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
 
 ## Einheitliche Verwaltungsebene
 
@@ -131,4 +135,4 @@ Hier sehen Sie eine Videodemonstration dieser Übersicht:
 
 [AZURE.VIDEO azure-resource-manager-overview]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

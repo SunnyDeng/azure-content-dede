@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/21/2015"
+	ms.date="10/23/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Windows Phone
@@ -119,7 +119,7 @@ Sie können Benachrichtigungen mit Notification Hubs von jedem beliebigen Back-E
 
 	Damit wird der Projektmappe eine neue Visual C#-Konsolenanwendung hinzugefügt. Sie können dies auch in einer separaten Projektmappe durchführen.
 
-4. Klicken Sie mit der rechten Maustaste auf **Extras**, auf **Bibliothekspaket-Manager** und klicken Sie dann auf **Paket-Manager-Konsole**.
+4. Klicken Sie auf **Extras**, auf **Bibliothekspaket-Manager** und dann auf **Paket-Manager-Konsole**.
 
 	Daraufhin wird die Paket-Manager-Konsole angezeigt.
 
@@ -199,4 +199,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an all Ihre Windows Ph
 [Kachelkatalog]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
 [Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->
