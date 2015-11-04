@@ -63,6 +63,8 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 ||Aufträge|Konfigurieren (Gerät)||
 ||Warnungen|Wartung|
 
+![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
+
 Um sich ein Video anzusehen, das Sie durch die Benutzeroberfläche des StorSimple Manager-Diensts führt, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
 
 ## Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
@@ -115,4 +117,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!---HONumber=Oct15_HO4-->
+<!----HONumber=Oct15_HO4-->
