@@ -28,7 +28,7 @@ Zur Sicherung virtueller Azure-Computer gehören drei Hauptschritte:
 
 ![Drei Schritte zum Sichern eines virtuellen Azure-Computers](./media/backup-azure-vms/3-steps-for-backup.png)
 
->[AZURE.NOTE]Die Sicherung virtueller Computer erfolgt lokal. Sie können keine virtuellen Computer aus einer Region in einem Sicherungstresor in einer anderen Region sichern. Deshalb muss in jeder Azure-Region mit virtuellen Computern, die eine Sicherung erfordern, mindestens ein Sicherungstresor erstellt werden.
+>[AZURE.NOTE] Die Sicherung virtueller Computer erfolgt lokal. Sie können keine virtuellen Computer aus einer Region in einem Sicherungstresor in einer anderen Region sichern. Deshalb muss in jeder Azure-Region mit virtuellen Computern, die eine Sicherung erfordern, mindestens ein Sicherungstresor erstellt werden.
 
 ## Schritt 1: Ermitteln virtueller Azure-Computer
 Der Ermittlungsprozess muss immer als erster Schritt erfolgen, um sicherzustellen, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden. Bei diesem Vorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst.
@@ -39,7 +39,8 @@ Der Ermittlungsprozess muss immer als erster Schritt erfolgen, um sicherzustelle
 
     ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf **ERMITTELN**. ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button-only.png)
+3. Klicken Sie unten auf der Seite auf **ERMITTELN**.
+    ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button-only.png)
 
     Der Ermittlungsvorgang kann einige Minuten andauern, während die virtuellen Computer in einer Tabelle aufgeführt werden. Es erfolgt am unteren Rand des Bildschirms eine Benachrichtigung, die Ihnen mitteilt, dass der Vorgang ausgeführt wird.
 
@@ -58,11 +59,12 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 
     ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf **REGISTRIEREN**. ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button-only.png)
+3. Klicken Sie unten auf der Seite auf **REGISTRIEREN**.
+    ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button-only.png)
 
 4. Wählen Sie im Kontextmenü **Elemente registrieren** die virtuellen Computer aus, die Sie registrieren möchten. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst, um sie unterscheiden.
 
-    >[AZURE.TIP]Mehrere virtuelle Computer können gleichzeitig registriert werden.
+    >[AZURE.TIP] Mehrere virtuelle Computer können gleichzeitig registriert werden.
 
     Für jeden virtuellen Computer, den Sie ausgewählt haben, wird ein Auftrag erstellt.
 
@@ -72,11 +74,11 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 
    Der virtuelle Computer wird auch in der Liste der registrierten Elemente aufgeführt, und der Status des Registrierungsvorgangs wird angezeigt.
 
-	![Registering status 1](./media/backup-azure-vms/register-status01.png)
+    ![Registering status 1](./media/backup-azure-vms/register-status01.png)
 
-	When the operation completes, the status will change to reflect the *registered* state.
+    When the operation completes, the status will change to reflect the *registered* state.
 
-	![Registration status 2](./media/backup-azure-vms/register-status02.png)
+    ![Registration status 2](./media/backup-azure-vms/register-status02.png)
 
 ## Schritt 3: Schützen virtueller Azure-Computer
 Nun können Sie die Sicherungs- und Aufbewahrungsrichtlinie für den virtuellen Computer definieren. Mehrere virtuelle Computer können in einem einzigen Schritt geschützt werden.
@@ -84,6 +86,7 @@ Nun können Sie die Sicherungs- und Aufbewahrungsrichtlinie für den virtuellen 
 Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im Tresor integrierte Standardrichtlinie. Diese Standardrichtlinie sieht eine Standardaufbewahrungsdauer von 30 Tagen und eine tägliche Sicherung vor.
 
 1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
+
 2. Wählen Sie im Dropdownmenü **Azure Virtual Machine** aus.
 
     ![Workload im Portal auswählen](./media/backup-azure-vms/select-workload.png)
@@ -94,7 +97,7 @@ Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im T
 
     Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst zur Unterscheidung zwischen den virtuellen Computern.
 
-    >[AZURE.TIP]Sie können mehrere virtuelle Computer gleichzeitig schützen.
+    >[AZURE.TIP] Sie können mehrere virtuelle Computer gleichzeitig schützen.
 
     ![Effektives Konfigurieren von Schutzeinstellungen](./media/backup-azure-vms/protect-at-scale.png)
 
@@ -104,7 +107,7 @@ Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im T
 
     ![Schützen mit der neuen Richtlinie](./media/backup-azure-vms/policy-schedule.png)
 
-    >[AZURE.NOTE]Eine Sicherungsrichtlinie umfasst auch ein Aufbewahrungsschema der geplanten Sicherungen. Bei Wahl einer vorhandenen Sicherungsrichtlinie können Sie die Aufbewahrungsoptionen im nächsten Schritt nicht ändern.
+    >[AZURE.NOTE] Eine Sicherungsrichtlinie umfasst auch ein Aufbewahrungsschema der geplanten Sicherungen. Bei Wahl einer vorhandenen Sicherungsrichtlinie können Sie die Aufbewahrungsoptionen im nächsten Schritt nicht ändern.
 
 5. Wählen Sie eine **Aufbewahrungsdauer** für die Sicherungen aus.
 
@@ -140,7 +143,7 @@ So lösen Sie die erste Sicherung unmittelbar nach Konfigurieren des Schutzes au
 
     ![Sicherung wird ausgeführt](./media/backup-azure-vms/protect-inprogress.png)
 
->[AZURE.NOTE]Als Teil des Sicherungsvorgangs gibt der Azure Backup-Dienst einen Befehl an die Sicherungserweiterung auf jedem virtuellen Computer aus, damit alle Schreibvorgänge geleert werden und eine konsistente Momentaufnahme erstellt wird.
+>[AZURE.NOTE] Als Teil des Sicherungsvorgangs gibt der Azure Backup-Dienst einen Befehl an die Sicherungserweiterung auf jedem virtuellen Computer aus, damit alle Schreibvorgänge geleert werden und eine konsistente Momentaufnahme erstellt wird.
 
 Sobald die erste Sicherung abgeschlossen ist, wird der Status des virtuellen Computers auf der Registerkarte **Geschützte Elemente** als *Geschützt* angezeigt.
 
@@ -161,4 +164,4 @@ Wenn beim Sichern des virtuellen Computers Probleme auftreten, finden Sie in die
 - [Verwalten und Überwachen Ihrer virtuellen Computer](backup-azure-manage-vms.md)
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-<!----HONumber=Nov15_HO1-->
+<!-----HONumber=Nov15_HO1-->
