@@ -72,7 +72,7 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 
     ![Registrierungsauftrag](./media/backup-azure-vms/register-create-job.png)
 
-   Der virtuelle Computer wird auch in der Liste der registrierten Elemente aufgeführt, und der Status des Registrierungsvorgangs wird angezeigt.
+    Der virtuelle Computer wird auch in der Liste der registrierten Elemente aufgeführt, und der Status des Registrierungsvorgangs wird angezeigt.
 
     ![Registering status 1](./media/backup-azure-vms/register-status01.png)
 
@@ -164,4 +164,4 @@ Wenn beim Sichern des virtuellen Computers Probleme auftreten, finden Sie in die
 - [Verwalten und Überwachen Ihrer virtuellen Computer](backup-azure-manage-vms.md)
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-<!-----HONumber=Nov15_HO1-->
+<!------HONumber=Nov15_HO1-->
