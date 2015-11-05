@@ -72,11 +72,11 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 
    Der virtuelle Computer wird auch in der Liste der registrierten Elemente aufgeführt, und der Status des Registrierungsvorgangs wird angezeigt.
 
-    ![Registering status 1](./media/backup-azure-vms/register-status01.png)
+	![Registering status 1](./media/backup-azure-vms/register-status01.png)
 
-    When the operation completes, the status will change to reflect the *registered* state.
+	When the operation completes, the status will change to reflect the *registered* state.
 
-    ![Registration status 2](./media/backup-azure-vms/register-status02.png)
+	![Registration status 2](./media/backup-azure-vms/register-status02.png)
 
 ## Schritt 3: Schützen virtueller Azure-Computer
 Nun können Sie die Sicherungs- und Aufbewahrungsrichtlinie für den virtuellen Computer definieren. Mehrere virtuelle Computer können in einem einzigen Schritt geschützt werden.
@@ -161,4 +161,4 @@ Wenn beim Sichern des virtuellen Computers Probleme auftreten, finden Sie in die
 - [Verwalten und Überwachen Ihrer virtuellen Computer](backup-azure-manage-vms.md)
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=Nov15_HO1-->
+<!----HONumber=Nov15_HO1-->
