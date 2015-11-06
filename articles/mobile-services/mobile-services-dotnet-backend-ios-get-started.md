@@ -18,9 +18,10 @@
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+&nbsp;
 
->[AZURE.TIP]Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-ios-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
+>[AZURE.TIP] Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-ios-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer iOS-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert. Der mobile Dienst verwendet .NET und Visual Studio für die serverseitige Logik. Informationen zum Erstellen eines mobilen Diensts mit serverseitiger Geschäftslogik in JavaScript finden Sie in der [JavaScript-Back-End-Version] dieses Themas.
 
@@ -60,13 +61,17 @@ Hier wird das Ausführen der neuen Client-App für den mobilen Dienst unter Azur
 
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten]
+  <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zu einer vorhandenen App]
+  <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]
+  <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
-* [Beheben von Problemen bei einem Mobile Services .NET-Back-End] <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
+* [Beheben von Problemen bei einem Mobile Services .NET-Back-End]
+  <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
@@ -101,4 +106,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [JavaScript-Back-End-Version]: mobile-services-ios-get-started.md
 
-<!---HONumber=Oct15_HO4-->
+<!----HONumber=Oct15_HO4-->
