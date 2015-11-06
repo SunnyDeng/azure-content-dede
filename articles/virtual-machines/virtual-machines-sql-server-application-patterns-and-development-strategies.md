@@ -327,4 +327,4 @@ Weitere Informationen zur Auswahl der richtigen Programmiermethode finden Sie un
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Oct15_HO4-->
+<!----HONumber=Oct15_HO4-->

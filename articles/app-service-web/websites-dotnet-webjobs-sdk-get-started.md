@@ -465,7 +465,7 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 	- *Global.asax.cs*  
 	- Im Ordner *Controllers*: *AdController.cs*
 	- Im Ordner *Views\\Shared*: Datei *\_Layout.cshtml*
-- Im Ordner *Views\\Home*: *Index.cshtml*
+	- Im Ordner *Views\\Home*: *Index.cshtml*
 	- Im Ordner *Views\\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien<br/><br/>
 
 3. Fügen Sie im Projekt ContosoAdsWebJob die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
@@ -812,4 +812,4 @@ Weitere Informationen finden Sie unter [Einrichten eines Dashboards für die lok
 
 Weitere Informationen finden Sie unter [Dokumentationsressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226).
 
-<!---HONumber=Nov15_HO1-->
+<!----HONumber=Nov15_HO1-->
