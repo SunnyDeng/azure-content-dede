@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/02/2015"
+	ms.date="10/26/2015"
 	ms.author="femila"/>
 
 # Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte
@@ -22,7 +22,7 @@ Als IT-Administrator können Sie Ihre in eine Domäne eingebundenen Windows 7-Ge
 
 ##Installieren des Geräteregistrierung-Softwarepakets auf in eine Domäne eingebundenen Windows 7-Geräten
 
-Die Geräteregistrierung für Windows 7 ist als herunterladbares MSI-Paket verfügbar. Das Paket muss auf Windows 7-Computern installiert werden, die in eine Active Directory-Domäne eingebunden sind. Sie sollten das Paket mithilfe eines Softwareverteilungssystems wie System Center Configuration Manager bereitstellen. Das MSI-Paket unterstützt die standardmäßigen Hintergrundinstallationsoptionen mithilfe des Parameters "/quiet". Das Softwarepaket steht zum Download auf der Microsoft Connect-Website zur Verfügung. Dort können Sie "Arbeitsbereichverknüpfung für Windows 7" auswählen und dann herunterladen.
+Die Geräteregistrierung für Windows 7 ist als [herunterladbares MSI-Paket](https://connect.microsoft.com/site1164) verfügbar. Das Paket muss auf Windows 7-Computern installiert werden, die in eine Active Directory-Domäne eingebunden sind. Sie sollten das Paket mithilfe eines Softwareverteilungssystems wie System Center Configuration Manager bereitstellen. Das MSI-Paket unterstützt die standardmäßigen Hintergrundinstallationsoptionen mithilfe des Parameters "/quiet". Das Softwarepaket steht zum Download auf der [Microsoft Connect-Website](https://connect.microsoft.com/site1164) zur Verfügung. Dort können Sie "Arbeitsbereichverknüpfung für Windows 7" auswählen und dann herunterladen.
 
 ![](./media/active-directory-conditional-access/device-registration-process-windows7.gif)
 
@@ -52,4 +52,4 @@ Sie können die Registrierung Ihrer in eine Domäne eingebundenen Windows 7-Ger�
 
 Das Windows-Ereignisprotokoll auf dem Windows 7-Computer zeigt Meldungen im Zusammenhang mit der Arbeitsbereichverknüpfung an. Sie finden dort sowohl Meldungen zu erfolgreichen als auch fehlgeschlagenen Arbeitsbereichverknüpfungs-Ereignissen. Das Ereignisprotokoll finden Sie in der Ereignisanzeige unter "Anwendungs- und Dienstprotokolle > Microsoft -Arbeitsbereichverknüpfung".
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

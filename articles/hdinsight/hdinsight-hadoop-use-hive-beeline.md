@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/05/2015"
+   ms.date="10/26/2015"
    ms.author="larryfr"/>
 
 #Verwenden von Hive mit Hadoop in HDInsight über Beeline
@@ -55,17 +55,23 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
 
 ##<a id="beeline"></a>Verwenden des Beeline-Befehls
 
-2. Nachdem die Verbindung hergestellt wurde, starten Sie die Hive-Befehlszeilenschnittstelle (CLI) mit dem folgenden Befehl:
+1. Verwenden Sie nach dem Herstellen der Verbindung Folgendes, um den Hostnamen des Hauptknotens abzurufen:
+
+        hostname -f
+    
+    Speichern Sie den zurückgegebenen Hostnamen, da er später verwendet wird, wenn die Verbindung von Beeline zu HiveServer2 hergestellt wird.
+    
+2. Starten Sie die Hive-Befehlszeilenschnittstelle, indem Sie den folgenden Befehl verwenden:
 
         beeline
 
-2. Verwenden Sie an der `beeline>`-Eingabeaufforderung Folgendes, um eine Verbindung mit dem HiveServer2-Dienst herzustellen:
+2. Verwenden Sie an der `beeline>`-Eingabeaufforderung Folgendes, um eine Verbindung mit dem HiveServer2-Dienst herzustellen: Ersetzen Sie __HOSTNAME__ durch den Hostnamen, der für den Hauptknoten bereits zurückgegeben wurde:
 
-        !connect jdbc:hive2://headnode0:10001/;transportMode=http admin
+        !connect jdbc:hive2://HOSTNAME:10001/;transportMode=http admin
 
     Geben Sie nach Aufforderung das Kennwort für das Administratorkonto (admin) für den HDInsight-Cluster ein. Nach dem Herstellen der Verbindung wird die Aufforderung wie folgt geändert:
     
-        jdbc:hive2://headnode0:10001/>
+        jdbc:hive2://HOSTNAME:10001/>
 
 3. Beeline-Befehle beginnen normalerweise mit dem Zeichen `!`, z. B. `!help` zum Anzeigen der Hilfe. Das `!` kann aber auch häufig weggelassen werden. `help` funktioniert beispielsweise auch.
 
@@ -113,8 +119,8 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
     * **TABELLE LÖSCHEN**: Löscht Tabelle und Datendatei, falls die Tabelle bereits existiert.
     * **EXTERNE TABELLE ERSTELLEN**: Erstellt eine neue "externe" Tabelle in Hive. Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben an ihrem ursprünglichen Speicherort.
     * **ZEILENFORMAT**: Teilt Hive mit, wie die Daten formatiert werden. In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
-    * **SPEICHERORT DER TEXTDATEI**: Teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt.
-    * **AUSWÄHLEN**: Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[FEHLER]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+    * **SPEICHERORT DER TEXTDATEI** – Teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt.
+    * **AUSWÄHLEN** – Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[FEHLER]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
     * **INPUT\_\_FILE\_\_NAME LIKE '%.log'**: Teilt Hive mit, dass nur Daten aus Dateien mit der Erweiterung „.log“ zurückgegeben werden sollen. Normalerweise befinden sich in einem Ordner beim Abfragen mit Hive nur Daten mit dem gleichen Schema. Diese Beispielprotokolldatei wird aber mit anderen Datenformaten gespeichert.
 
     > [AZURE.NOTE]Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
@@ -164,21 +170,21 @@ Beeline kann auch verwendet werden, um eine Datei auszuführen, die HiveQL-Anwei
 
     * **TABELLE ERSTELLEN, FALLS NICHT VORHANDEN** – Erstellt eine Tabelle, sofern diese noch nicht vorhanden ist. Da das Schlüsselwort **EXTERN** nicht verwendet wird, ist dies eine "interne" Tabelle, die im Hive-Data Warehouse gespeichert und vollständig von Hive verwaltet wird.
     * **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar). Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
-    * **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[FEHLER]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
+    * **ÜBERSCHREIBEN EINFÜGEN ... SELECT**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[ERROR]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
     
     > [AZURE.NOTE]Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
     
 3. Verwenden Sie __STRG__+___\_X__, um die Datei zu speichern, und geben Sie dann __J__ ein, und drücken Sie die __EINGABETASTE__.
 
-4. Verwenden Sie Folgendes, um die Datei mit Beeline auszuführen:
+4. Verwenden Sie Folgendes, um die Datei mit Beeline auszuführen: Ersetzen Sie __HOSTNAME__ durch den Namen, den Sie bereits für den Hauptknoten abgerufen haben, und __PASSWORD__ durch das Kennwort für das Administratorkonto:
 
-        beeline -u 'jdbc:hive2://headnode0:10001/;transportMode=http' -n admin -p GiantR0b0! -f query.hql
+        beeline -u 'jdbc:hive2://HOSTNAME:10001/;transportMode=http' -n admin -p PASSWORD -f query.hql
 
 5. Um zu überprüfen, ob die Tabelle **errorLogs** erstellt wurde, starten Sie Beeline und stellen eine Verbindung mit HiveServer2 her. Verwenden Sie anschließend die folgende Anweisung, um alle Zeilen aus **errorLogs** zurückzugeben:
 
         SELECT * from errorLogs;
 
-    Es sollten drei Datenzeilen zurückgegeben werden, die alle in Spalte „t4“ den Wert **[FEHLER]** enthalten:
+    Es sollten drei Datenzeilen zurückgegeben werden, die alle in Spalte „t4“ den Wert **[ERROR]** enthalten.
     
         +---------------+---------------+---------------+---------------+---------------+---------------+---------------+--+
         | errorlogs.t1  | errorlogs.t2  | errorlogs.t3  | errorlogs.t4  | errorlogs.t5  | errorlogs.t6  | errorlogs.t7  |
@@ -237,4 +243,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

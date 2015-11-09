@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/26/2015"
 	ms.author="larryfr"/>
 
 # Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern
@@ -158,11 +158,21 @@ Das Solr-Dashboard ist eine Webbenutzeroberfläche, mit dem Sie über Ihren Webb
 
 Wenn Sie einen SSH-Tunnel eingerichtet haben, gehen Sie folgendermaßen vor, um das Solr-Dashboard zu verwenden:
 
-1. Stellen Sie in Ihrem Browser eine Verbindung mit \_\___http://headnode0:8983/solr/#/__ her. Der Datenverkehr sollte über den SSH-Tunnel auf „headnode0“ für Ihr HDInsight-Cluster weitergeleitet werden. Eine Seite ähnlich der folgenden wird angezeigt:
+1. Bestimmen Sie den Hostnamen für den Hauptknoten:
+
+    1. Wechseln Sie in einem Browser zu https://CLUSTERNAME.azurehdinsight.net. Wenn Sie aufgefordert werden, verwenden Sie den Admin-Benutzername und das Kennwort zur Authentifizierung auf der Website.
+    
+    2. Wählen im Menü oben auf der Seite __Hosts__ aus.
+    
+    3. Wählen Sie den Eintrag aus, der mit __hn0__ beginnt. Beim Öffnen der Seite wird oben der Hostname angezeigt. Das Format des Hostnamens ist __hn0 PARTOFCLUSTERNAME.randomcharacters.cx.internal.cloudapp.net__. Dieser Hostname muss bei der Verbindung mit dem Solr-Dashboard verwendet werden.
+    
+1. Stellen Sie in Ihrem Browser eine Verbindung mit \_\___http://HOSTNAME:8983/solr/#/__ her, wobei __HOSTNAME__ der Name ist, die Sie in den vorherigen Schritten bestimmt haben.
+
+    Die Anfrage sollte über den SSH-Tunnel auf den Hauptknoten für Ihren HDInsight-Cluster weitergeleitet werden. Eine Seite ähnlich der folgenden wird angezeigt:
 
 	![Bild des Solr-Dashboards](./media/hdinsight-hadoop-solr-install-linux/solrdashboard.png)
 
-2. Wählen Sie im linken Bereich in der Dropdownliste **Core Selector** den Eintrag **collection1** aus. Mehrere Einträge sollten unterhalb von __collection1__ erscheinen.
+2. Wählen Sie im linken Bereich in der Dropdownliste **Core-Auswahl** den Eintrag **collection1** aus. Mehrere Einträge sollten unterhalb von __collection1__ erscheinen.
 
 3. Wählen Sie aus den Einträgen unter __collection1__ __Abfrage__ aus. Verwenden Sie die folgenden Werte zum Auffüllen der Suchseite:
 
@@ -240,9 +250,13 @@ Wenn Sie Solr manuell beenden oder starten müssen, verwenden Sie die folgenden 
 
 Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterknoten in Azure-Blobspeicher. Führen Sie dazu die folgenden Schritte aus:
 
-1. Stellen Sie über SSH eine Verbindung mit dem Cluster her, und verwenden Sie dann den folgenden Befehl, um eine Momentaufnahme der indizierten Daten zu erstellen:
+1. Stellen Sie über SSH eine Verbindung mit dem Cluster her, und verwenden Sie dann den folgenden Befehl, um den Hostnamen für den Hauptknoten zu erhalten.
 
-		curl http://headnode0:8983/solr/replication?command=backup
+        hostname -f
+        
+2. Erstellen Sie folgendermaßen eine Momentaufnahme der indizierten Daten. Ersetzen Sie __HOSTNAME__ mit dem aus dem vorherigen Befehl zurückgegebenen Namen:
+
+		curl http://HOSTNAME:8983/solr/replication?command=backup
 
 	Sie sollte eine Rückgabe wie diese erhalten:
 
@@ -271,7 +285,7 @@ Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterkno
 
 	> [AZURE.NOTE]Möglicherweise möchten Sie ein dediziertes Verzeichnis für Solr-Momentaufnahmen erstellen. Beispiel: `hadoop fs -mkdir /solrbackup`.
 
-Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen finden Sie unter [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores) (auf Englisch).
+Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen finden Sie unter [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores) (Erstellen und Wiederherstellen von Backups von SolrCore; in englischer Sprache).
 
 
 ## Weitere Informationen
@@ -294,4 +308,4 @@ Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen fin
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

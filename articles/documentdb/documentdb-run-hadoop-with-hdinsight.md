@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="10/28/2015" 
 	ms.author="anhoh"/>
 
 #<a name="DocumentDB-HDInsight"></a>Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight
@@ -82,8 +82,7 @@ Bei der Bereitstellung eines HDInsight-Clusters geben Sie ein Azure-Speicherkont
 	
 	> [AZURE.NOTE]Azure HDInsight wird derzeit im Azure-Verwaltungsportal unterstützt, während Azure DocumentDB lediglich im Microsoft Azure-Portal vorhanden ist.
 
-2. Klicken Sie links unten auf **+ NEU**, zeigen Sie auf **DATA SERVICES**, auf **SPEICHER**, und klicken Sie anschließend auf **SCHNELLERFASSUNG**.
-	![Azure-Portal, in dem Sie die Schnellerfassungsfunktion nutzen können, um ein neues Speicherkonto einzurichten.][image-storageaccount-quickcreate]
+2. Klicken Sie links unten auf **+ NEU**, zeigen Sie auf **DATA SERVICES**, auf **SPEICHER**, und klicken Sie anschließend auf **SCHNELLERFASSUNG**. ![Azure-Portal, in dem Sie die Schnellerfassungsfunktion nutzen können, um ein neues Speicherkonto einzurichten.][image-storageaccount-quickcreate]
 
 3. Geben Sie die **URL** ein, wählen Sie die **SPEICHERORT**- und **REPLIKATION**-Werte und klicken Sie anschließend auf **SPEICHERKONTO ERSTELLEN**. Affinitätsgruppen werden nicht unterstützt.
 	
@@ -105,88 +104,78 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 	![Bereitstellen von ersten Hadoop HDInsight Clusterdetails][image-customprovision-page1]
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Clustername</td><td>Der Name des Clusters.<br/>
-			Der DNS-Name muss mit einem alphanumerischen Zeichen beginnen und enden. Er darf zudem Bindestriche enthalten.<br/>
-			Das Feld muss eine Zeichenfolge darstellen und zwischen 3 und 63 Zeichen aufweisen.</td></tr>
-		<tr><td>Abonnementname</td>
-			<td>Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie das Abonnement, das dem Speicherkonto aus <strong>Schritt 1</strong> entspricht. </td></tr>
-		<tr><td>Clustertyp</td>
-			<td>Wählen Sie unter "Clustertyp" den Eintrag <strong>Hadoop</strong> aus.</td></tr>
-		<tr><td>Betriebssystem</td>
-			<td>Wählen Sie <strong>Windows Server 2012 R2 Datacenter</strong> als Betriebssystem.</td></tr>
-		<tr><td>HDInsight-Version</td>
-			<td>Wählen Sie die Version aus. </br>Wählen Sie <Strong>HDInsight Version 3.1</Strong>.</td></tr>
-		</table>
-
-	<p>Geben Sie die Werte wie in der Tabelle gezeigt ein und klicken Sie auf den Pfeil nach rechts.</p>
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Clustername</td><td>Der Name des Clusters.<br/>
+		Der DNS-Name muss mit einem alphanumerischen Zeichen beginnen und enden. Er darf zudem Bindestriche enthalten.<br/>
+		Das Feld muss eine Zeichenfolge darstellen und zwischen 3 und 63 Zeichen aufweisen.</td></tr>
+	<tr><td>Abonnementname</td>
+		<td>Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie das Abonnement, das dem Speicherkonto aus <strong>Schritt 1</strong> entspricht. </td></tr>
+	<tr><td>Clustertyp</td>
+		<td>Wählen Sie unter "Clustertyp" den Eintrag <strong>Hadoop</strong> aus.</td></tr>
+	<tr><td>Betriebssystem</td>
+		<td>Wählen Sie <strong>Windows Server 2012 R2 Datacenter</strong> als Betriebssystem.</td></tr>
+	<tr><td>HDInsight-Version</td>
+		<td>Wählen Sie die Version aus. </br>Wählen Sie <Strong>HDInsight Version 3.1</Strong>.</td></tr>
+	</table><p>Geben Sie die Werte wie in der Tabelle gezeigt ein und klicken Sie auf den Pfeil nach rechts.</p>
 
 4. Geben Sie auf der Seite **Cluster konfigurieren** die folgenden Daten ein:
 
 	<table border="1">
-	<tr><th>Name</th><th>Wert</th></tr>
-	<tr><td>Datenknoten</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. </br>Beachten Sie, dass die HDInsight-Datenknoten sowohl mit Leistungen als auch mit Preisen verknüpft sind.</td></tr>
-	<tr><td>Region/virtuelles Netzwerk</td><td>Wählen Sie dieselbe Region wie die des neu erstellten <strong>Speicherkontos</strong> und des <strong>DocumentDB-Kontos</strong>. </br> HDInsight verlangt, dass sich das Speicherkonto in derselben Region befindet. Später in dieser Konfiguration können Sie nur ein Speicherkonto wählen, das sich in der hier angegebenen Region befindet.</td></tr>
-	</table>
-	
-	Klicken Sie auf den Pfeil nach rechts.
+<tr><th>Name</th><th>Wert</th></tr>
+<tr><td>Datenknoten</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. </br>Beachten Sie, dass die HDInsight-Datenknoten sowohl mit Leistungen als auch mit Preisen verknüpft sind.</td></tr>
+<tr><td>Region/virtuelles Netzwerk</td><td>Wählen Sie dieselbe Region wie die des neu erstellten <strong>Speicherkontos</strong> und des <strong>DocumentDB-Kontos</strong>. </br> HDInsight verlangt, dass sich das Speicherkonto in derselben Region befindet. Später in dieser Konfiguration können Sie nur ein Speicherkonto wählen, das sich in der hier angegebenen Region befindet.</td></tr>
+</table>Klicken Sie auf den Pfeil nach rechts.
 
 5. Geben Sie auf der Seite **Clusterbenutzer konfigurieren** die folgenden Daten ein:
 
     <table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Benutzername</td>
-			<td>Geben Sie den Benutzernamen für den HDInsight-Cluster an.</td></tr>
-		<tr><td>Kennwort/Kennwort bestätigen</td>
-			<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
-	</table>
-	
-	Klicken Sie auf den Pfeil nach rechts.
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Benutzername</td>
+		<td>Geben Sie den Benutzernamen für den HDInsight-Cluster an.</td></tr>
+	<tr><td>Kennwort/Kennwort bestätigen</td>
+		<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
+</table>Klicken Sie auf den Pfeil nach rechts.
     
 6. Geben Sie auf der Seite **Speicherkonto** die folgenden Werte ein:
 
 	![Bereitstellen eines Speicherkontos für Hadoop HDInsight-Cluster][image-customprovision-page4]
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Speicherkonto</td>
-			<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für den HDInsight-Cluster verwendet werden soll. Sie können eine der drei Optionen auswählen: Vorhandenen Speicher verwenden, Neuen Speicher erstellen oder Verwenden von Speicher aus anderem Abonnement verwenden</br></br>
-			Wählen Sie <strong>Vorhandenen Speicher verwenden</strong>.
-			</td>
-			</td></tr>
-		<tr><td>Kontoname</td>
-			<td>
-			Wählen Sie als <strong>Kontoname</strong> das in <strong>Schritt&#160;1</strong> erstellte Konto. Das Dropdown-Menü listet unter demselben Azure-Abonnement ausschließlich jene Speicherkonten auf, die sich in dem Rechenzentrum befinden, in dem Sie die Auswahl zur Bereitstellung des entsprechenden Clusters treffen.
-			</td></tr>
-		<tr><td>Standardcontainer</td>
-			<td>Gibt den Standardcontainer im Speicherkonto an, der als Standard-Dateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der Cluster erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt.
-        </td></tr>
-		<tr><td>Zusätzliche Speicherkonten</td>
-			<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird eine zusätzliche Seite im Assistenten hinzugefügt, in der Sie die Kontoinformationen angeben können.</td></tr>
-	</table>
-	
-	Klicken Sie auf den Pfeil nach rechts.
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Speicherkonto</td>
+		<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für den HDInsight-Cluster verwendet werden soll. Sie können eine der drei Optionen auswählen: Vorhandenen Speicher verwenden, Neuen Speicher erstellen oder Verwenden von Speicher aus anderem Abonnement verwenden</br></br>
+		Wählen Sie <strong>Vorhandenen Speicher verwenden</strong>.
+		</td>
+		</td></tr>
+	<tr><td>Kontoname</td>
+		<td>
+		Wählen Sie als <strong>Kontoname</strong> das in <strong>Schritt&#160;1</strong> erstellte Konto. Das Dropdown-Menü listet unter demselben Azure-Abonnement ausschließlich jene Speicherkonten auf, die sich in dem Rechenzentrum befinden, in dem Sie die Auswahl zur Bereitstellung des entsprechenden Clusters treffen.
+		</td></tr>
+	<tr><td>Standardcontainer</td>
+		<td>Gibt den Standardcontainer im Speicherkonto an, der als Standard-Dateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der Cluster erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt.
+    </td></tr>
+	<tr><td>Zusätzliche Speicherkonten</td>
+		<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird eine zusätzliche Seite im Assistenten hinzugefügt, in der Sie die Kontoinformationen angeben können.</td></tr>
+</table>Klicken Sie auf den Pfeil nach rechts.
 
 7. Klicken Sie auf der Seite **Skriptaktionen** auf **Skriptaktion hinzufügen**, und geben Sie Einzelheiten zu dem PowerShell-Skript an, das Sie zum Anpassen eines Clusters bei seiner Erstellung ausführen möchten. Über das PowerShell-Skript wird der DocumentDB-Hadoop-Connector auf den HDInsight-Clustern während der Erstellung des entsprechenden Clusters installiert.
 	
 	![Konfigurieren von Skriptaktionen zum Anpassen eines HDInsight-Clusters][image-customprovision-page5]
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Name</td>
-			<td>Geben Sie einen Namen für die Skriptaktion an.</td></tr>
-		<tr><td>Skript-URI</td>
-			<td>Geben Sie den URI für das Skript an, das aufgerufen wird, um den Cluster anzupassen.</br></br>
-			Geben Sie Folgendes ein: </br> <strong>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v03.ps1</strong>.</td></tr>
-		<tr><td>Knotentyp</td>
-			<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.</br></br>
-			Wählen Sie <strong>Alle Knoten</strong>.</td></tr>
-		<tr><td>Parameter</td>
-			<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist.</br></br>
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Name</td>
+		<td>Geben Sie einen Namen für die Skriptaktion an.</td></tr>
+	<tr><td>Skript-URI</td>
+		<td>Geben Sie den URI für das Skript an, das aufgerufen wird, um den Cluster anzupassen.</br></br>
+		Geben Sie Folgendes ein: </br> <strong>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v03.ps1</strong>.</td></tr>
+	<tr><td>Knotentyp</td>
+		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.</br></br>
+		Wählen Sie <strong>Alle Knoten</strong>.</td></tr>
+	<tr><td>Parameter</td>
+		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist.</br></br>
 		<strong>Keine Parameter erforderlich</strong>.</td></tr>
-	</table>
-	
-	Klicken Sie auf das Häkchen, um die Erstellung des Clusters abzuschließen.
+</table>Klicken Sie auf das Häkchen, um die Erstellung des Clusters abzuschließen.
 
 ## <a name="InstallCmdlets"></a>Schritt 3: Installieren und Konfigurieren von Azure PowerShell
 
@@ -223,12 +212,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 		$clusterName = "<HDInsightClusterName>"
 
 2. 
-	<p>Beginnen Sie mit dem Erstellen der Abfragezeichenfolge. Eine Hive-Abfrage wird geschrieben, welche die systemgenerierten Zeitstempel (_ts) aller Dokumente und die eindeutige ids (_rid) aus einer DocumentDB-Auflistung aufnimmt, alle Dokumente minutengenau aufeinander abstimmt und die Ergebnisse dann in einer neuen DocumentDB-Auflistung abspeichert. </p>
-
-	<p>Zunächst soll eine Hive-Tabelle aus der entsprechenden DocumentDB-Auflistung erstellt werden. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr.&#160;1 hinzu. Sie müssen den optionalen DocumentDB.Abfrage-Parameter einbinden, um die entsprechenden Dokumente gemäß _ts und _rid zuzuschneiden. </p>
-
-    > [AZURE.NOTE]**Bei der Benennung von DocumentDB.inputCollections handelt es sich nicht um einen Fehler.** Ja, Sie können mehrere Sammlungen als Eingabe hinzufügen: </br>
-    '*DocumentDB.inputCollections*' = '*\<DocumentDB Input Collection Name 1\>*,*\<DocumentDB Input Collection Name 2\>*' </br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt.
+	<p>Beginnen Sie mit dem Erstellen der Abfragezeichenfolge. Eine Hive-Abfrage wird geschrieben, welche die systemgenerierten Zeitstempel (_ts) aller Dokumente und die eindeutige ids (_rid) aus einer DocumentDB-Auflistung aufnimmt, alle Dokumente minutengenau aufeinander abstimmt und die Ergebnisse dann in einer neuen DocumentDB-Auflistung abspeichert. </p><p>Zunächst soll eine Hive-Tabelle aus der entsprechenden DocumentDB-Auflistung erstellt werden. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr.&#160;1 hinzu. Sie müssen den optionalen DocumentDB.Abfrage-Parameter einbinden, um die entsprechenden Dokumente gemäß _ts und _rid zuzuschneiden. </p>> [AZURE.NOTE]**Bei der Benennung von DocumentDB.inputCollections handelt es sich nicht um einen Fehler.** Ja, Sie können mehrere Sammlungen als Eingabe hinzufügen: </br> '*DocumentDB.inputCollections*' = '*<DocumentDB Input Collection Name 1>*,*<DocumentDB Input Collection Name 2>*' </br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt.
 
 
 		# Create a Hive table using data from DocumentDB. Pass DocumentDB the query to filter transferred data to _rid and _ts.
@@ -244,9 +228,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
  
 3.  Als Nächstes wird eine Hive-Tabelle für die Ausgabeauflistung erstellt. Bei den Eigenschaften des Ausgabedokuments handelt es sich um Monat, Tag, Stunde, Minute und die Gesamtanzahl an Vorkommen.
 
-	> [AZURE.NOTE]**Auch hier handelt es sich bei der Benennung von DocumentDB.outputCollections nicht um einen Fehler.** Ja, Sie können mehrere Sammlungen als Ausgabe hinzufügen: </br>
-	'*DocumentDB.outputCollections*' = '*\<DocumentDB Output Collection Name 1\>*,*\<DocumentDB Output Collection Name 2\>*' </br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt. </br></br>
-    Die Dokumente werden in Umlauf gebracht und über mehrere Sammlungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
+	> [AZURE.NOTE]**Auch hier handelt es sich bei der Benennung von DocumentDB.outputCollections nicht um einen Fehler.** Ja, Sie können mehrere Sammlungen als Ausgabe hinzufügen: </br> '*DocumentDB.outputCollections*' = '*<DocumentDB output Collection Name 1>*,*<DocumentDB Output Collection Name 2>*' </br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt. </br></br> Die Dokumente werden in Umlauf gebracht und über mehrere Auflistungen hinweg per Roundrobin verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
 		# Create a Hive table for the output data to DocumentDB.
 	    $queryStringPart2 = "drop table DocumentDB_analytics; " +
@@ -322,10 +304,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
         $clusterName = "Azure HDInsight Cluster Name"
 
 2. <p>Beginnen Sie mit dem Erstellen der Abfragezeichenfolge. Eine Pig-Abfrage wird geschrieben, welche die systemgenerierten Zeitstempel (_ts) aller Dokumente und die eindeutige ids (_rid) aus einer DocumentDB-Auflistung aufnimmt, alle Dokumente minutengenau aufeinander abstimmt und die Ergebnisse dann in einer neuen DocumentDB-Auflistung abspeichert.</p>
-    <p>Laden Sie zunächst die Dokumente aus DocumentDB in HDInsight. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr.&#160;1 hinzu. Achten Sie darauf, dass eine DocumentDB-Abfrage zum optionalen DocumentDB-Abfrageparameter hinzugefügt wird, um die Dokumente gemäß _ts und _rid zu verkürzen.</p>
-
-    > [AZURE.NOTE]Ja, Sie können mehrere Sammlungen als Eingabe hinzufügen: </br>
-    '*\<DocumentDB Input Collection Name 1\>*,*\<DocumentDB Input Collection Name 2\>*'</br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt. </b>
+    <p>Laden Sie zunächst die Dokumente aus DocumentDB in HDInsight. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr.&#160;1 hinzu. Achten Sie darauf, dass eine DocumentDB-Abfrage zum optionalen DocumentDB-Abfrageparameter hinzugefügt wird, um die Dokumente gemäß _ts und _rid zu verkürzen.</p>> [AZURE.NOTE]Ja, Sie können mehrere Sammlungen als Eingabe hinzufügen: </br> '*<DocumentDB Input Collection Name 1>*,*<DocumentDB Input Collection Name 2>*'</br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt. </b>
 
 	Die Dokumente werden in Umlauf gebracht und über mehrere Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
@@ -345,9 +324,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 4. Schließlich werden die Ergebnisse in der neuen Ausgabeauflistung abgespeichert.
 
-    > [AZURE.NOTE] Ja, Sie können mehrere Sammlungen als Ausgabe hinzufügen: </br>
-    '\<DocumentDB Output Collection Name 1>,\<DocumentDB Output Collection Name 2>'</br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt.</br>
-    Die Dokumente werden in Umlauf gebracht und über die mehrfachen Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
+    > [AZURE.NOTE]Ja, Sie können mehrere Sammlungen als Ausgabe hinzufügen: </br> '<DocumentDB Output Collection Name 1>,<DocumentDB Output Collection Name 2>'</br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt.</br> Die Dokumente werden in Umlauf gebracht und über die mehrfachen Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
 		# Store output data to DocumentDB.
         $queryStringPart3 = "STORE by_minute_count INTO '<DocumentDB Endpoint>' " +
@@ -493,4 +470,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -93,6 +93,9 @@ Sie erhalten Ihren Kontoschlüssel [hier](https://datamarket.azure.com/account/k
  
 ---
 
+##Batch-APIs
+Mit dem Text Analytics-Dienst können Sie Stimmung- und Schlüsselphrasen-Extraktionen im Batchmodus durchführen. Bei GetSentimentBatch und GetKeyPhrasesBatch werden alle ausgewerteten Datensätze als Transaktion gezählt. Wenn Sie also beispielsweise die bei einem Aufruf die Stimmung für 1000 Datensätze erhalten, werden 1000 Transaktionen in Abzug gebracht.
+
 ###GetSentimentBatch###
 
 **URL**
@@ -205,4 +208,4 @@ In der folgenden Antwort erhalten Sie die Schlüsselwortliste im Zusammenhang mi
 Die ins System eingegebenen IDs werden von diesem zurückgegeben. Der Webdienst überprüft nicht, ob die IDs eindeutig sind. Es ist die Verantwortung des Aufrufers, deren Eindeutigkeit zu prüfen.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

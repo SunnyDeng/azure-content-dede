@@ -39,17 +39,7 @@ Aber wie können Sie nun die relative Leistung von Datenbanken und Datenbankpool
 
 ## Grundlegendes zu DTUs
 
-Die Datenbank-Transaktionseinheit (Database Transaction Unit, DTU) ist die Maßeinheit in SQL-Datenbank, die die relative Leistung von Datenbanken basierend auf einer echten Maßeinheit darstellt: die Datenbanktransaktion. Dazu haben wir eine Reihe von Vorgängen ausgewählt, die typisch für eine Online-Transaktionsverarbeitung (Online Transaction Processing, OLTP) sind, und dann gemessen, wie viele Transaktionen pro Sekunde unter maximaler Belastung vollständig abgeschlossen werden konnten (dies ist die Kurzversion, die Details können Sie in der [Benchmark-Übersicht](https://msdn.microsoft.com/library/azure/dn741327.aspx) nachlesen).
-
-Eine Basic-Datenbank verfügt über 5 DTUs, was bedeutet, dass 5 Transaktionen pro Sekunde abgeschlossen werden können, wohingegen eine Premium-P11-Datenbank über 1.750 DTUs verfügt.
-
-![DTUs bei Einzeldatenbanken](./media/sql-database-technical-overview/single_db_dtus.png)
-
-Die DTU für Einzeldatenbanken kann direkt in die eDTU für elastische Datenbanken übertragen werden. Beispielsweise bietet eine Datenbank in einem Pool mit elastischen Basic-Datenbanken bis zu 5 eDTUs. Das ist eine ähnliche Leistung wie bei einer Basic-Einzeldatenbank. Der Unterschied besteht darin, dass elastische Datenbanken keine eDTUs aus dem Pool verwenden, bis dies erforderlich ist.
-
-![Elastische Pools und eDTUs](./media/sql-database-technical-overview/sqldb_elastic_pools.png)
-
-Ein einfaches Beispiel veranschaulicht dies. Nehmen Sie einen Basic-Pool für elastische Datenbanken mit 1.000 DTUs, in dem Sie 800 Datenbanken ablegen. Solange nur 200 der 800 Datenbanken zu einem beliebigen Zeitpunkt genutzt werden (5 DTU x 200 = 1000), wird die maximale Kapazität des Pools nicht erreicht und die Leistung der Datenbank nicht beeinträchtigt. In diesem Beispiel wird aus Gründen der Übersichtlichkeit vereinfacht. In Wirklichkeit sind die Dinge ein wenig komplizierter. Das Portal erledigt die komplizierten Aufgaben für Sie und gibt eine Empfehlung basierend auf der bisherigen Verwendung der Datenbank ab. Weitere Informationen zu den Empfehlungen und für eigene Berechnungen finden Sie unter [Überlegungen zum Preis und zur Leistung eines Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md).
+[AZURE.INCLUDE [Beschreibung von SQL-Datenbank-DTUs](../../includes/sql-database-understanding-dtus.md)]
 
 ## Aufrechterhalten von App-Ausführung und Geschäftskontinuität
 
@@ -69,4 +59,4 @@ SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mi
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

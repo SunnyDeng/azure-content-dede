@@ -185,7 +185,10 @@ Bevor Sie das Zurückschreiben von Kennwörtern aktivieren und verwenden können
   >[AZURE.NOTE]Wenn Sie eine ältere Version von Windows Server 2008 oder 2008 R2 ausführen, können Sie diese Funktion verwenden, müssen aber [KB 2386717 herunterladen und installieren](https://support.microsoft.com/kb/2386717), bevor Sie Ihre lokale AD-Kennwortrichtlinie in der Cloud erzwingen können.
   
 - Sie haben Azure AD Connect installiert und Ihre AD-Umgebung für eine Synchronisierung mit der Cloud vorbereitet. Weitere Informationen finden Sie unter [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md).
-- Wenn Sie DirSync verwenden, müssen Sie sicherstellen, dass die Unternehmensfirewall so konfiguriert ist, dass ausgehende Verbindungen blockiert werden und **TCP-Port 828 oder 818** geöffnet ist, um das Zurückschreiben von Kennwörtern zu aktivieren und zu nutzen. Wenn Sie Azure AD Sync oder Azure AD Connect verwenden, ist dieser Schritt nicht erforderlich, da nur **TCP 443** ausgehend (und in einigen Fällen **TCP 9350-9354**) geöffnet werden müssen.
+
+  >[AZURE.NOTE]Bevor Sie das Kennwortrückschreiben testen, stellen Sie sicher, dass Sie zuerst einen vollständigen Import und eine vollständige Synchronisierung aus AD und Azure AD ausführen.
+
+- Wenn Sie Azure AD Sync oder Azure AD Connect verwenden, müssen **TCP 443** ausgehend (und in einigen Fällen **TCP 9350-9354**) geöffnet werden. Unter [Schritt 3: Konfigurieren der Firewall](#step-3-configure-your-firewall) finden Sie weitere Informationen. Die Verwendung von DirSync für dieses Szenario wird nicht mehr unterstützt. Wenn Sie DirSync weiterhin verwenden möchten, aktualisieren Sie auf die neueste Version von Azure AD Connect, bevor Sie das Zurückschreiben von Kennwörtern bereitstellen.
 
   >[AZURE.NOTE]Es wird dringend empfohlen, bei Verwendung von Azure AD Sync oder DirSync ein Upgrade auf die neueste Version von Azure AD Connect durchzuführen, um eine bestmögliche Funktionalität sicherzustellen und von neuen Features zu profitieren.
   
@@ -243,8 +246,8 @@ Nachdem Sie das Zurückschreiben von Kennwörtern in Azure AD Connect aktiviert 
 
 1.	Wenn Sie nach dem Abschluss der Installation in Ihrer Umgebung unbekannte ausgehende Verbindungen blockieren, müssen Sie außerdem Änderungen an den folgenden Regeln Ihrer Firewall vornehmen. Stellen Sie sicher, dass Sie Ihren AAD Connect-Computer nach dem Durchführen dieser Änderungen neu starten:
    - Lassen Sie ausgehende Verbindungen über TCP-Port 443 zu.
-   - Lassen Sie ausgehende Verbindungen mit https://ssprsbprodncu-sb.accesscontrol.windows.net/ zu. 
-   - Wenn Sie einen Proxy verwenden oder allgemeine Verbindungsprobleme vorliegen, lassen Sie ausgehende Verbindungen über TCP-Port 9350-9354 zu.
+   - Lassen Sie ausgehende Verbindungen mit https://ssprsbprodncu-sb.accesscontrol.windows.net/ zu.
+   - Wenn Sie einen Proxy verwenden oder allgemeine Verbindungsprobleme vorliegen, lassen Sie ausgehende Verbindungen über TCP-Port 9350-9534 zu.
 
 ### Schritt 4: Einrichten der geeigneten Active Directory-Berechtigungen
 Bei der anfänglichen Konfiguration mit dem Konfigurations-Assistenten wird ein Konto X eingerichtet. Für jede Gesamtstruktur, die Benutzer enthält, deren Kennwörter zurückgesetzt werden, müssen X die Berechtigungen **Kennwort zurücksetzen**, **Kennwort ändern**, **Kennwort schreiben** für `lockoutTime` sowie die erweiterten Rechte **Berechtigungen schreiben** für `pwdLastSet` für das Stammobjekt jeder Domäne in dieser Gesamtstruktur erteilt werden. Die Rechte müssen hierbei so festgelegt werden, dass sie an alle Benutzerobjekte vererbt werden.
@@ -351,4 +354,4 @@ Jetzt, da das Zurückschreiben von Kennwörtern aktiviert ist, können Sie die o
 [031]: ./media/active-directory-passwords-getting-started/031.jpg "Image_031.jpg"
 [032]: ./media/active-directory-passwords-getting-started/032.jpg "Image_032.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

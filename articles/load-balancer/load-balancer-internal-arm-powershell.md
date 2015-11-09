@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/22/2015"
+   ms.date="10/21/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Konfigurieren des internen Lastenausgleichs mit dem Azure-Ressourcen-Manager
@@ -30,6 +30,7 @@ Auf dieser Seite wird die Abfolge der einzelnen Aufgaben beschrieben, die zum Er
 
 ## Was ist erforderlich, um einen internen Lastenausgleich zu erstellen?
 
+
 Die folgenden Elemente müssen konfiguriert werden, bevor Sie einen internen Lastenausgleich erstellen:
 
 - Front-End-IP-Konfiguration – Dient zum Konfigurieren der privaten IP-Adresse für eingehenden Netzwerkdatenverkehr 
@@ -44,7 +45,7 @@ Die folgenden Elemente müssen konfiguriert werden, bevor Sie einen internen Las
 
 Unter [Unterstützung des Azure-Ressourcen-Managers für den Lastenausgleich](load-balancer-arm.md) erhalten Sie weitere Informationen zu Lastenausgleichskomponenten des Azure-Ressourcen-Managers.
 
-Die folgenden Schritte zeigen, wie Sie einen Load Balancer konfigurieren können, um einen Lastenausgleich zwischen zwei virtuellen Computern durchzuführen.
+Die folgenden Schritte zeigen, wie Sie ein Lastenausgleichsmodul zwischen zwei virtuellen Computer konfigurieren.
 
 
 ## Schrittweise Anleitung mit PowerShell
@@ -88,7 +89,7 @@ Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speich
 
 Im oben stehenden Beispiel haben wir eine Ressourcengruppe namens "NRP RG" mit dem Standort "USA, Westen" erstellt.
 
-## Erstellen eines virtuellen Netzwerks und einer öffentlichen IP-Adresse für den Front-End-IP-Pool
+## Erstellen eines virtuellen Netzwerks und einer privaten IP-Adresse für den Front-End-IP-Pool
 
 
 ### Schritt 1
@@ -235,7 +236,39 @@ PS C:\> $backendnic1
 
 Verwenden Sie den Befehl "Add-AzureVMNetworkInterface", um die NIC einem virtuellen Computer zuzuweisen.
 
-In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine schrittweise Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
+In Option 4 oder 5 der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
+
+
+## Aktualisieren eines vorhandenen Lastenausgleichsmoduls
+
+
+### Schritt 1
+
+Weisen Sie unter Verwendung des Lastenausgleichsmoduls aus dem vorherigen Beispiel mithilfe von „Get-AzureLoadBalancer“ der Variablen „$slb“ ein Lastenausgleichsmodul-Objekt zu.
+
+	$slb=get-azureLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
+
+### Schritt 2
+
+Im folgenden Beispiel fügen Sie einem vorhandenen Lastenausgleichsmodul eine neue eingehende NAT-Regel hinzu, die Port 81 in der Front-End-Anwendung und Port 8181 für den Back-End-Pool verwendet.
+
+	$slb | Add-AzureLoadBalancerInboundNatRuleConfig -Name NewRule -FrontendIpConfiguration $slb.FrontendIpConfigurations[0] -FrontendPort 81  -BackendPort 8181 -Protocol Tcp
+
+
+### Schritt 3
+
+Speichern Sie die neue Konfiguration mithilfe von „Set-AzureLoadBalancer“.
+
+	$slb | Set-AzureLoadBalancer
+
+## Entfernen eines Lastenausgleichsmoduls
+
+Verwenden Sie den Befehl „Remove-AzureLoadBalancer“, um das zuvor erstellte Lastenausgleichsmodul namens „NRP-LB“ in der Ressourcengruppe „NRP-RG“ zu löschen.
+
+	Remove-AzureLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
+
+>[AZURE.NOTE]Sie können die optionale Option „-Force“ verwenden, um die Aufforderung zum Löschen zu umgehen.
+
 
 
 ## Siehe auch
@@ -245,4 +278,4 @@ In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Co
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

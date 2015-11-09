@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="10/09/2015"
+      ms.date="10/28/2015"
       ms.author="hascipio; v-divte" />
 
 # Leitfaden zum Erstellen einer Lösungsvorlage für den Azure Marketplace
@@ -46,16 +46,6 @@ Laden Sie eine ZIP-Datei mit allen erforderlichen Dateien zum Bereitstellen der 
 
 Nachdem Sie die ZIP-Datei hochgeladen haben, klicken Sie auf **Zertifizierung anfordern**. Das Microsoft-Zertifizierungsteam prüft die Dateien und zertifiziert die Topologie.
 
-Sie können den Erstellungsvorgang auch testen, ohne eine tatsächliche Bereitstellung für die Endbenutzer durchzuführen. Führen Sie hierzu die folgenden Schritte aus.
-
-1. Speichern Sie die Datei *createUiDefinition.json*, und generieren Sie die absolute URL. Die URL MUSS öffentlich zugänglich sein.
-2. Codieren Sie die URL [[http://www.url-encode-decode.com/](http://www.url-encode-decode.com/)].
-3. Ersetzen Sie den hervorgehobenen Text durch den Speicherort (codierte URL) der Datei *createUiDefinition.json*, die überprüft werden soll.
-
-  https://portal.azure.com/?clientOptimizations=false#blade/Microsoft_Azure_Compute/CreateMultiVmWizardBlade/internal_bladeCallId/anything/internal_bladeCallerParams/ **{"initialData":{},"providerConfig":{"createUiDefinition":"http://yoururltocreateuidefinition.jsonURLencoded"}}**
-  
-4. Kopieren Sie die URL, fügen Sie sie in einen beliebigen Browser ein, und testen Sie die Benutzerfreundlichkeit für die Datei "createUiDefinition.json".
-
 > [AZURE.TIP]Während Ihre Entwickler die Topologien für die Lösungsvorlagen erstellen und diese zertifizieren lassen, kann die Business-/Marketing-/Rechtsabteilung Ihres Unternehmens mit der Arbeit an den Marketinginhalten und den rechtlichen Inhalten beginnen.
 
 ## Nächste Schritte
@@ -77,4 +67,4 @@ Nun, da Sie Ihre Lösungsvorlage erstellt und die ZIP-Datei mit den erforderlich
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

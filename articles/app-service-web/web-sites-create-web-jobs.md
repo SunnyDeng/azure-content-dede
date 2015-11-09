@@ -74,7 +74,35 @@ Die folgenden Dateitypen werden akzeptiert:
 	
 > Aktivieren Sie für die Web-App die Konfigurationseinstellung "Immer bereit"*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
 
-## <a name="CreateScheduled"></a>Erstellen geplanter Webaufträge
+## <a name="CreateScheduledCRON"></a>Erstellen eines geplanten WebJobs mithilfe eines CRON-Ausdrucks
+
+Diese Technik ist in Web-Apps im Standard- oder Premium-Modus verfügbar und erfordert die Aktivierung der Einstellung **Immer aktiviert** für die Anwendung.
+
+Damit ein bedarfsgesteuerter WebJob in einen geplanten WebJob wird, muss lediglich eine `settings.job` -Datei im Stamm der WebJob Zip-Datei eingefügt werden. Diese JSON-Datei sollte eine `schedule`-Eigenschaft mit einem [CRON-Ausdruck](https://en.wikipedia.org/wiki/Cron) wie im Beispiel unten enthalten.
+
+Der CRON-Ausdruck besteht aus 6 Feldern: `{second} {minute} {hour} {day} {month} {day of the week}`.
+
+Um beispielsweise Ihren WebJob alle 15 Minuten auszulösen, sieht `settings.job` folgendermaßen aus:
+
+```json
+{
+    "schedule": "0 */15 * * * *"
+}
+``` 
+
+Weitere Beispiele für CRON-Zeitpläne:
+
+- Einmal pro Stunde (d. h. wenn die Minutenzahl 0 ist): `* 0 * * * *` 
+- Jede Stunde von 9: 00 bis 17 Uhr: `* 0 9-17 * * *` 
+- Täglich um 9:30 Uhr: `* 30 9 * * *`
+- An jedem Wochentag um 9:30 Uhr: `* 30 9 * * 1-5`
+
+**Hinweis**: Wenn Sie eine WebJob aus Visual Studio bereitstellen, stellen Sie sicher, die `settings.job` Dateieigenschaften als „Kopieren wenn neuer“ markieren.
+
+
+## <a name="CreateScheduled"></a>Erstellen eines geplanten WebJobs mithilfe von Azure Scheduler
+
+Bei dem folgenden alternativen Verfahren wird Azure Scheduler genutzt. In diesem Fall muss WebJob über keine direkten Kenntnis des Zeitplans verfügen. Azure Scheduler wird stattdessen so konfiguriert, dass der WebJob nach einem Zeitplan ausgelöst wird.
 
 Das Azure-Verwaltungsportal bietet noch nicht die Möglichkeit, einen geplanten Webauftrag zu erstellen. Bis diese Funktion implementiert wurde, können Sie hierfür das [alte Portal](http://manage.windowsazure.com) verwenden.
 
@@ -211,4 +239,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

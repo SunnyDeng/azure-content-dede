@@ -23,7 +23,7 @@ Endpunkte können für die Konfiguration des Azure-Lastenausgleichsmoduls verwen
 
 Das Azure-Lastenausgleichsmodul führt die Zuordnung zwischen öffentlicher IP-Adresse und Portnummer des eingehenden Datenverkehrs zu den privaten IP-Adressen und Portnummern der virtuellen Computer durch und umgekehrt für den Antwortverkehr vom virtuellen Computer.
 
->[AZURE.NOTE]Bei der Konfiguration des Lastenausgleichs für Datenverkehr zwischen mehreren virtuellen Computern oder Diensten verteilt dieser in der Standardeinstellung den eingehenden Datenverkehr nach Zufallsprinzip. Wenn Sie Sitzungsaffinität benötigen, lesen Sie die Informationen unter [Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
+>[AZURE.NOTE]Das Azure-Lastenausgleichsmodul ermöglicht unter Verwendung der Standardeinstellungen Hashverteilungsnetzwerkverkehr zwischen mehreren Instanzen des virtuellen Computers (weiterführende Informationen zur Hashverteilung finden Sie in [Lastenausgleichsmodul-Features](load-balancer-overview.md#load-balancer-features)). Wenn Sie Sitzungsaffinität benötigen, lesen Sie die Informationen unter [Lastenausgleichsmodul-Verteilungsmodus](load-balancer-distribution-mode.md).
 
 Für einen Clouddienst, der Instanzen von Web- oder Workerrollen enthält, können Sie einen öffentlichen Endpunkt in der Dienstdefinition (.csdef) definieren.
  
@@ -36,7 +36,7 @@ Die folgende Abbildung zeigt einen Endpunkt für verschlüsselten Datenverkehr m
 
 
 
-Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Port 443 des Clouddiensts senden, verteilt der Azure-Lastenausgleich diese Anfragen hashbasiert auf die drei virtuellen Computer im Satz mit Lastenausgleich. Weitere Informationen zu Lastenausgleichsalgorithmen finden Sie auf der [Übersichtsseite zum Lastenausgleich](load-balancer-overview#load-balancer-features).
+Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Port 443 des Clouddiensts senden, verteilt der Azure-Lastenausgleich diese Anfragen hashbasiert auf die drei virtuellen Computer im Satz mit Lastenausgleich. Weitere Informationen zu Algorithmen von Lastenausgleichsmodulen finden Sie auf der [Übersichtsseite zum Lastenausgleichsmodul](load-balancer-overview.md#load-balancer-features).
 
 
 ## Nächste Schritte
@@ -52,4 +52,4 @@ Wenn Internetclients Webseitenanfragen an die öffentliche IP-Adresse und TCP-Po
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

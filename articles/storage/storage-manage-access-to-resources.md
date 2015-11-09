@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Verwalten des anonymen Zugriffs auf Container und Blobs | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Container und Blobs für den anonymen Zugriff verfügbar machen können." 
+	pageTitle="Verwalten des anonymen Lesezugriffs auf Container und Blobs | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie Container und Blobs für den anonymen Zugriff verfügbar machen und darauf programmgesteuert zugreifen." 
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
-	manager="jdial" 
+	manager="carmonm" 
 	editor=""/>
 
 <tags 
@@ -13,20 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="micurd;tamram"/>
+	ms.date="10/26/2015" 
+	ms.author="tamram"/>
 
-# Verwalten des Zugriffs auf Azure Storage-Ressourcen
+# Verwalten des anonymen Lesezugriffs auf Container und Blobs
 
 ## Übersicht
 
-Standardmäßig kann nur der Besitzer eines Speicherkontos auf Speicherressourcen in diesem Konto zugreifen. Wenn Ihr Dienst oder Ihre Anwendung diese Ressourcen für andere Clients zur Verfügung stellen muss, ohne den Zugriffsschlüssel freizugeben, stehen folgende Optionen zum Ermöglichen des Zugriffs zur Verfügung:
+Standardmäßig kann nur der Besitzer eines Speicherkontos auf Speicherressourcen in diesem Konto zugreifen. Nur für Blobspeicher können Sie die Berechtigungen für einen Container so festlegen, dass der anonyme Lesezugriff auf den Container und seine Blobs erlaubt wird. Dadurch können Sie Zugriff auf diese Ressourcen gewähren, ohne Ihren Kontoschlüssel freigeben zu müssen.
 
-- Sie können die Berechtigungen eines Containers festlegen, um anonymen Lesezugriff auf den Container und seine Blobs zuzulassen. Der anonyme Lesezugriff ist nur für Container und Blobs verfügbar. 
-
-- Sie können eine Ressource über eine SAS (Shared Access Signature, Signatur für freigegebenen Zugriff) verfügbar machen, die es Ihnen ermöglicht, beschränkten Zugriff auf einen Container, einen Blob, eine Tabelle, eine Warteschlange, eine Dateifreigabe oder eine Datei zu delegieren, indem Sie das Intervall, für das die Ressourcen verfügbar sind, und die Berechtigungen, die ein Client haben muss, angeben.
-
-- Sie können eine gespeicherte Zugriffsrichtlinie verwenden, um Shared Access Signatures für einen Container oder dessen Blobs, für eine Warteschlange, für eine Tabelle oder für eine Dateifreigabe oder dessen Dateien zu verwalten. Über die gespeicherte Zugriffsrichtlinie haben Sie zusätzliche Kontrolle über die Shared Access Signatures und zudem eine direkte Möglichkeit, diese aufzuheben.
+Anonymer Zugriff ist am besten für Szenarien, in denen bestimmte Blobs für den anonymen Lesezugriff stets zur Verfügung stehen sollen. Für eine präzisere Steuerung können Sie eine SAS (Shared Access Signature) erstellen, die Ihnen das Delegieren eines eingeschränkten Zugriffs mithilfe verschiedener Berechtigungen und über einen angegebenen Zeitraum ermöglicht. Weitere Informationen zum Erstellen einer SAS finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
 
 ## Erteilen von anonymen Benutzerberechtigungen für Container und Blobs
 
@@ -40,9 +36,86 @@ Container stellen die folgenden Optionen zum Verwalten des Containerzugriffs ber
 
 - **Kein öffentlicher Lesezugriff:** Container- und Blobdaten können nur vom Kontobesitzer gelesen werden.
 
->[AZURE.NOTE]Wenn Sie für Ihren Dienst eine genauere Kontrolle über die Blob-Ressourcen benötigen, oder wenn Sie Berechtigungen für andere Vorgänge als Lesevorgänge angeben möchten, verwenden Sie eine SAS, um eine Ressource für Benutzer zugänglich zu machen.
+Sie können Containerberechtigungen auf folgende Weise festlegen:
 
-## Für anonyme Benutzer verfügbare Funktionen
+- Im [Azure-Verwaltungsportal](https://manage.windowsazure.com/).
+- Programmgesteuert mithilfe der Speicherclientbibliothek oder der REST-API.
+- Mit PowerShell. Informationen zum Festlegen von Containerberechtigungen über Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full#how-to-manage-azure-blobs).
+
+### Festlegen von Containerberechtigungen im Azure-Portal
+
+Befolgen Sie zum Festlegen von Containerberechtigungen im Azure-Portal diese Anweisungen:
+
+1. Navigieren Sie zum Dashboard Ihres Speicherkontos.
+2. Wählen Sie den Containernamen in der Liste aus. Beachten Sie, dass Sie rechts neben der Spalte „Name“ klicken müssen, um den Containernamen auszuwählen. Durch Klicken auf den Namen werden die im Container enthaltenen Blobs angezeigt.
+3. Klicken Sie auf der Symbolleiste auf **Bearbeiten**.
+4. Wählen Sie im Dialogfeld **Metadaten bearbeiten** im Feld **Zugriff** die gewünschten Berechtigungsstufe aus (siehe das nachstehende Bildschirmfoto).
+
+	![Dialogfeld „Containermetadaten bearbeiten“](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-1.png)
+
+### Programmgesteuertes Festlegen von Containerberechtigungen mithilfe von .NET
+
+Zum Festlegen von Berechtigungen für einen Container mithilfe der .NET-Clientbibliothek rufen Sie zunächst mithilfe der **GetPermissions**-Methode die vorhandenen Berechtigungen ab. Legen Sie dann die **PublicAccess**-Eigenschaft für das **BlobContainerPermissions**-Objekt fest, das von der **GetPermissions**-Methode zurückgegeben wird. Rufen Sie abschließend die **SetPermissions**-Methode mit den aktualisierten Berechtigungen auf.
+
+Im folgenden Beispiel werden die Berechtigungen des Containers auf vollständigen öffentlichen Lesezugriff festgelegt. Legen Sie zum Festlegen von Berechtigungen auf den öffentlichen Lesezugriff nur für Blobs die **PublicAccess**-Eigenschaft auf **BlobContainerPublicAccessType.Blob** fest. Um alle Berechtigungen für anonyme Benutzer zu entfernen, legen Sie die Eigenschaft auf **BlobContainerPublicAccessType.Off** fest.
+
+    public static void SetPublicContainerPermissions(CloudBlobContainer container)
+    {
+        BlobContainerPermissions permissions = container.GetPermissions();
+        permissions.PublicAccess = BlobContainerPublicAccessType.Container;
+        container.SetPermissions(permissions);
+    }
+
+## Anonymer Zugriff auf Container und Blobs
+
+Ein Client, der auf Container und Blobs anonym zugreift, kann Konstruktoren verwenden, für die keine Anmeldeinformationen erforderlich sind. In den folgenden Beispielen werden verschiedene Möglichkeiten zum anonymen Verweisen auf Blob-Dienstressourcen gezeigt.
+
+### Erstellen eines anonymen Clientobjekts
+
+Sie können ein neues Dienstclientobjekt für den anonymen Zugriff durch Bereitstellen des Blob-Dienstendpunkts für das Konto erstellen. Allerdings müssen Sie auch den Namen eines Containers in diesem Konto kennen, der für den anonymen Zugriff verfügbar ist.
+
+    public static void CreateAnonymousBlobClient()
+    {
+        // Create the client object using the Blob service endpoint.
+        CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://storagesample.blob.core.windows.net"));
+
+        // Get a reference to a container that's available for anonymous access.
+        CloudBlobContainer container = blobClient.GetContainerReference("sample-container");
+
+        // Read the container's properties. Note this is only possible when the container supports full public read access.
+        container.FetchAttributes();
+        Console.WriteLine(container.Properties.LastModified);
+        Console.WriteLine(container.Properties.ETag);
+    }
+
+### Anonymes Verweisen auf einen Container
+
+Wenn Sie über die URL zu einem Container verfügen, der anonym verfügbar ist, können Sie damit direkt auf den Container verweisen.
+
+    public static void ListBlobsAnonymously()
+    {
+        // Get a reference to a container that's available for anonymous access.
+        CloudBlobContainer container = new CloudBlobContainer(new Uri(@"https://storagesample.blob.core.windows.net/sample-container"));
+
+        // List blobs in the container.
+        foreach (IListBlobItem blobItem in container.ListBlobs())
+        {
+            Console.WriteLine(blobItem.Uri);
+        }
+    }
+
+
+### Anonymes Verweisen auf ein Blob
+
+Wenn Sie über die URL zu einem Blob verfügen, das für den anonymen Zugriff verfügbar ist, können Sie damit über diese URL direkt auf das Blob verweisen:
+
+    public static void DownloadBlobAnonymously()
+    {
+        CloudBlockBlob blob = new CloudBlockBlob(new Uri(@"https://storagesample.blob.core.windows.net/sample-container/logfile.txt"));
+        blob.DownloadToFile(@"C:\Temp\logfile.txt", System.IO.FileMode.Create);
+    }
+
+## Für anonyme Benutzer verfügbare Features
 
 Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen werden können, wenn der öffentliche Zugriff in der Zugriffssteuerungsliste (Access Control List, ACL) eines Containers gestattet wurde.
 
@@ -73,6 +146,7 @@ Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen w
 | Lease Blob | Nur Besitzer | Nur Besitzer |
 | Put Page | Nur Besitzer | Nur Besitzer |
 | Get Page Ranges | Alle | Alle |
+| Blob anfügen | Nur Besitzer | Nur Besitzer |
 
 
 ## Weitere Informationen
@@ -81,4 +155,4 @@ Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen w
 - [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

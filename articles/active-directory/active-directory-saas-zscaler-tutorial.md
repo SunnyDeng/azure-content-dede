@@ -1,7 +1,20 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit Zscaler | Microsoft Azure" description="Hier erfahren Sie, wie Sie Zscaler mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Zscaler | Microsoft Azure" 
+    description="Hier erfahren Sie, wie Sie Zscaler mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Zscaler
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=521842), um Feedback abzugeben.
   
 In diesem Tutorial wird die Integration von Azure und Zscaler erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
@@ -70,7 +83,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-zscaler-tutorial/IC769231.png "App-URL konfigurieren")
 
-4.  Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für Zscaler** die folgenden Schritte aus.
+4.  Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für Zscaler** die folgenden Schritte aus:
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-zscaler-tutorial/IC769232.png "Einmaliges Anmelden konfigurieren")
 
@@ -83,7 +96,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Verwaltung](./media/active-directory-saas-zscaler-tutorial/IC769486.png "Verwaltung")
 
-7.  Klicken Sie unter **Administratoren & Rollen verwalten ** auf **Benutzer & Authentifizierung verwalten**.
+7.  Klicken Sie unter **Administratoren und Rollen verwalten ** auf **Benutzer und Authentifizierung verwalten**.
 
     ![Administratoren und Rollen verwalten](./media/active-directory-saas-zscaler-tutorial/IC769487.png "Administratoren und Rollen verwalten")
 
@@ -91,10 +104,10 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Authentifizierungsoptionen wählen](./media/active-directory-saas-zscaler-tutorial/IC769488.png "Authentifizierungsoptionen wählen")
 
-    1.  Wählen Sie **Authentifizeren mit der einmaligen Anmeldung für SAML**.
-    2.  Klicken Sie auf **Einzelne Parameter der einmaligen Anmeldung für SAML konfigurieren**.
+    1.  Wählen Sie **Authentifizieren mit der einmaligen Anmeldung für SAML**.
+    2.  Klicken Sie auf **Parameter der einmaligen Anmeldung für SAML konfigurieren**.
 
-9.  Führen Sie auf der Dialogfeldseite **Einzelne Parameter der einmaligen Anmeldung für SAML konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Fertig stellen**.
+9.  Führen Sie auf der Dialogfeldseite **Parameter der einmaligen Anmeldung für SAML konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Fertig stellen**.
 
     ![Hochladen des Zertifikats](./media/active-directory-saas-zscaler-tutorial/IC769489.png "Hochladen des Zertifikats")
 
@@ -120,7 +133,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 1.  Starten Sie **Internet Explorer**.
 
-2.  Wählen Sie im Menü **Tools** **Internetoptionen**, um das Dialogfeld **Internetoptionen** zu öffnen.
+2.  Wählen Sie im Menü **Extras** die Option **Internetoptionen**, um das Dialogfeld **Internetoptionen** zu öffnen.
 
     !["Internetoptionen",](./media/active-directory-saas-zscaler-tutorial/IC769492.png ""Internetoptionen",")
 
@@ -135,10 +148,10 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Proxyserver](./media/active-directory-saas-zscaler-tutorial/IC769494.png "Proxyserver")
 
     1.  Wählen Sie "Proxyserver für LAN verwenden" aus.
-    2.  Geben Sie in das Textfeld "Adresse" **gateway.zscalertwo.net** ein.
-    3.  Geben Sie im Textfeld "Port" **80** ein.
-    4.  Wählen Sie **Proxyserver für lokale Adressen umgehen**.
-    5.  Klicken Sie zum Schließen des Dialogfelds **Local Area Network (LAN) Settings** auf **OK**.
+    2.  Geben Sie im Textfeld „Adresse“ **gateway.zscalertwo.net** ein.
+    3.  Geben Sie im Textfeld „Port“ **80** ein.
+    4.  Aktivieren Sie **Proxyserver für lokale Adressen umgehen**.
+    5.  Klicken Sie zum Schließen des Dialogfelds **Einstellungen für lokales Netzwerk** auf **OK**.
 
 6.  Klicken Sie zum Schließen des Dialogfelds **Internetoptionen** auf **OK**.
 
@@ -158,7 +171,7 @@ Damit sich Azure AD-Benutzer bei Zscaler anmelden können, müssen sie in Zscale
 
     ![Benutzerverwaltung](./media/active-directory-saas-zscaler-tutorial/IC781036.png "Benutzerverwaltung")
 
-4.  Klicken Sie in der Registerkarte **Benutzer** auf **Hinzufügen**.
+4.  Klicken Sie auf der Registerkarte **Benutzer** auf **Hinzufügen**.
 
     ![Hinzufügen](./media/active-directory-saas-zscaler-tutorial/IC781037.png "Hinzufügen")
 
@@ -187,6 +200,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-zscaler-tutorial/IC767830.png "Ja")
   
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

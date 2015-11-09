@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/17/2015" 
+	ms.date="10/21/2015" 
 	ms.author="awills"/>
  
 # Anleitung zur Problembehandlung sowie Fragen und Antworten zu Application Insights für Java
@@ -24,7 +24,7 @@ Fragen oder Probleme im Zusammenhang mit [Visual Studio Application Insights in 
 
 *Wenn ich in Eclipse das Application Insights-SDK über Maven oder Gradle hinzufüge, erhalte ich Build- oder Prüfsummenvalidierungsfehler.*
 
-* Wenn das Abhängigkeitselement <version> ein Muster mit Platzhalterzeichen verwendet (z. B. (Maven) `<version>[0.9,)</version>` oder (Gradle) `version:'0.9.+'`), geben Sie stattdessen eine bestimmte Version wie `0.9.3` an.
+* Wenn das Abhängigkeitselement <version> ein Muster mit Platzhalterzeichen verwendet (z. B. (Maven) `<version>[1.0,)</version>` oder (Gradle) `version:'1.0.+'`), geben Sie stattdessen eine bestimmte Version wie `1.0.2` an. Weitere Informationen finden Sie in den [Versionshinweisen](app-insights-release-notes-java.md) für die aktuelle Version.
 
 ## Keine Daten 
 
@@ -138,4 +138,4 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

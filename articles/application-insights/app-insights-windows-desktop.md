@@ -62,13 +62,13 @@ Das Core SDK stellt nur eine API bereit: Im Gegensatz zu den Web- oder Geräte-S
 
     * Wenn Sie nur das Core-API-Paket "Microsoft.ApplicationInsights" installiert haben, müssen Sie den Schlüssel im Code festlegen, beispielsweise in "main()": 
 
-    `TelemetryConfiguration.Active.InstrumentationKey = "`*Ihr Schlüssel*`";`
+    `TelemetryConfiguration.Active.InstrumentationKey = "` *Ihr Schlüssel* `";`
 
-    * Wenn Sie eines der anderen Pakete installiert haben, können Sie den Schlüssel entweder im Code oder in "ApplicationInsights.config" festlegen:
+    Wenn Sie eines der anderen Pakete installiert haben, können Sie den Schlüssel entweder im Code oder in "ApplicationInsights.config" festlegen:
  
     `<InstrumentationKey>`*Ihr Schlüssel*`</InstrumentationKey>`
 
-
+    Wenn Sie die Datei „ApplicationInsights.config“ verwenden, stellen Sie sicher, dass ihre Eigenschaften im Projektmappen-Explorer auf **Buildvorgang = Inhalt, In Ausgabeverzeichnis kopieren = Kopieren** festgelegt sind.
 
 ## <a name="telemetry"></a>Einfügen von Telemetrieaufrufen
 
@@ -169,7 +169,7 @@ Die ersten Ereignisse werden in der [Diagnosesuche](app-insights-diagnostic-sear
 
 Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
-Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwendet haben, öffnen Sie im [Metrik-Explorer][metrics] das Blatt "Filter". Dort sollten Ihre Metriken angezeigt werden. Gelegentlich kann es jedoch etwas dauern, bis die Anzeige aktuell ist. Schließen Sie ggf. das Blatt "Filter", warten Sie einen Moment, und aktualisieren Sie die Anzeige.
+Wenn Sie „TrackMetric“ oder den Parameter „measurements“ von „TrackEvent" verwendet haben, öffnen Sie im [Metrik-Explorer][metrics] das Blatt „Filter“. Dort sollten Ihre Metriken angezeigt werden. Gelegentlich kann es jedoch etwas dauern, bis die Anzeige aktuell ist. Schließen Sie ggf. das Blatt "Filter", warten Sie einen Moment, und aktualisieren Sie die Anzeige.
 
 
 
@@ -177,7 +177,7 @@ Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwen
 
 Wenn Ihre Apps in einem Kontext ausgeführt werden, in dem nicht immer eine Internetverbindung oder nur eine langsame Internetverbindung verfügbar ist, erwägen Sie die Verwendung eines Persistenzkanals anstelle des standardmäßigen In-Memory-Kanals.
 
-Der standardmäßige In-Memory-Kanal verliert alle Telemetriedaten, die nicht vor dem Schließen der App gesendet wurden. Wenngleich Sie mithilfe von `Flush()` versuchen können, alle im Puffer verbleibenden Daten zu senden, gehen dennoch Daten verloren, wenn keine Internetverbindung besteht oder wenn die App heruntergefahren wird, bevor die Übertragung abgeschlossen ist.
+Der standardmäßige In-Memory-Kanal verliert alle Telemetriedaten, die nicht vor dem Schließen der App gesendet wurden. Obwohl Sie mithilfe von `Flush()` versuchen können, alle im Puffer verbleibenden Daten zu senden, gehen dennoch Daten verloren, wenn keine Internetverbindung besteht oder wenn die App heruntergefahren wird, bevor die Übertragung abgeschlossen ist.
 
 Im Gegensatz dazu puffert der Persistenzkanal Telemetriedaten in einer Datei, bevor diese an das Portal gesendet werden. `Flush()` stellt sicher, dass Daten in der Datei gespeichert werden. Wenn beim Schließen der App keine Daten gesendet werden, verbleiben diese in der Datei. Wenn die App erneut gestartet wird, werden die Daten gesendet, sofern eine Internetverbindung besteht. Daten werden so lange in der Datei gesammelt, bis eine Internetverbindung verfügbar ist.
 
@@ -299,4 +299,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

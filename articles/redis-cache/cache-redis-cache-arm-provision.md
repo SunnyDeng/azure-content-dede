@@ -8,12 +8,12 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service" 
+	ms.service="cache" 
 	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
+	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/02/2015" 
+	ms.date="10/28/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Redis Cache-Instanz mithilfe einer Vorlage
@@ -26,7 +26,13 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 
 Die vollständige Vorlage finden Sie unter [Redis Cache-Vorlage](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE]ARM-Vorlagen für den neuen [Tarif "Premium"](cache-premium-tier-intro.md) sind bald verfügbar. Um die neuesten Vorlagen zu ermitteln, suchen Sie in [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) nach `Redis Cache`.
+>[AZURE.NOTE]ARM-Vorlagen für den neuen [Tarif „Premium“](cache-premium-tier-intro.md) sind verfügbar.
+>
+>-    [Erstellen eines Premium-Redis Caches mithilfe von Clustering](https://azure.microsoft.com/de-DE/documentation/templates/201-redis-premium-cluster-diagnostics/)
+>-    [Erstellen eines Premium-Redis Caches mithilfe von Datenpersistenz](https://azure.microsoft.com/de-DE/documentation/templates/201-redis-premium-persistence/)
+>-    [Erstellen eines Premium-Redis Caches mithilfe von VNet und optionalem Clustering](https://azure.microsoft.com/de-DE/documentation/templates/201-redis-premium-vnet-cluster-diagnostics/)
+>
+>Um die neuesten Vorlagen zu ermitteln, suchen Sie in [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) nach `Redis Cache`.
 
 ## Was Sie bereitstellen
 
@@ -131,4 +137,4 @@ Erstellt den Azure Redis Cache.
 
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

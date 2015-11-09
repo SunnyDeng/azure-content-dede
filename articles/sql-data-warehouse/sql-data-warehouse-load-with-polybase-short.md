@@ -18,6 +18,12 @@
 
 
 # Laden von Daten mit PolyBase
+
+> [AZURE.SELECTOR]
+- [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)
+- [PolyBase](sql-data-warehouse-load-with-polybase-short.md)
+- [BCP](sql-data-warehouse-load-with-bcp.md)
+
 In diesem Tutorial erfahren Sie, wie Sie Daten in Azure SQL Data Warehouse laden, indem Sie PolyBase verwenden.
 
 
@@ -148,11 +154,11 @@ FROM   [dbo].[DimDate2External];
 Siehe [CREATE TABLE AS SELECT (Transact-SQL)][].
 
 
-Weitere Informationen zu PolyBase finden Sie unter [PolyBase in SQL Data Warehouse – Tutorial][].
+Weitere Informationen zu PolyBase finden Sie unter [PolyBase in SQL Data Warehouse – Lernprogramm][].
 
 
 <!--Article references-->
-[PolyBase in SQL Data Warehouse – Tutorial]: sql-data-warehouse-load-with-polybase.md
+[PolyBase in SQL Data Warehouse – Lernprogramm]: sql-data-warehouse-load-with-polybase.md
 
 
 <!-- External Links -->
@@ -166,4 +172,4 @@ Weitere Informationen zu PolyBase finden Sie unter [PolyBase in SQL Data Warehou
 [Create Database Scoped Credential]: https://msdn.microsoft.com/de-DE/library/mt270260.aspx
 [CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/library/mt204041.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

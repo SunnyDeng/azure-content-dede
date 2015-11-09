@@ -1,21 +1,21 @@
-<properties 
-	pageTitle="Unterstützte Verteilungen von Linux | Microsoft Azure" 
-	description="Hier erfahren Sie mehr über unterstützte Linux-Verteilungen auf Azure, einschließlich Leitfäden für Ubuntu, OpenLogic, Oracle und SUSE." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="szarkos" 
-	manager="timlt" 
+<properties
+	pageTitle="Unterstützte Verteilungen von Linux | Microsoft Azure"
+	description="Hier erfahren Sie mehr über unterstützte Linux-Verteilungen auf Azure, einschließlich Leitfäden für Ubuntu, OpenLogic, Oracle und SUSE."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
 	editor="tysonn"
-	tags="azure-service-management,azure-resource-manager" 
+	tags="azure-service-management,azure-resource-manager"
 	/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/03/2015"
 	ms.author="szark"/>
 
 
@@ -37,7 +37,7 @@ Der Azure Linux-Agent ist bereits in den Images im Azure-Katalog vorinstalliert 
 
 Verteilung|Version|Treiber|Agent
 ---|---|---|---
-Ubuntu von Canonical|Ubuntu 12.04, 14.04, 14.10 und 15.04|Im Kernel|Paket: Im Repository unter „walinuxagent“ <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+Ubuntu von Canonical|Ubuntu 12.04, 14.04, 15.04 und 15.10|Im Kernel|Paket: Im Repository unter „walinuxagent“ <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 CentOS von OpenLogic |CentOS 6.3+, 7.0+| CentOS 6.3:[LIS-Download](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+: Im Kernel|Paket: Im <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">-OpenLogic-Repository unter „WALinuxAgent“<p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494\.4.0+ |Im Kernel|Quelle: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
 Oracle Linux| 6\.4+, 7.0+|Im Kernel|Paket: Im Repository unter „WALinuxagent“ <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
@@ -79,6 +79,4 @@ Die Strategie von Oracle besteht darin, ein weitgefasstes Portfolio von Lösunge
 
 SUSE Linux Enterprise Server unter Azure ist eine bewährte Plattform, die hervorragende Zuverlässigkeit und Sicherheit für Cloud Computing bietet. Die vielseitige Linux-Plattform SUSE lässt sich nahtlos in Azure-Clouddienste integrieren, um eine einfach zu verwaltende Cloudumgebung bereitzustellen. Mit mehr als 9.200 zertifizierten Anwendungen von über 1.800 unabhängigen Softwareanbietern für SUSE Linux Enterprise Server stellt SUSE zudem sicher, dass vorhandene im Rechenzentrum unterstützte Workloads vertrauensvoll unter Azure bereitgestellt werden können.
 
- 
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

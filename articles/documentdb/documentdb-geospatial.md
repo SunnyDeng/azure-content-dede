@@ -13,7 +13,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="08/11/2015" 
+    ms.date="10/27/2015" 
     ms.author="arramac"/>
     
 # Arbeiten mit Geodaten in Azure DocumentDB
@@ -31,7 +31,7 @@ In diesem [Github-Projekt](https://github.com/Azure/azure-documentdb-net/tree/ma
 Räumliche Daten beschreiben die Position und Form von Objekten im Raum. In den meisten Fällen entsprechen diese Daten Objekten auf der Erde und werden deshalb Geodaten genannt. Räumliche Daten dienen zur Darstellung des Orts einer Person, einer Sehenswürdigkeit, der Umgrenzung einer Stadt oder eines Sees. Übliche Anwendungsbeispiele sind häufig Abfragen der Entfernung, z. B. "alle Cafés in der Nähe meines aktuellen Standorts suchen".
 
 ### GeoJSON
-DocumentDB unterstützt eine Volltextindizierung und Abfrage von Geodaten, die mithilfe der [GeoJSON-Spezifikation](http://geojson.org/geojson-spec.html) dargestellt werden. GeoJSON-Datenstrukturen sind stets gültige JSON-Objekte, weshalb sie mit DocumentDB gespeichert und ohne spezielle Tools oder Bibliotheken abgefragt werden können. Die DocumentDB SDKs bieten Hilfsklassen und Methoden, die das Arbeiten mit räumlichen Daten erleichtern.
+DocumentDB unterstützt eine Volltextindizierung und Abfrage von Geopunktdaten, die mithilfe der [GeoJSON-Spezifikation](http://geojson.org/geojson-spec.html) dargestellt werden. GeoJSON-Datenstrukturen sind stets gültige JSON-Objekte, weshalb sie mit DocumentDB gespeichert und ohne spezielle Tools oder Bibliotheken abgefragt werden können. Die DocumentDB SDKs bieten Hilfsklassen und Methoden, die das Arbeiten mit räumlichen Daten erleichtern.
 
 ### Punkte, LineStrings und Polygone
 Ein **Punkt** kennzeichnet eine einzelne Position im Raum. In Geodaten stellt ein Punkt den exakten Ort dar, der die Adresse eines Lebensmittelgeschäfts, ein Kiosk, ein Auto oder eine Stadt sein kann. Ein Punkt wird in GeoJSON (und DocumentDB) mithilfe seines Koordinatenpaares oder Längen- und Breitengrads dargestellt. Hier ist eine Beispiel-JSON für einen Punkt.
@@ -81,7 +81,7 @@ Zusätzlich zu Punkten unterstützt GeoJSON auch LineStrings und Polygone. **Lin
 >
 >Punkte innerhalb eines Polygons müssen gegen den Uhrzeigersinn nacheinander angegeben werden. Ein Polygon, das im Uhrzeigersinn angegeben wird, stellt die Umkehrung der darin enthaltenen Region dar.
 
-Zusätzlich zu Punkten, LineStrings und Polygonen gibt GeoJSON auch das Darstellen der Gruppierung mehrerer Geodatenstandorte sowie das Zuweisen beliebiger Eigenschaften mit Geolocation als **Feature** an. Da diese Objekte gültige JSON sind, können sie alle in DocumentDB gespeichert und verarbeitet werden.
+Zusätzlich zu Punkten, LineStrings und Polygonen gibt GeoJSON auch das Darstellen der Gruppierung mehrerer Geodatenstandorte sowie das Zuweisen beliebiger Eigenschaften mit Geolocation als **Feature** an. Da diese Objekte gültige JSON sind, können sie alle in DocumentDB gespeichert und verarbeitet werden. DocumentDB unterstützt jedoch nur die automatische Indizierung von Punkten.
 
 ### Koordinatenreferenzsysteme
 
@@ -355,4 +355,4 @@ Nachdem Sie die ersten Schritte mit räumlichen Daten in DocumentDB ausgeführt 
 - Weitere Informationen zu [DocumentDB-Abfragen](documentdb-sql-query.md)
 - Weitere Informationen zu [DocumentDB-Indizierungsrichtlinien](documentdb-indexing-policies.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

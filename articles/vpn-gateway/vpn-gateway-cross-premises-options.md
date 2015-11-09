@@ -66,8 +66,6 @@ Mit einem Standort-zu-Standort-VPN können Sie eine sichere Verbindung zwischen 
 
 Informationen zum Konfigurieren einer Standort-zu-Standort-VPN-Gatewayverbindung finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md).
 
-Informationen zum Erstellen einer Standort-zu-Standort-VPN-Gatewayverbindung mit RRAS finden Sie unter [Konfigurieren eines Standort-zu-Standort-VPN mit Windows Server 2012 RRAS (Routing- und RAS-Dienst)](https://msdn.microsoft.com/library/dn636917.aspx).
-
 
 ## Punkt-zu-Standort-Verbindungen
 
@@ -102,4 +100,4 @@ Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Tech
 
 Weitere Informationen finden Sie unter [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md) und [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

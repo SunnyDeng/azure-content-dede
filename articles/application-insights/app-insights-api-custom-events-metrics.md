@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="10/23/2015" 
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -526,14 +526,6 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
 **Für JavaScript-Webclients** verwenden Sie [JavaScript-Telemetrieinitialisierer](#js-initializer).
 
 
-## <a name="ikey"></a> Festlegen des Instrumentationsschlüssels für ausgewählte benutzerdefinierte Telemetriedaten
-
-*C#*
-    
-    var telemetry = new TelemetryClient();
-    telemetry.Context.InstrumentationKey = "---my key---";
-    // ...
-
 
 ## Leeren von Daten
 
@@ -546,23 +538,37 @@ Normalerweise sendet das SDK Daten zu ausgewählten Zeiten, um den Benutzer mög
     // Allow some time for flushing before shutdown.
     System.Threading.Thread.Sleep(1000);
 
-Beachten Sie, dass die Funktion für speicherinterne Kanäle asynchron ist, allerdings synchron, wenn Sie den [persistenten Kanal](app-insights-windows-desktop.md#persistence-channel) wählen.
+Beachten Sie, dass die Funktion für speicherinterne Kanäle asynchron ist, und synchron, wenn Sie den [persistenten Kanal](app-insights-windows-desktop.md#persistence-channel) wählen.
 
 
 
-## Telemetrieinitialisierer und -prozessoren
-
-Sie können Plug-Ins für das Application Insights SDK schreiben und konfigurieren, um anzupassen, wie Telemetriedaten erfasst und verarbeitet werden, bevor sie an den Application Insights-Dienst gesendet werden.
-
-[Weitere Informationen](app-insights-telemetry-processors.md)
 
 
-## Deaktivieren der Standardtelemetrie
+## Stichprobenerstellung, Filterung und Verarbeitung von Telemetriedaten 
 
-Sie können [ausgewählte Teile der Standardtelemetrie deaktivieren][config], indem Sie `ApplicationInsights.config` bearbeiten. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
+Sie können Code zum Verarbeiten Ihrer Telemetriedaten schreiben, bevor sie vom SDK gesendet werden. Die Verarbeitung umfasst Daten, die von den standardmäßigen Telemetriemodulen gesendet werden, z. B. die HTTP-Anforderungsauflistung und Abhängigkeitsauflistung.
 
-[Weitere Informationen][config].
+* Sie können der Telemetrie [Eigenschaften hinzufügen](app-insights-api-filtering-sampling.md#add-properties), z. B. Versionsnummern oder von anderen Eigenschaften berechnete Werte.
+* Mithilfe der [Stichprobenerstellung](app-insights-api-filtering-sampling.md#sampling) wird Datenvolumen reduziert, das von Ihrer App an das Portal gesendet wird. Dies hat keinerlei Auswirkungen auf die angezeigten Metriken oder die Fähigkeit, Probleme zu diagnostizieren, indem zwischen verwandten Elementen wie Ausnahmen, Anforderungen und Seitenansichten navigiert wird.
+* Das Datenvolumen kann auch per [Filterung](app-insights-api-filtering-sampling.md#filtering) reduziert werden. Sie steuern, was gesendet oder verworfen wird, aber Sie müssen die Auswirkung auf Ihre Metriken im Auge behalten. Je nach Vorgehensweise beim Verwerfen der Elemente kann es sein, dass Sie nicht mehr zwischen verwandten Elementen navigieren können.
 
+[Weitere Informationen](app-insights-api-filtering-sampling.md)
+
+
+## Deaktivieren der Telemetrie
+
+So können Sie die Sammlung und Übermittlung von Telemetriedaten **dynamisch beenden und starten**:
+
+*C#*
+
+```C#
+
+    using  Microsoft.ApplicationInsights.Extensibility;
+
+    TelemetryConfiguration.Active.DisableTelemetry = true;
+```
+
+Um **ausgewählte Standardsammlungen zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder die Abhängigkeiten –, löschen oder kommentieren Sie die entsprechenden Zeilen in [ApplicationInsights.config][config]. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
 
 ## <a name="debug"></a>Entwicklermodus
 
@@ -576,6 +582,16 @@ Während des Debuggens ist es sinnvoll, die Telemetriedaten beschleunigt über d
 *VB*
 
     TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
+
+
+## <a name="ikey"></a> Festlegen des Instrumentationsschlüssels für ausgewählte benutzerdefinierte Telemetriedaten
+
+*C#*
+    
+    var telemetry = new TelemetryClient();
+    telemetry.Context.InstrumentationKey = "---my key---";
+    // ...
+
 
 ## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
 
@@ -618,7 +634,7 @@ Auf Webseiten empfiehlt es sich, ihn über den Zustand des Webservers festzulege
 
 TelemetryClient besitzt eine Eigenschaft "Context", die eine Reihe von Werten enthält, die zusammen mit allen Telemetriedaten gesendet werden. Sie werden normalerweise von den Standardtelemetriemodulen festgelegt, aber Sie können sie auch selbst einstellen. Beispiel:
 
-    telemetryClient.Context.Operation.Name = “MyOperationName”;
+    telemetryClient.Context.Operation.Name = "MyOperationName";
 
 Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeile aus [ApplicationInsights.config][config] zu entfernen, damit kein Konflikt zwischen Ihren Werten und den Standardwerten entsteht.
 
@@ -632,7 +648,7 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
  * **SyntheticSource**: Wenn sie nicht null oder leer ist, gibt diese Zeichenfolge an, dass die Quelle der Anforderung als Roboter oder Webtest identifiziert wurde. Standardmäßig wird sie von Berechnungen im Metrik-Explorer ausgeschlossen.
 * **Properties** Eigenschaften, die mit allen Telemetriedaten gesendet werden. Kann in einzelnen Track*-Aufrufen außer Kraft gesetzt werden.
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
-* **User**: Benutzerinformationen. 
+* **User** Benutzerinformationen. 
 
 
 
@@ -708,4 +724,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/05/2015" 
+	ms.date="10/27/2015" 
 	ms.author="sdanie"/>
 
 # So autorisieren Sie Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management
@@ -160,4 +160,4 @@ Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Si
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

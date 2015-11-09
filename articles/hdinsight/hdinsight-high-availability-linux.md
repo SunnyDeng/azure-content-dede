@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="10/19/2015"
+	ms.date="10/26/2015"
 	ms.author="larryfr"/>
 
 #Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight
@@ -37,7 +37,7 @@ HDInsight-Cluster verfügen über einen sekundären Hauptknoten, sodass Masterdi
 
 Im Allgemeinen hat die Verwendung mehrerer Hauptknoten keinen Einfluss auf den Clusterzugriff über die öffentlichen Gateways (Ambari Web und REST-APIs). Die Anforderung wird an den aktiven Hauptknoten weitergeleitet und wie erforderlich verarbeitet.
 
-Beim Zugriff auf den Cluster über SSH wird bei Verwendung von Port 22 (Standardport für SSH) eine Verbindung mit „headnode0“ hergestellt und bei Verwendung von Port 23 eine Verbindung mit „headnode1“.
+Beim Zugriff auf den Cluster über SSH wird bei Verwendung von Port 22 (Standardport für SSH) eine Verbindung mit „Hauptknoten 0“ hergestellt und bei Verwendung von Port 23 eine Verbindung mit „Hauptknoten 1“.
 
 ### Interne vollqualifizierte Domänennamen (FQDN)
 
@@ -49,7 +49,7 @@ Der Oozie-Dienst kann z. B. nur auf einem Hauptknoten ausgeführt werden, und z
 
 Der zurückgegebene Wert enthält die mit dem `oozie`-Befehl zu verwendende interne URL und sieht in etwa wie folgt aus:
 
-	"oozie.base.url": "http://headnode0.CLUSTERNAME-ssh.d9.internal.cloudapp.net:11000/oozie"
+	"oozie.base.url": "http://hn0-CLUSTERNAME-randomcharacters.cx.internal.cloudapp.net:11000/oozie"
 
 ## Überprüfen eines Dienststatus
 
@@ -74,7 +74,7 @@ Wenn Sie z. B. den Status des **HDFS**-Diensts in einem Cluster mit dem Namen *
 Die Antwort sieht in etwa wie folgt aus:
 
 	{
-	  "href" : "http://headnode0.mycluster-ssh.j7.internal.cloudapp.net:8080/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state",
+	  "href" : "http://hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8080/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state",
 	  "ServiceInfo" : {
 	    "cluster_name" : "mycluster",
 	    "service_name" : "HDFS",
@@ -82,7 +82,7 @@ Die Antwort sieht in etwa wie folgt aus:
 	  }
 	}
 
-Der URL können Sie entnehmen, dass der Dienst zurzeit auf **headnode0** ausgeführt wird.
+Der URL können Sie entnehmen, dass der Dienst zurzeit auf **Hauptknoten 0** ausgeführt wird.
 
 Der Statuswert (state) gibt an, dass der Dienst zurzeit ausgeführt wird bzw. sich im Status **STARTED** befindet.
 
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

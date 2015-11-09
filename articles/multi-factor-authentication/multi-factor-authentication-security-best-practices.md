@@ -84,14 +84,6 @@ Dieses Portal wird über eine IIS-Website (Internetinformationsdienste) ausgefü
 - IIS 6 oder höher erforderlich
 - ASP.NET v2.0.507207 muss installiert und registriert sein
 - Dieser Server kann in einem Umkreisnetzwerk bereitgestellt werden.
-- Wenn für die Kommunikation zwischen diesem Server und Azure eine Firewall konfiguriert ist, muss die Kommunikation mit den folgenden URLs über TCP-Port 443 (ausgehend) zulässig sein:
-	- https://pfd.phonefactor.net 
-	- https://pfd2.phonefactor.net 
-	- https://css.phonefactor.net
-- Wenn Firewalls für die ausgehende Kommunikation auf Port 443 beschränkt sind, müssen die folgenden IP-Adressbereiche für die ausgehende Kommunikation geöffnet werden:
-	- 134\.170.116.0/25
-	- 134\.170.165.0/25
-	- 70\.37.154.128/25
 
 
 
@@ -129,4 +121,4 @@ In diesem Artikel sind einige bewährte Methoden für Azure MFA beschrieben. Zus
 - [Einrichten von Azure Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md)
 - [Azure Multi-Factor Authentication – Häufig gestellte Fragen](multi-factor-authentication-faq.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

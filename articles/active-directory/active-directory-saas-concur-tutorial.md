@@ -1,8 +1,21 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit Concur | Microsoft Azure" description="Hier erfahren Sie, wie Sie Concur mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Concur | Microsoft Azure" 
+    description="Hier erfahren Sie, wie Sie Concur mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Concur  
 
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=522413), um Feedback abzugeben.
 
 In diesem Tutorial wird die Integration von Azure und Concur erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
@@ -40,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Con
 
     ![Was möchten Sie tun?](./media/active-directory-saas-concur-tutorial/IC700995.png "Was möchten Sie tun?")
 
-5.  Geben Sie im **Suchfeld** das Wort **Concur** ein.
+5.  Geben Sie im **Suchfeld** den Suchbegriff **Concur** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-concur-tutorial/IC721727.png "Anwendungskatalog")
 
@@ -119,7 +132,7 @@ Aus den folgenden Gründen sollte diese Aktion nicht mit dem Profil ausgeführt 
 
 8.  Geben Sie den Benutzernamen und das Kennwort Ihres Concur-Administrators ein, und klicken Sie dann auf **Weiter**.
 
-9.  Klicken Sie zum Abschließen der Konfiguration auf der Bestätigungsseite auf **Abschließen**.
+9.  Klicken Sie zum Abschließen der Konfiguration auf der **Bestätigungsseite** auf **Abschließen**.
 
 Sie können nun ein Testkonto erstellen und nach 10 Minuten überprüfen, ob das Konto mit Concur synchronisiert wurde.
 ##Zuweisen von Benutzern
@@ -140,6 +153,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 Nach 10 Minuten können Sie überprüfen, ob das Konto mit Concur synchronisiert wurde.
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

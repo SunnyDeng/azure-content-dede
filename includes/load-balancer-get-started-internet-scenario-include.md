@@ -1,7 +1,7 @@
-## Scenario
+## Szenario
 
-The following scenario will show how to add a load balancer for 2 virtual machines named "web1" and "web2" using port 80 to receive Internet traffic, and send load balanced network traffic also to port 80 on the 2 servers.
+Im nachfolgenden Szenario wird demonstriert, wie Sie ein Lastenausgleichsmodul für 2 virtuelle Computer mit den Namen "web1" und "web2" mithilfe des Ports 80 zum Empfangen des Internetverkehrs hinzufügen und Netzwerkverkehr mit Lastenausgleich sowohl an Port 80 als auch 2 Server senden.
 
-![Load balancer scenario](./media/load-balancer-get-started-internet-scenario-include/scenario-classic.png)
+![Load Balancer-Szenarios](./media/load-balancer-get-started-internet-scenario-include/scenario-classic.png)
 
-
+<!---HONumber=Nov15_HO1-->

@@ -44,10 +44,14 @@ Sie können die IP-Adresse sowie den **awverify**-Namen und die **.azurewebsites
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
+3. Klicken Sie auf dem Blatt **Benutzerdefinierte Domänen und SSL** auf **Externe Domänen verwenden**.
+
+	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
+
 	> [AZURE.NOTE]Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Web-App im Modus **Free**. Die können benutzerdefinierte Domänennamen nicht mit einer Web-App im Modus **Free** verwenden und müssen für den App Service-Plan ein Upgrade auf einen der Modi **Shared**, **Basic** oder **Standard** ausführen. Weitere Informationen zu den Modi des App Service-Plans, darunter auch Informationen zum Ändern des Web-App-Modus, finden Sie unter [Skalieren von Web-Apps](../articles/web-sites-scale.md).
 
-6. Im Dialogfeld **BENUTZERDEFINIERTE DOMÄNEN VERWALTEN** werden dann die **awverify**-Information, der momentan zugewiesene **.azurewebsites.net**-Domänenname und die virtuelle IP-Adresse angezeigt. Speichern Sie diese Informationen, das sie beim Erstellen der DNS-Einträge benötigt werden.
+6. Auf dem Blatt **Externe Domänen verwenden** werden dann die **awverify**-Information, der momentan zugewiesene **.azurewebsites.net**-Domänenname und die virtuelle IP-Adresse angezeigt. Speichern Sie diese Informationen, das sie beim Erstellen der DNS-Einträge benötigt werden.
 
-	![](./media/custom-dns-web-site/managecustomdomains.png)
+	![](./media/custom-dns-web-site/dncmntask-cname-8.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

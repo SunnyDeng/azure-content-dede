@@ -1,10 +1,10 @@
 
 | Ressource | Standardlimit 
 --- | ---
-| Zonen pro Abonnement | 50
-| Datensätze pro Zone| 1\.000
+| Zonen pro Abonnement | 50 <sup>1</sup>
+| Datensätze pro Zone| 1000 <sup>1</sup>
 | Datensätze pro Datensatzgruppe| 20
 
-Sie können sich an den Support wenden, falls Sie das Standardlimit erhöhen möchten.
+<sup>1</sup> Wenden Sie sich an den Support, falls Sie diese Limits erhöhen müssen. Der Azure DNS-Dienst befindet sich derzeit in der Vorschauphase. Diese Grenzwerte werden überprüft, wenn der Dienst allgemein verfügbar ist.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

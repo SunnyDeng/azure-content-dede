@@ -147,4 +147,4 @@ Für Ihre spezifische Strategie für die Notfallwiederherstellung können diese 
 | Aktiv-/Aktiv-Bereitstellung für den Anwendungslastenausgleich | Lese-/Schreibzugriff < 5 Sek. | Ausfallerkennungszeit + Aufruf der Failover-API + Änderung der SQL-Verbindungszeichenfolge + Anwendungsüberprüfungstest
 | Aktiv-/Passiv-Bereitstellung für die Beibehaltung von Daten | Schreibgeschützter Zugriff < 5 Sek. Lese-/ Schreibzugriff = 0 (null) | Schreibgeschützter Zugriff = Erkennungszeit für Verbindungsausfall + Anwendungsüberprüfungstest <br>Lese-/Schreibzugriff = Zeit zum Beseitigen der Ausfallursache 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

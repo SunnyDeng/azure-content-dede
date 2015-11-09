@@ -4,7 +4,7 @@
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="coreysa"
+   manager="timlt"
    editor=""/>
 
 <tags
@@ -36,4 +36,4 @@ Bedenken Sie, dass es durchaus sinnvoll ist, verschiedenen Frameworks für versc
 - [Erfahren Sie mehr über Reliable Actors-APIs](service-fabric-reliable-actors-introduction.md)
 - [Erfahren Sie mehr über Reliable Services-APIs](../Service-Fabric/service-fabric-reliable-services-introduction.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

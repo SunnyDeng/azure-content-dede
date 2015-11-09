@@ -13,10 +13,22 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/29/2015" 
+	ms.date="10/22/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic – Hinweise zu dieser Version
+
+## Hinweise zur Version von Stream Analytics vom 22.10.2015 ##
+
+Diese Version enthält die folgenden Updates.
+
+Titel | Beschreibung
+---|---
+Zusätzliche Features für die Abfragesprache | Stream Analytics hat die Abfragesprache um die folgenden Features erweitert: [ABS](https://msdn.microsoft.com/library/azure/mt574054.aspx), [CEILING](https://msdn.microsoft.com/library/azure/mt605286.aspx), [EXP](https://msdn.microsoft.com/library/azure/mt605289.aspx), [FLOOR](https://msdn.microsoft.com/library/azure/mt605240.aspx), [POWER](https://msdn.microsoft.com/library/azure/mt605287.aspx), [SIGN](https://msdn.microsoft.com/library/azure/mt605290.aspx), [SQUARE](https://msdn.microsoft.com/library/azure/mt605288.aspx) und [SQRT](https://msdn.microsoft.com/library/azure/mt605238.aspx).
+Aggregatbeschränkungen aufgehoben | Mit dieser Version wird die Beschränkung auf 15 Aggregate pro Abfrage aufgehoben. Es gibt jetzt keine Beschränkung für die Anzahl der Aggregate pro Abfrage mehr.
+Feature „GROUP BY System.Timestamp“ hinzugefügt | Die [GROUP BY](https://msdn.microsoft.com/library/azure/dn835023.aspx)-Funktion ermöglicht jetzt entweder „window\_type“ oder [System.Timestamp](https://msdn.microsoft.com/library/azure/mt598501.aspx).
+OFFSET für Tumbling- und Hopping-Fenster hinzugefügt | [Tumbling](https://msdn.microsoft.com/library/azure/dn835055.aspx)- und [Hopping](https://msdn.microsoft.com/library/azure/dn835041.aspx)-Fenster sind standardmäßig an der Nullzeit ausgerichtet (1.1.0001 12:00:00 AM UTC). Der neue (optionale) Parameter „offsetsize“ ermöglicht das Angeben eines benutzerdefinierten Versatzes (oder einer Ausrichtung).
+
 
 ## Hinweise zur Version von Stream Analytics vom 29.09.2015 ##
 
@@ -25,7 +37,7 @@ Diese Version enthält die folgenden Updates.
 Titel | Beschreibung
 ---|---
 Öffentliche Vorschau zu Azure IoT Suite | Stream Analytics ist in der öffentlichen Vorschau von Azure IoT Suite enthalten.
-Azure-Vorschauportal, Integration | Stream Analytics ist nicht nur weiterhin im Azure-Verwaltungsportal enthalten, sondern jetzt auch im [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/) integriert. Beachten Sie, dass im Vorschauportal derzeit nur ein Teil der im Azure-Verwaltungsportal bereitgestellten Stream Analytics-Funktionalität verfügbar ist. Nicht unterstützt werden Funktionen wir das Testen von Abfragen im Browser, das Konfigurieren der Power BI-Ausgabe und das Durchsuchen oder Erstellen neuer Eingabe- und Ausgaberessourcen in Abonnements, auf die Sie zugreifen können.
+Azure-Vorschauportal, Integration | Stream Analytics ist nicht nur weiterhin im Azure-Verwaltungsportal enthalten, sondern jetzt auch in das [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/) integriert. Beachten Sie, dass im Vorschauportal derzeit nur ein Teil der im Azure-Verwaltungsportal bereitgestellten Stream Analytics-Funktionalität verfügbar ist. Nicht unterstützt werden Funktionen wir das Testen von Abfragen im Browser, das Konfigurieren der Power BI-Ausgabe und das Durchsuchen oder Erstellen neuer Eingabe- und Ausgaberessourcen in Abonnements, auf die Sie zugreifen können.
 Unterstützung für DocumentDB-Ausgabe | Stream Analytics-Aufträge können jetzt Ausgaben an [DocumentDB](http://azure.microsoft.com/services/documentdb/) senden.
 Unterstützung für IoT Hub-Eingabe | Stream Analytics-Aufträge können jetzt Daten von IoT Hubs erfassen.
 TIMESTAMP BY für heterogene Ereignisse | Wenn ein einzelner Datenstrom mehrere Ereignistypen mit Zeitstempeln in verschiedenen Feldern enthält, können Sie nun [TIMESTAMP BY](http://msdn.microsoft.com/library/mt573293.aspx) mit Ausdrücken verwenden, um für jeden Fall unterschiedliche Zeitstempelfelder anzugeben.
@@ -104,4 +116,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

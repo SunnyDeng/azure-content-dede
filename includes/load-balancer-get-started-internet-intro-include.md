@@ -1,7 +1,9 @@
-You can use a load balancer to provide high availability for your workloads in Azure. An Azure load balancer is a Layer-4 (TCP, UDP) type load balancer that distributes incoming traffic among healthy service instances in cloud services or virtual machines defined in a load balancer set.
+Mit einem Lastenausgleichsmodul erreichen Sie eine hohe Verfügbarkeit für Ihre Workloads in Azure. Beim Azure Lastenausgleichsmodul handelt sich um ein Lastenausgleichsmodul des Layer-4-Typs (TCP, UDP), das eingehenden Datenverkehr zwischen funktionierenden Dienstinstanzen in Clouddiensten oder auf virtuelle Computer verteilt, die in einem Lastenausgleichsmodul definiert wurden.
  
-You can configure a load balancer to.
+Ein Lastenausgleichsmodul lässt sich konfigurieren, um
 
-- Load balance incoming Internet traffic to virtual machines (VMs). We refer to a load balancer in this scenario as an [Internet facing load balancer](load-balancer-internet-overview.md).
-- Load balance traffic between VMs in a virtual network (VNet), VMs in cloud services, or between on-premises computers and VMs in a cross-premises virtual network. We refer to a load balancer in this scenario as an [internal load balancer (ILB)](load-balancer-internal-overview.md).
-- 	Forward external traffic to a specific VM instance.
+- einen Lastenausgleich des auf den Virtuellen Computern (VMs) eingehenden Internetdatenverkehrs herzustellen. Wir bezeichnen ein Lastenausgleichsmodul in diesem Szenario als ein [Lastenausgleich mit Internetzugriff](load-balancer-internet-overview.md).
+- Lastenausgleich für Datenverkehr zwischen VMs in einem virtuellen Netzwerk (VNet), zwischen virtuellen Computern in Clouddiensten oder zwischen lokalen Computern und VMs in einem standortübergreifenden virtuellen Netzwerk. Wir bezeichnen ein Lastenausgleichsmodul in diesem Szenario als ein [internes Lastenausgleichsmodul mit Internetzugriff (ILB)](load-balancer-internal-overview.md).
+- 	Weiterleiten von externem Datenverkehr an eine bestimmte VM-Instanz.
+
+<!---HONumber=Nov15_HO1-->

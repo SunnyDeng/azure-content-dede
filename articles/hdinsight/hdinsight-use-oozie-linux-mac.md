@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/26/2015"
 	ms.author="larryfr"/>
 
 
@@ -48,9 +48,9 @@ Der Workflow, den Sie mithilfe der Anweisungen in diesem Dokument implementieren
 
 1. Eine Hive-Aktion führt ein HiveQL-Skript zum Extrahieren von Datensätzen aus der in HDInsight enthaltenen Tabelle **hivesampletable** aus. Jede Datenzeile beschreibt einen Besuch eines bestimmten Mobilgeräts. Das Format des Eintrags sieht wie folgt aus:
 
-		8       18:54:20        en-US   Android Samsung SCH-i500        California     United States    13.9204007      0       0
-		23      19:19:44        en-US   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
-		23      19:19:46        en-US   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
+		8       18:54:20        de-DE   Android Samsung SCH-i500        California     United States    13.9204007      0       0
+		23      19:19:44        de-DE   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
+		23      19:19:46        de-DE   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
 
 	Das in diesem Dokument verwendete Hive-Skript zählt die gesamten Besuche für jede Plattform (z. B. Android oder iPhone) und speichert die Werte in einer neuen Hive-Tabelle.
 
@@ -292,9 +292,9 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 
 	Die Ausgabe dieses Befehls sieht etwa so aus:
 
-		headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net
+		hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net
 
-	Der für JobTracker verwendete Port ist 8050. Die vollständige Adresse für JobTracker lautet daher **headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:8050**.
+	Der für JobTracker verwendete Port ist 8050. Die vollständige Adresse für JobTracker lautet daher **hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8050**.
 
 1. Verwenden Sie zum Erstellen der Konfiguration der Oozie-Auftragsdefinition Folgendes:
 
@@ -390,13 +390,13 @@ Die folgenden Schritte verwenden den Oozie-Befehl zum Übermitteln und Verwalten
 	Die Ausgabe dieses Befehls sieht etwa so aus:
 
 		<name>oozie.base.url</name>
-		<value>http://headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:11000/oozie</value>
+		<value>http://hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:11000/oozie</value>
 
-	Der Teil ****http://headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:11000/oozie** ist die mit dem Oozie-Befehl zu verwendende URL.
+	Der Teil ****http://hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:11000/oozie** ist die mit dem Oozie-Befehl zu verwendende URL.
 
 2. Geben Sie Folgendes an, um eine Umgebungsvariable für die URL erstellen, damit Sie sie nicht für jeden Befehl eingeben müssen:
 
-		export OOZIE_URL=http://headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:11000/oozie
+		export OOZIE_URL=http://HOSTNAMEt:11000/oozie
 
 	Ersetzen Sie die URL durch diejenige, die Sie zuvor erhalten haben.
 
@@ -711,7 +711,7 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und e
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
 [powershell-install-configure]: powershell-install-configure.md
 [powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/en-us/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/de-DE/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
@@ -721,4 +721,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und e
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

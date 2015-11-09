@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Voraussetzungen für Azure AD Connect | Microsoft Azure"
+   pageTitle="Voraussetzungen für Azure Active Directory Connect | Microsoft Azure"
    description="Artikelbeschreibung, die auf Angebotsseiten und für die meisten Suchergebnisse angezeigt wird."
    services="active-directory"
    documentationCenter=""
@@ -16,7 +16,7 @@
    ms.date="10/13/2015"
    ms.author="andkjell;billmath"/>
 
-# Voraussetzungen für Azure AD Connect
+# Voraussetzungen für Azure Active Directory Connect (Azure AD Connect)
 Dieses Thema beschreibt die Voraussetzungen und die Hardwareanforderungen für Azure AD Connect.
 
 ## Vor der Installation von Azure AD Connect
@@ -39,7 +39,7 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
 **Konten**
 
 - Ein globales Azure AD-Administratorkonto für das Azure AD-Verzeichnis, das Sie integrieren möchten.
-- Ein Enterprise-Administratorkonto für Ihr lokales Active Directory, wenn Sie Expresseinstellungen verwenden.
+- Ein Enterprise-Administratorkonto für Ihr lokales Active Directory, wenn Sie Expresseinstellungen verwenden oder von DirSync upgraden.
 - [Konten in Active Directory](active-directory-aadconnect-accounts-permissions.md), wenn Sie den Installationspfad für benutzerdefinierte Einstellungen verwenden.
 
 **Konnektivität**
@@ -58,7 +58,7 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
     </system.net>
 ```
 
-Dieser Text muss am Ende der Datei eingegeben werden. In diesem Code stellt &lt;PROXYADRESS&gt; die tatsächliche Proxy-IP-Adresse oder den Hostnamen dar. Wenn Ihr Proxy den Zugriff auf bestimmte URLs beschränkt, müssen die unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) dokumentierten URLs im Proxy geöffnet werden.
+Dieser Text muss am Ende der Datei eingegeben werden. In diesem Code stellt &lt;PROXYADRESS&gt; die tatsächliche Proxy-IP-Adresse oder den Hostnamen dar. Wenn Ihr Proxy den Zugriff auf bestimmte URLs beschränkt, müssen die unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/de-DE/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) dokumentierten URLs im Proxy geöffnet werden.
 
 **Andere**
 
@@ -114,4 +114,4 @@ Im Folgenden sind die Mindestanforderungen für Computer mit AD FS oder Webanwe
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="10/26/2015" 
 	ms.author="genemi"/>
 
 
@@ -23,6 +23,8 @@
 
 Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-Datenbank. Es enthält Links zu Codebeispielen für verschiedene Technologien, die Sie zum Herstellen einer Verbindung und zum Interagieren mit SQL-Datenbank verwenden können. Zu diesen Technologien gehören Enterprise Library, JDBC, PHP und weitere. Die bereitgestellten Informationen gelten unabhängig von der spezifischen Technologie, die Sie zum Herstellen der Verbindung mit der SQL-Datenbank verwenden.
 
+
+<a id="a-tech-independent-recommend" name="a-tech-independent-recommend"></a>
 
 ## Technologieunabhängige Empfehlungen
 
@@ -36,11 +38,13 @@ Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-
  - Drosselung
 
 
+<a id="b-authentication-recommend" name="b-authentication-recommend"></a>
+
 ## Empfehlungen für die Authentifizierung
 
 
 - Verwenden Sie die Azure SQL-Datenbankauthentifizierung und nicht die Windows-Authentifizierung. Letztere ist in der Azure SQL-Datenbank nicht verfügbar.
-- Geben Sie eine bestimmte Datenbank an, anstatt automatisch die *master*-Datenbank zu verwenden.
+- Geben Sie eine bestimmte Datenbank an, anstatt automatisch die *Masterdatenbank* zu verwenden.
  - Sie können die Transact-SQL-Anweisung **USE myDatabaseName;** in SQL-Datenbanken nicht verwenden, um zu einer anderen Datenbank zu wechseln.
 
 
@@ -63,8 +67,10 @@ Der Ansatz mit den enthaltenen Benutzer hat Vor- und Nachteile:
  - Eine Person, die ein enthaltener Benutzer in mehreren Datenbanken ist, muss möglicherweise mehr Kennwörter behalten oder aktualisieren.
 
 
-Weitere Informationen finden Sie unter [enthaltenen Datenbanken](http://msdn.microsoft.com/library/ff929071.aspx).
+Weitere Informationen finden Sie unter [Eigenständige Datenbankbenutzer – machen Sie Ihre Datenbank portabel](http://msdn.microsoft.com/library/ff929188.aspx).
 
+
+<a id="c-connection-recommend" name="c-connection-recommend"></a>
 
 ## Empfehlungen für die Verbindung
 
@@ -73,8 +79,7 @@ Weitere Informationen finden Sie unter [enthaltenen Datenbanken](http://msdn.mic
  - Der Standardwert von 15 Sekunden ist zu kurz für Verbindungen, die über das Internet hergestellt werden.
 
 
-- Stellen Sie sicher, dass die [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md) die ausgehende TCP-Kommunikation über den Port 1433 zulässt.
- - Sie können die Einstellungen für die Firewall auf einem SQL-Datenbankserver oder für eine einzelne Datenbank konfigurieren.
+- Vergewissern Sie sich, dass auf dem Computer, der das Clientprogramm hostet, die Firewall ausgehende TCP-Kommunikation über Port 1433 zulässt.
 
 
 - Wenn Ihr Clientprogramm eine Verbindung mit SQL-Datenbank V12 herstellt, wobei der Client auf einem virtuellen Azure-Computer ausgeführt wird, müssen Sie die Portbereiche 11000 11999 und 14000-14999 auf dem virtuellen Computer öffnen. Klicken Sie [hier](sql-database-develop-direct-route-ports-adonet-v12.md), um ausführliche Informationen zu erhalten.
@@ -145,6 +150,8 @@ Wenn in der SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](http://m
 Weitere Informationen finden Sie unter [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](http://msdn.microsoft.com/library/azure/ee621787.aspx) – [Behandeln von Verbindungsproblemen mit Azure SQL-Datenbank](http://support.microsoft.com/kb/2980233/).
 
 
+<a id="e-technologies" name="e-technologies"></a>
+
 ## Technologien
 
 
@@ -167,4 +174,4 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
 - [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->
