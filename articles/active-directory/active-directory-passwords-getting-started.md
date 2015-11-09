@@ -231,7 +231,8 @@ Nun, da Sie das Azure AD Connect-Tool heruntergeladen haben, können Sie das Zur
 4.	Rufen Sie den aktuellen Status der Rückschreibung für den aktuellen Connector ab, indem Sie das folgende Cmdlet ausführen: `Get-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName`
 5.	Aktivieren Sie das Zurückschreiben von Kennwörtern, indem Sie dieses Cmdlet ausführen: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName –Enable $true`
 
-> [AZURE.NOTE]Stellen Sie bei der Aufforderung zur Eingabe von Anmeldeinformationen sicher, dass es sich bei dem für "AzureADCredential" angegebenen Administratorkonto um ein **Cloudadministratorkonto (erstellt in Azure AD)** handelt, und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).[AZURE.NOTE]Sie können die Funktion zum Zurückschreiben von Kennwörtern über PowerShell deaktivieren, indem Sie die obigen Anweisungen erneut ausführen, aber hierbei `$false` übergeben, oder indem Sie die Einstellung [Kennwörter in das lokale Verzeichnis zurückschreiben](https://manage.windowsazure.com) auf **Nein** festlegen. Sie finden diese Einstellung im **Azure-Verwaltungsportal** auf der Registerkarte **Konfigurieren** im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts**.
+> [AZURE.NOTE]Stellen Sie bei der Aufforderung zur Eingabe von Anmeldeinformationen sicher, dass es sich bei dem für "AzureADCredential" angegebenen Administratorkonto um ein **Cloudadministratorkonto (erstellt in Azure AD)** handelt, und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).
+> [AZURE.NOTE]Sie können die Funktion zum Zurückschreiben von Kennwörtern über PowerShell deaktivieren, indem Sie die obigen Anweisungen erneut ausführen, aber hierbei `$false` übergeben, oder indem Sie die Einstellung [Kennwörter in das lokale Verzeichnis zurückschreiben](https://manage.windowsazure.com) auf **Nein** festlegen. Sie finden diese Einstellung im **Azure-Verwaltungsportal** auf der Registerkarte **Konfigurieren** im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts**.
 
 #### Überprüfen, ob die Konfiguration erfolgreich war
 Nachdem Sie die Konfiguration abgeschlossen haben, wird im Windows PowerShell-Fenster die Meldung "Das Zurückschreiben der Kennwortzurücksetzung ist aktiviert" angezeigt, in der Konfigurationsoberfläche wird eine Erfolgsmeldung eingeblendet.
@@ -245,8 +246,8 @@ Nachdem Sie das Zurückschreiben von Kennwörtern in Azure AD Connect aktiviert 
 
 1.	Wenn Sie nach dem Abschluss der Installation in Ihrer Umgebung unbekannte ausgehende Verbindungen blockieren, müssen Sie außerdem Änderungen an den folgenden Regeln Ihrer Firewall vornehmen. Stellen Sie sicher, dass Sie Ihren AAD Connect-Computer nach dem Durchführen dieser Änderungen neu starten:
    - Lassen Sie ausgehende Verbindungen über TCP-Port 443 zu.
-   - Lassen Sie ausgehende Verbindungen mit https://ssprsbprodncu-sb.accesscontrol.windows.net/ zu. 
-   - Wenn Sie einen Proxy verwenden oder allgemeine Verbindungsprobleme vorliegen, lassen Sie ausgehende Verbindungen über TCP-Port 9350-9354 zu.
+   - Lassen Sie ausgehende Verbindungen mit https://ssprsbprodncu-sb.accesscontrol.windows.net/ zu.
+   - Wenn Sie einen Proxy verwenden oder allgemeine Verbindungsprobleme vorliegen, lassen Sie ausgehende Verbindungen über TCP-Port 9350-9534 zu.
 
 ### Schritt 4: Einrichten der geeigneten Active Directory-Berechtigungen
 Bei der anfänglichen Konfiguration mit dem Konfigurations-Assistenten wird ein Konto X eingerichtet. Für jede Gesamtstruktur, die Benutzer enthält, deren Kennwörter zurückgesetzt werden, müssen X die Berechtigungen **Kennwort zurücksetzen**, **Kennwort ändern**, **Kennwort schreiben** für `lockoutTime` sowie die erweiterten Rechte **Berechtigungen schreiben** für `pwdLastSet` für das Stammobjekt jeder Domäne in dieser Gesamtstruktur erteilt werden. Die Rechte müssen hierbei so festgelegt werden, dass sie an alle Benutzerobjekte vererbt werden.
@@ -279,7 +280,9 @@ Wenn Sie nicht sicher sind, auf welches Konto sich die oben genannten Angaben be
 8.	Wählen Sie in der Dropdownliste oben den Eintrag **Nachfolgerbenutzerobjekt**.
 9.	Aktivieren Sie im nun angezeigten Dialogfeld **Berechtigungseintrag** die Kontrollkästchen für **Kennwort zurücksetzen**, **Kennwort ändern**, **Berechtigungen schreiben** für `lockoutTime` sowie **Berechtigungen schreiben** für `pwdLastSet`.
 
-    ![][026] ![][027] ![][028]
+    ![][026]
+    ![][027]
+    ![][028]
 
 10.	Klicken Sie anschließend in allen geöffneten Dialogfeldern auf **Anwenden/OK**.
 

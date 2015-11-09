@@ -80,8 +80,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-aba-sainsburys-connect-tutorial/IC807728.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der ABa Sainsburys Connect-Anwendung verwenden (z. B. **https://myaba.co.uk/client-access/sainsburys/saml.php*).
-2.  Klicken Sie auf **Weiter**.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Aba Sainsburys Connect-Anwendung verwenden \(z. B. **https://myaba.co.uk/client-access/sainsburys/saml.php*).
+    2.  Klicken Sie auf **Weiter**.
 
 4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für ABa Sainsburys Connect** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei auf Ihrem Computer.
 

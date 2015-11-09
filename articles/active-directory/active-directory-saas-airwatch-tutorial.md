@@ -128,12 +128,12 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Attribut](./media/active-directory-saas-airwatch-tutorial/IC791927.png "Attribut")
 
     1.  Geben Sie im Textfeld **Objektbezeichner** den Wert ****http://schemas.microsoft.com/identity/claims/objectidentifier** ein.
-2.  Geben Sie im Textfeld **Benutzername** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
-3.  Geben Sie im Textfeld **Anzeigename** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
-4.  Geben Sie im Textfeld **Vorname** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
-5.  Geben Sie im Textfeld **Nachname** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
-6.  Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
-7.  Klicken Sie auf **Speichern**.
+    2.  Geben Sie im Textfeld **Benutzername** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+    3.  Geben Sie im Textfeld **Anzeigename** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+    4.  Geben Sie im Textfeld **Vorname** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+    5.  Geben Sie im Textfeld **Nachname** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
+    6.  Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+    7.  Klicken Sie auf **Speichern**.
 
 14. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
