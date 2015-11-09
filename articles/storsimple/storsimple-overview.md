@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="10/09/2015"
+   ms.date="10/14/2015"
    ms.author="v-sharos@microsoft.com"/>
 
 # StorSimple 8000-Serie: eine Hybridcloud-Speicherlösung 
@@ -46,7 +46,7 @@ In der folgenden Tabelle werden einige der wichtigsten Vorteile von Microsoft Az
 |Verfügbarkeit im Azure-Portal für Behörden | StorSimple ist jetzt im Azure-Portal für Behörden verfügbar. Weitere Informationen finden Sie unter [Bereitstellen lokaler StorSimple-Geräte im Government-Portal](storsimple-deployment-walkthrough-gov.md).|
 |Unterstützung von zonenredundantem Speicher (ZRS) | Durch das Upgrade auf die neueste Version der Speicher-APIs unterstützt die StorSimple 8000-Serie außer lokal redundantem Speicher (LRS) und georedundantem Speicher (GRS) auch zonenredundanten Speicher (ZRS). Ausführliche Informationen über zonenredundanten Speicher (ZRS) finden Sie in [diesem Artikel über Redundanzoptionen von Azure Storage](https://azure.microsoft.com/documentation/articles/storage-redundancy/).
 
-![Video-Symbol](./media/storsimple-overview/video_icon.png) Sehen Sie sich [dieses Video](https://www.youtube.com/watch?v=4MhJT5xrvQw&feature=youtu.be) mit einer Übersicht über die Funktionen und Vorteile der StorSimple 8000-Serie an.
+![Video-Symbol](./media/storsimple-overview/video_icon.png)Sehen Sie sich [dieses Video](http://azure.microsoft.com/documentation/videos/guru-pangals-welcome-to-wpc--july-2015) mit einer Einführung in die Funktionen und Vorteile der StorSimple 8000-Serie an.
 
 ## StorSimple-Komponenten
 
@@ -65,6 +65,8 @@ Das folgende Diagramm bietet eine allgemeine Übersicht über die Architektur un
 ![StorSimple-Architektur](./media/storsimple-overview/overview-big-picture.png)
 
 In den folgenden Abschnitten wird jede dieser Komponenten ausführlicher beschrieben. Es wird zudem erläutert, wie die Lösung Daten anordnet, Speicher zuweist sowie die Speicherverwaltung und den Schutz von Daten vereinfacht. Der letzte Abschnitt enthält Definitionen für einige wichtige Begriffe und Konzepte im Zusammenhang mit den StorSimple-Komponenten und deren Verwaltung.
+
+![Video-Symbol](./media/storsimple-overview/video_icon.png)Sehen Sie sich [dieses Video](https://www.youtube.com/watch?v=4MhJT5xrvQw&feature=youtu.be) mit einer Einführung in das StorSimple-Gerät, das virtuelle StorSimple-Gerät und den StorSimple Manager-Dienst an.
 
 ## StorSimple-Gerät
 
@@ -269,4 +271,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/07/2015"
+   ms.date="10/26/2015"
    ms.author="tomfitz"/>
 
 # Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung
@@ -155,6 +155,8 @@ Bei der Arbeit mit virtuellen Computern sind einige wichtige Aspekte zu berücks
 - Virtuelle Computer, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, müssen in ein virtuelles Netzwerk eingebunden werden.
 - Virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt wurden, müssen nicht in ein virtuelles Netzwerk eingebunden werden.
 
+Wenn Ausfallzeiten für Ihre virtuellen Computer eingeplant werden können, dann können Sie diese mit [ASM2ARM-PowerShell-Skripts](https://github.com/fullscale180/asm2arm) von der klassischen Bereitstellung zu Ressourcen-Manager übertragen.
+
 Eine Liste der entsprechenden Befehle der Azure-Befehlszeilenschnittstelle beim Wechsel von der klassischen zur Ressourcen-Manager-Bereitstellung finden Sie unter [Befehlsentsprechungen für Ressourcen-Manager und Dienstverwaltung für VM-Vorgänge](./virtual-machines/xplat-cli-azure-manage-vm-asm-arm.md).
 
 Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
@@ -166,4 +168,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

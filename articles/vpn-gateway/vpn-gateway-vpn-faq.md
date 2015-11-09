@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/20/2015"
+   ms.date="10/26/2015"
    ms.author="cherylmc" />
 
 # Häufig gestellte Fragen zum VPN-Gateway
@@ -70,6 +70,10 @@ Wir haben in Zusammenarbeit mit Geräteherstellern eine Reihe von VPN-Geräten f
 ### Was kann ich tun, wenn mein VPN-Gerät nicht in der Liste bekannter kompatibler Geräte enthalten ist?
 
 Wenn Ihr Gerät nicht in der Liste bekannter kompatibler VPN-Geräte enthalten ist und Sie das Gerät für Ihre VPN-Verbindung verwenden möchten, vergewissern Sie sich [hier](vpn-gateway-about-vpn-devices.md#devices-not-on-the-compatible-list), dass es für die unterstützten IPsec-/IKE-Konfigurationsoptionen und -parameter geeignet ist. Geräte, die die Mindestanforderungen erfüllen, sollten problemlos mit VPN-Gateways verwendet werden können. Zusätzliche Unterstützung und Konfigurationsanweisungen erhalten Sie vom Gerätehersteller.
+
+### Warum fällt mein richtlinienbasierter VPN-Tunnel aus, wenn kein Datenverkehr stattfindet?
+
+Dabei handelt es sich um einen Standardvorgang bei richtlinienbasierten (auch als „statisches Routing“ bezeichnet) VPN-Gateways. Wenn im Tunnel länger als 5 Minuten kein Datenverkehr stattfindet, wird der Tunnel geschlossen. Sobald jedoch der Datenverkehr wieder beginnt, egal, in welche Richtung, wird der Tunnel erneut hergestellt. Bei weiterleitungsbasierten (auch als „dynamisch“ bezeichnet) VPN-Gateways ist dies nicht der Fall.
 
 ### Kann ich VPN-Softwarelösungen verwenden, um eine Verbindung mit Azure herzustellen?
 
@@ -252,4 +256,4 @@ Weitere Informationen finden Sie in anderen häufig gestellten Fragen zum Netzwe
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015" 
+	ms.date="10/26/2015" 
 	ms.author="genemi"/>
 
 
@@ -65,6 +65,8 @@ Vorübergehende Fehler werden mitunter auch als „Übergangsfehler“ bezeichne
 **Hinweis:** Die Partnerverbundfehler 10053 und 10054 sollten in Ihrer Wiederholungslogik unter Umständen auch berücksichtigt werden.
 
 
+<a id="bkmk_b_database_copy_errors" name="bkmk_b_database_copy_errors">&nbsp;</a>
+
 ## Fehler beim Kopieren von Datenbanken
 
 
@@ -87,6 +89,8 @@ Die folgende Tabelle enthält die verschiedenen Fehler, die auftreten können, w
 |40570|16|Interner Fehler beim Kopieren der Datenbank. Löschen Sie die Zieldatenbank, und versuchen Sie es später erneut.|
 |40571|16|Interner Fehler beim Kopieren der Datenbank. Löschen Sie die Zieldatenbank, und versuchen Sie es später erneut.|
 
+
+<a id="bkmk_c_resource_gov_errors" name="bkmk_c_resource_gov_errors">&nbsp;</a>
 
 ## Fehler bei der Ressourcenkontrolle
 
@@ -114,7 +118,7 @@ In der folgende Tabelle sind die Fehler enthalten, die beim Arbeiten mit Azure S
 |40549|16|Die Sitzung wird aufgrund einer Transaktion mit langer Laufzeit beendet. Verkürzen Sie die Transaktion.|
 |40550|16|Die Sitzung wurde beendet, da zu viele Sperren abgerufen wurden. Reduzieren Sie die Anzahl der in einer einzelnen Transaktion gelesenen oder geänderten Zeilen.|
 |40551|16|Die Sitzung wurde aufgrund übermäßiger `TEMPDB`-Auslastung beendet. Ändern Sie die Abfrage, um die Verwendung des temporären Tabellenbereichs zu verringern.<br/><br/>*Tipp:* Wenn Sie temporäre Objekte verwenden, können Sie Speicherplatz in der `TEMPDB`-Datenbank sparen, indem Sie die temporären Objekte verwerfen, die von der Sitzung nicht mehr benötigt werden.|
-|40552|16|Die Sitzung wurde aufgrund übermäßiger Verwendung des Speicherplatzes für das Transaktionsprotokoll beendet. Reduzieren Sie die Anzahl der in einer einzelnen Transaktion geänderten Zeilen.<br/><br/>*Tipp:* Versuchen Sie beim Durchführen von Masseneinfügungen mit dem Hilfsprogramm `bcp.exe` oder der `System.Data.SqlClient.SqlBulkCopy`-Klasse, die Option `-b batchsize` oder `BatchSize` zu verwenden, um die Anzahl von Zeilen zu beschränken, die bei jeder Transaktion auf den Server kopiert werden. Versuchen Sie es mit der Option `REBUILD WITH ONLINE = ON`, wenn Sie einen Index mit der `ALTER INDEX`-Anweisung neu erstellen.|
+|40552|16|Die Sitzung wurde aufgrund übermäßiger Verwendung des Speicherplatzes für das Transaktionsprotokoll beendet. Reduzieren Sie die Anzahl der in einer einzelnen Transaktion geänderten Zeilen.<br/><br/>*Tipp:* Versuchen Sie beim Durchführen von Masseneinfügungen mit dem Hilfsprogramm `bcp.exe` oder der `System.Data.SqlClient.SqlBulkCopy`-Klasse die Optionen `-b batchsize` oder `BatchSize` zu verwenden, um die Anzahl von Zeilen zu beschränken, die bei jeder Transaktion auf den Server kopiert werden. Versuchen Sie es mit der Option `REBUILD WITH ONLINE = ON`, wenn Sie einen Index mit der `ALTER INDEX`-Anweisung neu erstellen.|
 |40553|16|Die Sitzung wurde aufgrund übermäßiger Speicherauslastung beendet. Ändern Sie die Abfrage, damit weniger Zeilen verarbeitet werden.<br/><br/>*Tipp:* Wenn Sie die Anzahl von `ORDER BY`- und `GROUP BY`-Vorgängen im Transact-SQL-Code reduzieren, verringern sich auch die Arbeitsspeicheranforderungen Ihrer Abfrage.|
 
 
@@ -123,6 +127,8 @@ Weitere Informationen zur Ressourcenkontrolle und den dazugehörigen Fehlern fin
 
 - [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx).
 
+
+<a id="bkmk_d_federation_errors" name="bkmk_d_federation_errors">&nbsp;</a>
 
 ## Partnerverbundfehler
 
@@ -144,25 +150,27 @@ Die folgende Tabelle enthält Fehler, die beim Arbeiten mit einem Partnerverbund
 |2209|16|%s-Syntaxfehler in der Nähe von „%ls“.|`FEDERATED ON` kann nur verwendet werden, wenn Tabellen in Verbundmitgliedern erstellt werden.|
 |2714|16|In der Datenbank ist bereits ein Objekt mit dem Namen „%.&#x2a;ls“ vorhanden.|Der Verbundname ist bereits vorhanden.|
 |10054, 10053|20|Fehler auf Übertragungsebene beim Empfang von Ergebnissen vom Server. Eine bestehende Verbindung wurde softwaregesteuert durch den Hostcomputer abgebrochen.|Implementieren Sie die Wiederholungslogik in Ihrer Anwendung.|
-|40530|15|Die <statement>-Anweisung muss die einzige Anweisung im Batch sein.|Stellen Sie sicher, dass keine weiteren Anweisungen im Batch vorhanden sind.|
+|40530|15|<statement> muss die einzige Anweisung im Batch sein.|Stellen Sie sicher, dass keine weiteren Anweisungen im Batch vorhanden sind.|
 |40604|16|`CREATE DATABASE` war nicht möglich, da das Serverkontingent überschritten würde.|Erweitern Sie das Datenbankanzahl-Kontingent des Servers.|
-|45000|16|Fehler beim <statement>-Vorgang. Der angegebene Verbundname <federation_name> ist ungültig.|Der Verbundname entspricht nicht den Regeln für Verbundnamen oder ist kein gültiger Bezeichner.|
-|45001|16|Fehler beim <statement>-Vorgang. Der angegebene Verbundname ist nicht vorhanden.|Der Verbundname ist nicht vorhanden.|
-|45002|16|Fehler beim <statement>-Vorgang. Der angegebene Verbundschlüsselname <distribution_name> ist ungültig.|Der Verbundschlüssel ist nicht vorhanden oder ungültig.|
-|45004|16|Fehler beim <statement>-Vorgang. Der angegebene Wert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> ungültig.|`USE FEDERATION`: Verwenden Sie einen Begrenzungswert, der in der Domäne des Verbundschlüssel-Datentyps liegt oder der nicht NULL ist.<br/><br/>`ALTER FEDERATION SPLIT`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich nicht bereits um einen vorhandenen Teilungspunkt handelt.<br/><br/>`ALTER FEDERATION DROP`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich bereits um einen Teilungspunkt handelt.|
-|45005|16|<statement> kann nicht ausgeführt werden, während für den <federation_name>-Verbund und das Mitglied mit der ID <member_id> ein anderer Verbundvorgang ausgeführt wird.|Warten Sie, bis der gleichzeitige Vorgang abgeschlossen ist.|
-|45006|16|Fehler bei <statement>-Vorgängen. Fremdschlüsselbeziehungen in Verweistabellen, in denen auf Verbundtabellen verwiesen wird, sind in Verbundmitgliedern nicht zulässig.|Nicht unterstützt|
-|45007|16|Fehler beim <statement>-Vorgang. Fremdschlüsselbeziehungen zwischen Verweistabellen müssen die Verbundschlüsselspalte(n) enthalten.|Nicht unterstützt|
-|45008|16|Fehler beim <statement>-Vorgang. Der Verbundschlüssel-Datentyp stimmt nicht mit dem Spaltendatentyp überein.|Nicht unterstützt|
-|45009|16|Fehler beim <statement>-Vorgang. Der Vorgang wird für die Filterung von Verbindungen nicht unterstützt.|Nicht unterstützt|
+|45000|16|<statement> Vorgang fehlgeschlagen. Der angegebene Verbundname <federation_name> ist ungültig.|Der Verbundname entspricht nicht den Regeln für Verbundnamen oder ist kein gültiger Bezeichner.|
+|45001|16|<statement> Vorgang fehlgeschlagen. Der angegebene Verbundname ist nicht vorhanden.|Der Verbundname ist nicht vorhanden.|
+|45002|16|<statement> Vorgang fehlgeschlagen. Der angegebene Verbundschlüsselname <distribution_name> ist ungültig.|Der Verbundschlüssel ist nicht vorhanden oder ungültig.|
+|45004|16|<statement> Vorgang fehlgeschlagen. Der angegebene Wert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> ungültig.|`USE FEDERATION`: Verwenden Sie einen Begrenzungswert, der in der Domäne des Verbundschlüssel-Datentyps liegt oder der nicht NULL ist.<br/><br/>`ALTER FEDERATION SPLIT`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich nicht bereits um einen vorhandenen Teilungspunkt handelt.<br/><br/>`ALTER FEDERATION DROP`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich bereits um einen Teilungspunkt handelt.|
+|45005|16|<statement> kann nicht ausgeführt werden, während für den Verbund <federation_name> und das Mitglied mit der ID <member_id> ein anderer Verbundvorgang ausgeführt wird.|Warten Sie, bis der gleichzeitige Vorgang abgeschlossen ist.|
+|45006|16|<statement> Vorgänge fehlgeschlagen. Fremdschlüsselbeziehungen in Verweistabellen, in denen auf Verbundtabellen verwiesen wird, sind in Verbundmitgliedern nicht zulässig.|Nicht unterstützt|
+|45007|16|<statement> Vorgang fehlgeschlagen. Fremdschlüsselbeziehungen zwischen Verweistabellen müssen die Verbundschlüsselspalte(n) enthalten.|Nicht unterstützt|
+|45008|16|<statement> Vorgang fehlgeschlagen. Der Verbundschlüssel-Datentyp stimmt nicht mit dem Spaltendatentyp überein.|Nicht unterstützt|
+|45009|16|<statement> Vorgang fehlgeschlagen. Der Vorgang wird für die Filterung von Verbindungen nicht unterstützt.|Nicht unterstützt|
 |45010|16|Fehler beim <statement>-Vorgang. Verbundschlüssel kann nicht aktualisiert werden.|Nicht unterstützt|
-|45011|16|Fehler beim <statement>-Vorgang. Verbundschlüsselschema kann nicht aktualisiert werden.|Nicht unterstützt|
-|45012|16|Der für den Verbundschlüssel angegebene Wert ist ungültig.|Der Wert muss im von der Verbindung adressierten Bereich liegen.<br/><br/>Wenn gefiltert wird, wird der Verbundschlüsselwert angegeben.<br/><br/>Wenn nicht gefiltert wird, gilt der vom Verbundmitglied abgedeckte Bereich.|
+|45011|16|<statement> Vorgang fehlgeschlagen. Verbundschlüsselschema kann nicht aktualisiert werden.|Nicht unterstützt|
+|45012|16|Der für den Verbundschlüssel angegebene Wert ist ungültig.|Der Wert muss im von der Verbindung adressierten Bereich liegen.<br/><br/>Beim Filtern wird der Verbundschlüsselwert angegeben.<br/><br/>Wenn nicht gefiltert wird, gilt der vom Verbundmitglied abgedeckte Bereich.|
 |45013|16|Die SID ist bereits unter einem anderen Benutzernamen vorhanden.|Die SID für einen Benutzer in einem Verbundmitglied wird aus der SID desselben Benutzerkontos im Verbundstamm kopiert. Unter bestimmten Umständen kann die SID ggf. bereits verwendet werden.|
 |45014|16|%ls wird für %ls nicht unterstützt.|Nicht unterstützter Vorgang.|
-|45022|16|Fehler beim <statement>-Vorgang. Der angegebene Begrenzungswert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> bereits vorhanden.|Geben Sie einen Wert an, bei dem es sich bereits um einen Begrenzungswert handelt.|
-|45023|16|Fehler beim <statement>-Vorgang. Der angegebene Begrenzungswert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> nicht vorhanden.|Geben Sie einen Wert an, bei dem es sich nicht bereits um einen Begrenzungswert handelt.|
+|45022|16|<statement> Vorgang fehlgeschlagen. Der angegebene Begrenzungswert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> bereits vorhanden.|Geben Sie einen Wert an, bei dem es sich bereits um einen Begrenzungswert handelt.|
+|45023|16|<statement> Vorgang fehlgeschlagen. Der angegebene Begrenzungswert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> nicht vorhanden.|Geben Sie einen Wert an, bei dem es sich nicht bereits um einen Begrenzungswert handelt.|
 
+
+<a id="bkmk_e_general_errors" name="bkmk_e_general_errors">&nbsp;</a>
 
 ## Allgemeine Fehler
 
@@ -202,7 +210,7 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40528|16|In dieser SQL Server-Version können Benutzer keinen Zertifikaten, asymmetrischen Schlüsseln oder Windows-Anmeldungen zugeordnet werden.|
 |40529|16|Die integrierte „%.&#x2a;ls“-Funktion wird in dieser SQL Server-Version im Identitätswechselkontext nicht unterstützt.|
 |40532|11|Der bei der Anmeldung angeforderte Server „%.&#x2a;ls“ kann nicht geöffnet werden. Fehler bei der Anmeldung.|
-|40553|16|Die Sitzung wurde aufgrund übermäßiger Speicherauslastung beendet. Ändern Sie die Abfrage, damit weniger Zeilen verarbeitet werden.<br/><br/>*Hinweis:* Wenn Sie die Anzahl von `ORDER BY`- und `GROUP BY`-Vorgängen im Transact-SQL-Code reduzieren, verringern sich auch die Arbeitsspeicheranforderungen Ihrer Abfrage.|
+|40553|16|Die Sitzung wurde aufgrund übermäßiger Speicherauslastung beendet. Ändern Sie die Abfrage, damit weniger Zeilen verarbeitet werden.<br/><br/>*Hinweis:* Wenn Sie die Anzahl der Vorgänge `ORDER BY` und `GROUP BY` im Transact-SQL-Code reduzieren, verringern sich auch die Arbeitsspeicheranforderungen Ihrer Abfrage.|
 |40604|16|CREATE/ALTER DATABASE war nicht möglich, da das Serverkontingent überschritten würde.|
 |40606|16|Das Anfügen von Datenbanken wird in dieser SQL Server-Version nicht unterstützt.|
 |40607|16|Windows-Anmeldungen werden in dieser SQL Server-Version nicht unterstützt.|
@@ -218,7 +226,7 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40632|16|Fehler bei der Kennwortüberprüfung. Das Kennwort ist nicht komplex genug und erfüllt daher nicht die Richtlinienanforderungen.|
 |40636|16|Der reservierte Datenbankname „%.&#x2a;ls“ kann in diesem Vorgang nicht verwendet werden.|
 |40638|16|Ungültige Abonnement-ID <subscription-id>. Das Abonnement ist nicht vorhanden.|
-|40639|16|Anforderung entspricht nicht dem <schema error>-Schema.|
+|40639|16|Anforderung entspricht nicht dem Schema: <schema error>.|
 |40640|20|Der Server hat eine unerwartete Ausnahme erkannt.|
 |40641|16|Der angegebene Pfad ist ungültig.|
 |40642|17|Der Server ist derzeit überlastet. Bitte versuchen Sie es später erneut.|
@@ -229,9 +237,9 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40647|16|Der Server <Servername> ist im <Abonnement-ID>-Abonnement nicht enthalten.|
 |40648|17|Zu viele Anforderungen wurden durchgeführt. Versuchen Sie es später erneut.|
 |40649|16|Es wurde ein ungültiger „content-type“ angegeben. Nur „application“ oder „xml“ wird unterstützt.|
-|40650|16|Das <subscription-id>-Abonnement ist nicht vorhanden oder nicht betriebsbereit.|
-|40651|16|Fehler beim Erstellen des Servers, weil das <subscription-id>-Abonnement deaktiviert ist.|
-|40652|16|Der Server kann nicht verschoben oder erstellt werden, weil das <subscription-id>-Abonnement das Serverkontingent überschreitet.|
+|40650|16|Das Abonnement <subscription-id> ist nicht vorhanden oder nicht betriebsbereit.|
+|40651|16|Fehler beim Erstellen des Servers, weil das Abonnement <subscription-id> deaktiviert ist.|
+|40652|16|Der Server kann nicht verschoben oder erstellt werden, Abonnement <subscription-id> überschreitet das Serverkontingent.|
 |40671|17|Kommunikationsfehler zwischen dem Gateway und dem Verwaltungsdienst. Versuchen Sie es später erneut.|
 |45168|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze bei den gleichzeitigen DB CRUD-Vorgängen für einen Server ein (z. B. CREATE DATABASE). Für den in der Fehlermeldung angegebenen Server wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten. Versuchen Sie es später erneut.|
 |45169|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze bei der Anzahl gleichzeitiger CRUD-Servervorgänge für ein Abonnement ein (z. B.CREATE SERVER). Für das in der Fehlermeldung angegebene Abonnement wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten, und die Anforderung wurde verweigert. Versuchen Sie es später erneut.|
@@ -242,4 +250,4 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 - [Allgemeine Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/ee336245.aspx)
 - [Ressourcenverwaltung](http://msdn.microsoft.com/library/azure/dn338083.aspx)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

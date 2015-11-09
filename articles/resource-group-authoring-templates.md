@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/18/2015"
+   ms.date="10/27/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
@@ -174,6 +174,15 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie Parameter definieren:
 
 Im Variablenabschnitt erstellen Sie Werte, die zum Vereinfachen der Vorlagenausdrücke verwendet werden können. Diese Variablen basieren i. d. R. auf Werten, die von den Parametern stammen.
 
+Sie definieren Variablen mit der folgenden Struktur:
+
+    "variables": {
+       "<variable-name>": "<variable-value>",
+       "<variable-name>": { 
+           <variable-complex-type-value> 
+       }
+    }
+
 Das folgende Beispiel zeigt, wie Sie eine Variable definieren, die aus zwei Parameterwerten erstellt wird:
 
     "parameters": {
@@ -228,6 +237,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
          "name": "<name-of-the-resource>",
          "location": "<location-of-resource>",
          "tags": "<name-value-pairs-for-resource-tagging>",
+         "comments": "<your-reference-notes>",
          "dependsOn": [
            "<array-of-related-resource-names>"
          ],
@@ -245,13 +255,14 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 | Name | Ja | Der Name der Ressource. Der Name muss die Einschränkungen für URI-Komponenten laut Definition in RFC3986 erfüllen.
 | location | Nein | Unterstützte Standorte der angegebenen Ressource
 | tags | Nein | Markierungen, die der Ressource zugeordnet sind
+| Kommentare | Nein | Ihre Notizen zur Dokumentierung der Ressourcen in Ihrer Vorlage
 | dependsOn | Nein | Ressourcen, von denen die definierte Ressource abhängig ist. Die Abhängigkeiten zwischen den Ressourcen werden ausgewertet, und die Ressourcen werden in ihrer Abhängigkeitsreihenfolge bereitgestellt. Wenn Ressourcen nicht voneinander abhängig sind, wird versucht, sie parallel bereitzustellen. Der Wert kann eine durch Trennzeichen getrennte Liste von Ressourcennamen oder eindeutigen Ressourcenbezeichnern sein.
 | Eigenschaften | Nein | Ressourcenspezifische Konfigurationseinstellungen
 | angeben | Nein | Untergeordnete Ressourcen, die von der definierten Ressource abhängig sind.
 
 Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion (weiter unten beschrieben) den eindeutigen Bezeichner für eine Ressource abrufen.
 
-Die Werte für das **properties**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie unter [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
+Die Werte für das **Eigenschaften**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie unter [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
 
 Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und eine **Microsoft.Web/Sites**-Ressource mit einer verschachtelten **Extensions**-Ressource:
 
@@ -429,4 +440,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

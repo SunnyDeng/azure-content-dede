@@ -1,14 +1,27 @@
-<properties pageTitle="Lernprogramm: Azure Active Directory-Integration mit Benefitsolver | Microsoft Azure" description="Erfahren Sie, wie Sie Benefitsolver mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Lernprogramm: Azure Active Directory-Integration mit Benefitsolver | Microsoft Azure"
+    description="Erfahren Sie, wie Sie Benefitsolver mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    services="active-directory" 
+    authors="MarkusVi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Lernprogramm: Azure Active Directory-Integration mit Benefitsolver
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=615070), um Feedback abzugeben.
 
 In diesem Lernprogramm wird die Integration von Azure und Benefitsolver erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein Benefitsolver-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Benefitsolver zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) beschrieben, mittels einmaligen Anmeldens bei der Anwendung anmelden.
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Benefitsolver zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben, mittels einmaligen Anmeldens bei der Anwendung anmelden.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -42,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ben
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-benefitsolver-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** als Suchbegriff **Benefitsolver** ein.
+6.  Geben Sie im **Suchfeld** den Suchbegriff **Benefitsolver** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-benefitsolver-tutorial/IC804821.png "Anwendungskatalog")
 
@@ -69,14 +82,14 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-benefitsolver-tutorial/IC804826.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Benefitsolver-Anwendung verwenden (z. B. "*http://azure-dev.benefitsolver.com*.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der Benefitsolver-Anwendung verwenden (z. B. "*http://azure-dev.benefitsolver.com*").
     2.  Geben Sie im Textfeld **Antwort-URL** Ihre AssertionConsumerService-URL für Benefitsolver ein (z. B. "*https://dev.benefitsolver.com/benefits/BenefitSolverView?page\_name=single\_signon\_saml*”).  
 
         >[AZURE.NOTE]Sie erhalten den tatsächlichen Wert für Ihre Umgebung von Ihrem Benefitsolver-Supportteam.
 
     3.  Klicken Sie auf **Weiter**.
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Benefitsolver** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Benefitsolver** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-benefitsolver-tutorial/IC804827.png "Einmaliges Anmelden konfigurieren")
 
@@ -84,11 +97,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     >[AZURE.NOTE]Die eigentliche SSO-Konfiguration muss vom Supportteam von Benefitsolver durchgeführt werden. Sie erhalten eine Benachrichtigung, wenn SSO für Ihr Abonnement aktiviert wurde.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-benefitsolver-tutorial/IC804828.png "Einmaliges Anmelden konfigurieren")
 
-7.  Klicken Sie oben im Menü auf **Attributes**, um das Dialogfeld **SAML token attributes** zu öffnen.
+7.  Klicken Sie oben im Menü auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen.
 
     ![Attribute](./media/active-directory-saas-benefitsolver-tutorial/IC795920.png "Attribute")
 
@@ -103,12 +116,12 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     |LogoutURL|Sie müssen diesen Wert beim Supportteam von Benefitsolver anfragen.|
     |EmployeeID|Sie müssen diesen Wert beim Supportteam von Benefitsolver anfragen.|
 
-    1.  Klicken Sie für jede Datenzeile in der obigen Tabelle auf **add user attribute**.
-    2.  Geben Sie im Textfeld **Attribute Name** den für die Zeile angezeigten Attributnamen ein.
-    3.  Geben Sie im Textfeld **Attribute Value** den für die Zeile angezeigten Attributwert ein.
+    1.  Klicken Sie für jede Datenzeile in der obigen Tabelle auf **Benutzerattribut hinzufügen**.
+    2.  Geben Sie im Textfeld **Attributname** den für die Zeile angezeigten Attributnamen ein.
+    3.  Geben Sie im Textfeld **Attributwert** den für die Zeile angezeigten Attributwert ein.
     4.  Klicken Sie auf **Fertig stellen**.
 
-9.  Klicken Sie auf **Apply Changes**.
+9.  Klicken Sie auf **Änderungen übernehmen**.
 ##Konfigurieren der Benutzerbereitstellung
 
 Damit sich Azure AD-Benutzer bei Benefitsolver anmelden können, müssen sie in Benefitsolver bereitgestellt werden. Im Fall von Benefitsolver müssen Benutzer manuell vom Benefitsolver-Supportteam erstellt werden.
@@ -127,10 +140,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-benefitsolver-tutorial/IC804829.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-benefitsolver-tutorial/IC767830.png "Ja")
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

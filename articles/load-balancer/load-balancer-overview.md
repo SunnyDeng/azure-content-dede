@@ -16,7 +16,8 @@
    ms.author="joaoma" />
 
 
-# Übersicht über den Lastenausgleich 
+# Was versteht man unter einem Azure-Lastenausgleichsmodul?
+ 
 Der Azure-Lastenausgleich bietet hohe Verfügbarkeit und Netzwerkleistung für Ihre Anwendungen. Es handelt sich um einen Lastenausgleich des Layer-4-Typs (TCP, UDP), der eingehenden Datenverkehr zwischen funktionierenden Dienstinstanzen in Clouddiensten oder auf virtuelle Computer verteilt, die in einem Lastenausgleich definiert wurden.
  
 Es gibt folgende Konfigurationsmöglichkeiten:
@@ -87,7 +88,7 @@ Die Azure-Lastenausgleichskonfiguration unterstützt vollständige Cone-NAT für
 
 Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-Adresse mit Lastenausgleich zuweisen. Mit dieser Funktion können Sie mehrere SSL-Websites und/oder mehrere Listener für SQL-AlwaysOn-Verfügbarkeitsgruppen in der gleichen Gruppe von virtuellen Computern hosten. Weitere Informationen finden Sie unter [Mehrere VIPs pro Clouddienst](load-balancer-multivip.md)
 
-**Vorlagenbasierte Bereitstellungen mithilfe des Azure-Ressourcen-Managers (öffentliche Vorschau)** Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/) (in englischer Sprache).
+****Vorlagenbasierte Bereitstellungen mithilfe des Azure-Ressourcen-Managers ** Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework für Dienste in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/) (in englischer Sprache).
 
 
 ## Nächste Schritte
@@ -99,4 +100,4 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 [Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

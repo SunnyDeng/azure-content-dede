@@ -1,8 +1,8 @@
 Ressource| Standardlimit
 ---|---
-Profile pro Abonnement | 100
+Profile pro Abonnement | 100 <sup>1</sup>
 Endpunkte pro Profil| 200
 
-Sie können sich an den Support wenden, falls Sie das Standardlimit erhöhen möchten.
+<sup>1</sup>Wenden Sie sich an den Support, falls Sie diese Limits erhöhen müssen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

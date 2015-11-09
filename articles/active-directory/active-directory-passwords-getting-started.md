@@ -185,7 +185,10 @@ Bevor Sie das Zurückschreiben von Kennwörtern aktivieren und verwenden können
   >[AZURE.NOTE]Wenn Sie eine ältere Version von Windows Server 2008 oder 2008 R2 ausführen, können Sie diese Funktion verwenden, müssen aber [KB 2386717 herunterladen und installieren](https://support.microsoft.com/kb/2386717), bevor Sie Ihre lokale AD-Kennwortrichtlinie in der Cloud erzwingen können.
   
 - Sie haben Azure AD Connect installiert und Ihre AD-Umgebung für eine Synchronisierung mit der Cloud vorbereitet. Weitere Informationen finden Sie unter [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md).
-- Wenn Sie DirSync verwenden, müssen Sie sicherstellen, dass die Unternehmensfirewall so konfiguriert ist, dass ausgehende Verbindungen blockiert werden und **TCP-Port 828 oder 818** geöffnet ist, um das Zurückschreiben von Kennwörtern zu aktivieren und zu nutzen. Wenn Sie Azure AD Sync oder Azure AD Connect verwenden, ist dieser Schritt nicht erforderlich, da nur **TCP 443** ausgehend (und in einigen Fällen **TCP 9350-9354**) geöffnet werden müssen.
+
+  >[AZURE.NOTE]Bevor Sie das Kennwortrückschreiben testen, stellen Sie sicher, dass Sie zuerst einen vollständigen Import und eine vollständige Synchronisierung aus AD und Azure AD ausführen.
+
+- Wenn Sie Azure AD Sync oder Azure AD Connect verwenden, müssen **TCP 443** ausgehend (und in einigen Fällen **TCP 9350-9354**) geöffnet werden. Unter [Schritt 3: Konfigurieren der Firewall](#step-3-configure-your-firewall) finden Sie weitere Informationen. Die Verwendung von DirSync für dieses Szenario wird nicht mehr unterstützt. Wenn Sie DirSync weiterhin verwenden möchten, aktualisieren Sie auf die neueste Version von Azure AD Connect, bevor Sie das Zurückschreiben von Kennwörtern bereitstellen.
 
   >[AZURE.NOTE]Es wird dringend empfohlen, bei Verwendung von Azure AD Sync oder DirSync ein Upgrade auf die neueste Version von Azure AD Connect durchzuführen, um eine bestmögliche Funktionalität sicherzustellen und von neuen Features zu profitieren.
   
@@ -228,8 +231,7 @@ Nun, da Sie das Azure AD Connect-Tool heruntergeladen haben, können Sie das Zur
 4.	Rufen Sie den aktuellen Status der Rückschreibung für den aktuellen Connector ab, indem Sie das folgende Cmdlet ausführen: `Get-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName`
 5.	Aktivieren Sie das Zurückschreiben von Kennwörtern, indem Sie dieses Cmdlet ausführen: `Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName –Enable $true`
 
-> [AZURE.NOTE]Stellen Sie bei der Aufforderung zur Eingabe von Anmeldeinformationen sicher, dass es sich bei dem für "AzureADCredential" angegebenen Administratorkonto um ein **Cloudadministratorkonto (erstellt in Azure AD)** handelt, und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).
-> [AZURE.NOTE]Sie können die Funktion zum Zurückschreiben von Kennwörtern über PowerShell deaktivieren, indem Sie die obigen Anweisungen erneut ausführen, aber hierbei `$false` übergeben, oder indem Sie die Einstellung [Kennwörter in das lokale Verzeichnis zurückschreiben](https://manage.windowsazure.com) auf **Nein** festlegen. Sie finden diese Einstellung im **Azure-Verwaltungsportal** auf der Registerkarte **Konfigurieren** im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts**.
+> [AZURE.NOTE]Stellen Sie bei der Aufforderung zur Eingabe von Anmeldeinformationen sicher, dass es sich bei dem für "AzureADCredential" angegebenen Administratorkonto um ein **Cloudadministratorkonto (erstellt in Azure AD)** handelt, und nicht um ein Verbundkonto (erstellt im lokalen AD-Verzeichnis und synchronisiert mit Azure AD).[AZURE.NOTE]Sie können die Funktion zum Zurückschreiben von Kennwörtern über PowerShell deaktivieren, indem Sie die obigen Anweisungen erneut ausführen, aber hierbei `$false` übergeben, oder indem Sie die Einstellung [Kennwörter in das lokale Verzeichnis zurückschreiben](https://manage.windowsazure.com) auf **Nein** festlegen. Sie finden diese Einstellung im **Azure-Verwaltungsportal** auf der Registerkarte **Konfigurieren** im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts**.
 
 #### Überprüfen, ob die Konfiguration erfolgreich war
 Nachdem Sie die Konfiguration abgeschlossen haben, wird im Windows PowerShell-Fenster die Meldung "Das Zurückschreiben der Kennwortzurücksetzung ist aktiviert" angezeigt, in der Konfigurationsoberfläche wird eine Erfolgsmeldung eingeblendet.
@@ -277,9 +279,7 @@ Wenn Sie nicht sicher sind, auf welches Konto sich die oben genannten Angaben be
 8.	Wählen Sie in der Dropdownliste oben den Eintrag **Nachfolgerbenutzerobjekt**.
 9.	Aktivieren Sie im nun angezeigten Dialogfeld **Berechtigungseintrag** die Kontrollkästchen für **Kennwort zurücksetzen**, **Kennwort ändern**, **Berechtigungen schreiben** für `lockoutTime` sowie **Berechtigungen schreiben** für `pwdLastSet`.
 
-    ![][026]
-    ![][027]
-    ![][028]
+    ![][026] ![][027] ![][028]
 
 10.	Klicken Sie anschließend in allen geöffneten Dialogfeldern auf **Anwenden/OK**.
 
@@ -351,4 +351,4 @@ Jetzt, da das Zurückschreiben von Kennwörtern aktiviert ist, können Sie die o
 [031]: ./media/active-directory-passwords-getting-started/031.jpg "Image_031.jpg"
 [032]: ./media/active-directory-passwords-getting-started/032.jpg "Image_032.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/27/2015"
+	ms.date="10/26/2015"
 	ms.author="selcint"/>
 
 # Verwenden von Azure PowerShell mit Azure Storage
@@ -237,7 +237,7 @@ Weitere Informationen zum Konfigurieren einer Speicherverbindungszeichenfolge fi
 
 Sie haben jetzt Ihren Computer eingerichtet und erfahren, wie Sie Abonnements und Speicherkonten mithilfe von Azure PowerShell verwalten. Fahren Sie mit dem nächsten Abschnitt fort, um zu erfahren, wie Sie Azure-Blobs und Blob-Momentaufnahmen verwalten.
 
-## Verwalten von Azure-Blobs und Blob-Momentaufnahmen
+## Verwalten von Azure-Blobs
 Der Azure-Blob-Speicher ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, beispielsweise Text- oder Binärdaten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. In diesem Abschnitt wird davon ausgegangen, dass Sie bereits mit den Konzepten des Azure-Blob-Speicherdiensts vertraut sind. Weitere Informationen finden Sie unter [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md) und [Blob-Dienst-Konzepte](http://msdn.microsoft.com/library/azure/dd179376.aspx).
 
 ### Erstellen von Containern
@@ -736,4 +736,4 @@ In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShel
 [Next Steps]: #next
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -30,22 +30,32 @@ Für das Erstellen von Stichproben ist gegenwärtig die Betaversion verfügbar. 
 Das Erstellen von Stichproben ist gegenwärtig für das ASP.NET SDK oder [beliebige Webseiten](#other-web-pages) verfügbar.
 
 ### ASP.NET-Server
-Zum Konfigurieren der Stichprobenerstellung in Ihrer Anwendung fügen Sie den folgenden Codeausschnitt in der `Application_Start()`-Methode in „Global.asax.cs“ ein:
 
-```C#
+1. Aktualisieren Sie die NuGet-Pakete Ihres Projekts auf die neueste *Vorabversion* von Application Insights. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „Manage NuGet Packages“ aus, aktivieren Sie **Include prerelease**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“. 
 
-    using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
-    // This configures sampling percentage at 10%:
-    TelemetryConfiguration.Active.TelemetryChannel = new TelemetryChannelBuilder().UseSampling(10.0).Build();
+2. Fügen Sie in „ApplicationInsights.config“ diesen Codeausschnitt hinzu
+
+```XML
+
+    <TelemetryProcessors>
+     <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.SamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+
+     <!-- Set a percentage close to 100/N where N is an integer. -->
+     <!-- E.g. 50 (=100/2), 33.33 (=100/3), 25 (=100/4), 20, 1 (=100/100), 0.1 (=100/1000) -->
+     <SamplingPercentage>10</SamplingPercentage>
+     </Add>
+   </TelemetryProcessors>
+
 ```
 
-> [AZURE.NOTE]Für den Prozentsatz der Stichprobenerstellung wählen Sie einen Prozentsatz, der sich als Bruch darstellen lässt (100/N, wobei N eine Ganzzahl ist). Gültige Werte sind z. B. 50 (=1/2), 33.33 (= 1/3), 25 (=1/4), 20 (=1/5) usw. Andere Werte werden bei der Stichprobenerstellung gegenwärtig nicht unterstützt.
+> [AZURE.NOTE]Für den Prozentsatz der Stichprobenerstellung wählen Sie einen Prozentsatz, der sich als Bruch darstellen lässt (100/N, wobei N eine Ganzzahl ist). Andere Werte werden bei der Stichprobenerstellung gegenwärtig nicht unterstützt.
 
+<a name="other-web-pages"></a>
 ### Webseiten mit JavaScript
 
 Sie können Webseiten für die Stichprobenerstellung auf einem beliebigen Server konfigurieren. Für ASP.NET-Server muss sowohl die Client- als auch die Serverseite konfiguriert werden.
 
-Beim [Konfigurieren der Webseiten für Application Insights](app-insights-javascript.md) ändern Sie den Ausschnitt, den Sie im Application Insights-Portal erhalten haben. (In ASP.NET befindet sich dieser Ausschnitt in „\_Layout.cshtml“.) Fügen Sie vor dem Instrumentationsschlüssel eine Zeile wie `samplingPercentage: 10,` ein:
+Ändern Sie beim [Konfigurieren der Webseiten für Application Insights](app-insights-javascript.md) den Ausschnitt, den Sie im Application Insights-Portal erhalten haben. (In ASP.NET befindet sich dieser Ausschnitt in „\_Layout.cshtml“.) Fügen Sie vor dem Instrumentationsschlüssel eine Zeile wie `samplingPercentage: 10,` ein:
 
     <script>
 	var appInsights= ... 
@@ -63,6 +73,26 @@ Beim [Konfigurieren der Webseiten für Application Insights](app-insights-javasc
 Geben Sie in JavaScript denselben Prozentsatz für die Stichprobenerstellung an wie auf der Serverseite.
 
 [Weitere Informationen zur API](app-insights-api-custom-events-metrics.md)
+
+
+### Alternative: Stichprobenerstellung in Servercode festlegen
+
+
+Anstatt den Stichprobenerstellungsparameter in der config-Datei festzulegen, können Sie Code verwenden. Dadurch können Sie die Stichprobenerstellung ein- oder ausschalten.
+
+*C#*
+
+```C#
+
+    using Microsoft.ApplicationInsights.Extensibility;
+    using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
+
+    // It's recommended to set SamplingPercentage in the .config file instead.
+
+    // This configures sampling percentage at 10%:
+    TelemetryConfiguration.Active.TelemetryChannel = new TelemetryChannelBuilder().UseSampling(10.0).Build();
+
+```
 
 
 ## Wann sollten Sie die Stichprobenerstellung nutzen?
@@ -132,4 +162,4 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 * Nein. Für Geräteanwendungen wird die Stichprobenerstellung gegenwärtig nicht unterstützt. 
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

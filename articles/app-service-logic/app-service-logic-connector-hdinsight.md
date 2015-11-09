@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="08/23/2015"
+   ms.date="10/22/2015"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem HDInsight-Connector und das Hinzufügen zur Logik-App
-Mithilfe des HDInsight-Connectors können Sie einen Hadoop-Cluster auf Azure erstellen und verschiedene Hadoop-Aufträge übermitteln, z. B. Hive, Pig, MapReduce und Streaming MapReduce. Der Azure HDInsight-Dienst verwendet Apache Hadoop-Cluster in der Cloud und stellt ein Software-Framework zur Verwaltung, Analyse und Berichterstellung für Big Data bereit. Der Hadoop-Kernspeicher bietet eine zuverlässige Datenspeicherung über das Hadoop Distributed File System (HDFS) und ein einfaches MapReduce-Programmiermodell zur parallelen Verarbeitung und Analyse der Daten, die in diesem verteilten System gespeichert sind. Mit dem HDInsight-Connector können Sie einen Cluster erstellen oder löschen, einen Auftrag übermitteln und warten, bis der Auftrag abgeschlossen ist.
+Mithilfe eines HDInsight-Connectors können Sie einen Hadoop-Cluster auf Azure erstellen und verschiedene Hadoop-Aufträge übermitteln, z. B. Hive-, Pig-, MapReduce- und Streaming MapReduce-Aufträge. Der Azure HDInsight-Dienst verwendet Apache Hadoop-Cluster in der Cloud und stellt ein Software-Framework zur Verwaltung, Analyse und Berichterstellung für Big Data bereit. Der Hadoop-Kernspeicher bietet eine zuverlässige Datenspeicherung über das Hadoop Distributed File System (HDFS) und ein einfaches MapReduce-Programmiermodell zur parallelen Verarbeitung und Analyse der Daten, die in diesem verteilten System gespeichert sind. Mit dem HDInsight-Connector können Sie einen Cluster erstellen oder löschen, einen Auftrag übermitteln und warten, bis der Auftrag abgeschlossen ist.
 
 Connectors können in Logik-Apps verwendet werden, um Daten im Rahmen eines Datenflusses abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Sie können den HDInsight-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
@@ -62,23 +62,23 @@ Sobald das Zertifikat erfolgreich hochgeladen wurde, werden die Zertifikatdetail
 
 ## Verwenden des Connectors in einer Logik-App ##
 
-Der HDInsight-Connector kann in der Logik-App nur als eine Aktion verwendet werden. Nehmen wir eine einfache Logik-App, die einen Cluster erstellt, einen "Hive"-Auftrag ausführt und den Cluster nach Abschluss des Auftrags löscht.
+Der HDInsight-Connector kann nur als eine Aktion in der Logik-App verwendet werden. Nehmen wir eine einfache Logik-App, die einen Cluster erstellt, einen „Hive“-Auftrag ausführt und den Cluster nach Abschluss des Auftrags löscht.
 
 
 1. Klicken Sie in der Karte "Logik starten" auf "Diese Logik manuell ausführen".
-2. Wählen Sie die aus dem Katalog erstellte HDInsight-Connector-API-App aus. Die verfügbaren Aktionen werden hier aufgeführt: ![][5]
+2. Wählen Sie die bereits erstellte HDInsight-Connector-API-App im Katalog aus. (Sie finden den von Ihnen erstellten HDInsight-Connector in der Liste mit den API-Apps rechts auf dem Bildschirm.) Wählen Sie den schwarzen Pfeil, der nach rechts zeigt. Die verfügbaren Aktionen werden aufgeführt: ![][12]
 
 3. Wählen Sie "Cluster erstellen" aus, geben Sie alle erforderlichen Clusterparameter ein, und wählen Sie ✓: ![][6]
 
 4. Die Aktion wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben der Aktion werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden: ![][7]
 
-5. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion "Auf die Erstellung des Clusters warten" aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][8]
+5. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion „Auf die Erstellung des Clusters warten“ aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][8]
 
-6. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion "Hive-Auftrag übermitteln" aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][9]
+6. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion „Hive-Auftrag übermitteln“ aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][9]
 
-7. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion "Beendigung des Auftrags abwarten" aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][10]
+7. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion „Beendigung des Auftrags abwarten“ aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][10]
 
-8. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion "Cluster löschen" aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][11]
+8. Wählen Sie denselben HDInsight-Connector aus dem Katalog als Aktion aus. Wählen Sie die Aktion „Cluster löschen“ aus, geben Sie alle erforderlichen Parameter ein, und wählen Sie ✓: ![][11]
 
 9. Speichern Sie die Logik-App mithilfe des "Speichern"-Befehls am oberen Rand des Designers.
 
@@ -105,5 +105,6 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-hdinsight/LogicApp5.jpg
 [10]: ./media/app-service-logic-connector-hdinsight/LogicApp6.jpg
 [11]: ./media/app-service-logic-connector-hdinsight/LogicApp7.jpg
+[12]: ./media/app-service-logic-connector-hdinsight/LogicApp8.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

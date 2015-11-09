@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Einführung in die Service Fabric-Integritätsüberwachung"
-   description="Dieser Artikel beschreibt das Integritätsüberwachungsmodell von Azure Service Fabric, einschließlich Integritätsentitäten, Berichterstellung und Evaluierung."
+   pageTitle="Integritätsüberwachung in Service Fabric | Microsoft Azure"
+   description="Eine Einführung in das Service Fabric-Integritätsüberwachungsmodell von Azure, das die Überwachung des Clusters sowie seiner Programme und Dienste ermöglicht."
    services="service-fabric"
    documentationCenter=".net"
    authors="oanapl"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/03/2015"
+   ms.date="10/23/2015"
    ms.author="oanapl"/>
 
 # Einführung in die Service Fabric-Integritätsüberwachung
@@ -336,4 +336,4 @@ Das Integritätsmodell wird hauptsächlich für Überwachung und Diagnose, Evalu
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

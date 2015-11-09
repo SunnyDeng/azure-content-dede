@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/26/2015"
 	ms.author="larryfr"/>
 
 # Installieren von Giraph in HDInsight Hadoop-Clustern und Verwenden von Giraph zur Verarbeitung großer Diagramme
@@ -99,9 +99,13 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
 		hadoop fs -copyFromLocal tiny_graph.txt /example/data/tiny_graph.txt
 
-4. Führen Sie das Beispiel "SimpleShortstPathsComputation" mit dem folgenden Befehl aus:
+3. Verwenden Sie Folgendes, um den vollqualifizierten Domänennamen (FQDN) des Hauptknoten des Clusters abzurufen:
 
-		 hadoop jar /usr/hdp/current/giraph/giraph-examples.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -ca mapred.job.tracker=headnode0:9010 -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /example/data/tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /example/output/shortestpaths -w 2
+        hostname -f
+        
+4. Führen Sie das Beispiel „SimpleShortstPathsComputation“ mit dem folgenden Befehl aus. Ersetzen Sie __HEADNODE__ mit dem FQDN aus dem vorherigen Schritt:
+
+		 hadoop jar /usr/hdp/current/giraph/giraph-examples.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -ca mapred.job.tracker=HEADNODE:9010 -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /example/data/tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /example/output/shortestpaths -w 2
 
 	Die mit diesem Befehl verwendeten Parameter werden in der folgenden Tabelle beschrieben.
 
@@ -110,7 +114,7 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 	| `jar /usr/hdp/current/giraph/giraph-examples.jar` | Die JAR-Datei, die die Beispiele enthält |
 	| `org.apache.giraph.GiraphRunner` | Die Klasse, die zum Starten der Beispiele verwendet wird. |
 	| `org.apache.giraph.examples.SimpleShortestPathsCoputation` | Das Beispiel, das ausgeführt wird. In diesem Fall wird der kürzeste Pfad zwischen ID 1 und allen anderen IDs im Graph berechnet. |
-	| `-ca mapred.job.tracker=headnode0:9010` | Der Hauptknoten für den Cluster. |
+	| `-ca mapred.job.tracker=HEADNODE:9010` | Der Hauptknoten für den Cluster. |
 	| `-vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFromat` | Das Eingabeformat, das für die Eingabedaten verwendet wird. |
 	| `-vip /example/data/tiny_graph.txt` | Die Eingabedatendatei. |
 	| `-vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat` | Das Ausgabeformat. In diesem Fall die ID und der Wert als Nur-Text. |
@@ -119,7 +123,7 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
 	Weitere Informationen zu diesen und anderen mit Giraph-Beispielen verwendeten Parametern finden Sie unter [Giraph Schnellstart](http://giraph.apache.org/quick_start.html).
 
-5. Nach Abschluss des Auftrags werden die Ergebnisse im Verzeichnis "\_\___wasb:///example/out/shotestpaths__" gespeichert. Die erstellten Dateien beginnen mit __part-m-__ und enden mit einer Zahl, die die erste, zweite, usw. Datei anzeigt. Verwenden Sie den folgenden Befehl, um die Ausgabe anzuzeigen:
+5. Nach Abschluss des Auftrags werden die Ergebnisse im Verzeichnis „\_\___wasb:///example/out/shotestpaths__“ gespeichert. Die erstellten Dateien beginnen mit __part-m-__ und enden mit einer Zahl, welche die erste, zweite, usw. Datei anzeigt. Verwenden Sie den folgenden Befehl, um die Ausgabe anzuzeigen:
 
 		hadoop fs -text /example/output/shortestpaths/*
 
@@ -148,4 +152,4 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
 - [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-linux.md). Verwenden Sie die Clusteranpassung, um Solr in HDInsight Hadoop-Clustern zu installieren. Solr ermöglicht es Ihnen, leistungsstarke Suchvorgänge für gespeicherte Daten durchzuführen.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

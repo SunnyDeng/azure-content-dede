@@ -40,10 +40,10 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 
 **Lassen Sie die Codeseite geöffnet**, während Sie den nächsten Schritt in einem anderen Browserfenster ausführen. Sie benötigen den Code bald.
 
-### Erstellen einer JavaScript-Webressource in Microsoft CRM
+### Erstellen einer JavaScript-Webressource in Microsoft Dynamics CRM
 
 1. Öffnen Sie Ihre CRM Online-Instanz, und melden Sie sich mit Administratorrechten an.
-2. Öffnen Sie "Microsoft Dynamics CRM", "Einstellungen", "Anpassungen" und dann "System".
+2. Öffnen Sie „Microsoft Dynamics CRM-Einstellungen“, „Anpassungen“ und „System anpassen“
 
     ![](./media/app-insights-sample-mscrm/04.png)
     
@@ -60,7 +60,7 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 
     ![](./media/app-insights-sample-mscrm/08.png)
     
-4. Kopieren Sie den Code aus Application Insights. Achten Sie beim Kopieren darauf, <script>-Tags zu ignorieren. Siehe Screenshot unten:
+4. Kopieren Sie den Code aus Application Insights. Achten Sie beim Kopieren darauf, Skript-Tags zu ignorieren. Siehe Screenshot unten:
 
     ![](./media/app-insights-sample-mscrm/09.png)
 
@@ -149,9 +149,9 @@ Klicken Sie auf das Diagramm, um weitere Details zu erhalten:
 
 Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten nach Microsoft Power BI exportieren](app-insights-export-power-bi.md).
 
-## Dynamics CRM-Beispiellösung
+## Microsoft Dynamics CRM-Beispiellösung
 
-[Hier ist die in Dynamics CRM implementierte Beispiellösung](https://dynamicsandappinsights.codeplex.com/).
+[Hier ist die in Microsoft Dynamics CRM implementierte Beispiellösung](https://dynamicsandappinsights.codeplex.com/).
 
 ## Weitere Informationen
 
@@ -161,4 +161,4 @@ Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

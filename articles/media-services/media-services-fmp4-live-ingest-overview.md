@@ -1,9 +1,9 @@
 <properties 
 	pageTitle="Spezifikation der Fragmented MP4-Echtzeiterfassung für Azure Media Services" 
-	description="Diese Spezifikation beschreibt das Protokoll und Format für die Fragmented MP4-basierte Erfassung des Live-Streamings für Microsoft Azure Media Services. Microsoft Azure Media Services bietet einen Live-Streaming-Dienst, mit dem Kunden Liveereignisse und Sendungsinhalte mit Microsoft Azure als Cloud-Plattform in Echtzeit streamen können. Zum Zeitpunkt des Verfassens des Dokuments ist das vorcodierte Fragmented MP4 der einzige Mechanismus der Echtzeiterfassung für das Live-Streaming in Microsoft Azure Media Services. In diesem Dokument werden auch optimale Verfahren bei der Erstellung hoch redundanter und stabiler Mechanismen der Echtzeiterfassung beschrieben." 
+	description="Diese Spezifikation beschreibt das Protokoll und Format für die Fragmented MP4-basierte Erfassung des Live-Streamings für Microsoft Azure Media Services. Microsoft Azure Media Services bietet einen Live-Streaming-Dienst, mit dem Kunden Liveereignisse und Sendungsinhalte mit Microsoft Azure als Cloud-Plattform in Echtzeit streamen können. In diesem Dokument werden auch optimale Verfahren bei der Erstellung hoch redundanter und stabiler Mechanismen der Echtzeiterfassung beschrieben." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="cenkdin,juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,18 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="10/21/2015" 
 	ms.author="juliako"/>
 
 #Spezifikation der Fragmented MP4-Echtzeiterfassung für Azure Media Services
 
-Diese Spezifikation beschreibt das Protokoll und Format für die Fragmented MP4-basierte Erfassung des Live-Streamings für Microsoft Azure Media Services. Microsoft Azure Media Services bietet einen Live-Streaming-Dienst, mit dem Kunden Liveereignisse und Sendungsinhalte mit Microsoft Azure als Cloud-Plattform in Echtzeit streamen können. Zum Zeitpunkt des Verfassens des Dokuments ist das vorcodierte Fragmented MP4 der einzige Mechanismus der Echtzeiterfassung für das Live-Streaming in Microsoft Azure Media Services. In diesem Dokument werden auch optimale Verfahren bei der Erstellung hoch redundanter und stabiler Mechanismen der Echtzeiterfassung beschrieben.
+Diese Spezifikation beschreibt das Protokoll und Format für die Fragmented MP4-basierte Erfassung des Live-Streamings für Microsoft Azure Media Services. Microsoft Azure Media Services bietet einen Live-Streaming-Dienst, mit dem Kunden Liveereignisse und Sendungsinhalte mit Microsoft Azure als Cloud-Plattform in Echtzeit streamen können. In diesem Dokument werden auch optimale Verfahren bei der Erstellung hoch redundanter und stabiler Mechanismen der Echtzeiterfassung beschrieben.
 
-##Konformität der Schlüsselbegriffe
+
+##1\. Konformität der Schlüsselbegriffe
 
 Die Schlüsselwörter "MUSS", "DARF NICHT", "ERFORDERLICH", "SOLL", "SOLL NICHT", "SOLLTE", "SOLLTE NICHT", "EMPFOHLEN", "KANN" und "OPTIONAL" in diesem Dokument sind wie in RFC 2119 zu verstehen.
 
-##Schematische Darstellung des Diensts 
+##2\. Schematische Darstellung des Diensts 
 
 In der folgenden schematischen Darstellung ist die allgemeine Architektur des Live-Streaming-Diensts in Microsoft Azure Media Services dargelegt:
 
@@ -36,26 +37,30 @@ In der folgenden schematischen Darstellung ist die allgemeine Architektur des Li
 ![image1][image1]
 
 
-##Bitstromformat – ISO 14496-12 Fragmented MP4
+##3\. Bitstromformat – ISO 14496-12 Fragmented MP4
 
-Das in diesem Dokument beschriebene Übertragungsformat zur Erfassung des Livestreamings basiert auf [ISO-14496-12]. Eine ausführliche Erläuterung des Fragmented MP4-Formats und der Erweiterungen für Video-on-Demand-Dateien und die Erfassung des Live-Streamings finden Sie unter [[MS-SSTR]](https://msdn.microsoft.com/library/ff469518.aspx) (in englischer Sprache).
+Das in diesem Dokument beschriebene Übertragungsformat zur Erfassung des Livestreamings basiert auf [ISO-14496-12]. Eine ausführliche Erläuterung des Fragmented MP4-Formats und der Erweiterungen für Video-on-Demand-Dateien und die Erfassung des Live-Streamings finden Sie unter [[MS-SSTR]](http://msdn.microsoft.com/library/ff469518.aspx) (in englischer Sprache).
+
+###Definitionen für Liveerfassungsformat 
 
 Es folgt eine Liste der speziellen Formatdefinitionen, die für die Echtzeiterfassung in Microsoft Azure Media Services gelten:
 
-1. Die Felder "ftyp", "LiveServerManifestBox" und "moov" MÜSSEN mit jeder Anforderung (HTTP POST) gesendet werden. Sie MÜSSEN am Anfang des Streams und immer dann gesendet werden, wenn der Encoder erneut eine Verbindung herstellen muss, um die Stream-Erfassung fortzusetzen. Weitere Informationen finden Sie im Abschnitt 6 in [1].
+1. Die Felder „ftyp“, „LiveServerManifestBox“ und „moov“ MÜSSEN immer zusammen mit Anforderungen gesendet werden (HTTP POST). Sie MÜSSEN am Anfang des Streams und immer dann gesendet werden, wenn der Encoder erneut eine Verbindung herstellen muss, um die Stream-Erfassung fortzusetzen. Weitere Informationen finden Sie im Abschnitt 6 in [1].
 2. Im Abschnitt 3.3.2 in [1] wird ein optionales Feld mit dem Namen "StreamManifestBox" für die Echtzeiterfassung definiert. Aufgrund der Routinglogik des Microsoft Azure-Lastenausgleichsmoduls ist die Verwendung dieses Felds veraltet. Es SOLLTE bei der Erfassung in Microsoft Azure Media Services NICHT vorhanden sein. Wenn dieses Feld vorhanden ist, wird es in Azure Media Services ohne Meldung ignoriert.
 3. Das in Abschnitt 3.2.3.2 in [1] definierte Feld "TrackFragmentExtendedHeaderBox" MUSS für jedes Fragment vorhanden sein.
 4. Version 2 von TrackFragmentExtendedHeaderBox SOLLTE verwendet werden, um Mediensegmente mit identischen URLs in mehreren Rechenzentren zu generieren. Das Fragmentindexfeld ist ERFORDERLICH für das rechenzentrenübergreifende Failover indexbasierter Streaming-Formate wie z. B. Apple HTTP Live Streaming (HLS) und indexbasiertes MPEG-DASH. Zum Aktivieren des rechenzentrenübergreifenden Failovers MUSS der Fragmentindex zwischen mehreren Encodern synchronisiert und für jedes folgende Medienfragment jeweils um 1 erhöht werden, auch bei Neustarts und Fehlern der Encoder.
-5. Im Abschnitt 3.3.6 in [1] wird das Feld mit der Bezeichnung "MovieFragmentRandomAccessBox" ("mfra") definiert, das am Ende der Echtzeiterfassung gesendet werden KANN, um das Ende des Streams (EOS, End-of-Stream) für den Kanal anzugeben. Aufgrund der Erfassungslogik von Azure Media Services ist die Verwendung von EOS (End-of-Stream) veraltet, und das Feld "mfra" für die Echtzeiterfassung SOLLTE NICHT gesendet werden. Wenn es dennoch gesendet wird, wird es in Azure Media Services ohne Meldung ignoriert. Es wird empfohlen, [Channel Reset](https://msdn.microsoft.com/library/azure/dn783458.aspx#reset_channels) zu verwenden, um den Status des Erfassungspunkts zurückzusetzen. Es wird auch empfohlen, [Program Stop](https://msdn.microsoft.com/library/azure/dn783463.aspx#stop_programs) zum Beenden einer Präsentation und eines Streams zu verwenden.
+5. Im Abschnitt 3.3.6 in [1] wird das Feld mit der Bezeichnung "MovieFragmentRandomAccessBox" („mfra“) definiert, das am Ende der Echtzeiterfassung gesendet werden KANN, um das Ende des Streams (EOS, End-of-Stream) für den Kanal anzugeben. Aufgrund der Erfassungslogik von Azure Media Services ist die Verwendung von EOS (End-of-Stream) veraltet, und das Feld "mfra" für die Echtzeiterfassung SOLLTE NICHT gesendet werden. Wenn es dennoch gesendet wird, wird es in Azure Media Services ohne Meldung ignoriert. Es wird empfohlen, [Channel Reset](https://msdn.microsoft.com/library/azure/dn783458.aspx#reset_channels) zu verwenden, um den Status des Erfassungspunkts zurückzusetzen. Es wird auch empfohlen, [Program Stop](https://msdn.microsoft.com/library/azure/dn783463.aspx#stop_programs) zum Beenden einer Präsentation und eines Streams zu verwenden.
 6. Die Dauer des MP4-Fragments SOLLTE konstant sein, um die Größe der Clientmanifeste zu reduzieren und die Clientdownloadheuristik durch Verwendung von Wiederholungstags zu verbessern. Die Dauer KANN schwanken, um nicht ganzzahlige Frameraten auszugleichen.
 7. Die Dauer des MP4-Fragments SOLLTE zwischen ca. 2 und 6 Sekunden liegen.
 8. Zeitstempel und Indizes des MP4-Fragments (fragment\_absolute\_time und fragment\_index für TrackFragmentExtendedHeaderBox) SOLLTEN in aufsteigender Reihenfolge eingehen. Obwohl Fragmente in Azure Media Services dupliziert werden können, sind die Möglichkeiten, Fragmente entsprechend der Medienzeitachse neu anzuordnen, nur sehr begrenzt.
 
-##Protokollformat – HTTP
+##4\. Protokollformat – HTTP
 
-Bei der Fragmented MP4-basierten Echtzeiterfassung für Microsoft Azure Media Services wird eine lang ausgeführte HTTP POST-Standardanforderung verwendet, um codierte Mediendaten im Fragmented MP4-Format an den Dienst zu übertragen. Jede HTTP POST-Anforderung sendet einen vollständigen Fragmented MP4-Bitstrom ("Stream"), der mit Headerfeldern ("ftyp", "Live Server Manifest Box" und "moov") beginnt und mit einer Sequenz von Fragmenten (Felder "moof" und "mdat") fortgesetzt wird. Weitere Informationen zur URL-Syntax für HTTP POST-Anforderungen finden Sie im Abschnitt 9.2 in [1]. Beispiel für die POST-URL:
+Bei der Fragmented MP4-basierten Echtzeiterfassung für Microsoft Azure Media Services wird eine lang ausgeführte HTTP POST-Standardanforderung verwendet, um codierte Mediendaten im Fragmented MP4-Format an den Dienst zu übertragen. Jede HTTP POST-Anforderung sendet einen vollständigen Fragmented MP4-Bitstrom („Stream“"), der mit Headerfeldern („ftyp“, „Live Server Manifest Box“ und „moov“) beginnt und mit einer Sequenz von Fragmenten (Felder „moof“ und "mdat") fortgesetzt wird. Weitere Informationen zur URL-Syntax für HTTP POST-Anforderungen finden Sie im Abschnitt 9.2 in [1]. Beispiel für die POST-URL:
 
 	http://customer.channel.mediaservices.windows.net/ingest.isml/streams(720p)
+
+###Anforderungen
 
 Es folgen die detaillierten Anforderungen:
 
@@ -67,11 +72,11 @@ Es folgen die detaillierten Anforderungen:
 6. Der Encoder DARF das in Abschnitt 9.2 in [1] beschriebene Events()-Nomen NICHT für die Echtzeiterfassung in Microsoft Azure Media Services verwenden.
 7. Wenn die HTTP POST-Anforderung vor dem Ende des Streams mit einem TCP-Fehler beendet wird oder das Zeitlimit überschreitet, MUSS der Encoder unter Verwendung einer neuen Verbindung eine neue Anforderung ausgeben und dabei die oben genannten Anforderungen erfüllen. Zudem gilt die zusätzliche Anforderung, dass der Encoder die vorherigen zwei MP4-Fragmente für jede Spur im Stream erneut senden und den Stream ohne Fehlstellen in der Medienzeitachse fortsetzen MUSS. Durch das erneute Senden der letzten beiden MP4-Fragmente für jede Spur wird sichergestellt, dass keine Daten verloren gehen. Mit anderen Worten: Wenn ein Stream eine Audio- und eine Videospur enthält und bei der aktuellen POST-Anforderung ein Fehler auftritt, muss der Encoder eine neue Verbindung herstellen und die letzten zwei zuvor erfolgreich gesendeten Fragmente für die Audiospur sowie die letzten zwei zuvor erfolgreich gesendeten Fragmente für die Videospur erneut senden, um sicherzustellen, dass keine Daten verloren gehen. Der Encoder MUSS einen vorausschauenden Puffer der Medienfragmente beibehalten, den er beim Wiederherstellen der Verbindung erneut sendet.
 
-##Zeitskala 
+##5\. Zeitskala 
 
 Unter [[MS-SSTR]](https://msdn.microsoft.com/library/ff469518.aspx) wird die Verwendung der Zeitskala für SmoothStreamingMedia (Abschnitt 2.2.2.1), StreamElement (Abschnitt 2.2.2.3), StreamFragmentElement (Abschnitt 2.2.2.6) und LiveSMIL (Abschnitt 2.2.7.3.1) beschrieben. Wenn der Zeitskala-Wert nicht vorhanden ist, wird der Standardwert "10.000.000" (10 MHz) verwendet. Obwohl die Spezifikation des Smooth Streaming-Formats die Verwendung anderer Zeitskala-Werte nicht blockiert, verwenden die meisten Encoder-Implementierungen diesen Standardwert (10 MHz), um Smooth Streaming-Erfassungsdaten zu generieren. Wegen der Funktion [Azure Media Services Dynamic Packaging](media-services-dynamic-packaging-overview.md) wird empfohlen, 90 kHz als Zeitskala für Videostreams sowie 44,1 kHz oder 48,1 kHz für Audiostreams zu verwenden. Wenn für verschiedene Streams unterschiedliche Zeitskala-Werte verwendet werden, MUSS die Zeitskala der Streamebene gesendet werden. Weitere Informationen finden Sie unter [[MS-SSTR]](https://msdn.microsoft.com/library/ff469518.aspx).
 
-##Definition von "Stream"  
+##6\. Definition von "Stream"  
 
 Ein "Stream" ist die Basiseinheit für Vorgänge in der Echtzeiterfassung beim Erstellen von Livepräsentationen sowie beim Verarbeiten von Streaming-Failovers und Redundanzszenarios. Ein "Stream" ist definiert als ein eindeutiger Fragmented MP4-Bitstrom, der eine oder mehrere Spuren enthalten kann. Eine vollständige Livepräsentation kann je nach Konfiguration des/der Live-Encoder einen oder mehrere Streams enthalten. In den folgenden Beispielen werden verschiedene Optionen zum Erstellen einer vollständigen Livepräsentation unter Verwendung eines oder mehrerer Streams veranschaulicht.
 
@@ -107,7 +112,7 @@ Bei dieser Option wird die Audiospur mit der Videospur mit der niedrigsten Bitra
 
 Die obigen Beispiele sind keine vollständige Liste aller möglichen Erfassungsoptionen für dieses Beispiel. Tatsächlich werden bei der Echtzeiterfassung alle möglichen Gruppierungen der Spuren in Streams unterstützt. Basierend auf der technischen Komplexität, der Kapazität des Encoders sowie auf Überlegungen zu Redundanz und Failover können Kunden und Anbieter von Encodern ihre eigenen Implementierungen auswählen. Es ist jedoch zu beachten, dass es in den meisten Fällen nur eine Audiospur für die gesamte Livepräsentation gibt. Daher ist es wichtig, die Stabilität des Streams zu gewährleisten, der die Audiospur enthält. Diese Überlegung führt häufig dazu, dass die Audiospur einen eigenen Stream erhält (wie in Option 2) oder dass sie mit der Videospur mit der niedrigsten Bitrate gebündelt wird (wie in Option 3). Auch im Hinblick auf eine bessere Redundanz und Fehlertoleranz wird das Senden der gleichen Audiospur in zwei verschiedenen Streams (Option 2 mit redundanten Audiospuren) oder die Bündelung der Audiospur in mindestens zwei Videospuren mit der niedrigsten Bitrate (Option 3 mit gebündeltem Audiostream in mindestens zwei Videostreams) für die Echtzeiterfassung in Microsoft Azure Media Services dringend empfohlen.
 
-##Dienstfailover 
+##7\. Dienstfailover 
 
 Angesichts der Eigenschaften des Live-Streamings ist eine gute Failoverunterstützung von großer Bedeutung für die gewährleistete Verfügbarkeit des Diensts. Microsoft Azure Media Services ist so konzipiert, dass verschiedene Arten von Fehlern, darunter Netzwerkfehler, Serverfehler oder Speicherprobleme, behoben werden können. Bei Verwendung in Verbindung mit der geeigneten Failoverlogik des Live-Encoders erhalten Kunden einen hoch zuverlässigen Live-Streaming-Dienst in der Cloud.
 
@@ -125,7 +130,7 @@ In diesem Abschnitt werden Szenarios für Dienstfailover erörtert. In diesem Fa
 	4. Die letzten zwei Fragmente für jede Spur MÜSSEN erneut gesendet werden, und das Streaming muss ohne Fehlstellen in der Medienzeitachse fortgesetzt werden. Die Zeitstempel der MP4-Fragmente müssen kontinuierlich erhöht werden, auch bei mehreren HTTP POST-Anforderungen.
 6. Der Encoder SOLLTE die HTTP POST-Anforderung beenden, wenn Daten nicht mit einer Rate gesendet werden, die der Dauer des MP4-Fragments entspricht. Eine HTTP POST-Anforderung, die keine Daten sendet, kann verhindern, dass Azure Media Services im Fall einer Aktualisierung des Diensts die Verbindung mit dem Encoder schnell trennt. Aus diesem Grund SOLLTEN die HTTP POST-Anforderungen für platzsparende Spuren (Signal für Werbung) kurzlebig sein und beendet werden, sobald das Fragment gesendet wurde.
 
-##Encoder-Failover
+##8\. Encoder-Failover
 
 Das Encoder-Failover ist das zweite Failoverszenario, das für die Übermittlung des End-to-End-Live-Streamings betrachtet werden muss. In diesem Szenario ist der Fehler beim Encoder aufgetreten.
 
@@ -141,7 +146,7 @@ Im Folgenden sind die Erwartungen im Hinblick auf den Echtzeiterfassungsendpunkt
 5. Der neue Stream MUSS dem vorherigen Stream semantisch entsprechen und auf Header- und Fragmentebene austauschbar sein.
 6. Der neue Encoder SOLLTE versuchen, den Datenverlust zu minimieren. Die Werte für "fragment\_absolute\_time" und "fragment\_index" von Medienfragmenten SOLLTEN sich ab dem Punkt erhöhen, an dem der Encoder zuletzt beendet wurde. Die Werte für "fragment\_absolute\_time" und "fragment\_index" SOLLTEN sich kontinuierlich erhöhen, können jedoch bei Bedarf eine Fehlstelle aufweisen. Azure Media Services ignoriert Fragmente, die bereits empfangen und verarbeitet wurden. Daher ist es besser, im Zweifelsfall Fragmente erneut zu senden, als Fehlstellen in die Medienzeitachse einzuführen. 
 
-##Encoder-Redundanz 
+##9\. Encoder-Redundanz 
 
 Für bestimmte kritische Liveereignisse, die eine noch höhere Verfügbarkeit und Quality of Experience erfordern, wird der Einsatz redundanter Aktiv-Aktiv-Encoder empfohlen, um ein nahtloses Failover ohne Datenverlust zu erreichen.
 
@@ -151,13 +156,13 @@ Wie in der Abbildung oben dargestellt, gibt es zwei Gruppen von Encodern, die zw
 
 Die Anforderungen für dieses Szenario sind nahezu identisch mit den Anforderungen für das Szenario des Encoder-Failovers, mit der Ausnahme, dass die zweite Gruppe von Encodern zur gleichen Zeit wie die primären Encoder ausgeführt wird.
 
-##Dienstredundanz  
+##10\. Dienstredundanz  
 
 Für eine hoch redundante globale Verteilung ist es manchmal erforderlich, eine regionsübergreifende Sicherung durchzuführen, um regionalen Ausfällen entgegenzuwirken. Durch Erweiterung der Topologie unter "Encoder-Redundanz" können Kunden eine redundante Dienstbereitstellung in einer anderen Region festlegen, die mit der zweiten Gruppe von Encodern verbunden ist. Kunden können zudem mit einem CDN-Anbieter zusammenarbeiten, um einen Global Traffic Manager (GTM) vor den beiden Dienstbereitstellungen bereitzustellen und so den Clientdatenverkehr nahtlos weiterzuleiten. Die Anforderungen für die Encoder sind identisch mit den Anforderungen für den Fall unter "Encoder-Redundanz", mit der einzigen Ausnahme, dass die zweite Gruppe von Encodern auf einen anderen Echtzeiterfassungsendpunkt verweisen muss. Dieses Setup ist in der folgenden Abbildung dargestellt:
 
 ![Bild7][image7]
 
-##Spezielle Typen von Erfassungsformaten 
+##11\. Spezielle Typen von Erfassungsformaten 
 
 In diesem Abschnitt werden einige spezielle Formattypen für die Echtzeiterfassung erörtert, die für einige spezifische Szenarios entwickelt wurden.
 
@@ -195,7 +200,6 @@ Es folgt eine empfohlene Implementierung für redundante Audiospuren:
 2. Verwenden Sie separate Streams, um die Videos mit den beiden niedrigsten Bitraten zu senden. Jeder dieser Streams SOLLTE auch eine Kopie jeder eindeutigen Audiospur enthalten. Wenn beispielsweise mehrere Sprachen unterstützt werden, SOLLTEN diese Streams Audiospuren für jede Sprache enthalten.
 3. Verwenden Sie separate Serverinstanzen (Encoder) zum Codieren und Senden der in (1) und (2) genannten redundanten Streams. 
 
-
 ##Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
@@ -215,4 +219,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

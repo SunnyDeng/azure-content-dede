@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="10/27/2015"
 	ms.author="jhubbard"/>
 
 
@@ -23,6 +23,7 @@ In diesem Lernprogramm lernen sie die Grundlagen von Azure SQL Data Sync mit dem
 
 Für dieses Lernprogramm wird minimale vorherige Erfahrung mit SQL Server und Azure SQL Database vorausgesetzt. In diesem Lernprogramm erstellen Sie eine hybride (aus SQL Server- und SQL Database-Instanzen bestehende) Synchronisierungsgruppe, die vollständig gemäß einem von Ihnen festgelegten Zeitplan konfiguriert und synchronisiert wird.
 
+**Wichtiger Hinweis** Die gesamte technische Dokumentation zur SQL-Datensynchronisierung von Azure, die früher im MSDN zu finden war, ist jetzt in einer PDF-Datei enthalten, die [hier](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) zum Download bereitsteht.
 
 ## Schritt 1: Herstellen einer Verbindung zur Azure SQL-Datenbank
 
@@ -63,7 +64,7 @@ Stellen Sie sicher, dass die folgende Software auf dem Computer installiert ist,
 <a id="InstallClient"></a>
 ### Schritt 2b: Installieren eines neuen Client-Agents
 
-Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Data Sync)](http://msdn.microsoft.com/library/jj823137.aspx), um den Agent zu installieren.
+Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Daten-Synchronisierung)],((http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) um den Agent zu installieren.
 
 
 
@@ -80,7 +81,7 @@ Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Data Sync)]
 
 ## Schritt 3: Registrieren einer SQL Server-Datenbank mit dem Client-Agent
 
-Registrieren Sie nach der Installation des Client-Agents jede lokale SQL Server-Datenbank, die Sie mit dem Agent in eine Synchronisierungsgruppe integrieren möchten. Wenn Sie mit dem Agent eine Datenbank registrieren möchten, folgen Sie den Anweisungen unter [Registrieren einer SQL Server-Datenbank mit dem Client-Agent](http://msdn.microsoft.com/library/jj823138.aspx).
+Registrieren Sie nach der Installation des Client-Agents jede lokale SQL Server-Datenbank, die Sie mit dem Agent in eine Synchronisierungsgruppe integrieren möchten. Wenn Sie mit dem Agent eine Datenbank registrieren möchten, folgen Sie den Anweisungen unter [Registrieren einer SQL Server-Datenbank mit dem Client-Agent](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf).
 
 
 
@@ -195,11 +196,11 @@ Herzlichen Glückwunsch. Sie haben nun eine Synchronisierungsgruppe erstellt, di
 ## Nächste Schritte
 Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
-* [Download der technischen Dokumentation zur SQL-Datensynchronisierung](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
+* [Download der gesamten technischen Dokumentation zur SQL-Datensynchronisierung](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
 * [Übersicht über die SQL-Datenbank](sql-database-technical-overview.md)
 * [Datenbank-Lebenszyklusverwaltung](https://msdn.microsoft.com/library/jj907294.aspx)
  
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -27,26 +27,14 @@ Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure Po
 
 ## Schritt 1: Installieren von Azure PowerShell
 
-Ebenfalls müssen Sie über die Azure PowerShell-Version 1.0.0 oder eine aktuellere verfügen. Falls Azure PowerShell noch nicht installiert und konfiguriert ist, klicken Sie für die Anleitung bitte [hier](../powershell-install-configure.md).
-
-Sie können die von Ihnen installierte Azure Power Shell-Version mit diesem Befehl über die Azure PowerShell-Eingabeaufforderung prüfen.
-
-	Get-Module azure | format-table version
-
-Beispiel:
-
-	Version
-	-------
-	1.0.0
-
-Falls Sie nicht über Version 1.0.0 oder eine aktuellere verfügen, müssen Sie Azure PowerShell in der Systemsteuerung über "Programme und Funktionen" entfernen und anschließend die aktuellste Version installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 ## Schritt 2: Festlegen des Abonnements
 
 Starten Sie zunächst eine Azure PowerShell-Eingabeaufforderung.
 
 Melden Sie sich in Ihrem Konto an.
-	
+
 	Login-AzureRmAccount
 
 Rufen Sie Ihren Abonnementnamen mit dem folgenden Befehl ab.
@@ -130,8 +118,8 @@ Verwenden Sie diesen Befehl zum Auflisten der vorhandenen Verfügbarkeitsgruppen
 
 	Get-AzureRmAvailabilitySet –ResourceGroupName $rgName | Sort Name | Select Name
 
-### NAT-Regeln	
-	
+### NAT-Regeln
+
 Virtuelle Computer auf Ressourcen-Manager-Basis können mit eingehenden NAT-Regeln zum Zulassen von eingehendem Datenverkehr aus dem Internet konfiguriert und in eine Gruppe mit Lastenausgleich platziert werden. In beiden Fällen müssen Sie eine Load Balancer-Instanz und andere Einstellungen angeben. Weitere Informationen finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
 
 Virtuelle Computer, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, erfordern ein virtuelles Netzwerk mit dem Ressourcen-Manager. Erstellen Sie bei Bedarf ein neues virtuelles Netzwerk auf Ressourcen-Manager-Basis mit mindestens einem Subnetz für den neuen virtuellen Computer. Hier ist ein Beispiel für ein neues virtuelles Netzwerk namens **TestNet** mit zwei Subnetzen namens **frontendSubnet** und **backendSubnet**.
@@ -215,7 +203,7 @@ Zum Erstellen einer Netzwerkkarte und Hinzufügen der Karte zu einer Load Balanc
 - Die Indexnummer des Back-End-Adresspools der Load Balancer-Instanz zum Zuweisen auf die NIC.
 - Die Indexnummer der eingehenden NAT-Regel zum Zuweisen auf die NIC.
 
-Informationen zum Erstellen einer Load Balancer-Instanz mit eingehenden NAT-Regeln finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+Informationen zum Erstellen einer Lastenausgleichsmodul-Instanz mit eingehenden NAT-Regeln finden Sie unter [Erstellen eines Lastenausgleichsmoduls mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
 
 Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen Namen und Indexnummern an.
 
@@ -235,7 +223,7 @@ Zum Erstellen einer Netzwerkkarte und Hinzufügen der Karte zu einer Load Balanc
 - Den Namen einer zuvor erstellten Load Balancer-Instanz, die über eine Regel für den eingehenden Datenverkehr verfügt.
 - Die Indexnummer des Back-End-Adresspools der Load Balancer-Instanz zum Zuweisen auf die NIC.
 
-Informationen zum Erstellen einer Load Balancer-Instanz mit Regeln für Datenverkehr mit Lastenausgleich finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+Informationen zum Erstellen einer Lastenausgleichsmodul-Instanz mit Regeln für Datenverkehr mit Lastenausgleich finden Sie unter [Erstellen eines Lastenausgleichsmoduls mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
 
 Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen Namen und Indexnummern an.
 
@@ -388,12 +376,12 @@ Hier finden Sie den Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
+[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
 
 [Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

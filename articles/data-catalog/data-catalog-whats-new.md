@@ -13,12 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="10/16/2015"
+   ms.date="10/23/2015"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
+
+## Neuerungen in der Version der Woche ab dem 23. Oktober 2015
+
+In der Woche ab dem 23. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für Teradata-Datenquellen. Benutzer können nun Teradata-Tabellen und -Sichten registrieren und ermitteln.
+
+> [AZURE.NOTE]Bei der aktuellen Version wird nur die Teradata TD2-Authentifizierung unterstützt. Zusätzliche Authentifizierungsmethoden werden in zukünftigen Versionen hinzugefügt.
 
 ## Neuigkeiten in der Version der Woche ab dem 16. Oktober 2015
 
@@ -32,14 +40,14 @@ In der Woche ab dem 16. Oktober 2015 wurden **Azure Data Catalog** die folgend
 
 In der Woche ab dem 9. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
-- Unterstützung für Rich Text-Dokumentation für registrierte Datenbestände und Container im Azure Data Catalog-Portal. Benutzer können jetzt Dokumentation für Datenbestände, z. B. Tabellen, Ansichten und Berichte, sowie für Container, z. B. Datenbanken und Modelle, für Szenarien bereitstellen, bei denen Tags und Beschreibungen nicht ausreichen.
+- Unterstützung für Rich Text-Dokumentation für registrierte Datenbestände und Container im Azure Data Catalog-Portal. Benutzer können jetzt Dokumentation für Datenbestände, z. B. Tabellen, Ansichten und Berichte, sowie für Container, z. B. Datenbanken und Modelle, für Szenarios bereitstellen, bei denen Tags und Beschreibungen nicht ausreichen.
 
 ## Neuigkeiten in der Version der Woche ab dem 2. Oktober 2015
 
 In der Woche ab dem 2. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für die manuelle Registrierung bekannter Datenquellentypen. Benutzer können Datenquelleninformationen manuell über das **Azure Data Catalog**-Portal für alle Datentypen eingeben, die von **Azure Data Catalog** unterstützt werden.
-- Unterstützung für die Autorisierung von Azure Active Directory-Sicherheitsgruppen. Katalogadministratoren können den Katalogzugriff auf Sicherheitsgruppen und auf Benutzerkonten ermöglichen, um die Verwaltung des Zugriffs auf **Azure Data Catalog** zu vereinfachen.
+- Unterstützung für die Autorisierung von Azure Active Directory-Sicherheitsgruppen. Katalogadministratoren können den Katalogzugriff für Sicherheitsgruppen und Benutzerkonten ermöglichen, um die Verwaltung des Zugriffs auf **Azure Data Catalog** zu vereinfachen.
 - Unterstützung für das Öffnen von Hive-Datenquellen in Excel über das **Azure Data Catalog**-Portal.
 
 > [AZURE.NOTE]Zum Verwenden des Features „In Excel öffnen“ für Hive-Datenquellen müssen Benutzer den ODBC-Treiber für Hive installieren.
@@ -49,7 +57,7 @@ In der Woche ab dem 2. Oktober 2015 wurden **Azure Data Catalog** die folgende
 In der Woche ab dem 25. September 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für das Einbinden von Datenprofilen, wenn Hive-Datenquellen registriert werden.
-- Unterstützung für programmgesteuertes Ermitteln der Catalog-API, wodurch es einfacher wird, Anwendungen in **Azure Data Catalog** zu integrieren.
+- Unterstützung für programmgesteuertes Ermitteln der Catalog-API, um Anwendungen noch einfacher in **Azure Data Catalog** zu integrieren.
 
 ## Neuigkeiten in der Version der Woche ab dem 18. September 2015
 
@@ -98,4 +106,4 @@ In der Woche ab dem 21. August 2015 wurden **Azure Data Catalog** die folgenden
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure-Blob-Speichern. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

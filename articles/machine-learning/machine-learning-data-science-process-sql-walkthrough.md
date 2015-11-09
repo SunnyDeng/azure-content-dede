@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/18/2015" 
+	ms.date="10/27/2015" 
 	ms.author="mohabib;fashah;bradsev"/>
 
 
 # Cortana-Analyseprozess (CAP) in Aktion: Verwenden von SQL Server
 
-In diesem Tutorial werden Sie durch die Erstellung und Bereitstellung eines Modells geleitet. Hierbei wird das öffentlich verfügbare DataSets [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) verwendet. Das Verfahren folgt dem Leitfaden "Advanced Analytics Process and Technology (ADAPT)".
+In diesem Tutorial werden Sie durch die Erstellung und Bereitstellung eines Modells geleitet. Hierbei wird das öffentlich verfügbare DataSets [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) verwendet. Die Prozedur entspricht dem Workflow „Cortana Analytics Prozess“ (CAP).
 
 
 ## <a name="dataset"></a>Beschreibung des NYC Taxi Trips-DataSets
@@ -714,4 +714,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [project-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -1,14 +1,27 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit ZScaler One | Microsoft Azure" description="Hier erfahren Sie, wie Sie ZScaler One mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit ZScaler One | Microsoft Azure" 
+    description="Hier erfahren Sie, wie Sie ZScaler One mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Zscaler One
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=613694), um Feedback abzugeben.
 
 In diesem Tutorial wird die Integration von Azure und Zscaler One erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein Zscaler One-Abonnement, für das einmaliges Anmelden aktiviert ist  
 
-Nach Abschluss dieses Tutorials können sich die Zscaler One zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler One-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx) nutzen.
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Zscaler One zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Zscaler One-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -44,7 +57,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Zsc
 
 	![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-zscaler-one-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** das Wort **Zscaler One** ein.
+6.  Geben Sie im **Suchfeld** den Suchbegriff **Zscaler One** ein.
 
 	![Anwendungskatalog](./media/active-directory-saas-zscaler-one-tutorial/IC800215.png "Anwendungskatalog")
 
@@ -54,7 +67,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Zsc
 
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Zscaler One zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren Zscaler One-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Zscaler One zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren Zscaler One-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -66,7 +79,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 	![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-zscaler-one-tutorial/IC800218.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Zscaler One-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Zscaler One verwenden, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Zscaler One-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Zscaler One verwenden, und klicken Sie dann auf **Weiter**.
 
 	![App-URL konfigurieren](./media/active-directory-saas-zscaler-one-tutorial/IC800219.png "App-URL konfigurieren")
 
@@ -97,7 +110,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 	![Einmaliges Anmelden](./media/active-directory-saas-zscaler-one-tutorial/IC800209.png "Einmaliges Anmelden")
 
-	1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ZScaler One** den Wert der **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **URL des SAML-Portals, an das Benutzer zur Authentifizierung weitergeleitet werden** ein.  
+	1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Zscaler One** den Wert der **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **URL des SAML-Portals, an das Benutzer zur Authentifizierung weitergeleitet werden** ein.  
 	2.  Geben Sie im Textfeld **Attribut mit Anmeldenamen** die **NameID** ein.  
 	3.  Klicken Sie auf **Zscaler pem**, um das heruntergeladene Zertifikat hochzuladen.  
 	4.  Wählen Sie **Automatische SAML-Bereitstellung aktivieren**.  
@@ -134,8 +147,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 	![Proxyserver](./media/active-directory-saas-zscaler-one-tutorial/IC769494.png "Proxyserver")
 
 	1.  Wählen Sie "Proxyserver für LAN verwenden" aus.  
-	2.  Geben Sie in das Textfeld "Adresse" **gateway.zscalerone.net** ein.  
-	3.  Geben Sie im Textfeld "Port" **80** ein.  
+	2.  Geben Sie in das Textfeld „Adresse“ **gateway.zscalerone.net** ein.  
+	3.  Geben Sie im Textfeld „Port“ **80** ein.  
 	4.  Wählen Sie **Proxyserver für lokale Adressen umgehen**.  
 	5.  Klicken Sie zum Schließen des Dialogfelds **Local Area Network (LAN) Settings** auf **OK**.  
 
@@ -178,14 +191,14 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 1.  Erstellen Sie im Azure AD-Portal ein Testkonto.  
 
-2.  Klicken Sie auf der Anwendungsintegrationsseite für **ZScaler One** auf **Benutzer zuweisen**.
+2.  Klicken Sie auf der Anwendungsintegrationsseite für **Zscaler One** auf **Benutzer zuweisen**.
 
 	![Benutzer zuweisen](./media/active-directory-saas-zscaler-one-tutorial/IC800222.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
 	![Ja](./media/active-directory-saas-zscaler-one-tutorial/IC767830.png "Ja")
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

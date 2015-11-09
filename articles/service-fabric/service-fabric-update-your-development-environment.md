@@ -4,7 +4,7 @@
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="samgeo"
+   manager="timlt"
    editor=""/>
 
 <tags
@@ -53,4 +53,4 @@ Das ist alles! Sie können Visual Studio jetzt starten und mit dem Erstellen von
 
  [1]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

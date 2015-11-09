@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="09/29/2015" 
+    ms.date="10/28/2015" 
     ms.author="elizapo" />
 
 
@@ -30,7 +30,7 @@ Lesen Sie weiter, um mehr über die Besonderheiten von Benutzerprofildaten zu er
 
 ## Wie kann ein Administrator auf die Daten zugreifen?
 
-Wenn Sie Zugriff auf die Daten für einen Ihrer Benutzer benötigen (für die Wiederherstellung im Notfall oder wenn der Benutzer das Unternehmen verlässt), wenden Sie sich an den Support von [Azure RemoteApp](mailto:remoteappforum@microsoft.com), und stellen Sie die Abonnementinformationen für die Sammlung und die Identität des Benutzers bereit. Vom Azure RemoteApp-Team erhalten Sie eine URL, mit der Sie auf die Daten zugreifen können. Von dort aus können Sie zum Speicherort navigieren und alle benötigten Dokumente oder Dateien abrufen.
+Wenn Sie Zugriff auf die Daten für einen Ihrer Benutzer benötigen (für die Wiederherstellung im Notfall oder wenn der Benutzer das Unternehmen verlässt), wenden Sie sich an den Support von [Azure RemoteApp](mailto:remoteappforum@microsoft.com), und stellen Sie die Abonnementinformationen für die Sammlung und die Identität des Benutzers bereit. Das Team von Azure RemoteApp stellt Ihnen eine URL für die virtuelle Festplatte zur Verfügung. Laden Sie diese VHD herunter, und rufen Sie alle Dokumente oder Dateien ab, die Sie benötigen. Die virtuelle Festplatte hat eine Größe von 50 GB, weshalb das Herunterladen ein wenig Zeit in Anspruch nimmt.
 
 
 ## Werden die Daten gesichert?
@@ -126,4 +126,4 @@ Nein, dies wird von Azure RemoteApp nicht unterstützt, da der RDSH genutzt wird
 
 Nein, dies wird von Azure RemoteApp nicht unterstützt.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

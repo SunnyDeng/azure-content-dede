@@ -1,2 +1,4 @@
 
->[AZURE.TIP]The data extension packages are included in the quickstart extension package. The server project that you download from the portal already has data access using Entity Framework enabled. To learn how to install and initialize Entity Framework for data access when not using the quickstart extension, see [How to: Define a table controller](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-define-a-table-controller).
+>[AZURE.TIP]Die Datenerweiterungspakete sind im Schnellstart-Erweiterungspaket enthalten. Für das Serverprojekt, das Sie über das Portal heruntergeladen haben, ist der Datenzugriff über Entity Framework bereits aktiviert. Informationen dazu, wie Sie Entity Framework für den Datenzugriff installieren und initialisieren, wenn Sie die Schnellstarterweiterung nicht verwenden, finden Sie unter [Definieren eines Tabellencontrollers](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-define-a-table-controller).
+
+<!---HONumber=Nov15_HO1-->

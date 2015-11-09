@@ -18,6 +18,12 @@
 
 
 # Laden von Daten mit bcp
+
+> [AZURE.SELECTOR]
+- [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)
+- [PolyBase](sql-data-warehouse-load-with-polybase-short.md)
+- [BCP](sql-data-warehouse-load-with-bcp.md)
+
 **[bcp][]** ist ein Befehlszeilen-Dienstprogramm zum Massenladen, das es Ihnen ermöglicht, Daten zwischen SQL Server, Datendateien und SQL Data Warehouse zu kopieren. Verwenden sie bcp zum Importieren großer Mengen an neuen Zeilen in SQL Data Warehouse-Tabellen oder zum Exportieren von Daten aus SQL Server-Tabellen in Datendateien. bcp erfordert außer bei Verwendung mit der queryout-Option keine Kenntnisse von Transact-SQL.
 
 bcp bietet eine schnelle und einfache Möglichkeit, um kleinere DataSets in und aus einer SQL Data Warehouse-Datenbank zu verschieben. Die genaue Empfehlung für die mit bcp zu ladende/extrahierte Datenmenge hängt von der Netzwerkverbindung mit dem Azure-Rechenzentrum ab. Im Allgemeinen können Dimensionstabellen geladen und extrahiert werden, relativ große Faktentabellen können jedoch viel Zeit zum Laden oder Extrahieren benötigen.
@@ -32,7 +38,10 @@ In diesem Lernprogramm lernen Sie Folgendes:
 - Importieren von Daten in eine Tabelle mithilfe des „bcp in“-Befehls
 - Exportieren von Daten aus einer Tabelle mithilfe des „bcp out“-Befehls
 
+>[AZURE.VIDEO loading-data-into-azure-sql-data-warehouse-with-bcp]
+
 ## Voraussetzungen
+
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 - Eine SQL Data Warehouse-Datenbank
@@ -41,10 +50,12 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 >[AZURE.NOTE]Sie können die Dienstprogramme bcp und sqlcmd im [Microsoft Download Center][] herunterladen.
 
-##Importieren von Daten in SQL Data Warehouse
+## Importieren von Daten in SQL Data Warehouse
+
 In diesem Lernprogramm erstellen Sie eine Tabelle in Azure SQL Data Warehouse und importieren Daten in die Tabelle.
 
 ### Schritt 1: Erstellen einer Tabelle in Azure SQL Data Warehouse
+
 Verbinden Sie über eine Eingabeaufforderung die Instanz mit dem folgenden Befehl (ersetzen Sie die Werte nach Bedarf):
 
 ```
@@ -162,4 +173,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

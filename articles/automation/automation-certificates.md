@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Zertifikatobjekte in Azure Automation | Microsoft Azure"
-   description="Zertifikate können sicher in Azure Automation gespeichert werden, sodass sie von Runbooks zur Authentifizierung bei Azure und Drittanbieterressourcen verwendet werden können. Dieser Artikel stellt eine ausführliche Beschreibung von Zertifikaten bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
+   description="Zertifikate können sicher in Azure Automation gespeichert werden, sodass sie von Runbooks oder DSC-Konfigurationen zur Authentifizierung bei Azure und Drittanbieterressourcen verwendet werden können. Dieser Artikel stellt eine ausführliche Beschreibung von Zertifikaten bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -12,18 +12,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/18/2015"
+   ms.date="10/23/2015"
    ms.author="bwren" />
 
 # Zertifikatobjekte in Azure Automation
 
-Zertifikate können sicher in Azure Automation gespeichert werden, sodass Sie aus Runbooks mithilfe der Aktivität **Get-AutomationCertificate** darauf zugreifen können. Auf diese Weise können Sie Runbooks erstellen, die Zertifikate für die Authentifizierung verwenden oder diese zu Azure oder zu Drittanbieterressourcen hinzufügen, die möglicherweise über Ihr Runbook erstellt oder konfiguriert werden.
+Zertifikate können sicher in Azure Automation gespeichert werden, sodass Sie aus Runbooks oder DSC-Konfigurationen mithilfe der Aktivität **Get-AutomationCertificate** darauf zugreifen können. Auf diese Weise können Sie Runbooks und DSC-Konfigurationen erstellen, die Zertifikate für die Authentifizierung verwenden oder diese zu Azure oder zu Drittanbieterressourcen hinzufügen.
 
 >[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
 
 ## Windows PowerShell-Cmdlets
 
-Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Automation-Variablen mit Windows PowerShell verwendet. Sie gehören zum Lieferumfang des [Azure PowerShell-Moduls](../powershell-install-configure.md), das zur Verwendung in Automation-Runbooks verfügbar ist.
+Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Automation-Variablen mit Windows PowerShell verwendet. Sie gehören zum Lieferumfang des [Azure PowerShell-Moduls](../powershell-install-configure.md), das zur Verwendung in Automation-Runbooks und DSC-Konfigurationen verfügbar ist.
 
 |Cmdlets|Beschreibung|
 |:---|:---|
@@ -32,19 +32,19 @@ Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Auto
 |[Remove- AzureAutomationCertificate](http://msdn.microsoft.com/library/dn913773.aspx)|Entfernt ein Zertifikat aus Azure Automation.|
 |[Set- AzureAutomationCertificate](http://msdn.microsoft.com/library/dn913763.aspx)|Legt die Eigenschaften für ein vorhandenes Zertifikat fest, lädt die Zertifikatdatei hoch und legt das Kennwort für eine PFX-Datei fest.|
 
-## Runbookaktivitäten
+## Aktivitäten zum Zugreifen auf Zertifikate
 
-Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Zertifikate in einem Runbook verwendet.
+Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Zertifikate in einem Runbook oder einer DSC-Konfiguration verwendet.
 
 |Aktivitäten|Beschreibung|
 |:---|:---|
-|Get-AutomationCertificate|Ruft ein Zertifikat zur Verwendung in einem Runbook ab.|
+|Get-AutomationCertificate|Ruft ein Zertifikat zur Verwendung in einem Runbook oder einer DSC-Konfiguration ab.|
 
->[AZURE.NOTE]Vermeiden Sie die Verwendung von Variablen im Parameter "-Name" von "Get-AutomationCertificate" in einem Runbook, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks und Zertifikatobjekten zur Entwurfszeit erschweren kann.
+>[AZURE.NOTE]Vermeiden Sie die Verwendung von Variablen im Parameter „-Name“ von „Get-AutomationCertificate“, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks oder DSC-Konfigurationen und Zertifikatobjekten zur Entwurfszeit erschweren kann.
 
 ## Erstellen eines neues Zertifikats
 
-Wenn Sie ein neues Zertifikat erstellen, laden Sie eine CER- oder PFX-Datei in Azure Automation hoch. Wenn Sie das Zertifikat als exportierbar kennzeichnen, können Sie es aus dem Azure Automation-Zertifikatspeicher übertragen. Ist das Zertifikat nicht exportierbar, können Sie es nur zum Signieren innerhalb des Runbooks verwenden.
+Wenn Sie ein neues Zertifikat erstellen, laden Sie eine CER- oder PFX-Datei in Azure Automation hoch. Wenn Sie das Zertifikat als exportierbar kennzeichnen, können Sie es aus dem Azure Automation-Zertifikatspeicher übertragen. Ist das Zertifikat nicht exportierbar, können Sie es nur zum Signieren innerhalb des Runbooks oder der DSC-Konfiguration verwenden.
 
 ### So erstellen Sie ein neues Zertifikat mit dem Azure-Portal
 
@@ -77,9 +77,9 @@ Die folgenden Beispielbefehle zeigen, wie Sie ein neues Automation-Zertifikat er
 	
 	New-AzureAutomationCertificate -AutomationAccountName "MyAutomationAccount" -Name $certName -Path $certPath –Password $certPwd -Exportable
 
-## Verwenden eines Zertifikats in einem Runbook
+## Verwenden eines Zertifikats
 
-Sie müssen die Aktivität **Get-AutomationCertificate** verwenden, um ein Zertifikat in einem Runbook zu verwenden. Eine Verwendung des Cmdlets [Get-AzureAutomationCertificate](http://msdn.microsoft.com/library/dn913765.aspx) ist nicht möglich, da dieses Cmdlet Informationen zum Zertifikatobjekt, aber nicht zum Zertifikat selbst zurückgibt.
+Sie müssen die Aktivität **Get-AutomationCertificate** verwenden, um ein Zertifikat zu verwenden. Eine Verwendung des Cmdlets [Get-AzureAutomationCertificate](http://msdn.microsoft.com/library/dn913765.aspx) ist nicht möglich, da dieses Cmdlet Informationen zum Zertifikatobjekt, aber nicht zum Zertifikat selbst zurückgibt.
 
 ### Beispiel für ein Textrunbook
 
@@ -107,4 +107,4 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

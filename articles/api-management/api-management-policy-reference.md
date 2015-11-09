@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="10/26/2015" 
 	ms.author="sdanie"/>
 
 # Richtlinienreferenz für Azure API Management
@@ -32,6 +32,8 @@ Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebig
 	-	[JWT überprüfen][] – Erzwingt das Vorhandensein und die Gültigkeit eines JWT, das entweder aus einem angegebenen HTTP-Header oder aus einem angegebenen Abfrageparameter extrahiert wurde.
 -	[Erweiterte Richtlinien][]
 	-	[Ablaufsteuerung][] – Bedingte Anwendung von Richtlinienanweisungen basierend auf den Ergebnissen der Auswertung von booleschen [Ausdrücken][].
+	-	[Anforderung weiterleiten][] – leitet die Anforderung an den Back-End-Dienst.
+	-	[Protokoll an Event Hub][] – sendet Nachrichten im angegebenen Format an ein von einem [Protokollierungstool](https://msdn.microsoft.com/library/azure/mt592020.aspx#Logger) definiertes Nachrichtenziel.
 	-	[Variable festlegen][] – Speichert einen Wert in einer benannten [Kontextvariable][], um später darauf zugreifen zu können.
 -	[Authentifizierungsrichtlinien][]
 	-	[Standardauthentifizierung][] – Authentifizierung mit einem Back-End-Dienst unter Verwendung der Standardauthentifizierung.
@@ -72,6 +74,8 @@ Weitere Informationen zu Richtlinienausdrücken finden Sie im folgenden Video.
 [Variable festlegen]: https://msdn.microsoft.com/library/azure/dn894085.aspx#set_variable
 [Ausdrücken]: https://msdn.microsoft.com/library/azure/dn910913.aspx
 [Kontextvariable]: https://msdn.microsoft.com/library/azure/ea160028-fc04-4782-aa26-4b8329df3448#ContextVariables
+[Anforderung weiterleiten]: https://msdn.microsoft.com/library/azure/dn894085.aspx#ForwardRequest
+[Protokoll an Event Hub]: https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub
 
 [Authentifizierungsrichtlinien]: https://msdn.microsoft.com/library/azure/dn894079.aspx
 [Standardauthentifizierung]: https://msdn.microsoft.com/library/azure/061702a7-3a78-472b-a54a-f3b1e332490d#Basic
@@ -105,4 +109,4 @@ Weitere Informationen zu Richtlinienausdrücken finden Sie im folgenden Video.
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

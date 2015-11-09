@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/26/2015"
+   ms.date="10/27/2015"
    ms.author="alkohli" />
 
 # Technische Spezifikationen und Kompatibilität des StorSimple-Geräts
@@ -20,8 +20,6 @@
 ## Übersicht
 
 Die Hardwarekomponenten des Microsoft Azure StorSimple-Geräts verfügen über die in diesem Artikel beschriebenen technischen Spezifikationen und entsprechen den aufgeführten gesetzlichen Richtlinien. In den technischen Spezifikationen sind die Stromversorgungs- und Kühleinheiten (PCMs), Laufwerke und Gehäuse enthalten. Die Richtlinieninformationen umfassen z. B. internationale Standards sowie Sicherheits-, Emissions- sowie Verkabelungsbestimmungen.
-
-> [AZURE.NOTE]Laden Sie für weitere Informationen über das StorSimple-Gerät das [StorSimple 8000 Series Datasheet](http://www.microsoft.com/server-cloud/products/storsimple/resources.aspx) (in englischer Sprache) herunter.
 
 ## Spezifikationen der Stromversorgungs- und Kühleinheit  
 
@@ -170,6 +168,8 @@ Der Stecker und das gesamte Netzkabelmodul müssen den Richtlinien des jeweilige
 
 Für die 10-GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie Informationen in der [Liste der unterstützten Netzwerkkabel und Module](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
 
- 
+## Nächste Schritte
 
-<!---HONumber=Oct15_HO3-->
+Laden Sie für weitere Informationen über die StorSimple-Gerätespezifikationen die [Spezifikationen für die StorSimple 8000-Serie](http://storsimple.seagate.com/Specifications-8000) herunter.
+
+<!---HONumber=Nov15_HO1-->

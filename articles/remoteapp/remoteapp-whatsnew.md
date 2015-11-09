@@ -13,20 +13,39 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="08/12/2015" 
+    ms.date="10/23/2015" 
     ms.author="elizapo" />
 
 
 
-# Neuigkeiten in RemoteApp
+# Neuigkeiten in Azure RemoteApp
 
-Einer der Vorteile von RemoteApp ist, dass wir ständig an Verbesserungen arbeiten. Hier werden Sie über solche Änderungen informiert.
+Einer der Vorteile von Azure RemoteApp besteht darin, dass wir ständig an Verbesserungen arbeiten. Hier werden Sie über solche Änderungen informiert.
+
+## September 2015
+- InfoPath wurde der Microsoft Office 365-Vorlage und dem Katalogimage hinzugefügt. Wenn Sie InfoPath freigeben möchten, müssen Sie unbedingt Ihre Sammlungen mit dem aktuellen Image aktualisieren.
+- Clientupdates:
+	- Der Windows-Client wurde aktualisiert, damit Benutzer Feedback abgeben können, insbesondere bei Verbindungsproblemen.
+	- Der iOS-Client wurde aktualisiert, sodass Fehlermeldungen korrigiert wurden und ein Problem behoben wurde, bei dem Ihre Anmeldeinformationen früher als erwartet abliefen.
+- Wir arbeiten daran, den Support für Office 2016 zu testen. Sobald dies abgeschlossen ist, können Sie nach aktualisierten Images Ausschau halten.
+- Ein neuer Artikel zu den [Unterschieden zwischen Cloud- und Hybrid-Sammlungen](remoteapp-collections.md) wurde veröffentlicht. Dieser hilft beim Auswählen des Sammlungstyps, der für Ihre Apps am besten geeignet ist: nur Cloud, Cloud + VNET oder Hybrid.
+- Möchten Sie QuickBooks mithilfe von Azure RemoteApp freigeben, sind sich jedoch nicht über den Ablauf sicher? Sehen Sie sich [Erics neuen Artikels](remoteapp-quickbooks.md) an, in dem Sie die genauen Schritte erfahren.
+
+## August 2015
+Im August gab es große Änderungen – hier sind die wichtigsten:
+
+- Sie können Azure-VNETs nun mit einer Cloudsammlung verwenden! Sehen Sie sich die [Anleitung zur Clouderstellung](remoteapp-create-cloud-deployment.md) an, in der Sie die neuen Schritte erfahren.
+- Es wurde ermöglicht, dem Startmenü für den Windows RemoteApp-Client Apps hinzuzufügen. Apps werden in der Anwendungsliste angezeigt, und Sie können sie an das Startmenü in Windows anheften.
+- Ein neues Image wurde dem Azure-VM-Katalog hinzugefügt – Windows Server Remote Desktop Session Host with Microsoft Office 365 ProPlus.
+- Der Mac-Client wurde korrigiert, sodass Apps mit modalen Fenstern nicht mehr einfrieren.
+- Die Verwendung Ihres [Office 365 ProPlus-Abonnements](remoteapp-officesubscription.md) mit Azure RemoteApp wurde dokumentiert.
+- Es wird ausführlich erläutert, wie Sie [Apps und Daten](remoteapp-secure.md) in Ihrer Azure RemoteApp-Sammlung sichern können.
 
 ## Juli 2015
 
 Im Juli wurden die für August geplanten Änderungen vorbereitet, deshalb gibt es neben verschiedenen Aktualisierungen an der Dokumentation nicht viel zu berichten. Nachfolgend werden die neuesten Änderungen aufgeführt:
 
-- Dem Portal wurde eine Registerkarte **Support** hinzugefügt, um einen leichteren Zugang zu Supportressourcen (z. B. den Foren) zu ermöglichen.
+- Dem Portal wurde die Registerkarte **Support** hinzugefügt, um einen einfacheren Zugang zu Supportressourcen wie den Foren zu ermöglichen.
 - Die Informationen zur Problembehandlung beim Erstellen einer Hybridsammlung wurden überarbeitet. Sehen Sie sich die [neuesten und besten](remoteapp-hybridtrouble.md) Tipps zur Problembehandlung an, beispielsweise Informationen dazu, wie Sie die richtigen Ports für Ihr VNET ermitteln.
 - Die Dokumentation wurde um Informationen dazu ergänzt, wie [Benutzerdaten](remoteapp-upd.md) in Azure RemoteApp erstellt und gespeichert werden.
 - Die Dokumentation wurde um Informationen dazu ergänzt, wie [Apps gesperrt werden](remoteapp-secure.md).
@@ -61,4 +80,8 @@ Möchten Sie Azure RemoteApp in der Praxis testen? Sehen Sie sich das Lernprogra
 
 Vielen Dank, dass Sie uns treu bleiben. Im nächsten Monat gibt es weitere Updates.
 
-<!---HONumber=Oct15_HO3-->
+
+### Helfen Sie uns, Ihnen zu helfen 
+Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
+
+<!---HONumber=Nov15_HO1-->

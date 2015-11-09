@@ -87,4 +87,4 @@ Es gibt mehrere Typen von Auftragsaufgaben, die die Ausführung von Aufträgen a
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

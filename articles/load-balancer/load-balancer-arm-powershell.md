@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/03/2015"
+   ms.date="10/26/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager
@@ -44,7 +44,7 @@ Die folgenden Elemente müssen konfiguriert werden, bevor Sie einen Load Balance
 
 Unter [Unterstützung des Azure-Ressourcen-Managers für den Lastenausgleich](load-balancer-arm.md) erhalten Sie weitere Informationen zu Lastenausgleichskomponenten des Azure-Ressourcen-Managers.
 
-Die folgenden Schritte zeigen, wie Sie einen Load Balancer konfigurieren können, um einen Lastenausgleich zwischen zwei virtuellen Computern durchzuführen.
+Die folgenden Schritte zeigen, wie Sie einen Load Balancer zwischen zwei virtuellen Computer konfigurieren.
 
 
 ## Schrittweise Anleitung mit PowerShell
@@ -109,6 +109,7 @@ Erstellen Sie eine öffentliche IP-Adresse, die vom Front-End-IP-Pool verwendet 
 
 	$publicIP = New-AzurePublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location "West US" –AllocationMethod Dynamic -DomainNameLabel lbip 
 
+>[AZURE.NOTE]Die Beschriftungseigenschaft für den Domänennamen der öffentlichen IP-Adresse wird auf den FQDN für den Load Balancer festgelegt.
 
 ## Erstellen eines Front-End-IP-Pools und eines Back-End-Adresspools
 
@@ -241,14 +242,44 @@ PS C:\> $backendnic1
 
 Verwenden Sie den Befehl "Add-AzureVMNetworkInterface", um die NIC einem virtuellen Computer zuzuweisen.
 
-In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine schrittweise Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
+In Option 4 oder 5 der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
+
+## Aktualisieren eines vorhandenen Load Balancers
 
 
-## Siehe auch
+### Schritt 1
+
+Weisen Sie unter Verwendung des Load Balancers aus dem vorherigen Beispiel mithilfe von „Get-AzureLoadBalancer“ der Variablen „$slb“ ein Load Balancer-Objekt zu.
+
+	$slb=get-azureLoadBalancer -Name NRP-LB -ResourceGroupName NRP-RG
+
+### Schritt 2
+
+Im folgenden Beispiel fügen Sie einem vorhandenen Load Balancer eine neue eingehende NAT-Regel hinzu, die Port 81 in der Front-End-Anwendung und Port 8181 für den Back-End-Pool verwendet.
+
+	$slb | Add-AzureLoadBalancerInboundNatRuleConfig -Name NewRule -FrontendIpConfiguration $slb.FrontendIpConfigurations[0] -FrontendPort 81  -BackendPort 8181 -Protocol Tcp
+
+
+### Schritt 3
+
+Speichern Sie die neue Konfiguration mithilfe von „Set-AzureLoadBalancer“.
+
+	$slb | Set-AzureLoadBalancer
+
+## Entfernen eines Load Balancers
+
+Verwenden Sie den Befehl „Remove-AzureLoadBalancer“, um den zuvor erstellten Load Balancer namens „NRP-LB“ in der Ressourcengruppe „NRP-RG“ zu löschen.
+
+	Remove-AzureLoadBalancer -Name NRP-LB -ResourceGroupName NRP-RG
+
+>[AZURE.NOTE]Sie können den optionalen Switch „-Force“ verwenden, um die Aufforderung zum Löschen zu vermeiden.
+
+
+## Weitere Informationen
 
 [Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

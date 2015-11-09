@@ -1,7 +1,20 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit Workday | Microsoft Azure" description="Hier erfahren Sie, wie Sie Workday mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Workday | Microsoft Azure" 
+    description="Hier erfahren Sie, wie Sie Workday mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Workday
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=330042), um Feedback abzugeben.
   
 In diesem Tutorial wird die Integration von Azure und Workday erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
@@ -47,7 +60,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Wor
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Workday zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Workday zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat erstellen. Falls Sie mit diesem Verfahren nicht vertraut sind, erhalten Sie im Video [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -99,7 +112,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
      9\.4. Geben Sie im Textfeld **Umgebung** den Umgebungsnamen ein.
 
 
-       >[AZURE.NOTE]Der Wert des Umgebungsattribut ist an den Wert des Mandanten-URI gebunden: >> – Wenn der Domänenname der Workday-Mandanten-URL mit „impl“ beginnt (z. B.: *https://impl.workday.com/\<tenant>/login-saml2.htmld*), muss das **Umgebungsattribut** auf „Implementierung“ festgelegt werden. >Wenn der Domänenname anders beginnt, müssen Sie Workday kontaktieren, um den entsprechenden **Umgebungswert** zu erhalten.
+       >[AZURE.NOTE]Der Wert des Umgebungsattribut ist an den Wert der Mandanten-URL gebunden: >> – Wenn der Domänenname der Workday-Mandanten-URL mit „impl“ beginnt (z. B.: *https://impl.workday.com/\<tenant>/login-saml2.htmld*), muss das **Umgebungsattribut** auf „Implementierung“ festgelegt werden. >Wenn der Domänenname anders beginnt, müssen Sie Workday kontaktieren, um den entsprechenden **Umgebungswert** zu erhalten.
 
 10. Führen Sie im Abschnitt **SAML-Setup** die folgenden Schritte aus:
 
@@ -136,13 +149,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
       4.  Erstellen Sie eine **Base-64-codierte** Datei aus dem heruntergeladenen Zertifikat.
 
-		>[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
+		>[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache).
 
       5.  Öffnen Sie das Base64-codierte Zertifikat in Notepad und kopieren Sie den Inhalt.
       6.  Fügen Sie in der Textbox **Zertifikat** den Inhalt der Zwischenablage ein.
       7.  Klicken Sie auf **OK**.
 
-12.  Führen Sie die folgenden Schritte aus: <br><br> ![SSO-Konfiguration](./media/active-directory-saas-workday-tutorial/IC7829351111.png "SSO-Konfiguration")
+12.  Führen Sie die folgenden Schritte aus:<br><br> ![SSO-Konfiguration](./media/active-directory-saas-workday-tutorial/IC7829351111.png "SSO-Konfiguration")
 
      12\.1. Aktivieren Sie das **private Schlüsselpaar „X. 509“**.
 
@@ -162,7 +175,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-workday-tutorial/IC782934.png "Einmaliges Anmelden konfigurieren")
 
-13. Klicken Sie auf der Seite **Bestätigung für einmaliges Anmelden** auf **Abschließen**. <br><br>
+13. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-workday-tutorial/IC782935111.png "Einmaliges Anmelden konfigurieren")
 
@@ -184,10 +197,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-workday-tutorial/IC782935.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-workday-tutorial/IC767830.png "Ja")
   
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

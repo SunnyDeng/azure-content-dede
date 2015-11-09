@@ -92,7 +92,7 @@ Das folgende Beispiel zeigt, wie Sie die Azure-CLI verwenden, um ein SAS-Token z
 
 2. Geben Sie anschließend den folgenden Befehl in Azure-CLI ein, um die Verbindungszeichenfolge für Ihr Konto abzurufen:
 
-		azure storage account connectionString show youraccountname
+		azure storage account connectionstring show youraccountname
 
 3. Erstellen Sie eine Umgebungsvariable mit der Verbindungszeichenfolge, die Sie soeben generiert haben:
 
@@ -358,4 +358,4 @@ Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://soc
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

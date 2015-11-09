@@ -213,58 +213,9 @@ Bestimmt die maximale Größe in MB, die dem beständigen Speicher auf dem lokal
    </ApplicationInsights>
 ```
 
-## Benutzerdefinierte Initialisierer
+## Telemetrieinitialisierer
 
-
-Wenn die Standardinitialisierer für Ihre Anwendung nicht geeignet sind, können Sie Ihre eigenen erstellen.
-
-Mit Kontextinitialisierern können Sie Werte festlegen, die zum Initialisieren der einzelnen Telemetrieclients verwendet werden. Wenn Sie zum Beispiel mehrere Versionen Ihrer App veröffentlicht haben, können Sie sicherstellen, dass die Daten durch Filtern einer benutzerdefinierten Eigenschaft getrennt werden können:
-
-    plublic class MyContextInitializer: IContextInitializer
-    {
-        public void Initialize(TelemetryContext context)
-        {
-          context.Properties["AppVersion"] = "v2.1";
-        }
-    }
-
-Verwenden Sie Telemetrieinitialisierer, um jedem Ereignis eine Verarbeitung hinzuzufügen. Beispielsweise kennzeichnet das Web-SDK jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Sie können dieses Verhalten außer Kraft setzen:
-
-    public class MyTelemetryInitializer : ITelemetryInitializer
-    {
-        public void Initialize(ITelemetry telemetry)
-        {
-            var requestTelemetry = telemetry as RequestTelemetry;
-            if (requestTelemetry == null) return;
-            int code;
-            bool parsed = Int32.TryParse(requestTelemetry.ResponseCode, out code);
-            if (!parsed) return;
-            if (code >= 400 && code < 500)
-            {
-                requestTelemetry.Success = true;
-                requestTelemetry.Context.Properties["Overridden400s"] = "true";
-            }            
-        }
-    }
- 
-Fügen Sie zum Installieren der Initialisierer folgende Zeilen in "ApplicationInsights.config" hinzu:
-
-    <TelemetryInitializers> <!-- or ContextInitializers -->
-    <Add Type="MyNamespace.MyTelemetryInitializer, MyAssemblyName" />
-
-
-Alternativ können Sie Code zum Installieren des Initialisierers zu einem frühen Zeitpunkt in der Ausführung der Anwendung schreiben. Zum Beispiel:
-
-
-    // In the app initializer such as Global.asax.cs:
-
-    protected void Application_Start()
-    {
-      TelemetryConfiguration.Active.TelemetryInitializers.Add(
-                new MyTelemetryInitializer());
-            ...
-
-
+Sie können Telemetrieinitialisierer schreiben, welche die aus Ihrer App gesammelten Telemetriedaten filtern und ändern. Diese können zusammen mit den Standardmodulen aus der config-Datei initialisiert werden. [Weitere Informationen](app-insights-api-filtering-sampling.md)
 
 
 ## InstrumentationKey
@@ -313,4 +264,4 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

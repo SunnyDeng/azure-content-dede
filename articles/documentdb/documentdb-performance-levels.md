@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.date="10/16/2015" 
 	ms.author="johnmac"/>
 
 #Leistungsebenen in DocumentDB
@@ -29,7 +29,7 @@ Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
 ##Einführung in Leistungsebenen
 
-Jede DocumentDB-Sammlung, die unter einem Standardkonto erstellt wird, wird mit einer zugewiesenen Leistungsebene bereitgestellt. Leistungsebenen werden mit S1, S2 oder S3 bezeichnet (von der niedrigsten bis zur höchsten Leistung). Die Leistungsebene der Sammlung bestimmt die Menge der Serviceressourcen, die für Ihre Anwendung reserviert wird. Jede Sammlung in einer Datenbank kann über individuelle Leistungsebenen verfügen. So können Sie häufig genutzten Sammlungen mehr Durchsatz und seltener genutzten Sammlungen weniger Durchsatz zuweisen.
+Jede DocumentDB-Sammlung, die unter einem Standardkonto erstellt wird, wird mit einer zugewiesenen Leistungsebene bereitgestellt. Leistungsebenen werden mit S1, S2 oder S3 bezeichnet (von der niedrigsten bis zur höchsten Leistung). Die Leistungsebene der Sammlung bestimmt die Menge der Anforderungsverarbeitungsressourcen, die für Ihre Anwendung reserviert wird. Jede Sammlung in einer Datenbank kann über individuelle Leistungsebenen verfügen. So können Sie häufig genutzten Sammlungen mehr Durchsatz und seltener genutzten Sammlungen weniger Durchsatz zuweisen. Die minimale Leistungsstufe für jede Sammlung ist S1.
 
 Jede Leistungsebene verfügt über eine Beschränkung der Anforderungseinheit(RU)-Rate. Dies ist der Durchsatz, der für die Sammlung basierend auf ihrer Leistungsebene reserviert wird und ausschließlich von dieser Sammlung verwendet werden kann. Sammlungen können über das [Azure-Portal](http://portal.azure.com) oder eines der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) erstellt werden. Mithilfe der DocumentDB-APIs können Sie die Leistungsebene einer Sammlung festlegen.
 
@@ -122,4 +122,4 @@ Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-[Dokument
 
 [1]: ./media/documentdb-performance-levels/img1.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

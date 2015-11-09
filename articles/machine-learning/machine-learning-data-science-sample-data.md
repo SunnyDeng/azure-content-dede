@@ -20,7 +20,7 @@
 
 Dieses **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
 
-[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-explore-data-selector.md)]
+[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
 
 ## Einführung
 
@@ -32,4 +32,4 @@ Dieses Dokument beschreibt, wie Sie Stichproben von Daten entnehmen, die an drei
 - **SQL Server-Daten**: Stichproben werden mithilfe von SQL und der Python-Programmiersprache erstellt. 
 - **Hive-Tabellendaten**: Stichproben werden mit Hive-Abfragen erstellt.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

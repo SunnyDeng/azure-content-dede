@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Gewusst wie: Anzeigen der Integritätszusammenfassung für Azure Service Fabric-Entitäten"
+   pageTitle="Gewusst wie: Anzeigen der Integritätszusammenfassung für Azure Service Fabric-Entitäten | Microsoft Azure"
    description="Es wird beschrieben, wie Sie eine Zusammenfassung der Integrität von Azure Service Fabric-Entitäten abfragen, anzeigen und auswerten, indem Sie Integritätsabfragen und allgemeine Abfragen nutzen."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/03/2015"
+   ms.date="10/23/2015"
    ms.author="oanapl"/>
 
 # Gewusst wie: Anzeigen von Service Fabric-Integritätsberichten
@@ -836,4 +836,4 @@ Wenn im Cluster oder in einer Anwendung ein Problem vorliegt, können Sie sich d
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->
