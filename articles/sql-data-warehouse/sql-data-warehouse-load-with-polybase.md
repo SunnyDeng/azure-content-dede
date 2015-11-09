@@ -26,6 +26,7 @@ Mit PolyBase können Sie mit den folgenden Schritten Daten abfragen, die im Azur
 - Erstellen der PolyBase-Objekte: externe Datenquelle, externes Dateiformat und externe Tabelle 
 - Abfragen von im Azure-Blob-Speicher gespeicherten Daten
 - Laden von Daten aus dem Azure-Blob-Speicher in SQL Data Warehouse
+- Exportieren von Daten aus SQL Data Warehouse in einen Azure-Blob-Speicher
 
 
 ## Voraussetzungen
@@ -167,8 +168,6 @@ WITH
 ;
 ```
 
-> [AZURE.NOTE]Beachten Sie, dass zum gegenwärtigen Zeitpunkt keine Statistik für eine externe Tabelle erstellt werden kann.
-
 Referenzthema: [CREATE EXTERNAL TABLE (Transact-SQL)][].
 
 Die soeben erstellten Objekte werden in der SQL Data Warehouse-Datenbank gespeichert. Sie können sie im Objekt-Explorer von SQL Server Data Tools (SSDT) anzeigen.
@@ -181,11 +180,11 @@ DROP EXTERNAL TABLE [ext].[CarSensor_Data]
 ;
 ```
 
-> [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` **kann nicht** verwendet werden.
+> [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` kann **nicht** verwendet werden.
 
 Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][].
 
-Es ist auch zu erwähnen, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
+Beachten Sie auch, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
 
 ## Wechseln von Speicherschlüsseln
 
@@ -227,7 +226,7 @@ Durch direktes Speichern der Daten entfällt bei Abfragen die für die Datenübe
 
 In diesem Beispiel werden die Daten mit der CREATE TABLE AS SELECT-Anweisung geladen. Die neue Tabelle erbt die in der Abfrage benannten Spalten. Sie erbt die Datentypen dieser Spalten aus der Definition der externen Tabelle.
 
-CREATE TABLE AS SELECT ist eine leistungsstarke Transact-SQL-Anweisung, die INSERT...SELECT ersetzt. Sie wurde ursprünglich für das Massively Parallel Processing (MPP)-Modul in Analytics Platform System entwickelt und wird jetzt in SQL Data Warehouse verwendet.
+CREATE TABLE AS SELECT ist eine sehr leistungsfähige Transact-SQL-Anweisung, mit der die Daten parallel auf alle Compute-Knoten Ihres SQL Data Warehouse geladen werden. Sie wurde ursprünglich für das Massively Parallel Processing (MPP)-Modul in Analytics Platform System entwickelt und wird jetzt in SQL Data Warehouse verwendet.
 
 ```
 -- Load data from Azure blob storage to SQL Data Warehouse 
@@ -245,6 +244,33 @@ FROM   [ext].[CarSensor_Data]
 ```
 
 Siehe [CREATE TABLE AS SELECT (Transact-SQL)][].
+
+
+## Exportieren von Daten in Azure-BLOB-Speicher
+In diesem Abschnitt wird veranschaulicht, wie Sie Daten aus SQL Data Warehouse in Azure-BLOB-Speicher exportieren. In diesem Beispiel wird CREATE EXTERNAL TABLE AS SELECT verwendet. Dies ist eine sehr leistungsfähige Transact-SQL-Anweisung, mit der die Daten parallel von allen Compute-Knoten exportiert werden.
+
+Im folgenden Beispiel wird die externe Tabelle „Weblogs2014“ erstellt, indem Spaltendefinitionen und Daten aus der Tabelle „dbo.Weblogs“ verwendet werden. Die Definition der externen Tabelle wird in SQL Data Warehouse gespeichert, und die Ergebnisse der SELECT-Anweisung werden in das Verzeichnis „/archive/log2014/“ unter dem BLOB-Container exportiert, der von der Datenquelle angegeben wird. Die Daten werden im angegebenen Textdateiformat exportiert.
+
+```
+CREATE EXTERNAL TABLE Weblogs2014 WITH
+(
+    LOCATION='/archive/log2014/',
+    DATA_SOURCE=azure_storage,
+    FILE_FORMAT=text_file_format
+)
+AS
+SELECT
+    Uri,
+    DateRequested
+FROM
+    dbo.Weblogs
+WHERE
+    1=1
+    AND DateRequested > '12/31/2013'
+    AND DateRequested < '01/01/2015';
+```
+
+
 
 
 ## Umgehen der UTF-8-Anforderung von PolyBase
@@ -334,4 +360,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189522.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189450.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="09/24/2015"
+   ms.date="10/22/2015"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
@@ -163,6 +163,9 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 
 <sup>3</sup> Die festen IP-Adressen der Controller im StorSimple-Gerät müssen routingfähig sein und eine Verbindung mit dem Internet herstellen können. Die festen IP-Adressen werden für Anwendung von Updates auf dem Gerät verwendet. Wenn die Gerätecontroller über die festen IP-Adressen keine Verbindung mit dem Internet herstellen können, können Sie das StorSimple-Gerät nicht aktualisieren.
 
+> [AZURE.IMPORTANT]Achten Sie darauf, dass SSL-Datenverkehr zwischen dem StorSimple-Gerät und Azure nicht durch die Firewall geändert oder entschlüsselt wird.
+
+<br></br>
 ### Portweiterleitung
 
 Die Portweiterleitung unterscheidet sich je nach Version der Software auf Ihrem StorSimple-Gerät.
@@ -197,4 +200,4 @@ Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgend
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

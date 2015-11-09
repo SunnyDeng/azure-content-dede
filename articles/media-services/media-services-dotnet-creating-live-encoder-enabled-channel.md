@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/18/2015"  
+	ms.date="10/26/2015"  
 	ms.author="juliako"/>
 
 
@@ -126,14 +126,10 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	using System.IO;
 	using System.Linq;
 	using System.Net;
-	using System.Security.Cryptography;
-	using System.Text;
-	using System.Threading.Tasks;
 	using Microsoft.WindowsAzure.MediaServices.Client;
-	using Newtonsoft.Json.Linq;
 	using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
 	
-	namespace ConsoleApplication1
+	namespace EncodeLiveStreamWithAmsClear
 	{
 	    class Program
 	    {
@@ -175,10 +171,9 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	
 	            Console.WriteLine("Preview URL: {0}", previewEndpoint);
 	
-	            // Get a thumbnail preview of a live feed.
 	            // When Live Encoding is enabled, you can now get a preview of the live feed as it reaches the Channel. 
 	            // This can be a valuable tool to check whether your live feed is actually reaching the Channel. 
-	
+	            // The thumbnail is exposed via the same end-point as the Channel Preview URL.
 	            string thumbnailUri = new UriBuilder
 	            {
 	                Scheme = Uri.UriSchemeHttps,
@@ -206,13 +201,18 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	
 	        public static IChannel CreateAndStartChannel()
 	        {
+	            var channelInput = CreateChannelInput();
+	            var channePreview = CreateChannelPreview();
+	            var channelEncoding = CreateChannelEncoding();
+	
+	
 	            ChannelCreationOptions options = new ChannelCreationOptions
 	            {
 	                EncodingType = ChannelEncodingType.Standard,
 	                Name = ChannelName,
-	                Input = CreateChannelInput(),
-	                Preview = CreateChannelPreview(),
-	                Encoding = CreateChannelEncoding()
+	                Input = channelInput,
+	                Preview = channePreview,
+	                Encoding = channelEncoding
 	            };
 	
 	            Log("Creating channel");
@@ -357,13 +357,16 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	        /// <param name="channel"></param>
 	        public static void StartStopAdsSlates(IChannel channel)
 	        {
+	            int cueId = new Random().Next(int.MaxValue);
+	            var path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\..\\SlateJPG\\DefaultAzurePortalSlate.jpg"));
+	
 	            Log("Creating asset");
 	            var slateAsset = _context.Assets.Create("Slate test asset " + DateTime.Now.ToString("yyyy-MM-dd HH-mm"), AssetCreationOptions.None);
 	            Log("Slate asset created", slateAsset.Id);
 	
 	            Log("Uploading file");
-	            var assetFile = slateAsset.AssetFiles.Create("SlateTest.jpg");
-	            assetFile.Upload("SlateTest.jpg");
+	            var assetFile = slateAsset.AssetFiles.Create("DefaultAzurePortalSlate.jpg");
+	            assetFile.Upload(path);
 	            assetFile.IsPrimary = true;
 	            assetFile.Update();
 	
@@ -376,11 +379,11 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	            TrackOperation(hideSlateOperation, "Hide slate");
 	
 	            Log("Starting ad");
-	            var startAdOperation = channel.SendStartAdvertisementOperation(TimeSpan.FromMinutes(1), 0, false);
+	            var startAdOperation = channel.SendStartAdvertisementOperation(TimeSpan.FromMinutes(1), cueId, false);
 	            TrackOperation(startAdOperation, "Start ad");
 	
 	            Log("Ending ad");
-	            var endAdOperation = channel.SendEndAdvertisementOperation();
+	            var endAdOperation = channel.SendEndAdvertisementOperation(cueId);
 	            TrackOperation(endAdOperation, "End ad");
 	
 	            Log("Deleting slate asset");
@@ -500,8 +503,7 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	                operationId ?? string.Empty);
 	        }
 	    }
-	}
-	
+	}	
 
 
 ##Nächste Schritte
@@ -517,4 +519,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

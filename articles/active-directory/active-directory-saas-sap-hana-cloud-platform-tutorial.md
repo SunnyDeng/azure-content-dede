@@ -1,14 +1,27 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit SAP HANA Cloud Platform | Microsoft Azure" description="Erfahren Sie, wie Sie SAP HANA Cloud Platform mit Azure Active Directory verwenden können, um einmalige Anmeldung, automatisierte Bereitstellung und mehr zu aktivieren!" services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit SAP HANA Cloud Platform | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie SAP HANA Cloud Platform mit Azure Active Directory verwenden können, um einmalige Anmeldung, automatisierte Bereitstellung und mehr zu aktivieren!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit SAP HANA Cloud Platform
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=529793), um Feedback abzugeben.
   
 In diesem Tutorial wird die Integration von Azure und SAP HANA Cloud Platform erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein SAP HANA Cloud Platform-Konto
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie SAP HANA Cloud Platform zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586) beschrieben mittels einmaliger Anmeldung bei der Anwendung anmelden.
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie SAP HANA Cloud Platform zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben mittels einmaliger Anmeldung bei der Anwendung anmelden.
 
 >[AZURE.IMPORTANT]Sie müssen Ihre eigene Anwendung bereitstellen oder eine Anwendung auf Ihrem SAP HANA Cloud Platform-Konto abonnieren, um sich zu Testzwecken einmalig anzumelden. In diesem Tutorial wird eine Anwendung auf dem Konto bereitgestellt.
   
@@ -36,7 +49,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für SAP
 
     ![Anwendungen](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC700994.png "Anwendungen")
 
-4.  Klicken Sie unten auf der Seite auf **Add**.
+4.  Klicken Sie unten auf der Seite auf **Hinzufügen**.
 
     ![Anwendung hinzufügen](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC749321.png "Anwendung hinzufügen")
 
@@ -53,7 +66,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für SAP
     ![SAP Hana](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC793929.png "SAP Hana")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei SAP HANA Cloud Platform zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren SAP HANA Cloud Platform-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei SAP HANA Cloud Platform zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren SAP HANA Cloud Platform-Mandanten hochladen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -141,7 +154,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
   
 Als optionalen Schritt können Sie Assertion-Gruppen für Ihren Azure Active Directory-Identitätsanbieter konfigurieren.
 
->[AZURE.NOTE]Mithilfe von Gruppen auf SAP HANA Cloud Platform können Sie auf dynamische Weise eine oder mehrere Rollen in Ihren SAP HANA Cloud Platform-Anwendungen zuweisen, durch die Werte der Attribute in der SAML 2.0-Assertion definiert. Beispiel: Wenn die Assertion das Attribut „*contract=temporary*“ enthält, möchten Sie ggf. alle betroffenen Benutzer der Gruppe „*TEMPORÄR*“ hinzufügen. Die Gruppe „*Temporär*“ enthält möglicherweise eine oder mehrere Rollen aus einer oder mehreren Anmeldung(en), die auf Ihrem SAP HANA Cloud Platform-Konto bereitgestellt sind.
+>[AZURE.NOTE]Mithilfe von Gruppen auf SAP HANA Cloud Platform können Sie auf dynamische Weise eine oder mehrere Rollen in Ihren SAP HANA Cloud Platform-Anwendungen zuweisen, durch die Werte der Attribute in der SAML 2.0-Assertion definiert. Beispiel: Wenn die Assertion das Attribut „*contract=temporary*“ enthält, möchten Sie ggf. alle betroffenen Benutzer der Gruppe „*TEMPORÄR*“ hinzufügen. Die Gruppe „*TEMPORÄR*“ enthält möglicherweise eine oder mehrere Rollen aus einer oder mehreren Anmeldung(en), die auf Ihrem SAP HANA Cloud Platform-Konto bereitgestellt sind.
 >  
 >Verwenden Sie Assertion-Gruppen, wenn Sie viele Benutzer einer oder mehreren Rolle(n) auf Ihrem SAP HANA Cloud Platform-Konto zuweisen möchten. Wenn Sie nur einen einzelnen Benutzer oder eine geringe Anzahl an Benutzern zu einer (mehreren) speziellen Rolle(n) zuweisen möchten, empfehlen wir die direkte Zuweisung auf der Registerkarte „**Autorisierungen**“ des SAP HANA Cloud Platform-Cockpits.
 
@@ -175,10 +188,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC790806.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC767830.png "Ja")
   
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

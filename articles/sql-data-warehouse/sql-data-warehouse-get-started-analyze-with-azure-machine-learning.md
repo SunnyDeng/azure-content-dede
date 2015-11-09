@@ -17,7 +17,7 @@
    ms.author="sahajs"/>
 
 # Analysieren von Daten mit Azure Machine Learning
-In diesem Tutorial erfahren Sie, wie Sie ein prädiktives Machine Learning-Modell mit Azure Machine Learning und Ihren Azure SQL Data Warehouse-Daten erstellen. Wir ermitteln in diesem Tutorial auf der Grundlage der AdventureWorksDW-Datenbank, bei welchen Kunden des Adventure Works-Fahrradgeschäfts es sich um potenzielle Fahrradkäufer handelt, um eine zielgerichtete Marketingkampagne zu erstellen.
+In diesem Tutorial erfahren Sie, wie Sie ein prädiktives Machine Learning-Modell mit Azure Machine Learning und Ihren Azure SQL Data Warehouse-Daten erstellen. In diesem Tutorial werden wir eine gezielte Marketingkampagne für Adventure Works, einen Fahrradladen, erstellen und dabei eine Prognose, ob ein Kunde ein Fahrrad kauft.
 
 
 ## Voraussetzungen
@@ -36,10 +36,10 @@ Wir lesen die Daten aus der Ansicht „dbo.vTargetMail“ in der AdventureWorksD
 3. Geben Sie einen Namen für das Experiment ein: Zielgerichtetes Marketing.
 4. Ziehen Sie das **Reader**-Modul aus dem Modulbereich in den Zeichenbereich.
 5. Geben Sie im Eigenschaftenbereich ausführliche Informationen zu Ihrer SQL Data Warehouse-Datenbank ein. 
-6. Geben Sie die Datenbankabfrage zum Lesen der für Sie interessanten Daten an.
-
-```
-SELECT [CustomerKey]
+6. Geben Sie die Datenbank**abfrage** zum Lesen der für Sie interessanten Daten an.
+   
+   ```
+   SELECT [CustomerKey]
       ,[GeographyKey]
       ,[CustomerAlternateKey]
       ,[MaritalStatus]
@@ -56,44 +56,56 @@ SELECT [CustomerKey]
       ,[Age]
       ,[BikeBuyer]
   FROM [dbo].[vTargetMail]
-```
-7. Führen Sie das Experiment aus, indem Sie unterhalb des Experimentbereichs auf **Ausführen** klicken.
-8. Klicken Sie auf den Ausgabeport im unteren Bereich des Reader-Moduls, und wählen Sie **Visualisieren**, um die importierten Daten anzuzeigen.
+   ```
+
+Führen Sie das Experiment aus, indem Sie unterhalb des Experimentbereichs auf **Ausführen** klicken. ![Ausführen des Experiments][1]
+
+
+Klicken Sie nach Abschluss des Experiments auf den Ausgabeport im unteren Bereich des Reader-Moduls, und wählen Sie **Visualisieren**, um die importierten Daten anzuzeigen. ![Anzeigen der importierten Daten][3]
+
+
 
 
 
 ## Schritt 2: Bereinigen von Daten
 Wir löschen einige Spalten, die für das Modell nicht relevant sind.
 
-1. Ziehen Sie das Modul **Project Columns** in den Zeichenbereich.
-2. Klicken Sie im Eigenschaftenbereich auf **Spaltenauswahl starten**, um die zu löschenden Spalten anzugeben.
-3. Schließen Sie zwei Spalten aus: CustomerAlternateKey und GeographyKey.
+1. Ziehen Sie das Modul **Projektspalten** in den Zeichenbereich.
+2. Klicken Sie im Eigenschaftenbereich auf **Spaltenauswahl starten**, um die zu löschenden Spalten anzugeben. ![Project Columns][4]
+
+3. Schließen Sie zwei Spalten aus: CustomerAlternateKey und GeographyKey. ![Entfernen überflüssiger Spalten][5]
+
 
 
 
 ## Schritt 3: Erstellen des Modells
 Wir teilen die Daten im Verhältnis 80:20: 80 Prozent zum Trainieren eines Machine Learning-Modells und 20 Prozent zum Testen des Modells. Für dieses binäre Klassifizierungsproblem nutzen wir die Zwei-Klassen-Algorithmen.
 
-1. Ziehen Sie das Modul **Split** in den Zeichenbereich.
-2. Geben Sie im Eigenschaftenbereich für den Anteil der Zeilen im ersten Ausgabedatensatz „0,8“ ein.
-3. Ziehen Sie das Modul **Two-Class Boosted Decision Tree** in den Zeichenbereich.
-4. Ziehen Sie das Modul **Train Model** in den Zeichenbereich der Leinwand, und geben Sie folgendes an: Erste Eingabe: ML-Algorithmus. Zweite Eingabe: Daten zum Trainieren des Algorithmus.
-5. Klicken Sie im Eigenschaftenbereich auf **Spaltenauswahl starten**, um anzugeben, welche Spalte das Modell vorhersagen soll: BikeBuyer.
+1. Ziehen Sie das Modul **Aufteilen** in den Zeichenbereich.
+2. Geben Sie im Eigenschaftenbereich für den Anteil der Zeilen im ersten Ausgabedatensatz „0,8“ ein. ![Daten in Trainings- und Testsätze aufteilen][6]
+3. Ziehen Sie das Modul **Zweiklassiger Boosted Decision Tree** in den Zeichenbereich.
+4. Ziehen Sie das Modul **Modell trainieren** in den Zeichenbereich der Leinwand, und legen Sie die Eingaben fest. Klicken Sie im Eigenschaftenbereich auf **Spaltenauswahl starten**.
+      - Erste Eingabe: ML-Algorithmus
+      - Zweite Eingabe: Daten zum Trainieren des Algorithmus ![Verbinden des „Modell trainieren“-Moduls][7]
+5. Wählen Sie die Spalte **BikeBuyer** als die vorherzusagende Spalte aus. ![Auswählen der vorherzusagenden Spalte][8]
+
+
+
 
 
 ## Schritt 4: Bewertungsmodell
 Wir testen nun die Leistung des Modells mithilfe von Testdaten. Wir vergleichen zwei Algorithmen, um zu ermitteln, welcher Algorithmus die bessere Leistung erzielt.
 
-1. Ziehen Sie das Modul **Score Model** in den Zeichenbereich. Erste Eingabe: Trainiertes Modell. Zweite Eingabe: Testdaten
-2. Ziehen Sie das Modul **Two-Class Bayes Point Machine** in den Experimentbereich. Wir sehen uns an, wie dieser Algorithmus im Vergleich zum Modul „Two-Class Boosted Decision Tree“ abschneidet.
+1. Ziehen Sie das Modul **Bewertungsmodell** in den Zeichenbereich. Erste Eingabe: Trainiertes Modell. Zweite Eingabe: Testdaten ![Bewertung des Modells][9]
+2. Ziehen Sie das Modul **Zweiklassiger Bayes-Punktcomputer** in den Experimentbereich. Wir sehen uns an, wie dieser Algorithmus im Vergleich zum Modul „Two-Class Boosted Decision Tree“ abschneidet.
 3. Kopieren Sie die Module „Train Model“ und „Score Model“, und fügen Sie sie im Zeichenbereich ein.
-4. Ziehen Sie das Modul **Evaluate Model** in den Zeichenbereich, um die beiden Algorithmen zu vergleichen.
-5. Sie können nun das Experiment **ausführen**.
-6. Klicken Sie unten im Modul „Evaluate Model“ auf den Ausgabeport und anschließend auf „Visualisieren“.
+4. Ziehen Sie das Modul **Modell evaluieren** in den Zeichenbereich, um die beiden Algorithmen zu vergleichen.
+5. Sie können nun das Experiment **ausführen**. ![Ausführen des Experiments][10]
+6. Klicken Sie unten im Modul „Modell evaluieren“ auf den Ausgabeport und anschließend auf „Visualisieren“. ![Anzeigen der Auswertungsergebnisse][11]
 
 
-Folgende Metriken stehen zur Verfügung: ROC-Kurve, Precision-Recall-Diagramm und Lorenz-Kurve. Anhand dieser Metriken erkennen wir, dass mit dem ersten Modell eine bessere Leistung als mit dem zweiten Modell erzielt wird. Wenn Sie die Vorhersage des ersten Modells anzeigen möchten, klicken Sie im Bewertungsmodell auf den Ausgabeport und anschließend auf „Visualisieren“.
 
+Folgende Metriken stehen zur Verfügung: ROC-Kurve, Precision-Recall-Diagramm und Lorenz-Kurve. Anhand dieser Metriken erkennen wir, dass mit dem ersten Modell eine bessere Leistung als mit dem zweiten Modell erzielt wird. Wenn Sie die Vorhersage des ersten Modells anzeigen möchten, klicken Sie im „Bewertungsmodell“ auf den Ausgabeport und anschließend auf „Visualisieren“. ![Anzeigen der Bewertungsergebnisse][12]
 
 Ihrem Testdatensatz werden zwei weitere Spalten hinzugefügt.
 
@@ -102,14 +114,29 @@ Ihrem Testdatensatz werden zwei weitere Spalten hinzugefügt.
 
 Durch einen Vergleich der Spalte „BikeBuyer“ (tatsächliche Werte) mit „Bewertete Beschriftungen“ (Vorhersage) können Sie die Leistung des Modells ermitteln. Als Nächstes können Sie mit diesem Modell Vorhersagen für neue Kunden treffen und das Modell als Webdienst veröffentlichen oder Ergebnisse zurück in SQL Data Warehouse schreiben.
 
-Weitere Informationen finden Sie unter [Einführung in Machine Learning in Azure][].
+Weitere Informationen zum Erstellen von vorhersehbaren Machine Learning-Vorhersagemodellen finden Sie unter [Einführung in das maschinelle Lernen in Microsoft Azure][].
 
+
+
+<!--Image references-->
+[1]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img1_reader.png
+[2]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img2_visualize.png
+[3]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img3_readerdata.png
+[4]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img4_projectcolumns.png
+[5]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img5_columnselector.png
+[6]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img6_split.png
+[7]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img7_train.png
+[8]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img8_traincolumnselector.png
+[9]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img9_score.png
+[10]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img10_evaluate.png
+[11]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img11_evalresults.png
+[12]: ./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img12_scoreresults.png
 
 
 <!--Article references-->
 [Azure Machine Learning studio]: https://studio.azureml.net/
-[Einführung in Machine Learning in Azure]: ../machine-learning/machine-learning-what-is-machine-learning.md
-[Beispieldaten manuell laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
-[Erstellen eines SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
+[Einführung in das maschinelle Lernen in Microsoft Azure]: https://azure.microsoft.com/documentation/articles/machine-learning-what-is-machine-learning/
+[Beispieldaten manuell laden]: sql-data-warehouse-get-started-manually-load-samples.md
+[Erstellen eines SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

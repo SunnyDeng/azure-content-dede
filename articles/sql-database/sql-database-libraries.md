@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/24/2015"
+	ms.date="08/04/2015"
 	ms.author="pehteh"/>
 
 
@@ -22,14 +22,6 @@
 
 
 In diesem Thema ist die mindestens erforderliche Versionsnummer für jede Bibliothek/jeden Treiber aufgelistet, mit der Clientprogramme Verbindungen mit Azure SQL-Datenbank oder Microsoft SQL Server herstellen können.
-
-
-Dieses Thema ist in zwei Abschnitte unterteilt:
-
-
-- *Tabelle der von Microsoft veröffentlichten Treiberbibliotheken*: umfasst Bibliotheken, die von Microsoft veröffentlicht wurden. Microsoft verwaltet die Informationen in diesem Abschnitt.
-- *Bibliotheken von Drittanbietern*: listet Bibliotheken auf, die von Drittanbietern und nicht von Microsoft verwaltet und veröffentlicht werden. **Dieser Abschnitt wird nur von der öffentlichen Entwicklercommunity verwaltet. Microsoft wartet diesen Abschnitt nicht.**
-
 
 ## Tabelle der von Microsoft veröffentlichten Treiberbibliotheken
 
@@ -45,6 +37,14 @@ Die folgende Tabelle enthält die Bibliotheken, die von Microsoft veröffentlich
 | ODBC | Windows | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=36434) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | [Link](http://msdn.microsoft.com/library/jj730308.aspx) |
 | ODBC | Suse Linux | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | . |
 | ODBC | Redhat Linux | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | . |
+
+### ODBC-Unterstützung
+
+Beim Verwenden des Assistenten für Datenquellnamen (data source name, DSN) zum Definieren einer Datenquelle für die Azure SQL-Datenbank, klicken Sie auf die Option **Mit SQL Server-Authentifizierung anhand des vom Benutzer eingegebenen Benutzernamens und Kennworts**, und wählen Sie **Zum SQL Server verbinden, um Standardeinstellungen für die zusätzlichen Konfigurationsoptionen zu erhalten** aus. Geben Sie Ihren Benutzernamen und das Kennwort zum Herstellen einer Verbindung mit dem Azure SQL-Datenbankservers als **Anmelde-ID** und **Kennwort** ein. Deaktivieren Sie das Kontrollkästchen **Zum SQL Server verbinden, um Standardeinstellungen...** . Klicken Sie auf **Die Standarddatenbank ändern auf:** und geben Sie den Namen der Azure SQL-Datenbank ein, auch wenn sie nicht in der Liste angezeigt wird. Beachten Sie, dass im Assistenten in der Liste **Sprache der SQL Server-Systemmeldungen ändern auf:** in mehrere Sprachen enthält.
+
+In dieser Version unterstützt die Microsoft Azure SQL-Datenbank nur Englisch, wählen Sie daher Englisch als Sprache aus. Die Elemente **Spiegelserver** oder **Datenbank anfügen** werden von der Microsoft Azure SQL-Datenbank und bleiben daher leer. Klicken Sie auf **Test Connection**.
+
+Bei Verwendung des SQL Server 2008 Native Client ODBC-Treibers führt die Schaltfläche **Testverbindung** unter Umständen zu einem Fehler, der angibt, dass **master.dbo.syscharsets** nicht unterstützt wird. Ignorieren Sie diesen Fehler, und speichern und verwenden Sie den DSN.
 
 
 ### OLE DB für DB2 und SQL Server für den Entwurf von DRDA
@@ -82,4 +82,4 @@ Die folgende Tabelle enthält die Bibliotheken, die von Drittanbietern, wie ande
 https://en.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

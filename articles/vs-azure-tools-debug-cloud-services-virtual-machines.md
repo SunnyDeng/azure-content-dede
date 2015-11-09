@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="08/14/2015"
+   ms.date="10/28/2015"
    ms.author="patshea" />
 
 # Debuggen eines Azure-Clouddiensts oder virtuellen Computers in Visual Studio
@@ -88,11 +88,11 @@ Um den Debugger von allen Prozessen in Ihrer Instanz oder Rolle zu trennen, öff
 
 ## Einschränkungen beim Remotedebuggen in Azure
 
-Für Azure SDK 4.3 gelten beim Remotedebuggen folgende Einschränkungen.
+Analog zu Azure SDK 2.3 gelten beim Remotedebuggen folgende Einschränkungen.
 
 - Wenn das Remotedebuggen aktiviert ist, können Sie keinen Clouddienst veröffentlichen, in dem eine Rolle mehr als 25 Instanzen aufweist.
 
-- Der Debugger verwendet die Ports 30400 bis 30424 und 31400 bis 31424. Wenn Sie versuchen, diese Ports zu verwenden, können Sie Ihren Dienst nicht veröffentlichen, und eine der folgenden Fehlermeldungen wird im Aktivitätsprotokoll für Azure angezeigt:
+- Der Debugger verwendet die Ports 30400 bis 30424, 31400 bis 31424 und 32400 bis 32424. Wenn Sie versuchen, diese Ports zu verwenden, können Sie Ihren Dienst nicht veröffentlichen, und eine der folgenden Fehlermeldungen wird im Aktivitätsprotokoll für Azure angezeigt:
 
     - Fehler beim Überprüfen der CSCFG-Datei anhand der CSDEF-Datei. Der reservierte Portbereich "Bereich" für den Endpunkt "Microsoft.WindowsAzure.Plugins.RemoteDebugger.Connector" der Rolle "Rolle" überschneidet sich mit einem bereits definierten Port oder Bereich.
     - Fehler bei der Zuordnung. Wiederholen Sie den Vorgang später. Reduzieren Sie die VM-Größe oder die Anzahl der Rolleninstanzen, oder stellen Sie die VM in einer anderen Region bereit.
@@ -190,4 +190,4 @@ Visual Studio ASP.NET-Projekte bieten eine Option, einen praktischen virtuellen 
 - Verwenden Sie **IntelliTrace**, um ein Protokoll der Aufrufe und Ereignisse von einem freigegebenen Server zu sammeln. Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio](http://go.microsoft.com/fwlink/?LinkID=623016).
 - Verwenden Sie die **Azure-Diagnose**, um ausführliche Informationen zu Code, der in Rollen ausgeführt wird, zu protokollieren, unabhängig davon, ob die Rollen in der Entwicklungsumgebung oder in Azure ausgeführt werden. Weitere Informationen finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](http://go.microsoft.com/fwlink/p/?LinkId=400450).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="10/19/2015" 
+    ms.date="10/23/2015" 
     ms.author="elizapo" />
 
 
@@ -72,4 +72,9 @@ Verwenden Sie anschließend die Instanz-ID im folgenden Cmdlet:
 
 	Set-AzureRemoteAppCollection -CollectionName <collection name> -CustomRdpProperty "nusbdevicestoredirect:s: USB<Device InstanceID value>"
 
-<!---HONumber=Oct15_HO4-->
+
+
+### Helfen Sie uns, Ihnen zu helfen 
+Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben und klicken Sie auf **In GitHub bearbeiten**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
+
+<!---HONumber=Nov15_HO1-->

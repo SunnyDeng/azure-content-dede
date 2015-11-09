@@ -18,6 +18,8 @@
 
 # Verschieben von Daten in den und aus dem Azure-Blobspeicher mithilfe von Python
 
+Nachstehend finden Sie Links zu Anleitungen für Technologien zum Verschieben von Daten in den und aus dem Azure-BLOB-Speicher:
+
 [AZURE.INCLUDE [blob-storage-tool-selector](../../includes/machine-learning-blob-storage-tool-selector.md)]
 
 ## Einführung
@@ -121,4 +123,4 @@ Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei w
 	    except:
 	        print "something wrong happened when downloading the data %s"%blob.name
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

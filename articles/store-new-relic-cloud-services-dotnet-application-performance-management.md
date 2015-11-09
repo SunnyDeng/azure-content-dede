@@ -3,8 +3,8 @@
 	description="Erfahren Sie, wie Sie den New Relic-Dienst zum Verwalten und Überwachen Ihrer Azure-Anwendung verwenden." 
 	services="" 
 	documentationCenter=".net" 
-	authors="stepsic-microsoft-com" 
-	manager="carolz" 
+	authors="nickfloyd" 
+	manager="timlt" 
 	editor=""/>
 
 <tags 
@@ -14,23 +14,22 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="03/16/2015" 
-	ms.author="stepsic"/>
+	ms.author="nickfloyd@newrelic.com"/>
 
 
 
-#Verwaltung der Anwendungsleistung mit New Relic auf Azure
+# Verwaltung der Anwendungsleistung mit New Relic auf Azure
 
 In diesem Leitfaden wird beschrieben, wie Sie Ihren auf Azure gehosteten Anwendungen die erstklassige Leistungsüberwachung von New Relic hinzufügen. Wir erläutern das schnelle und einfache Verfahren zum Hinzufügen von New Relic zu Anwendungen und stellen einige der Funktionen von New Relic vor. Weitere Informationen zum Arbeiten mit New Relic finden Sie unter [Verwenden von New Relic](#using-new-relic).
 
-Was ist New Relic? 
---
+## Was ist New Relic?
 
 New Relic ist ein für Entwickler konzipiertes Tool, mit dem Produktionsanwendungen überwacht und detaillierte Informationen zu deren Leistung und Zuverlässigkeit abgerufen werden können. Es beschleunigt die Identifizierung und Diagnostizierung von Leistungsproblemen und gibt Ihnen die benötigten Informationen an die Hand, um diese Probleme zu lösen.
 
 New Relic verfolgt die Ladezeit und den Durchsatz von Webtransaktionen, sowohl vom Server als auch von den Browsern der Benutzer. Das Tool zeigt, wie viel Zeit Sie in der Datenbank verbracht haben, analysiert langsame Abfragen und Webanforderungen, bietet Verfügbarkeitsüberwachung und Warnfunktionen, verfolgt Anwendungsausnahmen und vieles mehr.
 
-Sonderpreis für New Relic im Azure Store 
---
+## Sonderpreis für New Relic im Azure Store
+
 
 New Relic Standard ist für Azure-Benutzer kostenlos; New Relic Pro wird basierend auf der Instanzgröße für Azure-Clouddienste angeboten
 
@@ -40,8 +39,7 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://az
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Store 
---
+## Anmelden bei New Relic über den Azure Store
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen integriert werden.
 
@@ -95,7 +93,7 @@ Um sich direkt im Azure Store bei New Relic anmelden, führen Sie diese drei ein
 	![Cloudprojekt veröffentlichen](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget09.png)
 
 
-**Hinweis:** Wenn Sie diese App zum ersten Mal in Azure bereitstellen, werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Weitere Informationen finden Sie unter <a href="/develop/net/tutorials/get-started/">Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website</a>.
+**Hinweis:** Wenn Sie diese App zum ersten Mal in Azure bereitstellen, werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Weitere Informationen finden Sie unter [Bereitstellen einer ASP.NET-Webanwendung für eine Azure-Website](app-service-web\web-sites-dotnet-get-started.md).
 
 ![Veröffentlichungseinstellungen](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget10.png)
 
@@ -117,49 +115,23 @@ So zeigen Sie das New Relic-Dashboard an:
 
 Nachdem Sie Ihre App in der Liste des Menüs "Applications" ausgewählt haben, werden im Dashboard "Overview" aktuelle App-Server- und Browserinformationen angezeigt. Zum Umschalten zwischen den zwei Ansichten klicken Sie auf die Schaltfläche **App server** oder **Browser**.
 
-Neben der <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">standardmäßigen New Relic-Benutzeroberfläche</a> und den <a href="https://newrelic.com/docs/site/the-new-relic-ui#drilldown">Dashboard-Drilldown</a>-Funktionen bietet das Dashboard "Overview" weitere Funktionen.
+Neben der [standardmäßigen New Relic-Benutzeroberfläche](https://newrelic.com/docs/site/the-new-relic-ui#functions") und der [Dashboard-Drilldown](https://newrelic.com/docs/site/the-new-relic-ui#drilldown)-Funktionen bietet das Dashboard "Overview" weitere Funktionen.
 
-<table border="1">
-  <thead>
-    <tr>
-      <th><b>Gewünschte Aktion</b></th>
-      <th><b>Maßnahme...</b></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-       <td>Anzeigen von Dashboardinformationen für den ausgewählten App-Server oder Browser</td>
-       <td>Klicken Sie auf die Schaltfläche <b>App server</b> oder <b>Browser</b>.</td>
-    </tr>
-     <tr>
-       <td>Anzeigen von Schwellenwerten für das <a href="https://newrelic.com/docs/site/apdex" target="_blank">Apdex</a>-Ergebnis Ihrer App</td>
-       <td>Zeigen Sie auf das <b>?<b>-Symbol</b></b> des Apdex-Ergebnisses.</td>
-    </tr>
-    <tr>
-       <td>Anzeigen weltweiter Apdex-Details</td>
-       <td>Zeigen Sie in der <b>Browser</b>-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte.<br /><b>Tipp:</b> Wenn Sie direkt zum Dashboard <a href="https://docs.newrelic.com/docs/new-relic-browser/geography-dashboard" target="_blank">Geography</a> der ausgewählten App wechseln möchten, klicken Sie auf den Titel <b>Global Apdex</b>, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte.</td>
-    </tr>
-    <tr>
-       <td>Anzeigen des Dashboards <a href="https://newrelic.com/docs/applications-dashboards/web-transactions" target="_blank">Web Transactions</a></td>
-       <td>Klicken Sie im Dashboard "Overview" auf die Tabelle "Web Transactions". Wenn Sie Details zu einer bestimmten Webtransaktion (einschließlich <a href="https://newrelic.com/docs/site/key-transactions" target="_blank">Key Transactions</a> anzeigen möchten), klicken Sie auf den entsprechenden Namen.</td>
-    </tr>
-    <tr>
-       <td>Anzeigen des Dashboards <a href="https://newrelic.com/docs/site/errors" target="_blank">Errors</a></td>
-       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br /><b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications > (Ihre App) > Events > Errors</b> anzeigen.</td>
-    </tr>
-    <tr>
-       <td>Anzeigen von Details zum App-Server</td>
-       <td><p>Führen Sie einen der folgenden Schritte aus:<p>
-        <ul>
-          <li>Schalten Sie zwischen einer Tabellenansicht der Hosts und ausführlichen Metrikdetails zu jedem Host um.</li>
-          <li>Klicken Sie auf den Namen eines einzelnen Servers.</li>
-          <li>Zeigen Sie auf das Apdex-Ergebnis eines einzelnen Servers.</li>
-          <li>Klicken Sie auf die CPU-Auslastung oder den Arbeitsspeicher eines einzelnen Servers.</li>
-        </ul>
-       </p></p></td>
-    </tr>
-  </tbody>
-</table>
+| Gewünschte Aktion | Maßnahme |
+| ----------------- | ---------- |
+| Anzeigen von Dashboardinformationen für den ausgewählten App-Server oder Browser. | Klicken Sie auf die Schaltfläche **App server** oder **Browser**. |
+| Anzeigen von Schwellenwerten für das [Apdex](https://newrelic.com/docs/site/apdex)-Ergebnis Ihrer App. | Zeigen Sie auf das **?**-Symbol des Apdex-Ergebnisses. |
+| Anzeigen weltweiter Apdex-Details. | Zeigen Sie in der **Browser**-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte. **Tipp:** Wenn Sie direkt zum Dashboard [Geography](https://docs.newrelic.com/docs/new-relic-browser/geography-dashboard") der ausgewählten App wechseln möchten, klicken Sie auf den Titel **Global Apdex**, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte. |
+| Anzeigen des Dashboards [Web Transactions](https://newrelic.com/docs/applications-dashboards/web-transactions) | Klicken Sie im Dashboard "Overview" auf die Tabelle "Web Transactions". Wenn Sie Details zu einer bestimmten Webtransaktion (einschließlich [Key Transactions](https://newrelic.com/docs/site/key-transactions") anzeigen möchten), klicken Sie auf den entsprechenden Namen. |
+| Anzeigen des Dashboards [Errors](https://newrelic.com/docs/site/errors). | Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms. **Tipp:** Sie können das Dashboard "Errors" auch über **Applications > (Ihre App) > Events > Errors** anzeigen. |
+
+
+Zum Anzeigen der Serverdetails der App können Sie zusätzlich eine der folgenden Aktionen ausführen:
+
+- Schalten Sie zwischen einer Tabellenansicht der Hosts und ausführlichen Metrikdetails zu jedem Host um.
+- Klicken Sie auf den Namen eines einzelnen Servers.
+- Zeigen Sie auf das Apdex-Ergebnis eines einzelnen Servers.
+- Klicken Sie auf die CPU-Auslastung oder den Arbeitsspeicher eines einzelnen Servers.
 
 Nachfolgend sehen Sie ein Beispiel des Dashboards "Overview" bei Auswahl der Browseransicht.
 
@@ -176,4 +148,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Überblick darüber, wie mit RUM (Real User Monitoring) die Zeit gemessen wird, die das Laden Ihrer Webseiten in den Browsern von Benutzern dauert, woher diese Benutzer stammen und welche Browser sie verwenden
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Über das Online-Hilfecenter von New Relic aufrufbare Ressourcen
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

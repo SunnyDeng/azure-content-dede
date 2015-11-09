@@ -19,7 +19,7 @@
 
 # Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]In diesem Artikel wird das Erstellen und Verwalten einer Ressource mithilfe von CLI-Befehlen (Command-Line Interface, Befehlszeilenschnittstelle) im klassischen Bereitstellungsmodell behandelt. Sie können eine Ressource auch mit CLI-Befehlen im [Bereitstellungsmodell des Ressourcen-Managers](azure-cli-arm-commands.md) erstellen und verwalten.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model]((azure-cli-arm-commands.md).
 
 In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle im Azure Service Management-Modus (ASM) Dienste an der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs mit PowerShell und über das Azure-Portal ausführen. Das Verwenden von Azure-Diensten im Azure Service Management-Modus ähnelt konzeptuell dem Erstellen und Verwalten individueller Azure-Konzepte und -Dienste (Websites, virtuelle Computer, virtuelle Netzwerke, Speicher usw.).
 
@@ -2350,4 +2350,4 @@ Löscht einen DNS-Servereintrag aus der Netzwerkkonfiguration.
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

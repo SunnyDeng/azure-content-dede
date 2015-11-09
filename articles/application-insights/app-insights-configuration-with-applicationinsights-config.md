@@ -87,8 +87,7 @@ Das `Microsoft.ApplicationInsights.Web`-NuGet-Paket enthält die folgenden Telem
 * `ClientIpHeaderTelemetryInitializer` aktualisiert die `Ip`-Eigenschaft des `Location`-Kontexts aller Telemetrieelemente basierend auf dem `X-Forwarded-For`-HTTP-Header der Anforderung.
 * `UserAgentTelemetryInitializer` aktualisiert die `UserAgent`-Eigenschaft des `User`-Kontexts aller Telemetrieelemente basierend auf dem `User-Agent`-HTTP-Header der Anforderung.
 * `OperationNameTelemetryInitializer` aktualisiert die `Name`-Eigenschaft von `RequestTelemetry` und die `Name`-Eigenschaft des `Operation`-Kontexts aller Telemetrieelemente basierend auf der HTTP-Methode sowie die Namen von ASP.NET-MVC-Controllern und Aktionen, die aufgerufen werden, um die Anforderung zu verarbeiten.
-* `OperationNameTelemetryInitializer` aktualisiert "Operation.Id` context property of all telemetry items tracked while 
-handling a request with the automatically generated `RequestTelemetry.Id".
+* `OperationNameTelemetryInitializer` aktualisiert die Kontexteigenschaft `Operation.Id` aller Telemetrieelemente, die bei der Verarbeitung einer Anforderung mit dem automatisch generierten `RequestTelemetry.Id`-Element nachverfolgt wurden. 
 * `UserTelemetryInitializer` aktualisiert die `Id`- und `AcquisitionDate`-Eigenschaften des `User`-Kontexts für alle Telemetrieelemente mit Werten, die aus dem `ai_user`-Cookie extrahiert werden, der vom Application Insights-JavaScript-Instrumentationscode generiert wird, der im Browser des Benutzers ausgeführt wird.
 * `SessionTelemetryInitializer` aktualisiert die `Id`-Eigenschaft des `Session`-Kontexts für alle Telemetrieelemente mit Werten, die aus dem `ai_session`-Cookie extrahiert werden, der vom Application Insights-JavaScript-Instrumentationscode generiert wird, der im Browser des Benutzers ausgeführt wird. 
 * `AzureRoleEnvironmentTelemetryInitializer` aktualisiert die `RoleName`- und `RoleInstance`-Eigenschaften des `Device`-Kontexts für alle Telemetrieelemente mit Informationen, die aus der Azure-Laufzeitumgebung extrahiert wurden.
@@ -213,58 +212,9 @@ Bestimmt die maximale Größe in MB, die dem beständigen Speicher auf dem lokal
    </ApplicationInsights>
 ```
 
-## Benutzerdefinierte Initialisierer
+## Telemetrieinitialisierer
 
-
-Wenn die Standardinitialisierer für Ihre Anwendung nicht geeignet sind, können Sie Ihre eigenen erstellen.
-
-Mit Kontextinitialisierern können Sie Werte festlegen, die zum Initialisieren der einzelnen Telemetrieclients verwendet werden. Wenn Sie zum Beispiel mehrere Versionen Ihrer App veröffentlicht haben, können Sie sicherstellen, dass die Daten durch Filtern einer benutzerdefinierten Eigenschaft getrennt werden können:
-
-    plublic class MyContextInitializer: IContextInitializer
-    {
-        public void Initialize(TelemetryContext context)
-        {
-          context.Properties["AppVersion"] = "v2.1";
-        }
-    }
-
-Verwenden Sie Telemetrieinitialisierer, um jedem Ereignis eine Verarbeitung hinzuzufügen. Beispielsweise kennzeichnet das Web-SDK jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Sie können dieses Verhalten außer Kraft setzen:
-
-    public class MyTelemetryInitializer : ITelemetryInitializer
-    {
-        public void Initialize(ITelemetry telemetry)
-        {
-            var requestTelemetry = telemetry as RequestTelemetry;
-            if (requestTelemetry == null) return;
-            int code;
-            bool parsed = Int32.TryParse(requestTelemetry.ResponseCode, out code);
-            if (!parsed) return;
-            if (code >= 400 && code < 500)
-            {
-                requestTelemetry.Success = true;
-                requestTelemetry.Context.Properties["Overridden400s"] = "true";
-            }            
-        }
-    }
- 
-Fügen Sie zum Installieren der Initialisierer folgende Zeilen in "ApplicationInsights.config" hinzu:
-
-    <TelemetryInitializers> <!-- or ContextInitializers -->
-    <Add Type="MyNamespace.MyTelemetryInitializer, MyAssemblyName" />
-
-
-Alternativ können Sie Code zum Installieren des Initialisierers zu einem frühen Zeitpunkt in der Ausführung der Anwendung schreiben. Zum Beispiel:
-
-
-    // In the app initializer such as Global.asax.cs:
-
-    protected void Application_Start()
-    {
-      TelemetryConfiguration.Active.TelemetryInitializers.Add(
-                new MyTelemetryInitializer());
-            ...
-
-
+Sie können Telemetrieinitialisierer schreiben, welche die aus Ihrer App gesammelten Telemetriedaten filtern und ändern. Diese können zusammen mit den Standardmodulen aus der config-Datei initialisiert werden. [Weitere Informationen](app-insights-api-filtering-sampling.md)
 
 
 ## InstrumentationKey
@@ -313,4 +263,4 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
+   ms.date="10/23/2015"
    ms.author="bwren" />
 
 # Azure Automation – Hybrid-Runbook-Worker
@@ -30,6 +30,8 @@ Sie können einen oder mehrere Computer in Ihrem Datencenter als Hybrid-Runbook-
 >[AZURE.NOTE]Operational Insights wird gerade in Operations Management Suite integriert, und möglicherweise wird der eine oder der andere Name im Portal und in der Dokumentation verwendet.
 
 Es gelten keine eingehenden Firewallanforderungen zur Unterstützung von Hybrid-Runbook-Workern. Der Agent auf dem lokalen Computer initiiert die gesamte Kommunikation mit Azure Automation in der Cloud. Wenn ein Runbook gestartet wird, erstellt Azure Automation eine Anweisung, die vom Agent abgerufen wird. Der Agent ruft anschließend das Runbook und alle Parameter über einen Pullvorgang ab. Außerdem werden alle im Runbook verwendeten [Objekte](http://msdn.microsoft.com/library/dn939988.aspx) aus Azure Automation abgerufen.
+
+>[AZURE.NOTE]Hybrid Runbook Worker unterstützen gegenwärtig keine [DSC-Konfigurationen](automation-dsc-overview.md).
 
 ## Hybrid-Runbook-Workergruppen
 
@@ -66,14 +68,14 @@ Der Microsoft-Verwaltungs-Agent verbindet Computer mit Operations Management Sui
 
 Befolgen Sie die Anweisungen unter [Direktes Verbinden von Computern mit Operational Insights](../operational-insights/operational-insights-direct-agent.md), um den Agent auf dem lokalen Computer zu installieren. Sie können diesen Vorgang für mehrere Computer wiederholen, um Ihrer Umgebung mehrere Worker hinzuzufügen.
 
-Wenn der Agent erfolgreich mit Operations Management Suite verbunden ist, wird er im Operations Management Suite-Bereich **Einstellungen** auf der Registerkarte **Verbundene Datenquellen** aufgeführt. Sie können sicherstellen, dass der Agent die Automation-Lösung ordnungsgemäß heruntergeladen hat, indem Sie prüfen, ob unter "C:\\Programme\\Microsoft Monitoring Agent\\Agent" ein Ordner namens **AzureAutomationFiles** vorhanden ist.
+Wenn der Agent erfolgreich mit Operations Management Suite verbunden ist, wird er im Operations Management Suite-Bereich **Einstellungen** auf der Registerkarte **Verbundene Datenquellen** aufgeführt. Sie können sicherstellen, dass der Agent die Automation-Lösung ordnungsgemäß heruntergeladen hat, indem Sie prüfen, ob unter „C:\\Programme\\Microsoft Monitoring Agent\\Agent“ ein Ordner namens **AzureAutomationFiles** vorhanden ist.
 
 ### 4\. Installieren der Runbookumgebung und Verbindungsherstellung mit Azure Automation
 Wenn Sie Operations Management Suite einen Agent hinzufügen, lädt die Automation-Lösung per Push das PowerShell-Modul **HybridRegistration** herunter, in dem das Cmdlet **Add-HybridRunbookWorker** enthalten ist. Sie verwenden dieses Cmdlet zum Installieren der Runbookumgebung auf dem Computer und registrieren diesen bei Azure Automation.
 
 Öffnen Sie eine PowerShell-Sitzung im Administratormodus, und führen Sie die folgenden Befehle zum Importieren des Moduls aus.
 
-	cd "C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\5.2.20826.0\HybridRegistration"
+	cd "C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation<version>\HybridRegistration"
 	Import-Module HybridRegistration.psd1
 
 
@@ -111,8 +113,6 @@ Verwenden des Parameters **RunOn**: Mit dem folgenden Befehl wird unter Verwendu
 	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
 
 >[AZURE.NOTE]Der Parameter **RunOn** wurde dem Cmdlet **Start-AzureAutomationRunbook** in Version 0.9.1 von Microsoft Azure PowerShell hinzugefügt. Sie sollten die [neueste Version herunterladen](http://azure.microsoft.com/downloads), wenn auf Ihrem System eine Vorgängerversion installiert ist. Sie müssen diese Version auf einer Arbeitsstation installieren, auf der Sie das Runbook aus Windows PowerShell starten. Eine Installation auf dem Workercomputer ist nur erforderlich, wenn Sie Runbooks von diesem Computer starten möchten. Sie können ein Runbook auf einem Hybrid-Runbook-Worker derzeit nicht aus einem anderen Runbook starten, da hierzu die neueste Version von Azure PowerShell in Ihrem Automation-Konto installiert sein müsste. Die neueste Version wird in Kürze automatisch in Azure Automation aktualisiert und automatisch auf die Worker gepusht.
-
->[AZURE.NOTE]Hybrid Runbook Worker kann nur [grafische und PowerShell-Workflow-Runbooks](automation-runbook-types.md) ausführen. Derzeit können Sie kein [PowerShell-Runbook](automation-runbook-types.md) auf einem Hybrid Runbook Worker starten.
 
 ## Problembehandlung bei Runbooks auf Hybrid Runbook Worker
 
@@ -164,4 +164,4 @@ Sie können anhand der folgenden Kriterien prüfen, ob Azure Automation mit Hybr
 - [Bearbeiten eines Runbooks in Azure Automation](https://msdn.microsoft.com/library/dn879137.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

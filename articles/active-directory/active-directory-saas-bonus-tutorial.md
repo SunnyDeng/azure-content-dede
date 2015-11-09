@@ -1,7 +1,20 @@
-<properties pageTitle="Lernprogramm: Azure Active Directory-Integration mit Bonus.ly | Microsoft Azure" description="Erfahren Sie, wie Sie Bonus.ly mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Lernprogramm: Azure Active Directory-Integration mit Bonus.ly | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie Bonus.ly mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Lernprogramm: Azure Active Directory-Integration mit Bonus.ly
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=523806), um Feedback abzugeben.
 
 In diesem Lernprogramm wird die Integration von Azure und Bonus.ly veranschaulicht. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
@@ -49,7 +62,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Bon
     ![Bonus.ly](./media/active-directory-saas-bonus-tutorial/IC773682.png "Bonus.ly")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Bonus.ly zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Bonus.ly müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Bonus.ly zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Bonus.ly müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -61,32 +74,32 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-bonus-tutorial/IC773683.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Bonus.ly-URL** die URL im Format "*https://\<Mandantenname>.Bonus.ly*" ein, und klicken Sie dann auf **Weiter**:
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Bonus.ly-Mandanten-URL** die URL im Format „*https://\<Mandantenname>.Bonus.ly*“ ein, und klicken Sie dann auf **Weiter**:
 
     ![App-URL konfigurieren](./media/active-directory-saas-bonus-tutorial/IC773684.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Bonus.ly** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat lokal als **C:\\Bonusly.cer**.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Bonus.ly** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal als **C:\\Bonusly.cer**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-bonus-tutorial/IC773685.png "Einmaliges Anmelden konfigurieren")
 
-5.  Melden Sie sich in einem anderen Browserfenster mit Ihrem**Bonus.ly**-Mandanten an.
+5.  Melden Sie sich in einem anderen Browserfenster bei Ihrem**Bonus.ly**-Mandanten an.
 
-6.  Klicken Sie in der Symbolleiste oben auf **Settings**, und wählen Sie dann **Integrations and apps** aus.
+6.  Klicken Sie in der Symbolleiste oben auf **Einstellungen**, und wählen Sie dann **Integrations und Apps** aus.
 
     ![Bonus.ly](./media/active-directory-saas-bonus-tutorial/IC773686.png "Bonus.ly")
 
-7.  Wählen Sie unter **Single Sign-On** **SAML** aus.
+7.  Wählen Sie unter **Einmaliges Anmelden** die Option **SAML** aus.
 
-8.  Führen Sie auf der Dialogseite **SAML** die folgenden Schritte aus:
+8.  Führen Sie auf der Dialogfeldseite für **SAML** die folgenden Schritte aus:
 
     ![Bonus.ly](./media/active-directory-saas-bonus-tutorial/IC773687.png "Bonus.ly")
 
-    1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Bonus.ly** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **IdP SSO target URL** ein.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Bonus.ly** den Wert für **Aussteller-ID**, und fügen Sie ihn in das Textfeld **IdP Issuer** ein.
-    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Bonus.ly** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **IdP Login URL** ein.
-    4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Cert Fingerprint** ein.
+    1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Bonus.ly** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **IdP-SSO-Ziel-URL** ein.
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Bonus.ly** den Wert für **Aussteller-ID**, und fügen Sie ihn in das Textfeld **IdP-Aussteller** ein.
+    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Bonus.ly** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **IdP-Anmelde-URL** ein.
+    4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Fingerabdruck des Zertifikats** ein.
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI).
 
 9.  Klicken Sie auf **Speichern**.
 
@@ -101,15 +114,15 @@ Damit sich Azure AD-Benutzer bei Bonus.ly anmelden können, müssen sie in Bonu
 
 1.  Melden Sie sich in einem Browserfenster mit Ihrem Bonus.ly-Mandanten an.
 
-2.  Klicken Sie auf **Settings**.
+2.  Klicken Sie auf **Einstellungen**.
 
     ![Einstellungen](./media/active-directory-saas-bonus-tutorial/IC781041.png "Einstellungen")
 
-3.  Klicken Sie auf die Registerkarte **Users and bonuses**.
+3.  Klicken Sie auf die Registerkarte **Benutzer und Boni**.
 
     ![Users and bonuses](./media/active-directory-saas-bonus-tutorial/IC781042.png "Users and bonuses")
 
-4.  Klicken Sie auf **Manage Users**.
+4.  Klicken Sie auf **Benutzer verwalten**.
 
     ![Manage Users](./media/active-directory-saas-bonus-tutorial/IC781043.png "Manage Users")
 
@@ -117,11 +130,11 @@ Damit sich Azure AD-Benutzer bei Bonus.ly anmelden können, müssen sie in Bonu
 
     ![Benutzer hinzufügen](./media/active-directory-saas-bonus-tutorial/IC781044.png "Benutzer hinzufügen")
 
-6.  Führen Sie im Dialogfeld **Add User** die folgenden Schritte aus:
+6.  Führen Sie im Dialogfeld **Benutzer hinzufügen** die folgenden Schritte aus:
 
     ![Benutzer hinzufügen](./media/active-directory-saas-bonus-tutorial/IC781045.png "Benutzer hinzufügen")
 
-    1.  Geben Sie in die entsprechenden Textfelder die **E-Mail-Adresse**, den **Vornamen** und den **Nachnamen** eines gültigen AAD-Kontos ein, das Sie bereitstellen möchten.
+    1.  Geben Sie **E-Mail-Adresse**, **Vorname** und **Nachname** eines gültigen AAD-Kontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
     2.  Klicken Sie auf **Speichern**.
 
     >[AZURE.NOTE]Der Besitzer des AAD-Kontos erhält eine E-Mail mit einem Link zur Bestätigung des Kontos, bevor es aktiv wird.
@@ -144,6 +157,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Ja](./media/active-directory-saas-bonus-tutorial/IC767830.png "Ja")
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

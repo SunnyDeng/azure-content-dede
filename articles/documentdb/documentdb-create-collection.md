@@ -40,7 +40,7 @@ Für die Verwendung von Microsoft Azure DocumentDB benötigen Sie ein [DocumentD
 
 	- **Standard** Diese Richtlinie empfiehlt sich, wenn Sie Gleichheitsabfragen für Zeichenfolgen durchführen und ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen verwenden. Der Indexspeicheraufwand dieser Richtlinie ist geringer als bei **Bereich**.
 	- **Hash**. Diese Richtlinie empfiehlt sich, wenn Sie Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Bei dieser Richtlinie ist der Indexspeicheraufwand am geringsten.
-	- **Bereich** Wählen Sie diese Richtlinie, wenn Sie ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Der Indexspeicheraufwand dieser Richtlinie ist höher als bei **Standard** oder **Hash**.
+	- **Bereich** Wählen Sie diese Richtlinie, wenn Sie ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Der Indexspeicheraufwand dieser Richtlinie ist höher als bei **Standard** oder **Hash**.
 
 	Weitere Informationen zu den Indizierungsrichtlinien finden Sie unter [Indizierungsrichtlinien für DocumentDB](documentdb-indexing-policies.md).
 
@@ -65,4 +65,4 @@ Nachdem Sie nun über eine Sammlung verfügen, besteht der nächste Schritt dari
 
 Nachdem eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Vorschauportal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="10/20/2015"
 	ms.author="cephalin"/>
 
 # Aktivieren der Diagnoseprotokollierung für Web-Apps in Azure App Service
@@ -67,6 +67,11 @@ Die Registerkarte **Konfigurieren** im [Azure-Portal](https://manage.windowsazur
 * **Table storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto unter dem Tabellennamen.
 * **Blob storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto im Blob-Container.
 * **Retention period** - Standardmäßig werden Protokolle nicht automatisch aus dem **blob storage** gelöscht. Falls die Protokolle automatisch gelöscht werden sollen, wählen Sie **set retention** aus, und geben Sie die Anzahl der Tage ein, für die Protokolle aufbewahrt werden sollen.
+
+>[AZURE.NOTE]Wenn Sie [den Zugriffsschlüssel für Ihr Speicherkonto neu generieren](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys), müssen Sie die jeweilige Protokollierungskonfiguration zur Verwendung der aktualisierten Tasten zurücksetzen. Gehen Sie dazu folgendermaßen vor:
+>
+> 1. Stellen Sie in der Registerkarte **Konfigurieren** das jeweilige Protokollierungsfeature auf **Aus**. Speichern Sie die Einstellungen.
+> 2. Aktivieren Sie die Protokollierung für den Speicherkonto-Blob oder die -Tabelle erneut. Speichern Sie die Einstellungen.
 
 Sie können gleichzeitig eine Kombination aus Dateisystem-, Tabellen- und BLOB-Speicher aktivieren und jeweils individuelle Konfigurationen der Protokollierungsebene festlegen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Blob-Speicher protokollieren, während die Dateisystemprotokollierung ausführlich erfolgt.
 
@@ -265,4 +270,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

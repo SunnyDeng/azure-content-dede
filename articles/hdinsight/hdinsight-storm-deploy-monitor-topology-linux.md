@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/04/2015"
+   ms.date="10/26/2015"
    ms.author="larryfr"/>
 
 # Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Linux
@@ -143,7 +143,14 @@ Weitere Informationen finden Sie unter <a href="https://github.com/apache/storm/
 
 ### Basis-URI
 
-Der Basis-URI für die REST-API auf Linux-basierten HDInsight-Clustern lautet **https://headnode0:8744/api/v1/</a>**.
+Der Basis-URI für die REST-API auf Linux-basierten HDInsight-Clustern ist auf dem Hauptknoten unter ****https://HEADNODEFQDN:8744/api/v1/** verfügbar. Der Domänenname des Hauptknotens wird während der Clustererstellung generiert und ist nicht statisch.
+
+Sie können den vollqualifizierten Domänennamen (FQDN) für den Clusterhauptknoten auf unterschiedliche Arten ermitteln:
+
+* __Über eine SSH-Sitzung__: Verwenden Sie den Befehl `headnode -f` für eine SSH-Sitzung mit dem Cluster.
+* __Über Ambari Web__: Wählen Sie oben auf der Seite __Dienste__ und dann __Storm__. Wählen Sie auf der Registerkarte __Zusammenfassung__ die Option __Storm UI-Server__. Der vollqualifizierte Domänenname des Knotens, auf dem die Storm UI und die REST-API ausgeführt wird, wird oben auf der Seite angezeigt.
+* __Über die Ambari-REST-API__: Verwenden Sie den Befehl `curl -u admin:PASSWORD -G "https://CLUSTERNAME
+.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/STORM/components/STORM_UI_SERVER"`, um Informationen zu dem Knoten abzurufen, auf dem die Storm UI und die REST-API ausgeführt werden. Ersetzen Sie __PASSWORD__ durch das Administratorkennwort für den Cluster. Ersetzen Sie __CLUSTERNAME__ durch den Namen des Clusters. In der Antwort enthält der Eintrag „host\_name“ den vollqualifizierten Domänennamen des Knotens.
 
 ### Authentifizierung
 
@@ -161,4 +168,4 @@ Nachdem Sie erfahren haben, wie Sie Topologien mithilfe des Storm-Dashboards ber
 
 Eine Liste weiterer Beispieltopologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

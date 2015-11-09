@@ -37,7 +37,7 @@ Neben den hier dokumentierten befehlsspezifischen optionalen Parametern gibt es 
 
 Wie beim [Azure Service Management-Modus](../virtual-machines-command-line-tools.md) bietet der Ressourcen-Manager-Modus der Azure-Befehlszeilenschnittstelle Ihnen Befehle, mit denen Sie Ressourcen über die Befehlszeile imperativ erstellen können. Wenn Sie beispielsweise `azure group create <groupname> <location>` eingeben, fordern Sie Azure auf, eine Ressourcengruppe zu erstellen, und mit `azure group deployment create <resourcegroup> <deploymentname>` weisen Sie Azure an, eine Bereitstellung einer beliebigen Anzahl von Elementen zu erstellen, die in einer Gruppe abgelegt werden sollen. Da jede Art von Ressource über imperative Befehle verfügt, können Sie sie miteinander verbinden, um recht komplexe Bereitstellungen zu erstellen.
 
-Der Einsatz von Ressourcengruppen-_Vorlagen_, die eine Ressource beschreiben, ist jedoch ein deklarativer Ansatz, der sehr viel wirksamer ist und der es Ihnen ermöglicht, komplexe Bereitstellungen einer (fast) beliebigen Anzahl von Ressourcen für (nahezu) jeden Zweck zu automatisieren. Wenn Sie Vorlagen verwenden, ist der einzige imperative Befehl die Bereitstellung. Eine allgemeine Übersicht über Vorlagen, Ressourcen und Ressourcengruppen finden Sie unter [Übersicht über Azure-Ressourcengruppe](resource-groups-overview).
+Der Einsatz von Ressourcengruppen-_Vorlagen_, die eine Ressource beschreiben, ist jedoch ein deklarativer Ansatz, der sehr viel wirksamer ist und der es Ihnen ermöglicht, komplexe Bereitstellungen einer (fast) beliebigen Anzahl von Ressourcen für (nahezu) jeden Zweck zu automatisieren. Wenn Sie Vorlagen verwenden, ist der einzige imperative Befehl die Bereitstellung. Eine allgemeine Übersicht über Vorlagen, Ressourcen und Ressourcengruppen finden Sie unter [Übersicht über Azure-Ressourcengruppe](../resource-group-overview.md).
 
 ##Nutzungsanforderungen
 
@@ -1742,4 +1742,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

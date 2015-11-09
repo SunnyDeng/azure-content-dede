@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Hinzufügen von Service Fabric-Integritätsberichten"
+   pageTitle="Hinzufügen von Service Fabric-Integritätsberichten | Microsoft Azure"
    description="Beschreibt, wie benutzerdefinierte Integritätsberichte an Integritätsentitäten von Azure Service Fabric gesendet werden. Enthält Empfehlungen zum Entwerfen und Implementieren hochwertiger Integritätsberichte."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/03/2015"
+   ms.date="10/23/2015"
    ms.author="oanapl"/>
 
 # Hinzufügen von Service Fabric-Integritätsberichten
@@ -274,4 +274,4 @@ Basierend auf den Integritätsdaten können Dienstautoren und Cluster- bzw. Anwe
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

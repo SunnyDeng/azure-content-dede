@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Verbindungsobjekte in Azure Automation | Microsoft Azure"
-   description="Verbindungsobjekte in Azure Automation enthalten die Informationen, die zur Verbindungsherstellung mit einem externen Dienst oder einer externen Anwendung aus einem Runbook erforderlich sind. Dieser Artikel stellt eine ausführliche Beschreibung von Verbindungen bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
+   description="Verbindungsobjekte in Azure Automation enthalten die Informationen, die zur Verbindungsherstellung mit einem externen Dienst oder einer externen Anwendung aus einem Runbook oder einer DSC-Konfiguration erforderlich sind. Dieser Artikel stellt eine ausführliche Beschreibung von Verbindungen bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/18/2015"
+   ms.date="10/23/2015"
    ms.author="bwren" />
 
 # Verbindungsobjekte in Azure Automation
 
-Ein Automation-Verbindungsobjekt enthält die Informationen, die zur Verbindungsherstellung mit einem externen Dienst oder einer externen Anwendung aus einem Runbook erforderlich sind. Dies kann Informationen einschließen, die für die Authentifizierung erforderlich sind, beispielsweise ein Benutzername und ein Kennwort oder Verbindungsinformationen wie eine URL oder ein Port. Der Wert einer Verbindung liegt darin, dass alle Eigenschaften zur Verbindungsherstellung mit einer bestimmten Anwendung in einem Objekt gespeichert werden, statt mehrere Variablen zu erstellen. Der Benutzer kann die Werte für eine Verbindung an einem Ort bearbeiten, und Sie können den Namen einer Verbindung in einem einzelnen Parameter an ein Runbook übergeben. Auf die Eigenschaften für eine Verbindung kann im Runbook über die Aktivität **Get-AutomationConnection** zugegriffen werden.
+Ein Automation-Verbindungsobjekt enthält die Informationen, die zur Verbindungsherstellung mit einem externen Dienst oder einer externen Anwendung aus einem Runbook oder einer DSC-Konfiguration erforderlich sind. Dies kann Informationen einschließen, die für die Authentifizierung erforderlich sind, beispielsweise ein Benutzername und ein Kennwort oder Verbindungsinformationen wie eine URL oder ein Port. Der Wert einer Verbindung liegt darin, dass alle Eigenschaften zur Verbindungsherstellung mit einer bestimmten Anwendung in einem Objekt gespeichert werden, statt mehrere Variablen zu erstellen. Der Benutzer kann die Werte für eine Verbindung an einem Ort bearbeiten, und Sie können den Namen einer Verbindung in einem einzelnen Parameter an ein Runbook oder eine DSC-Konfiguration übergeben. Auf die Eigenschaften für eine Verbindung kann im Runbook oder in der DSC-Konfiguration über die Aktivität **Get-AutomationConnection** zugegriffen werden.
 
 Wenn Sie eine Verbindung erstellen, müssen Sie einen *Verbindungstyp* angeben. Der Verbindungstyp ist eine Vorlage, die einen Satz von Eigenschaften definiert. Die Verbindung definiert Werte für jede der Eigenschaften, die im zugehörigen Verbindungstyp definiert sind. Verbindungstypen werden in Integrationsmodulen zu Azure Automation hinzugefügt oder mit der [ Azure Automation-API](http://msdn.microsoft.com/library/azure/mt163818.aspx) erstellt. Es stehen beim Erstellen einer Verbindung nur die Verbindungstypen zur Verfügung, die in Ihrem Automation-Konto installiert sind.
 
@@ -25,7 +25,7 @@ Wenn Sie eine Verbindung erstellen, müssen Sie einen *Verbindungstyp* angeben. 
 
 ## Windows PowerShell-Cmdlets
 
-Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Automation-Verbindungen mit Windows PowerShell verwendet. Sie gehören zum Lieferumfang des [Azure PowerShell-Moduls](../powershell-install-configure.md), das zur Verwendung in Automation-Runbooks zur Verfügung steht.
+Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Automation-Verbindungen mit Windows PowerShell verwendet. Sie gehören zum Lieferumfang des [Azure PowerShell-Moduls](../powershell-install-configure.md), das zur Verwendung in Automation-Runbook und in DSC-Konfigurationen zur Verfügung steht.
 
 |Cmdlet|Beschreibung|
 |:---|:---|
@@ -34,15 +34,15 @@ Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Auto
 |[Remove-AzureAutomationConnection](http://msdn.microsoft.com/library/dn921827.aspx)|Entfernt eine vorhandene Verbindung.|
 |[Set-AzureAutomationConnectionFieldValue](http://msdn.microsoft.com/library/dn921826.aspx)|Legt den Wert für ein bestimmtes Feld einer vorhandenen Verbindung fest.|
 
-## Runbookaktivitäten
+## Aktivitäten
 
-Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Verbindungen in einem Runbook verwendet.
+Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Verbindungen in einem Runbook oder einer DSC-Konfiguration verwendet.
 
 |Aktivitäten|Beschreibung|
 |---|---|
-|Get-AutomationConnection|Ruft eine Verbindung zur Verwendung in einem Runbook ab. Gibt eine Hashtabelle mit den Eigenschaften der Verbindung zurück.|
+|Get-AutomationConnection|Ruft eine zu verwendende Verbindung ab. Gibt eine Hashtabelle mit den Eigenschaften der Verbindung zurück.|
 
->[AZURE.NOTE]Vermeiden Sie die Verwendung von Variablen im Parameter "-Name" von **Get-AutomationConnection** in einem Runbook, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks und Verbindungsobjekten zur Entwurfszeit erschweren kann.
+>[AZURE.NOTE]Vermeiden Sie die Verwendung von Variablen im Parameter "-Name" von **Get-AutomationConnection**, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks oder DSC-Konfigurationen und Verbindungsobjekten zur Entwurfszeit erschweren kann.
 
 ## Erstellen einer neuen Verbindung
 
@@ -79,9 +79,9 @@ Die folgenden Beispielbefehle erstellen eine neue Verbindung für [Twilio](http:
 	New-AzureAutomationConnection -AutomationAccountName "MyAutomationAccount" -Name "TwilioConnection" -ConnectionTypeName "Twilio" -ConnectionFieldValues $FieldValues
 
 
-## Verwenden einer Verbindung in einem Runbook
+## Verwenden einer Verbindung in einem Runbook oder einer DSC-Konfiguration
 
-In einem Runbook rufen Sie eine Verbindung mit dem Cmdlet **Get-AutomationConnection** ab. Mithilfe dieser Aktivität werden die Werte der verschiedenen Felder in der Verbindung abgerufen und als [Hashtabelle](http://go.microsoft.com/fwlink/?LinkID=324844) zurückgegeben, die anschließend mithilfe geeigneter Befehle im Runbook verwendet werden kann.
+Rufen Sie in einem Runbook oder einer DSC-Verbindung eine Verbindung mit dem Cmdlet **Get-AutomationConnection** ab. Mithilfe dieser Aktivität werden die Werte der verschiedenen Felder in der Verbindung abgerufen und als [Hashtabelle](http://go.microsoft.com/fwlink/?LinkID=324844) zurückgegeben, die anschließend mithilfe geeigneter Befehle im Runbook oder in der DSC-Konfiguration verwendet werden kann.
 
 ### Beispiel für ein Textrunbook
 Die folgenden Beispielbefehle zeigen, wie Sie die Twilio-Verbindung aus dem vorherigen Beispiel zum Senden einer Textnachricht aus einem Runbook verwenden. Die hier verwendete Send-TwilioSMS-Aktivität verfügt über zwei Parametersätze, die unterschiedliche Methoden für die Authentifizierung beim Twilio-Dienst verwenden. Eine Methode verwendet ein Verbindungsobjekt, die andere verwendet einzelne Parameter für Konto-SID und Autorisierungstoken. In diesem Beispiel werden beide Methoden gezeigt.
@@ -120,4 +120,4 @@ Die folgende Abbildung zeigt das obige Beispiel, verwendet jedoch den Parameters
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

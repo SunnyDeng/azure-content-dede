@@ -1,14 +1,27 @@
-<properties pageTitle="Lernprogramm: Azure Active Directory-Integration mit Adaptive Suite | Microsoft Azure" description="Erfahren Sie, wie Sie Adaptive Suite mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Lernprogramm: Azure Active Directory-Integration mit Adaptive Suite | Microsoft Azure"
+    description="Erfahren Sie, wie Sie Adaptive Suite mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Lernprogramm: Azure Active Directory-Integration mit Adaptive Suite
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=615749), um Feedback abzugeben.
 
 In diesem Lernprogramm wird die Integration von Azure und Adaptive Suite erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen Adaptive Suite-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Adaptive Suite zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Adaptive Suite-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
+Nach Abschluss dieses Tutorials können sich die Adaptive Suite zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Adaptive Suite-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -51,7 +64,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ada
     ![Adaptive Suite](./media/active-directory-saas-adaptive-suite-tutorial/IC805639.png "Adaptive Suite")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Adaptive Suite zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Adaptive Suite müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Adaptive Suite zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Adaptive Suite müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (Abrufen des Fingerabdruckwerts eines Zertifikats, in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -63,13 +76,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-adaptive-suite-tutorial/IC805641.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-Einstellungen konfigurieren** im Textfeld **Antwort-URL** die URL im Format "**https://login.adaptiveinsights.com:443/samlsso/RlJFRVRSSUFMMTI3MTE=*" ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-Einstellungen konfigurieren** im Textfeld **Antwort-URL** die URL im Format „**https://login.adaptiveinsights.com:443/samlsso/RlJFRVRSSUFMMTI3MTE=*"“ ein, und klicken Sie dann auf **Weiter**.
 
     >[AZURE.NOTE]Sie finden diesen Wert auf der Seite **SAML SSO Settings** der Adaptive Suite.
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-adaptive-suite-tutorial/IC805642.png "Konfigurieren von App-Einstellungen")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um Adaptive Suite** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal auf Ihrem Computer.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Adaptive Suite** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-adaptive-suite-tutorial/IC805643.png "Einmaliges Anmelden konfigurieren")
 
@@ -79,26 +92,26 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Admin](./media/active-directory-saas-adaptive-suite-tutorial/IC805644.png "Admin")
 
-7.  Klicken Sie im Abschnitt **Users and Roles** auf **Manage SAML SSO Settings**.
+7.  Klicken Sie im Abschnitt **Benutzer und Rollen** auf **SAML SSO-Einstellungen verwalten**.
 
     ![Manage SAML SSO Settings](./media/active-directory-saas-adaptive-suite-tutorial/IC805645.png "Manage SAML SSO Settings")
 
-8.  Führen Sie auf der Seite **SAML SSO Settings** die folgenden Schritte aus:
+8.  Führen Sie auf der Seite **SAML SSO-Einstellungen** die folgenden Schritte aus:
 
     ![SAML SSO Settings](./media/active-directory-saas-adaptive-suite-tutorial/IC805646.png "SAML SSO Settings")
 
-    1.  Geben Sie im Textfeld **Identity provider name** einen Namen für die Konfiguration ein.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Adaptive Suite** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Identity provider Entity ID** ein.
-    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Adaptive Suite** den Wert **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **Identity provider SSO URL** ein.
-    4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Adaptive Suite** den Wert **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **Custom logout URL** ein.
-    5.  Klicken Sie auf **Choose file**, um das heruntergeladene Zertifikat hochzuladen.
-    6.  Wählen Sie als **SAML user id** den **User’s Adaptive Insights user name** aus.
-    7.  Wählen Sie als **SAML user id location** die **User id in NameID of Subject** aus.
-    8.  Wählen Sie als **SAML NameID format** die Option **Email address** aus.
-    9.  Wählen Sie für **Enable SAML** die Option **Allow SAML SSO and direct Adaptive Insights login** aus.
+    1.  Geben Sie im Textfeld **Name des Identitätsanbieters** einen Namen für die Konfiguration ein.
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Adaptive Suite** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Entitäts-ID des Identitätsanbieters** ein.
+    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Adaptive Suite** den Wert **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **SSO-URL des Identitätsanbieters** ein.
+    4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Adaptive Suite** den Wert **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **Benutzerdefinierte Abmelde-URL** ein.
+    5.  Klicken Sie auf **Datei auswählen**, um das heruntergeladene Zertifikat hochzuladen.
+    6.  Wählen Sie als **SAML-Benutzer-ID** die Option **Benutzername des Benutzers von Adaptive Insights** aus.
+    7.  Wählen Sie als **SAML-Benutzer-ID-Speicherort** die **Benutzer-ID in NameID des Subjekts** aus.
+    8.  Wählen Sie als **SAML NameID-Format** die Option **E-Mail-Adresse** aus.
+    9.  Wählen Sie für **SAML aktivieren** die Option **SAML SSO und direkte Adaptive Insights-Anmeldung erlauben** aus.
     10. Klicken Sie auf **Speichern**.
 
-9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-adaptive-suite-tutorial/IC805647.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -113,16 +126,16 @@ Damit sich Azure AD-Benutzer bei Adaptive Suite anmelden können, müssen sie i
 
     ![Admin](./media/active-directory-saas-adaptive-suite-tutorial/IC805644.png "Admin")
 
-3.  Klicken Sie im Abschnitt **Users and Roles** auf **Add User**.
+3.  Klicken Sie im Abschnitt **Benutzer und Rollen** auf **Benutzer hinzufügen**.
 
     ![Benutzer hinzufügen](./media/active-directory-saas-adaptive-suite-tutorial/IC805648.png "Benutzer hinzufügen")
 
-4.  Führen Sie im Abschnitt **New User** die folgenden Schritte aus:
+4.  Führen Sie im Abschnitt **Neuer Benutzer** die folgenden Schritte aus:
 
     ![Senden](./media/active-directory-saas-adaptive-suite-tutorial/IC805649.png "Senden")
 
-    1.  Geben Sie in die Textfelder **Name**, **Login**, **Email** und **Password** die entsprechenden Informationen eines gültigen Azure Active Directory-Benutzerkontos ein, das Sie bereitstellen möchten.
-    2.  Wählen Sie eine **Role** aus.
+    1.  Geben Sie in die Textfelder **Name**, **Anmeldung**, **E-Mail** und **Kennwort** die entsprechenden Informationen eines gültigen Azure Active Directory-Benutzerkontos ein, das Sie bereitstellen möchten.
+    2.  Wählen Sie unter **Rolle** eine Rolle aus.
     3.  Klicken Sie auf **Senden**.
 
 >[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von Adaptive Suite-Benutzerkonten oder mithilfe der von Adaptive Suite bereitgestellten APIs erstellen.
@@ -143,6 +156,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Ja](./media/active-directory-saas-adaptive-suite-tutorial/IC767830.png "Ja")
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

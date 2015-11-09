@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/16/2015"
+   ms.date="10/22/2015"
    ms.author="kareni"/>
 
 
@@ -24,7 +24,15 @@ Die Gebühren für Microsoft Azure-Abonnements variieren je nach Preisliste. Ein
 
 Bitte beachten Sie, dass bis zu 24 Stunden an ruhendem Verbrauch von Ihrem vorherigen in den aktuellen Abrechnungszeitraum übertragen werden können.
 
-Weitere Informationen über Verbrauch, Nutzung und Tarife finden Sie auf der Seite [Microsoft Azure-Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/).
+Weitere Informationen über Verbrauch und Tarife finden Sie auf der Seite [Microsoft Azure-Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/).
+
+Die folgenden Links enthalten eine vollständige Liste aller Microsoft Azure-Dienste.
+
+- [Dienstdetails Liste (csv1)](https://azurepricing.blob.core.windows.net/supplemental/MOSPServices_csv1.xlsx)
+- [Dienstdetails Liste (csv2)](https://azurepricing.blob.core.windows.net/supplemental/MOSPServices_csv2.xlsx)
+
+*HINWEIS: Die Link **csv1** bezieht sich auf die Namen von Spaltenüberschriften für CSV-Version 1; der Link **csv2** bezieht sich auf die neuen Namen von Spaltenüberschriften für CSV-Version 2. Diese Dateien werden monatlich aktualisiert.*
+
 
 ## Inhalt:
 
@@ -237,14 +245,6 @@ Zusätzlich zu einigen neuen Feldern und Namensänderungen für CSV-Version 2 w
 ![tags](./media/billing-understand-your-bill/tags.png)
 
 
-Ausführliche Informationen zu den einzelnen Diensten finden Sie in den unten angegebenen Quellen. Diese Dateien werden monatlich aktualisiert und jeweils am 25. eines Monats für den Folgemonat veröffentlicht. Sie sind ab **Mai 2015** für CSV-Version 1 und ab **Juni 2015** für CSV-Version 2 verfügbar. Nachfolgend finden Sie die Datei-URL für die „Service“-Felder.
-
->>  https://azurepricing.blob.core.windows.net/supplemental/MOSPServices_v1_MMYYYY.xlsx https://azurepricing.blob.core.windows.net/supplemental/MOSPServices_v2_MMYYYY.xlsx
-
-
-
-Um nach der aktuellen Version zu suchen, geben Sie Jahr und Monat an (geben Sie bspw. für die Datei für Mai 2015 **052015** in den Abschnitt _**MMYYYY**_ der obigen URL ein). Diese Tabelle enthält eine Liste aller möglichen Kombinationen „Service“-bezogener Felder im heruntergeladenen **Nutzungsbericht**.
-
 ## Weitere Ressourcen
 Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter [Verwalten von Diensten](https://msdn.microsoft.com/library/azure/dn578292.aspx) finden Sie einige sehr hilfreiche Links:
 
@@ -262,4 +262,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

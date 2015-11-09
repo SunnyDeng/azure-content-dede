@@ -246,11 +246,11 @@ Richtlinien beeinflussen das Laufzeitverhalten einer Aktivität, besonders dann,
 Eigenschaft | Zulässige Werte | Standardwert | Beschreibung
 -------- | ----------- | -------------- | ---------------
 Parallelität | Ganze Zahl <p>Maximalwert: 10</p> | 1 | Anzahl der gleichzeitigen Ausführungen der Aktivität.<p>Legt die Anzahl der parallelen Ausführungen einer Aktivität fest, die an verschiedenen Slices stattfinden können. Wenn eine Aktivität beispielsweise eine große Menge verfügbarer Daten durchlaufen muss, kann die Datenverarbeitung durch eine höhere Anzahl gleichzeitiger Ausführungen beschleunigt werden.</p> 
-executionPriorityOrder | NewestFirst<p>OldestFirst</p> | OldestFirst | Bestimmt die Reihenfolge der Datenslices, die verarbeitet werden.<p>Nehmen Sie beispielsweise an, Sie haben zwei Slices (einen um 16 Uhr und einen weiteren um 17 Uhr), und beide warten auf ihre Ausführung. Wenn Sie "executionPriorityOrder" auf "NewestFirst" setzen, wird der Slice von 17 Uhr zuerst verarbeitet. Wenn Sie "executionPriorityOrder" auf "OldestFirst" setzen, wird der Slice von 16 Uhr zuerst verarbeitet.</p> 
-retry | Ganze Zahl<p>Maximalwert ist 10.</p> | 3 | Anzahl der Wiederholungsversuche, bevor die Datenverarbeitung für den Slice als Fehler markiert wird. Die Ausführung der Aktivitäten für einen Datenslice wird bis zur angegebenen Anzahl der Wiederholungsversuche wiederholt. Die Wiederholung erfolgt so bald wie möglich nach dem Fehler.
-timeout | TimeSpan | 00:00:00 | Timeout für die Aktivität. Beispiel: 00:10:00 (Timeout nach 10 Minuten)<p>Wenn ein Wert nicht angegeben wird oder 0 lautet, ist das Zeitlimit unendlich.</p><p>Wenn die Datenverarbeitungszeit für einen Slice den Timeoutwert überschreitet, wird der Vorgang abgebrochen, und das System versucht, die Verarbeitung zu wiederholen. Die Anzahl der Wiederholungsversuche hängt von der Eigenschaft "retry" ab. Wenn ein Timeout auftritt, lautet der Status "TimedOut".</p>
-delay | TimeSpan | 00:00:00 | Geben Sie die Verzögerung an, mit der die Datenverarbeitung des Slice beginnt.<p>Die Ausführung der Aktivität für einen Datenslice wird gestartet, nachdem die Verzögerung die erwartete Ausführungszeit überschreitet.</p><p>Beispiel: 00:10:00 (Verzögerung von 10 Minuten)</p>
-longRetry | Ganze Zahl<p>Maximalwert: 10</p> | 1 | Die Anzahl langer Wiederholungsversuche, bevor die Sliceausführung einen Fehler verursacht.<p>longRetry-Versuche werden durch "longRetryInterval" über einen Zeitraum verteilt. Wenn Sie eine Zeit zwischen den Wiederholungsversuchen angeben müssen, verwenden Sie "longRetry". Wenn sowohl "retry" als auch "longRetry" angegeben werden, umfasst jeder "longRetry"-Versuch "retry"-Versuche, und die maximale Anzahl der Versuche errechnet sich aus "retry * longRetry".</p><p>Die Richtlinie für die Aktivität enthält z. B. Folgendes:<br/>retry: 3<br/>longRetry: 2<br/>longRetryInterval: 01:00:00<br/></p><p>Nehmen Sie an, dass nur ein Slice auszuführen ist (Status lautet "PendingExecution") und dass die Ausführung der Aktivität jedes Mal einen Fehler verursacht. Zunächst würden drei aufeinander folgende Ausführungsversuche durchgeführt. Nach jedem Versuch wäre der Slicestatus "Retry". Nachdem die ersten drei Versuche durchgeführt sind, lautet der Slicestatus "LongRetry".</p><p>Nach einer Stunde (Wert von "longRetryInterval") würden drei weitere aufeinander folgende Ausführungsversuche unternommen. Danach würde der Slicestatus "Failed" lauten, und es fänden keine weiteren Versuche statt. Somit wurden insgesamt sechs Versuche unternommen.</p><p>Hinweis: Bei einer erfolgreichen Ausführung lautet der Slicestatus "Ready", und es werden keine weiteren Versuche durchgeführt.</p><p>"longRetry" kann in Situationen verwendet werden, bei denen abhängige Daten zu nicht festgelegten Zeiten eingehen oder die gesamte Umgebung, in der die Datenverarbeitung erfolgt, relativ unzuverlässig ist. In solchen Fällen ist die Durchführung von aufeinander folgenden Wiederholungen möglicherweise nicht hilfreich, und die Wiederholung nach einem bestimmten Zeitraum führt vielleicht zur gewünschten Ausgabe.</p><p>Vorsicht: Legen Sie für "longRetry" und "longRetryInterval" keine hohen Werte fest. In der Regel weisen höhere Werte auf andere Systemprobleme hin.</p> 
+executionPriorityOrder | NewestFirst<p>OldestFirst</p> | OldestFirst | Bestimmt die Reihenfolge der Datenslices, die verarbeitet werden.<p>Nehmen Sie beispielsweise an, Sie haben zwei Slices (einen um 16 Uhr und einen weiteren um 17 Uhr), und beide warten auf ihre Ausführung. Wenn Sie "executionPriorityOrder" auf "NewestFirst" setzen, wird der Slice von 17 Uhr zuerst verarbeitet. Wenn Sie „executionPriorityOrder“ auf „OldestFirst“ festlegen, wird der Slice von 16 Uhr zuerst verarbeitet.</p> 
+retry | Ganze Zahl<p>Maximalwert: 10</p> | 3 | Anzahl der Wiederholungsversuche, bevor die Datenverarbeitung für den Slice als Fehler markiert wird. Die Ausführung der Aktivitäten für einen Datenslice wird bis zur angegebenen Anzahl der Wiederholungsversuche wiederholt. Die Wiederholung erfolgt so bald wie möglich nach dem Fehler.
+timeout | TimeSpan | 00:00:00 | Timeout für die Aktivität. Beispiel: 00:10:00 (Timeout nach 10 Minuten)<p>Wenn ein Wert nicht angegeben wird oder 0 lautet, ist das Zeitlimit unendlich.</p><p>Wenn die Datenverarbeitungszeit für einen Slice den Timeoutwert überschreitet, wird der Vorgang abgebrochen, und das System versucht, die Verarbeitung zu wiederholen. Die Anzahl der Wiederholungsversuche hängt von der Eigenschaft "retry" ab. Wenn ein Timeout auftritt, lautet der Status „TimedOut“.</p>
+delay | TimeSpan | 00:00:00 | Geben Sie die Verzögerung an, mit der die Datenverarbeitung des Slice beginnt.<p>Die Ausführung der Aktivität für einen Datenslice wird gestartet, nachdem die Verzögerung die erwartete Ausführungszeit überschreitet.</p><p>Beispiel: 00:10:00 (Verzögerung von 10 Minuten)</p>
+longRetry | Ganze Zahl<p>Maximalwert: 10</p> | 1 | Die Anzahl langer Wiederholungsversuche, bevor die Sliceausführung einen Fehler verursacht.<p>longRetry-Versuche werden durch „longRetryInterval“ über einen Zeitraum verteilt. Wenn Sie eine Zeit zwischen den Wiederholungsversuchen angeben müssen, verwenden Sie "longRetry". Wenn sowohl „retry“ als auch „longRetry“ angegeben werden, umfasst jeder „longRetry“-Versuch „retry“-Versuche, und die maximale Anzahl der Versuche errechnet sich aus „retry * longRetry“.</p><p>Die Richtlinie für die Aktivität enthält z. B. Folgendes:<br/>retry: 3<br/>longRetry: 2<br/>longRetryInterval: 01:00:00<br/></p><p>Nehmen Sie an, dass nur ein Slice auszuführen ist (Status: „PendingExecution“) und dass die Ausführung der Aktivität jedes Mal einen Fehler verursacht. Zunächst würden drei aufeinander folgende Ausführungsversuche durchgeführt. Nach jedem Versuch wäre der Slicestatus "Retry". Nachdem die ersten drei Versuche ausgeführt wurden, lautet der Slicestatus „LongRetry“.</p><p>Nach einer Stunde (Wert von „longRetryInterval“) würden drei weitere aufeinander folgende Ausführungsversuche unternommen. Danach würde der Slicestatus "Failed" lauten, und es fänden keine weiteren Versuche statt. Somit wurden insgesamt sechs Versuche unternommen.</p><p>Hinweis: Bei einer erfolgreichen Ausführung lautet der Slicestatus „Ready“, und es werden keine weiteren Versuche durchgeführt.</p><p>„longRetry“ kann in Situationen verwendet werden, bei denen abhängige Daten zu nicht festgelegten Zeiten eingehen oder die gesamte Umgebung, in der die Datenverarbeitung erfolgt, relativ unzuverlässig ist. In solchen Fällen ist die Durchführung von aufeinanderfolgenden Wiederholungen möglicherweise nicht hilfreich, und die Wiederholung nach einem bestimmten Zeitraum führt vielleicht zur gewünschten Ausgabe.</p><p>Vorsicht: Legen Sie für „longRetry“ und „longRetryInterval“ keine hohen Werte fest. In der Regel weisen höhere Werte auf andere Systemprobleme hin.</p> 
 longRetryInterval | TimeSpan | 00:00:00 | Die Verzögerung zwischen langen Wiederholungsversuchen 
 
 ## Erstellen und Verwalten einer Pipeline
@@ -258,9 +258,9 @@ Azure Data Factory bietet verschiedene Mechanismen zum Erstellen und Bereitstell
 
 ### Verwenden des Azure-Vorschauportals
 
-1. Melden Sie sich am [Azure-Vorschauportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
 2. Wechseln Sie zu Ihrer Azure Data Factory-Instanz, in der Sie eine Pipeline erstellen möchten.
-3. Klicken Sie im Fokus **Zusammenfassung** auf die Kachel **Erstellen und bereitstellen**. 
+3. Klicken Sie im Fokus **Zusammenfassung** auf die Kachel **Author and Deploy**. 
  
 	![Kachel "Erstellen und bereitstellen"](./media/data-factory-create-pipelines/author-deploy-tile.png)
 
@@ -272,19 +272,19 @@ Azure Data Factory bietet verschiedene Mechanismen zum Erstellen und Bereitstell
 
 	![Pipeline-Editor](./media/data-factory-create-pipelines/pipeline-in-editor.png)
 
-6. Nach dem Erstellen der Pipeline klicken Sie in der Befehlsleiste auf **Bereitstellen**, um die Pipeline bereitzustellen.
+6. Nach dem Erstellen der Pipeline klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um die Pipeline bereitzustellen.
 
-	**Hinweis:** Während der Bereitstellung führt der Azure Data Factory-Dienst einige Überprüfungen durch, um einige häufig auftretende Probleme zu beheben. Für den Fall, dass ein Fehler vorliegt, werden die entsprechenden Informationen angezeigt. Korrigieren Sie den Fehler, und stellen Sie die erstellte Pipeline erneut bereit. Mithilfe des Editor können Sie eine Pipeline aktualisieren und löschen.
+	**Hinweis:** Während der Bereitstellung führt der Azure Data Factory-Dienst einige Überprüfungen durch, um häufig auftretende Probleme zu beheben. Für den Fall, dass ein Fehler vorliegt, werden die entsprechenden Informationen angezeigt. Korrigieren Sie den Fehler, und stellen Sie die erstellte Pipeline erneut bereit. Mithilfe des Editor können Sie eine Pipeline aktualisieren und löschen.
 
 ### Verwenden des Visual Studio-Plug-Ins
-Sie können Visual Studio verwenden, um Pipelines zu erstellen und in Azure Data Factory bereitzustellen. Weitere Informationen hierzu finden Sie unter [Tutorial: Kopieren von Daten aus Azure Storage in Azure SQL (Visual Studio)](data-factory-get-started-using-vs.md).
+Sie können Visual Studio verwenden, um Pipelines zu erstellen und in Azure Data Factory bereitzustellen. Weitere Informationen hierzu finden Sie unter [Lernprogramm: Kopieren von Daten aus Azure Storage in Azure SQL (Visual Studio)](data-factory-get-started-using-vs.md).
 
 ### Verwenden von Azure PowerShell
 Mit der Azure PowerShell können Sie Pipelines in Azure Data Factory erstellen. Angenommen, Sie haben die Pipeline "JSON" in einer Datei unter "c:\\DPWikisample.json" definiert. Sie können sie in Ihre Azure Data Factory-Instanz, wie im folgenden Beispiel gezeigt, hochladen.
 
 	New-AzureDataFactoryPipeline -ResourceGroupName ADF -Name DPWikisample -DataFactoryName wikiADF -File c:\DPWikisample.json
 
-Weitere Informationen zu diesem Cmdlet finden Sie unter [Cmdlet "New-AzureDataFactoryPipeline"](https://msdn.microsoft.com/library/dn820227.aspx).
+Weitere Informationen zu diesem Cmdlet finden Sie unter dem Cmdlet [„New-AzureDataFactoryPipeline“](https://msdn.microsoft.com/library/dn820227.aspx).
 
 ### Verwenden der REST-API
 Sie können die Pipeline auch mit REST-APIs erstellen und bereitstellen. Dieser Mechanismus kann zum programmgesteuerten Erstellen von Pipelines genutzt werden. Weitere Informationen dazu finden Sie unter [Erstellen oder Aktualisieren einer Pipeline](https://msdn.microsoft.com/library/azure/dn906741.aspx).
@@ -301,13 +301,13 @@ Eine Pipeline ist nur zwischen ihrer Start- und ihrer Endzeit aktiv. Sie wird we
 Eigentlich ist es nicht die Pipeline, die ausgeführt wird. Es sind vielmehr die Aktivitäten in der Pipeline, die ausgeführt werden. Dies geschieht jedoch im Gesamtkontext der Pipeline. Informationen zur Planung und Ausführung in Azure Data Factory finden Sie unter [Planung und Ausführung](data-factory-scheduling-and-execution.md).
 
 ## Verwalten und Überwachen  
-Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und Ausführungen verwalten und überwachen. Weitere Informationen finden Sie hier: [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
+Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und Ausführungen verwalten und überwachen. Weitere Informationen finden Sie unter [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
 
 ## Nächste Schritte
 
 - Erfahren Sie mehr über die [Planung und Ausführung in Azure Data Factory](data-factory-scheduling-and-execution.md).  
 - Informieren Sie sich über die Möglichkeiten zur [Datenverschiebung](data-factory-data-movement-activities.md) und [Datentransformation](data-factory-data-transformation-activities.md) in Azure Data Factory.
-- Erfahren Sie mehr über die [Verwaltung und Überwachung in Azure Data Factory](data-factory-monitor-manage-pipelines.md).
+- Erfahren Sie mehr über das [Verwalten und Überwachen in Azure Data Factory](data-factory-monitor-manage-pipelines.md).
 - [Erstellen Sie Ihre erste Pipeline, und stellen Sie sie bereit](data-factory-build-your-first-pipeline.md). 
 
 ## Feedback senden
@@ -336,4 +336,4 @@ Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

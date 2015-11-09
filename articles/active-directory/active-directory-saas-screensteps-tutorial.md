@@ -1,14 +1,26 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit ScreenSteps | Microsoft Azure" description="Erfahren Sie, wie Sie ScreenSteps mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und mehr zu aktivieren!" services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit ScreenSteps | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie ScreenSteps mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit ScreenSteps
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=525874), um Feedback abzugeben.
   
 In diesem Tutorial wird die Integration von Azure und ScreenSteps erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein ScreenSteps-Mandant
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie ScreenSteps zugewiesen haben, mittels einmaliger Anmeldung auf der ScreenSteps-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie ScreenSteps zugewiesen haben, mittels einmaliger Anmeldung auf der ScreenSteps-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -42,7 +54,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Scr
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-screensteps-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie in das **Suchfeld** **ScreenSteps** ein.
+6.  Geben Sie in das **Suchfeld** den Suchbegriff **ScreenSteps** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-screensteps-tutorial/IC778517.png "Anwendungskatalog")
 
@@ -81,28 +93,28 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Remoteauthentifizierung](./media/active-directory-saas-screensteps-tutorial/IC778524.png "Remoteauthentifizierung")
 
-8.  Klicken Sie auf **Authentication Endpoint erstellen**.
+8.  Klicken Sie auf **Authentifizierungsendpunkt erstellen**.
 
     ![Remoteauthentifizierung](./media/active-directory-saas-screensteps-tutorial/IC778525.png "Remoteauthentifizierung")
 
-9.  Führen Sie im Abschnitt **Authentication Endpoint erstellen** die folgenden Schritte aus:
+9.  Führen Sie im Abschnitt **Authentifizierungsendpunkt erstellen** die folgenden Schritte aus:
 
     ![Authentication Endpoint erstellen](./media/active-directory-saas-screensteps-tutorial/IC778526.png "Authentication Endpoint erstellen")
 
     1.  Geben Sie in das Textfeld **Titel** einen Titel ein.
-    2.  Wählen Sie aus der Liste **Mode** die Option **SAML** aus.
+    2.  Wählen Sie aus der Liste **Modus** die Option **SAML** aus.
     3.  Klicken Sie auf **Erstellen**.
 
-10. Führen Sie im Abschnitt **Remote Authentication Endpoint** die folgenden Schritte aus:
+10. Führen Sie im Abschnitt **Remoteauthentifizierungsendpunkt** die folgenden Schritte aus:
 
     ![Remote Authentication Endpoint](./media/active-directory-saas-screensteps-tutorial/IC778527.png "Remote Authentication Endpoint")
 
-    1.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um ScreenSteps** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Remoteanmelde-URL** ein.
-    2.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um ScreenSteps** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Remoteabmelde-URL** ein.
+    1.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ScreenSteps** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Remoteanmelde-URL** ein.
+    2.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ScreenSteps** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Remoteabmelde-URL** ein.
     3.  Klicken Sie auf **Datei auswählen**, und laden Sie dann das heruntergeladene Zertifikat hoch.
     4.  Klicken Sie auf **Aktualisieren**.
 
-11. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+11. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-screensteps-tutorial/IC778542.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -117,7 +129,7 @@ Damit sich Azure AD-Benutzer bei **ScreenSteps**, anmelden können, müssen sie 
 
     ![Kontenverwaltung](./media/active-directory-saas-screensteps-tutorial/IC778523.png "Kontenverwaltung")
 
-3.  Klicken Sie auf **Benutzer**.
+3.  Klicken Sie auf **Users**.
 
     ![Benutzer](./media/active-directory-saas-screensteps-tutorial/IC778544.png "Benutzer")
 
@@ -125,13 +137,13 @@ Damit sich Azure AD-Benutzer bei **ScreenSteps**, anmelden können, müssen sie 
 
     ![Alle Benutzer](./media/active-directory-saas-screensteps-tutorial/IC778545.png "Alle Benutzer")
 
-5.  Wählen Sie aus der Liste **Benutzerrolle** eine Rolle für den Benutzer.
+5.  Wählen Sie in der Liste **Benutzerrolle** eine Rolle für den Benutzer aus.
 
 6.  Geben Sie im Abschnitt „Benutzerrolle“ die Daten für **Vorname**, **Nachname**, **E-Mail**, **Anmelden**, **Kennwort**, **Kennwortbestätigung** in die entsprechenden Textfelder eines gültigen AAD-Kontos ein, das Sie bereitstellen möchten.
 
     ![Neuer Benutzer](./media/active-directory-saas-screensteps-tutorial/IC778546.png "Neuer Benutzer")
 
-7.  Wählen Sie im Abschnitt Gruppen die Option **Authentifizierungsgruppe (SAML)** aus, und klicken Sie dann auf **Benutzer erstellen**.
+7.  Wählen Sie im Abschnitt „Gruppen“ die Option **Authentifizierungsgruppe (SAML)** aus, und klicken Sie dann auf **Benutzer erstellen**.
 
     ![Groups (Gruppen)](./media/active-directory-saas-screensteps-tutorial/IC778547.png "Groups (Gruppen)")
 
@@ -153,6 +165,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-screensteps-tutorial/IC778548.png "Benutzer zuweisen")
   
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

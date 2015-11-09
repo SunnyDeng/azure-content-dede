@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="10/09/2015"
+ms.date="10/26/2015"
 ms.author="larryfr"/>
 
 #Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen
@@ -144,21 +144,11 @@ Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgenderma�
 
 4. Wählen Sie die Registerkarte **URL-Muster** und anschließend **Neues Muster** aus. Gehen Sie wie folgt vor, um das Muster zu definieren, und klicken Sie dann auf **OK**:
 
-	* **Name des Musters**: **Hauptknoten** – Dies ist lediglich ein Anzeigename für das Muster.
+	* **Name des Musters**: **Clusterknoten** – Dies ist lediglich ein Anzeigename für das Muster.
 
-	* **URL-Muster**: **\\*Hauptknoten\\*** – Definiert ein Muster, das mit allen URLs übereinstimmt, die das Wort **Hauptknoten** enthalten.
+	* **URL-Muster** – ***internal.cloudapp.net*** – Dies definiert ein Muster, das mit dem internen vollständig qualifizierten Domänennamen der Clusterknoten übereinstimmt.
 
 	![FoxyProxy-Muster](./media/hdinsight-linux-ambari-ssh-tunnel/foxypattern.png)
-
-	> [AZURE.NOTE]Bei Verwendung eines __HBase__-Clusters müssen Sie außerdem das folgende Muster hinzufügen, da dieser eine Webbenutzeroberfläche auf den Zookeeper-Knoten des Clusters hostet:
-	>
-	> * __Name des Musters__: __zookeeper__
-	> * __URL-Muster__: __*zookeeper*__
-	>
-	> Bei Verwendung eines __Storm__-Clusters müssen Sie die folgenden Muster hinzufügen, da die Storm-Benutzeroberfläche beim Abrufen der Protokolle auf die IP-Adresse der Workerknoten verweist. Ab einem zukünftigen Update kann hierfür stattdessen der Domänenname verwendet werden.
-	>
-	> * __Name des Musters__: __nodesbyip__
-	> * __URL-Muster__: __*10.0.0.*__
 
 4. Klicken Sie auf **OK**, um den Proxy hinzuzufügen und **Proxyeinstellungen** zu schließen.
 
@@ -166,13 +156,13 @@ Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgenderma�
 
 	![FoxyProxy – Modus auswählen](./media/hdinsight-linux-ambari-ssh-tunnel/selectmode.png)
 
-Nachdem Sie diese Schritte ausgeführt haben, werden ausschließlich Anforderungen für URLs, die die Zeichenfolge **Hauptknoten** enthalten, über den SSL-Tunnel weitergeleitet.
+Nachdem Sie diese Schritte ausgeführt haben, werden ausschließlich Anforderungen für URLs, die die Zeichenfolge __internal.cloudapp.net__ enthalten, über den SSL-Tunnel weitergeleitet.
 
 ##Überprüfen der Ambari-Webbenutzeroberfläche
 
 Nachdem der Cluster eingerichtet wurde, gehen Sie folgendermaßen vor, um zu überprüfen, ob Sie von der Ambari-Webbenutzeroberfläche auf Dienst-Webbenutzeroberflächen zugreifen können:
 
-1. Navigieren Sie im Webbrowser zu https://CLUSTERNAME.azurehdinsight.net, wobei "CLUSTERNAME" der Name des HDInsight-Clusters ist.
+1. Navigieren Sie im Webbrowser zu https://CLUSTERNAME.azurehdinsight.net, wobei „CLUSTERNAME“ der Name des HDInsight-Clusters ist.
 
 	Geben Sie bei der entsprechenden Aufforderung den Benutzernamen ("admin") und das Kennwort des Administrators für den Cluster ein. Sie werden eventuell von der Ambari-Webbenutzeroberfläche ein zweites Mal zur Eingabe aufgefordert. Geben Sie in diesem Fall die Informationen erneut ein.
 
@@ -193,7 +183,7 @@ Nachdem der Cluster eingerichtet wurde, gehen Sie folgendermaßen vor, um zu üb
 
 	![Bild der YARN-ResourceManager-Benutzeroberfläche](./media/hdinsight-linux-ambari-ssh-tunnel/yarnresourcemanager.png)
 
-	> [AZURE.TIP]Beachten Sie die URL für diese Seite. Sie sollte in etwa \_\___http://headnode1.CLUSTERNAME-ssh.j8.internal.cloudapp.net:8088/cluster__ lauten. Dabei wird der interne vollständig qualifizierte Domänenname (FQDN) des Knotens verwendet, auf den nicht ohne Verwendung eines SSH-Tunnels zugegriffen werden kann.
+	> [AZURE.TIP]Beachten Sie die URL für diese Seite. Sie sollte in etwa \_\___http://hn1-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8088/cluster__ lauten. Dabei wird der interne vollständig qualifizierte Domänenname (FQDN) des Knotens verwendet, auf den nicht ohne Verwendung eines SSH-Tunnels zugegriffen werden kann.
 
 ##Nächste Schritte
 
@@ -207,4 +197,4 @@ Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den fol
 
 * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

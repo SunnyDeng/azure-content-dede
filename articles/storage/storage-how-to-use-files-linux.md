@@ -12,7 +12,7 @@
       ms.tgt_pltfrm="na"
       ms.devlang="na"
       ms.topic="article"
-      ms.date="10/06/2015"
+      ms.date="10/26/2015"
       ms.author="jutang;tamram" />
 
 
@@ -27,6 +27,12 @@ Sie können Azure-Dateifreigaben mit dem Azure-Vorschauportal, den Azure Storage
 Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuellen Azure-Computern problemlos einbinden. Mit der neuesten Version des Dateispeichers können Sie außerdem eine Dateifreigabe aus einer lokalen Anwendung einbinden, die SMB 3.0 unterstützt.
 
 Weil der Linux-SMB-Client noch keine Verschlüsselung unterstützt, muss sich der Client, wenn eine Dateifreigabe aus Linux eingebunden wird, in derselben Azure-Region befinden wie die Dateifreigabe. Allerdings arbeiten die Linux-Entwickler, die für die SMB-Funktionalität verantwortlich sind, an der Verschlüsselungsunterstützung für Linux. Linux-Distributionen, in denen zukünftig Verschlüsselung unterstützt wird, werden ebenfalls von überall eine Azure-Dateifreigabe einbinden können.
+
+## Video: Verwenden des Azure-Dateispeichers unter Linux
+
+Dieses Video veranschaulicht das Erstellen und Verwenden von Azure-Dateifreigaben unter Linux.
+
+> [AZURE.VIDEO azure-file-storage-with-linux]
 
 ## Wählen einer zu verwendenden Linux-Distribution ##
 
@@ -110,8 +116,9 @@ Der Gruppe "Azure File Storage for Linux users" bietet ein Forum, in dem Sie Ihr
 
 Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
-### Konzeptionelle Artikel
+### Konzeptionelle Artikel und Videos
 
+- [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Verwenden des Azure-Dateispeichers unter Windows](storage-dotnet-how-to-use-files.md)
 
 ### Toolunterstützung für Dateispeicher
@@ -130,4 +137,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

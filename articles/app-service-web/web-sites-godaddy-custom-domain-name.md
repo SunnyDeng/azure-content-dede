@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="10/23/2015"
 	ms.author="erikre"/>
 
 # Konfigurieren eines benutzerdefinierten (direkt von GoDaddy erworbenen) Domänennamens in Azure App Service
@@ -23,8 +23,6 @@
 [AZURE.INCLUDE [Einführung](../../includes/custom-dns-web-site-intro.md)]
 
 Wenn Sie eine Domäne über Azure App Service-Web-Apps erworben haben, lesen Sie den letzten Schritt des Artikels zum <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Erwerben einer Domäne für Web-Apps</a>.
-
-[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 Dieser Artikel enthält Anweisungen zur Verwendung eines benutzerdefinierten Domänennamens, der mit [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) direkt bei [GoDaddy](https://godaddy.com) erworben wurde.
 
@@ -64,14 +62,12 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 
 	* Wenn Sie einen **A (Host)**-Datensatz hinzufügen, müssen Sie das Feld **Host** entweder auf **@** (dies steht für den Stammdomänennamen wie **contoso.com**,) auf * (ein Platzhalter für den Abgleich von mehreren Unterdomänen) oder auf die zu verwendende Unterdomäne (z. B. **www**) einstellen. Sie müssen das Feld **Zeigt auf** auf die IP-Adresse Ihrer Azure-Web-App festlegen.
 
-		> [AZURE.NOTE]Bei Verwendung von A (Host)-Datensätzen müssen Sie auch einen CNAME-Datensatz mit der folgenden Konfiguration hinzufügen:
-		>
-		> * Ein **Host**-wert von **awverify**, der **Zeigt auf** einen Wert von **awverify.&lt;yourwebappname&gt;.azurewebsites.net**.
-		>
-		> Dieser CNAME-Datensatz wird von Azure verwendet, um zu überprüfen, ob Sie die Domäne besitzen, die von dem A-Datensatz beschrieben wird.
-
 	* Wenn Sie einen **CNAME (Alias)**-Datensatz hinzufügen, müssen Sie im Feld **Host** die gewünschte Unterdomäne festlegen. Beispiel: **www**. Sie müssen das Feld **Zeigt auf** auf den **.azurewebsites.net**-Domänennamen Ihrer Azure-Web-App festlegen. Beispiel: **contoso.azurwebsites.net**.
 
+5. Klicken Sie auf**Weiteren hinzufügen**.
+6. Wählen Sie **CNAME** als Eintragstyp aus, und geben Sie dann den **Host**-Wert **Awverify** ein und den **Verweist auf**-Wert **Awverify. & Lt; Yourwebappname & Gt;. *.azurewebsites.NET** ein.
+
+	> [AZURE.NOTE]Dieser CNAME-Datensatz wird von Azure verwendet, um zu überprüfen, ob Sie die Domäne besitzen, die von dem A-Datensatz oder dem ersten CNAME-Eintrag beschrieben wird. Nachdem die Domäne der Web-App im Azure-Vorschauportal zugeordnet wurde, kann der **Awverify**-Eintrag entfernt werden.
 
 5. Nachdem Sie die gewünschten Datensätze hinzugefügt oder bearbeitet haben, klicken Sie auf **Finish**, um die Änderungen zu speichern.
 
@@ -85,6 +81,5 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

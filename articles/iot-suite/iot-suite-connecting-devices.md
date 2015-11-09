@@ -12,7 +12,7 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="nana"
+   ms.workload="na"
    ms.date="09/29/2015"
    ms.author="hegate"/>
 
@@ -28,7 +28,7 @@ In diesem Beispiel verwenden wir drei simulierte Datenquellen: Außentemperatur,
 
 ### Bereitstellen der IoT Suite
 
-Falls Sie Ihre vorkonfigurierte Lösung für die Remoteüberwachung noch nicht bereitgestellt haben, können Sie dies [hier](http://www.microsoft.com/en-us/server-cloud/internet-of-things/getting-started.aspx) durchführen.
+Falls Sie Ihre vorkonfigurierte Lösung für die Remoteüberwachung noch nicht bereitgestellt haben, können Sie dies [hier](http://www.microsoft.com/de-DE/server-cloud/internet-of-things/getting-started.aspx) durchführen.
 
 
 ### Bereitstellen des Geräts in der Remoteüberwachungslösung
@@ -234,10 +234,10 @@ Informationen zu den Befehlen und zur Steuerung finden Sie weiter unten in diese
 
 
    ```
-   static const char* deviceId = "[Device Id]";
-   static const char* deviceKey = "[Device Key]";
-   static const char* hubName = "[IoTHub Name]";
-   static const char* hubSuffix = "[IoTHub Suffix, i.e. azure-devices.net]";
+   var deviceID = "[DeviceID]";
+   var deviceKey = "[Device Key]";
+   var hubName = "[IoT Hub Name]";
+   var hubSuffix = "[IoT Hub Suffix i.e azure-devices.net]";
    ```
 
 -  Ersetzen Sie „[Device Id]“, „[Device Key]“ durch Ihre Gerätedaten.
@@ -248,10 +248,10 @@ Informationen zu den Befehlen und zur Steuerung finden Sie weiter unten in diese
 
 
    ```
-     static const char* deviceId = "mydevice";
-   static const char* deviceKey = "mykey";
-   static const char* hubName = "Contoso";
-   static const char* hubSuffix = "azure-devices.net";
+   var deviceID = "mydevice";
+   var deviceKey = "mykey";
+   var hubName = "Contoso";
+   var hubSuffix = "azure-devices.net";
    ```
 
 
@@ -309,4 +309,4 @@ Da Ihr Gerät jetzt verbunden ist und selbst generierte Temperaturdaten sendet, 
 
 Es gibt mehrere Möglichkeiten, die Funktionalität dieses Beispiels zu erweitern: Verbinden Sie einen echten Sensor mit Ihrem Gerät, damit echte Daten gesendet werden, implementieren Sie die Funktionalität für "Befehl und Steuerung" usw. Verwenden Sie unseren [Leitfaden](articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions.md) zur Erweiterung der Lösung für die Remoteüberwachung, um weitere Informationen zu erhalten.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

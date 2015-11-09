@@ -127,7 +127,9 @@ Wenn Sie ein Konto manuell hinzufügen möchten, können Sie wie folgt vorgehen:
 Wenn Sie andere Konten als ein Azure-Konto manuell hinzufügen möchten, z. B. Ihr Microsoft-Konto, können Sie wie folgt vorgehen:
 
 
-- Zuerst müssen Sie den geheimen Schlüssel für den Standort abrufen, dem das Konto zugeordnet ist. In Outlook.com greifen Sie beispielsweise auf Ihre Kontoeinstellungen und dann auf die Sicherheitseinstellungen zu und wählen die Einrichtung einer Authentifizierungs-App aus. Wählen Sie „Ich kann den Barcode nicht scannen“ aus, um den geheimen Schlüssel zu erhalten.
+- Ein Nicht-Azure-Konto lässt sich entweder durch das Scannen des QR-Codes oder durch Eingabe des geheimen Schlüssels hinzufügen.
+- Wenn Sie den geheimen Schlüssel manuell eingeben möchten, müssen Sie diesen Schlüssel auf der Website anfordern, bei der das betreffende Konto besteht. In Outlook.com greifen Sie beispielsweise auf Ihre Kontoeinstellungen und dann auf die Sicherheitseinstellungen zu und wählen die Einrichtung einer Authentifizierungs-App aus. Wählen Sie „Ich kann den Barcode nicht scannen“ aus, um den geheimen Schlüssel zu erhalten.
+- 
 
 ![Konto hinzufügen](./media/multi-factor-authentication-azure-authenticator/secretkey.png)
 
@@ -135,11 +137,11 @@ Wenn Sie andere Konten als ein Azure-Konto manuell hinzufügen möchten, z. B. 
 
 ![Konto hinzufügen](./media/multi-factor-authentication-azure-authenticator/addaccount3.png)
 
-- Klicken Sie unten auf die Schaltfläche „Manuell eingeben“.
+- Sie können entweder den QR-Code scannen oder unten auf die Schaltfläche „Manuell eingeben“ klicken. Beim Scannen des QR-Codes entfällt der nachfolgende Schritt und die Aktivierung startet sofort.
 
 ![Konto hinzufügen](./media/multi-factor-authentication-azure-authenticator/scan.png)
 
-- Geben Sie den Kontonamen und den geheimen Schlüssel ein. Diese Daten sind auf der Seite angegeben, auf der der Barcode angezeigt wird. Diese werden in der mobilen App in den Feldern für Code und URL eingegeben. Dadurch wird die Aktivierung gestartet.
+- Bei der manuellen Eingabe des geheimen Schlüssels sind der Kontoname und der geheime Schlüssel zusammen auf der Seite mit dem Barcode anzugeben. Diese werden in der mobilen App in den Feldern für Code und URL eingegeben. Dadurch wird die Aktivierung gestartet.
 
 ![Konto hinzufügen](./media/multi-factor-authentication-azure-authenticator/manual.png)
 
@@ -162,4 +164,4 @@ Danach müssen Sie zum Verifizieren Ihrer Anmeldung nur noch auf die erhaltene P
 
 ![Touch ID](./media/multi-factor-authentication-azure-authenticator/touchid2.png)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

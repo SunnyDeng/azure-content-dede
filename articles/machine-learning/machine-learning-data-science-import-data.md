@@ -14,16 +14,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/12/2015"
+	ms.date="10/27/2015"
 	ms.author="garye;bradsev" />
 
 
 # Importieren von Trainingsdaten aus verschiedenen Datenquellen in Azure Machine Learning Studio
-
-Dieses **Menü** bietet Links zu Themen, in denen die Erfassung von Daten in Zielumgebungen beschrieben wird, in denen die Daten während des Cortana-Analyseprozesses (CAP) gespeichert und verarbeitet werden.
-
-[AZURE.INCLUDE [cap-ingest-data-selector](../../includes/cap-ingest-data-selector.md)]
-
 
 ## Einführung
 
@@ -37,7 +32,7 @@ Um Ihre eigenen Daten in Machine Learning Studio zum Entwickeln und Trainieren e
 
 Diese Optionen werden in den Themen im Menü oben beschrieben. In diesen Themen wird das Importieren von Daten aus verschiedenen Datenquellen für die Verwendung in Machine Learning Studio veranschaulicht.
 
-> [AZURE.NOTE]Es gibt eine Reihe von Beispiel-DataSets in Machine Learning Studio, die Sie für diesen Zweck verwenden können. Weitere Informationen finden Sie unter [Verwenden von Beispiel-DataSets in Azure Machine Learning Studio](machine-learning-use-sample-datasets.md)).
+> [AZURE.NOTE]Es gibt eine Reihe von Beispiel-DataSets in Machine Learning Studio, die Sie für diesen Zweck verwenden können. Weitere Informationen finden Sie unter [Verwenden von Beispiel-DataSets in Azure Machine Learning Studio](machine-learning-use-sample-datasets.md).
 
 In diesem Einführungsthema wird auch gezeigt, wie Sie Daten für die Verwendung in Machine Learning Studio vorbereiten, und es wird beschrieben, welche Datenformate und Datentypen unterstützt werden.
 
@@ -96,4 +91,4 @@ Bei Bedarf können Sie das Data Table-Format mit anderen Konvertierungsmodulen w
 [metadata-editor]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

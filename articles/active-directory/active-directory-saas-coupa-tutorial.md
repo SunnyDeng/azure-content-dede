@@ -1,14 +1,27 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit Coupa | Microsoft Azure" description="Hier erfahren Sie, wie Sie Coupa mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Coupa | Microsoft Azure" 
+    description="Hier erfahren Sie, wie Sie Coupa mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Coupa
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=529806), um Feedback abzugeben.
 
 In diesem Tutorial wird die Integration von Azure und Coupa erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein Coupa-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Coupa zugewiesen haben, mittels einmaliger Anmeldung über den Zugriffsbereich anmelden (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Coupa zugewiesen haben, mittels einmaliger Anmeldung über den Zugriffsbereich anmelden (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -42,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cou
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-coupa-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** das Wort **coupa** ein.
+6.  Geben Sie im **Suchfeld** den Suchbegriff **Coupa** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-coupa-tutorial/IC791898.png "Anwendungskatalog")
 
@@ -79,7 +92,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-coupa-tutorial/IC791904.png "App-URL konfigurieren")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Ihrer Coupa-Anwendung verwenden (z. B. „*http://company.Coupa.com*”).
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Ihrer Coupa-Anwendung verwenden (z. B. „*http://company.Coupa.com*”).
     2.  Öffnen Sie die heruntergeladene Coupa-Metadatendatei, und kopieren Sie den Wert von **AssertionConsumerService index/URL**.
     3.  Fügen Sie im Textfeld für die **Coupa-Antwort-URL** den Wert von **AssertionConsumerService index/URL** ein.
     4.  Klicken Sie auf **Weiter**.
@@ -100,7 +113,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     2.  Klicken Sie auf **Durchsuchen**, um die heruntergeladene Azure Active Directory-Metadatendatei hochzuladen.
     3.  Klicken Sie auf **Speichern**.
 
-11. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+11. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-coupa-tutorial/IC791907.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -142,10 +155,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-coupa-tutorial/IC791911.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-coupa-tutorial/IC767830.png "Ja")
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

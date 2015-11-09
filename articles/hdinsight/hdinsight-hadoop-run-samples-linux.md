@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="10/29/2015"
 	ms.author="larryfr"/>
 
 
@@ -79,7 +79,7 @@ Linux-basierte HDInsight-Cluster bieten eine Reihe von MapReduce-Beispielen, mit
 
     - [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-2. Verwenden Sie an der Eingabeaufforderung `username@headnode0:~$` den folgenden Befehl zum Auflisten der Beispiele:
+2. Verwenden Sie an der `username@#######:~$` Eingabeaufforderung den folgenden Befehl zum Auflisten der Beispiele:
 
         hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar
 
@@ -243,4 +243,4 @@ In diesem Artikel haben Sie gelernt, wie die Beispiele ausgeführt werden, die i
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

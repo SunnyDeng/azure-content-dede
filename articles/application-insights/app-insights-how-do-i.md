@@ -195,10 +195,29 @@ Wenn Sie eine Liste von Benutzern mit bestimmten Daten erstellen möchten, z. B
 
 ## Reduzierung des Datenverkehrs von einer App an Application Insights
 
-* Deaktivieren Sie in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) alle nicht benötigten Module, z. B. Leistungsindikatoren.
+* Deaktivieren Sie in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) alle nicht benötigten Module, z. B. die Leistungsindikatorsammlung.
+* Verwenden Sie im SDK [Stichprobenerstellung und Filterung](app-insights-api-filtering-sampling.md).
 * Berechnen Sie bei Verwendung von [TrackMetric](app-insights-api-custom-events-metrics.md#track-metric) das Aggregat der Batches von Metrikwerten vor dem Senden des Ergebnisses. Eine Überladung von TrackMetric() ist dafür vorgesehen.
 
+
 Erfahren Sie mehr über [Preise und Kontingente](app-insights-pricing.md).
+
+## Telemetrie deaktivieren
+
+So können Sie die Sammlung und Übermittlung von Telemetriedaten aus dem Server **dynamisch beenden und starten**:
+
+```
+
+    using  Microsoft.ApplicationInsights.Extensibility;
+
+    TelemetryConfiguration.Active.DisableTelemetry = true;
+```
+
+
+
+Um **ausgewählte Standardsammlungen zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder die Abhängigkeiten –, löschen oder kommentieren Sie die entsprechenden Zeilen in [ApplicationInsights.config](app-insights-api-custom-events-metrics.md). Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
+
+
 
 ## Anzeigen von Systemleistungsindikatoren
 
@@ -224,4 +243,4 @@ Zu den Metriken, die Sie im Metrik-Explorer anzeigen können, zählt u. a. eine
 
 Zum gegenwärtigen Zeitpunkt werden Leistungsindikatoren nicht überwacht.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

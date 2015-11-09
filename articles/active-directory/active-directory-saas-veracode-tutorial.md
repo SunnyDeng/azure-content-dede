@@ -1,14 +1,27 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit Veracode | Microsoft Azure" description="Erfahren Sie, wie Sie Veracode mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Veracode | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie Veracode mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Veracode
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=615291), um Feedback abzugeben.
   
 In diesem Tutorial wird die Integration von Azure und Veracode erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein Veracode-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Veracode zugewiesen haben, mittels einmaliger Anmeldung über den Zugriffsbereich anmelden (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Veracode zugewiesen haben, wie in [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben mittels einmaliger Anmeldung anmelden.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -43,7 +56,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ver
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-veracode-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** als Suchbegriff **Veracode** ein.
+6.  Geben Sie im **Suchfeld** den Suchbegriff **Veracode** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-veracode-tutorial/IC802904.png "Anwendungskatalog")
 
@@ -109,11 +122,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
         -   **Teammitgliedschaften**
         -   **Standardteam**
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-veracode-tutorial/IC802914.png "Einmaliges Anmelden konfigurieren")
 
-11. Klicken Sie oben im Menü auf **Attributes**, um das Dialogfeld **SAML-Token-Attribute** zu öffnen.
+11. Klicken Sie oben im Menü auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen.
 
     ![Attribute](./media/active-directory-saas-veracode-tutorial/IC795920.png "Attribute")
 
@@ -129,9 +142,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     1.  Klicken Sie für jede Datenzeile in der obigen Tabelle auf **Benutzerattribut hinzufügen**.
     
-	2.  Geben Sie in das Textfeld **Attributname** den für die entsprechende Zeile angezeigten Attributnamen ein.
+	2.  Geben Sie im Textfeld **Attributname** den für die Zeile angezeigten Attributnamen ein.
 
-    3.  Wählen Sie im Textfeld **Attributwert** den für die entsprechende Zeile angezeigten Attributwert aus.
+    3.  Geben Sie im Textfeld **Attributwert** den für die Zeile angezeigten Attributwert ein.
 
     4.  Klicken Sie auf **Fertig stellen**.
 
@@ -157,10 +170,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-veracode-tutorial/IC802915.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-veracode-tutorial/IC767830.png "Ja")
   
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

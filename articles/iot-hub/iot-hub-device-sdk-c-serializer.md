@@ -12,7 +12,7 @@
      ms.devlang="cpp"
      ms.topic="article"
      ms.tgt_pltfrm="na"
-     ms.workload="nana"
+     ms.workload="na"
      ms.date="09/29/2015"
      ms.author="michelb"/>
 
@@ -656,4 +656,4 @@ Dieser Artikel geht detailliert auf die einzigartigen Aspekte der Bibliothek des
 
 Dies ist auch der Abschluss der dreiteiligen Artikelserie zur Entwicklung von Anwendungen mit dem **Azure IoT-Geräte-SDK für C**. Diese Informationen sollten nicht nur für den Einstieg genügen, sondern vermitteln auch tiefgreifende Kenntnisse zur Funktionsweise der APIs. Falls Sie weitere Details wünschen – das SDK enthält noch einige weitere Beispiele, die im vorliegenden Artikel nicht erläutert wurden. Darüber hinaus ist die [SDK-Dokumentation](https://github.com/Azure/azure-iot-sdks) eine hervorragende Informationsquelle.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.date="10/28/2015" 
 	ms.author="mimig"/>
 
 # Verwalten von DocumentDB-Kapazitätsanforderungen
@@ -77,4 +77,4 @@ Anweisungen zur Überwachung der Leistungsebenen im Azure-Vorschauportal finden 
 Weitere Informationen zum Auswählen von Leistungsebenen für Sammlungen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

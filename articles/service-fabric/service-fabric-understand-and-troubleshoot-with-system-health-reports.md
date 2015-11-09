@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwenden von Systemintegritätsberichten für die Problembehandlung"
-   description="Enthält Beschreibungen der Systemintegritätsberichte und der Verwendung für die Problembehandlung von Cluster- oder Anwendungsproblemen."
+   pageTitle="Problembehandlung bei Systemintegritätsberichten | Microsoft Azure"
+   description="Beschreibt die von Komponenten des Azure Fabric-Diensts versendeten Integritätsberichte und ihre Verwendung bei der Behandlung von Problemen mit Clustern oder Anwendungen."
    services="service-fabric"
    documentationCenter=".net"
    authors="oanapl"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/03/2015"
+   ms.date="10/23/2015"
    ms.author="oanapl"/>
 
 # Verwenden von Systemintegritätsberichten für die Problembehandlung
@@ -530,4 +530,4 @@ System.Hosting gibt die Meldung „Error“ aus, wenn die Überprüfung während
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

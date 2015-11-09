@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015" 
+	ms.date="10/27/2015" 
 	ms.author="bradsev" />
 
 
@@ -48,18 +48,18 @@ Bevor Sie eine Azure-VM erstellen können, benötigen Sie Folgendes:
 Folgende Schritte müssen zum Erstellen Ihrer Instanz der Data Science-VM ausgeführt werden:
 
 1.	Anmelden beim Azure-Portal
-2.	Navigieren Sie zu **Neu** -> **Compute** -> **Marketplace**, und suchen Sie nach *Data Science Virtual Machine*. Wählen Sie die VM mit dem Titel „**Data Science Virtual Machine**“ aus, die von Microsoft veröffentlicht wurde, um eine Beschreibung dieser VM anzuzeigen.
-3.	Klicken Sie unten auf die Schaltfläche **Erstellen**, um einen Assistenten aufzurufen. ![provision-data-science-vm](./media/machine-learning-data-science-provision-vm/provision-data-science-virtual-machine.png)
-4.	 Die folgenden Abschnitte enthalten die Eingaben für jeden Schritt im Assistenten, der zum Erstellen der Data Science-VM verwendet wird.
-
+2.	Navigieren Sie zu **Neu** -> **Compute** -> **Marketplace**, und suchen Sie nach *Virtueller Computer für Data Science*.![provision-data-science-vm](./media/machine-learning-data-science-provision-vm/provision-data-science-virtual-machine.png)
+3.	Wählen Sie den von Microsoft veröffentlichten virtuellen Computer mit dem Titel „**Data Science Virtual Machine**“ aus, um eine Beschreibung dieses virtuellen Computers anzuzeigen. 	
+4.	 Klicken Sie unten auf die Schaltfläche **Erstellen**, um einen Assistenten aufzurufen. ![configure-data-science-vm](./media/machine-learning-data-science-provision-vm/configure-data-science-virtual-machine.png)
+5.	 Die folgenden Abschnitte enthalten die Eingaben für jeden der fünf Schritte im Assistenten (im rechten Teil der obigen Abbildung aufgelistet), der zum Erstellen des virtuellen Data Science-Computers verwendet wird. Die zum Konfigurieren der einzelnen Schritte erforderlichen Eingaben sind:
 
  **1. Grundlagen**:
 
-- **Name**: Name des Data Science-Servers, den Sie erstellen.
+- **Name**: Name des Data Science-Servers, den Sie erstellen
 - **Benutzername**: ID des Administratoranmeldekontos
 - **Kennwort**: Kennwort des Administratorkontos
-- **Abonnement**: Wenn Sie über mehrere Abonnements verfügen, wählen Sie eines aus, über das der Computer erstellt und abgerechnet wird
-- **Ressourcengruppe**: Sie können eine neue Gruppe erstellen oder eine vorhandene Gruppe verwenden
+- **Abonnement**: Wenn Sie über mehrere Abonnements verfügen, wählen Sie eines aus, über das der Computer erstellt und abgerechnet wird.
+- **Ressourcengruppe**: Sie können eine neue Gruppe erstellen oder eine vorhandene Gruppe verwenden.
 - **Standort**: Wählen Sie das Rechenzentrum aus, das am besten geeignet ist. Normalerweise ist es das Rechenzentrum, in dem der größte Teil Ihrer Daten gespeichert ist oder das Ihrem Standort am nächsten ist, um den schnellsten Netzwerkzugriff zu erreichen.
 
  **2. Größe**:
@@ -78,7 +78,7 @@ Folgende Schritte müssen zum Erstellen Ihrer Instanz der Data Science-VM ausgef
 - Sie können ein neues Azure-Speicherkonto in Ihrem Abonnement erstellen oder ein vorhandenes an dem Standort verwenden, der im Schritt „Grundlagen“ des Assistenten ausgewählt wurde.
 - In den meisten Fällen verwenden Sie einfach die Standardeinstellungen für die übrigen Parameter. Sie können den Mauszeiger über den Informationslink bewegen, um Hilfe zu einem bestimmten Feld anzuzeigen, falls Sie nicht die Standardeinstellungen verwenden möchten.
 - Stellen Sie sicher, dass alle eingegebenen Informationen richtig sind.
-- Klicken Sie auf **Kaufen**, um die Bereitstellung zu starten. Ein Link zu den Bedingungen der Transaktion wird bereitgestellt. Für die VM gelten keine über die Computekosten für die Servergröße, die Sie im Schritt **Größe** ausgewählt haben, hinausgehenden Kosten. 
+- Klicken Sie auf **Kaufen**, um die Bereitstellung zu starten. Ein Link zu den Bedingungen der Transaktion wird bereitgestellt. Für den virtuellen Computer fallen keine weiteren Gebühren an mit Ausnahme der Berechnungsgebühren für die im Schritt **Größe** ausgewählte Servergröße. 
 
 Die Bereitstellung sollte ungefähr 10 bis 20 Minuten dauern. Der Status der Bereitstellung wird im Azure-Portal angezeigt.
 
@@ -108,7 +108,7 @@ Hinweis: Es könnte eine Meldung angezeigt werden, die besagt, dass der Evaluier
 Eine eingeschränkte Version von SQL Server gehört ebenfalls zu Visual Studio Community Edition. Sie können auf SQL Server zugreifen, indem Sie **SQL Server Management Studio** starten. Ihr VM-Name wird als Servernamen angegeben. Verwenden Sie die Windows-Authentifizierung, wenn Sie als Administrator unter Windows angemeldet sind. Sobald SQL Server Management Studio gestartet wurde, können Sie andere Benutzer erstellen, Datenbanken erstellen, Daten importieren und SQL-Abfragen ausführen.
 
 ### Azure 
-Mehrere Azure-Tools sind auf der VM installiert: Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure-Speicherkonto verwendet. **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure-Speicherkonto gespeichert sind. **Microsoft Azure PowerShell** ist eine Skriptsprache zur Verwaltung von Azure-Ressourcen in einer Skriptsprache, die auch auf Ihrer VM installiert ist.
+Mehrere Azure-Tools sind auf dem virtuellen Computer installiert: Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure-Speicherkonto verwendet. **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure-Speicherkonto gespeichert sind. **Microsoft Azure PowerShell** ist eine Skriptsprache zur Verwaltung von Azure-Ressourcen in einer Skriptsprache, die auch auf Ihrer VM installiert ist.
 
 ###Power BI
 
@@ -119,4 +119,4 @@ Hinweis: Für den Zugriff auf Power BI benötigen Sie ein Office 365-Konto.
 ## Zusätzliche Microsoft-Entwicklungstools
 Der [**Microsoft-Webplattform-Installer**](https://www.microsoft.com/web/downloads/platform.aspx) kann verwendet werden, um andere Microsoft-Entwicklungstools zu suchen und herunterzuladen. Es gibt auch eine Verknüpfung mit dem Tool auf dem Desktop der VM.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

@@ -1,7 +1,21 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit Jive | Microsoft Azure" description="Hier erfahren Sie, wie Sie Jive mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Jive | Microsoft Azure" 
+    description="Hier erfahren Sie, wie Sie Jive mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit Jive
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=330042), um Feedback abzugeben. Weitere Informationen finden Sie unter [Bewährte Methoden zur Verwaltung der Verbesserungen des Anwendungszugriffs für Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=329963).
+
   
 In diesem Tutorial wird die Integration von Azure und Jive erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
@@ -33,7 +47,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Jiv
 
     ![Was möchten Sie tun?](./media/active-directory-saas-jive-tutorial/IC700995.png "Was möchten Sie tun?")
 
-5.  Geben Sie im **Suchfeld** das Wort **Jive** ein.
+5.  Geben Sie im **Suchfeld** den Suchbegriff **Jive** ein.
 
     ![Jive](./media/active-directory-saas-jive-tutorial/IC701001.png "Jive")
 
@@ -64,10 +78,10 @@ Der folgende Screenshot zeigt ein Beispiel für das entsprechende Dialogfeld in 
 
     4.  Klicken Sie auf **Überprüfen**, um die Konfiguration zu überprüfen.
 
-    5.  Klicken Sie auf **Weiter**, um die Bestätigungsseite zu öffnen.
+    5.  Klicken Sie auf **Weiter**, um die **Bestätigungsseite** zu öffnen.
 
-3.  Klicken Sie auf der Bestätigungsseite auf das Häkchen, um die Konfiguration zu speichern.
+3.  Klicken Sie auf der **Bestätigungsseite** auf das Häkchen, um die Konfiguration zu speichern.
   
 Sie können nun ein Testkonto erstellen und nach 10 Minuten überprüfen, ob das Konto mit „Jive.com“ synchronisiert wurde.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

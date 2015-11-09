@@ -25,6 +25,6 @@
 Die Anwendung wird jetzt in AAD so konfiguriert, dass Benutzer über AAD die einmalige Anmeldung nutzen können.
 
 [Active Directory]: https://manage.windowsazure.com/
-[Konfigurieren der Mobile App mit Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication-preview.md
+[Konfigurieren der Mobile App mit Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

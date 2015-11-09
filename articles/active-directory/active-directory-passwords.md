@@ -17,6 +17,9 @@
 	ms.author="asteen"/>
 
 # Verwalten von Kennwörtern von einem beliebigen Ort aus
+
+  >[AZURE.IMPORTANT]Sind Sie hier, da Sie Ihr Azure- oder O365- Kennwort zurücksetzen möchten? Wenn dies der Fall ist, [folgen Sie den Anweisungen in diesem Abschnitt](https://support.microsoft.com/kb/2606983).
+  
 Als Maßnahme zur Reduzierung von Kosten und Arbeitsaufwand ist Self-Service seit jeher ein wichtiges Ziel für IT-Abteilungen auf der ganzen Welt. Tatsächlich ist der Markt überflutet mit Produkten, mit denen Sie Ihre lokalen Gruppen, Kennwörter oder Benutzerprofile über die Cloud oder lokal verwalten können. Azure AD unterscheidet sich von diesen Angeboten durch die Bereitstellung einiger der benutzerfreundlichsten und leistungsstärksten Self-Service-Funktionen, die gegenwärtig verfügbar sind.
 
 **Azure AD-Kennwortverwaltung** ist ein Satz von Funktionen, mit denen Ihre Benutzer jederzeit und überall sowie unter Einhaltung der von Ihnen definierten Sicherheitsrichtlinien alle Kennwörter von einem beliebigen Gerät aus verwalten können.
@@ -124,4 +127,4 @@ Unten sind einige interessante Funktionen aufgeführt, an denen wir gerade arbei
 * [Weitere Informationen](active-directory-passwords-learn-more.md)
 * [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO1-->

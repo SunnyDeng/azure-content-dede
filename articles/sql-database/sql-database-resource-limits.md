@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="09/11/2015"
+	ms.date="10/27/2015"
 	ms.author="jroth" />
 
 
@@ -53,7 +53,7 @@ Für eine einzelne Datenbank sind deren Einschränkungen durch die Dienstebene u
 
 [AZURE.INCLUDE [Tabelle der SQL-Datenbank-Dienstebenen für elastische Datenbanken](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-Ausführliche Erläuterungen zu Dienstebenen finden Sie unter [Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md).
+Eine erweiterte Definition der einzelnen Ressourcen, die in den vorangehenden Tabellen aufgeführt werden, können Sie der Beschreibungen in [Funktionen und Grenzen der Serviceebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits) entnehmen. Eine Übersicht über die Dienstebenen finden Sie unter [Dienstebenen und Leistungsstufen für Azure SQL-Datenbanken](sql-database-service-tiers.md).
 
 ## DTU-Kontingent pro Server
 
@@ -65,7 +65,7 @@ Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von d
 
 | Bereich | Begrenzung | Beschreibung |
 |---|---|---|
-| Datenbanken mit automatisiertem Export pro Abonnement | 10 | Automatisierter Export ermöglicht es Ihnen, einen benutzerdefinierten Zeitplan für die Sicherung Ihrer SQL-Datenbanken zu erstellen. Weitere Informationen finden Sie unter [SQL Databases: Support for Automated SQL Database Exports](http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines).|
+| Datenbanken mit automatisiertem Export pro Abonnement | 10 | Automatisierter Export ermöglicht es Ihnen, einen benutzerdefinierten Zeitplan für die Sicherung Ihrer SQL-Datenbanken zu erstellen. Weitere Informationen finden Sie unter [SQL-Datenbanken: Support für automatisierte SQL-Datenbankexporte](http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines).|
 
 ## Ressourcen
 
@@ -75,4 +75,4 @@ Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von d
 
 [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

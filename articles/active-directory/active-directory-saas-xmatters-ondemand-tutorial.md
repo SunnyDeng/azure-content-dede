@@ -1,14 +1,26 @@
-<properties pageTitle="Tutorial: Azure Active Directory-Integration mit xMatters OnDemand | Microsoft Azure" description="Hier erfahren Sie, wie Sie xMatters OnDemand mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit xMatters OnDemand | Microsoft Azure" description="Hier erfahren Sie, wie Sie xMatters OnDemand mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Tutorial: Azure Active Directory-Integration mit xMatters OnDemand
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=524330), um Feedback abzugeben.
   
 In diesem Tutorial wird die Integration von Azure und xMatters OnDemand erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen xMatters OnDemand-Mandanten
   
-Nach Abschluss dieses Tutorials können sich die xMatters OnDemand zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer xMatters OnDemand-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie xMatters OnDemand zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer xMatters OnDemand-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -43,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für xMa
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-xmatters-ondemand-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** **xMatters OnDemand** ein.
+6.  Geben Sie im **Suchfeld** den Suchbegriff **xMatters OnDemand** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776789.png "Anwendungskatalog")
 
@@ -69,7 +81,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776793.png "App-URL konfigurieren")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für xMatters OnDemand** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat lokal als: **c:\\XMatters OnDemand.cer**.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für xMatters OnDemand** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat lokal als: **C:\\XMatters OnDemand.cer**.
 
     >[AZURE.IMPORTANT]Sie müssen das Zertifikat an das xMatters-Supportteam weiterleiten. Das Zertifikat muss vom xMatters-Supportteam hochgeladen werden, bevor Sie die Konfiguration der einmaligen Anmeldung abschließen können.
 
@@ -101,7 +113,7 @@ Um Azure AD-Benutzern die Anmeldung bei xMatters OnDemand zu ermöglichen, müss
 
 ###So stellen Sie Benutzerkonten bereit
 
-1.  Melden Sie sich bei Ihrem **XMatters OnDemand**-Mandanten an.
+1.  Melden Sie sich bei Ihrem **xMatters OnDemand**-Mandanten an.
 
 2.  Klicken Sie auf die Registerkarte **Benutzer**.
 
@@ -132,10 +144,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776799.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-xmatters-ondemand-tutorial/IC767830.png "Ja")
   
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

@@ -20,6 +20,10 @@
 
 Microsoft bietet eine Breite Palette von Funktionen mit den Azure IoT-Diensten an. Diese Dienste liefern Funktionen auf Unternehmensebene zum Sammeln von Daten von Geräten, Analysieren von Datenströmen in Bewegung, Speichern und Abfragen großer Datensätze, Visualisieren von Echtzeit- und Verlaufsdaten und Integrieren mit wichtigen Back-Office-Systemen an. Die Azure IoT Suite bündelt eine Reihe von häufig genutzten Diensten und erweitert die Fähigkeiten zum Reduzieren der Amortisierung für Kunden. Diese Erweiterungen umfassen vorkonfigurierte Lösungen, die die Basisimplementierung der am häufigsten verwendeten Lösungsmuster bieten. In Kombination mit den IoT-SDKs können Kunden die vorkonfigurierten Lösungen leicht anpassen oder als Beispiele für die Entwicklung neuer Lösungen nutzen.
 
+Das folgende Video bietet eine Einführung in Azure IoT Suite:
+
+> [AZURE.VIDEO azurecon-2015-introducing-the-microsoft-azure-iot-suite]
+
 ## Azure IoT-Dienste in Azure IoT Suite
 
 Kern der Azure IoT Suite ist der IoT Hub-Dienst. Dieser Dienst stellt den Nachrichtenaustausch Gerät-zu-Cloud und Cloud-zu-Dienst bereit. Er fungiert als Gateway zur Cloud und zu anderen wichtigen Diensten der IoT Suite.
@@ -38,4 +42,4 @@ Vorkonfigurierte Lösungen finden Sie in der Azure IoT Suite. Sie ermöglichen K
 
 Die erste verfügbare vorkonfigurierte Lösung ist die [Remoteüberwachung](iot-suite-what-are-preconfigured-solutions.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

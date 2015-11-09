@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/14/2015" 
+	ms.date="10/27/2015" 
 	ms.author="tomfitz"/>
 
 # Überwachen von Vorgängen mit dem Ressourcen-Manager
@@ -21,6 +21,11 @@
 Wenn während der Bereitstellung oder des Betriebs Ihrer Lösung ein Problem auftritt, müssen Sie den Grund dafür finden. Der Ressourcen-Manager bietet zwei Möglichkeiten, um herauszufinden, was passiert ist und warum es passiert ist. Sie können Bereitstellungsbefehle verwenden, um Informationen zu bestimmten Bereitstellungen und Vorgängen abzurufen. Alternativ dazu können Sie Überwachungsprotokolle verwenden, um Informationen zu Bereitstellungen und anderen Aktionen abzurufen, die während der Lebensdauer der Lösung durchgeführt wurden. In diesem Thema geht es um die Überwachungsprotokolle.
 
 Ein Überwachungsprotokoll enthält alle Aktionen, die mit Ihren Ressourcen durchgeführt wurden. Wenn also ein Benutzer Ihrer Organisation eine Ressource ändert, können Sie die Aktion, das Datum und die Uhrzeit sowie den Benutzer ermitteln.
+
+Bei Überwachungsprotokollen müssen zwei wichtige Einschränkungen berücksichtigt werden:
+
+1. Überwachungsprotokolle werden nur 90 Tage lang gespeichert.
+2. Eine Abfrage kann nur für maximal 15 Tage ausgeführt werden.
 
 Sie können Informationen aus den Überwachungsprotokollen über Azure PowerShell, die Azure-Befehlszeilenschnittstelle, eine REST-API oder das Azure-Vorschauportal abrufen.
 
@@ -30,13 +35,17 @@ Sie können Informationen aus den Überwachungsprotokollen über Azure PowerShel
 
 Führen Sie zum Abrufen von Protokolleinträgen den Befehl **Get-AzureRmLog** aus (oder **Get-AzureResourceGroupLog** für PowerShell-Versionen vor 1.0 Preview). Wenn Sie die Liste der Einträge filtern möchten, können Sie dem Befehl Parameter hinzufügen.
 
-Das folgende Beispiel zeigt, wie Sie mithilfe des Überwachungsprotokolls nach Aktionen suchen können, die während der Lebensdauer der Lösung durchgeführt wurden. Sie können sehen, wann die Aktion durchgeführt wurde und wer sie angefordert hat.
+Das folgende Beispiel zeigt, wie Sie mithilfe des Überwachungsprotokolls nach Aktionen suchen können, die während der Lebensdauer der Lösung durchgeführt wurden. Sie können sehen, wann die Aktion durchgeführt wurde und wer sie angefordert hat. Die Start- und Enddaten werden in einem Datumsformat angegeben.
 
-    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 -EndTime 2015-09-10T06:00
 
-Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben stehende Befehl eine sehr lange Liste mit Aktionen für diese Ressourcengruppe zurückgeben. Sie können die Ergebnisse filtern, indem Sie Suchkriterien eingeben. Wenn Sie beispielsweise herausfinden möchten, wie eine Web-App angehalten wurde, können Sie folgenden Befehl ausführen, und Sie werden feststellen, dass die Aktion durch someone@example.com durchgeführt wurde.
+Alternativ können Sie mithilfe von Datumsfunktionen den Datumsbereich angeben, beispielsweise die letzten 15 Tage.
 
-    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15)
+
+Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben stehende Befehl eine sehr lange Liste mit Aktionen für diese Ressourcengruppe zurückgeben. Sie können die Ergebnisse filtern, indem Sie Suchkriterien eingeben. Wenn Sie beispielsweise herausfinden möchten, wie eine Web-App angehalten wurde, können Sie folgenden Befehl ausführen, und Sie werden feststellen, dass die Aktion von someone@example.com ausgeführt wurde.
+
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15) | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
 
     Authorization     :
                         Scope     : /subscriptions/xxxxx/resourcegroups/ExampleGroup/providers/Microsoft.Web/sites/ExampleSite
@@ -56,7 +65,7 @@ Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben s
 
 Im nächsten Beispiel suchen wir nach Aktionen, bei denen nach der angegebenen Startzeit ein Fehler aufgetreten ist. Hier wird auch der Parameter **DetailedOutput** einbezogen, damit die Fehlermeldungen angezeigt werden.
 
-    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-27T12:00 -Status Failed –DetailedOutput
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15) -Status Failed –DetailedOutput
     
 Wenn dieser Befehl zu viele Einträge und Eigenschaften zurückgibt, können Sie die Überwachung genauer fokussieren, indem Sie die **properties**-Eigenschaft abrufen.
 
@@ -153,4 +162,4 @@ Sie können jeden Vorgang auswählen, um weitere Details anzuzeigen.
 - Informationen zum Gewähren des Zugriffs für einen Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 - Informationen zum Beschränken von Aktionen für eine Ressource für alle Benutzer finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->

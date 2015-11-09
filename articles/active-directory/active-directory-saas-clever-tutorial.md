@@ -1,14 +1,27 @@
-<properties pageTitle="Lernprogramm: Azure Active Directory-Integration mit Clever | Microsoft Azure" description="Erfahren Sie, wie Sie Clever mit Azure Active Directory verwenden können, um das einmalige Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Lernprogramm: Azure Active Directory-Integration mit Clever | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie Clever mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags 
+    ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="10/22/2015" 
+    ms.author="markvi" />
+
 #Lernprogramm: Azure Active Directory-Integration mit Clever
->[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=551005), um Feedback abzugeben.
 
 In diesem Lernprogramm wird die Integration von Azure und Clever erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen Clever-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Clever zugewiesen haben, mittels einmaligen Anmeldens auf der Clever-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Clever zugewiesen haben, mittels einmaligen Anmeldens auf der Clever-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -42,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cle
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-clever-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** als Suchbegriff **Clever** ein.
+6.  Geben Sie im **Suchfeld** den Suchbegriff **Clever** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-clever-tutorial/IC798978.png "Anwendungskatalog")
 
@@ -65,11 +78,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clever-tutorial/IC798981.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Clever-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Clever verwenden (z. B. **https://clever.com/in/azsandbox*), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Clever-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Clever verwenden (z. B. **https://clever.com/in/azsandbox*), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-clever-tutorial/IC798982.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Clever** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Clever** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clever-tutorial/IC798983.png "Einmaliges Anmelden konfigurieren")
 
@@ -83,18 +96,18 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Instant Login](./media/active-directory-saas-clever-tutorial/IC798985.png "Instant Login")
 
-    1.  Geben Sie die **Login URL** ein.  
+    1.  Geben Sie die **Anmelde-URL** ein.  
 
-        >[AZURE.NOTE]Die **Login URL** ist ein benutzerdefinierter Wert. Sie erhalten diesen Wert vom Clever-Supportteam.
+        >[AZURE.NOTE]Die **Anmelde-URL** ist ein benutzerdefinierter Wert. Sie erhalten diesen Wert vom Clever-Supportteam.
 
-    2.  Wählen Sie als **Identity System** die Option **ADFS** aus.
+    2.  Wählen Sie als **Identitätssystem** die Option **ADFS** aus.
     3.  Klicken Sie auf **Speichern**.
 
-8.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+8.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clever-tutorial/IC798986.png "Einmaliges Anmelden konfigurieren")
 
-9.  Klicken Sie oben im Menü auf **Attributes**, um das Dialogfeld **SAML Token Attributes** zu öffnen.
+9.  Klicken Sie oben im Menü auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen.
 
     ![Attribute](./media/active-directory-saas-clever-tutorial/IC795920.png "Attribute")
 
@@ -106,12 +119,12 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     |---|---|
     |clever.Student.Credentials.district\_username|User.userprincipalname|
 
-    1.  Klicken Sie für jede Datenzeile in der obigen Tabelle auf **add user attribute**.
-    2.  Geben Sie im Textfeld **Attribute Name** den für die Zeile angezeigten Attributnamen ein.
-    3.  Geben Sie im Textfeld **Attribute Value** den für die Zeile angezeigten Attributwert ein.
+    1.  Klicken Sie für jede Datenzeile in der obigen Tabelle auf **Benutzerattribut hinzufügen**.
+    2.  Geben Sie im Textfeld **Attributname** den für die Zeile angezeigten Attributnamen ein.
+    3.  Geben Sie im Textfeld **Attributwert** den für die Zeile angezeigten Attributwert ein.
     4.  Klicken Sie auf **Fertig stellen**.
 
-11. Klicken Sie auf **Apply Changes**.
+11. Klicken Sie auf **Änderungen übernehmen**.
 
 ##Konfigurieren der Benutzerbereitstellung
 
@@ -135,6 +148,6 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Ja](./media/active-directory-saas-clever-tutorial/IC767830.png "Ja")
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO1-->
