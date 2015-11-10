@@ -44,7 +44,7 @@ Oder
 Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für einen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
    
   
-![Erstellen eines elastischen Pools][1]
+   ![Erstellen eines elastischen Pools][1]
 
 
 Das Blatt **Pool für elastische Datenbanken** stellt Optionen zum Festlegen des Tarifs, Hinzufügen von Datenbanken und Konfigurieren der Leistungsmerkmale des Pools bereit.
