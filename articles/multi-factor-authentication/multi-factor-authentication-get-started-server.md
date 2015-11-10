@@ -150,6 +150,26 @@ Auf der Registerkarte "E-Mail-Inhalt" werden alle verschiedenen E-Mail-Vorlagen 
 
 ![E-Mail-Vorlagen](./media/multi-factor-authentication-get-started-server/email2.png)
 
+## Verarbeitung von Benutzerdaten durch den Azure Multi-Factor Authentication-Server
+
+Bei lokaler Verwendung des Multi-Factor Authentication (MFA)-Servers werden die Daten eines Benutzers auf den lokalen Servern gespeichert. Daten werden nicht dauerhaft in der Cloud gespeichert. Wenn der Benutzer eine zweistufige Authentifizierung durchführt, sendet der MFA-Server Daten an den Azure MFA-Clouddienst, um die Authentifizierung auszuführen. Wenn diese Authentifizierungsanforderungen an den Clouddienst gesendet werden, werden in der Anforderung und den Protokollen die folgenden Felder gesendet, damit sie in den Authentifizierungs-/Verwendungsberichten des Kunden verfügbar sind. Einige Felder sind optional und können für den Multi-Factor Authentication-Server aktiviert oder deaktiviert werden. Für die Kommunikation zwischen MFA-Server und MFA-Clouddienst wird SSL/TLS über den ausgehenden Port 443 verwendet. Die Felder lauten:
+
+- Eindeutige ID: Benutzername oder interne ID des MFA-Servers
+- Vor- und Nachname: optional
+- E-Mail-Adresse: optional
+- Rufnummer: für eine Anruf- oder SMS-Authentifizierung
+- Gerätetoken: für die Authentifizierung einer mobilen App
+- Authentifizierungsmodus 
+- Authentifizierungsergebnis 
+- Name des MFA-Servers 
+- MFA-Server-IP 
+- Client-IP – falls verfügbar
+
+
+
+Zusätzlich zu den obigen Feldern werden auch das Authentifizierungsergebnis (Erfolg/Ablehnung) und der Grund für etwaige Ablehnungen mit den Authentifizierungsdaten gespeichert. Sie stehen in den Authentifizierungs-/Verwendungsberichten zur Verfügung.
+
+
 ## Erweiterte Azure Multi-Factor Authentication Server-Konfigurationen
 Weitere Informationen zu erweiterten Einstellungen und Konfigurationsinformationen finden Sie in der folgenden Tabelle.
 
@@ -165,4 +185,4 @@ Methode|Beschreibung
 [Synchronisieren mit Windows Server Active Directory](multi-factor-authentication-get-started-server-dirint.md)|Informationen zum Einrichten und Konfigurieren der Synchronisierung zwischen Active Directory und dem Azure MFA-Server.
 [Bereitstellen des mobilen App-Webdienstes für den Azure Multi-Factor Authentication-Server](multi-factor-authentication-get-started-server-webservice.md)|Informationen über das Einrichten und Konfigurieren des Azure MFA-Server-Webdienstes.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

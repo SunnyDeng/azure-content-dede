@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Search in NodeJS | Microsoft Azure"
-	description="Exemplarische Vorgehensweise zur Erstellung einer benutzerdefinierten Azure Search-Anwendung in der Programmiersprache NodeJS."
+	description="Exemplarische Vorgehensweise zur Erstellung einer Suchanwendung in einem gehosteten Cloudsuchdienst mit der Programmiersprache NodeJS."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -13,7 +13,7 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search in NodeJS
@@ -147,4 +147,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [5]: ./media/search-get-started-nodejs/AzSearch-NodeJS-configjs.png
 [9]: ./media/search-get-started-nodejs/rogerwilliamsschool.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

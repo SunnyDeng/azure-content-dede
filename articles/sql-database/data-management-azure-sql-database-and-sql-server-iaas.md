@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über Azure SQL-Datenbank und SQL Server in Azure Virtual Machines. Sehen Sie sich allgemeine geschäftliche Gründe an, die bestimmen, welche SQL-Technologie für Ihre Anwendung am besten geeignet ist." 
 	services="sql-database, virtual-machines" 
 	documentationCenter="" 
-	authors="Selcin" 
+	authors="jeffgoll" 
 	manager="jeffreyg" 
 	editor="tysonn"/>
 
@@ -12,9 +12,9 @@
 	ms.workload="data-management" 
 	ms.tgt_pltfrm="vm-windows-sql-server" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="10/19/2015" 
-	ms.author="selcint"/>
+	ms.author="jeffreyg"/>
 
 # Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs
 
@@ -257,4 +257,4 @@ Vielen Dank für die Umsetzung dieses Artikels!
 <!--Image references-->
 [1]: ./media/data-management-azure-sql-database-and-sql-server-iaas/SQLIAAS_SQL_Server_Cloud_Continuum.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

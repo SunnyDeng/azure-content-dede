@@ -30,9 +30,9 @@ Greifen Sie im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) auf d
 
 ### Anzeigen und Kopieren eines Zugriffsschlüssels im Azure-Vorschauportal
 
-1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
+1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
-2.      Klicken Sie im Fokus **Zusammenfassung** auf **Schlüssel**.
+2.      Klicken Sie im Fokus **Zusammenfassung** auf **Schlüssel**.
 
 3.      Klicken Sie im Blatt **Schlüssel** rechts neben dem Schlüssel, den Sie kopieren möchten, auf die Schaltfläche **Kopieren**.
 
@@ -113,4 +113,4 @@ Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-Dokumenta
  
  
 
-<!---HONumber=Nov15_HO1-->
+<!----HONumber=Nov15_HO1-->

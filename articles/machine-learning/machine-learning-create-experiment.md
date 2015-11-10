@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="10/13/2015"
+	ms.date="11/03/2015"
 	ms.author="garye"/>
 
 # Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio
@@ -140,17 +140,17 @@ Nachdem die Daten vorbereitet sind, können Sie das Vorhersagemodell anhand von 
 
 Wir möchten den Preis eines Autos vorhersagen, der beliebige Werte annehmen kann, daher verwenden wir ein Regressionsmodell. Für dieses Beispiel trainieren wir ein einfaches *lineares Regressionsmodell* und testen es anschließend im nächsten Schritt.
 
-1. Die uns vorliegenden Daten können sowohl zum Trainieren als auch zum Testen verwendet werden, indem wir sie in separate Trainings- und Testsätze aufteilen. Ziehen Sie das Modul [Aufteilen][split] in den Experimentbereich und verbinden Sie es mit der Ausgabe des letzten [Projektspalten][project-columns]-Moduls. Setzen Sie **Anteil der Zeilen im ersten Ausgabedatensatz** auf 0,75. Mit dieser Einstellung verwenden wir 75 Prozent der Daten zum Trainieren des Modells und halten 25 Prozent für Tests zurück.
+1. Die uns vorliegenden Daten können sowohl zum Trainieren als auch zum Testen verwendet werden, indem wir sie in separate Trainings- und Testsätze aufteilen. Ziehen Sie das Modul [Split Data][split] in den Experimentbereich und verbinden Sie es mit der Ausgabe des letzten [Project Columns][project-columns]-Moduls. Setzen Sie **Anteil der Zeilen im ersten Ausgabedatensatz** auf 0,75. Mit dieser Einstellung verwenden wir 75 Prozent der Daten zum Trainieren des Modells und halten 25 Prozent für Tests zurück.
 
 	> [AZURE.TIP]Sie können den Parameter **Zufälliger Ausgangswert** ändern, um unterschiedliche zufällige Proben für Training und Tests zu erstellen. Dieser Parameter steuert den Ausgangswert des Pseudo-Zufallszahlengenerators.
 
-2. Führen Sie das Experiment aus. Dadurch können die Module [Project Columns][project-columns] und [Split][split] die Spaltendefinitionen an die Module übergeben, die wir als Nächstes hinzufügen werden.
+2. Führen Sie das Experiment aus. Dadurch können die Module [Project Columns][project-columns] und [Split Data][split] die Spaltendefinitionen an die Module übergeben, die wir als Nächstes hinzufügen werden.
 
 3. Um den Lernalgorithmus auszuwählen, erweitern Sie die Kategorie **Machine Learning** in der Modulpalette links vom Experimentbereich, und erweitern Sie anschließend **Modell initialisieren**. Daraufhin werden verschiedene Kategorien von Modulen angezeigt, die zur Initialisierung eines Algorithmus für maschinelles Lernen verwendet werden können.
 
 	Wählen Sie für dieses Experiment das [Linear Regression][linear-regression]-Modul unter der Kategorie **Regression** aus (oder geben Sie "linear regression" im Suchfeld der Palette ein), und ziehen Sie das Modul in den Experimentbereich.
 
-4. Suchen Sie das Modul [Modell trainieren][train-model], und ziehen Sie es ebenfalls in den Experimentbereich. Verbinden Sie die Ausgabe des linken Eingangsports mit dem Ausgang des Moduls [Linear Regression][linear-regression]. Verbinden Sie den rechten Eingangsport mit dem Trainingsdatenausgang (linker Port) des [Split][split]-Moduls.
+4. Suchen Sie das Modul [Train Model][train-model], und ziehen Sie es ebenfalls in den Experimentbereich. Verbinden Sie die Ausgabe des linken Eingangsports mit dem Ausgang des Moduls [Linear Regression][linear-regression]. Verbinden Sie den rechten Eingangsport mit dem Trainingsdatenausgang (linker Port) des [Split Data][split]-Moduls.
 
 5. Wählen Sie das Modul [Train Model][train-model] aus, klicken Sie im Bereich **Eigenschaften** auf **Spaltenauswahl starten**, und wählen Sie dann die Spalte **price** aus. Dies ist der Wert, den unser Modell vorhersagen wird.
 
@@ -166,7 +166,7 @@ Als Ergebnis erhalten Sie ein trainiertes Regressionsmodul, mit dem Sie neue Pro
 
 Wir haben das Modell nun unter Verwendung von 75 Prozent unserer Daten trainiert und können die restlichen 25 Prozent der Daten dafür aufwenden, zu bewerten, wie gut unser Modell funktioniert.
 
-1. Suchen Sie das Modul [Modell bewerten][score-model], ziehen Sie es in den Experimentbereich, und verbinden Sie den linken Eingangsport mit dem Ausgang des [Train Model][train-model]-Moduls. Verbinden Sie den rechten Eingangsport mit dem Testdatenausgang (rechter Port) des [Split][split]-Moduls.  
+1. Suchen Sie das Modul [Modell bewerten][score-model], ziehen Sie es in den Experimentbereich, und verbinden Sie den linken Eingangsport mit dem Ausgang des [Train Model][train-model]-Moduls. Verbinden Sie den rechten Eingangsport mit dem Testdatenausgang (rechter Port) des [Split Data][split]-Moduls.  
 
 	![Modul Modell bewerten][screen8a]
 
@@ -204,7 +204,7 @@ Wenn Sie mit Ihrem Modell zufrieden sind, können Sie es als Webdienst bereitste
 
 [publish]: machine-learning-publish-a-machine-learning-web-service.md
 
-Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersagemodell-Techniken zum Erstellen, Trainieren, Bewerten und Bereitstellen eines Modells finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning][walkthrough].
+Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersagemodell-Techniken zum Erstellen, Trainieren, Bewerten und Bereitstellen eines Modells finden Sie unter [Entwickeln einer Lösung zur Vorhersageanalyse mit Azure Machine Learning][walkthrough].
 
 [walkthrough]: machine-learning-walkthrough-develop-predictive-solution.md
 
@@ -234,4 +234,4 @@ Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersa
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

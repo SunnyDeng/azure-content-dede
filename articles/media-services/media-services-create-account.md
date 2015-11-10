@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/28/2015"  
+	ms.date="11/03/2015"  
 	ms.author="juliako"/>
 
 
@@ -35,7 +35,14 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
 -   **Ein Media Services-Konto**. Über Ihr Konto erhalten Sie Zugriff auf eine Reihe cloudbasierter Mediendienste in Azure. In einem Media Services-Konto wird kein Medieninhalt gespeichert. Stattdessen werden Metadaten über die Medieninhalte und Medienverarbeitungsaufträge in Ihrem Konto gespeichert. Beim Erstellen des Kontos wählen Sie eine verfügbare Media Services-Region aus. Bei der ausgewählten Region handelt es sich um ein Rechenzentrum, in dem Metadaten-Datensätze für Ihr Konto gespeichert werden.
 
-    > [AZURE.NOTE]Folgende Media Services-Regionen sind verfügbar: Nordeuropa, Westeuropa, USA, Westen, USA, Osten, Südostasien, Ostasien, Japan West, Japan Ost. Media Services verwendet keine Affinitätsgruppen.
+    > [AZURE.NOTE]Folgende Media Services-Regionen (AMS) sind verfügbar: „Nordeuropa“, „Westeuropa“, „USA, Westen“, „USA, Osten“, „Südostasien“, „Ostasien“, „Japan, Westen“, „Japan, Osten“. Media Services verwendet keine Affinitätsgruppen.
+    >
+	> AMS ist jetzt auch in den folgenden Datencentern verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Jetzt können Sie das Azure-Verwaltungsportal zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Durchführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
+	>
+	>- „Brasilien, Süden“: Für die Codierung reservierte Einheiten stehen nur in den Versionen Standard und Basic zur Verfügung.
+	>- „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“: Für die Codierung reservierte Einheiten stehen nur in der Basic-Version zur Verfügung.
+
+
 -   **Ein zugeordnetes Speicherkonto**. Bei Ihrem Speicherkonto handelt es sich um ein Azure-Speicherkonto, das Ihrem Media Services-Konto zugeordnet ist. Das Speicherkonto stellt Blob-Speicher für Mediendateien zur Verfügung und muss sich in derselben geografischen Region befinden wie das Media Services-Konto. Bei der Erstellung eines Media Services-Kontos können Sie entweder ein vorhandenes Speicherkonto in derselben Region auswählen oder ein neues Speicherkonto in derselben Region erstellen. Wenn Sie ein Media Services-Konto löschen, bleiben die Blobs im zugehörigen Speicherkonto erhalten.
 
 <a id="quick"></a>
@@ -63,7 +70,7 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
 	![Seite "Media Services"](./media/media-services-create-account/wams-mediaservices-page.png)
 
-	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite **Schnellstart **angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei von dieser Seite oder der Seite **INHALT** hochladen.
+	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite **Schnellstart** angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei von dieser Seite oder der Seite **INHALT** hochladen.
 
 	Außerdem können Sie Code anzeigen, der mithilfe des Azure Media Services-SDK die folgenden Aufgaben ausführt: Videos hochladen, verschlüsseln und veröffentlichen. Sie können auf einen der Links unter dem Abschnitt **ETWAS CODE SCHREIBEN** klicken, den Code kopieren und in Ihrer Anwendung verwenden.
 
@@ -92,4 +99,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
   [Azure-Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen eines Azure Search-Index im Portal | Microsoft Azure"
-	description="Fügen Sie dem Azure Search-Dienst durch Angabe von Felddefinitionen im Azure-Portal einen Index hinzu."
+	description="Fügen Sie Azure Search, einem in der Cloud gehosteten Suchdienst, durch Angabe von Felddefinitionen im Azure-Portal einen Index hinzu."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Erstellen eines Azure Search-Index im Azure-Portal
@@ -100,4 +100,4 @@ Nachdem Sie sich mit dem einfachen Index vertraut gemacht haben, können Sie ggf
 [4]: ./media/search-create-index-portal/AzureSearch-PortalIndex-4.PNG
 [5]: ./media/search-create-index-portal/AzureSearch-PortalIndex-5.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

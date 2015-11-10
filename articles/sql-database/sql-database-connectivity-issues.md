@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/26/2015"
+	ms.date="11/02/2015"
 	ms.author="genemi"/>
 
 
@@ -81,17 +81,10 @@ Wenn Ihr Programm über Middleware eines Drittanbieters mit Azure SQL-Datenbank 
 ### Steigerung der Intervalle zwischen Wiederholungsversuchen
 
 
-Sie sollten für Ihr Programm eine Wartezeit von mindestens 6-10 Sekunden festlegen, bevor der erste Wiederholungsversuch unternommen wird. Anderenfalls kann der Clouddienst durch eine zu große Anzahl von Anforderungen überlastet werden, sodass keine weitere Verarbeitung möglich ist.
 
+Es wird empfohlen, dass vor dem ersten Wiederholungsversuch eine Verzögerungszeit von fünf Sekunden verwendet wird. Wiederholungsversuche nach weniger als fünf Sekunden können den Clouddienst überfordern. Für jeden nachfolgenden Wiederholungsversuch sollte die Verzögerung exponentiell steigen, bis zu einem Maximum von 60 Sekunden.
 
-Wenn mehrere Wiederholungsversuche erforderlich sind, muss das Intervall für die aufeinanderfolgenden Versuche ständig vergrößerst werden, bis die maximale Wartezeit erreicht ist. Dazu gibt es zwei Möglichkeiten:
-
-
-- Gleichbleibende Steigerung des Intervalls. Beispielsweise kann die Wartezeit um jeweils 5 Sekunden verlängert werden.
-
-
-- Exponentielle Steigerung des Intervalls. Die aufeinanderfolgenden Intervalle können z. B. jeweils mit dem Wert 1,5 multipliziert werden.
-
+Eine Erörterung der *Sperrfrist* für Clients, die ADO.NET verwenden, finden Sie unter [SQL Server-Verbindungspooling (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx).
 
 Darüber hinaus kann es sinnvoll sein, eine maximale Anzahl von Wiederholungsversuchen festzulegen, bevor das Programm beendet wird.
 
@@ -115,7 +108,7 @@ Um Ihre Wiederholungslogik zu testen, müssen Sie einen Fehler simulieren oder v
 ### Testen der Logik, indem der Computer vom Netzwerk getrennt wird
 
 
-Eine Möglichkeit, um Ihre Wiederholungslogik zu testen, besteht darin, Ihren Clientcomputer vom Netzwerk zu trennen, während das Programm ausgeführt wird. Bei diesem Problem wird der folgende Fehler ausgegeben: – **SqlException.Number** = 11001 – Fehlermeldung: „Der Host ist nicht bekannt“.
+Eine Möglichkeit, um Ihre Wiederholungslogik zu testen, besteht darin, Ihren Clientcomputer vom Netzwerk zu trennen, während das Programm ausgeführt wird. Der folgende Fehler wird ausgegeben: – **SqlException.Number** = 11001 – Fehlermeldung: „Der angegebene Host ist unbekannt“.
 
 
 Beim ersten Wiederholungsversuch kann Ihr Programm den Namen korrigieren und erneut versuchen, eine Verbindung herzustellen.
@@ -127,7 +120,7 @@ Um diesen Test in der Praxis umzusetzen, trennen Sie Ihren Computer vom Netzwerk
 ### Testen der Logik, indem beim Herstellen der Verbindung ein falscher Datenbankname eingegeben wird
 
 
-Ihr Programm kann vor dem ersten Verbindungsversuch mit Absicht einen falschen Benutzernamen verwenden. Bei diesem Problem wird der folgende Fehler ausgegeben: – **SqlException.Number** = 18456 – Fehlermeldung: „Fehler bei der Anmeldung für den Benutzer 'WRONG\_MyUserName'.“
+Ihr Programm kann vor dem ersten Verbindungsversuch mit Absicht einen falschen Benutzernamen verwenden. Der folgende Fehler wird ausgegeben: – **SqlException.Number** = 18456 – Fehlermeldung: „Fehler bei der Anmeldung für den Benutzer 'WRONG\_MyUserName'.“
 
 
 Beim ersten Wiederholungsversuch kann Ihr Programm den Namen korrigieren und erneut versuchen, eine Verbindung herzustellen.
@@ -151,7 +144,7 @@ Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichen
 #### 30 Sekunden für Verbindungstimeout
 
 
-Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, für Ihre Verbindungszeichenfolge Folgendes auszuführen: Legen Sie den Parameter **Connection Timeout** auf **30** Sekunden fest (anstatt 15 Sekunden).
+Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, in Ihrer Verbindungszeichenfolge den Parameter **Connection Timeout** auf **30** Sekunden festzulegen (anstatt auf 15 Sekunden).
 
 
 <a id="b-connection-ip-address" name="b-connection-ip-address"></a>
@@ -168,7 +161,7 @@ Wenn Sie die IP-Adresse nicht konfigurieren, tritt bei Ihrem Programm ein Fehler
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md)
+Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md).
 
 
 <a id="c-connection-ports" name="c-connection-ports"></a>
@@ -236,7 +229,7 @@ Sobald die Verbindung hergestellt wurde, testen Sie, ob eine kurze SQL SELECT-Ab
 Angenommen, Sie vermuten, dass aufgrund von Portproblemen keine Verbindung hergestellt werden kann. Sie können auf Ihrem Computer ein Hilfsprogramm ausführen, das Informationen zu den Portkonfigurationen zurückgibt.
 
 
-Unter Linux sind die folgenden Hilfsprogramme nützlich: `netstat -nap` und `nmap -sS -O 127.0.0.1` (ersetzen Sie den Beispielwert durch Ihre IP-Adresse.)
+Unter Linux sind die folgenden Hilfsprogramme nützlich: `netstat -nap` und `nmap -sS -O 127.0.0.1` (Ersetzen Sie den Beispielwert durch Ihre IP-Adresse.)
 
 
 Unter Windows kann das Hilfsprogramm [PortQry.exe](http://www.microsoft.com/download/details.aspx?id=17148) nützliche Informationen liefern. Nachfolgend finden Sie eine Beispielabfrage der Portinformationen für einen Azure SQL-Datenbankserver, die auf einem Laptop ausgeführt wurde.
@@ -284,7 +277,7 @@ Nachfolgend finden Sie einige Transact-SQL-SELECT-Anweisungen, mit denen Fehler-
 
 | Protokollabfrage | Beschreibung |
 | :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter Verbindungsfehler im Zusammenhang mit der Neukonfiguration, mit einer Drosselung und mit einer übermäßigen Ressourcenanhäufung.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zu Problemen bei Ihrem Clientprogramm korrelieren.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Zur weiteren Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
 
 
@@ -344,7 +337,7 @@ Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Kl
 Ein Bereich, in dem EntLib60 nützlich sein kann, ist die Wiederholungslogik für die Behandlung von vorübergehenden Fehlern: – [4 – Ausdauer, der Schlüssel zum Erfolg: Verwenden des Anwendungsblocks für die Behandlung von vorübergehenden Fehlern](http://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx).
 
 
-Ein kurzes C#-Codebeispiel unter Verwendung von EntLib60 in der Wiederholungslogik finden Sie hier: – [Codebeispiel: Wiederholungslogik von Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md).
+Ein kurzes C#-Codebeispiel mit Verwendung von EntLib60 in der Wiederholungslogik finden Sie hier: – [Codebeispiel: Wiederholungslogik von Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md).
 
 
 > [AZURE.NOTE]Der Quellcode für EntLib60 steht zum öffentlichen [Download](http://go.microsoft.com/fwlink/p/?LinkID=290898) bereit. Microsoft plant keine weiteren Funktions- oder Wartungsupdates für EntLib.
@@ -357,25 +350,25 @@ Die folgenden EntLib60-Klassen sind besonders nützlich für Wiederholungslogik.
 
 *Im Namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling**:*
 
-- Die Klasse **RetryPolicy**
- - Die Methode **ExecuteAction**
+- Klasse **RetryPolicy**
+ - Methode **ExecuteAction**
 
 
-- Die Klasse **ExponentialBackoff**
+- Klasse **ExponentialBackoff**
 
 
-- Die Klasse **SqlDatabaseTransientErrorDetectionStrategy**
+- Klasse **SqlDatabaseTransientErrorDetectionStrategy**
 
 
-- Die Klasse **ReliableSqlConnection**
- - Die Methode **ExecuteCommand**
+- Klasse **ReliableSqlConnection**
+ - Methode **ExecuteCommand**
 
 
 Im Namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.TestSupport**:
 
-- Die Klasse **AlwaysTransientErrorDetectionStrategy**
+- Klasse **AlwaysTransientErrorDetectionStrategy**
 
-- Die Klasse **NeverTransientErrorDetectionStrategy**
+- Klasse **NeverTransientErrorDetectionStrategy**
 
 
 Unter folgenden Links finden Sie weitere Informationen zu EntLib60:
@@ -485,4 +478,4 @@ public bool IsTransient(Exception ex)
 
 - [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jedem Element vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->
