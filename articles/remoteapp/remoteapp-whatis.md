@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="10/23/2015" 
+	ms.date="11/04/2015" 
 	ms.author="elizapo"/>
 
 # Was ist Azure RemoteApp?
 
-Azure RemoteApp stattet Azure mit der Funktionalität des lokalen Microsoft RemoteApp-Programms, unterstützt von Remotedesktopdiensten, aus. Azure RemoteApp sorgt für den sicheren Remotezugriff auf Anwendungen von vielen unterschiedlichen Benutzergeräten aus.
+Azure RemoteApp stattet Azure mit der Funktionalität des lokalen Microsoft RemoteApp-Programms, unterstützt von Remotedesktopdiensten, aus. Azure RemoteApp sorgt für den sicheren Remotezugriff auf Anwendungen von vielen unterschiedlichen Benutzergeräten aus. Im Wesentlichen hostet Azure RemoteApp nicht persistente Terminal Server-Sitzungen in der Cloud, die Sie verwenden und an Ihre Benutzer freigeben können.
 
 Mit Azure RemoteApp können Sie Apps und Ressourcen auf fast jedem Gerät für Benutzer freigeben. Wir hosten Ihre Apps in der Cloud, was bedeutet, dass wir uns um Hardware und Skalierung kümmern, um die Anforderungen der Benutzer zu erfüllen. Sie müssen lediglich die Apps, die Sie freigeben möchten, hochladen, und Ihre Benutzer dann dazu veranlassen, sie zu verwenden. [Benutzer behalten ihre eigenen Geräte](remoteapp-clients.md), während Sie alles über das Azure-Portal verwalten. Sie haben sogar die Möglichkeit, die Anmeldeinformationen Ihres Unternehmens zu verwenden, sodass Sie die Sicherheit von Apps und Daten gewährleisten.
 
@@ -80,4 +80,4 @@ Los! Probieren Sie es aus! Diese Artikel helfen Ihnen beim Einstieg in Azure Rem
 ### Helfen Sie uns, Ihnen zu helfen 
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben und klicken Sie auf **In GitHub bearbeiten**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

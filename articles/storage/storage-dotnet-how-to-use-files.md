@@ -147,6 +147,7 @@ Wenn ein Client auf den Dateispeicher zugreift, richtet sich die verwendete SMB-
 | Windows 8 | SMB 3.0 |
 | Windows Server 2012 | SMB 3.0 |
 | Windows Server 2012 R2 | SMB 3.0 |
+| Windows 10 | SMB 3.0 |
 
 ### Einbinden der Dateifreigabe über einen virtuellen Azure-Computer unter Windows
 
@@ -204,8 +205,8 @@ Zum programmgesteuerten Verwenden des Dateispeichers können Sie Speicherclientb
 So erstellen Sie eine neue Konsolenanwendung in Visual Studio und installieren das Azure Storage NuGet-Paket:
 
 1. Wählen Sie in Visual Studio **Datei -> Neues Projekt** und dann **Windows -> Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
-2. Stellen Sie einen Namen für die Konsolenanwendung bereit, und klicken Sie dann auf **OK**.
-3. Nachdem Ihr Projekt erstellt wurde, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach „WindowsAzure.Storage“, und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
+2. Geben Sie einen Namen für die Konsolenanwendung an, und klicken Sie dann auf **OK**.
+3. Nachdem Ihr Projekt erstellt wurde, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
 ### Speichern Ihrer Speicherkonto-Anmeldeinformationen in der Datei „app.config“
 
@@ -361,7 +362,7 @@ Im folgenden Beispiel wird eine SAS-Richtlinie für eine Freigabe erstellt und d
         Console.WriteLine(fileSas.DownloadText());
     }
 
-Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blobdienst](storage-dotnet-shared-access-signature-part-2.md).
+Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](storage-dotnet-shared-access-signature-part-2.md).
 
 ### Kopieren von Dateien
 
@@ -518,7 +519,7 @@ Sie können Metriken für Dateispeicher über das Azure-Portal aktivieren. Sie k
 
 	Sie verfügen nicht über dieses Maß an Kontrolle über Berechtigungen, wenn Sie die Dateifreigabe per SMB bereitstellen. Sie können dies aber erreichen, indem Sie über die REST-API oder Clientbibliotheken eine Shared Access Signature (SAS) erstellen.
 
-12. **Beim Versuch, Dateien in den Dateispeicher zu entzippen, war die Leistung schlecht. Wie soll ich vorgehen?**
+12. **Beim Entzippen von Dateien in den Dateispeicher war die Leistung schlecht. Wie soll ich vorgehen?**
 
 	Für die Übertragung größerer Mengen von Dateien in den Dateispeicher empfehlen wir die Verwendung von AzCopy, Azure Powershell (Windows) oder der Azure CLI (Linux/Unix), da diese Tools für die Netzwerkübertragung optimiert sind.
 
@@ -549,4 +550,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

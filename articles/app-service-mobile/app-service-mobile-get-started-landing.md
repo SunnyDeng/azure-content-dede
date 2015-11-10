@@ -21,12 +21,7 @@ Verwenden Sie Mobile App Service-Apps, um auf einfache Weise systemeigene und pl
 
 Arbeiten Sie zu Beginn diese Tutorials durch, um eine Aufgabenapp zu erstellen, die mit einem mobilen Back-End unter App Service verbunden wird. Wählen Sie Ihre Clientplattform:
 
-  * [iOS](../app-service-mobile-ios-get-started.md)
-  * [Xamarin.iOS](../app-service-mobile-xamarin-ios-get-started.md)
-  * [Xamarin.Android](../app-service-mobile-xamarin-android-get-started.md)
-  * [Xamarin.Forms](../app-service-mobile-xamarin-forms-get-started.md)
-  * [Windows](../app-service-mobile-windows-store-dotnet-get-started.md)
-  * [HTML](../app-service-mobile-html-get-started.md)
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 ##Videos
 
@@ -34,4 +29,4 @@ Arbeiten Sie zu Beginn diese Tutorials durch, um eine Aufgabenapp zu erstellen, 
 
 Mobile App Service-Apps mit Kirill Gavrylyuk
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

@@ -21,9 +21,9 @@
 # Erste Schritte mit In-Memory (Vorschau)
 
 
-SQL In-Memory-Technologien verbessern die Leistung von Transaktions- und Analyseworkloads erheblich. Je nach Workload können Sie mit In-Memory OLTP einen bis zu 30-mal höheren Transaktionsdurchsatz und mit In-Memory Analytics eine bis zu 100-mal höhere Abfrageleistung erzielen.
+SQL In-Memory-Technologien verbessern die Leistung von Transaktions- und Analyseworkloads erheblich. Je nach Workload können Sie mit In-Memory OLTP einen bis zu 30-mal höheren Transaktionsdurchsatz und mit In-Memory Analytics eine bis zu 100-mal höhere Abfrageleistung erzielen. Mit Real-Time Analytics kombinieren Sie diese Technologien, um geschäftliche Erkenntnisse in Echtzeit anhand von Daten aus dem laufenden Betrieb zu gewinnen.
 
-In-Memory Analytics ist allgemein verfügbar. In-Memory OLTP befindet sich für Azure SQL-Datenbanken im Premium-Tarif in der Vorschau.
+In-Memory Analytics ist in der Azure-Datenbank allgemein verfügbar. In-Memory OLTP und Real-Time Operational Analytics befinden sich für Premium Azure SQL-Datenbanken in der Vorschau.
 
 
 ## Erste Schritte
@@ -31,18 +31,18 @@ In-Memory Analytics ist allgemein verfügbar. In-Memory OLTP befindet sich für
 Testen Sie In-Memory OLTP für Transaktionsworkloads:
 
 
-- [Füllen Sie eine AdventureWorksLT-Datenbank mit In-Memory OLTP-Beispielen](#Enrich-an-AdventureWorksLT-database-with-In-Memory-OLTP-samples).
-- [Verwenden Sie In-Memory OLTP in einer vorhandenen Azure SQL-Anwendung](sql-database-in-memory-oltp-migration.md).
+- [Installieren Sie das Beispiel für In-Memory OLTP](#install-the-in-memory-oltp-sample).
+- [Verwenden Sie In-Memory OLTP in einer vorhandenen Azure SQL-Anwendung.](sql-database-in-memory-oltp-migration.md)
 - [Überwachen Sie In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md).
 
 
-Testen Sie In-Memory Analytics für Transaktionsworkloads.
+Testen Sie In-Memory Analytics für Analyseworkloads:
 
-- [Installieren Sie In-Memory Analytics](#Install-the-In-Memory-Analytics-sample).
+- [Installieren Sie das Beispiel für In-Memory Analytics](#install-the-in-memory-analytics-sample).
 - Informieren Sie sich in MSDN über [Columnstore-Indizes](https://msdn.microsoft.com/library/gg492088.aspx).
 
 
-## Füllen Sie eine AdventureWorksLT-Datenbank mit In-Memory OLTP-Beispielen.
+## Installieren des Beispiels für In-Memory OLTP
 
 Sie können die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks im Azure-Vorschauportal erstellen. Die folgenden Schritte erläutern, wie Sie Ihre AdventureWorksLT-Datenbank mit Tabellen und systemintern kompilierten gespeicherten Prozeduren füllen, um die In-Memory OLTP-Objekte zu veranschaulichen.
 
@@ -241,16 +241,18 @@ Einige Transact-SQL-Funktionen werden bei In-Memory OLTP nicht unterstützt. In
 
 ## Zusätzliche Ressourcen
 
-Weitere Informationen zu In-Memory OLTP und Analytics: [In-Memory OLTP (In-Memory Optimization)](https://msdn.microsoft.com/library/dn133186.aspx).
+[Informieren Sie sich über In-Memory OLTP auf MSDN.](https://msdn.microsoft.com/library/dn133186.aspx)
 
-[Informationen zu Columnstore-Indizes in MSDN](https://msdn.microsoft.com/library/gg492088.aspx).
+[Informieren Sie sich über In-Memory Analytics (Columnstore) auf MSDN.](https://msdn.microsoft.com/library/gg492088.aspx)
+
+[Informieren Sie sich über Real-Time Operational Analytics auf MSDN.](https://msdn.microsoft.com/library/dn817827.aspx)
 
 Das [Whitepaper zu allgemeinen Workloadmustern und Überlegungen zur Migration](https://msdn.microsoft.com/library/dn673538.aspx) beschreibt Workloadmuster, bei denen In-Memory OLTP im Allgemeinen erhebliche Leistungssteigerungen bietet.
 
 ## Nächste Schritte
 
-[Verwenden von In-Memory OLTP in einer vorhandenen Azure SQL-Anwendung](sql-database-in-memory-oltp-migration.md).
+[Verwenden Sie In-Memory OLTP in einer vorhandenen Azure SQL-Anwendung](sql-database-in-memory-oltp-migration.md).
 
-[Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP.
+[Überwachen Sie In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

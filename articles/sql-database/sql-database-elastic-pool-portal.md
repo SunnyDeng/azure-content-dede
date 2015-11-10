@@ -10,10 +10,10 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/08/2015"
+	ms.date="10/29/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="NA"/>
 
 
@@ -44,7 +44,7 @@ Oder
 Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für einen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
    
   
-![Erstellen eines elastischen Pools][1]
+   ![Erstellen eines elastischen Pools][1]
 
 
 Das Blatt **Pool für elastische Datenbanken** stellt Optionen zum Festlegen des Tarifs, Hinzufügen von Datenbanken und Konfigurieren der Leistungsmerkmale des Pools bereit.
@@ -199,4 +199,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [11]: ./media/sql-database-elastic-pool-portal/recommended-pool.png
 [12]: ./media/sql-database-elastic-pool-portal/pools-message.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

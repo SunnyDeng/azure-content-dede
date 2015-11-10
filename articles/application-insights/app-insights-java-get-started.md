@@ -106,7 +106,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
 
 Fügen Sie das SDK manuell hinzu:
 
-1. Laden Sie das [Application Insights-SDK für Java](http://dl.windowsazure.com/lib/applicationinsights/javabin/sdk.zip) herunter.
+1. Laden Sie das [Application Insights-SDK für Java](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.html) herunter.
 2. Extrahieren Sie die Binärdateien aus der ZIP-Datei, und fügen Sie sie Ihrem Projekt hinzu.
 
 ### Fragen...
@@ -396,4 +396,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

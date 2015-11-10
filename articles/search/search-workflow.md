@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Typischer Workflow für die Azure Search-Entwicklung | Microsoft Azure"
-	description="Ein Workflow oder Wegweiser zum Erstellen von Prototypen und Produktionsanwendungen mit Integration von Azure Search."
+	description="Ein Workflow oder Wegweiser zum Erstellen von Prototypen und Produktionsanwendungen mit Integration von Azure Search, einem gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -13,12 +13,12 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="07/08/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Typischer Workflow für die Azure Search-Entwicklung
 
-Dieser Artikel enthält einen Wegweiser für die Einbindung von Azure Search in Ihre benutzerdefinierte Anwendung, um deren Suchfunktionalität zu verbessern. Unabhängig davon, ob Sie Azure Search zunächst nur ausprobieren wollen oder gleich voll einsteigen möchten, benötigen Sie vorab einige Informationen dazu, wie Sie Azure Search in Ihr benutzerdefiniertes Entwicklungsprojekt integrieren können.
+Dieser Artikel enthält einen Wegweiser für die Einbindung von Azure Search, einem gehosteten Cloudsuchdienst, in Ihre benutzerdefinierte Anwendung, um deren Suchfunktionalität zu verbessern. Unabhängig davon, ob Sie Azure Search zunächst nur ausprobieren wollen oder gleich voll einsteigen möchten, benötigen Sie vorab einige Informationen dazu, wie Sie Azure Search in Ihr benutzerdefiniertes Entwicklungsprojekt integrieren können.
 
 In den folgenden Abschnitten wird ein typischer Workflow für einen anfänglichen Prototyp beschrieben, mit dem Sie auswerten können, wie gut Azure Search die Suchanforderungen für Ihre Anwendung erfüllt. Im zweiten Teil dieses Artikels werden wichtige Entwurfsentscheidungen behandelt, die mit einem Mehraufwand bei der Anwendungsentwicklung einhergehen.
 
@@ -190,4 +190,4 @@ Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werde
 <!--Image references-->
 [1]: ./media/search-workflow/AzSearch-Workflow.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

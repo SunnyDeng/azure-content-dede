@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Search in Java | Microsoft Azure"
-	description="Erstellen einer benutzerdefinierten Azure Search-Anwendung in der Programmiersprache Java."
+	description="Erstellen einer gehosteten Cloudsuchanwendung in Azure mit der Programmiersprache Java."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -13,7 +13,7 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search in Java
@@ -231,4 +231,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-java/rogerwilliamsschool1.PNG
 [12]: ./media/search-get-started-java/AzSearch-Java-SelectProject.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

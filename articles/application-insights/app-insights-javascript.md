@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/10/2015"
+	ms.date="11/03/2015"
 	ms.author="awills"/>
 
 # Application Insights für JavaScript-Web-Apps
@@ -52,6 +52,8 @@ Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie 
 * Öffnen Sie in einer SharePoint-Website in der Systemsteuerung [Websiteeinstellungen / Masterseite](app-insights-sharepoint.md).
 
 Das Skript enthält den Instrumentationsschlüssel, der die Daten an Ihre Application Insights-Ressource leitet.
+
+([Detailliertere Erläuterung zum Skript.](http://apmtips.com/blog/2015/03/18/javascript-snippet-explained/))
 
 *(Wenn Sie ein bekanntes Webseitenframework verwenden, suchen Sie nach Application Insights-Adaptern. Beispielsweise gibt es [ein AngularJS-Modul](http://ngmodules.org/modules/angular-appinsights).)*
 
@@ -96,7 +98,7 @@ Wenn Sie die Leistung der Seiten im Zeitverlauf anzeigen möchten, doppelklicken
 
 ## Übersicht über die Clientnutzung
 
-Klicken Sie auf dem Blatt "Übersicht" auf **Nutzung**:
+Klicken Sie auf dem Blatt „Übersicht“ auf **Nutzung**:
 
 ![](./media/app-insights-javascript/14-usage.png)
 
@@ -184,4 +186,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 [qna]: app-insights-troubleshoot-faq.md
 [track]: app-insights-api-custom-events-metrics.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

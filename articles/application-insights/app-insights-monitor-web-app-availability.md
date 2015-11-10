@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/21/2015"
+	ms.date="11/04/2015"
 	ms.author="awills"/>
 
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
@@ -217,14 +217,17 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
 ## Fragen? Probleme?
 
-
-* *Gibt es einen Unterschied zwischen "Webtests" und "Verfügbarkeit"?*
-
-    Wir verwenden die beiden Begriffe synonym.
-
 * *Kann ich Code aus meinem Webtest aufrufen?*
 
     Nein. Die Schritte des Tests müssen in der Webtest-Datei enthalten sein. Und Sie können keine anderen Webtests aufrufen oder Schleifen verwenden. Aber es gibt eine Reihe von hilfreichen Plug-Ins.
+
+* *Wird HTTPS unterstützt?*
+
+    Derzeit werden SSL 3.0 und TLS 1.0 unterstützt.
+
+* *Gibt es einen Unterschied zwischen „Webtests“ und „Verfügbarkeitstests“?*
+
+    Wir verwenden die beiden Begriffe synonym.
 
 ## <a name="video"></a>Video
 
@@ -246,4 +249,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

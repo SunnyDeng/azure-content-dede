@@ -30,7 +30,6 @@ In den folgenden Abschnitten erhalten Sie Informationen, die Ihnen helfen, die A
 Um die richtige Multi-Factor Authentication-Lösung zu ermitteln, müssen Sie zunächst die Frage beantworten, was Sie über die zweite Methode zur Authentifizierung sichern möchten. Handelt es sich um eine Anwendung in Azure? Oder ist Sie es z. B. ein RAS-System? Die Antwort auf die Frage, wo Multi-Factor Authentication aktiviert werden muss, richtet sich danach, was Sie sichern möchten.
 
 
-
 Was möchte ich sichern?| Multi-Factor Authentication in der Cloud|Multi-Factor Authentication-Server 
 ------------- | :-------------: | :-------------: |
 Erstanbieter-Microsoft-Apps|* |* |
@@ -82,9 +81,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 
 <center> [![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &#160;&#160;&#160;&#160;&#160; </center>
 
-**Weitere Ressourcen**
-
-* [Für Benutzer](multi-factor-authentication-end-user.md)
-* [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx) 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

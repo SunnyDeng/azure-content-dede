@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="10/19/2015"
+	ms.date="11/04/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für iOS-Apps
@@ -302,8 +302,8 @@ Wenn Sie innerhalb einer App Benachrichtigungen senden möchten. Dieser Abschnit
 				signature = [self CF_URLEncodedString:[rawHmac base64EncodedStringWithOptions:0]];
 
 				// Construct authorization token string
-				token = [NSString stringWithFormat:@"SharedAccessSignature sr=%@&sig=%@&se=%qu&skn=%@",
-					targetUri, signature, expires, HubSasKeyName];
+				token = [NSString stringWithFormat:@"SharedAccessSignature sig=%@&se=%qu&skn=%@&sr=%@",
+					signature, expires, HubSasKeyName, targetUri];
 			}
 			@catch (NSException *exception)
 			{
@@ -365,7 +365,7 @@ Wenn Sie innerhalb einer App Benachrichtigungen senden möchten. Dieser Abschnit
 				completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
 			{
 		        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*) response;
-		        if (error || httpResponse.statusCode != 200)
+		        if (error || (httpResponse.statusCode != 200 && httpResponse.statusCode != 201))
 		        {
 		            NSLog(@"\nError status: %d\nError: %@", httpResponse.statusCode, error);
 		        }
@@ -433,16 +433,16 @@ Wenn Sie innerhalb einer App Benachrichtigungen senden möchten. Dieser Abschnit
 11. Erstellen Sie das Projekt, und überprüfen Sie, dass keine Fehler vorhanden sind.
 
 
+> [AZURE.NOTE]Wenn in Xcode7 ein Buildfehler zur Unterstützung von Bitcode auftritt, sollten Sie „Buildeinstellungen“ -> „Bitcode“ (ENABLE\_BITCODE) in Xcode in „NO“ ändern. Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode.
 
 Sie finden alle möglichen Benachrichtigungsnutzlasten im [Local and Push Notification Programming Guide] von Apple (in englischer Sprache).
-
 
 
 ##Testen Ihrer App
 
 Zum Testen von Pushbenachrichtigungen auf iOS müssen Sie die App auf einem Gerät bereitstellen. Sie können keine Apple-Pushbenachrichtigungen mit dem iOS-Simulator senden.
 
-1. Führen Sie die App aus, und überprüfen Sie, ob die Registrierung erfolgreich ist. Drücken Sie dann **OK**.
+1. Führen Sie die App aus, und überprüfen Sie, ob die Registrierung erfolgreich ist. Wählen Sie dann **OK**.
 
 	![][33]
 
@@ -461,7 +461,7 @@ Wenn Sie Probleme haben oder Vorschläge zur Verbesserung dieses Lernprogramms f
 
 In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Wir empfehlen Ihnen als nächsten Schritt, mit dem Tutorial [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer] fortzufahren. In diesem Tutorial wird das Erstellen eines Back-Ends zum Senden Ihrer Benachrichtigungen mithilfe von Tags erläutert.
 
-Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von Nachrichten] weitere Informationen.
+Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] weitere Informationen.
 
 Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notification Hubs-Leitfaden].
 
@@ -499,8 +499,8 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-ios-notify-users.md
-[Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-ios-send-breaking-news.md
+[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-ios-send-breaking-news.md
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->
