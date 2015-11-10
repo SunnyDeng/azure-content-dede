@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="get-started-article"
-   ms.date="07/09/2015"
+   ms.date="10/29/2015"
    ms.author="jgao"/>
 
 # Kennenlernen von Hadoop mithilfe der Azure HDInsight-Galerie für erste Schritte
@@ -45,7 +45,7 @@ Auf das Dashboard kann über „http://<YourHDInsightClusterName>.azurehdinsight
 **So führen Sie ein Beispiel aus der Galerie für erste Schritte aus**
 
 1. Melden Sie sich beim [Azure-Vorschauportal][azure.portal] an.
-2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster**, und klicken Sie dann auf Ihren Clusternamen.
+2. Klicken Sie im linken Menü auf **Durchsuchen**, klicken Sie auf **HDInsight-Cluster**, und klicken Sie dann auf Ihren Clusternamen.
 3. Klicken Sie im Hauptmenü auf **Dashboard**.
 4. Geben Sie den Benutzernamen und das Kennwort für den HTTP-Benutzer (auch als Clusterbenutzer bezeichnet) ein.
 6. Klicken Sie oben auf **Erste Schritte mit der Galerie**.
@@ -68,4 +68,4 @@ Andere Möglichkeiten zum Kennenlernen von HDInsight:
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -120,26 +120,34 @@ Microsoft kennzeichnet Präfixe, die über das öffentliche Peering und Microsof
 
 | **Geopolitische Region** | **Microsoft Azure-Region (dasselbe gilt für Office 365)** | **BGP-Communitywert** |
 |---|---|---|
-| **USA** |	USA (Ost) | 12076:3004 |
-| | USA (Ost) 2 | 12076:3005 |
-| | USA (West) | 12076:3006 |
-| | USA (Mitte) | 12076:3009 |
-| | USA (Mitte/Norden) | 12076:3007 |
-| | USA (Mitte/Süden) | 12076:3008 |
-| **Südamerika** | Brasilien Süd | 12076:3014 |
-| **Europa** | Nordeuropa | 12076:3003 |
-| | Westeuropa | 12076:3002 |
-| **Asien-Pazifik** | Ostasien | 12076:3010 |
-| | Südostasien | 12076:3011 |
-| **Japan** | Japan Ost | 12076:3012 |
-| | Japan (Westen) | 12076:3013 |
-| **Australien** | Australien (Osten) | 12076:3015 |
-| | Australien (Südost) | 12076:3016 |
-| **Indien** | Indien, Süden | 12076:3019 |
-| | Indien, Westen | 12076:3018 |
-| | Indien, Mitte | 12076:3017 |
+| **Nordamerika** | | 12076:51201 |
+| | USA (Ost) | 12076:51004 |
+| | USA (Ost) 2 | 12076:51005 |
+| | USA, Westen | 12076:51006 |
+| | USA (Mitte/Norden) | 12076:51007 |
+| | USA (Mitte/Süden) | 12076:51008 |
+| | USA (Mitte) | 12076:51009 |
+| **Südamerika** | | 12076:51202 |
+| | Brasilien Süd | 12076:51014 |
+| **Europa** | | 12076:51203 |
+| | Nordeuropa | 12076:51003 |
+| | Westeuropa | 12076:51002 |
+| **Asien-Pazifik** | | 12076:51204 |
+| | Ostasien | 12076:51010 |
+| | Südostasien | 12076:51011 |
+| **Japan** | Japan Ost | 12076:51012 |
+| | Japan, Westen | 12076:51013 |
+| **Australien** | Australien (Osten) | 12076:51015 |
+| | Australien (Südost) | 12076:51016 |
+| **Indien** | Indien, Süden | 12076:51019 |
+| | Indien, Westen | 12076:51018 |
+| | Indien, Mitte | 12076:51017 |
+| **Global** | **Nur unterstützt und veröffentlicht, wenn das Premium-Add-On aktiviert ist** | 12076:51000 |
+| **Anycast** | | 12076:51250 |
 
 Alle Routen, die von Microsoft angekündigt werden, werden mit dem entsprechenden Communitywert gekennzeichnet.
+
+>[AZURE.IMPORTANT]Globale Präfixe werden mit einem entsprechenden Community-Wert markiert und nur dann angekündigt, wenn das Premium-Add-On von ExpressRoute aktiviert ist.
 
 
 Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basierend auf dem zugehörigen Dienst mit einer Kennzeichnung. Dies gilt nur für das Microsoft-Peering. Die Tabelle unten enthält die Zuordnung des Diensts zum BGP-Communitywert.
@@ -151,7 +159,6 @@ Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basie
 | **Skype for Business** | 12076:5030 |
 | **CRM Online** | 12076:5040 |
 | **Andere Office 365-Dienste** | 12076:5100 |
-| **Globale Präfixe/Anycast** | 12076:5200 |
 
 
 ### Ändern von Routingvoreinstellungen
@@ -166,4 +173,4 @@ Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt wer
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

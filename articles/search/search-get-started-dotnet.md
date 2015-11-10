@@ -13,12 +13,12 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
+	ms.date="11/05/2015"
 	ms.author="heidist"/>
 
 # Erste Schritte mit der ersten Azure Search-Anwendung in .NET
 
-Erfahren Sie, wie Sie eine benutzerdefinierte .NET-Suchanwendung in Visual Studio 2013 oder höher erstellen, die Azure Search zum Suchen verwendet. In diesem Lernprogramm werden das [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) zum Erstellen der Klassen für die in dieser Übung verwendeten Objekte und Vorgänge sowie die REST-API für den Azure Search-Dienst verwendet.
+Erfahren Sie, wie Sie eine benutzerdefinierte .NET-Suchanwendung in Visual Studio 2013 oder höher erstellen, die Azure Search zum Suchen verwendet: einen in der Cloud gehosteten Suchdienst in Microsoft Azure. In diesem Lernprogramm werden das [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) zum Erstellen der Klassen für die in dieser Übung verwendeten Objekte und Vorgänge sowie die REST-API für den Azure Search-Dienst verwendet.
 
 Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich im [Azure-Portal](https://portal.azure.com) anmelden können.
 
@@ -794,4 +794,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-1.PNG
 [12]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-2.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

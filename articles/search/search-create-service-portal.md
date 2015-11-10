@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen eines Azure Search-Diensts im Portal | Microsoft Azure"
-	description="Fügen Sie einem vorhandenen Abonnement über das Azure-Portal einen Azure Search-Dienst (Free oder Standard) hinzu."
+	description="Fügen Sie Azure Search (Free oder Standard) über das Azure-Portal einem vorhandenen Abonnement hinzu. Azure Search ist ein in der Cloud gehosteter Suchdienst für benutzerdefinierte Apps."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="07/08/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Erstellen eines Azure Search-Diensts im Azure-Portal
@@ -120,4 +120,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur Erstellung und Ve
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

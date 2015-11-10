@@ -79,7 +79,7 @@ Weitere Informationen zum Definieren der Vorlage finden Sie unter [Erstellen von
 
 Vorlagenschemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-Informationen zum Verwenden einer Vorlage für die Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
+Informationen zum Verwenden einer Vorlage für die Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
 Anleitungen zum Strukturieren von Vorlagen finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
 
@@ -101,7 +101,7 @@ Der Ressourcen-Manager protokolliert automatisch Benutzeraktionen zu Überwachun
 
 Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](role-based-access-control-configure.md). Dieses Thema enthält eine Liste der integrierten Rollen und zulässigen Aktionen. Integrierte Rollen sind allgemeine Rollen, wie z. B. Besitzer, Leser und Mitwirkender, sowie servicespezifische Rollen, wie z. B. Virtual Machine Contributor, Virtual Network Contributor und SQL Security Manager (um nur einige der verfügbaren Rollen zu nennen).
 
-Beispiele zum Zuweisen von Rollen finden Sie unter [Verwalten des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md).
+Beispiele zum Zuweisen von Rollen finden Sie unter [Verwalten des Zugriffs auf Ressourcen](resource-group-rbac.md).
 
 Sie können kritische Ressourcen auch explizit sperren, um zu verhindern, dass sie von Benutzern gelöscht oder geändert werden. Weitere Informationen finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
@@ -127,7 +127,7 @@ Informationen zum Verwenden des Vorschauportals finden Sie unter [Verwenden des 
 ## Nächste Schritte
 
 - Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Vorlagen](./resource-group-authoring-templates.md).
-- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md).
+- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen von Vorlagen](resource-group-template-deploy.md).
 - Grundlegende Informationen zu den Funktionen, die in einer Vorlage verwendet werden können, finden Sie unter [Vorlagenfunktionen](./resource-group-template-functions.md).
 - Anleitungen zum Entwerfen von Vorlagen finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
 
@@ -135,4 +135,4 @@ Hier sehen Sie eine Videodemonstration dieser Übersicht:
 
 [AZURE.VIDEO azure-resource-manager-overview]
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

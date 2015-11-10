@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Dienstebenen der SQL-Datenbank"
-   description="Vergleichen Sie die Features für Leistung und Geschäftskontinuität der verschiedenen Dienstebenen der Azure SQL-Datenbank, um das richtige Gleichgewicht zwischen Kosten und Funktionalität für eine bedarfsgerechte Skalierung ohne Ausfallzeiten zu finden."
-   services="sql-database"
-   documentationCenter=""
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar"/>
+	pageTitle="Dienstebenen der SQL-Datenbank"
+	description="Vergleichen Sie die Features für Leistung und Geschäftskontinuität der verschiedenen Dienstebenen der Azure SQL-Datenbank, um das richtige Gleichgewicht zwischen Kosten und Funktionalität für eine bedarfsgerechte Skalierung ohne Ausfallzeiten zu finden."
+	services="sql-database"
+	documentationCenter=""
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar"/>
 
 <tags
-   ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management"
-   ms.date="10/29/2015"
-   ms.author="jroth"/>
+	ms.service="sql-database"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
+	ms.date="11/03/2015"
+	ms.author="jroth"/>
 
 # SQL-Datenbank – Dienstebenen
  
@@ -45,7 +45,7 @@ Weitere Informationen zu DTUs finden Sie in diesem Thema im Abschnitt [DTU](#und
 >[AZURE.NOTE]Eine ausführliche Beschreibung aller anderen Zeilen in dieser Dienstebenentabelle finden Sie unter [Service tier capabilities and limits](sql-database-performance-guidance.md#service-tier-capabilities-and-limits) (Funktionen und Limits von Dienstebenen; in englischer Sprache).
 
 ### Dienstebenen für Pools für elastische Datenbanken
-Neben dem Erstellen und Skalieren einer Einzeldatenbank haben Sie die Möglichkeit, mehrere Datenbanken in einem [Pool für elastische Datenbanken](sql-database-elastic-pool.md) zu verwalten. Alle Datenbanken in einem Pool für elastische Datenbanken nutzen einen gemeinsamen Satz von Ressourcen. Die Leistungsmerkmale werden in *Transaktionseinheiten für elastische Datenbanken* (eDTUs) gemessen. Wie die Einzeldatenbanken verfügen Pools für elastische Datenbanken über drei Leistungsebenen: **Basic**, **Standard** und **Premium**. Auch für elastische Datenbanken werden mit diesen drei Dienstebenen die Leistungsgrenzen und verschiedene Funktionen definiert.
+Neben dem Erstellen und Skalieren einer Einzeldatenbank haben Sie die Möglichkeit, mehrere Datenbanken in einem [Pool für elastische Datenbanken](sql-database-elastic-pool.md) zu verwalten. Alle Datenbanken in einem Pool für elastische Datenbanken nutzen einen gemeinsamen Satz von Ressourcen. Die Leistungsmerkmale werden in *Transaktionseinheiten für elastische Datenbanken* (eDTUs) gemessen. Wie die Einzeldatenbanken verfügen Pools für elastische Datenbanken über drei Dienstebenen: **Basic**, **Standard** und **Premium**. Auch für elastische Datenbanken werden mit diesen drei Dienstebenen die Leistungsgrenzen und verschiedene Funktionen definiert.
 
 Durch Pools für elastische Datenbanken können diese Datenbanken DTU-Ressourcen teilen und nutzen, ohne dass den Datenbanken im Pool eine bestimmte Leistungsstufe zugewiesen werden muss. Beispielsweise kann eine Einzeldatenbank in einem Pool der Dienstebene "Standard" 0 eDTU bis zum maximalen eDTU-Wert für Datenbanken (entweder die durch die Dienstebene definierten 100 eDTUs oder ein benutzerdefinierter Wert, den Sie festlegen) nutzen. Dadurch können mehrere Datenbanken mit unterschiedlichen Workloads die für den gesamten Pool verfügbaren eDTU-Ressourcen effizient nutzen.
 
@@ -95,4 +95,4 @@ Wenn Sie mehrere Datenbanken als Gruppe verwalten möchten, finden Sie entsprech
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

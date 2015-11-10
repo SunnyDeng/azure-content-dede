@@ -1,3 +1,3 @@
->[AZURE.NOTE]Es wird empfohlen, dass Sie die neueste Version der Azure-Speicher-Clientbibliothek für .NET verwenden, um dieses Lernprogramm abzuschließen. Die neueste Version der Bibliothek ist 5.x und kann auf [Nuget](https://www.nuget.org/packages/WindowsAzure.Storage/) heruntergeladen werden. Die Quelle für die Clientbibliothek ist auf [GitHub](https://github.com/Azure/azure-storage-net) verfügbar.
+>[AZURE.NOTE]Es wird empfohlen, dass Sie die neueste Version der Azure-Speicher-Clientbibliothek für .NET verwenden, um dieses Lernprogramm abzuschließen. Die neueste Version der Bibliothek ist 6.x und kann auf [Nuget](https://www.nuget.org/packages/WindowsAzure.Storage/) heruntergeladen werden. Die Quelle für die Clientbibliothek ist auf [GitHub](https://github.com/Azure/azure-storage-net) verfügbar.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

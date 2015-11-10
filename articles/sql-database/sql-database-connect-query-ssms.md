@@ -45,7 +45,7 @@ Bei der Arbeit mit SQL-Datenbank sollten Sie die aktuelle Version von SSMS verwe
 
 Der häufigsten Gründe für Verbindungsfehler sind Fehler im Server- oder Benutzernamen bzw. im Kennwort sowie dass Server aus Sicherheitsgründen keine Verbindungen zulässt. Stellen Sie sicher, dass die Firewalleinstellungen des Servers Verbindungen von der IP-Adresse Ihres lokalen Computers und der vom SSMS-Client verwendeten IP-Adresse zulassen. Diese unterscheiden sich bisweilen.
 
-Wenn die Verbindung aufgrund einer Firewallregel fehlschlägt, wird die IP-Adresse in der Fehlermeldung angegeben. Fügen Sie diese IP-Adresse der Firewallregel für den Server hinzu. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
+Wenn aufgrund von Firewalleinstellungen ein Verbindungsfehler auftritt, erstellt die neueste Version von SSMS nach vorheriger Anfrage die Firewallregel. Sie finden sie unter [SSMS herunterladen](https://msdn.microsoft.com/library/mt238290.aspx). Wenn Sie eine frühere Version verwenden, wird Ihnen die IP-Adresse in einer Fehlermeldung mitgeteilt, und Sie müssen diese IP-Adresse der Firewallregel des Servers hinzufügen. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md).
 
 ## Durchführen von Beispielabfragen
 
@@ -74,6 +74,6 @@ Nachdem dem Herstellen der Verbindung können Sie eine Beispielabfrage durchfüh
 
 Mit Transact-SQL-Anweisungen können Sie Datenbanken in Azure auf die gleiche Weise wie mit SQL Server erstellen und verwalten. Wenn Sie mit der Verwendung von Transact-SQL mit SQL Server vertraut sind, finden Sie unter [Azure SQL-Datenbank – Transact-SQL-Informationen](sql-database-transact-sql-information.md) eine Zusammenfassung der Unterschiede.
 
-Wenn Sie mit Transact-SQL nicht vertraut sind, siehe [Tutorial: Schreiben von Transact-SQL-Anweisungen](https://msdn.microsoft.com/library/ms365303.aspx) und [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx).
+Wenn Sie mit Transact-SQL nicht vertraut sind, lesen Sie unter [Tutorial: Schreiben von Transact-SQL-Anweisungen](https://msdn.microsoft.com/library/ms365303.aspx) und [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx) nach.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->
