@@ -68,10 +68,8 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
 | SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.12-preview) | | | |
 | StorSimple | Nein | Nein | - | - | - |
-| Backup | Nein | Nein | - | - | - |
-| Site Recovery | Nein | Nein | - | - | - |
 | Managed Cache | Nein | Nein | - | - | - |
-| Data Catalog | Nein | Nein | - | - | - |
+
 
 ## Analyse
 
@@ -81,7 +79,8 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Stream Analytics | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) | | | |
 | HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | | | |
 | Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) | |
-| Machine Learning | Nein | Nein | - | - | - | | Data Catalog | Nein | Nein | - | - | - |
+| Machine Learning | Nein | Nein | - | - | - |
+| Data Catalog | Nein | Nein | - | - | - |
 
 ## Netzwerk
 
@@ -107,7 +106,8 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
 | BizTalk Services | Ja | Nein | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) |
 | Service Bus | Ja | Nein | | [Service Bus REST-API-Referenz](https://msdn.microsoft.com/library/azure/hh780717.aspx) | |
-| Backup | Nein | Nein | - | - | - | | Site Recovery | Nein | Nein | - | - | - |
+| Backup | Nein | Nein | - | - | - |
+| Site Recovery | Nein | Nein | - | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
@@ -234,4 +234,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Ressourcen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./azure-portal/resource-group-template-deploy.md).
 
-<!----HONumber=Nov15_HO1-->
+<!-----HONumber=Nov15_HO1-->
