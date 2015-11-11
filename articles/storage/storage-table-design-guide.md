@@ -677,7 +677,7 @@ Verwenden Sie dieses Muster, wenn Sie häufig nach zugeordneten Informationen su
 
 #### Zugehörige Muster und Anleitungen
 Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird:  
--	[Zusammengesetzte Schlüsselmuster](#compound-key-pattern) 
+-	[Zusammengesetzte Schlüsselmuster](#compound-key-pattern)  
 -	[Entitätsgruppentransaktionen](#entity-group-transactions)  
 -	[Arbeiten mit heterogenen Entitätstypen](#working-with-heterogeneous-entity-types)
 
@@ -1575,4 +1575,4 @@ Wir möchten auch den folgenden Microsoft-MVPs für ihr wertvolles Feedback zu d
 [29]: ./media/storage-table-design-guide/storage-table-design-IMAGE29.png
  
 
-<!----HONumber=Oct15_HO4-->
+<!-----HONumber=Oct15_HO4-->
