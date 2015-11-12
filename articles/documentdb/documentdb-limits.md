@@ -24,4 +24,4 @@ In der folgenden Tabelle werden die Grenzen und Kontingenterzwingungen von Docum
 
 [AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
 
-<!---HONumber=Oct15_HO4-->
+<!----HONumber=Oct15_HO4-->
