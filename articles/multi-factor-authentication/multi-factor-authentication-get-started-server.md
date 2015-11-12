@@ -106,7 +106,8 @@ IP-Subnetz|Netzmaske|IP-Bereich
 1. Doppelklicken Sie auf die ausführbare Datei. Dadurch wird die Installation gestartet.
 2. Vergewissern Sie sich, dass im Bildschirm "Installationsordner auswählen" der richtige Ordner ausgewählt ist, und klicken Sie auf "Weiter".
 3. Klicken Sie nach Abschluss der Installation auf "Fertig stellen". Dadurch wird der Konfigurations-Assistent gestartet.
-4. Aktivieren Sie auf der Willkommensseite des Konfigurations-Assistenten das Kontrollkästchen **Verwendung des Authentifizierungskonfigurations-Assistenten überspringen**, und klicken Sie auf **Weiter**. Damit wird der Assistent geschlossen und der Server gestartet. ![Cloud](./media/multi-factor-authentication-get-started-server/skip2.png)
+4. Aktivieren Sie auf der Willkommensseite des Konfigurations-Assistenten das Kontrollkästchen **Verwendung des Authentifizierungskonfigurations-Assistenten überspringen**, und klicken Sie auf **Weiter**. Damit wird der Assistent geschlossen und der Server gestartet.
+![Cloud](./media/multi-factor-authentication-get-started-server/skip2.png)
 
 5. Wechseln Sie zurück zu der Seite, von der Sie den Server heruntergeladen haben, und klicken Sie auf die Schaltfläche **Anmeldeinformationen für Aktivierung generieren**. Kopieren Sie diese Informationen auf dem Azure MFA-Server in die angezeigten Felder, und klicken Sie auf **Aktivieren**.
 
@@ -185,4 +186,4 @@ Methode|Beschreibung
 [Synchronisieren mit Windows Server Active Directory](multi-factor-authentication-get-started-server-dirint.md)|Informationen zum Einrichten und Konfigurieren der Synchronisierung zwischen Active Directory und dem Azure MFA-Server.
 [Bereitstellen des mobilen App-Webdienstes für den Azure Multi-Factor Authentication-Server](multi-factor-authentication-get-started-server-webservice.md)|Informationen über das Einrichten und Konfigurieren des Azure MFA-Server-Webdienstes.
 
-<!---HONumber=Nov15_HO2-->
+<!----HONumber=Nov15_HO2-->
