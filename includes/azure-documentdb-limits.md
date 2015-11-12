@@ -7,8 +7,8 @@ Anzahl von Benutzern pro Datenbankkonto – über alle Datenbanken hinweg|500.00
 Anzahl von Berechtigungen pro Datenbankkonto – über alle Datenbanken hinweg|2.000.000
 Anhangspeicher pro Datenbankkonto (Vorschaufunktion)|2 GB
 Maximale Anzahl Anforderungseinheiten/Sek. pro Sammlung|2500
-Anzahl gespeicherter Prozeduren, Trigger und UDFs pro Sammlung* |25
-Maximale Ausführungszeit für gespeicherte Prozedur und Trigger|5
+Anzahl gespeicherter Prozeduren, Trigger und UDFs pro Sammlung* |Jeweils 25
+Maximale Ausführungszeit für gespeicherte Prozedur und Trigger|5 Sekunden
 Bereitgestellter Dokumentspeicher/Sammlung|10 GB
 Maximale Sammlungen pro Datenbankkonto*|100
 Maximaler Dokumentspeicher pro Datenbank (100 Sammlungen)* |1 TB
@@ -30,4 +30,4 @@ Maximale Anzahl von Skalierungsvorgängen pro Minute* |5
 
 Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
 
-<!----HONumber=Oct15_HO3-->
+<!-----HONumber=Oct15_HO3-->
