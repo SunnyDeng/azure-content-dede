@@ -219,15 +219,16 @@ Sie können innerhalb von VNets ausschließlich Compute Services verwenden. Comp
 
 ### Können Web-Apps mit dem virtuellen Netzwerk verwendet werden?
 
-Nein. Eine Azure-Web-App kann nicht in einem VNet bereitgestellt werden. Web-Apps können jedoch eine sichere Verbindung herstellen und auf Ressourcen im Azure-VNet zugreifen, wenn Sie für Ihr VNet "Punkt-zu-Standort" konfiguriert haben. Weitere Informationen finden Sie unter den folgenden Links:
+Ja. Sie können Web-Apps in einem VNet mit ASE (App Service Environment, App Service-Umgebung) bereitstellen. Web-Apps können außerdem eine sichere Verbindung herstellen und auf Ressourcen im Azure-VNet zugreifen, wenn Sie für Ihr VNet „Punkt-zu-Site“ konfiguriert haben. Weitere Informationen finden Sie unter den folgenden Links:
 
-- [Web Apps Virtual Network Integration] (http://azure.microsoft.com/blog/
-- 014/09/15/azure-websites-virtual-network-integration/)
+
+- [Erstellen von Web-Apps in einer App Service-Umgebung](https://azure.microsoft.com/de-DE/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+
+- [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) (in englischer Sprache)
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (in englischer Sprache)
 
 - [Integrieren einer Web-App in einem Azure Virtual Network](web-sites-integrate-with-vnet.md)
-
 
 ### Können Clouddienste mit Web- und Workerrollen (PaaS) in einem VNet bereitgestellt werden?
 
@@ -265,4 +266,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

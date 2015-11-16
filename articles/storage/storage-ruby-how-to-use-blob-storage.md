@@ -51,7 +51,7 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
 ## Einrichten einer Azure-Speicherverbindung
 
-Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** nach Informationen aus, die erforderlich sind, um eine Verbindung zum Azure-Speicherkonto herzustellen. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::BlobService** mit dem folgenden Code angeben:
+Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** nach Informationen aus, die erforderlich sind, um eine Verbindung zum Azure-Speicherkonto herzustellen. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::Blob::BlobService** mit dem folgenden Code angeben:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
@@ -68,11 +68,11 @@ So rufen Sie diese Werte ab:
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
-Mit dem **Azure::BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Verwenden Sie die **create\_container()**-Methode, um einen Container zu erstellen.
+Mit dem **Azure::Blob::BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Verwenden Sie die **create\_container()**-Methode, um einen Container zu erstellen.
 
 Im folgenden Codebeispiel wird ein Container erstellt oder ggf. ein Fehler ausgegeben.
 
-	azure_blob_service = Azure::BlobService.new
+	azure_blob_service = Azure::Blob::BlobService.new
 	begin
 	  container = azure_blob_service.create_container("test-container")
 	rescue
@@ -146,4 +146,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

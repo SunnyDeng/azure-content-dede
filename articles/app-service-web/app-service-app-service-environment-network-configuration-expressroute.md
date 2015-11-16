@@ -32,7 +32,7 @@ Es gibt Netzwerkverbindungsanforderungen für App Service-Umgebungen, die urspr�
 -  Ausgehende Netzwerkverbindungen mit Azure-Speicherendpunkten in der ganzen Welt. Dies beinhaltet sowohl Endpunkte, die sich in der gleichen Region wie die App Service-Umgebung befinden, als auch Speicherendpunkte in **anderen** Azure-Regionen. Azure-Speicherendpunkte werden unter den folgenden DNS-Domänen aufgelöst: *table.core.windows.net*, *blob.core.windows.net*, *queue.core.windows.net* und *file.core.windows.net*.  
 -  Ausgehende Netzwerkverbindungen mit SQL-Datenbankendpunkten, die sich in der gleichen Region wie die App Service-Umgebung befinden. SQL-Datenbankendpunkte werden unter der folgenden Domäne aufgelöst: *database.windows.net*.
 -  Ausgehende Netzwerkverbindungen mit den Endpunkten auf der Azure-Verwaltungsebene (ASM- und ARM-Endpunkte). Dies beinhaltet ausgehende Verbindungen mit *management.core.windows.net* und *management.azure.com*. 
--  Ausgehende Netzwerkverbindungen mit *mscrl.microsoft.com* und *crl.microsoft.com*. Dies ist zur Unterstützung von SSL-Funktionen erforderlich.
+-  Ausgehende Netzwerkkonnektivität mit *ocsp.msocsp.com*. Dies ist zur Unterstützung von SSL-Funktionen erforderlich.
 -  Die DNS-Konfiguration für das virtuelle Netzwerk muss alle der zuvor genannten Endpunkte und Domänen auflösen können. Können diese Endpunkte nicht aufgelöst werden, schlägt die Erstellung von App Service-Umgebungen fehl, und vorhandene App Service-Umgebungen werden als fehlerhaft gekennzeichnet.
 -  Falls ein benutzerdefinierter DNS-Server am anderen Ende eines VPN-Gateways vorhanden ist, muss der DNS-Server über das Subnetz mit der App Service-Umgebung erreichbar sein. 
 -  Der ausgehende Netzwerkpfad kann weder durch interne Unternehmensproxys laufen noch zwangsweise zur lokalen Infrastruktur getunnelt werden. Andernfalls wird die tatsächliche NAT-Adresse des ausgehenden Netzwerkdatenverkehrs der App Service-Umgebung geändert. Das Ändern der NAT-Adresse des ausgehenden Netzwerkdatenverkehrs einer App Service-Umgebung verursacht bei vielen der oben genannten Endpunkte Verbindungsfehler. Dies führt zu Fehlern bei der Erstellung von App Service-Umgebungen und dazu, dass zuvor fehlerfreie App Service-Umgebungen als fehlerhaft gekennzeichnet werden.  
@@ -68,10 +68,10 @@ Details zum Erstellen und Konfigurieren benutzerdefinierter Routen finden Sie in
 
 **Voraussetzungen**
 
-1. Installieren Sie die aktuellste Azure PowerShell über die [Seite mit den Azure-Downloads][AzureDownloads] (vom Juni 2015 oder später). Unter "Befehlszeilentools" befindet sich unter "Windows PowerShell" der Link "Installieren", über den die aktuellen PowerShell-Cmdlets installiert werden.
+1. Installieren Sie die aktuellste Azure PowerShell über die [Seite mit den Azure-Downloads][AzureDownloads] (Juni 2015 oder später). Unter "Befehlszeilentools" befindet sich unter "Windows PowerShell" der Link "Installieren", über den die aktuellen PowerShell-Cmdlets installiert werden.
 
 2. Es wird empfohlen, ein eindeutiges Subnetz für die ausschließliche Verwendung durch eine App Service-Umgebung zu erstellen. Dadurch wird sichergestellt, dass die im Subnetz eingerichteten benutzerdefinierten Routen nur für ausgehenden Datenverkehr für die App Service-Umgebung geöffnet werden.
-3. **Wichtig**: Führen Sie **vor** dem Bereitstellen der App Service-Umgebung die folgenden Konfigurationsschritte aus. Dadurch wird sichergestellt, dass ausgehende Netzwerkverbindungen verfügbar sind, bevor Sie versuchen, eine App Service-Umgebung bereitzustellen.
+3. **Wichtig**: Stellen Sie die App Service-Umgebung erst bereit, **nachdem** die folgenden Konfigurationsschritte erfolgt sind. Dadurch wird sichergestellt, dass ausgehende Netzwerkverbindungen verfügbar sind, bevor Sie versuchen, eine App Service-Umgebung bereitzustellen.
 
 **Schritt 1: Erstellen einer benannten Routentabelle**
 
@@ -137,4 +137,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

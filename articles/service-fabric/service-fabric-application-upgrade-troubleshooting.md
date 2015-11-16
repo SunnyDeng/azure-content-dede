@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Problembehandlung bei Service Fabric-Anwendungsupgrades"
+   pageTitle="Problembehandlung bei Anwendungsupgrades | Microsoft Azure"
    description="In diesem Artikel werden einige bekannte Probleme beim Upgrade einer Service Fabric-Anwendung und ihre Behebung behandelt."
    services="service-fabric"
    documentationCenter=".net"
@@ -225,4 +225,4 @@ Die Upgradezeit für eine Upgradedomäne wird durch *UpgradeDomainTimeout* begre
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

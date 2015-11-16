@@ -40,7 +40,7 @@ Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 
 ## 2\. Herunterladen des SDK
 
-1. Laden Sie das [Application Insights-SDK für Java](http://dl.windowsazure.com/applicationinsights/javabin/sdk.zip) herunter. 
+1. Laden Sie das [Application Insights-SDK für Java](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.html) herunter. 
 2. Extrahieren Sie auf dem Server den SDK-Inhalt in das Verzeichnis, aus dem die Projektbinärdateien geladen werden. Wenn Sie Tomcat verwenden, ist dies in der Regel unter `webapps<your_app_name>\WEB-INF\lib`.
 
 
@@ -139,4 +139,4 @@ Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbunde
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

@@ -7,12 +7,12 @@
         manager="dwrede" />
 
 <tags ms.service="app-service-mobile"
-ms.workload="mobile"
-ms.tgt_pltfrm="mobile-ios"
-ms.devlang="objective-c"
-ms.topic="article"
-ms.date="09/14/2015"
-ms.author="mahender" />
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
+	ms.date="09/14/2015"
+	ms.author="mahender" />
 
 # Hinzufügen der Azure Active Directory-Anmeldung zu Ihrer iOS-App
 
@@ -120,7 +120,7 @@ Jetzt können Sie auf die Active Directory-Authentifizierungsbibliothek in Ihrem
 [Konfigurieren Ihrer mobilen App mit Azure Active Directory]: app-service-mobile-how-to-configure-active-directory-authentication.md
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
- [Erste Schritte mit mobilen Apps]: app-service-mobile-ios-get-started.md
- [Hinzufügen von Authentifizierung zur App]: app-service-mobile-ios-get-started-users.md
+[Erste Schritte mit mobilen Apps]: app-service-mobile-ios-get-started.md
+[Hinzufügen von Authentifizierung zur App]: app-service-mobile-ios-get-started-users.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

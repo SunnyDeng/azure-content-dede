@@ -13,7 +13,7 @@
 	ms.workload="data-management" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="get-started-article" 
+	ms.topic="article" 
 	ms.date="09/15/2015" 
 	ms.author="genemi"/>
 
@@ -97,6 +97,7 @@ Sicherheit ist eines der Hauptprobleme für alle Benutzer, die für Unternehmens
 - [Transparente Datenverschlüsselung](http://msdn.microsoft.com/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
 - [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md)
  - SQL-Datenbank unterstützt nun die Azure Active Directory-Authentifizierung, ein Mechanismus zum Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung von Identitäten in Azure Active Directory (Azure AD). Mithilfe der Azure Active Directory-Authentifizierung ist es möglich, die Identitäten von Datenbankbenutzern und anderen Microsoft-Diensten an einer zentralen Stelle zu verwalten.
+- [Immer verschlüsselt](https://msdn.microsoft.com/library/mt163865.aspx) (in der Vorschau) macht die Verschlüsselung für Anwendungen erkennbar und ermöglicht es Clients, sensible Daten in Clientanwendungen zu verschlüsseln, ohne die Verschlüsselungsschlüssel mit der SQL-Datenbank freizugeben.
 
 
 ## Erhöhte Geschäftskontinuität, wenn eine Wiederherstellung erforderlich ist
@@ -161,4 +162,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

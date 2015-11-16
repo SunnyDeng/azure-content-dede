@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen einer Prototypenanwendung für Azure Search" 
-	description="Erstellen Sie Ihren ersten Anwendungsprototypen, um sich mit Azure Search vertraut zu machen." 
+	description="Erstellen Sie Ihren ersten Anwendungsprototypen, um sich mit Azure Search, einem gehosteten Cloudsuchdienst, vertraut zu machen." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -13,12 +13,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="09/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 # Erstellen einer Prototypenanwendung für Azure Search
 
-Entwickler, die sich mit Azure Search beschäftigen, beginnen in der Regel mit einer vorläufigen Testanwendung, die den Nutzen von Azure Search für eine benutzerdefinierte Anwendung veranschaulicht. In diesem Artikel stellen wir Ihnen einige Bausteine zur Verfügung, um Prototypenerstellung zu beschleunigen:
+Entwickler, die Azure Search für eine gehostete Cloudsuche in Betracht ziehen, beginnen in der Regel mit einer vorläufigen Testanwendung, die den Nutzen von Azure Search für eine benutzerdefinierte Anwendung veranschaulicht. In diesem Artikel stellen wir Ihnen einige Bausteine zur Verfügung, um Prototypenerstellung zu beschleunigen:
  
 - Ein Visual Studio-Projekt in C# mit data.json- und schema.json-Dateien. Mithilfe der Beispieldaten können Sie die Projektmappe umgehend erstellen, ausführen und sich vergewissern, dass die Projektmappe auf Ihrem System funktioniert, bevor Sie auch nur eine Zeile Code schreiben. 
 
@@ -133,4 +133,4 @@ Weitere Informationen finden Sie unter folgenden Links:
 [1]: ./media/search-build-prototype/azsearch-datafiles.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

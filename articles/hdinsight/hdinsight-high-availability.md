@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="07/28/2015"
+	ms.date="10/29/2015"
 	ms.author="jgao"/>
 
 
@@ -68,11 +68,19 @@ Hauptknoten werden standardmäßig als große VMs eingerichtet. Diese Größe is
 
 Sehr große VMs können entweder mit Azure PowerShell-Cmdlets oder mit dem HDInsight SDK konfiguriert werden.
 
-Die Erstellung und Bereitstellung eines Clusters mithilfe von Azure PowerShell ist unter [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md) dokumentiert. Um einen sehr großen Hauptknoten zu konfigurieren, müssen Sie den `-HeadNodeVMSize ExtraLarge`-Parameter zu dem in diesem Code verwendeten `New-AzureHDInsightcluster`-Cmdlet hinzufügen.
+Die Erstellung und Bereitstellung eines Clusters mithilfe von Azure PowerShell ist unter [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md) dokumentiert. Um einen sehr großen Hauptknoten zu konfigurieren, müssen Sie den `-HeadNodeVMSize ExtraLarge`-Parameter zu dem in diesem Code verwendeten `New-AzureRmHDInsightcluster`-Cmdlet hinzufügen.
 
     # Create a new HDInsight cluster in Azure PowerShell
 	# Configured with an ExtraLarge head-node VM
-    New-AzureHDInsightCluster -Name $clusterName -Location $location -HeadNodeVMSize ExtraLarge -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes
+    New-AzureRmHDInsightCluster `
+				-ResourceGroupName $resourceGroupName `
+				-ClusterName $clusterName ` 
+				-Location $location `
+				-HeadNodeVMSize ExtraLarge `
+				-DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" `
+				-DefaultStorageAccountKey $storageAccountKey `
+				-DefaultStorageContainerName $containerName  `
+				-ClusterSizeInNodes $clusterNodes
 
 Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines Clusters mithilfe des SDK ist unter [Verwenden von HDInsight mit dem .NET SDK](hdinsight-provision-clusters.md#sdk) dokumentiert. Um einen sehr großen Hauptknoten zu konfigurieren, müssen Sie den `HeadNodeSize = NodeVMSize.ExtraLarge`-Parameter der in diesem Code verwendeten `ClusterCreateParameters()`-Methode hinzufügen.
 
@@ -80,15 +88,15 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 	# Configured with an ExtraLarge head-node VM
     ClusterCreateParameters clusterInfo = new ClusterCreateParameters()
     {
-    Name = clustername,
-    Location = location,
-    HeadNodeSize = NodeVMSize.ExtraLarge,
-    DefaultStorageAccountName = storageaccountname,
-    DefaultStorageAccountKey = storageaccountkey,
-    DefaultStorageContainer = containername,
-    UserName = username,
-    Password = password,
-    ClusterSizeInNodes = clustersize
+		Name = clustername,
+		Location = location,
+		HeadNodeSize = NodeVMSize.ExtraLarge,
+		DefaultStorageAccountName = storageaccountname,
+		DefaultStorageAccountKey = storageaccountkey,
+		DefaultStorageContainer = containername,
+		UserName = username,
+		Password = password,
+		ClusterSizeInNodes = clustersize
     };
 
 
@@ -98,4 +106,4 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 - [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP](hdinsight-administer-use-management-portal.md#rdp)
 - [Verwenden des HDInsight .NET SDK](hdinsight-provision-clusters.md#sdk)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

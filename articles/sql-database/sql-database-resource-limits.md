@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="10/27/2015"
+	ms.date="11/03/2015"
 	ms.author="jroth" />
 
 
@@ -75,4 +75,4 @@ Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von d
 
 [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

@@ -1,11 +1,10 @@
 <properties 
-	title="How to add a users to an elastic database pool" 
 	pageTitle="Hinzufügen von Benutzern zu einem elastischen Datenbankpool" 
 	description="Sie müssen einen Benutzer mit Berechtigungen für jede Datenbank im Pool hinzufügen." 
 	metaKeywords="azure sql database elastic databases credentials" 
 	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
-	authors="sidneyh"/>
+	authors="ddove"/>
 
 <tags 
 	ms.service="sql-database" 
@@ -13,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.date="11/03/2015" 
 	ms.author="ddove; sidneyh" />
 
 # Hinzufügen von Benutzern zu einem elastischen Datenbankpool
@@ -33,11 +32,11 @@ Das (in der Vorschau verfügbare) Feature **Elastische Datenbankaufträge** erm�
 
 		CREATE USER admin1 FROM LOGIN login1;
 		
-3. Der Benutzer muss außerdem über ausreichende Berechtigungen zum Ausführen des für das Projekt festgelegten Skripts verfügen. Verwenden Sie die **sp\_addrolemember**-Prozedur, um den Benutzer mit den erforderlichen Mindestberechtigungen für das Skript auszustatten.
+3. Der Benutzer muss außerdem über ausreichende Berechtigungen zum Ausführen des für das Projekt festgelegten Skripts verfügen. Verwenden Sie [ALTER ROLE](https://msdn.microsoft.com/library/ms189775.aspx), um den Benutzer mit den erforderlichen Mindestberechtigungen zum erfolgreichen Ausführen des Skripts auszustatten.
 
 ## Nächste Schritte
 
-Informationen zum Erstellen und Verwalten von Aufträgen finden Sie unter [Erstellen und Verwalten von elastischen Datenbankaufträgen](sql-database-elastic-jobs-create-and-manage.md).
+Informationen zum Erstellen und Verwalten von Aufträgen finden Sie unter [Erstellen und Verwalten von Aufträgen für elastische Datenbanken](sql-database-elastic-jobs-create-and-manage.md).
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
@@ -45,4 +44,4 @@ Informationen zum Erstellen und Verwalten von Aufträgen finden Sie unter [Erste
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -34,13 +34,7 @@ Bevor wir in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail
 
   Hier ein Beispiel für ein Anwendungsmanifest:
 
-  ```xml
-  <?xml version="1.0" encoding="utf-8"?>
-  <ApplicationManifest ApplicationTypeName="actor2Application"
-                       ApplicationTypeVersion="1.0.0.0"
-                       xmlns="http://schemas.microsoft.com/2011/01/fabric"
-                       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  ```xml <?xml version="1.0" encoding="utf-8"?> <ApplicationManifest ApplicationTypeName="actor2Application" ApplicationTypeVersion="1.0.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <ServiceManifestImport>
       <ServiceManifestRef ServiceManifestName="actor2Pkg" ServiceManifestVersion="1.0.0.0" />
@@ -55,8 +49,7 @@ Bevor wir in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail
       </Service>
     </DefaultServices>
 
-  </ApplicationManifest> 
-  ```
+  </ApplicationManifest> ```
 
 * **Dienstmanifest**
 
@@ -64,16 +57,7 @@ Bevor wir in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail
 
   Hier ein Beispiel für ein Dienstmanifest:
 
-  ```xml
-  <?xml version="1.0" encoding="utf-8"?>
-  <ServiceManifest Name="actor2Pkg"
-                   Version="1.0.0.0"
-                   xmlns="http://schemas.microsoft.com/2011/01/fabric"
-                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ServiceTypes>
-      <StatelessServiceType ServiceTypeName="actor2Type" />
-    </ServiceTypes>
+  ```xml <?xml version="1.0" encoding="utf-8"?> <ServiceManifest Name="actor2Pkg" Version="1.0.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> <ServiceTypes> <StatelessServiceType ServiceTypeName="actor2Type" /> </ServiceTypes>
 
     <CodePackage Name="Code" Version="1.0.0.0">
       <EntryPoint>
@@ -90,8 +74,7 @@ Bevor wir in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail
         <Endpoint Name="ServiceEndpoint" />
       </Endpoints>
     </Resources>
-  </ServiceManifest>
-  ```
+  </ServiceManifest> ```
 
 ## Dateistruktur des Anwendungspakets
 Damit eine Anwendung z. B. mit Powershell-Cmdlets bereitgestellt werden kann, muss die Anwendung einer vordefinierten Verzeichnisstruktur folgen.
@@ -107,9 +90,9 @@ Damit eine Anwendung z. B. mit Powershell-Cmdlets bereitgestellt werden kann, mu
 
 Das Stammverzeichnis enthält die Datei "applicationmanifest.xml", welche die Anwendung definiert. Für jeden Dienst, der in der Anwendung enthalten ist, gibt es ein Unterverzeichnis, das alle für den Dienst erforderlichen Artefakte enthält: die Datei "servicemanifest.xml" und in der Regel drei Verzeichnisse:
 
-- *code*: enthält den Code des Diensts.
-- *config*: enthält die Datei „settings.xml“ (sowie andere Dateien, falls erforderlich), auf die der Dienst zur Laufzeit zugreifen kann, um bestimmte Konfigurationseinstellungen abzurufen.
-- *data*: ist ein zusätzliches Verzeichnis zum Speichern zusätzlicher lokaler Daten, die der Dienst möglicherweise benötigt. Hinweis: Das Verzeichnis "data" sollte nur zum Speichern flüchtiger Daten verwendet werden. Service Fabric kopiert/repliziert keine Änderungen am Verzeichnis "data", wenn der Dienst z. B. bei einem Failover verschoben werden muss.
+- *code* enthält den Code des Diensts.
+- *config* enthält die Datei „settings.xml“ (sowie andere Dateien, falls erforderlich), auf die der Dienst zur Laufzeit zugreifen kann, um bestimmte Konfigurationseinstellungen abzurufen.
+- *data* ist ein zusätzliches Verzeichnis zum Speichern zusätzlicher lokaler Daten, die der Dienst möglicherweise benötigt. Hinweis: Das Verzeichnis "data" sollte nur zum Speichern flüchtiger Daten verwendet werden. Service Fabric kopiert/repliziert keine Änderungen am Verzeichnis "data", wenn der Dienst z. B. bei einem Failover verschoben werden muss.
 
 Hinweis: Für "code", "config" und "data" können Sie einen beliebigen Verzeichnisnamen verwenden . Stellen Sie hierbei sicher, dass Sie in der Anwendungsmanifestdatei den gleichen Wert verwenden.
 
@@ -213,9 +196,9 @@ Mit dem Element `Name` wird der Name des Verzeichnisses im Anwendungspaket angeb
 
 Mit dem Element `Entrypoint` in der Dienstmanifestdatei wird angegeben, wie der Dienst gestartet werden soll. Das Element `ExeHost` gibt die ausführbare Datei (und die Argumente) an, die zum Starten des Diensts verwendet werden soll.
 
-- `Program`: gibt den Namen der ausführbaren Datei an, die zum Starten des Diensts ausgeführt werden soll.
-- `Arguments`: gibt die Argumente an, die an die ausführbare Datei übergeben werden sollen. Dies kann eine Liste von Parametern mit Argumenten sein.
-- `WorkingFolder`: gibt das Arbeitsverzeichnis für den Prozess an, der gestartet werden soll. Sie können zwei Werte angeben:
+- `Program` gibt den Namen der ausführbaren Datei an, die zum Starten des Diensts ausgeführt werden soll.
+- `Arguments` gibt die Argumente an, die an die ausführbare Datei übergeben werden sollen. Dies kann eine Liste von Parametern mit Argumenten sein.
+- `WorkingFolder` gibt das Arbeitsverzeichnis für den Prozess an, der gestartet werden soll. Sie können zwei Werte angeben:
 	- `CodeBase`: Als Arbeitsverzeichnis wird das Verzeichnis „code“ im Anwendungspaket festgelegt (Verzeichnis `Code` in der abgebildeten Struktur).
 	- `CodePackage`: Das Arbeitsverzeichnis wird auf das Stammverzeichnis des Anwendungspakets (`MyServicePkg`) festgelegt.
 - Das Element `WorkingDirectory` ist nützlich, um das richtige Arbeitsverzeichnis festzulegen, damit von der Anwendung oder von Initialisierungsskripts relative Pfade verwendet werden können.
@@ -292,9 +275,9 @@ Das Element `DefaultServices` in der Anwendungsmanifestdatei wird verwendet, um 
 
 Ein Service Fabric-Dienst kann in verschiedenen "Konfigurationen" bereitgestellt werden: Eine Instanz, mehrere Instanzen oder eine Instanz des Diensts auf jedem Knoten des Service Fabric-Clusters, um nur einige Beispiele zu nennen. In der Datei `applicationmanifest.xml` können Sie angeben, wie die Anwendung bereitgestellt werden soll.
 
-* `InstanceCount`: wird verwendet, um anzugeben, wie viele Instanzen des Diensts im Service Fabric-Cluster gestartet werden sollen. Sie können den Wert `InstanceCount` nach der Art der bereitzustellenden Anwendung festlegen. Die beiden häufigsten Szenarien:
+* `InstanceCount` wird verwendet, um anzugeben, wie viele Instanzen des Diensts im Service Fabric-Cluster gestartet werden sollen. Sie können den Wert `InstanceCount` nach der Art der bereitzustellenden Anwendung festlegen. Die beiden häufigsten Szenarien:
 
-	* `InstanCount = "1"`: In diesem Fall wird nur eine Instanz des Diensts im Cluster bereitgestellt. Der Service Fabric-Planer bestimmt den Knoten, auf dem der Dienst bereitgestellt werden soll. Eine einzelne Instanz ist auch für Anwendungen sinnvoll, die bei der Ausführung mit mehreren Instanzen eine andere Konfiguration benötigen. In diesem Fall ist es einfacher, mehrere Dienste in derselben Anwendungsmanifestdatei zu definieren und `InstanceCount = "1"` zu verwenden. Im Endergebnis haben Sie mehrere Instanzen desselben Dienstes, aber jeweils mit einer anderen Konfiguration. Das Festlegen eines größeren Werts als 1 für `InstanceCount` ist nur dann sinnvoll, wenn das Ziel darin besteht, mehrere Instanzen mit exakt derselben Konfiguration bereitzustellen.
+	* `InstanceCount = "1"`: In diesem Fall wird nur eine Instanz des Diensts im Cluster bereitgestellt. Der Service Fabric-Planer bestimmt den Knoten, auf dem der Dienst bereitgestellt werden soll. Eine einzelne Instanz ist auch für Anwendungen sinnvoll, die bei der Ausführung mit mehreren Instanzen eine andere Konfiguration benötigen. In diesem Fall ist es einfacher, mehrere Dienste in derselben Anwendungsmanifestdatei zu definieren und `InstanceCount = "1"` zu verwenden. Im Endergebnis haben Sie mehrere Instanzen desselben Dienstes, aber jeweils mit einer anderen Konfiguration. Das Festlegen eines größeren Werts als 1 für `InstanceCount` ist nur dann sinnvoll, wenn das Ziel darin besteht, mehrere Instanzen mit exakt derselben Konfiguration bereitzustellen.
 
 	* `InstanceCount ="-1"`: In diesem Fall wird eine Instanz des Diensts auf jedem Knoten im Service Fabric-Cluster bereitgestellt. Das Endergebnis ist eine (und nur eine) Instanz des Diensts für jeden Knoten im Cluster. Dies ist eine praktische Konfiguration für Front-End-Anwendungen (z. B. REST-Endpunkt), da Client-Anwendungen nur eine Verbindung zu einem Knoten im Cluster herstellen müssen, um den Endpunkt zu verwenden. Diese Konfiguration kann z. B. auch verwendet werden, wenn alle Knoten des Service Fabric-Clusters mit einem Lastenausgleichsmodul verbunden sind, damit der Datenverkehr der Clients über den Dienst verteilt werden kann, der auf allen Knoten im Cluster ausgeführt wird.
 
@@ -353,4 +336,4 @@ Wenn Sie weitere Informationen benötigen, wie eine herkömmliche Service Fabric
 [5]: ./media/service-fabric-deploy-existing-app/service-node-3.png
 [6]: ./media/service-fabric-deploy-existing-app/service-node-4.png
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Überwachen der Nutzung und Statistiken eines Azure-Suchdiensts" 
-   description="Nachverfolgen des Ressourcenverbrauchs und der Indexgröße für Azure Search" 
+   pageTitle="Überwachen der Nutzung und Statistiken eines Azure-Suchdiensts | Microsoft Azure" 
+   description="Verfolgen Sie die Ressourcennutzung und Indexgröße für Azure Search nach, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
    services="search" 
    documentationCenter="" 
    authors="HeidiSteen" 
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required" 
-   ms.date="09/08/2015"
+   ms.date="11/04/2015"
    ms.author="heidist"/>
 
 # Überwachen der Nutzung und Statistiken eines Azure-Suchdiensts
@@ -57,4 +57,4 @@ Weitere Informationen zur Dienstverwaltung finden Sie unter [Verwalten Ihres Suc
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

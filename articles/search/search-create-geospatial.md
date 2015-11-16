@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erstellen einer geografischen Suchanwendung mit Azure Search" 
-	description="Erstellen einer geografischen Suchanwendung mit Bing und Azure Search" 
+	pageTitle="Erstellen einer geografischen Suchanwendung mit Azure Search | Microsoft Azure" 
+	description="Erstellen Sie eine geografische Suchanwendung mit Bing und Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 # Erstellen einer geografischen Suchanwendung mit Azure Search
@@ -167,4 +167,4 @@ Um Ihr Selbststudium zu vertiefen, fügen Sie beispielsweise weitere Funktionen 
 [7]: ./media/search-create-geospatial/AzureSearch-geo1-App.PNG
 [12]: ./media/search-create-geospatial/AzureSearch_Create2_CodeplexDownload.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

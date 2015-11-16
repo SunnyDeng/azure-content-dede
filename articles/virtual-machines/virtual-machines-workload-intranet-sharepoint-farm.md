@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="10/29/2015"
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: SharePoint-Intranetfarm
@@ -50,7 +50,7 @@ Sie können diese Entwicklungs- und Testumgebungen im Rahmen Ihres [MSDN-Abonnem
 
 Ein virtuelles Nur-Cloud-Netzwerk ist nicht mit einem lokalen Netzwerk verbunden. Falls Sie nur schnell eine grundlegende oder hochverfügbare SharePoint-Farm erstellen möchten, helfen Ihnen die Informationen unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md) weiter. Das folgende Beispiel zeigt die grundlegende Konfiguration für eine SharePoint-Farm.
 
-![](./media/virtual-machines-workload-intranet-sharepoint-farm/SPFarm_Basic.png)
+![](./media/virtual-machines-workload-intranet-sharepoint-farm/Non-HAFarm.png)
 
 ### Standortübergreifendes virtuelles Netzwerk
 
@@ -128,4 +128,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

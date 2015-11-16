@@ -1,7 +1,7 @@
 
 <properties
-   pageTitle="Service Fabric-Anwendungsupgrade: Upgradeparameter"
-   description="In diesem Artikel werden die verschiedenen Parameter in Bezug auf das Upgrade einer Service Fabric-Anwendung beschrieben."
+   pageTitle="Anwendungsupgrade: Upgradeparameter | Microsoft Azure"
+   description="Beschreibt Parameter im Zusammenhang mit dem Upgrade einer Service Fabric-Anwendung, einschließlich durchzuführender Integritätsprüfungen und Richtlinien für das automatische Rückgängigmachen des Upgrades."
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
@@ -19,7 +19,7 @@
 
 
 
-# Anwendungsupgradeparameter
+# Parameter für Anwendungsupgrades
 
 In diesem Artikel werden die verschiedenen Parameter beschrieben, die während des Upgrades einer Service Fabric-Anwendung gelten. Die Parameter enthalten den Namen und die Version der Anwendung. Sie sind Schalter, die die Timeouts und Integritätsprüfungen steuern, die während des Upgrades angewendet werden, und geben die Richtlinien an, die angewendet werden müssen, wenn ein Upgrade fehlschlägt.
 
@@ -77,4 +77,4 @@ In diesem Artikel werden die verschiedenen Parameter beschrieben, die während d
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

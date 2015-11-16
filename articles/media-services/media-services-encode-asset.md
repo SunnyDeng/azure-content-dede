@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="10/29/2015"  
 	ms.author="juliako"/>
 
 #Azure On-Demand Media Encoder – Übersicht und Vergleich
@@ -166,6 +166,7 @@ AVI (unkomprimiert, 8-Bit/10-Bit)|Ja|Ja |Ja
 Smooth Streaming-Dateiformat (PIFF 1.3)|Ja|Ja|Nein
 [Microsoft Digital Video Recording (DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|Ja|Nein|Nein
 Matroska/WebM |Ja|Nein|Nein
+QuickTime (.mov) |Ja|Nein|Nein
 
 ###Codecs für Videoeingang
 
@@ -181,6 +182,12 @@ Windows Media Video/VC-1 |Ja|Ja|Ja
 Canopus HQ/HQX |Nein|Ja|Nein
 MPEG-4 Teil 2 |Ja|Nein|Nein
 [Theora](https://en.wikipedia.org/wiki/Theora) |Ja|Nein|Nein
+Apple ProRes 422 |Ja|Nein|Nein
+Apple ProRes 422 LT |Ja|Nein|Nein
+Apple ProRes 422 HQ |Ja|Nein|Nein
+Apple ProRes Proxy|Ja|Nein|Nein
+Apple ProRes 4444 |Ja|Nein|Nein
+Apple ProRes 4444 XQ |Ja|Nein|Nein
 
 ###Codecs für Audioeingang
 
@@ -254,4 +261,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

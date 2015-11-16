@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/10/2015" 
+    ms.date="10/30/2015" 
     ms.author="hawong"/>
 
 # Häufige Anwendungsfälle für DocumentDB
@@ -64,7 +64,7 @@ Azure Event Hubs bietet einen hohen Durchsatz bei geringer Latenz und kann daher
 
 Eine Beispiellösung für das Internet der Dinge unter Verwendung von DocumentDB, EventHubs und Storm finden Sie im [Beispielrepository "hdinsight-storm" in GitHub](https://github.com/hdinsight/hdinsight-storm-examples/).
 
-Weitere Informationen zu den Azure-Angeboten für das Internet der Dinge finden Sie unter [Ihr eigenes Internet der Dinge](http://www.microsoft.com/en-us/server-cloud/internet-of-things.aspx).
+Weitere Informationen zu den Azure-Angeboten für das Internet der Dinge finden Sie unter [Ihr eigenes Internet der Dinge](http://www.microsoft.com/de-DE/server-cloud/internet-of-things.aspx).
 
 ## Nächste Schritte
  
@@ -79,4 +79,4 @@ Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihne
 - [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667). Der Speicher der Zukunft basiert auf schnellen Suchvorgängen und problemlosem Datenfluss.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

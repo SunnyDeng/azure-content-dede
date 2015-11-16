@@ -108,6 +108,6 @@ Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben 
 
 ## Nächste Schritte
 - [Erstellen von Vorlagen](./resource-group-authoring-templates.md)
-- [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md)
+- [Bereitstellen von Vorlagen](resource-group-template-deploy.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

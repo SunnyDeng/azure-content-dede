@@ -13,7 +13,7 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="vm-windows"
    	ms.workload="big-compute"
-   	ms.date="09/30/2015"
+   	ms.date="11/02/2015"
    	ms.author="v-marsma"/>
 
 # Maximieren der Azure Batch Compute-Ressourcenauslastung mit parallelen Knotenaufgaben
@@ -38,7 +38,7 @@ Um die Vorteile der parallelen Aufgabenausführung zu veranschaulichen, nehmen w
 
 Die Konfiguration der Computeknoten in Ihrer Batch-Lösung für die parallele Aufgabenausführung erfolgt auf Pool-Ebene. Beim Arbeiten mit der Batch .NET-API wird beim Erstellen eines Pools die [CloudPool.MaxTasksPerComputeNode][maxtasks_net]-Eigenschaft festgelegt. In der Batch REST-API wird das [maxTasksPerNode][maxtasks_rest]-Element bei der Erstellung des Pools im Anforderungstext festgelegt.
 
-Die maximale Anzahl an Aufgaben pro Knoten in Azure Batch beträgt die bis zu vierfache (4x) Menge der Kerne pro Knoten. Ist für die Größe der Knoten im Pool beispielsweise „Groß“ (vier Kerne) konfiguriert, kann für `maxTasksPerNode` 16 festgelegt werden. Details zur Anzahl der Kerne für die einzelnen Knotengrößen finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md), und weitere Informationen zu Diensteinschränkungen finden Sie in [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md).
+Die maximale Anzahl an Aufgaben pro Knoten in Azure Batch beträgt die bis zu vierfache (4x) Menge der Kerne pro Knoten. Ist für die Größe der Knoten im Pool beispielsweise „Groß“ (vier Kerne) konfiguriert, kann für `maxTasksPerNode` 16 festgelegt werden. Details zur Anzahl der Kerne für die einzelnen Knotengrößen finden Sie unter [Größen für Clouddienste](../cloud-services/cloud-services-sizes-specs.md), und weitere Informationen zu Diensteinschränkungen finden Sie in [Kontingente und Einschränkungen für den Azure Batch-Dienst](batch-quota-limit.md).
 
 > [AZURE.TIP]Berücksichtigen Sie unbedingt den `maxTasksPerNode`-Wert, wenn Sie für Ihren Pool eine [Formel für das automatische Skalieren][enable_autoscaling] erstellen. Beispielsweise könnte eine Formel zum Auswerten von `$RunningTasks` erheblich von einer Steigerung der Aufgaben pro Knoten betroffen sein. Weitere Informationen finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
 
@@ -106,11 +106,11 @@ Die zweite Ausführung des Beispiels zeigt eine deutliche Verkürzung der Aufgab
 
 ## Heat Map für Batch Explorer
 
-[Batch Explorer][batch_explorer], eine der [Beispielanwendungen][github_samples] von Azure Batch, enthält eine *Heat Map*-Funktion, die die Auslastung der Knotenkerne in einem Pool veranschaulicht. Beim Ausführen der [ParallelTasks][parallel_tasks_sample]-Beispielanwendung verwenden Sie die Heat Map-Funktion für eine einfache Visualisierung der Aktivitäten der Knotenkerne.
+[Batch Explorer][batch_explorer], eine der [Beispielanwendungen][github_samples] von Azure Batch, enthält eine *Heat Map*-Funktion, die die Aufgabenausführung veranschaulicht. Beim Ausführen der [ParallelTasks][parallel_tasks_sample]-Beispielanwendung verwenden Sie die Heat Map-Funktion für eine einfache Visualisierung der Ausführung paralleler Aufgaben an jedem Knoten.
 
 ![Heat Map für Batch Explorer][1]
 
-*Heat Map für Batch Explorer mit vier Knoten von je vier Kernen, von denen jeder gerade eine Aufgabe ausführt*
+*Heat Map von Batch-Explorer zeigt einen Pool mit vier Knoten, wobei jeder Knoten derzeit vier Aufgaben ausführt*
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
@@ -127,4 +127,4 @@ Die zweite Ausführung des Beispiels zeigt eine deutliche Verkürzung der Aufgab
 
 [1]: ./media/batch-parallel-node-tasks\heat_map.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="php" 
 	ms.devlang="php" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
+	ms.date="11/01/2015" 
 	ms.author="yuaxu"/>
 
 # Verwenden von Notification Hubs von PHP aus
@@ -133,11 +133,7 @@ Alle verfügbaren Optionen finden Sie in der Dokumentation der [REST-APIs für B
 
 Mit dieser Klasse können wir jetzt die Methoden zum Senden von Benachrichtigungen in der **NotificationHub**-Klasse schreiben.
 
-	public function sendNotification($notification) {
-		$this->sendNotification($notification, "");
-	}
-
-	public function sendNotification($notification, $tagsOrTagExpression) {
+	public function sendNotification($notification, $tagsOrTagExpression="") {
 		if (is_array($tagsOrTagExpression)) {
 			$tagExpression = implode(" || ", $tagsOrTagExpression);
 		} else {
@@ -199,7 +195,9 @@ Die vorstehenden Methoden senden eine HTTP-POST-Anforderung mit dem korrekten Te
 ##<a name="complete-tutorial"></a>Abschließen des Lernprogramms
 Sie können jetzt das Erste-Schritte-Lernprogramm abschließen, indem Sie die Benachrichtigung von einem PHP-Back-End aus senden.
 
-Initialisieren Sie Ihren Notification Hubs-Client (ersetzen Sie die Verbindungszeichenfolge und den Hubnamen wie im Lernprogramm [Erste Schritte mit Notification Hubs] beschrieben): $hub = new NotificationHub("connection string", "hubname");
+Initialisieren Sie Ihren Notification Hubs-Client (ersetzen Sie die Verbindungszeichenfolge und den Hubnamen wie im [Erste-Schritte-Lernprogramm] beschrieben):
+
+	$hub = new NotificationHub("connection string", "hubname");	
 
 Fügen Sie dann den Sendecode je nach mobiler Zielplattform hinzu.
 
@@ -229,7 +227,7 @@ Fügen Sie dann den Sendecode je nach mobiler Zielplattform hinzu.
 		                '<wp:Text1>Hello from PHP!</wp:Text1>' .
 		           '</wp:Toast> ' .
 		        '</wp:Notification>';
-	$notification = new Notification("mpns", $toast);
+	$notification = new Notification("windowsphone", $toast);
 	$notification->headers[] = 'X-WindowsPhone-Target : toast';
 	$notification->headers[] = 'X-NotificationClass : 2';
 	$hub->sendNotification($notification);
@@ -255,6 +253,7 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [PHP REST Wrapper-Beispiel]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [PHP REST-Wrapper-Beispiel]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
+[Erste-Schritte-Lernprogramm]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

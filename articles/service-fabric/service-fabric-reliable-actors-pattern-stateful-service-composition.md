@@ -1,7 +1,7 @@
 
 <properties
-   pageTitle="Reliable Actors: Entwurfsmuster für die Komposition zustandsbehafteter Dienste"
-   description="Entwurfsmuster in Service Fabric Reliable Actors, das statusbehaftete Actors zum Verwalten des Status zwischen Dienstaufrufen sowie zum Zwischenspeichern bisheriger Dienstergebnisse verwendet. Der Status kann persistent oder transient sein."
+   pageTitle="Muster für die Zusammensetzung zustandsbehafteter Dienste | Microsoft Azure"
+   description="Entwurfsmuster in Service Fabric Reliable Actors, das zustandsbehaftete Akteurs zum Verwalten des Status zwischen Dienstaufrufen sowie zum Zwischenspeichern bisheriger Dienstergebnisse verwendet."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -18,9 +18,11 @@
    ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Komposition zustandsbehafteter Dienste
+
 Entwickler haben die letzten eineinhalb Jahrzehnte damit verbracht, zustandsfreie N-Tier-Dienste im Unternehmen erstellen. Sie haben Dienste auf Datenbanken erstellt, sie haben höherwertige Dienste über anderen Diensten erstellt, und sie haben Orchestrierungs-Module und nachrichtenorientierte Middleware erstellt, um diese Dienste zu koordinieren. Mit der steigenden Arbeitsauslastung von Benutzern, gleichgültig ob ein höheres Maß an Interaktivität oder Skalierung gefordert wurde, begann die statusfreie serviceorientierte Architektur, ihre Schwachstellen zu zeigen.
 
 ## Die alte Methode: SOA-Dienste
+
 SOA-Dienste konnten zwar aufgrund ihrer Zustandsfreiheit nahtlos in horizontaler Richtung skaliert werden, erstellten jedoch einen Engpass auf Speicherebene – Parallelität und Durchsatz. Der Zugriff auf den Speicher wurde zunehmend kostspieliger. Als gängige Praktik führten die meisten Entwickler Zwischenspeicherung in ihre Lösungen ein, um die Anforderungen an den Speicher zu reduzieren. Dieses Konzept war jedoch nicht ohne Nachteile – Verwaltung einer weiteren Ebene, Parallelzugriff auf den Cache, semantische Einschränkungen und Änderungen und schließlich auch Konsistenz. Wie weiter oben im Muster für den intelligenten Cache erläutert, bietet das virtuelle Actor-Modell eine ideale Lösung dafür.
 
 Einige Entwickler haben versucht, das Problem durch die Replikation ihrer Speicherebene zu lösen. Dieser Ansatz bot jedoch keine guten Skalierungsmöglichkeiten und erreichte schnell CAP-Grenzen. Das zweite Problem entstand im Zusammenhang mit sich ändernden Anforderungen. Sowohl Endbenutzer als auch Unternehmen verlangen interaktive Dienste – die auf Anforderungen in Millisekunden anstatt in Sekunden als Norm reagieren. Um dem zu entsprechen, begannen Entwickler Fassadendienste über anderen Diensten zu entwickeln, in einigen Fällen zehn und mehr Dienste, um benutzerzentrische Dienste zu erstellen. Bei der Komposition mehrerer Downstream-Dienste zeigten sich jedoch schnell Latenzprobleme.
@@ -34,6 +36,7 @@ Das folgende Diagramm veranschaulicht diesen Punkt:
 ![][1]
 
 ## Bessere Lösung durch Actors
+
 Bei der Komposition von Diensten können Actors entweder statusfrei oder statusbehaftet sein.
 
 * Statusfreie Actors können als Proxys für die zugrunde liegenden Dienste verwendet werden. Diese Actors können über den Azure Service Fabric-Cluster hinweg dynamisch skaliert werden und können bestimmte Informationen im Zusammenhang mit dem Dienst zwischenspeichern, wie z. B. dessen Endpunkt, sobald er erkannt wird.
@@ -46,6 +49,7 @@ Die meisten Entwickler entscheiden sich für einen benutzerzentrischen Ansatz ih
 Sprechen wir nun über einen Actor-basierten Ansatz. Ein Benutzer-Actor kann sowohl das Verhalten des Benutzers darstellen (Durchsuchen des Katalogs, Zustimmung zu einem Produkt, Hinzufügen eines Artikels zum Warenkorb, Empfehlen eines Produkts an einen Freund) als auch dessen zusammengesetzten Status – sein Profil, Artikel im Warenkorb, Liste der von seinen Freunden empfohlenen Artikel, seinen Einkaufsverlauf, aktuellen geografischen Standort usw.
 
 ## Verwenden von statusbehafteten Actors
+
 Betrachten wir zuerst ein Beispiel, in dem der Benutzer-Actor seinen Status aus mehreren Diensten auffüllen muss. Hierfür wird kein Codebeispiel angegeben, da alles, was beim Muster für intelligenten Cache erläutert wurde, auch hier gilt. Der Benutzer-Actor kann zum Zeitpunkt der Anmeldung aktiviert und mit ausreichend Daten aus Back-End-Diensten ausgefüllt werden. Gesamtstatus und partieller Status können natürlich, wie in vielen Fällen weiter oben in diesem Artikel ersichtlich war, bei Bedarf, auf einen Timer oder mit beidem zusammen, aufgefüllt und im Actor zwischengespeichert werden. Dieses Beispiel mit Profil und Wunschliste ist im Folgenden dargestellt:
 
 ![][2]
@@ -71,6 +75,7 @@ Nachteile von "zustandslosen Diensten" sehen wir bei der Erstellung von skalierb
 
 
 ## Nächste Schritte
+
 [Muster: Intelligenter Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
 
 [Muster: Verteilte Netzwerke und Diagramme](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
@@ -91,4 +96,4 @@ Nachteile von "zustandslosen Diensten" sehen wir bei der Erstellung von skalierb
 [2]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-3.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

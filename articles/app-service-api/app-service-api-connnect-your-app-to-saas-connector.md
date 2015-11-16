@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/06/2015" 
+	ms.date="11/03/2015" 
 	ms.author="tdykstra"/>
 
 # Bereitstellen und Konfigurieren einer SaaS-Connector-API-App in Azure App Service
@@ -237,4 +237,4 @@ Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und 
 [Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Funktionen von Azure Resource Manager-Vorlagen"
-   description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
+   pageTitle="Vorlagenfunktionen im Ressourcen-Manager | Microsoft Azure"
+   description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Arbeiten mit Zeichenfolgen und numerischen Werten sowie Abrufen von Bereitstellungsinformationen verwendet werden."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,12 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/13/2015"
+   ms.date="11/02/2015"
    ms.author="tomfitz"/>
 
-# Funktionen von Azure Resource Manager-Vorlagen
+# Vorlagenfunktionen im Azure-Ressourcen-Manager
 
 Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager-Vorlage verwenden können.
+
+Bei Vorlagenfunktionen und ihren Parametern wird Groß-und Kleinschreibung unterschieden. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf.
 
 ## Hinzufügen
 
@@ -266,7 +268,7 @@ Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressou
 
 Die **Referenz**-Funktion leitet ihren Wert von einem Laufzeitstatus ab und kann somit nicht im Variablen-Abschnitt verwendet werden. Sie kann in Ausgabeabschnitten einer Vorlage verwendet werden.
 
-Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die Eigenschaft **dependsOn** verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
+Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die **dependsOn**-Eigenschaft verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
 
     "outputs": {
       "siteUri": {
@@ -543,6 +545,6 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - Eine Beschreibung der Abschnitte in einer Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Zusammenführen mehrerer Vorlagen finden Sie unter [Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager](resource-group-linked-templates.md).
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
-- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
+- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

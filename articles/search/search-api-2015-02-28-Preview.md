@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="search"
-   ms.date="10/01/2015"
+   ms.date="11/04/2015"
    ms.author="heidist"/>
 
 # Azure-Suchdienst-REST-API: Version 2015-02-28-Preview
 
-Dieser Artikel bildet die Referenzdokumentation zu `api-version=2015-02-28-Preview`. Diese Vorschauversion erweitert die aktuelle allgemein verfügbare Version [api-version=2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx) durch folgende experimentelle Features erweitert:
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Dieser Artikel bildet die Referenzdokumentation zu `api-version=2015-02-28-Preview`. Diese Vorschauversion erweitert die aktuelle allgemein verfügbare Version [api-version=2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx) durch folgende experimentelle Features erweitert:
 
 - Die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) ist eine Implementierung des [Lucene-Abfrageparsers](https://lucene.apache.org/core/4_10_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), die Sie mit dem queryType-Parameter in den [Suchvorgängen](#SearchDocs) angeben können.
 - `moreLikeThis` ist ein in [Suchvorgängen](#SearchDocs) verwendeter Abfrageparameter, mit dem zu einem bestimmten Dokument weitere damit verbundene Dokumente ermittelt werden.
@@ -1742,4 +1742,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

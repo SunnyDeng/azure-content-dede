@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/13/2015"
+	ms.date="10/28/2015"
 	ms.author="csand"/>
 
 
@@ -43,4 +43,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation vertraut gemacht ha
 * Lernprogramm [Erste Schritte](../automation-intro.md) zu Azure Automation
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

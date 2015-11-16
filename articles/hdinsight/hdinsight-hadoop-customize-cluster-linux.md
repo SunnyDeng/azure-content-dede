@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
+	ms.date="11/02/2015"
 	ms.author="larryfr"/>
 
 # Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen (Linux)
@@ -243,7 +243,7 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 
 2. Starten Sie Azure PowerShell, und melden Sie sich bei Ihrem Azure-Konto an. Nach der Eingabe Ihrer Anmeldeinformationen gibt der Befehl die Informationen zu Ihrem Konto zurück.
 
-		Add-AzureRMAccount
+		Add-AzureRmAccount
 
 		Id                             Type       ...
 		--                             ----
@@ -251,13 +251,13 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 
 3. Wenn Sie über mehrere Abonnements verfügen, geben Sie die Abonnement-ID ein, die Sie für die Bereitstellung verwenden möchten.
 
-		Select-AzureRMSubscription -SubscriptionID <YourSubscriptionId>
+		Select-AzureRmSubscription -SubscriptionID <YourSubscriptionId>
 
-    > [AZURE.NOTE]Sie können `Get-AzureRMSubscription` zum Abrufen einer Liste aller Ihrem Konto zugeordneten Abonnements verwenden, einschließlich der Abonnement-ID jedes Abonnements.
+    > [AZURE.NOTE]Sie können `Get-AzureRmSubscription` zum Abrufen einer Liste aller Ihrem Konto zugeordneten Abonnements verwenden, einschließlich der Abonnement-ID jedes Abonnements.
 
 5. Erstellen Sie eine neue Ressourcengruppe, wenn noch keine vorhanden ist. Geben Sie den Namen der Ressourcengruppe und des gewünschten Speicherorts ein. Es wird eine Zusammenfassung der neuen Ressourcengruppe zurückgegeben.
 
-		New-AzureRMResourceGroup -Name myresourcegroup -Location "West US"
+		New-AzureRmResourceGroup -Name myresourcegroup -Location "West US"
 
 		ResourceGroupName : myresourcegroup
 		Location          : westus
@@ -270,10 +270,10 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 		ResourceId        : /subscriptions/######/resourceGroups/ExampleResourceGroup
 
 
-6. Führen Sie zum Erstellen einer neuen Bereitstellung für die Ressourcengruppe den Befehl **New-AzureResourceGroupDeployment** aus, und geben Sie die erforderlichen Parameter ein. Die Parameter enthalten den Namen der Bereitstellung, den Namen der Ressourcengruppe und den Pfad oder die URL der erstellten Vorlage. Wenn Ihre Vorlage Parameter erfordert, müssen Sie auch diese Parameter übergeben. In diesem Fall sind für die Skriptaktion zum Installieren von R auf dem Cluster keine Parameter erforderlich.
+6. Führen Sie zum Erstellen einer neuen Bereitstellung für die Ressourcengruppe den Befehl **New-AzureRmResourceGroupDeployment** aus, und geben Sie die erforderlichen Parameter ein. Die Parameter enthalten den Namen der Bereitstellung, den Namen der Ressourcengruppe und den Pfad oder die URL der erstellten Vorlage. Wenn Ihre Vorlage Parameter erfordert, müssen Sie auch diese Parameter übergeben. In diesem Fall sind für die Skriptaktion zum Installieren von R auf dem Cluster keine Parameter erforderlich.
 
 
-		New-AzureRMResourceGroupDeployment -Name mydeployment -ResourceGroupName myresourcegroup -TemplateFile <PathOrLinkToTemplate>
+		New-AzureRmResourceGroupDeployment -Name mydeployment -ResourceGroupName myresourcegroup -TemplateFile <PathOrLinkToTemplate>
 
 
 	Sie werden aufgefordert, Werte für die in der Vorlage definierten Parameter anzugeben.
@@ -289,42 +289,41 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 
 8. Wenn die Bereitstellung fehlschlägt, können Sie mithilfe der folgenden Cmdlets Informationen zu den Fehlern abrufen.
 
-		Get-AzureRMResourceGroupDeployment -ResourceGroupName myresourcegroup -ProvisioningState Failed
+		Get-AzureRmResourceGroupDeployment -ResourceGroupName myresourcegroup -ProvisioningState Failed
 
 ## Verwenden einer Skriptaktion in Azure PowerShell
 
-In diesem Abschnitt verwenden wir das Cmdlet [Add-AzureHDInsightScriptAction](http://msdn.microsoft.com/library/dn858088.aspx) zum Aufrufen von Skripts mithilfe von „Skriptaktion“ zum Anpassen eines Clusters. Stellen Sie vor dem Fortfahren sicher, dass Azure PowerShell installiert und konfiguriert ist. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+In diesem Abschnitt verwenden wir das Cmdlet [Add-AzureRmHDInsightScriptAction](https://msdn.microsoft.com/library/mt603527.aspx) zum Aufrufen von Skripts mithilfe von „Skriptaktion“ zum Anpassen eines Clusters. Stellen Sie vor dem Fortfahren sicher, dass Azure PowerShell installiert und konfiguriert ist. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 Führen Sie die folgenden Schritte aus:
 
 1. Öffnen Sie die Azure PowerShell-Konsole, und deklarieren Sie die folgenden Variablen:
 
 		# PROVIDE VALUES FOR THESE VARIABLES
-		$subscriptionName = "<SubscriptionName>"		# Name of the Azure subscription
+		$subscriptionId = "<SubscriptionId>"		# ID of the Azure subscription
 		$clusterName = "<HDInsightClusterName>"			# HDInsight cluster name
 		$storageAccountName = "<StorageAccountName>"	# Azure storage account that hosts the default container
 		$storageAccountKey = "<StorageAccountKey>"      # Key for the storage account
 		$containerName = $clusterName
 		$location = "<MicrosoftDataCenter>"				# Location of the HDInsight cluster. It must be in the same data center as the storage account.
 		$clusterNodes = <ClusterSizeInNumbers>			# The number of nodes in the HDInsight cluster.
-		$version = "<HDInsightClusterVersion>"          # HDInsight version, for example "3.1"
         $resourceGroupName = "<ResourceGroupName>"      # The resource group that the HDInsight cluster will be created in
 
 2. Legen Sie die Konfigurationswerte fest, z. B. Knoten im Cluster und den zu verwendenden Standardspeicher.
 
 		# SPECIFY THE CONFIGURATION OPTIONS
-		Select-AzureRMSubscription $subscriptionName
-		$config = New-AzureRMHDInsightClusterConfig
+		Select-AzureRmSubscription -SubscriptionId $subscriptionId
+		$config = New-AzureRmHDInsightClusterConfig
 		$config.DefaultStorageAccountName="$storageAccountName.blob.core.windows.net"
 		$config.DefaultStorageAccountKey=$storageAccountKey
 
-3. Rufen Sie das Skript mithilfe des Cmdlets **Add-AzureHDInsightScriptAction** auf. Im folgenden Beispiel wird ein Skript zum Installieren von R auf dem Cluster verwendet:
+3. Rufen Sie das Skript mithilfe des Cmdlets **Add-AzureRmHDInsightScriptAction** auf. Im folgenden Beispiel wird ein Skript zum Installieren von R auf dem Cluster verwendet:
 
 		# INVOKE THE SCRIPT USING THE SCRIPT ACTION FOR HEADNODE AND WORKERNODE
-		$config = Add-AzureRMHDInsightScriptAction -Config $config -Name "Install R"  -NodeType HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
-        $config = Add-AzureRMHDInsightScriptAction -Config $config -Name "Install R"  -NodeType WorkerNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+		$config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+        $config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType WorkerNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
 
-	Das Cmdlet **Add-AzureHDInsightScriptAction** verwendet die folgenden Parameter:
+	Das Cmdlet **Add-AzureRmHDInsightScriptAction** verwendet die folgenden Parameter:
 
 	| Parameter | Definition |
 	| --------- | ---------- |
@@ -335,10 +334,8 @@ Führen Sie die folgenden Schritte aus:
 	| Uri | Gibt den URI des auszuführenden Skripts an. |
 
 4. Erstellen Sie schließlich den Cluster:
-
-		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version
         
-        New-AzureRMHDInsightCluster -config $config -clustername $clusterName -DefaultStorageContainer $containerName -Location $location -ResourceGroupName $resourceGroupName -ClusterSizeInNodes 2
+        New-AzureRmHDInsightCluster -config $config -clustername $clusterName -DefaultStorageContainer $containerName -Location $location -ResourceGroupName $resourceGroupName -ClusterSizeInNodes $clusterNodes
 
 Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Die Erstellung des Clusters kann einige Minuten in Anspruch nehmen.
 
@@ -550,4 +547,4 @@ Informationen und Beispiele zum Erstellen und Verwenden von Skripts zum Anpassen
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Phasen während der Clustererstellung"
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

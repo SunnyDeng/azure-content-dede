@@ -36,7 +36,7 @@ Die folgende Abbildung zeigt ein Beispiel für benutzerdefinierte Routen und IP-
 
 ![Systemrouten in Azure](./media/virtual-networks-udr-overview/Figure2.png)
 
->[AZURE.IMPORTANT]Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
+>[AZURE.IMPORTANT]Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem gleichen Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
 
 ## Routing
 Pakete werden über ein TCP/IP-Netzwerk weitergeleitet, das auf einer Routentabelle beruht, die auf den einzelnen Knoten im physischen Netzwerk definiert wird. Eine Routentabelle ist eine Sammlung der einzelnen Routen, anhand derer entschieden wird, wohin die Pakete beruhend auf der Ziel-IP-Adresse weitergeleitet werden. Eine Route besteht aus den folgenden Elementen:
@@ -90,4 +90,4 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 - Erfahren Sie, wie Sie [Routen im Ressourcen-Manager-Bereitstellungsmodell erstellen](../virtual-network-create-udr-arm-template) und diese Subnetzen zuordnen. 
 - Erfahren Sie, wie Sie [Routen im klassischen Bereitstellungsmodell erstellen](../virtual-network-create-udr-classic-ps) und diese Subnetzen zuordnen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

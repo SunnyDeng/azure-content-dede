@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Entwurfsmuster für Ressourcenkontrolle in Azure Service Fabric Actors"
-   description="Entwurfsmuster zur Verwendung von Service Fabric Actors zum Modellieren von Anwendungen, die skaliert werden sollen, jedoch beschränkte Ressourcen verwenden"
+   pageTitle="Entwurfsmuster für Ressourcenkontrolle | Microsoft Azure"
+   description="Entwurfsmuster zur Verwendung von Service Fabric Reliable Actors zum Modellieren von Anwendungsanforderungen, die zentral hochskaliert werden sollen, jedoch beschränkte Ressourcen verwenden."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -17,6 +17,7 @@
    ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Ressourcenkontrolle
+
 Dieses Muster und verwandte Szenarien sind leicht erkennbar für Entwickler – in Unternehmen oder anderswo – die über beschränkte Ressourcen auf lokaler Ebene oder in der Cloud verfügen, die sie nicht sofort skalieren können, oder die große Anwendungen und Daten in die Cloud senden möchten.
 
 In Unternehmen werden diese beschränkten Ressourcen, wie z. B. Datenbanken, auf hochskalierbarer Hardware ausgeführt. Wer über eine lange Unternehmenserfahrung verfügt, weiß, dass dies eine gängige Situation in Unternehmen ist. Selbst auf Cloud-Ebene kann diese Situation auftreten, wenn ein Cloud-Dienst versucht, das TCP-Verbindungslimit von 64 K zwischen einem Adresse-Port-Tupel zu cloundbasiert oder eine Verbindung zu einer Cloud-basierten Datenbank herzustellen, die die Anzahl gleichzeitiger Verbindungen beschränkt.
@@ -30,6 +31,7 @@ Das folgende Diagramm zeigt dieses Szenario:
 ![][1]
 
 ## Modellieren von Cache-Szenarien mit Actors
+
 Im Wesentlichen wird der Zugriff auf Ressourcen als ein oder mehrere Actors modelliert, die als Proxys (also beispielsweise Verbindung) für eine Ressource oder eine Gruppe von Ressourcen fungieren. Die Ressource kann dann entweder direkt über einzelne Actors oder über einen Koordinierung-Actor verwaltet werden, der wiederum die Ressourcen-Actors steuert. Künftig werden wir uns vor allem mit der häufig aus Leistungs- und Skalierbarkeitsgründen entstehenden Notwendigkeit befassen, mit einer partinierten (oder auch fragmentierten) Speicherebene zu arbeiten. Die erste Option ist ziemlich grundlegend: Es ist möglich, eine statische Funktion zum Zuordnen und Auflösen der Actors in nachgeschalteten Ressourcen zu verwenden. Eine solche Funktion kann z. B. eine Verbindungszeichenfolge mit gegebener Eingabe zurückgeben. Es steht uns vollkommen frei, wie diese Funktion implementiert wird. Natürlich hat auch dieser Ansatz seine Nachteile, wie z. B. statische Affinität, die die Neupartitionierung von Ressourcen oder die Neuzuordnung eines Actors sehr schwierig macht. Hier ist ein sehr einfaches Beispiel – wir wenden Modulo-Arithmetik an, um den Datenbanknamen mit der Benutzer-ID zu bestimmen, und verwenden die Region, um den Datenbankserver zu identifizieren.
 
 ## Codebeispiel für Ressourcenkontrolle – Statische Auflösung
@@ -140,6 +142,7 @@ public class Resolver : Actor<ResolverState>, IResolver
 ```
 
 ## Zugreifen auf Ressourcen mit begrenzter Funktion
+
 Betrachten wir nun ein weiteres Beispiel. Exklusiver Zugriff auf wertvolle Ressourcen, wie z. B. Datenbanken, Speicherkonten und Dateisysteme mit begrenzter Durchsatzfunktion. Das Szenario ist wie folgt: Die Verarbeitung von Ereignissen soll mit einem Actor namens EventProcessor durchgeführt werden, der für die Verarbeitung und Persistenz des Ereignisses, aus Gründen der Einfachheit in diesem Fall in eine CSV-Datei, verantwortlich ist. Wir können zwar den weiter oben erläuterten Partitionierungsansatz zum horizontalen Hochskalieren unserer Ressourcen befolgen, müssen uns jedoch noch weiter mit Parallelitätsproblemen beschäftigen. Daher wurde ein dateibasiertes Beispiel gewählt, um diesen bestimmten Punkt zu verdeutlichen – das Schreiben aus mehreren Actors in eine einzelne Datei führt zu Parallelitätsproblemen. Um dieses Problem zu beheben, wird ein weiterer Actor namens EventWriter eingeführt, der über die exklusiven Besitzrechte an den eingeschränkten Ressourcen verfügt. Dieses Szenario ist im Folgenden dargestellt:
 
 ![][3]
@@ -398,6 +401,7 @@ Dieses Muster ist sehr gängig in Szenarien, in denen Entwickler entweder über 
 
 
 ## Nächste Schritte
+
 [Muster: Intelligenter Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
 
 [Muster: Verteilte Netzwerke und Diagramme](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
@@ -417,4 +421,4 @@ Dieses Muster ist sehr gängig in Szenarien, in denen Entwickler entweder über 
 [2]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch3.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

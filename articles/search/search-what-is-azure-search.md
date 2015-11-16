@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Was ist Azure Search"
-	description="Azure Search: Technische Übersicht und Funktionsübersicht"
+	description="Azure Search ist ein gehosteter Cloudsuchdienst. Erfahren Sie mehr in dieser technischen Übersicht und Zusammenfassung der Features."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,12 +14,12 @@
 	ms.workload="search"
 	ms.topic="article" 
 	ms.tgt_pltfrm="na"
-	ms.date="07/08/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Was ist Azure Search?
 
-Der Azure Search-Dienst ist ein vollständig verwalteter Clouddienst, mit dem Entwickler umfassende Suchanwendungen mit einem .NET SDK oder mit REST-APIs erstellen können. Er umfasst eine Volltextsuchfunktion, mit der Sie Ihren gesamten Inhalten durchsuchen können, sowie erweiterte Suchfunktionen, die den Funktionen in kommerziellen Internet-Suchmaschinen ähneln, z. B. Abfragevorschläge basierend auf einer partiellen Begriffseingabe, Hervorhebung von Treffern und Facettennavigation. Die Unterstützung natürlicher Sprachen ist integriert, wobei jeweils die für die angegebene Sprache geltenden linguistischen Regeln verwendet werden.
+Der Azure Search-Dienst ist ein vollständig verwalteter gehosteter Cloudsuchdienst, mit dem Entwickler umfassende Suchanwendungen mit einem .NET SDK oder mit REST-APIs erstellen können. Er umfasst eine Volltextsuchfunktion, mit der Sie Ihren gesamten Inhalten durchsuchen können, sowie erweiterte Suchfunktionen, die den Funktionen in kommerziellen Internet-Suchmaschinen ähneln, z. B. Abfragevorschläge basierend auf einer partiellen Begriffseingabe, Hervorhebung von Treffern und Facettennavigation. Die Unterstützung natürlicher Sprachen ist integriert, wobei jeweils die für die angegebene Sprache geltenden linguistischen Regeln verwendet werden.
 
 Sie können den Dienst je nach Bedarf an verbesserten Suchfunktionen oder Speicherkapazität skalieren. Beispielsweise können Einzelhändler die Kapazität erhöhen, um das mit Feiertagseinkäufen oder Werbeveranstaltungen verbundene zusätzliche Volumen verarbeiten zu können.
 
@@ -131,4 +131,4 @@ Sie können auch diese Lernprogramme ausprobieren:
 
 [Verwenden von Azure Search in .NET](search-howto-dotnet-sdk.md) [Erste Schritte mit Azure Search .NET](search-get-started-dotnet.md) [Azure Search: Lernprogramme, Videodemos und Beispiele](search-video-demo-tutorial-list.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

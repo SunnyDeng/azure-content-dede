@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erste Schritte mit Azure Search | Microsoft Azure" 
-	description="Erste Schritte mit Azure Search" 
+	description="Erste Schritte mit Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -14,12 +14,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search
 
-Microsoft Azure Search ist ein neuer Dienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt die Suchmaschine und den Speicherplatz für Ihre Daten zur Verfügung. Der Zugriff darauf und die Verwaltung der Daten erfolgt mithilfe einer .NET-Bibliothek oder einer REST-API.
+Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt die Suchmaschine und den Speicherplatz für Ihre Daten zur Verfügung. Der Zugriff darauf und die Verwaltung der Daten erfolgt mithilfe einer .NET-Bibliothek oder einer REST-API.
 
 In diesem Artikel erhalten Sie eine Einführung in die REST-API für Azure Search.
 
@@ -378,4 +378,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -11,19 +11,19 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="11/02/2015" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit ServiceNow
   
-In diesem Tutorial wird die Integration von Azure und ServiceNow erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und ServiceNow erläutert. Das in diesem Tutorial verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen Mandanten in ServiceNow
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie ServiceNow zugewiesen haben, mittels einmaliger Anmeldung auf der ServiceNow-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie ServiceNow zugewiesen haben, mittels einmaliger Anmeldung auf der ServiceNow-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
-Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
+Das in diesem Tutorial beschriebene Szenario besteht aus den folgenden Bausteinen:
 
 1.  Aktivieren der Anwendungsintegration für ServiceNow
 2.  Konfigurieren der einmaligen Anmeldung
@@ -66,7 +66,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ser
   
 In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ServiceNow zu authentifizieren.
 
-Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihren Dropbox für Unternehmen-Mandanten hochladen. Falls Sie mit diesem Verfahren nicht vertraut sind, erhalten Sie im Video [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
+Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihren Dropbox für Unternehmen-Mandanten hochladen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -78,91 +78,142 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC749324.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ServiceNow-Anmelde-URL** die URL im Format „*https://<InstanceName>.servicenow.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Führen Sie auf der Seite **App-Einstellungen konfigurieren** die folgenden Schritte aus:
 
     ![App-URL konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC769497.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um ServiceNow** auf **Zertifikat herunterladen**, speichern Sie das Zertifikat lokal auf Ihrem Computer, und klicken Sie dann auf **Weiter**.
+    a. Geben Sie im Textfeld **ServiceNow-Anmelde-URL** die URL ein, die von Ihren Benutzern zum Anmelden bei Ihrer ServiceNow-Anwendung verwendet wird (z. B.: *https://\<Instanzname>.service-now.com*).
+
+    b. Geben Sie im Textfeld **Aussteller-URL** die URL ein, die von Ihren Benutzern zum Anmelden bei Ihrer ServiceNow-Anwendung verwendet wird (z. B.: *https://\<Instanzname>.service-now.com*).
+
+    c. Klicken Sie auf **Weiter**.
+
+4.  Klicken auf der Seite **Einmaliges Anmelden automatisch konfigurieren** auf **Diese Anwendung manuell für einmaliges Anmelden konfigurieren**, und klicken Sie dann auf **Weiter**.
+
+    ![App-URL konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694971.png "App-URL konfigurieren")
+
+
+
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für ServiceNow** auf **Zertifikat herunterladen**, speichern Sie das Zertifikat lokal auf Ihrem Computer, und klicken Sie dann auf **Weiter**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC749325.png "Einmaliges Anmelden konfigurieren")
 
-5.  Klicken Sie in Ihrem ServiceNow-Mandanten auf der Navigationsleiste auf der linken Seite auf **Eigenschaften**, um die Seite mit den **SAML 2.0 SSO-Eigenschaften** zu öffnen.
+1. Melden Sie sich bei Ihrer ServiceNow-Anwendung als Administrator an.
+
+2. Klicken Sie im Navigationsbereich auf der linken Seite auf **Properties**.
+
+    ![App-URL konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694980.png "App-URL konfigurieren")
 
 
-6. Führen Sie im Dialogfeld mit den **SAML 2.0 SSO-Eigenschaften** die folgenden Schritte aus:
+3. Führen Sie im Dialogfeld **Multiple Provider SSO Properties** die folgenden Schritte aus:
 
-     6\.1. Wählen Sie unter **Enable external authentication** die Option **Yes** aus.
+    ![App-URL konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694981.png "App-URL konfigurieren")
 
+    a. Bei **Enable multiple provider SSO** wählen Sie **Yes** aus.
 
-     6\.2. Geben Sie im Textfeld **The Identity Provider URL which will issue the SAML2 security token with user info** die Information **https://sts.windows.net/<GUID Ihres Mandanten>/** ein.
+    b. Bei **Enable debug logging got the multiple provider SSO integration** wählen Sie **Yes** aus.
 
+    c. Im Textfeld **The field on the user table that...** geben Sie **user\_name** ein.
 
-     6\.3. Geben Sie im Textfeld **The base URL to the Identity Provider’s AuthnRequest service** die Information **https://login.windows.net/<GUID Ihres Mandanten>/saml2** ein.
-
-
-     6\.4. Geben Sie im Textfeld **The base URL to the Identity Provider’s SingleLogoutRequest service** die Information **https://login.windows.net/<GUID Ihres Mandanten>/saml2** ein.
-
-
-     6\.5. Geben Sie im Textfeld **The protocol binding for the Identity Provider’s SingleLogoutRequest service** die Information **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect** ein.
-
-     6\.6. Wählen Sie unter **Sign LogoutRequest** die Option **Yes** aus.
-
-     6\.7. Geben Sie **https://login.windows.net/<GUID Ihres Mandanten>/saml2** im Textfeld **When SAML 2.0 single sign-on fails because the session is not authenticated, or this is the first login, redirect to this URL** ein.
-
-  
-
-7. Gehen Sie im Abschnitt mit den **Dienstanbietereigenschaften (ServiceNow)** folgendermaßen vor:
-
-     7\.1. Geben Sie im Textfeld **The URL to Service-now instance homepage** die URL zur Homepage Ihrer ServiceNow-Instanz ein. Die URL zur Homepage der ServiceNow-Instanz ist eine Verkettung Ihrer **ServiceNow-Mandanten-URL** und **/navpage.do**: **https://<InstanceName>.service-now.com/navpage.do** <br><br> ![Homepage der ServiceNow-Instanz](./media/active-directory-saas-servicenow-tutorial/IC700342.png "Homepage der ServiceNow-Instanz")
-
-
-     7\.2. Geben Sie im Textfeld **The entity identification, or the issuer** die URL Ihres Mandanten ein.
-
-     7\.3. Geben Sie im Textfeld **The audience uri that accepts SAML2 token** die URL Ihres Mandanten ein.
-
-     7\.4. Geben Sie im Textfeld **The User table field to match with the Subject’s NameID element in the SAMLResponse** die Zeichenfolge **email** ein.
-
-     7\.5. Geben Sie im Textfeld **The NameID policy to use for returning the Subject’s NameID in the SAMLResponse** die Zeichenfolge **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified** ein.
-
-     7\.6. Lassen Sie **Create an AuthnContextClass request in the AuthnRequest statement** deaktiviert.
-
-     7\.7. Geben Sie im Textfeld **The AuthnContextClassRef method that will be included in our SAML 2.0 AuthnRequest to the Identity Provider** Folgendes ein: ****http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password**.
+    d. Klicken Sie auf **Save**.
 
 
 
-8. Führen Sie im Abschnitt **Advanced settings** die folgenden Schritte aus:
+1. Klicken Sie im Navigationsbereich auf der linken Seite auf **x509 Certificates**.
 
-     8\.1. Geben Sie im Textfeld **The number in seconds before “notBefore” constraint, or after “notOnOrAfter” constraint to consider still valid** die Anzahl **60** ein.
-
-
-9. Klicken Sie zum Speichern der Konfiguration auf **Save**.
-
-10. Klicken Sie auf der Navigationsleiste auf der linken Seite auf **Certificate**, um die Seite **Certificate** zu öffnen.
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694973.png "Einmaliges Anmelden konfigurieren")
 
 
+1. Klicken Sie im Dialogfeld **X.509 Certificates** auf **New**.
 
-11. Führen Sie auf der Zertifikatseite die folgenden Schritte aus, um Ihr Zertifikat hochzuladen:
-
-     11\.1. Klicken Sie auf **Neu**.
-
-     11\.2. Geben Sie im Textfeld **Name** den Namen **SAML 2.0** ein.
-
-     11\.3. Wählen Sie **Active**.
-
-     11\.4. Wählen Sie unter **Format** das Format **PEM** aus.
-
-     11\.5. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.[AZURE.NOTE]Weitere Informationen erhalten Sie im Video [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
-
-     11\.6. Öffnen Sie die Base64-codierte Datei in **Editor**, und kopieren Sie dann den Inhalt dieser Datei in die Zwischenablage.
-
-     11\.7. Fügen Sie den Inhalt der Zwischenablage in das Textfeld **PEM Certificate** ein.
-
-     11\.8. Klicken Sie auf **Senden**.
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694974.png "Einmaliges Anmelden konfigurieren")
 
 
+1. Führen Sie im Dialogfeld **X.509 Certificates** die folgenden Schritte aus:
 
-12. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf „Abschließen“, um das Dialogfeld „Einmaliges Anmelden konfigurieren“ zu schließen. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC749326.png "Einmaliges Anmelden konfigurieren")
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694975.png "Einmaliges Anmelden konfigurieren")
 
+    a. Klicken Sie auf **New**.
+
+    b. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B.: **TestSAML2.0**).
+
+    c. Wählen Sie **Active**.
+
+    d. Wählen Sie unter **Format** das Format **PEM** aus.
+
+    e. Wählen Sie unter **Type** den Typ **Trust Store Cert** aus.
+
+    f. Erstellen Sie eine Base-64-codierte Datei aus Ihrem heruntergeladene Zertifikat.
+    > [AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+    
+    g. Öffnen Sie das Base64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **PEM Certificate** ein.
+
+    h. Klicken Sie auf **Update**.
+
+
+1. Klicken Sie im Navigationsbereich auf der linken Seite auf **Identity Providers**.
+
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694976.png "Einmaliges Anmelden konfigurieren")
+
+1. Klicken Sie im Dialogfeld **Identity Providers** auf **New**:
+
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694977.png "Einmaliges Anmelden konfigurieren")
+
+
+1. Klicken Sie im Dialogfeld **Identity Providers** auf **SAML2 Update1?**:
+
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694978.png "Einmaliges Anmelden konfigurieren")
+
+
+1. Führen Sie im Dialogfeld „SAML2 Update1 Properties“ folgende Schritte aus:
+
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694982.png "Einmaliges Anmelden konfigurieren")
+
+
+    a. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B.: **SAML 2.0**).
+
+    b. Im Textfeld **User Field** geben Sie **email** ein.
+
+    c. Kopieren Sie im Azure AD-Portal den Wert für **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Identity Provider URL** ein.
+
+    d. Kopieren Sie im Azure AD-Portal den Wert für **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **Identity Provider's AuthnRequest** ein.
+
+    e. Kopieren Sie im Azure AD-Portal den Wert für **Dienst-URL für einmalige Abmeldung**, und fügen Sie ihn in das Textfeld **Identity Provider‘s SingleLogoutRequest** ein.
+
+    f. Geben Sie im Textfeld **ServiceNow Homepage** die URL zur Homepage Ihrer ServiceNow-Instanz ein.
+
+    > [AZURE.NOTE]Die URL zur Homepage der ServiceNow-Instanz ist eine Verkettung Ihrer **ServiceNow-Mandanten-URL** und **/navpage.do**, z. B.: **https://fabrikam.service-now.com/navpage.do*)
+ 
+
+    g. Geben Sie im Textfeld **Entity ID / Issuer** die URL Ihres ServiceNow-Mandanten (engl. „ServiceNow Tenant“) ein.
+
+    h. Geben Sie im Textfeld **Audience URL** die URL Ihres ServiceNow-Mandanten ein.
+
+    i. Geben Sie im Textfeld **Protocol Binding for the IDP's SingleLogoutRequest** die Zeichenfolge **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect** ein.
+
+    j. Geben Sie im Textfeld „NameID Policy“ die Zeichenfolge **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified** ein.
+
+    k. Deaktivieren Sie **Create an AuthnContextClass**.
+
+    l. In **AuthnContextClassRef Method** geben Sie ****http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password** ein.
+
+    m. Im Textfeld **Clock Skew** geben Sie **60** ein.
+
+    n. Als **Single Sign On Script** wählen Sie **MultiSSO\_SAML2\_Update1** aus.
+
+    o. Als **x509 Certificate** wählen Sie das im vorherigen Schritt erstellte Zertifikat aus.
+
+    p. Klicken Sie auf **Submit**.
+
+
+
+6. Wählen Sie im Azure AD-Portal die Bestätigung aus, dass Sie das einmalige Anmelden konfiguriert haben, und klicken Sie dann auf **Weiter**.
+
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694990.png "Einmaliges Anmelden konfigurieren")
+
+7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**.
+ 
+    ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694991.png "Einmaliges Anmelden konfigurieren")
 
 
 
@@ -173,10 +224,10 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
 ### So konfigurieren Sie die Benutzerbereitstellung
 
-1. Klicken Sie im Azure-Verwaltungsportal auf der Anwendungsintegrationsseite für **ServiceNow** auf **Benutzerbereitstellung konfigurieren**. <br><br> ![Benutzerbereitstellung](./media/active-directory-saas-servicenow-tutorial/IC769498.png "Benutzerbereitstellung")
+1. Klicken Sie im Azure-Verwaltungsportal auf der Anwendungsintegrationsseite für **ServiceNow** auf **Benutzerbereitstellung konfigurieren**. <br><br>![Benutzerbereitstellung](./media/active-directory-saas-servicenow-tutorial/IC769498.png "Benutzerbereitstellung")
 
 
-2. Legen Sie auf der Seite **Geben Sie Ihre ServiceNow-Anmeldeinformationen ein, um die automatische Benutzerbereitstellung zu aktivieren** die folgenden Konfigurationseinstellungen fest: Benutzerbereitstellung konfigurieren
+2. Legen Sie auf der Seite **Geben Sie Ihre ServiceNow-Anmeldeinformationen ein, um die automatische Benutzerbereitstellung zu aktivieren** die folgenden Konfigurationseinstellungen fest: „Benutzerbereitstellung konfigurieren“
 
      2\.1. Geben Sie im Textfeld **ServiceNow-Instanzname** den Namen der ServiceNow-Instanz ein.
 
@@ -188,7 +239,7 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
      2\.5. Klicken Sie auf **Weiter**, um die Seite **Nächste Schritte** zu öffnen.
 
-     2\.6. Wenn Sie alle Benutzer für diese Anwendung bereitstellen möchten, wählen Sie **Dieser Anwendung automatisch alle Benutzerkonten im Verzeichnis bereitstellen** aus. <br><br> ![Nächste Schritte](./media/active-directory-saas-servicenow-tutorial/IC698804.png "Nächste Schritte")
+     2\.6. Wenn Sie alle Benutzer für diese Anwendung bereitstellen möchten, wählen Sie „**Dieser Anwendung automatisch alle Benutzerkonten im Verzeichnis bereitstellen**“ aus. <br><br> ![Nächste Schritte](./media/active-directory-saas-servicenow-tutorial/IC698804.png "Nächste Schritte")
 
      2\.7. Klicken Sie auf der Seite **Nächste Schritte** auf **Abgeschlossen**, um die Konfiguration zu speichern.
 
@@ -226,4 +277,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 * [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

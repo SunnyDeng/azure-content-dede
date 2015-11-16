@@ -13,14 +13,19 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="08/12/2015" 
+    ms.date="11/04/2015" 
     ms.author="vikbucha" />
 
 
 
 # Problembehandlung bei der Erstellung von RemoteApp-Cloud-Sammlungen
 
-Folgende Fehler treten im Azure-Verwaltungsportal häufig auf:
+Wenn Sie beim Erstellen einer Cloudsammlung Probleme haben, überprüfen Sie die folgenden Informationen.
+
+## Ihr Image ist ungültig. ##
+Wenn eine Meldung wie „GoldImageInvalid“ angezeigt wird, während Sie darauf warten, dass Azure Ihre Sammlung bereitstellt, bedeutet dies, dass Ihr Vorlagenimage nicht die [definierten Anforderungen für Images](remoteapp-imagereqs.md) erfüllt. Gehen Sie deshalb diese [Anforderungen](remoteapp-imagereqs.md) durch, korrigieren Sie Ihr Image, und versuchen Sie erneut, Ihre Sammlung zu erstellen.
+
+## Häufige im Azure-Verwaltungsportal angezeigte Fehler
 
 	DNS server could not be reached
 	ProvisioningTimeout
@@ -38,4 +43,4 @@ Wenn Sie ein der Microsoft-Images verwenden, die in Ihrem Abonnement enthalten s
 Wenn dieser Fehler angezeigt wird, deutet dies i. d. R. darauf hin, dass ein Upgrade Ihres Konto auf ein Bezahlkonto durchgeführt wurde, Sie aber versuchen, ein von Microsoft bereitgestelltes Image zu verwenden, das nur während der Testphase des Diensts gültig ist. Versuchen Sie in diesem Fall, Ihre Cloud-Sammlung erneut zu erstellen, und geben Sie dabei das richtige Image an.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

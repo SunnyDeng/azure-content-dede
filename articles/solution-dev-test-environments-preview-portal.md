@@ -144,7 +144,7 @@ In der folgenden Tabelle sind die in der Vorlage angegebenen Standardwerte für 
 | **requestedServiceObjectiveName** | S0 | S1 |
 
 ## Erstellen von Umgebungen
-Alle Azure-Ressourcen müssen innerhalb einer [Azure-Ressourcengruppe](azure-portal/resource-group-portal.md) erstellt werden. Mit Ressourcengruppen können Sie Azure-Ressourcen so gruppieren, dass sie gemeinsam verwaltet werden können. Ressourcengruppen können [Berechtigungen](azure-portal/resource-group-rbac.md) zugewiesen werden, sodass bestimmte Personen in Ihrer Organisation die Ressourcengruppen und die darin enthaltenen Ressourcen erstellen, ändern, löschen oder anzeigen können. Warnungen und Abrechnungsinformationen für Ressourcen in der Ressourcengruppe können im [Azure-Vorschauportal](https://portal.azure.com) angezeigt werden. Ressourcengruppen werden an einem Azure-[Standort](http://azure.microsoft.com/regions/) erstellt. In diesem Artikel werden alle Ressourcen am Standort "USA, Mitte" erstellt. Wenn Sie damit beginnen, tatsächliche Umgebungen zu erstellen, wählen Sie den Standort aus, der Ihren Anforderungen am besten entspricht.
+Alle Azure-Ressourcen müssen innerhalb einer [Azure-Ressourcengruppe](azure-portal/resource-group-portal.md) erstellt werden. Mit Ressourcengruppen können Sie Azure-Ressourcen so gruppieren, dass sie gemeinsam verwaltet werden können. Ressourcengruppen können [Berechtigungen](resource-group-rbac.md) zugewiesen werden, sodass bestimmte Personen in Ihrer Organisation die Ressourcengruppen und die darin enthaltenen Ressourcen erstellen, ändern, löschen oder anzeigen können. Warnungen und Abrechnungsinformationen für Ressourcen in der Ressourcengruppe können im [Azure-Vorschauportal](https://portal.azure.com) angezeigt werden. Ressourcengruppen werden an einem Azure-[Standort](http://azure.microsoft.com/regions/) erstellt. In diesem Artikel werden alle Ressourcen am Standort "USA, Mitte" erstellt. Wenn Sie damit beginnen, tatsächliche Umgebungen zu erstellen, wählen Sie den Standort aus, der Ihren Anforderungen am besten entspricht.
 
   **Schritt 5:** Erstellen Sie Ressourcengruppen für die Entwicklungs- und Testumgebungen mithilfe einer der folgenden Methoden. Mit beiden Methoden wird genau dasselbe Ergebnis erzielt.
 
@@ -384,4 +384,4 @@ Jetzt wissen Sie, wie einfach es ist, Entwicklungs- und Testumgebungen zu erstel
 - Verwenden von [Release Management für Visual Studio](http://msdn.microsoft.com/Library/vs/alm/Release/overview) zum Erstellen verwalteter, kontinuierlicher Bereitstellungspipelines für schnelle, einfache und häufige Releases.
 - Anfordern einer Einladung für die Vorschau von [Azure Dev/Test Lab](http://azure.microsoft.com/campaigns/devtest-lab/). Damit können Sie Ihre Entwicklungs- und Testumgebungen mithilfe von Vorlagen verwalten und Kontingente und Richtlinien zur Verwendung in Ihrer Organisation konfigurieren.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

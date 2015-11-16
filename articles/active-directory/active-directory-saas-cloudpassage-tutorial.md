@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.date="10/30/2015"
 	ms.author="markvi"/>
 
 
@@ -281,4 +281,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [29]: ./media/active-directory-saas-cloudpassage-tutorial/tutorial_general_16.png
 [30]: ./media/active-directory-saas-cloudpassage-tutorial/tutorial_general_17.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/21/2015"
+   ms.date="11/03/2015"
    ms.author="mausher;barbkess"/>
 
 
@@ -23,6 +23,7 @@
 - [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)
 - [PolyBase](sql-data-warehouse-load-with-polybase-short.md)
 - [BCP](sql-data-warehouse-load-with-bcp.md)
+
 
 **[bcp][]** ist ein Befehlszeilen-Dienstprogramm zum Massenladen, das es Ihnen ermöglicht, Daten zwischen SQL Server, Datendateien und SQL Data Warehouse zu kopieren. Verwenden sie bcp zum Importieren großer Mengen an neuen Zeilen in SQL Data Warehouse-Tabellen oder zum Exportieren von Daten aus SQL Server-Tabellen in Datendateien. bcp erfordert außer bei Verwendung mit der queryout-Option keine Kenntnisse von Transact-SQL.
 
@@ -34,7 +35,7 @@ Mit bcp haben Sie folgende Möglichkeiten:
 - Verwenden eines einfachen Befehlszeilenprogramms zum Extrahieren von Daten aus SQL Data Warehouse.
 
 In diesem Lernprogramm lernen Sie Folgendes:
- 
+
 - Importieren von Daten in eine Tabelle mithilfe des „bcp in“-Befehls
 - Exportieren von Daten aus einer Tabelle mithilfe des „bcp out“-Befehls
 
@@ -64,14 +65,20 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I
 Nachdem die Verbindung hergestellt wurde, kopieren Sie das folgende Tabellenskript in die sqlcmd-Eingabeaufforderung, und drücken Sie dann die EINGABETASTE:
 
 ```
-CREATE TABLE DimDate2 (DateId INT NOT NULL, CalendarQuarter TINYINT NOT NULL, FiscalQuarter TINYINT NOT NULL);
-```
-
-Geben Sie in der nächsten Zeile das Batchabschlusszeichen GO ein, und drücken Sie dann die EINGABETASTE, um die Anweisung auszuführen:
-
-```
+CREATE TABLE DimDate2 
+(
+    DateId INT NOT NULL,
+    CalendarQuarter TINYINT NOT NULL,
+    FiscalQuarter TINYINT NOT NULL
+)
+WITH 
+(
+    CLUSTERED COLUMNSTORE INDEX,
+    DISTRIBUTION = ROUND_ROBIN
+);
 GO
 ```
+>[AZURE.NOTE]Weitere Informationen zu den verfügbaren Optionen für die WITH-Klausel finden Sie unter dem Thema [Tabellenentwurf][] in der Entwicklungsgruppe der Themen.
 
 ### Schritt 2: Erstellen einer Quelldatendatei
 
@@ -127,6 +134,19 @@ DateId |CalendarQuarter |FiscalQuarter
 20151101 |4 |2
 20151201 |4 |2
 
+### Schritt 4: Erstellen von Statistiken für die neu geladenen Daten 
+
+Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie unter dem Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
+
+Führen Sie die folgenden CREATE STATISTICS-Anweisungen über eine sqlcmd-Eingabeaufforderung aus:
+
+```
+create statistics [DateId] on [DimDate2] ([DateId]);
+create statistics [CalendarQuarter] on [DimDate2] ([CalendarQuarter]);
+create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
+GO
+```
+
 ## Exportieren von Daten aus SQL Data Warehouse
 In diesem Lernprogramm erstellen Sie eine Datendatei aus einer Tabelle in SQL Data Warehouse. Wir werden die oben erstellten Daten in eine neue Datendatei namens "DimDate2\_export.txt" exportieren.
 
@@ -163,8 +183,11 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 
 <!--Article references-->
 
-[Laden von Daten in SQL Data Warehouse]: ./sql-data-warehouse-overview-load/
-[Entwicklungsübersicht für SQL Data Warehouse]: ./sql-data-warehouse-overview-develop/
+[Laden von Daten in SQL Data Warehouse]: ./sql-data-warehouse-overview-load.md
+[Entwicklungsübersicht für SQL Data Warehouse]: ./sql-data-warehouse-overview-develop.md
+[Tabellenentwurf]: ./sql-data-warehouse-develop-table-design.md
+[Statistiken]: ./sql-data-warehouse-develop-statistics.md
+
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/library/ms162802.aspx
@@ -173,4 +196,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

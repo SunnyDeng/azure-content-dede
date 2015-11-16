@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verbinden von Azure SQL-Datenbank mit Azure Search mithilfe von Indexern" 
+	pageTitle="Verbinden von Azure SQL-Datenbank mit Azure Search mithilfe von Indexern | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Daten aus SQL Azure-Datenbank mithilfe von Indexern in einen Azure Search-Index abrufen." 
 	services="search" 
 	documentationCenter="" 
@@ -13,12 +13,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="09/29/2015" 
+	ms.date="11/04/2015" 
 	ms.author="eugenesh"/>
 
 #Verbinden von Azure SQL-Datenbank mit Azure Search mithilfe von Indexern
 
-Der Azure Search-Dienst erleichtert die Bereitstellung einer hervorragenden Suchfunktion, aber bevor Sie suchen können, müssen Sie einen Azure Search-Index mit Daten füllen. Wenn sich die Daten in einer Azure SQL-Datenbank befinden, können Sie mit dem neuen Feature **Azure Search-Indexer für Azure SQL-Datenbank** (oder kurz **Azure SQL-Indexer**) in Azure Search den Indizierungsprozess automatisieren. Dies bedeutet, dass Sie weniger Code schreiben und weniger Infrastruktur berücksichtigen müssen.
+Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie eine überzeugende Suchumgebung einfach bereitstellen können. Bevor Sie suchen können, müssen Sie einen Azure Search-Index mit Daten auffüllen. Wenn sich die Daten in einer Azure SQL-Datenbank befinden, können Sie mit dem neuen Feature **Azure Search-Indexer für Azure SQL-Datenbank** (oder kurz **Azure SQL-Indexer**) in Azure Search den Indizierungsprozess automatisieren. Dies bedeutet, dass Sie weniger Code schreiben und weniger Infrastruktur berücksichtigen müssen.
 
 Derzeit funktioniert der Indexer nur mit Azure SQL-Datenbank, SQL Server auf Azure-VMs und [Azure-DocumentDB](../documentdb/documentdb-search-indexer.md). In diesem Artikel konzentrieren wir uns auf Indexer, die mit Azure SQL-Datenbank arbeiten. Wenn Sie sich Unterstützung für zusätzliche Datenquellen wünschen, geben Sie dazu im [Feedback-Forum für Azure Search Feedback](http://feedback.azure.com/forums/263029-azure-search).
 
@@ -279,4 +279,4 @@ A: Ja. Indexer werden auf einem der Knoten im Suchdienst ausgeführt, und die Re
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

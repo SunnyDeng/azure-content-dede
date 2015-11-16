@@ -92,10 +92,10 @@ Um beispielsweise Ihren WebJob alle 15 Minuten auszulösen, sieht `settings.job`
 
 Weitere Beispiele für CRON-Zeitpläne:
 
-- Einmal pro Stunde (d. h. wenn die Minutenzahl 0 ist): `* 0 * * * *` 
-- Jede Stunde von 9: 00 bis 17 Uhr: `* 0 9-17 * * *` 
-- Täglich um 9:30 Uhr: `* 30 9 * * *`
-- An jedem Wochentag um 9:30 Uhr: `* 30 9 * * 1-5`
+- Einmal pro Stunde (d. h. wenn die Minutenzahl 0 ist): `0 0 * * * *` 
+- Jede Stunde von 9:00 bis 17:00 Uhr: `0 0 9-17 * * *` 
+- Täglich um 9:30 Uhr: `0 30 9 * * *`
+- An jedem Werktag um 9:30 Uhr: `0 30 9 * * 1-5`
 
 **Hinweis**: Wenn Sie eine WebJob aus Visual Studio bereitstellen, stellen Sie sicher, die `settings.job` Dateieigenschaften als „Kopieren wenn neuer“ markieren.
 
@@ -239,4 +239,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

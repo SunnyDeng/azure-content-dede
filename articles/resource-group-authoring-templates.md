@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/27/2015"
+   ms.date="11/04/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
@@ -54,33 +54,7 @@ Die grundlegende Syntax der Vorlage ist JSON. Allerdings erweitern Ausdrücke un
 
 In der Regel verwenden Sie Ausdrücke mit Funktionen, um Vorgänge zum Konfigurieren der Bereitstellung durchzuführen. Genau wie in JavaScript haben Funktionsaufrufe das Format **functionName(arg1,arg2,arg3)**. Auf Eigenschaften verweisen Sie mithilfe der Operatoren Punkt und [Index].
 
-Die folgende Liste zeigt häufig verwendete Funktionen.
-
-- **parameters(parameterName)**
-
-    Gibt bei Ausführung der Bereitstellung einen Parameterwert zurück.
-
-- **variables(variableName)**
-
-    Gibt eine Variable zurück, die in der Vorlage definiert ist.
-
-- **concat(arg1,arg2,arg3,...)**
-
-    Kombiniert mehrere Zeichenfolgenwerte. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
-
-- **base64(inputString)**
-
-    Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
-
-- **resourceGroup()**
-
-    Gibt ein strukturiertes Objekt (mit Eigenschaften für ID, Name und Speicherort) zurück, das die aktuellen Ressourcengruppe darstellt.
-
-- **resourceId([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
-
-    Gibt den eindeutigen Bezeichner einer Ressource zurück. Kann zum Abrufen von Ressourcen aus einer anderen Ressourcengruppe verwendet werden.
-
-Das folgende Beispiel zeigt, wie Sie einige der Funktionen beim Erstellen von Werten verwenden:
+Das folgende Beispiel zeigt, wie Sie einige Funktionen beim Erstellen von Werten verwenden:
  
     "variables": {
        "location": "[resourceGroup().location]",
@@ -88,7 +62,7 @@ Das folgende Beispiel zeigt, wie Sie einige der Funktionen beim Erstellen von We
        "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
-Sie wissen jetzt genug über Ausdrücke und Funktionen, um die Abschnitte der Vorlage zu verstehen. Ausführlichere Informationen zu sämtlichen Vorlagenfunktionen – einschließlich von Parametern und des Formats für zurückgegebene Werte – finden Sie unter [Vorlagenfunktionen im Azure-Ressourcen-Manager](./resource-group-template-functions.md).
+Unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md) finden Sie eine vollständige Liste der Vorlagenfunktionen.
 
 
 ## Parameter
@@ -107,7 +81,10 @@ Sie definieren Parameter mit der folgenden Struktur:
          "minValue": <optional-minimum-value-for-int-parameters>,
          "maxValue": <optional-maximum-value-for-int-parameters>,
          "minLength": <optional-minimum-length-for-string-secureString-array-parameters>,
-         "maxLength": <optional-maximum-length-for-string-secureString-array-parameters>
+         "maxLength": <optional-maximum-length-for-string-secureString-array-parameters>,
+         "metadata": {
+             "description": "<optional-description-of-the parameter>" 
+         }
        }
     }
 
@@ -121,6 +98,7 @@ Sie definieren Parameter mit der folgenden Struktur:
 | maxValue | Nein | Der Höchstwert für Parameter vom Typ "int", einschließlich des angegebenen Werts.
 | minLength | Nein | Die Mindestlänge für Parameter vom Typ "string", "secureString" und "array", einschließlich des angegebenen Werts.
 | maxLength | Nein | Die Höchstlänge für Parameter vom Typ "string", "secureString" und "array", einschließlich des angegebenen Werts.
+| description | Nein | Beschreibung des Parameters, der Benutzern der Vorlage über die benutzerdefinierte Vorlagenschnittstelle des Portals angezeigt wird.
 
 Die zulässigen Typen und Werte lauten folgendermaßen:
 
@@ -262,7 +240,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 
 Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion (weiter unten beschrieben) den eindeutigen Bezeichner für eine Ressource abrufen.
 
-Die Werte für das **Eigenschaften**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie unter [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
+Die Werte für das **properties**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie in der [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
 
 Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und eine **Microsoft.Web/Sites**-Ressource mit einer verschachtelten **Extensions**-Ressource:
 
@@ -436,8 +414,8 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 
 ## Nächste Schritte
 - Ausführliche Informationen zu den Funktionen, die Sie innerhalb einer Vorlage nutzen können, finden Sie unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](resource-group-template-functions.md).
-- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
+- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

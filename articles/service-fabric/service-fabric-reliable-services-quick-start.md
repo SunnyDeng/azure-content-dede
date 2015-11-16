@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erste Schritte mit Microsoft Azure Service Fabric Reliable Services"
-   description="Erstellen einer Service Fabric-Anwendung mit zustandslosen und zustandsbehafteten Diensten."
+   pageTitle="Erste Schritte mit Reliable Services | Microsoft Azure"
+   description="Einführung in das Erstellen einer Microsoft Azure Service Fabric-Anwendung mit zustandslosen und zustandsbehafteten Diensten."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -13,16 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/23/2015"
+   ms.date="10/15/2015"
    ms.author="vturecek"/>
 
 # Erste Schritte mit Microsoft Azure Service Fabric Reliable Services
 
-Eine Service Fabric-Anwendung enthält einen oder mehrere Dienste zum Ausführen Ihres Codes. Dieses Lernprogramm führt Sie durch die Schritte zum Erstellen der zustandslosen und zustandsbehafteten Service Fabric-Anwendungen "Hello World" mithilfe des [*Reliable Services*-Programmiermodell](../Service-Fabric/service-fabric-reliable-services-introduction.md).
+Eine Service Fabric-Anwendung enthält einen oder mehrere Dienste zum Ausführen Ihres Codes. Dieses Tutorial führt Sie durch die Schritte zum Erstellen der zustandslosen und zustandsbehafteten Service Fabric-Anwendung „Hello World“ mithilfe des [*Reliable Services*-Programmiermodells](service-fabric-reliable-services-introduction.md).
 
 Zustandslose Dienste werden heute überwiegend in Cloudanwendungen eingesetzt. Diese Dienste gelten als zustandslos, da sie selbst keine Daten enthalten, die zuverlässig gespeichert werden oder hoch verfügbar sein müssen – mit anderen Worten, wenn eine Instanz eines zustandslosen Diensts heruntergefahren wird, geht deren gesamter interner Zustand verloren. Damit der Zustand dieser Dienste hoch verfügbar und zuverlässig ist, muss er extern gespeichert werden, z. B. in Azure-Tabellen oder in einer SQL-Datenbank.
 
-Service Fabric führt eine neue Art von zustandsbehaftetem Dienst ein: Dieser Dienst kann seinen Zustand zuverlässig innerhalb des Diensts beibehalten. Er wird dort zusammen mit dem Code gespeichert, der ihn verwendet. Service Fabric stellt die hohe Verfügbarkeit des Zustands sicher, ohne dass dieser extern gespeichert werden muss.
+Service Fabric führt eine neue Art von zustandsbehaftetem Dienst ein. Dieser Dienst kann seinen Zustand zuverlässig innerhalb des Diensts beibehalten. Er wird dort zusammen mit dem Code gespeichert, der ihn verwendet. Service Fabric stellt die hohe Verfügbarkeit des Zustands sicher, ohne dass dieser extern gespeichert werden muss.
 
 In diesem Lernprogramm implementieren Sie sowohl einen zustandslosen als auch einen zustandsbehafteten Dienst, letzteren mit einem internen Zähler. Im zustandslosen Dienst geht der Wert des Zählers verloren, wenn der Dienst neu gestartet bzw. verschoben wird. Im zustandsbehafteten Dienst hingegen gewährleistet Service Fabric einen zuverlässigen Zählerzustand. Wird die Dienstausführung aus irgendeinem Grund während der Zählung unterbrochen, kann sie am Unterbrechungspunkt fortgesetzt werden.
 
@@ -110,7 +110,7 @@ Fügen Sie der Anwendung **HelloWorld** einen neuen Dienst hinzu, indem Sie mit 
 
 Wählen Sie die Option für einen zustandsbehafteten Service Fabric-Dienst, und nennen Sie ihn "HelloWorldStateful". Klicken Sie auf **Hinzufügen**.
 
-![Erstellen Sie im Dialogfeld "Neues Projekt" einen neuen zustandsbehafteten Service Fabric-Dienst.](media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
+![Erstellen einer neuen Service Fabric-Anwendung im Dialogfeld „Neues Projekt“](media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
 
 Ihre Anwendung sollte nun über zwei Dienste verfügen: den zustandslosen Dienst *HelloWorld* und den zustandsbehafteten Dienst *HelloWorldStateful*.
 
@@ -204,4 +204,4 @@ Sobald die Dienste ausgeführt werden, sehen Sie die generierten ETW-Ereignisse 
 
 [Entwicklerreferenz für zuverlässige Dienste](https://msdn.microsoft.com/library/azure/dn706529.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

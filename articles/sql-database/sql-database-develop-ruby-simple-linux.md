@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ruby" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="09/21/2015" 
 	ms.author="andrela"/>
 
 
@@ -38,7 +38,7 @@ Nachdem Ihr Computer mit FreeTDS konfiguriert ist, installieren Sie Ruby, wenn S
 
 Wenn Sie Probleme mit Signaturen haben, führen Sie den folgenden Befehl aus.
 
-    command curl -sSL https://rvm.io/mpapis.asc | gph --import - 
+    command curl -sSL https://rvm.io/mpapis.asc | gpg --import - 
 
 Wenn keine Probleme mit Signaturen vorliegen, führen Sie die folgenden Befehle aus.
 
@@ -117,4 +117,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

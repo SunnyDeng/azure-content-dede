@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="11/03/2015"
 	ms.author="larryfr"/>
 
 #Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight
@@ -146,7 +146,7 @@ Beim Erstellen eines neuen Clusters können Sie die Größe der Knoten angeben. 
 
 * **Azure-Befehlszeilenschnittstelle**: Die Größe des Hauptknotens kann bei Verwendung des Befehls `azure hdinsight cluster create` mit dem `--headNodeSize`-Parameter angegeben werden.
 
-* **Azure PowerShell**: Die Größe des Hauptknotens kann bei Verwendung des Cmdlets `New-AzureHDInsightCluster` mit dem `-HeadNodeVMSize`-Parameter angegeben werden.
+* **Azure PowerShell**: Die Größe des Hauptknotens kann bei Verwendung des Cmdlets `New-AzureRmHDInsightCluster` mit dem `-HeadNodeVMSize`-Parameter angegeben werden.
 
 ##Nächste Schritte
 
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

@@ -9,8 +9,8 @@ Aufträge pro AMS-Konto ||50\.000<sup>2</sup>
 Eindeutige Locators, die einem Objekt gleichzeitig zugeordnet sind||5<sup>4</sup>
 Livekanäle pro AMS-Konto </p></td>|5</p></td>|–<sup>1</sup>
 Programme im angehaltenen Zustand pro Kanal </p></td>|50</p></td>|–<sup>1</sup>
-Programme im ausgeführten Zustand pro Kanal </p></td>|3</p></td>|–<sup>1</sup>
-Streamingendpunkte im ausgeführten Zustand pro AMS-Konto</p></td>|2</p></td>|–<sup>1</sup>
+Programme im ausgeführten Zustand pro Kanal </p></td>|3</p></td>|3
+Streaming von Endpunkten im ausgeführten Zustand pro AMS-Konto </p></td>|2</p></td>|–<sup>1</sup>
 Streamingeinheiten pro Streamingendpunkt </p></td>|10 </p></td>|–<sup>1</sup>
 Codierungseinheiten pro AMS-Konto </p></td>|25</p></td>|–<sup>1</sup>
 Speicherkonten | |1\.000<sup>5</sup>
@@ -25,4 +25,4 @@ Speicherkonten | |1\.000<sup>5</sup>
 
 <sup>5</sup> Die Speicherkonten müssen aus demselben Azure-Abonnement stammen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

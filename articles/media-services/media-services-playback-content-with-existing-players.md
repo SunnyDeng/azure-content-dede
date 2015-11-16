@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="11/03/2015"
 	ms.author="juliako"/>
 
 
@@ -31,14 +31,14 @@ Klicken Sie auf den gewünschten Videoinhalt (vergewissern Sie sich, dass er [ve
  
 Folgende Überlegungen sollten berücksichtigt werden:
 
-- Der **MEDIA SERVICES-INHALTSPLAYER** gibt die Inhalt vom standardmäßigen Streamingendpunkt wieder. Wenn Sie die Wiedergabe von einem anderen Streamingendpunkt starten möchten, verwenden Sie einen anderen Player. Sie können beispielsweise den [Azure Media Services-Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) nutzen.
+- Der **MEDIA SERVICES-INHALTSPLAYER** gibt die Inhalt vom standardmäßigen Streamingendpunkt wieder. Wenn Sie die Wiedergabe von einem anderen Streamingendpunkt starten möchten, verwenden Sie einen anderen Player. Beispiel: [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
  
 
 ![AMSPlayer][AMSPlayer]
 
-###Azure Media Services-Player
+###Azure Media Player
 
-Verwenden Sie den [Azure Media Services-Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) zum Wiedergeben Ihrer Inhalte (offen oder geschützt) in den folgenden Formaten:
+Verwenden Sie [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) zum Wiedergeben Ihrer Inhalte (offen oder geschützt) in den folgenden Formaten:
 
 - Smooth Streaming
 - MPEG DASH
@@ -89,4 +89,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

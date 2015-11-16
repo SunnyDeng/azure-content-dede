@@ -89,7 +89,7 @@ Die Auswirkungen auf die Leistung sind sehr gering. Aufrufe werden nicht blockie
 
 1. Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement. Die Registrierung ist kostenlos, und Sie können den kostenlosen [Tarif](https://azure.microsoft.com/pricing/details/application-insights/)von Application Insights auswählen.
 
-2. Melden Sie sich am [Azure-Vorschauportal](http://portal.azure.com) an.
+2. Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an.
 3. Erstellen Sie eine Application Insights-Ressource. Hier werden die Daten aus Ihrer App angezeigt.
 
     ![Hinzufügen, Entwicklerdienste, Application Insights.](./media/app-insights-overview/11-new.png)
@@ -117,7 +117,7 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
 * Fragen und Probleme:
  * [Problembehandlung][qna]
- * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
+ * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-DE/home?forum=ApplicationInsights)
  * [StackOverflow](http://stackoverflow.com/questions/tagged/ms-application-insights)
 * Fehler:
  * [Kontakt](https://connect.microsoft.com/VisualStudio/Feedback/LoadSubmitFeedbackForm?FormID=6076)
@@ -154,4 +154,4 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

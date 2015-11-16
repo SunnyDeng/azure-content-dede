@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Testen von Azure App Service mit Azure Search" 
-   description="Testen Sie Azure Search gratis bis zu einer Stunde lang, indem Sie die TryAzureAppService-Vorlage nutzen." 
+   pageTitle="Testen von Azure App Service mit Azure Search | Microsoft Azure" 
+   description="Testen Sie Azure Search, einen in Microsoft Azure gehosteten Cloudsuchdienst, gratis bis zu einer Stunde, indem Sie die „TryAzureAppService“-Vorlage nutzen." 
    services="search" 
    documentationCenter="" 
    authors="HeidiSteen" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="search" 
-   ms.date="07/13/2015"
+   ms.date="11/04/2015"
    ms.author="heidist"/>
 
 # Testen von Azure App Service mit Azure Search
@@ -529,4 +529,4 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
 [14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

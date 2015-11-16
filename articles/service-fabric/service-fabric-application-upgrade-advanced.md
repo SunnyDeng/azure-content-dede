@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Service Fabric-Anwendungsupgrade: Weiterführende Themen"
+   pageTitle="Anwendungsupgrade: Weiterführende Themen | Microsoft Azure"
    description="Dieser Artikel behandelt einige weiterführende Themen in Bezug auf Upgrades von Service Fabric-Anwendungen."
    services="service-fabric"
    documentationCenter=".net"
@@ -18,7 +18,7 @@
 
 # Service Fabric-Anwendungsupgrade: Weiterführende Themen
 
-## Upgrademodus "Manual"
+## Upgrademodus „Manual“
 
 > [AZURE.NOTE]Der nicht überwachte manuelle Modus sollte ausschließlich bei einem fehlgeschlagenen oder angehaltenen Upgrade in Betracht gezogen werden. Der überwachte Modus ("Monitored") ist der für Service Fabric-Anwendungen empfohlene Modus.
 
@@ -51,4 +51,4 @@ Situationen, in denen sich ein Diff-Paket anbietet:
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

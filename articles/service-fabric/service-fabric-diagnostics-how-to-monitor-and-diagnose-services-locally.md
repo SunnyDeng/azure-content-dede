@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/22/2015"
+   ms.date="11/04/2015"
    ms.author="kunalds"/>
 
 
@@ -79,4 +79,4 @@ Der Ablaufverfolgungscode, den Sie zu Ihrer Anwendung für die lokale Diagnose h
 * [Diagnose und Leistungsüberwachung für Actors in Azure Service Fabric](service-fabric-reliable-actors-diagnostics.md)
 * [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

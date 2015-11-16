@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="index-page"
-	ms.date="07/09/2015"
+	ms.date="10/29/2015"
 	ms.author="davidmu"/>
 
 
@@ -32,46 +32,30 @@ Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von k
 
 [Anwendungsframeworks, von denen Vorlagen verwendet werden](virtual-machines-app-frameworks.md)
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](http://go.microsoft.com/fwlink/p/?linkid=534868&clcid=0x409)
+[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](http://go.microsoft.com/fwlink/p/?linkid=534868&clcid=0x409)
+
+[Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md)
 
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-## Allgemeine Ressourcen
-
-[Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/)
-
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manage](virtual-machines-azurerm-versus-azuresm.md)
 
 
 ## Netzwerk
 
 [Anbieter von Netzwerkressourcen](http://go.microsoft.com/fwlink/p/?linkid=534943&clcid=0x409)
 
-
-## Automatisieren mit Azure-Befehlszeilenschnittstelle
-
-[Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md)
-
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](http://go.microsoft.com/fwlink/p/?linkid=534868&clcid=0x409)
-
-## Automatisieren mit Azure PowerShell
-
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
-
-
-## Automatisieren mit .NET
+## .NET
 
 [Bereitstellen von Azure-Ressourcen mit der .NET-Bibliothek](virtual-machines-arm-deployment.md)
 
 
-## Automatisieren mit Azure Automation
+## Azure-Automatisierung
 
 [Verwalten von Azure Virtual Machines mithilfe von Azure Automation](automation-manage-virtual-machines.md)
-
-
 
 ## Zusätzliche Ressourcen
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

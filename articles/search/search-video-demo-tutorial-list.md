@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Videos, Beispiele und Lernprogramme in Azure Search"
-	description="Hier sind alle Videos, Beispiele, Demos und Lernprogramme für Azure Search in einer Liste zusammengestellt."
+	pageTitle="Videos, Beispiele und Tutorials in Azure Search | Microsoft Azure"
+	description="Zentrale Liste mit allen Videos, Beispielen, Demos und Tutorials, die für Azure Search, einen in Microsoft Azure gehosteten Clouddienst, erstellt wurden."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article" 
 	ms.tgt_pltfrm="na"
-	ms.date="09/29/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 #Azure Search: Lernprogramme, Videodemos und Beispiele
@@ -25,13 +25,16 @@ Finden Sie mit den folgenden Videos, Demos, Lernprogrammen und Beispiel-Apps ein
 
 Die [**Demo eines Jobportals für New York City (NYC) mit Azure Search**](http://aka.ms/azjobsdemo) ist eine aktive ASP.NET-Website, die Azure Search-Funktionen mithilfe von Daten der NYC Open Data Initiative veranschaulicht.
 
-[**Testen von Azure App Service mit Azure Search**](search-tryappservice.md) ist eine kostenlose einstündige Sitzung mit Azure Search, die Daten, eine funktionsfähige Webanwendung und Quellcode umfasst, den Sie zum Testen verschiedener Suchfunktionen online ändern können.
+[**Testen von App Service und Azure Search in einer ASP.NET MVC-Kombinations-App**](search-tryappservice.md) ist eine kostenlose einstündige Sitzung mit Azure Search, die Daten, eine funktionsfähige Webanwendung und Quellcode umfasst, den Sie zum Testen verschiedener Suchfunktionen in einer ASP.NET-Anwendung online ändern können.
+
+[**Azure Search-Demo-Website**](https://searchsamples.azurewebsites.net/#/) ist eine Sammlung von Demo-Apps für Azure Search. Testen Sie Apps für die Mediensuche, geografische Suche und Produktbestände mithilfe von Azure Search.
 
 ##Videos
 
 Link|Beschreibung
 ----|-----------
-[AzureCon 2015 – Bewährte Methoden für Azure Search](https://azure.microsoft.com/de-DE/documentation/videos/azurecon-2015-azure-search-best-practices-for-web-and-mobile-applications/)|Praktische Tipps, um beim Erstellen von Apps für Web- oder mobile Szenarios Skalierung, optimale Leistung und Codeeffizienz zu erzielen. 
+[Was ist Azure Search?](https://azure.microsoft.com/documentation/videos/what-is-azure-search/)|Übersicht über Azure Search in eineinhalb Minuten.
+[AzureCon 2015 – Bewährte Methoden für Azure Search](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-search-best-practices-for-web-and-mobile-applications/)|Praktische Tipps, um beim Erstellen von Apps für Web- oder mobile Szenarios Skalierung, optimale Leistung und Codeeffizienz zu erzielen. 
 [Microsoft Virtual Academy: Adding Azure Search to your Websites and Apps](http://channel9.msdn.com/Series/Adding-Microsoft-Azure-Search-to-Your-Websites-and-Apps)|7-teilige Reihe über das Hinzufügen von Azure Search zu einer Anwendung, präsentiert von Liam Cavanagh, Janusz Lembicz und Bernardita Torres Garayar.
 [Build 2015: Modern Data](http://channel9.msdn.com/Events/Build/2015/2-663)|Über 29 Minuten des Vortrags erfahren Sie, wie Azure Search mit der Revolution moderner Daten zusammenpasst, präsentiert von Shawn Bice und Pablo Castro.
 [Build 2015: Using Azure Search to Build Great Search Experiences in Mobile and WebApps](http://channel9.msdn.com/Events/Build/2015/2-745)|Vortrag von Pablo Castro bei Microsoft Build 2015.
@@ -50,6 +53,7 @@ Link|Beschreibung
 
 Exemplarische Vorgehensweise|Beschreibung
 -----------|-----------
+[Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search](search-howto-stackexchange-data.md)|Volltextsuche in StackExchange-Daten in einer in Azure Search integrierten Anwendung.
 [How to use Azure Search with D3.js to Build Interactive Data Visualizations](https://azure.microsoft.com/blog/2015/07/14/how-to-use-azure-search-with-d3-js-to-build-interactive-data-visualizations/)|Blogbeitrag und Beispielcode, der veranschaulicht, wie visuelle Suchfunktionen zu Ihrer benutzerdefinierten Anwendung hinzugefügt werden.
 [Erste Schritte mit Azure Search in .NET](search-get-started-dotnet.md)|Erfahren Sie, wie Sie mit Azure Search in verwaltetem Code arbeiten.
 [Erste Schritte mit Azure Search in NodeJS](search-get-started-nodejs.md)|Erfahren Sie, wie Sie mit Azure Search in NodeJS arbeiten.
@@ -69,10 +73,10 @@ Exemplarische Vorgehensweise|Beschreibung
 
 - [AdventureWorksWP8]() ist eine Windows Phone-App.
 - [AzSearchAutoScaleWeb](https://github.com/liamca/AzureSearchDemos/tree/master/AzSearchAutoScaleWeb) 
-- [BabyNameJS](https://github.com/liamca/AzureSearchDemos/tree/master/BabyNamesJS) ist eine „index.html“-Datei, die Daten in einem Lernprogramm bereitstellt.
+- [BabyNameJS](https://github.com/liamca/AzureSearchDemos/tree/master/BabyNamesJS) ist eine „index.html“-Datei, die Daten in einem Tutorial bereitstellt.
 - [DotNetSample](https://github.com/liamca/AzureSearchDemos/tree/master/DotNetSample) ist eine ASP.NET MVC-Anwendung für Azure Search.
 - [NYCJobs.NET](https://github.com/liamca/AzureSearchDemos/tree/master/NYCJobs.NET) stellt Quellcode für die aktive NYCJobs-Demowebsite bereit.
-- [Recommendations](https://github.com/liamca/AzureSearchDemos/tree/master/Recommendations) verwendet Active Data Factory, SQL-Datenbank, Blob-Speicher und HDInsight, um Produktempfehlungen anhand der Häufigkeit zu implementieren, mit der Produkte zusammen gekauft werden.
+- [Recommendations](https://github.com/liamca/AzureSearchDemos/tree/master/Recommendations) verwendet Active Data Factory, SQL-Datenbank, Blobspeicher und HDInsight, um Produktempfehlungen anhand der Häufigkeit zu implementieren, mit der Produkte zusammen gekauft werden.
 
 [****https://github.com/AzureSearch**](https://github.com/AzureSearch) ist ein weiteres GitHub-Repository für Azure Search, das Codebeispiele enthält, die vom Azure Search-Entwicklungsteam erstellt wurden. Sie können das Repository durchsuchen, um den Inhalt zu sehen, oder auf die folgenden Links klicken, um direkt zu spezifischen Beispielen zu wechseln.
 
@@ -84,11 +88,11 @@ Ein separates GitHub-Repository wird für [**AzureSearch-Microsoft Virtual Acade
 
 Auf CodePlex finden Sie mehrere Beispiele, die während der öffentlichen Vorschauphase veröffentlicht wurden und auch in der aktuellen Version noch relevant sind.
 
-- [**Management REST-API Demo**](https://azuresearchmgmtapi.codeplex.com/) ist eine Windows-Konsolenanwendung, die die Verwaltungs-REST-API verwendet.
+- [**Management REST API Demo**](https://azuresearchmgmtapi.codeplex.com/) ist eine Windows-Konsolenanwendung, die die Verwaltungs-REST-API verwendet.
 - [**AdventureWorks Demo**](https://azuresearchadventureworksdemo.codeplex.com/) ist eine ASP.NET MVC 4-Anwendung.
 - [**Suggestions Demo**](https://azsearchsuggestions.codeplex.com/SourceControl/latest) ist eine ASP.NET MVC 4-Anwendung.
 - [**GeoSearch Sample**](https://azuresearchgeospatial.codeplex.com/) ist eine ASP.NET MVC 4-Anwendung.
-- [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer lokalen eingebetteten Datenbank lädt.
+- [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer eingebetteten lokalen Datenbank lädt.
 - [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) ist eine Windows-Konsolenanwendung, die Bewertungsprofile für die Optimierung der Suchergebnisse definiert, ausführt und aktualisiert.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="10/29/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus Azure SQL Data Warehouse mithilfe von Azure Data Factory
@@ -371,22 +371,24 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
+Im Artikel [Laden von Daten mit Azure Data Factory](../sql-data-warehouse/sql-data-warehouse-get-started-load-with-azure-data-factory.md) in der Azure SQL Data Warehouse-Dokumentation finden Sie eine exemplarische Vorgehensweise.
+
 ## Eigenschaften des mit Azure SQL Data Warehouse verknüpften Diensts
 
 Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den mit Azure SQL Data Warehouse verknüpften Dienst spezifisch sind.
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-Typ | Die "type"-Eigenschaft muss auf **AzureSqlDW** festgelegt sein. | Ja
+Typ | Die type-Eigenschaft muss auf **AzureSqlDW** festgelegt sein. | Ja
 **connectionString** | Geben Sie Informationen, die zur Verbindung mit der Azure SQL Data Warehouse-Instanz erforderlich sind, für die Eigenschaft "connectionString" ein. | Ja
 
 Hinweis: Sie müssen die [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure) konfigurieren. Sie müssen den Datenbankserver konfigurieren, um [Azure-Diensten den Zugriff auf den Server zu erlauben](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure). Wenn Sie nicht aus Azure stammende Daten in Azure SQL Data Warehouse kopieren, inklusive Daten aus lokalen Datenquellen mit Data Factory-Gateway, müssen Sie außerdem den entsprechenden IP-Adressbereich für den Computer konfigurieren, der Daten an Azure SQL Data Warehouse sendet.
 
 ## Eigenschaften des Dataset-Typs "Azure SQL Data Warehouse"
 
-Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von DataSets zur Verfügung stehen, finden Sie im Artikel [Erstellen von DataSets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (Azure SQL, Azure-Blob, Azure-Tabelle usw.) ähnlich.
+Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (Azure SQL, Azure-Blob, Azure-Tabelle usw.) ähnlich.
 
-Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und bietet Informationen zum Speicherort der Daten im Datenspeicher. Der Abschnitt **typeProperties** für ein DataSet des Typs **AzureSqlDWTable** weist die folgenden Eigenschaften auf.
+Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und bietet Informationen zum Speicherort der Daten im Datenspeicher. Der Abschnitt **typeProperties** für ein Dataset des Typs **AzureSqlDWTable** weist die folgenden Eigenschaften auf.
 
 | Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- |
@@ -402,7 +404,7 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 ### SqlDWSource
 
-Wenn bei der Kopieraktivität "source" den Typ **SqlDWSource** aufweist, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
+Wenn bei der Kopieraktivität „source“ den Typ **SqlDWSource** aufweist, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
@@ -410,7 +412,7 @@ Wenn bei der Kopieraktivität "source" den Typ **SqlDWSource** aufweist, sind im
 | sqlReaderStoredProcedureName | Der Name der gespeicherten Prozedur, die Daten aus der Quelltabelle liest. | Name der gespeicherten Prozedur. | Nein |
 | storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein |
 
-Wenn **sqlReaderQuery** für "SqlDWSource" angegeben ist, führt die Kopieraktivität diese Abfrage für die Azure SQL Data Warehouse-Quelle aus, um die Daten abzurufen.
+Wenn **sqlReaderQuery** für „SqlDWSource“ angegeben ist, führt die Kopieraktivität diese Abfrage für die Azure SQL Data Warehouse-Quelle aus, um die Daten abzurufen.
 
 Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
 
@@ -478,7 +480,7 @@ Wie im Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activ
 
 Beim Verschieben von Daten in und aus Azure SQL, SQL Server und Sybase werden die folgenden Zuordnungen zwischen SQL-Typ und .NET-Typ und umgekehrt verwendet.
 
-Die Zuordnung ist mit [SQL Server-Datentypmappings](https://msdn.microsoft.com/library/cc716729.aspx) für ADO.NET identisch.
+Die Zuordnung ist mit der [SQL Server-Datentypzuordnung für ADO.NET](https://msdn.microsoft.com/library/cc716729.aspx) identisch.
 
 | Typ "SQL Server-Datenbankmodul" | Typ ".NET Framework" |
 | ------------------------------- | ------------------- |
@@ -521,4 +523,4 @@ Die Zuordnung ist mit [SQL Server-Datentypmappings](https://msdn.microsoft.com/l
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->
