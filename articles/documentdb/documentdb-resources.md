@@ -96,7 +96,8 @@ Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwalt
 ## Datenbanken
 Eine DocumentDB-Datenbank ist ein logischer Container einer oder mehrerer Sammlungen und Benutzer, wie im folgenden Diagramm dargestellt. Sie können eine beliebige Anzahl von Datenbanken unter einem DocumentDB-Datenbankkonto erstellen, abhängig von der angegebenen Grenze.
 
-![Hierarchisches Modell für Datenbankkonten und -sammlungen][2] **Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
+![][2]  
+**Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
 
 Eine Datenbank kann praktisch unbegrenzten Dokumentspeicher enthalten, der in Sammlungen unterteilt ist, die die Transaktionsdomänen für die darin enthaltenen Dokumente bilden.
 
@@ -378,7 +379,8 @@ Da sich die Skalierung Ihrer Anwendung an die zunehmende Anzahl der Benutzer anp
 
 Unabhängig von der gewählten Strategie für die horizontale Partitionierung können Sie Ihre realen Benutzer als Benutzer in der DocumentDB-Datenbank abbilden und den einzelnen Benutzern differenzierte Berechtigungen zuweisen.
 
-![Benutzersammlungen][3] **Shardingstrategien und Benutzermodellierung**
+![][3]  
+**Shardingstrategien und Benutzermodellierung**
 
 Wie alle anderen Ressourcen können Benutzer in DocumentDB mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Benutzerressource immer eine hohe Konsistenz. Es sollte dabei darauf hingewiesen werden, dass das Löschen eines Benutzers automatisch sicherstellt, dass Sie auf keine der ihm zugeordneten Berechtigungen zugreifen können. Obwohl das Kontingent der Berechtigungen als Teil des gelöschten Benutzers im Hintergrund von DocumentDB freigegeben wird, stehen die gelöschten Berechtigungen sofort wieder für Sie zur Verfügung.
 
