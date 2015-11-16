@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="11/03/2015" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer API-App mit einem vorhandenen Gateway
@@ -191,4 +191,4 @@ Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigensch
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

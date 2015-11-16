@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwalten der Azure MFA-Einstellungen" 
-	description="Auf dieser Seite erfahren Benutzer, wo sie ihre Azure MFA-Einstellungen verwalten können." 
+	pageTitle="Beheben von Problemen mit Azure Multi-Factor Authentication | Microsoft Azure" 
+	description="In diesem Dokument erhalten Benutzer Informationen zur Vorgehensweise, wenn bei Multi-Factor Authentication ein Problem auftreten sollte." 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -13,26 +13,45 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/22/2015" 
+	ms.date="10/29/2015" 
 	ms.author="billmath"/>
 
 # Beheben von Problemen mit Azure Multi-Factor Authentication
 Die folgende Informationen sollen Ihnen helfen, einige der häufigsten Probleme, die auftreten können, in den Griff zu bekommen.
 
 
-
+- [Korrelations-ID-Fehler](#correlation-id-errors)
 - [Ich habe mein Telefon verloren, oder es wurde mir gestohlen](#i-have-lost-my-phone-or-it-was-stolen?)
 - [Ich möchte meine Telefonnummer ändern](#i-want-to-change-my-phone-number)
 - [Ich empfange keinen Code auf meinem Telefon](#i-am-not-receiving-a-code-on-my-phone)
 - [App-Kennwörter funktionieren nicht](#app-passwords-are-not-working)
 - [Wie entferne ich Azure Authenticator von meinem alten Gerät, und wie wechsle ich zu einem neuen?](#how-do-i-clean-up-azure-authenticator-from-my-old-device-and-move-to-a-new-one)
 
+##Korrelations-ID-Fehler
+Wenn Sie die nachstehenden Schritte zur Problembehandlung ausgeführt haben und weiterhin Fehler auftreten, können Sie in den [Azure AD-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=WindowsAzureAD) eine Frage stellen, [die Microsoft Knowledge Base (KB) durchsuchen](https://www.microsoft.com/de-DE/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) oder [sich an den Support wenden](https://support.microsoft.com/de-DE). Wir bemühen uns, möglichst schnell eine Lösung für Ihr Problem zu finden.
+
+Hierfür sollten Sie die folgenden Informationen bereithalten:
+
+ - **Allgemeine Beschreibung des Fehlers** – Welche Fehlermeldung wird dem Benutzer angezeigt? Wenn keine Fehlermeldung angezeigt wird, beschreiben Sie das beobachtete unerwartete Verhalten so genau wie möglich.
+ - **Seite** – Auf welcher Seite haben Sie sich befunden, als der Fehler aufgetreten ist (einschließlich URL)?
+ - **ErrorCode**: Der Fehlercode, den Sie erhalten.
+ - **SessionId**: Die spezifische Sitzungs-ID, die Sie erhalten.
+ - **Korrelations-ID**: Der generierte Code der Korrelations-ID bei Anzeige des Fehlers.
+ - **Zeitstempel**: Genaues Datum samt Uhrzeit und Zeitzone des Auftretens des Fehlers.
+ 
+![Korrelations-ID](./media/multi-factor-authentication-end-user-manage/correlation.png)
+
+ - **Benutzer-ID** – Wie lautet die ID des Benutzers, der den Fehler beobachtet hat (z. B. user@contoso.com)?)?
+ - **Informationen zum Benutzer** – Handelt es sich um einen Verbundbenutzer, um einen Benutzer mit Kennworthashsynchronisierung, oder um einen Benutzer, der ausschließlich über die Cloud zugreift? Verfügte der Benutzer über eine Azure AD Premium-, Enterprise Mobility- oder Azure AD Basic-Lizenz? Verwendet der Benutzer Office 365? usw.
+
+Diese Informationen helfen uns dabei, Ihr Problem so schnell wie möglich zu beheben.
+
 ## Ich habe mein Telefon verloren, oder es wurde mir gestohlen
 Wenn Ihr Telefon verloren gegangen ist oder gestohlen wurde, wird empfohlen, dass Sie Ihren Administrator bitten, Ihre [App-Kennwörter](multi-factor-authentication-manage-users-and-devices.md#delete-users-existing-app-passwords) zurückzusetzen und Daten von [gespeicherten Geräten](multi-factor-authentication-manage-users-and-devices.md#restore-mfa-on-all-suspended-devices-for-a-user) zu löschen.
 
 Sie haben zwei Optionen, um sich wieder bei Ihrem Konto anzumelden. Die erste ist, dass wenn Sie eine alternative Authentifizierungstelefonnummer eingerichtet haben, Sie diese für die Anmeldung bei Ihrem Konto verwenden und dann die Sicherheitseinstellungen ändern.
 
-Wenn Sie eine sekundäre Authentifizierungstelefonnummer angegeben haben, können Sie sich damit anmelden. ![Einrichtung](./media/multi-factor-authentication-end-user-manage/altphone.png) Auf dem Bildschirmfoto oben sehen, dass zwei Telefonnummern eingerichtet wurden. Eine endet mit 67 und die zweite mit 30.
+Wenn Sie eine sekundäre Authentifizierungstelefonnummer angegeben haben, können Sie sich damit anmelden. ![Einrichtung](./media/multi-factor-authentication-end-user-manage/altphone.png) Auf dem Bildschirmfoto oben sehen Sie, dass zwei Telefonnummern eingerichtet wurden. Eine endet mit 67 und die zweite mit 30.
   
 Um sich mit der alternativen Telefonnummer anzumelden, gehen Sie wie üblich vor, und wählen Sie **Andere Überprüfungsoption verwenden** aus. ![Andere Überprüfung](./media/multi-factor-authentication-end-user-manage/differentverification.png)
 
@@ -65,7 +84,7 @@ Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, sollten Sie die 
 1. Melden Sie sich beim [Office 365-Portal](https://login.microsoftonline.com/) an.
 2. Klicken Sie in der oberen rechten Ecke auf das Widget, und wählen Sie die Office 365-Einstellungen.
 3. Klicken Sie auf "Zusätzliche Sicherheitsüberprüfung".
-4. Klicken Sie auf der rechten Seite auf **Meine Telefonnummern für die Kontosicherheit aktualisieren**. ![O365](./media/multi-factor-authentication-end-user-manage/o365a.png)
+4. Klicken Sie auf der rechten Seite auf den Link **Meine Telefonnummern für die Kontosicherheit aktualisieren**. ![O365](./media/multi-factor-authentication-end-user-manage/o365a.png)
 5. Dadurch gelangen Sie zu der Seite, auf der Sie Ihre Einstellungen ändern können. ![O365](./media/multi-factor-authentication-end-user-manage/o365b.png)
 
 
@@ -120,4 +139,4 @@ Stellen Sie zunächst sicher, dass Sie das App-Kennwort richtig eingegeben haben
 ##Wie entferne ich Azure Authenticator von meinem alten Gerät, und wie wechsle ich zu einem neuen?
 Wenn Sie die App von Ihrem Gerät deinstallieren oder das Gerät auf die Werkseinstellungen zurücksetzen, wird die Aktivierung im Back-End nicht entfernt. Sie müssen die Schritte unter [Wechseln zu einem neuen Gerät](multi-factor-authentication-azure-authenticator.md#how-to-move-to-the-new-azure-authenticator-app) befolgen.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

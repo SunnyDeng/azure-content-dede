@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwalten von Service Fabric-Anwendungen in Visual Studio"
-   description="Sie können Ihre Microsoft Azure Service Fabric-Anwendungen und -Dienste in Visual Studio verwalten."
+   pageTitle="Verwalten Ihrer Anwendungen in Visual Studio | Microsoft Azure"
+   description="Verwenden Sie Visual Studio zum Erstellen, Entwickeln, Packen, Bereitstellen und Debuggen Ihrer Service Fabric-Anwendungen und -Dienste."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -13,20 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/05/2015"
+   ms.date="10/15/2015"
    ms.author="jesseb"/>
 
-# Verwalten von Service Fabric-Anwendungen in Visual Studio
+# Verwenden von Visual Studio zum Vereinfachen des Schreibens und Verwaltens Ihrer Service Fabric-Anwendung
 
-Sie können Ihre Microsoft Azure Service Fabric-Anwendungen und -Dienste in Visual Studio verwalten. Sobald Sie die [Einrichtung Ihrer Entwicklungsumgebung](../service-fabric-setup-your-development-environment) abgeschlossen haben, können Sie mit Visual Studio Service Fabric-Anwendungen erstellen, Dienste hinzufügen und Anwendungen packen, registrieren und im lokalen Entwicklungscluster bereitstellen.
+Sie können Ihre Service Fabric-Anwendungen und -Dienste in Visual Studio verwalten. Sobald Sie die [Einrichtung Ihrer Entwicklungsumgebung](service-fabric-setup-your-development-environment.md) abgeschlossen haben, können Sie mit Visual Studio Service Fabric-Anwendungen erstellen, Dienste hinzufügen und Anwendungen packen, registrieren und im lokalen Entwicklungscluster bereitstellen.
 
-Um die Service Fabric-Anwendung zu verwalten, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Anwendungsprojekt.
+Um Ihre Anwendung zu verwalten, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Anwendungsprojekt.
 
 ![Service Fabric-Anwendung mit Rechtsklick auf das Anwendungsprojekt verwalten][manageservicefabric]
 
 ## Bereitstellen einer Service Fabric-Anwendung
 
-Beim Bereitstellen einer Service Fabric-Anwendung werden die folgenden Schritte in einem Vorgang ausgeführt.
+Beim Bereitstellen einer Anwendung erfolgen die folgenden Schritte in einem Vorgang.
 
 1. Erstellen des Anwendungspakets
 2. Hochladen des Anwendungspakets in den Image-Speicher
@@ -79,4 +79,4 @@ Sie können mit dem Server-Explorer eine Anwendung aus Ihrem lokalen Cluster ent
 [newservice]: ./media/service-fabric-manage-application-in-visual-studio/newservice.png
 [newserviceapplicationmanifest]: ./media/service-fabric-manage-application-in-visual-studio/newserviceapplicationmanifest.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="11/02/2015"
 	ms.author="billmath;andkjell"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -90,7 +90,7 @@ Einstellung | Beschreibung
 ------------- | ------------- |
 [Ihre Benutzer sind nur einmal in allen Gesamtstrukturen vorhanden.](active-directory-aadconnect-topologies.md#multiple-forests-separate-topologies) | Alle Benutzer werden als einzelne Objekte in Azure AD erstellt.<br> Die Objekte werden nicht im Metaverse verknüpft.
 [E-Mail-Attribut](active-directory-aadconnect-topologies.md#multiple-forests-full-mesh-with-optional-galsync) | Diese Option verknüpft Benutzer und Kontakte, wenn dieses Attribut in verschiedenen Gesamtstrukturen denselben Wert aufweist. Es wird empfohlen, diese Option zu verwenden, wenn Ihre Kontakte mit GALSync erstellt wurden.
-[ObjectSID und msExchangeMasterAccountSID](active-directory-aadconnect-topologies.md#multiple-forests-account-resource-forest)|Mit dieser Option wird ein aktivierter Benutzer in einer Kontogesamtstruktur mit einem deaktivierten Benutzer in einer Exchange-Ressourcengesamtstruktur verknüpft. Dies wird in Exchange als "verknüpftes Postfach" bezeichnet.
+[ObjectSID und msExchangeMasterAccountSID](active-directory-aadconnect-topologies.md#multiple-forests-account-resource-forest)|Mit dieser Option wird ein aktivierter Benutzer in einer Kontogesamtstruktur mit einem deaktivierten Benutzer in einer Exchange-Ressourcengesamtstruktur verknüpft. Dies wird in Exchange als "verknüpftes Postfach" bezeichnet. Diese Option kann auch verwendet werden, wenn Sie nur Lync verwenden und Exchange in der Ressourcengesamtstruktur nicht vorhanden ist.
 sAMAccountName und MailNickName|Mit dieser Option werden Attribute mit der Stelle verknüpft, an der erwartungsgemäß die Anmelde-ID für den Benutzer gefunden wird.
 Ihr eigenes Attribut|Mit dieser Option können Sie Ihr eigenes Attribut auswählen. **Einschränkung:** Wählen Sie unbedingt ein Attribut aus, das bereits im Metaverse vorhanden ist. Wenn Sie ein benutzerdefiniertes Attribut auswählen, kann der Assistent nicht abgeschlossen werden.
 
@@ -246,4 +246,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,12 +13,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 #Umstellung von der Vorschau-API-Version = 2014* auf API-Version = 2015 *#
 
-Die folgende Anleitung ist für Kunden vorgesehen, die benutzerdefinierte Anwendungen mit den Vorschauversionen von Azure Search erstellt haben und jetzt auf die allgemein verfügbare Version 2015-02-28 migrieren.
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Die folgende Anleitung ist für Kunden vorgesehen, die benutzerdefinierte Anwendungen mit den Vorschauversionen von Azure Search erstellt haben und jetzt auf die allgemein verfügbare Version 2015-02-28 migrieren.
 
 Als Benutzer einer Vorschauversion haben Sie möglicherweise eine dieser älteren Vorschauversionen verwendet:
 
@@ -144,4 +144,4 @@ Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Installieren von Aufträgen für die elastische Datenbank" 
+	pageTitle="Installieren von Aufträgen für die elastische Datenbank | Microsoft Azure" 
 	description="Schrittweise Anleitung für die Installation der Funktion für elastische Aufträge" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jhubbard" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags 
@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/03/2015" 
-	ms.author="ddove; sidneyh"/>
+	ms.date="11/04/2015" 
+	ms.author="ddove;sidneyh"/>
 
 # Installieren von Aufträgen für die elastische Datenbank – Übersicht
-**Aufträge für die elastische Datenbank** kann mithilfe von PowerShell oder über das Azure-Portal installiert werden. Der Zugriff auf das Erstellen und Verwalten von Aufträgen mithilfe der PowerShell-API ist jedoch nur mit installiertem PowerShell-Paket möglich. Darüber hinaus stellen die PowerShell-APIs zurzeit erheblich mehr Funktionalität bereit als das Portal. Weitere Informationen über die **Aufträge für die elastische Datenbank** finden Sie unter [Übersicht über Aufträge für die elastische Datenbank](sql-database-elastic-jobs-overview.md).
+[**Aufträge für die elastische Datenbank**](sql-database-elastic-jobs-overview.md) kann mithilfe von PowerShell oder über das Azure-Portal installiert werden. Der Zugriff zum Erstellen und Verwalten von Aufträgen mithilfe der PowerShell-API ist jedoch nur mit installiertem PowerShell-Paket möglich. Darüber hinaus stellen die PowerShell-APIs zurzeit erheblich mehr Funktionen bereit als das Portal.
 
-Wenn Sie **Aufträge für die elastische Datenbank** bereits aus einem vorhandenen **elastischen Datenbankpool**, über das Portal installiert haben, finden Sie in der neuesten Powershell-Vorschau Skripts, mit denen Sie ein Upgrade der vorhandenen Installation vornehmen können. Es wird dringend empfohlen, dass Sie ein Upgrade Ihrer Installation auf die neuesten Komponenten der **Aufträge für die elastische Datenbank** durchführen, um die über die PowerShell-APIs verfügbar gemachten neuen Funktionen nutzen zu können.
+Wenn Sie **Aufträge für die elastische Datenbank** bereits über das Portal aus einem vorhandenen **Pool für elastische Datenbanken** installiert haben, finden Sie in der neuesten Powershell-Vorschau Skripts, mit denen Sie ein Upgrade der vorhandenen Installation vornehmen können. Es wird dringend empfohlen, dass Sie ein Upgrade Ihrer Installation auf die neuesten Komponenten der **Aufträge für die elastische Datenbank** durchführen, um die über die PowerShell-APIs verfügbar gemachten neuen Funktionen nutzen zu können.
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
-* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 * Zum Installieren des Pakets der Aufträge für die elastische Datenbank wird das [NuGet-Befehlszeilenhilfsprogramm](https://nuget.org/nuget.exe) verwendet. Weitere Informationen finden Sie unter http://docs.nuget.org/docs/start-here/installing-nuget.
 
 ## Herunterladen und Importieren des PowerShell-Pakets der Aufträge für die elastische Datenbank
@@ -54,7 +54,7 @@ Wenn Sie **Aufträge für die elastische Datenbank** bereits aus einem vorhanden
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\InstallElasticDatabaseJobs.ps1 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobs.ps1
 
-Wenn Sie den Befehl ausführen, wird ein Fenster geöffnet, das Sie zur Eingabe von **Benutzername** und **Kennwort** auffordert. Dabei handelt es sich nicht um Ihre Azure-Anmeldeinformationen. Geben Sie den Benutzernamen und das Kennwort ein, die Sie als Anmeldeinformationen für das Administratorkonto des neuen Servers erstellen möchten.
+Beim Ausführen dieses Befehls wird ein Fenster zur Eingabe von **Benutzername** und **Kennwort** geöffnet. Dabei handelt es sich nicht um Ihre Azure-Anmeldeinformationen. Geben Sie den Benutzernamen und das Kennwort ein, die Sie als Anmeldeinformationen für das Administratorkonto des neuen Servers erstellen möchten.
 
 Die für diesen Beispielaufruf angegebenen Parameter können nach Ihren Wünschen angepasst werden. Im folgenden finden Sie weitere Informationen zum Verhalten der einzelnen Parameter:
 
@@ -150,13 +150,13 @@ Zum Aktualisieren der Größe der VM einer Installation führen Sie das folgende
 
 ## Installieren der Komponenten der Aufträge für die elastische Datenbank mithilfe des Portals
 
-Nachdem Sie einen [elastischen Datenbankpool erstellt](sql-database-elastic-pool-portal.md) haben, können Sie die Komponenten der **Aufträge für die elastische Datenbank** installieren, um die Ausführung von Verwaltungsaufgaben für jede der Datenbanken im elastischen Datenbankpool zu ermöglichen. Anders als bei der Verwendung der PowerShell-APIs für die **Aufträge für die elastische Datenbank**, ist die Portalschnittstelle aktuell auf die Ausführung auf einem vorhandenen Pool beschränkt.
+Nachdem Sie einen [Pool für elastische Datenbanken erstellt](sql-database-elastic-pool-portal.md) haben, können Sie die Komponenten der **Aufträge für die elastische Datenbank** installieren, um die Ausführung von Verwaltungsaufgaben für jede der Datenbanken im Pool für elastische Datenbanken zu ermöglichen. Anders als bei der Verwendung der PowerShell-APIs für die **Aufträge für die elastische Datenbank**, ist die Portalschnittstelle aktuell auf die Ausführung auf einem vorhandenen Pool beschränkt.
 
 
 **Geschätzter Zeitaufwand:** 10 Minuten.
 
-1. Klicken Sie in der Dashboardansicht des elastischen Datenbankpools im [Azure-Vorschauportal](https://ms.portal.azure.com/#) auf **Auftrag erstellen**.
-2. Wenn Sie zum ersten Mal einen Auftrag erstellen, müssen Sie **Aufträge für die elastische Datenbank** installieren, indem Sie auf **PREVIEW TERMS** klicken. 
+1. Klicken Sie in der Dashboardansicht des Pools für elastische Datenbanken im [Azure-Vorschauportal](https://ms.portal.azure.com/#) auf **Auftrag erstellen**.
+2. Wenn Sie zum ersten Mal einen Auftrag erstellen, müssen Sie **Aufträge für die elastische Datenbank** installieren, indem Sie auf **VORSCHAUBEDINGUNGEN** klicken. 
 3. Akzeptieren Sie die Bedingungen, indem Sie das Kontrollkästchen aktivieren.
 4. Klicken Sie in der Ansicht "Dienste installieren" auf **JOB CREDENTIALS**.
 
@@ -170,11 +170,11 @@ Nachdem Sie einen [elastischen Datenbankpool erstellt](sql-database-elastic-pool
 
 	![Ressourcengruppe unter Start][3]
 
-7. Wenn Sie versuchen, einen Auftrag zu erstellen oder zu verwalten, während die Aufträge für die elastische Datenbank installiert werden, wird bei der Eingabe der **Anmeldeinformationen** die folgende Meldung angezeigt.
+7. Wenn Sie versuchen, einen Auftrag zu erstellen oder zu verwalten, während die elastischen Datenbankaufträge installiert werden, wird bei der Eingabe der **Anmeldeinformationen** die folgende Meldung angezeigt.
 
 	![Bereitstellung noch nicht abgeschlossen][4]
 
-Wenn die Deinstallation erforderlich ist, löschen Sie die Ressourcengruppe. Weitere Informationen finden Sie unter [Deinstallieren der Komponenten der Aufträge für die elastische Datenbank](sql-database-elastic-jobs-uninstall.md).
+Wenn die Deinstallation erforderlich ist, löschen Sie die Ressourcengruppe. Weitere Informationen finden Sie unter [Deinstallieren von Komponenten der Aufträge für die elastische Datenbank](sql-database-elastic-jobs-uninstall.md).
 
 ## Nächste Schritte
 
@@ -187,4 +187,4 @@ Stellen Sie sicher, dass Anmeldeinformationen mit den passenden Rechten für die
 [4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Versionshinweise für Application Insights für Java" 
-	description="Die neuesten Updates für das Java SDK." 
-	services="application-insights" 
+<properties
+	pageTitle="Versionshinweise für Application Insights für Java"
+	description="Die neuesten Updates für das Java SDK."
+	services="application-insights"
     documentationCenter=""
-	authors="alancameronwills" 
+	authors="alancameronwills"
 	manager="douge"/>
-<tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/21/2015" 
+<tags
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/21/2015"
 	ms.author="awills"/>
- 
+
 # Versionshinweise für das Application Insights-SDK für Java
 
 Das [Application Insights-SDK für Java](app-insights-java-get-started.md) sendet Telemetriedaten über Ihre Live-App an [Application Insights](http://azure.microsoft.com/services/application-insights/), wo Sie die Nutzung und Leistung analysieren können.
@@ -22,7 +22,7 @@ Das [Application Insights-SDK für Java](app-insights-java-get-started.md) sende
 
 Informationen dazu finden Sie unter [Erste Schritte mit dem SDK für Java](app-insights-java-get-started.md).
 
-#### So aktualisieren Sie auf das neueste SDK 
+#### So aktualisieren Sie auf das neueste SDK
 
 Nach dem Upgrade müssen Sie alle an "ApplicationInsights.xml" vorgenommenen Anpassungen wieder zusammenführen. Erstellen Sie eine Kopie dieser Datei für den Vergleich mit der neuen Datei.
 
@@ -33,17 +33,18 @@ Nach dem Upgrade müssen Sie alle an "ApplicationInsights.xml" vorgenommenen Anp
 
 *Andernfalls*
 
-* Laden Sie die neueste Version von [Azure Libraries for Java](http://dl.msopentech.com/lib/PackageForWindowsAzureLibrariesForJava.html) herunter, und ersetzen Sie die alte Version. 
- 
+* Laden Sie die neueste Version von [Azure Libraries for Java](http://dl.msopentech.com/lib/PackageForWindowsAzureLibrariesForJava.html) herunter, und ersetzen Sie die alte Version.
+
 Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml". Viele Änderungen sind darauf zurückzuführen, dass Module hinzugefügt und entfernt wurden. Reaktivieren Sie alle Anpassungen, die Sie vorgenommen haben.
 
 ## Version 1.0.2
+- Verhindern des Überschreibens des Instrumentierungsschlüssels, indem der in der Konfigurationsdatei angegebene verwendet wird, wenn er explizit im Code bereitgestellt wird.
+- Behandeln aller erfolgreichen HTTP-Statuscodes und Melden der entsprechenden HTTP-Anforderungen als erfolgreich.
+- Behandeln aller Ausnahmen, die vom „ConfigurationFileLocator“ ausgegeben werden.
 
-- Kompatibilität mit Docker
-- Fehlerbehebungen – Abfangen aller Ausnahmen, Behandlung aller erfolgreichen Statuscodes
 
 ## Version 1.0.1
-- Der [Java-Agent](app-insights-java-agent.md) unterstützt das Sammeln folgender Abhängigkeitsinformationen:
+- Der [Java-Agent](app-insights-java-agent.md) sammelt Abhängigkeitsinformationen zu Folgendem:
 	- HTTP-Aufrufe über HttpClient, OkHttp und RestTemplate (Spring).
 	- Aufrufe von Redis über den Jedis-Client. Wenn ein konfigurierbarer Schwellenwert übergeben wird, ruft das SDK auch die Argumente des Aufrufs ab.
 	- JDBC-Aufrufe mit Oracle DB und Apache Derby DB-Clients.
@@ -71,6 +72,5 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 - Unterstützung für das Erfassen von Leistungskennzahlen von 32-Bit-Windows-Computern.
 - Unterstützung für die manuelle Nachverfolgung von Abhängigkeiten mit einer neuen API mit der ```trackDependency```-Methode.
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
- 
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

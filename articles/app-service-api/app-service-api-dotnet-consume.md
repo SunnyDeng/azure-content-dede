@@ -51,7 +51,7 @@ In diesem Abschnitt erstellen Sie ein Konsolenanwendungsprojekt und fügen Code 
 
 1. Wenn Sie die erforderlichen Schritte noch nicht ausgeführt haben, befolgen Sie die Anweisungen unter [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md), um das Beispielprojekt "ContactsList" für eine API-App in Ihrem Azure-Abonnement bereitzustellen.
 
-	In diesem Lernprogramm werden Sie aufgefordert, die Zugriffsebene im Visual Studio-Dialogfeld zur Veröffentlichung auf **Für alle Benutzer verfügbar** zu setzen. Diese Zugriffsebene entspricht der Ebene **Öffentlich (anonym)** im Portal. Wenn Sie anschließend jedoch die Schritte im Lernprogramm [Schützen einer API-App](../app-service-dotnet-add-authentication.md) ausgeführt haben, wurde die Zugriffsebene auf **Öffentlich (authentifiziert)** gesetzt. In diesem Fall müssen Sie die Einstellung wie im folgenden Schritt beschrieben ändern.
+	In diesem Lernprogramm werden Sie aufgefordert, die Zugriffsebene im Visual Studio-Dialogfeld zur Veröffentlichung auf **Für alle Benutzer verfügbar** zu setzen. Diese Zugriffsebene entspricht der Ebene **Öffentlich (anonym)** im Portal. Wenn Sie anschließend jedoch die Schritte im Lernprogramm [Schützen einer API-App](../app-service-api-dotnet-add-authentication.md) ausgeführt haben, wurde die Zugriffsebene auf **Öffentlich (authentifiziert)** gesetzt. In diesem Fall müssen Sie die Einstellung wie im folgenden Schritt beschrieben ändern.
 
 2. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App, die aufgerufen werden soll, zu **Einstellungen > Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Öffentlich (anonym)** fest.
 
@@ -102,7 +102,7 @@ In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und füg
 
 ### Einrichten der API-App und Erstellen des Projekts
 
-1. Führen Sie die Schritte im Lernprogramm [Schützen einer API-App](../app-service-dotnet-add-authentication.md) aus, um eine API-App mit Zugriffsebene **Öffentlich (authentifiziert)** einzurichten.
+1. Führen Sie die Schritte im Lernprogramm [Schützen einer API-App](../app-service-api-dotnet-add-authentication.md) aus, um eine API-App mit Zugriffsebene **Öffentlich (authentifiziert)** einzurichten.
 
 1. Erstellen Sie in Visual Studio ein Windows Forms-Desktopprojekt.
 
@@ -205,4 +205,4 @@ Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu 
 Informationen zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

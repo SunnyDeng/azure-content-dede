@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Lernprogramm für Service Fabric-Anwendungsupgrades"
-   description="In diesem Artikel wird das Upgrade einer Service Fabric-Anwendung Schritt für Schritt erläutert."
+   pageTitle="Tutorial für Anwendungsupgrades | Microsoft Azure"
+   description="Dieser Artikel bietet eine exemplarische Vorgehensweise für das Bereitstellen einer Service Fabric-Anwendung, Ändern des Codes und Einführen eines Upgrades."
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
@@ -18,13 +18,13 @@
 
 
 
-# Lernprogramm für Anwendungsupgrades
+# Tutorial für Anwendungsupgrades
 
 Die am häufigsten angewendete und empfohlene Methode für Upgrades ist das überwachte parallele Upgrade. Service Fabric überwacht die Integrität der aktualisiertem Anwendung basierend auf einer Reihe von Integritätsrichtlinien. Wenn die Anwendungen in einer Upgradedomäne (UD) aktualisiert wurden, evaluiert Service Fabric die Anwendungsintegrität und ermittelt, ob mit der nächsten Upgradedomäne fortgefahren wird oder ob das Upgrade basierend auf den Integritätsrichtlinien fehlschlägt. Ein überwachtes Anwendungsupgrade kann mithilfe der verwalteten oder systemeigenen APIs, PowerShell oder REST ausgeführt werden.
 
 Bei dem von Service Fabric überwachten parallelen Upgrade kann der Anwendungsadministrator die Integritätsevaluierungsrichtlinie konfigurieren, mit der Service Fabric ermittelt, ob die Anwendung fehlerfrei ist. Darüber hinaus kann der Administrator auch die Aktion konfigurieren, die ausgeführt wird, wenn die Integritätsevaluierung fehlschlägt, z. B. einen automatischen Rollback. In diesem Abschnitt wird ein überwachtes Upgrade für eines der SDK-Beispiele Schritt für Schritt erläutert.
 
-## Schritt 1: Erstellen und Bereitstellen des Beispiels "Visual Objects"
+## Schritt 1: Erstellen und Bereitstellen des Beispiels „Visual Objects“
 
 Diese Schritte können Sie ausführen, indem Sie das Projekt in Visual Studio öffnen, mit der rechten Maustaste auf die Projektmappe klicken und im Menüelement "Service Fabric" den Befehl "Bereitstellen" auswählen. Weitere Informationen finden Sie unter [Managing your Service Fabric applications in Visual Studio](service-fabric-manage-application-in-visual-studio.md) (in englischer Sprache). Sie können auch PowerShell verwenden.
 
@@ -34,7 +34,7 @@ Nach dem Erstellen des Projekts in Visual Studio können Sie mit dem PowerShell-
 
 Nun können Sie mit dem [Service Fabric-Explorer den Cluster und die Anwendung anzeigen](service-fabric-visualizing-your-cluster.md). Die Anwendung verfügt über einen Webdienst, in den Sie wechseln können, indem Sie in Internet Explorer [http://localhost:80](http://localhost:80) in der Adressleiste eingeben. Sie sollten einige unverankerte visuelle Objekte sehen, die sich auf dem Bildschirm bewegen. Darüber hinaus können Sie **Get-ServiceFabricApplication** zum Überprüfen des Anwendungsstatus verwenden.
 
-## Schritt 2: Aktualisieren des Beispiels "Visual Objects"
+## Schritt 2: Aktualisieren des Beispiels „Visual Objects“
 
 Sie werden feststellen, dass sich die visuellen Objekte mit der Version, die in Schritt 1 bereitgestellt wurde, nicht drehen. Wir aktualisieren diese Anwendung so, dass sich die visuellen Objekte drehen.
 
@@ -126,4 +126,4 @@ Sie können auch versuchen, als Übung Version 2 in Version 3 oder gar Version
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

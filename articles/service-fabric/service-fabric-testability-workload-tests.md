@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Benutzerdefinierte Testszenarios"
-   description="Sie erfahren, wie Sie Ihre Dienste vor ordnungsgemäßen und nicht ordnungsgemäßen Fehlern schützen."
+   pageTitle="Benutzerdefinierte Testszenarien | Microsoft Azure"
+   description="Informationen zum Absichern Ihrer Dienste bei ordnungsgemäßen und nicht ordnungsgemäßen Ausfälle."
    services="service-fabric"
    documentationCenter=".net"
    authors="anmolah"
@@ -153,4 +153,4 @@ class Test
 ```
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

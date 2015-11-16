@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/26/2015" 
+	ms.date="11/02/2015" 
 	ms.author="genemi"/>
 
 
@@ -100,16 +100,6 @@ Sofern Ihre Anwendung die Verbindung nicht unmittelbar und ohne Pause für einen
 - Trennen Sie die Verbindung.
 
 
-#### Auslösung einer Ausnahme bei Verwendung eines Pools
-
-
-Wenn Verbindungspooling aktiviert ist und ein Timeoutfehler oder ein anderer Fehler bei der Anmeldung auftritt, wird eine Ausnahme ausgelöst. Weitere Verbindungsversuche in den nächsten 5 Sekunden schlagen fehl; dies wird als *Sperrzeitraum* bezeichnet.
-
-Wenn die Anwendung versucht, innerhalb dieses Zeitraums versucht, eine Verbindung herzustellen, wird die erste Ausnahme erneut ausgelöst. Nach Ablauf des Sperrzeitraums führen weitere Fehler zu einem erneuten Sperrzeitraum, der doppelt so lange wie der vorherige dauert.
-
-Die maximale Dauer eines Sperrzeitraums beträgt 60 Sekunden.
-
-
 ### Andere Ports als 1433 in V12.
 
 
@@ -131,7 +121,12 @@ Das Azure-System verfügt über die Möglichkeit, Server dynamisch neu zu konfig
 
 Eine Neukonfiguration führt jedoch u. U. dazu, dass die Verbindung zwischen Ihrem Clientprogramm und der SQL-Datenbank getrennt wird. Dieser Fehler wird als *Übergangsfehler* bezeichnet.
 
-Das Clientprogramm kann versuchen, die Verbindung nach einer Wartezeit von etwa 6 bis 60 Sekunden zwischen Wiederholungsversuchen wiederherzustellen. Sie müssen die Wiederholungslogik in Ihrem Client bereitstellen.
+Wenn das Clientprogramm über Wiederholungslogik verfügt, kann es versuchen, erneut eine Verbindung herzustellen, nachdem der vorübergehende Fehler Zeit hatte, sich selbst zu korrigieren.
+
+Es wird empfohlen, dass vor dem ersten Wiederholungsversuch eine Verzögerung von fünf Sekunden eingestellt wird. Wiederholungsversuche nach einer Verzögerung von weniger als fünf Sekunden können den Clouddienst überfordern. Für jeden nachfolgenden Wiederholungsversuch sollte die Verzögerung exponentiell steigen, bis zu einem Maximum von 60 Sekunden.
+
+Eine Erörterung der *Sperrfrist* für Clients, die ADO.NET verwenden, finden Sie unter [SQL Server-Verbindungspooling (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx).
+
 
 Codebeispiele für die Wiederholungslogik finden Sie unter [Clientcodebeispiele für die ersten Schritte mit der SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
 
@@ -174,4 +169,4 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
 - [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

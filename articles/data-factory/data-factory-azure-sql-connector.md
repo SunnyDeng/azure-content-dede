@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="11/03/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus Azure SQL mithilfe von Azure Data Factory
@@ -562,4 +562,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

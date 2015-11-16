@@ -14,12 +14,12 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="10/29/2015"
+	ms.date="11/03/2015"
 	ms.author="jroth" />
 
 # Leitfaden zur Azure SQL-Datenbankleistung für Einzeldatenbanken
 
-## Übersicht
+## Übersicht 
 
 Microsoft Azure SQL-Datenbank verfügt über drei [Dienstebenen](sql-database-service-tiers.md): Basic, Standard und Premium. Auf allen Ebenen wird die Ressource, die für Ihre Azure SQL-Datenbank bereitgestellt wird, streng isoliert, und es wird für eine vorhersagbare Leistung gesorgt. Der für die Datenbank garantierte Durchsatz steigt von der Ebene „Basic“ über „Standard“ bis hin zu „Premium“ an.
 
@@ -114,8 +114,8 @@ Die standardmäßige und aktive Georeplikation bietet ähnliche Funktionen für 
 
 Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
 
-### Maximaler XTP-In-Memory-Speicher
-Der **maximale XTP-In-Memory-Speicher** bezieht sich auf den maximalen Speicherplatz, der für die [Vorschauversion von In-Memory OLTP](sql-database-in-memory.md) für Premium-Datenbanken verfügbar ist. Sie können das Azure-Portal oder die **sys.dm\_db\_resource\_stats**-Ansicht verwenden, um die Nutzung des In-Memory-Speichers zu überwachen. Weitere Informationen zur Überwachung finden Sie unter [Überwachen von XTP-In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md).
+### Max. In-Memory-OLTP-Speicher
+Der **maximale In-Memory-OLTP-Speicher** bezieht sich auf den maximalen Speicherplatz, der für die [Vorschauversion von In-Memory-OLTP](sql-database-in-memory.md) für Premium-Datenbanken verfügbar ist. Dies wird gelegentlich auch als *XTP-In-Memory-Speicher* bezeichnet. Sie können das Azure-Portal oder die **sys.dm\_db\_resource\_stats**-Ansicht verwenden, um die Nutzung des In-Memory-Speichers zu überwachen. Weitere Informationen zur Überwachung finden Sie unter [Überwachen von In-Memory-OLTP-Speicher](sql-database-in-memory-oltp-monitoring.md).
 
 >[AZURE.NOTE]Die Vorschauversion von In-Memory OLTP wird derzeit nur für Einzeldatenbanken und nicht für Datenbanken in Pools für elastische Datenbanken unterstützt.
 
@@ -168,10 +168,10 @@ Es gibt zwei Ansichten, mit denen Sie die Ressourcenverwendung für eine SQL-Dat
 - [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx)
 - [sys.resource\_stats](https://msdn.microsoft.com/library/dn269979.aspx)
 
->[AZURE.NOTE]Sie können auch das Azure-Verwaltungsportal zum Anzeigen der Ressourcenverwendung verwenden. Ein Beispiel finden Sie unter [Dienstebenen – Überwachen der Leistung](sql-database-service-tiers.md#monitoring-performance).
+>[AZURE.NOTE]Sie können auch das Azure-Verwaltungsportal zum Anzeigen der Ressourcenverwendung verwenden. Ein Beispiel finden Sie unter [Dienstebenen – Leistungsüberwachung](sql-database-service-tiers.md#monitoring-performance).
 
 ### Verwenden von „sys.dm\_db\_resource\_stats“
-Die Ansicht [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) ist in jeder SQL-Datenbank vorhanden und liefert Daten zur letzten Ressourcenverwendung relativ zur Dienstebene. Durchschnittliche Prozentsätze für CPU, Dateneingang/-ausgang, Protokollschreibvorgänge und Arbeitsspeicher werden alle 15 Sekunden aufgezeichnet und eine Stunde lang aufbewahrt.
+Die [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx)-Ansicht ist in jeder SQL-Datenbank vorhanden und liefert Daten zur letzten Ressourcenverwendung relativ zur Dienstebene. Durchschnittliche Prozentsätze für CPU, Dateneingang/-ausgang, Protokollschreibvorgänge und Arbeitsspeicher werden alle 15 Sekunden aufgezeichnet und eine Stunde lang aufbewahrt.
 
 Da diese Ansicht eine ausführlichere Darstellung der Ressourcenverwendung ist, sollten Sie für alle Analysen des aktuellen Zustands oder für die Problembehandlung zuerst **sys.dm\_db\_resource\_stats ** verwenden. Mit der folgenden Abfrage werden beispielsweise die durchschnittliche und maximale Ressourcenverwendung für die aktuelle Datenbank innerhalb der letzten Stunde angezeigt:
 
@@ -190,7 +190,7 @@ Beispiele für andere Abfragen finden Sie unter [sys.dm\_db\_resource\_stats](ht
 
 ### Verwenden von „sys.resource\_stats“
 
-Die Ansicht [sys.resource\_stats](https://msdn.microsoft.com/library/dn269979.aspx) in der Datenbank **master** liefert zusätzliche Informationen zur Überwachung der Leistungsnutzung Ihrer SQL-Datenbank innerhalb der jeweiligen Dienst- und Leistungsebene. Die Daten werden alle fünf Minuten gesammelt und ungefähr 14 Tage lang beibehalten. Diese Ansicht ist eher für eine längerfristige Verlaufsanalyse der Ressourcenverwendung Ihrer SQL-Datenbank geeignet.
+Die [sys.resource\_stats](https://msdn.microsoft.com/library/dn269979.aspx)-Ansicht in der **master**-Datenbank liefert zusätzliche Informationen zur Überwachung der Leistungsnutzung Ihrer SQL-Datenbank innerhalb der jeweiligen Dienst- und Leistungsebene. Die Daten werden alle fünf Minuten gesammelt und ungefähr 14 Tage lang beibehalten. Diese Ansicht ist eher für eine längerfristige Verlaufsanalyse der Ressourcenverwendung Ihrer SQL-Datenbank geeignet.
 
 Der folgende Graph zeigt die CPU-Ressourcenverwendung für eine Premium-Datenbank mit Leistungsebene P2 für jede Stunde einer Woche. Dieser Graph beginnt mit einem Montag und zeigt fünf Arbeitstage und dann das Wochenende, an dem die Anwendung deutlich weniger gefragt ist.
 
@@ -200,9 +200,9 @@ Die Daten verdeutlichen, dass diese Datenbank derzeit über eine CPU-Spitzenlast
 
 Hierbei muss darauf hingewiesen werden, dass andere Anwendungstypen denselben Graph unter Umständen anders interpretieren. Wenn eine Anwendung beispielsweise jeden Tag versucht, Gehaltsabrechnungsdaten zu verarbeiten, und dasselbe Diagramm gilt, wird diese Art von „Batchauftrag“-Modell bei Leistungsebene P1 ggf. zufriedenstellend ausgeführt. Die Leistungsebene P1 verfügt über 100 DTUs, während Leistungsebene P2 über 200 DTUs verfügt. Dies bedeutet, dass die Leistungsebene P1 die Hälfte der Leistung von Leistungsebene P2 bietet. Also entsprechen 50 % CPU-Auslastung bei P2 einer CPU-Auslastung von 100 % bei P1. Sofern für die Anwendung keine Timeouts auftreten, spielt es unter Umständen keine Rolle, ob ein großer Auftrag 2 Stunden oder 2,5 Stunden dauert, solange er noch am selben Tag erledigt wird. Für eine Anwendung in dieser Kategorie reicht wahrscheinlich die Leistungsebene P1 aus. Sie können die Tatsache nutzen, dass es am Tag Zeiten gibt, in denen die Ressourcenverwendung niedriger ist. Dies bedeutet, dass „Spitzen“ ggf. in einen der Zeiträume später am Tag verlagert werden können. Die Leistungsebene P1 kann für eine Anwendung dieser Art gut geeignet sein (und Kosten sparen), solange die Aufträge jeden Tag rechtzeitig abgeschlossen werden können.
 
-Azure SQL-Datenbank macht die verbrauchten Ressourceninformationen für jede aktive Datenbank in der Ansicht **sys.resource\_stats** der Datenbank **master** jedes Servers verfügbar. Die Daten in der Tabelle werden zu Intervallen von fünf Minuten zusammengefasst. Bei den Dienstebenen Basic, Standard und Premium kann es länger als fünf Minuten dauern, bis sie in der Tabelle angezeigt werden. Dies bedeutet, dass diese Daten besser für Verlaufsanalysen geeignet sind als für Analysen nahezu in Echtzeit. Beim Abfragen der Ansicht **sys.resource\_stats** wird der kürzliche Verlauf einer Datenbank angezeigt, um zu überprüfen, ob mit der gewählten Reservierung bei Bedarf die gewünschte Leistung erzielt wurde.
+Azure SQL-Datenbank macht die verbrauchten Ressourceninformationen für jede aktive Datenbank in der **sys.resource\_stats**-Ansicht der **master**-Datenbank jedes Servers verfügbar. Die Daten in der Tabelle werden zu Intervallen von fünf Minuten zusammengefasst. Bei den Dienstebenen Basic, Standard und Premium kann es länger als fünf Minuten dauern, bis sie in der Tabelle angezeigt werden. Dies bedeutet, dass diese Daten besser für Verlaufsanalysen geeignet sind als für Analysen nahezu in Echtzeit. Beim Abfragen der **sys.resource\_stats**-Ansicht wird der kürzliche Verlauf einer Datenbank angezeigt, um zu überprüfen, ob mit der gewählten Reservierung bei Bedarf die gewünschte Leistung erzielt wurde.
 
->[AZURE.NOTE]Sie müssen mit der Datenbank **master** Ihres logischen SQL-Datenbankservers verbunden sein, um **sys.resource\_stats** in den folgenden Beispielen abzufragen.
+>[AZURE.NOTE]Sie müssen mit der **master**-Datenbank Ihres logischen SQL-Datenbankservers verbunden sein, um **sys.resource\_stats** in den folgenden Beispielen abzufragen.
 
 Im folgenden Beispiel wird veranschaulicht, wie die Daten in dieser Ansicht verfügbar gemacht werden:
 
@@ -213,7 +213,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die Daten in dieser Ansicht verf
 
 ![sys resource stats](./media/sql-database-performance-guidance/sys_resource_stats.png)
 
-Im folgenden Beispiel werden unterschiedliche Wege veranschaulicht, wie Sie die Ressourcenverwendung Ihrer SQL-Datenbank verstehen können, indem Sie die Katalogansicht **sys.resource\_stats** verwenden.
+Im folgenden Beispiel werden unterschiedliche Wege veranschaulicht, wie Sie die Ressourcenverwendung Ihrer SQL-Datenbank verstehen können, indem Sie die **sys.resource\_stats**-Katalogansicht verwenden.
 
 >[AZURE.NOTE]Einige Spalten von **sys.resource\_stats** haben sich in den aktuellen V12-Datenbanken geändert, sodass die Beispielabfragen in den folgenden Beispielen unter Umständen zu Fehlern führen können. Zukünftige Aktualisierungen dieses Themas werden neue Versionen der Abfragen enthalten, mit denen dieses Problem behoben wird.
 
@@ -324,7 +324,7 @@ Im folgenden Beispiel wird ein Fall erstellt, in dem der ausgewählte Abfragepla
 
 Azure SQL-Datenbank enthält Funktionen, mit denen Datenbankadministratoren Hinweise dazu erhalten können, wie sie allgemeine fehlende Indexbedingungen finden und dies beheben können. Mit in Azure SQL-Datenbank integrierten dynamischen Verwaltungssichten (DMVs) wird die Abfragenkompilierung daraufhin untersucht, ob ein Index die geschätzten Kosten zum Ausführen einer Abfrage erheblich reduzieren würde. Während der Abfragenausführung wird nachverfolgt, wie häufig jeder Abfrageplan ausgeführt wird. Außerdem wird die geschätzte Differenz zwischen dem ausgeführten Abfrageplan und dem imaginären Abfrageplan mit dem Index ermittelt. So kann ein Datenbankadministrator schnell abschätzen, welche Änderungen am physischen Datenbankdesign zu einer Verbesserung der Workload-Gesamtkosten für eine bestimmte Datenbank und der tatsächlichen Workload führen können.
 
->[AZURE.NOTE]Lesen Sie sich zuerst den Abschnitt [Query Performance Insight und Index Advisor](query-performance-insight-and-index-advisor.md) durch, bevor Sie dynamische Verwaltungssichten zum Suchen nach fehlenden Indizes verwenden.
+>[AZURE.NOTE]Lesen Sie sich zuerst den Abschnitt [Query Performance Insight und Index Advisor](query-performance-insight-and-index-advisor.md) durch, bevor Sie dynamische Verwaltungsansichten zum Suchen nach fehlenden Indizes verwenden.
 
 Die folgende Abfrage kann verwendet werden, um potenzielle fehlende Indizes zu ermitteln.
 
@@ -450,7 +450,7 @@ Im zweiten Teil des Beispiels wird ein Abfragehinweis verwendet, um den Optimier
 
 ![Abfragenoptimierung](./media/sql-database-performance-guidance/query_tuning_3.png)
 
-Die Auswirkungen können ermittelt werden, indem die Tabelle **sys.resource\_stats** untersucht wird. (Hinweis: Es kommt zu einer Verzögerung ab dem Zeitpunkt, an dem Sie den Test ausführen, bis zu dem Zeitpunkt, an dem die Tabelle mit den Daten gefüllt wird.) In diesem Beispiel wurde Teil 1 während des Zeitfensters 22:25:00 und Teil 2 während des Zeitfensters 22:35:00 ausgeführt. Beachten Sie, dass für das frühere Zeitfenster mehr Ressourcen als für das spätere Zeitfenster verwendet wurden (aufgrund von Verbesserungen der Planeffizienz).
+Die Auswirkungen können ermittelt werden, indem die **sys.resource\_stats**-Tabelle untersucht wird. (Hinweis: Es kommt zu einer Verzögerung ab dem Zeitpunkt, an dem Sie den Test ausführen, bis zu dem Zeitpunkt, an dem die Tabelle mit den Daten gefüllt wird.) In diesem Beispiel wurde Teil 1 während des Zeitfensters 22:25:00 und Teil 2 während des Zeitfensters 22:35:00 ausgeführt. Beachten Sie, dass für das frühere Zeitfenster mehr Ressourcen als für das spätere Zeitfenster verwendet wurden (aufgrund von Verbesserungen der Planeffizienz).
 
 	SELECT TOP 1000 * 
 	FROM sys.resource_stats 
@@ -461,7 +461,7 @@ Die Auswirkungen können ermittelt werden, indem die Tabelle **sys.resource\_sta
 
 >[AZURE.NOTE]Das hier verwendete Beispiel hat zwar absichtlich nur einen kleineren Umfang, aber die Auswirkungen von suboptimalen Parametern können beträchtlich sein, besonders für größere Datenbanken. Der Unterschied kann für die langsame und die schnelle Variante in Extremfällen zwischen dem Sekundenbereich und dem Stundenbereich liegen.
 
-Sie können **sys.resource\_stats** überprüfen, um zu ermitteln, ob die Ressource für einen bestimmten Test mehr oder weniger Ressourcen als für einen anderen Test verwendet. Beim Vergleichen von Daten sollten Sie Tests zeitlich ausreichend trennen, damit sie sich in der Ansicht **sys.resource\_stats** nicht in demselben 5-Minuten-Zeitfenster bewegen. Beachten Sie außerdem, dass das Ziel dieser Übung die Minimierung der insgesamt verwendeten Ressourcen ist, und nicht die reine Minimierung der Ressourcen bei Spitzenlast. Im Allgemeinen führt eine Optimierung eines Codeabschnitts in Bezug auf die Latenz auch zu einem verringerten Ressourcenverbrauch. Stellen Sie sicher, dass die für eine Anwendung vorgesehenen Änderungen wirklich erforderlich sind und sich nicht negativ auf die Kundenerfahrung beim Nutzen von Anwendungen auswirken, wenn Abfragehinweise verwendet werden.
+Sie können **sys.resource\_stats** überprüfen, um zu ermitteln, ob die Ressource für einen bestimmten Test mehr oder weniger Ressourcen als für einen anderen Test verwendet. Beim Vergleichen von Daten sollten Sie Tests zeitlich ausreichend trennen, damit sie sich in der **sys.resource\_stats**-Ansicht nicht in demselben 5-Minuten-Zeitfenster bewegen. Beachten Sie außerdem, dass das Ziel dieser Übung die Minimierung der insgesamt verwendeten Ressourcen ist, und nicht die reine Minimierung der Ressourcen bei Spitzenlast. Im Allgemeinen führt eine Optimierung eines Codeabschnitts in Bezug auf die Latenz auch zu einem verringerten Ressourcenverbrauch. Stellen Sie sicher, dass die für eine Anwendung vorgesehenen Änderungen wirklich erforderlich sind und sich nicht negativ auf die Kundenerfahrung beim Nutzen von Anwendungen auswirken, wenn Abfragehinweise verwendet werden.
 
 Wenn eine Workload eine Gruppe von sich wiederholenden Abfragen enthält, ist es häufig sinnvoll, den Optimierungsgrad dieser Planentscheidungen zu erfassen und zu überprüfen, da dies häufig Auswirkungen auf die Mindestgrößeneinheit für Ressourcen hat, die zum Hosten der Datenbank erforderlich ist. Nach der Überprüfung kann durch eine gelegentliche erneute Überprüfung dieser Pläne sichergestellt werden, dass keine Verschlechterung eingetreten ist. Weitere Informationen zu Abfragehinweisen finden Sie unter [Abfragehinweise (Transact-SQL)](https://msdn.microsoft.com/library/ms181714.aspx).
 
@@ -491,4 +491,4 @@ Einige Datenbankanwendungen enthalten Workloads mit einer hohen Zahl von Lesevor
 
 Dank der Dienstebenen in Azure SQL-Datenbank verfügen Sie in Bezug auf die Typen von Anwendungen, die Sie in der Cloud erstellen, über mehr Flexibilität. In Kombination mit einer sorgfältigen Anwendungsoptimierung können Sie für Ihre Anwendung eine hohe und vorhersagbare Leistung erzielen. In diesem Dokument werden empfohlene Verfahren zum Optimieren des Ressourcenverbrauchs einer Datenbank und Ermitteln der Eignung für eine der Leistungsebenen beschrieben. Die Optimierung ist beim Cloudmodell ein fortlaufender Prozess, und die Dienstebenen und ihre Leistungsebenen ermöglichen Administratoren die Steigerung der Leistung, während die Kosten auf der Microsoft Azure Platform gesenkt werden.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

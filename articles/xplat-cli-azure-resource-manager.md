@@ -44,7 +44,7 @@ Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle
 
 Weitere Informationen zur Authentifizierung bei Microsoft Azure finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](xplat-cli-connect.md).
 
->[AZURE.NOTE]Bei Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Ausführlichere Informationen finden Sie unter [Verwalten und Überwachen des Ressourcen-Zugriffs](../azure-portal/resource-group-rbac.md).
+>[AZURE.NOTE]Bei Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Ausführlichere Informationen finden Sie unter [Verwalten und Überwachen des Ressourcen-Zugriffs](resource-group-rbac.md).
 
 ## Festlegen des Azure-Ressourcen-Manager-Modus
 
@@ -88,29 +88,30 @@ Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels spren
 
 1. Laden Sie die Dateien „azuredeploy.json“ und „azuredeploy.parameters.json“ von [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-linux-vm) in einen Arbeitsordner auf Ihrem lokalen Computer herunter.
 
-2. Öffnen Sie die Datei „azuredeploy.parameters.json“ in einem Text-Editor, und geben Sie geeignete Parameterwerte für Ihre Umgebung ein (behalten Sie den Wert **ubuntuOSVersion** bei). ```
-	{
-	  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-	  "contentVersion": "1.0.0.0",
-	  "parameters": {
-	    "newStorageAccountName": {
-	      "value": "MyStorageAccount"
-	    },
-	    "adminUsername": {
-	      "value": "MyUserName"
-	    },
-	    "adminPassword": {
-	      "value": "MyPassword"
-	    },
-	    "dnsNameForPublicIP": {
-	      "value": "MyDomainName"
-	    },
-	    "ubuntuOSVersion": {
-	      "value": "14.04.2-LTS"
-	    }
-	  }
-	}
-```
+2. Öffnen Sie die Datei „azuredeploy.parameters.json“ in einem Text-Editor, und geben Sie geeignete Parameterwerte für Ihre Umgebung ein (behalten Sie den Wert **ubuntuOSVersion** bei).
+
+		{
+	  	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	  	"contentVersion": "1.0.0.0",
+	  	"parameters": {
+		    "newStorageAccountName": {
+		      "value": "MyStorageAccount"
+		    },
+		    "adminUsername": {
+		      "value": "MyUserName"
+		    },
+		    "adminPassword": {
+		      "value": "MyPassword"
+		    },
+		    "dnsNameForPublicIP": {
+		      "value": "MyDomainName"
+		    },
+		    "ubuntuOSVersion": {
+		      "value": "14.04.2-LTS"
+		    }
+		  }
+		}
+	```
 3. Verwenden Sie nach dem Speichern der Datei „azuredeploy.parameters.json“ den folgenden Befehl, um eine neue Ressourcengruppe basierend auf der Vorlage zu erstellen. Die Option `-e` gibt die Datei „azuredeploy.parameters.json“ an, die Sie im vorherigen Schritt angepasst haben. Ersetzen Sie *testRG* durch den gewünschten Gruppennamen und *testDeploy* durch den Bereitstellungsnamen Ihrer Wahl. Der Standort muss dem Standort aus der Parametervorlagendatei entsprechen.
 
 		azure group create "testRG" "West US" -f azuredeploy.json -d "testDeploy" -e azuredeploy.parameters.json
@@ -157,7 +158,7 @@ Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels spren
 
 	Dieser Befehl gibt Informationen zu den Ressourcen in der Gruppe zurück. Sind mehrere Gruppen vorhanden, rufen Sie mit dem Befehl `azure group list` eine Liste mit Gruppennamen ab. Verwenden Sie dann `azure group show`, um die Details einer bestimmten Gruppe anzuzeigen.
 
-Sie können auch eine Vorlage direkt auf [GitHub](https://github.com/Azure/azure-quickstart-templates) verwenden, ohne sie auf Ihren Computer herunterzuladen. Übergeben Sie dazu die URL zur Datei „azuredeploy.json“ für die Vorlage in Ihrem Befehl mithilfe der Option **--template-url**. Öffnen Sie zum Abrufen der URL „azuredeploy.json“ auf GitHub im _Rohmodus_, und kopieren Sie die URL aus der Adressleiste des Browsers. Mit dieser URL können Sie direkt eine Bereitstellung erstellen, indem Sie ungefähr folgenden Befehl verwenden:
+Sie können auch eine Vorlage direkt auf [GitHub](https://github.com/Azure/azure-quickstart-templates) verwenden, ohne sie auf Ihren Computer herunterzuladen. Übergeben Sie dazu die URL zur Datei „azuredeploy.json“ für die Vorlage in Ihrem Befehl mithilfe der Option **--template-url**. Öffnen Sie zum Abrufen der URL die Datei „azuredeploy.json“ auf GitHub im _Rohmodus_, und kopieren Sie die URL aus der Adressleiste des Browsers. Mit dieser URL können Sie direkt eine Bereitstellung erstellen, indem Sie ungefähr folgenden Befehl verwenden:
 
 	azure group deployment create "testDeploy" -g "testResourceGroup" --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-linux-vm/azuredeploy.json
 Sie werden aufgefordert, die erforderlichen Vorlagenparameter einzugeben.
@@ -202,11 +203,11 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 
 ## Nächste Schritte
 
-* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers mit Azure PowerShell finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers mit Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 * Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers im Azure-Portal finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][psrm].
 
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

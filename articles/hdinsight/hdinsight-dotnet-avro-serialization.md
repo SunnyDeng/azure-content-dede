@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="10/29/2015"
 	ms.author="jgao"/>
 
 
@@ -24,15 +24,15 @@ In diesem Thema erfahren Sie, wie Sie mit der <a href="https://hadoopsdk.codeple
 
 [AZURE.INCLUDE [nur für Windows](../../includes/hdinsight-windows-only.md)]
 
-##<a name="apacheAvro"></a>Apache Avro
+##Apache Avro
 Die <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro-Bibliothek</a> implementiert das Apache Avro-Datenserialisierungssystem für die Microsoft .NET-Umgebung. Apache Avro stellt ein kompaktes binäres Datenaustauschformat für die Serialisierung bereit. Unter Verwendung von <a href="http://www.json.org" target="_blank">JSON</a> definiert es ein sprachunabhängiges Schema, das die Interoperabilität von Sprachen sicherstellt. Die in einer Sprache serialisierten Daten können in einer anderen Sprache gelesen werden. Derzeit werden C, C++, C#, Java, PHP, Python und Ruby unterstützt. Detaillierte Informationen zum Format finden Sie in der <a href="http://avro.apache.org/docs/current/spec.html" target="_blank">Apache Avro-Spezifikation</a>. Beachten Sie, dass die aktuelle Version der Microsoft Avro-Bibliothek den Remoteprozeduraufruf-Teil (Remote Procedure Call, RPC) dieser Spezifikation nicht unterstützt.
 
 Die serialisierte Darstellung eines Objekts im Avro-System besteht aus zwei Teilen: Schema und tatsächlichem Wert. Das Avro-Schema beschreibt das sprachunabhängige Datenmodell der serialisierten Daten mit JSON. Daneben liegt eine Binärdarstellung der Daten vor. Dank der Trennung von Schema und Binärdarstellung kann jedes Objekt ohne Mehraufwand für die einzelnen Werte geschrieben werden, wodurch eine schnelle Serialisierung und eine kleine Darstellung sichergestellt werden.
 
-##<a name="hadoopScenario"></a>Das Hadoop-Szenario
+##Das Hadoop-Szenario
 Das Apache Avro-Serialisierungsformat wird in Azure HDInsight und anderen Apache Hadoop-Umgebungen umfassend eingesetzt. Avro bietet eine einfache Methode zur Darstellung komplexer Datenstrukturen in einem Hadoop MapReduce-Job. Das Format von Avro-Dateien (Avro Object Container File) ist darauf ausgelegt, das verteilte MapReduce-Programmiermodell zu unterstützen. Das wichtigste Merkmal, das die Verteilung ermöglicht, ist die "Teilbarkeit" der Dateien; hier bedeutet "teilbar", dass nach einem beliebigen Punkt in der Datei gesucht und ab einem bestimmten Block gelesen werden kann.
 
-##<a name="serializationMAL"></a>Serialisierung in der Microsoft Avro-Bibliothek
+##Serialisierung in der Microsoft Avro-Bibliothek
 Die .NET-Bibliothek für Avro unterstützt zwei Methoden der Objektserialisierung:
 
 - **Reflexion** - Das JSON-Schema für die Typen wird automatisch aus den Datenvertragsattributen der zu serialisierenden .NET-Typen erstellt.
@@ -41,14 +41,14 @@ Die .NET-Bibliothek für Avro unterstützt zwei Methoden der Objektserialisierun
 Wenn das Datenschema sowohl dem Writer als auch dem Reader des Datenstroms bekannt ist, können die Daten ohne das zugehörige Schema gesendet werden. Wenn eine Avro-Objektcontainerdatei verwendet wird, wird das Schema in der Datei gespeichert. Andere Parameter, wie z. B. der Codec für die Datenkomprimierung, können angegeben werden. Diese Szenarios werden in den nachfolgenden Codebeispielen ausführlicher erläutert und veranschaulicht.
 
 
-##<a name="prerequisites"></a>Microsoft Avro-Bibliothek – Voraussetzungen
+## Microsoft Avro-Bibliothek – Voraussetzungen
 
 - <a href="http://www.microsoft.com/download/details.aspx?id=17851" target="_blank">Microsoft .NET Framework 4</a>
 - <a href="http://james.newtonking.com/json" target="_blank">Newtonsoft Json.NET</a> (6.0.4 oder höher)
 
 Beachten Sie, dass die "Newtonsoft.Json.dll"-Abhängigkeit automatisch mit der Microsoft Avro-Bibliothek heruntergeladen wird. Die entsprechende Prozedur wird im folgenden Abschnitt bereitgestellt.
 
-##<a name="installation"></a>Microsoft Avro-Bibliothek – Installation
+## Microsoft Avro-Bibliothek – Installation
 Die Microsoft Avro -Bibliothek wird als NuGet-Paket verteilt, das mit dem folgenden Verfahren in Visual Studio installiert werden kann:
 
 1. Wählen Sie die Registerkarte **Projekt** -> **NuGet Pakete verwalten...**
@@ -59,11 +59,11 @@ Beachten Sie, dass die Newtonsoft.Json.dll-Abhängigkeit (>= 6.0.4) automatisch 
 
 Nach Wunsch können Sie auf der <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Homepage der Microsoft Avro-Bibliothek</a> die aktuellen Anmerkungen zu dieser Version lesen.
 
-##<a name="sourceCode"></a>Microsoft Avro-Bibliothek – Quellcode
+##Microsoft Avro-Bibliothek – Quellcode
 
 Den Quellcode für die Microsoft Avro Library finden Sie auf der <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Homepage der Microsoft Avro-Bibliothek</a>.
 
-##<a name="compiling"></a>Kompilieren des Schemas mit der Microsoft Avro-Bibliothek
+##Kompilieren des Schemas mit der Microsoft Avro-Bibliothek
 
 Die Microsoft Avro-Bibliothek enthält ein Hilfsprogramm zur Codegenerierung, mit dem C#-Typen basierend auf dem zuvor definierten JSON-Schema automatisch erstellt werden können. Das Hilfsprogramm zur Codegenerierung wird nicht als ausführbare Binärdatei verteilt, kann aber über das folgende Verfahren einfach erstellt werden:
 
@@ -238,7 +238,7 @@ In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Write
     // Press any key to exit.
 
 
-###<a name="Scenario2"></a>Beispiel 2: Serialisierung mit generischem Datensatz
+###Beispiel 2: Serialisierung mit generischem Datensatz
 
 Ein JSON-Schema kann explizit in einem generischen Datensatz angegeben werden, wenn die Verwendung von Reflexion nicht möglich ist, weil die Daten nicht mithilfe von .NET-Klassen mit einem Datenvertrag dargestellt werden können. Diese Methode ist im Allgemeinen langsamer als die Verwendung von Reflexion. In diesen Fällen kann das Schema für die Daten auch dynamisch sein, d. h., es muss zum Zeitpunkt der Kompilierung nicht bekannt sein. Ein Beispiel für ein solch dynamisches Szenario sind Daten, die als CSV-Dateien (Comma Separated Values, mit Trennzeichen getrennte Werte) dargestellt werden und deren Schema erst bekannt wird, wenn sie zur Laufzeit in das Avro-Format transformiert werden.
 
@@ -363,7 +363,7 @@ In diesem Beispiel wird davon ausgegangen, dass das Schema von Readern und Write
     // Press any key to exit.
 
 
-###<a name="Scenario3"></a>Beispiel 3: Serialisierung mithilfe von Objektcontainerdateien und Serialisierung mit Reflexion
+###Beispiel 3: Serialisierung mithilfe von Objektcontainerdateien und Serialisierung mit Reflexion
 
 Dieses Beispiel ähnelt dem Szenario im <a href="#Scenario1"> ersten Beispiel</a>, bei dem das Schema implizit mit Reflexion angegeben ist. Der Unterschied ist, dass hier nicht angenommen wird, dass der Leser das Schema kennt, der es deserialisiert. Die zu serialisierenden **SensorData**-Objekte und das zugehörige implizit angegebene Schema werden in einer Avro-Objektcontainerdatei gespeichert, die durch die [**AvroContainer**](http://msdn.microsoft.com/library/microsoft.hadoop.avro.container.avrocontainer.aspx)-Klasse dargestellt wird.
 
@@ -604,7 +604,7 @@ Die Daten in der Objektcontainerdatei werden mit dem Standardkomprimierungscodec
     // Press any key to exit.
 
 
-###<a name="Scenario4"></a>Beispiel 4: Serialisierung unter Verwendung von Objektcontainerdateien und Serialisierung mit generischem Datensatz
+###Beispiel 4: Serialisierung unter Verwendung von Objektcontainerdateien und Serialisierung mit generischem Datensatz
 
 Dieses Beispiel ähnelt dem Szenario im <a href="#Scenario2"> zweiten Beispiel</a>, bei dem das Schema mit JSON explizit angegeben wird. Der Unterschied ist, dass hier nicht angenommen wird, dass der Leser das Schema kennt, der es deserialisiert.
 
@@ -868,7 +868,7 @@ Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung 
 
 
 
-###<a name="Scenario5"></a>Beispiel 5: Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec
+###Beispiel 5: Serialisierung unter Verwendung von Objektcontainerdateien mit benutzerdefiniertem Komprimierungscodec
 
 Das fünfte Beispiel zeigt die Verwendung eines benutzerdefinierten Komprimierungscodecs für Avro-Objektcontainerdateien. Ein Beispiel mit dem Code für dieses Beispiel kann von der Website mit [Azure-Codebeispielen](http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111) heruntergeladen werden.
 
@@ -1366,7 +1366,7 @@ Die [Avro-Spezifikation](http://avro.apache.org/docs/current/spec.html#Required+
     // ----------------------------------------
     // Press any key to exit.
 
-###<a name="Scenario6"></a>Beispiel 6: Verwenden von Avro zum Hochladen von Daten für den Microsoft Azure HDInsight-Dienst
+###Beispiel 6: Verwenden von Avro zum Hochladen von Daten für den Microsoft Azure HDInsight-Dienst
 
 Das sechste Beispiel veranschaulicht verschiedene Programmierungstechniken im Zusammenhang mit der Interaktion mit dem Azure HDInsight-Dienst. Ein Beispiel mit dem Code für dieses Beispiel kann von der Website mit [Azure-Codebeispielen](https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3) heruntergeladen werden.
 
@@ -1399,10 +1399,7 @@ Führen Sie zum Aufräumen des Clusters den folgenden Befehl aus:
 
     AvroHDISample clean
 
-
-
-
 [deflate-100]: http://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.100).aspx
 [deflate-110]: http://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.110).aspx
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

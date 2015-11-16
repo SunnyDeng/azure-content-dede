@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Resource Balancer-Clusterbeschreibung"
-   description="Enthält Informationen zum Angeben einer Clusterbeschreibung für den Resource Balancer."
+   pageTitle="Beschreibung eines Resource Balancer-Clusters | Microsoft Azure"
+   description="Beschreibung eines Service Fabric-Clusters durch Angabe von Fehlerdomänen, Upgradedomänen, Knoteneigenschaften und Knotenkapazitäten für den Resource Balancer."
    services="service-fabric"
    documentationCenter=".net"
    authors="GaugeField"
@@ -16,7 +16,7 @@
    ms.date="09/03/2015"
    ms.author="masnider"/>
 
-# Clusterbeschreibung
+# Beschreibt einen Service Fabric-Cluster
 
 Der Service Fabric Resource Balancer bietet mehrere Mechanismen zum Beschreiben eines Clusters. Während der Laufzeit stellt der Resource Balancer mit diesen Informationen sicher, dass Dienste so platziert werden, dass für die hohe Verfügbarkeit der im Cluster ausgeführten Dienste gesorgt ist. Außerdem wird damit die maximale Auslastung der Clusterressourcen sichergestellt. Die Resource Balancer-Features, mit denen ein Cluster beschrieben wird, sind Fehlerdomänen, Upgradedomänen, Knoteneigenschaften und Knotenkapazitäten. Darüber hinaus verfügt der Resource Balancer über einige Konfigurationsoptionen zum Optimieren der Leistung.
 
@@ -192,4 +192,4 @@ Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-b
 [Image6]: media/service-fabric-resource-balancer-cluster-description/Thresholds.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

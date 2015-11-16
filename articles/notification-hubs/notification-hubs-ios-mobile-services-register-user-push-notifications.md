@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="ios" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="07/28/2015" 
+	ms.date="11/01/2015" 
 	ms.author="yuaxu"/>
 
 # Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Dienstes
@@ -122,4 +122,4 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="php"
 	ms.topic="article"
-	ms.date="07/21/2015"
-	ms.author="mebha"/>
+	ms.date="10/20/2015"
+	ms.author="meetb"/>
 
 
 # Herstellen einer Verbindung mit SQL-Datenbank mithilfe von PHP unter Windows mit Behandlung vorübergehender Fehler
@@ -136,4 +136,4 @@ Weitere Informationen über die Installation und Verwendung von PHP finden Sie u
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

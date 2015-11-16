@@ -40,7 +40,7 @@ Warum sind zustandsbehaftete Microservices wichtig? Warum können nicht ausschli
 
 (1) Die Möglichkeit zum Erstellen fehlertoleranter OLTP-Dienste mit hohem Durchsatz und niedriger Latenz (z. B. interaktive Geschäfte, Suchfunktionen, Internet der Dinge (IoT)-Systeme, Handelssysteme, Kreditkartenverarbeitungs-, Betrugserkennungssysteme, Verwaltung personenbezogener Datensätze), indem Code und Daten nah beieinander auf dem gleichen Computer beibehalten werden.
 
-2) Vereinfachung des Anwendungsentwurfs, da zustandsbehaftete Microservices zusätzliche Warteschlangen und Caches überflüssig machen, die bislang erforderlich waren, um Verfügbarkeits- und Latenzanforderungen einer rein zustandslosen Anwendung zu erfüllen. Da zustandsbehaftete Dienste an sich bereits hochverfügbar sind und eine niedrige Latenz bieten, fällt der Aufwand für die Verwaltung verschiebbarer Elemente in Ihrer Anwendung insgesamt geringer aus.
+2) Vereinfachung des Anwendungsentwurfs, da zustandsbehaftete Microservices zusätzliche Warteschlangen und Caches überflüssig machen, die bislang erforderlich waren, um Verfügbarkeits- und Latenzanforderungen einer rein zustandslosen Anwendung zu erfüllen. Da zustandsbehaftete Dienste an sich bereits hochverfügbar sind und eine niedrige Latenz bieten, fällt der Verwaltungsaufwand in Ihrer Anwendung insgesamt geringer aus.
 
 Weitere Informationen zu Anwendungsmustern und -entwürfen in Service Fabric finden Sie unter [Anwendungsszenarien](service-fabric-application-scenarios.md).
 
@@ -98,4 +98,4 @@ Mit Service Fabric können Sie Folgendes tun:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

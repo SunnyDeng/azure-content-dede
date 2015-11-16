@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="10/29/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Web-App und einer Redis Cache-Instanz mithilfe einer Vorlage
@@ -125,4 +125,4 @@ Beachten Sie, dass die Web-App mit App-Einstellungseigenschaften konfiguriert is
 
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

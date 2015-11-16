@@ -1,35 +1,37 @@
-The following table lists the limits associated with the the different service tiers (S1, S2, F1). For information about the cost of each *unit* in each tier, see [IoT Hub Pricing](http://azure.microsoft.com/pricing/details/iot-hub/).
+Die folgende Tabelle listet die Grenzwerte der verschiedenen Dienstebenen (S1, S2, F1) auf. Informationen zu den Kosten jeder *Einheit* finden Sie unter [IoT Hub – Preise](http://azure.microsoft.com/pricing/details/iot-hub/).
 
-| Resource | S1 Standard | S2 Standard | F1 Free |
+| Ressource | S1 Standard | S2 Standard | F1 Free |
 | -------- | ----------- | ----------- | ------- |
-| Devices/unit | 500 | 500 | 10 |
-| Messages/day | 50,000 | 1,500,000 | 3,000 |
-| Maximum units | 200 | 200 | 1 |
-| Device updates (create, update, <br/> delete) per unit per day | 1100 | 1100 | 1100 |
+| Geräte/Einheit | 500 | 500 | 10 |
+| Nachrichten/Tag | 50\.000 | 1\.500.000 | 3\.000 |
+| Maximale Anzahl der Einheiten | 200 | 200 | 1 |
+| Geräteaktualisierungen (Erstellen, Aktualisieren,<br/> Löschen) pro Einheit pro Tag | 1100 | 1100 | 1100 |
 
-> [AZURE.NOTE] If you anticipate using more than 200 units with an S1 or S2 tier hub, please contact Microsoft support.
+> [AZURE.NOTE]Wenden Sie sich an den Microsoft-Support, wenn Sie voraussichtlich mehr als 200 Einheiten mit einem Hub im Tarif S1 oder S2 verwenden.
 
-The following table lists the limits that apply to IoT Hub resources:
+Die folgende Tabelle enthält die für IoT Hub-Ressourcen geltenden Grenzwerte:
 
-| Resource | Limit |
+| Ressource | Begrenzung |
 | -------- | ----- |
-| Maximum IoT hubs per Azure subscription | 10 |
-| Maximum number of device identities<br/>  returned in a single call | 1000 |
-| IoT Hub message maximum retention | 7 days |
-| Maximum size of device-to-cloud message | 256 KB |
-| Maximum size of device-to-cloud batch | 256 KB |
-| Maximum messages in device-to-cloud batch | 500 |
-| Maximum size of cloud-to-device message | 64 KB |
-| Maximum TTL for cloud-to-device messages | 2 days |
-| Maximum delivery count for cloud-to-device <br/> messages | 100 |
-| Maximum delivery count for feedback messages <br/> in response to a cloud-to-device message | 100 |
-| Maximum TTL for feedback messages in <br/> response to a cloud-to-device message | 2 days |
+| Maximale Anzahl von IoT Hubs pro Azure-Abonnement | 10 |
+| Maximale Anzahl von Geräte-Identitäten,<br/> die bei einem einzelnen Aufruf zurückgegeben wird | 1000 |
+| Maximale Beibehaltungsdauer von IoT Hub-Nachrichten | 7 Tage |
+| Maximale Größe einer Nachricht von einem Gerät an die Cloud | 256 KB |
+| Maximale Größe eines Batches, das vom Gerät an die Cloud gesendet wird | 256 KB |
+| Maximale Anzahl von Nachrichten im Batch, das vom Gerät an die Cloud gesendet wird | 500 |
+| Maximale Größe einer Nachricht von der Cloud an das Gerät | 64 KB |
+| Maximale Gültigkeitsdauer von Nachrichten von der Cloud an das Gerät | 2 Tage |
+| Maximale Übermittlungsanzahl von Nachrichten von der<br/> Cloud an das Gerät | 100 |
+| Maximale Übermittlungsanzahl von Feedbacknachrichten<br/> als Reaktion auf eine Nachricht von der Cloud an das Gerät | 100 |
+| Maximale Gültigkeitsdauer von Feedbacknachrichten<br/> als Reaktion auf eine Nachricht von der Cloud an das Gerät | 2 Tage |
 
-The IoT Hub service throttles requests when the following quotas are exceeded:
+Der IoT Hub-Dienst drosselt Anforderungen, wenn die folgenden Kontingente überschritten werden:
 
-| Throttle | Per-hub value |
+| Drosselung | Wert pro Hub |
 | -------- | ------------- |
-| Identity registry operations <br/> (create, retrieve, list, update, delete), <br/> individual or bulk import/export | 100/min/unit, up to 5000/min |
-| Device connections | 100/sec/unit |
-| Device-to-cloud sends | 2000/min/unit (for S2), 60/min/unit (for S1) <br/> Minimum of 100/sec |
-| Cloud-to-device operations <br/> (sends, receives, feedback) | 100/min/unit |
+| Vorgänge in der Identitätsregistrierung <br/> (Erstellen, Abrufen, Aktualisieren, Löschen), <br/> einzelne Import-/Exportvorgänge oder Massenimport/-export | 100/Minute/Einheit, bis zu 5.000/Minute |
+| Geräteverbindungen | 100/Sekunde/Einheit |
+| Senden von Nachrichten von Geräten an die Cloud | 2000/Minute/Einheit (für S2), 60/Minute/Einheit (für S1) <br/> Mindestens 100/Sek. |
+| Vorgänge von Cloud zu Geräten <br/> (Senden, Empfangen, Feedback) | 100/Minute/Einheit |
+
+<!---HONumber=Nov15_HO2-->

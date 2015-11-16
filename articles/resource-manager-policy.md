@@ -13,16 +13,24 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="10/06/2015"
+	ms.date="11/02/2015"
 	ms.author="gauravbh;tomfitz"/>
 
 # Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung
 
-Sie können nun den Azure-Ressourcen-Manager zum Steuern des Zugriffs über benutzerdefinierte Richtlinien verwenden. Eine Richtlinie stellt eine oder mehrere Verstöße dar, die für den gewünschten Bereich verhindert werden können. Ein Bereich kann in diesem Fall ein Abonnement, eine Ressourcengruppe oder eine einzelne Ressource sein.
+Sie können nun den Azure-Ressourcen-Manager zum Steuern des Zugriffs über benutzerdefinierte Richtlinien verwenden. Mithilfe von Richtlinien können Sie Benutzer in Ihrer Organisation hindern, gegen Konventionen zu verstoßen, die für das Verwalten der Ressourcen Ihrer Organisation gelten.
 
-Richtlinien sind standardmäßig ein Zulassungssystem. Eine Richtlinie wird durch eine Richtliniendefinition definiert und durch die Richtlinienzuweisung angewendet. Mit Richtlinienzuweisungen können Sie den Gültigkeitsbereich für die Richtlinie festlegen.
+Sie erstellen Richtliniendefinitionen, die die Aktionen oder Ressourcen beschreiben, die spezifisch verweigert werden. Sie weisen diese Richtliniendefinitionen dem gewünschten Ziel zu, z. B. einem Abonnement, einer Ressourcengruppe oder einer einzelnen Ressource.
 
-In diesem Artikel wird die grundlegende Struktur der Richtliniendefinitionssprache erläutert, mit der Sie Richtlinien erstellen. Anschließend wird beschrieben, wie Sie diese Richtlinien auf verschiedene Bereiche anwenden. Abschließend finden Sie einige Beispiele dafür, wie Sie dies auch über die REST-API durchführen können. Die PowerShell-Unterstützung wird auch kurz angesprochen.
+In diesem Artikel wird die grundlegende Struktur der Richtliniendefinitionssprache erläutert, mit der Sie Richtlinien erstellen. Anschließend wird beschrieben, wie Sie diese Richtlinien auf verschiedene Ziele anwenden. Abschließend finden Sie einige Beispiele dafür, wie Sie dies auch über die REST-API erreichen können.
+
+## Worin unterscheidet sich dies von der rollenbasierten Zugriffssteuerung (RBAC)?
+
+Es gibt einige wichtige Unterschiede zwischen Richtlinien und rollenbasierter Zugriffssteuerung. Als Erstes müssen Sie jedoch verstehen, dass Richtlinien und RBAC zusammenarbeiten. Um Richtlinien verwenden zu können, muss der Benutzer über die RBAC authentifiziert werden. Im Gegensatz zur RBAC stellen Richtlinien ein Standardsystem für das Zulassen und explizite Verweigern dar.
+
+Die RBAC konzentriert sich auf die Aktionen, die ein **Benutzer** in verschiedenen Bereichen ausführen darf. Beispiel: Ein bestimmter Benutzer wird der Rolle „Mitwirkender“ für eine Ressourcengruppe in einem bestimmten Bereich hinzugefügt, sodass der Benutzer Änderungen an der Ressourcengruppe vornehmen darf.
+
+Richtlinien konzentrieren sich auf Aktionen für **Ressourcen** in verschiedenen Bereichen. Beispielsweise können Sie über Richtlinien die Arten von Ressourcen steuern, die bereitgestellt werden können, oder die Standorte beschränken, an denen die Ressourcen bereitgestellt werden können.
 
 ## Häufige Szenarios
 
@@ -40,9 +48,9 @@ Richtliniendefinitionen werden mit JSON erstellt. Sie enthalten eine oder mehrer
 
 Grundsätzlich enthält eine Richtlinie Folgendes:
 
-**Bedingung/logische Operatoren**: eine Reihe von Bedingungen, die über einen Satz von logischen Operatoren beeinflusst werden.
+**Bedingung/logische Operatoren**: Eine Reihe von Bedingungen, die mithilfe einer Gruppe logischer Operatoren beeinflusst werden.
 
-**Effekt**: beschreibt die Auswirkungen, wenn die Bedingung erfüllt ist – verweigern oder überwachen. Ein Überwachungseffekt gibt ein Warnereignis im Dienstprotokoll aus. Administratoren können z. B. eine Richtlinie erstellen, die eine Überwachung verursacht, wenn jemand einen großen virtuellen Computer erstellt, und dann später die Protokolle überprüfen.
+**Effekt**: Beschreibt die Auswirkungen, wenn die Bedingung erfüllt ist: verweigern oder überwachen. Ein Überwachungseffekt gibt ein Warnereignis im Dienstprotokoll aus. Administratoren können z. B. eine Richtlinie erstellen, die eine Überwachung verursacht, wenn jemand einen großen virtuellen Computer erstellt, und dann später die Protokolle überprüfen.
 
     {
       "if" : {
@@ -60,14 +68,15 @@ Die unterstützten logischen Operatoren sind zusammen mit der Syntax nachfolgend
 
 | Name des Operators | Syntax |
 | :------------- | :------------- |
-| Nicht | "not" : {&lt;Bedingung&gt;} |
+| Not | "not" : {&lt;Bedingung oder Operator &gt;} |
 | Und | "allOf" : [ {&lt;Bedingung1&gt;},{&lt;Bedingung2&gt;}] |
 | Oder | "anyOf" : [ {&lt;Bedingung1&gt;},{&lt;Bedingung2&gt;}] |
 
+Geschachtelte Bedingungen werden nicht unterstützt.
 
 ## Bedingungen
 
-Die unterstützten Bedingungen sind zusammen mit der Syntax nachfolgend aufgeführt:
+Eine Bedingung prüft, ob ein **Feld** oder eine **Quelle** bestimmte Kriterien erfüllt. Die Namen unterstützter Bedingungen sind zusammen mit der Syntax nachstehend aufgeführt:
 
 | Name der Bedingung | Syntax |
 | :------------- | :------------- |
@@ -80,11 +89,15 @@ Die unterstützten Bedingungen sind zusammen mit der Syntax nachfolgend aufgefü
 
 ## Felder und Quellen
 
-Die Bedingungen werden mithilfe von Feldern und Quellen gebildet. Die folgenden Felder und Quellen werden unterstützt:
+Bedingungen werden mithilfe von Feldern und Quellen gebildet. Ein Feld stellt Eigenschaften in der Anforderungsnutzlast der Ressource dar. Eine Quelle stellt Merkmale der Anforderung selbst dar.
+
+Die folgenden Felder und Quellen werden unterstützt:
 
 Felder: **name**, **kind**, **type**, **location**, **tags**, **tags.***.
 
 Quellen: **action**
+
+Weitere Informationen zu Aktionen finden Sie unter [RBAC – Integrierte Rollen](active-directory/role-based-access-built-in-roles.md).
 
 ## Beispiele für Richtliniendefinitionen
 
@@ -181,7 +194,7 @@ Dieser Abschnitt enthält Informationen zum Erstellen einer Richtlinie mithilfe 
 
 ### Erstellen der Richtliniendefinition mit der REST-API
 
-Sie können eine Richtlinie mit der REST-API erstellen, wie unter [Policy Definitions](https://msdn.microsoft.com/library/azure/mt588471.aspx) (in englischer Sprache) beschrieben. Die REST-API ermöglicht es Ihnen, Richtliniendefinitionen zu erstellen und zu löschen sowie Informationen zu vorhandenen Definitionen abzurufen.
+Sie können eine Richtlinie mit der [REST-API für Richtliniendefinitionen](https://msdn.microsoft.com/library/azure/mt588471.aspx) erstellen. Die REST-API ermöglicht es Ihnen, Richtliniendefinitionen zu erstellen und zu löschen sowie Informationen zu vorhandenen Definitionen abzurufen.
 
 So erstellen Sie eine neue Richtlinie
 
@@ -211,7 +224,7 @@ Der Anforderungstext sollte dem folgenden ähneln:
     }
 
 
-Die Richtliniendefinition kann als eines der oben aufgeführten Beispiele definiert werden. Verwenden Sie die API-Version *2015-10-01-preview*. Weitere Beispiele und Informationen finden Sie unter [Policy Definitions](https://msdn.microsoft.com/library/azure/mt588471.aspx) (in englischer Sprache).
+Die Richtliniendefinition kann als eines der oben aufgeführten Beispiele definiert werden. Verwenden Sie die API-Version *2015-10-01-preview*. Weitere Beispiele und Informationen finden Sie unter [REST-API für Richtliniendefinitionen](https://msdn.microsoft.com/library/azure/mt588471.aspx).
 
 ### Erstellen der Richtliniendefinition mit der PowerShell
 
@@ -237,7 +250,7 @@ Die Ausgabe der Ausführung wird im "$policy"-Objekt gespeichert, weil dieses sp
 
 ### Zuweisen von Richtlinien mit der REST-API
 
-Sie können die Richtliniendefinition mithilfe von [Policy Assignments](https://msdn.microsoft.com/library/azure/mt588466.aspx) (Richtlinienzuweisungen, in englischer Sprache) auf den gewünschten Bereich anwenden. Die REST-API ermöglicht es Ihnen, Richtlinienzuweisungen zu erstellen und zu löschen sowie Informationen zu vorhandenen Zuweisungen abzurufen.
+Sie können die Richtliniendefinition mithilfe der [REST-API für Richtlinienzuweisungen](https://msdn.microsoft.com/library/azure/mt588466.aspx) auf das gewünschte Ziel anwenden. Die REST-API ermöglicht es Ihnen, Richtlinienzuweisungen zu erstellen und zu löschen sowie Informationen zu vorhandenen Zuweisungen abzurufen.
 
 Führen Sie zum Erstellen einer neuen Richtlinienzuweisung Folgendes aus:
 
@@ -258,7 +271,7 @@ Der Anforderungstext sollte dem folgenden ähneln:
       "name":"VMPolicyAssignment"
     }
 
-Weitere Beispiele und Informationen finden Sie unter [Policy Assignments](https://msdn.microsoft.com/library/azure/mt588466.aspx) (Richtlinienzuweisungen, in englischer Sprache).
+Weitere Beispiele und Informationen finden Sie unter [REST-API für Richtlinienzuweisungen](https://msdn.microsoft.com/library/azure/mt588466.aspx).
 
 ### Zuweisen von Richtlinien mit der PowerShell
 
@@ -276,4 +289,4 @@ Sie können Richtliniendefinitionen mithilfe der Cmdlets "Get-AzureRmPolicyDefin
 
 Ähnlich können Sie Richtlinienzuweisungen mithilfe der Cmdlets "Get-AzureRmPolicyAssignment", "Set-AzureRmPolicyAssignment" bzw. "Remove-AzureRmPolicyAssignment" abrufen, ändern oder entfernen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

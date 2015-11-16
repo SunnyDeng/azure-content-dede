@@ -1,10 +1,10 @@
 <properties 
-    pageTitle="Migration von Verbunden" 
+    pageTitle="Migration von Verbunden | Microsoft Azure" 
     description="Beschreibt die Schritte zur Migration einer vorhandenen, mit dem Verbundfeature erstellten App zum elastischen Datenbankmodell." 
     services="sql-database" 
     documentationCenter="" 
     manager="jeffreyg" 
-    authors="sidneyh" 
+    authors="ddove" 
     editor=""/>
 
 <tags 
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="08/14/2015" 
-    ms.author="sidneyh"/>
+    ms.date="11/04/2015" 
+    ms.author="ddove;sidneyh"/>
 
 # Migration von Verbunden 
 
@@ -108,7 +108,7 @@ Das Federations Migration Utility bietet die folgenden Funktionen:
 
 ## Funktionsvergleiche
 
-Obwohl die Tools für elastische Datenbanken viele zusätzliche Funktionen bietet (z. B. [Multi-Shard-Abfragen](sql-database-elastic-scale-multishard-querying.md), [Teilen und Zusammenführen von Shards](sql-database-elastic-scale-overview-split-and-merge.md), [Shard-Elastizität](sql-database-elastic-scale-elasticity.md), [clientseitiges Zwischenspeichern](sql-database-elastic-scale-shard-map-management.md) und anderes mehr), gibt es einige beachtenswerte Verbund-Funktionen, die in den Tools für elastische Datenbanken nicht unterstützt werden.
+Obwohl die Tools für elastische Datenbanken viele zusätzliche Funktionen bieten (z. B. [Abfragen von mehreren Shards](sql-database-elastic-scale-multishard-querying.md), [Teilen und Zusammenführen von Shards](sql-database-elastic-scale-overview-split-and-merge.md), Shardelastizität, [clientseitiges Zwischenspeichern](sql-database-elastic-scale-shard-map-management.md) und anderes mehr), gibt es einige beachtenswerte Verbundfunktionen, die in den Tools für elastische Datenbanken nicht unterstützt werden.
   
 - Die Verwendung von **FILTERING=ON**. Stattdessen wird die Verwendung von zeilenbasierter Sicherheit (RLS) für die Filterung von Zeilen empfohlen. Wie bei der Filterung in Verbunden, fügt RLS automatisch ein Prädikat für alle Abfragen in einer Shardtabelle hinzu. Weitere Informationen hierzu finden Sie unter [Mehrinstanzenfähige Anwendungen mit Tools für elastische Datenbanken und zeilenbasierter Sicherheit](sql-database-elastic-tools-multi-tenant-row-level-security.md). 
  
@@ -150,4 +150,4 @@ Wenn Ihre Anwendung noch nicht ohne Verbunde verwendet werden kann, wenden Sie s
 [3]: ./media/sql-database-elastic-scale-federation-migration/migrate-3.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

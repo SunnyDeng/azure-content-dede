@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="10/13/2015"
+   ms.date="11/02/2015"
    ms.author="andkjell;billmath"/>
 
 
@@ -77,6 +77,14 @@ Welche Berechtigungen Sie benötigen, hängt von den aktivierten optionalen Funk
 | Geräterückschreiben | Berechtigungen, die mit einem PowerShell-Skript erteilt wurden, wie unter [Geräterückschreiben](active-directory-aadconnect-get-started-custom-device-writeback.md) beschrieben.|
 | Gruppenrückschreiben | Lesen, Erstellen, Aktualisieren und Löschen von Gruppenobjekten in der Organisationseinheit, in der sich die Verteilergruppen befinden soll.|
 
+## Upgrade
+Wenn Sie Azure AD Connect auf eine höhere Version aktualisieren, benötigen Sie folgende Berechtigungen:
+
+| Prinzipal | Erforderliche Berechtigungen | Verwendung |
+| ---- | ---- | ---- |
+| Benutzer, die den Installations-Assistenten ausführen | Administrator des lokalen Servers | Aktualisieren von Binärdateien. |
+| Benutzer, die den Installations-Assistenten ausführen | Mitglied von ADSyncAdmins | Vornehmen von Änderungen an den Synchronisierungsregeln und anderen Konfigurationen. |
+| Benutzer, die den Installations-Assistenten ausführen | Bei Verwendung eines vollständigen SQL-Servers: DBO (oder ähnlich) der Datenbank für das Synchronisierungsmodul | Vornehmen von Änderungen auf Datenbankebene, z. B. Aktualisieren von Tabellen mit neuen Spalten. |
 
 ## Weitere Informationen zu den erstellten Konten
 
@@ -86,12 +94,14 @@ Wenn Sie Express-Einstellungen verwenden, wird ein Konto für die Synchronisieru
 
 ![AD-Konto](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
-### Azure AD Connect-Synchronisierungsdienstkonto
-Der Installations-Assistent erstellt ein lokales Dienstkonto (sofern das Konto nicht zur Verwendung in benutzerdefinierten Einstellungen angegeben wird). Dem Konto wird das Präfix **AAD\_** angefügt, und es wird zur Ausführung für den tatsächlichen Synchronisierungsdienst verwendet. Wenn Sie Azure AD Connect auf einem Domänencontroller installieren, wird das Konto in der Domäne erstellt. Wenn Sie SQL Server auf einem Remoteserver verwenden, muss sich das Konto in der Domäne befinden.
+### Azure AD Connect-Synchronisierungsdienstkonten
+Der Installations-Assistent erstellt zwei lokale Dienstkonten (sofern das zu verwendende Konto nicht in den benutzerdefinierten Einstellungen angegeben wird). Das Konto mit dem Präfix **AAD\_** wird zur Ausführung des eigentlichen Synchronisierungsdiensts verwendet. Wenn Sie Azure AD Connect auf einem Domänencontroller installieren, werden die Konten in der Domäne erstellt. Wenn Sie SQL Server auf einem Remoteserver verwenden, muss sich das Dienstkonto **AAD\_** in der Domäne befinden. Das Konto mit dem Präfix **AADSyncSched\_** wird für die geplante Aufgabe verwendet, mit der das Synchronisierungsmodul ausgeführt wird.
 
 ![Synchronisierungsdienstkonto](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
 
-Das Konto wird mit einem langen komplexen Kennwort erstellt, das nicht abläuft. Dieses Konto wird von Windows verwendet, um die Verschlüsselungsschlüssel zu speichern, damit das Kennwort für dieses Konto nicht zurückgesetzt oder geändert wird.
+Die Konten werden mit einem langen komplexen Kennwort erstellt, das nicht abläuft.
+
+Das Dienstkonto für das Synchronisierungsmodul wird von Windows verwendet, um die Verschlüsselungsschlüssel zu speichern. Darum darf das Kennwort für dieses Konto nicht zurückgesetzt oder geändert werden.
 
 Bei Verwendung eines vollständigen SQL Servers wird das Dienstkonto zum DBO der für das Synchronisierungsmodul erstellten Datenbank. Der Dienst funktioniert mit anderen Berechtigungen nicht wie vorgesehen. Eine SQL-Anmeldung wird ebenfalls erstellt.
 
@@ -104,12 +114,12 @@ Ein Konto in Azure AD wird für die Verwendung mit dem Synchronisierungsdienst 
 
 Der Name des Servers, auf dem das Konto verwendet wird, kann im zweiten Teil des Benutzernamens identifiziert werden. In der Abbildung oben heißt der Server "FABRIKAMCON". Wenn Sie über Stagingserver verfügen, erhält jeder Server ein eigenes Konto. Es besteht eine Beschränkung auf 10 Synchronisierungsdienstkonten in Azure AD.
 
-Das Dienstkonto wird mit einem langen komplexen Kennwort erstellt, das nicht abläuft. Diesem wird eine besondere Rolle **Directory Synchronization Accounts** zugeteilt, die nur über Berechtigungen zur Ausführung von Verzeichnissynchronisierungsaufgaben verfügt. Diese spezielle integrierte Rolle kann nicht außerhalb des Azure AD Connect-Assistenten gewährt werden, und das Azure-Portal zeigt dieses Konto nur mit der Rolle **Benutzer** an.
+Das Dienstkonto wird mit einem langen komplexen Kennwort erstellt, das nicht abläuft. Diesem wird die besondere Rolle **Verzeichnissynchronisierungskonten** zugewiesen, die nur über Berechtigungen zur Ausführung von Verzeichnissynchronisierungsaufgaben verfügt. Diese spezielle integrierte Rolle kann nicht außerhalb des Azure AD Connect-Assistenten gewährt werden, und das Azure-Portal zeigt dieses Konto nur mit der Rolle **Benutzer** an.
 
 ![AD-Kontenrolle](./media/active-directory-aadconnect-accounts-permissions/aadsyncserviceaccountrole.png)
 
 ## Nächste Schritte
 
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
+Informieren Sie sich über das [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/20/2015"
+   ms.date="11/03/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect: Versionsveröffentlichungsverlauf
@@ -21,6 +21,44 @@
 Das Azure Active Directory-Team aktualisiert Azure AD Connect regelmäßig mit neuen Features und Funktionen. Nicht alle Erweiterungen gelten für alle Benutzergruppen.
 
 Dieser Artikel soll Ihnen helfen, die Versionen zu verfolgen, die veröffentlicht wurden, und zu wissen, ob Sie auf die neueste Version aktualisieren müssen oder nicht.
+
+Verwandte Links:
+
+- Die zum Anwenden eines Updates erforderlichen Berechtigungen sind unter [Konten und Berechtigungen](active-directory-aadconnect-accounts-permissions.md#upgrade) aufgeführt.
+- [Azure AD Connect herunterladen](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1\.0.9125.0
+Veröffentlicht im November 2015
+
+**Neue Features:**
+
+- Es ist möglich, die Vertrauensstellung zwischen AD FS und Azure AD neu zu konfigurieren.
+- Das Active Directory-Schema kann aktualisiert und die Synchronisierungsregeln können neu generiert werden.
+- Synchronisierungsregeln können deaktiviert werden.
+- In einer Synchronisierungsregel kann „AuthoritativeNull“ als neues Literal definiert werden.
+
+**Neue Vorschaufeatures:**
+
+- [Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
+- Unterstützung für die Kennwortsynchronisierung mit [Azure AD-Domänendiensten](active-directory-ds-getting-started.md)
+
+**Neues unterstütztes Szenario:**
+
+- Es werden mehrere lokale Exchange-Organisationen unterstützt. Weitere Informationen finden Sie unter [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/de-DE/library/jj873754.aspx).
+
+**Behobene Probleme:**
+
+- Probleme bei der Kennwortsynchronisierung:
+    - Für ein Objekt, das sich bisher außerhalb des Bereichs befand und das dann in den Bereich verschoben wurde, wird das Kennwort nicht synchronisiert. Dies schließt die Organisationseinheit und die Attributfilterung ein.
+    - Wenn eine neue Organisationseinheit in die Synchronisierung einbezogen wird, ist keine vollständige Kennwortsynchronisierung erforderlich.
+    - Nach dem Aktivieren eines bisher deaktivierten Benutzers wird das Kennwort nicht synchronisiert.
+    - Für die Warteschlange mit Kennwortwiederholungsversuchen gilt kein Limit, der bisherige Grenzwert von 5.000 Objekten bis zum Außerkraftsetzen wurde entfernt.
+    - [Verbesserte Problembehandlung](active-directory-aadconnectsync-implement-password-synchronization.md#troubleshoot-password-synchronization).
+- Mit der Gesamtstrukturfunktionsebene von Windows Server 2016 kann keine Verbindung mit Active Directory hergestellt werden.
+- Nach der Erstinstallation kann die für das gruppenspezifische Filtern verwendete Gruppe nicht geändert werden.
+- Wenn Benutzer, für die das Kennwortrückschreiben aktiviert ist, ihr Kennwort ändern, wird auf dem Azure AD Connect-Server kein neues Benutzerprofil mehr angelegt.
+- In den Geltungsbereichen der Synchronisierungsregeln können keine langen Ganzzahlen als Werte verwendet werden.
+- Das Kontrollkästchen „Geräterückschreiben“ bleibt deaktiviert, wenn nicht erreichbare Domänencontroller vorhanden sind.
 
 ## 1\.0.8667.0
 Veröffentlicht im August 2015
@@ -41,6 +79,7 @@ Veröffentlicht im August 2015
 - Aktivieren und Deaktivieren des "Stagingmodus" ist nicht möglich, wenn Erweiterungsattribute hinzugefügt wurden.
 - Das Rückschreiben von Kennwörtern schlägt in einigen Konfigurationen aufgrund eines falschen Kennworts für den Active Directory Connector fehl.
 - DirSync kann nicht aktualisiert werden, wenn DN bei der Attributfilterung verwendet wird.
+- Beim Verwenden der Kennwortzurücksetzung wird die CPU übermäßig ausgelastet.
 
 **Entfernte Vorschaufunktionen:**
 
@@ -56,8 +95,8 @@ Veröffentlicht im Juni 2015
 **Neue Features:**
 
 - [Installation mit Express-Einstellungen](active-directory-aadconnect-get-started-express.md)
-- Funktion [ADFS konfigurieren](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs)
-- Funktion [Von DirSync aktualisieren](active-directory-aadconnect-dirsync-upgrade-get-started.md)
+- Möglichkeit zum [Konfigurieren von AD FS](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs)
+- Möglichkeit zum [Upgrade aus DirSync](active-directory-aadconnect-dirsync-upgrade-get-started.md)
 - [Verhindern von versehentlichen Löschungen](active-directory-aadconnectsync-feature-prevent-accidental-deletes.md)
 - Neuer [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode)
 
@@ -116,7 +155,7 @@ Veröffentlicht im Dezember 2014
 
 **Neue Features:**
 
-- Die Synchronisierung von Kennwörtern mit attributbasierter Filterung wird jetzt unterstützt. Weitere Informationen finden Sie unter [Synchronisierung von Kennwörtern mit Filterung](active-directory-aadconnectsync-configure-filtering.md).
+- Die Synchronisierung von Kennwörtern mit attributbasierter Filterung wird jetzt unterstützt. Weitere Informationen finden Sie unter [Synchronisieren von Kennwörtern per Filterung](active-directory-aadconnectsync-configure-filtering.md).
 - Das Attribut msDS-ExternalDirectoryObjectID wird nach AD zurückgeschrieben. Damit wird Unterstützung für Office 365-Anwendungen hinzugefügt, die in einer Hybrid-Exchange-Bereitstellung mithilfe von OAuth2 sowohl auf Online- als auch lokale Postfächer zugreifen.
 
 **Behobene Upgrade-Probleme:**
@@ -158,6 +197,6 @@ Veröffentlicht im September 2014
 **Erste Version von Azure AD Sync**
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
+Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

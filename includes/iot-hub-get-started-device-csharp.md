@@ -62,14 +62,17 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolenanwendung, die simuliert,
         SendDeviceToCloudMessagesAsync();
         Console.ReadLine();
 
-> [AZURE.NOTE]Der Einfachheit halber wird in diesem Lernprogramm keine Wiederholungsrichtlinie implementiert. Es wird empfohlen, im Produktionscode Wiederholungsrichtlinien zu implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel [Transient Fault Handling] (auf Englisch) beschrieben.
+  In der Standardeinstellung erstellt die **Create** -Methode einen **DeviceClient**, der das AMQP-Protokoll für die Kommunikation mit IoT Hub verwendet. Um das HTTPS-Protokoll zu verwenden, nutzen Sie die Überschreibung der **Create**-Methode, um das Protokoll anzugeben. Wenn Sie das HTTPS-Protokoll verwenden möchten, müssen Sie Ihrem Projekt auch das NuGet-Paket **Microsoft.AspNet.WebApi.Client** hinzufügen, um den **System.Net.Http.Formatting**-Namespace einzubeziehen.
+
+
+> [AZURE.NOTE]Der Einfachheit halber wird in diesem Lernprogramm keine Wiederholungsrichtlinie implementiert. Es wird empfohlen, im Produktionscode Wiederholungsrichtlinien zu implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler] beschrieben.
 
 <!-- Links -->
 
 [NuGet-Paket mit dem Geräte-SDK für Azure IoT]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
-[Transient Fault Handling]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[Behandeln vorübergehender Fehler]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
 
 <!-- Images -->
 [30]: ./media/iot-hub-getstarted-device-csharp/create-identity-csharp1.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

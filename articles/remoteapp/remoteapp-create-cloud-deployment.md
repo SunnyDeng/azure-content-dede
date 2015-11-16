@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/23/2015" 
+	ms.date="11/04/2015" 
 	ms.author="elizapo"/>
 
 # Erstellen einer Cloudsammlung von Azure RemoteApp
@@ -40,7 +40,7 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 - Voraussetzung ist, dass Sie entweder eins der im Rahmen Ihres Abonnements bereitgestellten Vorlagenimages verwenden oder das gewünschte Vorlagenimage bereits hochgeladen haben. Falls Sie eine andere Abbildvorlage hochladen möchten, können Sie dies auf der Seite für Abbildvorlagen tun. Klicken Sie auf **Abbildvorlage hochladen** und folgen Sie den Schritten im Assistenten. 
 - Möchten Sie das Office 365 ProPlus-Image verwenden? Weitere Informationen finden Sie unter [hier](remoteapp-officesubscription.md).
 - Möchten Sie benutzerdefinierte Apps oder LOB-Programme bereitstellen? Erstellen Sie ein neues [Image](remoteapp-imageoptions.md), und verwenden Sie es in Ihrer Cloud-Sammlung.
-- Ermitteln Sie, ob Sie eine Verbindung mit einem VNET herstellen müssen. Wenn Sie eine Verbindung mit einem VNET herstellen möchten, stellen Sie sicher, dass die [Richtlinien zum Festlegen der Größe](remoteapp-vnetsizing.md) eingehalten werden und dass eine [Verbindung mit RemoteApp](remoteapp-vnet.md) hergestellt werden kann. Weitere Informationen finden Sie im [Artikel zur VNET-Planung](remoteapp-planvpn.md).
+- Ermitteln Sie, ob Sie eine Verbindung mit einem VNET herstellen müssen. Wenn Sie eine Verbindung mit einem VNET herstellen möchten, stellen Sie sicher, dass die [Richtlinien zum Festlegen der Größe](remoteapp-vnetsizing.md) eingehalten werden und dass eine [Verbindung mit RemoteApp](remoteapp-vnet.md) hergestellt werden kann. Weitere Informationen finden Sie im [Artikel zur VNET-Planung](remoteapp-planvnet.md).
 - Wenn Sie ein VNET verwenden, können Sie entscheiden Sie, ob es Ihrer lokalen Active Directory-Domäne beitreten soll.
 
 ## Schritt 1: Erstellen einer Cloudsammlung Cloud – mit oder ohne VNET##
@@ -109,4 +109,4 @@ Geschafft – Sie haben Ihre Cloudsammlung in Azure RemoteApp erfolgreich erstel
 ### Helfen Sie uns, Ihnen zu helfen 
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

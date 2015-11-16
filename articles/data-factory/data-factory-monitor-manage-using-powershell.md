@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015" 
+	ms.date="10/28/2015" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Azure PowerShell
@@ -27,6 +27,10 @@
 Im Lernprogramm [Erste Schritte mit Azure Data Factory][adf-get-started] erfahren Sie, wie Sie eine Azure Data Factory mithilfe des [Azure-Vorschauportals][azure-preview-portal] erstellen und überwachen. In diesem Lernprogramm erstellen und überwachen Sie eine Azure Data Factory mithilfe von Azure PowerShell-Cmdlets. Die Pipeline in der Data Factory, die Sie in diesem Lernprogramm erstellen, kopiert Daten aus einem Azure-Blob in eine Azure SQL-Datenbank.
 
 > [AZURE.NOTE]In diesem Artikel werden nicht alle Data Factory-Cmdlets behandelt. In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
+>  
+>  Bei Verwendung der Azure PowerShell 1.0-Vorschau müssen Sie die [hier](https://msdn.microsoft.com/library/dn820234.aspx) dokumentierten Cmdlets verwenden. Verwenden Sie beispielsweise „New-AzureRMDataFactory“ anstelle von „New-AzureDataFactory“.
+
+
 
 ##Voraussetzungen
 Neben den zu erfüllenden Voraussetzungen, die im Thema "Lernprogramm – Übersicht" aufgeführt sind, muss Azure PowerShell auf Ihrem Computer installiert sein. Falls noch nicht geschehen, laden Sie [Azure PowerShell][download-azure-powershell] auf Ihren Computer herunter, und installieren Sie die Anwendung.
@@ -83,7 +87,7 @@ In diesem Schritt erstellen Sie die beiden verknüpften Dienste **StorageLinkedS
 		  		}
 			}
 
-	Ersetzen Sie **accountname** durch den Namen Ihres Azure-Speicherkontos und **accountkey** durch den Schlüssel Ihres Azure-Speicherkontos.
+	Ersetzen Sie **accountname** durch den Namen Ihres Speicherkontos und **accountkey** durch den Schlüssel Ihres Azure-Speicherkontos.
 2.	Wechseln Sie in **Azure PowerShell** zum Ordner **ADFGetStartedPSH**. 
 3.	Verwenden Sie das Cmdlet **New-AzureDataFactoryLinkedService**, um einen verknüpften Dienst zu erstellen. Dieses Cmdlet und andere Data Factory-Cmdlets, die Sie in diesem Lernprogramm verwenden, erfordern das Eingeben von Werten für die Parameter **ResourceGroupName** und **DataFactoryName**. Sie können auch **Get-AzureDataFactory** verwenden, um ein "DataFactory"-Objekt abzurufen und das Objekt ohne Eingabe von "ResourceGroupName" und "DataFactoryName" bei jeder Ausführung eines Cmdlets zu übergeben. Führen Sie folgenden Befehl aus, um die Ausgabe des Cmdlets **Get-AzureDataFactory** der Variablen **$df** zuzuweisen. 
 
@@ -129,7 +133,7 @@ In diesem Schritt erstellen Sie die beiden verknüpften Dienste **StorageLinkedS
 
 ## <a name="CreateInputAndOutputDataSets"></a>Schritt 3: Erstellen von Ein- und Ausgabetabellen
 
-Im vorherigen Schritt haben Sie die verknüpften Dienste **StorageLinkedService** und **AzureSqlLinkedService** erstellt, um ein Azure-Speicherkonto und eine Azure SQL-Datenbank mit der Data Factory **ADFTutorialDataFactoryPSH** zu verknüpfen. In diesem Schritt erstellen Sie Tabellen mit den Eingabe- und Ausgabedaten für die Kopieraktivität in der Pipeline, die Sie im nächsten Schritt erstellen.
+Im vorherigen Schritt haben Sie die verknüpften Dienste **StorageLinkedService** und **AzureSqlLinkedService** erstellt, um ein Azure-Speicherkonto und eine Azure SQL-Datenbank mit der Data Factory **ADFTutorialDataFactoryPSH** zu verknüpfen. In diesem Schritt erstellen Sie Datasets mit den Eingabe- und Ausgabedaten für die Kopieraktivität in der Pipeline, die Sie im nächsten Schritt erstellen.
 
 Eine Tabelle ist ein rechteckiges Dataset und die einzige Art von Dataset, die zu diesem Zeitpunkt unterstützt wird. Die Eingabetabelle in diesem Lernprogramm verweist auf den Blobcontainer im Azure-Speicher, auf den "StorageLinkedService" verweist. Die Ausgabetabelle verweist auf die SQL-Tabelle in der Azure SQL-Datenbank, auf die "AzureSqlLinkedService" verweist.
 
@@ -169,7 +173,7 @@ Führen Sie die folgenden Schritte zur Vorbereitung des Azure-Blobspeichers und 
 	Wenn Sie Visual Studio 2013 auf Ihrem Computer installiert haben: Klicken Sie im Azure-Vorschauportal ([http://portal.azure.com](http://portal.sazure.com)) links auf den Hub **Durchsuchen** und dann auf **SQL-Server**. Wählen Sie Ihre Datenbank aus, und klicken Sie auf der Symbolleiste auf die Schaltfläche **In Visual Studio öffnen**, um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Wenn Ihr Client nicht auf den Azure SQL-Server zugreifen darf, müssen Sie die Firewall für Ihren Azure SQL-Server so konfigurieren, dass der Zugriff über Ihren Computer (bzw. dessen IP-Adresse) ermöglicht wird. Im vorherigen Artikel finden Sie Schritte zum Konfigurieren der Firewall für Ihren Azure SQL-Server.
 		
 ### Erstellen der Eingabetabelle 
-Eine Tabelle ist ein rechteckiges Dataset und verfügt über ein Schema. In diesem Schritt erstellen Sie eine Tabelle namens **EmpBlobTable**, die auf einen Blobcontainer im Azure-Speicher verweist, der vom verknüpften Dienst **StorageLinkedService** dargestellt wird. Dieser Blob-Container (**adftutorial**) enthält die Eingabedaten in der Datei **emp.txt**.
+Eine Tabelle ist ein rechteckiges Dataset und verfügt über ein Schema. In diesem Schritt erstellen Sie eine Tabelle namens **EmpBlobTable**, die auf einen Blobcontainer im Azure-Speicher verweist, der vom verknüpften Dienst **StorageLinkedService** dargestellt wird. Dieser Blobcontainer (**adftutorial**) enthält die Eingabedaten in der Datei **emp.txt**.
 
 1.	Erstellen Sie im Ordner **C:\\ADFGetStartedPSH** eine JSON-Datei mit dem Namen **EmpBlobTable.json** mit folgendem Inhalt:
 
@@ -205,12 +209,12 @@ Eine Tabelle ist ein rechteckiges Dataset und verfügt über ein Schema. In dies
 	
 	Beachten Sie Folgendes:
 	
-	- **dataset type** ist auf **AzureBlob** festgelegt.
+	- **type** für das Dataset ist auf **AzureBlob** festgelegt.
 	- **linkedServiceName** ist auf **StorageLinkedService** festgelegt. 
 	- **folderPath** ist auf den Container **adftutorial** festgelegt. Sie können auch den Namen eines Blobs innerhalb des Ordners angeben. Da Sie nicht den Namen des Blobs angeben, werden Daten aus allen Blobs im Container als Eingabedaten betrachtet.  
 	- **format: type** ist auf **TextFormat** festgelegt.
 	- Die Textdatei enthält die beiden Felder **FirstName** und **LastName**, die durch ein Komma getrennt sind (**columnDelimiter**).	
-	- Die Verfügbarkeit (**availability**) ist auf **hourly** festgelegt (**frequency** auf **hour** und **interval** auf **1**), sodass der Data Factory-Dienst den Stammordner im angegebenen Blob-Container (**adftutorial**) stündlich auf Eingabedaten untersucht.
+	- Die Verfügbarkeit (**availability**) ist auf **hourly** festgelegt (**frequency** auf **hour** und **interval** auf **1**), sodass der Data Factory-Dienst den Stammordner im angegebenen Blobcontainer (**adftutorial**) stündlich auf Eingabedaten untersucht.
 
 	Wenn Sie keinen **fileName** für eine **Eingabe****tabelle** angeben, werden alle Dateien/Blobs aus dem Eingabeordner (**folderPath**) als Eingaben angesehen. Wenn Sie einen Dateinamen in der JSON-Datei angeben, wird nur die angegebene Datei/der angegebene Blob als Eingabe betrachtet. Beispiele finden Sie in den Beispieldateien des [Lernprogramms][adf-tutorial].
  
@@ -253,7 +257,7 @@ In diesem Teil des Schritts erstellen Sie eine Ausgabetabelle namens **EmpSQLTab
 			      }
 			    ],
 			    "type": "AzureSqlTable",
-			    "linkedServiceName": "AzureSqlLinkedService1",
+			    "linkedServiceName": "AzureSqlLinkedService",
 			    "typeProperties": {
 			      "tableName": "emp"
 			    },
@@ -266,7 +270,7 @@ In diesem Teil des Schritts erstellen Sie eine Ausgabetabelle namens **EmpSQLTab
 
      Beachten Sie Folgendes:
 	
-	* **dataset type** ist auf **AzureSQLTable** festgelegt.
+	* **type** für das Dataset ist auf **AzureSqlTable** festgelegt.
 	* **linkedServiceName** ist auf **AzureSqlLinkedService** festgelegt.
 	* **tablename** ist auf **emp** festgelegt.
 	* Die Tabelle "emp" der Datenbank enthält die drei Spalten **ID**, **FirstName** und **LastName**. "ID" ist jedoch eine Identitätsspalte, weshalb Sie hier nur **FirstName** und **LastName** angeben müssen.
@@ -354,7 +358,7 @@ In diesem Schritt verwenden Sie Azure PowerShell zur Überwachung der Aktivität
  
 2.	Führen Sie **Get-AzureDataFactorySlice** aus, um Details zu allen Slices in der Tabelle **EmpSQLTable** zu erhalten. Dies ist die Ausgabetabelle der Pipeline.
 
-		Get-AzureDataFactorySlice $df -TableName EmpSQLTable -StartDateTime 2015-03-03T00:00:00
+		Get-AzureDataFactorySlice $df -DatasetName EmpSQLTable -StartDateTime 2015-03-03T00:00:00
 
 	Ersetzen Sie den Jahres-, Monats- und Datumsteil des Parameters **StartDateTime** durch aktuelle Werte für Jahr, Monat und Datum. Der Wert muss mit dem Wert **Start** im JSON-Code der Pipeline übereinstimmen.
 
@@ -386,7 +390,7 @@ In diesem Schritt verwenden Sie Azure PowerShell zur Überwachung der Aktivität
 
 3.	Führen Sie **Get-AzureDataFactoryRun** aus, um die Details der Aktivitätsausführungen für einen **bestimmten** Slice abzurufen. Ändern Sie den Wert des Parameters **StartDateTime** entsprechend des Zeitwerts **Start** für den Slice der vorangegangenen Ausgabe. Der Wert von **StartDateTime** muss im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben sein. Beispiel: 2014-03-03T22:00:00Z.
 
-		Get-AzureDataFactoryRun $df -TableName EmpSQLTable -StartDateTime 2015-03-03T22:00:00
+		Get-AzureDataFactoryRun $df -DatasetName EmpSQLTable -StartDateTime 2015-03-03T22:00:00
 
 	Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
 
@@ -433,4 +437,4 @@ In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassen
 [sql-management-studio]: ../sql-database-manage-azure-ssms.md#Step2
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

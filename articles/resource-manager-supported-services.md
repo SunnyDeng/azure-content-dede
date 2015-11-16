@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/21/2015"
+   ms.date="11/04/2015"
    ms.author="tomfitz"/>
 
 # Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen
@@ -32,9 +32,7 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Virtual Machines | Ja | Ja, mehrere Optionen | Nein | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
 | Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | | [Batch REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) (in englischer Sprache) | |
 | Dynamics Lifecycle Services | Ja | Nein | | | |
-| Virtuelle Computer (klassisch) | Eingeschränkt | Ja | Teilweise (siehe unten) | - | - |
-| Remote-App | Nein | - | - | - | - |
-| Service Fabric | Nein | - | - | - | - |
+| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - | | Remote-App | Nein | Nein | - | - | - | | Service Fabric | Nein | - | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -67,9 +65,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.0.5.7-preview) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
 | Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
 | SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.12-preview) | | | |
-| StorSimple | Nein | Nein | - | - | - |
-| Managed Cache | Nein | Nein | - | - | - |
-
+| StorSimple | Nein | Nein | - | - | - | | Verwalteter Cache | Nein | Nein | - | - | - |
 
 ## Analyse
 
@@ -79,8 +75,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Stream Analytics | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) | | | |
 | HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | | | |
 | Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) | |
-| Machine Learning | Nein | Nein | - | - | - |
-| Data Catalog | Nein | Nein | - | - | - |
+| Machine Learning | Nein | Nein | - | - | - | | Data Catalog | Nein | Nein | - | - | - |
 
 ## Netzwerk
 
@@ -97,8 +92,9 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------- | -------------- | -------- | ------ |
+| CDN | Ja (Vorschau) | Nein | | | |
 | Mediendienst | Nein | Nein | | | |
-| CDN | Nein | Nein | | | |
+
 
 ## Hybridintegration
 
@@ -106,16 +102,13 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
 | BizTalk Services | Ja | Nein | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) |
 | Service Bus | Ja | Nein | | [Service Bus REST-API-Referenz](https://msdn.microsoft.com/library/azure/hh780717.aspx) | |
-| Backup | Nein | Nein | - | - | - |
-| Site Recovery | Nein | Nein | - | - | - |
+| Backup | Nein | Nein | - | - | - | | Site Recovery | Nein | Nein | - | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
-| Azure Active Directory | Nein | Nein | - | - | - |
-| Azure Actice Directory B2C | Nein | Nein | - | - | - |
-| Multi-Factor Authentication | Nein | Nein | - | - | - |
+| Azure Active Directory | Nein | Nein | - | - | - | | Azure Actice Directory B2C | Nein | Nein | - | - | - | | Multi-Factor Authentication | Nein | Nein | - | - | - |
 
 ## Entwicklerdienste 
 
@@ -140,15 +133,15 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 Bei der Bereitstellung von Ressourcen müssen Sie in der Regel eine Region für die Ressourcen angeben. Der Ressourcen-Manager wird in allen Regionen unterstützt, aber die Ressourcen, die Sie bereitstellen, werden möglicherweise nicht in allen Regionen unterstützt. Darüber hinaus liegen möglicherweise Einschränkungen Ihres Abonnements vor, die verhindern, dass Sie einige Regionen verwenden, die die Ressource unterstützen. Diese Einschränkungen können im Zusammenhang mit steuerlichen Problemen in Ihrem Land stehen, oder Sie sind das Ergebnis einer Richtlinie, die von Ihrem Abonnementadministrator implementiert wurde, sodass Sie nur bestimmte Regionen verwenden können.
 
-Überprüfen Sie vor dem Bereitstellen von Ressourcen die unterstützten Regionen für den Ressourcentyp mithilfe eines der folgenden Befehle.
+Eine vollständige Liste aller unterstützten Regionen für alle Azure-Dienste finden Sie unter [Dienste nach Region](https://azure.microsoft.com/regions/#services). Diese Liste kann jedoch Regionen enthalten, die Ihr Abonnement nicht unterstützt. Sie können die Regionen für einen bestimmten von Ihrem Abonnement unterstützten Ressourcentyp ermitteln, indem Sie einen der folgenden Befehle ausführen.
 
 ### REST-API
 
-Verwenden Sie für die Ermittlung der verfügbaren Regionen für einen bestimmten Ressourcentyp im Abonnement den Vorgang [Auflisten aller Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790524.aspx).
+Um zu ermitteln, welche Regionen für einen bestimmten Ressourcentyp in Ihrem Abonnement verfügbar sind, verwenden Sie den Vorgang [Alle Ressourcenanbieter auflisten](https://msdn.microsoft.com/library/azure/dn790524.aspx).
 
 ### PowerShell
 
-Das folgende Beispiel zeigt, wie Sie die unterstützten Regionen für Websites mithilfe von Azure PowerShell 1.0 Vorschau abrufen. Weitere Informationen zur Vorschauversion 1.0 finden Sie unter [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/) (Vorschau für Azure PowerShell 1.0; in englischer Sprache).
+Das folgende Beispiel zeigt, wie Sie die unterstützten Regionen für Websites mithilfe von Azure PowerShell 1.0 Vorschau abrufen. Weitere Informationen zur Version 1.0 Preview finden Sie unter [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
     
@@ -178,7 +171,7 @@ Im folgenden Beispiel werden alle unterstützten Orte für jeden Ressourcentyp z
 
     azure location list
 
-Sie können die Ergebnisse auch mit einem Tool wie **jq** filtern. Informationen zu Tools wie „jq“ finden Sie unter [Nützliche Tools für die Interaktion mit Azure](/virtual-machines/resource-group-deploy-debug/#useful-tools-to-interact-with-azure).
+Sie können die Standortergebnisse auch mit einem Tool wie **jq** filtern. Informationen zu Tools wie „jq“ finden Sie unter [Nützliche Tools für die Interaktion mit Azure](/virtual-machines/resource-group-deploy-debug/#useful-tools-to-interact-with-azure).
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 
@@ -196,7 +189,7 @@ Beim Bereitstellen einer Vorlage müssen Sie eine API-Version angeben, die zum E
 
 ### REST-API
 
-Verwenden Sie den Vorgang zum [Auflisten aller Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790524.aspx), um zu ermitteln, welche API-Versionen für Ressourcentypen verfügbar sind.
+Um zu bestimmen, welche API-Versionen für Ressourcentypen verfügbar sind, verwenden Sie den Vorgang [Alle Ressourcenanbieter auflisten](https://msdn.microsoft.com/library/azure/dn790524.aspx).
 
 ### PowerShell
 
@@ -232,6 +225,6 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 ## Nächste Schritte
 
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
-- Informationen zum Bereitstellen von Ressourcen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./azure-portal/resource-group-template-deploy.md).
+- Informationen zum Bereitstellen von Ressourcen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!-----HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

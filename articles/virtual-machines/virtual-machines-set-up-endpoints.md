@@ -29,6 +29,10 @@ Beim Erstellen eines virtuellen Computers im Azure-Portal werden die Endgeräte 
 
 - [Informationen zu Netzwerk-Sicherheitsgruppen](virtual-networks-nsg.md)
 
+Beachten Sie bitte, dass Netzwerk-Sicherheitsgruppen zwar den Zugriff auf den virtuellen Computer steuern, jedoch nicht über Funktionen zur Portweiterleitung verfügen. Informationen zur Portweiterleitung finden Sie in folgendem Artikel:
+
+- [Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md)
+
 Jedes Endgerät verfügt über einen öffentlichen und einen privaten Port.
 
 - Der öffentliche Port wird von Azure-Lastenausgleich verwendet, um eingehenden Datenverkehr an den virtuellen Computer aus dem Internet zu überwachen.
@@ -44,27 +48,27 @@ Nachdem Sie ein Endgerät erstellt haben, können Sie eine Zugriffssteuerungslis
 
 1.	Melden Sie sich beim [Portal](http://manage.windowsazure.com/) an, falls Sie dies noch nicht getan haben.
 2.	Klicken Sie auf **Virtuelle Computer** und dann auf den Namen des virtuellen Computers, den Sie konfigurieren möchten.
-3.	Klicken Sie auf **Endpunkte**. Auf der Seite **Endpunkte** sind alle aktuellen Endgeräte für den virtuellen Computer aufgelistet.
+3.	Klicken Sie auf **Endpunkte**. Auf der Seite **Endpunkte** sind alle aktuellen Endpunkte für den virtuellen Computer aufgelistet.
 
 	![Endgeräte](./media/virtual-machines-set-up-endpoints/endpointswindows.png)
 
 4.	Klicken Sie auf der Taskleiste auf **Hinzufügen**.
-5.	Wählen Sie auf der Seite **Einem virtuellen Computer einen Endpunkt hinzufügen** den Typ des Endgeräts aus.
+5.	Wählen Sie auf der Seite **Einem virtuellen Computer einen Endpunkt hinzufügen** den Typ des Endpunkts aus.
 
-	- Wenn Sie ein neues Endgerät erstellen, der nicht Teil eines Lastenausgleichs oder das erste Endgerät in einem neuen Satz mit Lastenausgleich ist, wählen Sie **Eigenständigen Endpunkt hinzufügen** aus, und klicken Sie dann auf den Pfeil nach links.
-	- Wählen Sie andernfalls **Endpunkt zu einer vorhandenen Gruppe mit Lastenausgleich hinzufügen** und den Namen des Satzes mit Lastenausgleich aus, und klicken Sie dann auf den Pfeil nach links. Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für das Endgerät an, und klicken Sie dann auf das Häkchen, um das Endgerät zu erstellen.
+	- Wenn Sie einen neuen Endpunkt erstellen, der nicht Teil einer Gruppe mit Lastenausgleich oder der erste Endpunkt in einer neuen Gruppe mit Lastenausgleich ist, wählen Sie **Eigenständigen Endpunkt hinzufügen** aus, und klicken Sie dann auf den Pfeil nach links.
+	- Wählen Sie andernfalls **Endpunkt zu einer vorhandenen Gruppe mit Lastenausgleich hinzufügen** und den Namen der Gruppe mit Lastenausgleich aus, und klicken Sie dann auf den Pfeil nach links. Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für den Endpunkt ein, und klicken Sie dann auf das Häkchen, um den Endpunkt zu erstellen.
 
-6.	Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für das Endgerät in **Name** an. Sie können auch den Namen eines Protokolls aus der Liste auswählen, die Anfangswerte für **Protokoll**, **Öffentlicher Port** und **Privater Port** eintragen wird.
-7.	Für ein benutzerdefiniertes Endgerät wählen Sie unter **Protokoll** entweder **TCP** oder **UDP** aus.
+6.	Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für den Endpunkt in **Name** an. Sie können auch den Namen eines Protokolls aus der Liste auswählen, die Anfangswerte für **Protokoll**, **Öffentlicher Port** und **Privater Port** eintragen wird.
+7.	Für einen benutzerdefinierten Endpunkt wählen Sie unter **Protokoll** entweder **TCP** oder **UDP** aus.
 8.	Für angepasste Ports geben Sie unter **Öffentlicher Port** die Portnummer für den eingehenden Datenverkehr aus dem Internet ein. Geben Sie unter **Privater Port** die Nummer des Ports an, auf dem der virtuelle Computer überwacht. Diese Portnummern dürfen sich unterscheiden. Stellen Sie sicher, dass die Firewall auf dem virtuellen Computer konfiguriert wurde, um den Datenverkehr für das Protokoll (in Schritt 7) und den privaten Port zu ermöglichen.
-9.	Wenn dieses Endgerät die erste Instanz in einer Gruppe mit Lastenausgleich sein soll, klicken Sie auf **Gruppe mit Lastenausgleich erstellen** und dann auf den Pfeil nach rechts. Geben Sie auf der Seite **Gruppe mit Lastenausgleich konfigurieren** einen Lastenausgleichsnamen, ein Prüfpunkt-Protokoll und einen Port sowie das Prüfpunkt-Intervall und die Anzahl gesendeter Prüfpunkten an. Der Azure-Lastenausgleich sendet Prüfpunkte an die virtuellen Computer in einem Satz mit Lastenausgleich, um deren Verfügbarkeit zu überwachen. Der Azure-Lastenausgleich leitet keinen Datenverkehr zu virtuellen Maschinen weiter, die nicht auf die Überprüfung reagieren. Klicken Sie auf den Pfeil nach rechts.
+9.	Wenn dieser Endpunkt die erste Instanz in einer Gruppe mit Lastenausgleich sein soll, klicken Sie auf **Gruppe mit Lastenausgleich erstellen** und dann auf den Pfeil nach rechts. Geben Sie auf der Seite **Gruppe mit Lastenausgleich konfigurieren** einen Lastenausgleichsnamen, ein Prüfpunkt-Protokoll und einen Port sowie das Prüfpunkt-Intervall und die Anzahl gesendeter Prüfpunkten an. Der Azure-Lastenausgleich sendet Prüfpunkte an die virtuellen Computer in einem Satz mit Lastenausgleich, um deren Verfügbarkeit zu überwachen. Der Azure-Lastenausgleich leitet keinen Datenverkehr zu virtuellen Maschinen weiter, die nicht auf die Überprüfung reagieren. Klicken Sie auf den Pfeil nach rechts.
 10.	Aktivieren Sie das Kontrollkästchen, um das Endgerät zu erstellen.
 
-Das neue Endgerät wird auf der Seite **Endpunkte** aufgeführt.
+Der neue Endpunkt wird auf der Seite **Endpunkte** aufgeführt.
 
 ![Endgerät erfolgreich erstellt](./media/virtual-machines-set-up-endpoints/endpointwindowsnew.png)
 
-Ein Azure PowerShell-Cmdlet zum Einrichten finden Sie unter [Add-AzureEndpoint](https://msdn.microsoft.com/library/azure/dn495300.aspx).
+Ein Azure-PowerShell-Cmdlet zum Einrichten finden Sie unter [Add-AzureEndpoint](https://msdn.microsoft.com/library/azure/dn495300.aspx).
 
 ##Verwaltung der ACL für ein Endgerät
 
@@ -96,4 +100,4 @@ Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung ver
 
 [Lastenausgleich für Azure-Infrastrukturdienste](virtual-machines-load-balance.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

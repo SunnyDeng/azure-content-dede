@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="10/29/2015" 
 	ms.author="spelluru"/>
 
 
@@ -23,6 +23,10 @@ In dieser exemplarischen Vorgehensweise erfahren Sie, wie die Umgebung eingerich
 Im letzten Schritt des Protokollverarbeitungszenarios aus der ersten exemplarischen Vorgehensweise mit dem Workflow "Partition -> Enrich -> Analyze" wurde die Ausgabe der Wirksamkeit der Marketingkampagne in eine Azure SQL-Datenbank kopiert. Sie können diese Daten auch in einen lokalen SQL Server für Analysen innerhalb Ihrer Organisation verschieben.
  
 Um die Wirksamkeitsdaten der Marketingkampagne aus dem Azure-BLOB auf einen lokalen SQL Server zu kopieren, müssen Sie einen zusätzlichen lokalen verknüpften Dienst, eine Tabelle und eine Pipeline erstellen, die die gleichen Cmdlets wie in der ersten exemplarischen Vorgehensweise verwenden.
+
+> [AZURE.IMPORTANT]In diesem Artikel werden nicht alle Data Factory-Cmdlets behandelt. In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
+>    
+> Bei Verwendung der Azure PowerShell 1.0-Vorschau müssen Sie die [hier](https://msdn.microsoft.com/library/dn820234.aspx) dokumentierten Cmdlets verwenden. Verwenden Sie beispielsweise „New-AzureRMDataFactory“ anstelle von „New-AzureDataFactory“.
 
 ## Voraussetzungen
 
@@ -170,4 +174,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

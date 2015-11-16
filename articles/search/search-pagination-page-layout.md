@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Anordnen von Suchergebnissen auf Seiten in Azure Search" 
-	description="Paginierung in Azure Search" 
+	pageTitle="Anordnen von Suchergebnissen auf Seiten in Azure Search | Microsoft Azure" 
+	description="Einteilen in Seiten in Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="09/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 #Anordnen von Suchergebnissen auf Seiten in Azure Search#
@@ -114,4 +114,4 @@ Weitere Informationen zu `$filter`-Ausdrücken finden Sie unter [Dokumente durch
 [4]: ./media/search-pagination-page-layout/Pages-4-SortbyRelevance.png
 [5]: ./media/search-pagination-page-layout/Pages-5-BuildSort.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

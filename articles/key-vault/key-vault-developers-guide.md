@@ -51,8 +51,9 @@ Die Node.js-API ist eine Gruppe von Wrappern, die eine Implementierung über das
 
 ## Verwalten von Schlüsseltresoren
 
-Azure-Schlüsseltresorcontainer (Tresore) können mithilfe von PowerShell oder über die Befehlszeilenschnittstelle verwaltet werden, wie in den folgenden Artikeln beschrieben:
+Azure Key Vault-Container (Tresore) können mithilfe von REST, PowerShell oder über die Befehlszeilenschnittstelle verwaltet werden, wie in den folgenden Artikeln beschrieben:
 
+- [Erstellen und Verwalten von Schlüsseltresoren über REST](https://msdn.microsoft.com/library/azure/mt620024.aspx)
 - [Erstellen und Verwalten von Schlüsseltresoren mit PowerShell](key-vault-get-started.md)
 - [Erstellen und Verwalten von Schlüsseltresoren über die Befehlszeilenschnittstelle](key-vault-manage-with-cli.md)
 
@@ -67,4 +68,4 @@ Die folgenden Artikel bieten aufgabenspezifische Anleitungen:
 
 - Dieser Download enthält sowohl die Beispielanwendung „HelloKeyVault“ als auch ein Azure-Webdienstbeispiel. [Codebeispiele für Azure-Schlüsseltresor](http://www.microsoft.com/download/details.aspx?id=45343)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

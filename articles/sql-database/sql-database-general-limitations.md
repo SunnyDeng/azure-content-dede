@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="10/28/2015"
+   ms.date="11/05/2015"
    ms.author="jroth" />
 
 # Azure SQL-Datenbanken – Allgemeine Einschränkungen und Leitlinien
@@ -41,9 +41,7 @@ Azure SQL-Datenbank unterstützt keine verteilte Transaktionen, d. h. Transakti
 
 ## Unterstützung der SQL Server-Sortierung
 
-Die standardmäßige Datenbanksortierung von Microsoft Azure SQL-Datenbank ist **SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS**, wobei **LATIN1\_GENERAL** für Englisch (USA), **CP1** für Codepage 1252, **CI** für keine Unterscheidung von Groß-/Kleinschreibung und **AS** für die Unterscheidung nach Akzent steht.
-
-Bei Verwendung einer lokalen SQL Server-Instanz können Sie Sortierungen auf Server-, Datenbank-, Spalten- und Ausdrucksebene festlegen. Microsoft Azure SQL-Datenbank lässt sich nicht das Festlegen der Sortierung auf Serverebene zu. Wenn Sie die nicht standardmäßige Sortierung mit Microsoft Azure SQL-Datenbank verwenden möchten, legen Sie die Sortierung mit der CREATE DATABASE-Option COLLATE oder auf Spalten- oder Ausdrucksebene fest. Azure SQL-Datenbank unterstützt nicht die Option COLLATE mit dem ALTER DATABASE-Befehl. In Azure SQL-Datenbank haben temporäre Daten standardmäßig dieselbe Sortierung wie die Datenbank. Weitere Informationen zum Festlegen der Sortierung finden Sie unter [COLLATE (Transact-SQL)](https://msdn.microsoft.com/library/ms184391.aspx).
+Die standardmäßige Datenbanksortierung von Microsoft Azure SQL-Datenbank ist **SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS**, wobei **LATIN1\_GENERAL** für Englisch (USA), **CP1** für Codepage 1252, **CI** für keine Unterscheidung von Groß-/Kleinschreibung und **AS** für die Unterscheidung nach Akzent steht. Es ist möglich, die Sortierung für V12-Datenbanken mithilfe von Transact-SQL zu ändern. Weitere Informationen zum Festlegen der Sortierung finden Sie unter [COLLATE (Transact-SQL)](https://msdn.microsoft.com/library/ms184391.aspx).
 
 ## Benennungsanforderungen
 
@@ -61,7 +59,7 @@ Darüber hinaus dürfen Anmelde- und Benutzernamen nicht das Zeichen „\\“ en
 
 ## Weitere Leitlinien
 
-- Zusätzlich zu den allgemeinen Einschränkungen, die in diesem Artikel beschrieben werden, gelten für Azure SQL-Datenbank basierend auf Ihrer [Dienstebene](sql-database-service-tiers.md) bestimmte Ressourcenkontingente und Einschränkungen. Eine ausführliche Beschreibung der dienstebenenbezogenen Einschränkungen finden Sie unter [SQL-Datenbank – Dienstebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits).
+- Zusätzlich zu den allgemeinen Einschränkungen, die in diesem Artikel beschrieben werden, gelten für SQL-Datenbank basierend auf Ihrer [Dienstebene](sql-database-service-tiers.md) bestimmte Ressourcenkontingente und Einschränkungen. Eine ausführliche Beschreibung der dienstebenenbezogenen Einschränkungen finden Sie unter [Funktionen und Beschränkungen von Dienstebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits).
 
 - Andere für SQL-Datenbank geltende Einschränkungen finden Sie unter [Ressourceneinschränkungen für Azure SQL-Datenbank](sql-database-limits.md).
 
@@ -71,4 +69,4 @@ Darüber hinaus dürfen Anmelde- und Benutzernamen nicht das Zeichen „\\“ en
 
 - Informationen zur Verfügbarkeit von Treibern und Unterstützung für SQL-Datenbank finden Sie unter [Verbindungsbibliotheken für SQL-Datenbank und SQL Server](sql-database-libraries.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

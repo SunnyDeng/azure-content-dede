@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Anwendungsszenarios und Entwurf mit Service Fabric" 
-   description="Kategorien von Anwendungen Anwendungsentwurf mit zustandsbehafteten und zustandslosen Diensten" 
+   pageTitle="Anwendungsszenarien und -entwurf | Microsoft Azure" 
+   description="Übersicht über die Kategorien von Cloudanwendungen in Service Fabric. Informationen zum Anwendungsentwurf mit zustandsbehafteten und zustandslosen Diensten."
    services="service-fabric" 
    documentationCenter=".net" 
    authors="msfussell" 
@@ -16,7 +16,7 @@
    ms.date="08/21/2015"
    ms.author="mfussell"/>
 
-# Service Fabric-Anwendungsszenarios
+# Service Fabric-Anwendungsszenarien
 
 Microsoft Azure Service Fabric bietet eine zuverlässige und flexible Plattform, mit der Sie verschiedenste Geschäftsanwendungen und -dienste erstellen und ausführen können. Diese Anwendungen und Microservices können zustandslos oder zustandsbehaftet sein und ihre Ressourcen werden zur Maximierung der Effizienz auf die virtuellen Computer verteilt. In der einzigartigen Architektur von Service Fabric können Sie Echtzeitdatenanalysen, In-Memory-Berechnungen, parallele Transaktionen und die Ereignisverarbeitung in Ihren Anwendungen ausführen. Sie können Ihre Anwendungen je nach den sich ändernden Ressourcenanforderungen problemlos zentral (bzw. horizontal oder vertikal) hoch- oder herunterskalieren.
 
@@ -34,12 +34,12 @@ Die Service Fabric-Plattform in Azure ist ideal für die folgenden Kategorien vo
  
 - **Datenanalyse und Workflows**: Die schnellen Lese- und Schreibvorgänge von Service Fabric machen Anwendungen möglich, mit denen Ereignisse oder Datenströme zuverlässig verarbeitet werden müssen. Service Fabric ermöglicht auch Anwendungen, die eine Verarbeitungspipeline beschreiben, bei der Ergebnisse zuverlässig sein müssen und dann ohne Datenverlust in die nächste Verarbeitungsphase weitergeleitet werden müssen, z. B. Transaktions- und Finanzsysteme, bei denen Datenkonsistenz und Berechnungsgewährleistung von größter Wichtigkeit sind.
 
-## Entwerfen von Anwendungen, die aus zustandslosen und zustandsbehafteten Microservices bestehen ##
+## Entwerfen von Anwendungen, die aus zustandslosen und zustandsbehafteten Microservices bestehen
 Die Erstellung von Anwendungen mit Azure Cloud Service-Workerrollen ist ein Beispiel für zustandslose Dienste. Im Gegensatz dazu behalten zustandsbehaftete Microservices den autoritativen Zustand über die Anforderung und die Antwort hinaus bei. Dadurch lässt sich über einfache APIs, die für replikationsgestützte Transaktionsgarantien sorgen, eine hohe Verfügbarkeit und Konsistenz erreichen. Zustandsbehaftete Service Fabric-Dienste bieten hohe Verfügbarkeit für alle Arten von Anwendungen – nicht nur für Datenbanken und andere Datenspeicher. Hierbei handelt es sich um einen natürlichen Prozess: Anwendungen haben bereits den Wandel von der Verwendung rein relationaler Datenbanken für hohe Verfügbarkeit zur Verwendung von NoSQL-Datenbanken vollzogen. Nun werden die Anwendung selbst hochverfügbar, und Daten werden zur Leistungsoptimierung innerhalb der Anwendung verwaltet, ohne dafür Kompromisse bei Zuverlässigkeit, Konsistenz und Verfügbarkeit einzugehen.
 
 Bei der Erstellung von Anwendungen, die sich aus Microservices zusammensetzen, haben Sie es normalerweise mit einer Kombination aus zustandslosen Web-Apps (ASP.NET, Node.js usw.) zu tun, die zustandslose und zustandsbehaftete Geschäftsdienste der mittleren Ebene aufrufen, welche alle im gleichen Service Fabric-Cluster bereitgestellt werden und die Service Fabric-Bereitstellungsbefehle verwenden. Jeder dieser Dienste ist in puncto Skalierung, Zuverlässigkeit und Ressourcenverwendung unabhängig, was eine deutlich höhere Flexibilität bei der Entwicklung sowie bei der Verwaltung des Lebenszyklus bedeutet.
   
-Zustandsbehaftete Microservices vereinfachen Anwendungsentwürfe, da durch sie die Notwendigkeit zusätzlicher Warteschlangen und Caches entfällt, die traditionell erforderlich waren, um die Verfügbarkeits- und Latenzanforderungen einer rein zustandslosen Anwendung zu erfüllen. Da zustandsbehaftete Dienste an sich bereits hochverfügbar sind und eine niedrige Latenz bieten, fällt der Verwaltungsaufwand in Ihrer Anwendung insgesamt geringer aus. In den folgenden Abbildungen wird der Unterschied zwischen einer zustandslosen und einer zustandsbehafteten Anwendung veranschaulicht. Zustandsbehaftete Dienste verringern durch Nutzung der Programmiermodelle [Reliable Services](../Service-Fabric/service-fabric-reliable-services-introduction.md) und [Reliable Actors](service-fabric-reliable-actors-introduction.md) die Komplexität der Anwendung. Gleichzeitig wird eine hohe Durchsatzrate mit geringer Latenz erzielt.
+Zustandsbehaftete Microservices vereinfachen Anwendungsentwürfe, da durch sie die Notwendigkeit zusätzlicher Warteschlangen und Caches entfällt, die traditionell erforderlich waren, um die Verfügbarkeits- und Latenzanforderungen einer rein zustandslosen Anwendung zu erfüllen. Da zustandsbehaftete Dienste an sich bereits hochverfügbar sind und eine niedrige Latenz bieten, fällt der Verwaltungsaufwand in Ihrer Anwendung insgesamt geringer aus. In den folgenden Abbildungen wird der Unterschied zwischen einer zustandslosen und einer zustandsbehafteten Anwendung veranschaulicht. Zustandsbehaftete Dienste verringern durch Nutzung der Programmiermodelle [Reliable Services](service-fabric-reliable-services-introduction.md) und [Reliable Actors](service-fabric-reliable-actors-introduction.md) die Komplexität der Anwendung. Gleichzeitig wird eine hohe Durchsatzrate mit geringer Latenz erzielt.
 
 ## Eine mit zustandslosen Diensten erstellte Anwendung##
 ![Anwendung mit zustandslosen Diensten][Image1]
@@ -57,15 +57,15 @@ Weitere Informationen finden Sie in den folgenden Themen:
 
 [Service State](service-fabric-concepts-state.md) (in englischer Sprache)
 
-[Availability of services](../service-fabric-concepts-availability-services.md) (in englischer Sprache)
+[Availability of services](service-fabric-concepts-availability-services.md) (in englischer Sprache)
 
 [Scaling Service Fabric Applications](service-fabric-concepts-scalability.md) (in englischer Sprache)
 
-[Partitioning Service Fabric services](service-fabric-concepts-partitioning.md) (in englischer Sprache)
+[Partitionieren von Service Fabric-Diensten](service-fabric-concepts-partitioning.md)
 
 [Image1]: media/service-fabric-application-scenarios/AppwithStatelessServices.jpg
 [Image2]: media/service-fabric-application-scenarios/AppwithStatefulServices.jpg
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

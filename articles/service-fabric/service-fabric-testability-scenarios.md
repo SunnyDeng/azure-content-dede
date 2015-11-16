@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Ausführen des Chaostests"
-   description="Dieser Artikel befasst sich mit den vorgefertigten Service Fabric-Szenarien von Microsoft."
+   pageTitle="Chaos- und Failovertests | Microsoft Azure"
+   description="Mithilfe der Chaos- und Failovertestszenarien von Service Fabric können Sie Fehler herbeiführen und die Zuverlässigkeit Ihrer Dienste überprüfen."
    services="service-fabric"
    documentationCenter=".net"
    authors="anmolah"
@@ -251,4 +251,4 @@ Invoke-ServiceFabricFailoverTestScenario -TimeToRunMinute $timeToRun -MaxService
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

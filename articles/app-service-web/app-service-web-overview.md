@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/17/2015"
+	ms.date="10/27/2015"
 	ms.author="jaime.espinosa"/>
 
 
@@ -27,7 +27,7 @@ Nutzen Sie die Leistungsstärke von [App Service-Web-Apps](http://go.microsoft.c
 
 ## Mehr als nur Websites##
 
-Moderne Unternehmen interagieren mit ihren Kunden auf immer komplexere Art und Weise. Unternehmen aller Art betrachten ihre Internetpräsenz als kritischen Bestandteil ihres Geschäfts und wichtige Komponente in ihrem Geschäftsplan. Um dieser Bedeutung gerecht zu werden, suchen Unternehmen eine Plattform, die ihnen Flexibilität, Sicherheit und Skalierbarkeit bietet. Darüber hinaus muss es möglich sein, Verknüpfungen mit dem vorhandenen Unternehmenssystem einzurichten, neuen Code schnell bereitzustellen und Instanzen auf der ganzen Welt in Betrieb zu nehmen. Mit Azure App Service-Web-Apps können Organisationen ihre Kunden schnell und kostengünstig begeistern.
+Moderne Unternehmen interagieren mit ihren Kunden auf immer komplexere Art und Weise. Unternehmen aller Art betrachten ihre Internetpräsenz als kritischen Bestandteil ihres Geschäfts und wichtige Komponente in ihrem Geschäftsplan. Um dieser Bedeutung gerecht zu werden, suchen Unternehmen eine Plattform, die ihnen Flexibilität, Sicherheit und Skalierbarkeit bietet. Darüber hinaus benötigen sie auch die Möglichkeit, Verknüpfungen mit ihrem vorhandenen Unternehmenssystem einzurichten, neuen Code schnell bereitzustellen und Instanzen auf der ganzen Welt in Betrieb zu nehmen. Mit Azure App Service-Web-Apps können Organisationen ihre Kunden schnell und kostengünstig begeistern.
 
 ## Gründe für Web-Apps ##
 
@@ -65,4 +65,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

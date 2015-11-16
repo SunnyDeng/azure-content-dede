@@ -33,7 +33,7 @@ Die Speicherung von Daten im Blobspeicher sorgt dafür, dass die HDInsight-Clust
 
 > Die meisten HDFS-Befehle (z. B. <b>ls</b>, <b>copyFromLocal</b> und <b>mkdir</b>) funktionieren weiterhin wie erwartet. Nur die für die native HDFS-Implementierung (als DFS bezeichnet) spezifischen Befehle wie <b>fschk</b> und <b>dfsadmin</b> zeigen im Azure-Blobspeicher ein anderes Verhalten.
 
-Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight][hdinsight-get-started] oder [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
+Informationen zum Erstellen eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight][hdinsight-get-started] und [Erstellen von HDInsight-Clustern][hdinsight-creation].
 
 
 ## HDInsight-Speicherarchitektur
@@ -50,11 +50,11 @@ Zusätzlich bietet HDInsight die Möglichkeit, auf die im Azure-Blobspeicher ges
 	wasb[s]://<containername>@<accountname>.blob.core.windows.net/<path>
 
 
-Hadoop unterstützt eine Variante des Standarddateisystems. Das Standarddateisystem gibt ein Standardschema und eine Standardautorität vor. Es kann auch zur Auflösung relativer Pfade verwendet werden. Während des Prozesses zur Bereitstellung von HDInsight werden ein Azure-Speicherkonto und ein bestimmter Azure-Blobspeichercontainer aus diesem Konto als Standarddateisystem festgelegt.
+Hadoop unterstützt eine Variante des Standarddateisystems. Das Standarddateisystem gibt ein Standardschema und eine Standardautorität vor. Es kann auch zur Auflösung relativer Pfade verwendet werden. Während des HDInsight-Erstellungsprozesses werden ein Azure-Speicherkonto und ein bestimmter Azure-Blobspeichercontainer aus diesem Konto als Standarddateisystem festgelegt.
 
-Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsprozesses weitere Speicherkonten aus demselben oder einem anderen Azure-Abonnements hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
+Zusätzlich zu diesem Speicherkonto können Sie während des Erstellungsprozesses weitere Speicherkonten aus demselben oder einem anderen Azure-Abonnements hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Erstellen von HDInsight-Clustern][hdinsight-creation].
 
-- **Container in Speicherkonten, die zu einem Cluster verbunden sind:** Da dem Cluster Kontoname und Schlüssel bei der Bereitstellung zugeordnet werden, haben Sie vollständigen Zugriff auf die Blobs in diesen Containern.
+- **Container in Speicherkonten, die mit einem Cluster verbunden sind:** Da Kontoname und Schlüssel dem Cluster bei der Erstellung zugeordnet werden, haben Sie vollständigen Zugriff auf die Blobs in diesen Containern.
 
 - **Öffentliche Container oder öffentliche Blobs in Speicherkonten, die NICHT mit einem Cluster verbunden sind:** Sie haben schreibgeschützten Zugriff auf die Blobs in den Containern.
 
@@ -63,21 +63,21 @@ Zusätzlich zu diesem Speicherkonto können Sie während des Bereitstellungsproz
 - **Private Container in Speicherkonten, die NICHT mit einem Cluster verbunden sind**: Sie können nicht auf die Blobs in den Containern zugreifen, es sei denn, Sie definieren beim Senden der WebHCat-Aufträge das Speicherkonto. Dies wird weiter unten im Artikel erläutert.
 
 
-Das beim Einrichtungsprozess definierte Speicherkonto und die Schlüssel werden in %HADOOP\_HOME%/conf/core-site.xml auf den Clusterknoten gespeichert. Standardmäßig verwendet HDInsight die in der Datei core-site.xml definierten Speicherkonten. Die Datei core-site.xml sollte nicht manuell bearbeitet werden, da der Cluster-Stammknoten (Master) jederzeit neu aus einem Abbild erstellt oder migriert werden kann, und die Änderungen an den Dateien in diesem Fall verloren gehen.
+Das beim Erstellungsprozess definierte Speicherkonto und die Schlüssel werden in der Datei „%HADOOP\_HOME%/conf/core-site.xml“ auf den Clusterknoten gespeichert. Standardmäßig verwendet HDInsight die in der Datei core-site.xml definierten Speicherkonten. Die Datei core-site.xml sollte nicht manuell bearbeitet werden, da der Cluster-Stammknoten (Master) jederzeit neu aus einem Abbild erstellt oder migriert werden kann, und die Änderungen an den Dateien in diesem Fall verloren gehen.
 
 Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und Pig, können eine Beschreibung von Speicherkonten und Metadaten enthalten. (Dies funktioniert momentan nur für Pig und Speicherkonten, nicht für Metadaten.) Im Abschnitt [Blobzugriff über Azure PowerShell](#powershell) dieses Artikels finden Sie ein Beispiel für dieses Feature. Weitere Informationen finden Sie unter [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores](http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx).
 
 Blobspeicher kann für strukturierte und unstrukturierte Daten verwendet werden. In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen der Schrägstrich (/) verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Das Verzeichnis *input* existiert zwar nicht, wegen des Schrägstrichs (/) im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad.
 
 ###<a id="benefits"></a>Vorteile von Blobspeicher
-Der Leistungsaufwand, der damit verbunden ist, dass die Computecluster und Speicherressourcen nicht am selben Ort vorliegen, wird dadurch abgeschwächt, dass die Cluster nahe an den Speicherkontoressourcen im Azure-Datencenter bereitgestellt werden, wo das Hochgeschwindigkeitsnetzwerk den Zugriff auf die Daten im Azure-Blobspeicher für die Rechenknoten sehr effizient macht.
+Der Leistungsaufwand, der damit verbunden ist, dass die Computecluster und Speicherressourcen nicht am selben Ort vorliegen, wird dadurch abgeschwächt, dass die Cluster nahe an den Speicherkontoressourcen im Azure-Datencenter erstellt werden, wo das Hochgeschwindigkeitsnetzwerk den Zugriff auf die Daten im Azure-Blobspeicher für die Rechenknoten sehr effizient macht.
 
 Die Speicherung von Daten im Azure-Blobspeicher statt im HDFS hat mehrere Vorteile:
 
 * **Datenfreigabe und -wiederverwendung:** Die Daten im HDFS befinden sich innerhalb des Rechenclusters. Nur die Anwendungen, die Zugriff auf den Computecluster haben, können die Daten über die HDFS-API verwenden. Auf die Dateien im Azure-Blobspeicher kann entweder über die HDFS-APIs oder über die [Blobspeicher-REST-APIs][blob-storage-restAPI] zugegriffen werden. Somit kann eine größere Menge von Anwendungen (darunter andere HDInsight-Cluster) und Tools verwendet werden, um die Daten zu produzieren und abzurufen.
 * **Datenarchivierung:** Die Speicherung von Daten im Azure-Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
 * **Datenspeicherkosten:**Die langfristige Datenspeicherung in DFS ist kostspieliger als die Datenspeicherung im Azure-Blobspeicher, da die Kosten eines Rechenclusters höher liegen als diejenigen eines Azure-Blobspeichercontainers. Da die Daten nicht für jede Erzeugung eines neues Computeclusters neu geladen werden, sparen Sie auch Kosten für das Laden von Daten.
-* **Elastische horizontale Skalierung:** Obwohl Ihnen HDFS ein horizontal skaliertes Dateisystem bietet, wird die Skalierung durch die Anzahl der Knoten bestimmt, die Sie für Ihren Cluster bereitstellen. Eine Änderung der Skalierung kann weitaus schwieriger werden, als auf die flexiblen Speicherkapazitäten zu vertrauen, die Ihnen der Azure-Blobspeicher automatisch bietet.
+* **Elastische horizontale Skalierung:** Obwohl Ihnen HDFS ein horizontal skaliertes Dateisystem bietet, wird die Skalierung durch die Anzahl der Knoten bestimmt, die Sie für Ihren Cluster erstellen. Eine Änderung der Skalierung kann weitaus schwieriger werden, als auf die flexiblen Speicherkapazitäten zu vertrauen, die Ihnen der Azure-Blobspeicher automatisch bietet.
 * **Georeplikation**: Ihre Azure-Blob-Speichercontainer können georepliziert werden. Obwohl Sie dadurch von geographischer Wiederherstellung und Datenredundanz profitieren, wirkt sich ein Ausfall des georeplizierten Standorts schwer auf Ihre Leistung aus und kann zusätzliche Kosten nach sich ziehen. Deshalb empfehlen wir, die Georeplikation mit Bedacht auszuwählen und nur dann anzuwenden, wenn der Wert der Daten die zusätzlichen Kosten rechtfertigt.
 
 Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die Sie nicht wirklich im Azure-Blobspeicher speichern möchten. In diesem Fall können Sie die Dateien auch im lokalen HDFS speichern. Tatsächlich verwendet HDInsight DFS für einige dieser Zwischenergebnisse in Hive-Jobs und anderen Prozessen.
@@ -91,14 +91,14 @@ Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][azure-stor
 Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container Ihres Azure-Speicherkontos. Dieser Container kann ein außerhalb von HDInsight erstelltes Blob sein, oder es handelt sich um einen Container, der für einen HDInsight-Cluster erstellt wird.
 
 
-Der standardmäßige Blobcontainer speichert clusterspezifische Informationen wie etwa Auftragsverlauf und Protokolle. Geben Sie einen Standardblobcontainer nicht für mehrere HDInsight-Cluster frei. Dadurch kann der Auftragsverlauf beschädigt werden, was zu unerwartetem Verhalten des Clusters führt. Es wird empfohlen, unterschiedliche Container für die einzelnen Cluster zu verwenden und freigegebene Daten nicht im Standardspeicherkonto, sondern in einem verknüpften Speicherkonto abzulegen, das in der Bereitstellung aller relevanten Cluster angegeben wird. Weitere Informationen zum Konfigurieren verknüpfter Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. Einen Standardspeichercontainer können Sie jedoch auch wiederverwenden, wenn der ursprüngliche HDInsight-Cluster gelöscht wurde. Bei HBase-Clustern können Sie das HBase-Tabellenschema sowie die darin enthaltenen Daten sogar beibehalten, indem Sie einen neuen HBase-Cluster mit dem Standard-Blobspeichercontainer bereitstellen, der von einem gelöschten HBase-Cluster verwendet wurde.
+Der standardmäßige Blobcontainer speichert clusterspezifische Informationen wie etwa Auftragsverlauf und Protokolle. Geben Sie einen Standardblobcontainer nicht für mehrere HDInsight-Cluster frei. Dadurch kann der Auftragsverlauf beschädigt werden, was zu unerwartetem Verhalten des Clusters führt. Es wird empfohlen, unterschiedliche Container für die einzelnen Cluster zu verwenden und freigegebene Daten nicht im Standardspeicherkonto, sondern in einem verknüpften Speicherkonto abzulegen, das in der Bereitstellung aller relevanten Cluster angegeben wird. Weitere Informationen zum Konfigurieren verknüpfter Speicherkonten finden Sie unter [Erstellen von HDInsight-Clustern][hdinsight-creation]. Einen Standardspeichercontainer können Sie jedoch auch wiederverwenden, wenn der ursprüngliche HDInsight-Cluster gelöscht wurde. Bei HBase-Clustern können Sie das HBase-Tabellenschema sowie die darin enthaltenen Daten sogar beibehalten, indem Sie einen neuen HBase-Cluster mit dem Standard-Blobspeichercontainer erstellen, der von einem gelöschten HBase-Cluster verwendet wurde.
 
 
 ### Mit dem Azure-Vorschauportal
 
-Bei der Bereitstellung eines HDInsight-Clusters im Vorschauportal können Sie ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen:
+Bei der Erstellung eines HDInsight-Clusters im Vorschauportal können Sie ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen:
 
-![Datenquelle für HDInsight Hadoop-Bereitstellung](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
+![HDInsight, Hadoop, Erstellung, Datenquelle](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
 
 ###Verwenden der Azure-Befehlszeilenschnittstelle
 
@@ -106,7 +106,7 @@ Wenn Sie [die Befehlszeilenschnittstelle von Azure (Azure-CLI) installiert und k
 
 	azure storage account create <storageaccountname> --type LRS
 
-> [AZURE.NOTE]Der Parameter `--type` gibt an, wie das Speicherkonto repliziert wird. Weitere Informationen finden Sie unter [Azure-Speicherreplikation](../storage-redundancy.md).
+> [AZURE.NOTE]Der Parameter `--type` gibt an, wie das Speicherkonto repliziert wird. Weitere Informationen finden Sie unter [Azure-Speicherreplikation](../storage-redundancy.md). Verwenden Sie keinen ZRS, da ZRS keine Seitenblobs, Dateien, Tabellen oder Warteschlangen unterstützt.
 
 Sie werden zur Angabe der geografischen Region des Speicherkontos aufgefordert. Das Speicherkonto sollte in derselben Region erstellt werden, in der der HDInsight-Cluster erstellt werden soll.
 
@@ -122,21 +122,26 @@ Zum Erstellen eines Containers verwenden Sie den folgenden Befehl:
 
 Nach dem [Installieren und Konfigurieren von Azure PowerShell][powershell-install] können Sie an der Azure PowerShell-Eingabeaufforderung wie folgt ein Speicherkonto und einen Container erstellen:
 
-	$subscriptionName = "<SubscriptionName>"	# Azure subscription name
-	$storageAccountName = "<AzureStorageAccountName>" # The storage account that you will create
-	$containerName="<BlobContainerToBeCreated>" # The Blob container name that you will create
-
-	# Connect to your Azure account and selec the current subscription
-	Add-AzureAccount # The connection will expire in 12 hours.
-	Select-AzureSubscription $subscriptionName #only required if you have multiple subscriptions
-
-	# Create a storage context object
-	$storageAccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
+	$SubscriptionID = "<Your Azure Subscription ID>"
+	$ResourceGroupName = "<New Azure Resource Group Name>"
+	$Location = "EAST US 2"
+	
+	$StorageAccountName = "<New Azure Storage Account Name>"
+	$containerName = "<New Azure Blob Container Name>"
+	
+	Add-AzureRmAccount
+	Select-AzureRmSubscription -SubscriptionId $SubscriptionID
+	
+	# Create resource group
+	New-AzureRmResourceGroup -name $ResourceGroupName -Location $Location
+	
+	# Create default storage account
+	New-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageAccountName -Location $Location -Type Standard_LRS 
+	
+	# Create default blob containers
+	$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -StorageAccountName $StorageAccountName |  %{ $_.Key1 }
 	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-
-	# Create a Blob storage container
 	New-AzureStorageContainer -Name $containerName -Context $destContext
-
 
 ## Adressdateien in Blob-Speicher
 
@@ -200,97 +205,72 @@ Verwenden Sie den folgenden Befehl, um die Blob-bezogenen Cmdlets aufzulisten:
 
 ![Liste der Blob-bezogenen PowerShell-Cmdlets.][img-hdi-powershell-blobcommands]
 
-
-**Beispiel für die Verwendung von Azure PowerShell zum Hochladen einer Datei**
+###Hochladen von Dateien
 
 Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
 
-**Beispiel für die Verwendung von Azure PowerShell zum Herunterladen einer Datei**
+###Herunterladen von Dateien
 
 Mit dem folgenden Skript wird ein Blockblob in das aktuelle Verzeichnis heruntergeladen. Wechseln Sie vor der Ausführung des Skripts in ein Verzeichnis, für das Sie Schreibberechtigungen haben.
 
-
-	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
+	$resourceGroupName = "<AzureResourceGroupName>"
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at creation.
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
-
+	
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
-
-	# Use these two commands if you have multiple subscriptions
-	#$subscriptionName = "<SubscriptionName>"
-	#Select-AzureSubscription $subscriptionName
-
+	Login-AzureRmAccount 
+	Select-AzureRmSubscription -SubscriptionID "<Your Azure Subscription ID>"
+	
 	Write-Host "Create a context object ... " -ForegroundColor Green
-	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
+	$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.key1 }
 	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-
+	
 	Write-Host "Download the blob ..." -ForegroundColor Green
 	Get-AzureStorageBlobContent -Container $ContainerName -Blob $blob -Context $storageContext -Force
-
+	
 	Write-Host "List the downloaded file ..." -ForegroundColor Green
 	cat "./$blob"
 
-**Beispiel für die Verwendung von Azure PowerShell zum Löschen einer Datei**
+Bei Angabe des Ressourcengruppen- und Clusternamens können Sie den folgenden Code verwenden:
 
-Das folgende Skript löscht eine Datei.
-
-	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
-	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
+	$resourceGroupName = "<AzureResourceGroupName>"
+	$clusterName = "<HDInsightClusterName>"
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
+	
+	$cluster = Get-AzureRmHDInsightCluster -ResourceGroupName $resourceGroupName -ClusterName $clusterName
+	$defaultStorageAccount = $cluster.DefaultStorageAccount -replace '.blob.core.windows.net'
+	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccount |  %{ $_.Key1 }
+	$defaultStorageContainer = $cluster.DefaultStorageContainer
+	$storageContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccount -StorageAccountKey $defaultStorageAccountKey 
+	
+	Write-Host "Download the blob ..." -ForegroundColor Green
+	Get-AzureStorageBlobContent -Container $defaultStorageContainer -Blob $blob -Context $storageContext -Force
 
-	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
+###Löschen von Dateien
 
-	# Use these two commands if you have multiple subscriptions
-	#$subscriptionName = "<SubscriptionName>"
-	#Select-AzureSubscription $subscriptionName
 
-	Write-Host "Create a context object ... " -ForegroundColor Green
-	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-
-	Write-Host "Delete the blob ..." -ForegroundColor Green
 	Remove-AzureStorageBlob -Container $containerName -Context $storageContext -blob $blob
 
+###Auflisten von Dateien
 
-**Beispiel für die Verwendung von Azure PowerShell zum Auflisten der Dateien eines Ordners**
+	Get-AzureStorageBlob -Container $containerName -Context $storageContext -prefix "example/data/"
 
-Das folgende Skript zeigt, wie die Dateien eines Ordners aufgelistet werden. (Das nächste Beispiel ruft das Cmdlet **Invoke-Hive** auf, mit dem der Befehl **dfs ls** zum Auflisten des Inhalts eines Ordners ausgeführt wird.)
+###Ausführen von Hive-Abfragen mit einem nicht definierten Speicherkonto
 
-	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
-	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
-	$blobPrefix = "example/data/"
-
-	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
-
-	# Use these two commands if you have multiple subscriptions
-	#$subscriptionName = "<SubscriptionName>"
-	#Select-AzureSubscription $subscriptionName
-
-	Write-Host "Create a context object ... " -ForegroundColor Green
-	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-
-	Write-Host "List the files in $blobPrefix ..."
-	Get-AzureStorageBlob -Container $containerName -Context $storageContext -prefix $blobPrefix
-
-**Beispiel für die Verwendung von Azure PowerShell zum Ausführen einer Hive-Abfrage mit einem nicht definierten Speicherkonto**
-
-Dieses Beispiel zeigt, wie der Inhalt eines Ordners eines Speicherkontos aufgelistet wird, der beim Bereitstellungsprozess nicht definiert wurde. $clusterName = "<HDInsightClusterName>"
+Dieses Beispiel zeigt, wie der Inhalt eines Ordners eines Speicherkontos aufgelistet wird, der beim Erstellungsprozess nicht definiert wurde. $clusterName = „<HDInsightClusterName>“
 
 	$undefinedStorageAccount = "<UnboundedStorageAccountUnderTheSameSubscription>"
 	$undefinedContainer = "<UnboundedBlobContainerAssociatedWithTheStorageAccount>"
 
 	$undefinedStorageKey = Get-AzureStorageKey $undefinedStorageAccount | %{ $_.Primary }
 
-	Use-AzureHDInsightCluster $clusterName
+	Use-AzureRmHDInsightCluster $clusterName
 
 	$defines = @{}
 	$defines.Add("fs.azure.account.key.$undefinedStorageAccount.blob.core.windows.net", $undefinedStorageKey)
 
-	Invoke-Hive -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.windows.net/;"
+	Invoke-AzureRmHDInsightHiveJob -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.windows.net/;"
 
 ## Nächste Schritte
 
@@ -304,7 +284,7 @@ Weitere Informationen finden Sie unter:
 * [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 
 [powershell-install]: ../install-configure-powershell.md
-[hdinsight-provision]: hdinsight-provision-clusters.md
+[hdinsight-creation]: hdinsight-provision-clusters.md
 [hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
@@ -317,4 +297,4 @@ Weitere Informationen finden Sie unter:
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

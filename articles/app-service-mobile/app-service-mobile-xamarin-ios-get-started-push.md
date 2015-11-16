@@ -18,9 +18,7 @@
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -40,6 +38,10 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-xamarin-ios-get-started.md) ab.
 
+##<a name="create-hub"></a>Erstellen eines Notification Hubs
+
+[AZURE.INCLUDE [app-service-mobile-create-notification-hub](../../includes/app-service-mobile-create-notification-hub.md)]
+
 ## <a id="register"></a>Registrieren der App für Pushbenachrichtigungen
 
 [AZURE.INCLUDE [Aktivieren von Apple-Pushbenachrichtigungen](../../includes/enable-apple-push-notifications.md)]
@@ -56,7 +58,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
 
-## <a name="configure-app"></a>Konfigurieren des Xamarin.iOS-Projekts
+## <a name="configure-app"></a>Konfigurieren Ihres Xamarin.iOS-Projekts
 
 [AZURE.INCLUDE [app-service-mobile-xamarin-ios-configure-project](../../includes/app-service-mobile-xamarin-ios-configure-project.md)]
 
@@ -154,4 +156,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

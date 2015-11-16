@@ -20,10 +20,9 @@
 #Erste Schritte mit Azure SQL-Datensynchronisierung (Vorschauversion)
 In diesem Lernprogramm lernen sie die Grundlagen von Azure SQL Data Sync mit dem Azure (Vorschau)-Portal kennen.
 
-
 Für dieses Lernprogramm wird minimale vorherige Erfahrung mit SQL Server und Azure SQL Database vorausgesetzt. In diesem Lernprogramm erstellen Sie eine hybride (aus SQL Server- und SQL Database-Instanzen bestehende) Synchronisierungsgruppe, die vollständig gemäß einem von Ihnen festgelegten Zeitplan konfiguriert und synchronisiert wird.
 
-**Wichtiger Hinweis** Die gesamte technische Dokumentation zur SQL-Datensynchronisierung von Azure, die früher im MSDN zu finden war, ist jetzt in einer PDF-Datei enthalten, die [hier](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) zum Download bereitsteht.
+> [AZURE.NOTE]Die gesamte technische Dokumentation zur SQL-Datensynchronisierung von Azure, die früher im MSDN zu finden war, ist jetzt in einer PDF-Datei enthalten, die [hier](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) zum Download bereitsteht.
 
 ## Schritt 1: Herstellen einer Verbindung zur Azure SQL-Datenbank
 
@@ -64,7 +63,7 @@ Stellen Sie sicher, dass die folgende Software auf dem Computer installiert ist,
 <a id="InstallClient"></a>
 ### Schritt 2b: Installieren eines neuen Client-Agents
 
-Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL Daten-Synchronisierung)],((http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) um den Agent zu installieren.
+Folgen Sie den Anweisungen in [Installieren eines Client-Agents (SQL-Datensynchronisierung)](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf), um den Agent zu installieren.
 
 
 
@@ -203,4 +202,4 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->
