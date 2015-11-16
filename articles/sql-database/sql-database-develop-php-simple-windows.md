@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="php"
 	ms.topic="article"
-	ms.date="07/20/2015"
-	ms.author="mebha"/>
+	ms.date="11/03/2015"
+	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von PHP unter Windows
@@ -180,4 +180,4 @@ Weitere Informationen über die Installation und Verwendung von PHP finden Sie u
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

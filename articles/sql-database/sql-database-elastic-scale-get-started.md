@@ -4,8 +4,8 @@
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
-	editor=""/>
+	authors="ddove" 
+	editor="sidneyh"/>
 
 <tags 
 	ms.service="sql-database" 
@@ -13,38 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/24/2015" 
-	ms.author="sidneyh@microsoft.com"/>
+	ms.date="11/04/2015" 
+	ms.author="ddove;sidneyh"/>
 
-#Erste Schritte mit Tools für elastische Datenbanken
+# Erste Schritte mit Tools für elastische Datenbanken
 
-Die Anpassung der Kapazität an den Bedarf ist eines der zentralen Versprechen des Cloud-Computings. Ein wichtiges Verfahren für Datenbank-Anwendungen zum Erstellen von solchen skalierbaren Lösungen ist die als Sharding bezeichnete Methode, bei der Daten physisch über eine Anzahl von identisch strukturierten Datenbanken partitioniert werden. Bisher war jedoch für das Erstellen und Verwalten von Anwendungen, die Sharding verwenden, ein erheblicher Codierungsaufwand außerhalb der Geschäftslogik der Anwendung erforderlich.
-
-Tools für elastische Datenbanken vereinfachen das Erstellen und Verwalten von Anwendungen, die Datenbank-Sharding in Azure SQL-Datenbank verwenden. Die Tools umfassen die Clientbibliothek für elastische Datenbanken und das Split-Merge-Tool. Zusammen implementieren sie die Infrastrukturaspekte des Sharding, sodass Sie sich auf die Geschäftslogik Ihrer Anwendung konzentrieren können.
-
-In diesem Dokument werden die Entwicklerfunktionen mit der Clientbibliothek für elastische Datenbanken vorgestellt.
-
-Weitere Informationen zur Funktionsweise der Tools für elastische Datenbanken finden Sie unter [Übersicht über die Tools für elastische Datenbanken](sql-database-elastic-scale-introduction.md).
-
-Eine Liste aller Themen zu Tools für elastische Datenbanken finden Sie im [Lernkonzept](sql-database-elastic-scale-documentation-map.md).
-
-## Die elastische Datenbank – Beispielanwendung
-
-Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden die wichtigsten Funktionen von Tools für elastische Datenbanken erkundet. Um die Anwendung herunterzuladen und auszuführen, führen Sie die unten oder im Video [Elastische Skalierung – Erste Schritte](http://channel9.msdn.com/Blogs/Windows-Azure/Elastic-Scale-with-Azure-SQL-Database-Getting-Started) angegebenen Schritte aus.
+In diesem Dokument werden die Entwicklerfunktionen durch Ausführen der Beispielapp vorgestellt. Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden die wichtigsten Funktionen von Tools für elastische Datenbanken erkundet. Das Beispiel veranschaulicht die Funktionen der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
 
 ## Voraussetzungen
-Zum Ausführen der Beispiel-App müssen Sie Visual Studio verwenden, und Sie müssen Zugriff auf eine Azure SQL-Datenbank haben, die in Azure ausgeführt wird. Wenn Sie noch nicht über ein Azure-Abonnement verfügen, können Sie sich für ein [kostenloses Abonnement](http://azure.microsoft.com/pricing/free-trial/) registrieren.
-### Visual Studio und NuGet
 
 1. Visual Studio 2012 oder höher mit C# wird benötigt. Laden Sie eine kostenlose Version unter [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs.aspx) herunter.
 2. NuGet 2.7 oder höher. Die aktuelle Version finden Sie unter [Installing NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) (Installieren von NuGet - in englischer Sprache).
-### Erstellen einer Azure SQL-Datenbank
-
-* Weitere Informationen finden Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md).
 
 ## Herunterladen und Ausführen der Beispiel-App
 
-Die Beispielanwendung unter **Elastische Datenbank mit Azure SQL – Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Sharding-Anwendungen, die Tools für elastische Datenbanken in Azure SQL verwenden. Dabei stehen die wichtigsten Anwendungsfälle für [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md), [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) und [Abfragen mehrerer Shards](sql-database-elastic-scale-multishard-querying.md) im Mittelpunkt. Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen:
+Die Beispielanwendung unter **Elastische Datenbank mit Azure SQL – Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Shardinganwendungen, die Tools für elastische Datenbanken in Azure SQL verwenden. Dabei stehen die wichtigsten Anwendungsfälle für [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md), [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) und [Abfragen von mehreren Shards](sql-database-elastic-scale-multishard-querying.md) im Mittelpunkt. Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen:
 
 1. Öffnen Sie Visual Studio, und wählen Sie **Datei -> Neu -> Projekt** aus.
 2. Klicken Sie im Dialogfeld auf **Online**.
@@ -115,4 +98,4 @@ Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

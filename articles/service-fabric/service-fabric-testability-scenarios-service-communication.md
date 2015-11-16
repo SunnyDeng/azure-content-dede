@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Service Fabric-Testability-Szenarien: Dienstkommunikation" 
+   pageTitle="Prüfbarkeit: Dienstkommunikation | Microsoft Azure" 
    description="Die Kommunikation von Dienst zu Dienst ist ein wichtiger Integrationspunkt einer Service Fabric-Anwendung. In diesem Artikel werden Entwurfsaspekte und Testverfahren beschrieben." 
    services="service-fabric" 
    documentationCenter=".net" 
@@ -16,7 +16,7 @@
    ms.date="08/25/2015"
    ms.author="vturecek"/>
 
-# Service Fabric-Testability-Szenarien: Dienstkommunikation
+# Service Fabric-Prüfbarkeitsszenarien: Dienstkommunikation
 
 Microservices und dienstorientierte Architekturstile können in Service Fabric auf natürliche Weise genutzt werden. Bei diesen Arten von verteilten Architekturen setzen sich komponentenbasierte Microserviceanwendungen in der Regel aus mehreren Diensten zusammen, die miteinander kommunizieren müssen. Auch im einfachsten Fall verfügen Sie im Allgemeinen mindestens über einen zustandslosen Webdienst und einen zustandsbehafteten Datenspeicherdienst, die miteinander kommunizieren müssen.
 
@@ -101,4 +101,4 @@ In diesem Beispiel wird `QuorumLossMode` auf `PartialQuorumLoss` festgelegt. So 
 
 [Weitere Informationen zu Testability-Szenarien](service-fabric-testability-scenarios.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

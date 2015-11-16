@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="10/29/2015" 
 	ms.author="genemi"/>
 
 
@@ -77,7 +77,7 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 | :-- | :-- | :-- | :-- |
 | C# | [ADO.NET](sql-database-develop-dotnet-simple.md) | [ADO.NET benutzerdefiniert](sql-database-develop-csharp-retry-windows.md)<br/><br/>[Enterprise Library](sql-database-develop-entlib-csharp-retry-windows.md) | (Entity Framework) |
 | C++ | [ODBC-Treiber](http://msdn.microsoft.com/library/azure/hh974312.aspx) | . | . |
-| Java | [Java. JDBC, JDK. INSERT, TRANSACTION, SELECT.](sql-database-develop-java-simple-windows.md)<br/><br/>[Java. Eclipse](sql-data-java-how-to-use-sql-database.md)<br/><br/>[Java. JDBC](http://msdn.microsoft.com/library/azure/gg715284.aspx) | . | . |
+| Java | [Java. JDBC, JDK. Insert, Transaction, Select.](sql-database-develop-java-simple-windows.md) | . | . |
 | Node.js | [msnodesql](sql-database-develop-nodejs-simple-windows.md) | . | . |
 | PHP | [ODBC](sql-database-develop-php-simple-windows.md) | [ODBC (benutzerdefiniert)](sql-database-develop-php-retry-windows.md) | . |
 | Python | [pymssql](sql-database-develop-python-simple-windows.md) | . | . |
@@ -94,4 +94,4 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 - [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
 - [Entity Framework 6 hier, EF 7 auf GitHub](http://entityframework.codeplex.com/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

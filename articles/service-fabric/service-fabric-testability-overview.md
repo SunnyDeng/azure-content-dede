@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Testability – Übersicht"
-   description="In diesem Artikel wird das Testability-Feature von Microsoft Azure Service Fabric beschrieben."
+   pageTitle="Prüfbarkeit – Übersicht | Microsoft Azure"
+   description="In diesem Artikel wird das Feature „Prüfbarkeit“ in Microsoft Azure Service Fabric beschrieben, mit dem Sie Fehler herbeiführen und Testszenarien in Ihren Diensten testen können."
    services="service-fabric"
    documentationCenter=".net"
    authors="rishirsinha"
@@ -94,4 +94,4 @@ Beim Erstellen von robusten Diensten für die Cloud ist es wichtig sicherzustell
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

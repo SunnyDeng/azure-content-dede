@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Integration von Cloud Cruiser und Microsoft Azure-Abrechnungs-API"
+   pageTitle="Integration von Cloud Cruiser und der Microsoft Azure-Abrechnungs-API | Microsoft Azure"
    description="Enthält eine einzigartige Sicht auf den Microsoft Azure-Abrechnungspartner Cloud Cruiser und dessen Umgebungen mit Integration der Azure-Abrechnungs-APIs in das Produkt. Dies ist besonders hilfreich für Azure- und Cloud Cruiser-Kunden, die an der Verwendung bzw. am Testen von Cloud Cruiser für Microsoft Azure Pack interessiert sind."
    services="billing"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="08/10/2015"
+   ms.date="11/02/2015"
    ms.author="mobandyo;sirishap;bryanla"/>
 
 # Integration von Cloud Cruiser und Microsoft Azure-Abrechnungs-API
@@ -213,7 +213,7 @@ Das Beste ist, dass Sie diesen Prozess nur einmal durchlaufen müssen. Wenn die 
 + Eine ausführliche Anleitung zur Erstellung von Cloud Cruiser-Arbeitsmappen und -Berichten finden Sie in der Cloud Cruiser-[Onlinedokumentation](http://docs.cloudcruiser.com/) (gültige Anmeldung erforderlich). Weitere Informationen zu Cloud Cruiser erhalten Sie, indem Sie sich an [info@cloudcruiser.com](mailto:info@cloudcruiser.com) wenden.
 + Eine Übersicht über die Azure-APIs zur Ressourcennutzung und Gebührenkarte (Resource Usage und RateCard) finden Sie unter [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure](billing-usage-rate-card-overview.md).
 + Ausführlichere Informationen zu beiden APIs finden Sie unter [Azure-Abrechnungs-REST-API – Referenz](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c). Sie sind Teil der APIs, die vom Azure-Ressourcen-Manager bereitgestellt werden.
-+ Wenn Sie direkt in den Beispielcode eintauchen möchten, können Sie dies unter [Codebeispiele für Microsoft Azure-Abrechnungs-API bei GitHub](https://github.com/Azure/BillingCodeSamples) tun.
++ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, können Sie dies anhand der Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) tun.
 
 ### Weitere Informationen
 + Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
@@ -234,4 +234,4 @@ Das Beste ist, dass Sie diesen Prozess nur einmal durchlaufen müssen. Wenn die 
 [13]: ./media/billing-usage-rate-card-partner-solution-cloudcruiser/4_NewTagField.png "Abbildung 13: Erstellen neuer Felder für die Tag-Informationen"
 [14]: ./media/billing-usage-rate-card-partner-solution-cloudcruiser/5_PopulateAccountStructure.png "Abbildung 14: Auffüllen der Kontostruktur mit den Informationen aus den Suchvorgängen"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

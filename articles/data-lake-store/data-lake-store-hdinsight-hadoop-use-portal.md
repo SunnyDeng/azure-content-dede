@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/28/2015"
+   ms.date="10/29/2015"
    ms.author="nitinme"/>
 
 # Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Vorschauportals
@@ -23,7 +23,12 @@
 - [Using PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 
-Erfahren Sie, wie Sie das Azure-Vorschauportal zum Konfigurieren eines HDInsight-Clusters (Hadoop, HBase oder Storm) verwenden, damit dieser mit einem Azure Data Lake-Speicher genutzt werden kann. Einige wichtige Aspekte für diese Version: * **Für Hadoop- und Storm-Cluster (Windows und Linux)** kann der Data Lake-Speicher nur als zusätzliches Speicherkonto verwendet werden. Als Standardspeicherkonto für diese Cluster fungieren weiterhin Azure Storage-BLOBS (WASB). * **Für HBase-Cluster (Windows und Linux)** kann der Data Lake-Speicher als Standardspeicher oder zusätzlicher Speicher verwendet werden.
+Erfahren Sie, wie Sie das Azure-Vorschauportal zum Konfigurieren eines HDInsight-Clusters (Hadoop, HBase oder Storm) verwenden, damit dieser mit einem Azure Data Lake-Speicher genutzt werden kann. Einige wichtige Hinweise zu dieser Version:
+
+* **Für Hadoop- und Storm-Cluster (Windows und Linux)** kann der Data Lake-Speicher nur als zusätzliches Speicherkonto verwendet werden. Standardspeicherkonten für solche Cluster sind weiterhin Azure-Speicherblobs (WASB).
+
+* Sie können **für HBase-Cluster (Windows und Linux)** den Data Lake-Speicher als Standardspeicher oder als Zusatzspeicher verwenden.
+
 
 In diesem Artikel stellen wir einen Hadoop-Cluster mit Data Lake-Speicher als zusätzlichem Speicher bereit. Zum Konfigurieren von HDInsight für den Data Lake-Speicher mithilfe des Azure-Vorschauportals sind die folgenden Schritte erforderlich:
 
@@ -36,7 +41,7 @@ In diesem Artikel stellen wir einen Hadoop-Cluster mit Data Lake-Speicher als zu
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
-- **Aktivieren Ihres Azure-Abonnements** für die öffentliche Vorschauversion des Data Lake-Speichers. Siehe [Anweisungen](data-lake-store-get-started-portal.md#signup).
+- **Aktivieren Ihres Azure-Abonnements** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 
 
 ## Erstellen eines HDInsight-Clusters mit Authentifizierung für einen Azure Active Directory-Dienstprinzipal
@@ -66,7 +71,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 
 		![Dienstprinzipal für HDInsight-Cluster hinzufügen](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.2.png "Dienstprinzipal für HDInsight-Cluster hinzufügen")
 
-		Laden Sie auf dem Blatt **Cluster-AAD-Identität** das zuvor erstellte Zertifikat (.pfx) hoch, und geben Sie das Kennwort an, das Sie zum Erstellen des Zertifikats verwendet haben. Klicken Sie auf **Auswählen**. Die Azure Active Directory-Konfiguration für HDInsight-Cluster ist jetzt abgeschlossen.
+		Laden Sie auf dem Blatt **Cluster-AAD-Identität** das zuvor erstellte Zertifikat (PFX) hoch, und geben Sie das Kennwort an, das Sie zum Erstellen des Zertifikats verwendet haben. Klicken Sie auf **Auswählen**. Die Azure Active Directory-Konfiguration für HDInsight-Cluster ist jetzt abgeschlossen.
 
 		![Dienstprinzipal für HDInsight-Cluster hinzufügen](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png "Dienstprinzipal für HDInsight-Cluster hinzufügen")
 
@@ -87,7 +92,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 	Führen Sie unter Ihrem Data Lake-Speicherkonto die folgenden Aufgaben aus.
 
 	* [Erstellen Sie einen Ordner im Data Lake-Speicher](data-lake-store-get-started-portal.md#createfolder).
-	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** im [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/ProjectKona/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/ProjectKona/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
 
 	Sie verwenden die hochgeladenen Dateien später, wenn Sie das Data Lake-Speicherkonto mit dem HDInsight-Cluster testen.
 
@@ -188,10 +193,10 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 
 Für HBase-Cluster können Sie Data Lake-Speicherkonten als Standardspeicher verwenden. Falls Sie sich für diese Vorgehensweise entscheiden, muss Folgendes erfüllt sein, damit ein Cluster erfolgreich bereitgestellt werden kann: Der Dienstprinzipal, der dem Cluster zugeordnet ist, **muss** Zugriff auf das Data Lake-Speicherkonto haben. Dies können Sie auf zwei Arten sicherstellen:
 
-* **Bei Verwendung eines vorhandenen Dienstprinzipals**: Sie müssen sicherstellen, dass der Dienstprinzipal der Zugriffssteuerungsliste auf der Stammebene des Data Lake-Speicher-Dateisystems hinzugefügt wird, bevor Sie mit der Bereitstellung des Clusters beginnen.
-* **Bei Erstellung eines neuen Dienstprinzipals** im Rahmen der Clusterbereitstellung: Sobald die Clusterbereitstellung beginnt, müssen Sie den neu erstellten Dienstprinzipal der Stammebene des Data Lake-Speicher-Dateisystems hinzufügen. Wenn Sie dies nicht tun, wird der Cluster zwar bereitgestellt, aber beim Starten der HBase-Dienste tritt ein Fehler auf. Zur Umgehung dieses Problems müssen Sie den Dienstprinzipal der Zugriffssteuerungsliste des Data Lake-Speicherkontos hinzufügen und die HBase-Dienste über die Ambari-Webbenutzeroberfläche dann neu starten.
+* **Bei Verwendung eines vorhandenen Dienstprinzipals**: Sie müssen sicherstellen, dass der Dienstprinzipal der Zugriffssteuerungsliste auf der Stammebene des Dateisystems des Data Lake-Speichers hinzugefügt wird, bevor Sie mit der Bereitstellung des Clusters beginnen.
+* **Bei Erstellung eines neuen Dienstprinzipals** im Rahmen der Clusterbereitstellung: Sobald die Clusterbereitstellung beginnt, müssen Sie den neu erstellten Dienstprinzipal der Stammebene des Dateisystems des Data Lake-Speichers hinzufügen. Wenn Sie dies nicht tun, wird der Cluster zwar bereitgestellt, aber beim Starten der HBase-Dienste tritt ein Fehler auf. Zur Umgehung dieses Problems müssen Sie den Dienstprinzipal der Zugriffssteuerungsliste des Data Lake-Speicherkontos hinzufügen und die HBase-Dienste über die Ambari-Webbenutzeroberfläche dann neu starten.
 
-Eine Anleitung, wie Sie einem Data Lake-Speicher-Dateisystem einen Dienstprinzipal hinzufügen, finden Sie unter [Konfigurieren des Dienstprinzipals für den Zugriff auf das Data Lake-Speicher-Dateisystem](#acl).
+Eine Anleitung, wie Sie dem Dateisystem eines Data Lake-Speichers einen Dienstprinzipal hinzufügen, finden Sie unter [Konfigurieren des Dienstprinzipals für den Zugriff auf das Dateisystem des Data Lake-Speichers](#acl).
 
 
 
@@ -202,4 +207,4 @@ Eine Anleitung, wie Sie einem Data Lake-Speicher-Dateisystem einen Dienstprinzip
 [makecert]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

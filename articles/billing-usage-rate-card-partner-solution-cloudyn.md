@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Nutzungs- und Gebührenkarten-APIs von Microsoft Azure ermöglichen Cloudyn die ITFM-Bereitstellung für Kunden"
+   pageTitle="Nutzungs- und RateCard-APIs von Microsoft Azure ermöglichen Cloudyn die ITFM-Bereitstellung für Kunden | Microsoft Azure"
    description="Enthält eine einzigartige Sicht auf den Microsoft Azure-Abrechnungspartner Cloudyn und dessen Umgebungen mit Integration der Azure-Abrechnungs-APIs in das Produkt. Dies ist besonders für Azure- und Cloudyn-Kunden hilfreich, die daran interessiert sind, Cloudyn für Azure-Dienste zu verwenden oder auszuprobieren."
    services="billing"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="06/14/2015"
+   ms.date="11/02/2015"
    ms.author="mobandyo;bryanla"/>
 
 # Nutzungs- und Gebührenkarten-APIs von Microsoft Azure ermöglichen Cloudyn die ITFM-Bereitstellung für Kunden 
@@ -74,7 +74,7 @@ In diesem kurzen Video wird gezeigt, wie Azure-Kunden Cloudyn für Azure und die
 + Bei einem kostenlosen Test von [Cloudyn für Azure](https://www.cloudyn.com/microsoft-azure/) können Sie ausprobieren, wie Sie mit der angepassten Berichterstellung und den Analysefunktionen für Ihre Microsoft Azure-Cloudbereitstellung Kostentransparenz schaffen können.
 + Eine Übersicht über die Azure-APIs zur Ressourcennutzung und Gebührenkarte (Resource Usage und RateCard) finden Sie unter [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure](billing-usage-rate-card-overview.md). 
 + Ausführlichere Informationen zu beiden APIs finden Sie unter [Azure-Abrechnungs-REST-API – Referenz](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c). Sie sind Teil der APIs, die vom Azure-Ressourcen-Manager bereitgestellt werden.
-+ Wenn Sie direkt in den Beispielcode eintauchen möchten, können Sie dies unter [Codebeispiele für Microsoft Azure-Abrechnungs-API bei GitHub](https://github.com/Azure/BillingCodeSamples) tun.
++ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, können Sie dies anhand der Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) tun.
 
 ## Weitere Informationen
 + Weitere Informationen zu Enterprise Agreement (EA)-Angeboten für Microsoft Azure finden Sie unter [Lizenzierung von Azure für das Unternehmen](http://azure.microsoft.com/pricing/enterprise-agreement/).
@@ -90,4 +90,4 @@ In diesem kurzen Video wird gezeigt, wie Azure-Kunden Cloudyn für Azure und die
 [6]: ./media/billing-usage-rate-card-partner-solution-cloudyn/Cloudyn-Performance-Reports.png
 [7]: ./media/billing-usage-rate-card-partner-solution-cloudyn/Cloudyn-Category-Manager.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

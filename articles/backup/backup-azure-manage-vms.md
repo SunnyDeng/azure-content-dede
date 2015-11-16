@@ -1,14 +1,14 @@
 
 <properties
-	pageTitle="Azure Backup – Verwalten virtueller Computer | Microsoft Azure"
-	description="Erfahren Sie, wie ein virtueller Azure-Computer verwaltet wird."
+	pageTitle="Verwalten und Überwachen der Sicherung von virtuellen Azure-Computern | Microsoft Azure"
+	description="Erfahren Sie, wie Sie die Sicherung von virtuellen Azure-Computern verwalten und überwachen können"
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="aashishr"; "jimpark"; "trinadhk"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2015" ms.author="aashishr"; "jimpark"; "trinadhk"/>
 
 # Verwalten und Überwachen der Sicherung von virtuellen Azure-Computern
 
@@ -249,4 +249,4 @@ Ereignisbasierte Warnungen unterliegen den folgenden Einschränkungen:
 
 - [Wiederherstellen virtueller Azure-Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

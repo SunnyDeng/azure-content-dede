@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/28/2015"
-	ms.author="davidmu"/>
+	ms.author="josephd"/>
 
 # Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern
 
@@ -376,4 +376,4 @@ Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Man
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

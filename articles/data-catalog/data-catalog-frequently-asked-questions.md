@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="10/23/2015"
+   ms.date="10/30/2015"
    ms.author="maroche"/>
 
 # Häufig gestellte Fragen zu Azure Data Catalog
@@ -79,7 +79,7 @@ Zusätzlich zu den oben aufgeführten Assets unterstützt **Azure Data Catalog**
 - SQL Server-Datenbank
 - Oracle-Datenbank
 - HDFS-Cluster
-- Teradata-Datenbank 
+- Teradata-Datenbank
 
 
 ## F: Wie fordere ich die Unterstützung für eine andere Datenquelle an?
@@ -172,4 +172,4 @@ Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von **Azure
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

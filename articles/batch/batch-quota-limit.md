@@ -29,7 +29,7 @@ Wenn Sie Batch-Workloads in der Produktion ausführen möchten, müssen Sie mög
 ## Abonnementkontingente
 Ressource|Standardlimit|Maximales Limit
 ---|---|---
-Batch-Konten pro Region und Abonnement|1|20
+Batch-Konten pro Region und Abonnement|1|50
 
 ## Batch-Kontokontingente
 [AZURE.INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
@@ -95,4 +95,4 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="09/29/2015"
+ ms.date="10/30/2015"
  ms.author="danlep"/>
 
 # Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen
@@ -29,7 +29,7 @@ Dieser Artikel enthält Hintergrundinformationen und Überlegungen zur Verwendun
 
 * **Unterstützung für Linux- und Windows-HPC-Cluster**: Stellen Sie auf den Instanzen A8 und A9, A10 und A11 in Azure Clusterverwaltungs- und Auftragsplanungssoftware bereit, um einen eigenständigen HPC-Cluster zu erstellen oder einem lokalen Cluster Kapazität hinzuzufügen. Wie auch andere Azure-VM-Formate unterstützen die Instanzen A8 und A9, A10 und A11 standardmäßige oder benutzerdefinierte Windows Server- und Linux-Betriebssystemimages oder Azure-Ressourcen-Manager-Vorlagen in Azure-VMs (IaaS) oder Azure-Gastbetriebssystemversionen in Clouddiensten (PaaS, nur für Windows Server).
 
->[AZURE.NOTE]Die A10- und A11-Instanzen verfügen über die gleichen Leistungsoptimierungen und Spezifikationen wie die A8- und A9-Instanzen. Allerdings bieten sie keinen Zugriff auf das RDMA-Netzwerk in Azure. Sie wurden für HPC-Anwendungen entworfen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern und auch als parametrische oder hochgradig parallele Anwendungen bezeichnet werden. Wenn Workloads ausgeführt werden, bei denen es sich nicht um MPI-Anwendungen handelt, greifen die A8- und A9-Instanzen nicht auf das RDMA-Netzwerk zu, und sie entsprechen funktional den A10- und A11-Instanzen.
+>[AZURE.NOTE]Die A10- und A11-Instanzen verfügen über die gleichen Leistungsoptimierungen und Spezifikationen wie die A8- und A9-Instanzen. Allerdings bieten sie keinen Zugriff auf das RDMA-Netzwerk in Azure. Sie wurden für HPC-Anwendungen entworfen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern und auch als parametrische oder hochgradig parallele Anwendungen bezeichnet werden.
 
 
 ## Spezifikationen
@@ -61,17 +61,15 @@ Back-End mit 32 GBit/s, RDMA-fähig | Ermöglicht Anwendungskommunikation mit g
 
 A10- und A11-Instanzen besitzen einen einzelnen 10-GBit/s-Ethernet-Netzwerkadapter, der mit den Azure-Diensten und dem Internet verbunden ist.
 
-## Überlegungen zum Azure-Abonnement
+## Überlegungen zum Abonnement
 
 * **Azure-Konto**: Wenn Sie eine größere Anzahl von rechenintensiven Instanzen bereitstellen möchten, sollten Sie ein nutzungsbasiertes Abonnement oder andere Kaufoptionen in Erwägung ziehen. Sie können auch Ihr MSDN-Abonnement verwenden. Weitere Informationen finden Sie unter [Azure-Vorteile für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Bei Verwendung einer [kostenlosen Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/) können Sie nur eine begrenzte Anzahl von Azure-Compute-Kernen nutzen.
 
-* **Kernnutzungskontingent**: Das standardmäßige Kernnutzungskontingent Ihres Azure-Abonnements (20 Kerne) muss unter Umständen erhöht werden, da es für viele Szenarios mit 8 oder 16 Kernen nicht ausreicht. Für anfängliche Tests sollten Sie eine Erhöhung des Kontingents auf 100 Kerne in Erwägung ziehen. Erstellen Sie hierzu ein kostenloses Supportticket (siehe [Understanding Azure Limits and Increases](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) (Grundlegendes zu Azure-Einschränkungen und -Steigerungen, in englischer Sprache)).
+* **Kernkontingent** – Sie müssen u. U. das Kernkontingent in Ihrem Azure-Abonnement vom Standardwert von 20 Kernen pro Abonnement (für Bereitstellungen der Azure-Dienstverwaltung) oder 20 Kernen pro Region (für Bereitstellungen des Azure-Ressourcen-Managers), die für viele Szenarien mit 8-Kern- oder 16-Kern-Instanzen nicht ausreichen, heraufsetzen. Für anfängliche Tests sollten Sie eine Erhöhung des Kontingents auf 100 Kerne in Erwägung ziehen. Erstellen Sie hierzu ein kostenloses Supportticket, siehe [Grundlegendes zu Einschränkungen und Steigerungen in Azure](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 
     >[AZURE.NOTE]Azure-Kontingente sind Angebotsbeschränkungen, keine Kapazitätsgarantien. Nur verwendete Kerne werden auch in Rechnung gestellt.
 
-* **Affinitätsgruppe**: Für die meisten neuen Bereitstellungen werden Affinitätsgruppen derzeit nicht empfohlen. Wenn Sie jedoch eine Affinitätsgruppe verwenden, die Instanzen einer anderen Größe als A8 bis A11 enthält, können Sie sie nicht für die Instanzen A8 bis A11 verwenden (und umgekehrt).
-
-* **Virtuelles Netzwerk**: Ein virtuelles Azure-Netzwerk ist nicht erforderlich, um die rechenintensiven Instanzen zu verwenden. Sie benötigen möglicherweise jedoch für viele IaaS-Szenarios mindestens ein cloudbasiertes virtuelles Azure-Netzwerk oder für den Zugriff auf lokale Ressourcen, z. B. einen Anwendungslizenzserver, eine Site-to-Site-Verbindung. Sie müssen ein neues (regionales) virtuelles Netzwerk erstellen, bevor Sie die Instanzen bereitstellen. Das Hinzufügen von A8-, A9-, A10- oder A11-VMs zu einem virtuellen Netzwerk in einer Affinitätsgruppe wird nicht unterstützt. Weitere Informationen finden Sie unter [Erstellen virtueller Netzwerke (VNet)](../virtual-network/virtual-networks-create-vnet.md) sowie unter [Konfigurieren virtueller Netzwerke mit einer Standort-zu-Standort-VPN-Verbindung](../vpn-gateway/vpn-gateway-site-to-site-create.md).
+* **Virtuelles Netzwerk**: Ein virtuelles Azure-Netzwerk ist nicht erforderlich, um die rechenintensiven Instanzen zu verwenden. Sie benötigen möglicherweise jedoch für viele IaaS-Szenarios mindestens ein cloudbasiertes virtuelles Azure-Netzwerk oder für den Zugriff auf lokale Ressourcen, z. B. einen Anwendungslizenzserver, eine Site-to-Site-Verbindung. Sie müssen ein neues (regionales) virtuelles Netzwerk erstellen, bevor Sie die Instanzen bereitstellen. Das Hinzufügen von A8-, A9-, A10- oder A11-VMs zu einem virtuellen Netzwerk in einer Affinitätsgruppe wird nicht unterstützt. Weitere Informationen finden Sie in der Dokumentation zu [virtuellen Netzwerken](https://azure.microsoft.com/documentation/services/virtual-network/).
 
 * **Clouddienst oder Verfügbarkeitsgruppe**: Zum Herstellen der Verbindung über das RDMA-Netzwerk müssen die A8- und A9-Instanzen im gleichen Clouddienst (für IaaS-Szenarios mit Linux- oder Windows-basierten virtuellen Computern in der Azure-Dienstverwaltung oder für PaaS-Szenarios mit Windows Server) oder in der gleichen Verfügbarkeitsgruppe (für Linux- oder Windows-basierte virtuelle Computer im Azure-Ressourcen-Manager) bereitgestellt werden.
 
@@ -120,18 +118,16 @@ MPI | MS-MPI 2012 R2 oder höher, entweder eigenständig oder installiert übe
 
 ## Weitere wichtige Informationen
 
-* Die VM-Größen A8 bis A11 sind nur im Tarif „Standard“ verfügbar.
+* **Preisgestaltung** – Die VM-Größen A8 bis A11 sind nur im Tarif „Standard“ verfügbar.
 
-* Eine vorhandene Azure-VM kann nicht in die Größen A8, A9, A10 oder A11 geändert werden.
+* **Größenänderung** – Sie können einer rechenintensiven Instanz (A8-A11) nur die Größe A8 bis A11 zuweisen, und Sie können eine rechenintensive Instanz nicht in eine nicht rechenintensive Instanz ändern. Dies liegt an der speziellen Hardware und den Leistungsoptimierungen, die für rechenintensive Instanzen typisch sind.
 
-* Die Instanzen A8, A9, A10 und A11 können derzeit nicht mit einem Clouddienst bereitgestellt werden, der Teil einer vorhandenen Affinitätsgruppe ist. Ebenso kann eine Affinitätsgruppe mit einem Clouddienst mit den Instanzen A8 und A9, A10 und A11 nicht für die Bereitstellung von Instanzen einer anderen Größe verwendet werden. Beim Versuch einer solchen Bereitstellung wird eine Fehlermeldung wie die folgende angezeigt: `Azure deployment failure (Compute.OverconstrainedAllocationRequest): The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints.`
-
-* Das RDMA-Netzwerk in Azure reserviert den Adressbereich 172.16.0.0/12. Wenn Sie beabsichtigen, MPI-Anwendungen auf A8- und A9-Instanzen auszuführen, die in einem virtuellen Azure-Netzwerk bereitgestellt wurden, stellen Sie sicher, dass sich der Adressraum des virtuellen Netzwerks nicht mit dem RDMA-Netzwerk überschneidet.
+* **RDMA-Netzwerkadressbereich** – Das RDMA-Netzwerk in Azure reserviert sich den Adressbereich 172.16.0.0/12. Wenn Sie beabsichtigen, MPI-Anwendungen auf A8- und A9-Instanzen auszuführen, die in einem virtuellen Azure-Netzwerk bereitgestellt wurden, stellen Sie sicher, dass der Adressbereich des virtuellen Netzwerks sich nicht mit dem RDMA-Netzwerk überschneidet.
 
 ## Nächste Schritte
 
-* Ausführliche Informationen zur Verfügbarkeit und Preisgestaltung der Instanzen A8 und A9, A10 und A11 finden Sie unter [Virtuelle Computer Preise](http://azure.microsoft.com/pricing/details/virtual-machines/) sowie unter [Cloud Services Preise](http://azure.microsoft.com/pricing/details/cloud-services/).
+* Ausführliche Informationen zur Verfügbarkeit und Preisgestaltung der Instanzen A8, A9, A10 und A11 finden Sie unter [Virtuelle Computer – Preise](http://azure.microsoft.com/pricing/details/virtual-machines/) sowie unter [Cloud Services – Preise](http://azure.microsoft.com/pricing/details/cloud-services/).
 * Informationen zum Bereitstellen und Konfigurieren eines Linux-basierten Clusters mit A8- und A9-Instanzen für den Zugriff auf das Azure-RDMA-Netzwerk finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
 * Informationen zu ersten Schritten für die Bereitstellung und Verwendung von A8- und A9-Instanzen mit HPC Pack unter Windows finden Sie unter [Einrichten eines Windows RDMA-Clusters mit HPC Pack zum Ausführen von MPI-Anwendungen](virtual-machines-windows-hpcpack-cluster-rdma.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

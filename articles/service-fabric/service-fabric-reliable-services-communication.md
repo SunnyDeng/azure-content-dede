@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Übersicht über das Dienstkommunikationsmodell"
-   description="Dieser Artikel beschreibt die Grundlagen des von der Reliable Services-API unterstützten Kommunikationsmodells."
+   pageTitle="Übersicht über das Reliable Service-Kommunikationsmodell | Microsoft Azure"
+   description="Übersicht über das Reliable Service-Kommunikationsmodell, einschließlich Öffnen von Listeners für Dienste, Auflösen von Endpunkten und Kommunikation zwischen Diensten."
    services="service-fabric"
    documentationCenter=".net"
    authors="BharatNarasimman"
@@ -16,7 +16,7 @@
    ms.date="08/27/2015"
    ms.author="bharatn@microsoft.com"/>
 
-# Dienstkommunikationsmodell
+# Übersicht über das Reliable Service-Kommunikationsmodell
 
 Das Reliable Services-Programmiermodell ermöglicht es Dienstautoren, den gewünschten Kommunikationsmechanismus zum Bereitstellen ihrer Dienstendpunkte festzulegen. Zudem bietet das Modell Abstraktionen, mit deren Hilfe Clients Dienstendpunkte ermitteln und mit diesen kommunizieren können.
 
@@ -78,11 +78,11 @@ var replicaOrInstanceId = 0;
 var parameters = this.serviceInitializationParameters as StatelessServiceInitializationParameters;
 if (parameters != null)
 {
-  replicaOrInstanceId = parameters.InstanceId;
+   replicaOrInstanceId = parameters.InstanceId;
 }
 else
 {
-  replicaOrInstanceId = ((StatefulServiceInitializationParameters) this.serviceInitializationParameters).ReplicaId;
+   replicaOrInstanceId = ((StatefulServiceInitializationParameters) this.serviceInitializationParameters).ReplicaId;
 }
 
 var nodeContext = FabricRuntime.GetNodeContext();
@@ -117,11 +117,11 @@ public delegate FabricClient CreateFabricClientDelegate();
 public ServicePartitionResolver(CreateFabricClientDelegate createFabricClient);
 
 Task<ResolvedServicePartition> ResolveAsync(Uri serviceName,
-    long partitionKey,
-    CancellationToken cancellationToken);
+   long partitionKey,
+   CancellationToken cancellationToken);
 
 Task<ResolvedServicePartition> ResolveAsync(ResolvedServicePartition previousRsp,
-    CancellationToken cancellationToken);
+   CancellationToken cancellationToken);
 
 
 ```
@@ -135,43 +135,42 @@ In der Regel muss der Clientcode nicht direkt mit `ServicePartitionResolver` fun
 ```csharp
 
 protected CommunicationClientFactoryBase(
-    ServicePartitionResolver servicePartitionResolver = null,
-    IEnumerable<IExceptionHandler> exceptionHandlers = null,
-    IEnumerable<Type> doNotRetryExceptionTypes = null);
+   ServicePartitionResolver servicePartitionResolver = null,
+   IEnumerable<IExceptionHandler> exceptionHandlers = null,
+   IEnumerable<Type> doNotRetryExceptionTypes = null);
 
 
 public class MyCommunicationClient : ICommunicationClient
 {
-    public MyCommunicationClient(MyCommunicationChannel communicationChannel)
-    {
+   public MyCommunicationClient(MyCommunicationChannel communicationChannel)
+   {
       this.CommunicationChannel = communicationChannel;
-    }
-    public MyCommunicationChannel CommunicationChannel { get; private set; }
-    public ResolvedServicePartition ResolvedServicePartition;
-
+   }
+   public MyCommunicationChannel CommunicationChannel { get; private set; }
+   public ResolvedServicePartition ResolvedServicePartition;
 }
 
 public class MyCommunicationClientFactory : CommunicationClientFactoryBase<MyCommunicationClient>
 {
-    protected override void AbortClient(MyCommunicationClient1 client)
-    {
-        throw new NotImplementedException();
-    }
+   protected override void AbortClient(MyCommunicationClient1 client)
+   {
+      throw new NotImplementedException();
+   }
 
-    protected override Task<MyCommunicationClient> CreateClientAsync(ResolvedServiceEndpoint endpoint, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+   protected override Task<MyCommunicationClient> CreateClientAsync(ResolvedServiceEndpoint endpoint, CancellationToken cancellationToken)
+   {
+      throw new NotImplementedException();
+   }
 
-    protected override bool ValidateClient(MyCommunicationClient clientChannel)
-    {
-        throw new NotImplementedException();
-    }
+   protected override bool ValidateClient(MyCommunicationClient clientChannel)
+   {
+      throw new NotImplementedException();
+   }
 
-    protected override bool ValidateClient(ResolvedServiceEndpoint endpoint, MyCommunicationClient client)
-    {
-        throw new NotImplementedException();
-    }
+   protected override bool ValidateClient(ResolvedServiceEndpoint endpoint, MyCommunicationClient client)
+   {
+      throw new NotImplementedException();
+   }
 }
 
 ```
@@ -193,7 +192,7 @@ public async Task<TResult> InvokeWithRetryAsync<TResult>(
 
 ```
 
-Ein typisches Nutzungsmuster würde so aussehen:
+Ein typisches Nutzungsmuster sieht so aus:
 
 ```csharp
 
@@ -209,13 +208,13 @@ var myServicePartitionClient = new ServicePartitionClient<MyCommunicationClient>
     this.myServiceUri,
     myKey);
 
-  var result = await myServicePartitionClient.InvokeWithRetryAsync(
-      client =>
-      {
-        // Communicate with the service using the client.
-        throw new NotImplementedException();
-      },
-      CancellationToken.None);
+var result = await myServicePartitionClient.InvokeWithRetryAsync(
+   client =>
+   {
+      // Communicate with the service using the client.
+      throw new NotImplementedException();
+   },
+   CancellationToken.None);
 
 
 ... other client code ...
@@ -230,4 +229,4 @@ var myServicePartitionClient = new ServicePartitionClient<MyCommunicationClient>
 * [Schreiben von Diensten mit der Reliable Services-API und dem WebAPI-Kommunikationsstapel](service-fabric-reliable-services-communication-webapi.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

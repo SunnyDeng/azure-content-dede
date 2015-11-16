@@ -40,7 +40,7 @@ Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der La
 
 Elastische Datenbankpools sind hervorragend geeignet, wenn es eine große Anzahl an Datenbanken mit spezifischen Nutzungsmustern gibt. Im Hinblick auf eine einzelne Datenbank wird dieses Muster durch eine geringe durchschnittliche Auslastung mit relativ wenigen Nutzungslastspitzen gekennzeichnet.
 
-Je mehr Datenbanken Sie einem Pool hinzufügen können, desto höher werden die Einsparungen, aber je nach Anwendungsauslastungsmuster kann es sein, dass sich diese Einsparungen schon im Bereich von zwei S3-Datenbanken einstellen.
+Je mehr Datenbanken Sie einem Pool hinzufügen können, desto größer werden Ihre Ersparnisse. Abhängig vom Auslastungsmuster Ihrer Anwendung können Sie bereits mit nur 2 S3-Datenbanken Ersparnisse erzielen.
 
 In den folgenden Abschnitten wird erläutert, wie Sie einschätzen können, ob Ihre spezielle Sammlung an Datenbanken von elastischen Datenbankpools profitieren kann. In diesen Beispielen wird von elastischen Datenbankpools der Standard-Edition ausgegangen, die Grundlagen gelten für Basic- und Premium-Pools jedoch gleichermaßen.
 
@@ -435,4 +435,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

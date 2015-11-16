@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Tools für elastische Datenbanken in Azure SQL-Datenbank"
+    pageTitle="Übersicht über Funktionen der Tools für elastische Datenbanken | Microsoft Azure"
     description="SaaS-Entwickler (Software-as-a-Service) können mit diesen Tools problemlos elastische und skalierbare Datenbanken in der Cloud erstellen."
     services="sql-database"
     documentationCenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/27/2015"
-    ms.author="sidneyh"/>
+    ms.date="11/04/2015"
+    ms.author="ddove;sidneyh"/>
 
 # Übersicht über Features für elastische Datenbanken
 
@@ -108,4 +108,4 @@ Was können wir besser tun? Wird das Feature in diesem Thema deutlich erklärt? 
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

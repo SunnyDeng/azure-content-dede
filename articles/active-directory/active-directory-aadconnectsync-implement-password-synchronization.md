@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="11/03/2015"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -27,13 +27,13 @@ Das Ziel dieses Themas ist, Ihnen die Informationen bereitzustellen, die Sie ben
 
 Die Kennwortsynchronisierung ist ein Feature der Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung), das Benutzerkennwörter aus Ihrem lokalen Active Directory mit Azure Active Directory (Azure AD) synchronisiert. Dieses Feature ermöglicht Ihren Benutzern, sich bei ihren Azure Active Directory-Diensten (wie Office 365, Microsoft Intune und CRM Online) mit dem gleichen Kennwort anzumelden, mit dem sie sich bei Ihrem lokalen Netzwerk anmelden.
 
-> [AZURE.NOTE]Weitere Informationen zu Active Directory-Domänendiensten, die für die FIPS- und Kennwortsynchronisierung konfiguriert sind, siehe "Fehler bei der Kennwortsynchronisierung in FIPS-kompatiblen Systemen".
+> [AZURE.NOTE]Weitere Informationen zu Active Directory-Domänendiensten, die für FIPS und Kennwortsynchronisierung konfiguriert sind, finden Sie unter [Kennwortsynchronisierung und FIPS](#password-synchronization-and-fips).
 
-## Verfügbarkeit der Kennwortsynchronisierung
+### Verfügbarkeit der Kennwortsynchronisierung
 
 Jeder Kunde von Azure Active Directory ist berechtigt, die Kennwortsynchronisierung durchzuführen. Weitere Informationen zur Kompatibilität der Kennwortsynchronisierung und anderer Features, z. B. der Verbundauthentifizierung, finden Sie unten.
 
-## So funktioniert die Kennwortsynchronisierung
+### So funktioniert die Kennwortsynchronisierung
 
 Die Kennwortsynchronisierung ist eine Erweiterung des durch die Azure AD Connect-Synchronisierung implementierten Verzeichnissynchronisierungsfeatures. Darum muss für dieses Feature die Verzeichnissynchronisierung zwischen Ihrem lokalen und dem Azure Active Directory konfiguriert werden.
 
@@ -45,34 +45,36 @@ Wenn Sie zuerst das Kennwortsynchronisierungsfeature aktivieren, wird eine anfä
 
 Die Synchronisierung eines Kennworts hat keinen Einfluss auf derzeit angemeldete Benutzer. Wenn ein Benutzer, der bei einem Clouddienst angemeldet ist, auch das lokale Kennwort ändert, wird die Clouddienstsitzung ohne Unterbrechung fortgesetzt. Doch sobald der Clouddienst die erneute Authentifizierung des Benutzers anfordert, muss das neue Kennwort angegeben werden. An diesem Punkt muss der Benutzer das neue Kennwort angeben, das vor kurzem aus dem lokalen Active Directory mit der Cloud synchronisiert wurde.
 
-## Sicherheitshinweise
+### So funktioniert die Kennwortsynchronisierung mit Azure AD-Domänendiensten
+
+Wenn Sie diesen Dienst in Azure AD aktivieren, müssen Sie die Option für die Kennwortsynchronisierung festlegen, damit ein einmaliges Anmelden für die Benutzer möglich wird. Beim Aktivieren des Diensts wird das Verhalten für die Kennwortsynchronisierung geändert, und die Kennworthashes werden unverändert aus Ihrem lokalen Active Directory per Synchronisierung in die Azure AD-Domänendienste übernommen. Die Funktion ähnelt ADMT (Active Directory Migration Tool) und ermöglicht es den Azure AD-Domänendiensten, Benutzer mit allen Methoden zu authentifizieren, die auch im lokalen Active Directory zur Verfügung stehen.
+
+### Sicherheitshinweise
 
 Beim Synchronisieren von Kennwörtern wird die Nur-Text-Version eines Benutzerkennworts weder gegenüber dem Kennwortsynchronisierungsfeature noch gegenüber Azure AD oder einem der zugehörigen Dienste offengelegt.
 
 Darüber hinaus besteht keine Notwendigkeit, dass das lokale Active Directory das Kennwort in einem Format mit umkehrbarer Verschlüsselung speichert. Ein Digest des Active Directory-Kennworthashs wird zur Übertragung zwischen dem lokalen Active Directory und Azure Active Directory verwendet. Der Digest des Kennworthashs kann nicht zum Zugriff auf Ressourcen in der lokalen Umgebung des Kunden verwendet werden.
 
-## Überlegungen zur Kennwortrichtlinie
+### Überlegungen zur Kennwortrichtlinie
 
 Es gibt zwei Arten von Kennwortrichtlinien, die von der Aktivierung der Kennwortsynchronisierung betroffen sind:
 
 1. Kennwortkomplexitätsrichtlinie
 2. Kennwortablaufrichtlinie
 
-### Kennwortkomplexitätsrichtlinie
+**Kennwortkomplexitätsrichtlinie**
 
 Wenn Sie die Kennwortsynchronisierung aktivieren, überschreiben die im lokalen Active Directory konfigurierten Richtlinien zur Kennwortkomplexität alle Richtlinien zur Kennwortkomplexität, die ggf. in der Cloud für synchronisierte Benutzer definiert sind. Dies bedeutet, dass jedes Kennwort, das in der lokalen Active Directory-Umgebung des Kunden gültig ist, für den Zugriff auf Azure AD-Dienste verwendet werden kann.
 
-
 > [AZURE.NOTE]Kennwörter für Benutzer, die direkt in der Cloud erstellt werden, unterliegen auch weiterhin in der Cloud definierten Kennwortrichtlinien.
 
-### Kennwortablaufrichtlinie
+**Kennwortablaufrichtlinie**
 
-Wenn sich ein Benutzer im Bereich der Kennwortsynchronisierung befindet, wird das Cloudkontokennwort auf "*Läuft nie ab*" festgelegt. Dies bedeutet, dass es möglich ist, dass das Kennwort eines Benutzers in der lokalen Umgebung abläuft, aber er sich weiterhin mit diesem abgelaufenen Kennwort bei Clouddiensten anmelden kann.
+Wenn sich ein Benutzer im Bereich der Kennwortsynchronisierung befindet, wird das Cloudkontokennwort auf „*Läuft nie ab*“ festgelegt. Dies bedeutet, dass es möglich ist, dass das Kennwort eines Benutzers in der lokalen Umgebung abläuft, aber er sich weiterhin mit diesem abgelaufenen Kennwort bei Clouddiensten anmelden kann.
 
 Das Cloudkennwort wird aktualisiert, sobald der Benutzer das nächste Mal das Kennwort in der lokalen Umgebung ändert.
 
-
-## Überschreiben synchronisierter Kennwörter
+### Überschreiben synchronisierter Kennwörter
 
 Ein Administrator kann das Kennwort eines Benutzers mit Azure Active Directory PowerShell manuell zurücksetzen.
 
@@ -80,60 +82,59 @@ In diesem Fall überschreibt das neue Kennwort das synchronisierte Kennwort des 
 
 Ändert der Benutzer das lokale Kennwort erneut, wird das neue Kennwort mit der Cloud synchronisiert und überschreibt das manuell aktualisierte Kennwort.
 
-
-## Vorbereitung zur Kennwortsynchronisierung
-
-Ihr Azure Active Directory-Mandant muss für die Verzeichnissynchronisierung aktiviert werden, bevor er für die Kennwortsynchronisierung aktiviert werden kann.
+## Vorbereiten der Kennwortsynchronisierung
 
 
-## Aktivieren der Kennwortsynchronisierung
+### Aktivieren der Kennwortsynchronisierung
 
-Sie aktivieren die Kennwortsynchronisierung bei Ausführung des Azure AD Connect-Konfigurations-Assistenten.
+Wenn Sie beim Installieren von Azure AD Connect die Express-Einstellungen verwenden, wird die Kennwortsynchronisierung standardmäßig aktiviert.
 
-Wählen Sie auf der Dialogfeldseite **Optionale Features** "**Kennwortsynchronisierung**".
+Wenn Sie beim Installieren von Azure AD Connect die benutzerdefinierten Einstellungen verwenden, aktivieren Sie die Kennwortsynchronisierung auf der Seite „Benutzeranmeldung“. ![Benutzeranmeldung](./media/active-directory-aadsync-implement-password-synchronization/usersignin.png)
 
-![Optionale Features][1]
+Wenn Sie die Option **Verbund mit AD FS** auswählen, können Sie die Kennwortsynchronisierung optional als zusätzliche Sicherheit für den Fall aktivieren, dass Ihre AD FS-Infrastruktur ausfällt. Sie können sie auch aktivieren, wenn Sie vorhaben, die Azure AD-Domänendienste zu verwenden.
 
+### Kennwortsynchronisierung und FIPS
 
-> [AZURE.NOTE]Dieser Vorgang löst eine vollständige Synchronisierung aus. Vollständige Synchronisierungszyklen dauern im Allgemeinen länger als andere Synchronisierungszyklen.
+Wenn Ihr Server wegen FIPS (Federal Information Processing Standard) gesperrt ist, wurde MD5 deaktiviert. Um dieses für die Kennwortsynchronisierung zu aktivieren, fügen Sie im Verzeichnis „C:\\Programme\\Azure AD Sync\\Bin“ in der Datei „miiserver.exe.config“ den Schlüssel „enforceFIPSPolicy“ ein.
 
+```
+<configuration>
+    <runtime>
+        <enforceFIPSPolicy enabled="false"/>
+    </runtime>
+</configuration>
+```
+
+Den Knoten „configuration/runtime“ finden Sie am Ende der config-Datei.
+
+Informationen über Sicherheitsfragen und FIPS finden Sie im Blogbeitrag [AAD Password Sync, Encryption and FIPS compliance](http://blogs.technet.com/b/ad/archive/2014/06/28/aad-password-sync-encryption-and-and-fips-compliance.aspx) (in englischer Sprache).
 
 ## Verwalten der Kennwortsynchronisierung
 
-Sie können den Fortschritt der Kennwortsynchronisierung im Ereignisprotokoll des Computers überwachen, auf dem Azure AD Connect ausgeführt wird.
+### Problembehandlung bei der Kennwortsynchronisierung
 
+Starten Sie den **Synchroisierungsdienst-Manager**, öffnen Sie **Connectors**, wählen Sie den Active Directory Connector aus, in dem sich der Benutzer befindet, wählen Sie **Connectorbereich durchsuchen** aus, und suchen Sie den gewünschten Benutzer.
 
-### Ermitteln des Kennwortsynchronisierungsstatus
+![Benutzer im Connectorbereich](./media/active-directory-aadsync-implement-password-synchronization/cspasswordsync.png)
 
-Sie können ermitteln, für welche Benutzer die Kennwörter erfolgreich synchronisiert wurden, indem Sie die Ereignisse überprüfen, die folgende Kriterien erfüllen:
+Wählen Sie für den Benutzer die Registerkarte **Herkunft** aus und stellen Sie sicher, dass für mindestens eine Synchronisierungsregel die **Kennwortsynchronisierung** als **Wahr** angezeigt wird. In der Standardsynchronisierung ist dies die Synchronisierungsregel **Eingehend von AD – Benutzerkonto aktiviert**.
 
-| Quelle| Ereignis-ID |
-| --- | --- |
-| Verzeichnissynchronisierung| 656|
-| Verzeichnissynchronisierung| 657|
+Um die Details zur Kennwortsynchronisierung für das Objekt anzuzeigen, klicken Sie unten auf der Seite auf die Schaltfläche **Protokoll...**. Daraufhin wird eine Seite mit Verlaufsdaten zum Kennwortsynchronisierungsstatus des Benutzers für die vergangene Woche angezeigt.
 
-Die Ereignisse mit der Ereignis-ID 656 dienen als Bericht über verarbeitete Kennwortänderungsanforderungen:
+![Protokoll für Objekt](./media/active-directory-aadsync-implement-password-synchronization/csobjectlog.png)
 
-![Ereignis-ID 656][2]
+Die Statusspalte kann die nachfolgend aufgeführten Werte enthalten, die auch auf das Problem hinweisen. Außerdem wird kurz beschrieben, warum das Kennwort nicht synchronisiert wurde.
 
-Die entsprechenden Ereignisse mit der ID 657 liefern das Ergebnis zu diesen Anforderungen:
+| Status | Beschreibung |
+| ---- | ----- |
+| Success | Das Kennwort wurde erfolgreich synchronisiert. |
+| SourceConnectorNotPresent | Im lokalen Active Directory Connector-Bereich wurde kein Objekt gefunden. |
+| NoTargetConnection | Im Metaverse oder im Azure AD-Connectorbereich befindet sich kein Objekt. |
+| TargetNotExportedToDirectory | Das Objekt im Azure AD-Connectorbereich wurde noch nicht exportiert. |
 
-![Ereignis-ID 657][3]
-
-In den Ereignissen werden die betroffenen Objekte durch ihre Anker und den DN-Wert identifiziert. Der Ankerwert entspricht dem **ImmutableId**-Wert, der für einen Benutzer durch das Cmdlet "Get-MsoUser" zurückgegeben wird.
-
-Neben den Objektbezeichnern stellt **Ereignis-ID 656** das Datum bereit, an dem das Kennwort des Benutzers im lokalen Active Directory-Verzeichnis geändert wurde:
-
-![Kennwortänderungsanforderung][4]
-
-Ereignis-ID 657 enthält zusätzlich zu den Quellobjektbezeichnern ein Ergebnisfeld, um den Status der Synchronisierung für das Benutzerobjekt anzuzeigen.
-
-Ein erfolgreich synchronisiertes Kennwort wird in einem Ereignis mit der Ereignis-ID 657 mit dem Wert "Success" für das Attribut "Result" gekennzeichnet. Wenn ein Kennwortsynchronisierungsversuch fehlschlägt, erhält das Attribut "Result" den Wert "Failure":
-
-![Kennwortänderungsergebnis][5]
 
 ### Auslösen einer vollständigen Synchronisierung aller Kennwörter
-Wenn Sie die Filterkonfiguration geändert haben, müssen Sie eine vollständige Synchronisierung aller Kennwörter auslösen, sodass die Kennwörter der jetzt zum Bereich gehörenden Benutzer synchronisiert werden.
+Das Erzwingen einer vollständigen Synchronisierung aller Kennwörter sollte in der Regel nicht erforderlich sein. Falls dies aber doch einmal nötig sein sollte, finden Sie hier das PowerShell-Skript dafür.
 
     $adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"
     $aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"
@@ -148,27 +149,11 @@ Wenn Sie die Filterkonfiguration geändert haben, müssen Sie eine vollständige
     Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
 
 
-## Deaktivieren der Kennwortsynchronisierung
-
-Sie deaktivieren die Kennwortsynchronisierung durch erneute Ausführung des Azure AD Connect-Konfigurations-Assistenten. Deaktivieren Sie bei Aufforderung durch den Assistenten das Kontrollkästchen "Kennwortsynchronisierung".
-
-
-> [AZURE.NOTE]Dieser Vorgang löst eine vollständige Synchronisierung aus. Vollständige Synchronisierungszyklen dauern im Allgemeinen länger als andere Synchronisierungszyklen.
-
-Nach Ausführung des Konfigurations-Assistenten synchronisiert Ihr Mandant keine Kennwörter mehr. Neue Kennwortänderungen werden nicht mit der Cloud synchronisiert. Benutzer, deren Kennwörter zuvor synchronisiert wurden, können sich weiterhin mit diesen Kennwörtern anmelden, bis sie ihre Kennwörter in der Cloud manuell ändern.
-
 
 
 ## Zusätzliche Ressourcen
 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
-* [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+* [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!--Image references-->
-[1]: ./media/active-directory-aadsync-implement-password-synchronization/IC759788.png
-[2]: ./media/active-directory-aadsync-implement-password-synchronization/IC662504.png
-[3]: ./media/active-directory-aadsync-implement-password-synchronization/IC662505.png
-[4]: ./media/active-directory-aadsync-implement-password-synchronization/IC662506.png
-[5]: ./media/active-directory-aadsync-implement-password-synchronization/IC662507.png
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,12 +13,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="10/01/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 #Neuerungen im aktuellen Update zu Azure Search#
 
-Azure Search ist allgemein verfügbar und bietet für die unterstützten Konfigurationen der [Version 2015-02-28 der API](https://msdn.microsoft.com/library/azure/dn798935.aspx) eine Servicelevel-Vereinbarung (SLA) mit einer Verfügbarkeit von 99,9 %.
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Azure Search ist allgemein verfügbar und bietet für die unterstützten Konfigurationen der [Version 2015-02-28 der API](https://msdn.microsoft.com/library/azure/dn798935.aspx) eine Vereinbarung zum Servicelevel (SLA) mit einer Verfügbarkeit von 99,9 %.
 
 ##Versionierung und Freigabe der Funktionen
 
@@ -32,7 +32,7 @@ Sowohl die .NET-Bibliothek als auch die REST-APIs liegen in mehreren Versionen v
 
 Diese Version bietet neue [Unterstützung der Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx), die für die [Preview-Version der REST-API für den Azure Search-Dienst](search-api-2015-02-28-preview.md) verwendet werden kann. Um die neue Syntax zu verwenden, müssen Sie in einem Search Documents-Vorgang den `queryType` angeben.
 
-Außerdem sind die beiden folgenden Funktionen jetzt nicht mehr Funktionen der Vorschauversion, sondern Teil der offiziellen API in MSDN: – Natural Language Processors – POST in Suchvorgängen, Vorschlägen und Suchabfragen
+Außerdem sind die beiden folgenden Funktionen jetzt nicht mehr Funktionen der Vorschauversion, sondern Teil der offiziellen API in MSDN: – [Natural Language Processors](search-language-support.md) – POST in Suchvorgängen, Vorschlägen und Suchabfragen
 
 ##.NET-SDK 0.10.0-preview
 **Veröffentlicht im August 2015**
@@ -105,7 +105,7 @@ Diese Version war die öffentliche Preview-Version für Azure Search. Sie enthie
 ##Management-API Version 2015-08-19
 **Veröffentlicht: 11. September 2015**
 
-[Management-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) enthält die folgenden Updates.
+Die [Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) enthält die folgenden Updates.
 
 - „CheckNameAvailability“ überprüft, ob ein bestimmter Dienst bereits verwendet wird.
 - Replikatsbereich war zuvor 1 bis 6 und ist jetzt 1 bis 12.
@@ -125,4 +125,4 @@ Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Ve
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="11/03/2015" 
 	ms.author="arramac"/>
 	
 # Automatische Indizierung in Azure DocumentDB
@@ -55,7 +55,7 @@ Eine wichtige und logische Konsequenz der einheitlichen Behandlung der Schema- u
 
 ![Index als Struktur](media/documentdb-indexing/IndexAsTree.png)
 
-Obwohl kein Schema verwendet wird, ermöglichen die SQL- und JavaScript-Abfragesprachen von DocumentDB relationale Projektionen und Filter, die hierarchische Navigation innerhalb und zwischen Dokumenten sowie den Aufruf von vollständig in JavaScript geschriebenen UDFs. Die Abfragelaufzeit von DocumentDB kann diese Abfragen unterstützen, da sie direkt mit der Indexstrukturdarstellung der Daten arbeiten kann.
+Obwohl kein Schema verwendet wird, ermöglichen die SQL- und JavaScript-Abfragesprachen von DocumentDB relationale Projektionen und Filter, die hierarchische Navigation zwischen Dokumenten, räumliche Vorgänge sowie den Aufruf von vollständig in JavaScript geschriebenen UDFs. Die Abfragelaufzeit von DocumentDB kann diese Abfragen unterstützen, da sie direkt mit der Indexstrukturdarstellung der Daten arbeiten kann.
 
 Die standardmäßige Indizierungsrichtlinie indiziert automatisch alle Eigenschaften sämtlicher Dokumente und stellt konsistente Abfragen bereit (d. h. der Index wird synchron mit dem Dokumentschreibvorgang aktualisiert). Wie unterstützt DocumentDB einheitliche Aktualisierungen der Indexstruktur in großem Maßstab? DocumentDB verwendet für Schreibvorgänge optimierte, nicht sperrende und protokollstrukturierte Verfahren für die Indexwartung. DocumentDB unterstützt daher eine beständig hohe Menge schneller Schreibvorgänge, während konsistente Abfragen weiterhin verarbeitet werden.
 
@@ -67,4 +67,4 @@ Die DocumentDB-Indizierung ist für Speichereffizienz und Mehrinstanzfähigkeit 
 - Weitere Informationen zum Anpassen des DocumentDB-Indexes finden Sie [hier](documentdb-indexing-policies.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

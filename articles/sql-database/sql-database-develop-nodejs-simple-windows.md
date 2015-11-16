@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="07/30/2015" 
-	ms.author="mebha"/>
+	ms.date="11/03/2015"
+	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Node.js unter Windows
@@ -224,4 +224,4 @@ Damit dieses Codebeispiel funktioniert, müssen Sie zunächst eine gespeicherte 
 
 Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

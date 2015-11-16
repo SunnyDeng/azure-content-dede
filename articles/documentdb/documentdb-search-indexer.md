@@ -13,7 +13,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="NA" 
     ms.workload="data-services" 
-    ms.date="06/16/2015" 
+    ms.date="10/28/2015" 
     ms.author="anhoh"/>
 
 #Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern
@@ -270,4 +270,4 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
  - Klicken Sie [hier](/services/search/), um weitere Informationen zu Azure Search zu erhalten.
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

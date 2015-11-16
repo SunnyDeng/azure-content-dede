@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwendung der Service Fabric-Plattform durch Reliable Actors"
-   description="Dieser Artikel beschreibt, wie Reliable Actors die Features der Service Fabric-Plattform verwenden. Es werden Konzepte der Service Fabric-Plattform aus der Sicht des Actor-Entwicklers behandelt."
+   pageTitle="Reliable Actors in Service Fabric | Microsoft Azure"
+   description="Beschreibt, wie das Reliable Actors-Modell die Features der Service Fabric-Plattform nutzt, wobei Konzepte aus Sicht von Entwicklern von Akteuren behandelt werden."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -18,8 +18,9 @@
 
 # Verwendung der Service Fabric-Plattform durch Reliable Actors
 
-## Service Fabric-Anwendungsmodellkonzepte für Actors
-Actors verwenden das Service Fabric-Anwendungsmodell zum Verwalten des Lebenszyklus der Anwendung. Jeder Actor-Typ ist einem Service Fabric-[Diensttyp](service-fabric-application-model.md#describe-a-service) zugeordnet. Der Actor-Code wird als Service Fabric-Anwendung [gepackt](service-fabric-application-model.md#package-an-application) und für das Cluster [bereitgestellt](service-fabric-deploy-remove-applications.md#deploy-an-application).
+Actors verwenden das Service Fabric-Anwendungsmodell zum Verwalten des Lebenszyklus der Anwendung. Jeder Akteurtyp ist einem Service Fabric-[Diensttyp](service-fabric-application-model.md#describe-a-service) zugeordnet. Der Actor-Code wird als Service Fabric-Anwendung [gepackt](service-fabric-application-model.md#package-an-application) und für das Cluster [bereitgestellt](service-fabric-deploy-remove-applications.md#deploy-an-application).
+
+## Beispiel eines Anwendungsmodellkonzepts für Akteure
 
 Nehmen wir das Beispiel eines [mit Visual Studio erstellten](service-fabric-reliable-actors-get-started.md) Projekt-Actors, um einige der oben aufgeführten Konzepte zu veranschaulichen.
 
@@ -242,4 +243,4 @@ Bitte beachten Sie, dass bei Änderungen des Status-Anbieters der Actor-Dienst n
 [3]: ./media/service-fabric-reliable-actors-platform/actor-partition-info.png
 [4]: ./media/service-fabric-reliable-actors-platform/actor-replica-role.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Technische Übersicht"
-   description="Technischer Überblick über Service Fabric. Es werden wichtige Begriffe und die Architektur erläutert."
+   pageTitle="Service Fabric – Technische Übersicht | Microsoft Azure"
+   description="Technischer Überblick über Service Fabric. Übersicht über wichtige Konzepte und die Architektur."
    services="service-fabric"
    documentationCenter=".net"
    authors="msfussell"
@@ -54,4 +54,4 @@ Weitere Informationen zu Service Fabric finden Sie unter:
 - [Anwendungsszenarien](service-fabric-application-scenarios.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

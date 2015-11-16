@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="11/03/2015" 
 	ms.author="sdanie"/>
 
 # Erste Schritte mit der erweiterten Azure API Management-Konfiguration
@@ -36,4 +36,4 @@ Die Lernprogrammen in diesem Bereich beschreiben erweiterte Lösungen und Aufgab
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

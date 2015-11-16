@@ -49,6 +49,7 @@ In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abwei
 - [Data Factory](#data-factory-limits)
 - [DNS](#dns-limits)
 - [DocumentDB](#documentdb-limits)
+- [IoT Hub](#iot-hub-limits)
 - [Schlüsseltresor](#key-vault-limits)
 - [Media Services](#media-services-limits)
 - [Mobile Engagement](#mobile-engagement-limits)
@@ -194,6 +195,10 @@ Weitere Informationen zu den Grenzen für Azure Search finden Sie unter [Grenzen
 
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
 
+### IoT Hub-Grenzwerte
+
+[AZURE.INCLUDE [azure-iothub-limits](../includes/iot-hub-limits.md)]
+
 ### Data Factory-Einschränkungen
 
 [AZURE.INCLUDE [azure-data-factory-limits](../includes/azure-data-factory-limits.md)]
@@ -250,7 +255,7 @@ Weitere Informationen zu den Grenzen für Azure Search finden Sie unter [Grenzen
 
 ### Einschränkungen für SQL-Datenbanken
 
-Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkungen für SQL-Datenbank](sql-database/sql-database-resource-limits.md).
+Grenzwerte für SQL-Datenbanken finden Sie unter [Ressourceneinschränkungen für SQL-Datenbank](sql-database/sql-database-resource-limits.md).
 
 ## Weitere Informationen
 
@@ -258,4 +263,4 @@ Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkung
 
 [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

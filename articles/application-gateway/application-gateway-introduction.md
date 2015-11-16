@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="08/23/2015"
+   ms.date="11/03/2015"
    ms.author="joaoma"/>
 
 # Was ist Application Gateway?
@@ -32,7 +32,7 @@ Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene�
 
 ## Lastenausgleich der HTTP-Ebene 7
 
-Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der Transportebene (TCP/UDP) eingesetzt wird und den Lastenausgleich des gesamten eingehenden Netzwerkverkehr für den Application Gateway-Dienst übernimmt. Das Anwendungsgateway wendet dann Routingregeln auf den HTTP-Datenverkehr an und ermöglicht so Lastenausgleich der Ebene 7 (HTTP). Wenn Sie ein Anwendungsgateway erstellen, wird ein Endpunkt (VIP) zugeordnet und als öffentliche IP-Adresse für eingehenden Netzwerkverkehr verwendet.
+Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der Transportebene (TCP/UDP) eingesetzt wird und den Lastenausgleich des gesamten eingehenden Netzwerkverkehrs für den Application Gateway-Dienst übernimmt. Das Anwendungsgateway wendet dann Routingregeln auf den HTTP-Datenverkehr an und ermöglicht so Lastenausgleich der Ebene 7 (HTTP). Wenn Sie ein Anwendungsgateway erstellen, wird ein Endpunkt (VIP) zugeordnet und als öffentliche IP-Adresse für eingehenden Netzwerkverkehr verwendet.
 
 Das Anwendungsgateway leitet den HTTP-Datenverkehr auf Grundlage der Konfiguration weiter: virtueller Computer, Clouddienst, Web-App oder eine externe IP-Adresse.
 
@@ -54,14 +54,32 @@ Application Gateway wird derzeit in drei Größen angeboten: klein, mittel und g
 
 Sie können bis zu 10 Anwendungsgateways pro Abonnement erstellen und jedes Anwendungsgateway kann jeweils bis zu 10 Instanzen aufweisen. Der Application Gateway-Lastenausgleich als ein von Azure verwalteter Dienst ermöglicht die Bereitstellung eines Lastenausgleichs der Ebene 7 hinter dem Azure Load Balancer.
 
+Die folgende Tabelle zeigt einen durchschnittlichen Durchsatz für jede Anwendungsgatewayinstanz:
+
+| Back-End-Seitenantwort | Klein | Mittel | Groß|
+|---|---|---|---|
+| 6K | 7,5 MBit/s | 13 MBit/s | 50 MBit/s |
+|100k | 35 MBit/s | 100 Mbit/s| 200 MBit/s |
+
+
+>[AZURE.NOTE]Die Leistung hängt auch von der HTTP-Antwort der Webanwendung an das Anwendungsgateway ab.
+
+
+## Überwachung
+ 
+Application Gateway überwacht den Status der Back-End-Instanzen mit Testports, wobei die HTTP-Antwort aus HttpSettings-Abschnitten des Gateways in regelmäßigen Abständen getestet wird. Der Test erwartet eine erfolgreiche HTTP-Antwort im Antwortcodebereich 200-390 und prüft die Back-End-IP-Adressen alle 30 Sekunden auf die HTTP-Antwort.
+
+Wenn eine erfolgreiche HTTP-Antwort empfangen wird, wird die IP-Adresse als fehlerfrei markiert. Wenn der Test fehlschlägt, wird die IP-Adresse aus einem Fehlerfrei-Back-End-Pool entfernt, und der Datenverkehr zu diesem Server wird eingestellt. Der Integritätstest wird weiterhin alle 30 Sekunden für die fehlerhafte Webinstanz ausgeführt, bis sie wieder online geschaltet ist. Wenn die Webinstanz erfolgreich auf den Integritätstest antwortet, wird sie wieder dem Fehlerfrei-Back-End-Pool hinzugefügt, und der Datenverkehr zu dieser Instanz startet erneut.
+
 ## Konfigurieren und Verwalten
 
 Sie können das Anwendungsgateway mithilfe von REST-APIs und PowerShell-Cmdlets erstellen und verwalten.
+
 
 ## Nächste Schritte
 
 Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Erstellen eines Application Gateways](application-gateway-create-gateway.md).
 
-Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
+Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren eines Anwendungsgateways für die SSL-Auslagerung](application-gateway-ssl.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

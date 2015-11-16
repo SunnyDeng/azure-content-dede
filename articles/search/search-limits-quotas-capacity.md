@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Grenzwerte für den Azure Search-Dienst | Microsoft Azure"
-	description="Grenzwerte für Azure Search, die bei der Kapazitätsplanung verwendet werden, sowie Höchstwerte für Anforderungen und Antworten."
+	description="Dienstgrenzwerte, die bei der Kapazitätsplanung verwendet werden, sowie Höchstwerte für Anforderungen und Antworten für Azure Search, einem gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="08/18/2015"
+	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
 # Grenzwerte für den Azure Search-Dienst
@@ -39,6 +39,7 @@ Maximale Anzahl der Sucheinheiten|N/V
 Maximale Anzahl der Indexer|3
 Maximale Anzahl der Indexer-Datenquellen|3
 Maximale Anzahl der indizierten Dokumente pro Indexer-Aufruf|10\.000
+Maximale Laufzeit des Indexers|3 Minuten
 
 Beachten Sie, dass Abfragen keine Kontingente oder Höchstwerte zugeordnet sind. Die Abfragen pro Sekunde (Queries per Second, QPS) sind variabel und hängen von der verfügbaren Bandbreite und der Konkurrenz um Systemressourcen ab. Die Azure-Computing- und Speicherressourcen zur Unterstützung des gemeinsam genutzten Diensts werden von mehreren Abonnenten gemeinsam verwendet, sodass der QPS-Wert für Ihre Lösung in Abhängigkeit davon variiert, wie viele andere Workloads gleichzeitig ausgeführt werden.
 
@@ -46,7 +47,7 @@ Beachten Sie, dass Abfragen keine Kontingente oder Höchstwerte zugeordnet sind.
 
 Beim Standardtarif werden in einem dedizierten Search-Dienst nur Ihre Daten gespeichert und nur Ihre Workloads ausgeführt. Im Gegensatz zum gemeinsam genutzten Dienst ist die Ressourcenzuordnung für einen dedizierten Search-Dienst anpassbar und kann auf jede benötigte Ebene skaliert werden. Sie können die Ressourcenebenen für Partitionen (Hochskalieren von Speicher) und Replikate (für hohe Verfügbarkeit und Hochskalieren von QPS und Indizierungsleistung) unabhängig voneinander festlegen. Genauere Einblicke in die verschiedenen Ressourcenkonfigurationen erhalten Sie unter [Verwalten Ihrer Suchlösung](search-manage.md).
 
-Die folgende Tabelle enthält eine Liste der Höchstgrenzen, doch sollten Sie auch die Tabelle weiter unten betrachten, um eine Vorstellung von der Kapazität im Zusammenhang mit zulässigen [Kombinationen von Partitionen und Replikaten](#chart) zu erhalten.
+Die folgende Tabelle enthält eine Liste der Höchstgrenzen, doch sollten sich Sie auch die Tabelle weiter unten ansehen, um eine Vorstellung von der Kapazität im Zusammenhang mit zulässigen [Kombinationen von Partitionen und Replikaten](#chart) zu erhalten.
 
 Objekt|Begrenzung
 ------|----
@@ -132,4 +133,4 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 - Maximale Rückgabe von 1000 Dokumenten pro Seite mit Suchergebnissen
 - Maximale Rückgabe von 100 Vorschlägen pro Anforderung der Vorschlags-API
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

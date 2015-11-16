@@ -12,8 +12,8 @@
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/13/2015"
+   ms.workload="data-management"
+   ms.date="10/21/2015"
    ms.author="thmullan;jackr"/>
 
 
@@ -96,7 +96,7 @@ Es gibt noch weitere Möglichkeiten zum Verschlüsseln von sensiblen Daten:
 
 * Bei der [Verschlüsselung auf Zellenebene](https://msdn.microsoft.com/library/ms179331.aspx) werden bestimmte Spalten oder sogar Zellen, die Daten enthalten, mit unterschiedlichen Verschlüsselungsschlüsseln verschlüsselt.
 * Wenn Sie ein Hardwaresicherheitsmodul oder eine zentrale Verwaltung Ihrer Verschlüsselungsschlüsselhierarchie benötigen, können Sie den [Azure-Schlüsseltresor mit SQL Server in einer Azure-VM](http://blogs.technet.com/b/kv/archive/2015/01/12/using-the-key-vault-for-sql-server-encryption.aspx) verwenden.
-
+* [Immer verschlüsselt](https://msdn.microsoft.com/library/mt163865.aspx) (in der Vorschau) macht die Verschlüsselung für Anwendungen erkennbar und ermöglicht es Clients, sensible Daten in Clientanwendungen zu verschlüsseln, ohne die Verschlüsselungsschlüssel mit der SQL-Datenbank freizugeben.
 
 ## Überwachung
 
@@ -106,4 +106,4 @@ Die Überwachung und Nachverfolgung von Datenbankereignissen kann Sie bei der Ei
 
 Zusätzlich zu den oben aufgeführten Features und Funktionalitäten, mit denen Ihre Anwendung eine Reihe von Security Compliance-Anforderungen erfüllen kann, wird Azure SQL-Datenbank außerdem regelmäßigen Überprüfungen unterzogen und ist für eine Reihe von Compliance-Standards zertifiziert. Weitere Informationen finden Sie im [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/), wo die aktuellste Liste von [Compliance-Zertifizierungen für SQL-Datenbank](http://azure.microsoft.com/support/trust-center/services/) angezeigt wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Shard-Zuordnungsverwaltung" 
+	pageTitle="Shard-Zuordnungsverwaltung | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie ";ShardMapManager"; und die Clienbtbibliothek für elastische Datenbanken verwenden." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags 
@@ -13,11 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/24/2015" 
-	ms.author="sidneyh"/>
+	ms.date="11/04/2015" 
+	ms.author="ddove;sidneyh"/>
 
 # Shard-Zuordnungsverwaltung
-In einer Umgebung mit Sharded-Datenbank verwaltet eine **Shard-Zuordnung** Informationen, die es einer Anwendung ermöglichen, eine Verbindung mit der richtigen Datenbank basierend auf dem Wert des **Sharding-Schlüssels** herzustellen. Das Verständnis darüber, wie diese Zuordnungen erstellt werden, ist entscheidend für die Verwaltung von Shards mit der Clientbibliothek für elastische Datenbanken.
+
+Verwenden Sie die [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md) zum Verwalten von horizontal partitionierten Anwendungen. In einer Umgebung mit einer horizontal partitionierten Datenbank verwaltet eine [**Shardzuordnung**](sql-database-elastic-scale-glossary.md) Informationen, die es einer Anwendung ermöglichen, eine Verbindung mit der richtigen Datenbank basierend auf dem Wert des **Shardingschlüssels** herzustellen. Für die Shard-Zuordnungsverwaltung ist es unabdingbar, dass Sie die Grundlagen des Aufbaus dieser Zuordnungen verstehen.
 
 ## Shard-Karten und Shard-Zuordnungen
  
@@ -34,10 +35,10 @@ Elastic Scale unterstützt die folgenden .net Framework-Typen als Sharding-Schl�
 * datetimeoffset
 
 ### Listen- und Bereichs-Shard-Zuordnungen
-Shard-Zuordnungen können mit **Listen von Schlüsselwerten für einzelne Sharding-Schlüsselwerte** oder mit **Bereichen von Sharding-Schlüsselwerten** erstellt werden.
+Shardzuordnungen können mit **Listen von einzelnen Shardingschlüsselwerten** oder mit **Bereichen von Shardingschlüsselwerten** erstellt werden.
 
 ###Liste der Shard-Zuordnungen
-**Shards** enthalten **Shardlets**, und die Zuordnung von Shardlets zu Shards wird von einer "Shard-Karte" verwaltet. Eine **Listen-Shard-Karte** ist eine Zuordnung zwischen den Schlüsselwerten, mit der die Shardlets und die Datenbanken identifiziert werden, die als Shards dienen. **Listenzuordnungen** sind explizit (Beispiel: Schlüssel 1 ist Datenbank A zugeordnet), und verschiedene Schlüsselwerte können derselben Datenbank zugeordnet werden (Schlüsselwerte 3 und 6 verweisen beide auf Datenbank B).
+**Shards** enthalten **Shardlets**, und die Zuordnung von Shardlets zu Shards wird von einer „Shardzuordnung“ verwaltet. Eine **Listen-Shardzuordnung** ist eine Zuordnung zwischen den einzelnen Schlüsselwerten, mit denen die Shardlets und die Datenbanken identifiziert werden, die als Shards dienen. **Listenzuordnungen** sind explizit (Beispiel: Schlüssel 1 ist Datenbank A zugeordnet), und verschiedene Schlüsselwerte können derselben Datenbank zugeordnet werden (Schlüsselwerte 3 und 6 verweisen beide auf Datenbank B).
 
 | Schlüssel | Shard-Speicherort |
 |-----|----------------|
@@ -49,7 +50,7 @@ Shard-Zuordnungen können mit **Listen von Schlüsselwerten für einzelne Shardi
  
 
 ### Bereichs-Shard-Zuordnungen 
-In einer **Bereichs-Shard-Zuordnung** wird der Schlüsselbereich durch ein Paar **[niedriger Wert, hoher Wert)** beschrieben, wobei der *niedrige Wert* den minimalen Schlüssel in dem Bereich und der *hohe Wert* den ersten Wert darstellt, der höher ist als die Werte in jenem Bereich.
+In einer **Bereichs-Shardzuordnung** wird der Schlüsselbereich durch ein Paar **[niedriger Wert, hoher Wert)** beschrieben, wobei der *niedrige Wert* den minimalen Schlüssel im Bereich und der *hohe Wert* den ersten Wert darstellt, der höher ist als die Werte in jenem Bereich.
 
 **[0, 100)** enthält z. B. alle ganzen Zahlen größer oder gleich 0 und kleiner 100. Mehrere Bereiche können auf dieselbe Datenbank verweisen, und unzusammenhängende Bereiche werden unterstützt (z. B. [100,200) und [400,600), die im folgenden Beispiel beide auf Database\_C verweisen).
 
@@ -61,15 +62,15 @@ In einer **Bereichs-Shard-Zuordnung** wird der Schlüsselbereich durch ein Paar 
 | [400,600) | Datenbank\_C |
 | ... | ...            
 
-Jede der obigen Tabellen ist ein grundlegendes Beispiel für ein **ShardMap**-Objekt. Jede Zeile ist ein vereinfachtes Beispiel für ein einzelnes **PointMapping**-Objekt (für die Listen-Shard-Zuordnung) oder für das **RangeMapping**-Objekt (für die Bereichs-Shard-Zuordnung).
+Jede der obigen Tabellen ist ein grundlegendes Beispiel für ein **ShardMap**-Objekt. Jede Zeile ist ein vereinfachtes Beispiel für ein einzelnes **PointMapping**-Objekt (für die Listen-Shardzuordnung) oder für das **RangeMapping**-Objekt (für die Bereichs-Shardzuordnung).
 
 ## Shard-Zuordnungs-Manager 
 
 In der Clientbibliothek stellt der Shard-Zuordnungs-Manager eine Auflistung von Shard-Zuordnungen dar. Die von einem **ShardMapManager**-.NET-Objekt verwalteten Daten werden an drei Orten gespeichert:
 
-1. **Globale Shard-Zuordnung (GSM):** Wenn Sie ein **ShardMapManager**-Element erstellen, geben Sie eine Datenbank als Repository für alle Shard-Karten und -Zuordnungen an. Spezielle Tabellen und gespeicherte Prozeduren werden automatisch zur Verwaltung der Informationen erstellt. Hierfür wird üblicherweise eine kleine Datenbank verwendet, auf die leicht zugegriffen werden kann. Jedoch sollte diese nicht für andere Anforderungen der Anwendung verwendet werden. Die Tabellen befinden sich in einem speziellen Schema namens **\_\_ShardManagement**.
+1. **Globale Shardzuordnung (GSM):** Wenn Sie ein **ShardMapManager**-Element erstellen, geben Sie eine Datenbank als Repository für alle Shard-Karten und -Zuordnungen an. Spezielle Tabellen und gespeicherte Prozeduren werden automatisch zur Verwaltung der Informationen erstellt. Hierfür wird üblicherweise eine kleine Datenbank verwendet, auf die leicht zugegriffen werden kann. Jedoch sollte diese nicht für andere Anforderungen der Anwendung verwendet werden. Die Tabellen befinden sich in einem speziellen Schema namens **\_\_ShardManagement**.
 
-2. **Lokale Shard-Zuordnung (LSM):** Jede Datenbank, die Sie als Shard innerhalb einer Shard-Zuordnung angeben, wird dahingehend geändert, dass sie mehrere kleine Tabellen und spezielle gespeicherte Prozeduren enthält, die Shard-Zuordnungsinformationen speziell für diesen Shard enthalten und verwalten. Diese Informationen sind für die Informationen in der GSM redundant, jedoch kann die Anwendung die zwischengespeicherten Shard Map-Informationen überprüfen, ohne dass Last auf der GSM anfällt. Die Anwendung verwendet die LSM, um festzustellen, ob eine zwischengespeicherte Zuordnung (Mapping) noch gültig ist. Die Tabellen für die LSM zu jedem Shard sind im Schema **\_\_ShardManagement** enthalten.
+2. **Lokale Shardzuordnung (LSM):** Jede Datenbank, die Sie als Shard innerhalb einer Shardzuordnung angeben, wird dahingehend geändert, dass sie mehrere kleine Tabellen und spezielle gespeicherte Prozeduren enthält, die Shardzuordnungsinformationen speziell für diesen Shard enthalten und verwalten. Diese Informationen sind für die Informationen in der GSM redundant, jedoch kann die Anwendung die zwischengespeicherten Shard Map-Informationen überprüfen, ohne dass Last auf der GSM anfällt. Die Anwendung verwendet die LSM, um festzustellen, ob eine zwischengespeicherte Zuordnung (Mapping) noch gültig ist. Die Tabellen für die LSM zu jedem Shard sind im Schema **\_\_ShardManagement** enthalten.
 
 3. **Anwendungscache:** Jede Anwendungsinstanz, die Zugriff auf ein **ShardMapManager**-Objekt hat, verwaltet lokal einen speicherinternen Cache ihrer Zuordnungen. Sie speichert die Routinginformationen, die zuletzt abgerufen wurden.
 
@@ -112,11 +113,11 @@ Alternativ können Sie PowerShell zur Erstellung eines neuen Shard-Zuordnungs-Ma
 
 In der Regel unterscheiden sich Anwendungen, die Shard Maps verwalten und bearbeiten, von jenen Anwendungen, die Shard Maps zu Route-Verbindungen verwenden.
 
-Bei Anwendungen, die Shard-Zuordnungen verwalten (Hinzufügen oder Ändern von Shards, Shard-Karten, Shard-Zuordnungen usw.) , müssen Sie das **ShardMapManager**-Element mithilfe von **Anmeldeinformationen instanziieren, die über Lese-/Schreibzugriff sowohl auf die GSM-Datenbank als auch auf die Datenbank verfügen, die als Shard fungiert**. Die Anmeldeinformationen müssen Schreibvorgänge in Bezug auf die Tabellen sowohl in der GSM als auch in der LSM ermöglichen, wenn Shard Map-Informationen eingegeben oder geändert werden, und sie müssen außerdem das Erstellen von LSM-Tabellen auf neuen Shards erlauben.
+Bei Anwendungen, die Shardzuordnungen verwalten (Hinzufügen oder Ändern von Shards, Shard-Karten, Shard-Zuordnungen usw.) , müssen Sie das **ShardMapManager**-Element mithilfe von **Anmeldeinformationen instanziieren, die über Lese-/Schreibzugriff sowohl auf die GSM-Datenbank als auch auf die Datenbank verfügen, die als Shard fungiert**. Die Anmeldeinformationen müssen Schreibvorgänge in Bezug auf die Tabellen sowohl in der GSM als auch in der LSM ermöglichen, wenn Shard Map-Informationen eingegeben oder geändert werden, und sie müssen außerdem das Erstellen von LSM-Tabellen auf neuen Shards erlauben.
 
 ### Nur Metadaten betroffen 
 
-Methoden zum Auffüllen oder Ändern der **ShardMapManager**-Daten ändern nicht die Benutzerdaten, die in den Shards selbst gespeichert sind. Beispielsweise wirken sich Methoden wie etwa **CreateShard**, **DeleteShard**, **UpdateMapping** usw. nur auf die Shard-Zuordnungsmetadaten aus. Sie entfernen keine Benutzerdaten in den Shards, fügen diese hinzu oder ändern sie. Stattdessen sollten diese Methoden in Verbindung mit separaten Vorgängen verwendet werden, die Sie zum Erstellen oder Entfernen der eigentlichen Datenbanken durchführen oder mit denen Sie Zeilen von einem Shard zum nächsten verschieben, um eine Sharding-Umgebung neu auszurichten. (Das **Split-Merge-Tool**, das Teil der Tools für elastische Datenbanken ist, nutzt diese APIs zusammen mit der Durchführung einer tatsächlichen Datenverschiebung zwischen den Shards.)
+Methoden zum Auffüllen oder Ändern der **ShardMapManager**-Daten ändern nicht die Benutzerdaten, die in den Shards selbst gespeichert sind. Beispielsweise wirken sich Methoden wie etwa **CreateShard**, **DeleteShard**, **UpdateMapping** usw. nur auf die Shardzuordnungsmetadaten aus. Sie entfernen keine Benutzerdaten in den Shards, fügen diese hinzu oder ändern sie. Stattdessen sollten diese Methoden in Verbindung mit separaten Vorgängen verwendet werden, die Sie zum Erstellen oder Entfernen der eigentlichen Datenbanken durchführen oder mit denen Sie Zeilen von einem Shard zum nächsten verschieben, um eine Sharding-Umgebung neu auszurichten. (Das **Split-Merge-Tool**, das Teil der Tools für elastische Datenbanken ist, nutzt diese APIs zusammen mit der Durchführung einer tatsächlichen Datenverschiebung zwischen den Shards.)
 
 ## Auffüllen einer Shard-Zuordnung: Beispiel
  
@@ -202,7 +203,7 @@ Der Code ist so geschrieben, dass die gesamte Methode problemlos erneut ausgefü
  
 Als Alternative können Sie PowerShell-Skripts verwenden, um das gleiche Ergebnis zu erzielen. Einige der PowerShell-Beispiele finden Sie [hier](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db).
 
-Sobald Shard Maps aufgefüllt wurden, können Anwendungen für den Datenzugriff erstellt oder angepasst werden, um mit den Shard Maps arbeiten zu können. Ein Auffüllen oder Bearbeiten der Shard-Zuordnungen muss so lange nicht erneut erfolgen, bis das **Zuordnungslayout** geändert werden muss.
+Sobald Shard Maps aufgefüllt wurden, können Anwendungen für den Datenzugriff erstellt oder angepasst werden, um mit den Shard Maps arbeiten zu können. Ein Auffüllen oder Bearbeiten der Shardzuordnungen muss so lange nicht erneut erfolgen, bis das **Zuordnungslayout** geändert werden muss.
 
 ## Datenabhängiges Routing 
 
@@ -218,7 +219,7 @@ Eine Shard Map kann auf unterschiedliche Weise geändert werden. Sämtliche der 
 
 Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtverteilung von Daten in der Sharded-Datenbankumgebung.
 
-* Verwenden Sie zum Hinzufügen oder Entfernen von Shards **CreateShard** bzw. **DeleteShard**. 
+* Hinzufügen oder Entfernen von Shards: Verwenden Sie **CreateShard** und **DeleteShard**. 
     
     Der Server und die Datenbank, die das Ziel-Shard repräsentieren, müssen bereits für diese auszuführenden Vorgänge vorhanden sein. Diese Methoden haben keine Auswirkungen auf die Datenbanken selbst, lediglich auf die Metadaten in der Shard Map.
 
@@ -228,7 +229,7 @@ Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtvert
 
 * So unterteilen Sie vorhandene Bereiche in zwei Hälften oder führen benachbarte Bereiche zusammen: Verwenden Sie **SplitMapping** und **MergeMappings**.
 
-    Beachten Sie, dass Aufteilungs- und Zusammenführungsvorgänge **nicht den Shard ändern, dem Schlüsselwerte zugeordnet sind**. Eine Aufteilung teilt einen vorhandenen Bereich in zwei Teile, wobei beide jedoch demselben Shard zugeordnet bleiben. Bei einer Zusammenführung werden zwei benachbarte Bereiche, die bereits demselben Shard zugeordnet sind, zu einem einzigen Bereich zusammengefügt. Das Verschieben von Punkten oder Bereichen zwischen den Shards selbst muss mit **UpdateMapping** in Verbindung mit der eigentlichen Datenverschiebung koordiniert werden. Sie können den **Split-Merge**-Dienst verwenden, der Teil der Tools für elastische Datenbanken ist, um Änderungen an Shard-Zuordnungen bei Datenverschiebungen zu koordinieren, sofern eine Verschiebung erforderlich ist.
+    Beachten Sie, dass Aufteilungs- und Zusammenführungsvorgänge **nicht den Shard ändern, dem Schlüsselwerte zugeordnet sind**. Eine Aufteilung teilt einen vorhandenen Bereich in zwei Teile, wobei beide jedoch demselben Shard zugeordnet bleiben. Bei einer Zusammenführung werden zwei benachbarte Bereiche, die bereits demselben Shard zugeordnet sind, zu einem einzigen Bereich zusammengefügt. Das Verschieben von Punkten oder Bereichen zwischen den Shards selbst muss mit **UpdateMapping** in Verbindung mit der eigentlichen Datenverschiebung koordiniert werden. Sie können den **Split-Merge**-Dienst verwenden, der Teil der Tools für elastische Datenbanken ist, um Änderungen an Shardzuordnungen bei Datenverschiebungen zu koordinieren, sofern eine Verschiebung erforderlich ist.
 
 * So ordnen Sie einzelne Punkte oder Bereiche unterschiedlichen Shards neu zu (oder verschieben diese): Verwenden Sie **UpdateMapping**.
 
@@ -236,7 +237,7 @@ Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtvert
 
 * So schalten Sie Zuordnungen online und offline: Verwenden Sie **MarkMappingOffline** und **MarkMappingOnline**, um den Onlinestatus einer Zuordnung zu steuern.
 
-    Bestimmte Vorgänge sind bei Shard-Zuordnungen nur dann zulässig, wenn für eine Zuordnung der Zustand „offline“ gilt, einschließlich **UpdateMapping** und **DeleteMapping**. Wenn eine Zuordnung offline ist, gibt eine datenabhängige Anforderung auf Grundlage eines Schlüssels, der in dieser Zuordnung enthalten ist, einen Fehler zurück. Wenn darüber hinaus ein Bereich zuerst offline geschaltet wird, werden alle Verbindungen mit dem betroffenen Shard automatisch abgebrochen. So soll verhindert werden, dass inkonsistente oder unvollständige Ergebnisse bei Abfragen gegen jene Bereiche auftreten, die geändert werden.
+    Bestimmte Vorgänge sind bei Shardzuordnungen nur dann zulässig, wenn für eine Zuordnung der Zustand „offline“ gilt, einschließlich **UpdateMapping** und **DeleteMapping**. Wenn eine Zuordnung offline ist, gibt eine datenabhängige Anforderung auf Grundlage eines Schlüssels, der in dieser Zuordnung enthalten ist, einen Fehler zurück. Wenn darüber hinaus ein Bereich zuerst offline geschaltet wird, werden alle Verbindungen mit dem betroffenen Shard automatisch abgebrochen. So soll verhindert werden, dass inkonsistente oder unvollständige Ergebnisse bei Abfragen gegen jene Bereiche auftreten, die geändert werden.
 
 Zuordnungen sind in .NET unveränderliche Objekte. Alle oben genannten Methoden zum Ändern von Zuordnungen machen auch alle Verweise auf diese in Ihrem Code ungültig. Zur einfacheren Durchführung von Vorgangsabfolgen, die den Zustand einer Zuordnung ändern, geben alle Methoden, die eine Zuordnung ändern, einen neuen Zuordnungsverweis zurück, sodass die Vorgänge verkettet werden können. Um z. B. eine vorhandene Zuordnung in "shardmap sm" mit dem Schlüssel 25 zu löschen, können Sie Folgendes ausführen:
 
@@ -253,4 +254,4 @@ Bei Szenarios, die eine Datenverschiebung erforderlich machen, wird jedoch das S
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

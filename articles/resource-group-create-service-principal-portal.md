@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal"
-   description="Beschreibt den Vorgang zum Erstellen eines neuen Azure-Dienstprinzipals, der mit der rollenbasierten Zugriffskontrolle in Azure Resource Manager zum Verwalten des Zugriffs auf Ressourcen verwendet werden kann."
+   pageTitle="Erstellen einer AD-Anwendung und eines Dienstprinzipals im Portal | Microsoft Azure"
+   description="Beschreibt das Erstellen einer neuen Active Directory-Anwendung und eines Dienstprinzipals, der mit der rollenbasierten Zugriffskontrolle in Azure-Ressourcen-Manager zum Verwalten des Zugriffs auf Ressourcen verwendet werden kann."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,24 +13,27 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/18/2015"
+   ms.date="10/29/2015"
    ms.author="tomfitz"/>
 
-# Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal
+# Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals
 
 ## Übersicht
-Ein Dienstprinzipal ist ein automatisierter Prozess, eine automatisierte Anwendung oder ein automatisierter Dienst, der auf andere Ressourcen zugreifen muss. Mithilfe des Azure Resource Managers können Sie einem Dienstprinzipal Zugriff gewähren und es authentifizieren, sodass es die zulässigen Verwaltungsaktionen an Ressourcen ausführen kann, die im Abonnement oder als Mandant existieren.
+Wenn Sie eine Anwendung haben, die auf eine Ressource in Ihrem Abonnement zugreifen oder diese ändern muss, können Sie im Portal eine Active Directory-Anwendung erstellen und einer Rolle mit der ordnungsgemäßen Berechtigung zuweisen. Wenn Sie eine Active Directory-Anwendung über das Portal erstellen, wird eigentlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie verwenden den Dienstprinzipal, wenn Sie die Berechtigungen festlegen.
 
-Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals erstellt werden kann. Aktuell müssen Sie das Microsoft Azure-Portal zum Erstellen eines neuen Dienstprinzipals verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert.
+In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des Azure-Portals erstellt werden. Derzeit müssen Sie das Microsoft Azure-Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert. Im Vorschauportal können Sie die Anwendung einer Rolle zuweisen.
 
 ## Konzepte
-1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](./active-directory-whatis/)
+1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](active-directory/active-directory-whatis.md)
 2. Dienstprinzipal - ein Anwendungsbeispiel in einem Verzeichnis.
-3. AD-Anwendung - ein Verzeichnisdatensatz im AAD, der eine Anwendung für AAD identifiziert. Weitere Informationen finden Sie unter [Grundlagen der Authentifizierung im Azure AD](https://msdn.microsoft.com/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth).
+3. AD-Anwendung - ein Verzeichnisdatensatz im AAD, der eine Anwendung für AAD identifiziert. 
+
+Eine ausführlichere Erläuterung zu Anwendungen und Dienstprinzipalen finden Sie unter [Anwendungsobjekte und Dienstprinzipalobjekte](active-directory/active-directory-application-objects.md). Weitere Informationen zur Active Directory-Authentifizierung finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory/active-directory-authentication-scenarios.md).
 
 
-## Erstellen einer Active Directory-Anwendung
-1. Melden Sie sich über das [klassische Portal](https://manage.windowsazure.com/) bei Ihrem Azure-Konto an.
+## Erstellen der Anwendungs- und Dienstprinzipalobjekte
+
+1. Melden Sie sich über das [Portal](https://manage.windowsazure.com/) bei Ihrem Azure-Konto an.
 
 2. Wählen Sie im linken Bereich **Active Directory** aus.
 
@@ -64,7 +67,7 @@ Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals ers
 
      ![Anwendungseigenschaften][4]
 
-## Erstellen von Ihrem Dienstprinzipal-Kennwort
+## Erstellen eines Authentifizierungsschlüssels für Ihre Anwendung
 Das Portal sollte nun Ihre Anwendung ausgewählt haben.
 
 1. Klicken Sie auf die Registrierkarte **Konfigurieren**, um das Kennwort für Ihre Anwendung zu konfigurieren.
@@ -93,11 +96,41 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 * **CLIENT-ID** - als Ihren Benutzername.
 * **SCHLÜSSEL** - als Ihr Kennwort.
 
+## Zuweisen der Anwendung zu einer Rolle
+
+Im [Vorschauportal](https://portal.azure.com) können Sie die Active Directory-Anwendung einer Rolle zuweisen, die auf die Ressource Zugriff hat, auf die Sie zugreifen möchten. Informationen zum Zuweisen der Anwendung zu einer Rolle finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure Active Directory](active-directory/role-based-access-control-configure.md).
+
+## Abrufen des Zugriffstokens mit Code
+
+Wenn Sie mit .NET arbeiten, können Sie das Zugriffstoken für Ihre Anwendung mit dem folgenden Code abrufen.
+
+Zunächst müssen Sie die Active Directory-Authentifizierungsbibliothek in Ihrem Visual Studio-Projekt installieren. Die einfachste Möglichkeit hierfür ist das NuGet-Paket. Geben Sie in der Paket-Manager-Konsole die folgenden Befehle ein.
+
+    PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.19.208020213
+    PM> Update-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Safe
+
+Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Tokens hinzu.
+
+    public static string GetAccessToken()
+    {
+        var authenticationContext = new AuthenticationContext("https://login.windows.net/{tenantId or tenant name}");  
+        var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
+        var result = authenticationContext.AcquireToken(resource: "https://management.core.windows.net/", clientCredential:credential);
+
+        if (result == null) {
+            throw new InvalidOperationException("Failed to obtain the JWT token");
+        }
+
+        string token = result.AccessToken;
+
+        return token;
+    }
+
 ## Nächste Schritte
 
-- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md).  
-- Die Schritte, mit denen Sie einem Dienstprinzipal den Zugriff auf Ressourcen ermöglichen, finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md).  
-- Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
+- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).  
+- Eine Videodemo dieser Schritte finden Sie unter [Aktivieren der programmgesteuerten Verwaltung einer Azure-Ressource mit Azure Active Directory](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Enabling-Programmatic-Management-of-an-Azure-Resource-with-Azure-Active-Directory).
+- Informationen zur Verwendung von Azure PowerShell oder der Azure-Befehlszeilenschnittstelle zum Arbeiten mit Active Directory-Anwendungen und Dienstprinzipalen, einschließlich der Verwendung eines Zertifikats für die Authentifizierung, finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md).
 - Anleitungen für die Implementierung von Sicherheitseinstellungen mit dem Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 
 
@@ -116,4 +149,4 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

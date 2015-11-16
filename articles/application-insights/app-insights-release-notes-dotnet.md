@@ -32,23 +32,35 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 * Vergleichen Sie "ApplicationInsights.config" mit der alten Kopie. Die meisten Änderungen sind darauf zurückzuführen, dass einige Module entfernt und andere parametrisierbar gemacht wurden. Reaktivieren Sie alle Anpassungen, die Sie an der alten Datei vorgenommen haben.
 * Erstellen Sie die Projektmappe neu.
 
+## Version 2.0.0-beta2
+- Zusätzliche Unterstützung für ITelemetryProcessor und die Möglichkeit, per Code oder Konfigurationsdatei zu konfigurieren. [Aktiviert das benutzerdefinierte Filtern im SDK](https://azure.microsoft.com/documentation/articles/app-insights-api-telemetry-processors/#telemetry-processors)
+- Kontextinitialisierer wurden entfernt. Verwenden Sie stattdessen [Telemetrieinitialisierer](https://azure.microsoft.com/documentation/articles/app-insights-api-telemetry-processors/#telemetry-initializers).
+- Aktualisierte Application Insights für .NET Framework 4.6. 
+- Die Namen von benutzerdefinierten Ereignissen können jetzt bis zu 512 Zeichen enthalten.
+- Eigenschaft ```OperationContext.Name``` wurde umbenannt in ```RootName```.
+- Eigenschaft ```RequestTelemetry.Id``` wurde entfernt.
+- Eigenschaft ```Id``` und ```Context.Operation.Id``` von „RequestTelemetry“ werden beim Erstellen von neuem „RequestTelemetry“ nicht initialisiert.
+- ```RequestTelemetry.Name``` wird nicht mehr initialisiert. ```RequestTelemetry.Context.Operation.Name``` wird stattdessen verwendet.
+- Bei der Anforderungsüberwachung ist Antwortcode 401 Teil des normalen Authentifizierungshandshakes und führt zu einer erfolgreichen Anforderung.
+- Beheben der Benutzeroberflächenthread-Sperren beim Initialisieren von „InMemoryChannel“ (Standardkanal) vom Benutzeroberflächenthread aus. Dies behebt Probleme mit dem Einfrieren der Benutzeroberfläche bei WPF-Anwendungen.
+ 
 ## Version 2.0.0-beta1
 - TrackDependency erzeugt gültiges JSON, wenn nicht alle erforderlichen Felder angegeben wurden.
 - Die redundante Eigenschaft ```RequestTelemetry.ID``` ist jetzt nur ein Proxy für ```RequestTelemetry.Operation.Id```.
 - Neue Schnittstelle ```ISupportSampling``` und deren explizite Implementierung durch die meisten Datenelementtypen.
-- ```Count```-Eigenschaft für DependencyTelemetry als veraltet markiert. Verwenden Sie stattdessen ```SamplingPercentage```.
-- Neuer ```CloudContext``` eingeführt und Eigenschaften ```RoleName``` und ```RoleInstance``` aus ```DeviceContext``` darin verschoben.
-- Neue Eigenschaft ```AuthenticatedUserId``` für ```UserContext```, um die authentifizierte Benutzeridentität anzugeben.
-- `Microsoft.ApplicationInsights.Web.AccountIdTelemetryInitializer`, `Microsoft.ApplicationInsights.Web.AuthenticatedUserIdTelemetryInitializer` hinzugefügt, um authentifizierten Benutzerkontext wie durch JavaScript-SDK festgelegt zu initialisieren.
-- `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ITelemetryProcessor` und Unterstützung für Sampling mit fester Rate als dessen Implementierung hinzugefügt.
-- `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.TelemetryChannelBuilder` hinzugefügt, wodurch das Erstellen eines `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel` mit einem `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ITelemetryProcessor`-Satz ermöglicht wird.
+- ```Count```-Eigenschaft für „DependencyTelemetry“ ist als veraltet markiert. Verwenden Sie stattdessen ```SamplingPercentage```.
+- Neuer ```CloudContext``` wurde eingeführt, und die Eigenschaften ```RoleName``` und ```RoleInstance``` wurden daraus zu ```DeviceContext``` verschoben.
+- Neue Eigenschaft ```AuthenticatedUserId``` in ```UserContext```, um die Identität des authentifizierten Benutzers anzugeben.
+- `Microsoft.ApplicationInsights.Web.AccountIdTelemetryInitializer` und `Microsoft.ApplicationInsights.Web.AuthenticatedUserIdTelemetryInitializer` wurden hinzugefügt, die den Kontext des authentifizierten Benutzers wie durch JavaScript-SDK festgelegt initialisieren.
+- `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ITelemetryProcessor` wurde hinzugefügt, und Unterstützung für Sampling mit fester Rate zu dessen Implementierung.
+- `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.TelemetryChannelBuilder` wurde hinzugefügt, was das Erstellen von `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel` mit einem `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ITelemetryProcessor`-Satz ermöglicht.
 
 ## Version 1.2
 
-- Telemetrieinitialisierer, die keine Abhängigkeiten von ASP.NET-Bibliotheken haben, wurden von `Microsoft.ApplicationInsights.Web` zu dem neuen Abhängigkeit-NuGet `Microsoft.ApplicationInsights.WindowsServer` verschoben.
+- Telemetrieinitialisierer ohne Abhängigkeiten von ASP.NET-Bibliotheken wurden von `Microsoft.ApplicationInsights.Web` zu dem neuen Abhängigkeits-NuGet `Microsoft.ApplicationInsights.WindowsServer` verschoben.
 - `Microsoft.ApplicationInsights.Web.dll` wurde umbenannt in `Microsoft.AI.Web.dll`.
 - NuGet `Microsoft.ApplicationInsights.Web.TelemetryChannel` wurde umbenannt in `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel`. Assembly `Microsoft.ApplicationInsights.Extensibility.Web.TelemetryChannel` wurde umbenannt in `Microsoft.AI.ServerTelemetryChannel.dll`. Klasse `Microsoft.ApplicationInsights.Extensibility.Web.TelemetryChannel` wurde umbenannt in `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`.
-- Alle Namespaces, die Teil des Web-SDK sind, wurden geändert, um Teil `Extensibility` auszuschließen. Dazu gehören alle Telemetrieinitialisierer in "ApplicationInsights.config" und Modul `ApplicationInsightsWebTracking` in "web.config".
+- Alle Namespaces, die Teil des Web-SDK sind, wurden geändert, um Teil `Extensibility` auszuschließen. Dazu gehören alle Telemetrieinitialisierer in „ApplicationInsights.config“ und Modul `ApplicationInsightsWebTracking` in „web.config“.
 - Abhängigkeiten, die mit dem Laufzeitinstrumentierungs-Agent (aktiviert über den Statusmonitor oder die Azure WebSite-Erweiterung) erfasst werden, werden nicht als asynchron markiert, wenn HttpContext.Current für den Thread nicht vorhanden ist.
 - Eigenschaft `SamplingRatio` von `DependencyTrackingTelemetryModule` führt keine Aktion aus und ist als veraltet markiert.
 - Assembly `Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector` wurde umbenannt in `Microsoft.AI.PerfCounterCollector`.
@@ -64,11 +76,11 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 ## Version 1.0
 
 - Telemetrieinitialisierer und Telemetriemodule wurden aus den separaten untergeordneten Namespaces in den Stammnamespace `Microsoft.ApplicationInsights.Extensibility.Web` verschoben.
-- Das Präfix "Web" wurde aus Namen von Telemetrieinitialisierern und Telemetriemodulen entfernt, da es bereits im Namespacenamen `Microsoft.ApplicationInsights.Extensibility.Web` enthalten ist.
+- Das Präfix „Web“ wurde aus Namen von Telemetrieinitialisierern und Telemetriemodulen entfernt, da es bereits im Namespacenamen `Microsoft.ApplicationInsights.Extensibility.Web` enthalten ist.
 - `DeviceContextInitializer` wurde aus der Assembly `Microsoft.ApplicationInsights` in die Assembly `Microsoft.ApplicationInsights.Extensibility.Web` verschoben und in einen `ITelemetryInitializer` konvertiert.
-- Ändern Sie Namespace- und Assemblynamen von `Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry` in `Microsoft.ApplicationInsights.Extensibility.DependencyCollector`, damit Konsistenz mit dem Namen des NuGet-Pakets gegeben ist.
-- Benennen Sie `RemoteDependencyModule` in `DependencyTrackingTelemetryModule` um.
-- Benennen Sie `CustomPerformanceCounterCollectionRequest` in `PerformanceCounterCollectionRequest` um.
+- Namespace- und Assemblynamen wurden von `Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry` in `Microsoft.ApplicationInsights.Extensibility.DependencyCollector` umbenannt, damit Konsistenz mit dem Namen des NuGet-Pakets gegeben ist.
+- `RemoteDependencyModule` wurde in `DependencyTrackingTelemetryModule` umbenannt.
+- `CustomPerformanceCounterCollectionRequest` wurde in `PerformanceCounterCollectionRequest` umbenannt.
 
 ## Version 0.17
 - Abhängigkeit von EventSource NuGet für die Framework 4.5-Anwendungen wurde entfernt.
@@ -97,4 +109,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

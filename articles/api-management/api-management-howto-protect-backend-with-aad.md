@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/06/2015"
+	ms.date="11/03/2015"
 	ms.author="sdanie"/>
 
 # So schützen Sie ein Web-API-Back-End mit Azure Active Directory und API Management
@@ -547,4 +547,4 @@ Eine weitere Demonstration der Konfiguration und Verwendung dieser Richtlinie fi
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [Verwalten Ihrer ersten API]: api-management-get-started.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

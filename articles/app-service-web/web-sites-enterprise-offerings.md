@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="09/03/2015" 
 	ms.author="anwestg"/>
 
 # Azure App Service-Web-Apps-Angebote für Enterprise Whitepaper #
@@ -153,4 +153,4 @@ Weitere Informationen zu Azure App Service-Web-Apps finden sie unter [http://aka
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

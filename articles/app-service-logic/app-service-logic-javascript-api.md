@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="10/15/2015"
+   ms.date="10/29/2015"
    ms.author="stepsic"/>
 
 #JavaScript-API-App
@@ -91,4 +91,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

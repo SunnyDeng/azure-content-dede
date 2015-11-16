@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/09/2015" 
+	ms.date="11/04/2015" 
 	ms.author="awills"/>
  
 # Problembehandlung und Fragen zu Application Insights für ASP.NET
@@ -136,12 +136,15 @@ Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-
 + Klicken Sie auf die Schaltfläche "Aktualisieren". Das Blatt aktualisiert sich in regelmäßigen Abständen selbst, doch Sie können es auch manuell aktualisieren. Das Aktualisierungsintervall für größere Zeiträume ist länger.
 + Schauen Sie sich im Startmenü der Microsoft Azure-Vorschau die Dienststatusübersicht an. Falls es eine Warnungsanzeige gibt, warten Sie, bis sie wieder "OK" anzeigt, schließen Sie das Blatt Ihrer Application Insights-Anwendung, und öffnen Sie es erneut.
 + Schauen Sie auch in [unserem Statusblog](http://blogs.msdn.com/b/applicationinsights-status/) nach.
++ Wenn Sie „ApplicationInsights.config“ bearbeitet haben, überprüfen Sie sorgfältig die Konfiguration von „TelemetryInitializers“ und „TelemetryProcessors“. Ein falsch benannter Typ oder Parameter kann dazu führen, dass das SDK keine Daten gesendet.
 
 #### Keine Daten, seitdem die App auf meinem Server veröffentlicht wurde.
 
++ Überprüfen Sie, ob Sie tatsächlich alle Daten von Microsoft kopiert haben. ApplicationInsights-DLLs auf dem Server, zusammen mit „Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll“
 + In Ihrer Firewall müssen Sie möglicherweise die TCP-Ports 80 und 443 für ausgehenden Datenverkehr zu "dc.services.visualstudio.com" und "f5.services.visualstudio.com" öffnen.
 + Wenn Sie einen Proxy verwenden müssen, um Daten aus Ihrem Unternehmensnetzwerk zu senden, legen Sie [defaultProxy](https://msdn.microsoft.com/library/aa903360.aspx) in der Datei "Web.config" fest.
 + Windows Server 2008: Stellen Sie sicher, dass folgende Updates installiert sind: [KB2468871](https://support.microsoft.com/kb/2468871), [KB2533523](https://support.microsoft.com/kb/2533523), [KB2600217](https://support.microsoft.com/kb/2600217).
+
 
 #### <a name="q04"></a>Ich sehe keine Daten in der Nutzungsanalyse für meine Website
 
@@ -230,7 +233,7 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
 ## Weitere Antworten
 
-* [Application Insights-Forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
+* [Application Insights-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-DE/home?forum=ApplicationInsights)
 
 
 <!--Link references-->
@@ -243,4 +246,4 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

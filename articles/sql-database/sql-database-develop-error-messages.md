@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/26/2015" 
+	ms.date="11/04/2015" 
 	ms.author="genemi"/>
 
 
@@ -34,7 +34,8 @@ In diesem Thema sind verschiedene Kategorien von Fehlermeldungen aufgeführt. Di
 In Ihrem Clientprogramm können Sie Benutzern eine alternative Meldung für Fehler anzeigen, die von Ihnen angepasst wurde.
 
 
-**Tipp:** Besonders wichtig ist der Abschnitt mit Fehlern vom Typ *Vorübergehender Fehler*. Bei diesen Fehlern sollte in Ihrem Clientprogramm die von Ihnen entworfene Logik für die *Wiederholung* ausgeführt werden, um den Vorgang erneut durchzuführen.
+> [AZURE.TIP]Besonders wichtig ist der Abschnitt über Fehler vom Typ [*Vorübergehender Fehler*](#bkmk_connection_errors).
+
 
 
 <a id="bkmk_connection_errors" name="bkmk_connection_errors">&nbsp;</a>
@@ -44,25 +45,42 @@ In Ihrem Clientprogramm können Sie Benutzern eine alternative Meldung für Fehl
 
 Die folgende Tabelle enthält die Verbindungsabbruchfehler sowie andere vorübergehende Fehler, die auftreten können, wenn Sie über das Internet mit Azure SQL-Datenbank arbeiten.
 
-Vorübergehende Fehler werden mitunter auch als „Übergangsfehler“ bezeichnet. Wenn das Programm eine `SqlException` abfängt, kann es überprüfen, ob der Wert `sqlException.Number` ein Wert ist, der in diesem Abschnitt mit vorübergehenden Fehlern enthalten ist. Falls der Wert `Number` auf einen vorübergehenden Fehler hinweist, kann das Programm versuchen, die Verbindung wiederherzustellen und anschließend die Abfrage über die Verbindung erneut durchzuführen. Codebeispiele zur Wiederholungslogik finden Sie unter:
+
+### Die häufigsten vorübergehenden Fehler
+
+
+Vorübergehende Fehler machen sich in der Regel in Form einer der folgenden Fehlermeldungen von Ihren Clientprogrammen bemerkbar:
+
+- Die Datenbank „<db_name>“ auf dem Server „<Azure_instance>“ ist zurzeit nicht verfügbar. Wiederholen Sie den Verbindungsversuch später. Falls das Problem weiterhin besteht, wenden Sie sich an den Kundensupport und geben als Ablaufverfolgungs-ID der Sitzung „<session_id>“ an.
+
+- Die Datenbank „<db_name>“ auf dem Server „<Azure_instance>“ ist zurzeit nicht verfügbar. Wiederholen Sie den Verbindungsversuch später. Falls das Problem weiterhin besteht, wenden Sie sich an den Kundensupport und geben als Ablaufverfolgungs-ID der Sitzung „<session_id>“ an. (Microsoft SQL Server, Fehler: 40613)
+
+- Eine vorhandene Verbindung wurde erzwungenermaßen vom Remotehost geschlossen.
+
+- System.Data.Entity.Core.EntityCommandExecutionException: Fehler beim Ausführen der Befehlsdefinition. Details siehe innere Ausnahme. ---> System.Data.SqlClient.SqlException: Beim Empfangen von Ergebnissen vom Server ist ein Fehler auf Übertragungsebene aufgetreten. (Anbieter: Sitzungsanbieter, Fehler: 19 – Physische Verbindung kann nicht verwendet werden)
+
+Vorübergehende Fehler sollten in Ihrem Clientprogramm eine Ausführung der von Ihnen entworfenen *Wiederholungslogik* auslösen, um den Vorgang erneut durchzuführen. Codebeispiele zur Wiederholungslogik finden Sie unter:
 
 
 - [Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbanken](sql-database-develop-quick-start-client-code-samples.md)
 
-- [Vorgehensweise: Zuverlässiges Herstellen einer Verbindung mit Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn864744.aspx)
+- [Maßnahmen zum Behandeln von Verbindungsfehlern und vorübergehenden Fehlern in SQL-Datenbank](sql-database-connectivity-issues.md)
+
+
+### Fehlernummern für vorübergehende Fehler
 
 
 | Fehlernummer | Schweregrad | Beschreibung |
 | ---: | ---: | :--- |
 | 4060 | 16 | Die von der Anmeldung angeforderte „%.&#x2a;ls“-Datenbank kann nicht geöffnet werden. Fehler bei der Anmeldung. |
 |40197|17|Dienstfehler beim Verarbeiten Ihrer Anforderung. Wiederholen Sie den Vorgang. Fehlercode %d.<br/><br/>Sie erhalten diesen Fehler, wenn der Dienst aufgrund von Software- oder Hardwareupgrades, Hardwarefehlern oder sonstigen Failoverproblemen ausgefallen ist. Der Fehlercode (%d), der in der Meldung zum Fehler 40197 enthalten ist, liefert weitere Informationen zur Art des aufgetretenen Fehlers oder Failovers. Beispiele für Fehlercodes, die in die Meldung zum Fehler 40197 eingebettet sind, lauten 40020, 40143, 40166 und 40540.<br/><br/>Wenn Sie erneut eine Verbindung mit Ihrem SQL-Datenbank-Server herstellen, werden Sie automatisch mit einer intakten Kopie Ihrer Datenbank verbunden. Ihre Anwendung muss den Fehler 40197 abfangen, den für die Problembehandlung in der Meldung enthaltenen Fehlercode (%d) protokollieren und versuchen, eine neue Verbindung mit SQL-Datenbank herzustellen, bis die Ressourcen verfügbar sind, damit Ihre Verbindung wiederhergestellt wird.|
-|40501|20|Der Dienst ist derzeit ausgelastet. Wiederholen Sie die Anforderung in 10 Sekunden. Vorgangs-ID: %ls. Code: %d.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zur Fehlerbehebung finden Sie unter:<br/>•[Azure SQL-Datenbankeinschränkung](http://msdn.microsoft.com/library/azure/dn338079.aspx).
+|40501|20|Der Dienst ist derzeit ausgelastet. Wiederholen Sie die Anforderung in 10 Sekunden. Vorgangs-ID: %ls. Code: %d.<br/><br/>*Hinweis:* Weitere Informationen finden Sie unter: <br/>• [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md).
 |40613|17|Die „%.&#x2a;ls“-Datenbank auf Server „%.&#x2a;ls“ ist zurzeit nicht verfügbar. Wiederholen Sie den Verbindungsversuch später. Falls das Problem weiterhin besteht, wenden Sie sich an den Kundensupport und geben als Ablaufverfolgungs-ID der Sitzung „%.&#x2a;ls“ an.|
 |49918|16|Anforderung kann nicht verarbeitet werden. Zum Verarbeiten der Anforderung sind nicht genügend Ressourcen vorhanden.<br/><br/>Der Dienst ist derzeit ausgelastet. Versuchen Sie die Anforderung später erneut. |
 |49919|16|Die Erstellung oder Aktualisierung der Anforderung kann nicht verarbeitet werden. Für das Abonnement „%ld“ werden derzeit zu viele Erstell- oder Aktualisierungsvorgänge ausgeführt.<br/><br/>Der Dienst ist mit der Verarbeitung mehrerer Erstell- oder Aktualisierungsvorgänge für Ihr Abonnement oder Ihren Server ausgelastet. Zur Ressourcenoptimierung werden Anforderungen derzeit blockiert. Fragen Sie [sys.dm\_operation\_status](https://msdn.microsoft.com/library/dn270022.aspx) auf ausstehende Vorgänge ab. Warten Sie, bis ausstehende Erstell- oder Aktualisierungsanforderungen abgeschlossen sind, oder löschen Sie eine Ihrer ausstehenden Anforderungen, und wiederholen Sie die Anforderung später. |
 |49920|16|Anforderung kann nicht verarbeitet werden. Für das Abonnement „%ld“ werden derzeit zu viele Vorgänge ausgeführt.<br/><br/>Der Dienst ist mit der Verarbeitung mehrerer Vorgänge für dieses Abonnement ausgelastet. Zur Ressourcenoptimierung werden Anforderungen derzeit blockiert. Fragen Sie [sys.dm\_operation\_status](https://msdn.microsoft.com/library/dn270022.aspx) auf den Vorgangsstatus ab. Warten Sie, bis ausstehende Anforderungen abgeschlossen sind, oder löschen Sie eine Ihrer ausstehenden Anforderungen, und wiederholen Sie die Anforderung später. |
 
-**Hinweis:** Die Partnerverbundfehler 10053 und 10054 sollten in Ihrer Wiederholungslogik unter Umständen auch berücksichtigt werden.
+**Hinweis:** Die Verbundfehler 10053 und 10054 sollten in Ihrer Wiederholungslogik unter Umständen auch berücksichtigt werden.
 
 
 <a id="bkmk_b_database_copy_errors" name="bkmk_b_database_copy_errors">&nbsp;</a>
@@ -70,7 +88,7 @@ Vorübergehende Fehler werden mitunter auch als „Übergangsfehler“ bezeichne
 ## Fehler beim Kopieren von Datenbanken
 
 
-Die folgende Tabelle enthält die verschiedenen Fehler, die auftreten können, wenn Sie eine Datenbank in Azure SQL-Datenbank kopieren. Weitere Informationen finden Sie unter [Kopieren von Datenbanken in die Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ff951624.aspx).
+Die folgende Tabelle enthält die verschiedenen Fehler, die auftreten können, wenn Sie eine Datenbank in Azure SQL-Datenbank kopieren. Weitere Informationen finden Sie unter [Kopieren einer Azure SQL-Datenbank](sql-database-copy.md).
 
 
 |Fehlernummer|Schweregrad|Beschreibung|
@@ -107,13 +125,13 @@ In der folgende Tabelle sind die Fehler enthalten, die beim Arbeiten mit Azure S
 **Tipp:** Unter dem folgenden Link finden Sie weitere Informationen, die für die meisten bzw. alle Fehler in diesem Abschnitt gelten:
 
 
-- [Ressourceneinschränkungen für Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/dn338081.aspx).
+- [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md)
 
 
 |Fehlernummer|Schweregrad|Beschreibung|
 |---:|---:|:---|
-|10928|20|Ressourcen-ID: %d. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637).<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Workerthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx). |
-|10929|20|Ressourcen-ID: %d. Die %s-Mindestgarantie beträgt %d, der maximale Wert beträgt %d und die aktuelle Nutzung für die Datenbank beträgt %d. Der Server ist jedoch derzeit zu stark ausgelastet, um Anforderungen über %d für diese Datenbank zu unterstützen. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637). Versuchen Sie es andernfalls später noch einmal.<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Workerthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx).|
+|10928|20|Ressourcen-ID: %d. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637).<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Workerthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md). |
+|10929|20|Ressourcen-ID: %d. Die %s-Mindestgarantie beträgt %d, der maximale Wert beträgt %d und die aktuelle Nutzung für die Datenbank beträgt %d. Der Server ist jedoch derzeit zu stark ausgelastet, um Anforderungen über %d für diese Datenbank zu unterstützen. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637). Versuchen Sie es andernfalls später noch einmal.<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Workerthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md).|
 |40544|20|Das Datenbankkontingent wurde erreicht. Partitionieren oder löschen Sie Daten, löschen Sie Indizes, oder informieren Sie sich in der Dokumentation über mögliche Lösungen.|
 |40549|16|Die Sitzung wird aufgrund einer Transaktion mit langer Laufzeit beendet. Verkürzen Sie die Transaktion.|
 |40550|16|Die Sitzung wurde beendet, da zu viele Sperren abgerufen wurden. Reduzieren Sie die Anzahl der in einer einzelnen Transaktion gelesenen oder geänderten Zeilen.|
@@ -125,7 +143,7 @@ In der folgende Tabelle sind die Fehler enthalten, die beim Arbeiten mit Azure S
 Weitere Informationen zur Ressourcenkontrolle und den dazugehörigen Fehlern finden Sie unter:
 
 
-- [Ressourcenkontrolle für Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338078.aspx).
+- [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md).
 
 
 <a id="bkmk_d_federation_errors" name="bkmk_d_federation_errors">&nbsp;</a>
@@ -133,14 +151,14 @@ Weitere Informationen zur Ressourcenkontrolle und den dazugehörigen Fehlern fin
 ## Partnerverbundfehler
 
 
-Die folgende Tabelle enthält Fehler, die beim Arbeiten mit einem Partnerverbund auftreten können. Weitere Informationen finden Sie unter [Verwalten von Datenbankverbunden (Azure SQL-Datenbank)](http://msdn.microsoft.com/library/azure/hh597455.aspx).
+Die folgende Tabelle enthält Fehler, die beim Arbeiten mit einem Partnerverbund auftreten können.
 
 
 > [AZURE.IMPORTANT]Die aktuelle Implementierung von Verbunden wird zusammen mit den Dienstebenen „Business“ und „Web“ eingestellt. Die Dienstebenen „Business“ und „Web“ werden in Version 12 von Azure SQL-Datenbank nicht unterstützt.
 > 
 > Die Funktion „Elastischer Bereich“ (Elastic Scale) ist dafür ausgelegt, Shardinganwendungen mit minimalem Aufwand zu erstellen.
 > 
-> Weitere Informationen zum elastischen Bereich finden Sie unter [Elastic Scale für Azure SQL-Datenbank – Themen](sql-database-elastic-scale-documentation-map.md). Erwägen Sie die Bereitstellung von benutzerdefinierten Shardinglösungen, um die Skalierbarkeit, Flexibilität und Leistung zu verbessern. Weitere Informationen zum benutzerdefinierten Sharding finden Sie unter [Horizontales Skalieren von Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/dn495641.aspx).
+> Weitere Informationen zum elastischen Bereich finden Sie unter [Themen zum elastischen Bereich für Azure SQL-Datenbank](sql-database-elastic-scale-documentation-map.md). Erwägen Sie die Bereitstellung von benutzerdefinierten Shardinglösungen, um die Skalierbarkeit, Flexibilität und Leistung zu verbessern. Weitere Informationen zum benutzerdefinierten Sharding finden Sie unter [Übersicht über Funktionen für elastische Datenbanken](sql-database-elastic-scale-introduction.md).
 
 
 |Fehlernummer|Schweregrad|Beschreibung|Lösung|
@@ -155,14 +173,14 @@ Die folgende Tabelle enthält Fehler, die beim Arbeiten mit einem Partnerverbund
 |45000|16|<statement> Vorgang fehlgeschlagen. Der angegebene Verbundname <federation_name> ist ungültig.|Der Verbundname entspricht nicht den Regeln für Verbundnamen oder ist kein gültiger Bezeichner.|
 |45001|16|<statement> Vorgang fehlgeschlagen. Der angegebene Verbundname ist nicht vorhanden.|Der Verbundname ist nicht vorhanden.|
 |45002|16|<statement> Vorgang fehlgeschlagen. Der angegebene Verbundschlüsselname <distribution_name> ist ungültig.|Der Verbundschlüssel ist nicht vorhanden oder ungültig.|
-|45004|16|<statement> Vorgang fehlgeschlagen. Der angegebene Wert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> ungültig.|`USE FEDERATION`: Verwenden Sie einen Begrenzungswert, der in der Domäne des Verbundschlüssel-Datentyps liegt oder der nicht NULL ist.<br/><br/>`ALTER FEDERATION SPLIT`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich nicht bereits um einen vorhandenen Teilungspunkt handelt.<br/><br/>`ALTER FEDERATION DROP`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich bereits um einen Teilungspunkt handelt.|
+|45004|16|Fehler beim <statement>-Vorgang. Der angegebene Wert ist für den Verbundschlüssel <distribution_name> und den Verbund <federation_name> ungültig.|`USE FEDERATION`: Verwenden Sie einen Begrenzungswert, der in der Domäne des Verbundschlüsseldatentyps liegt oder der nicht NULL ist.<br/><br/>`ALTER FEDERATION SPLIT`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich nicht bereits um einen vorhandenen Teilungspunkt handelt.<br/><br/>`ALTER FEDERATION DROP`: Verwenden Sie einen gültigen Wert in der Domäne des Verbundschlüssels, bei dem es sich bereits um einen Teilungspunkt handelt.|
 |45005|16|<statement> kann nicht ausgeführt werden, während für den Verbund <federation_name> und das Mitglied mit der ID <member_id> ein anderer Verbundvorgang ausgeführt wird.|Warten Sie, bis der gleichzeitige Vorgang abgeschlossen ist.|
 |45006|16|<statement> Vorgänge fehlgeschlagen. Fremdschlüsselbeziehungen in Verweistabellen, in denen auf Verbundtabellen verwiesen wird, sind in Verbundmitgliedern nicht zulässig.|Nicht unterstützt|
 |45007|16|<statement> Vorgang fehlgeschlagen. Fremdschlüsselbeziehungen zwischen Verweistabellen müssen die Verbundschlüsselspalte(n) enthalten.|Nicht unterstützt|
 |45008|16|<statement> Vorgang fehlgeschlagen. Der Verbundschlüssel-Datentyp stimmt nicht mit dem Spaltendatentyp überein.|Nicht unterstützt|
 |45009|16|<statement> Vorgang fehlgeschlagen. Der Vorgang wird für die Filterung von Verbindungen nicht unterstützt.|Nicht unterstützt|
-|45010|16|Fehler beim <statement>-Vorgang. Verbundschlüssel kann nicht aktualisiert werden.|Nicht unterstützt|
-|45011|16|<statement> Vorgang fehlgeschlagen. Verbundschlüsselschema kann nicht aktualisiert werden.|Nicht unterstützt|
+|45010|16|<statement> Vorgang fehlgeschlagen. Verbundschlüssel kann nicht aktualisiert werden.|Nicht unterstützt|
+|45011|16|Fehler beim <statement>-Vorgang. Verbundschlüsselschema kann nicht aktualisiert werden.|Nicht unterstützt|
 |45012|16|Der für den Verbundschlüssel angegebene Wert ist ungültig.|Der Wert muss im von der Verbindung adressierten Bereich liegen.<br/><br/>Beim Filtern wird der Verbundschlüsselwert angegeben.<br/><br/>Wenn nicht gefiltert wird, gilt der vom Verbundmitglied abgedeckte Bereich.|
 |45013|16|Die SID ist bereits unter einem anderen Benutzernamen vorhanden.|Die SID für einen Benutzer in einem Verbundmitglied wird aus der SID desselben Benutzerkontos im Verbundstamm kopiert. Unter bestimmten Umständen kann die SID ggf. bereits verwendet werden.|
 |45014|16|%ls wird für %ls nicht unterstützt.|Nicht unterstützter Vorgang.|
@@ -210,7 +228,7 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40528|16|In dieser SQL Server-Version können Benutzer keinen Zertifikaten, asymmetrischen Schlüsseln oder Windows-Anmeldungen zugeordnet werden.|
 |40529|16|Die integrierte „%.&#x2a;ls“-Funktion wird in dieser SQL Server-Version im Identitätswechselkontext nicht unterstützt.|
 |40532|11|Der bei der Anmeldung angeforderte Server „%.&#x2a;ls“ kann nicht geöffnet werden. Fehler bei der Anmeldung.|
-|40553|16|Die Sitzung wurde aufgrund übermäßiger Speicherauslastung beendet. Ändern Sie die Abfrage, damit weniger Zeilen verarbeitet werden.<br/><br/>*Hinweis:* Wenn Sie die Anzahl der Vorgänge `ORDER BY` und `GROUP BY` im Transact-SQL-Code reduzieren, verringern sich auch die Arbeitsspeicheranforderungen Ihrer Abfrage.|
+|40553|16|Die Sitzung wurde aufgrund übermäßiger Speicherauslastung beendet. Ändern Sie die Abfrage, damit weniger Zeilen verarbeitet werden.<br/><br/>*Hinweis:* Wenn Sie die Anzahl der `ORDER BY`- und `GROUP BY`-Vorgänge im Transact-SQL-Code reduzieren, verringern sich auch die Arbeitsspeicheranforderungen Ihrer Abfrage.|
 |40604|16|CREATE/ALTER DATABASE war nicht möglich, da das Serverkontingent überschritten würde.|
 |40606|16|Das Anfügen von Datenbanken wird in dieser SQL Server-Version nicht unterstützt.|
 |40607|16|Windows-Anmeldungen werden in dieser SQL Server-Version nicht unterstützt.|
@@ -247,7 +265,7 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 
 ## Verwandte Links
 
-- [Allgemeine Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/ee336245.aspx)
-- [Ressourcenverwaltung](http://msdn.microsoft.com/library/azure/dn338083.aspx)
+- [Azure SQL-Datenbanken – Allgemeine Einschränkungen und Leitlinien](sql-database-general-limitations.md)
+- [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

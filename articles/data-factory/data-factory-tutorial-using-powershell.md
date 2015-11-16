@@ -13,11 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="10/29/2015" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory [PowerShell]
 Dieser Artikel bietet eine umfassende exemplarische Vorgehensweise eines kanonischen Szenarios der Protokollverarbeitung mithilfe von Azure Data Factory zum Transformieren von Daten aus Protokolldateien in Einblicke.
+
+> [AZURE.IMPORTANT]In diesem Artikel werden nicht alle Data Factory-Cmdlets behandelt. In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
+>    
+> Bei Verwendung der Azure PowerShell 1.0-Vorschau müssen Sie die [hier](https://msdn.microsoft.com/library/dn820234.aspx) dokumentierten Cmdlets verwenden. Verwenden Sie beispielsweise „New-AzureRMDataFactory“ anstelle von „New-AzureDataFactory“.
 
 ## Szenario
 Contoso ist ein Spielehersteller, der Spiele für mehrere Plattformen entwickelt. Hierzu zählen Spielekonsolen, mobile Geräte und PCs. Jedes dieser Spiele erzeugt Unmengen von Protokollen. Ziel von Contoso ist es, die von diesen Spielen produzieren Protokolle zu erfassen und zu analysieren, um Nutzungsinformationen zu erhalten, Up-Selling- und Cross-Selling-Möglichkeiten zu identifizieren, neue spannende Features zu entwickeln usw., um das Unternehmen zu verbessern und Kunden eine bessere Erfahrung zu bieten.
@@ -156,7 +160,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 ## <a name="MainStep2"></a> Schritt 2: Erstellen einer Azure Data Factory
 In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProcessingFactory**.
 
-1.	Klicken Sie nach der Anmeldung beim [Azure-Vorschauportal][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
+1.	Klicken Sie nach der Anmeldung beim Azure-Vorschauportal[][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
 
 	![Neu -> Data Factory][image-data-factory-new-datafactory-menu]
 	
@@ -558,4 +562,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/23/2015"
+	ms.date="10/29/2015"
 	ms.author="trinadhk; aashishr; jimpark; markgal"/>
 
-# Planen der Sicherungsinfrastruktur für virtuelle Computer in Azure
+# Planen Ihrer Sicherungsinfrastruktur für virtuelle Computer in Azure
 Dieser Artikel behandelt die wichtigsten Faktoren, die Sie beim Planen Ihrer VM-Sicherungsinfrastruktur im Auge behalten sollten. Wenn Sie [Ihre Umgebung vorbereitet](backup-azure-vms-prepare.md) haben, ist dies der nächste Schritt, bevor Sie mit dem [Sichern Ihrer virtuellen Computer](backup-azure-vms.md) beginnen. Weitere Informationen zu virtuellen Azure-Computern finden Sie in der [Dokumentation zu virtuellen Computern](https://azure.microsoft.com/documentation/services/virtual-machines/).
 
 ## Wie werden virtuelle Computer in Azure gesichert?
@@ -102,4 +102,4 @@ Wenn Sie Fragen oder Anregungen zu gewünschten Funktionen haben, [senden Sie un
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Problembehandlung bei der Sicherung virtueller Computer](backup-azure-vms-troubleshoot.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->
