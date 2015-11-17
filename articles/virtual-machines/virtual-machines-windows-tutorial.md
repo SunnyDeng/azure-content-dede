@@ -28,7 +28,7 @@
 
 
 
-In diesem Lernprogramm erfahren Sie, wie einfach es ist, in wenigen Minuten einen virtuellen Azure-Computer im Vorschauportal zu erstellen. Wir verwenden ein Windows Server 2012 R2 Datacenter-Image als Beispiel für das Erstellen des virtuellen Computers, aber dies ist nur eines von vielen in Azure bereitgestellten Images. Ihre Imageauswahl hängt von Ihrem Abonnement ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
+In diesem Tutorial erfahren Sie, wie einfach es ist, in wenigen Minuten einen virtuellen Azure-Computer im Azure-Vorschauportal zu erstellen. Wir verwenden ein Windows Server 2012 R2 Datacenter-Image als Beispiel für das Erstellen des virtuellen Computers, aber dies ist nur eines von vielen in Azure bereitgestellten Images. Ihre Imageauswahl hängt von Ihrem Abonnement ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
 Sie können virtuelle Computer auch unter Verwendung eigener Images, mithilfe von Ressourcen-Manager-Vorlagen oder mit Automatisierungstools erstellen. Informationen zu den verschiedenen Methoden finden Sie unter [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md).
 
@@ -44,7 +44,7 @@ Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
 
 ## Auswählen des Images
 
-1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim Azure-Vorschauportal an.
 
 2. Klicken Sie im Menü „Hub“ auf **Neu** > **Compute** > **Windows Server 2012 R2 Datacenter**.
 
@@ -88,7 +88,7 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 
 >[AZURE.NOTE]Tipps zu den Voraussetzungen und zur Problembehandlung finden Sie unter [Verbinden mit einem virtuellen Azure-Computer mit RDP oder SSH](https://msdn.microsoft.com/library/azure/dn535788.aspx).
 
-1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an, falls Sie dies noch nicht getan haben.
+1. Melden Sie sich beim Azure-Vorschauportal an, falls noch nicht geschehen.
 
 2. Klicken Sie auf dem virtuellen Computer auf das Startmenü. Wenn Sie den virtuellen Computer suchen müssen, klicken Sie auf **Alle durchsuchen** > **Aktuell** oder **Alle durchsuchen** > **Virtuelle Computer**. Wählen Sie dann den virtuellen Computer aus der Liste aus.
 
@@ -111,4 +111,4 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von Images für virtuelle Computer](resource-groups-vm-searching.md).
 * Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Computern und Workloads mithilfe von [Azure-Ressourcen-Manager](virtual-machines-how-to-automate-azure-resource-manager.md) und [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

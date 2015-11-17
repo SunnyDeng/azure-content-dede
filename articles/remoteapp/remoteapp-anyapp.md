@@ -13,18 +13,18 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="09/02/2015"
+   ms.date="11/05/2015"
    ms.author="elizapo"/>
 
 # Mit Azure RemoteApp jede Windows-Anwendung auf jedem Gerät ausführen
 
-Sie können eine Windows-Anwendung überall und auf jedem Gerät ausführen – einfach, indem Sie Azure RemoteApp verwenden. Egal, ob Internet Explorer 6, eine vor zehn Jahren geschriebene benutzerdefinierte Anwendung oder eine Office-App – Ihre Benutzer sind für diese Anwendungen nicht länger an ein bestimmtes Betriebssystem (wie Windows XP) gebunden.
+Sie können eine Windows-Anwendung überall und auf jedem Gerät ausführen – einfach, indem Sie Azure RemoteApp verwenden. Ob es eine vor zehn Jahren geschriebene benutzerdefinierte Anwendung oder eine Office-App ist – Ihre Benutzer sind für diese Anwendungen nicht länger an ein bestimmtes Betriebssystem (wie Windows XP) gebunden.
 
 Dank Azure RemoteApp können Ihre Benutzer auch ihre eigenen Android- oder Apple-Geräte verwenden und die gleiche Nutzererfahrung wie mit Windows (oder Windows Phones) machen. Dies geschieht durch Hosten der Windows-Anwendung in einer Sammlung virtueller Windows-Computer in Azure – auf die Benutzer überall zugreifen können, wo eine Internetverbindung besteht.
 
 Lesen Sie weiter, um zu erfahren, wie genau dies funktioniert.
 
-In diesem Artikel geben wir Access für alle Benutzer frei. Sie können jedoch jede BELIEBIGE Anwendung verwenden. Solange Sie die App auf einem Windows Server 2012 R2-Computer installieren können, können Sie sie mithilfe der nachfolgenden Schritte freigeben. Sie können die[App-Anforderungen](remoteapp-appreqs) überprüfen, um sicherzustellen, dass Ihre App funktioniert.
+In diesem Artikel geben wir Access für alle Benutzer frei. Sie können jedoch jede BELIEBIGE Anwendung verwenden. Solange Sie die App auf einem Windows Server 2012 R2-Computer installieren können, können Sie sie mithilfe der nachfolgenden Schritte freigeben. Sie können die[App-Anforderungen](remoteapp-appreqs.md) überprüfen, um sicherzustellen, dass Ihre App funktioniert.
 
 Bitte beachten Sie, dass da Access eine Datenbank ist und die Datenbank hilfreich sein soll, wir einige zusätzliche Schritte unternehmen, um Benutzern den Zugriff auf die Access-Datenfreigabe zu ermöglichen. Wenn Ihre App keine Datenbank ist oder es nicht erforderlich ist, dass die Benutzer auf eine Dateifreigabe zugreifen können, können Sie die Schritte in diesem Tutorial überspringen.
 
@@ -116,4 +116,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

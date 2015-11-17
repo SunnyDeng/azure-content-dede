@@ -39,7 +39,7 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
     >
 	> AMS ist jetzt auch in den folgenden Datencentern verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Jetzt können Sie das Azure-Verwaltungsportal zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Durchführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
 	>
-	>- „Brasilien, Süden“: Für die Codierung reservierte Einheiten stehen nur in den Versionen Standard und Basic zur Verfügung.
+	>- Brasilien, Süden: Für die Codierung reservierte Einheiten stehen nur in den Versionen Standard und Basic zur Verfügung.
 	>- „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“: Für die Codierung reservierte Einheiten stehen nur in der Basic-Version zur Verfügung.
 
 
@@ -74,12 +74,16 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
 	Außerdem können Sie Code anzeigen, der mithilfe des Azure Media Services-SDK die folgenden Aufgaben ausführt: Videos hochladen, verschlüsseln und veröffentlichen. Sie können auf einen der Links unter dem Abschnitt **ETWAS CODE SCHREIBEN** klicken, den Code kopieren und in Ihrer Anwendung verwenden.
 
+
+
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 ## Nächste Schritte
 
@@ -99,4 +103,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
   [Azure-Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

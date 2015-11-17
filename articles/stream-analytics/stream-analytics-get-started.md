@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Stream Analytics: Betrugserkennung in Echtzeit | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mit Stream Analytics eine Lösung zur Betrugserkennung in Echtzeit erstellen können. Verwenden Sie einen Event Hub für die Ereignisverarbeitung in Echtzeit."
-	keywords="event hub,fraud detection,real-time,real-time processing"
+	keywords="Event Hub,Betrugserkennung,Echtzeit,Echtzeitverarbeitung"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -14,7 +14,7 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="10/05/2015"
+	ms.date="11/06/2015"
 	ms.author="jeffstok" />
 
 
@@ -257,4 +257,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

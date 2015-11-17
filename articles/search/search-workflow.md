@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Typischer Workflow für die Azure Search-Entwicklung | Microsoft Azure"
+	pageTitle="Typischer Workflow für die Azure Search-Entwicklung | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Ein Workflow oder Wegweiser zum Erstellen von Prototypen und Produktionsanwendungen mit Integration von Azure Search, einem gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
@@ -190,4 +190,4 @@ Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werde
 <!--Image references-->
 [1]: ./media/search-workflow/AzSearch-Workflow.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

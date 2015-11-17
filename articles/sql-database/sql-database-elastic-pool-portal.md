@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Verwalten eines elastischen SQL-Datenbankpools | Microsoft Azure"
-	description="Erstellen Sie einen einzelnen Pool von Ressourcen, den Sie in einer Gruppe von Azure SQL-Datenbanken übergreifend nutzen können."
+	pageTitle="Erstellen eines Azure SQL-Datenbank-Pools für elastische Datenbanken mit dem Azure-Vorschauportal | Microsoft Azure"
+	description="Erstellen Sie einen Pool für elastische Datenbanken, um Ressourcen in mehreren Azure SQL-Datenbanken freizugeben."
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -10,24 +10,26 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/29/2015"
+	ms.date="11/06/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="NA"/>
 
 
-# Erstellen eines elastischen Datenbankpools
+# Erstellen eines Pools für elastische Datenbanken mit dem Azure-Vorschauportal
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-elastic-pool-portal.md)
-- [C#](sql-database-client-library.md)
+- [Azure preview portal](sql-database-elastic-pool-portal.md)
+- [C#](sql-database-elastic-pool-csharp.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
-In diesem Artikel wird das Erstellen eines elastischen Datenbankpools veranschaulicht, der den Prozess des Erstellens, Wartens und Verwaltens von Leistung und Kosten mehrerer Datenbanken vereinfacht. Bevor Sie beginnen, benötigen Sie mindestens eine Datenbank auf einem SQL-Datenbankserver V12. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md).
+Dieser Artikel beschreibt, wie Sie einen [Pool für elastische Datenbanken](sql-database-elastic-pool.md) mit dem Azure-Vorschauportal erstellen.
+
+> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server.md).
 
 
-> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar.
+Bevor Sie beginnen, benötigen Sie eine Datenbank auf einem SQL-Datenbank V12-Server. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md). Oder wenn Sie bereits über einen SQL-Datenbank V11-Server verfügen, können Sie [im Portal auf V12 aktualisieren](sql-database-v12-upgrade.md), dann zurückkommen, und diese Anleitung zum Erstellen eines Pools befolgen.
 
 
 ## Schritt 1: Hinzufügen eines Pools zu einem Server
@@ -44,7 +46,7 @@ Oder
 Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für einen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
    
   
-   ![Erstellen eines elastischen Pools][1]
+![Erstellen eines elastischen Pools][1]
 
 
 Das Blatt **Pool für elastische Datenbanken** stellt Optionen zum Festlegen des Tarifs, Hinzufügen von Datenbanken und Konfigurieren der Leistungsmerkmale des Pools bereit.
@@ -199,4 +201,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [11]: ./media/sql-database-elastic-pool-portal/recommended-pool.png
 [12]: ./media/sql-database-elastic-pool-portal/pools-message.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

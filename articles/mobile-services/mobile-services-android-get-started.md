@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="hero-article"
-	ms.date="10/08/2015"
+	ms.date="11/05/2015"
 	ms.author="ricksal"/>
 
 # Erste Schritte mit Mobile Services für Android (JavaScript-Back-End)
@@ -28,7 +28,9 @@ In diesem Tutorial erfahren Sie, wie Sie einen cloudbasierten Back-End-Dienst mi
 
 > [AZURE.VIDEO mobile-get-started-android]
 
-Unten sehen Sie einen Screenshot aus der fertigen App: ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
+Unten sehen Sie einen Screenshot aus der fertigen App:
+
+![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## Voraussetzungen
 
@@ -93,4 +95,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

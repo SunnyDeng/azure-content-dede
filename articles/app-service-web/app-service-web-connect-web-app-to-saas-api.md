@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.devlang="dotnet"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na" 
 	ms.date="09/15/2015"
@@ -96,4 +96,4 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!----HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

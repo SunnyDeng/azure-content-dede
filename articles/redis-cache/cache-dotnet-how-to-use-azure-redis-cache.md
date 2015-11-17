@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
-	ms.date="10/27/2015" 
+	ms.date="11/10/2015" 
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache
@@ -205,7 +205,6 @@ Azure Redis Cache kann .NET-Objekte und primitive Datentypen speichern. .NET-Obj
 Eine einfache Möglichkeit zum Serialisieren von Objekten stellen das Verwenden der `JsonConvert`-Serialisierungsmethoden in [Newtonsoft.Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/8.0.1-beta1) und Serialisieren in und aus JSON dar. Das folgende Beispiel zeigt „get“ und „set“ mit einer `Employee`- Objektinstanz.
 
 
-	[Serializable]
 	class Employee
 	{
 	    public int Id { get; set; }
@@ -330,4 +329,4 @@ Nachdem Sie sich nun mit den Grundlagen vertraut gemacht haben, lesen Sie die fo
 
 [Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=redis_cache_hero
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

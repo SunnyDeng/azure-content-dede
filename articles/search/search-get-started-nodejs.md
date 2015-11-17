@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Search in NodeJS | Microsoft Azure"
+	pageTitle="Erste Schritte mit Azure Search in NodeJS | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Exemplarische Vorgehensweise zur Erstellung einer Suchanwendung in einem gehosteten Cloudsuchdienst mit der Programmiersprache NodeJS."
 	services="search"
 	documentationCenter=""
@@ -147,4 +147,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [5]: ./media/search-get-started-nodejs/AzSearch-NodeJS-configjs.png
 [9]: ./media/search-get-started-nodejs/rogerwilliamsschool.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->
