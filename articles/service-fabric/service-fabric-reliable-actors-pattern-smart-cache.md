@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Reliable Actors: Entwurfsmuster für intelligenten Cache"
-   description="Entwurfsmuster für die Verwendung von Reliable Actors als Caching-Infrastruktur in webbasierten Anwendungen"
+   pageTitle="Entwurfsmuster für intelligenten Cache | Microsoft Azure"
+   description="Entwerfen Sie Muster zum Verwenden des Service Fabric-Programmiermodells „Reliable Actors“ zum Erstellen einer Cache-Infrastruktur für webbasierte Anwendungen."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -17,11 +17,13 @@
    ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Intelligenter Cache
+
 Die Kombination von Webebene, Caching-Ebene, Speicherebene und gelegentlich auch Worker-Ebene sind im Großen und Ganzen die standardmäßigen Teile heutiger Anwendungen. Die Caching-Ebene ist in der Regel von entscheidender Bedeutung für die Leistung und kann wiederum selbst mehrere Ebenen umfassen. Viele Caches sind einfache Schlüsselwertpaare, während andere Systeme wie [Redis](http://redis.io), die als Cache verwendet werden, eine reichhaltigere Semantik bieten. Dennoch ist jede spezielle Caching-Ebene semantisch beschränkt, und noch wichtiger, es ist eine weitere Ebene, die verwaltet werden muss. Was, wenn anstatt Objekten nur der Status in lokalen Variablen gespeichert wird, und von diesen Objekten automatisch Snapshots erstellt oder sie in einem permanenten Speicher verschoben werden können? Außerdem werden umfassende Auflistungen, wie z. B. Listen, sortierte Sätze, Warteschlangen sowie auch jeder andere benutzerdefinierte Typ, einfach als Membervariablen und Methoden modelliert.
 
 ![][1]
 
 ## Das Leaderboard-Beispiel
+
 Nehmen Sie Leaderboards als Beispiel – ein Leaderboard-Objekt muss eine sortierte Spielerliste und die dazugehörigen Punkte verwalten, damit Abfragen durchgeführt werden können. Um beispielsweise die "100 besten Spielern" zu suchen, oder um die Position eines Spielers relativ zu +-N-Spielern vor oder nach ihm im Leaderboard zu ermitteln. Bei einer typischen Lösung mit herkömmlichen Tools müsste das Leaderboard-Objekt (Auflistung, die das Einfügen eines neuen Tuples<Player  Points> namens "Score" unterstützt) mit GET abgerufen, sortiert und schließlich mit PUT wieder an den Cache übermittelt werden. Wahrscheinlich würden wir das Leaderboard-Objekt aus Gründen der Konsistenz mit LOCK (GETLOCK PUTLOCK) sperren. Nehmen wir nun eine Actor-basierte Lösung, bei der Status und Verhalten nicht getrennt ist. Es gibt zwei Optionen:
 
 * Implementieren der Leaderboard-Auflistung als Teil des Actors
@@ -280,6 +282,7 @@ Im Wesentlichen bietet der Smart Cache Folgendes:
 
 
 ## Nächste Schritte
+
 [Muster: Verteilte Netzwerke und Diagramme](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
 
 [Muster: Ressourcenkontrolle](service-fabric-reliable-actors-pattern-resource-governance.md)
@@ -298,4 +301,4 @@ Im Wesentlichen bietet der Smart Cache Folgendes:
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-smart-cache/smartcache-arch.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

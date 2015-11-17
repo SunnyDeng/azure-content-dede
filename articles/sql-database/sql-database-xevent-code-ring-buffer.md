@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Code für XEvent-Ereignisdatei für SQL-Datenbank | Microsoft Azure" 
+	pageTitle="Code für XEvent-Ringpuffer für SQL-Datenbank | Microsoft Azure" 
 	description="Zeigt ein Transact-SQL-Codebeispiel (für Azure SQL-Datenbank), das durch die Verwendung des Ringpufferziels eine einfache und schnelle Methode zum Erfassen und Ausgeben von Daten bietet." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/30/2015" 
+	ms.date="10/22/2015" 
 	ms.author="genemi"/>
 
 
@@ -58,7 +58,7 @@ In diesem Thema finden Sie ein Transact-SQL-Codebeispiel, mit dem folgende Aufga
  - Optional können Sie in wenigen Minuten [eine **AdventureWorksLT**-Demodatenbank erstellen](sql-database-get-started.md).
 
 
-- SQL Server Management Studio (ssms.exe), Vorschauversion August 2015 oder eine spätere Version. Sie können "ssms.exe" in der neuesten Version über eine der folgenden Methoden herunterladen:
+- SQL Server Management Studio ("ssms.exe"), Vorschauversion August 2015 oder eine spätere Version. Sie können "ssms.exe" in der neuesten Version über eine der folgenden Methoden herunterladen:
  - [Über einen Link im Thema.](http://msdn.microsoft.com/library/mt238290.aspx)
  - [Über einen direkten Link zum Herunterladen.](http://go.microsoft.com/fwlink/?linkid=616025)
  - Microsoft empfiehlt, dass Sie die Datei "ssms.exe" in regelmäßigen Abständen aktualisieren.
@@ -377,4 +377,4 @@ Weitere Themen mit Codebeispielen für erweiterte Ereignisse finden Sie unter de
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
 -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

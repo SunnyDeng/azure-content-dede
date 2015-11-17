@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Konfigurieren eines Anwendungsgateways für die SSL-Auslagerung | Microsoft Azure"
+   pageTitle="Konfigurieren eines Application Gateways für SSL-Auslagerung mit klassischer Microsoft Azure-Bereitstellung"
    description="Dieser Artikel enthält Anweisungen zum Konfigurieren der SSL-Auslagerung auf einem Azure-Anwendungsgateway."
    documentationCenter="na"
    services="application-gateway"
@@ -12,16 +12,19 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/25/2015"
+   ms.date="10/28/2015"
    ms.author="joaoma"/>
 
-# Konfigurieren eines Anwendungsgateways für die SSL-Auslagerung
+# Konfigurieren eines Application Gateways für SSL-Auslagerung mit klassischer Bereitstellung
+ 
+Application Gateway kann so konfiguriert werden, dass damit die SSL-Sitzung auf dem Gateway beendet wird. Auf diese Weise wird die aufwändige SSL-Entschlüsselung auf der Webfarm vermieden. Die SSL-Auslagerung vereinfacht zudem die Einrichtung und Verwaltung der Webanwendung auf dem Front-End-Server.
 
-Application Gateway kann so konfiguriert werden, dass damit die SSL-Sitzung auf dem Gateway beendet wird. Auf diese Weise wird die aufwendige SSL-Entschlüsselung auf der Webfarm vermieden. Die SSL-Auslagerung vereinfacht zudem die Einrichtung und Verwaltung der Anwendung auf dem Front-End-Server.
+>[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und die klassische Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie mit Azure-Ressourcen arbeiten. Sie können die Dokumentation für verschiedene Tools anzeigen, indem Sie auf die Registerkarten oben in diesem Artikel klicken. Dieses Dokument behandelt das Erstellen eines Application Gateways mit einer klassischen Azure-Bereitstellung. Um die klassische Version zu verwenden, wechseln Sie zu [Konfigurieren eines Application Gateways für SSL-Auslagerung mit dem Azure-Ressourcen-Manager](application-gateway-ssl-arm.md).
+
 
 ## Voraussetzungen
 
-1. Installieren Sie die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version im Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Stellen Sie sicher, dass Sie über ein funktionierendes virtuelles Netzwerk mit einem gültigen Subnetz verfügen.
 3. Stellen Sie sicher, dass Sie über Back-End-Server im virtuellen Netzwerk verfügen oder dass ihnen eine öffentliche IP-Adresse/VIP zugewiesen ist.
 
@@ -52,7 +55,7 @@ Dieses Beispiel zeigt das Cmdlet in der ersten Zeile, gefolgt von der Ausgabe.
 **Um zu überprüfen**, ob das Gateway erstellt wurde, können Sie das `Get-AzureApplicationGateway`-Cmdlet verwenden.
 
 
-In diesem Beispiel sind *Description*, *InstanceCount* und *GatewaySize* optionale Parameter. Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". "Small" und "Large" sind weitere verfügbare Werte. *Vip* und *DnsName* werden leer angezeigt, da das Gateway noch nicht gestartet wurde. Die Werte werden erstellt, sobald das Gateway ausgeführt wird.
+Im Beispiel sind *Beschreibung*, *InstanceCount* und *GatewaySize* optionale Parameter. Der Standardwert für *InstanceCount* ist 2, mit einem Maximalwert von 10. Der Standardwert für *GatewaySize* ist „Medium“. "Small" und "Large" sind weitere verfügbare Werte. *Vip* und *DnsName* werden leer angezeigt, da das Gateway noch nicht gestartet wurde. Die Werte werden erstellt, sobald das Gateway ausgeführt wird.
 
 Dieses Beispiel zeigt das Cmdlet in der ersten Zeile, gefolgt von der Ausgabe.
 
@@ -107,15 +110,15 @@ Eine Anwendungsgatewaykonfiguration besteht aus mehreren Werten. Die Werte könn
 
 Die Werte sind:
  
-- **Back-End-Serverpool:** Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem VNet-Subnetz angehören oder eine öffentliche IP-Adresse/VIP sein. 
-- **Einstellungen für den Back-End-Serverpool:** Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
+- **Back-End-Serverpool**: die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem VNet-Subnetz angehören oder eine öffentliche IP-Adresse/VIP sein. 
+- **Back-End-Serverpool-Einstellungen:** Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
 - **Front-End-Port:** Dieser Port ist der öffentliche Port, der im Anwendungsgateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
 - **Listener:** Der Listener verfügt über einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
-- **Regel:** Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
+- **Regel:** Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden soll, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Roundrobin-Lastverteilung.
 
 **Zusätzliche Konfigurationshinweise:**
 
-Für die Konfiguration von SSL-Zertifikaten sollte das Protokoll in **HttpListener** in *Https*(Groß-/Kleinschreibung beachten) geändert werden. Das **SslCert**-Element muss **HttpListener** hinzugefügt werden. Dabei muss der Wert auf den Namen festgelegt werden, der im Abschnitt über das Hochladen von SSL-Zertifikaten weiter oben verwendet wurde. Der Front-End-Port sollte auf 443 aktualisiert werden.
+Für die Konfiguration von SSL-Zertifikaten sollte das Protokoll in **HttpListener** in *Https* (Groß-/Kleinschreibung beachten) geändert werden. Das **SslCert**-Element muss **HttpListener** hinzugefügt werden. Dabei muss der Wert auf den Namen festgelegt werden, der im Abschnitt über das Hochladen von SSL-Zertifikaten weiter oben verwendet wurde. Der Front-End-Port sollte auf 443 aktualisiert werden.
 
 **So aktivieren Sie cookiebasierte Affinität**: Ein Anwendungsgateway kann konfiguriert werden, um sicherzustellen, dass die Anforderung von einer Clientsitzung immer an denselben virtuellen Computer in der Webfarm weitergeleitet wird. Dies erfolgt durch Einfügen eines Sitzungscookies, sodass das Gateway den Datenverkehr entsprechend weiterleiten kann. Legen Sie zum Aktivieren der cookiebasierten Affinität **CookieBasedAffinity** im **BackendHttpSettings**-Element auf *Enabled* fest.
 
@@ -190,7 +193,7 @@ Dann legen Sie das Anwendungsgateway fest. Sie können das `Set-AzureApplication
 Sobald das Gateway konfiguriert wurde, verwenden Sie das `Start-AzureApplicationGateway`-Cmdlet, um das Gateway zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
 
 
-**Hinweis:** Bis zum Abschluss des `Start-AzureApplicationGateway`-Cmdlets können bis zu 15 – 20 Minuten vergehen.
+**Hinweis:** Bis zum Abschluss des `Start-AzureApplicationGateway`-Cmdlets können bis zu 15-20 Minuten vergehen.
 
    
 	PS C:\> Start-AzureApplicationGateway AppGwTest 
@@ -204,7 +207,7 @@ Sobald das Gateway konfiguriert wurde, verwenden Sie das `Start-AzureApplication
 
 ## Überprüfen des Gatewaystatus
 
-Verwenden Sie das `Get-AzureApplicationGateway`-Cmdlet zum Überprüfen des Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Running* sein, und "Vip" und "DnsName" sollten gültige Einträge aufweisen.
+Überprüfen Sie mit dem Cmdlet `Get-AzureApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Wird ausgeführt* lauten, und für "Vip" und "DnsName" sollten gültige Einträge vorliegen.
 
 Dieses Beispiel zeigt ein Anwendungsgateway, das ausgeführt wird und Datenverkehr verarbeiten kann.
 
@@ -229,4 +232,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

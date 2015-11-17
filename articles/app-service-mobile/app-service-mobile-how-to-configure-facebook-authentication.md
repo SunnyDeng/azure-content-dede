@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.date="10/29/2015"
 	ms.author="mahender"/>
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Facebook-Anmeldung
@@ -54,7 +54,7 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 
 12. Klicken Sie auf die Registerkarte **Advanced**, und fügen Sie den **Umleitungs-URI** Ihrer mobilen App hinzu, den Sie zuvor nach **Valid OAuth redirect URIs** kopiert haben. Klicken Sie dann auf **Save Changes**. Der Umleitungs-URI entspricht der URL des Mobile App-Gateways mit angehängtem Pfad _/signin-facebook_. Beispiel: `https://contosogateway.azurewebsites.net/signin-facebook`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden.
 
-13. Das zum Registrieren der Anwendung verwendete Facebook-Konto fungiert als Administrator der App. Zu diesem Zeitpunkt können sich nur Administratoren bei der Anwendung anmelden. Klicken Sie im links angezeigten Navigationsbereich auf **Status & Review**, um andere Facebook-Konten zu authentifizieren. Klicken Sie dann auf **Ja**, um den allgemeinen öffentlichen Zugriff zu aktivieren.
+13. Das zum Registrieren der Anwendung verwendete Facebook-Konto fungiert als Administrator der App. Zu diesem Zeitpunkt können sich nur Administratoren bei der Anwendung anmelden. Klicken Sie im links angezeigten Navigationsbereich auf **Status und Review**, um andere Facebook-Konten zu authentifizieren. Klicken Sie dann auf **Ja**, um den allgemeinen öffentlichen Zugriff zu aktivieren.
 
 
 ## <a name="secrets"> </a>Hinzufügen von Facebook-Informationen zu Ihrer mobilen App
@@ -79,6 +79,5 @@ Sie können nun Facebook für die Authentifizierung in Ihrer App verwenden.
 [facebook.com]: http://go.microsoft.com/fwlink/p/?LinkId=268285
 [Get started with authentication]: /de-DE/develop/mobile/tutorials/get-started-with-users-dotnet/
 [Azure-Verwaltungsportal]: https://portal.azure.com/
- 
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

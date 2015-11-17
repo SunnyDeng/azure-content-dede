@@ -41,9 +41,9 @@ Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regi
 	
 	Bearbeiten Sie die folgenden Zeilen Ihrer Netzwerkkonfigurationsdatei, und ersetzen Sie dabei die Werte durch Ihre eigenen Werte:
 
-	**Alter Wert:** <VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG">
+	**Alter Wert:** \<VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG"\>
 
-	**Neuer Wert:** <VirtualNetworkSitename="VNetUSWest" Location="West US">
+	**Neuer Wert:** \<VirtualNetworkSitename="VNetUSWest" Location="West US"\>
 
 1. Speichern Sie die Änderungen, und [importieren](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
 
@@ -51,7 +51,7 @@ Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regi
 
 ## Affinitätsgruppen und virtuelle Computer
 
-Wie bereits erwähnt, wird grundsätzlich von der Verwendung von Affinitätsgruppen für virtuelle Computer abgeraten. Affinitätsgruppen sollten nur dann noch verwendet werden, wenn bei einer Gruppe virtueller Computer unbedingt eine geringstmögliche Netzwerklatenz zwischen den virtuellen Computern erreicht werden muss. Durch die Platzierung virtueller Computer in einer Affinitätsgruppe werden alle virtuellen Computer im gleichen Servercluster oder in der gleichen Skalierungseinheit platziert.
+Wie bereits erwähnt, wird grundsätzlich von der Verwendung von Affinitätsgruppen für virtuelle Computer abgeraten. Affinitätsgruppen sollten nur dann noch verwendet werden, wenn bei einer Gruppe virtueller Computer unbedingt eine geringstmögliche Netzwerklatenz zwischen den virtuellen Computern erreicht werden muss. Durch die Platzierung virtueller Computer in einer Affinitätsgruppe werden alle virtuellen Computer im gleichen Computecluster bzw. in der gleichen Skalierungseinheit platziert.
 
 Beachten Sie, dass die Verwendung einer Affinitätsgruppe zwei (möglicherweise negative) Auswirkungen hat:
 
@@ -66,4 +66,4 @@ Virtuelle Computer, die sich derzeit in einer Affinitätsgruppe befinden, müsse
 Die Bereitstellung eines virtuellen Computers erfolgt in einer einzelnen Skalierungseinheit. Affinitätsgruppen können zwar den Satz verfügbarer VM-Größen für eine neue VM-Bereitstellung einschränken, alle vorhandenen und bereits bereitgestellten virtuellen Computer sind jedoch bereits auf den Satz von VM-Größen beschränkt, der in der entsprechenden Skalierungseinheit verfügbar ist. Daher hat das Entfernen eines virtuellen Computers aus der Affinitätsgruppe keinerlei Auswirkungen.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

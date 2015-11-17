@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Architektur der Reliable Services von Service Fabric"
-   description="Übersicht über die Architektur der Reliable Services"
+   pageTitle="Reliable Services-Architektur | Microsoft Azure"
+   description="Übersicht über die Reliable Services-Architektur für zustandsbehaftete und zustandslose Dienste."
    services="service-fabric"
    documentationCenter=".net"
    authors="AlanWarwick"
@@ -16,30 +16,30 @@
    ms.date="09/03/2015"
    ms.author="alanwar"/>
 
-# Architektur der Reliable Services
+# Architektur für zustandsbehaftete und zustandslose Reliable Services
 
-Reliable Services von Service Fabric können zustandsbehaftet oder zustandslos sein. Jeder Diensttyp wird mit einer bestimmten Architektur ausgeführt, die in diesem Artikel beschrieben ist. Weitere Informationen zu den Unterschieden zwischen zustandsbehafteten und zustandslosen Diensten finden Sie in der [Übersicht über Reliable Services](../Service-Fabric/service-fabric-reliable-services-introduction.md).
+Reliable Services von Service Fabric können zustandsbehaftet oder zustandslos sein. Jeder Diensttyp wird mit einer bestimmten Architektur ausgeführt, die in diesem Artikel beschrieben ist. Weitere Informationen zu den Unterschieden zwischen zustandsbehafteten und zustandslosen Diensten finden Sie in der [Übersicht über Reliable Services](service-fabric-reliable-services-introduction.md).
 
 ## Zustandsbehaftete Reliable Services
 
-### Architekturdiagramm für zustandsbehaftete Reliable Services
+### Architektur eines zustandsbehafteten Diensts
 ![Architekturdiagramm](./media/service-fabric-reliable-services-platform-architecture/reliable-stateful-service-architecture.png)
 
-### Zustandsbehaftete Reliable Services
+### Zustandsbehafteter Reliable Service
 
-Ein zustandsbehafteter Reliable Service kann von der Klasse StatefulService oder StatefulServiceBase abgeleitet werden. Beide Basisklassen werden von Service Fabric bereitgestellt und bietet verschiedene Stufen der Unterstützung und Abstraktion für den zustandsbehafteten Dienst, um eine Verbindung mit Service Fabric herzustellen und als Dienst im Service Fabric-Cluster teilzunehmen. StatefulService wird von StatefulServiceBase abgeleitet. StatefulServiceBase bietet Diensten mehr Flexibilität, erfordert jedoch mehr Kenntnisse über Service Fabric. Weitere Informationen zum Schreiben von Diensten mit den Klassen StatefulService und StatefulServiceBase finden Sie in der [Übersicht über Reliable Services](../Service-Fabric/service-fabric-reliable-services-introduction.md) und im Artikel über die [erweiterte Verwendung von Reliable Services](../Service-Fabric/service-fabric-reliable-services-advanced-usage.md).
+Ein zustandsbehafteter Reliable Service kann von der Klasse StatefulService oder StatefulServiceBase abgeleitet werden. Beide Basisklassen werden von Service Fabric bereitgestellt und bieten verschiedene Stufen der Unterstützung und Abstraktion für den zustandsbehafteten Dienst, um eine Verbindung mit Service Fabric herzustellen und als Dienst im Service Fabric-Cluster teilzunehmen. StatefulService wird von StatefulServiceBase abgeleitet. StatefulServiceBase bietet Diensten mehr Flexibilität, erfordert jedoch mehr Kenntnisse über Service Fabric. Weitere Informationen zum Schreiben von Diensten mit den Klassen „StatefulService“ und „StatefulServiceBase“ finden Sie in der [Übersicht über Reliable Services](service-fabric-reliable-services-introduction.md) und im Artikel über die [erweiterte Verwendung von Reliable Services](service-fabric-reliable-services-advanced-usage.md).
 
 Beide Basisklassen verwalten die Lebensdauer und die Rolle der Dienstimplementierung. Die Dienstimplementierung kann die virtuellen Methoden beider Basisklassen überschreiben, wenn sie an diesen Punkten in ihrem Lebenszyklus Aufgaben auszuführen hat oder wenn ein Objekt für den Kommunikationslistener erstellt werden soll. Eine Dienstimplementierung kann ihr eigenes Kommunikationslistener-Objekt implementieren und ICommunicationListener verfügbar machen. In der vorangegangenen Abbildung wird der Kommunikationslistener jedoch von Service Fabric implementiert, da die Dienstimplementierung einen von Service Fabric implementierten Kommunikationslistener verwendet.
 
 Der zustandsbehaftete Reliable Service verwendet den zuverlässigen Zustands-Manager, um die Vorteile zuverlässiger Auflistungen zu nutzen. Zuverlässige Auflistungen sind lokale Datenstrukturen mit einer hohen Verfügbarkeit für den Dienst, d. h., sie sind unabhängig von Dienst-Failovern immer verfügbar. Jeder Typ einer zuverlässigen Auflistung wird von einem zuverlässigen Zustandsanbieter implementiert. Weitere Informationen über zuverlässige Auflistungen finden Sie in der [Übersicht über zuverlässige Auflistungen](service-fabric-reliable-services-reliable-collections.md).
 
-### Zuverlässiger Zustands-Manager und -anbieter
+### Reliable State Manager und Zustandsanbieter
 
 Der zuverlässige Zustands-Manager ist die Verwaltungskomponente für zuverlässige Zustandsanbieter. Sie beinhaltet Funktionen zum Erstellen, Löschen, Auflisten und Sicherstellen der Persistenz und hohen Verfügbarkeit der zuverlässigen Zustandsanbieter. Eine Instanz eines zuverlässigen Zustandsanbieters repräsentiert eine persistente und hochverfügbare Datenstruktur, z. B. ein Wörterbuch oder eine Warteschlange. Jeder zuverlässige Zustandsanbieter stellt eine Schnittstelle zur Verfügung, über die der zustandsbehaftete Dienst mit dem zuverlässigen Zustandsanbieter interagiert. IReliableDictionary wird beispielsweise verwendet, um eine Verbindung mit dem zuverlässigen Wörterbuch herzustellen, während mit IReliableQueue eine Verbindung mit der zuverlässigen Warteschlange hergestellt wird. Alle zuverlässigen Zustandsanbieter implementieren die IReliableState-Schnittstelle.
 
-Der zuverlässige Zustands-Manager verfügt über eine Schnittstelle namens IReliableStateManager, die den Zugriff auf den Manager durch die Implementierung eines zustandsbehafteten Diensts ermöglicht. Schnittstellen zu zuverlässigen Zustandsanbietern werden über IReliableStateManager zurückgegeben.
+Der Reliable State Manager verfügt über eine Schnittstelle namens „IReliableStateManager“, die den Zugriff auf den Manager aus Ihrem zustandsbehafteten Dienst ermöglicht. Schnittstellen zu zuverlässigen Zustandsanbietern werden über IReliableStateManager zurückgegeben.
 
-Der zuverlässige Zustands-Manager basiert auf einer dynamischen Plug-In-Architektur, sodass neue Typen zuverlässiger Auflistungen dynamisch integriert werden können.
+Der Reliable State Manager basiert auf einer dynamischen Plug-In-Architektur, sodass neue Typen zuverlässiger Auflistungen dynamisch integriert werden können.
 
 Das zuverlässige Wörterbuch und die zuverlässige Warteschlange basieren auf der Implementierung eines leistungsfähigen, versionierten, differenziellen Speichers.
 
@@ -63,33 +63,33 @@ Wenn die Protokollierungskomponente mithilfe der Einstellung "OptimizeLogForLowe
 
 Abgesehen von einer minimalen Benutzermodusschnittstelle zum Protokoll wird das Protokoll als Kernelmodustreiber geschrieben. Durch die Ausführung als Kernelmodustreiber kann das Protokoll allen Diensten, die es verwenden, die höchste Leistung bereitstellen.
 
-Weitere Informationen zum Konfigurieren des Protokolls finden Sie unter [Konfigurieren zustandsbehafteter Reliable Services](../Service-Fabric/service-fabric-reliable-services-configuration.md).
+Weitere Informationen zum Konfigurieren des Protokolls finden Sie unter [Konfigurieren zustandsbehafteter Reliable Services](service-fabric-reliable-services-configuration.md).
 
-## Zustandslose Reliable Services
+## Zustandsloser Reliable Service
 
-### Architekturdiagramm für zustandslose Reliable Services
+### Architektur eines zustandslosen Diensts
 ![Architekturdiagramm](./media/service-fabric-reliable-services-platform-architecture/reliable-stateless-service-architecture.png)
 
-### Zustandslose Reliable Services
+### Zustandsloser Reliable Service
 
 Zustandslose Dienstimplementierungen werden von der Klasse StatelessService oder StatelessServiceBase abgeleitet, wobei StatelessServiceBase mehr Flexibilität als StatelessService bietet. Beide Basisklassen verwalten die Lebensdauer und die Rolle des Diensts. Die Dienstimplementierung kann die virtuellen Methoden beider Basisklassen überschreiben, wenn der Dienst an diesen Punkten in seinem Lebenszyklus Aufgaben auszuführen hat oder wenn ein Objekt für den Kommunikationslistener erstellt werden soll. Ein Dienst kann sein eigenes Kommunikationslistener-Objekt implementieren und ICommunicationListener verfügbar machen. In der vorangegangenen Abbildung wird der Kommunikationslistener jedoch von Service Fabric implementiert, da die Dienstimplementierung einen von Service Fabric implementierten Kommunikationslistener verwendet.
 
-Weitere Informationen zum Schreiben von Diensten mit den Klassen StatefulService und StatefulServiceBase finden Sie in der [Übersicht über Reliable Services](../Service-Fabric/service-fabric-reliable-services-introduction.md) und im Artikel [Erweiterte Verwendung von Reliable Services](../Service-Fabric/service-fabric-reliable-services-advanced-usage.md).
+Weitere Informationen zum Schreiben von Diensten mit den Klassen „StatelessService“ und „StatelessServiceBase“ finden Sie in der [Übersicht über Reliable Services](service-fabric-reliable-services-introduction.md) und im Artikel zur [erweiterten Verwendung von Reliable Services](service-fabric-reliable-services-advanced-usage.md).
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
 Weitere Informationen zu Service Fabric finden Sie unter:
 
-[Übersicht über Reliable Services](../Service-Fabric/service-fabric-reliable-services-introduction.md)
+[Übersicht über Reliable Services](service-fabric-reliable-services-introduction.md)
 
 [Schnellstart](service-fabric-reliable-services-quick-start.md)
 
 [Übersicht über zuverlässige Auflistungen](service-fabric-reliable-services-reliable-collections.md)
 
-[Erweiterte Verwendung von Reliable Services](../Service-Fabric/service-fabric-reliable-services-advanced-usage.md)
+[Erweiterte Verwendung von Reliable Services](service-fabric-reliable-services-advanced-usage.md)
 
-[Konfigurieren von Reliable Services](../Service-Fabric/service-fabric-reliable-services-configuration.md)
+[Konfigurieren von Reliable Services](service-fabric-reliable-services-configuration.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/27/2015"   
+	ms.date="11/03/2015"   
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version vom Oktober 2015](#oct_changes_15)
 - [Version September 2015](#september_changes_15)
 - [Version August 2015](#august_changes_15)
 - [Version Juli 2015](#july_changes_15)
@@ -74,11 +75,19 @@ Media Services-Medienobjekte im SDK können nicht serialisiert werden und funkti
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
 
-##<a id="september_changes_15"></a>Version September 2015 
+##<a id="oct_changes_15"></a>Version vom Oktober 2015
 
-- AMS bietet jetzt die Möglichkeit zum Schutz von Video-On-Demand (VOD) und Livestreams mit der modularen DRM-Technologie Widevine. Sie können sich von folgenden Bereitstellungsservicepartnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [CastLabs](http://castlabs.com/company/partners/azure/). Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/).
+Azure Media Services (AMS) ist jetzt auch in den folgenden Datencentern verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Jetzt können Sie das Azure-Verwaltungsportal zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Durchführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
 
-	Sie können das [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/) (ab Version 3.5.1) oder die REST-API verwenden, um die AssetDeliveryConfiguration für die Verwendung von Widevine zu konfigurieren.
+- Brasilien, Süden: Für die Codierung reservierte Einheiten stehen nur in den Versionen Standard und Basic zur Verfügung.
+- „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“: Für die Codierung reservierte Einheiten stehen nur in der Basic-Version zur Verfügung.
+
+
+##<a id="september_changes_15"></a>Version vom September 2015 
+
+- AMS bietet jetzt die Möglichkeit zum Schutz von Video-On-Demand (VOD) und Livestreams mit der modularen DRM-Technologie Widevine. Sie können sich von folgenden Bereitstellungsservicepartnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/). Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/).
+
+	Sie können das [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/) (ab Version 3.5.1) oder die REST-API verwenden, um die „AssetDeliveryConfiguration“ für die Verwendung von Widevine zu konfigurieren.
 
 - AMS bietet jetzt Unterstützung für Apple ProRes-Videos. Sie können jetzt die QuickTime-Quellvideodateien hochladen, die Apple ProRes oder andere Codecs verwenden. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/announcing-support-for-apple-prores-videos-in-azure-media-services/).
 
@@ -89,13 +98,13 @@ Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [
 	- Sie können jetzt das Apple HTTP Live Streaming-Format (HLS) mit dem Nur-Audio-Filter verwenden. Mit diesem Update können Sie die reine Audiospur durch Angabe (audio-only= false) in der URL entfernen.
 	- Beim Definieren von Filtern für Ihre Assets haben Sie jetzt die Möglichkeit zum Kombinieren mehrerer (bis zu 3) Filter in einer einzelnen URL.
 
-	Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support) Blog.
+	Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support).
 
 - AMS unterstützt nun I-Frames in HLS v4. Die I-Frame-Unterstützung optimiert Vorlauf- und Rücklaufvorgänge. Standardmäßig enthalten alle HLS v4-Ausgaben I-Frame-Wiedergabelisten (EXT-X-I-FRAME-STREAM-INF).
  
-	Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support) Blog.
+	Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support).
 
-##<a id="august_changes_15"></a>Version August 2015
+##<a id="august_changes_15"></a>Version vom August 2015
 
 - Azure Media Services-SDK für Java Version 0.8.0 und neue Beispiele sind jetzt verfügbar. Weitere Informationen finden Sie unter:
 
@@ -104,7 +113,7 @@ Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [
 - Azure Media Player-Update mit Multistream-Audiounterstützung. Weitere Informationen finden Sie unter:
 	- [Blogbeitrag](https://azure.microsoft.com/blog/2015/08/13/azure-media-player-update-with-multi-audio-stream-support/)
 
-##<a id="july_changes_15"></a>Version Juli 2015
+##<a id="july_changes_15"></a>Version vom Juli 2015
 
 - Ankündigung der allgemeinen Verfügbarkeit von Media Encoder Standard. Weitere Informationen finden Sie in [diesem Blogbeitrag](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
 
@@ -228,7 +237,7 @@ Durch diese Version wird der Microsoft.WindowsAzure.MediaServices.Client.Content
 
 ### <a id="new_encoder_release"></a>Media Services-Encoder-Version
 
-Hiermit kündigen wir die neue Version des Media Services-Azure-Medienencoders an. Beim neuesten Azure Media Encoder werden Ihnen nur die ausgegebenen GB berechnet. Ansonsten sind die Funktionen des neuen Encoders mit dem vorherigen Encoder kompatibel. Weitere Informationen finden Sie unter [Mediendienste – Preisübersicht]).
+Hiermit kündigen wir die neue Version des Media Services-Azure-Medienencoders an. Beim neuesten Azure Media Encoder werden Ihnen nur die ausgegebenen GB berechnet. Ansonsten sind die Funktionen des neuen Encoders mit dem vorherigen Encoder kompatibel. Weitere Informationen finden Sie unter [Mediendienste – Preisdetails]).
 
 ### <a id="oct_sdk"></a>Media Services .NET SDK 
 
@@ -571,7 +580,7 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 <!-- URLs. -->
 [MSDN-Forum für Azure Media Services]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [Azure Media Services – REST-API-Referenz]: http://msdn.microsoft.com/library/azure/hh973617.aspx
-[Mediendienste – Preisübersicht]: http://azure.microsoft.com/pricing/details/media-services/
+[Mediendienste – Preisdetails]: http://azure.microsoft.com/pricing/details/media-services/
 [Eingeben von Metadaten]: http://msdn.microsoft.com/library/azure/dn783120.aspx
 [Ausgeben von Metadaten]: http://msdn.microsoft.com/library/azure/dn783217.aspx
 [Bereitstellen von Inhalten]: http://msdn.microsoft.com/library/azure/hh973618.aspx
@@ -603,4 +612,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

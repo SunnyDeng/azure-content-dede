@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2015"
+	ms.date="11/04/2015"
 	ms.author="garye"/>
 
 
@@ -89,7 +89,8 @@ Es stimmt zwar, dass der Dienst die Originalkreditkartendaten nicht benötigt. E
 
 Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **Ausführen**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Score Model][score-model] und wählen **Ergebnisse anzeigen**. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
 
-## Bereitstellen des Webdiensts
+##
+Bereitstellen des Webdiensts
 
 Zum Bereitstellen eines aus dem Experiment abgeleiteten Webdiensts klicken Sie unter dem Bereich auf **Webdienst bereitstellen**. Machine Learning Studio stellt das Experiment als Webdienst bereit und führt Sie zum Dienst-Dashboard.
 
@@ -97,8 +98,11 @@ Zum Bereitstellen eines aus dem Experiment abgeleiteten Webdiensts klicken Sie u
 
 Sie können den Dienst konfigurieren, indem Sie auf die Registerkarte **KONFIGURATION** klicken. Hier können Sie den Dienstnamen ändern (er erhält standardmäßig den Namen des Experiments) und eine Beschreibung hinzufügen. Sie können auch benutzerfreundlichere Beschriftungen für die Eingabe- und Ausgabespalten festlegen.
 
+![Konfigurieren des Webdiensts][5]
+
 ## Testen des Webdiensts
-Klicken Sie auf der Seite **DASHBOARD** auf den Link **Test** unter **Standardendpunkt**. Ein Dialogfeld wird geöffnet, in dem Sie nach den Eingabedaten für den Dienst gefragt werden. Dies sind die gleichen Spalten, die im Originaldataset „German Credit Risk“ angezeigt wurden.
+Klicken Sie auf der Seite **DASHBOARD** unter **Standardendpunkt** auf den Link **Test**. Ein Dialogfeld wird geöffnet, in dem Sie nach den Eingabedaten für den Dienst gefragt werden. Dies sind die gleichen Spalten, die im Originaldataset „German Credit Risk“ angezeigt wurden. ![Testen des Webdiensts][6]
+
 
 Geben Sie eine Reihe von Daten ein, und klicken Sie auf **OK**.
 
@@ -113,6 +117,8 @@ Die vom Webdienst generierten Ergebnisse werden jetzt unten im Dashboard angezei
 [2]: ./media/machine-learning-walkthrough-5-publish-web-service/publish2.png
 [3]: ./media/machine-learning-walkthrough-5-publish-web-service/publish3.png
 [4]: ./media/machine-learning-walkthrough-5-publish-web-service/publish4.png
+[5]: ./media/machine-learning-walkthrough-5-publish-web-service/publish5.png
+[6]: ./media/machine-learning-walkthrough-5-publish-web-service/publish6.png
 
 
 <!-- Module References -->
@@ -126,4 +132,4 @@ Die vom Webdienst generierten Ergebnisse werden jetzt unten im Dashboard angezei
 [two-class-boosted-decision-tree]: https://msdn.microsoft.com/library/azure/e3c522f8-53d9-4829-8ea4-5c6a6b75330c/
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie mithilfe eines Geschäfts- oder Schulkontos die Vorteile vorhandener Benutzerkonten, Richtlinien, Einstellungen oder lokaler Serverbereitstellungen, die Sie bereits besitzen, nutzen und die Effizienz zwischen der lokalen Identitätsinfrastruktur Ihres Unternehmens und Azure AD verbessern können."
 	services="active-directory"
 	documentationCenter=""
-	authors="markvi"
+	authors="markusvi"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/30/2015"
+	ms.date="10/30/2015"
 	ms.author="markvi"/>
 
 
@@ -35,4 +35,4 @@ Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt registrieren**](
 * [Was ist Azure AD?](active-directory-whatis.md)
 * [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

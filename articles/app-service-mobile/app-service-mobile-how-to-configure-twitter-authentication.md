@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="07/27/2015"
+	ms.date="10/29/2015"
 	ms.author="mahender"/>
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Twitter-Anmeldung
@@ -29,7 +29,7 @@ Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in die
 
 1. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrer Mobile App. Kopieren Sie die **URL**. Diese verwenden Sie zur Konfiguration der Twitter-App.
 
-2. Klicken Sie auf **Einstellungen**, **Benutzerauthentifizierung**, und klicken Sie dann auf **Twitter**. Kopieren Sie die **Rückruf-URL**. Diese verwenden Sie zur Konfiguration der Twitter-App.
+2. Klicken Sie auf **Einstellungen**, **Mobile Authentifizierung**, und klicken Sie dann auf **Twitter**. Kopieren Sie die **Rückruf-URL**. Diese verwenden Sie zur Konfiguration der Twitter-App.
 
 3. Navigieren Sie zur [Twitter Developers]-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create New App**.
 
@@ -70,6 +70,5 @@ Sie können nun Twitter für die Authentifizierung in Ihrer App verwenden.
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [Azure-Verwaltungsportal]: https://portal.azure.com/
 [xamarin]: ../app-services-mobile-app-xamarin-ios-get-started-users.md
- 
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

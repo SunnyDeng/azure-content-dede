@@ -19,7 +19,7 @@
 
 # DocumentDB als Azure Stream Analytics-Ausgabe
 
-Azure Stream Analytics unterstützt nun [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) als Ausgabe, was eine Datenarchivierung und Abfragen unstrukturierter JSON-Daten mit kurzer Wartezeit ermöglicht. In diesem Dokument wird beschrieben, wie diese Integration am besten implementiert wird. Falls Sie noch nicht mit DocumentDB vertraut sind, sehen Sie sich zum Einstieg den [Lernpfad für DocumentDB](../articles/documentdb-get-started.md/) an.
+Azure Stream Analytics unterstützt nun [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) als Ausgabe, was eine Datenarchivierung und Abfragen unstrukturierter JSON-Daten mit kurzer Wartezeit ermöglicht. In diesem Dokument wird beschrieben, wie diese Integration am besten implementiert wird. Falls Sie noch nicht mit DocumentDB vertraut sind, sehen Sie sich zum Einstieg den [Lernpfad für DocumentDB](https://azure.microsoft.com/documentation/learning-paths/documentdb/) an.
 
 Die Azure DocumentDB-Ausgabe in Stream Analytics ermöglicht das Schreiben der Ergebnisse Ihrer Streamingverarbeitung in Ihre DocumentDB-Sammlungen. Stream Analytics erstellt keine Sammlungen in Ihrer Datenbank, sondern fordert deren vorherige Erstellung an. Dies ist so, damit die Abrechnungskosten von DocumentDB-Sammlungen für Sie transparent bleiben und Sie die Leistung, Konsistenz und Kapazität Ihrer Sammlungen direkt mithilfe der [DocumentDB-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) optimieren können. Wir empfehlen den Einsatz einer DocumentDB-Datenbank pro Streamingauftrag, um Ihre Sammlungen für einen Streamingauftrag logisch zu trennen.
 
@@ -59,4 +59,4 @@ Beim Erstellen einer DocumentDB-Datenbank als Ausgabe in Stream Analytics wird e
 -   **Partitionsschlüssel**: Der Name des Felds in Ausgabeereignissen, das zur Angabe des Schlüssels für die sammlungsübergreifende Partitionierung der Ausgabe verwendet wird. Für die Ausgabe einer einzelnen Sammlung kann eine beliebige Ausgabespalte wie „PartitionId“ verwendet werden.  
 -   **Dokument-ID**: Optional. Der Name des Felds in Ausgabeereignissen, das zur Angabe des Primärschlüssels verwendet wird, auf dem Einfüge- und Aktualisierungsvorgänge basieren.  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

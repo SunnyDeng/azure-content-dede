@@ -13,12 +13,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="10/23/2015"
+   ms.date="10/30/2015"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
+
+## Neuigkeiten in der Version der Woche ab dem 30. Oktober 2015
+
+In der Woche ab dem 30. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für die Verschlüsselung ruhender Daten bei der Datenvorschau und in Datenprofilen für registrierte Datenquellen. Azure Data Catalog verschlüsselt alle Datenquellen von Vorschaudatensätzen und Datenprofilen, die im Dienst registriert sind, in transparenter Weise. Schlüsselmanagement durch Katalogadministratoren ist dafür nicht erforderlich.
 
 ## Neuerungen in der Version der Woche ab dem 23. Oktober 2015
 
@@ -65,7 +71,7 @@ In der Woche ab dem 18. September 2015 wurden **Azure Data Catalog** die folgen
 
 - Eine neue Übersicht über die Möglichkeiten zur Ermittlung von Datenquellen im **Azure Data Catalog**-Portal. Wenn Benutzer die Seite „Ermitteln“ des **Azure Data Catalog**-Portals aufrufen, ohne einen Suchbegriff einzugeben, wird eine Übersicht der Kataloginhalte angezeigt, einschließlich der am häufigsten verwendeten Tags sowie der Experten, Datenquellentypen und Objekttypen.
 - Unterstützung für das Registrieren und Ermitteln von Azure SQL Data Warehouse-Objekten und -Datenbanken. Weitere Informationen zu Azure SQL Data Warehouse finden Sie unter [SQL Data Warehouse](http://azure.microsoft.com/services/sql-data-warehouse/).
-- Unterstützung für das Registrieren und Ermitteln von SQL Server Analysis Services-Modellen und SQL Server Reporting Services-Servern als Container. **Azure Data Catalog** erstellt beim Registrieren von SSAS- und SSRS-Objekten einen Eintrag für das SSAS-Modell und den SSRS-Server sowie für die Berichte und andere Objekte. Die Container können über das **Azure Data Catalog**-Portal ermittelt und mit Anmerkungen versehen werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte eines Modells oder Servers durchsuchen und filtern.
+- Unterstützung für das Registrieren und Ermitteln von SQL Server Analysis Services-Modellen und SQL Server Reporting Services-Servern als Container. **Azure Data Catalog** erstellt beim Registrieren von SSAS- und SSRS-Objekten einen Eintrag für das SSAS-Modell und den SSRS-Server sowie für die Berichte und anderen Objekte. Die Container können über das **Azure Data Catalog**-Portal ermittelt und mit Anmerkungen versehen werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte eines Modells oder Servers durchsuchen und filtern.
 
 > [AZURE.NOTE]SSAS- und SSRS-Objekte, die vor der Version vom 18. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Modell- oder Servereintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
 
@@ -106,4 +112,4 @@ In der Woche ab dem 21. August 2015 wurden **Azure Data Catalog** die folgenden
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure-Blob-Speichern. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

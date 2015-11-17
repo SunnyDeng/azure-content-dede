@@ -1,10 +1,9 @@
 <properties
-	pageTitle="Ändern des Datenträgerbuchstabens des temporären Datenträgers | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Laufwerkbuchstaben des temporären Datenträgers auf einem mit dem klassischen Bereitstellungsmodell erstellten virtuellen Windows-Computer ändern."
+	pageTitle="Einrichten von Laufwerk D eines virtuellen Computers als Datenträger | Microsoft Azure"
+	description="Beschreibt das Ändern von Laufwerkbuchstaben für einen mithilfe des klassischen Bereitstellungsmodells erstellten virtuellen Windows-Computer, sodass Sie Laufwerk D als Datenlaufwerk verwenden können."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="cynthn
-"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,43 +14,90 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/27/2015"
+	ms.date="11/03/2015"
 	ms.author="cynthn"/>
 
-#Ändern des Laufwerkbuchstabens des temporären Windows-Datenträgers auf einem mit dem klassischen Bereitstellungsmodell erstellten virtuellen Computer
+# Verwenden des Laufwerks D als Datenlaufwerk auf einer Windows-VM 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-Wenn Sie Laufwerk "D" zum Speichern der Daten verwenden müssen, befolgen Sie diese Anweisungen, um für den temporären Datenträger ein anderes Laufwerk zu verwenden. Verwenden Sie niemals den temporären Datenträger zum Speichern von Daten, die Sie behalten müssen.
+Wenn Sie Laufwerk D zum Speichern der Daten verwenden müssen, befolgen Sie diese Anweisungen, um für den temporären Datenträger einen anderen Laufwerkbuchstaben zu verwenden. Verwenden Sie niemals den temporären Datenträger zum Speichern von Daten, die Sie behalten müssen.
 
-Bevor Sie beginnen, benötigen Sie einen Datenträger, der an den virtuellen Computer angefügt ist, damit Sie die Windows-Auslagerungsdatei (pagefile.sys) während dieses Vorgangs speichern können. Weitere Informationen finden Sie bei Bedarf unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer][Attach]. Anweisungen dazu, wie Sie herausfinden, welche Datenträger angeschlossen sind, finden Sie unter "Suchen des Datenträgers" in [Trennen eines Datenträgers von einem virtuellen Windows-Computer][Detach].
+## Anfügen des Datenträgers
 
-Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stellen Sie sicher, dass Sie auch die virtuelle Festplatte in das Speicherkonto hochgeladen haben. Eine Anleitung finden Sie in den Schritten 3 und 4 unter [Erstellen und Hochladen einer Windows Server VHD nach Azure][VHD].
+Zunächst müssen Sie den Datenträger an den virtuellen Computer anfügen. Informationen zum Anfügen eines neuen Datenträgers finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer][Attach].
 
-> [AZURE.WARNING]Wenn Sie die Größe eines virtuellen Computers ändern oder diesen "Beenden (freigeben)", kann dies das Verschieben des virtuellen Computers auf einen neuen Hypervisor auslösen. Ein geplantes oder ungeplantes Wartungsereignis kann ebenfalls diese Neuanordnung auslösen. In diesem Szenario wird dem temporären Datenträger der erste verfügbare Laufwerkbuchstabe zugewiesen. Wenn keine Ihrer Anwendungen speziell das Laufwerk "D:" erfordert, müssen Sie nach dem Verschieben der Auslagerungsdatei einen neuen permanenten Datenträger zuweisen und diesem den Buchstaben "D" zuweisen. Azure verwendet den Buchstaben "D" dann nicht wieder.
+Wenn Sie einen vorhandenen Datenträger verwenden möchten, stellen Sie sicher, dass Sie auch die virtuelle Festplatte in das Speicherkonto hochgeladen haben. Anweisungen finden Sie in den Schritten 3 und 4 unter [Erstellen und Hochladen einer Windows Server-VHD nach Azure][VHD].
 
-> [AZURE.WARNING]Wenn Sie die Größe eines virtuellen Computers nach dem manuellen Verschieben der Auslagerungsdatei ändern, tritt beim Start möglicherweise ein Fehler auf, wenn der temporäre Datenträger für den neuen virtuellen Computer nicht groß genug für die Auslagerungsdatei des ursprünglichen virtuellen Computers ist. Dieser Fehler kann auch auftreten, wenn das temporäre Laufwerk nicht auf den nächsten verfügbaren Laufwerkbuchstaben festgelegt wurde, sodass Windows in der Konfiguration der Auslagerungsdatei auf einen ungültigen Laufwerkbuchstaben verweist, während Azure das temporäre Laufwerk mit dem nächsten verfügbaren Laufwerksbuchstaben erstellt.
 
-##Ändern des Datenträgerbuchstabens
+## Temporäres Verschieben von „pagefile.sys“ zu Laufwerk C
 
-1. Melden Sie sich beim virtuellen Computer an. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][Logon].
+1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. 
 
-2. Verschieben Sie pagefile.sys vom Laufwerk D auf ein anderes Laufwerk.
+2. Klicken Sie mit der rechten Maustaste auf das **Startmenü**, und wählen Sie **System**.
 
-3. Starten Sie den virtuellen Computer neu.
+3. Wählen Sie im linken Menü **Erweiterte Systemeinstellungen**.
 
-4. Melden Sie sich wieder an, und ändern Sie den Laufwerkbuchstaben von D auf E.
+4. Wählen Sie im Abschnitt **Leistung** die Option **Einstellungen**.
 
-5. Fügen Sie über das [Azure-Portal](http://manage.windowsazure.com) einen vorhandenen oder leeren Datenträger an.
+5. Wählen Sie die Registerkarte **Erweitert**.
 
-6.	Melden Sie sich erneut am virtuellen Computer an, initialisieren Sie den Datenträger, und weisen Sie D als Laufwerkbuchstaben für den soeben angefügten Datenträger zu.
+5. Wählen Sie im Abschnitt **Virtueller Arbeitsspeicher** die Option **Ändern**.
 
-7.	Stellen Sie sicher, dass E dem temporären Datenträger zugeordnet ist.
+6. Wählen Sie das Laufwerk **C**, und klicken Sie dann auf **Größe wird vom System verwaltet** und **Festlegen**.
 
-8.	Verschieben Sie pagefile.sys vom anderen Laufwerk das Laufwerk E.
+7. Wählen Sie das Laufwerk **D**, und klicken Sie dann auf **Keine Auslagerungsdatei** und **Festlegen**.
 
-9.	Starten Sie den virtuellen Computer neu.
+8. Klicken Sie auf „Übernehmen“. Sie erhalten eine Warnung, dass der Computer neu gestartet werden muss, damit die Änderungen wirksam muss werden.
+
+9. Starten Sie den virtuellen Computer neu.
+
+
+
+
+## Ändern des Laufwerkbuchstabens 
+
+1. Sobald die VM neu gestartet wird, melden Sie sich wieder bei der VM an.
+
+2. Klicken Sie auf das **Startmenü**, geben Sie **diskmgmt.msc** ein, und drücken Sie die EINGABETASTE. Die Datenträgerverwaltung wird gestartet.
+
+3. Klicken Sie mit der rechten Maustaste auf **D**, das temporäre Speicherlaufwerk, und wählen Sie **Laufwerkbuchstaben und -pfade ändern**.
+
+4. Wählen Sie unter dem Laufwerkbuchstaben Laufwerk **G**, und klicken Sie dann auf **OK**.
+
+5. Klicken Sie mit der rechten Maustaste auf den Datenträger, und wählen Sie **Laufwerkbuchstaben und -pfade ändern**.
+
+6. Wählen Sie unter dem Laufwerkbuchstaben Laufwerk **D**, und klicken Sie dann auf **OK**.
+
+7. Klicken Sie mit der rechten Maustaste auf **G**, das temporäre Speicherlaufwerk, und wählen Sie **Laufwerkbuchstaben und -pfade ändern**.
+
+8. Wählen Sie unter dem Laufwerkbuchstaben Laufwerk **E**, und klicken Sie dann auf **OK**.
+
+> [AZURE.NOTE]Wenn Ihr virtueller Computer über andere Datenträger oder Laufwerke verfügt, weisen Sie mit der gleichen Methode die Laufwerkbuchstaben der anderen Datenträger und Laufwerke zu. Die Datenträgerkonfiguration sollte wie folgt aussehen: – C: Betriebssystemdatenträger – D: Datenträger – E: temporärer Datenträger
+
+
+
+## Verschieben von „pagefile.sys“ zurück auf das temporäre Speicherlaufwerk 
+
+1. Klicken Sie mit der rechten Maustaste auf das **Startmenü**, und wählen Sie **System**.
+
+2. Wählen Sie im linken Menü **Erweiterte Systemeinstellungen**.
+
+3. Wählen Sie im Abschnitt **Leistung** die Option **Einstellungen**.
+
+4. Wählen Sie die Registerkarte **Erweitert**.
+
+5. Wählen Sie im Abschnitt **Virtueller Arbeitsspeicher** die Option **Ändern**.
+
+6. Wählen Sie das Betriebssystemlaufwerk **C**, und klicken Sie dann auf **Keine Auslagerungsdatei** und **Festlegen**.
+
+7. Wählen Sie das temporäre Speicherlaufwerk **E**, und klicken Sie dann auf **Größe wird vom System verwaltet** und **Festlegen**.
+
+8. Klicken Sie auf **Übernehmen**. Sie erhalten eine Warnung, dass der Computer neu gestartet werden muss, damit die Änderungen wirksam muss werden.
+
+9. Starten Sie den virtuellen Computer neu.
+
 
 
 
@@ -65,8 +111,6 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 <!--Link references-->
 [Attach]: storage-windows-attach-disk.md
 
-
-
 [VHD]: virtual-machines-create-upload-vhd-windows-server.md
 
 [Logon]: virtual-machines-log-on-windows-server.md
@@ -75,4 +119,4 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 
 [Storage]: ../storage-whatis-account.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="11/03/2015"
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus Azure Data Lake-Speicher mithilfe von Azure Data Factory
@@ -54,7 +54,7 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus einem Azure-Blobspeic
 	    "properties": {
 	        "type": "AzureDataLakeStore",
 	        "typeProperties": {
-	            "dataLakeUri": "https://<accountname>.azuredatalake.net/webhdfs/v1",
+	            "dataLakeUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
 				"sessionId": "<session ID>",
 	            "authorization": "<authorization URL>"
 	        }
@@ -227,7 +227,7 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus einem Azure Data Lake
 	    "properties": {
 	        "type": "AzureDataLakeStore",
 	        "typeProperties": {
-	            "dataLakeUri": "https://<accountname>.azuredatalake.net/webhdfs/v1",
+	            "dataLakeUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
 				"sessionId": "<session ID>",
 	            "authorization": "<authorization URL>"
 	        }
@@ -395,14 +395,14 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-Speicherkonto mit einer Azure Data Factory zu verknüpfen. Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den mit Azure Storage verknüpften Dienst spezifisch sind.
 
 | Eigenschaft | Beschreibung | Erforderlich |
-| -------- | ----------- | -------- |
+| :-------- | :----------- | :-------- |
 | Typ | Die „type“-Eigenschaft muss auf **AzureDataLakeStore** festgelegt sein. | Ja |
-| dataLakeUri | Geben Sie Informationen zum Azure Data Lake-Speicherkonto an. Es hat das folgende Format: https://<Azure Data Lake account name>.azuredatalake.net/webhdfs/v1 | Ja |
+| dataLakeUri | Geben Sie Informationen zum Azure Data Lake-Speicherkonto an. Es hat das folgende Format: https://<Azure Data Lake account name>.azuredatalakestore.net/webhdfs/v1 | Ja |
 | authorization | Klicken Sie im **Data Factory-Editor** auf die Schaltfläche **Autorisieren**, und geben Sie Ihre Anmeldeinformationen ein, wodurch die automatisch generierte Autorisierungs-URL dieser Eigenschaft zugewiesen wird. | Ja |
 | sessionid | OAuth-Sitzungs-ID aus der Oauth-Autorisierungssitzung. Jede Sitzung-ID ist eindeutig und darf nur einmal verwendet werden. Sie wird automatisch generiert, wenn Sie den Data Factory-Editor verwenden. | Ja |  
 | accountName | Data Lake-Kontoname | Nein |
 | subscriptionId | Azure-Abonnement-ID. | Nein (falls nicht angegeben, wird das Abonnement der Data Factory verwendet). |
-| resourceGroupName | Azure-Ressourcengruppenname | Nein (falls nicht angegeben, wird die Ressourcengruppe der Data Factory verwendet). |
+| ResourceGroupName | Azure-Ressourcengruppenname | Nein (falls nicht angegeben, wird die Ressourcengruppe der Data Factory verwendet). |
 
 
 ## Eigenschaften von Datasets des Typs „Azure Data Lake“
@@ -412,13 +412,15 @@ Eine vollständige Liste der JSON-Abschnitte und -Eigenschaften, die zum Definie
 Der Abschnitt **typeProperties** unterscheidet sich bei jedem Typ von Dataset und bietet Informationen zum Speicherort, Format usw. der Daten im Datenspeicher. Der Abschnitt „typeProperties“ für ein Dataset vom Typ **AzureDataLakeStore** hat die folgenden Eigenschaften.
 
 | Eigenschaft | Beschreibung | Erforderlich |
-| -------- | ----------- | -------- |
+| :-------- | :----------- | :-------- |
 | folderPath | Der Pfad zum Container und Ordner im Azure Data Lake-Speicher. | Ja |
 | fileName | <p>Der Name der Datei im Azure Data Lake-Speicher. „fileName“ ist optional. </p><p>Wenn Sie einen Dateinamen angeben, funktioniert die Aktivität (einschließlich Kopieren) für die jeweilige Datei.</p><p>Wenn „fileName„ nicht angegeben ist, umfasst das Kopieren alle Dateien in „folderPath“ für das Eingabedataset.</p><p>Wenn „fileName“ für ein Ausgabedataset nicht angegeben ist, hat der Name der generierten Datei folgendes Format: Data.<Guid>.txt (z. B.: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein |
 | partitionedBy | "partitionedBy" ist eine optionale Eigenschaft. "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "fileName" für Zeitreihendaten anzugeben. Beispiel: "folderPath" kann für jedes stündliche Datenaufkommen parametrisiert werden. Im Abschnitt „Nutzen der partitionedBy-Eigenschaft“ unten finden Sie Details und Beispiele. | Nein |
+| Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von „TextFormat“](#specifying-textformat) unten finden Sie weitere Details. | Nein |
+| Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Unterstützung für die Komprimierung](#compression-support). | Nein |
 
 ### Nutzen der Eigenschaft "partitionedBy"
-Wie bereits erwähnt, können Sie die dynamischen Werte „folderPath“ und „fileName“ für Zeitreihendaten mit dem Abschnitt **partitionedBy**, mit Data Factory-Makros und mit den Systemvariablen „SliceStart“ und „SliceEnd“ angeben, die die Start- und Endzeit für einen bestimmten Slice festlegen.
+Wie bereits erwähnt, können Sie die dynamischen Werte „folderPath“ und „fileName“ für Zeitreihendaten mit dem Abschnitt **partitionedBy**, mit Data Factory-Makros und mit den Systemvariablen „SliceStart“ und „SliceEnd“ angeben, die die Start- und Endzeit für einen bestimmten Datenslice festlegen.
 
 In den Artikeln [Erstellen von Datasets](data-factory-create-datasets.md) und [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Details zu Zeitreihen-Datasets, Planung und Slices.
 
@@ -446,6 +448,94 @@ Im obigen Beispiel wird {Slice} durch den Wert der Data Factory-Systemvariablen 
 
 Im Beispiel oben werden Jahr, Monat, Tag und Uhrzeit von "SliceStart" in separate Variablen extrahiert, die von den Eigenschaften "folderPath" und "fileName" verwendet werden.
 
+### Angeben von "TextFormat"
+
+Wenn das Format auf **TextFormat** festgelegt ist, können Sie die folgenden **optionalen** Eigenschaften im Abschnitt **Format** angeben.
+
+| Eigenschaft | Beschreibung | Erforderlich |
+| -------- | ----------- | -------- |
+| columnDelimiter | Die Zeichen, die als Spaltentrennzeichen in einer Datei verwendet werden. Dieses Tag ist optional. Der Standardwert ist das Komma (,). | Nein |
+| rowDelimiter | Die Zeichen, die als Zeilentrennzeichen in einer Datei verwendet werden. Dieses Tag ist optional. Der Standardwert ist einer der Folgenden: ["\\r\\n", "\\r", "\\n"]. | Nein |
+| escapeChar | <p>Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: „Hello, world“) verwenden möchten, können Sie „$“ als Escapezeichen definieren und die Zeichenfolge „Hello$, world“ in der Quelle verwenden.</p><p>Beachten Sie, dass Sie nicht sowohl „escapeChar“ als auch „quoteChar“ für eine Tabelle angeben können.</p> | Nein | 
+| quoteChar | <p>Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie „"“ als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.</p><p>Beachten Sie, dass Sie nicht sowohl „escapeChar“ als auch „quoteChar“ für eine Tabelle angeben können.</p> | Nein |
+| nullValue | <p>Die Zeichen, die zur Darstellung von NULL-Werten im Blobdateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist „\\N“.</p><p>Beispielsweise wird gemäß oben genanntem Beispiel „NaN“ im Blob beim Kopieren, z. B. in SQL Server, als NULL-Wert übersetzt.</p> | Nein |
+| encodingName | Geben Sie den Codierungsnamen an. Eine Liste der gültigen Codierungsnamen finden Sie unter [Encoding.EncodingName-Eigenschaft](https://msdn.microsoft.com/library/system.text.encoding.aspx). Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". | Nein | 
+
+#### Beispiele
+Im folgenden Beispiel werden einige der Formateigenschaften für "TextFormat" gezeigt.
+
+	"typeProperties":
+	{
+	    "folderPath": "mycontainer/myfolder",
+	    "fileName": "myfilename"
+	    "format":
+	    {
+	        "type": "TextFormat",
+	        "columnDelimiter": ",",
+	        "rowDelimiter": ";",
+	        "quoteChar": """,
+	        "NullValue": "NaN"
+	    }
+	},
+
+Um "escapeChar" anstelle von "quoteChar" zu verwenden, ersetzen Sie die Zeile mit "quoteChar" durch Folgendes:
+
+	"escapeChar": "$",
+
+### Angeben von "AvroFormat"
+Wenn das Format auf "AvroFormat" festgelegt ist, müssen Sie im Abschnitt "Format" innerhalb des Abschnitts "typeProperties" keine Eigenschaften angeben. Beispiel:
+
+	"format":
+	{
+	    "type": "AvroFormat",
+	}
+
+Um das Avro-Format in einer Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Tutorial](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+
+
+### Unterstützung für die Komprimierung  
+Die Verarbeitung großer Datenmengen kann zu E/A- und Netzwerkengpässen führen. Aus diesem Grund kann die Komprimierung von Daten in Speichern nicht nur die Datenübertragung im Netzwerk beschleunigen und Speicherplatz sparen, sondern auch erhebliche Leistungssteigerungen bei der Verarbeitung von Big Data bewirken. Zu diesem Zeitpunkt wird die Komprimierung für dateibasierte Datenspeicher wie etwa Azure-Blobs oder das lokale Dateisystem unterstützt.
+
+Um die Komprimierung für ein Dataset anzugeben, verwenden Sie im JSON-Dataset die Eigenschaft für die **Komprimierung** wie im folgenden Beispiel:
+
+	{  
+		"name": "AzureDatalakeStoreDataSet",  
+	  	"properties": {  
+	    	"availability": {  
+	    		"frequency": "Day",  
+	    	  	"interval": 1  
+	    	},  
+	    	"type": "AzureDatalakeStore",  
+	    	"linkedServiceName": "DataLakeStoreLinkedService",  
+	    	"typeProperties": {  
+	    		"fileName": "pagecounts.csv.gz",  
+	    	  	"folderPath": "compression/file/",  
+	    	  	"compression": {  
+	    	    	"type": "GZip",  
+	    	    	"level": "Optimal"  
+	    	  	}  
+    		}  
+	  	}  
+	}  
+ 
+Beachten Sie, dass der Abschnitt für die **Komprimierung** zwei Eigenschaften enthält:
+  
+- **Type:** Der Komprimierungscodec, z. B. **GZIP**, **Deflate** oder **BZIP2**.  
+- **Level:** Das Komprimierungsverhältnis, z. B. **Optimal** oder **Fastest**. 
+	- **Fastest:** Der Komprimierungsvorgang wird schnellstmöglich abgeschlossen, auch wenn die resultierende Datei nicht optimal komprimiert ist. 
+	- **Optimal**: Die Daten sollten optimal komprimiert sein, auch wenn der Vorgang eine längere Zeit in Anspruch nimmt. 
+	
+	Weitere Informationen finden Sie im Thema [CompressionLevel](https://msdn.microsoft.com/library/system.io.compression.compressionlevel.aspx).
+
+Angenommen, das obige Beispieldataset wird als Ausgabe eines Kopiervorgangs verwendet. Der Kopiervorgang komprimiert die Ausgabedaten mit dem GZIP-Codec bei optimalem Verhältnis und schreibt die komprimierten Daten anschließend in die Datei „pagecounts.csv.gz“ im Azure Data Lake-Speicher.
+
+Wenn Sie die Komprimierungseigenschaft in einem JSON-Eingabedataset angeben, kann die Pipeline komprimierte Daten aus der Quelle lesen. Bei Angabe der Eigenschaft in einem JSON-Ausgabedataset kann der Kopiervorgang komprimierte Daten am Ziel schreiben. Es folgen einige Beispielszenarios:
+
+- Lesen Sie GZIP-komprimierte Daten aus einem Azure Data Lake-Speicher, dekomprimieren Sie sie, und schreiben Sie die resultierenden Daten in eine Azure SQL-Datenbank. In diesem Fall definieren Sie die Azure Data Lake-Speichereingabedatasets mit der JSON-Komprimierungseigenschaft. 
+- Lesen Sie Daten aus einer Nur-Text-Datei aus einem lokalen Dateisystem, komprimieren Sie sie mithilfe des GZIP-Formats, und schreiben Sie die komprimierten Daten in einen Azure Data Lake-Speicher. In diesem Fall definieren Sie ein Azure Data Lake-Ausgabedataset mit der JSON-Komprimierungseigenschaft.  
+- Lesen Sie mit GZIP komprimierte Daten aus einem Azure Data Lake-Speicher, dekomprimieren Sie sie, komprimieren Sie sie mit BZIP2, und schreiben Sie die resultierenden Daten in einen Azure Data Lake-Speicher. In diesem Fall definieren Sie das Azure Data Lake-Speichereingabedataset mit dem Komprimierungstyp GZIP und das Ausgabedataset mit dem Komprimierungstyp BZIP2.   
+
+
 ## Eigenschaften von Azure Data Lake-Kopieraktivitätstypen  
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
@@ -463,7 +553,7 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| copyBehavior | Gibt das Kopierverhalten an. | <p>PreserveHierarchy: Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</p><p>FlattenHierarchy: Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Die Namen der Zieldateien werden automatisch generiert. </p><p>MergeFiles: Führt alle Dateien aus dem Quellordner in einer Datei zusammen. Wenn der Datei-/Blobname angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.</p> | Nein |
+| copyBehavior | Gibt das Kopierverhalten an. | <p>**PreserveHierarchy:** Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</p><p>**FlattenHierarchy:** Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Die Namen der Zieldateien werden automatisch generiert. </p><p>**MergeFiles:** Führt alle Dateien aus dem Quellordner in einer Datei zusammen. Wenn der Datei-/Blobname angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.</p> | Nein |
 
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
@@ -472,4 +562,4 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

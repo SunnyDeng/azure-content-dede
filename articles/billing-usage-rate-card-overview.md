@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure"
+   pageTitle="Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure | Microsoft Azure"
    description="Enthält eine konzeptuelle Übersicht über die Azure-Abrechnungs- und Gebührenkarten-APIs, mit denen Einblicke in den Azure-Ressourcenverbrauch und damit verbundene Trends erlangt werden können."
    services="billing"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="07/07/2015"
+   ms.date="11/02/2015"
    ms.author="mobandyo;bryanla"/>
 
 # Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure 
@@ -72,10 +72,10 @@ Unter [Integration von Cloud Cruiser und Microsoft Azure-Abrechnungs-API](billin
 
 ## Nächste Schritte
 + Ausführlichere Informationen zu beiden APIs finden Sie unter [Azure-Abrechnungs-REST-API – Referenz](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c). Sie sind Teil der APIs, die vom Azure-Ressourcen-Manager bereitgestellt werden.
-+ Wenn Sie direkt in den Beispielcode eintauchen möchten, können Sie dies unter [Codebeispiele für Microsoft Azure-Abrechnungs-API bei GitHub](https://github.com/Azure/BillingCodeSamples) tun.
++ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, können Sie dies anhand der Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) tun.
 
 ## Weitere Informationen
 + Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 + Weitere Informationen zu den Tools, die zum Entwickeln eines Verständnisses der Cloudausgaben erforderlich sind, finden Sie im Gartner-Artikel [Market Guide for IT Financial Management (ITFM) Tools](http://www.gartner.com/technology/reprints.do?id=1-212F7AL&ct=140909&st=sb) (Marktleitfaden für IT Financial Management (ITFM)-Tools).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

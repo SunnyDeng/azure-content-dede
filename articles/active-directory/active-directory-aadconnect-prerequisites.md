@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="10/13/2015"
+   ms.date="11/02/2015"
    ms.author="andkjell;billmath"/>
 
 # Voraussetzungen für Azure Active Directory Connect (Azure AD Connect)
@@ -31,8 +31,9 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
 **Lokale Server und Umgebung**
 
 - Die AD-Schemaversion und Funktionsebene der Gesamtstruktur müssen Windows Server 2003 oder höher entsprechen. Die Domänencontroller können eine beliebige Version ausführen, solange die Anforderungen an Schema und Gesamtstrukturebene erfüllt werden.
+- Wenn Sie das Feature **Kennwortrückschreiben** verwenden möchten, müssen die Domänencontroller unter Windows Server 2008 (mit dem neuesten Service Pack) oder höher ausgeführt werden.
 - Azure AD Connect muss unter Windows Server 2008 oder höher installiert werden. Dieser Server kann bei Verwendung der Expresseinstellungen ein Domänencontroller oder ein Mitgliedsserver sein. Wenn Sie benutzerdefinierte Einstellungen verwenden, kann der Server auch eigenständig sein und muss nicht mit einer Domäne verknüpft werden.
-- Wenn Sie die Kennwortsynchronisierung verwenden möchten, muss der Server unter Windows Server 2008 R2 SP1 oder höher ausgeführt werden.
+- Wenn Sie die **Kennwortsynchronisierung** verwenden möchten, muss der Server unter Windows Server 2008 R2 SP1 oder höher ausgeführt werden.
 - Wenn Active Directory-Verbunddienste bereitgestellt werden, müssen die Server, auf denen die Active Directory-Verbunddienste oder der Webanwendungsproxy installiert werden, Windows Server 2012 R2 oder höher ausführen. Windows-Remoteverwaltung muss auf diesen Servern zur Remoteinstallation aktiviert werden.
 - Azure AD Connect erfordert eine SQL Server-Datenbank zum Speichern von Identitätsdaten. Standardmäßig wird SQL Server 2012 Express LocalDB (eine Light-Version von SQL Server Express) installiert, und das Dienstkonto für den Dienst wird auf dem lokalen Computer erstellt. Für SQL Server Express gilt ein 10-GB-Limit, mit dem Sie etwa 100.000 Objekte verwalten können. Wenn Sie eine höhere Anzahl von Verzeichnisobjekten verwalten möchten, müssen Sie während der Installation auf eine andere Version von SQL Server verweisen. Azure AD Connect unterstützt sämtliche Versionen von Microsoft SQL Server – von SQL Server 2008 (mit SP4) bis hin zu SQL Server 2014.
 
@@ -44,7 +45,7 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
 
 **Konnektivität**
 
-- Wenn Sie einen ausgehenden Proxy für die Verbindung mit dem Internet verwenden, muss die folgende Einstellung in der Datei **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** für den Installations-Assistenten und Azure AD-Synchronisierung hinzugefügt werden, um die Internetverbindung zu ermöglichen.
+- Wenn Sie einen ausgehenden Proxy für die Verbindung mit dem Internet verwenden, muss die folgende Einstellung in der Datei **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** für den Installations-Assistenten und Azure AD Sync hinzugefügt werden, um die Internetverbindung zu ermöglichen.
 
 ```
     <system.net>
@@ -112,6 +113,6 @@ Im Folgenden sind die Mindestanforderungen für Computer mit AD FS oder Webanwe
 
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
+Erfahren Sie mehr über das [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

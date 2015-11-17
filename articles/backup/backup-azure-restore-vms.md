@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Azure Backup – Wiederherstellen eines virtuellen Computers | Microsoft Azure"
+	pageTitle="Wiederherstellen eines virtuellen Computers von einer Sicherung | Microsoft Azure"
 	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
 	services="backup"
 	documentationCenter=""
@@ -8,9 +8,9 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="trinadhk"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2015" ms.author="trinadhk"; "jimpark"/>
 
-# Wiederherstellen eines virtuellen Azure-Computers
+# Wiederherstellen virtueller Computer in Azure
 Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherstellen.
 
 ## Wiederherstellen von Workflows
@@ -105,4 +105,4 @@ Hier finden Sie weitere Informationen zum [USN-Rollback-Problem](https://technet
 - [Problembehandlung](backup-azure-vms-troubleshoot.md#restore)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
+	ms.date="10/28/2015" 
 	ms.author="bradsev" />
 
 # Verschieben von Daten in den und aus dem Azure-Blobspeicher mithilfe von SSIS-Connectors
@@ -45,7 +45,7 @@ Zum Ausführen der in diesem Artikel beschriebenen Aufgaben benötigen Sie ein e
 Zum Verwenden der **SSIS-Connectors** müssen Sie Folgendes herunterladen:
 
 - **SQL Server 2014 oder 2016 Standard (oder höher)**: Die Installation umfasst SQL Server Integration Services.
-- **Microsoft SQL Server 2016 Integration Services Feature Pack für Azure**: Kann auf der Seite [SQL Server Integration Services](https://www.microsoft.com/download/details.aspx?id=49492) heruntergeladen werden.
+- **Microsoft SQL Server 2014 oder 2016 Integration Services Feature Pack für Azure**: Diese Pakete können auf den Seiten [SQL Server 2014 Integration Services](http://www.microsoft.com/download/details.aspx?id=47366) und [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492) heruntergeladen werden.
 
 > [AZURE.NOTE]SSIS wird mit SQL Server installiert, ist aber nicht in der Express-Version enthalten. Informationen dazu, welche Anwendungen in verschiedenen Editionen von SQL Server enthalten sind, finden Sie unter [SQL Server-Editionen](http://www.microsoft.com/de-DE/server-cloud/products/sql-server-editions/).
 
@@ -54,7 +54,7 @@ Schulungsmaterialien für SSIS finden Sie unter [Praktische Schulung für SSIS](
 Informationen zur Inbetriebnahme von SSIS zum Erstellen von ETL-Paketen (Extrahieren, Transformieren, Laden) finden Sie im [SSIS-Tutorial: Erstellen eines einfachen ETL-Pakets](https://msdn.microsoft.com/library/ms169917.aspx).
 
 ## Herunterladen des Datasets „NYC Taxi Trips“  
-Das hier beschriebene Beispiel verwendet ein öffentlich verfügbares Dataset mit dem Namen [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/). Das Dataset besteht aus ca. 173 Millionen Taxifahrten in New York im Jahr 2013. Es gibt zwei Arten von Daten: Daten zu Fahrten und Daten zum Fahrpreis. Für jeden Monat gibt es jeweils eine Datei, sodass wir insgesamt 24 Dateien haben, die unkomprimiert jeweils 2 GB groß sind. Das Dataset kann bequem von [Github](https://github.com/andresmh/nyctaxitrips) heruntergeladen werden.
+Das hier beschriebene Beispiel verwendet ein öffentlich verfügbares Dataset mit dem Namen [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/). Das Dataset besteht aus ca. 173 Millionen Taxifahrten in New York im Jahr 2013. Es gibt zwei Arten von Daten: Daten zu Fahrten und Daten zum Fahrpreis. Für jeden Monat gibt es jeweils eine Datei, sodass wir insgesamt 24 Dateien haben, die unkomprimiert jeweils 2 GB groß sind.
 
 
 ## Hochladen von Daten in Azure-Blobspeicher
@@ -88,4 +88,4 @@ Hier sei angemerkt, dass das SSIS Feature Pack komplexere zu verarbeitende Ablä
 - Verwenden Sie zum Anwenden eines Hive-Skripts auf einen Azure HDInsight-Cluster mit SSIS die [Hive-Aufgabe in Azure HDInsight](https://msdn.microsoft.com/library/mt146771.aspx).
 - Verwenden Sie zum Anwenden eines Pig-Skripts auf einen Azure HDInsight-Cluster mit SSIS die [Pig-Aufgabe in Azure HDInsight](https://msdn.microsoft.com/library/mt146781.aspx).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

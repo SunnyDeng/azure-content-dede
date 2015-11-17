@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Debuggen einer Service Fabric-Anwendung in Visual Studio mit F5"
-   description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste mithilfe von Visual Studio und einem lokalen Entwicklungscluster."
+   pageTitle="Debuggen Ihrer Anwendung in Visual Studio | Microsoft Azure"
+   description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste, indem Sie sie in Visual Studio und einem lokalen Entwicklungscluster entwickeln und debuggen."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/26/2015"
+   ms.date="10/15/2015"
    ms.author="jesseb"/>
 
-# Debuggen einer Service Fabric-Anwendung in Visual Studio mit F5
+# Debuggen einer Service Fabric-Anwendung in Visual Studio
 
 Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in einem Cluster für die Entwicklung auf einem lokalen Computer bereitstellen und debuggen. Visual Studio kann die Anwendung im lokalen Cluster bereitstellen und den Debugger automatisch mit allen Instanzen der Anwendung verbinden.
 
@@ -66,4 +66,4 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in ein
 [breakpoint]: ./media/service-fabric-debugging-your-application/breakpoint.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,11 +1,10 @@
 <properties 
-    title="Elastic Scale Security Configurations" 
-    pageTitle="Elastic Scale – Sicherheitskonfigurationen" 
+    pageTitle="Elastic Scale – Sicherheitskonfigurationen | Microsoft Azure" 
     description="Einrichten von x409-Zertifikaten für die Verschlüsselung" 
     metaKeywords="Elastic Database certificates security" 
     services="sql-database" documentationCenter="" 
     manager="jhubbard" 
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags 
     ms.service="sql-database" 
@@ -13,8 +12,8 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/07/2015" 
-    ms.author="sidneyh" />
+    ms.date="11/04/2015" 
+    ms.author="torsteng;sidneyh" />
 
 # Split-Merge-Sicherheitskonfiguration  
 
@@ -474,4 +473,4 @@ In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Ste
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

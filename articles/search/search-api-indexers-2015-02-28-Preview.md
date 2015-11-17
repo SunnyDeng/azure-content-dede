@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)" 
+pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview) | Microsoft Azure" 
 description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)" 
 services="search" 
 documentationCenter="" 
@@ -12,7 +12,7 @@ ms.service="search"
 ms.devlang="rest-api" 
 ms.workload="search" ms.topic="article"  
 ms.tgt_pltfrm="na" 
-ms.date="09/29/2015" 
+ms.date="11/04/2015" 
 ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)#
@@ -21,7 +21,7 @@ ms.author="heidist" />
 
 ## Übersicht ##
 
-Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
 
 Ein **Indexer** ist die Ressource, die Datenquellen mit Zielsuchindizes verbindet. Ein Indexer kann folgendermaßen verwendet werden:
 
@@ -776,4 +776,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="10/17/2015"
+   ms.date="10/29/2015"
    ms.author="jehollan"/>
 
 #C#-API-App
@@ -79,7 +79,7 @@ Angenommen, Sie verwenden den Office 365-Trigger **Neue E-Mail**. Damit wird das
 }
 ```
 
-Aber diese Anlagen sollen in einen Yammer-Beitrag hochgeladen werden. Leider ist das Schema für Yammer-Anlagen geringfügig anders. Dies kann nun innerhalb Ihrer Logik-App analysiert werden. Übergeben Sie für das Kontextobjekt: `@triggerBody()`, und übergeben Sie als Ausdruck:
+Aber diese Anlagen sollen in einen Yammer-Beitrag hochgeladen werden. Leider ist das Schema für Yammer-Anlagen geringfügig anders. Dies können Sie nun innerhalb Ihrer Logik-App analysieren. Übergeben Sie für das Kontextobjekt: `@triggerBody()`, und übergeben Sie als Ausdruck:
 
 ```javascript
 JArray YammerAttachments = new JObject();
@@ -105,4 +105,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

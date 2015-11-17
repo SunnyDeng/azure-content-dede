@@ -33,7 +33,7 @@ Das Erstellen von Stichproben ist gegenwärtig für das ASP.NET SDK oder [belieb
 
 1. Aktualisieren Sie die NuGet-Pakete Ihres Projekts auf die neueste *Vorabversion* von Application Insights. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „Manage NuGet Packages“ aus, aktivieren Sie **Include prerelease**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“. 
 
-2. Fügen Sie in „ApplicationInsights.config“ diesen Codeausschnitt hinzu
+2. Fügen Sie in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) diesen Codeausschnitt hinzu:
 
 ```XML
 
@@ -55,7 +55,7 @@ Das Erstellen von Stichproben ist gegenwärtig für das ASP.NET SDK oder [belieb
 
 Sie können Webseiten für die Stichprobenerstellung auf einem beliebigen Server konfigurieren. Für ASP.NET-Server muss sowohl die Client- als auch die Serverseite konfiguriert werden.
 
-Ändern Sie beim [Konfigurieren der Webseiten für Application Insights](app-insights-javascript.md) den Ausschnitt, den Sie im Application Insights-Portal erhalten haben. (In ASP.NET befindet sich dieser Ausschnitt in „\_Layout.cshtml“.) Fügen Sie vor dem Instrumentationsschlüssel eine Zeile wie `samplingPercentage: 10,` ein:
+Ändern Sie beim [Konfigurieren der Webseiten für Application Insights](app-insights-javascript.md) den Codeausschnitt, den Sie im Application Insights-Portal erhalten. (In ASP.NET befindet sich dieser Ausschnitt in „\_Layout.cshtml“.) Fügen Sie vor dem Instrumentierungsschlüssel eine Zeile wie `samplingPercentage: 10,` ein:
 
     <script>
 	var appInsights= ... 
@@ -162,4 +162,6 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 * Nein. Für Geräteanwendungen wird die Stichprobenerstellung gegenwärtig nicht unterstützt. 
 
-<!---HONumber=Nov15_HO1-->
+>>>>>>> 36f8b905a3f60271ee6dc3a17c3ca431937287dc
+
+<!---HONumber=Nov15_HO2-->

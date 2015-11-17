@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwenden von Bewertungsprofilen in Azure Search" 
-	description="Erste Schritte mit Wertungsprofilen in Azure Search" 
+	pageTitle="Verwenden von Bewertungsprofilen in Azure Search| Microsoft Azure" 
+	description="Optimieren Sie die Suchrangfolge mithilfe von Bewertungsprofilen in Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="09/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 # Verwenden von Bewertungsprofilen in Azure Search
@@ -126,4 +126,4 @@ Sie möchten einen Schritt zurückgehen und mehr über die Erstellung eines Inde
 [10]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX1.PNG
 [9]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX2.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

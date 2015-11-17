@@ -178,7 +178,7 @@ Hier finden Sie die Definition des Beispiels „Mit Azure Data Lake-Speicher ver
 	    "properties": {
 	        "type": "AzureDataLakeStore",
 	        "typeProperties": {
-	            "dataLakeUri": "https://<accountname>.azuredatalake.net/webhdfs/v1",
+	            "dataLakeUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
 				"sessionId": "<session ID>",
 	            "authorization": "<authorization URL>"
 	        }
@@ -187,4 +187,4 @@ Hier finden Sie die Definition des Beispiels „Mit Azure Data Lake-Speicher ver
 
 Eine Beschreibung der in den oben gezeigten JSON-Ausschnitten zum Thema „Verknüpfte Dienste und Datasets mit Azure Data Lake-Speicher“ verwendeten JSON-Eigenschaften finden Sie unter [Verschieben von Daten zu und von Azure Data Lake-Speicher](data-factory-azure-datalake-connector.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

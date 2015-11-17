@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwalten Ihres Suchdiensts in Microsoft Azure | Microsoft Azure" 
-	description="Verwalten Ihres Suchdiensts in Microsoft Azure" 
+	description="Verwalten von Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst" 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -14,12 +14,12 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="09/08/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 # Verwalten Ihres Suchdiensts in Microsoft Azure
 
-Azure Search ist ein cloudbasierter Dienst und eine HTTP-basierte API, die Sie in eigenen Suchanwendungen verwenden können. Unser Suchdienst bietet ein Modul für Volltextsuche, Textanalyse, erweiterte Suchfunktionen, Speicherung von Suchdaten und eine Befehlssyntax für Abfragen.
+Azure Search ist ein cloudbasierter Dienst mit einer HTTP-basierten API, die Sie in eigenen Suchanwendungen verwenden können. Unser Suchdienst bietet ein Modul für Volltextsuche, Textanalyse, erweiterte Suchfunktionen, Speicherung von Suchdaten und eine Befehlssyntax für Abfragen.
 
 In diesem Artikel wird die Verwaltung eines Suchdiensts im [Azure-Portal](https://portal.azure.com) erläutert.
 
@@ -36,7 +36,7 @@ Die Standardsuche ist kostenpflichtig, da Sie sich für fest zugeordnete Ressour
 
 Wir empfehlen die folgenden Links für die Kapazitätsplanung und zum Verständnis der entstehenden Kosten:
 
-+	[Limits und Einschränkungen](http://msdn.microsoft.com/library/dn798934.aspx)
++	[Limits und Einschränkungen](search-limits-quotas-capacity.md)
 +	[Preisübersicht](http://go.microsoft.com/fwlink/p/?LinkdID=509792)
 
 Wenn Sie sich anmelden möchten, finden Sie entsprechende Informationen unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
@@ -102,7 +102,7 @@ Im Bereich Nutzung im Dienst-Dashboard können Sie direkt ablesen, ob die Partit
 
 Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf dem Tarif. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
-+	[Abrufen von Indexstatistiken](http://msdn.microsoft.com/library/dn798942.aspx)
++	Abrufen von Indexstatistiken
 +	[Dokumentenanzahl](http://msdn.microsoft.com/library/dn798924.aspx)
 
 > [AZURE.NOTE]Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt.
@@ -193,4 +193,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

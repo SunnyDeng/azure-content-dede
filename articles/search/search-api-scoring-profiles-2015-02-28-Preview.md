@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Bewertungsprofile (Azure Search-REST-API Version 2015-02-28-Preview) | Microsoft Azure"
-	description="Bewertungsprofile (Azure Search REST-API Version 2015-02-28-Preview)"
+	description="Azure Search ist ein gehosteter Cloudsuchdienst, der die Optimierung der Rangfolge von Ergebnissen basierend auf benutzerdefinierten Bewertungsprofilen unterstützt."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.author="heidist"
-	ms.date="10/01/2015" />
+	ms.date="11/04/2015" />
 
 # Bewertungsprofile (Azure Search REST-API Version 2015-02-28-Preview)
 
@@ -371,4 +371,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 <!--Image references-->
 [1]: ./media/search-api-scoring-profiles-2015-02-28-Preview/scoring_interpolations.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

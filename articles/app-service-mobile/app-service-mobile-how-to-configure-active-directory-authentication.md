@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.date="10/29/2015" 
 	ms.author="mahender"/>
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Azure Active Directory-Anmeldung
@@ -73,6 +73,5 @@ Authentifizieren von Benutzern Ihrer mobilen App mit Azure Active Directory für
 [Vorschau auf das Azure-Verwaltungsportal]: https://portal.azure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [ios-adal]: ../app-service-mobile-xamarin-ios-aad-sso.md
- 
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

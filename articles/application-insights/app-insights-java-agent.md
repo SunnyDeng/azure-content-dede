@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/09/2015" 
+	ms.date="11/03/2015" 
 	ms.author="awills"/>
  
 # Überwachen von Abhängigkeiten, Ausnahmen und Ausführungszeiten in Java-Web-Apps
@@ -33,7 +33,7 @@ Um den Java-Agent zu verwenden, installieren Sie ihn auf Ihrem Server. Ihre Web-
 
 ## Installieren des Application Insights-Agents für Java
 
-1. Laden Sie auf dem Computer, auf dem Ihr Java-Server ausgeführt wird, [den Agent herunter](http://go.microsoft.com/fwlink/?LinkId=618633).
+1. Laden Sie auf dem Computer, auf dem Ihr Java-Server ausgeführt wird, [den Agent herunter](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.html).
 2. Bearbeiten Sie das Startskript des Anwendungsservers, und fügen Sie die folgende JVM hinzu:
 
     `javaagent:`*Vollständiger Pfad der JAR-Datei des Agents*
@@ -122,4 +122,4 @@ Um nach den einzelnen Instanzen der Abhängigkeits-, Ausnahmen- und Methodenberi
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

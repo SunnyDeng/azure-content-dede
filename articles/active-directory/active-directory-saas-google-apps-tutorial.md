@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/15/2015"
+   ms.date="11/01/2015"
    ms.author="liviodlc"/>
 
 #Tutorial: Integrieren von Google Apps in Azure Active Directory
@@ -26,13 +26,19 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 2. Sie benötigen einen gültigen Mandanten für [Google Apps for Work](https://www.google.com/work/apps/) oder [Google Apps for Education](https://www.google.com/edu/products/productivity-tools/). Sie können ein kostenloses Testkonto für einen der Dienste verwenden.
 
+##Videotutorial
+
+So aktivieren Sie das einmalige Anmelden bei Google Apps in zwei Minuten
+
+> [AZURE.VIDEO enable-single-sign-on-to-google-apps-in-2-minutes-with-azure-ad]
+
 ##Schritt 1: Hinzufügen von Google Apps zu Ihrem Verzeichnis
 
-1. Klicken Sie im linken Navigationsbereich des [Azure-Verwaltungsportals](https://manage.windowsazure.com) auf **Active Directory**.
+1. Klicken Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) im linken Navigationsbereich auf **Active Directory**.
 
 	![Wählen Sie im linken Navigationsbereich "Active Directory".][0]
 
-2. Wählen Sie aus der Liste **Verzeichnis** das Verzeichnis, dem Sie Google Apps hinzufügen möchten.
+2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis, dem Sie Google Apps hinzufügen möchten.
 
 3. Klicken Sie im oberen Menü auf **Anwendungen**.
 
@@ -46,7 +52,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	![Klicken Sie auf "Anwendung aus dem Katalog hinzufügen".][3]
 
-6. Geben Sie im **Suchfeld** **Google Apps** ein. Wählen Sie dann **Google Apps** aus den Ergebnissen, und klicken Sie auf **Fertig stellen**, um die Anwendung hinzufügen.
+6. Im **Suchfeld** geben Sie **Google Apps** ein. Wählen Sie dann **Google Apps** aus den Ergebnissen, und klicken Sie auf **Fertig stellen**, um die Anwendung hinzufügen.
 
 	![Fügen Sie Google Apps hinzu.][4]
 
@@ -56,7 +62,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 ##Schritt 2: Aktivieren der einmaligen Anmeldung
 
-1. Klicken Sie in Azure AD auf der Seite "Schnellstart" für Google Apps auf die Schaltfläche **Einmaliges Anmelden konfigurieren**.
+1. Klicken Sie in Azure AD auf der Seite „Schnellstart“ für Google Apps auf die Schaltfläche **Einmaliges Anmelden konfigurieren**.
 
 	![Schaltfläche zum Konfigurieren der einmaligen Anmeldung][6]
 
@@ -64,11 +70,51 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	![Wählen Sie "Azure AD – einmaliges Anmelden".][7]
 
-	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
+	> [AZURE.NOTE]Weitere Informationen zu den verschiedenen Optionen für einmaliges Anmelden finden Sie [hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
 
 3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Anmelde-URL** Ihre Google Apps-Mandanten-URL im folgenden Format ein: `https://mail.google.com/a/<yourdomain>`
 
 	![Geben Sie Ihre Mandanten-URL ein.][8]
+
+4. Geben Sie auf der Seite **Einmaliges Anmelden automatisch konfigurieren** die Domäne für Ihren Google Apps-Mandanten ein. Klicken Sie auf dann die Schaltfläche **Konfigurieren**.
+
+	![Geben Sie Ihren Domänennamen ein, und klicken Sie auf „Konfigurieren“.](./media/active-directory-saas-google-apps-tutorial/ga-auto-config.png)
+
+	> [AZURE.NOTE]Wenn Sie das einmalige Anmelden lieber manuell konfigurieren möchten, finden Sie entsprechende Informationen unter [Optionaler Schritt: Manuelles Konfigurieren des einmaligen Anmeldens](#optional-step-manually-configure-single-sign-on)
+
+5. Melden Sie sich mit Ihrem Google Apps-Administratorkonto an. Klicken Sie dann auf **Zulassen**, um zu erlauben, dass Azure Active Directory Konfigurationsänderungen an Ihrem Google Apps-Abonnement vornimmt.
+
+	![Geben Sie Ihren Domänennamen ein, und klicken Sie auf „Konfigurieren“.](./media/active-directory-saas-google-apps-tutorial/ga-consent.PNG)
+
+6. Warten Sie einige Sekunden, bis Azure Active Directory Ihren Google Apps-Mandanten konfiguriert hat. Klicken Sie nach Abschluss dieses Vorgangs auf **Weiter**.
+
+10. Geben Sie auf der letzten Seite des Dialogfelds eine E-Mail-Adresse ein, wenn Sie per E-Mail Fehler- und Warnmeldungen im Zusammenhang mit der Wartung dieser Konfiguration für das einmalige Anmelden erhalten möchten.
+
+	![Geben Sie Ihre E-Mail-Adresse ein.][14]
+
+11. Klicken Sie auf **Fertig stellen**, um das Dialogfeld zu schließen. Weiter unten im Abschnitt [Zuweisen von Benutzern zu Google Apps](#step-4-assign-users-to-google-apps) erfahren Sie, wie Sie Ihre Konfiguration testen können.
+
+##Optionaler Schritt: Manuelles Konfigurieren des einmaligen Anmeldens
+
+Wenn Sie das einmalige Anmelden lieber manuell einrichten möchten, führen Sie die folgenden Schritte aus:
+
+1. Klicken Sie in Azure AD auf der Seite „Schnellstart“ für Google Apps auf die Schaltfläche **Einmaliges Anmelden konfigurieren**.
+
+	![Schaltfläche "Einmaliges Anmelden konfigurieren"][6]
+
+2. Ein Dialogfeld wird geöffnet, und Sie sehen einen Bildschirm mit der Frage: "Wie sollen sich Benutzer bei Google Apps anmelden?" Wählen Sie **Azure AD – einmaliges Anmelden**, und klicken Sie dann auf **Weiter**.
+
+	![Wählen Sie "Azure AD – einmaliges Anmelden".][7]
+
+	> [AZURE.NOTE]Weitere Informationen zu den verschiedenen Optionen für einmaliges Anmelden finden Sie [hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
+
+3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Anmelde-URL** Ihre Google Apps-Mandanten-URL im folgenden Format ein: `https://mail.google.com/a/<yourdomain>`
+
+	![Geben Sie Ihre Mandanten-URL ein.][8]
+
+4. Aktivieren Sie auf der Seite **Einmaliges Anmelden automatisch konfigurieren** das Kontrollkästchen **Diese Anwendung manuell für einmaliges Anmelden konfigurieren**. Klicken Sie auf **Weiter**.
+
+	![Wählen Sie die manuelle Konfiguration aus.](./media/active-directory-saas-google-apps-tutorial/ga-auto-skip.PNG)
 
 4. Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Google Apps** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat lokal auf Ihrem Computer.
 
@@ -100,11 +146,11 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	- Klicken Sie auf **Änderungen speichern**.
 
-9. Aktivieren Sie in Azure AD das Kontrollkästchen zur Bestätigung der Konfiguration der einmaligen Anmeldung, um das in Google Apps hochgeladene Zertifikat zu aktivieren. Klicken Sie auf **Weiter**.
+9. Aktivieren Sie in Azure AD das Kontrollkästchen zur Bestätigung der Konfiguration der einmaligen Anmeldung, um das in Google Apps hochgeladene Zertifikat zu aktivieren. Klicken Sie auf **Next**.
 
 	![Aktivieren Sie das Kontrollkästchen zur Bestätigung.][13]
 
-10. Geben Sie auf der letzten Seite des Dialogfelds eine E-Mail-Adresse ein, wenn Sie per E-Mail Fehler- und Warnmeldungen im Zusammenhang mit der Wartung dieser Konfiguration für die einmalige Anmeldung erhalten möchten.
+10. Geben Sie auf der letzten Seite des Dialogfelds eine E-Mail-Adresse ein, wenn Sie per E-Mail Fehler- und Warnmeldungen im Zusammenhang mit der Wartung dieser Konfiguration für das einmalige Anmelden erhalten möchten.
 
 	![Geben Sie Ihre E-Mail-Adresse ein.][14]
 
@@ -126,11 +172,11 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	![Klicken Sie auf "API-Referenz".][16]
 
-	> [AZURE.IMPORTANT]Für jeden Benutzer, den Sie für Google Apps bereitstellen möchten, *muss* der Benutzername in Azure Active Directory an eine benutzerdefinierte Domäne gebunden werden. Benutzernamen, die z. B. wie bob@contoso.onmicrosoft.com aussehen, werden von Google Apps nicht akzeptiert, während bob@contoso.com akzeptiert wird. Sie können die Domäne eines vorhandenen Benutzers ändern, indem Sie seine Eigenschaften in Azure AD bearbeiten. Anweisungen zum Festlegen einer benutzerdefinierten Domäne für Azure Active Directory und Google Apps sind unten aufgeführt.
+	> [AZURE.IMPORTANT]Für jeden Benutzer, den Sie für Google Apps bereitstellen möchten, *muss* der Benutzername in Azure Active Directory an eine benutzerdefinierte Domäne gebunden werden. Benutzernamen, die z. B. wie bob@contoso.onmicrosoft.com aussehen, werden von Google Apps nicht akzeptiert, während bob@contoso.com akzeptiert wird. Sie können die Domäne eines vorhandenen Benutzers ändern, indem Sie seine Eigenschaften in Azure AD bearbeiten. Anweisungen zum Festlegen einer benutzerdefinierten Domäne für Azure Active Directory und Google Apps sind unten aufgeführt.
 
 4. Wenn Sie Ihrem Azure Active Directory noch keinen benutzerdefinierten Domänennamen hinzugefügt haben, führen Sie die folgenden Schritte aus:
 
-	- Klicken Sie im linken Navigationsbereich des [Azure-Verwaltungsportals](https://manage.windowsazure.com) auf **Active Directory**. Wählen Sie in der Verzeichnisliste Ihr Verzeichnis aus. 
+	- Klicken Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) im linken Navigationsbereich auf **Active Directory**. Wählen Sie in der Verzeichnisliste Ihr Verzeichnis aus. 
 
 	- Klicken Sie im Menü der obersten Ebene auf **Domänen**, und klicken Sie dann auf **Benutzerdefinierte Domäne hinzufügen**.
 
@@ -176,11 +222,11 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	> [AZURE.NOTE]Wenn Sie eine Produktionsumgebung konfigurieren, sollten Sie speziell für diesen Schritt ein neues Administratorkonto in Google Apps erstellen. Diesem Konto muss eine Administratorrolle zugeordnet sein, die über die erforderlichen API-Berechtigungen verfügt.
 
-8. Klicken Sie in Azure Active Directory im Menü der obersten Ebene auf **Anwendungen**, und klicken Sie dann auf**Google Apps**.
+8. Klicken Sie in Azure Active Directory im Menü der obersten Ebene auf **Anwendungen**, und klicken Sie dann auf **Google Apps**.
 
 	![Klicken Sie auf "Google Apps".][23]
 
-9. Klicken Sie auf der Seite "Schnellstart" für Google Apps auf **Benutzerbereitstellung konfigurieren**.
+9. Klicken Sie auf der Seite „Schnellstart“ für Google Apps auf **Benutzerbereitstellung konfigurieren**.
 
 	![Konfigurieren der Benutzerbereitstellung][24]
 
@@ -198,11 +244,11 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 1. Um Ihre Konfiguration zu testen, beginnen Sie mit dem Erstellen eines neuen Testkontos im Verzeichnis.
 
-2. Klicken Sie auf der Seite "Schnellstart" für Google Apps auf die Schaltfläche **Benutzer zuweisen**.
+2. Klicken Sie auf der Seite „Schnellstart“ für Google Apps auf die Schaltfläche **Benutzer zuweisen**.
 
 	![Klicken Sie auf "Benutzer zuweisen".][29]
 
-3. Wählen Sie Ihren Testbenutzer, und klicken Sie am unteren Bildschirmrand auf die Schaltfläche **Zuweisen**:
+3. Wählen Sie Ihren Testbenutzer aus, und klicken Sie am unteren Bildschirmrand auf die Schaltfläche **Zuweisen**:
 
  - Wenn Sie die automatisierte Benutzerbereitstellung nicht aktiviert haben, werden Sie aufgefordert, Folgendes zu bestätigen:
 
@@ -246,4 +292,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 [29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
 [30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

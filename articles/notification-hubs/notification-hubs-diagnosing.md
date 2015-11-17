@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.date="10/27/2015" 
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs - Diagnoserichtlinien
@@ -85,7 +85,7 @@ Sobald eine Benachrichtigung vom entsprechenden PNS empfangen wurde, ist dieser 
 
 Wenn ein PNS versucht, eine Benachrichtigung zu übermitteln, das Gerät aber offline ist, wird die Benachrichtigung vom PNS für einen begrenzten Zeitraum gespeichert und an das Gerät gesendet, wenn es wieder verfügbar ist. Nur eine letzte Benachrichtigung für eine bestimmte App wird gespeichert. Werden mehrere Benachrichtigungen gesendet, während das Gerät offline ist, bewirkt jede neue Benachrichtigung, dass die vorherige Benachrichtigung verworfen wird. Dieses Verhalten, bei dem nur die neueste Benachrichtigung beibehalten wird, wird in APNS als „coalescing notifications“ (zusammenwachsende Benachrichtigungen) und in GCM (in dem ein reduzierbarer Schlüssel verwendet wird) als „collapsing“ (reduzierend) bezeichnet. Wenn das Gerät über einen längeren Zeitraum offline bleibt, werden alle für das Gerät gespeicherten Benachrichtigungen verworfen. Quellen: [APNS-Richtlinien] und [GCM-Richtlinien]
 
-Mit Azure Notification Hubs können Sie einen zusammenwachsenden Schlüssel (coalescing key) über einen HTTP-Header mit der generischen `SendNotification`-API (z. B. für .NET SDK – `SendNotificationAsync`) übergeben, die auch HTTP-Header akzeptiert, die unverändert an den entsprechenden PNS übergeben werden.
+Mit Azure Notification Hubs können Sie einen zusammengeführten Schlüssel über einen HTTP-Header mit der generischen `SendNotification`-API (z. B. für .NET SDK – `SendNotificationAsync`) übergeben, die auch HTTP-Header akzeptiert, die unverändert an den entsprechenden PNS übergeben werden.
 
 ##Tipps für eigene Diagnosen
 
@@ -115,7 +115,7 @@ Im Folgenden werden die verschiedenen Möglichkeiten vorgestellt, wie Benachrich
 
 	![][8]
  
-	> [AZURE.NOTE]Die Visual Studio-Funktionen zum Bearbeiten von Registrierungen sollten nur beim Entwickeln/Testen mit begrenzter Anzahl von Registrierungen verwendet werden. Wenn es erforderlich wird, Ihre Registrierungen in einem Sammelvorgang zu korrigieren, bietet es sich an, die Export/Import-Registrierungsfunktionalität zu verwenden, die unter [Registrierungen exportieren/importieren] beschrieben ist (nur auf der Stufe „Standard“ verfügbar).
+	> [AZURE.NOTE]Die Visual Studio-Funktionen zum Bearbeiten von Registrierungen sollten nur beim Entwickeln/Testen mit begrenzter Anzahl von Registrierungen verwendet werden. Wenn es erforderlich wird, Ihre Registrierungen in einem Sammelvorgang zu korrigieren, bietet es sich an, die Export/Import-Registrierungsfunktionalität zu verwenden, die unter [Registrierungen exportieren/importieren](https://msdn.microsoft.com/library/dn790624.aspx) beschrieben ist.
 
 2. **Service Bus-Explorer**
 
@@ -228,7 +228,7 @@ Ausführlichere Informationen finden Sie hier:
 [Anleitung für Vorlagen]: https://msdn.microsoft.com/library/dn530748.aspx
 [APNS-Richtlinien]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW4
 [GCM-Richtlinien]: http://developer.android.com/google/gcm/adv.html
-[Registrierungen exportieren/importieren]: http://msdn.microsoft.com/library/dn790624.aspx
+[Export/Import Registrations]: http://msdn.microsoft.com/library/dn790624.aspx
 [Service Bus-Explorer]: http://msdn.microsoft.com/library/dn530751.aspx
 [Service Bus Explorer-Code]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a
 [Übersicht über Visual Studio Server-Explorer]: http://msdn.microsoft.com/library/windows/apps/xaml/dn792122.aspx
@@ -240,4 +240,4 @@ Ausführlichere Informationen finden Sie hier:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

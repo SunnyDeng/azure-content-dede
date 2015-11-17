@@ -31,11 +31,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
 - **Aktivieren Ihres Azure-Abonnements** für die öffentliche Vorschauversion von Data Lake-Speicher. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
-- **Azure PowerShell 1.0 oder höher**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Nach der Installation von Azure PowerShell 1.0 oder höher sollte das folgende Cmdlet ausgeführt werden, um das Azure Data Lake-Speichermodul zu installieren.
-
-		Install-Module AzureRM.DataLakeStore
-
-	Weitere Informationen zum **AzureRM.DataLakeStore**-Modul finden Sie in der [PowerShell Gallery](http://www.powershellgallery.com/packages/AzureRM.DataLakeStore) (in englischer Sprache).
+- **Azure PowerShell 1.0**. Sie können die Installation von [hier](https://github.com/MicrosoftBigData/AzureDataLake/releases/download/AzurePowerShell_2015_10_30/AzurePowerShell.msi) durchführen.
 
 ## Erstellen eines Azure Data Lake-Speicherkontos
 
@@ -143,4 +139,4 @@ Geben Sie nach entsprechender Aufforderung **Y** ein, um das Konto zu löschen.
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

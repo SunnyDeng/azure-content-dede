@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="10/30/2015"
 	ms.author="femila"/>
 
 # Bedingter Zugriff unter Azure – Vorschau für SaaS-Apps
@@ -55,7 +55,7 @@ Standardmäßig gilt die Richtlinie für alle Benutzer, die auf die Anwendung zu
 
 Sicherheitsgruppen können auch explizit von der Richtlinie ausgeschlossen werden, indem Sie die Ausnahmeoption aktivieren und eine oder mehrere Gruppen angeben. Benutzer, die Mitglied einer Gruppe in der Ausnahmenliste sind, unterliegen nicht der Pflicht zur mehrstufigen Authentifizierung, selbst wenn sie einer Gruppe angehören, für die die Regel gilt. Die unten gezeigte Zugriffsregel verlangt von allen Benutzern in der Manager-Gruppe, dass sie über die mehrstufige Authentifizierung auf die Anwendung zugreifen.
 
-![Festlegen bedingter Zugriffsregeln mit MFA](./media/active-directory-conditional-access/conditionalaccess-saas-apps.jpg)
+![Festlegen bedingter Zugriffsregeln mit MFA](./media/active-directory-conditional-access/conditionalaccess-saas-apps.png)
 
 ##Bedingte Zugriffsregeln mit MFA
 Wenn ein Benutzer mit dem benutzerspezifischen Feature der mehrstufigen Authentifizierung konfiguriert wurde, hat diese Einstellung für den Benutzer Vorrang vor den Regeln für die mehrstufige Authentifizierung auf App-Basis. Dies bedeutet, dass ein Benutzer, für den die benutzerspezifische mehrstufige Authentifizierung konfiguriert wurde, auch dann die mehrstufige Authentifizierung ausführen muss, wenn er aus den anwendungsspezifischen Regeln für die mehrstufige Authentifizierung ausgenommen wurde. Hier erfahren Sie mehr über die mehrstufige Authentifizierung und benutzerspezifische Einstellungen.
@@ -86,4 +86,4 @@ Im folgenden Beispiel wird veranschaulicht, wie lokale MFA mithilfe des [Set-Mso
 
 Zusätzlich zum Festlegen dieses Kennzeichens muss die AD FS-Instanz des Verbundmandanten für die Ausführung der mehrstufigen Authentifizierung konfiguriert werden. Befolgen Sie die Anleitungen für die lokale Bereitstellung von Azure Multi-Factor Authentication.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

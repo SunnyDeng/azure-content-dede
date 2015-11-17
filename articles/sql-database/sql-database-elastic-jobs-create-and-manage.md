@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Erstellen und Verwalten von elastischen Datenbankaufträgen"
+	pageTitle="Erstellen und Verwalten von Aufträgen für elastische Datenbanken | Microsoft Azure"
 	description="Führen Sie die Schritte zur Erstellung und Verwaltung eines elastischen Datenbankauftrags aus."
 	services="sql-database"
 	documentationCenter=""
 	manager="jhubbard"
-	authors="sidneyh"
+	authors="ddove"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="11/04/2015"
 	ms.author="ddove; sidneyh"/>
 
 # Erstellen und Verwalten eines elastischen SQL-Datenbankauftrags im Portal (Vorschau)
@@ -115,4 +115,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -1,10 +1,10 @@
-<properties pageTitle="Azure Search-Verwaltungs-REST-API Version 2015-02-28" description="Azure Search-Verwaltungs-REST-API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
+<properties pageTitle="Azure Search-Verwaltungs-REST-API, Version 2015-02-28 | Microsoft Azure" description="Azure Search-Verwaltungs-REST-API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="09/16/2015" ms.author="heidist" />
+<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="11/04/2015" ms.author="heidist" />
 
 # Management-API: Version 2015-02-28
 
-Das vorliegende Dokument beschreibt die Version *2015-02-28** der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN.
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Das vorliegende Dokument beschreibt die Version *2015-02-28** der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN.
 
 ##Dienstverwaltungsvorgänge
 
@@ -812,4 +812,4 @@ Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 Keine.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

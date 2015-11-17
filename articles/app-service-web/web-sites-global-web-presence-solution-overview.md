@@ -33,9 +33,9 @@ Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten
 
 Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Websites erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
 
-Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), wie z. B. [Orchard], [Umbraco], Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
+Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), wie z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
 
-Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Online] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungssystemen, wie z. B. [Visual Studio], [Visual Studio Online] und [Git] (lokal), GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Zuverlässig veröffentlichen
 
@@ -49,7 +49,7 @@ Wenn Sie Änderungen an einer bereits veröffentlichten Website vornehmen möcht
 
 Verwenden Sie die kostenlose App Service-Web-App-Domäne, oder nehmen Sie zu eine Zuordnung zu Ihrem registrierten Domänennamen vor, und sorgen Sie anschließend für Sicherheit mit einem von einer Zertifizierungsstelle signierten SSL-Zertifikat.
 
-Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Alternativ können Sie Ihre Website einer [benutzerdefinierten Domäne] (z. B. "contoso.com") zuordnen, die Sie von einer DNS-Registrierungsstelle (z. B. GoDaddy) bezogen haben.
+Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Alternativ können Sie Ihre Website einer [benutzerdefinierten Domäne] (z. B. „contoso.com“) zuordnen, die Sie von einer DNS-Registrierungsstelle wie z. B. GoDaddy bezogen haben.
 
 Wenn Sie Benutzerinformationen erfassen, E-Commerce betreiben oder andere sensible Daten verwalten, können Sie den Ruf Ihres Unternehmens und Ihre Kunden mit [HTTPS] schützen. Der Domänenname ***.azurewebsites.net** umfasst bereits ein SSL-Zertifikat, und wenn Sie eine benutzerdefinierte Domäne nutzen, können Sie Ihr SSL-Zertifikat in Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
@@ -97,8 +97,6 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
 [Azure App Service]: /services/app-service/web/
 
-[Orchard]: web-sites-dotnet-orchard-cms-gallery.md
-[Umbraco]: web-sites-gallery-umbraco.md
 [WordPress]: web-sites-php-web-site-gallery.md
 [MySQL]: web-sites-php-mysql-deploy-use-git.md
 [Azure SQL-Datenbank]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
@@ -139,4 +137,4 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

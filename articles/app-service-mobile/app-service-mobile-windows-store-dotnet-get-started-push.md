@@ -37,26 +37,19 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 * Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-windows-store-dotnet-get-started.md) ab.  
 
 
+##<a name="create-hub"></a>Erstellen eines Notification Hubs
 
-##<a name="create-gateway"></a>Erstellen eines Notification Hubs
-
-Um einen neuen Notification Hub zur Behandlung von Pushbenachrichtigungen zu erstellen, gehen Sie wie folgt vor. Wenn Sie bereits über ein Hub in derselben Ressourcengruppe verfügen, müssen Sie diesen Abschnitt nicht durchführen.
-
-1. Besuchen Sie das [Azure-Portal]. Klicken Sie auf **Alle durchsuchen** > **Mobile Apps** > Back-End, das Sie gerade erstellt haben. Klicken Sie auf **Einstellungen** > **Mobile** > **Push**. 
-
-2. Führen Sie die Schritte zum Erstellen eines Benachrichtigungshubs durch. Sie müssen einen neuen Namespace erstellen, wenn in der aktuellen Ressourcengruppe keiner vorhanden ist. Klicken Sie auf **Erstellen**, nachdem Sie alle Einstellungen konfiguriert haben.
-
-Als Nächstes verwenden Sie diesen Benachrichtigungshub, um Pushbenachrichtigungen für Ihre App zu aktivieren.
+[AZURE.INCLUDE [app-service-mobile-create-notification-hub](../../includes/app-service-mobile-create-notification-hub.md)]
 
 ##Registrieren der App für Pushbenachrichtigungen
 
 Bevor Sie Pushbenachrichtigungen von Azure an Ihre Windows-Apps senden können, müssen Sie Ihre App an den Windows Store übermitteln. Sie können dann das Serverprojekt zur Integration mit dem WNS konfigurieren.
 
-1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Windows Store-App-Projekt, und klicken Sie dann auf **Store** > **App mit Store verknüpfen...** 
+1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Windows Store-App-Projekt, und klicken Sie dann auf **Store** > **App mit Store verknüpfen...**. 
 
     ![Zuordnen der App zu Windows Store](./media/app-service-mobile-windows-store-dotnet-get-started-push/notification-hub-associate-win8-app.png)
     
-2. Klicken Sie im Assistenten auf **Weiter**, melden Sie sich mit Ihrem Microsoft-Konto an, geben Sie unter **App-Namen reservieren** einen Namen für Ihre App ein, und klicken Sie dann auf **Reservieren**.
+2. Klicken Sie im Assistenten auf **Weiter**, melden Sie sich mit Ihrem Microsoft-Konto an, geben Sie unter **Neuen App-Namen reservieren** einen Namen für Ihre App ein, und klicken Sie dann auf **Reservieren**.
 
 3. Nachdem die App-Registrierung erfolgreich erstellt wurde, wählen Sie den Namen der neuen App aus, klicken Sie auf **Weiter** und dann auf **Zuordnen**. Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.
 
@@ -84,9 +77,9 @@ Ihr Mobile-App-Back-End ist jetzt für die Zusammenarbeit mit WNS konfiguriert.
 
 Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr App-Back-End aktualisieren, um Pushbenachrichtigungen senden zu können.
 
-1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Serverprojekt, und klicken Sie auf **NuGet-Pakete verwalten**, und suchen Sie nach `Microsoft.Azure.NotificationHubs`. Klicken Sie anschließend auf **Installieren**. Dadurch wird die Notification Hubs-Clientbibliothek installiert.
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Serverprojekt, klicken Sie auf **NuGet-Pakete verwalten**, suchen Sie nach `Microsoft.Azure.NotificationHubs`, und klicken Sie anschließend auf **Installieren**. Dadurch wird die Notification Hubs-Clientbibliothek installiert.
 
-3. Öffnen Sie **Controller** > **TodoItemController.cs** im Serverprojekt, und fügen Sie die folgenden using-Anweisungen hinzu:
+3. Öffnen Sie im Serverprojekt **Controller** > **TodoItemController.cs**, und fügen Sie die folgenden using-Anweisungen hinzu:
 
 		using System.Collections.Generic;
 		using Microsoft.Azure.NotificationHubs;
@@ -141,11 +134,11 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 
     Daraufhin wird das Dialogfeld "NuGet-Pakete verwalten" angezeigt.
 
-2. Suchen Sie nach dem App Service Mobile App-Client-SDK für verwaltete Objekte, und klicken Sie auf **Installieren**. Wählen Sie alle Clientprojekte in der Mappe aus, und akzeptieren Sie die Nutzungsbedingungen.
+2. Suchen Sie nach der App Service Mobile App-Client-SDK für verwaltete Objekte, und klicken Sie auf **Installieren**. Wählen Sie alle Clientprojekte in der Mappe aus, und akzeptieren Sie die Nutzungsbedingungen.
 
     Auf diese Weise wird ein Verweis auf die Azure Mobile Push-Bibliothek für Windows heruntergeladen, installiert und allen Clientprojekten hinzugefügt.
 
-3. Öffnen Sie die freigegebene Projektdatei **App.xaml.cs**, und fügen Sie folgenden `using`-Anweisungen hinzu:
+3. Öffnen Sie die freigegebene Projektdatei **App.xaml.cs**, und fügen Sie folgende `using`-Anweisungen hinzu:
 
 		using System.Threading.Tasks;  
         using Windows.Networking.PushNotifications;       
@@ -162,7 +155,7 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
     
     Dieser Code ruft "ChannelURI" für die App aus WNS ab und registriert anschließend "ChannelURI" für Ihre mobile App Service-App.
     
-5. Fügen Sie in der Datei **App.xaml.cs** am Anfang des **OnLaunched**-Ereignishandlers den **async**-Modifizierer zur Methodendefinition hinzu, und fügen Sie den folgenden Aufruf wie im Beispiel unten zu der neuen **InitNotificationsAsync**-Methode hinzu:
+5. Fügen Sie in der Datei **App.xaml.cs** am Anfang des **OnLaunched**-Ereignishandlers den **Async**-Modifizierer der Methodendefinition hinzu, und fügen Sie den folgenden Aufruf wie im Beispiel unten der neuen **InitNotificationsAsync**-Methode hinzu:
 
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
@@ -192,4 +185,4 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 
 <!-- Images. -->
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

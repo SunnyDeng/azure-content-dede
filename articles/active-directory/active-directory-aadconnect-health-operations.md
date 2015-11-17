@@ -104,17 +104,16 @@ Berechtigungen werden erteilt, wenn ein Benutzer Zugriff auf Verzeichnisebene od
 
 ### So erteilen Sie Benutzern oder Gruppen Zugriff auf Azure AD Connect Health
 #### Schritt 1: Auswählen des entsprechenden Zugriffsbereichs
-Um einem Benutzer Zugriff auf *Verzeichnisebene* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br>
+Um einem Benutzer Zugriff auf der Ebene *Alle Dienstinstanzen* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br>
 [//]: # (RBAC\_MainBladeSS)
 #### Schritt 2: Hinzufügen von Benutzern und Gruppen sowie Zuweisen von Rollen
 1. Klicken Sie im Abschnitt "Konfigurieren" auf den Bereich "Benutzer".<br>
 ![Azure AD Connect Health RBAC Main Blade](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
 2. Wählen Sie "Hinzufügen" aus.
-3. Wählen Sie die "Rolle" aus.<br>
-![Azure AD Connect Health RBAC Add User ](./media/active-directory-aadconnect-health/RBAC_add.png)
-4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen.
-![Azure AD Connect Health RBAC Select User](./media/active-directory-aadconnect-health/RBAC_select_users.png)
-5. Wählen Sie "OK" aus.<br>
+3. Wählen Sie „Rolle“ aus, beispielsweise „Besitzer“<br> ![Azure AD Connect Health – RBAC Benutzer hinzufügen](./media/active-directory-aadconnect-health/RBAC_add.png)
+4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen. Klicken Sie auf „Auswählen“. 
+![Azure AD Connect Health – RBAC Benutzer auswählen](./media/active-directory-aadconnect-health/RBAC_select_users.png)
+5. Klicken Sie auf „OK“.<br>
 
 6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br>
 ![Azure AD Connect Health RBAC User List](./media/active-directory-aadconnect-health/RBAC_user_list.png)
@@ -139,8 +138,9 @@ Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung 
 ## Verwandte Links
 
 * [Azure AD Connect Health](active-directory-aadconnect-health.md)
-* [Azure AD Connect Health Agent-Installation für AD FS](active-directory-aadconnect-health-agent-install-adfs.md)
+* [Installieren des Azure AD Connect Health-Agents](active-directory-aadconnect-health-agent-install.md)
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
+* [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!----HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

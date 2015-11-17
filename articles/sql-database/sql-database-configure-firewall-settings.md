@@ -56,7 +56,7 @@ Firewallregeln auf Serverebene können über das Microsoft Azure-Verwaltungsport
 3. Firewallregeln auf Serverebene können innerhalb des Abfragefensters ausgewählt, erstellt, aktualisiert oder gelöscht werden.
 4. Führen Sie zum Erstellen oder Aktualisieren von Firewallregeln auf Serverebene die gespeicherte Prozedur "sp\_set\_firewall\_rule" aus. Im folgenden Beispiel wird ein Bereich von IP-Adressen auf dem Server "Contoso" aktiviert.<br/>Zeigen Sie zunächst die vorhandenen Regeln an.
 
-		SELECT * FROM sys.database_firewall_rules ORDER BY name;
+		SELECT * FROM sys.firewall_rules ORDER BY name;
 
 	Fügen Sie anschließend eine Firewallregel hinzu.
 
@@ -141,4 +141,4 @@ Ein Lernprogramm zum Erstellen einer Datenbank finden Sie unter [Erstellen einer
 [2]: ./media/sql-database-configure-firewall-settings/AzurePortalFirewallSettings.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="11/03/2015"  
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen
@@ -240,7 +240,7 @@ Weitere Aspekte im Zusammenhang mit der Arbeit mit Kanälen und zugehörigen Kom
 
 ##Erstellen von Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen
 
-Weitere Informationen zu lokalen Liveencodern finden Sie unter [Verwenden von Drittanbieter-Liveencodern mit Azure Media Services](https://msdn.microsoft.com/library/azure/dn783464.aspx).
+Weitere Informationen zu lokalen Liveencodern finden Sie unter [Verwenden von Drittanbieter-Liveencodern mit Azure Media Services](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/).
 
 Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Erstellen und Verwalten von Kanälen und Programmen zuzugreifen.
 
@@ -266,4 +266,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->

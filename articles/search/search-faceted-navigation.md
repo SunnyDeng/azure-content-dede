@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Implementieren der Facettennavigation in Azure Search" 
-	description="Facettennavigation in Azure Search" 
+	pageTitle="Implementieren der Facettennavigation in Azure Search | Microsoft Azure" 
+	description="Fügen Sie die Facettennavigation Anwendungen hinzu, die in Microsoft Azure integriert sind, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/07/2015" 
+	ms.date="11/04/2015" 
 	ms.author="heidist"/>
 
 #Implementieren der Facettennavigation in Azure Search
@@ -372,4 +372,4 @@ Weitere Einblicke in die Entwurfsprinzipien der Facettennavigation erhalten Sie 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

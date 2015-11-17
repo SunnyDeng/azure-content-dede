@@ -42,7 +42,7 @@ Ein Indizierungsauftrag kann die folgenden Ausgaben generieren:
 
 In diesem Thema wird das Erstellen von Indizierungsaufträgen zum **Indizieren eines Assets** und zum **Indizieren mehrerer Dateien** beschrieben.
 
-Die neuesten Updates zu Azure Media Indexer finden Sie in den [Media Services-Blogs](http://azure.microsoft.com/blog/topics/media-services/).
+Die neuesten Updates für Azure Media Indexer finden Sie in den [Media Services-Blogs](#preset).
 
 ## Verwenden von Konfigurations- und Manifestdateien für Indizierungsaufgaben
 
@@ -50,7 +50,7 @@ Sie können weitere Details für Ihre Indizierungsaufgaben mithilfe einer Aufgab
 
 Sie können auch mehrere Mediendateien gleichzeitig mithilfe einer Manifestdatei verarbeiten.
 
-Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
+Weitere Informationen finden Sie unter [Voreinstellungen für Azure Media Indexer](#).
 
 ## Indizieren eines Assets
 
@@ -143,43 +143,22 @@ Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wir
 	                                                   mediaProcessorName));
 
 	    return processor;
-	}
-
+	}  
+<!-- __ -->
 ### <a id="output_files"></a>Ausgabedateien
 
 Ein Indizierungsauftrag generiert standardmäßig die folgenden Ausgabedateien. Die Dateien werden im ersten Ausgabeasset gespeichert.
 
+Wenn mehrere Eingabemediendateien vorhanden sind, generiert Indexer die Manifestdatei „JobResult.txt“ für die Auftragsausgaben. Die sich daraus ergebenden AIB-, SAMI-, TTML-, WebVTT- und Stichwortdateien werden für jede Eingabemediendatei fortlaufend nummeriert und mithilfe des „Alias“ benannt.
 
-<table border="1">
-<tr><th>Dateiname</th><th>Beschreibung</th></tr>
-<tr><td>InputFileName.aib </td>
-<td>AIB (Audio Indexing Blob)-Datei<br/><br/>
-Die AIB (Ausgabeindizierungs-Blob)-Datei ist eine binäre Datei, die in Microsoft SQL Server mithilfe der Volltextsuche durchsucht werden kann. Die AIB-Datei ist leistungsfähiger als einfache Untertiteldateien, da sie Alternativen für jedes Wort enthält, was eine bessere Sucherfahrung ermöglicht.
-<br/>
-<br/>
-Sie erfordert die Installation des Indexer SQL-Add-Ons auf einem Computer unter Microsoft SQL Server 2008 oder höher. Das Durchsuchen der AIB-Datei mithilfe der Microsoft SQL Server-Volltextsuche bietet genauere Suchergebnisse als das Durchsuchen der mittels WAMI generierten Untertiteldateien. Der Grund hierfür ist, dass die AIB-Datei Wortalternativen enthält, die ähnlich klingen, wohingegen Untertiteldateien das höchste Konfidenzwort für jedes Segment der Audiospur enthalten. Wenn die Suche nach gesprochenen Wörtern von größter Wichtigkeit ist, dann empfiehlt sich die Verwendung der AIB-Datei zusammen mit Microsoft SQL Server.
-<br/><br/>
-Klicken Sie zum Herunterladen des Add-Ons auf <a href="http://aka.ms/indexersql">Azure Media Indexer-SQL-Add-On</a>.
-<br/><br/>
-Es ist auch möglich, andere Suchmaschinen wie Apache Lucene/Solr zu verwenden, um das Video einfach auf Basis der Untertitel- und Stichwort-XML-Dateien zu indizieren. Dies hat jedoch ungenauere Suchergebnisse zur Folge.</td></tr>
-<tr><td>InputFileName.smi<br/>InputFileName.ttml<br/>InputFileName.vtt</td>
-<td>Untertiteldateien (Closed Caption, CC) im SAMI-, TTML-, und WebVTT-Format.
-<br/><br/>
-Sie können verwendet werden, um Hörgeschädigten Audio- und Videodateien zugänglich zu machen.
-<br/><br/>
-Eine Untertiteldatei enthält ein Tag namens <b>Recognizability</b>, das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist. Sie können den Wert von <b>Recognizability</b> nutzen, um Ausgabedateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.</td></tr>
-<tr><td>InputFileName.kw.xml
-<br/>
-InputFileName.info
-</td>
-<td>Stichwort- und Informationsdateien.
-<br/><br/>
-Die Stichwortdatei ist eine XML-Datei, die Stichwörter enthält, welche aus dem Sprachinhalt mit Frequenz- und Abstandsinformationen extrahiert wurden.
-<br/><br/>
-Die Informationsdatei ist eine Nur-Text-Datei und enthält detaillierte Informationen zu jedem erkannten Begriff. Die erste Zeile unterscheidet sich von den anderen Zeilen und enthält die Bewertung für „Recognizability“. Jede nachfolgende Zeile ist eine tabstoppgetrennte Auflistung der folgenden Daten: Startzeit, Endzeit, Word/Ausdruck, Konfidenz. Die Zeiten sind in Sekunden und die Konfidenzwerte als Zahl zwischen 0 und 1 angegeben.  <br/><br/>Beispielzeile: „1.20 &#160;&#160;&#160;1.45 &#160;&#160;&#160;word &#160;&#160;&#160;0.67“
-<br/><br/>
-Diese Dateien können für unterschiedliche Zwecke verwendet werden, beispielsweise zum Ausführen einer Sprachanalyse. Zudem können sie für Suchmaschinen wie Bing, Google oder Microsoft SharePoint zur Verfügung gestellt werden, damit die Mediendateien leichter auffindbar sind, oder auch zum Bereitstellen wirkungsvollerer Werbeanzeigen verwendet werden.</td></tr>
-</table>
+Dateiname | Beschreibung
+----------|------------
+__InputFileName.aib__ | AIB (Audio Indexing Blob)-Datei <br /><br />Die Ausgabeindizierungs-Blob (AIB)-Datei ist eine binäre Datei, die in Microsoft SQL Server mithilfe der Volltextsuche durchsucht werden kann. Die AIB-Datei ist leistungsfähiger als einfache Untertiteldateien, da sie Alternativen für jedes Wort enthält, was eine bessere Sucherfahrung ermöglicht. <br/> <br/>Sie erfordert die Installation des Indexer SQL-Add-Ons auf einem Computer unter Microsoft SQL Server 2008 oder höher. Das Durchsuchen der AIB-Datei mithilfe der Microsoft SQL Server-Volltextsuche bietet genauere Suchergebnisse als das Durchsuchen der mittels WAMI generierten Untertiteldateien. Der Grund hierfür ist, dass die AIB-Datei Wortalternativen enthält, die ähnlich klingen, wohingegen Untertiteldateien das höchste Konfidenzwort für jedes Segment der Audiospur enthalten. Wenn die Suche nach gesprochenen Wörtern sehr wichtig ist, dann empfiehlt sich die Verwendung der AIB-Datei zusammen mit Microsoft SQL Server.<br/><br/> Klicken Sie zum Herunterladen des Add-Ons auf <a href="http://aka.ms/indexersql">Azure Media Indexer-SQL-Add-On</a>. <br/><br/>Es ist auch möglich, andere Suchmaschinen wie Apache Lucene/Solr zu verwenden, um das Video einfach auf Basis der Untertitel- und Stichwort-XML-Dateien zu indizieren. Dies hat jedoch ungenauere Suchergebnisse zur Folge.
+__InputFileName.smi__<br />\_\_InputFileName.ttml\_\_<br />\_\_InputFileName.vtt\_\_ |Untertiteldateien (Closed Caption, CC) im SAMI-, TTML-, und WebVTT-Format.<br/><br/>Sie können verwendet werden, um Hörgeschädigten Audio- und Videodateien zugänglich zu machen.<br/><br/>Untertiteldateien enthalten ein Tag namens <b>Recognizability</b>, das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist. Sie können den Wert von <b>Recognizability</b> nutzen, um Dateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.
+__InputFileName.kw.xml<br />InputFileName.info__ |Stichwort- und Informationsdateien. <br/><br/>Die Stichwortdatei ist eine XML-Datei, die Stichwörter enthält, welche aus dem Sprachinhalt mit Frequenz- und Abstandsinformationen extrahiert wurden. <br/><br/>Die Informationsdatei ist eine Nur-Text-Datei und enthält detaillierte Informationen zu jedem erkannten Begriff. Die erste Zeile unterscheidet sich von den anderen Zeilen und enthält die Bewertung für „Recognizability“. Jede nachfolgende Zeile ist eine tabstoppgetrennte Auflistung der folgenden Daten: Startzeit, Endzeit, Word/Ausdruck, Konfidenz. Die Zeiten sind in Sekunden und die Konfidenzwerte als Zahl zwischen 0 und 1 angegeben. <br/><br/>Beispielzeile: „1.20 1.45 word 0.67“ <br/><br/>Diese Dateien können für unterschiedliche Zwecke verwendet werden, beispielsweise zum Ausführen einer Sprachanalyse. Zudem können sie Suchmaschinen wie Bing, Google oder Microsoft SharePoint zur Verfügung gestellt werden, damit die Mediendateien leichter auffindbar sind, oder auch zum Bereitstellen wirkungsvollerer Werbeanzeigen verwendet werden.
+__JobResult.txt__ |Ausgabemanifest, nur beim Indizieren mehrerer Dateien vorhanden, enthält die folgenden Informationen:<br/><br/><table border="1"><tr><th>InputFile</th><th>Alias</th><th>MediaLength</th><th>Error</th></tr><tr><td>a.mp4</td><td>Media\_1</td><td>300</td><td>0</td></tr><tr><td>b.mp4</td><td>Media\_2</td><td>0</td><td>3000</td></tr><tr><td>c.mp4</td><td>Media\_3</td><td>600</td><td>0</td></tr></table><br/>
+
+
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
@@ -187,7 +166,7 @@ Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht de
 
 Mit der folgenden Methode werden mehrere Mediendateien als Asset hochgeladen und ein Auftrag zum Indizieren all dieser Dateien in einem Batch erstellt.
 
-Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Asset hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Assetdateien. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
+Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Asset hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Assetdateien. Weitere Informationen finden Sie unter [Voreinstellungen für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
 	static bool RunBatchIndexingJob(string[] inputMediaFiles, string outputFolder)
 	{
@@ -262,49 +241,6 @@ Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Asset hoc
 	    return asset;
 	}
 
-
-### Ausgabedateien
-
-Wenn mehrere Eingabemediendateien vorhanden sind, generiert Indexer die Manifestdatei „JobResult.txt“ für die Auftragsausgaben. Die sich daraus ergebenden AIB-, SAMI-, TTML-, WebVTT- und Stichwortdateien werden für jede Eingabemediendatei sequenziell nummeriert, wie dies im Folgenden aufgelistet ist.
-
-Beschreibungen der Ausgabedateien finden Sie unter [Ausgabedateien](#output_files).
-
-
-<table border="1">
-<tr><th>Dateiname</th><th>Beschreibung</th></tr>
-<tr><td>JobResult.txt</td>
-<td>Ausgabemanifest
-<br/><br/>Im Folgenden finden Sie das Format der Ausgabemanifestdatei („JobResult.txt“).
-<br/><br/>
-
-<table border="1">
-<tr><th>InputFile</th><th>Alias</th><th>MediaLength</th><th>Fehler</th></tr>
-<tr><td>a.mp4</td><td>Media_1</td><td>300</td><td>0</td></tr>
-<tr><td>b.mp4</td><td>Media_2</td><td>0</td><td>3000</td></tr>
-<tr><td>c.mp4</td><td>Media_3</td><td>600</td><td>0</td></tr>
-</table><br/>
-Jede Zeile stellt eine Eingabemediendatei dar:
-<br/><br/>
-InputFile: Assetdateiname oder URL der Eingabemediendatei.
-<br/><br/>
-Alias: Entsprechender Ausgabedateiname.
-<br/><br/>
-MediaLength: Länge der Eingabemediendatei in Sekunden. Kann 0 sein, wenn ein Fehler bei dieser Eingabe auftritt.
-<br/><br/>
-Fehler: Gibt an, ob diese Mediendatei erfolgreich indiziert wurde. 0 für Erfolg, ansonsten fehlerhaft. Informationen zu einzelnen Fehlern finden Sie unter <a href="#error_codes">Fehlercodes</a>.
-</td></tr>
-<tr><td>Media_1.aib </td>
-<td>Datei #0 - AIB-Datei</td></tr>
-<tr><td>Media_1.smi<br/>Media_1.ttml</td>
-<td>Datei #0 - Untertiteldateien (Closed Caption, CC) im SAMI-, TTML-, und WebVTT-Format.</td></tr>
-<tr><td>Media_1.kw.xml</td>
-<td>Datei #0 - Stichwortdatei</td></tr>
-<tr><td>Media_2.aib </td>
-<td>Datei 1 - AIB-Datei</td></tr>
-</table>
-
-Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
-
 ### Teilweise erfolgreicher Auftrag
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
@@ -312,36 +248,40 @@ Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht de
 
 Es werden die gleichen Ausgaben (wie bei erfolgreichen Aufträgen) generiert. Sie können anhand der Ausgabemanifestdatei feststellen, welche Eingabedateien gemäß den Werten in der Fehlerspalte fehlerhaft sind. Bei fehlerhaften Eingabedateien werden KEINE AIB-, SAMI-, TTML-, WebVTT- und Stichwortdateien generiert.
 
+### <a id="preset"></a> Aufgabenvoreinstellungen für Azure Media Indexer
+
+Die Verarbeitung von Azure Media Indexer kann angepasst werden, indem zusätzlich zur Aufgabe eine optionale Aufgabenvoreinstellung bereitgestellt wird. Im Folgenden wird das Format dieser XML-Konfigurationsdatei beschrieben.
+
+Name | Anforderung | Beschreibung
+----|----|---
+__input__ | false | Medienobjektdateien, die Sie indizieren möchten.</p><p>Azure Media Indexer unterstützt die folgenden Mediendateiformate: MP4, WMV, MP3, M4A, WMA, AAC, WAV.</p><p>Sie können Sie den Dateinamen im Attribut **name** oder **list** des Elements **input** (siehe unten) spezifizieren. Wenn keine Medienobjektdatei zum Indizieren festgelegt ist, wird automatisch die Primärdatei ausgewählt. Wenn keine primäre Medienobjektdatei festgelegt ist, wird die erste Datei im Eingabemedienobjekt indiziert.</p><p>Den Namen der Medienobjektdatei geben Sie folgendermaßen explizit an:<br />`<input name="TestFile.wmv">`<br /><br />Sie können Sie auch mehrere (bis zu 10) Medienobjektdateien gleichzeitig indizieren. Gehen Sie hierfür folgendermaßen vor:<br /><br /><ol class="ordered"><li><p>Erstellen Sie eine Textdatei (Manifestdatei), und geben Sie ihr die Erweiterung .LST. </p></li><li><p>Fügen Sie dieser Manifestdatei eine Liste aller Medienobjektdateinamen im Eingabemedienobjekt hinzu. </p></li><li><p>Fügen Sie die Manifestdatei dem Medienobjekt hinzu (laden Sie sie hoch). </p></li><li><p>Geben Sie im Eingabelistenattribut den Namen der Manifestdatei an.<br />`<input list="input.lst">`</li></ol><br /><br />Hinweis: Wenn Sie der Manifestdatei mehr als 10 Dateien hinzufügen, schlägt der Indizierungsauftrag fehl, und der Fehlercode „2006“ wird ausgegeben.
+__metadata__ | false | Metadaten für die festgelegten Medienobjektdateien zur Vokabularanpassung. So kann der Indexer nicht standardmäßiges Vokabular wie z. B. Eigennamen erkennen.<br />`<metadata key="..." value="..."/>` <br /><br />Sie können __Werte__ für vordefinierte __Schlüssel__ angeben. Derzeit werden die folgenden Schlüssel unterstützt:<br /><br />„title“ und „description“. Diese dienen der Vokabularanpassung zum Optimieren des Sprachmodells für Ihren Auftrag und zum Verbessern der Spracherkennungsgenauigkeit. Über Internetsuchen finden die Werte kontextrelevante Textdokumente und nutzen deren Inhalte zur Vergrößern des internen Wörterbuchs während der Indizierungsaufgabe.<br />`<metadata key="title" value="[Title of the media file]" />`<br />`<metadata key="description" value="[Description of the media file] />"`
+__features__ <br /><br /> Wurde in Version 1.2 hinzugefügt. Das einzige unterstützte Feature ist derzeit die Spracherkennung („ASR“).| false | Die Spracherkennung verfügt über die folgenden Einstellungsschlüssel:<table><tr><th><p>Schlüssel</p></th> <th><p>Beschreibung</p></th><th><p>Beispielwert</p></th></tr><tr><td><p>Language</p></td><td><p>Die in der Multimediadatei zu erkennende natürliche Sprache</p></td><td><p>Englisch, Spanisch</p></td></tr><tr><td><p>CaptionFormats</p></td><td><p>Eine durch Semikolon getrennte Liste der gewünschten ausgegebenen Untertitelformate (sofern vorhanden)</p></td><td><p>ttml;sami;webvtt</p></td></tr><tr><td><p>GenerateAIB</p></td><td><p>Ein boolesches Flag, das angibt, ob eine AIB-Datei erforderlich ist (zur Verwendung mit SQL Server und dem Indexerfilter des Kunden) Weitere Informationen finden Sie unter <a href="http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/">Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server</a>.</p></td><td><p>True; False</p></td></tr><tr><td><p>GenerateKeywords</p></td><td><p>Ein boolesches Flag, das angibt, ob eine XML-Datei mit Stichwörtern erforderlich ist</p></td><td><p>True; False. </p></td></tr><tr><td><p>ForceFullCaption</p></td><td><p>Ein boolesches Flag, das angibt, ob vollständige Untertitel erzwungen werden sollen (unabhängig vom Grad der Zuverlässigkeit) </p><p>Standardwert ist „false“. In dem Fall werden Wörter und Sätze, deren Zuverlässigkeit unter 50 % liegt, in den final ausgegebenen Untertiteln durch Auslassungspunkte („...“) ersetzt. Die Auslassungspunkte eignen sich für die Qualitätskontrolle der Untertitel und für die Überwachung.</p></td><td><p>True; False. </p></td></tr></table>
 
 ### <a id="error_codes"></a>Fehlercodes
 
+Wenn ein Fehler auftritt, gibt Azure Media Indexer einen der folgenden Fehlercodes aus:
 
-<table border="1">
-<tr><th>Code</th><th>Name</th><th>Mögliche Ursachen</th></tr>
-<tr><td>2000</td><td>Ungültige Konfiguration</td><td>Ungültige Konfiguration</td></tr>
-<tr><td>2001</td><td>Ungültige Eingabeassets</td><td>Fehlende Eingabeassets oder leeres Asset</td></tr>
-<tr><td>2002</td><td>Ungültiges Manifest</td><td>Manifest ist leer oder enthält ungültige Elemente</td></tr>
-<tr><td>2003</td><td>Fehler beim Herunterladen der Mediendatei</td><td>Ungültige URL in Manifestdatei</td></tr>
-<tr><td>2004</td><td>Nicht unterstütztes Protokoll</td><td>Protokoll der Medien-URL wird nicht unterstützt</td></tr>
-<tr><td>2005</td><td>Nicht unterstützter Dateityp</td><td>Typ der Eingabemediendatei wird nicht unterstützt</td></tr>
-<tr><td>2006</td><td>Zu viele Eingabedateien</td><td>Es sind mehr als 10 Dateien im Eingabemanifest vorhanden </td></tr>
-<tr><td>3000</td><td>Fehler beim Decodieren der Mediendatei</td>
-<td>Nicht unterstützter Mediencodec
-<br/>oder<br/>
-Beschädigte Mediendatei
-<br/>oder<br/>
-Kein Audiostream in den Eingabemedien</td></tr>
-<tr><td>4000</td><td>Batchindizierung teilweise erfolgreich</td><td>Bei einigen Eingabemediendateien ist beim Indizieren ein Fehler aufgetreten Weitere Informationen finden Sie unter <a href="output_files">Ausgabedateien</a>.</td></tr>
-<tr><td>Sonstige</td><td>Interne Fehler</td><td>Wenden Sie sich an das Supportteam</td></tr>
-</table>
+Code | Name | Mögliche Ursachen
+-----|------|------------------
+2000 | Ungültige Konfiguration | Ungültige Konfiguration
+2001 | Ungültige Eingabeassets | Fehlende Eingabeassets oder leeres Asset
+2002 | Ungültiges Manifest | Manifest ist leer oder enthält ungültige Elemente
+2003 | Fehler beim Herunterladen der Mediendatei | Ungültige URL in Manifestdatei
+2004 | Nicht unterstütztes Protokoll | Protokoll der Medien-URL wird nicht unterstützt
+2005 | Nicht unterstützter Dateityp | Typ der Eingabemediendatei wird nicht unterstützt
+2006 | Zu viele Eingabedateien | Es sind mehr als 10 Dateien im Eingabemanifest vorhanden
+3000 | Fehler beim Decodieren der Mediendatei | Nicht unterstützter Mediencodec <br/>oder<br/> Beschädigte Mediendatei <br/>oder<br/> Kein Audiostream in den Eingabemedien
+4000 | Batchindizierung teilweise erfolgreich | Bei einigen Eingabemediendateien ist beim Indizieren ein Fehler aufgetreten Weitere Informationen finden Sie unter <a href="output_files">Ausgabedateien</a>.
+Sonstige | Interne Fehler | Wenden Sie sich an das Supportteam. indexer@microsoft.com
 
 
-##<a id="supported_languages"></a>Unterstützte Sprachen
+## <a id="supported_languages"></a>Unterstützte Sprachen
 
-Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informationen finden Sie unter [Azure Media Indexer – Spanisch](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/).
+Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informationen finden Sie im [Blogbeitrag zu Version 1.2](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/) (in englischer Sprache).
 
 
-##Media Services-Lernpfade
+## Media Services-Lernpfade
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
@@ -349,7 +289,7 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
 
-##Verwandte Links
+## Verwandte Links
 
 [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)
 
@@ -359,4 +299,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 <!-- URLs. -->
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO2-->

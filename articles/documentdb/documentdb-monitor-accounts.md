@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.date="10/30/2015" 
 	ms.author="mimig"/>
 
 # Überwachen eines DocumentDB-Kontos über das Azure-Vorschauportal 
@@ -21,7 +21,7 @@
 Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) überwachen. Für jedes DocumentDB-Konto sind sowohl Leistungsmetriken (wie Anforderungen und Serverfehler) als auch Nutzungsmetriken (wie belegter Speicher) verfügbar.
 
 ## Vorgehensweise: Anzeigen von Leistungsmetriken für ein DocumentDB-Konto
-1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Alle durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Leistungsmetriken Sie anzeigen möchten.
+1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Leistungsmetriken Sie anzeigen möchten.
 2.	Innerhalb des Bereichs **Überwachung** sehen Sie standardmäßig Folgendes:
 	*	Gesamtanforderungen des aktuellen Tags.
 	*	Durchschnittliche Anfragen pro Sekunde des aktuellen Tags. 
@@ -30,7 +30,7 @@ Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://p
 
 
 3.	Wenn Sie auf das Detail **Anforderungen insgesamt** oder **Durchschnittliche Anforderungen pro Sekunde** klicken, wird ein detailliertes Blatt **Metrik** geöffnet.
-4.	Das Blatt **Metrik** zeigt Details zu den ausgewählten Metriken. Im oberen Teil des Fensters befindet sich ein Diagramm und darunter eine Tabelle mit einer Aggregation der Werte der ausgewählten Metriken, also beispielsweise Durchschnitt, Minimum und Maximum. Das Fenster „Metrik“ zeigt auch eine Liste von Warnung, die definiert wurden. Sie ist gefiltert nach den im aktuellen Fenster „Metrik“ anzeigten Metriken (wenn Sie eine Reihe von Warnungen haben, dann werden auf diese Weise hier nur die relevanten gezeigt).   
+4.	Das Blatt **Metrik** zeigt Details zu den ausgewählten Metriken. Im oberen Teil des Blatts befindet sich ein Diagramm und darunter eine Tabelle mit einer Aggregation der Werte der ausgewählten Metriken, also beispielsweise Durchschnitt, Minimum und Maximum. Das Fenster „Metrik“ zeigt auch eine Liste von Warnung, die definiert wurden. Sie ist gefiltert nach den im aktuellen Fenster „Metrik“ anzeigten Metriken (wenn Sie eine Reihe von Warnungen haben, dann werden auf diese Weise hier nur die relevanten gezeigt).   
 
 	![Screenshot des Blatts "Metriken"](./media/documentdb-monitor-accounts/madocdb2.png)
 
@@ -90,4 +90,4 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 Weitere Informationen zur Kapazität von DocumentDB finden Sie unter [Verwalten der Kapazität von DocumentDB](documentdb-manage.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

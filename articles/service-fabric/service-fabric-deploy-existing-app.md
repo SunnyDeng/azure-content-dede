@@ -294,7 +294,7 @@ Ein Service Fabric-Dienst kann in verschiedenen "Konfigurationen" bereitgestellt
 
 * `InstanceCount`: wird verwendet, um anzugeben, wie viele Instanzen des Diensts im Service Fabric-Cluster gestartet werden sollen. Sie können den Wert `InstanceCount` nach der Art der bereitzustellenden Anwendung festlegen. Die beiden häufigsten Szenarien:
 
-	* `InstanCount = "1"`: In diesem Fall wird nur eine Instanz des Diensts im Cluster bereitgestellt. Der Service Fabric-Planer bestimmt den Knoten, auf dem der Dienst bereitgestellt werden soll. Eine einzelne Instanz ist auch für Anwendungen sinnvoll, die bei der Ausführung mit mehreren Instanzen eine andere Konfiguration benötigen. In diesem Fall ist es einfacher, mehrere Dienste in derselben Anwendungsmanifestdatei zu definieren und `InstanceCount = "1"` zu verwenden. Im Endergebnis haben Sie mehrere Instanzen desselben Dienstes, aber jeweils mit einer anderen Konfiguration. Das Festlegen eines größeren Werts als 1 für `InstanceCount` ist nur dann sinnvoll, wenn das Ziel darin besteht, mehrere Instanzen mit exakt derselben Konfiguration bereitzustellen.
+	* `InstanceCount = "1"`: In diesem Fall wird nur eine Instanz des Diensts im Cluster bereitgestellt. Der Service Fabric-Planer bestimmt den Knoten, auf dem der Dienst bereitgestellt werden soll. Eine einzelne Instanz ist auch für Anwendungen sinnvoll, die bei der Ausführung mit mehreren Instanzen eine andere Konfiguration benötigen. In diesem Fall ist es einfacher, mehrere Dienste in derselben Anwendungsmanifestdatei zu definieren und `InstanceCount = "1"` zu verwenden. Im Endergebnis haben Sie mehrere Instanzen desselben Dienstes, aber jeweils mit einer anderen Konfiguration. Das Festlegen eines größeren Werts als 1 für `InstanceCount` ist nur dann sinnvoll, wenn das Ziel darin besteht, mehrere Instanzen mit exakt derselben Konfiguration bereitzustellen.
 
 	* `InstanceCount ="-1"`: In diesem Fall wird eine Instanz des Diensts auf jedem Knoten im Service Fabric-Cluster bereitgestellt. Das Endergebnis ist eine (und nur eine) Instanz des Diensts für jeden Knoten im Cluster. Dies ist eine praktische Konfiguration für Front-End-Anwendungen (z. B. REST-Endpunkt), da Client-Anwendungen nur eine Verbindung zu einem Knoten im Cluster herstellen müssen, um den Endpunkt zu verwenden. Diese Konfiguration kann z. B. auch verwendet werden, wenn alle Knoten des Service Fabric-Clusters mit einem Lastenausgleichsmodul verbunden sind, damit der Datenverkehr der Clients über den Dienst verteilt werden kann, der auf allen Knoten im Cluster ausgeführt wird.
 
@@ -353,4 +353,4 @@ Wenn Sie weitere Informationen benötigen, wie eine herkömmliche Service Fabric
 [5]: ./media/service-fabric-deploy-existing-app/service-node-3.png
 [6]: ./media/service-fabric-deploy-existing-app/service-node-4.png
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

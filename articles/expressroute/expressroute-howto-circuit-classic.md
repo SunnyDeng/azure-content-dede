@@ -13,10 +13,14 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/13/2015"
+   ms.date="11/04/2015"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung
+
+> [AZURE.SELECTOR]
+[PowerShell Classic](expressroute-howto-circuit-classic.md)
+[PowerShell Resource Manager](expressroute-howto-circuit-arm.md)
 
 In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute-Verbindung mithilfe von PowerShell-Cmdlets und des klassischen Bereitstellungsmodells geführt. In den Schritten unten wird auch veranschaulicht, wie Sie den Status prüfen, ein Update durchführen oder eine ExpressRoute-Verbindung löschen oder deren Bereitstellung aufheben.
 
@@ -24,7 +28,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 ## Konfigurationsvoraussetzungen
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module. Sie können das neueste PowerShell-Modul aus dem PowerShell-Abschnitt der [Azure-Downloadseite](http://azure.microsoft.com/downloads) herunterladen. Befolgen Sie die Anleitung auf der Seite [Vorgehensweise: Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
+- Sie benötigen die neueste Version der Azure PowerShell-Module. Sie können das neueste PowerShell-Modul aus dem PowerShell-Abschnitt der [Azure-Downloadseite](http://azure.microsoft.com/downloads) herunterladen. Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
 - Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md) und [Workflows](expressroute-workflows.md) gelesen haben.
 
 ## Erstellen und Bereitstellen einer ExpressRoute-Verbindung
@@ -132,7 +136,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 		Sku                              : Standard
 		Status                           : Enabled
 
-	Sie können diese Informationen jederzeit mithilfe des *Get-AzureDedicatedCircuit*-Cmdlets abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet. Der Dienstschlüssel wird im Feld *ServiceKey* aufgeführt.
+	Sie können diese Informationen jederzeit mithilfe des Cmdlets *Get-AzureDedicatedCircuit* abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet. Der Dienstschlüssel wird im Feld *ServiceKey* aufgeführt.
 
 		PS C:\> Get-AzureDedicatedCircuit
 
@@ -157,7 +161,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 		
 		Status                           : Enabled
 
-	*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Status der Bereitstellung auf Service Provider-Seite, und mit "Status" wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
+	*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Status der Bereitstellung beim Dienstanbieter, und mit „Status“ wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
 
 		ServiceProviderProvisioningState : Provisioned
 		
@@ -315,13 +319,13 @@ Sie können die ExpressRoute-Verbindung löschen, indem Sie den folgenden Befehl
 
 Beachten Sie, dass Sie die Verknüpfung aller virtuellen Netzwerke für die ExpressRoute aufheben müssen, damit dieser Vorgang erfolgreich ist. Überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind, falls dieser Vorgang nicht erfolgreich ist.
 
-Wenn der Service Provider-Bereitstellungsstatus für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von "enabled" in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
+Wenn der Bereitstellungsstatus des Dienstanbieters für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von „enabled“ zu *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
 
-Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Service Providers lautet *not provisioned*), bevor Sie das obige Cmdlet ausführen, führen wir die Aufhebung der Verbindungsbereitstellung durch und stellen Ihnen keine Gebühren mehr in Rechnung.
+Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet *not provisioned*), bevor Sie das obige Cmdlet ausführen, heben wir die Verbindungsbereitstellung auf und stellen Ihnen keine Gebühren mehr in Rechnung.
 
 ## Nächste Schritte
 
 - [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 - [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

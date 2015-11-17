@@ -1,13 +1,13 @@
 <properties
-	pageTitle="Sichern virtueller Azure-Computer – Problembehandlung | Microsoft Azure"
-	description="Informationen zum Sichern und Wiederherstellen von virtuellen Azure-Computern"
+	pageTitle="Fehlerbehandlung bei der Sicherung eines virtuellen Azure-Computers | Microsoft Azure"
+	description="Fehlerbehandlung bei Sichern und Wiederherstellen von virtuellen Azure-Computern"
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/07/2015" ms.author="trinadhk";"aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2015" ms.author="trinadhk";"aashishr"/>
 
 
 # Problembehandlung bei der Sicherung virtueller Azure-Computer
@@ -123,4 +123,4 @@ Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff a
 1. Beschaffen Sie sich die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx), die auf der Positivliste stehen sollen.
 2. Heben Sie Blockierung für die IP-Adressen mit dem [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx)-Cmdlet auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (Als Administrator ausführen).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

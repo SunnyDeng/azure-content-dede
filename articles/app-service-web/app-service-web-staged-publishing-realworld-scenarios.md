@@ -312,7 +312,7 @@ In diesem Abschnitt erfahren Sie, wie Umbraco CMS benutzerdefinierte Module zur 
 Denken Sie immer daran, den Ordner `install` Ihrer Anwendung zu entfernen. Laden Sie ihn niemals in Staging- oder Produktions-Web-Apps hoch. In diesem Tutorial verwende ich WebMatrix.
 
 #### Einrichten einer Stagingumgebung
-Sofern Sie bereits eine Umbraco CMS-Web-App erstellt haben und ausführen, erstellen Sie wie oben erläutert einen Bereitstellungsslot für die Umbraco CMS-Web-App. Andernfalls können Sie die App über den Marketplace erstellen. Klicken Sie [hier](web-sites-gallery-umbraco), um weitere Informationen zu erhalten.
+Sofern Sie bereits eine Umbraco CMS-Web-App erstellt haben und ausführen, erstellen Sie wie oben erläutert einen Bereitstellungsslot für die Umbraco CMS-Web-App. Andernfalls können Sie die App über den Marketplace erstellen.
 
 Aktualisieren Sie die Verbindungszeichenfolgen für Ihren Bereitstellungsslot „stage“, um auf die neu erstellte Datenbank **umbraco-stage-db** zu verweisen. Ihre Produktions-Web-App (umbraositecms-1) und Ihre Staging-Web-App (umbracositecms-1-stage) **MÜSSEN** auf unterschiedliche Datenbanken verweisen.
 
@@ -418,7 +418,7 @@ Nach dem Aktualisieren Ihrer lokalen Entwicklungswebsite veröffentlichen Sie di
 
 ![Austauschvorschau für die Bereitstellung von Umbraco CMS](./media/app-service-web-staged-publishing-realworld-scenarios/22umbswap.png)
 
-Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](http://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
+Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](http://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) ausführen.
 
 Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht es Ihnen, benutzerdefinierte Module wie das Umbraco Courier-Modul zur umgebungsübergreifenden Verwaltung der Bereitstellung zu erstellen.
 
@@ -429,4 +429,4 @@ Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht
 
 [Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-<!-----HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO2-->

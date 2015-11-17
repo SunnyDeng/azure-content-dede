@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search | Microsoft Azure"
-	description="Informationen zum Ausführen von REST-Suchen mithilfe von Azure Search."
+	description="Informationen zum Ausführen von REST-Suchen mithilfe von Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
 	authors="liamca"
@@ -13,7 +13,7 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="10/15/2015"
+	ms.date="11/04/2015"
 	ms.author="liamca"/>
 
 # Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search
@@ -33,7 +33,7 @@ Bei diesem Beispiel übergeben wir einfach das Wort "Azure" als Suchparameter un
 -	`Faceting`: Wenn der Benutzer das Dataset durchsucht, ist die Möglichkeit der Filterung der Daten für das Navigieren durch die Ergebnisse hilfreich. Um dies zu implementieren, beginnen Sie in der Regel mit einer Gruppe von Kategorien (Facets), die dem Benutzer angezeigt werden. Hier sind einige Beispiele von Facets, die wir nutzen können:
   -	**Tags**: Vielen Fragen sind Tags zugeordnet, um Benutzern Detailsuchen in bestimmten Kategorien zu ermöglichen.
   -	**Datumsangaben**: Ein Benutzer möchte ggf. nur Fragen anzeigen, die in einem bestimmten Zeitrahmen gestellt oder beantwortet wurden.
-  -	**Benutzer**: Sie möchten ggf. nur Ergebnisse von bestimmten Benutzern anzeigen.In diesem Beispiel suchen wir „Azure“, geben aber die Anzahl der Facets für die Benutzernamen „tagsCollection“ und „acceptedAnswerDisplayName“ zurück.
+  -	**Benutzer**: Sie möchten ggf. nur Ergebnisse von bestimmten Benutzern anzeigen. In diesem Beispiel suchen wir „Azure“, geben aber die Anzahl der Facets für die Benutzernamen „tagsCollection“ und „acceptedAnswerDisplayName“ zurück.
 
 > <http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28%26search=azure%26facet=tagsCollection%26facet=acceptedAnswerDisplayName>
 
@@ -109,4 +109,4 @@ Sobald dies erfolgt ist, können Sie im [Azure-Portal](https://portal.azure.com)
     Server=tcp:azs-playground.database.windows.net,1433;Database=StackExchange;User ID=reader@azs-playground;
     Password=EdrERBt3j6mZDP;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO2-->
