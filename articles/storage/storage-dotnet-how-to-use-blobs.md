@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article" 
-	ms.date="10/16/2015"
+	ms.date="11/11/2015"
 	ms.author="tamram"/>
 
 
@@ -23,7 +23,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Windows Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs.
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Windows Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die Speicherclientbibliothek ist ein SDK, das die Interaktion mit Blobspeicher-REST-APIs vereinfacht. Die in dieser Anleitung behandelten Szenarien umfassen **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs und nehmen etwa eine Stunde in Anspruch. Wenn Sie ein Erste-Schritte-Video sehen möchten, finden Sie dies unter [Einführung zum Speicher in fünf Minuten](https://azure.microsoft.com/de-DE/documentation/videos/azure-storage-5-minute-overview/), oder lesen Sie das Handbuch [Erste Schritte mit Azure Storage – Einstieg in fünf Minuten](https://azure.microsoft.com/de-DE/documentation/articles/storage-getting-started-guide/).
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -338,7 +338,20 @@ Weitere Informationen zu den Unterschieden zwischen den drei Arten von Blobs fin
 
 ## Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden. <ul> <li>Vollständige Informationen zu verfügbaren APIs finden Sie in der Blobdienst-Referenzdokumentation: <ul> <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Referenz zur Storage-Clientbibliothek für .NET</a> </li> <li><a href="http://msdn.microsoft.com/library/azure/dd179355">REST-API-Referenz</a></li> </ul> </li> <li>Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter <a href="http://msdn.microsoft.com/library/azure/gg433040.aspx">Speichern von und Zugreifen auf Daten in Azure</a>.</li> <li>Erfahren Sie, wie Sie mithilfe des <a href="../websites-dotnet-webjobs-sdk/">Azure WebJobs SDK</li> den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert. <li>Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden. <ul> <li>Verwenden Sie den <a href="/documentation/articles/storage-dotnet-how-to-use-tables/">Tabellenspeicher</a> zum Speichern strukturierter Daten.</li> <li>Verwenden Sie den <a href="/documentation/articles/storage-dotnet-how-to-use-queues/">Warteschlangenspeicher</a> zum Speichern unstrukturierter Daten.</li> <li>Verwenden Sie eine <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL-Datenbank</a> zum Speichern relationaler Daten.</li> </ul> </li> </ul>
+Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben, lesen Sie die folgenden Artikel, um mehr zu erfahren.
+
+### Blobspeicher-Referenzdokumentation
+
+- [Referenz zur Storage-Clientbibliothek für .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [REST-API-Referenz](http://msdn.microsoft.com/library/azure/dd179355)
+
+### Zusätzliche Featurehandbücher
+
+- [Erste Schritte mit Tabellenspeicher für .NET](storage-dotnet-how-to-use-tables.md)
+- [Erste Schritte mit Warteschlangenspeicher für .NET](storage-dotnet-how-to-use-queues.md)
+- [Erste Schritte mit Dateispeicher für .NET](storage-dotnet-how-to-use-files.md)
+- [Verwenden einer SQL-Datenbank zum Speichern relationaler Daten](../sql-database/articles/sql-database-dotnet-how-to-use.md)
+- [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md)
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-blobs/blob6.png
@@ -353,4 +366,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

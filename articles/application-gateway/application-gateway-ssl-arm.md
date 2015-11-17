@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Konfigurieren eines Application Gateways für SSL-Auslagerung mit Azure-Ressourcen-Manager | Microsoft Azure"
-   description="Diese Seite enthält Anweisungen zum Erstellen eines Application Gateways mit SSL-Auslagerung mit Azure-Ressourcen-Manager."
+   pageTitle="Konfigurieren eines Anwendungsgateways für SSL-Auslagerung mit Azure-Ressourcen-Manager | Microsoft Azure"
+   description="Diese Seite enthält Anweisungen zum Erstellen eines Anwendungsgateways mit SSL-Auslagerung mit Azure-Ressourcen-Manager."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
@@ -15,51 +15,54 @@
    ms.date="10/28/2015"
    ms.author="joaoma"/>
 
-# Konfigurieren eines Application Gateways für SSL-Auslagerung mit Azure-Ressourcen-Manager
+# Konfigurieren eines Anwendungsgateways für SSL-Auslagerung mit Azure-Ressourcen-Manager
 
+> [AZURE.SELECTOR]
+-[Azure Classic Powershell](application-gateway-ssl.md)
+-[Azure Resource Manager Powershell](application-gateway-ssl-arm.md)
 
  Application Gateway kann so konfiguriert werden, dass damit die SSL-Sitzung auf dem Gateway beendet wird. Auf diese Weise wird die aufwändige SSL-Entschlüsselung auf der Webfarm vermieden. Die SSL-Auslagerung vereinfacht zudem die Einrichtung und Verwaltung der Webanwendung auf dem Front-End-Server.
 
 
->[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und die klassische Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie mit Azure-Ressouren arbeiten. Sie können die Dokumentation für verschiedene Tools anzeigen, indem Sie auf die Registerkarten oben in diesem Artikel klicken. Dieses Dokument behandelt das Erstellen eines Application Gateways mit dem Azure-Ressourcen-Manager. Um die klassische Version zu verwenden, wechseln Sie zu [Konfigurieren eines Application Gateway für SSL-Auslagerung mithilfe von PowerShell (klassisch)](application-gateway-ssl.md).
+>[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und das klassische Bereitstellungsmodell. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie mit Azure-Ressouren arbeiten. Sie können die Dokumentation für verschiedene Tools anzeigen, indem Sie auf die Registerkarten oben in diesem Artikel klicken. Dieses Dokument behandelt das Erstellen eines Anwendungsgateways mit dem Azure-Ressourcen-Manager. Wenn Sie das klassische Bereitstellungsmodell verwenden möchten, wechseln Sie zu [Konfigurieren eines Anwendungsgateways für SSL-Auslagerung mit der klassischen Azure-Bereitstellung](application-gateway-ssl.md).
 
 
 
 ## Voraussetzungen
 
 1. Installieren Sie die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version im Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
-2. Sie erstellen ein virtuelles Netzwerk und Subnetz für das Application Gateway. Stellen Sie sicher, dass keine virtuellen Computer oder Cloudbereitstellungen das Subnetz verwenden. Das Application Gateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
-3. Die Server, die Sie für die Verwendung des Application Gateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
+2. Sie erstellen ein virtuelles Netzwerk und Subnetz für ein Anwendungsgateway. Stellen Sie sicher, dass keine virtuellen Computer oder Cloudbereitstellungen das Subnetz verwenden. Das Anwendungsgateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
+3. Die Server, die Sie für die Verwendung des Anwendungsgateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
 
-## Was ist zum Erstellen eines Application Gateways erforderlich?
+## Was ist zum Erstellen eines Anwendungsgateways erforderlich?
  
 
 - **Back-End-Serverpool:** Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem Subnetz des virtuellen Netzwerks angehören oder eine öffentliche IP-Adresse/VIP sein. 
 - **Einstellungen für den Back-End-Serverpool:** Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
 - **Front-End-Port:** Dieser Port ist der öffentliche Port, der im Application Gateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
 - **Listener:** Der Listener verfügt über einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
-- **Regel:** Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden soll, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
+- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden soll, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
 
 **Zusätzliche Konfigurationshinweise:**
 
-Für die Konfiguration von SSL-Zertifikaten sollte das Protokoll in **HttpListener** in *Https* (Groß-/Kleinschreibung beachten) geändert werden. Das Element **SslCertificate** muss **HttpListener** mit dem Variablenwert hinzugefügt werden, der für das SSL-Zertifikat konfiguriert wurde. Der Front-End-Port sollte auf 443 aktualisiert werden.
+Für die Konfiguration von SSL-Zertifikaten sollte das Protokoll in **HttpListener** in *Https*(Groß-/Kleinschreibung beachten) geändert werden. Das Element **SslCertificate** muss dem **HttpListener** mit dem Variablenwert hinzugefügt werden, der für das SSL-Zertifikat konfiguriert wurde. Der Front-End-Port sollte auf 443 aktualisiert werden.
 
-**So aktivieren Sie cookiebasierte Affinität**: Ein Application Gateway kann konfiguriert werden, um sicherzustellen, dass die Anforderung von einer Clientsitzung immer an denselben virtuellen Computer in der Webfarm weitergeleitet wird. Dies erfolgt durch Einfügen eines Sitzungscookies, sodass das Gateway den Datenverkehr entsprechend weiterleiten kann. Legen Sie zum Aktivieren der cookiebasierten Affinität **CookieBasedAffinity** im **BackendHttpSettings**-Element auf *Enabled* fest.
+**So aktivieren Sie cookiebasierte Affinität**: Ein Anwendungsgateway kann konfiguriert werden, um sicherzustellen, dass die Anforderung von einer Clientsitzung immer an denselben virtuellen Computer in der Webfarm weitergeleitet wird. Dies erfolgt durch Einfügen eines Sitzungscookies, sodass das Gateway den Datenverkehr entsprechend weiterleiten kann. Legen Sie zum Aktivieren der cookiebasierten Affinität **CookieBasedAffinity** im **BackendHttpSettings**-Element auf *Enabled* fest.
 
  
-## Erstellen eines neuen Application Gateways
+## Erstellen eines neuen Anwendungsgateways
 
-Der Unterschied zwischen Azure Classic und Azure-Ressourcen-Manager besteht in der Reihenfolge, in der Sie das Application Gateway und die Elemente erstellen, die konfiguriert werden müssen.
+Der Unterschied zwischen dem klassischen Azure-Bereitstellungsmodell und dem Azure-Ressourcen-Manager besteht in der Reihenfolge, in der Sie ein Anwendungsgateway und die Elemente erstellen, die konfiguriert werden müssen.
 
-Beim Ressourcen-Manager werden alle Elemente, die ein Application Gateway bilden, einzeln konfiguriert und anschließend zusammengesetzt, um die Application Gateway-Ressource zu erstellen.
+Beim Ressourcen-Manager werden alle Elemente, die ein Anwendungsgateway bilden, einzeln konfiguriert und anschließend zusammengesetzt, um eine Anwendungsgatewayressource zu erstellen.
 
 
-Es folgen die erforderlichen Schritte zum Erstellen eines Application Gateways:
+Es folgen die erforderlichen Schritte zum Erstellen eines Anwendungsgateways:
 
 1. Erstellen einer Ressourcengruppe für den Ressourcen-Manager
-2. Erstellen eines virtuelles Netzwerks, Subnetzes und einer öffentlichen IP-Adresse für das Application Gateway
-3. Erstellen eines Konfigurationsobjekts für das Application Gateway
-4. Erstellen einer Application Gateway-Ressource
+2. Erstellen eines virtuellen Netzwerks, eines Subnetzes und einer öffentlichen IP-Adresse für das Anwendungsgateway
+3. Erstellen eines Konfigurationsobjekts für das Anwendungsgateway
+4. Erstellen einer Anwendungsgatewayressource
 
 
 ## Erstellen einer Ressourcengruppe für den Ressourcen-Manager
@@ -95,11 +98,11 @@ Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wen
 
     New-AzureResourceGroup -Name appgw-rg -location "West US"
 
-Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Application Gateway erstellt wird, die gleiche Ressourcengruppe verwenden.
+Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Anwendungsgateway erstellt wird, dieselbe Ressourcengruppe verwenden.
 
 Im oben stehenden Beispiel haben wir eine Ressourcengruppe namens "appgw-RG" mit dem Standort "USA, Westen" erstellt.
 
-## Erstellen eines virtuelles Netzwerks und Subnetzes für das Application Gateway
+## Erstellen eines virtuellen Netzwerks und eines Subnetzes für das Anwendungsgateway
 
 Das folgende Beispiel zeigt, wie Sie mit dem Ressourcen-Manager ein virtuelles Netzwerk erstellen:
 
@@ -127,13 +130,13 @@ Weist der Variablen "$subnet" das Subnetzobjekt für die nächsten Schritte zu.
 Dieser Befehl dient zum Erstellen der öffentlichen IP-Ressource „publicIP01“ in der Ressourcengruppe „appw-rg“ für die Region „USA, Westen“.
 
 
-## Erstellen eines Konfigurationsobjekts für das Application Gateway
+## Erstellen eines Konfigurationsobjekts für das Anwendungsgateway
 
 ### Schritt 1
 
 	$gipconfig = New-AzureApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
-Dieser Befehl erstellt eine IP-Konfiguration für das Application Gateway mit dem Namen „gatewayIP01“. Beim Start des Application Gateways wählt es eine IP-Adresse aus dem konfigurierten Subnetz aus und leitet dann Netzwerkdatenverkehr an die IP-Adressen im Back-End-IP-Pool weiter. Beachten Sie, dass jede Instanz eine IP-Adresse verwendet.
+Dieser Befehl erstellt eine IP-Konfiguration für das Anwendungsgateway mit dem Namen „gatewayIP01“. Das Anwendungsgateway wählt bei seinem Start eine IP-Adresse aus dem konfigurierten Subnetz aus und leitet dann Netzwerkdatenverkehr an die IP-Adressen im Back-End-IP-Pool weiter. Beachten Sie, dass jede Instanz eine IP-Adresse verwendet.
  
 ### Schritt 2
 
@@ -145,7 +148,7 @@ In diesem Schritt konfigurieren Sie den Back-End-IP-Adresspool „pool01“ mit 
 
 	$poolSetting = New-AzureApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Enabled
 
-Dient zum Konfigurieren der Application Gateway-Einstellungen „poolsetting01“ für den Lastenausgleich des Netzwerkdatenverkehrs im Back-End-Pool.
+Dient zum Konfigurieren der Anwendungsgatewayeinstellungen „poolsetting01“ für den Lastenausgleich des Netzwerkdatenverkehrs im Back-End-Pool.
 
 ### Schritt 4
 
@@ -167,7 +170,7 @@ Hiermit wird die Front-End-IP-Adresskonfiguration namens „fipconfig01“ erste
 
 ### Schritt 7
 
-	$listener = New-AzureApplicationGatewayHttpListener -Name listener01  -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp -SslCertificate $cert
+	$listener = New-AzureApplicationGatewayHttpListener -Name listener01  -Protocol Https -FrontendIPConfiguration $fipconfig -FrontendPort $fp -SslCertificate $cert
 
 
 Dieser Befehl dient zum Erstellen des Listeners „listener01“ und zum Zuordnen des Front-End-Ports zur Front-End-IP-Konfiguration und zum Zertifikat.
@@ -182,44 +185,44 @@ Dieser Befehl erstellt die Load Balancer-Routingregel „rule01“ und konfiguri
 
 	$sku = New-AzureApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
 
-Dieser Befehl konfiguriert die Instanzgröße des Application Gateways.
+Dieser Befehl konfiguriert die Instanzgröße des Anwendungsgateways.
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist „Medium“. Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
-## Erstellen eines Application Gateways mit dem Cmdlet "New-AzureApplicationGateway"
+## Erstellen eines Anwendungsgateways mit dem Cmdlet „New-AzureApplicationGateway“
 
 	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName appw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SslCertificates $cert
 
-Mit diesem Befehl wird ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. Im Beispiel heißt das Application Gateway „appgwtest“.
+Mit diesem Befehl wird ein Anwendungsgateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. Im Beispiel heißt das Anwendungsgateway „appgwtest“.
 
 
-## Starten des Application Gateways
+## Starten des Anwendungsgateways
 
 Sobald das Gateway konfiguriert wurde, verwenden Sie das `Start-AzureApplicationGateway`-Cmdlet, um das Gateway zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
 
 
 **Hinweis:** Bis zum Abschluss des `Start-AzureApplicationGateway`-Cmdlets können bis zu 15 – 20 Minuten vergehen.
 
-Im folgenden Beispiel heißt das Application Gateway "appgwtest" und die Ressourcengruppe "app-rg":
+Im folgenden Beispiel heißt das Anwendungsgateway „appgwtest“ und die Ressourcengruppe „app-rg“:
 
 
 ### Schritt 1
 
-Rufen Sie das Application Gateway-Objekt ab, und ordnen Sie es der Variablen "$getgw" zu:
+Rufen Sie das Anwendungsgatewayobjekt ab, und ordnen Sie es der Variablen „$getgw“ zu:
  
 	$getgw =  Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName app-rg
 
 ### Schritt 2
 	 
-Verwenden Sie `Start-AzureApplicationGateway`, um das Application Gateway zu starten:
+Verwenden Sie `Start-AzureApplicationGateway`, um das Anwendungsgateway zu starten:
 
 	 Start-AzureApplicationGateway -ApplicationGateway $getgw  
 
 	
 
-## Überprüfen des Application Gateway-Status
+## Überprüfen des Anwendungsgatewaystatus
 
-Überprüfen Sie mit dem Cmdlet `Get-AzureApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Running* lauten, und „Vip“ und „DnsName“ sollten gültige Einträge aufweisen.
+Überprüfen Sie mit dem Cmdlet `Get-AzureApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Wird ausgeführt* lauten, und für "Vip" und "DnsName" sollten gültige Einträge vorliegen.
 
 Dieses Beispiel zeigt ein Application Gateway, das ausgeführt wird und Datenverkehr verarbeiten kann, der für `http://<generated-dns-name>.cloudapp.net` vorgesehen ist.
 
@@ -372,11 +375,11 @@ Dieses Beispiel zeigt ein Application Gateway, das ausgeführt wird und Datenver
 ## Nächste Schritte
 
 
-Wenn Sie ein Anwendungsgateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
+Wenn Sie ein Anwendungsgateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Anwendungsgateways mit einem internen Load Balancer (ILB)](application-gateway-ilb.md).
 
 Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unter:
 
-- [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
+- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

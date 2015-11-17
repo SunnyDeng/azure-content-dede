@@ -70,13 +70,13 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 
     ![Registrierungsauftrag](./media/backup-azure-vms/register-create-job.png)
 
-   Der virtuelle Computer wird auch in der Liste der registrierten Elemente aufgeführt, und der Status des Registrierungsvorgangs wird angezeigt.
+    Der virtuelle Computer wird auch in der Liste der registrierten Elemente aufgeführt, und der Status des Registrierungsvorgangs wird angezeigt.
 
-    ![Registering status 1](./media/backup-azure-vms/register-status01.png)
+    ![Registrierungsstatus 1](./media/backup-azure-vms/register-status01.png)
 
-    When the operation completes, the status will change to reflect the *registered* state.
+    Wenn der Vorgang abgeschlossen ist, ändert sich der Status dem *registrierten* Status entsprechend.
 
-    ![Registration status 2](./media/backup-azure-vms/register-status02.png)
+    ![Registrierungsstatus 2](./media/backup-azure-vms/register-status02.png)
 
 ## Schritt 3: Schützen virtueller Azure-Computer
 Nun können Sie die Sicherungs- und Aufbewahrungsrichtlinie für den virtuellen Computer definieren. Mehrere virtuelle Computer können in einem einzigen Schritt geschützt werden.
@@ -84,7 +84,7 @@ Nun können Sie die Sicherungs- und Aufbewahrungsrichtlinie für den virtuellen 
 Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im Tresor integrierte Standardrichtlinie. Diese Standardrichtlinie sieht eine Standardaufbewahrungsdauer von 30 Tagen und eine tägliche Sicherung vor.
 
 1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
-2. Wählen Sie im Dropdownmenü **Azure Virtual Machine** aus.
+2. Wählen Sie im Dropdownmenü **Virtueller Azure-Computer** aus.
 
     ![Workload im Portal auswählen](./media/backup-azure-vms/select-workload.png)
 
@@ -106,7 +106,7 @@ Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im T
 
     >[AZURE.NOTE]Eine Sicherungsrichtlinie umfasst auch ein Aufbewahrungsschema der geplanten Sicherungen. Bei Wahl einer vorhandenen Sicherungsrichtlinie können Sie die Aufbewahrungsoptionen im nächsten Schritt nicht ändern.
 
-5. Wählen Sie eine **Aufbewahrungsdauer** für die Sicherungen aus.
+5. Wählen Sie eine **Beibehaltungsdauer** für die Sicherungen aus.
 
     ![Schützen mit flexibler Aufbewahrung](./media/backup-azure-vms/policy-retention.png)
 
@@ -116,10 +116,10 @@ Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im T
 
     In dieser Beispielabbildung:
 
-    - **Aufbewahrungsrichtlinie „Täglich“**: Täglich erstellte Sicherungen werden 30 Tage gespeichert.
-    - **Aufbewahrungsrichtlinie „Wöchentlich“**: Sicherungen, die jeden Sonntag erstellt werden, werden 104 Wochen aufbewahrt.
-    - **Aufbewahrungsrichtlinie „Monatlich“**: Sicherungen, die am letzten Samstag im Monat erstellt werden, werden 120 Monate aufbewahrt.
-    - **Aufbewahrungsrichtlinie „Jährlich“**: Sicherungen, die am ersten Sonntag im Januar erstellt werden, werden 99 Jahre aufbewahrt.
+    - **Tägliche Aufbewahrungsrichtlinie**: Täglich erstellte Sicherungen werden 30 Tage lang gespeichert.
+    - **Wöchentliche Aufbewahrungsrichtlinie**: Sicherungen, die jeden Sonntag erstellt werden, werden 104 Wochen lang aufbewahrt.
+    - **Monatliche Aufbewahrungsrichtlinie**: Sicherungen, die am letzten Samstag im Monat erstellt werden, werden 120 Monate lang aufbewahrt.
+    - **Jährliche Aufbewahrungsrichtlinie**: Sicherungen, die am ersten Sonntag im Januar erstellt werden, werden 99 Jahre lang aufbewahrt.
 
     Ein Auftrag wird erstellt, um die Schutzrichtlinie zu konfigurieren und die virtuellen Computer, die Sie ausgewählt haben, dieser Richtlinie zuzuordnen.
 
@@ -128,11 +128,11 @@ Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im T
     ![Schutzauftrag konfigurieren](./media/backup-azure-vms/protect-configureprotection.png)
 
 ## Erste Sicherung
-Sobald der virtuelle Computer durch eine Richtlinie geschützt ist, wird er auf der Registerkarte **Geschützte Elemente** angezeigt und weist den Schutzstatus *Geschützt (erste Sicherung ausstehend)* auf. Standardmäßig ist die erste geplante Sicherung auch die *erste Sicherung*.
+Sobald der virtuelle Computer durch eine Richtlinie geschützt ist, wird er auf der Registerkarte **Geschützte Elemente** angezeigt und weist den Schutzstatus *Geschützt (Anfangssicherung ausstehend)* auf. Standardmäßig ist die erste geplante Sicherung auch die *erste Sicherung*.
 
 So lösen Sie die erste Sicherung unmittelbar nach Konfigurieren des Schutzes aus:
 
-1. Klicken Sie am unteren Rand der Seite **Geschützte Elemente** auf die Schaltfläche **Jetzt sichern**.
+1. Klicken Sie unten auf der Seite **Geschützte Elemente** auf die Schaltfläche **Jetzt sichern**.
 
     Der Azure Backup-Dienst erstellt einen Sicherungsauftrag für die erste Sicherung.
 
@@ -161,4 +161,4 @@ Wenn beim Sichern des virtuellen Computers Probleme auftreten, finden Sie in die
 - [Verwalten und Überwachen Ihrer virtuellen Computer](backup-azure-manage-vms.md)
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

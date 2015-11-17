@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit der ersten Azure Search-Anwendung in .NET | Microsoft Azure"
+	pageTitle="Erste Schritte mit der ersten Azure Search-Anwendung in .NET | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Ein Lernprogramm zum Erstellen einer Visual Studio-Projektmappe unter Verwendung der .NET-Clientbibliothek aus dem Azure Search .NET SDK."
 	services="search"
 	documentationCenter=""
@@ -794,4 +794,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-1.PNG
 [12]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-2.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

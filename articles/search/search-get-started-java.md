@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Search in Java | Microsoft Azure"
+	pageTitle="Erste Schritte mit Azure Search in Java | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Erstellen einer gehosteten Cloudsuchanwendung in Azure mit der Programmiersprache Java."
 	services="search"
 	documentationCenter=""
@@ -231,4 +231,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-java/rogerwilliamsschool1.PNG
 [12]: ./media/search-get-started-java/AzSearch-Java-SelectProject.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

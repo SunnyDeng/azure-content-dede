@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="11/03/2015"
+	ms.date="11/10/2015"
 	ms.author="jroth"/>
 
 # SQL-Datenbank – Dienstebenen
@@ -35,7 +35,7 @@ Die Dienstebenen "Basic", "Standard" und "Premium" haben alle eine Betriebszeit-
 ### Dienstebenen für Einzeldatenbanken
 Für Einzeldatenbanken sind mehrere Leistungsstufen innerhalb jeder Dienstebene verfügbar, sodass Sie flexibel die Ebene auswählen können, die Ihren Workloadanforderungen am besten entspricht. Wenn Sie zentral hoch- oder herunterskalieren müssen, können Sie die Ebenen Ihrer Datenbank im Azure-Portal problemlos ändern, und zwar ohne Ausfallzeiten der Anwendung. Ausführlichere Informationen finden Sie unter [Ändern der Dienstebenen und -Leistungsstufen von Datenbanken](sql-database-scale-up.md).
 
-Die hier aufgeführten Leistungsmerkmale gelten für Datenbanken, die mit [SQL-Datenbank V12](sql-database-v12-whats-new.md) erstellt wurden.
+Die hier aufgeführten Leistungsmerkmale gelten für Datenbanken, die mit [SQL-Datenbank V12](sql-database-v12-whats-new.md) erstellt wurden. In Situationen, in denen die zugrunde liegende Hardware in Azure mehrere SQL-Datenbanken hostet, erhält Ihre Datenbank immer noch einen garantierten Satz von Ressourcen, und die erwarteten Leistungsmerkmale der individuellen Datenbank sind nicht betroffen.
 
 [AZURE.INCLUDE [Tarife für SQL-Datenbank](../../includes/sql-database-service-tiers-table.md)]
 
@@ -95,4 +95,4 @@ Wenn Sie mehrere Datenbanken als Gruppe verwalten möchten, finden Sie entsprech
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

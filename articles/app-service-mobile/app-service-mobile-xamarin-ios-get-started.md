@@ -13,15 +13,13 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="08/12/2015"
+	ms.date="11/03/2015"
 	ms.author="normesta"/>
 
 
 #Erstellen einer Xamarin.iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -118,4 +116,4 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

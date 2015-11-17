@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/27/2015"
+   ms.date="11/09/2015"
    ms.author="tomfitz"/>
 
 # Übersicht über den Azure-Ressourcen-Manager
@@ -123,6 +123,7 @@ Informationen zur REST-API finden Sie unter [Referenz zur REST-API des Azure-Res
 
 Informationen zum Verwenden des Vorschauportals finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md).
 
+Der Azure-Ressourcen-Manager unterstützt Cross-Origin Resource Sharing (CORS). Mit CORS können Sie die Ressourcen-Manager-REST-API oder die REST-API eines Azure-Diensts über eine Webanwendung aufrufen, die sich in einer anderen Domäne befindet. Ohne CORS-Unterstützung verhindert der Webbrowser, dass eine App in einer Domäne auf Ressourcen in einer anderen Domäne zugreifen kann. Der Ressourcen-Manager aktiviert CORS für alle Anforderungen mit gültigen Anmeldeinformationen für die Authentifizierung.
 
 ## Nächste Schritte
 
@@ -135,4 +136,4 @@ Hier sehen Sie eine Videodemonstration dieser Übersicht:
 
 [AZURE.VIDEO azure-resource-manager-overview]
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

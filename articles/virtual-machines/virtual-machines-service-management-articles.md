@@ -38,7 +38,7 @@
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-[Erstellen und Verwalten eines Windows-basierten virtuellen Computers unter Verwendung von Azure PowerShell](virtual-machines-create-windows-powershell-service-manager.md)
+[Sie können virtuelle Windows-Computer mit PowerShell und dem klassischen Bereitstellungsmodell erstellen.](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
 [Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure mit der Azure-Befehlszeilenschnittstelle (Azure CLI)](virtual-machines-linux-create-custom.md)
 
@@ -152,4 +152,4 @@
 
 [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

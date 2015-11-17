@@ -236,8 +236,4 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 
 Unter [Überwachen von DataSets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
 
-
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-get-started-using-vs.md).
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

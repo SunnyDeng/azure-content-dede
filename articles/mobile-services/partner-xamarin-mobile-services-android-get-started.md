@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android" 
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
-	ms.date="10/05/2015" 
+	ms.date="11/05/2015" 
 	ms.author="donnam"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
@@ -25,7 +25,7 @@
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer Xamarin.Android-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert.
 
-Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip unten auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.
+Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip unten auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Tutorial.
 
 Video: "Erste Schritte mit Xamarin und Azure Mobile Services" mit Craig Dunn, Developer Evangelist für Xamarin (Dauer: 10:05 Minuten)
 
@@ -77,7 +77,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 3. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App zu starten. Sie werden zur Auswahl eines Emulators oder eines angeschlossenen USB-Geräts aufgefordert.
 
-	> [AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
+	> [AZURE.NOTE]Sie müssen mindestens ein virtuelles Android-Gerät (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
 
 4. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Lernprogramm beenden_, und klicken Sie dann auf **Hinzufügen**.
 
@@ -141,4 +141,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

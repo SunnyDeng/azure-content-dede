@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article" 
-	ms.date="09/16/2015"
+	ms.date="11/05/2015"
 	ms.author="anhoh"/>
 
 #Erste Schritte mit dem DocumentDB .NET SDK  
@@ -75,6 +75,8 @@ Fügen Sie zunächst in der Datei "Program.cs" am Anfang der C#-Anwendung folgen
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
     using Newtonsoft.Json;
+
+> [AZURE.IMPORTANT]Um diese Anwendung abzuschließen, müssen Sie die oben genannten Abhängigkeiten hinzufügen.
 
 Speichern Sie anschließend den DocumentDB-Kontoendpunkt und entweder den primären oder den sekundären Zugriffsschlüssel. Die Schlüssel finden Sie im [Azure-Vorschauportal](https://portal.azure.com).
 
@@ -478,4 +480,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio wiederherzustellen,
 [keys]: media/documentdb-get-started/keys.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

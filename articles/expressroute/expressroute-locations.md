@@ -44,6 +44,7 @@ In der folgenden Tabelle finden Sie Informationen zu Regionen und geopolitischen
 |**Geopolitische Region**|**Azure-Regionen**|**ExpressRoute-Standorte**|
 |---|---|---|---|
 |**US-Government Cloud**|US Government|Iowa, Virginia|Ashburn, Chicago|
+|**China-Cloud**|China|Osten, Norden|
 
 
 Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standard-SKU nicht unterstützt. Sie müssen das ExpressRoute Premium-Add-On aktivieren, um Unterstützung für globale Konnektivität zu erhalten. Verbindungen mit nationalen Cloudumgebungen werden nicht unterstützt. Wenden Sie sich an Ihren Konnektivitätsanbieter, wenn Sie derartige Verbindungen implementieren möchten.
@@ -93,7 +94,14 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Unterstützt | Nicht unterstützt | Chicago+, Washington, D.C. |
 | **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | In Kürze verfügbar | Nicht unterstützt | Chicago+, Washington DC+ |
 | **[Level 3 Communications - IPVPN](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Nicht unterstützt | Chicago+, Washington, D.C. |
-| **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | Chicago+, Washington, D.C. |
+| **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | Chicago, Washington DC |
+
+#### China-Cloud
+
+| **Service Provider** |**Microsoft Azure** | **Office 365** | **Standorte** |
+|-----------------------|--------------------|----------------|---------------|
+| **China Telecom** | Unterstützt | Nicht unterstützt | Peking, Shanghai+|
+Weitere Informationen finden Sie unter [ExpressRoute in China](http://www.windowsazure.cn/home/features/expressroute/).
 
 ## Konnektivität über nicht aufgeführte Service Provider
 
@@ -129,4 +137,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

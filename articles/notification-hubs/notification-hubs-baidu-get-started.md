@@ -13,7 +13,7 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="mobile-baidu"
 	ms.workload="mobile"
-	ms.date="10/19/2015"
+	ms.date="11/03/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs mit Baidu
@@ -503,4 +503,4 @@ Zum Senden einer Testbenachrichtigung können Sie die Registerkarte „Debuggen�
 [Azure-Portal]: https://manage.windowsazure.com/
 [Baidu-Portal]: http://www.baidu.com/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->
