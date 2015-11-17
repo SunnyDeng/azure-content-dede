@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="10/07/2015"
+	ms.date="11/04/2015"
 	ms.author="krisragh"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
@@ -49,14 +49,14 @@ Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunde
 
 [AZURE.INCLUDE [mobile-services-ios-run-app](../../includes/mobile-services-ios-run-app.md)]
 
-<ol start="4"> <li><p>Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**. Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.<p></li></ol></p>
+<ol start="4"> <li><p>Klicken Sie im Verwaltungsportal auf die Registerkarte **DATEN** und dann auf die Tabelle **TodoItem**. Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.<p></li></ol></p>
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
 * [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zur App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
 * [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
@@ -81,7 +81,7 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
 <!-- URLs. -->
 [Erste Schritte mit der Synchronisierung von Offlinedaten]: mobile-services-ios-get-started-offline-data.md
-[Hinzufügen von Authentifizierung zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Hinzufügen von Authentifizierung zur App]: mobile-services-dotnet-backend-ios-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-push.md
 
 
@@ -90,4 +90,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET-Back-End-Version]: mobile-services-dotnet-backend-ios-get-started.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

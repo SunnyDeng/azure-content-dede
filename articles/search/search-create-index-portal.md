@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen eines Azure Search-Index im Portal | Microsoft Azure"
+	pageTitle="Erstellen eines Azure Search-Index im Portal | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Fügen Sie Azure Search, einem in der Cloud gehosteten Suchdienst, durch Angabe von Felddefinitionen im Azure-Portal einen Index hinzu."
 	services="search"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="rest-api"
+	ms.devlang="na"
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
@@ -18,6 +18,11 @@
 	ms.author="heidist"/>
 
 # Erstellen eines Azure Search-Index im Azure-Portal
+> [AZURE.SELECTOR]
+- [Overview](search-what-is-an-index.md)
+- [Portal](search-create-index-portal.md)
+- [.NET](search-create-index-dotnet.md)
+- [REST API](search-create-index-rest-api.md)
 
 Sie können in Azure Search schnell einen Indexprototypen verwenden, indem Sie einen Index im Azure-Portal erstellen. Das Portal eignet sich hervorragend für Machbarkeitsstudien, kann aber auch zum Anzeigen von Schemadefinitionen und Ressourcennutzung für einen beliebigen Index verwendet werden, der für Ihren Dienst bereitgestellt ist.
 
@@ -100,4 +105,4 @@ Nachdem Sie sich mit dem einfachen Index vertraut gemacht haben, können Sie ggf
 [4]: ./media/search-create-index-portal/AzureSearch-PortalIndex-4.PNG
 [5]: ./media/search-create-index-portal/AzureSearch-PortalIndex-5.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

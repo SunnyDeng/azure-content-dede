@@ -22,7 +22,7 @@
 
 Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Anwendungs-Back-End ermöglicht. Eines der größten Probleme im Zusammenhang mit IoT-Projekten ist die sichere und zuverlässige Verbindung von Geräten mit dem Back-End der Anwendung. Um diesen Fall zu vereinfachen, bietet Azure IoT Hub zuverlässiges Gerät-zu-Cloud- (Device-to-Cloud, D2C) und Cloud-zu-Gerät-Messaging (Cloud-to-Device, C2D) mit Hyper-Skalierung, ermöglicht die sichere Kommunikation durch gerätespezifische Sicherheitsanmeldeinformationen und Zugriffssteuerung und umfasst Gerätebibliotheken für die am häufigsten verwendeten Sprachen und Plattformen.
 
-Dieses Lernprogramm zeigt, wie Sie mit dem Azure-Portal einen IoT Hub erstellen. Außerdem wird beschrieben, wie Sie eine Geräteidentität in Ihrem IoT Hub erstellen, ein simuliertes Gerät zum Senden von D2C-Nachrichten erstellen und diese Nachrichten vom Cloud-Back-End empfangen.
+Dieses Tutorial zeigt, wie Sie mit dem Azure-Vorschauportal einen IoT Hub erstellen. Außerdem wird beschrieben, wie Sie eine Geräteidentität in Ihrem IoT Hub erstellen, ein simuliertes Gerät zum Senden von D2C-Nachrichten erstellen und diese Nachrichten vom Cloud-Back-End empfangen.
 
 Am Ende dieses Tutorials verfügen Sie über drei Windows-Konsolenanwendungen:
 
@@ -30,7 +30,7 @@ Am Ende dieses Tutorials verfügen Sie über drei Windows-Konsolenanwendungen:
 * **ReadDeviceToCloudMessages**. Hiermit werden D2C-Nachrichten gelesen und ihr Inhalt angezeigt.
 * **SimulatedDevice**. Hiermit wird mithilfe der zuvor erstellten Geräteidentität eine Verbindung mit Ihrem IoT Hub hergestellt und jede Sekunde eine D2C-Nachricht gesendet.
 
-> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center][] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Tutorial sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
+> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center][] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
@@ -129,4 +129,4 @@ Weitere Informationen zu IoT Hub:
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

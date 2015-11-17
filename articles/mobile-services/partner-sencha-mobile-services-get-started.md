@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-sencha"
 	ms.devlang="multiple"
 	ms.topic="get-started-article"
-	ms.date="10/09/2015"
+	ms.date="11/06/2015"
 	ms.author="glenga"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services und Sencha Touch
@@ -42,8 +42,9 @@ Unten finden Sie einen Screenshot aus der fertigen App:
 - Herunterladen und Installieren von [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download" target="\_blank").
 
 - Java Runtime Environment (JRE) oder Java Development Kit (wenn Sie Android-Apps erstellen)
+- Ruby und SASS Gem.
 
-## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
+## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
 
 [AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
 
@@ -94,7 +95,7 @@ Wenn Sie eine externe Klassenbibliothek hinzufügen möchten, laden Sie bei den 
 
 Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendung hinzufügen:
 
-1. Laden Sie das Azure-Erweiterungenpaket [hier](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure) herunter. (Sie können Ihre Sencha-Foren-ID verwenden, um Zugriff auf diesen Bereich zu erhalten.)
+1. Laden Sie das Azure-Erweiterungenpaket [hier](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure) herunter. (Sie können Ihre Sencha-Foren-ID verwenden, um Zugriff auf diesen Bereich zu erhalten.)
 
 2. Kopieren Sie das Azure-Erweiterungenpaket vom Downloadverzeichnis zum endgültigen Zielort, und entpacken Sie es:
 
@@ -111,7 +112,7 @@ Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendun
 
 Alle Anwendungen, die von Sencha Cmd erstellt wurden, haben im Stamm einen Paketeordner. Der Speicherort dieses Ordners kann konfiguriert werden, aber unabhängig vom Speicherort dient der Paketeordner auch als Speicher aller Pakete, die von der Anwendung verwendet wurden (oder von Anwendungen, wenn Sie einen Sencha Workspace erstellt haben).
 
-Da Ext.Azure ein Sencha Cmd-Paket ist, kann der Quellcode mit Sencha Cmd einfach installiert und in die Anwendung eingefügt werden. (Unter [Sencha Cmd Packages](http://docs.sencha.com/cmd/3.1.2/#!/guide/command_packages) (in englischer Sprache) erhalten Sie weitere Informationen).
+Da Ext.Azure ein Sencha Cmd-Paket ist, kann der Quellcode mit Sencha Cmd einfach installiert und in die Anwendung eingefügt werden. (Unter [Sencha Cmd Packages](http://docs.sencha.com/cmd/6.x/cmd_packages/cmd_packages.html) (in englischer Sprache) erhalten Sie weitere Informationen).
 
 Um das Azure-Erweiterungspaket aus dem Sencha-Paketverzeichnis herunterzuladen, müssen Sie den Paketnamen zur Datei **app.json** hinzufügen und die Anwendung erstellen:
 
@@ -663,7 +664,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
   2. Verwenden Sie Sencha Cmd, um folgende Befehle auszuführen:
 
-    * *sencha app refresh*: Dieser Befehl weist Sencha Cmd an, alle App-Abhängigkeiten zu suchen und alle benötigten Pakete herunterzuladen (z. B. [Sencha Touch-Erweiterungen für Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)).
+    * *sencha app refresh*: Dieser Befehl weist Sencha Cmd an, alle App-Abhängigkeiten zu suchen und alle benötigten Pakete herunterzuladen (z. B. [Sencha Touch-Erweiterungen für Azure](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)).
 
     * *sencha web start*: Dadurch wird ein lokaler Webserver gestartet, der die Anwendung testet.
 
@@ -701,7 +702,7 @@ Anschließend erhalten Sie weitere Informationen zu Sencha Touch-Erweiterungen f
 ##Zusätzliche Ressourcen
 
   * [Sencha Touch herunterladen](http://pages.sencha.com/touch-for-azure.html)
-  * [Sencha Touch-Erweiterungen für Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)
+  * [Sencha Touch-Erweiterungen für Azure](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)
 
 
 ##Zusammenfassung
@@ -716,4 +717,4 @@ Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

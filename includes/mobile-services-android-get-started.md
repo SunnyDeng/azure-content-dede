@@ -39,4 +39,4 @@ Sie können die Anwendung mit dem Emulator oder einem echten Gerät ausführen.
 
    	![](./media/mobile-services-android-get-started/mobile-data-browse.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -7,9 +7,9 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="08/21/2015" ms.author="jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="11/03/2015" ms.author="jimpark"; "aashishr"/>
 
-# Konfigurieren von Azure Backup zur Vorbereitung auf die Sicherung von Windows-Servern
+# Vorbereiten der Umgebung für die Sicherung von Windows-Computern
 
 In diesem Artikel erfahren Sie, wie Sie das Feature Azure Backup aktivieren. Um Windows-Server oder Windows-Clients auf Azure zu sichern, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 >[AZURE.NOTE]Früher mussten Sie ein X.509 v3-Zertifikat erstellen oder beziehen, um Ihren Sicherungsserver zu registrieren. Zertifikate werden weiterhin unterstützt, aber jetzt können Sie direkt auf der Seite "Schnellstart" Tresoranmeldeinformationen generieren, wodurch der Azure-Tresor einfacher bei einem Server registriert werden kann.
@@ -34,4 +34,4 @@ Um Dateien und Daten von Ihrem Windows-Server auf Azure zu sichern, müssen Sie 
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 - [Azure Backup – Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

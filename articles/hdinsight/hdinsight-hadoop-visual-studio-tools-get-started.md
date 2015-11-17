@@ -180,6 +180,21 @@ Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb 
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – Hive-Aufträge anzeigen][12]
 
+### Schnellerer Weg zur Hive-Ausführung über HiveServer2
+
+>[AZURE.NOTE]Dieses Feature funktioniert nur mit HDInsight-Clustern ab Version 3.2.
+
+Die HDInsight-Tools haben bisher Hive-Aufträge via WebHCat (auch bekannt als Templeton) übermittelt. Es dauerte sehr lange, bis Auftragsdetails und Fehlerinformationen zurückgegeben wurden. Um dieses Leistungsproblem zu beheben, führen die HDInsight-Tools Hive-Aufträge jetzt über HiveServer2 direkt im Cluster aus, sodass RDP/SSH umgangen wird. Als weiterer Vorteil neben der Leistungsverbesserung können die Benutzer Hive nun in Tez-Diagrammen anzeigen, und sie können die Aufgabendetails anzeigen.
+
+Für HDInsight-Cluster ab Version 3.2 wird eine Schaltfläche **Über HiveServer2 ausführen** angezeigt:
+
+![hdinsight visual studio tools execute via hiveserver2](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.execute.via.hiveserver2.png)
+
+Wenn die Hive-Abfrage in Tez ausgeführt wurde, können Sie die zurückgestreamten Protokolle in Echtzeit sehen, und Sie sehen auch die Auftragsdiagramme.
+ 
+![hdinsight visual studio tools fast path hive execution](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.fast.path.hive.execution.png)
+
+
 ### Leistungsdiagramm für Tez Hive-Auftrag
 
 In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagrammen für die Hive-Aufträge unterstützt, die vom Tez-Ausführungsmodul ausgeführt werden. Informationen zum Aktivieren von Tez finden Sie unter [Verwenden von Hive in HDInsight][hdinsight.hive]. Nachdem Sie in Visual Studio einen Hive-Job gesendet haben, wird das Diagramm in Visual Studio angezeigt, wenn der Auftrag abgeschlossen ist. Sie müssen unter Umständen auf die Schaltfläche **Aktualisieren** klicken, um den aktuellen Auftragsstatus zu erhalten.
@@ -189,6 +204,12 @@ In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagram
 ![Leistungsdiagramm für Hadoop Hive Tez](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
 Um Ihnen das Verständnis der Hive-Abfragen zu erleichtern, wurde dem Tool in dieser Version die Ansicht für Hive-Auftragsoperatoren als neues Feature hinzugefügt. Sie müssen nur auf die die Scheitelpunkte des Auftragsdiagramms doppelklicken, um alle Operatoren im Scheitelpunkt anzuzeigen. Sie können auch auf einen bestimmten Operator zeigen, um weitere Details dazu anzuzeigen.
+
+### Aufgabenausführungsansicht für Hive bei Tez-Aufträgen
+
+Mit der Aufgabenausführungsansicht für Hive bei Tez-Aufträgen können Sie strukturierte und visualisierte Informationen zu Hive-Aufträgen gewinnen und sich mehr Auftragsdetails anzeigen lassen. Bei Leistungsproblemen können Sie in dieser Ansicht zusätzliche Details abrufen. Sie erfahren z. B., wie jede einzelne Aufgabe ausgeführt wird, und sehen die Details dazu (Lese- und Schreibvorgänge für Daten, geplanter Ausführungszeitpunkt, Startzeit, Endzeit usw.). Auf Basis dieser visualisierten Informationen können Sie die Auftragskonfigurationen oder die Systemarchitektur optimieren.
+
+![hdinsight visual studio tools task execution view](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png)
 
 ## Ausführen von Pig-Skripts
 
@@ -237,4 +258,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

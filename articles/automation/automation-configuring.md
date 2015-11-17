@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/22/2015"
+   ms.date="11/02/2015"
    ms.author="bwren" />
 
 # Konfigurieren von Azure Automation
@@ -21,7 +21,7 @@ Dieser Artikel beschreibt die Aktionen, die Sie vor der Verwendung von Azure Aut
 
 ## Automation-Konten
 
-Wenn Sie das erste Mal mit Azure Automation arbeiten, müssen Sie zunächst mindestens ein Automation-Konto erstellen. Mithilfe von Automation-Konten können Sie Ihre Automation-Ressourcen (Runbooks, Objekte) von den Automation-Ressourcen in anderen Automation-Konten isolieren. Sie können Automation-Konten dazu verwenden, Automation-Ressourcen in separate logische Umgebungen zu trennen. Beispielsweise können Sie ein Konto für die Entwicklung und ein anderes für die Produktion verwenden.
+Wenn Sie das erste Mal mit Azure Automation arbeiten, müssen Sie zunächst mindestens ein Automation-Konto erstellen. Mithilfe von Automation-Konten können Sie Ihre Automation-Ressourcen (Runbooks, Objekte, Konfigurationen) von den Automation-Ressourcen in anderen Automation-Konten isolieren. Sie können Automation-Konten dazu verwenden, Automation-Ressourcen in separate logische Umgebungen zu trennen. Beispielsweise können Sie ein Konto für die Entwicklung und ein anderes für die Produktion verwenden.
 
 Die Automation-Ressourcen für jedes Automation-Konto sind mit einer einzelnen Azure-Region verknüpft, die Automation-Konten können jedoch Azure-Dienste in beliebigen Regionen verwalten. Der Hauptgrund für das Erstellen von Automation-Konten in unterschiedlichen Regionen ist der, dass Richtlinien eine Isolierung von Daten und Ressourcen innerhalb einer spezifischen Region vorsehen.
 
@@ -67,4 +67,4 @@ Diese Zeilen sollten nach jedem [Prüfpunkt](http://technet.microsoft.com/librar
 - [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

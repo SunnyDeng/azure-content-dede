@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/06/2015"
+	ms.date="11/05/2015"
 	ms.author="craig.dunn@xamarin.com"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
@@ -136,4 +136,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

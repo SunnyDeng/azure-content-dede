@@ -41,7 +41,7 @@ Tutorials und Beispielcode mit komplexeren Node.js-Anwendungen sowie weitere The
 
 > [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
 >
-> Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+> Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ## Erstellen einer Web-App und Aktivieren der Git-Veröffentlichung
 
@@ -61,35 +61,37 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 
 	Der Name muss innerhalb der Domäne "azurewebsites.net" eindeutig sein, da die URL der Web-App "{name}.azurewebsites.net" lauten wird. Wenn der eingegebene Name nicht eindeutig ist, wird im Textfeld ein rotes Ausrufezeichen angezeigt.
 
-5. Wählen Sie eine vorhandene **Ressourcengruppe** aus, oder erstellen Sie eine neue.
+5. Wählen Sie ein **Abonnement** aus.
+
+6. Wählen Sie eine **Ressourcengruppe** aus, oder erstellen Sie eine neue.
 
 	Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../resource-group-portal.md).
 
-5. Wählen Sie einen **App Service-Plan/Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
+7. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
 
 	Weitere Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-6. Klicken Sie auf **Erstellen**.
+8. Klicken Sie auf **Erstellen**.
    
 	![][portal-quick-create2]
 
 	Azure beendet die Erstellung der neuen Web-App innerhalb kurzer Zeit, üblicherweise in weniger als einer Minute.
 
-7. Klicken Sie auf **Web-Apps > {Ihre neue Web-App}**.
+9. Klicken Sie auf **Web-Apps > {Ihre neue Web-App}**.
 
 	![](./media/web-sites-nodejs-develop-deploy-mac/gotowebapp.png)
 
-8. Klicken Sie auf dem Blatt **Web-App** auf das Detail **Bereitstellung**.
+10. Klicken Sie auf dem Blatt **Web-App** auf das Detail **Bereitstellung**.
 
 	![][deployment-part]
 
-9. Klicken Sie auf dem Blatt **Dauerhafte Bereitstellung** auf **Quelle auswählen**.
+11. Klicken Sie auf dem Blatt **Dauerhafte Bereitstellung** auf **Quelle auswählen**.
 
-14. Klicken Sie auf **Lokales Git-Repository** und dann auf **OK**.
+12. Klicken Sie auf **Lokales Git-Repository** und dann auf **OK**.
 
 	![][setup-git-publishing]
 
-11. Falls nicht bereits erfolgt, richten Sie Anmeldeinformationen für die Bereitstellung ein.
+13. Falls nicht bereits erfolgt, richten Sie Anmeldeinformationen für die Bereitstellung ein.
 
 	a. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen > Anmeldeinformationen für die Bereitstellung**.
 
@@ -99,7 +101,7 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 	
 	![](./media/web-sites-nodejs-develop-deploy-mac/setdeploycreds.png)
 
-11. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen** und anschließend auf **Eigenschaften**.
+14. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen** und anschließend auf **Eigenschaften**.
  
 	Für die Veröffentlichung führen Sie ein Push zu einem Remote-Git-Repository aus. Die URL für das Repository wird unter **GIT-URL** aufgelistet. Sie verwenden diese URL später im Tutorial.
 
@@ -222,4 +224,4 @@ Weitere Informationen zum Entwickeln von Node.js-Anwendungen in Azure finden Sie
 [deployment-credentials]: ./media/web-sites-nodejs-develop-deploy-mac/deployment-credentials.png
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

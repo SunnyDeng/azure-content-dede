@@ -41,7 +41,7 @@ Wenn Sie diese Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorsc
 
 1.	Klicken Sie auf **Parameter**. Geben Sie im Bereich **Parameter** neue Werte ein, wählen Sie aus den zulässigen Werten aus, oder übernehmen Sie die Standardwerte. Klicken Sie dann auf **OK**.
 2.	Klicken Sie bei Bedarf auf **Abonnement**, und wählen Sie das richtige Azure-Abonnement aus.
-3.	Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe aus. Sie können auch auf **Oder neu erstellen** klicken, um eine neue Ressourcengruppe für diese Workload zu erstellen.
+3.	Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe aus. Sie können auch auf **Oder neu erstellen** klicken, um einen neuen Trigger für diesen Workload zu erstellen.
 4.	Sofern erforderlich, klicken Sie auf **Ressourcengruppenstandort**, und wählen Sie den richtigen Azure-Standort aus.
 6.	Klicken Sie ggf. auf **Rechtliche Bedingungen**, um die Nutzungsbedingungen für die Vorlage zu lesen, und klicken Sie dann auf **Kaufen**.
 7.	Klicken Sie auf **Erstellen**.
@@ -50,7 +50,7 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 ### Azure PowerShell
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Ersetzen Sie zum Ausführen dieser Befehle in Azure PowerShell 0.9.8 und früheren Versionen **New-AzureRMResourceGroup** durch **New-AzureResourceGroup** und **New-AzureResourceGroupDeployment** durch **New-AzureResourceGroupDeployment**. Fügen Sie zudem den Befehl **Switch-AzureMode AzureResourceManager** vor dem Befehl **New-AzureResourceGroup** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Ersetzen Sie zum Ausführen dieser Befehle in Azure PowerShell 0.9.8 und früheren Versionen **New-AzureRMResourceGroup** durch **New-AzureResourceGroup** und **New-AzureRMResourceGroupDeployment** durch **New-AzureResourceGroupDeployment**. Fügen Sie zudem den Befehl **Switch-AzureMode AzureResourceManager** vor dem Befehl **New-AzureResourceGroup** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
@@ -113,7 +113,7 @@ Wenn Sie diese Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorsc
 
 1.	Klicken Sie auf **Parameter**. Geben Sie im Bereich **Parameter** neue Werte ein, wählen Sie aus den zulässigen Werten aus, oder übernehmen Sie die Standardwerte. Klicken Sie dann auf **OK**.
 2.	Klicken Sie bei Bedarf auf **Abonnement**, und wählen Sie das richtige Azure-Abonnement aus.
-3.	Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe aus. Sie können auch auf **Oder neu erstellen** klicken, um eine neue Ressourcengruppe für diese Workload zu erstellen.
+3.	Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe aus. Sie können auch auf **Oder neu erstellen** klicken, um einen neuen Trigger für diesen Workload zu erstellen.
 4.	Sofern erforderlich, klicken Sie auf **Ressourcengruppenstandort**, und wählen Sie den richtigen Azure-Standort aus.
 5.	Klicken Sie ggf. auf **Rechtliche Bedingungen**, um die Nutzungsbedingungen für die Vorlage zu lesen, und klicken Sie dann auf **Kaufen**.
 6.	Klicken Sie auf **Erstellen**.
@@ -122,7 +122,7 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 ### Azure PowerShell
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Ersetzen Sie zum Ausführen dieser Befehle in Azure PowerShell 0.9.8 und früheren Versionen **New-AzureRMResourceGroup** durch **New-AzureResourceGroup** und **New-AzureResourceGroupDeployment** durch **New-AzureResourceGroupDeployment**. Fügen Sie zudem den Befehl **Switch-AzureMode AzureResourceManager** vor dem Befehl **New-AzureResourceGroup** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
+> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Ersetzen Sie zum Ausführen dieser Befehle in Azure PowerShell 0.9.8 und früheren Versionen **New-AzureRMResourceGroup** durch **New-AzureResourceGroup** und **New-AzureRMResourceGroupDeployment** durch **New-AzureResourceGroupDeployment**. Fügen Sie zudem den Befehl **Switch-AzureMode AzureResourceManager** vor dem Befehl **New-AzureResourceGroup** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
@@ -186,4 +186,4 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

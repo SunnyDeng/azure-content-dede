@@ -23,6 +23,7 @@
 
 Der interne Azure-Lastenausgleich (Internal Load Balancing, ILB) ermöglicht Lastenausgleich zwischen virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk mit regionalem Umfang. Informationen zur Verwendung und Konfiguration virtueller Netzwerke mit regionalem Umfang finden Sie unter [Regionale virtuelle Netzwerke](virtual-networks-migrate-to-regional-vnet.md). Vorhandene virtuelle Netzwerke, die für eine Affinitätsgruppe konfiguriert wurden, können kein ILB verwenden.
 
+
 ## Erstellen einer internen Lastenausgleichsgruppe für virtuelle Computer
 
 Zum Erstellen eines internen Azure-Lastenausgleichsgruppe und der Server, die den Datenverkehr an diese Gruppe senden, müssen Sie Folgendes ausführen:
@@ -332,4 +333,4 @@ Um weitere Informationen zu ILB-Cmdlets zu erhalten, führen Sie die folgenden B
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

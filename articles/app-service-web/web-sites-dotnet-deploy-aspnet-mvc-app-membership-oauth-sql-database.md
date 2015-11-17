@@ -13,7 +13,7 @@
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="10/07/2015" 
 	ms.author="riande"/>
 
@@ -75,11 +75,11 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 	Der Name muss innerhalb der Domäne "azurewebsites.net" eindeutig sein, da die URL der Web-App "{name}.azurewebsites.net" lauten wird. Der Konfigurations-Assistent schlägt einen eindeutigen Namen vor, für den eine Nummer an Projektnamen "ContactManager" angefügt wird, was für dieses Tutorial in Ordnung ist.
 
-5. Wählen Sie in der Dropdownliste **App Service-Plan** die Option **Neuen App Service-Plan erstellen** aus, und geben Sie einen Namen ein, z. B. „StandardWeb“ wie in der Abbildung.
+5. Wählen Sie in der Dropdownliste **App Service-Plan** die Option **Neuen App Service-Plan erstellen** aus, und geben Sie einen Namen ein, z. B. "StandardWeb" wie in der Abbildung.
 
 	Falls gewünscht, können Sie einen App Service-Plan auswählen, über den Sie bereits verfügen. Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-5. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. „ExampleMVC“ wie in der Abbildung.
+5. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. "ExampleMVC" wie in der Abbildung.
 
 	Falls gewünscht, können Sie eine Ressourcengruppe auswählen, über die Sie bereits verfügen. Doch wenn Sie eine neue Ressourcengruppe erstellen, die Sie nur für dieses Tutorial verwenden, können Sie einfach alle Azure-Ressourcen für das Tutorial löschen, wenn Sie sie nicht mehr benötigen. Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
@@ -505,7 +505,7 @@ Mit dem **Update-Database**-Befehl wird die **Seed**-Methode ausgeführt, und mi
 
 ## Schützen der Anwendung durch SSL und das Attribut "Authorize" ##
 
-In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx)-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die **Index**-Aktionsmethode des Controllers „Home“ anzeigen. Registrierten Benutzern werden die Kontaktdaten (die Seiten **Index** und **Details** des Controllers „Cm“) sowie die Info- und Kontaktseiten angezeigt. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
+In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx)-Attribut an, um den Zugriff auf die Aktionsmethoden einzuschränken. Anonyme Benutzer können nur die **Index**-Aktionsmethode des Controllers "Home" anzeigen. Registrierten Benutzern werden die Kontaktdaten (die Seiten **Index** und **Details** des Controllers "Cm") sowie die Info- und Kontaktseiten angezeigt. Nur Benutzer mit der Rolle *canEdit* können auf Aktionsmethoden zugreifen, mit denen Daten geändert werden.
 
 1. Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code (damit werden die zwei Filter hinzugefügt):
 
@@ -580,7 +580,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Klicken Sie auf den Link **About** oder **Contact**. Sie werden zur Anmeldeseite weitergeleitet, da anonyme Benutzer diese Seiten nicht anzeigen können.
 
-1. Klicken Sie auf den Link **Register as a new user**, und fügen Sie einen lokalen Benutzer mit der E-Mail-Adresse **joe@contoso.com* hinzu. Stellen Sie sicher, dass *Joe* die Seiten Home, About und Contact anzeigen kann.
+1. Klicken Sie auf den Link **Register as a new user**, und fügen Sie einen lokalen Benutzer mit der E-Mail-Adresse **joe@contoso.com* hinzu. Stellen Sie sicher, dass *Joe* die Seiten "Home", "About" und "Contact" anzeigen kann.
 
 	![Anmeldung](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss14.PNG)
 
@@ -588,7 +588,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Klicken Sie auf einen Bearbeitungslink auf der Seite. Sie werden zur Anmeldeseite weitergeleitet (da kein neuer lokaler Benutzer zur Rolle *canEdit* hinzugefügt wurde).
 
-1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort „P\_assw0rd1“ an (das „0“ in „word“ ist eine Null). Sie werden zu der Bearbeitungsseite weitergeleitet, die Sie zuvor ausgewählt haben.
+1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort "P\_assw0rd1" an (das "0" in "word" ist eine Null). Sie werden zu der Bearbeitungsseite weitergeleitet, die Sie zuvor ausgewählt haben.
 
 	Wenn Sie sich nicht mit diesem Konto und Kennwort anmelden können, versuchen Sie, das Kennwort aus dem Quellcode zu kopieren und einzufügen. Sollten Sie sich dennoch nicht anmelden können, überprüfen Sie in der Spalte **UserName** der Tabelle **AspNetUsers**, ob **user1@contoso.com* wirklich hinzugefügt wurde.
 
@@ -614,11 +614,11 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Klicken Sie auf **Veröffentlichen**.
 
-1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort „P\_assw0rd1“ an, und überprüfen Sie, ob Sie die Daten bearbeiten können.
+1. Melden Sie sich als **user1@contoso.com* mit dem Kennwort "P\_assw0rd1" an, und überprüfen Sie, ob Sie die Daten bearbeiten können.
 
 1. Melden Sie sich ab.
 
-1. Wechseln Sie zur [Google Developers Console](https://console.developers.google.com/), und aktualisieren Sie auf der Registerkarte **Anmeldeinformationen** die Umleitungs-URIs und JavaScript-Ursprünge so , dass die Azure-URL verwendet wird.
+1. Wechseln Sie zur [Google Developers Console](https://console.developers.google.com/), und aktualisieren Sie auf der Registerkarte **Anmeldeinformationen** die Umleitungs-URIs und JavaScript-Ursprünge so, dass die Azure-URL verwendet wird.
 
 1. Melden Sie sich über Google oder Facebook an. Damit wird das Google- oder Facebook-Konto der Rolle **canEdit** hinzugefügt. Wenn der HTTP 400-Fehler mit der Meldung *The redirect URI in the request: https://contactmanager{my version}.azurewebsites.net/signin-google did not match a registered redirect URI.* angezeigt wird, müssen Sie warten, bis Ihre Änderungen übermittelt wurden. Wenn dieser Fehler auch nach mehreren Minuten noch angezeigt wird, überprüfen Sie die URIs.
 
@@ -798,4 +798,4 @@ Dieses Tutorial wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (T
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

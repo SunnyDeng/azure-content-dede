@@ -157,15 +157,34 @@ Sie sind bereits für das Senden einer Popupbenachrichtigung. und wir werden jet
 
 ###Gewähren von Zugriff auf Mobile Engagement zum Senden von Benachrichtigungen
 
-1. Sie müssen Ihre App einer Windows Store-App zuweisen, um Ihre **Paket-Sicherheits-ID (SID)** und Ihren **Geheimen Schlüssel** (Geheimer Clientschlüssel) zu erhalten. Sie können eine Anwendung aus dem [Windows Store Dev Center] erstellen und dann sicherstellen, dass Sie **Verknüpfen der App mit dem Store** aus Visual Studio verwenden.
+1. Öffnen Sie das [Windows Store Dev Center] in Ihrem Webbrowser, melden Sie sich an, und Sie erstellen ein Konto, falls erforderlich.
+2. Klicken Sie oben rechts auf **Dashboard**, und klicken Sie im linken Menü des Bereichs auf **Neue App erstellen**. 
 
-	![][7]
+	![][9]
 
-2. Navigieren Sie zu den **Einstellungen** Ihres Mobile Engagement-Portals, und klicken Sie auf den Abschnitt **Systemeigener Push** auf der linken Seite.
+2. Erstellen Sie Ihre App, indem Sie ihren Namen reservieren.
 
-3. Klicken Sie auf die Schaltfläche **Bearbeiten**, um Ihre **Paket-Sicherheits-ID (SID)** und Ihren **Geheimen Schlüssel** wie unten dargestellt einzugeben:
+	![][10]
+
+3. Sobald die App erstellt wurde, navigieren Sie im linken Menü zu **Dienste -> Pushbenachrichtigungen**.
+
+	![][11]
+
+4. Klicken Sie im Abschnitt „Pushbenachrichtigungen“ auf den Link **Live Services-Website**.
+
+	![][12]
+
+5. Sie werden zum Abschnitt für Pushanmeldeinformationen weitergeleitet. Stellen Sie sicher, dass der Abschnitt **App-Einstellungen** angezeigt wird, und kopieren Sie dann die **Paket-SID** und den **geheimen Clientschlüssel**.
+
+	![][13]
+
+6. Navigieren Sie zu den **Einstellungen** Ihres Mobile Engagement-Portals, und klicken Sie auf den Abschnitt **Systemeigener Push** auf der linken Seite. Klicken Sie dann auf die Schaltfläche **Bearbeiten**, um Ihre **Paket-Sicherheits-ID (SID)** und Ihren **geheimen Schlüssel** einzugeben, wie unten dargestellt:
 
 	![][6]
+
+8. Stellen Sie abschließend sicher, dass Sie Ihre Visual Studio-App mit dieser erstellten App im App Store verknüpfen. Sie müssen dazu in Visual Studio auf **App mit Store verknüpfen** klicken.
+
+	![][7]
 
 ##<a id="send"></a>Versenden von Benachrichtigungen an die App
 
@@ -178,7 +197,7 @@ Wenn die App ausgeführt wurde, wird eine Benachrichtigung in der App angezeigt.
 <!-- URLs. -->
 [Mobile Engagement Windows Universal SDK documentation]: ../mobile-engagement-windows-store-integrate-engagement/
 [MicrosoftAzure.MobileEngagement]: http://go.microsoft.com/?linkid=9864592
-[Windows Store Dev Center]: http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409
+[Windows Store Dev Center]: https://dev.windows.com
 [Windows Universal Apps - Overlay integration]: ../mobile-engagement-windows-store-integrate-engagement-reach/#overlay-integration
 
 <!-- Images. -->
@@ -189,5 +208,10 @@ Wenn die App ausgeführt wurde, wird eine Benachrichtigung in der App angezeigt.
 [6]: ./media/mobile-engagement-windows-store-dotnet-get-started/enter-credentials.png
 [7]: ./media/mobile-engagement-windows-store-dotnet-get-started/associate-app-store.png
 [8]: ./media/mobile-engagement-windows-store-dotnet-get-started/vs-suspend.png
+[9]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_create_app.png
+[10]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_app_name.png
+[11]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push.png
+[12]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push_1.png
+[13]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push_creds.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

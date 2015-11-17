@@ -223,16 +223,15 @@ Folgende Überlegungen sollten berücksichtigt werden:
 
 
 
-##Nächste Schritte
+##Nächste Schritte: Media Services-Lernpfade
 
-###Media Services-Lernpfade
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+##Feedback geben
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-### Suchen Sie etwas anderes?
+## Suchen Sie etwas anderes?
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
@@ -261,4 +260,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->
