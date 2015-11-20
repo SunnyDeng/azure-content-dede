@@ -57,9 +57,9 @@ Die folgende Tabelle zeigt die zulässigen Änderungen an einen Dienst während 
 |Neue Zertifikate hinzufügen|Ja|Ja|Ja|
 |Vorhandene Zertifikate ändern|Ja|Ja|Ja|
 |Neuen Code bereitstellen|Ja|Ja|Ja|
-* Erfordert Azure SDK 1.5 oder höher.
+\*Erfordert Azure SDK 1.5 oder höher.
 
-> [AZURE.WARNING]Wenn die Größe des virtuellen Computers geändert wird, werden dadurch lokale Daten zerstört.
+> [AZURE.WARNING] Wenn die Größe des virtuellen Computers geändert wird, werden dadurch lokale Daten zerstört.
 
 
 Die folgenden Elemente werden während einer Aktualisierung nicht unterstützt:
@@ -81,7 +81,7 @@ Das nächste Diagramm zeigt, wie die Aktualisierung durchgeführt wird, wenn Sie
 
 ![Rolle aktualisieren](media/cloud-services-update-azure-service/IC345880.png "Rolle aktualisieren")
 
-> [AZURE.NOTE]Beim Aktualisieren eines Diensts aus einer einzelnen Instanz auf mehrere Instanzen wird der Dienst während des Upgrades beendet. Dies liegt an der Art und Weise, wie Upgrades von Diensten in Azure durchgeführt werden. Die Vereinbarung zum Servicelevel mit gewährleisteter Dienstverfügbarkeit gilt nur für Dienste, die mit mehr als eine Instanz bereitgestellt werden. Die folgende Liste beschreibt, wie sich jedes Upgradeszenario eines Azure-Diensts auf die Daten auf jedem Laufwerk auswirkt:
+> [AZURE.NOTE] Beim Aktualisieren eines Diensts aus einer einzelnen Instanz auf mehrere Instanzen wird der Dienst während des Upgrades beendet. Dies liegt an der Art und Weise, wie Upgrades von Diensten in Azure durchgeführt werden. Die Vereinbarung zum Servicelevel mit gewährleisteter Dienstverfügbarkeit gilt nur für Dienste, die mit mehr als eine Instanz bereitgestellt werden. Die folgende Liste beschreibt, wie sich jedes Upgradeszenario eines Azure-Diensts auf die Daten auf jedem Laufwerk auswirkt:
 >
 >Neustart des virtuellen Computers:
 >
@@ -122,7 +122,7 @@ Während einer automatischen Aktualisierung wertet der Azure Fabric Controller i
 ## Zurücksetzen einer Aktualisierung
 Azure ist bei der Verwaltung von Diensten während einer Aktualisierung flexibel, da Sie weitere Vorgänge für einen Dienst initiieren können, nachdem die ursprüngliche Aktualisierungsanforderung vom Azure Fabric Controller akzeptiert wurde. Ein Zurücksetzen ist nur möglich, wenn eine Aktualisierung (Konfigurationsänderung) oder ein Upgrade in der Bereitstellung den Status **In Bearbeitung** hat. Eine Aktualisierung oder ein Upgrade gilt als in Bearbeitung, wenn mindestens eine Instanz des Diensts noch nicht auf die neue Version aktualisiert wurde. Um zu testen, ob ein Zurücksetzen zulässig ist, prüfen Sie, ob der Wert der Kennzeichnung „RollbackAllowed“, der von den Vorgängen [Bereitstellung abrufen](https://msdn.microsoft.com/library/azure/ee460804.aspx) und [Clouddiensteigenschaften abrufen](https://msdn.microsoft.com/library/azure/ee460806.aspx) zurückgegeben wird, auf „true“ festgelegt ist.
 
-> [AZURE.NOTE]Ein Zurücksetzen ist nur für eine **direkte** Aktualisierung (bzw. ein direktes Upgrade) sinnvoll, da ein VIP-Austausch das Ersetzen einer gesamten ausgeführten Instanz Ihres Diensts durch eine andere beinhaltet.
+> [AZURE.NOTE] Ein Zurücksetzen ist nur für eine **direkte** Aktualisierung (bzw. ein direktes Upgrade) sinnvoll, da ein VIP-Austausch das Ersetzen einer gesamten ausgeführten Instanz Ihres Diensts durch eine andere beinhaltet.
 
 Das Zurücksetzen einer Aktualisierung in Bearbeitung wirkt sich folgendermaßen auf die Bereitstellung aus:
 
@@ -172,9 +172,11 @@ Das folgende Diagramm zeigt, wie ein Dienst mit zwei Rollen verteilt wird, wenn 
 
 ![Verteilung von Upgradedomänen](media/cloud-services-update-azure-service/IC345533.png "Verteilung von Upgradedomänen")
 
-> [AZURE.NOTE]Beachten Sie, dass Azure steuert, wie Instanzen Upgradedomänen zugeordnet werden. Es kann nicht festgelegt werden, welche Instanzen welcher Domäne zugeordnet werden.
+> [AZURE.NOTE] Beachten Sie, dass Azure steuert, wie Instanzen Upgradedomänen zugeordnet werden. Es kann nicht festgelegt werden, welche Instanzen welcher Domäne zugeordnet werden.
 
 ## Nächste Schritte
-[Verwalten von Clouddiensten](cloud-services-how-to-manage.md)<br> [Überwachung von Clouddiensten](cloud-services-how-to-monitor.md)<br> [Konfigurieren von Clouddiensten](cloud-services-how-to-cofigure.md)<br>
+[Verwalten von Clouddiensten](cloud-services-how-to-manage.md)<br>
+[Überwachung von Clouddiensten](cloud-services-how-to-monitor.md)<br>
+[Konfigurieren von Clouddiensten](cloud-services-how-to-cofigure.md)<br>
 
 <!---HONumber=Nov15_HO2-->
