@@ -69,11 +69,11 @@ Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Li
 
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
 
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 ##Weitere Informationen
 
@@ -82,4 +82,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

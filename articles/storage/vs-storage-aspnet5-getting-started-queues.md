@@ -3,7 +3,7 @@
 	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem ASP.NET 5-Projekt in Visual Studio"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	ms.author="tarcher"/>
 
 # Erste Schritte mit Warteschlangenspeicher und verbundenen Visual Studio-Diensten (ASP.NET 5)
 
@@ -68,7 +68,7 @@ Um auf Warteschlangen in ASP.NET 5-Projekten zuzugreifen, müssen Sie die folgen
 	    // Create the table client.
     	CloudQuecClient queueClient = storageAccount.CreateCloudTableClient();
 
-4. Rufen Sie ein **CloudQueue**-Objekt ab, um auf eine bestimmte Warteschlange zu verweisen.
+4. Abrufen eines **CloudQueue**-Objekts, das auf eine bestimmte Warteschlange verweist.
 
     	// Get a reference to a table named "messageQueue"
 	    CloudTable messageQueue = queueClient.GetQueueReference("messageQueue");
@@ -185,4 +185,4 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

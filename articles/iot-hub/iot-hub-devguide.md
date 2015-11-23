@@ -193,7 +193,7 @@ IoT Hub verwendet den folgenden Satz an *Berechtigungen*, um Zugriff auf den End
 
 Berechtigungen werden mithilfe der folgenden Methoden erteilt:
 
-* **Gemeinsam genutzte Zugriffsrichtlinien auf Hubebene**. *Gemeinsam genutzte Zugriffsrichtlinien* können eine beliebige Kombination der im vorigen Abschnitt aufgeführten Berechtigungen gewähren. Sie können Richtlinien im [Azure-Verwaltungsportal][lnk-management-portal] oder programmgesteuert mithilfe von [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] definieren. Ein neu erstellter IoT Hub verfügt über die folgenden Standardrichtlinien:
+* **Gemeinsam genutzte Zugriffsrichtlinien auf Hubebene**. *Gemeinsam genutzte Zugriffsrichtlinien* können eine beliebige Kombination der im vorigen Abschnitt aufgeführten Berechtigungen gewähren. Sie können Richtlinien im [Azure-Vorschauportal][lnk-management-portal] oder programmgesteuert mithilfe von [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] definieren. Ein neu erstellter IoT Hub verfügt über die folgenden Standardrichtlinien:
 
     - *iothubowner*: Richtlinie mit sämtlichen Berechtigungen
     - *service*: Richtlinie mit **ServiceConnect**-Berechtigung
@@ -267,7 +267,7 @@ Dieser Mechanismus ist mit einer [Event Hubs-Herausgeberrichtlinie][lnk-event-hu
 
 ## Nachrichten
 
-IoT Hub stellt Grundtypen für das Messaging bereit, die für die Kommunikation zwischen einem Anwendungs-Back-End (*Dienst* oder *Cloud*) und Geräten sowie umgekehrt eingesetzt wird. Diese Funktionalität wird als [Gerät-an-Cloud](#d2c) (Device-to-Cloud, D2C) bzw. [Cloud-an-Gerät](#c2d) (Cloud-to-Device, C2D) bezeichnet.
+IoT Hub stellt Grundtypen für das Messaging bereit, die für die Kommunikation zwischen einem Anwendungs-Back-End (*Dienst* oder *Cloud*) und Geräten sowie umgekehrt eingesetzt werden. Diese Funktionalität wird als [Gerät-an-Cloud](#d2c) (Device-to-Cloud, D2C) bzw. [Cloud-an-Gerät](#c2d) (Cloud-to-Device, C2D) bezeichnet.
 
 Die wichtigsten Eigenschaften beim IoT Hub-Messaging sind eine zuverlässige und stabile Übermittlung von Nachrichten. Dies bietet Ausfallsicherheit bei zeitweiligen Verbindungsproblemen auf Geräteseite und Lastspitzen bei der Ereignisverarbeitung auf Cloudseite. IoT Hub implementiert *mindestens einmal* Übermittlungsgarantien für D2C- und C2D-Messaging.
 
@@ -353,7 +353,7 @@ Ein IoT Hub macht die folgenden Eigenschaften zum Steuern des D2C-Messaging verf
 
 Analog zu Event Hubs ermöglicht IoT Hub die Verwaltung von Consumergruppen am empfangenden D2C-Endpunkt.
 
-Sie können all diese Eigenschaften sowohl über das [Azure-Portal][lnk-management-portal] als auch programmgesteuert über [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] ändern.
+Sie können all diese Eigenschaften sowohl über das [Azure-Vorschauportal][lnk-management-portal] als auch programmgesteuert über [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] ändern.
 
 #### Eigenschaften zum Schutz vor Spoofing <a id="antispoofing"></a>
 
@@ -405,7 +405,7 @@ Jede C2D-Nachricht verfügt über eine Gültigkeitsdauer. Diese kann (in der Eig
 
 Beim Senden einer C2D-Nachricht kann der Dienst das Übermitteln von Feedback auf Nachrichtenbasis anfordern, um über den finalen Status dieser Nachricht informiert zu werden. Wenn die **Ack**-Eigenschaft auf **positive** festgelegt wird, generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Abgeschlossen** erreicht hat. Bei Festlegung der **Ack**-Eigenschaft auf **negative** generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Unzustellbar** erreicht. Bei Festlegung der **Ack**-Eigenschaft auf **full** generiert IoT Hub in beiden Fällen eine Feedbacknachricht.
 
-Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen [Nachrichtenlebenszyklus aufweisen](#message lifecycle). Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen Nachrichtenlebenszyklus aufweisen. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
 
 Jede vom Feedbackendpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
 
@@ -419,9 +419,8 @@ Der Nachrichtenkörper ist ein serialisiertes JSON-Array aus Datensätzen, von d
 
 | Eigenschaft | Beschreibung |
 | -------- | ----------- |
-| EnqueuedTime | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
-| CorrelationId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
-| StatusCode | **0** bei Erfolg, **1** bei Ablauf der Nachricht, **2** bei Überschreiten der maximalen Anzahl von Zustellungen, **3** bei Ablehnung der Nachricht. |
+| EnqueuedTimeUtc | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
+| OriginalMessageId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
 | Beschreibung | Zeichenfolgenwerte für die zuvor genannten Ergebnisse. |
 | DeviceId | **DeviceId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
 | DeviceGenerationId | **DeviceGenerationId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
@@ -432,9 +431,8 @@ Der Nachrichtenkörper ist ein serialisiertes JSON-Array aus Datensätzen, von d
 
     [
         {
-            "CorrelationId": "0987654321",
-            "EnqueuedTime": "2015-07-28T16:24:48.789Z",
-            "StatusCode": "0",
+            "OriginalMessageId": "0987654321",
+            "EnqueuedTimeUtc": "2015-07-28T16:24:48.789Z",
             "Description": "Success",
             "DeviceId": "123",
             "DeviceGenerationId": "abcdefghijklmnopqrstuvwxyz"
@@ -494,7 +492,7 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 
 [Event Hubs-Ereignisprozessorhost]: http://blogs.msdn.com/b/servicebus/archive/2015/01/16/event-processor-host-best-practices-part-1.aspx
 
-[Azure-Vorschauportal]: https://ms.portal.azure.com
+[Azure-Vorschauportal]: https://portal.azure.com
 
 [img-summary]: ./media/iot-hub-devguide/summary.png
 [img-endpoints]: ./media/iot-hub-devguide/endpoints.png
@@ -535,4 +533,4 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

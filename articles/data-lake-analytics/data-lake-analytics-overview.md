@@ -60,7 +60,7 @@ Azure Data Lake Analytics ist ein neuer Dienst zur Vereinfachung von Big Data-An
     
 - U-SQL und Entwicklung
     - [Erste Schritte mit der Sprache U-SQL für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md)
-    - [Verwenden von U-SQL-Fensterfunktionen für Azure Data Lake Analytics-Aufträge](data-lake-analytics-use-window-functions.md)
+    - [Verwenden von U-SQL-Funktionen für Azure Data Lake Analytics-Aufträge](data-lake-analytics-use-window-functions.md)
     - [Entwickeln von benutzerdefinierten U-SQL-Operatoren für Data Lake Analytics-Aufträge](data-lake-analtyics-u-sql-develop-user-defined-operators.md)
     
 - Verwaltung
@@ -77,4 +77,4 @@ Azure Data Lake Analytics ist ein neuer Dienst zur Vereinfachung von Big Data-An
     - [Feature anfordern (in englischer Sprache)](http://aka.ms/adlafeedback)
     - [Hilfe im Forum (in englischer Sprache)](http://aka.ms/adlaforums)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

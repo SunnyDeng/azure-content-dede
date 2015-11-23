@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="10/30/2015"
+    ms.date="11/10/2015"
     ms.author="v-darmi"/>
 
 # Überwachen von APIs mit Azure API Management, Event Hubs und Runscope
@@ -257,4 +257,15 @@ Im folgenden animierten Bild sehen Sie, wie eine Anforderung an eine API im Entw
 ## Zusammenfassung
 Der Azure API Management-Dienst ist ein idealer Ort zum Erfassen des HTTP-Datenverkehrs, der an Ihre APIs fließt und von den APIs gesendet wird. Azure Event Hubs ist eine hoch skalierbare, kostengünstige Lösung zum Erfassen dieses Datenverkehrs und zum Bereitstellen für sekundäre Verarbeitungssysteme für die Protokollierung und Überwachung sowie andere anspruchsvolle Analysevorgänge. Das Verbinden mit Datenverkehr-Überwachungssystemen von Drittanbietern wie Runscope ist so einfach wie das Schreiben einiger Dutzend Codezeilen.
 
-<!---HONumber=Nov15_HO2-->
+## Nächste Schritte
+-	Weitere Informationen zu Azure Event Hubs
+	-	[Erste Schritte mit Azure Event Hubs](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+	-	[Empfangen von Nachrichten mit EventProcessorHost](../event-hubs/event-hubs-csharp-ephcs-getstarted.md#receive-messages-with-eventprocessorhost)
+	-	[Programmierleitfaden für Event Hubs](../event-hubs/event-hubs-programming-guide.md)
+-	Erfahren Sie mehr über die Integration der API-Verwaltung und Event Hubs
+	-	[Protokollieren von Ereignissen in Azure Event Hubs mit Azure API Management](api-management-howto-log-event-hubs.md)
+	-	[Verweis zu Protokollierungstool](https://msdn.microsoft.com/library/azure/mt592020.aspx)
+	-	[log-to-eventhub policy reference](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)
+	
+
+<!---HONumber=Nov15_HO3-->

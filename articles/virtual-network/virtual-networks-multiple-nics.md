@@ -71,6 +71,15 @@ Derzeit gelten für Multi-NIC die folgenden Anforderungen und Einschränkungen:
 |DS12|4|
 |DS13|8|
 |DS14|16|
+|D1\_v2|1|
+|D2\_v2|2|
+|D3\_v2|4|
+|D4\_v2|8|
+|D5\_v2|16|
+|D11\_v2|2|
+|D12\_v2|4|
+|D13\_v2|8|
+|D14\_v2|16|
 |G1|1|
 |G2|2|
 |G3|4|
@@ -249,4 +258,4 @@ Führen Sie die folgenden Schritte aus, um eine Standardroute für die sekundär
 
 Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden, wird empfohlen, die sekundäre Netzwerkkarte auf Datenverkehrsflüsse im gleichen Subnetz zu beschränken. Wenn es jedoch in bestimmten Szenarien erforderlich ist, Verbindungen mit Adressen außerhalb des Subnetzes herzustellen, sollten Benutzer das richtlinienbasierte Routing aktivieren, um sicherzustellen, dass für eingehenden und ausgehenden Datenverkehr dieselbe Netzwerkkarte verwendet wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

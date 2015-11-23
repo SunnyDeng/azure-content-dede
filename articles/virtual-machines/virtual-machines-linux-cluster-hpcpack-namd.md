@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
  ms.service="virtual-machines"
  ms.devlang="na"
@@ -26,7 +26,7 @@ In diesem Artikel wird beschrieben, wie Sie einen Microsoft HPC Pack-Cluster in 
 
 NAMD (Nanoscale Molecular Dynamics Program) ist ein paralleles Molecular Dynamics-Paket für die Simulation großer Biomolekularsysteme mit Millionen von Atomen, z. B. Viren, Zellstrukturen und große Proteine. NAMD skaliert für normale Simulationen auf Hunderte Kerne und für die größten Simulationen auf mehr als 500.000 Kerne.
 
-Microsoft HPC Pack bietet eine Vielzahl von umfangreichen HPC- und parallelen Anwendungen, einschließlich MPI-Anwendungen, auf Clustern mit virtuellen Microsoft Azure-Computern. Ab Microsoft HPC Pack 2012 R2 unterstützt HPC Pack auch die Ausführung von Linux-HPC-Anwendungen auf virtuellen Linux-Computeknoten, die in einem HPC Pack-Cluster bereitgestellt werden. Eine Einführung in die Verwendung von Linux-Computeknoten mit HPC Pack finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md).
+Microsoft HPC Pack bietet eine Vielzahl von umfangreichen HPC- und parallelen Anwendungen, einschließlich MPI-Anwendungen, auf Clustern mit virtuellen Microsoft Azure-Computern. Ab Microsoft HPC Pack 2012 R2 Update 2 unterstützt HPC Pack auch die Ausführung von Linux-HPC-Anwendungen auf virtuellen Linux-Computeknoten, die in einem HPC Pack-Cluster bereitgestellt werden. Eine Einführung in die Verwendung von Linux-Computeknoten mit HPC Pack finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md).
 
 
 ## Voraussetzungen
@@ -129,9 +129,9 @@ Das Generieren eines RSA-Schlüsselpaars, das einen öffentlichen Schlüssel und
 
 Richten Sie nun eine SMB-Standardfreigabe für einen Ordner auf dem Hauptknoten ein, und stellen Sie den freigegebenen Ordner für alle Linux-Knoten bereit, damit die Linux-Knoten auf NAMD-Dateien mit einem gemeinsamen Pfad zugreifen können. Weitere Informationen zu Dateifreigabeoptionen und den zugehörigen Schritten finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md). (Wir empfehlen in diesem Artikel die Bereitstellung eines freigegebenen Ordners auf dem Hauptknoten, da Linux-Knoten mit CentOS 6.6 derzeit den Azure-Dateidienst nicht unterstützen, der ähnliche Funktionen bietet. Weitere Informationen zum Bereitstellen einer Azure-Dateifreigabe finden Sie unter [Persisting connections to Microsoft Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx) (Beibehalten von Verbindungen zu Microsoft Azure-Dateien, in englischer Sprache).)
 
-1.	Erstellen Sie auf dem Hauptknoten einen Ordner, und geben Sie ihn für alle Benutzer mit Lese-/Schreibberechtigungen frei. In diesem Beispiel ist "\\\CentOS66HN\\Namd" der Name des Ordners, wobei "CentOS66HN" der Hostname des Hauptknotens ist.
+1.	Erstellen Sie auf dem Hauptknoten einen Ordner, und geben Sie ihn für alle Benutzer mit Lese-/Schreibberechtigungen frei. In diesem Beispiel ist "\\CentOS66HN\\Namd" der Name des Ordners, wobei "CentOS66HN" der Hostname des Hauptknotens ist.
 
-2. Extrahieren Sie die NAMD-Dateien in dem Ordner. Verwenden Sie dazu eine Windows-Version von **tar** oder ein anderes Windows-Dienstprogramm, das TAR-Archive verarbeiten kann. Extrahieren Sie das NAMD-TAR-Archiv nach "\\\CentOS66HN\\Namd\\namd2" und die Dateien des Lernprogramms nach "\\\CentOS66HN\\Namd\\namd2\\namdsample".
+2. Extrahieren Sie die NAMD-Dateien in dem Ordner. Verwenden Sie dazu eine Windows-Version von **tar** oder ein anderes Windows-Dienstprogramm, das TAR-Archive verarbeiten kann. Extrahieren Sie das NAMD-TAR-Archiv nach "\\CentOS66HN\\Namd\\namd2" und die Dateien des Lernprogramms nach "\\CentOS66HN\\Namd\\namd2\\namdsample".
 
 2.	Öffnen Sie ein Windows PowerShell-Fenster, und führen Sie die folgenden Befehle aus, um den freigegebenen Ordner bereitzustellen.
 
@@ -302,7 +302,7 @@ Jetzt können Sie einen NAMD-Auftrag in HPC-Cluster-Manager übermitteln.
 
 6.	Der Auftrag nimmt mehrere Minuten in Anspruch.
 
-7.	Sie finden das Auftragsprotokoll in "\<headnodeName>\\Namd\\namd2\\namd2\_hpccharmrun.log" und die Ausgabedateien in "\<headnode>\\Namd\\namd2\\namdsample\\1-2-sphere".
+7.	Sie finden das Auftragsprotokoll in "<headnodeName>\\Namd\\namd2\\namd2\_hpccharmrun.log" und die Ausgabedateien in "<headnode>\\Namd\\namd2\\namdsample\\1-2-sphere".
 
 8.	Starten Sie gegebenenfalls VMD, um die Auftragsergebnisse anzuzeigen. Die Schritte zur Visualisierung der NAMD-Ausgabedateien (in diesem Fall ein Molekül des Proteins Ubiquitin in einer Wasserkugel) gehen über den Rahmen dieses Artikels hinaus. Weitere Einzelheiten finden Sie im [NAMD-Lernprogramm](http://www.life.illinois.edu/emad/biop590c/namd-tutorial-unix-590C.pdf).
 
@@ -408,4 +408,4 @@ a8lxTKnZCsRXU1HexqZs+DSc+30tz50bNqLdido/l5B4EJnQP03ciO0=
 [task_details]: ./media/virtual-machines-linux-cluster-hpcpack-namd/task_details.png
 [vmd_view]: ./media/virtual-machines-linux-cluster-hpcpack-namd/vmd_view.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

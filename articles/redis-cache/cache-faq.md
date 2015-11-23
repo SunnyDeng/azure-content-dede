@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/23/2015" 
+	ms.date="11/12/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -47,9 +47,9 @@ Aus dieser Tabelle können folgende Schlussfolgerungen gezogen werden.
 -	Mit dem Redis-Clustering steigt der Durchsatz linear, je mehr Shards (Knoten) Sie im Cluster verwenden. Wenn Sie z. B. einen P4-Cluster mit 10 Shards erstellen, beträgt der verfügbare Durchsatz 250 KB * 10 = 2,5 Millionen RPS.
 -	Der Durchsatz für größere Schlüsselgrößen ist im Premium-Tarif höher als im Standard-Tarif.
 
-| Tarif | Größe | Verfügbare Bandbreite (MBit/s) | 1 KB Schlüsselgröße |
+| Tarif | Größe | Verfügbare Bandbreite | 1 KB Schlüsselgröße |
 |----------------------|--------|----------------------------|--------------------------------|
-| **Standard-Cachegröße** | &nbsp; | &nbsp; | **Anforderungen pro Sekunde (RPS)** |
+| **Standard-Cachegröße** | &nbsp; | **(MBit/s)** | **Anforderungen pro Sekunde (RPS)** |
 | C0 | 250 MB | 5 | 600 |
 | C1 | 1 GB | 100 | 12\.200 |
 | C2 | 2,5 GB | 200 | 24\.000 |
@@ -204,7 +204,7 @@ Azure Cache verfügt derzeit über drei Angebote:
 
 
 ### Azure Redis Cache
-Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue Tarif [Premium](cache-premium-tier.md) befindet sich noch in der Vorschauversion. Er bietet Größen von bis 530 GB und Unterstützung von Clustering, VNET und Dauerhaftigkeit.
+Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue Tarif [Premium](cache-premium-tier.md) befindet sich noch in der Vorschauversion. Er bietet Größen bis 530 GB und unterstützt Clustering, VNET und Dauerhaftigkeit.
 
 Azure Redis Cache ermöglicht den Kunden die Verwendung eines gesicherten, dedizierten Redis Cache, der von Microsoft verwaltet wird. Mit diesem Angebot können Sie die umfangreichen Features und die Umgebung von Redis nutzen und dabei von zuverlässigem Hosting und Überwachung durch Microsoft profitieren.
 
@@ -220,4 +220,4 @@ Wenn Sie den Azure Managed Cache Service bereits nutzen, können Sie den vorhand
 ### In-Role Cache
 Wenn Sie Cache mithilfe des In-Role Caches selbst hosten, können Sie dies auch weiterhin tun. Da In-Role Cache eine selbst gehostete Softwarekomponente und kein von Microsoft gehosteter Dienst ist, bietet er keine SLA. Benutzer von In-Role Cache können zu Azure Redis Cache migrieren, um den umfassenden Featuresatz zu nutzen und eine SLA zu erhalten.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="07/31/2015" 
+	ms.date="10/30/2015" 
 	ms.author="bradygaster"/>
 
 # Nutzen einer Azure-API-App mithilfe von HTML und Javascript
@@ -36,7 +36,7 @@ Typischerweise wird CORS (Cross-Origin Resource Sharing) in HTML-Anwendungen ben
 
 ### Aktivieren von CORS für API-App-Gateways
 
-API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
+API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS\_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
 
 1. Navigieren Sie im Azure-Vorschauportal zum Blatt für die API-App, für die Sie CORS aktivieren möchten. Klicken Sie auf dem Blatt auf das Symbol *Gateway* für Ihre API-App. 
 
@@ -54,7 +54,7 @@ API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS k
 
 	![Gateway – Anwendungseinstellungen](./media/app-service-api-javascript-client/22-gateway-app-settings-blade.png)
 
-1. Fügen Sie die Anwendung **MS_CrossDomainOrigins** hinzu. Legen Sie die Einstellung auf die durch Trennzeichen getrennte Liste der HTTP-Hosts fest, denen Sie Zugriff auf Ihre API-App gewähren möchten. Wenn Sie mehreren Hosts Zugriff erteilen möchten, können Sie den Wert von *appSetting* auf einen ähnlichen wie den nachstehenden Code festlegen.
+1. Fügen Sie die Anwendung **MS\_CrossDomainOrigins** hinzu. Legen Sie die Einstellung auf die durch Trennzeichen getrennte Liste der HTTP-Hosts fest, denen Sie Zugriff auf Ihre API-App gewähren möchten. Wenn Sie mehreren Hosts Zugriff erteilen möchten, können Sie den Wert von *appSetting* auf einen ähnlichen wie den nachstehenden Code festlegen.
 
 		http://foo.azurewebsites.net, https://foo.azurewebsites.net, http://contactlistwebapp.azurewebsites.net
 
@@ -66,7 +66,7 @@ API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS k
 
 	![](./media/app-service-api-javascript-client/23-app-settings-set.png)
 
-Die Anwendungseinstellung **MS_CrossDomainOrigins** wird im Blogbeitrag [Azure Mobile Service .NET Updates](http://azure.microsoft.com/blog/2014/07/28/azure-mobile-services-net-updates/) ausführlich besprochen. Wenn Sie daher weitere Informationen zu dieser Einstellung benötigen, besuchen Sie diesen Blog.
+Die Anwendungseinstellung **MS\_CrossDomainOrigins** wird im Blogbeitrag [Azure Mobile Service .NET Updates](http://azure.microsoft.com/blog/2014/07/28/azure-mobile-services-net-updates/) ausführlich besprochen. Wenn Sie daher weitere Informationen zu dieser Einstellung benötigen, besuchen Sie diesen Blog.
 
 ### Aktivieren von CORS im Web-API-Code
 
@@ -80,7 +80,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/01-cors-installed.png)
 
-1. Öffnen Sie die Datei *App_Start/WebApiConfig.cs*. Fügen Sie in der Datei die nachstehende Codezeile zur Methode **Register** der Klasse **WebApiConfig** hinzu.
+1. Öffnen Sie die Datei *App\_Start/WebApiConfig.cs*. Fügen Sie in der Datei die nachstehende Codezeile zur Methode **Register** der Klasse **WebApiConfig** hinzu.
 
 		config.EnableCors();
 
@@ -141,7 +141,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 ## Erstellen einer Web-App zum Nutzen der API-App
 
-In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren AngularJS in der Webanwendung und verknüpfen ein einfaches HTML-Front-End mit der API-App. Sie stellen die Web-App anschließend in Azure App Service bereit. Die HTML-Web-App verfügt über ein Bindung mit der API-App, zeigt die aus der API-App abgerufenen Daten an und stellt für die Benutzer eine einfache Oberfläche für die Contacts-API bereit.
+In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren und verwenden AngularJS und verknüpfen ein einfaches HTML-Front-End mit der API-App. Sie stellen die Web-App anschließend in Azure App Service bereit. Die HTML-Web-App verfügt über ein Bindung mit der API-App, zeigt die aus der API-App abgerufenen Daten an und stellt für die Benutzer eine einfache Oberfläche für die Contacts-API bereit.
 
 1. Klicken Sie mit der rechten Maustaste auf das Projekt, das Sie zuvor in [Erstellen einer API-App](app-service-dotnet-create-api-app.md) erstellt haben, und wählen Sie **Hinzufügen -> Neues Projekt**.
 
@@ -312,7 +312,7 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
 
 Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
 
-	> **Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie stattdessen mit der rechten Maustaste auf das API-Projekt und anschließend auf „Debuggen“ > „Neue Instanz starten“, sodass ein Browserfenster mit der Portnummer angezeigt wird.
+>[AZURE.NOTE]**Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie mit der rechten Maustaste auf das API-Projekt und anschließend auf **Debuggen > Neue Instanz starten**, sodass ein Browserfenster mit der Portnummer angezeigt wird.
 
 1. Stellen Sie sicher, dass das API-App-Projekt beim Ausführen des HTML-Clients ebenfalls ausgeführt wird, sonst funktioniert der JavaScript-HTML-Code nicht ordnungsgemäß. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Eigenschaften**. Legen Sie anschließend beide Webprojekte auf **Starten ohne Debugging** fest, und geben Sie an, dass das API-Projekt zuerst ausgeführt wird. 
 
@@ -371,4 +371,4 @@ Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform
 
 Dieses Beispiel veranschaulicht den nicht authentifizierten Zugriff auf eine API-App. Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

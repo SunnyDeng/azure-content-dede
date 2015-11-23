@@ -75,8 +75,7 @@ Der Ablaufverfolgungscode, den Sie zu Ihrer Anwendung für die lokale Diagnose h
 ## Nächste Schritte
 
 * [Einführung in Service Fabric-Integrität](service-fabric-health-introduction.md)
-* [Application Insights-Einrichtung](service-fabric-diagnostics-application-insights-setup.md)
 * [Diagnose und Leistungsüberwachung für Actors in Azure Service Fabric](service-fabric-reliable-actors-diagnostics.md)
 * [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

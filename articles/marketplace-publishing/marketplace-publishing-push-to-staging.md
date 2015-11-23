@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-   ms.service="marketplace-publishing"
+   ms.service="marketplace"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="Azure"
@@ -146,9 +146,7 @@ Im Folgenden finden Sie eine detaillierte Übersicht darüber, wie die Marketing
 ## Nächste Schritte
 Nachdem nun Ihre Marketplace-Inhalte geladen wurden, geht es weiter mit **Schritt 3: Testen des Angebots in der Stagingumgebung**. Da die Schritte jedoch je nach Angebotstyp unterschiedlich sind, müssen Sie den entsprechenden Angebotstyp aus der Liste unten auswählen.
 
-||VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage |
-|----|----|----|----|----|
-| **Schritt 3. Überführen des Angebots in die Stagingumgebung** | [Testen Ihres VM-Angebots in der Stagingumgebung](marketplace-publishing-vm-image-test-in-staging.md) | Testen Ihres Entwicklungsdiensts in der Stagingumgebung | Testen Ihres Datendiensts in der Stagingumgebung | [Testen Ihrer Lösungsvorlage in der Stagingumgebung](marketplace-publishing-solution-template-test-in-staging.md) |
+||VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage | |----|----|----|----|----| | **Schritt 3. Überführen des Angebots in die Stagingumgebung** | [Testen Ihres VM-Angebots in der Stagingumgebung](marketplace-publishing-vm-image-test-in-staging.md) | Testen Ihres Entwicklungsdiensts in der Stagingumgebung | Testen Ihres Datendiensts in der Stagingumgebung | [Testen Ihrer Lösungsvorlage in der Stagingumgebung](marketplace-publishing-solution-template-test-in-staging.md) |
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
@@ -162,4 +160,4 @@ Nachdem nun Ihre Marketplace-Inhalte geladen wurden, geht es weiter mit **Schrit
 [link-pubportal]: https://publish.windowsazure.com
 [link-push-to-production]: marketplace-publishing-push-to-production.md
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

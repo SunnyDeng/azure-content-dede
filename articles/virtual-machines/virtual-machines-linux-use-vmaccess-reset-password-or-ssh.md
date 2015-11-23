@@ -22,7 +22,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu beheben (mithilfe der VMAccessforLinux-Erweiterung). Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
+Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie im Azure-Vorschauportal oder mit der VMAccessForLinux-Erweiterung die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu korrigieren. Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
 ## Azure-Vorschauportal
 
@@ -165,7 +165,7 @@ Wenn Sie den Namen des Clouddiensts und des virtuellen Computers nicht kennen, f
 
 > [AZURE.NOTE]Die Befehlszeilen, die mit $ beginnen, legen PowerShell-Variablen fest, die später in PowerShell-Befehlen verwendet werden.
 
-Wenn Sie die virtuelle Maschine mit dem Azure-Verwaltungsportal erstellt haben, führen Sie den folgenden zusätzlichen Befehl aus:
+Wenn Sie die virtuelle Maschine mit dem Azure-Portal erstellt haben, führen Sie den folgenden zusätzlichen Befehl aus:
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
@@ -266,4 +266,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Azure-VM-Erweiterungen und Features]: http://msdn.microsoft.com/library/azure/dn606311.aspx
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

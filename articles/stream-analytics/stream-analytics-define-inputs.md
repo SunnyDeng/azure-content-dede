@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="10/23/2015"
+	ms.date="11/06/2015"
 	ms.author="jeffstok"/>
 
 # Grundlegendes zu Stream Analytics-Eingaben
@@ -201,4 +201,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

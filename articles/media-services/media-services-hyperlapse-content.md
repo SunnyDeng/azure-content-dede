@@ -203,13 +203,14 @@ Mit der folgenden Methode werden eine Mediendatei als Asset hochgeladen und ein 
 
 
 
+##Media Services-Lernpfade
 
-## Media Services-Lernpfade
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+##Feedback geben
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 
 
@@ -220,4 +221,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 <!-- URLs. -->
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

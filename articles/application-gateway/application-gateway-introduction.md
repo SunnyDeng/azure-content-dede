@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags 
    ms.service="application-gateway"
@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="11/03/2015"
+   ms.date="11/09/2015"
    ms.author="joaoma"/>
 
 # Was ist Application Gateway?
@@ -52,9 +52,10 @@ Lastenausgleich der HTTP-Ebene 7 eignet sich für:
 
 Application Gateway wird derzeit in drei Größen angeboten: klein, mittel und groß. Kleine Instanzen sind für Entwicklungs- und Testszenarien vorgesehen.
 
-Sie können bis zu 10 Anwendungsgateways pro Abonnement erstellen und jedes Anwendungsgateway kann jeweils bis zu 10 Instanzen aufweisen. Der Application Gateway-Lastenausgleich als ein von Azure verwalteter Dienst ermöglicht die Bereitstellung eines Lastenausgleichs der Ebene 7 hinter dem Azure Load Balancer.
+Sie können bis zu 50 Application Gateways pro Abonnement erstellen, und jedes Application Gateway kann jeweils bis zu 10 Instanzen aufweisen. Der Application Gateway-Lastenausgleich als ein von Azure verwalteter Dienst ermöglicht die Bereitstellung eines Lastenausgleichs der Ebene 7 hinter dem Azure Load Balancer.
 
 Die folgende Tabelle zeigt einen durchschnittlichen Durchsatz für jede Anwendungsgatewayinstanz:
+
 
 | Back-End-Seitenantwort | Klein | Mittel | Groß|
 |---|---|---|---|
@@ -62,24 +63,25 @@ Die folgende Tabelle zeigt einen durchschnittlichen Durchsatz für jede Anwendun
 |100k | 35 MBit/s | 100 Mbit/s| 200 MBit/s |
 
 
->[AZURE.NOTE]Die Leistung hängt auch von der HTTP-Antwort der Webanwendung an das Anwendungsgateway ab.
+>[AZURE.NOTE]Hierbei handelt es sich um ungefähre Richtwerte für den Application Gateway-Durchsatz. Der tatsächliche Durchsatz ist abhängig von verschiedenen Umgebungsdetails wie etwa durchschnittliche Seitengröße, Ort der Back-End-Instanzen und Verarbeitungszeit für die Seitenbereitstellung.
 
-
-## Überwachung
+## Systemüberwachung
  
-Application Gateway überwacht den Status der Back-End-Instanzen mit Testports, wobei die HTTP-Antwort aus HttpSettings-Abschnitten des Gateways in regelmäßigen Abständen getestet wird. Der Test erwartet eine erfolgreiche HTTP-Antwort im Antwortcodebereich 200-390 und prüft die Back-End-IP-Adressen alle 30 Sekunden auf die HTTP-Antwort.
 
-Wenn eine erfolgreiche HTTP-Antwort empfangen wird, wird die IP-Adresse als fehlerfrei markiert. Wenn der Test fehlschlägt, wird die IP-Adresse aus einem Fehlerfrei-Back-End-Pool entfernt, und der Datenverkehr zu diesem Server wird eingestellt. Der Integritätstest wird weiterhin alle 30 Sekunden für die fehlerhafte Webinstanz ausgeführt, bis sie wieder online geschaltet ist. Wenn die Webinstanz erfolgreich auf den Integritätstest antwortet, wird sie wieder dem Fehlerfrei-Back-End-Pool hinzugefügt, und der Datenverkehr zu dieser Instanz startet erneut.
+Azure Application Gateway überprüft alle 30 Sekunden die Integrität der Back-End-Instanzen. Der Dienst sendet über den Port, der in den *BackendHttpSettings*-Elementen der Konfiguration konfiguriert ist, eine HTTP-Integritätstestanforderung an jede Instanz. Der Integritätstest erwartet eine erfolgreiche HTTP-Antwort mit einem Antwortstatuscode zwischen 200 und 399.
+
+Wenn eine erfolgreiche HTTP-Antwort empfangen wird, wird der Back-End-Server als fehlerfrei gekennzeichnet. Er empfängt weiterhin Datenverkehr von Azure Application Gateway. Wenn der Test fehlschlägt, wird die Back-End-Instanz aus dem Pool fehlerfreier Instanzen entfernt, und der Datenverkehr zu diesem Server wird eingestellt. Der Integritätstest wird weiterhin alle 30 Sekunden für die fehlerhafte Back-End-Instanz ausgeführt, um den aktuellen Integritätsstatus zu überprüfen. Wenn die Back-End-Instanz erfolgreich auf den Integritätstest antwortet, wird sie wieder als fehlerfrei zum Back-End-Pool hinzugefügt, und der Datenverkehr zur Instanz startet erneut.
 
 ## Konfigurieren und Verwalten
 
 Sie können das Anwendungsgateway mithilfe von REST-APIs und PowerShell-Cmdlets erstellen und verwalten.
 
 
+
 ## Nächste Schritte
 
 Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Erstellen eines Application Gateways](application-gateway-create-gateway.md).
 
-Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren eines Anwendungsgateways für die SSL-Auslagerung](application-gateway-ssl.md).
+Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

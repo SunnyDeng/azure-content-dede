@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Was ist Azure Search"
+	pageTitle="Was ist Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Azure Search ist ein gehosteter Cloudsuchdienst. Erfahren Sie mehr in dieser technischen Übersicht und Zusammenfassung der Features."
 	services="search"
 	documentationCenter=""
@@ -131,4 +131,4 @@ Sie können auch diese Lernprogramme ausprobieren:
 
 [Verwenden von Azure Search in .NET](search-howto-dotnet-sdk.md) [Erste Schritte mit Azure Search .NET](search-get-started-dotnet.md) [Azure Search: Lernprogramme, Videodemos und Beispiele](search-video-demo-tutorial-list.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

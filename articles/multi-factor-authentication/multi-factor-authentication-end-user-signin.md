@@ -17,7 +17,8 @@
 	ms.author="billmath"/>
 
 # Der Anmeldevorgang mit Azure Multi-Factor Authentication
-Die Dokumentation auf dieser Seite zeigt eine normale Anmeldeumgebung. Hilfe zur Anmeldung finden Sie unter [Beheben von Problemen mit Azure Multi-Factor Authentication](multi-factor-authentication-end-user-manage-settings.md).
+> [AZURE.NOTE]Die Dokumentation auf dieser Seite zeigt eine normale Anmeldeumgebung. Hilfe zur Anmeldung finden Sie unter [Beheben von Problemen mit Azure Multi-Factor Authentication](multi-factor-authentication-end-user-manage-settings.md).
+
 
 
 ## Was sieht Ihr Anmeldevorgang aus?
@@ -102,4 +103,4 @@ Im folgenden Abschnitt erfahren Sie, wie Sie sich über eine alternative Methode
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

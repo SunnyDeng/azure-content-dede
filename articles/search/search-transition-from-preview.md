@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Umstellung von der Vorschau-API-Version = 2014* auf API-Version = 2015 *" 
+	pageTitle="Umstellung von der Vorschau-API-Version = 2014* auf API-Version = 2015* | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Erfahren Sie mehr über die wichtigen Änderungen und das Migrieren von Code, der für 2014-07-31-preview oder 2014-10-20-preview geschrieben wurde, auf Azure Search, api-version=2015-02-28." 
 	services="search" 
 	documentationCenter="" 
@@ -22,8 +22,8 @@ Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Die folgende
 
 Als Benutzer einer Vorschauversion haben Sie möglicherweise eine dieser älteren Vorschauversionen verwendet:
 
-- [2014-07-31-Preview](search-api-2014-07-31-preview.md)
-- [2014-10-20-Preview](search-api-2014-10-20-preview.md)
+- 2014-07-31-Preview
+- 2014-10-20-Preview
 
 Da Azure Search jetzt allgemein verfügbar ist, empfehlen wir die Umstellung auf neuere Versionen: 2015-02-28 ist die offizielle API-Version der allgemein verfügbaren Version von Azure Search. Diese Version ist auf [MSDN](https://msdn.microsoft.com/library/azure/dn798933.aspx) dokumentiert.
 
@@ -144,4 +144,4 @@ Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

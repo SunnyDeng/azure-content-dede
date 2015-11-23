@@ -98,6 +98,27 @@ Elastische Datenbanktransaktionen für SQL-DB unterstützen auch die Koordinieru
 
 Sie können die Installation und Bereitstellung der .NET-Version und Bibliotheken automatisieren, die für elastische Datenbanktransaktionen an Azure benötigt werden. Ziel ist das Gast-BS des Clouddiensts. Verwenden Sie für Azure-Workerrollen die Startaufgaben. Informationen zu den Konzepten und Schritten finden Sie unter [Installieren von .NET in einer Clouddienstrolle](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-install-dotnet/).
 
+Beachten Sie, dass das Installationsprogramm für .NET 4.6.1 während des Bootstrappingprozesses für Azure-Clouddienste mehr temporären Speicherplatz benötigt, als für .NET 4.6. Um eine erfolgreiche Installation sicherzustellen, erhöhen Sie den temporären Speicher für Ihren Azure-Clouddienst in der Datei "ServiceDefinition.csdef" im Abschnitt "LocalResources". Ändern Sie außerdem die Umgebungseinstellungen der Startaufgabe wie im folgenden Beispiel gezeigt:
+
+	<LocalResources>
+	...
+		<LocalStorage name="TEMP" sizeInMB="5000" cleanOnRoleRecycle="false" />
+		<LocalStorage name="TMP" sizeInMB="5000" cleanOnRoleRecycle="false" />
+	</LocalResources>
+	<Startup>
+		<Task commandLine="install.cmd" executionContext="elevated" taskType="simple">
+			<Environment>
+		...
+				<Variable name="TEMP">
+					<RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='TEMP']/@path" />
+				</Variable>
+				<Variable name="TMP">
+					<RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='TMP']/@path" />
+				</Variable>
+			</Environment>
+		</Task>
+	</Startup>
+
 ## Überwachen des Transaktionsstatus
 
 Verwenden Sie DMVs (Dynamic Management Views) in SQL-SB, um Status und Fortschritt laufender elastischer Datenbanktransaktionen zu überwachen. Für verteilte Transaktionen in SQL-DB sind alle transaktionsbezogenen DMVs relevant. Die entsprechende DMV-Liste finden Sie hier: [Dynamische Verwaltungssichten und -funktionen im Zusammenhang mit Transaktionen (Transact-SQL)](https://msdn.microsoft.com/library/ms178621.aspx).
@@ -124,4 +145,4 @@ Sie verwenden noch keine elastischen Datenbankfunktionen für Ihre Azure-Anwendu
 <!--Image references-->
 [1]: ./media/sql-database-elastic-transactions-overview/distributed-transactions.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

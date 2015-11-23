@@ -200,13 +200,15 @@ Es folgt eine empfohlene Implementierung für redundante Audiospuren:
 2. Verwenden Sie separate Streams, um die Videos mit den beiden niedrigsten Bitraten zu senden. Jeder dieser Streams SOLLTE auch eine Kopie jeder eindeutigen Audiospur enthalten. Wenn beispielsweise mehrere Sprachen unterstützt werden, SOLLTEN diese Streams Audiospuren für jede Sprache enthalten.
 3. Verwenden Sie separate Serverinstanzen (Encoder) zum Codieren und Senden der in (1) und (2) genannten redundanten Streams. 
 
+
+
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
 
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 
 [image1]: ./media/media-services-fmp4-live-ingest-overview/media-services-image1.png
@@ -219,4 +221,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

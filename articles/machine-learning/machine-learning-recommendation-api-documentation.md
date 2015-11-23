@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="11/06/2015" 
 	ms.author="LuisCa"/>
 
 #Azure Machine Learning-Empfehlungs-APIs – Dokumentation
@@ -88,10 +88,7 @@ Es wird eine Anforderung „Modell erstellen“ erstellt.
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig.<br>Max. Länge: 20 | 
-| apiVersion | 1.0 | 
-||| 
-| Anforderungstext | NONE |
+|	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig.<br>Max. Länge: 20 | | apiVersion | 1.0 | ||| | Anforderungstext | NONE |
 
 
 **Antwort**:
@@ -141,8 +138,7 @@ Hiermit wird eine Anforderung „Modell abrufen“ erstellt.
 |:--------			|:--------								|
 |	id |	Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -204,8 +200,7 @@ Hierdurch werden alle Modelle des aktuellen Benutzers abgerufen.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -273,8 +268,7 @@ Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <
 |:--------			|:--------								|
 |	id | Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1\.0 |
-||| 
-| Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung der XML-Tags sowie die ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder keine ActiveBuildId festlegen möchten, entfernen Sie das gesamte Tag.|
+||| | Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung der XML-Tags sowie die ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder keine ActiveBuildId festlegen möchten, entfernen Sie das gesamte Tag.|
 
 **Antwort**:
 
@@ -291,8 +285,7 @@ Löscht ein vorhandenes Modell nach ID.
 |:--------			|:--------								|
 |	id |	Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -335,8 +328,7 @@ Nur für den Empfehlungsbuild verfügbar.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -572,8 +564,7 @@ Nur für den Empfehlungsbuild verfügbar.
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	buildId |	Optional. Mit dieser Nummer wird ein erfolgreicher Build identifiziert. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -652,8 +643,7 @@ Hierdurch wird eine Probe des Empfehlungsmodells abgerufen.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-|||  
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -806,8 +796,7 @@ Es gibt 4 Typen von Regeln: <strong>BlockList</strong>: Mit dieser Funktion kön
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-|||
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -863,9 +852,8 @@ OData-XML
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	apiVersion | 1\.0 |
-||| 
-| Request Body | <ins>Zum Hinzufügen der BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der WhiteList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der PerSeedBlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
+|	apiVersion | 1,0 |
+||| | Anforderungstext | <ins>Stellen Sie beim Bereitstellen von Element-Ids für Geschäftsregeln sicher, dass Sie die externe Id des Elements verwenden (die gleiche Id, die Sie in der Katalogdatei verwendet haben)</ins><br> <ins>Zum Hinzufügen einer BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen einer Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen einer WhiteList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen einer PerSeedBlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
 
 **Antwort**:
 
@@ -912,8 +900,7 @@ OData-XML
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	filterId |	Dies ist der eindeutige Bezeichner des Filters. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -929,8 +916,7 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -954,11 +940,7 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 
 | Name | Erforderlich | Typ | Beschreibung |
 |:---|:---|:---|:---|
-| Element-ID |Ja | [A-z], [a-z], [0-9], [\_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50 | Eindeutiger Bezeichner eines Elements. | 
-| Elementname | Ja | Alle alphanumerischen Zeichen<br> Max. Länge: 255 | Elementname. | 
-| Elementkategorie | Ja | Alle alphanumerischen Zeichen <br> Max. Länge: 255 | Kategorie, zu der dieses Element gehört (z. B. Kochbücher, Drama…). Darf leer sein. | 
-| Beschreibung | Nein, es sei denn, es sind Features vorhanden (darf jedoch leer sein) | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Dies ist die Beschreibung des Elements. | 
-| Featureliste | Nein | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Dies ist eine kommagetrennte Liste im Format „Featurename=Featurewert“ zum Verbessern der Modellempfehlung; siehe Abschnitt [Erweiterte Themen](#2-advanced-topics). |
+| Element-ID |Ja | [A-z], [a-z], [0-9], [\_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50 | Eindeutiger Bezeichner eines Elements. | | Elementname | Ja | Alle alphanumerischen Zeichen<br> Max. Länge: 255 | Elementname. | | Elementkategorie | Ja | Alle alphanumerischen Zeichen <br> Max. Länge: 255 | Kategorie, zu der dieses Element gehört (z. B. Kochbücher, Drama…); darf leer sein. | | Beschreibung | Nein, außer wenn Features vorhanden sind (darf jedoch leer sein) | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Beschreibung des Elements. | | Featureliste | Nein | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Kommagetrennte Liste im Format „Featurename=Featurewert“ zum Verbessern der Modellempfehlung; siehe Abschnitt [Erweiterte Themen](#2-advanced-topics). |
 
 
 | HTTP-Methode | URI |
@@ -969,10 +951,7 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
-| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstrich (\_) zulässig.<br>Max. Länge: 50 | 
-| apiVersion | 1.0 | 
-||| 
-| Anforderungstext | Beispiel (mit Features):<br/>2406e770-769c-4189-89de-1c9283f93a96,Clara Callan,Book,the book description,author=Richard Wright,publisher=Harper Flamingo Canada,year=2001<br>21bf8088-b6c0-4509-870c-e1c7ac78304a,The Forgetting Room: A Fiction (Byzantium Book),Book,,author=Nick Bantock,publisher=Harpercollins,year=1997<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23,Spadework,Book,,author=Timothy Findley, publisher=HarperFlamingo Canada, year=2001<br>552a1940-21e4-4399-82bb-594b46d7ed54,Restraint of Beasts,Book,the book description,author=Magnus Mills, publisher=Arcade Publishing, year=1998</pre> |
+| filename | Textbezeichner des Katalogs.<br>Nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) sind zulässig.<br>Max. Länge: 50 | | apiVersion | 1.0 | ||| | Anforderungstext | Beispiel (mit Features):<br/>2406e770-769c-4189-89de-1c9283f93a96,Clara Callan,Book,the book description,author=Richard Wright,publisher=Harper Flamingo Canada,year=2001<br>21bf8088-b6c0-4509-870c-e1c7ac78304a,The Forgetting Room: A Fiction (Byzantium Book),Book,,author=Nick Bantock,publisher=Harpercollins,year=1997<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23,Spadework,Book,,author=Timothy Findley, publisher=HarperFlamingo Canada, year=2001<br>552a1940-21e4-4399-82bb-594b46d7ed54,Restraint of Beasts,Book,the book description,author=Magnus Mills, publisher=Arcade Publishing, year=1998</pre> |
 
 
 **Antwort**:
@@ -1015,8 +994,7 @@ Hierdurch werden alle Katalogelemente abgerufen.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1118,8 +1096,7 @@ OData-XML
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	token |	Dies ist das Token des Katalogelementnamens. Muss mindestens 3 Zeichen enthalten. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1173,10 +1150,7 @@ In diesem Abschnitt wird gezeigt, wie Nutzungsdaten mithilfe einer Datei hochgel
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
-| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 | 
-| apiVersion | 1.0 | 
-||| 
-| Anforderungstext | Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Benutzer-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 255 </td><td>Eindeutiger Bezeichner eines Benutzers.</td></tr><tr><td>Element-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [&#95;] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50</td><td>Eindeutiger Bezeichner eines Elements.</td></tr><tr><td>Zeit</td><td>Nein</td><td>Datum im Format: JJJJ/MM/TTTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitstempel der Daten.</td></tr><tr><td>Ereignis</td><td>Nein; wenn bereitgestellt, muss auch ein Datum angegeben werden</td><td>Eins der Folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Max. Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
+| filename | Textbezeichner des Katalogs.<br>Nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) sind zulässig.<br>Max. Länge: 50 | | apiVersion | 1.0 | ||| | Anforderungstext | Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Benutzer-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 255 </td><td>Eindeutiger Bezeichner eines Benutzers.</td></tr><tr><td>Element-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [&#95;] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50</td><td>Eindeutiger Bezeichner eines Elements.</td></tr><tr><td>Zeit</td><td>Nein</td><td>Datum im Format: JJJJ/MM/TTTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitstempel der Daten.</td></tr><tr><td>Ereignis</td><td>Nein; wenn bereitgestellt, muss auch ein Datum angegeben werden</td><td>Eins der Folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Max. Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
 
 **Antwort**:
 
@@ -1270,14 +1244,39 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Le
   		<ModelId>2779c063-48fb-46c1-bae3-74acddc8c1d1</ModelId>
   		<SessionId>11112222</SessionId>
   		<EventData>
-    	<EventData>
-      	<Name>RemoveShopCart</Name>
-      	<ItemId>21BF8088-B6C0-4509-870C-E1C7AC78304A</ItemId>
-    	</EventData>
+		  	<EventData>
+      				<Name>RemoveShopCart</Name>
+      				<ItemId>21BF8088-B6C0-4509-870C-E1C7AC78304A</ItemId>
+    			</EventData>
   		</EventData>
 		</Event>
 
-- Beispiel für das Ereignis „Purchase“: <Event xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> <ModelId>2779c063-48fb-46c1-bae3-74acddc8c1d1</ModelId> <SessionId>11112222</SessionId> <EventData> <EventData> <Name>Purchase</Name> <PurchaseItems> <PurchaseItems> <ItemId>21BF8088-B6C0-4509-870C-E1C7AC78304A</ItemId> <Count>3</Count> </PurchaseItems> </PurchaseItems> </EventData> </EventData> </Event>
+- Beispiel für das Ereignis „Purchase“:
+
+		<Event xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<ModelId>2779c063-48fb-46c1-bae3-74acddc8c1d1</ModelId>
+		<SessionId>11112222</SessionId>
+		<EventData>
+			<EventData>
+				<Name>Purchase</Name>
+				<PurchaseItems>
+					<PurchaseItem>
+						<ItemId>ABBF8081-C5C0-4F09-9701-E1C7AC78304A</ItemId>
+						<Count>1</Count>
+					</PurchaseItem>
+					<PurchaseItem>
+						<ItemId>21BF8088-B6C0-4509-870C-11C0AC7F304B</ItemId>
+						<Count>3</Count>
+					</PurchaseItem>
+				</PurchaseItems>
+			</EventData>
+		</EventData>
+		</Event>
+		
+		
+		
+
+
 
 - Beispiel für das Senden von 2 Ereignissen („Click“ und „AddShopCart“):
 
@@ -1312,8 +1311,7 @@ Hierdurch werden von allen Modellnutzungsdateien Metadaten abgerufen.
 |:--------			|:--------								|
 |	forModelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1379,8 +1377,7 @@ Hierdurch werden Nutzungsstatistiken abgerufen.
 | endDate |	Dies ist das Enddatum. Format: yyyy/MM/ddTHH:mm:ss |
 | eventTypes |	Dies ist eine kommagetrennte Zeichenfolge aus Ereignistypen oder null, um alle Ereignisse abzurufen. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1462,8 +1459,7 @@ Hierdurch werden die ersten 2 KB des Nutzungsdateiinhalts abgerufen.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | fileId |	Dies ist der eindeutige Bezeichner der Modellnutzungsdatei. |
 | apiVersion | 1,0 |
-|||  
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1485,8 +1481,7 @@ Hierdurch wird der vollständige Inhalt der Nutzungsdatei abgerufen.
 | fid |	Dies ist der eindeutige Bezeichner der Modellnutzungsdatei. |
 | Download | 1 |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1506,8 +1501,7 @@ Hierdurch wird die angegebene Modellnutzungsdatei gelöscht.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | fileId | Dies ist der eindeutige Bezeichner der zu löschenden Datei. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1525,8 +1519,7 @@ Hierdurch werden alle Modellnutzungsdateien gelöscht.
 |:--------			|:--------								|
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1547,8 +1540,7 @@ Hierdurch werden Featureinformationen einschließlich Rang für den letzten erfo
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |samplingSize| Dies ist die Anzahl der Werte, die für jedes Feature anhand der Daten im Katalog eingeschlossen werden sollen. <br/>Mögliche Werte sind:<br> -1: Alle Proben <br>0: Keine Proben <br>N - N Proben für jeden Featurenamen zurückgeben|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 
 **Antwort**:
@@ -1630,8 +1622,7 @@ Hierdurch werden Featureinformationen einschließlich Rang für einen bestimmten
 |samplingSize| Dies ist die Anzahl der Werte, die für jedes Feature anhand der Daten im Katalog eingeschlossen werden sollen.<br/> Mögliche Werte sind:<br> -1: Alle Proben <br>0: Keine Proben <br>N - N Proben für jeden Featurenamen zurückgeben|
 |rankBuildId| Dies ist der eindeutige Bezeichner des Rangfolgebuilds oder -1 für den letzten Rangfolgebuild.|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 
 **Antwort**:
@@ -1780,8 +1771,7 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | apiVersion | 1\.0 |
-||| 
-| Request Body | Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung der Parameter finden Sie im Abschnitt „Buildparameter“.)`<NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableModelingInsights>true</EnableModelingInsights><UseFeaturesInModel>false</UseFeaturesInModel><ModelingFeatureList>feature_name_1,feature_name_2,...</ModelingFeatureList><AllowColdItemPlacement>false</AllowColdItemPlacement><EnableFeatureCorrelation>false</EnableFeatureCorrelation><ReasoningFeatureList>feature_name_a,feature_name_b,...</ReasoningFeatureList></BuildParametersList>` |
+||| | Request Body | Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung der Parameter finden Sie im Abschnitt „Buildparameter“.)`<NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableModelingInsights>true</EnableModelingInsights><UseFeaturesInModel>false</UseFeaturesInModel><ModelingFeatureList>feature_name_1,feature_name_2,...</ModelingFeatureList><AllowColdItemPlacement>false</AllowColdItemPlacement><EnableFeatureCorrelation>false</EnableFeatureCorrelation><ReasoningFeatureList>feature_name_a,feature_name_b,...</ReasoningFeatureList></BuildParametersList>` |
 
 **Antwort**:
 
@@ -1856,8 +1846,7 @@ OData-XML
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | buildType | Typ des aufzurufenden Builds: <br/>: „Recommendation“ für Empfehlungsbuild <br>: „Ranking“ für Rangplatzbuild <br/>: „Fbt“ für FBT-Build
 | apiVersion | 1\.0 |
-||| 
-| Anforderungstext | Wird das Feld leer belassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
+||| | Anforderungstext | Wird das Feld leer belassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
 
 **Antwort**:
 
@@ -2666,7 +2655,7 @@ Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn d
 
 | HTTP-Methode | URI |
 |:--------|:--------|
-|GET |`<rootURI>/UserRecommend?modelId=%27<modelId>%27&userId=%27<userId>&itemIds=%27<itemIds>%27&numberOfResults=<int>&includeMetadata=<bool>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/UserRecommend?modelId=%272779c063-48fb-46c1-bae3-74acddc8c1d1%27&userId=%27u1101%27&itemIds=%271003%27&numberOfResults=10&includeMetadata=false&apiVersion=%271.0%27`:|
+|GET |`<rootURI>/UserRecommend?modelId=%27<modelId>%27&userId=%27<userId>&itemsIds=%27<itemsIds>%27&numberOfResults=<int>&includeMetadata=<bool>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/UserRecommend?modelId=%272779c063-48fb-46c1-bae3-74acddc8c1d1%27&userId=%27u1101%27&itemsIds=%271003%27&numberOfResults=10&includeMetadata=false&apiVersion=%271.0%27`:|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -2728,7 +2717,7 @@ Hinweis: Für einen FBT-Build gibt es keine Benutzerempfehlungen.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
-|GET |`<rootURI>/UserRecommend?modelId=%27<modelId>%27&userId=%27<userId>%27&itemIds=%27<itemId>%27&numberOfResults=<int>&includeMetadata=<bool>&buildId=<int>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/UserRecommend?modelId=%272779c063-48fb-46c1-bae3-74acddc8c1d1%27&userId=%27u1101%27&itemIds=%271003%27&numberOfResults=10&includeMetadata=false&buildId=50012&apiVersion=%271.0%27`:|
+|GET |`<rootURI>/UserRecommend?modelId=%27<modelId>%27&userId=%27<userId>%27&itemsIds=%27<itemsIds>%27&numberOfResults=<int>&includeMetadata=<bool>&buildId=<int>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/UserRecommend?modelId=%272779c063-48fb-46c1-bae3-74acddc8c1d1%27&userId=%27u1101%27&itemsIds=%271003%27&numberOfResults=10&includeMetadata=false&buildId=50012&apiVersion=%271.0%27`:|
 
 
 
@@ -2821,8 +2810,7 @@ Hierdurch werden alle Benachrichtigungen für alle Modelle oder für ein einzeln
 |:--------			|:--------								|
 | modelId | Dieser Parameter ist optional. Wenn er nicht angegeben wird, erhalten Sie alle Benachrichtigungen für alle Modelle. <br>Gültiger Wert: Eindeutiger Bezeichner des Modells.|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINE |
+||| | Request Body | KEINE |
 
 **Antwort:**
 
@@ -2873,8 +2861,7 @@ Hierdurch werden alle gelesenen Benachrichtigungen für ein Modell gelöscht.
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -2891,8 +2878,7 @@ Hierdurch werden alle Benachrichtigungen für alle Modelle gelöscht.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -2905,4 +2891,4 @@ HTTP-Statuscode: 200
 Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument einschließlich URLs und anderer Verweise auf Websites können ohne Ankündigung geändert werden.<br><br> Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Ähnlichkeiten oder Verbindungen sind rein zufällig und nicht beabsichtigt.<br><br> Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Rechte an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.<br><br> © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

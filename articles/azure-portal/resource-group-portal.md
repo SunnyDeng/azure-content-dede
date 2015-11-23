@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="11/11/2015" 
 	ms.author="tomfitz"/>
 
 
@@ -25,7 +25,7 @@ Um eine Ressource (z. B. ein Datenbankserver, eine Datenbank oder eine Web-App)
 
 Normalerweise enthält eine Ressourcengruppe Ressourcen, die sich auf eine bestimmte Anwendung beziehen. Eine Gruppe kann z. B. eine Web-App enthalten, die Ihre öffentliche Website hostet, eine SQL-Datenbank, in der von der Website verwendete relationale Daten gespeichert sind, und ein Speicherkonto, in dem nicht-relationale Ressourcen gespeichert sind. Jede Ressource in einer Ressourcengruppe sollte den gleichen Lebenszyklus aufweisen. Weitere Informationen zum Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
-Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Vorschauportal.
+Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Vorschauportal. Das Vorschauportal und der Ressourcen-Manager werden derzeit nicht von allen Diensten unterstützt. Verwenden Sie für diese Dienste das [Portal](https://manage.windowsazure.com). Informationen zum Status jedes Dienstes finden Sie unter [Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen](resource-manager-supported-services.md).
 
 ## Erstellen von Ressourcengruppen und Ressourcen
 
@@ -154,4 +154,4 @@ Erste Schritte
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

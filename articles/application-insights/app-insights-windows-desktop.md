@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="11/05/2015" 
 	ms.author="awills"/>
 
 # Application Insights für Windows-Desktop-Apps, -Dienste und -Workerrollen
@@ -23,9 +23,9 @@
 
 Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestellten Anwendung überwachen:
 
-Alle Windows-Anwendungen, einschließlich Desktop-Apps, Hintergrunddienste und Workerrollen, können das Application Insights Core SDK zum Senden von Telemetriedaten an Application Insights verwenden. Sie können das Applications Insights-SDK auch einem Klassenbibliotheksprojekt hinzufügen.
+Alle Windows-Anwendungen, einschließlich Desktop-Apps, Hintergrunddienste und Workerrollen, können das Application Insights SDK zum Senden von Telemetriedaten an Application Insights verwenden. Sie können das Applications Insights-SDK auch einem Klassenbibliotheksprojekt hinzufügen.
 
-Das Core SDK stellt nur eine API bereit: Im Gegensatz zu den Web- oder Geräte-SDKs enthält es keine Module, die automatisch Daten erfassen. Daher müssen Sie Code schreiben, um Ihre eigenen Telemetriedaten zu senden. Einige der weiteren Pakete, z. B. die Leistungsindikatorerfassung, funktioniert auch in einer Desktop-App.
+Sie können die gewünschten Standarddatensammler auswählen (z. B. zum Überwachen von Leistungsindikatoren oder Abhängigkeitsaufrufen) oder einfach die Kern-API verwenden und eigene Telemetriedaten schreiben.
 
 
 ## <a name="add"></a> Erstellen einer Application Insights-Ressource
@@ -48,13 +48,13 @@ Das Core SDK stellt nur eine API bereit: Im Gegensatz zu den Web- oder Geräte-S
 
     ![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten".](./media/app-insights-windows-desktop/03-nuget.png)
 
-2. Installieren Sie das Application Insights-Core-API-Paket: Microsoft.ApplicationInsights.
+2. Installieren Sie das Application Insights Windows Server-Paket: Microsoft.ApplicationInsights.WindowsServer
 
-    ![Suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-core-nuget.png)
+    ![Suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-ai-nuget.png)
 
     *Kann ich andere Pakete verwenden?*
 
-    Ja, Sie können andere Pakete wie beispielsweise die Pakete für Leistungsindikator- oder Abhängigkeitserfassung installieren, wenn Sie deren Module verwenden möchten. "Microsoft.ApplicationInsights.Web" umfasst verschiedene solcher Pakete. Wenn Sie [Pakete für Protokoll- oder Ablaufverfolgungserfassung](app-insights-asp-net-trace-logs.md) verwenden möchten, beginnen Sie mit dem Webserverpaket.
+    Ja. Wählen Sie die Kern-API (Microsoft.ApplicationInsights), wenn Sie die API nur verwenden möchten, um Ihre eigenen Telemetriedaten zu senden. Das Windows Server-Paket beinhaltet automatisch die Kern-API sowie einige weitere Pakete wie etwa die Sammlung von Leistungsindikatoren und die Abhängigkeitsüberwachung.
 
     (Verwenden Sie jedoch nicht "Microsoft.ApplicationInsights.Windows", dieses ist für Windows Store-Apps vorgesehen.)
 
@@ -113,14 +113,14 @@ Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
 ```
 
-Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu senden. In Windows-Desktopanwendungen werden Telemetriedaten nicht automatisch gesendet. In der Regel würden Sie Folgendes verwenden:
+Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu senden. Wenn Sie die Kern-API verwenden, werden Telemetriedaten nicht automatisch gesendet. In der Regel würden Sie Folgendes verwenden:
 
 * `TrackPageView(pageName)` für wechselnde Formulare, Seiten oder Registerkarten
 * `TrackEvent(eventName)` für andere Benutzeraktionen
 * `TrackMetric(name, value)` in einer Hintergrundaufgabe, um reguläre Berichte über Metriken zu senden, die nicht an bestimmte Ereignisse gekoppelt sind.
 * `TrackTrace(logEvent)` für die [Diagnoseprotokollierung][diagnostic]
 * `TrackException(exception)` in Catch-Klauseln
-* Um sicherzustellen, dass alle Telemetriedaten vor dem Schließen der App gesendet werden, verwenden Sie `Flush()`. Verwenden Sie diese nur, wenn Sie lediglich die Core-API verwenden (Microsoft.ApplicationInsights). Die Web- und Geräte-SDKs implementieren dieses Verhalten automatisch. (Wenn Ihre Apps in einem Kontext ausgeführt werden, in dem nicht immer eine Internetverbindung verfügbar ist, siehe auch [Persistenzkanal](#persistence-channel).)
+* Um sicherzustellen, dass alle Telemetriedaten vor dem Schließen der App gesendet werden, verwenden Sie `Flush()`. Verwenden Sie diese nur, wenn Sie lediglich die Core-API verwenden (Microsoft.ApplicationInsights). Die Web-SDKs implementieren dieses Verhalten automatisch. (Wenn Ihre Apps in einem Kontext ausgeführt werden, in dem nicht immer eine Internetverbindung verfügbar ist, siehe auch [Persistenzkanal](#persistence-channel).)
 
 
 #### Kontextinitialisierer
@@ -169,7 +169,7 @@ Die ersten Ereignisse werden in der [Diagnosesuche](app-insights-diagnostic-sear
 
 Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
-Wenn Sie „TrackMetric“ oder den Parameter „measurements“ von „TrackEvent" verwendet haben, öffnen Sie im [Metrik-Explorer][metrics] das Blatt „Filter“. Dort sollten Ihre Metriken angezeigt werden. Gelegentlich kann es jedoch etwas dauern, bis die Anzeige aktuell ist. Schließen Sie ggf. das Blatt "Filter", warten Sie einen Moment, und aktualisieren Sie die Anzeige.
+Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwendet haben, öffnen Sie im [Metrik-Explorer][metrics] das Blatt "Filter". Dort sollten Ihre Metriken angezeigt werden. Gelegentlich kann es jedoch etwas dauern, bis die Anzeige aktuell ist. Schließen Sie ggf. das Blatt "Filter", warten Sie einen Moment, und aktualisieren Sie die Anzeige.
 
 
 
@@ -177,7 +177,7 @@ Wenn Sie „TrackMetric“ oder den Parameter „measurements“ von „TrackEve
 
 Wenn Ihre Apps in einem Kontext ausgeführt werden, in dem nicht immer eine Internetverbindung oder nur eine langsame Internetverbindung verfügbar ist, erwägen Sie die Verwendung eines Persistenzkanals anstelle des standardmäßigen In-Memory-Kanals.
 
-Der standardmäßige In-Memory-Kanal verliert alle Telemetriedaten, die nicht vor dem Schließen der App gesendet wurden. Obwohl Sie mithilfe von `Flush()` versuchen können, alle im Puffer verbleibenden Daten zu senden, gehen dennoch Daten verloren, wenn keine Internetverbindung besteht oder wenn die App heruntergefahren wird, bevor die Übertragung abgeschlossen ist.
+Der standardmäßige In-Memory-Kanal verliert alle Telemetriedaten, die nicht vor dem Schließen der App gesendet wurden. Wenngleich Sie mithilfe von `Flush()` versuchen können, alle im Puffer verbleibenden Daten zu senden, gehen dennoch Daten verloren, wenn keine Internetverbindung besteht oder wenn die App heruntergefahren wird, bevor die Übertragung abgeschlossen ist.
 
 Im Gegensatz dazu puffert der Persistenzkanal Telemetriedaten in einer Datei, bevor diese an das Portal gesendet werden. `Flush()` stellt sicher, dass Daten in der Datei gespeichert werden. Wenn beim Schließen der App keine Daten gesendet werden, verbleiben diese in der Datei. Wenn die App erneut gestartet wird, werden die Daten gesendet, sofern eine Internetverbindung besteht. Daten werden so lange in der Datei gesammelt, bis eine Internetverbindung verfügbar ist.
 
@@ -299,4 +299,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

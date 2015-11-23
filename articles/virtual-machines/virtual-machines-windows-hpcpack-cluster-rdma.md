@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
 ms.service="virtual-machines"
  ms.devlang="na"
@@ -71,7 +71,7 @@ Im Folgenden werden die Schritte zum Burst auf Azure-Instanzen der Größe A8 od
 
 6. **Erstellen eines neuen Clouddiensts und eines Speicherkontos**
 
-    Verwenden Sie das Azure-Verwaltungsportal, um einen Clouddienst und ein Speicherkonto für die Bereitstellung in einer Region zu erstellen, in der rechenintensive Instanzen verfügbar sind. (Ordnen Sie Clouddienst und Speicherkonto keiner vorhandenen Affinitätsgruppe zu, die für andere Bereitstellungen verwendet wird.)
+    Verwenden Sie das Azure-Portal, um einen Clouddienst und ein Speicherkonto für die Bereitstellung in einer Region zu erstellen, in der rechenintensive Instanzen verfügbar sind. (Ordnen Sie Clouddienst und Speicherkonto keiner vorhandenen Affinitätsgruppe zu, die für andere Bereitstellungen verwendet wird.)
 
 7. **Erstellen einer Azure-Knotenvorlage**
 
@@ -246,4 +246,4 @@ Im Folgenden finden Sie Überlegungen zum Ausführen von MPI-Anwendungen auf Azu
 [pingpong1]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong1.png
 [pingpong2]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong2.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

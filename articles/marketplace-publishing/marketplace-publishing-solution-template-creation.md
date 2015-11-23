@@ -8,7 +8,7 @@
    editor=""/>
 
    <tags
-      ms.service="marketplace-publishing"
+      ms.service="marketplace"
       ms.devlang="na"
       ms.topic="article"
       ms.tgt_pltfrm="na"
@@ -67,4 +67,4 @@ Nun, da Sie Ihre Lösungsvorlage erstellt und die ZIP-Datei mit den erforderlich
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/13/2015" 
-	ms.author="mimig"/>
+	ms.author="arramac"/>
 
 # SQL-Abfrage in DocumentDB
 Microsoft Azure DocumentDB unterstützt Dokumentabfragen mit SQL (Structured Query Language) über hierarchische JSON-Dokumente. DocumentDB funktioniert ohne Schema. Die direkte Integration des JSON-Datenmodells in das Datenbankmodul ermöglicht eine automatische Indexierung von JSON-Dokumenten ohne explizite Schemas oder die Erstellung sekundärer Indizes.
@@ -375,7 +375,7 @@ In diesem Beispiel werden alle Dokumente zurückgegeben, in denen der Bundesstaa
 
 IN entspricht dem Verketten mehrerer OR-Klauseln. Da es aber mit nur einem Index verarbeitet werden kann, unterstützt DocumentDB einen höheren [Grenzwert](documentdb-limits.md) für die Anzahl von Argumenten, die in einer IN-Klausel angegeben werden.
 
-### Ternäre (?) und koaleszierte (??) Operatoren:
+### Ternäre (?) und koaleszierte (??) Operatoren
 Ternäre und koaleszierte Operatoren können ähnlich wie in den gängigen Programmiersprachen wie C# und JavaScript zum Erstellen von bedingten Ausdrücken verwendet werden.
 
 Der ternäre (?) Operator kann beim schnellen Erstellen von neuen JSON-Eigenschaften sehr nützlich sein. Sie können nun z. B. Abfragen zum Klassifizieren von Klassenstufen in einem für Menschen lesbaren Format wie Anfänger/Fortgeschrittene/Profis wie unten dargestellt erstellen.
@@ -583,7 +583,7 @@ Eine weitere Schlüsselfunktion von DocumentDB-SQL ist die Objekt- und Arrayerst
 ### VALUE-Schlüsselwort
 Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgende Abfrage gibt z. B. den skalaren Wert `"Hello World"` anstelle von `{$1: "Hello World"}` zurück.
 
-**Abfrage**
+**Abfragen**
 
 	SELECT VALUE "Hello World"
 
@@ -2089,4 +2089,4 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: documentdb-consistency-levels.md
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

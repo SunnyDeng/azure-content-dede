@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search | Microsoft Azure"
+	pageTitle="Durchsuchen von StackExchange-Daten mithilfe von Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Informationen zum Ausführen von REST-Suchen mithilfe von Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
@@ -109,4 +109,4 @@ Sobald dies erfolgt ist, können Sie im [Azure-Portal](https://portal.azure.com)
     Server=tcp:azs-playground.database.windows.net,1433;Database=StackExchange;User ID=reader@azs-playground;
     Password=EdrERBt3j6mZDP;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

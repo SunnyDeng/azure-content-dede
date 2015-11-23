@@ -5,15 +5,15 @@
    documentationCenter=""
    authors="BrucePerlerMS"
    manager="mbaldwin"
-   editor="mbaldwin" />
+   editor="bruceper" />
 <tags
    ms.service="key-vault"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/22/2015"
-   ms.author="mbaldwin" />
+   ms.date="11/06/2015"
+   ms.author="bruceper" />
 
 # Entwicklerhandbuch zu Azure-Schlüsseltresor
 
@@ -33,21 +33,11 @@ Vorgänge für Schlüsseltresore werden mithilfe von Azure Active Directory auth
 
 ## Programmierung für den Schlüsseltresor
 
-Das Schlüsseltresore-Verwaltungssystem für Programmierer besteht aus mehreren Schnittstellen auf der Grundlage von REST. Dieser Artikel in der REST-Referenz enthält die Grundbegriffe, [Informationen zu Schlüsseln und geheimen Schlüsseln](https://msdn.microsoft.com/library/azure/dn903623.aspx).
+Das Schlüsseltresore-Verwaltungssystem für Programmierer besteht aus mehreren Schnittstellen auf der Grundlage von REST. [Referenz für die Key Vault-REST-API](https://msdn.microsoft.com/library/azure/dn903609.aspx)
 
-### REST
-
-Die REST-API bildet die Grundlage für die gesamte programmgesteuerte Interaktion mit dem Schlüsseltresor.
-
-Der Schlüsseltresor hat einen eigenen REST-Endpunkt, der in der [Referenz für die Schlüsseltresor-REST-API](https://msdn.microsoft.com/library/azure/dn903609.aspx) beschrieben wird.
-
-### .NET
-
-Die .NET API ist eine Gruppe von Wrappern, die eine Implementierung über das C#-Programmiermodell ohne direkte Interaktion mit dem REST-Endpunkt ermöglicht. Hier finden Sie die [Referenz zur .NET-Client-API für Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903301.aspx).
-
-### Node.js
-
-Die Node.js-API ist eine Gruppe von Wrappern, die eine Implementierung über das Node.js-Programmiermodell ohne direkte Interaktion mit dem REST-Endpunkt ermöglicht. Hier finden Sie die [Schlüsseltresorverwaltung für das Microsoft Azure SDK für Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest/).
+|[![.NET](./media/key-vault-developers-guide/net.png)](https://msdn.microsoft.com/library/azure/dn903301.aspx)|[![Node.js](./media/key-vault-developers-guide/nodejs.png)](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
+|:--:|:--:|
+|[.NET](https://msdn.microsoft.com/library/azure/dn903301.aspx)|[Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
 
 ## Verwalten von Schlüsseltresoren
 
@@ -67,5 +57,12 @@ Die folgenden Artikel bieten aufgabenspezifische Anleitungen:
 ## Beispiele
 
 - Dieser Download enthält sowohl die Beispielanwendung „HelloKeyVault“ als auch ein Azure-Webdienstbeispiel. [Codebeispiele für Azure-Schlüsseltresor](http://www.microsoft.com/download/details.aspx?id=45343)
+- In diesem Lernprogramm erfahren Sie, wie Sie den Azure-Schlüsseltresor aus einer Webanwendung in Azure verwenden. [Verwenden des Azure-Schlüsseltresors aus einer Webanwendung](key-vault-use-from-web-application.md)
 
-<!---HONumber=Nov15_HO2-->
+## Unterstützung von Bibliotheken
+
+- Die [Microsoft Azure-Schlüsseltresor-Kernbibliothek](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/1.0.0) bietet IKey- und IKeyResolver-Schnittstellen, um Schlüssel von Bezeichnern zu ermitteln und mit diesen Schlüsseln Operationen auszuführen.
+
+- [Microsoft Azure-Schlüsseltresorerweiterungen](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/1.0.0) bieten erweiterte Funktionen für den Azure-Schlüsseltresor.
+
+<!---HONumber=Nov15_HO3-->

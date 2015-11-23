@@ -31,7 +31,7 @@ In diesem Artikel wird beschrieben, wie Sie über das Azure-Vorschauportal neue 
 
 ## Suchen des virtuellen Computers
 
-1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim Azure-Vorschauportal an.
 
 2. Klicken Sie im Menü "Hub" auf **Durchsuchen**.
 
@@ -90,4 +90,4 @@ Nach dem Hinzufügen des Datenträgers müssen Sie ihn für die Verwendung im Be
 
 [Informationen zu Azure-Speicherkonten]: ../storage-whatis-account/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

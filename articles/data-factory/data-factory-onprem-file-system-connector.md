@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/25/2015" 
+	ms.date="11/09/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in das und aus dem lokalen Dateisystem mithilfe von Azure Data Factory
@@ -52,7 +52,7 @@ Als ersten Schritt richten Sie das Datenverwaltungsgateway gemäß den Anweisung
 	  "properties": {
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
-	      "host": "\\\Contosogame-Asia",
+	      "host": "\\Contosogame-Asia",
 	      "userid": "Admin",
 	      "password": "123456",
 	      "gatewayName": "mygateway"
@@ -273,7 +273,7 @@ Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer 
 	  "properties": {
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
-	      "host": "\\\Contosogame-Asia",
+	      "host": "\\Contosogame-Asia",
 	      "userid": "Admin",
 	      "password": "123456",
 	      "gatewayName": "mygateway"
@@ -427,7 +427,7 @@ Sie können ein lokales Dateisystem mithilfe eines verknüpften Dienst des Typs 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 Typ | Die "type"-Eigenschaft muss auf **OnPremisesFileServer** festgelegt sein. | Ja 
-host | Hostname des Servers. Verwenden Sie "\" als Escapezeichen (siehe das folgende Beispiel): Wenn Ihre Freigabe "\\servername" heißt, geben Sie "\\\servername" an.<p>Wenn das Dateisystem für den Gatewaycomputer lokal ist, verwenden Sie "Local" oder "localhost". Wenn sich das Dateisystem auf einem anderen Server als dem Gatewaycomputer befindet, verwenden Sie "\\\servername".</p> | Ja
+host | Hostname des Servers. Verwenden Sie "" als Escapezeichen (siehe das folgende Beispiel): Wenn Ihre Freigabe "\\servername" heißt, geben Sie "\\servername" an.<p>Wenn das Dateisystem für den Gatewaycomputer lokal ist, verwenden Sie "Local" oder "localhost". Wenn sich das Dateisystem auf einem anderen Server als dem Gatewaycomputer befindet, verwenden Sie "\\servername".</p> | Ja
 userid | Geben Sie die ID des Benutzers an, der auf dem Server zugreifen darf. | Nein (wenn Sie "encryptedCredential" auswählen)
 password | Geben Sie das Kennwort für das Benutzerkonto (userid) an. | Nein (wenn Sie "encryptedCredential" auswählen) 
 encryptedCredential | Geben Sie die verschlüsselten Anmeldeinformationen an, die Sie durch Ausführen des Cmdlets "New-AzureDataFactoryEncryptValue" erhalten.<p>**Hinweis**: Sie müssen mindestens die Azure PowerShell-Version 0.8.14 verwenden, um mit Cmdlets wie "New-AzureDataFactoryEncryptValue" zu arbeiten, bei denen der type-Parameter auf "OnPremisesFileSystemLinkedService" festgelegt ist.</p> | Nein (wenn Sie "userid" und "password" unverschlüsselt angeben)
@@ -442,7 +442,7 @@ Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine Dat
 	  "properties": {
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
-	      "host": "\\\Contosogame-Asia",
+	      "host": "\\Contosogame-Asia",
 	      "userid": "Admin",
 	      "password": "123456",
 	      "gatewayName": "mygateway"
@@ -472,7 +472,7 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeichen in der Zeichenfolge das Escapezeichen "\". Geben Sie für "folder\\subfolder" z. B. "folder\\subfolder" und für "d:\\samplefolder" z. B. "d:\\samplefolder" an.</p><p>Sie können dies mit **partitionBy** kombinieren, um Ordnerpfade auf den Anfangs- und Endwerten einer Datum-/Uhrzeitangabe für Slices basieren zu lassen.</p> | Ja
+folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeichen in der Zeichenfolge das Escapezeichen "". Geben Sie für "folder\\subfolder" z. B. "folder\\subfolder" und für "d:\\samplefolder" z. B. "d:\\samplefolder" an.</p><p>Sie können dies mit **partitionBy** kombinieren, damit Ordnerpfade auf den Anfangs- und Endwerten einer Datum-/Uhrzeitangabe für Slices basieren.</p> | Ja
 fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle auf eine bestimmte Datei im Ordner verweisen soll. Wenn Sie keine Werte für diese Eigenschaft angeben, verweist die Tabelle auf alle Dateien im Ordner.<p>Wenn "fileName" für ein Ausgabedataset nicht angegeben wird, hat der Name der generierten Datei das folgende Format: </p><p>Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt)</p> | Nein
 partitionedBy | "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Beispiel: "folderPath" als Parameter für jedes Stunde mit Daten. | Nein
 Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die "type"-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn die "type"-Eigenschaft auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Formatabschnitt unten finden Sie weitere Einzelheiten. | Nein
@@ -578,12 +578,12 @@ Dieser Abschnitt beschreibt das resultierende Verhalten des Kopiervorgangs für 
 
 recursive | copyBehavior | Resultierendes Verhalten
 --------- | ------------ | --------
-true | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;File1<br/>&nbsp;&nbsp;&nbsp;&nbsp;File2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird dieselbe Struktur wie der Quellordner aufweisen<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>.  
-true | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei5</p>
-true | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 + Datei3 + Datei4 + Datei5 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt</p>
-false | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
-false | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
-false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt. automatisch erstellter Name für Datei1</p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+true | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>der Zielordner „Ordner1“ wird dieselbe Struktur wie der Quellordner aufweisen<p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>.  
+true | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei5</p>
+true | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 + Datei3 + Datei4 + Datei5 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt</p>
+false | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+false | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei2<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; Unterordner1<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei3<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei4<br/>& Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; & Nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt. automatisch erstellter Name für Datei1</p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
 
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
@@ -599,4 +599,4 @@ false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden S
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

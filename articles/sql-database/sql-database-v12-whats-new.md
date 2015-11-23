@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="11/11/2015" 
 	ms.author="genemi"/>
 
 
@@ -40,7 +40,6 @@ Die neueste Informationen zu Ressourceneinschränkungen für SQL-Datenbank finde
 Ein wichtiges Ziel für SQL-Datenbank V12 war die Verbesserung der Kompatibilität mit Microsoft SQL Server 2014. Unter anderem ist V12 jetzt mit SQL Server im wichtigen Bereich der Programmierung gleichauf. Beispiel:
 
 
-- [Common Language Runtime (CLR)-Assemblys](http://msdn.microsoft.com/library/ms189524.aspx)
 - [Fensterfunktionen](http://msdn.microsoft.com/library/bb934097.aspx), mit [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
 - [XML-Indizes](http://msdn.microsoft.com/library/bb934097.aspx) und [selektive XML-Indizes](http://msdn.microsoft.com/library/jj670104.aspx)
 - [Änderungsnachverfolgung](http://msdn.microsoft.com/library/bb933875.aspx)
@@ -48,7 +47,7 @@ Ein wichtiges Ziel für SQL-Datenbank V12 war die Verbesserung der Kompatibilit�
 - [Volltextsuche](http://msdn.microsoft.com/library/ms142571.aspx)
 
 
-Informationen zu den wenigen noch nicht unterstützten SQL-Datenbankfunktionen finden Sie [hier](http://msdn.microsoft.com/library/azure/ee336281.aspx).
+Informationen zu den wenigen noch nicht unterstützten SQL-Datenbankfunktionen finden Sie [hier](sql-database-transact-sql-information.md).
 
 
 ## Mehr Premium-Performance, neue Leistungsstufen
@@ -92,12 +91,12 @@ Sicherheit ist eines der Hauptprobleme für alle Benutzer, die für Unternehmens
 
 - [Zeilenbasierte Sicherheit](http://msdn.microsoft.com/library/dn765131.aspx) (RLS)
 - [Dynamische Datenmaskierung](sql-database-dynamic-data-masking-get-started.md)
-- [Eigenständige Datenbanken](http://msdn.microsoft.com/library/azure/ff394108.aspx)
+- [Eigenständige Datenbanken](http://msdn.microsoft.com/library/ff929188.aspx)
 - [Anwendungsrollen](http://msdn.microsoft.com/library/ms190998.aspx), die mit GRANT, DENY oder REVOKE verwaltet werden
 - [Transparente Datenverschlüsselung](http://msdn.microsoft.com/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
 - [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md)
  - SQL-Datenbank unterstützt nun die Azure Active Directory-Authentifizierung, ein Mechanismus zum Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung von Identitäten in Azure Active Directory (Azure AD). Mithilfe der Azure Active Directory-Authentifizierung ist es möglich, die Identitäten von Datenbankbenutzern und anderen Microsoft-Diensten an einer zentralen Stelle zu verwalten.
-- [Immer verschlüsselt](https://msdn.microsoft.com/library/mt163865.aspx) (in der Vorschau) macht die Verschlüsselung für Anwendungen erkennbar und ermöglicht es Clients, sensible Daten in Clientanwendungen zu verschlüsseln, ohne die Verschlüsselungsschlüssel mit der SQL-Datenbank freizugeben.
+- [Immer verschlüsselt](https://msdn.microsoft.com/library/mt163865.aspx) (in der Vorschau) macht die Verschlüsselung für Anwendungen erkennbar und ermöglicht es Clients, sensible Daten in Clientanwendungen zu verschlüsseln, ohne die Verschlüsselungsschlüssel für die SQL-Datenbank freizugeben.
 
 
 ## Erhöhte Geschäftskontinuität, wenn eine Wiederherstellung erforderlich ist
@@ -113,7 +112,7 @@ V12 bietet wesentlich bessere Recovery Point Objectives (RPO) und geschätzte Wi
 | Aktive Georeplikation | • RPO < 5 Minuten.<br/>• ERT < 1 Stunde. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
 
 
-Weitere Informationen finden Sie unter [Azure SQL-Datenbank – Geschäftskontinuität](http://msdn.microsoft.com/library/azure/hh852669.aspx).
+Weitere Informationen finden Sie unter [Azure SQL-Datenbank – Geschäftskontinuität](sql-database-business-continuity.md).
 
 
 ## Weitere Gründe für ein Upgrade
@@ -162,4 +161,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

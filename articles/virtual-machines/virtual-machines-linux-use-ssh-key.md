@@ -46,26 +46,26 @@ Falls Sie die Dateien erstellen müssen, gehen Sie wie folgt vor:
 
 	- Besuchen Sie im Fall von Mac die [Produktsicherheitswebsite von Apple](https://support.apple.com/HT201222), und wählen Sie ggf. die entsprechenden Updates aus.
 	- Für Debian-basierte Linux-Distributionen wie Ubuntu, Debian, Mint usw.:
-		
+
 			sudo apt-get update ssh-keygen
 			sudo apt-get update openssl
-			
+
 	- Für RPM-basierte Linux-Distributionen wie CentOS und Oracle Linux:
-		
+
 			sudo yum update ssh-keygen
 			sudo yum update openssl
-			
+
 	- Für SLES und OpenSUSE
-		
+
 			sudo zypper update ssh-keygen
 			sudo zypper update openssl
-	
+
 2. Erstellen Sie mit **ssh-keygen** 2.048 Bit große RSA-Dateien für den öffentlichen und privaten Schlüssel, und übernehmen Sie den Standardspeicherort und -namen von `~/.ssh/id_rsa`, sofern Sie keinen bestimmten Speicherort oder Namen für die Dateien verwenden. Der grundlegende Befehl lautet wie folgt:
 
 		ssh-keygen -t rsa -b 2048 
-	
+
 	In der Regel fügt die **ssh-keygen**-Implementierung einen Kommentar sowie in vielen Fällen den Benutzernamen und Hostnamen des Computers hinzu. Sie können mithilfe der Option `-C` einen bestimmten Kommentar angeben.
-	
+
 3. Erstellen Sie eine PEM-Datei aus der Datei `~/.ssh/id_rsa`, damit Sie mit dem klassischen Portal arbeiten können. Verwenden Sie den **openssl**-Befehl wie folgt:
 
 		openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
@@ -125,7 +125,7 @@ Das nächste Beispiel zeigt, wie das **SSH-RSA**-Format mit einer Ressourcen-Man
 	data:    TemplateLink       : https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json
 	data:    ContentVersion     : 1.0.0.0
 	data:    Name                   Type    Value
-	
+
 	data:    newStorageAccountName  String  testtestsshvmtemplate3
 	data:    adminUserName          String  ops
 	data:    sshKeyData             String  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAkek3P6V3EhmD+xP+iKDZco9 user@macbookpro
@@ -157,7 +157,7 @@ Sie können die PEM-Datei anschließend wie im folgenden Beispiel gezeigt mit de
 	+ Configuring certificate
 	+ Creating VM
 	info:    vm create command OK
-	
+
 
 ## Herstellen einer Verbindung mit Ihrer VM
 
@@ -166,11 +166,11 @@ Für den **SSH**-Befehl werden als Eingabeparameter ein Benutzername zur Anmeldu
 Ein typisches Verwendungsbeispiel mit einer Ressourcen-Manager-Bereitstellung kann wie folgt aussehen, wenn Sie lediglich eine Unterdomäne und einen Bereitstellungsspeicherort angegeben haben:
 
 	ssh user@subdomain.westus.cloudapp.azure.com -p 22
-	
+
 Wenn Sie eine Verbindung mit einem Clouddienst herstellen, der mit dem klassischen Bereitstellungsmodell bereitgestellt wurde, würde die Adresse wie folgt aussehen:
 
 	ssh user@subdomain.cloudapp.net -p 22
-	
+
 Da sich die Adressform ändern kann, müssen Sie die Adresse der Azure-VM ermitteln (es ist immer möglich, die IP-Adresse, oder falls zugewiesen, einen benutzerdefinierten Domänennamen zu verwenden).
 
 ### Ermitteln der SSH-Adresse Ihrer Azure-VM bei klassischen Bereitstellungen
@@ -266,27 +266,27 @@ Wenn Sie eine VM anhand einer PEM-Datei erstellt haben, die aus Ihrer Datei `~/.
 	Saving password to keychain failed
 	Identity added: /Users/rasquill/.ssh/id_rsa (/Users/rasquill/.ssh/id_rsa)
 	Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-28-generic x86_64)
-	
+
 	* Documentation:  https://help.ubuntu.com/
-	
+
 	System information as of Sat Oct 10 20:53:08 UTC 2015
-	
+
 	System load: 0.52              Memory usage: 5%   Processes:       80
 	Usage of /:  45.3% of 1.94GB   Swap usage:   0%   Users logged in: 0
-	
+
 	Graph this data and manage this system at:
 		https://landscape.canonical.com/
-	
+
 	Get cloud support with Ubuntu Advantage Cloud Guest:
 		http://www.ubuntu.com/business/services/cloud
-	
+
 	0 packages can be updated.
 	0 updates are security updates.
-	
+
 	The programs included with the Ubuntu system are free software;
 	the exact distribution terms for each program are described in the
 	individual files in /usr/share/doc/*/copyright.
-	
+
 	Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 	applicable law.
 
@@ -295,7 +295,7 @@ Wenn Sie eine VM anhand einer PEM-Datei erstellt haben, die aus Ihrer Datei `~/.
 Möglicherweise lässt sich das Problem mithilfe der Empfehlungen unter [Problembehandlung bei SSH-Verbindungen](virtual-machines-troubleshoot-ssh-connections.md) beheben.
 
 ## Nächste Schritte
-
+ 
 Nachdem Sie eine Verbindung mit Ihrer VM hergestellt haben, müssen Sie die ausgewählte Distribution vor der weiteren Verwendung unbedingt aktualisieren.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

@@ -960,4 +960,13 @@ In diesem Abschnitt werden Sie ein C#-Konsolenanwendungsprojekt erstellen und ei
 
 Sie können nun einen Traffic Manager zum Weiterleiten von Anforderungen zwischen den beiden Datencentern verwenden und auf diese Weise Failoverfunktionen bei Ausfällen bereitstellen.
 
-<!---HONumber=Oct15_HO3-->
+
+##Media Services-Lernpfade
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
+
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
+<!---HONumber=Nov15_HO3-->

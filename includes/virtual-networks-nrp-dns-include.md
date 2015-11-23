@@ -5,6 +5,8 @@ Azure DNS ist ein Hostingdienst für DNS-Domänen, der die Namensauflösung mith
 
 | Eigenschaft | Beschreibung | Beispielwert |
 |---|---|---|
+| DNS-Zonen | Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com",
+providers/Microsoft.Network/dnszones/contoso.com/A/www |
 | DNS-Zonen | Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com“
 
 
@@ -83,8 +85,8 @@ DNS-Zonenbeispiel im Json-Format:
 
 ## Zusätzliche Ressourcen
 
-Lesen Sie die [REST-API-Dokumentation für DNS-Zonen](https://msdn.microsoft.com/library/azure/mt130626.aspx), um weitere Informationen zu erhalten.
+Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Zonen](https://msdn.microsoft.com/library/azure/mt130626.aspx).
 
-Lesen Sie die [REST-API-Dokumentation für DNS-Datensatzgruppen](https://msdn.microsoft.com/library/azure/mt130626.aspx), um weitere Informationen zu erhalten.
+Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Datensatzgruppen](https://msdn.microsoft.com/library/azure/mt130626.aspx).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

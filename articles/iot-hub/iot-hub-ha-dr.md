@@ -24,7 +24,7 @@ Als Azure-Dienst sorgt IoT Hub für hohe Verfügbarkeit, indem Redundanzen auf A
 
 Eine ausführliche Erläuterung von Bereitstellungstopologien in IoT-Lösungen würde den Rahmen dieses Abschnitts sprengen, aber mit Blick auf hohe Verfügbarkeit und Notfallwiederherstellung gehen wir auf das Bereitstellungsmodell für das *regionale Failover* ein.
 
-Bei einem Modell für regionales Failover wird das Back-End der Lösung hauptsächlich an einem Rechenzentrumstandort ausgeführt, aber eine IoT Hub-Einheit mit Back-End wird zu Failoverzwecken in einer weiteren Rechenzentrumregion bereitgestellt. Wenn die IoT Hub-Einheit im primären Rechenzentrum ausfällt oder die Netzwerkverbindung vom Gerät zum primären Rechenzentrum unterbrochen wird, ist dies dann entsprechend abgedeckt. Geräte nutzen jeweils einen sekundären Dienstendpunkt, wenn das primäre Gateway nicht erreichbar ist. Mit einer regionsübergreifenden Failoverfunktion kann die Lösungsverfügbarkeit über die hohe Verfügbarkeit einer einzelnen Region hinweg verbessert werden.
+Bei einem Modell für regionales Failover wird das Back-End der Lösung hauptsächlich an einem Rechenzentrumstandort ausgeführt. Zu Failoverzwecken wird jedoch in einer weiteren Rechenzentrumregion eine IoT Hub-Einheit mit Back-End bereitgestellt. Wenn die IoT Hub-Einheit im primären Rechenzentrum ausfällt oder die Netzwerkverbindung vom Gerät zum primären Rechenzentrum unterbrochen wird, ist dies entsprechend abgedeckt. Geräte nutzen jeweils einen sekundären Dienstendpunkt, wenn das primäre Gateway nicht erreichbar ist. Mit einer regionsübergreifenden Failoverfunktion kann die Lösungsverfügbarkeit über die hohe Verfügbarkeit einer einzelnen Region hinweg verbessert werden.
 
 Sie benötigen grob Folgendes, um ein Modell für regionales Failover mit IoT Hub zu implementieren:
 
@@ -48,4 +48,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

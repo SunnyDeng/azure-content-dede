@@ -37,9 +37,9 @@ Mithilfe einer der beiden folgenden Optionen können Sie einen virtuellen Comput
 
 Dafür können Sie entweder das Azure-Portal oder die Azure PowerShell-Befehle verwenden.
 
-So verwenden Sie das Portal:
+So verwenden Sie das Azure-Portal:
 
-1. Melden Sie sich beim [Portal](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben.
+1. Melden Sie sich beim Azure-Portal an, falls Sie dies noch nicht getan haben.
 
 2. Klicken Sie in der Befehlsleiste auf **Neu**.
 
@@ -72,9 +72,9 @@ Beachten Sie Folgendes, wenn Sie einen virtuellen Azure-Computer mithilfe von Az
 
 ## <a id="addmachine"> </a>Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu##
 
-Im Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Clouddienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
+Im Azur-Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen virtuellen Computer für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Clouddienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
 
-1. Melden Sie sich beim [Portal](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben.
+1. Melden Sie sich beim Azure-Portal an, falls Sie dies noch nicht getan haben.
 
 2. Klicken Sie in der Befehlsleiste auf **Virtuelle Computer**.
 
@@ -112,4 +112,4 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
 [Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

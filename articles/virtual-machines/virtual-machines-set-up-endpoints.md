@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Festlegen von Endgeräten auf einen virtuellen Computer in Azure"
-	description="Erfahren Sie, wie Endgeräte im Portal eingerichtet werden, um die Kommunikation mit einem virtuellen Computer in Azure zu ermöglichen."
+	description="Erfahren Sie, wie Endgeräte im Azur-Portal eingerichtet werden, um die Kommunikation mit einem virtuellen Computer in Azure zu ermöglichen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -38,7 +38,7 @@ Jedes Endgerät verfügt über einen öffentlichen und einen privaten Port.
 - Der öffentliche Port wird von Azure-Lastenausgleich verwendet, um eingehenden Datenverkehr an den virtuellen Computer aus dem Internet zu überwachen.
 - Der private Port wird vom virtuellen Computer zum Überwachen von eingehendem Datenverkehr verwendet, in der Regel für eine Anwendung oder ein Dienst, der auf dem virtuellen Computer ausgeführt wird.
 
-Die Standardwerte für das IP-Protokoll und die TCP- oder UDP-Ports für bekannte Netzwerkprotokolle werden bereitgestellt, wenn Sie mit dem Portal Endgeräte erstellen. Bei benutzerdefinierten Endgeräten müssen Sie das richtige IP-Protokoll (TCP oder UDP) und die öffentlichen und privaten Ports angeben. Um nach dem Zufallsprinzip eingehenden Datenverkehr auf mehrere virtuelle Computer zu verteilen, müssen Sie einen Lastenausgleich, bestehend aus mehreren Endgeräten, erstellen.
+Die Standardwerte für das IP-Protokoll und die TCP- oder UDP-Ports für bekannte Netzwerkprotokolle werden bereitgestellt, wenn Sie mit dem Azur-Portal Endgeräte erstellen. Bei benutzerdefinierten Endgeräten müssen Sie das richtige IP-Protokoll (TCP oder UDP) und die öffentlichen und privaten Ports angeben. Um nach dem Zufallsprinzip eingehenden Datenverkehr auf mehrere virtuelle Computer zu verteilen, müssen Sie einen Lastenausgleich, bestehend aus mehreren Endgeräten, erstellen.
 
 Nachdem Sie ein Endgerät erstellt haben, können Sie eine Zugriffssteuerungsliste (ACL) zum Definieren von Regeln verwenden, die eingehenden Datenverkehr an den öffentlichen Port des Endgeräts basierend der Quell-IP-Adresse zulassen oder verweigern. Wenn der virtuelle Computer in Azure ist, sollten Sie stattdessen Netzwerk-Sicherheitsgruppen verwenden. Weitere Informationen finden Sie unter [Informationen zu Netzwerksicherheitsgruppen](virtual-networks-nsg.md).
 
@@ -46,7 +46,7 @@ Nachdem Sie ein Endgerät erstellt haben, können Sie eine Zugriffssteuerungslis
 
 ##Erstellen eines Endgeräts
 
-1.	Melden Sie sich beim [Portal](http://manage.windowsazure.com/) an, falls Sie dies noch nicht getan haben.
+1.	Melden Sie sich beim Azure-Portal an, falls Sie dies noch nicht getan haben.
 2.	Klicken Sie auf **Virtuelle Computer** und dann auf den Namen des virtuellen Computers, den Sie konfigurieren möchten.
 3.	Klicken Sie auf **Endpunkte**. Auf der Seite **Endpunkte** sind alle aktuellen Endpunkte für den virtuellen Computer aufgelistet.
 
@@ -55,8 +55,8 @@ Nachdem Sie ein Endgerät erstellt haben, können Sie eine Zugriffssteuerungslis
 4.	Klicken Sie auf der Taskleiste auf **Hinzufügen**.
 5.	Wählen Sie auf der Seite **Einem virtuellen Computer einen Endpunkt hinzufügen** den Typ des Endpunkts aus.
 
-	- Wenn Sie einen neuen Endpunkt erstellen, der nicht Teil einer Gruppe mit Lastenausgleich oder der erste Endpunkt in einer neuen Gruppe mit Lastenausgleich ist, wählen Sie **Eigenständigen Endpunkt hinzufügen** aus, und klicken Sie dann auf den Pfeil nach links.
-	- Wählen Sie andernfalls **Endpunkt zu einer vorhandenen Gruppe mit Lastenausgleich hinzufügen** und den Namen der Gruppe mit Lastenausgleich aus, und klicken Sie dann auf den Pfeil nach links. Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für den Endpunkt ein, und klicken Sie dann auf das Häkchen, um den Endpunkt zu erstellen.
+	- Wenn Sie einen neuen Endpunkt erstellen, der nicht Teil eines Lastenausgleichs oder der erste Endpunkt in einem neuen Satz mit Lastenausgleich ist, wählen Sie **Eigenständigen Endpunkt hinzufügen** aus, und klicken Sie dann auf den Pfeil nach links.
+	- Wählen Sie andernfalls **Endpunkt zu einer vorhandenen Gruppe mit Lastenausgleich hinzufügen** und den Namen des Satzes mit Lastenausgleich aus, und klicken Sie dann auf den Pfeil nach links. Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für den Endpunkt an, und klicken Sie dann auf das Häkchen, um den Endpunkt zu erstellen.
 
 6.	Geben Sie auf der Seite **Die Details des Endpunkts angeben** einen Namen für den Endpunkt in **Name** an. Sie können auch den Namen eines Protokolls aus der Liste auswählen, die Anfangswerte für **Protokoll**, **Öffentlicher Port** und **Privater Port** eintragen wird.
 7.	Für einen benutzerdefinierten Endpunkt wählen Sie unter **Protokoll** entweder **TCP** oder **UDP** aus.
@@ -78,7 +78,7 @@ Zum Definieren der Computer, die Datenverkehr senden können, kann die ACL für 
 
 Befindet sich der virtuelle Computer in einem virtuellen Azure-Netzwerk, sollten Sie anstelle von ACLs Netzwerksicherheitsgruppen verwenden. Weitere Informationen finden Sie unter [Informationen zu Netzwerksicherheitsgruppen](virtual-networks-nsg.md).
 
-1.	Melden Sie sich beim [Portal](http://manage.windowsazure.com/) an, falls Sie dies noch nicht getan haben.
+1.	Melden Sie sich beim Azure-Portal an, falls Sie dies noch nicht getan haben.
 2.	Klicken Sie auf **Virtuelle Computer** und dann auf den Namen des virtuellen Computers, den Sie konfigurieren möchten.
 3.	Klicken Sie auf **Endpunkte**. Wählen Sie in der Liste das entsprechende Endgerät aus.
 
@@ -94,10 +94,10 @@ Sie können Regeln verwenden, um nur Verkehr von bestimmten Computern zuzulassen
 
 Die Regeln werden der Reihe nach, beginnend mit der ersten und endend mit der letzten Regel, bewertet. Dies bedeutet, dass die Regeln gemäß der Restriktivität geordnet werden sollen. Beispiele und weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste?](../virtual-network/virtual-networks-acl/).
 
-Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung verwenden, finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endgeräte mithilfe von PowerShell](../virtual-network/virtual-networks-acl-powershell.md).
+Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung verwenden, finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](../virtual-network/virtual-networks-acl-powershell.md).
 
 ## Zusätzliche Ressourcen
 
 [Lastenausgleich für Azure-Infrastrukturdienste](virtual-machines-load-balance.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

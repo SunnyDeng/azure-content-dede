@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="10/29/2015"
+   ms.date="11/11/2015"
    ms.author="v-sharos"/>
 
 # StorSimple-Sicherheit und -Datenschutz
@@ -167,7 +167,6 @@ Um die Sicherheit und Integrität von Daten sicherzustellen, die in die Cloud ve
 - Wenn Sie den Verschlüsselungsschlüssel für Cloud-Speicher im StorSimple Manager-Dienst eingeben, wird der Schlüssel mit dem öffentlichen Teil des Verschlüsselungsschlüssels für Dienstdaten verschlüsselt und an das Gerät gesendet.
 - Der Verschlüsselungsschlüssel für Cloud-Speicher wird nicht innerhalb des Diensts gespeichert und ist ausschließlich dem Gerät bekannt.
 - Die Angabe eines Verschlüsselungsschlüssels für Cloud-Speicher ist optional. Sie können die auf dem Host verschlüsselten Daten zum Gerät senden.
-- Es empfiehlt sich, den Verschlüsselungsschlüssel für Cloud-Speicher vierteljährlich geräteweise weiterzugeben. Die geräteweise Weitergabe dieser Schlüssel wird jedoch nicht erzwungen.
 
 ### Zusätzliche bewährte Methoden für die Sicherheit
 
@@ -214,7 +213,7 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 
 **F:** Ich habe ein neues StorSimple-Gerät, für das ich den Dienstregistrierungsschlüssel eingeben muss. Wie kann ich diesen abrufen?
 
-**A:** Dieser Schlüssel wurde erstellt, als Sie den StorSimple Manager-Dienst erstmals erstellt haben. Wenn Sie eine Verbindung mit dem Gerät mithilfe des StorSimple Manager-Diensts herstellen, können Sie den Dienstregistrierungsschlüssel auf der Seite „Schnellstart“ des Diensts anzeigen oder erneut generieren. Das Generieren eines neuen Dienstregistrierungsschlüssels wirkt sich nicht auf die vorhandenen registrierten Geräte aus. Anweisungen dazu finden Sie unter:
+**A:** Dieser Schlüssel wurde erstellt, als Sie den StorSimple Manager-Dienst erstmals angelegt haben. Wenn Sie eine Verbindung mit dem Gerät mithilfe des StorSimple Manager-Diensts herstellen, können Sie den Dienstregistrierungsschlüssel auf der Seite „Schnellstart“ des Diensts anzeigen oder erneut generieren. Das Generieren eines neuen Dienstregistrierungsschlüssels wirkt sich nicht auf die vorhandenen registrierten Geräte aus. Anweisungen dazu finden Sie unter:
 
 - [Anzeigen oder Neugenerieren des Dienstregistrierungsschlüssels](storsimple-service-dashboard.md#view-or-regenerate-the-service-registration-key)
 
@@ -234,7 +233,7 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 
 **F:** Unser StorSimple-Administrator hat das Unternehmen verlassen. Wie sollte ich vorgehen?
 
-**A:** Sie sollten die Kennwörter für den Zugriff auf das StorSimple-Gerät ändern und zurücksetzen und den Verschlüsselungsschlüssel für Dienstdaten ändern, um zu gewährleisten, dass die neuen Informationen unbefugten Dritten nicht bekannt werden. Anweisungen dazu finden Sie unter:
+**A:** Sie sollten die Kennwörter für den Zugriff auf das StorSimple-Gerät ändern und zurücksetzen und den Verschlüsselungsschlüssel für Dienstdaten ändern, um zu gewährleisten, dass die neuen Informationen unbefugten Dritten nicht bekannt sind. Anweisungen dazu finden Sie unter:
 
 - [Verwenden des StorSimple Manager-Diensts, um StorSimple-Kennwörter zu ändern](storsimple-change-passwords.md)
 - [Ändern des Verschlüsselungsschlüssels für Dienstdaten](storsimple-service-dashboard.md#change-the-service-data-encryption-key)
@@ -267,7 +266,7 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 
 ## Nächste Schritte
 
-[Bereitstellen des StorSimple-Geräts](storsimple-deployment-walkthrough.md)
+[Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

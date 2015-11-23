@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="08/23/2015"
-   ms.author="andalmia"/>
+   ms.date="11/11/2015"
+   ms.author="rajram"/>
 
 # Erste Schritte mit dem Box-Connector und das Hinzufügen zur Logik-App 
 Stellen Sie eine Verbindung mit Box her, um z. B. Dateien abzurufen, hochzuladen, zu löschen. Connectors werden als Teil eines "Workflows" in Logik-Apps verwendet.
@@ -27,7 +27,7 @@ Die Box-Katalog-App bietet Ihnen Aktionen als Mechanismen für die Interaktion m
 
 **Aktionen**: Über die Aktionen können Sie vordefinierte Aktionen für das Box-Konto ausführen, das mit der Logik-App konfiguriert wurde. Im Folgenden sind die Aktionen aufgeführt, die über ein Box-Konto mit dem Box-Connector durchgeführt werden können:
 
-a. *Dateien auflisten*: Dieser Vorgang gibt die Informationen aller Dateien in einem Ordner zurück. Liste der Parameter, die für die Aktion erforderlich sind:
+a. *Dateien auflisten*: Dieser Vorgang gibt die Informationen aller Dateien in einem Ordner zurück. Die Liste der Parameter, die für die Aktion erforderlich sind:
 
 Parametername | Beschreibung | Erforderlich
 --- | --- | ---
@@ -66,8 +66,7 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "Box-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: !
-	[][1]
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: ![][1]
 4. Klicken Sie auf **Erstellen**.
 
 
@@ -79,17 +78,13 @@ Sobald Ihre API-App erstellt wurde, können Sie den Box-Connector als Aktion in 
 
 	> [AZURE.NOTE]Wenn der Box-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf das Box-Konto über den Connector angewendet werden. Der Box-Connector verfügte über keine Trigger, als dieser Artikel verfasst wurde.
 
-2. Authentifizieren und autorisieren Sie Logik-Apps, um Vorgänge in Ihrem Namen durchzuführen. Wählen Sie **Autorisieren** für den Box-Connector aus: 
-	![][2]
+2. Authentifizieren und autorisieren Sie Logik-Apps, um Vorgänge in Ihrem Namen durchzuführen. Wählen Sie **Autorisieren** für den Box-Connector aus: ![][2]
 
-3. Geben Sie die Anmeldeinformationen des Box-Kontos an, mit dem Sie die Vorgänge ausführen möchten: 
-	![][3]
+3. Geben Sie die Anmeldeinformationen des Box-Kontos an, mit dem Sie die Vorgänge ausführen möchten: ![][3]
 
-4. Erteilen Sie Logik-Apps Zugriff auf das Konto, um Vorgänge in Ihrem Namen auszuführen: 
-	![][4]
+4. Erteilen Sie Logik-Apps Zugriff auf das Konto, um Vorgänge in Ihrem Namen auszuführen: ![][4]
 
-5. Die Liste der Aktionen wird angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten: 
-	![][5]
+5. Die Liste der Aktionen wird angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten: ![][5]
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
@@ -107,4 +102,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [4]: ./media/app-service-logic-connector-box/image_3.jpg
 [5]: ./media/app-service-logic-connector-box/image_4.jpg
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

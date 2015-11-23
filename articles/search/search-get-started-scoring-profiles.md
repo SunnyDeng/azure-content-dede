@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Bewertungsprofilen in Azure Search| Microsoft Azure" 
+	pageTitle="Verwenden von Bewertungsprofilen in Azure Search| Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Optimieren Sie die Suchrangfolge mithilfe von Bewertungsprofilen in Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
@@ -126,4 +126,4 @@ Sie möchten einen Schritt zurückgehen und mehr über die Erstellung eines Inde
 [10]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX1.PNG
 [9]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX2.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

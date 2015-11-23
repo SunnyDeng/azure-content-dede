@@ -45,36 +45,26 @@ Als Erstes erstellen Sie die Objekte, die in PolyBase zum Herstellen einer Verbi
 >
 > Die Kontotypen „Zonenredundanter Standardspeicher (Standard-ZRS)“ und „lokal redundanter Storage Premium (Premium-LRS)“ werden von PolyBase NICHT unterstützt. Wenn Sie ein neues Azure-Speicherkonto erstellen, müssen Sie in "Tarif" einen von PolyBase unterstützten Speicherkontotyp auswählen.
 
+## Schritt 1: Speichern von Anmeldeinformationen in Ihrer Datenbank
+Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezogene Anmeldeinformationen erstellen, in denen Authentifizierungsinformationen für Ihr Azure-Speicherkonto gespeichert sind. Führen Sie diese Schritte aus, um Anmeldeinformationen in Ihrer Datenbank zu speichern.
 
-## Erstellen des Datenbank-Hauptschlüssels
-Stellen Sie eine Verbindung mit der Benutzerdatenbank auf dem Server her, um einen Datenbank-Hauptschlüssel zu erstellen. Dieser Schlüssel wird im nächsten Schritt zum Verschlüsseln des geheimen Schlüssels für Ihre Anmeldeinformationen verwendet.
+1. Stellen Sie eine Verbindung mit der SQL Data Warehouse-Datenbank her.
+2. Erstellen Sie mithilfe von [CREATE MASTER KEY (Transact-SQL)][] einen Hauptschlüssel für Ihre Datenbank. Wenn Ihre Datenbank bereits über einen Hauptschlüssel verfügt, müssen Sie keinen weiteren Schlüssel erstellen. Dieser Schlüssel wird im nächsten Schritt zum Verschlüsseln des geheimen Schlüssels für Ihre Anmeldeinformationen verwendet.
 
-```
--- Creating master key
-CREATE MASTER KEY;
-```
+    ```
+    -- Create a E master key
+    CREATE MASTER KEY;
+    ```
 
-Referenzthema: [CREATE MASTER KEY (Transact-SQL)][].
+1. Überprüfen Sie, ob bereits Datenbankanmeldeinformationen vorhanden sind. Verwenden Sie hierzu die Systemansicht „sys.database\_credentials“ und nicht „sys.credentials“, da diese Ansicht nur die Serveranmeldeinformationen enthält.
 
-## Erstellen der datenbankbezogenen Anmeldeinformationen
-Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezogene Anmeldeinformationen erstellen, in denen Authentifizierungsinformationen für Ihr Azure-Speicherkonto gespeichert sind. Stellen Sie eine Verbindung mit Ihrer Data Warehouse-Datenbank her, und erstellen Sie jeweils die datenbankbezogenen Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. Geben Sie einen Identitätsnamen und Ihren Azure-Speicherkontoschlüssel als geheimen Schlüssel an. Der Identitätsname hat keine Auswirkungen auf die Authentifizierung für Azure Storage.
+    ``` -- Check for existing database-scoped credentials. SELECT * FROM sys.database\_credentials;
 
-Um festzustellen, ob im Datenbankbereich bereits Anmeldeinformationen vorhanden sind, verwenden Sie „sys.database\_credentials“, nicht „sys.credentials“, da hier lediglich die Serveranmeldeinformationen angezeigt werden.
+3. Erstellen Sie mit [CREATE CREDENTIAL (Transact-SQL)][] datenbankbezogene Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. In diesem Beispiel steht IDENTITY für den Anzeigenamen für die Anmeldeinformationen. Er hat keine Auswirkungen auf die Authentifizierung für den Azure-Speicher. SECRET ist der Azure-Speicherkontoschlüssel.
 
-```
--- Check for existing database-scoped credentials.
-SELECT * FROM sys.database_credentials;
+    -- Create a database scoped credential CREATE DATABASE SCOPED CREDENTIAL ASBSecret WITH IDENTITY = 'joe' , Secret = '<azure_storage_account_key>' ; ```
 
--- Create a database scoped credential
-CREATE DATABASE SCOPED CREDENTIAL ASBSecret 
-WITH IDENTITY = 'joe'
-,    Secret = '<azure_storage_account_key>'
-;
-```
-
-Referenzthema: [CREATE CREDENTIAL (Transact-SQL)][].
-
-Zum Löschen datenbankbezogener Anmeldeinformationen verwenden Sie einfach die folgende Syntax:
+1. Verwenden Sie zum Löschen datenbankbezogener Anmeldeinformationen [DROP CREDENTIAL (Transact-SQL)][]\:
 
 ```
 -- Dropping credential
@@ -82,93 +72,90 @@ DROP DATABASE SCOPED CREDENTIAL ASBSecret
 ;
 ```
 
-Referenzthema: [DROP CREDENTIAL (Transact-SQL)][].
+## Schritt 2: Erstellen einer externen Datenquelle
+Die externe Datenquelle ist ein Datenbankobjekt, in dem der Speicherort der Daten des Azure-Blob-Speichers und Ihre Zugriffsinformationen gespeichert sind. Definieren Sie mithilfe von [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][] eine externe Datenquelle für alle Azure-Speicherblobs, auf die Sie zugreifen möchten.
 
-## Erstellen einer externen Datenquelle
-Die externe Datenquelle ist ein Datenbankobjekt, in dem der Speicherort der Daten des Azure-Blob-Speichers und Ihre Zugriffsinformationen gespeichert sind. Sie müssen eine externe Datenquelle für jeden Azure-Speichercontainer definieren, auf den Sie zugreifen möchten.
+    ```
+    -- Create an external data source for an Azure storage blob
+    CREATE EXTERNAL DATA SOURCE azure_storage 
+    WITH
+    (
+        TYPE = HADOOP,
+        LOCATION ='wasbs://mycontainer@test.blob.core.windows.net',
+        CREDENTIAL = ASBSecret
+    )
+    ;
+    ```
 
-```
--- Creating external data source (Azure Blob Storage) 
-CREATE EXTERNAL DATA SOURCE azure_storage 
-WITH
-(
-    TYPE = HADOOP
-,   LOCATION ='wasbs://mycontainer@test.blob.core.windows.net'
-,   CREDENTIAL = ASBSecret
-)
-;
-```
+Wenn Sie die externe Tabelle löschen müssen, verwenden Sie [DROP EXTERNAL DATA SOURCE][]:
 
-Referenzthema: [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][].
+    ```
+    -- Drop an external data source
+    DROP EXTERNAL DATA SOURCE azure_storage
+    ;
+    ```
 
-Die Syntax zum Löschen der externen Datenquelle ist wie folgt:
+## Schritt 3: Erstellen eines externen Dateiformats
+Das externe Dateiformat ist ein Datenbankobjekt, das das Format der externen Daten angibt. In PolyBase können komprimierte und unkomprimierte Daten im durch Trennzeichen getrennten Textformat sowie im Hive RCFILE- und HIVE ORC-Format bearbeitet werden.
 
-```
--- Dropping external data source
-DROP EXTERNAL DATA SOURCE azure_storage
-;
-```
-
-Referenzthema: [DROP EXTERNAL DATA SOURCE (Transact-SQL)][].
-
-## Erstellen eines externen Dateiformats
-Das externe Dateiformat ist ein Datenbankobjekt, das das Format der externen Daten angibt. In diesem Beispiel enthält die Textdatei unkomprimierte Daten und Felder, die durch den senkrechten Strich ("|") getrennt sind.
+Erstellen Sie mithilfe von [CREATE EXTERNAL FILE FORMAT (Transact-SQL)][] das externe Dateiformat. Dieses Beispiel gibt an, dass die Textdatei unkomprimierte Daten sowie Felder enthält, die durch einen senkrechten Strich (|) getrennt sind.
 
 ```
--- Creating external file format (delimited text file)
+-- Create an external file format for a text-delimited file.
+-- Data is uncompressed and fields are separated with the
+-- pipe character.
 CREATE EXTERNAL FILE FORMAT text_file_format 
 WITH 
 (   
-    FORMAT_TYPE = DELIMITEDTEXT 
-,	FORMAT_OPTIONS  (
-                        FIELD_TERMINATOR ='|'
-                    ,   USE_TYPE_DEFAULT = TRUE
-                    )
+    FORMAT_TYPE = DELIMITEDTEXT, 
+    FORMAT_OPTIONS  
+    (
+        FIELD_TERMINATOR ='|',
+        USE_TYPE_DEFAULT = TRUE
+    )
 )
 ;
 ```
 
-In PolyBase können komprimierte und unkomprimierte Daten im durch Trennzeichen getrennten Textformat sowie im Hive RCFILE- und HIVE ORC-Format bearbeitet werden.
-
-Referenzthema: [CREATE EXTERNAL FILE FORMAT (Transact-SQL)][].
-
-Die Syntax zum Löschen eines externen Dateiformats ist wie folgt:
+Verwenden Sie zum Löschen eines externen Dateiformats [DROP EXTERNAL FILE FORMAT]:
 
 ```
 -- Dropping external file format
 DROP EXTERNAL FILE FORMAT text_file_format
 ;
 ```
-Referenzthema: [DROP EXTERNAL FILE FORMAT (Transact-SQL)][].
 
 ## Erstellen einer externen Tabelle
 
-Die Definition einer externen Tabelle ähnelt der Definition einer relationalen Tabelle. Der Hauptunterschied liegt im Speicherort und im Format der Daten. Die Definition der externen Tabelle wird in der SQL Data Warehouse-Datenbank gespeichert. Die Daten werden in dem durch die Datenquelle angegebenen Speicherort gespeichert.
+Die Definition einer externen Tabelle ähnelt der Definition einer relationalen Tabelle. Der Hauptunterschied liegt im Speicherort und im Format der Daten.
 
-Die Option LOCATION gibt den Pfad für die Daten aus dem Stammverzeichnis der Datenquelle an. In diesem Beispiel befinden sich die Daten unter "wasbs://mycontainer@ test.blob.core.windows.net/path/Demo/". Alle Dateien für eine Tabelle müssen sich im gleichen logischen Ordner im Azure-Blob befinden.
+- Die Definition der externen Tabelle wird in Form von Metadaten in der SQL Data Warehouse-Datenbank gespeichert. 
+- Die Daten werden an dem durch die Datenquelle angegebenen externen Speicherort gespeichert.
+
+Verwenden Sie zum Definieren der externen Tabelle [CREATE EXTERNAL TABLE (Transact-SQL)][].
+
+Die Option LOCATION gibt den Pfad für die Daten aus dem Stammverzeichnis der Datenquelle an. In diesem Beispiel befinden sich die Daten unter „wasbs://mycontainer@test.blob.core.windows.net/path/Demo/“. Alle Dateien für eine Tabelle müssen sich im gleichen logischen Ordner im Azure-Blobspeicher befinden.
 
 Sie haben auch die Option, Ablehnungsoptionen anzugeben (REJECT\_TYPE, REJECT\_VALUE, REJECT\_SAMPLE\_VALUE), die bestimmen, wie PolyBase fehlerhafte Datensätze verarbeitet, die von der externen Datenquelle empfangen werden.
 
 ```
--- Creating external table pointing to file stored in Azure Storage
+-- Creating an external table for data in Azure blob storage.
 CREATE EXTERNAL TABLE [ext].[CarSensor_Data] 
 (
-     [SensorKey]     int    NOT NULL 
-,    [CustomerKey]   int    NOT NULL 
-,    [GeographyKey]  int        NULL 
-,    [Speed]         float  NOT NULL 
-,    [YearMeasured]  int    NOT NULL
+     [SensorKey]     int    NOT NULL,
+     [CustomerKey]   int    NOT NULL,
+     [GeographyKey]  int        NULL,
+     [Speed]         float  NOT NULL,
+     [YearMeasured]  int    NOT NULL,
 )
 WITH 
 (
-    LOCATION    = '/Demo/'
-,   DATA_SOURCE = azure_storage
-,   FILE_FORMAT = text_file_format      
+    LOCATION    = '/Demo/',
+    DATA_SOURCE = azure_storage,
+    FILE_FORMAT = text_file_format      
 )
 ;
 ```
-
-Referenzthema: [CREATE EXTERNAL TABLE (Transact-SQL)][].
 
 Die soeben erstellten Objekte werden in der SQL Data Warehouse-Datenbank gespeichert. Sie können sie im Objekt-Explorer von SQL Server Data Tools (SSDT) anzeigen.
 
@@ -180,11 +167,11 @@ DROP EXTERNAL TABLE [ext].[CarSensor_Data]
 ;
 ```
 
-> [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` kann **nicht** verwendet werden.
+> [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` **kann nicht** verwendet werden.
 
 Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][].
 
-Beachten Sie auch, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
+Es ist auch zu erwähnen, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
 
 ## Wechseln von Speicherschlüsseln
 
@@ -247,7 +234,7 @@ Siehe [CREATE TABLE AS SELECT (Transact-SQL)][].
 
 ## Erstellen von Statistiken für die neu geladenen Daten
 
-Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie unter dem Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
+Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie im Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
 
 ```
 create statistics [SensorKey] on [Customer_Speed] ([SensorKey]);
@@ -370,4 +357,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189522.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189450.aspx
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

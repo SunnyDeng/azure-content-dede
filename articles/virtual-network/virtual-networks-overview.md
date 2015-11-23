@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/14/2015"
+   ms.date="10/29/2015"
    ms.author="telmos" />
 
 # Virtuelle Netzwerke im Überblick
@@ -93,4 +93,4 @@ Virtuelle Geräte sind von [benutzerdefinierten Routen und IP-Weiterleitung](../
 - [Reservieren einer öffentlichen IP-Adresse](../virtual-networks-reserved-public-ip.md)
 - Weitere Informationen zu [benutzerdefinierten Routen und IP-Weiterleitung](virtual-networks-udr-overview.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

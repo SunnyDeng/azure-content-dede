@@ -185,4 +185,12 @@ Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen 
 - WOOX Innovations Limited
 - ZTE Corporation
 
-<!---HONumber=Nov15_HO2-->
+##Media Services-Lernpfade
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
+
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
+<!---HONumber=Nov15_HO3-->

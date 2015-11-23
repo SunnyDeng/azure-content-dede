@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="11/10/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Bereiche, Berechtigungen und Zustimmung
@@ -116,4 +116,4 @@ Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Akt
 
 Weitere Informationen zum Abrufen und Verwenden von Aktualisierungstoken finden Sie in der [App-Modell, Version 2.0 –Protokollreferenz](active-directory-v2-protocols.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

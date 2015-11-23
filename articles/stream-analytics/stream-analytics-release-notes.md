@@ -13,10 +13,18 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="10/22/2015" 
+	ms.date="11/12/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic – Hinweise zu dieser Version
+
+## Hinweise zur Version von Stream Analytics vom 12.11.2015 ##
+
+Diese Version enthält das folgende Update.
+
+Titel | Beschreibung
+---|---
+Neues Verhalten der SELECT-Anweisung | Die SELECT-Anweisung in Stream Analytics wurde erweitert, um * als Eigenschaftenaccessor eines verschachtelten Datensatzes zuzulassen. Weitere Informationen finden Sie unter [http://msdn.microsoft.com/library/mt622759.aspx](http://msdn.microsoft.com/library/mt622759.aspx "Komplexe Datentypen").
 
 ## Hinweise zur Version von Stream Analytics vom 22.10.2015 ##
 
@@ -37,7 +45,7 @@ Diese Version enthält die folgenden Updates.
 Titel | Beschreibung
 ---|---
 Öffentliche Vorschau zu Azure IoT Suite | Stream Analytics ist in der öffentlichen Vorschau von Azure IoT Suite enthalten.
-Azure-Vorschauportal, Integration | Stream Analytics ist nicht nur weiterhin im Azure-Verwaltungsportal enthalten, sondern jetzt auch in das [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/) integriert. Beachten Sie, dass im Vorschauportal derzeit nur ein Teil der im Azure-Verwaltungsportal bereitgestellten Stream Analytics-Funktionalität verfügbar ist. Nicht unterstützt werden Funktionen wir das Testen von Abfragen im Browser, das Konfigurieren der Power BI-Ausgabe und das Durchsuchen oder Erstellen neuer Eingabe- und Ausgaberessourcen in Abonnements, auf die Sie zugreifen können.
+Azure-Vorschauportal, Integration | Stream Analytics ist nicht nur weiterhin im Azure-Verwaltungsportal enthalten, sondern jetzt auch im [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/) integriert. Beachten Sie, dass im Vorschauportal derzeit nur ein Teil der im Azure-Verwaltungsportal bereitgestellten Stream Analytics-Funktionalität verfügbar ist. Nicht unterstützt werden Funktionen wir das Testen von Abfragen im Browser, das Konfigurieren der Power BI-Ausgabe und das Durchsuchen oder Erstellen neuer Eingabe- und Ausgaberessourcen in Abonnements, auf die Sie zugreifen können.
 Unterstützung für DocumentDB-Ausgabe | Stream Analytics-Aufträge können jetzt Ausgaben an [DocumentDB](http://azure.microsoft.com/services/documentdb/) senden.
 Unterstützung für IoT Hub-Eingabe | Stream Analytics-Aufträge können jetzt Daten von IoT Hubs erfassen.
 TIMESTAMP BY für heterogene Ereignisse | Wenn ein einzelner Datenstrom mehrere Ereignistypen mit Zeitstempeln in verschiedenen Feldern enthält, können Sie nun [TIMESTAMP BY](http://msdn.microsoft.com/library/mt573293.aspx) mit Ausdrücken verwenden, um für jeden Fall unterschiedliche Zeitstempelfelder anzugeben.
@@ -116,4 +124,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

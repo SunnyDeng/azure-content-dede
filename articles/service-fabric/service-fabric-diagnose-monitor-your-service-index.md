@@ -20,7 +20,7 @@
 Überwachung, Erkennung, Diagnose und Problembehandlung ermöglichen das Ausführen von Diensten mit minimalen Unterbrechungen für Benutzer. Weitere Informationen finden Sie unter:
 
 - [Gewusst wie: Lokales Überwachen und Diagnostizieren von Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
-- [Einrichten von Application Insights für Service-Fabric-Anwendungen](service-fabric-diagnostics-application-insights-setup.md)
+- [Einrichten von Application Insights für Service-Fabric-Anwendungen](../app-insights-windows-desktop.md)
 - [Beheben von Problemen mit Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
 - [Diagnose und Leistungsüberwachung für Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 - [Diagnose und Leistungsüberwachung für Reliable Services](service-fabric-reliable-services-diagnostics.md)
@@ -38,4 +38,4 @@ Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible 
 - [Verwenden von Systemintegritätsberichten für die Problembehandlung](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 - [Gewusst wie: Hinzufügen von Service Fabric-Integritätsberichten](service-fabric-report-health.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

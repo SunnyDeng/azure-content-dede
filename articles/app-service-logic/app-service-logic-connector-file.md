@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Verwendung des Datei-Connectors in Logik-Apps | Microsoft Azure App Service"
 	description="Erstellen und Konfigurieren des Datei-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
-	authors="anuragdalmia"
+	authors="rajeshramabathiran"
 	manager="dwrede"
 	editor=""
 	services="app-service\logic"
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/23/2015"
-	ms.author="andalmia"/>
+	ms.date="11/11/2015"
+	ms.author="rajram"/>
 
 # Erste Schritte mit dem Datei-Connector und das Hinzufügen zur Logik-App
 Stellen Sie eine Verbindung mit einem Dateisystem her, um z. B. Dateien auf einem Hostcomputer hochzuladen und herunterzuladen. Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten abzurufen und zu verarbeiten. Sie können den Datei-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
@@ -85,4 +85,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [File Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn936296.aspx
 [Hybrid Connection Manager verwenden]: app-service-logic-hybrid-connection-manager.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

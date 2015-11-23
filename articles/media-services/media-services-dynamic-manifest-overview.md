@@ -204,13 +204,15 @@ Weitere Informationen finden Sie in [diesem](http://azure.microsoft.com/blog/azu
 
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 
-##Weitere Informationen
+
+##Siehe auch
 
 [Bereitstellen von Inhalten für Kunden – Übersicht](media-services-deliver-content-overview.md)
 
@@ -234,4 +236,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

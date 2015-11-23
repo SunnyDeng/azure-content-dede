@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-resource-manager,azure-service-management"/>
+ tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 ms.service="virtual-machines"
  ms.devlang="na"
@@ -156,14 +156,14 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 
     Der HPC-Auftrags-Manager wird geöffnet und enthält eine Liste der Aufträge auf dem Hauptknoten.
 
-**So verwenden Sie das webbasierte Auftragsportal auf dem Hauptknoten**
+**So verwenden Sie das auf dem Hauptknoten ausgeführte Webportal**
 
 1. Starten Sie auf dem Clientcomputer einen Webbrowser, und geben Sie die folgende Adresse ein: ```
     https://HeadNodeDnsName.cloudapp.net/HpcPortal
     ```
 2. Geben Sie im angezeigten Sicherheitsdialogfeld die Domänenanmeldeinformationen des HPC-Clusteradministrators ein. (Sie können auch andere Clusterbenutzer mit unterschiedlichen Rollen hinzufügen. Weitere Informationen finden Sie unter [Verwalten von Clusterbenutzern](https://technet.microsoft.com/library/ff919335.aspx).)
 
-    Das Portal wird geöffnet, und die Auftragsliste wird angezeigt.
+    Das Webportal wird geöffnet, und die Auftragsliste wird angezeigt.
 
 3. Klicken Sie im Navigationsbereich auf der linken Seite auf **Neuer Auftrag**, um einen Beispielauftrag zu übermitteln, mit dem die Zeichenfolge „Hello World“ aus dem Cluster zurückgegeben wird.
 
@@ -183,4 +183,4 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 <!--Image references-->
 [jobsubmit]: ./media/virtual-machines-hpcpack-cluster-submit-jobs/jobsubmit.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

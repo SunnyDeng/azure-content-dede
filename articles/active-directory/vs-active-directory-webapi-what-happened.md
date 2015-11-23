@@ -1,4 +1,4 @@
-<properties pageTitle="Was ist mit meinem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory) |Microsoft Azure " description="Erfahren Sie, was mit Ihrem WebApi-Projekt passiert, wenn Sie mithilfe von verbundenen Visual Studio-Diensten eine Verbindung mit Azure AD herstellen.="active-directory" services="active-directory" documentationCenter="" authors="patshea123" manager="douge" editor="tglee"/>
+<properties pageTitle="Was ist mit meinem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory) |Microsoft Azure " description="Erfahren Sie, was mit Ihrem WebApi-Projekt passiert, wenn Sie mithilfe von Visual Studio-Diensten eine Verbindung mit Azure AD herstellen.="active-directory" services="active-directory" documentationCenter="" authors="TomArcher" manager="douge" editor="tglee"/>
 
 <tags
 	ms.service="active-directory"
@@ -7,7 +7,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	ms.author="tarcher"/>
 
 # Was ist mit dem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory)?
 
@@ -66,7 +66,7 @@ Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistente
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* aktiviert habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
+##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* ausgewählt habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
 NuGet-Paketverweise wurden entfernt, und die Dateien wurden entfernt und gesichert. Abhängig vom Status des Projekts müssen Sie möglicherweise manuell zusätzliche Verweise oder Dateien entfernen oder Code entsprechend ändern.
 
 ###NuGet-Paketverweise entfernt (die vorhanden waren)
@@ -109,4 +109,4 @@ Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechti
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

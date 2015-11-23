@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="10/20/2015"
+   ms.date="11/09/2015"
    ms.author="elfish"/>
 
 # Wiederherstellen einer Azure-SQL-Datenbank nach einem Benutzerfehler
@@ -35,7 +35,7 @@ Basic-Datenbanken haben eine Aufbewahrungsdauer von 7 Tagen, Standard-Datenbanke
 > [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ###Azure-Portal
-Führen Sie die folgenden Schritte aus, um die Point-in-Time-Wiederherstellung im Azure-Portal zu verwenden. Zudem können [Sie sich dieses Verfahren in einem Video ansehen](https://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-point-in-time-restore/).
+Führen Sie die folgenden Schritte aus, um die Point-in-Time-Wiederherstellung im Azure-Portal zu verwenden.
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL-Datenbanken** aus.
@@ -43,8 +43,6 @@ Führen Sie die folgenden Schritte aus, um die Point-in-Time-Wiederherstellung i
 4. Wählen Sie oben im Blatt der Datenbank **Wiederherstellen** aus.
 5. Geben Sie einen Datenbanknamen und einen Zeitpunkt an, und klicken Sie dann auf **Erstellen**.
 6. Der Datenbank-Wiederherstellungsvorgang beginnt und kann mithilfe von **BENACHRICHTIGUNGEN** auf der linken Bildschirmseite überwacht werden.
-
-Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
 
 ###PowerShell
 Verwenden Sie PowerShell für die programmgesteuerte Ausführung einer Point-in-Time-Wiederherstellung mit dem Cmdlet [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/library/dn720218.aspx?f=255&MSPPError=-2147217396). Ausführliche Anleitungen [finden Sie im Video zu diesem Verfahren](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-point-in-time-restore-with-microsoft-azure-powershell/).
@@ -55,7 +53,6 @@ Verwenden Sie PowerShell für die programmgesteuerte Ausführung einer Point-in-
 		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –PointInTime “2015-01-01 06:00:00”
 		Get-AzureSqlDatabaseOperation –ServerName "YourServerName" –OperationGuid $RestoreRequest.RequestID
 		 
-Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
 
 ###REST-API 
 Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung.
@@ -66,17 +63,15 @@ Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederhe
 	
 3.	Verfolgen Sie die Wiederherstellungsanforderung mithilfe des Vorgangs [Datenbank-Betriebsstatus](http://msdn.microsoft.com/library/azure/dn720371.aspx) nach.
 
-Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
-
 ##Wiederherstellen einer gelöschten Datenbank
 Falls eine Datenbank gelöscht wird, bietet Ihnen die Azure-SQL-Datenbank die Möglichkeit, die gelöschte Datenbank zum Zeitpunkt des Löschens wiederherzustellen. Die Azure-SQL-Datenbank speichert die gelöschte Datenbanksicherung während der Aufbewahrungsdauer der Datenbank.
 
-Die Aufbewahrungsdauer einer gelöschten Datenbank wird anhand der Dienstebene der Datenbank bestimmt, während sie vorhanden war, oder der Anzahl der Tage, während denen die Datenbank vorhanden ist, je nachdem, welcher Wert kleiner ist. Weitere Informationen zur Datenbankaufbewahrungsdauer finden Sie unter [Geschäftskontinuität – Übersicht](sql-database-business-continuity.md).
+Die Aufbewahrungsdauer einer gelöschten Datenbank wird anhand der Dienstebene der Datenbank bestimmt, während sie vorhanden war, oder der Anzahl der Tage, während denen die Datenbank vorhanden ist, je nachdem, welcher Wert kleiner ist. Weitere Informationen zur Datenbankaufbewahrungsdauer finden Sie unter [Geschäftskontinuität – Überblick](sql-database-business-continuity.md).
 
 > [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ###Azure-Portal
-Führen Sie die folgenden Schritte aus, um eine gelöschte Datenbank über das Azure-Portal wiederherzustellen. Zudem können [Sie sich dieses Verfahren in einem Video ansehen](https://azure.microsoft.com/documentation/videos/restore-a-deleted-sql-database/).
+Führen Sie die folgenden Schritte aus, um eine gelöschte Datenbank über das Azure-Portal wiederherzustellen.
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL Server** aus.
@@ -85,8 +80,6 @@ Führen Sie die folgenden Schritte aus, um eine gelöschte Datenbank über das A
 5. Klicken Sie auf die Datenbank, die Sie wiederherstellen möchten.
 6. Geben Sie einen Datenbanknamen an, und klicken Sie auf **Erstellen**.
 7. Der Datenbank-Wiederherstellungsvorgang beginnt und kann mithilfe von **BENACHRICHTIGUNGEN** auf der linken Bildschirmseite überwacht werden.
-
-Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
 
 ###PowerShell
 Zur Wiederherstellung einer gelöschten Datenbank mithilfe von PowerShell verwenden Sie das Cmdlet [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/library/dn720218.aspx?f=255&MSPPError=-2147217396). Ausführliche Anleitungen [finden Sie im Video zu diesem Verfahren](http://azure.microsoft.com/documentation/videos/restore-a-deleted-sql-database-with-microsoft-azure-powershell/).
@@ -101,7 +94,6 @@ Zur Wiederherstellung einer gelöschten Datenbank mithilfe von PowerShell verwen
 		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName “NewDatabaseName”
 		Get-AzureSqlDatabaseOperation –ServerName "YourServerName" –OperationGuid $RestoreRequest.RequestID
 		 
-Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
 
 ###REST-API 
 Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung.
@@ -114,7 +106,4 @@ Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederhe
 	
 4.	Verfolgen Sie den Status der Wiederherstellung mithilfe des Vorgangs [Datenbank-Betriebsstatus](http://msdn.microsoft.com/library/azure/dn720371.aspx) nach.
 
-Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
- 
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="web"
-	ms.date="08/03/2015"
+	ms.date="11/06/2015"
 	ms.author="tomfitz"/>
 
 #Leistungsstarkes WordPress in Azure App Service
@@ -28,7 +28,7 @@ Für eine grundlegende WordPress-Installation gelten nur zwei Anforderungen.
 
     > [AZURE.NOTE]ClearDB bietet mehrere MySQL-Konfigurationen mit unterschiedlichen Leistungsmerkmalen für jede Konfiguration. Im [Azure Shop][cdbnstore] finden Sie Informationen zu den dort verfügbaren Angeboten. Auf der [ClearDB-Webseite mit den Preisen](http://www.cleardb.com/pricing.view) finden Sie direkt von ClearDB beziehbare Angebote.
 
-* **PHP 5.2.4 oder höher** – Azure App Service unterstützt derzeit die [PHP-Versionen 5.3, 5.4 und 5.5][phpwebsite].
+* **PHP 5.2.4 oder höher** – Azure App Service unterstützt derzeit die [PHP-Versionen 5.4, 5.5 und 5.6][phpwebsite].
 
 	> [AZURE.NOTE]Wir empfehlen, stets mit der neuesten Version von PHP zu arbeiten, um sicherzustellen, dass Sie über die neuesten Sicherheitskorrekturen verfügen.
 
@@ -53,7 +53,7 @@ Die Replikation und das Routing an mehrere MySQL-Datenbanken kann mithilfe des [
 
 ###Bereitstellung in mehreren Regionen mit Medienspeicherung und Zwischenspeichern
 
-Wenn die Website Uploads zulässt oder Mediendateien hostet, nutzen Sie den Azure-Blobspeicher. Wenn Sie einen Zwischenspeicher benötigen, prüfen Sie den [Redis-Cache][rediscache], die [Memcache-Cloud](http://azure.microsoft.com/gallery/store/garantiadata/memcached/), [MemCachier](http://azure.microsoft.com/gallery/store/memcachier/memcachier/) oder eines der anderen Cacheangebote im [Azure Shop](http://azure.microsoft.com/gallery/store/).
+Wenn die Website Uploads zulässt oder Mediendateien hostet, nutzen Sie den Azure-Blobspeicher. Wenn Sie einen Zwischenspeicher benötigen, prüfen Sie den [Redis-Cache][rediscache], die [Memcache-Cloud](https://azure.microsoft.com/marketplace/partners/garantiadata/memcached/), [MemCachier](https://azure.microsoft.com/marketplace/partners/memcachier/memcachier/) oder eines der anderen Cacheangebote im [Azure Shop](http://azure.microsoft.com/gallery/store/).
 
 ![Eine in mehreren Regionen gehostete Azure-Web-App mit CDBR-Hochverfügbarkeitsrouter für MySQL, Managed Cache, Blobspeicher und CDN][performance-diagram]
 
@@ -87,7 +87,7 @@ Leistung in der Cloud wird hauptsächlich mithilfe der Zwischenspeicherung und h
 Maßnahme | Option
 ------------------------|-----------
 **Grundlagen von App Service-Instanzfunktionen** | [Preisübersicht, einschließlich Funktionen von App Service-Ebenen][websitepricing]
-**Cacheressourcen** | [Redis-Cache][rediscache], [Memcache-Cloud](/gallery/store/garantiadata/memcached/), [MemCachier](/gallery/store/memcachier/memcachier/) oder eines der anderen Cacheangebote im [Azure Shop](/gallery/store/)
+**Cacheressourcen** | [Redis-Cache][rediscache], [Memcache-Cloud](https://azure.microsoft.com/marketplace/partners/garantiadata/memcached/), [MemCachier](https://azure.microsoft.com/marketplace/partners/memcachier/memcachier/) oder eines der anderen Cacheangebote im [Azure Shop](/gallery/store/)
 **Skalieren Ihrer Anwendung** | [Skalieren einer Web-App in Azure App Service][websitescale] und [ClearDB-Hochverfügbarkeitsrouting][cleardbscale]. Wenn Sie sich für das Hosten und Verwalten Ihrer eigenen MySQL-Installation entscheiden, sollten Sie für das horizontale Skalieren [MySQL Cluster CGE][cge] in Erwägung ziehen.
 
 ####Migration
@@ -249,10 +249,10 @@ Maßnahme | Option
 [sendgridplugin]: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
 [phpwebsite]: web-sites-php-configure.md
 [customdomain]: web-sites-custom-domain-name.md
-[trafficmanager]: /blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/
+[trafficmanager]: ../traffic-manager/traffic-manager-overview.md
 [backup]: web-sites-backup.md
 [restore]: web-sites-restore.md
-[rediscache]: http://msdn.microsoft.com/library/azure/dn690470.aspx
+[rediscache]: https://azure.microsoft.com/documentation/services/redis-cache/
 [managedcache]: http://msdn.microsoft.com/library/azure/dn386122.aspx
 [websitescale]: web-sites-scale.md
 [managedcachescale]: http://msdn.microsoft.com/library/azure/dn386113.aspx
@@ -279,8 +279,8 @@ Maßnahme | Option
 [deploy]: web-sites-deploy.md
 [posh]: ../install-configure-powershell.md
 [Azure CLI]: ../xplat-cli-install.md
-[storesendgrid]: /gallery/store/sendgrid/sendgrid-azure/
+[storesendgrid]: https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/
 [cdn]: ../cdn-how-to-use.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

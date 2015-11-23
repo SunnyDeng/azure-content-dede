@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Search | Microsoft Azure" 
+	pageTitle="Erste Schritte mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Erste Schritte mit Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
@@ -378,4 +378,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

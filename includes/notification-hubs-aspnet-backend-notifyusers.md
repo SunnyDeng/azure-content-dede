@@ -285,7 +285,9 @@ In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientger
 
 3. Fügen Sie der **NotificationsController**-Klasse die folgende Methode hinzu.
 
-	Mit diesem Code wird ein Benachrichtigungstyp basierend auf dem `pns`-Parameter des Plattform Notification Service (PNS) gesendet. Der Wert von `to_tag` dient zum Festlegen des *username*-Tags in der Nachricht. Dieses Tag muss mit einem Benutzernamentag einer aktiven Notification Hub-Registrierung übereinstimmen. Die Benachrichtigungsmeldung wird aus dem Text der POST-Anforderung abgerufen.
+	Mit diesem Code wird ein Benachrichtigungstyp basierend auf dem `pns`-Parameter des Plattform Notification Service (PNS) gesendet. Der Wert von `to_tag` dient zum Festlegen des *username*-Tags in der Nachricht. Dieses Tag muss mit einem Benutzernamentag einer aktiven Notification Hub-Registrierung übereinstimmen. Die Benachrichtigung wird aus dem Text der POST-Anforderung abgerufen und für den Ziel-PNS formatiert.
+
+	Abhängig von dem Plattform Notification Service (PNS), mit dem Ihre unterstützten Geräte Benachrichtigungen empfangen, werden unterschiedliche Benachrichtigungen mit unterschiedlichen Formaten unterstützt. Auf Windows-Geräten können Sie beispielsweise eine [Popupbenachrichtigung mit WNS](https://msdn.microsoft.com/library/windows/apps/br230849.aspx) verwenden, die nicht direkt durch einen anderen PNS unterstützt wird. Ihr Back-End müsste die Benachrichtigung somit so formatieren, dass sie mit dem PNS der zu unterstützenden Geräte kompatibel ist. Verwenden Sie anschließend die entsprechende Übermittlungs-API für die [NotificationHubClient-Methode](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.notificationhubclient_methods.aspx).
 
         public async Task<HttpResponseMessage> Post(string pns, [FromBody]string message, string to_tag)
         {
@@ -362,4 +364,4 @@ In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientger
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

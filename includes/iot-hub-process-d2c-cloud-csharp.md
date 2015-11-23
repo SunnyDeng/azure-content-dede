@@ -19,7 +19,7 @@ Um sicherzustellen, dass keine Nachrichten außerhalb des Deduplizierungsfenster
 ### Bereitstellen eines Azure-Speicherkontos und einer Service Bus-Warteschlange
 Um [EventProcessorHost] verwenden zu können, benötigen Sie ein Azure-Speicherkonto. Sie können ein vorhandenes Konto verwenden oder mithilfe der Anweisungen unter [Informationen zu Azure Storage] ein neues Konto erstellen. Notieren Sie die Verbindungszeichenfolge für das Speicherkonto.
 
-Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Verarbeitung von interaktiven Nachrichten zu aktivieren. Sie können eine Warteschlange programmgesteuert mit einem Deduplizierungsfenster von einer Stunde erstellen. Dies ist unter [Verwenden von Service Bus-Warteschlangen][Service Bus Queue] beschrieben, oder verwenden Sie das [Azure-Verwaltungsportal], und führen Sie die folgenden Schritte aus:
+Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Verarbeitung von interaktiven Nachrichten zu aktivieren. Sie können eine Warteschlange programmgesteuert mit einem Deduplizierungsfenster von einer Stunde erstellen. Dies ist unter [Verwenden von Service Bus-Warteschlangen][Service Bus Queue] beschrieben. Oder führen Sie im [Azure-Portal] die folgenden Schritte aus:
 
 1. Klicken Sie in der Ecke unten links auf **NEU** und dann nacheinander auf **App Services**, **Service Bus**, **Warteschlange** und **Benutzerdefiniert**. Wählen Sie den Namen **d2ctutorial** aus, und wählen Sie anschließend ein Deduplizierungsfenster von einer Stunde aus.
 
@@ -301,11 +301,11 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nac
 
 [Programmierleitfaden für Event Hubs]: ../event-hubs/event-hubs-programming-guide.md
 
-[Azure Preview Portal]: https://portal.azure.com/
+[Azure preview portal]: https://portal.azure.com/
 
 [Transient Fault Handling]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 
 [Service Bus Queue]: ../service-bus/service-bus-dotnet-how-to-use-queues.md
 
@@ -324,4 +324,4 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nac
 [31]: ./media/iot-hub-process-d2c-cloud-csharp/createqueue3.png
 [32]: ./media/iot-hub-process-d2c-cloud-csharp/createqueue4.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

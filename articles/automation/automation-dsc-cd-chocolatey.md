@@ -60,8 +60,7 @@ Falls Sie nicht mit einer ARM-Vorlage beginnen, ist dies auch in Ordnung. Es sin
 
 An einer authentifizierten (Add-AzureAccount) PowerShell-Befehlszeile: (es kann einige Minuten dauern, bis der Pullserver eingerichtet ist)
 
-    Switch-AzureMode -Name AzureResourceManager                     <-- assumes you are still running Azure PowerShell v0.9.x    
-    New-AzureResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
+    New-AzureRmResourceGroup –Name MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES
     New-AzureAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-LOCATION-IN-QUOTES –Name MY-AUTOMATION-ACCOUNT 
 
 Sie können Ihr Automatisierungskonto in einer der folgenden Regionen anordnen: Japan, Osten, USA (Ost) 2, Westeuropa, Südostasien, USA (Mitte/Süden).
@@ -92,7 +91,7 @@ Es gibt auch eine manuelle Vorgehensweise. Die Ordnerstruktur eines PowerShell-I
             -Name MODULE-NAME –ContentLink "https://STORAGE-URI/public/MODULE-NAME.zip"
         
 
-Im beigefügten Beispiel werden diese Schritte für cChoco und xNetworking ausgeführt. Informationen finden Sie in den Hinweisen zum besonderen Umgang mit cChoco.
+Im beigefügten Beispiel werden diese Schritte für cChoco und xNetworking ausgeführt. Informationen finden Sie in den [Hinweisen](#notes) zum besonderen Umgang mit cChoco.
 
 ## Schritt 4: Hinzufügen der Knotenkonfiguration zum Pullserver
 
@@ -145,18 +144,18 @@ ISVBoxConfig.ps1:
 
 New-ConfigurationScript.ps1:
 
-    Import-AzureAutomationDscConfiguration ` 
+    Import-AzureRmAutomationDscConfiguration ` 
         -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -SourcePath C:\temp\AzureAutomationDsc\ISVBoxConfig.ps1 ` 
         -Published –Force
     
-    $jobData = Start-AzureAutomationDscCompilationJob ` 
+    $jobData = Start-AzureRmAutomationDscCompilationJob ` 
         -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -ConfigurationName ISVBoxConfig 
     
     $compilationJobId = $jobData.Id
     
-    Get-AzureAutomationDscCompilationJob ` 
+    Get-AzureRmAutomationDscCompilationJob ` 
         -ResourceGroupName MY-AUTOMATION-RG –AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -Id $compilationJobId
 
@@ -188,4 +187,4 @@ Den vollständigen Quellcode für dieses Anwendungsbeispiel finden Sie in [diese
 - [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 - [Integrieren von Computern für die Verwaltung durch Azure Automation DSC](automation-dsc-onboarding.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

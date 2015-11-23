@@ -79,7 +79,7 @@ Die Vorlage steht auch außerhalb des Kurses zur Verfügung.
 
 - [Sehen Sie sich zunächst das Trainingsvideo an](http://aka.ms/3dBlueprintTemplateVideo), damit Sie wissen, was die Vorlage leisten kann.   
 - Laden Sie die [Microsoft Visio-Vorlage "3D Blueprint"](http://aka.ms/3DBlueprintTemplate) herunter.
-- Laden Sie die [Cloud- und Enterprise-Symbole](#symbol-and-icon-sets) herunter, die mit der 3D-Vorlage verwendet werden.
+- Laden Sie die [Cloud- und Enterprise-Symbole](#drawing-symbol-and-icon-sets) herunter, die mit der 3D-Vorlage verwendet werden. 
 
 Wenn Sie noch Fragen haben, die in den Trainingsmaterialien nicht beantwortet werden, oder uns Feedback geben möchten, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com). Zweckmäßigkeit ist eines der Hauptziele der Vorlage. Lassen Sie uns deshalb wissen, was gut ist und was verbessert werden sollte.
 
@@ -108,4 +108,4 @@ Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu 
 
 ![Infografiken zur Azure-Architektur](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

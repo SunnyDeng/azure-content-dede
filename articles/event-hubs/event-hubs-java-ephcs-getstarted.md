@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Event Hubs"
+	pageTitle="Erste Schritte mit Event Hubs in Java | Microsoft Azure"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs für das Senden von Ereignissen mit Java und das Empfangen in C# mit EventProcessorHost."
 	services="event-hubs"
 	documentationCenter=""
@@ -10,10 +10,10 @@
 <tags
 	ms.service="event-hubs"
 	ms.workload="core"
-	ms.tgt_pltfrm="csharp"
-	ms.devlang="csharp"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="11/05/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -22,23 +22,23 @@
 
 ## Einführung
 
-Event Hubs sind ein hochgradig skalierbares Aufnahmesystem, das Millionen von Ereignissen pro Sekunde aufnehmen kann, wodurch eine Anwendung die Möglichkeit erhält, die von Ihren verbundenen Geräten und Anwendungen erzeugten immensen Datenmengen zu verarbeiten und zu analysieren. Nach der Erfassung in Event Hubs können Sie Daten über einen beliebigen Echtzeit-Analyseanbieter oder ein Speichercluster transformieren und speichern.
+Event Hubs sind ein hochgradig skalierbares Aufnahmesystem, das Millionen von Ereignissen pro Sekunde aufnehmen kann, wodurch eine Anwendung die Möglichkeit erhält, die von Ihren verbundenen Geräten und Anwendungen erzeugten immensen Datenmengen zu verarbeiten und zu analysieren. Nach der Erfassung in Event Hubs können Sie Daten über einen beliebigen Echtzeitanalyseanbieter oder ein Speichercluster transformieren und speichern.
 
-Weitere Informationen finden Sie unter [Übersicht über Event Hubs].
+Weitere Informationen finden Sie unter [Übersicht über Event Hubs][].
 
-In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Event Hub mithilfe einer Konsolenanwendung in Java aufgenommen werden können und wie Sie diese parallel mit der C#-[Ereignisprozessorhost]-Bibliothek abrufen.
+In diesem Lernprogramm erfahren Sie, wie Nachrichten mithilfe einer Konsolenanwendung in Java in einem Event Hub erfasst werden und wie Sie diese gleichzeitig mit der C#-Bibliothek des [Ereignisprozessorhosts][] abrufen.
 
-Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
+Zur Ausführung dieses Lernprogramms benötigen Sie Folgendes:
 
 + Eine Java-Entwicklungsumgebung. In diesem Lernprogramm wird von [Eclipse](https://www.eclipse.org/) ausgegangen.
 
-+ Microsoft Visual Studio Express 2013 für Windows
++ Microsoft Visual Studio Express für Windows
 
 + Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie unten auf dem Bildschirm auf **NEU**.
+1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
 
 2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
 
@@ -91,11 +91,11 @@ Sie können jetzt die Anwendung ausführen.
 
 Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hub erstellt und Daten sendet und empfängt, können Sie mit den folgenden Szenarios fortfahren:
 
-- Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
-- Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]
-- Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
+- Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs][].
+- Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs][]
+- Eine [Messaginglösung mit Warteschlange][] unter Verwendung von Service Bus-Warteschlangen.
 
-Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/java/).
+Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
 <!-- Images. -->
 [1]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub1.png
@@ -111,12 +111,12 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [22]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs2.png
 
 <!-- Links -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Übersicht über Event Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
-[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+[Azure-Portal]: https://manage.windowsazure.com/
+[Ereignisprozessorhosts]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
+[Übersicht über Event Hubs]: event-hubs-overview.md
+[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
+[Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

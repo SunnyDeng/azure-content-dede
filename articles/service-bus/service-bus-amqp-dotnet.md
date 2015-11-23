@@ -27,7 +27,7 @@ Unterstützung für AMQP 1.0 ist im Service Bus SDK ab Version 2.1 verfügbar. S
 
 Mithilfe eines dedizierten SOAP-basierten Protokolls kommuniziert die .NET-Clientbibliothek von Service Bus standardmäßig mit dem Service Bus-Dienst. Wenn Sie anstatt des Standardprotokolls AMQP 1.0 verwenden möchten, ist eine explizite Konfiguration der Service Bus-Verbindungszeichenfolge erforderlich, die im nächsten Abschnitt beschrieben wird. Mit Ausnahme dieser Änderung bleibt der Anwendungscode bei Verwenden von AMQP 1.0 grundsätzlich unverändert.
 
-In der aktuellen Version gibt es ein paar API-Features, die bei Verwendung von AMQP nicht unterstützt werden. Diese nicht unterstützten Features sind weiter unten im Abschnitt "Nicht unterstützte Features und Einschränkungen" aufgeführt. Darüber hinaus haben einige der erweiterten Konfigurationseinstellungen eine unterschiedliche Bedeutung, wenn AMQP zum Einsatz kommt.
+In der aktuellen Version gibt es ein paar API-Features, die bei Verwendung von AMQP nicht unterstützt werden. Diese nicht unterstützten Features sind weiter unten im Abschnitt [Nicht unterstützte Features, Einschränkungen und Verhaltensunterschiede](#unsupported-features-restrictions-and-behavioral-differences) aufgeführt. Darüber hinaus haben einige der erweiterten Konfigurationseinstellungen eine unterschiedliche Bedeutung, wenn AMQP zum Einsatz kommt.
 
 ### Konfiguration mithilfe von "App.config"
 
@@ -168,6 +168,7 @@ Die .NET-APIs machen mehrere Einstellungen zum Steuern des Verhaltens des AMQP-P
 Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 
 - [Übersicht über Service Bus AMQP]
+- [AMQP 1.0-Unterstützung für partitionierte Warteschlangen und Themen von Service Bus]
 - [AMQP in Service Bus für Windows Server]
 
   [Verwenden von Azure Service Bus-Warteschlangen]: service-bus-dotnet-how-to-use-queues.md
@@ -199,6 +200,7 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
+[AMQP 1.0-Unterstützung für partitionierte Warteschlangen und Themen von Service Bus]: service-bus-partitioned-queues-and-topics-amqp-overview.md
 [AMQP in Service Bus für Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

@@ -3,7 +3,7 @@
 	description="Erfahren Sie etwas über die ersten Schritte mit Azure-Warteschlangenspeicher in einem Clouddienstprojekt in Visual Studio, nachdem Sie mithilfe von verbundenen Visual Studio-Diensten eine Verbindung mit einem Speicherkonto hergestellt haben."
 	services="storage" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/03/2015" 
-	ms.author="patshea"/>
+	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (Clouddienstprojekte)
 
@@ -37,7 +37,7 @@ Beim Vorgang **Verbundene Dienste hinzufügen** werden die entsprechenden NuGet-
 
  - Weitere Informationen zum Bearbeiten von Warteschlangen im Code finden Sie unter [Verwenden der Warteschlangenspeicherung von .NET](storage-dotnet-how-to-use-queues.md).
  - Allgemeine Informationen zum Azure-Speicher finden Sie unter [Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/).
- - Allgemeine Informationen zu Azure-Clouddiensten finden Sie in der [Clouddienstdokumentation](http://azure.microsoft.com/documentation/services/cloud-services/).
+ - Allgemeine Informationen zu Azure-Clouddiensten finden Sie unter [Cloud Services-Dokumentation](http://azure.microsoft.com/documentation/services/cloud-services/).
  - Weitere Informationen über das Programmieren von ASP.NET-Anwendungen finden Sie unter [ASP.NET](http://www.asp.net).
 
 
@@ -202,4 +202,4 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 			
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

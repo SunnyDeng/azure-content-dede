@@ -21,6 +21,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
+> [AZURE.NOTE]Das MariaDB Enterprise-Cluster ist jetzt in Azure Marketplace verfügbar. Mit dem neuen Angebot wird automatisch ein MariaDB Galera-Cluster im ARM bereitgestellt. Verwenden Sie nach Möglichkeit das Angebot unter https://azure.microsoft.com/de-DE/marketplace/partners/mariadb/cluster-maxscale/.
 
 Wir erstellen einen Multimaster-[Galera](http://galeracluster.com/products/)-Cluster von [MariaDBs](https://mariadb.org/en/about/), ein robuster, skalierbarer und zuverlässiger Ersatz für MySQL für das Arbeiten in einer hoch verfügbaren Umgebung auf virtuellen Azure-Computern.
 
@@ -373,4 +374,4 @@ Es empfiehlt sich unter Umständen, sich über eine [weitere Möglichkeit zur Gr
 [Problem 1268]: https://github.com/Azure/azure-xplat-cli/issues/1268
 [weitere Möglichkeit zur Gruppierung von MySQL unter Linux]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-mysql-cluster/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

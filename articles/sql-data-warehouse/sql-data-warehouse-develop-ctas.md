@@ -169,7 +169,7 @@ AND	[acs].[CalendarYear]				= [fis].[CalendarYear]
 ;
 ```
 
-Da SQL Data Warehouse ANSI-Verknüpfungen nicht unterstützt, können Sie diesen Code nicht einfach kopieren, ohne ihn leicht zu ändern.
+Da SQL Data Warehouse ANSI-Verknüpfungen in der FROM-Klausel einer UPDATE-Anweisung nicht unterstützt, können Sie diesen Code nicht einfach kopieren, ohne ihn geringfügig zu ändern.
 
 Sie können eine Kombination aus CTAS und einer impliziten Verknüpfung verwenden, um diesen Code zu ersetzen:
 
@@ -206,7 +206,7 @@ DROP TABLE CTAS_acs
 ```
 
 ## ANSI-Verknüpfungsersatz für delete-Anweisungen
-Manchmal ist CTAS der beste Ansatz zum Löschen von Daten. Anstatt die Daten zu löschen, wählen Sie einfach die Daten aus, die Sie behalten möchten. Dies gilt besonders für DELETE-Anweisungen, in denen ANSI-Verknüpfungssyntax verwendet wird, da dies in SQL Data Warehouse nicht unterstützt wird.
+Manchmal ist CTAS der beste Ansatz zum Löschen von Daten. Anstatt die Daten zu löschen, wählen Sie einfach die Daten aus, die Sie behalten möchten. Diese gilt insbesondere für DELETE-Anweisungen, die die ANSI-Verknüpfungssyntax verwenden. Der Grund dafür ist, dass SQL Data Warehouse keine ANSI-Verknüpfungen in der FROM-Klausel einer DELETE-Anweisung unterstützt.
 
 Beispiel für eine konvertierte DELETE-Anweisung:
 
@@ -429,4 +429,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

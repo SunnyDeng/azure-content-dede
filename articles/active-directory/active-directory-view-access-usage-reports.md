@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="11/10/2015"
 	ms.author="kenhoff;Justinha;curtand"/>
 
 # Anzeigen von Zugriffs- und Nutzungsberichten
@@ -56,7 +56,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 |	Kontobereitstellungsaktivität |	Stellt einen Verlauf der Kontobereitstellungsversuche für externe Anwendungen bereit. |
 |	Status des Kennwortrollovers |	Stellt eine ausführliche Übersicht über den Status des automatischen Kennwortrollovers von SaaS-Anwendungen zur Verfügung. |
 |	Kontobereitstellungsfehler |	Zeigt eine Auswirkung auf den Zugriff von Benutzern auf externe Anwendungen an. |
-|	**Rechteverwaltung**
+|	**Rights Management**
 |	RMS-Nutzung |	Enthält eine Übersicht zur Nutzung des Rights Management. |
 |	Aktivste RMS-Benutzer |	Listet die Top 1000 aktiven Benutzer auf, die auf RMS-geschützte Dateien zugegriffen haben. |
 |	Nutzung von RMS-Geräten |	Listet Geräte auf, die für den Zugriff auf RMS-geschützte Dateien verwendet werden. |
@@ -159,6 +159,10 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 | :-------------     | :-------        |
 | In diesem Bericht können Sie die Nutzung aller SaaS-Anwendungen in Ihrem Verzeichnis ablesen. Dieser Bericht basiert darauf, wie oft Benutzer im Zugriffsbereich auf die Anwendung geklickt haben. | Verzeichnis > Registerkarte "Berichte" |
 
+Dieser Bericht enthält Informationen zu Anmeldungen bei _allen_ Programmen, auf die Ihr Verzeichnis Zugriff hat, einschließlich bereits integrierten Microsoft-Anwendungen.
+
+Zu den bereits integrierten Microsoft-Anwendungen zählen Office 365, Sharepoint, das Azure-Verwaltungsportal und andere.
+
 ![Zusammenfassung Anwendungsnutzung](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)
 
 
@@ -239,7 +243,7 @@ Wenn Sie vermuten, dass ein Benutzerkonto ggf. gefährdet ist, oder von einer ve
 
 - Den Benutzer kontaktieren, um die Aktivität zu überprüfen
 - Das Kennwort des Benutzers zurücksetzen
-- Die [Multi-Factor Authentication](http://go.microsoft.com/fwlink/?linkid=335774) zum Erhöhen der Sicherheit aktivieren
+- Die [Multi-Factor Authentication](multi-factor-authentication-get-started.md) zum Erhöhen der Sicherheit aktivieren
 
 ## Anzeigen oder Herunterladen eines Berichts
 
@@ -271,4 +275,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

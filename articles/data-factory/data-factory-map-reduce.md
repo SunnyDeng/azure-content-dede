@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="11/09/2015" 
 	ms.author="spelluru"/>
 
 # Aufrufen von MapReduce-Programmen über Data Factory
@@ -22,7 +22,7 @@ In diesem Artikel wird beschrieben, wie ein **MapReduce**-Programm mithilfe der 
 ## Einführung 
 Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. In diesem Artikel wird die Verwendung der MapReduce-Transformation der HDInsight-Aktivität beschrieben.
  
-Weitere Informationen zum Anwenden von Pig/Hive-Skripts auf einen HDInsight-Cluster über eine Azure Data Factory-Pipeline mithilfe von Pig/Hive-Transformationen der HDInsight-Aktivität finden Sie im Artikel [Pig](data-factory-pig-activity) und [Hive](data-factory-hive-activity.md).
+Weitere Informationen dazu, wie Sie Pig/Hive-Skripts auf einen Windows/Linux-basierten HDInsight-Cluster über eine Azure Data Factory-Pipeline mithilfe von Pig/Hive-Transformationen der HDInsight-Aktivität anwenden, finden Sie im Artikel [Pig](data-factory-pig-activity) und [Hive](data-factory-hive-activity.md).
 
 ## JSON für HDInsight-Aktivität mit MapReduce-Transformation 
 
@@ -102,4 +102,4 @@ Sie können ein Beispiel zur Verwendung der HDInsight-Aktivität mit MapReduce-T
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

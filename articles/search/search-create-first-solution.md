@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen der ersten Suchlösung mit Azure Search | Microsoft Azure" 
+	pageTitle="Erstellen der ersten Suchlösung mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Erstellen Sie Ihre ersten Suchlösung mit Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
@@ -68,10 +68,7 @@ Nach einigen Augenblicken wird der Vorgang mit folgender Meldung abgeschlossen: 
 
 Drücken Sie die **Eingabetaste**, um die Anwendung zu schließen. Damit ist die Erstellung des Azure Search-Index abgeschlossen.
 
-> [AZURE.NOTE]Wenn Sie Fehlermeldungen erhalten, die den Text "Ungültiger Wert für den Schlüssel 'attachdbfilename'" oder einen anderen Datenbankzuordnungsfehler enthalten, sind eventuell UAC-Konflikte aufgetreten. Beheben Sie diese Fehler für diese Demonstration auf folgende Weise: 
-> Kopieren Sie die Projektmappe in einen neuen oder vorhandenen Ordner (z. B. „Temp“), auf den authentifizierte Benutzer zugreifen können. 
-> Starten Sie Visual Studio mit der Option **Als Administrator ausführen**. 
-> Öffnen Sie die Projektmappe, erstellen Sie sie, und drücken Sie dann **F5**, um den Index zu erstellen.
+> [AZURE.NOTE]Wenn Sie Fehlermeldungen erhalten, die den Text "Ungültiger Wert für den Schlüssel 'attachdbfilename'" oder einen anderen Datenbankzuordnungsfehler enthalten, sind eventuell UAC-Konflikte aufgetreten. Beheben Sie diese Fehler für diese Demonstration auf folgende Weise: Kopieren Sie die Projektmappe in einen neuen oder vorhandenen Ordner (z. B. „Temp“), auf den authentifizierte Benutzer zugreifen können. Starten Sie Visual Studio mit der Option **Als Administrator ausführen**. Öffnen Sie die Projektmappe, erstellen Sie sie, und drücken Sie dann F5, um den Index zu erstellen.
 
 Navigieren Sie im [Azure-Verwaltungsportal](https://portal.azure.com) zum Dashboard des Search-Diensts, um die Indexerstellung und das Hochladen der Dokumente zu überprüfen. Unter "Verwendung" muss der Indexzähler um eins erhöht worden sein, und es sollten 294 Dokumente vorhanden sein, eines für jedes Produkt in der Datenbank.
 
@@ -209,4 +206,4 @@ Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsof
 [11]: ./media/search-create-first-solution/AzureSearch_Create1_Suggestions.PNG
 [12]: ./media/search-create-first-solution/AzureSearch_Create1_CodeplexDownload.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

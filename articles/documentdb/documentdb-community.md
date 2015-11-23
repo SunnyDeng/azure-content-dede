@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="10/20/2015"
+  ms.date="11/05/2015"
   ms.author="andrl"/>
 
 # Communityportal
@@ -89,8 +89,6 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Ereignisname | Standort | Date | Hashtag |
 | ------------------------------------------------------------------------------- | -------------------- | ------------------- | ------- |
-| [CloudDevelop 2015](http://www.clouddevelop.org/) | Columbus, OH | 23\. Oktober 2015 | [#CloudDevConf](https://twitter.com/hashtag/CloudDevConf) |
-| [PASS Summit 2015](http://www.sqlpass.org/summit/2015/Home.asp) | Seattle, WA | 27\. bis 30. Oktober 2015 | [#Summit15](https://twitter.com/hashtag/Summit15) |
 | [Integration User Group](http://www.integrationusergroup.com/) | Webinar | 9\. November 2015 | [#IntegrationMonday](https://twitter.com/hashtag/integrationmonday) |
 | [Meetup: msdevmtl](http://www.meetup.com/msdevmtl/events/223839818/) | Montreal (Quebec, Kanada) | 1\. Dezember 2015 | [#msdevmtl](https://twitter.com/hashtag/msdevmtl) |
 
@@ -100,11 +98,14 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Ereignisname | Standort | Date | Aufzeichnung |
 | -------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------- | --------- |
+| [PASS Summit 2015](http://www.sqlpass.org/summit/2015/Home.asp) | Seattle, WA | 27\. bis 30. Oktober 2015 | – |
+| [CloudDevelop 2015](http://www.clouddevelop.org/) | Columbus, OH | 23\. Oktober 2015 | – |
 | [SQL Saturday #430 – Sofia 2015](http://www.sqlsaturday.com/430/eventhome.aspx) | Sofia, Bulgarien | 10\. Oktober 2015 | – |
 | [SQL Saturday #429 – Porto 2015](http://www.sqlsaturday.com/429/eventhome.aspx) | Porto, Portugal | 3\. Oktober 2015 | – |
 | [AzureCon](https://azure.microsoft.com/azurecon/) | Virtuelle Veranstaltung | 29\. September 2015 | [Azure data and analytics platform](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON207)<br/>[Working with NoSQL Data in DocumentDB](https://channel9.msdn.com/Events/Microsoft-Azure/AzureCon-2015/ACON338) |
-| [SQL Saturday #434 – Holland 2015](http://www.sqlsaturday.com/434/eventhome.aspx) | Utrecht, Niederlande | 26\. September 2015 | – |
+| [SQL Saturday #434 – Holland 2015](http://www.sqlsaturday.com/434/eventhome.aspx) | Utrecht, Niederlande | 26\. September 2015 | [Einführung in Azure DocumentDB](https://channel9.msdn.com/Blogs/Windows-Azure/SQL-Saturday-Holland-2015-Introduction-to-Azure-DocumentDB) |
 | [Meetup: San Francisco Bay Area Azure Developers](http://www.meetup.com/bayazure/events/223943785/) | San Francisco, CA | 15\. September 2015 | – |
+| [Treffen der Belarus Azure User Group](https://www.facebook.com/events/786540124800276/) | Minsk, Weißrussland | 9\. September 2015 | [Einführung in das DocumentDB-Konzept, Konsistenzebenen und Sharding-Strategien](https://www.youtube.com/watch?v=Uc_qwWzJKH8) |
 | [NoSQL Now!](http://nosql2015.dataversity.net/) | San Jose, Kalifornien, USA | 18\. - 20. August 2015 | – |
 | [@Scale Seattle](http://www.atscaleconference.com/) | Seattle, WA | 17\. Juni 2015 | [Schema Agnostic Indexing with Azure DocumentDB](https://www.youtube.com/watch?v=VJQ_5qFFVP4) |
 | [Tech Refresh 2015](https://channel9.msdn.com/Events/DXPortugal/Tech-Refresh-2015) | Lissabon, Portugal | 15\. Juni 2015 | [DocumentDB 101](https://channel9.msdn.com/Events/DXPortugal/Tech-Refresh-2015/DPDEV01) |
@@ -214,4 +215,4 @@ Diese Projekte werden vom Azure DocumentDB-Team in Zusammenarbeit mit unserer Op
 | Hadoop-Connector | [azure-documentdb-hadoop](https://github.com/Azure/azure-documentdb-hadoop) | [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb-hadoop%22) |
 | Datenmigrationstool | [azure-documentdb-datamigrationtool](https://github.com/Azure/azure-documentdb-datamigrationtool) | [Microsoft Download Center](http://www.microsoft.com/de-DE/download/details.aspx?id=46436) |
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

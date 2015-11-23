@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="11/09/2015" 
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit
@@ -68,6 +68,29 @@ Diese Basiskonfiguration erfordert den folgenden Satz von Azure-Diensten und -Ko
 - Ein standortübergreifendes virtuelles Netzwerk
 - Zwei Speicherkonten
 
+Nachfolgend sind die virtuellen Computer und deren Standardgrößen für diese Konfiguration aufgeführt.
+
+Element | Beschreibung des virtuellen Computers | Katalogimage | Standardgröße 
+--- | --- | --- | --- 
+1\. | Erster Domänencontroller | Windows Server 2012 R2 Datacenter | D1
+2\. | Zweiter Domänencontroller | Windows Server 2012 R2 Datacenter | D1
+3\. | Primärer Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
+4\. | Sekundärer Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
+5\. | Mehrheitsknoten des Clusters | Windows Server 2012 R2 Datacenter | D1
+6\. | Erster Webserver | Windows Server 2012 R2 Datacenter | D3
+7\. | Zweiter Webserver | Windows Server 2012 R2 Datacenter | D3
+
+Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/).
+
+1. Klicken Sie unter **Module** auf **Compute** und dann so oft auf **Virtuelle Computer**, bis Sie eine Liste mit sieben virtuellen Computern erstellt haben.
+2. Wählen Sie für jeden virtuellen Computer Folgendes:
+	- Die gewünschte Region
+	- **Windows** für den Typ
+	- **Standard** für die Preisstufe
+	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
+
+> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machine Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+
 ### Phasen der Bereitstellung
 
 Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
@@ -106,4 +129,4 @@ Nach der Konfiguration können Sie diese Branchenanwendung problemlos erweitern,
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

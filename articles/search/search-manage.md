@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten Ihres Suchdiensts in Microsoft Azure | Microsoft Azure" 
+	pageTitle="Verwalten Ihres Suchdiensts in Microsoft Azure | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Verwalten von Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst" 
 	services="search" 
 	documentationCenter="" 
@@ -193,4 +193,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

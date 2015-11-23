@@ -20,6 +20,8 @@
 
 In diesem Thema wird das Verwenden des .NET-Back-End-Server-SDKs in Azure App Service Mobile Apps-Szenarien veranschaulicht. Das Azure-SDK für Mobile Apps erleichtert Ihnen die Arbeit mit mobilen Clients aus der ASP.NET-Anwendung.
 
+>[AZURE.TIP]Das [.NET Server SDK für Azure Mobile Apps](https://github.com/Azure/azure-mobile-apps-net-server) ist als Open Source auf GitHub verfügbar. Das Repository enthält die gesamte Testsammlung der Server-SDK-Einheit sowie einige Projektbeispiele.
+
 ## Vorgehensweise: Herunterladen und Initialisieren des SDKs
 
 Das SDK steht unter [NuGet.org] zur Verfügung. Dieses Paket enthält die Basisfunktionalität, die für den Einstieg in das SDK erforderlich ist. Um das SDK zu initialisieren, müssen Sie Aktionen auf dem **HttpConfiguration**-Objekt ausführen.
@@ -28,7 +30,7 @@ Das SDK steht unter [NuGet.org] zur Verfügung. Dieses Paket enthält die Basisf
 
 Um das SDK zu installieren, klicken Sie mit der rechten Maustaste auf das Serverprojekt in Visual Studio, wählen Sie **NuGet-Pakete verwalten**, suchen Sie das [Microsoft.Azure.Mobile.Server](http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server/)-Paket, und klicken Sie dann auf **Installieren**.
 
-###Initialisieren des Serverprojekts
+###<a name="server-project-setup"></a> Initialisieren des Serverprojekts
 
 Ein .NET-Back-End-Server-Projekt wird wie andere ASP.NET-Projekte durch das Einschließen einer OWIN-Startklasse initialisiert. Um diese Klasse in Visual Studio hinzuzufügen, klicken Sie mit der rechten Maustaste auf das Server-Projekt, und wählen Sie **Hinzufügen** -> **Neues Element** und dann **Web** -> **Allgemein** -> **OWIN-Startklasse** aus.
 
@@ -205,4 +207,4 @@ Führen Sie die folgenden Schritte durch, um das Serverprojekt in Azure zu verö
 [Microsoft.Azure.Mobile.Server.Authentication]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Authentication/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bewertungsprofile (Azure Search-REST-API Version 2015-02-28-Preview) | Microsoft Azure"
+	pageTitle="Bewertungsprofile (Azure Search-REST-API Version 2015-02-28-Preview) | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Azure Search ist ein gehosteter Cloudsuchdienst, der die Optimierung der Rangfolge von Ergebnissen basierend auf benutzerdefinierten Bewertungsprofilen unterstützt."
 	services="search"
 	documentationCenter=""
@@ -371,4 +371,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 <!--Image references-->
 [1]: ./media/search-api-scoring-profiles-2015-02-28-Preview/scoring_interpolations.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

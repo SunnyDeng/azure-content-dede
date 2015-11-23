@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/28/2015"
+   ms.date="11/11/2015"
    ms.author="jgao"/>
 
 
@@ -603,10 +603,10 @@ Die Ergebnisse:
 Es gibt in der Partition 6 Zeilen mit dem Partitionsschlüssel „Web“ (ab der 4. Zeile nach unten):
 
 - Es gibt 6 Zeilen mit einem Wert kleiner gleich 500, sodass der CUME\_DIST-Wert 6:6 = 1 entspricht.
-- Es gibt 5 Zeilen mit einem Wert kleiner gleich 500, sodass der CUME\_DIST-Wert 5:6 = 0,83 entspricht.
-- Es gibt 4 Zeilen mit einem Wert kleiner gleich 500, sodass der CUME\_DIST-Wert 5:6 = 0,66 entspricht.
-- Es gibt 3 Zeilen mit einem Wert kleiner gleich 500, sodass der CUME\_DIST-Wert 3:6 = 0,5 entspricht. Es gibt zwei Zeilen mit demselben Latenzwert.
-- Es gibt eine Zeile mit einem Wert kleiner gleich 500, sodass der CUME\_DIST-Wert 1:6 = 0,16 entspricht. 
+- Es gibt fünf Zeilen mit einem Wert kleiner gleich 400, sodass der CUME\_DIST-Wert 5:6 = 0,83 entspricht.
+- Es gibt vier Zeilen mit einem Wert kleiner gleich 300, sodass der CUME\_DIST-Wert 5:6 = 0,66 entspricht.
+- Es gibt drei Zeilen mit einem Wert kleiner gleich 200, sodass der CUME\_DIST-Wert 3:6 = 0,5 entspricht. Es gibt zwei Zeilen mit demselben Latenzwert.
+- Es gibt eine Zeile mit einem Wert kleiner gleich 100, sodass der CUME\_DIST-Wert 1:6 = 0,16 entspricht. 
 
 
 **Hinweise zur Verwendung:**
@@ -743,4 +743,4 @@ PERCENTILE\_DISC interpoliert keine Werte, weshalb der Median für „Web“ 200
 - [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-use-powershell.md)
 - [Überwachung und Problembehandlung von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Vorschauportals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

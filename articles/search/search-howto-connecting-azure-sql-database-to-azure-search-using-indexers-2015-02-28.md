@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verbinden von Azure SQL-Datenbank mit Azure Search mithilfe von Indexern | Microsoft Azure" 
+	pageTitle="Verbinden von Azure SQL-Datenbank mit Azure Search mithilfe von Indexern | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Erfahren Sie, wie Sie Daten aus SQL Azure-Datenbank mithilfe von Indexern in einen Azure Search-Index abrufen." 
 	services="search" 
 	documentationCenter="" 
@@ -279,4 +279,4 @@ A: Ja. Indexer werden auf einem der Knoten im Suchdienst ausgeführt, und die Re
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwendung von Azure Search: Fallstudien und Kundenberichte"
+	pageTitle="Verwendung von Azure Search: Fallstudien und Kundenberichte | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Fallstudien und Erfahrungsberichte von Kunden zu Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
@@ -61,4 +61,4 @@ Sie erfahren, wie dieses schwedische Startup ein Infomedia-Portal erstellt hat, 
 [5]: ./media/search-case-studies/weichert_m.png
 [6]: ./media/search-case-studies/xomni_m.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

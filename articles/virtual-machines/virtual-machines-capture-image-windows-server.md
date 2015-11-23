@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erfassen eines Images eines virtuellen Windows-Computers | Microsoft Azure"
-	description="Erfassen eines Images eines virtuellen Windows-Computers, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
+	pageTitle="Erfassen eines Images eines virtuellen Azure Windows-Computers | Microsoft Azure"
+	description="Erfassen Sie ein Image eines virtuellen Azure Windows-Computers, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -14,15 +14,15 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/16/2015"
+	ms.date="11/05/2015"
 	ms.author="cynthn"/>
 
-#Erfassen eines Images eines virtuellen Windows-Computers, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
+#Erfassen Sie ein Image eines virtuellen Azure Windows-Computers, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-In diesem Artikel wird erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn als Image zum Erstellen anderer virtueller Computer zu verwenden. Dieses Image enthält den Betriebssystem-Datenträger und alle Datenträger, die an den virtuellen Computer angefügt sind. Da die Vorlage keine Netzwerkkonfiguration enthält, muss diese später erfolgen, wenn Sie die anderen auf dieser Vorlage basierenden virtuellen Computer erstellen.
+In diesem Artikel wird erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn als Image zum Erstellen anderer virtueller Computer zu verwenden. Dieses Image enthält den Betriebssystem-Datenträger und alle Datenträger, die an den virtuellen Computer angefügt sind. Da das Image keine Netzwerkkonfiguration enthält, muss diese später erfolgen, wenn Sie die anderen auf diesem Image basierenden virtuellen Computer erstellen.
 
 Azure speichert das Image unter**Eigene Images**. Hier werden auch sämtliche Images abgelegt, die Sie hochladen. Näheres zu Images finden Sie unter [Informationen zu Images für virtuelle Computer](virtual-machines-images.md).
 
@@ -30,12 +30,15 @@ Azure speichert das Image unter**Eigene Images**. Hier werden auch sämtliche Im
 
 Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
 
-- [Erstellen eines benutzerdefinierten virtuellen Computers mit Windows][]
-- [Anfügen eines Datenträgers an einen virtuellen Computer][]
+- [Erstellen eines virtuellen Computers von einem Image](virtual-machines-create-custom.md)
+- [Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md)
 
-> [AZURE.WARNING]Bei diesem Vorgang wird der ursprüngliche virtuelle Computer nach dem Erfassen gelöscht, daher ist er nicht als Option zum Sichern eines virtuellen Computers bestimmt. Eine Möglichkeit dafür ist Azure Backup, das in bestimmten Regionen als Vorschau verfügbar. Weitere Informationen finden Sie unter [Sichern eines virtuellen Azure-Computers](../backup/backup-azure-vms.md). Andere Lösungen sind von zertifizierten Partnern erhältlich. Aktuelle Angebote finden Sie auf dem Azure Marketplace.
+> [AZURE.WARNING]Mit diesem Vorgang wird die ursprüngliche virtuelle Maschine nach der Erfassung gelöscht.
 
-##Erfassen des virtuellen Computers##
+Er dient nicht zum Erstellen einer Sicherungskopie eines virtuellen Computers. Eine Möglichkeit dafür ist Azure Backup, das in bestimmten Regionen als Vorschau verfügbar. Weitere Informationen finden Sie unter [Sichern eines virtuellen Azure-Computers](../backup/backup-azure-vms.md). Andere Lösungen sind von zertifizierten Partnern erhältlich. Aktuelle Angebote finden Sie auf dem Azure Marketplace.
+
+
+##Erfassen des virtuellen Computers
 
 1. Stellen Sie im [Azure-Portal](http://manage.windowsazure.com) eine **Verbindung** mit dem virtuellen Computer her. Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][].
 
@@ -71,11 +74,12 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
  	![Image-Erfassung erfolgreich](./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png)
 
-##Nächste Schritte##
-Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe des Menüeintrags **Aus Katalog** einen virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers mit Windows][].
+##Nächste Schritte
 
-[Erstellen eines benutzerdefinierten virtuellen Computers mit Windows]: virtual-machines-windows-create-custom.md
-[Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
+Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe des Menüeintrags **Aus Katalog** einen virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Computers von einem Image](virtual-machines-create-custom.md).
+
+
+
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: virtual-machines-log-on-windows-server.md
 [How to Use Sysprep: An Introduction]: http://technet.microsoft.com/library/bb457073.aspx
 [Run Sysprep.exe]: ./media/virtual-machines-capture-image-windows-server/SysprepCommand.png
@@ -86,4 +90,4 @@ Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu er
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

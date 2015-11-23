@@ -3,7 +3,7 @@
    description="Erstellen und Konfigurieren des SMTP-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
+   authors="rajeshramabathiran"
    manager="dwrede"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="08/23/2015"
-   ms.author="andalmia"/>
+   ms.date="11/11/2015"
+   ms.author="rajram"/>
 
 
 # Erste Schritte mit dem SMTP-Connector und das Hinzufügen zur Logik-App
@@ -59,29 +59,25 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 ## Verwenden des SMTP-Connectors in Logik-Apps
 Sobald Ihr Connector erstellt wurde, können Sie den SMTP-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
 
-1.	Erstellen einer neuen Logik-App:
-![][2]
-2.	Öffnen Sie **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren:
-![][3]
-3.	Der SMTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt. Wählen Sie ihn aus:
-![][4]
+1.	Erstellen einer neuen Logik-App: ![][2]
+2.	Öffnen Sie **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren: ![][3]
+3.	Der SMTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt. Wählen Sie ihn aus: ![][4]
 4.	Wählen Sie den SMTP-Connector aus, um ihn automatisch dem Workflow-Designer hinzuzufügen.
 
 Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfigurieren. Wählen Sie die Aktion **E-Mail senden** aus, und konfigurieren Sie die Eingabeeigenschaften wie folgt:
 
-	Eigenschaft | Beschreibung
+	Property | Description
 	--- | ---
-	An | Geben Sie die E-Mail-Adresse des/der Empfänger/s ein. Trennen Sie mehrere E-Mail-Adressen durch ein Semikolon (;). Geben Sie zum Beispiel Folgendes ein: *recipient1@domain.com;recipient2@domain.com*.
-	Cc | Geben Sie die E-Mail-Adresse des/der Empfänger/s in Cc ein. Trennen Sie mehrere E-Mail-Adressen durch ein Semikolon (;). Geben Sie zum Beispiel Folgendes ein: *recipient1@domain.com;recipient2@domain.com*.
-	Betreff | Geben Sie den Betreff der E-Mail ein.
-	Text | Geben Sie den Text der E-Mail ein.
-	Is HTML | Wenn diese Eigenschaft auf "true" festgelegt ist, werden Textinhalte im HTML-Format gesendet.
-	Bcc | EGeben Sie die E-Mail-Adresse des/der Empfänger/s in Bcc ein. Trennen Sie mehrere E-Mail-Adressen durch ein Semikolon (;). Geben Sie zum Beispiel Folgendes ein: *recipient1@domain.com;recipient2@domain.com*.
-	Priorität | Geben Sie die Priorität der E-Mail ein. Zur Verfügung stehen die Optionen: Normal, Niedrig, Hoch.
-	Anlagen | Anlagen, die mit der E-Mail gesendet werden. Enthält die folgenden Felder: <ul><li>Inhalt (Zeichenfolge)</li><li>Codierung für die Inhaltsübertragung (Enum) ("keine" | "base64")</li><li>Inhaltstyp (Zeichenfolge)</li><li>Inhalts-ID (Zeichenfolge)</li><li>Dateiname (Zeichenfolge)</li><ul>
+	To | Enter the email address of recipient(s). Separate multiple email addresses using a semicolon (;). For example, enter: *recipient1@domain.com;recipient2@domain.com*.
+	Cc | Enter the email address of the carbon copy recipient(s). Separate multiple email addresses using a semicolon (;). For example, enter: *recipient1@domain.com;recipient2@domain.com*.
+	Subject | Enter the subject of the email.
+	Body | Enter body of the email.
+	Is HTML | When this property is set to true, the contents of the body are sent as HTML.
+	Bcc | Enter the email address of recipient(s) for blind carbon copy. Separate multiple email addresses using a semicolon (;). For example, enter: *recipient1@domain.com;recipient2@domain.com*.
+	Importance | Enter the Importance of the email. The options are Normal, Low, and High.
+	Attachments | Attachments to be sent along with the email. It contains the following fields: <ul><li>Content (String)</li><li>Content transfer Encoding (Enum) (“none”|”base64”)</li><li>Content Type (String)</li><li>Content ID (String)</li><li>File Name (String)</li></ul>
 
-![][5]
-![][6]
+![][5] ![][6]
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
@@ -100,4 +96,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [5]: ./media/app-service-logic-connector-smtp/img5.PNG
 [6]: ./media/app-service-logic-connector-smtp/img6.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

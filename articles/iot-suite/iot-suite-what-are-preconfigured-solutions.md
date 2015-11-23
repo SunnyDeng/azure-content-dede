@@ -58,7 +58,7 @@ Ein IoT Hub empfängt an einem einzelnen Endpunkt Telemetriedaten von den Kühle
 
 Der IoT Hub macht die Telemetriedaten, die er über einen Consumergruppen-Endpunkt empfängt, verfügbar.
 
-Die IoT Hub-Instanz in dieser vorkonfigurierten Lösung entspricht der **IoT-Back-End-Anwendung** in einer typischen IoT-Lösungsarchitektur.
+Die IoT Hub-Instanz in dieser vorkonfigurierten Lösung entspricht dem **Cloud-Gateway** in einer typischen IoT-Lösungsarchitektur.
 
 ### Azure Stream Analytics
 
@@ -91,4 +91,4 @@ Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigur
 [img-remote-monitoring-arch]: ./media/iot-suite-what-are-preconfigured-solutions/remote-monitoring-arch1.png
 [Azure Stream Analytics]: https://azure.microsoft.com/services/stream-analytics/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

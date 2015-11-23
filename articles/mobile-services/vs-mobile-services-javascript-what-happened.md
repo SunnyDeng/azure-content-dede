@@ -3,7 +3,7 @@
 	description="Beschreibt, was mit Ihrem Azure Mobile Services-Projekt in Visual Studio passiert ist." 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
 	ms.date="09/23/2015" 
-	ms.author="patshea"/>
+	ms.author="tarcher"/>
 
 # Was passiert in meinem Javascript-Projekt, wenn ich Azure Mobile Services über verbundene Visual Studio-Dienste hinzugefügt habe?
 
@@ -46,4 +46,4 @@ Im Ordner "Dienste" wurden Konfigurationsdateien für verbundene Dienste hinzuge
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -42,4 +42,4 @@ In diesem Abschnitt ändern Sie die simulierte Geräteanwendung so, dass sie int
 [21]: ./media/iot-hub-getstarted-cloud-csharp/create-storage2.png
 [22]: ./media/iot-hub-getstarted-cloud-csharp/create-storage3.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

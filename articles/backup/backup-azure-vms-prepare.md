@@ -194,4 +194,4 @@ Wenn Sie Fragen oder Anregungen zu gewünschten Funktionen haben, können Sie un
 - [Sichern virtueller Computer](backup-azure-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

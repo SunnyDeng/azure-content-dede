@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen einer Prototypenanwendung für Azure Search" 
+	pageTitle="Erstellen einer Prototypenanwendung für Azure Search | Microsoft Azure | Gehostete Cloudsuchdienste" 
 	description="Erstellen Sie Ihren ersten Anwendungsprototypen, um sich mit Azure Search, einem gehosteten Cloudsuchdienst, vertraut zu machen." 
 	services="search" 
 	documentationCenter="" 
@@ -133,4 +133,4 @@ Weitere Informationen finden Sie unter folgenden Links:
 [1]: ./media/search-build-prototype/azsearch-datafiles.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

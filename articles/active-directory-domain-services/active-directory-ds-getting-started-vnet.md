@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="mahesh-unnikrishnan"
 	manager="udayh"
-	editor="inhenk"/>
+	editor="curtand"/>
 
 <tags
 	ms.service="active-directory-ds"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/12/2015"
+	ms.date="11/09/2015"
 	ms.author="maheshu"/>
 
 # Azure AD-Domänendienste *(Vorschau)* – Erste Schritte
@@ -21,9 +21,10 @@
 ## Richtlinien zur Auswahl eines virtuellen Azure-Netzwerks
 Beachten Sie bei der Auswahl eines virtuellen Netzwerks zur Verwendung mit Azure Active Directory-Domänendiensten die folgenden Richtlinien:
 
-- Stellen Sie sicher, dass Sie ein virtuelles Netzwerk in einer Region auswählen, die von den Azure Active Directory-Domänendiensten unterstützt wird. Die aktuelle Liste der unterstützten Azure-Regionen finden Sie auf der Seite [Regionen](active-directory-ds-regions.md).
+- Stellen Sie sicher, dass Sie ein virtuelles Netzwerk in einer Region auswählen, die von den Azure Active Directory-Domänendiensten unterstützt wird. Die aktuelle Liste der unterstützten Azure-Regionen finden Sie auf der Seite [Regionen](https://azure.microsoft.com/regions/#services).
 - Wenn Sie ein vorhandenes virtuelles Netzwerk verwenden möchten, stellen Sie sicher, dass es sich um ein regionales virtuelles Netzwerk handelt. Virtuelle Netzwerke, die den Vorgängermechanismus der Affinitätsgruppen verwenden, können nicht mit Azure Active Directory-Domänendiensten eingesetzt werden. Sie müssen [ältere virtuelle Netzwerke zu regionalen virtuellen Netzwerken migrieren](../virtual-networks-migrate-to-regional-vnet.md).
 - Wählen Sie das virtuelle Netzwerk aus, das virtuelle Computer hostet oder hosten wird, die Zugriff auf die Azure Active Directory-Domänendienste benötigen. Die Domänendienste können später nicht in ein anderes virtuelles Netzwerk verschoben werden.
+- Azure AD-Domänendiensten werden nicht von virtuellen Netzwerken unterstützt, die mit dem Azure-Ressourcen-Manager erstellt wurden.
 
 
 ## Schritt 2: Erstellen eines virtuellen Azure-Netzwerks
@@ -55,4 +56,4 @@ Führen Sie die folgenden Konfigurationsschritte durch, um ein virtuelles Azure-
 ---
 [**Nächster Schritt: Aktivieren der Azure AD-Domänendienste**](active-directory-ds-getting-started-enableaadds.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

@@ -1,4 +1,4 @@
-<properties pageTitle="Azure Search-Verwaltungs-REST-API, Version 2015-02-28 | Microsoft Azure" description="Azure Search-Verwaltungs-REST-API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
+<properties pageTitle="Azure Search-Verwaltungs-REST-API Version 2015-02-28 | Microsoft Azure | Gehosteter Cloudsuchdienst" description="Azure Search-Verwaltungs-REST-API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
 
 <tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="11/04/2015" ms.author="heidist" />
 
@@ -812,4 +812,4 @@ Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 Keine.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

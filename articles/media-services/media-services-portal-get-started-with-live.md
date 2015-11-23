@@ -190,14 +190,14 @@ Wenn die Streamingereignisse beendet sind und Sie die zuvor bereitgestellten Res
 - Sie können Ihren Streamingendpunkt beenden, sofern Sie das Archiv Ihres Liveereignisses nicht als bedarfsgesteuerten Datenstrom bereitstellen möchten. Durch Kanäle im angehaltenen Zustand fallen keine Kosten an.
 
 
-##Nächste Schritte
+##Nächste Schritte: Media Services-Lernpfade
 
-###Media Services-Lernpfade
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+##Feedback geben
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 ### Suchen Sie etwas anderes?
 
@@ -212,4 +212,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 <!-- Images -->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

@@ -57,12 +57,14 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 4. Klicken Sie nach Abschluss der Überwachungskonfiguration auf **Speichern**. Ähnlich wie bei den Media Services-Metriken sollten nach ca. einer Stunde Überwachungsdaten auf dem Dashboard angezeigt werden. Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue und $MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Kennzahlen zur Speicheranalyse](http://go.microsoft.com/fwlink/?LinkId=256668).
 
 
+
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]On-Demand-Streaming-Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 
 <!-- Images -->
@@ -71,4 +73,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

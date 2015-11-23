@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
 ms.service="virtual-machines"
  ms.devlang="na"
@@ -58,7 +58,7 @@ Unten sind die allgemeinen Schritte zum Erstellen eines virtuellen Azure-Compute
 
     * Für eine einfache Machbarkeitsstudienbereitstellung können Sie diesen Schritt auslassen und den virtuellen Hauptknotencomputer später zu einem Domänencontroller heraufstufen.
 
-3. Erstellen Sie im Azure-Verwaltungsportal oder Azure-Vorschauportal einen klassischen virtuellen Computer, indem Sie im Azure Marketplace das HPC Pack 2012 R2-Image auswählen. (Die Schritte für das Verwaltungsportal finden Sie [hier](virtual-machines-windows-tutorial-classic-portal.md).)
+3. Erstellen Sie im Azure-Portal oder Azure-Vorschauportal einen klassischen virtuellen Computer, indem Sie in Azure Marketplace das HPC Pack 2012 R2-Image auswählen. (Die Schritte für das Azure-Portal finden Sie [hier](virtual-machines-windows-tutorial-classic-portal.md).)
 
     **Überlegungen**
 
@@ -102,4 +102,4 @@ Unten sind die allgemeinen Schritte zum Erstellen eines virtuellen Azure-Compute
 <!--Image references-->
 [headnode]: ./media/virtual-machines-hpcpack-cluster-headnode/headnode.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="11/05/2015"
    ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Diensts zum Überwachen Ihres StorSimple-Geräts 
@@ -47,29 +47,55 @@ Für das gleiche Gerät wurde beginnend um 14:00 Uhr eine Cloudmomentaufnahme f�
 
 Die primäre, die Cloud- und die Gerätespeicherkapazität kann wie folgt beschrieben werden:
 
-- **Kapazitätsauslastung Primärspeicher** zeigt die Menge an Daten, die in StorSimple-Volumes geschrieben werden, bevor diese Daten dedupliziert und komprimiert werden. Die folgenden Diagramme stellen die Kapazitätsauslastung des Primärspeichers eines StorSimple-Geräts vor und nach dem Erstellen einer Cloudmomentaufnahme dar. Unter der Voraussetzung, dass es sich nur um Volumedaten handelt, sollte eine Cloudmomentaufnahme keine Auswirkungen auf den Primärspeicher haben. Wie Sie sehen, zeigt das Diagramm als Ergebnis der Erstellung der Cloudmomentaufnahme keinen Unterschied in der Kapazitätsauslastung des Primärspeichers. Beachten Sie, dass die Erstellung der Cloudmomentaufnahme auf dem betreffenden Gerät um 14:00 Uhr gestartet wurde.
+###Kapazitätsauslastung des primären Speichers
+ 
+In diesen Diagrammen ist die Datenmenge dargestellt, die auf StorSimple-Volumes geschrieben wird, bevor die Daten dedupliziert und komprimiert werden. Sie können die Auslastung des primären Speichers für alle Volumes oder ein einzelnes Volume anzeigen.
 
-	![Kapazitätsauslastung des Primärspeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_PrimaryCapacityUtil_For_AllVolumes2M.png)
+Wenn Sie die Diagramme mit der Volume-Kapazitätsauslastung des primären Speichers für alle Volumes und für einzelne Volumes anzeigen und in beiden Fällen die primären Daten addieren, kann es sein, dass die beiden Ergebnisse nicht übereinstimmen. Die Gesamtmenge der primären Daten auf allen Volumes stimmt unter Umständen nicht mit der Summe der primären Daten der einzelnen Volumes überein. Dies kann einen der folgenden Gründe haben:
+
+- **Einbeziehung der Momentaufnahmedaten für alle Volumes**: Die primären Daten, die für alle Volumes angezeigt werden, sind die Summe der primären Daten für jedes Volume und der Momentaufnahmedaten. Die primären Daten, die für ein bestimmtes Volume angezeigt werden, entsprechen nur der Datenmenge, die dem Volume zugeordnet ist (und enthalten nicht die entsprechenden Volume-Momentaufnahmedaten).
+
+	Dies lässt sich auch anhand der folgenden Gleichung erläutern:
+
+	*Primäre Daten (alle Volumes) = Summe von (Primäre Daten (Volume i) + Größe der Momentaufnahmedaten (Volume i))*
 	
-	![Kapazitätsauslastung des Primärspeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_PrimaryCapacityUtil_For_AllVolumes1M.png)
+	*Hierbei gilt Folgendes: Primäre Daten (Volume i) = Größe der primären Daten, die Volume i zugeordnet sind.*
+ 
+	Wenn die Momentaufnahmen über den Dienst gelöscht werden, wird der Löschvorgang asynchron im Hintergrund durchgeführt. Es kann einige Zeit dauern, bis die Volumedatengröße nach dem Löschen der Momentaufnahmen aktualisiert wird.
+ 
+- **Volumes mit deaktivierter Überwachung in allen Volumes**: Wenn Sie auf Ihrem Gerät Volumes haben, für die die Überwachung deaktiviert ist, sind die Überwachungsdaten für diese einzelnen Volumes in den Diagrammen nicht verfügbar. In den Daten für alle Volumes im Diagramm sind aber die Volumes enthalten, für die die Überwachung deaktiviert ist.
+ 
+- **Gelöschte Volumes mit vorhandenen zugeordneten Backups für alle Volumes**: Wenn Volumes mit Momentaufnahmedaten gelöscht werden, die zugeordneten Momentaufnahmen aber noch vorhanden sind, stimmen die Werte unter Umständen nicht überein.
+
+- **Gelöschte Volumes für alle Volumes**: In einigen Fällen sind alte Volumes unter Umständen auch dann noch vorhanden, wenn sie gelöscht wurden. Die Auswirkung des Löschvorgangs wird nicht angezeigt, und für das Gerät wird ggf. eine geringere verfügbare Kapazität angegeben. Wenden Sie sich an den Microsoft-Support, um diese Volumes entfernen zu lassen.
+
+Die folgenden Diagramme stellen die Kapazitätsauslastung des Primärspeichers eines StorSimple-Geräts vor und nach dem Erstellen einer Cloudmomentaufnahme dar. Unter der Voraussetzung, dass es sich nur um Volumedaten handelt, sollte eine Cloudmomentaufnahme keine Auswirkungen auf den Primärspeicher haben. Wie Sie sehen, zeigt das Diagramm als Ergebnis der Erstellung der Cloudmomentaufnahme keinen Unterschied in der Kapazitätsauslastung des Primärspeichers. Beachten Sie, dass die Erstellung der Cloudmomentaufnahme auf dem betreffenden Gerät um 14:00 Uhr gestartet wurde.
+
+![Kapazitätsauslastung des Primärspeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_PrimaryCapacityUtil_For_AllVolumes2M.png)
+
+![Kapazitätsauslastung des Primärspeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_PrimaryCapacityUtil_For_AllVolumes1M.png)
 
 
-- **Kapazitätsauslastung Cloudspeicher** zeigt die Menge an genutztem Speicherplatz in der Cloud. Diese Daten sind dedupliziert und komprimiert. Diese Datenmenge umfasst Cloudmomentaufnahmen, die möglicherweise Daten enthalten, die in keinem Primärvolume reflektiert und aus Gründen der Legacy oder im Rahmen einer vorgeschriebenen Aufbewahrung gespeichert werden. Sie können die Auslastungszahlen des Primär- und Cloudspeichers vergleichen, um einen Eindruck der Datenreduzierungsrate zu erhalten, wenngleich das Ergebnis des Vergleichs nicht ganz exakt ist. Die folgenden Diagramme stellen die Kapazitätsauslastung des Cloudspeichers eines StorSimple-Geräts vor und nach dem Erstellen einer Cloudmomentaufnahme dar. Die Cloudmomentaufnahme wurde auf dem betreffenden Gerät ungefähr um 14:00 Uhr gestartet, und Sie können sehen, dass die Kapazitätsauslastung des Cloudspeichers um diese Zeit in die Höhe schnellte und von 5,73 MB auf 4,04 GB anstieg.
+###Kapazitätsauslastung des Cloudspeichers
 
-	![Kapazitätsauslastung des Cloudspeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_CloudCapacityUtil_For_AllVolumeContainers2M.png)
+In diesen Diagrammen ist die Menge des verwendeten Cloudspeichers dargestellt. Diese Daten sind dedupliziert und komprimiert. Diese Datenmenge umfasst Cloudmomentaufnahmen, die möglicherweise Daten enthalten, die in keinem Primärvolume reflektiert und aus Gründen der Legacy oder im Rahmen einer vorgeschriebenen Aufbewahrung gespeichert werden. Sie können die Auslastungszahlen des Primär- und Cloudspeichers vergleichen, um einen Eindruck der Datenreduzierungsrate zu erhalten, wenngleich das Ergebnis des Vergleichs nicht ganz exakt ist. Die folgenden Diagramme stellen die Kapazitätsauslastung des Cloudspeichers eines StorSimple-Geräts vor und nach dem Erstellen einer Cloudmomentaufnahme dar. Die Cloudmomentaufnahme wurde auf dem betreffenden Gerät ungefähr um 14:00 Uhr gestartet, und Sie können sehen, dass die Kapazitätsauslastung des Cloudspeichers um diese Zeit in die Höhe schnellte und von 5,73 MB auf 4,04 GB anstieg.
 
-	![Kapazitätsauslastung des Cloudspeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_CloudCapacityUtil_For_AllVolumeContainers1M.png)
+![Kapazitätsauslastung des Cloudspeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_CloudCapacityUtil_For_AllVolumeContainers2M.png)
+
+![Kapazitätsauslastung des Cloudspeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_CloudCapacityUtil_For_AllVolumeContainers1M.png)
 
 
-- **Kapazitätsauslastung Gerätespeicher** zeigt die Gesamtauslastung des Geräts an. Diese Zahl ist höher als die Auslastung des Primärspeichers, da sie auch die lineare SSD-Schicht umfasst. Diese Schicht enthält eine Menge an Daten, die auch auf den anderen Schichten des Geräts vorhanden ist. Die Kapazität der linearen SSD-Schicht ist zyklisch angelegt, d. h. wenn neue Daten eintreffen, werden die alten Daten in die HDD-Schicht (und zu diesem Zeitpunkt dedupliziert und komprimiert) und anschließend in die Cloud verschoben.
+###Kapazitätsauslastung des Gerätespeichers
 
-	Im Lauf der Zeit wird sich die Kapazitätsauslastung des Primärspeichers und des Geräts wahrscheinlich parallel erhöhen, bis die ersten Daten in die Cloud verschoben werden. Zu diesem Zeitpunkt wird die Kapazitätsauslastung des Geräts vermutlich auf dem gleichen Niveau bleiben, die Kapazitätsauslastung des Primärspeichers wird sich jedoch erhöhen, da mehr Daten geschrieben werden.
+In diesen Diagrammen ist die Gesamtauslastung des Geräts dargestellt. Diese Zahl ist höher als die Auslastung des primären Speichers, da sie auch die lineare SSD-Schicht umfasst. Diese Schicht enthält eine Menge an Daten, die auch auf den anderen Schichten des Geräts vorhanden ist. Die Kapazität der linearen SSD-Schicht ist zyklisch angelegt, d. h. wenn neue Daten eintreffen, werden die alten Daten in die HDD-Schicht (und zu diesem Zeitpunkt dedupliziert und komprimiert) und anschließend in die Cloud verschoben.
 
-	Die folgenden Diagramme stellen die Kapazitätsauslastung des Primärspeichers eines StorSimple-Geräts vor und nach dem Erstellen einer Cloudmomentaufnahme dar. Die Cloudmomentaufnahme begann um 14:00 Uhr, und die Kapazitätsauslastung des Gerätespeichers begann um diese Zeit, abzunehmen. Die Kapazitätsauslastung des Gerätespeichers fiel von 11,58 GB auf 7,48 GB. Dies weist darauf hin, dass die unkomprimierten Daten in der linearen SSD-Schicht höchst wahrscheinlich dedupliziert, komprimiert und in die HDD-Schicht verschoben wurden. Beachten Sie, dass dieses Abfallen möglicherweise nicht zu beobachten ist, wenn das Gerät sowohl in der SSD- als auch in der HDD-Schicht bereits eine große Menge Daten aufweist. In diesem Beispiel hat das Gerät eine kleine Datenmenge.
+Im Lauf der Zeit wird sich die Kapazitätsauslastung des Primärspeichers und des Geräts wahrscheinlich parallel erhöhen, bis die ersten Daten in die Cloud verschoben werden. Zu diesem Zeitpunkt wird die Kapazitätsauslastung des Geräts vermutlich auf dem gleichen Niveau bleiben, die Kapazitätsauslastung des Primärspeichers wird sich jedoch erhöhen, da mehr Daten geschrieben werden.
 
-	![Kapazitätsauslastung des Gerätespeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_DeviceCapacityUtil2M.png)
+Die folgenden Diagramme stellen die Kapazitätsauslastung des Primärspeichers eines StorSimple-Geräts vor und nach dem Erstellen einer Cloudmomentaufnahme dar. Die Cloudmomentaufnahme begann um 14:00 Uhr, und die Kapazitätsauslastung des Gerätespeichers begann um diese Zeit, abzunehmen. Die Kapazitätsauslastung des Gerätespeichers fiel von 11,58 GB auf 7,48 GB. Dies weist darauf hin, dass die unkomprimierten Daten in der linearen SSD-Schicht höchst wahrscheinlich dedupliziert, komprimiert und in die HDD-Schicht verschoben wurden. Beachten Sie, dass dieses Abfallen möglicherweise nicht zu beobachten ist, wenn das Gerät sowohl in der SSD- als auch in der HDD-Schicht bereits eine große Menge Daten aufweist. In diesem Beispiel hat das Gerät eine kleine Datenmenge.
 
-	![Kapazitätsauslastung des Gerätespeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_DeviceCapacityUtil1M.png)
+![Kapazitätsauslastung des Gerätespeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_DeviceCapacityUtil2M.png)
+
+![Kapazitätsauslastung des Gerätespeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_DeviceCapacityUtil1M.png)
 
 
 ## Netzwerkdurchsatz
@@ -95,4 +121,4 @@ Das Diagramm unten stellt den Netzwerkdurchsatz für „Data 0“ und „Data 4�
 
 - Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -45,7 +45,7 @@ Die Unterstützung der SAS-Authentifizierung für Service Bus ist im Azure .NET 
 
 ## ACS-Authentifizierung
 
-Die Service Bus-Authentifizierung über ACS wird über einen begleitenden ACS-Namespace "-sb" verwaltet. Soll ein begleitender ACS-Namespace für einen Service Bus-Namespace erstellt werden, können Sie den Service Bus-Namespace nicht über das Azure-Verwaltungsportal erstellen. Sie müssen den Namespace stattdessen mit dem PowerShell-Cmdlet [New-AzureSBNamespace](https://msdn.microsoft.com/library/azure/dn495165.aspx) erstellen. Beispiel:
+Die Service Bus-Authentifizierung über ACS wird über einen begleitenden ACS-Namespace "-sb" verwaltet. Soll ein begleitender ACS-Namespace für einen Service Bus-Namespace erstellt werden, können Sie den Service Bus-Namespace nicht über das Azure-Portal erstellen. Sie müssen den Namespace stattdessen mit dem PowerShell-Cmdlet [New-AzureSBNamespace](https://msdn.microsoft.com/library/azure/dn495165.aspx) erstellen. Beispiel:
 
 ```
 New-AzureSBNamespace <namespaceName> "<Region>” -CreateACSNamespace $true
@@ -73,4 +73,4 @@ Eine allgemeine Übersicht über SAS in Service Bus finden Sie unter [SAS (Share
 
 Weitere Informationen zu ACS-Token finden Sie unter [Vorgehensweise: Anfordern eines Tokens bei ACS mithilfe des OAuth-WRAP-Protokolls](https://msdn.microsoft.com/library/hh674475.aspx).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->
