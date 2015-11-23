@@ -3,10 +3,10 @@
    description="Fügen Sie Azure Active Directory mithilfe des Dialogfelds ";Verbundene Dienste hinzufügen"; in Visual Studio hinzu"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
    editor="tlee" />
-<tags  ms.service="visual-studio-online"" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="visual-studio-online" ms.date="08/12/2015" ms.author="patshea" />
+<tags  ms.service="visual-studio-online"" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="visual-studio-online" ms.date="08/12/2015" ms.author="tarcher" />
 
 # Hinzufügen von Azure Active Directory mithilfe von verbundenen Diensten in Visual Studio 
 
@@ -72,4 +72,4 @@ Stellen Sie Fragen, und holen Sie sich Hilfe.
 
  - [Blogbeitrag: Intro to Azure AD](http://blogs.msdn.com/b/brunoterkaly/archive/2014/03/03/introduction-to-windows-azure-active-directory.aspx) (in englischer Sprache)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

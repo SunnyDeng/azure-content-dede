@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/10/2015"
+	ms.date="11/09/2015"
 	ms.author="cynthn"/>
 
 
@@ -25,7 +25,7 @@
 
 [MySQL](http://www.mysql.com) ist eine beliebte Open-Source-SQL-Datenbank. Mit dem [Azure-Portal](http://manage.windowsazure.com) können Sie über die Bildergalerie einen virtuellen Windows Server 2012 R2-Computer erstellen. Sie können ihn dann als MySQL-Server installieren und konfigurieren.
 
-Anleitungen zum Installieren von MySQL auf Linux finden Sie unter: [Installieren von MySQL in Azure](virtual-machines-linux-install-mysql.md).
+Anleitungen zum Installieren von MySQL auf Linux finden Sie unter: [Installieren von MySQL auf Azure](virtual-machines-linux-install-mysql.md).
 
 Dieses Lernprogramm beschreibt Folgendes:
 
@@ -59,8 +59,8 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 1.	Wenn Sie über Remotedesktop eine Verbindung zum virtuellen Computer aufgebaut haben, klicken Sie im Startbildschirm auf **Internet Explorer**.
 2.	Wählen Sie die Schaltfläche **Tools** oben rechts (Zahnradsymbol) aus, und klicken Sie dann auf **Internetoptionen**. Klicken Sie auf die Registerkarte **Sicherheit**, auf das Symbol **Vertrauenswürdige Sites** und dann auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites http://*.mysql.com hinzu. Klicken Sie auf **Schließen** und dann auf **OK**.
 3.	Geben Sie in der Adressleiste von Internet Explorer Folgendes ein: http://dev.mysql.com/downloads/mysql/.
-4.	Verwenden Sie die MySQL-Website, um die neueste Version von MySQL-Installer für Windows zu suchen und herunterzuladen. Laden Sie bei Auswahl des MySQL-Installer die Version mit dem kompletten Dateisatz herunter (beispielsweise mysql-installer-community-5.6.23.0.msi mit einer Dateigröße von 282,4 MB), und speichern Sie die Installationsprogrammdatei auf dem Windows-Desktop.
-5.	Doppelklicken Sie auf dem Desktop auf die Installationsprogrammdatei, um die Installation zu beginnen.
+4.	Verwenden Sie die MySQL-Website, um die neueste Version von MySQL-Installer für Windows zu suchen und herunterzuladen. Laden Sie bei Auswahl des MySQL-Installers die Version mit dem kompletten Dateisatz herunter (beispielsweise mysql-installer-community-5.6.23.0.msi mit einer Dateigröße von 282,4 MB), und speichern Sie die Installationsprogrammdatei.
+5.	Nachdem das Installationsprogramm heruntergeladen wurde, klicken Sie auf **Ausführen**, um die Installation zu starten.
 6.	Stimmen Sie auf der Seite **Lizenzvereinbarung** der Lizenzvereinbarung zu, und klicken Sie auf **Weiter**.
 7.	Klicken Sie auf der Seite **Einrichtungstyp wählen** auf den gewünschten Einrichtungstyp, und klicken Sie dann auf **Weiter**. Bei den folgenden Schritten wird davon ausgegangen, dass der Einrichtungstyp **Nur Server** ausgewählt ist.
 8.	Klicken Sie auf der Seite **Installation** auf **Ausführen**. Klicken Sie nach Abschluss der Installation auf **Weiter**.
@@ -91,6 +91,7 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 
 19.	Sie können auch Standardeinstellungen für die Serverkonfiguration konfigurieren, wie die Basis- und Datenverzeichnisse und -laufwerke, mit Einträgen in der Datei C:\\Program Files (x86)\\MySQL\\MySQL Server 5.6\\my-default.ini. Weitere Informationen finden Sie unter [5\.1.2 Serverkonfiguration: Standardeinstellungen](http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html).
 
+## Endpunkte konfigurieren
 
 Wenn der MySQL Server-Dienst für die MySQL-Clientcomputer im Internet verfügbar sein soll, müssen Sie einen Endpunkt für den TCP-Port konfigurieren, auf dem der MySQL Server-Dienst lauscht, und eine zusätzliche Windows-Firewallregel erstellen. Dies ist der TCP-Port 3306, es sei denn, Sie haben einen anderen Port auf der Seite **Typ und Netzwerke** (Schritt 10 des vorherigen Verfahrens) angegeben.
 
@@ -106,9 +107,16 @@ So konfigurieren Sie einen Endpunkt für den MySQL Server-Dienst:
 4.	Wenn Sie den standardmäßigen MySQL-TCP-Port 3306 verwenden, klicken Sie auf **MySQL** bei **Name**, und aktivieren Sie das Kontrollkästchen.
 5.	Wenn Sie einen anderen TCP-Port verwenden, geben Sie einen eindeutigen **Namen** ein. Wählen Sie im Protokoll **TCP**, geben Sie die Portnummer in die Felder **Öffentlicher Port** und **Privater Port** ein, und aktivieren Sie das Kontrollkästchen.
 
-Um eine Windows-Firewallregel hinzuzufügen, die MySQL-Datenverkehr aus dem Internet zulässt, führen Sie den folgenden Befehl auf dem MySQL Server-Computer an einer Eingabeaufforderung mit Administratorrechten von Windows PowerShell aus.
+## Hinzufügen einer Windows-Firewallregel zum Zulassen von MySQL-Datenverkehr
+
+Um eine Windows-Firewallregel hinzuzufügen, die MySQL-Datenverkehr aus dem Internet zulässt, führen Sie den folgenden Befehl auf dem virtuellen MySQL Server-Computer an einer Eingabeaufforderung mit erweiterten Berechtigungen von Windows PowerShell aus.
 
 	New-NetFirewallRule -DisplayName "MySQL56" -Direction Inbound –Protocol TCP –LocalPort 3306 -Action Allow -Profile Public
+
+
+	
+## Testen der Remoteverbindung
+
 
 Um die Remoteverbindung zum MySQL Server-Dienst zu testen, der auf dem virtuellen Azure-Computer ausgeführt wird, müssen Sie zunächst den DNS-Namen bestimmen, der dem Clouddienst mit dem virtuellen Computer entspricht, der MySQL Server ausführt.
 
@@ -130,4 +138,4 @@ Um die Remoteverbindung zum MySQL Server-Dienst zu testen, der auf dem virtuelle
 
 Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.com/doc/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

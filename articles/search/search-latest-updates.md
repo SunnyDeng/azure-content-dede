@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Neuerungen im aktuellen Update zu Azure Search | Microsoft Azure" 
+	pageTitle="Neuerungen im aktuellen Update zu Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Versionshinweise zu Azure Search mit einer Beschreibung der aktuellen Dienständerungen." 
 	services="search" 
 	documentationCenter="" 
@@ -125,4 +125,4 @@ Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Ve
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

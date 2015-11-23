@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Videos, Beispiele und Tutorials in Azure Search | Microsoft Azure"
+	pageTitle="Videos, Beispiele und Tutorials in Azure Search | Microsoft Azure | Gehostete Cloudsuchdienste"
 	description="Zentrale Liste mit allen Videos, Beispielen, Demos und Tutorials, die für Azure Search, einen in Microsoft Azure gehosteten Clouddienst, erstellt wurden."
 	services="search"
 	documentationCenter=""
@@ -95,4 +95,4 @@ Auf CodePlex finden Sie mehrere Beispiele, die während der öffentlichen Vorsch
 - [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer eingebetteten lokalen Datenbank lädt.
 - [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) ist eine Windows-Konsolenanwendung, die Bewertungsprofile für die Optimierung der Suchergebnisse definiert, ausführt und aktualisiert.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

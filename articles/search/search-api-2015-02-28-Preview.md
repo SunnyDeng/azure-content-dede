@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure"
+   pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure | Gehosteter Cloudsuchdienst"
    description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Lucene-Abfragesyntax und moreLikeThis-Suchvorgänge."
    services="search"
    documentationCenter="na"
@@ -1742,4 +1742,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

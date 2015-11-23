@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-command-line-tools.md)
 
-In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure SDKs, mit PowerShell und über das Azure-Vorschauportal ausführen.
+In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure SDKs, mit Azure PowerShell und über das Azure-Vorschauportal ausführen.
 
 Azure-Ressourcen-Manager ermöglicht Ihnen, eine Gruppe von Ressourcen – virtuelle Computer, Websites, Datenbanken usw. – als einzelne bereitstellbare Einheit zu erstellen. Sie können dann alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. Für die Bereitstellung beschreiben Sie die Gruppenressourcen in einer JSON-Vorlage, die Sie dann für unterschiedliche Umgebungen, wie z. B. Test, Staging und Produktion, verwenden können.
 
@@ -1251,7 +1251,24 @@ Erstellt eine öffentliche IP-Ressource. Sie erstellen die öffentliche IP-Resso
 	info:    network public-ip create command OK
 
 
-Parameteroptionen: -h, --help output usage information -v, --verbose use verbose output --json use json output -g, --resource-group <resource-group> the name of the resource group -n, --name <name> the name of the public ip -l, --location <location> the location -d, --domain-name-label <domain-name-label> the domain name label. Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest. -a, --allocation-method <allocation-method> die Zuordnungsmethode[Static][Dynamic] -i, --idletimeout <idletimeout> das Leerlauftimeout in Minuten -f, --reverse-fqdn <reverse-fqdn> der Reverse-FQDN -t, --tags <tags> die Tagliste. Can be multiple. In the format of "name=value". Name is required and value is optional. For example, -t tag1=value1;tag2 -s, --subscription <subscription> the subscription identifier <br>
+Parameteroptionen:
+	-h, --help                                  output usage information
+	-v, --verbose                                use verbose output
+	--json                                       use json output
+	-g, --resource-group <resource-group>        the name of the resource group
+	-n, --name <name>                            the name of the public ip
+	-l, --location <location>                    the location
+	-d, --domain-name-label <domain-name-label>  the domain name label.
+	Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest.
+	-a, --allocation-method <allocation-method>  die Zuordnungsmethode[Static][Dynamic]
+	-i, --idletimeout <idletimeout>              das Leerlauftimeout in Minuten
+	-f, --reverse-fqdn <reverse-fqdn>            der Reverse-FQDN
+	-t, --tags <tags>                            die Tagliste.
+	Can be multiple. In the format of "name=value".
+	Name is required and value is optional.
+	For example, -t tag1=value1;tag2
+	-s, --subscription <subscription>            the subscription identifier
+<br>
 
 	network public-ip set [options] <resource-group> <name>
 Aktualisiert die Eigenschaften einer vorhandenen öffentlichen IP-Ressource. Im folgenden Beispiel wurde die öffentliche IP-Adresse von "Dynamisch" in "Statisch" geändert.
@@ -1742,4 +1759,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

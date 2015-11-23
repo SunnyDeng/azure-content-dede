@@ -70,4 +70,4 @@ In diesem Abschnitt ändern Sie die unter [Senden von Cloud-zu-Gerät-Nachrichte
 
 <!-- Images -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

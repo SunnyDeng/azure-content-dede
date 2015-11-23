@@ -1,10 +1,10 @@
 <properties
     pageTitle="Migrieren zu Azure Premium-Speicher | Microsoft Azure"
-    description="Migrieren Sie zu Azure Premium-Speicher für leistungsstarke Datenträgerunterstützung mit niedriger Latenz von E/A-intensiven Workloads in Azure Virtual Machines."
+    description="Migrieren Sie die vorhandenen virtuellen Computer zu Azure Storage Premium. Storage Premium bietet Datenträgerunterstützung für hohe Leistung mit geringer Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden."
     services="storage"
     documentationCenter="na"
-    authors="tamram"
-    manager="adinah"
+    authors="ms-prkhad"
+    manager=""
     editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/23/2015"
+    ms.date="11/04/2015"
     ms.author="tamram"/>
 
 
@@ -21,17 +21,26 @@
 
 ## Übersicht
 
-Der Zweck dieser Anleitung ist es, neue Benutzer von Microsoft Azure Storage Premium besser auf einen reibungslosen Übergang vom aktuellen System hin zu Storage Premium vorzubereiten. Die Anleitung behandelt drei der wichtigsten Komponenten in diesem Prozess: Planen der Migration zu Storage Premium, Migrieren vorhandener virtueller Festplatten (VHDs) zu Storage Premium und Erstellen von virtuellen Azure-Computerinstanzen in Storage Premium.
+Azure Storage Premium bietet Datenträgerunterstützung für hohe Leistung mit geringer Latenz für virtuelle Computer mit E/A-intensiven Workloads. Datenträger von virtuellen Computern (VM), die Storage Premium nutzen, speichern Daten auf SSDs (Solid State Drives). Sie können die VM-Datenträger Ihrer Anwendung zu Azure Storage Premium migrieren, um von der Geschwindigkeit und Leistung dieser Laufwerke zu profitieren.
+
+Ein virtueller Azure-Computer unterstützt das Anfügen mehrerer Storage Premium-Datenträger, damit Ihre Anwendung bis zu 64 TB Speicher pro virtuellem Computer nutzen kann. Mit Storage Premium können Ihre Anwendungen bis zu 80.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellem Computer nutzen sowie 2.000 MB Datenträgerdurchsatz pro Sekunde und virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge erzielen.
+
+>[AZURE.NOTE]Es wird empfohlen, alle Datenträger von virtuellen Computer, die eine hohe IOPS-Leistung erfordern, zu Azure Storage Premium zu migrieren, um die beste Leistung für Ihre Anwendung zu erzielen. Wenn Ihr Datenträger keine hohe IOPS-Leistung erfordert, können Sie die Kosten beschränken, indem Sie sie im Standard-Speicher belassen. Dieser Speicher speichert Daten auf Datenträgern virtueller Computer auf Festplatten (Hard Disk Drives, HDDs) anstelle von SSDs.
+
+Der Zweck dieser Anleitung ist es, neue Benutzer von Azure Storage Premium besser auf einen reibungslosen Übergang vom aktuellen System hin zu Storage Premium vorzubereiten. Die Anleitung behandelt drei der wichtigsten Komponenten in diesem Prozess: Planen der Migration zu Storage Premium, Migrieren vorhandener virtueller Festplatten (VHDs) zu Storage Premium und Erstellen von virtuellen Azure-Computerinstanzen in Storage Premium.
 
 Für den Abschluss des vollständigen Migrationsprozesses sind möglicherweise zusätzliche Aktionen vor und nach den in dieser Anleitung angegebenen Schritten erforderlich. Beispiele sind das Konfigurieren von virtuellen Netzwerken oder Endpunkten oder Ändern von Code innerhalb der Anwendung selbst. Diese Aktionen sind für jede Anwendung eindeutig. Sie sollten sie zusammen mit den Schritten in dieser Anleitung ausführen, um den kompletten Wechsel zu Storage Premium so reibungslos wie möglich zu gestalten.
 
 Eine Funktionsübersicht von Azure Storage Premium finden Sie unter [Storage Premium: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
-Diese Anleitung ist in zwei Abschnitte unterteilt, die die folgenden beiden Migrationsszenarien abdecken: - [Migrieren von VMs außerhalb von Azure nach Azure Storage Premium](#migrating-vms-from-outside-azure-to-azure-premium-storage) - [Migrieren vorhandener Azure-VMs nach Azure Storage Premium](#migrating-existing-azure-vms-to-azure-premium-storage).
+Dieser Leitfaden ist in zwei Abschnitte gegliedert, in denen die folgenden zwei Migrationsszenarien erläutert werden:
+
+- [Migrieren von VMs außerhalb von Azure zu Azure Storage Premium](#migrating-vms-from-outside-azure-to-azure-premium-storage)
+- [Migrieren von vorhandenen Azure-VMs zu Azure Storage Premium](#migrating-existing-azure-vms-to-azure-premium-storage)
 
 Befolgen Sie je nach Szenario die im entsprechenden Abschnitt angegebenen Schritte.
 
-## Migrieren von VMs außerhalb von Azure nach Azure Storage Premium
+## Migrieren von VMs von anderen Plattformen zu Azure Storage Premium
 
 ### Voraussetzungen
 - Sie benötigen ein Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie für einen Monat eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) abonnieren, oder Sie besuchen die Seite mit den [Azure-Preisen](http://azure.microsoft.com/pricing/) für weitere Optionen.
@@ -241,9 +250,9 @@ Verwenden Sie die folgenden PowerShell-Cmdlets, um die virtuelle Festplatte als 
 
 Kopieren und speichern Sie den Namen des neuen Azure-Datenträgers. In dem Beispiel oben ist dies *DataDisk*.
 
-### Erstellen eines virtuellen Azure-Computers der DS-Serie
+### Erstellen eines virtuellen Computers der Azure DS- oder GS-Serie.
 
-Nachdem das Betriebssystemimage oder der Betriebssystemdatenträger registriert wurde, können Sie eine neue Azure-VM-Instanz der DS-Serie erstellen. Sie verwenden dazu den Namen des Betriebssystemimages oder Betriebssystemdatenträgers, den Sie registriert haben. Wählen Sie den virtuellen Computer aus der Premium-Speicherebene aus. Im folgenden Beispiel wird die VM-Größe *Standard\_DS2* verwendet. Mithilfe der gleichen Schritte können Sie auch einen virtuellen Computer der GS-Serie erstellen.
+Nachdem das Betriebssystemimage oder der Betriebssystemdatenträger registriert wurde, können Sie einen neuen virtuellen Computer der DS- oder GS-Serie erstellen. Sie verwenden dazu den Namen des Betriebssystemimages oder Betriebssystemdatenträgers, den Sie registriert haben. Wählen Sie den virtuellen Computer aus der Premium-Speicherebene aus. Im folgenden Beispiel wird die VM-Größe *Standard\_DS2* verwendet.
 
 >[AZURE.NOTE]Aktualisieren Sie die Größe des Datenträgers, um sicherzustellen, dass er Ihren Anforderungen an Kapazität und Leistung sowie den Azure-Datenträgergrößen entspricht.
 
@@ -668,4 +677,4 @@ Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und A
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

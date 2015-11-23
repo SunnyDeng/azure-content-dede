@@ -187,8 +187,7 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
   [Azure SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/library/azure/hh694271.aspx
-  [Azure Management Portal]: http://manage.windowsazure.com/
   [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
   [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/27/2015" 
+	ms.date="11/09/2015" 
 	ms.author="spelluru"/>
 
 # Datenverschiebungsaktivitäten
@@ -51,7 +51,10 @@ Die Kopieraktivität verwendet ein Eingabedataset (**Quelle**) und kopiert Daten
 Die Kopieraktivität bietet die folgenden Funktionen:
 
 ### <a name="global"></a>Global verfügbare Datenverschiebung
-Der Dienst für Datenverschiebungen, der die Kopieraktivität unterstützt, ist in den folgenden Regionen und Ländern global verfügbar. Die global verfügbare Topologie gewährleistet effiziente Datenverschiebungen und vermeidet in den meisten Fällen regionsübergreifende Hops.
+Obwohl Azure Data Factory selbst nur in der Region "USA Westen" verfügbar ist, steht der Dienst für Datenverschiebungen, der die Kopieraktivität unterstützt, global in den folgenden Regionen und Ländern zur Verfügung. Die global verfügbare Topologie gewährleistet effiziente Datenverschiebungen und vermeidet in den meisten Fällen regionsübergreifende Hops.
+
+
+Wenn Sie Daten aus einer Cloudquelle zu einem Cloudziel kopieren (z. B. von Azure Blob zu Azure SQL), wählt der Dienst für Datenverschiebungen die Bereitstellung, die der Senke für die Übertragung am nächsten liegt. Wenn Sie Daten aus einer lokalen Datenquelle zu einer Cloud kopieren oder umgekehrt (z. B. vom lokalen SQL Server zu Azure Blob), werden die Daten tatsächlich über das Datenverwaltungsgateway verschoben. Der Dienst für Datenverschiebungen ist daran nicht beteiligt.
 
 | Region | Gebiet |
 | ------ | --------- | 
@@ -66,6 +69,8 @@ Der Dienst für Datenverschiebungen, der die Kopieraktivität unterstützt, ist 
 | Westeuropa | EMEA |
 | Südostasien | APAC |
 | Japan Ost | APAC |
+
+
 
 ### <a name="moveonpremtocloud"></a>Sicheres Verschieben von Daten zwischen einem lokalen Speicherort und der Cloud
 Eine Herausforderung für die moderne Datenintegration ist das nahtlose Verschieben von Daten zwischen lokalen Speicherorten und der Cloud. Das Datenverwaltungsgateway ist ein Agent, den Sie lokal installieren können, um hybride Datenpipelines zu ermöglichen.
@@ -98,8 +103,4 @@ Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene
 
 Bei der Kopieraktivität hängt der Abschnitt **typeProperties** von den Typen der Quellen und Senken ab. Auf jeder der oben genannten Seiten für Datenspeicher sind diese Eigenschaften für den jeweiligen Datenspeichertyp dokumentiert.
 
-
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-movement-activities.md).
-
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

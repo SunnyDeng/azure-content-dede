@@ -204,10 +204,10 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 ## Nächste Schritte
 
 * Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers mit Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
-* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers im Azure-Portal finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][psrm].
+* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers im Azure-Vorschauportal finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][psrm].
 
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

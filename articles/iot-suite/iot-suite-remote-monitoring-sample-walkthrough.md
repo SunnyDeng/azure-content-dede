@@ -108,7 +108,7 @@ Diese Web-App ermöglicht Folgendes:
 - Anzeigen des Befehlsverlaufs für ein Gerät.
 
 ### Beobachten des Verhaltens der Cloudlösung
-Sie können die bereitgestellten Ressourcen anzeigen, indem Sie zum [Azure-Verwaltungsportal](https://portal.azure.com) wechseln und zur Ressourcengruppe mit dem von Ihnen angegebenen Lösungsnamen navigieren.
+Sie können die bereitgestellten Ressourcen anzeigen, indem Sie zum [Azure-Vorschauportal](https://portal.azure.com) wechseln und zur Ressourcengruppe mit dem von Ihnen angegebenen Lösungsnamen navigieren.
 
 ![](media/iot-suite-remote-monitoring-sample-walkthrough/azureportal_01.png)
 
@@ -144,4 +144,4 @@ Sie können ein Gerät deaktivieren, und nachdem es deaktiviert wurde, können S
 
 ![](media/iot-suite-remote-monitoring-sample-walkthrough/solutionportal_08.png)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

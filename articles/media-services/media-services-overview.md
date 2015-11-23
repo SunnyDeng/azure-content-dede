@@ -93,7 +93,7 @@ Dieser Abschnitt erläutert allgemeine Szenarien und enthält Links zu relevante
 Damit Sie die dynamische Verschlüsselung verwenden können, müssen Sie zunächst mindestens eine reservierte Einheit für das Streaming auf dem Streamingendgerät abrufen, auf dem Sie verschlüsselte Inhalte streamen möchten.
 
 1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Asset hoch. Wenden Sie die Speicherverschlüsselung auf das Asset an.
-1. Codieren Sie das Medienobjekt in einen Satz von MP4-Dateien mit adaptiver Bitrate. Wenden Sie die Speicherverschlüsselung auf das Ausgabeasset an.
+1. Codieren Sie das Medienobjekt in einen Satz von MP4-Dateien mit adaptiver Bitrate. Wenden Sie die Speicherverschlüsselung auf das Ausgabemedienobjekt an.
 1. Erstellen Sie einen Inhaltsverschlüsselungsschlüssel für das Asset, das während der Wiedergabe dynamisch verschlüsselt werden soll.
 2. Konfigurieren Sie Autorisierungsrichtlinien für Inhaltsschlüssel.
 1. Konfigurieren Sie Übermittlungsrichtlinien für Assets (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
@@ -210,6 +210,10 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [Patterns and practices guidance](https://wamsg.codeplex.com/) [Online documentation](https://msdn.microsoft.com/library/dn735912.aspx) [Downloadable eBook](https://www.microsoft.com/download/details.aspx?id=42629) (alle in englischer Sprache)
 
 
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 ##Vereinbarung zum Servicelevel (SLA)
 
 - Media Services gewährleistet eine Verfügbarkeit von 99,9 % für die REST-API-Transaktionen zur Media Services-Codierung.
@@ -227,4 +231,4 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

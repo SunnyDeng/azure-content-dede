@@ -96,7 +96,7 @@ Weitere Informationen zu Anmeldungen und Benutzern finden Sie unter [Verwalten v
 
 Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendungen weniger anfällig für Sicherheitsbedrohungen zu machen:
 
-- Verwenden der neuesten Updates: Verwenden Sie beim Herstellen einer Verbindung mit Ihrer SQL-Datenbank immer die aktuellste Version der Tools und Bibliotheken, um Sicherheitsrisiken zu vermeiden. Weitere Informationen zu den unterstützten Tools und Bibliotheken finden Sie unter [Allgemeine Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/ee336245.aspx).
+- Verwenden der neuesten Updates: Verwenden Sie beim Herstellen einer Verbindung mit Ihrer SQL-Datenbank immer die aktuellste Version der Tools und Bibliotheken, um Sicherheitsrisiken zu vermeiden.
 - Blockieren eingehender Verbindungen für TCP-Port 1433: Damit Anwendungen mit SQL-Datenbank kommunizieren können, sind an TCP-Port 1433 nur ausgehende Verbindungen erforderlich. Falls die eingehende Kommunikation nicht von anderen Anwendungen auf dem Computer benötigt wird, sollten Sie sicherstellen, dass Ihre Firewall eingehende Verbindungen über TCP-Port 1433 weiterhin blockiert.
 - Vermeiden von Einschleusungsrisiken: Nutzen Sie nach Möglichkeit parametrisierte Abfragen, um sicherzustellen, dass für Ihre Anwendungen keine Gefahr der Einschleusung von SQL-Befehlen besteht. Prüfen Sie Ihren Code außerdem gründlich, und führen Sie einen Penetrationstest durch, bevor Sie Ihre Anwendung bereitstellen.
 
@@ -107,8 +107,6 @@ Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendung
 
 [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md)
 
-[Allgemeine Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/ee336245.aspx)
-
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

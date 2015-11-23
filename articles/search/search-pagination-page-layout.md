@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Anordnen von Suchergebnissen auf Seiten in Azure Search | Microsoft Azure" 
+	pageTitle="Anordnen von Suchergebnissen auf Seiten in Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Einteilen in Seiten in Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
@@ -114,4 +114,4 @@ Weitere Informationen zu `$filter`-Ausdrücken finden Sie unter [Dokumente durch
 [4]: ./media/search-pagination-page-layout/Pages-4-SortbyRelevance.png
 [5]: ./media/search-pagination-page-layout/Pages-5-BuildSort.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

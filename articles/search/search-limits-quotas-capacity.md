@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Grenzwerte für den Azure Search-Dienst | Microsoft Azure"
+	pageTitle="Grenzwerte für den Azure Search-Dienst | Microsoft Azure | Gehosteter Cloudsuchdienst"
 	description="Dienstgrenzwerte, die bei der Kapazitätsplanung verwendet werden, sowie Höchstwerte für Anforderungen und Antworten für Azure Search, einem gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
@@ -133,4 +133,4 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 - Maximale Rückgabe von 1000 Dokumenten pro Seite mit Suchergebnissen
 - Maximale Rückgabe von 100 Vorschlägen pro Anforderung der Vorschlags-API
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

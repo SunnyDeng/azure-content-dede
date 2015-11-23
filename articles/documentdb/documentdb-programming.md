@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/18/2015" 
+	ms.date="11/11/2015" 
 	ms.author="andrl"/>
 
 # DocumentDB-serverseitige Programmierung : gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen
@@ -746,7 +746,7 @@ __.chain()
 </table>
 
 ## Laufzeitunterstützung
-Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)-Standard.
+Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](documentdb-interactions-with-resources.md)-Standard.
 
 ### Sicherheit
 Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlösung verwaltet, damit die Auswirkungen eines Skripts nicht zu den anderen Skripts gelangen, ohne die Momentaufnahmetransaktionsisolation der Datenbankschicht zu durchlaufen. Die Laufzeitumgebungen werden in einem Pool zusammengefasst, aber nach jeder Ausführung vom Kontext bereinigt. Daher sind sie untereinander garantiert vor unbeabsichtigten Nebeneffekten geschützt.
@@ -898,7 +898,7 @@ Hier wird der mit der Anforderung auszuführende vorangestellte Trigger im Heade
 
 ## Beispielcode
 
-Weitere Beispiele für serverseitigen Code (einschließlich [upsert](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/upsert.js), [Massenlöschung](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/bulkDelete.js) und [Aktualisieren](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/update.js)) finden Sie in unserem [Github-Repository](https://github.com/Azure/azure-documentdb-js/tree/master/server-side/samples).
+Weitere Beispiele für serverseitigen Code (einschließlich [upsert](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/upsert.js), [Massenlöschung](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/bulkDelete.js) und [Aktualisieren](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/update.js)) finden Sie in unserem [Github-Repository](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples).
 
 Möchten Sie Ihre fantastische gespeicherte Prozedur freigeben? Bitte senden Sie uns eine Pull-Anforderung!
 
@@ -916,4 +916,4 @@ Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie au
 -	[Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 -	[Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

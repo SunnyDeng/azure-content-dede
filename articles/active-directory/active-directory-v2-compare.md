@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="11/10/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Was ist anders?
@@ -121,4 +121,4 @@ Weitere Informationen zu den spezifischen Ansprüchen, die in App-Modell v2.0-To
 ## Einschränkungen der Vorschau
 Es gibt eine Reihe von Einschränkungen beim Erstellen einer App mit dem App-Modell v2. 0 in der öffentlichen Vorschau, die Sie berücksichtigen sollten. Sehen Sie im [Dokument „App-Modell v2.0 - Einschränkungen](active-directory-v2-limitations.md) nach, um zu prüfen, ob diese Einschränkungen für Ihr spezielles Szenario gelten.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

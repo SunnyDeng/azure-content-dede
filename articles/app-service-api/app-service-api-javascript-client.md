@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="07/31/2015" 
+	ms.date="10/30/2015" 
 	ms.author="bradygaster"/>
 
 # Nutzen einer Azure-API-App mithilfe von HTML und Javascript
@@ -141,7 +141,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 ## Erstellen einer Web-App zum Nutzen der API-App
 
-In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren AngularJS in der Webanwendung und verknüpfen ein einfaches HTML-Front-End mit der API-App. Sie stellen die Web-App anschließend in Azure App Service bereit. Die HTML-Web-App verfügt über ein Bindung mit der API-App, zeigt die aus der API-App abgerufenen Daten an und stellt für die Benutzer eine einfache Oberfläche für die Contacts-API bereit.
+In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren und verwenden AngularJS und verknüpfen ein einfaches HTML-Front-End mit der API-App. Sie stellen die Web-App anschließend in Azure App Service bereit. Die HTML-Web-App verfügt über ein Bindung mit der API-App, zeigt die aus der API-App abgerufenen Daten an und stellt für die Benutzer eine einfache Oberfläche für die Contacts-API bereit.
 
 1. Klicken Sie mit der rechten Maustaste auf das Projekt, das Sie zuvor in [Erstellen einer API-App](app-service-dotnet-create-api-app.md) erstellt haben, und wählen Sie **Hinzufügen -> Neues Projekt**.
 
@@ -310,9 +310,9 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
             $scope.refresh();
         });
 
-Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
+ Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
 
-	> **Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie stattdessen mit der rechten Maustaste auf das API-Projekt und anschließend auf „Debuggen“ > „Neue Instanz starten“, sodass ein Browserfenster mit der Portnummer angezeigt wird.
+>[AZURE.NOTE]**Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie mit der rechten Maustaste auf das API-Projekt und anschließend auf **Debuggen > Neue Instanz starten**, sodass ein Browserfenster mit der Portnummer angezeigt wird.
 
 1. Stellen Sie sicher, dass das API-App-Projekt beim Ausführen des HTML-Clients ebenfalls ausgeführt wird, sonst funktioniert der JavaScript-HTML-Code nicht ordnungsgemäß. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Eigenschaften**. Legen Sie anschließend beide Webprojekte auf **Starten ohne Debugging** fest, und geben Sie an, dass das API-Projekt zuerst ausgeführt wird. 
 
@@ -371,4 +371,4 @@ Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform
 
 Dieses Beispiel veranschaulicht den nicht authentifizierten Zugriff auf eine API-App. Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

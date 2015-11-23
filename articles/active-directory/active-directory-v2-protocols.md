@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="11/10/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Protokolle – OAuth 2.0 und OpenID Connect
@@ -30,9 +30,9 @@ Weitere Informationen zu verschiedenen Tokentypen, die im App-Modell v2.0 verwen
 ## Die Grundlagen
 Jede App, die das App-Modell v2.0 nutzt, muss unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
 
-- Eine **Anwendungs-ID**, die Ihre Anwendung eindeutig identifiziert.
+- Eine **Anwendungs-ID**, die Ihre App eindeutig identifiziert.
 - Einen **Umleitungs-URI** oder **Paketbezeichner**, der zum Umleiten von Antworten zurück an die App verwendet werden kann.
-- Einige andere szenariospezifische Werte. Erfahren Sie für nähere Einzelheiten, wie Sie [eine App registrieren](active-directory-v2-app-registration.md).
+- Einige andere szenariospezifische Werte. Erfahren Sie nähere Einzelheiten, wie Sie [eine App registrieren](active-directory-v2-app-registration.md).
 
 Sobald die App registriert ist, kommuniziert sie mit Azure AD, indem sie Anforderungen an den v2.0-Endpunkt sendet:
 
@@ -132,7 +132,7 @@ Content-Type: application/json
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | --------------------- |
 | client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
-| grant\_type | erforderlich | Muss den `authorization_code` für den Autorisierungscodefluss enthalten. |
+| grant\_type | erforderlich | Muss der `authorization_code` für den Autorisierungscodefluss sein. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Die in diesem Abschnitt angeforderten Bereiche müssen den Bereichen entsprechen oder eine Teilmenge der Bereiche sein, die im ersten Abschnitt angefordert wurden. Wenn die in dieser Anforderung angegebenen Bereiche mehrere Ressourcenserver umfassen, gibt der v2.0-Endpunkt ein Token für die im ersten Bereich angegebene Ressource zurück. Eine ausführlichere Erläuterung von Bereichen finden Sie in [Berechtigungen, Zustimmung und Bereiche](active-directory-v2-scopes.md). |
 | Code | erforderlich | Der Autorisierungscode, den Sie im ersten Abschnitt des Vorgangs erhalten haben. |
 | client\_secret | erforderlich für Web-Apps | Der geheime App-Schlüssel, den Sie im App-Registrierungsportal für Ihre App erstellt haben. Er sollte nicht in einer systemeigenen App verwendet werden, da geheime Client-Schlüssel nicht zuverlässig auf Geräten gespeichert werden können. Er ist erforderlich für Web-Apps und Web-APIs, die die Möglichkeit haben, den geheimen Client-Schlüssel sicher auf dem Server zu speichern. |
@@ -203,7 +203,7 @@ Content-Type: application/json
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | -------- |
 | client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
-| grant\_type | erforderlich | Muss den `refresh_token` für diesen Abschnitt des Autorisierungsvorgangcodeflusses enthalten. |
+| grant\_type | erforderlich | Muss der `refresh_token` für diesen Abschnitt des Autorisierungscodeflusses sein. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Die in diesem Abschnitt angeforderten Bereiche müssen den Bereichen entsprechen oder eine Teilmenge der Bereiche sein, die im ursprünglichen Autorisierungscode-Abschnitt angefordert wurden. Wenn die in dieser Anforderung angegebenen Bereiche mehrere Ressourcenserver umfassen, gibt der v2.0-Endpunkt ein Token für die im ersten Bereich angegebene Ressource zurück. Eine ausführlichere Erläuterung von Bereichen finden Sie in [Berechtigungen, Zustimmung und Bereiche](active-directory-v2-scopes.md). |
 | refresh\_token | erforderlich | Das Aktualisierungstoken, das Sie im zweiten Abschnitt des Vorgangs erhalten haben. |
 | client\_secret | erforderlich für Web-Apps | Der geheime App-Schlüssel, den Sie im App-Registrierungsportal für Ihre App erstellt haben. Er sollte nicht in einer systemeigenen App verwendet werden, da geheime Client-Schlüssel nicht zuverlässig auf Geräten gespeichert werden können. Er ist erforderlich für Web-Apps und Web-APIs, die die Möglichkeit haben, den geheimen Client-Schlüssel sicher auf dem Server zu speichern. |
@@ -332,7 +332,7 @@ Weitere Informationen finden Sie in der [Tokenreferenz für das App-Modell v2.0]
 
 Nachdem Sie die Signatur des ID-Tokens validiert haben, müssen Sie noch einige Ansprüche überprüfen:
 
-- Sie sollten den `nonce`-Anspruch überprüfen, um Tokenwiedergabeangriffe zu verhindern. Dessen Wert sollte dem in der Anmeldeanforderung angegebenen Wert entsprechen.
+- Sie sollten den `nonce`-Anspruch überprüfen, um Token-Replay-Angriffe zu verhindern. Dessen Wert sollte dem in der Anmeldeanforderung angegebenen Wert entsprechen.
 - Sie sollten den `aud`-Anspruch überprüfen, um sicherzustellen, dass das ID-Token für Ihre App ausgestellt wurde. Dessen Wert sollte der `client_id` der App entsprechen.
 - Sie sollten die Ansprüche `iat` und `exp` überprüfen, um sicherzustellen, dass das ID-Token noch nicht abgelaufen ist.
 
@@ -475,4 +475,4 @@ Der „Im-Auftrag-von-Vorgang“ oder die JWT-Bearer-Anmeldeinformationsberechti
 
 Der Vorgang wird derzeit von der Vorschauversion des App-Modells v2.0 nicht unterstützt. Um zu sehen, wie dies im allgemein verfügbaren Azure AD-Dienst funktioniert, schauen Sie sich [dieses Azure AD-Codebeispiel](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet) an.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

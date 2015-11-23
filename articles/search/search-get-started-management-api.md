@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit der Azure Search Management-REST-API | Microsoft Azure" 
+	pageTitle="Erste Schritte mit der Azure Search Management-REST-API | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Verwalten Ihres in der Cloud gehosteten Azure Search-Diensts mithilfe einer Verwaltungs-REST-API" 
 	services="search" 
 	documentationCenter="" 
@@ -204,4 +204,4 @@ Nach Abschluss dieses Lernprogramms empfiehlt es sich, mehr über die Dienstverw
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

@@ -38,7 +38,7 @@ Video anzeigen:
 Dieses Lernprogramm ist Teil der [Reihe][hdinsight-hbase-replication] zum Erstellen von HBase Georeplikation.
 
 - Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken (dieses Lernprogramm)
-- [Konfigurieren von DNS für virtuelle Netzwerke][hdinsight-hbase-geo-replication-DNS]
+- [Konfigurieren von DNS für virtuelle Netzwerke][hdinsight-hbase-geo-replication-dns]
 - [Konfigurieren von HBase-Georeplikation][hdinsight-hbase-geo-replication]
 
 Das folgende Diagramm veranschaulicht die beiden virtuellen Netzwerke, die Sie in diesem Lernprogramm erstellen:
@@ -249,7 +249,7 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 
 
 
-[hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS.md
+[hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-dns.md
 [hdinsight-hbase-geo-replication]: hdinsight-hbase-geo-replication.md
 
 
@@ -270,4 +270,4 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

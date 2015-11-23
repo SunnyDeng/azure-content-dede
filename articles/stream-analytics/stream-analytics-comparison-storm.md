@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="10/13/2015"
+	ms.date="11/06/2015"
 	ms.author="jeffstok"/>
 
 # Vergleich von Apache Storm und Azure Stream Analytics #
@@ -590,4 +590,4 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
     </tbody>
 </table>
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

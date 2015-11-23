@@ -40,7 +40,7 @@ Das Datengateway bietet die folgenden Funktionen:
 7.	Auch bei Verwendung von **ExpressRoute** und **des Gateways**, um eine Verbindung zwischen dem Dienst und der Datenquelle herzustellen, sollten Sie Ihre Datenquelle wie eine lokale Datenquelle behandeln (die sich hinter einer Firewall befindet). 
 
 ## Gatewayinstallation – Voraussetzungen
-1.	Die unterstützten **Betriebssystemversionen** sind Windows 7, Windows 8/8.1, Windows Server 2008 R2 und Windows Server 2012.
+1.	Die unterstützten **Betriebssystemversionen** sind Windows 7, Windows 8/8.1, Windows Server 2008 R2, Windows Server 2012 und Windows Server 2012 R2.
 2.	Die empfohlene **Konfiguration** für den Gatewaycomputer lautet: mindestens 2 GHz, 4 Kerne, 8 GB RAM und 80 GB Festplattenspeicher.
 3.	Wenn der Hostcomputer in den Ruhezustand wechselt, kann das Gateway nicht auf Datenanforderungen reagieren. Aus diesem Grund sollten Sie vor der Installation des Gateways einen entsprechenden **Energiesparplan** auf dem Computer konfigurieren. Bei der Gatewayinstallation wird eine Meldung angezeigt, wenn der Computer für den Ruhezustand konfiguriert ist.
 
@@ -73,7 +73,7 @@ Diese werden durch eine nicht ordnungsgemäße Konfiguration der Firewall oder d
 Die möglicherweise relevanten Firewalls sind die Unternehmensfirewall, die auf dem zentralen Router des Unternehmens ausgeführt wird, und die Windows-Firewall, die als Daemon auf dem lokalen Computer konfiguriert ist, auf dem das Gateway installiert ist. Im Folgenden sind einige Überlegungen aufgeführt:
 
 - Es besteht keine Notwendigkeit, die eingehende Richtlinie für die für Unternehmensfirewall zu ändern.
-- Die Unternehmensfirewall und die Windows-Firewall sollten die ausgehende Regel für TCP-Ports 80, 440 und 9305 bis 9354 aktivieren. Diese werden von Microsoft Azure Service Bus verwendet, um die Verbindung zwischen den Clouddiensten und dem Datenverwaltungsgateway herzustellen.
+- Die Unternehmensfirewall und die Windows-Firewall sollten die ausgehende Regel für TCP-Ports 80, 443 und 9305 bis 9354 aktivieren. Diese werden von Microsoft Azure Service Bus verwendet, um die Verbindung zwischen den Clouddiensten und dem Datenverwaltungsgateway herzustellen.
 
 Das MSI-Setup konfiguriert die Windows-Firewallregeln für eingehende Ports für den Gatewaycomputer automatisch (weitere Informationen finden Sie im Abschnitt zu Ports und Sicherheitsaspekten).
 
@@ -578,7 +578,7 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 		PS C:\> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
 
 	
-4. Wechseln Sie in Azure PowerShell zum Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\PowerShellScript\\**, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
+4. Wechseln Sie in Azure PowerShell zum Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\PowerShellScript\**, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
 
 		PS C:\> .\RegisterGateway.ps1 $Key.GatewayKey
 		
@@ -618,7 +618,4 @@ Im Folgenden sind der allgemeine Datenfluss und eine Zusammenfassung der Schritt
 	- 	Die [Azure SQL-Firewalleinstellungen](https://msdn.microsoft.com/library/azure/jj553530.aspx) müssen so konfiguriert sein, dass die **IP-Adresse des Gatewaycomputers** den **zulässigen IP-Adressen** hinzugefügt wird.
 5.	Wenn Sie Daten zwischen einer lokalen SQL Server-Datenbank und beliebigen Zielen kopieren und der Gateway- und die SQL Server-Computer sich unterscheiden, gehen Sie folgendermaßen vor: [Konfigurieren Sie die Windows-Firewall](https://msdn.microsoft.com/library/ms175043.aspx) auf dem SQL Server-Computer so, dass das Gateway auf die Datenbank über Ports zugreifen kann, die von der SQL Server-Instanz überwacht werden. Für die Standardinstanz ist dies Port 1433.
 
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-move-data-between-onprem-and-cloud.md).
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

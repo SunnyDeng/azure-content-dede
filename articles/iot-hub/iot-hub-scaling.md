@@ -43,7 +43,7 @@ D2C-Nachrichten basieren auf diesen Richtlinien für den anhaltenden Durchsatz:
 
 Beim Empfangen von D2C-Nachrichten kann das Anwendungs-Back-End den folgenden maximalen Durchsatz erwarten (über alle Reader).
 
-| Tarif | Anhaltender Durchsatz |
+| Preisstufe | Anhaltender Durchsatz |
 | ---- | -------------------- |
 | S1 | Bis zu 120 KBit/Min. pro Einheit, Minimum von 2 MBit/s |
 | S2 | Bis zu 4 MBit/Min. pro Einheit, Minimum von 2 MBit/s |
@@ -73,4 +73,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -144,17 +144,19 @@ Nach 30 Minuten können Sie die OnDemand-Locators neu erstellen, damit sie den 
 
 Gehen Sie auf die gleiche Weise wie in [Schritt 3](media-services-roll-storage-access-keys.md#step-3-update-locators) vor.
 
- 
+
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 
 ###Danksagungen 
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Cenk Dingiloglu, Milan Gada, Seva Titov.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

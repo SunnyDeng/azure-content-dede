@@ -208,13 +208,4 @@ Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmt
 	  }
 	}
 
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-create-datasets.md).
-
-
-
-
-
-  
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

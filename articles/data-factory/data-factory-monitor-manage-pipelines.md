@@ -67,13 +67,64 @@ Durch Doppelklicken auf **PartitionedProductsUsageTable** in der Diagrammansicht
 
 Die Datasetslices in Data Factory können einen der folgenden Status haben:
 
-Status | Unterstatus | Beschreibung
------- | ---------- | -----------
-Warten | ScheduledTime<br/>DatasetDependencies<br/>ComputeResources<br/>ConcurrencyLimit<br/>ActivityResume<br/>Retry<br/>Validation<br/>ValidationRetry | Vor der Ausführung wird auf das Erfüllen von Vorbedingungen gewartet. Sehen Sie sich den Unterstatus an, um herauszufinden, auf was der Slice wartet.
-In Bearbeitung | Starting<br/>Configuring<br/>Allocating Resources<br/>Running<br/>Validating | Derzeit wird die Aktivität ausgeführt und erzeugt/überprüft die Daten für einen bestimmten Slice.
-Fehler | | Fehler bei der Verarbeitung des Slices. Durchsuchen Sie Fehlerprotokolle, um herauszufinden, was den Fehler verursacht hat.
-Bereit | | Erfolg bei der Verarbeitung des Slices. Der Slice ist für die Verwendung bereit.
-Überspringen | | Diesen Slice nicht verarbeiten.
+<table>
+<tr>
+	<th align="left">Zustand</th><th align="left">Unterzustand</th><th align="left">Beschreibung</th>
+</tr>
+<tr>
+	<td rowspan="8">Warten</td><td>ScheduleTime</td><td>Der Zeitpunkt für die Sliceausführung ist noch nicht erreicht.</td>
+</tr>
+<tr>
+<td>DatasetDependencies</td><td>Die Upstream-Abhängigkeiten sind nicht bereit.</td>
+</tr>
+<tr>
+<td>ComputeResources</td><td>Die Compute-Ressourcen sind nicht verfügbar.</td>
+</tr>
+<tr>
+<td>ConcurrencyLimit</td> <td>Alle Aktivitätsinstanzen führen andere Slices aus.</td>
+</tr>
+<tr>
+<td>ActivityResume</td><td>Die Aktivität wurde angehalten und kann den Slice erst ausführen, wenn sie fortgesetzt wird.</td>
+</tr>
+<tr>
+<td>Wiederholen</td><td>Die Aktivität wird erneut ausgeführt.</td>
+</tr>
+<tr>
+<td>Überprüfen</td><td>Die Überprüfung wurde noch nicht gestartet.</td>
+</tr>
+<tr>
+<td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
+</tr>
+<tr>
+&lt; tr
+<td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
+</tr>
+<td></td>
+<td>Der Slice wird verarbeitet.</td>
+</tr>
+<tr>
+<td rowspan="4">Fehler</td><td>TimedOut</td><td>Die Ausführung dauerte länger, als für die Aktivität zulässig ist.</td>
+</tr>
+<tr>
+<td>Canceled</td><td>Durch den Benutzer abgebrochen.</td>
+</tr>
+<tr>
+<td>Überprüfen</td><td>Fehler bei der Überprüfung.</td>
+</tr>
+<tr>
+<td></td><td>Der Slice konnte nicht generiert und/oder überprüft werden.</td>
+</tr>
+<td>Bereit</td><td></td><td>Der Slice ist für die Verwendung bereit.</td>
+</tr>
+<tr>
+<td>Übersprungen</td><td></td><td>Der Slice wird nicht verarbeitet.</td>
+</tr>
+<tr>
+<td>Keine</td><td></td><td>Ein Slice, der zuvor einen anderen Status hatte, aber zurückgesetzt wurde.</td>
+</tr>
+</table>
+
+
 
 Sie können die Details zu einem Slice anzeigen, indem Sie auf dem Blatt **Zuletzt aktualisierte Slices** auf den Eintrag eines Slices klicken.
 
@@ -471,8 +522,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 	Parameters        :
 	Outputs           
 
-
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-monitor-manage-pipelines.md).
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

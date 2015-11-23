@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/08/2015" 
+	ms.date="11/03/2015" 
 	ms.author="juliako"/>
 
 #Schützen von Inhalten – Übersicht
@@ -76,7 +76,7 @@ Beachten Sie, dass Sie über das Portal eine AES-Richtlinie (zur Anwendung auf a
 
 Media Services bietet einen Dienst für die Übermittlung von PlayReady-Lizenzen. Wenn der Endbenutzer-Player (z. B. Silverlight) versucht, Ihre durch PlayReady geschützten Inhalte wiederzugeben, wird eine Anforderung zum Erwerben einer Lizenz an den Lizenzübermittlungsdienst gesendet. Wenn der Lizenzdienst die Anforderung genehmigt, wird die Lizenz ausgegeben. Diese wird an den Client gesendet und kann zum Entschlüsseln und Wiedergeben des angegebenen Inhalts verwendet werden.
 
-Lizenzen enthalten die Rechte und Einschränkungen, die von der PlayReady-DRM-Laufzeit durchgesetzt werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben. Media Services bietet APIs, mit denen Sie Ihre PlayReady-Lizenzen konfigurieren können. Weitere Informationen finden Sie unter [Media Services PlayReady-Lizenzvorlage – Übersicht](https://msdn.microsoft.com/library/azure/dn783459.aspx)
+Lizenzen enthalten die Rechte und Einschränkungen, die von der PlayReady-DRM-Laufzeit durchgesetzt werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben. Media Services bietet APIs, mit denen Sie Ihre PlayReady-Lizenzen konfigurieren können. Weitere Informationen finden Sie unter [Media Services PlayReady-Lizenzvorlage – Übersicht](media-services-playready-license-template-overview).
 
 ###Token-Einschränkung
 
@@ -97,10 +97,10 @@ Media Services bietet derzeit keinen Widevine-Lizenzserver. Die folgenden AMS-Pa
 1. Nehmen Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt auf. Wenden Sie die Speicherverschlüsselung auf das Medienobjekt an.
 2. Konfigurieren von Streamingendpunkten
 1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate durch. Wenden Sie die Speicherverschlüsselung auf das Ausgabemedienobjekt an.
-1. Erstellen Sie einen Inhaltsverschlüsselungsschlüssel für das Medienobjekt, das während der Wiedergabe dynamisch verschlüsselt werden soll.
+1. Erstellen Sie einen Inhaltsverschlüsselungsschlüssel für das Asset, das während der Wiedergabe dynamisch verschlüsselt werden soll.
 2. Konfigurieren Sie Autorisierungsrichtlinien für Inhaltsschlüssel.
-1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
-1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand-Locators.
+1. Konfigurieren Sie Übermittlungsrichtlinien für Assets (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
+1. Veröffentlichen Sie das Asset durch Erstellen eines OnDemand-Locators.
 1. Streamen Sie die veröffentlichten Inhalte.
 
 ###Verwenden von Media Service-Schlüssel und Lizenzübermittlungsdienst mit eigenen Verschlüsselungs- und Streamingdiensten
@@ -112,12 +112,15 @@ Weitere Informationen finden Sie unter [How to integrate Azure PlayReady License
 [Übermitteln von DRM-Lizenzen an Azure Media Services mithilfe von castLabs](media-services-castlabs-integration.md)
 
 
+
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 ##Verwandte Links
 
@@ -136,4 +139,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

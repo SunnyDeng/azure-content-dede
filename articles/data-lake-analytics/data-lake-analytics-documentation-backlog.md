@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/28/2015"
+   ms.date="11/05/2015"
    ms.author="mwinkle"/>
 
 # Dokumentationsrückstand bei Azure Data Lake Analytics
@@ -24,10 +24,10 @@ Wir setzen unsere Bemühungen fort, im Verlauf der Entwicklung des Diensts neue 
 
 Bereich |Thema | Priority | Status | Zugewiesen zu | Angefordert von 
 ------------- | ------------- | -------------- | -------------- | --------------- | --------------
-U-SQL | Verteilte Abfragen | 1 | In Bearbeitung | [@edmacauley](https://github.com/edmacauley) | 
+U-SQL | Verteilte Abfragen | 1 | Ausgesetzt | [@edmacauley](https://github.com/edmacauley) | 
 U-SQL | JSON-Verarbeitung | 2 | Ausstehend | [@mumian](https://github.com/mumian) | [@mwinkle](https://github.com/mwinkle)
 Service | Interaktion mit Curl | 3 |Ausstehend |[@mumian](https://github.com/mumian)
-U-SQL | Partitionierte Tabellen |1 | Ausstehend | [@edmacauley](https://github.com/edmacauley) | 
+U-SQL | Partitionierte Tabellen |1 | In Bearbeitung | [@edmacauley](https://github.com/edmacauley) | 
 U-SQL | Leistungsoptimierung | 2 | Ausstehend | [@MikeRys](https://github.com/mikerys) | 
 U-SQL | Handbuch für Programmierer | 2 | Ausstehend | [@edmacauley](https://github.com/edmacauley) | 
 U-SQL | Erste Schritte mit U-SQL für Entwickler mit T-SQL-Erfahrung | 1 | Ausstehend | [@edmacauley](https://github.com/edmacauley) | [@MikeRys](https://github.com/mikerys)
@@ -53,4 +53,4 @@ Für das Senden von Feedback bezüglich des Rückstands stehen mehrere Optionen 
 * Senden Sie im [Azure-Inhaltsrepository](https://github.com/Azure/azure-content/blob/master/articles/data-lake-analytics/data-lake-analytics-documentation-backlog.md) eine Pullanforderung für dieses Dokument.
 * Senden Sie eine E-Mail an [adlafeedback at microsoft.com](mailto:adlafeedback@microsoft.com?subject=DocBacklog).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

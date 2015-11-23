@@ -38,7 +38,7 @@ Die verfügbaren Berechtigungen für eine Richtlinie sind größtenteils selbste
 
 Nach Erstellung der Richtlinie werden ihr ein *Primärschlüssel* und ein *Sekundärschlüssel* zugewiesen. Hierbei handelt es sich um kryptografisch starke Schlüssel. Achten Sie darauf, dass sie Ihnen nicht abhanden kommen: Sie sind immer im Portal verfügbar. Sie können einen beliebigen der generierten Schlüssel verwenden und die Schlüssel jederzeit erneut generieren. Wenn Sie allerdings den Primärschlüssel neu generieren oder in der Richtlinie ändern, werden alle auf deren Grundlage erstellten SAS ungültig.
 
-Wenn Sie einen Service Bus-Namespace erstellen, wird automatisch eine Richtlinie namens **RootManageSharedAccessKey** für den gesamten Namespace erstellt. Diese Richtlinie verfügt über alle Berechtigungen. Da Sie sich nicht als **Root** anmelden, verwenden Sie diese Richtlinie nur, wenn ein wirklich guter Grund dafür vorliegt. Im Azure-Verwaltungsportal können Sie auf der Registerkarte **Konfigurieren** weitere Richtlinien für den Namespace konfigurieren. Beachten Sie, dass pro Ebene der Service Bus-Struktur (Namespace, Warteschlange, Event Hub usw.) maximal 12 Richtlinien zugeordnet werden können.
+Wenn Sie einen Service Bus-Namespace erstellen, wird automatisch eine Richtlinie namens **RootManageSharedAccessKey** für den gesamten Namespace erstellt. Diese Richtlinie verfügt über alle Berechtigungen. Da Sie sich nicht als **Root** anmelden, verwenden Sie diese Richtlinie nur, wenn ein wirklich guter Grund dafür vorliegt. Im [Azure-Portal](http://manage.windowsazure.com) können Sie auf der Registerkarte **Konfigurieren** weitere Richtlinien für den Namespace konfigurieren. Beachten Sie, dass pro Ebene der Service Bus-Struktur (Namespace, Warteschlange, Event Hub usw.) maximal 12 Richtlinien zugeordnet werden können.
 
 ## SAS (Token)
 
@@ -255,4 +255,4 @@ Weitere Informationen zur Service Bus-Authentifizierung finden Sie unter [Servic
 
 Weitere Beispiele für SAS in C# und Java Script finden Sie in [diesem Blogbeitrag](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx) (in englischer Sprache).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

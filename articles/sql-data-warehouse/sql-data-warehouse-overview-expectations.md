@@ -62,7 +62,7 @@ Aufgrund von Fernübertragungsdaten schätzen wir aktuell die Zuverlässigkeit v
 
 ### Verfügbarkeit des Diensts
 
-Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßnahmen pro Monat, um wichtige Updates zu installieren. Während der einzelnen Maßnahmen können bis zu zwei Stunden lang Fehler bei Abfragen auftreten. Die Dauer hängt von der Anzahl der DWUs ab, die dem Dienst zugeordnet sind. Wir bemühen uns nach Kräften, diese Maßnahmen 48 Stunden vorher anzukündigen.
+Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßnahmen pro Monat, um wichtige Updates zu installieren. Während der einzelnen Maßnahmen können bis zu zwei Stunden lang Fehler bei Abfragen auftreten. Die Dauer hängt von der Anzahl der DWUs ab, die dem Dienst zugeordnet sind.
 
 
 ## Nächste Schritte
@@ -78,4 +78,4 @@ Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßna
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -4,7 +4,7 @@
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
     ms.service="sql-database"
@@ -12,8 +12,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/19/2015"
-    ms.author="torsteng" />
+    ms.date="11/09/2015"
+    ms.author="torsteng;sidneyh" />
 
 # Abfrage für elastische Datenbanken bei datenbankübergreifenden Abfragen (vertikale Partitionierung)
 
@@ -37,14 +37,14 @@ Das Definieren der Datenbankobjekte für die Abfrage einer elastische Datenbank 
 
 ### 1\.1 Erstellen des Datenbankhauptschlüssels und der Anmeldeinformationen 
 
-Benutzer-ID und Kennwort bilden die Anmeldeinformationen, die von der Abfrage für elastische Datenbanken zur Verbindung mit Ihren Remotedatenbanken in Azure SQL-Datenbank verwendet werden. Den erforderlichen Hauptschlüssel und die Anmeldeinformationen erstellen Sie mit der folgenden Syntax:
+Benutzer-ID und Kennwort bilden die Anmeldeinformationen, die von der elastischen Abfrage zur Verbindung mit Ihren Remotedatenbanken in Azure SQL-Datenbank verwendet werden. Den erforderlichen Hauptschlüssel und die Anmeldeinformationen erstellen Sie mit der folgenden Syntax:
 
     CREATE MASTER KEY ENCRYPTION BY PASSWORD = ’password’;
     CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = ‘<username>’,  
     SECRET = ‘<password>’
     [;]
     
-Und so löschen Sie sie:
+So löschen Sie die Anmeldeinformationen:
     
     DROP DATABASE SCOPED CREDENTIAL <credential_name>;  
     DROP MASTER KEY;   
@@ -184,4 +184,4 @@ Sie können herkömmliche SQL Server-Verbindungszeichenfolgen verwenden, um Ihre
 <!--Image references-->
 <!--anchors-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

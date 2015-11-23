@@ -13,36 +13,61 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
-	ms.author="markusvi"/>
+	ms.date="11/10/2015"
+	ms.author="markusvi;andkjell"/>
 
 
 # Azure AD Connect-Synchronisierung: Grundlegendes zu Ausdrücken für die deklarative Bereitstellung
 
-Die Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung) basieren auf der erstmals in Forefront Identity Manager 2010 eingeführten deklarativen Bereitstellung, die Ihnen ermöglicht, Ihre gesamte Geschäftslogik für die Identitätsintegration zu implementieren, ohne Code schreiben zu müssen.
+Die Azure AD Connect-Synchronisierung basiert auf der erstmals in Forefront Identity Manager 2010 eingeführten deklarativen Bereitstellung, die Ihnen ermöglicht, Ihre gesamte Geschäftslogik für die Identitätsintegration zu implementieren, ohne kompilierten Code schreiben zu müssen.
 
 Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications (VBA). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
 
-Weitere Informationen finden Sie unter [Willkommen bei der VBA-Sprachreferenz (Visual Basic for Applications) für Office 2013](https://msdn.microsoft.com/library/gg264383(v=office.15).aspx).
+Weitere Informationen finden Sie unter [Willkommen bei der VBA-Sprachreferenz für Office 2013](https://msdn.microsoft.com/library/gg264383.aspx).
 
 Die Attribute sind stark typisiert. Eine Funktion, die ein einwertiges Zeichenfolgenattribut erwartet, wird weder mehrwertige Attribute noch Attribute eines anderen Typs akzeptieren. Zudem muss die Groß- und Kleinschreibung beachtet werden. Sowohl bei Funktions- als auch bei Attributnamen muss die Groß- und Kleinschreibung richtig sein, ansonsten wird ein Fehler ausgegeben.
 
-
-
-
-
 ## Sprachdefinitionen und Bezeichner
 
-- Funktionen verfügen über einen Namen, gefolgt von Argumenten in Klammern: FunctionName(<<argument 1>>,<<argument N>>).
+- Funktionen verfügen über einen Namen, gefolgt von Argumenten in Klammern: FunctionName(argument 1,argument N).
 - Attribute werden durch eckige Klammern gekennzeichnet: [attributeName].
 - Parameter werden durch Prozentzeichen gekennzeichnet: %ParameterName%.
-- Zeichenfolgenkonstanten sind in Anführungszeichen eingeschlossen. Beispiel: "Contoso".
+- Zeichenfolgenkonstanten sind in Anführungszeichen eingeschlossen. Beispiel: "Contoso". Hinweis: Verwenden Sie keine typografischen („“), sondern gerade Anführungszeichen ("").
 - Numerische Werte werden ohne Anführungszeichen ausgedrückt und im Dezimalformat vorliegen. Hexadezimalwerten weisen das Präfix "&H" auf. Beispiel: 98052, &HFF.
 - Boolesche Werte werden mit Konstanten ausgedrückt: True, False.
 - Integrierte Konstanten werden nur mit ihrem Namen ausgedrückt: NULL, CRLF, IgnoreThisFlow
 
+### Functions
+Bei der deklarativen Bereitstellung werden viele Funktionen verwendet, um das Transformieren von Attributwerten zu ermöglichen. Diese können geschachtelt werden, damit das Ergebnis einer Funktion an eine andere Funktion übergeben wird.
 
-## Operatoren
+Funktionen können auch auf ein mehrwertiges Attribut angewendet werden. In diesem Fall wird die Funktion für jeden einzelnen Wert ausgeführt. Dabei wird die gleiche Funktion auf jeden Wert angewendet. Mit `Trim([proxyAddresses])` wird beispielsweise die Trim-Funktion für jeden Wert im Attribut „proxyAddress“ ausgeführt.
+
+Die vollständige Liste der Funktionen finden Sie in der [Funktionsreferenz](active-directory-aadconnectsync-functions-reference.md).
+
+### Parameter
+
+Ein Parameter wird entweder durch einen Connector oder einen Administrator definiert, der PowerShell zum Festlegen verwendet. Parameter enthalten üblicherweise Werte, die sich je nach System unterscheiden, z. B. der Name der Domäne, in der sich der Benutzer befindet. Diese Werte können in Attributflüssen verwendet werden.
+
+Der Active Directory Connector stellt folgende Parameter für eingehende Synchronisierungsregeln bereit:
+
+| Parametername | Kommentar |
+| --- | --- |
+| Domain.Netbios | NetBIOS-Format der Domäne, die gerade importiert wird, z. B. „FABRIKAMSALES“ |
+| Domain.FQDN | FQDN-Format der Domäne, die gerade importiert wird, z. B. „sales.fabrikam.com“ |
+| Domain.LDAP | LDAP-Format der Domäne, die gerade importiert wird, z. B. „DC=sales,DC=fabrikam,DC=com“ |
+| Forest.Netbios | NetBIOS-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „FABRIKAMSALES“ |
+| Forest.FQDN | FQDN-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „fabrikam.com“ |
+| Forest.LDAP | LDAP-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „DC=fabrikam,DC=com“ |
+
+Das System stellt den folgenden Parameter bereit, mit dem der Bezeichner des derzeit ausgeführten Connectors abgerufen wird:
+
+`Connector.ID`
+
+Ein Beispiel, in dem die Metaverseattributdomäne mit dem NetBIOS-Namen der Domäne aufgefüllt wird, in der sich der Benutzer befindet:
+
+`domain <- %Domain.Netbios%`
+
+### Operatoren
 
 Folgende Operatoren können verwendet werden:
 
@@ -52,33 +77,9 @@ Folgende Operatoren können verwendet werden:
 - **Logischer Ausdruck**: && (and), || (or)
 - **Auswertungsreihenfolge**: ( )
 
+Operatoren werden von links nach rechts ausgewertet und haben bei der Auswertung die gleiche Priorität. Das bedeutet, dass der Multiplikator (*) nicht vor der Subtraktion (-) ausgewertet wird. „2*(5+3)“ ist nicht dasselbe wie „2*5+3“. Die Klammern werden verwendet, um die Reihenfolge der Auswertung zu ändern, wenn die Auswertungsreihenfolge von links nach rechts nicht geeignet ist.
 
-
-Operatoren werden von links nach rechts ausgewertet. 2*(5+3) ist nicht gleich 2*5+3.<br> Die Klammern ( ) werden verwendet, um die Auswertungsreihenfolge zu ändern.
-
-
-
-
-
-## Parameter
-
-Ein Parameter wird entweder durch einen Connector oder einen Administrator unter Verwendung von PowerShell definiert. Parameter enthalten üblicherweise Werte, die sich je nach System unterscheiden, z. B. der Name der Domäne, in der sich der Benutzer befindet. Diese Werte können in Attributflüssen verwendet werden.
-
-Der Active Directory Connector stellt folgende Parameter für eingehende Synchronisierungsregeln bereit:
-
-
-| Domain.Netbios | Domain.FQDN | Domain.LDAP | | Forest.Netbios | Forest.FQDN | Forest.LDAP |
-
-
-Das System stellt den folgenden Parameter bereit:
-
-Connector.ID
-
-Ein Beispiel, in dem die Metaverseattributdomäne mit dem NetBIOS-Namen der Domäne aufgefüllt wird, in der sich der Benutzer befindet:
-
-domain <- %Domain.Netbios%
-
-## Häufige Szenarien
+## Häufige Szenarios
 
 ### Länge der Attribute
 
@@ -88,21 +89,19 @@ Zeichenfolgenattribute sind standardmäßig als indizierbar festgelegt, die maxi
 
 ### Ändern von "userPrincipalSuffix"
 
-Das userPrincipalName-Attribut in Active Directory ist den Benutzern nicht immer bekannt und eignet sich möglicherweise nicht als Anmelde-ID. Das Installationshandbuch für die Azure AD-Synchronisierung ermöglicht die Auswahl eines anderen Attributs wie z. B. "mail". In einigen Fällen muss das Attribut jedoch berechnet werden. Das Unternehmen Contoso beispielsweise verfügt über zwei Azure AD-Verzeichnisse, eins für die Produktion und eins für Testzwecke. Das Unternehmen möchte, dass seine Benutzer im Testmandanten das Suffix in der Anmeldung ändern: ID.userPrincipalName <- Word([userPrincipalName],1,"@") & "@contosotest.com".
+Das userPrincipalName-Attribut in Active Directory ist den Benutzern nicht immer bekannt und eignet sich möglicherweise nicht als Anmelde-ID. Der Installationsassistent für die Azure AD Connect-Synchronisierung ermöglicht die Auswahl eines anderen Attributs wie z. B. „mail“. In einigen Fällen muss das Attribut jedoch berechnet werden. Das Unternehmen Contoso beispielsweise verfügt über zwei Azure AD-Verzeichnisse, eins für die Produktion und eins für Testzwecke. Benutzer im Testmandanten sollen nur das Suffix der Anmelde-ID ändern.
+
+`userPrincipalName <- Word([userPrincipalName],1,"@") & "@contosotest.com"`
 
 In diesem Ausdruck werden alle Zeichen links des ersten @-Zeichens (Word) mit einer festgelegten Zeichenfolge verkettet.
-
-
-
-
 
 ### Konvertieren eines einwertigen Attributs in ein mehrwertiges Attribut
 
 Einige Attribute in Active Directory weisen im Schema mehrere Werte auf, obwohl sie in "Active Directory-Benutzer und -Computer" wie einwertige Attribute aussehen. Das description-Attribut ist ein Beispiel hierfür.
 
+`description <- IIF(IsNullOrEmpty([description]),NULL,Left(Trim(Item([description],1)),448))`
+
 Falls das Attribut einen Wert besitzt, wird in diesem Ausdruck das erste Element (Item) im Attribut genommen, die voran- und nachgestellten Leerzeichen (Trim) werden entfernt, und die ersten 448 Zeichen (Left) der Zeichenfolge werden beibehalten.
-
-
 
 ## Erweitertes Konzept
 
@@ -112,8 +111,6 @@ Bei eingehenden Synchronisierungsregeln sollte immer die Konstante **NULL** verw
 
 Bei ausgehenden Synchronisierungsregeln können zwei verschiedene Konstanten verwendet werden: NULL und IgnoreThisFlow. Beide weisen darauf hin, dass der Attributfluss keine Werte beiträgt, der Unterschied liegt jedoch darin, was passiert, wenn auch keine andere Regel einen Wert beitragen kann. Wenn im verbundenen Verzeichnis ein Wert vorhanden ist, führt eine NULL-Konstante einen Löschvorgang für das Attribut durch und entfernt es. Bei "IgnoreThisFlow" dagegen wird der vorhandene Wert beibehalten.
 
-
-
 #### ImportedValue
 
 Die Funktion ImportedValue unterscheidet sich von allen anderen Funktionen, da der Attributname in Anführungszeichen statt in eckige Klammern eingeschlossen werden muss: ImportedValue("proxyAddresses").
@@ -122,10 +119,9 @@ Die Funktion ImportedValue unterscheidet sich von allen anderen Funktionen, da d
 
 Ein Beispiel dafür befindet sich in der einsatzbereiten Synchronisierungsregel "In from AD – User Common from Exchange", wobei in Hybrid-Exchange der durch Exchange online hinzugefügte Wert nur synchronisiert werden sollte, wenn bestätigt wurde, dass der Wert erfolgreich exportiert wurde:
 
+`proxyAddresses <- RemoveDuplicates(Trim(ImportedValues("proxyAddresses")))`
 
-`proxyAddresses <- RemoveDuplicates(Trim(ImportedValues(“proxyAddresses”)))`
-
-Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synchronisierung: Funktionsreferenz](active-directory-aadconnectsync-functions-reference.md)
+Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synchronisierung: Funktionsreferenz](active-directory-aadconnectsync-functions-reference.md).
 
 
 ## Zusätzliche Ressourcen
@@ -135,4 +131,4 @@ Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synch
 
 <!--Image references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-  ms.service="marketplace-publishing"
+  ms.service="marketplace"
   ms.devlang="na"
   ms.topic="article"
   ms.tgt_pltfrm="Azure"
@@ -138,4 +138,4 @@ Verwenden Sie folgenden Befehl im [Linux-Befehlszeilentool](../virtual-machines/
 - [Erstellen eines Images eines virtuellen Computers für Marketplace](marketplace-publishing-vm-image-creation.md)
 - [Einrichten von Azure PowerShell](marketplace-publishing-powershell-setup.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

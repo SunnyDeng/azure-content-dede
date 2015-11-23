@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="11/09/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der Anwendungsdatenbanken
@@ -59,7 +59,7 @@ Führen Sie zum Sichern einer Datenbank die folgenden Schritte aus.
 3.	Erweitern Sie im linken Bereich den Knoten **Datenbanken**.
 4.	Klicken Sie mit der rechten Maustaste auf eine Datenbank, die Sie sichern möchten, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 5.	Klicken Sie im Abschnitt **Ziel** auf **Entfernen**, um den Standarddateipfad der Sicherungsdatei zu entfernen.
-6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **\\[Computername]\\backup[Datenbankname].bak** ein, wobei **Computername** der Name des primären SQL **Server-Computers** und **Datenbankname** der Name der Datenbank ist. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
+6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **\[Computername]\\backup[Datenbankname].bak** ein, wobei **Computername** der Name des primären SQL **Server-Computers** und **Datenbankname** der Name der Datenbank ist. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
 7.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **[Datenbankname]**, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 8.	Wählen Sie unter **Sicherungstyp** die Option **Transaktionsprotokoll** aus, und klicken Sie dann zweimal hintereinander auf **OK**.
 9.	Lassen Sie diese Remotedesktopsitzung geöffnet.
@@ -72,7 +72,7 @@ Führen Sie zum Wiederherstellen einer Datenbank die folgenden Schritte aus.
 4.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Datenbanken**, und klicken Sie dann auf **Datenbank wiederherstellen**.
 5.	Wählen Sie im Abschnitt **Quelle** die Option **Gerät** aus, und klicken Sie dann auf die Schaltfläche mit den Auslassungspunkten (...).
 6.	Klicken Sie unter **Sicherungsmedien auswählen** auf **Hinzufügen**.
-7.	Geben Sie unter **Speicherort der Sicherungsdatei** **\\[Computername]\\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
+7.	Geben Sie unter **Speicherort der Sicherungsdatei** **\[Computername]\\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
 8.	Klicken Sie unter **Seite auswählen** auf **Optionen**. Wählen Sie im Abschnitt **Wiederherstellungsoptionen** unter **Wiederherstellungsstatus** die Option **OHNE RECOVERY WIEDERHERSTELLEN** aus, und klicken Sie dann auf **OK**. 
 9.	Klicken Sie auf Aufforderung auf **OK**.
 
@@ -128,4 +128,4 @@ Nach der Erstellung des Listeners müssen Sie alle virtuellen Webservercomputer 
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

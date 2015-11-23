@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Verwendung des OneDrive-Connectors in Logik-Apps | Microsoft Azure App Service"
 	description="Erstellen und Konfigurieren des OneDrive-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
-	authors="anuragdalmia"
+	authors="rajeshramabathiran"
 	manager="dwrede"
 	editor=""
 	services="app-service\logic"
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/23/2015"
-	ms.author="andalmia"/>
+	ms.date="11/11/2015"
+	ms.author="rajram"/>
 
 # Erste Schritte mit dem OneDrive-Connector und das Hinzufügen zur Logik-App
 Stellen Sie eine Verbindung mit dem OneDrive her, um Dateien hochzuladen, herunterzuladen und zu löschen. Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den OneDrive-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
@@ -97,4 +97,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn974227.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

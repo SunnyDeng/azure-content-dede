@@ -1,8 +1,6 @@
-# Microsoft Azure und das Internet der Dinge (IoT)
+# Azure und IoT
 
-Für eine typische IoT-Lösung ist eine sichere, bidirektionale Kommunikation zwischen – in einigen Fällen Millionen – Geräten und einem Anwendungs-Back-End erforderlich. Ein Beispiel für die Funktionen von Anwendungs-Back-Ends ist die Verarbeitung von Gerät-zu-Cloud-Ereignissen (Device-to-Cloud, D2C), um mithilfe von automatisierten und vorhersehenden Analysen Informationen zu erhalten.
-
-Microsoft stellt eine Reihe von Bibliotheken bereit (mit Unterstützung für mehrere Sprachen und Hardware-Plattformen), mit denen Sie Clientanwendungen zum Ausführen auf einem IoT-Gerät entwickeln können. Zur Implementierung der IoT-Back-End-Anwendung können Sie mehrere Azure-Dienste kombinieren oder eine der vorkonfigurierten Lösungen verwenden, die über die [Azure IoT Suite][] erhältlich sind. Um besser zu verstehen, wie diese IoT-Infrastruktur von Azure unterstützt wird, sollten Sie die Architektur einer typischen IoT-Lösung betrachten.
+Willkommen bei Microsoft Azure und dem Internet der Dinge (IoT). In diesem Artikel wird eine typische IoT-Lösungsarchitektur vorgestellt, die die allgemeinen Merkmale einer IoT-Lösung beschreibt, die Sie mithilfe von Azure-Diensten bereitstellen können. Für eine typische IoT-Lösung ist eine sichere, bidirektionale Kommunikation zwischen – in einigen Fällen Millionen – Geräten und einem Lösungs-Back-End erforderlich, das beispielsweise automatisierte Predictive Analytics-Methoden verwendet, um Erkenntnisse aus dem D2C (Device-to-Cloud)-Ereignisdatenstrom zu gewinnen.
 
 ## Architektur einer IoT-Lösung
 
@@ -12,17 +10,32 @@ Das folgende Diagramm zeigt die Architektur einer typischen IoT-Lösung. Es enth
 
 ### Gerätekonnektivität
 
-In einem typischen IoT-Szenario senden Geräte Gerät-zu-Cloud-Telemetriedaten (Device-to-Cloud, D2C) wie Temperaturwerte an einen Cloudendpunkt, wo sie gespeichert und verarbeitet werden. Geräte können auch Cloud-zu-Gerät-Befehle (Cloud-to-Device, C2D) empfangen und darauf reagieren, indem Nachrichten von einem Cloudendpunkt gelesen werden. Ein Gerät kann z. B. einen Befehl mit der Anweisung erhalten, die Frequenz zu ändern, mit der Daten gemessen werden.
+In einem typischen IoT-Szenario senden Geräte Telemetriedaten wie Temperaturwerte an einen Cloudendpunkt, wo sie gespeichert und verarbeitet werden. Geräte können auch Cloud-zu-Gerät-Befehle (Cloud-to-Device, C2D) empfangen und darauf reagieren, indem Nachrichten von einem Cloudendpunkt gelesen werden. Ein Gerät kann z. B. einen Befehl mit der Anweisung erhalten, die Frequenz zu ändern, mit der Daten gemessen werden.
 
-Ein Gerät oder eine Datenquelle in einer IoT-Lösung kann aus einem einfachen Sensor mit Netzwerkverbindung oder aus einem leistungsfähigen, eigenständigen Computer bestehen. Verarbeitungskapazitäten, Arbeitsspeicher, Kommunikationsbandbreite und Unterstützung für Kommunikationsprotokolle können bei dem Gerät eingeschränkt sein.
+Eines der größten Probleme im Zusammenhang mit IoT-Projekten ist die sichere und zuverlässige Verbindung von Geräten mit dem Lösungs-Back-End. IoT-Geräte weisen gegenüber anderen Clients, z. B. Browsern und Mobile Apps, in der Regel andere Merkmale auf: IoT-Geräte:
 
-Ein Gerät kann über ein Kommunikationsprotokoll wie AMQP oder HTTP direkt mit einem Endpunkt eines Cloudgateways kommunizieren oder über einen Vermittler, z. B. ein Bereichsgateway, das einen Dienst wie die Protokollübersetzung bereitstellt.
+- Es handelt sich häufig um eingebettete Systeme ohne menschlichen Bediener.
+- Sie können sich an Remotestandorten befinden, an denen der physische Zugriff sehr teuer ist.
+- Sie sind unter Umständen nur über das Lösungs-Back-End erreichbar.
+- Sie verfügen ggf. über eingeschränkte Stromversorgungs- und Verarbeitungsressourcen.
+- Sie verfügen ggf. über intermittierende, langsame oder teure Netzwerkverbindungen.
+- Sie müssen unter Umständen proprietäre, benutzerdefinierte oder branchenspezifische Anwendungsprotokolle verwenden.
+- Sie können mit vielen gängigen Hardware- und Softwareplattformen erstellt werden.
+
+Zusätzlich zu den obigen Anforderungen muss jede IoT-Lösung auch Skalierbarkeit, Sicherheit und Zuverlässigkeit bieten. Die sich ergebenden Verbindungsanforderungen sind schwierig und zeitaufwändig zu implementieren, wenn herkömmliche Technologie verwendet wird, z. B. Webcontainer und Nachrichtenbroker.
+
+Ein Gerät kann direkt mit dem Endpunkt eines Cloud-Gateways kommunizieren. Falls das Gerät keines der vom Cloud-Gateway unterstützten Kommunikationsprotokolle nutzen kann, kann es eine Verbindung über ein Zwischengateway herstellen, das die Protokollübersetzung bereitstellt.
 
 ### Datenverarbeitung und Analysen
 
-In der Cloud empfängt der Prozessor für Datenstrom-Ereignisse D2C-Nachrichten in großem Maßstab von den Geräten und bestimmt, wie diese Nachrichten verarbeitet und gespeichert werden sollen. Mit einer Lösung für verbundene Geräte können Sie C2D-Daten in Form von Befehlen an bestimmte Geräte senden. Durch die Registrierung von Geräten bei der IoT-Lösung können Sie Geräte bereitstellen und steuern, welche Geräte eine Verbindung mit Ihrer Infrastruktur herstellen dürfen. Mit dem Back-End können Sie den Status Ihrer Geräte nachverfolgen und deren Aktivitäten überwachen.
+In der Cloud übernimmt ein IoT-Lösungs-Back-End folgende Funktionen:
 
-IoT-Lösungen können automatische Feedback-Schleifen enthalten. Beispielsweise kann ein Machine Learning-Modul aus den D2C-Telemetriedaten eines Geräts ermitteln, dass die Temperatur eines bestimmten Geräts über der normalen Betriebstemperatur liegt, und einen Befehl an das Gerät senden, damit korrigierende Maßnahmen ergriffen werden.
+- Es empfängt enorme Mengen an Telemetriedaten von Ihren Geräten und bestimmt, wie diese Daten verarbeitet und gespeichert werden sollen. 
+- Es ermöglicht unter Umständen auch das Senden von Befehlen aus der Cloud an ein bestimmtes Gerät.
+- Das Back-End bietet Registrierungsfunktionen, mit denen Sie Geräte bereitstellen und steuern können, welche Geräte eine Verbindung mit Ihrer Infrastruktur herstellen dürfen.
+- Mit dem Back-End können Sie den Status Ihrer Geräte nachverfolgen und deren Aktivitäten überwachen.
+
+IoT-Lösungen können automatische Feedback-Schleifen enthalten. Beispielsweise kann ein Machine Learning-Modul im Back-End aus den Telemetriedaten ermitteln, dass die Temperatur eines bestimmten Geräts über der normalen Betriebstemperatur liegt, und einen Befehl an das Gerät senden, damit korrigierende Maßnahmen ergriffen werden.
 
 ### Präsentation
 
@@ -33,4 +46,4 @@ Mit vielen IoT-Lösungen können die Benutzer die auf den Geräten erfassten Dat
 [lnk-machinelearning]: http://azure.microsoft.com/services/machine-learning/
 [Azure IoT Suite]: http://azure.microsoft.com/solutions/iot
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

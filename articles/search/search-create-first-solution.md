@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen der ersten Suchlösung mit Azure Search | Microsoft Azure" 
+	pageTitle="Erstellen der ersten Suchlösung mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Erstellen Sie Ihre ersten Suchlösung mit Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
@@ -35,7 +35,7 @@ Die Demo ermöglicht Ihnen mit folgenden Übungen einen Einstieg in Azure Search
 <a id="sub-1"></a>
 ## Voraussetzungen
 
-+	Ein [Azure-Abonnement](../includes/free-trial-note.md). Wenn Sie sich noch nicht für ein Testabonnement registrieren möchten, können Sie dieses Lernprogramm überspringen und stattdessen Azure App Service testen[](https://tryappservice.azure.com/). Bei dieser Alternativoption erhalten Sie Azure Search mit einer ASP.NET-Web-App kostenlos – eine Stunde pro Sitzung, ganz ohne Abonnement.
++	Ein [Azure-Abonnement](../includes/free-trial-note.md). Wenn Sie sich noch nicht für ein Testabonnement registrieren möchten, können Sie dieses Lernprogramm überspringen und stattdessen [Azure App Service testen](https://tryappservice.azure.com/). Bei dieser Alternativoption erhalten Sie Azure Search mit einer ASP.NET-Web-App kostenlos – eine Stunde pro Sitzung, ganz ohne Abonnement.
 +	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Falls diese Software noch nicht installiert ist, können Sie jeweils die kostenlose Express-Edition herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
 +	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Ausführliche Informationen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 +	[Azure Search-Demoprojekt zu Adventure Works auf CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=510972). Klicken Sie auf der Registerkarte "Source" (Quelle) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen. 
@@ -174,7 +174,7 @@ Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigs
 
 Wenn beim Buildvorgang von AdventureWorksWeb die Fehlermeldung "Datei oder Assemblydatei 'System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' oder eine ihrer Abhängigkeiten konnte nicht geladen werden" angezeigt wird, gehen Sie wie folgt vor, um den Fehler zu beheben.
 
-1. Wählen Sie **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole **, um die Paket-Manager-Konsole zu öffnen.
+1. Wählen Sie **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**, um die Paket-Manager-Konsole zu öffnen.
 2. Geben Sie an der Paket-Manager-Eingabeaufforderung folgenden Befehl ein: "Update-package -reinstall Microsoft.AspNet.Mvc".
 3. Wählen Sie bei Aufforderung zum Neuladen der Datei die Option **Ja, alle** aus.
 4. Erstellen Sie die Lösung neu, und drücken Sie **F5**.
@@ -209,4 +209,4 @@ Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsof
 [11]: ./media/search-create-first-solution/AzureSearch_Create1_Suggestions.PNG
 [12]: ./media/search-create-first-solution/AzureSearch_Create1_CodeplexDownload.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

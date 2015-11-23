@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
+   ms.date="11/10/2015"
    ms.author="bwren" />
 
 # Ausführen von Runbooks in Azure Automation
@@ -95,13 +95,13 @@ Die folgenden Beispielbefehle rufen den letzten Auftrag für ein Beispielrunbook
 
 ## Gleichmäßige Verteilung
 
-Damit Ressourcen von allen Runbooks in der Cloud verwendet werden können, entlädt Azure Automation jeden Auftrag vorübergehend, nachdem er 3 Stunden lang ausgeführt wurde, und startet ihn dann vom letzten [Prüfpunkt](http://technet.microsoft.com/library/dn469257.aspx#bk_Checkpoints) aus neu. Während dieser Zeit weist der Auftrag den Status "Wird ausgeführt, auf Ressourcen wird gewartet" auf. Wenn das Runbook keine Prüfpunkte enthält oder der Auftrag den ersten Prüfpunkt vor dem Entladen nicht erreicht hat, wird der Auftrag vom Anfang neu gestartet.
+Damit Ressourcen von allen Runbooks in der Cloud verwendet werden können, entlädt Azure Automation jeden Auftrag vorübergehend, nachdem er 3 Stunden lang ausgeführt wurde. [Grafische Runbooks](automation-runbook-types.md#graphical-runbooks) und [PowerShell-Workflow-Runbooks](automation-runbook-types.md#powershell-workflow-runbooks) werden ab ihrem letzten [Prüfpunkt](http://technet.microsoft.com/library/dn469257.aspx#bk_Checkpoints) fortgesetzt. Während dieser Zeit weist der Auftrag den Status "Wird ausgeführt, auf Ressourcen wird gewartet" auf. Wenn das Runbook keine Prüfpunkte enthält oder der Auftrag den ersten Prüfpunkt vor dem Entladen nicht erreicht hat, wird der Auftrag vom Anfang neu gestartet. [PowerShell-Runbooks](automation-runbook-types.md#powershell-runbooks) werden immer von Beginn an gestartet, da sie keine Prüfpunkte unterstützen.
 
 Wenn das Runbook vom gleichen Prüfpunkt aus oder vom Anfang des Runbooks drei aufeinander folgende Male neu gestartet wurde, wird es mit dem Status "Fehler, auf Ressourcen wird gewartet" beendet. Dieses Verhalten schützt davor, dass Runbooks unbegrenzt ausgeführt werden, da der nächste Prüfpunkt nicht ohne Entladen erreicht werden kann. In diesem Fall wird ein Ausnahmefehler mit der folgenden Meldung angezeigt.
 
-Die Ausführung des Auftrags kann nicht fortgesetzt werden, da er wiederholt am selben Prüfpunkt entfernt wurde. Stellen Sie sicher, dass Ihr Runbook Vorgänge mit langer Ausführungsdauer nicht ausführt, ohne deren Zustand dauerhaft zu speichern.
+*Die Ausführung des Auftrags kann nicht fortgesetzt werden, da er wiederholt am selben Prüfpunkt entfernt wurde. Stellen Sie sicher, dass Ihr Runbook Vorgänge mit langer Ausführungsdauer nicht ausführt, ohne deren Zustand dauerhaft zu speichern.*
 
-Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen von Aktivitäten zwischen zwei Prüfpunkten 3 Stunden nicht überschreitet. Sie müssen ggf. Prüfpunkte zu Ihrem Runbook hinzufügen, um sicherzustellen, dass dieser Grenzwert von 3 Stunden nicht erreicht wird. Falls erforderlich, müssen Sie Vorgänge mit langer Ausführungszeit aufteilen. Angenommen, Ihr Runbook führt eine Neuindizierung für eine große SQL-Datenbank durch. Wenn dieser einzelne Vorgang nicht innerhalb des Grenzwerts für die gleichmäßige Verteilung abgeschlossen wird, wird der Auftrag entladen und vom Anfang neu gestartet. In diesem Fall sollten Sie den Neuindizierungsvorgang in mehrere Schritte unterteilen (z. B. nur jeweils eine Tabelle gleichzeitig neu indizieren) und dann einen Prüfpunkt nach jedem Vorgang einfügen, damit der Auftrag nach dem letzten Vorgang bis zum Abschluss fortgesetzt werden kann.
+Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen von Aktivitäten zwischen zwei Prüfpunkten 3 Stunden nicht überschreitet. Sie müssen ggf. Prüfpunkte zu Ihrem Runbook hinzufügen oder Vorgänge mit langen Ausführungszeiten aufteilen, um sicherzustellen, dass dieser Grenzwert von 3 Stunden nicht erreicht wird. Angenommen, Ihr Runbook führt eine Neuindizierung für eine große SQL-Datenbank durch. Wenn dieser einzelne Vorgang nicht innerhalb des Grenzwerts für die gleichmäßige Verteilung abgeschlossen wird, wird der Auftrag entladen und vom Anfang neu gestartet. In diesem Fall sollten Sie den Neuindizierungsvorgang in mehrere Schritte unterteilen (z. B. nur jeweils eine Tabelle gleichzeitig neu indizieren) und dann einen Prüfpunkt nach jedem Vorgang einfügen, damit der Auftrag nach dem letzten Vorgang bis zum Abschluss fortgesetzt werden kann.
 
 
 
@@ -109,4 +109,4 @@ Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen vo
 
 - [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

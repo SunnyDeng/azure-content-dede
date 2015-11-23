@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ruby" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="11/09/2015" 
 	ms.author="andrela"/>
 
 
@@ -48,7 +48,7 @@ Im Thema wird auch erklärt, wie die Verbindungszeichenfolge der Datenbank abger
 
 ## Herstellen von Verbindungen mit der SQL-Datenbank
 
-Die Funktion [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) dient zum Verbinden mit einer SQL-Datenbank.
+Die [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds)-Funktion dient zum Verbinden mit einer SQL-Datenbank.
 
     require 'tiny_tds' 
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
@@ -77,9 +77,9 @@ Das Codebeispiel:
 - Fügt die Zeile ein.
 - Ruft den Wert ab, der für den Primärschlüssel generiert wurde.
 
-In SQL-Datenbanken können die [IDENTITY](http://msdn.microsoft.com/library/ms186775.aspx)-Eigenschaft und das [SEQUENCE](http://msdn.microsoft.com/library/ff878058.aspx)-Objekt zum automatischen Generieren von Werten für [Primärschlüssel](http://msdn.microsoft.com/library/ms179610.aspx) verwendet werden.
+In Azure SQL-Datenbanken können die [IDENTITY](http://msdn.microsoft.com/library/ms186775.aspx)-Eigenschaft und das [SEQUENCE](http://msdn.microsoft.com/library/ff878058.aspx)-Objekt zum automatischen Generieren von Werten für [Primärschlüssel](http://msdn.microsoft.com/library/ms179610.aspx) verwendet werden.
 
-Bei der Verwendung von TinyTDS mit Azure wird empfohlen, dass Sie mehrere `SET`-Anweisungen ausführen, um zu ändern, wie die aktuelle Sitzung bestimmte Informationen behandelt. Empfohlene `SET`-Anweisungen werden im Codebeispiel bereitgestellt. Beispielsweise ermöglicht `SET ANSI_NULL_DFLT_ON` das Erstellen neuer Spalten zum Zulassen von Null-Werten, selbst wenn der NULL-Zulässigkeitsstatus der Spalte nicht explizit angegeben ist.
+Bei der Verwendung von TinyTDS mit Azure wird empfohlen, dass Sie mehrere `SET`-Anweisungen ausführen, um zu ändern, wie die aktuelle Sitzung bestimmte Informationen behandelt. Empfohlene `SET`-Anweisungen werden im Codebeispiel bereitgestellt. Beispielsweise ermöglicht `SET ANSI_NULL_DFLT_ON` das Erstellen neuer Spalten zum Zulassen von NULL-Werten, selbst wenn der NULL-Zulässigkeitsstatus der Spalte nicht explizit angegeben ist.
 
 Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Format in Microsoft SQL Server verwenden Sie die Funktion [strftime](http://ruby-doc.org/core-2.2.0/Time.html#method-i-strftime), um in das entsprechende Datetime-Format umzuwandeln.
 
@@ -104,4 +104,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -1,7 +1,9 @@
-## Szenario
+In diesem Szenario werden die folgenden Aufgaben ausgeführt:
 
-Im nachfolgenden Szenario wird demonstriert, wie Sie ein Lastenausgleichsmodul für 2 virtuelle Computer mit den Namen "web1" und "web2" mithilfe des Ports 80 zum Empfangen des Internetverkehrs hinzufügen und Netzwerkverkehr mit Lastenausgleich sowohl an Port 80 als auch 2 Server senden.
+- Erstellen eines Lastenausgleichs für den Empfang von Netzwerkdatenverkehr an Port 80 und Senden von Datenverkehr mit Lastenausgleich an die virtuellen Computer "web1" und "web2"
+- Erstellen von NAT-Regeln für den Remotedesktopzugriff für virtuelle Computer hinter dem Lastenausgleich
+- Erstellen von Integritätstest
 
 ![Load Balancer-Szenarios](./media/load-balancer-get-started-internet-scenario-include/scenario-classic.png)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

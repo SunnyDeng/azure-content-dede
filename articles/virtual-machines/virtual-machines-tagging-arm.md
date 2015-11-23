@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-multiple"
    ms.workload="infrastructure-services"
-   ms.date="07/23/2015"
+   ms.date="11/10/2015"
    ms.author="dkshir;memccror"/>
 
 # Gewusst wie: Markieren eines virtuellen Computers in Azure
@@ -88,7 +88,7 @@ Wenn der virtuelle Computer bereits Tags enthält, werden auf der Ressource ansc
 
 Wenn Sie Tags über PowerShell hinzufügen möchten, können Sie den Befehl `Set-AzureResource` verwenden. Beachten Sie, dass beim Aktualisieren von Tags über PowerShell die Tags als Ganzes aktualisiert werden. Wenn Sie ein Tag auf eine Ressource hinzufügen, die bereits über Tags verfügt, müssen Sie alle Tags einschließen, die auf der Ressource platziert werden sollen. Es folgt ein Beispiel für das Hinzufügen zusätzlicher Tags zu einer Ressource über PowerShell-Cmdlets.
 
-Das erste Cmdlet legt alle Tags, die auf *MyWindowsVM* platziert sind, mithilfe der `Get-AzureResource`- und `Tags`-Funktion auf die *Tags*-Variable fest.
+Das erste Cmdlet legt alle Tags, die auf *MyWindowsVM* platziert sind, mithilfe der `Get-AzureResource`- und `Tags`-Funktion auf die *Tags*-Variable fest. Der Parameter `ApiVersion` ist optional. Wenn er nicht angegeben ist, wird die neueste API-Version des Ressourcenanbieters verwendet.
 
         PS C:\> $tags = (Get-AzureResource -Name MyWindowsVM -ResourceGroupName MyResourceGroup -ResourceType "Microsoft.Compute/virtualmachines" -ApiVersion 2015-05-01-preview).Tags
 
@@ -107,7 +107,7 @@ Der zweite Befehl zeigt die Tags für die angegebene Variable an.
         Value		Production
         Name		Environment
 
-Der dritte Befehl fügt ein zusätzliches Tag für die *Tags*-Variable hinzu. Beachten Sie, wie **+=** verwendet wird, um das neue Schlüssel-Wert-Paar an die *Tags*-Liste anzufügen.
+Der dritte Befehl fügt ein zusätzliches Tag auf die *Tags*-Variable hinzu. Beachten Sie, wie **+=** verwendet wird, um das neue Schlüssel-Wert-Paar an die *Tags*-Liste anzufügen.
 
         PS C:\> $tags +=@{Name="Location";Value="MyLocation"}
 
@@ -155,7 +155,7 @@ Nun, da wir unseren Ressourcen Tags über PowerShell, die Azure-Befehlszeilensch
 
 ## Anzeigen der Tags in den Nutzungsdetails
 
-Tags auf Compute-, Netzwerk- und Speicherressourcen über den Azure-Ressourcen-Manager werden in Ihren Nutzungsdetails im Abrechnungsportal aufgefüllt.
+Tags, die vom Azure-Ressourcen-Manager in Compute-, Netzwerk- und Speicherressourcen platziert werden, finden Sie in Ihren Nutzungsdetails im [Abrechnungsportal](https://account.windowsazure.com/) wieder.
 
 Klicken Sie auf **Nutzungsdetails herunterladen**, um die Nutzungsdetails in Ihrem Abonnement anzuzeigen.
 
@@ -183,11 +183,11 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 
 
 [PowerShell-Umgebung mit dem Azure-Ressourcen-Manager]: ../powershell-azure-resource-manager.md
-[Azure Resource-Cmdlets]: https://msdn.microsoft.com/en-us/library/azure/dn757692.aspx
+[Azure Resource-Cmdlets]: https://msdn.microsoft.com/de-DE/library/azure/dn757692.aspx
 [Umgebung für Ihre Azure-Befehlszeilenschnittstelle]: ./xplat-cli-azure-resource-manager.md
 [Übersicht über den Azure Resource Manager]: ../resource-group-overview.md
 [Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
 [Erläuterungen zur Rechnung für Azure]: ../billing-understand-your-bill.md
 [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure]: ../billing-usage-rate-card-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

@@ -3,7 +3,7 @@
    description="Fügen Sie Mobile Services mithilfe des Dialogfelds ";Verbundene Dienste hinzufügen"; in Visual Studio hinzu"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
    editor="tlee" />
 <tags 
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="mobile"
    ms.date="08/12/2015"
-   ms.author="patshea" />
+   ms.author="tarcher" />
 
 # Hinzufügen von Mobile Services mithilfe von verbundenen Visual Studio-Diensten
 
@@ -89,4 +89,4 @@ Stellen Sie Fragen, und holen Sie sich Hilfe:
 
  - [Dokumentation für Azure Mobile Services auf "azure.microsoft.com"](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

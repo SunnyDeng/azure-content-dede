@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-   ms.service="marketplace-publishing"
+   ms.service="marketplace"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
@@ -46,4 +46,4 @@ Nun da sich Ihr Angebot in der Stagingphase befindet und Sie seine FunktionalitÃ
 ## Weitere Informationen
 - [Erste Schritte: VerÃ¶ffentlichen eines Angebots in Azure Marketplace](marketplace-publishing-getting-started.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

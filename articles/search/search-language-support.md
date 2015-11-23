@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erstellen einer Indexdefinition für ein Dokument in mehreren Sprachen in Azure Search | Microsoft Azure"
+   pageTitle="Erstellen eines Index für Dokumente in mehreren Sprachen in Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst"
    description="Azure Search unterstützt 56 Sprachen und nutzt Sprachanalysen mit Lucene- und Natural Language Processing-Technologie von Microsoft."
    services="search"
    documentationCenter=""
@@ -16,9 +16,9 @@
    ms.date="10/19/2015"
    ms.author="jlembicz"/>
 
-# Erstellen einer Indexdefinition für ein Dokument in mehreren Sprachen in Azure Search
-
+# Erstellen eines Index für Dokumente in mehreren Sprachen in Azure Search
 > [AZURE.SELECTOR]
+- [Portal](search-language-support.md)
 - [REST](https://msdn.microsoft.com/library/azure/dn879793.aspx)
 - [.NET](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.analyzername.aspx)
 
@@ -74,4 +74,4 @@ Wenn Sie .NET-Entwickler sind, können Sie Sprachanalysen mit dem [Azure Search 
 [2]: ./media/search-language-support/SelectAnalyzer.png
 [3]: ./media/search-language-support/IndexDefinition.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

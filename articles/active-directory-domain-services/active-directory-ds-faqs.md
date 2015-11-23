@@ -30,7 +30,7 @@ In den [Handbüchern zur Problembehandlung](active-directory-ds-troubleshooting.
 Nein. Sie können nur eine einzelne durch Azure AD-Domänendienste verwaltete Domäne für ein einzelnes Azure AD-Verzeichnis erstellen.
 
 #### Kann ich Azure AD-Domänendienste in mehreren virtuellen Netzwerken in meinem Abonnement zur Verfügung stellen?
-Der Dienst selbst bietet keine direkte Unterstützung für dieses Szenario. Azure AD-Domänendienste sind jeweils in nur einem virtuellen Netzwerk verfügbar. Sie können jedoch die Konnektivität zwischen mehreren virtuellen Netzwerken zum Bereitstellen von Azure AD-Domänendienste mit anderen virtuellen Netzwerken konfigurieren. Dieser Artikel beschreibt, wie Sie eine [Verbindung zu virtuellen Netzwerken in Azure herstellen](../vpn-gateway/virtual-networks-configure-vnet-to-vnetconnection.md).
+Der Dienst selbst bietet keine direkte Unterstützung für dieses Szenario. Azure AD-Domänendienste sind jeweils in nur einem virtuellen Netzwerk verfügbar. Sie können jedoch die Konnektivität zwischen mehreren virtuellen Netzwerken zum Bereitstellen von Azure AD-Domänendienste mit anderen virtuellen Netzwerken konfigurieren. Dieser Artikel beschreibt, wie Sie eine [Verbindung zu virtuellen Netzwerken in Azure herstellen](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
 
 #### Kann ich Azure AD-Domänendienste mithilfe von PowerShell aktivieren?
 Die PowerShell-/automatisierte Bereitstellung von Azure AD-Domänendienste ist derzeit nicht verfügbar.
@@ -68,4 +68,4 @@ Auf unserer [Seite für Regionen](active-directory-ds-regions.md) finden Sie ein
 #### Wann wird Azure AD-Domänendienste allgemein verfügbar sein?
 Wir können derzeit keine Zeitpläne für die allgemeine Verfügbarkeit des Diensts bekannt geben.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

@@ -196,15 +196,17 @@ Schlüsselwert|Muss verwendet werden, um den Inhaltsschlüssel mit einer angegeb
 Widevine-Lizenzerwerbs-URL|Muss beim Konfigurieren der Übermittlungsrichtlinie für Assets für DASH-Streaming verwendet werden (siehe [diesen](media-services-axinom-integration.md#content-protection) Abschnitt).
 Inhaltsschlüssel-ID|Muss als Teil des Werts des Anspruchs "entitlement\_message" des JWT-Tokens eingeschlossen werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt). 
 
+
 ##Media Services-Lernpfade
 
-Sie können sich die AMS-Lernpfade hier ansehen:
+[AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
-- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+##Feedback geben
+
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 ###Danksagungen 
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Kristjan Jõgi von Axinom, Mingfei Yan und Amit Rajput.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

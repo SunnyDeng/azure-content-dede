@@ -86,6 +86,31 @@ Diese Basiskonfiguration erfordert den folgenden Satz von Azure-Diensten und -Ko
 - Ein Speicherkonto
 - Ein Azure-Abonnement
 
+Nachfolgend sind die virtuellen Computer und deren Standardgrößen für diese Konfiguration aufgeführt.
+
+Element | Beschreibung des virtuellen Computers | Katalogimage | Standardgröße
+--- | --- | --- | ---
+1\. | Erster Domänencontroller | Windows Server 2012 R2 Datacenter | A2 (Mittel)
+2\. | Zweiter Domänencontroller | Windows Server 2012 R2 Datacenter | A2 (Mittel)
+3\. | Erster Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | A5
+4\. | Zweiter Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | A5
+5\. | Mehrheitsknoten des Clusters | Windows Server 2012 R2 Datacenter | A1 (Klein)
+6\. | Erster SharePoint-Anwendungsserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+7\. | Zweiter SharePoint-Anwendungsserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+8\. | Erster SharePoint-Webserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+9\. | Zweiter SharePoint-Webserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+
+Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/).
+
+1. Klicken Sie unter **Module** auf **Compute** und dann so oft auf **Virtuelle Computer**, bis Sie eine Liste mit neun virtuellen Computern erstellt haben.
+2. Wählen Sie für jeden virtuellen Computer Folgendes:
+	- Die gewünschte Region
+	- **Windows** für den Typ
+	- **Standard** für die Preisstufe
+	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
+
+> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machine Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+
 ### Phasen der Bereitstellung
 
 Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
@@ -128,4 +153,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

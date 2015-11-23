@@ -13,18 +13,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="09/04/2015"
+   ms.date="11/06/2015"
    ms.author="maroche"/>
 
 # Versionshinweise für Azure Data Catalog
 
-## Hinweise für die Azure Data Catalog-Version vom 4. September 2015
 
-### Datenprofil fehlt eventuell bei einigen registrierten Datenassets
+## Hinweise für die Azure Data Catalog-Version vom 6. November 2015
 
-Wenn Sie Datenquellen registrieren und die Option zur Datenprofilerstellung im Tool zum Registrieren von Datenquellen aktiviert ist, werden die Datenprofilinformationen unter Umständen nicht einbezogen, wenn Sie Oracle-Tabellen mit Mehrbytezeichen in den Spaltennamen registrieren.
+### Beim Start des Tools für die Datenquellenregistrierung können Fehler auftreten
 
-Diese Einschränkungen sind auf ein bekanntes Problem in der Version vom 4. September zurückzuführen und werden in einem zukünftigen Update von Azure Data Catalog behoben.
+Beim Starten des Tools **Azure Data Catalog** für die Datenquellenregistrierung vom **Azure Data Catalog-Portal** aus erhalten Benutzer, die bereits eine ältere Version des Tools installiert haben, möglicherweise diese Meldung: "Die Anwendung kann nicht gestartet werden. Wenden Sie sich an den Hersteller der Anwendung."
+
+Benutzer, die diese Nachricht erhalten, sollten in der Windows-Systemsteuerung die vorhandene Anwendung "Azure Data Catalog" entfernen, und das Tool anschließend erneut vom **Azure Data Catalog-Portal** aus starten.
 
 ## Hinweise für die Azure Data Catalog-Version vom 13. Juli 2015
 
@@ -43,7 +44,7 @@ Die Unterstützung von SQL Server Reporting Services (SSRS)-Datenquellen ist in
 
 ### Öffnen von Datenassets in Excel
 
-Beim Öffnen von Datenassets aus dem Azure Data Catalog-Portal in Microsoft Excel wird Benutzern möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
+Beim Öffnen von Datenassets aus dem **Azure Data Catalog-Portal** in Microsoft Excel wird möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
 
 Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/de-DE/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
 
@@ -77,4 +78,4 @@ Weitere Informationen finden Sie unter [Konfigurieren von Authentifizierungsrich
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

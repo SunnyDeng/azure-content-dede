@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="11/11/2015"
 	ms.author="genli"/>
 
 # Hinzufügen oder Ändern des Co-Administrators, Dienstadministrators und Kontoadministrators in Azure
@@ -39,7 +39,11 @@ Die folgende E-Mail-Adresse kann als Co-Administrator hinzugefügt werden:
 * **Microsoft-Konto** (früher Windows Live ID) </br> Sie können ein Microsoft-Konto verwenden, um sich bei allen verbraucherorientierten Microsoft-Produkten und Clouddiensten anzumelden, z. B. Outlook (Hotmail), Skype (MSN), OneDrive, Windows Phone und Xbox LIVE.
 * **Organisationskonto**</br> Ein Organisationskonto ist ein Konto, das unter Azure Active Directory erstellt wird. Die Adresse eines Organisationskontos ähnelt der folgenden Adresse: Benutzer@<your domain>.onmicrosoft.com
 
-**Hinweis**: * Wenn Sie mit einem Microsoft-Konto angemeldet sind, können Sie nur andere Microsoft-Konten als Co-Administrator hinzufügen. Dies dient der Sicherheit und verhindert, dass nicht zu einer Organisation gehörende Konten erkennen können, ob bestimmte Konten (z. B. janedoe@contoso.com) gültige Konten sind. * Wenn Sie mit einem Organisationskonto angemeldet sind, können Sie andere Organisationskonten in Ihrer Organisation als Co-Administrator hinzufügen. Beispielsweise kann abby@contoso.com das Konto bob@contoso.com als Dienstadministrator oder Co-Administrator hinzufügen, nicht jedoch john@notcontoso.com. Mit einem Organisationskonto angemeldete Benutzer können weiterhin Benutzer mit Microsoft-Konten als Dienstadministrator oder Co-Administrator hinzufügen. * Da es nun möglich ist, sich bei Azure mit einem Organisationskonto anzumelden, sind hier die Änderungen der Anforderungen für Konten für den Dienstadministrator und den Co-Administrator aufgeführt:
+**Hinweis**
+
+ * Wenn Sie mit einem Microsoft-Konto angemeldet sind, können Sie nur andere Microsoft-Konten als Co-Administrator hinzufügen. Dies dient der Sicherheit und verhindert, dass nicht zu einer Organisation gehörende Konten erkennen, ob bestimmte Konten (z. B. janedoe@contoso.com) gültig sind.
+ * Wenn Sie mit einem Organisationskonto angemeldet sind, können Sie andere Organisationskonten in Ihrer Organisation als Co-Administrator hinzufügen. Beispielsweise kann abby@contoso.com das Konto bob@contoso.com als Dienstadministrator oder Co-Administrator hinzufügen, nicht jedoch john@notcontoso.com. Mit einem Organisationskonto angemeldete Benutzer können Benutzer mit Microsoft-Konten weiterhin als Dienstadministrator oder Co-Administrator hinzufügen.
+ * Nachdem es jetzt möglich ist, sich bei Azure mit einem Organisationskonto anzumelden, ändern sich die folgenden Kontoanforderungen für Dienstadministratoren und Co-Administratoren:
 
 | Anmeldemethode| Microsoft-Konto als Co-Administrator oder Dienstadministrator hinzufügen? |Organisationskonto in der gleichen Organisation als Co-Administrator oder Dienstadministrator hinzufügen? |Organisationskonto in einer anderen Organisation als Co-Administrator oder Dienstadministrator hinzufügen?
 | ------------- | ------------- |---------------|---------------|
@@ -49,14 +53,14 @@ Die folgende E-Mail-Adresse kann als Co-Administrator hinzugefügt werden:
 ## Ändern des Dienstadministrators für ein Abonnement
 Nur der Kontoadministrator kann den Dienstadministrator für ein Abonnement ändern.
 
-1. Melden Sie sich im [Kontoverwaltungsportal](https://account.windowsazure.com/subscriptions) unter Verwendung des Kontoadministrators an.
+1. Melden Sie sich als Kontoadministrator beim [Kontoverwaltungsportal](https://account.windowsazure.com/subscriptions) an.
 2. Wählen Sie das Abonnement aus, das Sie ändern möchten.
-3. Klicken Sie auf der rechten Seite auf **Abonnementdetails bearbeiten**. </br> ![editsub](./media/billing-add-change-azure-subscription-administrator/editsub.png)
+3. Klicken Sie auf der rechten Seite auf **Abonnementdetails bearbeiten**.</br>![editsub](./media/billing-add-change-azure-subscription-administrator/editsub.png)
 
 4. Geben Sie im Feld **DIENSTADMINISTRATOR** die E-Mail-Adresse des neuen Dienstadministrators ein. ![changeSA](./media/billing-add-change-azure-subscription-administrator/changeSA.png)
 
-## Ändern des Kontoadministrators (Übertragen des Besitzes des Azure-Kontos auf ein anderes Konto)
+## Ändern des Kontoadministrators
 
-Informationen zum Übertragen des Besitzes eines Azure-Kontos auf ein anderes Konto finden Sie unter [Übertragen eines Azure-Abonnements](../billing-subscription-transfer.md).
+Informationen zum Übertragen des Besitzes des Azure-Kontos auf ein anderes Konto finden Sie unter [Übertragen eines Azure-Abonnements](../billing-subscription-transfer.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

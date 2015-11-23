@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/26/2015" 
+	ms.date="11/10/2015" 
 	ms.author="sdanie"/>
 
 # Protokollieren von Ereignissen in Azure Event Hubs mit Azure API Management
 
 Azure Event Hubs ist ein hochgradig skalierbarer Dateneingangsdienst, der Millionen von Ereignissen pro Sekunde erfassen kann. Auf diese Weise können Sie riesige Datenmengen verarbeiten und analysieren, die von vernetzten Geräten und Anwendungen erzeugt werden. Event Hubs fungiert als „Eingangstür“ für eine Ereignispipeline. Nach der Erfassung in Event Hubs können Sie Daten mit einem beliebigen Echtzeit-Analyseanbieter oder mit Batchverarbeitungs-/Speicheradaptern umwandeln und speichern. Event Hubs entkoppelt die Erzeugung eines Datenstroms von Ereignissen von der Nutzung dieser Ereignisse, sodass Ereignisconsumer nach einem eigenen Zeitplan auf Ereignisse zugreifen können.
+
+Dies ist ein Begleitartikel zum Video [Integrate Azure API Management with Event Hubs](https://azure.microsoft.com/documentation/videos/integrate-azure-api-management-with-event-hubs/) (Integrieren von Azure API Management in Event Hubs; in englischer Sprache). Hier wird beschrieben, wie API Management-Ereignisse mithilfe von Azure Event Hubs protokolliert werden.
 
 ## Erstellen eines Azure Event Hubs
 
@@ -26,11 +28,11 @@ Zum Erstellen eines neuen Event Hubs melden Sie sich im [Azure-Portal](https://m
 
 ![Event Hub erstellen][create-event-hub]
 
-Anschließend wechseln Sie zur Registerkarte **Konfigurieren** für den neuen Event Hub und erstellen zwei **Richtlinien für gemeinsamen Zugriff**. Nennen Sie die erste **Senden**, und geben Sie ihr die Berechtigungen zum **Senden**.
+Anschließend wechseln Sie zur Registerkarte **Konfigurieren** für den neuen Event Hub und erstellen zwei **Richtlinien für gemeinsamen Zugriff**. Nennen Sie die erste **Senden**, und geben Sie ihr Berechtigungen zum **Senden**.
 
 ![Richtlinie zum Senden][sending-policy]
 
-Nennen Sie die zweite **Empfangen**, geben Sie ihr die Berechtigungen zum **Lauschen**, und klicken Sie auf **Speichern**.
+Nennen Sie die zweite **Empfangen**, geben Sie ihr Berechtigungen zum **Lauschen**, und klicken Sie auf **Speichern**.
 
 ![Richtlinie zum Empfangen][receiving-policy]
 
@@ -44,16 +46,16 @@ Die Verbindungszeichenfolge **Senden** wird beim Protokollieren von Ereignissen 
 
 ## Erstellen eines API Management-Loggers
 
-Der Event Hub ist nun vorhanden. Der nächste Schritt besteht darin, einen [Logger](https://msdn.microsoft.com/library/azure/mt592020.aspx) im API Management-Dienst zu konfigurieren, der die Ereignisse im Event Hub protokollieren kann.
+Der Event Hub ist nun vorhanden. Der nächste Schritt besteht darin, eine [Protokollierung](https://msdn.microsoft.com/library/azure/mt592020.aspx) im API Management-Dienst zu konfigurieren, sodass Ereignisse im Event Hub protokolliert werden können.
 
-API Management-Logger werden mit der [API Management-REST-API](http://aka.ms/smapi) konfiguriert. Machen Sie sich vor der erstmaligen Verwendung der REST-API mit den [Voraussetzungen](https://msdn.microsoft.com/library/azure/dn776326.aspx#Prerequisites) vertraut, und stellen Sie sicher, dass der [Zugriff auf die REST- API aktiviert wurde](https://msdn.microsoft.com/library/azure/dn776326.aspx#EnableRESTAPI).
+API Management-Protokollierungen werden mit der [API Management-REST-API](http://aka.ms/smapi) konfiguriert. Machen Sie sich vor der erstmaligen Verwendung der REST-API mit den [Voraussetzungen](https://msdn.microsoft.com/library/azure/dn776326.aspx#Prerequisites) vertraut, und stellen Sie sicher, dass der [Zugriff auf die REST- API aktiviert wurde](https://msdn.microsoft.com/library/azure/dn776326.aspx#EnableRESTAPI).
 
 Um den Logger zu erstellen, senden Sie mithilfe der folgenden Vorlage eine HTTP PUT-Anforderung.
 
     https://{your service}.management.azure-api.net/loggers/{new logger name}?api-version=2014-02-14-preview
 
--	Ersetzen Sie `{your service}` durch den Namen der Instanz des API Management-Diensts.
--	Ersetzen Sie `{new logger name}` durch den gewünschten Namen für den neuen Logger. Sie werden auf diesen Namen verweisen, wenn Sie die [log-to-eventhub](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)-Richtlinie konfigurieren.
+-	Ersetzen Sie `{your service}` durch den Namen Ihrer API Management-Dienstinstanz.
+-	Ersetzen Sie `{new logger name}` durch den gewünschten Namen für die neue Protokollierung. Sie verweisen auf diesen Namen, wenn Sie die [log-to-eventhub](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)-Richtlinie konfigurieren.
 
 Fügen Sie der Anforderung die folgenden Header hinzu:
 
@@ -73,22 +75,22 @@ Geben Sie den Anforderungstext gemäß der folgenden Vorlage ein.
     }
 
 -	`type` muss auf `AzureEventHub` festgelegt werden.
--	`description` stellt eine optionale Beschreibung des Loggers bereit und kann auf Wunsch auch leer gelassen werden (als Zeichenfolge mit der Länge null).
--	`credentials` enthält den `name` und die `connectionString` des Azure Event Hubs.
+-	`description` stellt eine optionale Beschreibung der Protokollierung bereit und kann auf Wunsch auch leer gelassen werden (als Zeichenfolge mit der Länge null).
+-	`credentials` enthält `name` und `connectionString` des Azure Event Hubs.
 
-Sobald Sie die Anforderung senden, wird der Statuscode `201 Created` zurückgegeben, sofern der Logger bereits erstellt wurde.
+Sobald Sie die Anforderung senden, wird der Statuscode `201 Created` zurückgegeben, wenn die Protokollierung erstellt wird.
 
->[AZURE.NOTE]Informationen über weitere mögliche Rückgabecodes und die Gründe dafür erhalten Sie unter [Erstellen eines Loggers](https://msdn.microsoft.com/library/azure/mt592020.aspx#PUT). Die Vorgehensweisen für weitere Vorgänge, z. B. zum Auflisten, Aktualisieren und Löschen, finden Sie in der Dokumentation zur Entität [Logger](https://msdn.microsoft.com/library/azure/mt592020.aspx).
+>[AZURE.NOTE]Informationen über weitere mögliche Rückgabecodes und die Gründe dafür erhalten Sie unter [Erstellen einer Protokollierung](https://msdn.microsoft.com/library/azure/mt592020.aspx#PUT). Die Vorgehensweisen für weitere Vorgänge, z. B. zum Auflisten, Aktualisieren und Löschen, finden Sie in der Dokumentation zur Entität [Protokollierung](https://msdn.microsoft.com/library/azure/mt592020.aspx).
 
 ## Konfigurieren von log-to-eventhub-Richtlinien
 
 Nachdem Sie den Logger in API Management konfiguriert haben, können Sie die Richtlinien zum Protokollieren im Event Hub („log-to-eventhub-Richtlinien“) für die gewünschten Ereignisse konfigurieren. Die log-to-eventhub-Richtlinie kann im Abschnitt mit Richtlinien für eingehenden Datenverkehr oder im Abschnitt mit Richtlinien für ausgehenden Datenverkehr verwendet werden.
 
-Zum Konfigurieren der Richtlinien melden Sie sich im [Azure-Portal](https://manage.windowsazure.com) an, navigieren zu Ihrem API Management-Service und klicken entweder auf **Herausgeberportal** oder auf **Verwalten**, um das Herausgeberportal zu öffnen.
+Zum Konfigurieren der Richtlinien melden Sie sich im [Azure-Portal](https://manage.windowsazure.com) an, navigieren zu Ihrem API Management-Dienst und klicken entweder auf **Herausgeberportal** oder auf **Verwalten**, um das Herausgeberportal zu öffnen.
 
 ![Herausgeberportal][publisher-portal]
 
-Klicken Sie links im Menü „API Management“ auf **Richtlinien**, wählen Sie das gewünschte Produkt und die API aus, und klicken Sie auf **Richtlinie hinzufügen**. In diesem Beispiel fügen wir die Richtlinie der **Echo API** im Produkt **Unlimited** hinzu.
+Klicken Sie links im API Management-Menü auf **Richtlinien**, wählen Sie das gewünschte Produkt und die API aus, und klicken Sie auf **Richtlinie hinzufügen**. In diesem Beispiel fügen wir die Richtlinie der **Echo API** im Produkt **Unlimited** hinzu.
 
 ![Richtlinie hinzufügen][add-policy]
 
@@ -100,7 +102,7 @@ Positionieren Sie den Cursor auf dem Richtlinienabschnitt `inbound`, und klicken
       @( string.Join(",", DateTime.UtcNow, context.Deployment.ServiceName, context.RequestId, context.Request.IpAddress, context.Operation.Name))
     </log-to-eventhub>
 
-Ersetzen Sie `logger-id` durch den Namen des API Management-Loggers, den Sie im vorherigen Schritt konfiguriert haben.
+Ersetzen Sie `logger-id` durch den Namen der API Management-Protokollierung, die Sie im vorherigen Schritt konfiguriert haben.
 
 Sie können jeden Ausdruck verwenden, der eine Zeichenfolge als Wert für das Element `log-to-eventhub` zurückgibt. In diesem Beispiel wird eine Zeichenfolge protokolliert, die das Datum, die Uhrzeit, den Dienstnamen, die Anforderungs-ID, die IP-Adresse der Anforderung und den Vorgangsnamen enthält.
 
@@ -112,6 +114,15 @@ Klicken Sie auf **Speichern**, um die aktualisierte Richtlinienkonfiguration zu 
 	-	[Erste Schritte mit Azure Event Hubs](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 	-	[Empfangen von Nachrichten mit EventProcessorHost](../event-hubs/event-hubs-csharp-ephcs-getstarted.md#receive-messages-with-eventprocessorhost)
 	-	[Programmierleitfaden für Event Hubs](../event-hubs/event-hubs-programming-guide.md)
+-	Weitere Informationen zur Integration von API Management und Event Hubs
+	-	[Referenz zur Protokollierungsentität](https://msdn.microsoft.com/library/azure/mt592020.aspx)
+	-	[log-to-eventhub policy reference](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)
+	-	[Überwachen von APIs mit Azure API Management, Event Hubs und Runscope](api-management-log-to-eventhub-sample.md)	
+
+## Video zur exemplarischen Vorgehensweise
+
+> [AZURE.VIDEO integrate-azure-api-management-with-event-hubs]
+
 
 [publisher-portal]: ./media/api-management-howto-log-event-hubs/publisher-portal.png
 [create-event-hub]: ./media/api-management-howto-log-event-hubs/create-event-hub.png
@@ -122,4 +133,4 @@ Klicken Sie auf **Speichern**, um die aktualisierte Richtlinienkonfiguration zu 
 [event-hub-policy]: ./media/api-management-howto-log-event-hubs/event-hub-policy.png
 [add-policy]: ./media/api-management-howto-log-event-hubs/add-policy.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

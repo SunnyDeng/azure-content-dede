@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="SQL-Datenbank – Unterstützung von Vorgängerversionsclients für Überwachung und dynamische Datenmaskierung | Microsoft Azure" 
-	description="Sie erhalten Informationen zur Unterstützung von Vorgängerversionsclients bei SQL-Datenbank für Überwachung und dynamische Datenmaskierung." 
+	pageTitle="SQL-Datenbank – Unterstützung von Vorgängerversionsclients für die Überwachung | Microsoft Azure" 
+	description="Erfahren Sie mehr über die Unterstützung von Vorgängerversionsclients seitens der SQL-Datenbank für die Überwachung." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="nadavhelfman" 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="nadavhelfman"/>
+	ms.date="11/12/2015" 
+	ms.author="nadavhelfman; ronitr"/>
  
-# SQL-Datenbank – Unterstützung von Vorgängerversionsclients für Überwachung und dynamische Datenmaskierung 
+# SQL-Datenbank – Unterstützung von Vorgängerversionsclients für die Überwachung
 
 
-[Überwachung](sql-database-auditing-get-started.md) und [dynamische Datenmaskierung](sql-database-dynamic-data-masking-get-started.md) können mit SQL-Clients genutzt werden, die die TDS-Umleitung unterstützen.
+Die [Überwachung](sql-database-auditing-get-started.md) erfolgt automatisch mit SQL-Clients, die eine TDS-Umleitung unterstützen.
 
 Jeder Client, der TDS 7.4 implementiert, sollte auch die Umleitung unterstützen. Zu den Ausnahmen gehören JDBC 4.0, in dem die Umleitungsfunktion nicht vollständig unterstützt wird, und Tedious for Node.JSS, in dem die Umleitungsfunktion nicht implementiert wurde.
 
@@ -38,6 +38,4 @@ Eine unvollständige Liste der "Vorgängerversionsclients":
 
 **Anmerkung:** Die oben genannte Änderung des vollqualifizierten Domänennamens des Servers kann sich auch als nützlich erweisen bei der Anwendung einer Richtlinie für die Überwachung auf SQL Server-Ebene, ohne dass ein Konfigurationsschritt in jeder Datenbank ausgeführt werden muss (temporäre Minderung).
 
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

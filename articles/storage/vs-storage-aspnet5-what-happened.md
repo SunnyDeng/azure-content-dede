@@ -3,7 +3,7 @@
 	description="Erfahren Sie, was nach dem Herstellen einer Verbindung mit einem Azure-Speicherkonto mithilfe von verbundenen Visual Studio-Diensten in einem ASP.NET 5-Projekt in Visual Studio passiert."
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	ms.author="tarcher"/>
 
 # Was ist mit dem ASP.NET 5-Projekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
 
@@ -47,4 +47,4 @@ In der Datei config.json Ihres Projekts wurde ein Element mit der Verbindungszei
 
 Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

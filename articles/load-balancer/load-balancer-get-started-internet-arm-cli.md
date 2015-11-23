@@ -17,13 +17,14 @@
    ms.date="10/21/2015"
    ms.author="joaoma" />
 
-#Erstellen eines Load Balancers mit Internetzugriff über die Azure-Befehlszeilenschnittstelle (CLI)
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff mithilfe der Azure-Befehlszeilenschnittstelle
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das Ressourcen-Manager-Bereitstellungsmodell.
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das Ressourcen-Manager-Bereitstellungsmodell. Informationen zum klassischen Azure-Bereitstellungsmodell finden Sie unter [Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff in einem klassischen Bereitstellungsmodell](load-balancer-get-started-internet-classic-portal.md).
+
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -42,11 +43,11 @@ Zum Bereitstellen eines Load Balancers müssen Sie die folgenden Objekte erstell
 
 - Tests – Integritätstests zum Prüfen der Verfügbarkeit von VMs, die mit den NICs im Back-End-Adresspool verknüpft sind.
 
-Unter [Azure-Ressourcen-Manager-Unterstützung für Load Balancer](load-balancer-arm.md) erhalten Sie weitere Informationen zu Load Balancer-Komponenten des Azure-Ressourcen-Managers.
+Unter [Unterstützung des Azure-Ressourcen-Managers für Load Balancer](load-balancer-arm.md) erhalten Sie weitere Informationen über Load Balancer-Komponenten des Azure-Ressourcen-Managers.
 
 ## Einrichten der Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Managers
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
 
 2. Führen Sie den Befehl **azure config mode** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
@@ -103,10 +104,12 @@ Richten Sie einen Back-End-Adresspool für den Empfang des eingehenden Datenverk
 
 Im folgenden Beispiel werden die folgenden Elemente erstellt:
 
-- eine NAT-Regel, um sämtlichen an Port 3441 eingehenden Datenverkehr für Port 3389 zu übersetzen.
-- eine NAT-Regel, um sämtlichen an Port 3442 eingehenden Datenverkehr für Port 3389 zu übersetzen.
+- eine NAT-Regel, um sämtlichen an Port 3441 eingehenden Datenverkehr für Port 3389<sup>1</sup> zu übersetzen
+- eine NAT-Regel, um sämtlichen an Port 3442 eingehenden Datenverkehr für Port 3389 zu übersetzen
 - eine Load Balancer-Regel für die gleichmäßige Verteilung des gesamten an Pool 80 eingehenden Datenverkehrs an Port 80 an die Adressen im Back-End-Pool.
 - eine Testregel, die den Integritätsstatus der Seite *HealthProbe.aspx* überprüft.
+
+<sup>1</sup> NAT-Regeln sind einer bestimmten Instanz eines virtuellen Computers hinter dem Load Balancer zugeordnet. Im folgenden Beispiel wird der an Port 3341 eingehende Netzwerkdatenverkehr an einen speziellen virtuellen Computer an Port 3389 gesendet, der mit einer NAT-Regel verknüpft ist. Sie müssen für die NAT-Regel als Protokoll UDP oder TCP auswählen. Einem Port kann jeweils nur eines der beiden Protokolle zugewiesen werden.
 
 ### Schritt 1
 
@@ -121,8 +124,8 @@ Parameter:
 - **-l**: Name des Load Balancers 
 - **-n**: Name der Ressource (NAT-Regel, Test oder Load Balancer-Regel)
 - **-p**: Protokoll (TCP oder UDP)  
-- **-f**: Zu verwendender Front-End-Port (Der „probe“-Befehl verwendet „-f“ zum Definieren des Testpfads)
-- **-b**: Zu verwendender Back-End-Pfad
+- **-f**: Zu verwendender Front-End-Port (Der Befehl „probe“ verwendet „-f“ zum Definieren des Testpfads.)
+- **-b**: Zu verwendender Back-End-Port
 
 ### Schritt 2
 
@@ -205,11 +208,11 @@ Erwartete Ausgabe:
 
 ## Erstellen von NICs
 
-Sie müssen NICs erstellen (oder vorhandene ändern) und diese NAT-Regeln, Load Balancer-Regeln und Tests zuordnen.
+Sie müssen NICs erstellen (oder vorhandene ändern) und diesen NAT-Regeln, Load Balancer-Regeln und Tests zuordnen.
 
 ### Schritt 1 
 
-Erstellen Sie eine NIC mit dem Namen *lb-nic1-be*, und ordnen Sie sie der NAT-Regel *rdp1* und dem Back-End-IP-Adresspool *NRPbackendpool* zu.
+Erstellen Sie eine NIC mit dem Namen *lb-nic1-be*, und ordnen Sie sie der NAT-Regel *rdp1* und dem Back-End-Adresspool *NRPbackendpool* zu.
 	
 	azure network nic create -g nrprg -n lb-nic1-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp1" eastus
 
@@ -219,8 +222,8 @@ Parameter:
 - **-n**: Name der NIC-Ressource
 - **--subnet-name**: Name des Subnetzes 
 - **--subnet-vnet-name**: Name des virtuellen Netzwerks
-- **-d**: ID der Back-End-Poolressource (beginnt mit /subscription/{subscriptionID/resourcegroups/<resourcegroup-name>/providers/Microsoft.Network/loadbalancers/<load-balancer-name>/backendaddresspools/<name-of-the-backend-pool>) 
-- **-e**: ID der NAT-Regel, die der NIC-Ressource zugeordnet wird (beginnt mit /subscriptions/####################################/resourceGroups/<resourcegroup-name>/providers/Microsoft.Network/loadBalancers/<load-balancer-name>/inboundNatRules/<nat-rule-name>)
+- **-d**: ID der Back-End-Poolressource (beginnt mit „/subscription/{subscriptionID/resourcegroups/<resourcegroup-name>/providers/Microsoft.Network/loadbalancers/<load-balancer-name>/backendaddresspools/<name-of-the-backend-pool>“) 
+- **-e**: ID der NAT-Regel, die der NIC-Ressource zugeordnet wird (beginnt mit „/subscriptions/####################################/resourceGroups/<resourcegroup-name>/providers/Microsoft.Network/loadBalancers/<load-balancer-name>/inboundNatRules/<nat-rule-name>“)
 
 
 Erwartete Ausgabe:
@@ -251,16 +254,15 @@ Erwartete Ausgabe:
 
 ### Schritt 2
 
-Erstellen Sie eine NIC mit dem Namen *lb-nic2-be*, und ordnen Sie sie der NAT-Regel *rdp2* und dem Back-End-IP-Adresspool *NRPbackendpool* zu.
+Erstellen Sie eine NIC mit dem Namen *lb-nic2-be*, und ordnen Sie sie der NAT-Regel *rdp2* und dem Back-End-Adresspool *NRPbackendpool* zu.
 
  	azure network nic create -g nrprg -n lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" eastus
 
 ### Schritt 3 
 
-Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web1*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic1-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde.
+Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web1*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic1-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde:
 
-	azure vm create --resource-group nrprg --name web1 --location eastus --vnet-
-	name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic1-be --availset-name nrp-avset --storage-account-name web1nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
+	azure vm create --resource-group nrprg --name web1 --location eastus --vnet-name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic1-be --availset-name nrp-avset --storage-account-name web1nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
 >[AZURE.IMPORTANT]VMs in einem Load Balancer müssen in derselben Verfügbarkeitsgruppe enthalten sein. Erstellen Sie mit `azure availset create` eine Verfügbarkeitsgruppe.
 
@@ -283,15 +285,34 @@ Die Ausgabe sieht dann wie folgt aus:
 	+ Creating VM "web1"
 	info:    vm create command OK
 
->[AZURE.NOTE]Die Informationsmeldung **Dies ist eine NIC ohne konfigurierte öffentliche IP-Adresse** ist das erwartete Verhalten, da sich die NIC, die für den Load Balancer erstellt wurde, über den Load Balancer mit dem öffentlichen Internet und nicht direkt verbindet.
+>[AZURE.NOTE]Die Informationsmeldung **Dies ist eine NIC ohne konfigurierte öffentliche IP-Adresse** wird erwartet, da sich die für den Load Balancer erstellte NIC über die öffentliche IP-Adresse des Load Balancers mit dem Internet verbindet.
 
 Da die NIC *lb-nic1-be* der NAT-Regel *rdp1* zugeordnet ist, können Sie sich mit *web1* über RDP an Port 3441 auf dem Load Balancer verbinden.
 
 ### Schritt 4
 
-Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web2*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic2-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde.
+Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web2*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic2-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde:
 
 	azure vm create --resource-group nrprg --name web2 --location eastus --vnet-	name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic2-be --availset-name nrp-avset --storage-account-name web2nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
+
+## Aktualisieren eines vorhandenen Lastenausgleichsmoduls
+
+Sie können Regeln hinzufügen, die auf einen vorhandenen Load Balancer verweisen. Im folgenden Beispiel wird eine neue Load Balancer-Regel zum vorhandenen Load Balancer **NRPlb** hinzugefügt.
+
+	azure network lb rule create -g nrprg -l nrplb -n lbrule2 -p tcp -f 8080 -b 8051 -t frontendnrppool -o NRPbackendpool
+
+Parameter:
+
+**-g**: Ressourcengruppenname<br> **-l**: Name des Load Balancers<BR> **-n**: Name der Load Balancer-Regel<BR> **-p**: Protokoll<BR> **-f**: Front-End-Port<BR> **-b**: Back-End-Port<BR> **-t**: Name des Front-End-Pools<BR> **-b**: Name des Back-End-Pools<BR>
+
+## Löschen eines Load Balancers 
+
+
+Verwenden Sie zum Entfernen eines Load Balancers den folgenden Befehl:
+
+	azure network lb delete -g nrprg -n nrplb 
+
+**nrprg** steht für die Ressourcengruppe und **nrplb** für den Namen des Load Balancers.
 
 ## Nächste Schritte
 
@@ -301,4 +322,4 @@ Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web2*, und ordnen Si
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

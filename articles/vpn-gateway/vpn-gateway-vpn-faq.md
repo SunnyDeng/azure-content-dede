@@ -37,7 +37,7 @@ Die folgenden standortübergreifende Verbindungen werden unterstützt:
 
 - [Punkt zu Standort](vpn-gateway-point-to-site-create.md): VPN-Verbindung über SSTP (Secure Socket Tunneling-Protokoll). Für diese Verbindung wird kein VPN-Gerät benötigt.
 
-- [VNet zu VNet](virtual-networks-configure-vnet-to-vnet-connection.md): Diese Verbindung entspricht der Standort-zu-Standort-Konfiguration. VNet zu VNet ist eine VPN-Verbindung über IPsec (IKE v1 und IKE v2). Für diese Verbindung wird kein VPN-Gerät benötigt.
+- [VNet-zu-VNet](virtual-networks-configure-vnet-to-vnet-connection.md): Dieser Verbindungstyp entspricht der Standort-zu-Standort-Konfiguration. VNet zu VNet ist eine VPN-Verbindung über IPsec (IKE v1 und IKE v2). Für diese Verbindung wird kein VPN-Gerät benötigt.
 
 - [Mehrere Standorte](vpn-gateway-multi-site.md): Hierbei handelt es sich um eine Variante der Standort-zu-Standort-Konfiguration, mit der Sie mehrere lokale Standorte mit einem virtuellen Netzwerk verbinden können.
 
@@ -83,6 +83,8 @@ Auch andere VPN-Softwarelösungen können mit unserem Gateway verwendet werden, 
 
 ## Punkt-zu-Standort-Verbindungen
 
+Punkt-zu-Standort-Verbindungen sind derzeit nur für das klassische Bereitstellungsmodell (auch als Dienstverwaltung bezeichnet) verfügbar. Wir arbeiten an einer Punkt-zu-Standort-Lösung für das Azure-Ressourcen-Manager-Bereitstellungsmodell. Bei Verfügbarkeit wird diese Seite aktualisiert.
+
 ### Welche Betriebssysteme kann ich bei Punkt-zu-Standort-Verbindungen verwenden?
 
 Folgende Betriebssysteme werden unterstützt:
@@ -97,7 +99,7 @@ Folgende Betriebssysteme werden unterstützt:
 
 ### Kann ich für Punkt-zu-Standort-Verbindungen einen beliebigen VPN-Softwareclient mit SSTP-Unterstützung verwenden?
 
-Nein. Nur die oben aufgeführten Windows-Betriebssystemversionen werden unterstützt.
+Nein. Nur die oben aufgeführten Windows-Betriebssystemversionen werden unterstützt. Der Windows 10-Client wird derzeit überprüft.
 
 ### Wie viele VPN-Clientendpunkte kann meine Punkt-zu-Standort-Konfiguration umfassen?
 
@@ -105,7 +107,7 @@ Wir unterstützen bis zu 128 gleichzeitige VPN-Clientverbindungen mit einem virt
 
 ### Kann ich für Punkt-zu-Standort-Verbindungen meine eigene interne PKI-Stammzertifizierungsstelle verwenden?
 
-Momentan werden nur selbstsignierte Stammzertifikate unterstützt.
+Ja. Bisher konnten nur selbstsignierte Stammzertifikate verwendet werden. Sie können weiterhin 20 Stammzertifikate hochladen.
 
 ### Können Proxys und Firewalls mit der Punkt-zu-Standort-Funktion durchquert werden?
 
@@ -234,7 +236,7 @@ Beim Datenverkehr zwischen verschiedenen virtuellen Netzwerken fallen nur Kosten
 
 Ja, diese Möglichkeit wird unterstützt. Weitere Informationen finden Sie unter [Konfigurieren von gleichzeitig vorhandenen ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen](../expressroute/expressroute-coexist.md).
 
-## Konnektivität und virtuelle Computer
+## Standortübergreifende Konnektivität und virtuelle Computer
 
 ### Wenn sich mein virtueller Computer in einem virtuellen Netzwerk befindet und ich über eine standortübergreifende Verbindung verfüge, wie sollte ich dann die Verbindung mit dem virtuellen Computer herstellen?
 
@@ -246,14 +248,15 @@ Wenn Sie ein virtuelles Netzwerk mit standortübergreifender Verbindung konfigur
 
 Nein. Nur der Datenverkehr mit einer IP-Zieladresse, die innerhalb der angegebenen lokalen Netzwerk-IP-Adressbereiche des virtuellen Netzwerks liegt, wird über das Gateway des virtuellen Netzwerks abgewickelt. Datenverkehr mit einer IP-Zieladresse im virtuellen Netzwerk bleibt im virtuellen Netzwerk. Anderer Datenverkehr wird über den Load Balancer an die öffentlichen Netzwerke oder (bei erzwungener Tunnelung) über das Azure-VPN-Gateway gesendet. Bei der Problembehandlung müssen Sie sich vergewissern, dass alle Bereiche, die über das Gateway gesendet werden sollen, in Ihrem lokalen Netzwerk aufgeführt sind. Vergewissern Sie sich, dass sich die Adressbereiche des lokalen Netzwerks nicht mit einem der Adressbereiche im virtuellen Netzwerk überschneiden. Vergewissern Sie sich außerdem, dass der verwendete DNS-Server den Namen zur korrekten IP-Adresse auflöst.
 
+
+## FAQs zu virtuellen Netzwerken
+
+Weitere Informationen zu virtuellen Netzwerken finden Sie in den [FAQs zu virtuellen Netzwerken](../virtual-network/virtual-networks-faq.md).
+
 ## Nächste Schritte
 
-Weitere Informationen finden Sie in anderen häufig gestellten Fragen zum Netzwerk:
-
-- [Häufig gestellte Fragen zu virtuellen Netzwerken](../virtual-network/virtual-networks-faq.md)
-
-- [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md)
+Weitere Informationen zu VPN-Gateways erhalten Sie auf der Seite [VPN Gateway-Dokumentation](https://azure.microsoft.com/documentation/services/vpn-gateway/).
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

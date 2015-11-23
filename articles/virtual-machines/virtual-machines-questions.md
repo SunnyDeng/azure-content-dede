@@ -104,7 +104,7 @@ Wenn Sie den Benutzernamen oder das Kennwort vergessen und den VM-Agent installi
 
 Weitere Details:
 
-- Wenn Sie bei Linux-Images das Verwaltungsportal verwenden, ist "azureuser" als Standardbenutzername angegeben. Sie können diesen Namen aber ändern, indem Sie den virtuellen Computer mit der Option "Aus Katalog" und nicht mit "Schnellerstellung" erstellen. Mit "Aus Katalog" können Sie auch entscheiden, ob Sie ein Kennwort und/oder einen SSH-Schlüssel für die Anmeldung verwenden möchten. Bei dem Benutzerkonto handelt es sich um einen Benutzer ohne Berechtigungen mit sudo-Zugriff zum Ausführen von privilegierten Befehlen. Das root-Konto ist deaktiviert.
+- Wenn Sie bei Linux-Images das Azure-Portal verwenden, ist "azureuser" als Standardbenutzername angegeben. Sie können diesen Namen aber ändern, indem Sie den virtuellen Computer mit der Option "Aus Katalog" und nicht mit "Schnellerstellung" erstellen. Mit "Aus Katalog" können Sie auch entscheiden, ob Sie ein Kennwort und/oder einen SSH-Schlüssel für die Anmeldung verwenden möchten. Bei dem Benutzerkonto handelt es sich um einen Benutzer ohne Berechtigungen mit sudo-Zugriff zum Ausführen von privilegierten Befehlen. Das root-Konto ist deaktiviert.
 - Für Windows-Images müssen Sie einen Benutzernamen und ein Kennwort bereitstellen, wenn Sie den virtuellen Computer erstellen. Das Konto wird der Gruppe "Administratoren" hinzugefügt.
 
 ## Kann Azure Antivirenprogramme auf meinen virtuellen Computern ausführen?
@@ -127,7 +127,7 @@ Bei Azure wird ein Stundenpreis basierend auf Größe und Betriebssystem des vir
 
 Es fallen Gebühren an, wenn der Status des virtuellen Computers "Wird ausgeführt" oder "Angehalten" lautet. Beim Status "Beendet (Zuordnung aufgehoben)" werden keine Gebühren berechnet. Um einen virtuellen Computer in den Status "Beendet (Zuordnung aufgehoben)"zu versetzen, führen Sie einen der folgenden Schritte aus:
 
-- Fahren Sie den virtuellen Computer über das Verwaltungsportal herunter, oder löschen Sie ihn.
+- Fahren Sie den virtuellen Computer über das Azure-Portal herunter, oder löschen Sie ihn.
 - Verwenden Sie das Stop-AzureVM-Cmdlet, das im Azure PowerShell-Modul verfügbar ist.
 - Verwenden Sie den Vorgang "Shutdown Role" in der Dienstverwaltungs-REST-API, und geben Sie "StoppedDeallocated" für das PostShutdownAction-Element an.
 
@@ -151,4 +151,4 @@ Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurier
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

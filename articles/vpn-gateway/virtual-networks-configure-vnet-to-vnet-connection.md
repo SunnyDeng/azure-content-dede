@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/20/2015"
+   ms.date="11/04/2015"
    ms.author="cherylmc"/>
 
 
@@ -23,22 +23,22 @@
 - [Azure Portal](virtual-networks-configure-vnet-to-vnet-connection.md)
 - [PowerShell - Azure Resource Manager](vpn-gateway-vnet-vnet-rm-ps.md)
 
-In diesem Artikel werden Sie durch den Vorgang zum Verbinden virtueller Netzwerke im klassischen Bereitstellungsmodus unter Verwendung einer Kombination aus Azure-Portal und PowerShell geleitet.
+Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). Für diese Schritte wird das Azure-Portal (nicht das Vorschauportal) zusammen mit PowerShell-Cmdlets verwendet. Informationen zum Verbinden von VNets, die mit dem Azure-Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, finden Sie oben auf der Registerkarte. Die Schritte variieren je nach Modell.
 
+Sie können ein mit dem klassischen Bereitstellungsmodell erstelltes VNet auch mit einem VNet verbinden, das mit dem Ressourcen-Manager-Modell erstellt wurde. Weitere Informationen erhalten Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
 Das Verbinden eines virtuellen Netzwerks mit einem anderen virtuellen Netzwerk (VNet-zu-VNet) ähnelt dem Verbinden eines virtuellen Netzwerks mit einem lokalen Standort. Beide Verbindungstypen verwenden ein VPN-Gateway, um einen sicheren Tunnel mit IPSec/IKE bereitzustellen. Die VNets, die Sie verbinden, können sich in verschiedenen Abonnements und Regionen befinden. Sie können sogar VNet-zu-VNet-Kommunikation mit Konfigurationen für mehrere Standorte kombinieren. Auf diese Weise können Sie Netzwerktopologien einrichten, die standortübergreifende Konnektivität mit Konnektivität zwischen virtuellen Netzwerken kombinieren, wie in der folgenden Abbildung dargestellt:
 
 ![VNet-zu-VNet-Konnektivitätsdiagramm](./media/virtual-networks-configure-vnet-to-vnet-connection/IC727360.png)
-
-
->[AZURE.NOTE]Azure verfügt derzeit über zwei Bereitstellungsmodelle: das klassische Bereitstellungsmodell und das Azure-Ressourcen-Manager-Bereitstellungsmodell. Die Konfigurations-Cmdlets und die Schritte der beiden Bereitstellungsmethoden unterscheiden sich. Dieses Thema führt Sie durch die Erstellung der virtuellen Netzwerke mit dem klassischen Bereitstellungsmodus. Wenn Sie virtuelle Netzwerke, die im Azure-Ressourcen-Manager-Modus erstellt wurden, miteinander verbinden möchten, lesen Sie [Konfigurieren einer VNet-zu-VNet-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell](vpn-gateway-vnet-vnet-rm-ps.md). Wenn Sie ein im klassischen Bereitstellungsmodus erstelltes virtuelles Netzwerk mit einem virtuellen Netzwerk verbinden möchten, das im Azure-Ressourcen-Manager erstellt wurde, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
 
 ## Gründe für Verbindungen zwischen virtuellen Netzwerken
 
 Aus den folgenden Gründen empfiehlt sich das Herstellen von Verbindungen zwischen virtuellen Netzwerken:
 
 - **Regionsübergreifende Georedundanz und Geopräsenz**
-	- Sie können Ihre eigene Georeplikation oder -synchronisierung mit sicheren Verbindungen einrichten, ohne Endpunkte mit Internetzugriff verwenden zu müssen.
+	- Sie können Ihre eigene Georeplikation oder -synchronisierung mit sicheren Verbindungen einrichten, ohne Endgeräte mit Internetzugriff verwenden zu müssen.
 	- Mit dem Azure-Load Balancer und Clustertechnologie von Microsoft oder Drittanbietern können Sie Workloads mit hoher Verfügbarkeit mit Georedundanz über mehrere Azure-Regionen hinweg einrichten. Ein wichtiges Beispiel ist die Einrichtung von SQL Always On mit Verfügbarkeitsgruppen, die sich über mehrere Azure-Regionen erstrecken.
 
 - **Regionale Anwendungen mit mehreren Ebenen mit starker Isolierungsgrenze**
@@ -48,7 +48,7 @@ Aus den folgenden Gründen empfiehlt sich das Herstellen von Verbindungen zwisch
 	- Wenn Sie über mehrere Azure-Abonnements verfügen, können Sie Workloads aus verschiedenen Abonnements sicher zwischen virtuellen Netzwerken verbinden.
 	- Für Unternehmen und Dienstanbieter können Sie die organisationsübergreifende Kommunikation mit sicherer VPN-Technologie in Azure aktivieren.
 
-## Häufig gestellte Fragen zu Verbindungen von VNet zu VNet
+## FAQs zu VNet-zu-VNet
 
 - Die virtuellen Netzwerke können sich im gleichen Abonnement oder in verschiedenen Abonnements befinden.
 
@@ -110,7 +110,7 @@ VNet1: Adressraum = 10.1.0.0/16, Region=USA West
 
 VNet2: Adressraum = 10.2.0.0/16, Region=Japan Ost
 
-1. Melden Sie sich beim **Verwaltungsportal** an.
+1. Melden Sie sich beim **Azure-Portal** (nicht dem Vorschauportal) an.
 
 2. Klicken Sie unten links auf dem Bildschirm auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerkdienste** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
 
@@ -166,7 +166,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 
 4. Nachdem Sie VNet1 als lokales Netzwerk konfiguriert haben, kehren Sie zurück und konfigurieren VNet2 mithilfe der Werte, die diesem VNet entsprechen.
 
-5. Nun verweisen Sie beide VNets als ein lokales Netzwerk aufeinander. Navigieren Sie im Verwaltungsportal zur Seite **Konfigurieren** für VNet1. Wählen Sie unter **Standort-zu-Standort-Konnektivität** die Option **Eine Verbindung mit dem lokalen Netzwerk herstellen** aus, und wählen Sie dann **VNET2** als lokales Netzwerk aus.
+5. Nun verweisen Sie beide VNets als ein lokales Netzwerk aufeinander. Navigieren Sie im Azure-Portal zur Seite **Konfigurieren** für VNet1. Wählen Sie unter **Standort-zu-Standort-Konnektivität** die Option **Eine Verbindung mit dem lokalen Netzwerk herstellen** aus, und wählen Sie dann **VNET2** als lokales Netzwerk aus.
 
   ![Herstellen einer Verbindung mit dem lokalen Netzwerk](./media/virtual-networks-configure-vnet-to-vnet-connection/IC736058.jpg)
 
@@ -218,18 +218,24 @@ Warten Sie, bis die Verbindung initialisiert wird. Nachdem das Gateway initialis
 
 ![Gatewaystatus – verbunden](./media/virtual-networks-configure-vnet-to-vnet-connection/IC736059.jpg)
 
+[AZURE.INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
+
 ## Nächste Schritte
 
 
-Informationen zum Hinzufügen virtueller Computer zu Ihrem virtuellen Netzwerk finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
-
-Informationen zum Konfigurieren einer VNet-Verbindung mit RRAS finden Sie unter [Standort-zu-Standort-VPN in Azure Virtual Network mithilfe von Windows Server 2012 RRAS (Routing- und RAS-Dienst)](https://msdn.microsoft.com/library/dn636917.aspx).
+Informationen zum Hinzufügen virtueller Computer zu Ihrem virtuellen Netzwerk finden Sie unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial-classic-portal.md).
 
 Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100.aspx).
+
+Informationen zur REST-API finden Sie unter [Vorgänge für Gateways für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj154113.aspx).
+
+Weitere Informationen zu VPN-Gateways finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md).
+
+Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md) und [FAQs zu virtuellen Netzwerken](../virtual-network/virtual-networks-faq.md).
 
 
 [1]: ../hdinsight-hbase-geo-replication-configure-vnets.md
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

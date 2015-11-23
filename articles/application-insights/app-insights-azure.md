@@ -26,7 +26,8 @@ Die Konfiguration ist sehr einfach und liefert nach wenigen Minuten Resultate.
 
 Welche Art von App verwenden Sie?
 
-* [Azure Web-App – Web- und Workerrollen](app-insights-cloudservices.md)
+* [Azure-Web-App](insights-perf-analytics.md)
+* [Azure Cloud Services-App – Web- und Workerrollen](app-insights-cloudservices.md)
 * [Web-App unter IIS in Azure VM](../insights-perf-analytics.md)
 * [Anwendung außerhalb von Azure](app-insights-overview.md)
 
@@ -39,4 +40,4 @@ Welche Art von App verwenden Sie?
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

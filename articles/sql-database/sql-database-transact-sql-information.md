@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="11/02/2015"
+   ms.date="11/09/2015"
    ms.author="rick.byham@microsoft.com"/>
 
 # Azure SQL-Datenbank – Transact-SQL-Informationen
@@ -29,7 +29,6 @@ In diesem Thema werden die Features behandelt, die mit Azure SQL-Datenbank bei e
 
 Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in den entsprechenden SQL Server 2016-Transact-SQL-Anweisungen vorhanden sind. Beispielsweise steht die CREATE PROCEDURE-Anweisung zur Verfügung, jedoch ohne die Option WITH ENCRYPTION. In den verlinkten Syntaxthemen finden Sie Einzelheiten zu den unterstützten Bereichen jeder Anweisung.
 
-- CLR-Assemblys: [CREATE ASSEMBLY](https://msdn.microsoft.com/library/ms189524.aspx)
 - Datenbanken: [CREATE](https://msdn.microsoft.com/library/dn268335.aspx)/[ALTER](https://msdn.microsoft.com/library/ms174269.aspx)
 - Dynamische Verwaltungssichten stehen im Allgemeinen für verfügbare Features zur Verfügung.
 - Funktionen: [CREATE](https://msdn.microsoft.com/library/ms186755.aspx)/[ALTER FUNCTION](https://msdn.microsoft.com/library/ms186967.aspx)
@@ -88,12 +87,12 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 
 ## Vollständige Transact-SQL-Referenz
 
-Weitere Informationen zur Transact-SQL-Grammatik und -Syntax sowie Beispiele finden Sie unter [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx) in der SQL Server-Onlinedokumentation.
+Weitere Informationen zu Transact-SQL-Grammatik und -Syntax sowie Beispiele finden Sie unter [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx) in der SQL Server-Onlinedokumentation.
 
 ### Informationen zu Tags vom Typ "Gilt für"
 
 Die Transact-SQL-Referenz enthält Themen im Zusammenhang mit SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014 und Microsoft Azure SQL-Datenbank. Am oberen Rand jedes Themas ist ein Abschnitt, der angibt, welche Produkte den Betreff des Themas unterstützen. Wenn ein Produkt fehlt, ist das im Thema beschriebene Feature in diesem Produkt nicht verfügbar. Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server (SQL Server 2012 bis zur aktuellen Version)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Microsoft Azure SQL-Datenbank.
 
-In einigen Fällen kann der allgemeine Betreff eines Themas in einem Produkt verwendet werden, ohne dass alle Argumente unterstützt werden. Eigenständige Datenbanken wurden z. B. in SQL Server 2012 eingeführt. Die **CREATE USER**-Anweisung kann in allen SQL Server-Produkten verwendet werden, die **WITH PASSWORD**-Syntax kann jedoch nicht in älteren Versionen verwendet werden. In diesem Fall wurden zusätzliche **Gilt für**-Abschnitte in die entsprechenden Argumentbeschreibungen im Text des Themas eingefügt.
+In einigen Fällen kann der allgemeine Betreff eines Themas in einem Produkt verwendet werden, ohne dass alle Argumente unterstützt werden. Eigenständige Datenbanken wurden z. B. in SQL Server 2012 eingeführt. Die **CREATE USER**-Anweisung kann in allen SQL Server-Produkten, die **WITH PASSWORD**-Syntax jedoch nicht in älteren Versionen verwendet werden. In diesem Fall wurden zusätzliche **Gilt für**-Abschnitte in die entsprechenden Argumentbeschreibungen im Text des Themas eingefügt.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

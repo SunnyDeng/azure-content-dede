@@ -60,6 +60,8 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
 *   Dv2-Serie und D-Serie eignen sich ideal für Clientanwendungen, die schnellere CPUs oder bessere lokale Datenträgerleistung erfordern oder höhere Speicherbedarfe haben. Sie bieten eine leistungsfähige Kombination für viele Anwendungen für den Unternehmenseinsatz.
 
+
+
 ## Allgemeine Einschränkungen
 
 In dieser Tabelle sind die Einschränkungen aufgeführt, die unabhängig von der Größe eines virtuellen Computers für virtuelle Computer gelten, die mit dem Dienstverwaltungs-Bereitstellungsmodell erstellt wurden.
@@ -76,7 +78,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 
 >[AZURE.NOTE]Die Speicherkapazität wird unter Verwendung von 1024^3 Bytes als Maßeinheit für GB dargestellt. Dies wird manchmal als Gibibyte oder Binärdefinition (bzw. Definition zur Basis 2) bezeichnet. Denken Sie beim Vergleichen von Größen, die andere Basissysteme verwenden, jedoch daran, dass eine als Binärwert angegebene Größe möglicherweise kleiner als ein Dezimalwert zur Basis 10 erscheint (z. B. 1 GB), das Binärsystem jedoch mehr Kapazität als das Dezimalsystem bietet, da 1024^3 größer als 1000^3 ist.
 
-### Basic-Ebene
+## Basic-Ebene
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (300 pro Datenträger)|
 |---|---|---|---|---|---|---|
@@ -86,7 +88,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 |A3\\Basic\_A3|4|7 GB|1|<p>BS = 1023 GB</p><p>Temporär = 120 GB</p>|8|4 x 300|
 |A4\\Basic\_A4|8|14 GB|1|<p>BS = 1023 GB</p><p>Temporär = 240 GB</p>|16|16 x 300|
 
-### Standard-Ebene: A-Serie
+## Standard-Ebene: A-Serie
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|---|
@@ -103,7 +105,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 |A10 (identisch)|8|56 GB|2|<p><p>BS = 1.023 GB</p><p>Temporär = 382 GB</p><blockquote><p>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</p></blockquote>|16|16 x 500|
 |A11 (identisch)|16|112 GB|4|<p><p>BS = 1.023 GB</p><p>Temporär = 382 GB</p><blockquote><p>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</p></blockquote>|16|16 x 500|
 
-### Standard-Ebene: D-Serie
+## Standard-Ebene: D-Serie
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|---|
@@ -116,7 +118,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 |Standard\_D13 (identisch)|8|56 GB|8|<p>BS = 1023 GB</p><p>Temporär (SSD) = 400 GB</p>|16|16 x 500|
 |Standard\_D14 (identisch)|16|112 GB|16|<p>BS = 1023 GB</p><p>Temporär (SSD) = 800 GB</p>|32|32 x 500|
 
-### Standard-Ebene: Dv2-Serie
+## Standard-Ebene: Dv2-Serie
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|---|
@@ -130,7 +132,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 |Standard\_D13\_v2 (identisch)|8|56 GB|8|<p>BS = 1023 GB</p><p>Temporär (SSD) = 400 GB</p>|16|16 x 500|
 |Standard\_D14\_v2 (identisch)|16|112 GB|16|<p>BS = 1023 GB</p><p>Temporär (SSD) = 800 GB</p>|32|32 x 500|
 
-### Standard-Ebene: DS-Serie*
+## Standard-Ebene: DS-Serie*
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Cachegröße (GB)|Max. Datenträger-IOPS &amp; Bandbreite|
 |---|---|---|---|---|---|---|---|
@@ -145,7 +147,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 
 **Die bei einer DS-Serie möglichen Höchstwerte für E/A-Vorgänge pro Sekunde (IOPS) und Durchsatz (Bandbreite) werden durch die Größe des Datenträgers beeinflusst. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal.md).
 
-### Standard-Ebene: G-Serie
+## Standard-Ebene: G-Serie
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|---|
@@ -155,7 +157,7 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 |Standard\_G4 (identisch)|16|224 GB|8|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 3.072 GB</p>|32|32 x 500|
 |Standard\_G5 (identisch)|32|448 GB|16|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 6.144 GB</p>|64|<p>64 x 500</p>|
 
-### Standard-Ebene: GS-Serie
+## Standard-Ebene: GS-Serie
 
 |Größe – Azure-Portal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Cachegröße (GB)|Max. Datenträger-IOPS &amp; Bandbreite|
 |---|---|---|---|---|---|---|---|
@@ -172,4 +174,4 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 
 [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

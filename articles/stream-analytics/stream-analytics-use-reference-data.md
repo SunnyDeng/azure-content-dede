@@ -14,16 +14,16 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="10/05/2015" 
+	ms.date="11/09/2015" 
 	ms.author="jeffstok"/>
 
 # Verwenden von Verweisdaten als Eingabe
 
-Verweisdaten sind ein begrenzter Satz Daten, der statisch ist oder sich nur langsam ändert und der für eine Suche oder Korrelation mit Ihrem Datenstrom verwendet wird. Für den Einsatz von Verweisdaten in Ihrem Azure Stream Analytics-Auftrag verwenden Sie in der Regel [Verweisdaten für JOIN-Vorgänge](https://msdn.microsoft.com/library/azure/dn949258.aspx) in Ihrer Abfrage. Stream Analytics verwendet Azure-Blob-Speicher als Speicherschicht für Verweisdaten, und mit Azure Data Factory können Verweisdaten transformiert und/oder in den Azure-Blob-Speicher kopiert werden, um sie als Verweisdaten zu verwenden, aus einer [beliebigen Anzahl von cloudbasierten und lokalen Datenspeichern](./articles/data-factory-data-movement-activities.md).
+Verweisdaten sind ein begrenzter Satz Daten, der statisch ist oder sich nur langsam ändert und der für eine Suche oder Korrelation mit Ihrem Datenstrom verwendet wird. Für den Einsatz von Verweisdaten in Ihrem Azure Stream Analytics-Auftrag verwenden Sie in der Regel [Verweisdaten für JOIN-Vorgänge](https://msdn.microsoft.com/library/azure/dn949258.aspx) in Ihrer Abfrage. Stream Analytics verwendet Azure-Blob-Speicher als Speicherschicht für Verweisdaten, und mit Azure Data Factory können Verweisdaten transformiert und/oder in den Azure-Blob-Speicher kopiert werden, um sie als Verweisdaten zu verwenden, aus einer [beliebigen Anzahl von cloudbasierten und lokalen Datenspeichern](./articles/data-factory-data-movement-activities.md). Referenzdaten werden als (in der Eingabekonfiguration definierte) Blobsequenz in aufsteigender Reihenfolge nach dem im Blobnamen angegebenen Datums- bzw. Uhrzeitwert modelliert. Hinzufügungen sind jeweils **nur** am Sequenzende möglich. Hierzu muss der verwendete Datums-/Uhrzeitwert den Wert des letzten Blobs in der Sequenz **übersteigen**.
 
 ## Konfigurieren von Verweisdaten
 
-Um die Verweisdaten zu konfigurieren, müssen Sie zunächst eine Eingabe vom Typ "Verweisdaten" erstellen. Die folgende Tabelle enthält den Namen jeder Eigenschaft, die Sie beim Erstellen der Verweisdateneingabe angeben müssen, sowie die entsprechenden Beschreibungen:
+Um die Verweisdaten zu konfigurieren, müssen Sie zunächst eine Eingabe vom Typ **Verweisdaten** erstellen. Die folgende Tabelle enthält den Namen jeder Eigenschaft, die Sie beim Erstellen der Verweisdateneingabe angeben müssen, sowie die entsprechenden Beschreibungen:
 
 <table>
 <tbody>
@@ -48,7 +48,7 @@ Um die Verweisdaten zu konfigurieren, müssen Sie zunächst eine Eingabe vom Typ
 <td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blob-Dienst gespeichert sind. Wenn Sie ein Blob in den Blob-Dienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
 </tr>
 <tr>
-<td>Präfixmusters des Pfads [optional]</td>
+<td>Pfadmuster</td>
 <td>Dies entspricht dem Dateipfad, der verwendet wird, um Ihre BLOBs im angegebenen Containers zu suchen. In dem Pfad können Sie mindestens eine Instanz der folgenden beiden Variablen angeben:<BR>{date}, {time}<BR>Beispiel 1: products/{date}/{time}/product-list.csv<BR>Beispiel 2: products/{date}/product-list.csv
 </tr>
 <tr>
@@ -74,9 +74,15 @@ Um die Verweisdaten zu konfigurieren, müssen Sie zunächst eine Eingabe vom Typ
 
 Wenn es sich bei Ihren Verweisdaten um ein sich langsam änderndes Dataset handelt, wird die Unterstützung für das Aktualisieren von Verweisdaten aktiviert, indem Sie in der Eingabekonfiguration ein Pfadmuster mit den Token {date} und {time} angeben. Stream Analytics ruft die aktualisierten Definitionen von Verweisdaten auf der Grundlage dieses Pfadmusters ab. Beispiel: Das Muster ````"/sample/{date}/{time}/products.csv"```` mit dem Datumsformat „YYYY-MM-DD“ und dem Zeitformat „HH:mm“ weist Stream Analytics an, das aktualisierte Blob ````"/sample/2015-04-16/17:30/products.csv"```` am 16. April 2015 um 17:30 (UTC-Zeitzone) abzurufen.
 
-> [AZURE.NOTE]Stream Analytics-Aufträge suchen derzeit nur dann nach der Blobaktualisierung, wenn die Zeit des Computers mit der in den Blobnamen codierten Zeit zusammenfällt. Der Auftrag sucht beispielsweise zwischen 17:30 Uhr und 17:30:59.9 Uhr am 16. April 2015 UTC-Zeitzone nach "/sample/2015-04-16/17:30/products.csv". Wenn die Uhr auf 17:31 Uhr springt, wird die Suche nach "/sample/2015-04-16/17:30/products.csv" beendet und die Suche nach "/sample/2015-04-16/17:31/products.csv" beginnt. Der einzige Zeitpunkt, bei dem frühere Verweisdatenblobs berücksichtigt werden, ist der Zeitpunkt, an dem der Auftrag gestartet wird. Zu diesem Zeitpunkt sucht der Auftrag nach dem aktuellen Blob, der vor der angegebenen Startzeit des Auftrags erstellt wurde. Damit soll sichergestellt werden, dass es beim Starten des Auftrags kein leeres Verweisdataset gibt. Wird kein Blob gefunden, schlägt der Auftrag fehl, und es wird eine Diagnosemeldung angezeigt:
+> [AZURE.NOTE]Stream Analytics-Aufträge suchen derzeit nur dann nach der Blobaktualisierung, wenn die Zeit des Computers mit der in den Blobnamen codierten Zeit zusammenfällt. Der Auftrag sucht beispielsweise zwischen 17:30 Uhr und 17:30:59.9 Uhr am 16. April 2015 UTC-Zeitzone nach "/sample/2015-04-16/17:30/products.csv". Wenn die Uhr auf 17:31 Uhr springt, wird die Suche nach "/sample/2015-04-16/17:30/products.csv" beendet und die Suche nach "/sample/2015-04-16/17:31/products.csv" beginnt. Eine Ausnahme besteht darin, wenn der Auftrag Daten rückwirkend verarbeiten muss oder wenn der Auftrag zum ersten Mal gestartet wird. Zum Startzeitpunkt sucht der Auftrag nach dem aktuellen Blob, der vor der angegebenen Startzeit des Auftrags erstellt wurde. Damit soll sichergestellt werden, dass es beim Starten des Auftrags kein leeres Verweisdataset gibt. Wird kein Blob gefunden, schlägt der Auftrag fehl, und es wird eine Diagnosemeldung angezeigt:
 
 [Azure Data Factory](http://azure.microsoft.com/documentation/services/data-factory/) kann verwendet werden, um die Aufgabe des Erstellens der aktualisierten Blobs zu orchestrieren, die von Stream Analytics zur Aktualisierung der Verweisdatendefinitionen benötigt werden. Data Factory ist ein cloudbasierter Daten-Integrationsdienst, der das Verschieben und Transformieren von Daten organisiert und automatisiert. Data Factory unterstützt [die Verbindung zu einer großen Anzahl von cloudbasierten und lokalen Datenspeichern](./articles/data-factory-data-movement-activities.md) und das mühelose Verschieben von Daten in regelmäßigen von Ihnen festgelegten Abständen. Weitere Informationen sowie eine schrittweise Anleitung zum Einrichten einer Data Factory-Pipeline zum Generieren von Verweisdaten für Stream Analytics, die nach einem vordefinierten Zeitplan aktualisiert werden, finden Sie in diesem [GitHub-Beispiel](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ReferenceDataRefreshForASAJobs).
+
+## Tipps zum Aktualisieren Ihrer Verweisdaten ##
+
+1. Das Überschreiben von Verweisdatenblobs hat nicht zur Folge, dass Stream Analytics das Blob erneut lädt, und in einigen Fällen kann es zu einem Auftragsfehler führen. Zum Ändern von Verweisdaten wird empfohlen, ein neues Blob mit demselben in der Auftragseingabe definierten Container und Pfadmuster hinzuzufügen und Datums-/Uhrzeitwerte zu verwenden, die den Wert des letzten Blobs in der Sequenz **übersteigen**.
+2.	Verweisdatenblobs werden nicht nach der Uhrzeit „Zuletzt geändert“ des Blobs sortiert, sondern nur nach den Werten für Uhrzeit und Datum, die im Blobnamen mithilfe der {date}- und {time}-Ersetzungen angegeben werden.
+3.	In einigen wenigen Fällen muss ein Auftrag zeitlich zurückgehen. Daher dürfen Verweisdatenblobs nicht geändert oder gelöscht werden.
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -97,4 +103,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

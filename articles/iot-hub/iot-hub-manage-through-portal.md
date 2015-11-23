@@ -1,6 +1,6 @@
 <properties
-	 pageTitle="Verwalten von IoT Hubs mit dem Azure-Portal | Microsoft Azure"
-	 description="Übersicht über die Erstellung und Verwaltung von Azure IoT Hubs über das Azure-Portal"
+	 pageTitle="Verwalten von IoT Hubs mit dem Azure-Vorschauportal | Microsoft Azure"
+	 description="Übersicht über das Erstellen und Verwalten von Azure IoT Hubs über das Azure-Vorschauportal"
 	 services="iot-hub"
 	 documentationCenter=""
 	 authors="nasing"
@@ -16,11 +16,11 @@
 	 ms.date="10/19/2015"
 	 ms.author="nasing"/>
 
-# Verwalten von IoT Hubs über das Azure-Portal
+# Verwalten von IoT Hubs über das Azure-Vorschauportal
 
 ## Einführung
 
-In diesem Artikel erhalten Sie Informationen zu den ersten Schritten mit Azure IoT Hub über das Azure-Portal, zum Finden von IoT Hubs sowie zum Erstellen und Verwalten von IoT Hubs.
+In diesem Artikel erhalten Sie Informationen zu den ersten Schritten mit Azure IoT Hub über das Azure-Vorschauportal. Außerdem erfahren Sie, wo Sie IoT Hubs finden und wie Sie IoT Hubs erstellen und verwalten.
 
 ## Suchen nach IoT Hubs
 
@@ -76,9 +76,9 @@ Die Option „Standort“ enthält eine Liste der Regionen, in denen IoT Hub ang
 
 ### Erstellen des IoT Hubs
 
-Wenn alle vorherigen Schritte abgeschlossen sind, kann der IoT Hub erstellt werden. Klicken Sie auf **Erstellen**, um den Back-End-Prozess zur Erstellung dieses IoT Hubs mit den festgelegten Optionen zu starten und die Bereitstellung am angegebenen Ort durchzuführen.
+Wenn alle vorherigen Schritte abgeschlossen sind, kann der IoT Hub erstellt werden. Klicken Sie auf **Erstellen**, um den Back-End-Prozess zum Erstellen dieses IoT Hubs mit den festgelegten Optionen zu starten und die Bereitstellung am angegebenen Ort durchzuführen.
 
-Bitte beachten Sie, dass die Erstellung des IoT Hubs einige Minuten in Anspruch nehmen kann, da es etwas dauert, bis die Back-End-Bereitstellung in den jeweiligen Servern angezeigt werden
+Das Erstellen des IoT Hubs kann einige Minuten in Anspruch nehmen, da es etwas dauert, bis die Back-End-Bereitstellung auf den jeweiligen Servern angezeigt wird.
 
 ## Ändern der Einstellungen des IoT Hubs
 
@@ -139,7 +139,7 @@ Klicken Sie zum Suchen des zu löschenden IoT Hubs auf **Durchsuchen**, und wäh
 
 Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 
-- [Erste Schritte mit IoT Hub (Tutorial)][lnk-get-started]
+- [Erste Schritte mit IoT Hub (Lernprogramm)][lnk-get-started]
 - [Was ist Azure IoT Hub?][]
 
 
@@ -153,4 +153,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO3-->

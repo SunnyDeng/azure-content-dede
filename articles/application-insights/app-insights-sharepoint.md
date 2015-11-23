@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="11/06/2015" 
 	ms.author="awills"/>
 
 # Überwachen einer SharePoint-Website mit Application Insights
@@ -77,21 +77,21 @@ Stellen Sie Ihre App erneut bereit.
 
 Kehren Sie zum Blatt Ihrer Anwendung im [Azure-Portal](http://portal.azure.com) zurück.
 
-Die ersten Ereignisse werden in der Diagnosesuche angezeigt.
+Die ersten Ereignisse werden in der Suche angezeigt.
 
 ![](./media/app-insights-sharepoint/09-search.png)
 
 Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
-**Nutzungsanalysen** enthalten Links zu Diagrammen von Benutzern, Sitzungen und Seitenansichten:
+Klicken Sie in der Übersicht auf **Nutzungsanalyse**, um Diagramme, Sitzungen und Seitenansichten anzuzeigen:
 
 ![](./media/app-insights-sharepoint/06-usage.png)
 
-Klicken Sie beispielsweise auf „Seitenaufrufe“, um weitere Details anzuzeigen:
+Klicken Sie auf ein beliebiges Diagramm, um weitere Details anzuzeigen, z. B. Seitenansichten:
 
 ![](./media/app-insights-sharepoint/07-pages.png)
 
-Klicken Sie durch die Benutzer, um Informationen über neue Benutzer und deren Standorte anzuzeigen.
+Oder Benutzer:
 
 
 ![](./media/app-insights-sharepoint/08-users.png)
@@ -108,4 +108,4 @@ Klicken Sie durch die Benutzer, um Informationen über neue Benutzer und deren S
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

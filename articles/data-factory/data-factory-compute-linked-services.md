@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="11/09/2015" 
 	ms.author="spelluru"/>
 
 # Verknüpfte Computedienste
@@ -49,6 +49,7 @@ Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknü
 	      "jobsContainer": "adfjobs",
 	      "timeToLive": "00:05:00",
 	      "version": "3.1",
+		  "osType": "linux",
 	      "linkedServiceName": "MyBlobStore"
 	      "additionalLinkedServiceNames": [
 	        "otherLinkedServiceName1",
@@ -69,6 +70,7 @@ timetolive | <p>Die zulässige Leerlaufzeit für den bedarfsgesteuerten HDInsigh
 Version | Version des HDInsight-Clusters | Nein
 linkedServiceName | Der Blobspeicher, den der bedarfsgesteuerte Cluster zum Speichern und Verarbeiten von Daten nutzt. | Ja
 additionalLinkedServiceNames | Gibt zusätzliche Speicherkonten für den verknüpften HDInsight-Dienst an, damit der Data Factory-Dienst diese für Sie registrieren kann. | Nein
+osType | Typ des Betriebssystems. Zulässige Werte sind: „windows“ (Standard) und „Linux“. | Nein 
 
 ### Erweiterte Eigenschaften
 
@@ -235,7 +237,7 @@ apiKey | Die veröffentlichte API des Arbeitsbereichsmodells. | Ja
 
 
 ## Mit Azure Data Lake Analytics verknüpfter Dienst
-Sie erstellen einen mit **Azure Data Lake Analytics** verknüpften Dienst, um einen Azure Data Lake Analytics-Berechnungsdienst mit einer Azure Data Factory zu verknüpfen, vor Verwendung der [Data Lake Analytics-U-SQL-Aktivität](data-factory-usql-activity.md) in einer Pipeline.
+Sie erstellen einen mit **Azure Data Lake Analytics** verknüpften Dienst, um vor Verwendung der [Data Lake Analytics-U-SQL-Aktivität](data-factory-usql-activity.md) einen Azure Data Lake Analytics-Computedienst mit Azure Data Factory zu verknüpfen.
 
 Das folgende Beispiel enthält eine JSON-Definition für einen mit Azure Data Lake Analytics verknüpften Dienst.
 
@@ -259,7 +261,7 @@ Die folgende Tabelle enthält Beschreibungen der Eigenschaften, die in der JSON-
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-Typ | Legen Sie die Typeigenschaft auf **AzureDataLakeAnalytics** fest. | Ja
+Typ | Legen Sie als Typeigenschaft **AzureDataLakeAnalytics** fest. | Ja
 accountName | Name des Azure Data Lake Analytics-Kontos. | Ja
 dataLakeAnalyticsUri | URI des Azure Data Lake Analytics-Kontos. | Nein 
 authorization | Der Autorisierungscode wird automatisch abgerufen, nachdem Sie im Data Factory-Editor auf die Schaltfläche **Autorisieren** geklickt und die OAuth-Anmeldung abgeschlossen haben. | Ja 
@@ -270,7 +272,7 @@ sessionId | Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID is
 
 ## Mit Azure SQL verknüpfter Dienst
 
-Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der [Aktivität „Gespeicherte Prozedur“](data-factory-stored-proc-activity.md) zum Aufrufen einer gespeicherten Prozedur in einer Data Factory-Pipeline. Im Artikel [Azure SQL-Connector](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) finden Sie weitere Informationen zu diesem verknüpften Dienst.
+Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der [Aktivität "Gespeicherte Prozedur"](data-factory-stored-proc-activity.md) zum Aufrufen einer gespeicherten Prozedur in einer Data Factory-Pipeline. Im Artikel [Azure SQL-Connector](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) finden Sie weitere Informationen zu diesem verknüpften Dienst.
 
 
   
@@ -281,4 +283,4 @@ Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der 
  
    
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

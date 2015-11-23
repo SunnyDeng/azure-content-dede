@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
+	ms.date="11/09/2015"
 	ms.author="jgao"/>
 
 
@@ -103,7 +103,7 @@ Im Folgenden finden Sie einige der wichtigsten Features der HDInsight-Plattform:
 In der folgenden Tabelle werden die derzeit verfügbaren Versionen von HDInsight, die entsprechenden verwendeten Versionen von Hortonworks Data Platform und die zugehörigen Relesasedaten aufgeführt. Sofern bekannt sind auch die jeweiligen Termine angegeben, ab denen der Support abläuft und sie als veraltet gelten. Beachten Sie Folgendes:
 
 * Hochverfügbare Cluster mit zwei Hauptknoten werden standardmäßig für HDInsight 2.1 und höher bereitgestellt. Für HDInsight 1.6-Cluster sind sie nicht verfügbar.
-* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr im Azure-Portal zur Verfügung. Die folgende Tabelle zeigt, welche Versionen im Azure-Portal verfügbar sind. Clusterversionen stehen bis zu dem Zeitpunkt, an dem sie veralten, weiterhin über den Parameter `Version` im Windows PowerShell-Befehl [New-AzureHDInsightCluster](http://msdn.microsoft.com/library/dn593744.aspx) und das .NET SDK zur Verfügung.
+* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr im Azure-Portal zur Verfügung. Die folgende Tabelle zeigt, welche Versionen im Azure-Portal verfügbar sind. Clusterversionen stehen bis zum Zeitpunkt ihrer Veraltung weiterhin über den Parameter `Version` im Windows PowerShell-Befehl [New-AzureRmHDInsightCluster](https://msdn.microsoft.com/library/mt619331.aspx) und das .NET SDK zur Verfügung.
 
 <table border="1"> <tr><th>HDInsight-Version</th><th>HDP-Version</a><th>Hohe Verfügbarkeit</th></th><th>Releasedatum</th><th>Verfügbar im Azure-Portal</th><th>Ablaufdatum für Support</th><th>Veraltet</th></tr> <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>Ja</td><td>18.02.2015</td><td>Ja</td><td></td><td></td></tr> <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>Ja</td><td>24.6.2014</td><td>Ja</td><td></td><td></td></tr> <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>Ja</td><td>11.02.2014</td><td>Ja</td><td>17.09.2014</td><td>30.06.2015</td></tr> <tr><td>HDI 2.1</td><td>HDP 1.3</td><td>Ja</td><td>28.10.2013</td><td>Nein</td><td>12.05.2014</td><td>31.05.2015</td></tr> <tr><td>HDI 1.6</td><td>HDP 1.1</td><td>Nein</td><td>28.10.2013</td><td>Nein</td><td>26.04.2014</td><td>31.05.2015</td></tr> </table><br>
 
@@ -160,4 +160,4 @@ Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

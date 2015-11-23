@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Service Bus-Architektur"
+   pageTitle="Services Bus-Architektur | Microsoft Azure"
    description="Beschreibt die Nachrichtenverarbeitungsarchitektur von Azure Service Bus."
    services="service-bus"
    documentationCenter="na"
@@ -11,19 +11,19 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="07/24/2015"
+   ms.workload="na"
+   ms.date="11/06/2015"
    ms.author="sethm" />
 
 # Service Bus-Architektur
 
-Der folgende Abschnitt beschreibt die Nachrichtenverarbeitungsarchitektur von Azure Service Bus.
+Dieser Artikel beschreibt die Nachrichtenverarbeitungsarchitektur von Azure Service Bus.
 
 ## Service Bus-Skalierungseinheiten
 
 Service Bus ist nach *Skalierungseinheiten* strukturiert. Eine Skalierungseinheit ist eine Bereitstellungseinheit und umfasst alle Komponenten, die zum Ausführen des Diensts erforderlich sind. Jede Region stellt mindestens eine Service Bus-Skalierungseinheit bereit.
 
-Ein Service Bus-Namespace wird einer Skalierungseinheit zugeordnet. Die Skalierungseinheit verarbeitet alle Arten von Service Bus-Entitäten: Relays, Brokermessagingentitäten (Warteschlangen, Themen, Abonnements) und Benachrichtigungs-Hubs. Eine Service Bus-Skalierungseinheit besteht aus folgenden Komponenten:
+Ein Service Bus-Namespace wird einer Skalierungseinheit zugeordnet. Die Skalierungseinheit verarbeitet alle Arten von Service Bus-Entitäten: Relays und Brokermessagingentitäten (Warteschlangen, Themen, Abonnements). Eine Service Bus-Skalierungseinheit besteht aus folgenden Komponenten:
 
 - **Eine Gruppe von Gatewayknoten.** Gatewayknoten authentifizieren eingehende Anforderungen und verarbeiten Relayanforderungen. Jeder Gatewayknoten besitzt eine öffentliche IP-Adresse.
 
@@ -33,7 +33,7 @@ Ein Service Bus-Namespace wird einer Skalierungseinheit zugeordnet. Die Skalier
 
 - **Ein Gatewayspeicher.** Der Gatewayspeicher enthält die Daten für jede Entität, die in dieser Skalierungseinheit definiert ist. Der Implementierung des Gatewayspeichers liegt eine SQL Azure-Datenbank zugrunde.
 
-- **Mehrere Messagingspeicher.** Die Messagingspeicher enthalten die Nachrichten aller Warteschlangen, Themen und Abonnements, die in dieser Skalierungseinheit definiert sind. Auch sämtliche Abonnementdaten sind darin enthalten. Eine Warteschlange oder ein Thema ist immer einem einzelnen Messagingspeicher zugeordnet, es sei denn, das [Partitionieren von Messagingentitäten](https://msdn.microsoft.com/library/azure/dn520246.aspx) ist aktiviert. Abonnements werden im gleichen Messagingspeicher gespeichert wie ihr übergeordnetes Thema. Der Implementierung von Messagingspeichern liegen SQL Azure-Datenbanken zugrunde.
+- **Mehrere Messagingspeicher.** Die Messagingspeicher enthalten die Nachrichten aller Warteschlangen, Themen und Abonnements, die in dieser Skalierungseinheit definiert sind. Auch sämtliche Abonnementdaten sind darin enthalten. Eine Warteschlange oder ein Thema ist immer einem einzelnen Messagingspeicher zugeordnet, es sei denn, das [Partitionieren von Messagingentitäten](service-bus-partitioning.md) ist aktiviert. Abonnements werden im gleichen Messagingspeicher gespeichert wie ihr übergeordnetes Thema. Mit Ausnahme des Service Bus [Premium-Messagings](service-bus-premium-messaging.md) liegen der Implementierung von Messagingspeichern SQL Azure-Datenbanken zugrunde.
 
 - **Mehrere Registrierungsspeicher.** Die Registrierungsspeicher enthalten Geräteregistrierungen für alle Benachrichtigungs-Hubs, die in dieser Skalierungseinheit definiert sind. Der Implementierung von Registrierungsspeichern liegen SQL Azure-Datenbanken zugrunde.
 
@@ -69,4 +69,4 @@ Nach dieser Übersicht über die Funktionsweise von Service Bus können Sie sich
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Eine Messaginglösung mit Warteschlange unter Verwendung von Service Bus-Warteschlangen](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

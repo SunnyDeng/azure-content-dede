@@ -224,7 +224,7 @@ In der folgenden Tabelle werden die Eigenschaften in der Aktivität und den Pipe
 
 Tag | Beschreibung | Erforderlich
 --- | ----------- | --------
-Name | Der Name der Aktivität oder der Pipeline. Geben Sie einen Namen an, der die Aktion darstellt, für deren Durchführung die Aktivität oder die Pipeline konfiguriert ist.<br/><ul><li>Maximale Anzahl von Zeichen: 260</li><li>Muss mit einem Buchstaben, einer Zahl oder einem Unterstrich \(\_\) beginnen</li><li>Folgende Zeichen sind nicht zulässig: ".", "+", "?", "/", "\<", "\>", "*", "%", "&", ":" , "\\"</li></ul> | Ja
+Name | Der Name der Aktivität oder der Pipeline. Geben Sie einen Namen an, der die Aktion darstellt, für deren Durchführung die Aktivität oder die Pipeline konfiguriert ist.<br/><ul><li>Maximale Anzahl von Zeichen: 260</li><li>Muss mit einem Buchstaben, einer Zahl oder einem Unterstrich (\_) beginnen</li><li>Folgende Zeichen sind nicht zulässig: ".", "+", "?", "/", "<", ">", "*", "%", "&", ":" , "\"</li></ul> | Ja
 description | Beschreibung des Verwendungszwecks der Aktivität oder der Pipeline | Ja
 type | Gibt den Typ der Aktivität an. Verschiedene Typen von Aktivitäten finden Sie in den Artikeln [Aktivitäten der Datenverschiebung](data-factory-data-movement-activities.md) und [Aktivitäten der Datentransformation](data-factory-data-transformation-activities.md). | Ja
 inputs | Von der Aktivität verwendete Eingabetabellen<p>// eine Eingabetabelle<br/>"inputs":  [ { "name": "inputtable1" } ],</p><p>// zwei Eingabetabellen <br/>"inputs":  [ { "name": "inputtable1" }, { "name": "inputtable2" } ],</p> | Ja
@@ -310,8 +310,7 @@ Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und
 - Erfahren Sie mehr über das [Verwalten und Überwachen in Azure Data Factory](data-factory-monitor-manage-pipelines.md).
 - [Erstellen Sie Ihre erste Pipeline, und stellen Sie sie bereit](data-factory-build-your-first-pipeline.md). 
 
-## Feedback senden
-Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-create-pipelines.md).
+
  
 
    
@@ -336,4 +335,4 @@ Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="08/04/2015"
+	ms.date="11/06/2015"
 	ms.author="awills"/>
 
 # Erkennung, Eingrenzung und Diagnose mit Application Insights
@@ -20,28 +20,29 @@
 *Application Insights befindet sich in der Vorschau.*
 
 
-Nachdem Sie Ihre Anwendung veröffentlicht haben, hilft Ihnen Application Insights sicherzustellen, dass sie ordnungsgemäß ausgeführt wird und eine gute Leistung bietet. Wenn ein Problem vorliegt, möchten Sie schnellstmöglich darüber informiert werden und wissen, was zu seiner Behebung zu tun ist.
+Mithilfe von Application Insights können Sie die Leistung und Verwendung Ihrer App nach ihrer Liveschaltung ermitteln. Wenn ein Problem vorliegt, informiert Application Insights Sie darüber, sodass Sie die Auswirkungen bewerten und die Ursache ermitteln können.
+
+Hier beschreibt ein Team, das Webanwendungen entwickelt, seine Erfahrungen:
 
 * *"Vor ein paar Tagen haben wir einen 'kleineren' Hotfix bereitgestellt. Wir haben keinen umfassenden Testdurchlauf ausgeführt, doch leider gerieten einige unerwartete Änderungen in die Nutzlast, die eine Inkompatibilität zwischen dem Front-End und dem Back-End verursacht haben. Sofort nahmen die Serverausnahmen zu, unsere Warnungen wurden ausgelöst, und wir wurden auf die Situation aufmerksam gemacht. Nach ein paar Klicks im Application Insights-Portal hatten wir genügend Informationen über die Aufruflisten für Ausnahmen gesammelt, um das Problem einzugrenzen. Wir haben die Änderung umgehend rückgängig gemacht und dadurch den Schaden begrenzt. Dank Application Insights war dieser Teil des DevOps-Zyklus sehr einfach umsetzbar."*
 
-Wir können uns diesen Teil des DevOps-Zyklus als Pipeline vorstellen:
-
-![Erkennung-Eingrenzung-Diagnose](./media/app-insights-detect-triage-diagnose/01-pipe1.png)
-
-
-Nachdem Sie das Problem diagnostiziert haben, wissen Sie, worauf Sie Ihre Maßnahmen konzentrieren sollten. Das kann das Debuggen Ihres Codes, Zuweisen von mehr Arbeitsspeicher oder Nachverfolgen einer Abhängigkeit sein. Schließlich können Sie prüfen, ob Ihre Korrektur funktioniert hat:
-
-
-
-![Korrigieren-Überprüfen](./media/app-insights-detect-triage-diagnose/02-pipe2.png)
-
-
-Lassen Sie uns die Funktionsweise von Application Insights in jeder Phase der Pipeline betrachten.
-
-Application Insights eignet sich für Geräte- und Webanwendungen. In dieser exemplarischen Vorgehensweise konzentrieren wir uns auf eine Webanwendung. Wir begleiten das OBS-Team der Fabrikam Bank, das für das Onlinebankingsystem zuständig ist. Das Team hat seinen Webprojekten Application Insights hinzugefügt.
-
+Sehen wir uns an, wie ein typisches Webentwicklungsteam Application Insights zur Leistungsüberwachung nutzt. Wir begleiten das Team der Fabrikam Bank, das das Onlinebankingsystem (OBS) entwickelt.
 
 ![Beispiel der Website einer Bank](./media/app-insights-detect-triage-diagnose/03-bank.png)
+
+Das Team arbeitet an ungefähr folgendem Zyklus:
+
+![DevOps-Zyklus](./media/app-insights-detect-triage-diagnose/00-devcycle.png)
+
+Anforderungen werden in den Entwicklungs-Backlog (Aufgabenliste) geladen. Sie arbeiten mit kurzen Sprints, in denen häufig Software – in der Regel in Form von Verbesserungen und Erweiterungen der vorhandenen Anwendung – bereitgestellt wird. Die Live-App wird regelmäßig mit neuen Features aktualisiert. Während die App live geschaltet ist, überwacht das Team sie mithilfe von Application Insights in Hinblick auf Leistung und Verwendung. Diese Analyse wird zurück in ihr Entwicklungs-Backlog geladen.
+
+Das Team verwendet Application Insights zum genauen Überwachen der Live-Webanwendung in Bezug auf: * Leistung. Es möchte nachvollziehen können, wie die Antwortzeiten in Abhängigkeit von der Anforderungsanzahl variieren, wie viele CPU-, Netzwerk-, Datenträgerressourcen und andere Ressourcen verwendet werden und wo Engpässe auftreten. * Fehler. Wenn Ausnahmen oder Fehler bei Anforderungen auftreten oder ein Leistungsindikator den zulässigen Bereich überschreitet, muss das Team sofort darüber informiert werden, um entsprechende Maßnahmen ergreifen zu können. * Verwendung. Sobald eine neue Funktion veröffentlicht wird, möchte das Team wissen, inwieweit sie genutzt wird und ob Benutzer Probleme mit dieser Funktion haben.
+
+
+
+Konzentrieren wir uns auf den Feedbackteil des Zyklus:
+
+![Erkennung-Eingrenzung-Diagnose](./media/app-insights-detect-triage-diagnose/01-pipe1.png)
 
 
 
@@ -260,4 +261,4 @@ Ein Team kann also Application Insights nicht nur nutzen, um einzelne Probleme z
 [usage]: app-insights-web-track-usage.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

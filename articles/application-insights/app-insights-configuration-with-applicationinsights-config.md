@@ -5,7 +5,7 @@
     documentationCenter="" 
 	authors="OlegAnaniev-MSFT"
     editor="alancameronwills" 
-	manager="meravd"/>
+	manager="douge"/>
  
 <tags 
 	ms.service="application-insights" 
@@ -13,86 +13,107 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="11/05/2015" 
 	ms.author="awills"/>
 
 # Konfigurieren des Application Insights-SDK mit "ApplicationInsights.config" oder XML
 
 Das Application Insights .NET-SDK umfasst eine Reihe von NuGet-Paketen. Das [Kernpaket](http://www.nuget.org/packages/Microsoft.ApplicationInsights) stellt die API für das Senden von Telemetriedaten an Application Insights bereit. [Zusätzliche Pakete](http://www.nuget.org/packages?q=Microsoft.ApplicationInsights) bieten _Telemetriemodule_ und _-initialisierer_ für die automatische Nachverfolgung von Telemetriedaten von Ihrer Anwendung und deren Kontext. Durch Anpassen der Konfigurationsdatei können Sie Telemetriemodule und -initialisierer aktivieren oder deaktivieren sowie Parameter für einige von ihnen festlegen.
 
-Die Konfigurationsdatei heißt `ApplicationInsights.config` oder `ApplicationInsights.xml`, je nach dem Typ der Anwendung. Sie wird dem Projekt automatisch hinzugefügt, wenn Sie [einige Versionen des SDK installieren][start]. Über den [Statusmonitor auf einem IIS-Server][redfield] oder durch Auswahl der [Application Insights-Erweiterung für eine Azure-Website oder einen virtuellen Computer][azure] wird sie außerdem einer Web-App hinzugefügt.
+Die Konfigurationsdatei heißt `ApplicationInsights.config` oder `ApplicationInsights.xml`, je nach dem Typ der Anwendung. Sie wird dem Projekt automatisch hinzugefügt, wenn Sie [die meisten Versionen des SDK installieren][start]. Über den [Statusmonitor auf einem IIS-Server][redfield] oder durch Auswahl der [Application Insights-Erweiterung für eine Azure-Website oder einen virtuellen Computer][azure] wird sie außerdem einer Web-App hinzugefügt.
 
 Es gibt keine gleichwertige Datei zum Steuern des [SDK in einer Webseite][client].
 
+In diesem Dokument sind die Abschnitte beschrieben, die in der Konfigurationsdatei enthalten sind, wie die Steuerung der Komponenten des SDK damit durchgeführt wird und welche NuGet-Pakete diese Komponenten laden.
+
+## Telemetriemodule (ASP.NET)
+
+Jedes Telemetriemodul erfasst eine bestimmte Art von Daten und verwendet die Haupt-API zum Senden der Daten. Die Module werden von verschiedenen NuGet-Paketen installiert, mit denen der CONFIG-Datei auch die erforderlichen Zeilen hinzugefügt werden.
+
 Für jedes Modul gibt es in der Konfigurationsdatei einen Knoten. Um ein Modul zu deaktivieren, löschen Sie den Knoten, oder kommentieren Sie ihn aus.
 
-## [Microsoft.ApplicationInsights](http://www.nuget.org/packages/Microsoft.ApplicationInsights)-NuGet-Paket
 
-Das `Microsoft.ApplicationInsights`-NuGet-Paket enthält die folgenden Telemetriemodule in `ApplicationInsights.config`.
 
-```
-<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings">
-  <TelemetryModules>
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing.DiagnosticsTelemetryModule, Microsoft.ApplicationInsights" />
-  </TelemetryModules>
-</ApplicationInsights>
-```
-`DiagnosticsTelemetryModule` gibt Fehler im Application Insights-Instrumentationscode selbst an. Dies geschieht beispielsweise, wenn der Code nicht auf Leistungsindikatoren zugreifen kann oder wenn `ITelemetryInitializer` eine Ausnahme auslöst wird. Telemetriedaten der Ablaufverfolgung, die in diesem Modul nachverfolgt werden, werden in der [Diagnosesuche][diagnostic] angezeigt.
+### Abhängigkeitsüberwachung
 
-## [Microsoft.ApplicationInsights.DependencyCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector)-NuGet-Paket
-
-Das `Microsoft.ApplicationInsights.DependencyCollector`-NuGet-Paket enthält die folgenden Telemetriemodule in `ApplicationInsights.config`.
-
-```
-<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings">
-  <TelemetryModules>
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.ApplicationInsights.Extensibility.DependencyCollector" />
-  </TelemetryModules>
-</ApplicationInsights>
-```
-`DependencyTrackingTelemetryModule` verfolgt Telemetriedaten zu Aufrufen der externen Abhängigkeiten, die von der Anwendung vorgenommen werden, wie z. B. HTTP-Anforderungen und SQL-Abfragen. Damit dieses Modul auf einem IIS-Server funktioniert, müssen Sie den [Statusmonitor installieren][redfield]. Zur Verwendung in Azure-Web-Apps oder auf virtuellen Computern [wählen Sie die Application Insights-Erweiterung][azure].
+Bei der [Abhängigkeitsüberwachung ](app-insights-dependencies.md) werden Telemetriedaten zu Aufrufen erfasst, die von Ihrer App für Datenbanken und externe Dienste und Datenbanken durchgeführt werden. Damit dieses Modul auf einem IIS-Server funktioniert, müssen Sie den [Statusmonitor installieren][redfield]. Zur Verwendung in Azure-Web-Apps oder auf virtuellen Computern [wählen Sie die Application Insights-Erweiterung][azure].
 
 Sie können auch eigenen Code zur Abhängigkeitsnachverfolgung mithilfe der [TrackDependency-API](app-insights-api-custom-events-metrics.md#track-dependency) schreiben.
 
-## [Microsoft.ApplicationInsights.Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)-NuGet-Paket
 
-Das `Microsoft.ApplicationInsights.Web`-NuGet-Paket enthält die folgenden Telemetrieinitialisierer und -module in `ApplicationInsights.config`.
+* `Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule`
+* [Microsoft.ApplicationInsights.DependencyCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector)-NuGet-Paket.
 
-```
-<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings">
-  <TelemetryInitializers>
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.SyntheticTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.ClientIpHeaderTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.UserAgentTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.OperationNameTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.OperationIdTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.UserTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.SessionTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.AzureRoleEnvironmentTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.DomainNameRoleInstanceTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.BuildInfoConfigComponentVersionTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.DeviceTelemetryInitializer, Microsoft.ApplicationInsights.Extensibility.Web"/>
-  </TelemetryInitializers>
-  <TelemetryModules>
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.RequestTrackingTelemetryModule, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.ExceptionTrackingTelemetryModule, Microsoft.ApplicationInsights.Extensibility.Web" />
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.Web.DeveloperModeWithDebuggerAttachedTelemetryModule, Microsoft.ApplicationInsights.Extensibility.Web" />
-  </TelemetryModules>
-</ApplicationInsights>
-```
+### Leistungserfassung
 
-**Initialisierer**
+Dient zum [Sammeln von Systemleistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters), z. B. CPU-, Arbeitsspeicher- und Netzwerkauslastung von IIS-Installationen. Sie können angeben, welche Leistungsindikatoren erfasst werden sollen, z. B. auch Leistungsindikatoren, die Sie selbst eingerichtet haben.
 
-* `SyntheticTelemetryInitializer` aktualisiert die Kontexteigenschaften `User`, `Session` und `Operation` aller Telemetrieelemente, die bei der Verarbeitung einer Anforderung von einer synthetischen Quelle wie einem Verfügbarkeitstest nachverfolgt werden. Im Application Insights-Portal werden synthetische Telemetriedaten nicht standardmäßig angezeigt.
-* `ClientIpHeaderTelemetryInitializer` aktualisiert die `Ip`-Eigenschaft des `Location`-Kontexts aller Telemetrieelemente basierend auf dem `X-Forwarded-For`-HTTP-Header der Anforderung.
-* `UserAgentTelemetryInitializer` aktualisiert die `UserAgent`-Eigenschaft des `User`-Kontexts aller Telemetrieelemente basierend auf dem `User-Agent`-HTTP-Header der Anforderung.
-* `OperationNameTelemetryInitializer` aktualisiert die `Name`-Eigenschaft von `RequestTelemetry` und die `Name`-Eigenschaft des `Operation`-Kontexts aller Telemetrieelemente basierend auf der HTTP-Methode sowie die Namen von ASP.NET-MVC-Controllern und Aktionen, die aufgerufen werden, um die Anforderung zu verarbeiten.
-* `OperationNameTelemetryInitializer` aktualisiert die Kontexteigenschaft `Operation.Id` aller Telemetrieelemente, die bei der Verarbeitung einer Anforderung mit dem automatisch generierten `RequestTelemetry.Id`-Element nachverfolgt wurden. 
-* `UserTelemetryInitializer` aktualisiert die `Id`- und `AcquisitionDate`-Eigenschaften des `User`-Kontexts für alle Telemetrieelemente mit Werten, die aus dem `ai_user`-Cookie extrahiert werden, der vom Application Insights-JavaScript-Instrumentationscode generiert wird, der im Browser des Benutzers ausgeführt wird.
-* `SessionTelemetryInitializer` aktualisiert die `Id`-Eigenschaft des `Session`-Kontexts für alle Telemetrieelemente mit Werten, die aus dem `ai_session`-Cookie extrahiert werden, der vom Application Insights-JavaScript-Instrumentationscode generiert wird, der im Browser des Benutzers ausgeführt wird. 
+* `Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule`
+* [Microsoft.ApplicationInsights.PerfCounterCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector)-NuGet-Paket.
+
+
+### Application Insights-Diagnosetelemetrie
+
+`DiagnosticsTelemetryModule` gibt Fehler im Application Insights-Instrumentationscode selbst an. Dies geschieht beispielsweise, wenn der Code nicht auf Leistungsindikatoren zugreifen kann oder wenn `ITelemetryInitializer` eine Ausnahme auslöst wird. Telemetriedaten der Ablaufverfolgung, die in diesem Modul nachverfolgt werden, werden in der [Diagnosesuche][diagnostic] angezeigt.
+ 
+* `Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing.DiagnosticsTelemetryModule`
+* [Microsoft.ApplicationInsights](http://www.nuget.org/packages/Microsoft.ApplicationInsights)-NuGet-Paket. Wenn Sie nur dieses Paket installieren, wird die Datei „ApplicationInsights.config“ nicht automatisch erstellt. 
+
+### Entwicklermodus
+
+`DeveloperModeWithDebuggerAttachedTelemetryModule` erzwingt, dass `TelemetryChannel` von Application Insights Daten sofort sendet (jeweils nur ein Telemetrieelement), wenn ein Debugger an den Anwendungsprozess angefügt ist. So wird die Zeitdauer zwischen dem Moment, in dem die Anwendung die Telemetrie nachverfolgt, und der Anzeige im Application Insights-Portal reduziert. Für die CPU und die Netzwerkbandbreite ist dies eine erhebliche Belastung.
+
+* `Microsoft.ApplicationInsights.WindowsServer.DeveloperModeWithDebuggerAttachedTelemetryModule`
+* [Application Insights Windows Server](http://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/)-NuGet-Paket.
+
+### Nachverfolgung von Webanforderungen
+
+Meldet die [Antwortzeit und den Ergebniscode](app-insights-start-monitoring-app-health-usage.md) von HTTP-Anforderungen.
+
+* `Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule`
+* [Microsoft.ApplicationInsights.Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)-NuGet-Paket
+
+### Ausnahmeverfolgung
+
+`ExceptionTrackingTelemetryModule` verfolgt nicht behandelte Ausnahmen in Ihrer Web-App. Informationen hierzu finden Sie unter [Fehler und Ausnahmen][exceptions].
+
+* `Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule`
+* [Microsoft.ApplicationInsights.Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)-NuGet-Paket
+
+
+* `Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule` – Verfolgt [nicht überwachte Aufgabenausnahmen](http://blogs.msdn.com/b/pfxteam/archive/2011/09/28/task-exception-handling-in-net-4-5.aspx).
+* `Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule` – Verfolgt nicht behandelte Ausnahmen für Workerrollen, Windows-Dienste und Konsolenanwendungen.
+* [Application Insights Windows Server](http://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/)-NuGet-Paket.
+
+### Haupt-API
+
+Das Hauptpaket stellt die [Haupt-API](https://msdn.microsoft.com/library/mt420197.aspx) des SDK bereit. Sie wird von den anderen Telemetriemodulen verwendet, und Sie können sie auch [verwenden, um Ihre eigene Telemetrie zu definieren](app-insights-api-custom-events-metrics.md).
+
+* Kein Eintrag in „ApplicationInsights.config“.
+* [Microsoft.ApplicationInsights](http://www.nuget.org/packages/Microsoft.ApplicationInsights)-NuGet-Paket. Wenn Sie nur dieses NuGet-Paket installieren, wird keine CONFIG-Datei generiert.
+
+## Telemetriekanal
+
+Der Telemetriekanal verwaltet die Pufferung und Übertragung von Telemetriedaten an den Application Insights-Dienst.
+
+* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel` ist der Standardkanal für Dienste. Hierbei werden Daten im Arbeitsspeicher gepuffert.
+* `Microsoft.ApplicationInsights.PersistenceChannel` ist eine Alternative für Konsolenanwendungen. Alle nicht geleerten Daten können im beständigen Speicher gespeichert werden, wenn Ihre App geschlossen wird, und sie werden gesendet, wenn die App erneut gestartet wird.
+
+
+## Telemetrieinitialisierer (ASP.NET)
+
+Mit Telemetrieinitialisierern werden Kontexteigenschaften festgelegt, die mit jedem Element der Telemetrie gesendet werden.
+
+Sie können [eigene Initialisierer schreiben](app-insights-api-filtering-sampling.md#add-properties), um Kontexteigenschaften festzulegen.
+
+Die standardmäßigen Initialisierer werden entweder von den Web- oder WindowsServer-NuGet-Paketen festgelegt:
+
+
+* `AccountIdTelemetryInitializer` legt die AccountId-Eigenschaft fest.
+* `AuthenticatedUserIdTelemetryInitializer` legt die AuthenticatedUserId-Eigenschaft so fest, wie sie vom JavaScript-SDK festgelegt wurde.
 * `AzureRoleEnvironmentTelemetryInitializer` aktualisiert die `RoleName`- und `RoleInstance`-Eigenschaften des `Device`-Kontexts für alle Telemetrieelemente mit Informationen, die aus der Azure-Laufzeitumgebung extrahiert wurden.
-* `DomainNameRoleInstanceTelemetryInitializer` aktualisiert die `RoleInstance`-Eigenschaft des `Device`-Kontexts für alle Telemetrieelemente mit dem Domänennamen des Computers, auf dem die Webanwendung ausgeführt wird.
-* `BuildInfoConfigComponentVersionTelemetryInitializer` aktualisiert die `Version`-Eigenschaft des `Component`-Kontexts für alle Telemetrieelemente mit dem Wert, der aus der Datei `BuildInfo.config` extrahiert wurde, die vom TFS-Build erzeugt wurde.
+* `BuildInfoConfigComponentVersionTelemetryInitializer` aktualisiert die `Version`-Eigenschaft des `Component`-Kontexts für alle Telemetrieelemente mit dem Wert, der aus der Datei `BuildInfo.config` extrahiert wurde, die von MS Build erzeugt wurde.
+* `ClientIpHeaderTelemetryInitializer` aktualisiert die `Ip`-Eigenschaft des `Location`-Kontexts aller Telemetrieelemente basierend auf dem `X-Forwarded-For`-HTTP-Header der Anforderung.
 * `DeviceTelemetryInitializer` aktualisiert die folgenden Eigenschaften des `Device`-Kontexts für alle Telemetrieelemente.
  - `Type` wird auf "PC" festgelegt.
  - `Id` wird auf den Domänennamen des Computers festgelegt, auf dem die Webanwendung ausgeführt wird.
@@ -100,56 +121,26 @@ Das `Microsoft.ApplicationInsights.Web`-NuGet-Paket enthält die folgenden Telem
  - `Model` wird auf den Wert festgelegt, der mithilfe von WMI aus dem Feld `Win32_ComputerSystem.Model` extrahiert wurde.
  - `NetworkType` wird auf den Wert festgelegt, der aus dem Feld `NetworkInterface` extrahiert wurde.
  - `Language` wird auf den Namen von `CurrentCulture` festgelegt.
+* `DomainNameRoleInstanceTelemetryInitializer` aktualisiert die `RoleInstance`-Eigenschaft des `Device`-Kontexts für alle Telemetrieelemente mit dem Domänennamen des Computers, auf dem die Webanwendung ausgeführt wird.
+* `OperationNameTelemetryInitializer` aktualisiert die `Name`-Eigenschaft von `RequestTelemetry` und die `Name`-Eigenschaft des `Operation`-Kontexts aller Telemetrieelemente basierend auf der HTTP-Methode sowie die Namen von ASP.NET-MVC-Controllern und Aktionen, die aufgerufen werden, um die Anforderung zu verarbeiten.
+* `OperationIdTelemetryInitializer` aktualisiert die `Operation.Id`-Kontexteigenschaft aller verfolgten Telemetrieelemente, während eine Anforderung mit der automatisch generierten `RequestTelemetry.Id` behandelt wird.
+* `SessionTelemetryInitializer` aktualisiert die `Id`-Eigenschaft des `Session`-Kontexts für alle Telemetrieelemente mit Werten, die aus dem `ai_session`-Cookie extrahiert werden, der vom Application Insights-JavaScript-Instrumentationscode generiert wird, der im Browser des Benutzers ausgeführt wird. 
+* `SyntheticTelemetryInitializer` aktualisiert die Kontexteigenschaften `User`, `Session` und `Operation` aller Telemetrieelemente, die bei der Verarbeitung einer Anforderung von einer synthetischen Quelle nachverfolgt werden, z. B. einem Verfügbarkeitstest oder Suchmaschinen-Bot. Standardmäßig werden vom [Metrik-Explorer](app-insights-metrics-explorer.md) keine synthetischen Telemetriedaten angezeigt.
+* `UserAgentTelemetryInitializer` aktualisiert die `UserAgent`-Eigenschaft des `User`-Kontexts aller Telemetrieelemente basierend auf dem `User-Agent`-HTTP-Header der Anforderung.
+* `UserTelemetryInitializer` aktualisiert die `Id`- und `AcquisitionDate`-Eigenschaften des `User`-Kontexts für alle Telemetrieelemente mit Werten, die aus dem `ai_user`-Cookie extrahiert werden, der vom Application Insights-JavaScript-Instrumentationscode generiert wird, der im Browser des Benutzers ausgeführt wird.
 
-**Module**
 
-* `RequestTrackingTelemetryModule` verfolgt von Ihrer Web-App empfangene Anforderungen und misst die Reaktionszeiten.
-* `ExceptionTrackingTelemetryModule` verfolgt nicht behandelte Ausnahmen in Ihrer Web-App. Informationen hierzu finden Sie unter [Fehler und Ausnahmen][exceptions].
-* `DeveloperModeWithDebuggerAttachedTelemetryModule` erzwingt, dass `TelemetryChannel` von Application Insights Daten sofort sendet (jeweils nur ein Telemetrieelement), wenn ein Debugger an den Anwendungsprozess angefügt ist. Dies reduziert die Zeitspanne zwischen dem Zeitpunkt, zu dem Ihre Anwendung Telemetriedaten verfolgt, und der Anzeige im Application Insights-Portal auf Kosten einer signifikanten Auslastung von CPU und Netzwerkbandbreite.
+## Telemetrieprozessoren (ASP.NET)
 
-## [Microsoft.ApplicationInsights.PerfCounterCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector)-NuGet-Paket
+Mit Telemetrieprozessoren kann jedes Telemetrieelement direkt vor dem Senden vom SDK an das Portal gefiltert und geändert werden.
 
-Das `Microsoft.ApplicationInsights.PerfCounterCollector`-NuGet-Paket fügt standardmäßig die folgenden Telemetriemodule in `ApplicationInsights.config` ein.
+Sie können [Ihre eigenen Telemetrieprozessoren schreiben](app-insights-api-filtering-sampling.md#filtering).
 
-```
-<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings">
-  <TelemetryModules>
-    <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule, Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector" />
-  </TelemetryModules>
-</ApplicationInsights>
-```
+Es gibt einen Standardprozessor (ab 2.0.1):
 
-### PerformanceCollectorModule
+* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.SamplingTelemetryProcessor` – Per [Sampling](app-insights-api-filtering-sampling.md#sampling) wird das Telemetrievolumen reduziert, aber Sie können zu Diagnosezwecken weiterhin zwischen verwandten Telemetrieelementen navigieren.
 
-`PerformanceCollectorModule` verfolgt eine Reihe von Windows-Leistungsindikatoren. Diese Indikatoren können angezeigt werden, wenn Sie im Metrik-Explorer auf ein Diagramm klicken, um dessen Detailblatt zu öffnen.
 
-Sie können weitere Leistungsindikatoren überwachen – sowohl standardmäßige Windows-Leistungsindikatoren als auch andere, die Sie hinzugefügt haben.
-      
-Verwenden Sie zum Sammeln weiterer Leistungsindikatoren die folgende Syntax:
-
-```
-<Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule, Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector">
-  <Counters>
-    <Add PerformanceCounter="\MyCategory\MyCounter" />
-    <Add PerformanceCounter="\Process(??APP_WIN32_PROC??)\Handle Count" ReportAs="Process handle count" />
-    <!-- ... -->
-  </Counters>
-</Add>
-```      
-      
-`PerformanceCounter` muss entweder `\CategoryName(InstanceName)\CounterName` oder `\CategoryName\CounterName` sein.
-      
-Wenn Sie ein `ReportAs`-Attribut angeben, wird dieses als Anzeigename in Application Insights verwendet.
-
-Für die Berichterstellung an Application Insights dürfen die Indikatornamen nur folgende Zeichen enthalten: Buchstaben, runde Klammern, Schrägstriche, Bindestriche, Unterstriche, Leerzeichen und Punkte.
-
-Verwenden Sie "ReportAs", wenn der zu überwachende Leistungsindikator ungültige Zeichen wie "#" oder Ziffern enthält.
-      
-Die folgenden Platzhalter werden für `InstanceName` unterstützt:
-
-    ?APP_WIN32_PROC?? - instance name of the application process  for Win32 counters.
-    ??APP_W3SVC_PROC?? - instance name of the application IIS worker process for IIS/ASP.NET counters.
-    ??APP_CLR_PROC?? - instance name of the application CLR process for .NET counters.
 
 ## Kanalparameter (Java)
 
@@ -212,9 +203,6 @@ Bestimmt die maximale Größe in MB, die dem beständigen Speicher auf dem lokal
    </ApplicationInsights>
 ```
 
-## Telemetrieinitialisierer
-
-Sie können Telemetrieinitialisierer schreiben, welche die aus Ihrer App gesammelten Telemetriedaten filtern und ändern. Diese können zusammen mit den Standardmodulen aus der config-Datei initialisiert werden. [Weitere Informationen](app-insights-api-filtering-sampling.md)
 
 
 ## InstrumentationKey
@@ -263,4 +251,4 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO3-->

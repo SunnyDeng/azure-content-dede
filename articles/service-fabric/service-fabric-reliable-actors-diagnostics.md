@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Reliable Actors-Diagnose und -Leistungsüberwachung"
-   description="Dieser Artikel beschreibt die Features für Diagnose und Leistungsüberwachung in der Reliable Actors-Laufzeit, einschließlich der von ihr ausgegebenen Ereignisse und Leistungsindikatoren."
+   pageTitle="Actor-Diagnose und -Überwachung | Microsoft Azure"
+   description="Dieser Artikel beschreibt die Features für die Diagnose und Leistungsüberwachung der Reliable Actors-Laufzeit in Service Fabric, einschließlich der davon ausgegebenen Ereignisse und Leistungsindikatoren."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -13,18 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="10/15/2015"
    ms.author="abhisram"/>
 
 # Diagnose und Leistungsüberwachung für Reliable Actors
 Die Reliable Actors-Laufzeit gibt [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx)-Ereignisse und [Leistungsindikatoren](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx) aus, die Aufschluss über den Laufzeitbetrieb sowie Unterstützung bei der Problembehebung und Leistungsüberwachung bieten.
 
 ## EventSource-Ereignisse
-Der EventSource-Name für die Reliable Actors-Laufzeit lautet "Microsoft-ServiceFabric-Actors". Ereignisse aus dieser Ereignisquelle werden im Fenster für [Diagnoseereignisse](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) beim [Debuggen der Actor-Anwendung in Visual Studio](service-fabric-debugging-your-application.md) angezeigt.
+Der EventSource-Anbietername für die Reliable Actors-Laufzeit lautet "Microsoft-ServiceFabric-Actors". Ereignisse aus dieser Ereignisquelle werden im Fenster für [Diagnoseereignisse](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) beim [Debuggen der Actor-Anwendung in Visual Studio](service-fabric-debugging-your-application.md) angezeigt.
 
-Service Fabric bietet außerdem die Möglichkeit, diese Ereignisse an [Application Insights](http://azure.microsoft.com/services/application-insights/) weiterzuleiten. Weitere Informationen hierzu finden Sie im Artikel über das [Einrichten von Application Insights für Service Fabric](service-fabric-diagnostics-application-insights-setup.md).
-
-Weitere Beispiele für Tools und Technologien, mit deren Hilfe EventSource-Ereignisse erfasst und/oder angezeigt werden können, sind [PerfView](http://www.microsoft.com/download/details.aspx?id=28567), [Azure Diagnostics](../cloud-services-dotnet-diagnostics.md), [Semantic Logging](https://msdn.microsoft.com/library/dn774980.aspx) und [Microsoft TraceEvent Library](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
+Beispiele für Tools und Technologien, mit deren Hilfe EventSource-Ereignisse erfasst und/oder angezeigt werden können, sind [PerfView](http://www.microsoft.com/download/details.aspx?id=28567), [Azure Diagnostics](../cloud-services-dotnet-diagnostics.md), [Semantic Logging](https://msdn.microsoft.com/library/dn774980.aspx) und [Microsoft TraceEvent Library](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ### Schlüsselwörter
 Allen Ereignissen, die zu Reliable Actors EventSource gehören, werden ein oder mehrere Schlüsselwörter zugeordnet. Dies ermöglicht das Filtern von erfassten Ereignissen. Die folgenden Schlüsselwort-Bits sind definiert:
@@ -155,4 +153,4 @@ Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit d
 |ActorActivated|5|Information|0x1|Ein Actor wurde aktiviert.|
 |ActorDeactivated|6|Information|0x1|Ein Actor wurde deaktiviert.|
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

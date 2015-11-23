@@ -3,7 +3,7 @@
 	description="Erfahren Sie, was nach dem Hinzufügen von Azure Storage zu einem ASP.NET-Projekt mit verbundenen Visual Studio-Diensten passiert."
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/03/2015"
-	ms.author="patshea"/>
+	ms.author="tarcher"/>
 
 # Was ist mit dem ASP.NET-Projekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
 
@@ -40,4 +40,4 @@ In der Datei web.config Ihres Projekts wurde ein Element mit der Verbindungszeic
 
 Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

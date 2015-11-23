@@ -1,5 +1,13 @@
-<properties pageTitle="Hinzufügen von Burstknoten zu einem HPC Pack-Cluster | Microsoft Azure" description="Erfahren Sie, wie Sie Workerrolleninstanzen, die in einem Clouddienst ausgeführt werden, bedarfsgesteuert als Computeressourcen zu einem HPC Pack-Hauptknoten in Azure hinzufügen." services="virtual-machines" documentationCenter="" authors="dlepow" manager="timlt" editor="" tags="azure-service-management"/>
-<tags 
+<properties
+ pageTitle="Hinzufügen von Burstknoten zu einem HPC Pack-Cluster | Microsoft Azure"
+ description="Erfahren Sie, wie Sie in einem Clouddienst ausgeführte Workerrolleninstanzen einem vorhandenen HPC Pack-Hauptknoten in Azure bedarfsgesteuert als Computeressourcen hinzufügen."
+ services="virtual-machines"
+ documentationCenter=""
+ authors="dlepow"
+ manager="timlt"
+ editor=""
+ tags="azure-service-management,hpc-pack"/>
+<tags
 ms.service="virtual-machines"
  ms.devlang="na"
  ms.topic="article"
@@ -80,4 +88,4 @@ Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unte
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

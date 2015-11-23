@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/09/2015"
+   ms.date="11/06/2015"
    ms.author="larryfr"/>
 
 # Verwenden von Pig mit Hadoop in HDInsight
@@ -42,6 +42,8 @@ Pig Latin unterstützt auch benutzerdefinierte Funktionen (UDF), wodurch Sie ext
 Weitere Informationen zu Pig Latin finden Sie unter [Pig Latin-Referenzhandbuch 1](http://pig.apache.org/docs/r0.7.0/piglatin_ref1.html) und [Pig Latin-Referenzhandbuch 2](http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html).
 
 Ein Beispiel für benutzerdefinierte Funktionen mit Pig finden Sie in den folgenden Dokumenten:
+
+* [Verwenden von DataFu mit Pig in HDInsight](hdinsight-hadoop-use-pig-datafu-udf.md) – DataFu ist eine Sammlung nützlicher UDFs, die von Apache verwaltet werden.
 
 * [Verwenden von Python mit Pig und Hive in HDInsight](hdinsight-python.md)
 
@@ -86,7 +88,7 @@ Die folgende Abbildung zeigt eine Aufschlüsselung der Wirkung jeder einzelnen T
 
 HDInsight kann Pig Latin-Aufträge mithilfe verschiedener Methoden ausführen. Die folgende Tabelle hilft Ihnen bei der Entscheidung, welche Methode für Sie geeignet ist. Folgen Sie anschließend dem Link für eine exemplarische Vorgehensweise.
 
-| **Verwenden Sie dies** auf Wunsch... | ... eine **interaktive** Shell | ...**Batch**verarbeitung | ...mit diesem **Clusterbetriebssystem** | ...von diesem **Clusterbetriebssystem** |
+| **Verwenden Sie dies** auf Wunsch... | ... eine **interaktive** Shell | ...**Batchverarbeitung** | ...mit diesem **Clusterbetriebssystem** | ...von diesem **Clusterbetriebssystem** |
 |:--------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
 | [SSH](hdinsight-hadoop-use-pig-ssh.md) | ✔ | ✔ | Linux | Linux, Unix, Mac OS X oder Windows |
 | [Curl](hdinsight-hadoop-use-pig-curl.md) | &nbsp; | ✔ | Linux oder Windows | Linux, Unix, Mac OS X oder Windows |
@@ -104,7 +106,7 @@ Sie können auch mit den SQL Server Integration Services (SSIS) einen Pig-Auftra
 - [Verbindungs-Manager für Azure-Abonnements][connectionmanager]
 
 
-Erfahren Sie [hier][ssispack] mehr über das Azure Feature Pack für SSIS.
+Greifen Sie [hier][ssispack] auf weitere Informationen zum Azure Feature Pack für SSIS zu.
 
 
 ##<a id="nextsteps"></a>Nächste Schritte
@@ -144,4 +146,4 @@ Nachdem Sie erfahren haben, wie Sie Pig mit HDInsight verwenden, können Sie mit
 [image-hdi-pig-powershell]: ./media/hdinsight-use-pig/hdi.pig.powershell.png
 [image-hdi-pig-architecture]: ./media/hdinsight-use-pig/HDI.Pig.Architecture.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->

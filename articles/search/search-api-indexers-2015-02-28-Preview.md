@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview) | Microsoft Azure" 
+pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview) | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)" 
 services="search" 
 documentationCenter="" 
@@ -776,4 +776,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO3-->

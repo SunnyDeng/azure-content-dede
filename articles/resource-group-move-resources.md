@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/14/2015" 
+	ms.date="11/06/2015" 
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
@@ -30,6 +30,7 @@ Beim Verschieben einer Ressource sollten Sie einige wichtige Aspekte berücksich
 2. Die Zielressourcengruppe sollte nur Ressourcen enthalten, die den gleichen Anwendungslebenszyklus wie die verschobenen Ressourcen haben.
 3. Wenn Sie Azure PowerShell verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Der **Move-AzureResource**-Befehl wird regelmäßig aktualisiert. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 4. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die PowerShell-Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
+5. Beim Verschieben von Ressourcen werden die Quellgruppe und die Zielgruppe für die Dauer des Vorgangs gesperrt. Schreib- und Löschvorgänge in den Gruppen werden bis zum Abschluss der Verschiebung blockiert.
 
 ## Unterstützte Dienste
 
@@ -87,18 +88,7 @@ Führen Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengrup
 
     POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
-Ersetzen Sie **{source-subscription-Id}** und **{source-resource-group-name}** durch das Abonnement und die Ressourcengruppe, in der die zu verschiebenden Ressourcen derzeit enthalten sind. Verwenden Sie für {api-version} **2015-01-01**.
-
-Schließen Sie in die Anforderung ein JSON-Objekt ein, das die Zielressourcengruppe und die Ressourcen definiert, die Sie verschieben möchten.
-
-    {
-        "targetResourceGroup": "/subscriptions/{target-subscription-id}/resourceGroups/{target-resource-group-name}", "resources": [
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}",
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}",
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}",
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}"
-        ]
-    }
+Geben Sie im Anforderungstext die Zielgruppe und die zu verschiebenden Ressourcen an. Weitere Informationen zur REST-Verschiebung finden Sie unter [Verschieben von Ressourcen](https://msdn.microsoft.com/library/azure/mt218710.aspx).
 
 ## Nächste Schritte
 - [Verwenden von Azure PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
@@ -106,4 +96,4 @@ Schließen Sie in die Anforderung ein JSON-Objekt ein, das die Zielressourcengru
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO3-->
