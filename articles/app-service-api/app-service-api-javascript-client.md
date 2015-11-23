@@ -36,7 +36,7 @@ Typischerweise wird CORS (Cross-Origin Resource Sharing) in HTML-Anwendungen ben
 
 ### Aktivieren von CORS für API-App-Gateways
 
-API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS\_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
+API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
 
 1. Navigieren Sie im Azure-Vorschauportal zum Blatt für die API-App, für die Sie CORS aktivieren möchten. Klicken Sie auf dem Blatt auf das Symbol *Gateway* für Ihre API-App. 
 
@@ -54,7 +54,7 @@ API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS k
 
 	![Gateway – Anwendungseinstellungen](./media/app-service-api-javascript-client/22-gateway-app-settings-blade.png)
 
-1. Fügen Sie die Anwendung **MS\_CrossDomainOrigins** hinzu. Legen Sie die Einstellung auf die durch Trennzeichen getrennte Liste der HTTP-Hosts fest, denen Sie Zugriff auf Ihre API-App gewähren möchten. Wenn Sie mehreren Hosts Zugriff erteilen möchten, können Sie den Wert von *appSetting* auf einen ähnlichen wie den nachstehenden Code festlegen.
+1. Fügen Sie die Anwendung **MS_CrossDomainOrigins** hinzu. Legen Sie die Einstellung auf die durch Trennzeichen getrennte Liste der HTTP-Hosts fest, denen Sie Zugriff auf Ihre API-App gewähren möchten. Wenn Sie mehreren Hosts Zugriff erteilen möchten, können Sie den Wert von *appSetting* auf einen ähnlichen wie den nachstehenden Code festlegen.
 
 		http://foo.azurewebsites.net, https://foo.azurewebsites.net, http://contactlistwebapp.azurewebsites.net
 
@@ -66,7 +66,7 @@ API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS k
 
 	![](./media/app-service-api-javascript-client/23-app-settings-set.png)
 
-Die Anwendungseinstellung **MS\_CrossDomainOrigins** wird im Blogbeitrag [Azure Mobile Service .NET Updates](http://azure.microsoft.com/blog/2014/07/28/azure-mobile-services-net-updates/) ausführlich besprochen. Wenn Sie daher weitere Informationen zu dieser Einstellung benötigen, besuchen Sie diesen Blog.
+Die Anwendungseinstellung **MS_CrossDomainOrigins** wird im Blogbeitrag [Azure Mobile Service .NET Updates](http://azure.microsoft.com/blog/2014/07/28/azure-mobile-services-net-updates/) ausführlich besprochen. Wenn Sie daher weitere Informationen zu dieser Einstellung benötigen, besuchen Sie diesen Blog.
 
 ### Aktivieren von CORS im Web-API-Code
 
@@ -80,7 +80,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/01-cors-installed.png)
 
-1. Öffnen Sie die Datei *App\_Start/WebApiConfig.cs*. Fügen Sie in der Datei die nachstehende Codezeile zur Methode **Register** der Klasse **WebApiConfig** hinzu.
+1. Öffnen Sie die Datei *App_Start/WebApiConfig.cs*. Fügen Sie in der Datei die nachstehende Codezeile zur Methode **Register** der Klasse **WebApiConfig** hinzu.
 
 		config.EnableCors();
 
@@ -310,7 +310,7 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren und
             $scope.refresh();
         });
 
-Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
+ Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
 
 >[AZURE.NOTE]**Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie mit der rechten Maustaste auf das API-Projekt und anschließend auf **Debuggen > Neue Instanz starten**, sodass ein Browserfenster mit der Portnummer angezeigt wird.
 
