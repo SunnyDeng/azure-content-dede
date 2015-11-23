@@ -1251,7 +1251,24 @@ Erstellt eine öffentliche IP-Ressource. Sie erstellen die öffentliche IP-Resso
 	info:    network public-ip create command OK
 
 
-Parameteroptionen: -h, --help output usage information -v, --verbose use verbose output --json use json output -g, --resource-group <resource-group> the name of the resource group -n, --name <name> the name of the public ip -l, --location <location> the location -d, --domain-name-label <domain-name-label> the domain name label. Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest. -a, --allocation-method <allocation-method> die Zuordnungsmethode[Static][Dynamic] -i, --idletimeout <idletimeout> das Leerlauftimeout in Minuten -f, --reverse-fqdn <reverse-fqdn> der Reverse-FQDN -t, --tags <tags> die Tagliste. Can be multiple. In the format of "name=value". Name is required and value is optional. For example, -t tag1=value1;tag2 -s, --subscription <subscription> the subscription identifier <br>
+Parameteroptionen:
+	-h, --help                                  output usage information
+	-v, --verbose                                use verbose output
+	--json                                       use json output
+	-g, --resource-group <resource-group>        the name of the resource group
+	-n, --name <name>                            the name of the public ip
+	-l, --location <location>                    the location
+	-d, --domain-name-label <domain-name-label>  the domain name label.
+	Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest.
+	-a, --allocation-method <allocation-method>  die Zuordnungsmethode[Static][Dynamic]
+	-i, --idletimeout <idletimeout>              das Leerlauftimeout in Minuten
+	-f, --reverse-fqdn <reverse-fqdn>            der Reverse-FQDN
+	-t, --tags <tags>                            die Tagliste.
+	Can be multiple. In the format of "name=value".
+	Name is required and value is optional.
+	For example, -t tag1=value1;tag2
+	-s, --subscription <subscription>            the subscription identifier
+<br>
 
 	network public-ip set [options] <resource-group> <name>
 Aktualisiert die Eigenschaften einer vorhandenen öffentlichen IP-Ressource. Im folgenden Beispiel wurde die öffentliche IP-Adresse von "Dynamisch" in "Statisch" geändert.
