@@ -14,7 +14,7 @@
    	ms.topic="hero-article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="10/23/2015"
+   	ms.date="11/16/2015"
    	ms.author="nitinme"/>
 
 # Hadoop-Lernprogramm: Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux
@@ -52,7 +52,7 @@ Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen erstellt, die 
 Führen Sie die folgenden Schritte aus, um einen neuen Cluster zu erstellen:
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
-2. Klicken Sie auf **NEU**, auf **Datenanalyse** und anschließend auf **HDInsight**.
+2. Klicken Sie auf **NEU**, **Datenanalyse** und anschließend auf **HDInsight**.
 
     ![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Vorschauportal")
 
@@ -70,9 +70,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen Cluster zu erstellen:
 
 	![Clusteranmeldeinformationen eingeben](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.3.png "Clusteranmeldeinformationen eingeben")
 
-    > [AZURE.NOTE]SSH wird verwendet, um remote über eine Befehlszeile auf den HDInsight-Cluster zuzugreifen. Der Benutzername und das Kennwort, die Sie hier verwenden, dienen zum Herstellen der Verbindung mit dem Cluster über SSH. Außerdem muss der SSH-Benutzername eindeutig sein, da mit ihm auf allen HDInsight-Clusterknoten ein Benutzerkonto erstellt wird. Die folgenden Namen sind einige der Namen, die für die Verwendung durch Dienste auf dem Cluster reserviert sind und daher nicht als SSH-Benutzername verwendet werden können:
-    >
-    > root, hdiuser, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
+    > [AZURE.NOTE]SSH wird verwendet, um remote über eine Befehlszeile auf den HDInsight-Cluster zuzugreifen. Der Benutzername und das Kennwort, die Sie hier verwenden, dienen zum Herstellen der Verbindung mit dem Cluster über SSH.
 
 	Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Dokumenten:
 
@@ -98,7 +96,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen Cluster zu erstellen:
 
 	Klicken Sie auf **Auswählen**, um die Datenquellenkonfiguration zu speichern.
 
-8. Klicken Sie auf **Knotentarife**, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
+8. Klicken Sie auf **Knotenpreistarife**, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
 
 	![Blatt „Knotenpreistarife“](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.5.png "Anzahl von Clusterknoten angeben")
     
@@ -108,7 +106,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen Cluster zu erstellen:
 
 	Klicken Sie auf **Auswählen**, um die Konfiguration der Knotenpreise zu speichern.
 
-9. Vergewissern Sie sich auf dem Blatt **Neuer HDInsight-Cluster**, dass **An Startmenü anheften** ausgewählt ist, und klicken Sie dann auf **Erstellen**. Der Cluster wird erstellt, und dem Startmenü Ihres Azure-Portals wird eine Kachel für den Cluster hinzugefügt. Das Symbol zeigt an, dass der Cluster bereitgestellt wird. Sobald die Bereitstellung abgeschlossen ist, ändert es sich in das HDInsight-Symbol.
+9. Vergewissern Sie sich auf dem Blatt **Neues HDInsight-Cluster**, dass **An Startmenü anheften** ausgewählt ist, und klicken Sie dann auf **Erstellen**. Der Cluster wird erstellt, und dem Startmenü Ihres Azure-Portals wird eine Kachel für den Cluster hinzugefügt. Das Symbol zeigt an, dass der Cluster bereitgestellt wird. Sobald die Bereitstellung abgeschlossen ist, ändert es sich in das HDInsight-Symbol.
 
 Während der Bereitstellung|Nach Abschluss der Bereitstellung
 ------------------|---------------------
@@ -128,14 +126,13 @@ Sie können die Verbindung mit einem HDInsight-Cluster unter Linux über einen L
 
 		ssh <username>@<clustername>-ssh.azurehdinsight.net
 
-	Da Sie einen Cluster mithilfe der Option "Schnellerfassung" bereitgestellt haben, lautet der SSH-Standardbenutzername **hdiuser**. Daher muss der Befehl wie folgt lauten:
-
-		ssh hdiuser@myhdinsightcluster-ssh.azurehdinsight.net
+	Ersetzen Sie &lt;username> durch den SSH-Benutzernamen, den Sie beim Erstellen des Clusters verwendet haben. Ersetzen Sie &lt;clustername> durch den Namen des Clusters.
 
 2. Geben Sie nach der entsprechenden Aufforderung das Kennwort ein, das Sie bei der Bereitstellung des Clusters angegeben haben. Nachdem Sie die Verbindung erfolgreich hergestellt haben, zeigt die Eingabeaufforderung Folgendes an:
 
-		hdiuser@headnode-0:~$
+		hdiuser@hn0-clustername:~$
 
+    > [AZURE.NOTE]Der Teil `@hn0-clustername` der Aufforderung unterscheidet sich möglicherweise für Ihr Cluster.
 
 ###So stellen Sie die Verbindung auf einem Windows-Computer her
 
@@ -147,9 +144,9 @@ Sie können die Verbindung mit einem HDInsight-Cluster unter Linux über einen L
 
 3. Geben Sie zum Speichern der Verbindungsinformationen für die künftige Verwendung einen Namen für diese Verbindung unter **Saved Sessions** ein, und klicken Sie dann auf **Save**. Die Verbindung wird zur Liste der gespeicherten Sitzungen hinzugefügt.
 
-4. Klicken Sie auf **Open**, um die Verbindung mit dem Cluster herzustellen. Geben Sie **hdiuser** ein, wenn Sie zur Eingabe des Benutzernamens aufgefordert werden. Als Kennwort geben Sie das während der Bereitstellung des Clusters angegebene Kennwort ein. Nachdem Sie die Verbindung erfolgreich hergestellt haben, zeigt die Eingabeaufforderung Folgendes an:
+4. Klicken Sie auf **Open**, um die Verbindung mit dem Cluster herzustellen. Wenn Sie zur Eingabe des Benutzernamens aufgefordert werden, geben Sie den SSH-Benutzernamen ein, den Sie beim Erstellen des Clusters verwendet haben. Als Kennwort geben Sie das Kennwort ein, das Sie beim Erstellen des Clusters angegeben haben. Nachdem Sie die Verbindung erfolgreich hergestellt haben, zeigt die Eingabeaufforderung Folgendes an:
 
-		hdiuser@headnode-0:~$
+		hdiuser@hn0-clustername:~$
 
 ##<a name="hivequery"></a>Ausführen einer Hive-Abfrage
 
@@ -179,7 +176,7 @@ Nachdem Sie mit dem Cluster über SSH verbunden sind, verwenden Sie die folgende
 
 	Dadurch wird die folgende Ausgabe zurückgegeben:
 
-		Query ID = hdiuser_20150116000202_cceb9c6b-4356-4931-b9a7-2c373ebba493
+		Query ID = username_20150116000202_cceb9c6b-4356-4931-b9a7-2c373ebba493
 		Total jobs = 1
 		Launching Job 1 out of 1
 		Number of reduce tasks not specified. Estimated from input data size: 1
@@ -249,7 +246,7 @@ Wenn Sie mit eigenen Daten arbeiten und mehr darüber wissen möchten, wie Daten
 
 - Informationen zur Verwendung von Azure-Blob-Speicher durch HDInsight finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight](hdinsight-use-blob-storage.md).
 
-- Informationen zum Hochladen von Daten in HDInsight finden Sie im Artikel zum [Hochladen von Daten in HDInsight][hdinsight-upload-data].
+- Informationen zum Hochladen von Daten in HDInsight finden Sie im Artikel zum [Hochladen von Daten zu HDInsight][hdinsight-upload-data].
 
 Weitere Informationen zum Erstellen und Verwalten von HDInsight-Clustern finden Sie in folgenden Artikeln:
 
@@ -286,4 +283,4 @@ Weitere Informationen zum Erstellen und Verwalten von HDInsight-Clustern finden 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

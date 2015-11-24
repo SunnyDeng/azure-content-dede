@@ -44,7 +44,7 @@ In der folgenden Tabelle finden Sie Informationen zu Regionen und geopolitischen
 |**Geopolitische Region**|**Azure-Regionen**|**ExpressRoute-Standorte**|
 |---|---|---|---|
 |**US-Government Cloud**|US Government|Iowa, Virginia|Ashburn, Chicago|
-|**China-Cloud**|China|Osten, Norden|
+|**China-Cloud**|China|Peking, Shanghai|
 
 
 Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standard-SKU nicht unterstützt. Sie müssen das ExpressRoute Premium-Add-On aktivieren, um Unterstützung für globale Konnektivität zu erhalten. Verbindungen mit nationalen Cloudumgebungen werden nicht unterstützt. Wenden Sie sich an Ihren Konnektivitätsanbieter, wenn Sie derartige Verbindungen implementieren möchten.
@@ -67,7 +67,7 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **[Internet Initiative Japan Inc. - IIJ](http://www.iij.ad.jp/en/news/pressrelease/2013/pdf/Azure_E.pdf)** | Unterstützt | Nicht unterstützt | Tokio |
 | **[InterCloud](https://www.intercloud.com/)** | Unterstützt | Unterstützt | Amsterdam, London, Singapur, Washington, D.C. |
 | **Internet Solutions – Cloud Connect** | Unterstützt | Unterstützt | Amsterdam, London |
-| **Interxion** | Unterstützt | Nicht unterstützt | Amsterdam |
+| **Interxion** | Unterstützt | Unterstützt | Amsterdam |
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Nicht unterstützt | Chicago, Dallas, London, Seattle, Silicon Valley, Washington, D.C. |
 | **Megaport** | Unterstützt | Nicht unterstützt | Melbourne, Sydney |
 | **MTN** | Unterstützt | Nicht unterstützt | London |
@@ -137,4 +137,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

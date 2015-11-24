@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="08/24/2015" 
+	ms.date="11/17/2015" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit Azure Multi-Factor Authentication in der Cloud
@@ -156,4 +156,4 @@ Nachdem Sie die Benutzer aktiviert haben, sollten Sie ihnen eine E-Mail senden, 
 ## Nächste Schritte
 Nachdem Sie jetzt Multi-Factor Authentication in der Cloud eingerichtet haben, können Sie mit [Konfigurieren von Azure Multi-Factor Authentication](multi-factor-authentication-whats-next.md) fortfahren. In diesem Thema erhalten Sie Informationen über Berichterstellung, Betrugswarnungen, das Anpassen von Sprachnachrichten und alle Features von Azure Multi-Factor Authentication.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

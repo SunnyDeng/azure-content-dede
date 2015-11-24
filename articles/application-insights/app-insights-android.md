@@ -1,10 +1,10 @@
 <properties
-    pageTitle="Application Insights für Android-Apps | Microsoft Azure"
-    description="Analysieren Sie die Nutzung und Leistung Ihrer Android-App mit Application Insights."
+    pageTitle="Analysen für Android-Apps | Microsoft Azure"
+    description="Analysieren Sie die Nutzung und Leistung Ihrer Android-App."
     services="application-insights"
     documentationCenter="android"
     authors="alancameronwills"
-    manager="ronmart"/>
+    manager="douge"/>
 
 <tags
     ms.service="application-insights"
@@ -12,12 +12,14 @@
     ms.tgt_pltfrm="mobile-android"
     ms.devlang="na"
     ms.topic="get-started-article"
-	ms.date="04/28/2015"
+	ms.date="11/14/2015"
     ms.author="awills"/>
 
-# Application Insights für Android-Apps
+# Analysen für Android-Apps
 
 Mit Visual Studio Application Insights können Sie Ihre mobile Anwendung auf Nutzung, Ereignisse und Abstürze überwachen.
+
+> [AZURE.NOTE]Wir empfehlen [HockeyApp](http://support.hockeyapp.net/kb/client-integration-android/hockeyapp-for-android-sdk), um Absturzberichte, Analysen, Verteilung und Feedback zu verwalten.
 
 ## Anforderungen
 
@@ -35,69 +37,9 @@ Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource
 
 Auf dem nun geöffneten Blatt werden die Leistungs- und Nutzungsdaten über Ihre App angezeigt. Um bei der nächsten Anmeldung bei Azure dorthin zu gelangen, sollten Sie eine Kachel auf dem Startbildschirm anlegen. Klicken Sie alternativ auf "Durchsuchen", um das Blatt zu finden.
 
-## Installieren des Plug-Ins für Application Insights in Android Studio
+## Einrichtung
 
-(Falls Sie dies noch nicht durchgeführt haben.)
-
-1.  Starten Sie Android Studio, und konfigurieren Sie die Plug-Ins.
-
-    ![Wählen Sie "Konfigurieren".](./media/app-insights-android/01-configure.png)
-
-2.  Wählen Sie das Application Insights Android Studio-Plug-In aus, und installieren Sie es.
-
-    ![Wählen Sie das Plug-In aus.](./media/app-insights-android/03-select-plugin.png)
-
-## <a name="sdk"></a>Installieren des SDK in Ihrer Anwendung
-
-
-1.  Wählen Sie **Extras** > **Integrate Application Insights SDK** aus.
-
-    ![Integrieren von Application Insights](./media/app-insights-android/04-tools-integrate.png)
-
-3.  Erstellen Sie eine Komponente in Ihrem Abonnement.
-
-    ![Erstellen einer Komponente](./media/app-insights-android/07-create-component.png)
-
-    Verwenden Sie den Instrumentationsschlüssel, den Sie von Ihrer Application Insights-Ressource erhalten haben.
-
-4.  Synchronisieren Sie Gradle, um das SDK herunterladen und in das Projekt zu integrieren.
-
-    ![Synchronisieren von Gradle-Dateien zum Herunterladen des SDK](./media/app-insights-android/08-successful-integration.png)
-
-    (Weitere Informationen finden Sie auf der [Nutzungsseite](http://go.microsoft.com/fwlink/?LinkID=533220).)
-
-An dieser Stelle wurde der Datei "build.gradle" des Moduls der folgende Verweis hinzugefügt. Berechtigungen für `INTERNET` und `ACCESS_NETWORK_STATE` sowie ein Metadaten-Tag mit dem Instrumentationsschlüssel der Komponente wurden der Datei `AndroidManifest.xml` des Moduls hinzugefügt.
-
-```java
-
-    dependencies {
-    compile 'com.microsoft.azure:applicationinsights-android:+'
-    }
-```
-
-```xml
-
-    <manifest>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <application>
-        <meta-data
-            android:name="com.microsoft.applicationinsights.instrumentationKey"
-            android:value="${AI_INSTRUMENTATION_KEY}" />
-    </application>
-    </manifest>
-```
-
-#### Optional: Festlegen des Instrumentationsschlüssels im Code
-
-Es ist auch möglich, den Instrumentationsschlüssel im Code festzulegen. Dadurch wird der in `AndroidManifest.xml` festgelegte Schlüssel überschrieben.
-
-```java
-
-    ApplicationInsights.setup(this, "<YOUR-IKEY-GOES-HERE>");
-    ApplicationInsights.start();
-```
+Befolgen Sie den [Einrichtungsleitfaden](https://github.com/Microsoft/ApplicationInsights-Android#-3-setup):
 
 
 ## Verwenden des SDK
@@ -197,4 +139,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 [qna]: app-insights-troubleshoot-faq.md
 [track]: app-insights-api-custom-events-metrics.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

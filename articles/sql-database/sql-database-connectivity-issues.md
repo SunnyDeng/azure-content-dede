@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Maßnahmen zum Behandeln von vorübergehenden Verbindungsfehlern | Microsoft Azure"
-	description="Maßnahmen zum Verhindern, Diagnostizieren und Behandeln von Verbindungsfehlern und anderen vorübergehenden Fehlern bei der Interaktion mit Azure SQL-Datenbank."
+	description="Maßnahmen zum Verhindern, Diagnostizieren und Behandeln von Verbindungsausfällen und anderen vorübergehenden Fehlern bei der Interaktion mit Azure SQL-Datenbank."
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/02/2015"
+	ms.date="11/17/2015"
 	ms.author="genemi"/>
 
 
-# Maßnahmen zum Behandeln von Verbindungsfehlern und vorübergehenden Fehlern in SQL-Datenbank
+# Behandeln von vorübergehenden Verbindungsausfällen und -fehlern mit SQL-Datenbank
 
 
-In diesem Thema wird beschrieben, wie Sie Verbindungsfehler und vorübergehende Fehler verhindern, diagnostizieren und behandeln, die bei Ihrem Clientprogramm während der Interaktion mit Azure SQL-Datenbank auftreten.
+In diesem Thema wird beschrieben, wie Sie vorübergehende Verbindungsausfällen und -fehler verhindern, diagnostizieren und behandeln, die bei Ihrem Clientprogramm während der Interaktion mit Azure SQL-Datenbank auftreten.
 
 
 <a id="i-transient-faults" name="i-transient-faults"></a>
@@ -31,7 +31,7 @@ In diesem Thema wird beschrieben, wie Sie Verbindungsfehler und vorübergehende 
 Ein vorübergehender Fehler ist ein Fehler, dessen Ursache von selbst behoben wird. Wenn das Azure-System Hardwareressourcen für einen besseren Lastenausgleich bei verschiedenen Workloads rasch verschiebt, treten gelegentlich vorübergehende Fehler auf. Während dieser Neukonfiguration werden Verbindungen mit Azure SQL-Datenbank möglicherweise unterbrochen.
 
 
-Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme ausgelöst, um das Programm über den vorübergehenden Fehler zu informieren. Die **Number**-Eigenschaft kann mit der Liste der vorübergehenden Fehler im oberen Bereich des Themas verglichen werden: [Fehlermeldungen für Clientprogramme mit SQL-Datenbank](sql-database-develop-error-messages).
+Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme aufgelöst, um das Programm über den vorübergehenden Fehler zu informieren. Die **Number**-Eigenschaft kann mit der Liste der vorübergehenden Fehler im oberen Bereich des Themas verglichen werden: [Fehlermeldungen für Clientprogramme mit SQL-Datenbank](sql-database-develop-error-messages).
 
 
 ### Vorübergehende Fehler bei Verbindungsherstellung und Befehlen
@@ -108,7 +108,7 @@ Um Ihre Wiederholungslogik zu testen, müssen Sie einen Fehler simulieren oder v
 ### Testen der Logik, indem der Computer vom Netzwerk getrennt wird
 
 
-Eine Möglichkeit, um Ihre Wiederholungslogik zu testen, besteht darin, Ihren Clientcomputer vom Netzwerk zu trennen, während das Programm ausgeführt wird. Der folgende Fehler wird ausgegeben: – **SqlException.Number** = 11001 – Fehlermeldung: „Der angegebene Host ist unbekannt“.
+Eine Möglichkeit, um Ihre Wiederholungslogik zu testen, besteht darin, Ihren Clientcomputer vom Netzwerk zu trennen, während das Programm ausgeführt wird. Bei diesem Problem wird der folgende Fehler ausgegeben: – **SqlException.Number** = 11001 – Fehlermeldung: „Der Host ist nicht bekannt“
 
 
 Beim ersten Wiederholungsversuch kann Ihr Programm den Namen korrigieren und erneut versuchen, eine Verbindung herzustellen.
@@ -120,7 +120,7 @@ Um diesen Test in der Praxis umzusetzen, trennen Sie Ihren Computer vom Netzwerk
 ### Testen der Logik, indem beim Herstellen der Verbindung ein falscher Datenbankname eingegeben wird
 
 
-Ihr Programm kann vor dem ersten Verbindungsversuch mit Absicht einen falschen Benutzernamen verwenden. Der folgende Fehler wird ausgegeben: – **SqlException.Number** = 18456 – Fehlermeldung: „Fehler bei der Anmeldung für den Benutzer 'WRONG\_MyUserName'.“
+Ihr Programm kann vor dem ersten Verbindungsversuch mit Absicht einen falschen Benutzernamen verwenden. Bei diesem Problem wird der folgende Fehler ausgegeben: – **SqlException.Number** = 18456 – Fehlermeldung: „Fehler bei der Anmeldung für den Benutzer 'WRONG\_MyUserName'.“
 
 
 Beim ersten Wiederholungsversuch kann Ihr Programm den Namen korrigieren und erneut versuchen, eine Verbindung herzustellen.
@@ -144,7 +144,7 @@ Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichen
 #### 30 Sekunden für Verbindungstimeout
 
 
-Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, in Ihrer Verbindungszeichenfolge den Parameter **Connection Timeout** auf **30** Sekunden festzulegen (anstatt auf 15 Sekunden).
+Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, für Ihre Verbindungszeichenfolge die folgenden Schritte auszuführen: Legen Sie den Parameter **Verbindungstimeout** auf **30** Sekunden fest (anstelle von 15 Sekunden).
 
 
 <a id="b-connection-ip-address" name="b-connection-ip-address"></a>
@@ -161,7 +161,7 @@ Wenn Sie die IP-Adresse nicht konfigurieren, tritt bei Ihrem Programm ein Fehler
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md).
+Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen für SQL-Datenbank](sql-database-configure-firewall-settings.md)
 
 
 <a id="c-connection-ports" name="c-connection-ports"></a>
@@ -184,10 +184,10 @@ Wenn Ihr Clientprogramm z. B. auf einem Windows-Computer gehostet wird, kann Po
 7. &gt; Neue Regel
 
 
-Wenn Ihr Clientprogramm auf einem virtuellen Azure-Computer gehostet wird, sollten Sie den folgenden Artikel lesen:<br/>[Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
+Wenn Ihr Clientprogramm auf einem virtuellen Azure-Computer gehostet wird, sollten Sie den folgenden Artikel lesen:<br/>[Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
 
 
-Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie hier: [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md).
+Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie hier: [Firewall für Azure SQL-Datenbank](sql-database-firewall-configure.md)
 
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
@@ -229,7 +229,7 @@ Sobald die Verbindung hergestellt wurde, testen Sie, ob eine kurze SQL SELECT-Ab
 Angenommen, Sie vermuten, dass aufgrund von Portproblemen keine Verbindung hergestellt werden kann. Sie können auf Ihrem Computer ein Hilfsprogramm ausführen, das Informationen zu den Portkonfigurationen zurückgibt.
 
 
-Unter Linux sind die folgenden Hilfsprogramme nützlich: `netstat -nap` und `nmap -sS -O 127.0.0.1` (Ersetzen Sie den Beispielwert durch Ihre IP-Adresse.)
+Unter Linux sind die folgenden Hilfsprogramme nützlich: `netstat -nap` und `nmap -sS -O 127.0.0.1` (ersetzen Sie den Beispielwert durch Ihre IP-Adresse.)
 
 
 Unter Windows kann das Hilfsprogramm [PortQry.exe](http://www.microsoft.com/download/details.aspx?id=17148) nützliche Informationen liefern. Nachfolgend finden Sie eine Beispielabfrage der Portinformationen für einen Azure SQL-Datenbankserver, die auf einem Laptop ausgeführt wurde.
@@ -264,7 +264,7 @@ Periodisch auftretende Probleme lassen sich mitunter am besten diagnostizieren, 
 Dabei kann es hilfreich sein, sämtliche Fehler auf dem Client zu protokollieren. Möglicherweise lassen sich die Protokolleinträge mit den Fehlerdaten in Zusammenhang bringen, die Azure SQL-Datenbank intern protokolliert.
 
 
-Zur Unterstützung bei der Protokollierung bietet Enterprise Library 6 (EntLib60) von .NET verwaltete Klassen: – [5 – Protokollierung leicht gemacht: mit dem Protokollierungsanwendungsblock](http://msdn.microsoft.com/library/dn440731.aspx)
+Zur Unterstützung bei der Protokollierung bietet Enterprise Library 6 (EntLib60) von .NET verwaltete Klassen: – [5 – Protokollierung leicht gemacht: mit dem Protokollierungsanwendungsblock](http://msdn.microsoft.com/library/dn440731.aspx)
 
 
 <a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
@@ -277,14 +277,14 @@ Nachfolgend finden Sie einige Transact-SQL-SELECT-Anweisungen, mit denen Fehler-
 
 | Protokollabfrage | Beschreibung |
 | :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
-| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Zur weiteren Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **„master“-Datenbank** herstellen. |
+| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Für eine weitere Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
 
 
 ### Diagnose: Suche nach Problemereignissen im Protokoll von SQL-Datenbank
 
 
-Sie können im Protokoll von Azure SQL-Datenbank nach Einträgen zu Problemereignissen suchen. Führen Sie die folgende Transact-SQL SELECT-Anweisung in der **Masterdatenbank** aus:
+Sie können im Protokoll von Azure SQL-Datenbank nach Einträgen zu Problemereignissen suchen. Führen Sie die folgende Transact-SQL-SELECT-Anweisung in der **Masterdatenbank** aus:
 
 
 ```
@@ -331,13 +331,13 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 ## Enterprise Library 6
 
 
-Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist: – [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx).
+Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist: – [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx)
 
 
-Ein Bereich, in dem EntLib60 nützlich sein kann, ist die Wiederholungslogik für die Behandlung von vorübergehenden Fehlern: – [4 – Ausdauer, der Schlüssel zum Erfolg: Verwenden des Anwendungsblocks für die Behandlung von vorübergehenden Fehlern](http://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx).
+Einer dieser Bereiche, in denen EntLib60 nützlich ist, ist die Wiederholungslogik für die Behandlung von vorübergehenden Fehlern: – [4 – Durchhaltevermögen, der Schlüssel zum Erfolg: Verwenden des Anwendungsblocks für die Behandlung von vorübergehenden Fehlern](http://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx)
 
 
-Ein kurzes C#-Codebeispiel mit Verwendung von EntLib60 in der Wiederholungslogik finden Sie hier: – [Codebeispiel: Wiederholungslogik von Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md).
+Ein kurzes C#-Codebeispiel unter Verwendung von EntLib60 in der Wiederholungslogik finden Sie hier: – [Codebeispiel: Wiederholungslogik von Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md)
 
 
 > [AZURE.NOTE]Der Quellcode für EntLib60 steht zum öffentlichen [Download](http://go.microsoft.com/fwlink/p/?LinkID=290898) bereit. Microsoft plant keine weiteren Funktions- oder Wartungsupdates für EntLib.
@@ -350,30 +350,30 @@ Die folgenden EntLib60-Klassen sind besonders nützlich für Wiederholungslogik.
 
 *Im Namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling**:*
 
-- Klasse **RetryPolicy**
- - Methode **ExecuteAction**
+- Die Klasse **RetryPolicy**
+ - Die Methode **ExecuteAction**
 
 
-- Klasse **ExponentialBackoff**
+- Die Klasse **ExponentialBackoff**
 
 
-- Klasse **SqlDatabaseTransientErrorDetectionStrategy**
+- Die Klasse **SqlDatabaseTransientErrorDetectionStrategy**
 
 
-- Klasse **ReliableSqlConnection**
- - Methode **ExecuteCommand**
+- Die Klasse **ReliableSqlConnection**
+ - Die Methode **ExecuteCommand**
 
 
 Im Namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.TestSupport**:
 
-- Klasse **AlwaysTransientErrorDetectionStrategy**
+- Die Klasse **AlwaysTransientErrorDetectionStrategy**
 
-- Klasse **NeverTransientErrorDetectionStrategy**
+- Die Klasse **NeverTransientErrorDetectionStrategy**
 
 
 Unter folgenden Links finden Sie weitere Informationen zu EntLib60:
 
-- Kostenloses [E-Book zum Download: Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
+- Kostenloses E-Book: [Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
 
 - Bewährte Methoden: [Allgemeiner Leitfaden zum Wiederholen von Vorgängen](best-practices-retry-general.md) bietet eine detaillierte Erläuterung wichtiger Aspekte im Zusammenhang mit Wiederholungslogik.
 
@@ -400,7 +400,7 @@ Einzelheiten finden Sie hier: [5 – Protokollierung leicht gemacht: mit dem Pro
 
 Nachfolgend wird der C#-Quellcode für die Methode **IsTransient** der Klasse **SqlDatabaseTransientErrorDetectionStrategy** gezeigt. Anhand dieses Quellcodes wird ermittelt, welche Fehler als vorübergehend eingestuft werden und einen Wiederholungsversuch rechtfertigen (April 2013).
 
-Zur Verbesserung der Lesbarkeit wurden verschiedene **//comment**-Zeilen aus diesem Code entfernt.
+Zur Verbesserung der Lesbarkeit wurden eine Reihe von **//comment**-Zeilen aus diesem Code entfernt.
 
 
 ```
@@ -476,6 +476,6 @@ public bool IsTransient(Exception ex)
 - [SQL Server-Verbindungspooling (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx)
 
 
-- [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jedem Element vereinfacht.](https://pypi.python.org/pypi/retrying)
+- [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

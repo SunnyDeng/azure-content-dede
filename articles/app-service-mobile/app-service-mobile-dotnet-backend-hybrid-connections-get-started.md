@@ -137,15 +137,13 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 
 3. Klicken Sie abschließend auf **Veröffentlichen**.
 
-	Nach Abschluss der Veröffentlichung wird der Dienst neu gestartet wird und die Back-End-Startseite angezeigt.
+	Nach Abschluss der Veröffentlichung wird der Dienst neu gestartet, und die Back-End-Startseite wird angezeigt.
 
-4. Rufen Sie mit <!--- either the **Try it now** button on the start page as before or using --> einer Client-App, die mit Ihrer mobilen App verbunden ist, einige Vorgänge auf, die Datenbankänderungen generieren.
-<!--- This try it now is not longer on the page after it is published. 
-	>[AZURE.NOTE]When you use the **Try it now** button to launch the Help API pages, remember to supply your application key as the password (with a blank username).
--->
-4. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB**-Datenbank, und erweitern Sie **Tabellen**.
+4. Rufen Sie mithilfe einer Client-App, die mit Ihrer mobilen App verbunden ist, einige Vorgänge auf, die Datenbankänderungen generieren.
 
-5. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems**, und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
+5. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB**-Datenbank, und erweitern Sie **Tabellen**.
+
+6. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems**, und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
 
 	Beachten Sie, dass Änderungen in Ihrer Client-App durch Ihr mobiles App-Back-End in der lokalen Datenbank unter Verwendung der Hybridverbindung gespeichert werden.
 
@@ -164,4 +162,4 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 [Azure Management Portal]: http://go.microsoft.com/fwlink/p/?linkid=213885
 [Get started with Mobile Services]: ../mobile-services-windows-store-dotnet-get-started.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

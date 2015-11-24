@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="10/27/2015"
+	ms.date="11/16/2015"
 	ms.author="sdanie"/>
 
 # Verwalten Ihrer ersten API in Azure API Management
@@ -116,7 +116,7 @@ Sobald die API importiert wurde, wird die Zusammenfassungsseite für die API im 
 
 ![API-Zusammenfassung][api-management-imported-api-summary]
 
-Der API-Bereich umfasst verschiedene Registerkarten. Die Registerkarte **Zusammenfassung** enthält grundlegende Metriken und Informationen über die API. Auf der Registerkarte [Einstellungen](api-management-howto-create-apis.md#configure-api-settings) können Sie die Konfiguration einer API anzeigen und bearbeiten. Mithilfe der Registerkarte [Operationen](api-management-howto-add-operations.md) können Sie die API-Operationen verwalten. Auf der Registerkarte **Sicherheit** können Sie die Proxyauthentifizierung für den Back-End-Server konfigurieren, indem Sie die Standardauthentifizierung oder die [Gegenseitige Zertifikatauthentifizierung](api-management-howto-mutual-certificates.md) festlegen und die [Benutzerautorisierung mithilfe von OAuth 2.0](api-management-howto-oauth2.md) konfigurieren. Die Registerkarte **Probleme** dient zum Anzeigen der Probleme, die von den Entwicklern gemeldet werden, die Ihre APIs verwenden. Auf der Registerkarte **Produkte** werden die Produkte konfiguriert, die diese API enthalten.
+Der API-Bereich umfasst verschiedene Registerkarten. Die Registerkarte **Zusammenfassung** enthält grundlegende Metriken und Informationen über die API. Auf der Registerkarte [Einstellungen](api-management-howto-create-apis.md#configure-api-settings) können Sie die Konfiguration einer API anzeigen und bearbeiten. Mithilfe der Registerkarte [Operationen](api-management-howto-add-operations.md) können Sie die API-Operationen verwalten. Auf der Registerkarte **Sicherheit** können Sie die Gatewayauthentifizierung für den Back-End-Server konfigurieren, indem Sie die Standardauthentifizierung oder die [gegenseitige Zertifikatauthentifizierung](api-management-howto-mutual-certificates.md) verwenden, und Sie können die [Benutzerautorisierung mithilfe von OAuth 2.0](api-management-howto-oauth2.md) konfigurieren. Die Registerkarte **Probleme** dient zum Anzeigen der Probleme, die von den Entwicklern gemeldet werden, die Ihre APIs verwenden. Auf der Registerkarte **Produkte** werden die Produkte konfiguriert, die diese API enthalten.
 
 Standardmäßig enthält jede API Management-Instanz zwei Beispielprodukte:
 
@@ -243,4 +243,4 @@ Der Abschnitt **Analyse** enthält die folgenden vier Registerkarten:
 [api-management-]: ./media/api-management-get-started/api-management-.png
 [api-management-]: ./media/api-management-get-started/api-management-.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

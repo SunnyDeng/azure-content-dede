@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/21/2015"
+	ms.date="11/17/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs
@@ -514,4 +514,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Google Cloud Messaging Client-Komponente]: http://components.xamarin.com/view/GCMClient/
 [Azure Messaging-Komponente]: http://components.xamarin.com/view/azure-messaging
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

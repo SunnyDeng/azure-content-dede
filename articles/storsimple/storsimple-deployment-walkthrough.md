@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/17/2015"
+   ms.date="11/17/2015"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte
@@ -113,7 +113,7 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 - Sie besitzen ein Microsoft Azure-Speicherkonto mit Anmeldeinformationen für den Zugriff.
 
-- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über die [Lizenzierung für Unternehmen](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
+- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
 
 - Sie haben Zugriff auf Terminalemulationssoftware wie PuTTY.
 
@@ -260,7 +260,7 @@ Die Aktualisierung eines Geräts kann zwischen einer und vier Stunden dauern. F�
 > [AZURE.NOTE]Wenn das Gateway für eine andere Netzwerkschnittstelle als DATA 0 konfiguriert ist, müssen Sie die Netzwerkschnittstellen DATA 2 und DATA 3 deaktivieren, bevor Sie das Update installieren. Wechseln Sie zu **Geräte > Konfigurieren**, und deaktivieren Sie die Schnittstellen DATA 2 und DATA 3. Sie sollten diese Schnittstellen nach der Aktualisierung des Geräts wieder aktivieren.
 
 #### So aktualisieren Sie Ihr Gerät
-1.	Klicken Sie auf der Seite **Schnellstart** für das Gerät auf **Geräte**. Wählen Sie das physische Gerät aus, klicken Sie auf **Wartung**, und klicken Sie dann auf **Updates scannen**.  
+1.	Klicken Sie auf der Seite **Schnellstart** für das Gerät auf **Geräte**. Wählen Sie das physische Gerät aus, und klicken Sie auf **Wartung** und dann auf **Updates scannen**.  
 2.	Für die Suche nach verfügbaren Updates wird ein Auftrag erstellt. Wenn Updates verfügbar sind, ändert sich die Option **Updates scannen** in **Updates installieren**. Klicken Sie auf **Updates installieren**. Möglicherweise werden Sie dazu aufgefordert, DATA 2 und DATA 3 vor der Installation der Updates zu deaktivieren. Sie müssen diese Netzwerkschnittstellen deaktivieren, da die Updates sonst nicht installiert werden können.
 3.	Es wird ein Updateauftrag erstellt. Überwachen Sie den Status Ihres Updates, indem Sie zu **Aufträge** wechseln.
 
@@ -290,4 +290,4 @@ Führen Sie die folgenden Schritte im Azure-Portal aus, um bei Bedarf eine manue
 
 - Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

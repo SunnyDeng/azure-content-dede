@@ -366,4 +366,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

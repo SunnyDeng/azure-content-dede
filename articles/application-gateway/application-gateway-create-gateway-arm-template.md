@@ -13,7 +13,7 @@
    ms.topic="hero-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/21/2015"
+   ms.date="11/10/2015"
    ms.author="joaoma"/>
 
 
@@ -22,10 +22,9 @@
 Application Gateway verwendet einen Lastenausgleich der Ebene 7. Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
 
 > [AZURE.SELECTOR]
-- [Azure Classic Powershell steps](application-gateway-create-gateway.md)
-- [Azure Resource Manager Powershell steps](application-gateway-create-gateway-arm.md)
-- [Azure Resource Manager template steps](application-gateway-create-gateway-arm-template.md)
-
+- [Azure Classic PowerShell](application-gateway-create-gateway.md)
+- [Azure Resource Manager PowerShell](application-gateway-create-gateway-arm.md)
+- [Azure Resource Manager template](application-gateway-create-gateway-arm-template.md)
 
 <BR>
 
@@ -60,7 +59,7 @@ In diesem Szenario erstellen Sie Folgendes:
 
 Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Subnetzen über GitHub herunterladen, die gewünschten Änderungen vornehmen und die Vorlage anschließend wiederverwenden. Dazu führen Sie die folgenden Schritte aus.
 
-1. Navigieren Sie zu https://github.com/Azure/azure-quickstart-templates/blob/master/101-create-applicationgateway-publicip.
+1. Navigieren Sie zu https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/.
 2. Klicken Sie auf **azuredeploy.json**, und klicken Sie dann auf **RAW**.
 3. Speichern Sie die Datei in einem lokalen Ordner auf Ihrem Computer.
 4. Wenn Sie mit ARM-Vorlagen vertraut sind, fahren Sie mit Schritt 7 fort.
@@ -76,8 +75,8 @@ Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Sub
 	| **skuname** | Größe der SKU-Instanz |
 	| **Kapazität** | Anzahl von Instanzen |
 	| **backendaddress1** | IP-Adresse des ersten Webservers |
-	| **backendaddress2** | IP-Adresse des zweiten Webservers|
-
+	| **backendaddress2** | IP-Adresse des zweiten Webservers |
+	
 
 >[AZURE.IMPORTANT]Die in GitHub verwalteten ARM-Vorlagen können mit der Zeit geändert werden. Überprüfen Sie die Vorlage stets, bevor Sie sie verwenden.
 	
@@ -87,37 +86,35 @@ Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Sub
 	- **name**. Name der Ressource. Beachten Sie die Verwendung von **[parameters('applicationGatewayName')]**. Dies bedeutet, dass der Name während der Bereitstellung durch einen Benutzer oder eine Parameterdatei eingegeben wird.
 	- **properties**. Liste der Eigenschaften für die Ressource. Diese Vorlage verwendet während der Erstellung des Application Gateways das virtuelle Netzwerk und die öffentliche IP-Adresse.
 
-7. Navigieren Sie zurück zu https://github.com/Azure/azure-quickstart-templates/blob/master/101-create-applicationgateway-publicip.
+7. Navigieren Sie zurück zu https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/azuredeploy.json.
 8. Klicken Sie auf **azuredeploy-parameters.json**, und klicken Sie dann auf **RAW**.
 9. Speichern Sie die Datei in einem lokalen Ordner auf Ihrem Computer.
 10. Öffnen Sie die Datei, die Sie gerade gespeichert haben, und bearbeiten Sie die Parameterwerte. Verwenden Sie die unten stehenden Werte, um das Application Gateway wie in unserem Szenario beschrieben bereitzustellen.
 
 		{
-		   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-		   "contentVersion": "1.0.0.0",
-		   "parameters": {
-		     "location": {
-		       "value": "East US"
-		     },
-		     "addressPrefix": {
-		      "value": "10.0.0.0/16"
-    		 },
-		     "subnetPrefix": {
-		      "value": "10.0.0.0/24"
-		     },
-		     "skuName": {
-		       "value": "Standard_Small"
-		     },
-		     "capacity": {
-		       "value": 2
-		    },
-		    "backendIpAddress1": {
-		      "value": "10.0.1.10"
-		    },
-		     "backendIpAddress2": {
-		       "value": "10.0.1.11"
-		     }
-		  }
+		  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+		{
+    	"location" : {
+        "value" : "West US"
+    	},
+    	"addressPrefix": {
+        "value": "10.0.0.0/16"
+    	},
+    	"subnetPrefix": {
+        "value": "10.0.0.0/24"
+    	},
+    	"skuName": {
+        "value": "Standard_Small"
+    	},
+    	"capacity": {
+        "value": 2
+    	},
+    	"backendIpAddress1": {
+        "value": "10.0.1.10"
+    	},
+    	"backendIpAddress2": {
+        "value": "10.0.1.11"
+    	}
 		}
 
 11. Speichern Sie die Datei. Sie können die JSON-Vorlage und die Parametervorlage mithilfe von online verfügbaren JSON-Validierungstools wie [JSlint.com](http://www.jslint.com/) testen.
@@ -150,7 +147,7 @@ Erwartete Ausgabe:
 	                 =======  ==========
 	                  *
 
-		ResourceId        : /subscriptions/################################/resourceGroups/AppgatewayRG
+		ResourceId        : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/AppgatewayRG
 
 4. Führen Sie das New-AzureResourceGroupDeployment-Cmdlet aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen.
 
@@ -175,7 +172,7 @@ Folgende Ausgabe wird von der Befehlszeile generiert:
                    capacity         Int                        2
                    backendIpAddress1  String                     10.0.1.10
                    backendIpAddress2  String                     10.0.1.11
-
+					
 		Outputs           :
 
 
@@ -240,7 +237,7 @@ Die Bereitstellung per Klick ist ein weiterer Vorteil von ARM-Vorlagen. Diese Ar
 
 
 ### Schritt 1 
-Der Link [Bereitstellen eines Application Gateways per Klick](http://azure.microsoft.com/documentation/templates/101-create-applicationgateway-publicip/) leitet Sie zur Portalseite mit den Vorlagen für Application Gateways.
+Der Link [Bereitstellen eines Application Gateways per Klick](https://azure.microsoft.com/de-DE/documentation/templates/101-application-gateway-public-ip/) leitet Sie zur Portalseite mit den Vorlagen für Application Gateways.
 
 
 ### Schritt 2 
@@ -276,4 +273,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

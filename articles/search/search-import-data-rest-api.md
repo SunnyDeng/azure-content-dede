@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/09/2015"
+	ms.date="11/17/2015"
 	ms.author="heidist"/>
 
 # Importieren von Daten in Azure Search über die REST-API
@@ -25,37 +25,63 @@
 - [REST](search-import-data-rest-api.md)
 - [Indexers](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md)
 
-Dieser Artikel beschreibt, wie Sie einen Index mithilfe der [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) auffüllen. Ein Teil des folgenden Inhalts stammt aus [Hinzufügen, Aktualisieren oder Löschen von Dokumenten] [Azure Search REST-API] (https://msdn.microsoft.com/library/azure/dn798930.aspx)). Mehr Kontextinformationen finden Sie im übergeordneten Artikel.
+Dieser Artikel beschreibt, wie Sie einen Index mithilfe der [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) auffüllen. Ein Teil des folgenden Inhalts stammt aus [Hinzufügen, Aktualisieren oder Löschen von Dokumenten (Azure Search-REST-API)](https://msdn.microsoft.com/library/azure/dn798930.aspx). Mehr Kontextinformationen finden Sie im übergeordneten Artikel.
 
-Eine der Voraussetzungen für den Import ist ein bereits vorhandener Index zum Empfangen der Daten.
+Um Dokumente mit REST-API in Ihren Index zu schieben, geben Sie POST-HTTP-Anforderungen an das URL-Endgerät Ihres Diensts aus.
 
-Wenn Sie die REST-API verwenden, basiert die Erfassung von Daten auf einer HTTP-Anforderung vom Typ PUT oder POST. Codeausschnitte stammen aus dem Beispiel [Bewertungsprofile](search-get-started-scoring-profiles.md).
+**Anforderung und Anforderungsheader**:
 
-        static bool PostDocuments(string fileName)
-        {
-            // Add some documents to the newly created index
-            Uri requestUri = new Uri(serviceUrl + indexName + "/docs/index?" + ApiVersion);
+In der URL müssen Sie Ihren Dienstnamen sowie die entsprechende API-Version (die aktuelle Version der API zum Zeitpunkt der Veröffentlichung dieses Dokuments ist „2015-02-28“) bereitstellen.
 
-            // Load the json containing the data from an external file
-            string json = File.ReadAllText(fileName);
+In Anforderungsheadern müssen Sie den Inhaltstyp (Content-Type) definieren und den primären Administratorschlüssel Ihres Diensts bereitstellen.
 
-            using (HttpClient client = new HttpClient())
-            {
-                // Create the index
-                client.DefaultRequestHeaders.Add("api-key", primaryKey);
-                HttpResponseMessage response = client.PostAsync(requestUri,       // To add data use POST
-                    new StringContent(json, Encoding.UTF8, "application/json")).Result;
+	POST https://[servicename].search.windows.net/indexes/[indexname]/docs/index?api-version=2015-02-28
+	Content-Type: application/JSON
+	api-key:[primary admin key]
 
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    Console.WriteLine("Documents posted from file {0}. \r\n", fileName);
-                    return true;
-                }
 
-                Console.WriteLine("Documents failed to upload: {0} {1} \r\n", (int)response.StatusCode, response.Content.ReadAsStringAsync().Result.ToString());
-                return false;
+**Anforderungstext**:
 
-            }
-        }
 
-<!---HONumber=Nov15_HO3-->
+	{
+		"value": [
+			{
+				"@search.action": "upload",
+				"hotelId": "1",
+				"baseRate": 199.0,
+				"description": "Best hotel in town",
+				"description_fr": "Meilleur hôtel en ville",
+				"hotelName": "Fancy Stay",
+				"category": "Luxury",
+				"tags": ["pool", "view", "wifi", "concierge"],
+				"parkingIncluded": false,
+				"smokingAllowed": false,
+				"lastRenovationDate": "2010-06-27T00:00:00Z",
+				"rating": 5,
+				"location": { "type": "Point", "coordinates": [-122.131577, 47.678581] }
+			},
+			{
+				"@search.action": "upload",
+				"hotelId": "2",
+				"baseRate": 79.99,
+				"description": "Cheapest hotel in town",
+				"description_fr": "Hôtel le moins cher en ville",
+				"hotelName": "Roach Motel",
+				"category": "Budget",
+				"tags": ["motel", "budget"],
+				"parkingIncluded": true,
+				"smokingAllowed": true,
+				"lastRenovationDate": "1982-04-28T00:00:00Z",
+				"rating": 1,
+				"location": { "type": "Point", "coordinates": [-122.131577, 49.678581] }
+			}
+		]
+	}
+
+In diesem Fall verwenden wir „upload“ als Suchaktion. Beim Aktualisieren und Löschen vorhandener Dokumente können Sie „merge“, „mergeOrUpload“ und „delete“ verwenden.
+
+Bei erfolgreicher Aktualisierung des Indexes wird der Statuscode „200 OK“ ausgegeben. Wenn mindestens ein Element in Ihrer Anforderung nicht erfolgreich indiziert wurde, wird der Statuscode „207“ ausgegeben.
+
+Weitere Informationen zu Dokumentaktionen und Antworten bei Erfolg/Fehler finden Sie [auf dieser Seite](https://msdn.microsoft.com/library/azure/dn798930.aspx).
+
+<!---HONumber=Nov15_HO4-->

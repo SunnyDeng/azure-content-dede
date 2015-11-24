@@ -12,7 +12,7 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="11/05/2015"
 	ms.author="sethm"/>
 
@@ -71,7 +71,7 @@ Ihr Event Hub wird jetzt erstellt, und Sie verfügen über die zum Senden und Em
 
 Sie können jetzt die Anwendung ausführen.
 
-1.	Führen Sie in Visual Studio das Projekt **Receiver** aus, und warten Sie dann darauf, dass die Empfänger für alle Partitionen gestartet werden.
+1.	Führen Sie in Visual Studio das Projekt **Receiver** aus, und warten Sie dann, bis die Empfänger für alle Partitionen gestartet wurden.
 
    	![][21]
 
@@ -108,4 +108,4 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -47,6 +47,14 @@ Die Installation der Service Fabric-Komponenten erfolgt mit dem Webplattform-Ins
 
 Die Installation wird automatisch fortgesetzt.
 
+## Installieren von Azure PowerShell
+
+Um Ihren Service Fabric-Cluster zu konfigurieren, müssen Sie die Azure PowerShell-Skripts installieren.
+
+Sie können die Azure PowerShell-Module herunterladen und installieren, indem Sie den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?LinkId=320376) ausführen. Klicken Sie in der Nachfrage auf **Ausführen**. Der Webplattform-Installer installiert die Azure PowerShell-Module und alle Abhängigkeiten. Befolgen Sie die Anweisungen, um die Installation abzuschließen.
+
+> [AZURE.NOTE]Wenn Sie nur den PowerShell-Installer herunterladen möchten, besuchen Sie https://github.com/Azure/azure-powershell/releases. In diesem Repository finden Sie auch den Quellcode für die PowerShell-Cmdlets.
+
 ## Aktivieren der PowerShell-Skriptausführung
 
 Service Fabric verwendet Windows PowerShell-Skripts zum Erstellen eines lokalen Entwicklungsclusters und zum Bereitstellen von Anwendungen aus Visual Studio. Die Ausführung dieser Skripts wird von Windows standardmäßig blockiert. Um die Skripts zu aktivieren, müssen Sie die PowerShell-Ausführungsrichtlinie ändern. Öffnen Sie PowerShell als Administrator, und geben Sie folgenden Befehl ein:
@@ -106,4 +114,4 @@ Ihre Entwicklungsumgebung ist nun eingerichtet, und Sie können mit der Entwickl
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
 [3]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

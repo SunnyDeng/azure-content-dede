@@ -47,7 +47,7 @@ Stellen Sie sicher, dass diese Voraussetzungen erfüllt werden:
 - Erfahren Sie mehr über das Einrichten von VMM-Clouds:
 	- Weitere Informationen über private VMM-Clouds erhalten Sie unter [Private Cloud-Neuerungen mit System Center 2012 R2 VMM](http://go.microsoft.com/fwlink/?LinkId=324952) und unter [VMM 2012 und die Clouds](http://go.microsoft.com/fwlink/?LinkId=324956).
 	- Informationen zum [Planen der VMM-Infrastruktur](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
-	- Sobald Ihre Cloudfabricelemente eingerichtet sind, finden Sie Informationen zum Erstellen privater Clouds unter [Erstellen einer privaten Cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953) und [Exemplarische Vorgehensweise: Erstellen von privaten Clouds mit System Center 2012 SP1 VMM](http://go.microsoft.com/fwlink/?LinkId=324954).
+	- Sobald Ihre Cloudfabricelemente eingerichtet sind, finden Sie Informationen zum Erstellen privater Clouds unter [Erstellen einer privaten Cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953) und [Exemplarische Vorgehensweise: Erstellen von privaten Clouds mit System Center 2012 SP1 VMM](http://go.microsoft.com/fwlink/?LinkId=324954)
 
 ### Hyper-V-Voraussetzungen
 
@@ -104,7 +104,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 
 	![Schnellstart-Symbol](./media/site-recovery-vmm-to-azure/ASRE2AVMM_QuickStartIcon.png)
 
-2. Wählen Sie in der Dropdownliste den Eintrag **Zwischen einer lokalen Hyper-V-Site und Microsoft Azure** aus.
+2. Wählen Sie in der Dropdownliste den Eintrag **Zwischen einem lokalen VMM-Standort und Microsoft Azure** aus.
 3. Klicken Sie unter **VMM-Server vorbereiten** auf **Registrierungsschlüssel erstellen**. Die Schlüsseldatei wird automatisch generiert und ist nach ihrer Erstellung für 5 Tage gültig. Wenn Sie nicht vom VMM-Server aus auf das Azure-Portal zugreifen, müssen Sie diese Datei auf den Server kopieren.
 
 	![Registrierungsschlüssel](./media/site-recovery-vmm-to-azure/ASRE2AVMM_RegisterKey.png)
@@ -189,7 +189,7 @@ Wenn Sie noch über kein Azure-Speicherkonto verfügen, klicken Sie auf **Azure 
 
 Installieren Sie den Azure Recovery Services-Agent auf jedem Hyper-V-Hostserver in den VMM-Clouds, die Sie schützen möchten.
 
-1. Klicken Sie auf der Seite "Schnellstart" auf <b>Laden Sie den Azure Site Recovery Services-Agent für die Installation auf Hyper-V-Hostservern herunter</b>, um die neueste Version der Agent-Installationsdatei herunterzuladen.
+1. Klicken Sie auf der Seite „Schnellstart“ auf <b>Azure Site Recovery Services-Agent für die Installation auf Hosts</b> herunterladen, um die neueste Version der Agent-Installationsdatei zu erhalten.
 
 	![Recovery Services-Agent installieren](./media/site-recovery-vmm-to-azure/ASRE2AVMM_InstallHyperVAgent.png)
 
@@ -213,7 +213,7 @@ Nachdem Sie den VMM-Server registriert haben, können Sie Schutzeinstellungen f�
 4. Wählen Sie unter <b>Speicherkonto</b> das Azure-Speicherkonto aus, in das Sie die virtuellen Computer replizieren möchten.
 5. Legen Sie für <b>Gespeicherte Daten verschlüsseln</b> die Option <b>Aus</b> fest. Diese Einstellung gibt an, dass die Daten beim Replizieren zwischen dem lokalen Standort und Azure verschlüsselt werden sollen.
 6. Behalten Sie die Standardeinstellung unter <b>Kopierhäufigkeit</b> bei. Dieser Wert gibt an, wie oft die Daten zwischen dem Quell- und dem Zielspeicherort synchronisiert werden sollen.
-7. Lassen Sie unter <b>Wiederherstellungspunkte beibehalten für (Stunden)</b> die Standardeinstellung unverändert. Wenn die Standardeinstellung 0 (Null) aktiviert ist, wird nur der letzte Wiederherstellungspunkt für einen primären virtuellen Computer auf einem Replikathostserver gespeichert.
+7. Lassen Sie unter <b>Wiederherstellungspunkte beibehalten</b> die Standardeinstellung unverändert. Wenn die Standardeinstellung 0 (Null) aktiviert ist, wird nur der letzte Wiederherstellungspunkt für einen primären virtuellen Computer auf einem Replikathostserver gespeichert.
 8. Lassen Sie unter <b>Häufigkeit der konsistenten Anwendungsmomentaufnahmen</b> die Standardeinstellung unverändert. Dieser Wert gibt an, wie oft Momentaufnahmen erstellt werden. Momentaufnahmen verwenden VSS (Volume Shadow Copy Service, Volumenschattenkopie-Dienst), um sicherzustellen, dass Anwendungen zum Zeitpunkt der Momentaufnahme konsistent sind. Wenn Sie einen Wert festlegen möchten, stellen Sie sicher, dass er geringer als die Anzahl der konfigurierten zusätzlichen Wiederherstellungspunkte ist.
 9. Geben Sie unter <b>Startzeit für Replikation</b> an, wann die erste Datenreplikation für Azure starten soll. Die Zeitzone auf dem Hyper-V-Hostserver wird verwendet. Es wird empfohlen, die erste Replikation außerhalb der Spitzenzeiten zu planen.
 
@@ -230,7 +230,7 @@ Bevor Sie mit der Netzwerkzuordnung beginnen, stellen Sie sicher, dass virtuelle
 2. Wählen Sie auf der Registerkarte **Netzwerke** unter **Quellenspeicherort** den VMM-Quellserver aus. Wählen Sie unter **Zielspeicherort** die Option "Azure" aus.
 3. Unter **Quelle** wird eine Liste der VM-Netzwerke angezeigt, die mit dem VMM-Server verbunden sind. Unter **Ziel** werden die dem Abonnement zugeordneten Azure-Netzwerke angezeigt.
 4. Wählen Sie das VM-Quellnetzwerk aus, und klicken Sie auf **Zuordnen**.
-5. Wählen Sie auf der Seite **Ein Zielnetzwerk auswählen** das Azure-Zielnetzwerk aus, das Sie verwenden möchten.
+5. Wählen Sie auf der Seite **Zielnetzwerk auswählen** das Azure-Zielnetzwerk aus, das Sie verwenden möchten.
 6. Aktivieren Sie das Kontrollkästchen, um den Zuordnungsprozess abzuschließen.
 
 	![Cloud-Replikationseinstellungen](./media/site-recovery-vmm-to-azure/ASRE2AVMM_MapNetworks.png)
@@ -243,7 +243,7 @@ Wenn das Zielnetzwerk mehrere Subnetze enthält und eines dieser Subnetze densel
 
 Nach der korrekten Konfiguration von Servern, Clouds und Netzwerken können Sie den Schutz für die virtuellen Computer in der Cloud aktivieren. Beachten Sie Folgendes:
 
-- Die virtuellen Computer müssen die Azure-Anforderungen erfüllen. Diese Anforderungen finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=402602">Voraussetzungen und Support</a> im Planungshandbuch.
+- Die virtuellen Computer müssen die Azure-Anforderungen erfüllen. Unter <a href="http://go.microsoft.com/fwlink/?LinkId=402602">Voraussetzungen und Support</a> im Planungshandbuch können Sie diese prüfen.
 - Um den Schutz zu aktivieren, müssen die Eigenschaften "Betriebssystem" und "Betriebssystem-Datenträger" für den virtuellen Computer gesetzt sein. Sie können diese Eigenschaften setzen, wenn Sie den virtuellen Computer in VMM mithilfe einer Vorlage für virtuelle Computer erstellen. Außerdem können Sie diese Eigenschaften für vorhandene virtuelle Computer auf den Registerkarten **Allgemein** und **Hardwarekonfiguration** in den Eigenschaften der virtuellen Computer festlegen. Falls diese Eigenschaften in VMM nicht angezeigt werden, sollten Sie sie dennoch im Azure Site Recovery-Portal konfigurieren können.
 
 ![Erstellen eines virtuellen Computers](./media/site-recovery-vmm-to-azure/ASRE2AVMM_EnableNew.png)
@@ -324,7 +324,7 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 1. Nach dem Failover können Sie das Testreplikat des virtuellen Computers im Azure-Portal sehen. Wenn Sie den Zugriff auf virtuelle Computer aus Ihrem lokalen Netzwerk eingerichtet haben, können Sie eine Remotedesktopverbindung mit dem virtuellen Computer herstellen. Beachten Sie Folgendes:
 
     1. Prüfen Sie, ob die virtuellen Computer erfolgreich starten.
-    1. Wenn Sie nach dem Failover eine Verbindung mit dem virtuellen Computer in Azure über Remote Desktop herstellen möchten, aktivieren Sie die Remote Desktop-Verbindung auf dem virtuellen Computer, bevor Sie das Test-Failover ausführen. Außerdem müssen Sie dem virtuellen Computer einen RDP-Endpunkt hinzufügen. Hierzu können Sie ein [Azure Automation-Runbook](site-recovery-runbook-automation.md) verwenden.
+    1. Wenn Sie nach dem Failover eine Verbindung mit dem virtuellen Computer in Azure über Remote Desktop herstellen möchten, aktivieren Sie die Remote Desktop-Verbindung auf dem virtuellen Computer, bevor Sie das Test-Failover ausführen. Außerdem müssen Sie dem virtuellen Computer einen RDP-Endpunkt hinzufügen. Hierzu können Sie ein Azure Automation-Runbook[](site-recovery-runbook-automation.md) verwenden.
     1. Falls Sie nach dem Failover über eine öffentliche IP-Adresse eine Remotedesktopverbindung mit dem virtuellen Computer in Azure herstellen, achten Sie darauf, dass keine Domänenrichtlinien vorhanden sind, die dies verhindern.
 
 1.  Gehen Sie nach dem Test wie folgt vor:
@@ -347,4 +347,4 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 
 <LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

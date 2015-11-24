@@ -70,6 +70,11 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 +   [Semantic Logging](https://github.com/fidmor89/SLAB_AppInsights) – In [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx) integriert
 +   [Cloudbasierte Auslastungstests](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
 
+## Export
+
++ [Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
++ [Stream Analytics](app-insights-export-power-bi.md)
+
 ## <a name="projects"></a> Erstellen eines eigenen SDK
 
 Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie eins erstellen. Sehen Sie sich den Code der vorhandenen SDKs an, die im [Application Insights-SDK-Projekt auf GitHub](https://github.com/Microsoft/AppInsights-Home) aufgeführt sind.
@@ -83,4 +88,4 @@ Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie e
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->
