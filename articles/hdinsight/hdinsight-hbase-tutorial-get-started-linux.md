@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/18/2015"
+	ms.date="11/16/2015"
 	ms.author="jgao"/>
 
 
@@ -47,9 +47,10 @@ Bevor Sie mit diesem Lernprogramm zu HBase beginnen können, benötigen Sie Folg
 	- **Clustername**: Geben Sie einen Namen zur Identifizierung dieses Clusters ein.
 	- **Clustertyp**: Wählen Sie **HBase** aus.
 	- **Clusterbetriebssystem**: Wählen Sie **Ubuntu** aus.
-	- **Abonnement**: Wählen Sie das Azure-Abonnement aus, das für die Bereitstellung des Clusters verwendet werden soll.
+	- **Version**: Wählen Sie die Version des Clusters aus, den Sie verwenden möchten. Weitere Informationen zu den Komponenten der verschiedenen HDInsight-Versionen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
+    - **Abonnement**: Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie dasjenige aus, das Sie für diesen Cluster verwenden möchten.
 	- **Ressourcengruppe**: Hier können Sie eine Azure-Ressourcengruppe hinzufügen oder auswählen. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
-	- **Anmeldeinformationen**. Geben Sie ein Kennwort für den HTTP-Webdienst-Benutzer ein. Der Standardbenutzername lautet **admin**. Außerdem müssen Sie einen **SSH-Benutzernamen** und entweder ein **KENNWORT** oder einen **ÖFFENTLICHEN SCHLÜSSEL** zum Authentifizieren des SSH-Benutzers eingeben. Es wird empfohlen, einen öffentlichen Schlüssel zu verwenden. Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Artikeln:
+	- **Anmeldeinformationen**. Geben Sie ein Kennwort für den HTTP-Webdienst-Benutzer ein. Der Standard-Benutzername lautet **admin**. Außerdem müssen Sie einen **SSH-Benutzernamen** und entweder ein **Kennwort** oder einen **öffentlichen Schlüssel** zum Authentifizieren des SSH-Benutzers eingeben. Es wird empfohlen, einen öffentlichen Schlüssel zu verwenden. Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Artikeln:
 
 		- [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
 		- [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md) Klicken Sie auf **Auswählen**, um die Änderungen zu speichern.
@@ -58,7 +59,7 @@ Bevor Sie mit diesem Lernprogramm zu HBase beginnen können, benötigen Sie Folg
 
 		> [AZURE.WARNING]Um die Hochverfügbarkeit der HBase-Dienste sicherzustellen, müssen Sie einen Cluster mit mindestens **drei** Knoten bereitstellen. Sollte in diesem Fall ein Knoten ausfallen, stehen die Datenbereiche von HBase noch auf den anderen Knoten zur Verfügung.
 
-	- **Optionale Konfiguration**: Hier können Sie die Clusterversion auswählen, Azure Virtual Network und den Hive-/Oozie-Metastore sowie Skriptaktionen konfigurieren und zusätzliche Speicherkonten hinzufügen.
+	- **Optionale Konfiguration**: Hier können Sie die Clusterversion auswählen, Azure Virtual Network sowie Skriptaktionen konfigurieren und zusätzliche Speicherkonten hinzufügen.
 
 4. Klicken Sie auf **Erstellen**.
 
@@ -182,7 +183,7 @@ Sie können Daten in HBase-Tabellen mit Hive abfragen. In diesem Abschnitt erste
 >
 > Ersetzen Sie für die Befehle in diesem Abschnitt die Option **BENUTZERNAME** zur Authentifizierung im Cluster durch den Benutzer und die Option **KENNWORT** durch das Kennwort für das Benutzerkonto. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres Clusters.
 >
-> Die REST-API wird durch die [Standardauthentifizierung](http://en.wikipedia.org/wiki/Basic_access_authentication) geschützt. Sie sollten Anforderungen immer über HTTPS (Secure HTTP) stellen, um sicherzustellen, dass Ihre Anmeldeinformationen sicher an den Server gesendet werden.
+> Die REST-API wird durch [Standardauthentifizierung](http://en.wikipedia.org/wiki/Basic_access_authentication) gesichert. Sie sollten Anforderungen immer über HTTPS (Secure HTTP) stellen, um sicherzustellen, dass Ihre Anmeldeinformationen sicher an den Server gesendet werden.
 
 1. Verwenden Sie den folgenden Befehl in einer Befehlszeile, um zu überprüfen, ob Sie die Verbindung zum HDInsight-Cluster herstellen können:
 
@@ -231,7 +232,7 @@ SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDI
 3. Klicken Sie in **Category** auf **Session**.
 4. Geben Sie für die grundlegenden Optionen im PuTTY-Sitzungsbildschirm die folgenden Werte ein:
 
-	- **Hostname**: Die SSH-Adresse des HDInsight-Servers im Feld „Hostname“ (oder „IP-Adresse“). Die SSH-Adresse ist Ihr Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: *mycluster-ssh.azurehdinsight.net*.
+	- **Hostname**: Die SSH-Adresse des HDInsight-Servers im Feld "Hostname" (oder "IP-Adresse"). Die SSH-Adresse ist Ihr Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: *mycluster-ssh.azurehdinsight.net*.
 	- **Port**: 22. Der SSH-Port auf dem Hauptknoten 0 ist „22“.  
 5. Erweitern Sie auf der linken Seite des Dialogfelds im Abschnitt **Category** erst **Connection**, dann **SSH**, und klicken Sie anschließend auf **Tunnels**.
 6. Geben Sie die folgenden Informationen in das Formular "Options controlling SSH port forwarding" ein:
@@ -239,12 +240,12 @@ SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDI
 	- **Source port**: Der Port auf dem Client, den Sie weiterleiten möchten. Beispiel: 9876.
 	- **Dynamic**: Ermöglicht das dynamische SOCKS-Proxyrouting.
 7. Klicken Sie auf **Hinzufügen**, um die Einstellungen hinzuzufügen.
-8. Klicken Sie unten im Dialogfeld auf **Öffnen**, um eine SSH-Verbindung zu öffnen.
+8. Klicken Sie auf **Öffnen** unten im Dialogfeld, um eine SSH-Verbindung zu öffnen.
 9. Wenn Sie dazu aufgefordert werden, melden Sie sich mit einem SSH-Konto beim Server an. Dadurch wird eine SSH-Sitzung eingerichtet und der Tunnel aktiviert.
 
 **So finden Sie den FQDN der Zookeeper mit Ambari**
 
-1. Navigieren Sie zu „https://<ClusterName>.azurehdinsight.net/“.
+1. Navigieren Sie zu "https://<ClusterName>.azurehdinsight.net/".
 2. Geben Sie zwei Mal die Anmeldeinformationen für das Cluster-Benutzerkonto ein.
 3. Klicken Sie im linken Menü auf **Zookeeper**.
 4. Klicken Sie auf einen der drei Links mit der Bezeichnung **ZooKeeper-Server** in der Zusammenfassungsliste.
@@ -254,17 +255,17 @@ SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDI
 
 1. Öffnen Sie Firefox.
 2. Klicken Sie auf die Schaltfläche **Menü öffnen**.
-3. Klicken Sie auf **Optionen**.
+3. Klicken Sie auf **Options**.
 4. Klicken Sie auf **Erweitert**, klicken Sie auf **Netzwerk**, und klicken Sie dann auf **Einstellungen**.
-5. Wählen Sie **Manuelle Proxykonfiguration** aus.
+5. Wählen Sie **Manuelle Proxy-Konfiguration** aus.
 6. Geben Sie die folgenden Werte ein:
 
 	- **SOCKS-Host**: localhost
 	- **Port**: Verwenden Sie den Port, den Sie für das Putty-SSH-Tunneling konfiguriert haben. Beispiel: 9876.
 	- **SOCKS v5**: (ausgewählt)
-	- **Remote DNS**: (ausgewählt)
+	- **Externer DNS-Server**: (ausgewählt)
 7. Klicken Sie zum Speichern der Änderungen auf **OK**.
-8. Navigieren Sie zu „http://<TheFQDN of a ZooKeeper>:60010/master-status“.
+8. Navigieren Sie zu "http://<TheFQDN of a ZooKeeper>:60010/master-status".
 
 In einem HighAvailability-Cluster gibt es einen Link zum aktuellen aktiven HBase-Masterknoten, unter dem die Web-Benutzeroberfläche gehostet wird.
 
@@ -305,4 +306,4 @@ Weitere Informationen finden Sie unter:
 [img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png
 [img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-bigtable.png
 
-<!----HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

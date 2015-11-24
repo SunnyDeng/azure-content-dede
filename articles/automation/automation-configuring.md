@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/02/2015"
+   ms.date="11/10/2015"
    ms.author="bwren" />
 
 # Konfigurieren von Azure Automation
@@ -52,6 +52,33 @@ Wenn Sie mithilfe von [Azure-Cmdlets](http://msdn.microsoft.com/library/azure/jj
 10. Melden Sie sich bei Azure ab, und melden Sie sich anschließend mit den soeben erstellten Anmeldeinformationen wieder an. Sie werden aufgefordert, das Kennwort des Benutzers zu ändern.
 11. Erstellen Sie ein neues [Azure Automation-Anmeldeinformationsobjekt](http://msdn.microsoft.com/library/dn940015.aspx) für das soeben erstellte Benutzerkonto. Der **Anmeldeinformationstyp** sollte **Windows PowerShell-Anmeldeinformationen** lauten.
 
+## Erstellen eines Automation-Kontos
+
+Ein Automation-Konto ist ein Container für Ihre Azure Automation-Ressourcen. Es bietet eine Möglichkeit, Ihre Umgebungen zu trennen oder Ihre Workflows besser zu organisieren. Wenn Sie bereits ein Automation-Konto erstellt haben, können Sie diesen Schritt überspringen.
+
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
+
+2. Klicken Sie im Azure-Vorschauportal auf **Neu** > **Verwaltung** > **Automation-Konto**.
+
+3. Konfigurieren Sie auf dem Blatt **Automation-Konto hinzufügen** die Details für Ihr Automation-Konto.
+
+>[AZURE.NOTE]Wenn ein Automation-Konto über das Azure-Vorschauportal erstellt wird, werden weder das Konto noch die zugeordneten Ressourcen zurück in das klassische Verwaltungsportal übertragen.
+
+Nachfolgend sehen Sie die Liste der zu konfigurierenden Parameter:
+
+|Parameter |Beschreibung |
+|:---|:---|
+| Name | Name des Automation-Kontos, muss ein eindeutiger Wert sein. |
+| Ressourcengruppe | Ressourcengruppen vereinfachen das Anzeigen und Verwalten zugehöriger Azure-Ressourcen. Im Azure-Vorschauportal können Sie für Ihr Automation-Konto eine vorhandene Ressourcengruppe wählen oder eine neue Ressourcengruppe erstellen. Im Azure-Verwaltungsportal dagegen werden alle Automation-Konto in der standardmäßigen Ressourcengruppe platziert. |
+| Abonnement | Wählen Sie aus der Liste der verfügbaren Abonnements ein Abonnement aus. |
+| Region | Die Region gibt an, wo die Automation-Ressourcen im Konto gespeichert werden. Sie können eine beliebige Region aus der Liste auswählen. Dies wirkt sich nicht auf die Funktionalität Ihres Kontos aus, aber Ihre Runbooks werden möglicherweise schneller ausgeführt, wenn sich Ihre Kontoregion in der Nähe Ihrer anderen Azure-Ressourcen befindet. |
+| Kontooptionen | Mit dieser Option können Sie auswählen, welche Ressourcen in Ihrem neuen Automation-Konto erstellt werden. Wenn Sie **Ja** auswählen, wird ein Runbook zu Lernzwecken erstellt. |
+
+![Konto erstellen](media/automation-configuration/automation-01-create-automation-account.png)
+
+>[AZURE.NOTE]Wenn ein über das klassische Verwaltungsportal erstelltes Automation-Konto mithilfe des Azure-Vorschauportals [in eine andere Ressourcengruppe verschoben](../resource-group-move-resources.md) wird, steht das Automation-Konto im klassischen Azure-Portal nicht mehr zur Verfügung, da Azure-Ressourcen-Manager-Konten im klassischen Verwaltungsportal nicht unterstützt werden.
+
+
 
 ## Verwenden der Anmeldeinformationen in einem Runbook
 
@@ -67,4 +94,4 @@ Diese Zeilen sollten nach jedem [Prüfpunkt](http://technet.microsoft.com/librar
 - [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

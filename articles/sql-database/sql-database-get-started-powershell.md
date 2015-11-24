@@ -1,11 +1,12 @@
 <properties 
-    pageTitle="Erstellen einer Azure SQL-Datenbank mithilfe von PowerShell" 
-    description="Erstellen einer Azure SQL-Datenbank mithilfe von PowerShell" 
-    services="sql-database" 
+    pageTitle="Einrichten einer neuen SQL-Datenbank mit PowerShell | Microsoft Azure" 
+    description="Erfahren Sie, wie Sie eine neue SQL-Datenbank mithilfe von PowerShell erstellen. Allgemeine Datenbankeinrichtungsaufgaben können mithilfe von PowerShell-Cmdlets verwaltet werden." 
+    keywords="Erstellen einer neuen SQL-Datenbank, Datenbankeinrichtung"
+	services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
     manager="jeffreyg" 
-    editor=""/>
+    editor="cgronlun"/>
 
 <tags
     ms.service="sql-database"
@@ -16,7 +17,7 @@
     ms.date="10/20/2015"
     ms.author="sstein"/>
 
-# Erstellen einer SQL-Datenbank mithilfe von PowerShell
+# Erstellen einer neue SQL-Datenbank und Ausführen gängiger Datenbankeinrichtungsaufgaben mithilfe von PowerShell-Cmdlets 
 
 **Einzeldatenbank**
 
@@ -26,14 +27,12 @@
 - [PowerShell](sql-database-get-started-powershell.md)
 
 
-## Übersicht
-
-In diesem Artikel wird das Erstellen einer SQL-Datenbank mithilfe von PowerShell veranschaulicht.
+Erfahren Sie, wie Sie eine neue SQL-Datenbank erstellen und gängige Datenbankeinrichtungsaufgaben mithilfe von PowerShell-Cmdlets ausführen.
 
 > [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr verfügbar. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
 
-Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+Zum Ausführen von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von „Switch-AzureMode“ müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 - Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 
@@ -57,7 +56,7 @@ Zum Auswählen des Abonnements benötigen Sie Ihre Abonnement-ID. Sie können di
 
 Nach dem erfolgreichen Ausführen von **Select-AzureRMSubscription** kehren Sie zur PowerShell-Eingabeaufforderung zurück. Wenn Sie über mehrere Abonnements verfügen, können Sie **Get-AzureRMSubscription** ausführen und überprüfen, ob das gewünschte Abonnement den Wert **IsCurrent: True** aufweist.
 
-## Erstellen von Ressourcengruppe, Server und Firewallregel
+## Datenbankeinrichtung: Erstellen einer Ressourcengruppe, eines Servers und einer Firewallregel
 
 Nachdem Sie Zugriff auf Cmdlets für Ihr ausgewähltes Azure-Abonnement haben, können Sie im nächsten Schritt die Ressourcengruppe einrichten, die den Server enthält, auf dem die Datenbank erstellt wird. Sie können den nächsten Befehl für einen beliebigen gültigen Speicherort anpassen. Führen Sie **(Get-AzureRMLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations** aus, um eine Liste der gültigen Speicherorte abzurufen.
 
@@ -91,7 +90,7 @@ Damit andere Azure-Dienste auf den Server zugreifen können, fügen Sie eine Fir
 Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md).
 
 
-## Erstellen einer SQL-Datenbank
+## Erstellen einer neuen SQL-Datenbank
 
 Sie haben jetzt eine Ressourcengruppe, einen Server und eine Firewallregel konfiguriert, sodass Sie auf den Server zugreifen können.
 
@@ -103,7 +102,7 @@ Der folgende Befehl erstellt eine neue (leere) SQL-Datenbank auf der Standard-Di
 
 Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstellt wurde.
 
-## Erstellen eines SQL-Datenbank-PowerShell-Skripts
+## Erstellen einer neuen SQL-Datenbank mit einem PowerShell-Skript
 
     $SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
     $ResourceGroupName = "resourcegroupname"
@@ -136,6 +135,7 @@ Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstell
 
 
 ## Nächste Schritte
+Nachdem Sie eine neue SQL-Datenbank erstellt und grundlegende Datenbankeinrichtungsaufgaben ausgeführt haben, sind Sie für Folgendes bereit:
 
 - [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
 
@@ -144,4 +144,4 @@ Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstell
 
 - [Azure SQL-Datenbank](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

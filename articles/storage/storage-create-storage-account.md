@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/23/2015"
+	ms.date="11/12/2015"
 	ms.author="tamram"/>
 
 
@@ -47,7 +47,7 @@ Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finde
 
 1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
 
-2. Klicken Sie auf **Neu erstellen**, auf **Speicher** und dann auf **Schnellerfassung**.
+2. Klicken Sie auf der Taskleiste unten auf der Seite auf **Neu**. Klicken Sie auf **Datendienste** | **Speicher** und anschließend auf **Schnellerfassung**.
 
 	![NewStorageAccount](./media/storage-create-storage-account/storage_NewStorageAccount.png)
 
@@ -171,4 +171,4 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

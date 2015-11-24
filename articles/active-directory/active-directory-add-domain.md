@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/14/2015"
+	ms.date="11/16/2015"
 	ms.author="curtand"/>
 
 # Fügen Sie Ihren eigenen Domänennamen in Azure AD hinzu
@@ -212,4 +212,4 @@ Wenn Sie Ihren benutzerdefinierten Domänennamen zum Clouddienst hinzufügen, na
 - [Als Organisation für Azure registrieren](sign-up-organization.md)
 - [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

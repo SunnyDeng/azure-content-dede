@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="09/25/2015" 
+	ms.date="11/18/2015" 
 	ms.author="mimig"/>
 
-# Erstellen eines DocumentDB-Datenbankkontos über das Azure-Vorschauportal
+# Erstellen eines DocumentDB-Datenbankkontos
 
 Um Microsoft Azure DocumentDB verwenden zu können, müssen Sie ein DocumentDB-Datenbankkonto mithilfe des Azure-Vorschauportals erstellen.
 
@@ -46,4 +46,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

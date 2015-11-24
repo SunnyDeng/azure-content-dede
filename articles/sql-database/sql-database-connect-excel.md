@@ -1,7 +1,8 @@
 <properties
-	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit Excel"
-	description="Excel-Arbeitsblatt in Azure SQL-Datenbank für die Berichterstellung und die Untersuchung von Daten."
+	pageTitle="Verbinden von Excel mit SQL-Datenbank | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Microsoft Excel mit Azure SQL-Datenbank in der Cloud verbinden. Importieren Sie Daten zwecks Berichterstellung und Untersuchung in Excel."
 	services="sql-database"
+	keywords="Verbinden von Excel mit SQL, Importieren von Daten in Excel"
 	documentationCenter=""
 	authors="joseidz"
 	manager="jeffreyg"
@@ -18,24 +19,26 @@
 	ms.author="joseidz"/>
 
 
-# Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit Excel
+# Verbinden von Excel mit einer Azure SQL-Datenbank und Erstellen eines Berichts 
 
 > [AZURE.SELECTOR]
 - [C#](sql-database-connect-query.md)
 - [SSMS](sql-database-connect-query-ssms.md)
 - [Excel](sql-database-connect-excel.md)
 
-In diesem Artikel wird das Verbinden von Excel mit einer Azure SQL-Datenbank und das Erstellen eines Berichts zu den Daten in der Datenbank erläutert. Sie benötigen zuerst eine Azure SQL-­Datenbank. Wenn Sie keine haben, finden Sie unter [Erstellen Ihrer ersten SQL-Datenbank](sql-database-get-started.md) eine Datenbank mit Beispieldaten, die in wenigen Minuten startklar ist. Dieser Artikel basiert auf der Beispieldaten aus diesem Artikel, aber Sie können ähnliche Schritte für Ihre eigenen Daten befolgen.
+Erfahren Sie, wie Sie Excel mit einer SQL-Datenbank verbinden, um Daten in Excel zu importieren. Erstellen Sie anschließend einen Bericht zu den Daten.
+
+Sie benötigen zuerst eine Azure SQL-­Datenbank. Wenn Sie keine haben, finden Sie unter [Erstellen Ihrer ersten SQL-Datenbank](sql-database-get-started.md) eine Datenbank mit Beispieldaten, die in wenigen Minuten startklar ist. In diesem Artikel importieren Sie Beispieldaten aus diesem Artikel in Excel, doch Sie können ähnliche Schritte auch mit Ihren eigenen Daten befolgen.
 
 Sie benötigen auch eine Kopie von Excel. In diesem Artikel wird [Microsoft Excel 2016](https://products.office.com/de-DE/) verwendet.
 
-## Herstellen einer Verbindung und Erstellen eines Berichts
+## Verbinden von Excel mit einer SQL-Datenbank und Erstellen eines Berichts
 
-1.	Öffnen Sie Excel, und erstellen Sie eine neue Arbeitsmappe, oder öffnen Sie die Arbeitsmappe, mit der Sie eine Verbindung herstellen möchten.
+1.	Zum Verbinden von Excel mit Azure SQL-Datenbank öffnen Sie Excel und erstellen dann eine neue Arbeitsmappe. Oder öffnen Sie eine vorhandene Excel-Arbeitsmappe, die Sie mit SQL-Datenbank verbinden möchten.
 
 2.	Klicken Sie auf der Menüleiste am oberen Rand der Seite auf **Daten**. Klicken Sie auf **Aus anderen Quellen**, und klicken Sie dann auf **Von SQL Server**.
-	
-	![Auswählen einer Datenquelle](./media/sql-database-connect-excel/excel_data_source.png)
+
+	![Auswählen einer Datenquelle: Verbinden Sie Excel mit SQL-Datenbank.](./media/sql-database-connect-excel/excel_data_source.png)
 
 	Der Datenverbindungs-Assistent wird geöffnet.
 
@@ -47,21 +50,21 @@ Sie benötigen auch eine Kopie von Excel. In diesem Artikel wird [Microsoft Exce
 
 5. Wählen Sie im Dialogfeld **Datenbank und Tabelle wählen** im Pulldownmenü die Datenbank **AdventureWorks** aus und **vGetAllCategories** in der Liste der Tabellen und Ansichten aus. Klicken Sie anschließend auf **Weiter**.
 
-	![Datenbank und Tabelle auswählen][5]
+	![Wählen Sie eine Datenbank und Tabelle aus.][5]
 
 6. Klicken Sie im Dialogfeld **Datenverbindungsdatei speichern und fertig stellen** auf **Fertig stellen**.
 
 7. Klicken Sie im Dialogfeld **Daten importieren** auf **PivotChart**, und klicken Sie dann auf **OK**.
 
-	![„Daten importieren“ auswählen][2]
+	![Importieren von Daten in Excel: Wählen Sie im Dialogfeld „Importieren“ die Option „PivotChart“ aus.][2]
 
 8. Wählen Sie im Dialogfeld **PivotChart-Felder** die folgende Konfiguration zum Erstellen eines Berichts für die Anzahl der Produkte pro Kategorie aus.
 
-	![Konfiguration][3]
+	![Konfigurieren Sie den Datenbankbericht.][3]
 
 	Bei einer erfolgreichen Durchführung sieht das Ergebnis wie folgt aus:
 
-	![Erfolg][4]
+	![Erfolg: Excel ist mit SQL-Datenbank verbunden.][4]
 
 ## Nächste Schritte
 
@@ -74,4 +77,4 @@ Wenn Sie ein SaaS-Entwickler (Software-as-a-Service) sind, erfahren Sie mehr üb
 [4]: ./media/sql-database-connect-excel/power-pivot-results.png
 [5]: ./media/sql-database-connect-excel/select-database-and-table.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

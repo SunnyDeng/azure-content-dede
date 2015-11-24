@@ -1,7 +1,7 @@
 <properties
-	pageTitle="NoSQL-Datenbanken – Erste Schritte mit dem DocumentDB Node.js SDK | Microsoft Azure"
-	description="Erfahren Sie, wie eine Verbindung mit einem DocumentDB-Konto hergestellt wird, wie eine NoSQL-Datenbank erstellt wird und wie DocumentDB-Abfragen mit ";Node.js"; unter Windows, Linux oder OS/X ausgeführt werden."
-	keywords="Create a database, nosql database, linux, OS/X, node.js, documentdb, azure, Microsoft azure"
+	pageTitle="NoSQL Node.js-Tutorial für DocumentDB | Microsoft Azure"
+	description="Ein NoSQL Node.js-Tutorial, in dem Sie eine Node-Datenbank und eine Konsolenanwendung mit dem DocumentDB Node.js SDK erstellen. DocumentDB ist eine NoSQL-Datenbank für JSON."
+    keywords="node.js tutorial, node database"
 	services="documentdb"
 	documentationCenter="node.js"
 	authors="AndrewHoh"
@@ -14,30 +14,30 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="node"
 	ms.topic="hero-article" 
-	ms.date="10/12/2015"
+	ms.date="11/18/2015"
 	ms.author="anhoh"/>
 
-#Erste Schritte mit dem DocumentDB Node.js SDK  
+# NoSQL Node.js-Tutorial: DocumentDB Node.js-Konsolenanwendung  
 
 > [AZURE.SELECTOR]
 - [.NET](documentdb-get-started.md)
 - [Node.js](documentdb-nodejs-get-started.md)
 
-Willkommen bei "Erste Schritte mit dem DocumentDB Node.js SDK"! Im Rahmen dieses Lernprogramms erstellen Sie eine Konsolenanwendung, mit der DocumentDB-Ressourcen erstellt und abgefragt werden können.
+Willkommen beim Node.js-Tutorial für das DocumentDB Node.js SDK! Im Rahmen dieses Tutorials erstellen Sie eine Konsolenanwendung, mit der DocumentDB-Ressourcen, einschließlich einer Node-Datenbank, erstellt und abgefragt werden können.
 
 Folgende Themen werden behandelt:
 
 - Erstellen eines DocumentDB-Kontos und Verbindungsaufbau
 - Einrichten der Anwendung
-- Erstellen einer Datenbank
+- Erstellen einer Node-Datenbank
 - Erstellen einer Sammlung
 - Erstellen von JSON-Dokumenten
 - Abfragen der Sammlung
-- Löschen der Datenbank
+- Löschen der Node-Datenbank
 
 Sie haben nicht genügend Zeit? Keine Sorge! Die vollständige Lösung ist auf [GitHub](https://github.com/Azure-Samples/documentdb-node-getting-started) verfügbar. In [Abrufen der vollständigen Lösung](#GetSolution) finden Sie eine Kurzanleitung.
 
-Bitte verwenden Sie nach Abschluss des Tutorials die Abstimmungsschaltflächen am Anfang und am Ende dieser Seite, um uns Ihre Meinung mitzuteilen. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
+Bitte verwenden Sie nach Abschluss des Node.js-Tutorials die Abstimmungsschaltflächen am Anfang und am Ende dieser Seite, um uns Ihre Meinung mitzuteilen. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
 
 Lassen Sie uns anfangen.
 
@@ -182,7 +182,7 @@ Als Nächstes verwenden wir die zuvor gespeicherten Eigenschaften *config.endpoi
 
 Nachdem Sie eine Verbindung mit einem DocumentDB-Konto hergestellt haben, betrachten wir jetzt die Verwendung von DocumentDB-Ressourcen.
 
-## Schritt 5: Erstellen einer Datenbank
+## Schritt 5: Erstellen einer Node-Datenbank
 Eine [Datenbank](documentdb-resources.md#databases) kann mithilfe der [createDatabase](https://azure.github.io/azure-documentdb-node/DocumentClient.html)-Funktion der **DocumentClient**-Klasse erstellt werden. Eine Datenbank ist ein logischer Container für Dokumentspeicher, der auf Sammlungen aufgeteilt ist. Fügen Sie eine Funktion zum Erstellen der neuen Datenbank in der Datei "app.js" mit der *ID* aus dem *config*-Objekt hinzu. Wir stellen zunächst sicher, dass eine Datenbank mit der gleichen *FamilyRegistry*-ID noch nicht vorhanden ist. Wenn eine vorhanden ist, verwenden wir diese Datenbank, statt eine neue zu erstellen.
 
     var getOrCreateDatabase = function(callback) {
@@ -276,7 +276,7 @@ Fügen Sie anschließend in "app.js" eine Funktion für die Erstellung der Dokum
 
 Glückwunsch! Sie verfügen jetzt über die Funktionen zum Erstellen einer Datenbank, einer Sammlung und eines Dokuments in DocumentDB!
 
-![Diagramm zur Veranschaulichung der hierarchischen Beziehung zwischen dem Konto, der Datenbank, der Sammlung und den Dokumenten](./media/documentdb-get-started/account-database.png)
+![Diagramm zur Veranschaulichung der hierarchischen Beziehung zwischen dem Konto, der Datenbank, der Sammlung und den Dokumenten](./media/documentdb-nodejs-get-started/node-js-tutorial-account-database.png)
 
 ##<a id="Query"></a>Schritt 8: Abfragen von DocumentDB-Ressourcen
 
@@ -302,11 +302,11 @@ DocumentDB unterstützt [umfassende Abfragen](documentdb-sql-query.md) der in je
 
 Das folgende Diagramm veranschaulicht, wie die DocumentDB-SQL-Abfragesyntax für die erstellte Sammlung aufgerufen wird.
 
-![Diagramm zur Veranschaulichung des Bereichs und der Bedeutung der Abfrage](./media/documentdb-get-started/collection-documents.png)
+![Diagramm zur Veranschaulichung des Bereichs und der Bedeutung der Abfrage](./media/documentdb-nodejs-get-started/node-js-tutorial-collection-documents.png)
 
 Das [FROM](documentdb-sql-query.md/#from-clause) -Schlüsselwort ist in der Abfrage optional, da DocumentDB Abfragen auf eine Sammlung begrenzt. Aus diesem Grund ist "FROM Familien f" austauschbar mit "FROM Stamm r" oder einem anderen variablen Namen, den Sie auswählen. DocumentDB wird ableiten, dass Familien, Stamm oder der variable Name, den Sie ausgewählt haben, standardmäßig auf die aktuelle Sammlung verweisen.
 
-##<a id="DeleteDatabase"></a>Schritt 9: Löschen der Datenbank
+##<a id="DeleteDatabase"></a>Schritt 9: Löschen der Node-Datenbank
 
 Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeordneten Ressourcen (Sammlungen, Dokumente usw.). Sie können die Datenbank löschen, indem Sie den folgenden Codeausschnitt hinzufügen.
 
@@ -357,9 +357,9 @@ Fügen Sie den folgenden Codeausschnitt unten im Code in *app.js* hinzu.
         });
     });
 
-##<a id="Run"></a>Schritt 11: Ausführen der Anwendung
+##<a id="Run"></a> Schritt 11: Ausführen Ihrer Node.js-Anwendung
 
-Sie können die Anwendung nun ausführen.
+Sie können die Node.js-Anwendung jetzt ausführen.
 
 Suchen Sie auf Ihrem Terminal nach der Datei *app.js*, und führen Sie den Befehl **node app.js** aus.
 
@@ -417,7 +417,7 @@ Die Ausgabe der GetStarted-Anwendung sollte angezeigt werden. Die Ausgabe sollte
 
     Done.
 
-Glückwunsch! Sie haben Ihre erste DocumentDB-App erstellt!
+Glückwunsch! Sie haben das Node.js-Tutorial abgeschlossen und Ihre erste DocumentDB-Konsolenanwendung erstellt.
 
 ##<a id="GetSolution"></a> Abrufen der vollständigen Lösung
 Um die "GetStarted"-Lösung zu erstellen, die alle Beispiele dieses Artikels enthält, ist Folgendes erforderlich:
@@ -440,6 +440,6 @@ Aktualisieren Sie dann in der Datei *config.js* die Werte für "config.endpoint"
 [documentdb-create-account]: documentdb-create-account.md
 [documentdb-manage]: documentdb-manage.md
 
-[keys]: media/documentdb-get-started/keys.png
+[keys]: media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="traffic-manager"
@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/12/2015"
    ms.author="joaoma" />
 
 # Hinzufügen, Deaktivieren, Aktivieren oder Löschen von Endpunkten
@@ -62,20 +62,17 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 
 >[AZURE.NOTE]Sie können im Azure-Portal keine externen Speicherorte oder Traffic Manager-Profile als Endpunkte löschen. Sie müssen Windows PowerShell verwenden. Weitere Informationen finden Sie unter [Remove-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/dn690251.aspx).
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
 
-[Traffic Manager-Überwachung](traffic-manager-monitoring.md)
+[Konfigurieren der Routingmethode „Failover“](traffic-manager-configure-failover-routing-method.md)
 
-[Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
+[Konfigurieren der Routingmethode „Roundrobin“](traffic-manager-configure-round-robin-routing-method.md)
 
-[Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
+[Konfigurieren der Routingmethode „Performance“](traffic-manager-configure-performance-routing-method.md)
+
+[Problembehandlung beim Status „Heruntergestuft“ in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md)
 
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkID=313584)
 
-[Cloud Services](http://go.microsoft.com/fwlink/?LinkId=314074)
-
-[Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -1,11 +1,11 @@
-<!--author=alkohli last changed: 9/17/15-->
+<!--author=alkohli last changed: 11/16/15-->
 
 
 #### So erstellen Sie einen neuen Dienst
 
-1. Melden Sie sich mit Ihren Microsoft-Kontoanmeldeinformationen beim Verwaltungsportal unter dieser URL an: [http://azure.microsoft.com/](http://azure.microsoft.com/).
+1. Melden Sie sich mit Ihren Microsoft-Kontoanmeldeinformationen unter dieser URL beim Azure-Portal an: [http://azure.microsoft.com/](http://azure.microsoft.com/).
 
-2. Klicken Sie im Verwaltungsportal auf **+Neu** > **Datendienste** > **StorSimple-Manager** > **Schnellerfassung**.
+2. Klicken Sie im Azure-Portal auf **Neu** > **Datendienste** > **StorSimple-Manager** > **Schnellerfassung**.
 
 3. Gehen Sie im angezeigten Formular folgendermaßen vor:
   1. Geben Sie einen eindeutigen **Namen** für Ihren Dienst an. Dies ist ein Anzeigename, der zum Identifizieren des Diensts verwendet werden kann. Der Name kann zwischen 2 und 50 Zeichen lang sein und darf nur Buchstaben, Zahlen und Bindestriche enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und enden.
@@ -28,4 +28,4 @@
 
 Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-a-storsimple-manager-service/) ein Video anschauen, in dem das Erstellen eines neuen StorSimple Manager-Services demonstriert wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

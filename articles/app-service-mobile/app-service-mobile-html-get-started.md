@@ -13,19 +13,19 @@
 	ms.tgt_pltfrm="mobile-html5"
 	ms.devlang="javascript"
 	ms.topic="get-started-article"
-	ms.date="10/05/2015"
+	ms.date="11/18/2015"
 	ms.author="glenga"/>
 
 
 #Erstellen einer HTML-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]&nbsp;<!--- [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]-->
+
+>[AZURE.IMPORTANT]Dieses Thema wird von Mobile Apps derzeit nicht unterstützt, da der Schnellstart für HTML-/JavaScript-Apps vorübergehend aus dem Azure-Portal entfernt wurde. Diese Option soll in naher Zukunft wieder unterstützt werden. Vielen Dank für Ihre Geduld, während wir die Vorschau für Mobile Apps fertig stellen.
 
 ##Übersicht
 
-Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst mithilfe eines mobilen Azure-App-Back-Ends zu einer HTML5- oder JavaScript-Web-App hinzufügen. Sie erstellen sowohl ein neues mobiles App-Back-End als auch eine einfache *Todo list*-Web-App, die App-Daten in Azure speichert.
+Dieses Tutorial zeigt, wie Sie einen cloudbasierten Back-End-Dienst zu einer HTML5-/JavaScript-Web-App hinzufügen. Weitere Informationen finden Sie unter [Was sind Mobile Apps?](app-service-mobile-value-prop.md)
 
 Unten sehen Sie einen Screenshot aus der fertigen App:
 
@@ -121,4 +121,4 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 [Visual Studio Community 2013]: https://www.visualstudio.com/downloads
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->
