@@ -55,7 +55,7 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die eine neue Gerä
 
     ![][12]
 
-> [AZURE.NOTE]Es sollte beachtet werden, dass die IoT Hub-Identitätsregistrierung nur zum Speichern von Geräteidentitäten für den sicheren Zugriff verwendet wird, also zum Speichern von Sicherheitsanmeldeinformationen und Aktivieren/Deaktivieren des Zugriffs einzelner Geräte. Metadaten der Geräteanwendung sollten in einem anwendungsspezifischen Speicher gespeichert werden. Weitere Informationen finden Sie im [IoT Hub-Entwicklerhandbuch][IoT Hub Developer Guide - Identity Registry].
+> [AZURE.NOTE] Es sollte beachtet werden, dass die IoT Hub-Identitätsregistrierung nur zum Speichern von Geräteidentitäten für den sicheren Zugriff verwendet wird, also zum Speichern von Sicherheitsanmeldeinformationen und Aktivieren/Deaktivieren des Zugriffs einzelner Geräte. Metadaten der Geräteanwendung sollten in einem anwendungsspezifischen Speicher gespeichert werden. Weitere Informationen finden Sie im [IoT Hub-Entwicklerhandbuch][IoT Hub Developer Guide - Identity Registry].
 
 ## Empfangen von Gerät-zu-Cloud-Nachrichten
 
@@ -134,4 +134,4 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die Gerät-zu-Cloud
 [11]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp2.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png
 
-<!---HONumber=Nov15_HO3-->
+<!----HONumber=Nov15_HO3-->
