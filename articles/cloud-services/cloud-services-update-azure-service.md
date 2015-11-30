@@ -57,7 +57,7 @@ Die folgende Tabelle zeigt die zulässigen Änderungen an einen Dienst während 
 |Neue Zertifikate hinzufügen|Ja|Ja|Ja|
 |Vorhandene Zertifikate ändern|Ja|Ja|Ja|
 |Neuen Code bereitstellen|Ja|Ja|Ja|
-* Erfordert Azure SDK 1.5 oder höher.
+\*Erfordert Azure SDK 1.5 oder höher.
 
 > [AZURE.WARNING]Wenn die Größe des virtuellen Computers geändert wird, werden dadurch lokale Daten zerstört.
 

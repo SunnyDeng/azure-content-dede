@@ -129,15 +129,15 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
   - **Ressourcengruppe**: Wählen Sie die Ressourcengruppe aus, die Sie zuvor in diesem Tutorial erstellt haben.
   - **Anmeldeinformationen**: Konfigurieren Sie den Benutzernamen und das Kennwort für den Hadoop-Benutzer (HTTP-Benutzer). Wenn Sie Remotedesktop für den Cluster aktivieren, müssen Sie den Benutzernamen und das Kennwort für den Remotedesktopbenutzer konfigurieren und ein Ablaufdatum für das Konto festlegen. Klicken Sie unten auf **Auswählen**, um die Änderungen zu speichern.
   - **Datenquelle**: Wählen Sie ein vorhandenes Azure-Speicherkonto aus, oder erstellen Sie ein neues Azure-Speicherkonto, das als Standarddateisystem für den Cluster verwendet werden soll. Der standardmäßige Name für den Standardcontainer ist der Clustername. Der Standort des Speicherkontos bestimmt auch den Standort des Clusters.
-  - **Knotentarife**: Wählen Sie zu Übungszwecken oder zur Auswertung einen Knoten mit einer Region aus, um die Kosten zu minimieren.
+  - **Knotenpreistarife**: Wählen Sie zu Übungszwecken oder zur Auswertung einen Knoten mit einer Region aus, um die Kosten zu minimieren.
 
   	- **Auswahlmethode**: Wählen Sie **Aus allen Abonnements** aus, damit Speicherkonten aus all Ihren Abonnements durchsucht werden können. Wählen Sie **Zugriffsschlüssel** aus, wenn Sie den **Speichernamen** und **Zugriffsschlüssel** eines vorhandenen Speicherkontos eingeben möchten.
   	- **Speicherkonto auswählen/Neu erstellen**: Klicken Sie auf **Speicherkonto auswählen**, um ein vorhandenes Speicherkonto auszuwählen, das Sie dem Cluster zuordnen möchten. Alternativ können Sie auf **Neu erstellen** klicken, um ein neues Speicherkonto zu erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
     - **Standardcontainer auswählen**: Geben Sie den Namen des Standardcontainers für den Cluster ein. Sie können einen beliebigen Namen eingeben, es wird jedoch empfohlen, den Namen des Clusters zu verwenden. So können Sie leichter erkennen, dass es sich um den Container für diesen spezifischen Cluster handelt.
   	- **Standort**: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird. Dieser Standort bestimmt auch den Clusterstandort. Der Cluster und das zugeordnete Standardspeicherkonto müssen sich im selben Azure-Rechenzentrum befinden.
 
-  - **Knotentarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
-	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtual Network** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
+  - **Knotenpreistarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
+	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtuelles Netzwerk** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
 
 4. Klicken Sie auf **Erstellen**.
 

@@ -22,7 +22,7 @@ In diesem Artikel werden die Schritte zur Erstellung und Registrierung eines Kon
 ## 1\. Erstellen eines Microsoft-Kontos
 > [AZURE.WARNING]Um den Veröffentlichungsprozess abzuschließen, müssen Sie ein Microsoft-Konto erstellen. Über dieses Konto können Sie sich sowohl beim Veröffentlichungsportal als auch im Verkäuferdashboard registrieren und anmelden. Sie sollten für Ihre Azure Marketplace-Angebote nur ein Microsoft-Konto verwenden. Verwenden Sie keine unterschiedlichen Konten für verschiedene Dienste oder Angebote.
 
-Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com)). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
+Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
 
   >[AZURE.WARNING]Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
 
@@ -155,11 +155,16 @@ Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihre
 
   >[AZURE.TIP]Die Teilnahmerichtlinien werden auf der [Azure-Website](http://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
 
-  > Wenn Sie Probleme beim Abschließen der Verkäuferregistrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket: 1. Wenden Sie sich an den [Support](http://go.microsoft.com/fwlink?LinkId=272975). 2. Wählen Sie **Verkäuferdashboard-Registrierung und Ihr Konto** aus. 3. Wählen Sie **Für ein Entwicklerkonto registrieren** aus. 4. Wählen Sie die Methode für die Kontaktaufnahme aus.
+  > Wenn Sie Probleme beim Abschließen der Verkäuferregistrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket:
+  1. Wenden Sie sich an den [Support](http://go.microsoft.com/fwlink?LinkId=272975).
+  2. Wählen Sie **Verkäuferdashboard-Registrierung und Ihr Konto** aus.
+  3. Wählen Sie **Für ein Entwicklerkonto registrieren** aus.
+  4. Wählen Sie die Methode für die Kontaktaufnahme aus.
 
 ### Verkäuferländer
 
-> [AZURE.WARNING]Um Ihre Dienste im Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, prüfen Sie sie also regelmäßig. Die vollständige Liste finden Sie in Abschnitt 1b der [Teilnahmerichtlinien für den Marketplace](http://go.microsoft.com/fwlink/?LinkID=526833).
+> [AZURE.WARNING]
+Um Ihre Dienste im Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, prüfen Sie sie also regelmäßig. Die vollständige Liste finden Sie in Abschnitt 1b der [Teilnahmerichtlinien für den Marketplace](http://go.microsoft.com/fwlink/?LinkID=526833).
 
 
 
@@ -167,7 +172,12 @@ Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihre
 ## Nächste Schritte
 Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefakttyp (virtueller Computer, Entwicklerdienst, Datendienst oder Lösungsvorlage), den Sie im Azure Marketplace veröffentlichen möchten. Informationen zum Veröffentlichen des jeweiligen Angebots finden Sie in den folgenden Artikeln:
 
-|| VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage | |----|-----|-----|-----|-----| |**Schritt 2: Erstellen Ihres Angebots** | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | || [Technische Voraussetzungen für VM-Images ][link-single-vm-prereq]| Technische Voraussetzungen für Entwicklerdienste | Technische Voraussetzungen für Datendienste | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) | || [Veröffentlichungsleitfaden für VM-Image][link-single-vm] | Veröffentlichungsleitfaden für Entwicklerdienste | Veröffentlichungsleitfaden für Datendienste | [Veröffentlichungsleitfaden für Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) | || [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] |
+|| VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage |
+|----|-----|-----|-----|-----|
+|**Schritt 2: Erstellen Ihres Angebots** | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) |
+|| [Technische Voraussetzungen für VM-Images ][link-single-vm-prereq]| Technische Voraussetzungen für Entwicklerdienste | Technische Voraussetzungen für Datendienste | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
+|| [Veröffentlichungsleitfaden für VM-Image][link-single-vm] | Veröffentlichungsleitfaden für Entwicklerdienste | Veröffentlichungsleitfaden für Datendienste | [Veröffentlichungsleitfaden für Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) |
+|| [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] |
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)

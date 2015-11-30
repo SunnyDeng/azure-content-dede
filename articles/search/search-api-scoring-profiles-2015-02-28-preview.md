@@ -343,7 +343,7 @@ Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewer
 
 `boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts). Das Muster hierfür lautet wie folgt:
 
-     [-]P[nD][T[nH][nM][nS]]
+     [-]P\[nD]\[T\[nH]\[nM]\[nS]\]
 
 Die folgende Tabelle enthält einige Beispiele.
 

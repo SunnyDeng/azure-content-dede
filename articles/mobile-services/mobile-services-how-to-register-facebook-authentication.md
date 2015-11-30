@@ -48,10 +48,7 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 	
     >[AZURE.IMPORTANT]Der App-Schlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.&nbsp;
 
-8. Klicken Sie auf die Registerkarte **Erweitert**, geben Sie eines der folgenden URL-Formate in **Valid OAuth redirect URIs** ein, klicken Sie dann auf **Änderungen speichern**:
- 
-	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-facebook`
-	+ **JavaScript-Back-End**:`https://<mobile_service>.azure-mobile.net/login/facebook` 
+8. Klicken Sie auf die Registerkarte **Advanced**, geben Sie in **Valid OAuth redirect URIs** die URL Ihres mobilen Diensts gefolgt vom Pfad _/login/facebook_ ein, und klicken Sie auf **Save Changes**.&nbsp;
 
 	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
 

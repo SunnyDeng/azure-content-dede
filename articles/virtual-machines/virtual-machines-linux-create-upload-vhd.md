@@ -162,7 +162,7 @@ Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt 
 
 		Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
 
-Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
+Weitere Informationen hierzu finden Sie unter [Add-AzureVhd]((https://msdn.microsoft.com/library/azure/dn495173.aspx).
 
 > [AZURE.NOTE]Mit der [Vorschauversion von Azure Powershell 1.0](https://azure.microsoft.com/de-DE/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
 
