@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Kontinuierliche Bereitstellung in Azure mit Git und Visual Studio Online" 
-	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online zur Verwendung von Git so konfigurieren, dass sie automatisch für die Web-App-Funktion in Azure App Service oder in Clouddiensten erstellt und bereitgestellt werden."
+	pageTitle="Continuous Delivery mit Git und Visual Studio Team Services in Azure" 
+	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Team Services zur Verwendung von Git konfigurieren, sodass sie automatisch erstellt und für das Web-App-Feature in Azure App Service oder in Clouddiensten bereitgestellt werden."
 	services="cloud-services"
 	documentationCenter=".net"
 	authors="kempb"
@@ -16,20 +16,20 @@
 	ms.date="09/02/2015"
 	ms.author="kempb"/>
 
-# Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online und Git
+# Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git
 
-Sie können Visual Studio Online-Teamprojekte verwenden, um ein Git-Repository für Quellcode zu hosten und dies automatisch zu erstellen und für Azure-Web-Apps oder -Clouddiensten bereitzustellen, wenn Sie ein Commit zum Repository mithilfe von Push übertragen.
+Sie können Visual Studio Team Services-Teamprojekte verwenden, um ein Git-Repository für Ihren Quellcode zu hosten, automatisch zu erstellen und für Azure-Web-Apps oder -Clouddienste bereitzustellen, wenn Sie mittels Push ein Commit für das Repository ausführen.
 
 Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
 
-> [AZURE.NOTE]Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können. Sie können [ein Visual Studio Online-Konto kostenlos eröffnen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> [AZURE.NOTE]Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
-Gehen Sie folgendermaßen vor, um einen Clouddienst für eine automatische Erstellung und Bereitstellung mithilfe von Visual Studio Online zu konfigurieren.
+Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Clouddienst für die automatische Erstellung und Bereitstellung für Azure zu konfigurieren.
 
 ## Schritt 1: Erstellen eines Git-Repositorys
 
-1. Wenn Sie noch kein Visual Studio Online-Konto haben, erhalten Sie [hier](http://go.microsoft.com/fwlink/?LinkId=397665) eins. Wenn Sie Ihr Teamprojekt erstellen, wählen Sie Git als Quellcodeverwaltungssystem aus. Befolgen Sie die Anweisungen, um Visual Studio mit dem Teamprojekt zu verbinden.
+1. Wenn Sie noch nicht über ein Visual Studio Team Services-Konto verfügen, können Sie [hier](http://go.microsoft.com/fwlink/?LinkId=397665) eines erstellen. Wenn Sie Ihr Teamprojekt erstellen, wählen Sie Git als Quellcodeverwaltungssystem aus. Befolgen Sie die Anweisungen, um Visual Studio mit dem Teamprojekt zu verbinden.
 
 2. Klicken Sie in **Team Explorer** auf den Link **Dieses Repository klonen**.
 
@@ -49,7 +49,7 @@ Gehen Sie folgendermaßen vor, um einen Clouddienst für eine automatische Erste
 
 	![][7]
 
-4. Wenn Sie zum ersten Mal Git in Visual Studio Online verwenden, müssen Sie einige Informationen angeben, um sich in Git zu identifizieren. Geben Sie im Bereich **Ausstehende Änderungen** des **Team Explorer** Ihren Benutzernamen und Ihre E-Mail-Adresse an. Geben Sie einen Kommentar für den Commit ein, und klicken Sie dann auf die Schaltfläche **Commit**.
+4. Wenn Sie zum ersten Mal Git in Visual Studio Team Services verwenden, müssen Sie einige Informationen angeben, um sich in Git zu identifizieren. Geben Sie im Bereich **Ausstehende Änderungen** des **Team Explorer** Ihren Benutzernamen und Ihre E-Mail-Adresse an. Geben Sie einen Kommentar für den Commit ein, und klicken Sie dann auf die Schaltfläche **Commit**.
 
 	![][8]
 
@@ -59,27 +59,27 @@ Gehen Sie folgendermaßen vor, um einen Clouddienst für eine automatische Erste
 
 ## Schritt 3: Verbinden des Projekts mit Azure
 
-1. Nach der Erstellung eines Git-Repository in Visual Studio Online mit Quellcode sind Sie bereit, Ihr Git-Repository mit Azure zu verbinden. Wählen Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Clouddienst** oder **Web-App** und anschließend auf **Schnellerstellung** klicken.
+1. Nachdem Sie in Visual Studio Team Services ein Git-Repository mit Quellcode erstellt haben, können Sie Ihr Git-Repository mit Azure verknüpfen. Wählen Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Clouddienst** oder **Web-App** und anschließend auf **Schnellerstellung** klicken.
 
 	![][9]
 
-3. Klicken Sie für Clouddienste auf den Link **Veröffentlichung einrichten mit Visual Studio Online**. Für Web-Apps wählen Sie den Link **Bereitstellung über Quellcodeverwaltung einrichten**.
+3. Wählen Sie für Clouddienste den Link **Veröffentlichung einrichten mit Visual Studio Team Services** aus. Für Web-Apps wählen Sie den Link **Bereitstellung über Quellcodeverwaltung einrichten**.
 
 	![][10]
 
-2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Online-Kontos ein, und klicken Sie auf den Link **Jetzt autorisieren**. Eventuell werden Sie aufgefordert, sich anzumelden.
+2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Team Services-Kontos ein, und wählen Sie den Link **Jetzt autorisieren** aus. Eventuell werden Sie aufgefordert, sich anzumelden.
 
 	![][11]
 
-3. Klicken Sie im Popupdialogfeld **Verbindungsanforderung** auf **Übernehmen**, um Azure für eine Konfiguration Ihres Teamprojekts in Visual Studio Online zu autorisieren.
+3. Klicken Sie im Popupdialogfeld **Verbindungsanforderung** auf **Übernehmen**, um Azure zum Konfigurieren Ihres Teamprojekts in Visual Studio Team Services zu autorisieren.
 
 	![][12]
 
-4. Nachdem die Autorisierung erfolgreich war, wird eine Dropdownliste Ihrer Visual Studio Online-Teamprojekte angezeigt. Wählen Sie den Namen des Teamprojekts aus, das Sie in den vorherigen Schritten erstellt haben, und klicken Sie auf das Häkchen im Assistenten.
+4. Nach erfolgreicher Autorisierung wird eine Dropdownliste mit Ihren Visual Studio Team Services-Teamprojekten angezeigt. Wählen Sie den Namen des Teamprojekts aus, das Sie in den vorherigen Schritten erstellt haben, und klicken Sie auf das Häkchen im Assistenten.
 
 	![][13]
 
-	Wenn Sie das nächste Mal ein Commit zum Repository übertragen, wird Visual Studio Online Ihr Projekt erstellen und in Azure bereitstellen.
+	Wenn Sie das nächste Mal mittels Push ein Commit für Ihr Repository ausführen, wird Ihr Projekt erstellt und für Azure bereitgestellt.
 
 ## Schritt 4: Auslösen einer Neuerstellung und erneutes Bereitstellen Ihres Projekts
 
@@ -101,7 +101,7 @@ Gehen Sie folgendermaßen vor, um einen Clouddienst für eine automatische Erste
 
 	![][38]
 
-6. Wählen Sie den Link **Push** aus, um Ihr Commit zum Repository in Visual Studio Online zu übertragen. (Sie können auch die Schaltfläche **Sync** verwenden, um Commits zum Repository zu übertragen. Der Unterschied besteht darin, dass mit **Sync** auch die letzten Änderungen aus dem Repository abgerufen werden.)
+6. Wählen Sie den Link **Push** aus, um Ihr Commit für das Repository in Visual Studio Team Services auszuführen. (Sie können auch die Schaltfläche **Sync** verwenden, um Commits zum Repository zu übertragen. Der Unterschied besteht darin, dass mit **Sync** auch die letzten Änderungen aus dem Repository abgerufen werden.)
 
 	![][39]
 
@@ -123,7 +123,7 @@ Gehen Sie folgendermaßen vor, um einen Clouddienst für eine automatische Erste
 
 	![][25]
 
-11. Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird. (Für einen Clouddienst erstellt Visual Studio Online Builds und stellt die Hauptverzweigung automatisch zur Stagingumgebung bereit. Sie müssen für die Bereitstellung zur Live-Website weiterhin einen Schritt manuell durchführen. Für eine Web-App ohne Stagingumgebung wird die Hauptverzweigung direkt in der Live-Website bereitgestellt.
+11. Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird. (Für einen Clouddienst erstellt Visual Studio Team Services die Hauptverzweigung und stellt sie automatisch für die Stagingumgebung bereit.) Sie müssen für die Bereitstellung zur Live-Website weiterhin einen Schritt manuell durchführen. Für eine Web-App ohne Stagingumgebung wird die Hauptverzweigung direkt in der Live-Website bereitgestellt.
 
 	![][26]
 
@@ -216,7 +216,7 @@ Wenn Sie Git verwenden, nehmen Sie die Änderungen normalerweise an einer Arbeit
 
 	![][43]
 
-10. Wählen Sie den Link **Unsynchronisierte Commits** aus, und klicken Sie auf die Schaltfläche **Sync** oder den Link **Push**, um die Änderungen in die Arbeitsverzweigungskopie in Visual Studio Online zu kopieren.
+10. Wählen Sie den Link **Unsynchronisierte Commits** und anschließend die Schaltfläche **Sync** oder den Link **Push** aus, um die Änderungen in die Arbeitsverzweigung in Visual Studio Team Services zu kopieren.
 
 	![][45]
 
@@ -224,7 +224,7 @@ Wenn Sie Git verwenden, nehmen Sie die Änderungen normalerweise an einer Arbeit
 
 ## Nächste Schritte
 
-Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Online finden Sie unter [Entwickeln und Freigeben von Code in Git mit Visual Studio](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx). Informationen zur Verwendung eines Git-Repository, das nicht von Visual Studio Online verwaltet wird, für die Veröffentlichung zu Azure finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](../web-sites-publish-source-control.md). Weitere Informationen zu Visual Studio Online finden Sie unter [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861).
+Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Team Services finden Sie unter [Entwickeln und Freigeben von Code in Git mit Visual Studio](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx). Informationen zur Verwendung eines nicht von Visual Studio Team Services verwalteten Git-Repositorys zur Veröffentlichung für Azure finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](../web-sites-publish-source-control.md). Weitere Informationen zu Visual Studio Team Services finden Sie unter [Visual Studio Team Services](http://go.microsoft.com/fwlink/?LinkId=253861).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso-git/CreateTeamProjectInGit.PNG
@@ -272,4 +272,4 @@ Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Online finden Sie un
 [47]: ./media/cloud-services-continuous-delivery-use-vso-git/SourceSettingsPage.PNG
 [48]: ./media/cloud-services-continuous-delivery-use-vso-git/IncludeWorkingBranch.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

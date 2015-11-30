@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="11/18/2015" 
 	ms.author="juliako"/>
 
 
@@ -21,6 +21,11 @@
 #Versionshinweise zu Azure SDK für .NET
 
 Dieses Thema enthält Links zu Azure SDK für .NET-Versionshinweise.
+
+
+##Versionshinweise zu Azure SDK für .NET 2.8
+
+[Versionshinweise zu Azure SDK für .NET 2.8](azure-sdk-dotnet-release-notes-2_8.md)
 
 ##Versionshinweise zu Azure SDK für .NET 2.7
 
@@ -65,4 +70,4 @@ Dieses Thema enthält Links zu Azure SDK für .NET-Versionshinweise.
 [Azure SDK-Versionshinweise auf MSDN](https://msdn.microsoft.com/library/azure/dn627519.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

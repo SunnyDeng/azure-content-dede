@@ -85,7 +85,7 @@ Wenn Sie automatische Sicherungen nicht aktiviert haben, können Sie eine [manue
 
 Ziehen Sie eine [gestaffelte Bereitstellung](web-sites-staged-publishing.md) in Betracht. Mit dieser Option können Sie Updates in Form einer gestaffelten Bereitstellung veröffentlichen, die parallel zu Ihrer Produktionsbereitstellung ausgeführt wird.
 
-Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellung aus der Quellcodeverwaltung einstellen:
+Wenn Sie Visual Studio Team Services verwenden, können Sie die fortlaufende Bereitstellung aus der Quellcodeverwaltung festlegen:
 
 - [Verwendung von Team Foundation Version Control (TFVC)](../cloud-services-continuous-delivery-use-vso.md) 
 - [Verwendung von Git](../cloud-services-continuous-delivery-use-vso-git.md)
@@ -103,4 +103,4 @@ Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellun
 
   
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

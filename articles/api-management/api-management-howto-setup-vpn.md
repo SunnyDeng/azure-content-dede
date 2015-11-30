@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/16/2015"
+	ms.date="11/16/2015"
 	ms.author="antonba"/>
 
 # Einrichten von VPN-Verbindungen in Azure API Management
 
-Mit der VPN-Unterstützung von API Management können Sie Ihren API Management-Proxy mit einer Azure Virtual Network-Instanz verbinden. Auf diese Weise können Ihre API Management-Kunden eine sichere Verbindung mit ihren Back-End-Webdiensten herstellen, die lokal vorliegen oder auf die aus anderen Gründen nicht über das öffentliche Internet zugegriffen werden kann.
+Mit der VPN-Unterstützung von API Management können Sie Ihr API Management-Gateway mit einer Azure Virtual Network-Instanz verbinden. Auf diese Weise können Ihre API Management-Kunden eine sichere Verbindung mit ihren Back-End-Webdiensten herstellen, die lokal vorliegen oder auf die aus anderen Gründen nicht über das öffentliche Internet zugegriffen werden kann.
 
 ## <a name="enable-vpn"> </a>Aktivieren von VPN-Verbindungen
 
@@ -36,9 +36,9 @@ Wählen Sie ein VPN und Subnetz für jede Region. Die Liste der VPNs wird basier
 
 ![VPN auswählen][api-management-setup-vpn-select]
 
-Klicken Sie unten auf dem Bildschirm auf **Speichern**. Während der Aktualisierung können Sie über das Azure-Verwaltungsportal keine weiteren Vorgänge für den API Management-Dienst durchführen. Der Dienstproxy bleibt verfügbar, und Laufzeitaufrufe sollten nicht beeinträchtigt werden.
+Klicken Sie unten auf dem Bildschirm auf **Speichern**. Während der Aktualisierung können Sie über das Azure-Verwaltungsportal keine weiteren Vorgänge für den API Management-Dienst durchführen. Das Dienstgateway bleibt verfügbar, und Laufzeitaufrufe sollten nicht beeinträchtigt werden.
 
-Beachten Sie, dass sich die VIP-Adresse des Proxys bei jeder Aktivierung oder Deaktivierung des VPN ändert.
+Beachten Sie, dass sich die VIP-Adresse des Gateways bei jeder Aktivierung oder Deaktivierung des VPN ändert.
 
 ## <a name="connect-vpn"> </a>Herstellen einer Verbindung mit einem Webdienst hinter dem VPN
 
@@ -67,4 +67,4 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management]: api-management-howto-api-inspector.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

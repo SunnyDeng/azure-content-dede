@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Stichproben, Filtern und Verarbeiten im Application Insights-SDK" 
+	pageTitle="Stichprobenerstellung, Filterung und Vorverarbeitung im Application Insights-SDK" 
 	description="Schreiben Sie Plug-Ins für das SDK, um die Telemetriedaten vor dem Senden der an das Application Insights-Portal zu filtern, aus diesen Stichproben zu erstellen oder ihnen Eigenschaften hinzuzufügen." 
 	services="application-insights"
     documentationCenter="" 
@@ -15,7 +15,7 @@
 	ms.date="11/04/2015" 
 	ms.author="awills"/>
 
-# Erstellen von Stichproben, Filtern und Verarbeiten von Telemetriedaten im Application Insights-SDK
+# Stichprobenerstellung, Filterung und Vorverarbeitung von Telemetriedaten im Application Insights-SDK
 
 *Application Insights befindet sich in der Vorschau.*
 
@@ -30,7 +30,7 @@ Derzeit sind diese Features für das ASP.NET-SDK verfügbar.
 
 Vorbereitung:
 
-* Installieren Sie das [Application Insights-SDK](app-insights-start-monitoring-app-health-usage.md) in Ihrer App. Installieren Sie die NuGet-Pakete manuell, und wählen Sie die neueste *Vorabversion* aus.
+* Installieren Sie das [Application Insights SDK](app-insights-start-monitoring-app-health-usage.md) in Ihrer App. Installieren Sie die NuGet-Pakete manuell, und wählen Sie die neueste *Vorabversion* aus.
 * Probieren Sie die [Application Insights-API](app-insights-api-custom-events-metrics.md) aus. 
 
 
@@ -58,7 +58,7 @@ Hierbei handelt es sich um die empfohlene Methode zum Reduzieren des Datenverkeh
 ```
 
 
-Fügen Sie bei Webseiten, um Stichproben der Daten zu erstellen, eine zusätzliche Zeile in den eingefügten [Application Insights-Codeausschnitt](app-insights-javascript.md) ein (i. d. R. auf einer Masterseite wie etwa „\_Layout.cshtml“):
+Fügen Sie zur Stichprobenerstellung für Webseitendaten eine zusätzliche Zeile in den eingefügten [Application Insights-Codeausschnitt](app-insights-javascript.md) (üblicherweise auf einer Masterseite wie etwa „\_Layout.cshtml“) ein:
 
 *JavaScript*
 
@@ -72,26 +72,26 @@ Fügen Sie bei Webseiten, um Stichproben der Daten zu erstellen, eine zusätzlic
 	}); 
 ```
 
-* Legen Sie einen Prozentsatz fest (in diesen Beispielen „10“), der „100/N“ entspricht. Dabei steht N für eine Ganzzahl. Beispiel: 50 (=100/2), 33,33 (=100/3), 25 (=100/4), 10 (=100/5) 
+* Legen Sie einen Prozentsatz fest (in diesen Beispielen „10“), der „100/N“ entspricht. Dabei steht N für eine Ganzzahl. Beispiele: 50 (=100/2), 33,33 (=100/3), 25 (=100/4) oder 10 (=100/10). 
 * Bei großen Datenmengen können Sie sehr niedrige Stichprobenraten wählen, z. B. 0,1.
 * Beim Festlegen des Samplings für die Webseite und den Server müssen Sie für beide Seiten denselben Prozentwert für das Sampling angeben.
 * Server- und Clientseite werden zur Auswahl der entsprechenden Elemente koordiniert.
 
-[Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
+[Erfahren Sie mehr über Sampling](app-insights-sampling.md).
 
 ## Filterung
 
 Diese Technik bietet Ihnen eine bessere Kontrolle über die Daten aus dem Telemetriedatenstrom, die ein- oder ausgeschlossen werden. Sie können sie zusammen mit der Stichprobenerstellung oder einzeln verwenden.
 
-Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und registrieren ihn beim SDK. Alle Telemetriedaten durchlaufen den Prozessor. Sie können dann auswählen, diese aus dem Datenstrom zu verwerfen, oder Eigenschaften hinzufügen. Dies schließt Telemetriedaten aus Standardmodulen wie etwa dem HTTP-Anforderungssammler und der Abhängigkeitserfassung ein, aber auch von Ihnen erstellte Telemetriedaten. Sie können z. B. Telemetriedaten zu Anforderungen von Robots oder erfolgreiche Abhängigkeitsaufrufe herausfiltern.
+Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und registrieren ihn beim SDK. Alle Telemetriedaten durchlaufen den Prozessor. Sie können dann auswählen, diese aus dem Datenstrom zu verwerfen, oder Eigenschaften hinzufügen. Dies schließt Telemetriedaten aus Standardmodulen wie etwa dem HTTP-Anforderungssammler und der Abhängigkeitserfassung sowie von Ihnen erstellte Telemetriedaten ein. Sie können z. B. Telemetriedaten zu Anforderungen von Robots oder erfolgreiche Abhängigkeitsaufrufe herausfiltern.
 
 > [AZURE.WARNING]Die Filterung der vom SDK gesendeten Telemetriedaten mithilfe von Prozessoren kann die im Portal angezeigten Statistiken verfälschen und die Nachverfolgung verwandter Elemente erschweren.
 > 
-> Verwenden Sie stattdessen die [Stichprobenerstellung](#sampling).
+> Verwenden Sie stattdessen [Sampling](#sampling).
 
 ### Erstellen eines Telemetrieprozessors
 
-1. Aktualisieren Sie das Application Insights-SDK auf die neueste Version (2.0.0-beta2 oder höher). Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie „NuGet-Pakete verwalten“ aus. Aktivieren Sie im NuGet-Paket-Manager **Vorabversion einschließen** aus, und suchen Sie nach „Microsoft.ApplicationInsights.Web“.
+1. Aktualisieren Sie das Application Insights-SDK auf die neueste Version (2.0.0-beta2 oder höher). Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie „NuGet-Pakete verwalten“ aus. Wählen Sie im NuGet-Paket-Manager **Vorabversion einschließen** aus, und suchen Sie nach „Microsoft.ApplicationInsights.Web“.
 
 1. Implementieren Sie zum Erstellen eines Filters „ITelemetryProcessor“. Hierbei handelt es sich um einen weiteren Erweiterungspunkt wie Telemetriemodul, Telemetrieinitiliasierer und Telemetriekanal.
 
@@ -142,7 +142,7 @@ Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und reg
     
 
     ```
-2. Fügen Sie dies in „ApplicationInsights.config“ ein: 
+2. Fügen Sie Folgendes in „ApplicationInsights.config“ ein: 
 
 ```XML
 
@@ -172,7 +172,7 @@ Sie können durch die Bereitstellung von öffentlich benannten Eigenschaften in 
     // If you have more processors:
     builder.Use((next) => new AnotherProcessor(next));
 
-    TelemetryConfiguration.Active.TelemetryChannel = builder.Build();
+    builder.Build();
 
     ```
 
@@ -409,4 +409,4 @@ Sie können beliebig viele Initialisierer hinzufügen.
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

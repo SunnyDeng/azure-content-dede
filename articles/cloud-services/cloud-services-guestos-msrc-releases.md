@@ -13,12 +13,28 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="10/18/2015"
+   ms.date="11/13/2015"
    ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystem 
 
 Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MSRC), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
+
+## Gastbetriebssystem November
+
+| Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-112 | [3104517] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-114 | [3100213] | Sicherheitsupdate für Windows Journal, um Remotecodeausführung zu beheben | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-115 | [3105864] | Sicherheitsupdate für Microsoft Windows, um Remotecodeausführung zu beheben | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-117 | [3101722] | Sicherheitsupdate für NDIS, um Erhöhung von Berechtigungen zu beheben | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-118 | [3104507] | Sicherheitsupdates für .NET Framework, um Erhöhung von Berechtigungen zu beheben | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-119 | [3104521] | Sicherheitsupdate für Windows, um Erhöhung von Berechtigungen zu beheben | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-120 | [3102939] | Sicherheitsupdate für IPSec, um Denial-of-Service zu beheben | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-121 | [3081320] | Sicherheitsupdate für SChannel, um Spoofing zu verhindern | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| MS15-122 | [3105256] | Sicherheitsupdate für Kerberos, um Umgehung der Sicherheitsfunktion zu beheben. | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+| Microsoft-Sicherheitsempfehlung | [3097966] | Versehentlich offengelegte digitale Zertifikate können spoofing | 4\.26, 3.33, 2.45 | 10\. November 2015 |
+
 
 ## Gastbetriebssystem Oktober
 
@@ -182,6 +198,16 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 | – | [2999802][2999802] | In Windows werden durchgezogene Linien statt gepunktete Linien gedruckt | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 | – | [2896881][2896881] | Lange Anmeldezeit bei der Verwendung des VBScript-Befehls "AddPrinterConnection" zum Zuordnen von Druckern zu Benutzern während des Anmeldeprozesses in Windows | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 
+[3104517]: http://support.microsoft.com/kb/3104517
+[3100213]: http://support.microsoft.com/kb/3100213
+[3105864]: http://support.microsoft.com/kb/3105864
+[3101722]: http://support.microsoft.com/kb/3101722
+[3104507]: http://support.microsoft.com/kb/3104507
+[3104521]: http://support.microsoft.com/kb/3104521
+[3102939]: http://support.microsoft.com/kb/3102939
+[3081320]: http://support.microsoft.com/kb/3081320
+[3105256]: http://support.microsoft.com/kb/3105256
+[3097966]: http://support.microsoft.com/kb/3097966
 
 [3096441]: http://support.microsoft.com/kb/3096441
 [3089659]: http://support.microsoft.com/kb/3089659
@@ -305,4 +331,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/10/2015" 
 	ms.author="glenga"/>
 
 
@@ -44,7 +44,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 &nbsp;&nbsp;7. Öffnen Sie die gemeinsam genutzte Codedatei "App.xaml.cs". Beachten Sie den Aufruf der neuen Methode **UploadChannel**, der dem Ereignishandler **OnLaunched**hinzugefügt wurde. Dies stellt sicher, dass versucht wird, das Gerät zu registrieren, sobald die App gestartet wird.
 
-&nbsp;&nbsp;8. Führen Sie die vorherigen Schritte erneut aus, um dem Windows Phone Store-App-Projekt Pushbenachrichtigungen hinzuzufügen, und entfernen Sie dann in der gemeinsam genutzten Datei "App.xaml.cs" den zusätzlichen Aufruf von **UploadChannel** sowie den restlichen bedingten Wrapper `#if...#endif`. In beiden Projekten kann nun ein einziger Aufruf von **UploadChannel** verwendet werden.
+&nbsp;&nbsp;8. Führen Sie die vorherigen Schritte erneut aus, um dem Windows Phone Store-App-Projekt Pushbenachrichtigungen hinzuzufügen, und entfernen Sie dann in der gemeinsam genutzten Datei "App.xaml.cs" den zusätzlichen Aufruf von **Mobile Service Client**, **UploadChannel** sowie den restlichen bedingten `#if...#endif`-Wrapper. In beiden Projekten kann nun ein einziger Aufruf von **UploadChannel** verwendet werden.
 
 &nbsp;&nbsp;Sie können den generierten Code auch vereinfachen, indem Sie die in `#if...#endif` umschlossenen [MobileServiceClient]-Definitionen zu einer einzigen nicht umschlossenen Definition zusammenfassen, die von beiden Versionen der App verwendet wird.
 
@@ -100,4 +100,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

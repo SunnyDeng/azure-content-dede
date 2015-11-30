@@ -643,10 +643,10 @@ Klicken Sie in Visual Studio im Menü **Erstellen** auf **Projektmappe erstellen
 
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Service Bus-Clientanwendung und den dazugehörigen Dienst mit den Service Bus-Brokermessagingfunktionen erstellen. Ein ähnliches Lernprogramm, in dem die [Relaymessagingfunktionen](service-bus-messaging-overview.md/#Relayed-messaging) von Service Bus beschrieben werden, finden Sie unter [Lernprogramm zu Service Bus-Relaymessaging](service-bus-relay-tutorial.md).
 
-Weitere Informationen zum Service Bus finden Sie in den unten angegebenen Themen.
+Weitere Informationen zu [Service Bus](https://azure.microsoft.com/services/service-bus/) finden Sie in den folgenden Themen.
 
 - [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

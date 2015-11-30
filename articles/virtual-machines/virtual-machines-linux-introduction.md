@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/11/2015"
+	ms.date="11/13/2015"
 	ms.author="szark"/>
 
 #Einführung in Linux in Azure
@@ -93,10 +93,10 @@ An jeden virtuellen Computer ist ein temporärer lokaler *Ressourcendatenträger
 Unter Linux wird der Ressourcendatenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt.
 
 
-	>[AZURE.NOTE] Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und möglicherweise gelöscht oder neu formatiert wird, wenn der virtuelle Computer neu gestartet wird.
+>[AZURE.NOTE]Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und geleert und neu formatiert werden kann, wenn der virtuelle Computer neu gestartet wird.
 
 Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dieser Vorgang wird Schritt für Schritt im Lernprogramm [Anfügen eines Datenträgers an einen virtuellen Computer](virtual-machines-linux-how-to-attach-disk.md) beschrieben.
 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->

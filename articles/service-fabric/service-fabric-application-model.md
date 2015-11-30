@@ -135,6 +135,8 @@ Wie bei Dienstmanifesten sind **Version**-Attribute unstrukturierte Zeichenfolge
 
 > [AZURE.NOTE]Ein Anwendungsmanifest kann mehrere Dienstmanifestimporte und Standarddienste enthalten. Jedes Dienstmanifest kann unabhängig mit Versionsangaben versehen werden.
 
+Weitere Informationen zum Verwalten verschiedener Anwendungs- und Dienstparameter für einzelne Umgebungen finden Sie unter [Verwalten von Anwendungsparametern für mehrere Umgebungen](service-fabric-manage-multiple-environment-app-configuration.md).
+
 <!--
 For more information about other features supported by application manifests, refer to the following articles:
 
@@ -169,6 +171,12 @@ D:\TEMP\MYAPPLICATIONTYPE
 ~~~
 
 Die Ordner werden nach den **Name**-Attributen der jeweils zugehörigen Elemente benannt. Wenn das Dienstmanifest beispielsweise zwei Codepakete mit dem Namen **MyCodeA** und **MyCodeB** enthält, müssen zwei Ordner mit denselben Namen vorhanden sein, die die jeweils erforderlichen Binärdateien für jedes Codepaket enthalten.
+
+### Verwenden von SetupEntryPoint
+In einem typischen Szenario für die Verwendung von „SetupEntryPoint“ müssen Sie vor dem Starten des Diensts eine Aktion durchführen oder einen Vorgang ausführen, für den höhere Berechtigungen erforderlich sind. Zu den Beispielen zählen das Einrichten und Initialisieren von Umgebungsvariablen, die die ausführbare Datei des Diensts unter Umständen verwendet. Dazu gehören nicht nur ausführbare Dateien, die mit den Service Fabric-Programmiermodellen geschrieben wurden, sondern auch EXE-Dateien, die direkt verwendet werden. Wenn Sie beispielsweise eine nodejs-Anwendung bereitstellen, müssen für die Datei „npm.exe“ Umgebungsvarianten konfiguriert werden. - ACL: eine Ressource (etwa ein Zertifikat)
+
+Anhand der folgenden Schritte können Sie sicherstellen, dass Ihr Code (exe), Ihre Batchdatei oder PowerShell ordnungsgemäß in einem Visual Studio-Projekt gepackt wird.
+
 
 ### Erstellen eines Pakets mit Visual Studio
 
@@ -221,15 +229,11 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 
 ## Nächste Schritte
 
-[Deploy an application][10] (in englischer Sprache)
-
-<!--Image references-->
-[1]: ./media/service-fabric-application-model/application-model.jpg
-[2]: ./media/service-fabric-application-model/vs-package-command.png
-[Image1]: media/service-fabric-application-model/Service1.jpg
-[Image2]: media/service-fabric-application-model/Service2.jpg
+[Bereitstellen und Entfernen von Anwendungen][10] [Verwalten von Anwendungsparametern für mehrere Umgebungen][11] [RunAs: Ausführen einer Service Fabric-Anwendung mit verschiedenen Sicherheitsberechtigungen][12] <!--Image references--> [1]: ./media/service-fabric-application-model/application-model.jpg [2]: ./media/service-fabric-application-model/vs-package-command.png [Image1]: media/service-fabric-application-model/Service1.jpg [Image2]: media/service-fabric-application-model/Service2.jpg
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
 [10]: service-fabric-deploy-remove-applications.md
+[11]: service-fabric-manage-multiple-environment-app-configuration.md
+[12]: service-fabric-application-runas-security.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/28/2015"
+   ms.date="11/13/2015"
    ms.author="bwren;sngun"/>
 
 # Starten eines Runbooks in Azure Automation
@@ -93,7 +93,7 @@ Die folgende Tabelle hilft Ihnen dabei herauszufinden, welche Methode zum Starte
   </td>
  </tr>
  <tr>
-  <td><a href="http://msdn.microsoft.com/library/azure/dn857355.aspx">Über ein anderes Runbook</a></td>
+  <td><a href="http://azure.microsoft.com/documentation/articles/automation-child-runbooks/">Über ein anderes Runbook</a></td>
   <td>
    <ul>
     <li>Verwenden eines Runbooks als Aktivität in einem anderen Runbook.</li>
@@ -150,7 +150,7 @@ Wenn das Runbook Parameter erfordert, müssen Sie diese als [Hashtabelle](http:/
 
 ## Runbookparameter
 
-Wenn Sie ein Runbook über das Azure-Verwaltungsportal oder mit Windows PowerShell starten, wird die Anweisung über den Azure Automation-Webdienst gesendet. Dieser Dienst unterstützt keine Parameter mit komplexen Datentypen. Wenn Sie einen Wert für einen komplexen Parameter bereitstellen müssen, müssen Sie diesen inline aus einem anderen Runbook aufrufen, wie im Artikel [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx)beschrieben.
+Wenn Sie ein Runbook über das Azure-Verwaltungsportal oder mit Windows PowerShell starten, wird die Anweisung über den Azure Automation-Webdienst gesendet. Dieser Dienst unterstützt keine Parameter mit komplexen Datentypen. Wenn Sie einen Wert für einen komplexen Parameter bereitstellen müssen, müssen Sie diesen inline aus einem anderen Runbook aufrufen, wie unter [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) beschrieben.
 
 Der Azure Automation-Webdienst bietet spezielle Funktionen für Parameter, die bestimmte Datentypen verwenden, wie in den folgenden Abschnitten beschrieben.
 
@@ -216,7 +216,7 @@ Dadurch wird die folgende Ausgabe zurückgegeben.
 
 ### Anmeldeinformationen
 
-Wenn der Parameter den Datentyp **PSCredential** aufweist, können Sie den Namen eines Azure Automation-[Anmeldeinformationsobjekts](http://msdn.microsoft.com/library/azure/dn940015.aspx) bereitstellen. Das Runbook ruft die Anmeldeinformationen mit dem von Ihnen angegebenen Namen ab.
+Wenn der Parameter den Datentyp **PSCredential** aufweist, können Sie den Namen eines Azure Automation-[Anmeldeinformationsobjekts](automation-credentials.md) bereitstellen. Das Runbook ruft die Anmeldeinformationen mit dem von Ihnen angegebenen Namen ab.
 
 Betrachten Sie das folgende Testrunbook, das einen Parameter namens "credential" akzeptiert.
 
@@ -238,6 +238,6 @@ Wenn der Benutzernamen in den Anmeldeinformationen *jsmith* lautet, erhalten Sie
 
 ## Verwandte Artikel
 
-- [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx) 
+- [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

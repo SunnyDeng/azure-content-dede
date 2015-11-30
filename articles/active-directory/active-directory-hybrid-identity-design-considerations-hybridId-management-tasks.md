@@ -61,7 +61,7 @@ Eines der Ziele eines Identitäts-Managers besteht darin, alle Identitätsanbiet
 [Ermitteln der Strategie für die Einführung der Hybrid-Identitätsverwaltung](active-directory-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md)
 
 
-## Siehe auch
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+## Weitere Informationen
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

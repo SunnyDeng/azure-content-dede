@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="11/18/2015"
 	ms.author="genli"/>
 
 # Erwerben oder Registrieren eines Azure-Abonnements
@@ -61,4 +61,4 @@ Befolgen Sie diese Schritte zum Aktivieren Ihres Abonnements, wenn Sie Azure in 
 2. Geben Sie den Product Key ein, und überprüfen Sie dann die Vereinbarungsoption.</br>![OSA-SCHLÜSSEL](./media/billing-buy-sign-up-azure-subscription/OSAkey.png)
 3. Wählen Sie **Aktivieren** aus.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

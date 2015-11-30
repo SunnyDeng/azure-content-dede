@@ -13,19 +13,37 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/06/2015"
+   ms.date="11/20/2015"
    ms.author="maroche"/>
 
 # Versionshinweise für Azure Data Catalog
 
+## Hinweise zur Azure Data Catalog-Version vom 20. November 2015
 
-## Hinweise für die Azure Data Catalog-Version vom 6. November 2015
+### Öffnen von Datenquellen in Power BI Desktop
+
+Bei Verwendung der Option „Open in Power BI Desktop“ im Portal **Azure Data Catalog** tritt in Power BI Desktop unter Umständen eines von zwei Problemen auf:
+
+- Es wird ein Dialogfeld mit dem Titel „Dokument konnte nicht geöffnet werden“ angezeigt.
+- Power BI Desktop wird geöffnet, aber die Datei scheint leer zu sein.
+
+In beiden Fällen lässt sich das Problem durch Herunterladen und Installieren der neuesten Version von Power BI Desktop von [PowerBI.com](https://powerbi.com) beheben.
+
+## Hinweise zur Azure Data Catalog-Version vom 13. November 2015
+
+### Registrieren und Herstellen einer Verbindung mit Teradata
+
+Beim Herstellen einer Verbindung mit Teradata-Datenquellen müssen Benutzer den passenden Teradata-ODBC-Treiber für die verwendete Software (32 Bit oder 64 Bit) installieren.
+
+Zum Zeitpunkt dieser ADC-Veröffentlichung ist der neueste [Teradata-ODBC-Treiber für Windows (Version 15.10)](http://downloads.teradata.com/download/connectivity/odbc-driver/windows) mit Office 2013, aber nicht mit Office 2016 kompatibel.
+
+## Hinweise zur Azure Data Catalog-Version vom 6. November 2015
 
 ### Beim Start des Tools für die Datenquellenregistrierung können Fehler auftreten
 
-Beim Starten des Tools **Azure Data Catalog** für die Datenquellenregistrierung vom **Azure Data Catalog-Portal** aus erhalten Benutzer, die bereits eine ältere Version des Tools installiert haben, möglicherweise diese Meldung: "Die Anwendung kann nicht gestartet werden. Wenden Sie sich an den Hersteller der Anwendung."
+Wenn Benutzer, die bereits eine ältere Version des Datenquellenregistrierungs-Tools von **Azure Data Catalog** installiert haben, das Tool über das Portal **Azure Data Catalog** starten, erscheint unter Umständen folgende Meldung: „Die Anwendung kann nicht gestartet werden. Wenden Sie sich an den Hersteller der Anwendung.“
 
-Benutzer, die diese Nachricht erhalten, sollten in der Windows-Systemsteuerung die vorhandene Anwendung "Azure Data Catalog" entfernen, und das Tool anschließend erneut vom **Azure Data Catalog-Portal** aus starten.
+Benutzer, die diese Meldung erhalten, müssen in der Windows-Systemsteuerung die vorhandene Anwendung „Azure Data Catalog“ entfernen und das Tool anschließend erneut über das Portal **Azure Data Catalog** starten.
 
 ## Hinweise für die Azure Data Catalog-Version vom 13. Juli 2015
 
@@ -44,7 +62,7 @@ Die Unterstützung von SQL Server Reporting Services (SSRS)-Datenquellen ist in
 
 ### Öffnen von Datenassets in Excel
 
-Beim Öffnen von Datenassets aus dem **Azure Data Catalog-Portal** in Microsoft Excel wird möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
+Beim Öffnen von Datenressourcen aus dem Portal **Azure Data Catalog** in Microsoft Excel wird Benutzern unter Umständen ein Dialogfeld mit einem Sicherheitshinweis für Microsoft Excel angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
 
 Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/de-DE/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
 
@@ -78,4 +96,4 @@ Weitere Informationen finden Sie unter [Konfigurieren von Authentifizierungsrich
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

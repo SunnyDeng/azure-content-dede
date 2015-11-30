@@ -31,7 +31,7 @@ Das Erstellen von Stichproben ist gegenwärtig für das ASP.NET SDK oder [belieb
 
 ### ASP.NET-Server
 
-1. Aktualisieren Sie die NuGet-Pakete Ihres Projekts auf die neueste *Vorabversion* von Application Insights. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „Manage NuGet Packages“ aus, aktivieren Sie **Include prerelease**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“. 
+1. Aktualisieren Sie die NuGet-Pakete Ihres Projekts auf die neueste *Vorabversion* von Application Insights. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „NuGet-Pakete verwalten“ aus, aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“. 
 
 2. Fügen Sie in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) diesen Codeausschnitt hinzu:
 
@@ -55,7 +55,7 @@ Das Erstellen von Stichproben ist gegenwärtig für das ASP.NET SDK oder [belieb
 
 Sie können Webseiten für die Stichprobenerstellung auf einem beliebigen Server konfigurieren. Für ASP.NET-Server muss sowohl die Client- als auch die Serverseite konfiguriert werden.
 
-Ändern Sie beim [Konfigurieren der Webseiten für Application Insights](app-insights-javascript.md) den Codeausschnitt, den Sie im Application Insights-Portal erhalten. (In ASP.NET befindet sich dieser Ausschnitt in „\_Layout.cshtml“.) Fügen Sie vor dem Instrumentierungsschlüssel eine Zeile wie `samplingPercentage: 10,` ein:
+Ändern Sie beim [Konfigurieren der Webseiten für Application Insights](app-insights-javascript.md) den Codeausschnitt, den Sie vom Application Insights-Portal erhalten. (In ASP.NET befindet sich dieser Ausschnitt in „\_Layout.cshtml“.) Fügen Sie vor dem Instrumentierungsschlüssel eine Zeile wie `samplingPercentage: 10,` ein:
 
     <script>
 	var appInsights= ... 
@@ -113,7 +113,7 @@ Aus Anwendungssicht ist die Erstellung von Stichproben ein Feature des Applicati
 
 Das SDK entscheidet, welche Telemetrieelemente verworfen und welche beibehalten werden. Diese Entscheidung im Hinblick auf die Stichprobenerstellung wird basierend auf verschiedenen Regeln getroffen, mit denen sichergestellt wird, dass alle zusammenhängenden Datenpunkte intakt bleiben. Dadurch sind die in Application Insights durchgeführten Diagnosen auch bei einer geringeren Datenmenge zuverlässig und ermöglichen es Ihnen, die erforderlichen Maßnahmen zu ergreifen. Wenn Ihre App beispielsweise zusätzliche Telemetrieelemente für eine Anforderung sendet, bei der ein Fehler aufgetreten ist (z. B. Ausnahmen und Ablaufverfolgungen, die für diese Anforderung protokolliert wurden), werden diese Anforderung und andere Telemetriedaten bei der Stichprobenerstellung nicht getrennt. Die Daten werden entweder vollständig beibehalten oder vollständig verworfen. Wenn Sie die Anforderungsdetails in Application Insights anzeigen, wird die Anforderung folglich immer mit den zugehörigen Telemetrieelementen angezeigt.
 
-Bei Anwendungen, in denen Benutzer definiert sind (also die meisten typischen Webanwendungen), basiert die Entscheidung im Zusammenhang mit der Stichprobenerstellung auf dem Hash der Benutzer-ID. Das heißt, dass die Telemetriedaten für einen bestimmten Benutzer entweder vollständig beibehalten oder vollständig verworfen werden. Bei Anwendungen, in denen keine Benutzer definiert sind (z. B. Webdienste), basiert die Entscheidung bezüglich der Stichprobenerstellung auf der Vorgangs-ID der Anforderung. Für Telemetrieelemente, für die weder ein Benutzer noch eine Vorgangs-ID festgelegt wurde (z. B.Telemetrieelemente aus asynchronen Threads ohne HTTP-Kontext), wird bei der Stichprobenerstellung ein Prozentsatz von Telemetrieelementen der einzelnen Typen erfasst.
+Bei Anwendungen, in denen Benutzer definiert sind (also die meisten typischen Webanwendungen), basiert die Entscheidung im Zusammenhang mit der Stichprobenerstellung auf dem Hash der Benutzer-ID. Das heißt, dass die Telemetriedaten für einen bestimmten Benutzer entweder vollständig beibehalten oder vollständig verworfen werden. Bei Anwendungen, in denen keine Benutzer definiert sind (z. B. Webdienste), basiert die Entscheidung bezüglich der Stichprobenerstellung auf der Vorgangs-ID der Anforderung. Für Telemetrieelemente, für die weder ein Benutzer noch eine Vorgangs-ID festgelegt wurde (z. B. Telemetrieelemente aus asynchronen Threads ohne HTTP-Kontext), wird bei der Stichprobenerstellung ein Prozentsatz von Telemetrieelementen der einzelnen Typen erfasst.
 
 Wenn Ihnen die Telemetriedaten angezeigt werden, passt der Application Insights-Dienst die Metriken basierend auf dem Prozentsatz der Stichprobenerstellung an, der bei der Erfassung der Daten verwendet wurde. Auf diese Weise werden die fehlenden Datenpunkte kompensiert. Bei Betrachtung der Telemetriedaten in Application Insights werden folglich statistisch korrekte Annäherungen angezeigt, die den reellen Zahlen sehr nahe kommen.
 
@@ -136,7 +136,7 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 *Weshalb erfolgt die Stichprobenerstellung nicht einfach nach dem Prinzip „X Prozent jedes Telemetrietyps erfassen“?*
 
- *  Wenngleich dieser Ansatz an die Stichprobenerstellung eine hohe Genauigkeit bei metrischen Annäherungen bietet, bestünde in diesem Fall keine Möglichkeit, Diagnosedaten für einzelne Benutzer, Sitzungen und Anforderungen in Zusammenhang zu bringen – ein äußerst wichtiger Aspekt bei der Durchführung von Diagnosen. Aus diesem Grund sind „alle Telemetrieelemente für X Prozent der App-Benutzer“ oder „alle Telemetriedaten für X Prozent der App-Anforderungen“ besser geeignete Ansätze an die Stichprobenerstellung. Für Telemetrieelemente, die nicht mit den Anforderungen verknüpft sind (z. B. die asychrone Hintergrundverarbeitung), wird auf den Ansatz „X Prozent aller Elemente für jeden Telemetrietyp erfassen“ zurückgegriffen. 
+ *  Wenngleich dieser Ansatz an die Stichprobenerstellung eine hohe Genauigkeit bei metrischen Annäherungen bietet, bestünde in diesem Fall keine Möglichkeit, Diagnosedaten für einzelne Benutzer, Sitzungen und Anforderungen in Zusammenhang zu bringen – ein äußerst wichtiger Aspekt bei der Durchführung von Diagnosen. Aus diesem Grund sind „alle Telemetrieelemente für X Prozent der App-Benutzer“ oder „alle Telemetriedaten für X Prozent der App-Anforderungen“ besser geeignete Ansätze an die Stichprobenerstellung. Für Telemetrieelemente, die nicht mit den Anforderungen verknüpft sind (z. B. die asynchrone Hintergrundverarbeitung), wird auf den Ansatz „X Prozent aller Elemente für jeden Telemetrietyp erfassen“ zurückgegriffen. 
 
 *Kann der Prozentsatz für die Stichprobenerstellung im Verlauf der Zeit geändert werden?*
 
@@ -144,7 +144,7 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 *Wie kann ich den idealen Prozentsatz für die Stichprobenerstellung für meine App ermitteln?*
 
-* Aktuell können Sie diesbezüglich lediglich Vermutungen anstellen. Analysieren Sie Ihre aktuelle Nutzung der Telemetriedaten in Application Insights, beobachten Sie die verworfenen Daten im Zusammenhang mit der Drosselung, und schätzen Sie die Menge der erfassten Telemetriedaten. In Kombination mit dem ausgewählten Tarif geben diese drei Faktoren Auskunft darüber, um wie viel Sie die Menge der erfassten Telemetriedaten gegebenenfalls reduzieren sollten. Durch eine Änderung der Menge an Telemetriedaten kann ein optimal konfigurierter Prozentsatz für die Stichprobenerfassung jedoch unwirksam werden (z. B. durch die Steigerung der Benutzeranzahl). Sobald die anpassbare Stichprobenerstellung implementiert ist, wird basierend auf der beobachten Menge an Telemetriedaten automatisch der ideale Prozentsatz für die Stichprobenerstellung gewählt.
+* Aktuell können Sie diesbezüglich lediglich Vermutungen anstellen. Analysieren Sie Ihre aktuelle Nutzung der Telemetriedaten in Application Insights, beobachten Sie die verworfenen Daten im Zusammenhang mit der Drosselung, und schätzen Sie die Menge der erfassten Telemetriedaten. In Kombination mit dem ausgewählten Tarif geben diese drei Faktoren Auskunft darüber, um wie viel Sie die Menge der erfassten Telemetriedaten gegebenenfalls reduzieren sollten. Durch eine Änderung der Menge an Telemetriedaten kann ein optimal konfigurierter Prozentsatz für die Stichprobenerfassung jedoch unwirksam werden (z. B. durch die Steigerung der Benutzeranzahl). Sobald die anpassbare Stichprobenerstellung implementiert ist, wird basierend auf der beobachteten Menge an Telemetriedaten automatisch der ideale Prozentsatz für die Stichprobenerstellung gewählt.
 
 *Was geschieht, wenn ich einen zu geringen Prozentsatz für die Stichprobenerstellung konfiguriere?*
 
@@ -164,4 +164,4 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 >>>>>>> 36f8b905a3f60271ee6dc3a17c3ca431937287dc
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

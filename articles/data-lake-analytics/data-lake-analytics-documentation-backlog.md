@@ -24,17 +24,18 @@ Wir setzen unsere Bemühungen fort, im Verlauf der Entwicklung des Diensts neue 
 
 Bereich |Thema | Priority | Status | Zugewiesen zu | Angefordert von 
 ------------- | ------------- | -------------- | -------------- | --------------- | --------------
-U-SQL | Verteilte Abfragen | 1 | Ausgesetzt | [@edmacauley](https://github.com/edmacauley) | 
+U-SQL | Verteilte Abfragen | 1 | Ausgesetzt | [@edmacauley](https://github.com/edmacauley) |
+U-SQL | Verschieben von Daten zwischen WASB und ADLS | 1 | Ausstehend | TBD | Ye Xing (ml)
 U-SQL | JSON-Verarbeitung | 2 | Ausstehend | [@mumian](https://github.com/mumian) | [@mwinkle](https://github.com/mwinkle)
-Service | Interaktion mit Curl | 3 |Ausstehend |[@mumian](https://github.com/mumian)
+Dienst | Interaktion mit Curl | 3 |Ausstehend |[@mumian](https://github.com/mumian)
 U-SQL | Partitionierte Tabellen |1 | In Bearbeitung | [@edmacauley](https://github.com/edmacauley) | 
 U-SQL | Leistungsoptimierung | 2 | Ausstehend | [@MikeRys](https://github.com/mikerys) | 
 U-SQL | Handbuch für Programmierer | 2 | Ausstehend | [@edmacauley](https://github.com/edmacauley) | 
 U-SQL | Erste Schritte mit U-SQL für Entwickler mit T-SQL-Erfahrung | 1 | Ausstehend | [@edmacauley](https://github.com/edmacauley) | [@MikeRys](https://github.com/mikerys)
 U-SQL | Erste Schritte mit U-SQL für Entwickler mit Hive-Erfahrung | 1 | Ausstehend | [@mumian](https://github.com/mumian)| [@MikeRys](https://github.com/mikerys)
-U-SQL | Grammatik mit Railroad-Diagrammen | 1 | In Arbeit mit [Railroad Diagram Generator](http://bottlecaps.de/rr/ui) (in englischer Sprache) | [@mwinkle](https://github.com/mwinkle) | [@mwinkle](https://github.com/mwinkle)
-Service | Sichern von Aufträgen, Daten und Tabellen in Data Lake Analytics |1| In Arbeit | [@mumian](https://github.com/mumian) | [@MikeRys](https://github.com/mikerys)
-Service | Verschieben der Auftragsausgabe an SQL Data Warehouse mithilfe von Data Factory |1 | In Arbeit | [@mumian](https://github.com/mumian) | 
+U-SQL | Grammatik mit Railroad-Diagrammen | 1 | in Arbeit mit [Railroad Diagram Generator](http://bottlecaps.de/rr/ui) (in englischer Sprache) | [@mwinkle](https://github.com/mwinkle) | [@mwinkle](https://github.com/mwinkle)
+Dienst | Sichern von Aufträgen, Daten und Tabellen in Data Lake Analytics |1| In Arbeit | [@mumian](https://github.com/mumian) | [@MikeRys](https://github.com/mikerys)
+Dienst | Verschieben der Auftragsausgabe an SQL Data Warehouse mithilfe von Data Factory |1 | In Arbeit | [@mumian](https://github.com/mumian) | 
 Tools | Verwenden des Diagnosetools | 1 | Ausstehend | [@mumian](https://github.com/mumian) | 
 
 
@@ -50,7 +51,7 @@ Service | Koordinieren der Bereitstellung von Data Lake Analytics über andere A
 Für das Senden von Feedback bezüglich des Rückstands stehen mehrere Optionen zur Verfügung:
 
 * Fügen Sie nachstehend einen Kommentar hinzu.
-* Senden Sie im [Azure-Inhaltsrepository](https://github.com/Azure/azure-content/blob/master/articles/data-lake-analytics/data-lake-analytics-documentation-backlog.md) eine Pullanforderung für dieses Dokument.
+* Senden Sie im [Azure-Inhaltsrepository](https://github.com/Azure/azure-content/blob/master/articles/data-lake-analytics/data-lake-analytics-documentation-backlog.md) eine Pull-Anforderung für dieses Dokument.
 * Senden Sie eine E-Mail an [adlafeedback at microsoft.com](mailto:adlafeedback@microsoft.com?subject=DocBacklog).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

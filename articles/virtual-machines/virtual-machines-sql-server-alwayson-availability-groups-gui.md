@@ -65,7 +65,7 @@ Sie beginnen mit einem neuen Azure-Testkonto. Nachdem Sie die Einrichtung Ihres 
 
 1. Klicken Sie, wie unten dargestellt, in der linken unteren Ecke der Seite auf die Schaltfläche **Neu**.
 
-	![Klicken Sie auf "Neu" im Portal](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665511.gif)
+	![Klicken Sie im Portal auf "Neu"](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665511.gif)
 
 1. Klicken Sie auf **Netzwerkdienste** und auf **Virtuelles Netzwerk**, und klicken Sie dann auf **Benutzerdefiniert erstellen**.
 
@@ -544,4 +544,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

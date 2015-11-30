@@ -16,9 +16,9 @@
    ms.date="10/09/2015"
    ms.author="hascipio" />
 
-# Testen Ihres VM-Angebots für Marketplace in der Stagingumgebung
+# Testen Ihres VM-Angebots für den Azure Marketplace in der Stagingumgebung
 
-In der Stagingumgebung wird Ihr Angebot in einem privaten "Sandkasten" bereitgestellt, in dem Sie seine Funktionalität vor der Bereitstellung in Marketplace testen und überprüfen können. Die SKU wird in der Stagingumgebung genau wie bei einem Kunden angezeigt, der es bereitgestellt hat. Ihr VM-Image muss für die Freigabe in der Stagingumgebung zertifiziert sein.
+In der Stagingumgebung wird Ihr Angebot in einem privaten "Sandkasten" bereitgestellt, in dem Sie seine Funktionalität vor der Bereitstellung in Marketplace testen und überprüfen können. Die SKU wird in der Stagingumgebung genau wie bei einem Kunden angezeigt, der sie bereitgestellt hat. Ihr VM-Image muss für die Freigabe in der Stagingumgebung zertifiziert sein.
 
 ## Schritt 1: Freigeben Ihres Angebot in der Stagingumgebung
 
@@ -26,24 +26,24 @@ In der Stagingumgebung wird Ihr Angebot in einem privaten "Sandkasten" bereitges
 
   ![Abbildung](media/marketplace-publishing-vm-image-test-in-staging/vm-image-push-to-staging.png)
 
-2. Korrigieren Sie etwaige Fehler oder Abweichungen, über die Sie das Veröffentlichungsportal an dieser Stelle informiert.
-3.	Geben Sie, wie im obigen Bildschirmfoto gezeigt, im Popupfeld die Liste der Azure-Abonnements an, mit denen Sie Ihr Angebot im [Azure-Vorschauportal](https://portal.azure.com) testen möchten.
-4. Melden Sie sich am [Azure-Vorschauportal](http://portal.azure.com) mit einem der Azure-Abonnements an, die im vorherigen Schritt aufgelistet wurden.
+2. Sollten Sie vom Veröffentlichungsportal auf Fehler hingewiesen werden, beheben Sie sie.
+3.	Geben Sie im Dialogfeld für den Zugriff auf Ihr in der Stagingumgebung bereitgestelltes Angebot die Azure-Abonnements an, die Sie für die Vorschau Ihres Angebots im [Azure-Vorschauportal](https://portal.azure.com) verwenden möchten.
+4. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) mit einem der Azure-Abonnements aus dem vorherigen Schritt an.
 5. Suchen Sie Ihr Angebot, und überprüfen Sie für Ihr VM-Image die folgenden Punkte:
-  1. Marketinginhalte werden im Katalog ordnungsgemäß angezeigt.
+  1. Vergewissern Sie sich, dass Marketinginhalte im Marketplace korrekt angezeigt werden.
 
       ![img-map-portal](media/marketplace-publishing-push-to-staging/pubportal-mapping-azure-portal.jpg)
 
-  2. Bereitstellung des VM-Images von A bis Z.
+  2. End-to-End-Bereitstellung des VM-Images
 
-> [AZURE.IMPORTANT]Ihr Angebot verbleibt so lange in der Stagingphase, bis Sie Microsoft über das Veröffentlichungsportal [**Veröffentlichen** > **Genehmigung für Freigabe in Produktionsumgebungen anfordern**] informieren, dass Ihr Angebot für die Veröffentlichung bereit ist. Nun sollten alle Mitarbeiter des Teams alle Eingaben noch einmal überprüfen, bevor Ihr Angebot veröffentlicht wird.
+> [AZURE.IMPORTANT]Ihr Angebot bleibt so lange in der Stagingphase, bis Sie Microsoft über das Veröffentlichungsportal [**Veröffentlichen** > **Genehmigung für Freigabe in Produktionsumgebungen anfordern**] informieren, dass Ihr Angebot für die Veröffentlichung bereit ist. Vor der Veröffentlichung Ihres Angebots sollte das gesamte Team noch einmal alles überprüfen.
 
-> Die Replikation in allen Datencentern dauert 24-48 Stunden. Nachdem die Replikation abgeschlossen ist, wird Ihr Angebot in [Azure Marketplace](http://azure.microsoft.com/marketplace) gelistet.
+> Die Replikation in allen Datencentern dauert bis zu 48 Stunden. Nach Abschluss der Replikation wird Ihr Angebot im [Azure Marketplace](http://azure.microsoft.com/marketplace) gelistet.
 
 ## Nächste Schritte
-Nun da sich Ihr Angebot in der Stagingphase befindet und Sie seine Funktionalität und seinen Marketinginhalt getestet haben, können Sie mit der letzten Phase zum Veröffentlichen Ihres Angebots fortfahren: **Schritt 4**, [Bereitstellen Ihres Angebots in Marketplace](marketplace-publishing-push-to-production.md).
+Nachdem Ihr Angebot in die Stagingphase versetzt wurde und Sie die Funktionalität und die Marketinginhalte getestet haben, können Sie zur letzten Veröffentlichungsphase übergehen: **Schritt 4**: [Bereitstellen Ihres Angebots im Marketplace](marketplace-publishing-push-to-production.md).
 
 ## Weitere Informationen
-- [Erste Schritte: Veröffentlichen eines Angebots in Azure Marketplace](marketplace-publishing-getting-started.md)
+- [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/10/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -67,7 +67,7 @@ Jetzt sind sowohl die Windows Store- als auch die Windows Phone Store-App mit de
 
 ##Aktualisieren der App zur Verwendung des mobilen Diensts
 
-In diesem Abschnitt aktualisieren Sie die universelle Windows-App, um den mobilen Dienst als Backend-Dienst für die Anwendung zu verwenden. Dazu müssen Sie lediglich die Projektdatei "MainPage.xaml.cs" im Projektordner "GetStartedWithData.Shared" anpassen.
+In diesem Abschnitt aktualisieren Sie die universelle Windows-App, um den mobilen Dienst als Backend-Dienst für die Anwendung zu verwenden. Dazu müssen Sie lediglich die Projektdatei "MainPage.cs" im Projektordner "GetStartedWithData.Shared" anpassen.
 
 [AZURE.INCLUDE [mobile-services-windows-dotnet-update-data-app](../../includes/mobile-services-windows-dotnet-update-data-app.md)]
 
@@ -111,14 +111,14 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [Erste Schritte mit der Authentifizierung]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md
 
-[Erste Schritte mit der Synchronisierung von Offlinedaten]: mobile-services-windows-store-dotnet-get-started-offline-data.md
+[Get started with offline data sync]: mobile-services-windows-store-dotnet-get-started-offline-data.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[Website mit den Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkID=510826
+[Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
   
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

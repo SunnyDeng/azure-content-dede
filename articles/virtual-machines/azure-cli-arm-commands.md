@@ -1252,18 +1252,19 @@ Erstellt eine öffentliche IP-Ressource. Sie erstellen die öffentliche IP-Resso
 
 
 Parameteroptionen:
-	-h, --help                                  output usage information
+
+	-h, --help                                   output usage information
 	-v, --verbose                                use verbose output
 	--json                                       use json output
 	-g, --resource-group <resource-group>        the name of the resource group
 	-n, --name <name>                            the name of the public ip
 	-l, --location <location>                    the location
 	-d, --domain-name-label <domain-name-label>  the domain name label.
-	Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest.
-	-a, --allocation-method <allocation-method>  die Zuordnungsmethode[Static][Dynamic]
-	-i, --idletimeout <idletimeout>              das Leerlauftimeout in Minuten
-	-f, --reverse-fqdn <reverse-fqdn>            der Reverse-FQDN
-	-t, --tags <tags>                            die Tagliste.
+	This set DNS to <domain-name-label>.<location>.cloudapp.azure.com
+	-a, --allocation-method <allocation-method>  the allocation method [Static][Dynamic]
+	-i, --idletimeout <idletimeout>              the idle timeout in minutes
+	-f, --reverse-fqdn <reverse-fqdn>            the reverse fqdn
+	-t, --tags <tags>                            the list of tags.
 	Can be multiple. In the format of "name=value".
 	Name is required and value is optional.
 	For example, -t tag1=value1;tag2
@@ -1759,4 +1760,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

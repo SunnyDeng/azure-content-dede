@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="07/14/2015"
+   ms.date="11/16/2015"
    ms.author="elfish"/>
 
 # Übersicht über die Geschäftskontinuität
@@ -71,7 +71,7 @@ Diese Funktionen werden für die zuvor beschriebenen Szenarios bereitgestellt. I
 > [AZURE.NOTE]\: Die Werte für die geschätzte Wiederherstellungszeit und RPO sind technische Ziele und dienen lediglich als Leitfaden. Sie sind nicht Bestandteil des [SLA für die SQL-Datenbank](https://azure.microsoft.com/support/legal/sla/sql-database/v1_0/).
 
 
-###Point-in-Time-Wiederherstellung
+###Zeitpunktwiederherstellung
 
 Mit der Zeitpunktwiederherstellung können Sie die Datenbank in den Zustand zu einem früheren Zeitpunkt wiederherstellen. Dazu werden Datenbanksicherungen, inkrementelle Sicherungen und Transaktionsprotokollsicherungen verwendet, die der Dienst automatisch für jede Benutzerdatenbank verwaltet. Diese Funktion steht für alle Dienstebenen zur Verfügung. Bei Basic können Sie 7 Tage wiederherstellen, bei Standard 14 Tage und bei Premium 35 Tage. Weitere Informationen zum Verwenden der Zeitpunktwiederherstellung finden Sie unter [Wiederherstellen nach Benutzerfehlern](sql-database-user-error-recovery.md).
 
@@ -91,4 +91,4 @@ Die aktive Georeplikation ist für Premium-Datenbanken verfügbar. Sie wurde fü
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

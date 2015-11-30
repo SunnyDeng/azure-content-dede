@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="07/14/2015"
+   ms.date="11/16/2015"
    ms.author="elfish"/>
 
 # Häufig gestellte Fragen zur Geschäftskontinuität
@@ -48,7 +48,7 @@ Verwenden Sie für die Wiederherstellung nach Ausfällen [Get Recoverable Databa
 
 ## 7\. Wie kann ich eine Massenwiederherstellung von Datenbanken unter meinem Server durchführen?
 
-Es gibt keine integrierte Funktion für Massenwiederherstellungen. Sie können das Skript [Azure SQL Database: Full Server Recovery](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666) zum Ausführen dieser Aufgabe verwenden.
+Es gibt keine integrierte Funktion für Massenwiederherstellungen. Das Skript [Azure SQL-Datenbank: Vollständige Serverwiederherstellung](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666) ist ein Beispiel für eine Möglichkeit, diese Aufgabe auszuführen.
 
 ## 8\. Was ist der Unterschied zwischen standardmäßiger Georeplikation und aktiver Georeplikation?
 
@@ -58,11 +58,6 @@ Für aktive Georeplikation können alle sekundären Datenbanken (bis zu vier sek
 
 ## 9\. Was ist die Replikationsverzögerung bei der standardmäßigen Georeplikation bzw. der aktiven Georeplikation?
 
-Die Georeplikation verwendet fortlaufende Kopien. Verwenden Sie daher die dynamische Verwaltungsansicht (DMV) [sys.dm\_continuous\_copy\_status](https://msdn.microsoft.com/library/azure/dn741329.aspx), um den Zeitpunkt der letzten Replikation und andere Informationen zu erhalten.
+Verwenden Sie die dynamische Verwaltungsansicht (DMV) [sys.dm\_geo\_replication\_link\_status](https://msdnstage.redmond.corp.microsoft.com/library/mt575504.aspx), um den Zeitpunkt der letzten Replikation, die Verzögerung der letzten Replikation und andere Informationen über den Replikationslink zu erhalten.
 
-
-
-
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

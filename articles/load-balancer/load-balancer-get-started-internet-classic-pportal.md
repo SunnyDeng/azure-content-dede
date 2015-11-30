@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff in einem klassischen Bereitstellungsmodell mit dem Vorschauportal | Microsoft Azure"
-   description="Erfahren Sie, wie Sie im Vorschauportal einen Load Balancer für den Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
+   description="Erfahren Sie, wie Sie im Vorschauportal einen Load Balancer mit Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -19,11 +19,12 @@
 
 #Erste Schritte zum Erstellen eines Load Balancers (klassisch) mit Internetzugriff im Vorschauportal
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+[AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch die [ersten Schritte zum Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager und mit PowerShell](load-balancer-get-started-internet-arm-ps.md) ausführen.
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch [erfahren, wie Sie mit dem Azure-Ressourcen-Manager einen Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps).
+
  
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -39,7 +40,7 @@ Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodel
 
 3. Wählen Sie auf dem Blatt „Zusammenfassung“ für virtuelle Computer die Option „Alle Einstellungen“.
 
-4. Klicken Sie auf „Gruppen mit Lastenausgleich“.
+4. Klicken Sie auf „Lastenausgleichsgruppen“.
 
 5. Klicken Sie zum Erstellen eines neuen Load Balancers oben auf dem Blatt für Gruppen mit Lastenausgleich auf das Symbol zum Verknüpfen.
 
@@ -65,4 +66,4 @@ Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodel
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

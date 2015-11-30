@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="11/16/2015" 
 	ms.author="asteen"/>
 
 # Problembehandlung für die Kennwortverwaltung
@@ -699,6 +699,22 @@ Eine bewährte Methode bei der Problembehandlung für die Kennwortrückschreibun
                 <li class="unordered">
 										Wenn Sie Kennwortfilter aktiviert haben und ein Benutzer versucht, ein Kennwort auszuwählen, das nicht den Filterkriterien entspricht, tritt bei der Kennwortänderung oder -zurücksetzung ein Fehler auf.&lt;br>&lt;br></li>
               </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>HR 8023042</p>
+            </td>
+            <td>
+              <p>Synchronisierungsmodul gibt folgenden Fehler wieder: hr&#160;=&#160;80230402, Meldung = Versuch zum Abrufen eines Objekts ist fehlgeschlagen, weil doppelte Einträge mit dem gleichen Anker vorhanden sind</p>
+            </td>
+            <td>
+              <p>ADSync</p>
+            </td>
+            <td>
+              <p>Dieses Ereignis tritt auf, wenn die gleiche Benutzer-ID in mehreren Domänen aktiviert ist. Beispielsweise tritt dieser Fehler auf, wenn Sie Konto-/Ressourcengesamtstrukturen synchronisieren, und währenddessen die gleiche Benutzer-ID verwendet wird und aktiviert ist.  </p>
+              <p>Dieser Fehler tritt auf, wenn Sie ein nicht eindeutiges Anker-Attribut (wie z.&#160;B ein Alias oder einen UPN) verwenden und zwei Benutzer das gleiche Anker-Attribut teilen.</p>
+              <p>Um dieses Problem zu beheben, stellen Sie sicher, dass kein Benutzer in Ihren Domänen doppelt vorhanden ist und Sie ein eindeutiges Ankerattribut für jeden Benutzer verwenden.</p>
             </td>
           </tr>
           <tr>
@@ -1463,19 +1479,17 @@ Wenn das Problem anschließend weiterhin besteht, wird empfohlen, unter [Problem
 
 <br/> <br/> <br/>
 
-**Zusätzliche Ressourcen**
+## Links zu Informationen zur Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Websites mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-
-* [Was ist die Kennwortverwaltung?](active-directory-passwords.md)
-* [Funktionsweise der Kennwortverwaltung](active-directory-passwords-how-it-works.md)
-* [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md)
-* [Anpassen der Kennwortverwaltung](active-directory-passwords-customize.md)
-* [Best Practices für die Kennwortverwaltung](active-directory-passwords-best-practices.md)
-* [Operative Einblicke durch Berichte zur Kennwortverwaltung](active-directory-passwords-get-insights.md)
-* [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
-* [Weitere Informationen](active-directory-passwords-learn-more.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
-
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password) – Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems
+* [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
+* [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
+* [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
+* [**Best Practices**](active-directory-passwords-best-practices.md) – Erfahren Sie, wie Sie Kennwörter in Ihrer Organisation schnell bereitstellen und effektiv verwalten.
+* [**Einblicke erhalten**](active-directory-passwords-get-insights.md) – Erfahren Sie mehr über unsere integrierten Berichtsfunktionen.
+* [**Häufig gestellte Fragen**](active-directory-passwords-faq.md) – Hier erhalten Sie Antworten auf häufig gestellte Fragen.
+* [**Weitere Informationen**](active-directory-passwords-learn-more.md) – Erhalten Sie tiefgehende technische Details zur Funktionsweise des Diensts.
 
 
 
@@ -1484,4 +1498,4 @@ Wenn das Problem anschließend weiterhin besteht, wird empfohlen, unter [Problem
 [003]: ./media/active-directory-passwords-troubleshoot/003.jpg "Image_003.jpg"
 [004]: ./media/active-directory-passwords-troubleshoot/004.jpg "Image_004.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->

@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff in einem klassischen Bereitstellungsmodell für Clouddienste | Microsoft Azure"
-   description="Erfahren Sie, wie Sie für Clouddienste einen Lastenausgleich für den Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
+   description="Erfahren Sie, wie Sie für Clouddienste einen Lastenausgleich mit Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -17,14 +17,13 @@
    ms.date="11/03/2015"
    ms.author="joaoma" />
 
-# Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff für Clouddienste
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff für Clouddienste
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+[AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]In diesem Artikel wird das klassische Bereitstellungsmodell erörtert. Informationen zum Bereitstellungsmodell des Azure-Ressourcen-Managers finden Sie unter [Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff mit dem Ressourcen-Manager](load-balancer-get-started-internet-arm-ps.md).
-
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch [erfahren, wie Sie mit dem Ressourcen-Manager einen Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-cli.md).
 
 Clouddienste werden automatisch mit einem Lastenausgleich konfiguriert und können über das Dienstmodell angepasst werden.
 
@@ -82,4 +81,4 @@ Die Testdefinition steuert auch die Häufigkeit des Tests. In unserem Fall teste
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

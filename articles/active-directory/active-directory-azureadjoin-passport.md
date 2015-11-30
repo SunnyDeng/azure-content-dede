@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Übersicht über Microsoft Passport und Details zu dieser neuen, zertifikatbasierten Authentifizierung | Microsoft Azure" 
-	description="In diesem Thema wird erklärt, wie Benutzer Azure AD Join während Ihres Eindrucks beim ersten Ausführen einrichten können." 
+	pageTitle="Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport | Microsoft Azure" 
+	description="Bietet eine Übersicht über Microsoft Passport und weiterführende Informationen zum Bereitstellen von Microsoft Passport." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
-	editor=""/>
+	editor=""
+	tags="azure-classic-portal"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -13,12 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/21/2015" 
+	ms.date="11/17/2015" 
 	ms.author="femila"/>
 
 # Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport
 
-Die aktuellen Methoden der Authentifizierung mit Kennwörtern allein sind nicht ausreichend, um Benutzer zu schützen. Benutzer verwenden gleiche Kennwörter wiederholt und vergessen sie. Kennwörter können missbraucht werden, sind anfällig für Phishing, für Sicherheitslücken und sie sind leicht zu erraten. Sie sind außerdem schwer zu merken und anfällig für Angriffe wie "Pass-the-Hash". Bei "Pass-the-Hash" handelt es sich um ein Hacker-Verfahren, mit dem ein Angreifer sich mit dem zugrunde liegenden NTLM und/oder LanMan-Hash eines Benutzerkennworts bei einem Remoteserver oder -dienst authentifizieren kann, ohne dass das zugeordnete Klartextkennwort erforderlich ist. Dies ist normalerweise der Fall. Weitere Informationen zu "Pass-the-Hash" finden Sie unter [Pass-the-Hash](https://technet.microsoft.com/en-us/dn785092.aspx).
+Die aktuellen Methoden der Authentifizierung mit Kennwörtern allein sind nicht ausreichend, um Benutzer zu schützen. Benutzer verwenden gleiche Kennwörter wiederholt und vergessen sie. Kennwörter können missbraucht werden, sind anfällig für Phishing, für Sicherheitslücken und sie sind leicht zu erraten. Sie sind außerdem schwer zu merken und anfällig für Angriffe wie "[Pass-the-Hash](https://technet.microsoft.com/dn785092.aspx)".
 
 ## Was ist Microsoft Passport?
 Microsoft Passport ist ein neuer privater/öffentlicher Schlüssel oder ein zertifikatbasierter Authentifizierungsansatz für Unternehmen und Verbraucher, der über Kennwörter hinausgeht. Diese Form der Authentifizierung stützt sich auf Anmeldeinformationen mit einem Schlüsselpaar, das Kennwörter ersetzen kann und widerstandsfähig gegenüber Sicherheitsverstößen, Diebstählen und Phishing ist. Mit Microsoft Passport können sich Benutzer für ein Microsoft-Konto, ein Active Directory-Konto, ein Microsoft Azure Active Directory (AD)-Konto oder einen nicht-Microsoft-Dienst authentifizieren, der die Authentifizierung mit Fast ID Online (FIDO) unterstützt. Nach einer anfänglichen Überprüfung in zwei Schritten während der Microsoft Passport-Registrierung wird Microsoft Passport auf dem Gerät des Benutzers eingerichtet, und der Benutzer legt eine Geste fest, entweder Windows Hello oder eine PIN. Der Benutzer stellt die Geste zur Überprüfung seiner Identität bereit. Windows verwendet dann Microsoft Passport zum Authentifizieren des Benutzers und hilft ihm dabei, auf geschützte Ressourcen und Dienste zuzugreifen.
@@ -26,6 +27,7 @@ Microsoft Passport ist ein neuer privater/öffentlicher Schlüssel oder ein zert
 Der private Schlüssel wird ausschließlich über eine "Benutzergeste" verfügbar gemacht, z. B. eine PIN, Biometrik, ein Remotegerät wie eine Smartcard, die der Benutzer zum Anmelden am Gerät verwendet, und diese Informationen werden mit einem Zertifikat oder einem asymmetrischen Schlüsselpaar verknüpft. Dieser private Schlüssel ist für die Hardware bescheinigt, falls das Gerät über einen Trusted Platform Module (TPM)-Chip verfügt. Der private Schlüssel bleibt immer im Gerät.
 
 Der öffentliche Schlüssel wird mit Azure Active Directory und Windows Server Active Directory (für lokale Bereitstellungen) registriert. Die Identitätsanbieter validieren den Benutzer durch die Zuordnung des öffentlichen Schlüssels des Benutzers auf den privaten Schlüssel und bieten Anmeldeinformationen über ein Einmalkennwort, PhoneFactor oder einen anderen Benachrichtigungsmechanismus.
+
 ## Warum Unternehmen Microsoft Passport übernehmen sollten
 Durch Aktivieren von Microsoft Passport können Unternehmen ihre Ressourcen mithilfe folgender Funktionen noch besser sichern:
 
@@ -43,7 +45,10 @@ Durch Aktivieren von Microsoft Passport können Unternehmen ihre Ressourcen mith
 3. Das Entsperren mit einer einzelnen Geste entsperrt das Gerät. Die Geste erhält Zugriff auf mehrere Ressourcen, wenn das Gerät mit einer Domäne oder Azure AD verknüpft ist.
 
 ## Microsoft Passport-Lebenszyklus
-Microsoft Passport-Lebenszyklus![](./media/active-directory-azureadjoin/active-directory-azureadjoin-microsoft-passport.png) Das obige Diagramm veranschaulicht das private/öffentliche Schlüsselpaar und die Validierung durch den Identitätsanbieter. Jeder dieser Schritte wird nachfolgend ausführlich erläutert:
+
+![](./media/active-directory-azureadjoin/active-directory-azureadjoin-microsoft-passport.png)
+
+Das obige Diagramm veranschaulicht das private/öffentliche Schlüsselpaar und die Validierung durch den Identitätsanbieter. Jeder dieser Schritte wird nachfolgend ausführlich erläutert:
 
 1. Der Benutzer weist seine Identität durch mehrere integrierte Überprüfungsmethoden (Gesten, physische Smartcards, mehrstufige Authentifizierung) nach, und sendet diese Informationen an den Identitätsanbieter, z. B. Azure Active Directory oder Active Directory.
 
@@ -64,10 +69,15 @@ Auf Benutzerebene
 -------------------------------------------------------------
 * Computer müssen die Windows 10 Professional- oder Enterprise-SKU ausführen.
 
+Ausführliche Anweisungen zur Bereitstellung finden Sie unter [Microsoft Passport für die Arbeit in der Organisation aktivieren](active-directory-azureadjoin-passport-deployment.md).
+
 ## Zusätzliche Informationen
 
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
+* [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
+* [Microsoft Passport zur geschäftlichen Nutzung in Unternehmen aktivieren](active-directory-azureadjoin-passport-deployment.md)
+* [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
-* [Verwalten der Identitätsüberprüfung mit Microsoft Passport](https://technet.microsoft.com/library/mt219735(v=vs.85).aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

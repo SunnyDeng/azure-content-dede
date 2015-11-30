@@ -1,26 +1,17 @@
 <properties
-	pageTitle="Einführung in Azure Backup | Microsoft Azure"
-	description="Dieser Artikel bietet eine Übersicht über den Azure Backup-Dienst, mit dem Kunden Daten lokal und in Azure sichern können."
+	pageTitle="Was ist Azure Backup? | Microsoft Azure"
+	description="Mit Azure Backup und Recovery Services können Sie Daten und Anwendung von Windows-Servern, Windows-Clientcomputern, SCDPM-Servern oder virtuellen Azure-Computern sichern und wiederherstellen."
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
-	editor="tysonn"/>
+	editor="tysonn"
+	keywords="Sichern und Wiederherstellen, Wiederherstellungsdienste"/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/01/2015"
-	ms.author="aashishr"; "trinadhk"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/17/2015" ms.author="aashishr"; "trinadhk"; "jimpark"/>
 
-# Einführung in Azure Backup
-Dieser Artikel bietet eine allgemeine Übersicht über die in die Cloud integrierte Sicherungslösung von Microsoft, mit der Kunden ihre Daten entweder lokal oder in Azure sichern können.
-
-## Was ist Azure Backup?
-Azure Backup ist ein Azure-Mehrinstanzendienst, mit dem Sie Ihre Daten lokal oder in Azure sichern können. Ihre vorhandene lokale oder Offsite-Sicherungslösung wird durch eine zuverlässige und sichere Cloud-basierte Lösung mit wettbewerbsfähigen Kosten ersetzt. Zudem bietet dieser Dienst die Flexibilität, Ressourcen zu schützen, die in der Cloud ausgeführt werden. Azure Backup baut auf einer erstklassigen Infrastruktur auf, die skalierbar, robust und hoch verfügbar ist. Mit dieser Lösung können Sie Daten und Anwendungen von ihren System Center Data Protection Manager (SCDPM)-Servern, Windows-Servern, Windows-Clientcomputern oder virtuellen Azure IaaS-Computern sichern. Azure Backup und SCDPM bilden die technologischen Grundlagen der Cloud-basierten Microsoft-Sicherungslösung.
+# Was ist Azure Backup?
+Azure Backup ist ein Azure-Mehrinstanzendienst, mit dem Sie Ihre Daten lokal oder in Azure sichern und wiederherstellen können. Der Dienst ersetzt die derzeit von Ihnen genutzte lokale oder Offsite-Sicherungslösung durch eine zuverlässige, sichere und kosteneffiziente Cloudsicherungslösung. Zudem bietet dieser Dienst die Flexibilität, Ressourcen zu schützen, die in der Cloud ausgeführt werden. Azure Backup baut auf einer erstklassigen Infrastruktur auf, die skalierbar, robust und hoch verfügbar ist. Mit dieser Lösung können Sie Daten und Anwendungen von ihren System Center Data Protection Manager (SCDPM)-Servern, Windows-Servern, Windows-Clientcomputern oder virtuellen Azure IaaS-Computern sichern. Azure Backup und SCDPM bilden die technologischen Grundlagen der Cloud-basierten Microsoft-Sicherungslösung.
 
 > [AZURE.VIDEO what-is-azure-backup]
 
@@ -54,7 +45,7 @@ Wichtigste Funktionen dieser Lösung:
 | Komponente | Bereitstellung in Azure möglich? | Lokale Bereitstellung möglich? | Unterstützter Zielspeicher|
 | --- | --- | --- | --- |
 | Azure Backup-Agent | **Ja** <br><br>Der Azure Backup-Agent kann auf allen virtuellen Windows Server-Computern bereitgestellt werden, die in Azure ausgeführt werden. | **Ja** <br><br>Der Azure Backup-Agent kann auf allen virtuellen Windows Server-Computern oder physischen Computern bereitgestellt werden. | Azure-Sicherungstresor |
-| System Center Data Protection Manager (SCDPM) | **Ja** <br><br>Weitere Informationen zum [Schutz von Workloads in Azure mithilfe von SCDPM](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx). | **Ja** <br><br>Weitere Informationen zum [Schutz von Workloads und virtuellen Computer im Datencenter](https://technet.microsoft.com/en-us/library/hh758173.aspx). | Lokal angefügter Datenträger, <br>Azure-Sicherungstresor, <br>Band (nur lokal) |
+| System Center Data Protection Manager (SCDPM) | **Ja** <br><br>Weitere Informationen zum [Schutz von Workloads in Azure mithilfe von SCDPM](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx). | **Ja** <br><br>Weitere Informationen zum [Schutz von Workloads und virtuellen Computer im Datencenter](https://technet.microsoft.com/de-DE/library/hh758173.aspx). | Lokal angefügter Datenträger, <br>Azure-Sicherungstresor, <br>Band (nur lokal) |
 | Azure Backup (VM-Erweiterung) | **Ja** <br><br>Speziell für die [Sicherung von Azure IaaS-VMs](backup-azure-vms-introduction.md). | **Nein** <br><br>Sichern Sie virtuelle Computer in Ihrem Rechenzentrum mit SCDPM. | Azure-Sicherungstresor |
 
 
@@ -69,8 +60,7 @@ Wichtigste Funktionen dieser Lösung:
 | Microsoft SQL Server | Windows Server | [System Center DPM](backup-azure-backup-sql.md) |
 | Microsoft SharePoint | Windows Server | [System Center DPM](backup-azure-backup-sharepoint.md) |
 | Microsoft Exchange | Windows Server | System Center DPM |
-| Azure IaaS-VMs (Windows)| - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
-| Azure IaaS VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+| Azure IaaS-VMs (Windows)| - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | | Azure IaaS VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
 
 
 ## Nächste Schritte
@@ -78,4 +68,4 @@ Wichtigste Funktionen dieser Lösung:
 - Häufig gestellte Fragen zum Azure Backup-Dienst sind [hier](backup-azure-backup-faq.md) aufgeführt.
 - Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -27,23 +27,23 @@ Richten Sie Ihre erste oder nächste Entwicklungs-/Test- oder Produktions-ShareP
 
 ## Grundlegende SharePoint-Farm für Entwicklung/Tests
 
-Diese automatisch erstellte Umgebung besteht aus drei Servern in einem virtuellen, ausschließlichen Cloud-Azure-Netzwerk: einem Domänencontroller, einem SQL Server und dem SharePoint-Server.
+Diese automatisch erstellte Umgebung besteht aus drei Servern in einem virtuellen Cloud-Netzwerk in Azure: einem Domänencontroller, einem SQL-Server und dem SharePoint-Server.
 
-Siehe Element [SharePoint 2013 nicht hoch verfügbare Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) im Azure Marketplace des Azure-Vorschauportals. Damit wird eine grundlegende Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetverbindung erstellt. Weitere Informationen finden Sie unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
+Weitere Informationen finden Sie unter [SharePoint 2013 nicht hoch verfügbare Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) im Azure Marketplace des Azure-Vorschauportals. Damit wird eine grundlegende Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetverbindung erstellt. Weitere Informationen finden Sie unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
 
 Sie können zudem eine Azure-Ressourcen-Manager-Vorlage verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit drei Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-three-server-sharepoint-farm).
 
-> [AZURE.NOTE]Das Element **SharePoint-Serverfarm** im Azure Marketplace des Azure-Vorschauportals wurde entfernt.
+> [AZURE.NOTE]Das Element **SharePoint-Serverfarm** wurde aus dem Azure Marketplace des Azure-Vorschauportals entfernt.
 
 ## Hochverfügbare SharePoint-Test-/Entwicklungsfarm
 
-Die automatisch erstellte Umgebung besteht aus neun Servern in einem virtuellen, ausschließlichen Cloud-Azure-Netzwerk: zwei für Domänencontroller, drei für einen SQL Server-Cluster, zwei SharePoint-Server auf Anwendungsebene und zwei SharePoint-Server auf Webebene.
+Die automatisch erstellte Umgebung besteht aus neun Servern in einem virtuellen Cloud-Netzwerk in Azure: zwei Server für Domänencontroller, drei Server für einen SQL Server-Cluster, zwei SharePoint-Server auf Anwendungsebene und zwei SharePoint-Server auf Webebene.
 
-Siehe Element [SharePoint 2013 hoch verfügbare Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) im Azure Marketplace des Azure-Vorschauportals. Damit wird eine hoch verfügbare Entwicklungs-/Testfarm für eine SharePoint-Website mit Internetverbindung erstellt. Weitere Informationen finden Sie unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
+Weitere Informationen finden Sie unter [SharePoint 2013 hoch verfügbare Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) im Azure Marketplace des Azure-Vorschauportals. Damit wird eine hoch verfügbare Entwicklungs-/Testfarm für eine SharePoint-Website mit Internetverbindung erstellt. Weitere Informationen finden Sie unter [Erstellen von SharePoint-Serverfarmen](virtual-machines-sharepoint-farm-azure-preview.md).
 
 Sie können zudem eine Azure-Ressourcen-Manager-Vorlage verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit neun Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-nine-server-sharepoint-farm).
 
-> [AZURE.NOTE]Das Element **SharePoint-Serverfarm** im Azure Marketplace des Azure-Vorschauportals wurde entfernt.
+> [AZURE.NOTE]Das Element **SharePoint-Serverfarm** wurde aus dem Azure Marketplace des Azure-Vorschauportals entfernt.
 
 ## Hybrid-Cloud-Entwicklungs-/Testfarm
 
@@ -69,4 +69,4 @@ Diese Konfiguration verwendet das klassische Bereitstellungsmodell.
 
 [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

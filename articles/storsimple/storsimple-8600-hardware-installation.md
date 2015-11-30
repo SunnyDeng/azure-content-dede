@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="10/13/2015"
+   ms.date="11/16/2015"
    ms.author="alkohli" />
 
 # Auspacken, Einbauen und Verkabeln des StorSimple 8600-Geräts
@@ -253,7 +253,7 @@ H, I | Hosts (z. B. Dateiserver)
 Beim Verkabeln des Geräts ist die folgende Mindestkonfiguration erforderlich:
 
 
-- Mindestens zwei Netzwerkschnittstellen pro Controller – eine für den Cloudzugriff und eine für iSCSI. Der DATA 0-Anschluss wird automatisch über die serielle Konsole des Geräts aktiviert und konfiguriert. Zusätzlich zu DATA 0 muss ein weiterer Datenanschluss über das Verwaltungsportal konfiguriert werden. Verbinden Sie den DATA 0-Anschluss in diesem Fall mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
+- Mindestens zwei Netzwerkschnittstellen pro Controller – eine für den Cloudzugriff und eine für iSCSI. Der DATA 0-Anschluss wird automatisch über die serielle Konsole des Geräts aktiviert und konfiguriert. Zusätzlich zu DATA 0 muss ein weiterer Datenanschluss über das Azure-Portal konfiguriert werden. Verbinden Sie den DATA 0-Anschluss in diesem Fall mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
 
 - Verbinden Sie identische Schnittstellen an jedem Controller mit demselben Netzwerk, um die Verfügbarkeit bei einem Controllerfailover sicherzustellen. Wenn Sie z. B. DATA 0 und DATA 3 bei einem der Controller verbinden, müssen Sie DATA 0 und DATA 3 auch am anderen Controller verbinden.
 	
@@ -298,4 +298,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->

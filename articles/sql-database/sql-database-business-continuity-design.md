@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="07/14/2015"
+   ms.date="11/16/2015"
    ms.author="elfish"/>
 
 #Entwerfen für Geschäftskontinuität
@@ -49,7 +49,7 @@ Sie sollten die Georeplikation verwenden, wenn Ihre Anwendung die folgenden Krit
 
 ##Auswählen von standardmäßiger oder aktiver Georeplikation
 
-Für Datenbanken der Standard-Ebene kann keine aktive Georeplikation verwendet werden. Wenn die Anwendung also die Datenbanken der Standardebene verwendet und die oben genannten Kriterien erfüllt, sollten Sie die standardmäßige Georeplikation aktivieren. Für Premium-Datenbanken können hingegen beide Optionen ausgewählt werden. Die standardmäßige Georeplikation wurde als einfachere und kostengünstigere Lösung für die Notfallwiederherstellung entworfen und ist damit besonders für Anwendungen geeignet, die nur vor ungeplanten Ereignissen wie Ausfällen geschützt werden sollen. Mit der standardmäßigen Georeplikation können Sie nur die gekoppelte Region für die Wiederherstellung verwenden und haben nicht die Möglichkeit, mehr als eine sekundäre Datenbank zu erstellen. Dieses letztere Feature ist wichtig für Upgradeszenarios für die Anwendung. Wenn dieses Szenario also für die Anwendung wichtig ist, sollten Sie stattdessen die aktive Georeplikation aktivieren. Weitere Informationen finden Sie unter [Aktualisieren von Anwendungen ohne Ausfallzeit](sql-database-business-continuity-application-upgrade.md).
+Für Datenbanken der Standard-Ebene kann keine aktive Georeplikation verwendet werden. Wenn die Anwendung also die Datenbanken der Standardebene verwendet und die oben genannten Kriterien erfüllt, sollten Sie die standardmäßige Georeplikation aktivieren. Für Premium-Datenbanken können hingegen beide Optionen ausgewählt werden. Die standardmäßige Georeplikation wurde als einfachere und kostengünstigere Lösung für die Notfallwiederherstellung entworfen und ist damit besonders für Anwendungen geeignet, die nur vor ungeplanten Ereignissen wie Ausfällen geschützt werden sollen. Bei der standardmäßigen Georeplikation können Sie nur die gekoppelte Region für die Notfallwiederherstellung zur Wiederherstellung verwenden und für jede primäre Datenbank lediglich eine sekundäre Datenbank erstellen. Für das Anwendungsupgradeszenario kann eine weitere sekundäre Datenbank erforderlich sein. Wenn dieses Szenario also für die Anwendung wichtig ist, sollten Sie stattdessen die aktive Georeplikation aktivieren. Weitere Informationen finden Sie unter [Aktualisieren von Anwendungen ohne Ausfallzeit](sql-database-business-continuity-application-upgrade.md).
 
 > [AZURE.NOTE]Die aktive Georeplikation unterstützt auch schreibgeschützten Zugriff auf die sekundäre Datenbank, wodurch zusätzliche Kapazität für die schreibgeschützten Arbeitsauslastungen bereitgestellt wird.
 
@@ -74,31 +74,28 @@ Sie können die Georeplikation im Azure-Portal oder durch Aufrufen des entsprech
 
 ###PowerShell
 
-Verwenden Sie das PowerShell-Cmdlet [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/library/dn720220.aspx) zum Automatisieren der Konfiguration der Georeplikation.
+Verwenden Sie das PowerShell-Cmdlet [New-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603689.aspx) zum Erstellen der Konfiguration der Georeplikation. Dieser Befehl ist synchron, und die Steuerung wird zurückgegeben, wenn die primären und sekundären Datenbanken synchronisiert worden sind.
 
-So erstellen Sie Georeplikation mit einem nicht lesbaren sekundären Replikat für eine Premium- oder Standard-Datenbank:
+So konfigurieren Sie die Georeplikation mit einem nicht lesbaren sekundären Replikat für eine Premium- oder Standard-Datenbank:
 		
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy -OfflineSecondary
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "None"
+
 So erstellen Sie Georeplikation mit einem lesbaren sekundären Replikat für eine Premium-Datenbank:
 
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "All"
 		 
-Dieser Befehl ist asynchron. Verwenden Sie nach der Rückgabe das Cmdlet [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/library/dn720235.aspx) zum Überprüfen des Status dieses Vorgangs. Das "ReplicationState"-Feld des zurückgegebenen Objekts muss nach Abschluss des Vorgangs den Wert "CATCH\_UP" aufweisen.
-
-		Get-AzureSqlDatabaseCopy -ServerName "PrimaryServerName" -DatabaseName "PrimaryDatabaseName" -PartnerServer "SecondaryServerName"
-
 
 ###REST-API 
 
-Mit der [Start Database Copy](https://msdn.microsoft.com/library/azure/dn509576.aspx)-API können Sie programmgesteuert eine Konfiguration für die Georeplikation erstellen.
+Verwenden Sie die [Create Database](https://msdn.microsoft.com/library/mt163685.aspx)-API, wobei *CreateMode* auf *NonReadableSecondary* oder *Secondary* festgelegt werden sollte, um programmgesteuert eine sekundäre Datenbank für die Georeplikation zu erstellen.
 
-Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Database Copy](https://msdn.microsoft.com/library/azure/dn509570.aspx)-API zum Überprüfen des Status dieses Vorgangs. Das "ReplicationState"-Feld des Antworttexts muss nach Abschluss des Vorgangs den Wert "CATCH\_UP" aufweisen.
+Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Replication Link](https://msdn.microsoft.com/library/mt600778.aspx)-API, um den Status dieses Vorgangs zu überprüfen. Das *replicationState*-Feld des Antworttexts muss nach Abschluss des Vorgangs den Wert "CATCH\_UP" aufweisen.
 
 
 ##Auswählen der Failover-Konfiguration 
 
 Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschiedene Konfigurationsoptionen berücksichtigen. Die Auswahl hängt von der Bereitstellungstopologie für die Anwendung ab und davon, welche Teile der Anwendungen am anfälligsten für einen Ausfall sind. Anleitungen finden Sie unter [Entwerfen von Cloudlösungen für die Notfallwiederherstellung mithilfe der Georeplikation](sql-database-designing-cloud-solutions-for-disaster-recovery.md).
 
- 
-
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

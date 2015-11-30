@@ -56,7 +56,7 @@
 		<Button Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible">Sign in</Button>
 
-6. Öffnen Sie im Windows Phone-App-Projekt die folgenden **Button**-Elemente unmittelbar vor dem Element hinzu, das die Schaltfläche **Speichern** definiert:
+6. Fügen Sie im Windows Phone-App-Projekt die folgenden **Button**-Elemente unmittelbar vor dem Element hinzu, das die Schaltfläche **Speichern** definiert:
 
 		<Button Grid.Row ="1" Grid.Column="1" Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible" Margin="10, 0, 0, 0">Sign in</Button> 
@@ -90,4 +90,4 @@
 
 9. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

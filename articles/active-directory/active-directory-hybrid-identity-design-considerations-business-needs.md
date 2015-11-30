@@ -23,7 +23,7 @@ Sie müssen diese wichtige Aspekte des Unternehmens prüfen, um zu verstehen, we
  
 Einige Komponenten, die Teil der Hybrid-Identitätsarchitektur sind ![](./media/hybrid-id-design-considerations/hybrid-identity-architechture.png)
 
-## Ermitteln der Geschäftsanforderungen
+## Ermitteln von Geschäftsanforderungen
 Jedes Unternehmen hat unterschiedliche Anforderungen – auch wenn diese Unternehmen derselben Branche angehören, können die tatsächlichen geschäftlichen Anforderungen variieren. Sie können weiterhin Best Practices der Branche nutzen, doch letztendlich bestimmen die geschäftlichen Anforderungen des Unternehmens die Anforderungen an die Gestaltung der Hybrid-Identität.
 
 Stellen Sie sich die folgenden Fragen, um Ihre geschäftlichen Anforderungen zu identifizieren:
@@ -94,6 +94,6 @@ Sie müssen zudem die Benutzeranforderungen bewerten. Diese Bewertung ist wichti
 [Ermitteln der Anforderungen an die Verzeichnissynchronisierung](active-directory-hybrid-identity-design-considerations-directory-sync-requirements.md)
 
 ## Weitere Informationen
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+[Design considerations overview]((active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

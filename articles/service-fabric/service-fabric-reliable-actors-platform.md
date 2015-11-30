@@ -5,7 +5,7 @@
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
-   editor=""/>
+   editor="vturecek"/>
 
 <tags
    ms.service="service-fabric"
@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="11/13/2015"
    ms.author="abhisram"/>
 
 # Verwendung der Service Fabric-Plattform durch Reliable Actors
 
-Actors verwenden das Service Fabric-Anwendungsmodell zum Verwalten des Lebenszyklus der Anwendung. Jeder Akteurtyp ist einem Service Fabric-[Diensttyp](service-fabric-application-model.md#describe-a-service) zugeordnet. Der Actor-Code wird als Service Fabric-Anwendung [gepackt](service-fabric-application-model.md#package-an-application) und für das Cluster [bereitgestellt](service-fabric-deploy-remove-applications.md#deploy-an-application).
+Actors verwenden das Service Fabric-Anwendungsmodell zum Verwalten des Lebenszyklus der Anwendung. Jeder Actor-Typ ist einem Service Fabric-[Diensttyp](service-fabric-application-model.md#describe-a-service) zugeordnet. Der Actor-Code wird als Service Fabric-Anwendung [gepackt](service-fabric-application-model.md#package-an-application) und für das Cluster [bereitgestellt](service-fabric-deploy-remove-applications.md#deploy-an-application).
 
 ## Beispiel eines Anwendungsmodellkonzepts für Akteure
 
@@ -97,10 +97,6 @@ Nachfolgend eine teilweise Auflistung des oben genannten Speicherorts (auf die v
 
 Die obige Auflistung zeigt die Assemblys, die den VoicemailBox-Actor implementieren und in das Code-Paket, das im Dienstpaket und dieses wiederum im Anwendungspaket enthalten ist, eingefügt werden.
 
-Die Visual Studio-Projektmappe enthält die PowerShell-Skripts, die zum Bereitstellen der Anwendung auf dem Cluster und zum Entfernen der Anwendung aus dem Cluster verwendet werden. Im nachfolgenden Screenshot sind die Skripts durch einen Kreis gekennzeichnet.
-
-![][2]
-
 Nachfolgende Verwaltung (d. h. Upgrades und endgültiges Löschen) der Anwendung erfolgt ebenfalls mithilfe Mechanismen der Anwendungsverwaltung in Service Fabric. Weitere Informationen finden Sie unter den Themen zu [Anwendungsmodell](service-fabric-application-model.md), [Anwendungsbereitstellung und Entfernung](service-fabric-deploy-remove-applications.md), und [Anwendungsupgrade](service-fabric-application-upgrade.md).
 
 ## Skalierbarkeit für Actor-Dienste
@@ -109,7 +105,7 @@ Clusteradministratoren können einen oder mehrere Actor-Dienste der einzelnen Di
 > [AZURE.NOTE]Zustandslose Actor-Dienste sind für eine [Instanz](service-fabric-availability-services.md#availability-of-service-fabric-stateless-services)anzahl von 1 erforderlich. Mehr als eine Instanz eines zustandslosen Actor-Diensts in einer Partition wird nicht unterstützt. Aus diesem Grund haben zustandslose Actor-Dienste nicht die Möglichkeit, die Anzahl der Instanzen zum Erreichen der Skalierbarkeit zu erhöhen. Sie müssen die Skalierbarkeitsoptionen verwenden, die im [Skalierbarkeitsartikel](service-fabric-concepts-scalability.md) beschrieben werden.
 
 ## Service Fabric-Partitionskonzepte für Actors
-Die Actor-ID eines Actors ist einer Partition eines Actor-Dienstes zugeordnet. Der Actor wird innerhalb der Partition erstellt, der die Actor-ID zugeordnet ist. Beim Erstellen eines Actors schreibt die Laufzeit ein [EventSource-Ereignis](service-fabric-reliable-actors-diagnostics.md#eventsource-events), das angibt, in welcher Partition der Actor erstellt wird. Im Folgenden finden Sie ein Beispiel für dieses Ereignis, das angibt, dass ein Actor mit der ID `-5349766044453424161` innerhalb von Partition `0583c745-1bed-43b2-9545-29d7e3448156` des Dienstes `fabric:/VoicemailBoxAdvancedApplication/VoicemailBoxActorService`, Anwendung `fabric:/VoicemailBoxAdvancedApplication` erstellt wurde.
+Die Actor-ID eines Actors ist einer Partition eines Actor-Dienstes zugeordnet. Der Actor wird innerhalb der Partition erstellt, der die Actor-ID zugeordnet ist. Beim Erstellen eines Actors schreibt die Laufzeit ein [EventSource-Ereignis](service-fabric-reliable-actors-diagnostics.md#eventsource-events), das angibt, in welcher Partition der Actor erstellt wird. Im Folgenden finden Sie ein Beispiel für dieses Ereignis, das angibt, dass ein Actor mit der ID `-5349766044453424161` innerhalb von Partition `b6afef61-be9a-4492-8358-8f473e5d2487` des Dienstes `fabric:/VoicemailBoxAdvancedApplication/VoicemailBoxActorService`, Anwendung `fabric:/VoicemailBoxAdvancedApplication` erstellt wurde.
 
     {
       "Timestamp": "2015-04-26T10:12:20.2485941-07:00",
@@ -121,14 +117,14 @@ Die Actor-ID eines Actors ist einer Partition eines Actor-Dienstes zugeordnet. D
         "actorType": "Microsoft.Azure.Service.Fabric.Samples.VoicemailBox.VoiceMailBoxActor",
         "actorId": "-5349766044453424161",
         "isStateful": "True",
-        "replicaOrInstanceId": "130745418574851853",
-        "partitionId": "0583c745-1bed-43b2-9545-29d7e3448156",
+        "replicaOrInstanceId": "130906628008120392",
+        "partitionId": "b6afef61-be9a-4492-8358-8f473e5d2487",
         "serviceName": "fabric:/VoicemailBoxAdvancedApplication/VoicemailBoxActorService",
         "applicationName": "fabric:/VoicemailBoxAdvancedApplication",
       }
     }
 
-Ein weiterer Actor mit der ID `-4952641569324299627` wurde innerhalb einer anderen Partition `c146fe53-16d7-4d96-bac6-ef54613808ff` desselben Dienstes erstellt, wie von dem Ereignis unten angegeben.
+Ein weiterer Actor mit der ID `-4952641569324299627` wurde innerhalb einer anderen Partition `5405d449-2da6-4d9a-ad75-0ec7d65d1a2a` desselben Dienstes erstellt, wie von dem Ereignis unten angegeben.
 
     {
       "Timestamp": "2015-04-26T15:06:56.93882-07:00",
@@ -141,7 +137,7 @@ Ein weiterer Actor mit der ID `-4952641569324299627` wurde innerhalb einer ander
         "actorId": "-4952641569324299627",
         "isStateful": "True",
         "replicaOrInstanceId": "130745418574851853",
-        "partitionId": "c146fe53-16d7-4d96-bac6-ef54613808ff",
+        "partitionId": "5405d449-2da6-4d9a-ad75-0ec7d65d1a2a",
         "serviceName": "fabric:/VoicemailBoxAdvancedApplication/VoicemailBoxActorService",
         "applicationName": "fabric:/VoicemailBoxAdvancedApplication",
       }
@@ -149,27 +145,30 @@ Ein weiterer Actor mit der ID `-4952641569324299627` wurde innerhalb einer ander
 
 *Hinweis:* Einige Felder des oben aufgeführten Ereignisse wurden der Kürze halber weggelassen.
 
-Die Partitions-ID kann verwendet werden, um weitere Informationen über die Partition abzurufen. Zum Beispiel kann das [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)-Tool zum Anzeigen von Informationen über die Partition sowie den Dienst und die Anwendung, zu der er gehört, verwendet werden. Der folgende Screenshot zeigt Informationen über Partition `c146fe53-16d7-4d96-bac6-ef54613808ff`, die im obigen Beispiel den Actor mit ID `-4952641569324299627` enthalten hat.
+Die Partitions-ID kann verwendet werden, um weitere Informationen über die Partition abzurufen. Zum Beispiel kann das [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)-Tool zum Anzeigen von Informationen über die Partition sowie den Dienst und die Anwendung, zu der er gehört, verwendet werden. Der folgende Screenshot zeigt Informationen über Partition `5405d449-2da6-4d9a-ad75-0ec7d65d1a2a`, die im obigen Beispiel den Actor mit ID `-4952641569324299627` enthalten hat.
 
 ![][3]
 
 Actors können die Partitions-ID, den Dienstnamen, den Anwendungsnamen sowie andere für die Service Fabric-Plattform spezifische Informationen über die Member `Host.ActivationContext` und `Host.StatelessServiceInitialization` oder `Host.StatefulServiceInitializationParameters` der Basisklasse, von der der Actor-Typ abgeleitet ist, auf programmgesteuerte Weise abrufen. Der folgende Codeausschnitt zeigt ein Beispiel:
 
 ```csharp
-public void ActorMessage<TState>(Actor<TState> actor, string message, params object[] args)
+public void ActorMessage(StatefulActorBase actor, string message, params object[] args)
 {
-    string finalMessage = string.Format(message, args);
-    this.ActorMessage(
-        actor.GetType().ToString(),
-        actor.Id.ToString(),
-        actor.Host.ActivationContext.ApplicationTypeName,
-        actor.Host.ActivationContext.ApplicationName,
-        actor.Host.StatefulServiceInitializationParameters.ServiceTypeName,
-        actor.Host.StatefulServiceInitializationParameters.ServiceName.ToString(),
-        actor.Host.StatefulServiceInitializationParameters.PartitionId,
-        actor.Host.StatefulServiceInitializationParameters.ReplicaId,
-        FabricRuntime.GetNodeContext().NodeName,
-        finalMessage);
+    if (this.IsEnabled())
+    {
+        string finalMessage = string.Format(message, args);
+        ActorMessage(
+            actor.GetType().ToString(),
+            actor.Id.ToString(),
+            actor.ActorService.ServiceInitializationParameters.CodePackageActivationContext.ApplicationTypeName,
+            actor.ActorService.ServiceInitializationParameters.CodePackageActivationContext.ApplicationName,
+            actor.ActorService.ServiceInitializationParameters.ServiceTypeName,
+            actor.ActorService.ServiceInitializationParameters.ServiceName.ToString(),
+            actor.ActorService.ServiceInitializationParameters.PartitionId,
+            actor.ActorService.ServiceInitializationParameters.ReplicaId,
+            FabricRuntime.GetNodeContext().NodeName,
+            finalMessage);
+    }
 }
 ```
 
@@ -204,7 +203,7 @@ Statusbehaftete Actors werden innerhalb einer Partition des statusbehafteten Ser
 
 > [AZURE.TIP]Die Fabric Actors-Laufzeit gibt einige [Ereignisse im Zusammenhang mit statusbehafteten Actor-Replikaten](service-fabric-reliable-actors-diagnostics.md#events-related-to-stateful-actor-replicas) aus. Sie sind hilfreich bei der Diagnose und Leistungsüberwachung.
 
-Denken Sie daran, dass in dem [VoiceMailBoxActor-Beispiel weiter oben](#service-fabric-partition-concepts-for-actors) der Actor mit der ID `-4952641569324299627` innerhalb von Partition `c146fe53-16d7-4d96-bac6-ef54613808ff` erstellt wurde. Das EventSource-Ereignis aus diesem Beispiel gab außerdem an, dass der Actor in Replikat `130745418574851853` dieser Partition erstellt wurde. Dies war das primäre Replikat der Partition zum Zeitpunkt der Erstellung des Actors. Der folgende Service Fabric-Explorer-Screenshot bestätigt dies.
+Denken Sie daran, dass in dem [VoiceMailBoxActor-Beispiel weiter oben](#service-fabric-partition-concepts-for-actors) der Actor mit der ID `-4952641569324299627` innerhalb von Partition `5405d449-2da6-4d9a-ad75-0ec7d65d1a2a` erstellt wurde. Das EventSource-Ereignis aus diesem Beispiel gab außerdem an, dass der Actor in Replikat `130745418574851853` dieser Partition erstellt wurde. Dies war das primäre Replikat der Partition zum Zeitpunkt der Erstellung des Actors. Der folgende Service Fabric-Explorer-Screenshot bestätigt dies.
 
 ![][4]
 
@@ -225,7 +224,7 @@ Der folgende Codeausschnitt zeigt, wie der Status-Anbieter für einen bestimmten
 
 ```csharp
 [VolatileActorStateProvider]
-public class VoicemailBoxActor : Actor<VoicemailBox>, IVoicemailBoxActor
+public class VoicemailBoxActor : StatefulActor<VoicemailBox>, IVoicemailBoxActor
 {
     public Task<List<Voicemail>> GetMessagesAsync()
     {
@@ -243,4 +242,4 @@ Bitte beachten Sie, dass bei Änderungen des Status-Anbieters der Actor-Dienst n
 [3]: ./media/service-fabric-reliable-actors-platform/actor-partition-info.png
 [4]: ./media/service-fabric-reliable-actors-platform/actor-replica-role.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

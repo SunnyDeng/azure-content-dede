@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="11/12/2015" 
 	ms.author="luisca"/>
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
@@ -27,7 +27,7 @@ Dieses Dokument beschreibt, wie Sie Ihren Dienst oder Ihre Anwendung zur Verwend
 Zur Verwendung von Azure Machine Learning-Empfehlungen müssen Sie die folgenden Schritte ausführen:
 
 * Erstellen eines Modells – ein Modell ist ein Container für Ihre Nutzungsdaten, Katalogdaten und das Empfehlungsmodell.
-* Importieren von Katalogdaten – Dies ist ein optionaler Schritt. Ein Katalog enthält Metadateninformationen zu den Elementen. Wenn Sie keine Katalogdaten hochladen, lernt der Empfehlungsdienst ausschließlich aus den Benutzerdaten.
+* Importieren von Katalogdaten – Kataloge enthalten Metadateninformationen zu den Elementen. 
 * Importieren von Nutzungsdaten – Nutzungsdaten können auf zwei Arten (oder beide Arten) hochgeladen werden:
 	* Durch Hochladen einer Datei, die die Verwendung von Daten enthält.
 	* Durch das Senden von Ereignissen zur Datenerfassung. In der Regel laden Sie eine Nutzungsdatei hoch, damit Sie ein erstes Empfehlungsmodell (bootstrap) erstellen und dieses verwenden können, bis das System über das Datenerfassungsformat ausreichend Daten gesammelt hat.
@@ -673,4 +673,4 @@ OData-XML
 Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen in diesem Dokument, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden. Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig. Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden. © 2014 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -42,4 +42,7 @@ Indem Sie die folgenden Ressourcen im Auge behalten, erhalten Sie aktuelle Neuig
 - [Microsoft System Center Configuration Manager-Blog](http://blogs.technet.com/b/configurationmgr/)
 - [Microsoft System Center Configuration Manager-Teamblog](http://blogs.technet.com/b/configmgrteam/)
 
-<!---HONumber=Nov15_HO3-->
+## Weitere Informationen
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
+
+<!---HONumber=Nov15_HO4-->

@@ -13,15 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/29/2015"
+   ms.date="11/17/2015"
    ms.author="tomfitz"/>
 
 # Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals
 
 ## Übersicht
-Wenn Sie eine Anwendung haben, die auf eine Ressource in Ihrem Abonnement zugreifen oder diese ändern muss, können Sie im Portal eine Active Directory-Anwendung erstellen und einer Rolle mit der ordnungsgemäßen Berechtigung zuweisen. Wenn Sie eine Active Directory-Anwendung über das Portal erstellen, wird eigentlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie verwenden den Dienstprinzipal, wenn Sie die Berechtigungen festlegen.
+Wenn Sie einen automatisierte Prozess oder eine Anwendung haben, der bzw. die auf eine Ressource in Ihrem Abonnement zugreifen oder diese ändern muss, können Sie im Portal eine Active Directory-Anwendung erstellen und einer Rolle mit der ordnungsgemäßen Berechtigung zuweisen. Wenn Sie eine Active Directory-Anwendung über das Portal erstellen, wird eigentlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie verwenden den Dienstprinzipal, wenn Sie die Berechtigungen festlegen.
 
-In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des Azure-Portals erstellt werden. Derzeit müssen Sie das Microsoft Azure-Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert. Im Vorschauportal können Sie die Anwendung einer Rolle zuweisen.
+In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des Azure-Portals erstellt werden. Derzeit müssen Sie das Microsoft Azure-Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert. Im Vorschauportal können Sie die Anwendung einer Rolle zuweisen. Sie können diese Schritte auch über Azure PowerShell oder Azure CLI ausführen. Weitere Informationen finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md)
 
 ## Konzepte
 1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](active-directory/active-directory-whatis.md)
@@ -82,7 +82,7 @@ Das Portal sollte nun Ihre Anwendung ausgewählt haben.
 
      ![speichern][13]
 
-     Der gespeicherte Schlüssel wird angezeigt, sodass Sie ihn kopieren können.
+     Der gespeicherte Schlüssel wird angezeigt, sodass Sie ihn kopieren können. Sie können den Schlüssel später nicht mehr abrufen. Sie sollten ihn also jetzt kopieren.
 
      ![gespeicherter Schlüssel][8]
 
@@ -90,6 +90,9 @@ Das Portal sollte nun Ihre Anwendung ausgewählt haben.
   
      ![Client-ID][5]
 
+5. In einigen Fällen müssen Sie bei Ihrer Authentifizierungsanforderung die Mandanten-ID übergeben. Sie können die Mandanten-ID abrufen, indem Sie **Endpunkte anzeigen** auswählen und die ID wie unten dargestellt abrufen.
+
+     ![Mandanten-ID](./media/resource-group-create-service-principal-portal/save-tenant.png)
 
 Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstellt. Wenn Sie sich als Dienstprinzipal anmelden, achten Sie auf die Nutzung von:
 
@@ -98,13 +101,23 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 
 ## Zuweisen der Anwendung zu einer Rolle
 
-Im [Vorschauportal](https://portal.azure.com) können Sie die Active Directory-Anwendung einer Rolle zuweisen, die auf die Ressource Zugriff hat, auf die Sie zugreifen möchten. Informationen zum Zuweisen der Anwendung zu einer Rolle finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure Active Directory](active-directory/role-based-access-control-configure.md).
+Sie müssen die Anwendung einer Rolle zuweisen, um ihr Berechtigungen zum Ausführen von Aktionen zu gewähren. Im [Vorschauportal](https://portal.azure.com) können Sie die Active Directory-Anwendung einer Rolle mit den entsprechenden Berechtigungen zuweisen.
+
+Wählen Sie zum Einstieg in die Zugriffskontrolle im Vorschauportal das Symbol **Zugriff**.
+
+![Benutzer auswählen](./media/resource-group-create-service-principal-portal/select-users.png)
+
+Wählen Sie die Rolle aus, der Sie die Anwendung zuweisen möchten, und suchen Sie die Anwendung.
+
+![Benutzer auswählen](./media/resource-group-create-service-principal-portal/assign-to-role.png)
+
+Weitere Informationen zum Arbeiten mit Benutzern, Anwendungen und Rollen finden Sie unter [Verwalten des Zugriffs über das Azure-Verwaltungsportal](active-directory/role-based-access-control-configure/#manage-access-using-the-azure-management-portal).
 
 ## Abrufen des Zugriffstokens mit Code
 
 Wenn Sie mit .NET arbeiten, können Sie das Zugriffstoken für Ihre Anwendung mit dem folgenden Code abrufen.
 
-Zunächst müssen Sie die Active Directory-Authentifizierungsbibliothek in Ihrem Visual Studio-Projekt installieren. Die einfachste Möglichkeit hierfür ist das NuGet-Paket. Geben Sie in der Paket-Manager-Konsole die folgenden Befehle ein.
+Zunächst müssen Sie die Active Directory-Authentifizierungsbibliothek in Ihrem Visual Studio-Projekt installieren. Die einfachste Möglichkeit hierfür ist das NuGet-Paket. Öffnen Sie die Paket-Manager-Konsole, und geben Sie die folgenden Befehle ein.
 
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.19.208020213
     PM> Update-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Safe
@@ -149,4 +162,4 @@ Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Toke
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

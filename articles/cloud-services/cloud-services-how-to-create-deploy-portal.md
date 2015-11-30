@@ -29,7 +29,7 @@ Das Azure-Portal bietet zwei Methoden zum Erstellen und Bereitstellen eines Clou
 
 In diesem Thema wird erläutert, wie Sie die Schnellerfassungsmethode zum Erstellen eines neuen Clouddiensts und dann **Hochladen** verwenden, um ein Clouddienstpaket in Azure hochzuladen und bereitzustellen. Wenn Sie diese Methode verwenden, werden im Azure-Portal praktische Links zum Erfüllen aller Anforderungen zur Verfügung gestellt. Wenn Sie Ihren Cloud-Dienst bei der Erstellung auch bereitstellen möchten, können Sie beides mithilfe von Benutzerdefinierte Erstellung durchführen.
 
-> [AZURE.NOTE]Wenn Sie Ihren Clouddienst aus Visual Studio Online (VSO) veröffentlichen möchten, verwenden Sie die Schnellerstellung. Richten Sie die VSO-Veröffentlichung dann über den Azure-Schnellstart oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online][TFSTutorialForCloudService] oder in der Hilfe zur **Schnellstart**-Seite.
+> [AZURE.NOTE]Wenn Sie Ihren Clouddienst aus Visual Studio Team Services (VSTS) veröffentlichen möchten, verwenden Sie die Schnellerstellung. Richten Sie die VSTS-Veröffentlichung dann über Azur-Schnellstart oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azur mithilfe von Visual Studio Team Services][TFSTutorialForCloudService] oder in der Hilfe zur **Schnellstart**-Seite.
 
 ## Konzepte
 Für die Bereitstellung einer Anwendung als Clouddienst in Azure sind drei Komponenten erforderlich:
@@ -114,4 +114,4 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

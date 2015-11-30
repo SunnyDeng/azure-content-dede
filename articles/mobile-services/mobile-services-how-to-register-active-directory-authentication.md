@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="multiple" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="09/24/2015" 
+	ms.date="11/15/2015" 
 	ms.author="ricksal"/>
 
 # Registrieren Ihrer Apps für die Verwendung einer Azure Active Directory-Anmeldung
@@ -66,4 +66,4 @@ Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App v
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

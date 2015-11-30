@@ -47,7 +47,7 @@ Beachten Sie, dass Abfragen keine Kontingente oder Höchstwerte zugeordnet sind.
 
 Beim Standardtarif werden in einem dedizierten Search-Dienst nur Ihre Daten gespeichert und nur Ihre Workloads ausgeführt. Im Gegensatz zum gemeinsam genutzten Dienst ist die Ressourcenzuordnung für einen dedizierten Search-Dienst anpassbar und kann auf jede benötigte Ebene skaliert werden. Sie können die Ressourcenebenen für Partitionen (Hochskalieren von Speicher) und Replikate (für hohe Verfügbarkeit und Hochskalieren von QPS und Indizierungsleistung) unabhängig voneinander festlegen. Genauere Einblicke in die verschiedenen Ressourcenkonfigurationen erhalten Sie unter [Verwalten Ihrer Suchlösung](search-manage.md).
 
-Die folgende Tabelle enthält eine Liste der Höchstgrenzen, doch sollten sich Sie auch die Tabelle weiter unten ansehen, um eine Vorstellung von der Kapazität im Zusammenhang mit zulässigen [Kombinationen von Partitionen und Replikaten](#chart) zu erhalten.
+Die folgende Tabelle enthält eine Liste der Höchstgrenzen, doch sollten Sie auch die Tabelle weiter unten betrachten, um eine Vorstellung von der Kapazität im Zusammenhang mit zulässigen [Kombinationen von Partitionen und Replikaten](#chart) zu erhalten.
 
 Objekt|Begrenzung
 ------|----
@@ -56,7 +56,7 @@ Maximale Anzahl der Felder pro Index|1000
 Maximale Dokumentanzahl|15 Mio. pro Partition
 Maximale Speichergröße|25 GB pro Partition
 Maximale Anzahl der Partitionen|12 pro Search-Dienst
-Maximale Anzahl der Replikate|6 pro Search-Dienst
+Maximale Anzahl der Replikate|12 pro Search-Dienst
 Maximale Anzahl der Sucheinheiten|36 pro Search-Dienst
 Maximale Anzahl der Suchdienste|12 pro Azure-Abonnement
 Maximale Anzahl der Indexer|50 pro Search-Dienst
@@ -85,18 +85,19 @@ Zusätzliche Kapazität wird als Partitionen multipliziert mit Replikaten berech
 In der folgenden Tabelle sind Replikate auf der vertikalen Achse und Partitionen auf der horizontalen Achse aufgelistet. Die Schnittpunkte zeigen die Anzahl der Sucheinheiten, die zur Unterstützung der jeweiligen Kombination erforderlich sind, wobei der Grenzwert von 36 Sucheinheiten (SU) pro Dienst beachtet wird. Wenn Sie beispielsweise über 6 Replikate und 2 Partitionen verfügen möchten, würde diese Konfiguration 12 Sucheinheiten erfordern. Zur Verwendung von 4 Replikaten und 2 Partitionen wären 8 Sucheinheiten erforderlich. Im Allgemeinen gilt, dass die meisten Suchanwendungen tendenziell mehr Replikate als Partitionen benötigen.
 
 <table cellspacing="0" border="1">
+<tr><td><b>12 Replikate</b></td><td>12 SU</td><td>24 SU</td><td>36 SU</td><td>N/V</td><td>N/V</td><td>N/V</td></tr>
 <tr><td><b>6 Replikate</b></td><td>6 SU</td><td>12 SU</td><td>18 SU</td><td>24 SU</td><td>36 SU</td><td>N/V</td></tr>
 <tr><td><b>5 Replikate</b></td><td>5 SU</td><td>10 SU</td><td>15 SU</td><td>20 SU</td><td>30 SU</td><td>N/V</td></tr>
 <tr><td><b>4 Replikate</b></td><td>4 SU</td><td>8 SU</td><td>12 SU</td><td>16 SU</td><td>24 SU</td><td>N/V </td></tr>
 <tr><td><b>3 Replikate</b></td><td>3 SU</td><td>6 SU</td><td>9 SU</td><td>12 SU</td><td>18 SU</td><td>36 SU</td></tr>
 <tr><td><b>2 Replikate</b></td><td>2 SU</td><td>4 SU</td><td>6 SU</td><td>8 SU</td><td>12 SU</td><td>24 SU</td></tr>
-<tr><td><b>1 Replikat</b>:</td><td>1 SU</td><td>2 SU</td><td>3 SU</td><td>4 SU</td><td>6 SU</td><td>12 SU</td></tr>
+<tr><td><b>1 Replikat:</b></td><td>1 SU</td><td>2 SU</td><td>3 SU</td><td>4 SU</td><td>6 SU</td><td>12 SU</td></tr>
 <tr><td>N/V</td><td><b>1 Partition</b></td><td><b>2 Partitionen</b></td><td><b>3 Partitionen</b></td><td><b>4 Partitionen</b></td><td><b>6 Partitionen</b></td><td><b>12 Partitionen</b></td></tr>
 </table>
 
 Sucheinheiten, Preise und Kapazität werden auf der Azure-Website ausführlich erläutert. Weitere Informationen finden Sie unter [Preise](http://azure.microsoft.com/pricing/details/search/).
 
-> [AZURE.NOTE]Die ausgewählte Anzahl der Partitionen muss gleichmäßig in 12 unterteilt werden können (d. h. 1, 2, 3, 4, 6, 12). Der Grund dafür ist, dass Azure Search jeden Index vorab in 12 Shards unterteilt, damit er auf Partitionen verteilt werden kann. Wenn Ihr Dienst z. B. drei Partitionen aufweist und Sie einen neuen Index erstellen, enthält jede Partition 4 Shards des Indexes. Die Form, in der Azure Search Shards eines Indexes erstellt, ist ein Implementierungsdetail, dass sich bei zukünftigen Versionen ändern kann. Auch wenn die Anzahl heute 12 beträgt, sollten Sie nicht davon ausgehen, das dies auch in Zukunft immer so ist.
+> [AZURE.NOTE]Die Anzahl der Replikate und Partitionen muss gleichmäßig in 12 unterteilt werden können (d. h. 1, 2, 3, 4, 6, 12). Der Grund dafür ist, dass Azure Search jeden Index vorab in 12 Shards unterteilt, damit er auf Partitionen verteilt werden kann. Wenn Ihr Dienst z. B. drei Partitionen aufweist und Sie einen neuen Index erstellen, enthält jede Partition 4 Shards des Indexes. Die Form, in der Azure Search Shards eines Indexes erstellt, ist ein Implementierungsdetail, dass sich bei zukünftigen Versionen ändern kann. Auch wenn die Anzahl heute 12 beträgt, sollten Sie nicht davon ausgehen, das dies auch in Zukunft immer so ist.
 
 ## Auswählen einer Kombination von Partitionen und Replikaten für hohe Verfügbarkeit
 
@@ -133,4 +134,4 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 - Maximale Rückgabe von 1000 Dokumenten pro Seite mit Suchergebnissen
 - Maximale Rückgabe von 100 Vorschlägen pro Anforderung der Vorschlags-API
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

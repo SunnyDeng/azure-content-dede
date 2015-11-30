@@ -18,13 +18,6 @@
 
 # Einrichten von Application Insights: Webseiten
 
-*Application Insights befindet sich in der Vorschau.*
-
-
-[Visual Studio Application Insights](http://azure.microsoft.com/services/application-insights) überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers].
-
-
-<a name="selector1"></a>
 
 [AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
 
@@ -200,4 +193,4 @@ Möchten Sie herausfinden, wofür die Benutzer Ihre App verwenden? Durch Einfüg
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

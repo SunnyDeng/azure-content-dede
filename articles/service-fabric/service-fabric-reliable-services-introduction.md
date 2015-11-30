@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2015"
+   ms.date="11/17/2015"
    ms.author="masnider;jesseb"/>
 
 # Übersicht über Reliable Services
@@ -52,7 +52,7 @@ Reliable Services sind nicht wie andere Dienste, die Sie möglicherweise bereits
 ## Dienstlebenszyklus
 Ungeachtet dessen, ob der Dienst zustandsbehaftet oder zustandslos ist, bieten Reliable Services einen einfachen Lebenszyklus, mit dem Sie den Code schnell als Plug-in bereitstellen und beginnen können. Sie brauchen zum Ausführen des Diensts tatsächlich nur eine oder zwei Methoden zu implementieren.
 
-+ CreateCommunicationListener: Hiermit definiert der Dienst den zu verwendenden Kommunikationsstapel. Der Kommunikationsstapel (z. B. [Web-API](service-fabric-reliable-services-communication-webapi.md)) definiert die überwachenden Endpunkte des Diensts (wie er von Clients erreicht wird) sowie die Interaktion der angezeigten Nachrichten mit dem übrigen Dienstcode.
++ CreateServiceReplicaListeners/CreateServiceInstanceListeners: Hier werden vom Dienst die zu verwendenden Kommunikationsstapel definiert. Der Kommunikationsstapel (z. B. [Web-API](service-fabric-reliable-services-communication-webapi.md)) definiert die überwachenden Endpunkte des Diensts (wie er von Clients erreicht wird) sowie die Interaktion der angezeigten Nachrichten mit dem übrigen Dienstcode.
 
 + RunAsync – Hiermit führt der Dienst seine gesamte Geschäftslogik aus. Das bereitgestellte Abbruchtoken dient als Signal, wenn die Arbeit beendet werden soll. Wenn Sie beispielsweise einen Dienst haben, der permanent Nachrichten aus einer ReliableQueue abrufen und verarbeiten muss, wird dieser Vorgang hiermit ausgeführt.
 
@@ -60,16 +60,16 @@ Dies sind die wichtigsten Ereignisse im Lebenszyklus eines Reliable Service:
 
 1. Das Serviceobjekt (von "StatelessService" oder "StatefulService" abgeleitet) wird erstellt.
 
-2. Die CreateCommunicationListener-Methode wird aufgerufen, sodass der Dienst einen Kommunikationslistener seiner Wahl zurückzugeben kann.
+2. Die Methode „CreateServiceReplicaListeners/CreateServiceInstanceListeners“ wird aufgerufen. Der Dienst erhält dadurch die Möglichkeit, die gewünschten Kommunikationslistener zurückzugeben.
   + Dies ist optional, obwohl die meisten Dienste einige Endpunkte direkt verfügbar machen.
 
-3. Nach dem Erstellen des Kommunikationslisteners wird der Dienst geöffnet.
-  + Kommunikationslistener verfügen über eine Methode namens „Open()“, die zu diesem Zeitpunkt aufgerufen wird und die Überwachungsadresse für den Dienst zurückgibt. Wenn Ihr Reliable Service einen der integrierten ICommunicationListener verwendet, erfolgt dies automatisch.
+3. Nach dem Erstellen der Kommunikationslistener wird der Dienst geöffnet.
+  + Kommunikationslistener verfügen über eine Methode namens „OpenAsync()“, die zu diesem Zeitpunkt aufgerufen wird und die Überwachungsadresse für den Dienst zurückgibt. Wenn Ihr Reliable Service einen der integrierten ICommunicationListener verwendet, erfolgt dies automatisch.
 
-4. Sobald der Kommunikationslistener den Status "Open()" hat, wird der Aufruf "RunAsync()" für den Hauptdienst ausgelöst.
+4. Sobald der Kommunikationslistener geöffnet wurde, wird der Aufruf „RunAsync()“ für den Hauptdienst ausgelöst.
   + RunAsync ist optional. Wenn der Dienst alle Vorgänge nur direkt infolge von Benutzeraufrufen ausführt, muss "RunAsync()" nicht implementiert werden.
 
-Wenn der Dienst heruntergefahren wird (weil er gelöscht oder einfach von einem bestimmten Speicherort verschoben wurde), bleibt die Aufrufreihenfolge gleich: Zunächst wird im Kommunikationslistener „Close()“ aufgerufen und dann das an „RunAsync()“ übergebene Abbruchtoken abgebrochen.
+Wenn der Dienst heruntergefahren wird (weil er gelöscht, aktualisiert oder einfach von einem bestimmten Speicherort verschoben wurde), bleibt die Aufrufreihenfolge gleich: Zunächst wird in den Kommunikationslistenern „CloseAsync()“ aufgerufen und dann das an „RunAsync()“ übergebene Abbruchtoken abgebrochen.
 
 ## Dienstbeispiele
 Nachdem Sie diese Programmiermodell nun kennen, werfen wir einen Blick auf zwei Dienste, um zu sehen, wie diese Elemente zusammenspielen.
@@ -79,7 +79,7 @@ Ein zustandsloser Dienst hat buchstäblich keinen Zustand, oder der vorhandene Z
 
 Denken Sie beispielsweise an einen Rechner, der keinen Speicher hat und alle Zahlen und durchzuführenden Operationen gleichzeitig erhält.
 
-In diesem Fall kann der Dienst "RunAsync()" leer sein, da er keine Aufgaben im Hintergrund auszuführen hat. Wenn der Rechnerdienst erstellt wird, gibt er einen CommunicationListener (z. B. [Web-API](service-fabric-reliable-services-communication-webapi.md)) zurück, der auf einem Port einen Überwachungsendpunkt öffnet. Dieser Überwachungsendpunkt wird mit den verschiedenen Methoden verknüpft (z. B. "Add (n1, n2)"), die die öffentliche API des Rechners definieren.
+In diesem Fall kann der Dienst "RunAsync()" leer sein, da er keine Aufgaben im Hintergrund auszuführen hat. Wenn der Rechnerdienst erstellt wird, gibt er einen Listener vom Typ „ICommunicationListener“ (z. B. [Web-API](service-fabric-reliable-services-communication-webapi.md)) zurück, der auf einem Port einen Überwachungsendpunkt öffnet. Dieser Überwachungsendpunkt wird mit den verschiedenen Methoden verknüpft (z. B. "Add (n1, n2)"), die die öffentliche API des Rechners definieren.
 
 Erfolgt ein Aufruf durch einen Client, wird die entsprechende Methode ausgelöst. Der Rechnerdienst führt an den bereitgestellten Daten die erforderlichen Operationen durch und gibt das Ergebnis zurück. Es wird kein Zustand gespeichert.
 
@@ -92,11 +92,11 @@ Bei einem zustandsbehafteten Dienst muss ein gewisser Teil des Zustands konsiste
 
 Die meisten Dienste speichern heute ihren Zustand extern, da der externe Speicher die für den Zustand erforderliche Zuverlässigkeit, Verfügbarkeit, Skalierbarkeit und Konsistenz bietet. In Service Fabric müssen zustandsbehaftete Dienste ihren Zustand nicht extern speichern, da Service Fabric diese Anforderungen für den Code und den Zustand des Diensts übernimmt.
 
-Angenommen, Sie möchten einen Dienst schreiben, der Anforderungen für eine Reihe von Konvertierungen an einem Bild sowie das zu konvertierende Bild erhalten hat. Service Fabric würde für diesen Dienst einen CommunicationListener (z. B. WebAPI) zurückgeben, der einen Kommunikationsport für Übermittlungen über eine API wie `ConvertImage(Image i, IList<Conversion> conversions)` öffnet. Der Dienst könnte in dieser API die Informationen empfangen und die Anforderung in einer ReliableQueue speichern. Anschließend würde er zur Nachverfolgung der Anforderung Token an den Client zurückgeben (da die Verarbeitung der Anforderungen eine Weile dauern kann).
+Angenommen, Sie möchten einen Dienst schreiben, der Anforderungen für eine Reihe von Konvertierungen an einem Bild sowie das zu konvertierende Bild erhalten hat. Service Fabric würde für diesen Dienst einen Kommunikationslistener (z. B. WebAPI) zurückgeben, der einen Kommunikationsport für Übermittlungen über eine API wie `ConvertImage(Image i, IList<Conversion> conversions)` öffnet. Der Dienst könnte in dieser API die Informationen empfangen und die Anforderung in einer ReliableQueue speichern. Anschließend würde er zur Nachverfolgung der Anforderung Token an den Client zurückgeben (da die Verarbeitung der Anforderungen eine Weile dauern kann).
 
-RunAsync kann in diesem Dienst komplexer sein: Der Dienst hätte in RunAsync eine Schleife, die Anforderungen aus der ReliableQueue abruft, die aufgelisteten Konvertierungen durchführt und die Ergebnisse in einem ReliableDictionary speichert. Der Client kann daraufhin das konvertierte Bild abrufen. Um sicherzustellen, dass das Bild auch bei einem Fehler nicht verloren geht, ruft der Reliable Service es aus der Warteschlange ab, führt die Konvertierungen durch und speichert das Ergebnis in einer Transaktion. Auf diese Weise wird die Meldung tatsächlich nur aus der Warteschlange entfernt. Die Ergebnisse werden nach Abschluss der Konvertierung im Ergebniswörterbuch gespeichert. Wenn während der Verarbeitung ein Fehler auftritt (z. B. wenn der Computer, auf dem diese Instanz des Codes ausgeführt wird, ausfällt), bleibt die Anforderung zur erneuten Verarbeitung in der Warteschlange.
+RunAsync kann in diesem Dienst komplexer sein: Der Dienst hätte in RunAsync eine Schleife, die Anforderungen aus „IReliableQueue“ abruft, die aufgelisteten Konvertierungen durchführt und die Ergebnisse in „IReliableDictionary“ speichert. Der Client kann daraufhin konvertierte Bilder abrufen. Um sicherzustellen, dass das Bild auch bei einem Fehler nicht verloren geht, ruft der Reliable Service es aus der Warteschlange ab, führt die Konvertierungen durch und speichert das Ergebnis in einer Transaktion. Auf diese Weise wird die Meldung tatsächlich nur aus der Warteschlange entfernt. Die Ergebnisse werden nach Abschluss der Konvertierung im Ergebniswörterbuch gespeichert. Wenn während der Verarbeitung ein Fehler auftritt (z. B. wenn der Computer, auf dem diese Instanz des Codes ausgeführt wird, ausfällt), bleibt die Anforderung zur erneuten Verarbeitung in der Warteschlange.
 
-Bei diesem Dienst ist zu beachten, dass er wie ein normaler .NET-Dienst erscheint – der einzige Unterschied besteht darin, dass die verwendeten Datenstrukturen (ReliableQueue und ReliableDictionary) von Service Fabric bereitgestellt werden und daher äußerst zuverlässig, verfügbar und konsistent sind.
+Bei diesem Dienst ist zu beachten, dass er wie ein normaler .NET-Dienst erscheint – der einzige Unterschied besteht darin, dass die verwendeten Datenstrukturen („IReliableQueue“ und „IReliableDictionary“) von Service Fabric bereitgestellt werden und daher äußerst zuverlässig, verfügbar und konsistent sind.
 
 ## Anwendungsbereiche für Reliable Services-APIs
 Wenn einer der folgenden Punkte auf Ihre Anwendungsdienstanforderungen zutrifft, sollten Sie Reliable Service-APIs in Erwägung ziehen:
@@ -130,4 +130,4 @@ Wenn einer der folgenden Punkte auf Ihre Anwendungsdienstanforderungen zutrifft,
 + [Erfahren Sie mehr über das Reliable Actors-Programmiermodell](service-fabric-reliable-actors-introduction.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

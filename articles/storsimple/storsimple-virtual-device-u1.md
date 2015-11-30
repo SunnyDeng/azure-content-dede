@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/23/2015"
+   ms.date="11/16/2015"
    ms.author="alkohli" />
 
 # Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure
@@ -40,7 +40,7 @@ Dieses Tutorial gilt für alle virtuellen StorSimple-Geräte mit Update 1.
 
 ## Unterschiede zwischen virtuellem und physischem Gerät
 
-Das virtuelle StorSimple-Gerät ist eine reine Softwareversion von StorSimple, die auf einem einzelnen Knoten eines virtuellen Microsoft Azure-Computers ausgeführt wird. Das virtuelle Gerät unterstützt Notfallwiederherstellungsszenarios, in denen das physische Gerät nicht verfügbar ist. Zudem eignet es sich für Entwicklungs- und Testszenarien beim Abruf auf Elementebene aus Backups, bei der lokalen Notfallwiederherstellung und in der Cloud.
+Das virtuelle StorSimple-Gerät ist eine reine Softwareversion von StorSimple, die auf einem einzelnen Knoten eines virtuellen Microsoft Azure-Computers ausgeführt wird. Das virtuelle Gerät unterstützt Notfallwiederherstellungsszenarien, in denen das physische Gerät nicht verfügbar ist. Zudem kann es zum Abruf einzelner Elemente aus Sicherungen, bei der lokalen Notfallwiederherstellung und für Entwicklungs- und Testszenarien in der Cloud verwendet werden.
 
 ### Unterschiede im Vergleich zum physischen Gerät
 
@@ -57,7 +57,7 @@ Beachten Sie bei der Verwendung des virtuellen StorSimple-Geräts die folgenden 
 
 - Das virtuelle Gerät wird über das Microsoft Azure-Abonnement geschützt. Wenn Sie daher das virtuelle Gerät verwenden und Ihr Azure-Abonnement beeinträchtigt ist, sind auch die auf dem virtuellen Gerät gespeicherten Daten anfällig.
 
-- Der öffentliche Schlüssel des Zertifikats zum Verschlüsseln von Daten in Azure StorSimple wird im Microsoft Azure-Verwaltungsportal sicher zur Verfügung gestellt, und der private Schlüssel wird auf dem StorSimple-Gerät beibehalten. Auf dem virtuellen StorSimple-Gerät werden die öffentlichen und privaten Schlüssel in Azure gespeichert.
+- Der öffentliche Schlüssel des Zertifikats zum Verschlüsseln von Daten in Azure StorSimple wird im Microsoft Azure-Portal sicher zur Verfügung gestellt, und der private Schlüssel wird auf dem StorSimple-Gerät aufbewahrt. Auf dem virtuellen StorSimple-Gerät werden die öffentlichen und privaten Schlüssel in Azure gespeichert.
 
 - Das virtuelle Gerät wird im Microsoft Azure-Datencenter gehostet.
 
@@ -97,7 +97,7 @@ Nehmen Sie vor dem Erstellen eines virtuellen Geräts die folgenden Updates für
 Stellen Sie vorab sicher, dass die folgenden Informationen vorliegen:
 
 
-- Sie verfügen über ein Konto für das Azure-Verwaltungsportal sowie über die Anmeldeinformationen.
+- Sie verfügen über ein Konto für das Azure-Portal sowie die zugehörigen Anmeldeinformationen.
 
 - Sie verfügen über die Anmeldeinformationen für Ihr Azure-Speicherkonto.
 
@@ -118,7 +118,7 @@ Nachdem Sie ein virtuelles Netzwerk erstellt, den StorSimple-Manager-Dienst konf
 
 Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu erstellen.
 
-1.  Wechseln Sie im Verwaltungsportal zum **StorSimple-Manager**-Dienst.
+1.  Wechseln Sie im Azure-Portal zum **StorSimple Manager**-Dienst.
 
 2. Wechseln Sie zur Seite **Geräte**. Klicken Sie auf der Seite **Geräte** unten auf **Virtuelles Gerät erstellen**.
 
@@ -128,9 +128,9 @@ Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu er
 
 	1. **Name** – ein eindeutiger Name für Ihr virtuelles Gerät.
 
-	2. **Version** – wählen Sie die Version des virtuellen Geräts aus. Diese Option ist nicht vorhanden, wenn Sie nur physische Geräte mit Update 1 (oder höher) für diesen Dienst registriert haben. Dieses Feld wird nur angezeigt, wenn Sie eine Kombination aus physischen Geräten ohne und mit Update 1 im Dienst registriert haben. Angesichts der Tatsache, dass die Version des virtuellen Geräts angibt, von welchem physischen Gerät Sie ein Failover ausführen oder klonen können, ist es wichtig, eine geeignete Version des virtuellen Geräts zu erstellen. Auswahl:
+	2. **Version** – wählen Sie die Version des virtuellen Geräts aus. Diese Option ist nicht vorhanden, wenn Sie nur physische Geräte mit Update 1 (oder höher) für diesen Dienst registriert haben. Dieses Feld wird nur angezeigt, wenn Sie eine Kombination aus physischen Geräten ohne Update 1 und mit Update 1 im Dienst registriert haben. Angesichts der Tatsache, dass die Version des virtuellen Geräts angibt, von welchem physischen Gerät Sie ein Failover ausführen oder klonen können, ist es wichtig, eine geeignete Version des virtuellen Geräts zu erstellen. Auswahl:
 
-	   - Versionsupdate 0.3, wenn Sie ein Failover oder einen Klonvorgang von einem physischen Gerät mit GA-Releaseversion oder Updates von 0.1 bis 0.3 ausführen. 
+	   - Versionsupdate 0.3, wenn Sie einen Failover- oder Klonvorgang von einem physischen Gerät mit GA-Releaseversion oder Updates von 0.1 bis 0.3 ausführen. 
 	   - Versionsupdate 1, wenn Sie ein Failover oder einen Klonvorgang von einem physischen Gerät mit Update 1 (oder höher) ausführen. Mit Update 1 aus der Dropdownliste wird ein virtuelles Gerät mit Update 1.1 bereitgestellt.
  
 	3. **Virtuelles Netzwerk** – der Name des virtuellen Netzwerks, das für dieses virtuelle Gerät verwendet werden soll.
@@ -292,7 +292,7 @@ Wenn Sie jedoch von einem anderen Computer außerhalb des virtuellen Netzwerks o
 
 Führen Sie die folgenden Schritte durch, um auf dem virtuellen Gerät einen öffentlichen Endpunkt zu erstellen:
 
-1. Melden Sie sich beim Verwaltungsportal an.
+1. Melden Sie sich beim Azure-Portal an.
 
 - Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den als virtuelles Gerät zu verwendenden virtuellen Computer aus.
 
@@ -374,7 +374,7 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 ### So fahren Sie das virtuelle StorSimple-Gerät herunter
 
-1. Melden Sie sich beim Verwaltungsportal an.
+1. Melden Sie sich beim Azure-Portal an.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
@@ -382,7 +382,7 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 ### So löschen Sie das virtuelle StorSimple-Gerät
 
-1. Melden Sie sich beim Verwaltungsportal an.
+1. Melden Sie sich beim Azure-Portal an.
 
 - Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
@@ -392,4 +392,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

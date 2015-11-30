@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Service Fabric Reliable Actors – Übersicht"
+   pageTitle="Service Fabric Reliable Actors – Übersicht | Microsoft Azure"
    description="Einführung in das Programmiermodell Service Fabric Reliable Actors"
    services="service-fabric"
    documentationCenter=".net"
@@ -36,10 +36,10 @@ public interface ICalculatorActor : IActor
 }
 ```
 
-Ein Actor-Typ kann die obige Schnittstelle wie folgt implementieren:
+Ein Actor-Typ kann diese Schnittstelle wie folgt implementieren:
 
 ```csharp
-public class CalculatorActor : Actor, ICalculatorActor
+public class CalculatorActor : StatelessActor, ICalculatorActor
 {
     public Task<double> AddAsync(double valueOne, double valueTwo)
     {
@@ -81,9 +81,9 @@ Service Fabric-Actors sind virtuell. Daher ist ihre Lebensdauer nicht an die Dar
 Um hohe Skalierbarkeit und Zuverlässigkeit zu gewährleisten, verteilt Service Fabric die Actors im gesamten Cluster und migriert sie bei Bedarf automatisch von fehlerhaften zu fehlerfreien Knoten. Die Klasse `ActorProxy` auf dem Client nimmt die erforderliche Auflösung vor, um den Actor nach ID-[Partition](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-actors) zu suchen und einen Kommunikationskanal mit ihm zu öffnen. Außerdem versucht die Klasse `ActorProxy` bei Kommunikationsfehlern und Failover, die Verbindung wieder herzustellen. Dadurch wird sichergestellt, dass Nachrichten trotz Fehlern zuverlässig zugestellt werden. Andererseits bedeutet es aber auch, dass bei einer Actor-Implementierung doppelte Nachrichten vom gleichen Client abgerufen werden.
 
 ## Parallelität
-### Turn-basierte Parallelität
+### Rundenbasierter Zugriff
 
-Die Actors-Laufzeit bietet einfache Turn-basierte Parallelität für Actor-Methoden. Dies bedeutet, dass zu jedem beliebigen Zeitpunkt nur ein Thread innerhalb des Actor-Codes aktiv sein kann.
+Die Actors-Laufzeit stellt ein einfaches rundenbasiertes Modell für den Zugriff auf Actor-Methoden bereit. Dies bedeutet, dass zu jedem beliebigen Zeitpunkt nur ein Thread innerhalb des Actor-Codes aktiv sein kann.
 
 Ein Turn umfasst die vollständige Ausführung einer Actor-Methode als Antwort auf die Anforderung von anderen Actors oder Clients, oder die vollständige Ausführung eines [Timer-/Erinnerungs](service-fabric-reliable-actors-timers-reminders.md)-Rückrufs. Obwohl diese Methoden und Rückrufe asynchron sind, tritt keine Überschneidung mit der Actors-Laufzeit auf. Ein neuer Turn ist erst dann zulässig, wenn der aktuelle Turn vollständig abgeschlossen wurde. Oder anders ausgedrückt: Ein aktuell ausgeführter Actor-Methoden- oder Timer-/Erinnerungs-Rückruf muss vollständig abgeschlossen sein, bevor ein neuer Methodenaufruf oder ein Rückruf ausgeführt werden kann. Eine Methode oder ein Rückruf wird als abgeschlossen betrachtet, wenn die Ausführung von der Methode oder dem Rückruf zurückgegeben wurde, und die von der Methode oder dem Rückruf zurückgegebene Aufgabe abgeschlossen wurde. Es sollte hervorgehoben werden, dass Turn-basierte Parallelität selbst über verschiedene Methoden, Timer und Rückrufe hinweg eingehalten wird.
 
@@ -121,12 +121,12 @@ Die Actors-Laufzeit bietet diese Parallelitätsgarantien in Situationen, in dene
 Mithilfe von Fabric Actors können Sie Actors erstellen, die entweder statusfrei oder statusbehaftet sind.
 
 ### Statusfreie Actors
-Statusfreie Actors, die von der Basisklasse ``Actor`` abgeleitet werden, müssen keinen Status haben, der von der Actors-Laufzeit verwaltet wird. Die Member-Variablen bleiben wie jeder andere .NET-Typ während ihres gesamten Lebenszyklus im Arbeitsspeicher erhalten. Wenn nach einem bestimmten Zeitraum der Inaktivität eine Garbage Collection durchgeführt wird, geht ihr Status verloren. Auf ähnliche Weise kann der Status aufgrund eines Failovers verloren gehen, der bei Upgrades, Ressourcenausgleichsvorgängen oder infolge von Fehlern im Actor-Prozess oder in seinem Host-Knoten auftritt.
+Statusfreie Actors, die von der Basisklasse `StatelessActor` abgeleitet werden, müssen keinen Status haben, der von der Actors-Laufzeit verwaltet wird. Die Member-Variablen bleiben wie jeder andere .NET-Typ während ihres gesamten Lebenszyklus im Arbeitsspeicher erhalten. Wenn nach einem bestimmten Zeitraum der Inaktivität eine Garbage Collection durchgeführt wird, geht ihr Status verloren. Auf ähnliche Weise kann der Status aufgrund eines Failovers verloren gehen, der bei Upgrades, Ressourcenausgleichsvorgängen oder infolge von Fehlern im Actor-Prozess oder in seinem Host-Knoten auftritt.
 
 Es folgt ein Beispiel für einen statusfreien Actor.
 
 ```csharp
-class HelloActor : Actor, IHello
+class HelloActor : StatelessActor, IHello
 {
     public Task<string> SayHello(string greeting)
     {
@@ -136,12 +136,12 @@ class HelloActor : Actor, IHello
 ```
 
 ### Statusbehaftete Actors
-Statusbehaftete Actors besitzen einen Status, der über Garbage Collections und Failover hinweg erhalten bleiben muss. Sie werden von der Basisklasse `Actor<TState>` abgeleitet, wobei `TState` der Statustyp ist, der erhalten bleiben muss. Auf den Status kann in den Actor-Methoden über die Eigenschaft `State` in der Basisklasse zugegriffen werden.
+Statusbehaftete Actors besitzen einen Status, der über Garbage Collections und Failover hinweg erhalten bleiben muss. Sie werden von `StatefulActor<TState>` abgeleitet, wobei `TState` der Statustyp ist, der erhalten bleiben muss. Auf den Status kann in den Actor-Methoden über die Eigenschaft `State` in der Basisklasse zugegriffen werden.
 
 Es folgt ein Beispiel für einen statusbehafteten Actor, der auf den Status zugreift.
 
 ```csharp
-class VoicemailBoxActor : Actor<VoicemailBox>, IVoicemailBoxActor
+class VoicemailBoxActor : StatefulActor<VoicemailBox>, IVoicemailBoxActor
 {
     public Task<List<Voicemail>> GetMessagesAsync()
     {
@@ -198,4 +198,4 @@ Timer-Rückrufe können mit Attribut `Readonly` auf ähnliche Weise markiert wer
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

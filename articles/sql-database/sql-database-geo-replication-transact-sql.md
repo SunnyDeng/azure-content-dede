@@ -38,59 +38,15 @@ Standard-Datenbanken können über eine nicht lesbare sekundäre Datenbank verf�
 
 Zum Konfigurieren der Georeplikation benötigen Sie Folgendes:
 
-- Ein Azure-Abonnement: Wenn Sie kein Azure-Abonnement haben, klicken Sie einfach oben auf dieser Seite auf den Link **Kostenlos testen** und kehren dann zu diesem Artikel zurück.
+- Ein Azure-Abonnement: Wenn Sie kein Azure-Abonnement haben, klicken Sie einfach oben auf dieser Seite auf den Link **KOSTENLOSE TESTVERSION** und kehren dann zu diesem Artikel zurück.
 - Einen logische Azure SQL-Datenbankserver <MyLocalServer> und eine Azure SQL-Datenbank <MyDB>: Die primäre Datenbank, die in eine andere geografische Region repliziert werden soll.
 - Ein oder mehrere logische Azure SQL-Datenbankserver <MySecondaryServer(n)>: Die logischen Server, die als Partnerserver fungieren, in denen Sie sekundäre Datenbanken für die Georeplikation erstellen.
 - Eine Anmeldung mit der Berechtigung „DBManager“ für die primäre Datenbank, mit der Berechtigung „db\_ownership“ für die lokale Datenbank für die Georeplikation und der Berechtigung „DBManager“ für die Partnerserver, für die Sie die Georeplikation konfigurieren.
 - Neueste Version von SQL Server Management Studio: Die neueste Version von SQL Server Management Studio (SSMS) finden Sie unter [Herunterladen von SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx). Informationen zur Verwendung von SQL Server Management Studio zum Verwalten von logischen Azure SQL-Datenbankservern und Datenbanken finden Sie unter [Verwalten von Azure SQL-Datenbank mit SQL Server Management Studio](sql-database-manage-azure-ssms.md).
 
-
-
-## Herstellen einer Verbindung mit einem logischen SQL-Datenbankserver
-
-Das Herstellen einer Verbindung mit SQL-Datenbank erfordert, dass Sie den Servernamen in Azure kennen und eine Firewallregel für die IP-Adresse des Clients erstellt haben, auf dem Sie eine Verbindung mit Management Studio herstellen. Sie müssen sich ggf. beim Portal anmelden, um diese Informationen zu erhalten und diese Aufgabe auszuführen.
-
-1.  Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
-
-2.  Klicken Sie im linken Bereich auf **SQL-Datenbanken**.
-
-3.  Klicken Sie oben auf der Startseite der SQL-Datenbanken auf **SERVER**, um eine Liste aller Server anzuzeigen, die Ihrem Abonnement zugeordnet sind. Suchen Sie den Namen des gewünschten Servers und kopieren Sie ihn in die Zwischenablage.
-
-	Konfigurieren Sie als nächstes die SQL-Datenbank-Firewall, um Verbindungen von Ihrem lokalen Computer zu ermöglichen. Geben Sie hierzu die IP-Adresse Ihres lokalen Computers in die Ausnahmeliste der Firewall ein.
-
-1.  Klicken Sie auf der Startseite der SQL-Datenbanken auf **SERVER** und dann auf den Server, mit dem Sie eine Verbindung herstellen möchten.
-
-2.  Klicken Sie oben auf der Seite auf **Konfigurieren**.
-
-3.  Kopieren Sie die IP-Adresse in das Feld CURRENT CLIENT IP ADDRESS.
-
-4.  Auf der Seite **Konfigurieren** sind für Zugelassene IP-Adressen drei Felder verfügbar, in denen Sie einen Regelnamen und die Start- und Endwerte eines IP-Adressbereichs eingeben können. Als Regelnamen können Sie den Namen Ihres Computers wählen. Kopieren Sie für Bereichsanfang und -ende die IP-Adresse Ihres Computers in beide Felder und aktivieren Sie das Kontrollkästchen, das anschließend angezeigt wird.
-
-	Der Regelname muss eindeutig sein. Wenn es sich um Ihren Entwicklungscomputer handelt, können Sie seine IP-Adresse in beide Felder eingeben und als Anfangs- und Endwert des IP-Adressbereichs nutzen. Andernfalls kann es erforderlich sein, einen größeren IP-Adressbereich zu wählen, um Verbindungen von weiteren Computern in Ihrer Organisation zu ermöglichen.
-
-5. Klicken Sie unten auf der Seite auf **Speichern**.
-
-    **Hinweis:** Es kann bis zu fünf Minuten dauern, bis geänderten Firewalleinstellungen wirksam werden.
-
-	Sie können nun über Management Studio eine Verbindung zur SQL-Datenbank aufbauen.
-
-1.  Klicken Sie auf der Taskleiste auf **Start**, zeigen Sie auf **Alle Programme** > **Microsoft SQL Server 2014**, und klicken Sie anschließend auf **SQL Server Management Studio**.
-
-2.  Geben Sie unter **Verbindung mit Server herstellen** den vollständigen Servernamen in der Form „<MyLocalServer>.database.windows.net“ ein. In Azure ist der Servername eine automatisch generierte Zeichenfolge aus alphanumerischen Zeichen.
-
-3.  Wählen Sie **SQL Server-Authentifizierung**.
-
-4.  Geben Sie im Feld **Anmeldung** den SQL Server-Administratornamen ein, den Sie im Portal beim Erstellen des Servers angegeben haben.
-
-5.  Geben Sie im Feld **Kennwort** das Kennwort ein, das Sie im Portal beim Erstellen des Servers angegeben haben.
-
-8.  Klicken Sie auf **Verbinden**, um die Verbindung herzustellen.
-
-
-
 ## Hinzufügen einer sekundären Datenbank
 
-Mithilfe der **ALTER DATABASE**-Anweisung können Sie auf einem Partnerserver eine geografisch replizierte sekundäre Datenbank erstellen. Sie führen diese Anweisung in der „master“-Datenbank des Servers mit der Datenbank aus, die repliziert werden soll. Die geografisch replizierte Datenbank (die „primäre Datenbank“) hat denselben Namen wie die zu replizierende Datenbank und standardmäßig dieselbe Dienstebene wie die primäre Datenbank. Die sekundäre Datenbank kann lesbar oder nicht lesbar und eine Einzel- oder elastische Datenbank sein. Weitere Informationen finden Sie unter [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/mt574871.aspx) und [Tarife](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/). Nachdem die sekundäre Datenbank erstellt und das Seeding ausgeführt wurde, beginnt die asynchrone Replikation aus der primären Datenbank. In den nachfolgenden Schritten wird beschrieben, wie die Georeplikation mithilfe von Management Studio konfiguriert wird. Schritte zum Erstellen von nicht lesbaren und lesbaren sekundären Datenbanken, entweder mit einer einzelnen oder einer elastischen Datenbank, sind angegeben.
+Mithilfe der **ALTER DATABASE**-Anweisung können Sie auf einem Partnerserver eine georeplizierte sekundäre Datenbank erstellen. Sie führen diese Anweisung in der „master“-Datenbank des Servers mit der Datenbank aus, die repliziert werden soll. Die geografisch replizierte Datenbank (die „primäre Datenbank“) hat denselben Namen wie die zu replizierende Datenbank und standardmäßig dieselbe Dienstebene wie die primäre Datenbank. Die sekundäre Datenbank kann lesbar oder nicht lesbar und eine Einzel- oder elastische Datenbank sein. Weitere Informationen finden Sie unter [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/mt574871.aspx) und [Tarife](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/). Nachdem die sekundäre Datenbank erstellt und das Seeding ausgeführt wurde, beginnt die asynchrone Replikation aus der primären Datenbank. In den nachfolgenden Schritten wird beschrieben, wie die Georeplikation mithilfe von Management Studio konfiguriert wird. Schritte zum Erstellen von nicht lesbaren und lesbaren sekundären Datenbanken, entweder mit einer einzelnen oder einer elastischen Datenbank, sind angegeben.
 
 > [AZURE.NOTE]Wenn die sekundäre Datenbank auf dem angegebenen Partnerserver vorhanden ist (da z. B. eine Georeplikationsbeziehung derzeit besteht oder zuvor bestanden hat), misslingt der Befehl.
 
@@ -99,11 +55,14 @@ Mithilfe der **ALTER DATABASE**-Anweisung können Sie auf einem Partnerserver ei
 
 Führen Sie zum Erstellen einer nicht lesbaren sekundären Datenbank als Einzeldatenbank die folgenden Schritte aus.
 
-1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver.
+1. Verwenden von Version 13.0.600.65 oder höher von SQL Server Management Studio
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+ 	 >[AZURE.IMPORTANT]Laden Sie die [aktuelle](https://msdn.microsoft.com/library/mt238290.aspx) Version von SQL Server Management Studio herunter. Es wird empfohlen, immer die neueste Version von Management Studio zu verwenden, damit Sie mit Updates des Azure-Portals synchron sind.
 
-3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als geografisch replizierte primäre Datenbank mit einer nicht lesbaren sekundären Datenbank auf <MySecondaryServer1> einzurichten.
+
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+
+3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als georeplizierte primäre Datenbank mit einer nicht lesbaren sekundären Datenbank auf <MySecondaryServer1> einzurichten.
 
         ALTER DATABASE <MyDB>
            ADD SECONDARY ON SERVER <MySecondaryServer1> WITH (ALLOW_CONNECTIONS = NO);
@@ -112,13 +71,13 @@ Führen Sie zum Erstellen einer nicht lesbaren sekundären Datenbank als Einzeld
 
 
 ### Hinzufügen einer lesbaren sekundären Datenbank (Einzeldatenbank)
-Führen Sie zum Erstellen einer lesbaren sekundären Datenbank als Einzeldatenbank die folgenden Schritte aus.
+Führen Sie zum Erstellen einer lesbaren sekundären Datenbank als Einzeldatenbank die folgenden Schritte aus:
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
-3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als geografisch replizierte primäre Datenbank mit einer lesbaren sekundären Datenbank auf einem sekundären Server einzurichten.
+3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als georeplizierte primäre Datenbank mit einer lesbaren sekundären Datenbank auf einem sekundären Server einzurichten.
 
         ALTER DATABASE <MyDB>
            ADD SECONDARY ON SERVER <MySecondaryServer2> WITH (ALLOW_CONNECTIONS = ALL);
@@ -127,14 +86,14 @@ Führen Sie zum Erstellen einer lesbaren sekundären Datenbank als Einzeldatenba
 
 
 
-### Hinzufügen einer nicht lesbaren sekundären Datenbank (als elastische Datenbank)
-Führen Sie zum Erstellen einer nicht lesbaren sekundären Datenbank als elastische Datenbank die folgenden Schritte aus.
+### Hinzufügen einer nicht lesbaren sekundären Datenbank (elastische Datenbank)
+Führen Sie zum Erstellen einer nicht lesbaren sekundären Datenbank als elastische Datenbank die folgenden Schritte aus:
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
-3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als geografisch replizierte primäre Datenbank mit einer nicht lesbaren sekundären Datenbank auf einem sekundären Server in einem elastischen Pool einzurichten.
+3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als georeplizierte primäre Datenbank mit einer nicht lesbaren sekundären Datenbank auf einem sekundären Server in einem elastischen Pool einzurichten.
 
         ALTER DATABASE <MyDB>
            ADD SECONDARY ON SERVER <MySecondaryServer3> WITH (ALLOW_CONNECTIONS = NO)
@@ -144,14 +103,14 @@ Führen Sie zum Erstellen einer nicht lesbaren sekundären Datenbank als elastis
 
 
 
-### Hinzufügen einer lesbaren sekundären Datenbank (als elastische Datenbank)
+### Hinzufügen einer lesbaren sekundären Datenbank (elastische Datenbank)
 Führen Sie zum Erstellen einer lesbaren sekundären Datenbank als elastische Datenbank die folgenden Schritte aus.
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
-3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als geografisch replizierte primäre Datenbank mit einer lesbaren sekundären Datenbank auf einem sekundären Server in einem elastischen Pool einzurichten.
+3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine lokale Datenbank als georeplizierte primäre Datenbank mit einer lesbaren sekundären Datenbank auf einem sekundären Server in einem elastischen Pool einzurichten.
 
         ALTER DATABASE <MyDB>
            ADD SECONDARY ON SERVER <MySecondaryServer4> WITH (ALLOW_CONNECTIONS = NO)
@@ -169,9 +128,9 @@ Führen Sie zum Entfernen der sekundären Datenbank aus der Georeplikationsbezie
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
-3. Verwenden Sie die folgende **ALTER DATABASE** -Anweisung zum Entfernen einer sekundären Datenbank für die Georeplikation.
+3. Verwenden Sie die folgende **ALTER DATABASE** -Anweisung zum Entfernen einer georeplizierten sekundären Datenbank.
 
         ALTER DATABASE <MyDB>
            REMOVE SECONDARY ON SERVER <MySecondaryServer1>;
@@ -198,9 +157,9 @@ Führen Sie die folgenden Schritte aus, um ein geplantes Failover auszulösen.
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver, in dem sich eine geografisch repliziert sekundäre Datenbank befindet.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
-3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine geografisch replizierte Datenbank als primäre Datenbank mit einer lesbaren sekundären Datenbank auf <MySecondaryServer4> in <ElasticPool2> einzurichten.
+3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um eine georeplizierte Datenbank als primäre Datenbank mit einer lesbaren sekundären Datenbank auf <MySecondaryServer4> in <ElasticPool2> einzurichten.
 
         ALTER DATABASE <MyDB> FAILOVER;
 
@@ -221,13 +180,13 @@ Da jedoch die Point-in-Time-Wiederherstellung für sekundäre Datenbanken nicht 
 
 Wenn die primäre Datenbank über mehrere sekundäre Datenbanken verfügt, ist der Befehl nur auf dem sekundären Server erfolgreich, auf dem der Befehl ausgeführt wurde. Den anderen sekundären Datenbanken ist jedoch nicht bekannt, dass das Erzwingen eines Failovers erfolgt ist. Der Benutzer muss diese Konfiguration mithilfe einer API vom Typ „remove secondary“ reparieren und dann die Georeplikation in diesen zusätzlichen sekundären Datenbanken neu konfigurieren.
 
-Führen Sie zum Erzwingen des Entfernens der sekundären Datenbank aus der Georeplikationsbeziehung folgende Schritte aus.
+Führen Sie zum Erzwingen des Entfernens der georeplizierten sekundären Datenbank aus der Georeplikationsbeziehung folgende Schritte aus:
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver, in dem sich eine geografisch repliziert sekundäre Datenbank befindet.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
-3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um <MyLocalDB> als eine geografisch replizierte primäre Datenbank mit einer lesbaren sekundären Datenbank auf <MySecondaryServer4> in <ElasticPool2> einzurichten.
+3. Verwenden Sie die folgende **ALTER DATABASE**-Anweisung, um <MyLocalDB> als eine georeplizierte primäre Datenbank mit einer lesbaren sekundären Datenbank auf <MySecondaryServer4> in <ElasticPool2> einzurichten.
 
         ALTER DATABASE <MyDB>   FORCE_FAILOVER_ALLOW_DATA_LOSS;
 
@@ -235,28 +194,28 @@ Führen Sie zum Erzwingen des Entfernens der sekundären Datenbank aus der Geore
 
 ## Überprüfen der Konfiguration und Integrität der Georeplikation
 
-Zu den Überwachungsaufgaben gehören die Überwachung der Konfiguration der Georeplikation und der Integrität der Datenreplikation. Sie können die dynamische Verwaltungssicht **sys.dm\_geo\_replication\_links** in der „master“-Datenbank nutzen, um Informationen zu allen vorhandenen Replikationsverknüpfungen für alle Datenbanken auf dem logischen Azure SQL-Datenbankserver abzurufen. Diese Ansicht enthält eine Zeile für jede Replikationsverknüpfung zwischen primären und sekundären Datenbanken. Sie können die dynamische Verwaltungssicht **sys.dm\_replication\_status** verwenden, um eine Zeile für jede Azure SQL-Datenbank zurückzugeben, die derzeit an einer Replikationsverknüpfung beteiligt ist. Dies schließt primäre und sekundäre Datenbanken ein. Wenn für eine bestimmte primäre Datenbank mehrere Verknüpfungen für die fortlaufende Replikation vorhanden sind, enthält die Tabelle eine Zeile für jede der Beziehungen. Die Sicht wird in allen Datenbanken, einschließlich der logischen „master“-Datenbank, erstellt. Doch bei Abfragen dieser Sicht in der logischen „master“-Datenbank wird ein leeres Ergebnis zurückgegeben. Sie können mithilfe der Verwaltungssicht **sys.dm\_operation\_status** den Status aller Datenbankvorgänge anzeigen, einschließlich des Status der Replikationsverknüpfungen. Weitere Informationen finden Sie unter [sys.dm\_geo\_replication\_links (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/mt575501.aspx), [sys.dm\_geo\_replication\_link\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/mt575504.aspx) und [sys.dm\_operation\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn270022.aspx).
+Zu den Überwachungsaufgaben gehören die Überwachung der Konfiguration der Georeplikation und der Integrität der Datenreplikation. Sie können die dynamische Verwaltungssicht **sys.dm\_geo\_replication\_links** in der Masterdatenbank nutzen, um Informationen zu allen vorhandenen Replikationsverknüpfungen für alle Datenbanken auf dem logischen Azure SQL-Datenbankserver abzurufen. Diese Ansicht enthält eine Zeile für jede Replikationsverknüpfung zwischen primären und sekundären Datenbanken. Sie können die dynamische Verwaltungssicht **sys.dm\_replication\_status** verwenden, um eine Zeile für jede Azure SQL-Datenbank zurückzugeben, die derzeit an einer Replikationsverknüpfung beteiligt ist. Dies schließt primäre und sekundäre Datenbanken ein. Wenn für eine bestimmte primäre Datenbank mehrere Verknüpfungen für die fortlaufende Replikation vorhanden sind, enthält die Tabelle eine Zeile für jede der Beziehungen. Die Sicht wird in allen Datenbanken, einschließlich der logischen „master“-Datenbank, erstellt. Doch bei Abfragen dieser Sicht in der logischen „master“-Datenbank wird ein leeres Ergebnis zurückgegeben. Sie können mithilfe der Verwaltungssicht **sys.dm\_operation\_status** den Status aller Datenbankvorgänge anzeigen, einschließlich des Status der Replikationsverknüpfungen. Weitere Informationen finden Sie unter [sys.dm\_geo\_replication\_links (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/mt575501.aspx), [sys.dm\_geo\_replication\_link\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/mt575504.aspx) und [sys.dm\_operation\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn270022.aspx).
 
 Gehen Sie folgendermaßen vor, um eine Georeplikationspartnerschaft zu überwachen.
 
 1. Verbinden Sie sich in Management Studio mit dem logischen Azure SQL-Datenbankserver.
 
-2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
+2. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**.
 
 3. Verwenden Sie die folgende Anweisung, um alle Datenbanken mit Georeplikationsverknüpfungen anzuzeigen.
 
-        SELECT database_id,start_date, partner_server, partner_database,  replication_state, is_target_role, is_non_redable_secondary FROM sys.geo_replication_links;
+        SELECT database_id, start_date, modify_date, partner_server, partner_database, replication_state_desc, role, secondary_allow_connections_desc FROM [sys].geo_replication_links;
 
 4. Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
-5. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **MyDM**, und klicken Sie anschließend auf **Neue Abfrage**.
+5. Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **Systemdatenbanken**, klicken Sie mit der rechten Maustaste auf **MyDM**, und klicken Sie anschließend auf **Neue Abfrage**.
 6. Zeigen Sie mithilfe der folgenden Anweisung die Replikationsverzögerungen und den Zeitpunkt der letzten Replikation Ihrer eigenen sekundären Datenbanken von MyDB an.
 
-        SELECT link_guid, partner_server, last_replication, replication_lag_sec FROM sys.dm_ replication_status
+        SELECT link_guid, partner_server, last_replication, replication_lag_sec FROM sys.dm_geo_replication_link_status
 
 7. Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
 8. Verwenden Sie die folgende Anweisung, um die neuesten Georeplikationsvorgänge anzuzeigen, die der Datenbank MyDB zugeordnet sind.
 
-        SELECT * FROM sys.dm_ operation_status where major_resource_is = 'MyDB'
+        SELECT * FROM sys.dm_operation_status where major_resource_is = 'MyDB'
         ORDER BY start_time DESC
 
 9. Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
@@ -274,4 +233,4 @@ Gehen Sie folgendermaßen vor, um eine Georeplikationspartnerschaft zu überwach
 - [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

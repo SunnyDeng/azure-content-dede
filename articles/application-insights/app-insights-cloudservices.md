@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="ibiza"
    ms.topic="article"
    ms.workload="tbd"
-   ms.date="09/30/2015"
+   ms.date="11/15/2015"
    ms.author="sdash"/>
 
 # Application Insights für Azure Cloud Services
@@ -58,7 +58,7 @@ Als Alternative könnten Sie Daten aus allen Rollen an nur eine Ressource senden
 
     ![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten".](./media/app-insights-cloudservices/03-nuget.png)
 
-2. Fügen Sie das NuGet-Paket [Application Insights for Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web) hinzu. Diese Version des SDK enthält Module, die Serverkontext wie z. B. Rolleninformationen hinzufügen.
+2. Fügen Sie das NuGet-Paket [Application Insights for Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web) hinzu. Diese Version des SDK enthält Module, die Serverkontext wie z. B. Rolleninformationen hinzufügen. Verwenden Sie für Workerrollen Application Insights für Windows-Dienste.
 
     ![Suchen Sie nach "Application Insights".](./media/app-insights-cloudservices/04-ai-nuget.png)
 
@@ -69,9 +69,9 @@ Als Alternative könnten Sie Daten aus allen Rollen an nur eine Ressource senden
  
     ```XML
      
-    <Role name="WorkerRoleA"> 
+     <Role name="WorkerRoleA"> 
       <Setting name="Telemetry.AI.InstrumentationKey" value="YOUR IKEY" /> 
-    </Role>
+     </Role>
     ```
  
     Legen Sie in einer geeigneten Startfunktion den Instrumentationsschlüssel aus der Konfigurationseinstellung fest:
@@ -90,6 +90,20 @@ Als Alternative könnten Sie Daten aus allen Rollen an nur eine Ressource senden
 4. Legen Sie für die Datei "ApplicationInsights.config" fest, dass sie immer in das Ausgabeverzeichnis kopiert wird. 
 
     (In der Datei „.config“ erscheinen Nachrichten, in denen Sie dazu aufgefordert werden, den Instrumentationsschlüssel hier zu platzieren. Für Cloudanwendungen ist es jedoch besser, ihn aus der Datei „.cscfg“ festzulegen. Dadurch wird sichergestellt, dass die Rolle im Portal korrekt identifiziert wird.)
+
+## Aktivieren der Azure-Diagnose
+
+Azure-Diagnose sendet Leistungsindikatoren, Windows-Ereignisprotokolle und Ablaufverfolgungsprotokolle von Ihrer Anwendung an Application Insights.
+
+Öffnen Sie im Projektmappen-Explorer die Eigenschaften der einzelnen Rollen. Aktivieren Sie **Diagnose an Application Insights senden**.
+
+![In den Eigenschaften wählen Sie "Diagnose aktivieren, an Application Insights senden".](./media/app-insights-cloudservices/05-wad.png)
+
+Wiederholen Sie diesen Vorgang für die anderen Rollen.
+
+### Aktivieren der Azure-Diagnose in einer Live-App oder einer Azure-VM
+
+Die Diagnose lässt sich auch aktivieren, wenn die App bereits auf Azure ausgeführt wird. Öffnen Sie dazu die App-Eigenschaften in Visual Studio Server-Explorer oder Cloud-Explorer.
 
 
 ## Verwenden des SDK zum Melden von Telemetriedaten
@@ -208,4 +222,4 @@ Um die vollständige 360-Grad-Ansicht Ihrer Anwendung zu erhalten, sollten Sie e
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

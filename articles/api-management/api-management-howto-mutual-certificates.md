@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="11/16/2015" 
 	ms.author="sdanie"/>
 
 # Sichern von Back-End-Diensten über eine gegenseitige Zertifikatauthentifizierung in Azure API Management
@@ -54,7 +54,7 @@ Klicken Sie auf **Hochladen**, um das Zertifikat hochzuladen.
 
 ![Zertifikat hochgeladen][api-management-certificate-uploaded]
 
-Sobald das Zertifikat hochgeladen ist, wird es auf der Registerkarte **Clientzertifikate** angezeigt. Falls Sie über mehrere Zertifikate verfügen, legen Sie einen Hinweis zum Thema an, oder verwenden Sie die letzten vier Zeichen des Fingerabdrucks, die zur Auswahl eines Zertifikats beim Konfigurieren einer API zum Verwenden von Zertifikaten dienen. Weitere Informationen zu diesem Thema finden Sie unter [Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Proxyauthentifizierung][].
+Sobald das Zertifikat hochgeladen ist, wird es auf der Registerkarte **Clientzertifikate** angezeigt. Falls Sie über mehrere Zertifikate verfügen, legen Sie einen Hinweis zum Thema an, oder verwenden Sie die letzten vier Zeichen des Fingerabdrucks, die zur Auswahl eines Zertifikats beim Konfigurieren einer API zum Verwenden von Zertifikaten dienen. Weitere Informationen zu diesem Thema finden Sie unter [Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Gatewayauthentifizierung][].
 
 ## <a name="step1a"> </a>Löschen eines Clientzertifikats
 
@@ -70,7 +70,7 @@ Falls das Zertifikat von einer API verwendet wird, wird ein Warnbildschirm angez
 
 ![Bestätigen des Löschens][api-management-confirm-delete-policy]
 
-## <a name="step2"> </a>Konfigurieren einer API zum Verwenden gegenseitiger Zertifikate für die Proxyauthentifizierung
+## <a name="step2"> </a>Konfigurieren einer API zum Verwenden gegenseitiger Zertifikate für die Gatewayauthentifizierung
 
 Klicken Sie auf **APIs** im Menü **API Management** auf der linken Seite, klicken Sie auf die gewünschte API und dann auf die Registerkarte **Sicherheit**.
 
@@ -90,7 +90,7 @@ Klicken Sie auf **Speichern**, um die Konfigurationsänderungen der API zu speic
 
 ![API-Änderungen speichern][api-management-save-api]
 
->Wenn für den Back-End-Dienst einer API ein Zertifikat zur Proxy-Authentifizierung angegeben ist, wird es Teil der Richtlinie dieser API und kann im Richtlinien-Editor angezeigt werden.
+>Wenn für den Back-End-Dienst einer API ein Zertifikat zur Gateway-authentifizierung angegeben ist, wird es Teil der Richtlinie dieser API und kann im Richtlinien-Editor angezeigt werden.
 
 ![Zertifikatrichtlinie][api-management-certificate-policy]
 
@@ -133,7 +133,7 @@ Weitere Informationen finden Sie im folgenden Video.
 [Prerequisites]: #prerequisites
 [Upload a client certificate]: #step1
 [Delete a client certificate]: #step1a
-[Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Proxyauthentifizierung]: #step2
+[Konfigurieren einer API zum Verwenden eines gegenseitigen Zertifikats zur Gatewayauthentifizierung]: #step2
 [Test the configuration by calling an operation in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
@@ -141,4 +141,4 @@ Weitere Informationen finden Sie im folgenden Video.
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

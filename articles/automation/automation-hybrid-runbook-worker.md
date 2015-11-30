@@ -72,7 +72,7 @@ Der Microsoft-Verwaltungs-Agent verbindet Computer mit Operations Management Sui
 
 Befolgen Sie die Anweisungen unter [Direktes Verbinden von Computern mit Operational Insights](../operational-insights/operational-insights-direct-agent.md), um den Agent auf dem lokalen Computer zu installieren. Sie können diesen Vorgang für mehrere Computer wiederholen, um Ihrer Umgebung mehrere Worker hinzuzufügen.
 
-Wenn der Agent erfolgreich mit Operations Management Suite verbunden ist, wird er im Operations Management Suite-Bereich **Einstellungen** auf der Registerkarte **Verbundene Datenquellen** aufgeführt. Sie können sicherstellen, dass der Agent die Automation-Lösung ordnungsgemäß heruntergeladen hat, indem Sie prüfen, ob unter „C:\\Programme\\Microsoft Monitoring Agent\\Agent“ ein Ordner namens **AzureAutomationFiles** vorhanden ist.
+Wenn der Agent erfolgreich mit Operations Management Suite verbunden ist, wird er im Operations Management Suite-Bereich **Einstellungen** auf der Registerkarte **Verbundene Datenquellen** aufgeführt. Sie können sicherstellen, dass der Agent die Automation-Lösung ordnungsgemäß heruntergeladen hat, indem Sie prüfen, ob unter "C:\\Programme\\Microsoft Monitoring Agent\\Agent" ein Ordner namens **AzureAutomationFiles** vorhanden ist.
 
 ### 4\. Installieren der Runbookumgebung und Verbindungsherstellung mit Azure Automation
 Wenn Sie Operations Management Suite einen Agent hinzufügen, lädt die Automation-Lösung per Push das PowerShell-Modul **HybridRegistration** herunter, in dem das Cmdlet **Add-HybridRunbookWorker** enthalten ist. Sie verwenden dieses Cmdlet zum Installieren der Runbookumgebung auf dem Computer und registrieren diesen bei Azure Automation.
@@ -157,7 +157,7 @@ Sie können anhand der folgenden Kriterien prüfen, ob Azure Automation mit Hybr
 
 - SMA erfordert eine lokale Installation des Microsoft Azure Packs, das mehr lokale Ressourcen und einen höheren Wartungsaufwand erfordert als Azure Automation, bei dem nur ein Agent auf den lokalen Runbookworkern installiert wird. Die Agents werden von Operations Management Suite verwaltet, wodurch der Wartungsaufwand weiter sinkt.
 - Azure Automation speichert Runbooks in der Cloud und übermittelt diese an lokale Hybrid-Runbook-Worker. Wenn Ihre Sicherheitsrichtlinie dieses Verhalten nicht zulässt, sollten Sie SMA verwenden.
-- Microsoft Azure Pack steht als kostenloser Download bereit, während bei Azure Automation Abonnementkosten anfallen können. Azure: Muss mehrere Datenbanken für SMA verwalten.
+- Microsoft Azure Pack steht als kostenloser Download bereit, während bei Azure Automation Abonnementkosten anfallen können.
 - Azure Automation mit Hybrid-Runbook-Worker ermöglicht Ihnen das Verwalten von Runbooks für Cloudressourcen und lokale Ressourcen von einer zentralen Stelle, im Gegensatz zur getrennten Verwaltung über Azure Automation und SMA.
 - Azure Automation bietet erweiterte Funktionen wie z. B. die grafische Erstellung, die in SMA nicht verfügbar ist.
 
@@ -168,4 +168,4 @@ Sie können anhand der folgenden Kriterien prüfen, ob Azure Automation mit Hybr
 - [Bearbeiten eines Runbooks in Azure Automation](https://msdn.microsoft.com/library/dn879137.aspx)
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

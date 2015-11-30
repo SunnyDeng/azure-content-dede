@@ -28,11 +28,8 @@ Mit Notification Hubs können Sie problemlos plattformübergreifende, personalis
 Sie können Notification Hubs für Unternehmens-und Verbraucherszenarien verwenden. Beispiel:
 
 - Senden Sie Benachrichtigungen zu aktuellen Nachrichten mit geringer Latenz an Millionen von Benutzern (Notification Hubs unterstützen Bing-Anwendungen, die auf allen Windows- und Windows Phone-Geräten vorinstalliert sind).
-
 - Senden Sie standortbasierte Gutscheine an Benutzersegmente.
-
 - Senden Sie Ereignisbenachrichtigungen an Benutzer oder Gruppen für Sport-/Finanz-/Spieleanwendungen.
-
 - Benachrichtigen Sie die Benutzer über Unternehmensereignisse wie neue Nachrichten/E-Mails und Vertriebsleads.
 - Senden Sie einmal zu verwendende Kennwörter für die Multi-Factor Authentication.
 
@@ -69,7 +66,7 @@ Von einer höheren Ebene betrachtet folgen alle Plattform-Benachrichtigungssyste
 
 ##Die Herausforderungen von Pushbenachrichtigungen
 
-Diese Systeme sind zwar sehr leistungsstark, aber der App-Entwickler hat immer noch sehr viel Arbeit, selbst wenn er nur allgemeine Pushbenachrichtigungs-Szenarios wie Broadcast-Übertragungen oder das Senden von Pushbenachrichtigungen an einen Benutzer verwirklichen möchte.
+Diese Systeme sind zwar sehr leistungsstark, aber der App-Entwickler hat immer noch sehr viel Arbeit, selbst wenn er nur allgemeine Pushbenachrichtigungs-Szenarios wie Broadcast-Übertragungen oder das Senden von Pushbenachrichtigungen an nach Segmenten eingeteilte Benutzer implementieren möchte.
 
 Pushbenachrichtigungen gehören zu den am häufigsten nachgefragten Funktionen in Clouddiensten für mobile Apps. Der Grund dafür ist, dass die zu ihrer Funktion erforderliche Infrastruktur ziemlich komplex ist und mit der Hauptgeschäftslogik der App oft ziemlich wenig zu tun hat. Folgende Herausforderungen stellen sich beim Aufbau einer bedarfsgesteuerten Push-Infrastruktur:
 
@@ -88,15 +85,10 @@ Notification Hubs verringern die Komplexität: Sie müssen die Herausforderungen
 ![][1]
 
 
-
-
-
-
 Notification Hubs bieten eine benutzerfreundliche Infrastruktur für Pushbenachrichtigungen mit folgenden Vorteilen:
 
 - **Mehrere Plattformen.**
 	+  Unterstützung für alle wichtigen mobilen Plattformen. Benachrichtigungshubs können Pushbenachrichtigungen an Windows Store-, iOS-, Android- und Windows Phone-Apps senden.
-
 
 	+  Benachrichtigungshubs bieten eine gemeinsame Schnittstelle zum Senden von Benachrichtigungen an alle unterstützten Plattformen. Plattformspezifische Protokolle sind nicht erforderlich. Dieses App-Back-End kann Benachrichtigungen in plattformspezifischen oder plattformunabhängigen Formaten senden. Die Anwendung kommuniziert nur mit Notification Hubs.
 
@@ -115,7 +107,7 @@ Notification Hubs bieten eine benutzerfreundliche Infrastruktur für Pushbenachr
 
 	- *Segmentierung*: Push an komplexe Segmente, die durch Tagausdrücke definiert sind (z. B. Geräte in New York, die den Yankees folgen).
 
-	Jedes Gerät kann beim Senden seines Handles an einen Notification Hub ein oder mehrere _Tags_ angeben. Weitere Informationen zu [Tags](http://msdn.microsoft.com/library/azure/dn530749.aspx). Tags müssen nicht vorab bereitgestellt oder entfernt werden. Tags bieten einen einfachen Weg, um Benachrichtigungen an Benutzer oder Interessengruppen zu senden. Da Tags jede beliebige App-spezifische Kennung (wie Benutzer- oder Gruppen-IDs) enthalten können, befreien Sie das App-Back-End von der Last, Geräte-Handles speichern und verwalten zu müssen.
+	Jedes Gerät kann beim Senden seines Handles an einen Notification Hub ein oder mehrere _Tags_ angeben. Weitere Informationen zu [Tags]. Tags müssen nicht vorab bereitgestellt oder entfernt werden. Tags bieten einen einfachen Weg, um Benachrichtigungen an Benutzer oder Interessengruppen zu senden. Da Tags jede beliebige App-spezifische Kennung (wie Benutzer- oder Gruppen-IDs) enthalten können, befreien Sie das App-Back-End von der Last, Geräte-Handles speichern und verwalten zu müssen.
 
 - **Personalisierung**: Jedes Gerät kann eine oder mehrere Vorlagen aufweisen, um eine Lokalisierung und Personalisierung pro Gerät zu erreichen, ohne dass dies Auswirkungen auf den Back-End-Code hat.
 
@@ -124,6 +116,18 @@ Notification Hubs bieten eine benutzerfreundliche Infrastruktur für Pushbenachr
 - **Umfangreiche Telemetrie**: Verfügbar im Portal und programmgesteuert.
 
 
+##Integration in Mobile App Service-Apps
+
+Um eine nahtlose und vereinheitlichte Verwendung in Azure-Diensten zu ermöglichen, verfügt [Mobile App Service-Apps] über eine integrierte Unterstützung von Pushbenachrichtigungen mithilfe von Notification Hubs. [Mobile App Service-Apps] bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Entwickler bereitstellt.
+
+Mobile Apps-Entwickler können Notification Hubs mit dem folgenden Workflow verwenden:
+
+1. Abrufen des PNS-Gerätehandle
+2. Registrieren des Geräts und der [Vorlagen](optional) mit Notification Hubs über die praktische Registrierungs-API des Mobile Apps-Client-SDK
+    + Beachten Sie, dass Mobile Apps aus Sicherheitsgründen alle Tags für Registrierungen entfernt. Arbeiten Sie direkt von Ihrem Back-End aus mit Notification Hubs, um Tags Geräten zuzuordnen.
+3. Senden von Benachrichtigungen von Ihrem App-Back-End mit Notification Hubs
+
+Hier einige Vorteile, die sich aus dieser Integration für Entwickler ergeben: - **Mobile Apps-Client-SDKs.** Diese plattformübergreifenden SDKs bieten einfache APIs für die Registrierung und die Kommunikation mit dem Notification Hub, der automatisch mit der mobilen App verknüpft wird. Entwickler müssen keine Anmeldeinformationen für Notification Hubs durchsuchen und keinen zusätzlichen Dienst verwenden. + Die SDKs markieren das angegebene Gerät automatisch mit der für Mobile Apps authentifizierten Benutzer-ID, um den Push an das Benutzerszenario zu ermöglichen. + Die SDKs verwenden die Installations-ID von Mobile Apps automatisch als GUID für die Registrierung bei Notification Hubs, sodass Entwickler nicht mehrere Dienst-GUIDs verwalten müssen. - **Installationsmodell.** Mobile Apps verwendet das neueste Notification Hubs-Pushmodell zur Darstellung aller einem Gerät zugeordneten Pusheigenschaften in einer JSON-Installation, das auf Push Notification Services ausgerichtet ist und sich einfach verwenden lässt. - **Flexibilität.** Entwickler können auch bei eingerichteter Integration immer mit Notification Hubs direkt arbeiten. - **Integration im [Azure-Portal].** Push als Funktion ist in Mobile Apps visuell dargestellt, sodass Entwickler problemlos mit dem zugeordneten Notification Hub über Mobile Apps arbeiten können.
 
 
 
@@ -156,5 +160,9 @@ Die relevanten .NET-API-Referenzen für Pushbenachrichtigungen befinden sich hie
   [Xamarin.Android]: http://azure.microsoft.com/documentation/articles/partner-xamarin-notification-hubs-android-get-started
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.aspx
+  [Mobile App Service-Apps]: https://azure.microsoft.com/de-DE/documentation/articles/app-service-mobile-value-prop/
+  [templates]: https://msdn.microsoft.com/de-DE/library/azure/dn530748.aspx
+  [Azure-Portal]: https://portal.azure.com
+  [tags]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->
