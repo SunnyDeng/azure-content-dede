@@ -1,25 +1,26 @@
-<properties 
-	pageTitle="Verwalten des explosionsartigen Wachstums elastischer Datenbanken" 
-	description="Ein Pool für elastische Datenbanken in Azure SQL-Datenbank stellt eine Sammlung der verfügbaren Ressourcen dar, die von einer Gruppe von elastischen Datenbanken gemeinsam verwendet werden." 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
-	editor=""/>
+<properties
+	pageTitle="Pool für elastische Datenbanken für SQL-Datenbanken | Microsoft Azure"
+	description="Erfahren Sie, wie Sie das explosionsartige Wachstum von SQL-Datenbanken mit Pools für elastische Datenbanken verwalten können, sodass die verfügbaren Ressourcen von vielen Datenbanken gemeinsam genutzt werden."
+	keywords="elastische Datenbank, SQL-Datenbanken"	
+	services="sql-database"
+	documentationCenter=""
+	authors="stevestein"
+	manager="jeffreyg"
+	editor="cgronlun"/>
 
-<tags 
+<tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="11/10/2015" 
-	ms.author="sstein" 
-	ms.workload="data-management" 
-	ms.topic="article" 
+	ms.date="11/10/2015"
+	ms.author="sstein"
+	ms.workload="data-management"
+	ms.topic="article"
 	ms.tgt_pltfrm="NA"/>
 
 
-# Verwalten des explosionsartigen Wachstums elastischer Datenbanken
+# Verwalten des explosionsartigen Wachstums von SQL-Datenbanken durch die Verwendung elastischer Datenbanken zur gemeinsamen Ressourcennutzung
 
-Für SaaS-Entwickler, die Dutzende, Hunderte oder sogar Tausende von Datenbanken haben, vereinfacht ein Pool für elastische Datenbanken das Erstellen, Warten und Verwalten der Leistung und der Kosten der gesamten Datenbankgruppe, sodass das geplante Budget eingehalten werden kann. Sie können innerhalb weniger Minuten über das Microsoft Azure-Portal oder mit PowerShell oder C# einen [Pool für elastische Datenbanken erstellen](sql-database-elastic-pool-portal.md).
+Für SaaS-Entwickler, die Dutzende, Hunderte oder sogar Tausende von SQL-Datenbanken haben, vereinfacht ein Pool für elastische Datenbanken das Erstellen, Warten und Verwalten der Leistung und der Kosten der gesamten Datenbankgruppe, sodass das geplante Budget eingehalten werden kann. Sie können innerhalb weniger Minuten über das Microsoft Azure-Portal oder mit PowerShell oder C# für Ihre SQL-Datenbanken einen [Pool für elastische Datenbanken erstellen](sql-database-elastic-pool-portal.md).
 
 Ein gängiges Muster bei SaaS-Anwendungen ist, für jede Kunden eine andere Datenbank zu implementieren, jeweils mit unterschiedlicher und unvorhersehbarer Nutzung von Systemressourcen (CPU, E/A, Speicher zusammengefasst mit DTU). Mit diesen Spitzen- und Tiefstwerten beim Bedarf der einzelnen Datenbanken können Prognosen schwierig sein, sodass die Bereitstellung von Ressourcen erschwert wird. Es gibt zwei Möglichkeiten: entweder planen Sie Datenbankressourcen überdimensioniert für Spitzenauslastungen – und zahlen dann auch mehr. Oder Sie planen die Bereitstellung unterdimensioniert zur Kosteneinsparung und nehmen Einbußen bei der Leistung und Kundenzufriedenheit während Spitzenzeiten in Kauf.
 
@@ -32,7 +33,7 @@ Pools für elastische Datenbanken bieten eine Lösung für Kunden, die sicherste
 
 Wenn weitere eDTUs zum Erfüllen der Anforderungen eines Pools erforderlich sind (zusätzliche Datenbanken werden einem Pool hinzugefügt oder die vorhandenen Datenbanken verwenden mehr eDTUs), können einem vorhandenen Pool zusätzliche eDTUs ohne Datenbankausfall oder negative Auswirkung auf die Datenbanken hinzugefügt werden. Ebenso können zusätzliche eDTUs, die nicht mehr benötigt werden, zu jedem beliebigen Zeitpunkt aus einem vorhandenen Pool entfernt werden.
 
-![Datenbanken mit gemeinsamer Nutzung von eDTUs][1]
+![SQL-Datenbanken, die eDTUs in einem Pool für elastische Datenbanken gemeinsam nutzen][1]
 
 Datenbanken, die für Pools für elastische Datenbanken besonders geeignet sind, weisen in der Regel Zeiträume der Aktivität sowie Zeiträume der Inaktivität auf. Sehen Sie sich das Beispiel oben an. Hier können Sie die Aktivität einer einzelnen Datenbank, von vier Datenbanken und schließlich eines Pools für elastische Datenbanken mit 20 Datenbanken sehen. Diese Datenbanken mit veränderlicher Aktivität im Laufe der Zeit eignen sich besonders für Pools für elastische Datenbanken, da sie nicht alle zur gleichen Zeit aktiv sind und eDTUs gemeinsam nutzen können. Nicht alle Datenbanken entsprechen jedoch diesem Muster. Es gibt Datenbanken mit einem konstanteren Ressourcenbedarf. Diese Datenbanken eignen sich besser für die Basic-, Standard- und Premium-Dienstebenen, bei denen Ressourcen einzeln zugewiesen werden. Hilfe beim Ermitteln, ob Ihre Datenbanken von einem Pool für elastische Datenbanken profitieren würden, finden Sie unter [Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md).
 
@@ -41,7 +42,7 @@ Ausführliche Informationen zu Pools für elastische Datenbanken, einschließlic
 
 > [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar.
 
-## Einfaches Verwalten einer großen Anzahl von Datenbanken mit elastischen Datenbanktools
+## Einfaches Verwalten einer großen Anzahl von SQL-Datenbanken mit elastischen Datenbanktools
 
 Zusätzlich zur Bereitstellung von effizienter Ressourcennutzung und vorhersagbarer Leistung vereinfachen Pools für elastische Datenbanken die SaaS-Anwendungsentwicklung mit Tools, die die Erstellung und Verwaltung der Datenebene erleichtern. Das Ausführen von Wartungsaufgaben und die Implementierung von Änderungen für eine große Gruppe von Datenbanken war in der Vergangenheit ein zeitaufwändiger und komplizierter Prozess, der auf die Ausführung von Skripts in elastischen Aufträgen reduziert wurde. Die Möglichkeit zum Erstellen und Ausführen eines elastischen Datenbankauftrags beseitigt nahezu alle schwierigen Aufgaben im Zusammenhang mit der Verwaltung von Hunderten oder gar Tausenden von Datenbanken. Eine Übersicht über den Dienst für elastische Datenbankaufträge, der die Ausführung von Transact-SQL-Skripts in allen elastischen Datenbanken in einem Pool ermöglicht, finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
 
@@ -72,4 +73,4 @@ Das Exportieren einer Datenbank aus einem Pool wird unterstützt. Derzeit wird d
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

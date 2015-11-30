@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/12/2015"
    ms.author="joaoma" />
 
 
@@ -87,15 +87,11 @@ Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungs
 
 [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
 
-[Was ist Traffic Manager?](../traffic-manmager-overview.md)
-
-[Cloud-Dienste](http://go.microsoft.com/fwlink/?LinkId=314074)
-
-[Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
+[Testen der Traffic Manager-Einstellungen](traffic-manager-testing-settings.md)
 
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/?LinkId=313584)
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

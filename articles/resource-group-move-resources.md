@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="11/13/2015" 
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
@@ -58,6 +58,7 @@ Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressourc
 
 - Virtual Machines
 - Virtuelle Netzwerke
+- Speicher
 
 Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von Web-Apps stehen folgende Optionen bereit:
 
@@ -96,4 +97,4 @@ Geben Sie im Anforderungstext die Zielgruppe und die zu verschiebenden Ressource
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -55,13 +55,14 @@ Microsoft Azure unterstützt eine Vielzahl von Linux-Distributionen (siehe [Unte
 
 - **[CentOS-basierte Verteilungen](virtual-machines-linux-create-upload-vhd-centos.md)**
 - **[Oracle Linux](virtual-machines-linux-create-upload-vhd-oracle.md)**
+- **[Red Hat Enterprise Linux](virtual-machines-linux-create-upload-vhd-redhat.md)**
 - **[SLES und openSUSE](../virtual-machines-linux-create-upload-vhd-suse)**
 - **[Ubuntu](virtual-machines-linux-create-upload-vhd-ubuntu.md)**
 - **[Sonstige – nicht unterstützte Distributionen](virtual-machines-linux-create-upload-vhd-generic.md)**
 
 Beachten Sie auch die **[Installationshinweise für Linux](virtual-machines-linux-create-upload-vhd-generic.md#linuxinstall)**. Dort erhalten Sie weitere Tipps zur Vorbereitung der Linux-Images für Azure.
 
-Im Anschluss an die Schritte in den obigen Leitfäden sollten Sie über eine VHD-Datei verfügen, die in Azure hochgeladen werden kann.
+Nachdem Sie die Schritte in den obigen Leitfäden ausgeführt haben, sollten Sie über eine VHD-Datei verfügen, die in Azure hochgeladen werden kann.
 
 <a id="connect"> </a>
 ## Schritt 2: Vorbereiten der Verbindung mit Azure
@@ -143,7 +144,7 @@ Verwenden Sie die Azure AD-Methode für die Anmeldung:
 > [AZURE.NOTE]Es wird empfohlen, dass Sie die neuere Azure Active Directory-Methode zum Anmelden in Ihrem Azure-Abonnement verwenden, entweder aus der Azure-Befehlszeilenschnittstelle oder aus Azure PowerShell.
 
 <a id="upload"> </a>
-## Schritt 3: Hochladen des Image zu Azure
+## Schritt 3: Hochladen des Image in Azure
 
 ### Bei Verwendung der Azure-Befehlszeilenschnittstelle
 
@@ -161,7 +162,7 @@ Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt 
 
 		Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
 
-Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
+Weitere Informationen hierzu finden Sie unter [Add-AzureVhd]((https://msdn.microsoft.com/library/azure/dn495173.aspx).
 
 > [AZURE.NOTE]Mit der [Vorschauversion von Azure Powershell 1.0](https://azure.microsoft.com/de-DE/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
 
@@ -170,4 +171,4 @@ Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.micros
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

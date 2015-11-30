@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/10/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -67,7 +67,7 @@ Jetzt sind sowohl die Windows Store- als auch die Windows Phone Store-App mit de
 
 ##Aktualisieren der App zur Verwendung des mobilen Diensts
 
-In diesem Abschnitt aktualisieren Sie die universelle Windows-App, um den mobilen Dienst als Backend-Dienst für die Anwendung zu verwenden. Dazu müssen Sie lediglich die Projektdatei "MainPage.xaml.cs" im Projektordner "GetStartedWithData.Shared" anpassen.
+In diesem Abschnitt aktualisieren Sie die universelle Windows-App, um den mobilen Dienst als Backend-Dienst für die Anwendung zu verwenden. Dazu müssen Sie lediglich die Projektdatei "MainPage.cs" im Projektordner "GetStartedWithData.Shared" anpassen.
 
 [AZURE.INCLUDE [mobile-services-windows-dotnet-update-data-app](../../includes/mobile-services-windows-dotnet-update-data-app.md)]
 
@@ -121,4 +121,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
   
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

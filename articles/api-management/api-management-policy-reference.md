@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/26/2015" 
+	ms.date="11/16/2015" 
 	ms.author="sdanie"/>
 
 # Richtlinienreferenz für Azure API Management
@@ -49,7 +49,7 @@ Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebig
 	-	[JSON in XML konvertieren][] – Konvertiert den Anforderungs- oder Antworttext von JSON in XML.
 	-	[XML in JSON konvertieren][] – Konvertiert den Anforderungs- oder Antworttext von XML in JSON.
 	-	[Zeichenfolge in Text ersetzen][] – Sucht nach einer Zeichenfolge in Antwort oder Anforderung und ersetzt diese durch eine andere Teilzeichenfolge.
-	-	[URLs in Inhalt maskieren][] – Schreibt Links im Antworttext und im Standortheader um (maskiert), sodass diese über den Proxy auf den äquivalenten Link zeigen.
+	-	[URLs in Inhalt maskieren][] – Schreibt Links im Antworttext und im Standortheader um (maskiert), sodass diese über das Gateway auf den äquivalenten Link zeigen.
 	-	[Back-End-Dienst festlegen][] – Ändert den Back-End-Dienst für eine eingehende Anforderung.
 	-	[Text festlegen][] – Legt den Nachrichtentext für eingehende und ausgehende Anforderungen fest.
 	-	[HTTP-Header setzen][] – Weist einem vorhandenen Antwort- und/oder Anforderungsheader einen Wert zu oder fügt einen neuen Antwort- und/oder Anforderungsheader hinzu.
@@ -109,4 +109,4 @@ Weitere Informationen zu Richtlinienausdrücken finden Sie im folgenden Video.
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

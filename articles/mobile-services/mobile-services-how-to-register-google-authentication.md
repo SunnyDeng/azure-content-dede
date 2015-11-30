@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="08/27/2015" 
+	ms.date="11/15/2015" 
 	ms.author="glenga"/>
 
 # Registrieren Ihrer App für die Google-Anmeldung mit Mobile Services
@@ -34,10 +34,13 @@ Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um den in dies
 
 6. Klicken Sie auf der Registerkarte **Credentials** auf **Add credentials** > **OAuth 2.0 client ID**, und wählen Sie dann **Web application**.
 
-7. Geben Sie in **Authorized JavaScript Origins** die URL für Ihren mobilen Dienst ein, ersetzen Sie die generierte URL in **Authorized Redirect URI** durch die URL Ihres mobilen Diensts mit angehängtem Pfad `/login/google`, und klicken Sie dann auf **Create client ID**.
+7. Geben Sie in **Authorized JavaScript Origins** die URL für Ihren mobilen Dienst ein, ersetzen Sie die generierte URL in **Authorized Redirect URI** durch eines der folgenden URL-Formate, und klicken Sie dann auf **Create client ID**.
+ 
+	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-google`
+	+ **JavaScript-Back-End**:`https://<mobile_service>.azure-mobile.net/login/google` 
 
-	>[AZURE.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix _signin-google_ für Ihren mobilen Dienst als .NET-Dienst, z. B. `https://todolist.azure-mobile.net/signin-google`.&nbsp;
-	
+	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
+
 8. Notieren Sie sich auf dem nächsten Bildschirm die Werte für die Client-ID und den geheimen Clientschlüssel.
 
     > [AZURE.IMPORTANT]Der geheime Clientschlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre Anwendung weiter.
@@ -56,4 +59,4 @@ Sie können nun Ihren mobilen Dienst für die Verwendung der Google-Anmeldung zu
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/17/2015" 
 	ms.author="billmath"/>
 
 # Azure Multi-Factor Authentication – Häufig gestellte Fragen
@@ -125,12 +125,6 @@ Der Azure Multi-Factor Authentication-Dienst sendet Textnachrichten über SMS-Ag
 
 Außerdem ist die Überprüfung per Textnachricht in einigen Ländern zuverlässiger, z. B. in den USA oder Kanada. Benutzer, bei denen Probleme mit dem zuverlässigen Empfang der Textnachrichten für Azure Multi-Factor Authentication auftreten, sollten stattdessen die Benachrichtigung in der mobilen App oder Telefonanrufe als Methode auswählen. Die mobile App bietet den zusätzlichen Vorteil, dass Benachrichtigungen sowohl über Mobilfunk- als auch über WLAN-Verbindungen empfangen werden können. Die Kennung der mobilen App wird selbst dann angezeigt, wenn das Gerät gar keinen Netzempfang hat. Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
 
-**F: Kann ich Hardwaretoken mit dem Azure MFA-Server verwenden?**
-
-Bei Verwendung des Azure MFA-Servers können OATH TOTP-Token von Drittanbietern importiert und für MFA verwendet werden. Wir unterstützen derzeit den Import von OATH TOTP-Token in einem älteren PSKC-Format, das Gemalto für seine Token generieren kann, und unterstützen das Importieren von Token im CSV-Format. Beim Importieren von Token im CSV-Format muss die CSV-Datei eine Seriennummer, einen geheimen Schlüssel im Base32-Format und ein Zeitintervall (in der Regel 30 Sekunden) enthalten.
-
-Wenn also die „ActiveIdentity“-Token OATH TOTP-Token sind und Sie die Datei mit dem geheimen Schlüssel einer CSV-Datei hinzufügen können, die in den Azure MFA-Server importiert werden kann, können Sie diese anschließend nutzen. OATH-Token können mit AD FS, RADIUS, wenn das Clientsystem Access-Challenge-Antworten verarbeiten kann, und der IIS-Formularauthentifizierung verwendet werden.
-
 
 ## Fehler
 
@@ -149,6 +143,6 @@ Wenn also die „ActiveIdentity“-Token OATH TOTP-Token sind und Sie die Datei 
 
 Derzeit kann die zusätzliche Sicherheitsüberprüfung nur für Anwendungen und Dienste verwendet werden, auf die Sie über Ihren Browser zugreifen können. Nicht-Browser-Anwendungen (auch bezeichnet als Rich Client-Anwendungen), die auf dem lokalen Computer installiert sind, z. B. Windows Powershell, können nicht zusammen mit Konten verwendet werden, bei denen eine zusätzliche Sicherheitsüberprüfung erforderlich ist. In diesem Fall wird von der Anwendung der Fehler "0x800434D4L" ausgegeben.
 
-Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzer ermöglichen](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1)).
+Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

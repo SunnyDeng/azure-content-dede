@@ -26,12 +26,6 @@ In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Servi
 
 Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen außerdem zunächst das Lernprogramm [Erstellen einer Xamarin.iOS-App] abschließen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Authentifizierungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
 
-[AZURE.INCLUDE [app-service-mobile-to-web-and-api](../../includes/app-service-mobile-to-web-and-api.md)]
-
-##<a name="create-gateway"></a>Erstellen eines App Service-Gateways
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-gateway](../../includes/app-service-mobile-dotnet-backend-create-gateway.md)]
-
 ##<a name="register"></a>Registrieren Ihrer App für die Authentifizierung und Konfigurieren von App Services
 
 [AZURE.INCLUDE [app-service-mobile-register-authentication](../../includes/app-service-mobile-register-authentication.md)]
@@ -120,4 +114,4 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 [Azure Management Portal]: https://portal.azure.com
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

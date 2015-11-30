@@ -79,7 +79,7 @@ Die folgenden Artikel beschreiben die Kommunikation mit Reliable Services und di
 
 - [Kommunizieren mit Diensten](service-fabric-connect-and-communicate-with-services.md)
 - [Dienstkommunikationsmodell](service-fabric-reliable-services-communication.md)
-- [Standardkommunikationsstapel des Reliable Services-Framework](service-fabric-reliable-services-communication-default.md)
+- [Standardkommunikationsstapel des Reliable Services-Framework](service-fabric-reliable-services-communication-remoting.md)
 - [WCF-basierter Kommunikationsstapel für Reliable Services](service-fabric-reliable-services-communication-wcf.md)
 - [Erste Schritte mit Web-API-Diensten von Microsoft Azure Service Fabric mit selbstgehostetem OWIN-Server (VS 2015 RC)](service-fabric-reliable-services-communication-webapi.md)
 
@@ -87,4 +87,4 @@ Reliable Services geben Ereignisse und Leistungsindikatoren aus, die zur Diagnos
 
 - [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

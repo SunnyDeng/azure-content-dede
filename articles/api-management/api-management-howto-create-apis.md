@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="11/16/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen von APIs in Azure API Management
@@ -55,7 +55,7 @@ Auf der Registerkarte **Einstellungen** können Sie die Konfiguration einer API 
 
 ![API-Einstellungen][api-management-api-settings]
 
-Um die **Proxyauthentifizierung** für die Webdienstimplementierung der API zu konfigurieren, wählen Sie die Registerkarte **Sicherheit**. Über die Dropdownliste **Mit Anmeldeinformationen** können Sie die **Standardauthentifizierung** oder die **Gegenseitige Zertifikatauthentifizierung** konfigurieren. Zum Verwenden der Standardauthentifizierung geben Sie einfach die gewünschten Anmeldeinformationen ein. Weitere Informationen zum Verwenden der gegenseitigen Zertifikatauthentifizierung finden Sie unter [Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management][].
+Um die **Gatewayauthentifizierung** für die Webdienstimplementierung der API zu konfigurieren, wählen Sie die Registerkarte **Sicherheit**. Über die Dropdownliste **Mit Anmeldeinformationen** können Sie die **Standardauthentifizierung** oder die **Gegenseitige Zertifikatauthentifizierung** konfigurieren. Zum Verwenden der Standardauthentifizierung geben Sie einfach die gewünschten Anmeldeinformationen ein. Weitere Informationen zum Verwenden der gegenseitigen Zertifikatauthentifizierung finden Sie unter [Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management][].
 
 Auf der Registerkarte **Sicherheit** können Sie außerdem die **Benutzerautorisierung** mithilfe von OAuth 2.0 konfigurieren. Weitere Informationen finden Sie unter [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management][].
 
@@ -97,4 +97,4 @@ Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können S
 [Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management]: api-management-howto-mutual-certificates.md
 [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management]: api-management-howto-oauth2.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

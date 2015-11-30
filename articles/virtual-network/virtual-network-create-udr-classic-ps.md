@@ -27,7 +27,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
-Die folgenden Beispielbefehle für die Azure-Befehlszeilenschnittstelle setzen voraus, dass bereits eine einfache Umgebung erstellt wurde, die auf dem obigen Szenario basiert. Wenn Sie die in diesem Dokument aufgeführten Befehle ohne Veränderungen ausführen möchten, erstellen Sie zunächst die unter [Erstellen eines VNets (klassisch) mithilfe von PowerShell](virtual-networks-create-vnet-classic-ps.md) beschriebene Umgebung.
+Die folgenden Beispielbefehle für Azure PowerShell setzen voraus, dass bereits eine einfache Umgebung erstellt wurde, die auf dem zuvor beschriebenen Szenario basiert. Wenn Sie die in diesem Dokument aufgeführten Befehle ohne Veränderungen ausführen möchten, erstellen Sie zunächst die unter [Erstellen eines VNets (klassisch) mithilfe von PowerShell](virtual-networks-create-vnet-classic-ps.md) beschriebene Umgebung.
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
@@ -119,4 +119,4 @@ Führen Sie zum Aktivieren der IP-Weiterleitung auf dem virtuellen Computer "FW1
 		Get-AzureVM -Name FW1 -ServiceName TestRGFW `
 			| Set-AzureIPForwarding -Enable
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

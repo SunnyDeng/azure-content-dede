@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Storage Premium: Hochleistungsspeicher für Azure Virtual Machine-Workloads | Microsoft Azure"
-	description="Der Premium-Speicher bietet Datenträgerunterstützung für hohe Leistung mit geringer Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Virtuelle Computer der Azure-DS-Serie und -GS-Serie unterstützen Premium-Speicher."
+	description="Storage Premium bietet Datenträgerunterstützung für hohe Leistung mit geringer Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Virtuelle Computer der Azure-DS-Serie und -GS-Serie unterstützen Premium-Speicher."
 	services="storage"
 	documentationCenter=""
 	authors="ms-prkhad"
@@ -17,15 +17,15 @@
 	ms.author="tamram;selcint"/>
 
 
-# Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern
+# Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern
 
 ## Übersicht
 
-Azure Premium-Speicher bietet Datenträgerunterstützung für hohe Leistung mit geringer Latenz für virtuelle Computer mit E/A-intensiven Workloads. Datenträger von virtuellen Computern, die Premium-Speicher nutzen, speichern Daten auf SSDs (Solid State Drives). Sie können die VM-Datenträger Ihrer Anwendung zu Azure Premium-Speicher migrieren, um von der Geschwindigkeit und Leistung dieser Laufwerke zu profitieren.
+Azure Storage Premium bietet Datenträgerunterstützung für hohe Leistung mit geringer Latenz für virtuelle Computer mit E/A-intensiven Workloads. Datenträger von virtuellen Computern (VM), die Storage Premium nutzen, speichern Daten auf SSDs (Solid State Drives). Sie können die VM-Datenträger Ihrer Anwendung zu Azure Storage Premium migrieren, um von der Geschwindigkeit und Leistung dieser Laufwerke zu profitieren.
 
-Ein virtueller Azure-Computer unterstützt das Anfügen mehrerer Premium-Speicherdatenträger, damit Ihre Anwendung bis zu 64 TB Speicher pro virtuellen Computer nutzen kann. Mit dem Premium-Speicher können Ihre Anwendungen bis zu 80.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellen Computer nutzen. Darüber hinaus erreichen sie einen Datenträgerdurchsatz von 2.000 MB pro Sekunde und virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge.
+Ein virtueller Azure-Computer unterstützt das Anfügen mehrerer Storage Premium-Datenträger, damit Ihre Anwendung bis zu 64 TB Speicher pro virtuellem Computer nutzen kann. Mit Storage Premium können Ihre Anwendungen bis zu 80.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellem Computer nutzen sowie 2.000 MB Datenträgerdurchsatz pro Sekunde und virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge erzielen.
 
->[AZURE.NOTE]Es wird empfohlen, alle Datenträger von virtuellen Computern, die eine hohe IOPS-Leistung erfordern, zu Azure Premium-Speicher zu migrieren, um die beste Leistung für Ihre Anwendung zu erzielen. Wenn Ihr Datenträger keine hohe IOPS-Leistung erfordert, können Sie die Kosten beschränken, indem Sie sie im Standard-Speicher belassen. Dort werden Daten von Datenträgern virtueller Computer auf Festplatten (Hard Disk Drives, HDDs) anstelle von SSDs gespeichert.
+>[AZURE.NOTE]Es wird empfohlen, alle Datenträger von virtuellen Computer, die eine hohe IOPS-Leistung erfordern, zu Azure Storage Premium zu migrieren, um die beste Leistung für Ihre Anwendung zu erzielen. Wenn Ihr Datenträger keine hohe IOPS-Leistung erfordert, können Sie die Kosten beschränken, indem Sie sie im Standard-Speicher belassen. Dieser Speicher speichert Daten auf Datenträgern virtueller Computer auf Festplatten (Hard Disk Drives, HDDs) anstelle von SSDs.
 
 Informationen zu den ersten Schritten mit Azure Premium-Speicher finden Sie auf der Seite [Starten Sie kostenlos](http://azure.microsoft.com/pricing/free-trial/). Informationen zur Migration Ihrer vorhandenen virtuellen Computer zu Premium-Speicher finden Sie unter [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md).
 
@@ -43,7 +43,7 @@ Die folgende Liste führt wichtige Informationen auf, die vor oder bei der Verwe
 
 - Ein Premium-Speicherkonto ist lokal redundant (LRS) und verwaltet drei Kopien der Daten innerhalb einer einzelnen Region. Überlegungen zur Georeplikation bei der Verwendung von Premium-Speicher finden Sie in diesem Artikel im Abschnitt [Momentaufnahmen und Kopieren von Blob bei der Verwendung des Premium-Speichers](#snapshots-and-copy-blob-whde-DEing-premium-storage).
 
-- Wenn Sie ein Premium-Speicherkonto für Ihre Datenträger für virtuelle Computer verwenden möchten, müssen Sie die DS- oder GS-Serie der virtuellen Computer verwenden. Mit der DS- oder GS-Serie der virtuellen Computer können Sie Datenträger des Standard- und Premium-Speichers verwenden. Sie können jedoch keine Datenträger des Premium-Speichers mit virtuellen Computern verwenden, die nicht zur DS- oder GS-Serie gehören. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx).
+- Wenn Sie ein Premium-Speicherkonto für Ihre Datenträger für virtuelle Computer verwenden möchten, müssen Sie die DS- oder GS-Serie der virtuellen Computer verwenden. Mit der DS- oder GS-Serie der virtuellen Computer können Sie Datenträger des Standard- und Premium-Speichers verwenden. Sie können jedoch keine Datenträger des Premium-Speichers mit virtuellen Computern verwenden, die nicht zur DS- oder GS-Serie gehören. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](../virtual-machines/virtual-machines-size-specs.md).
 
 - Der Vorgang zum Einrichten von Datenträgern des Premium-Speichers für einen virtuellen Computer ist vergleichbar mit dem Vorgang für Standarddatenträger. Sie müssen die am besten geeignete Option für Premium-Speicher für Ihre Azure-Datenträger und virtuellen Azure-Computer auswählen. Die Größe des virtuellen Computers sollte für Ihren Workload basierend auf den Leistungsmerkmalen der Premium-Angebote geeignet sein. Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage).
 
@@ -59,7 +59,7 @@ Sie können den Premium-Speicher für Datenträger auf zwei Arten verwenden:
 
 Azure verwendet das Speicherkonto als Container für Ihr Betriebssystem und die Datenträger. Wenn Sie einen virtuellen Azure-Computer der DS- oder GS-Serie erstellen und ein Azure Premium-Speicherkonto auswählen, werden also Ihr Betriebssystem und die Datenträger in diesem Speicherkonto gespeichert.
 
-Informationen zur Migration Ihrer vorhandenen virtuellen Computer zu Premium-Speicher finden Sie unter [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md).
+Informationen zur Migration der vorhandenen virtuellen Computer zu Storage Premium finden Sie unter [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md).
 
 Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuerst ein Premium-Speicherkonto vom Typ *Premium\_LRS*. Zu diesem Zweck können Sie das [Microsoft Azure-Vorschauportal](https://portal.azure.com/), [Azure PowerShell](../install-configure-powershell.md) oder die [Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/ee460799.aspx) verwenden. Ausführliche Anleitungen finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
@@ -71,7 +71,7 @@ Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuers
 
 	Beachten Sie, dass diese Limits nur für den Datenträgerverkehr und nicht für Cachetreffer- und Netzwerkverkehr gelten. Für den Netzwerkdatenverkehr virtueller Computer steht eine separate Bandbreite zur Verfügung. Diese unterscheidet sich von der dedizierten Bandbreite für Premium-Speicherdatenträger.
 	
-	Aktuelle Informationen zu maximalen IOPS- und Durchsatzwerten (d. h. Bandbreitenwerte) für virtuelle Computer der DS- und GS-Serie finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Informationen zu Datenträgern des Premium-Speichers und ihren IOPs und Durchsatzlimits finden Sie in diesem Artikel in der Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage).
+	Aktuelle Informationen zu maximalen IOPS- und Durchsatzwerten (d. h. Bandbreitenwerte) für virtuelle Computer der DS- und GS-Serie finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](../virtual-machines/virtual-machines-size-specs.md). Informationen zu Datenträgern des Premium-Speichers und ihren IOPs und Durchsatzlimits finden Sie in diesem Artikel in der Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 > [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS- oder GS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn der Workload vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
 
@@ -260,7 +260,7 @@ In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto mit dem Azure-Vo
 
 3.	Klicken Sie unter **Neu** auf **Alles**. Wählen Sie **Speicher, Cache und Sicherung** aus. Klicken Sie nun auf **Speicher** und dann auf **Erstellen**.
 
-4.	Geben Sie auf dem Blatt "Speicherkonto" einen Namen für Ihr Speicherkonto ein. Klicken Sie auf **Preisstufe**. Klicken Sie im Bereich **Empfohlene Preisstufen** auf **Alle Preisstufen durchsuchen**. Wählen Sie im Bereich **Preisstufe auswählen** die Option **Premium lokal redundant** aus. Klicken Sie auf **Auswählen**. Beachten Sie, dass der Bereich **Speicherkonto** standardmäßig **Standard-GRS** als **Preisstufe** anzeigt. Nachdem Sie auf **Auswählen** geklickt haben, wird die **Preisstufe** als **Premium LRS** angezeigt.
+4.	Geben Sie im Bereich "Speicherkonto" einen Namen für Ihr Speicherkonto ein. Klicken Sie auf **Preisstufe**. Klicken Sie im Bereich **Empfohlene Preisstufen** auf **Alle Preisstufen durchsuchen**. Wählen Sie im Bereich **Preisstufe auswählen** die Option **Premium lokal redundant** aus. Klicken Sie auf **Auswählen**. Beachten Sie, dass der Bereich **Speicherkonto** standardmäßig **Standard-GRS** als **Preisstufe** anzeigt. Nachdem Sie auf **Auswählen** geklickt haben, wird die **Preisstufe** als **Premium LRS** angezeigt.
 
 	![Tarif][Image1]
 
@@ -333,11 +333,11 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 - [Verwenden von Blob-Dienstvorgängen mit dem Azure Premium-Speicher](http://go.microsoft.com/fwlink/?LinkId=521969)
 - [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md)
 - [Erstellen eines virtuellen Computers unter Windows](../virtual-machines-windows-tutorial-azure-preview.md)
-- [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
+- [Größen virtueller Computer und Clouddienste für Azure](../virtual-machines/virtual-machines-size-specs.md)
 - [Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 - [MSDN-Referenz](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

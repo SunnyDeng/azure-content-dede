@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/11/2015" 
 	ms.author="glenga"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
@@ -98,4 +98,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

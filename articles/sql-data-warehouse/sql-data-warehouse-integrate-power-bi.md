@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/23/2015"
+   ms.date="10/06/2015"
    ms.author="lodipalm"/>
 
 # Verwenden von Power BI mit SQL Data Warehouse
@@ -63,4 +63,4 @@ Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im Azure-Verwa
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

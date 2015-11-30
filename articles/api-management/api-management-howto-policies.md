@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="11/16/2015" 
 	ms.author="sdanie"/>
 
 
@@ -23,7 +23,7 @@ Richtlinien sind ein umfassendes Werkzeug in Azure API Management, mit dem Anbie
 
 In der [Richtlinienreferenz][] finden Sie eine komplette Liste der Richtlinienanweisungen und deren Einstellungen.
 
-Richtlinien werden im Proxy angewendet, der sich zwischen API-Consumer und der verwalteten API befindet. Der Proxy empfängt alle Anfragen und leitet diese normalerweise unverändert an die zugrunde liegende API weiter. Richtlinien können jedoch Änderungen an der eingehenden Anfrage und an der ausgehenden Antwort vornehmen.
+Richtlinien werden im Gateway, das sich zwischen API-Consumer und der verwalteten API befindet, angewendet. Das Gateway empfängt alle Anfragen und leitet diese normalerweise unverändert an die zugrunde liegende API weiter. Richtlinien können jedoch Änderungen an der eingehenden Anfrage und an der ausgehenden Antwort vornehmen.
 
 Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][] und [Richtlinienausdrücke][].
 
@@ -73,7 +73,7 @@ Daraufhin wird ein XML-Ausschnitt in das inbound-Element eingefügt, der Anweisu
 
 ![Speichern][policies-save]
 
-Konfigurieren Sie die Anweisungen für die Richtlinie und klicken Sie auf Speichern. Daraufhin werden die Änderungen sofort an den API Management-Proxy weitergeleitet.
+Konfigurieren Sie die Anweisungen für die Richtlinie und klicken Sie auf Speichern. Daraufhin werden die Änderungen sofort an das API Management-Gateway weitergeleitet.
 
 ##<a name="sections"> </a>Grundlegendes zur Richtlinienkonfiguration
 
@@ -128,4 +128,4 @@ Sehen Sie sich das folgende Video zu Richtlinienausdrücken an.
 [policies-restrict]: ./media/api-management-howto-policies/api-management-policies-restrict.png
 [policies-save]: ./media/api-management-howto-policies/api-management-policies-save.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

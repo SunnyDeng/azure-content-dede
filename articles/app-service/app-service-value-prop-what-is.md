@@ -17,7 +17,7 @@
 	ms.author="omark"/>
 
 # Was ist Azure App Service?
-Azure App Service ist der einzige Clouddienst, der alle Komponenten integriert, die für das schnelle und einfache Erstellen von Web-Apps und mobilen Apps für beliebige Plattformen und Geräte benötigt werden. App Service ist eine für Entwickler konzipierte, vollständig verwaltete Plattform, die leistungsstarke Funktionen bereitstellt, wie z. B. integrierte DevOps, fortlaufende Integration in Visual Studio Online und GitHub, Staging- und Produktionsunterstützung sowie automatisches Patching.
+Azure App Service ist der einzige Clouddienst, der alle Komponenten integriert, die für das schnelle und einfache Erstellen von Web-Apps und mobilen Apps für beliebige Plattformen und Geräte benötigt werden. App Service ist eine für Entwickler konzipierte, vollständig verwaltete Plattform, die leistungsstarke Funktionen bereitstellt, wie z. B. integrierte DevOps, fortlaufende Integration in Visual Studio Team Services und GitHub, Staging- und Produktionsunterstützung sowie automatisches Patching.
 
 Azure App Service ist ein einzelner Dienst, der neben allen vorhandenen Funktionen von Azure-Websites, Azure Mobile Services und Azure BizTalk Services verschiedene neue Funktionen bietet. [Hier erfahren Sie](http://azure.microsoft.com/documentation/services/app-service/), wie App Service zu den vorhandenen Diensten in Beziehung steht.
 
@@ -30,7 +30,7 @@ Azure App Service ist auf die schnelle Entwicklung von Web-Apps und mobilen Apps
 
 - **Einfache Integration** – Integrieren Sie Ihre Daten cloudübergreifend, und automatisieren Sie in Minutenschnelle Geschäftsprozesse – dank einer einfachen visuellen Entwicklungsoberfläche. Integrieren Sie mithilfe von standardmäßigen REST-APIs Ihre Logik auf einfache Weise in beliebige Web-Apps und mobile Apps. Ermöglichen Sie die Integration komplexer Unternehmensanwendungen, entwickeln Sie B2B-Lösungen mithilfe von EDI, erstellen Sie Unternehmensrichtlinien (Regelmodul) und vieles mehr auf Grundlage der branchenführenden BizTalk-Plattform.
 
-- **Herausragende Entwicklerproduktivität** – Optimiert für DevOps mit dauerhafter Unterstützung der Integration in Visual Studio Online und GitHub, sodass Sie sich auf die schnelle Verbesserung Ihrer Apps konzentrieren können, ohne sich über die Infrastruktur Gedanken zu machen. Stellen Sie App-Updates mit integrierten Staging- und Rollbackfunktionen sowie der Möglichkeit zum Testen in der Produktion bereit.
+- **Herausragende Entwicklerproduktivität** – Optimiert für DevOps mit dauerhafter Unterstützung der Integration in Visual Studio Team Services und GitHub, sodass Sie sich auf die schnelle Verbesserung Ihrer Apps konzentrieren können, ohne sich über die Infrastruktur Gedanken zu machen. Stellen Sie App-Updates mit integrierten Staging- und Rollbackfunktionen sowie der Möglichkeit zum Testen in der Produktion bereit.
 
 - **Geeignet für Unternehmen** – Verlassen Sie sich auf Sicherheits- und Verwaltungsfunktionen auf Unternehmensniveau. Stellen Sie eine delegierte und rollenbasierte Verwaltung bereit, verwalten und schützen Sie problemlos den Datenfluss für Ihre mobilen Apps, und schützen Sie Ihre Objekte mithilfe integrierter Sicherungs- und Wiederherstellungsfunktionen. Verlassen Sie sich auf die umfassende PCI-Kompatibilität von App Service. Behalten Sie jederzeit die Kontrolle, dank dedizierter Umgebungen sowie der Möglichkeit zum Bereitstellen in öffentlichen und privaten Clouds. Profitieren Sie von der über 25-jährigen Erfahrung von Microsoft und unserer Vereinbarung zum Servicelevel für Unternehmen.
 
@@ -59,4 +59,4 @@ Mit Azure App Service brauchen Sie dazu nur eine Sprache auszuwählen!
 [Erstellen Sie eine neue App](http://go.microsoft.com/fwlink/?LinkId=523751) – sofort und kostenlos. Keine Kreditkarte erforderlich, keine Verpflichtungen, kein Ärger.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

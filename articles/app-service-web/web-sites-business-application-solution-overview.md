@@ -38,7 +38,7 @@ Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten
 
 Nutzen Sie vorhandene Webressourcen in App Service-Web-Apps in den unterschiedlichsten Sprachen und Frameworks.
 
-Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Online] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Schützen Sie Ihre Ressourcen
 
@@ -92,7 +92,7 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
 [FTP]: web-sites-deploy.md#ftp
 [Visual Studio]: web-sites-dotnet-get-started.md
-[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso.md
+[Visual Studio Team Services]: ../cloud-services-continuous-delivery-use-vso.md
 [Git]: web-sites-publish-source-control.md
 
 [HTTPS]: web-sites-configure-ssl-certificate.md
@@ -124,4 +124,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

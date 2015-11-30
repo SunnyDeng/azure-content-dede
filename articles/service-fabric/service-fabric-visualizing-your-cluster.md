@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Visualisieren des Clusters mit Service Fabric Explorer"
+   pageTitle="Visualisieren des Clusters mit Service Fabric-Explorer | Microsoft Azure"
    description="Service Fabric Explorer ist ein nützliches GUI-Tool zum Untersuchen und Verwalten von Cloudanwendungen und Knoten in einem Microsoft Azure Service Fabric-Cluster."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,55 +13,73 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/05/2015"
+   ms.date="10/30/2015"
    ms.author="jesseb"/>
 
 # Visualisieren des Clusters mit Service Fabric Explorer
 
-Service Fabric Explorer ist ein grafisches Tool zum Untersuchen und Verwalten von Cloudanwendungen und Knoten in einem Microsoft Azure Service Fabric-Cluster. Mit Service Fabric Explorer können Sie sowohl Verbindungen mit lokalen Entwicklungsclustern als auch mit Azure-Clustern herstellen. Informationen zu den Service Fabric-PowerShell-Cmdlets finden Sie unter **Nächste Schritte**.
+Service Fabric-Explorer ist ein webbasiertes Tool zum Untersuchen und Verwalten von Anwendungen und Knoten in einem Service Fabric-Cluster. Service Fabric-Explorer wird direkt innerhalb des Clusters gehostet, daher ist er immer verfügbar, unabhängig davon, wo der Cluster ausgeführt wird.
 
-> [AZURE.NOTE]Die Erstellung von Service Fabric-Clustern in Azure ist noch nicht verfügbar.
+## Verbinden mit Service Fabric-Explorer
 
-## Einführung in Service Fabric Explorer
+Wenn Sie die Anweisungen zum [Vorbereiten Ihrer Entwicklungsumgebung](service-fabric-get-started.md) befolgt haben, können Sie Service Fabric-Explorer auf dem lokalen Cluster starten, indem Sie zu http://localhost:19080/Explorer navigieren.
 
-Stellen Sie sicher, dass Ihre lokale Entwicklungsumgebung gemäß der Anleitung unter [Einrichten Ihrer Service Fabric-Entwicklungsumgebung](service-fabric-get-started.md) eingerichtet wurde.
+>[AZURE.NOTE]Wenn Sie Internet Explorer (IE) mit Service Fabric-Explorer zum Verwalten eines Remoteclusters verwenden, müssen Sie einige IE-Einstellungen konfigurieren. Wechseln Sie zu **Extras -> Einstellungen der Kompatibilitätsansicht**, und deaktivieren Sie **Intranetsites in Kompatibilitätsansicht anzeigen**, um sicherzustellen, dass alle Informationen ordnungsgemäß geladen werden.
 
-Führen Sie Service Fabric Explorer über Ihren lokalen Installationspfad (%Programme%\\Microsoft SDKs\\Service Fabric\\Tools\\ServiceFabricExplorer\\ServiceFabricExplorer.exe) aus. Mit dem Tool wird, falls vorhanden, automatisch eine Verbindung mit einem lokalen Entwicklungscluster hergestellt. Damit werden beispielsweise folgende Informationen zum Cluster angezeigt:
+## Grundlegendes zum Layout von Service Fabric-Explorer
 
-- Anwendungen, die auf dem Cluster ausgeführt werden
-- Informationen zu den Knoten des Clusters
-- Integritätsereignisse von den Anwendungen und Knoten
-- Auslastung der Anwendungen im Cluster
-- Überwachung des Anwendungsupgradestatus
+Sie können mithilfe der Strukturansicht auf der linken Seite in Service Fabric-Explorer navigieren. Auf der Stammebene der Struktur bietet das Clusterdashboard eine Clusterübersicht, einschließlich einer Zusammenfassung der Anwendungs- und Knotenintegrität.
 
-![Visuelle Darstellung der Service Fabric-Cluster und der bereitgestellten Anwendungen][servicefabricexplorer]
+![Service Fabric-Explorer-Clusterdashboard][sfx-cluster-dashboard]
 
-Eine der wichtigen Visualisierungen ist die Clusterzuweisung, die auf dem Dashboard für den Cluster sichtbar ist (z. B. Klicken auf **Onebox/Lokaler Cluster**). Die Clusterzuweisung zeigt die Upgrade- und Fehlerdomänen sowie Informationen dazu an, welche Knoten welchen Domänen zugewiesen sind. Machen Sie sich unter [Technischer Überblick über Service Fabric](service-fabric-technical-overview.md) mit den wichtigen Service Fabric-Begriffen vertraut.
+Der Cluster enthält zwei Unterstrukturen: eine für Anwendungen und eine für Knoten.
 
-![Die Clusterzuweisung zeigt, zu welchen Upgrade- und Fehlerdomänen Knoten gehören.][clustermap]
+### Anzeigen von Anwendungen und Diensten
 
+Die Anwendungsansicht ermöglicht die Navigation durch die logische Hierarchie von Service Fabric: Anwendungen, Dienste, Partitionen und Replikate.
 
-## Anzeigen von Anwendungen und Diensten
+Im Beispiel unten besteht die Anwendung **MyApp** aus zwei Diensten: **MyStatefulService** und **WebSvcService**. Da **MyStatefulService** statusbehaftet ist, enthält er eine Partition mit einem primären und zwei sekundären Replikaten. Im Gegensatz dazu ist „WebSvcService“ statusfrei und enthält eine einzelne Instanz.
 
-Mit Service Fabric Explorer können Sie die Anwendungen untersuchen, die in Ihrem Cluster ausgeführt werden. Erweitern Sie die **Anwendungsansicht**, um ausführliche Informationen zu den Anwendungen, Diensten, Partitionen und Replikaten anzuzeigen.
+![Service Fabric-Explorer-Anwendungsansicht][sfx-application-tree]
 
-Im Diagramm unten ist zu sehen, dass die Anwendung mit dem Namen **„fabric:/Stateful1Application“** über einen zustandslosen Dienst **„fabric:/Stateful1Application/MyFrontEnd“** und einen zustandsbehafteten Dienst **„fabric:/Stateful1Application/Stateful1“** verfügt. Der zustandslose Dienst verfügt über eine Partition mit einem Replikat, das auf **Node.4** ausgeführt wird. Der zustandsbehaftete Dienst verfügt über zwei Partitionen, jeweils mit drei Replikaten, die auf unterschiedlichen Knoten ausgeführt werden.
+Auf jeder Ebene der Struktur werden im Hauptbereich relevante Informationen zum Element angezeigt. Zum Beispiel werden der Integritätsstatus und die Version für einen bestimmten Dienst angezeigt.
 
-![Ansicht der Anwendungen, die auf dem Service Fabric-Cluster ausgeführt werden][applicationview]
+![Service Fabric-Explorer-Bereich für essentielle Informationen][sfx-service-essentials]
 
-Das Klicken auf eine Anwendung, einen Dienst, eine Partition oder ein Replikat liefert ausführliche Informationen zur Entität. Im Diagramm unten ist das Dashboard für die Integrität von Dienstreplikaten für ein primäres Replikat des zustandsbehafteten Diensts zu sehen. Es enthält die Rolle, den Knoten, auf dem es ausgeführt wird, die Lauschadresse, den Speicherort der Dateien auf dem Datenträger und die Integritätsereignisse.
+### Anzeigen der Knoten des Clusters
 
-![Ausführliche Informationen zu einem Service Fabric-Replikat][replicadetails]
+Die Knotenansicht zeigt das physische Layout des Clusters. Sie können für einen angegebenen Knoten überprüfen, welche Anwendungen über auf diesem Knoten bereitgestellten Code verfügen, und insbesondere, welche Replikate derzeit dort ausgeführt werden.
+
+## Aktionen mit Service Fabric-Explorer
+
+Service Fabric-Explorer bietet eine schnelle Möglichkeit zum Aufrufen von Aktionen für die Knoten, Anwendungen und Dienste in Ihrem Cluster.
+
+Um beispielsweise eine Anwendungsinstanz zu löschen, wählen Sie einfach die Anwendung in der Struktur auf der linken Seite und dann „Aktionen > Anwendung löschen“ aus.
+
+![Löschen einer Anwendung in Service Fabric-Explorer][sfx-delete-application]
+
+Da viele Aktionen destruktiv sind, werden Sie aufgefordert, den Löschvorgang zu bestätigen, bevor die Aktion abgeschlossen wird.
+
+>[AZURE.NOTE]Jede Aktion, die mit Service Fabric-Explorer ausgeführt werden kann, kann auch mithilfe von PowerShell oder einer REST-API unter Verwendung von Automatisierung ausgeführt werden.
+
 
 
 ## Herstellen einer Verbindung mit einem Service Fabric-Remotecluster
 
-Klicken Sie zum Anzeigen eines Service Fabric-Remoteclusters auf **Verbinden**, um das Dialogfeld **Mit Service Fabric-Cluster verbinden** zu öffnen. Geben Sie den **ServiceFabric-Endpunkt** für das Cluster ein, und klicken Sie auf **Verbinden**. Der Service Fabric-Endpunkt ist normalerweise der öffentliche Name Ihres Clusterdiensts, der über Port 19000 lauscht.
+Da Service Fabric-Explorer webbasiert ist und innerhalb des Clusters ausgeführt wird, kann von jedem Browser darauf zugegriffen werden, solange Sie die Endpunkte des Clusters kennen und über ausreichende Berechtigungen für den Zugriff verfügen.
 
-![Einrichten einer Verbindung mit Ihrem Service Fabric-Remotecluster][connecttocluster]
+### Ermitteln des Service Fabric-Explorer-Endpunkts für einen Remotecluster
 
+Sie können den Clusterendpunkt über das Service Fabric-Portal ermitteln. Um Service Fabric-Explorer für einen bestimmten Cluster zu erreichen, stellen Sie einfach eine Verbindung mit diesem Endpunkt an Port 19007 her:
 
-<!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
+http://&lt;your-cluster-endpoint&gt;:19007
+
+### Verbinden mit einem sicheren Cluster
+
+Sie können den Zugriff auf den Service Fabric-Cluster steuern, indem Sie die Präsentation eines Zertifikats durch Clients zum Herstellen einer Verbindung erfordern.
+
+Wenn Sie versuchen, eine Verbindung mit Service Fabric-Explorer auf einem sicheren Cluster herzustellen, fordert der Browser ein Zertifikat an, um Zugriff zu gewähren.
+
 ## Nächste Schritte
 
 - [Testability – Übersicht](service-fabric-testability-overview.md)
@@ -74,5 +92,9 @@ Klicken Sie zum Anzeigen eines Service Fabric-Remoteclusters auf **Verbinden**, 
 [connecttocluster]: ./media/service-fabric-visualizing-your-cluster/connecttocluster.png
 [replicadetails]: ./media/service-fabric-visualizing-your-cluster/replicadetails.png
 [servicefabricexplorer]: ./media/service-fabric-visualizing-your-cluster/servicefabricexplorer.png
+[sfx-cluster-dashboard]: ./media/service-fabric-visualizing-your-cluster/SfxClusterDashboard.png
+[sfx-application-tree]: ./media/service-fabric-visualizing-your-cluster/SfxApplicationTree.png
+[sfx-service-essentials]: ./media/service-fabric-visualizing-your-cluster/SfxServiceEssentials.png
+[sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/SfxDeleteApplication.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/03/2015"
+	ms.date="11/16/2015"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -45,6 +45,8 @@ Wenn Sie zuerst das Kennwortsynchronisierungsfeature aktivieren, wird eine anfä
 
 Die Synchronisierung eines Kennworts hat keinen Einfluss auf derzeit angemeldete Benutzer. Wenn ein Benutzer, der bei einem Clouddienst angemeldet ist, auch das lokale Kennwort ändert, wird die Clouddienstsitzung ohne Unterbrechung fortgesetzt. Doch sobald der Clouddienst die erneute Authentifizierung des Benutzers anfordert, muss das neue Kennwort angegeben werden. An diesem Punkt muss der Benutzer das neue Kennwort angeben, das vor kurzem aus dem lokalen Active Directory mit der Cloud synchronisiert wurde.
 
+> [AZURE.NOTE]Die Kennwortsynchronisierung wird nur für Objekttyp-Benutzer in Active Directory unterstützt. Sie wird vom iNetOrgPerson-Objtktyp nicht unterstützt.
+
 ### So funktioniert die Kennwortsynchronisierung mit Azure AD-Domänendiensten
 
 Wenn Sie diesen Dienst in Azure AD aktivieren, müssen Sie die Option für die Kennwortsynchronisierung festlegen, damit ein einmaliges Anmelden für die Benutzer möglich wird. Beim Aktivieren des Diensts wird das Verhalten für die Kennwortsynchronisierung geändert, und die Kennworthashes werden unverändert aus Ihrem lokalen Active Directory per Synchronisierung in die Azure AD-Domänendienste übernommen. Die Funktion ähnelt ADMT (Active Directory Migration Tool) und ermöglicht es den Azure AD-Domänendiensten, Benutzer mit allen Methoden zu authentifizieren, die auch im lokalen Active Directory zur Verfügung stehen.
@@ -70,7 +72,7 @@ Wenn Sie die Kennwortsynchronisierung aktivieren, überschreiben die im lokalen 
 
 **Kennwortablaufrichtlinie**
 
-Wenn sich ein Benutzer im Bereich der Kennwortsynchronisierung befindet, wird das Cloudkontokennwort auf „*Läuft nie ab*“ festgelegt. Dies bedeutet, dass es möglich ist, dass das Kennwort eines Benutzers in der lokalen Umgebung abläuft, aber er sich weiterhin mit diesem abgelaufenen Kennwort bei Clouddiensten anmelden kann.
+Wenn sich ein Benutzer im Bereich der Kennwortsynchronisierung befindet, wird das Cloudkontokennwort auf "*Läuft nie ab*" festgelegt. Dies bedeutet, dass es möglich ist, dass das Kennwort eines Benutzers in der lokalen Umgebung abläuft, aber er sich weiterhin mit diesem abgelaufenen Kennwort bei Clouddiensten anmelden kann.
 
 Das Cloudkennwort wird aktualisiert, sobald der Benutzer das nächste Mal das Kennwort in der lokalen Umgebung ändert.
 
@@ -127,7 +129,7 @@ Die Statusspalte kann die nachfolgend aufgeführten Werte enthalten, die auch au
 
 | Status | Beschreibung |
 | ---- | ----- |
-| Success | Das Kennwort wurde erfolgreich synchronisiert. |
+| Erfolgreich | Das Kennwort wurde erfolgreich synchronisiert. |
 | SourceConnectorNotPresent | Im lokalen Active Directory Connector-Bereich wurde kein Objekt gefunden. |
 | NoTargetConnection | Im Metaverse oder im Azure AD-Connectorbereich befindet sich kein Objekt. |
 | TargetNotExportedToDirectory | Das Objekt im Azure AD-Connectorbereich wurde noch nicht exportiert. |
@@ -156,4 +158,4 @@ Das Erzwingen einer vollständigen Synchronisierung aller Kennwörter sollte in 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

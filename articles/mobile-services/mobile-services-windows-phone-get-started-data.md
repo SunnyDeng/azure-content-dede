@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/11/2015" 
 	ms.author="glenga"/>
 
 
@@ -40,7 +40,7 @@ Dieses Lernprogramm baut auf der [GetStartedWithData-App][Developer Code Samples
 
 1. Laden Sie das GetStartedWithData-App-Beispielprojekt von der Website mit [Codebeispielen für Entwickler] herunter. 
 
-	>[AZURE.NOTE]Zum Erstellen einer Windows Phone Silverlight 8.1-App ändern Sie einfach das Zielbetriebssystem im heruntergeladenen Windows Phone Silverlight 8-App-Projekt in Windows Phone 8.1. Zum Erstellen einer Windows Phone Store-App laden Sie die [Windows Phone Store-App-Version](http://go.microsoft.com/fwlink/p/?LinkId=397372) des App-Beispielprojekts GetStartedWithData herunter.
+	>[AZURE.NOTE] Zum Erstellen einer Windows Phone Silverlight 8.1-App ändern Sie einfach das Zielbetriebssystem im heruntergeladenen Windows Phone Silverlight 8-App-Projekt in Windows Phone 8.1. Zum Erstellen einer Windows Phone Store-App laden Sie die [Windows Phone Store-App-Version](http://go.microsoft.com/fwlink/p/?LinkId=397372) des App-Beispielprojekts GetStartedWithData herunter.
 
 2. Öffnen Sie in Visual Studio das heruntergeladene Projekt, und sehen Sie sich die Datei "MainPage.xaml.cs" an.
 
@@ -95,12 +95,12 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
   	Dieser Code erstellt eine neue **MobileServiceClient**-Instanz, die für den Zugriff auf Ihren mobilen Dienst verwendet wird.
 
-6. Fügen Sie in der Datei "MainPage.xaml.cs" die folgenden `using`-Anweisungen hinzu, oder heben Sie deren Auskommentierung auf:
+6. Fügen Sie in der Datei "MainPage.cs" die folgenden `using`-Anweisungen hinzu, oder heben Sie deren Auskommentierung auf:
 
        	using Microsoft.WindowsAzure.MobileServices;
 		using Newtonsoft.Json;
 
-7. Ersetzen Sie in derselben Datei die **TodoItem**-Klassendefinition durch den folgenden Code:
+7. Ersetzen Sie im DataModel-Ordner die **TodoItem**-Klassendefinition durch den folgenden Code:
 
         public class TodoItem
         {
@@ -193,4 +193,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Phone
 [Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/26/2015"
+   ms.date="11/18/2015"
    ms.author="juliako"/>
 
 
@@ -153,10 +153,10 @@ Bei der Installation des Azure SDK 2.6 oder 2.7.1 für Visual Studio Community 2
 LightSwitch-Projekte sind mit dieser Version nicht kompatibel. Dieses Problem wird in der nächsten SDK-Version behoben.
 
 ##Siehe auch
-[Ankündigungsbeitrag zu Azure SDK 2.7.1](http://go.microsoft.com/fwlink/?LinkId=623850) (in englischer Sprache)
+[Ankündigungsbeitrag zu Azure SDK 2.7.1 (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=623850)
 
-[Ankündigungsbeitrag zu Azure SDK 2.7](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) (in englischer Sprache)
+[Ankündigungsbeitrag zu Azure SDK 2.7 (in englischer Sprache)](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
 [Unterstützungs- und Deaktivierungsinformationen zum Azure SDK für .NET und APIs](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

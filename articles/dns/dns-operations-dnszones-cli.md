@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/02/2015"
+   ms.date="11/10/2015"
    ms.author="joaoma"/>
 
 # Verwalten von DNS-Zonen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
 - [Azure CLI](dns-operations-dnszones-cli.md)
-- [Azure Powershell](dns-operations-dnszones.md)
+- [PowerShell](dns-operations-dnszones.md)
 
 Diese Anleitung zeigt Ihnen, wie Sie die DNS-Zone verwalten. Sie hilft Ihnen, die Reihenfolge der erforderlichen Vorgänge zu verstehen, die für die Verwaltung der DNS-Zone durchgeführt werden müssen.
 
@@ -76,4 +76,4 @@ Dieser Vorgang hat einen optionalen Switch "-q", der die Eingabeaufforderung zur
 
 [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

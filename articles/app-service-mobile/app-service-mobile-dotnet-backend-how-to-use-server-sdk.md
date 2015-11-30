@@ -153,7 +153,7 @@ Sie können dem Serverprojekt eine Authentifizierung hinzufügen, indem Sie das 
 
 3. Fügen Sie jedem Controller oder jeder Methode das `[Authorize]`-Attribut hinzu, falls dafür eine Authentifizierung erforderlich ist. Benutzer müssen nun für den Zugriff auf diesen Endpunkt oder auf diese bestimmten APIs authentifiziert werden.
 
-Informationen zum Authentifizieren von Clients bei Ihrem Mobile Apps-Back-End finden Sie unter [Hinzufügen von Authentifizierung zur App](app-service-mobile-dotnet-backend-ios-get-started-users.md).
+Informationen zum Authentifizieren von Clients bei Ihrem Mobile Apps-Back-End finden Sie unter [Hinzufügen von Authentifizierung zur App](app-service-mobile-ios-get-started-users.md).
 
 ## Vorgehensweise: Hinzufügen von Pushbenachrichtigungen zu einem Serverprojekt
 
@@ -193,7 +193,30 @@ Sie können dem Serverprojekt Pushbenachrichtigungen hinzufügen, indem Sie das 
         NotificationHubClient hub = NotificationHubClient
         .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
 
-An diesem Punkt können Sie den Notification Hubs-Client zum Senden von Pushbenachrichtigungen an registrierte Geräte verwenden. Weitere Informationen finden Sie unter [Hinzufügen von Pushbenachrichtigungen zur App](app-service-mobile-ios-get-started-push.md). Weitere Informationen zu allem, was mit Notification Hubs möglich ist, finden Sie unter [Übersicht über Notification Hubs](../notification-hubs/notification-hubs-overview.md).
+An diesem Punkt können Sie den Notification Hubs-Client zum Senden von Pushbenachrichtigungen an registrierte Geräte verwenden. Weitere Informationen finden Sie unter [Hinzufügen von Pushbenachrichtigungen zur App](app-service-mobile-ios-get-started-push.md) Weitere Informationen zu allem, was mit Notification Hubs machbar ist, finden Sie unter [Übersicht über Notification Hubs](../notification-hubs/notification-hubs-overview.md).
+
+## Vorgehensweise: Hinzufügen von Tags zu einer Geräteinstallation für Push an Tags
+
+Nach dem weiter oben beschriebenen **Definieren eines benutzerdefinierten API-Controllers** können Sie eine benutzerdefinierte API auf Ihrem Back-End einrichten, die mit Notification Hubs zusammenarbeitet, um Tags zu einer bestimmten Geräteinstallation hinzuzufügen. Stellen Sie sicher, dass Sie die im lokalen Clientspeicher gespeicherte Installations-ID und die hinzuzufügenden Tags übergeben. (Letzteres ist optional, da Sie Tags auch direkt auf Ihrem Back-End angeben können.) Fügen Sie Ihrem Controller den folgenden Ausschnitt für die Zusammenarbeit mit Notification Hubs hinzu, um ein Tag zu einer Geräteinstallations-ID hinzuzufügen.
+
+Verwendung von [Azure Notification Hubs NuGet](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)([Referenz](https://msdn.microsoft.com/library/azure/mt414893.aspx)):
+
+		var hub = NotificationHubClient.CreateClientFromConnectionString("my-connection-string", "my-hub");
+
+		hub.PatchInstallation("my-installation-id", new[]
+		{
+		    new PartialUpdateOperation
+		    {
+		        Operation = UpdateOperationType.Add,
+		        Path = "/tags",
+		        Value = "{my-tag}"
+		    }
+		});
+	
+
+Verwenden Sie [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx), um einen Pushvorgang an diese Tags durchzuführen.
+
+Sie können Ihre benutzerdefinierte API auch so einrichten, dass Geräteinstallationen mit Notification Hubs direkt auf Ihrem Back-End registriert werden.
 
 ## Vorgehensweise: Veröffentlichen des Serverprojekts
 
@@ -207,4 +230,4 @@ Führen Sie die folgenden Schritte durch, um das Serverprojekt in Azure zu verö
 [Microsoft.Azure.Mobile.Server.Authentication]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Authentication/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

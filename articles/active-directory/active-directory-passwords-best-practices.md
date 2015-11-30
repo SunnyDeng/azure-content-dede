@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="11/16/2015" 
 	ms.author="asteen"/>
 
 # Bereitstellen der Kennwortverwaltung und Schulen der Benutzer zu deren Verwendung
@@ -48,12 +48,14 @@ Bevor ein Benutzer die Kennwortzurücksetzung verwenden kann, müssen **alle** f
 Sie haben mehrere Möglichkeiten, für Organisationsbenutzer Daten einzugeben, die für das Zurücksetzen von Kennwörtern verwendet werden.
 
 - Bearbeiten Sie Benutzer im [Azure-Verwaltungsportal](https://manage.windowsazure.com) oder im [Office 365-Verwaltungsportal](https://portal.microsoftonline.com).
-- Verwenden Sie AADSync, um Benutzereigenschaften aus einer lokalen Active Directory-Domäne mit Azure AD zu synchronisieren.
-- Verwenden Sie Windows PowerShell zum Bearbeiten der Benutzereigenschaften.
+- Verwenden Sie Azure AD Sync, um Benutzereigenschaften aus einer lokalen Active Directory-Domäne mit Azure AD zu synchronisieren.
+- [Führen Sie die folgenden Schritte aus](active-directory-passwords-learn-more.md#how-to-access-password-reset-data-for-your-users), um Windows PowerShell zum Bearbeiten der Benutzereigenschaften zu verwenden.
 - Ermöglichen Sie es Benutzern, ihre eigenen Daten zu registrieren, indem Sie sie auf das Registrierungsportal unter [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) weiterleiten.
-- Legen Sie die Benutzerregistrierung für die Kennwortzurücksetzung bei Anmeldung beim Zugriffsbereich unter [http://myapps.microsoft.com](http://myapps.microsoft.com) als erforderlich fest, indem Sie die Konfigurationsoption **Sollen sich Benutzer für die Self-Service-Kennwortzurücksetzung registrieren müssen?** auf **Ja** festlegen.
+- Legen Sie die Benutzerregistrierung für die Kennwortzurücksetzung bei Anmeldung in ihrem Azure AD-Konto als erforderlich fest, indem Sie die Konfigurationsoption [**Sollen sich Benutzer bei der Anmeldung registrieren müssen?**](active-directory-passwords-customize.md#require-users-to-register-when-signing-in) auf **Ja** festlegen.
 
-Benutzer müssen sich für die Kennwortzurücksetzung nicht registrieren, damit das System funktioniert. Wenn Sie beispielsweise über vorhandene Rufnummern in Ihrem lokalen Verzeichnis verfügen, können Sie diese in Azure AD synchronisieren, und wir verwenden sie automatisch für die Kennwortzurücksetzung.
+Benutzer müssen sich für die Kennwortzurücksetzung nicht registrieren, damit das System funktioniert. Wenn Sie beispielsweise über vorhandene Mobil- oder geschäftliche Rufnummern in Ihrem lokalen Verzeichnis verfügen, können Sie diese in Azure AD synchronisieren, und wir verwenden sie automatisch für die Kennwortzurücksetzung.
+
+Es gibt auch weitere Informationen zur [Verwendung von Daten nach der Kennwortzurücksetzung](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset) und [Auffüllung einzelner Authentifizierungsfelder mit PowerShell](active-directory-passwords-learn-more.md#how-to-access-password-reset-data-for-your-users).
 
 ## Welche Möglichkeit ist am besten zum Einführen der Kennwortzurücksetzung für Benutzer geeignet?
 Im Folgenden finden Sie allgemeine Schritte zur Einführung der Kennwortrücksetzung:
@@ -121,24 +123,25 @@ Sie können die Authentifizierungsdaten über das [Azure-Verwaltungsportal](http
 
 Unter [Von der Kennwortzurücksetzung verwendete Daten](active-directory-passwords-learn-more.md#what-data-is-used-by-password-reset) erfahren Sie, wie die einzelnen Eigenschaften verwendet werden können.
 
+Unter [Zugriff auf Daten zur Kennwortrücksetzung für Ihre Benutzer in PowerShell](active-directory-passwords-learn-more.md#how-to-access-password-reset-data-for-your-users) erfahren Sie, wie Sie diese Daten in PowerShell lesen und festlegen.
+
 ## Beispielschulungsmaterial
 Wir arbeiten an Beispielschulungsmaterial, mit dem Sie Ihre IT-Organisation und Ihre Benutzer im Hinblick auf die Bereitstellung und Verwendung der Kennwortzurücksetzung schnell auf den neuesten Stand bringen können. Halten Sie sich auf dem Laufenden.
 
 
 <br/> <br/> <br/>
 
-**Zusätzliche Ressourcen**
+## Links zu Informationen zur Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Websites mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-
-* [Was ist die Kennwortverwaltung?](active-directory-passwords.md)
-* [Funktionsweise der Kennwortverwaltung](active-directory-passwords-how-it-works.md)
-* [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md)
-* [Anpassen der Kennwortverwaltung](active-directory-passwords-customize.md)
-* [Operative Einblicke durch Berichte zur Kennwortverwaltung](active-directory-passwords-get-insights.md)
-* [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
-* [Problembehandlung für die Kennwortverwaltung](active-directory-passwords-troubleshoot.md)
-* [Weitere Informationen](active-directory-passwords-learn-more.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password) – Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems
+* [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
+* [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
+* [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
+* [**Einblicke erhalten**](active-directory-passwords-get-insights.md) – Erfahren Sie mehr über unsere integrierten Berichtsfunktionen.
+* [**Häufig gestellte Fragen**](active-directory-passwords-faq.md) – Hier erhalten Sie Antworten auf häufig gestellte Fragen.
+* [**Problembehandlung**](active-directory-passwords-troubleshoot.md) – Erfahren Sie, wie Sie Probleme mit dem Dienst schnell beheben.
+* [**Weitere Informationen**](active-directory-passwords-learn-more.md) – Erhalten Sie tiefgehende technische Details zur Funktionsweise des Diensts.
 
 
 
@@ -150,4 +153,4 @@ Wir arbeiten an Beispielschulungsmaterial, mit dem Sie Ihre IT-Organisation und 
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-best-practices/007.jpg "Image_007.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->

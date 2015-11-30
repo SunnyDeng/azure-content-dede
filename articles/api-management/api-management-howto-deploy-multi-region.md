@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/10/2015"
+	ms.date="11/16/2015"
 	ms.author="sdanie"/>
 
 # Bereitstellen einer Azure API Management-Dienstinstanz für mehrere Azure-Regionen
 
 API Management unterstützt eine Bereitstellung für mehrere Regionen, wodurch API-Herausgeber einen einzelnen API-Verwaltungsdienst in einer beliebigen Anzahl von gewünschten Azure-Regionen zur Verfügung stellen können. Dies trägt dazu bei, die Anforderungslatenz bei geografisch verteilten API-Nutzern zu verringern, und verbessert gleichzeitig die Dienstverfügbarkeit, wenn eine Region offline geht.
 
-Bei der anfänglichen Erstellung eines API Management-Diensts enthält dieser nur eine [Einheit][] und befindet sich in einer einzelnen Azure-Region. Diese wird als primäre Region bezeichnet. Mit dem Azure-Portal können auf einfache Weise zusätzliche Regionen hinzugefügt werden. Der API Management-Proxyserver wird in jeder Region bereitgestellt, und Datenverkehr durch Aufrufe wird an den nächstgelegenen Proxy geroutet. Wenn eine Region offline geht, wird der Datenverkehr automatisch an den nächstgelegenen Proxy umgeleitet.
+Bei der anfänglichen Erstellung eines API Management-Diensts enthält dieser nur eine [Einheit][] und befindet sich in einer einzelnen Azure-Region. Diese wird als primäre Region bezeichnet. Mit dem Azure-Portal können auf einfache Weise zusätzliche Regionen hinzugefügt werden. Der API Management-Gatewayserver wird in jeder Region bereitgestellt und Datenverkehr durch Aufrufe wird an das nächstgelegene Gateway geroutet. Wenn eine Region offline geht, wird der Datenverkehr automatisch an das nächstgelegene Gateway umgeleitet.
 
 > [AZURE.IMPORTANT]Die Bereitstellung in mehreren Regionen steht nur im Tarif **[Premium][]** zur Verfügung.
 
@@ -75,4 +75,4 @@ Wenn Sie die gewünschten Regionen entfernt haben, klicken Sie auf **Speichern**
 [Einheit]: http://azure.microsoft.com/pricing/details/api-management/
 [Premium]: http://azure.microsoft.com/pricing/details/api-management/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

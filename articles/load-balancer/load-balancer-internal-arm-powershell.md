@@ -45,7 +45,7 @@ Die folgenden Elemente müssen konfiguriert werden, bevor Sie einen internen Las
 
 Unter [Unterstützung des Azure-Ressourcen-Managers für den Lastenausgleich](load-balancer-arm.md) erhalten Sie weitere Informationen zu Lastenausgleichskomponenten des Azure-Ressourcen-Managers.
 
-Die folgenden Schritte zeigen, wie Sie ein Lastenausgleichsmodul zwischen zwei virtuellen Computer konfigurieren.
+Die folgenden Schritte zeigen, wie Sie einen Load Balancer zwischen zwei virtuellen Computer konfigurieren.
 
 
 ## Schrittweise Anleitung mit PowerShell
@@ -114,7 +114,7 @@ Richten Sie einen Front-End-IP-Pool für den eingehenden Netzwerkverkehr des Loa
 
 Erstellen Sie einen Front-End-IP-Adresspool mit der privaten IP-Adresse 10.0.2.5 für das Subnetz 10.0.2.0/24, das der Endpunkt für eingehenden Netzwerkdatenverkehr ist.
 
-	$frontendIP = New-AzureLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $backendSubnet.Id
+	$frontendIP = New-AzureLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $vnet.Subnets.Id
 
 ### Schritt 2 
 
@@ -239,18 +239,18 @@ Verwenden Sie den Befehl "Add-AzureVMNetworkInterface", um die NIC einem virtuel
 In Option 4 oder 5 der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
 
 
-## Aktualisieren eines vorhandenen Lastenausgleichsmoduls
+## Aktualisieren eines vorhandenen Load Balancers
 
 
 ### Schritt 1
 
-Weisen Sie unter Verwendung des Lastenausgleichsmoduls aus dem vorherigen Beispiel mithilfe von „Get-AzureLoadBalancer“ der Variablen „$slb“ ein Lastenausgleichsmodul-Objekt zu.
+Weisen Sie unter Verwendung des Load Balancers aus dem vorherigen Beispiel mithilfe von „Get-AzureLoadBalancer“ der Variablen „$slb“ ein Load Balancer-Objekt zu.
 
 	$slb=get-azureLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
 ### Schritt 2
 
-Im folgenden Beispiel fügen Sie einem vorhandenen Lastenausgleichsmodul eine neue eingehende NAT-Regel hinzu, die Port 81 in der Front-End-Anwendung und Port 8181 für den Back-End-Pool verwendet.
+Im folgenden Beispiel fügen Sie einem vorhandenen Load Balancer eine neue eingehende NAT-Regel hinzu, die Port 81 in der Front-End-Anwendung und Port 8181 für den Back-End-Pool verwendet.
 
 	$slb | Add-AzureLoadBalancerInboundNatRuleConfig -Name NewRule -FrontendIpConfiguration $slb.FrontendIpConfigurations[0] -FrontendPort 81  -BackendPort 8181 -Protocol Tcp
 
@@ -261,21 +261,21 @@ Speichern Sie die neue Konfiguration mithilfe von „Set-AzureLoadBalancer“.
 
 	$slb | Set-AzureLoadBalancer
 
-## Entfernen eines Lastenausgleichsmoduls
+## Entfernen eines Load Balancers
 
-Verwenden Sie den Befehl „Remove-AzureLoadBalancer“, um das zuvor erstellte Lastenausgleichsmodul namens „NRP-LB“ in der Ressourcengruppe „NRP-RG“ zu löschen.
+Verwenden Sie den Befehl „Remove-AzureLoadBalancer“, um den zuvor erstellten Load Balancer namens „NRP-LB“ in der Ressourcengruppe „NRP-RG“ zu löschen.
 
 	Remove-AzureLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
->[AZURE.NOTE]Sie können die optionale Option „-Force“ verwenden, um die Aufforderung zum Löschen zu umgehen.
+>[AZURE.NOTE]Sie können den optionalen Switch „-Force“ verwenden, um die Aufforderung zum Löschen zu vermeiden.
 
 
 
-## Siehe auch
+## Weitere Informationen
 
 [Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/11/2015"
+   ms.date="11/18/2015"
    ms.author="tomfitz"/>
 
 # Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen
@@ -30,15 +30,38 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------------------------ | -------------- | -------------- |-------- | ------ |
 | Virtual Machines | Ja | Ja, mehrere Optionen | Nein | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
-| Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | | [Batch REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) (in englischer Sprache) | |
+| Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | |
 | Dynamics Lifecycle Services | Ja | Nein | | | |
-| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - |
-| Remote-App | Nein | Nein | - | - | - |
+| Virtuelle Computer (klassisch) | Eingeschränkt | Ja | Teilweise (siehe unten) | - | - |
+| Remote-App | Nein | - | - | - | - |
 | Service Fabric | Nein | - | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
 Ressourcen des Typs "Virtuelle Computer (klassisch)" können in neue Ressourcengruppen verschoben werden, nicht jedoch in ein neues Abonnement.
+
+## Netzwerk
+
+| Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
+| ------- | ------- | -------- | -------------- | -------- | ------ |
+| Application Gateway | Ja | | | | |
+| DNS | Ja | | | [Erstellen einer DNS-Zone](https://msdn.microsoft.com/library/azure/mt130622.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
+| Lastenausgleichsmodul | Ja | | | [Erstellen oder Aktualisieren eines Lastenausgleichs](https://msdn.microsoft.com/library/azure/mt163574.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
+| Virtuelle Netzwerke | Ja | [Ja](https://portal.azure.com/#create/Microsoft.VirtualNetwork-ARM) | Nein | [Erstellen eines virtuellen Netzwerks](https://msdn.microsoft.com/library/azure/mt163661.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
+| Traffic Manager | Ja | Nein | | [Erstellen oder Aktualisieren eines Traffic Manager-Profils](https://msdn.microsoft.com/library/azure/mt163581.aspx) | |
+| ExpressRoute | Ja | Nein | Nein | [ExpressRoute REST](https://msdn.microsoft.com/library/azure/mt586720.aspx) | |
+
+## Daten und Speicher
+
+| Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
+| ------- | ------- | ------- | -------------- | -------- | ------ |
+| DocumentDB | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DocumentDB) | Ja | [DocumentDB REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) | |
+| Storage | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) | Nein | [Erstellen des Speicherkontos](https://msdn.microsoft.com/library/azure/mt163564.aspx) | [Speicherkonto](resource-manager-template-storage.md) |
+| Redis-Cache | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Cache.1.0.4) | Ja | | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Cache.json) |
+| SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.0.5.9-preview) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
+| Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
+| SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.12-preview) | | | |
+| StorSimple | Nein | Nein | - | - | - | | Verwalteter Cache | Nein | Nein | - | - | - |
 
 ## Web- und mobile Anwendungen
 
@@ -56,19 +79,6 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 - Verschieben Sie alle Ressourcen aus einer Ressourcengruppe in eine andere Ressourcengruppe, wenn die Zielressourcengruppe noch keine Microsoft.Web-Ressourcen enthält.
 - Verschieben Sie Web-Apps in eine andere Ressourcengruppe, behalten Sie jedoch den App Services-Plan in der ursprünglichen Ressourcengruppe bei.
 
-
-## Daten und Speicher
-
-| Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
-| ------- | ------- | ------- | -------------- | -------- | ------ |
-| DocumentDB | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DocumentDB) | Ja | [DocumentDB REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) | |
-| Storage | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) | | [Erstellen des Speicherkontos](https://msdn.microsoft.com/library/azure/mt163564.aspx) | [Speicherkonto](resource-manager-template-storage.md) |
-| Redis-Cache | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Cache.1.0.4) | Ja | | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Cache.json) |
-| SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.0.5.9-preview) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
-| Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
-| SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.12-preview) | | | |
-| StorSimple | Nein | Nein | - | - | - | | Verwalteter Cache | Nein | Nein | - | - | - |
-
 ## Analyse
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
@@ -78,17 +88,6 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | | | |
 | Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) | |
 | Machine Learning | Nein | Nein | - | - | - | | Data Catalog | Nein | Nein | - | - | - |
-
-## Netzwerk
-
-| Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
-| ------- | ------- | -------- | -------------- | -------- | ------ |
-| Application Gateway | Ja | | | | |
-| DNS | Ja | | | [Erstellen einer DNS-Zone](https://msdn.microsoft.com/library/azure/mt130622.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
-| Lastenausgleichsmodul | Ja | | | [Erstellen oder Aktualisieren eines Lastenausgleichs](https://msdn.microsoft.com/library/azure/mt163574.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
-| Virtuelle Netzwerke | Ja | [Ja](https://portal.azure.com/#create/Microsoft.VirtualNetwork-ARM) | Nein | [Erstellen eines virtuellen Netzwerks](https://msdn.microsoft.com/library/azure/mt163661.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |
-| Traffic Manager | Ja | Nein | | [Erstellen oder Aktualisieren eines Traffic Manager-Profils](https://msdn.microsoft.com/library/azure/mt163581.aspx) | |
-| ExpressRoute | Ja | Nein | Nein | [ExpressRoute REST](https://msdn.microsoft.com/library/azure/mt586720.aspx) | |
 
 ## Medien und CDN
 
@@ -238,4 +237,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

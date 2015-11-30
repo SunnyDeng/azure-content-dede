@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/17/2015" 
 	ms.author="billmath"/>
 # Sichern von Cloud- und lokalen Ressourcen mithilfe von Azure Multi-Factor Authentication-Server mit AD FS 2.0
 
@@ -93,4 +93,4 @@ Zum Sichern von AD FS ohne Proxy installieren Sie Azure Multi-Factor Authenticat
 
 <center>![Setup](./media/multi-factor-authentication-get-started-adfs-adfs2/trusted.png)</center>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

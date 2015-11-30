@@ -79,7 +79,7 @@ CREATE LOGIN login1 WITH password='<ProvidePassword>';
 
 #### Verwenden neuer Anmeldungen
 
-Um mit den von Ihnen erstellten Anmeldungen eine Verbindung mit Microsoft Azure SQL-Datenbank herzustellen, müssen Sie jeder Anmeldung zuerst mit dem Befehl ``CREATE USER`` Berechtigungen auf Datenbankebene gewähren. Weitere Informationen finden Sie unter [Gewähren von Berechtigungen auf Datenbankebene für eine Anmeldung](https://msdn.microsoft.com/library/ee336235.aspx#DatabasePerms).
+Um mit den von Ihnen erstellten Anmeldungen eine Verbindung mit Microsoft Azure SQL-Datenbank herzustellen, müssen Sie jeder Anmeldung zuerst mit dem Befehl ``CREATE USER`` Berechtigungen auf Datenbankebene gewähren. Weitere Informationen finden Sie weiter unten im Abschnitt **Gewähren von Datenbankzugriff für eine Anmeldung**.
 
 Da einige Tools Tabular Data Stream (TDS) unterschiedlich implementieren, müssen Sie den Namen des Azure SQL-Datenbank-Servers ggf. in der Verbindungszeichenfolge an die Anmeldung anfügen, indem Sie die Notation ``<login>@<server>`` verwenden. Trennen Sie die Anmeldung und den Namen des Azure SQL-Datenbank-Servers durch das Symbol ``@`` voneinander. Wenn die Anmeldung beispielsweise **login1** und der vollqualifizierte Name Ihres Azure SQL-Datenbank-Servers **servername.database.windows.net** lautet, sollte der username-Parameter der Verbindungszeichenfolge wie folgt lauten: ****login1@servername**. Der Text, den Sie für den Anmeldenamen auswählen können, wird hierdurch also eingeschränkt. Weitere Informationen finden Sie unter [CREATE LOGIN (Transact-SQL)](https://msdn.microsoft.com/library/ms189751.aspx).
 
@@ -169,4 +169,4 @@ SELECT * FROM sys.databases;
 
 [Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank](sql-database-security-guidelines.md) [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

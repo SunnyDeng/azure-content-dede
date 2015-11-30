@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/10/2015"
+	ms.date="11/16/2015"
 	ms.author="curtand"/>
 
 
@@ -51,10 +51,10 @@ Damit Sie Windows PowerShell-Cmdlets verwenden können, müssen Sie sie zunächs
 2.  Führen Sie einen der folgenden Schritte aus:
 
 	- Um für das Kennwort eines Benutzers festzulegen, dass es abläuft, führen Sie das folgende Cmdlet mit dem Benutzerprinzipalnamen (UPN) oder der Benutzer-ID des Benutzers aus: `Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires \$false`
-  	
+
 	- Um für die Kennwörter aller Benutzer in der Organisation festzulegen, dass sie ablaufen, verwenden Sie das folgende Cmdlet: `Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$false`
 
-## Festlegen, dass ein nicht Kennwort abläuft
+## Festlegen, dass ein Kennwort nicht abläuft
 
 1. Stellen Sie mit den Anmeldeinformationen des Unternehmensadministrators eine Verbindung mit Windows PowerShell her.
 
@@ -64,4 +64,4 @@ Damit Sie Windows PowerShell-Cmdlets verwenden können, müssen Sie sie zunächs
 
 	- Um für die Kennwörter aller Benutzer in einer Organisation festzulegen, dass sie nie ablaufen, führen Sie das folgende Cmdlet aus: `Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$true`
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/14/2015"
+	ms.date="11/17/2015"
 	ms.author="yuaxu"/>
 
 # Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer
@@ -109,4 +109,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Vorlagen]: https://msdn.microsoft.com/de-DE/library/dn530748.aspx
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

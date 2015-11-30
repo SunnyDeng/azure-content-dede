@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="11/13/2015"
    ms.author="vturecek"/>
 
 # Reliable Actors: Das Szenario für die kanonische HelloWorld-Vorgehensweise
@@ -26,7 +26,7 @@ Bevor Sie beginnen, vergewissern Sie sich, dass sich das Setup der Entwicklungsu
 Um mit Reliable Actors zu beginnen, müssen Sie lediglich 4 grundlegende Konzepte verstehen:
 
 * **Actor-Dienst**. Reliable Actors sind in Dienste gepackt, die in der Service Fabric-Infrastruktur bereitgestellt werden können. Ein Dienst kann einen oder mehrere Actors hosten. Die Vor- und Nachteile von einem oder mehreren Actors pro Dienst werden zu einem späteren Zeitpunkt ausführlicher behandelt. Hier wird davon ausgegangen, dass nur ein Actor implementiert werden soll.
-* **Actor-Schnittstelle**. Die Actor-Schnittstelle wird zum Definieren der öffentlichen Schnittstelle eines Actors verwendet. In der Actor-Modell-Terminologie definiert sie den Typ der Nachrichten, die der Actor verarbeiten kann. Die Actor-Schnittstelle wird von anderen Actors oder von Clientanwendungen zum (asynchronen) "Senden" von Nachrichten an den Actor verwendet. Mithilfe von Reliable Actors können mehrere Schnittstellen implementiert werden, wie noch zu sehen sein wird, ein HelloWorld-Actor kann die IHelloWorld-Schnittstelle implementieren, jedoch auch eine ILogging-Schnittstelle, die verschiedene Nachrichten/Funktionalitäten definiert.
+* **Actor-Schnittstelle**. Die Actor-Schnittstelle wird zum Definieren der öffentlichen Schnittstelle eines Actors verwendet. In der Actor-Modell-Terminologie definiert sie den Typ der Nachrichten, die der Actor interpretieren und verarbeiten kann. Die Actor-Schnittstelle wird von anderen Actors oder von Clientanwendungen zum (asynchronen) "Senden" von Nachrichten an den Actor verwendet. Mithilfe von Reliable Actors können mehrere Schnittstellen implementiert werden, wie noch zu sehen sein wird, ein HelloWorld-Actor kann die IHelloWorld-Schnittstelle implementieren, jedoch auch eine ILogging-Schnittstelle, die verschiedene Nachrichten/Funktionalitäten definiert.
 * **Actor-Registrierung**. Der Actor-Typ muss im Actor-Dienst registriert werden, damit Service Fabric den neuen Typ erkennt und ihn zum Erstellen von neuen Actors verwenden kann.
 * **ActorProxy--Klasse**. Die ActorProxy-Klasse dient zum Binden an einen Actor und zum Aufrufen der Methoden, die über seine Schnittstellen verfügbar gemacht werden. Die ActorProxy-Klasse bietet zwei wichtige Funktionen:
 	* Namensauflösung: Kann zum Lokalisieren des Actors im Cluster verwendet werden (suchen, in welchem Knoten des Clusters er sich befindet).
@@ -58,18 +58,14 @@ Eine typische Reliable Actors-Projektmappe aus drei Projekten:
 
 ```csharp
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.ServiceFabric.Actors;
-
-namespace HelloWorld.Interfaces
+namespace MyActor.Interfaces
 {
-    public interface IHelloWorld : IActor
+    using System.Threading.Tasks;
+    using Microsoft.ServiceFabric.Actors;
+
+    public interface IMyActor : IActor
     {
-        Task<string> SayHello(string greeting);
+        Task<string> HelloWorld();
     }
 }
 
@@ -79,22 +75,18 @@ namespace HelloWorld.Interfaces
 
 ```csharp
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using HelloWorld.Interfaces;
-using Microsoft.ServiceFabric;
-using Microsoft.ServiceFabric.Actors;
-
-namespace HelloWorld
+namespace MyActor
 {
-    public class HelloWorld : Actor, IHelloWorld
+    using System;
+    using System.Threading.Tasks;
+    using Interfaces;
+    using Microsoft.ServiceFabric.Actors;
+
+    internal class MyActor : StatelessActor, IMyActor
     {
-        public Task<string> SayHello(string greeting)
+        public Task<string> HelloWorld()
         {
-            return Task.FromResult("You said: '" + greeting + "', I say: Hello Actors!");
+            throw new NotImplementedException();
         }
     }
 }
@@ -105,26 +97,34 @@ Das Actor-Dienst-Projekt enthält den Code zum Erstellen eines Service Fabric-Di
 
 ```csharp
 
-public class Program
+namespace MyActor
 {
-    public static void Main(string[] args)
-    {
-        try
-        {
-            using (FabricRuntime fabricRuntime = FabricRuntime.Create())
-            {
-                fabricRuntime.RegisterActor(typeof(HelloWorld));
+    using System;
+    using System.Fabric;
+    using System.Threading;
+    using Microsoft.ServiceFabric.Actors;
 
-                Thread.Sleep(Timeout.Infinite);
+    internal static class Program
+    {
+        private static void Main()
+        {
+            try
+            {
+                using (FabricRuntime fabricRuntime = FabricRuntime.Create())
+                {
+                    fabricRuntime.RegisterActor<MyActor>();
+
+                    Thread.Sleep(Timeout.Infinite);  // Prevents this host process from terminating so services keeps running.
+                }
+            }
+            catch (Exception e)
+            {
+                ActorEventSource.Current.ActorHostInitializationFailed(e.ToString());
+                throw;
             }
         }
-        catch (Exception e)
-        {
-            ActorEventSource.Current.ActorHostInitializationFailed(e);
-            throw;
-        }
     }
-}  
+}
 
 ```
 
@@ -132,7 +132,7 @@ Wenn Sie ein neues Projekt in Visual Studio beginnen und nur eine Actor-Definiti
 
 ```csharp
 
-fabricRuntime.RegisterActor(typeof(MyNewActor));
+fabricRuntime.RegisterActor<MyActor>();
 
 
 ```
@@ -158,4 +158,4 @@ Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokal
 [4]: ./media/service-fabric-reliable-actors-get-started/vs-context-menu.png
 [5]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject1.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

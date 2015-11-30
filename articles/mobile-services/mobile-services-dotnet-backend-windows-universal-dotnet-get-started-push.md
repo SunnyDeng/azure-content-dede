@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/11/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -107,4 +107,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Verwenden eines .NET-Clients für Azure Mobile Services]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

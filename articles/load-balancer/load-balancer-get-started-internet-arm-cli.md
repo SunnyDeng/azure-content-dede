@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Erstellen eines Load Balancers mit Internetzugriff in Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle (CLI) | Microsoft Azure"
-   description="Erfahren Sie, wie Sie einen Load Balancer mit Internetzugriff in Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle (CLI) erstellen"
+   description="Erfahren Sie, wie Sie einen Load Balancer mit Internetzugriff in Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle (CLI) erstellen."
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/21/2015"
+   ms.date="11/16/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff mithilfe der Azure-Befehlszeilenschnittstelle
@@ -28,22 +28,24 @@
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
+Hier finden Sie eine ausführliche Beschreibung der einzelnen Aufgaben, die zum Erstellen eines Load Balancers durchgeführt werden müssen.
+
 
 ## Was ist erforderlich, um einen Lastenausgleich für Internetverbindungen zu erstellen?
 
 Zum Bereitstellen eines Load Balancers müssen Sie die folgenden Objekte erstellen und konfigurieren.
 
-- Front-End-IP-Adresskonfiguration – Öffentliche IP-Adressen für eingehenden Netzwerkdatenverkehr. 
+- Front-End-IP-Konfiguration: Enthält öffentliche IP-Adressen für eingehenden Netzwerkdatenverkehr. 
 
-- Back-End-Adresspool – Netzwerkkarten (NICs) zum Empfangen von Datenverkehr vom Load Balancer.
+- Back-End-Adresspool: Enthält Netzwerkschnittstellen (NICs), die virtuellen Computern den Empfang von Netzwerkdatenverkehr des Load Balancers ermöglichen.
 
-- Lastenausgleichsregeln – Regeln für das Zuordnen eines öffentlichen Ports im Load Balancer zu Ports auf den NICs im Back-End-Adresspool.
+- Lastenausgleichsregeln: Enthält Regeln für das Zuordnen eines öffentlichen Ports des Load Balancers zu einem Port im Back-End-Adresspool.
 
-- Eingehende NAT-Regeln – Regeln für das Zuordnen eines öffentlichen Ports im Load Balancer zu einem Port einer einzelnen NIC im Back-End-Adresspool.
+- Eingehende NAT-Regeln: Enthält Regeln für das Zuordnen eines öffentlichen Ports des Load Balancers zu einem Port für einen bestimmten virtuellen Computer im Back-End-Adresspool.
 
-- Tests – Integritätstests zum Prüfen der Verfügbarkeit von VMs, die mit den NICs im Back-End-Adresspool verknüpft sind.
+- Tests: Enthält Integritätstests zum Prüfen der Verfügbarkeit von VM-Instanzen im Back-End-Adresspool.
 
-Unter [Unterstützung des Azure-Ressourcen-Managers für Load Balancer](load-balancer-arm.md) erhalten Sie weitere Informationen über Load Balancer-Komponenten des Azure-Ressourcen-Managers.
+Unter [Unterstützung des Azure-Ressourcen-Managers für den Load Balancer](load-balancer-arm.md) erhalten Sie weitere Informationen zu Load Balancer-Komponenten des Azure-Ressourcen-Managers.
 
 ## Einrichten der Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Managers
 
@@ -61,7 +63,7 @@ Unter [Unterstützung des Azure-Ressourcen-Managers für Load Balancer](load-bal
 
 ### Schritt 1
 
-Erstellen Sie ein virtuelles Netzwerk (VNet) mit dem Namen *NRPVnet* in der Region „USA, Osten“ mithilfe einer Ressourcengruppe mit dem Namen *NRPRG*.
+Erstellen Sie ein virtuelles Netzwerk (VNET) mit dem Namen *NRPVnet* in der Region „USA, Osten“ mithilfe einer Ressourcengruppe mit dem Namen *NRPRG*.
 
 	azure network vnet create NRPRG NRPVnet eastUS -a 10.0.0.0/16
 
@@ -104,12 +106,12 @@ Richten Sie einen Back-End-Adresspool für den Empfang des eingehenden Datenverk
 
 Im folgenden Beispiel werden die folgenden Elemente erstellt:
 
-- eine NAT-Regel, um sämtlichen an Port 3441 eingehenden Datenverkehr für Port 3389<sup>1</sup> zu übersetzen
-- eine NAT-Regel, um sämtlichen an Port 3442 eingehenden Datenverkehr für Port 3389 zu übersetzen
+- eine NAT-Regel, um sämtlichen an Port 3441 eingehenden Datenverkehr für Port 3389 zu übersetzen<sup>1</sup>
+- eine NAT-Regel, um sämtlichen an Port 3442 eingehenden Datenverkehr für Port 3389 zu übersetzen
 - eine Load Balancer-Regel für die gleichmäßige Verteilung des gesamten an Pool 80 eingehenden Datenverkehrs an Port 80 an die Adressen im Back-End-Pool.
-- eine Testregel, die den Integritätsstatus der Seite *HealthProbe.aspx* überprüft.
+- eine Testregel, die den Integritätsstatus der Seite *HealthProbe.aspx* überprüft
 
-<sup>1</sup> NAT-Regeln sind einer bestimmten Instanz eines virtuellen Computers hinter dem Load Balancer zugeordnet. Im folgenden Beispiel wird der an Port 3341 eingehende Netzwerkdatenverkehr an einen speziellen virtuellen Computer an Port 3389 gesendet, der mit einer NAT-Regel verknüpft ist. Sie müssen für die NAT-Regel als Protokoll UDP oder TCP auswählen. Einem Port kann jeweils nur eines der beiden Protokolle zugewiesen werden.
+<sup>1</sup> NAT-Regeln sind einer bestimmten Instanz eines virtuellen Computers hinter dem Load Balancer zugeordnet. Im folgenden Beispiel wird der an Port 3341 eingehende Netzwerkdatenverkehr an einen speziellen virtuellen Computer an Port 3389 gesendet, der mit einer NAT-Regel verknüpft ist. Sie müssen für die NAT-Regel als Protokoll UDP oder TCP auswählen. Einem Port kann jeweils nur eines der beiden Protokolle zugewiesen werden.
 
 ### Schritt 1
 
@@ -122,22 +124,26 @@ Parameter:
 
 - **-g**: Ressourcengruppenname
 - **-l**: Name des Load Balancers 
-- **-n**: Name der Ressource (NAT-Regel, Test oder Load Balancer-Regel)
+- **-n**: Name der Ressource (NAT-, Test- oder Load Balancer-Regel)
 - **-p**: Protokoll (TCP oder UDP)  
-- **-f**: Zu verwendender Front-End-Port (Der Befehl „probe“ verwendet „-f“ zum Definieren des Testpfads.)
+- **-f**: Zu verwendender Front-End-Port (der „probe“-Befehl verwendet „-f“ zum Definieren des Testpfads)
 - **-b**: Zu verwendender Back-End-Port
 
 ### Schritt 2
 
-Erstellen Sie eine Load Balancer-Regel.
+Erstellen Sie eine Load Balancer-Regel.
 
-	azure network lb probe create -g nrprg -l nrplb -n healthprobe -p "http" -o 80 -f healthprobe.aspx -i 15 -c 4
-
+	azure network lb rule create nrprg nrplb lbrule -p tcp -f 80 -b 80 -t NRPfrontendpool -o NRPbackendpool
 ### Schritt 3
 
 Erstellen Sie einen Integritätstest.
 
-	azure network lb rule create -g nrprg -l nrplb -n HTTP -p tcp -f 80 -b 80
+	azure network lb probe create -g nrprg -l nrplb -n healthprobe -p "http" -o 80 -f healthprobe.aspx -i 15 -c 4
+
+	
+	
+
+**-g**: Ressourcengruppe **-l**: Name des Load Balancer-Satzes **-n**: Name der Integritätsprüfung **-p**: Protokoll für die Integritätsprüfung **-i**: Testintervall in Sekunden **-c**: Anzahl der Prüfungen
 
 ### Schritt 4
 
@@ -208,7 +214,7 @@ Erwartete Ausgabe:
 
 ## Erstellen von NICs
 
-Sie müssen NICs erstellen (oder vorhandene ändern) und diesen NAT-Regeln, Load Balancer-Regeln und Tests zuordnen.
+Sie müssen NICs erstellen (oder vorhandene ändern) und diese NAT-Regeln, Load Balancer-Regeln und Tests zuordnen.
 
 ### Schritt 1 
 
@@ -287,7 +293,7 @@ Die Ausgabe sieht dann wie folgt aus:
 
 >[AZURE.NOTE]Die Informationsmeldung **Dies ist eine NIC ohne konfigurierte öffentliche IP-Adresse** wird erwartet, da sich die für den Load Balancer erstellte NIC über die öffentliche IP-Adresse des Load Balancers mit dem Internet verbindet.
 
-Da die NIC *lb-nic1-be* der NAT-Regel *rdp1* zugeordnet ist, können Sie sich mit *web1* über RDP an Port 3441 auf dem Load Balancer verbinden.
+Da die NIC *lb-nic1-be* der NAT-Regel *rdp1* zugeordnet ist, können Sie über RDP an Port 3441 auf dem Load Balancer eine Verbindung mit *web1* herstellen.
 
 ### Schritt 4
 
@@ -295,9 +301,9 @@ Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web2*, und ordnen Si
 
 	azure vm create --resource-group nrprg --name web2 --location eastus --vnet-	name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic2-be --availset-name nrp-avset --storage-account-name web2nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
-## Aktualisieren eines vorhandenen Lastenausgleichsmoduls
+## Aktualisieren eines vorhandenen Load Balancers
 
-Sie können Regeln hinzufügen, die auf einen vorhandenen Load Balancer verweisen. Im folgenden Beispiel wird eine neue Load Balancer-Regel zum vorhandenen Load Balancer **NRPlb** hinzugefügt.
+Sie können Regeln hinzufügen, die auf einen vorhandenen Load Balancer verweisen. Im folgenden Beispiel wird dem vorhandenen Load Balancer **NRPlb** eine neue Load Balancer-Regel hinzugefügt.
 
 	azure network lb rule create -g nrprg -l nrplb -n lbrule2 -p tcp -f 8080 -b 8051 -t frontendnrppool -o NRPbackendpool
 
@@ -322,4 +328,4 @@ Verwenden Sie zum Entfernen eines Load Balancers den folgenden Befehl:
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

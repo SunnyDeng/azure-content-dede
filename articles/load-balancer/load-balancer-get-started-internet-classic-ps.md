@@ -19,11 +19,11 @@
 
 # Erste Schritte zum Erstellen eines Load Balancers (klassisch) mit Internetzugriff in PowerShell
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+[AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Informationen zum Bereitstellungsmodell des Azure-Ressourcen-Managers finden Sie unter [Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff mit dem Ressourcen-Manager](load-balancer-get-started-internet-arm-ps.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch [erfahren, wie Sie mit dem Azure-Ressourcen-Manager einen Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps.md).
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -38,7 +38,7 @@ Führen Sie zum Einrichten eines Load Balancers mithilfe von PowerShell die folg
 
 2. Nach dem Erstellen eines virtuellen Computers können Sie PowerShell-Cmdlets verwenden, um einem virtuellen Computer in demselben Clouddienst einen Load Balancer hinzuzufügen.
 
-Im folgenden Beispiel fügen Sie eine Load Balancer-Gruppe namens „webfarm“ zum Clouddienst „mytestcloud“ (oder „myctestcloud.cloudapp.net“) hinzu. Dabei werden die Endpunkte für den Load Balancer den virtuellen Computern „web1“ und „web2“ hinzugefügt. Der Load Balancer empfängt Netzwerkdatenverkehr an Port 80 und führt für die vom lokalen Endpunkt (in diesem Fall Port 80) festgelegten virtuellen Computer per TCP einen Lastenausgleich durch.
+Im folgenden Beispiel fügen Sie eine Load Balancer-Gruppe namens „webfarm“ zum Clouddienst „mytestcloud“ (oder „myctestcloud.cloudapp.net“) hinzu. Dabei werden die Endpunkte für den Load Balancer den virtuellen Computern „web1“ und „web2“ hinzugefügt. Der Load Balancer empfängt Netzwerkdatenverkehr an Port 80 und führt für die durch den lokalen Endpunkt (in diesem Fall Port 80) festgelegten virtuellen Computer per TCP einen Lastenausgleich durch.
 
 
 ### Schritt 1
@@ -66,4 +66,4 @@ Sie können mithilfe von „Remove-AzureEndpoint“ den Endpunkt eines virtuelle
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/02/2015"
+	ms.date="11/16/2015"
 	ms.author="billmath;andkjell"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -46,7 +46,7 @@ Bei der Installation der Synchronisierungsdienste können Sie den optionalen Kon
 Optionale Konfiguration | Beschreibung
 ------------- | ------------- |
 SQL Server-Name | Ermöglicht Ihnen die Angabe des SQL-Servernamens und des Instanznamens. Wählen Sie diese Option aus, wenn Sie bereits über einen Datenbankserver verfügen, den Sie verwenden möchten.
-Dienstkonto | Standardmäßig erstellt Azure AD Connect ein lokales Dienstkonto für die zu verwendenden Synchronisierungsdienste. Das Kennwort wird automatisch generiert und ist der Person, die Azure AD Connect installiert, nicht bekannt. Wenn Sie einen Remote-SQL Server verwenden, benötigen Sie ein Dienstkonto in der Domäne und müssen das Kennwort kennen. Geben Sie in diesen Fällen das zu verwendende Dienstkonto ein. |
+Dienstkonto | Standardmäßig erstellt Azure AD Connect ein lokales Dienstkonto für die zu verwendenden Synchronisierungsdienste. Das Kennwort wird automatisch generiert und ist der Person, die Azure AD Connect installiert, nicht bekannt. Wenn Sie einen Remote-SQL Server verwenden, benötigen Sie ein Dienstkonto in der Domäne und müssen das Kennwort kennen. Geben Sie in diesen Fällen das zu verwendende Dienstkonto ein. Stellen Sie sicher, dass der die Installation ausführende Benutzer ein SA in SQL ist, damit das Dienstkonto erstellt werden kann. Siehe [Azure AD Connect-Konten und -Berechtigungen](active-directory-aadconnect-accounts-permissions.md#custom-settings-installation) |
 Berechtigungen | Standardmäßig erstellt Azure AD Connect lokal auf dem Server vier Gruppen, wenn die Synchronisierungsdienste installiert sind. Diese Gruppen sind: Administratorengruppe, Operatorengruppe, Durchsuchen-Gruppe und die Gruppe "Kennwort zurücksetzen". Wenn Sie eigene Gruppen angeben möchten, können Sie das hier tun. Die Gruppen müssen sich lokal auf dem Server befinden und dürfen nicht in der Domäne sein. |
 
 
@@ -246,4 +246,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

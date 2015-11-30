@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="11/06/2015" 
 	ms.author="donnam"/>
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
@@ -38,7 +38,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 * Abschluss von [Erste Schritte mit Mobile Services].
 * [Azure Mobile Services SDK Version 1.3.0 (oder höher)][Mobile Services SDK Nuget]
 * [Azure Mobile Services SQLite Store Version 1.0.0 (oder höher)][SQLite store nuget]
-* [SQLite für Windows 8.1](www.sqlite.org/downloads)
+* [SQLite für Windows 8.1](http://www.sqlite.org/download.html)
 * Ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28). 
 
 ## <a name="enable-offline-app"></a>Aktualisieren der App für die Unterstützung von Offlinefunktionen
@@ -278,4 +278,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

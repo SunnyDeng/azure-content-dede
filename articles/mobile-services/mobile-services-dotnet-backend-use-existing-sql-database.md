@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article" 
-	ms.date="08/01/2015"
+	ms.date="11/09/2015"
 	ms.author="glenga"/>
 
 
@@ -147,7 +147,6 @@ Das Datenmodell, welches Sie mit Ihrem mobilen Dienst verwenden möchten, ist m�
 
         using System.ComponentModel.DataAnnotations.Schema;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
-        using System.ComponentModel.DataAnnotations;
         using System;
 
 4. Anschließend fügen Sie diese zusätzlichen Eigenschaften in jede der Klassen ein:
@@ -615,4 +614,4 @@ Beachten Sie, dass beide Controllerimplementierungen die DTOs **MobileCustomer**
 
 Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

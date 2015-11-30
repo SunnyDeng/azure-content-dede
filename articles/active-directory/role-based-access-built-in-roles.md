@@ -27,7 +27,7 @@ Klicken Sie auf den entsprechenden Link, um die **Aktions**- und **Nicht-Aktions
 
 | Rollenname | Beschreibung |
 | --------- | ----------- |
-| [Mitwirkender des API-Verwaltungsdiensts](#api-management-service-contributor) | Kann Application Insights-Komponenten verwalten |
+| [Mitwirkender des API-Verwaltungsdiensts](#api-management-service-contributor) | Kann API-Verwaltungsdienste verwalten |
 | [Mitwirkender der Application Insights-Komponente](#application-insights-component-contributor) | Kann Application Insights-Komponenten verwalten |
 | [Operator für Automation](#automation-operator) | Kann Aufträge starten, unterbrechen und fortsetzen |
 | [Mitwirkender von BizTalk](#biztalk-contributor) | Kann BizTalk-Dienste verwalten |
@@ -53,7 +53,7 @@ Klicken Sie auf den entsprechenden Link, um die **Aktions**- und **Nicht-Aktions
 | [Benutzerzugriffsadministrator](#user-access-administrator) | Kann den Benutzerzugriff auf Azure-Ressourcen verwalten |
 | [Mitwirkender von klassischen virtuellen Computern](#classic-virtual-machine-contributor) | Kann klassische virtuelle Computer verwalten, jedoch nicht das virtuelle Netzwerk oder Speicherkonto, mit dem sie verbunden sind |
 | [Mitwirkender von virtuellen Computern](#virtual-machine-contributor) | Kann virtuelle Computer verwalten, jedoch nicht das virtuelle Netzwerk oder Speicherkonto, mit dem sie verbunden sind |
-| [Mitwirkender von klassischem Netzwerk](#classic-network-contributor) | Kann virtuelle Computer verwalten, jedoch nicht das virtuelle Netzwerk oder Speicherkonto, mit dem sie verbunden sind |
+| [Mitwirkender von klassischem Netzwerk](#classic-network-contributor) | Kann klassische virtuelle Netzwerke und reservierte IP-Adressen verwalten |
 | [Mitwirkender von Webplan](#web-plan-contributor) | Kann Webpläne verwalten |
 | [Mitwirkender von Website](#website-contributor) | Kann Websites verwalten, jedoch nicht die Webpläne, mit denen sie verbunden sind |
 
@@ -480,4 +480,4 @@ Kann Websites verwalten, jedoch nicht die Webpläne, mit denen sie verbunden sin
 ## RBAC-Themen
 [AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

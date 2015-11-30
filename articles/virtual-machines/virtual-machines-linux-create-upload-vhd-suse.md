@@ -14,14 +14,10 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/15/2015"
-	ms.author="szarkos"/>
+	ms.date="11/13/2015"
+	ms.author="szark"/>
 
 # Vorbereiten eines virtuellen SLES- oder openSUSE-Computers für Azure
-
-
-- [Vorbereiten eines virtuellen SLES 11 SP3-Computers für Azure](#sles11)
-- [Vorbereiten eines virtuellen openSUSE 13.1+-Computers für Azure](#osuse)
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
@@ -29,15 +25,18 @@
 
 In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSUSE-Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
-
-**Installationshinweise zu SLES/openSUSE**
-
  - Mit [SUSE Studio](http://www.susestudio.com) können Sie Ihre SLES/openSUSE-Images für Azure und Hyper-V auf einfache Weise erstellen und verwalten. Dies ist die empfohlene Vorgehensweise zum Anpassen Ihrer eigenen SUSE- und openSUSE-Images. Die folgenden offiziellen Images in der SUSE Studio Gallery können in Ihr eigenes SUSE Studio heruntergeladen oder geklont werden:
 
   - [SLES 11 SP3 für Azure in SUSE Studio Gallery](http://susestudio.com/a/02kbT4/sles-11-sp3-for-windows-azure)
   - [openSUSE 13.1 für Azure in SUSE Studio Gallery](https://susestudio.com/a/02kbT4/opensuse-13-1-for-windows-azure)
 
-- Das VHDX-Format wird in Azure noch nicht unterstützt, dafür jedoch **virtuelle Festplatten mit fester Größe**. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
+
+- Als Alternative zum Erstellen einer eigenen VHD veröffentlicht SUSE auf [VMDepot](https://vmdepot.msopentech.com/User/Show?user=1007) auch BYOS-Images (Bring Your Own Subscription) für SLES.
+
+
+**Installationshinweise zu SLES/openSUSE**
+
+- Das VHDX-Format wird in Azure nicht unterstützt, sondern nur **virtuelle Festplatten mit fester Größe**. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
 
 - Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder [RAID](virtual-machines-linux-configure-raid.md) können bei Bedarf auf Datenträgern verwendet werden.
 
@@ -46,7 +45,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
 
-## <a id="sles11"> </a>Vorbereiten von SUSE Linux Enterprise Server 11 SP3 ##
+## Vorbereiten von SUSE Linux Enterprise Server 11 SP3 ##
 
 1. Wählen Sie den virtuellen Computer im mittleren Fensterbereich des Hyper-V-Managers.
 
@@ -100,7 +99,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 ----------
 
-## <a id="osuse"> </a>Vorbereiten von openSUSE 13.1+ ##
+## Vorbereiten von openSUSE 13.1+ ##
 
 1. Wählen Sie den virtuellen Computer im mittleren Fensterbereich des Hyper-V-Managers.
 
@@ -180,4 +179,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 13. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

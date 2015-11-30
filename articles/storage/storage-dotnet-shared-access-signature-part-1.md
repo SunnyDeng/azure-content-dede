@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="11/16/2015" 
 	ms.author="tamram"/>
 
 
@@ -144,17 +144,22 @@ Der Unterschied zwischen diesen beiden Formen ist wichtig für ein Schlüsselsze
 
 >[AZURE.IMPORTANT]Ein SAS-URI wird dem Kontoschlüssel, mit dem die Signatur erstellt wurde, und der zugehörigen gespeicherten Zugriffsrichtlinie (sofern vorhanden) zugeordnet. Wenn keine gespeicherte Zugriffsrichtlinie angegeben wird, kann eine SAS nur durch Änderung des Kontoschlüssels aufgehoben werden.
 
-## Beispiele für Shared Access Signatures
+## Beispiele: Erstellen und Verwenden von SAS (Shared Access Signatures)
 
 Unten sind einige Beispiele für beide Arten von Shared Access Signatures aufgeführt: Konto-SAS und Dienst-SAS.
 
-### Beispiel für Konto-SAS
+Zum Ausführen dieser Beispiele müssen Sie diese Pakete herunterladen und darauf verweisen:
+
+- [Azure Storage-Clientbibliothek für .NET](http://www.nuget.org/packages/WindowsAzure.Storage), Version 6.x oder höher (zur Verwendung von Konto-SAS).
+- [Azure-Konfigurations-Manager](http://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 
+
+### Beispiel: Konto-SAS
 
 Im folgenden Codebeispiel wird eine Konto-SAS erstellt, die für die Blob- und Dateidienste gültig ist und dem Client die Berechtigungen Lesen, Schreiben und Auflisten für den Zugriff auf APIs auf Dienstebene gewährt. Bei der Konto-SAS ist das Protokoll auf HTTPS beschränkt, sodass die Anforderung mit HTTPS durchgeführt werden muss.
 
     static string GetAccountSASToken()
     {
-        // To create the account SAS, you need to use your shared key credentials.
+        // To create the account SAS, you need to use your shared key credentials. Modify for your account.
         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
             Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
@@ -218,21 +223,13 @@ Um die Konto-SAS zum Zugreifen auf APIs auf Dienstebene für den Blob-Dienst zu 
         Console.WriteLine(serviceProperties.HourMetrics.Version);
     }
 
-### Beispiel für Dienst-SAS
+### Beispiel: Dienst-SAS mit gespeicherter Zugriffsrichtlinie
 
-Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen Container erstellt. Anschließend wird eine Dienst-SAS für den Container generiert. Diese SAS kann dann an Clients weitergegeben werden, um sie mit Lese-/Schreibberechtigungen für den Container auszustatten:
+Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen Container erstellt. Anschließend wird eine Dienst-SAS für den Container generiert. Diese SAS kann dann an Clients weitergegeben werden, um sie mit Lese-/Schreibberechtigungen für den Container auszustatten. Ändern Sie den Code, um Ihren eigenen Kontonamen zu verwenden:
 
-    // The connection string for the storage account.  Modify for your account.
-    string storageConnectionString =
-       "DefaultEndpointsProtocol=https;" +
-       "AccountName=myaccount;" +
-       "AccountKey=<account-key>";
-    
-    // As an alternative, you can retrieve storage account information from an app.config file. 
-    // This is one way to store and retrieve a connection string if you are 
-    // writing an application that will run locally, rather than in Microsoft Azure.
-    
-    // string storageConnectionString = ConfigurationManager.AppSettings["StorageAccountConnectionString"];
+    // Parse the connection string for the storage account.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+        Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
     
     // Create the storage account with the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
@@ -246,6 +243,9 @@ Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen C
     
     // Get the current permissions for the blob container.
     BlobContainerPermissions blobPermissions = container.GetPermissions();
+
+    // Clear the container's shared access policies to avoid naming conflicts.
+    blobPermissions.SharedAccessPolicies.Clear();
     
     // The new shared access policy provides read/write access to the container for 24 hours.
     blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
@@ -253,24 +253,23 @@ Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen C
        // To ensure SAS is valid immediately, don’t set the start time.
        // This way, you can avoid failures caused by small clock differences.
        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
-       Permissions = SharedAccessBlobPermissions.Write |
-      SharedAccessBlobPermissions.Read
+       Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Create | SharedAccessBlobPermissions.Add
     });
     
     // The public access setting explicitly specifies that 
     // the container is private, so that it can't be accessed anonymously.
     blobPermissions.PublicAccess = BlobContainerPublicAccessType.Off;
     
-    // Set the permission policy on the container.
+    // Set the new stored access policy on the container.
     container.SetPermissions(blobPermissions);
     
     // Get the shared access signature token to share with users.
     string sasToken =
        container.GetSharedAccessSignature(new SharedAccessBlobPolicy(), "mypolicy");
 
-Ein Client, der im Besitz der Dienst-SAS ist, kann diese über seinen Code verwenden, um eine Lese- oder Schreibanforderung für ein Blob im Container zu authentifizieren. Im folgenden Code wird das SAS-Token genutzt, um ein neues Blockblob im Container zu erstellen:
+Ein Client, der im Besitz der Dienst-SAS ist, kann diese über seinen Code verwenden, um eine Lese- oder Schreibanforderung für ein Blob im Container zu authentifizieren. Im folgenden Code wird das SAS-Token genutzt, um ein neues Blockblob im Container zu erstellen. Ändern Sie den Code, um Ihren eigenen Kontonamen zu verwenden:
 
-    Uri blobUri = new Uri("https://myaccount.blob.core.windows.net/mycontainer/myblob.txt");
+    Uri blobUri = new Uri("https://<myaccount>.blob.core.windows.net/mycontainer/myblob.txt");
     
     // Create credentials with the SAS token. The SAS token was created in previous example.
     StorageCredentials credentials = new StorageCredentials(sasToken);
@@ -281,7 +280,7 @@ Ein Client, der im Besitz der Dienst-SAS ist, kann diese über seinen Code verwe
     // Upload the blob. 
     // If the blob does not yet exist, it will be created. 
     // If the blob does exist, its existing content will be overwritten.
-    using (var fileStream = System.IO.File.OpenRead(@"c:\Test\myblob.txt"))
+    using (var fileStream = System.IO.File.OpenRead(@"c:\Temp\myblob.txt"))
     {
     	blob.UploadFromStream(fileStream);
     }
@@ -324,4 +323,4 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

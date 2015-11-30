@@ -548,9 +548,6 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
     $QueueName = "yourqueuename"
     Remove-AzureStorageQueue –Name $QueueName –Context $Ctx
 
-### Verwalten von Warteschlangennachrichten
-Azure PowerShell bietet derzeit keine Cmdlets zum direkten Verwalten von Warteschlangennachrichten. Sie können die in der [Azure Storage-Clientbibliothek für .NET](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx) bereitgestellten Klassen verwenden, um Vorgänge mit Warteschlangennachrichten auszuführen.
-
 #### Einfügen einer Nachricht in eine Warteschlange
 Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zuerst eine neue Instanz der [Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage](http://msdn.microsoft.com/library/azure/jj732474.aspx)-Klasse. Anschließend rufen Sie die [AddMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.addmessage.aspx)-Methode auf. Eine CloudQueueMessage kann entweder aus einer Zeichenfolge (im UTF-8-Format) oder aus einem Bytearray erstellt werden.
 
@@ -736,4 +733,4 @@ In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShel
 [Next Steps]: #next
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

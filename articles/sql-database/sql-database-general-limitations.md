@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="11/05/2015"
+   ms.date="11/16/2015"
    ms.author="jroth" />
 
 # Azure SQL-Datenbanken – Allgemeine Einschränkungen und Leitlinien
@@ -21,7 +21,7 @@ In diesem Thema werden allgemeine Einschränkungen und Leitlinien für Azure SQL
 
 ## Konnektivität
 
- - Windows-Authentifizierung wird nicht unterstützt. Siehe [Verwalten von Datenbanken und Anmeldungen in Azure SQL-Datenbank](sql-database-manage-logins.md). 
+ - Windows-Authentifizierung wird nicht unterstützt. Weitere Informationen finden Sie unter [Verwalten von Datenbanken und Anmeldungen in Azure SQL-Datenbank](sql-database-manage-logins.md). 
 
  - Microsoft Azure SQL-Datenbank unterstützt den TDS-Client (Tabular Data Stream) ab Version 7.3.
 
@@ -59,9 +59,9 @@ Darüber hinaus dürfen Anmelde- und Benutzernamen nicht das Zeichen „\\“ en
 
 ## Weitere Leitlinien
 
-- Zusätzlich zu den allgemeinen Einschränkungen, die in diesem Artikel beschrieben werden, gelten für SQL-Datenbank basierend auf Ihrer [Dienstebene](sql-database-service-tiers.md) bestimmte Ressourcenkontingente und Einschränkungen. Eine ausführliche Beschreibung der dienstebenenbezogenen Einschränkungen finden Sie unter [Funktionen und Beschränkungen von Dienstebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits).
+- Zusätzlich zu den allgemeinen Einschränkungen, die in diesem Artikel beschrieben werden, gelten für die SQL-Datenbank basierend auf Ihrer **Dienstebene** bestimmte Ressourcenkontingente und Einschränkungen. Eine Übersicht über die Dienstebenen finden Sie unter [SQL-Datenbanken-Dienstebenen](sql-database-service-tiers.md).
 
-- Andere für SQL-Datenbank geltende Einschränkungen finden Sie unter [Ressourceneinschränkungen für Azure SQL-Datenbank](sql-database-limits.md).
+- Andere für SQL-Datenbank geltende Einschränkungen finden Sie unter [Ressourceneinschränkungen für Azure SQL-Datenbank](sql-database-resource-limits.md).
 
 - Sicherheitsbezogene Leitlinien finden Sie unter [Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank](sql-database-security-guidelines.md).
 
@@ -69,4 +69,4 @@ Darüber hinaus dürfen Anmelde- und Benutzernamen nicht das Zeichen „\\“ en
 
 - Informationen zur Verfügbarkeit von Treibern und Unterstützung für SQL-Datenbank finden Sie unter [Verbindungsbibliotheken für SQL-Datenbank und SQL Server](sql-database-libraries.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

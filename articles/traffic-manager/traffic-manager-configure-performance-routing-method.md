@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/12/2015"
    ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode für Leistungsdatenverkehr
@@ -33,22 +33,20 @@ Wenn Sie ein Datenverkehrsrouting für Clouddienste und Websites (Endpunkte) in 
 
 ## Nächste Schritte
 
-[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
+
+[Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne](traffic-manager-point-internet-domain.md)
+
+[Traffic Manager-Routingmethoden](traffic-manager-routing-methods.md)
+
+[Konfigurieren der Routingmethode „Failover“](traffic-manager-configure-failover-routing-method.md)
+
+[Konfigurieren der Routingmethode „Roundrobin“](traffic-manager-configure-round-robin-routing-method.md)
+
+[Problembehandlung beim Status „Heruntergestuft“ in Traffic Manager](traffic-manager-troubleshooting-degraded.md)
 
 [Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
 
 [Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
-
-[Was ist Traffic Manager?](traffic-manager-overview.md)
-
-[Cloud-Dienste](http://go.microsoft.com/fwlink/?LinkId=314074)
-
-[Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
-
-[Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/?LinkId=313584)
-
-[Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
-
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="11/12/2015" 
 	ms.author="spelluru"/>
 
 # Problembehandlung bei Data Factory
@@ -382,4 +382,4 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [image-data-factory-troubleshoot-activity-run-details]: ./media/data-factory-troubleshoot/Walkthrough2ActivityRunDetails.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

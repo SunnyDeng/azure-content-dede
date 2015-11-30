@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/02/2015"
+	ms.date="11/17/2015"
 	ms.author="trinadhk; aashishr; jimpark; markgal"/>
 
 # Vorbereiten der Umgebung für die Sicherung virtueller Azure-Computer
@@ -30,7 +30,7 @@ In der Abbildung sind die Beziehungen zwischen den verschiedenen Azure Backup-En
 
 So erstellen Sie einen Sicherungstresor
 
-1. Melden Sie sich im [Verwaltungsportal](http://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [Verwaltungsportal](http://manage.windowsazure.com/) an.
 
 2. Klicken Sie auf **Neu** > **Data Services** > **Recovery Services** > **Sicherungstresor** > **Schnellerfassung**. Wenn mit Ihrem Organisationskonto mehrere Abonnements verknüpft sind, wählen Sie das Abonnement aus, das mit dem Sicherungstresor verknüpft werden soll. In jedem Azure-Abonnement können Sie mehrere Sicherungstresore für die zu schützenden virtuellen Computer erstellen.
 
@@ -58,7 +58,7 @@ So erstellen Sie einen Sicherungstresor
 
 ![Netzwerkverbindung](./media/backup-azure-vms-prepare/step2.png)
 
-Die Sicherungserweiterung benötigt eine Verbindung mit öffentlichen Azure-IPs, um einwandfrei zu funktionieren, da sie Befehle an einen Azure Storage-Endpunkt (HTTP-URL) sendet, um die Momentaufnahmen des virtuellen Computers zu verwalten. Ohne die richtige Internetverbindung erfolgt bei diesen HTTP-Anfragen vom virtuellen Computer ein Timeout, und der Sicherungsvorgang schlägt fehl.
+Die Backup-Erweiterung benötigt eine Verbindung mit öffentlichen Azure-IPs, um einwandfrei zu funktionieren, da sie Befehle an einen Azure Storage-Endpunkt (HTTP-URL) sendet, um die Momentaufnahmen des virtuellen Computers zu verwalten. Ohne die richtige Internetverbindung erfolgt bei diesen HTTP-Anfragen vom virtuellen Computer ein Timeout, und der Sicherungsvorgang schlägt fehl.
 
 ### Netzwerkeinschränkungen mit NSGs
 
@@ -155,7 +155,7 @@ Der VM-Agent ist auf virtuellen Computern, die über den Azure-Katalog erstellt 
 | **Vorgang** | **Windows** | **Linux** |
 | --- | --- | --- |
 | Installieren des VM-Agents | <li>Laden Sie den [Agent-MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) herunter, und installieren Sie ihn. Zum Durchführen der Installation benötigen Sie Administratorberechtigungen. <li>[Aktualisieren Sie die VM-Eigenschaft](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx), um anzugeben, dass der Agent installiert wurde. | <li> Installieren Sie den neuesten [Linux-Agent](https://github.com/Azure/WALinuxAgent) von GitHub. Zum Durchführen der Installation benötigen Sie Administratorberechtigungen. <li> [Aktualisieren Sie die VM-Eigenschaft](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx), um anzugeben, dass der Agent installiert wurde. |
-| Aktualisieren des VM-Agents | Das Aktualisieren des VM-Agents ist so einfach wie das Neuinstallieren der [Binärdateien für den VM-Agent](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). <br><br>Stellen Sie sicher, dass kein Sicherungsvorgang ausgeführt wird, während der VM-Agent aktualisiert wird. | Folgen Sie den Anweisungen unter [Aktualisieren des VM-Agents für Linux](../virtual-machines-linux-update-agent.md). <br><br>Stellen Sie sicher, dass kein Sicherungsvorgang ausgeführt wird, während der VM-Agent aktualisiert wird. |
+| Aktualisieren des VM-Agents | Das Aktualisieren des VM-Agents ist so einfach wie das Neuinstallieren der [Binärdateien für den VM-Agent](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). <br><br>Stellen Sie sicher, dass kein Sicherungsvorgang ausgeführt wird, während der VM-Agent aktualisiert wird. | Folgen Sie den Anweisungen unter [Aktualisieren des virtuellen Linux-Agents](../virtual-machines-linux-update-agent.md). <br><br>Stellen Sie sicher, dass kein Sicherungsvorgang ausgeführt wird, während der VM-Agent aktualisiert wird. |
 | Überprüfen der VM-Agent-Installation | <li>Navigieren Sie auf dem virtuellen Azure-Computer zum Ordner *C:\\WindowsAzure\\Packages*. <li>Dieser Ordner enthält die Datei „WaAppAgent.exe“.<li> Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details** aus. Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein. | - |
 
 
@@ -173,10 +173,7 @@ Die Sicherungserweiterung wird installiert, wenn der virtuelle Computer (Virtual
 - Die Sicherung von virtuellen Computern auf Grundlage des Azure-Ressourcen-Managers (d. h. IaaS V2) wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehr als 16 Datenträgern wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mithilfe von Storage Premium wird nicht unterstützt.
-- Die Sicherung von virtuellen Computern mit mehreren reservierten IPs wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit einer reservierten IP und ohne definierten Endpunkt wird nicht unterstützt.
-- Die Sicherung von virtuellen Computern mithilfe von mehreren NICs wird nicht unterstützt.
-- Die Sicherung von virtuellen Computern in einer Konfiguration mit Lastenausgleich (intern oder mit Internetverbindung) wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird in allen öffentlichen Azure-Regionen unterstützt. Dies ist eine [Liste der unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
@@ -194,4 +191,4 @@ Wenn Sie Fragen oder Anregungen zu gewünschten Funktionen haben, können Sie un
 - [Sichern virtueller Computer](backup-azure-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

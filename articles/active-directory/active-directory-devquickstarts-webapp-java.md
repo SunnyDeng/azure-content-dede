@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/29/2015"
+	ms.date="11/14/2015"
 	ms.author="brandwe"/>
 
 
@@ -21,18 +21,20 @@
 
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
-Azure AD erleichtert die Auslagerung der Identitätsverwaltung für Webanwendungen, indem es eine einmalige An- und Abmeldung (Single Sign-on und Single Sign-out) mit nur wenigen Codezeilen ermöglicht. Für Asp.NET-Webanwendungen erreichen Sie das Gleiche durch die Microsoft-Implementierung der Community-gestützten und in .NET Framework 4.5 enthaltenen OWIN-Middleware. Hier verwenden wir OWIN für Folgendes: – Anmelden eines Benutzers bei der Anwendung mit Azure AD als Identitätsanbieter. – Anzeigen von Informationen zum Benutzer. – Abmelden des Benutzers von der Anwendung.
+Azure AD erleichtert die Auslagerung der Identitätsverwaltung für Webanwendungen, indem es eine einmalige An- und Abmeldung (Single Sign-on und Single Sign-out) mit nur wenigen Codezeilen ermöglicht. Für Java-Web-Apps erreichen Sie das Gleiche durch die Microsoft-Implementierung des Community-gestützten ADAL4J.
+
+  Hier verwenden wir ADAL4J für Folgendes: - Anmelden eines Benutzers bei der Anwendung mit Azure AD als Identitätsanbieter - Anzeigen von Informationen zum Benutzer - Abmelden des Benutzers von der Anwendung
 
 Dazu müssen Sie folgende Schritte ausführen:
 
 1. Registrieren einer Anwendung in Azure AD
 2. Legen Sie fest, dass Ihre App die Bibliothek „ADAL4J“ verwendet.
-3. Verwenden Sie die Bibliothek „ADAL4J“ zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
+3. Verwenden Sie die Bibliothek „ADAL4J“ zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
 4. Ausdrucken von Informationen zum Benutzer
 
 Beginnen Sie, indem Sie [das Anwendungsgerüst](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip) oder [das vollständige Beispiel herunterladen](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip). Außerdem benötigen Sie einen Azure AD-Mandanten, bei dem Sie Ihre Anwendung registrieren. Wenn Sie noch keinen Mandanten haben, [erfahren Sie hier, wie Sie einen erhalten](active-directory-howto-tenant.md).
 
-## 1\. Registrieren einer Anwendung in Azure AD
+## 1\. Registrieren einer Anwendung in Azure AD
 Damit Ihre Anwendung Benutzer authentifizieren kann, müssen Sie zunächst in Ihrem Mandanten eine neue Anwendung registrieren.
 
 - Melden Sie sich beim Azure-Verwaltungsportal an.
@@ -45,7 +47,7 @@ Damit Ihre Anwendung Benutzer authentifizieren kann, müssen Sie zunächst in Ih
     - Die **App-ID-URI** ist eine eindeutige Kennung für die Anwendung. Üblicherweise wird `https://<tenant-domain>/<app-name>` verwendet, zum Beispiel: `http://localhost:8080/adal4jsample/`
 - Nach Abschluss der Registrierung weist AAD Ihrer Anwendung eine eindeutige Client-ID zu. Diesen Wert benötigen Sie in den nächsten Abschnitten, weswegen Sie ihn aus der Registerkarte „Konfigurieren“ kopieren sollten.
 
-Erstellen Sie im Portal für Ihre App einen **geheimen Schlüssel** für Ihre Anwendung, und notieren Sie ihn. Sie benötigen ihn später.
+Erstellen Sie im Portal für Ihre App einen **geheimen Schlüssel** für Ihre Anwendung, und notieren Sie ihn sich. Sie benötigen ihn später.
 
 
 ## 2\. Festlegen, dass Ihre App die Bibliothek „ADAL4J“ verwendet und Bestimmen der Voreinstellungen für Maven
@@ -270,7 +272,7 @@ Das dient dazu, dass die Web-App Spring verwendet und die im Folgenden erstellte
 
 Die Einrichtung unserer Web-App in WEB-INF ist erst zur Hälfte abgeschlossen. Als Nächstes müssen wir die JavaServer Pages-Dateien erstellen, die – wie in der Konfiguration bereits erwähnt – von der Web-App ausgeführt werden.
 
-Wie Sie sich bestimmt erinnern, haben wir Java mitgeteilt, dass es eine `/`-Ressource gibt, die .JSP-Dateien lädt, und eine `/secure`-Ressource, die einen Filter namens `BasicFilter` durchläuft.
+Wie Sie sich bestimmt erinnern, haben wir Java mitgeteilt, dass es eine `/`-Ressource gibt, die JSP-Dateien lädt, und eine `/secure`-Ressource, die einen Filter namens `BasicFilter` durchläuft.
 
 Und diese möchten wir jetzt erstellen.
 
@@ -290,7 +292,7 @@ Und diese möchten wir jetzt erstellen.
 
 Dadurch erfolgt eine Umleitung zu einer sicheren Seite, die von unserem Filter geschützt ist.
 
-- Als Nächstes erstellen Sie im gleichen Verzeichnis eine Datei `error.jsp`, um eventuell auftretende Fehler zu beheben:
+- Als Nächstes erstellen Sie im gleichen Verzeichnis die Datei `error.jsp`, um eventuell auftretende Fehler zu beheben:
 
 ```jsp
 <html>
@@ -308,7 +310,7 @@ Dadurch erfolgt eine Umleitung zu einer sicheren Seite, die von unserem Filter g
 
 - Erstellen Sie dann die sichere Webseite, indem Sie unter `\webapp` einen Ordner namens `\secure` erstellen, sodass das Verzeichnis jetzt `\webapp\secure` ist. 
 
-- Erstellen Sie dann in diesem Verzeichnis eine Datei `aad.jsp`, und fügen Sie mit Ausschneiden/Einfügen Folgendes ein:
+- Erstellen Sie dann in diesem Verzeichnis die Datei `aad.jsp`, und fügen Sie mit Ausschneiden/Einfügen Folgendes ein:
 
 ```jsp
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -337,7 +339,7 @@ Dadurch erfolgt eine Umleitung zu einer sicheren Seite, die von unserem Filter g
 </html>
 ```
 
-Wie Sie sehen, wird diese Seite zu bestimmten Anforderungen umgeleitet, die unser BasicFilter-Servlet liest und dann beim Verwenden der `ADAJ4J`-Bibliothek ausführt. Ist doch ganz einfach, oder?
+Wie Sie sehen, wird diese Seite zu bestimmten Anforderungen umgeleitet, die unser BasicFilter-Servlet liest und dann beim Verwenden der Bibliothek `ADAJ4J` ausführt. Ist doch ganz einfach, oder?
 
 Jetzt müssen wir natürlich noch unsere Java-Dateien einrichten, damit das Servlet auch funktioniert.
 
@@ -1318,7 +1320,7 @@ Java ist recht umfassend, aber wir haben es fast geschafft. Bevor wir als Letzte
 
 1. Erstellen Sie eine Datei namens `AuthHelper.java`, die Methoden umfasst, mit denen der Status des angemeldeten Benutzers bestimmt werden kann. Das umfasst:
 
-- Die Methode `isAuthenticated()` gibt an, ob der Benutzer angemeldet ist.
+- Die `isAuthenticated()`-Methode gibt an, ob der Benutzer angemeldet ist.
 - `containsAuthenticationData()` gibt an, ob das Token Daten beinhaltet.
 - `isAuthenticationSuccessful()` gibt an, ob die Authentifizierung des Benutzers erfolgreich war.
 
@@ -1388,7 +1390,7 @@ public final class AuthParameterNames {
 }
 ```
 
-3. Abschließend erstellen Sie eine Datei namens `AadController.java`. Dies ist der Controller unseres MVC-Musters, von dem wir den JSP-Controller erhalten und den `secure/aad`-URL-Endpunkt für die App bereitstellt. Zudem fügen wir in diese Datei auch Graph-Abfragen ein.
+3. Abschließend erstellen Sie eine Datei namens `AadController.java`. Dies ist der Controller unseres MVC-Musters, von dem wir den JSP-Controller erhalten und der den `secure/aad`-URL-Endpunkt für die App bereitstellt. Zudem fügen wir in diese Datei auch Graph-Abfragen ein.
 
 Fügen Sie mit Ausschneiden/Einfügen Folgendes ein:
 
@@ -1715,15 +1717,15 @@ public class BasicFilter implements Filter {
 
 Dieses Servlet stellt alle Methoden bereit, die `ADAL4J` von der Anwendung für die Ausführung erwartet. Dies umfasst:
 
-- `getAccessTokenFromClientCredentials()` – bezieht das Zugriffstoken vom geheimen Schlüssel
-- `getAccessTokenFromRefreshToken()` – bezieht das Zugriffstoken von einem Aktualisierungstoken
-- `getAccessToken()` – bezieht das Zugriffstoken von einem OpenID Connect-Ablauf (von uns verwendet)
-- `createSessionPrincipal()` – erstellt ein Prinzipal, den wir für den Graph-API-Zugriff verwenden
-- `getRedirectUrl()` – bezieht die redirectURL und vergleicht sie mit dem im Portal eingegebenen Wert
+- `getAccessTokenFromClientCredentials()`: bezieht das Zugriffstoken vom geheimen Schlüssel
+- `getAccessTokenFromRefreshToken()`: bezieht das Zugriffstoken von einem Aktualisierungstoken
+- `getAccessToken()`: bezieht das Zugriffstoken von einem OpenID Connect-Ablauf (von uns verwendet)
+- `createSessionPrincipal()`: erstellt einen Prinzipal, den wir für den Graph-API-Zugriff verwenden
+- `getRedirectUrl()`: ruft die redirectURL ab und vergleicht sie mit dem im Portal eingegebenen Wert
 
 ##Kompilieren und Ausführen des Beispiels in Tomcat
 
-Wechseln Sie zurück zum Stammverzeichnis und führen Sie den folgenden Befehl aus, um mit `maven` das gerade zusammengestellte Beispiel zu erstellen. Dabei wird die Datei `pom.xml` verwendet, die Sie für Abhängigkeiten erstellt haben.
+Wechseln Sie zurück zum Stammverzeichnis, und führen Sie den folgenden Befehl aus, um mit `maven` das gerade zusammengestellte Beispiel zu erstellen. Dabei wird die Datei `pom.xml` verwendet, die Sie für Abhängigkeiten erstellt haben.
 
 `$ mvn package`
 
@@ -1732,7 +1734,7 @@ In Ihrem Verzeichnis `/targets` sollte sich nun die Datei `adal4jsample.war` bef
 `http://localhost:8080/adal4jsample/`
 
 
-> [AZURE.NOTE]Mit den aktuellen Tomcat-Servern können WAR-Dateien einfach bereitgestellt werden. Navigieren Sie einfach zu `http://localhost:8080/manager/` und führen Sie die Schritte zum Hochladen der Datei `adal4jsample.war` aus. Sie wird automatisch mit dem richtigen Endpunkt bereitgestellt.
+> [AZURE.NOTE]Mit den aktuellen Tomcat-Servern können WAR-Dateien einfach bereitgestellt werden. Navigieren Sie einfach zu `http://localhost:8080/manager/`, und führen Sie die Schritte zum Hochladen der Datei `adal4jsample.war` aus. Sie wird automatisch mit dem richtigen Endpunkt bereitgestellt.
 
 ##Nächste Schritte
 
@@ -1742,4 +1744,4 @@ Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswer
 
 ```git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git```
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

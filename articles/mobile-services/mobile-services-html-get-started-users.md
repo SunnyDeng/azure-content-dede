@@ -35,7 +35,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 3. Starten Sie im Ordner der App eine der folgenden Befehlsdateien aus dem **server**-Unterordner.
 
-	+ **launch-windows** (Windows-Computer) 
+	+ **.\\start-iisexpress.ps1** (Windows-Computer) 
 	+ **launch-mac.command** (Mac OS X-Computer)
 	+ **launch-linux.sh** (Linux-Computer)
 
@@ -68,7 +68,7 @@ Anschließend werden Sie die App aktualisieren, sodass diese sich authentifizier
 
 	Mit diesem Code können Sie sich von der Seite aus bei einem mobilen Dienst anmelden.
 
-2. Suchen Sie am Ende der Datei app.js nach der Codezeile, in der die refreshTodoItems-Funktion aufgerufen wird und ersetzen Sie die Zeile durch den folgenden Code:
+2. Suchen Sie am Ende der Datei "page.js" nach der Codezeile, in der die refreshTodoItems-Funktion aufgerufen wird, und ersetzen Sie die Zeile durch den folgenden Code:
 	
 		function refreshAuthDisplay() {
 			var isLoggedIn = client.currentUser !== null;
@@ -137,4 +137,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

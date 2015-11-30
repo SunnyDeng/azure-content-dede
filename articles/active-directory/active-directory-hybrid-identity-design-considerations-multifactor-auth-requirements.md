@@ -51,10 +51,10 @@ Nach der Beantwortung der obigen Fragen wissen Sie, ob lokal bereits eine Multi-
 
 
 ## Nächste Schritte
-[Definieren einer Strategie zur Einführung der Hybrid-Identität](active-directory-hybrid-identity-design-considerations-identity-adoption-strategy.md)
+[Definieren einer Strategie zur Hybrididentitätsübernahme](active-directory-hybrid-identity-design-considerations-identity-adoption-strategy.md)
 
 
 ## Weitere Informationen
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

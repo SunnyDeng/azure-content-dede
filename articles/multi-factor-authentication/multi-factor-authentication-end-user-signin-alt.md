@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/17/2015" 
 	ms.author="billmath"/>
 
 # Anmelden über eine alternative Methode mit Azure Multi-Factor Authentication
@@ -33,4 +33,4 @@ Im folgenden Abschnitt erfahren Sie, wie Sie sich über eine alternative Methode
 
 <li>Wählen Sie eine alternative Methode aus, und melden Sie sich an.</li>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
-   ms.date="10/16/2015"
+   ms.date="11/11/2015"
    ms.author="golive"/>
 
 # Anwendungsbeispiel: Fortlaufende Bereitstellung auf virtuellen Computern mit Automation DSC und Chocolatey
@@ -167,7 +167,7 @@ Für jedes Paket, das Sie im Paketrepository ablegen, benötigen Sie ein Nuspec-
 
 ## Schritt 6: Zusammenfügen des Gesamtbilds
 
-Jedes Mal, wenn eine Version den Qualitätssicherungstest besteht und für die Bereitstellung genehmigt wird, wird das Pakt erstellt, und nuspec und nupkg werden aktualisiert und auf dem NuGet-Server bereitgestellt. Darüber hinaus muss die Konfiguration (Schritt 4 oben) aktualisiert werden, damit sie mit der neuen Versionsnummer übereinstimmt. Sie muss an den Pullserver gesendet und kompiliert werden. Ab diesem Punkt liegt es an den virtuellen Computern, die von dieser Konfiguration abhängig sind, das Update abzurufen und zu installieren. Diese Updates sind einfach und umfassen nur ein oder zwei PowerShell-Codezeilen. Im Fall von Visual Studio Online sind einige davon in Buildaufgaben gekapselt, die in einem Build miteinander verkettet werden können. Dieser [Artikel](https://www.visualstudio.com/de-DE/get-started/build/build-your-app-vs) enthält hierzu weitere Details. In diesem [GitHub-Repository](https://github.com/Microsoft/vso-agent-tasks) finden Sie Details zu den verschiedenen verfügbaren Buildaufgaben.
+Jedes Mal, wenn eine Version den Qualitätssicherungstest besteht und für die Bereitstellung genehmigt wird, wird das Pakt erstellt, und nuspec und nupkg werden aktualisiert und auf dem NuGet-Server bereitgestellt. Darüber hinaus muss die Konfiguration (Schritt 4 oben) aktualisiert werden, damit sie mit der neuen Versionsnummer übereinstimmt. Sie muss an den Pullserver gesendet und kompiliert werden. Ab diesem Punkt liegt es an den virtuellen Computern, die von dieser Konfiguration abhängig sind, das Update abzurufen und zu installieren. Diese Updates sind einfach und umfassen nur ein oder zwei PowerShell-Codezeilen. Im Fall von Visual Studio Team Services sind einige davon in Buildaufgaben gekapselt, die in einem Build miteinander verkettet werden können. Dieser [Artikel](https://www.visualstudio.com/de-DE/get-started/build/build-your-app-vs) enthält hierzu weitere Details. In diesem [GitHub-Repository](https://github.com/Microsoft/vso-agent-tasks) finden Sie Details zu den verschiedenen verfügbaren Buildaufgaben.
 
 ## Hinweise
 
@@ -187,4 +187,4 @@ Den vollständigen Quellcode für dieses Anwendungsbeispiel finden Sie in [diese
 - [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 - [Integrieren von Computern für die Verwaltung durch Azure Automation DSC](automation-dsc-onboarding.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

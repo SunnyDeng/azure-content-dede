@@ -1,5 +1,5 @@
 
-Als Nächstes müssen Sie Ihre App auf der Website eines Identitätsanbieters registrieren. Anschließend legen Sie die vom Anbieter erstellten Anmeldeinformationen im Back-End der mobilen App fest.
+Zuerst müssen Sie Ihre App auf der Website eines Identitätsanbieters registrieren. Anschließend legen Sie die vom Anbieter erstellten Anmeldeinformationen im Back-End der mobilen App fest.
 
 1. Konfigurieren Sie Ihren bevorzugten Identitätsanbieter anhand der anbieterspezifischen Anweisungen: 
 	
@@ -15,4 +15,4 @@ Als Nächstes müssen Sie Ihre App auf der Website eines Identitätsanbieters re
 <!-- URLs. -->
 [Azure portal]: https://portal.azure.com/
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

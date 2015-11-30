@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen und Hochladen einer Red Hat Linux-VHD in Azure" 
+	pageTitle="Erstellen und Hochladen einer VHD-Datei mit Red Hat Enterprise Linux zur Verwendung in Azure" 
 	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Red Hat-Linux-Betriebssystem enthält." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -25,17 +25,20 @@ In diesem Artikel erfahren Sie, wie einen auf Red Hat Enterprise Linux (RHEL) ba
 
 ##Vorbereiten eines Images mit Hyper-V-Manager 
 ###Voraussetzungen
-In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus einer ISO-Datei von der Red Hat-Website auf eine virtuelle Festplatte (VHD) installiert haben. Weitere Informationen, wie Sie mit Hyper-V-Manager ein Betriebssystem-Image installieren, finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
+In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus einer ISO-Datei von der Red Hat-Website auf eine virtuelle Festplatte (VHD) installiert haben. Weitere Informationen, wie Sie mit Hyper-V-Manager ein Betriebssystemimage installieren, finden Sie unter [Installieren von Hyper-V und Erstellen eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
 **Installationshinweise zu RHEL**
 
-- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit Hyper-V-Manager oder dem convert-vhd-powershell-Cmdlet in das VHD-Format konvertieren.
+- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit Hyper-V-Manager oder dem Cmdlet convert-vhd-powershell in das VHD-Format konvertieren.
 
 - Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder RAID kann wahlweise auf Datenträgern verwendet werden.
 
 - Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
+
+- Wenn Sie zum Umwandeln der Datenträgerimages in das VHD-Format qemu-img verwenden, beachten Sie das bekannte Problem in den Versionen von qemu-img ab 2.2.1, das zu einer falsch formatierten VHD-Datei führt. Das Problem wird in einer zukünftigen qemu-img-Version behoben werden. Bis es soweit ist, empfiehlt es sich jedoch, auf die qemu-img-Version 2.2.0 oder niedriger zurückzugreifen.
+
 
 ###RHEL 6.6/6.7
 
@@ -74,11 +77,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # sudo chkconfig network on
 
-8.	Registrieren Sie das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
+8.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
         # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
 
-9.	Aktivieren Sie das EPEL-Repository, da WALinuxAgent-Paket `WALinuxAgent-<version>` in das Fedora EPEL 6-Repository übertragen wurde:
+9.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
         # wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
         # rpm -ivh epel-release-6-8.noarch.rpm
@@ -109,9 +112,9 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         # sudo yum install WALinuxAgent
         # sudo chkconfig waagent on
 
-    **Hinweis:** Durch die Installation des WALinuxAgent-Pakets werden die NetworkManager- und NetworkManager-gnome-Pakete entfernt, sofern sie nicht bereits wie in Schritt 2 beschrieben entfernt wurden.
+    **Hinweis:** Durch die Installation des WALinuxAgent-Pakets werden die Pakete „NetworkManager“ und „NetworkManager-gnome“ entfernt, sofern sie nicht bereits wie in Schritt 2 beschrieben entfernt wurden.
 
-13.	Richten Sie keinen SWAP-Raum auf dem Betriebssystemdatenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+13.	Richten Sie keinen SWAP-Bereich auf dem Betriebssystemdatenträger ein. Der Azure Linux-Agent kann automatisch einen SWAP-Bereich auf dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -130,9 +133,10 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         # logout
 
 16.	Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
+
 ###RHEL 7.0/7.1
 
-1.	Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
+1. Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
 
 2.	Klicken Sie auf Verbinden, um ein Konsolenfenster für den virtuellen Computer zu öffnen.
 
@@ -155,7 +159,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # sudo chkconfig network on
 
-6.	Registrieren Sie das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
+6.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
         # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
 
@@ -174,11 +178,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
-9.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung. Ändern Sie `/etc/ssh/sshd_config`, um folgende Zeile einzuschließen:
+9.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung. Ergänzen Sie `/etc/ssh/sshd_config` um die folgende Zeile:
 
         ClientAliveInterval 180
 
-10.	Aktivieren Sie das EPEL-Repository, da das WALinuxAgent-Paket `WALinuxAgent-<version>` in das Fedora EPEL 7-Repository übertragen wurde:
+10.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
         # wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
         # rpm -ivh epel-release-7-5.noarch.rpm
@@ -188,7 +192,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         # sudo yum install WALinuxAgent
         # sudo systemctl enable waagent.service 
 
-12.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+12.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -229,7 +233,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         ><fs> exit
     Ändern Sie im zweiten Feld des Stammbenutzers „!!“ in das verschlüsselte Kennwort.
 
-3.	Erstellen Sie in KVM einen virtuellen Computer aus dem qcow2-Image, legen Sie **qcow2** als Datenträgertyp fest und legen Sie **virtio** für das Gerätemodell der virtuellen Netzwerkschnittstelle fest. Starten Sie dann den virtuellen Computer, und melden Sie sich als Stammbenutzer an.
+3.	Erstellen Sie in KVM einen virtuellen Computer aus dem qcow2-Image, legen Sie **qcow2** als Datenträgertyp fest, und legen Sie als Gerätemodell der virtuellen Netzwerkschnittstelle **virtio** fest. Starten Sie dann den virtuellen Computer, und melden Sie sich als Stammbenutzer an.
 
 4.	Erstellen Sie im Verzeichnis `/etc/sysconfig/` eine Datei mit dem Namen **network** und folgendem Text:
 
@@ -256,7 +260,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # chkconfig network on
 
-8.	Registrieren Sie das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
+8.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
         # subscription-manager register –auto-attach --username=XXX --password=XXX
 
@@ -289,7 +293,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 		# service sshd restart
 
-12.	Aktivieren Sie das EPEL-Repository, da das WALinuxAgent-Paket `WALinuxAgent-<version>` in das **Fedora EPEL 6**-Repository übertragen wurde:
+12.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
         # wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
         # rpm -ivh epel-release-6-8.noarch.rpm
@@ -299,7 +303,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         # yum install WALinuxAgent
         # chkconfig waagent on
 
-14.	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in **/etc/waagent.conf** entsprechend:
+14.	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in **/etc/waagent.conf** entsprechend:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -324,15 +328,23 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
          # qemu-img convert -f qcow2 –O raw rhel-6.6.qcow2 rhel-6.6.raw
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
 
+         # MB=$((1024*1024))
+         # size=$(qemu-img info -f raw --output json "rhel-6.6.raw" | \
+                  gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+         # rounded_size=$((($size/$MB + 1)*$MB))
+
          # qemu-img resize rhel-6.6.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
 
          # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.6.raw rhel-6.6.vhd
+
  
+
+
 ###RHEL 7.0/7.1
 
-1.	Laden Sie das KVM-Image von RHEL 7.0 von der Red Hat-Website-herunter.
+1.	Laden Sie das KVM-Image von RHEL 7.0 von der Red Hat-Website herunter.
 
 2.	Stammkennwort festlegen
 
@@ -340,7 +352,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # openssl passwd -1 changeme
 
-    Stammkennwort mit Guestfish festlegen
+    Legen Sie ein Stammkennwort mit Guestfish fest:
 
         # guestfish --rw -a <image-name>
         ><fs> run
@@ -349,9 +361,9 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         ><fs> vi /etc/shadow
         ><fs> exit
 
-    Ändern Sie im zweiten Feld des Stammbenutzers „!!“ in das verschlüsselte Kennwort
+    Ändern Sie im zweiten Feld des Stammbenutzers „!!“ in das verschlüsselte Kennwort.
 
-3.	Erstellen Sie in KVM einen virtuellen Computer aus dem qcow2-Image, legen Sie **qcow2** als Datenträgertyp fest und legen Sie **virtio** für das Gerätemodell der virtuellen Netzwerkschnittstelle fest. Starten Sie dann den virtuellen Computer, und melden Sie sich als Stammbenutzer an.
+3.	Erstellen Sie in KVM einen virtuellen Computer aus dem qcow2-Image, legen Sie **qcow2** als Datenträgertyp fest, und legen Sie als Gerätemodell der virtuellen Netzwerkschnittstelle **virtio** fest. Starten Sie dann den virtuellen Computer, und melden Sie sich als Stammbenutzer an.
 
 4.	Erstellen Sie im Verzeichnis `/etc/sysconfig/` eine Datei mit dem Namen **network** und folgendem Text:
 
@@ -372,7 +384,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # chkconfig network on
 
-7.	Registrieren Sie das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
+7.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
         # subscription-manager register –auto-attach --username=XXX --password=XXX
 
@@ -409,7 +421,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         systemctl restart sshd	
 
-12.	Aktivieren Sie das EPEL-Repository, da das WALinuxAgent-Paket `WALinuxAgent-<version>` in das **Fedora EPEL 7**-Repository übertragen wurde:
+12.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
         # wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
         # rpm -ivh epel-release-7-5.noarch.rpm
@@ -422,7 +434,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # systemctl enable waagent.service
 
-14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -440,7 +452,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         # export HISTSIZE=0
         # logout
 
-17.	Fahren Sie den virtuellen Computer herunter.
+17.	Fahren Sie den virtuellen Computer in KVM herunter.
 
 18.	Konvertieren Sie das qcow2-Image in das vhd-Format:
 
@@ -449,6 +461,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
          # qemu-img convert -f qcow2 –O raw rhel-7.0.qcow2 rhel-7.0.raw
 
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
+
+         # MB=$((1024*1024))
+         # size=$(qemu-img info -f raw --output json "rhel-7.0.raw" | \
+                  gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+         # rounded_size=$((($size/$MB + 1)*$MB))
 
          # qemu-img resize rhel-7.0.raw $rounded_size
 
@@ -459,13 +476,13 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 ##Vorbereiten eines Images von VMWare
 ###Voraussetzungen
-In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Computer von RHEL in VMWare installiert haben. Weitere Informationen zum Installieren eines Betriebssystems in VMWare finden Sie im [Installationshandbuch zum VMWare Gastbetriebssystem](http://partnerweb.vmware.com/GOSIG/home.html).
+In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Computer von RHEL in VMWare installiert haben. Weitere Informationen zum Installieren eines Betriebssystems in VMWare finden Sie im [Guest Operating System Installation Guide](http://partnerweb.vmware.com/GOSIG/home.html) (in englischer Sprache).
  
 - Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder RAID kann wahlweise auf Datenträgern verwendet werden.
 
 - Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
-- Wählen Sie beim Erstellen der virtuellen Festplatte **Virtuellen Datenträger als einzelne Datei speichern**.
+- Wählen Sie beim Erstellen der virtuellen Festplatte **Store virtual disk as a single file**.
 
 ###RHEL 6.6/6.7
 1.	Deinstallieren Sie den NetworkManager, indem Sie den folgenden Befehl ausführen:
@@ -499,11 +516,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
         # sudo chkconfig network on
 
-6.	Registrieren Sie das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
+6.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
         # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
 
-7.	Aktivieren Sie das EPEL-Repository, da das WALinuxAgent-Paket `WALinuxAgent-<version>` in das Fedora EPEL 6-Repository übertragen wurde:
+7.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
         # wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
         # rpm -ivh epel-release-6-8.noarch.rpm
@@ -521,7 +538,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
     Weder der Graphical Boot noch der Quiet Boot sind in einer Cloudumgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen. Die crashkernel-Option kann bei Bedarf konfiguriert gelassen werden. Beachten Sie jedoch, dass dieser Parameter den verfügbaren Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert, was bei kleineren virtuellen Computern problematisch sein kann.
 
-9.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung. Ändern Sie `/etc/ssh/sshd_config`, um folgende Zeile einzuschließen:
+9.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung. Ergänzen Sie `/etc/ssh/sshd_config` um die folgende Zeile:
 
         ClientAliveInterval 180
 
@@ -530,9 +547,9 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
         # sudo yum install WALinuxAgent
         # sudo chkconfig waagent on
 
-11.	Richten Sie keinen SWAP-Raum auf dem Betriebssystemdatenträger ein:
+11.	Richten Sie keinen SWAP-Bereich auf dem Betriebssystemdatenträger ein:
     
-    Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+    Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -558,11 +575,17 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
 
+        # MB=$((1024*1024))
+        # size=$(qemu-img info -f raw --output json "rhel-6.6.raw" | \
+                gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+        # rounded_size=$((($size/$MB + 1)*$MB))
+
         # qemu-img resize rhel-6.6.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
 
         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.6.raw rhel-6.6.vhd
+
 
 ###RHEL 7.0/7.1
 
@@ -585,7 +608,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
         # sudo chkconfig network on
 
-4.	Registrieren Sie das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
+4.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
         # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
 
@@ -615,11 +638,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
         # dracut –f -v
 
-8.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung. Ändern Sie `/etc/ssh/sshd_config`, um folgende Zeile einzuschließen:
+8.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung. Ergänzen Sie `/etc/ssh/sshd_config` um die folgende Zeile:
 
         ClientAliveInterval 180
 
-9.	Aktivieren Sie das EPEL-Repository, da WALinuxAgent-Paket `WALinuxAgent-<version>` in das Fedora EPEL 7-Repository übertragen wurde:
+9.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
 
         # wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
@@ -630,7 +653,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
         # sudo yum install WALinuxAgent
         # sudo systemctl enable waagent.service
 
-11.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+11.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -656,6 +679,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
 
+        # MB=$((1024*1024))
+        # size=$(qemu-img info -f raw --output json "rhel-7.0.raw" | \
+                 gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+        # rounded_size=$((($size/$MB + 1)*$MB))
+
         # qemu-img resize rhel-7.0.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
@@ -666,7 +694,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 ##Mit Kickstart-Datei automatisch aus ISO vorbereiten
 ###RHEL 7.0/7.1
 
-1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstart-Installation finden Sie im [Kickstart-Installationshandbuch](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
+1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstart-Installation finden Sie im [KICKSTART INSTALLATIONS](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html) (in englischer Sprache).
 
 
         # Kickstart for provisioning a RHEL 7 Azure VM
@@ -780,19 +808,19 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 2.	Legen Sie die Kickstart-Datei an einem Ort ab, der aus dem gesamten Installationssystem erreichbar ist.
  
-3.	Erstellen Sie in Hyper-V Manager einen neuen virtuellen Computer. Wählen Sie auf der Seite **virtuelle Festplatte anschließen** die Option **Virtuelle Festplatte später zuordnen**, und schließen Sie den Assistenten für neue virtuelle Computer ab.
+3.	Erstellen Sie in Hyper-V Manager einen neuen virtuellen Computer. Wählen Sie auf der Seite **Virtuelle Festplatte verbinden** die Option **Virtuelle Festplatte später zuordnen**, und schließen Sie den Assistenten für neue virtuelle Computer ab.
 
 4.	Öffnen Sie die VM-Einstellungen:
 
-    a. Ordnen Sie dem virtuellen Computer eine neue virtuelle Festplatte zu, und wählen Sie **VHD-Format** und **Feste Größe** auswählen.
+    a. Fügen Sie an den virtuellen Computer eine neue virtuelle Festplatte an, und wählen Sie **VHD-Format** und **Feste Größe** aus.
     
     b. Ordnen Sie die ISO-Installation dem DVD-Laufwerk zu.
 
     c. Legen Sie fest, dass BIOS von der CD starten soll.
 
-5.	Starten Sie den virtuellen Computer. Wenn das Installationshandbuch angezeigt wird, drücken Sie die **Registerkarte**, um die Startoptionen zu konfigurieren.
+5.	Starten Sie den virtuellen Computer. Wenn die Installationsanweisungen angezeigt werden, drücken Sie die **TAB-TASTE**, um die Startoptionen zu konfigurieren.
 
-6.	Geben Sie `inst.ks=<the location of the Kickstart file>` am Ende der Startoptionen ein, und drücken Sie die **Eingabetaste**.
+6.	Geben Sie am Ende der Startoptionen `inst.ks=<the location of the Kickstart file>` ein, und drücken Sie die **EINGABETASTE**.
 
 7.	Warten Sie, bis die Installation abgeschlossen ist. Der virtuelle Computer wird dann automatisch heruntergefahren. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
@@ -813,11 +841,11 @@ Dieses Problem kann bei häufigen Datenträger-E/A-Aktivitäten mit RHEL 6.6, 7.
 
 Reproduktionsrate:
 
-Problem tritt zeitweise auf, jedoch häufiger während häufigen Datenträger-E/A-Vorgängen in Hyper-V und Azure.
+Dieses Problem tritt zeitweise auf, jedoch häufiger während häufigen Datenträger-E/A-Vorgängen in Hyper-V und Azure.
 
     
 [AZURE.NOTE]Diese beiden bekannten Probleme werden bereits von Red Hat gelöst. Um die zugeordneten Fehlerbehebungen zu installieren, können Sie folgenden Befehl ausführen:
 
     # sudo yum update
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

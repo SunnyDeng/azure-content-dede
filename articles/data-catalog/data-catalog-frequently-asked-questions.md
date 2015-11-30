@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="10/30/2015"
+   ms.date="11/20/2015"
    ms.author="maroche"/>
 
 # Häufig gestellte Fragen zu Azure Data Catalog
@@ -74,7 +74,7 @@ Während der Vorschauphase unterstützt **Azure Data Catalog** die Registrierung
 - Teradata-Tabelle
 - Teradata-Sicht
 
-Zusätzlich zu den oben aufgeführten Assets unterstützt **Azure Data Catalog** die Ermittlung der folgenden Datenassetcontainer:
+Zusätzlich zu den oben aufgeführten Assets unterstützt **Azure Data Catalog** die Ermittlung der folgenden Datenasset-Container:
 
 - SQL Server-Datenbank
 - Oracle-Datenbank
@@ -92,11 +92,11 @@ Befolgen Sie am besten die Anleitung unter [Erste Schritte mit Data Catalog](../
 
 ## F: Wie registriere ich meine Daten?
 
-Starten Sie zum Registrieren Ihrer Daten in **Azure Data Catalog** das **Azure Data Catalog**-Registrierungstool, indem Sie im **Azure Data Catalog**-Portal den Bereich „Veröffentlichen“ verwenden. Melden Sie sich in der **Azure Data Catalog**-Veröffentlichungsanwendung mit denselben Anmeldeinformationen wie für das **Azure Data Catalog**-Portal an, und wählen Sie die Datenquelle und das spezielle Asset aus, die bzw. das Sie registrieren möchten.
+Starten Sie zum Registrieren Ihrer Daten in **Azure Data Catalog** das **Azure Data Catalog**-Registrierungstool, indem Sie im **Azure Data Catalog**-Portal den Bereich "Veröffentlichen" verwenden. Melden Sie sich in der **Azure Data Catalog**-Veröffentlichungsanwendung mit denselben Anmeldeinformationen wie für das **Azure Data Catalog**-Portal an, und wählen Sie die Datenquelle und das spezielle Asset aus, die bzw. das Sie registrieren möchten.
 
 ## F: Welche Eigenschaften werden für Datenassets extrahiert, die registriert werden?
 
-Die spezifischen Eigenschaften variieren je nach Datenquelle, aber i. Allg. werden mit dem **Azure Data Catalog**-Veröffentlichungsdienst die folgenden Informationen extrahiert:
+Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeinen werden mit dem **Azure Data Catalog**-Veröffentlichungsdienst die folgenden Informationen extrahiert:
 
 - Assetname
 - Assettyp
@@ -119,11 +119,11 @@ Nach dem Registrieren von Assets mit **Azure Data Catalog** kann es 5 bis 10 S
 
 Die einfachste Möglichkeit zum Angeben von Metadaten für registrierte Assets ist das Auswählen des Assets im **Azure Data Catalog**-Portal und das anschließende Eingeben der Metadatenwerte im Eigenschaften- oder Schemabereich für das ausgewählte Objekt.
 
-Sie können auch während des Registrierungsvorgangs einige Metadaten angeben, z. B. Experten und Tags. Die im **Azure Data Catalog**-Veröffentlichungsdienst angegebenen Werte gelten für alle Assets, die zum jeweiligen Zeitpunkt registriert werden. Um die zuletzt registrierten Objekte im Portal zum Hinzufügen zusätzlicher Anmerkungen anzuzeigen, wählen Sie auf dem letzten Bildschirm der **Azure Data Catalog**-Veröffentlichungsanwendung die Schaltfläche **View Portal**.
+Sie können auch während des Registrierungsvorgangs einige Metadaten angeben, z. B. Experten und Tags. Die im **Azure Data Catalog**-Veröffentlichungsdienst angegebenen Werte gelten für alle Assets, die zum jeweiligen Zeitpunkt registriert werden. Um die zuletzt registrierten Objekte im Portal zum Hinzufügen zusätzlicher Anmerkungen anzuzeigen, wählen Sie auf dem letzten Bildschirm der **Azure Data Catalog**-Veröffentlichungsanwendung die Schaltfläche **Portal anzeigen**.
 
 ## F: Wie lösche ich meine registrierten Datenobjekte?
 
-Sie können ein Objekt aus **Azure Data Catalog** löschen, indem Sie das Objekt im Portal auswählen und dann auf die Schaltfläche **Löschen** klicken. Die Metadaten des Objekts werden aus **Azure Data Catalog** entfernt, dies wirkt sich jedoch nicht auf die zugrunde liegende Datenquelle aus.
+Sie können ein Objekt aus **Azure Data Catalog** löschen, indem Sie das Objekt im Portal auswählen und dann auf die Schaltfläche **Löschen** klicken. Die Metadaten des Objekts werden aus **Azure Data Catalog** entfernt, aber dies wirkt sich nicht auf die zugrunde liegende Datenquelle aus.
 
 ## F: Was ist ein Experte?
 
@@ -158,7 +158,7 @@ Wir arbeiten derzeit daran, die Funktionen von **Azure Data Catalog** zu erweite
 
 ## F: Wie kann ich die Sichtbarkeit der registrierten Datenassets so einschränken, dass nur bestimmte Personen sie ermitteln können?
 
-A: Wählen Sie die Datenassets in **Azure Data Catalog** aus, und klicken Sie auf die Schaltfläche „Besitz übernehmen“. Besitzer von Datenassets in **Azure Data Catalog** können die Einstellungen zur Sichtbarkeit ändern, um entweder für alle Katalogbenutzer die Ermittlung der im Besitz befindlichen Ressourcen zuzulassen oder die Sichtbarkeit auf bestimmte Benutzer zu beschränken.
+A: Wählen Sie die Datenassets in **Azure Data Catalog** aus, und klicken Sie auf die Schaltfläche "In Besitz nehmen". Besitzer von Datenassets in **Azure Data Catalog** können die Einstellungen zur Sichtbarkeit ändern, um entweder für alle Katalogbenutzer die Ermittlung der im Besitz befindlichen Ressourcen zuzulassen oder die Sichtbarkeit auf bestimmte Benutzer zu beschränken.
 
 ## F: Wie aktualisiere ich die Registrierung für ein Datenasset so, dass Änderungen in der Datenquelle im Katalog widergespiegelt werden?
 
@@ -172,4 +172,4 @@ Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von **Azure
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

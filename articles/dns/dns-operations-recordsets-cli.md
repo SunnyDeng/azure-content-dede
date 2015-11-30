@@ -4,7 +4,7 @@
    services="dns" 
    documentationCenter="na" 
    authors="joaoma" 
-   manager="Adinah" 
+   manager="carmonm" 
    editor=""/>
 
 <tags
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/22/2015"
+   ms.date="11/10/2015"
    ms.author="joaoma"/>
 
 # Verwalten von DNS-Einträgen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
 - [Azure CLI](dns-operations-recordsets-cli.md)
-- [Azure Powershell](dns-operations-recordsets.md)
+- [PowerShell](dns-operations-recordsets.md)
 
 Diese Anleitung zeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone verwalten.
 
@@ -234,9 +234,9 @@ Im folgenden Beispiel wird die A-Datensatzgruppe mit Namen "Test-a" aus der DNS-
 Mit dem optionalen Switch "-q" kann diese Bestätigungsaufforderung unterdrückt werden.
 
 
-##Siehe auch
+##Weitere Informationen
 
-[Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset-cli.md)<BR> [Durchführen von Vorgängen für DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
+[Delegieren einer Domäne an Azure DNS](dns-domain-delegation.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Automatisieren von Vorgängen mit .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

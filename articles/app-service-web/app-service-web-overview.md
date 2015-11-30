@@ -41,7 +41,7 @@ Azure App Service-Web-Apps ist eine vollständig verwaltete Plattform, auf der S
 
 - **Web-Apps-Katalog** – Wählen Sie aus einer stetig wachsenden Liste vorhandener Vorlagen für Webanwendungen aus. Nutzen Sie das Beste aus der OSS-App-Community mit 1-Klick-Installation von Paketen wie z. B. Wordpress, Joomla und Drupal. Finden Sie den richtigen Einstieg in den Anwendungsentwicklungsprozess mit Frameworks wie .NET MVC, Django und CakePHP.
 - **Automatische Skalierung** – Web-Apps ermöglicht Ihnen das schnelle Skalieren nach oben oder unten, um eingehende Kundenanforderungen zu bewältigen. Wählen Sie Anzahl und Größe der virtuellen Computer manuell aus, oder richten Sie die automatische Skalierung ein, um Ihre Server basierend auf Last oder Zeitplan zu skalieren.
-- **Fortlaufende Integration** – Richten Sie die fortlaufende Integration und Bereitstellungsworkflows mit Visual Studio Online, GitHub, TeamCity, Hudson oder BitBucket ein. Dadurch können Sie bei jedem erfolgreichen Einchecken von Code oder Integrationstest Ihre Webanwendung erstellen, testen und bereitstellen.
+- **Fortlaufende Integration** – Richten Sie die fortlaufende Integration und Bereitstellungsworkflows mit VSTS, GitHub, TeamCity, Hudson oder BitBucket ein. Dadurch können Sie bei jedem erfolgreichen Einchecken von Code oder Integrationstest Ihre Web-App erstellen, testen und bereitstellen.
 - **Bereitstellungsslots** – Implementieren Sie die [Stagingbereitstellung][Slots], um Ihren Code in einer Präproduktionsumgebung zu überprüfen, die mit Ihrer Webanwendung in der Produktion in Azure App Service identisch ist. Wenn Sie mit dem Ergebnis zufrieden sind, geben Sie durch einen Ersetzungsvorgang eine neue Version der Anwendung ohne Ausfallzeiten frei. 
 - **Test in der Produktion** – Heben Sie Stagingbereitstellungen auf die nächste Stufe, und führen Sie A/B-Tests aus, um Ihren neuen Code mit einem konfigurierbaren Bruchteil Ihres aktiven Datenverkehrs zu überprüfen. 
 - **WebJobs** – Führen Sie Programme oder Skripts auf virtuellen Web-Apps-Computern aus. Führen Sie Aufträge fortlaufend oder gemäß einem Zeitplan aus, und nehmen Sie eine Skalierung zur Ausführung auf mehreren virtuellen Computern vor. Nutzen Sie das Azure [WebJobs SDK][Webjobs] für die Integration in Azure Storage oder Service Bus.
@@ -65,4 +65,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

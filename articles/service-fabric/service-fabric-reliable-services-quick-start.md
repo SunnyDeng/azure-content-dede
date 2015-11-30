@@ -13,22 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/15/2015"
+   ms.date="11/15/2015"
    ms.author="vturecek"/>
 
 # Erste Schritte mit Microsoft Azure Service Fabric Reliable Services
 
-Eine Service Fabric-Anwendung enthält einen oder mehrere Dienste zum Ausführen Ihres Codes. Dieses Tutorial führt Sie durch die Schritte zum Erstellen der zustandslosen und zustandsbehafteten Service Fabric-Anwendung „Hello World“ mithilfe des [*Reliable Services*-Programmiermodells](service-fabric-reliable-services-introduction.md).
-
-Zustandslose Dienste werden heute überwiegend in Cloudanwendungen eingesetzt. Diese Dienste gelten als zustandslos, da sie selbst keine Daten enthalten, die zuverlässig gespeichert werden oder hoch verfügbar sein müssen – mit anderen Worten, wenn eine Instanz eines zustandslosen Diensts heruntergefahren wird, geht deren gesamter interner Zustand verloren. Damit der Zustand dieser Dienste hoch verfügbar und zuverlässig ist, muss er extern gespeichert werden, z. B. in Azure-Tabellen oder in einer SQL-Datenbank.
-
-Service Fabric führt eine neue Art von zustandsbehaftetem Dienst ein. Dieser Dienst kann seinen Zustand zuverlässig innerhalb des Diensts beibehalten. Er wird dort zusammen mit dem Code gespeichert, der ihn verwendet. Service Fabric stellt die hohe Verfügbarkeit des Zustands sicher, ohne dass dieser extern gespeichert werden muss.
-
-In diesem Lernprogramm implementieren Sie sowohl einen zustandslosen als auch einen zustandsbehafteten Dienst, letzteren mit einem internen Zähler. Im zustandslosen Dienst geht der Wert des Zählers verloren, wenn der Dienst neu gestartet bzw. verschoben wird. Im zustandsbehafteten Dienst hingegen gewährleistet Service Fabric einen zuverlässigen Zählerzustand. Wird die Dienstausführung aus irgendeinem Grund während der Zählung unterbrochen, kann sie am Unterbrechungspunkt fortgesetzt werden.
+Eine Service Fabric-Anwendung enthält einen oder mehrere Dienste zum Ausführen von Code. Dieses Handbuch veranschaulicht das Erstellen zustandsloser und zustandsbehafteter Dienst Fabric-Clientanwendungen, die mit [zuverlässige Dienste](service-fabric-reliable-services-introduction.md).
 
 ## Erstellen eines zustandslosen Diensts
 
-Beginnen wir mit einem zustandslosen Dienst.
+Zustandslose Dienste werden heute überwiegend in Cloudanwendungen eingesetzt. Diese Dienste gelten als zustandslos, da sie selbst keine Daten enthalten, die zuverlässig gespeichert werden oder hoch verfügbar sein müssen – mit anderen Worten, wenn eine Instanz eines zustandslosen Diensts heruntergefahren wird, geht deren gesamter interner Zustand verloren. Damit der Zustand dieser Dienste hoch verfügbar und zuverlässig ist, muss er extern gespeichert werden, z. B. in Azure-Tabellen oder in einer SQL-Datenbank.
 
 Starten Sie Visual Studio 2015 RC als **Administrator**, und erstellen Sie eine neue **Service Fabric-Anwendung** mit dem Namen *HelloWorld*:
 
@@ -46,7 +40,7 @@ Die Projektmappe enthält jetzt zwei Projekte:
 
 ## Implementieren des Diensts
 
-Öffnen Sie die Datei **HelloWorld.cs** im Dienstprojekt. In Service Fabric kann ein Dienst jegliche Art von Geschäftslogik ausführen. Die Dienst-API bietet zwei Einstiegspunkte für den Code:
+Öffnen Sie im Dienstprojekt die Datei **HelloWorld.cs**. In Service Fabric kann ein Dienst jegliche Art von Geschäftslogik ausführen. Die Dienst-API bietet zwei Einstiegspunkte für den Code:
 
  - Eine Einstiegspunktmethode mit offenem Ende namens *RunAsync*, mit der Sie eine beliebige Arbeitsauslastung verwenden können, wie etwa lang andauernde Computing-Arbeitsauslastungen.
 
@@ -60,7 +54,7 @@ protected override async Task RunAsync(CancellationToken cancellationToken)
  - Einen Einstiegspunkt für die Kommunikation, in den Sie den gewünschten Kommunikationsstapel (z. B. Web-API) einbinden können, um Anforderungen von Benutzern oder anderen Diensten zu empfangen.
 
 ```C#
-protected override ICommunicationListener CreateCommunicationListener()
+protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 {
     ...
 }
@@ -74,15 +68,20 @@ In diesem Lernprogramm konzentrieren wir uns auf die Einstiegspunktmethode `RunA
 ### RunAsync
 
 ```C#
-protected override async Task RunAsync(CancellationToken cancellationToken)
+protected override async Task RunAsync(CancellationToken cancelServiceInstance)
 {
-    // TODO: Replace the following with your own logic.
+    // TODO: Replace the following sample code with your own logic.
 
     int iterations = 0;
-    while (!cancellationToken.IsCancellationRequested)
+    // This service instance continues processing until the instance is terminated.
+    while (!cancelServiceInstance.IsCancellationRequested)
     {
+
+        // Log what the service is doing
         ServiceEventSource.Current.ServiceMessage(this, "Working-{0}", iterations++);
-        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
+
+        // Pause for 1 second before continue processing.
+        await Task.Delay(TimeSpan.FromSeconds(1), cancelServiceInstance);
     }
 }
 ```
@@ -102,6 +101,8 @@ In diesem Beispiel eines zustandslosen Diensts wird die Anzahl in einer lokalen 
 
 ## Erstellen eines zustandsbehafteten Diensts
 
+Service Fabric führt eine neue Art von zustandsbehaftetem Dienst ein: einen Dienst, der seinen Zustand zuverlässig innerhalb des Diensts beibehalten kann. Der Zustand wird dort zusammen mit dem Code gespeichert, der ihn verwendet. Service Fabric stellt die hohe Verfügbarkeit des Zustands sicher, ohne dass dieser extern gespeichert werden muss.
+
 Um den Zählerwert selbst bei einer Verschiebung oder einem Neustart des Diensts von zustandslos zu hoch verfügbar und persistent zu konvertieren, benötigen wir einen zustandsbehafteten Dienst.
 
 Fügen Sie der Anwendung **HelloWorld** einen neuen Dienst hinzu, indem Sie mit der rechten Maustaste auf das Anwendungsprojekt klicken und die Option **Neuer Fabric-Dienst** auswählen.
@@ -117,27 +118,40 @@ Ihre Anwendung sollte nun über zwei Dienste verfügen: den zustandslosen Dienst
 Öffnen Sie **HelloWorldStateful.cs** in *HelloWorldStateful*, das die folgende `RunAsync`-Methode enthält:
 
 ```C#
-protected override async Task RunAsync(CancellationToken cancellationToken)
+protected override async Task RunAsync(CancellationToken cancelServicePartitionReplica)
 {
-    // TODO: Replace the following with your own logic.
+    // TODO: Replace the following sample code with your own logic.
+
+    // Gets (or creates) a replicated dictionary called "myDictionary" in this partition.
     var myDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
 
-    while (!cancellationToken.IsCancellationRequested)
+    // This partition's replica continues processing until the replica is terminated.
+    while (!cancelServicePartitionReplica.IsCancellationRequested)
     {
+
+        // Create a transaction to perform operations on data within this partition's replica.
         using (var tx = this.StateManager.CreateTransaction())
         {
+
+            // Try to read a value from the dictionary whose key is "Counter-1".
             var result = await myDictionary.TryGetValueAsync(tx, "Counter-1");
-            ServiceEventSource.Current.ServiceMessage(
-                this,
-                "Current Counter Value: {0}",
+
+            // Log whether the value existed or not.
+            ServiceEventSource.Current.ServiceMessage(this, "Current Counter Value: {0}",
                 result.HasValue ? result.Value.ToString() : "Value does not exist.");
 
+            // If the "Counter-1" key doesn't exist, set its value to 0
+            // else add 1 to its current value.
             await myDictionary.AddOrUpdateAsync(tx, "Counter-1", 0, (k, v) => ++v);
 
+            // Committing the transaction serializes the changes and writes them to this partition's secondary replicas.
+            // If an exception is thrown before calling CommitAsync, the transaction aborts, all changes are 
+            // discarded, and nothing is sent to this partition's secondary replicas.
             await tx.CommitAsync();
         }
 
-        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
+        // Pause for 1 second before continue processing.
+        await Task.Delay(TimeSpan.FromSeconds(1), cancelServicePartitionReplica);
     }
 }
 ```
@@ -204,4 +218,4 @@ Sobald die Dienste ausgeführt werden, sehen Sie die generierten ETW-Ereignisse 
 
 [Entwicklerreferenz für zuverlässige Dienste](https://msdn.microsoft.com/library/azure/dn706529.aspx)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

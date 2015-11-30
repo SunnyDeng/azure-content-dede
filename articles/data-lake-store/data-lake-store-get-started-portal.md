@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/05/2015"
+   ms.date="11/13/2015"
    ms.author="nitinme"/>
 
 # Erste Schritte mit Azure Data Lake-Speicher mithilfe des Azure-Vorschauportals
@@ -52,7 +52,7 @@ Zunächst müssen Sie die Aktivierung Ihres Azure-Abonnements für die öffentli
 
 	![Erstellen eines neuen Azure Data Lake-Speicherkontos](./media/data-lake-store-get-started-portal/ADL.Create.New.Account.png "Erstellen eines neuen Azure Data Lake-Kontos")
 
-	- **Abonnement**: Wählen Sie das Abonnement aus, unter dem Sie ein neues Data Lake-Speicherkonto erstellen möchten.
+	- **Abonnement**. Wählen Sie das Abonnement aus, unter dem Sie ein neues Data Lake-Speicherkonto erstellen möchten.
 	- **Ressourcengruppe**: Wählen Sie eine vorhandene Ressourcengruppe aus, oder klicken Sie auf **Neue Ressourcengruppe erstellen**, um eine neue Ressourcengruppe zu erstellen. Eine Ressourcengruppe ist ein Container, der verwandte Ressourcen für eine Anwendung enthält. Weitere Informationen finden Sie unter [Ressourcengruppen in Azure](resource-group-overview.md#resource-groups).
 	- **Ort**: Wählen Sie den Ort aus, an dem Sie das Data Lake-Speicherkonto erstellen möchten.
 
@@ -87,7 +87,7 @@ Sie können in Ihrem Data Lake-Speicherkonto Ordner zum Verwalten und Speichern 
 
 Sie können Ihre Daten direkt auf die Stammebene eines Azure Data Lake-Speicherkontos oder in einen im Konto erstellten Ordner hochladen. Gehen Sie wie im folgenden Screenshot gezeigt vor, um auf dem Blatt **Daten-Explorer** eine Datei in einen Unterordner hochzuladen. In diesem Screenshot wird die Datei in den auf der Breadcrumb-Leiste (rot markiert) angezeigten Unterordner hochgeladen.
 
-Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/ProjectKona/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
 
 ![Hochladen von Daten](./media/data-lake-store-get-started-portal/ADL.New.Upload.File.png "Hochladen von Daten")
 
@@ -114,7 +114,7 @@ Klicken Sie auf die neu hinzugefügte Datei, um das Blatt **Eigenschaften** zu �
 Sie können die in Ihrem Azure Data Lake-Speicherkonto gespeicherten Daten mithilfe von Azure Active Directory und Access Control (Zugriffssteuerungslisten, ACLs) sichern. Anweisungen dazu finden Sie unter [Sichern von Daten in Azure Data Lake-Speicher](data-lake-store-secure-data.md).
 
 
-## Löschen eines Azure Data Lake-Speicherkontos
+## Löschen des Azure Data Lake-Speicherkontos
 
 Um ein Azure Data Lake-Speicherkonto zu löschen, klicken Sie auf dem Blatt „Data Lake-Speicher“ auf **Löschen**. Sie werden aufgefordert, den Namen des zu löschenden Kontos einzugeben, um die Aktion zu bestätigen. Geben Sie den Namen des Kontos ein, und klicken Sie dann auf **Löschen**.
 
@@ -133,4 +133,4 @@ Um ein Azure Data Lake-Speicherkonto zu löschen, klicken Sie auf dem Blatt „D
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

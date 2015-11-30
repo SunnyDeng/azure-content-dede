@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required"
-   ms.date="10/15/2015"
+   ms.date="11/11/2015"
    ms.author="mcoskun"/>
 
 # Einführung in Reliable Collections in zustandsbehafteten Service Fabric-Diensten
@@ -109,6 +109,7 @@ hier folgen einige Punkte, die es zu beachten gilt:
 
 - Das Standardtimeout beträgt 4 Sekunden für alle APIs für zuverlässige Auflistungen. Die meisten Benutzer sollten diesen Wert nicht überschreiben.
 - Das Standardabbruchtoken ist `CancellationToken.None` in allen APIs für zuverlässige Auflistungen.
+- Der Key-Typ-Parameter (TKey) für ein zuverlässiges Wörterbuch muss GetHashCode() und Equals() richtig implementieren. Schlüssel müssen unveränderlich sein.
 - Aufzählungen haben innerhalb einer Auflistung konsistente Momentaufnahmen. Aufzählungen mehrerer Auflistungen sind jedoch nicht über Auflistungen hinweg konsistent.
 - Zum Erreichen einer hohen Verfügbarkeit der zuverlässigen Auflistungen sollte jeder Dienst mindestens ein Ziel und eine Mindestgröße von 3 bei der Replikatgruppe haben.
 
@@ -119,4 +120,4 @@ hier folgen einige Punkte, die es zu beachten gilt:
 - [Erweiterte Verwendung des Reliable Services-Programmiermodells](service-fabric-reliable-services-advanced-usage.md)
 - [Entwicklerreferenz für zuverlässige Auflistungen](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

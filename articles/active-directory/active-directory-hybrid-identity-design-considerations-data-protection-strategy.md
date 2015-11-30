@@ -111,7 +111,7 @@ Jede Interaktion in dem in Abbildung X gezeigten Diagramm stellt eine Zugriffss
 
 3. Bedingter Zugriff für Office 365-Anwendungen mit Microsoft Intune: IT-Administratoren können Geräterichtlinien für den bedingten Zugriff bereitstellen, um Unternehmensressourcen zu schützen, und gleichzeitig Information-Workern auf kompatiblen Geräten den Zugriff auf die Dienste zu gestatten. Weitere Informationen finden Sie unter [Geräterichtlinien für den bedingten Zugriff auf Office 365-Dienste](https://azure.microsoft.com/de-DE/documentation/articles/active-directory-conditional-access-device-policies/?rnd=1).
 
-4. Bedingter Zugriff für Saas-Apps: [Dieses Feature](http://blogs.technet.com/b/ad/archive/2015/06/25/azure-ad-conditional-access-preview-update-more-apps-and-blocking-access-for-users-not-at-work.aspx) ermöglicht Ihnen die anwendungsspezifische Konfiguration von Zugriffsregeln für die mehrstufige Authentifizierung und das Blockieren des Zugriffs für Benutzer, die nicht zu einem vertrauenswürdigen Netzwerk gehören. Die Regeln für die mehrstufige Authentifizierung können auf alle Benutzer angewendet werden, die einer Anwendung zugewiesen sind, oder nur auf Benutzer in angegebenen Sicherheitsgruppen. Benutzer können von der Pflicht zur mehrstufigen Authentifizierung ausgenommen werden, wenn sie von einer IP-Adresse innerhalb des Netzwerks der Organisation auf die Anwendung zugreifen.
+4. Bedingter Zugriff für Saas-Apps: [Dieses Feature](http://blogs.technet.com/b/ad/archive/2015/06/25/azure-ad-conditional-access-preview-update-more-apps-and-blocking-access-for-users-not-at-work.aspx) ermöglicht Ihnen die anwendungsspezifische Konfiguration von Zugriffsregeln für die Multi-Factor Authentication und das Blockieren des Zugriffs für Benutzer, die nicht zu einem vertrauenswürdigen Netzwerk gehören. Die Regeln für die mehrstufige Authentifizierung können auf alle Benutzer angewendet werden, die einer Anwendung zugewiesen sind, oder nur auf Benutzer in angegebenen Sicherheitsgruppen. Benutzer können von der Pflicht zur mehrstufigen Authentifizierung ausgenommen werden, wenn sie von einer IP-Adresse innerhalb des Netzwerks der Organisation auf die Anwendung zugreifen.
 
 Da die Optionen zur Zugriffssteuerung einem mehrstufigen Ansatz unterliegen, ist ein Vergleich dieser Optionen für diese Aufgabe nicht machbar. Stellen Sie sicher, dass Sie alle verfügbaren Optionen für jedes Szenario nutzen, das die Steuerung des Zugriffs auf Ihre Ressourcen erfordert.
 
@@ -147,7 +147,7 @@ Da die Optionen zur Reaktion auf einen Vorfall einem mehrstufigen Ansatz unterli
 [Ermitteln der Aufgaben für die Hybrididentitätsverwaltung](active-directory-hybrid-identity-design-considerations-hybridId-management-tasks.md)
 
 
-## Siehe auch
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+## Weitere Informationen
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

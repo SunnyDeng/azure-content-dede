@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/17/2015" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit Azure Multi-Factor Authentication und Active Directory-Verbunddiensten
@@ -55,4 +55,4 @@ Informationen zum Einrichten von Azure Multi-Factor Authentication oder Azure Mu
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

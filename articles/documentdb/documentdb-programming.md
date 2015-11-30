@@ -746,7 +746,7 @@ __.chain()
 </table>
 
 ## Laufzeitunterstützung
-Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](documentdb-interactions-with-resources.md)-Standard.
+Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)-Standard.
 
 ### Sicherheit
 Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlösung verwaltet, damit die Auswirkungen eines Skripts nicht zu den anderen Skripts gelangen, ohne die Momentaufnahmetransaktionsisolation der Datenbankschicht zu durchlaufen. Die Laufzeitumgebungen werden in einem Pool zusammengefasst, aber nach jeder Ausführung vom Kontext bereinigt. Daher sind sie untereinander garantiert vor unbeabsichtigten Nebeneffekten geschützt.
@@ -755,7 +755,7 @@ Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlö
 Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen (UDFs) werden implizit in das Bytecodeformat vorkompiliert, um den Kompilierungsaufwand zum Zeitpunkt des jeweiligen Skriptaufrufs zu vermeiden. Dadurch wird sichergestellt, dass gespeicherte Prozeduren schnell aufgerufen werden können und kompakt sind.
 
 ## Client-SDK-Unterstützung
-Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn783362.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-, [ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python](http://dl.windowsazure.com/documentDB/pythondocs/)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
+Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn948556.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-, [ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python](http://dl.windowsazure.com/documentDB/pythondocs/)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
 
 	var markAntiquesSproc = new StoredProcedure
 	{
@@ -788,7 +788,7 @@ Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Clien
 	Document createdDocument = await client.ExecuteStoredProcedureAsync<Document>(createdStoredProcedure.SelfLink, document, 1920);
 
 
-Dieses Beispiel zeigt, wie mit dem [.NET-SDK](https://msdn.microsoft.com/library/azure/dn783362.aspx) ein vorangestellter Trigger und ein Dokument mit aktiviertem Trigger erstellt werden.
+Dieses Beispiel zeigt, wie mit dem [.NET-SDK](https://msdn.microsoft.com/library/azure/dn948556.aspx) ein vorangestellter Trigger und ein Dokument mit aktiviertem Trigger erstellt werden.
 
 	Trigger preTrigger = new Trigger()
 	{
@@ -916,4 +916,4 @@ Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie au
 -	[Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 -	[Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

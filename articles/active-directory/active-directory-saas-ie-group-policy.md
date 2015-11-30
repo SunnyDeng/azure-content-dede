@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/28/2015"
+   ms.date="11/18/2015"
    ms.author="liviodlc"/>
 
 #How to Deploy the Access Panel Extension for Internet Explorer using Group Policy (Bereitstellen der Zugriffsbereichserweiterung für Internet Explorer mit der Gruppenrichtlinie; in englischer Sprache)
@@ -128,7 +128,36 @@ Zusätzlich zur Ausführung des Installationsprogramms muss jede Erweiterung fü
 
 Die Erweiterung sollte jetzt für die Computer in der ausgewählten Organisationseinheit aktiviert sein. [Erfahren Sie mehr über die Verwendung von Gruppenrichtlinien zum Aktivieren oder Deaktivieren von Add-Ons für Internet Explorer.](https://technet.microsoft.com/library/dn454941.aspx)
 
-##Schritt 5: Testen der Bereitstellung
+##Schritt 5 (optional): Deaktivieren der Frage nach der Kennwortspeicherung
+
+Wenn sich Benutzer unter Verwendung der Zugriffsbereichserweiterung bei Websites anmelden, kann Internet Explorer fragen, ob der Benutzer sein Kennwort speichern möchte.
+
+![](./media/active-directory-saas-ie-group-policy/remember-password-prompt.png)
+
+Falls diese Frage nicht angezeigt werden soll, führen Sie die folgenden Schritte aus, um das Speichern von Kennwörtern durch AutoVervollständigen zu unterbinden:
+
+1. Navigieren Sie im **Gruppenrichtlinienverwaltungs-Editor** zum unten angegebenen Pfad. Beachten Sie, dass diese Konfigurationseinstellung nur unter **Benutzerkonfiguration** verfügbar ist.
+	- `User Configuration/Policies/Administrative Templates/Windows Components/Internet Explorer/`
+
+2. Suchen Sie die Einstellung **AutoVervollständigen für Benutzernamen und Kennwörter in Formularen aktivieren**.
+
+	> [AZURE.NOTE]In älteren Versionen von Active Directory heißt diese Einstellung unter Umständen noch **Kennwörter in AutoVervollständigen können nicht gespeichert werden**. Die Konfiguration für diese Einstellung unterscheidet sich von der in diesem Tutorial beschriebenen Einstellung.
+
+	![Diese finden Sie in den Benutzereinstellungen.](./media/active-directory-saas-ie-group-policy/disable-auto-complete.png)
+
+3. Klicken Sie mit der rechten Maustaste auf die oben genannte Einstellung, und wählen Sie **Bearbeiten** aus.
+
+4. Wählen Sie im Fenster **AutoVervollständigen für Benutzernamen und Kennwörter in Formularen aktivieren** die Option **Deaktiviert** aus.
+
+	![Wählen Sie „Deaktivieren“ aus.](./media/active-directory-saas-ie-group-policy/disable-passwords.png)
+
+5. Klicken Sie auf **OK**, um die Änderungen zu übernehmen und das Fenster zu schließen.
+
+Daraufhin können Benutzer ihre Anmeldeinformationen nicht mehr speichern oder mithilfe von AutoVervollständigen auf zuvor gespeicherte Anmeldeinformationen zugreifen. Für andere Arten von Formularfeldern (etwa Suchfelder) kann AutoVervollständigen dagegen weiter verwendet werden.
+
+> [AZURE.WARNING]Wenn diese Richtlinie aktiviert wird, nachdem Benutzer bereits Anmeldeinformationen gespeichert haben, werden diese *nicht* gelöscht.
+
+##Schritt 6: Testen der Bereitstellung
 
 Gehen Sie folgendermaßen vor, um zu überprüfen, ob die Erweiterungsbereitstellung erfolgreich war:
 
@@ -148,4 +177,4 @@ Gehen Sie folgendermaßen vor, um zu überprüfen, ob die Erweiterungsbereitstel
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

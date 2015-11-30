@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/05/2015"
+	ms.date="11/16/2015"
 	ms.author="larryfr"/>
 
 # Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen (Linux)
@@ -35,7 +35,7 @@ Das Skript wird ausgeführt, während HDInsight konfiguriert wird. In dieser Pha
 
 Jeder Cluster unterstützt mehrere Skriptaktionen, die in der angegebenen Reihenfolge aufgerufen werden. Ein Skript kann auf den Hauptknoten und/oder den Workerknoten ausgeführt werden.
 
-> [AZURE.IMPORTANT]Skriptaktionen müssen innerhalb von 60 Minuten abgeschlossen sein, andernfalls werden sie mit Timeout abgebrochen. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
+> [AZURE.IMPORTANT]Skriptaktionen müssen innerhalb von 60 Minuten abgeschlossen sein, andernfalls tritt ein Timeout ein. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
 > 
 > Um die Ausführungsdauer des Skripts zu minimieren, vermeiden Sie Aufgaben wie das Herunterladen und Kompilieren von Anwendungen aus der Quelle. Führen Sie stattdessen eine Vorkompilierung der Anwendung durch, und speichern Sie die binäre Version im Azure-BLOB-Speicher, damit sie schnell in den Cluster heruntergeladen werden kann.
 
@@ -108,7 +108,7 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 		        },
 		        "sshUserName": {
 		            "type": "string",
-		            "defaultValue": "hdiuser"
+		            "defaultValue": "username"
 		        },
 		        "sshPassword": {
 		            "type": "securestring"
@@ -293,7 +293,7 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 
 ## Verwenden einer Skriptaktion in Azure PowerShell
 
-In diesem Abschnitt verwenden wir das Cmdlet [Add-AzureRmHDInsightScriptAction](https://msdn.microsoft.com/library/mt603527.aspx) zum Aufrufen von Skripts mithilfe von „Skriptaktion“ zum Anpassen eines Clusters. Stellen Sie vor dem Fortfahren sicher, dass Azure PowerShell installiert und konfiguriert ist. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+In diesem Abschnitt verwenden wir das Cmdlet [Add-AzureRmHDInsightScriptAction](https://msdn.microsoft.com/library/mt603527.aspx), um Skripts mithilfe von „Skriptaktion“ zum Anpassen eines Clusters aufzurufen. Stellen Sie vor dem Fortfahren sicher, dass Azure PowerShell installiert und konfiguriert ist. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 Führen Sie die folgenden Schritte aus:
 
@@ -323,7 +323,7 @@ Führen Sie die folgenden Schritte aus:
 		$config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
         $config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType WorkerNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
 
-	Das Cmdlet **Add-AzureRmHDInsightScriptAction** verwendet die folgenden Parameter:
+	Das Cmdlet **Add-AzureRmHDInsightScriptAction** verarbeitet die folgenden Parameter:
 
 	| Parameter | Definition |
 	| --------- | ---------- |
@@ -525,7 +525,7 @@ Es gibt zwei Arten von Open-Source-Komponenten, die im HDInsight-Dienst verfügb
 
 > [AZURE.WARNING]Komponenten, die mit dem HDInsight-Cluster bereitgestellt werden, werden vollständig unterstützt, und Microsoft Support hilft Ihnen, Probleme im Zusammenhang mit diesen Komponenten zu isolieren und zu beheben.
 >
-> Für benutzerdefinierte Komponenten steht kommerziell angemessener Support für eine weiterführende Behebung des Problems zur Verfügung. Auf diese Weise kann das Problem behoben werden, ODER Sie werden aufgefordert, verfügbare Kanäle für Open-Source-Technologien in Anspruch zu nehmen, die über umfassende Kenntnisse für diese Technologien verfügen. So können z. B. viele Communitywebsites wie die folgenden verwendet werden: [MSDN-Forum für HDInsight](https://social.msdn.microsoft.com/Forums/azure/de-DE/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Für Apache-Projekte gibt es auf [http://apache.org](http://apache.org) Projektwebsites, zum Beispiel: [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
+> Für benutzerdefinierte Komponenten steht kommerziell angemessener Support für eine weiterführende Behebung des Problems zur Verfügung. Auf diese Weise kann das Problem behoben werden, ODER Sie werden aufgefordert, verfügbare Kanäle für Open-Source-Technologien in Anspruch zu nehmen, die über umfassende Kenntnisse für diese Technologien verfügen. So können z. B. viele Communitywebsites verwendet werden, wie: das [MSDN-Forum für HDInsight](https://social.msdn.microsoft.com/Forums/azure/de-DE/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Für Apache-Projekte gibt es Projektwebsites auf [http://apache.org](http://apache.org), zum Beispiel [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
 
 Der HDInsight-Dienst bietet mehrere Möglichkeiten, benutzerdefinierte Komponenten zu verwenden. Unabhängig davon, wie die Komponente verwendet wird oder im Cluster installiert ist, gilt der gleiche Supportumfang. Nachfolgend finden Sie eine Liste der am häufigsten genutzten Möglichkeiten für die Verwendung von benutzerdefinierten Komponenten in HDInsight-Clustern:
 
@@ -549,4 +549,4 @@ Informationen und Beispiele zum Erstellen und Verwenden von Skripts zum Anpassen
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Phasen während der Clustererstellung"
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

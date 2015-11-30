@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/17/2015"
+   ms.date="11/17/2015"
    ms.author="v-sharos" />
 
 # Bereitstellen lokaler StorSimple-Geräte im Government-Portal
@@ -21,7 +21,7 @@
 
 Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungstutorials betreffen die StorSimple 8000-Serie mit Update 1 im Azure Governmment-Portal. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
 
-Bei den Informationen in diesen Tutorials wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen geprüft und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie diese Aufgaben noch ausführen müssen, beginnen Sie mit der Überprüfung der [Sicherheitsvorkehrungen](storsimple-safety.md). Je nach Modell können Sie anschließend das Gerät auspacken, im Rack einbauen und verkabeln, indem Sie folgende Anweisungen befolgen:
+Bei den Informationen in diesen Tutorials wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen geprüft und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie diese Aufgaben noch ausführen müssen, beginnen Sie mit der Prüfung der [Sicherheitsvorkehrungen](storsimple-safety.md). Je nach Modell können Sie anschließend das Gerät auspacken, im Rack einbauen und verkabeln, indem Sie folgende Anweisungen befolgen:
 
 - [Auspacken, Einsetzen und Verkabeln – 8100](storsimple-8100-hardware-installation.md)
 - [Auspacken, Einsetzen und Verkabeln – 8600](storsimple-8600-hardware-installation.md)
@@ -113,7 +113,7 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 - Sie besitzen ein Microsoft Azure-Speicherkonto mit Anmeldeinformationen für den Zugriff.
 
-- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über die [Lizenzierung für Unternehmen](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
+- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
 
 - Sie haben Zugriff auf Terminalemulationssoftware wie PuTTY.
 
@@ -277,4 +277,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

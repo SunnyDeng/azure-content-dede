@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="11/06/2015"
+   ms.date="11/13/2015"
    ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix
@@ -28,6 +28,43 @@ Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemrele
 
 
 ## Neuigkeiten
+###### **12. November 2015**  
+Am 7. August 2014 kündigte Microsoft an, dass der Support für .NET Framework 4, 4.5 und 4.5.1 am 12. Januar 2016 beendet wird. Es wird empfohlen, dass Kunden und Entwickler die verfügbare Aktualisierung auf .NET Framework 4.5.2 bis zum 12. Januar 2016 durchführen, um weiterhin technischen Support und Sicherheitsupdates zu erhalten. Weitere Informationen finden Sie in der Microsoft .NET Framework Support Lifecycle-Richtlinie.
+
+Am 27. Oktober haben wir angekündigt, dass Azure .NET Framework in Azure-Gastbetriebssystemen (Gast-BS) der Familien 2.x, 3.x und 4.x in der bevorstehenden Novemberversion für das Gast-BS auf .NET Framework 4.5.2 aktualisiert wird. Seither haben wir von Kunden Feedback dahingehend erhalten, die automatische Aktualisierung auf eine Betriebssystemversion mit .NET 4.5.2 zu verschieben und ein Image mit .NET 4.5.2 zur Testvalidierung bereitzustellen.
+
+Um die Anforderungen der Kunden besser zu erfüllen und eine reibungslose Aktualisierung auf .NET 4.5.2 zu ermöglichen, wird Azure .NET Framework in Azure-Gastbetriebssystemen (Gast-BS) der Familien 2.x, 3.x und 4.x auf .NET Framework 4.5.2 erst in der Januarversion 2016 für die Gastbetriebssysteme aktualisiert. Clouddienste unter Gastbetriebssystemen der Familien 2.x, 3.x und 4.x mit aktivierten automatischen Updates werden auf das Gastbetriebssystem der Version Januar 2016 mit .NET Framework 4.5.2 aktualisiert. Im November wird .NET Framework im Standardbetriebssystem nicht geändert. Damit Kunden ihre Clouddienste mit .NET 4.5.2 überprüfen können, bietet Azure einen zweiten Satz von Novemberversionen der Betriebssysteme (201511-02) an, bei dem .NET 4.5.2 manuell bereitgestellt werden kann.
+
+Die folgende Tabelle enthält die Änderungen.
+ 
+| Gastbetriebssystemfamilie | Installiert .NET Framework vor Gastbetriebssystemversion 201511-02 | Installiert .NET Framework unter Gastbetriebssystemversion 201511-02 | Installiert .NET Framework unter Gastbetriebssystemversion 201512-01 | Installiert .NET Framework unter Gastbetriebssystemversion 201601-01 oder höher |
+| --------------- | ---------------- | ---------------- | ---------------- | ---------------- |
+| Gastbetriebssystemfamilie 2.x basierend auf Windows Server 2008 R2 | .NET 3.5, .NET 4.0 | .NET 3.5, .NET 4.5.2 | .NET 3.5, .NET 4.0 | .NET 3.5, .NET 4.5.2 |
+| Gastbetriebssystemfamilie 3.x basierend auf Windows Server 2012 | .NET 4.5 | .NET 4.5.2 | .NET 4.5 | .NET 4.5.2 | 
+| Gastbetriebssystemfamilie 4.x basierend auf Windows Server 2012 R2 | .NET 4.5.1 | .NET 4.5.2 | .NET 4.5.1 | .NET 4.5.2 | 
+ 
+Wenn Sie eine manuelle Aktualisierung des Gastbetriebssystems durchführen, werden im November zwei Gastbetriebssystemversionen für alle Gastbetriebssystemfamilien veröffentlicht.
+
+   • WA-GUEST-OS-4.26\_201511-01, WA-GUEST-OS-3.33\_201511-01, WA-GUEST-OS-2.45\_201511-01 (Standard)
+
+   Enthält den November-MSRC und die Windows-Rollups für Oktober
+
+   • WA-GUEST-OS-4.26\_201511-02, WA-GUEST-OS-3.33\_201511-02, WA-GUEST-OS-2.45\_201511-02
+
+   Enthält den November-MSRC, die Windows-Rollups für Oktober und .NET Framework aktualisiert auf .NET 4.5.2
+
+
+
+Im Folgenden finden Sie vor der Aktualisierung einige der Optionen für die Validierung Ihres Clouddiensts mit .NET 4.5.2:
+
+1. 	Stellen Sie eine Test-Clouddienstrolle in der Version 201511-02 bereit, und überprüfen Sie die Anwendungskompatibilität. 
+
+2. 	Installieren Sie .NET 4.5.2 in einer Test-Clouddienstrolle, und überprüfen Sie die Anwendungskompatibilität. Weitere Informationen finden Sie unter [Installieren von .NET in einer Clouddienstrolle].
+
+3. 	Überprüfen Sie die Anwendungskompatibilität auf einem eigenständigen virtuellen Computer – lokal oder auf einer Azure-VM mit .NET 4.5.2.
+
+
+
 
 ###### **15. Oktober 2015**
 Die Bereitstellung des Gastbetriebssystems Oktober beginnt heute, 15. Oktober 2015 und sollte voraussichtlich am 13. November 2015 freigegeben werden.
@@ -131,6 +168,8 @@ Unterstützt .NET 4.0, 4.5, 4.5.1, 4.5.2 (Hinweis 2)
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
+| 4\.26 | WA-GUEST-OS-4.26\_201511-02 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
+| 4\.26 | WA-GUEST-OS-4.26\_201511-01 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
 | 4\.25 | WA-GUEST-OS-4.25\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 4.27 aktualisiert | TBD |
 | 4\.24 | WA-GUEST-OS-4.24\_201509-01 | 1\. Oktober 2015 | Wird bei Veröffentlichung von 4.26 aktualisiert | TBD |
 | 4\.23 | WA-GUEST-OS-4.23\_201508-02 | 9\. September 2015 | 6\. Dezember 2015 | TBD |
@@ -158,6 +197,8 @@ Unterstützt .NET 4.0, 4.5
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
+| 3\.33 | WA-GUEST-OS-3.33\_201511-02 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
+| 3\.33 | WA-GUEST-OS-3.33\_201511-01 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
 | 3\.32 | WA-GUEST-OS-3.32\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 3.34 aktualisiert | TBD |
 | 3\.31 | WA-GUEST-OS-3.31\_201509-01 | 1\. Oktober 2015 | Wird bei Veröffentlichung von 3.33 aktualisiert | TBD |
 | 3\.30 | WA-GUEST-OS-3.30\_201508-02 | 9\. September 2015 | 6\. Dezember 2015 | TBD |
@@ -186,6 +227,8 @@ Unterstützt .NET 3.5, 4.0
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
+| 2\.45 | WA-GUEST-OS-2.45\_201511-02 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
+| 2\.45 | WA-GUEST-OS-2.45\_201511-01 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
 | 2\.44 | WA-GUEST-OS-2.44\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 2.46 aktualisiert | TBD |
 | 2\.43 | WA-GUEST-OS-2.43\_201509-01 | 1\. Oktober 2015 | Wird bei Veröffentlichung von 2.45 aktualisiert | TBD |
 | 2\.42 | WA-GUEST-OS-2.42\_201508-02 | 9\. September 2015 | 6\. Dezember 2015 | TBD |
@@ -265,7 +308,7 @@ Das Oktober-Release (4.13, 3.20 und 2.32) wurde am 4. November 2014 eingeführt.
 
 Im Oktober-Release ist .NET 3.5 und 3.5.1 vorinstalliert (aber deaktiviert). Zudem enthält es den zuvor aufgeführten MSRC-Patch. Skripts, die eine Installation von .NET 3.5 oder 3.5.1 versuchen, aktivieren dieses effektiv erneut und geben für die .NET-Installation "Erfolgreich" zurück, vermeiden aber auch das Installationsproblem, das durch den MSRC-Patch hervorgerufen wurde.
 
-Aufgrund der partiellen Einführung der letzten beiden Releases können Personen, die automatische Updates festgelegt oder neue Installationen eingeführt haben, alle diese Gastbetriebssystem-Releases ausführen. Die folgende Tabelle enthält die Gastbetriebssystemreleases, welche die Installation von .NET 3.5 oder 3.5.1 in den Familien 3 und 4 zulassen. Derzeit gilt: Wenn ein Release die Installation zulässt, ist der MSRC-Patch MS14-046 NICHT installiert.
+Aufgrund der partiellen Einführung der letzten beiden Releases können Personen, die automatische Updates festgelegt oder neue Installationen eingeführt haben, alle diese Gastbetriebsreleases ausführen. Die folgende Tabelle enthält die Gastbetriebssystemreleases, welche die Installation von .NET 3.5 oder 3.5.1 in den Familien 3 und 4 zulassen. Derzeit gilt: Wenn ein Release die Installation zulässt, ist der MSRC-Patch MS14-046 NICHT installiert.
 
 | Betriebssystemversion | .NET 3.5 kann installiert werden | Umfasst MSRC-Patch [MS14-046][] |
 | --- | --- | --- |
@@ -330,7 +373,7 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 | 2\.19 rel3 | WA-GUEST-OS-2.19\_201309-03 | 9\. Oktober 2013 | N/V | 14\. Mai 2014 |
 | 2\.19 rel1 | WA-GUEST-OS-2.19\_201309-01 | 23\. September 2013 | N/V | 14\. Mai 2014 |
 
-
+[Installieren von .NET in einer Clouddienstrolle]: https://azure.microsoft.com/de-DE/documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
 [Updateeinstellungen für Azure-Gastbetriebssysteme]: cloud-services-how-to-configure.md
 [rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
@@ -351,4 +394,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

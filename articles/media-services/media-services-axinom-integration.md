@@ -26,7 +26,7 @@
 
 Azure Media Services (AMS) bietet nun dynamischen Google Widevine-Schutz (im [Blog von Mingfei](https://azure.microsoft.com/de-DE/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) finden Sie Einzelheiten). Darüber hinaus bietet Azure Media Player (AMP) nun auch Unterstützung für Widevine (Details finden Sie im [AMP-Dokument](http://amp.azure.net/libs/amp/latest/docs/)). Dies ist eine wichtige Neuerung für das Streamen von durch CENC geschützte Inhalte mit Multi-Native-DRM (PlayReady und Widevine) in modernen Browsern, die mit MSE und EME ausgestattet sind.
 
->[AZURE.NOTE]Media Services bietet derzeit keinen Widevine-Lizenzserver. Sie können mithilfe der folgenden AMS-Partner Widevine-Lizenzen bereitstellen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/) und [castLabs](http://castlabs.com/company/partners/azure/).
+Ab Media Services .NET SDK, Version 3.5.2, ermöglicht Media Services Ihnen die Konfiguration der Widevine-Lizenzvorlage und das Abrufen von Widevine-Lizenzen. Sie können sich auch von folgenden AMS-Partnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
 In diesem Artikel wird beschrieben, wie von Axinom verwaltete Lizenzserver integriert und getestet werden. Insbesondere wird Folgendes behandelt:
 
@@ -193,7 +193,7 @@ Parameter|Verwendung
 Kommunikationsschlüssel-ID|Muss als Wert des Anspruchs "com\_key\_id" in das JWT-Token eingeschlossen werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt).
 Kommunikationsschlüssel|Muss als Signaturschlüssel des JWT-Tokens verwendet werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt).
 Schlüsselwert|Muss verwendet werden, um den Inhaltsschlüssel mit einer angegebenen Inhaltsschlüssel-ID zu generieren (siehe [diesen](media-services-axinom-integration.md#content-protection) Abschnitt).
-Widevine-Lizenzerwerbs-URL|Muss beim Konfigurieren der Übermittlungsrichtlinie für Assets für DASH-Streaming verwendet werden (siehe [diesen](media-services-axinom-integration.md#content-protection) Abschnitt).
+Widevine-Lizenzerwerbs-URL|Muss beim Konfigurieren der Übermittlungsrichtlinie für Medienobjekte für DASH-Streaming verwendet werden (siehe [diesen](media-services-axinom-integration.md#content-protection) Abschnitt).
 Inhaltsschlüssel-ID|Muss als Teil des Werts des Anspruchs "entitlement\_message" des JWT-Tokens eingeschlossen werden (siehe [diesen](media-services-axinom-integration.md#jwt-token-generation) Abschnitt). 
 
 
@@ -209,4 +209,4 @@ Inhaltsschlüssel-ID|Muss als Teil des Werts des Anspruchs "entitlement\_message
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Kristjan Jõgi von Axinom, Mingfei Yan und Amit Rajput.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

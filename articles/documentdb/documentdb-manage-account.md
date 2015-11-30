@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/22/2015" 
+	ms.date="11/18/2015" 
 	ms.author="anhoh"/>
 
-# Verwalten eines DocumentDB-Kontos im Azure-Vorschauportal
+# Verwalten eines DocumentDB-Kontos
 
 Erfahren Sie, wie Sie mit Schlüsseln und Konsistenzeinstellungen arbeiten, und wie Sie ein Konto im Azure-Vorschauportal löschen.
 
@@ -44,7 +44,7 @@ Sie sollten regelmäßig die Zugriffsschlüssel für Ihr DocumentDB-Konto änder
 
 > [AZURE.WARNING]Das erneute Generieren der Zugriffsschlüssel wirkt sich auf alle Anwendungen aus, die vom aktuellen Schlüssel abhängen. Alle Clients, die den Zugriffsschlüssel verwenden, um auf das DocumentDB-Konto zuzugreifen, müssen aktualisiert werden, um den neuen Schlüssel zu verwenden.
 
-Falls Sie über Webanwendungen oder Clouddienste verfügen, die das DocumentDB-Konto verwenden, verlieren Sie die Verbindungen beim erneuten Generieren von Schlüsseln – es sei denn, Sie führen einen Rollup für die Schlüssel aus. Die folgenden Schritte stellen den Prozess für das Rollup der Schlüssel dar.
+Falls Sie über Webanwendungen oder Cloud-Dienste verfügen, die das DocumentDB-Konto verwenden, verlieren Sie die Verbindungen beim erneuten Generieren von Schlüsseln – es sei denn, Sie führen einen Rollup für die Schlüssel aus. Die folgenden Schritte stellen den Prozess für das Rollup der Schlüssel dar.
 
 1.      Aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den sekundären Zugriffsschlüssel des DocumentDB-Kontos verweist.
 
@@ -67,7 +67,7 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 
 - **Bounded Staleness** garantiert, dass gelesene Werte nicht zu veraltet sind. Dadurch wird insbesondere garantiert, dass die Lesevorgänge nicht älter als *K*-Versionen der zuletzt geschriebenen Version sind.
 
-- **Session** garantiert monotone Lesevorgänge (es werden niemals alte Daten, dann neue, dann wieder alte gelesen) und monotone Schreibvorgänge (Schreibvorgänge werden geordnet). Außerdem es wird garantiert, dass die neuesten Schreibvorgänge bezogen auf den Status eines einzelnen Clients gelesen werden.
+- **Session** garantiert monotone Lesevorgänge (es werden niemals alte Daten, dann neue, dann wieder alte gelesen) und monotone Schreibvorgänge (Schreibvorgänge werden geordnet). Und es wird garantiert, dass die neuesten Schreibvorgänge bezogen auf den Status eines einzelnen Clients gelesen werden.
 
 - **Eventual** garantiert, dass Lesevorgänge stets ein gültiges Subset von Schreibvorgängen ergeben und schließlich konvergieren.
 
@@ -92,7 +92,7 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 *Beachten Sie, dass es einige Minuten in Anspruch nehmen kann, bis sich die Änderung der Standardkonsistenz auf Ihr DocumentDB-Konto auswirkt.*
 
 ## <a id="delete"></a> So löschen Sie ein DocumentDB-Konto im Azure-Vorschauportal
-Um ein nicht mehr verwendetes DocumentDB-Konto aus dem Azure-Vorschauportal zu entfernen, verwenden Sie im Blatt **DocumentDB-Konto** den Befehl **Löschen**.
+Um ein nicht mehr verwendetes DocumentDB-Konto aus dem Azure-Vorschauportal zu entfernen, verwenden Sie den Befehl **Löschen** im Blatt **DocumentDB-Konto**.
 
 ![So löschen Sie ein DocumentDB-Konto im Azure-Vorschauportal](./media/documentdb-manage-account/image009.png)
 
@@ -102,15 +102,15 @@ Um ein nicht mehr verwendetes DocumentDB-Konto aus dem Azure-Vorschauportal zu e
 
 3.      Geben Sie im daraufhin angezeigten Bestätigungsblatt den Namen des DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
 
-4.      Klicken Sie auf dem Bestätigungsblatt auf die Schaltfläche **Löschen**.
+4.      Klicken Sie im Bestätigungsfenster auf die Schaltfläche **Löschen**.
 
 ## <a id="next"></a>Nächste Schritte
 
-Erfahren Sie mehr auf der Seite [Erste Schritte mit dem DocumentDB-Konto](http://go.microsoft.com/fwlink/p/?LinkId=402364).
+Erfahren Sie mehr auf der Seite [Erste Schritte mit dem DocumentDB .NET SDK](http://go.microsoft.com/fwlink/p/?LinkId=402364).
 
 Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-Dokumentation auf [azure.com](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409).
 
  
  
 
-<!----HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

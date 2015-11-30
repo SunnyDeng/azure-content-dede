@@ -56,7 +56,7 @@ Stellen Sie beim Planen Ihrer Hybrid-Identitätslösung sicher, dass die folgend
 ## Nächste Schritte
 [Bestimmen der Zugriffssteuerungsanforderungen](active-directory-hybrid-identity-design-considerations-accesscontrol-requirements.md)
 
-## Siehe auch
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+## Weitere Informationen
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

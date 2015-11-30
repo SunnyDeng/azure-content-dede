@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/12/2015"
    ms.author="joaoma" />
 
 # Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts
@@ -40,14 +40,8 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 
 [Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
 
-[Was ist Traffic Manager?](../traffic-manager.md)
+[Problembehandlung beim Status „Heruntergestuft“ in Traffic Manager](traffic-manager-troubleshooting-degraded.md)
 
-[Cloud-Dienste](http://go.microsoft.com/fwlink/?LinkId=314074)
+[Leistungsüberlegungen zu Traffic Manager](traffic-manager-performance-considerations.md)
 
-[Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
-
-
-[Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/?LinkId=313584)
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

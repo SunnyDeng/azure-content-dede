@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
-	editor=""/>
+	editor=""
+	tags="azure-classic-portal"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/02/2015" 
+	ms.date="11/17/2015" 
 	ms.author="femila"/>
 
 # Einrichten eines neuen Geräts mit Azure AD während des Setups
@@ -43,8 +44,11 @@ Hinzufügen eines Geräts zu Azure AD
 > [AZURE.NOTE]Das Verknüpfen von lokalen Active Directory-Domänen wird während des Eindrucks beim ersten Ausführen in Windows nicht unterstützt. Wenn Sie also einen Computer mit einer Domäne verknüpfen möchten, wählen Sie stattdessen den Link "Einrichten von Windows mit einem lokalen Konto". Sie können dann die Domäne aus den PC-Einstellungen verknüpfen, wie Sie dies bereits zuvor getan haben.
 
 ## Zusätzliche Informationen
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
+* [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport](active-directory-azureadjoin-passport.md)
 * [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
+* [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

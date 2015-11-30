@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Anzeigen von Application Insights-Daten in Power BI" 
-	description="Verwenden Sie Power BI zum Überwachen der Leistung und der Nutzung Ihrer Anwendung." 
+	pageTitle="Verwenden von Stream Analytics für den Export von Application Insights nach Power BI" 
+	description="Erläutert, wie Stream Analytics zur Verarbeitung exportierter Daten eingesetzt wird." 
 	services="application-insights" 
     documentationCenter=""
 	authors="noamben" 
@@ -12,12 +12,14 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="11/15/2015" 
 	ms.author="awills"/>
  
-# Power BI-Ansichten von Application Insights-Daten
+# Verwenden Sie Stream Analytics für Power BI-Ansichten von Application Insights
 
 [Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Web- oder Gerät-Apps von Application Insights zu Power BI streamen.
+
+> [AZURE.NOTE]Am einfachsten lassen sich Daten von Application Insights nach Power BI [mithilfe des Adapters](https://powerbi.microsoft.com/de-DE/documentation/powerbi-content-pack-application-insights/) verschieben, den Sie in der Power BI-Galerie unter Dienste finden. Das in diesem Artikel beschriebene Vorgehen ist aktuell flexibler, doch soll hier demonstrieren, wie Stream Analytics mit Application Insights verwendet wird.
 
 ![Beispiel für eine Power BI-Ansicht der Application Insights-Nutzungsdaten](./media/app-insights-export-power-bi/010.png)
 
@@ -205,7 +207,28 @@ Fügen Sie diese Abfrage ein:
 
 * Diese Abfrage führt einen Drilldown in die Telemetrie der Metriken durch, um die Uhrzeit und den metrischen Wert des Ereignisses abzurufen. Die metrischen Werte befinden sich in einem Array, daher verwenden wir das Muster „OUTER APPLY GetElements“ zum Extrahieren der Zeilen. In diesem Fall lautet der Name der Metrik „myMetric“. 
 
+#### Abfrage zum Anzeigen von Dimensionseigenschaften
 
+```SQL
+
+    WITH flat AS (
+    SELECT
+      MySource.context.data.eventTime as eventTime,
+      InstanceId = MyDimension.ArrayValue.InstanceId.value,
+      BusinessUnitId = MyDimension.ArrayValue.BusinessUnitId.value
+    FROM MySource
+    OUTER APPLY GetArrayElements(MySource.context.custom.dimensions) MyDimension
+    )
+    SELECT
+     eventTime,
+     InstanceId,
+     BusinessUnitId
+    INTO AIOutput
+    FROM flat
+
+```
+
+* Diese Abfrage enthält Dimensionseigenschaftswerte, ohne dabei davon abhängig zu sein, dass eine bestimmte Dimension in einem festen Index im Dimensionsarray liegt.
 
 ## Ausführen des Auftrags
 
@@ -239,4 +262,4 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 * [Application Insights](app-insights-overview.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

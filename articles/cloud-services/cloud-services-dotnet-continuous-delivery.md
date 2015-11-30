@@ -20,7 +20,7 @@
 
 Der in diesem Artikel beschriebene Prozess zeigt, wie die kontinuierliche Zustellung für Azure-Cloud-Apps eingerichtet wird. Dieser Prozess ermöglicht es Ihnen, Pakete automatisch zu erstellen und nach jedem Einchecken von Code in Azure bereitzustellen. Der in diesem Artikel beschriebene Prozess der Paketerstellung entspricht dem Befehl "Paket" in Visual Studio, die Veröffentlichungsschritte entsprechen dem Befehl "Veröffentlichen" in Visual Studio. Der Artikel befasst sich mit den Methoden, die üblicherweise dazu dienen, einen Buildserver mit MSBuild-Befehlszeilenanweisungen und Windows PowerShell-Skripts zu erstellen. Außerdem zeigt er, wie Visual Studio Team Foundation Server - Team Build-Definitionen optional für die Verwendung von MSBuild-Befehlen und PowerShell-Skripts konfiguriert werden. Der Prozess kann an Ihre Buildumgebung und Azure-Zielumgebungen angepasst werden.
 
-Eine bequemere Möglichkeit hierzu bietet Visual Studio Online, eine in Azure gehostete Version von Team Foundation Server. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online][].
+Eine bequemere Möglichkeit hierzu bietet Visual Studio Team Services, eine in Azure gehostete Version von Team Foundation Server. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services][].
 
 Bevor Sie beginnen, müssen Sie Ihre Anwendung über Visual Studio veröffentlichen. Damit wird sichergestellt, dass alle Ressourcen verfügbar und initialisiert sind, wenn Sie versuchen, den Veröffentlichungsprozess zu automatisieren.
 
@@ -557,7 +557,7 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
 
 Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierlichen Zustellung finden Sie unter [Aktivieren von Remotedebuggen, wenn kontinuierliche Zustellung für die Veröffentlichung in Azure verwendet wird](cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging.md).
 
-  [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online]: cloud-services-continuous-delivery-use-vso.md
+  [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services]: cloud-services-continuous-delivery-use-vso.md
   [Einrichten des Team Foundation-Builddiensts]: http://go.microsoft.com/fwlink/p/?LinkId=239963
   [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
   [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
@@ -576,4 +576,4 @@ Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierli
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

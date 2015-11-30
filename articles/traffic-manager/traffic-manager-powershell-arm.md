@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="traffic-manager"
@@ -12,10 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/12/2015"
    ms.author="joaoma" />
-
-
 
 
 
@@ -204,11 +202,11 @@ Diese Sequenz kann auch weitergeleitet werden:
 	PS C:\> Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup | Remove-AzureTrafficManagerProfile [-Force]
 
 
-## Siehe auch
+## Nächste Schritte
 
-[Was ist Traffic Manager?](traffic-manager-overview.md)
+[Traffic Manager-Überwachung](traffic-manager-monitoring.md)
 
-[Erste Schritte mit Azure-Cmdlets](https://msdn.microsoft.com/library/jj554332.aspx)
+[Leistungsüberlegungen zu Traffic Manager](traffic-manager-performance-considerations.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

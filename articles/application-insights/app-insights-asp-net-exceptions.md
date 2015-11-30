@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights" 
-	description="Konfigurieren Sie Ihre App für eine attraktive Diagnoseoberfläche, indem Sie Ausnahmen zusammen mit Anforderungstelemetrie erfassen." 
+	description="Erfassen von Ausnahmen von ASP.NET-Apps zusammen mit der Anforderungstelemetrie." 
 	services="application-insights" 
     documentationCenter=".net"
 	authors="alancameronwills" 
@@ -12,10 +12,14 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015" 
+	ms.date="11/17/2015" 
 	ms.author="awills"/>
- 
-# Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights  
+
+
+# Einrichten von Application Insights: Diagnose von Ausnahmen
+
+[AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
+
 
 Durch die Überwachung Ihrer Anwendung mit [Visual Studio Application Insights][start] können Sie Anforderungsfehler mit Ausnahmen und andere Ereignisse auf dem Client und auf dem Server zueinander in Beziehung setzen, damit Sie die Ursachen schnell diagnostizieren können.
 
@@ -448,4 +452,4 @@ Beachten Sie, dass sich der Wert von der Anzahl der "Ausnahmen" unterscheidet, d
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

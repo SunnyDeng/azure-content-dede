@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/09/2015"
+   ms.date="11/12/2015"
    ms.author="tomfitz"/>
 
 # Vorlagenfunktionen im Azure-Ressourcen-Manager
@@ -268,7 +268,7 @@ Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressou
 
 Die **Referenz**-Funktion leitet ihren Wert von einem Laufzeitstatus ab und kann somit nicht im Variablen-Abschnitt verwendet werden. Sie kann in Ausgabeabschnitten einer Vorlage verwendet werden.
 
-Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die **dependsOn**-Eigenschaft verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
+Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die Eigenschaft **dependsOn** verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
 
     "outputs": {
       "siteUri": {
@@ -494,6 +494,25 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Großbuc
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
 
+## trim
+
+**trim (stringToTrim)**
+
+Entfernt alle führenden und nachgestellten Leerzeichen aus der angegebenen Zeichenfolge.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToTrim | Ja | Die zu kürzende Zeichenfolgen.
+
+Im folgenden Beispiel werden die Leerzeichen aus dem vom Benutzer bereitgestellten Parameterwert entfernt.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "trimAppName": "[trim(parameters('appName'))]"
+    }
+
 
 ## uniqueString
 
@@ -529,6 +548,21 @@ Das folgende Beispiel zeigt, wie Sie einen eindeutigen Namen für ein Speicherko
         "type": "Microsoft.Storage/storageAccounts", 
         ...
 
+## uri
+
+**uri (baseUri, relativeUri)**
+
+Erstellt einen absoluten URI durch Kombinieren der baseUri- und der relativeUri-Zeichenfolge.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| baseUri | Ja | Die Zeichenfolge mit dem Basis-URI.
+| relativeUri | Ja | Der Zeichenfolge mit dem relativen URI, die der Zeichenfolge mit dem Basis-URI hinzugefügt werden soll.
+
+Im folgenden Beispiel wird veranschaulicht, wie ein absoluter URI im Vorlagenlink erstellt wird. Das Ergebnis lautet ****http://contoso.com/resources/nested/azuredeploy.json**.
+
+    "templateLink": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]"
+
 
 ## Variablen
 
@@ -547,4 +581,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Prozess zur Erstellung und Registrierung eines Kontos für die Veröffentlichung | Microsoft Azure"
+   pageTitle="Erstellen und Registrieren eines Kontos für die Veröffentlichung | Microsoft Azure"
    description="Anweisungen zum Erstellen eines Microsoft-Verkäuferkontos, mit dem – nach Genehmigung des Kontos – verschiedene Arten von Angeboten im Azure Marketplace veröffentlicht werden können."
    services="Azure Marketplace"
    documentationCenter=""
@@ -19,38 +19,39 @@
 # Erstellen eines Microsoft-Verkäuferkontos
 In diesem Artikel werden die Schritte zur Erstellung und Registrierung eines Kontos erläutert, die notwendig sind, um anerkannter Microsoft-Verkäufer im Azure Marketplace zu werden.
 
-## 1. Erstellen eines Microsoft-Kontos (MSA)
+## 1\. Erstellen eines Microsoft-Kontos
 > [AZURE.WARNING]Um den Veröffentlichungsprozess abzuschließen, müssen Sie ein Microsoft-Konto erstellen. Über dieses Konto können Sie sich sowohl beim Veröffentlichungsportal als auch im Verkäuferdashboard registrieren und anmelden. Sie sollten für Ihre Azure Marketplace-Angebote nur ein Microsoft-Konto verwenden. Verwenden Sie keine unterschiedlichen Konten für verschiedene Dienste oder Angebote.
 
-Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@yourcompany.com). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
+Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
 
-  >[AZURE.WARNING]Wörter wie "Azure" oder "Microsoft" werden bei der Registrierung eines MSA-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
+  >[AZURE.WARNING]Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
 
 1. Erstellen Sie eine Verteilerliste (Distribution List, DL) oder Sicherheitsgruppe (Security Group, SG) in der Domäne Ihres Unternehmens.
-  - Fügen Sie Ihr Onboardingteam zur DL hinzu.
-  - Die DL muss live geschaltet sein, um Bestätigungs-E-Mails zu empfangen.
-  - Diese Einrichtung muss in Ihren internen Systemen erfolgen. Zum Beispiel: marketplace@yourcompany.com.
-2. Öffnen Sie eine neue Chrome-Inkognito- oder IE-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem vorhandenen Konto angemeldet sind.
-3. Registrieren Sie sich mit der E-Mail-Adresse der Verteilerliste für ein Microsoft-Konto (MSA).
- - Sie können sich unter [https://signup.live.com/signup.aspx](https://signup.live.com/signup.aspx) für ein MSA registrieren.
- - Verwenden Sie marketplace@yourcompany.com als E-Mail-Adresse.
- - Ihre MSA-ID lautet nun marketplace@yourcompany.com.
+  - Fügen Sie Ihr Onboardingteam zur Verteilerliste hinzu.
+  - Die Verteilerliste muss live geschaltet sein, um eine Bestätigungs-E-Mail zu empfangen.
+  - Verwenden Sie marketplace@example.com als E-Mail-Adresse für die Verteilerliste.
+  - Diese Einrichtung muss in Ihren internen Systemen erfolgen.
+2. Öffnen Sie eine neue Chrome-Inkognito- oder Internet Explorer-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem vorhandenen Konto angemeldet sind.
+3. Registrieren Sie sich mithilfe der E-Mail-Adresse der Verteilerliste für ein Microsoft-Konto.
+ - Sie können sich unter [https://signup.live.com/signup.aspx](https://signup.live.com/signup.aspx) für ein Microsoft-Konto registrieren.
+ - Verwenden Sie marketplace@example.com als E-Mail-Adresse.
+ - Die ID Ihres Microsoft-Kontos ist jetzt marketplace@example.com.
 
-    ![Abbildung][img-msalive]
+    <!--[drawing][img-msalive]-->
 
-4. Geben Sie bei der Registrierung eine gültige Telefonnummer an. Sie erhalten einen Prüfcode per SMS oder, falls notwendig, einen automatischen Telefonanruf zur Überprüfung Ihrer Identität.
+4. Geben Sie bei der Registrierung eine gültige Telefonnummer an. Falls notwendig, erhalten Sie einen Prüfcode per SMS oder einen automatischen Telefonanruf zur Überprüfung Ihrer Identität.
 5. Verifizieren Sie die an die Verteilerliste gesendete E-Mail-Adresse.
 
-    ![Abbildung][img-email]
+    <!--[drawing][img-email]-->
 
-6. Nun können Sie das neue MSA im Verkäuferdashboard verwenden.
+6. Nun können Sie das neue Microsoft-Konto im Verkäuferdashboard verwenden.
 
-> [AZURE.IMPORTANT]Durch Verwendung einer Verteilerliste können mehrere Personen E-Mail-Benachrichtigungen mit wichtigen Zahlungsinformationen empfangen. Gleichzeitig ist sichergestellt, dass das Eigentum am MSA übertragen werden kann und nicht an eine Einzelperson geknüpft ist.
+> [AZURE.IMPORTANT]Durch Verwendung einer Verteilerliste können mehrere Personen E-Mail-Benachrichtigungen mit wichtigen Zahlungsinformationen empfangen. Gleichzeitig ist sichergestellt, dass das Eigentum am Microsoft-Konto übertragen werden kann und nicht an eine Einzelperson geknüpft ist.
 
-## 2. Erstellen Ihres Kontos im Verkäuferdashboard
-Das Microsoft-Verkäuferdashboard wird zur einmaligen Registrierung der Unternehmensinformationen verwendet. Die Person, die das Konto registriert, muss ein offizieller Vertreter des Unternehmens sein und ihre persönlichen Informationen zum Zweck der Identitätsüberprüfung bereitstellen. Diese Person muss ein Microsoft-Konto (MSA) verwenden, das für das Unternehmen freigegeben ist. Das gleiche Konto muss im Azure-Veröffentlichungsportal verwendet werden. Sie sollten überprüfen, ob Ihr Unternehmen nicht bereits über ein Konto im Verkäuferdashboard verfügt, bevor Sie ein Konto erstellen. Während des Prozesses erfassen wir Bankdaten, Steuerinformationen und Adressdaten Ihres Unternehmens. Diese Informationen erhalten Sie üblicherweise über Bank- oder Geschäftskontakte.
+## 2\. Erstellen Ihres Kontos im Verkäuferdashboard
+Das Microsoft-Verkäuferdashboard wird zur einmaligen Registrierung der Unternehmensinformationen verwendet. Die Person, die das Konto registriert, muss ein offizieller Vertreter des Unternehmens sein und ihre persönlichen Informationen zum Zweck der Identitätsüberprüfung bereitstellen. Diese Person muss ein Microsoft-Konto verwenden, das für das Unternehmen freigegeben ist. Das gleiche Konto muss im Azure-Veröffentlichungsportal verwendet werden. Sie sollten überprüfen, ob Ihr Unternehmen nicht bereits über ein Konto im Verkäuferdashboard verfügt, bevor Sie ein Konto erstellen. Während des Prozesses erfassen wir Bankdaten, Steuerinformationen und Adressdaten Ihres Unternehmens. Diese Informationen erhalten Sie üblicherweise über Bank- oder Geschäftskontakte.
 
-> [AZURE.IMPORTANT]Folgende Informationen des Verkäuferprofils müssen vorliegen, um die verschiedenen Phasen der Angebotserstellung und -bereitstellung durchlaufen zu können.
+> [AZURE.IMPORTANT]Sie müssen folgende Komponenten des Verkäuferprofils ausfüllen, um die verschiedenen Phasen der Angebotserstellung und -bereitstellung durchlaufen zu können.
 
 
 | Verkäuferprofil | Entwurf starten | Staging | Kostenlos veröffentlichen und Lösungsvorlage | Für den Erwerb veröffentlichen |
@@ -60,17 +61,17 @@ Das Microsoft-Verkäuferdashboard wird zur einmaligen Registrierung der Unterneh
 |Bankkonto | Optional | Optional | Optional | Verpflichtend |
 
 
-> [AZURE.NOTE]BYOL (Bring Your Own License, Verwendung eigener Lizenzen) wird nur für virtuelle Computer unterstützt und gilt als **KOSTENLOSES** Angebot.
+> [AZURE.NOTE]Bring Your Own License (BYOL) wird nur für virtuelle Computer unterstützt und gilt als ein **kostenloses** Angebot.
 
 
 ### Registrieren Ihres Unternehmenskontos
-1. Öffnen Sie eine neue IE-InPrivate- oder Chrome-Inkognito-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
+1. Öffnen Sie eine neue Internet Explorer-InPrivate- oder Chrome-Inkognito-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
 
-2. Wechseln Sie zu [http://sellerdashboard.microsoft.com](http://sellerdashboard.microsoft.com)
+2. Wechseln Sie zu [http://sellerdashboard.microsoft.com](http://sellerdashboard.microsoft.com).
 
     ![Abbildung][img-sd-url]
 
-3. Melden Sie sich mit dem Microsoft-Konto (MSA) an, das Sie für Ihr Unternehmen registriert haben (z. B. AzureStore@yourcompany.com).
+3. Melden Sie sich mit dem Microsoft-Konto an, das Sie für Ihr Unternehmen registriert haben (z. B. marketplace@example.com).
 
     ![Abbildung][img-signin]
 
@@ -78,23 +79,23 @@ Das Microsoft-Verkäuferdashboard wird zur einmaligen Registrierung der Unterneh
 
     ![Abbildung][img-verify]
 
-5. Wechseln Sie zu **Kontodetails**. Hier geben Sie Ihre PERSÖNLICHEN Daten ein, die nur zur Überprüfung Ihrer Identität herangezogen werden. Geben Sie Ihren Namen, Ihre E-Mail-Adresse, Ihren Wohnsitz und Ihre telefonische Durchwahl ein. Diese Daten werden nicht an Dritte außerhalb von Microsoft weitergegeben.
+5. Wechseln Sie zu **Kontodetails**. Hier geben Sie Ihre persönlichen Daten ein, die nur zur Überprüfung Ihrer Identität herangezogen werden. Geben Sie Ihren Namen, Ihre E-Mail-Adresse, Ihren Wohnsitz und Ihre telefonische Durchwahl ein. Diese Daten werden nicht an Dritte außerhalb von Microsoft weitergegeben.
 
     ![Abbildung][img-sd-top]
 
-    ![Abbildung][img-sd-info]
+    <!--[drawing][img-sd-info]-->
 
-6. Registrieren Sie sich im Auftrag Ihres Unternehmens, indem Sie den Kontotyp auf "Unternehmen" festlegen, NICHT auf "Einzelperson". Klicken Sie auf **Weiter**.
+6. Registrieren Sie sich im Auftrag Ihres Unternehmens, indem Sie den Kontotyp auf **Unternehmen** festlegen, nicht auf **Einzelperson**. Klicken Sie auf **Weiter**.
 
     ![Abbildung][img-sd-type]
 
-7. Geben Sie die Details zu Ihrem Unternehmen ein. Diese Informationen – z. B. Hauptniederlassung, Referenzperson – müssen genau angegeben werden, da sie von einem Microsoft-Team geprüft werden.
+7. Geben Sie die Details zu Ihrem Unternehmen ein. Diese Informationen – z. B. Hauptniederlassung und Referenzperson – müssen richtig angegeben werden, da sie von einem Microsoft-Team geprüft werden.
 
     ![Abbildung][img-sd-mktg1]
 
-8. Der Unternehmensname wird im Veröffentlichungsportal verwendet und sollte daher genau angegeben werden.
+8. Der Firmenname wird im Veröffentlichungsportal verwendet, und sollte deshalb richtig sein.
 
-    ![Abbildung][img-sd-mktg2]
+    <!--[drawing][img-sd-mktg2]-->
 
 9. Verwenden Sie die Anschrift der Hauptniederlassung Ihres Unternehmens.
 
@@ -109,24 +110,24 @@ Das Microsoft-Verkäuferdashboard wird zur einmaligen Registrierung der Unterneh
     ![Abbildung][img-sd-submit]
 
 
-Wenn Sie planen, nur kostenlose Angebote zu veröffentlichen, können Sie mit Abschnitt 3, **Registrieren Ihres Kontos im Veröffentlichungsportal**, fortfahren.
+Wenn Sie planen, nur kostenlose Angebote zu veröffentlichen, können Sie mit Abschnitt 3, „Registrieren Ihres Kontos im Veröffentlichungsportal“, fortfahren.
 
-Wenn Sie auch Angebote für den Erwerb veröffentlichen möchten, müssen Sie Ihre vollständigen Steuerinformationen und Bankdaten im Konto für das Verkäuferdashboard angeben. Siehe Abschnitt 2.2.
+Wenn Sie auch Angebote für den Erwerb veröffentlichen möchten, müssen Sie Ihre vollständigen Steuerinformationen und Bankdaten im Konto für das Verkäuferdashboard angeben.
 
 > [AZURE.IMPORTANT]Ohne vollständige Angabe der Steuer- und Bankdaten können Sie Ihre Angebote in der Stagingumgebung nicht ordnungsgemäß testen, und Sie können Ihre Angebote nicht in die Produktionsumgebung überführen.
 
-Wenn Sie Ihre Steuer- und Bankinformationen zu einem späteren Zeitpunkt eingeben möchten, können Sie mit Schritt 3, **Registrieren Ihres Kontos im Veröffentlichungsportal**, fortfahren, und später mithilfe von Links im Veröffentlichungsportal zurückkehren.
+Wenn Sie Ihre Steuer- und Bankdaten später aktualisieren möchten, können Sie mit Abschnitt 3, „Registrieren Ihres Kontos im Veröffentlichungsportal“, fortfahren und später über die Links im Veröffentlichungsportal zurückkehren.
 
 ### Hinzufügen von Steuer- und Bankinformationen
  Wenn Sie Angebote für den Erwerb veröffentlichen möchten, müssen Sie auch Auszahlungs- und Steuerinformationen hinzufügen und zur Validierung im Verkäuferdashboard absenden. Wenn Sie nur kostenlose Angebote (oder BYOL-Angebote) veröffentlichen möchten, müssen Sie diese Informationen nicht hinzufügen. Sie können dieses Informationen später eingeben, es dauert jedoch einige Zeit, bis die Steuerinformationen validiert werden können. Wenn Sie wissen, dass Sie Angebote für den Erwerb veröffentlichen werden, sollten Sie diese Informationen so schnell wie möglich bereitstellen.
 
 1. Melden Sie sich mit Ihrem Microsoft-Konto beim [Verkäuferdashboard](http://sellerdashboard.microsoft.com) an.
 
-2. Klicken Sie auf die Registerkarte **KONTO**, und klicken Sie auf "Auszahlung und Steuer".
+2. Klicken Sie auf die Registerkarte **KONTO**, und klicken Sie auf **Auszahlung und Steuer**.
 
 3. Klicken Sie auf **AUSZAHLUNGS- UND STEUERINFORMATIONEN HINZUFÜGEN**.
 
-4. Klicken Sie auf der Seite **Zahlungsmethode auswählen** unter "Neue Zahlungsmethode" auf **Bankkonto** oder **PayPal**.
+4. Klicken Sie auf der Seite **Zahlungsmethode auswählen** unter **Neue Zahlungsmethode** auf **Bankkonto** oder **PayPal**.
 
 > [AZURE.IMPORTANT]Wenn Sie über kommerzielle Angebote verfügen, die Kunden im Marketplace erwerben, wird dieses Konto für die entsprechenden Auszahlungen an Sie verwendet.
 
@@ -134,7 +135,7 @@ Wenn Sie Ihre Steuer- und Bankinformationen zu einem späteren Zeitpunkt eingebe
 
 6. Klicken Sie auf **WEITER**.
 
-7. Wählen Sie auf der Seite **Steuerinformationen** das Land oder die Region aus, in dem bzw. der sich Ihr ständiger Wohnsitz befindet. Wählen Sie anschließend das Land oder die Region aus, dessen bzw. deren erste Staatsbürgerschaft Sie besitzen, und klicken Sie auf WEITER.
+7. Wählen Sie auf der Seite **Steuerinformationen** das Land oder die Region aus, in dem bzw. der sich Ihr ständiger Wohnsitz befindet. Wählen Sie anschließend das Land oder die Region aus, dessen bzw. deren erste Staatsbürgerschaft Sie besitzen. Klicken Sie auf **WEITER**.
 
 8. Geben Sie Ihre Steuerdaten ein, und klicken Sie auf **WEITER**.
 
@@ -142,34 +143,34 @@ Wenn Sie Ihre Steuer- und Bankinformationen zu einem späteren Zeitpunkt eingebe
 
 > [AZURE.WARNING]Ohne vollständige Angabe der Steuer- und Bankdaten in Ihrem Verkäuferdashboard können Sie Ihre kommerziellen Angebote nicht in die Produktionsumgebung überführen.
 
-## 3. Registrieren Ihres Kontos im Veröffentlichungsportal
+## 3\. Registrieren Ihres Kontos im Veröffentlichungsportal
 Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihrer Angebote. Das Portal bietet einige nützliche Informationen, die Sie durch den Prozess der Angebotserstellung führen.
 
-> [AZURE.WARNING]Sie MÜSSEN hier das gleiche Microsoft-Konto verwenden, das zur Registrierung beim Verkäuferdashboard verwendet wurde. Nachdem das Masterkonto für die Veröffentlichung erstellt wurde, können diesem Konto weitere Benutzer hinzugefügt werden.
+> [AZURE.WARNING]Sie müssen hier das gleiche Microsoft-Konto verwenden, das zur Registrierung beim Verkäuferdashboard verwendet wurde. Nachdem das Masterkonto für die Veröffentlichung erstellt wurde, können diesem Konto weitere Benutzer hinzugefügt werden.
 
-1.	Öffnen Sie eine neue Chrome-Inkognito- oder IE-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
+1.	Öffnen Sie eine neue Chrome-Inkognito- oder Internet Explorer-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
 2.	Wechseln Sie zu [http://publish.windowsazure.com](http://publish.windowsazure.com).
-3.	 Melden Sie sich mit dem Microsoft-Konto (MSA) an, das Sie für Ihr Unternehmen registriert haben (also AZStore@yourcompany.com), und fügen Sie nach Bedarf Co-Admins hinzu.
-4.	Lesen und akzeptieren Sie die Nutzungsbedingungen der Veröffentlichungsvereinbarung (bei der ersten Anmeldung beim Veröffentlichungsportal). Mehr ist nicht zu tun.
+3.	 Melden Sie sich mit dem Microsoft-Konto an, das Sie für Ihr Unternehmen registriert haben (also marketplace@example.com), und fügen Sie nach Bedarf Co-Admins hinzu.
+4.	Lesen und akzeptieren Sie die Nutzungsbedingungen der Herausgebervereinbarung (bei der ersten Anmeldung beim Veröffentlichungsportal). Mehr ist nicht zu tun.
 
-  >[AZURE.TIP]Die Teilnahmerichtlinien werden [hier](http://azure.microsoft.com/support/legal/marketplace/participation-policies/) aufgeführt.
+  >[AZURE.TIP]Die Teilnahmerichtlinien werden auf der [Azure-Website](http://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
 
   > Wenn Sie Probleme beim Abschließen der Verkäuferregistrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket:
   1. Wenden Sie sich an den [Support](http://go.microsoft.com/fwlink?LinkId=272975).
-  2. Wählen Sie **Verkäuferdashboard-Registrierung und Ihr Konto**.
-  3. Wählen Sie **Für ein Entwicklerkonto registrieren**.
-  4. Wählen Sie die **Methode** für den Kontakt.
+  2. Wählen Sie **Verkäuferdashboard-Registrierung und Ihr Konto** aus.
+  3. Wählen Sie **Für ein Entwicklerkonto registrieren** aus.
+  4. Wählen Sie die Methode für die Kontaktaufnahme aus.
 
 ### Verkäuferländer
 
 > [AZURE.WARNING]
-Um Ihre Dienste im Microsoft Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, schauen Sie also regelmäßig vorbei. Eine vollständige Liste finden Sie in Abschnitt 1b des Dokuments unter diesem Link: [http://go.microsoft.com/fwlink/?LinkID=526833](http://go.microsoft.com/fwlink/?LinkID=526833).
+Um Ihre Dienste im Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, prüfen Sie sie also regelmäßig. Die vollständige Liste finden Sie in Abschnitt 1b der [Teilnahmerichtlinien für den Marketplace](http://go.microsoft.com/fwlink/?LinkID=526833).
 
 
 
 
 ## Nächste Schritte
-Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefakttyp (virtueller Computer, Entwicklerdienst, Datendienst, Lösungsvorlage), die Sie im Azure Marketplace veröffentlichen möchten. Informationen zum Veröffentlichen des jeweiligen Angebots finden Sie in den folgenden Artikeln:
+Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefakttyp (virtueller Computer, Entwicklerdienst, Datendienst oder Lösungsvorlage), den Sie im Azure Marketplace veröffentlichen möchten. Informationen zum Veröffentlichen des jeweiligen Angebots finden Sie in den folgenden Artikeln:
 
 || VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage |
 |----|-----|-----|-----|-----|
@@ -208,4 +209,4 @@ Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefaktty
 [link-devsvc-prereq]: marketplace-publishing-dev-service-creation-prerequisites.md
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

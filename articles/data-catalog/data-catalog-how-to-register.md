@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/06/2015"
+   ms.date="11/20/2015"
    ms.author="maroche"/>
 
 
@@ -95,4 +95,4 @@ Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue O
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

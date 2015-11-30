@@ -31,9 +31,9 @@ Nachstehend sehen Sie ein Beispiel für eine globale, über mehrere Kanäle durc
 
 Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Web-Apps erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
 
-Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), wie z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
+Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
 
-Ihre vorhandenen Webressourcen können in Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools in Web-Apps verschieben. Wenn Sie häufig digitale Marketingkampagnen erstellen, verfügen Sie möglicherweise bereits über Webressourcen in einem Quellcodeverwaltungssystem. Web-Apps unterstützen eine direkte Bereitstellung aus gängigen Quellcodeverwaltungssystemen wie z. B. [Visual Studio], [Visual Studio Online] oder [Git] (lokal), GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools in Web-Apps verschieben. Wenn Sie häufig digitale Marketingkampagnen erstellen, verfügen Sie möglicherweise bereits über Webressourcen in einem Quellcodeverwaltungssystem. Web-Apps unterstützen eine direkte Bereitstellung aus gängigen Quellcodeverwaltungssystemen wie [Visual Studio], [Visual Studio Online] oder [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Bleiben Sie flexibel
 
@@ -138,4 +138,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

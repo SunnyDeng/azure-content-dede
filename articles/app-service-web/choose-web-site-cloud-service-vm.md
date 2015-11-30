@@ -161,8 +161,8 @@ SSL-Unterstützung|X|X|X|Für App Service-Web-Apps wird SSL für benutzerdefinie
 Visual Studio-Integration|X|X|X|
 Remotedebugging|X|X|X|
 Bereitstellung von Code mit TFS|X|X|X|
-Netzwerkisolierung mit [Azure Virtual Network](../services/virtual-network/)|X|X|X|Siehe auch [Virtual Network-Integration in Azure Websites](../blog/2014/09/15/azure-websites-virtual-network-integration/)
-Unterstützung für [Azure Traffic Manager](../services/traffic-manager/)|X|X|X|
+Netzwerkisolierung mit [Azure Virtual Network](/services/virtual-network/)|X|X|X|Siehe auch [Virtual Network-Integration in Azure Websites](/blog/2014/09/15/azure-websites-virtual-network-integration/)
+Unterstützung für [Azure Traffic Manager](/services/traffic-manager/)|X|X|X|
 Integrierte Endpunktüberwachung|X|X|X|
 Remotedesktopzugriff auf Server||X|X|
 Installieren einer beliebigen benutzerdefinierten MSI||X|X|
@@ -204,4 +204,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

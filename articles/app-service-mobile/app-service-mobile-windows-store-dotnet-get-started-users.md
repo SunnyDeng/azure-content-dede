@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/22/2015"
+	ms.date="11/17/2015"
 	ms.author="glenga"/>
 
 # Hinzufügen der Authentifizierung zu Ihrer Windows-App
@@ -26,10 +26,6 @@ In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Servi
 
 Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Ihrer mobilen App] abschließen.
 
-##<a name="create-gateway"></a>Erstellen eines App Service-Gateways
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-gateway](../../includes/app-service-mobile-dotnet-backend-create-gateway.md)]
-
 ##<a name="register"></a>Registrieren Ihrer App für die Authentifizierung und Konfigurieren von App Service
 
 [AZURE.INCLUDE [app-service-mobile-register-authentication](../../includes/app-service-mobile-register-authentication.md)]
@@ -38,7 +34,7 @@ Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunäc
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-&nbsp;&nbsp;4. Öffnen Sie in Visual Studio die freigegebene Projektdatei „App.Xaml.cs“, und stellen Sie sicher, dass die **MobileServiceClient**-Instanz so konfiguriert ist, dass sowohl die URL des Mobile App-Back-Ends als auch die des Gateways verwendet werden kann.
+&nbsp;&nbsp;4. Öffnen Sie in Visual Studio die freigegebene Projektdatei "App.Xaml.cs", und stellen Sie sicher, dass die **MobileServiceClient**-Instanz so konfiguriert ist, dass sowohl die URL des Mobile App-Back-Ends als auch die des Gateways verwendet werden kann.
 
 &nbsp;&nbsp;5. Drücken Sie mit einem der Windows-App-Projekte als Startprojekt zum Ausführen der App F5. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
 
@@ -62,4 +58,4 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 [Erste Schritte mit Ihrer mobilen App]: app-service-mobile-windows-store-dotnet-get-started.md
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=Nov15_HO4-->

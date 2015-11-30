@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/11/2015"
+   ms.date="11/13/2015"
    ms.author="vturecek"/>
 
 # Hinweise zur Typserialisierung von Service Fabric Reliable Actors
@@ -55,7 +55,7 @@ Der Actor-Status muss Datenvertrag-serialisierbar sein. Wenn z. B. eine Actor-Kl
 
 ```csharp
 
-public class VoiceMailActor : Actor<VoicemailBox>, IVoiceMail
+public class VoiceMailActor : StatefulActor<VoicemailBox>, IVoiceMail
 {
 ...
 
@@ -82,4 +82,4 @@ public class VoicemailBox
 
 ```
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

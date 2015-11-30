@@ -22,7 +22,7 @@
 
 ##Übersicht 
 
-In dieser Anleitung wird die Ausführung gängiger Aufgaben mithilfe der verwalteten Clientbibliothek für Azure Mobile Services in Windows- und Xamarin-Apps beschrieben. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst das Tutorial [Mobile Services-Schnellstart](mobile-services-dotnet-backend-xamarin-ios-get-started.md) absolvieren.
+In dieser Anleitung wird die Ausführung gängiger Aufgaben mithilfe der verwalteten Clientbibliothek für Azure Mobile Services in Windows- und Xamarin-Apps beschrieben. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst das Lernprogramm [Mobile Services-Schnellstart](mobile-services-dotnet-backend-xamarin-ios-get-started.md) absolvieren.
 
 [AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
@@ -44,7 +44,7 @@ Der entsprechende typisierte clientseitige .NET-Typ sieht wie folgt aus:
 		public bool Complete { get; set; }
 	}
 
-Beachten Sie, dass das [JsonPropertyAttribute](http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm) verwendet wird, um die "PropertyName"-Zuordnung zwischen dem Clienttyp und der Tabelle zu definieren.
+Beachten Sie, dass [JsonPropertyAttribute](http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm) verwendet wird, um die PropertyName-Zuordnung zwischen dem Clienttyp und der Tabelle zu definieren.
 
 Wenn das dynamische Schema in einem mobilen JavaScript-Back-End-Dienst aktiviert ist, generieren die mobilen Azure-Dienste automatisch neue Spalten auf der Grundlage des Objekts in der Einfüge- oder Updateanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://go.microsoft.com/fwlink/?LinkId=296271). In einem mobilen .NET Back-End-Dienst wird die Tabelle im Datenmodell des Projekts definiert.
 
@@ -64,12 +64,12 @@ Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendun
 
 ##<a name="instantiating"></a>Gewusst wie: Erstellen von Tabellenverweisen
 
-Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie die [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx)-Methode für eine Instanz von `MobileServiceClient` wie folgt aufrufen:
+Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie wie folgt die Methode [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx) für eine Instanz von `MobileServiceClient` aufrufen:
 
     IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
 
-Dies ist das typisierte Serialisierungsmodell. Eine Erörterung des [untypisierten Serialisierungsmodells](#untyped) finden Sie weiter unten.
+Dies ist das typisierte Serialisierungsmodell. Die Besprechung des [untypisierten Serialisierungsmodells](#untyped) finden Sie weiter unten.
 
 ##<a name="querying"></a>Abfragen von Daten aus einem mobilen Dienst
 
@@ -292,17 +292,17 @@ Beachten Sie, dass dies ein typisierter Methodenaufruf ist, der erfordert, dass 
 
 Mit dem Mobile Services-Client können Sie die App für Pushbenachrichtigungen mit Azure Notification Hubs registrieren. Wenn Sie sich registrieren, erhalten Sie ein Handle, das vom plattformspezifischen Pushbenachrichtigungsdienst bezogen wird. Diesen Wert müssen Sie zusammen mit allen übrigen Tags beim Registrieren angeben. Der folgende Code registriert Ihre Windows-App für Pushbenachrichtigungen mit dem Windows-Benachrichtigungsdienst (Windows Notification Service, WNS):
 
-		private async void InitNotificationsAsync()
-		{
-		    // Request a push notification channel.
-		    var channel =
-		        await PushNotificationChannelManager
-		            .CreatePushNotificationChannelForApplicationAsync();
+	private async void InitNotificationsAsync()
+	{
+	    // Request a push notification channel.
+	    var channel =
+	        await PushNotificationChannelManager
+	            .CreatePushNotificationChannelForApplicationAsync();
 
-		    // Register for notifications using the new channel and a tag collection.
-			var tags = new List<string>{ "mytag1", "mytag2"};
-		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
-		}
+	    // Register for notifications using the new channel and a tag collection.
+		var tags = new List<string>{ "mytag1", "mytag2"};
+	    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
+	}
 
 Beachten Sie, dass in diesem Beispiel zwei Tags in der Registrierung enthalten sind. Weitere Informationen zu Windows-Apps finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu Ihrer App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push.md).
 
@@ -310,8 +310,20 @@ Xamarin-Apps erfordern zusätzlichen Code zum Registrieren einer Xamarin-App unt
 
 >[AZURE.NOTE]Wenn Sie Benachrichtigungen an bestimmte registrierte Benutzer senden möchten, ist es wichtig, vor der Registrierung eine Authentifizierung anzufordern und sicherzustellen, dass der Benutzer dazu berechtigt ist, sich mit einem bestimmten Tag zu registrieren. Sie müssen beispielsweise sicherstellen, dass ein Benutzer sich nicht mit einem Tag anmeldet, das die Benutzer-ID eines anderen Benutzers darstellt. Weitere Informationen finden Sie unter [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md)
 
+##<a name="pull-notifications"></a>Vorgehensweise: Verwenden von periodischen Benachrichtigungen in einer Windows-App
 
-##<a name="optimisticconcurrency"></a>Gewusst wie: Verwenden von optimistischer Parallelität.
+Windows unterstützt periodische Benachrichtigungen (Pullbenachrichtigungen) für die Aktualisierung von Live-Kacheln. Bei aktivierten periodischen Benachrichtigungen greift Windows in regelmäßigen Abständen auf einen benutzerdefinierten API-Endpunkt zu, um die App-Kachel im Startmenü zu aktualisieren. Für die Verwendung periodischer Benachrichtigungen müssen Sie [eine benutzerdefinierte API definieren](mobile-services-javascript-backend-define-custom-api.md), die XML-Daten in einem kachelspezifischen Format zurückgibt. Weitere Informationen finden Sie unter [Periodische Benachrichtigungen](https://msdn.microsoft.com/library/windows/apps/hh761461.aspx).
+
+Das folgende Beispiel aktiviert periodische Benachrichtigungen, um Kachelvorlagendaten von einem benutzerdefinierten Endpunkt vom Typ *tiles* anzufordern.
+
+    TileUpdateManager.CreateTileUpdaterForApplication().StartPeriodicUpdate(
+        new System.Uri(MobileService.ApplicationUri, "/api/tiles"),
+        PeriodicUpdateRecurrence.Hour
+    ); 
+
+Wählen Sie einen passenden [PeriodicUpdateRecurrance](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.periodicupdaterecurrence.aspx)-Wert für das Aktualisierungsintervall Ihrer Daten aus.
+
+##<a name="optimisticconcurrency"></a>Vorgehensweise: Verwenden von optimistischer Parallelität
 
 In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Die Steuerung für optimistische Parallelität nimmt an, dass jede Transaktion Commits ausführen kann und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Parallelität, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
 
@@ -435,7 +447,7 @@ Um die neue Sammlung in Windows Phone 8- und Silverlight-Apps zu nutzen, verwen
 
 Die Sammlung, die durch den Aufruf von `ToCollectionAsync` bzw. `ToCollection` erstellt wurde, kann an UI-Steuerelemente gebunden werden. Diese Sammlung unterstützt Seitenverwaltung, d. h. ein Steuerelement kann die Sammlung anweisen, "weitere Elemente zu laden", und die Sammlung erledigt dies für das Steuerelement. Bis zu diesem Punkt wird noch kein Benutzercode ausgeführt, das Steuerelement startet den Fluss. Da die Sammlung jedoch Daten aus dem Netzwerk lädt, ist zu erwarten, dass dieser Ladevorgang manchmal fehlschlägt. Zur Behandlung solcher Fehler können Sie die `OnException`-Methode für `MobileServiceIncrementalLoadingCollection` überschreiben, um Ausnahmen zu behandeln, die aus Aufrufen von `LoadMoreItemsAsync` durch Steuerelemente entstehen.
 
-Stellen Sie sich vor, Ihre Tabelle hat viele Felder, aber Sie möchten nur einen Teil der Felder in Ihrem Steuerelement anzeigen. Folgen Sie oben der Anleitung unter [Bestimmte Spalten auswählen](#selecting), um bestimmte Spalten für die Anzeige auf der Benutzeroberfläche auszuwählen.
+Stellen Sie sich vor, Ihre Tabelle hat viele Felder, aber Sie möchten nur einen Teil der Felder in Ihrem Steuerelement anzeigen. Folgen Sie der weiter oben bereitgestellten Anleitung im Abschnitt [Bestimmte Spalten auswählen](#selecting), um bestimmte Spalten für die Anzeige auf der Benutzeroberfläche auszuwählen.
 
 ##<a name="authentication"></a>Authentifizieren von Benutzern
 
@@ -444,7 +456,7 @@ Mobile Services unterstützt Authentifizierung und Autorisierung von Anwendungsb
 Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein _Serverfluss_ und ein _Clientfluss_. Der Serverfluss bietet die einfachste Authentifizierungsform, da in diesem Fall die Authentifizierungs-Webschnittstelle des Anbieters verwendet wird. Der Clientfluss ermöglicht eine tiefere Integration mit gerätespezifischen Fähigkeiten, da in diesem Fall anbieterspezifische und gerätespezifische SDKs verwendet werden.
 
 ###Serverfluss
-Sie müssen Ihre Anwendung bei Ihrem Identitätsanbieter registrieren, um den mobilen Diensten die Verwaltung des Authentifizierungsprozesses in Ihren Windows-Apps zu ermöglichen. Anschließend müssen Sie in Ihrem mobilen Dienst die Anwendungs-ID und den geheimen Schlüssel Ihres Anbieters konfigurieren. Weitere Informationen finden Sie im Lernprogramm [Authentifizierung zu Ihrer App hinzufügen].
+Sie müssen Ihre Anwendung bei Ihrem Identitätsanbieter registrieren, um Mobile Services die Verwaltung des Authentifizierungsprozesses in Ihren Windows-Apps zu ermöglichen. Anschließend müssen Sie in Ihrem mobilen Dienst die Anwendungs-ID und den geheimen Schlüssel Ihres Anbieters konfigurieren. Weitere Informationen finden Sie im Lernprogramm [Authentifizierung zu Ihrer App hinzufügen].
 
 Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync]-Methode mit dem [MobileServiceAuthenticationProvider]-Wert Ihres Anbieters aufrufen. Der folgende Beispielcode startet eine Serverfluss-Anmeldung über Facebook.
 
@@ -752,4 +764,4 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

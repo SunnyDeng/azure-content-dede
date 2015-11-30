@@ -5,6 +5,6 @@ Um die Endgeräte zu schützen, müssen Sie den Zugriff auf authentifizierte Cli
 
 2. Legen Sie alle Berechtigungen für Tabellenvorgänge auf **Nur authentifizierte Benutzer** fest.
 
-	 Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle einen authentifizierten Benutzer erfordern. Die Einstellung ist auch für dieses Lernprogramm erforderlich. Um Ihr spezifisches Szenario zu unterstützen, können Sie für jeden Vorgang verschiedene Berechtigungen einstellen.
+	 Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle einen authentifizierten Benutzer erfordern. Die Einstellung ist auch für dieses Lernprogramm erforderlich. Um Ihr spezifisches Szenario zu unterstützen, können Sie für jeden Vorgang unterschiedliche Berechtigungen festlegen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

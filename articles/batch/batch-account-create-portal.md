@@ -13,12 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="11/10/2015"
 	ms.author="danlep"/>
 
 
 
 # Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Vorschauportal
+
+> [AZURE.SELECTOR]
+- [Azure preview portal](batch-account-create-portal.md)
+- [Batch Management .NET](batch-management-dotnet.md)
 
 In diesem Artikel wird beschrieben, wie Sie das [Azure-Vorschauportal](https://portal.azure.com) zum Erstellen und Verwalten eines Azure Batch-Kontos und der zugehörigen Einstellungen wie der Kontoschlüssel verwenden. Sie benötigen eine Batch-Konto-URL und den zugehörigen Zugriffsschlüssel, um alle Batch-API-Anforderungen zu authentifizieren. Außerdem ordnen Sie alle Batch-Ressourcen (z. B. Pools, Aufträge und Aufgaben) für Ihre Batch-Workload einem bestimmten Batch-Konto zu.
 
@@ -34,7 +38,7 @@ In diesem Artikel wird beschrieben, wie Sie das [Azure-Vorschauportal](https://p
 
 3. Prüfen Sie die Informationen, und klicken Sie auf **Erstellen**.
 
-4. Geben Sie die folgenden Informationen auf dem Blatt **Neues Batch-Konto** ein:
+4. Geben Sie die folgenden Informationen auf dem Blatt**Neues Batch-Konto** ein:
 
 	a. Geben Sie unter **Kontoname** einen eindeutigen Namen ein, der in der Batch-Konto-URL verwendet werden soll.
 
@@ -42,9 +46,9 @@ In diesem Artikel wird beschrieben, wie Sie das [Azure-Vorschauportal](https://p
 
 	b. Wenn Sie über mehrere Abonnements verfügen, klicken Sie auf **Abonnement**, um ein verfügbares Abonnement auszuwählen, in dem das Konto erstellt wird.
 
-	c. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe für das Konto aus, oder erstellen Sie eine neue.
+	c. Klicken Sie auf **Ressourcengruppe** wählen eine vorhandene Ressourcengruppe für das Konto aus, oder erstellen eine neue.
 
-	d. Wählen Sie in **Standort** eine Azure-Region aus, in der Batch verfügbar ist.
+	d. Wählen Sie in **Speicherort** eine Azure-Region aus, in der Batch verfügbar ist.
 
 	![Erstellen eines Batch-Kontos][account_portal]
 
@@ -64,7 +68,7 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 * Andere Methoden zum Erstellen und Verwalten von Batch-Konten bieten [Batch-PowerShell-Cmdlets](batch-powershell-cmdlets-get-started.md) und die [Batch Management .NET-Bibliothek](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/).
 
 
-* Azure berechnet keine Gebühren für ein Batch-Konto. Sie erhalten nur eine Abrechnung für die Verwendung von Azure-Computeressourcen und anderen Diensten, wenn Ihre Workloads ausgeführt werden (siehe [Batch Preise](https://azure.microsoft.com/pricing/details/batch/)).
+* Azure berechnet keine Gebühren für ein Batch-Konto. Sie erhalten nur eine Abrechnung für die Verwendung von Azure-Computerressourcen und anderen Diensten, wenn Ihre Workloads ausgeführt werden (siehe [Batch Preise](https://azure.microsoft.com/pricing/details/batch/)).
 
 * Sie können mehrere Batch-Workloads in einem Batch-Konto ausführen oder die Workloads auf Batch-Konten in verschiedenen Azure-Regionen aufteilen.
 
@@ -80,4 +84,4 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 [account_portal]: ./media/batch-account-create-portal/batch_acct_portal.png
 [account_keys]: ./media/batch-account-create-portal/account_keys.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

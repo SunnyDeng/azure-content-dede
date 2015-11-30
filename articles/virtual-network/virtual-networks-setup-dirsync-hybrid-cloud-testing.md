@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="11/13/2015" 
 	ms.author="josephd"/>
 
 # Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
@@ -32,11 +32,11 @@ Diese Konfiguration simuliert einen Dirsync-Server in Azure-Produktionsumgebung 
 - Einem standortübergreifenden virtuellen in Azure gehosteten Netzwerk (TestVNET)
 - einer Site-to-Site-VPN-Verbindung.
 - Ein Office 365 Fast Track-Testabonnement.
-- Ein Dirsync-Server und sekundärer Domänencontroller im virtuellen Netzwerk TestVNET.
+- Ein DirSync-Server, der das Azure AD Connect-Tool ausführt, und ein sekundärer Domänencontroller im virtuellen Netzwerk TestVNET.
 
 Diese Konfiguration bietet eine Grundlage und einen allgemeinen Ausgangspunkt für Folgendes:
 
-- Entwickeln und Testen von Anwendungen für Office 365, die Synchronisierung mit lokalen Active Directory-Domäne mithilfe der Kennwortsynchronisierung abhängen.
+- Entwickeln und Testen von Anwendungen für Office 365, die von der Synchronisierung mit einer lokalen Active Directory-Domäne mithilfe der Kennwortsynchronisierung abhängen.
 - Testen dieses cloudbasierten IT-Workloads
 
 Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
@@ -59,22 +59,21 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ## Phase 2: Konfigurieren der Testversion von Office 365 Fast Track
 
-Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Es wird empfohlen, dass Sie eine Variante des Unternehmensnamens Contoso als Namen Ihres Unternehmens verwenden, das ein fiktives Unternehmen ist, das in Microsoft-Beispielinhalten verwendet wird, wobei dies aber nicht unbedingt erforderlich ist.
+Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Wir empfehlen Ihnen, dass Sie eine Variante des Unternehmensnamens Contoso für den Namen Ihres Unternehmens verwenden. Das ist ein fiktives Unternehmen, das in Microsoft-Beispielinhalten verwendet wird, wobei dies aber nicht unbedingt erforderlich ist.
 
 Melden Sie sich als Nächstes ein neues Microsoft-Konto an. Wechseln Sie zu ****http://outlook.com**, und erstellen Sie ein Konto mit einer E-Mail-Adresse wie user123@outlook.com. Sie können für eine Testversion von Office 365 Fast Track mit diesem Konto anmelden.
 
-Melden Sie sich als Nächstes für eine neue Office 365 Fast Track-Testversion an.
+Melden Sie sich als Nächstes für eine neue Office 365 Enterprise E3-Testversion an.
 
 1.	Melden Sie sich mit den Anmeldeinformationen des CORP\\User1 CLIENT1 an.
-2.	Öffnen Sie Internet Explorer, und wechseln Sie zu ****http://fasttrack.office.com**.
-3.	Klicken Sie auf **Erste Schritte mit Fast Track**.
-4.	Klicken Sie auf der Seite für die ersten Schritte mit Fast Track unter **Melden Sie sich zunächst für eine Testversion von Office 365 an** auf **Registrierung für Unternehmen**.
-5.	Füllen Sie auf der Seite für Schritt 1 alle Felder aus, und geben Sie unter **Geschäftliche E-Mail-Adresse** Ihr neues Microsoft-Konto an. Klicken Sie dann auf **Weiter**.
-6.	Geben Sie den Namen der ersten Office 365-Konto auf der Seite Schritt2 in das erste Feld der fiktiven Firmennamen und dann ein Kennwort. Notieren Sie die zurückgegebene E-Mail-Adresse (z. B. user123@contoso123.onmicrosoft.com), und bewahren Sie sie mit dem Kennwort sicher auf. Sie benötigen diese Informationen, um das Tool Active Directory-Synchronisierung in Phase 3 Konfigurations-Assistenten abgeschlossen haben. Klicken Sie auf **Weiter**.
-7.	Geben Sie auf der Seite für Schritt 3 die Telefonnummer eines Mobiltelefons oder Smartphones an, auf dem Sie SMS empfangen können. Klicken Sie dann auf **SMS senden**.
-8.	Nachdem Sie die SMS auf Ihrem Mobiltelefon erhalten haben, geben Sie den Überprüfungscode ein, und klicken Sie dann auf **Mein Konto erstellen**. 
-9.	Wenn Office 365 Ihr Konto erstellt hat, klicken Sie auf **Sie sind jetzt startklar**.
-10.	Die wichtigste Office 365-Portalseite sollte jetzt angezeigt werden. Klicken Sie im oberen Menüband auf **Admin**, und klicken Sie dann auf **Office 365**. Die Office 365 Admin Center-Seite angezeigt wird. Lassen Sie auf dieser Seite auf "client1" geöffnet.
+2.	Öffnen Sie Internet Explorer, und wechseln Sie zu ****https://go.microsoft.com/fwlink/p/?LinkID=403802**.
+3.	Melden Sie sich für die Testversion von Office 365 Enterprise E3 an.
+
+Wenn Sie zur Eingabe Ihrer **geschäftlichen E-Mail-Adresse** aufgefordert werden, geben Sie Ihr neues Microsoft-Konto an.
+
+Wenn Sie zum Erstellen einer ID aufgefordert werden, geben Sie den Namen eines anfänglichen Office 365-Kontos, den fiktiven Firmennamen und ein Kennwort ein. Notieren Sie die zurückgegebene E-Mail-Adresse (z. B. user123@contoso123.onmicrosoft.com), und bewahren Sie sie mit dem Kennwort sicher auf. Sie benötigen diese Informationen, um die Azure AD Connect-Konfiguration in Phase 3 abzuschließen.
+
+Danach wird die Hauptseite des Office 365-Portals angezeigt. Klicken Sie im oberen Menüband auf **Admin**, und klicken Sie dann auf **Office 365**. Die Office 365 Admin Center-Seite angezeigt wird. Lassen Sie auf dieser Seite auf "client1" geöffnet.
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
 
@@ -82,16 +81,16 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ## Phase 3: Konfigurieren des DirSync-Servers (DS1)
 
-Erstellen Sie zunächst einen virtuellen Computer in Azure für DS1 mit diesen Befehlen an der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < and >.
+Erstellen Sie zunächst einen virtuellen Azure-Computer für DS1 mit diesen Befehlen an der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < and >.
 
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
-	$cred1=Get-Credential â€“Message "Type the name and password of the local administrator account for DS1."
-	$cred2=Get-Credential â€“UserName "CORP\User1" â€“Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for DS1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DS1 -InstanceSize Medium -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
-	New-AzureVM â€“ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Schließen Sie dann den virtuellen Computer DS1.
 
@@ -115,16 +114,6 @@ Als Nächstes installieren Sie .NET 3.5 auf DS1 mit dem folgenden Befehl an der 
 
 	Add-WindowsFeature NET-Framework-Core
 
-Installieren Sie dann die Verzeichnissynchronisierung auf DS1.
-
-1.	Führen Sie Internet Explorer aus, geben Sie ****http://go.microsoft.com/fwlink/?LinkID=278924** in der Adressleiste ein, und drücken Sie dann die EINGABETASTE. Wenn Sie aufgefordert werden, "dirsync.exe" auszuführen, klicken Sie auf den Pfeil neben **Speichern**, klicken Sie auf **Speichern unter**, und klicken Sie dann auf **Speichern**, um die Datei im Ordner "Downloads" zu speichern. Weitere Informationen zur Installation des Tools finden Sie unter [Installieren oder Aktualisieren des Verzeichnissynchronisierungstools](http://technet.microsoft.com/library/jj151800).
-2.	Öffnen Sie den Ordner **Downloads**, klicken Sie mit der rechten Maustaste auf die Datei **dirsync**, und klicken Sie dann auf **Als Administrator ausführen**.
-3.	Klicken Sie auf der Willkommensseite des Assistenten für das Setup der Active Directory-Synchronisierung auf **Weiter**. 
-4.	Klicken Sie auf der Seite "Lizenzbedingungen" auf **Ich stimme zu**, und klicken Sie dann auf **Weiter**.
-5.	Klicken Sie auf der Seite "Installationsordner auswählen" auf **Weiter**. Zum Abschließen der Installation mehrere Minuten dauern.
-6.	Deaktivieren Sie auf der Seite "Abgeschlossen" die Option **Konfigurations-Assistenten jetzt starten**, und klicken Sie dann auf **Fertig stellen**.
-7.	Klicken Sie auf der Startseite auf **user1**, und klicken Sie dann auf **Abmelden**.
-
 Aktivieren Sie als Nächstes Verzeichnissynchronisierung für Ihre Office 365 Fast Track-Testversion.
 
 1.	Klicken Sie auf CLIENT1 auf der Seite **Office 365 Admin Center** im linken Bereich auf **Benutzer**, und klicken Sie dann auf **Aktive Benutzer**.
@@ -141,20 +130,19 @@ Als Nächstes melden Sie sich mit dem Konto CORP\\User1 auf DC1, und öffnen Sie
 
 Wenn Sie jeden Windows PowerShell-Befehl ausführen, werden Sie zur Eingabe des neuen Kennworts des Benutzers aufgefordert. Diese Kennwörter zu erfassen und an einem sicheren Ort aufbewahren. Diese werden später benötigt werden.
 
-Konfigurieren Sie anschließend die Verzeichnissynchronisierung auf DS1.
+Installieren und konfigurieren Sie als Nächstes das Azure AD Connect-Tool auf DS1.
 
-1.	Melden Sie sich mit dem Konto CORP\\User1 in DS1 an.
-2.	Geben Sie auf der **Startseite** **Directory Sync** ein.
-3.	Klicken Sie mit der rechten Maustaste auf **Verzeichnissynchronisierungskonfiguration**, und klicken Sie dann auf **Als Administrator ausführen**. Dadurch wird der Konfigurations-Assistent gestartet.
-4.	Klicken Sie auf der Seite **Willkommen** auf Weiter.
-5.	Geben Sie die e-Mail-Adresse und das Kennwort beim Einrichten der Testversion von Office 365 Fast Track in Phase 2 erstellten Konto auf der Seite Microsoft Azure Active Directory-Anmeldeinformationen. Klicken Sie auf Weiter. 
-6.	Geben Sie auf der Seite für die Active Directory-Anmeldeinformationen **CORP\\User1** unter **Benutzername** und das Kontokennwort für "User1" unter **Kennwort** ein. Klicken Sie auf **Weiter**.
-7.	Wählen Sie auf der Seite "Hybride Bereitstellung" die Option **Hybride Bereitstellung aktivieren** aus, und klicken Sie dann auf **Weiter**.
-8.	Wählen Sie auf der Seite "Kennwortsynchronisierung" die Option **Kennwortsynchronisierung aktivieren** aus, und klicken Sie dann auf **Weiter**.
-9.	Die Seite Konfiguration angezeigt. Wenn die Konfiguration abgeschlossen ist, klicken Sie auf **Weiter**.
-10.	Klicken Sie auf der Seite "Abgeschlossen" auf **Fertig stellen**. Wenn Sie dazu aufgefordert werden, klicken Sie auf **OK**.
+1.	Führen Sie Internet Explorer aus, geben Sie ****https://www.microsoft.com/download/details.aspx?id=47594** in der **Adressleiste** ein, und betätigen Sie dann die EINGABETASTE.
+2.	Führen Sie das Microsoft Azure AD Connect-Setupprogramm aus.
+3.	Doppelklicken Sie auf dem Desktop auf ** Azure AD Connect**.
+4.	Wählen Sie auf der Seite **Willkommen** die Option **Ich stimme den Lizenzbedingungen und dem Datenschutzhinweis zu**, und klicken Sie dann auf **Weiter**.
+5.	Klicken Sie auf der Seite **Expresseinstellungen** auf **Expresseinstellungen verwenden**.
+6.	Geben Sie auf der Seite **Herstellen einer Verbindung mit Azure AD** die E-Mail-Adresse und das Kennwort des anfänglichen Kontos ein, das Sie beim Einrichten der Testversion von Office 365 Fast Track in Phase 2 erstellt haben. Klicken Sie auf **Weiter**.
+7.	Geben Sie auf der Seite **Herstellen einer Verbindung mit AD DS** den Namen **CORP\\User1** unter **Benutzername** und das User1-Kontokennwort unter **Kennwort** ein. Klicken Sie auf Weiter.
+8.	Überprüfen Sie auf der Seite **Bereit zum Konfigurieren** die Einstellungen, und klicken Sie dann auf **Installieren**.
+9.	Klicken Sie auf der Seite **Konfiguration abgeschlossen** auf **Beenden**.
 
-Als Nächstes stellen Sie sicher, dass die Benutzerkonten in der CORP-Domäne zu Office 365 synchronisiert werden. Beachten Sie, dass ein paar Stunden dauert, bevor die Synchronisierung erfolgt.
+Als Nächstes stellen Sie sicher, dass die Benutzerkonten in der CORP-Domäne zu Office 365 synchronisiert werden. Beachten Sie, dass es möglicherweise ein paar Minuten dauert, bis die Synchronisierung erfolgt.
 
 Klicken Sie auf CLIENT1 auf der Seite **Active Directory-Synchronisierung einrichten und verwalten** auf den Link **Benutzer** in Schritt 6 auf der Seite. Wenn die Verzeichnissynchronisierung erfolgreich war, sollte etwa wie folgt angezeigt werden.
 
@@ -162,7 +150,7 @@ Klicken Sie auf CLIENT1 auf der Seite **Active Directory-Synchronisierung einric
 
 Die Spalte **Status** gibt an, dass das Konto über die Synchronisierung mit einer Active Directory-Domäne abgerufen wurde.
 
-Führen Sie dann die Office 365-Kennwortsynchronisierung mit Lynda Myer Active Directory-Konto vor.
+Führen Sie dann die Office 365-Kennwortsynchronisierung mit dem Active Directory-Konto „Lynda Myer“ aus.
 
 1.	Wählen Sie auf CLIENT1 auf der Seite **Aktive Benutzer** das Konto **Lynda Meyer** aus.
 2.	Klicken Sie in den Eigenschaften des Kontos "Lynda Meyer" unter **Zugewiesene Lizenz** auf **Bearbeiten**.
@@ -170,7 +158,7 @@ Führen Sie dann die Office 365-Kennwortsynchronisierung mit Lynda Myer Active D
 4.	Wählen Sie **Microsoft Office 365 (Plan E3)** aus, und klicken Sie dann auf **Speichern**.
 5.	Schließen Sie Internet Explorer.
 6.	Führen Sie Internet Explorer aus, und wechseln Sie zu ****http://portal.microsoftonline.com**.
-7.	Melden Sie sich mit Lynda Meyers Office 365-Anmeldeinformationen an. Der Benutzername lautet dann "lyndam@<*Ihr fiktiver Name*>.onmicrosoft.com". Das Kennwort ist das Kennwort für das Lynda Dressler Active Directory-Benutzerkonto.
+7.	Melden Sie sich mit den Office 365-Anmeldeinformationen von Lynda Meyer an. Der Benutzername lautet dann "lyndam@<*Ihr fiktiver Name*>.onmicrosoft.com". Das Kennwort ist das Kennwort für das Lynda Dressler Active Directory-Benutzerkonto.
 8.	Nach der erfolgreichen Anmeldung sehen Sie die Hauptseite des Office 365-Portals mit **Heute machen wir einen Unterschied**.
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
@@ -197,7 +185,4 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

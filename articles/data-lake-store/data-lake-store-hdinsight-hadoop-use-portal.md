@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/29/2015"
+   ms.date="11/13/2015"
    ms.author="nitinme"/>
 
 # Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Vorschauportals
@@ -62,7 +62,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 
 		![Dienstprinzipal für HDInsight-Cluster hinzufügen](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.4.png "Dienstprinzipal für HDInsight-Cluster hinzufügen")
 
-		Klicken Sie auf dem Blatt **Cluster-AAD-Identität** auf **Auswählen**, um mit dem Dienstprinzipal fortzufahren, das erstellt werden soll.
+		Klicken Sie auf dem Blatt **Cluster-AAD-Identität** auf **Auswählen**, um mit dem Dienstprinzipal fortzufahren, der erstellt werden soll.
 
 		![Dienstprinzipal für HDInsight-Cluster hinzufügen](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.5.png "Dienstprinzipal für HDInsight-Cluster hinzufügen")
 
@@ -75,7 +75,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 
 		![Dienstprinzipal für HDInsight-Cluster hinzufügen](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png "Dienstprinzipal für HDInsight-Cluster hinzufügen")
 
-6. Klicken Sie auf dem Blatt **Datenquelle** auf **Auswählen**, und fahren Sie mit der Clusterbereitstellung fort, wie dies unter [Erstellen von Hadoop-Clustern in HDInsight](../hdinsight/hdinsight-provision-clusters.md#create-using-the-preview-portal) beschrieben ist.
+6. Klicken Sie auf dem Blatt **Datenquelle** auf **Auswählen**, und fahren Sie mit der Clusterbereitstellung wie unter [Erstellen von Hadoop-Clustern in HDInsight](../hdinsight/hdinsight-provision-clusters.md#create-using-the-preview-portal) beschrieben fort.
 
 7. Nach der Bereitstellung des Clusters können Sie überprüfen, ob der Dienstprinzipal dem HDInsight-Cluster zugeordnet wurde. Klicken Sie hierzu auf dem Clusterblatt auf **Einstellungen** und **Cluster-AAD-Identität**. Der zugeordnete Dienstprinzipal sollte jetzt angezeigt werden.
 
@@ -92,7 +92,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 	Führen Sie unter Ihrem Data Lake-Speicherkonto die folgenden Aufgaben aus.
 
 	* [Erstellen Sie einen Ordner im Data Lake-Speicher](data-lake-store-get-started-portal.md#createfolder).
-	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/ProjectKona/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
 
 	Sie verwenden die hochgeladenen Dateien später, wenn Sie das Data Lake-Speicherkonto mit dem HDInsight-Cluster testen.
 
@@ -169,11 +169,11 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 
 1. Melden Sie sich am neuen [Azure-Vorschauportal](https://portal.azure.com) an.
 
-2. Klicken Sie auf **Durchsuchen**, **HDInsight-Cluster** und dann auf den HDInsight-Cluster, den Sie erstellt haben.
+2. Klicken Sie auf **Durchsuchen**, auf **HDInsight-Cluster** und dann auf den HDInsight-Cluster, den Sie erstellt haben.
 
 3. Klicken Sie auf dem Clusterblatt auf **Remotedesktop** und dann auf dem Blatt **Remotedesktop** auf **Verbinden**.
 
-	![Remoteverbindung mit HDI-Cluster](./media/data-lake-store-hdinsight-hadoop-use-portal/ADL.HDI.PS.Remote.Desktop.png "Azure-Ressourcengruppe erstellen")
+	![Remoteverbindung mit HDI-Cluster](./media/data-lake-store-hdinsight-hadoop-use-portal/ADL.HDI.PS.Remote.Desktop.png "Erstellen einer Azure-Ressourcengruppe")
 
 	Geben Sie bei Aufforderung die Anmeldeinformationen ein, die Sie für den Remotedesktopbenutzer bereitgestellt haben.
 
@@ -207,4 +207,4 @@ Eine Anleitung, wie Sie dem Dateisystem eines Data Lake-Speichers einen Dienstpr
 [makecert]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->
