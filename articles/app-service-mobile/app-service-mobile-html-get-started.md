@@ -47,7 +47,11 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 ##Erstellen eines neuen mobilen App-Back-Ends
 
+Führen Sie die folgenden Schritte aus, um ein neues mobiles App-Back-End zu erstellen.
+
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
+
+Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren mobilen Clientanwendungen verwendet werden kann. Als Nächstes laden Sie ein Serverprojekt für ein einfaches "Aufgabenlisten"-Back-End herunter und veröffentlichen es in Azure.
 
 ## Herunterladen des Serverprojekts
 
@@ -123,4 +127,4 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 [Visual Studio Community 2013]: https://www.visualstudio.com/downloads
  
 
-<!----HONumber=Nov15_HO4-->
+<!----HONumber=AcomDC_1125_2015-->

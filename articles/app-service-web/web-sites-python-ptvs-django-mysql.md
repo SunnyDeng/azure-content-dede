@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="get-started-article" 
-	ms.date="08/30/2015"
-	ms.author="huguesv"/>
+	ms.date="11/17/2015"
+	ms.author="huvalo"/>
 
 # Django und MySQL in Azure mit Python Tools 2.2 für Visual Studio 
 
@@ -26,7 +26,7 @@
 - [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
 - [Python](web-sites-python-ptvs-django-mysql.md)
 
-In diesem Lernprogramm erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm steht auch als [Video](https://www.youtube.com/watch?v=oKCApIrS0Lo) zur Verfügung.
+In diesem Tutorial erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Tutorial steht auch als [Video](https://www.youtube.com/watch?v=oKCApIrS0Lo) zur Verfügung.
 
 Sie erfahren, wie Sie einen in Azure gehosteten MySQL-Dienst verwenden, wie Sie die Web-App für die Nutzung von MySQL konfigurieren und wie Sie sie für [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) veröffentlichen.
 
@@ -98,14 +98,13 @@ Alternativ können Sie einen eigenen, auf Azure ausgeführten virtuellen Compute
 
 Mit den folgenden Schritten können Sie eine Datenbank im Rahmen eines kostenlosen Plans erstellen.
 
-1.  Melden Sie sich beim [Azure-Portal] an.
+1.  Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 
-1.  Klicken Sie unten auf der Seite auf **NEU**. Klicken Sie auf **Daten + Speicher** > **Azure Marketplace**.
+1.  Klicken Sie oben im Navigationsbereich auf **NEU**. Klicken Sie anschließend auf **Daten und Speicher** > **MySQL-Datenbank**.
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-django-mysql/PollsCommonAzurePlusNew.png)-->
+  
 
-1.  Geben Sie die Zeichenfolge "**mysql**" in das Suchfeld ein, klicken Sie auf **MySQL-Datenbank**, und klicken Sie anschließend auf **Erstellen**.
-
+1.  Geben Sie die Zeichenfolge „**mysql**“ in das Suchfeld ein, klicken Sie auf **MySQL-Datenbank**, und klicken Sie anschließend auf **Erstellen**. -->
   	<!-- ![Choose Add-on Dialog](./media/web-sites-python-ptvs-django-mysql/PollsDjangoClearDBAddon1.png) -->
 
 1.  Konfigurieren Sie die neue MySQL-Datenbank, indem Sie eine neue Ressourcengruppe erstellen, und wählen Sie den entsprechenden Speicherort aus.
@@ -203,7 +202,7 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [Azure Cloud Services]: ../cloud-services-python-ptvs.md
 
 <!--External Link references-->
-[Azure-Portal]: https://portal.azure.com
+[Azure Portal]: https://portal.azure.com
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
@@ -218,4 +217,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [MySQL]: http://www.mysql.com/
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

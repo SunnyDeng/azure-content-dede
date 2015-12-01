@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch – Technische Übersicht | Microsoft Azure"
+	pageTitle="Grundlagen des Azure Batch-Diensts | Microsoft Azure"
 	description="Erfahren Sie mehr über die Konzepte, Workflows und Szenarien des Azure Batch-Diensts für umfangreiche parallele und HPC-Workloads"
 	services="batch"
 	documentationCenter=""
@@ -13,18 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/26/2015"
+	ms.date="11/19/2015"
 	ms.author="danlep"/>
 
+# Grundlagen von Azure Batch
 
-# Technische Übersicht über Azure Batch für umfangreiche parallele und HPC-Workloads
 Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich um einen Plattformdienst zur Planung rechenintensiver Aufgaben für die Ausführung auf einer verwalteten Sammlung von virtuellen Computern (Computeknoten), die zur Erfüllung der Anforderungen des Auftrags skaliert werden können. Mit dem Batch-Dienst können Sie Azure-Computeressourcen und umfangreiche Batchaufträge programmgesteuert definieren, die bedarfsgesteuert oder zeitplanabhängig ausgeführt werden. Es ist deshalb nicht erforderlich, einen HPC-Cluster, einzelne VMs, virtuelle Netzwerke oder einen Auftragsplaner zu konfigurieren und zu verwalten.
 
 ## Anwendungsfälle
 
 Batch ist ein verwalteter Dienst für die *Batchverarbeitung* bzw. das *Batchcomputing* – Es werden große Mengen an ähnlichen Aufgaben ausgeführt, um das gewünschte Ergebnis zu erzielen. Batchcomputing ist ein gängiges Muster für Unternehmen, die große Datenmengen verarbeiten, transformieren und analysieren – entweder nach einem Zeitplan oder nach Bedarf. Beispielunternehmen sind Finanzdienstleister und Maschinenbauer.
 
-Batch funktioniert sehr gut bei intrinsisch parallelen (mitunter als "hochgradig parallel" bezeichneten) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden. Siehe Abbildung 1.
+Batch funktioniert sehr gut bei intrinsisch parallelen (mitunter als „hochgradig parallel“ bezeichneten) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden. Siehe Abbildung 1.
 
 ![Parallele Aufgaben][parallel]
 
@@ -48,7 +48,7 @@ Ein Vergleich von Batch mit anderen HPC-Lösungsoptionen in Azure finden Sie unt
 
 Entwickeln Sie mit den Batch-APIs, um verwaltete Pools von Computeknoten zu erstellen und zu verwalten sowie um die Aufträge und Aufgaben zu planen, die auf diesen ausgeführt werden. Schreiben Sie Clientanwendungen oder Front-Ends, um Aufträge und Aufgaben nach Bedarf, nach einem Zeitplan oder als Teil eines größeren von Tools wie [Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/) verwalteten Workflows auszuführen.
 
-Unter [API-Grundlagen für Azure Batch](batch-api-basics.md) finden Sie weitere Informationen über die Batch-Konzepte.
+In der [Übersicht über Azure Batch-Features](batch-api-basics.md) finden Sie weitere Informationen zu den Batch-Konzepten.
 
 ### Benötigte Konten
 
@@ -103,4 +103,4 @@ Abbildung 2 zeigt einen Workflow, der die Batch .NET-Clientanwendung verwendet,
 [parallel]: ./media/batch-technical-overview/parallel.png
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

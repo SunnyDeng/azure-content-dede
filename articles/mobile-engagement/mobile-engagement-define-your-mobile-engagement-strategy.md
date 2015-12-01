@@ -52,7 +52,7 @@ Nach der Veröffentlichung von Anwendungen können Sie Ihre Analysen als Vermark
 2. Preisen Sie neue Inhalte an (Feature, Artikel/Video oder Produkt), die auf dem Verhalten der Endbenutzer basieren, damit die Informationen nur an Benutzer gesendet werden, bei denen die Wahrscheinlichkeit der Inanspruchnahme höher ist.
 3. Bewerten Sie die Anwendung: Richten Sie diesen Vorgang auf weniger als 1 % der Benutzerbasis aus, die Ihre App im Store wahrscheinlich mit fünf Sternen bewerten wird.
 4. Ankurbeln der Abonnements: Bewerben Sie nützliche Inhalte bei Endbenutzern, denen diese bisher noch nicht bekannt sind, um die Anzahl der Abonnements zu steigern.
-5. Lernprogramm: Vermeiden Sie obligatorische Lernprogramme. Erstellen Sie doch einfach großartige In-App-Lernprogramme, und lösen Sie diese durch In-App-Nachrichten aus, wenn ein Benutzer die App nicht zu nutzen scheint oder Probleme bei der Verwendung eines Features hat.
+5. Tutorial: Vermeiden Sie obligatorische Tutorials. Erstellen Sie doch einfach großartige In-App-Tutorials, und lösen Sie diese durch In-App-Nachrichten aus, wenn ein Benutzer die App nicht zu nutzen scheint oder Probleme bei der Verwendung eines Features hat.
 
 ## Warum benötigen Sie Analysen für die Erfassung?
 
@@ -100,7 +100,7 @@ Eine Aktivität kann *Ereignisse* einbetten, die Aktionsinformationen sammeln (z
 
 `Errors` können ebenfalls überwacht werden, um zu erfahren, ob die Benutzer in Ihrer App auf Probleme stoßen. Beispielsweise, ob regelmäßig Verbindungsprobleme auftreten.
 
-Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-information* in Mobile Engagement), damit Sie dynamische Daten von der Anwendung erfassen können. Das ist wichtig, um eine differenzierte Segmentierung zu ermöglichen. Z. B. können Vermarkter die Benutzer auf Basis des Inhaltstyps segmentieren, den sie konsumiert haben. Der Inhaltstyp entspricht dieser dynamischen Information einerAktivität oder eines Ereignisses.
+Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-information* in Mobile Engagement), damit Sie dynamische Daten von der Anwendung erfassen können. Das ist wichtig, um eine differenzierte Segmentierung zu ermöglichen. Z. B. können Vermarkter die Benutzer auf Basis des Inhaltstyps segmentieren, den sie konsumiert haben. Der Inhaltstyp entspricht dieser dynamischen Information einer Aktivität oder eines Ereignisses.
 
 *App-Informationen* sind Daten, mit denen Sie in Echtzeit den Status der Anwendung oder des Benutzers bestätigen können. Diese sind auch für die Kategorisierung einer Zielgruppenbasis und die schnelle Ausrichtung auf diese Basis nützlich. Es kann sich dabei z. B. um den Status „true“ oder „false“ für die Frage handeln, ob sich der Benutzer anmeldet bzw. um das Ablaufdatum seines Abonnements.
 
@@ -117,7 +117,10 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 
 ### Nächste Schritte
 - Weitere Informationen zu den grundlegenden Konzepten von Mobile Engagement finden Sie unter [Mobile Engagement-Konzepte].
-- Weitere Informationen zur Implementierung finden Sie unter [Lernprogramme].
+- Detaillierte Informationen finden Sie unter [Bewährte Methoden](mobile-engagement-getting-started-best-practices.md).
+- Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Spiele-App finden Sie unter [Szenario für eine Spiele-App](mobile-engagement-gaming-scenario.md). 
+- Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Medien-App finden Sie unter [Szenario für eine Medien-App](mobile-engagement-media-scenario.md). 
+- Weitere Informationen zur Implementierung finden Sie unter [Tutorials].
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-define-your-mobile-engagement-strategy/use-case1.png
@@ -125,6 +128,6 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 
 <!-- URLs. -->
 [Mobile Engagement-Konzepte]: http://azure.microsoft.com/documentation/articles/mobile-engagement-concepts/
-[Lernprogramme]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
+[Tutorials]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

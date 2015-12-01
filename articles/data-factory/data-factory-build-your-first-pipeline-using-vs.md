@@ -69,7 +69,7 @@ In diesem Schritt verknüpfen Sie Ihr Azure Storage-Konto und einen bedarfsgeste
 
 	![Neuer verknüpfter Dienst](./media/data-factory-build-your-first-pipeline-using-vs/new-linked-service-dialog.png)
  
-3. Ersetzen Sie **accountname** und **accountkey** durch den Namen Ihres Azure-Speicherkontos und den entsprechenden Schlüssel.
+3. Ersetzen Sie **accountname** und **accountkey** durch den Namen Ihres Azure-Speicherkontos bzw. den entsprechenden Schlüssel.
 
 	![Mit Azure-Speicher verknüpfter Dienst](./media/data-factory-build-your-first-pipeline-using-vs/azure-storage-linked-service.png)
 
@@ -102,7 +102,6 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsi
 	Version | Gibt die Version des zu erstellenden HDInsight-Clusters als 3.1 an. 
 	ClusterSize | Dient zum Erstellen eines HDInsight-Clusters mit einem Knoten. 
 	TimeToLive | Gibt die Leerlaufzeit des HDInsight-Clusters an, bevor er gelöscht wird.
-	JobsContainer | Gibt den Namen des Auftragcontainers an, der erstellt wird, um die Protokolle zu speichern, die von HDInsight generiert werden.
 	linkedServiceName | Gibt das Speicherkonto an, das verwendet wird, um die Protokolle zu speichern, die von HDInsight generiert werden.
 
 4. Speichern Sie die Datei **HDInsightOnDemandLinkedService1.json**.
@@ -181,7 +180,7 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 	
 	Die Hive-Skriptdatei **partitionweblogs.hql** ist im Azure-Speicherkonto (das durch den scriptLinkedService-Dienst namens **AzureStorageLinkedService1** angegeben ist) und in einem Container namens **script** gespeichert.
 
-	Der Abschnitt **extendedProperties** dient zum Angeben der Laufzeiteinstellungen, die als Hive-Konfigurationswerte (z. B. "${hiveconf:PartitionedData}") an das Hive-Skript übergeben werden.
+	Der Abschnitt **defines** dient zum Angeben der Laufzeiteinstellungen, die als Hive-Konfigurationswerte (z. B. „${hiveconf:PartitionedData}“) an das Hive-Skript übergeben werden.
 
 	Die Eigenschaften **start** und **end** der Pipeline geben den aktiven Zeitraum der Pipeline an.
 
@@ -222,7 +221,7 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 ## Verwenden Sie Server-Explorer, um Data Factory-Entitäten zu überprüfen
 
 1. Klicken Sie in **Visual Studio** im Menü auf **Ansicht** und dann auf **Server-Explorer**.
-2. Erweitern Sie im Server-Explorer-Fenster erst die Option **Azure** und dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory Task List** angezeigt.
+2. Erweitern Sie im Server-Explorer-Fenster erst die Option **Azure** und dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory-Aufgabenliste** angezeigt.
 
 	![Server-Explorer](./media/data-factory-build-your-first-pipeline-using-vs/server-explorer.png)
 3. Durch Klicken mit der rechten Maustaste auf eine Data Factory und Auswählen von **Export Data Factory to New Project** können Sie anhand einer vorhandenen Data Factory ein Visual Studio-Projekt erstellen.
@@ -235,7 +234,7 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 
 1. Klicken Sie im Menü auf **Extras**, und wählen Sie**Erweiterungen und Updates** aus.
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
-3. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Aktualisieren**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
+3. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
 Unter [Überwachen von DataSets und Pipelines](data-factory-monitor-manage-pipelines.md) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
  
@@ -244,4 +243,4 @@ Unter [Überwachen von DataSets und Pipelines](data-factory-monitor-manage-pipel
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="10/05/2015"
+	ms.date="11/17/2015"
 	ms.author="awills"/>
 
 # Erste Schritte mit Visual Studio Application Insights
@@ -41,8 +41,7 @@ Ziel | Vorgehensweise | Ergebnis
 <a href="app-insights-java-get-started.md">![Java](./media/app-insights-get-started/appinsights-gs-i-11-java.png)</a>|<a href="app-insights-java-get-started.md">Hinzufügen des SDK zu Ihrem Java-Projekt</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-java-get-started.md">![Überwachung von Leistung und Nutzung](./media/app-insights-get-started/appinsights-gs-r-10-java.png)</a>
 <a href="app-insights-web-track-usage.md">![JavaScript](./media/app-insights-get-started/appinsights-gs-i-02-usage.png)</a>|<a href="app-insights-web-track-usage.md">Einfügen des Application Insights-Skripts in Ihre Webseiten</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-web-track-usage.md">![Seitenaufrufe und Browserleistung](./media/app-insights-get-started/appinsights-gs-r-02-usage.png)</a>
 <a href="app-insights-monitor-web-app-availability.md">![Availability](./media/app-insights-get-started/appinsights-gs-i-05-avail.png)</a>|<a href="app-insights-monitor-web-app-availability.md">Erstellen von Webtests</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-monitor-web-app-availability.md">![Verfügbarkeit](./media/app-insights-get-started/appinsights-gs-r-05-avail.png)</a>
-<a href="app-insights-windows-get-started.md">![Windows und Windows Phone](./media/app-insights-get-started/appinsights-gs-i-06-device.png)</a>|<a href="app-insights-windows-get-started.md">Hinzufügen von Application Insights zu Ihrem Windows-App-Projekt</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-windows-get-started.md">![Absturz- und Nutzungsdaten](./media/app-insights-get-started/appinsights-gs-r-06-device.png)</a>
-<a href="app-insights-platforms.md">![iOS, Android und mehr](./media/app-insights-get-started/appinsights-gs-i-07-device.png)</a>|<a href="app-insights-platforms.md">Hinzufügen von Application Insights zu Ihrer iOS- oder Android-App</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-platforms.md">![Absturz- und Nutzungsdaten](./media/app-insights-get-started/appinsights-gs-r-06-device.png)</a>
+<a href="app-insights-platforms.md">![iOS-, Android- und Windows-Geräte](./media/app-insights-get-started/appinsights-gs-i-07-device.png)</a>|<a href="http://hockeyapp.net">Verwenden von HockeyApp</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="http://hockeyapp.net">![Absturz- und Nutzungsdaten](./media/app-insights-get-started/appinsights-gs-r-06-device.png)</a>
 
 ## Support und Feedback
 
@@ -75,4 +74,4 @@ Ziel | Vorgehensweise | Ergebnis
 
 [qna]: app-insights-troubleshoot-faq.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->
