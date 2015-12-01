@@ -12,32 +12,39 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/03/2015"
+	ms.date="11/17/2015"
 	ms.author="awills"/>
 
 # Application Insights für JavaScript-Web-Apps
 
-[AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
+[AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
 
-Informieren Sie sich über die Leistung und Nutzung Ihrer Webseite. Fügen Sie Ihrer Seite Visual Studio Application Insights hinzu, und Sie erfahren, wie viele Benutzer die Seite besuchen, wie oft sie zurückkehren und welche Seiten sie am häufigsten verwenden. Außerdem erhalten Sie Berichte zu Ladezeiten und Ausnahmen. Fügen Sie einige [benutzerdefinierte Ereignisse und Metriken][track] hinzu, um die beliebtesten Features und die häufigsten Fehler im Detail zu analysieren und Ihre Seite für den Erfolg bei den Benutzern zu optimieren.
+Informieren Sie sich über die Leistung und Nutzung Ihrer Webseite. Fügen Sie Ihrer Seite Visual Studio Application Insights hinzu, und Sie erfahren, wie viele Benutzer die Seite besuchen, wie oft sie zurückkehren und welche Seiten sie am häufigsten verwenden. Außerdem erhalten Sie Berichte zu Ladezeiten und Ausnahmen. Fügen Sie einige [benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md) hinzu, um die beliebtesten Features und die häufigsten Fehler im Detail zu analysieren und Ihre Seite für den Erfolg bei den Benutzern zu optimieren.
 
 ![Wählen Sie "Neu", "Entwicklerdienste", Application Insights.](./media/app-insights-javascript/16-page-views.png)
 
-Wenn Sie bereits Servertelemetrie für Ihre [ASP.NET][greenbrown]- oder [Java][java]-Web-App eingerichtet haben, erhalten Sie einen Überblick sowohl aus der Sicht des Clients als auch aus der des Servers. Die beiden Datenströme werden in das Application Insights-Portal integriert.
+Wenn Sie bereits Servertelemetrie für Ihre [ASP.NET](app-insights-asp-net.md)- oder [Java](app-insights-java-get-started.md)-Web-App eingerichtet haben, erhalten Sie einen Überblick sowohl aus der Sicht des Clients als auch aus der des Servers. Die beiden Datenströme werden in das Application Insights-Portal integriert.
 
 #### Kurze Demo
 
 Wenn Sie kein Azure-Abonnement besitzen und Application Insights auf Ihrer Webseite testen möchten, besuchen Sie [Ausprobieren von Application Insights](http://aka.ms/ainow).
 
-## Erstellen einer Application Insights-Ressource
+## Öffnen einer Application Insights-Ressource
 
 Daten zur Leistung und Nutzung Ihrer Seite werden in der Application Insights-Ressource angezeigt. (Wenn Sie bereits eine Ressource erstellt haben, um beispielsweise Daten von Ihrem Webserver zu erfassen, überspringen Sie diesen Schritt.)
 
-Erstellen Sie im [Azure-Portal](http://portal.azure.com) eine neue Application Insights-Ressource:
+Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an.
+
+Wenn Sie bereits die Überwachung für die Serverseite der App eingerichtet haben, verfügen Sie schon über eine Ressource:
+
+![Wählen Sie "Durchsuchen", "Entwicklerdienste", "Application Insights" aus.](./media/app-insights-javascript/01-find.png)
+
+Wenn keine Ressource vorhanden ist, erstellen Sie sie:
 
 ![Wählen Sie "Neu", "Entwicklerdienste", Application Insights.](./media/app-insights-javascript/01-create.png)
 
-*Schon Fragen?* [Weitere Informationen zum Erstellen einer Ressource][new].
+
+*Schon Fragen?* [Weitere Informationen zum Erstellen einer Ressource](app-insights-create-new-resource.md).
 
 
 ## Hinzufügen des SDK-Skripts zu Ihrer App oder Ihren Webseiten
@@ -53,7 +60,7 @@ Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie 
 
 Das Skript enthält den Instrumentationsschlüssel, der die Daten an Ihre Application Insights-Ressource leitet.
 
-([Detailliertere Erläuterung zum Skript.](http://apmtips.com/blog/2015/03/18/javascript-snippet-explained/))
+([Detailliertere Erläuterung des Skripts.](http://apmtips.com/blog/2015/03/18/javascript-snippet-explained/))
 
 *(Wenn Sie ein bekanntes Webseitenframework verwenden, suchen Sie nach Application Insights-Adaptern. Beispielsweise gibt es [ein AngularJS-Modul](http://ngmodules.org/modules/angular-appinsights).)*
 
@@ -72,7 +79,7 @@ Im Blatt mit der Anwendungsübersicht befindet sich im oberen Bereich ein Diagra
 ![](./media/app-insights-javascript/05-browser-page-load.png)
 
 
-*Noch keine Daten verfügbar? Klicken Sie am oberen Seitenrand auf **Aktualisieren**. Immer noch nichts? Informationen hierzu finden Sie unter [Problembehandlung][qna].*
+*Noch keine Daten verfügbar? Klicken Sie am oberen Seitenrand auf **Aktualisieren**. Immer noch nichts? Informationen hierzu finden Sie unter [Problembehandlung](app-insights-troubleshoot-faq.md).*
 
 Klicken Sie auf dieses Diagramm, und Sie erhalten eine ausführlichere Version:
 
@@ -98,7 +105,7 @@ Wenn Sie die Leistung der Seiten im Zeitverlauf anzeigen möchten, doppelklicken
 
 ## Übersicht über die Clientnutzung
 
-Klicken Sie auf dem Blatt „Übersicht“ auf **Nutzung**:
+Klicken Sie auf dem Blatt "Übersicht" auf **Nutzung**:
 
 ![](./media/app-insights-javascript/14-usage.png)
 
@@ -143,9 +150,9 @@ Legen Sie im Blatt "Diagnosesuche" als Filter die Einstellung "Seitenansicht" fe
 
 Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Detailseite auf "...", um weitere Details anzuzeigen.
 
-> [AZURE.NOTE]Beachten Sie bei Verwendung von [Search][diagnostic], dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „*bou“ nicht „About“.
+> [AZURE.NOTE]Beachten Sie bei Verwendung von [Search](app-insights-diagnostic-search.md), dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „*bou“ nicht „About“.
 
-> [Erfahren Sie mehr über Diagnosesuche][diagnostic]
+> [Erfahren Sie mehr über Diagnosesuche](app-insights-diagnostic-search.md)
 
 ### Eigenschaften von Seitenansichten
 
@@ -155,16 +162,20 @@ Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Det
 
 Möchten Sie herausfinden, wofür die Benutzer Ihre App verwenden? Durch Einfügen von Aufrufen in den Client- und Servercode können Sie Ihre eigenen Telemetriedaten an Application Insights senden. Beispielsweise können Sie die Anzahl der Benutzer ermitteln, die Aufträge erstellen, ohne sie abzuschließen, oder welche Validierungsfehler am häufigsten auftreten oder was die durchschnittliche Punktzahl in einem Spiel ist.
 
-* [Erhalten Sie weitere Informationen zur API für benutzerdefinierte Ereignisse und Metriken][track].
+* [Informationen zur API für benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md).
 * [API-Referenz](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 
 ## Servertelemetrie
 
-Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem Server gewinnen und die Daten zusammen mit den clientseitigen Daten anzeigen, damit Sie die Leistung auf dem Server bewerten und Probleme diagnostizieren können.
+Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem Server gewinnen und die Daten zusammen mit den clientseitigen Daten anzeigen, damit Sie die Leistung auf dem Server bewerten und Probleme diagnostizieren können. Fügen Sie das Application Insights SDK Ihrer App hinzu:
 
-* [Hinzufügen von Application Insights zu einer ASP.NET-App][greenbrown]
-* [Hinzufügen von Application Insights zu einer Java-Web-App][java]
+* [Hinzufügen des SDK zu einer ASP.NET-App](app-insights-asp-net.md)
+* [Hinzufügen des SDK zu einer Java-Web-App](app-insights-java-get-started.md)
 
+Oder wenn Ihre Web-App bereits aktiv ist, können Sie weiterhin Servertelemetrie hinzufügen, ohne die Anwendung neu zu erstellen oder neu bereitzustellen:
+
+* [Überwachen einer aktiven ASP.NET-App](app-insights-monitor-performance-live-website-now.md)
+* [Überwachen einer aktiven Java-App](app-insights-java-live.md)
 
 ## <a name="video"></a>Video: Nachverfolgen der Nutzung
 
@@ -172,18 +183,8 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 
 ## <a name="next"></a> Nächste Schritte
 
-[Nutzungsverfolgung mit benutzerdefinierten Ereignissen und Metriken][track]
+* [Nutzung nachverfolgen](app-insights-web-track-usage.md)
+* [Benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md)
+* [Erstellen-Messen-Lernen](app-insights-overview-usage.md)
 
-
-
-
-<!--Link references-->
-
-[diagnostic]: app-insights-diagnostic-search.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
-[java]: app-insights-java-get-started.md
-[new]: app-insights-create-new-resource.md
-[qna]: app-insights-troubleshoot-faq.md
-[track]: app-insights-api-custom-events-metrics.md
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

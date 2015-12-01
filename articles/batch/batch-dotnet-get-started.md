@@ -28,7 +28,7 @@ Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine
 
 	- **Batch-Konto**: Siehe [Erstellen und Verwalten eines Batch Azure-Kontos](batch-account-create-portal.md).
 
-	- **Speicherkonto**: Siehe unter **Erstellen eines Speicherkontos** den Abschnitt [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md). In diesem Tutorial erstellen Sie einen Container im Konto **testcon1**.
+	- **Speicherkonto**: Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md) im Abschnitt **Erstellen eines Speicherkontos**. In diesem Tutorial erstellen Sie einen Container im Konto **testcon1**.
 
 - Ein Projekt für eine Visual Studio-Konsolenanwendung:
 
@@ -42,7 +42,7 @@ Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine
 
 	2. Suchen Sie online nach **WindowsAzure.Storage**, und klicken Sie auf **Installieren**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
 
-> [AZURE.TIP]In diesem Tutorial werden einige der grundlegenden Batch-Konzepte angewendet, die unter [API-Grundlagen für Azure Batch](batch-api-basics.md) erläutert werden. Sollten Sie noch nicht mit Batch gearbeitet haben, empfehlen wir dringend, zunächst dieses Thema zu lesen.
+> [AZURE.TIP]In diesem Tutorial werden einige der grundlegenden Batch-Konzepte angewendet, die in der [Übersicht über Azure Batch-Features](batch-api-basics.md) erläutert werden. Sollten Sie noch nicht mit Batch gearbeitet haben, empfehlen wir dringend, zunächst dieses Thema zu lesen.
 
 ## Schritt 1: Erstellen und Hochladen der erforderlichen Dateien
 
@@ -208,7 +208,7 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("[account-url]", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
-	Ersetzen Sie die Werte in Klammern durch die, die zu Ihrem Batch-Konto gehören und im [Azure-Vorschauportal](https://portal.azure.com) zu finden sind. Zum Abrufen dieser Werte melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und gehen Sie folgendermaßen vor:
+	Ersetzen Sie die Werte in Klammern durch diejenigen, die zu Ihrem Batch-Konto gehören, die Sie alle im [Azure-Vorschauportal](https://portal.azure.com) finden. Um diese Werte zu finden, melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und:
 
 	- **[account-name]** – Klicken Sie auf **Batch-Konten**, und wählen Sie das zuvor erstellte Batch-Konto aus.
 	- **[account-url]** – Klicken Sie auf dem Blatt des Batch-Kontos auf **Eigenschaften** > **URL**.
@@ -339,7 +339,7 @@ Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede A
 		}
 
 
-	**[account-name]** muss durch den Namen des Speicherkontos ersetzt werden, das Sie zuvor erstellt haben. Aktualisieren Sie im vorangehenden Beispiel alle vier Vorkommen von **[account-name]**.
+	**[account-name]** muss durch den Namen des Speicherkontos ersetzt werden, das Sie zuvor erstellt haben. Aktualisieren Sie im vorangehenden Beispiel alle vier Instanzen von **[account-name]**.
 
 
 2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
@@ -495,4 +495,4 @@ Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle
 
 2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

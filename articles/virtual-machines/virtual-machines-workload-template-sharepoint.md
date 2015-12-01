@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Bereitstellen von SharePoint-Farmen mit ARM-Vorlagen | Microsoft Azure"
-	description="Mit Ressourcen-Manager-Vorlagen und dem Azure-Portal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach eine SharePoint-Farm mit 3 oder 9 Servern bereitstellen."
+	description="Mit Ressourcen-Manager-Vorlagen und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach eine SharePoint-Farm mit 3 oder 9 Servern bereitstellen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -186,4 +186,4 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

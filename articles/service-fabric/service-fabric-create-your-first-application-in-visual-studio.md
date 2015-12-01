@@ -18,7 +18,7 @@
 
 # Erstellen Ihrer ersten Service Fabric-Anwendung in Visual Studio
 
-Das Service Fabric-SDK enthält ein Add-In für Visual Studio, das Vorlagen und Tools zum Erstellen, Debuggen und Bereitstellen von Service Fabric-Anwendungen bietet. In diesem Thema werden Sie durch den Prozess der Erstellung Ihrer ersten Anwendung in Visual Studio geführt.
+Das Service Fabric-SDK enthält ein Add-In für Visual Studio, das Vorlagen und Tools zum Erstellen, Bereitstellen und Debuggen von Service Fabric-Anwendungen bietet. In diesem Thema werden Sie durch den Prozess der Erstellung Ihrer ersten Anwendung in Visual Studio geführt.
 
 ## Voraussetzungen
 
@@ -54,11 +54,11 @@ Eine Service Fabric-Anwendung kann einen oder mehrere Dienste enthalten, die jew
 
 	- **Anwendungsdefinition**: Das Anwendungsmanifest und zugehörige Anwendungsparameterdateien definieren die Anwendung und ermöglichen es Ihnen, sie speziell für eine bestimmte Umgebung zu konfigurieren.
 
-  Einen Überblick über den Inhalt des Dienstprojekts finden Sie unter [Erste Schritte mit Reliable Services](service-fabric-reliable-services-quick-start.md).
+    Einen Überblick über den Inhalt des Dienstprojekts finden Sie unter [Erste Schritte mit Reliable Services](service-fabric-reliable-services-quick-start.md).
 
 ## Bereitstellen und Debuggen der Anwendung
 
-Jetzt haben wir eine Anwendung, führen wir sie also aus.
+Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
 1. Drücken Sie in Visual Studio F5, um die Anwendung für das Debuggen bereitzustellen.
 
@@ -88,9 +88,9 @@ Jetzt haben wir eine Anwendung, führen wir sie also aus.
 
 5. Klicken Sie mit der rechten Maustaste auf die Taskleisten-App Local Cluster Manager, und wählen Sie die Option zum Verwalten des lokalen Clusters aus, um den Service Fabric-Explorer zu starten.
 
-  ![Starten des Service Fabric-Explorers über den Manager für den lokalen Cluster][systray-launch-sfx]
+    ![Starten des Service Fabric-Explorers über den Manager für den lokalen Cluster][systray-launch-sfx]
 
-  Der Service Fabric-Explorer bietet eine visuelle Darstellung eines Clusters, einschließlich der darin bereitgestellten Anwendungen und der physischen Knoten, aus denen er besteht.
+    Der Service Fabric-Explorer bietet eine visuelle Darstellung eines Clusters, einschließlich der darin bereitgestellten Anwendungen und der physischen Knoten, aus denen er besteht. Weitere Informationen zu Service Fabric Explorer finden Sie unter [Visualisieren des Clusters](service-fabric-visualizing-your-cluster).
 
 6. Erweitern Sie im linken Bereich **Cluster > Knoten**, und suchen Sie den Knoten, auf dem der Code ausgeführt wird.
 
@@ -102,14 +102,25 @@ Jetzt haben wir eine Anwendung, führen wir sie also aus.
 
 8. Kehren Sie zur Diagnoseereignisanzeige zurück, und beobachten Sie die Meldungen. Beachten Sie, dass der Zähler weiter erhöht wurde, obwohl die Ereignisse tatsächlich von einem anderen Knoten stammen.
 
-  ![Diagnoseereignisanzeige nach einem Failover][diagnostic-events-viewer-detail-post-failover]
+    ![Diagnoseereignisanzeige nach einem Failover][diagnostic-events-viewer-detail-post-failover]
+
+### Bereinigen
+
+  Bevor Sie Ihre Arbeit abschließen, sollten Sie bedenken, dass der lokale Cluster sehr real ist. Auch nach dem Beenden des Debuggers und dem Schließen von Visual Studio werden Ihre Anwendungen weiterhin im Hintergrund ausgeführt. Je nach Art Ihrer Apps kann diese Hintergrundaktivität erhebliche Ressourcen auf dem Computer beanspruchen. Sie haben mehrere Möglichkeiten, hier steuernd einzugreifen:
+
+  1. Zum Entfernen einer einzelnen Anwendung und all ihrer Daten verwenden Sie in Service Fabric Explorer die Aktion **Anwendung entfernen**.
+
+  2. Zum Beenden des Clusters bei Beibehaltung der Anwendungsdaten und Ablaufverfolgungen klicken Sie in der Infobereichs-App auf **Cluster beenden**.
+
+  3. Zum vollständigen Entfernen des Clusters klicken Sie in der Infobereichs-App auf **Cluster entfernen**. Beachten Sie: Diese Option bewirkt eine weitere langsame Bereitstellung, wenn Sie das nächste Mal in Visual Studio F5 drücken. Verwenden Sie sie darum nur, wenn Sie den lokalen Cluster für einige Zeit nicht benötigen oder unbedingt Ressourcen wiedergewinnen müssen.
+
 
 
 ## Nächste Schritte
 
+- [Finden Sie heraus, wie Sie Ihre Dienste über WebAPI im Internet verfügbar machen können](service-fabric-add-a-web-frontend.md)
 - [Erfahren Sie, wie Sie einen Cluster in Azure erstellen](service-fabric-cluster-creation-via-portal.md)
 - [Erfahren Sie mehr über das Erstellen von Reliable Services](service-fabric-reliable-services-quick-start.md)
-- [Finden Sie heraus, wie Sie Ihre Dienste über WebAPI im Internet verfügbar machen können](service-fabric-add-a-web-frontend.md)
 - [Erstellen Sie einen Dienst mit dem Reliable Actor-Programmiermodell](service-fabric-reliable-actors-get-started.md)
 
 <!-- Image References -->
@@ -125,4 +136,4 @@ Jetzt haben wir eine Anwendung, führen wir sie also aus.
 [systray-launch-sfx]: ./media/service-fabric-create-your-first-application-in-visual-studio/launch-sfx.png
 [diagnostic-events-viewer-detail-post-failover]: ./media/service-fabric-create-your-first-application-in-visual-studio/diagnostic-events-viewer-detail-post-failover.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

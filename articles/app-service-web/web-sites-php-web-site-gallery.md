@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="hero-article"
-	ms.date="10/15/2015"
+	ms.date="11/13/2015"
 	ms.author="tomfitz"/>
 
 # Erstellen einer WordPress-Web-App in Azure App Service
@@ -34,13 +34,13 @@ Azure Marketplace bietet eine breite Auswahl an beliebten Web-Apps, die von Micr
 
 > [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
 >
-> Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+> Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ## Auswählen von WordPress und Konfigurieren für Azure App Service
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
 
-2. Klicken Sie auf **Neu > Marketplace**.
+2. Klicken Sie auf **Neu**.
 	
     ![Neu erstellen][5]
 	
@@ -62,7 +62,7 @@ Azure Marketplace bietet eine breite Auswahl an beliebten Web-Apps, die von Micr
 
 	Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../resource-group-portal.md).
 
-5. Wählen Sie einen **App Service-Plan/Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
+5. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
 
 	Weitere Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
@@ -124,4 +124,4 @@ Zusätzliche Dokumentation zur Arbeit mit App Service-Web-Apps finden Sie in den
 [7]: ./media/web-sites-php-web-site-gallery/search-web-app.png
 [browse]: ./media/web-sites-php-web-site-gallery/browse-web.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

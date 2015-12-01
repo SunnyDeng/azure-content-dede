@@ -5,7 +5,7 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 	
 3. Erstellen Sie ggf. eine neue Ressourcengruppe, wie unten dargestellt. In diesem Szenario erstellen Sie eine Ressourcengruppe mit dem Namen *TestRG*. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
-		New-AzureResourceGroup -Name TestRG -Location centralus
+		New-AzureRmResourceGroup -Name TestRG -Location centralus
 
 	Erwartete Ausgabe:
 	
@@ -22,7 +22,7 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 
 4. Erstellen Sie ein neues VNet namens *TestVNet*, wie unten dargestellt.
 
-		New-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
+		New-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
 			-AddressPrefix 192.168.0.0/16 -Location centralus	
 		
 	Erwartete Ausgabe:
@@ -47,13 +47,13 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 
 5. Speichern Sie das virtuelle Netzwerkobjekt in einer Variablen, wie unten dargestellt.
 
-		$vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+		$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 	
-	>[AZURE.TIP]Sie können die Schritte 4 und 5 durch Ausführen von **$vnet = New-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet -AddressPrefix 192.168.0.0/16 -Location centralus** zusammenfassen.
+	>[AZURE.TIP]Sie können die Schritte 4 und 5 durch Ausführen von **$vnet = New-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet -AddressPrefix 192.168.0.0/16 -Location centralus** zusammenfassen.
 
 6. Fügen Sie der neuen VNet-Variablen ein Subnetz hinzu, wie unten dargestellt.
 
-		Add-AzureVirtualNetworkSubnetConfig -Name FrontEnd `
+		Add-AzureRmVirtualNetworkSubnetConfig -Name FrontEnd `
 			-VirtualNetwork $vnet -AddressPrefix 192.168.1.0/24
 		
 	Erwartete Ausgabe:
@@ -89,12 +89,12 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 
 7. Wiederholen Sie Schritt 6 für jedes Subnetz, das Sie erstellen möchten. Der folgende Befehl erstellt das *BackEnd*-Subnetz für dieses Szenario.
 
-		Add-AzureVirtualNetworkSubnetConfig -Name BackEnd `
+		Add-AzureRmVirtualNetworkSubnetConfig -Name BackEnd `
 			-VirtualNetwork $vnet -AddressPrefix 192.168.2.0/24
 
-8. Obwohl Sie Subnetze erstellen, sind diese derzeit nur in der lokalen Variablen enthalten, mit der das in Schritt 4 erstellte VNet abgerufen wird. Führen Sie zum Speichern der Änderungen in Azure das Cmdlet **Set-AzureVirtualNetwork** aus, wie unten dargestellt.
+8. Obwohl Sie Subnetze erstellen, sind diese derzeit nur in der lokalen Variablen enthalten, mit der das in Schritt 4 erstellte VNet abgerufen wird. Führen Sie zum Speichern der Änderungen in Azure das Cmdlet **Set-AzureRmVirtualNetwork** aus, wie unten dargestellt.
 
-		Set-AzureVirtualNetwork -VirtualNetwork $vnet	
+		Set-AzureRmVirtualNetwork -VirtualNetwork $vnet	
 		
 	Erwartete Ausgabe:
 
@@ -137,4 +137,4 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 		                      }
 		                    ]
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

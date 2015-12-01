@@ -31,7 +31,7 @@ In diesem Thema wird beschrieben, wie Sie vorübergehende Verbindungsausfällen 
 Ein vorübergehender Fehler ist ein Fehler, dessen Ursache von selbst behoben wird. Wenn das Azure-System Hardwareressourcen für einen besseren Lastenausgleich bei verschiedenen Workloads rasch verschiebt, treten gelegentlich vorübergehende Fehler auf. Während dieser Neukonfiguration werden Verbindungen mit Azure SQL-Datenbank möglicherweise unterbrochen.
 
 
-Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme aufgelöst, um das Programm über den vorübergehenden Fehler zu informieren. Die **Number**-Eigenschaft kann mit der Liste der vorübergehenden Fehler im oberen Bereich des Themas verglichen werden: [Fehlermeldungen für Clientprogramme mit SQL-Datenbank](sql-database-develop-error-messages).
+Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme aufgelöst, um das Programm über den vorübergehenden Fehler zu informieren. Die **Number**-Eigenschaft kann mit der Liste der vorübergehenden Fehler im oberen Bereich des Themas verglichen werden: [Fehlermeldungen für Clientprogramme mit SQL-Datenbank](sql-database-develop-error-messages.md).
 
 
 ### Vorübergehende Fehler bei Verbindungsherstellung und Befehlen
@@ -94,7 +94,7 @@ Darüber hinaus kann es sinnvoll sein, eine maximale Anzahl von Wiederholungsver
 
 Auf der folgenden Seite finden Sie Codebeispiele mit Wiederholungslogik in diversen Programmiersprachen:
 
-- [Schnellstart-Codebeispiele](sql-database-develop-quick-start-client-code-samples.md) 
+- [Schnellstart-Codebeispiele](sql-database-develop-quick-start-client-code-samples.md)
 
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
@@ -478,4 +478,4 @@ public bool IsTransient(Exception ex)
 
 - [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->
