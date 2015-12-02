@@ -1,0 +1,7 @@
+﻿Copyright (c) Microsoft Corporation.  Für den Vertrieb gelten die folgenden Bestimmungen:
+ 
+1. Microsoft und alle Mitwirkenden dieses Projekts gewähren Ihnen eine Lizenz unter den jeweiligen Urheberrechten für die Microsoft Azure-Dokumentation unter der [Creative Commons Attribution 3.0 United States-Lizenz](http://creativecommons.org/licenses/by/3.0/us/legalcode).  Darüber hinaus gewähren Ihnen Microsoft und diese Mitwirkenden in Bezug auf Mustercode, der in der Dokumentation enthalten ist, im Rahmen der jeweiligen gewerblichen Schutzrechte eine zusätzliche Lizenz, den Code zur Entwicklung oder Gestaltung Ihrer Software für Microsoft Azure zu verwenden.
+ 
+2.  Microsoft, Windows, Microsoft Azure und/oder andere in der Dokumentation genannte Microsoft-Produkte und -Dienste können Marken oder eingetragene Marken von Microsoft in den USA und/oder anderen Ländern sein. Mit dieser Lizenz werden Ihnen keinerlei Rechte zur Verwendung von Namen, Logos oder Marken eingeräumt. Die allgemeinen Markenrichtlinien von Microsoft finden Sie unter [http://go.microsoft.com/fwlink/?LinkID=254653](http://go.microsoft.com/fwlink/?LinkID=254653).
+ 
+3.  Microsoft und alle Mitwirkenden behalten sich alle sonstigen Rechte vor. Dabei ist es unerheblich, ob es sich um Urheberrechte, Patente oder Marken oder konkludente oder durch Verwirkung begründete oder sonstige Rechte handelt.
