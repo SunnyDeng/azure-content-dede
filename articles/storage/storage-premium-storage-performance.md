@@ -33,7 +33,7 @@ In diesem Artikel werden häufig gestellte Fragen zum Optimieren der Anwendungsl
 
 Wir stellen diese Leitlinien speziell für Storage Premium bereit, da in Storage Premium ausgeführte Workloads überaus leistungsabhängig sind. Sofern hilfreich, stellen wir Beispiele bereit. Einige dieser Leitlinien können auch für Anwendungen befolgt werden, die auf virtuellen IaaS-Computern mit Storage Standard-Datenträgern ausgeführt werden.
 
-Falls Sie noch nicht mit Storage Premium vertraut sind, lesen Sie zunächst den Artikel [Einführung in Storage Premium](https://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/) und anschließend [Skalierbarkeits- und Leistungsziele für Azure Storage Premium](https://azure.microsoft.com/documentation/articles/storage-scalability-targets/#scalability-targets-for-premium-storage-accounts).
+Falls Sie noch nicht mit Storage Premium vertraut sind, lesen Sie zunächst den Artikel [Einführung in Storage Premium](https://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/) und anschließend [Skalierbarkeits- und Leistungsziele für Azure Storage Premium](https://azure.microsoft.com/storage-scalability-targets/#scalability-targets-for-premium-storage-accounts).
 
 ## Anwendungsleistungsindikatoren  
 Die Leistung einer Anwendung (ob gut oder schlecht) bewerten wir mithilfe von Leistungsindikatoren wie z. B. Geschwindigkeit der Verarbeitung einer Benutzeranforderung, Menge der verarbeiteten Daten pro Anforderung, Anzahl der in einem bestimmten Zeitraum verarbeiteten Anforderungen und Wartezeit des Benutzers auf eine Antwort nach Übermittlung einer Anforderung. Die technische Begriffe für diese Leistungsindikatoren sind IOPS, Durchsatz oder Bandbreite und Latenz (Wartezeit).
@@ -567,4 +567,4 @@ Für SQL Server-Benutzer bietet sich das Lesen von Artikeln zu den bewährten Me
 - [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx) 
 - [Azure Storage Premium bietet höchste Leistung für SQL Server in Azure-VM](http://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx)  
 
-<!---HONumber=Nov15_HO3-->
+<!----HONumber=Nov15_HO3-->
