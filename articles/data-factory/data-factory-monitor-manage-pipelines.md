@@ -96,7 +96,6 @@ Die Datasetslices in Data Factory können einen der folgenden Status haben:
 <td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
 </tr>
 <tr>
-&lt; tr
 <td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
 </tr>
 <td></td>
@@ -498,7 +497,9 @@ Sie können Warnungen zu Metriken auf die gleiche Weise wie zu Ereignissen berei
  
 Ersetzen Sie "subscriptionId", "resourceGroupName" und "dataFactoryName" im obigen Beispiel durch die entsprechenden Werte.
 
-*metricName* unterstützt ab jetzt zwei Werte: "FailedRuns" und "SuccessfulRuns".
+*metricName* unterstützt ab jetzt zwei Werte:
+- "FailedRuns" 
+- "SuccessfulRuns"
 
 **Bereitstellen der Warnung:**
 

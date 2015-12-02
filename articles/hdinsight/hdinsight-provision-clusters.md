@@ -256,7 +256,7 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 
 ## Erstellen mit dem Vorschauportal
 
-Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen](#basic-configuration-options) und [erweiterten Konfigurationsoptionen](#advanced-configuration-options).
+Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen](#basic-configuration-options) und [erweiterten Konfigurationsoptionen](#advanced-configuration-options) .
 
 **So erstellen Sie einen HDInsight-Cluster**
 
@@ -298,11 +298,11 @@ Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen]
 
 			![Virtual network blade](./media/hdinsight-provision-clusters/HDI.CreateCluster.6.png "Specify virtual network details")
 
-			>[AZURE.NOTE] Windows based HDInsight cluster can only be placed into a classical virtual network.
+			>[AZURE.NOTE] Windows-basierte HDInsight-Cluster können nur in einem klassischen virtuellen Netzwerk bereitgestellt werden.
   
 
   		
-		* **External Metastores**: Specify an Azure SQL database to store Hive and Oozie metadata associated with the cluster.
+		* **Externe Metastores**: Geben Sie eine Azure SQL-Datenbank an, die zum Speichern von Hive- und Oozie-Metadaten für den Cluster verwendet werden soll.
  
             > [AZURE.NOTE] Metastore configuration is not available for HBase cluster types.
 
@@ -367,7 +367,7 @@ Die Azure-Ressourcen-Manager (ARM)-Vorlage erleichtert die Bereitstellung und er
 
 **So stellen Sie ein Cluster mithilfe einer ARM-Vorlage bereit**
 
-1. Speichern Sie die JSON-Datei aus [Anhang A](#appendix-a---arm-template) auf Ihrer Arbeitsstation.
+1. Speichern Sie die JSON-Datei in [Anhang A](#appendix-a---arm-template) auf Ihrer Arbeitsstation.
 2. Erstellen Sie bei Bedarf die Parameter.
 3. Führen Sie die Vorlage mithilfe des folgenden PowerShell-Skripts aus:
 

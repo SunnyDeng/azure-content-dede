@@ -81,7 +81,8 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
                 this.checkpointStopWatch.Restart();
             }
 	    }
-	} ````
+	}
+    ````
 
 	Diese Klasse wird von **EventProcessorHost** zur Verarbeitung der vom Event Hub empfangenen Ereignisse aufgerufen. Beachten Sie, dass die `SimpleEventProcessor`-Klasse eine Stoppuhr verwendet, um in regelmäßigen Abständen die "checkpoint"-Methode für den **EventProcessorHost**-Kontext aufzurufen. Dadurch wird sichergestellt, dass der Empfänger bei einem Neustart maximal nur die Daten verlieren kann, die in den letzten fünf Minuten verarbeitet wurden.
 
@@ -95,7 +96,8 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 
 	Ändern Sie dann wie unten gezeigt die **Program**-Klasse der **Main**-Methode, und ersetzen Sie dabei den Namen und die Verbindungszeichenfolge des Event Hubs sowie das Speicherkonto und den Speicherschlüssel, die Sie in den vorherigen Abschnitten kopiert haben.
 
-    ``` static void Main(string args)
+    ```
+	static void Main(string[] args)
     {
       string eventHubConnectionString = "{event hub connection string}";
       string eventHubName = "{event hub name}";
@@ -106,9 +108,10 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 
       string eventProcessorHostName = Guid.NewGuid().ToString();
       EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
-      Console.WriteLine("Registering EventProcessor..."); eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>().Wait();
+      Console.WriteLine("Registering EventProcessor...");
+      eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>().Wait();
 
-      Console.WriteLine("Empfang. Drücken Sie die EINGABETASTE, um den Worker zu beenden.");
+      Console.WriteLine("Receiving. Press enter key to stop worker.");
       Console.ReadLine();
       eventProcessorHost.UnregisterEventProcessorAsync().Wait();
       }

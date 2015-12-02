@@ -47,11 +47,14 @@ Das Erstellen eines Empfehlungsmodells ist in der Regel ausreichend, damit Empfe
 
 ### 2\.2. Rangfolgebuild
 
-Features können das Empfehlungsmodell verbessern, doch dazu ist die Verwendung von nützlichen Features erforderlich. Zu diesem Zweck wurde ein neuer Build zum Erstellen von Rangfolgen eingeführt Durch diesen Build wird die Nützlichkeit der Features in eine Rangfolge gebracht. Nützliche Features erhalten mindestens eine Rangwertung von 2. Wenn Sie wissen, welche Features nützlich sind, lösen Sie mit der Liste bzw. Unterliste nützlicher Features das Erstellen eines Empfehlungsbuilds aus. Diese Features können zum Verbessern sowohl „warmer“ als auch „kalter“ Elemente verwendet werden. Zum Verwenden der Features bei „warmen“ Elementen muss der Buildparameter `UseFeatureInModel` eingerichtet werden. Zum Verwenden der Features bei „kalten“ Elementen muss der Buildparameter `AllowColdItemPlacement` aktiviert werden. Hinweis: Es ist nicht möglich, `AllowColdItemPlacement` ohne `UseFeatureInModel` zu aktivieren.
+Features können das Empfehlungsmodell verbessern, doch dazu ist die Verwendung von nützlichen Features erforderlich. Zu diesem Zweck wurde ein neuer Build zum Erstellen von Rangfolgen eingeführt Durch diesen Build wird die Nützlichkeit der Features in eine Rangfolge gebracht. Nützliche Features erhalten mindestens eine Rangwertung von 2.
+Wenn Sie wissen, welche Features nützlich sind, lösen Sie mit der Liste bzw. Unterliste nützlicher Features das Erstellen eines Empfehlungsbuilds aus. Diese Features können zum Verbessern sowohl „warmer“ als auch „kalter“ Elemente verwendet werden. Zum Verwenden der Features bei „warmen“ Elementen muss der Buildparameter `UseFeatureInModel` eingerichtet werden. Zum Verwenden der Features bei „kalten“ Elementen muss der Buildparameter `AllowColdItemPlacement` aktiviert werden.
+Hinweis: Es ist nicht möglich, `AllowColdItemPlacement` ohne `UseFeatureInModel` zu aktivieren.
 
 ### 2\.3. Empfehlungsargumentation
 
-Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen („Argumentation“) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen. Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
+Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen („Argumentation“) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen.
+Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
 
 ## 3\. Einschränkungen
 
@@ -98,7 +101,8 @@ Es wird eine Anforderung „Modell erstellen“ erstellt.
 
 HTTP-Statuscode: 200
 
-- `feed/entry/content/properties/id`: Enthält die Modell-ID. **Hinweis**: Bei der Modell-ID muss die Groß-/Kleinschreibung beachtet werden.
+- `feed/entry/content/properties/id`: Enthält die Modell-ID.
+**Hinweis**: Bei der Modell-ID muss die Groß-/Kleinschreibung beachtet werden.
 
 OData-XML
 
@@ -262,7 +266,9 @@ OData-XML
 
 ### 5\.4. Modell aktualisieren
 
-Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <ins>Aktive Build-ID</ins>: Jeder Build für jedes Modell weist eine „Build-ID“ auf. Die aktive Build-ID ist der erste erfolgreich erstellte Build jedes neuen Modells. Wenn Sie über eine aktive Build-ID verfügen und für das gleiche Modell zusätzliche Builds erstellen, müssen Sie die aktive Build-ID gegebenenfalls ausdrücklich als Standard-Build-ID festlegen. Wenn Sie Empfehlungen nutzen und die zu verwendende Build-ID nicht angeben, wird automatisch der Standard-Build-ID verwendet.<br> Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem Mechanismus neue Modelle erstellt und getestet werden, bevor sie in der Produktion verwendet werden.
+Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br>
+<ins>Aktive Build-ID</ins>: Jeder Build für jedes Modell weist eine „Build-ID“ auf. Die aktive Build-ID ist der erste erfolgreich erstellte Build jedes neuen Modells. Wenn Sie über eine aktive Build-ID verfügen und für das gleiche Modell zusätzliche Builds erstellen, müssen Sie die aktive Build-ID gegebenenfalls ausdrücklich als Standard-Build-ID festlegen. Wenn Sie Empfehlungen nutzen und die zu verwendende Build-ID nicht angeben, wird automatisch der Standard-Build-ID verwendet.<br>
+Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem Mechanismus neue Modelle erstellt und getestet werden, bevor sie in der Produktion verwendet werden.
 
 
 | HTTP-Methode | URI |
@@ -793,7 +799,11 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 </pre>
 
 ## 7\. Modellgeschäftsregeln
-Es gibt 4 Typen von Regeln: <strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen. <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen. <strong>WhiteList</strong>: Mit dieser Funktion können Sie eine Positivliste mit den einzigen Elementen erstellen, die in den Empfehlungsergebnissen zurückgegeben werden sollen (Gegenfunktion zur Sperrliste). <strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+Es gibt 4 Typen von Regeln:
+<strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+<strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen.
+<strong>WhiteList</strong>: Mit dieser Funktion können Sie eine Positivliste mit den einzigen Elementen erstellen, die in den Empfehlungsergebnissen zurückgegeben werden sollen (Gegenfunktion zur Sperrliste).
+<strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
 
 
 ### 7\.1. Modellregeln abrufen
@@ -861,9 +871,9 @@ OData-XML
 |POST |`<rootURI>/AddRule?apiVersion=%271.0%27`|
 |HEADER |`"Content-Type", "text/xml"`|
 
-|	Parametername |	Gültige Werte |
+|	Parametername |	Gültige Werte						 |
 |:--------			|:--------								|
-|	apiVersion | 1\.0 |
+|	apiVersion		| 1\.0 |
 ||| 
 | Request Body | <ins>Zum Hinzufügen der BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der WhiteList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der PerSeedBlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
 
@@ -979,7 +989,9 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 
 HTTP-Statuscode: 200
 
-Von der API wird ein Importbericht zurückgegeben. - `feed\entry\content\properties\LineCount`: Dies ist die Anzahl der zulässigen Zeilen. - `feed\entry\content\properties\ErrorCount`: Dies ist die Anzahl der Zeilen, die aufgrund eines Fehlers nicht eingefügt wurden.
+Von der API wird ein Importbericht zurückgegeben.
+- `feed\entry\content\properties\LineCount`: Dies ist die Anzahl der zulässigen Zeilen.
+- `feed\entry\content\properties\ErrorCount`: Dies ist die Anzahl der Zeilen, die aufgrund eines Fehlers nicht eingefügt wurden.
 
 OData-XML
 
@@ -1324,7 +1336,8 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Le
   		</EventData>
 		</Event>
 
-**Antwort**: HTTP-Statuscode: 200
+**Antwort**:
+HTTP-Statuscode: 200
 
 ### 9\.2. Modellnutzungsdateien auflisten
 Hierdurch werden von allen Modellnutzungsdateien Metadaten abgerufen.
@@ -1494,7 +1507,24 @@ Hierdurch werden die ersten 2 KB des Nutzungsdateiinhalts abgerufen.
 
 HTTP-Statuscode: 200
 
-Die Antwort wird in reinem Textformat zurückgegeben: <pre> 85526,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 210926,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 116866,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 177458,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 274004,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 123883,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 37712,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 152249,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 250948,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 235588,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 158254,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 271195,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 141157,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 171118,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 225087,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 </pre>
+Die Antwort wird in reinem Textformat zurückgegeben:
+<pre>
+85526,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+210926,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+116866,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+177458,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+274004,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+123883,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+37712,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+152249,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+250948,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+235588,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+158254,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+271195,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+141157,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+171118,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+225087,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+</pre>
 
 
 ### 9\.5. Modellnutzungsdatei abrufen
@@ -1517,7 +1547,41 @@ Hierdurch wird der vollständige Inhalt der Nutzungsdatei abgerufen.
 
 HTTP-Statuscode: 200
 
-Die Antwort wird in reinem Textformat zurückgegeben: <pre> 85526,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 210926,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 116866,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 177458,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1 274004,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 123883,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 37712,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 152249,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 250948,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 235588,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 158254,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 271195,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 141157,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1 171118,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 225087,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 244881,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 50547,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 213090,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 260655,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 72214,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 189334,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 36326,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 189336,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1 189334,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 260655,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 162100,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 54946,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 260965,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 102758,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 112602,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 163925,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 262998,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 144717,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1 </pre>
+Die Antwort wird in reinem Textformat zurückgegeben:
+<pre> 85526,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+210926,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+116866,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+177458,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+274004,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+123883,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+37712,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+152249,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+250948,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+235588,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+158254,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+271195,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+141157,21BF8088-B6C0-4509-870C-E1C7AC78304A,2014/11/02T13:40:15,True,1
+171118,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+225087,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+244881,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+50547,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+213090,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+260655,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+72214,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+189334,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+36326,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+189336,3BB5CB44-D143-4BDD-A55C-443964BF4B23,2014/11/02T13:40:15,True,1
+189334,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+260655,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+162100,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+54946,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+260965,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+102758,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+112602,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+163925,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+262998,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+144717,552A1940-21E4-4399-82BB-594B46D7ED54,2014/11/02T13:40:15,True,1
+</pre>
 
 ### 9\.6. Nutzungsdatei löschen
 Hierdurch wird die angegebene Modellnutzungsdatei gelöscht.
@@ -1558,7 +1622,9 @@ Hierdurch werden alle Modellnutzungsdateien gelöscht.
 HTTP-Statuscode: 200
 
 ## 10\. Merkmale
-In diesem Abschnitt wird gezeigt, wie Featureinformationen abgerufen werden, z. B. die importierten Features, ihre Werte und ihr Rang, und wann dieser Rang zugeordnet wurde. Features werden als Teil der Katalogdaten importiert, und wenn ein Rangfolgebuild abgeschlossen ist, wird ihnen ein Rang zugeordnet. Der Rang der Features kann sich je nach Nutzungsdatenmuster und Elementtyp ändern. Bei konsistenter Nutzung und konsistenten Elementen dürfte der Rang jedoch nur geringfügigen Schwankungen unterliegen. Der Rang eines Features ist eine nicht-negative Zahl. Die Zahl 0 bedeutet, dass das Feature noch nicht eingestuft wurde (dies ist der Fall, wenn diese API vor dem Abschluss des ersten Rangfolgebuilds aufgerufen wurde). Das Datum, an dem der Rang zugeordnet wurde, wird als Aktualität der Bewertung bezeichnet.
+In diesem Abschnitt wird gezeigt, wie Featureinformationen abgerufen werden, z. B. die importierten Features, ihre Werte und ihr Rang, und wann dieser Rang zugeordnet wurde. Features werden als Teil der Katalogdaten importiert, und wenn ein Rangfolgebuild abgeschlossen ist, wird ihnen ein Rang zugeordnet.
+Der Rang der Features kann sich je nach Nutzungsdatenmuster und Elementtyp ändern.Bei konsistenter Nutzung und konsistenten Elementen dürfte der Rang jedoch nur geringfügigen Schwankungen unterliegen.
+Der Rang eines Features ist eine nicht-negative Zahl. Die Zahl 0 bedeutet, dass das Feature noch nicht eingestuft wurde (dies ist der Fall, wenn diese API vor dem Abschluss des ersten Rangfolgebuilds aufgerufen wurde). Das Datum, an dem der Rang zugeordnet wurde, wird als Aktualität der Bewertung bezeichnet.
 
 ### 10\.1. Featureinformationen abrufen (für den letzten Rangfolgebuild)
 Hierdurch werden Featureinformationen einschließlich Rang für den letzten erfolgreichen Rangfolgebuild abgerufen.
@@ -1728,9 +1794,18 @@ OData
 
   In diesem Abschnitt werden die verschiedenen APIs im Zusammenhang mit Builds erläutert. Es gibt 3 Arten von Builds: Empfehlungsbuilds, Rangfolgebuilds und FBT-Builds (Frequently Bought Together, häufig zusammen gekauft).
 
-Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen. Für Vorhersagen (für diese Art Build) gibt es zwei Varianten: * I2I – auch bekannt als "Item to Item"-Empfehlungen – diese Option sagt anhand eines Elements oder einer Elementliste andere Elemente voraus, die wahrscheinlich von hohem Interesse sind. * U2I – auch bekannt als "User to Item"-Empfehlungen – diese Option sagt anhand einer Benutzer-ID (und optional einer Liste von Elementen) andere Elemente voraus, die wahrscheinlich für den Benutzer (sowie ggf. seine sonstige Elementauswahl) von hohem Interesse sind. U2I-Empfehlungen basieren auf dem Verlauf derjenigen Elemente, für die der Benutzer sich bis zu dem Zeitpunkt interessiert hat, zu dem das Modell entwickelt wurde.
+Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen. Für Vorhersagen (für diese Art Build) gibt es zwei Varianten:
+* I2I – auch bekannt als "Item to Item"-Empfehlungen – diese Option sagt anhand eines Elements oder einer Elementliste andere Elemente voraus, die wahrscheinlich von hohem Interesse sind.
+* U2I – auch bekannt als "User to Item"-Empfehlungen – diese Option sagt anhand einer Benutzer-ID (und optional einer Liste von Elementen) andere Elemente voraus, die wahrscheinlich für den Benutzer (sowie ggf. seine sonstige Elementauswahl) von hohem Interesse sind. U2I-Empfehlungen basieren auf dem Verlauf derjenigen Elemente, für die der Benutzer sich bis zu dem Zeitpunkt interessiert hat, zu dem das Modell entwickelt wurde.
 
-Rangfolgebuilds sind technische Builds, welche die Nützlichkeit Ihrer Features vermitteln können. Um bei Empfehlungsmodellen mit Features die besten Ergebnisse zu erzielen, sollten Sie die folgenden Schritte ausführen: - Lösen Sie einen Rangfolgebuild aus (sofern die Bewertung Ihrer Features nicht stabil ist), und warten Sie, bis Sie die Featurebewertung erhalten. - Rufen Sie den Rang Ihrer Features durch einen Aufruf an die API [Get Features Info](#101-get-features-info-for-last-rank-build) ab. - Konfigurieren Sie einen Empfehlungsbuild mit den folgenden Parametern: - `useFeatureInModel`: Auf „True“ festlegen. - `ModelingFeatureList`: Auf eine kommagetrennte Liste mit einer Bewertung von mindestens 2.0 festlegen (je nach den im vorigen Schritt abgerufenen Rängen). - `AllowColdItemPlacement`: Auf „True“ festlegen. - Optional können Sie `EnableFeatureCorrelation` auf „True“ und `ReasoningFeatureList` auf die Liste der Features festlegen, die Sie bei Erläuterungen verwenden möchten (meist ist das die Featureliste, die beim Modellieren verwendet wird, oder eine Unterliste). - Lösen Sie den Empfehlungsbuild mit den konfigurierten Parametern aus.
+Rangfolgebuilds sind technische Builds, welche die Nützlichkeit Ihrer Features vermitteln können. Um bei Empfehlungsmodellen mit Features die besten Ergebnisse zu erzielen, sollten Sie die folgenden Schritte ausführen:
+- Lösen Sie einen Rangfolgebuild aus (sofern die Bewertung Ihrer Features nicht stabil ist), und warten Sie, bis Sie die Featurebewertung erhalten. - Rufen Sie den Rang Ihrer Features durch einen Aufruf an die API [Get Features Info](#101-get-features-info-for-last-rank-build) ab.
+- Konfigurieren Sie einen Empfehlungsbuild mit den folgenden Parametern:
+	- `useFeatureInModel`: Auf „True“ festlegen.
+	- `ModelingFeatureList`: Auf eine kommagetrennte Liste mit einer Bewertung von mindestens 2.0 festlegen (je nach den im vorigen Schritt abgerufenen Rängen).
+	- `AllowColdItemPlacement`: Auf „True“ festlegen.
+	- Optional können Sie `EnableFeatureCorrelation` auf „True“ und `ReasoningFeatureList` auf die Liste der Features festlegen, die Sie bei Erläuterungen verwenden möchten (meist ist das die Featureliste, die beim Modellieren verwendet wird, oder eine Unterliste).
+- Lösen Sie den Empfehlungsbuild mit den konfigurierten Parametern aus.
 
 Hinweis: Wenn Sie keine Parameter konfigurieren (z. B. den Empfehlungsbuild ohne Parameter aufrufen) oder die Featureverwendung nicht ausdrücklich deaktivieren (indem Sie z. B. `UseFeatureInModel` auf „False“ festlegen), werden die featurebezogenen Parameter mit den oben beschrieben Werten eingerichtet, sofern ein Rangfolgebuild vorhanden ist.
 
@@ -1981,9 +2056,18 @@ Die Antwort enthält einen Eintrag pro Build. Jeder Eintrag enthält die folgend
 - `feed/entry/content/properties/ExecutionTime`: Dauer des Builds
 - `feed/entry/content/properties/ProgressStep`: Details zur aktuellen Phase eines Buildfortschritts.
 
-Gültige Buildstatus: - Created (Erstellt): Die Builderstellungsanforderung wurde erstellt. - Queued (In Warteschlange): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht. - Building (Erstellen): Der Build wird bearbeitet. - Success (Erfolg): Der Build wurde erfolgreich erstellt. - Error (Fehler): Der Build wurde mit einem Fehler beendet. - Cancelled (Abgebrochen): Der Build wurde abgebrochen. - Cancelling (Abbrechen): Der Build wird abgebrochen.
+Gültige Buildstatus:
+- Created (Erstellt): Die Builderstellungsanforderung wurde erstellt.
+- Queued (In Warteschlange): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht.
+- Building (Erstellen): Der Build wird bearbeitet.
+- Success (Erfolg): Der Build wurde erfolgreich erstellt.
+- Error (Fehler): Der Build wurde mit einem Fehler beendet.
+- Cancelled (Abgebrochen): Der Build wurde abgebrochen.
+- Cancelling (Abbrechen): Der Build wird abgebrochen.
 
-Gültige Werte für den Buildtyp: - Rank: Rangfolgebuild - Recommendation: Empfehlungsbuild
+Gültige Werte für den Buildtyp:
+- Rank: Rangfolgebuild
+- Recommendation: Empfehlungsbuild
 
 
 OData-XML
@@ -2056,10 +2140,19 @@ Die Antwort enthält einen Eintrag pro Build. Jeder Eintrag enthält die folgend
 - `feed/entry/content/properties/ExecutionTime`: Dauer des Builds
 - `feed/entry/content/properties/ProgressStep`: Details zur aktuellen Phase eines Buildfortschritts.
 
-Gültige Buildstatus: - Created (Erstellt): Die Builderstellungsanforderung wurde erstellt. - Queued (In Warteschlange): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht. - Building (Erstellen): Der Build wird bearbeitet. - Success (Erfolg): Der Build wurde erfolgreich erstellt. - Error (Fehler): Der Build wurde mit einem Fehler beendet. - Cancelled (Abgebrochen): Der Build wurde abgebrochen. - Cancelling (Abbrechen): Der Build wird abgebrochen.
+Gültige Buildstatus:
+- Created (Erstellt): Die Builderstellungsanforderung wurde erstellt.
+- Queued (In Warteschlange): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht.
+- Building (Erstellen): Der Build wird bearbeitet.
+- Success (Erfolg): Der Build wurde erfolgreich erstellt.
+- Error (Fehler): Der Build wurde mit einem Fehler beendet.
+- Cancelled (Abgebrochen): Der Build wurde abgebrochen.
+- Cancelling (Abbrechen): Der Build wird abgebrochen.
 
 
-Gültige Werte für den Buildtyp: - Rank: Rangfolgebuild - Recommendation: Empfehlungsbuild
+Gültige Werte für den Buildtyp:
+- Rank: Rangfolgebuild
+- Recommendation: Empfehlungsbuild
 
 
 OData-XML
@@ -2148,7 +2241,9 @@ Hierdurch werden Buildparameter abgerufen.
 
 HTTP-Statuscode: 200
 
-Von dieser API wird eine Sammlung von Schlüssel/Wert-Elementen zurückgegeben. Jedes Element steht für einen Parameter und dessen Wert: - `feed/entry/content/properties/Key`: Name des Buildparameters. - `feed/entry/content/properties/Value`: Wert des Buildparameters.
+Von dieser API wird eine Sammlung von Schlüssel/Wert-Elementen zurückgegeben. Jedes Element steht für einen Parameter und dessen Wert:
+- `feed/entry/content/properties/Key`: Name des Buildparameters.
+- `feed/entry/content/properties/Value`: Wert des Buildparameters.
 
 In der folgenden Tabelle werden die Werte dargestellt, die von den Schlüsseln repräsentiert werden.
 
@@ -2358,7 +2453,11 @@ Hierdurch werden Empfehlungen des aktiven Builds vom Typ "Recommendation" (Empfe
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
+- `Feed\entry\content\properties\Name`: Name des Elements.
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Die folgende Beispielantwort enthält 10 empfohlene Elemente.
 
@@ -2535,7 +2634,11 @@ Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ „Recommendation�
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
+- `Feed\entry\content\properties\Name`: Name des Elements.
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
@@ -2561,7 +2664,13 @@ Hierdurch werden Empfehlungen des aktiven Builds vom Typ "FBT" basierend auf ein
 HTTP-Statuscode: 200
 
 
-Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden). Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name1`: Name des Elements – `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements (optional) – `Feed\entry\content\properties\Name2`: Name des zweiten Elements (optional) – `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höhere Zuverlässigkeit) – `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung)
+Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden). Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements
+- `Feed\entry\content\properties\Name1`: Name des Elements
+- `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements (optional)
+- `Feed\entry\content\properties\Name2`: Name des zweiten Elements (optional)
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höhere Zuverlässigkeit)
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung)
 
 Die folgende Beispielantwort enthält 3 empfohlene Elementsätze.
 
@@ -2647,7 +2756,13 @@ Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ "FBT" abgerufen.
 HTTP-Statuscode: 200
 
 
-Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden). Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name1`: Name des Elements – `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements (optional) – `Feed\entry\content\properties\Name2`: Name des zweiten Elements (optional) – `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höhere Zuverlässigkeit) – `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung)
+Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden). Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements
+- `Feed\entry\content\properties\Name1`: Name des Elements
+- `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements (optional)
+- `Feed\entry\content\properties\Name2`: Name des zweiten Elements (optional)
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höhere Zuverlässigkeit)
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung)
 
 Eine Beispielantwort finden Sie unter 12.3.
 
@@ -2657,7 +2772,9 @@ Hierdurch werden Benutzerempfehlungen eines Builds vom Typ "Recommendation" abge
 
 Die API gibt basierend auf dem Nutzungsverlauf des Benutzers eine Liste der vorhergesagten Elemente zurück.
 
-Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
+Hinweise:
+ 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen.
+ 2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -2676,7 +2793,11 @@ Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn d
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
+- `Feed\entry\content\properties\Name`: Name des Elements.
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
@@ -2686,7 +2807,9 @@ Hierdurch werden Benutzerempfehlungen eines als aktiver Build gekennzeichneten B
 
 Die API gibt basierend auf dem Nutzungsverlauf des Benutzers eine Liste der vorhergesagten Elemente sowie die zusätzlich bereitgestellten Elemente zurück.
 
-Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
+Hinweise:
+ 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen.
+ 2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
 
 
 | HTTP-Methode | URI |
@@ -2707,7 +2830,11 @@ Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn d
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
+- `Feed\entry\content\properties\Name`: Name des Elements. - 
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
@@ -2738,7 +2865,11 @@ Hinweis: Für einen FBT-Build gibt es keine Benutzerempfehlungen.
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
+- `Feed\entry\content\properties\Name`: Name des Elements.
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
@@ -2772,12 +2903,17 @@ Hinweis: Für einen FBT-Build gibt es keine Benutzerempfehlungen.
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
+- `Feed\entry\content\properties\Name`: Name des Elements.
+- `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
+- `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
 ## 13\. Nutzungsverlauf eines Benutzers
-Nachdem ein Empfehlungsmodell entwickelt wurde, ermöglicht es das System, den Verlauf eines Benutzers (also die mit einem bestimmten Benutzer verknüpften Elemente) abzurufen, der für den Build verwendet wurde. Mit dieser API kann der Nutzungsverlauf abgerufen werden.
+Nachdem ein Empfehlungsmodell entwickelt wurde, ermöglicht es das System, den Verlauf eines Benutzers (also die mit einem bestimmten Benutzer verknüpften Elemente) abzurufen, der für den Build verwendet wurde.
+Mit dieser API kann der Nutzungsverlauf abgerufen werden.
 
 Hinweis: Der Nutzungsverlauf ist zurzeit nur für Empfehlungsbuilds verfügbar.
 
@@ -2801,7 +2937,11 @@ Hierdurch wird die Liste der Elemente abgerufen, die im aktiven Build oder im an
 
 HTTP-Statuscode: 200
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name`: Name des Elements – `Feed\entry\content\properties\Rating`: n. v. – `Feed\entry\content\properties\Reasoning`: n. v.
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
+- `Feed\entry\content\properties\Id`: ID des empfohlenen Elements
+- `Feed\entry\content\properties\Name`: Name des Elements
+- `Feed\entry\content\properties\Rating`: n. v.
+- `Feed\entry\content\properties\Reasoning`: n. v.
 
 OData-XML
 
@@ -2831,7 +2971,10 @@ OData-XML
 </feed>
 
 ## 14\. Benachrichtigungen
-Von den Azure Machine Learning-Empfehlungen werden Benachrichtigungen erstellt, wenn persistente Fehler im System auftreten. Es gibt 3 Typen von Benachrichtigungen: 1. Buildfehler: Diese Benachrichtigung wird bei jedem Buildfehler ausgelöst. 2. Fehler bei der Datenerfassungsverarbeitung: Diese Benachrichtigung wird ausgelöst, wenn innerhalb der letzten 5 Minuten mehr als 100 Fehler in der Verarbeitung von Nutzungsereignissen pro Modell vorliegen. 3. Fehler bei der Empfehlungsnutzung: Diese Benachrichtigung wird ausgelöst, wenn innerhalb der letzten 5 Minuten mehr als 100 Fehler in der Verarbeitung von Empfehlungsanforderungen pro Modell vorliegen.
+Von den Azure Machine Learning-Empfehlungen werden Benachrichtigungen erstellt, wenn persistente Fehler im System auftreten. Es gibt 3 Typen von Benachrichtigungen:
+1.	Buildfehler: Diese Benachrichtigung wird bei jedem Buildfehler ausgelöst.
+2.	Fehler bei der Datenerfassungsverarbeitung: Diese Benachrichtigung wird ausgelöst, wenn innerhalb der letzten 5 Minuten mehr als 100 Fehler in der Verarbeitung von Nutzungsereignissen pro Modell vorliegen.
+3.	Fehler bei der Empfehlungsnutzung: Diese Benachrichtigung wird ausgelöst, wenn innerhalb der letzten 5 Minuten mehr als 100 Fehler in der Verarbeitung von Empfehlungsanforderungen pro Modell vorliegen.
 
 
 ### 14\.1. Benachrichtigungen abrufen
@@ -2927,7 +3070,10 @@ HTTP-Statuscode: 200
 
 
 ## 15. Rechtliche Hinweise
-Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument einschließlich URLs und anderer Verweise auf Websites können ohne Ankündigung geändert werden.<br><br> Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Ähnlichkeiten oder Verbindungen sind rein zufällig und nicht beabsichtigt.<br><br> Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Rechte an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.<br><br> © 2015 Microsoft. Alle Rechte vorbehalten.
+Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument einschließlich URLs und anderer Verweise auf Websites können ohne Ankündigung geändert werden.<br><br>
+Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Ähnlichkeiten oder Verbindungen sind rein zufällig und nicht beabsichtigt.<br><br>
+Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Rechte an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.<br><br>
+© 2015 Microsoft. Alle Rechte vorbehalten.
  
 
 <!---HONumber=Nov15_HO3-->

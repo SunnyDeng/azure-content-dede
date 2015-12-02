@@ -99,6 +99,7 @@ Weitere Informationen zu IoT Hub:
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
 [Transient Fault Handling]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[Behandeln vorübergehender Fehler]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
 
 [Informationen zu IoT Hub – Kompatibilität mit Event Hubs]: iot-hub-guidance.md#eventhubcompatible
 
@@ -109,6 +110,7 @@ Weitere Informationen zu IoT Hub:
 
 [Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
 [Process Device-to-Cloud messages]: iot-hub-csharp-csharp-process-d2c.md
+[Verarbeiten von D2C-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
 [Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
 [Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md
