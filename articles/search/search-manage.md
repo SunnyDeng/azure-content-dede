@@ -102,7 +102,7 @@ Im Bereich Nutzung im Dienst-Dashboard können Sie direkt ablesen, ob die Partit
 
 Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf dem Tarif. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
-+	Abrufen von Indexstatistiken
++	[Abrufen von Indexstatistiken](http://msdn.microsoft.com/library/dn798942.aspx)
 +	[Dokumentenanzahl](http://msdn.microsoft.com/library/dn798924.aspx)
 
 > [AZURE.NOTE]Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt.

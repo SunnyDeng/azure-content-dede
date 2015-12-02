@@ -39,7 +39,7 @@ Denken Sie daran, dass für den freigegebenen Dienst ein Maximum von einem Repli
 
 Sowohl die REST-API von Azure Search als auch das .NET SDK bieten programmgesteuerten Zugriff auf Dienstmetriken. Bei Verwendung von [Indexern](https://msdn.microsoft.com/library/azure/dn946891.aspx) zum Laden eines Index aus Azure SQL-Datenbank oder DocumentDB steht eine zusätzliche API zum Abrufen der benötigen Zahlen zur Verfügung.
 
-  + Abrufen von Indexstatistiken
+  + [Abrufen von Indexstatistiken](https://msdn.microsoft.com/library/azure/dn798942.aspx)
   + [Dokumentenanzahl](https://msdn.microsoft.com/library/azure/dn798924.aspx)
   + [Abrufen des Indexerstatus](https://msdn.microsoft.com/library/azure/dn946884.aspx)
 
