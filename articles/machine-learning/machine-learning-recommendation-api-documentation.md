@@ -1548,7 +1548,8 @@ Hierdurch wird der vollständige Inhalt der Nutzungsdatei abgerufen.
 HTTP-Statuscode: 200
 
 Die Antwort wird in reinem Textformat zurückgegeben:
-<pre> 85526,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
+<pre>
+85526,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
 210926,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
 116866,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
 177458,2406E770-769C-4189-89DE-1C9283F93A96,2014/11/02T13:40:15,True,1
@@ -1623,7 +1624,7 @@ HTTP-Statuscode: 200
 
 ## 10\. Merkmale
 In diesem Abschnitt wird gezeigt, wie Featureinformationen abgerufen werden, z. B. die importierten Features, ihre Werte und ihr Rang, und wann dieser Rang zugeordnet wurde. Features werden als Teil der Katalogdaten importiert, und wenn ein Rangfolgebuild abgeschlossen ist, wird ihnen ein Rang zugeordnet.
-Der Rang der Features kann sich je nach Nutzungsdatenmuster und Elementtyp ändern.Bei konsistenter Nutzung und konsistenten Elementen dürfte der Rang jedoch nur geringfügigen Schwankungen unterliegen.
+Der Rang der Features kann sich je nach Nutzungsdatenmuster und Elementtyp ändern. Bei konsistenter Nutzung und konsistenten Elementen dürfte der Rang jedoch nur geringfügigen Schwankungen unterliegen.
 Der Rang eines Features ist eine nicht-negative Zahl. Die Zahl 0 bedeutet, dass das Feature noch nicht eingestuft wurde (dies ist der Fall, wenn diese API vor dem Abschluss des ersten Rangfolgebuilds aufgerufen wurde). Das Datum, an dem der Rang zugeordnet wurde, wird als Aktualität der Bewertung bezeichnet.
 
 ### 10\.1. Featureinformationen abrufen (für den letzten Rangfolgebuild)
@@ -1799,7 +1800,8 @@ Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen.
 * U2I – auch bekannt als "User to Item"-Empfehlungen – diese Option sagt anhand einer Benutzer-ID (und optional einer Liste von Elementen) andere Elemente voraus, die wahrscheinlich für den Benutzer (sowie ggf. seine sonstige Elementauswahl) von hohem Interesse sind. U2I-Empfehlungen basieren auf dem Verlauf derjenigen Elemente, für die der Benutzer sich bis zu dem Zeitpunkt interessiert hat, zu dem das Modell entwickelt wurde.
 
 Rangfolgebuilds sind technische Builds, welche die Nützlichkeit Ihrer Features vermitteln können. Um bei Empfehlungsmodellen mit Features die besten Ergebnisse zu erzielen, sollten Sie die folgenden Schritte ausführen:
-- Lösen Sie einen Rangfolgebuild aus (sofern die Bewertung Ihrer Features nicht stabil ist), und warten Sie, bis Sie die Featurebewertung erhalten. - Rufen Sie den Rang Ihrer Features durch einen Aufruf an die API [Get Features Info](#101-get-features-info-for-last-rank-build) ab.
+- Lösen Sie einen Rangfolgebuild aus (sofern die Bewertung Ihrer Features nicht stabil ist), und warten Sie, bis Sie die Featurebewertung erhalten.
+- Rufen Sie den Rang Ihrer Features durch einen Aufruf an die API [Get Features Info](#101-get-features-info-for-last-rank-build) ab.
 - Konfigurieren Sie einen Empfehlungsbuild mit den folgenden Parametern:
 	- `useFeatureInModel`: Auf „True“ festlegen.
 	- `ModelingFeatureList`: Auf eine kommagetrennte Liste mit einer Bewertung von mindestens 2.0 festlegen (je nach den im vorigen Schritt abgerufenen Rängen).
@@ -2772,7 +2774,7 @@ Hierdurch werden Benutzerempfehlungen eines Builds vom Typ "Recommendation" abge
 
 Die API gibt basierend auf dem Nutzungsverlauf des Benutzers eine Liste der vorhergesagten Elemente zurück.
 
-Hinweise:
+Hinweise: 
  1. Für einen FBT-Build gibt es keine Benutzerempfehlungen.
  2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
 
@@ -2807,9 +2809,9 @@ Hierdurch werden Benutzerempfehlungen eines als aktiver Build gekennzeichneten B
 
 Die API gibt basierend auf dem Nutzungsverlauf des Benutzers eine Liste der vorhergesagten Elemente sowie die zusätzlich bereitgestellten Elemente zurück.
 
-Hinweise:
- 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen.
- 2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
+Hinweise: 
+1. Für einen FBT-Build gibt es keine Benutzerempfehlungen.
+2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
 
 
 | HTTP-Methode | URI |
@@ -2832,7 +2834,7 @@ HTTP-Statuscode: 200
 
 Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten:
 - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements.
-- `Feed\entry\content\properties\Name`: Name des Elements. - 
+- `Feed\entry\content\properties\Name`: Name des Elements.
 - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen).
 - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
@@ -3076,4 +3078,4 @@ Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Recht
 © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=Nov15_HO3-->
+<!----HONumber=Nov15_HO3-->
