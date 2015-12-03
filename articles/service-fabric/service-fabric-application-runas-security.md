@@ -88,11 +88,25 @@ Lassen Sie uns nun die Datei „MySetup.bat“ zum Visual Studio-Projekt hinzuf�
 
 ![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][Image1]
 
-Öffnen Sie nun die Datei „MySetup.bat“, und fügen Sie die folgenden Befehle hinzu. ~~~ REM Set a system environment variable. This requires administrator privilege setx -m TestVariable "MyValue" echo System TestVariable set to > test.txt echo %TestVariable% >> test.txt
+Öffnen Sie nun die Datei „MySetup.bat“, und fügen Sie die folgenden Befehle hinzu.
+~~~
+REM Set a system environment variable. This requires administrator privilege
+setx -m TestVariable "MyValue"
+echo System TestVariable set to > test.txt
+echo %TestVariable% >> test.txt
 
-REM To delete this system variable us REM REG delete "HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" /v TestVariable /f ~~~
+REM To delete this system variable us
+REM REG delete "HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" /v TestVariable /f
+~~~
 
-Als Nächstes müssen Sie die Projektmappe erstellen und in einem lokalen Entwicklungscluster bereitstellen. Nachdem der Dienst gestartet wurde, können Sie im Service Fabric-Explorer erkennen, dass „MySetup.bat“ auf zwei Arten erfolgreich war. Öffnen Sie eine PowerShell-Eingabeaufforderung, und geben Sie Folgendes ein: ~~~ [Environment]::GetEnvironmentVariable("TestVariable","Machine") ~~~ Like this ~~~ PS C:\\ [Environment]::GetEnvironmentVariable("TestVariable","Machine") MyValue ~~~
+Als Nächstes müssen Sie die Projektmappe erstellen und in einem lokalen Entwicklungscluster bereitstellen. Nachdem der Dienst gestartet wurde, können Sie im Service Fabric-Explorer erkennen, dass „MySetup.bat“ auf zwei Arten erfolgreich war. Öffnen Sie eine PowerShell-Eingabeaufforderung, und geben Sie Folgendes ein:
+~~~
+ [Environment]::GetEnvironmentVariable("TestVariable","Machine")
+~~~
+Like this
+~~~
+PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine") MyValue
+~~~
 
 Notieren Sie sich den Namen des Knotens, auf dem der Dienst im Service Fabric-Explorer bereitgestellt und gestartet wurde, z. B. Knoten 1, und navigieren Sie zum Arbeitsordner der Anwendungsinstanz, um die Datei „out.txt“ zu finden, die den Wert **TestVariable** zeigt. Wenn die Bereitstellung z. B. auf Knoten 2 erfolgt wäre, können Sie für „MyApplicationType“ zu diesem Pfad navigieren.
 
@@ -103,9 +117,16 @@ C:\SfDevCluster\Data\_App\Node.2\MyApplicationType_App\work\out.txt
 ##  Starten von PowerShell-Befehlen aus „SetupEntryPoint“
 Zum Ausführen von PowerShell aus **SetupEntryPoint** können Sie „PowerShell.exe“ in einer Batchdatei ausführen, die auf eine PowerShell-Datei verweist. Fügen Sie zuerst dem Dienstprojekt eine PowerShell-Datei hinzu, z. B. „MySetup.ps1“. Denken Sie daran, die Eigenschaft *Kopieren, wenn neuer* so festzulegen, dass diese Datei in das Dienstpaket einbezogen wird. Das folgende Beispiel zeigt eine einfache Batchdatei zum Starten einer PowerShell-Datei namens „MySetup.ps1“, die die Systemumgebungsvariable *TestVariable* festlegt.
 
-MySetup.bat to launch PowerShell file. ~~~ powershell.exe -ExecutionPolicy Bypass -Command ".\\MySetup.ps1" ~~~
+MySetup.bat to launch PowerShell file.
+~~~
+powershell.exe -ExecutionPolicy Bypass -Command ".\\MySetup.ps1"
+~~~
 
-Fügen Sie in der PowerShell-Datei Folgendes hinzu, um eine Systemumgebungsvariable festzulegen: ~~~ [Environment]::SetEnvironmentVariable("TestVariable", "MyValue", "Machine") [Environment]::GetEnvironmentVariable("TestVariable","Machine") > out.txt ~~~
+Fügen Sie in der PowerShell-Datei Folgendes hinzu, um eine Systemumgebungsvariable festzulegen:
+~~~
+[Environment]::SetEnvironmentVariable("TestVariable", "MyValue", "Machine")
+[Environment]::GetEnvironmentVariable("TestVariable","Machine") > out.txt
+~~~
 
 ## Anwenden der RunAs-Richtlinie auf Dienste 
 In den vorangegangenen Schritten wurde erläutert, wie eine RunAs-Richtlinie auf einen „SetupEntryPoint“ angewendet wird. Nun wollen wir uns ein wenig näher anschauen, wie verschiedene Prinzipale erstellt werden, die als Dienstrichtlinien angewendet werden können.
