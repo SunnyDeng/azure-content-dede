@@ -23,7 +23,8 @@
 - [PowerShell](dns-operations-dnszones.md)
 
 Diese Anleitung zeigt Ihnen, wie Sie die DNS-Zone verwalten. Sie hilft Ihnen, die Reihenfolge der erforderlichen Vorgänge zu verstehen, die für die Verwaltung der DNS-Zone durchgeführt werden müssen.
-
+ 
+ 
 ## Erstellen einer neuen DNS-Zone
 
 Um eine neue DNS-Zone zum Hosten Ihrer Domäne zu erstellen, verwenden Sie `azure network dns zone create`:
@@ -76,4 +77,4 @@ Dieser Vorgang hat einen optionalen Switch "-q", der die Eingabeaufforderung zur
 
 [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

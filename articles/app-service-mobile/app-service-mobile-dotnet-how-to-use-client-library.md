@@ -51,8 +51,7 @@ Beachten Sie, dass das [JsonPropertyAttribute](http://www.newtonsoft.com/json/he
 Mit dem folgenden Code wird das `MobileServiceClient`-Objekt erstellt, das zum Zugreifen auf Ihr Mobile App-Back-End verwendet wird.
 
 
-	MobileServiceClient client = new MobileServiceClient(
-		"MOBILE_APP_URL", "", "");
+	MobileServiceClient client = new MobileServiceClient("MOBILE_APP_URL");
 
 Ersetzen Sie im obigen Code `MOBILE_APP_URL` durch die URL des Mobile App-Back-Ends. Sie finden die URL auf dem Blatt „Mobile App“ im Azure-Vorschauportal.
 
@@ -343,13 +342,15 @@ Die **RegisterAsync()**-Methode akzeptiert auch sekundäre Kacheln:
 
         MobileService.GetPush().RegisterAsync(string channelUri, JObject templates, JObject secondaryTiles);
 
-Zum Senden von Benachrichtigungen, die diese registrierten Vorlagen verwenden, verwenden Sie die [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx).
+Beachten Sie, dass aus Sicherheitsgründen alle Tags entfernt werden. Informationen zum Hinzufügen von Tags zu Installationen bzw. Vorlagen innerhalb von Installationen finden Sie unter [Verwenden des .NET-Back-End-Server SDK für Azure Mobile Apps].
+
+Zum Senden von Benachrichtigungen, die diese registrierten Vorlagen verwenden, arbeiten Sie mit den [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx).
 
 ##<a name="optimisticconcurrency"></a>Gewusst wie: Verwenden von optimistischer Parallelität.
 
-In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Die *Steuerung für optimistische Parallelität* nimmt an, dass jede Transaktion Commits ausführen kann und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Parallelität, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
+In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. *Die Steuerung für optimistische Parallelität* nimmt an, dass jede Transaktion Commits ausführen kann und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Parallelität, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
 
-Mobile Apps unterstützt die Steuerung für optimistische Parallelität, indem Änderungen an Elementen in der `__version`-Systemeigenschaftenspalte, die für jede Tabelle im Mobile App-Back-End definiert wird, nachverfolgt werden. Bei jeder Aktualisierung eines Datensatzes wird die `__version`-Eigenschaft des entsprechenden Datensatzes durch Mobile Apps auf einen neuen Wert festgelegt. Bei jeder Aktualisierungsanforderung wird die `__version`-Eigenschaft des in der Anforderung enthaltenen Datensatzes mit der Eigenschaft des Datensatzes auf dem Server verglichen. Wenn die mit der Anforderung übergebene Version nicht mit dem Back-End übereinstimmt, löst die Clientbibliothek eine `MobileServicePreconditionFailedException<T>` aus. Der in der Ausnahme enthaltene Typ ist der Eintrag des Back-Ends, der die Serverversion des entsprechenden Eintrags enthält. Anschließend kann die Anwendung anhand dieser Informationen entscheiden, ob die Updateanforderung erneut mit dem korrekten `__version`-Wert vom Back-End ausgeführt werden soll, um Commits für die Änderungen auszuführen.
+Mobile Apps unterstützt die Steuerung für optimistische Parallelität, indem Änderungen an Elementen in der Spalte `__version` mit den Systemeigenschaften nachverfolgt werden, die für jede Tabelle im Mobile App-Back-End definiert wird. Bei jeder Aktualisierung eines Datensatzes wird die `__version`-Eigenschaft des entsprechenden Datensatzes von Mobile Apps auf einen neuen Wert festgelegt. Bei jeder Aktualisierungsanforderung wird die `__version`-Eigenschaft des in der Anforderung enthaltenen Datensatzes mit der Eigenschaft des Datensatzes auf dem Server verglichen. Wenn die mit der Anforderung übergebene Version nicht mit dem Back-End übereinstimmt, löst die Clientbibliothek eine `MobileServicePreconditionFailedException<T>` aus. Der in der Ausnahme enthaltene Typ ist der Eintrag des Back-Ends, der die Serverversion des entsprechenden Eintrags enthält. Anschließend kann die Anwendung anhand dieser Informationen entscheiden, ob die Updateanforderung erneut mit dem korrekten `__version`-Wert vom Back-End ausgeführt werden soll, um Commits für die Änderungen auszuführen.
 
 Die Anwendung definiert eine Spalte in der Tabellenklasse für die `__version`-Systemeigenschaft, um optimistische Nebenläufigkeit zu unterstützen. Die folgende Definition zeigt ein Beispiel.
 
@@ -468,7 +469,7 @@ Um die neue Sammlung in Windows Phone 8- und Silverlight-Apps zu nutzen, verwen
 
 Die Sammlung, die durch den Aufruf von `ToCollectionAsync` bzw. `ToCollection` erstellt wurde, kann an UI-Steuerelemente gebunden werden. Diese Sammlung unterstützt Seitenverwaltung, d. h. ein Steuerelement kann die Sammlung anweisen, "weitere Elemente zu laden", und die Sammlung erledigt dies für das Steuerelement. Bis zu diesem Punkt wird noch kein Benutzercode ausgeführt, das Steuerelement startet den Fluss. Da die Sammlung jedoch Daten aus dem Netzwerk lädt, ist zu erwarten, dass dieser Ladevorgang manchmal fehlschlägt. Zur Behandlung solcher Fehler können Sie die `OnException`-Methode für `MobileServiceIncrementalLoadingCollection` überschreiben, um Ausnahmen zu behandeln, die aus Aufrufen von `LoadMoreItemsAsync` durch Steuerelemente entstehen.
 
-Stellen Sie sich vor, Ihre Tabelle hat viele Felder, aber Sie möchten nur einen Teil der Felder in Ihrem Steuerelement anzeigen. Folgen Sie der Anleitung unter ["Bestimmte Spalten auswählen"](#selecting) weiter oben, um bestimmte Spalten für die Anzeige auf der Benutzeroberfläche auszuwählen.
+Stellen Sie sich vor, Ihre Tabelle hat viele Felder, aber Sie möchten nur einen Teil der Felder in Ihrem Steuerelement anzeigen. Folgen Sie der weiter oben bereitgestellten Anleitung im Abschnitt [Bestimmte Spalten auswählen](#selecting), um bestimmte Spalten für die Anzeige auf der Benutzeroberfläche auszuwählen.
 
 <!--- We want to just point to the authentication topic when it's done
 ##<a name="authentication"></a>How to: Authenticate users
@@ -722,6 +723,7 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 
 <!-- URLs. -->
 [Add authentication to your app]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md
+[Verwenden des .NET-Back-End-Server SDK für Azure Mobile Apps]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 [PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [LoginAsync method]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
@@ -741,4 +743,4 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 [DelegatingHandler]: https://msdn.microsoft.com/library/system.net.http.delegatinghandler(v=vs.110).aspx
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

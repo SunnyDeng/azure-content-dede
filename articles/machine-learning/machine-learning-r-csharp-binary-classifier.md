@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/02/2015" 
+	ms.date="11/25/2015" 
 	ms.author="jaymathe"/>
 
 
@@ -121,4 +121,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

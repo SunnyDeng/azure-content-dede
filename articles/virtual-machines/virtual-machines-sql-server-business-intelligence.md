@@ -41,7 +41,7 @@ Im Microsoft Azure Virtual Machine-Katalog sind verschiedene Images zu finden, d
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Mit dem folgenden PowerShell-Skript wird die Liste mit den Azure-Images zurückgegeben, bei denen "SQL-Server" Teil des Namens ("ImageName") ist:
 
-	# assumes you have already uploaded a management certificate to your Microsoft Azure Subscription. View the thumbprint value from the "settings" menu in Microsoft Azure Management Portal
+	# assumes you have already uploaded a management certificate to your Microsoft Azure Subscription. View the thumbprint value from the "settings" menu in Azure portal.
 	
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
@@ -431,4 +431,4 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Verwalten von Azure SQL-Datenbank mit PowerShell](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

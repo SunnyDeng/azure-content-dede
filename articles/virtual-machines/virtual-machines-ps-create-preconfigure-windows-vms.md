@@ -20,7 +20,7 @@
 # Sie können virtuelle Windows-Computer mit PowerShell und dem klassischen Bereitstellungsmodell erstellen. 
 
 > [AZURE.SELECTOR]
-- [Azure Portal - Windows](virtual-machines-windows-tutorial-classic-portal.md)
+- [Azure portal - Windows](virtual-machines-windows-tutorial-classic-portal.md)
 - [Powershell - Windows](virtual-machines-ps-create-preconfigure-windows-vms.md)
 - [PowerShell - Linux](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
@@ -265,4 +265,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

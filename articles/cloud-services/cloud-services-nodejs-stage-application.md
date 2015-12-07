@@ -3,7 +3,7 @@
 	description="Hier erfahren Sie, wie Sie eine Azure-Anwendung durch einen Austausch der virtuellen IP (VIP) zu einer Stagingumgebung und anschließend zu einer Produktionsumgebung bereitstellen." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="mwasson"/>
+	ms.date="11/20/2015" 
+	ms.author="robmcm"/>
 
 
 
@@ -54,7 +54,7 @@ Nachdem Sie die erweiterte Version einer Anwendung in der Stagingumgebung geprü
 
 > [AZURE.NOTE]Dieser Schritt geht davon aus, dass Sie bereits eine Anwendung in der Produktionsumgebung bereitgestellt haben und dass sich eine erweiterte Version der Anwendung in der Stagingumgebung befindet.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Cloud Services** und wählen Sie den Dienstnamen aus.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und wählen Sie den Dienstnamen aus.
 
 2.  Wählen Sie im **Dashboard** **Staging** aus und klicken Sie am unteren Seitenrand auf **Swap**. Daraufhin öffnet sich der VIP Swap-Dialog.
 
@@ -75,4 +75,4 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
 [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
 [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]: cloud-services-how-to-manage.md#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

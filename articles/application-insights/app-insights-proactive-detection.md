@@ -3,7 +3,7 @@
 	description="Application Insights führt eine umfassende Analyse Ihrer App-Telemetrie durch und warnt Sie vor potenziellen Problemen." 
 	services="application-insights" 
     documentationCenter="windows"
-	authors="antonfr" 
+	authors="antonfrMSFT" 
 	manager="douge"/>
 
 <tags 
@@ -25,6 +25,8 @@ Application Insights führt eine umfassende Analyse Ihrer App-Telemetrie durch u
 ## Was ist die proaktive Erkennung?
 
 Bei der proaktiven Erkennung werden mithilfe von Machine Learning- und Data Mining-Algorithmen ungewöhnliche Muster erkannt, die sich auf die Leistung der Anwendung auswirken. Mit der proaktiven Erkennung werden die von Application Insights erfassten Leistungstelemetriedaten automatisch analysiert. Sie erhalten eine E-Mail zu jeder in der Anwendung erkannten anormalen Leistung. Sie müssen keine Regeln für Schwellenwerte festlegen. Die Benachrichtigungen der proaktiven Erkennung sind in die Analysefunktionen von Application Insights integriert, sodass eine schnelle Eingrenzung und Diagnose der Probleme ermöglicht wird.
+
+Die proaktive Erkennung befindet sich in der Vorschauphase und ist noch nicht für alle Application Insights-Benutzer verfügbar. Wenn Sie sie ausprobieren möchten, wenden Sie sich an AppInsightsML@microsoft.com. Wir werden sie dann in Zusammenarbeit mit Ihnen einrichten.
 
 ## Informationen zur proaktiven Warnung
 
@@ -60,7 +62,7 @@ Bei der proaktiven Erkennung werden mithilfe von Machine Learning- und Data Mini
 ![](./media/app-insights-proactive-detection/03.png)
 
 
-* **When** gibt die Zeit an, in der das Problem erkannt wurde.
+* **When** gibt die Zeit an, zu der das Problem erkannt wurde.
 * **What** beschreibt Folgendes:
  * Das erkannte Problem
  * Die Merkmale der gefundenen Gruppe von Ereignissen, die das problematische Verhalten aufwiesen
@@ -80,7 +82,7 @@ Erstens: Ist es wirklich ein Problem? Wenn eine Seite immer langsam geladen wird
 
 Verwenden Sie die Aussage zur Auswirkung in der E-Mail als allgemeinen Anhaltspunkt, aber seien Sie sich bewusst, dass damit nicht alles abgedeckt wird. Sammeln Sie zur Bestätigung weitere Beweise.
 
-Sehen Sie sich die Parameter des Problems an. Falls eine geografische Abhängigkeit besteht, sollten Sie [Verfügbarkeitstests](app-insights-monitor-web-app-availability.md) für diese Region einrichten. Vielleicht liegen in diesem Bereich lediglich Netzwerkprobleme vor.
+Sehen Sie sich die Parameter des Problems an. Falls eine geografische Abhängigkeit besteht, sollten Sie [Verfügbarkeitstests](app-insights-monitor-web-app-availability.md) für diese Region einrichten. Möglicherweise liegen in diesem Umfeld lediglich Netzwerkprobleme vor.
 
 ### Diagnostizieren des langsamen Ladens von Seiten 
 
@@ -90,8 +92,8 @@ Wo liegt das Problem? Reagiert der Server langsam, ist die Seite sehr lang oder 
 
 * Wenn die **Zeit für das Senden von Anforderungen** hoch ist, reagiert entweder der Server langsam, oder die Anforderung umfasst eine größere Datenmenge. Sehen Sie sich die [Leistungsmetriken](app-insights-web-monitor-performance.md#metrics) an, um die Reaktionszeiten zu prüfen. 
 * Richten Sie die [Abhängigkeitsüberwachung](app-insights-dependencies.md) ein, um ermitteln zu können, ob die Langsamkeit mit externen Diensten oder Ihrer Datenbank zusammenhängt.
-* Wenn die **Zeit für das Empfangen von Antworten** vorherrscht, sind Ihre Seite und die abhängigen Teile lang, z. B. JavaScript, CSS, Bilder usw. (aber keine asynchron geladenen Daten). Richten Sie einen [Verfügbarkeitstest](app-insights-monitor-web-app-availability.md) ein, und legen Sie die Option zum Laden abhängiger Teile fest. Wenn Sie einige Ergebnisse erhalten, öffnen Sie die Details eines Ergebnisses und erweitern diese, um die Ladezeiten für unterschiedliche Dateien anzuzeigen.
-* Eine hohe **Clientverarbeitungszeit** deutet darauf hin, dass die Ausführung der Skripts lange dauert. Falls die Ursache nicht offensichtlich ist, können Sie erwägen, Zeitsteuerungscode hinzuzufügen und die Zeiten über trackMetric-Aufrufe zu senden.
+* Wenn die **Zeit für das Empfangen von Antworten** vorherrscht, sind Ihre Seite und die abhängigen Teile lang, z. B. JavaScript, CSS, Bilder usw. (jedoch nicht asynchron geladenen Daten). Richten Sie einen [Verfügbarkeitstest](app-insights-monitor-web-app-availability.md) ein, und legen Sie die Option zum Laden abhängiger Teile fest. Wenn Sie einige Ergebnisse erhalten, öffnen Sie die Details eines Ergebnisses und erweitern diese, um die Ladezeiten für unterschiedliche Dateien anzuzeigen.
+* Eine hohe **Clientverarbeitungszeit** deutet darauf hin, dass die Ausführung von Skripts lange dauert. Falls die Ursache nicht offensichtlich ist, können Sie erwägen, Zeitsteuerungscode hinzuzufügen und die Zeiten über trackMetric-Aufrufe zu senden.
 
 ### Verbessern langsamer Seiten
 
@@ -107,10 +109,8 @@ Da Sie im Web viele Ratschläge zur Verbesserung der Serverreaktionszeit und Sei
 * *Muss ich diesen Dienst abonnieren, um Benachrichtigungen zu erhalten?*
  * Nein. Unser Bot überprüft in regelmäßigen Abständen die Daten aller Application Insights-Benutzer und sendet Benachrichtigungen, wenn Probleme erkannt werden.
 * *Kann ich das Abonnement abbestellen oder die Benachrichtigungen stattdessen an meine Kollegen senden lassen?*
- * Klicken Sie auf den Link in der Warnung oder in der E-Mail. Öffnen Sie die Einstellungen für Anomalien.
+ * Klicken Sie auf den Link zum Abbestellen des Abonnements in der Warnung oder in der E-Mail. 
  
-    ![](./media/app-insights-proactive-detection/01.png)
-
     Derzeit werden Sie an Personen gesendet, die über [Schreibzugriff für die Application Insights-Ressource](app-insights-resources-roles-access-control.md) verfügen.
 * *Ich möchte nicht mit diesen Nachrichten überflutet werden.*
  * Sie erhalten maximal eine Nachricht am Tag. Sie erhalten Nachrichten nicht mehrfach.
@@ -128,4 +128,4 @@ Da Sie im Web viele Ratschläge zur Verbesserung der Serverreaktionszeit und Sei
 * [Suchexplorer](app-insights-diagnostic-search.md)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

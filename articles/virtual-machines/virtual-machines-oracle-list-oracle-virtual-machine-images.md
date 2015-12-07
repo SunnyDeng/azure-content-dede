@@ -14,7 +14,7 @@ ms.author="bbenz" />
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
-Um auf Oracle-Images basierende virtuelle Computer zu erstellen, melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an, klicken Sie auf **Marketplace**, klicken Sie auf **Compute**, und geben Sie dann im Suchfeld **Oracle** ein. Wählen Sie ein Image aus, und folgen Sie den Anweisungen zum Einrichten des Images in Microsoft Azure. Beachten Sie, dass Oracle-Images von Microsoft im [Azure-Portal](https://ms.portal.azure.com/) unter Windows und Oracle-Images von Oracle unter Oracle Linux ausgeführt werden.
+Um auf Oracle-Images basierende virtuelle Computer zu erstellen, melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an, klicken Sie auf **Marketplace** und anschließend auf **Compute**, und geben Sie dann im Suchfeld **Oracle** ein. Wählen Sie ein Image aus, und folgen Sie den Anweisungen zum Einrichten des Images in Microsoft Azure. Beachten Sie, dass Oracle-Images von Microsoft im [Azure-Vorschauportal](https://ms.portal.azure.com/) unter Windows ausgeführt werden und Oracle-Images von Oracle unter Oracle Linux.
 
 ![](media/virtual-machines-oracle-list-oracle-virtual-machine-images/image1.png)
 
@@ -59,8 +59,8 @@ Die folgende Liste enthält die verfügbaren vorkonfigurierten Images virtueller
 - Oracle Linux 7.0.0.0.0
 
 ##Zusätzliche Ressourcen
-[New all-in-one Oracle images in the Azure Marketplace](https://msopentech.com/blog/2015/02/19/new-one-oracle-images-azure-marketplace/) ("Neue All-in-One-Oracle-Images im Azure Marketplace", in englischer Sprache)
+[New all-in-one Oracle images in the Azure Marketplace ("Neue All-in-One-Oracle-Images im Azure Marketplace", in englischer Sprache)](https://msopentech.com/blog/2015/02/19/new-one-oracle-images-azure-marketplace/)
 
 [Images virtueller Oracle-Computer – verschiedene Überlegungen](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

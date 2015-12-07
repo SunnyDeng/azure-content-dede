@@ -24,13 +24,13 @@
 
 In diesem Artikel wird beschrieben, wie der Symantec Endpoint Protection-Client auf einem neuen oder vorhandenen virtuellen Windows Server-Computer installiert und konfiguriert wird. Dies ist der vollständige Client, der Dienste wie Viren- und Spywareschutz, Firewall und Eindringschutz enthält.
 
-Der Client wird als Sicherheitserweiterung durch die Verwendung des VM Agent installiert. Auf einem neuen virtuellen Computer installieren Sie den Agent zusammen mit dem Endgeräteclient. Auf einem vorhandenen virtuellen Computer ohne den VM Agent müssen Sie den Agent zunächst herunterladen und installieren. Dieser Artikel deckt beide Situationen ab.
+Der Client wird als Sicherheitserweiterung durch die Verwendung des VM Agent installiert. Auf einem neuen virtuellen Computer installieren Sie den Agent zusammen mit dem Endpunktclient. Auf einem vorhandenen virtuellen Computer ohne den VM Agent müssen Sie den Agent zunächst herunterladen und installieren. Dieser Artikel deckt beide Situationen ab.
 
 Wenn Sie über ein vorhandenes Abonnement von Symantec für eine lokale Lösung verfügen, können Sie es zum Schützen Ihrer virtuellen Azure-Computer verwenden. Wenn Sie noch kein Kunde sind, können Sie sich für ein Testabonnement registrieren. Weitere Informationen über diese Lösung finden Sie unter [Symantec Endpoint Protection on Microsoft's Azure platform][Symantec] (Symantec Endpoint Protection auf der Azure-Plattform von Microsoft) (in englischer Sprache). Diese Seite enthält auch Links zu Lizenzierungsinformationen und Anweisungen für das Installieren des Clients, wenn Sie bereits Symantec-Kunde sind.
 
 ## Installieren von Symantec Endpoint Protection auf einem neuen virtuellen Computer
 
-Mit dem [Azure-Verwaltungsportal][Portal] können Sie den VM-Agent und die Symantec-Sicherheitserweiterung installieren, wenn Sie die Option **Aus Katalog** zum Erstellen des virtuellen Computers verwenden. Die Verwendung dieses Ansatzes ist eine einfache Möglichkeit, einen Schutz von Symantec hinzuzufügen, wenn Sie einen einzelnen virtuellen Computer erstellen.
+Mit dem [Azure-Portal][Portal] können Sie den VM-Agent und die Symantec-Sicherheitserweiterung installieren, wenn Sie die Option **Aus Katalog** zum Erstellen des virtuellen Computers verwenden. Die Verwendung dieses Ansatzes ist eine einfache Möglichkeit, einen Schutz von Symantec hinzuzufügen, wenn Sie einen einzelnen virtuellen Computer erstellen.
 
 Die Option **Aus Katalog** öffnet einen Assistenten, der Ihnen beim Einrichten des virtuellen Computers hilft. Sie verwenden die letzte Seite des Assistenten zum Installieren des VM-Agents und der Symantec-Sicherheitserweiterung.
 
@@ -98,4 +98,4 @@ So überprüfen Sie, ob die Symantec-Sicherheitserweiterung installiert wurde un
 
 [Ext]: http://go.microsoft.com/fwlink/p/?linkid=390493
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -21,7 +21,7 @@ Azure SQL Web und Business-Datenbanken wurden eingestellt. Die Dienstebenen Basi
 
 Um Sie bei der Aktualisierung von Web- und Business-Datenbanken zu unterstützen, empfiehlt der SQL-Datenbank-Dienst eine geeignete Dienstebene und Leistungsstufe (Tarif) für jede Datenbank, die auf der bisherigen Workload basieren sollten.
 
-**Abrufen von Tarifempfehlungen**:
+**Abrufen von Tarifempfehlungen:**
 
 - [Upgrade auf SQL-Datenbank V12 mithilfe des Azure-Portals](sql-database-v12-upgrade.md)
 - [Upgrade auf SQL-Datenbank V12 mithilfe von PowerShell](sql-database-upgrade-server.md)
@@ -62,8 +62,10 @@ Azure SQL-Datenbanken der Editionen Basic, Standard und Premium werden nach Stun
 
 [Azure SQL-Datenbank](https://azure.microsoft.com/documentation/services/sql-database/)
 
+[Preise für SQL-Datenbank Web und Business](https://azure.microsoft.com/pricing/details/sql-database/web-business/)
+
 [Dienstebenen](sql-database-service-tiers.md)
 
 [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

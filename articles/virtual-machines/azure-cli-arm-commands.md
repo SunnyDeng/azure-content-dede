@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des Azure Ressourcen-Manager-Modus verwalten."
-	services="virtual-machines,mobile-services,cloud-services"
+	services="virtual-machines,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/07/2015"
+	ms.date="11/18/2015"
 	ms.author="danlep"/>
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
@@ -45,16 +45,16 @@ Die Einrichtungsanforderungen für die Verwendung des Ressourcen-Manager-Modus m
 
 - ein Azure-Konto ([hier erhalten Sie eine kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/))
 - [Installation der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
-- [Konfiguration der Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md) zum Verwenden einer Azure Active Directory-Identität oder eines Dienstprinzipals
+
 
 Sobald Sie über ein Konto verfügen, und die Azure-Befehlszeilenschnittstelle installiert haben, müssen Sie
 
-- Wechseln Sie durch Eingabe von `azure config mode arm` in den Ressourcen-Manager-Modus.
-- Melden Sie sich bei Ihrem Azure-Konto durch Eingabe von `azure login` an, und geben Sie an den Eingabeaufforderungen Ihre Geschäfts- oder Schulidentität ein.
+- mit einem Geschäfts- oder Schul-Konto oder einer Microsoft-Kontoidentität [die Azure-Befehlszeilenschnittstelle konfigurieren](../xplat-cli-connect.md) 
+- durch Eingabe von `azure config mode arm` in den Ressourcen-Manager-Modus wechseln
 
 
-## azure account: Verwalten Ihrer Kontoinformationen und Veröffentlichen von Einstellungen
-Das Tool verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden. Sie finden diese Informationen im Azure-Portal in einer Einstellungsveröffentlichungsdatei, wie hier beschrieben. Sie können die Einstellungsveröffentlichungsdatei als persistente lokale Konfigurationseinstellung importieren, die das Tool dann in späteren Operationen verwendet. Sie müssen Ihre Veröffentlichungseinstellungen nur einmal importieren.
+## Azure-Konto: Verwalten Ihrer Kontoinformationen
+Das Tool verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden.
 
 **Auflisten der importierten Abonnements**
 
@@ -1760,4 +1760,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

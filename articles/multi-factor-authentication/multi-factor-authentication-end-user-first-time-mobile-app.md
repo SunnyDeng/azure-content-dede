@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015"
+	ms.date="11/19/2015" 
 	ms.author="billmath"/>
 
 # Verwenden einer mobilen App als Kontaktmethode mit Azure Multi-Factor Authentication
@@ -73,4 +73,4 @@ Wenn Sie ein Drittanbieterkonto mit der mobilen App verwenden, geben Sie den Kon
 >[AZURE.NOTE]Wenn Sie zum Hinzufügen eines Geschäftskontos aufgefordert werden, gilt dies für die Einbindung in den Arbeitsplatz und nicht für die mehrstufige Authentifizierung. Sie können dies ignorieren.
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -22,7 +22,7 @@
 
 Dieser Artikel listet die Standard- und Höchstwerte bestimmter Ressourcen auf, die Sie mit dem Azure Batch-Dienst verwenden können. Die meisten dieser Limits sind Kontingente, die Azure auf Ihr Abonnement oder Batch-Konten anwendet.
 
-Wenn Sie Batch-Workloads in der Produktion ausführen möchten, müssen Sie möglicherweise ein oder mehrere Kontingente über den Standardwert erhöhen. Zum Erhöhen eines Kontingents können Sie kostenlos eine Anfrage an den Onlinekundensupport richten.
+Wenn Sie Batch-Workloads in der Produktion ausführen möchten, müssen Sie möglicherweise ein oder mehrere Kontingente über den Standardwert erhöhen. Wenn Sie ein Kontingent erhöhen möchten, können Sie kostenlos eine Anfrage an den Onlinekundensupport richten.
 
 >[AZURE.NOTE]Bei einem Kontingent handelt es sich um ein Kreditlimit und keine Kapazitätsgarantie. Wenn Sie einen umfangreichen Kapazitätsbedarf haben, wenden Sie sich an den Azure-Support.
 
@@ -87,12 +87,12 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 ## Verwandte Themen
 
-* [Erstellen und Verwalten eines Batch Azure-Kontos](batch-account-create-portal.md)
+* [Erstellen und Verwalten eines Azure Batch-Kontos](batch-account-create-portal.md)
 
-* [API-Grundlagen für Azure Batch](batch-api-basics.md)
+* [Übersicht über Azure Batch-Features](batch-api-basics.md)
 
 * [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md)
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

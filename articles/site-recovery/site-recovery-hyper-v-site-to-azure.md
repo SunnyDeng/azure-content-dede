@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="10/12/2015"
+	ms.date="11/18/2015"
 	ms.author="raynew"/>
 
 
@@ -49,7 +49,7 @@ Vergewissern Sie sich, dass Sie alle Voraussetzungen erfüllen, ehe Sie starten.
 - Am lokalen Quellstandort muss mindestens ein Server mit Windows Server 2012 R2 und der Hyper-V-Rolle vorhanden sein.
 - Der Hyper-V-Server muss mindestens einen virtuellen Computer enthalten.
 - Hyper-V-Server müssen entweder direkt oder über einen Proxy mit dem Internet verbunden sein.
-- Auf Hyper-V-Servern sollten die in [KB2961977](https://support.microsoft.com/en-us/kb/2961977 "KB2961977") genannten Fehlerbehebungen installiert sein.
+- Auf Hyper-V-Servern sollten die in [KB2961977](https://support.microsoft.com/de-DE/kb/2961977 "KB2961977") genannten Fehlerbehebungen installiert sein.
 
 ### Voraussetzungen für virtuelle Computer
 
@@ -87,7 +87,7 @@ Die folgende Abbildung zeigt die verschiedenen Kommunikationskanäle und Ports, 
 
 4. Geben Sie unter **Name** einen Anzeigenamen ein, über den der Tresor identifiziert wird.
 
-5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie in den [Preisübersicht zu Azure Site Recovery](pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
+5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie in den [Preisdetails zu Azure Site Recovery](pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
 
 6. Klicken Sie auf **Tresor erstellen**.
 
@@ -166,33 +166,34 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 
 	![Serverregistrierung](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider7.png)
 
-	> [AZURE.NOTE]Der Azure Site Recovery-Anbieter kann auch über die folgende Befehlszeile installiert werden. Mit dieser Methode kann der Anbieter in Server Core für Windows Server 2012 R2 installiert werden.
-	>
-	>1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
-	>2. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
-	>
-	    	C:\Windows\System32> CD C:\ASR
-	    	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
-	>4. Installieren Sie den Anbieter mithilfe des folgenden Befehls:
-	>
-			C:\ASR> setupdr.exe /i
-	>5. Registrieren Sie den Anbieter mithilfe des folgenden Befehls:
-	>
-	    	CD C:\Program Files\Microsoft Azure Site Recovery Provider\
-	    	C:\Program Files\Microsoft Azure Site Recovery Provider> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
+>[AZURE.NOTE]Der Azure Site Recovery-Anbieter kann auch über die folgende Befehlszeile installiert werden. Mit dieser Methode kann der Anbieter in Server Core für Windows Server 2012 R2 installiert werden.
+
+1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
+1. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
+
+    	C:\Windows\System32> CD C:\ASR
+    	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
+1. Installieren Sie den Anbieter mithilfe des folgenden Befehls:
+
+		C:\ASR> setupdr.exe /i
+1. Registrieren Sie den Anbieter mithilfe des folgenden Befehls:
+
+    	CD C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin
+    	C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>         
 
 
-	>----------
-          
-	>####Parameter für die Installation über die Befehlszeile####
-	>- **/Credentials**: erforderlicher Parameter zum Angeben des Speicherorts der Registrierungsschlüsseldatei.  
-	> - **/FriendlyName**: erforderlicher Parameter für den Namen des Hyper-V-Hostservers, der im Azure Site Recovery-Portal angezeigt wird.
-	> - **/proxyAddress**: optionaler Parameter, der die Adresse des Proxyservers angibt.
-	> - **/proxyport**: optionaler Parameter, der den Port des Proxyservers angibt.
-	> - **/proxyUsername**: optionaler Parameter, der den Proxybenutzernamen angibt (sofern der Proxy eine Authentifizierung erfordert).
-	> - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert).
 
->[AZURE.TIP]Sie können jeden einzelnen Hyper-V-Host so konfigurieren, dass unterschiedliche Netzwerk-Bandbreiteneinstellungen verwendet werden, um virtuelle Computer in Azure zu replizieren. Weitere Informationen über das [Verwalten der Netzwerkbandbreitennutzung für den Schutz zwischen einem lokalen Standort und Azure](https://support.microsoft.com/en-us/kb/3056159)
+#### Parameter für die Installation über die Befehlszeile
+
+ - **/Credentials**: erforderlicher Parameter zum Angeben des Speicherorts der Registrierungsschlüsseldatei.  
+ - **/FriendlyName**: erforderlicher Parameter für den Namen des Hyper-V-Hostservers, der im Azure Site Recovery-Portal angezeigt wird.
+ - **/EncryptionEnabled**: optionaler Parameter, der nur im VMM-zu-Azure-Szenario verwendet werden muss, wenn Sie die inaktiven virtuellen Computer in Azure verschlüsseln möchten. Stellen Sie sicher, dass der Name der angegebenen Datei die Dateierweiterung **.pfx** aufweist.
+ - **/proxyAddress**: optionaler Parameter, der die Adresse des Proxyservers angibt.
+ - **/proxyport**: optionaler Parameter, der den Port des Proxyservers angibt.
+ - **/proxyUsername**: optionaler Parameter, der den Proxybenutzernamen angibt (sofern der Proxy eine Authentifizierung erfordert).
+ - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert).  
+
+>[AZURE.TIP]Sie können jeden einzelnen Hyper-V-Host so konfigurieren, dass unterschiedliche Netzwerk-Bandbreiteneinstellungen verwendet werden, um virtuelle Computer in Azure zu replizieren. Weitere Informationen über das [Verwalten der Netzwerkbandbreitennutzung für den Schutz zwischen einem lokalen Standort und Azure](https://support.microsoft.com/de-DE/kb/3056159)
 
 
 ## Schritt 4: Erstellen der Azure-Ressourcen
@@ -239,15 +240,10 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/VMProperties.png)
 	- Konfigurieren weiterer Einstellungen für den virtuellen Computer unter *Geschützte Elemente** > **Schutzgruppen** > *<Name der Schutzgruppe>* > **Virtuelle Computer** > *<Name des virtuellen Computers>* > **Konfigurieren**. Hierzu zählen:
 
-		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben.
-			- Groß (A3) und A6: 2
-			- Extragroß (A4) und A7:
-			- A9: 2
-			- D3: 2
-			- D4: 4
-			- D13: 4
+		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. Überprüfen Sie in den [Spezifikationen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md#size-tables), wie viele Netzwerkadapter (bzw. Netzwerkkarten) von virtuellen Computern einer bestimmten Größe unterstützt werden. 
+		
 
-			Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, werden beim nächsten Öffnen der Seite **Konfigurieren** die Netzwerkadapter angezeigt. Die Anzahl der Adapter für einen virtuellen Computer wird wie folgt bestimmt:
+			Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, wird die Anzahl der Netzwerkadapter beim nächsten Öffnen der Seite **Konfigurieren** geändert. Die Anzahl der Netzwerkadapter der virtuellen Zielcomputer entspricht mindestens der Anzahl der Netzwerkadapter auf virtuellen Quellcomputern und der maximalen Anzahl der Netzwerkadapter, die nach der unterstützten Größe des virtuellen Computers ausgewählt werden. Hierzu eine kurze Erläuterung:
 
 
 			- Wenn die Anzahl der Netzwerkadapter des Quellcomputers maximal der Anzahl der Netzwerkadapter entspricht, die für die Größe des Zielcomputers zulässig ist, hat der Zielcomputer die gleiche Anzahl von Netzwerkadaptern wie der Quellcomputer.
@@ -258,6 +254,9 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 		- **Ziel-IP-Adresse**: Wenn der Netzwerkadapter des virtuellen Quellcomputers für die Verwendung einer statischen IP-Adresse konfiguriert ist, können Sie die IP-Adresse für den virtuellen Zielcomputer angeben, um sicherzustellen, dass der Computer nach dem Failover die gleiche IP-Adresse besitzt. Wenn Sie keine IP-Adresse angeben, wird beim Failover eine der verfügbaren Adressen zugewiesen. Wenn Sie eine Adresse angeben, die bereits verwendet wird, ist das Failover nicht erfolgreich.
 
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_VMMultipleNic.png)
+
+>[AZURE.NOTE]Virtuelle Linux-Computer, die eine statische IP-Adresse verwenden, werden nicht unterstützt.
+
 
 ## Schritt 7: Erstellen eines Wiederherstellungsplans
 
@@ -305,4 +304,4 @@ Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

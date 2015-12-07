@@ -30,7 +30,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-DE/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-DE/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/en-us/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 
 [AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
@@ -48,7 +48,7 @@ Um Azure AD zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manag
 
 	    New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-	>[AZURE.NOTE]Notieren Sie die Anwendungs-ID, die nach dem Erstellen der Anwendung zurückgegeben wird, da Sie diese für den nächsten Schritt benötigen. Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Active Directory-Bereich des Verwaltungsportals.
+	>[AZURE.NOTE]Notieren Sie die Anwendungs-ID, die nach dem Erstellen der Anwendung zurückgegeben wird, da Sie diese für den nächsten Schritt benötigen. Sie finden die Anwendungs-ID auch im Feld „Client-ID“ der Anwendung im Active Directory-Bereich des Azure-Vorschauportals.
 
 3. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
 
@@ -447,4 +447,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

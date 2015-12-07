@@ -27,7 +27,6 @@ Dieses Dokument beschreibt die Vorgehensweise beim Durchsuchen von Daten in vier
 - **Azure Blob-Container**: Daten werden mithilfe des [Pandas](http://pandas.pydata.org/)-Python-Pakets untersucht.
 - **SQL Server-Daten**: Daten werden mithilfe von SQL und einer Programmiersprache wie Python untersucht.
 - **Hive-Tabellendaten**: Daten werden mit Hive-Abfragen untersucht.
-- Azure Machine Learning Studio 
 - **Azure Machine Learning (AML) Studio**: Daten werden mit AML-Modulen untersucht .
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

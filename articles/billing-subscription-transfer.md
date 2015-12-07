@@ -25,7 +25,7 @@ Möchten Sie:
 - ihre Azure-Abonnement von einem Verzeichnis ins andere verschieben?
 - Azure und Office 365, die in verschiedenen Mandanten sind, konsolidieren?
 
-Sie können dies jetzt problemlos im Microsoft Azure Account Center für nutzungsbasierte oder MSDN-Abonnements tun. Wir haben die Möglichkeit hinzugefügt, Ihr Abonnement auf einen anderen Benutzer zu übertragen. Anders ausgedrückt können Sie jetzt das Administratorkonto für ein beliebiges Ihrer nutzungsbasierten oder MSDN-Abonnements ändern. Dabei ist es unerheblich, in welchem Land Sie sich befinden.
+Sie können dies jetzt problemlos für die nutzungsbasierte Bezahlung sowie für MSDN-, Action Pack- und BizSpark-Abonnements im Microsoft Azure Account Center tun. Wir haben die Möglichkeit hinzugefügt, Ihr Abonnement auf einen anderen Benutzer zu übertragen. Anders ausgedrückt können Sie jetzt das Administratorkonto für ein beliebiges Ihrer nutzungsbasierten Abonnements bzw. MSDN-, Action Pack- oder BizSpark-Abonnements ändern. Dabei ist es unerheblich, in welchem Land Sie sich befinden.
 
 ## Übertragen eines Azure-Abonnements
 
@@ -111,4 +111,4 @@ Sie können dies jetzt problemlos im Microsoft Azure Account Center für nutzung
 4. Aktualisieren Sie die Abrechnungswarnungen für dieses Abonnement im [Azure Account Center](https://account.windowsazure.com/Subscriptions) ([weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533292)).
 5. 	Wenn Sie mit einem Partner arbeiten, sollten Sie die Partner-ID für dieses Abonnement aktualisieren. Sie können diese im [Azure Account Center](https://account.windowsazure.com/Subscriptions) durchführen.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

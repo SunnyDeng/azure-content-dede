@@ -20,7 +20,7 @@ Anzahl der Wiederholungsversuche für Ausführungen von Pipelineaktivitäten | 1
 
 **Ressource** | **Unteres Standardlimit** | **Minimales Limit**
 -------- | ------------------- | -------------
-Planungsintervall | 15 Minuten | 5 Minuten
+Planungsintervall | 15 Minuten | 15 Minuten
 Intervall zwischen Wiederholungsversuchen | 1 Sekunde | 1 Sekunde
 Timeoutwert für Wiederholungsversuche | 1 Sekunde | 1 Sekunde
 
@@ -29,4 +29,4 @@ Timeoutwert für Wiederholungsversuche | 1 Sekunde | 1 Sekunde
 
 Der Azure-Ressourcen-Manager weist Limits für API-Aufrufe auf. Sie können API-Aufrufe mit einer Rate innerhalb der [API-Limits des Azure-Ressourcen-Managers](azure-subscription-service-limits/#resource-group-limits) ausführen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

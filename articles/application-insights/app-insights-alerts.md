@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="11/23/2015" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -48,9 +48,9 @@ Der Name, den Sie der Warnung zuweisen, muss innerhalb der Ressourcengruppe (nic
 
 Sie erhalten eine E-Mail, wenn sich ein Warnungsstatus von "Inaktiv" in "Aktiv" ändert und umgekehrt.
 
-Der aktuelle Status jeder Warnung wird auf dem Blatt "Warnungsregeln" angezeigt.
+Der aktuelle Status jeder Warnung wird im Fenster "Warnungsregeln" angezeigt.
 
-Die Dropdownliste "Warnungen" enthält eine Übersicht über die letzten Aktivitäten:
+Die Dropdownliste "Warnungen" enthält einen Überblick über die letzten Aktivitäten:
 
 ![](./media/app-insights-alerts/010-alert-drop.png)
 
@@ -106,7 +106,7 @@ In den meisten Fällen reicht es aus, Warnungen manuell festzulegen. Wenn Sie je
 
 Wenn Sie PowerShell noch nicht mit Ihrem Azure-Abonnement verwendet haben:
 
-Installieren Sie das Azure PowerShell-Modul auf dem Computer, auf dem die Skripts ausgeführt werden sollen.
+Installieren Sie das Azure-PowerShell-Modul auf dem Computer, auf dem die Skripts ausgeführt werden sollen.
 
  * Installieren Sie [Microsoft-Webplattform-Installer (Version 5 oder höher)](http://www.microsoft.com/web/downloads/platform.aspx).
  * Installieren Sie hiermit Microsoft Azure PowerShell.
@@ -196,7 +196,7 @@ Metrikname | Anzeigename | Beschreibung
 `performanceCounter.percentage_processor_total.value`|Prozessorzeit|Der Prozentsatz der Zeit, die der Prozessor nicht im Leerlauf in Threads verbringt.
 `performanceCounter.process_private_bytes.value`|Private Bytes für Prozess|Speicher, der exklusiv den überwachten Anwendungsprozessen zugewiesen ist.
 `performanceCounter.request_execution_time.value`|Ausführungsdauer für ASP.NET-Anforderungen|Ausführungszeit der aktuellen Anforderung.
-`performanceCounter.requests_in_application_queue.value`|ASP.NET-Anforderungen in Ausführungswarteschlange|Länge der Anwendungsanforderungswarteschlange.
+`performanceCounter.requests_in_application_queue.value`|ASP.NET-Anforderungen in Ausführungswarteschlange|Länge der Anwendungsanforderungswarteschleife.
 `performanceCounter.requests_per_sec`|ASP.NET-Anforderungsrate|Rate aller Anforderungen an die Anwendung pro Sekunde von ASP.NET.
 `remoteDependencyFailed.durationMetric.count`|Abhängigkeitsfehler|Anzahl der Aufrufe mit Fehlern von der Serveranwendung an externe Ressourcen.
 `request.duration`|Serverantwortzeit|Zeit zwischen dem Empfang einer HTTP-Anforderung und dem Abschluss des Sendevorgangs der Antwort.
@@ -215,6 +215,11 @@ remoteDependencyFailed| [Abhängigkeit](app-insights-configuration-with-applicat
 request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-applicationinsights-config.md#nuget-package-2)
 
 
+## Weitere Informationen
+
+
+* [Erstellen von Application Insights- und Webtestressourcen aus Vorlagen](app-insights-powershell.md)
+
 <!--Link references-->
 
 [availability]: app-insights-monitor-web-app-availability.md
@@ -225,4 +230,4 @@ request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-appli
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

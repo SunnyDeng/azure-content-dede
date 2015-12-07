@@ -94,7 +94,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ## Phase 2: Konfigurieren von DC1
 
-Bei DC1 handelt es sich um einen Domänencontroller für die AD DS-Domäne (Active Directory-Domänendienste) „corp.contoso.com“ und zudem um einen DNS-Server für die virtuellen Computer im virtuellen Netzwerk „TestLab“.
+Bei DC1 handelt es sich um einen Domänencontroller für die AD DS-Domäne (Active Directory Domain Services) „corp.contoso.com“ und zudem um einen DNS-Server für die virtuellen Computer im virtuellen Netzwerk „TestLab“.
 
 Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Namen des Speicherkontos an, und führen Sie mithilfe der Azure PowerShell-Eingabeaufforderung auf dem lokalen Computer die folgenden Befehle aus, um für DC1 einen virtuellen Computer in Azure zu erstellen:
 
@@ -108,7 +108,7 @@ Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Name
 	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/DC1-TestLab-ADDSDisk.vhd"
 	Add-AzureRMVMDataDisk -VM $vm -Name ADDS-Data -DiskSizeInGB 20 -VhdUri $vhdURI  -CreateOption empty
-	$cred=Get-Credential -Message "Type the name and password of the local administrator account for DC1." 
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for DC1."
 	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName DC1 -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
 	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
 	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
@@ -118,7 +118,7 @@ Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Name
 
 Stellen Sie dann eine Verbindung mit dem virtuellen Computer DC1 her.
 
-1.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf **Alle durchsuchen**, klicken Sie in der Liste **Durchsuchen** auf **Virtuelle Computer** und dann auf den virtuellen Computer **DC1**.  
+1.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf **Alle durchsuchen**, und klicken Sie in der Liste **Durchsuchen** auf **Virtuelle Computer** und dann auf den virtuellen Computer **DC1**.  
 2.	Klicken Sie unter **DC1** auf **Verbinden**.
 3.	Öffnen Sie die heruntergeladene Datei „DC1.rdp“, wenn Sie dazu aufgefordert werden.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
@@ -187,7 +187,7 @@ Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Name
 	$nic = New-AzureRMNetworkInterface -Name APP1-NIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
 	$vm=New-AzureRMVMConfig -VMName APP1 -VMSize Standard_A1
 	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
-	$cred=Get-Credential -Message "Type the name and password of the local administrator account for APP1." 
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for APP1."
 	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName APP1 -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
 	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
 	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
@@ -236,10 +236,10 @@ Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Name
 	$nic = New-AzureRMNetworkInterface -Name CLIENT1-NIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
 	$vm=New-AzureRMVMConfig -VMName CLIENT1 -VMSize Standard_A1
 	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
-	$cred=Get-Credential -Message "Type the name and password of the local administrator account for CLIENT1." 
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for CLIENT1."
 	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName CLIENT1 -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
 	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id	
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/CLIENT1-TestLab-OSDisk.vhd"
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name CLIENT1-TestLab-OSDisk -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
@@ -263,7 +263,7 @@ Als Nächstes überprüfen Sie, ob Sie mit CLIENT1 auf die Web- und Dateifreigab
 2.	Klicken Sie unter **Eigenschaften von CLIENT1** neben **Verstärkte Sicherheitskonfiguration für IE** auf **Ein** .
 3.	Klicken Sie unter **Verstärkte Sicherheitskonfiguration für IE** bei **Administratoren** und **Benutzern** auf **Aus**, und klicken Sie dann auf **OK**.
 4.	Klicken Sie auf der Startseite auf **Internet Explorer** und dann auf **OK**.
-5.	Geben Sie ****http://app1.corp.contoso.com/** in der Adressleiste ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden.
+5.	Geben Sie in die Adressleiste ****http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden.
 6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
 7.	Geben Sie in der Adressleiste **\\\app1\\Files** ein, und drücken Sie dann die EINGABETASTE.
 8.	Es wird ein Fenster mit dem Inhalt des freigegebenen Ordners geöffnet.
@@ -278,7 +278,7 @@ Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzweck
 
 ## Zusätzliche Ressourcen
 
-[Hybrid cloud test environments](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md) (Testumgebungen für Hybridclouds)
+[Hybrid cloud test environments (Testumgebungen für Hybridclouds)](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md)
 
 [Testumgebung für die Basiskonfiguration](virtual-machines-base-configuration-test-environment.md)
 
@@ -310,4 +310,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

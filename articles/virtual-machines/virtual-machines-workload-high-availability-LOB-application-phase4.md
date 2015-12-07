@@ -130,7 +130,7 @@ Installieren und konfigurieren Sie jetzt für jeden Webserver IIS.
 4. Klicken Sie auf der Seite „Zielserver auswählen“ auf **Weiter**.
 5. Klicken Sie auf der Seite „Serverrollen“ in der Liste **Rollen** auf **Webserver (IIS)**.
 6. Klicken Sie bei der entsprechenden Aufforderung auf **Features hinzufügen** und anschließend auf **Weiter**.
-7. Klicken Sie auf der Seite „Features auswählen“ auf **Weiter**.
+7. Klicken Sie auf der Seite "Features auswählen" auf **Weiter**.
 8. Klicken Sie auf der Seite „Webserver (IIS)“ auf **Weiter**.
 9. Aktivieren oder deaktivieren Sie auf der Seite „Rollendienste auswählen“ die Kontrollkästchen für die Dienste, die Sie für Ihre Branchenanwendung benötigen, und klicken Sie dann auf **Weiter**. 10. Klicken Sie auf der Seite „Installationsauswahl bestätigen“ auf **Installieren**.
 
@@ -162,4 +162,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erste
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/27/2015"
+	ms.date="11/22/2015"
 	ms.author="wesmc"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre Windows-App
@@ -36,7 +36,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 * Visual Studio 2013 für Windows 8.1.
 * Durchführung des Lernprogramms [Erstellen einer Windows-App][create a windows app].
-* [Azure Mobile Services SQLite Store Version 2.0.0-beta2][sqlite store nuget]
+* [Azure Mobile Services SQLite Store, Version 2.0.0-beta2][sqlite store nuget]
 * [SQLite für Windows 8.1](http://www.sqlite.org/downloads)
 
 ## Aktualisieren der Client-App für die Unterstützung von Offlinefunktionen
@@ -184,24 +184,21 @@ In diesem Abschnitt ändern Sie die Client-App, um ein Offlineszenario durch Kap
 
 1. Bearbeiten Sie "App.xaml.cs" im freigegebenen Projekt. Kommentieren Sie die Initialisierung von **MobileServiceClient** aus, und fügen Sie die folgenden Zeilen hinzu, die eine ungültige mobile App-URL verwenden:
 
-         public static MobileServiceClient MobileService = new MobileServiceClient(
-            "https://your-service.azurewebsites.fail",
-            "https://your-gateway.azurewebsites.fail",
-            ""
-        );
+         public static MobileServiceClient MobileService = 
+				new MobileServiceClient("https://your-service.azurewebsites.fail");
+
+	Beachten Sie, dass bei der Anmeldung ein Fehler auftritt, wenn in Ihrer App auch Authentifizierung verwendet wird. Sie können auch Offlineverhalten demonstrieren, indem Sie Wi-Fi- und Mobilnetzwerke auf dem Gerät deaktivieren oder den Flugzeugmodus verwenden.
 
 2. Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Beachten Sie, dass die Synchronisierung bei der Aktualisierung fehlgeschlagen ist, als die App gestartet wurde.
 3. Geben Sie neue "todoitems" ein, und klicken Sie jeweils auf **Speichern**. Der Pushvorgang führt jeweils zu einem Fehler (`PushResult.Status=CancelledByNetworkError`). Die neuen Todo-Elemente existieren nur im lokalen Speicher, bis sie per Push zum mobilen App-Back-End übertragen werden können. 
  
-	Sie können den Ausnahmedialog für `PushResult.Status=CancelledByNetworkError` unterdrücken. Die Client-App verhält sich dann so, als ob sie mit dem mobilen App-Back-End verbunden ist, das alle CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren, Löschen) nahtlos unterstützt.
+	Sie können den Ausnahmedialog für `PushResult.Status=CancelledByNetworkError` unterdrücken. Die Client-App verhält sich dann so, als ob Sie mit dem mobilen App-Back-End verbunden ist, das alle CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren, Löschen) nahtlos unterstützt.
 
-4. Schließen Sie die App, und starten Sie sie neu, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
+4. Schließen Sie die App und starten Sie sie erneut, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
 
-5. (Optional) Verwenden Sie Visual Studio zum Anzeigen der Azure SQL-Datenbanktabelle, um festzustellen, ob sich die Daten in der Back-End-Datenbank nicht geändert haben.
+5. (Optional:) Öffnen Sie den **Server-Explorer** in Visual Studio. Navigieren Sie zu der Datenbank in **Azure** -> **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus. Jetzt können nach Ihrer SQL-Datenbanktabelle und seinen Inhalten suchen. Stellen Sie sicher, dass die Daten in der Back-End-Datenbank nicht geändert wurden.
 
-   Öffnen Sie den **Server-Explorer** in Visual Studio. Navigieren Sie zu der Datenbank in **Azure** -> **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus. Jetzt können nach Ihrer SQL-Datenbanktabelle und seinen Inhalten suchen.
-
-6. (Optional) Verwenden Sie ein REST-Tool wie Fiddler oder Postman, um Ihr mobiles Back-End mit einer GET-Abfrage in Form von `https://your-mobile-app-backend-name.azurewebsites.net/tables/TodoItem` abzufragen. 
+6. (Optional) Verwenden Sie ein REST-Tool wie Fiddler oder Postman, um Ihr mobiles Back-End mit einer GET-Abfrage in Form von `https://your-mobile-app-backend-name.azurewebsites.net/tables/TodoItem` abzufragen.
 
 ## <a name="update-online-app"></a>Aktualisieren der App zum erneuten Verbinden des mobilen App-Back-Ends
 
@@ -280,4 +277,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server wurden die Methoden `I
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015--->

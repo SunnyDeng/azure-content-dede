@@ -35,9 +35,9 @@ Um Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese bei Appl
 
 2. Aktualisieren Sie die folgenden drei Felder für Ihre neue App, und klicken Sie dann auf **Weiter**:
 
-	* **Name**: Geben Sie im Abschnitt **App-ID-Beschreibung** in das Feld **Name** einen beschreibenden Namen für Ihre App ein.
+	* **Name**: Geben Sie im Abschnitt **App ID Description** in das Feld **Name** einen beschreibenden Namen für Ihre App ein.
 	
-	* **Bundle ID**: Geben Sie im Abschnitt **Explicit App ID** eine **Bundle ID** im Format `<Organization Identifier>.<Product Name>` (entsprechend den Angaben im [App Distribution Guide](http://go.microsoft.com/fwlink/?LinkId=613485)) ein. Die *Organisationskennung * und der *Produktname*, die Sie hier eingeben, müssen der Organisationskennung und dem Produktnamen entsprechen, die Sie beim Erstellen des XCode-Projekts verwenden. Im folgenden Screenshot werden *NotificationHubs* als Organisationskennung und *GetStarted* als Produktname verwendet. Wenn Sie sicherstellen, dass diese Werte mit den Werten übereinstimmen, die Sie in Ihrem XCode-Projekt verwenden, können Sie das richtige Veröffentlichungsprofil mit XCode verwenden.
+	* **Bundle ID**: Geben Sie im Abschnitt **Explicit App ID** eine **Bundle ID** im Format `<Organization Identifier>.<Product Name>` (entsprechend den Angaben im [App Distribution Guide](https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html#//apple_ref/doc/uid/TP40012582-CH28-SW8)) ein. Die *Organisationskennung * und der *Produktname*, die Sie hier eingeben, müssen der Organisationskennung und dem Produktnamen entsprechen, die Sie beim Erstellen des XCode-Projekts verwenden. Im folgenden Screenshot werden *NotificationHubs* als Organisationskennung und *GetStarted* als Produktname verwendet. Wenn Sie sicherstellen, dass diese Werte mit den Werten übereinstimmen, die Sie in Ihrem XCode-Projekt verwenden, können Sie das richtige Veröffentlichungsprofil mit XCode verwenden.
 	
 	* **Pushbenachrichtigungen**: Aktivieren Sie die Option **Push Notifications** im Bereich **App Services**.
 
@@ -79,7 +79,7 @@ Um Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese bei Appl
 
   	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-appid-download-cert.png)
 
-   	Hierdurch wird das Signierzertifikat heruntergeladen und auf Ihrem Computer in Ihrem Download-Ordner gespeichert.
+   	Hierdurch wird das Zertifikat heruntergeladen und auf Ihrem Computer in Ihrem Downloadordner gespeichert.
 
   	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-cert-downloaded.png)
 
@@ -126,7 +126,7 @@ Um Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese bei Appl
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-select-devices.png)
 
 
-6. Geben Sie schließlich einen Namen für das Profil im Feld **Profile Name** ein, klicken Sie auf **Generate**.
+6. Geben Sie schließlich einen Namen für das Profil im Feld **Profile Name** ein, und klicken Sie auf **Generate**.
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-name-profile.png)
 
@@ -135,4 +135,4 @@ Um Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese bei Appl
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-profile-ready.png)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

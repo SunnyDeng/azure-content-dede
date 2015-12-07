@@ -1479,10 +1479,10 @@ Wenn das Problem anschließend weiterhin besteht, wird empfohlen, unter [Problem
 
 <br/> <br/> <br/>
 
-## Links zu Informationen zur Kennwortzurücksetzung
-Im Folgenden finden Sie Links zu allen Websites mit Informationen zur Kennwortzurücksetzung für Azure AD:
+## Links zur Dokumentation für die Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password) – Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password.md): Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems.
 * [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
 * [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
 * [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
@@ -1498,4 +1498,4 @@ Im Folgenden finden Sie Links zu allen Websites mit Informationen zur Kennwortzu
 [003]: ./media/active-directory-passwords-troubleshoot/003.jpg "Image_003.jpg"
 [004]: ./media/active-directory-passwords-troubleshoot/004.jpg "Image_004.jpg"
 
-<!----HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

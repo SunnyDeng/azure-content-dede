@@ -197,7 +197,7 @@ Bevor Sie das Zurückschreiben von Kennwörtern aktivieren und verwenden können
 Das Zurückschreiben von Kennwörtern steht in Versionen von Azure AD Connect oder im Azure AD Sync-Tool mit Versionsnummer **1.0.0419.0911** oder höher zur Verfügung. Das Zurückschreiben von Kennwörtern mit automatischer Entsperrung von Konten steht in Versionen von Azure AD Connect oder im Azure AD Sync-Tool mit Versionsnummer **1.0.0485.0222** oder höher zur Verfügung. Wenn Sie eine ältere Version verwenden, führen Sie ein Upgrade auf diese oder eine höhere Version durch, bevor Sie fortfahren. [Klicken Sie hier, um die aktuelle Version von Azure AD Connect herunterzuladen](active-directory-aadconnect.md#download-azure-ad-connect).
 
 #### So überprüfen Sie die Version von Azure AD Sync
-1.	Navigieren Sie zu **%ProgramFiles%\\Azure Active Directory Sync**.
+1.	Navigieren Sie zu **%ProgramFiles%\Azure Active Directory Sync**. 
 2.	Suchen Sie nach der ausführbaren Datei **ConfigWizard.exe**.
 3.	Klicken Sie mit der rechten Maustaste auf die ausführbare Datei, und wählen Sie im Kontextmenü die Option **Eigenschaften** aus.
 4.	Klicken Sie auf die Registerkarte **Details**.
@@ -280,7 +280,9 @@ Wenn Sie nicht sicher sind, auf welches Konto sich die oben genannten Angaben be
 8.	Wählen Sie in der Dropdownliste oben den Eintrag **Nachfolgerbenutzerobjekt**.
 9.	Aktivieren Sie im nun angezeigten Dialogfeld **Berechtigungseintrag** die Kontrollkästchen für **Kennwort zurücksetzen**, **Kennwort ändern**, **Berechtigungen schreiben** für `lockoutTime` sowie **Berechtigungen schreiben** für `pwdLastSet`.
 
-    ![][026] ![][027] ![][028]
+    ![][026]
+    ![][027]
+    ![][028]
 
 10.	Klicken Sie anschließend in allen geöffneten Dialogfeldern auf **Anwenden/OK**.
 
@@ -304,10 +306,10 @@ Jetzt, da das Zurückschreiben von Kennwörtern aktiviert ist, können Sie die o
 
 <br/> <br/> <br/>
 
-## Links zu Informationen zur Kennwortzurücksetzung
-Im Folgenden finden Sie Links zu allen Websites mit Informationen zur Kennwortzurücksetzung für Azure AD:
+## Links zur Dokumentation für die Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password) – Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password.md): Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems.
 * [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
 * [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
 * [**Best Practices**](active-directory-passwords-best-practices.md) – Erfahren Sie, wie Sie Kennwörter in Ihrer Organisation schnell bereitstellen und effektiv verwalten.
@@ -351,4 +353,4 @@ Im Folgenden finden Sie Links zu allen Websites mit Informationen zur Kennwortzu
 [031]: ./media/active-directory-passwords-getting-started/031.jpg "Image_031.jpg"
 [032]: ./media/active-directory-passwords-getting-started/032.jpg "Image_032.jpg"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

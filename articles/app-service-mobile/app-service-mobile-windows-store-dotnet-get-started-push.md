@@ -45,33 +45,13 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 Bevor Sie Pushbenachrichtigungen von Azure an Ihre Windows-Apps senden können, müssen Sie Ihre App an den Windows Store übermitteln. Sie können dann das Serverprojekt zur Integration mit dem WNS konfigurieren.
 
-1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Windows Store-App-Projekt, und klicken Sie dann auf **Store** > **App mit Store verknüpfen...** 
+[AZURE.INCLUDE [app-service-mobile-register-wns](../../includes/app-service-mobile-register-wns.md)]
 
-    ![Zuordnen der App zu Windows Store](./media/app-service-mobile-windows-store-dotnet-get-started-push/notification-hub-associate-win8-app.png)
-    
-2. Klicken Sie im Assistenten auf **Weiter**, melden Sie sich mit Ihrem Microsoft-Konto an, geben Sie unter **App-Namen reservieren** einen Namen für Ihre App ein, und klicken Sie dann auf **Reservieren**.
-
-3. Nachdem die App-Registrierung erfolgreich erstellt wurde, wählen Sie den Namen der neuen App aus, klicken Sie auf **Weiter** und dann auf **Zuordnen**. Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.
-
-7. Wiederholen Sie die Schritte 1 und 3 für das Windows Phone Store-App-Projekt mithilfe der zuvor erstellten Registrierung für die Windows Store-App.
-
-7. Navigieren Sie zum [Windows-Entwicklungscenter](https://dev.windows.com/de-DE/overview), melden Sie sich mit Ihrem Microsoft-Konto an, klicken Sie auf die neue App-Registrierung unter **Meine Apps**, und erweitern Sie dann **Dienste** > **Pushbenachrichtigungen**.
-
-8. Klicken Sie auf der Seite **Pushbenachrichtigungen** auf **Live-Dienste-Website** unter **Microsoft Azure Mobile Services**.
-
-9. Notieren Sie sich auf der Registerkarte **App-Einstellungen** die Werte des **geheimen Clientschlüssels** und die **Paket-SID**.
-
-    ![App-Einstellung im Developer Center](./media/app-service-mobile-windows-store-dotnet-get-started-push/mobile-services-win8-app-push-auth.png)
-
-    > [AZURE.IMPORTANT]Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Werte nicht weiter, und verteilen Sie sie nicht mit Ihrer Anwendung.
 
 ##Konfigurieren der mobilen App zum Senden von Pushanforderungen
 
-1. Melden Sie sich beim [Azure-Portal] an, und wählen Sie **Durchsuchen** > **Mobile App** > Ihre App > **Pushbenachrichtigungsdienste** aus.
+[AZURE.INCLUDE [app-service-mobile-configure-wns](../../includes/app-service-mobile-configure-wns.md)]
 
-2. Geben Sie in **Windows-Benachrichtigungsdienst** den **Sicherheitsschlüssel** (geheimer Clientschlüssel) und die **Paket-SID** ein, die Sie auf der Website für die Live-Dienste erhalten haben. Klicken Sie anschließend auf **Speichern**.
-
-Ihr Mobile-App-Back-End ist jetzt für die Zusammenarbeit mit WNS konfiguriert.
 
 ##<a id="update-service"></a>Aktualisieren des Servers zum Senden von Pushbenachrichtigungen
 
@@ -169,16 +149,16 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 
 [AZURE.INCLUDE [app-service-mobile-windows-universal-test-push](../../includes/app-service-mobile-windows-universal-test-push.md)]
 
-##<a id="more"></a>Mehr
+##<a id="more"></a>Weitere Informationen
 
 * Vorlagen ermöglichen Ihnen, flexibel plattformübergreifende Pushvorgänge und lokalisierte Pushvorgänge zu senden. In [Verwenden des verwalteten Clients für Azure Mobile Apps](app-service-mobile-dotnet-how-to-use-client-library.md) wird erklärt, wie Sie Vorlagen registrieren.
-* Mit Tags können Sie für segmentierte Kunden Pushvorgänge auswählen. In [Arbeiten Sie mit der .NET-Back-End-Server-SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) wird erklärt, wie Sie Tags zu einer Geräteinstallation hinzufügen.
+* Mit Tags können Sie für segmentierte Kunden Pushvorgänge auswählen. In [Arbeiten Sie mit der .NET-Back-End-Server-SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) wird erklärt, wie Sie einer Geräteinstallation Tags hinzufügen.
 
 <!-- Anchors. -->
 
 <!-- URLs. -->
-[Azure-Portal]: https://portal.azure.com/
+[Azure Portal]: https://portal.azure.com/
 
 <!-- Images. -->
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015--->

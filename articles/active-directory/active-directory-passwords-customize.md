@@ -26,7 +26,7 @@ Es wird empfohlen, alle verfügbaren Konfigurationsoptionen für die Kennwortver
 | Wie ändere ich die unterstützten Authentifizierungsmethoden? | [Einstellung: Für Benutzer verfügbare Authentifizierungsmethoden](#authentication-methods-available-to-users) |
 | Wie ändere ich die Anzahl erforderlicher Authentifizierungsmethoden? | [Einstellung: Anzahl erforderlicher Authentifizierungsmethoden](#number-of-authentication-methods-required) |
 | Wie richte ich benutzerdefinierte Sicherheitsfragen ein? | [Einstellung: Benutzerdefinierte Sicherheitsfragen](#custom-security-questions) |
-| Wie richte ich die vorgefertigte lokalisierte Sicherheitsfragen ein? | [Einstellung: Informationsbasierte Sicherheitsfragen](#knowledge-based-security-questions) |
+| Wie richte ich vorgefertigte lokalisierte Sicherheitsfragen ein? | [Einstellung: Informationsbasierte Sicherheitsfragen](#knowledge-based-security-questions) |
 | Wie kann ich ändern, wie viele Sicherheitsfragen erforderlich sind? | [Einstellung: Anzahl der Sicherheitsfragen für die Registrierung oder das Zurücksetzen](#number-of-questions-required-to-register) |
 | Wie kann ich meine Benutzer bei der Anmeldung zum Registrieren zwingen? | [Erzwungene registrierungsbasierte Einführung der Kennwortzurücksetzung](#require-users-to-register-when-signing-in) |
 | Wie kann ich veranlassen, dass meine Benutzer ihre registrierten Authentifizierungsdaten in regelmäßigen Abständen erneut bestätigen müssen? | [Einstellung: Anzahl der Tage, bis die Benutzer ihre Authentifizierungsdaten erneut bestätigen müssen](#number-of-days-before-users-must-confirm-their-contact-data) |
@@ -860,7 +860,7 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
 ## Links zur Dokumentation für die Kennwortzurücksetzung
 Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password) – Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password.md): Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems.
 * [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
 * [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
 * [**Best Practices**](active-directory-passwords-best-practices.md) – Erfahren Sie, wie Sie Kennwörter in Ihrer Organisation schnell bereitstellen und effektiv verwalten.
@@ -872,4 +872,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 
 [001]: ./media/active-directory-passwords-customize/001.jpg "Image_001.jpg"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

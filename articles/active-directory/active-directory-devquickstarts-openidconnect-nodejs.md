@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="11/19/2015"
 	ms.author="brandwe"/>
 
 # An- und Abmeldung bei Webanwendungen mit Azure AD
@@ -34,13 +34,13 @@ Dazu müssen Sie folgende Schritte ausführen:
 3. Verwenden Sie Passport zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
 4. Ausdrucken von Informationen zum Benutzer
 
-Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS) verwaltet. Um folgen zu können, können Sie [das App-Gerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS) verwaltet. Um folgen zu können, können Sie [das App-Gerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs.git```
 
 Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
-## 1. Registrieren einer App
+## 1\. Registrieren einer App
 - Melden Sie sich beim Azure-Verwaltungsportal an.
 - Klicken Sie in der linken Navigationsleiste auf **Active Directory**.
 - Wählen Sie den Mandanten aus, in dem die Beispielanwendung registriert werden soll.
@@ -51,7 +51,7 @@ Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt
     - Die **App-ID-URI** ist eine eindeutige Kennung für die Anwendung. Üblicherweise wird `https://<tenant-domain>/<app-name>` verwendet, zum Beispiel: `https://contoso.onmicrosoft.com/my-first-aad-app`
 - Nach Abschluss der Registrierung weist AAD Ihrer Anwendung eine eindeutige Client-ID zu. Diesen Wert benötigen Sie in den nächsten Abschnitten, weswegen Sie ihn aus der Registerkarte „Konfigurieren“ kopieren sollten.
 
-## 2. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
+## 2\. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
 
 Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn dies noch nicht der Fall ist, und führen Sie die folgenden Befehle aus:
 
@@ -70,7 +70,7 @@ Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn 
 
 Dadurch werden die Bibliotheken installiert, von denen "passport-azure-ad" abhängt.
 
-## 3. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
+## 3\. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
 Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect. Passport wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
 -	Öffnen Sie zunächst die Datei `config.js` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `exports.creds` ein.
@@ -306,11 +306,11 @@ app.listen(3000);
 ```
 
 
-## 5. Erstellen von Ansichten und Routen in Express, um die Benutzer auf der Website anzuzeigen
+## 5\. Erstellen von Ansichten und Routen in Express, um die Benutzer auf der Website anzuzeigen
 
 `app.js` ist jetzt vollständig. Nun müssen einfach die Routen und Ansichten hinzugefügt werden, die die Informationen für die Benutzer anzeigen und die erstellten Routen `/logout` und `/login` verarbeiten.
 
-- Erstellen Sie die Route `/routes/index.js` im Stammverzeichnis.
+- Erstellen der Route `/routes/index.js` im Stammverzeichnis
 
 ```JavaScript
 /*
@@ -347,7 +347,6 @@ Diese einfachen Routen übergeben lediglich die Anforderung an die Ansichten, ei
 	<a href="/account">Account Info</a></br>
 	<a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Erstellen Sie die Ansicht `/views/account.ejs` im Stammverzeichnis, sodass zusätzliche Informationen angezeigt werden können, die von `passport-azuread` in die Benutzeranforderung eingefügt wurden.
@@ -367,7 +366,6 @@ Diese einfachen Routen übergeben lediglich die Anforderung an die Ansichten, ei
 <p></p>
 <a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Abschließend wird die Darstellung durch Hinzufügen eines Layouts optimiert. Erstellen Sie die Ansicht "/views/layout.ejs" im Stammverzeichnis.
@@ -415,4 +413,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

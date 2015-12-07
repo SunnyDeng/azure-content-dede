@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="08/31/2015" 
+	ms.date="11/19/2015" 
 	ms.author="robmcm"/>
 
 # Hochladen einer benutzerdefinierten Java Web-App in Azure
@@ -257,4 +257,4 @@ Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/jav
 <!-- External Links -->
 [Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

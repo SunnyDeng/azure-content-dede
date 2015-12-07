@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/10/2015"
+	ms.date="11/24/2015"
 	ms.author="yuridio"/>
 
 # Überlegungen zum Entwurf der Azure Active Directory-Hybrid-Identität
@@ -49,6 +49,10 @@ Sie können den Entwurf, der Ihre Anforderungen am besten erfüllt, erst ermitte
 | Planen einer Erweiterung der Datensicherheit mit einer starken Identitätslösung | [Bestimmen der Datenschutzanforderungen](active-directory-hybrid-identity-design-considerations-dataprotection-requirements.md) <br> [Bestimmen der Content Management-Anforderungen](active-directory-hybrid-identity-design-considerations-contentmgt-requirements.md)<br> [Bestimmen der Zugriffssteuerungsanforderungen](active-directory-hybrid-identity-design-considerations-accesscontrol-requirements.md)<br> [Bestimmen der Anforderungen an Reaktionen auf Vorfälle](active-directory-hybrid-identity-design-considerations-incident-response-requirements.md) <br> [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) |
 | Planen des Hybrid-Identitätslebenszyklus | [Ermitteln der Aufgaben für die Hybrid-Identitätsverwaltung](active-directory-hybrid-identity-design-considerations-hybridId-management-tasks.md) <br> [Synchronisierungsverwaltung](active-directory-hybrid-identity-design-considerations-hybridId-management-tasks.md)<br> [Ermitteln der Strategie für die Einführung der Hybrid-Identitätsverwaltung](active-directory-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md) |     
 
+
+##Dieses Handbuch herunterladen
+Sie können eine PDF-Version des Azure Hybrid Identity Design Considerations Guide in englischer Sprache in der [Technet Gallery](https://gallery.technet.microsoft.com/Azure-Hybrid-Identity-b06c8288) herunterladen.
+
                                                              
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

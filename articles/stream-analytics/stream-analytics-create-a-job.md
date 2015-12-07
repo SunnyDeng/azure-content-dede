@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen eines Auftrags | Microsoft Azure" 
-	description="Erstellen eines Auftrags – Lernpfadsegment"
+	description="Erstellen von Aufträgen für Stream Analytics | Lernpfadsegment."
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
@@ -13,10 +13,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
-# Erstellen eines Auftrags
+# Erstellen eines Stream Analytics-Auftrags
 
 Die Ressource der obersten Ebene in Azure Stream Analytics ist ein Stream Analytics-Auftrag. Er besteht aus einer oder mehreren Eingabedatenquellen, einer Abfrage zum Ausdrücken der Datentransformation und mindestens einem Ausgabeziel, in das Ergebnisse geschrieben werden.
 
@@ -60,4 +60,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

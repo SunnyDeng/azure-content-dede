@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join| Microsoft Azure" 
-	description="In diesem Thema wird erklärt, wie Administratoren Azure AD Join für Ihre Endbenutzer (Mitarbeiter, Studenten und andere Benutzer) einrichten können. Zudem werden die unterschiedlichen Praxis-Szenarios, die bei der Verwendung von Azure AD Join möglich sind, erläutert." 
+	description="Erläutert, wie Administratoren Azure AD Join für Ihre Endbenutzer (Mitarbeiter, Studenten und andere Benutzer) einrichten können. Zudem werden die unterschiedlichen Praxis-Szenarios, die bei der Verwendung von Azure AD Join möglich sind, erläutert." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join 
@@ -69,7 +69,7 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 ### Voraussetzungen
 **Auf Unternehmensebene (Administrator)**
 
-*	Azure AD-Abonnement
+*	Azure AD-Abonnement
 
 **Auf Benutzerebene**
 
@@ -92,4 +92,4 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 * [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Was ist Azure App Service?" 
 	description="Erfahren Sie, warum Azure App Service die beste Plattform für die Entwicklung von Web-Apps und mobilen Apps ist." 
+	keywords="App Service, Azure App Service, App Service-Kosten, Skalierung, skalierbar, App-Bereitstellung, Azure-App-Bereitstellung"
 	services="app-service" 
 	documentationCenter="" 
 	authors="omarkmsft" 
@@ -30,7 +31,7 @@ Azure App Service ist auf die schnelle Entwicklung von Web-Apps und mobilen Apps
 
 - **Einfache Integration** – Integrieren Sie Ihre Daten cloudübergreifend, und automatisieren Sie in Minutenschnelle Geschäftsprozesse – dank einer einfachen visuellen Entwicklungsoberfläche. Integrieren Sie mithilfe von standardmäßigen REST-APIs Ihre Logik auf einfache Weise in beliebige Web-Apps und mobile Apps. Ermöglichen Sie die Integration komplexer Unternehmensanwendungen, entwickeln Sie B2B-Lösungen mithilfe von EDI, erstellen Sie Unternehmensrichtlinien (Regelmodul) und vieles mehr auf Grundlage der branchenführenden BizTalk-Plattform.
 
-- **Herausragende Entwicklerproduktivität** – Optimiert für DevOps mit dauerhafter Unterstützung der Integration in Visual Studio Team Services und GitHub, sodass Sie sich auf die schnelle Verbesserung Ihrer Apps konzentrieren können, ohne sich über die Infrastruktur Gedanken zu machen. Stellen Sie App-Updates mit integrierten Staging- und Rollbackfunktionen sowie der Möglichkeit zum Testen in der Produktion bereit.
+- **Herausragende Entwicklerproduktivität** – optimiert für DevOps mit dauerhafter Unterstützung der Integration in Visual Studio Team Services und GitHub, sodass Sie sich auf die schnelle Verbesserung Ihrer Apps konzentrieren können, ohne sich über die Infrastruktur Gedanken zu machen. Stellen Sie App-Updates mit integrierten Staging- und Rollbackfunktionen sowie der Möglichkeit zum Testen in der Produktion bereit.
 
 - **Geeignet für Unternehmen** – Verlassen Sie sich auf Sicherheits- und Verwaltungsfunktionen auf Unternehmensniveau. Stellen Sie eine delegierte und rollenbasierte Verwaltung bereit, verwalten und schützen Sie problemlos den Datenfluss für Ihre mobilen Apps, und schützen Sie Ihre Objekte mithilfe integrierter Sicherungs- und Wiederherstellungsfunktionen. Verlassen Sie sich auf die umfassende PCI-Kompatibilität von App Service. Behalten Sie jederzeit die Kontrolle, dank dedizierter Umgebungen sowie der Möglichkeit zum Bereitstellen in öffentlichen und privaten Clouds. Profitieren Sie von der über 25-jährigen Erfahrung von Microsoft und unserer Vereinbarung zum Servicelevel für Unternehmen.
 
@@ -59,4 +60,4 @@ Mit Azure App Service brauchen Sie dazu nur eine Sprache auszuwählen!
 [Erstellen Sie eine neue App](http://go.microsoft.com/fwlink/?LinkId=523751) – sofort und kostenlos. Keine Kreditkarte erforderlich, keine Verpflichtungen, kein Ärger.
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

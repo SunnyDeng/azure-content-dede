@@ -24,7 +24,9 @@ Sie können Plug-Ins für das Application Insights SDK schreiben und konfigurier
 Derzeit sind diese Features für das ASP.NET-SDK verfügbar.
 
 * Durch das [Erstellen von Stichproben](#sampling) verringert sich der Umfang der Telemetriedaten, ohne Statistiken zu verfälschen. Zusammengehörige Datenpunkte werden dabei zusammengehalten, sodass Sie bei der Diagnose von Problemen zwischen diesen navigieren können. Im Portal wird die Gesamtanzahl multipliziert, um eine Kompensation der Stichproben zu erreichen.
-* Durch das [Filtern](#filtering) können Sie Telemetriedaten im SDK auswählen oder ändern, bevor sie an den Server gesendet werden. Sie können beispielsweise den Umfang der Telemetriedaten verringern, indem Sie Anforderungen von Robots ausschließen. Dies stellt ein grundlegenderes Verfahren zur Senkung des Datenverkehr dar als das Erstellen von Stichproben. Sie können so besser steuern, was übertragen wird. Jedoch müssen Sie beachten, dass dies Auswirkungen auf die Statistik hat – wenn Sie z. B. alle erfolgreichen Anforderungen herausfiltern.
+ * Bei der Stichprobenerstellung mit festem Prozentsatz können Sie den Prozentsatz der übertragenen Ereignisse selbst bestimmen.
+ * Bei der adaptiven Stichprobenerstellung (der Standardeinstellung für ASP.NET SDK ab Version 2.0.0-beta3) wird der Stichproben-Prozentsatz automatisch entsprechend dem Volumen an Telemetriedaten angepasst. Sie können ein Zielvolumen festlegen.
+* Durch das [Filtern](#filtering) können Sie Telemetriedaten im SDK auswählen oder ändern, bevor sie an den Server gesendet werden. Sie können beispielsweise den Umfang der Telemetriedaten verringern, indem Sie Anforderungen von Robots ausschließen. Dies stellt ein grundlegenderes Verfahren zur Senkung des Datenverkehrs dar als das Erstellen von Stichproben. Sie können so besser steuern, was übertragen wird. Jedoch müssen Sie beachten, dass dies Auswirkungen auf die Statistik hat – wenn Sie z. B. alle erfolgreichen Anforderungen herausfiltern.
 * Auch das [Hinzufügen von Eigenschaften](#add-properties) zu beliebigen von der App gesendeten Telemetriedaten, einschließlich Telemetriedaten von Standardmodulen, ist möglich. Sie könnten z. B. berechnete Werte hinzufügen oder Versionsnummern, nach denen Sie die Daten im Portal filtern.
 * Die [SDK-API](app-insights-api-custom-events-metrics.md) wird zum Senden benutzerdefinierter Ereignisse und Metriken verwendet.
 
@@ -38,27 +40,22 @@ Vorbereitung:
 
 *Diese Funktion steht als Betaversion zur Verfügung.*
 
-Hierbei handelt es sich um die empfohlene Methode zum Reduzieren des Datenverkehrs bei gleichzeitig präzisen Statistiken. Der Filter wählt verwandte Elemente, damit Sie zwischen den Elementen in der Diagnose navigieren können. Ereigniszähler werden im metrischen Explorer angepasst, um die gefilterten Elemente zu kompensieren.
+Bei der [Erstellung von Stichproben](app-insights-sampling.md) handelt es sich um die empfohlene Methode zum Reduzieren des Datenverkehrs bei gleichzeitig präzisen Statistiken. Der Filter wählt verwandte Elemente, damit Sie zwischen den Elementen in der Diagnose navigieren können. Ereigniszähler werden im metrischen Explorer angepasst, um die gefilterten Elemente zu kompensieren.
 
-1. Aktualisieren Sie die NuGet-Pakete Ihres Projekts auf die neueste *Vorabversion* von Application Insights. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „Manage NuGet Packages“ aus, aktivieren Sie **Include prerelease**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“. 
+* Es wird die adaptive Stichprobenerstellung empfohlen. Bei dieser Methode wird der Stichproben-Prozentsatz automatisch angepasst, um ein bestimmtes Volumen an Anforderungen zu erreichen. Derzeit nur für serverseitige Telemetrie bei ASP.NET verfügbar.  
+* Eine Stichprobenerstellung mit festem Prozentsatz steht ebenfalls zur Verfügung. Dabei geben Sie den Stichproben-Prozentsatz an. Verfügbar für ASP.NET-Web-App-Code und JavaScript-Webseiten. Client und Server synchronisieren ihre Stichprobenerstellung, sodass Sie in der Suche zwischen den verwandten Seitenaufrufen und Anforderungen navigieren können.
 
-2. Fügen Sie in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) diesen Codeausschnitt hinzu:
+### So aktivieren Sie die Stichprobenerstellung
 
-```XML
+**Aktualisieren Sie die NuGet-Pakete Ihres Projekts** auf die neueste *Vorabversion* von Application Insights: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „NuGet-Pakete verwalten“ aus, aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“.
 
-    <TelemetryProcessors>
-     <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.SamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+In [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) können Sie den maximalen Prozentsatz an Telemetriedaten angeben, den der Anpassungsalgorithmus als Ziel anstreben soll:
 
-     <!-- Set a percentage close to 100/N where N is an integer. -->
-     <!-- E.g. 50 (=100/2), 33.33 (=100/3), 25 (=100/4), 10, 1 (=100/100), 0.1 (=100/1000) ... -->
-     <SamplingPercentage>10</SamplingPercentage>
-     </Add>
-   </TelemetryProcessors>
+    <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
 
-```
+### Stichprobenerstellung auf Clientseite
 
-
-Fügen Sie zur Stichprobenerstellung für Webseitendaten eine zusätzliche Zeile in den eingefügten [Application Insights-Codeausschnitt](app-insights-javascript.md) (üblicherweise auf einer Masterseite wie etwa „\_Layout.cshtml“) ein:
+Um eine Stichprobenerstellung mit festem Prozentsatz für die Daten von Webseiten zu erreichen, fügen Sie in den eingefügten [Application Insights-Codeausschnitt](app-insights-javascript.md) (üblicherweise auf einer Masterseite wie etwa „\_Layout.cshtml“) eine zusätzliche Zeile ein:
 
 *JavaScript*
 
@@ -72,10 +69,8 @@ Fügen Sie zur Stichprobenerstellung für Webseitendaten eine zusätzliche Zeile
 	}); 
 ```
 
-* Legen Sie einen Prozentsatz fest (in diesen Beispielen „10“), der „100/N“ entspricht. Dabei steht N für eine Ganzzahl. Beispiele: 50 (=100/2), 33,33 (=100/3), 25 (=100/4) oder 10 (=100/10). 
-* Bei großen Datenmengen können Sie sehr niedrige Stichprobenraten wählen, z. B. 0,1.
-* Beim Festlegen des Samplings für die Webseite und den Server müssen Sie für beide Seiten denselben Prozentwert für das Sampling angeben.
-* Server- und Clientseite werden zur Auswahl der entsprechenden Elemente koordiniert.
+* Legen Sie einen Prozentsatz fest (in diesem Beispiel „10“), der „100/N“ entspricht. Dabei steht N für eine Ganzzahl. Beispiele: 50 (=100/2), 33,33 (=100/3), 25 (=100/4) oder 10 (=100/10). 
+* Wenn Sie auch auf dem Server die [Stichprobenerstellung mit festem Prozentsatz](app-insights-sampling.md) aktivieren, wird die Stichprobenerstellung zwischen Client und Server synchronisiert, sodass Sie in der Suche zwischen den verwandten Seitenaufrufen und Anforderungen navigieren können.
 
 [Erfahren Sie mehr über Sampling](app-insights-sampling.md).
 
@@ -164,7 +159,7 @@ Sie können durch die Bereitstellung von öffentlich benannten Eigenschaften in 
  
 **Alternativ** können Sie den Filter im Code initialisieren. Fügen Sie in einer geeigneten Initialisierungsklasse, z. B. AppStart in „Global.asax.cs“ Ihren Prozessor in die Kette ein:
 
-    ```C#
+```C#
 
     var builder = TelemetryConfiguration.Active.GetTelemetryProcessorChainBuilder();
     builder.Use((next) => new SuccessfulDependencyFilter(next));
@@ -174,7 +169,7 @@ Sie können durch die Bereitstellung von öffentlich benannten Eigenschaften in 
 
     builder.Build();
 
-    ```
+```
 
 Nach diesem Punkt erstellte TelemetryClients-Elemente verwenden Ihre Prozessoren.
 
@@ -409,4 +404,4 @@ Sie können beliebig viele Initialisierer hinzufügen.
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

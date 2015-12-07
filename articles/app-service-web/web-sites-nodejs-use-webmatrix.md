@@ -3,9 +3,9 @@
 	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von WebMatrix eine Node.js-Anwendung erstellen und in Azure App Service-Web-Apps bereitstellen." 
 	services="app-service\web" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="08/03/2015"
-	ms.author="mwasson"/>
+	ms.date="11/20/2015"
+	ms.author="robmcm"/>
 
 
 # Erstellen und Bereitstellen einer Node.js-Web-App für Azure mithilfe von WebMatrix
 
-In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von WebMatrix eine Node.js-Anwendung erstellen und in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps bereitstellen. WebMatrix ist ein kostenloses Webentwicklungstool von Microsoft, das alles enthält, was Sie für die Entwicklung von Web-Apps benötigen. WebMatrix umfasst zahlreiche Features, die die Verwendung von Node.js einfach gestalten, einschließlich Codefertigstellung, vorbereitete Vorlagen und Editorunterstützung für Jade, LESS und CoffeeScript. Erfahren Sie mehr über [WebMatrix für Azure](http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409).
+In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von WebMatrix eine Node.js-Anwendung erstellen und in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps bereitstellen. WebMatrix ist ein kostenloses Webentwicklungstool von Microsoft, das alles enthält, was Sie für die Entwicklung von Web-Apps benötigen. WebMatrix umfasst zahlreiche Features, die die Verwendung von Node.js einfach gestalten, einschließlich Codefertigstellung, vorbereitete Vorlagen und Editorunterstützung für Jade, LESS und CoffeeScript. Erfahren Sie mehr über [WebMatrix](https://www.microsoft.com/web/webmatrix/).
 
 Nachdem Sie dieses Lernprogramm durchgearbeitet haben, verfügen Sie über eine Node.js-Web-App, die in Azure App Service ausgeführt wird.
  
@@ -81,11 +81,11 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 
 Sie können die Anwendung auf einfache Weise ändern und neu veröffentlichen. Hier nehmen Sie eine einfache Änderung an der Überschrift in der **index.jade**-Datei vor und veröffentlichen die Anwendung dann neu.
 
-1. Wählen Sie in WebMatrix die Option **Dateien**, und erweitern Sie dann den Ordner **Ansichten** folder. Öffnen Sie die Datei **index.php**, indem Sie darauf doppelklicken.
+1. Wählen Sie in WebMatrix die Option **Dateien**, und erweitern Sie dann den Ordner **Ansichten**. Öffnen Sie die Datei **index.php**, indem Sie darauf doppelklicken.
 
 	![WebMatrix-Ansicht von index.jade][webmatrix-modify-index]
 
-2. Ändern Sie die zweite Zeile wie folgt:
+2. Ändern Sie die Absatzzeile wie folgt:
 
 		p Welcome to #{title} with WebMatrix on Azure!
 
@@ -126,4 +126,4 @@ Wenn nach der Bereitstellung für Azure Probleme mit der Anwendung auftreten, fi
 [nodesitefromtemplateazure]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-site-azure.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

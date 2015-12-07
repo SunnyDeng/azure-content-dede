@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/03/2015"
+   ms.date="11/23/2015"
    ms.author="chackdan"/>
 
 # Upgrade eines Service Fabric-Clusters
@@ -28,7 +28,7 @@ Microsoft wartet den Fabric-Code und die Konfiguration, die in einem Cluster aus
 
 In dieser Phase erfolgen die Upgrades nacheinander in den einzelnen Upgradedomänen. Die Anwendungen, die im Cluster ausgeführt wurden, werden ohne Ausfallzeit fortgesetzt. Die Clusterintegritätsrichtlinien (eine Kombination aus der Integrität der Knoten und aller im Cluster ausgeführten Anwendungen) werden während des Upgrades befolgt.
 
-Wenn die Clusterintegritätsrichtlinien nicht eingehalten werden, wird das Upgrade rückgängig gemacht. Der Besitzer des Abonnements erhält eine E-Mail mit der Information, dass das Upgrade eines Clusters rückgängig gemacht werden musste. Ferner enthalten sind Angaben zu Abhilfemaßnahmen und dazu, dass Phase 2 in „n“ Tagen erfolgen wird.„n“ ist eine Variable. Wir versuchen noch weitere Male, dasselbe Upgrade auszuführen, um Upgrades auszuschließen, die aus Infrastrukturgründen misslungen sind. Nach „n“ Tagen nach Senden der E-Mail fahren wir mit Phase 2 fort.
+Wenn die Clusterintegritätsrichtlinien nicht eingehalten werden, wird das Upgrade rückgängig gemacht. Der Besitzer des Abonnements erhält eine E-Mail mit der Information, dass das Upgrade eines Clusters rückgängig gemacht werden musste. Ferner enthalten sind Angaben zu Abhilfemaßnahmen und dazu, dass Phase 2 in „n“ Tagen erfolgen wird. „n“ ist eine Variable. Wir versuchen noch weitere Male, dasselbe Upgrade auszuführen, um Upgrades auszuschließen, die aus Infrastrukturgründen misslungen sind. Nach „n“ Tagen nach Senden der E-Mail fahren wir mit Phase 2 fort.
 
 Wenn die Clusterintegritätsrichtlinien erfüllt sind, wird das Upgrade als erfolgreich betrachtet und als abgeschlossen markiert. Dies kann in dieser Phase während des anfänglichen oder einer der Wiederholungen des Upgrades erfolgen. Bei einer erfolgreichen Ausführung gibt es keine Bestätigung per E-Mail. (Dadurch soll das Senden zu vieler E-Mails verhindert werden. Der Empfang einer E-Mail soll eine Ausnahme vom Normalfall sein. Wir erwarten, dass die meisten Clusterupgrades ohne Beeinträchtigung der Verfügbarkeit der Anwendung erfolgen).
 
@@ -38,7 +38,7 @@ Weitere Informationen zum Festlegen benutzerdefinierter Integritätsrichtlinien 
 
 Die Integritätsrichtlinien werden so festgelegt, dass die Anzahl der Anwendungen, die am Anfang des Upgrades fehlerfrei waren, diesen Status für die Dauer des Upgradeprozesses beibehalten. Wie in Phase 1 erfolgen die Upgrades nacheinander in den einzelnen Upgradedomänen. Die Anwendungen, die im Cluster ausgeführt wurden, werden ohne Ausfallzeit fortgesetzt. Die Clusterintegritätsrichtlinien (eine Kombination aus der Integrität der Knoten und aller im Cluster ausgeführten Anwendungen) werden während des Upgrades befolgt.
 
-Wenn die geltenden Clusterintegritätsrichtlinien nicht eingehalten werden, wird das Upgrade rückgängig gemacht. Der Besitzer des Abonnements erhält eine E-Mail mit der Information, dass das Upgrade eines Clusters rückgängig gemacht werden musste. Ferner enthalten sind Angaben zu Abhilfemaßnahmen und dazu, dass Phase 3 in „n“ Tagen erfolgen wird.„n“ ist eine Variable.
+Wenn die geltenden Clusterintegritätsrichtlinien nicht eingehalten werden, wird das Upgrade rückgängig gemacht. Der Besitzer des Abonnements erhält eine E-Mail mit der Information, dass das Upgrade eines Clusters rückgängig gemacht werden musste. Ferner enthalten sind Angaben zu Abhilfemaßnahmen und dazu, dass Phase 3 in „n“ Tagen erfolgen wird. „n“ ist eine Variable.
 
 Wir versuchen noch weitere Male, dasselbe Upgrade auszuführen, um Upgrades auszuschließen, die aus Infrastrukturgründen misslungen sind. Mehrere Tage vor Ablauf von „n“ Tagen wird eine Erinnerungs-E-Mail gesendet. Nach „n“ Tagen ab dem Sendedatum der E-Mail fahren wir mit Phase 3 fort. Die E-Mails, die wir Ihnen in Phase 2 senden, müssen ernst genommen werden und Abhilfemaßnahmen erfolgen.
 
@@ -52,7 +52,7 @@ Diese Integritätsrichtlinien zielen auf die Vervollständigung des Upgrades und
 
 Wenn die geltenden Clusterintegritätsrichtlinien nicht erfüllt sind, wird das Upgrade rückgängig gemacht. Wir versuchen noch weitere Male, dasselbe Upgrade auszuführen, um Upgrades auszuschließen, die aus Infrastrukturgründen misslungen sind. Danach wird der Cluster in einen Status versetzt, in dem keine Unterstützung und/oder Upgrades mehr empfangen werden.
 
-Eine E-Mail mit diesen Informationen und den Abhilfemaßnahmen wird an den Besitzer des Abonnements gesendet.Wir erwarten nicht, dass Cluster in einen Status gelangen, der die Folge des Misslingens von Phase 3 ist.
+Eine E-Mail mit diesen Informationen und den Abhilfemaßnahmen wird an den Besitzer des Abonnements gesendet. Wir erwarten nicht, dass Cluster in einen Status gelangen, bei dem Phase 3 fehlgeschlagen ist.
 
 Wenn die Clusterintegritätsrichtlinien erfüllt sind, wird das Upgrade als erfolgreich betrachtet und als abgeschlossen markiert. Dies kann in dieser Phase während des anfänglichen oder einer der Wiederholungen des Upgrades erfolgen. Bei einer erfolgreichen Ausführung gibt es keine Bestätigung per E-Mail.
 
@@ -68,21 +68,23 @@ Sie können die primären oder sekundären Zertifikate einfach über das Portal 
 
 ### Anwendungsports
 
-Sie können die dem Knotentyp zugeordneten Ressourceneigenschaften des Load Balancers ändern.Dies ist über das Portal oder direkt über den ARM und PowerShell möglich.
+Sie können die dem Knotentyp zugeordneten Ressourceneigenschaften des Load Balancers ändern. Dies ist über das Portal oder direkt über ARM PowerShell möglich.
 
 Um einen neuen Port auf allen VMs in einem Knotentyp öffnen zu können, führen Sie die folgenden Schritte aus.
 
 1. **Hinzufügen eines neuen Tests zum entsprechenden Load Balancer**
 
- Wenn Sie den Cluster mithilfe des Portals bereitgestellt haben, heißen die Load Balancer für jeden Knotentyp „loadBalancer-0“ , „loadBalancer-1“ usw. Da die Load Balancer-Namen nur in einer Ressourcengruppe eindeutig sind, empfiehlt es sich, sie nur in einer bestimmten Ressourcengruppe zu suchen.
+    Wenn Sie den Cluster mithilfe des Portals bereitgestellt haben, heißen die Load Balancer für jeden Knotentyp „loadBalancer-0“ , „loadBalancer-1“ usw. Da die Load Balancer-Namen nur in einer Ressourcengruppe eindeutig sind, empfiehlt es sich, sie nur in einer bestimmten Ressourcengruppe zu suchen.
 
- ![Hinzufügen von Tests][addingProbes]
+    ![Hinzufügen von Tests][AddingProbes]
+
 
 2. **Hinzufügen einer neuen Regel zum Load Balancer**
 
-  Fügen Sie demselben Load Balancer eine neue Regel mithilfe des im vorherigen Schritt erstellten Tests hinzu.
+    Fügen Sie demselben Load Balancer eine neue Regel mithilfe des im vorherigen Schritt erstellten Tests hinzu.
 
-  ![Hinzufügen von Load Balancer-Regeln][AddingLBRules]
+    ![Hinzufügen von Load Balancer-Regeln][AddingLBRules]
+
 
 ### Placement-Eigenschaften
 
@@ -95,7 +97,7 @@ Um einen neuen Port auf allen VMs in einem Knotentyp öffnen zu können, führen
 Für die einzelnen Knotentypen können Sie benutzerdefinierte Kapazitätsmetriken hinzufügen, die Sie in Ihrer Anwendung zum Melden der Auslastung verwenden möchten. Informationen zur Verwendung von Kapazitätsmetriken zum Melden der Auslastung finden Sie in der [Übersicht über das Melden der dynamischen Auslastung](service-fabric-resource-balancer-dynamic-load-reporting.md).
 
 ### Anwenden von Betriebssystempatches auf die virtuellen Computer, die den Cluster bilden
-Dieses Feature ist angekündigt. Derzeit sind Sie für das Patching der VMs verantwortlich.Dies muss jeweils für eine VM erfolgen, sodass immer nur eine VM außer Betrieb genommen wird.
+Dieses Feature ist angekündigt. Derzeit sind Sie für das Patching der VMs verantwortlich. Dies kann nur jeweils für eine VM erfolgen, sodass immer nur eine VM außer Betrieb genommen wird.
 
 ### Upgrade des Betriebssystems auf den virtuellen Computern, die den Cluster bilden
 Wenn Sie das verwendete Betriebssystemimage aktualisieren müssen, muss das jeweils auf einer VM erfolgen, wobei Sie für dieses Upgrade zuständig sind. Bislang gibt es keine Automatisierung.
@@ -111,4 +113,4 @@ Wenn Sie das verwendete Betriebssystemimage aktualisieren müssen, muss das jewe
 [AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes.png
 [AddingLBRules]: ./media/service-fabric-cluster-upgrade/addingLBRules.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

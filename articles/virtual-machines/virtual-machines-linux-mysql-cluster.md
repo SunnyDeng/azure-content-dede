@@ -45,7 +45,7 @@ Sie benötigen ein Microsoft Azure-Konto mit einem gültigen Abonnement, das in 
 
 ### Affinitätsgruppe
 
-Eine Affinitätsgruppe wird für die Lösung erstellt, indem Sie sich beim Azure-Portal anmelden, einen Bildlauf zu "Einstellungen" ausführen und eine neue Affinitätsgruppe erstellen. Später zugeordnete Ressourcen werden zu dieser Affinitätsgruppe zugewiesen.
+Eine Affinitätsgruppe wird für die Lösung erstellt, indem Sie sich beim Azure-Portal anmelden, zu „Einstellungen“ scrollen und eine neue Affinitätsgruppe erstellen. Später zugeordnete Ressourcen werden zu dieser Affinitätsgruppe zugewiesen.
 
 ### Netzwerke
 
@@ -153,7 +153,7 @@ Sie müssen den Netzwerkbetrieb für MySQL aktivieren, wenn Sie Abfragen von au�
 
 ### Erstellen der MySQL-Gruppe mit Lastenausgleich
 
-Wir wechseln zurück zum Azure-Portal und navigieren zum virtuellen Computer `hadb01` und dann zu "Endpunkte". Wir erstellen einen neuen Endpunkt, wählen "MySQL (TCP 3306)" aus dem Dropdownmenü aus und aktivieren das Kontrollkästchen *Neue Gruppe mit Lastenausgleich erstellen*. Wir nennen unseren Endpunkt mit Lastenausgleich `lb-mysql`. Wir ändern die meisten Optionen nicht, mit Ausnahme der Zeit, die wir auf "5" (Sekunden, Minimum) reduzieren.
+Wir wechseln zurück zum Portal und navigieren zum virtuellen Computer `hadb01` und dann zu „Endpunkte“. Wir erstellen einen neuen Endpunkt, wählen "MySQL (TCP 3306)" aus dem Dropdownmenü aus und aktivieren das Kontrollkästchen *Neue Gruppe mit Lastenausgleich erstellen*. Wir nennen unseren Endpunkt mit Lastenausgleich `lb-mysql`. Wir ändern die meisten Optionen nicht, mit Ausnahme der Zeit, die wir auf "5" (Sekunden, Minimum) reduzieren.
 
 Nach dem Erstellen des Endpunkts gehen wir zu `hadb02` und "Endpunkte" und erstellen einen neuen Endpunkt. Wir wählen jedoch `lb-mysql` und anschließend im Dropdown-Menü "MySQL". Sie können auch die Azure-Befehlszeilenschnittstelle für diesen Schritt verwenden.
 
@@ -313,7 +313,7 @@ Und dieser Screenshot zeigt beide Knoten, einen Master- und einen Detailknoten:
 
 Nun sind wir bereit für eine automatische Failoversimulation. Dies kann auf zwei Arten erreicht werden: "soft" und "hard". Die Variante "soft" verwendet die Funktion zum Herunterfahren des Clusters: ``crm_standby -U `uname -n` -v on`` Wenn diese auf dem Master verwendet wird, übernimmt der Detailknoten. Denken Sie daran, dies wieder auf "off" zurückzusetzen. (Ansonsten informiert Sie "crm\_mon", dass sich ein Knoten im Standbymodus befindet.)
 
-Bei der harten Variante wird der primäre virtuelle Computer (hadb01) über das Portal heruntergefahren, oder es wird die Ausführungsebene des virtuellen Computers geändert (d. h. anhalten, herunterfahren), dann helfen wir Corosync und Pacemaker, indem wir signalisieren, dass der Master herunterfährt. Sie können dies testen (nützlich für Wartungsfenster). Wir können das Szenario jedoch auch erzwingen, indem wir einfach den virtuellen Computer einfrieren.
+Bei der harten Variante wird der primäre virtuelle Computer („hadb01“) über das Portal heruntergefahren, oder es wird die Ausführungsebene des virtuellen Computers geändert (d. h. Anhalten, Herunterfahren), dann helfen wir Corosync und Pacemaker, indem wir signalisieren, dass der Master herunterfährt. Sie können dies testen (nützlich für Wartungsfenster). Wir können das Szenario jedoch auch erzwingen, indem wir einfach den virtuellen Computer einfrieren.
 
 ## STONITH
 
@@ -340,4 +340,4 @@ Es gelten die folgenden Einschränkungen:
 - Die MySQL-Feinabstimmung ist erforderlich, um sicherzustellen, dass der Schreibvorgang in einer vernünftigen Geschwindigkeit erfolgt und Zwischenspeicherungen möglichst häufig auf den Datenträger übertragen werden, um Speicherverluste zu vermeiden.
 - Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

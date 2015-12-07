@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="08/30/2015"
-	ms.author="huguesv"/>
+	ms.date="11/18/2015"
+	ms.author="huvalo"/>
 
 
 
@@ -70,9 +70,9 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden Schritten können Sie ein Speicherkonto erstellen.
 
-1.  Melden Sie sich beim Azure-Portal an.
+1.  Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 
-2. Klicken Sie unten links im Portal auf das Symbol **Neu** und dann auf **Daten + Speicher** > **Speicher**. Geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
+2. Klicken Sie unten links im Portal auf das Symbol **Neu** und dann auf **Daten + Speicher** > **Speicherkonto**. Klicken Sie auf **Erstellen**, geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
 
@@ -101,6 +101,8 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass sie das eben erst
 1.  Der Code, der das Azure Table Storage-Repository implementiert, befindet sich unter **models/azuretablestorage.py**. Weitere Informationen zur Nutzung des Tabellenspeicherdiensts in Python finden Sie in der [Dokumentation].
 
 1.  Drücken Sie `F5`, um die Anwendung auszuführen. Die mittels **Beispielumfrage erstellen** erstellten Umfragen sowie die bei der Abstimmung erfassten Daten werden in Azure Table Storage serialisiert.
+
+	> [AZURE.NOTE]Die virtuelle Umgebung für Python 2.7 wird möglicherweise eine unerwartete Unterbrechung in Visual Studio verursachen. Drücken Sie `F5`, um das Laden des Webprojekts fortzusetzen.
 
 1.  Navigieren Sie zur Seite **Info**, und prüfen Sie, ob die Anwendung das Repository **Azure Table Storage** verwendet.
 
@@ -147,7 +149,7 @@ Das Azure .NET SDK bietet eine einfache Möglichkeit zum Bereitstellen Ihrer Web
 
 In diesem Abschnitt konfigurieren wir die Umgebungsvariablen für die Web-Apps-Instanz.
 
-1.  Öffnen Sie im Azure-Portal das Blatt der Web-App, indem Sie auf **Durchsuchen** > **Web-Apps** und anschließend auf den Namen Ihrer Web-App klicken.
+1.  Öffnen Sie im [Azure-Portal](https://portal.azure.com) das Blatt der Web-App, indem Sie auf **Durchsuchen** > **Web-Apps** und anschließend auf den Namen Ihrer Web-App klicken.
 
 1.  Klicken Sie auf dem Blatt Ihrer Web-App auf **Alle Einstellungen** und anschließend auf **Anwendungseinstellungen**.
 
@@ -176,7 +178,7 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
   - [Cloud Service-Projekte]
   - [Remotedebugging in Microsoft Azure]
 - [Dokumentation zu Flask]
-- [Azure Storage] (in englischer Sprache)
+- [Azure Storage (in englischer Sprache)]
 - [Azure-SDK für Python]
 - [Verwenden des Tabellenspeicherdiensts in Python]
 
@@ -206,8 +208,8 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Remotedebugging in Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
 [Webprojekte]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service-Projekte]: http://go.microsoft.com/fwlink/?LinkId=624028
-[Azure Storage]: http://azure.microsoft.com/documentation/services/storage/
+[Azure Storage (in englischer Sprache)]: http://azure.microsoft.com/documentation/services/storage/
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

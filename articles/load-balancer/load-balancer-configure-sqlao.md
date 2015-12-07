@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/12/2015"
+   ms.date="11/19/2015"
    ms.author="joaoma" />
 
 # Konfigurieren des Lastenausgleichs für SQL-AlwaysOn
@@ -53,10 +53,10 @@ Schritt 2.
 
 Im Beispiel oben werden 2 virtuelle Computer namens "sqlsvc1" und "sqlsvc2" im Clouddienst "Sqlsvc" ausgeführt. Nach dem Erstellen von ILB mit dem "DirectServerReturn"-Switch fügen Sie Endpunkte mit Lastenausgleich zu ILB hinzu, um SQL das Konfigurieren der Listener für Verfügbarkeitsgruppen zu ermöglichen.
 
-Weitere Details zum Erstellen einer SQL-AlwaysOn-Verfügbarkeitsgruppe finden Sie unter [Lernprogramm: AlwaysOn-Verfügbarkeitsgruppen in Azure](https://msdn.microsoft.com/library/dn249504.aspx) oder [Verwenden des Portal-Katalogs](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx).
+Weitere Details zum Erstellen einer SQL AlwaysOn-Verfügbarkeitsgruppe finden Sie unter [Tutorial: AlwaysOn Availability Groups in Azure](https://msdn.microsoft.com/library/dn249504.aspx) (in englischer Sprache) und [Using the Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache).
 
 
-## Siehe auch
+## Weitere Informationen
 
 [Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen](load-balancer-internet-getstarted.md)
 
@@ -67,4 +67,4 @@ Weitere Details zum Erstellen einer SQL-AlwaysOn-Verfügbarkeitsgruppe finden Si
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

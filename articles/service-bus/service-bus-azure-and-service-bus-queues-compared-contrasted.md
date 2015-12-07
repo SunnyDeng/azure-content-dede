@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung."
+   pageTitle="Azure- und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung | Microsoft Azure"
    description="Analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Warteschlangentypen."
    services="service-bus"
    documentationCenter="na"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="09/11/2015"
+   ms.date="11/18/2015"
    ms.author="sethm" />
 
 # Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung.
@@ -25,7 +25,7 @@ Microsoft Azure unterstützt zwei Typen von Warteschlangen: **Azure-Warteschlang
 
 **Azure-Warteschlangen** gehören zur Infrastruktur von [Azure Storage](http://azure.microsoft.com/services/storage/). Sie verfügen über eine einfache REST-basierte Get-/Put-/Peek-Oberfläche, die ein zuverlässiges und konsequentes Messaging innerhalb von Diensten und zwischen diesen gewährleistet.
 
-**Service Bus-Warteschlangen** gehören der weiter gefassten [Azure-Messaging](http://azure.microsoft.com/services/messaging/)-Infrastruktur an, die neben Warteschlangen auch Veröffentlichungen/Abonnements, Remotebereitstellung von Webdiensten und Integrationsmuster unterstützt. Weitere Informationen zu Service Bus-Warteschlangen, Themen/Abonnements und Relays finden Sie unter [Service Bus-Messagingmuster im Überblick](https://msdn.microsoft.com/library/hh410103.aspx).
+**Service Bus-Warteschlangen** gehören der weiter gefassten [Azure-Messaging](http://azure.microsoft.com/services/service-bus/)-Infrastruktur an, die neben Warteschlangen auch Veröffentlichungen/Abonnements, Remotebereitstellung von Webdiensten und Integrationsmuster unterstützt. Weitere Informationen zu Service Bus-Warteschlangen, Themen/Abonnements und Relays finden Sie unter [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md).
 
 Obwohl beide Warteschlangentechnologien parallel vorhanden sind, wurden Azure-Warteschlangen zuerst als dedizierter Warteschlangenspeicher-Mechanismus eingeführt, der auf den Azure-Speicherdiensten aufsetzt. Service Bus-Warteschlangen basieren auf der umfassenderen Infrastruktur für "Brokermessaging". Diese dient der Integration von Anwendungen oder Anwendungskomponenten, die sich auf mehrere Kommunikationsprotokolle, Datenverträge, vertrauenswürdige Domänen und/oder Netzwerkumgebungen erstrecken.
 
@@ -55,7 +55,7 @@ Als Lösungsarchitekt/-entwickler sollten Sie die **Verwendung von Service Bus-W
 
 - Die Lösung muss in der Lage sein, die automatische Duplikaterkennung zu unterstützen.
 
-- Sie wünschen eine Anwendung, die Nachrichten als parallele Datenströme mit langer Ausführungsdauer verarbeitet (Nachrichten werden mithilfe der [SessionId](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx)-Eigenschaft für die Nachricht einem Datenstrom zugeordnet). In diesem Modell konkurriert jeder Knoten in der verarbeitenden Anwendung um Datenströme und nicht um Nachrichten. Wenn ein Datenstrom an einen verarbeitenden Knoten übergeben wird, kann der Knoten den Status des Anwendungsdatenstroms mithilfe von Transaktionen untersuchen.
+- Sie wünschen eine Anwendung, die Nachrichten als parallele Datenströme mit langer Ausführungsdauer verarbeitet (Nachrichten werden mithilfe der [SessionId](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx)-Eigenschaft für die Nachricht einem Datenstrom zugeordnet). In diesem Modell konkurriert jeder Knoten in der verarbeitenden Anwendung um Datenströme und nicht um Nachrichten. Wenn ein Datenstrom an einen verarbeitenden Knoten übergeben wird, kann der Knoten den Status des Anwendungsdatenstroms mithilfe von Transaktionen untersuchen.
 
 - Beim Senden oder Empfangen mehrerer Nachrichten über eine Warteschlange muss sich die Lösung durch Transaktionsfähigkeit und Unteilbarkeit auszeichnen.
 
@@ -67,7 +67,7 @@ Als Lösungsarchitekt/-entwickler sollten Sie die **Verwendung von Service Bus-W
 
 - Die Warteschlangengröße überschreitet 80 GB nicht.
 
-- Sie möchten den auf Standards basierenden AMQP 1.0-Messagingbroker verwenden. Weitere Informationen zu AMQP finden Sie unter [Service Bus AMQP – Übersicht](https://msdn.microsoft.com/library/jj841072.aspx).
+- Sie möchten den auf Standards basierenden AMQP 1.0-Messagingbroker verwenden. Weitere Informationen zu AMQP finden Sie unter [Service Bus AMQP – Übersicht](service-bus-amqp-overview.md).
 
 - Sie können schließlich eine Migration von der warteschlangenbasierten Punkt-zu-Punkt-Kommunikation zu einem Nachrichtenaustauschmodell in Erwägung ziehen, um zusätzliche Empfänger (Abonnenten) nahtlos zu integrieren, von denen jeder eine Kopie einiger oder aller an die Warteschlange gesendeten Nachrichten erhält. Der letzte Punkt bezieht sich auf die Veröffentlichungs-/Abonnementfunktion, die von Service Bus selbst bereitgestellt wird.
 
@@ -91,11 +91,11 @@ In diesem Abschnitt werden einige der grundlegenden Warteschlangenfunktionen ver
 |Zustellungsgarantie|**At-Least-Once**|**At-Least-Once**<br/><br/>**At-Most-Once**|
 |Unterstützung von Transaktionen|**Nein**|**Ja**<br/><br/>(durch Verwendung lokaler Transaktionen)|
 |Empfangsverhalten|**Nicht blockierend**<br/><br/>(wird sofort beendet, wenn keine neue Nachricht gefunden wird)|**Blockieren mit/ohne Timeout**<br/><br/>(bietet ein langes Abrufintervall bzw. die ["Comet-Technik"](http://go.microsoft.com/fwlink/?LinkId=613759))<br/><br/>**Nicht blockierend**<br/><br/>(nur durch Verwendung .NET-verwalteter APIs)|
-|API im Pushstil|**Nein**|**Ja**<br/><br/>[OnMessage](https://msdn.microsoft.com/library/jj908682.aspx)- und [OnMessage-Sitzungs](https://msdn.microsoft.com/library/dn790528.aspx)-API (.NET).|
+|API im Pushstil|**Nein**|**Ja**<br/><br/>[OnMessage](https://msdn.microsoft.com/library/azure/jj908682.aspx)- und **OnMessage**-Sitzungs-.NET-API.|
 |Empfangsmodus|**Peek & Lease**|**Peek & Lock**<br/><br/>**Receive & Delete**|
 |Exklusiver Zugriffsmodus|**Leasebasiert**|**Sperrenbasiert**|
-|Lease-/Sperrdauer|**30 Sekunden (Standard)**<br/><br/>**7 Tage (maximal)** (Sie können eine Nachrichtenlease mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API erneuern oder freigeben.)|**60 Sekunden (Standard)**<br/><br/>Eine Nachrichtensperre kann mit der [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.|
-|Lease-/Sperrengranularität|**Nachrichtenebene**<br/><br/>(Jede Nachricht kann einen anderen Timeoutwert aufweisen, den Sie nach Bedarf bei der Verarbeitung der Nachricht mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API aktualisieren können.)|**Warteschlangenebene**<br/><br/>(Jede Warteschlange weist eine Sperrengranularität auf, die auf alle enthaltenen Nachrichten angewendet wird; die Sperre kann jedoch mit der [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.)|
+|Lease-/Sperrdauer|**30 Sekunden (Standard)**<br/><br/>**7 Tage (maximal)** (Sie können eine Nachrichtenlease mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API erneuern oder freigeben.)|**60 Sekunden (Standard)**<br/><br/>Eine Nachrichtensperre kann mit der [RenewLock](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.|
+|Lease-/Sperrengranularität|**Nachrichtenebene**<br/><br/>(Jede Nachricht kann einen anderen Timeoutwert aufweisen, den Sie nach Bedarf bei der Verarbeitung der Nachricht mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API aktualisieren können.)|**Warteschlangenebene**<br/><br/>(Jede Warteschlange weist eine Sperrengranularität auf, die auf alle enthaltenen Nachrichten angewendet wird; die Sperre kann jedoch mit der [RenewLock](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.)|
 |Batchempfang|**Ja**<br/><br/>(explizit angebende Nachrichtenanzahl beim Abrufen von Nachrichten, bis maximal 32 Nachrichten)|**Ja**<br/><br/>(implizites Aktivieren einer PreFetch-Eigenschaft oder explizites Aktivieren durch Verwendung von Transaktionen)|
 |Batchversand|**Nein**|**Ja**<br/><br/>(durch Verwendung von Transaktionen oder clientseitiger Batchverarbeitung)|
 
@@ -119,7 +119,7 @@ In diesem Abschnitt werden einige der grundlegenden Warteschlangenfunktionen ver
 
 - Azure-Warteschlangen stellen ein Leasingprinzip bereit, über das die Leasedauer für Nachrichten verlängert werden kann. Auf diese Weise können die Workerprozesse eine kurze Leasedauer für Nachrichten beibehalten. Sollte ein Workerprozess abstürzen, kann die Nachricht folglich von einem anderen Workerprozess schnell verarbeitet werden. Ein Workerprozess kann darüber hinaus die Leasedauer für eine Nachricht verlängern, wenn deren Verarbeitungszeit über die aktuelle Leasedauer hinausgeht.
 
-- Azure-Warteschlangen verfügen über ein Sichtbarkeitstimeout, das Sie festlegen können, wenn eine Nachricht der Warteschlange hinzugefügt bzw. aus dieser entfernt wird. Außerdem können Sie eine Nachricht anhand verschiedener Leasewerte zur Laufzeit aktualisieren und unterschiedliche Werte für mehrere Nachrichten aktualisieren, die sich in derselben Warteschlange befinden. Service Bus-Sperrtimeouts sind in den Warteschlangenmetadaten definiert. Sie können die Sperre jedoch verlängern, indem Sie die [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-Methode aufrufen.
+- Azure-Warteschlangen verfügen über ein Sichtbarkeitstimeout, das Sie festlegen können, wenn eine Nachricht der Warteschlange hinzugefügt bzw. aus dieser entfernt wird. Außerdem können Sie eine Nachricht anhand verschiedener Leasewerte zur Laufzeit aktualisieren und unterschiedliche Werte für mehrere Nachrichten aktualisieren, die sich in derselben Warteschlange befinden. Service Bus-Sperrtimeouts sind in den Warteschlangenmetadaten definiert. Sie können die Sperre jedoch verlängern, indem Sie die [RenewLock](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-Methode aufrufen.
 
 - Das maximale Timeout für das Blockieren einer empfangenen Nachricht in Service Bus-Warteschlangen beträgt 24 Tage. REST-basierte Timeouts verfügen jedoch über einen maximalen Wert von 55 Sekunden.
 
@@ -141,8 +141,8 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 |Unterstützung für nicht verarbeitbare Nachrichten|**Ja**|**Ja**|
 |Direktes Update|**Ja**|**Ja**|
 |Serverseitiges Transaktionsprotokoll|**Ja**|**Nein**|
-|Speichermetrik|**Ja**<br/><br/>**Minutenmetriken**: stellen in Echtzeit Metriken für die Verfügbarkeit, TPS, Anzahl der API-Aufrufe, Fehleranzahl usw. zur Verfügung (aggregiert pro Minute und gemeldet innerhalb weniger Minuten nach Ereigniseintritt in der Produktion). Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](https://msdn.microsoft.com/library/hh343258.aspx).|**Ja**<br/><br/>(Massenabfragen durch Aufrufen von [GetQueues](https://msdn.microsoft.com/library/hh293128.aspx))|
-|Zustandsverwaltung|**Nein**|**Ja**<br/><br/>[Microsoft.ServiceBus.Messaging.EntityStatus.Active](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.Disabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.SendDisabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.ReceiveDisabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx)|
+|Speichermetrik|**Ja**<br/><br/>**Minutenmetriken**: stellen in Echtzeit Metriken für die Verfügbarkeit, TPS, Anzahl der API-Aufrufe, Fehleranzahl usw. zur Verfügung (aggregiert pro Minute und gemeldet innerhalb weniger Minuten nach Ereigniseintritt in der Produktion). Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](https://msdn.microsoft.com/library/azure/hh343258.aspx).|**Ja**<br/><br/>(Massenabfragen durch Aufrufen von [GetQueues](https://msdn.microsoft.com/library/azure/hh293128.aspx))|
+|Zustandsverwaltung|**Nein**|**Ja**<br/><br/>[Microsoft.ServiceBus.Messaging.EntityStatus.Active](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.Disabled](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.SendDisabled](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.ReceiveDisabled](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.entitystatus.aspx)|
 |Automatische Nachrichtenweiterleitung|**Nein**|**Ja**|
 |Warteschlangeninhalt endgültig löschen|**Ja**|**Nein**|
 |Nachrichtengruppen|**Nein**|**Ja**<br/><br/>(durch Verwendung von Messagingsitzungen)|
@@ -159,7 +159,7 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 
 - Die automatische Warteschlangenweiterleitung ermöglicht, dass Tausende von Warteschlangen ihre Nachrichten automatisch an eine einzelne Warteschlange weiterleiten, aus der die empfangene Anwendung die Nachricht abruft. Sie können diesen Mechanismus verwenden, um Sicherheit zu erzielen, den Datenfluss zu steuern und Speicher zwischen den einzelnen Nachrichtenverlegern zu isolieren.
 
-- Azure-Warteschlangen bieten Unterstützung zum Aktualisieren von Nachrichteninhalten. Sie können diese Funktionen verwenden, um Zustandsinformationen und inkrementelle Statusupdates in der Nachricht beizubehalten, sodass sie vom letzten bekannten Prüfpunkt statt von Anfang an verarbeitet wird. Mit Service Bus-Warteschlangen können Sie das gleiche Szenario mithilfe von Nachrichtensitzungen aktivieren. Sitzungen ermöglichen das Speichern und Abrufen des Anwendungsverarbeitungszustands (mithilfe von [SetState](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.messagesession.setstate.aspx) und [GetState](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.messagesession.getstate.aspx)).
+- Azure-Warteschlangen bieten Unterstützung zum Aktualisieren von Nachrichteninhalten. Sie können diese Funktionen verwenden, um Zustandsinformationen und inkrementelle Statusupdates in der Nachricht beizubehalten, sodass sie vom letzten bekannten Prüfpunkt statt von Anfang an verarbeitet wird. Mit Service Bus-Warteschlangen können Sie das gleiche Szenario mithilfe von Nachrichtensitzungen aktivieren. Sitzungen ermöglichen das Speichern und Abrufen des Anwendungsverarbeitungszustands (mithilfe von [SetState](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagesession.setstate.aspx) und [GetState](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagesession.getstate.aspx)).
 
 - Unzustellbare Nachrichten, die nur von Service Bus-Warteschlangen unterstützt werden, leisten wertvolle Hilfe beim Isolieren von Nachrichten, die von der Empfangsanwendung nicht erfolgreich verarbeitet werden können bzw. die ihr Ziel aufgrund einer abgelaufenen TTL-Eigenschaft (Time-To-Live) nicht erreichen können. Der TTL-Wert gibt an, wie lange eine Nachricht in der Warteschlange verbleibt. Bei Service Bus wird die Nachricht in eine bestimmte Warteschlange mit dem Namen "$DeadLetterQueue" verschoben, sobald die Gültigkeitsdauer abläuft.
 
@@ -167,9 +167,9 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 
 - Bei Azure-Warteschlangen können Sie ein ausführliches Protokoll aller für die Warteschlange ausgeführten Transaktionen sowie aggregierte Metriken abrufen. Beide erleichtern das Debuggen und verdeutlichen, wie Azure-Warteschlangen von der Anwendung verwendet werden. Weiter dienen diese Informationen dazu, die Anwendungsleistung zu optimieren und die Kosten für die Verwendung von Warteschlangen zu senken.
 
-- Das von Service Bus unterstützte Konzept "Nachrichtensitzung" macht es möglich, dass Nachrichten, die einer bestimmten logischen Gruppe angehören, einem vorgegebenen Empfänger zugeordnet werden. Auf diese Weise entsteht eine sitzungsähnliche Affinität zwischen Nachrichten und den betreffenden Empfängern. Sie können diese erweiterte Funktionalität in Service Bus aktivieren, indem Sie die [SessionID](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx)-Eigenschaft für eine Nachricht festlegen. Empfänger können dann auf eine bestimmte Sitzungs-ID lauschen und Nachrichten empfangen, die den angegebenen Sitzungsbezeichner gemeinsam haben.
+- Das von Service Bus unterstützte Konzept "Nachrichtensitzung" macht es möglich, dass Nachrichten, die einer bestimmten logischen Gruppe angehören, einem vorgegebenen Empfänger zugeordnet werden. Auf diese Weise entsteht eine sitzungsähnliche Affinität zwischen Nachrichten und den betreffenden Empfängern. Sie können diese erweiterte Funktionalität in Service Bus aktivieren, indem Sie die [SessionID](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx)-Eigenschaft für eine Nachricht festlegen. Empfänger können dann auf eine bestimmte Sitzungs-ID lauschen und Nachrichten empfangen, die den angegebenen Sitzungsbezeichner gemeinsam haben.
 
-- Die von Service Bus-Warteschlangen unterstützte Duplikaterkennung entfernt gemäß dem Wert der [MessageID](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx)-Eigenschaft automatisch doppelt vorhandene Nachrichten, die an eine Warteschlange bzw. ein Thema gesendet wurden.
+- Die von Service Bus-Warteschlangen unterstützte Duplikaterkennung entfernt gemäß dem Wert der [MessageID](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx)-Eigenschaft automatisch doppelt vorhandene Nachrichten, die an eine Warteschlange bzw. ein Thema gesendet wurden.
 
 ## Kapazität und Kontingente
 
@@ -177,7 +177,7 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
-|Maximale Warteschlangengröße|**200 TB**<br/><br/>(beschränkt auf die Kapazität eines einzelnen Speicherkontos)|**1–80 GB**<br/><br/>(wird bei Erstellung einer Warteschlange und dem [Aktivieren von Partitionierung](https://msdn.microsoft.com/library/dn520246.aspx) definiert – weitere Informationen finden Sie im Abschnitt "Zusätzliche Informationen")|
+|Maximale Warteschlangengröße|**200 TB**<br/><br/>(beschränkt auf die Kapazität eines einzelnen Speicherkontos)|**1–80 GB**<br/><br/>(wird bei Erstellung einer Warteschlange und dem [Aktivieren von Partitionierung](service-bus-partitioning.md) definiert – weitere Informationen finden Sie im Abschnitt "Zusätzliche Informationen")|
 |Maximale Nachrichtengröße|**64 KB**<br/><br/>(48 KB bei Verwendung der **Base64**-Codierung)<br/><br/>Azure unterstützt große Nachrichten, indem Warteschlangen und Blobs kombiniert werden – in diesem Fall können bis zu 200 GB für ein einzelnes Element in der Warteschlange gespeichert werden.|**256 KB**<br/><br/>(Einschließlich Header und Text. Die maximale Headergröße beträgt 64 KB.)|
 |Maximaler TTL-Wert der Nachricht|**7 Tage**|**Unbegrenzt**|
 |Maximale Anzahl von Warteschlangen|**Unbegrenzt**|**10.000**<br/><br/>(pro Dienstnamespace, kann jedoch erhöht werden)|
@@ -185,7 +185,7 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 ### Zusätzliche Informationen
 
-- In Service Bus werden Grenzwerte für die Warteschlangengröße durchgesetzt. Die maximale Warteschlangengröße wird bei der Erstellung der Warteschlange angegeben und kann einen Wert zwischen 1 und 80 GB aufweisen. Wenn der bei der Erstellung der Warteschlange festgelegte Größenwert erreicht ist, werden zusätzlich eingehende Nachrichten abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. Weitere Informationen zu Kontingenten in Service Bus finden Sie unter [Service Bus-Kontingente](https://msdn.microsoft.com/library/ee732538.aspx).
+- In Service Bus werden Grenzwerte für die Warteschlangengröße durchgesetzt. Die maximale Warteschlangengröße wird bei der Erstellung der Warteschlange angegeben und kann einen Wert zwischen 1 und 80 GB aufweisen. Wenn der bei der Erstellung der Warteschlange festgelegte Größenwert erreicht ist, werden zusätzlich eingehende Nachrichten abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. Weitere Informationen zu Kontingenten in Service Bus finden Sie unter [Service Bus-Kontingente](service-bus-quotas.md).
 
 - Sie können Service Bus-Warteschlangen in Größen von 1, 2, 3, 4 oder 5 GB erstellen (die Standardgröße ist 1 GB). Bei aktivierter Partitionierung (Standardeinstellung) erstellt Service Bus 16 Partitionen für jedes angegebene GB. Wenn Sie also eine Warteschlange mit einer Größe von 5 GB erstellen, beträgt die maximale Warteschlangengröße bei 16 Partitionen 5*16 = 80 GB. Die maximale Größe der partitionierten Warteschlange oder des Themas wird im zugehörigen Eintrag im Azure-Portal angezeigt.
 
@@ -195,7 +195,7 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 - Wenn Clients über das TCP-Protokoll mit Service Bus-Warteschlangen kommunizieren, ist die maximale Anzahl gleichzeitiger Verbindungen mit einer einzelnen Service Bus-Warteschlange auf 100 beschränkt. Diese Anzahl wird zwischen Absendern und Empfängern aufgeteilt. Wenn dieses Kontingent erreicht wird, werden nachfolgende Anforderungen für zusätzliche Verbindungen abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. Diese Begrenzung gilt nicht für Clients, die über die REST-basierte API eine Verbindung mit Warteschlangen herstellen.
 
-- Wenn Sie mehr als 10.000 Warteschlangen in einem einzelnen Service Bus-Dienstnamespace benötigen, können Sie sich mit dem Azure-Supportteam in Verbindung setzen und eine Erhöhung des Werts anfordern. Um für Service Bus auf mehr als 10.000 Warteschlangen zu skalieren, können Sie mithilfe des Microsoft Azure-Portals auch zusätzliche Namespaces erstellen.
+- Wenn Sie mehr als 10.000 Warteschlangen in einem einzelnen Service Bus-Dienstnamespace benötigen, können Sie sich mit dem Azure-Supportteam in Verbindung setzen und eine Erhöhung des Werts anfordern. Um für Service Bus auf mehr als 10.000 Warteschlangen zu skalieren, können Sie mithilfe des Azure-Portals auch zusätzliche Namespaces erstellen.
 
 ## Verwaltung und Abläufe
 
@@ -222,7 +222,7 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 
 - Die verwalteten .NET-APIs für Brokermessaging von Service Bus nutzen im Vergleich zu "REST über HTTP" Vollduplex-TCP-Verbindungen zur Leistungsoptimierung und unterstützen das AMQP 1.0-Standardprotokoll.
 
-- Azure-Warteschlangennamen dürfen 3 bis 63 Zeichen lang sein und Kleinbuchstaben, Ziffern und Bindestriche enthalten. Weitere Informationen finden Sie unter [Benennen von Warteschlangen und Metadaten](https://msdn.microsoft.com/library/dd179349.aspx).
+- Azure-Warteschlangennamen dürfen 3 bis 63 Zeichen lang sein und Kleinbuchstaben, Ziffern und Bindestriche enthalten. Weitere Informationen finden Sie unter [Benennen von Warteschlangen und Metadaten](https://msdn.microsoft.com/library/azure/dd179349.aspx).
 
 - Namen von Service Bus-Warteschlangen können bis zu 260 Zeichen lang sein und verfügen über weniger restriktive Benennungsregeln. Namen von Service Bus-Warteschlangen dürfen Buchstaben, Ziffern, Punkte (.), Bindestriche (-) und Unterstriche (\_) enthalten.
 
@@ -246,9 +246,9 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 - Sowohl von Azure-Warteschlangen als auch von Service Bus-Warteschlangen wird das Begrenzungsverhalten erzwungen, indem Anforderungen an eine begrenzte Warteschlange angelehnt werden. Begrenzte Anforderungen werden jedoch von keiner der Warteschlangen als abrechenbar behandelt.
 
-- Vergleichstests für Service Bus-Warteschlangen haben gezeigt, dass eine einzelne Warteschlange bei einer Nachrichtengröße von ca. 1 KB einen Nachrichtendurchsatz von bis zu 2.000 Nachrichten pro Sekunde erreichen kann. Verwenden Sie mehrere Warteschlangen, um einen höheren Durchsatz zu erzielen. Weitere Informationen zur Leistungsoptimierung mit Service Bus finden Sie unter [Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging](https://msdn.microsoft.com/library/hh528527.aspx).
+- Vergleichstests für Service Bus-Warteschlangen haben gezeigt, dass eine einzelne Warteschlange bei einer Nachrichtengröße von ca. 1 KB einen Nachrichtendurchsatz von bis zu 2.000 Nachrichten pro Sekunde erreichen kann. Verwenden Sie mehrere Warteschlangen, um einen höheren Durchsatz zu erzielen. Weitere Informationen zur Leistungsoptimierung mit Service Bus finden Sie unter [Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging](service-bus-performance-improvements.md).
 
-- Sobald der maximale Durchsatz für eine Service Bus-Warteschlange erreicht ist, wird (bei Verwendung der verwalteten .NET-API für Brokermessaging) eine [ServerBusyException](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.serverbusyexception.aspx)-Antwort bzw. (bei Verwendung der REST-basierten API) eine HTTP 503-Antwort an den Warteschlangenclient zurückgegeben. Dies weist darauf hin, dass die Warteschlange eingeschränkt ist.
+- Sobald der maximale Durchsatz für eine Service Bus-Warteschlange erreicht ist, wird (bei Verwendung der verwalteten .NET-API für Brokermessaging) eine [ServerBusyException](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx)-Antwort bzw. (bei Verwendung der REST-basierten API) eine HTTP 503-Antwort an den Warteschlangenclient zurückgegeben. Dies weist darauf hin, dass die Warteschlange eingeschränkt ist.
 
 ## Authentifizierung und Autorisierung
 
@@ -264,7 +264,7 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 
 - Jede Anforderung an eine der beiden Warteschlangentechnologien muss authentifiziert werden. Öffentliche Warteschlangen mit anonymem Zugriff werden nicht unterstützt. Mithilfe von SAS können Sie dieses Szenario verwalten, indem Sie eine lesegeschützte SAS, eine schreibgeschützte SAS oder sogar eine SAS mit Vollzugriff veröffentlichen.
 
-- Das von Azure-Warteschlangen bereitgestellte Authentifizierungsschema schließt die Verwendung eines symmetrischen Schlüssels ein. Dieser entspricht einem hashbasierten Message Authentication Code (HMAC), der mit dem SHA-256-Algorithmus berechnet und als **Base64**-Zeichenfolge codiert wird. Weitere Informationen zum jeweiligen Protokoll finden Sie unter [Authenticating Access to Your Storage Account](https://msdn.microsoft.com/library/hh225339.aspx). Service Bus-Warteschlangen unterstützen ein ähnliches Modell mithilfe symmetrischer Schlüssel. Weitere Informationen finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](https://msdn.microsoft.com/library/dn170477.aspx).
+- Das von Azure-Warteschlangen bereitgestellte Authentifizierungsschema schließt die Verwendung eines symmetrischen Schlüssels ein. Dieser entspricht einem hashbasierten Message Authentication Code (HMAC), der mit dem SHA-256-Algorithmus berechnet und als **Base64**-Zeichenfolge codiert wird. Weitere Informationen zum jeweiligen Protokoll finden Sie unter [Authentifizierung für die Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179428.aspx). Service Bus-Warteschlangen unterstützen ein ähnliches Modell mithilfe symmetrischer Schlüssel. Weitere Informationen finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](service-bus-shared-access-signature-authentication.md).
 
 ## Kosten
 
@@ -301,14 +301,14 @@ Da Service Bus-Warteschlangen eine Vielzahl erweiterter Funktionen wie Sitzungen
 Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwendung von Azure-Warteschlangen oder Service Bus-Warteschlangen.
 
 - [Verwenden von Servicebus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
-- [Verwenden des Warteschlangenspeicherdiensts](../storage-dotnet-how-to-use-queues.md)
-- [Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging](https://msdn.microsoft.com/library/hh528527.aspx)
-- [Introducing Queues and Topics in Azure Service Bus](http://www.code-magazine.com/article.aspx?quickid=1112041) (Einführung in Warteschlangen und Themen in Azure Service Bus, in englischer Sprache)
-- [The Developer's Guide to Service Bus](http://www.cloudcasts.net/devguide/) (Entwicklerhandbuch für Service Bus, in englischer Sprache)
-- [Azure Tables and Queues Deep Dive](http://www.microsoftpdc.com/2009/SVC09) (Fundierte Einblicke in Azure-Tabellen und -Warteschlangen, in englischer Sprache)
-- [Azure Storage Architecture](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (Azure Storage-Architektur, in englischer Sprache)
-- [Using the Queuing Service in Azure](http://www.developerfusion.com/article/120197/using-the-queuing-service-in-windows-azure/) (Verwenden des Warteschlangendiensts in Azure, in englischer Sprache)
-- [Understanding Azure Storage Billing – Bandwidth, Transactions, and Capacity](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure Storage – Bandbreite, Transaktionen und Kapazität, in englischer Sprache)
+- [Verwenden des Warteschlangenspeicherdiensts](../storage/storage-dotnet-how-to-use-queues.md)
+- [Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging](service-bus-performance-improvements.md)
+- [Introducing Queues and Topics in Azure Service Bus (Einführung in Warteschlangen und Themen in Azure Service Bus, in englischer Sprache)](http://www.code-magazine.com/article.aspx?quickid=1112041)
+- [The Developer's Guide to Service Bus (Entwicklerhandbuch für Service Bus, in englischer Sprache)](http://www.cloudcasts.net/devguide/)
+- [Azure Tables and Queues Deep Dive (Fundierte Einblicke in Azure-Tabellen und -Warteschlangen, in englischer Sprache)](http://www.microsoftpdc.com/2009/SVC09)
+- [Azure Storage Architecture (Azure Storage-Architektur, in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- [Using the Queuing Service in Azure (Verwenden des Warteschlangendiensts in Azure, in englischer Sprache)](http://www.developerfusion.com/article/120197/using-the-queuing-service-in-windows-azure/)
+- [Understanding Azure Storage Billing – Bandwidth, Transactions, and Capacity (Grundlagen zur Abrechnung von Azure Storage – Bandbreite, Transaktionen und Kapazität, in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

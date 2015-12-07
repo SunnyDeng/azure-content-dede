@@ -34,62 +34,77 @@ Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen außer
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-<ol start="4">
-<li><p>Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
-   
-   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Ihr Mobile App-Back-End zuzugreifen. Die Tabelle <em>TodoItem</em> erfordert jetzt eine Authentifizierung.</p></li>
-</ol>
+Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde. Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Ihr Mobile App-Back-End zuzugreifen. Die Tabelle *TodoItem* erfordert jetzt eine Authentifizierung.
 
 Als Nächstes aktualisieren Sie die Client-App, um Ressourcen vom mobilen App-Back-End mit einem authentifizierten Benutzer zu aktualisieren.
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-1. Fügen Sie der **TodoActivity**-Klasse die folgende Eigenschaft hinzu:
+Die App wird so aktualisiert, dass Benutzer auf die Schaltfläche **Anmelden** tippen und sich authentifizieren müssen, bevor Daten angezeigt werden.
 
-			private MobileServiceUser user;
+1. Fügen Sie der **TodoActivity**-Klasse den folgenden Code hinzu:
 
-2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu:
-
-	        private async Task Authenticate()
-	        {
+	    // Define a authenticated user.
+	    private MobileServiceUser user;
+	    private async Task<bool> Authenticate()
+	    {
+	            var success = false;
 	            try
 	            {
-	                user = await client.LoginAsync(this, MobileServiceAuthenticationProvider.Facebook);
-	                CreateAndShowDialog(string.Format("you are now logged in - {0}", user.UserId), "Logged in!");
+	                // Sign in with Facebook login using a server-managed flow.
+	                user = await client.LoginAsync(this,
+	                    MobileServiceAuthenticationProvider.Facebook);
+	                CreateAndShowDialog(string.Format("you are now logged in - {0}",
+	                    user.UserId), "Logged in!");
+	
+	                success = true;
 	            }
 	            catch (Exception ex)
 	            {
 	                CreateAndShowDialog(ex, "Authentication failed");
 	            }
-	        }
+	            return success;
+	    }
 
-    Dadurch wird eine neue Methode zum Authentifizieren eines Benutzers erstellt. Der Benutzer wird im Codebeispiel oben mithilfe eines Facebook-Logins authentifiziert. Ein Dialogfeld wird verwendet, um die Benutzer-ID nach der Authentifizierung anzuzeigen.
+        [Java.Interop.Export()]
+        public async void LoginUser(View view)
+        {
+            // Load data only after authentication succeeds.
+            if (await Authenticate())
+            {
+                //Hide the button after authentication succeeds. 
+                FindViewById<Button>(Resource.Id.buttonLoginUser).Visibility = ViewStates.Gone;
+
+                // Load the data.
+                OnRefreshItemsSelected();
+            }
+        }
+
+    Dies erstellt eine neue Methode zum Authentifizieren eines Benutzers und einen Methodenhandler für die neue Schaltfläche **Anmelden**. Der Benutzer wird im Codebeispiel oben mithilfe eines Facebook-Logins authentifiziert. Ein Dialogfeld wird verwendet, um die Benutzer-ID nach der Authentifizierung anzuzeigen.
 
     > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an **LoginAsync** übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
 
-3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
+3. Löschen Sie in der **OnCreate**-Methode die folgende Codezeile, oder kommentieren Sie sie aus:
 
-		// Create the Mobile Service Client instance, using the provided
-		// Mobile Service URL, Gateway URL and key
-		client = new MobileServiceClient (applicationURL, gatewayURL, applicationKey);
-		
-		await Authenticate(); // Added for authentication
+		OnRefreshItemsSelected ();
 
-	Dieser Aufruf startet den Authentifizierungsprozess und wartet asynchron auf eine Antwort.
+4. Fügen Sie in der Datei „Activity\_To\_Do.axml“ die folgende Definition der Schaltfläche *LoginUser* vor der vorhandenen Schaltfläche *AddItem* hinzu:
 
+      	<Button
+            android:id="@+id/buttonLoginUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="LoginUser"
+            android:text="@string/login_button_text" />
 
 4. Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus, und melden Sie sich mit dem ausgewählten Identitätsanbieter an.
 
-   	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App Ihr Login-ID und die Liste der Todo-Objekte an, und Sie können die Daten ändern.
+   	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App Ihre Login-ID und die Liste der zu erledigenden Elemente an, und Sie können die Daten ändern.
 
 
 <!-- URLs. -->
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-
 [Erstellen einer Xamarin.Android-App]: app-service-mobile-xamarin-android-get-started.md
-
 [Azure Management Portal]: https://portal.azure.com
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015--->

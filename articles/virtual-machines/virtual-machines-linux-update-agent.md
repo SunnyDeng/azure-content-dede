@@ -90,11 +90,15 @@ Installieren Sie wget (bei einigen Distributionen nicht standardmäßig installi
 
   Verwenden Sie für die meisten Linux-Distributionen Folgendes:
 
-      #sudo cp waagent /usr/sbin
+    #sudo cp waagent /usr/sbin
 
   Für CoreOS verwenden Sie:
 
     #sudo cp waagent /usr/share/oem/bin/
+
+  Bei einer neuen Installation des Azure Linux-Agents führen Sie Folgendes aus:
+ 
+    #sudo /usr/sbin/waagent -install -verbose
 
 ###Verwenden Sie für Version 2.1.x Folgendes:
 
@@ -126,4 +130,4 @@ Sie sehen, dass die Linux Agent-Version auf die neue Version aktualisiert wurde.
 
 Weitere Informationen zu Azure Linux Agent finden Sie in der [Azure Linux Agent-Infodatei](https://github.com/Azure/WALinuxAgent).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

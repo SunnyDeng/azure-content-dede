@@ -21,13 +21,13 @@
 
 > [AZURE.SELECTOR]
 - [Azure CLI](virtual-machines-linux-tutorial.md)
-- [Azure Preview Portal](virtual-machines-linux-tutorial-portal-rm.md)
+- [Azure preview portal](virtual-machines-linux-tutorial-portal-rm.md)
 
 <br>[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 Das Erstellen eines virtuellen Azure-Computers (VM), auf dem Linux ausdeführt wird, ist ganz einfach. In diesem Lernprogramm erfahren Sie, wie Sie mit dem Azure-Vorschauportal einen solchen virtuellen Computer schnell erstellen können, und es wird anhand der Datei `~/.ssh/id_rsa.pub`, die den öffentlichen Schlüssel enthält, die Konfiguration einer **SSH**-Verbindung zum Schutz Ihres virtuellen Computers gezeigt. Sie können auch mithilfe [eigener Images als Vorlagen](virtual-machines-linux-create-upload-vhd.md) entsprechende virtuelle Linux-Computer erstellen.
 
-> [AZURE.NOTE]In diesem Lernprogramm wird ein virtueller Azure-Computer erstellt, der über die Azure-Ressourcengruppen-API verwaltet wird. Weitere Informationen finden Sie unter [Übersicht über Ressourcengruppen](resource-group-overview.md).
+> [AZURE.NOTE]In diesem Lernprogramm wird ein virtueller Azure-Computer erstellt, der über die Azure-Ressourcengruppen-API verwaltet wird. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
@@ -43,7 +43,7 @@ Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows
 
 	> [AZURE.TIP]Um weitere Images zu suchen, klicken Sie auf **Marketplace**, und durchsuchen oder filtern Sie dann die verfügbaren Elemente.
 
-3. Wählen Sie unten auf der Seite **Ubuntu Server 14.04 LTS** die Option **Use the Resource Manager stack** aus, um den virtuellen Computer im Azure-Ressourcen-Manager zu erstellen. Beachten Sie, dass für die meisten neuen Workloads der Ressourcen-Manager-Stapel empfehlenswert ist. Überlegungen hierzu finden Sie unter [Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
+3. Wählen Sie unten auf der Seite **Ubuntu Server 14.04 LTS** die Option **Use the Resource Manager stack** aus, um den virtuellen Computer im Azure-Ressourcen-Manager zu erstellen. Beachten Sie, dass für die meisten neuen Workloads der Ressourcen-Manager-Stapel empfehlenswert ist. Überlegungen hierzu finden Sie unter [Azure Computing-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
 
 4. Klicken Sie anschließend auf ![Schaltfläche erstellen](media/virtual-machines-linux-tutorial-portal-rm/createbutton.png).
 
@@ -61,7 +61,7 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 2. Klicken Sie auf **Größe**, und wählen Sie eine für Ihre Anforderungen geeignete Größe für den virtuellen Computer aus. Für jede Größe sind die Anzahl von Prozessorkernen, der Arbeitsspeicher und andere Features angegeben, wie z. B. Unterstützung für Storage Premium, die sich auf den Preis auswirken. Azure empfiehlt anhand des gewählten Abbilds automatisch bestimmte Größen. Klicken Sie anschließend auf ![Schaltfläche auswählen](media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png).
 
-	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium ist die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium ist die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
 3. Klicken Sie auf **Einstellungen**, um die Einstellungen für Hauptspeicher und Netzwerkfähigkeit des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie im Allgemeinen die Standardeinstellungen akzeptieren. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium (SSD)** unter **Datenträgertyp** Storage Premium testen. Klicken Sie anschließend auf ![Schaltfläche "OK"](media/virtual-machines-linux-tutorial-portal-rm/okbutton.png).
 
@@ -130,4 +130,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

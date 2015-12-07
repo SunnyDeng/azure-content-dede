@@ -286,14 +286,14 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 * Erstellen Sie ein Shellskript, das jede Zahl von 1 bis 10 für eine Sekunde auf den einzelnen Knoten im Cluster anzeigt. Führen Sie das Skript dann aus, und zeigen Sie direkt die Ausgabe für die Knoten an.
 
     ```
-    > clusrun /interleaved echo "for i in {1..10}; do echo \"\$i\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh
+    > clusrun /interleaved echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh
     ```
 
 >[AZURE.NOTE]Sie müssen möglicherweise bestimmte Escapezeichen in **clusrun**-Befehlen verwenden. Verwenden Sie wie im folgenden Bespiel „^“ in einem Befehlsfenster als Escapezeichen für „>“.
 
 ## Nächste Schritte
 
-* Führen Sie eine Linux-Workload auf dem Cluster aus. Ein Beispiel finden Sie unter [Ausführen von NAMD mit dem Microsoft HPC Pack auf Linux-Computeknoten in Azure](virtual-machines-linux-cluster-hpcpack-namd.md).
+* Führen Sie eine Linux-Workload auf dem Cluster aus. Ein Beispiel finden Sie unter [Ausführen von NAMD mit dem Microsoft HPC Pack auf Linux-Serverknoten in Azure](virtual-machines-linux-cluster-hpcpack-namd.md) und [Ausführen von OpenFOAM mit Microsoft HPC Pack auf einem Linux-RDMA-Cluster in Azure](virtual-machines-linux-cluster-hpcpack-openfoam.md).
 
 * Versuchen Sie, den Cluster auf eine größere Anzahl von Knoten zu skalieren, oder stellen Sie Computeknoten der Größe [A8 oder A9](virtual-machines-a8-a9-a10-a11-specs.md) zum Ausführen von MPI-Workloads bereit.
 
@@ -313,4 +313,4 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 [nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
 [nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

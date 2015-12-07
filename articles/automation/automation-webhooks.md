@@ -3,7 +3,7 @@
    description="Ein Webhook, der es einem Client ermöglicht, ein Runbook in Azure Automation über einen HTTP-Aufruf zu starten. In diesem Artikel wird beschrieben, wie Sie einen Webhook erstellen und aufrufen, um ein Runbook zu starten."
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="SnehaGunda"
    manager="stevenka"
    editor="tysonn" />
 <tags 
@@ -255,4 +255,4 @@ Das folgende Beispiel-Runbook wird immer dann ausgelöst, wenn die Warnregel akt
 - [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md)
 - [Ausführen von Aktionen nach Azure-Warnungen mithilfe von Azure Automation](https://azure.microsoft.com/blog/using-azure-automation-to-take-actions-on-azure-alerts/)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

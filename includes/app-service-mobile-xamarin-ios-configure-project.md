@@ -1,6 +1,6 @@
-###In Xamarin Studio
+####Konfigurieren des iOS-Projekts in Xamarin Studio
 
-1. Öffnen Sie in Xamarin.Studio die Datei **Info.plist**, und aktualisieren Sie den **Bundle Identifier** mit der zuvor erstellten ID.
+1. Öffnen Sie in Xamarin.Studio die Datei **Info.plist**, und aktualisieren Sie den **Bundle Identifier** mit der Bundle-ID, die Sie zuvor mit Ihrer neuen App-ID erstellt haben.
 
     ![][88]
 
@@ -16,7 +16,7 @@
 
     Hierdurch wird sichergestellt, dass das Projekt das neue Profil für Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] (Xamarin – Gerätebereitstellung, in englischer Sprache).
 
-### In Visual Studio
+####Konfigurieren des iOS-Projekts in Visual Studio
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Eigenschaften**.
 
@@ -30,7 +30,12 @@
 
     Hierdurch wird sichergestellt, dass das Projekt das neue Profil für Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] (Xamarin – Gerätebereitstellung, in englischer Sprache).
 
+[120]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-20.png
+[88]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-21.png
+[122]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-22.png
+[123]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-23.png
+[124]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-24.png
 
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

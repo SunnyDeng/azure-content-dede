@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Bereitstellen einer vorhandenen Anwendung in Azure Service Fabric | Microsoft Azure"
+   pageTitle="Bereitstellen benutzerdefinierter Anwendungen in Azure Service Fabric | Microsoft Azure"
    description="Exemplarische Vorgehensweise beim Packen einer vorhandenen Anwendung, um diese in einem Azure Service Fabric-Cluster bereitzustellen"
    services="service-fabric"
    documentationCenter=".net"
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/09/2015"
+   ms.date="11/17/2015"
    ms.author="bscholl"/>
 
-# Bereitstellen einer vorhandenen Anwendung in Service Fabric
+# Bereitstellen benutzerdefinierter Anwendungen in Service Fabric
 
 Sie können beliebige vorhandene Anwendungen, z. B. Node.js-, Java- oder systemeigene Anwendungen, in Service Fabric ausführen. Service Fabric behandelt diese Anwendungen wie zustandslose Dienste und platziert sie auf Knoten in einem Cluster basierend auf Verfügbarkeit und anderen Metriken. In diesem Artikel wird das Packen und Bereitstellen einer vorhandenen Anwendung in einem Service Fabric-Cluster beschrieben.
 
-## Vorteile der Ausführung einer vorhandenen Anwendung in Service Fabric
+## Vorteile der Ausführung einer benutzerdefinierten Anwendung in Service Fabric
 
 Das Ausführen der Anwendung in einem Service Fabric-Cluster bietet mehrere Vorteile:
 
@@ -46,7 +46,6 @@ Bevor wir in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail
 
   Das Dienstmanifest beschreibt die Komponenten eines Diensts. Es enthält Daten wie Name und Typ des Diensts (Informationen, mit denen Service Fabric den Dienst verwaltet), den entsprechenden Code, Konfiguration und Datenkomponenten sowie einige zusätzliche Parameter, die nach der Bereitstellung zum Konfigurieren des Diensts verwendet werden können. Wir werden nicht detailliert auf all die unterschiedlichen Parameter eingehen, die im Dienstmanifest zur Verfügung stehen, sondern uns nur mit der Teilmenge beschäftigen, die zum Ausführen einer vorhandenen Anwendung in der Service Fabric erforderlich ist.
 
-Detaillierte Informationen zum Format des Service Fabric-Packformats finden Sie [hier](service-fabric-develop-your-service-index.md).
 
 ## Dateistruktur des Anwendungspakets
 Damit eine Anwendung in Service Fabric bereitgestellt werden kann, muss die Anwendung einer vordefinierten Verzeichnisstruktur folgen. Es folgt ein Beispiel dieser Struktur.
@@ -79,7 +78,7 @@ Der Prozess zum Packen einer vorhandenen Anwendung basiert auf folgenden Schritt
 - Aktualisieren der Dienstmanifestdatei
 - Aktualisieren des Anwendungsmanifests
 
->[AZURE.NOTE]Wir bieten ein Packtool, mit dem Sie das Anwendungspaket automatisch erstellen können. Das Tool befindet sich derzeit in der Vorschauphase. Weitere Informationen finden Sie [hier](http://aka.ms/servicefabricpacktool).
+>[AZURE.NOTE]Wir bieten ein Packtool, mit dem Sie das Anwendungspaket automatisch erstellen können. Das Tool befindet sich derzeit in der Vorschauphase. Sie können es [hier](http://aka.ms/servicefabricpacktool) herunterladen.
 
 ### Erstellen der Verzeichnisstruktur des Pakets
 Sie können zunächst die Verzeichnisstruktur wie zuvor beschrieben erstellen.
@@ -156,7 +155,7 @@ Mit dem Element `Name` wird der Name des Verzeichnisses im Anwendungspaket angeb
    </ExeHost>
 </SetupEntryPoint>
 ```
-Der „SetupEntryPoint“ wird verwendet, um eine ausführbare Datei oder Batchdatei anzugeben, die vor dem Starten des Dienstcodes ausgeführt werden soll. Dies ist ein optionales Element, das nicht angegeben werden muss, wenn keine Initialisierung/kein Setup erforderlich ist. Der „SetupEntryPoint“ wird bei jedem Neustart des Diensts ausgeführt. Es gibt nur ein Element des Typs „SetupEntryPoint“. Daher müssen Setup-/Konfigurationsskripts in einer Batchdatei gebündelt werden, wenn für das Setup bzw. die Konfiguration der Anwendung mehrere Skripts erforderlich sind. Wie das Element „EntryPoint“ kann auch das Element „SetupEntrypoint“ jeden beliebigen Dateityp ausführen: ausführbare Datei, Batchdatei, PowerShell-Cmdlet. Im obigen Beispiel basiert „SetupEntrypoint“ auf der Batchdatei „launchConfig.cmd“, die sich im Unterverzeichnis `scripts` des Verzeichnisses „code“ befindet (sofern das „WorkingDirectory“-Element auf „Code“ festgelegt ist).
+Der „SetupEntryPoint“ wird verwendet, um eine ausführbare Datei oder Batchdatei anzugeben, die vor dem Starten des Dienstcodes ausgeführt werden soll. Dies ist ein optionales Element, das nicht angegeben werden muss, wenn keine Initialisierung/kein Setup erforderlich ist. Der „SetupEntryPoint“ wird bei jedem Neustart des Diensts ausgeführt. Es gibt nur ein Element des Typs „SetupEntryPoint“. Daher müssen Setup-/Konfigurationsskripts in einer Batchdatei gebündelt werden, wenn für das Setup bzw. die Konfiguration der Anwendung mehrere Skripts erforderlich sind. Wie das Element „EntryPoint“ kann auch das Element „SetupEntrypoint“ jeden beliebigen Dateityp ausführen: ausführbare Datei, Batchdatei, PowerShell-Cmdlet. Im obigen Beispiel basiert „SetupEntrypoint“ auf der Batchdatei „launchConfig.cmd“, die sich im Unterverzeichnis `scripts` des Verzeichnisses „Code“ befindet (sofern das „WorkingDirectory“-Element auf „Code“ festgelegt ist).
 
 ### EntryPoint
 
@@ -253,7 +252,7 @@ New-ServiceFabricService -ApplicationName 'fabric:/nodeapp' -ServiceName 'fabric
 ```
 Ein Service Fabric-Dienst kann in verschiedenen "Konfigurationen" bereitgestellt werden: Eine Instanz, mehrere Instanzen oder eine Instanz des Diensts auf jedem Knoten des Service Fabric-Clusters, um nur einige Beispiele zu nennen.
 
-Der `InstanceCount`-Parameter des Cmdlets `New-ServiceFabricService` wird verwendet, um anzugeben, wie viele Instanzen des Diensts im Service Fabric-Cluster gestartet werden sollen. Sie können den Wert `InstanceCount` nach der Art der bereitzustellenden Anwendung festlegen. Die beiden häufigsten Szenarien: `InstanCount = "1"`: In diesem Fall wird nur eine Instanz des Diensts im Cluster bereitgestellt. Der Service Fabric-Planer bestimmt den Knoten, auf dem der Dienst bereitgestellt werden soll.
+Mit dem `InstanceCount`-Parameter des Cmdlets `New-ServiceFabricService` wird angegeben, wie viele Instanzen des Diensts im Service Fabric-Cluster gestartet werden sollen. Sie können den Wert `InstanceCount` nach der Art der bereitzustellenden Anwendung festlegen. Die beiden häufigsten Szenarios: * `InstanCount = "1"`: In diesem Fall wird nur eine Instanz des Diensts im Cluster bereitgestellt. Der Service Fabric-Planer bestimmt den Knoten, auf dem der Dienst bereitgestellt werden soll.
 
 * `InstanceCount ="-1"`: In diesem Fall wird eine Instanz des Diensts auf jedem Knoten im Service Fabric-Cluster bereitgestellt. Das Endergebnis ist eine (und nur eine) Instanz des Diensts für jeden Knoten im Cluster. Dies ist eine praktische Konfiguration für Front-End-Anwendungen (z. B. REST-Endpunkt), da Client-Anwendungen nur eine Verbindung zu einem Knoten im Cluster herstellen müssen, um den Endpunkt zu verwenden. Diese Konfiguration kann z. B. auch verwendet werden, wenn alle Knoten des Service Fabric-Clusters mit einem Lastenausgleichsmodul verbunden sind, damit der Datenverkehr der Clients über den Dienst verteilt werden kann, der auf allen Knoten im Cluster ausgeführt wird.
 
@@ -275,8 +274,8 @@ Wenn Sie in Server-Explorer zum Verzeichnis wechseln, sehen Sie, wie nachstehend
 ## Nächste Schritte
 In diesem Artikel wurden das Packen einer vorhandenen Anwendung und ihre Bereitstellung in Service Fabric beschrieben. Im nächsten Schritt können Sie weitere Informationen zu diesem Thema erfahren.
 
-- Beispiel für das Packen und Bereitstellen einer vorhandenen Anwendung auf [Github](https://github.com/bmscholl/servicefabric-samples/tree/comingsoon/samples/RealWorld/Hosting/SimpleApplication), einschließlich Vorabversion des Packtools
-- Beispiel für das Packen mehrerer Anwendungen auf [Github](https://github.com/bmscholl/servicefabric-samples/tree/comingsoon/samples/RealWorld/Hosting/SimpleApplication)
+- Beispiel für das Packen und Bereitstellen einer vorhandenen Anwendung auf [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Custom/SimpleApplication), einschließlich Vorabversion des Packtools
+- Erfahren Sie, wie Sie [mehrere benutzerdefinierte Anwendungen bereitstellen](service-fabric-deploy-multiple-apps.md).
 - Erste Schritte mit dem [Erstellen Ihrer ersten Service Fabric-Anwendung in Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

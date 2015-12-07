@@ -125,7 +125,7 @@ $scope.logout = function () {
 };
 ...
 ```
-- Es kann auch sein, dass Sie in der App-UI Benutzerinformationen präsentieren möchten. Der ADAL-Dienst wurde dem `userDataCtrl`-Controller bereits hinzugefügt, sodass Sie auf das `userInfo`-Objekt in der zugeordneten Ansicht (`App/Scripts/UserData.html`) zugreifen können:
+- Es kann auch sein, dass Sie in der App-UI Benutzerinformationen präsentieren möchten. Der ADAL-Dienst wurde dem `userDataCtrl`-Controller bereits hinzugefügt, sodass Sie auf das `userInfo`-Objekt in der zugeordneten Ansicht (`App/Views/UserData.html`) zugreifen können:
 
 ```js
 <p>{{userInfo.userName}}</p>
@@ -151,4 +151,4 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/SinglePage
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

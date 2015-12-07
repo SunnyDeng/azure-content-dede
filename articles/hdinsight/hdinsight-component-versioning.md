@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/11/2015"
+	ms.date="11/19/2015"
 	ms.author="jgao"/>
 
 
 #Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen
 
 ##HDInsight-Versionen und Hadoop-Komponenten
-Azure HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgestellt werden können. Jede ausgewählte Version erstellt eine bestimmte Version der HDP-Distribution (Hortonworks Data Platform) und eine Reihe von Komponenten innerhalb dieser Distribution. Die den HDInsight-Clusterversionen zugeordneten Komponentenversionen sind in der folgenden Tabelle aufgeführt. Als Standardclusterversion wird von Azure HDInsight derzeit Version 3.1 auf Basis von HDP 2.1.7 (ab 11/7/2014) verwendet.
+Azure HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgestellt werden können. Jede ausgewählte Version erstellt eine bestimmte Version der HDP-Distribution (Hortonworks Data Platform) und eine Reihe von Komponenten innerhalb dieser Distribution. Die den HDInsight-Clusterversionen zugeordneten Komponentenversionen sind in der folgenden Tabelle aufgeführt. Als Standardclusterversion wird von Azure HDInsight derzeit Version 3.2 auf Basis von HDP 2.2 (ab 19.11.2015) verwendet.
 
 
 Komponente|HDInsight-Version 3.2|HDInsight Version 3.1 (Standard)|HDInsight Version 3,0|HDInsight-Version 2.1
@@ -57,11 +57,11 @@ Wenn Sie einen Cluster über die HDInsight Windows PowerShell-Cmdlets oder das H
 ##Wichtige Features
 Im Folgenden finden Sie einige der wichtigsten Features der HDInsight-Plattform:
 
-- **Spark** – Apache Spark ist ein Open Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Big Data-Analyse zu steigern. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen.
+- **Spark** – Apache Spark ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von großen Datenmengen zu steigern. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen.
 
 	Spark kann auch für die herkömmliche datenträgerbasierte Datenverarbeitung genutzt werden. Spark hat einen Vorteil gegenüber dem herkömmlichen MapReduce-Framework, da in den Zwischenstufen Schreibvorgänge auf den Datenträger vermieden werden. Außerdem ist Spark kompatibel mit dem Hadoop Distributed File System (HDFS) und Azure-Blob-Speicher, damit die vorhandenen Daten problemlos über Spark bearbeitet werden können.
 
-	Spark kann auch per „Script Action“ hinzugefügt werden. Mit Script Action wird entweder dem HDInsight 3.2-Cluster Spark 1.2.0 oder dem HDInsight 3.1-Cluster Spark 1.0.2 hinzugefügt. Weitere Informationen finden Sie unter [Installieren und Verwenden von Spark in HDInsight Hadoop-Clustern](hdinsight-hadoop-spark-install.md).
+	Spark kann auch per „Script Action“ hinzugefügt werden. Mit Script Action wird entweder dem HDInsight 3.2-Cluster Spark 1.2.0 oder dem HDInsight 3.1-Cluster Spark 1.0.2 hinzugefügt. Weitere Informationen finden Sie unter [Installieren und Verwenden von Spark in HDInsight-Hadoop-Clustern](hdinsight-hadoop-spark-install.md).
 
 
 - **Storm** – Storm in Azure HDInsight ist jetzt allgemein verfügbar. Sie können mit nur wenigen Klicks und innerhalb weniger Minuten schnell und einfach Echtzeitanalysen bereitstellen. Apache Storm in Azure HDInsight ist ein Open-Source-Projekt des Apache Hadoop-Systems, das Zugriff auf eine Analyseplattform bietet, die zuverlässig Millionen an Ereignissen verarbeiten kann. Hadoop-Benutzer können nun Einblicke in stattfindende Ereignisse sowie vergangene Ereignisse gewinnen. Microsoft bietet auch eine integrierte Integration in Visual Studio, die die Interaktion von Entwicklern mit Storm erleichtert. Sie können jetzt in Visual Studio Storm-Topologien entwickeln, bereitstellen und debuggen.
@@ -101,7 +101,7 @@ Im Folgenden finden Sie einige der wichtigsten Features der HDInsight-Plattform:
 In der folgenden Tabelle werden die derzeit verfügbaren Versionen von HDInsight, die entsprechenden verwendeten Versionen von Hortonworks Data Platform und die zugehörigen Relesasedaten aufgeführt. Sofern bekannt sind auch die jeweiligen Termine angegeben, ab denen der Support abläuft und sie als veraltet gelten. Beachten Sie Folgendes:
 
 * Hochverfügbare Cluster mit zwei Hauptknoten werden standardmäßig für HDInsight 2.1 und höher bereitgestellt. Für HDInsight 1.6-Cluster sind sie nicht verfügbar.
-* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr im Azure-Vorschauportal zur Verfügung. Die folgende Tabelle zeigt, welche Versionen im Azure-Portal verfügbar sind. Clusterversionen stehen bis zum Zeitpunkt ihrer Veraltung weiterhin über den Parameter `Version` im Windows PowerShell-Befehl [New-AzureRmHDInsightCluster](https://msdn.microsoft.com/library/mt619331.aspx) und das .NET SDK zur Verfügung.
+* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr im Azure-Vorschauportal zur Verfügung. Die folgende Tabelle zeigt, welche Versionen im Azure-Portal verfügbar sind. Clusterversionen stehen bis zum Zeitpunkt ihrer „Veraltung“ weiterhin über den Parameter `Version` im Windows PowerShell-Befehl [New-AzureRmHDInsightCluster](https://msdn.microsoft.com/library/mt619331.aspx) und das .NET SDK zur Verfügung.
 
 HDInsight-Version|HDP-Version|Hohe Verfügbarkeit|Herausgabedatum|Im Azure-Portal verfügbar|Supportablaufdatum|Veraltet ab
 ---|---|---|---|---|---|---
@@ -162,4 +162,4 @@ Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

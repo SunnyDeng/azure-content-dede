@@ -1,6 +1,8 @@
 
-1. Log on to the [Azure Portal](https://portal.azure.com/), select **Browse** > **Mobile App** > your app > **Push notification services** > **Windows (WNS)**.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und wählen Sie **Durchsuchen** > **Mobile App** > Ihre App > **Pushbenachrichtigungsdienste** > **Windows (WNS)** aus.
 
-2. Enter the **Security key** (client secret) and **Package SID** that you obtained from the Live Services site, then click **Save**.
+2. Geben Sie den **Sicherheitsschlüssel** (geheimer Clientschlüssel) und die **Paket-SID** von der Website für die Live-Dienste ein, und klicken Sie auf **Speichern**.
 
-Your Mobile App backend is now configured to work with WNS.
+Ihr Mobile-App-Back-End ist jetzt für die Zusammenarbeit mit WNS konfiguriert.
+
+<!---HONumber=AcomDC_1125_2015-->

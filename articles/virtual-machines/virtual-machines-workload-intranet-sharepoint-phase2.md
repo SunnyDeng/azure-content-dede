@@ -111,11 +111,11 @@ Melden Sie sich bei dem ersten Domänencontroller mit den Anmeldeinformationen d
 1.	Klicken Sie im Azure-Portal im linken Bereich auf **Virtuelle Computer**.
 2.	Zum Herstellen einer Verbindung mit einem virtuellen Computer klicken Sie in der Spalte **Status** neben dem Namen des virtuellen Computers auf **Ausführen**.
 3.	Klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Verbinden**.
-4.	Im Portal wird angezeigt, dass die RDP-Datei abgerufen wird. Klicken Sie auf **OK**.
+4.	Im Azure-Portal wird angezeigt, dass die RDP-Datei abgerufen wird. Klicken Sie auf **OK**.
 5.	Sie werden nun im Browserdialogfeld gefragt, ob "ComputerName.rdp" von "manage.windowsazure.com" geöffnet oder gespeichert werden soll. Klicken Sie auf **Öffnen**.
 6.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Verbinden**.
 7.	Klicken Sie im Dialogfeld **Windows-Sicherheit** auf **Anderes Konto verwenden**.
-8.	Geben Sie im Feld **Benutzername** den Namen des virtuellen Computers sowie den Benutzernamen des lokalen Administratorkontos ein, das mit dem virtuellen Computer erstellt wurde (ein lokales Computerkonto). Verwenden Sie Folgendes Format: *ComputerName**LokalesAdministratorkontoName*
+8.	Geben Sie im Feld **Benutzername** den Namen des virtuellen Computers sowie den Benutzernamen des lokalen Administratorkontos ein, das mit dem virtuellen Computer erstellt wurde (ein lokales Computerkonto). Verwenden Sie Folgendes Format: *ComputerName*\*LokalesAdministratorkontoName*
 9.	Geben Sie im Feld **Kennwort** das Kennwort für das lokale Administratorkonto ein.
 10.	Klicken Sie auf **OK**.
 11.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Ja**. Der Desktop des neuen Computers wird in einem Remotedesktop-Sitzungsfenster angezeigt.
@@ -248,4 +248,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

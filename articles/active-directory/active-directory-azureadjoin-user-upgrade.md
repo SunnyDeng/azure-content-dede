@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Einrichten eines Windows 10-Geräts mit Azure AD in den Einstellungen| Microsoft Azure" 
-	description="Es wird erklärt, wie Benutzer in Windows 10 über das Menü ";Einstellungen"; eine Verknüpfung zu Azure AD herstellen können." 
+	description="Erläutert, wie Benutzer über das Menü „Einstellungen“ eine Verknüpfung zu Azure AD herstellen können." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Einrichten eines Windows 10-Geräts mit Azure AD in den Einstellungen
@@ -32,16 +32,17 @@ Verknüpfen mit Azure AD im Menü "Einstellungen"
 4. Geben Sie Ihre Anmeldeinformationen ein. Die Anmeldeoberfläche enthält alle erforderlichen Schritte zum Abschließen der Authentifizierung. Wenn Sie einem Verbundsmandanten angehören, stellt Ihnen Ihr Administrator die Verbundserfahrung bereit, die von Ihrer Organisation gehostet wird.
 <center> ![](./media/active-directory-azureadjoin/active-directory-azureadjoin-sign-in.png) </center>
 5. Wenn Ihre Organisation die mehrstufige Authentifizierung für das Verknüpfen mit Azure AD konfiguriert hat, müssen Sie vor dem Fortfahren den zweiten Faktor bereitstellen.
-6. Klicken Sie auf dem Bildschirm **Erlauben, dass dieses Gerät verwaltet wird** auf **Annehmen**.
+6. Klicken Sie auf dem „Bildschirm Allow this device to be managed“ auf **Annehmen**.
 7. Sie sollten die Nachricht "Das Gerät ist jetzt mit Ihrem Unternehmen in Azure AD verknüpft" angezeigt bekommen.
 
 
 ## Zusätzliche Informationen
-* [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
+* [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
+* [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 * [Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport](active-directory-azureadjoin-passport.md)
 * [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
+* [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

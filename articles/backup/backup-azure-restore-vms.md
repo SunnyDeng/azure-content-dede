@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Wiederherstellen eines virtuellen Computers von einer Sicherung | Microsoft Azure"
+	pageTitle="Wiederherstellen eines virtuellen Computers aus einer Sicherung | Microsoft Azure"
 	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
 	services="backup"
 	documentationCenter=""
@@ -101,8 +101,36 @@ Das Problem tritt auf, weil der DSRM-Modus in Azure nicht vorhanden ist. Zum Wie
 
 Hier finden Sie weitere Informationen zum [USN-Rollback-Problem](https://technet.microsoft.com/library/dd363553) und den vorgeschlagenen Strategien zum Beheben des Problems.
 
+## Wiederherstellen von VMs mit speziellen Netzwerkkonfigurationen
+Azure Backup unterstützt die Sicherung für die folgenden speziellen Netzwerkkonfigurationen virtueller Computer.
+
+- VMs unter einem Load Balancer (intern und extern)
+- VMs mit mehreren reservierten IP-Adressen
+- VMs mit mehreren Netzwerkkarten (NICs)
+
+Bei diesen Konfigurationen müssen bei ihrer Wiederherstellung die folgende Aspekte berücksichtigt werden.
+
+>[AZURE.TIP]Verwenden Sie den PowerShell-basierten Wiederherstellungsprozess zum erneuten Erstellen der speziellen Netzwerkkonfiguration von VMs im Anschluss an die Wiederherstellung.
+
+### Wiederherstellung über die Benutzeroberfläche:
+Beim Wiederherstellen über die Benutzeroberfläche **müssen Sie stets einen neuen Clouddienst wählen**. Da das Portal während des Wiederherstellungsprozesses nur Pflichtparameter verwendet, geht bei VMs, die über die Benutzeroberfläche wiederhergestellt werden, die spezielle Netzwerkkonfiguration verloren. Dies bedeutet, dass wiederhergestellte VMs herkömmliche VMs sind, die ohne Load Balancer bzw. mehrere NICs oder reservierte IP-Adressen konfiguriert sind.
+
+### Wiederherstellung über PowerShell:
+PowerShell bietet die Möglichkeit, nur die VM-Datenträger aus einer Sicherung wiederherzustellen, ohne den virtuellen Computer zu erstellen. Dies ist hilfreich, wenn virtuelle Computer wiederhergestellt werden, die zuvor erwähnte spezielle Konfigurationen erfordern.
+
+Zum vollständigen Wiederherstellen des virtuellen Computers im Anschluss an die Wiederherstellung von Datenträgern gehen Sie so vor:
+
+1. Stellen Sie die Datenträger aus dem Sicherungstresor mithilfe von [Azure Backup PowerShell](https://azure.microsoft.com/en-in/documentation/articles/backup-azure-vms-automation/#restore-an-azure-vm) wieder her.
+
+2. Erstellen mithilfe der PowerShell-Cmdlets die für Load Balancer/mehrere NICs/mehrere reservierte IP-Adressen erforderliche VM-Konfiguration, und verwenden Sie sie zum Erstellen der VM mit der gewünschten Konfiguration.
+	- Erstellen Sie die VM im Clouddienst mit [internem Load Balancer](https://azure.microsoft.com/de-DE/documentation/articles/load-balancer-internal-getstarted/).
+	- Erstellen Sie die VM zum Herstellen einer Verbindung dem [Load Balancer mit Internetzugriff](https://azure.microsoft.com/de-DE/documentation/articles/load-balancer-internet-getstarted).
+	- Erstellen Sie die VM mit [mehreren NICs](https://azure.microsoft.com/en-in/documentation/articles/virtual-networks-multiple-nics).
+	- Erstellen Sie die VM mit [mehreren reservierten IP-Adressen](https://azure.microsoft.com/en-in/documentation/articles/virtual-networks-reserved-public-ip/).
+  
+
 ## Nächste Schritte
 - [Problembehandlung](backup-azure-vms-troubleshoot.md#restore)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

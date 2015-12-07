@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="11/20/2015"
    ms.author="telmos" />
 
 #Bereitstellen von Multi-NIC-VMs mit PowerShell
@@ -46,12 +46,14 @@ Bevor Sie die Back-End-Server bereitstellen können, müssen Sie die Hauptressou
 Die Back-End-VMs sind auf die Erstellung der im Folgenden aufgelisteten Ressourcen angewiesen.
 
 - **Speicherkonto für Datenträger**. Für eine bessere Leistung verwenden die Datenträger auf den Datenbankservern Solid State Drive (SSD)-Technik. Dafür ist ein Storage Premium-Konto erforderlich. Achten Sie darauf, dass der Azure-Speicherort für die Bereitstellung Storage Premium unterstützt.
-- **NICs**. Jeder virtuelle Computer hat zwei Netzwerkkarten, eine für den Datenbankzugriff, und eine für die Verwaltung.
-- **Verfügbarkeitsgruppe**. Alle Datenbankserver werden einer einzigen Verfügbarkeitsgruppe hinzugefügt, damit sichergestellt ist, dass mindestens eine VM während der Wartung ausgeführt wird.  
+- **NICs**. Jeder virtuelle Computer hat zwei Netzwerkkarten, eine für den Datenbankzugriff und eine für die Verwaltung.
+- **Verfügbarkeitsgruppe**. Alle Datenbankserver werden einer einzigen Verfügbarkeitsgruppe hinzugefügt, damit sichergestellt ist, dass mindestens ein virtueller Computer während der Wartung ausgeführt wird.  
 
 ### Schritt 1: Starten des Skripts
 
 Sie können das verwendete PowerShell-Skript ungekürzt [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/multinic.ps1) herunterladen. Gehen Sie folgendermaßen vor, um das Skript an Ihre Arbeitsumgebung anzupassen.
+
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
 1. Ändern Sie die Werte der nachstehenden Variablen basierend auf der im obigen Abschnitt [Voraussetzungen](#Prerequisites) bereitgestellten Ressourcengruppe.
 
@@ -81,10 +83,10 @@ Sie können das verwendete PowerShell-Skript ungekürzt [hier](https://raw.githu
 
 3. Rufen Sie die vorhandenen Ressourcen ab, die für die Bereitstellung erforderlich sind.
 
-		$vnet                  = Get-AzureVirtualNetwork -Name $vnetName -ResourceGroupName $existingRGName
+		$vnet                  = Get-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $existingRGName
 		$backendSubnet         = $vnet.Subnets|?{$_.Name -eq $backendSubnetName}
-		$remoteAccessNSG       = Get-AzureNetworkSecurityGroup -Name $remoteAccessNSGName -ResourceGroupName $existingRGName
-		$stdStorageAccount     = Get-AzureStorageAccount -Name $stdStorageAccountName -ResourceGroupName $existingRGName
+		$remoteAccessNSG       = Get-AzureRmNetworkSecurityGroup -Name $remoteAccessNSGName -ResourceGroupName $existingRGName
+		$stdStorageAccount     = Get-AzureRmStorageAccount -Name $stdStorageAccountName -ResourceGroupName $existingRGName
 
 ### Schritt 2: Erstellen der erforderlichen Ressourcen für die virtuellen Computer
 
@@ -92,16 +94,16 @@ Sie müssen eine neue Ressourcengruppe, ein Speicherkonto für die Datenträger 
 
 1. Erstellen Sie eine neue Ressourcengruppe.
 
-		New-AzureResourceGroup -Name $backendRGName -Location $location
+		New-AzureRmResourceGroup -Name $backendRGName -Location $location
 
 2. Erstellen Sie ein neues Storage Premium-Konto in der oben erstellten Ressourcengruppe.
 
-		$prmStorageAccount = New-AzureStorageAccount -Name $prmStorageAccountName `
+		$prmStorageAccount = New-AzureRmStorageAccount -Name $prmStorageAccountName `
 			-ResourceGroupName $backendRGName -Type Premium_LRS -Location $location
 
 3. Erstellen Sie eine neue Verfügbarkeitsgruppe.
 
-		$avSet = New-AzureAvailabilitySet -Name $avSetName -ResourceGroupName $backendRGName -Location $location
+		$avSet = New-AzureRmAvailabilitySet -Name $avSetName -ResourceGroupName $backendRGName -Location $location
 
 4. Ermitteln Sie Anmeldeinformationen für die lokalen Administratorkonten der einzelnen virtuellen Computer.
 
@@ -109,9 +111,9 @@ Sie müssen eine neue Ressourcengruppe, ein Speicherkonto für die Datenträger 
 
 ### Schritt 3: Erstellen der Netzwerkschnittstellenkarten und Back-End-VMs
 
-Sie müssen mithilfe einer Schleife die gewünschte Anzahl virtueller Computer und auch die erforderlichen NICs und VMs erstellen. Führen Sie die folgenden Schritte aus, um die NICs und VMs zu erstellen.
+Sie müssen mithilfe einer Schleife die gewünschte Anzahl virtueller Computer und auch die erforderlichen NICs und VMs erstellen. Führen Sie zum Erstellen der Netzwerkkarten und virtuellen Computer die folgenden Schritte aus.
 
-1. Starten Sie eine `for`-Schleife, um die Befehle zum Erstellen eines virtuellen Computers und zweier NICs anhand der `$numberOfVMs`-Variable so oft wie erforderlich zu wiederholen.
+1. Starten Sie eine `for`-Schleife, um die Befehle zum Erstellen eines virtuellen Computers und zweier Netzwerkkarten auf Grundlage der Variablen `$numberOfVMs` so oft wie erforderlich zu wiederholen.
 
 		for ($suffixNumber = 1; $suffixNumber -le $numberOfVMs; $suffixNumber++){
 
@@ -119,57 +121,57 @@ Sie müssen mithilfe einer Schleife die gewünschte Anzahl virtueller Computer u
 		
 		    $nic1Name = $nicNamePrefix + $suffixNumber + "-DA"
 		    $ipAddress1 = $ipAddressPrefix + ($suffixNumber + 3)
-		    $nic1 = New-AzureNetworkInterface -Name $nic1Name -ResourceGroupName $backendRGName `
+		    $nic1 = New-AzureRmNetworkInterface -Name $nic1Name -ResourceGroupName $backendRGName `
 				-Location $location -SubnetId $backendSubnet.Id -PrivateIpAddress $ipAddress1
 
 3. Erstellen Sie die Netzwerkkarte für den Remotezugriff. Beachten Sie, dass dieser NIC eine NSG zugeordnet ist.
 
 		    $nic2Name = $nicNamePrefix + $suffixNumber + "-RA"
 		    $ipAddress2 = $ipAddressPrefix + (53 + $suffixNumber)
-		    $nic2 = New-AzureNetworkInterface -Name $nic2Name -ResourceGroupName $backendRGName `
+		    $nic2 = New-AzureRmNetworkInterface -Name $nic2Name -ResourceGroupName $backendRGName `
 				-Location $location -SubnetId $backendSubnet.Id -PrivateIpAddress $ipAddress2 `
 				-NetworkSecurityGroupId $remoteAccessNSG.Id
 
 4. Erstellen Sie ein `vmConfig`-Objekt.
 
 		    $vmName = $vmNamePrefix + $suffixNumber
-		    $vmConfig = New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avSet.Id
+		    $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avSet.Id
 
 5. Erstellen Sie zwei Datenträger pro virtuellem Computer. Beachten Sie, dass die Datenträger sich in dem zuvor erstellten Storage Premium-Konto befinden.
 
 		    $dataDisk1Name = $vmName + "-" + $dataDiskSuffix + "-1"    
 		    $data1VhdUri = $prmStorageAccount.PrimaryEndpoints.Blob.ToString() + "vhds/" + $dataDisk1Name + ".vhd"
-		    Add-AzureVMDataDisk -VM $vmConfig -Name $dataDisk1Name -DiskSizeInGB $diskSize `
+		    Add-AzureRmVMDataDisk -VM $vmConfig -Name $dataDisk1Name -DiskSizeInGB $diskSize `
 				-VhdUri $data1VhdUri -CreateOption empty -Lun 0
 		
 		    $dataDisk2Name = $vmName + "-" + $dataDiskSuffix + "-2"    
 		    $data2VhdUri = $prmStorageAccount.PrimaryEndpoints.Blob.ToString() + "vhds/" + $dataDisk2Name + ".vhd"
-		    Add-AzureVMDataDisk -VM $vmConfig -Name $dataDisk2Name -DiskSizeInGB $diskSize `
+		    Add-AzureRmVMDataDisk -VM $vmConfig -Name $dataDisk2Name -DiskSizeInGB $diskSize `
 				-VhdUri $data2VhdUri -CreateOption empty -Lun 1
 
 6. Konfigurieren Sie das Betriebssystem und das Image für den virtuellen Computer.
 		    
-		    $vmConfig = Set-AzureVMOperatingSystem -VM $vmConfig -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-		    $vmConfig = Set-AzureVMSourceImage -VM $vmConfig -PublisherName $publisher -Offer $offer -Skus $sku -Version $version
+		    $vmConfig = Set-AzureRmVMOperatingSystem -VM $vmConfig -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+		    $vmConfig = Set-AzureRmVMSourceImage -VM $vmConfig -PublisherName $publisher -Offer $offer -Skus $sku -Version $version
 
 7. Fügen Sie die beiden zuvor erstellten NICs dem `vmConfig`-Objekt hinzu.
 
-		    $vmConfig = Add-AzureVMNetworkInterface -VM $vmConfig -Id $nic1.Id -Primary
-		    $vmConfig = Add-AzureVMNetworkInterface -VM $vmConfig -Id $nic2.Id
+		    $vmConfig = Add-AzureRmVMNetworkInterface -VM $vmConfig -Id $nic1.Id -Primary
+		    $vmConfig = Add-AzureRmVMNetworkInterface -VM $vmConfig -Id $nic2.Id
 
-8. Erstellen Sie den Betriebssystemdatenträger und die VM. Beachten Sie das Zeichen `}` zum Beenden der `for`Schleife.
+8. Erstellen Sie den Betriebssystemdatenträger und die VM. Beachten Sie das Zeichen `}` zum Beenden der `for`-Schleife.
 
 		    $osDiskName = $vmName + "-" + $osDiskSuffix
 		    $osVhdUri = $stdStorageAccount.PrimaryEndpoints.Blob.ToString() + "vhds/" + $osDiskName + ".vhd"
-		    $vmConfig = Set-AzureVMOSDisk -VM $vmConfig -Name $osDiskName -VhdUri $osVhdUri -CreateOption fromImage
-		    New-AzureVM -VM $vmConfig -ResourceGroupName $backendRGName -Location $location
+		    $vmConfig = Set-AzureRmVMOSDisk -VM $vmConfig -Name $osDiskName -VhdUri $osVhdUri -CreateOption fromImage
+		    New-AzureRmVM -VM $vmConfig -ResourceGroupName $backendRGName -Location $location
 		}
 
 ### Schritt 4: Ausführen des Skripts
 
-Führen Sie das Skript, mit dem die Back-End-VMs mit mehreren NICs erstellt werden, nun – nach dem Herunterladen und Anpassen an Ihren Bedarf – aus.
+Führen Sie das Skript aus, nachdem sie es heruntergeladen und angepasst haben, um die Back-End-VMs mit mehreren Netzwerkkarten zu erstellen.
 
-1. Speichern Sie Ihr Skript und führen Sie es von der **PowerShell** -Befehlszeile oder in **PowerShell ISE** aus. Anfänglich wird die folgende Ausgabe angezeigt.
+1. Speichern Sie Ihr Skript, und führen Sie es an der **PowerShell**-Eingabeaufforderung oder in **PowerShell ISE** aus. Anfänglich wird die folgende Ausgabe angezeigt.
 
 		ResourceGroupName : IaaSStory-Backend
 		Location          : westus
@@ -182,7 +184,7 @@ Führen Sie das Skript, mit dem die Back-End-VMs mit mehreren NICs erstellt werd
 		                    
 		ResourceId        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/IaaSStory-Backend
 
-2. Tragen Sie nach einigen Minuten bei der Aufforderung die Anmeldeinformationen ein, und klicken Sie auf **OK**. Die folgende Ausgabe stellt einen einzelnen virtuellen Computer dar. Beachten Sie, dass der gesamte Vorgang in etwa 8 Minuten abgeschlossen wurde.
+2. Tragen Sie, wenn Sie nach einigen Minuten dazu aufgefordert werden, die Anmeldeinformationen ein, und klicken Sie auf **OK**. Die folgende Ausgabe stellt einen einzelnen virtuellen Computer dar. Beachten Sie, dass der gesamte Vorgang in etwa 8 Minuten abgeschlossen wurde.
 
 		ResourceGroupName            : 
 		Id                           : 
@@ -306,4 +308,4 @@ Führen Sie das Skript, mit dem die Back-End-VMs mit mehreren NICs erstellt werd
 		RequestId           : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 		StatusCode          : OK
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

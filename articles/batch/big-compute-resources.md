@@ -25,7 +25,7 @@ Erfahren Sie mehr über Big Compute-Optionen in Azure, und wählen Sie den richt
 
 * [Batch- und HPC-Lösungen](batch-hpc-solutions.md)
 
-* [Video: Big Compute in der Cloud mit Azure und HPC](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/)
+* [Video: Big Compute in der Cloud mit Azure und HPC ](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/)
 
 
 ## Azure Batch
@@ -50,14 +50,16 @@ Sie können Ihren vorhandenen Windows- oder Linux-HPC-Cluster zum Ausführen rec
 
 HPC Pack ist die kostenlose HPC-Lösung von Microsoft, die auf Microsoft Azure und Windows Server-Technologien basiert und in der Lage ist, Windows- und Linux HPC-Workloads auszuführen.
 
-* [HPC Pack 2012 R2 Update 2 herunterladen](https://www.microsoft.com/de-DE/download/details.aspx?id=47755)
+* [HPC Pack 2012 R2 Update 3 herunterladen](https://www.microsoft.com/de-DE/download/details.aspx?id=49922)
 
 * [Dokumentation](https://technet.microsoft.com/library/jj899572.aspx)
 
 
 * [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](../virtual-machines/virtual-machines-hpcpack-cluster-options.md)
 
-* [Burst to Azure with HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (Erweiterung auf Azure mit HPC Pack, in englischer Sprache)
+* [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (in englischer Sprache)
+
+* [Burst to Azure Batch with Microsoft HPC Pack](https://technet.microsoft.com/library/mt612877.aspx) (in englischer Sprache)
 
 
 * [Windows-HPC-Foren](https://social.microsoft.com/Forums/home?category=windowshpc)
@@ -96,7 +98,7 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 
 ## Beispiele und Demos
 
-* [Azure Batch code samples](https://github.com/Azure/azure-batch-samples) (Azure Batch-Codebeispiele, in englischer Sprache)
+* [Azure Batch code samples (Azure Batch-Codebeispiele, in englischer Sprache)](https://github.com/Azure/azure-batch-samples)
 
 * [Batch Apps Blender sample](https://github.com/Azure/azure-batch-apps-blender) (Batch App-Blender-Beispiel, in englischer Sprache) und [Blogbeitrag zu Blender in Azure Batch](http://azure.microsoft.com/blog/2015/01/26/blender-on-azure-batch/) (in englischer Sprache)
 
@@ -121,4 +123,4 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](http://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](http://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](http://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

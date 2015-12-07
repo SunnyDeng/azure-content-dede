@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele sind in Node.js geschrieben." 
 	services="storage" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="mwasson"/>
+	ms.date="11/20/2015" 
+	ms.author="robmcm"/>
 
 
 # Verwenden des Warteschlangenspeichers mit Node.js
@@ -333,4 +333,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
  [Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

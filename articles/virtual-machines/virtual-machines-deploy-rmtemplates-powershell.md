@@ -20,7 +20,7 @@
 # Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager und PowerShell
 
 > [AZURE.SELECTOR]
-- [Preview Portal](virtual-machines-windows-tutorial.md)
+- [Azure preview portal](virtual-machines-windows-tutorial.md)
 - [PowerShell - Windows](virtual-machines-deploy-rmtemplates-powershell.md)
 - [Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
@@ -153,7 +153,7 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [AZURE.VIDEO create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell]
 
-## <a id="multivm"></a>AUFGABE: Erstellen von mehreren virtuellen Computern in einem virtuellen Netzwerk mit externem Load Balancer
+## <a id="multivm"></a>AUFGABE: Erstellen von mehreren virtuellen Computern in einem virtuellen Netzwerk mit externem Lastenausgleich
 
 Für diese Aufgabe wird eine Vorlage aus dem Vorlagenkatalog verwendet. Weitere Informationen zu dieser Vorlage finden Sie unter [Erstellen eines virtuellen Computers anhand eines spezialisierten VHD-Datenträgers](https://azure.microsoft.com/documentation/templates/201-2-vms-loadbalancer-lbrules/).
 
@@ -376,4 +376,4 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -68,13 +68,15 @@ In diesem Artikel werden die verschiedenen Parameter beschrieben, die während d
 ## Nächste Schritte
 
 
-[Lernprogramm für Anwendungsupgrades](service-fabric-application-upgrade-tutorial.md)
+[Upgrades von Service Fabric-Anwendungen mithilfe von Visual Studio](service-fabric-application-upgrade.md)
 
-[Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
+[Service Fabric-Anwendungsupgrade per PowerShell](service-fabric-application-upgrade-powershell.md)
+
+[Manuelle Upgrades und Upgrades mit einem Diff-Paket](service-fabric-application-upgrade-advanced.md)
 
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
 
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/16/2015"
+	ms.date="11/24/2015"
 	ms.author="jgao"/>
 
 # Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal
@@ -157,7 +157,7 @@ Siehe auch [Anhalten/Herunterfahren von Clustern](#pauseshut-down-clusters).
 ##Skalieren von Clustern
 Mithilfe der Clusterskalierung können Sie die Anzahl der von einem in Azure HDInsight ausgeführten Cluster verwendeten Workerknoten ändern, ohne den Cluster neu erstellen zu müssen.
 
->[AZURE.NOTE]Es werden nur Cluster mit HDInsight-Versionen ab 3.1.3 unterstützt. Überprüfen Sie ggf. auf der Seite „Eigenschaften“ die Version Ihres Clusters. Siehe [Einführung in die Portaloberfläche für Cluster](hdinsight-adminster-use-management-portal/#Get-familiar-with-the-cluster-portal-interface).
+>[AZURE.NOTE]Es werden nur Cluster mit HDInsight-Versionen ab 3.1.3 unterstützt. Überprüfen Sie ggf. auf der Seite „Eigenschaften“ die Version Ihres Clusters. Informationen hierzu finden Sie unter [Auflisten und Anzeigen von Clustern](hdinsight-adminster-use-management-portal/#list-and-show-clusters).
 
 Auswirkungen der Änderung der Anzahl von Datenknoten für die von HDInsight unterstützten Clustertypen:
 
@@ -267,7 +267,7 @@ Der Zugriff auf diese Dienste wird standardmäßig gewährt. Über das Azure-Vor
 
 ##Suchen des Standardspeicherkontos
 
-Jeder HDInsight-Cluster verfügt über eine Standardspeicherkonto. Das Standardspeicherkonto und die zugehörigen Schlüssel für einen Cluster werden unter **Einstellungen**/**Eigenschaften**/**Azure-Speicherschlüssel** angezeigt. Informationen hierzu finden Sie unter [Auflisten und Anzeigen von Clustern](list-and-show-clusters).
+Jeder HDInsight-Cluster verfügt über eine Standardspeicherkonto. Das Standardspeicherkonto und die zugehörigen Schlüssel für einen Cluster werden unter **Einstellungen**/**Eigenschaften**/**Azure-Speicherschlüssel** angezeigt. Informationen hierzu finden Sie unter [Auflisten und Anzeigen von Clustern](#list-and-show-clusters).
 
 	
 ##Suchen der Ressourcengruppe 
@@ -277,7 +277,7 @@ Im ARM-Modus wird jeder HDInsight-Cluster mit einer Azure-Ressourcengruppe erste
 - Die Liste der Cluster verfügt über eine Spalte **Ressourcengruppe**.
 - Die Kachel **Zusammenfassung** des Clusters.  
 
-Informationen hierzu finden Sie unter [Auflisten und Anzeigen von Clustern](list-and-show-clusters).
+Informationen hierzu finden Sie unter [Auflisten und Anzeigen von Clustern](#list-and-show-clusters).
    
 ##Öffnen der HDInsight-Abfragekonsole
 
@@ -294,7 +294,7 @@ Die HDInsight-Abfragekonsole umfasst die folgenden Features:
 
 	Klicken Sie auf **Abfragename**, um die Details einschließlich Auftragseigenschaften, **Auftragsabfrage**, und **Auftragsausgabe anzuzeigen. Sie können auch die Abfrage und die Ausgabe auf Ihre Arbeitsstation herunterladen.
 
-- **Dateibrowser**: Durchsuchen Sie das Standardspeicherkonto und die verknüpften Speicherkonten.
+- **Dateibrowser**: Durchsuchen Sie das Standardspeicherkonto und verknüpfte Speicherkonten.
 
 	![HDInsight Portal – Dateibrowser durchsuchen](./media/hdinsight-administer-use-management-portal/hdinsight-file-browser.png)
 
@@ -400,4 +400,4 @@ In diesem Artikel haben Sie erfahren, wie Sie mit dem Azure-Vorschauportal einen
 [azure-portal]: https://portal.azure.com
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal/hdinsight-hadoop-command-line.png "Hadoop-Befehlszeile"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

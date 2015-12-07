@@ -14,12 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/17/2015"
+   ms.date="11/23/2015"
    ms.author="tedway; neerajkh"/>
 
 # Hilfedokumentation für mehrere geografische Räume
 
-Aktuell sind alle Ressourcen von Azure Machine Learning in der South Central-Azure-Region der USA (SCUS) gehostet. Dieser Artikel beschreibt, wie Sie in anderen Azure-Regionen einen Arbeitsbereich erstellen und einen Webdienst veröffentlichen können.
+Dieser Artikel beschreibt, wie Sie in anderen Azure-Regionen einen Arbeitsbereich erstellen und einen Webdienst veröffentlichen können.
 
 ## Erstellen eines Arbeitsbereichs
 
@@ -57,4 +57,4 @@ Stellen Sie eine Frage im [Azure Machine Learning-Forum](https://social.msdn.mic
 [3]: ./media/machine-learning-multi-geo/multi-geo_3.png
 [4a]: ./media/machine-learning-multi-geo/multi-geo_4a.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

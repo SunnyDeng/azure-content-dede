@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Stream Analytics-Ausgaben | Microsoft Azure" 
+	pageTitle="Herstellen von Verbindungen mit Stream Analytics-Ausgaben | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Verbindung mit Ausgabezielen für Stream Analytics-Lösungen herstellen und diese konfigurieren." 
 	documentationCenter="" 
 	services="stream-analytics"
@@ -16,7 +16,7 @@
 	ms.date="11/06/2015" 
 	ms.author="jeffstok"/>
 
-# Erstellen von Stream Analytics-Ausgaben
+# Herstellen von Verbindungen mit Stream Analytics-Ausgabezielen
 
 ## Grundlegendes zu Stream Analytics-Ausgaben ##
 ---
@@ -306,4 +306,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic37]: ./media/stream-analytics-connect-data-event-outputs/37-stream-analytics-connect-data-event-input-output.png
 [graphic38]: ./media/stream-analytics-connect-data-event-outputs/38-stream-analytics-connect-data-event-input-output.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

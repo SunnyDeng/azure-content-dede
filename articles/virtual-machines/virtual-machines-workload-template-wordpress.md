@@ -29,7 +29,7 @@ Sie können die Vorlage mit dem Azure-Vorschauportal, mit Azure PowerShell oder 
 
 ## Azure-Vorschauportal
 
-Wenn Sie diesen Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
+Wenn Sie diese Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-wordpress/azure-portal-template.png)
 
@@ -96,14 +96,14 @@ Wenn die Vorlagenausführung abgeschlossen ist, verfügen Sie über einen neuen 
 
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
+[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

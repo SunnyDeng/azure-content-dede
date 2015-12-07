@@ -3,8 +3,8 @@
 	description="Erläutert die Veröffentlichung lokaler Anwendungen mit dem Azure AD-Anwendungsproxy."
 	services="active-directory"
 	documentationCenter=""
-	authors="rkarlin"
-	manager="StevenPo"
+	authors="kgremban"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="rkarlin"/>
+	ms.author="kgremban"/>
 
 
 # Veröffentlichen von Anwendungen mit Azure AD-Anwendungsproxy
@@ -54,7 +54,7 @@ Um den Assistenten zu beenden, klicken Sie auf das Häkchen unten im Bildschirm.
 
 1. Für präauthentifizierte Apps müssen Sie Benutzer und Gruppen zuweisen, die Zugriff auf die Anwendung haben. <p>Der Zugriff auf Passthrough-Apps ist für alle Benutzer verfügbar. Damit jedoch ein Benutzer die App in seiner Anwendungsliste sehen kann, müssen Sie die App diesem Benutzer zuweisen.
 2. Nach dem Beenden des Assistenten für das Hinzufügen von Apps wird die Schnellstartseite für den Anwendungsproxy angezeigt. Um Benutzer zuzuweisen, klicken Sie auf **Benutzer zuweisen**. ![Schnellstartbildschirm für den Anwendungsproxy](./media/active-directory-application-proxy-publish/quickstart.png)
-3. Wählen Sie die einzelnen Benutzer oder Gruppen aus, die Sie dieser App zuweisen möchten, und klicken Sie auf **Zuweisen**. 
+3. Wählen Sie die einzelnen Benutzer oder Gruppen aus, die Sie dieser App zuweisen möchten, und klicken Sie auf **Zuweisen**.
 
 > [AZURE.NOTE]Für Apps unter "Integrierte Windows-Authentifizierung" können Sie nur Benutzer und Gruppen zuweisen, die über Ihr lokales Active Directory synchronisiert werden. Benutzer, die sich über ein Microsoft-Konto anmelden, und Gäste können nicht für Apps zugewiesen werden, die mit dem Azure Active Directory-Anwendungsproxy veröffentlicht werden. Stellen Sie sicher, dass die zugewiesenen Benutzer sich mit den Anmeldeinformationen anmelden, die Teil der gleichen Domäne sind wie die Anwendung, die Sie veröffentlichen.
 
@@ -97,4 +97,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
 * [Informationen zur eingeschränkten Kerberos-Delegierung](http://technet.microsoft.com/library/cc995228.aspx)
 
-<!----HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -3,8 +3,8 @@
 	description="Die Azure Storage-Clientbibliothek für Xamarin ermöglicht Entwicklern das Erstellen von iOS-, Android- und Windows Store-Apps mit ihren systemeigenen Benutzeroberflächen. In diesem Lernprogramm wird erläutert, wie mithilfe von Xamarin eine Android-Anwendung erstellt wird, in der der Azure-Blob-Speicher verwendet wird." 
 	services="storage" 
 	documentationCenter="xamarin" 
-	authors="tamram" 
-	manager="carolz" 
+	authors="micurd" 
+	manager="" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/03/2015" 
+	ms.date="11/18/2015" 
 	ms.author="tamram"/>
 
 # Verwenden des Blob-Speichers mit Xamarin (Vorschau)
@@ -173,7 +173,10 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie den Azure-Blob-Speicher und S
 
 Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die folgenden Links:
 
-[Einführung in Microsoft Azure Storage](storage-introduction.md) [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md) [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md) [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
+[Einführung in Microsoft Azure Storage](storage-introduction.md)  
+[Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)  
+[Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)  
+[Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

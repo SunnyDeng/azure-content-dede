@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="11/20/2015"
    ms.author="telmos" />
 
 # Bereitstellen von Multi-NIC-VMs mithilfe einer Vorlage
@@ -223,20 +223,11 @@ Die unten stehende Abbildung zeigt den Inhalt der neuen Ressourcengruppe nach de
 
 Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen Vorlage die unten beschriebenen Schritte aus.
 
-1. Wenn Sie Azure PowerShell noch nie verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
-2. Führen Sie das Cmdlet **Switch-AzureMode** aus, um zum Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
-		Switch-AzureMode AzureResourceManager
+3. Führen Sie das Cmdlet **New-AzureRmResourceGroup** aus, um eine Ressourcengruppe mit der Vorlage zu erstellen.
 
-	Hier ist die erwartete Ausgabe des obigen Befehls:
-
-		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
-
-	>[AZURE.WARNING]Das Cmdlet "Switch-AzureMode" ist demnächst veraltet. In diesem Fall werden alle Ressourcen-Manager-Cmdlets umbenannt.
-
-3. Führen Sie das Cmdlet **New-AzureResourceGroup** aus, um eine Ressourcengruppe mit der Vorlage zu erstellen.
-
-		New-AzureResourceGroup -Name IaaSStory-Backend -Location uswest `
+		New-AzureRmResourceGroup -Name IaaSStory-Backend -Location uswest `
 		    -TemplateFile 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/azuredeploy.json' `
 		    -TemplateParameterFile 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/azuredeploy.parameters.json'	
 
@@ -301,4 +292,4 @@ Führen Sie zum Bereitstellen der Vorlage mithilfe der Azure-Befehlszeilenschnit
 		data:
 		info:    group create command OK
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

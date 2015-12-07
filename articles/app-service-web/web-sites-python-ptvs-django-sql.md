@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="08/30/2015"
+	ms.date="11/13/2015"
 	ms.author="huguesv"/>
 
 
@@ -139,7 +139,7 @@ Bearbeiten Sie die Definition von `DATABASES`, sodass die oben angegebenen Werte
 
 1.  Klicken Sie im Projektmappen-Explorer unter **Python-Umgebungen** mit der rechten Maustaste auf die virtuelle Umgebung, und wählen Sie **Python-Paket installieren** aus.
 
-1.  Installieren Sie das Paket `pyodbc` mithilfe von **easy\_install**.
+1.  Installieren Sie das Paket `pyodbc` mithilfe von **pip**.
 
   	![Dialogfeld zur Installation des Python-Pakets](./media/web-sites-python-ptvs-django-sql/PollsDjangoSqlInstallPackagePyodbc.png)
 
@@ -220,4 +220,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Dokumentation zu Django]: https://www.djangoproject.com/
 [SQL-Datenbank]: /documentation/services/sql-database/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

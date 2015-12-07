@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="11/18/2015" 
 	ms.author="awills"/>
 
 # Datensammlung, -aufbewahrung und -speicherung in Application Insights 
@@ -64,6 +64,11 @@ Die Anzahl von Benutzern und Sitzungen sind nicht im Kontingent für Preisangabe
 * Öffnen Sie "Settings/Quota and Pricing", um das Diagramm mit dem Datenvolumen anzuzeigen.
 * Oder fügen Sie im Metrik-Explorer ein neues Diagramm hinzu, und wählen Sie **Datenpunktvolumen** als Metrik aus. Aktivieren Sie "Gruppierung", und gruppieren Sie nach **Datentyp**.
 
+*Wie kann ich die von meiner App gesendete Datenmenge reduzieren?*
+
+* Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören.
+* [Deaktivieren Sie Telemetriedaten-Sammlungsmodule](app-insights-configuration-with-applicationinsights-config.md), die Sie nicht benötigen.
+
 
 #### Wie lange werden Daten aufbewahrt? 
 
@@ -107,7 +112,7 @@ Microsoft verwendet die Daten nur dazu, Ihnen den Dienst bereitstellen zu könne
 
 #### Wie sicher sind meine Daten? 
 
-Die Daten werden auf Microsoft Azure-Servern gespeichert. Für Konten im Azure-Portal sind die Kontobeschränkungen im Dokument [Sicherheit, Datenschutz und Compliance in Azure](http://go.microsoft.com/fwlink/?linkid=392408) beschrieben. Für Konten im Visual Studio Team Services-Portal gilt das Dokument [Visual Studio Team Services-Datenschutz](http://download.microsoft.com/download/8/E/E/8EE6A61C-44C2-4F81-B870-A267F1DF978C/MicrosoftVisualStudioOnlineDataProtection.pdf).
+Die Daten werden auf Microsoft Azure-Servern gespeichert. Für Konten im Azure-Portal sind die Kontobeschränkungen im Dokument [Trusted Cloud: Microsoft Azure Security, Privacy, and Compliance](http://go.microsoft.com/fwlink/?linkid=392408) (in englischer Sprache) beschrieben. Für Konten im Visual Studio Team Services-Portal gilt das Dokument [Microsoft Visual Studio Online Data Protection](http://download.microsoft.com/download/8/E/E/8EE6A61C-44C2-4F81-B870-A267F1DF978C/MicrosoftVisualStudioOnlineDataProtection.pdf) (in englischer Sprache).
 
 Der Zugriff auf Ihre Daten durch Microsoft-Mitarbeiter ist eingeschränkt. Wir werden nur mit Ihrer Erlaubnis und ausschließlich dann auf Ihre Daten zugreifen, wenn es erforderlich ist, Sie bei der Verwendung von Application Insights zu unterstützen.
 
@@ -250,4 +255,4 @@ Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unte
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
 # Referenzarchitektur: Echtzeitereignisverarbeitung mit Microsoft Azure Stream Analytics
@@ -62,4 +62,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

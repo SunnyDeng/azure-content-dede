@@ -50,7 +50,7 @@ In diesem Bereich sehen Sie alle für die Konfiguration erstellten Synchronisier
 
 Eine Regel ist ein Konfigurationsobjekt mit einem Satz von Attributen, die übertragen werden, wenn eine Bedingung erfüllt ist. Damit wird auch beschrieben, welche Beziehung ein Objekt in einem Connectorbereich zu einem Objekt im Metaverse hat. Dies wird als Verknüpfung oder Übereinstimmung bezeichnet. Die Synchronisierungsregeln besitzen einen Rangfolgenwert, der über ihre Beziehungen untereinander Aufschluss gibt. Eine Synchronisierungsregel mit einem niedrigeren numerischen Rangfolgenwert hat eine höhere Rangfolge, und im Falle eines Attributflusskonflikts hat die höhere Rangfolge Vorrang bei der Konfliktauflösung.
 
-Als Beispiel betrachten wir die Synchronisierungsregel **In von AD – Benutzer AccountEnabled**. Wir markieren diese Zeile im SRE und wählen **Bearbeiten**.
+Als Beispiel betrachten wir die Synchronisierungsregel **Ein von AD – Benutzer AccountEnabled**. Wir markieren diese Zeile im SRE und wählen **Bearbeiten**.
 
 Da dies eine vordefinierte Regel ist, erhalten wir eine Warnung, wenn wir die Regel öffnen. Da Sie keine [Änderungen an vordefinierten Regeln](active-directory-aadconnectsync-best-practices-changing-default-configuration.md) vornehmen sollten, werden Sie nach Ihren Absichten gefragt. In diesem Fall möchten Sie nur die Regel anzeigen, also wählen Sie **Nein**.
 
@@ -70,11 +70,11 @@ Sie können auch sehen, dass diese Synchronisierungsregel zur Kennwortsynchronis
 
 ### Bereichsfilter
 
-Der Bereich "Bereichsfilter" wird zum Konfigurieren verwendet, wann eine Synchronisierungsregel angewendet werden soll. Da der Name der betrachteten Synchronisierungsregel darauf hinweist, dass sie nur für aktivierte Benutzer angewendet werden sollte, wird der Gültigkeitsbereich so konfiguriert, dass für das AD-Attribut **userAccountControl** das Bit 2 nicht gesetzt sein darf. Wenn wir einen Benutzer in Active Directory finden, wenden wir diese Synchronisierungsregel an, wenn für **userAccountControl** der Dezimalwert „512“ festgelegt ist (aktivierter normaler Benutzer). Sie wird jedoch nicht angewendet, wenn für den gefundenen Benutzer der Wert „514“ für **userAccountControl** festgelegt ist (deaktivierter normaler Benutzer).
+Der Abschnitt "Bereichsfilter" wird zum Konfigurieren verwendet, wann eine Synchronisierungsregel angewendet werden soll. Da der Name der betrachteten Synchronisierungsregel darauf hinweist, dass sie nur für aktivierte Benutzer angewendet werden sollte, wird der Gültigkeitsbereich so konfiguriert, dass für das AD-Attribut **userAccountControl** das Bit 2 nicht gesetzt sein darf. Wenn wir einen Benutzer in Active Directory finden und für **userAccountControl** der Dezimalwert „512“ festgelegt ist (aktivierter normaler Benutzer), wenden wir diese Synchronisierungsregel an. Sie wird jedoch nicht angewendet, wenn für den gefundenen Benutzer der Wert „514“ für **userAccountControl** festgelegt ist (deaktivierter normaler Benutzer).
 
 ![Eingehende Synchronisierungsregel bearbeiten](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulescopingfilter.png)
 
-Der Bereichsfilter verfügt über Gruppen und Klauseln, die geschachtelt werden können. Alle Klauseln innerhalb einer Gruppe müssen erfüllt werden, damit eine Synchronisierungsregel angewendet wird. Wenn mehrere Gruppen definiert sind, muss mindestens eine Gruppe die Anforderungen erfüllen, damit die Regel angewendet wird. Das bedeutet, dass zwischen Gruppen ein logisches ODER und innerhalb einer Gruppe ein logisches UND ausgewertet wird. Ein Beispiel hierfür befindet sich in der ausgehenden Synchronisierungsregel **Aus zu AAD – Gruppenverknüpfung**, die nachfolgend gezeigt wird. Es gibt mehrere Synchronisierungsfiltergruppen: z. B. eine für Sicherheitsgruppen (securityEnabled EQUAL True) und eine für Verteilergruppen (securityEnabled EQUAL False).
+Der Bereichsfilter verfügt über Gruppen und Klauseln, die geschachtelt werden können. Alle Klauseln innerhalb einer Gruppe müssen erfüllt werden, damit eine Synchronisierungsregel angewendet wird. Wenn mehrere Gruppen definiert sind, muss mindestens eine Gruppe die Anforderungen erfüllen, damit die Regel angewendet wird. Das bedeutet, dass zwischen Gruppen ein logisches ODER und innerhalb einer Gruppe ein logisches UND ausgewertet wird. Ein Beispiel hierfür befindet sich in der ausgehenden Synchronisierungsregel **Aus an AAD – Gruppenverknüpfung**, die nachfolgend gezeigt wird. Es gibt mehrere Synchronisierungsfiltergruppen: z. B. eine für Sicherheitsgruppen (securityEnabled EQUAL True) und eine für Verteilergruppen (securityEnabled EQUAL False).
 
 ![Ausgehende Synchronisierungsregel bearbeiten](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulescopingfilterout.png)
 
@@ -90,13 +90,13 @@ Der Inhalt der Verknüpfungsregeln hängt von der vergleichenden Option ab, die 
 
 Die Verknüpfungsregeln werden nur einmal ausgewertet. Wenn ein Connectorbereichsobjekt und ein Metaverse-Objekt verknüpft werden, bleiben sie verknüpft, so lange der Gültigkeitsbereich der Synchronisierungsregel weiterhin gegeben ist.
 
-Bei der Auswertung von Synchronisierungsregeln muss sich nur eine Synchronisierungsregel mit Verknüpfungsregeln im Gültigkeitsbereich befinden. Wenn mehrere Synchronisierungsregeln mit Verknüpfungsregeln für ein Objekt gefunden werden, wird ein Fehler ausgelöst. Aus diesem Grund besteht die bewährte Methode darin, nur eine Synchronisierungsregel mit definierter Verknüpfung zu besitzen, wenn sich mehrere Synchronisierungsregeln im Gültigkeitsbereich eines Objekts befinden. Um diese Regeln in der standardmäßigen Konfiguration für die Azure Active Directory-Synchronisierung zu finden, suchen Sie nach den Regeln, deren Name mit dem Wort „Join“ endet. Eine Synchronisierungsregel ohne definierte Verknüpfungsregeln wendet die Attributflüsse an, wenn eine andere Synchronisierungsregel die Objekte verknüpft oder ein neues Objekt im Ziel bereitgestellt hat.
+Bei der Auswertung von Synchronisierungsregeln muss sich nur eine Synchronisierungsregel mit Verknüpfungsregeln im Gültigkeitsbereich befinden. Wenn mehrere Synchronisierungsregeln mit Verknüpfungsregeln für ein Objekt gefunden werden, wird ein Fehler ausgelöst. Aus diesem Grund besteht die bewährte Methode darin, nur eine Synchronisierungsregel mit definierter Verknüpfung zu besitzen, wenn sich mehrere Synchronisierungsregeln im Gültigkeitsbereich eines Objekts befinden. Um diese Regeln in der standardmäßigen Konfiguration für die Azure Active Directory-Synchronisierung zu finden, suchen Sie nach den Regeln, deren Name auf „Verknüpfung“ endet. Eine Synchronisierungsregel ohne definierte Verknüpfungsregeln wendet die Attributflüsse an, wenn eine andere Synchronisierungsregel die Objekte verknüpft oder ein neues Objekt im Ziel bereitgestellt hat.
 
 Wenn Sie die obige Abbildung betrachten, sehen Sie, dass die Regel versucht, **objectSID** mit **msExchMasterAccountSid** (Exchange) und **msRTCSIP-OriginatorSid** (Lync) zu verknüpfen, was in einer Konto-Ressourcengesamtstruktur-Topologie zu erwarten ist. Die gleiche Regel finden wir bei allen Gesamtstrukturen, d. h. die Annahme ist, dass jede Gesamtstruktur entweder eine Konto- oder Ressourcengesamtstruktur sein könnte. Dies funktioniert auch, wenn Sie über Konten verfügen, die sich in einer einzelnen Gesamtstruktur befinden und nicht verknüpft werden müssen.
 
 ### Transformationen
 
-Der Transformationsbereich definiert alle Attributflüsse, die sich auf das Zielobjekt beziehen, wenn die Objekte verknüpft werden und der Bereichsfilter zutrifft. Wenn wir zur Synchronisierungsregel **In von AD – Benutzer AccountEnabled** zurückkehren, finden wir die folgenden Transformationen:
+Der Transformationsbereich definiert alle Attributflüsse, die sich auf das Zielobjekt beziehen, wenn die Objekte verknüpft werden und der Bereichsfilter zutrifft. Wenn wir zur Synchronisierungsregel **Ein von AD – Benutzer AccountEnabled** zurückkehren, finden wir die folgenden Transformationen:
 
 ![Eingehende Synchronisierungsregel bearbeiten](./media/active-directory-aadconnectsync-understanding-default-configuration/syncruletransformations.png)
 
@@ -122,32 +122,32 @@ NULL
 )
 ```
 
-Das Thema der Transformation ist umfangreich und bietet einen großen Teil der benutzerdefinierten Konfiguration, die mit der Azure AD Connect-Synchronisierung möglich ist. Weitere Informationen hierzu finden Sie in den anderen Artikeln zur Azure AD Connect-Synchronisierung.
+Das Thema der Transformation ist umfangreich und umfasst einen großen Teil der benutzerdefinierten Konfiguration, die mit der Azure AD Connect-Synchronisierung möglich ist. Weitere Informationen hierzu finden Sie in den anderen Artikeln zur Azure AD Connect-Synchronisierung.
 
 ## Rangfolge
 
-Wir haben nun einige individuelle Synchronisierungsregeln betrachtet, aber die Regeln wirken in der Konfiguration zusammen. In einigen Fällen tragen mehrere Synchronisierungsregeln einen Attributwert zum gleichen Zielattribut bei. In diesem Fall wird die Attributrangfolge verwendet, um zu bestimmen, welches Attribut gewinnt. Als Beispiel werfen wir einen Blick auf das sourceAnchor-Attribut. Dieses Attribut ist eine wichtige Voraussetzung zur Anmeldung bei Azure AD. Zwei verschiedene Synchronisierungsregeln enthalten einen Attributfluss für dieses Attribut **In von AD – Benutzer AccountEnabled** und **In von AD – Benutzer allgemein**. Aufgrund des Synchronisierungsregelvorrangs trägt die Gesamtstruktur das sourceAnchor-Attribut mit einem aktivierten Konto erst dann bei, wenn mehrere Objekte mit dem Metaverse-Objekt verknüpft sind. Wenn keine aktivierten Konten vorhanden sind, verwenden wir die allgemeine Synchronisierungsregel **In von AD – Benutzer allgemein**. So wird sichergestellt, dass sogar noch für deaktivierte Konten ein sourceAnchor-Attrbut bereitgestellt wird.
+Wir haben nun einige individuelle Synchronisierungsregeln betrachtet, aber die Regeln wirken in der Konfiguration zusammen. In einigen Fällen tragen mehrere Synchronisierungsregeln einen Attributwert zum gleichen Zielattribut bei. In diesem Fall wird die Attributrangfolge verwendet, um zu bestimmen, welches Attribut gewinnt. Als Beispiel werfen wir einen Blick auf das sourceAnchor-Attribut. Dieses Attribut ist eine wichtige Voraussetzung zur Anmeldung bei Azure AD. Zwei verschiedene Synchronisierungsregeln enthalten einen Attributfluss für dieses Attribut **Ein von AD – Benutzer AccountEnabled** und **Ein von AD – Benutzer allgemein**. Aufgrund des Synchronisierungsregelvorrangs trägt die Gesamtstruktur das sourceAnchor-Attribut mit einem aktivierten Konto erst dann bei, wenn mehrere Objekte mit dem Metaverse-Objekt verknüpft sind. Wenn keine aktivierten Konten vorhanden sind, verwenden wir die allgemeine Synchronisierungsregel **Ein von AD – Benutzer allgemein**. So wird sichergestellt, dass sogar noch für deaktivierte Konten ein sourceAnchor-Attrbut bereitgestellt wird.
 
 ![Eingehende Synchronisierungsregeln](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulesinbound.png)
 
-Die Rangfolge für Synchronisierungsregeln wird vom Installations-Assistenten in Gruppen festgelegt. Eine Gruppe von Regeln, die alle den gleichen Namen besitzen, aber mit anderen verbundenen Verzeichnissen verbunden sind. Der Installations-Assistent räumt der Regel **In von AD – Benutzerverknüpfung** höchste Rangfolge ein und führt mit ihr eine Iteration über alle verbundenen AD-Verzeichnissen aus. Er fährt dann mit der nächsten Gruppen von Regeln in einer vordefinierten Reihenfolge fort. Innerhalb einer Gruppe werden die Regeln in der Reihenfolge hinzugefügt, in der die Connectors dem Assistenten hinzugefügt wurden. Wenn ein weiterer Connector durch den Assistenten hinzugefügt wird, werden die Synchronisierungsregeln neu geordnet, und die Regeln für den neuen Connector werden zuletzt in jede Gruppe eingefügt.
+Die Rangfolge für Synchronisierungsregeln wird vom Installations-Assistenten in Gruppen festgelegt. Eine Gruppe von Regeln, die alle den gleichen Namen besitzen, aber mit anderen verbundenen Verzeichnissen verbunden sind. Der Installations-Assistent räumt der Regel **Ein von AD – Benutzerverknüpfung** höchste Rangfolge ein und führt mit ihr eine Iteration über alle verbundenen AD-Verzeichnissen aus. Er fährt dann mit der nächsten Gruppen von Regeln in einer vordefinierten Reihenfolge fort. Innerhalb einer Gruppe werden die Regeln in der Reihenfolge hinzugefügt, in der die Connectors dem Assistenten hinzugefügt wurden. Wenn ein weiterer Connector durch den Assistenten hinzugefügt wird, werden die Synchronisierungsregeln neu geordnet, und die Regeln für den neuen Connector werden zuletzt in jede Gruppe eingefügt.
 
-## Gesamtbild
+## Zusammenfügen des Gesamtbilds
 
 Jetzt wissen wir genug über Synchronisierungsregeln, um die Funktionsweise der Konfiguration mit verschiedenen Synchronisierungsregeln zu verstehen. Wenn wir einen Benutzer und die Attribute betrachten, die zum Metaverse beigetragen werden, werden die Regeln in der folgenden Reihenfolge angewendet:
 
 | Name | Kommentar |
 | :------------- | :------------- |
-| In von AD – Benutzerverknüpfung | Regel für die Verknüpfung von Connectorbereichobjekten mit Metaverse. |
-| In von AD – Benutzer AccountEnabled | Erforderliche Attribute für eine Anmeldung bei Azure AD und Office 365. Diese Attribute sollen aus dem aktivierten Konto kommen. |
-| In von AD – Benutzer allgemein aus Exchange | In der globalen Adressliste gefundene Attribute. Es wird vorausgesetzt, dass die Qualität der Daten in der Gesamtstruktur am besten ist, in der wir das Postfach des Benutzers gefunden haben. |
-| In von AD – Benutzer allgemein | In der globalen Adressliste gefundene Attribute. Für den Fall, dass ein Postfach nicht gefunden wurde, kann jedes andere verknüpfte Objekte den Attributwert beitragen. |
-| In von AD – Benutzer Exchange | Ist nur vorhanden, wenn Exchange erkannt wurde. Fluss aller Exchange-Attribute der Infrastruktur wird ausgeführt. |
-| In von AD – Benutzer Lync | Ist nur vorhanden, wenn Lync erkannt wurde. Fluss aller Lync-Attribute der Infrastruktur wird ausgeführt. |
+| Ein von AD – Benutzerverknüpfung | Regel für die Verknüpfung von Connectorbereichobjekten mit Metaverse. |
+| Ein von AD – Benutzer AccountEnabled | Erforderliche Attribute für eine Anmeldung bei Azure AD und Office 365. Diese Attribute sollen aus dem aktivierten Konto kommen. |
+| Ein von AD – Benutzer allgemein aus Exchange | In der globalen Adressliste gefundene Attribute. Es wird vorausgesetzt, dass die Qualität der Daten in der Gesamtstruktur am besten ist, in der wir das Postfach des Benutzers gefunden haben. |
+| Ein von AD – Benutzer allgemein | In der globalen Adressliste gefundene Attribute. Für den Fall, dass ein Postfach nicht gefunden wurde, kann jedes andere verknüpfte Objekt den Attributwert beitragen. |
+| Ein von AD – Benutzer Exchange | Ist nur vorhanden, wenn Exchange erkannt wurde. Fluss aller Exchange-Attribute der Infrastruktur wird ausgeführt. |
+| Ein von AD – Benutzer Lync | Ist nur vorhanden, wenn Lync erkannt wurde. Fluss aller Lync-Attribute der Infrastruktur wird ausgeführt. |
 
 ## Zusätzliche Ressourcen
 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

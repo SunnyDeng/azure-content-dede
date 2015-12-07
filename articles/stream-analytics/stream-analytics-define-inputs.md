@@ -14,10 +14,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015"
+	ms.date="11/23/2015"
 	ms.author="jeffstok"/>
 
-# Grundlegendes zu Stream Analytics-Eingaben
+# Grundlegendes zu Stream Analytics-Eingabeverbindungen
 
 Azure Stream Analytics-Eingaben sind als Verbindung mit einer Datenquelle definiert. Stream Analytics verfügt über eine hervorragende Integration in die Azure-Quellen Event Hub, IoT Hub und Blobspeicher von innerhalb und außerhalb des Azure-Abonnements, unter dem Ihr Auftrag ausgeführt wird. Werden Daten mittels Push an diese Datenquelle übertragen, werden sie von dem Stream Analytics-Auftrag übernommen und in Echtzeit verarbeitet. Eingaben werden in zwei unterschiedliche Typen unterteilt: Datenstromeingaben und Verweisdateneingaben.
 
@@ -83,7 +83,7 @@ In der folgenden Tabelle wird jede Eigenschaft auf der IoT Hub-Eingaberegisterka
 |------|------|
 | Eingabealias | Ein Anzeigename, der in der Auftragsabfrage verwendet wird, um auf diese Eingabe zu verweisen. |
 | IoT Hub | Ein IoT Hub ist ein Container für einen Satz von Nachrichtenentitäten. |
-| Endgerät | Der Name des IoT Hub-Endgeräts. |
+| Endpunkt | Der Name des IoT Hub-Endpunkts. |
 | Der Name der SAS-Richtlinie | Die SAS-Richtlinie zum Gewähren des Zugriffs auf den IoT Hub. Jede Richtlinie für den gemeinsamen Zugriff umfasst einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel. |
 | SAS-Richtlinienschlüssel | Der Schlüssel für den gemeinsamen Zugriff, der für die Authentifizierung des Zugriffs auf den IoT Hub verwendet wird. |
 | Consumergruppe (optional) | Die Consumergruppe für das Erfassen von Daten aus dem IoT Hub. Wenn nichts angegeben wird, verwenden Stream Analytics-Aufträge die Standardconsumergruppe, um Daten vom IoT Hub zu erfassen. Es wird empfohlen, für jeden Stream Analytics-Auftrag eine eigene Consumergruppe zu verwenden. |
@@ -133,7 +133,7 @@ In der folgenden Tabelle wird jede Eigenschaft in der Blobspeicher-Eingaberegist
 <tr>
 <td>Speichercontainer
 </td>
-<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blob-Dienst gespeichert sind. Wenn Sie ein Blob in den Blob-Dienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
+<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blobdienst gespeichert sind. Wenn Sie ein Blob in den Blobdienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
 </tr>
 <tr>
 <td>Präfixmusters des Pfads [optional]</td>
@@ -162,7 +162,7 @@ In der folgenden Tabelle wird jede Eigenschaft in der Blobspeicher-Eingaberegist
 </tbody>
 </table>
 
-Wenn Ihre Daten aus einer Blobspeicherquelle stammen, können Sie auf einige Metadatenfelder in Ihrer Stream Analytics-Abfrage zugreifen. Die folgende Tabelle enthält die Felder und die entsprechenden Beschreibungen.
+Wenn Ihre Daten aus einer Blob Storage-Quelle stammen, können Sie auf einige Metadatenfelder in Ihrer Stream Analytics-Abfrage zugreifen. Die folgende Tabelle enthält die Felder und die entsprechenden Beschreibungen.
 
 | EIGENSCHAFT | BESCHREIBUNG |
 |------|------|
@@ -201,4 +201,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

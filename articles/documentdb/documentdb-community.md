@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="11/05/2015"
+  ms.date="11/23/2015"
   ms.author="andrl"/>
 
 # Communityportal
@@ -45,6 +45,14 @@ Ein Clientmanagement-Viewer/Explorer für den Microsoft Azure DocumentDB-Dienst.
 Informieren Sie sich hierüber bei [Github](https://github.com/mingaliu/DocumentDBStudio).
 
 
+### DoQmentDB
+
+*von Arial Mashraki*
+
+DoQmentDB ist ein Node.js Promise-basierter Client, der über DocumentDB eine MongoDB-ähnliche Schicht bereitstellt.
+
+Informieren Sie sich hierüber bei [Github](https://github.com/a8m/doqmentdb) und [npm](https://www.npmjs.com/package/doqmentdb).
+
 <br/><br/>
 
 *Weitere Open Source-DocumentDB-Projekte finden Sie unter [GitHub](https://github.com/search?p=4&q=documentdb&type=Repositories).*
@@ -62,6 +70,16 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 <br/>
 
 **Communitybeiträge:**
+
+* [**Datenpunkte – Aurelia trifft DocumentDB: Erlebnisse einer Kupplerin**](https://msdn.microsoft.com/magazine/mt620011.aspx) – *von Julie Lerman*
+
+* [**Infrastructure as Code and Continuous Deployment of a Node.js + Azure DocumentDB Solution**](http://www.talmeida.net/blog/2015/10/26/infrastructure-as-code-and-continuous-deployment-of-a-nodejs-azure-documentdb-solution) – *von Thiago Almedia*
+
+* [**Why DocumentDb Makes Good Business Sense for Some Projects**](http://www.iquestllc.com/blogs/read/405/why-documentdb-makes-good-business-sense-for-some-projects) – *von Samuel Uresin*
+
+* [**Azure DocumentDB の開発ことはじめ - Client クラスの開発（1/2）**](http://beachside.hatenablog.com/entry/2015/10/01/202734) – *von Atsushi Yokohama*
+
+* [**Azure DocumentDB を使うときに知っておきたいいくつかのこと**](http://beachside.hatenablog.com/entry/2015/10/01/202734) – *von Atsushi Yokohama*
 
 * [**Behandeln von RequestRateTooLarge-Fehlern in Azure DocumentDB und Testleistung**](http://blogs.msdn.com/b/bigdatasupport/archive/2015/09/02/dealing-with-requestratetoolarge-errors-in-azure-documentdb-and-testing-documentdb-performance.aspx) - *von Azim Uddin*
 
@@ -89,7 +107,6 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Ereignisname | Standort | Date | Hashtag |
 | ------------------------------------------------------------------------------- | -------------------- | ------------------- | ------- |
-| [Integration User Group](http://www.integrationusergroup.com/) | Webinar | 9\. November 2015 | [#IntegrationMonday](https://twitter.com/hashtag/integrationmonday) |
 | [Meetup: msdevmtl](http://www.meetup.com/msdevmtl/events/223839818/) | Montreal (Quebec, Kanada) | 1\. Dezember 2015 | [#msdevmtl](https://twitter.com/hashtag/msdevmtl) |
 
 *Sind Sie Gastgeber einer Veranstaltung? [Teilen Sie uns mit, ](mailto:askdocdb@microsoft.com)wie wir helfen können!*
@@ -98,6 +115,7 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Ereignisname | Standort | Date | Aufzeichnung |
 | -------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------- | --------- |
+| [Meetup: SeattleJS](http://www.meetup.com/seattlejs/events/220102664/) | Seattle, WA | 12\. November 2015 | – |
 | [PASS Summit 2015](http://www.sqlpass.org/summit/2015/Home.asp) | Seattle, WA | 27\. bis 30. Oktober 2015 | – |
 | [CloudDevelop 2015](http://www.clouddevelop.org/) | Columbus, OH | 23\. Oktober 2015 | – |
 | [SQL Saturday #430 – Sofia 2015](http://www.sqlsaturday.com/430/eventhome.aspx) | Sofia, Bulgarien | 10\. Oktober 2015 | – |
@@ -125,6 +143,7 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Einblenden | Date | Episode |
 | ------------------------------------------- | ------------------ | ------- |
+| Integration User Group | 9\. November 2015 | [Azure DocumentDB for Healthcare Integration – Part 2](http://www.integrationusergroup.com/azure-documentdb-for-healthcare-integration-part-2/) |
 | Integration User Group | 5\. Oktober 2015 | [Azure DocumentDB for Healthcare Integration](http://www.integrationusergroup.com/?event=azure-documentdb-and-biztalk) |
 | DX Italy - #TecHeroes | 2\. Oktober 2015 | [#TecHeroes - DocumentDB](https://channel9.msdn.com/Shows/TecHeroes/TecHeroes-DocumentDB) |
 | Microsoft Cloud-Show – Podcast | 30\. September 2015 | [Episode 099 – Azure DocumentDB with Andrew Liu (in englischer Sprache)](http://www.microsoftcloudshow.com/podcast/Episodes/099-azure-documentdb-with-andrew-liu) |
@@ -215,4 +234,18 @@ Diese Projekte werden vom Azure DocumentDB-Team in Zusammenarbeit mit unserer Op
 | Hadoop-Connector | [azure-documentdb-hadoop](https://github.com/Azure/azure-documentdb-hadoop) | [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb-hadoop%22) |
 | Datenmigrationstool | [azure-documentdb-datamigrationtool](https://github.com/Azure/azure-documentdb-datamigrationtool) | [Microsoft Download Center](http://www.microsoft.com/de-DE/download/details.aspx?id=46436) |
 
-<!---HONumber=Nov15_HO3-->
+<hr/>
+
+## DocumentDB-Genies
+
+<hr/>
+
+DocumentDB-Genies sind wichtige Mitglieder der Community, die sich durch ein beispielhaftes Engagement dabei auszeichnen, anderen zu einem optimalen Ergebnis bei der Arbeit mit Azure DocumentDB zu verhelfen. Sie teilen ihre außergewöhnliche Leidenschaft, ihr praktisches Wissen und technisches Können mit der Community und dem DocumentDB-Team.
+
+| | | | |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![Allan Mitchell](./media/documentdb-community/wizard-allan-mitchell.jpg)](https://twitter.com/allansqlis) <br/> [Allan Mitchell](https://twitter.com/allansqlis) | [![Jen Stirrup](./media/documentdb-community/wizard-jen-stirrup.jpg)](https://twitter.com/jenstirrup) <br/> [Jen Stirrup](https://twitter.com/jenstirrup) | [![Lenni Lobel](./media/documentdb-community/wizard-lenni-lobel.jpg)](https://twitter.com/lennilobel) <br/> [Lenni Lobel](https://twitter.com/lennilobel) | [![Mihail Mateev](./media/documentdb-community/wizard-mihail-mateev.jpg)](https://twitter.com/mihailmateev) <br/> [Mihail Mateev](https://twitter.com/mihailmateev)|
+
+Möchten Sie ein DocumentDB-Genie werden? Wenngleich es nicht unbedingt ein bestimmtes Kriterium gibt, das erfüllt sein muss, um ein DocumentDB-Genie zu werden, bewerten wir u. a. den Einfluss der Beiträge des Kandidaten zu Onlineforen wie StackOverflow und MSDN, Wikis, Online-Inhalten, Konferenzen, Benutzergruppen, Podcasts, Websites, Blogs und sozialen Medien sowie Artikeln und Büchern. [Senden uns eine E-Mail](mailto:askdocdb@microsoft.com), um sich selbst zu nominieren oder nominieren zu lassen.
+
+<!---HONumber=AcomDC_1125_2015-->

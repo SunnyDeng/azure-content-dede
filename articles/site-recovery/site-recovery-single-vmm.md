@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="backup-recovery"
-	ms.date="10/07/2015"
+	ms.date="11/18/2015"
 	ms.author="raynew"/>
 
 #  Einrichten von Schutz mit einem einzelnen VMM-Server
@@ -43,7 +43,7 @@ Wenn VMM hochverfügbar sein soll, können Sie VMM als virtuellen Computer in ei
 ## Vorbereitung
 
 - Die Schritte der exemplarischen Vorgehensweise zeigen, wie Sie Site Recovery mit einem einzelnen eigenständigen VMM-Server bereitstellen.
-- Stellen Sie sicher, dass die [erforderlichen Komponenten](site-recovery-vmm-to-vmm.md/#before-you-start) vorhanden sind, bevor Sie mit der Bereitstellung beginnen.
+- Stellen Sie sicher, dass die [erforderlichen Komponenten](site-recovery-vmm-to-vmm.md#before-you-start) vorhanden sind, bevor Sie mit der Bereitstellung beginnen.
 - Für den einzelnen VMM-Server müssen mindestens zwei Clouds konfiguriert sein. Eine Cloud fungiert als geschützte Cloud, die andere als schützende Cloud.
 - Die zu schützenden Clouds müssen Folgendes enthalten:
 	- Mindestens eine VMM-Hostgruppe
@@ -63,19 +63,19 @@ Sollten beim Einrichten dieses Szenarios Probleme auftreten, besuchen Sie das [A
 	- [Konfigurieren der VMM-Cloud-Struktur](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
 	- [Erstellen einer privaten Cloud in VMM](https://technet.microsoft.com/library/jj860425.aspx) und [Exemplarische Vorgehensweise: Erstellen von privaten Clouds mit System Center 2012 SP1 VMM](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 3. Fügen Sie den Hyper-V-Quellhostserver mit dem zu schützenden virtuellen Computer der Cloud hinzu, die geschützt werden soll (Quellcloud). Fügen Sie den Hyper-V-Zielhostserver der schützenden Cloud auf dem VMM-Server hinzu.
-4. [Erstellen](site-recovery-vmm-to-vmm.md/#step-1-create-a-site-recovery-vault) Sie einen Azure Site Recovery-Tresor, und generieren Sie einen Tresorregistrierungsschlüssel.
-4. [Installieren](site-recovery-vmm-to-vmm.md/#step-3-install-the-azure-site-recovery-provider) Sie den Azure Site Recovery-Anbieter auf dem VMM-Server, und registrieren Sie den Server im Tresor. 
-5. Vergewissern Sie sich, dass die Clouds im Site Recovery-Portal angezeigt werden, und [konfigurieren Sie die Cloudschutzeinstellungen](site-recovery-vmm-to-vmm.md/#step-4-configure-cloud-protection-settings).
+4. [Erstellen](site-recovery-vmm-to-vmm.md#step-1-create-a-site-recovery-vault) Sie einen Azure Site Recovery-Tresor, und generieren Sie einen Tresorregistrierungsschlüssel.
+4. [Installieren](site-recovery-vmm-to-vmm.md#step-3-install-the-azure-site-recovery-provider) Sie den Azure Site Recovery-Anbieter auf dem VMM-Server, und registrieren Sie den Server im Tresor. 
+5. Vergewissern Sie sich, dass die Clouds im Site Recovery-Portal angezeigt werden, und [konfigurieren Sie die Cloudschutzeinstellungen](site-recovery-vmm-to-vmm.md#step-4-configure-cloud-protection-settings).
 	- Geben Sie unter **Quellenspeicherort** und unter **Zielspeicherort** jeweils den Namen des einzelnen VMM-Servers an.
 	- Wählen Sie für die erste Replikation unter **Replikationsmethode** die Option **Über das Netzwerk** aus, da sich die Clouds auf dem gleichen Server befinden.
 
-6. Optional: [Konfigurieren Sie die Netzwerkzuordnung](site-recovery-vmm-to-vmm.md/#step-5-configure-network-mapping):
+6. Optional: [Konfigurieren Sie die Netzwerkzuordnung](site-recovery-vmm-to-vmm.md#step-5-configure-network-mapping):
 
 	- Geben Sie unter **Quelle** und unter **Ziel** jeweils den Namen des einzelnen VMM-Servers an.
 	- Wählen Sie unter **Netzwerk auf Quelle** das für die geschützte Cloud konfigurierte VM-Netzwerk aus.
 	- Wählen Sie unter **Netzwerk am Ziel** das VM-Netzwerk aus, das für die Cloud konfiguriert ist, die zum Schutz verwendet werden soll.
 	- Die Netzwerkzuordnung kann zwischen zwei VM-Netzwerken auf dem gleichen VMM-Server konfiguriert werden. Wenn das gleiche VMM-Netzwerk an zwei unterschiedlichen Standorten vorhanden ist, kann die Zuordnung zwischen den gleichen Netzwerken erfolgen.
-7. [Aktivieren Sie den Schutz](site-recovery-vmm-to-vmm.md/#step-7-enable-virtual-machine-protection) für virtuelle Computer in der zu schützenden VMM-Cloud. 
+7. [Aktivieren Sie den Schutz](site-recovery-vmm-to-vmm.md#step-7-enable-virtual-machine-protection) für virtuelle Computer in der zu schützenden VMM-Cloud. 
 7. Richten Sie in der Hyper-V-Manager-Konsole die Replikation für den virtuellen VMM-Computer mit Hyper-V-Replikat ein. Der virtuelle VMM-Computer darf keiner VMM-Cloud hinzugefügt werden.
 
 
@@ -86,7 +86,7 @@ Sollten beim Einrichten dieses Szenarios Probleme auftreten, besuchen Sie das [A
 Wiederherstellungspläne dienen zum Gruppieren virtueller Computer, für die ein gemeinsames Failover und eine gemeinsame Wiederherstellung durchgeführt werden sollen.
 
 1. Geben Sie bei Erstellung eines Wiederherstellungsplans unter **Quelle** und unter **Ziel** jeweils den Namen des einzelnen VMM-Servers an. Unter **Virtuelle Computer auswählen** werden die virtuellen Computer angezeigt, die der primären Cloud zugeordnet sind.
-2. [Erstellen Sie Wiederherstellungspläne, und passen Sie sie an](https://msdn.microsoft.com/library/azure/dn337331.aspx).
+2. [Erstellen Sie Wiederherstellungspläne, und passen Sie sie an](site-recovery-create-recovery-plans.md).
 
 
 ### Wiederherstellen
@@ -100,4 +100,4 @@ Bei einem Notfall können Workloads auf folgende Weise wiederhergestellt werden:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="11/23/2015"
    ms.author="barbkess;JRJ@BigBangData.co.uk;mausher;nicw"/>
 
 # Übersicht über Leistung und Skalierbarkeit
-Durch das Verlagern des Data Warehouse in die Cloud müssen Sie nicht mehr mit Low-Level-Hardwareprobleme befassen. Vorbei sind die Zeiten, in denen Sie die Art der Prozessoren, die Menge des Arbeitsspeichers oder den Speichertyp ermitteln mussten, um eine hohe Leistung des Data Warehouse zu erreichen. Stattdessen stellt SQL Data Warehouse Ihnen diese Frage: Wie schnell möchten Sie Ihre Daten verarbeiten?
+Durch das Verlagern des Data Warehouse in die Cloud müssen Sie nicht mehr mit Low-Level-Hardwareprobleme befassen. Vorbei sind die Zeiten, in denen Sie die Art der Prozessoren, die Menge des Arbeitsspeichers oder den Speichertyp ermitteln mussten, um eine hohe Leistung des Data Warehouse zu erreichen. Stattdessen stellt SQL Data Warehouse Ihnen diese Frage: Wie schnell möchten Sie Ihre Daten analysieren?
 
 SQL Data Warehouse ist eine cloudbasierte, verteilte Datenbankplattform, die entworfen wurde, um eine hohe, skalierbare Leistung bereitzustellen, bei der Sie die vollständige Kontrolle über die Ressourcen haben, die zum Auflösen von Abfragen verwendet werden. Durch die Anpassung der Anzahl der Ihrem Data Warehouse zugeteilten Data Warehouse-Einheiten können Sie die Größe der Warehouse-Ressourcen innerhalb weniger Sekunden flexibel skalieren. Als verteilte, skalierbare Plattform ermöglicht SQL Data Warehouse Ihrem Data Warehouse die effiziente und effektive Verarbeitung erheblicher Datenmengen, während Sie die vollständige Kontrolle über die Kosten der Lösung haben.
 
@@ -77,4 +77,4 @@ Anleitungen zum Erstellen Ihrer SQL Data Warehouse-Lösung finden Sie im Artikel
 
 <!--Other web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

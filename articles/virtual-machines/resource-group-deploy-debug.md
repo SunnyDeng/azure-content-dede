@@ -136,7 +136,7 @@ Mit dem Befehl **azure group log show** können zahlreiche Informationen abgeruf
       },
       "properties": {
         "statusCode": "Conflict",
-        "statusMessage": "{"Code":"Conflict","Message":"Website with given name mysite already exists.","Target":null,"Details":[{"Message":"Website with given name 
+        "statusMessage": "{"Code":"Conflict","Message":"Website with given name mysite already exists.","Target":null,"Details":[{"Message":"Website with given name
           mysite already exists."},{"Code":"Conflict"},{"ErrorEntity":{"Code":"Conflict","Message":"Website with given name mysite already exists.","ExtendedCode":
           "54001","MessageTemplate":"Website with given name {0} already exists.","Parameters":["mysite"],"InnerErrors":null}}],"Innererror":null}"
       },
@@ -259,7 +259,7 @@ Verwenden Sie bei der Azure-Befehlszeilenschnittstelle den Befehl **azure locati
     }
 
 ### REST-API
-        
+
 Informationen zur REST-API finden Sie unter [Abrufen von Informationen zu einem Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790534.aspx).
 
 ## Erstellen eindeutiger Ressourcennamen
@@ -315,7 +315,7 @@ Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, 
 
 ## Überprüfen der Ressourcenanbieterregistrierung
 
-Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonnement kann für die Verwendung eines bestimmten Anbieters konfiguriert werden. Falls Ihre Aktivierung die Nutzung eines bestimmten Anbieters vorsieht, muss dieser auch für die Nutzung registriert sein. Die meisten Anbieter werden automatisch über das Azure-Portal oder die verwendete Befehlszeilenschnittstelle registriert.
+Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonnement kann für die Verwendung eines bestimmten Anbieters konfiguriert werden. Falls Ihre Aktivierung die Nutzung eines bestimmten Anbieters vorsieht, muss dieser auch für die Nutzung registriert sein. Die meisten Anbieter werden automatisch über das Azure-Vorschauportal oder die verwendete Befehlszeilenschnittstelle registriert, aber nicht alle.
 
 ### PowerShell
 
@@ -434,4 +434,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

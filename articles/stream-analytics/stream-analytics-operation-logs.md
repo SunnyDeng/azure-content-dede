@@ -14,10 +14,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/10/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
-# Vorgangsprotokolle
+# Grundlegendes zur Stream Analytics-Vorgangsprotokollen
 
 Alle Azure-Dienste stellen Benutzern operative Protokollierungsnachrichten bereit, um Details im Zusammenhang mit Verwaltungsvorgängen zu erfassen. In Azure Stream Analytics können diese Informationen für Debugzwecke wie z. B. das Anzeigen des Auftragsstatus, Auftragsfortschritts und von Fehlermeldungen verwendet werden, um den Fortschritt eines Auftrags im Laufe der Zeit von Beginn an, während der Verarbeitung und bis zur Ausgabe nachzuverfolgen.
 
@@ -96,4 +96,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

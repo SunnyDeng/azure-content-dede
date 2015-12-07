@@ -3,8 +3,8 @@
 	description="Erläutert, wie Sie mit dem Azure AD-Anwendungsproxy sicheren Remotezugriff auf Ihre lokalen Anwendungen bereitstellen können."
 	services="active-directory"
 	documentationCenter=""
-	authors="rkarlin"
-	manager="msStevenPo"
+	authors="kgremban"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/09/2015"
-	ms.author="rkarlin"/>
+	ms.author="kgremban"/>
 
 # Bereitstellen von sicherem Remotezugriff auf lokale Anwendungen
 
@@ -61,4 +61,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](../sign-up-organization.md)
 * [Azure-Identität](../fundamentals-identity.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

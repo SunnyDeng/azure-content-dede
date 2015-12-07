@@ -3,7 +3,7 @@
 	description="Hier erfahren Sie, wie Sie eine Ruby on Rails-basierte Website auf Azure mithilfe eines virtuellen Linux-Computers einrichten und hosten."
 	services="virtual-machines"
 	documentationCenter="ruby"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""
 	tags="azure-service-management"/>
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="06/09/2015"
-	ms.author="mwasson"/>
+	ms.date="11/20/2015"
+	ms.author="robmcm"/>
 
 
 
@@ -175,4 +175,4 @@ Informationen zum Verwenden von Azure-Diensten in der Ruby-Anwendung finden Sie 
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

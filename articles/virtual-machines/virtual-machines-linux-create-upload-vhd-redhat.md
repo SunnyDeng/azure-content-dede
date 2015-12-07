@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="11/23/2015" 
 	ms.author="mingzhan"/>
 
 
 # Vorbereiten eines auf Red Hat basierenden virtuellen Computers für Azure
-In diesem Artikel erfahren Sie, wie einen auf Red Hat Enterprise Linux (RHEL) basierenden virtuellen Computer für die Verwendung in Azure vorbereiten. In diesem Artikel werden die RHEL-Versionen 6.6, 6.7, 7.0 und 7.1 sowie die Hypervisoren Hyper-V, KVM und VMWare für die Vorbereitung vorgestellt.
+In diesem Artikel erfahren Sie, wie einen auf Red Hat Enterprise Linux (RHEL) basierenden virtuellen Computer für die Verwendung in Azure vorbereiten. In diesem Artikel werden die RHEL-Versionen 6.7 und 7.1 sowie die Hypervisoren Hyper-V, KVM und VMware für die Vorbereitung vorgestellt.
 
 
 
@@ -40,7 +40,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 - Wenn Sie zum Umwandeln der Datenträgerimages in das VHD-Format qemu-img verwenden, beachten Sie das bekannte Problem in den Versionen von qemu-img ab 2.2.1, das zu einer falsch formatierten VHD-Datei führt. Das Problem wird in einer zukünftigen qemu-img-Version behoben werden. Bis es soweit ist, empfiehlt es sich jedoch, auf die qemu-img-Version 2.2.0 oder niedriger zurückzugreifen.
 
 
-###RHEL 6.6/6.7
+###RHEL 6.7
 
 1.	Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
 
@@ -134,7 +134,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 16.	Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-###RHEL 7.0/7.1
+###RHEL 7.1
 
 1. Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
 
@@ -214,9 +214,9 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 
 ##Image von KVM vorbereiten 
-###RHEL 6.6/6.7
+###RHEL 6.7
 
-1.	Laden Sie das KVM-Image von RHEL 6.6/6.7 von der Red Hat-Website herunter.
+1.	Laden Sie das KVM-Image von RHEL 6.7 von der Red Hat-Website herunter.
 
 2.	Stammkennwort festlegen
 
@@ -325,26 +325,19 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 18.	Konvertieren Sie das qcow2-Image in das vhd-Format: Konvertieren Sie das Image zuerst in das raw-Format:
          
-         # qemu-img convert -f qcow2 –O raw rhel-6.6.qcow2 rhel-6.6.raw
-    Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
+         # qemu-img convert -f qcow2 –O raw rhel-6.7.qcow2 rhel-6.7.raw
+    Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist, und runden Sie ggf. die Größe auf 1 MB auf: # MB=$((1024*1024)) # size=$(qemu-img info -f raw --output json "rhel-6.7.raw" | \\ gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}') # rounded\_size=$((($size/$MB + 1)*$MB))
 
-         # MB=$((1024*1024))
-         # size=$(qemu-img info -f raw --output json "rhel-6.6.raw" | \
-                  gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
-         # rounded_size=$((($size/$MB + 1)*$MB))
-
-         # qemu-img resize rhel-6.6.raw $rounded_size
+         # qemu-img resize rhel-6.7.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
 
-         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.6.raw rhel-6.6.vhd
-
- 
+         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.7.raw rhel-6.7.vhd
 
 
-###RHEL 7.0/7.1
+###RHEL 7.1
 
-1.	Laden Sie das KVM-Image von RHEL 7.0 von der Red Hat-Website herunter.
+1.	Laden Sie das KVM-Image von RHEL 7.1 von der Red Hat-Website herunter.
 
 2.	Stammkennwort festlegen
 
@@ -434,7 +427,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # systemctl enable waagent.service
 
-14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
+14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -458,33 +451,33 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
     Konvertieren Sie das Bild zuerst in das raw-Format:
 
-         # qemu-img convert -f qcow2 –O raw rhel-7.0.qcow2 rhel-7.0.raw
+         # qemu-img convert -f qcow2 –O raw rhel-7.1.qcow2 rhel-7.1.raw
 
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
 
          # MB=$((1024*1024))
-         # size=$(qemu-img info -f raw --output json "rhel-7.0.raw" | \
+         # size=$(qemu-img info -f raw --output json "rhel-7.1.raw" | \
                   gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
          # rounded_size=$((($size/$MB + 1)*$MB))
 
-         # qemu-img resize rhel-7.0.raw $rounded_size
+         # qemu-img resize rhel-7.1.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
 
-         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.0.raw rhel-7.0.vhd
+         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.1.raw rhel-7.1.vhd
 
 
-##Vorbereiten eines Images von VMWare
+##Vorbereiten eines Images von VMware
 ###Voraussetzungen
-In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Computer von RHEL in VMWare installiert haben. Weitere Informationen zum Installieren eines Betriebssystems in VMWare finden Sie im [Guest Operating System Installation Guide](http://partnerweb.vmware.com/GOSIG/home.html) (in englischer Sprache).
+In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Computer von RHEL in VMware installiert haben. Weitere Informationen zum Installieren eines Betriebssystems in VMware finden Sie im [VMware-Installationshandbuch für Gastbetriebssysteme](http://partnerweb.vmware.com/GOSIG/home.html).
  
 - Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder RAID kann wahlweise auf Datenträgern verwendet werden.
 
 - Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
-- Wählen Sie beim Erstellen der virtuellen Festplatte **Store virtual disk as a single file**.
+- Wählen Sie beim Erstellen der virtuellen Festplatte **Virtuellen Datenträger als einzelne Datei speichern**.
 
-###RHEL 6.6/6.7
+###RHEL 6.7
 1.	Deinstallieren Sie den NetworkManager, indem Sie den folgenden Befehl ausführen:
 
          # sudo rpm -e --nodeps NetworkManager
@@ -549,7 +542,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 11.	Richten Sie keinen SWAP-Bereich auf dem Betriebssystemdatenträger ein:
     
-    Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
+    Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -571,23 +564,21 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
     Konvertieren Sie das Bild zuerst in das raw-Format:
 
-        # qemu-img convert -f vmdk –O raw rhel-6.6.vmdk rhel-6.6.raw
+        # qemu-img convert -f vmdk –O raw rhel-6.7.vmdk rhel-6.7.raw
 
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
 
         # MB=$((1024*1024))
-        # size=$(qemu-img info -f raw --output json "rhel-6.6.raw" | \
+        # size=$(qemu-img info -f raw --output json "rhel-6.7.raw" | \
                 gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
         # rounded_size=$((($size/$MB + 1)*$MB))
-
-        # qemu-img resize rhel-6.6.raw $rounded_size
+        # qemu-img resize rhel-6.7.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
 
-        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.6.raw rhel-6.6.vhd
+        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.7.raw rhel-6.7.vhd
 
-
-###RHEL 7.0/7.1
+###RHEL 7.1
 
 1.	Erstellen Sie eine Datei mit der Benennung **network** im Verzeichnis "/etc/sysconfig/", die den folgenden Text enthält:
 
@@ -653,7 +644,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
         # sudo yum install WALinuxAgent
         # sudo systemctl enable waagent.service
 
-11.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
+11.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -675,26 +666,25 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
     Konvertieren Sie das Bild zuerst in das raw-Format:
 
-        # qemu-img convert -f vmdk –O raw rhel-7.0.vmdk rhel-7.0.raw
+        # qemu-img convert -f vmdk –O raw rhel-7.1.vmdk rhel-7.1.raw
 
     Stellen Sie sicher, dass das raw-Image auf 1 MB ausgerichtet ist und runden Sie andernfalls die Größe auf 1 MB auf:
 
         # MB=$((1024*1024))
-        # size=$(qemu-img info -f raw --output json "rhel-7.0.raw" | \
+        # size=$(qemu-img info -f raw --output json "rhel-7.1.raw" | \
                  gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
         # rounded_size=$((($size/$MB + 1)*$MB))
-
-        # qemu-img resize rhel-7.0.raw $rounded_size
+        # qemu-img resize rhel-7.1.raw $rounded_size
 
     Konvertieren Sie den raw-Datenträger in das vhd-Format mit festgelegter Größe:
 
-        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.0.raw rhel-7.0.vhd
+        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.1.raw rhel-7.1.vhd
 
 
 ##Mit Kickstart-Datei automatisch aus ISO vorbereiten
-###RHEL 7.0/7.1
+###RHEL 7.1
 
-1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstart-Installation finden Sie im [KICKSTART INSTALLATIONS](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html) (in englischer Sprache).
+1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstartinstallation finden Sie unter [Kickstartinstallationen](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
 
         # Kickstart for provisioning a RHEL 7 Azure VM
@@ -808,11 +798,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 2.	Legen Sie die Kickstart-Datei an einem Ort ab, der aus dem gesamten Installationssystem erreichbar ist.
  
-3.	Erstellen Sie in Hyper-V Manager einen neuen virtuellen Computer. Wählen Sie auf der Seite **Virtuelle Festplatte verbinden** die Option **Virtuelle Festplatte später zuordnen**, und schließen Sie den Assistenten für neue virtuelle Computer ab.
+3.	Erstellen Sie in Hyper-V Manager einen neuen virtuellen Computer. Wählen Sie auf der Seite **Virtuelle Festplatte verbinden** die Option **Virtuelle Festplatte später zuordnen** aus, und schließen Sie den Assistenten für neue virtuelle Computer ab.
 
 4.	Öffnen Sie die VM-Einstellungen:
 
-    a. Fügen Sie an den virtuellen Computer eine neue virtuelle Festplatte an, und wählen Sie **VHD-Format** und **Feste Größe** aus.
+    a. Ordnen Sie dem virtuellen Computer eine neue virtuelle Festplatte zu, und wählen Sie **VHD-Format** und **Feste Größe** aus.
     
     b. Ordnen Sie die ISO-Installation dem DVD-Laufwerk zu.
 
@@ -824,28 +814,20 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 7.	Warten Sie, bis die Installation abgeschlossen ist. Der virtuelle Computer wird dann automatisch heruntergefahren. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-##Bekannte Probleme:
-Es gibt 2 bekannte Probleme beim Verwenden von RHEL 6.6, 7.0 und 7.1 in Hyper-V und Azure.
+##Bekannte Probleme
+Es gibt bekannte Probleme beim Verwenden von RHEL 7.1 in Hyper-V und Azure.
 
-###Problem 1: Timeout bereitstellen
-Dieses Problem kann während des Startens mit RHEL in Hyper-V und Azure auftreten. Dieser Fehler tritt eher bei RHEL 6.6 auf.
+###Problem: Einfrieren von Datenträger-E/A 
 
-Reproduktionsrate:
-
-Das Problem tritt zeitweise auf Am häufigsten tritt es auf kleineren virtuellen Computern mit einem einzelnen vCPU und noch häufiger auf ausgelasteten Servern auf.
-
-
-###Problem 2: Datenträger-E/A einfrieren 
-
-Dieses Problem kann bei häufigen Datenträger-E/A-Aktivitäten mit RHEL 6.6, 7.0 und 7.1 in Hyper-V und Azure auftreten.
+Dieses Problem kann bei häufigen Datenträger-E/A-Aktivitäten mit RHEL 7.1 in Hyper-V und Azure auftreten.
 
 Reproduktionsrate:
 
-Dieses Problem tritt zeitweise auf, jedoch häufiger während häufigen Datenträger-E/A-Vorgängen in Hyper-V und Azure.
+Dieses Problem tritt zeitweise auf, jedoch öfter während häufigen Datenträger-E/A-Vorgängen in Hyper-V und Azure.
 
     
-[AZURE.NOTE]Diese beiden bekannten Probleme werden bereits von Red Hat gelöst. Um die zugeordneten Fehlerbehebungen zu installieren, können Sie folgenden Befehl ausführen:
+[AZURE.NOTE]Dieses bekannte Problem wurde von Red Hat bereits behoben. Um die entsprechenden Fixes zu installieren, führen Sie folgenden Befehl aus:
 
     # sudo yum update
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

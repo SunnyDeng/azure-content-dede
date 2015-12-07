@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Was ist Azure Multi-Factor Authentication?" 
+	pageTitle="Was ist Azure Multi-Factor Authentication? | Microsoft Azure" 
 	description="Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zusätzliche Sicherheitsebene für Benutzeranmeldungen und -transaktionen." 
+	keywords="Einführung in die MFA, MFA-Übersicht"
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015"
+	ms.date="11/20/2015" 
 	ms.author="billmath"/>
 
 # Was ist Azure Multi-Factor Authentication?
@@ -204,4 +205,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 
 <center> [![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &#160;&#160;&#160;&#160;&#160; </center>
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

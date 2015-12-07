@@ -21,7 +21,7 @@
 # Bereitstellen eines virtuellen Computers mit SQL Server in Azure
 
 > [AZURE.SELECTOR]
-- [Portal](virtual-machines-provision-sql-server.md)
+- [Azure portal](virtual-machines-provision-sql-server.md)
 - [PowerShell](virtual-machines-sql-server-create-vm-with-powershell.md)
 
 ## Übersicht
@@ -32,18 +32,18 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
-* [Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Computers aus dem Katalog](#Provision)
+* [Herstellen einer Verbindung mit dem Azure-Portal und Bereitstellen eines virtuellen Computers aus dem Katalog](#Provision)
 * [Öffnen des virtuellen Computers mithilfe von Remotedesktop und vollständige Einrichtung](#RemoteDesktop)
 * [Fertigstellen der Konfigurationsschritte, um mithilfe von SQL Server Management Studio auf einem anderen Computer eine Verbindung zum virtuellen Computer herzustellen](#SSMS)
 * [Nächste Schritte](#Optional)
 
->[AZURE.NOTE]Dieser Artikel beschreibt, wie virtuelle SQL Server-Computer mit dem vorhandenen Azure-Verwaltungsportal bereitgestellt werden. Es ist jedoch auch möglich, SQL Server-VMs im [neuen Portal](https://manage.windowsazure.com) zu erstellen und zu verwalten. Das neue Portal bietet einige Vorteile, zum Beispiel die standardmäßige Verwendung von Storage Premium und weitere Optionen, zu denen die automatische Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen gehören. Zukünftiger Inhalt wird schrittweise Anleitungen umfassen.
+>[AZURE.NOTE]Dieser Artikel beschreibt, wie virtuelle SQL Server-Computer mit dem vorhandenen Portal bereitgestellt werden. Es ist jedoch auch möglich, SQL Server-VMs im [neuen Portal](https://manage.windowsazure.com) zu erstellen und zu verwalten. Das neue Portal bietet einige Vorteile, zum Beispiel die standardmäßige Verwendung von Storage Premium und weitere Optionen, zu denen die automatische Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen gehören. Zukünftiger Inhalt wird schrittweise Anleitungen umfassen.
 
 ##<a id="Provision">Bereitstellen eines virtuellen SQL Server-Computers aus dem Katalog</a>
 
-1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) bei Ihrem Konto an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/) besuchen.
+1. Melden Sie sich mit Ihrem Konto beim [Azure-Portal](http://manage.windowsazure.com) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/) besuchen.
 
-2. Klicken Sie im Azure-Verwaltungsportal unten links auf der Webseite auf **+NEU**, klicken Sie auf **COMPUTE**, klicken Sie auf **VIRTUELLER COMPUTER** und dann auf **AUS GALERIE**.
+2. Klicken Sie im Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
 3. Klicken Sie auf der Seite **Image auswählen** auf **SQL SERVER**. Wählen Sie dann ein SQL Server-Image aus. Klicken Sie am unteren rechten Rand der Seite auf den Pfeil "Weiter".
 
@@ -155,4 +155,4 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

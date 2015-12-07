@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Schreiben von Abfragen| Microsoft Azure" 
-	description="Schreiben von Abfragen – Lernpfadsegment"
+	description="Schreiben von Abfragen für Stream Analytics | Lernpfadsegment."
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
@@ -13,10 +13,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
-# Schreiben von Abfragen
+# Schreiben von Abfragen in Stream Analytics
 
 Die Stream-Verarbeitungslogik in Azure-Stream Analytics wird als "stehende Abfrage" implementiert, die vor Starten eines Auftrags definiert wird und auf Daten ausgeführt wird, während sie den Auftrag erreicht. Die Datenumwandlung wird in einer SQL-ähnlichen Abfragesprache ausgedrückt, die größtenteils eine Teilmenge von T-SQL mit einigen hinzugefügten Spracherweiterungen wie [Windowing](https://msdn.microsoft.com/library/azure/dn835019.aspx) ist, die zum Ausdrücken von zeitlicher Semantik verwendet wird.
 
@@ -70,4 +70,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/21/2015"
+   ms.date="11/20/2015"
    ms.author="telmos" />
 
 # Einrichten einer statischen privaten IP-Adresse in PowerShell
@@ -34,7 +34,7 @@ Erstellen Sie in einem VNet mit dem Namen *TestVNet* im Subnetz *FrontEnd* einen
 
 [AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
-1. Legen Sie die Variablen für das Speicherkonto, den Speicherort, die Ressourcengruppe und die zu verwendenden Anmeldeinformationen fest. Sie müssen einen Benutzernamen und ein Kennwort für den virtuellen Computer eingeben. Das Speicherkonto und die Ressourcengruppe müssen bereits vorhanden sein.
+1. Legen Sie die Variablen für das Speicherkonto, den Speicherort, die Ressourcengruppe und die zu verwendenden Anmeldeinformationen fest. Sie müssen einen Benutzernamen und ein Kennwort für den virtuellen Computer eingeben. Die Speichergruppe und die Ressourcengruppe müssen bereits vorhanden sein.
 
 		$stName = "vnetstorage"
 		$locName = "Central US"
@@ -43,26 +43,26 @@ Erstellen Sie in einem VNet mit dem Namen *TestVNet* im Subnetz *FrontEnd* einen
 
 3. Rufen Sie das virtuelle Netzwerk und das Subnetz an, in dem der virtuelle Computer erstellt werden soll.
 
-	    $vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet	
+	    $vnet = Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet	
 	    $subnet = $vnet.Subnets[0].Id
 
 4. Erstellen Sie, sofern erforderlich, eine öffentliche IP-Adresse für den Zugriff auf den virtuellen Computer aus dem Internet.
 
-		$pip = New-AzurePublicIpAddress -Name TestPIP -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
+		$pip = New-AzureRmPublicIpAddress -Name TestPIP -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
 
 5. Erstellen Sie eine Netzwerkkarte, und verwenden Sie dabei die statische private IP-Adresse, die Sie dem virtuellen Computer zuweisen möchten. Stellen Sie sicher, dass die IP-Adresse innerhalb des Subnetzbereichs liegt, zu dem Sie den virtuellen Computer hinzufügen. Dies ist der wesentliche Schritt für diesen Artikel, bei dem Sie die private IP-Adresse als statische IP-Adresse festlegen.
 
-		$nic = New-AzureNetworkInterface -Name TestNIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -PrivateIpAddress 192.168.1.101
+		$nic = New-AzureRmNetworkInterface -Name TestNIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -PrivateIpAddress 192.168.1.101
 
 6. Erstellen Sie den virtuellen Computer mit der zuvor erstellten Netzwerkkarte.
 
-		$vm = New-AzureVMConfig -VMName DNS01 -VMSize "Standard_A1"
-		$vm = Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName DNS01  -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-		$vm = Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-		$vm = Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
+		$vm = New-AzureRmVMConfig -VMName DNS01 -VMSize "Standard_A1"
+		$vm = Set-AzureRmVMOperatingSystem -VM $vm -Windows -ComputerName DNS01  -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+		$vm = Set-AzureRmVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+		$vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id
 		$osDiskUri = $storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/WindowsVMosDisk.vhd"
-		$vm = Set-AzureVMOSDisk -VM $vm -Name "windowsvmosdisk" -VhdUri $osDiskUri -CreateOption fromImage
-		New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm 
+		$vm = Set-AzureRmVMOSDisk -VM $vm -Name "windowsvmosdisk" -VhdUri $osDiskUri -CreateOption fromImage
+		New-AzureRmVM -ResourceGroupName $rgName -Location $locName -VM $vm 
 
 	Erwartete Ausgabe:
 
@@ -79,7 +79,7 @@ Erstellen Sie in einem VNet mit dem Namen *TestVNet* im Subnetz *FrontEnd* einen
 ## Abrufen der Informationen zur statischen privaten IP-Adresse für einen virtuellen Computer
 Führen Sie den folgenden PowerShell-Befehl aus, und sehen Sie sich die Werte für *PrivateIpAddress* und *PrivateIpAllocationMethod* an, um Informationen zur statischen privaten IP-Adresse des virtuellen Computers zu erhalten, der mit dem obigen Skript erstellt wurde:
 
-	Get-AzureNetworkInterface -Name TestNIC -ResourceGroupName TestRG
+	Get-AzureRmNetworkInterface -Name TestNIC -ResourceGroupName TestRG
 
 Erwartete Ausgabe:
 
@@ -129,9 +129,9 @@ Erwartete Ausgabe:
 ## Entfernen einer statischen privaten IP-Adresse von einem virtuellen Computer
 Führen Sie die folgenden PowerShell-Befehle aus, um die statische private IP-Adresse zu entfernen, die dem virtuellen Computer im obigen Skript hinzugefügt wurde:
 	
-	$nic=Get-AzureNetworkInterface -Name TestNIC -ResourceGroupName TestRG
+	$nic=Get-AzureRmNetworkInterface -Name TestNIC -ResourceGroupName TestRG
 	$nic.IpConfigurations[0].PrivateIpAllocationMethod = "Dynamic"
-	Set-AzureNetworkInterface -NetworkInterface $nic
+	Set-AzureRmNetworkInterface -NetworkInterface $nic
 
 Erwartete Ausgabe:
 
@@ -181,10 +181,10 @@ Erwartete Ausgabe:
 ## Hinzufügen einer statischen privaten IP-Adresse zu einem vorhandenen virtuellen Computer
 Führen Sie folgenden Befehl aus, um dem virtuellen Computer, der mit dem obigen Skript erstellt wurde, eine statische private IP-Adresse hinzuzufügen:
 
-	$nic=Get-AzureNetworkInterface -Name TestNIC -ResourceGroupName TestRG
+	$nic=Get-AzureRmNetworkInterface -Name TestNIC -ResourceGroupName TestRG
 	$nic.IpConfigurations[0].PrivateIpAllocationMethod = "Static"
 	$nic.IpConfigurations[0].PrivateIpAddress = "192.168.1.101"
-	Set-AzureNetworkInterface -NetworkInterface $nic
+	Set-AzureRmNetworkInterface -NetworkInterface $nic
 
 ## Nächste Schritte
 
@@ -192,4 +192,4 @@ Führen Sie folgenden Befehl aus, um dem virtuellen Computer, der mit dem obigen
 - Erfahren Sie mehr über [öffentliche IP-Adressen auf Instanzebene (ILPIP)](../virtual-networks-instance-level-public-ip).
 - Lesen Sie die Informationen unter [Vorgänge für reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

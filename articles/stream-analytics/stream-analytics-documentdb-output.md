@@ -14,10 +14,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
-# DocumentDB als Azure Stream Analytics-Ausgabe
+# Grundlegendes zu DocumentDB als Azure Stream Analytics-Ausgabe
 
 Azure Stream Analytics unterstützt nun [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) als Ausgabe, was eine Datenarchivierung und Abfragen unstrukturierter JSON-Daten mit kurzer Wartezeit ermöglicht. In diesem Dokument wird beschrieben, wie diese Integration am besten implementiert wird. Falls Sie noch nicht mit DocumentDB vertraut sind, sehen Sie sich zum Einstieg den [Lernpfad für DocumentDB](https://azure.microsoft.com/documentation/learning-paths/documentdb/) an.
 
@@ -55,8 +55,8 @@ Beim Erstellen einer DocumentDB-Datenbank als Ausgabe in Stream Analytics wird e
 -   **Kontoname**: Der Name oder Endpunkt-URI des DocumentDB-Kontos.  
 -   **Kontoschlüssel**: Der gemeinsame Zugriffsschlüssel für das DocumentDB-Konto.  
 -   **Datenbank**: Der Name der DocumentDB-Datenbank.  
--   **Muster des Sammlungsnamens**: Das Muster für die zu verwendenden Sammlungen. Das Sammlungsnamenformat kann mit dem optionalen Token {partition} gebildet werden, wobei Partitionen bei 0 beginnen. Es folgen Beispiele gültiger Eingaben: 1.) MyCollection: Eine Sammlung mit dem Namen „MyCollection“ muss vorhanden sein. 2.) MyCollection{partition}: Solche Auflistungen müssen vorhanden sein: „MyCollection0“, „MyCollection1“, „MyCollection2“ usw.  
+-   **Muster für Sammlungsnamen**: Das Muster für die zu verwendenden Sammlungen. Das Sammlungsnamenformat kann mit dem optionalen Token {partition} gebildet werden, wobei Partitionen bei 0 beginnen. Es folgen Beispiele gültiger Eingaben: 1.) MyCollection: Eine Sammlung mit dem Namen „MyCollection“ muss vorhanden sein. 2.) MyCollection{partition}: Solche Auflistungen müssen vorhanden sein: „MyCollection0“, „MyCollection1“, „MyCollection2“ usw.  
 -   **Partitionsschlüssel**: Der Name des Felds in Ausgabeereignissen, das zur Angabe des Schlüssels für die sammlungsübergreifende Partitionierung der Ausgabe verwendet wird. Für die Ausgabe einer einzelnen Sammlung kann eine beliebige Ausgabespalte wie „PartitionId“ verwendet werden.  
 -   **Dokument-ID**: Optional. Der Name des Felds in Ausgabeereignissen, das zur Angabe des Primärschlüssels verwendet wird, auf dem Einfüge- und Aktualisierungsvorgänge basieren.  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

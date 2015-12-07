@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Erste Schritte mit SQL Data Warehouse Transparent Data Encryption (TDE) Portal | Microsoft Azure" 
-	description="Erste Schritte mit SQL Data Warehouse Transparent Data Encryption (TDE) Portal" 
+	pageTitle="Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse | Microsoft Azure" 
+	description="Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse" 
 	services="sql-data-warehouse" 
 	documentationCenter="" 
 	authors="twounder" 
-	manager="" 
+	manager="barbkess" 
 	editor=""/>
 
 <tags 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/21/2015" 
+	ms.date="11/20/2015" 
 	ms.author="twounder"/>
  
-# Erste Schritte mit Transparent Data Encryption (TDE)
+# Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse
 > [AZURE.SELECTOR]
 - [Azure Portal](sql-data-warehouse-encryption-tde.md)
 - [TSQL](sql-data-warehouse-encryption-tde-tsql.md)
@@ -49,7 +49,7 @@ Führen Sie die folgenden Schritte aus, um TDE für ein SQL Data Warehouse zu de
 
 
 <!--Anchors-->
-[Transparente Datenverschlüsselung (TDE)]: https://msdn.microsoft.com/de-DE/library/bb934049.aspx
+[Transparente Datenverschlüsselung (TDE)]: https://msdn.microsoft.com/library/bb934049.aspx
 
 
 <!--Image references-->
@@ -61,4 +61,4 @@ Führen Sie die folgenden Schritte aus, um TDE für ein SQL Data Warehouse zu de
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

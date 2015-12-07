@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erstellen von virtuellen Oracle Database-Computern im Azure-Portal | Microsoft Azure" 
-	description="Erfarhen Sie, wie Sie virtuelle Computer mit einer Oracle-Datenbank mit dem klassischen Bereitstellungsmodell und dem Azure-Vorschauportal erstellen." 
-	services="virtual-machines" 
-	authors="bbenz" 
+<properties
+	pageTitle="Erstellen von virtuellen Oracle Database-Computern im Azure-Portal | Microsoft Azure"
+	description="Erfarhen Sie, wie Sie virtuelle Computer mit einer Oracle-Datenbank mit dem klassischen Bereitstellungsmodell und dem Azure-Vorschauportal erstellen."
+	services="virtual-machines"
+	authors="bbenz"
 	documentationCenter=""
 	tags="azure-service-management"/>
-	
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="Windows" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
+
+<tags
+	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="Windows"
+	ms.workload="infrastructure-services"
+	ms.date="06/22/2015"
 	ms.author="bbenz" />
-	
+
 #Erstellen eines virtuellen Oracle Database-Computers in Azure
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
@@ -24,7 +24,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine,
 
 ##So erstellen Sie einen virtuellen Oracle Database-Computer in Azure
 
-1.	Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
+1.	Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
 
 2.	Klicken Sie auf **Marketplace**, auf **Compute**, und geben Sie **Oracle** in das Suchfeld ein.
 
@@ -57,7 +57,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine,
 
 ##So erstellen Sie Ihre Datenbank mit dem virtuellen Oracle Database-Computer in Azure
 
-1.	Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
+1.	Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
 
 2.	Klicken Sie auf **Virtuelle Computer**.
 
@@ -149,7 +149,7 @@ Um Remoteverbindungen mit Ihrer Datenbank zuzulassen (z. B. für einen Clientco
 
 ### Erstellen Sie einen öffentlichen Endpunkt für Port 1521:
 
-1.	Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
+1.	Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
 
 2.	Klicken Sie auf **Durchsuchen**.
 
@@ -200,4 +200,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

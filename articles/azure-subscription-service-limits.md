@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/10/2015"
+	ms.date="11/17/2015"
 	ms.author="jroth"/>
 
 # Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen
@@ -119,19 +119,27 @@ Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und
 
 ### Speichergrenzwerte
 
-#### Standardmäßige Speichergrenzwerte
+Weitere Informationen zu Grenzwerten für Speicherkonten finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](../articles/storage/storage-scalability-targets.md).
+
+#### Grenzen des Speicherdiensts
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-Weitere Informationen zu Grenzwerten für Speicherkonten finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](../articles/storage/storage-scalability-targets.md).
+#### Einschränkungen für Datenträger virtueller Computer 
 
+[AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-#### Storage Premium-Grenzwerte
+Weitere Informationen finden Sie unter [Größen virtueller Computer](../articles/virtual-machines/virtual-machines-size-specs.md).
 
-[AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
+**Standardspeicherkonten**
 
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../includes/azure-storage-limits-vm-disks-standard.md)]
 
-#### Speichergrenzwerte - Azure-Ressourcen-Manager
+**Storage Premium-Konten**
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../includes/azure-storage-limits-vm-disks-premium.md)]
+
+#### Grenzen für Speicherressourcenanbieter
 
 [AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -174,7 +182,7 @@ In der folgende Tabelle werden die Grenzwerte für Azure Biztalk Services aufgef
 
 [AZURE.INCLUDE [azure-search-limits](../includes/azure-search-limits.md)]
 
-Weitere Informationen zu den Grenzen für Azure Search finden Sie unter [Grenzen und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
+Weitere Informationen zu maximalen Grenzwerten für den freigegebenen Dienst sowie eine Aufschlüsselung der Grenzwerte für Schlüssel, Anfragen und Antworten finden Sie unter [Diensteinschränkungen in Azure Search](search/search-limits-quotas-capacity.md).
 
 ### Media Services-Einschränkungen
 
@@ -257,7 +265,7 @@ Weitere Informationen zu den Grenzen für Azure Search finden Sie unter [Grenzen
 
 ### Einschränkungen für SQL-Datenbanken
 
-Grenzwerte für SQL-Datenbanken finden Sie unter [Ressourceneinschränkungen für SQL-Datenbank](sql-database/sql-database-resource-limits.md).
+Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkungen für SQL-Datenbank](sql-database/sql-database-resource-limits.md).
 
 ## Weitere Informationen
 
@@ -265,4 +273,4 @@ Grenzwerte für SQL-Datenbanken finden Sie unter [Ressourceneinschränkungen fü
 
 [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

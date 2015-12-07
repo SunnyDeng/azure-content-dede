@@ -19,7 +19,7 @@
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
+- [Azure portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
 - [PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
 
 <br/>
@@ -631,4 +631,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

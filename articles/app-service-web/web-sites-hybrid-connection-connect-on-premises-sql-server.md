@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="11/13/2015"
 	ms.author="cephalin"/>
 
 # Verbinden eines lokalen SQL-Servers von einer Web-App in Azure App Service über Hybridverbindungen
@@ -139,7 +139,7 @@ Als Nächstes erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 <a name="CreateHC"></a>
 ## C. Erstellen einer Hybridverbindung und eines BizTalk-Diensts ##
 
-1. Scrollen Sie zurück im Portal zum Blatt für Ihre Web-App, und klicken Sie auf **///Netzwerkfunktionsstatus** > **Hybridverbindungsendpunkte konfigurieren**.
+1. Wechseln Sie wieder im Verwaltungsportal zu den Einstellungen, und klicken Sie auf **Netzwerk** > **Configure your hybrid connection endpoints**.
 
 	![Hybridverbindungen][CreateHCHCIcon]
 
@@ -363,4 +363,4 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestSSMSTree]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F10HCTestSSMSTree.png
 [HCTestShowMemberDb]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

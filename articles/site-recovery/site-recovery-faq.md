@@ -78,11 +78,11 @@ Dies wird nicht unterstützt. Senden Sie uns Ihr Feedback über das [Azure Site 
 ## Versionsunterstützung
 
 ### Welche Versionen von Windows Server-Hosts und -Clustern werden unterstützt?
-Wenn Sie sich bei der Replikation und dem Schutz zwischen Hyper-V-Standorten für das Hyper-V-Replikat entscheiden, können Sie Windows Server 2012 und Windows Server 2012 R2 verwenden.
+Wenn Sie sich bei der Replikation und dem Schutz zwischen zwei lokalen Hyper-V-Standorten für das Hyper-V-Replikat entscheiden, können Sie Windows Server 2012 und Windows Server 2012 R2 verwenden. Windows Server 2012 R2 ist erforderlich, wenn Sie die Replikation von einem Hyper-V-Server in Azure einrichten möchten.
 
 
-### Welche Versionen von Hyper-V-Gastbetriebssystemen werden unterstützt?
-Die aktuelle Liste der unterstützten Gastbetriebssysteme finden Sie unter [Grundlegendes zu virtuellen Computern und Gastbetriebssystemen](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).
+### Welche Versionen von Gastbetriebssystemen werden unterstützt?
+Die aktuelle Liste zum lokalen und Remoteschutz der unterstützten Gastbetriebssysteme finden Sie unter [Grundlegendes zu virtuellen Computern und Gastbetriebssystemen](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx). Bei Szenarios mit Hyper-V und Azure unterstützt Azure Site Recovery alle Gastbetriebssysteme, die von Azure unterstützt werden. Informationen für Szenarios mit VMware und Azure finden Sie in [diesem Artikel](site-recovery-vmware-to-azure.md#before-you-start).
 
 ### Kann ich den Schutz für virtuelle Computer konfigurieren, wenn Hyper-V unter einem Clientbetriebssystem ausgeführt wird?
 
@@ -148,12 +148,6 @@ Es ist keine bestimmte Einstellung erforderlich. Die Anbieterkomponenten auf dem
 ### Muss der Hyper-V-Server Mitglied einer Domäne sein?
 
 Nein, der Server muss sich nicht in einer Domäne befinden.
-
-### Welche Versionen von Windows Server-Hosts und -Clustern werden unterstützt?
-Bei Verwendung der ASR- und Hyper-V-Replikation zwischen Hyper-V-Standorten und Azure können Windows Server 2012 und Windows Server 2012 R2 verwendet werden.
-
-### Welche Versionen von Gastbetriebssystemen werden unterstützt?
-Die aktuelle Liste der unterstützten Gastbetriebssysteme finden Sie unter [Grundlegendes zu virtuellen Computern und Gastbetriebssystemen](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).
 
 ## Bereitstellung zwischen zwei VMM-Rechenzentren
 
@@ -256,4 +250,4 @@ So stellen Sie ASR bereit:
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

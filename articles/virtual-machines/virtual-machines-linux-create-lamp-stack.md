@@ -51,10 +51,10 @@ Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel 
 -	Klicken Sie auf **Generieren**, um die Schlüssel zu generieren. Während des Vorgangs können Sie den Zufallsfaktor durch Bewegen der Maus über den leeren Bereich im Fenster erhöhen. ![][1]
 -	Nach dem Generierungsvorgang zeigt "Puttygen.exe" den generierten Schlüssel an. Beispiel: ![][2]
 -	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei mit dem Namen **publicKey.pem**. Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
--	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei mit dem Namen **privateKey.ppk**.
+-	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei namens **privateKey.ppk**.
 
-###Schritt 2: Erstellen des Images im Azure-Portal
-Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image anhand dieser Anleitungen. Wählen Sie dabei das Linux-Image basierend auf Ihren Anforderungen aus. Dieses Beispiel verwendet das Ubuntu-Image 14.04.
+###Schritt 2: Erstellen des Bildes im Azure-Vorschauportal
+Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image anhand dieser Anleitungen. Wählen Sie dabei das Linux-Image basierend auf Ihren Anforderungen aus. Dieses Beispiel verwendet das Ubuntu-Image 14.04.
 
 ![][3]
 
@@ -76,7 +76,7 @@ Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem �
 
 TCP-Port 80 ist die Standardportnummer, an der Apache lauscht. Wenn Sie diesen Port mit einem Azure-Endpunkt öffnen, können Sie und andere Internetclients auf den Apache-Webserver zugreifen.
 
-Klicken Sie im Azure-Portal auf **Durchsuchen -> Virtueller Computer**, und klicken Sie dann auf den virtuellen Computer, den Sie erstellt haben.
+Klicken Sie im Azure-Vorschauportal auf **Durchsuchen -> Virtueller Computer**, und klicken Sie dann auf den von Ihnen erstellten virtuellen Computer.
 
 ![][5]
 
@@ -102,7 +102,7 @@ Klicken Sie auf **OK** , um den Endpunkt Ihrem virtuellen Computer hinzuzufügen
 ###Schritt 2: Herstellen einer Verbindung mit dem Image, das Sie erstellt haben
 Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihrem neuen virtuellen Computer auswählen. In diesem Beispiel wird Putty verwendet.
 
-Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Portal ab. Klicken Sie auf **Durchsuchen -> Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
+Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Vorschauportal ab. Klicken Sie auf **Durchsuchen -> Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
 
 Rufen Sie die Portnummer für SSH-Verbindungen aus dem Feld **SSH** ab. Beispiel:
 
@@ -456,4 +456,4 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,8 +1,9 @@
-**Virtual machine disks: per disk limits**
+**Datenträger virtueller Computer: Einschränkungen pro Datenträger**
 
- VM Tier | Basic Tier VM | Standard Tier VM
+ VM-Ebene | VM der Basic-Ebene | VM der Standard-Ebene
 ---|---|---
-Disk size | 1023 GB | 1023 GB
-Max 8 KB IOPS per persistent disk | 300 | 500
-Max number of highly utilized disks | 66 | 40
+Datenträgergröße | 1023 GB | 1023 GB
+Maximal 8 KB IOPS pro persistentem Laufwerk | 300 | 500
+Max. Anzahl von Datenträgern mit hoher Auslastung | 66 | 40
 
+<!---HONumber=AcomDC_1125_2015-->

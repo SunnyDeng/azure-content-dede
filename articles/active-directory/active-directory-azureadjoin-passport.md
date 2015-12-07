@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport
@@ -29,6 +29,7 @@ Der private Schlüssel wird ausschließlich über eine "Benutzergeste" verfügba
 Der öffentliche Schlüssel wird mit Azure Active Directory und Windows Server Active Directory (für lokale Bereitstellungen) registriert. Die Identitätsanbieter validieren den Benutzer durch die Zuordnung des öffentlichen Schlüssels des Benutzers auf den privaten Schlüssel und bieten Anmeldeinformationen über ein Einmalkennwort, PhoneFactor oder einen anderen Benachrichtigungsmechanismus.
 
 ## Warum Unternehmen Microsoft Passport übernehmen sollten
+
 Durch Aktivieren von Microsoft Passport können Unternehmen ihre Ressourcen mithilfe folgender Funktionen noch besser sichern:
 
 * Einrichten von Microsoft Passport mit einer Option, die Hardware bevorzugt. Das bedeutet, dass Schlüssel je nach Verfügbarkeit auf TPM 1.2 oder TPM 2.0 generiert werden. Falls TPM nicht verfügbar ist, werden die Schlüssel durch Software generiert. 
@@ -52,7 +53,7 @@ Das obige Diagramm veranschaulicht das private/öffentliche Schlüsselpaar und d
 
 1. Der Benutzer weist seine Identität durch mehrere integrierte Überprüfungsmethoden (Gesten, physische Smartcards, mehrstufige Authentifizierung) nach, und sendet diese Informationen an den Identitätsanbieter, z. B. Azure Active Directory oder Active Directory.
 
-2.  Das Gerät erstellt dann den Schlüssel, bestätigt den Schlüssel, nimmt den öffentlichen Teil dieses Schlüssels, fügt Sendeanweisungen hinzu, führt die Anmeldung durch und sendet den Schlüssel an den Identitätsanbieter, um ihn zu registrieren.
+2. Das Gerät erstellt dann den Schlüssel, bestätigt den Schlüssel, nimmt den öffentlichen Teil dieses Schlüssels, fügt Sendeanweisungen hinzu, führt die Anmeldung durch und sendet den Schlüssel an den Identitätsanbieter, um ihn zu registrieren.
 
 3. Sobald der öffentliche Teil des Schlüssels bei einem Identitätsanbieter registriert ist, fordert er das Gerät dazu auf, sich mit dem privaten Teil des Schlüssels anzumelden. Der Identitätsanbieter überprüft dann das Authentifizierungstoken und stellt es aus, damit der Benutzer auf geschützte Ressourcen zugreifen kann.
 
@@ -71,13 +72,13 @@ Auf Benutzerebene
 
 Ausführliche Anweisungen zur Bereitstellung finden Sie unter [Microsoft Passport für die Arbeit in der Organisation aktivieren](active-directory-azureadjoin-passport-deployment.md).
 
+
 ## Zusätzliche Informationen
 
 * [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
 * [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
 * [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Microsoft Passport zur geschäftlichen Nutzung in Unternehmen aktivieren](active-directory-azureadjoin-passport-deployment.md)
-* [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
+* [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->
