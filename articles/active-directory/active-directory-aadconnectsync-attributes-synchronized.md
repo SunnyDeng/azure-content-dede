@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="11/24/2015"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -383,13 +383,34 @@ Dies ist ein Satz von Attributen, die verwendet werden können, wenn das Azure A
 | mailNickName| X| X| X| |
 | member| | | X| |
 | objectSID| X| | | Mechanische Eigenschaft. AD-Benutzer-ID, die verwendet wird, um die Synchronisierung zwischen Azure AD und AD aufrechtzuerhalten.|
-| proxyAddresses| X| X| x| |
+| proxyAddresses| X| X| X| |
 | pwdLastSet| X| | | Mechanische Eigenschaft. Wird verwendet, um zu erfahren, wann bereits ausgestellte Token für ungültig erklärt werden sollen. Von Kennwortsynchronisierung und Verbund verwendet.|
 | sn| X| X| | |
 | sourceAnchor| X| X| X| Mechanische Eigenschaft. Unveränderlicher Bezeichner, mit dem die Beziehung zwischen AD DS und Azure AD aufrechterhalten wird.|
 | usageLocation| X| | | Mechanische Eigenschaft. Das Land des Benutzers. Wird für die Lizenzzuweisung verwendet.|
 | userPrincipalName| X| | | Dieser Benutzerprinzipalname (UPN) ist die Anmelde-ID für den Benutzer. Meistens identisch mit dem Wert [mail].|
 
+## Windows 10
+Bei unter Windows 10 per Domänenbeitritt in die Domäne eingebundenen Computern (Geräten) werden einige Attribute mit Azure AD synchronisiert. Weitere Informationen zu den Szenarien finden Sie unter [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md). Diese Attribute werden immer synchronisiert, und Windows 10 wird nicht als App angezeigt, für die Sie die Auswahl aufheben können. Ein unter Windows 10 in die Domäne eingebundener Computer wird dadurch identifiziert, dass das Attribut „userCertificate“ aufgefüllt ist.
+
+| Attributname| Gerät| Kommentar |
+| --- | :-: | --- |
+| accountEnabled| X| |
+| deviceTrustType| X| Hardcodierter Wert für in die Domäne eingebundene Computer |
+| displayName | X| |
+| ms-DS-CreatorSID | X| Auch als „registeredOwnerReference“ bezeichnet.|
+| objectGUID | X| Auch als „deviceID“ bezeichnet.|
+| objectSID | X| Auch als „omPremisesSecurityIdentifier“ bezeichnet.|
+| operatingSystem | X| Auch als „deviceOSType“ bezeichnet.|
+| operatingSystemVersion | X| Auch als „deviceOSVersion“ bezeichnet.|
+| userCertificate | X| |
+
+Diese Attribute für Benutzer ergänzen die anderen Apps, die Sie ausgewählt haben.
+
+| Attributname| Benutzer| Kommentar |
+| --- | :-: | --- |
+| domainFQDN| X| Auch als „dnsDomainName“ bezeichnet. Beispiel: contoso.com|
+| domainNetBios| X| Auch als „netBiosName“ bezeichnet. Beispiel: CONTOSO|
 
 ## Exchange-Hybridrückschreiben
 Diese Attribute werden vom Azure AD auf das lokale Active Directory zurückgeschrieben, wenn Sie die Aktivierung des Exchange-Hybrids auswählen. Abhängig von Ihrer Exchange-Version werden möglicherweise weniger Attribute synchronisiert.
@@ -410,8 +431,8 @@ Diese Attribute werden vom Azure AD auf das lokale Active Directory zurückgesch
 
 
 ## Nächste Schritte
-Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

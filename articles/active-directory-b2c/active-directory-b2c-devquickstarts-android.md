@@ -6,7 +6,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="11/19/2015"
 	ms.author="brandwe"/>
 
 # Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung
@@ -41,7 +41,7 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `urn:ietf:wg:oauth:2.0:oob` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
-- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
+- Notieren Sie die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
@@ -69,7 +69,7 @@ Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQu
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-Android.git
 ```
 
-> [AZURE.NOTE]**Zur Durchführung dieses Lernprogramms ist das Herunterladen des Gerüsts erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter Android verfügt das **Gerüst** über UX-Code, der ausgeführt wird, nachdem Sie das folgende Lernprogramm abgeschlossen haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Thema des Hinzufügens von B2C zu einer Android-Anwendung nicht von Belang.
+> [AZURE.NOTE]**Das Herunterladen des Gerüsts ist für das Abschließen dieses Lernprogramms erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter Android verfügt das **Gerüst** über UX-Code, der ausgeführt wird, nachdem Sie das folgende Lernprogramm abgeschlossen haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Thema des Hinzufügens von B2C zu einer Android-Anwendung nicht von Belang.
 
 Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-Android/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
@@ -113,9 +113,9 @@ repositories {
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile('com.microsoft.aad:adal:2.0-alpha') {
+    compile('com.microsoft.aad:adal:2.0.1-alpha') {
         exclude group: 'com.android.support'
-    } // Recent version is 2.0-alpha
+    } // Recent version is 2.0.1-alpha
 }
 ```
 
@@ -127,7 +127,7 @@ Wenn Sie in Eclipse das m2e-Plug-In verwenden, können Sie die Abhängigkeit in 
 <dependency>
     <groupId>com.microsoft.aad</groupId>
     <artifactId>adal</artifactId>
-    <version>2.0-alpha</version>
+    <version>2.0.1-alpha</version>
     <type>aar</type>
 </dependency>
 ```
@@ -984,4 +984,4 @@ CookieSyncManager.getInstance().sync();
 ``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

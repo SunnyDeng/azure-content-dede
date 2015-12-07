@@ -1,20 +1,20 @@
-**Virtual machine disks: per account limits**
+**Datenträger virtueller Computer: Einschränkungen pro Konto**
 
-Resource|Default Limit
+Ressource|Standardlimit
 ---|---
-Total disk capacity per account|35 TB
-Total snapshot capacity per account|10 TB
-Max bandwidth per account (ingress + egress<sup>1</sup>)|<=50 Gbps
+Datenträgerkapazität insgesamt pro Konto|35 TB
+Kapazität für Momentaufnahmen insgesamt pro Konto|10 TB
+Max. Bandbreite pro Konto (Ein- und Ausgang<sup>1</sup>)|<= 50 GBit/s
 
-<sup>1</sup>*Ingress* refers to all data (requests) being sent to a storage account. *Egress* refers to all data (responses) being received from a storage account.
+<sup>1</sup>*Eingang* bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden. *Ausgang* bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
-**Virtual machine disks: per disk limits**
+**Datenträger virtueller Computer: Einschränkungen pro Datenträger**
 
-Premium Storage Disk Type | P10 | P20 | P30
+Datenträgertyp des Premium-Speichers | P10 | P20 | P30
 ---|---|---|---
-Disk size | 128 GiB | 512 GiB | 1024 GiB (1 TB)
-Max IOPS per disk | 500 | 2300 | 5000
-Max throughput per disk | 100 MB per second | 150 MB per second | 200 MB per second
-Max number of highly utilized disks | 62 | 41 | 31
+Datenträgergröße | 128 GB | 512 GB | 1\.024 GiB (1 TB)
+Max. IOPS pro Datenträger | 500 | 2\.300 | 5\.000
+Max. Durchsatz pro Datenträger | 100 MB pro Sekunde | 150 MB pro Sekunde | 200 MB pro Sekunde
+Max. Anzahl von Datenträgern mit hoher Auslastung | 62 | 41 | 31
 
-
+<!---HONumber=AcomDC_1125_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/31/2015"
+   ms.date="11/19/2015"
    ms.author="tomfitz"/>
 
 # Ressourcenverknüpfungen – Vorlagenschema
@@ -44,13 +44,13 @@ In den folgenden Tabellen sind die Werte beschrieben, die Sie im Schema festlege
 
 | Name | Typ | Erforderlich | Zulässige Werte | Beschreibung |
 | ---- | ---- | -------- | ---------------- | ----------- |
-| Typ | enum | Ja | **{Namespace}/{Typ}/providers/links** | Der zu erstellende Ressourcentyp Die Werte {Namespace} und {Typ} Werte beziehen sich auf den Anbieternamespace und Ressourcentyp der Quellressource. |
+| Typ | enum | Ja | **{Namespace}/{Typ}/providers/links** | Der zu erstellende Ressourcentyp. Die Werte {Namespace} und {Typ} Werte beziehen sich auf den Anbieternamespace und Ressourcentyp der Quellressource. |
 | apiVersion | enum | Ja | **2015-01-01** | Die API-Version zum Erstellen der Ressource. |  
-| Name | string | Ja | **{Ressource}/Microsoft.Resources/{Verknüpfungname}**<br /><br />bis zu 64 Zeichen<br />Nicht zulässig sind <, > %, &, ? bzw. alle Steuerzeichen. | Ein Wert, der den Namen der Quellressource und einen Namen für die Verknüpfung angibt. |
+| name | string | Ja | **{Ressource}/Microsoft.Resources/{Verknüpfungname}**<br /><br />bis zu 64 Zeichen<br />Nicht zulässig sind <, > %, &, ? bzw. alle Steuerzeichen. | Ein Wert, der den Namen der Quellressource und einen Namen für die Verknüpfung angibt. |
 | dependsOn | array | Nein | Eine durch Trennzeichen getrennte Liste von Ressourcennamen oder eindeutigen Ressourcenbezeichnern. | Die Auflistung von Ressourcen, von denen diese Verknüpfung abhängt. Wenn die Ressourcen, die Sie verknüpfen, in der gleichen Vorlage bereitgestellt sind, fügen Sie diese Ressourcennamen diesem Element hinzu, um sicherzustellen, dass sie zuerst bereitgestellt werden. | 
-| Eigenschaften | object | Ja | (siehe unten) | Ein Objekt, das die zu verknüpfende Ressource identifiziert, und Hinweise zur Verknüpfung. |  
+| Eigenschaften | Objekt | Ja | (siehe unten) | Ein Objekt, das die zu verknüpfende Ressource identifiziert, und Hinweise zur Verknüpfung. |  
 
-### Objekt „properties“
+### properties-Objekt
 
 | Name | Typ | Erforderlich | Zulässige Werte | Beschreibung |
 | ------- | ---- | ---------------- | -------- | ----------- |
@@ -129,4 +129,4 @@ Im folgenden Beispiel wird eine Schreibschutzsperre für eine Web-App angewendet
 
 - Informationen zur Vorlagenstruktur finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Einrichten des lokalen bedingten Zugriffs mithilfe der Azure Active Directory-Geräteregistrierung | Microsoft Azure"
 	description="Eine Schrittanleitung, die zeigt, wie Sie mithilfe der Active Directory-Verbunddienste (AD FS) in Windows Server 2012 R2 den bedingten Zugriff auf lokale Anwendungen ermöglichen."
@@ -14,8 +13,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/19/2015"
+	ms.date="11/24/2015"
 	ms.author="femila"/>
+
 
 # Einrichten des lokalen bedingten Zugriffs mithilfe der Azure Active Directory-Geräteregistrierung
 
@@ -75,8 +75,7 @@ Führen Sie die Aufgaben in der Prüfliste unten aus, um den Azure Active Direct
 | Aktivieren Sie Geräteregistrierung in Ihrem Azure Active Directory-Mandanten, damit Geräte dem Arbeitsplatz beitreten können. Standardmäßig ist die mehrstufige Authentifizierung nicht für den Dienst aktiviert. Es wird jedoch empfohlen, beim Registrieren eines Geräts die mehrstufige Authentifizierung zu verwenden. Stellen Sie vor dem Aktivieren der mehrstufigen Authentifizierung in ADRS sicher, dass AD FS für einen MFA-Anbieter (Multi-Factor Authentication) konfiguriert ist. | [Aktivieren der Azure Active Directory-Geräteregistrierung](active-directory-conditional-access-device-registration-overview.md) |
 | Geräte ermitteln den Azure Active Directory-Geräteregistrierungsdienst, indem sie nach bekannten DNS-Einträgen suchen. Sie müssen den DNS-Eintrag für Ihr Unternehmen so konfigurieren, dass Geräte den Azure Active Directory-Geräteregistrierungsdienst ermitteln können. | [Konfigurieren der Ermittlung für die Azure Active Directory-Geräteregistrierung](active-directory-conditional-access-device-registration-overview.md) |
 
-##Teil 2: Bereitstellen und Konfigurieren von Windows Server 2012 R2 Active Directory-Verbunddiensten und Einrichten einer Partnerbeziehung mit Azure Active Directory
-
+##Teil 2: Bereitstellen und Konfigurieren von Windows Server 2012 R2 Active Directory-Verbunddiensten und Einrichten einer Partnerbeziehung mit Azure AD
 
 | Aufgabe | Referenz |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
@@ -150,7 +149,7 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das 
 ### Aktivieren der Geräteauthentifizierung in AD FS
 
 1. Öffnen Sie auf Ihrem Verbundserver die AD FS-Verwaltungskonsole, und navigieren Sie zu **AD FS** > **Authentifizierungsrichtlinien**.
-2. Wählen Sie im Bereich **Aktionen** die Option „Globale primäre Authentifizierung bearbeiten“ aus.
+2. Wählen Sie im Bereich **Aktionen** die Option **Edit Global Primary Authentication** aus.
 3. Aktivieren Sie **Geräteauthentifizierung aktivieren**, und klicken Sie dann auf „OK“.
 4. Standardmäßig entfernt AD FS regelmäßig nicht verwendete Geräte aus Active Directory. Sie müssen diese Aufgabe deaktivieren, wenn Sie die Azure Active Directory-Geräteregistrierung verwenden, damit Geräte in Azure verwaltet werden können.
 
@@ -212,7 +211,7 @@ Die folgenden Schritte zeigen, wie dieses Szenario implementiert wird.
 9. Wählen Sie **Fertig stellen** aus, uns klicken Sie dann auf **Übernehmen**.
 10. Entfernen Sie alle Regeln, die weniger restriktiv sind als die Regel, die Sie soeben erstellt haben. Entfernen Sie beispielsweise die Standardregel **Zugriff auf alle Benutzer zulassen**.
 
-Ihre Anwendung ist nun so konfiguriert, dass der Zugriff nur erlaubt wird, wenn der Benutzer ein registriertes Gerät verwendet, das dem Arbeitsplatz hinzugefügt wurde. Erweiterte Zugriffsrichtlinien finden Sie unter [Verwalten von Risiken mit der mehrstufigen Zugriffssteuerung](https://technet.microsoft.com/de-DE/library/dn280949.aspx).
+Ihre Anwendung ist nun so konfiguriert, dass der Zugriff nur erlaubt wird, wenn der Benutzer ein registriertes Gerät verwendet, das dem Arbeitsplatz hinzugefügt wurde. Erweiterte Zugriffsrichtlinien finden Sie unter [Verwalten von Risiken mit der mehrstufigen Zugriffssteuerung](https://technet.microsoft.com/library/dn280949.aspx).
 
 Im nächsten Schritt konfigurieren Sie eine benutzerdefinierte Fehlermeldung für Ihre Anwendung. Diese Fehlermeldung informiert den Benutzer, dass er sein Gerät dem Arbeitsplatz hinzufügen muss, bevor er auf die Anwendung zugreifen darf. Sie können eine benutzerdefinierte Anwendungsmeldung "Zugriff verweigert" mithilfe von benutzerdefiniertem HTML und Windows PowerShell erstellen.
 
@@ -238,4 +237,4 @@ Wenn Benutzer auf Ihre Anwendung jetzt über ein Gerät zugreifen, das nicht unt
 
 ![Screenshot eines Fehlers, den Benutzer erhalten, wenn sie ihr Gerät nicht unter Azure AD registriert haben](./media/active-directory-conditional-access/error-azureDRS-device-not-registered.gif)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

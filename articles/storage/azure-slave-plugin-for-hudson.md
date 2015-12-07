@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="11/19/2015" 
 	ms.author="v-dedomi"/>
 
 #Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration
@@ -213,4 +213,4 @@ Hudson erstellt dann einen untergeordneten Knoten mithilfe der im vorherigen Abs
 
   
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

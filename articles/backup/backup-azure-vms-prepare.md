@@ -181,6 +181,10 @@ Die Sicherungserweiterung wird installiert, wenn der virtuelle Computer (Virtual
   - **Linux**: Die Liste der von Azure unterstützten Verteilungen finden Sie [hier](../virtual-machines-linux-endorsed-distributions.md). Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
   - **Windows Server**: Versionen, die älter als Windows Server 2008 R2 sind, werden nicht unterstützt.
 - Das Wiederherstellen einer Domänencontroller-VM, die Teil einer Konfiguration mit mehreren Domänencontrollern ist, wird nur über PowerShell unterstützt. Weitere Informationen hierzu finden Sie unter [Wiederherstellen von Multi-DC-Domänencontrollern](backup-azure-restore-vms.md#restoring-domain-controller-vms).
+- Das Wiederherstellen virtueller Computer mit den folgenden besonderen Netzwerkkonfigurationen wird nur über PowerShell unterstützt. Virtuelle Computer, die mit dem Wiederherstellungsworkflow der Benutzeroberfläche erstellt werden, weisen diese Netzwerkkonfigurationen nach dem Abschluss des Wiederherstellungsvorgangs nicht auf. Weitere Informationen finden Sie unter [Wiederherstellen von VMs mit speziellen Netzwerkkonfigurationen](backup-azure-restore-vms.md#restoring-vms-with-special-netwrok-configurations). 
+	- Virtuelle Computer unter Load Balancer-Konfiguration (intern und extern)
+	- Virtuelle Computer mit mehreren reservierten IP-Adressen
+	- Virtuelle Computer mit mehreren NICs
 
 ## Fragen?
 Wenn Sie Fragen oder Anregungen zu gewünschten Funktionen haben, können Sie uns Ihr [Feedback senden](http://aka.ms/azurebackup_feedback).
@@ -191,4 +195,4 @@ Wenn Sie Fragen oder Anregungen zu gewünschten Funktionen haben, können Sie un
 - [Sichern virtueller Computer](backup-azure-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

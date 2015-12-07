@@ -238,7 +238,6 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 1. Klicken Sie auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **On-Demand-HDInsight-Cluster** aus.
 2. Führen Sie im JSON-Skript folgende Schritte aus: 
 	1. Geben Sie für die Eigenschaft **clusterSize** die Größe des HDInsight-Clusters an.
-	2. Geben Sie für die Eigenschaft **jobsContainer** den Namen des Standardcontainers an, in dem die Clusterprotokolle gespeichert werden sollen. Geben Sie im Rahmen dieses Lernprogramms **adfjobscontainer** an.
 	3. Geben Sie für die **timeToLive**-Eigenschaft an, wie lange sich der Cluster im Leerlauf befinden darf, bevor er gelöscht wird. 
 	4. Geben Sie für die **version**-Eigenschaft die HDInsight-Version an, die Sie verwenden möchten. Wenn Sie diese Eigenschaft ausschließen, wird die neueste Version verwendet.  
 	5. Geben Sie für **linkedServiceName** die Zeichenfolge **HDInsightStorageLinkedService** an. Diesen Dienst haben Sie im Lernprogramm „Erste Schritte“ erstellt. 
@@ -248,7 +247,6 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 				    "properties": {
 		    	    "type": "HDInsightOnDemandLinkedService",
 		    	    "clusterSize": "4",
-		    	    "jobsContainer": "adfjobscontainer",
 		    	    "timeToLive": "00:05:00",
 		    	    "version": "3.1",
 		    	    "linkedServiceName": "HDInsightStorageLinkedService"
@@ -526,4 +524,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial/DataFactoryCreateButton.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

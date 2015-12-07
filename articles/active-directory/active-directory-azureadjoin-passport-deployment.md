@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Microsoft Passport for Work in Unternehmen aktivieren
@@ -33,14 +33,14 @@ Für das Bereitstellen von Benutzerzertifikaten anhand von Microsoft Passport-Sc
  Mithilfe einer Active Directory-Gruppenrichtlinie lassen sich in die Domäne eingebundene Windows 10-Geräte so konfigurieren, dass bei der Windows-Anmeldung eines Benutzers Microsoft Passport-Anmeldeinformationen bereitgestellt werden.
 
 1. 	Öffnen Sie den Server-Manager, und navigieren Sie zu **Tools** > **Gruppenrichtlinienverwaltung**.
-2.	Navigieren Sie von der Gruppenrichtlinienverwaltung aus zu dem Domänenknoten für die Domäne, in der Sie die Azure AD-Verknüpfung aktivieren möchten.
+2.	Navigieren Sie von der Gruppenrichtlinienverwaltung zu dem Domänenknoten, der der Domäne entspricht, in der Sie Azure AD Join aktivieren möchten.
 3.	Klicken Sie mit der rechten Maustaste auf Ihr neues **Gruppenrichtlinienobjekt**, und wählen Sie dann **Neu** aus. Geben Sie Ihrem Gruppenrichtlinienobjekt einen Namen, z. B. **Microsoft Passport aktivieren**. Klicken Sie auf **OK**.
 4.	Klicken Sie mit der rechten Maustaste auf Ihr neues Gruppenrichtlinienobjekt, und wählen Sie dann **Bearbeiten** aus.
 5.	Navigieren Sie zu **Computerkonfiguration** > **Richtlinien** > **Administrative Vorlagen** > **Windows-Komponenten** > **Passport for Work**.
 6.	Klicken Sie mit der rechten Maustaste auf **Enable Passport for Work**, und wählen Sie dann **Bearbeiten** aus.
 7.	Aktivieren Sie das Optionsfeld **Aktiviert**, und klicken Sie dann auf **Übernehmen**. Klicken Sie auf **OK**.
-8.	Sie können das Gruppenrichtlinienobjekt jetzt mit einem Speicherort Ihrer Wahl verknüpfen. Um diese Richtlinie für alle in eine Domäne eingebundenen Windows 10-Geräte in Ihrer Organisation zu aktivieren, verknüpfen Sie die Gruppenrichtlinie mit der Domäne. Beispiel:
- - Eine bestimmte Organisationseinheit in AD, bei der in die Domäne eingebundene Windows 10-Computer angesiedelt werden sollen
+8.	Sie können das Gruppenrichtlinienobjekt jetzt mit einem Speicherort Ihrer Wahl verknüpfen. Um diese Richtlinie für alle in die Domäne eingebundenen Windows 10-Geräte in Ihrer Organisation zu aktivieren, verknüpfen Sie die Gruppenrichtlinie mit der Domäne. Beispiel:
+ - Eine bestimmte Organisationseinheit in AD, in der in die Domäne eingebundene Windows 10-Computer platziert werden
  - Eine bestimmte Sicherheitsgruppe mit in die Domäne eingebundenen Windows 10-Computern, die automatisch bei Azure AD registriert werden sollen
 
 ## Konfigurieren von Microsoft Passport for Work durch das Bereitstellen von PowerShell über Configuration Manager 
@@ -115,4 +115,4 @@ Dabei entspricht „ScopeId\_73F3BB5E-5EDC-4928-87BD-4E75EB4BBC34/ConfigurationP
 * [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

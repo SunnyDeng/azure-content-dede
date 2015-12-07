@@ -77,8 +77,7 @@ Informationen zur Netzwerkzuordnung finden Sie unter:
 - [Konfiguration von VM-Netzwerken und Gateways in VMM](http://go.microsoft.com/fwlink/?LinkId=386308)
 
 ### Voraussetzungen für die Speicherzuordnung
-Standardmäßig werden beim Replizieren eines virtuellen Computers auf einem Hyper-V-Host-Quellserver auf einen Hyper-V-Host-Zielserver die replizierten Daten am Standardspeicherort gespeichert, der für den Hyper-V-Zielhost in Hyper-V-Manager angegeben wurde. Um die Ablage von Replikationsdaten zu steuern, können Sie eine Speicherzuordnung konfigurieren. Zu diesem Zweck müssen Sie die Speicherklassifizierungen auf dem Quell- und dem Ziel-VMM-Server einrichten, bevor Sie mit der Bereitstellung beginnen.
-Anweisungen hierzu finden Sie unter [Erstellen von Speicher-Klassifizierungen in VMM](http://go.microsoft.com/fwlink/?LinkId=400937).
+Standardmäßig werden beim Replizieren eines virtuellen Computers auf einem Hyper-V-Host-Quellserver auf einen Hyper-V-Host-Zielserver die replizierten Daten am Standardspeicherort gespeichert, der für den Hyper-V-Zielhost in Hyper-V-Manager angegeben wurde. Um die Ablage von Replikationsdaten zu steuern, können Sie eine Speicherzuordnung konfigurieren. Zu diesem Zweck müssen Sie die Speicherklassifizierungen auf dem Quell- und dem Ziel-VMM-Server einrichten, bevor Sie mit der Bereitstellung beginnen. Anweisungen hierzu finden Sie unter [Erstellen von Speicher-Klassifizierungen in VMM](http://go.microsoft.com/fwlink/?LinkId=400937).
 
 
 ## Schritt 1: Erstellen eines Site Recovery-Tresors
@@ -135,16 +134,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 
 5. Geben Sie auf der Seite **Internetverbindung** an, wie sich der Anbieter auf dem VMM-Server mit dem Internet verbinden soll. Wählen Sie *Proxyeinstellungen des Systems verwenden* aus, um die Standard-Internetverbindungseinstellungen auf dem Server zu verwenden.
 
-	![Interneteinstellungen](./media/site-recovery-vmm-to-vmm/VMMASRRegisterProxyDetailsScreen.png)
-	- Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen.
-	- Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben.
-	- Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben.
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
-	- Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+	![Interneteinstellungen](./media/site-recovery-vmm-to-vmm/VMMASRRegisterProxyDetailsScreen.png) - Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. - Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. - Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. - *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net - Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
 
@@ -160,29 +150,30 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 
 8. Geben Sie unter **Servername** einen Anzeigenamen ein, um den VMM-Server im Tresor zu identifizieren. Geben Sie in einer Clusterkonfiguration den Rollennamen des VMM-Clusters an.
 
-8. Wählen Sie unter **Erste Cloudmetadaten-Synchronisierung** aus, ob Sie Metadaten für alle Clouds auf dem VMM-Server mit dem Tresor synchronisieren möchten. Diese Aktion muss für jeden VMM-Server nur einmal ausgeführt werden. Wenn Sie nicht alle Clouds synchronisieren möchten, können Sie diese Einstellung deaktiviert lassen und die Clouds in den Cloudeigenschaften in der VMM-Konsole einzeln synchronisieren.
-	![Serverregistrierung](./media/site-recovery-vmm-to-vmm/VMMASRRegisterFriendlyName.png)
+8. Wählen Sie unter **Erste Cloudmetadaten-Synchronisierung** aus, ob Sie Metadaten für alle Clouds auf dem VMM-Server mit dem Tresor synchronisieren möchten. Diese Aktion muss für jeden VMM-Server nur einmal ausgeführt werden. Wenn Sie nicht alle Clouds synchronisieren möchten, können Sie diese Einstellung deaktiviert lassen und die Clouds in den Cloudeigenschaften in der VMM-Konsole einzeln synchronisieren. ![Serverregistrierung](./media/site-recovery-vmm-to-vmm/VMMASRRegisterFriendlyName.png)
 
 
 8. Klicken Sie auf *Weiter*, um den Prozess abzuschließen. Nach der Registrierung werden die Metadaten vom VMM-Server von Azure Site Recovery abgerufen. Der Server wird im Tresor auf der Registerkarte *VMM-Server* der Seite **Server** angezeigt.
 
->[AZURE.NOTE] Der Azure Site Recovery-Anbieter kann auch über die folgende Befehlszeile installiert werden. Mit dieser Methode kann der Anbieter in Server Core für Windows Server 2012 R2 installiert werden.
->
->1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
->2. Beenden Sie den System Center Virtual Machine Manager-Dienst.
->3. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
->
+>[AZURE.NOTE]Der Azure Site Recovery-Anbieter kann auch über die folgende Befehlszeile installiert werden. Mit dieser Methode kann der Anbieter in Server Core für Windows Server 2012 R2 installiert werden.
+
+1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
+1. Beenden Sie den System Center Virtual Machine Manager-Dienst.
+1. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
+
     	C:\Windows\System32> CD C:\ASR
     	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
->4. Installieren Sie den Anbieter mithilfe des folgenden Befehls:
->
+1. Installieren Sie den Anbieter mithilfe des folgenden Befehls:
+
 		C:\ASR> setupdr.exe /i
->5. Registrieren Sie den Anbieter mithilfe des folgenden Befehls:
->
+1. Registrieren Sie den Anbieter mithilfe des folgenden Befehls:
+
     	CD C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin
-    	C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>         
- ####Parameter für die Installation über die Befehlszeile####
->
+    	C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>     
+
+    
+#### Parameter für die Installation über die Befehlszeile
+
  - **/Credentials**: erforderlicher Parameter zum Angeben des Speicherorts der Registrierungsschlüsseldatei.  
  - **/FriendlyName**: erforderlicher Parameter für den Namen des Hyper-V-Hostservers, der im Azure Site Recovery-Portal angezeigt wird.
  - **/EncryptionEnabled**: optionaler Parameter, der nur im VMM-zu-Azure-Szenario verwendet werden muss, wenn Sie die inaktiven virtuellen Computer in Azure verschlüsseln möchten. Stellen Sie sicher, dass der Name der angegebenen Datei die Dateierweiterung **.pfx** aufweist.
@@ -259,7 +250,7 @@ Standardmäßig werden beim Replizieren eines virtuellen Computers auf einem Hyp
 - Nachdem die Klassifizierungen eingerichtet wurden, können Sie Zuordnungen erstellen.
 1. Wählen Sie auf der Seite **Schnellstart** > **Speicher zuordnen**.
 1. Klicken Sie auf die Registerkarte **Speicher** > **Speicherklassifizierungen zuordnen**.
-1. Wählen Sie auf der Registerkarte **Speicherklassifizierungen zuordnen** die Klassifizierungen auf dem VMM-Quellserver und dem VMM-Zielserver aus. Speichern Sie die Einstellungen.
+1. Wählen Sie auf der Registerkarte **Speicherklassifizierungen zuordnen** die Klassifizierungen auf dem Quell- und dem Ziel-VMM-Server aus. Speichern Sie die Einstellungen.
 
 	![Auswählen eines Zielnetzwerks](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_StorageMapping1.png)
 
@@ -281,9 +272,7 @@ Beachten Sie, dass Sie auch Schutz für virtuelle Computer in der VMM-Konsole ak
 ![Schutzauftrag für virtuellen Computer](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_VMJobs.png)
 
 ### Integrieren vorhandener virtueller Computer
-Wenn in VMM virtuelle Computer vorhanden sind, die über Hyper-V-Replikate repliziert werden, müssen Sie diese für den Schutz durch Azure Site Recovery wie folgt integrieren:
-1. Stellen Sie sicher, dass Sie über primäre und sekundäre Clouds verfügen. Stellen Sie sicher, dass der Hyper-V-Hostserver für den vorhandenen virtuellen Computer sich in der primären Cloud befindet und dass der Hyper-V-Hostserver für den virtuellen Replikatcomputer sich in der sekundären Cloud befindet. Stellen Sie sicher, dass Sie die Schutzeinstellungen für die Clouds konfiguriert haben. Die Einstellungen sollten den aktuell für Hyper-V Replikate konfigurierten entsprechen. Andernfalls funktioniert die Replikation virtueller Computer möglicherweise nicht wie erwartet.
-2. Aktivieren Sie anschließend den Schutz für den primären virtuellen Computer. Azure Site Recovery und VMM stellen sicher, dass derselbe Replikathost und virtuelle Computer erkannt werden. Azure Site Recovery verwendet die Replikation wieder und stellt sie anhand der Einstellungen, die während der Cloudkonfiguration festgelegt wurden, erneut her.
+Wenn in VMM virtuelle Computer vorhanden sind, die über Hyper-V-Replikate repliziert werden, müssen Sie diese für den Schutz durch Azure Site Recovery wie folgt integrieren: 1. Stellen Sie sicher, dass Sie über primäre und sekundäre Clouds verfügen. Stellen Sie sicher, dass der Hyper-V-Hostserver für den vorhandenen virtuellen Computer sich in der primären Cloud befindet und dass der Hyper-V-Hostserver für den virtuellen Replikatcomputer sich in der sekundären Cloud befindet. Stellen Sie sicher, dass Sie die Schutzeinstellungen für die Clouds konfiguriert haben. Die Einstellungen sollten den aktuell für Hyper-V Replikate konfigurierten entsprechen. Andernfalls funktioniert die Replikation virtueller Computer möglicherweise nicht wie erwartet. 2. Aktivieren Sie anschließend den Schutz für den primären virtuellen Computer. Azure Site Recovery und VMM stellen sicher, dass derselbe Replikathost und virtuelle Computer erkannt werden. Azure Site Recovery verwendet die Replikation wieder und stellt sie anhand der Einstellungen, die während der Cloudkonfiguration festgelegt wurden, erneut her.
 
 
 ## Testen der Bereitstellung
@@ -374,7 +363,7 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 - **Funktionsbeschreibung**: Mithilfe dieser Funktion können Sie Netzwerkinformationen aus dem primären Datencenter dem Datencenter für die Wiederherstellung zuordnen. Wenn die virtuellen Computer am Wiederherstellungsstandort wiederhergestellt werden, hilft diese Zuordnung beim Herstellen der Netzwerkkonnektivität.
 
-- **Gesammelte Informationen**: Im Rahmen der Funktion für die Netzwerkzuordnung erfasst, verarbeitet und überträgt der Dienst die Metadaten der logischen Netzwerke für die einzelnen Standorte (primär und Datencenter).
+- **Gesammelte Informationen**: Im Rahmen der Funktion für die Netzwerkzuordnung erfasst, verarbeitet und überträgt der Dienst die Metadaten der logischen Netzwerke für die einzelnen Standorte (primär und Rechenzentrum).
 
 - **Nutzung von Informationen**: Der Dienst verwendet die Metadaten zum Auffüllen des Dienstportals, in dem Sie die Netzwerkinformationen zuordnen können.
 
@@ -396,4 +385,4 @@ Der Anbieter auf dem VMM-Server wird vom Dienst über das Ereignis benachrichtig
 
 - **Wahl**: Dies ist ein wesentlicher Bestandteil des Diensts und kann nicht deaktiviert werden. Wenn Sie nicht möchten, dass diese Informationen an den Dienst gesendet werden, verwenden Sie diesen Dienst nicht.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -15,7 +15,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="08/04/2015"
+   ms.date="11/24/2015"
    ms.author="rickbyh"/>
 
 # Konfigurieren einer Firewall für die Azure SQL-Datenbank
@@ -133,7 +133,9 @@ Wenn der Zugriff auf den Microsoft Azure SQL-Datenbankdienst nicht das erwartete
 
 [Konfigurieren der Datenbank-Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md)
 
+[Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589)
+
 <!--Image references-->
 [1]: ./media/sql-database-firewall-configure/sqldb-firewall-1.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

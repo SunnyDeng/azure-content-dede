@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="08/10/2015"
+	ms.date="11/19/2015"
 	ms.author="tdykstra"/>
 
 # Azure App Service, Cloud Services und Virtual Machines im Vergleich
@@ -153,11 +153,11 @@ Bereitstellung von Code mit Web Deploy|X||X|Cloud Services unterstützt die Verw
 Unterstützung von WebMatrix|X||X|
 Zugriff auf Dienste wie Service Bus, Storage und SQL-Datenbank|X|X|X|
 Hosten der Web- oder Webdienstebene einer mehrschichtigen Architektur|X|X|X|
-Hosten der mittleren Ebene einer mehrschichtigen Architektur|X|X|X|App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform/) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.
+Hosten der mittleren Ebene einer mehrschichtigen Architektur|X|X|X|App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform.md) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.
 Integrierte Unterstützung von MySQL-as-a-Service|X|X|X|Cloud Services kann in MySQL-as-a-Service über Angebote von ClearDB integriert werden, jedoch nicht als Bestandteil des Verwaltungsportal-Workflows.
 Unterstützung von ASP.NET, klassischem ASP, Node.js, PHP, Python|X|X|X|
 Horizontale Skalierung auf mehrere Instanzen ohne erneute Bereitstellung|X|X|X|Bei virtuellen Computern ist eine horizontale Skalierung auf mehrere Instanzen möglich. Die Dienste, die auf diesen Computern ausgeführt werden, müssen jedoch so geschrieben werden, dass sie diese horizontale Skalierung unterstützen. Sie müssen einen Lastenausgleich konfigurieren, um Anforderungen über die Computer weiterzuleiten. Zudem müssen Sie eine Affinitätsgruppe erstellen, um gleichzeitigen Neustarts aller Instanzen aufgrund von Wartungs- oder Hardware-Fehlern vorzubeugen.
-SSL-Unterstützung|X|X|X|Für App Service-Web-Apps wird SSL für benutzerdefinierte Domänen nur in den Modi "Basic" und "Standard" unterstützt. Weitere Informationen zur Verwendung von SSL mit Web-Apps finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../app-service-web/web-sites-configure-ssl-certificate/).
+SSL-Unterstützung|X|X|X|Für App Service-Web-Apps wird SSL für benutzerdefinierte Domänen nur in den Modi "Basic" und "Standard" unterstützt. Weitere Informationen zur Verwendung von SSL mit Web-Apps finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../app-service-web/web-sites-configure-ssl-certificate.md).
 Visual Studio-Integration|X|X|X|
 Remotedebugging|X|X|X|
 Bereitstellung von Code mit TFS|X|X|X|
@@ -204,4 +204,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

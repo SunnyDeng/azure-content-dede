@@ -64,7 +64,7 @@ Derzeit gelten für Multi-NIC die folgenden Anforderungen und Einschränkungen:
 |D11|2|
 |D12|4|
 |D13|8|
-|D14|16|
+|D14|8|
 |DS1|1|
 |DS2|2|
 |DS3|4|
@@ -81,12 +81,12 @@ Derzeit gelten für Multi-NIC die folgenden Anforderungen und Einschränkungen:
 |D11\_v2|2|
 |D12\_v2|4|
 |D13\_v2|8|
-|D14\_v2|16|
+|D14\_v2|8|
 |G1|1|
 |G2|2|
 |G3|4|
 |G4|8|
-|G5|16|
+|G5|8|
 |Alle anderen Größen|1|
 
 ## Netzwerksicherheitsgruppen
@@ -265,4 +265,4 @@ Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer Ressourcen-Manager-Bereitstellung](virtual-network-deploy-multinic-arm-template).
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer klassischen Bereitstellung](virtual-network-deploy-multinic-classic-ps).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

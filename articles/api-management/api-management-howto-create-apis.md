@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="11/23/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen von APIs in Azure API Management
@@ -38,24 +38,25 @@ Konfigurieren Sie die neue API im Fenster **Neue API hinzufügen**.
 
 ![Neue API hinzufügen][api-management-add-new-api]
 
-Die folgenden drei Felder werden zum Konfigurieren der neuen API verwendet.
+Die folgenden Felder werden zum Konfigurieren der neuen API verwendet.
 
--	**Titel der Web-API** enthält einen eindeutigen und beschreibenden Namen für die API. Dieser Name wird in den Entwickler- und Verwaltungsportalen angezeigt.
+-	**Name der Web-API** enthält einen eindeutigen und beschreibenden Namen für die API. Dieser Name wird in den Entwickler- und Verwaltungsportalen angezeigt.
 -	**Webdienst-URL** verweist auf den HTTP-Dienst, der die API implementiert. API Management leitet Anfragen an diese Adresse weiter.
 -	**URL-Suffix für Web-API** wird an die Basis-URL für den API Management-Dienst angehängt. Alle in einer API Management-Dienstinstanz gehosteten APIs teilen sich dieselbe Basis-URL. API Management unterscheidet APIs durch deren Suffix. Daher muss jede API eines bestimmten Herausgebers ein eindeutiges Suffix haben.
 -	Mit **URL-Schema für Web-API** wird festgelegt, welche Protokolle für den Zugriff auf die API verwendet werden können. Standardmäßig wird HTTPS angegeben.
+-	Um diese neue API optional einem Produkt hinzuzufügen, klicken Sie in das Dropdown-Listenfeld **Produkte (optional)** und wählen ein Produkt aus. Dieser Schritt kann mehrfach wiederholt werden, um die API mehreren Produkten hinzuzufügen.
 
-Konfigurieren Sie die drei Werte, und klicken Sie auf **Speichern**. Sobald die neue API erstellt wurde, wird die Zusammenfassungsseite für die API im Verwaltungsportal angezeigt.
+Wenn Sie die gewünschten Werte konfiguriert haben, klicken Sie auf **Speichern**. Sobald die neue API erstellt wurde, wird die Zusammenfassungsseite für die API im Herausgeberportal angezeigt.
 
 ![API-Zusammenfassung][api-management-api-summary]
 
 ## <a name="configure-api-settings"> </a>Konfigurieren der API-Einstellungen
 
-Auf der Registerkarte **Einstellungen** können Sie die Konfiguration einer API anzeigen und bearbeiten. **Titel der Web-API**, **Webdienst-URL** und **URL-Suffix für die Web-API** werden bei der Erstellung der API konfiguriert und können hier geändert werden. **Beschreibung** liefert eine optionale Beschreibung, mit **URL-Schema für Web-API** wird festgelegt, welche Protokolle für den Zugriff auf die API verwendet werden können.
+Auf der Registerkarte **Einstellungen** können Sie die Konfiguration einer API anzeigen und bearbeiten. **Name der Web-API**, **Webdienst-URL** und **URL-Suffix für die Web-API** werden bei der Erstellung der API konfiguriert und können hier geändert werden. **Beschreibung** liefert eine optionale Beschreibung, mit **URL-Schema für Web-API** wird festgelegt, welche Protokolle für den Zugriff auf die API verwendet werden können.
 
 ![API-Einstellungen][api-management-api-settings]
 
-Um die **Gatewayauthentifizierung** für die Webdienstimplementierung der API zu konfigurieren, wählen Sie die Registerkarte **Sicherheit**. Über die Dropdownliste **Mit Anmeldeinformationen** können Sie die **Standardauthentifizierung** oder die **Gegenseitige Zertifikatauthentifizierung** konfigurieren. Zum Verwenden der Standardauthentifizierung geben Sie einfach die gewünschten Anmeldeinformationen ein. Weitere Informationen zum Verwenden der gegenseitigen Zertifikatauthentifizierung finden Sie unter [Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management][].
+Um die Gatewayauthentifizierung für die Back-End-Dienst-Implementierung der API zu konfigurieren, wählen Sie die Registerkarte **Sicherheit**. Über die Dropdownliste **Mit Anmeldeinformationen** können Sie die **HTTP-Standardauthentifizierung** oder die **Clientzertifikatauthentifizierung** konfigurieren. Zum Verwenden der HTTP-Standardauthentifizierung geben Sie einfach die gewünschten Anmeldeinformationen ein. Informationen zum Verwenden der Clientzertifikatauthentifizierung finden Sie unter [Sichern von Back-End-Diensten über eine Clientzertifikatauthentifizierung][] in Azure API Management.
 
 Auf der Registerkarte **Sicherheit** können Sie außerdem die **Benutzerautorisierung** mithilfe von OAuth 2.0 konfigurieren. Weitere Informationen finden Sie unter [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management][].
 
@@ -65,7 +66,7 @@ Klicken Sie auf **Speichern**, um die Änderungen an Ihren API-Einstellungen zu 
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können Sie Operationen zur API hinzufügen, die API zu einem Produkt hinzufügen und anschließend veröffentlichen, um die API für Entwickler zugänglich zu machen. Weitere Informationen finden Sie in den folgenden beiden Anleitungen.
+Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können Sie Operationen zur API hinzufügen, die API zu einem Produkt hinzufügen und anschließend veröffentlichen, um die API für Entwickler zugänglich zu machen. Weitere Informationen finden Sie in den folgenden Artikeln.
 
 -	[Hinzufügen von Operationen zu einer API][]
 -	[Erstellen und Veröffentlichen eines Produkts][]
@@ -94,7 +95,7 @@ Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können S
 
 [Erste Schritte mit Azure API Management]: api-management-get-started.md
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
-[Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management]: api-management-howto-mutual-certificates.md
+[Sichern von Back-End-Diensten über eine Clientzertifikatauthentifizierung]: api-management-howto-mutual-certificates.md
 [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management]: api-management-howto-oauth2.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

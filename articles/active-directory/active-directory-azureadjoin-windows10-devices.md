@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Verwenden von Windows 10-Geräten an Ihrem Arbeitsplatz
@@ -173,4 +173,4 @@ Für Benutzer, die ein Upgrade von Windows 8.1-Geräten mit Domänenbeitritt du
 * [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,5 +1,5 @@
 
-1. Open the shared project file MainPage.cs and add the following code snippet to the MainPage class:
+1. Öffnen Sie die freigegebene Projektdatei "MainPage.cs", und fügen Sie der MainPage-Klasse den folgenden Codeausschnitt hinzu:
 	
 		// Define a member variable for storing the signed-in user. 
         private MobileServiceUser user;
@@ -32,13 +32,13 @@
             return success;
         }
 
-    This code authenticates the user with a Facebook login. If you are using an identity provider other than Facebook, change the value of **MobileServiceAuthenticationProvider** above to the value for your provider.
+    Dieser Code authentifiziert den Benutzer mit einer Facebook-Anmeldung. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für **MobileServiceAuthenticationProvider** oben entsprechend Ihrem Anbieter.
 
-3. Comment-out or delete the call to the **RefreshTodoItems** method in the existing **OnNavigatedTo** method override.
+3. Löschen Sie in der vorhandenen Methodenüberschreibung von **OnNavigatedTo** den Aufruf der Methode **RefreshTodoItems**, oder kommentieren Sie diesen Aufruf aus.
 
-	This prevents the data from being loaded before the user is authenticated. Next, you will add a **Sign in** button to the app that triggers authentication.
+	Dadurch wird sichergestellt, dass die Daten erst geladen werden, nachdem der Benutzer authentifiziert wurde. Als Nächstes fügen Sie der App die Schaltfläche **Sign in** hinzu, die die Authentifizierung auslöst.
 
-4. Add the following code snippet to the MainPage class:
+4. Fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
 
         private async void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -52,17 +52,17 @@
             }
         }
 		
-5. In the Windows Store app project, open the MainPage.xaml project file and add the following **Button** element just before the element that defines the **Save** button:
+5. Öffnen Sie im Windows Store-App-Projekt die Projektdatei "MainPage.xaml", und fügen Sie unmittelbar vor dem Element, das die Schaltfläche **Save** definiert, folgendes **Button**-Element hinzu:
 
 		<Button Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible">Sign in</Button>
 
-6. In the Windows Phone Store app project, add the following **Button** element in the **ContentPanel**, after the **TextBox** element:
+6. Fügen Sie in das Windows Phone Store-App-Projekt das folgende **Button**-Element im **ContentPanel** hinter dem **TextBlock**-Element ein:
 
         <Button Grid.Row ="1" Grid.Column="1" Name="ButtonLogin" Click="ButtonLogin_Click" 
         	Margin="10, 0, 0, 0" Visibility="Visible">Sign in</Button>
 
-8. Open the shared App.xaml.cs project file and add the following code:
+8. Öffnen Sie die gemeinsam genutzte Projektdatei "App.xaml.cs", und fügen Sie folgenden Code hinzu:
 
         protected override void OnActivated(IActivatedEventArgs args)
         {
@@ -79,12 +79,14 @@
             base.OnActivated(args);
         }
 
-	If the **OnActivated** method already exists, just add the `#if...#endif` code block.
+	Wenn die **OnActivated**-Methode bereits vorhanden ist, fügen Sie lediglich den Codeabschnitt `#if...#endif` hinzu.
 
-9. Press the F5 key to run the Windows Store app, click the **Sign in** button, and sign into the app with your chosen identity provider. 
+9. Drücken Sie F5, um die Windows Store-App auszuführen, und klicken Sie auf die Schaltfläche **Sign in**, und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden.
 
-   	When you are successfully logged-in, the app should run without errors, and you should be able to query your backend and make updates to data.
+   	Wenn Sie erfolgreich angemeldet sind, sollte die App ohne Fehler ausgeführt werden, und Sie sollten in der Lage sein, Ihr Back-End abzufragen und Daten zu aktualisieren.
 
-10. Right-click the Windows Phone Store app project, click **Set as StartUp Project**, then repeat the previous step to verify that the Windows Phone Store app also runs correctly.  
+10. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.
 
  
+
+<!---HONumber=AcomDC_1125_2015-->

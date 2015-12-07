@@ -3,7 +3,7 @@
    description="Beschreibt, wie Sie die Service Fabric-Dienste partitionieren."
    services="service-fabric"
    documentationCenter=".net"
-   authors="bscholl"
+   authors="bmscholl"
    manager="timlt"
    editor=""/>
 
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2015"
+   ms.date="11/17/2015"
    ms.author="bscholl"/>
 
 # So wird‘s gemacht: Partitionieren von Service Fabric Reliable Services
-Dieser Artikel enthält eine Einführung in die grundlegenden Konzepte der Partitionierung von Service Fabric Reliable Services. Der in diesem Artikel verwendete Quellcode ist auch unter [GitHub (add final link)](http://Github.com) verfügbar.
+Dieser Artikel enthält eine Einführung in die grundlegenden Konzepte der Partitionierung von Service Fabric Reliable Services. Der in diesem Artikel verwendete Quellcode ist auch unter [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions) verfügbar.
 
 ## Was ist die Partitionierung?
-Die Partitionierung ist nicht auf Service Fabric beschränkt, sondern ein wichtiges Muster bei der Erstellung skalierbarer Dienste. In einem weiteren Sinne können wir uns die Partitionierung als ein Konzept vorstellen, bei dem der Zustand (Daten) und die Berechnung (Compute) in kleinere zugängliche Einheiten unterteilt werden, um die Skalierbarkeit und Leistung zu verbessern. Eine bekannte Form der Partitionierung ist die [Datenpartitionierung] (https://en.wikipedia.org/wiki/Partition_(database)), die auch als Sharding bezeichnet wird.
+Die Partitionierung ist nicht auf Service Fabric beschränkt, sondern ein wichtiges Muster bei der Erstellung skalierbarer Dienste. In einem weiteren Sinne können wir uns die Partitionierung als ein Konzept vorstellen, bei dem der Zustand (Daten) und die Berechnung (Compute) in kleinere zugängliche Einheiten unterteilt werden, um die Skalierbarkeit und Leistung zu verbessern. Eine bekannte Form der Partitionierung ist die [Datenpartitionierung][wikipartition], die auch als Sharding bezeichnet wird.
 
 
 ### Partitionieren von zustandslosen Service Fabric-Diensten
@@ -59,7 +59,7 @@ Wenn Sie sich das Beispiel erneut ansehen, fällt Ihnen auf, dass die Partition 
 Um dies zu erreichen, sollten Sie aus Sicht der Partitionierung zwei Dinge tun:
 
 - Versuchen Sie, den Zustand so zu partitionieren, dass er gleichmäßig auf alle Partitionen verteilt ist.
-- [Verfolgen Sie die Metriken für alle Replikate für den Dienst](service-fabric-reliable-services-advanced-usage.md). Service Fabric enthält eine Funktion zum Melden von Metriken für einen Dienst, z. B. die Arbeitsspeichermenge oder die Anzahl von Datensätzen. Anhand der gemeldeten Metriken erkennt Service Fabric, dass einige Partitionen über eine höhere Auslastung als andere Partitionen verfügen. Es wird eine neue Verteilung für den Cluster durchgeführt, indem Replikate auf besser geeignete Knoten verschoben werden.
+- [Verfolgen Sie die Metriken für alle Replikate für den Dienst](service-fabric-resource-balancer-dynamic-load-reporting.md). Service Fabric enthält eine Funktion zum Melden von Metriken für einen Dienst, z. B. die Arbeitsspeichermenge oder die Anzahl von Datensätzen. Anhand der gemeldeten Metriken erkennt Service Fabric, dass einige Partitionen über eine höhere Auslastung als andere Partitionen verfügen. Es wird eine neue Verteilung für den Cluster durchgeführt, indem Replikate auf besser geeignete Knoten verschoben werden.
 
 Es kann vorkommen, dass Sie nicht wissen, wie viele Daten sich auf einer bestimmten Partition befinden. Also lautet die allgemeine Empfehlung, zweigleisig zu fahren: Verwenden einer Partitionierungsstrategie, bei der die Daten gleichmäßig auf die Partitionen verteilt werden, und Melden der Auslastung. Mit der ersten Methode werden Situationen verhindert, die im Beispiel mit der Umfrage beschrieben sind, und mit der zweiten Methode werden vorübergehende Unterschiede beim Zugriff oder der Auslastung in Abhängigkeit der Zeit ausgeglichen.
 
@@ -75,7 +75,7 @@ Auch die verfügbaren Computerressourcen müssen bei der Partitionierungsplanung
 
 Was passiert, wenn es auf einem ausgeführten Cluster zu Ressourceneinschränkungen kommt? Die Antwort lautet, dass Sie den Cluster einfach horizontal hochskalieren können, um die neuen Anforderungen abzudecken.
 
-Der [Leitfaden zur Kapazitätsplanung](manisdoc.md) enthält eine Anleitung, wie Sie ermitteln, wie viele Knoten für Ihren Cluster benötigt werden.
+Der [Leitfaden zur Kapazitätsplanung](service-fabric-capacity-planning.md) enthält eine Anleitung, wie Sie ermitteln, wie viele Knoten für Ihren Cluster benötigt werden.
 
 ## Durchführen der Partitionierung
 In diesem Abschnitt wird beschrieben, wie Sie mit der Partitionierung Ihres Diensts beginnen.
@@ -312,7 +312,7 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
 
     Nachdem die Verarbeitung abgeschlossen ist, schreiben wir die Ausgabe wieder zurück.
 
-15. Der letzte Schritt besteht darin, den Dienst zu testen. In Visual Studio werden Anwendungsparameter für die lokale Bereitstellung und die Cloudbereitstellung verwendet. Zum lokalen Testen des Diensts mit 26 Partitionen müssen Sie die Datei `Local.xml` im Ordner „ApplicationParameters“ des Projekts „AlphabetPartitions“ aktualisieren. Dies ist hier dargestellt:
+15. Der letzte Schritt besteht darin, den Dienst zu testen. In Visual Studio werden Anwendungsparameter für die lokale Bereitstellung und die Cloudbereitstellung verwendet. Zum lokalen Testen des Diensts mit 26 Partitionen müssen Sie die `Local.xml`-Datei im Ordner „ApplicationParameters“ des Projekts „AlphabetPartitions“ aktualisieren. Dies ist hier dargestellt:
 
     ```xml
     <Parameters>
@@ -321,10 +321,10 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
   </Parameters>
   ```
 
-16. Nach der Bereitstellung können Sie den Dienst und alle Partitionen im Service Fabric Explorer überprüfen. ![Dienst](./media/service-fabric-concepts-partitioning/alphabetservicerunning.png)
+16. Nach der Bereitstellung können Sie den Dienst und alle Partitionen im Service Fabric-Explorer überprüfen. ![Dienst](./media/service-fabric-concepts-partitioning/alphabetservicerunning.png)
 17. In einem Browser können Sie die Partitionierungslogik testen, indem Sie `http://localhost:8090/?lastname=somename` eingeben. Sie sehen, dass alle Nachnamen mit dem gleichen Anfangsbuchstaben in derselben Partition gespeichert werden. !["Browser"](./media/service-fabric-concepts-partitioning/alphabetinbrowser.png)
 
-Den gesamten Quellcode des Beispiels finden Sie bei [GitHub](www.github.com).
+Den gesamten Quellcode des Beispiels finden Sie bei [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions).
 
 ## Nächste Schritte
 
@@ -334,4 +334,6 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 
 - [Skalierbarkeit der Service Fabric-Dienste](service-fabric-concepts-scalability.md)
 
-<!---HONumber=Nov15_HO4-->
+[wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
+
+<!---HONumber=AcomDC_1125_2015-->

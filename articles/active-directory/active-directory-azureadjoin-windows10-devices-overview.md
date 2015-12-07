@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten | Microsoft Azure" 
-	description="bietet einen Überblick über die Bereitstellung von Windows 10-Geräten für Unternehmen und die verschiedenen Möglichkeiten zum Bereitstellen und Verwenden eines Geräts in einem Unternehmen." 
+	description="Bietet eine Übersicht über die Bereitstellung von Windows 10-Geräten für Unternehmen und die verschiedenen Möglichkeiten zum Bereitstellen und Verwenden eines Geräts in einem Unternehmen." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten
@@ -34,4 +34,4 @@ Die folgenden Themen bieten Einblicke in unterschiedliche Funktionen von Windows
 | Bereitstellung | [Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md) <br><br> [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)<br><br>[Aktivieren von Microsoft Passport zur geschäftlichen Nutzung in Unternehmen](active-directory-azureadjoin-passport-deployment.md)<br><br> |
 | Benutzeraufgaben | [Einrichten eines neuen Windows 10-Geräts mit Azure AD während des Setups](active-directory-azureadjoin-user-frx.md) <br><br> [Einrichten eines Windows 10-Geräts mit Azure AD in den Einstellungen)](active-directory-azureadjoin-user-upgrade.md) <br><br> [Verknüpfen eines persönlichen Windows 10-Geräts mit Ihrer Organisation](active-directory-azureadjoin-personal-device.md) |
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

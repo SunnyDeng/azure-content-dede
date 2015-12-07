@@ -62,7 +62,6 @@ Es gibt vier Schaltflächen auf der Symbolleiste, mit denen Sie Azure Data Facto
 2. Die JSON-Vorlage zum Erstellen eines verknüpften Computediensts wird im Editor-Arbeitsbereich rechts angezeigt. Gehen Sie wie folgt vor:
 	1. Geben Sie für **On-Demand-HDInsight-Cluster** Werte für die folgenden Eigenschaften ein: 
 		1. Für die **clusterSize**-Eigenschaft geben Sie die Größe des HDInsight-Clusters ein, den der Data Factory-Dienst zur Laufzeit erstellen soll. 
-		2. Für die **jobsContainer**-Eigenschaft geben Sie den Namen des Standard-Blobcontainers an, in dem die Clusterprotokolle gespeichert werden sollen.
 		3. Für die **timeToLive**-Eigenschaft geben Sie die zulässige Leerlaufzeit vor dem Löschen des HDInsight-Clusters an. Beispiel: 00:05:00 gibt an, dass der Cluster nach 5 Minuten Leerlaufzeit gelöscht werden soll.
 		4. Für die **version**-Eigenschaft geben Sie die HDInsight-Version für den Cluster an (Standard: Version 3.1).
 		5. Für die **linkedServiceName**-Eigenschaft geben Sie den verknüpften Azure-Speicherdienst an, der dem HDInsight-Cluster zugeordnet werden soll. 
@@ -221,4 +220,4 @@ Schrittanleitungen zum Erstellen einer Azure Data Factory mit Data Factory Edito
 [clone-datafactory-entity]: ./media/data-factory-editor/clone-datafactory-entity.png
 [add-activity-options]: ./media/data-factory-editor/add-activity-options.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

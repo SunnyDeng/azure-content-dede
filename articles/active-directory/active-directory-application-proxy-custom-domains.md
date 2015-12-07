@@ -3,7 +3,7 @@
 	description="In diesem Artikel wird erläutert, wie Sie mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy arbeiten."
 	services="active-directory"
 	documentationCenter=""
-	authors="rkarlin"
+	authors="kgremban"
 	manager="StevenPo"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="rkarlin"/>
+	ms.author="kgremban"/>
 
 # Arbeiten mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy
 > [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
@@ -53,4 +53,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

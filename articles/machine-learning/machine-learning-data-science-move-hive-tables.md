@@ -128,23 +128,9 @@ Sie können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL
 
 *https://&#60;Hadoop Clustername>.azurehdinsight.net/Home/HiveEditor*
 
-in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinformationen für den Hadoop-Cluster aufgefordert werden. Alternativ können Sie [Hive-Aufträge mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
+in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinformationen für den Hadoop-Cluster aufgefordert werden.
 
-
-## Übermitteln von Hive-Abfragen (alt)
-
-In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. (old intro – TBD incorporate)
-
-
-Hive-Abfragen können an der Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermittelt werden. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Anweisungen hierzu finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-process-hive-tables.md).
-
-Sie können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL
-
-https://&#60;Hadoop Clustername>.azurehdinsight.net/Home/HiveEditor
-
-in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinformationen für den Hadoop-Cluster aufgefordert werden. Sie sollten diese Anmeldeinformationen daher bereithalten.
-
-Alternativ können Sie [Hive-Aufträge mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
+Alternativ können Sie [Hive-Abfragen mit PowerShell ausführen](../hdinsight/hdinsight-hadoop-use-hive-powershell.md).
 
 
 ## <a name="create-tables"></a>Erstellen von Hive-Datenbanken und -Tabellen
@@ -264,4 +250,4 @@ Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
 
 Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

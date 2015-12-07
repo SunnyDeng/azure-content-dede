@@ -3,9 +3,9 @@
 	description="Ein Lernprogramm, das die Verwendung von socket.io in einer node.js-Web-App zeigt, die auf Azure gehostet wird."
 	services="app-service\web"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service-web"
@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="10/30/2015"
-	ms.author="mwasson"/>
+	ms.date="11/20/2015"
+	ms.author="robmcm"/>
 
 
 
 
 # Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in Azure App Service
 
-Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem Node.js-Server und Clients über WebSockets. Außerdem unterstützt es Fallback auf andere Transportmechanismen (wie Long Polling), die mit älteren Browsern funktionieren. In diesem Lernprogramm werden das Hosten einer Socket.IO-basierten Chat-Anwendung als Azure-Web-App erläutert und die [Skalierung](#scale-out) der Anwendung mit [Azure Redis Cache gezeigt](http://azure.microsoft.com/documentation/services/cache). Weitere Informationen über Socket.IO finden Sie unter [http://socket.io/][socketio].
+Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem Node.js-Server und Clients über WebSockets. Außerdem unterstützt es Fallback auf andere Transportmechanismen (wie Long Polling), die mit älteren Browsern funktionieren. In diesem Lernprogramm werden das Hosten einer Socket.IO-basierten Chat-Anwendung als Azure-Web-App erläutert und die [Skalierung](#scale-out) der Anwendung mit [Azure Redis Cache gezeigt](/documentation/services/cache). Weitere Informationen über Socket.IO finden Sie unter [http://socket.io/][socketio].
 
 > [AZURE.NOTE]Die Verfahren in dieser Aufgabe gelten für [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Die Verfahren für Cloud-Dienste finden Sie unter <a href="http://www.windowsazure.com/develop/nodejs/tutorials/app-using-socketio/">Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst</a>.
 
@@ -119,7 +119,7 @@ Socket.IO-Anwendungen können über einen __Adapter__ horizontal skaliert werden
 
 ###Erstellen eines Redis-Caches
 
-Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](https://azure.microsoft.com/de-DE/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache) aus, um einen neuen Cache zu erstellen.
+Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache) aus, um einen neuen Cache zu erstellen.
 
 > [AZURE.NOTE]Notieren Sie sich __Hostname__ und __Primärschlüssel__ für Ihren Cache, da Sie diese Informationen in den nächsten Schritten benötigen.
 
@@ -145,7 +145,7 @@ Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](http
 
 	> [AZURE.NOTE]Obwohl der Adapter __socket.io-redis__ direkt mit Redis kommunizieren kann, unterstützt die aktuelle Version die vom Azure Redis Cache benötigte Authentifizierung nicht. Daher wird die Erstverbindung über das Modul __redis__ hergestellt und der Client dann an den Adapter __socket.io-redis__ übergeben.
 	>
-	> Der Azure Redis Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6379 verwendet.
+	> Der Azure Redis Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6379 verwendet.
 
 3. Speichern Sie die geänderte Datei __app.js__.
 
@@ -285,4 +285,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 [pricing]: /pricing/details/web-sites/
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

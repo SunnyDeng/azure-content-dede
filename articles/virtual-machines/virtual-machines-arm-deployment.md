@@ -48,7 +48,7 @@ Um Azure AD zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manag
 
 	    New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-	>[AZURE.NOTE]Notieren Sie die Anwendungs-ID, die nach dem Erstellen der Anwendung zurückgegeben wird, da Sie diese für den nächsten Schritt benötigen. Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Active Directory-Bereich des Verwaltungsportals.
+	>[AZURE.NOTE]Notieren Sie die Anwendungs-ID, die nach dem Erstellen der Anwendung zurückgegeben wird, da Sie diese für den nächsten Schritt benötigen. Sie finden die Anwendungs-ID auch im Feld „Client-ID“ der Anwendung im Active Directory-Bereich des Azure-Vorschauportals.
 
 3. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
 
@@ -86,16 +86,7 @@ Nachdem die Azure Active Directory-Anwendung erstellt und die Authentifizierungs
 
 1.	Öffnen Sie die Datei "Program.cs" für das Projekt, das Sie erstellt haben, und fügen Sie die folgenden using-Anweisungen am Anfang der Datei hinzu:
 
-        using Microsoft.Azure;
-        using Microsoft.IdentityModel.Clients.ActiveDirectory;
-		using Microsoft.Azure.Management.Resources;
-		using Microsoft.Azure.Management.Resources.Models;
-		using Microsoft.Azure.Management.Storage;
-		using Microsoft.Azure.Management.Storage.Models;
-		using Microsoft.Azure.Management.Network;
-		using Microsoft.Azure.Management.Network.Models;
-		using Microsoft.Azure.Management.Compute;
-		using Microsoft.Azure.Management.Compute.Models;
+    using Microsoft.Azure; using Microsoft.IdentityModel.Clients.ActiveDirectory; using Microsoft.Azure.Management.Resources; using Microsoft.Azure.Management.Resources.Models; using Microsoft.Azure.Management.Storage; using Microsoft.Azure.Management.Storage.Models; using Microsoft.Azure.Management.Network; using Microsoft.Azure.Management.Network.Models; using Microsoft.Azure.Management.Compute; using Microsoft.Azure.Management.Compute.Models;
 
 
 2. Fügen Sie der Program-Klasse die folgende Methode hinzu, um das Token abzurufen, das zum Erstellen der Anmeldeinformationen benötigt wird:
@@ -349,7 +340,7 @@ Nachdem Sie alle unterstützenden Ressourcen erstellt haben, können Sie nun ein
 2.	Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
 
 		CreateVirtualMachine(credential);
-        Console.ReadLine();
+    Console.ReadLine();
 
 ##Schritt 5: Hinzufügen von Code zum Löschen der Ressourcen
 
@@ -384,4 +375,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -25,7 +25,7 @@ Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtuel
 
 ## Authentifizierung: Benutzernamen, Kennwörter und SSH-Schlüssel
 
-Wenn Sie mithilfe des Azure-Verwaltungsportals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort oder einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B. 'root'.
+Wenn Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort oder einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B. 'root'.
 
 
  - Weitere Informationen finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
@@ -45,7 +45,7 @@ Optional können Sie über **sudo -s** eine Root-Shell abrufen.
 
 ## Firewall-Konfiguration
 
-Azure bietet einen integrierten Paketfilter, der die Konnektivität auf die im Verwaltungsportal angegebenen Ports beschränkt. Standardmäßig ist SSH der einzige erlaubte Port. Sie können den Zugriff auf zusätzliche Ports auf Ihrem virtuellen Linux-Computer aktivieren, indem Sie im Verwaltungsportal Endpunkte konfigurieren.
+Azure bietet einen integrierten Paketfilter, der die Konnektivität auf die im Azure-Portal angegebenen Ports beschränkt. Standardmäßig ist SSH der einzige erlaubte Port. Sie können den Zugriff auf zusätzliche Ports auf Ihrem virtuellen Linux-Computer aktivieren, indem Sie im Azure-Portal Endpunkte konfigurieren.
 
  - Siehe: [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md)
 
@@ -81,7 +81,7 @@ Azure bietet die Möglichkeit, den Status eines vorhandenen virtuellen Computers
 
 2. Schalten Sie den virtuellen Computer aus.
 
-3. Klicken Sie im Verwaltungsportal auf *Erfassen*, oder verwenden Sie Powershell oder Befehlszeilen-Schnittstellentools, um den virtuellen Computer als Image zu erfassen.
+3. Klicken Sie im Azure-Portal auf *Erfassen*, oder verwenden Sie PowerShell oder Tools der Befehlszeilenschnittstelle, um den virtuellen Computer als Image zu erfassen.
 
  - Siehe: [Erfassen eines virtuellen Linux-Computers zur Verwendung als Vorlage](virtual-machines-linux-capture-image.md)
 
@@ -99,4 +99,4 @@ Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die 
 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

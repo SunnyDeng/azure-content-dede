@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="08/03/2015" 
+	ms.date="11/19/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer PHP-SQL-Web-App und Bereitstellen in Azure App Service mit Git
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) erstellen, die eine Verbindung mit einer Azure-SQL-Datenbank herstellt, und wie Sie diese über Git bereitstellen. Dieses Lernprogramm setzt voraus, dass auf dem Computer [PHP][install-php], [SQL Server Express][install-SQLExpress], die [Microsoft-Treiber für SQL Server für PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), ein Webserver und [Git][install-git] installiert sind. Nach der Durchführung dieses Lernprogramms verfügen Sie über eine in Azure ausgeführte PHP-SQL-Web-App.
+In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) erstellen, die eine Verbindung mit einer Azure-SQL-Datenbank herstellt, und wie Sie diese über Git bereitstellen. Dieses Tutorial setzt voraus, dass auf dem Computer [PHP][install-php], [SQL Server Express][install-SQLExpress], die [Microsoft-Treiber für SQL Server für PHP](http://www.microsoft.com/download/en/details.aspx?id=20098) und [Git][install-git] installiert sind. Nach der Durchführung dieses Lernprogramms verfügen Sie über eine in Azure ausgeführte PHP-SQL-Web-App.
 
-> [AZURE.NOTE]Sie können PHP, SQL Server Express, die Microsoft-Treiber für SQL Server für PHP und Internet Information Services (IIS) mit dem [Microsoft-Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) installieren und konfigurieren.
+> [AZURE.NOTE]Sie können PHP, SQL Server Express und die Microsoft-Treiber für SQL Server für PHP mit dem [Microsoft-Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) installieren und konfigurieren.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -41,9 +41,9 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App und eine SQL-Datenbank zu ers
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
 
-2. Öffnen Sie Azure Marketplace entweder durch Klicken auf das Symbol **Marketplace** oder auf das Symbol **Neu** links unten im Dashboard. Wählen Sie anschließend **Web + Mobile** und dann unten **Azure Marketplace** aus.
+2. Öffnen Sie den Azure Marketplace, indem Sie oben links im Dashboard auf das Symbol **Neu** klicken. Klicken Sie dann neben „Marketplace“ auf **Alles markieren**, und wählen Sie **Web und mobil** aus.
 	
-3. Wählen Sie im Marketplace **Web-Apps** aus.
+3. Wählen Sie im Marketplace **Web und mobil** aus.
 
 4. Klicken Sie auf das Symbol W**Web-App + SQL**.
 
@@ -65,15 +65,15 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App und eine SQL-Datenbank zu ers
 
 	![Ressourcengruppe der Web-App](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
 
-5. Klicken Sie auf **Kontinuierliche Bereitstellung einrichten** > **Quelle auswählen**. Wählen Sie **Lokales Git-Repository** aus, und klicken Sie auf **OK**.
+5. Klicken Sie unter **Einstellungen** auf **Kontinuierliche Bereitstellung** > **Erforderliche Einstellungen konfigurieren**. Wählen Sie **Lokales Git-Repository** aus, und klicken Sie auf **OK**.
 
 	![Wo befindet sich Ihr Quellcode](./media/web-sites-php-sql-database-deploy-use-git/setup-local-git.png)
 
-	Wenn Sie nicht bereits ein Git-Repository eingerichtet haben, müssen Sei einen Benutzernamen und ein Kennwort angeben. Klicken Sie dazu auf dem Blatt der Web-App auf **Anmeldeinformationen für die Bereitstellung einrichten**.
+	Wenn Sie nicht bereits ein Git-Repository eingerichtet haben, müssen Sei einen Benutzernamen und ein Kennwort angeben. Klicken Sie dazu auf dem Blatt der Web-App auf **Einstellungen** > **Anmeldeinformationen für die Bereitstellung**.
 
 	![](./media/web-sites-php-sql-database-deploy-use-git/deployment-credentials.png)
 
-6. **Kontinuierliche Bereitstellung einrichten** ändert sich in **Keine Bereitstellung gefunden**. Klicken Sie darauf, um die Git-Remote-URL anzuzeigen, die Sie später für die Bereitstellung Ihrer PHP-App benötigen.
+6. Klicken Sie unter **Einstellungen** auf **Eigenschaften**, um die Git-Remote-URL anzuzeigen, die Sie später für die Bereitstellung Ihrer PHP-App benötigen.
 
 ##Abrufen von SQL-Datenbank-Verbindungsinformationen
 
@@ -81,7 +81,7 @@ Um eine Verbindung zu der mit Ihrer Web-App verknüpften SQL-Datenbankinstanz he
 
 1. Klicken Sie auf dem Blatt der Ressourcengruppe auf das Symbol der SQL-Datenbank.
 
-2. Klicken Sie auf dem Blatt der SQL-Datenbank auf **Eigenschaften** und dann auf **Verbindungszeichenfolgen anzeigen**.
+2. Klicken Sie auf dem Blatt der SQL-Datenbank auf **Einstellungen** > **Eigenschaften** und dann auf **Datenbank-Verbindungszeichenfolgen anzeigen**.
 
 	![Datenbankeigenschaften anzeigen](./media/web-sites-php-sql-database-deploy-use-git/view-database-properties.png)
 	
@@ -94,7 +94,7 @@ Die Registrierungsanwendung ist eine einfache PHP-Anwendung, die Ihnen die Regis
 * **index.php**: Zeigt ein Registrierungsformular und eine Tabelle mit Registranteninformationen an.
 * **createtable.php**: Erstellt die SQL-Datenbanktabelle für die Anwendung. Diese Datei wird nur einmal verwendet.
 
-Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und auszuführen. Beachten Sie, dass Voraussetzung für diese Schritte ist, dass PHP, SQL Server Express und ein Webserver auf Ihrem lokalen Computer eingerichtet sind und die [PDO-Erweiterung für SQL-Server][pdo-sqlsrv] aktiviert ist.
+Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und auszuführen. Beachten Sie, dass Voraussetzung für diese Schritte ist, dass PHP und SQL Server Express auf Ihrem lokalen Computer eingerichtet sind und die [PDO-Erweiterung für SQL-Server][pdo-sqlsrv] aktiviert ist.
 
 1. Erstellen Sie eine SQL Server-Datenbank namens `registration`. Sie können dies in der `sqlcmd`-Eingabeaufforderung mit diesen Befehlen ausführen:
 
@@ -103,7 +103,7 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 		2> GO	
 
 
-2. Erstellen Sie im Stammverzeichnis Ihres Webservers einen Ordner mit dem Namen `registration`, und erstellen Sie darin zwei Dateien mit den Namen `createtable.php` und `index.php`.
+2. Erstellen Sie im Stammverzeichnis Ihrer Anwendung zwei Dateien mit den Namen `createtable.php` und `index.php`.
 
 3. Öffnen Sie die Datei `createtable.php` in einem Texteditor oder IDE, und fügen Sie den folgenden Code hinzu. Dieser Code wird verwendet, um die Tabelle `registration_tbl` in der Datenbank `registration` zu erstellen.
 
@@ -132,7 +132,11 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 
 	Die Werte für <code>$user</code> und <code>$pwd</code> müssen durch den lokalen SQL Server-Benutzernamen und das dazugehörige Kennwort ersetzt werden.
 
-4. Öffnen Sie einen Webbrowser, und navigieren Sie zu ****http://localhost/registration/createtable.php**. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
+4. Geben Sie in einer Terminalsitzung im Stammverzeichnis der Anwendung den folgenden Befehl ein:
+
+		php -S localhost:8000
+
+4. Öffnen Sie einen Webbrowser, und navigieren Sie zu ****http://localhost:8000/createtable.php**. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
 
 5. Öffnen Sie die Datei **index.php** in einem Texteditor oder IDE, und fügen Sie den Basis-HTML- und CSS-Code für die Seite hinzu (der PHP-Code wird in einem späteren Schritt hinzugefügt).
 
@@ -228,7 +232,7 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 			echo "<h3>No one is currently registered.</h3>";
 		}
 
-Nun können Sie zu ****http://localhost/registration/index.php** navigieren, um die Anwendung zu testen.
+Nun können Sie zu ****http://localhost:8000/index.php** navigieren, um die Anwendung zu testen.
 
 ##Veröffentlichen der Anwendung
 
@@ -292,4 +296,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -123,7 +123,7 @@ Um eine nahtlose und vereinheitlichte Verwendung in Azure-Diensten zu ermöglich
 Mobile Apps-Entwickler können Notification Hubs mit dem folgenden Workflow verwenden:
 
 1. Abrufen des PNS-Gerätehandle
-2. Registrieren des Geräts und der [Vorlagen](optional) mit Notification Hubs über die praktische Registrierungs-API des Mobile Apps-Client-SDK
+2. Registrieren des Geräts und der [Vorlagen] mit Notification Hubs über die praktische Registrierungs-API des Mobile Apps-Client-SDK
     + Beachten Sie, dass Mobile Apps aus Sicherheitsgründen alle Tags für Registrierungen entfernt. Arbeiten Sie direkt von Ihrem Back-End aus mit Notification Hubs, um Tags Geräten zuzuordnen.
 3. Senden von Benachrichtigungen von Ihrem App-Back-End mit Notification Hubs
 
@@ -161,8 +161,8 @@ Die relevanten .NET-API-Referenzen für Pushbenachrichtigungen befinden sich hie
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.aspx
   [Mobile App Service-Apps]: https://azure.microsoft.com/de-DE/documentation/articles/app-service-mobile-value-prop/
-  [templates]: https://msdn.microsoft.com/de-DE/library/azure/dn530748.aspx
+  [Vorlagen]: https://msdn.microsoft.com/de-DE/library/azure/dn530748.aspx
   [Azure-Portal]: https://portal.azure.com
   [tags]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

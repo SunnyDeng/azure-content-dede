@@ -73,11 +73,11 @@ Im Azure-Portal können Benutzer auch ein Image hochladen, für das das SysPrep-
 
 **Abbildung 2: Übersicht über die Schritte zum Hochladen eines Image**
 
-## Bereitstellen von SharePoint 2010 auf Azure 
+## Bereitstellen von SharePoint 2010 auf Azure
 
 Sie können SharePoint 2010 auf Azure mit dem klassischen Bereitstelungsmodell bereitstellen, indem Sie folgendermaßen vorgehen:
 
-1. Melden Sie sich am [Azure-Verwaltungsportal](http://manage.windowsazure.com/) über Ihr Azure-Abonnementkonto an. Wenn Sie kein Azure-Konto haben, [melden Sie sich für eine kostenlose Testversion von Azure an](http://azure.microsoft.com/pricing/free-trial/).
+1. Melden Sie sich beim [Azure-Portal](http://manage.windowsazure.com/) mit Ihrem Azure-Abonnementkonto an. Wenn Sie kein Azure-Konto haben, [melden Sie sich für eine kostenlose Testversion von Azure an](http://azure.microsoft.com/pricing/free-trial/).
 2. Klicken Sie zum Erstellen eines virtuellen Computers mit dem Basisbetriebssystem im Azure-Portal auf **Neu > Compute > Virtueller Computer > Aus Katalog**.
 3. Das Dialogfeld **Image auswählen** wird angezeigt. Klicken Sie auf das Plattformimage **Windows Server 2008 R2 SP1** und dann auf den Pfeil nach rechts.
 4. Das Dialogfeld **Konfiguration des virtuellen Computers** wird angezeigt. Geben Sie die folgenden Informationen ein:
@@ -87,7 +87,7 @@ Sie können SharePoint 2010 auf Azure mit dem klassischen Bereitstelungsmodell b
 	- Geben Sie im Feld **Neues Kennwort** ein sicheres Kennwort ein.
 	- Geben Sie im Feld **Bestätigen** das Kennwort erneut ein, und klicken Sie dann auf den Pfeil nach rechts.
 5. Das zweite Dialogfeld **Konfiguration des virtuellen Computers** wird angezeigt. Geben Sie die folgenden Informationen ein:
-	- Wählen Sie unter **Clouddienst** die Option **Einen neuen Clouddienst erstellen** aus. Geben Sie den DNS-Namen eines Clouddienstes an, oder wählen Sie einen vorhandenen Clouddienst aus.
+	- Wählen Sie unter **Clouddienst** die Option **Einen neuen Cloud-Dienst erstellen** aus. Geben Sie den DNS-Namen eines Clouddienstes an, oder wählen Sie einen vorhandenen Clouddienst aus.
 	- Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** die Region aus, in der das virtuelle Image gehostet werden soll.
 	- Klicken Sie unter **Speicherkonto** auf die Option **Ein automatisch generiertes Speicherkonto verwenden** oder auf den Namen eines vorhandenen Speicherkontos. Es wird nur ein Speicherkonto pro Region automatisch erstellt. Alle weiteren virtuellen Computer, die mit dieser Einstellung erstellt werden, befinden sich in diesem Speicherkonto. Es sind maximal 20 Speicherkonten möglich. Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos in Azure](virtual-machines-create-upload-vhd-windows-server.md#step-2-create-a-storage-account-in-azure).
 	- Wählen Sie im Feld **Verfügbarkeitsgruppe** die Option **(Keine)**, aus, und klicken Sie dann auf den Pfeil nach rechts.
@@ -225,7 +225,7 @@ Führen Sie die folgenden Schritte aus, um eine BI-Umgebung auf Azure horizontal
 1. Bereitstellung:
 	- Stellen Sie mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem lokalen Standort und Azure bereit. Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md).
 	- Stellen Sie im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Images aus der Abbildbibliothek bereit. Sie können BI-Workloadimages von SharePoint Server oder SQL Server in die Abbildbibliothek hochladen. Auf diese Weise kann jeder autorisierte Benutzer diese virtuellen BI-Komponentencomputer auswählen, um die horizontal hochskalierte Umgebung zu erstellen.
-2. Installation: 
+2. Installation:
 	- Wenn Ihre Organisation über keine vorgefertigten Images von SharePoint Server- oder SQL Server-BI-Komponenten verfügt, installieren Sie SharePoint Server und SQL Server mit einer Remotedesktopverbindung auf den virtuellen Computern.
 	- Weitere Informationen zum Installieren von SharePoint finden Sie unter [Installieren von SharePoint Server 2010 mithilfe von Windows PowerShell](http://technet.microsoft.com/library/cc262839.aspx) oder [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
 	- Weitere Informationen zum Installieren von SQL Server finden Sie unter [Installieren von SQL Server mit SysPrep](http://msdn.microsoft.com/library/ee210664.aspx).
@@ -286,6 +286,6 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf vi
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-[Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (auf Englisch)
+[Test the SharePoint Server 2016 IT Preview in Azure (auf Englisch)](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

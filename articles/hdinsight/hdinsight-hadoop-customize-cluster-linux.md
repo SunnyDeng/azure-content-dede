@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/16/2015"
+	ms.date="11/20/2015"
 	ms.author="larryfr"/>
 
 # Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen (Linux)
@@ -60,7 +60,7 @@ Name | Skript
 
 2. Klicken Sie unter __Optionale Konfiguration__ auf dem Blatt **Skriptaktionen** auf **Skriptaktion hinzufügen**, um wie folgt Details zur Skriptaktion anzugeben:
 
-	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-customize-cluster-linux/HDI.CreateCluster.8.png "Anpassen eines Clusters mit "Skriptaktion"")
+	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-customize-cluster-linux/HDI.CreateCluster.8.png)
 
 	| Eigenschaft | Wert |
 	| -------- | ----- |
@@ -80,12 +80,12 @@ In diesem Abschnitt werden Azure-Ressourcen-Manager (ARM)-Vorlagen verwendet, um
 ### Voraussetzungen
 
 * Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight Powershell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure-PowerShell](../powershell-install-configure.md).
-* Anweisungen zum Erstellen von ARM-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
-* Wenn Sie Azure PowerShell noch nicht mit dem Ressourcen-Manager verwendet haben, finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager) weitere Informationen.
+* Anweisungen zum Erstellen von ARM-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
+* Wenn Sie Azure PowerShell noch nicht mit dem Ressourcen-Manager verwendet haben, finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) weitere Informationen.
 
 ### Erstellen von Clustern mithilfe von Skriptaktionen
 
-1. Kopieren Sie die folgende Vorlage in einen Speicherort auf Ihrem Computer. Mit dieser Vorlage wird R auf dem Hauptknoten sowie auf den Workerknoten im Cluster installiert. Sie können zudem überprüfen, ob die JSON-Vorlage gültig ist. Fügen Sie den Vorlageninhalt in [JSONLint](http://jsonlint.com/) (JSON-Online-Validator-Tool) ein.
+1. Kopieren Sie die folgende Vorlage in einen Speicherort auf Ihrem Computer. Mit dieser Vorlage wird R auf dem Hauptknoten sowie auf den Workerknoten im Cluster installiert. Sie können zudem überprüfen, ob die JSON-Vorlage gültig ist. Fügen Sie den Vorlageninhalt in [JSONLint](http://jsonlint.com/) (JSON-Onlineüberprüfungstool) ein.
 
 			{
 		    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -333,11 +333,27 @@ Führen Sie die folgenden Schritte aus:
 	| Parameter | Vom Skript benötigte Parameter. |
 	| Uri | Gibt den URI des auszuführenden Skripts an. |
 
+4. Legen Sie den Administrator/HTTPS-Benutzer für den Cluster fest:
+
+        $httpCreds = get-credential
+        
+    Geben Sie nach Aufforderung „admin“ als Namen und ein Kennwort ein.
+
+5. Legen Sie die SSH-Anmeldeinformationen fest:
+
+        $sshCreds = get-credential
+    
+    Geben Sie nach Aufforderung den SSH-Benutzernamen und das Kennwort ein. Wenn Sie das SSH-Konto mit einem Zertifikat anstatt mit einem Kennworts schützen möchten, verwenden Sie ein leeres Kennwort, und legen Sie `$sshPublicKey` auf den Inhalt des öffentlichen Schlüssels des Zertifikats fest, der verwendet werden soll. Beispiel:
+    
+        $sshPublicKey = Get-Content .\path\to\public.key -Raw
+    
 4. Erstellen Sie schließlich den Cluster:
         
-        New-AzureRmHDInsightCluster -config $config -clustername $clusterName -DefaultStorageContainer $containerName -Location $location -ResourceGroupName $resourceGroupName -ClusterSizeInNodes $clusterNodes
+        New-AzureRmHDInsightCluster -config $config -clustername $clusterName -DefaultStorageContainer $containerName -Location $location -ResourceGroupName $resourceGroupName -ClusterSizeInNodes $clusterNodes -HttpCredential $httpCreds -SshCredential $sshCreds -OSType Linux
+    
+    Wenn Sie einen öffentlichen Schlüssel zum Schutz Ihres SSH-Kontos verwenden, müssen Sie auch `-SshPublicKey $sshPublicKey` als Parameter angeben.
 
-Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Die Erstellung des Clusters kann einige Minuten in Anspruch nehmen.
+Die Erstellung des Clusters kann einige Minuten in Anspruch nehmen.
 
 ## Verwenden einer Skriptaktion über das HDInsight .NET SDK
 
@@ -380,7 +396,7 @@ Das HDInsight .NET SDK enthält Clientbibliotheken zur Vereinfachung der Arbeit 
         private const string NewClusterLocation = "<LOCATION>";  // Must match the Azure Storage account location
         private const string NewClusterVersion = "3.2";
         private const HDInsightClusterType NewClusterType = HDInsightClusterType.Hadoop;
-        private const OSType NewClusterOSType = OSType.Windows;
+        private const OSType NewClusterOSType = OSType.Linux;
 
         private const string ExistingStorageName = "<STORAGE ACCOUNT NAME>.blob.core.windows.net";
         private const string ExistingStorageKey = "<STORAGE ACCOUNT KEY>";
@@ -496,7 +512,7 @@ Wenn die Erstellung des Clusters aufgrund eines Fehlers der Skriptaktion fehlges
 
 	![Screenshot von Vorgängen](./media/hdinsight-hadoop-customize-cluster-linux/script_action_logs_in_storage.png)
 
-	Hier sind die Protokolle separat für Hauptknoten, Workerknoten und zookeeper-Knoten aufgeführt. Beispiele hierfür sind: * **Headnode** - `<uniqueidentifier>AmbariDb-hn0-<generated_value>.cloudapp.net` * **Worker-Knoten** - `<uniqueidentifier>AmbariDb-wn0-<generated_value>.cloudapp.net` * **Zookeeper-Knoten** - `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
+	Hier sind die Protokolle separat für Hauptknoten, Workerknoten und zookeeper-Knoten aufgeführt. Beispiele hierfür sind: * **Headnode** – `<uniqueidentifier>AmbariDb-hn0-<generated_value>.cloudapp.net` * **Worker-Knoten** – `<uniqueidentifier>AmbariDb-wn0-<generated_value>.cloudapp.net` * **Zookeeper-Knoten** – `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
 
 * Alle stdout- und stderr-Elemente des entsprechenden Hosts werden in das Speicherkonto hochgeladen. Für jede Skriptaktion liegen die Dateien **output-*.txt** und **errors-*.txt** vor. Die Datei „output-*.txt“ enthält Informationen zum URI des Skripts, das auf dem Host ausgeführt wurde. Beispiel:
 
@@ -549,4 +565,4 @@ Informationen und Beispiele zum Erstellen und Verwenden von Skripts zum Anpassen
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Phasen während der Clustererstellung"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -17,7 +17,7 @@
 
 	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
 
-5. Klicken Sie auf **Anmeldeinformationen** und dann auf **Anmeldeinformationen hinzufügen**->**API-Schlüssel**.
+5. Klicken Sie auf **Anmeldeinformationen** und dann auf **Anmeldeinformationen hinzufügen** und **API-Schlüssel**.
 
 
    	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key.png)
@@ -34,4 +34,4 @@
 
 	Mit diesem API-Schlüsselwert geben Sie Azure die Möglichkeit, sich bei GCM zu authentifizieren und Pushbenachrichtigungen im Auftrag Ihrer App zu verschicken.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

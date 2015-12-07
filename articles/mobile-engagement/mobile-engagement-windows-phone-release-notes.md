@@ -18,6 +18,12 @@
 
 #Windows Phone Silverlight SDK – Versionshinweise
 
+##3\.1.0 (20.11.2015)
+Teil des NuGet-Pakets *MicrosoftAzure.MobileEngagement* **v3.2.0**
+
+-   Absturz beim Anfordern der Geräte-ID direkt nach der Initialisierung behoben.
+-   Verbesserungen bei Konsolenprotokollen.
+
 ##3\.0.0 (03.04.2015)
 
 -   Standardbenachrichtigungssymbol aktualisiert.
@@ -31,4 +37,4 @@
 -   Verbesserungen der Sicherheit
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

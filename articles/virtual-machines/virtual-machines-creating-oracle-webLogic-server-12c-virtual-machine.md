@@ -24,7 +24,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 ##Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure
 
-1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
 
 2. Klicken Sie auf **Marketplace** und dann auf **Compute**, und geben Sie **Oracle** in das Suchfeld ein.
 
@@ -52,7 +52,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 ##Konfigurieren eines virtuellen Oracle WebLogic Server 12c-Computers in Azure
 
-1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
 
 2.	Klicken Sie auf **Virtuelle Computer**.
 
@@ -129,7 +129,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 10.	Erstellen Sie einen Endpunkt für den virtuellen Computer:
 
-	1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
+	1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
 
 	2.	Klicken Sie auf **Durchsuchen**.
 
@@ -173,7 +173,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	8.	Geben Sie einen Namen für die Regel und optional eine Beschreibung ein, und klicken Sie dann auf **Fertig stellen**.
 
-12.	Um die ausgeführte Warenkorbanwendung im Internet anzuzeigen, öffnen Sie einen Browser mit der URL in Form von `http://<<unique_domain_name>>/shoppingcart`. (Sie können den Wert für <<*unique\_domain\_name*>> im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle WebLogic Server verwenden.)
+12.	Um die ausgeführte Warenkorbanwendung im Internet anzuzeigen, öffnen Sie einen Browser mit der URL in Form von `http://<<unique_domain_name>>/shoppingcart`. (Sie können den Wert für <<*unique\_domain\_name*>> im [Azure-Vorschauportal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle WebLogic Server verwenden.)
 
 
 ##Zusätzliche Ressourcen
@@ -185,6 +185,6 @@ Nachdem Sie den virtuellen Computer mit Oracle WebLogic Server eingerichtet habe
 
 -	[Verwendung von Oracle WebLogic Server 12c mit Linux in Microsoft Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
--	[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)
+-	[Oracle Virtual Machine images for Azure (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

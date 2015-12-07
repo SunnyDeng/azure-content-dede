@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/13/2015" 
+	ms.date="11/23/2015" 
 	ms.author="awills"/>
  
 # Was ist Application Insights?
@@ -21,7 +21,7 @@ Application Insights ist ein erweiterbarer Analysedienst, der Live-Anwendungen �
 
 ![Erstellen Sie ein Diagramm mit der Statistik zur Benutzeraktivität, oder führen Sie eine Detailsuche bei bestimmten Ereignissen aus.](./media/app-insights-overview/00-sample.png)
 
-Er funktioniert mit Web-Apps und eigenständigen Apps auf einer Vielzahl von Plattformen: .NET oder J2EE, lokal gehostet oder in der Cloud, Geräteapps für Windows, iOS, Android, OS X und andere Plattformen.
+Er funktioniert mit Web-Apps und eigenständigen Apps auf einer Vielzahl von Plattformen: .NET oder J2EE, lokal gehostet oder in der Cloud.
 
 Application Insights ist für das Entwicklungsteam konzipiert. Damit können Sie folgende Aktionen ausführen:
 
@@ -32,7 +32,7 @@ Application Insights ist für das Entwicklungsteam konzipiert. Damit können Sie
  *  Warnungen bei Leistungsänderungen oder Abstürzen.
  *  Metriken zur Diagnose von Leistungsproblemen, z. B. Reaktionszeiten, CPU-Auslastung, Nachverfolgung von Abhängigkeiten.
  *  Verfügbarkeitstests für Web-Apps.
- *  Berichte und Warnungen zu Abstürzen und Ausnahmen.
+ *  Berichte und Warnungen zu Ausnahmen.
  *  Leistungsstarke Suche für Diagnoseprotokolle (einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks).
 
 Das SDK für jede Plattform umfasst eine Reihe von Modulen, die die Anwendung ohne Konfigurationsaufwand überwachen. Darüber hinaus können Sie Ihre eigene Telemetrie für detailliertere und besser abgestimmte Analysen codieren.
@@ -53,13 +53,10 @@ Es gibt SDKs für eine wachsende Palette an Plattformen. Derzeit enthält die Li
  * [Azure Cloud Services](app-insights-cloudservices.md)
  * [J2EE-Server][java]
  * [Webseiten][client]\: HTML und JavaScript
- * [Windows Phone, Windows Store, universelle Windows 10-Apps und direkte Integration in das Windows 10-Entwicklerportal][windows]
- * [Windows Desktop][desktop]
- * [iOS][ios]
- * [Android][android]
+ * [Windows-Apps für Desktops und Server][desktop]
  * [Weitere Plattformen][platforms] – Node.js, PHP, Python, Ruby, Joomla, SharePoint, WordPress
 
-Application Insights kann Telemetriedaten auch aus vorhandenen ASP.NET-Web-Apps in IIS abrufen, ohne diese neu zu erstellen.
+Application Insights kann Telemetriedaten auch aus vorhandenen ASP.NET-Web-Apps abrufen, ohne diese neu zu erstellen.
 
 Wenn Ihre App Clients, Server und andere Komponenten aufweist, können Sie sie alle instrumentieren. Die Daten werden in das Application Insights-Portal integriert, sodass Sie beispielsweise Ereignisse auf dem Client mit Ereignissen auf dem Server vergleichen können.
 
@@ -154,4 +151,4 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/18/2015"
+   ms.date="11/19/2015"
    ms.author="tomfitz"/>
 
 # Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen
@@ -30,11 +30,9 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------------------------ | -------------- | -------------- |-------- | ------ |
 | Virtual Machines | Ja | Ja, mehrere Optionen | Nein | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
-| Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | |
+| Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | Ja | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | |
 | Dynamics Lifecycle Services | Ja | Nein | | | |
-| Virtuelle Computer (klassisch) | Eingeschränkt | Ja | Teilweise (siehe unten) | - | - |
-| Remote-App | Nein | - | - | - | - |
-| Service Fabric | Nein | - | - | - | - |
+| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - | | Remote-App | Nein | Nein | - | - | - | | Service Fabric | Nein | - | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -70,8 +68,8 @@ Ressourcen des Typs "Virtuelle Computer (klassisch)" können in neue Ressourceng
 | API Management | Ja | Nein | Ja | [API erstellen](https://msdn.microsoft.com/library/azure/dn781423.aspx#CreateAPI) | |
 | API-Apps | Ja | [Ja](https://portal.azure.com/#create/microsoft_com.ApiApp.0.2.0-preview) | | | [2015-03-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-03-01-preview/Microsoft.AppService.json) |
 | Web-Apps | Ja | [Ja](https://portal.azure.com/#create/Microsoft.WebSite) | Ja, mit Einschränkungen (siehe unten) | | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Web.json) |
-| Notification Hubs | Ja | [Ja](https://portal.azure.com/#create/Microsoft.NotificationHub) | | [Notification Hub erstellen:](https://msdn.microsoft.com/library/azure/dn223269.aspx) | [2015-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-04-01/Microsoft.NotificationHubs.json) |
-| Logik-Apps | Ja | [Ja](https://portal.azure.com/#create/Microsoft.EmptyWorkflow.0.2.0-preview) | | | |
+| Notification Hubs | Ja | [Ja](https://portal.azure.com/#create/Microsoft.NotificationHub) | Ja | [Notification Hub erstellen:](https://msdn.microsoft.com/library/azure/dn223269.aspx) | [2015-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-04-01/Microsoft.NotificationHubs.json) |
+| Logik-Apps | Ja | [Ja](https://portal.azure.com/#create/Microsoft.EmptyWorkflow.0.2.0-preview) | Ja | | |
 | Mobile Engagements | Ja | Nein | Ja | | |
 
 Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von Web-Apps stehen folgende Optionen bereit:
@@ -85,7 +83,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | ------- | ------- | --------- | -------------- | -------- | ------ |
 | Event Hub | Ja | Nein | | [Event Hub erstellen](https://msdn.microsoft.com/library/azure/dn790676.aspx) | |
 | Stream Analytics | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) | | | |
-| HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | | | |
+| HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | Ja | | |
 | Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) | |
 | Machine Learning | Nein | Nein | - | - | - | | Data Catalog | Nein | Nein | - | - | - |
 
@@ -109,15 +107,13 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
-| Azure Active Directory | Nein | Nein | - | - | - |
-| Azure Actice Directory B2C | Nein | Nein | - | - | - |
-| Multi-Factor Authentication | Nein | Nein | - | - | - |
+| Azure Active Directory | Nein | Nein | - | - | - | | Azure Actice Directory B2C | Nein | Nein | - | - | - | | Multi-Factor Authentication | Nein | Nein | - | - | - |
 
 ## Entwicklerdienste 
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | ---------- | -------------- | -------- | ------ |
-| Application Insights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AppInsights.0.2.3-preview) | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.Insights.json) |
+| Application Insights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AppInsights.0.2.3-preview) | Nein | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.Insights.json) |
 | Bing Maps | Ja | [Ja](https://portal.azure.com/#create/bingmaps.mapapis.1.0.4) | | | |
 | Visual Studio-Konto | Ja | | | | [2014-02-26](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-02-26/microsoft.visualstudio.json) |
 
@@ -125,7 +121,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | --------- | -------------- | -------- | ------ |
-| Automation | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AutomationAccount.1.0.2-preview) | | | |
+| Automation | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AutomationAccount.1.0.2-preview) | Ja | | |
 | Schlüsseltresor | Ja | Nein | Ja | [Referenz zur Schlüsseltresor-REST-API](https://msdn.microsoft.com/library/azure/dn903609.aspx) | |
 | Scheduler | Ja | Nein | | | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-08-01/Microsoft.Scheduler.json) |
 | Operational Insights | Ja | Nein | Ja | | |
@@ -237,4 +233,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

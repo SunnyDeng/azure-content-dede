@@ -5,8 +5,9 @@
 	documentationCenter=""
 	authors="scoriani"
 	manager="timlt"
-	editor="tysonn"/>
-<!-- In pageTitle, to follow corporate style (sentence-case caps), s/b lowercase "template", correct? This matches what is used later in article too. Also, precede first mention of "Azure" with "Microsoft" -->
+	editor="tysonn"
+	tags="azure-resource-manager"/>
+
 <tags
 	ms.service="virtual-machines"
 	ms.workload="multiple"
@@ -250,7 +251,7 @@ Denken Sie beim Bereitstellen daran, dass ein neues Azure-Speicherkonto erstellt
 
 Während und nach der Bereitstellung können Sie alle Anforderungen überprüfen, die während der Bereitstellung vorgenommen wurden, einschließlich der aufgetretenen Fehler.
 
-Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
+Öffnen Sie dazu das [Azure-Vorschauportal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
 
 - Klicken Sie auf der linken Navigationsleiste auf "Durchsuchen", scrollen Sie nach unten, und klicken Sie auf "Ressourcengruppen".
 - Nach dem Klicken auf die Ressourcengruppe, die Sie gerade erstellt haben, wird das Blatt "Ressourcengruppe" angezeigt.
@@ -495,4 +496,4 @@ Dieser Ansatz empfiehlt folgende Schritte:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

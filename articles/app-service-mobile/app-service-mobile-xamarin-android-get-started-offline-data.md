@@ -13,14 +13,12 @@
     ms.tgt_pltfrm="mobile-xamarin-android"
     ms.devlang="dotnet"
     ms.topic="article"
-	ms.date="08/22/2015"
+	ms.date="11/22/2015"
     ms.author="wesmc"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile Xamarin.Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
 
@@ -42,12 +40,14 @@ Das Xamarin-Clientprojekt, das Sie heruntergeladen haben, nachdem Sie das Lernpr
 
 * Bevor Tabellenvorgänge durchgeführt werden können, muss der lokale Speicher initialisiert werden. Die lokale Datenbank wird initialisiert, wenn `ToDoActivity.InitLocalStoreAsync()` von `ToDoActivity.OnCreate()` ausgeführt wird. Dadurch wird eine neue lokale SQLite-Datenbank mit der `MobileServiceSQLiteStore`-Klasse erstellt, die vom Azure Mobile Apps-Client-SDK bereitgestellt wird. 
  
-	Die `DefineTable`-Methode erstellt eine Tabelle im lokalen Speicher, die mit den Feldern im bereitgestellten Typ übereinstimmt (in diesem Fall `ToDoItem`). Der Typ muss nicht alle Spalten der Remotedatenbank enthalten. Es ist möglich, nur eine Teilmenge der Spalten zu speichern. // ToDoActivity.cs
+	Die `DefineTable`-Methode erstellt eine Tabelle im lokalen Speicher, die mit den Feldern im bereitgestellten Typ übereinstimmt (in diesem Fall `ToDoItem`). Der Typ muss nicht alle Spalten der Remotedatenbank enthalten. Es ist möglich, nur eine Teilmenge der Spalten zu speichern.
 
+		// ToDoActivity.cs
         private async Task InitLocalStoreAsync()
         {
             // new code to initialize the SQLite store
-            string path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), localDbFilename);
+            string path = Path.Combine(System.Environment
+				.GetFolderPath(System.Environment.SpecialFolder.Personal), localDbFilename);
 
             if (!File.Exists(path))
             {
@@ -58,7 +58,8 @@ Das Xamarin-Clientprojekt, das Sie heruntergeladen haben, nachdem Sie das Lernpr
             store.DefineTable<ToDoItem>();
 
             // Uses the default conflict handler, which fails on conflict
-            // To use a different conflict handler, pass a parameter to InitializeAsync. For more details, see http://go.microsoft.com/fwlink/?LinkId=521416
+            // To use a different conflict handler, pass a parameter to InitializeAsync. 
+			// For more details, see http://go.microsoft.com/fwlink/?LinkId=521416.
             await client.SyncContext.InitializeAsync(store);
         }
 
@@ -73,7 +74,6 @@ Das Xamarin-Clientprojekt, das Sie heruntergeladen haben, nachdem Sie das Lernpr
 
 	<!-- Need updated conflict handling info : `InitializeAsync` uses the default conflict handler, which fails whenever there is a conflict. To provide a custom conflict handler, see the tutorial [Handling conflicts with offline support for Mobile Services].
 -->	// ToDoActivity.cs
-
         private async Task SyncAsync()
         {
 			try {
@@ -95,11 +95,11 @@ Führen Sie die Clientanwendung mindestens einmal aus, um die lokale Datenbank z
 
 In diesem Abschnitt ändern Sie die Client-App, um ein Offlineszenario mithilfe einer ungültigen Anwendungs-URL für Ihr Back-End zu simulieren. Beim Hinzufügen oder Ändern von Datenelementen werden diese Änderungen im lokalen Speicher gespeichert, aber nicht mit dem Back-End-Datenspeicher synchronisiert, bis die Verbindung wiederhergestellt ist.
 
-1. Ändern Sie am Anfang von `ToDoActivity.cs` die Initialisierung von `applicationURL` und `gatewayURL`, um auf ungültige URLs zu verweisen:
+1. Ändern Sie am Anfang von `ToDoActivity.cs` die Initialisierung von `applicationURL`, um auf ungültige URLs zu verweisen:
 
-        const string applicationURL = @"https://your-service.azurewebsites.xxx/"; 
-        const string gatewayURL = @"https://your-gateway.azurewebsites.xxx";
+        const string applicationURL = @"https://your-service.azurewebsites.fail/"; 
 
+	Beachten Sie, dass bei der Anmeldung ein Fehler auftritt, wenn in Ihrer App auch Authentifizierung verwendet wird. Sie können auch Offlineverhalten demonstrieren, indem Sie Wi-Fi- und Mobilnetzwerke auf dem Gerät deaktivieren oder den Flugzeugmodus verwenden.
 
 2. Aktualisieren Sie `ToDoActivity.SyncAsync`, sodass `MobileServicePushFailedException` abgefangen und einfach ignoriert werden, vorausgesetzt, Sie sind offline.
 
@@ -135,7 +135,7 @@ In diesem Abschnitt ändern Sie die Client-App, um ein Offlineszenario mithilfe 
 
 In diesem Abschnitt stellen Sie erneut eine Verbindung zwischen der App und dem mobilen Back-End her, um zu simulieren, dass die App wieder im Onlinezustand ist. Wenn Sie die Aktualisierungsbewegung durchführen, werden Daten mit Ihrem mobilen Back-End synchronisiert.
 
-1. Öffnen Sie `ToDoActivity.cs`. Korrigieren Sie die `applicationURL` und die `gatewayURL`, um auf die richtigen URLs zu verweisen.
+1. Öffnen Sie `ToDoActivity.cs`. Korrigieren Sie die `applicationURL`, um auf die richtigen URLs zu verweisen.
 
 2. Erstellen Sie die App erneut, und führen Sie sie aus. Die App versucht, sich nach dem Start mit dem Azure Mobile App-Back-End zu synchronisieren. Stellen Sie sicher, dass keine Ausnahmedialogfelder erstellt werden.
 
@@ -173,4 +173,4 @@ In diesem Abschnitt stellen Sie erneut eine Verbindung zwischen der App und dem 
 
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/04/2015"
+	ms.date="11/19/2015"
 	ms.author="heidist"/>
 
 # Grenzwerte für den Azure Search-Dienst
@@ -40,6 +40,8 @@ Maximale Anzahl der Indexer|3
 Maximale Anzahl der Indexer-Datenquellen|3
 Maximale Anzahl der indizierten Dokumente pro Indexer-Aufruf|10\.000
 Maximale Laufzeit des Indexers|3 Minuten
+Maximale Anzahl von Bewertungsprofilen pro Index|16
+Maximale Anzahl von Funktionen pro Profil|8
 
 Beachten Sie, dass Abfragen keine Kontingente oder Höchstwerte zugeordnet sind. Die Abfragen pro Sekunde (Queries per Second, QPS) sind variabel und hängen von der verfügbaren Bandbreite und der Konkurrenz um Systemressourcen ab. Die Azure-Computing- und Speicherressourcen zur Unterstützung des gemeinsam genutzten Diensts werden von mehreren Abonnenten gemeinsam verwendet, sodass der QPS-Wert für Ihre Lösung in Abhängigkeit davon variiert, wie viele andere Workloads gleichzeitig ausgeführt werden.
 
@@ -62,6 +64,8 @@ Maximale Anzahl der Suchdienste|12 pro Azure-Abonnement
 Maximale Anzahl der Indexer|50 pro Search-Dienst
 Maximale Anzahl der Indexer-Datenquellen|50 pro Search-Dienst
 Maximale Anzahl der indizierten Dokumente pro Indexer-Aufruf|Unbegrenzt
+Maximale Anzahl von Bewertungsprofilen pro Index|16
+Maximale Anzahl von Funktionen pro Profil|8
 
 Kapazität in Azure Search kann in Schritten mit der Bezeichnung Sucheinheiten erworben werden. Der Standardtarif ermöglicht bis zu 36 Sucheinheiten pro Search-Dienst. Dieser Grenzwert hat Vorrang vor den individuellen Grenzwerten für Partitionen und Replikate. Sie können den Dienst z. B. nicht auf 12 Partitionen und 6 Replikate hochskalieren, da dazu 72 Sucheinheiten (12 x 6) erforderlich wären und dies den Grenzwert von 36 Sucheinheiten pro Dienst übersteigt.
 
@@ -134,4 +138,4 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 - Maximale Rückgabe von 1000 Dokumenten pro Seite mit Suchergebnissen
 - Maximale Rückgabe von 100 Vorschlägen pro Anforderung der Vorschlags-API
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -44,7 +44,7 @@ Die folgenden Elemente müssen konfiguriert werden, bevor Sie einen Load Balance
 
 Unter [Unterstützung des Azure-Ressourcen-Managers für den Lastenausgleich](load-balancer-arm.md) erhalten Sie weitere Informationen zu Lastenausgleichskomponenten des Azure-Ressourcen-Managers.
 
-Die folgenden Schritte zeigen, wie Sie einen Load Balancer zwischen zwei virtuellen Computer konfigurieren.
+Die folgenden Schritte zeigen, wie Sie einen Load Balancer zwischen zwei virtuellen Computern konfigurieren.
 
 
 ## Schrittweise Anleitung mit PowerShell
@@ -109,7 +109,7 @@ Erstellen Sie eine öffentliche IP-Adresse, die vom Front-End-IP-Pool verwendet 
 
 	$publicIP = New-AzurePublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location "West US" –AllocationMethod Dynamic -DomainNameLabel lbip 
 
->[AZURE.NOTE]Die Beschriftungseigenschaft für den Domänennamen der öffentlichen IP-Adresse wird auf den FQDN für den Load Balancer festgelegt.
+>[AZURE.NOTE]Die Beschriftungseigenschaft für den Domänennamen der öffentlichen IP-Adresse wird auf das Präfix des FQDN für den Load Balancer festgelegt.
 
 ## Erstellen eines Front-End-IP-Pools und eines Back-End-Adresspools
 
@@ -242,7 +242,7 @@ PS C:\> $backendnic1
 
 Verwenden Sie den Befehl "Add-AzureVMNetworkInterface", um die NIC einem virtuellen Computer zuzuweisen.
 
-In Option 4 oder 5 der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
+In Option 4 oder 5 der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
 
 ## Aktualisieren eines vorhandenen Load Balancers
 
@@ -282,4 +282,4 @@ Verwenden Sie den Befehl „Remove-AzureLoadBalancer“, um den zuvor erstellten
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-Beim Bereitstellen eines virtuellen Linux-Computers in Azure müssen Sie den Namen eines Benutzers ohne Root-Rechte angeben, den Sie später bei der Anmeldung am virtuellen Computer benutzen können. Sie können den Namen des neuen Benutzers wählen, oder Sie können den Standardnamen "Azureuser" übernehmen, wenn Sie die Bereitstellung über das Verwaltungsportal durchführen.
+Beim Bereitstellen eines virtuellen Linux-Computers in Azure müssen Sie den Namen eines Benutzers ohne Root-Rechte angeben, den Sie später bei der Anmeldung am virtuellen Computer benutzen können. Sie können den Namen des neuen Benutzers wählen, oder Sie können den Standardnamen „Azureuser“ übernehmen, wenn Sie die Bereitstellung über das Azure-Portal durchführen.
 
 In den meisten Fällen ist dieser Benutzer im Basisimage nicht vorhanden und wird während des Bereitstellungsprozesses erstellt. Wenn der Benutzer im VM-Basisimage vorhanden ist, konfiguriert der Azure Linux Agent in einigen Fällen einfach das Kennwort (und/oder den SSH-Schlüssel) für diesen Benutzer auf der Grundlage der Informationen, die Sie beim Erstellen der VM festgelegt haben.
 
@@ -251,4 +251,4 @@ Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

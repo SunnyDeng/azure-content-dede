@@ -24,11 +24,11 @@ Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffe
 
 In der Woche ab dem 20. November 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
-- Möglichkeit zum Anzeigen und Kopieren von Verbindungszeichenfolgen über das **Azure Data Catalog**-Portal für SQL Server-Datenquellen (einschließlich Azure SQL-Datenbank). Benutzer können in den Verbindungsinformationen für eine SQL Server-Tabelle, -Ansicht oder -Datenbank auf den Link „Verbindungszeichenfolgen anzeigen“ klicken, um die Verbindungszeichenfolgen für ADO.NET, ODBC, OLEDB und JDBC anzuzeigen, die zum Herstellen der Verbindung mit der Datenquelle verwendet werden.
+- Möglichkeit zum Anzeigen und Kopieren von Verbindungszeichenfolgen über das **Azure Data Catalog**-Portal für SQL Server- (einschließlich Azure SQL-Datenbank) und Oracle-Datenquellen. Benutzer können in den Verbindungsinformationen für eine Tabelle, Ansicht oder Datenbank von SQL Server oder Oracle auf den Link „Verbindungszeichenfolgen anzeigen“ klicken, um die Verbindungszeichenfolgen zum Herstellen der Verbindung mit der Datenquelle anzuzeigen. Für SQL Server-Datenquellen werden ADO.NET-, ODBC-, OLEDB- und JDBC-Verbindungszeichenfolgen bereitgestellt. Für Oracle-Datenquellen werden ODBC- und OLEDB-Verbindungszeichenfolgen bereitgestellt.
 - Unterstützung für das Einbinden von Datenprofilen, wenn Teradata-Tabellen und -Ansichten registriert werden.
-- Unterstützung für „Open in Power BI Desktop“ für SQL Server-Datenquellen (einschließlich Azure SQL-Datenbank und Azure SQL Data Warehouse) und SQL Server Analysis Services-Datenquellen.
+- Unterstützung für „Open in Power BI Desktop“ für SQL Server-Datenquellen (einschließlich Azure SQL-Datenbank und Azure SQL Data Warehouse), SQL Server Analysis Services-, Azure Storage- und HDFS-Quellen.  
 
-> [AZURE.NOTE]Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, sollten Sie sich vergewissern, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com) heruntergeladen haben.
+> [AZURE.NOTE]Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com) heruntergeladen haben.
 
 ## Neuigkeiten in der Version der Woche ab dem 13. November 2015
 
@@ -147,4 +147,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure-Blob-Speichern. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

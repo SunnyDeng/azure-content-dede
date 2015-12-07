@@ -165,7 +165,7 @@ Sie werden aufgefordert, die Anmeldeinformationen eines Domänenadministratorkon
 
 Anschließend müssen Sie die DNS-Server für Ihr virtuelles Netzwerk aktualisieren, damit Azure den virtuellen Computern die IP-Adressen der beiden neuen Domänencontroller als deren DNS-Server zuweist. Die für dieses Verfahren benötigten Werte stammen aus Tabelle V (Einstellungen Ihres virtuellen Netzwerks) und Tabelle M (für Ihre virtuellen Computer).
 
-1.	Klicken Sie im linken Bereich des [Azure-Vorschauportals](https://portal.azure.com/) auf **Alle durchsuchen > Virtuelle Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
+1.	Klicken Sie im linken Bereich des Azure-Vorschauportals auf **Alle durchsuchen > Virtuelle Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
 2.	Klicken Sie im Bereich für Ihr virtuelles Netzwerk auf **Alle Einstellungen**.
 3.	Klicken Sie im Bereich **Einstellungen** auf **DNS-Server**.
 4.	Geben Sie im Bereich **DNS-Server** Folgendes ein:
@@ -210,4 +210,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

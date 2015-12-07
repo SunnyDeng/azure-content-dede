@@ -33,11 +33,12 @@ In den folgenden Themen werden das Service Fabric-Anwendungsmodell und Vorgehens
 ## Upgraden einer Anwendung
 Lesen Sie die folgenden Informationen zum Upgraden von Anwendungen:
 
-- [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
-- [Upgrade-Parameter](service-fabric-application-upgrade-parameters.md)
-- [Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
-- [Beheben von Problemen mit Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
+- [Upgrades von Service Fabric-Anwendungen mithilfe von Visual Studio](service-fabric-application-upgrade.md)
+- [Service Fabric-Anwendungsupgrade per PowerShell](service-fabric-application-upgrade-powershell.md)
 - [Exemplarische Vorgehensweise für Anwendungsupgrades](service-fabric-application-upgrade-tutorial.md)
+- [Upgrade-Parameter](service-fabric-application-upgrade-parameters.md)
+- [Manuelle Upgrades und Upgrades mit einem Diff-Paket](service-fabric-application-upgrade-advanced.md)
+- [Beheben von Problemen mit Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
 - [Service Fabric-Anwendungsupgrade: Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
 
 ## Skalieren und Partitionieren von Anwendungsdiensten
@@ -49,4 +50,4 @@ In den folgenden Artikeln wird die Skalierung und Partitionierung beschrieben:
 ## Verwalten eines Clusters
 - [Visualisieren des Clusters mit Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

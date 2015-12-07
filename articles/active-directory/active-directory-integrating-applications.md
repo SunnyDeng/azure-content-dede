@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="08/25/2015"
+   ms.date="11/24/2015"
    ms.author="mbaldwin" />
 
 # Integrieren von Anwendungen in Azure Active Directory
@@ -349,6 +349,6 @@ Damit ein Unternehmensadministrator den Zugriff einer App auf das Verzeichnis en
 
 - [Grundlegendes zum Azure Active Directory-Anwendungsmanifest](active-directory-application-manifest.md)
 
-- Informieren Sie sich im [Entwicklerhandbuch zu Azure Active Directory](active-directory-developer's guide.md)
+- Besuchen Sie das [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

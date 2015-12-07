@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/12/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
 # Grundlegendes zu Stream Analytics-Ausgaben
@@ -63,7 +63,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Speichercontainer</td>
-<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blob-Dienst gespeichert sind. Wenn Sie ein Blob in den Blob-Dienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
+<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blobdienst gespeichert sind. Wenn Sie ein Blob in den Blobdienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
 </tr>
 <tr>
 <td>Präfixmusters des Pfads [optional]</td>
@@ -222,7 +222,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Kontoname</td>
-<td>Der Name des DocumentDB-Kontos. Dies kann auch das Endgerät für das Konto sein.</td>
+<td>Der Name des DocumentDB-Kontos. Dies kann auch der Endpunkt für das Konto sein.</td>
 </tr>
 <tr>
 <td>Kontoschlüssel</td>
@@ -267,4 +267,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

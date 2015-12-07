@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Ausgaben hinzufügen | Microsoft Azure" 
-	description="Ausgaben hinzufügen – Lernpfadsegment"
+	description="Hinzufügen von Ausgaben zu Stream Analytics-Aufträgen | Lernpfadsegment."
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
@@ -13,10 +13,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/10/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
-# Ausgaben hinzufügen
+# **Hinzufügen von Ausgaben** zu Stream Analytics-Aufträgen
 
 Azure Stream Analytics-Aufträge können mit einer oder mehreren Ausgaben verknüpft werden, die eine Verbindung zu einer vorhandenen Datensenke definieren. Während Ihr Stream Analytics-Auftrag eingehende Daten verarbeitet und umwandelt, wird ein Strom von Ausgabeereignissen in die Ausgabe Ihres Auftrags geschrieben.
 
@@ -63,4 +63,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

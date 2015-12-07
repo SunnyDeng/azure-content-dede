@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen | Microsoft Azure" 
-	description="In diesem Thema wird erklärt, wie Gruppenrichtlinien konfiguriert werden müssen, damit Geräte durch Domänenbeitritt ins Unternehmensnetzwerk eingebunden werden können." 
+	description="Erklärt, wie Gruppenrichtlinien konfiguriert werden müssen, damit Geräte durch Domänenbeitritt ins Unternehmensnetzwerk eingebunden werden können." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
@@ -8,13 +8,10 @@
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/17/2015" 
+<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article"
+
+	ms.date="11/19/2015" 
+
 	ms.author="femila"/>
 
 # Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen
@@ -53,14 +50,16 @@ Um einen bedingten Zugriff zu ermöglichen, können Sie eine Richtlinie erstelle
 
 ## Anweisungen zur Bereitstellung
 
-1. Bereitstellen von Azure Active Directory Connect: Azure AD Connect ermöglicht die Bereitstellung lokaler Computer als Geräteobjekte in der Cloud. Weitere Informationen zum Bereitstellen von Azure AD Connect finden Sie unter „Aktivieren Ihres Verzeichnisses für das Hybridmanagement mit Azure AD Connect“.
 
+## Schritt 1: Bereitstellen von Azure Active Directory Connect
 
-Wenn Sie eine [benutzerdefinierte Installation für Azure AD Connect](https://azure.microsoft.com/de-DE/documentation/articles/active-directory-aadconnect-get-started-custom/) ausgeführt haben (nicht die Express-Installation), müssen Sie das unten beschriebene Verfahren **Erstellen eines Dienstverbindungspunkts im lokalen Active Directory** durchlaufen.
+Azure AD Connect ermöglicht die Bereitstellung lokaler Computer als Geräteobjekte in der Cloud. Weitere Informationen zum Bereitstellen von Azure AD Connect finden Sie unter „Aktivieren Ihres Verzeichnisses für das Hybridmanagement mit Azure AD Connect“.
 
-Wenn Sie vor dem Installieren von Azure AD Connect über eine Verbundkonfiguration für Azure AD verfügen (z. B. weil Sie zuvor Active Directory-Verbunddienste (AD FS) bereitgestellt haben), müssen Sie das unten beschriebene Verfahren **Konfigurieren von AD FS-Anspruchsregeln** ausführen.
+ - Wenn Sie eine [benutzerdefinierte Installation für Azure AD Connect](https://azure.microsoft.com/de-DE/documentation/articles/active-directory-aadconnect-get-started-custom/) ausgeführt haben (nicht die Express-Installation), müssen Sie das unten beschriebene Verfahren **Erstellen eines Dienstverbindungspunkts im lokalen Active Directory** ausführen.
+ - Wenn Sie vor dem Installieren von Azure AD Connect über eine Verbundkonfiguration für Azure AD verfügen (z. B. weil Sie zuvor Active Directory-Verbunddienste [AD FS] bereitgestellt haben), müssen Sie das unten beschriebene Verfahren **Konfigurieren von AD FS-Anspruchsregeln** ausführen.
 
 ### Erstellen eines Dienstverbindungspunkts im lokalen Active Directory
+
 In die Domäne eingebundene Geräte verwenden dieses Objekt, um während der automatischen Registrierung beim Azure-Geräteregistrierungsdienst die Azure AD-Mandanteninformationen zu ermitteln. Führen Sie auf dem Azure AD Connect-Server die folgenden PowerShell-Befehle aus:
 
     Import-Module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1";
@@ -112,12 +111,14 @@ Führen Sie auf Ihrem AD FS-Server (oder in einer mit dem AD FS-Server verbund
 
 >[AZURE.NOTE]Windows 10-Computer authentifizieren sich mit der integrierten Windows-Authentifizierung bei einem aktiven von AD FS gehosteten WS-Trust-Endpunkt. Sie müssen sicherstellen, dass dieser Endpunkt aktiviert ist. Wenn Sie einen Webauthentifizierungsproxy verwenden, müssen Sie außerdem sicherstellen, dass dieser Endpunkt durch den Proxy veröffentlicht wird. Dazu prüfen Sie, ob in der AD FS-Verwaltungskonsole unter „Dienst > Endpunkte“ die Option „adfs/services/trust/13/windowstransport“ als aktiviert angezeigt wird.
 
-## Konfigurieren der automatischen Geräteregistrierung mithilfe einer Gruppenrichtlinie in Active Directory
+
+## Schritt 2: Konfigurieren der automatischen Geräteregistrierung mithilfe einer Gruppenrichtlinie in Active Directory
+
 Sie können eine Active Directory-Gruppenrichtlinie verwenden, um Ihre in die Domäne eingebundenen Windows 10-Geräte für die automatische Registrierung bei Azure AD zu konfigurieren. Dazu führen Sie die folgenden Schritte aus:
 
 1. 	Öffnen Sie den Server-Manager, und navigieren Sie zu **Tools** > **Gruppenrichtlinienverwaltung**.
 2.	Navigieren Sie von der Gruppenrichtlinienverwaltung zu dem Domänenknoten, der der Domäne entspricht, in der Sie Azure AD Join aktivieren möchten.
-3.	Klicken Sie mit der rechten Maustaste auf Ihr **Gruppenrichtlinienobjekt**, und wählen Sie dann **Neu** aus. Geben Sie Ihrem Gruppenrichtlinienobjekt einen Namen, z. B. „Automatischer Azure AD-Beitritt“. Klicken Sie auf **OK**.
+3.	Klicken Sie mit der rechten Maustaste auf Ihr neues **Gruppenrichtlinienobjekt**, und wählen Sie dann **Neu** aus. Geben Sie Ihrem Gruppenrichtlinienobjekt einen Namen, z. B. „Automatischer Azure AD-Beitritt“. Klicken Sie auf **OK**.
 4.	Klicken Sie mit der rechten Maustaste auf Ihr neues Gruppenrichtlinienobjekt, und wählen Sie dann **Bearbeiten** aus.
 5.	Navigieren Sie zu **Computerkonfiguration** > **Richtlinien** > **Administrative Vorlagen** > **Windows-Komponenten** > **Arbeitsbereichverknüpfung**.
 6.	Klicken Sie mit der rechten Maustaste auf **Clientcomputer automatisch in Arbeitsbereich einbinden**, und wählen Sie dann **Bearbeiten**.
@@ -136,4 +137,4 @@ Sie können eine Active Directory-Gruppenrichtlinie verwenden, um Ihre in die Do
 * [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -66,4 +66,4 @@ Sie können mithilfe von „Remove-AzureEndpoint“ den Endpunkt eines virtuelle
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

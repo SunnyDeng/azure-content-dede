@@ -60,7 +60,7 @@ Nun müssen wir die Datei *ApplicationManifest.xml* (im Projekt **VisualObjects*
 ```
 
 
-Erstellen Sie jetzt das Projekt, indem Sie nur das Projekt **ActorService** auswählen, in Visual Studio mit der rechten Maustaste klicken und „Erstellen“ auswählen. (Wenn Sie „Alles neu erstellen“ auswählen, müssen Sie möglicherweise die Versionen für die Projekte **VisualObjects.WebService** und „VisualObjects.Common“ sowie in den zugehörigen Dateien *ServiceManifest.xml* und *ApplicationManifest.xml* aktualisieren, da sich der Code geändert hat.) Jetzt packen Sie die aktualisierte Anwendung, indem Sie mit der rechten Maustaste auf das Projekt *VisualObjectsApplication* klicken, und anschließend das Service Fabric-Menü und dann „Paket“ auswählen. Damit wird ein Anwendungspaket erstellt, das bereitgestellt werden kann. Die aktualisierte Anwendung kann nun bereitgestellt werden.
+Erstellen Sie jetzt das Projekt, indem Sie das Projekt **ActorService** auswählen, mit der rechten Maustaste klicken und „Erstellen“ auswählen. (Wenn Sie „Alles neu erstellen“ auswählen, müssen Sie möglicherweise die Versionen für andere Projekte sowie in den zugehörigen Dateien *ServiceManifest.xml* und *ApplicationManifest.xml* aktualisieren, da sich der Code geändert hat.) Jetzt packen Sie die aktualisierte Anwendung, indem Sie mit der rechten Maustaste auf das Projekt *VisualObjectsApplication* klicken und anschließend das Service Fabric-Menü und dann „Paket“ auswählen. Damit wird ein Anwendungspaket erstellt, das bereitgestellt werden kann. Die aktualisierte Anwendung kann nun bereitgestellt werden.
 
 
 ## Schritt 3: Festlegen der Integritätsrichtlinien und Upgradeparameter
@@ -121,8 +121,8 @@ Steuern Sie die Upgrades von Anwendungen mithilfe von [Upgradeparametern](servic
 
 Machen Sie Ihre Anwendungsupgrades kompatibel, indem Sie sich mit der [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md) vertraut machen.
 
-Erfahren Sie, wie Sie erweiterte Funktionen beim Upgrade Ihrer Anwendung nutzen, indem Sie sich mit den Themen unter [Weiterführende Themen](service-fabric-application-upgrade-advanced.md) beschäftigen.
+Erfahren Sie, wie Sie erweiterte Funktionen beim Upgrade Ihrer Anwendung nutzen, indem Sie sich mit den [weiterführenden Themen](service-fabric-application-upgrade-advanced.md) beschäftigen.
 
-Informationen zum Beheben gängiger Problemen bei Anwendungsupgrades finden Sie in den Anweisungen unter [Problembehandlung bei Anwendungsupgrades ](service-fabric-application-upgrade-troubleshooting.md).
+Informationen zum Beheben gängiger Probleme bei Anwendungsupgrades finden Sie in den Anweisungen unter [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

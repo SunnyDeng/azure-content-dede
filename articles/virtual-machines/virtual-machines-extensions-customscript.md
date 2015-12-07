@@ -71,7 +71,7 @@ Dieses Szenario zeigt, wie ein Nicht-Standardspeicher verwendet wird, entweder i
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### Hinzufügen einer benutzerdefinierten Skripterweiterung aus dem Portal
+### Hinzufügen benutzerdefinierter Skripterweiterungen im Azure-Vorschauportal
 
 Navigieren Sie im <a href="https://portal.azure.com/ " target="_blank">Azure-Vorschauportal</a> zum virtuellen Computer, und fügen Sie die Erweiterung hinzu, indem Sie die auszuführende Skriptdatei angeben.
 
@@ -91,4 +91,4 @@ Um Informationen zur Verwendung der benutzerdefinierten Skripterweiterung mit Vo
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

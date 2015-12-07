@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Einrichten eines neuen Geräts mit Azure AD während des Setups
@@ -41,7 +41,7 @@ Hinzufügen eines Geräts zu Azure AD
 11.	Sobald dies abgeschlossen ist, beendet Windows bei verwalteten Benutzern den Installationsvorgang und der Benutzer wird über die automatische Anmeldung auf den Desktop geführt.
 12.	Falls Sie ein Partnerbenutzer sind, gelangen Sie zum Anmeldebildschirm von Windows und müssen Ihre Anmeldeinformationen eingeben, um sich anzumelden.
 
-> [AZURE.NOTE]Das Verknüpfen von lokalen Active Directory-Domänen wird während des Eindrucks beim ersten Ausführen in Windows nicht unterstützt. Wenn Sie also einen Computer mit einer Domäne verknüpfen möchten, wählen Sie stattdessen den Link "Einrichten von Windows mit einem lokalen Konto". Sie können dann die Domäne aus den PC-Einstellungen verknüpfen, wie Sie dies bereits zuvor getan haben.
+> [AZURE.NOTE]Das Verknüpfen von lokalen Active Directory-Domänen wird während des Eindrucks beim ersten Ausführen in Windows nicht unterstützt. Wenn Sie also einen Computer mit einer Domäne verknüpfen möchten, wählen Sie den Link „Stattdessen Windows mit einem lokalen Konto einrichten“ aus. Sie können dann die Domäne aus den PC-Einstellungen verknüpfen, wie Sie dies bereits zuvor getan haben.
 
 ## Zusätzliche Informationen
 * [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
@@ -51,4 +51,4 @@ Hinzufügen eines Geräts zu Azure AD
 * [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

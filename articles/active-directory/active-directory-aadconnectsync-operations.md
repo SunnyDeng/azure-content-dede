@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/13/2015"
+   ms.date="11/24/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect Sync: Operative Aufgaben und Überlegungen
@@ -44,7 +44,7 @@ Führen Sie zum Anwenden dieser Methode die folgenden Schritte aus:
 
 **Vorbereiten**
 
-1. Installieren Sie Azure AD Connect, wählen Sie **Stagingmodus** aus, und deaktivieren Sie auf der letzten Seite des Installations-Assistenten die Option **Synchronisierung starten**. Auf diese Weise kann das Synchronisierungsmodul manuell ausgeführt werden.
+1. Installieren Sie Azure AD Connect, wählen Sie **Stagingmodus** aus, und deaktivieren Sie auf der letzten Seite des Installations-Assistenten die Option **Synchronisierung starten**. Auf diese Weise kann das Synchronisierungsmodul manuell ausgeführt werden. ![ReadyToConfigure](./media/active-directory-aadconnectsync-operations/readytoconfigure.png)
 2. Melden Sie sich ab und wieder an, und wählen Sie im Startmenü **Synchronisierungsdienst** aus.
 
 **Importieren und Synchronisieren**
@@ -76,7 +76,7 @@ Wenn das Attribut mehrere Werte umfassen kann, wird nicht jede Änderung angezei
 **Wechseln des aktiven Servers**
 
 1. Schalten Sie den derzeit aktiven Server entweder aus (DirSync/FIM/Azure AD Sync), damit kein Export nach Azure AD stattfindet, oder versetzen Sie ihn in den Stagingmodus (Azure AD Connect).
-2. Führen Sie auf dem Server im Stagingmodus den Installations-Assistenten aus, und deaktivieren Sie den Stagingmodus.
+2. Führen Sie auf dem Server im **Stagingmodus** den Installations-Assistenten aus, und deaktivieren Sie den **Stagingmodus**. ![ReadyToConfigure](./media/active-directory-aadconnectsync-operations/additionaltasks.png)
 
 ## Notfallwiederherstellung
 Ein Bestandteil des Implementierungsentwurfs besteht darin, für den Fall zu planen, dass der Synchronisierungsserver aufgrund eines Notfalls ausfällt. Es stehen mehrere Modelle zur Verfügung, und die Auswahl des Modells richtet sich nach verschiedenen Faktoren, darunter:
@@ -110,8 +110,8 @@ Eine gängige und unterstützte Methode ist die Ausführung des Synchronisierung
 Falls Sie nicht SQL Server Express verwenden, das im Lieferumfang von Azure AD Connect enthalten ist, sollten Sie auch eine hohe Verfügbarkeit für SQL Server berücksichtigen. Die einzige unterstützte Hochverfügbarkeitslösung ist das SQL-Clustering. Nicht unterstützt werden Spiegelung und Always On-Lösungen.
 
 ## Nächste Schritte
-Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
+Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

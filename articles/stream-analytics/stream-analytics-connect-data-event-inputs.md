@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Stream Analytics-Eingaben | Microsoft Azure" 
+	pageTitle="Herstellen von Verbindungen mit Stream Analytics-Eingaben | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Verbindung mit den Eingabequellen für Stream Analytics-Lösungen herstellen, und wie Sie diese Quellen konfigurieren."
 	documentationCenter=""
 	services="stream-analytics"
@@ -13,10 +13,10 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="11/23/2015" 
 	ms.author="jeffstok"/>
 
-# Erstellen von Stream Analytics-Eingaben
+# Herstellen von Verbindungen mit Stream Analytics-Eingabequellen
 
 ## Grundlegendes zu Stream Analytics-Eingaben
 ---
@@ -151,4 +151,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join| Microsoft Azure" 
-	description="Dieses Thema erklärt Azure AD Join." 
+	description="Bietet eine ausführliche Übersicht darüber, wie Windows 10-Geräte mithilfe von Azure AD bei Azure Active Directory registriert werden können." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/30/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join
@@ -68,6 +68,7 @@ Azure AD Join bietet folgende Funktionen:
 | Einmaliges Anmelden vom Desktop, um mit Apps, Websites oder Ressourcen zu arbeiten. Dies funktioniert sowohl lokal als auch in der Cloud für Apps, die Azure AD für die Authentifizierung nutzen. | Automatische Registrierung im Unternehmensverzeichnis (Azure AD) und für das MDM. (Azure AD Premium-Funktion) | Liefert einmaliges Anmelden für Apps und für Websites oder Ressourcen mit diesem Arbeitskonto |
 | Benutzer können ihre persönliche MSA für den Zugriff auf eigene Bilder oder Dateien hinzufügen, ohne Unternehmensdaten zu beeinträchtigen (die Roamingeinstellungen funktionieren weiterhin mit dem Konto). Das MSA-Konto ermöglicht einmaliges Anmelden und führt nicht länger das Roaming der Einstellungen aus. | Self-Service-Kennwortzurücksetzung für die Windows-Anmeldung (die Möglichkeit, ein vergessenes Kennwort zurückzusetzen). (Hierfür benötigen Sie Azure AD Premium.) | Ermöglicht den Zugriff auf die Enterprise Store-Front bzw. den -Abschnitt, damit Benutzer Branchen-Apps erwerben und auf ihren persönlichen Geräten verwenden können. | |
 
+
 ## Zusätzliche Informationen
 * [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
 * [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
@@ -76,4 +77,4 @@ Azure AD Join bietet folgende Funktionen:
 * [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

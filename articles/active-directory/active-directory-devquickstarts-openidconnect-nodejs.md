@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="11/19/2015"
 	ms.author="brandwe"/>
 
 # An- und Abmeldung bei Webanwendungen mit Azure AD
@@ -34,13 +34,13 @@ Dazu müssen Sie folgende Schritte ausführen:
 3. Verwenden Sie Passport zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
 4. Ausdrucken von Informationen zum Benutzer
 
-Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS) verwaltet. Um folgen zu können, können Sie [das App-Gerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS) verwaltet. Um folgen zu können, können Sie [das App-Gerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs.git```
 
 Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
-## 1. Registrieren einer App
+## 1\. Registrieren einer App
 - Melden Sie sich beim Azure-Verwaltungsportal an.
 - Klicken Sie in der linken Navigationsleiste auf **Active Directory**.
 - Wählen Sie den Mandanten aus, in dem die Beispielanwendung registriert werden soll.
@@ -51,7 +51,7 @@ Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt
     - Die **App-ID-URI** ist eine eindeutige Kennung für die Anwendung. Üblicherweise wird `https://<tenant-domain>/<app-name>` verwendet, zum Beispiel: `https://contoso.onmicrosoft.com/my-first-aad-app`
 - Nach Abschluss der Registrierung weist AAD Ihrer Anwendung eine eindeutige Client-ID zu. Diesen Wert benötigen Sie in den nächsten Abschnitten, weswegen Sie ihn aus der Registerkarte „Konfigurieren“ kopieren sollten.
 
-## 2. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
+## 2\. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
 
 Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn dies noch nicht der Fall ist, und führen Sie die folgenden Befehle aus:
 
@@ -70,7 +70,7 @@ Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn 
 
 Dadurch werden die Bibliotheken installiert, von denen "passport-azure-ad" abhängt.
 
-## 3. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
+## 3\. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
 Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect. Passport wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
 -	Öffnen Sie zunächst die Datei `config.js` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `exports.creds` ein.
@@ -242,43 +242,31 @@ app.post('/auth/openid/return',
   });
   ```
 
-## 4. Verwenden von Passport zur Ausgabe von An- und Abmeldeanforderungen für Azure AD
+## 4. Use Passport to issue sign-in and sign-out requests to Azure AD
 
-Ihre Anwendung ist nun ordnungsgemäß für die Kommunikation mit dem v2.0-Endpunkt über das Authentifizierungsprotokoll OpenID Connect konfiguriert.  `passport-azure-ad`  kümmert sich um all die mühseligen Details der Erstellung von Authentifizierungsnachrichten, Überprüfung der Azure AD-Tokens und Verwaltung der Benutzersitzungen.  Sie müssen es Ihren Benutzern nur noch ermöglichen, sich anzumelden und abzumelden, und zusätzliche Informationen zu den angemeldeten Benutzer sammeln.
+Your app is now properly configured to communicate with the v2.0 endpoint using the OpenID Connect authentication protocol.  `passport-azure-ad` has taken care of all of the ugly details of crafting authentication messages, validating tokens from Azure AD, and maintaining user session.  All that remains is to give your users a way to sign in, sign out, and gather additional info on the logged in user.
 
-- Zuerst fügen wir der Datei `app.js`  Standard-, Anmelde-, Konto- und Abmeldemethoden hinzu:
+- First, lets add the default, login, account, and logout methods to our `app.js` file:
 
 ```JavaScript
 
 //Routen (Abschnitt 4)
 
-app.get('/', function(req, res){
-  res.render('index', { user: req.user });
-});
+app.get('/', function(req, res){ res.render('index', { user: req.user }); });
 
-app.get('/account', ensureAuthenticated, function(req, res){
-  res.render('account', { user: req.user });
-});
+app.get('/account', ensureAuthenticated, function(req, res){ res.render('account', { user: req.user }); });
 
-app.get('/login',
-  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
-  function(req, res) {
-    log.info('Login was called in the Sample');
-    res.redirect('/');
-});
+app.get('/login', passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }), function(req, res) { log.info('Anmeldung wurde in Beispiel aufgerufen'); res.redirect('/'); });
 
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
+app.get('/logout', function(req, res){ req.logout(); res.redirect('/'); });
 
 ```
 
--	Betrachten Sie diese im Detail:
-    -	Die Route `/` leitet an die Ansicht "index.ejs" weiter und übergibt den Benutzer in der Anforderung (falls vorhanden).
-    - Die Route `/account`  ***stellt zuerst sicher, dass wir authentifiziert sind*** (wird weiter unten implementiert) und übergibt dann den Benutzer in der Anforderung, damit wir zusätzliche Informationen zum Benutzer abrufen können.
-    - Die Route `/login` ruft die azuread-openidconnect -Authentifizierung von `passport-azuread`  auf und leitet den Benutzer an "/login" um, wenn dies nicht erfolgreich ist.
-    - `/logout` ruft einfach "logout.ejs" (und die Route) auf, um Cookies zu löschen, und leitet dann den Benutzer zu "index.ejs" zurück.
+-	Let's review these in detail:
+    -	The `/` route will redirect to the index.ejs view passing the user in the request (if it exists)
+    - The `/account` route will first ***ensure we are authenticated*** (we implement that below) and then pass the user in the request so that we can get additional information about the user.
+    - The `/login` route will call our azuread-openidconnect authenticator from `passport-azuread` and if that doesn't succeed will redirect the user back to /login
+    - The `/logout` will simply call the logout.ejs (and route) which clears cookies and then return the user back to index.ejs
 
 
 - For the last part of `app.js`, let's add the EnsureAuthenticated method that is used in `/account` above.
@@ -287,15 +275,7 @@ app.get('/logout', function(req, res){
 
 // Einfache Routenmiddleware, um sicherzustellen, dass der Benutzer authentifiziert ist. (Abschnitt 4)
 
-//   Verwenden Sie diese Routenmiddleware für jede Ressource, die geschützt werden muss. Wenn  
-//   die Anforderung authentifiziert ist (in der Regel über eine permanente Anmeldesitzung),
-//   wird die Anforderung fortgesetzt. Andernfalls wird der Benutzer zur
-//   Anmeldeseite umgeleitet.
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login')
-}
-```
+// Verwenden Sie diese Routenmiddleware für jede Ressource, die geschützt werden muss. Wenn // die Anforderung authentifiziert ist (in der Regel über eine permanente Anmeldesitzung), // wird die Anforderung fortgesetzt. Andernfalls wird der Benutzer zur // Anmeldeseite umgeleitet. function ensureAuthenticated(req, res, next) { if (req.isAuthenticated()) { return next(); } res.redirect('/login') } ```
 
 - Erstellen wir schließlich den eigentlichen Server in `app.js`:
 
@@ -306,11 +286,11 @@ app.listen(3000);
 ```
 
 
-## 5. Erstellen von Ansichten und Routen in Express, um die Benutzer auf der Website anzuzeigen
+## 5\. Erstellen von Ansichten und Routen in Express, um die Benutzer auf der Website anzuzeigen
 
 `app.js` ist jetzt vollständig. Nun müssen einfach die Routen und Ansichten hinzugefügt werden, die die Informationen für die Benutzer anzeigen und die erstellten Routen `/logout` und `/login` verarbeiten.
 
-- Erstellen Sie die Route `/routes/index.js` im Stammverzeichnis.
+- Erstellen der Route `/routes/index.js` im Stammverzeichnis
 
 ```JavaScript
 /*
@@ -347,7 +327,6 @@ Diese einfachen Routen übergeben lediglich die Anforderung an die Ansichten, ei
 	<a href="/account">Account Info</a></br>
 	<a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Erstellen Sie die Ansicht `/views/account.ejs` im Stammverzeichnis, sodass zusätzliche Informationen angezeigt werden können, die von `passport-azuread` in die Benutzeranforderung eingefügt wurden.
@@ -367,7 +346,6 @@ Diese einfachen Routen übergeben lediglich die Anforderung an die Ansichten, ei
 <p></p>
 <a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Abschließend wird die Darstellung durch Hinzufügen eines Layouts optimiert. Erstellen Sie die Ansicht "/views/layout.ejs" im Stammverzeichnis.
@@ -415,4 +393,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

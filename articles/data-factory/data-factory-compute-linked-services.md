@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verknüpfte Computedienste | Microsoft Azure" 
-	description="Erfahren Sie mehr über Compute-Umgebungen, die in Azure Data Factory-Pipelines für die Transformation und Verarbeitung von Daten verwendet werden können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+<properties
+	pageTitle="Verknüpfte Computedienste | Microsoft Azure"
+	description="Erfahren Sie mehr über Compute-Umgebungen, die in Azure Data Factory-Pipelines für die Transformation und Verarbeitung von Daten verwendet werden können."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-<tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/09/2015" 
+<tags
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="11/09/2015"
 	ms.author="spelluru"/>
 
 # Verknüpfte Computedienste
@@ -33,7 +33,7 @@ Der bedarfsgesteuerte HDInsight-Cluster wird vom Azure Data Factory-Dienst autom
 Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknüpften HDInsight-Dienst:
 
 - Der bedarfsgesteuerte HDInsight-Cluster wird nicht in Ihrem Azure-Abonnement angezeigt, sondern vom Azure Data Factory-Dienst verwaltet.
-- Die Protokolle für Aufträge, die in einem bedarfsgesteuerten HDInsight-Cluster ausgeführt werden, werden in das mit dem HDInsight-Cluster verknüpfte Speicherkonto kopiert. Der Zugriff auf diese Protokolle erfolgt über das Azure-Portal auf dem Blatt **Aktivitätsausführung – Details**. Einzelheiten finden Sie im Artikel [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md). 
+- Die Protokolle für Aufträge, die in einem bedarfsgesteuerten HDInsight-Cluster ausgeführt werden, werden in das mit dem HDInsight-Cluster verknüpfte Speicherkonto kopiert. Der Zugriff auf diese Protokolle erfolgt über das Azure-Portal auf dem Blatt **Aktivitätsausführung – Details**. Einzelheiten finden Sie im Artikel [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
 - Ihnen wird nur die Zeit in Rechnung gestellt, in der der HDInsight-Cluster verfügbar ist und Aufträge ausführt.
 
 > [AZURE.IMPORTANT]Die bedarfsgesteuerte Bereitstellung eines Azure HDInsight-Clusters dauert üblicherweise länger als **15 Minuten**.
@@ -46,7 +46,6 @@ Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknü
 	    "type": "HDInsightOnDemand",
 	    "typeProperties": {
 	      "clusterSize": 4,
-	      "jobsContainer": "adfjobs",
 	      "timeToLive": "00:05:00",
 	      "version": "3.1",
 		  "osType": "linux",
@@ -64,13 +63,12 @@ Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknü
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 Typ | Legen Sie die Typeigenschaft auf **HDInsightOnDemand** fest. | Ja
-clusterSize | Die Größe des bedarfsgesteuerten Clusters. Geben Sie an, über wie viele Knoten dieser bedarfsgesteuerte Cluster verfügen soll. | Ja 
-jobscontainer | Der Blobcontainer, in dem die von Pig-/Hive-/Paketaufträgen verwendeten Daten sowie die Clusterprotokolle gespeichert werden. | Ja
+clusterSize | Die Größe des bedarfsgesteuerten Clusters. Geben Sie an, über wie viele Knoten dieser bedarfsgesteuerte Cluster verfügen soll. | Ja
 timetolive | <p>Die zulässige Leerlaufzeit für den bedarfsgesteuerten HDInsight-Cluster. Gibt an, wie lange der bedarfsgesteuerte HDInsight-Cluster nach Abschluss einer Aktivitätsausführung beibehalten wird, wenn der Cluster über keine weiteren aktiven Aufträge verfügt.</p><p>Wenn eine Aktivitätsausführung z. B. 6 Minuten dauert und "timetolive" auf 5 Minuten festgelegt ist, wird der Cluster nach den 6 Minuten, in denen die Aktivitätsausführung verarbeitet wird, weitere 5 Minuten beibehalten. Wenn innerhalb dieser 6 Minuten eine weitere Aktivitätsausführung verarbeitet wird, wird diese vom selben Cluster verarbeitet.</p><p>Da das Erstellen eines bedarfsgesteuerten HDInsight-Clusters ein kostenintensiver Vorgang ist, der mit einem recht hohen Zeitaufwand einhergehen kann, sollten Sie diese Einstellung gegebenenfalls nutzen, um die Data Factory-Leistung durch die Wiederverwendung eines bedarfsgesteuerten HDInsight-Clusters zu verbessern.</p><p>Wenn Sie den timetolive-Wert auf 0 festlegen, wird der Cluster gelöscht, sobald die Aktivitätsausführung verarbeitet wurde. Wenn Sie jedoch einen hohen Wert festlegen, wird der Cluster möglicherweise für einen zu langen Zeitraum im Leerlauf beibehalten, was hohe Kosten verursachen kann. Daher ist es wichtig, basierend auf Ihren individuellen Anforderungen einen geeigneten Wert festzulegen.</p><p>Wenn der Wert der Eigenschaft "timetolive" ordnungsgemäß festgelegt wird, können mehrere Pipelines dieselbe Instanz des bedarfsgesteuerten HDInsight-Clusters verwenden</p> | Ja
 Version | Version des HDInsight-Clusters | Nein
 linkedServiceName | Der Blobspeicher, den der bedarfsgesteuerte Cluster zum Speichern und Verarbeiten von Daten nutzt. | Ja
 additionalLinkedServiceNames | Gibt zusätzliche Speicherkonten für den verknüpften HDInsight-Dienst an, damit der Data Factory-Dienst diese für Sie registrieren kann. | Nein
-osType | Typ des Betriebssystems. Zulässige Werte sind: „windows“ (Standard) und „Linux“. | Nein 
+osType | Typ des Betriebssystems. Zulässige Werte sind: „windows“ (Standard) und „Linux“. | Nein
 
 ### Erweiterte Eigenschaften
 
@@ -95,7 +93,6 @@ yarnConfiguration | Gibt die Yarn-Konfigurationsparameter (yarn-site.xml) für d
 	    "type": "HDInsightOnDemand",
 	    "typeProperties": {
 	      "clusterSize": 16,
-	      "jobsContainer": "adfjobs",
 	      "timeToLive": "01:30:00",
 	      "version": "3.1",
 	      "linkedServiceName": "adfods1",
@@ -123,14 +120,14 @@ yarnConfiguration | Gibt die Yarn-Konfigurationsparameter (yarn-site.xml) für d
 	  }
 	}
 
-## Eigene Compute-Umgebung 
+## Eigene Compute-Umgebung
 
 Bei dieser Konfiguration können Benutzer eine bereits vorhandene Compute-Umgebung als verknüpften Dienst in Data Factory registrieren. Die Compute-Umgebung wird vom Benutzer verwaltet und von Data Factory zum Ausführen von Aktivitäten verwendet.
- 
+
 Diese Art von Konfiguration wird für die folgenden Compute-Umgebungen unterstützt:
 
 - Azure HDInsight
-- Azure Batch 
+- Azure Batch
 - Azure Machine Learning.
 
 ## Verknüpfter Azure HDInsight-Dienst
@@ -169,10 +166,10 @@ linkedServiceName | Der Name des verknüpften Diensts für den Blobspeicher, der
 Sie können einen verknüpften Azure Batch-Dienst erstellen, um einen Batch-Pool mit virtuellen Computern für Data Factory zu registrieren. Benutzerdefinierte .NET-Aktivitäten können mit Azure Batch oder Azure HDInsight ausgeführt werden.
 
 Lesen Sie die folgenden Themen, wenn Sie noch nicht mit dem Azure Batch-Dienst vertraut sind:
- 
 
-- Unter [Azure Batch – Technische Übersicht](../batch/batch-technical-overview.md) finden Sie eine Übersicht über den Azure Batch-Dienst.
-- Erstellen Sie ein Azure Batch-Konto mit dem Cmdlet [New-AzureBatchAccount](https://msdn.microsoft.com/library/mt125880.aspx) oder über das [Azure-Verwaltungsportal](../batch/batch-technical-overview.md). Im Blog [Using Azure PowerShell to Manage Azure Batch Account](http://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx) ist die Verwendung dieses Cmdlets im Detail beschrieben.
+
+- Unter [Azure Batch – Grundlagen](../batch/batch-technical-overview.md) finden Sie eine Übersicht über den Azure Batch-Dienst.
+- Erstellen Sie ein Azure Batch-Konto mit dem Cmdlet [New-AzureBatchAccount](https://msdn.microsoft.com/library/mt125880.aspx) oder über das [Azure-Verwaltungsportal](../batch/batch-account-create-portal.md). Im Blog [Using Azure PowerShell to Manage Azure Batch Account](http://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx) ist die Verwendung dieses Cmdlets im Detail beschrieben.
 - Verwenden Sie das Cmdlet [New-AzureBatchPool](https://msdn.microsoft.com/library/mt125936.aspx), um einen Azure Batch-Pool zu erstellen.
 
 ### Beispiel
@@ -191,8 +188,8 @@ Lesen Sie die folgenden Themen, wenn Sie noch nicht mit dem Azure Batch-Dienst v
 	}
 
 Erweitern Sie den Namen Ihres Batch-Kontos für die Eigenschaft **accountName** um "**.<Name der Region**". Beispiel:
-	
-			"accountName": "mybatchaccount.eastus" 
+
+			"accountName": "mybatchaccount.eastus"
 
 Außerdem kann auch der batchUri-Endpunkt angegeben werden, wie nachfolgend gezeigt.
 
@@ -237,7 +234,7 @@ apiKey | Die veröffentlichte API des Arbeitsbereichsmodells. | Ja
 
 
 ## Mit Azure Data Lake Analytics verknüpfter Dienst
-Sie erstellen einen mit **Azure Data Lake Analytics** verknüpften Dienst, um vor Verwendung der [Data Lake Analytics-U-SQL-Aktivität](data-factory-usql-activity.md) einen Azure Data Lake Analytics-Computedienst mit Azure Data Factory zu verknüpfen.
+Sie erstellen einen mit **Azure Data Lake Analytics** verknüpften Dienst, um einen Azure Data Lake Analytics-Computedienst mit einer Azure Data Factory zu verknüpfen, bevor Sie die [Data Lake Analytics-U-SQL-Aktivität](data-factory-usql-activity.md) in einer Pipeline verwenden.
 
 Das folgende Beispiel enthält eine JSON-Definition für einen mit Azure Data Lake Analytics verknüpften Dienst.
 
@@ -249,7 +246,7 @@ Das folgende Beispiel enthält eine JSON-Definition für einen mit Azure Data La
 	            "accountName": "adftestaccount",
 	            "dataLakeAnalyticsUri": "datalakeanalyticscompute.net",
 	            "authorization": "<authcode>",
-				"sessionId": "<session ID>", 
+				"sessionId": "<session ID>",
 	            "subscriptionId": "<subscription id>",
 	            "resourceGroupName": "<resource group name>"
 	        }
@@ -261,11 +258,11 @@ Die folgende Tabelle enthält Beschreibungen der Eigenschaften, die in der JSON-
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-Typ | Legen Sie als Typeigenschaft **AzureDataLakeAnalytics** fest. | Ja
+Typ | Legen Sie die Typeigenschaft auf **AzureDataLakeAnalytics** fest. | Ja
 accountName | Name des Azure Data Lake Analytics-Kontos. | Ja
-dataLakeAnalyticsUri | URI des Azure Data Lake Analytics-Kontos. | Nein 
-authorization | Der Autorisierungscode wird automatisch abgerufen, nachdem Sie im Data Factory-Editor auf die Schaltfläche **Autorisieren** geklickt und die OAuth-Anmeldung abgeschlossen haben. | Ja 
-subscriptionId | Azure-Abonnement-ID | Nein (falls nicht angegeben, wird das Abonnement der Data Factory verwendet). 
+dataLakeAnalyticsUri | URI des Azure Data Lake Analytics-Kontos. | Nein
+authorization | Der Autorisierungscode wird automatisch abgerufen, nachdem Sie im Data Factory-Editor auf die Schaltfläche **Autorisieren** geklickt und die OAuth-Anmeldung abgeschlossen haben. | Ja
+subscriptionId | Azure-Abonnement-ID | Nein (falls nicht angegeben, wird das Abonnement der Data Factory verwendet).
 ResourceGroupName | Azure-Ressourcengruppenname | Nein (falls nicht angegeben, wird die Ressourcengruppe der Data Factory verwendet).
 sessionId | Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID ist eindeutig und darf nur einmal verwendet werden. Sie wird im Data Factory-Editor automatisch generiert. | Ja
 
@@ -274,13 +271,4 @@ sessionId | Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID is
 
 Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der [Aktivität "Gespeicherte Prozedur"](data-factory-stored-proc-activity.md) zum Aufrufen einer gespeicherten Prozedur in einer Data Factory-Pipeline. Im Artikel [Azure SQL-Connector](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) finden Sie weitere Informationen zu diesem verknüpften Dienst.
 
-
-  
-
-
-
-     
- 
-   
-
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

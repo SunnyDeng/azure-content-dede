@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie den Azure-Tabellenspeicher verwenden. Die Codebeispiele verwenden die Node.js-API."
 	services="storage"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="mwasson"/>
+	ms.date="11/20/2015"
+	ms.author="robmcm"/>
 
 
 # Verwenden des Azure-Tabellenspeichers mit Node.js
@@ -59,7 +59,7 @@ Um Azure Storage verwenden zu können, müssen Sie das Azure Storage-SDK für No
 		+-- xml2js@0.2.7 (sax@0.5.2)
 		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
-3.  Sie können den Befehl **ls** manuell aufrufen, um sich davon zu überzeugen, dass der Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das Paket **azure-storage** mit den Bibliotheken, die Sie benötigen, um auf den Speicher zuzugreifen.
+3.  Sie können den Befehl **ls** manuell ausführen, um zu überprüfen, ob der Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das Paket **azure-storage** mit den Bibliotheken, die Sie benötigen, um auf den Speicher zuzugreifen.
 
 ### Importieren des Pakets
 
@@ -435,7 +435,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 -   MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
 -   [Azure Storage Team Blog][] (in englischer Sprache)
 -   [Azure Storage SDK for Node.js][]-Repository auf GitHub (in englischer Sprache)
--   [Node.js Developer Center](/develop/nodejs/) (in englischer Sprache)
+-   [Node.js Developer Center (in englischer Sprache)](/develop/nodejs/)
 
   [Azure Storage SDK for Node.js]: https://github.com/Azure/azure-storage-node
   [OData.org]: http://www.odata.org/
@@ -450,4 +450,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
   [Node.js-Web-App mit Storage]: ../storage-nodejs-use-table-storage-web-site.md
   [Create and deploy a Node.js application to an Azure website]: ../web-sites-nodejs-develop-deploy-mac.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

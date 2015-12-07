@@ -3,8 +3,8 @@
 	description="Erläutert das Durchführen einer Installation des Azure AD-Anwendungsproxyconnectors im Hintergrund, um sicheren Remotezugriff auf lokale Apps zu gewähren."
 	services="active-directory"
 	documentationCenter=""
-	authors="rkarlin"
-	manager="steven.powell"
+	authors="kgremban"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="rkarlin"/>
+	ms.author="kgremban"/>
 
 # Installieren des Azure AD-Anwendungsproxyconnectors im Hintergrund
 
@@ -46,21 +46,21 @@ Dies lässt sich mit einer folgenden Methoden bewirken:
 
 1. Erstellen Sie das Windows PowerShell-Anmeldeinformationsobjekt durch Ausführen des folgenden Befehls, wobei „Benutzername“ und „Kennwort“ durch den Benutzernamen und das Kennwort für das betreffende Verzeichnis ersetzt werden muss:
 
-        $User = "<username>" 
-        $PlainPassword = '<password>' 
-        $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force 
-        $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword 
-    
+        $User = "<username>"
+        $PlainPassword = '<password>'
+        $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
+        $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
+
 2. Wechseln Sie zu **C:\\Programme\\Microsoft AAD App Anwendungsproxy-Connector**, und führen Sie das Skript mithilfe der zuvor erstellen PowerShell-Anmeldeinformationen aus, wobei „$cred“ für den Namen des erstellten PowerShell-Anmeldeinformationsobjekts steht:
 
-        RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred 
+        RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred
 
 
 ### Registrieren des Connectors mithilfe eines offline erstellten Tokens
 
 1. Erstellen Sie mithilfe der AuthenticationContext-Klasse ein Offlinetoken, indem Sie die Werte in dem Codeausschnitt verwenden:
 
-        
+
         using System;
         using System.Diagnostics;
         using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -142,4 +142,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

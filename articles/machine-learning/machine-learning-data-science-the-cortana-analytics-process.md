@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/29/2015" 
+	ms.date="11/23/2015" 
 	ms.author="bradsev;gopitk" />
 
 
@@ -27,7 +27,7 @@ Es folgen die Schritte im **Cortana-Analyseprozess**:
 
 Der Prozess ist **iterativ**: das Verständnis neuer und vorhandener Optimierungen im Modell entwickelt sich weiter und erfordert das Überarbeiten von zuvor in der Folge abgeschlossenen Schritten. Vorhandene Organisationsentwicklungs- und Projektplanungsprozesse können **einfach** an die im CAP definierte Schrittfolge angepasst werden.
 
-Die Schritte in diesem Prozess sind im [CAP-Lernpfad](https://azure.microsoft.com/de-DE/documentation/learning-paths/cortana-analytics-process/) abgebildet und verlinkt und werden unten beschrieben.
+Die Schritte in diesem Prozess sind im [CAP-Lernpfad](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) abgebildet und verlinkt und werden unten beschrieben.
 
 ## Vorbereitungsschritte 
 
@@ -83,7 +83,7 @@ Sobald wir eine Gruppe von Modellen mit adäquater Leistung haben, können diese
 
 ## Zusammenfassung und nächste Schritte
 
-Der [Cortana-Analyseprozess](https://azure.microsoft.com/de-DE/documentation/learning-paths/cortana-analytics-process/) wird als eine Folge von zu durchlaufenden Schritten modelliert. Diese bieten einen **Leitfaden** für die Aufgaben, die zum Nutzen erweiterter Analysen für das Entwickeln intelligenter Anwendungen ausgeführt werden müssen. Jeder Schritt enthält Details zur Verwendung verschiedener Microsoft-Technologien zum Erledigen der beschriebenen Aufgaben.
+Der [Cortana-Analyseprozess](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) wird als eine Folge von zu durchlaufenden Schritten modelliert. Diese bieten einen **Leitfaden** für die Aufgaben, die zum Nutzen erweiterter Analysen für das Entwickeln intelligenter Anwendungen ausgeführt werden müssen. Jeder Schritt enthält Details zur Verwendung verschiedener Microsoft-Technologien zum Erledigen der beschriebenen Aufgaben.
 
 Wenngleich der CAP nicht bestimmte Arten von **Dokumentationsinhalten** vorschreibt, es ist eine bewährte Methode, die Ergebnisse der Datenuntersuchung, Modellierung und Auswertung zu dokumentieren und den dazugehörigen Code zu speichern, damit die Analyse bei Bedarf wiederholt kann. Dies ermöglicht außerdem die Wiederverwendung der Analyseergebnisse bei der Arbeit mit anderen Anwendungen mit ähnlichen Daten und Vorhersageaufgaben.
 
@@ -91,4 +91,4 @@ Vollständige exemplarische Vorgehensweisen, in denen sämtliche Schritte im Pro
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

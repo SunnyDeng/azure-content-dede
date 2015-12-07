@@ -37,7 +37,7 @@ Da das Datenformat durch C#-Klassen bestimmt wird, ziehen Änderungen an den Kla
 
 ### „Datenvertrag“ ist das Standardserialisierungsprogramm.
 
-Das Serialisierungsprogramm liest i. Allg. die Daten und deserialisiert sie in die aktuelle Version, selbst wenn die Daten eine ältere oder *neuere* Version aufweisen. Das Standardserialisierungsprogramm ist der [Datenvertragsserialisierer](https://msdn.microsoft.com/library/ms733127.aspx), der klar definierte Versionsregeln aufweist. Mit zuverlässigen Auflistungen kann das Serialisierungsprogramm überschrieben werden, mit zuverlässigen Akteuren derzeit jedoch nicht. Der Datenvertragsserialisierer spielt eine wichtige Rolle bei der Aktivierung von parallelen Upgrades. Das Serialisierungsprogramm „Datenvertrag“ wird für Service Fabric-Anwendungen empfohlen.
+Das Serialisierungsprogramm liest i. Allg. die Daten und deserialisiert sie in die aktuelle Version, selbst wenn die Daten eine ältere oder *neuere* Version aufweisen. Das Standardserialisierungsprogramm ist der [Datenvertragsserialisierer](https://msdn.microsoft.com/library/ms733127.aspx), der klar definierte Versionsregeln aufweist. Mit zuverlässigen Auflistungen kann das Serialisierungsprogramm überschrieben werden, mit zuverlässigen Akteuren derzeit jedoch nicht. Der Datenvertragsserialisierer spielt eine wichtige Rolle bei der Aktivierung von parallelen Upgrades. Der Datenvertragsserialisierer wird für Service Fabric-Anwendungen empfohlen.
 
 
 ## Auswirkungen des Datenformats auf das parallele Upgrade
@@ -59,10 +59,12 @@ Datenverträge sind die empfohlene Lösung zum Sicherstellen der Kompatibilität
 
 ## Nächste Schritte
 
-[Lernprogramm für Anwendungsupgrades](service-fabric-application-upgrade-tutorial.md)
+[Upgrades von Service Fabric-Anwendungen mithilfe von Visual Studio](service-fabric-application-upgrade.md)
 
-[Anwendungsupgradeparameter](service-fabric-application-upgrade-parameters.md)
+[Service Fabric-Anwendungsupgrade per PowerShell](service-fabric-application-upgrade-powershell.md)
 
-[Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
+[Upgrade-Parameter](service-fabric-application-upgrade-parameters.md)
 
-<!---HONumber=Nov15_HO2-->
+[Manuelle Upgrades und Upgrades mit einem Diff-Paket](service-fabric-application-upgrade-advanced.md)
+
+<!---HONumber=AcomDC_1125_2015-->

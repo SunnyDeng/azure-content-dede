@@ -3,7 +3,7 @@
 	description="Erläutert das Erstellen und Verwalten von Connectorgruppen im Azure AD-Anwendungsproxy."
 	services="active-directory"
 	documentationCenter=""
-	authors="rkarlin"
+	authors="kgremban"
 	manager="StevenPo"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="rkarlin"/>
+	ms.author="kgremban"/>
 
 
 # Veröffentlichen von Anwendungen in getrennten Netzwerken und an getrennten Speicherorten mit Connectorgruppen
@@ -59,4 +59,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
 * [Informationen zur eingeschränkten Kerberos-Delegierung](http://technet.microsoft.com/library/cc995228.aspx)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

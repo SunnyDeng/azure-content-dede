@@ -41,7 +41,7 @@ Führen Sie die folgenden Schritte aus, um häufige SSH-Verbindungsfehler für v
 
 	![Screenshot, auf dem das Zurücksetzen der SSH-Konfiguration dargestellt ist](./media/virtual-machines-troubleshoot-ssh-connections/Portal-SSH-Reset-Windows.png)
 
-2. Führen Sie einen **Neustart** des virtuellen Computers aus. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) die Option **Virtuelle Computer** > **Instanzen**, und klicken Sie auf **Neustart**.
+2. Führen Sie einen **Neustart** des virtuellen Computers aus. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [Azure-Portal](https://manage.windowsazure.com) nacheinander **Virtuelle Computer** > **Instanzen**, und klicken Sie dann auf **Neu starten**.
 
 3. [**Ändern Sie die Größe** des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
 
@@ -174,9 +174,9 @@ Mit den Informationen in den folgenden Abschnitten können Sie die Fehlerquelle 
 
 ### Schritte vor der Problembehandlung
 
-Überprüfen Sie zunächst den Status des virtuellen Computers im Azure-Portal.
+Überprüfen Sie zunächst den Status des virtuellen Computers im Portal.
 
-Im [Azure-Verwaltungsportal](https://manage.windowsazure.com) für virtuelle Computer im klassischen Bereitstellungsmodell:
+Im [Azure-Portal](https://manage.windowsazure.com) für virtuelle Computer im klassischen Bereitstellungsmodell:
 
 1. Klicken Sie auf **Virtuelle Computer** > *VM-Name*.
 2. Klicken Sie auf das **Dashboard** des virtuellen Computers, um den Status zu überprüfen.
@@ -287,4 +287,4 @@ Für virtuelle Computer im klassischen Bereitstellungsmodell: [Zurücksetzen ein
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

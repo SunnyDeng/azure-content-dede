@@ -1,11 +1,12 @@
 <properties
 	pageTitle="Suchen nach nicht genehmigten Cloudanwendungen per Cloud App Discovery | Microsoft Azure"
-	description="Dieses Thema beschreibt den Cloud App Discovery-Dienst und Gründe für die Nutzung des Diensts."
+	description="Bietet Informationen zum Suchen und Verwalten von Anwendungen mit Cloud App Discovery, zu den Vorteilen und zu der Funktionsweise."
 	services="active-directory"
+	keywords="Cloud App Discovery, Verwalten von Anwendungen"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
-	editor="lisatoft"/>
+	manager="stevenpo"
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="11/20/2015"
 	ms.author="markusvi"/>
 
 # Suchen nach nicht genehmigten Cloudanwendungen per Cloud App Discovery
@@ -47,4 +48,4 @@ Informationen zu den ersten Schritten mit Cloud App Discovery finden Sie unter [
 - [Cloud App Discovery – Agent-Änderungsprotokoll](http://social.technet.microsoft.com/wiki/contents/articles/24616.cloud-app-discovery-agent-changelog.aspx)
 - [Cloud App Discovery – Häufig gestellte Fragen](http://social.technet.microsoft.com/wiki/contents/articles/24037.cloud-app-discovery-frequently-asked-questions.aspx)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

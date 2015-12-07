@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/21/2015"
+   ms.date="11/24/2015"
    ms.author="mfussell"/>
 
 # RunAs: Ausführen einer Service Fabric-Anwendung mit verschiedenen Sicherheitsberechtigungen
@@ -86,9 +86,10 @@ Konfigurieren Sie als Nächstes im Abschnitt **ServiceManifestImport** eine Rich
 
 Lassen Sie uns nun die Datei „MySetup.bat“ zum Visual Studio-Projekt hinzufügen, um die Administratorrechte zu testen. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Dienstprojekt, und fügen Sie einen neuen Aufruf der Datei „MySetup.bat“ hinzu. Als Nächstes muss sichergestellt werden, dass diese Datei in das Dienstpaket einbezogen wird, was standardmäßig nicht der Fall ist. Um sicherzustellen, dass die Datei „MySetup.bat“ im Paket enthalten ist, wählen Sie die Datei aus. Klicken Sie mit der rechten Maustaste, um das Kontextmenü zu öffnen, wählen Sie „Eigenschaften“ aus, und stellen Sie im Dialogfeld „Eigenschaften“ sicher, dass die **In Ausgabeverzeichnis kopieren** auf **Kopieren, wenn neuer** festgelegt ist. Dies wird im folgenden Screenshot gezeigt.
 
-![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][Image1]
+![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][image1]
 
-Öffnen Sie nun die Datei „MySetup.bat“, und fügen Sie die folgenden Befehle hinzu.
+Öffnen Sie nun die MySetup.bat-Datei, und fügen Sie die folgenden Befehle hinzu.
+
 ~~~
 REM Set a system environment variable. This requires administrator privilege
 setx -m TestVariable "MyValue"
@@ -96,39 +97,39 @@ echo System TestVariable set to > test.txt
 echo %TestVariable% >> test.txt
 
 REM To delete this system variable us
-REM REG delete "HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" /v TestVariable /f
+REM REG delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v TestVariable /f
 ~~~
 
 Als Nächstes müssen Sie die Projektmappe erstellen und in einem lokalen Entwicklungscluster bereitstellen. Nachdem der Dienst gestartet wurde, können Sie im Service Fabric-Explorer erkennen, dass „MySetup.bat“ auf zwei Arten erfolgreich war. Öffnen Sie eine PowerShell-Eingabeaufforderung, und geben Sie Folgendes ein:
+
 ~~~
- [Environment]::GetEnvironmentVariable("TestVariable","Machine")
-~~~
-Like this
-~~~
-PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine") MyValue
+PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine")
+MyValue
 ~~~
 
-Notieren Sie sich den Namen des Knotens, auf dem der Dienst im Service Fabric-Explorer bereitgestellt und gestartet wurde, z. B. Knoten 1, und navigieren Sie zum Arbeitsordner der Anwendungsinstanz, um die Datei „out.txt“ zu finden, die den Wert **TestVariable** zeigt. Wenn die Bereitstellung z. B. auf Knoten 2 erfolgt wäre, können Sie für „MyApplicationType“ zu diesem Pfad navigieren.
+Notieren Sie sich den Namen des Knotens, auf dem der Dienst im Service Fabric-Explorer bereitgestellt und gestartet wurde, z. B. Knoten 1, und navigieren Sie zum Arbeitsordner der Anwendungsinstanz, um die out.txt-Datei zu finden, die den Wert **TestVariable** zeigt. Wenn die Bereitstellung z. B. auf Knoten 2 erfolgt wäre, können Sie für „MyApplicationType“ zu diesem Pfad navigieren.
 
 ~~~
 C:\SfDevCluster\Data\_App\Node.2\MyApplicationType_App\work\out.txt
 ~~~
 
 ##  Starten von PowerShell-Befehlen aus „SetupEntryPoint“
-Zum Ausführen von PowerShell aus **SetupEntryPoint** können Sie „PowerShell.exe“ in einer Batchdatei ausführen, die auf eine PowerShell-Datei verweist. Fügen Sie zuerst dem Dienstprojekt eine PowerShell-Datei hinzu, z. B. „MySetup.ps1“. Denken Sie daran, die Eigenschaft *Kopieren, wenn neuer* so festzulegen, dass diese Datei in das Dienstpaket einbezogen wird. Das folgende Beispiel zeigt eine einfache Batchdatei zum Starten einer PowerShell-Datei namens „MySetup.ps1“, die die Systemumgebungsvariable *TestVariable* festlegt.
+Zum Ausführen von PowerShell ab dem **SetupEntryPoint**-Punkt können Sie „PowerShell.exe“ in einer Batchdatei ausführen, die auf eine PowerShell-Datei verweist. Fügen Sie zuerst dem Dienstprojekt eine PowerShell-Datei hinzu, z. B. „MySetup.ps1“. Denken Sie daran, die Eigenschaft *Kopieren, wenn neuer* so festzulegen, dass diese Datei in das Dienstpaket einbezogen wird. Das folgende Beispiel zeigt eine Beispielbatchdatei zum Starten einer PowerShell-Datei namens „MySetup.ps1“, die die Systemumgebungsvariable *TestVariable* festlegt.
 
-MySetup.bat to launch PowerShell file.
+MySetup.bat zum Starten der PowerShell-Datei.
+
 ~~~
-powershell.exe -ExecutionPolicy Bypass -Command ".\\MySetup.ps1"
+powershell.exe -ExecutionPolicy Bypass -Command ".\MySetup.ps1"
 ~~~
 
-Fügen Sie in der PowerShell-Datei Folgendes hinzu, um eine Systemumgebungsvariable festzulegen:
-~~~
+Fügen Sie in der PowerShell-Datei Folgendes ein, um eine Systemumgebungsvariable festzulegen.
+
+```
 [Environment]::SetEnvironmentVariable("TestVariable", "MyValue", "Machine")
 [Environment]::GetEnvironmentVariable("TestVariable","Machine") > out.txt
-~~~
+```
 
-## Anwenden der RunAs-Richtlinie auf Dienste 
+## Anwenden der RunAs-Richtlinie auf Dienste
 In den vorangegangenen Schritten wurde erläutert, wie eine RunAs-Richtlinie auf einen „SetupEntryPoint“ angewendet wird. Nun wollen wir uns ein wenig näher anschauen, wie verschiedene Prinzipale erstellt werden, die als Dienstrichtlinien angewendet werden können.
 
 ### Erstellen lokaler Benutzergruppen
@@ -168,7 +169,7 @@ Sie können einen lokalen Benutzer erstellen, der zum Schützen eines Diensts in
   </Users>
 </Principals>
 ~~~
- 
+
 <!-- If an application requires that the user account and password be same on all machines (e.g. to enable NTLM authentication), the cluster manifest must set NTLMAuthenticationEnabled to true and also specify an NTLMAuthenticationPasswordSecret that will be used to generate the same password across all machines.
 
 <Section Name="Hosting">
@@ -179,19 +180,19 @@ Sie können einen lokalen Benutzer erstellen, der zum Schützen eines Diensts in
 -->
 
 ## Zuweisen von Richtlinien zu den Dienstcodepaketen
-Der Abschnitt **RunAsPolicy** für **ServiceManifestImport** gibt im Abschnitt „Principals“ das Konto an, das zum Ausführen eines Codepakets verwendet werden soll, und ordnet Codepakete aus dem Dienstmanifest Benutzerkonten im Abschnitt „Principals“ zu. Sie können dies für die Einstiegspunkte des Typs „Setup“ oder „Main“ angeben oder „All“ angeben, damit diese Einstellung für beide gilt. Das folgende Beispiel zeigt unterschiedliche angewendete Richtlinien.
+Der Abschnitt **RunAsPolicy** für **ServiceManifestImport** gibt das Konto aus dem Abschnitt „Principals“ an, das zum Ausführen eines Codepakets verwendet werden soll, und ordnet Codepakete aus dem Dienstmanifest Benutzerkonten im Abschnitt „Principals“ zu. Sie können dies für die Einstiegspunkte des Typs „Setup“ oder „Main“ angeben oder „All“ angeben, damit diese Einstellung für beide gilt. Das folgende Beispiel zeigt unterschiedliche angewendete Richtlinien.
 
 ~~~
 <Policies>
-<RunAsPolicy CodePackageRef="Code" UserRef="LocalAdmin" EntryPointType="Setup"/>
-<RunAsPolicy CodePackageRef="Code" UserRef="Customer3" EntryPointType="Main"/>
+  <RunAsPolicy CodePackageRef="Code" UserRef="LocalAdmin" EntryPointType="Setup"/>
+  <RunAsPolicy CodePackageRef="Code" UserRef="Customer3" EntryPointType="Main"/>
 </Policies>
 ~~~
 
-Wenn **EntryPointType** nicht angegeben ist, wird die Standardeinstellung auf „EntryPointType = Main“ festgelegt. Das Angeben von **SetupEntryPoint** ist besonders nützlich, wenn Sie einen Einrichtungsvorgang mit hohen erforderlichen Berechtigungen unter einem Systemkonto und den eigentlichen Dienstcode unter einem Konto mit niedrigeren Berechtigungen ausführen möchten.
+Wenn **EntryPointType** nicht angegeben ist, wird die Standardeinstellung auf „EntryPointType = Main“ festgelegt. Das Angeben von **SetupEntryPoint** ist besonders nützlich, wenn Sie einen Einrichtungsvorgang mit hohen erforderlichen Berechtigungen unter einem Systemkonto ausführen möchten, während der eigentliche Dienstcode unter einem Konto mit niedrigeren Berechtigungen ausgeführt werden kann.
 
 ### Anwenden einer Standardrichtlinie auf alle Dienstcodepakete
-Der Abschnitt **DefaultRunAsPolicy** wird verwendet, um ein Standardbenutzerkonto für alle Codepakete anzugeben, für die keine bestimmte **RunAsPolicy** definiert ist. Wenn die meisten Codepakete, die in von einer Anwendung verwendeten Dienstmanifesten angegeben sind, unter demselben RunAs-Benutzerkonto ausgeführt werden müssen, müssen Sie lediglich eine RunAs-Standardrichtlinie mit diesem Benutzerkonto definieren, anstatt eine **RunAsPolicy** für jedes Codepaket anzugeben. Das folgende Beispiel gibt an, dass wenn für ein Codepaket keine **RunAsPolicy** angegeben ist, das Codepaket unter dem Standardkonto „MyDefaultAccount“ ausgeführt werden soll, das im Abschnitt „Principals“ angegeben ist.
+Der Abschnitt **DefaultRunAsPolicy** wird verwendet, um ein Standardbenutzerkonto für alle Codepakete anzugeben, für die keine bestimmte **RunAsPolicy** definiert ist. Wenn die meisten Codepakete, die in von einer Anwendung verwendeten Dienstmanifesten angegeben sind, unter demselben RunAs-Benutzerkonto ausgeführt werden müssen, kann die Anwendung lediglich eine RunAs-Standardrichtlinie mit diesem Benutzerkonto definieren, anstatt eine **RunAsPolicy** für jedes Codepaket anzugeben. Das folgende Beispiel gibt beispielsweise an, dass wenn für ein Codepaket keine **RunAsPolicy** angegeben ist, das Codepaket unter dem Standardkonto „MyDefaultAccount“ ausgeführt werden soll, das im Abschnitt „Principals“ angegeben ist.
 
 ~~~
 <Policies>
@@ -200,7 +201,7 @@ Der Abschnitt **DefaultRunAsPolicy** wird verwendet, um ein Standardbenutzerkont
 ~~~
 
 ## Zuweisen von „SecurityAccessPolicy“ für HTTP- und HTTPS-Endpunkte
-Wenn Sie eine RunAs-Richtlinie auf einen Dienst anwenden und im Dienstmanifest Endpunktressourcen mit dem HTTP-Protokoll deklariert sind, müssen Sie eine **SecurityAccessPolicy** angeben. Diese Richtlinie soll sicherstellen, dass es für Ports, die diesen Endpunkten zugeordnet sind, ordnungsgemäße Zugriffssteuerungslisten für das RunAs-Benutzerkonto gibt, unter dem der Dienst ausgeführt wird. Andernfalls hat HTTP.SYS keinen Zugriff auf den Dienst, sodass bei Aufrufen vom Client Fehler auftreten. Das nachstehende Beispiel wendet das Konto „Customer3“ auf den Endpunkt *ServiceEndpointName* an und gewährt ihm Vollzugriffsrechte.
+Wenn Sie eine RunAs-Richtlinie auf einen Dienst anwenden und im Dienstmanifest Endpunktressourcen mit dem HTTP-Protokoll deklariert sind, müssen Sie eine **SecurityAccessPolicy** angeben. Diese Richtlinie soll sicherstellen, dass es für Ports, die diesen Endpunkten zugeordnet sind, ordnungsgemäße Zugriffssteuerungslisten für das RunAs-Benutzerkonto gibt, unter dem der Dienst ausgeführt wird. Andernfalls hat HTTP.SYS keinen Zugriff auf den Dienst, sodass bei Aufrufen vom Client Fehler auftreten. Das nachstehende Beispiel wendet das Customer3-Konto auf den Endpunkt *ServiceEndpointName* an und gewährt ihm umfassende Zugriffsrechte.
 
 ~~~
 <Policies>
@@ -210,7 +211,7 @@ Wenn Sie eine RunAs-Richtlinie auf einen Dienst anwenden und im Dienstmanifest E
 </Policies>
 ~~~
 
-Für den Endpunkt HTTPS müssen Sie zusätzlich den Namen des Zertifikats angeben, das an den Client mit einer **EndpointBindingPolicy** zurückgegeben wird. Das Zertifikat ist im Abschnitt „certificates“ im Anwendungsmanifest definiert.
+Für den HTTPS-Endpunkt müssen Sie zusätzlich den Namen des Zertifikats angeben, das an den Client mit einer **EndpointBindingPolicy** zurückgegeben wird. Das Zertifikat ist im Abschnitt „certificates“ im Anwendungsmanifest definiert.
 
 ~~~
 <Policies>
@@ -265,7 +266,9 @@ Das folgende Anwendungsmanifest zeigt viele der zuvor beschriebenen Einstellunge
                <Group NameRef="LocalAdminGroup" />
             </MemberOf>
          </User>
+         <!--Customer1 below create a local account that this service runs under -->
          <User Name="Customer1" />
+         <User Name="MyDefaultAccount" AccountType="NetworkService" />
       </Users>
    </Principals>
    <Policies>
@@ -285,6 +288,6 @@ Das folgende Anwendungsmanifest zeigt viele der zuvor beschriebenen Einstellunge
 * [Angeben von Ressourcen in einem Dienstmanifest](service-fabric-service-manifest-resources.md)
 * [Bereitstellen von Anwendungen](service-fabric-deploy-remove-applications.md)
 
-[Image1]: media/service-fabric-application-runas-security/copy-to-output.png
+[image1]: ./media/service-fabric-application-runas-security/copy-to-output.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

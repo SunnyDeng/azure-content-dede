@@ -22,7 +22,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-[MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank. Im [Azure-Portal][AzureManagementPortal] können Sie über den Imagekatalog einen virtuellen Windows Server-Computer unter Verwendung des klassischen Bereitstellungsmodells erstellen. Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
+[MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank. Im [Azure-Portal][AzurePortal] können Sie über den Imagekatalog einen virtuellen Windows Server-Computer unter Verwendung des klassischen Bereitstellungsmodells erstellen. Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
 
 
 ## Erstellen eines virtuellen Computers unter Windows Server
@@ -31,7 +31,7 @@ Befolgen Sie diese Anweisungen, um einen virtuellen Computer zu erstellen.
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
-> [AZURE.NOTE]Sie können beim Erstellen des virtuellen Computers ein Endgerät für MongoDB hinzufügen und wie folgt konfigurieren: Vergeben Sie den Namen **Mongo**, verwenden Sie **TCP** als Protokoll, und legen Sie die öffentlichen und privaten Ports auf **27017** fest.
+> [AZURE.NOTE]Sie können beim Erstellen des virtuellen Computers einen Endpunkt für MongoDB hinzufügen und wie folgt konfigurieren: Vergeben Sie den Namen **Mongo**, verwenden Sie **TCP** als Protokoll, und legen Sie die öffentlichen und privaten Ports auf **27017** fest.
 
 ## Datenträger anfügen
 Fügen Sie einen Datenträger an den virtuellen Computer an, und initialisieren Sie ihn anschließend für die Verwendung durch Windows, damit ein entsprechender Speicher für den virtuellen Computer verfügbar ist. Sie können entweder einen vorhandenen Datenträger anfügen, wenn Sie bereits über zu verwendende Daten verfügen, oder Sie können einen leeren Datenträger anfügen.
@@ -49,6 +49,6 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Serv
 
 [MongoDocs]: http://docs.mongodb.org/manual/
 [MongoDB]: http://www.mongodb.org/
-[AzureManagementPortal]: http://manage.windowsazure.com
+[AzurePortal]: http://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -215,7 +215,7 @@ Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erst
 2.	Geben Sie auf dem Startbildschirm **Failover** ein, und klicken Sie dann auf **Failovercluster-Manager**.
 3.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Failovercluster-Manager**, und klicken Sie dann auf **Cluster erstellen**.
 4.	Klicken Sie auf der Seite **Voraussetzungen** auf **Weiter**.
-5.	Geben Sie auf der Seite **Server auswählen** den Namen des primären SQL Server-Computers ein, und klicken Sie auf **Hinzufügen** und dann auf **Weiter**.
+5.	Geben Sie auf der Seite **Server auswählen** den Namen des primären SQL Server-Computers ein, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Weiter**.
 6.	Klicken Sie auf der Seite **Validierungswarnung** auf **Nein. Microsoft-Support für diesen Cluster nicht nötig. Validierungstests nicht durchführen. Beim Klicken auf „Weiter“ Erstellung des Clusters fortsetzen.** Klicken Sie danach auf **Weiter**.
 7.	Geben Sie auf der Seite **Zugriffspunkt für die Verwaltung des Clusters** im Textfeld **Clustername** den Namen Ihres Clusters ein, und klicken Sie dann auf **Weiter**.
 8.	Klicken Sie auf der **Bestätigungsseite** auf **Weiter**, um den Cluster zu erstellen. 
@@ -246,7 +246,7 @@ Führen Sie zur Aktivierung von Verfügbarkeitsgruppen in SQL Server folgende Sc
 3.	Klicken Sie im linken Bereich auf **SQL Server-Dienste**.
 4.	Doppelklicken Sie im Inhaltsbereich auf **SQL Server (MSSQLSERVER)**.
 5.	Klicken Sie im Fenster **Eigenschaften von SQL Server (MSSQLSERVER)** auf die Registerkarte **Hohe Verfügbarkeit mit AlwaysOn**, wählen Sie **AlwaysOn-Verfügbarkeitsgruppen aktivieren** aus, klicken Sie auf **Übernehmen**, und klicken Sie auf Aufforderung auf **OK**. Lassen Sie das Eigenschaftenfenster noch offen. 
-6.	Klicken Sie auf die Registerkarte „virtual-machines-manage-availability“, und geben Sie unter **Kontoname** [Domäne]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto „sqlservice“ ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
+6.	Klicken Sie auf die Registerkarte "virtual-machines-manage-availability", und geben Sie unter **Kontoname** [Domäne]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto "sqlservice" ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
 7.	Klicken Sie im Meldungsfenster auf **Ja**, um den SQL Server-Dienst neu zu starten.
 8.	Melden Sie sich beim sekundären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, und wiederholen Sie die Schritte 2 bis 7. 
 
@@ -270,4 +270,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 4: Konfi
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

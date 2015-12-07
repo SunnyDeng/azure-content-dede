@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="11/06/2015"
+	ms.date="11/23/2015"
 	ms.author="jeffstok"/>
 
 
@@ -34,7 +34,7 @@ Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhal
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
-Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hubs-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
+Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
@@ -236,4 +236,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

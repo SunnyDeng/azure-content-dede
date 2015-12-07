@@ -23,7 +23,17 @@ Ihre Service Fabric-Anwendung wurde nun erstellt. Dieser Artikel beschreibt die 
 Jede neue Anwendung umfasst ein Anwendungsprojekt. Es gibt möglicherweise je nach gewähltem Diensttyp ein oder zwei zusätzliche Projekte.
 
 ### Das Anwendungsprojekt
-Das Projekt für die Anwendung besteht aus: - Einer Reihe von Verweisen auf die Dienste, die die Anwendung bilden - Zwei Veröffentlichungsprofilen (lokal und Cloud), mit denen Sie die Voreinstellungen für unterschiedliche Umgebungen verwalten können, wie z. B. beim standardmäßigen Ausführen von Upgradebereitstellungen für Clusterendpunkte - Zwei Anwendungsparameterdateien (lokal und Cloud), mit denen Sie umgebungsspezifische Anwendungskonfigurationen verwalten können, wie z. B. die Anzahl der Partitionen, die für einen Dienst erstellt werden - Ein Bereitstellungsskript, mit dem Sie Ihre Anwendung über die Befehlszeile oder als Teil einer automatisierten fortlaufenden Integrationspipeline bereitstellen können - Das Anwendungsmanifest, das die Anwendung beschreibt
+Das Anwendungsprojekt besteht aus:
+
+- einem Satz von Verweisen auf die Dienste, aus denen die Anwendung besteht
+
+- zwei Veröffentlichungsprofilen (Lokal und Cloud), die Sie zum Verwalten der Voreinstellungen für die Arbeit mit unterschiedlichen Umgebungen verwenden können, z. B. als Clusterendpunkt und ob standardmäßig Upgradebereitstellungen ausgeführt werden sollen
+
+- zwei Anwendungsparameterdateien (Lokal und Cloud), mit denen Sie umgebungsspezifische Anwendungskonfigurationen verwalten können, wie z. B. die Anzahl der Partitionen, die für einen Dienst erstellt werden sollen
+
+- ein Bereitstellungsskript, mit denen Sie Ihre Anwendung über die Befehlszeile oder als Teil einer automatisierten fortlaufenden Integrationspipeline bereitstellen können
+
+- das Anwendungsmanifest, das die Anwendung beschreibt
 
 ### Reliable Services
 Wenn Sie einen neuen Reliable Service hinzufügen, fügt Visual Studio der Projektmappe ein Dienstprojekt hinzu. Das Dienstprojekt enthält eine Klasse, die sich je nach ausgewähltem Typ entweder von `StatelessService` oder `StatefulService` ableitet.
@@ -36,7 +46,11 @@ Das Akteurprojekt definiert den Akteurtyp und (bei statusbehafteten Akteuren) de
 Beachten Sie, dass Akteurprojekte kein Standardverhalten für den Start enthalten, da Akteure von anderen Diensten aktiviert werden müssen. Ziehen Sie ein Reliable Service- oder ASP.NET-Projekt in Betracht, um Akteure zu erstellen und mit diesen zu interagieren.
 
 ### ASP.NET 5
-Die ASP.NET 5-Vorlagen zur Verwendung in Service Fabric-Anwendungen sind fast identisch mit jenen für unabhängig erstellte ASP.NET 5-Projekte. Dies sind die einzigen Unterschiede: - Das Projekt enthält einen Ordner **PackageRoot** zum Speichern des ServiceManifests zusammen mit Daten und Konfigurationspaketen. - Das Projekt enthält einen Verweis auf ein zusätzliches NuGet-Paket (Microsoft.ServiceFabric.AspNet.Hosting), das als Brücke zwischen DNX und Service Fabric fungiert.
+Die ASP.NET 5-Vorlagen zur Verwendung in Service Fabric-Anwendungen sind fast identisch mit jenen für unabhängig erstellte ASP.NET 5-Projekte. Die einzigen Unterschiede sind:
+
+- Das Projekt enthält einen **PackageRoot**-Ordner zum Speichern des ServiceManifest sowie Data- und Config-Pakete.
+
+- Das Projekt verweist auf ein zusätzliches NuGet-Paket (Microsoft.ServiceFabric.AspNet.Hosting), das als Brücke zwischen DNX und Service Fabric fungiert.
 
 ## Nächste Schritte
 ### Hinzufügen eines Web-Front-Ends zur Anwendung
@@ -49,7 +63,7 @@ Das Service Fabric-SDK stellt einen lokalen Cluster zu Entwicklungs- und Testzw
 Sie können Ihre Anwendung direkt aus Visual Studio in einem Azure-Cluster veröffentlichen. Informationen dazu finden Sie unter [Veröffentlichen Ihrer Anwendung in Azure][publish-app-to-azure].
 
 ### Visualisieren des Clusters mit Service Fabric-Explorer
-Service Fabric-Explorer bietet eine einfache Möglichkeit zum Visualisieren Ihres Clusters, einschließlich der bereitgestellten Anwendungen und des physischen Layouts. Informationen dazu finden Sie unter [Visualisieren des Clusters mit Service Fabric-Explorer][visualize-with-sfx]
+Service Fabric-Explorer bietet eine einfache Möglichkeit zum Visualisieren Ihres Clusters, einschließlich der bereitgestellten Anwendungen und des physischen Layouts. Informationen dazu finden Sie unter [Visualisieren des Clusters mit Service Fabric-Explorer][visualize-with-sfx].
 
 ### Versionierung und Upgrade Ihrer Dienste
 Service Fabric ermöglicht eine unabhängige Versionierung und Upgrades von unabhängigen Diensten in einer Anwendung. Weitere Informationen finden Sie unter [Versionierung und Upgrade Ihrer Dienste][app-upgrade-tutorial].
@@ -67,4 +81,4 @@ Informationen zur Einrichtung eines kontinuierlichen Integrationsverfahren für 
 [reliable-services-webapi]: ./service-fabric-reliable-services-communication-webapi.md
 [app-upgrade-tutorial]: ./service-fabric-application-upgrade-tutorial.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

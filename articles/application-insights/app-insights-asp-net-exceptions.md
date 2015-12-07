@@ -78,6 +78,9 @@ Sie haben mehrere Möglichkeiten:
 
 ![Drillthrough](./media/app-insights-asp-net-exceptions/viewCustomEvents.png)
 
+
+> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert, reduziert das adaptive Stichprobenmodul automatisch die an das Verwaltungsportal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die Teil des gleichen Vorgangs sind, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
+
 ### Anzeigen von POST-Daten von Anforderungen
 
 Anforderungsdetails enthalten nicht die Daten, die in einem POST-Aufruf an Ihre App gesendet wurden. So werden diese Daten gemeldet:
@@ -452,4 +455,4 @@ Beachten Sie, dass sich der Wert von der Anzahl der "Ausnahmen" unterscheidet, d
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

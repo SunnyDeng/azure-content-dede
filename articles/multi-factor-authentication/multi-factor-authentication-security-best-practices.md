@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/19/2015" 
 	ms.author="billmath"/>
 
 # Bewährte Sicherheitsmethoden beim Einsatz von Azure Multi-Factor Authentication mit Azure AD-Konten
@@ -121,4 +121,4 @@ In diesem Artikel sind einige bewährte Methoden für Azure MFA beschrieben. Zus
 - [Einrichten von Azure Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md)
 - [Azure Multi-Factor Authentication – Häufig gestellte Fragen](multi-factor-authentication-faq.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

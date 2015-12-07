@@ -3,7 +3,7 @@
    description="Exemplarische Vorgehensweise des Packens einer vorhandenen Anwendung, um sie in einem Azure Service Fabric-Cluster bereitzustellen"
    services="service-fabric"
    documentationCenter=".net"
-   authors="bscholl"
+   authors="bmscholl"
    manager=""
    editor=""/>
 
@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/09/2015"
+   ms.date="11/17/2015"
    ms.author="bscholl"/>
 
 
-# Bereitstellen mehrerer vorhandener Anwendungen
+# Bereitstellen mehrerer benutzerdefinierter Anwendungen
 
 In diesem Artikel wird das Packen mehrerer Anwendungen und ihre Bereitstellung in Service Fabric mithilfe der Vorschauversion des Service Fabric-Packtools erläutert, die unter http://aka.ms/servicefabricpacktool verfügbar ist.
 
@@ -65,7 +65,7 @@ Es folgt eine Beschreibung der verwendeten Parameter:
 - **/appname**: Gibt den Anwendungsnamen der vorhandenen Anwendung an. Wichtig ist der Hinweis, dass dieser Name in den Dienstnamen im Manifest und nicht in den Service Fabric-Anwendungsnamen übersetzt wird.
 - **/exe**: Bestimmt die ausführbare Datei, die Service Fabric starten soll, in diesem Fall `node.exe`.
 - **/ma**: Gibt das Argument an, das verwendet wird, um die ausführbare Datei zu starten. Da Node.js nicht installiert ist, muss Service Fabric den Node.js-Webserver durch Ausführen von `node.exe bin/www` starten. `/ma:'bin/www'` weist das Packtool an, `bin/ma` als Argument für „node.exe“ zu verwenden.
-- **/AppType**: Bestimmt den Namen des Service Fabric-Anwendungstyps.  
+- **/AppType**: Bestimmt den Namen des Service Fabric-Anwendungstyps. Wenn Sie
 
 Wenn Sie zum Verzeichnis zu navigieren, das im „/target“-Parameter angegeben wurde, sehen Sie, dass das Tool ein voll funktionsfähiges Service Fabric-Paket erstellt hat (siehe unten):
 
@@ -194,8 +194,8 @@ Nach der erfolgreichen Veröffentlichung der Anwendung im lokalen Cluster könne
 
 In diesem Tutorial haben Sie erfahren, wie einfach das Packen zweier vorhandener Anwendungen zu einer Service Fabric-Anwendung und deren Bereitstellung in Service Fabric ist. Diese kann anschließend von verschiedenen Service Fabric-Features wie hohe Verfügbarkeit und Systemintegration profitieren.
 
-Weitere Informationen finden Sie in den folgenden Themen:
+## Nächste Schritte
 
-[Service Fabric-Packformat](service-fabric-deploy-existing-app.md)
+Erfahren Sie, wie Sie [eine einzelne Anwendung manuell packen](service-fabric-deploy-existing-app.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

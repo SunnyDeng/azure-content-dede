@@ -202,9 +202,9 @@ Im Anschluss sehen Sie ein Beispiel für den Befehl.
 
 Die Parameter sind selbsterklärend. Ersetzen Sie Ihre bestimmten Variablen, und führen Sie den Befehl dann aus.
 
-> [AZURE.NOTE]Über die Befehlszeile automatisiere ich mithilfe des Parameters „–tcp-endpoints“ auch die Filterregeln für mein Endgerätenetzwerk. Ich habe die Ports 80 und 3389 geöffnet, um den Zugriff auf meine Webseite und die RDP-Sitzung zu gestatten.
+> [AZURE.NOTE]Über die Befehlszeile automatisiere ich mithilfe des Parameters „–tcp-endpoints“ auch die Filterregeln für mein Endpunktnetzwerk. Ich habe die Ports 80 und 3389 geöffnet, um den Zugriff auf meine Webseite und die RDP-Sitzung zu gestatten.
 
-Nachdem Sie den Befehl ausgeführt haben, wechseln Sie zum Azure-Portal, wo Sie die Bereitstellung des virtuellen Computers verfolgen können.
+Nachdem Sie den Befehl ausgeführt haben, wechseln Sie zum Azure-Vorschauportal, in dem Sie die Bereitstellung des virtuellen Computers verfolgen können.
 
 ![][13]
 
@@ -239,4 +239,4 @@ Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

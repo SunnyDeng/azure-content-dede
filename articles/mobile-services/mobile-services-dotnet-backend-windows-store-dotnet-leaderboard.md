@@ -2,9 +2,9 @@
 	pageTitle="Erstellen einer Windows Store-Bestenlisten-App mit .NET-Back-End | Azure Mobile Services" 
 	description="Erfahren Sie, wie Sie eine Windows Store-Bestenlisten-App mithilfe von Azure Mobile Services mit einem .NET-Back-End erstellen." 
 	documentationCenter="windows" 
-	authors="MikeWasson" 
-	manager="dwrede" 
-	editor="" 
+	authors="rmcmurray" 
+	manager="wpickett" 
+	editor="jimbe" 
 	services="mobile-services"/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/24/2015" 
+	ms.date="11/19/2015" 
 	ms.author="glenga"/>
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End
@@ -762,4 +762,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

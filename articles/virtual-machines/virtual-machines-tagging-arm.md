@@ -28,7 +28,7 @@ Dieser Artikel beschreibt verschiedene Methoden zum Markieren eines virtuellen C
 
 Zunächst sehen wir uns das Verwenden von Tags mithilfe von Vorlagen an. [Diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) platziert Tags auf den folgenden Ressourcen: Compute (virtueller Computer), Speicher (Storage-Konto) und Netzwerk (öffentliche IP-Adresse, Virtual Network und Netzwerkschnittstelle).
 
-Klicken Sie unter dem [Vorlagenlink](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) auf die Schaltfläche **Bereitstellen in Azure**. Dadurch werden Sie ans [Azure-Vorschauportal](http://portal.azure.com/) weitergeleitet, in dem Sie diese Vorlage bereitstellen können.
+Klicken Sie unter dem [Vorlagenlink](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) auf die Schaltfläche **Bereitstellen in Azure**. Dadurch werden Sie zum [Azure-Vorschauportal](http://portal.azure.com/) weitergeleitet, in dem Sie diese Vorlage bereitstellen können.
 
 ![Einfache Bereitstellung mit Tags](./media/virtual-machines-tagging-arm/deploy-to-azure-tags.png)
 
@@ -47,7 +47,7 @@ Speichern Sie Vorlagendatei nach dem Bearbeiten mit den Tags Ihrer Wahl.
 
 Anschließend können Sie im Abschnitt **Parameter bearbeiten** die Werte für die Tags ausfüllen.
 
-![Bearbeiten von Tags im Azure-Portal](./media/virtual-machines-tagging-arm/edit-tags-in-azure-portal.png)
+![Tags im Azure-Vorschauportal bearbeiten](./media/virtual-machines-tagging-arm/edit-tags-in-azure-portal.png)
 
 Klicken Sie auf **Erstellen**, um diese Vorlage mit Ihren Tagwerten bereitzustellen.
 
@@ -58,15 +58,15 @@ Nachdem Sie Ihre Ressourcen mit Tags erstellt haben, können Sie sie im Portal a
 
 Wählen Sie das Tag-Symbol, um die Tags anzuzeigen:
 
-![Symbol für Tags im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-tags-icon.png)
+![Tagsymbol im Azure-Vorschauportal](./media/virtual-machines-tagging-arm/azure-portal-tags-icon.png)
 
 Fügen Sie ein neues Tag über das Portal durch Definieren Ihres eigenen Schlüssels-Wert-Paares hinzu, und speichern Sie es.
 
-![Hinzufügen eines neuen Tags im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-add-new-tag.png)
+![Tags im Azure-Vorschauportal hinzufügen](./media/virtual-machines-tagging-arm/azure-portal-add-new-tag.png)
 
 Ihr neues Tag sollte jetzt in der Liste der Tags für die Ressource angezeigt werden.
 
-![Neues gespeichertes Tag im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-saved-new-tag.png)
+![Neues Tag im Azure-Vorschauportal gespeichert](./media/virtual-machines-tagging-arm/azure-portal-saved-new-tag.png)
 
 
 ## Markieren mit PowerShell
@@ -107,7 +107,7 @@ Der zweite Befehl zeigt die Tags für die angegebene Variable an.
         Value		Production
         Name		Environment
 
-Der dritte Befehl fügt ein zusätzliches Tag auf die *Tags*-Variable hinzu. Beachten Sie, wie **+=** verwendet wird, um das neue Schlüssel-Wert-Paar an die *Tags*-Liste anzufügen.
+Der dritte Befehl fügt ein zusätzliches Tag für die *Tags*-Variable hinzu. Beachten Sie, wie **+=** verwendet wird, um das neue Schlüssel-Wert-Paar an die *Tags*-Liste anzufügen.
 
         PS C:\> $tags +=@{Name="Location";Value="MyLocation"}
 
@@ -155,19 +155,19 @@ Nun, da wir unseren Ressourcen Tags über PowerShell, die Azure-Befehlszeilensch
 
 ## Anzeigen der Tags in den Nutzungsdetails
 
-Tags, die vom Azure-Ressourcen-Manager in Compute-, Netzwerk- und Speicherressourcen platziert werden, finden Sie in Ihren Nutzungsdetails im [Abrechnungsportal](https://account.windowsazure.com/) wieder.
+Tags, die vom Azure-Ressourcen-Manager in Compute-, Netzwerk- und Storage-Ressourcen platziert werden, finden Sie in Ihren Nutzungsdetails im [Abrechnungsportal](https://account.windowsazure.com/) wieder.
 
 Klicken Sie auf **Nutzungsdetails herunterladen**, um die Nutzungsdetails in Ihrem Abonnement anzuzeigen.
 
-![Nutzungsdetails im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-tags-usage-details.png)
+![Nutzungsdetails im Azure-Vorschauportal](./media/virtual-machines-tagging-arm/azure-portal-tags-usage-details.png)
 
 Wählen Sie die Abrechnungsanweisung und die **Version 2** der Nutzungsdetails aus:
 
-![Version 2 Vorschau der Nutzungsdetails im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-version2-usage-details.png)
+![Version 2 der Vorschaunutzungsdetails im Azure-Vorschauportal](./media/virtual-machines-tagging-arm/azure-portal-version2-usage-details.png)
 
 Den Verwendungsdetails können Sie alle Tags in der Spalte **Tags** entnehmen:
 
-![Spalte für Tags im Azure-Portal](./media/virtual-machines-tagging-arm/azure-portal-tags-column.png)
+![Tagspalte im Azure-Vorschauportal](./media/virtual-machines-tagging-arm/azure-portal-tags-column.png)
 
 Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen neue Einblicke in die Nutzung Ihrer Daten.
 
@@ -175,7 +175,7 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 ## Zusätzliche Ressourcen
 
 * [Übersicht über den Azure Resource Manager][]
-* [Using tags to organize your Azure resources][] (Verwenden von Tags zum Organisieren von Azure-Ressourcen)
+* [Using tags to organize your Azure resources (Verwenden von Tags zum Organisieren von Azure-Ressourcen)][]
 * [Erläuterungen zur Rechnung für Azure][]
 * [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure][]
 
@@ -186,8 +186,8 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 [Azure Resource-Cmdlets]: https://msdn.microsoft.com/de-DE/library/azure/dn757692.aspx
 [Umgebung für Ihre Azure-Befehlszeilenschnittstelle]: ./xplat-cli-azure-resource-manager.md
 [Übersicht über den Azure Resource Manager]: ../resource-group-overview.md
-[Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
+[Using tags to organize your Azure resources (Verwenden von Tags zum Organisieren von Azure-Ressourcen)]: ../resource-group-using-tags.md
 [Erläuterungen zur Rechnung für Azure]: ../billing-understand-your-bill.md
 [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure]: ../billing-usage-rate-card-overview.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

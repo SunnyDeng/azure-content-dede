@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/07/2015" 
+	ms.date="11/23/2015" 
 	ms.author="awills"/>
  
 # Verwenden der Diagnosesuche in Application Insights
@@ -36,6 +36,9 @@ Wenn Ihre Anwendung z. B. ein Webdienst ist, zeigt das Blatt "Übersicht" ein D
 Den Hauptteil der Diagnosesuche bildet eine Liste von Telemetrieelementen: Serveranforderungen, Seitenaufrufe, benutzerdefinierte Ereignisse, die Sie programmiert haben, usw. Am Anfang der Liste befindet sich ein Übersichtsdiagramm, das die Anzahl der Ereignisse im Zeitablauf zeigt.
 
 Ereignisse werden in der Regel in der Diagnosesuche angezeigt, bevor sie in Metrik-Explorer angezeigt werden. Obwohl sich das Blatt regelmäßig selbst aktualisiert, können Sie auf "Aktualisieren" klicken, wenn Sie auf ein bestimmtes Ereignis warten.
+
+
+> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
 
 
 ## Überprüfen einzelner Elemente
@@ -137,7 +140,7 @@ Dies sind einige Suchausdrücke, die Sie verwenden können:
 Beispielabfrage | Effekt 
 ---|---
 langsam|Findet alle Ereignisse im Datumsbereich, deren Felder den Begriff „langsam“ enthalten
-Datenbank??|Datenbank01, Datenbankab,... entspricht<br/>? ist am Anfang eines Suchbegriffs nicht zulässig.
+Datenbank??|Stimmt mit „Datenbank01“, „DatenbankAB“, ... überein?<br/>ist am Anfang eines Suchbegriffs nicht zulässig.
 Datenbank*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang eines Suchbegriffs nicht zulässig.
 Apfel UND Banane|Findet Ereignisse, die beide Begriffe enthalten. Verwenden Sie „AND“ in Großbuchstaben, nicht „and“.
 Apfel OR Banane<br/>Apfel Banane|Findet Ereignisse, die einen der beiden Begriffe enthalten. Verwenden Sie "OR" nicht "or".</br/>Kurzform.
@@ -200,4 +203,4 @@ POST-Daten werden nicht automatisch protokolliert. Sie können jedoch ["TrackTra
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

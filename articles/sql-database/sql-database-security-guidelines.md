@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="08/20/2015"
+   ms.date="11/24/2015"
    ms.author="rickbyh"/>
 
 # Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank
@@ -109,4 +109,6 @@ Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendung
 
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
 
-<!---HONumber=Nov15_HO3-->
+[Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589)
+
+<!---HONumber=AcomDC_1125_2015-->

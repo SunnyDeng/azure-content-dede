@@ -92,8 +92,13 @@ So funktioniert es:
 
 Zum Vereinfachen dieses Prozesses wird ein Satz mit [Codebeispielen](https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master) bereitgestellt, in denen ein SCIM-Webdienstendpunkt erstellt und die automatische Bereitstellung demonstriert wird. In einem Beispiel wird von einem Anbieter eine Datei mit Zeilen kommagetrennter Werte verwendet, die für Benutzer und Gruppen stehen. Im anderen Beispiel wird ein Anbieter verwendet, der auf dem Amazon Web Services-Dienst für Identitäts- und Zugriffsverwaltung basiert.
 
+**Voraussetzungen**
 
-**Voraussetzungen** * Visual Studio 2013 oder höher * [Azure SDK für .NET](https://azure.microsoft.com/de-DE/downloads/) * Windows-Computer, der die Verwendung von ASP.NET Framework 4.5 als SCIM-Endpunkt unterstützt. Auf diesen Computer muss aus der Cloud zugegriffen werden können * [Ein Azure-Abonnement mit einer Testversion oder einer lizenzierten Version von Azure AD Premium](https://azure.microsoft.com/de-DE/services/active-directory/) * Für das Amazon AWS-Beispiel sind Bibliotheken aus dem [AWS Toolkit für Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/tkv_setup.html) erforderlich. Weitere Details finden Sie in der INFODATEI des Beispiels.
+* Visual Studio 2013 oder höher
+* [Azure SDK für .NET](https://azure.microsoft.com/de-DE/downloads/)
+* Windows-Computer, der die Verwendung von ASP.NET Framework 4.5 als SCIM-Endpunkt unterstützt. Auf diesen Computer muss aus der Cloud zugegriffen werden können.
+* [Azure-Abonnement mit Testversion oder lizenzierter Version von Azure AD Premium](https://azure.microsoft.com/de-DE/services/active-directory/)
+* Für das Amazon AWS-Beispiel sind Bibliotheken aus dem [AWS Toolkit für Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/tkv_setup.html) erforderlich. Weitere Details finden Sie in der INFODATEI des Beispiels.
 
 ###Erste Schritte
 
@@ -327,7 +332,7 @@ Entwickler, die die von Microsoft bereitgestellten Common Language Infrastructur
 
 Azure Active Directory kann für SCIM-Webdienste zwei Arten von Ressourcen bereitstellen. Diese Arten von Ressourcen sind Benutzer und Gruppen.
 
-Benutzerressourcen werden über den Schemabezeichner (urn:ietf:params:scim:schemas:extension:enterprise:2.0:User) identifiziert, der in dieser Protokollspezifikation enthalten ist: http://tools.ietf.org/html/draft-ietf-scim-core-schema. Die Standardzuordnung der Attribute von Benutzern in Azure Active Directory zu den Attributen von urn:ietf:params:scim:schemas:extension:enterprise:2.0:User-Ressourcen ist unten in Tabelle 1 angegeben.
+Benutzerressourcen werden über den Schemabezeichner „urn:ietf:params:scim:schemas:extension:enterprise:2.0:User“ identifiziert, der in dieser Protokollspezifikation enthalten ist: http://tools.ietf.org/html/draft-ietf-scim-core-schema. Die Standardzuordnung der Attribute von Benutzern in Azure Active Directory zu den Attributen von urn:ietf:params:scim:schemas:extension:enterprise:2.0:User-Ressourcen ist unten in Tabelle 1 angegeben.
 
 Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group identifiziert. Unten in Tabelle 2 ist die Standardzuordnung der Attribute von Gruppen in Azure Active Directory zu den Attributen von http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group-Ressourcen angegeben.
 
@@ -370,7 +375,7 @@ Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com
 
 In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Directory an einen SCIM-Dienst gesendet werden, um den Lebenszyklus eines Benutzers in einem anderen Identitätsspeicher zu verwalten. In der Abbildung ist auch zu sehen, wie ein SCIM-Dienst, der mit den Common Language Infrastructure-Bibliotheken von Microsoft zum Erstellen dieser Dienste implementiert wird, diese Anforderungen in Aufrufe der Methoden eines Anbieters übersetzt.
 
-![][4] Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung
+![][4]* Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung*
 
 **1.** Azure Active Directory fragt den Dienst nach einem Benutzer mit einem externalId-Attributwert ab, der mit dem mailNickname-Attributwert eines Benutzers in Azure Active Directory übereinstimmt. Die Abfrage wird als Hypertext Transfer Protocol-Anforderung wie in diesem Beispiel ausgedrückt, wobei „jyoung“ ein Beispiel für ein mailNickname-Element eines Benutzers in Azure Active Directory ist:
 
@@ -677,7 +682,7 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 * Für Anforderungen zum Abrufen von Gruppen wird vorgegeben, dass das members-Attribut aus allen Ressourcen ausgeschlossen wird, die als Antwort auf die Anforderung bereitgestellt werden.  
 * Bei Anforderungen für die Ermittlung, ob ein Referenzattribut einen bestimmten Wert hat, handelt es sich um Anforderungen zum members-Attribut.  
 
-![][5] Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung
+![][5] * Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
 
 	
 <!--Image references-->
@@ -687,4 +692,4 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

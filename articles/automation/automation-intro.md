@@ -3,7 +3,7 @@
 	description="Sie erfahren, welchen Nutzen Azure Automation hat, und erhalten Antworten auf häufig gestellte Fragen, damit Sie mit dem Erstellen und Verwenden von Runbooks und Azure Automation DSC beginnen können."
 	services="automation"
 	documentationCenter=""
-	authors="bwren"
+	authors="SnehaGunda"
 	manager="stevenka"
 	editor=""/>
 
@@ -16,7 +16,7 @@
 	ms.date="11/05/2015"
 	ms.author="bwren;sngun"/>
 
-# Übersicht über Azure Automation
+# Azure Automation – Übersicht
 
 
 Microsoft Azure Automation bietet Benutzern die Möglichkeit, die manuellen, langfristigen, Fehler verursachenden und häufig wiederholten Aufgaben zu automatisieren, die für gewöhnlich in einer Cloud- und Unternehmensumgebung ausgeführt werden. Dies spart Zeit, erhöht die Zuverlässigkeit normaler Verwaltungsaufgaben und plant diese sogar so ein, dass sie in regelmäßigen Abständen automatisch ausgeführt werden. Sie können Prozesse mit Runbooks automatisieren oder die Konfigurationsverwaltung über die Konfiguration für den gewünschten Zustand automatisieren. Dieser Artikel enthält eine kurze Übersicht über Azure Automation und Antworten auf einige häufige Fragen. In anderen Artikeln dieser Bibliothek finden Sie ausführlichere Informationen zu den verschiedenen Themen.
@@ -43,10 +43,14 @@ Der [Runbookkatalog](http://msdn.microsoft.com/library/azure/dn781422.aspx) enth
 
 Sie können völlig neue [eigene Runbooks erstellen](http://msdn.microsoft.com/library/azure/dn643637.aspx) oder die Runbooks aus dem [Runbookkatalog](http://msdn.microsoft.com/library/azure/dn781422.aspx) für Ihre eigenen Anforderungen anpassen. Sie können zwischen drei verschiedenen [Runbooktypen](automation-runbook-types.md) basierend auf Ihren Anforderungen und Ihrer Erfahrung mit PowerShell wählen. Wenn Sie lieber direkt mit PowerShell-Code arbeiten, können Sie ein [PowerShell-Runbook](automation-runbook-types.md#powershell-runbooks) oder [PowerShell-Workflow-Runbook](automation-runbook-types.md#powershell-workflow-runbooks) verwenden, das Sie offline oder [mit dem Text-Editor](http://msdn.microsoft.com/library/azure/dn879137.aspx) im Azure-Portal bearbeiten. Wenn Sie ein Runbook lieber bearbeiten möchten, ohne sich mit dem zugrunde liegende Code zu befassen, können Sie mit dem [Grafik-Editor](automation-graphical-authoring-intro.md) im Azure-Vorschauportal ein [grafisches Runbook](automation-runbook-types.md#graphical-runbooks) erstellen.
 
+Möchten Sie sich lieber ein Video ansehen? Sehen Sie sich das folgende Video aus einer Microsoft Ignite-Veranstaltung im Mai 2015 an. Hinweis: Wenngleich die Konzepte und Features, die in diesem Video erläutert werden, weiter zutreffend sind, hat sich Azure Automation seit der Aufzeichnung des Videos wesentlich weiterentwickelt. Die Lösung bietet nun im Azure-Portal eine umfangreichere Benutzeroberfläche und unterstützt weitere Funktionen.
+
+> [AZURE.VIDEO microsoft-ignite-2015-automating-operational-and-management-tasks-using-azure-automation]
+
 
 ## Automatisieren der Konfigurationsverwaltung mit der Konfiguration für den gewünschten Zustand 
 
-[PowerShell DSC](https://technet.microsoft.com/library/dn249912.aspx) ist eine Verwaltungsplattform, mit der Sie die Konfiguration für physische Hosts und virtuelle Computer mit einer deklarativen PowerShell-Syntax verwalten, bereitstellen und durchsetzen können. Sie können Konfigurationen auf einem zentralen DSC-Pullserver definieren, die von Zielcomputern automatisch abgerufen und angewendet werden können. Für DSC (Desired State Configuration = Konfiguration für den gewünschten Zustand) wird eine Gruppe von PowerShell-Cmdlets bereitgestellt, die Sie zum Verwalten von Konfigurationen und Ressourcen verwenden können.
+[PowerShell DSC](https://technet.microsoft.com/library/dn249912.aspx) ist eine Verwaltungsplattform, mit der Sie die Konfiguration physischer Hosts und virtueller Computer mit einer deklarativen PowerShell-Syntax verwalten, bereitstellen und erzwingen können. Sie können Konfigurationen auf einem zentralen DSC-Pullserver definieren, die von Zielcomputern automatisch abgerufen und angewendet werden können. Für DSC (Desired State Configuration = Konfiguration für den gewünschten Zustand) wird eine Gruppe von PowerShell-Cmdlets bereitgestellt, die Sie zum Verwalten von Konfigurationen und Ressourcen verwenden können.
 
 [Azure Automation DSC](automation-dsc-overview.md) ist eine cloudbasierte Lösung für PowerShell DSC, mit der für Unternehmensumgebungen erforderliche Dienste bereitgestellt werden. Sie können Ihre DSC-Ressourcen in Azure Automation verwalten und Konfigurationen auf virtuelle oder physische Computer anwenden, mit denen sie von einem DSC-Pullserver in der Azure-Cloud abgerufen werden. Außerdem werden darüber Berichtdienste bereitgestellt, mit denen Sie über wichtige Ereignisse informiert werden, z. B. bei einer Abweichung der Knoten von ihrer zugewiesenen Konfiguration und bei Anwendung einer neuen Konfiguration.
 
@@ -97,4 +101,4 @@ Um mehr über Azure Automation zu erfahren und Ihre eigenen Runbooks zu erstelle
 
 **Bitte geben Sie uns Feedback!** Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="11/24/2015"
 	ms.author="femila"/>
 
 # Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 8.1-Geräte
@@ -52,4 +52,9 @@ Das Windows-Ereignisprotokoll auf dem Windows 8.1-Computer zeigt Fehlermeldungen
 
 Die Gruppenrichtlinie aktiviert einen geplanten Task auf dem System, der im Kontext des Benutzers ausgeführt und bei Anmeldung eines Benutzers ausgelöst wird. Der Task registriert den Benutzer und das Gerät im Hintergrund bei Azure AD, nachdem die Anmeldung abgeschlossen ist. Den geplanten Task finden Sie auf Windows 8.1.-Geräten in der Aufgabenplanungsbibliothek unter **Microsoft** > **Windows** > **Arbeitsbereichverknüpfung**. Der Task wird für alle Active Directory-Benutzer ausgeführt, die sich bei dem Computer anmelden, und registriert sie.
 
-<!---HONumber=Oct15_HO3-->
+## Weitere Themen
+- [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
+- [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows-Geräte](active-directory-conditional-access-automatic-device-registration.md)
+- [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte](active-directory-conditional-access-automatic-device-registration-windows7.md)
+
+<!---HONumber=AcomDC_1125_2015-->
