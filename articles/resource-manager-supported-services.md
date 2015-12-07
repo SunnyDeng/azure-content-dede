@@ -107,7 +107,9 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Vorschauportal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
-| Azure Active Directory | Nein | Nein | - | - | - | | Azure Actice Directory B2C | Nein | Nein | - | - | - | | Multi-Factor Authentication | Nein | Nein | - | - | - |
+| Azure Active Directory | Nein | Nein | - | - | - |
+| Azure Actice Directory B2C | Nein | Nein | - | - | - |
+| Multi-Factor Authentication | Nein | Nein | - | - | - |
 
 ## Entwicklerdienste 
 

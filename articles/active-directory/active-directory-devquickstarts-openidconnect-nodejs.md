@@ -242,31 +242,43 @@ app.post('/auth/openid/return',
   });
   ```
 
-## 4. Use Passport to issue sign-in and sign-out requests to Azure AD
+## 4. Verwenden von Passport zur Ausgabe von An- und Abmeldeanforderungen für Azure AD
 
-Your app is now properly configured to communicate with the v2.0 endpoint using the OpenID Connect authentication protocol.  `passport-azure-ad` has taken care of all of the ugly details of crafting authentication messages, validating tokens from Azure AD, and maintaining user session.  All that remains is to give your users a way to sign in, sign out, and gather additional info on the logged in user.
+Ihre Anwendung ist nun ordnungsgemäß für die Kommunikation mit dem v2.0-Endpunkt über das Authentifizierungsprotokoll OpenID Connect konfiguriert.  `passport-azure-ad`  kümmert sich um all die mühseligen Details der Erstellung von Authentifizierungsnachrichten, Überprüfung der Azure AD-Tokens und Verwaltung der Benutzersitzungen.  Sie müssen es Ihren Benutzern nur noch ermöglichen, sich anzumelden und abzumelden, und zusätzliche Informationen zu den angemeldeten Benutzer sammeln.
 
-- First, lets add the default, login, account, and logout methods to our `app.js` file:
+- Zuerst fügen wir der Datei `app.js`  Standard-, Anmelde-, Konto- und Abmeldemethoden hinzu:
 
 ```JavaScript
 
 //Routen (Abschnitt 4)
 
-app.get('/', function(req, res){ res.render('index', { user: req.user }); });
+app.get('/', function(req, res){
+  res.render('index', { user: req.user });
+});
 
-app.get('/account', ensureAuthenticated, function(req, res){ res.render('account', { user: req.user }); });
+app.get('/account', ensureAuthenticated, function(req, res){
+  res.render('account', { user: req.user });
+});
 
-app.get('/login', passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }), function(req, res) { log.info('Anmeldung wurde in Beispiel aufgerufen'); res.redirect('/'); });
+app.get('/login',
+  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
+  function(req, res) {
+    log.info('Login was called in the Sample');
+    res.redirect('/');
+});
 
-app.get('/logout', function(req, res){ req.logout(); res.redirect('/'); });
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 ```
 
--	Let's review these in detail:
-    -	The `/` route will redirect to the index.ejs view passing the user in the request (if it exists)
-    - The `/account` route will first ***ensure we are authenticated*** (we implement that below) and then pass the user in the request so that we can get additional information about the user.
-    - The `/login` route will call our azuread-openidconnect authenticator from `passport-azuread` and if that doesn't succeed will redirect the user back to /login
-    - The `/logout` will simply call the logout.ejs (and route) which clears cookies and then return the user back to index.ejs
+-	Betrachten Sie diese im Detail:
+    -	Die Route `/` leitet an die Ansicht "index.ejs" weiter und übergibt den Benutzer in der Anforderung (falls vorhanden).
+    - Die Route `/account`  ***stellt zuerst sicher, dass wir authentifiziert sind*** (wird weiter unten implementiert) und übergibt dann den Benutzer in der Anforderung, damit wir zusätzliche Informationen zum Benutzer abrufen können.
+    - Die Route `/login` ruft die azuread-openidconnect -Authentifizierung von `passport-azuread`  auf und leitet den Benutzer an "/login" um, wenn dies nicht erfolgreich ist.
+    - `/logout` ruft einfach "logout.ejs" (und die Route) auf, um Cookies zu löschen, und leitet dann den Benutzer zu "index.ejs" zurück.
 
 
 - For the last part of `app.js`, let's add the EnsureAuthenticated method that is used in `/account` above.
@@ -275,7 +287,15 @@ app.get('/logout', function(req, res){ req.logout(); res.redirect('/'); });
 
 // Einfache Routenmiddleware, um sicherzustellen, dass der Benutzer authentifiziert ist. (Abschnitt 4)
 
-// Verwenden Sie diese Routenmiddleware für jede Ressource, die geschützt werden muss. Wenn // die Anforderung authentifiziert ist (in der Regel über eine permanente Anmeldesitzung), // wird die Anforderung fortgesetzt. Andernfalls wird der Benutzer zur // Anmeldeseite umgeleitet. function ensureAuthenticated(req, res, next) { if (req.isAuthenticated()) { return next(); } res.redirect('/login') } ```
+//   Verwenden Sie diese Routenmiddleware für jede Ressource, die geschützt werden muss. Wenn  
+//   die Anforderung authentifiziert ist (in der Regel über eine permanente Anmeldesitzung),
+//   wird die Anforderung fortgesetzt. Andernfalls wird der Benutzer zur
+//   Anmeldeseite umgeleitet.
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+}
+```
 
 - Erstellen wir schließlich den eigentlichen Server in `app.js`:
 

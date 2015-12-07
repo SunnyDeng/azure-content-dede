@@ -67,7 +67,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden Schritten können Sie ein Speicherkonto erstellen.
 
-1.  Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
+1.  Melden Sie sich beim [Azure-Portal] an.
 
 2. Klicken Sie unten links im Portal auf das Symbol **Neu** und dann auf **Daten + Speicher** > **Speicherkonto**. Klicken Sie auf die Schaltfläche **Erstellen**, geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
 

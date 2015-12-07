@@ -228,7 +228,7 @@ Für die Azure Active Directory-Authentifizierung ist es erforderlich, dass Date
  
 Um zu bestätigen, dass der Azure AD-Administrator ordnungsgemäß eingerichtet ist, stellen Sie mit dem Azure AD-Administratorkonto eine Verbindung mit der Datenbank **master** her. Um einen Azure AD-basierten eigenständigen Datenbankbenutzer bereitzustellen (bei dem es sich nicht um den Serveradministrator handelt, der Besitzer der Datenbank ist), stellen Sie mithilfe einer Azure AD-Identität, die Zugriff auf die Datenbank hat, eine Verbindung mit der Datenbank her.
 
-> [AZURE.IMPORTANT][SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) bietet Unterstützung für die Azure Active Directory-Authentifizierung.
+> [AZURE.IMPORTANT] [SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) bietet Unterstützung für die Azure Active Directory-Authentifizierung.
 
 #### Herstellen einer Verbindung mithilfe der integrierten Active Directory-Authentifizierung 
 
@@ -327,4 +327,4 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1125_2015--->
