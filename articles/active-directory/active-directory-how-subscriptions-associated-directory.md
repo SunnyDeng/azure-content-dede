@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verknüpfen von Azure-Abonnements mit Azure AD | Microsoft Azure"
-	description="Ein Thema zur Anmeldung bei Microsoft Azure und zu verwandten Aspekten, z. B. der Beziehung zwischen einem Azure-Abonnement und Azure AD."
+	pageTitle="Beziehung zwischen Azure-Abonnements und Azure Active Directory | Microsoft Azure"
+	description="Anmelden bei Microsoft Azure und verwandte Aspekte, z. B. die Beziehung zwischen einem Azure-Abonnement und Azure Active Directory."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/21/2015"
+	ms.date="12/01/2015"
 	ms.author="curtand"/>
 
-# Verknüpfung von Azure-Abonnements mit Azure AD
+# Beziehung zwischen Azure-Abonnements und Azure Active Directory
 
-In diesem Thema werden Informationen zum Anmelden bei Microsoft Azure und verwandte Themen behandelt, z. B. die Beziehung zwischen einem Azure-Abonnement und Azure Active Directory (AD).
+In diesem Thema werden Informationen zum Anmelden bei Microsoft Azure und verwandte Themen behandelt, z. B. die Beziehung zwischen einem Azure-Abonnement und Azure Active Directory (Azure AD).
 
 ## Konten, die für die Anmeldung verwendet werden können
 Beginnen wir mit den Konten, die Sie zum Anmelden verwenden können. Zwei Typen sind verfügbar: ein Microsoft-Konto (früher als Microsoft Live ID bezeichnet) und ein Azure AD-Geschäfts- oder -Schulkonto (das in Azure AD gespeichert ist).
@@ -32,9 +32,9 @@ Identitäten werden im Microsoft-Kontosystem erstellt und gespeichert. | Identit
 
 Azure erlaubte ursprünglich nur den Zugriff durch Benutzer mit Microsoft-Konten. Inzwischen ist jedoch der Zugriff aus *beiden* Systemen zulässig. Dies wurde erreicht, indem alle Azure-Eigenschaften Azure AD für die Authentifizierung vertrauen, Azure AD Organisationsbenutzer authentifiziert und eine Verbundbeziehung erstellt wurde, in der Azure AD dem Privatnutzeridentitätssystem für Microsoft-Konten vertraut, um Privatnutzer zu authentifizieren. Daher kann Azure AD Microsoft-"Gastkonten" ebenso wie "systemeigene" Azure AD-Konten authentifizieren.
 
-Hier meldet sich z. B. ein Benutzer mit einem Microsoft-Konto am Azure-Verwaltungsportal an.
+Hier meldet sich z. B. ein Benutzer mit einem Microsoft-Konto beim klassischen Azure-Portal an.
 
-> [AZURE.NOTE]Damit die Anmeldung am Azure-Verwaltungsportal erfolgen kann, muss msmith@hotmail.com über ein Abonnement für Azure verfügen. Das Konto muss einem Dienstadministrator oder Co-Administrator des Abonnements gehören.
+> [AZURE.NOTE]Damit die Anmeldung beim klassischen Azure-Portal erfolgen kann, muss msmith@hotmail.com über ein Abonnement für Azure verfügen. Das Konto muss einem Dienstadministrator oder Co-Administrator des Abonnements gehören.
 
 ![][1]
 
@@ -42,36 +42,36 @@ Da diese Hotmail-Adresse zu einem Privatnutzerkonto gehört, wird die Anmeldung 
 
 ## Die Beziehung zwischen einem Azure-Abonnement und Azure AD
 
-Jedes Azure-Abonnement weist eine Vertrauensstellung mit einer Azure AD-Instanz auf. Dies bedeutet, dass es diesem Verzeichnis bei der Authentifizierung von Benutzern, Diensten und Geräten vertraut. Mehrere Abonnements können dem gleichen Verzeichnis vertrauen, ein Abonnement vertraut jedoch nur einem Verzeichnis. Sie können auf der Registerkarte "Einstellungen" ermitteln, welchem Verzeichnis Ihr Abonnement vertraut. Sie können die [Abonnementeinstellungen bearbeiten](https://msdn.microsoft.com/library/azure/dn584083.aspx), wenn Sie ändern möchten, welchem Verzeichnis es vertraut.
+Jedes Azure-Abonnement weist eine Vertrauensstellung mit einer Azure AD-Instanz auf. Dies bedeutet, dass es diesem Verzeichnis bei der Authentifizierung von Benutzern, Diensten und Geräten vertraut. Mehrere Abonnements können dem gleichen Verzeichnis vertrauen, ein Abonnement vertraut jedoch nur einem Verzeichnis. Sie können auf der Registerkarte "Einstellungen" ermitteln, welchem Verzeichnis Ihr Abonnement vertraut. Sie können die [Abonnementeinstellungen bearbeiten](active-directory-understanding-resource-access.md), wenn Sie ändern möchten, welchem Verzeichnis es vertraut.
 
 Diese Vertrauensstellung, die ein Abonnement mit einem Verzeichnis aufweist, unterscheidet sich von der Beziehung, die ein Abonnement mit allen anderen Ressourcen in Azure (Websites, Datenbanken usw.) hat. Diese ähneln eher den untergeordneten Ressourcen eines Abonnements. Wenn ein Abonnement abläuft, wird der Zugriff auf die anderen Ressourcen, die dem Abonnement zugeordnet sind, ebenfalls beendet. Das Verzeichnis verbleibt jedoch in Azure, und Sie können ihm ein anderes Abonnement zuordnen und weiterhin die Benutzer des Verzeichnisses verwalten.
 
-Die Azure AD-Erweiterung, die in Ihrem Abonnement angezeigt wird, funktioniert ebenfalls nicht wie die anderen Erweiterungen im Azure-Verwaltungsportal. Andere Erweiterungen im Verwaltungsportal sind auf das Azure-Abonnement beschränkt. Die Anzeige in der AD-Erweiterung ändert sich nicht basierend auf dem Abonnement – es werden nur Verzeichnisse basierend auf dem angemeldeten Benutzer angezeigt.
+Die Azure AD-Erweiterung, die in Ihrem Abonnement angezeigt wird, funktioniert ebenfalls nicht wie die anderen Erweiterungen im klassischen Azure-Portal. Andere Erweiterungen im klassischen Azure-Portal sind auf den Umfang des Azure-Abonnements ausgerichtet. Die Anzeige in der Azure AD-Erweiterung ändert sich nicht basierend auf dem Abonnement – es werden nur Verzeichnisse basierend auf dem angemeldeten Benutzer angezeigt.
 
-Alle Benutzer verfügen über ein Basisverzeichnis, das ihre Authentifizierung ausführt. Sie können jedoch auch Gäste in anderen Verzeichnissen sein. In der AD-Erweiterung wird jedes Verzeichnis angezeigt, dessen Mitglied Ihr Benutzerkonto ist. Alle Verzeichnisse, in denen Ihr Konto kein Mitglied ist, werden nicht angezeigt. Ein Verzeichnis kann Token für die Benutzer von Geschäfts- oder Schulkonten oder von Microsoft-Konten ausstellen (da Azure AD einen Verbund mit dem Microsoft-Kontosystem bildet).
+Alle Benutzer verfügen über ein Basisverzeichnis, das ihre Authentifizierung ausführt. Sie können jedoch auch Gäste in anderen Verzeichnissen sein. In der Azure AD-Erweiterung wird jedes Verzeichnis angezeigt, in dem Ihr Benutzerkonto Mitglied ist. Alle Verzeichnisse, in denen Ihr Konto kein Mitglied ist, werden nicht angezeigt. Ein Verzeichnis kann Token für die Benutzer von Geschäfts- oder Schulkonten oder von Microsoft-Konten ausstellen (da Azure AD einen Verbund mit dem Microsoft-Kontosystem bildet).
 
 Die folgende Abbildung zeigt ein Abonnement für Michael Smith, nachdem er sich mithilfe eines Geschäftskontos für Contoso registriert hat.
 
 ![][2]
 
 ## Verwalten eines Abonnements und eines Verzeichnisses
-Die Administratorrollen für ein Azure-Abonnement verwalten Ressourcen, die an das Azure-Abonnement gebunden sind. Diese Rollen und die bewährten Methoden zum Verwalten Ihres Abonnements werden unter [Verwalten von Konten, Abonnements und Administratorrollen](https://msdn.microsoft.com/library/azure/hh531793.aspx) behandelt.
+Die Administratorrollen für ein Azure-Abonnement verwalten Ressourcen, die an das Azure-Abonnement gebunden sind. Diese Rollen und die bewährten Methoden zum Verwalten Ihres Abonnements werden unter [Zuweisen von Administratorrollen in Azure Active Directory](active-directory-assign-admin-roles.md) behandelt.
 
 Standardmäßig wird Ihnen die Dienstadministratorrolle zugewiesen, wenn Sie sich registrieren. Wenn sich andere Benutzer anmelden und mithilfe des gleichen Abonnements auf die Dienste zugreifen müssen, können Sie diese als Co-Administratoren hinzufügen. Der Dienstadministrator und die Co-Administratoren können Microsoft-Konten oder Geschäfts- oder Schulkonten im Verzeichnis sein, dem das Azure-Abonnement zugeordnet ist.
 
 Azure AD weist eine andere Gruppe von Administratorrollen zum Verwalten der Features für Verzeichnisse und Identitäten. Der globale Administrator eines Verzeichnisses kann z. B. dem Verzeichnis Benutzer hinzufügen oder für Benutzer die Multi-Factor Authentication verlangen. Ein Benutzer, der ein Verzeichnis erstellt, wird der globalen Administratorrolle zugewiesen und kann anderen Benutzern Administratorrollen zuweisen.
 
-Wie bei den Abonnementadministratoren kann es sich bei den Azure AD-Administratorrollen um Microsoft-Konten oder Geschäfts- oder Schulkonten handeln. Die Azure AD-Administratorrollen werden auch von anderen Diensten (z. B. Office 365 und Microsoft Intune) genutzt. Weitere Informationen finden Sie unter [Zuweisen von Administratorrollen](https://msdn.microsoft.com/library/azure/dn468213.aspx).
+Wie bei den Abonnementadministratoren kann es sich bei den Azure AD-Administratorrollen um Microsoft-Konten oder Geschäfts- oder Schulkonten handeln. Die Azure AD-Administratorrollen werden auch von anderen Diensten (z. B. Office 365 und Microsoft Intune) genutzt. Weitere Informationen finden Sie unter [Zuweisen von Administratorrollen](active-directory-assign-admin-roles.md).
 
-Aber der wichtigste Punkt hierbei ist, dass Azure-Abonnementadministratoren und Azure AD-Verzeichnisadministratoren zwei getrennte Konzepte darstellen. Azure-Abonnementadministratoren können Ressourcen in Azure verwalten und die Active Directory-Erweiterung im Verwaltungsportal anzeigen (weil das Verwaltungsportal eine Azure-Ressource ist). Verzeichnisadministratoren können Eigenschaften im Verzeichnis verwalten.
+Aber der wichtigste Punkt hierbei ist, dass Azure-Abonnementadministratoren und Azure AD-Verzeichnisadministratoren zwei getrennte Konzepte darstellen. Azure-Abonnementadministratoren können Ressourcen in Azure verwalten und die Active Directory-Erweiterung im klassischen Azure-Portal anzeigen (weil das klassische Azure-Portal eine Azure-Ressource ist). Verzeichnisadministratoren können Eigenschaften im Verzeichnis verwalten.
 
-Eine Person kann Mitglied beider Rollen sein, was allerdings nicht erforderlich ist. Ein Benutzer kann der globalen Verzeichnisadministratorrolle, nicht jedoch als Dienstadministrator oder Co-Administrator eines Azure-Abonnements zugewiesen sein. Da dieser Benutzer kein Administrator des Abonnements ist, kann er sich nicht am Azure-Verwaltungsportal anmelden. Der Benutzer kann jedoch Verzeichnisverwaltungsaufgaben mithilfe anderer Tools (z. B. Azure AD PowerShell oder Office 365 Admin Center) ausführen.
+Eine Person kann Mitglied beider Rollen sein, was allerdings nicht erforderlich ist. Ein Benutzer kann der globalen Verzeichnisadministratorrolle, nicht jedoch als Dienstadministrator oder Co-Administrator eines Azure-Abonnements zugewiesen sein. Da dieser Benutzer kein Administrator des Abonnements ist, kann er sich nicht beim klassischen Azure-Portal anmelden. Der Benutzer kann jedoch Verzeichnisverwaltungsaufgaben mithilfe anderer Tools (z. B. Azure AD PowerShell oder Office 365 Admin Center) ausführen.
 
 ## Warum kann ich das Verzeichnis nicht mit meinem aktuellen Benutzerkonto verwalten?
 
-Mitunter versucht ein Benutzer, sich mithilfe eines Geschäfts- oder Schulkontos am Azure-Verwaltungsportal anzumelden, bevor er sich für ein Azure-Abonnement registriert. In diesem Fall erhält der Benutzer die Meldung, dass kein Abonnement für dieses Konto vorhanden ist. Die Meldung enthält einen Link zum Ausprobieren eines kostenlosen Testabonnements.
+Mitunter versucht ein Benutzer, sich mithilfe eines Geschäfts- oder Schulkontos beim klassischen Azure-Portal anzumelden, bevor er sich für ein Azure-Abonnement registriert. In diesem Fall erhält der Benutzer die Meldung, dass kein Abonnement für dieses Konto vorhanden ist. Die Meldung enthält einen Link zum Ausprobieren eines kostenlosen Testabonnements.
 
-Nachdem sich der Benutzer für die kostenlose Testversion registriert hat, kann er das Verzeichnis für die Organisation im Verwaltungsportal anzeigen, jedoch nicht verwalten (also keine Benutzer hinzufügen oder vorhandene Benutzereigenschaften bearbeiten), weil der Benutzer kein globaler Verzeichnisadministrator ist. Das Abonnement ermöglicht dem Benutzer zwar die Verwendung des Azure-Verwaltungsportals und das Anzeigen der Active Directory-Erweiterung, doch zum Verwalten des Verzeichnisses sind die zusätzlichen Berechtigungen eines globalen Administrators erforderlich.
+Nachdem sich der Benutzer für die kostenlose Testversion registriert hat, kann er das Verzeichnis für die Organisation im klassischen Azure-Portal anzeigen, jedoch nicht verwalten (also keine Benutzer hinzufügen oder vorhandene Benutzereigenschaften bearbeiten), weil der Benutzer kein globaler Verzeichnisadministrator ist. Das Abonnement ermöglicht dem Benutzer zwar die Verwendung des klassischen Azure-Portals und das Anzeigen der Azure Active Directory-Erweiterung, aber zum Verwalten des Verzeichnisses sind die zusätzlichen Berechtigungen eines globalen Administrators erforderlich.
 
 ## Verwalten eines Azure-Abonnements, das mithilfe eines Microsoft-Kontos erstellt wurde, mit Ihrem Geschäfts- oder Schulkonto
 
@@ -92,7 +92,7 @@ Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ei
 
 ## Verwalten des Verzeichnisses für Ihr Office 365-Abonnement in Azure
 
-Angenommen, Sie haben sich zuerst für Office 365 und dann für Azure registriert. Nun möchten Sie das Verzeichnis für das Office 365-Abonnement im Verwaltungsportal verwalten. Je nachdem, ob Sie sich für Azure registriert haben oder nicht, gibt es hierzu zwei Möglichkeiten
+Angenommen, Sie haben sich zuerst für Office 365 und dann für Azure registriert. Nun möchten Sie das Verzeichnis für das Office 365-Abonnement im klassischen Azure-Portal verwalten. Je nachdem, ob Sie sich für Azure registriert haben oder nicht, gibt es hierzu zwei Möglichkeiten
 
 ### Ich habe kein Abonnement für Azure
 
@@ -102,17 +102,17 @@ Angenommen, Sie haben sich zuerst für Office 365 und dann für Azure registrier
 
 Wenn Sie sich für Office 365 mit einem Geschäfts- oder Schulkonto registriert und dann für Azure mit einem Microsoft-Konto registriert haben, stehen Ihnen zwei Verzeichnisse zur Verfügung: eines für Arbeit oder Schule und ein Standardverzeichnis, das erstellt wurde, als Sie sich bei Azure registriert haben.
 
-Führen Sie diese Schritte aus, um beide Verzeichnisse im Verwaltungsportal zu verwalten.
+Führen Sie diese Schritte aus, um beide Verzeichnisse im klassischen Azure-Portal zu verwalten.
 
 > [AZURE.NOTE]Diese Schritte können nur ausgeführt werden, während ein Benutzer mit einem Microsoft-Konto angemeldet ist. Wenn der Benutzer mit einem Geschäfts- oder Schulkonto angemeldet ist, steht die Option **Vorhandenes Verzeichnis verwenden** nicht zur Verfügung. Ein Geschäfts- oder Schulkonto kann nur mithilfe seines Stammverzeichnisses authentifiziert werden (dies ist das Verzeichnis, in dem das Geschäfts- oder Schulkonto gespeichert wird, das im Besitz der Organisation oder Schule ist).
 
-1. Melden Sie sich mit Ihrem Microsoft-Konto am Azure-Verwaltungsportal an.
+1. Melden Sie sich mit Ihrem Microsoft-Konto beim klassischen Azure-Portal an.
 2. Klicken Sie auf **Neu** -> **App Services** -> **Active Directory** -> **Verzeichnis** -> **Benutzerdefiniert erstellen**.
 3. Klicken Sie auf **Vorhandenes Verzeichnis verwenden**, und aktivieren Sie das Kontrollkästchen **Ich bin jetzt für die Abmeldung bereit**, um die Aktion abzuschließen.
-4. Melden Sie sich am Verwaltungsportal mithilfe des Kontos an, das globaler Administrator des Organisations- oder Schulverzeichnisses ist.
+4. Melden Sie sich beim klassischen Azure-Portal mit einem Konto an, das über globale Administratorrechte für das Geschäfts- oder Schulverzeichnis verfügt.
 5. Wenn Sie aufgefordert werden, **das Verzeichnis "Contoso" mit Azure zu verwenden**, klicken Sie auf **Weiter**.
 6. Klicken Sie auf **Jetzt abmelden**.
-7. Melden Sie sich mit Ihrem Microsoft-Konto erneut beim Verwaltungsportal an. Beide Verzeichnisse werden in der Active Directory-Erweiterung angezeigt.
+7. Melden Sie sich mit Ihrem Microsoft-Konto wieder beim klassischen Azure-Portal an. Beide Verzeichnisse werden in der Active Directory-Erweiterung angezeigt.
 
 
 ## Nächste Schritte
@@ -124,4 +124,4 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im Verwaltungsportal zu v
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

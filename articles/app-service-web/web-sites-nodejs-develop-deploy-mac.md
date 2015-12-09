@@ -30,7 +30,7 @@ In diesem Tutorial erfahren Sie, wie Sie eine einfache [Node.js](http://nodejs.o
 
 Sie lernen Folgendes:
 
-* Erstellen einer Web-App in Azure App Service über das Azure-Vorschauportal
+* Erstellen einer Web-App in Azure App Service über das Azure-Portal
 * Bereitstellen einer Node.js-Anwendung in der Web-App durch Pushübertragung in das Git-Repository der Web-App
 
 Die vollständig erstellte Anwendung schreibt eine "Hello World"-Zeichenfolge in den Browser.
@@ -39,7 +39,7 @@ Die vollständig erstellte Anwendung schreibt eine "Hello World"-Zeichenfolge in
 
 Tutorials und Beispielcode mit komplexeren Node.js-Anwendungen sowie weitere Themen zur Verwendung von Node.js in Azure finden Sie im [Node.js Developer Center](/develop/nodejs/).
 
-> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Tutorial auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren](/de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
@@ -49,9 +49,9 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 
 [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Dazu speichern Sie den Code, den Sie für Ihre Web-App geschrieben haben, in einem lokalen Git-Repository und stellen ihn anschließend mithilfe eines Pushvorgangs zu einem Remoterepository in Azure bereit. Diese Bereitstellungsmethode ist ein Feature der App Service-Web-Apps.
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-2. Klicken Sie oben links im Portal auf das Symbol **+ NEU**.
+2. Klicken Sie oben links im Azure-Portal auf das Symbol **+ NEU**.
 
 3. Klicken Sie auf **Web und mobil** und dann auf **Web-App**.
 
@@ -65,7 +65,7 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 
 6. Wählen Sie eine **Ressourcengruppe** aus, oder erstellen Sie eine neue.
 
-	Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../resource-group-portal.md).
+	Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](../resource-group-portal.md).
 
 7. Wählen Sie einen **App Service-Plan/-Standort** aus, oder erstellen Sie einen neuen Plan und Standort.
 
@@ -224,4 +224,4 @@ Weitere Informationen zum Entwickeln von Node.js-Anwendungen in Azure finden Sie
 [deployment-credentials]: ./media/web-sites-nodejs-develop-deploy-mac/deployment-credentials.png
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

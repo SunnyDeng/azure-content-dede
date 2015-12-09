@@ -22,7 +22,7 @@ Erfahren Sie, wie Sie eine benutzerdefinierte NodeJS-Suchanwendung erstellen, di
 
 Zum Entwickeln und Testen dieses Codes wurden [NodeJS](https://nodejs.org) und NPM, [Sublime Text 3](http://www.sublimetext.com/3) und Windows PowerShell unter Windows 8.1 verwendet.
 
-Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich im [Azure-Portal](https://portal.azure.com) anmelden können.
+Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich am [klassischen Azure-Portal](https://portal.azure.com) anmelden können.
 
 > [AZURE.TIP]Laden Sie den Quellcode für dieses Lernprogramm von [AzureSearchNodeJSIndexerDemo](http://go.microsoft.com/fwlink/p/?LinkId=530198) herunter.
 
@@ -36,7 +36,7 @@ In dieser Anwendung erstellt das Programm **DataIndexer** den Index und lädt ih
 
 ## Erstellen des Diensts
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
 
 2. Navigieren Sie über die seitliche Navigationsleiste zu **Neu** > **Daten + Speicher** > **Search**.
 
@@ -147,4 +147,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [5]: ./media/search-get-started-nodejs/AzSearch-NodeJS-configjs.png
 [9]: ./media/search-get-started-nodejs/rogerwilliamsschool.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

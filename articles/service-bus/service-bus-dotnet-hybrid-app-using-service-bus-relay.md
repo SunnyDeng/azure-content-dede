@@ -73,15 +73,15 @@ Bevor Sie mit der Entwicklung der Azure-Anwendung beginnen können, müssen Sie 
 
 Um mit der Verwendung von Service Bus-Features in Azure beginnen zu können, müssen Sie zuerst einen Dienstnamespace erstellen. Ein Namespace ist ein Bereichscontainer für die Adressierung von Service Bus-Ressourcen innerhalb Ihrer Anwendung.
 
-Sie können Namespaces und Service Bus-Nachrichtenentitäten im [Azure-Portal][] oder im Server-Explorer von Visual Express verwalten, neue Namespaces lassen sich jedoch nur im Portal erstellen.
+Sie können Namespaces und Service Bus-Nachrichtenentitäten im [klassischen Azure-Portal][] oder im Server-Explorer von Visual Studio verwalten. Neue Namespaces lassen sich jedoch nur im Portal erstellen.
 
-### So erstellen Sie einen Namespace im Portal:
+### Erstellen eines Namespace im klassischen Azure-Portal:
 
-1.  Melden Sie sich beim [Azure-Portal][] an.
+1.  Melden Sie sich am [klassischen Azure-Portal][] an.
 
-2.  Klicken Sie im linken Navigationsbereich des Azure-Portals auf **Service Bus**.
+2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Azure-Portals auf **Erstellen**.
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**.
 
     ![][5]
 
@@ -95,7 +95,7 @@ Sie können Namespaces und Service Bus-Nachrichtenentitäten im [Azure-Portal][]
 
 	![][38]
 
-Der erstellte Namespace wird im Azure-Portal angezeigt, obwohl es einen Moment dauern kann, ihn zu aktivieren. Warten Sie, bis der Status **Aktiv** lautet, bevor Sie fortfahren.
+Der erstellte Namespace wird im klassischen Azure-Portal angezeigt, obwohl bis zu seiner Aktivierung einen Moment dauern kann. Warten Sie, bis der Status **Aktiv** lautet, bevor Sie fortfahren.
 
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
@@ -247,7 +247,7 @@ Zu Anfang ist das Projekt eine Visual Studio-Konsolenanwendung. Mithilfe des Ser
             }
         }
 
-13. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **App.config**, um sie im Visual Studio-Editor zu öffnen. Ersetzen Sie den Inhalt von **&lt;system.ServiceModel&gt;** durch den folgenden XML-Code. Achten Sie darauf, *yourServiceNamespace* durch den Namen Ihres Dienstnamespace und *yourKey* durch den SAS-Schlüssel zu ersetzen, den Sie zuvor aus dem Azure-Portal abgerufen haben:
+13. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **App.config**, um sie im Visual Studio-Editor zu öffnen. Ersetzen Sie den Inhalt von **&lt;system.ServiceModel&gt;** durch den folgenden XML-Code. Achten Sie darauf, *yourServiceNamespace* durch den Namen Ihres Dienstnamespace und *yourKey* durch den SAS-Schlüssel zu ersetzen, den Sie zuvor aus dem klassischen Azure-Portal abgerufen haben:
 
         <system.serviceModel>
           <extensions>
@@ -541,7 +541,7 @@ Bei Azure werden Webrolleninstanzen pro genutzter Serverzeitstunde berechnet. Se
 
 In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und löschen.
 
-1.  Melden Sie sich beim [Azure-Portal] an, und klicken Sie auf **Cloud Services** und dann auf den Namen des Diensts.
+1.  Melden Sie sich beim [klassischen Azure-Portal][] an, klicken Sie auf **Cloud Services** und dann auf den Namen des Diensts.
 
 2.  Klicken Sie auf die Registerkarte **Dashboard** und dann auf **Beenden**, um die Anwendung vorübergehend anzuhalten. Sie können sie erneut starten, indem Sie auf **Start** klicken. Klicken Sie auf **Löschen**, um die Anwendung vollständig aus Azure zu löschen. Sie kann danach nicht wiederhergestellt werden.
 
@@ -563,7 +563,7 @@ Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
   [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-42-webpi.png
 
 
-  [Azure-Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [5]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-03.png
   [6]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-04.png
 
@@ -610,4 +610,4 @@ Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
   [sbwacomqhowto]: service-bus-dotnet-how-to-use-queues.md
   [executionmodels]: ../cloud-services/fundamentals-application-models.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

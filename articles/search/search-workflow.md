@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Typischer Workflow für die Azure Search-Entwicklung | Microsoft Azure | Gehosteter Cloudsuchdienst"
-	description="Ein Workflow oder Wegweiser zum Erstellen von Prototypen und Produktionsanwendungen mit Integration von Azure Search, einem gehosteten Cloudsuchdienst."
+	description="Ein Workflow oder Wegweiser zum Erstellen von Prototypen und Produktionsanwendungen mit Integration in Azure Search, einem gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -42,7 +42,7 @@ Es stehen zwei Tarife zur Auswahl. Es wird empfohlen, den (kostenlosen) Shared-T
 
 Nachdem Sie den Dienst erstellt haben, können Sie einen Index erstellen, beginnend mit der zugehörigen Schemadefinition.
 
-Am schnellsten und einfachsten kann ein Index über das Azure-Portal erstellt werden. Jedes Dokument muss mindestens über einen eindeutigen Schlüssel und mindestens ein Feld mit durchsuchbaren Daten verfügen. Weitere Informationen für den Einstieg finden Sie unter [Erstellen eines Index im Portal](search-create-index-portal.md).
+Am schnellsten und einfachsten kann ein Index über das klassische Azure-Portal erstellt werden. Jedes Dokument muss mindestens über einen eindeutigen Schlüssel und mindestens ein Feld mit durchsuchbaren Daten verfügen. Weitere Informationen für den Einstieg finden Sie unter [Erstellen eines Index im Portal](search-create-index-portal.md).
 
 > [AZURE.NOTE]Details zum Azure Search-Index
 >
@@ -180,7 +180,7 @@ Um externe Daten zu verwenden, sollten Sie ein Feld in Ihrem Index definieren, d
 
 Besonders positiv hervorzuheben ist, wie einfach Ressourcen in Azure Search abhängig vom Bedarf zentral hoch- oder herunterskaliert werden können. Auch wenn durch diese Funktion die Anforderung für eine Kapazitätsplanung nicht entfällt, werden die Risiken jedoch minimiert. Sie laufen nicht Gefahr, überflüssige oder falsche Hardware zum Ausführen Ihrer Suchworkloads zu erwerben.
 
-Im letzten Schritt überprüfen Sie die vorhandenen Ressourcenebenen für Replikate und Partitionen und ermitteln, ob Anpassungen erforderlich sind. Die einfachste Möglichkeit zum Anpassen der Kapazität ist das [Azure-Portal](https://ms.portal.azure.com/).
+Im letzten Schritt überprüfen Sie die vorhandenen Ressourcenebenen für Replikate und Partitionen und ermitteln, ob Anpassungen erforderlich sind. Die einfachste Möglichkeit zum Anpassen der Kapazität ist das [klassische Azure-Portal](https://ms.portal.azure.com/).
 
 Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werden kann. Darüber hinaus kann es abhängig vom Grad der Anpassung zwischen einigen Minuten bis hin zu mehreren Stunden dauern, zusätzliche Cluster für Ihren Dienst bereitzustellen.
 
@@ -190,4 +190,4 @@ Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werde
 <!--Image references-->
 [1]: ./media/search-workflow/AzSearch-Workflow.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

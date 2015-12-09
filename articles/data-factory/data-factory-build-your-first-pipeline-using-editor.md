@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor"
-	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mit dem Data Factory-Editor im Azure-Portal."
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mit dem Data Factory-Editor im klassischen Azure-Portal."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -16,7 +16,7 @@
 	ms.date="11/02/2015"
 	ms.author="spelluru"/>
 
-# Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor (Azure-Portal)
+# Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor (klassisches Azure-Portal)
 > [AZURE.SELECTOR]
 - [Tutorial Overview](data-factory-build-your-first-pipeline.md)
 - [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
@@ -24,7 +24,7 @@
 - [Using Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 
 
-In diesem Artikel erfahren Sie, wie Sie mithilfe des [Azure-Vorschauportals](https://portal.azure.com/) Ihre erste Pipeline erstellen. Dieses Tutorial umfasst die folgenden Schritte:
+In diesem Artikel erfahren Sie, wie Sie mithilfe des [Azure-Portals](https://portal.azure.com/) Ihre erste Pipeline erstellen. Dieses Tutorial umfasst die folgenden Schritte:
 
 1.	Erstellen der Data Factory
 2.	Erstellen der verknüpften Dienste (Datenspeicher, Compute-Instanzen) und Datasets
@@ -36,7 +36,7 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 
 ## Schritt 1: Erstellen der Data Factory
 
-1.	Nach der Anmeldung beim [Azure-Vorschauportal](http://portal.azure.com/) gehen Sie wie folgt vor:
+1.	Nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) gehen Sie wie folgt vor:
 	1.	Klicken Sie im linken Menü auf **NEU**. 
 	2.	Klicken Sie auf dem Blatt **Erstellen** auf **Datenanalyse**.
 	3.	Klicken Sie auf dem Blatt **Datenanalyse** auf **Data Factory**.
@@ -60,7 +60,7 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 		![Ressourcengruppe erstellen](./media/data-factory-build-your-first-pipeline-using-editor/create-resource-group.png)
 4.	Nachdem Sie die Ressourcengruppe ausgewählt haben, stellen Sie sicher, dass Sie das richtige Abonnement verwenden, in dem die Data Factory erstellt werden soll.
 5.	Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
-6.	Sie sehen die erstellte Data Factory im **Startmenü** des Azure-Vorschauportals folgendermaßen:   
+6.	Sie sehen die erstellte Data Factory folgendermaßen im **Startmenü** des Azure-Portals:   
 
 	![Erstellen des Data Factory-Status](./media/data-factory-build-your-first-pipeline-using-editor/creating-data-factory-image.png)
 7. Glückwunsch! Sie haben erfolgreich Ihre erste Data Factory erstellt. Nachdem die Data Factory erfolgreich erstellt wurde, sehen Sie die Data Factory-Seite mit dem Inhalt der Data Factory. 	
@@ -99,7 +99,7 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsi
 		  "properties": {
 		    "type": "HDInsightOnDemand",
 		    "typeProperties": {
-		      "version": "3.1",
+		      "version": "3.2",
 		      "clusterSize": 1,
 		      "timeToLive": "00:30:00",
 		      "linkedServiceName": "StorageLinkedService"
@@ -111,7 +111,7 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsi
 	
 	Eigenschaft | Beschreibung
 	-------- | -----------
-	Version | Gibt die Version des zu erstellenden HDInsight-Clusters als 3.1 an. 
+	Version | Gibt die Version des zu erstellenden HDInsight-Clusters als 3.2 an. 
 	ClusterSize | Dient zum Erstellen eines HDInsight-Clusters mit einem Knoten. 
 	TimeToLive | Gibt die Leerlaufzeit des HDInsight-Clusters an, bevor er gelöscht wird.
 	linkedServiceName | Gibt das Speicherkonto an, das verwendet wird, um die Protokolle zu speichern, die von HDInsight generiert werden.
@@ -233,4 +233,4 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](./data-factory-get-started.md).
   
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

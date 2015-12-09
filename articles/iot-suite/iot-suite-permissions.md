@@ -36,7 +36,7 @@ Die AAD-Rollen steuern die Fähigkeit, vorkonfigurierte Lösungen bereitzustelle
 
 Weitere Informationen zu Administratorrollen in AAD finden Sie unter [Zuweisen von Administratorrollen in Azure AD][lnk-aad-admin]. Doch dieser Artikel konzentriert sich hauptsächlich auf die Rollen **Globaler Administrator** und **Domänenbenutzer/-Mitglied**, die von vorkonfigurierten Lösungen verwendet werden.
 
-**Globaler Administrator:**Es können viele globale Administratoren pro AAD-Mandanten vorhanden sein. Wenn Sie einen AAD-Mandanten erstellen, sind Sie standardmäßig der globale Administrator dieses Mandanten. Der globale Administrator kann eine vorkonfigurierte Lösung bereitstellen und erhält die Rolle **ADMINISTRATOR** für die Anwendung innerhalb des AAD-Mandanten. Wenn jedoch ein anderer Benutzer im gleichen AAD-Mandanten eine Anwendung erstellt, ist **IMPLICIT READ ONLY** die Standardrolle, die dem globalen Administrator zugewiesen wird. Globale Administratoren können im [Azure-Verwaltungsportal][lnk-classic-portal] Rollen für Anwendungen zuweisen.
+**Globaler Administrator:** Es können viele globale Administratoren pro AAD-Mandanten vorhanden sein. Wenn Sie einen AAD-Mandanten erstellen, sind Sie standardmäßig der globale Administrator dieses Mandanten. Der globale Administrator kann eine vorkonfigurierte Lösung bereitstellen und erhält die Rolle **ADMINISTRATOR** für die Anwendung innerhalb des AAD-Mandanten. Wenn jedoch ein anderer Benutzer im gleichen AAD-Mandanten eine Anwendung erstellt, ist **IMPLICIT READ ONLY** die Standardrolle, die dem globalen Administrator zugewiesen wird. Globale Administratoren können im [klassischen Azure-Portal][lnk-classic-portal] Rollen für Anwendungen zuweisen.
 
 **Domänenbenutzer/-mitglied:** Es können viele Domänenbenutzer/-mitglieder pro AAD-Mandanten vorhanden sein. Domänenbenutzer können eine vorkonfigurierte Lösung über die Website [azureiotsuite.com][lnk-azureiotsuite] bereitstellen. Die Standardrolle, die ihnen für die von ihnen bereitgestellte Anwendung gewährt wird, ist **ADMINISTRATOR**. Sie können im Repository [azure-iot-solution][lnk-github-repo] mithilfe des Skripts „build.cmd“ eine Anwendung erstellen. Doch die Standardrolle, die ihnen zugewiesen wird, ist **IMPLICIT READONLY**, da sie keine Berechtigung zum Zuweisen von Rollen haben. Wenn ein anderer Benutzer im AAD-Mandanten eine Anwendung erstellt, wird ihm standardmäßig die Rolle **IMPLICIT READONLY** für diese Anwendung zugewiesen. Benutzer können keine Rollen für Anwendungen zuweisen und daher keine Benutzer oder Rollen für Benutzer einer Anwendung zuweisen, auch wenn sie sie bereitgestellt haben.
 
@@ -69,7 +69,7 @@ Es gibt zwei definierte und eine implizite Rolle in der Anwendung, die erstellt 
 
 Sie müssen globaler AAD-Administrator sein, um Rollen für einen Benutzer zu ändern:
 
-1. Wechseln Sie zum [Azure-Verwaltungsportal][lnk-classic-portal].
+1. Melden Sie sich beim [klassischen Azure-Portal][lnk-classic-portal] an.
 
 2. Wählen Sie **Active Directory** aus.
 
@@ -91,7 +91,7 @@ Sie müssen globaler AAD-Administrator sein, um Rollen für einen Benutzer zu ä
 
 ### Ich bin Dienstadministrator und möchte die Verzeichniszuordnung zwischen meinem Abonnement und einen bestimmten AAD-Mandanten ändern. Wie geht das?
 
-1. Wechseln Sie zum [Azure-Verwaltungsportal][lnk-classic-portal], und klicken Sie links in der Liste der Dienste auf **Einstellungen**.
+1. Wechseln Sie zum [klassischen Azure-Portal][lnk-classic-portal], und klicken Sie links in der Liste der Dienste auf **Einstellungen**.
 
 2. Wählen Sie das Abonnement aus, dessen Verzeichniszuordnung Sie ändern möchten.
 
@@ -145,4 +145,4 @@ Wenn Sie sicher sind, dass Sie über ein Azure-Abonnement verfügen, überprüfe
 [lnk-resource-cs]: https://github.com/Azure/azure-iot-remote-monitoring/blob/master/DeviceAdministration/Web/Security/RolePermissions.cs
 [lnk-wiki-clouddeployment]: https://github.com/Azure/azure-iot-remote-monitoring/wiki/Cloud-deployment
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

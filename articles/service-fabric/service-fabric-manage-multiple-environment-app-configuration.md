@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2015"
+   ms.date="11/25/2015"
    ms.author="seanmck"/>
 
 # Verwalten von Anwendungsparametern für mehrere Umgebungen
@@ -55,11 +55,12 @@ Die DefaultValue-Attribute geben den zu verwendenden Wert an, wenn ein spezifisc
 
 >[AZURE.NOTE]Nicht alle Dienstinstanzparameter eignen sich für die Konfiguration pro Umgebung. Im Beispiel oben werden die Werte „LowKey“ und „HighKey“ für das Partitionierungsschema des Diensts explizit für alle Instanzen des Diensts definiert, da der Partitionsbereich eine Funktion der Datendomäne und nicht der Umgebung ist.
 
+
 ### Dienstkonfigurationseinstellungen pro Umgebung
 
 Durch das [Service Fabric-Anwendungsmodell](service-fabric-application-model.md) können Dienste Konfigurationspakete aufweisen, die benutzerdefinierte Schlüssel-Wert-Paare enthalten, die zur Laufzeit gelesen werden können. Die Werte dieser Einstellungen können auch nach Umgebung unterschieden werden, indem `ConfigOverride` im Anwendungsmanifest angegeben wird.
 
-Angenommen, Sie haben die folgende Einstellung im Dienstmanifest für den `Stateful1`-Dienst:
+Angenommen, es gibt die folgende Einstellung in der Datei „Config\\Settings.xml“ für den `Stateful1`-Dienst:
 
 
     <Section Name="MyConfigSection">
@@ -81,6 +82,7 @@ Um diesen Wert für ein bestimmtes Paar aus Anwendung und Umgebung zu überschre
 Dieser Parameter kann dann für eine Umgebung konfiguriert werden, wie oben gezeigt, indem Sie sie im Parameters-Abschnitt des Anwendungsmanifests deklarieren und umgebungsspezifische Werte in den Anwendungsparameterdateien angeben.
 
 >[AZURE.NOTE]Im Fall von Dienstkonfigurationseinstellungen gibt es drei Stellen, um den Wert eines Schlüssels festzulegen: das Dienstkonfigurationspaket, das Anwendungsmanifest und die Anwendungsparameterdatei. Service Fabric wählt immer zuerst die Anwendungsparameterdatei aus (falls angegeben), dann das Anwendungsmanifest und schließlich das Konfigurationspaket.
+
 
 ### Anwendungsparameterdateien
 
@@ -127,4 +129,4 @@ Weitere Informationen zu einigen der grundlegenden Konzepte, die in diesem Thema
 [publishdialog]: ./media/service-fabric-manage-multiple-environment-app-configuration/publish-dialog-choose-app-config.png
 [app-parameters-solution-explorer]: ./media/service-fabric-manage-multiple-environment-app-configuration/app-parameters-in-solution-explorer.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

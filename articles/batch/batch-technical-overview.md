@@ -54,7 +54,7 @@ In der [Übersicht über Azure Batch-Features](batch-api-basics.md) finden Sie w
 
 + **Azure-Konto und -Abonnement** Wenn Sie kein Konto haben, können Sie Ihre [MSDN-Abonnentenleistungen](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) in Anspruch nehmen oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-+ **Batch-Konto**: Sie verwenden den Namen und die URL des Batch-Kontos und einen Zugriffsschlüssel als Anmeldeinformationen, wenn Sie Batch-APIs aufrufen. Alle Ihre Batch-Ressourcen, wie z. B. Computeknoten, Pools, Aufträge und Aufgaben, sind einem Batch-Konto zugeordnet. Im [Azure-Vorschauportal](batch-account-create-portal.md) können Sie ein Batch-Konto erstellen und Zugriffsschlüssel für das Konto verwalten.
++ **Batch-Konto**: Sie verwenden den Namen und die URL des Batch-Kontos und einen Zugriffsschlüssel als Anmeldeinformationen, wenn Sie Batch-APIs aufrufen. Alle Ihre Batch-Ressourcen, wie z. B. Computeknoten, Pools, Aufträge und Aufgaben, sind einem Batch-Konto zugeordnet. Im [Azure-Portal](batch-account-create-portal.md) können Sie ein Batch-Konto erstellen und Zugriffsschlüssel für das Konto verwalten.
 
 + **Speicherkonto**: Für die meisten Batch-Szenarien benötigen Sie ein Azure-Speicherkonto zum Speichern Ihrer Datenein- und -ausgaben sowie der Skripts oder ausführbaren Dateien, die auf den Computeknoten ausgeführt werden. Informationen zum Erstellen eines Speicherkontos finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md).
 
@@ -103,4 +103,4 @@ Abbildung 2 zeigt einen Workflow, der die Batch .NET-Clientanwendung verwendet,
 [parallel]: ./media/batch-technical-overview/parallel.png
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

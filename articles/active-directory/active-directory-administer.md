@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Verwalten Sie Ihr Azure AD-Verzeichnis"
+	pageTitle="Verwalten Ihres Azure AD-Verzeichnisses | Microsoft Azure"
 	description="Bei diesem Thema wird erklärt, was ein Azure AD-Mandant ist und wie ein Azure AD-Verzeichnis verwaltet wird."
 	services="active-directory"
 	documentationCenter=""
-	authors="Markusvi"
+	authors="markusvi"
 	writer="markvi"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/09/2015"
+	ms.date="12/01/2015"
 	ms.author="markvi"/>
 
-# Verwalten Sie Ihr Azure AD-Verzeichnis
+# Verwalten Ihres Azure AD-Verzeichnisses
 
 ## Was ist Azure AD-Mandant?
 
@@ -145,4 +145,4 @@ Die folgenden Bedingungen werden überprüft:
 [1]: ./media/active-directory-administer/aad_portals.png
 [2]: ./media/active-directory-administer/azure_tenants.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="get-started-article"
-   ms.date="08/11/2015"
+   ms.date="12/02/2015"
    ms.author="jgao"/>
 
 # Kennenlernen von Hadoop mithilfe der HDInsight-Galerie für erste Schritte
@@ -68,4 +68,4 @@ Andere Möglichkeiten zum Kennenlernen von HDInsight:
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]: https://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

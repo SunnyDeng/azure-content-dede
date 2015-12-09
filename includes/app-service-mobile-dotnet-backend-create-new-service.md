@@ -10,9 +10,9 @@
 	
 	Dadurch wird das Back-End für mobile Apps erstellt. Später werden Sie Ihr Serverprojekt in diesem Back-End bereitstellen. Die Bereitstellung eines Back-Ends für mobile Apps kann mehrere Minuten dauern. Nach Abschluss wird das Blatt **Einstellungen** für das mobile App-Back-End angezeigt. Bevor Sie das Back-End für mobile Apps verwenden können, müssen Sie auch eine Verbindung zu einem Datenspeicher definieren.
 
-    > [AZURE.NOTE]Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank an demselben Standort wie dem des neuen mobilen App-Back-Ends verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** wählen und dann diese Datenbank auswählen. Die Verwendung einer Datenbank an einem anderen Standort wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann. Es stehen weitere Datenspeicheroptionen zur Verfügung.
+    > [AZURE.NOTE]Im Rahmen dieses Tutorials erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank an demselben Standort wie dem des neuen mobilen App-Back-Ends verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** wählen und dann diese Datenbank auswählen. Die Verwendung einer Datenbank an einem anderen Standort wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann. Es stehen weitere Datenspeicheroptionen zur Verfügung.
 
-6. Navigieren Sie auf dem Blatt **Einstellungen** für das neue Back-End für mobile Apps zu „Mobil“, und klicken Sie auf **Erste Schritte** > Ihre Clientanwendungsplattform > **Verbindung mit einer Datenbank herstellen**.
+6. Klicken Sie auf dem Blatt **Einstellungen** für das neue Back-End für mobile Apps auf **Schnellstart** > Ihre Clientanwendungsplattform > **Verbindung mit Datenbank herstellen**.
 
 	![](./media/app-service-mobile-dotnet-backend-create-new-service/dotnet-backend-create-data-connection.png)
 
@@ -30,4 +30,4 @@
 <!-- URLs. -->
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

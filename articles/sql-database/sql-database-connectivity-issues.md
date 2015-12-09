@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/17/2015"
+	ms.date="11/30/2015"
 	ms.author="genemi"/>
 
 
@@ -134,17 +134,53 @@ In der Praxis könnte Ihr Programm einen Laufzeitparameter ermitteln, der folgen
 ## Verbindung: Verbindungszeichenfolge
 
 
-Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichenfolge unterscheidet sich geringfügig von der Zeichenfolge für die Verbindung mit Microsoft SQL Server. Sie können die Verbindungszeichenfolge für Ihre Datenbank aus dem [Azure-Vorschauportal](http://portal.azure.com/) kopieren.
+Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichenfolge unterscheidet sich geringfügig von der Zeichenfolge für die Verbindung mit Microsoft SQL Server. Sie können die Verbindungszeichenfolge für Ihre Datenbank aus dem [Azure-Portal](http://portal.azure.com/) kopieren.
 
 
 [AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
 
 
 
-#### 30 Sekunden für Verbindungstimeout
+### SqlConnection-Parameter von .NET für wiederholte Verbindungsversuche
 
 
-Verbindungen über das Internet sind weniger stabil als Verbindungen über private Netzwerke. Aus diesem Grund wird empfohlen, für Ihre Verbindungszeichenfolge die folgenden Schritte auszuführen: Legen Sie den Parameter **Verbindungstimeout** auf **30** Sekunden fest (anstelle von 15 Sekunden).
+Wenn Ihr Clientprogramm mithilfe der .NET Framework-Klasse **System.Data.SqlClient.SqlConnection** eine Verbindung mit der Azure SQL-Datenbank herstellt, verwenden Sie .NET 4.5.1 oder höher, sodass Sie die Funktion für wiederholte Verbindungsversuche nutzen können. Details der Funktion finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=393996).
+
+
+<!--
+2015-11-30, FwLink 393996 points to dn632678.aspx, which links to a downloadable .docx related to SqlClient and SQL Server 2014.
+-->
+
+
+Beim Erstellen der [Verbindungszeichenfolge](http://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) für Ihr **SqlConnection**-Objekt sollten Sie die Werte der folgenden Parameter abstimmen:
+
+- ConnectRetryCount &nbsp;&nbsp;*(Der Standardwert ist 0. Der Bereich reicht von 0 bis 255.)*
+- ConnectRetryInterval &nbsp;&nbsp;*(Der Standardwert ist 1 Sekunde. Der Bereich reicht von 1 bis 60.)*
+- Verbindungstimeout &nbsp;&nbsp;*(Der Standardwert ist 15 Sekunden. Der Bereich reicht von 0 bis 2147483647.)*
+
+
+Insbesondere sollte für Ihre ausgewählten Werte die folgende Gleichung gelten:
+
+- Verbindungstimeout = ConnectRetryCount * ConnectionRetryInterval
+
+Beispiel: Wenn die Anzahl 3 ist und das Intervall 10 Sekunden beträgt, wäre ein Timeout von nur 29 Sekunden für das System nicht ganz ausreichend für den 3. und letzten Verbindungsversuch: 29 < 3 * 10.
+
+
+#### Vorübergehende Fehler bei Verbindungsherstellung und Befehlen
+
+
+Mit den Parametern **ConnectRetryCount** und **ConnectRetryInterval** kann Ihr **SqlConnection**-Objekt den Verbindungsversuch wiederholen, ohne Ihr Programm zu unterbrechen, sodass das Programm die Steuerung behält. Die Wiederholungen können in folgenden Situationen auftreten:
+
+- mySqlConnection.Open-Methodenaufruf
+- mySqlConnection.Execute-Methodenaufruf
+
+Es gibt eine Besonderheit. Wenn ein vorübergehender Fehler auftritt, während Ihre *Abfrage* ausgeführt wird, wiederholt das **SqlConnection**-Objekt den Verbindungsversuch nicht, und es versucht auch nicht, die Abfrage erneut auszuführen. Allerdings überprüft **SqlConnection** sehr schnell die Verbindung, bevor die Abfrage für die Ausführung gesendet wird. Wenn bei der schnellen Überprüfung ein Verbindungsproblem festgestellt wird, wiederholt **SqlConnection** den Verbindungsvorgang. Ist die Wiederholung erfolgreich, wird die Abfrage für die Ausführung gesendet.
+
+
+#### Sollte „ConnectRetryCount“ mit der Wiederholungslogik der Anwendung kombiniert werden?
+
+Angenommen, Ihre Anwendung verfügt über eine zuverlässige benutzerdefinierte Wiederholungslogik. Sie könnte den Verbindungsvorgang 4 Mal wiederholen. Wenn Sie **ConnectRetryInterval** und **ConnectRetryCount** = 3 zur Verbindungszeichenfolge hinzufügen, erhöhen Sie die Anzahl der Wiederholungsversuche auf 4 * 3 = 12 Wiederholungen. Möglicherweise ist eine so hohe Anzahl von Wiederholungsversuchen nicht erwünscht.
+
 
 
 <a id="b-connection-ip-address" name="b-connection-ip-address"></a>
@@ -152,7 +188,7 @@ Verbindungen über das Internet sind weniger stabil als Verbindungen über priva
 ## Verbindung: IP-Adresse
 
 
-Der SQL-Datenbankserver muss so konfiguriert werden, dass er Verbindungen von der IP-Adresse des Computers akzeptiert, auf dem Ihr Clientprogramm gehostet wird. Bearbeiten Sie dazu die Firewalleinstellungen über das [Azure-Vorschauportal](http://portal.azure.com/).
+Der SQL-Datenbankserver muss so konfiguriert werden, dass er Verbindungen von der IP-Adresse des Computers akzeptiert, auf dem Ihr Clientprogramm gehostet wird. Bearbeiten Sie dazu die Firewalleinstellungen über das [Azure-Portal](http://portal.azure.com/).
 
 
 Wenn Sie die IP-Adresse nicht konfigurieren, tritt bei Ihrem Programm ein Fehler auf, und in einer Fehlermeldung wird die erforderliche IP-Adresse angezeigt.
@@ -277,7 +313,7 @@ Nachfolgend finden Sie einige Transact-SQL-SELECT-Anweisungen, mit denen Fehler-
 
 | Protokollabfrage | Beschreibung |
 | :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **„master“-Datenbank** herstellen. |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Für eine weitere Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
 
 
@@ -478,4 +514,4 @@ public bool IsTransient(Exception ex)
 
 - [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

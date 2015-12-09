@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/22/2015"
+	ms.date="11/24/2015"
 	ms.author="awills"/>
 
 # Erste Schritte mit Application Insights in einem Java-Webprojekt
@@ -267,7 +267,7 @@ Jetzt veröffentlichen Sie Ihre App auf dem Server, erlauben deren Benutzung und
 
 Nicht behandelte Ausnahmen werden automatisch gesammelt:
 
-![](./media/app-insights-java-get-started/21-exceptions.png)
+![Scrollen Sie nach unten, und klicken Sie auf die Kachel „Fehler“.](./media/app-insights-java-get-started/21-exceptions.png)
 
 Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
@@ -364,11 +364,13 @@ Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene 
 
 ## Verfügbarkeitswebtests
 
-Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Um dies einzurichten, klicken Sie sich durch das leere Webtestdiagramm auf dem Blatt "Übersicht", und geben Sie Ihre öffentliche URL an.
+Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. [Zum Einrichten][availability] scrollen Sie nach unten und klicken auf „Verfügbarkeit“.
+
+![Scrollen Sie nach unten, klicken Sie auf „Verfügbarkeit“ und dann auf „Webtest hinzufügen“.](./media/app-insights-java-get-started/31-config-web-test.png)
 
 Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, falls Ihre Website ausfällt.
 
-![Beispiel für Webtest](./media/app-insights-java-eclipse/appinsights-10webtestresult.png)
+![Beispiel für Webtest](./media/app-insights-java-get-started/appinsights-10webtestresult.png)
 
 [Weitere Informationen zu Verfügbarkeitswebtests.][availability]
 
@@ -396,4 +398,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

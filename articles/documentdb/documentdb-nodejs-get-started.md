@@ -74,9 +74,9 @@ Prima. Damit ist die Einrichtung abgeschlossen, und wir können mit dem Schreibe
 
 Öffnen Sie *config.js* in einem Text-Editor.
 
-Erstellen Sie dann ein leeres Objekt mit dem Titel *config*, und legen Sie die Eigenschaften *config.endpoint* und *config.authKey* auf Ihren DocumentDB-Endpunkt und den Autorisierungsschlüssel fest. Beide Konfigurationen finden Sie im [Azure-Vorschauportal](https://portal.azure.com).
+Erstellen Sie dann ein leeres Objekt mit dem Titel *config*, und legen Sie die Eigenschaften *config.endpoint* und *config.authKey* auf Ihren DocumentDB-Endpunkt und den Autorisierungsschlüssel fest. Beide Konfigurationen finden Sie im [Azure-Portal](https://portal.azure.com).
 
-![Screenshot des Azure-Vorschauportals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche SCHLÜSSEL auf dem Blatt „DocumentDB-Konto“ und die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL auf dem Blatt „Schlüssel“ hervorgehoben sind][keys]
+![Screenshot des Azure-Portals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche "SCHLÜSSEL" auf dem Blatt "DocumentDB-Konto", und auf dem Blatt "Schlüssel" die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind][keys]
 
     var config = {}
 
@@ -442,4 +442,4 @@ Aktualisieren Sie dann in der Datei *config.js* die Werte für "config.endpoint"
 
 [keys]: media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

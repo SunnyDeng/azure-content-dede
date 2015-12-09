@@ -92,7 +92,7 @@ Solange sich die In-Memory-Features in der Vorschau befinden, müssen einige Asp
 
 ## A: Installieren des Beispiels für In-Memory OLTP
 
-Sie können im [Azure-Vorschauportal](http://portal.azure.com/) die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks erstellen. Anhand der Schritte in diesem Abschnitt wird erläutert, wie Sie anschließend Ihre AdventureWorksLT-Datenbank wie folgt erweitern können:
+Sie können im [Azure-Portal](http://portal.azure.com/) die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks erstellen. Anhand der Schritte in diesem Abschnitt wird erläutert, wie Sie anschließend Ihre AdventureWorksLT-Datenbank wie folgt erweitern können:
 
 - In-Memory-Tabellen
 - Systemintern kompilierte gespeicherte Prozedur
@@ -100,7 +100,7 @@ Sie können im [Azure-Vorschauportal](http://portal.azure.com/) die Beispieldate
 
 #### Installationsschritte
 
-1. Erstellen Sie im [Azure-Vorschauportal](http://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
+1. Erstellen Sie im [Azure-Portal](http://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
  - Detaillierte Anleitungen finden Sie unter [Erstellen Ihrer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
 2. Stellen Sie eine Verbindung mit [SQL Server Management Studio (SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx) her.
@@ -230,7 +230,7 @@ end
 ```
 
 
-Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „*\_inmem*“ durch „*\_ondisk*“ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
+Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „ *\_inmem* “ durch „ *\_ondisk* “ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
 
 
 ### Installieren von RML-Hilfsprogrammen und ostress
@@ -276,7 +276,8 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 So führen Sie die vorherige „ostress.exe“-Befehlszeile aus:
 
 
-1. Setzen Sie den Dateninhalt der Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die bei vorherigen Ausführungen eingefügt wurden: ```
+1. Setzen Sie den Dateninhalt der Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die bei vorherigen Ausführungen eingefügt wurden:
+```
 EXECUTE Demo.usp_DemoReset;
 ```
 
@@ -301,7 +302,8 @@ Wenn „ostress.exe“ abgeschlossen ist, wird die Testlaufdauer im RML-Befehlsf
 Sobald Sie über das Ergebnis der Ausführung von „\_inmem“ verfügen, führen Sie die folgenden Schritte für die „\_ondisk“-Ausführung durch:
 
 
-1. Setzen Sie die Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die beim vorherigen Testlauf eingefügt wurden: ```
+1. Setzen Sie die Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die beim vorherigen Testlauf eingefügt wurden:
+```
 EXECUTE Demo.usp_DemoReset;
 ```
 
@@ -525,4 +527,4 @@ Wenn eine Datenbank eine der folgenden Arten von In-Memory OLTP-Objekten oder -T
 
 - [Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

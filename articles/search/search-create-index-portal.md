@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen eines Azure Search-Index im Portal | Microsoft Azure | Gehosteter Cloudsuchdienst"
-	description="Fügen Sie Azure Search, einem in der Cloud gehosteten Suchdienst, durch Angabe von Felddefinitionen im Azure-Portal einen Index hinzu."
+	pageTitle="Erstellen eines Azure Search-Indexes im Portal | Microsoft Azure | Gehosteter Cloudsuchdienst"
+	description="Fügen Sie Azure Search, einem in der Cloud gehosteten Suchdienst, durch Angabe von Felddefinitionen im klassischen Azure-Portal einen Index hinzu."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -17,18 +17,18 @@
 	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
-# Erstellen eines Azure Search-Index im Azure-Portal
+# Erstellen eines Azure Search-Indexes im klassischen Azure-Portal
 > [AZURE.SELECTOR]
 - [Overview](search-what-is-an-index.md)
 - [Portal](search-create-index-portal.md)
 - [.NET](search-create-index-dotnet.md)
 - [REST API](search-create-index-rest-api.md)
 
-Sie können in Azure Search schnell einen Indexprototypen verwenden, indem Sie einen Index im Azure-Portal erstellen. Das Portal eignet sich hervorragend für Machbarkeitsstudien, kann aber auch zum Anzeigen von Schemadefinitionen und Ressourcennutzung für einen beliebigen Index verwendet werden, der für Ihren Dienst bereitgestellt ist.
+Sie können in Azure Search schnell einen Prototypen eines Indexes erstellen, indem Sie im klassischen Azure-Portal einen Index erstellen. Das Portal eignet sich hervorragend für Machbarkeitsstudien, kann aber auch zum Anzeigen von Schemadefinitionen und Ressourcennutzung für einen beliebigen Index verwendet werden, der für Ihren Dienst bereitgestellt ist.
 
 Vergewissern Sie sich für diese Aufgabe, dass Sie über einen einsatzbereiten Azure Search-Dienst verfügen. Hilfe bei der Einrichtung finden Sie bei Bedarf unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
 
 2. Öffnen Sie das Service-Dashboard des Azure-Suchdiensts. Im Anschluss finden Sie einige Möglichkeiten, um zum Dashboard zu gelangen.
 	- Klicken Sie auf der Navigationsleiste auf **Startseite**. Auf der Startseite befinden sich die Kacheln für die in Ihrem Abonnement enthaltenen Dienste. Klicken Sie auf die Kachel, um das Service-Dashboard zu öffnen.
@@ -105,4 +105,4 @@ Nachdem Sie sich mit dem einfachen Index vertraut gemacht haben, können Sie ggf
 [4]: ./media/search-create-index-portal/AzureSearch-PortalIndex-4.PNG
 [5]: ./media/search-create-index-portal/AzureSearch-PortalIndex-5.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,7 +1,7 @@
 <properties
    pageTitle="Hadoop-Lernprogramm: Erste Schritte mit Hadoop unter Windows | Microsoft Azure"
    description="Erste Schritte mit Hadoop in HDInsight Erfahren Sie, wie Sie Hadoop-Cluster unter Windows bereitstellen, eine Hive-Abfrage für Daten ausführen und die Ausgabe in Excel analysieren."
-   keywords="hadoop tutorial,hadoop on windows,hadoop cluster,learn hadoop, hive query"
+   keywords="Hadoop-Tutorial, Hadoop unter Windows, Hadoop-Cluster, Kennenlernen von Hadoop, Hive-Abfrage"
    services="hdinsight"
    documentationCenter=""
    authors="nitinme"
@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/07/2015"
+   ms.date="11/29/2015"
    ms.author="nitinme"/>
 
 
@@ -71,10 +71,10 @@ Dieses Lernprogramm verwendet nur den Standard-Blob und das Standardspeicherkont
 
 **So erstellen Sie ein Azure-Speicherkonto**
 
-1. Melden Sie sich beim [Azure-Portal][azure-management-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-management-portal] an.
 2. Klicken Sie links unten auf **NEU**, und geben Sie dann die Werte wie in der Abbildung dargestellt ein.
 
-	![Azure-Portal, in dem Sie die Schnellerfassungsfunktion nutzen können, um ein neues Speicherkonto einzurichten.][image-hdi-storageaccount-quickcreate]
+	![Klassisches Azure-Portal, in dem Sie per "Quick Create" ein neues Speicherkonto einrichten können.][image-hdi-storageaccount-quickcreate]
 
 >[AZURE.NOTE]Achten Sie darauf, das Speicherkonto an einem Standort zu erstellen, der für den Cluster unterstützt wird. Dies sind: **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **USA (Osten)**, **USA (Westen)**, **USA (Mitte/Norden)**, **USA (Süden-Mitte)**.
 
@@ -82,14 +82,14 @@ Wählen Sie das neue Speicherkonto in der Liste aus, und klicken Sie unten auf d
 
 ##<a name="provision"></a>Bereitstellen eines Hadoop-Clusters
 
-Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen bereitgestellt, die Hadoop und verwandte Anwendungen enthalten. In diesen Abschnitt stellen Sie einen HDInsight-Cluster der Version 3.1 bereit, der auf der Hadoop-Version 2.4 basiert. Mit dem Azure-Portal, HDInsight PowerShell-Cmdlets oder dem HDInsight .NET SDK können Sie auch Hadoop-Cluster für andere Versionen erstellen. Anweisungen finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision]. Informationen zu den verschiedenen HDInsight-Versionen und ihren SLAs finden Sie unter [HDInsight-Komponentenversionen](hdinsight-component-versioning.md).
+Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen bereitgestellt, die Hadoop und verwandte Anwendungen enthalten. In diesen Abschnitt stellen Sie einen HDInsight-Cluster der Version 3.1 bereit, der auf der Hadoop-Version 2.4 basiert. Mit dem klassischen Azure-Portal, HDInsight PowerShell-Cmdlets oder dem HDInsight .NET SDK können Sie auch Hadoop-Cluster für andere Versionen erstellen. Anweisungen finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision]. Informationen zu den verschiedenen HDInsight-Versionen und ihren SLAs finden Sie unter [HDInsight-Komponentenversionen](hdinsight-component-versioning.md).
 
 [AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
 
 **So stellen Sie einen Hadoop-Cluster bereit**
 
-1. Melden Sie sich beim [Azure-Portal][azure-management-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-management-portal] an.
 
 2. Klicken Sie links unten auf **NEU**, und geben Sie dann die Werte wie in der Abbildung dargestellt ein.
 
@@ -127,7 +127,7 @@ Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen bereitgestellt
 
 Ein erfolgreich bereitgestellter HDInsight-Cluster bietet eine Abfragekonsole mit einem Katalog für den Einstieg, um Beispiele direkt im Portal ausführen zu können. Mit diesen Beispielen können Sie das Arbeiten mit HDInsight erlernen, indem Sie einige einfache Szenarien durcharbeiten. Die Beispiele enthalten alle benötigten Komponenten wie z. B. die zu analysierenden Daten und die entsprechenden Abfragen für die Daten. Um weitere Informationen zu den Beispielen im Katalog für den Einstieg zu erhalten, lesen Sie [Erlernen von Hadoop in HDInsight mithilfe des HDInsight-Katalogs für den Einstieg](hdinsight-learn-hadoop-use-sample-gallery.md).
 
-**Um das Beispiel auszuführen**, klicken Sie im Azure-Portal auf den Namen des Clusters, in dem Sie das Beispiel ausführen möchten, und anschließend unten in der Seite auf **Abfragekonsole**. Klicken Sie auf der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Katalog für den Einstieg** und anschließend in der Kategorie **Beispiele** auf das Beispiel, das Sie ausführen möchten. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen. In der folgende Tabelle sind einige Beispiele aufgeführt und weitere Informationen zur Funktion jedes Beispiels enthalten.
+**Um das Beispiel auszuführen**, klicken Sie im klassischen Azure-Portal auf den Namen des Clusters, in dem Sie das Beispiel ausführen möchten, und anschließend unten in der Seite auf **Abfragekonsole**. Klicken Sie auf der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Katalog für den Einstieg** und anschließend in der Kategorie **Beispiele** auf das Beispiel, das Sie ausführen möchten. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen. In der folgende Tabelle sind einige Beispiele aufgeführt und weitere Informationen zur Funktion jedes Beispiels enthalten.
 
 Beispiel | Behandelte Themen
 ------ | ---------------
@@ -144,7 +144,7 @@ Nun, da Sie einen HDInsight-Cluster bereitgestellt haben, ist der nächste Schri
 
 **So führen Sie einen Hive-Job über das Clusterdashboard aus**
 
-1. Melden Sie sich beim [Azure-Portal][azure-management-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-management-portal] an.
 2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Sie sehen eine Liste der Cluster, einschließlich des Clusters, den Sie gerade im vorherigen Abschnitt erstellt haben.
 3. Klicken Sie auf den Namen des Clusters, in dem Sie den Hive-Auftrag ausführen möchten, und klicken Sie anschließend unten auf der Seite auf **ABFRAGEKONSOLE**.
 4. Eine Webseite wird in einer anderen Browserregisterkarte geöffnet. Geben Sie das Hadoop-Benutzerkonto und das zugehörige Kennwort ein. Der Standardbenutzername ist **admin**, und das Kennwort haben Sie bei der Bereitstellung des Clusters angegeben. Das Dashboard sieht folgendermaßen aus:
@@ -280,4 +280,4 @@ In diesem Hadoop-Lernprogramm haben Sie erfahren, wie ein Hadoop-Cluster unter W
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

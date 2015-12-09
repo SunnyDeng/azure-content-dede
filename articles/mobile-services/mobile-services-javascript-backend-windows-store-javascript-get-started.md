@@ -35,9 +35,9 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 ## Erstellen einer neuen Windows Store-App
 
-Sobald Sie Ihren mobilen Dienst erstellt haben, können Sie einfach dem Schnellstart im Verwaltungsportal folgen, um eine neue Windows Store 8.1-JavaScript-App zu erstellen, die eine Verbindung mit Ihrem mobilen Dienst herstellt.
+Sobald Sie Ihren mobilen Dienst erstellt haben, können Sie einer Schnellstartanleitung im klassischen Azure-Portal folgen, um eine neue Windows Store 8.1-JavaScript-App zu erstellen, die eine Verbindung mit Ihrem mobilen Dienst herstellt.
 
-1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1.  Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 
 2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue Windows Store-App erstellen**.
@@ -64,7 +64,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 4. (Optional) Führen Sie die App erneut aus, und beachten Sie, dass nach dem Starten der App Daten, die im vorhergehenden Schritt gespeichert wurden, aus dem mobilen Dienst geladen werden.
  
-4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+4. Zurück im [klassischen Azure-Portal] klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
@@ -87,6 +87,6 @@ Da Sie jetzt den Schnellstart abgeschlossen haben, können Sie anschließend erf
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -63,7 +63,7 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 ## <a name="_Toc395783178"></a>Schritt 2: Erstellen einer neuen Node.js-Anwendung
 
-Nun erfahren Sie, wie Sie ein einfaches Node.js-Projekt vom Typ „Hello World“ mithilfe des [Express](http://expressjs.com/)-Frameworks erstellen.
+Nun erfahren Sie, wie Sie ein einfaches "Hello World"-Node.js-Projekt mithilfe des [Express](http://expressjs.com/)-Frameworks erstellen.
 
 1. Öffnen Sie den bevorzugten Terminaldienst.
 
@@ -396,7 +396,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		
 		module.exports = config;
 
-3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH\_KEY mit den Werten auf dem Blatt „Schlüssel“ Ihres DocumentDB-Kontos im [Microsoft Azure-Vorschauportal](http://portal.azure.com):
+3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH\_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](http://portal.azure.com):
 
 4. Speichern und schließen Sie die Datei **config.js**.
  
@@ -569,4 +569,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/)
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="11/04/2015"
+	ms.date="11/30/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für iOS-Apps
@@ -37,7 +37,7 @@ Den vollständigen Code für dieses Tutorial finden Sie [hier](https://github.co
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ [Mobile Services iOS SDK]
++ [Mobile Services iOS SDK-Version 1.2.4]
 + [Xcode 7][Install Xcode]
 + Ein Gerät, das auf iOS 8 (oder einer neueren Version) laufen kann
 + iOS-Entwicklerprogramm-Mitgliedschaft
@@ -46,7 +46,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hubs-Lernprogramme für iOS-Apps.
 
-> [AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
+> [AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
 
 [AZURE.INCLUDE [Notification Hubs – Aktivieren von Apple-Pushbenachrichtigungen](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
@@ -442,7 +442,7 @@ Sie finden alle möglichen Benachrichtigungsnutzlasten im [Local and Push Notifi
 
 Zum Testen von Pushbenachrichtigungen auf iOS müssen Sie die App auf einem Gerät bereitstellen. Sie können keine Apple-Pushbenachrichtigungen mit dem iOS-Simulator senden.
 
-1. Führen Sie die App aus, und überprüfen Sie, ob die Registrierung erfolgreich ist. Wählen Sie dann **OK**.
+1. Führen Sie die App aus, und überprüfen Sie, ob die Registrierung erfolgreich ist. Drücken Sie dann **OK**.
 
 	![][33]
 
@@ -461,7 +461,7 @@ Wenn Sie Probleme haben oder Vorschläge zur Verbesserung dieses Lernprogramms f
 
 In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Wir empfehlen Ihnen als nächsten Schritt, mit dem Tutorial [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer] fortzufahren. In diesem Tutorial wird das Erstellen eines Back-Ends zum Senden Ihrer Benachrichtigungen mithilfe von Tags erläutert.
 
-Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten] weitere Informationen.
+Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von Nachrichten] weitere Informationen.
 
 Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notification Hubs-Leitfaden].
 
@@ -486,6 +486,8 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 
 
 <!-- URLs. -->
+[Mobile Services iOS SDK]: http://aka.ms/kymw2g
+[Mobile Services iOS SDK-Version 1.2.4]: http://aka.ms/kymw2g
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
@@ -498,10 +500,9 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
-[Erste Schritte mit Pushbenachrichtigungen in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-ios-notify-users.md
-[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-ios-send-breaking-news.md
+[Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-ios-send-breaking-news.md
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -42,10 +42,10 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 
 In diesem Schritt erstellen Sie mit Azure PowerShell eine Azure Data Factory namens „ADFTutorialDataFactoryPSH“.
 
-1. Starten Sie Azure PowerShell, und führen Sie die folgenden Befehle aus. Lassen Sie Azure PowerShell bis zum Ende dieses Tutorials geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie diese Befehle erneut ausführen.
-	- Führen Sie **Add-AzureAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, die Sie bei der Anmeldung für das Azure-Vorschauportal verwenden.  
+1. Starten Sie Azure PowerShell, und führen Sie die folgenden Befehle aus. Lassen Sie Azure PowerShell bis zum Ende dieses Tutorials geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie die Befehle erneut ausführen.
+	- Führen Sie **Add-AzureAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Anmeldung beim Azure-Portal verwendet haben.  
 	- Führen Sie **Get-AzureSubscription** aus, um alle Abonnements für dieses Konto anzuzeigen.
-	- Führen Sie **Select-AzureSubscription** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Vorschauportal verwendet haben.
+	- Führen Sie **Select-AzureSubscription** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Portal verwendet haben.
 2. Wechseln Sie zum Modus AzureResourceManager, da die Azure Data Factory-Cmdlets in diesem Modus verfügbar sind.
 
 		Switch-AzureMode AzureResourceManager
@@ -109,7 +109,7 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten Azure 
 		  "properties": {
 		    "type": "HDInsightOnDemand",
 		    "typeProperties": {
-		      "version": "3.1",
+		      "version": "3.2",
 		      "clusterSize": 1,
 		      "timeToLive": "00:30:00",
 		      "linkedServiceName": "StorageLinkedService"
@@ -121,7 +121,7 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten Azure 
 
 	Eigenschaft | Beschreibung
 	-------- | -----------
-	Version | Gibt die Version des zu erstellenden HDInsight-Clusters als 3.1 an.
+	Version | Gibt die Version des zu erstellenden HDInsight-Clusters als 3.2 an.
 	ClusterSize | Dient zum Erstellen eines HDInsight-Clusters mit einem Knoten.
 	TimeToLive | Gibt die Leerlaufzeit des HDInsight-Clusters an, bevor er gelöscht wird.
 	linkedServiceName | Gibt das Speicherkonto an, das verwendet wird, um die Protokolle zu speichern, die von HDInsight generiert werden.
@@ -272,4 +272,4 @@ In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (H
 
 [cmdlet-reference]: https://msdn.microsoft.com/library/azure/dn820234(v=azure.98).aspx
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

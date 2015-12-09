@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="10/09/2015"
+	ms.date="12/01/2015"
 	ms.author="jeffreyg"/>
 
 # SQL-Datenbank-Tutorial: Erstellen eine SQL-Datenbank in Minuten mithilfe von Beispieldaten und Azure-Portal
@@ -27,7 +27,7 @@
 - [C#](sql-database-get-started-csharp.md)
 - [PowerShell](sql-database-get-started-powershell.md)
 
-In diesem Tutorial zu SQL-Datenbank wird gezeigt, wie Sie Ihre erste SQL-Datenbank mithilfe von Beispieldaten und Azure-Vorschauportal in Minuten erstellen. Sie lernen Folgendes:
+In diesem Tutorial zu SQL-Datenbanken wird gezeigt, wie Sie Ihre erste SQL-Datenbank mithilfe von Beispieldaten und dem Azure-Portal in wenigen Minuten erstellen. Sie lernen Folgendes:
 
 - Erstellen eines Servers zum Hosten der erstellten Datenbank und Einrichten einer dazugehörigen Firewallregel
 - Erstellen Sie eine SQL-Datenbank anhand eines AdventureWorks-Beispiels mit Daten zum Experimentieren.
@@ -37,7 +37,7 @@ Sie benötigen vor Beginn ein Azure-Konto und ein Azure-Abonnement. Falls Sie di
 > [AZURE.NOTE]In diesem Tutorial zu SQL-Datenbank wird das Einrichten einer Datenbank mithilfe des relationalen Datenbankdiensts von Microsoft in der Cloud, Azure SQL-Datenbank, behandelt. Eine weitere Option ist das Ausführen von SQL Server auf einem virtuellen Azure-Computer. Unter [Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs](data-management-azure-sql-database-and-sql-server-iaas.md) finden Sie einen Schnellvergleich oder unter [Bereitstellen eines virtuellen SQL Server-Computers](virtual-machines-provision-sql-server.md) die erste Schritte mit einem virtuellen Computer.
 
 ## Schritt 1: Anmelden und Starten der Einrichtung der SQL-Datenbank
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](http://portal.azure.com/) an.
 2. Klicken Sie auf **Neu** > **Daten + Speicher** > **SQL-Datenbank**.
 
 	![Tutorial zu SQL-Datenbank: Erstellen einer neuen Datenbank](./media/sql-database-get-started/create-db.png)
@@ -117,4 +117,4 @@ Nachdem Sie dieses Tutorial zu SQL-Datenbank ausgeführt und eine Datenbank mit 
 
 - Wenn Sie lokale SQL Server-Datenbanken in Azure verschieben möchten, finden Sie unter [Migrieren von Datenbanken zu Azure SQL-Datenbank](sql-database-cloud-migrate.md) weitere Informationen.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

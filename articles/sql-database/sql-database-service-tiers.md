@@ -34,7 +34,7 @@ Die Dienstebenen "Basic", "Standard" und "Premium" haben alle eine Betriebszeit-
 >[AZURE.NOTE]Web- und Business-Editionen werden eingestellt. Erfahren Sie, wie Sie ein [Upgrade von Web- und Business-Editionen](sql-database-upgrade-new-service-tiers.md) durchführen. Bitte informieren Sie sich unter [Häufig gestellte Fragen zur Einstellung von Web und Business Edition](http://azure.microsoft.com/pricing/details/sql-database/web-business/), wenn Sie Web- und Business-Editionen weiterhin verwenden möchten.
 
 ### Tarife und Leistungsstufen für Einzeldatenbanken
-Für Einzeldatenbanken sind mehrere Leistungsstufen innerhalb jeder Dienstebene verfügbar, sodass Sie flexibel die Ebene auswählen können, die Ihren Workloadanforderungen am besten entspricht. Wenn Sie zentral hoch- oder herunterskalieren müssen, können Sie die Ebenen Ihrer Datenbank im Azure-Portal problemlos ändern, und zwar ohne Ausfallzeiten der Anwendung. Ausführlichere Informationen finden Sie unter [Ändern der Dienstebenen und -Leistungsstufen von Datenbanken](sql-database-scale-up.md).
+Für Einzeldatenbanken sind mehrere Leistungsstufen innerhalb jeder Dienstebene verfügbar, sodass Sie flexibel die Ebene auswählen können, die Ihren Workloadanforderungen am besten entspricht. Wenn Sie zentral hoch- oder herunterskalieren müssen, können Sie die Ebenen Ihrer Datenbank im klassischen Azure-Portal problemlos ändern, und zwar ohne Ausfallzeiten der Anwendung. Ausführlichere Informationen finden Sie unter [Ändern der Dienstebenen und -Leistungsstufen von Datenbanken](sql-database-scale-up.md).
 
 Die hier aufgeführten Leistungsmerkmale gelten für Datenbanken, die mit [SQL-Datenbank V12](sql-database-v12-whats-new.md) erstellt wurden. In Situationen, in denen die zugrunde liegende Hardware in Azure mehrere SQL-Datenbanken hostet, erhält Ihre Datenbank immer noch einen garantierten Satz von Ressourcen, und die erwarteten Leistungsmerkmale der individuellen Datenbank sind nicht betroffen.
 
@@ -63,11 +63,11 @@ Für jede Datenbank in einem Pool gelten auch die Merkmale für Einzeldatenbanke
 ## Überwachen der Datenbankleistung
 Die Überwachung der Leistung einer SQL-Datenbank beginnt mit der Überwachung der Ressourcennutzung relativ zur gewählten Datenbankleistung. Diese relevanten Daten werden auf folgende Weise zur Verfügung gestellt:
 
-1.	Im Microsoft Azure-Verwaltungsportal.
+1.	Im klassischen Microsoft Azure-Portal.
 
 2.	In dynamischen Verwaltungssichten in der Benutzerdatenbank und in der Masterdatenbank des Servers, die die Benutzerdatenbank enthält.
 
-Im [Azure-Vorschauportal](https://portal.azure.com/) können Sie die Nutzung einer Einzeldatenbank überwachen, indem Sie die Datenbank auswählen und auf das Diagramm **Überwachung** klicken. Dadurch wird das Fenster **Metrik** geöffnet, in dem Sie durch Klicken auf die Schaltfläche **Diagramm bearbeiten** Änderungen vornehmen können. Fügen Sie die folgenden Metriken hinzu:
+Im [Azure-Portal](https://portal.azure.com/) können Sie die Nutzung einer Einzeldatenbank überwachen, indem Sie die Datenbank auswählen und auf das Diagramm **Überwachung** klicken. Dadurch wird das Fenster **Metrik** geöffnet, in dem Sie durch Klicken auf die Schaltfläche **Diagramm bearbeiten** Änderungen vornehmen können. Fügen Sie die folgenden Metriken hinzu:
 
 - CPU-Prozentsatz
 - DTU Percentage
@@ -96,4 +96,4 @@ Wenn Sie mehrere Datenbanken als Gruppe verwalten möchten, finden Sie entsprech
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

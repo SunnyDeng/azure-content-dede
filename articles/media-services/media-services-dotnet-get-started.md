@@ -45,21 +45,21 @@ Die folgenden Voraussetzungen sind zum Einstieg in die Entwicklung mit dem Media
 
 Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
-1.  Erstellen eines Media Services-Kontos (mithilfe des Azure-Portals)
+1.  Erstellen eines Media Services-Kontos (mithilfe des klassischen Azure-Portals)
 2.  Konfigurieren von Streamingendpunkten (mithilfe des Portals)
 3.  Erstellen und Konfigurieren eines Visual Studio-Projekts
 5.  Herstellen einer Verbindung mit dem Media Services-Konto
 6.  Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei
 7.  Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
-8.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download  
+8.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download
 9.  Wiedergeben Ihrer Inhalte
 
 
 ##Erstellen eines Media Services-Kontos mithilfe des Portals
 
-1. Klicken Sie im Azure-Portal auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
+1. Klicken Sie im klassischen Azure-Portal auf **Neu**, **Mediendienst** und dann auf **Schnellerfassung**.
 
-	![Media Services-Schnellerfassung](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
+![Media Services-Schnellerfassung](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
 2. Geben Sie in das Feld **NAME** den Namen des neuen Kontos ein. Der Name eines Media Services-Kontos darf nur Kleinbuchstaben oder Ziffern ohne Leerzeichen enthalten und muss aus 3 bis 24 Zeichen bestehen.
 
@@ -71,15 +71,15 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
 6. Klicken Sie unten im Formular auf **Schnellerfassung**.
 
-	Sie können den Status des Prozesses im Meldungsbereich unten im Fenster überwachen.
+Sie können den Status des Prozesses im Meldungsbereich unten im Fenster überwachen.
 
-	Wenn das Konto erfolgreich erstellt wurde, ändert sich der Status in **Aktiv**.
+Wenn das Konto erfolgreich erstellt wurde, ändert sich der Status in **Aktiv**.
 
-	Am unteren Rand der Seite wird die Schaltfläche **SCHLÜSSEL VERWALTEN** angezeigt. Wenn Sie auf diese Schaltfläche klicken, wird ein Dialogfeld mit dem Media Services-Kontonamen und dem primären und sekundären Schlüssel angezeigt. Sie benötigen den Kontonamen und den Primärschlüssel, um programmgesteuert auf das Media Services-Konto zugreifen zu können.
+Am unteren Rand der Seite wird die Schaltfläche **SCHLÜSSEL VERWALTEN** angezeigt. Wenn Sie auf diese Schaltfläche klicken, wird ein Dialogfeld mit dem Media Services-Kontonamen und dem primären und sekundären Schlüssel angezeigt. Sie benötigen den Kontonamen und den Primärschlüssel, um programmgesteuert auf das Media Services-Konto zugreifen zu können.
 
-	![Seite "Media Services"](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
+![Seite "Media Services"](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
 
-	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite **Schnellstart** angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei von dieser Seite oder der Seite INHALT hochladen.
+Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite **Schnellstart** angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei von dieser Seite oder der Seite INHALT hochladen.
 
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
@@ -89,7 +89,7 @@ Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Date
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-- Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht)  
+- Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht)
 - Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt**, von dem aus Sie die Bereitstellung Ihrer Inhalte planen
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
@@ -102,15 +102,15 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 3. Um die Anzahl der Streaming-Einheiten anzugeben, klicken Sie die auf Registerkarte "SKALIERUNG" und verschieben anschließend den Schieberegler für die **reservierte Kapazität**.
 
-	![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
+![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
 4. Klicken Sie zum Speichern der Änderungen auf **SPEICHERN**.
 
-	Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
+Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
-	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
-	>
-	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Eine Preisübersicht finden Sie unter [Azure-Preise](http://go.microsoft.com/fwlink/?LinkId=275107).
+>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
+>
+> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Eine Preisübersicht finden Sie unter [Azure-Preise](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 
 
@@ -122,14 +122,9 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 3. Fügen Sie einen Verweis auf die Assembly "System.Configuration" hinzu. Diese Assembly enthält die **System.Configuration.ConfigurationManager**-Klasse, die zum Zugriff auf die Konfigurationsdateien (z. B. "App.config") verwendet wird.
 
-4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das Azure-Portal, wählen Sie Ihr Media Services-Konto aus, und klicken Sie anschließend auf die Schaltfläche **Schlüssel verwalten**.
+4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das klassische Azure-Portal, wählen Sie Ihr Media Services-Konto aus, und klicken Sie anschließend auf die Schaltfläche **Schlüssel verwalten**.
 
-		<configuration>
-		...
-		  <appSettings>
-		    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-		    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-		  </appSettings>
+<configuration> ... <appSettings> <add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> </appSettings>
 		  
 		</configuration>
 
@@ -446,4 +441,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -15,7 +15,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="09/21/2015"
+	ms.date="11/30/2015"
 	ms.author="jgao"/>
 
 # Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight zum Ausführen einer Hive-Abfrage
@@ -68,7 +68,7 @@ Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit 
 
 	>[AZURE.NOTE]Beachten Sie, dass das Fenster **HDInsight-Aufgabenliste** geöffnet sein sollte. Wenn es nicht angezeigt werden sollte, klicken Sie im Menü **Ansicht** auf **Andere Fenster** und dann auf das Fenster **HDInsight-Aufgabenliste**.  
 4.	Geben Sie die Anmeldeinformationen für Ihr Azure-Abonnement ein, und klicken Sie auf **Anmelden**. Dies ist nur erforderlich, wenn Sie bislang noch nicht in Visual Studio auf dieser Arbeitsstation eine Verbindung mit dem Azure-Abonnement hergestellt haben.
-5.	Im Server-Explorer wird eine Liste vorhandener HDInsight-Cluster angezeigt. Wenn Sie noch keine Cluster haben, können Sie einen über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight SDK bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
+5.	Im Server-Explorer wird eine Liste vorhandener HDInsight-Cluster angezeigt. Wenn Sie noch keine Cluster haben, können Sie einen über das Azure-Portal, Azure PowerShell oder das HDInsight SDK bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – Clusterliste in Server-Explorer][5]
 6.	Erweitern Sie einen HDInsight-Cluster. **Hive-Datenbanken**, das Standardspeicherkonto, verknüpfte Speicherkonten und das **Hadoop-Dienstprotokoll** werden angezeigt. Sie können die einzelnen Elemente weiter erweitern.
@@ -194,6 +194,17 @@ Wenn die Hive-Abfrage in Tez ausgeführt wurde, können Sie die zurückgestreamt
  
 ![hdinsight visual studio tools fast path hive execution](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.fast.path.hive.execution.png)
 
+**Unterschied zwischen dem Ausführen von Abfragen über HiveServer2 und Senden von Abfragen über WebHCat**
+
+Das Ausführen von Abfragen über HiveServer2 hat zwar viele Leistungsvorteile, jedoch auch einige Einschränkungen. Einige der Einschränkungen beeinträchtigen die Einsatzmöglichkeit in der Produktion. In der folgenden Tabelle sind die Unterschiede aufgeführt:
+
+| |Ausführen über HiveServer2 |Senden über WebHCat|
+|---|---|---|
+|Ausführen von Abfragen|Erübrigt den Aufwand in WebHCat (startet einen MapReduce-Auftrag namens "TempletonControllerJob").|Solange eine Abfrage über WebHCat ausgeführt wird, startet WebHCat einen MapReduce-Auftrag, der zusätzliche Latenz mit sich bringt.|
+|Zurückstreamen von Protokollen|Nahezu in Echtzeit.|Die Auftragsausführungsprotokolle sind nur verfügbar, wenn der Auftrag abgeschlossen ist.|
+|Anzeige des Auftragsverlaufs|Wenn eine Abfrage über HiveServer2 ausgeführt wird, wird der Auftragsverlauf (Auftragsprotokoll, Auftragsausgabe) nicht beibehalten. Die Anwendung kann in der YARN-Benutzeroberfläche mit begrenzten Informationen angezeigt werden.|Wenn eine Abfrage über WebHCat ausgeführt wird, wird der Auftragsverlauf (Auftragsprotokoll, Auftragsausgabe) beibehalten und kann mithilfe von Visual Studio/HDInsight SDK/PowerShell angezeigt werden. |
+|Fenster schließen| 	Ausführen über HiveServer2 ist eine "synchrone" Methode, sodass Sie die Fenster geöffnet halten müssen; wenn die Fenster geschlossen werden, wird die Ausführung der Abfrage abgebrochen.|Senden über WebHCat ist eine "asynchrone" Methode, sodass Sie die Abfrage über WebHCat senden und Visual Studio schließen können. Sie können jederzeit zurückkehren und die Ergebnisse anzeigen.|
+
 
 ### Leistungsdiagramm für Tez Hive-Auftrag
 
@@ -209,7 +220,7 @@ Um Ihnen das Verständnis der Hive-Abfragen zu erleichtern, wurde dem Tool in di
 
 Mit der Aufgabenausführungsansicht für Hive bei Tez-Aufträgen können Sie strukturierte und visualisierte Informationen zu Hive-Aufträgen gewinnen und sich mehr Auftragsdetails anzeigen lassen. Bei Leistungsproblemen können Sie in dieser Ansicht zusätzliche Details abrufen. Sie erfahren z. B., wie jede einzelne Aufgabe ausgeführt wird, und sehen die Details dazu (Lese- und Schreibvorgänge für Daten, geplanter Ausführungszeitpunkt, Startzeit, Endzeit usw.). Auf Basis dieser visualisierten Informationen können Sie die Auftragskonfigurationen oder die Systemarchitektur optimieren.
 
-![hdinsight visual studio tools task execution view](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png)
+![HDInsight Visual Studio Tools Aufgabenausführungsanzeige](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png)
 
 ## Ausführen von Pig-Skripts
 
@@ -258,4 +269,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->
