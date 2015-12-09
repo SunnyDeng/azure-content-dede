@@ -26,7 +26,7 @@
 
 ## Erstellen eines Media Services-Kontos
 
-Verwenden Sie das Azure-Portal, das .NET-SDK oder die REST-API zum Erstellen eines Azure Media Services-Kontos.
+Verwenden Sie das klassische Azure-Portal, das .NET-SDK oder die REST-API zum Erstellen eines Azure Media Services-Kontos.
 
 <a id="setup_dev_env"></a>
 ## Einrichten der Entwicklungsumgebung  
@@ -51,4 +51,4 @@ Wählen Sie .NET oder REST API, um eine programmgesteuerte Verbindung mit Azure 
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

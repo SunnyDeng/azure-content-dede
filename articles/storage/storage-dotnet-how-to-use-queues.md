@@ -244,7 +244,6 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 - Vollständige Informationen zu verfügbaren APIs finden Sie in der Warteschlangendienst-Referenzdokumentation:
     - [Referenz zur Storage-Clientbibliothek für .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
     - [REST-API-Referenz](http://msdn.microsoft.com/library/azure/dd179355)
-- Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher](http://msdn.microsoft.com/library/azure/gg433040.aspx).
 - Erfahren Sie, wie Sie mithilfe des [Azure WebJobs SDK](../websites-dotnet-webjobs-sdk/) den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.
 - Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
     - Verwenden Sie [Tabellenspeicher](storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten. 
@@ -255,7 +254,6 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
   [CloudStorageAccount]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
@@ -263,4 +261,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

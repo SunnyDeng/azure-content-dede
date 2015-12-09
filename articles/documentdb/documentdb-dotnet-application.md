@@ -81,7 +81,7 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
 
 8. Wenn Sie das Hosten in der Cloud ausgewählt haben, wird mindestens ein zusätzlicher Bildschirm angezeigt, in dem Sie dazu aufgefordert werden, sich bei Ihrem Azure-Konto anzumelden und einige Werte für Ihre neue Website anzugeben. Geben Sie alle zusätzlichen Werte an, und fahren Sie fort.
 
-  	In diesem Beispiel wurde kein "Datenbankserver" ausgewählt, da kein Azure SQL-Datenbankserver verwendet wird. Ein neues Azure DocumentDB-Konto wird zu einem späteren Zeitpunkt im Azure-Vorschauportal erstellt.
+  	In diesem Beispiel wurde kein "Datenbankserver" ausgewählt, da kein Azure SQL-Datenbankserver verwendet wird. Ein neues Azure DocumentDB-Konto wird zu einem späteren Zeitpunkt im Azure-Portal erstellt.
 
 	Weitere Informationen zum Auswählen eines **App Service-Plans** und einer **Ressourcengruppe** finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
@@ -401,12 +401,12 @@ Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur V
 
 3. Nun werden einige Werte aus der Konfiguration gelesen. Öffnen Sie die Datei **Web.config** Ihrer Anwendung, und fügen Sie die folgenden Zeilen unter dem Abschnitt `<AppSettings>` hinzu.
 	
-    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Preview portal"/>
-    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Preview portal"/>
+    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Portal"/>
+    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal"/>
     	<add key="database" value="ToDoList"/>
     	<add key="collection" value="Items"/>
 	
-4. Aktualisieren Sie nun über das Blatt „Schlüssel“ des Azure-Vorschauportals die Werte für *endpoint* und *authKey*. Verwenden Sie die **URI** aus dem Blatt "Schlüssel" als Wert für die Endpunkt-Einstellung, und verwenden Sie den **PRIMÄRSCHLÜSSEL** oder den **SEKUNDÄRSCHLÜSSEL** aus dem Blatt "Schlüssel" als Wert für die authKey-Einstellung.
+4. Aktualisieren Sie nun die Werte für *Endpunkt* und *AuthKey*, indem Sie das Blatt „Schlüssel“ im Azure-Portal verwenden. Verwenden Sie die **URI** aus dem Blatt "Schlüssel" als Wert für die Endpunkt-Einstellung, und verwenden Sie den **PRIMÄRSCHLÜSSEL** oder den **SEKUNDÄRSCHLÜSSEL** aus dem Blatt "Schlüssel" als Wert für die authKey-Einstellung.
 
 
     Auf diese Weise wird das DocumentDB-Repository verknüpft. Fügen wir jetzt unsere Anwendungslogik hinzu.
@@ -633,4 +633,4 @@ Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

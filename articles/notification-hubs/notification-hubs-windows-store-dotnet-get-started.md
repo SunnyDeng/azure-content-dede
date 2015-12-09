@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/21/2015"
+	ms.date="11/23/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Windows Store-Apps
@@ -37,7 +37,7 @@ Den vollständigen Code für dieses Tutorial finden Sie [hier](https://github.co
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ Microsoft Visual Studio Express 2013 für Windows with Update 2<br/>Diese Visual Studio-Version ist zum Erstellen eines Projekts für eine universelle App erforderlich. Falls Sie lediglich eine Windows Store-App erstellen möchten, benötigen Sie Visual Studio 2012 Express für Windows 8.
++ Microsoft Visual Studio Express 2013 für Windows mit Update 2<br/>Diese Visual Studio-Version ist zum Erstellen eines Projekts für eine universelle App erforderlich. Falls Sie lediglich eine Windows Store-App erstellen möchten, benötigen Sie Visual Studio 2012 Express für Windows 8.
 
 + Ein aktives Windows Store-Konto
 
@@ -283,4 +283,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [Kachelkatalog]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
 [Übersicht über Signale]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

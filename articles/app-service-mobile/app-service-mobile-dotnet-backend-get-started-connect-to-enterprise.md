@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="get-started-article"
-	ms.date="06/19/2015"
+	ms.date="12/03/2015"
 	ms.author="mahender"/>
 
 # Verbinden Ihrer mobilen App mit SaaS-APIs
 
-In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung (Software-as-a-Service). Sie aktualisieren die App mithilfe der [einmaligen Anmeldung über die Azure Active Directory Authentication Library], um immer dann ein Microsoft Word-Dokument in SharePoint Online zu erstellen, wenn ein neues „TodoItem“ hinzugefügt wird.
+In diesem Tutorial verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung (Software-as-a-Service). Sie aktualisieren die App mithilfe der [einmaligen Anmeldung über die Azure Active Directory Authentication Library], um immer dann ein Microsoft Word-Dokument in SharePoint Online zu erstellen, wenn ein neues „TodoItem“ hinzugefügt wird.
 
-Für dieses Lernprogramm ist Folgendes erforderlich:
+Für dieses Tutorial ist Folgendes erforderlich:
 
 * Visual Studio 2013 unter Windows 8.1
 * Ein aktives Abonnement von [SharePoint Online]
@@ -32,7 +32,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 ## <a name="configure-permissions"></a>Konfigurieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint
 Standardmäßig hat der Token, den Sie von AAD erhalten, eingeschränkte Berechtigungen. Um auf eine Ressource von Dritten oder eine SaaS-Anwendung wie etwa SharePoint Online zugreifen zu können, müssen Sie dies explizit erlauben.
 
-1. Wählen Sie im Abschnitt **Active Directory** des [Azure-Verwaltungsportals] Ihr Mandat. Navigieren Sie zur Webanwendung, die Sie für App Service erstellt haben.
+1. Wählen Sie im Abschnitt **Active Directory** des [klassischen Azure-Portals] Ihren Mandaten aus. Navigieren Sie zur Webanwendung, die Sie für App Service erstellt haben.
 
 2. Scrollen Sie auf der Registerkarte **Konfigurieren** nach unten zum Abschnitt "Berechtigungen für andere Anwendungen". Wählen Sie **Office 365 SharePoint Online**, und gewähren Sie die Berechtigung **Dateien des Benutzer bearbeiten oder löschen**. Klicken Sie anschließend auf **Save**.
 
@@ -42,13 +42,13 @@ Sie haben jetzt Azure AD so konfiguriert, dass für App Service ein SharePoint-Z
 
 ## <a name="store-credentials"></a>Hinzufügen von SharePoint-Informationen zu Ihrer mobilen App
 
-Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, mit denen die mobile App kommunizieren soll. Sie müssen außerdem die Identität Ihrer mobilen App nachweisen können. Das wird mit einer Kombination aus Client-ID und einem geheimen Clientschlüssel erreicht. Sie haben bereits während der Einrichtung der AAD-Anmeldung die Client-ID für die mobile App abgerufen und gespeichert. Da dies sensible Anmeldeinformationen sind, sollten Sie sie nicht als Klartext im Code speichern. Stattdessen legen Sie diese Werte als Anwendungseinstellungen für die Mobile App-Codesite fest.
+Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, mit denen die mobile App kommunizieren soll. Sie müssen außerdem die Identität Ihrer mobilen App nachweisen können. Das wird mit einer Kombination aus Client-ID und einem geheimen Clientschlüssel erreicht. Sie haben bereits während der Einrichtung der AAD-Anmeldung die Client-ID für die mobile App abgerufen und gespeichert. Da dies sensible Anmeldeinformationen sind, sollten Sie sie nicht als Klartext im Code speichern. Stattdessen legen Sie diese Werte als Anwendungseinstellungen für das Back-End für mobile Apps fest.
 
 1. Wechseln Sie zurück zur Registerkarte "AAD-Anwendungen" für Ihren Mandanten, und wählen Sie die Webanwendung für App Service aus.
 
 2. Scrollen Sie unter „Konfigurieren“ zu „Schlüssel“. Sie erhalten einen geheimen Clientschlüssel, indem Sie einen neuen Schlüssel generieren. Nachdem Sie einen Schlüssel erzeugt und die Seite verlassen haben, gibt es keine Möglichkeit mehr, ihn aus dem Portal zu bekommen. Sie müssen eine Kopie dieses Werts an einem sicheren Ort speichern. Wählen Sie eine Dauer für den Schlüssel und klicken Sie dann auf "Speichern", und kopieren Sie den resultierenden Wert.
 
-3. Navigieren Sie im Verwaltungsportal im Abschnitt für den Code der mobilen App zur Registerkarte "Konfiguration", und führen Sie einen Bildlauf zu den App-Einstellungen durch. Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
+3. Klicken Sie im [Azure-Portal](https://portal.azure.com/) im Back-End für mobile Apps auf **Alle Einstellungen** > **Anwendungseinstellungen**, und scrollen Sie nach unten zu **App-Einstellungen**. Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
 
 * Legen Sie SP\_Authority als Autoritätsendpunkt für das AAD-Mandat fest. Das sollte derselbe Autoritätsendpunkt sein, den Sie auch für die Client-App verwendet haben. Er hat das Format `https://login.windows.net/contoso.onmicrosoft.com`.
 
@@ -183,10 +183,10 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 <!-- URLs. -->
 
-[Azure-Verwaltungsportals]: https://manage.windowsazure.com/
+[klassischen Azure-Portals]: https://manage.windowsazure.com/
 [SharePoint Online]: http://office.microsoft.com/de-DE/sharepoint/
 [einmaligen Anmeldung über die Azure Active Directory Authentication Library]: app-service-mobile-ios-aad-sso.md
 [einmaligen Anmeldung über die Azure Active Directory Authentication Library ]: app-service-mobile-ios-aad-sso.md
 [Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

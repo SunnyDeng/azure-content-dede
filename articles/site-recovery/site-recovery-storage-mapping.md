@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Site Recovery-Speicherzuordnung | Microsoft Azure"
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung lokaler virtueller Computer und physischer Server zu Azure oder zu einem sekundären lokalen Standort."
+	pageTitle="Zuordnen von Speicher in Azure Site Recovery für die Replikation virtueller Hyper-V-Computer zwischen lokalen Datencentern | Microsoft Azure"
+	description="Vorbereiten der Speicherzuordnung für die Replikation virtueller Hyper-V-Computer zwischen zwei lokalen Datencentern mithilfe von Azure Site Recovery"
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -13,44 +13,37 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="10/07/2015"
+	ms.date="11/24/2015"
 	ms.author="raynew"/>
 
 
-# Azure Site Recovery-Speicherzuordnung
+# Vorbereiten der Speicherzuordnung für die Replikation virtueller Hyper-V-Computer zwischen zwei lokalen Datencentern mithilfe von Azure Site Recovery
 
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Informationen zu möglichen Bereitstellungsszenarien finden Sie unter [Übersicht über Site Recovery](site-recovery-overview.md).
+Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. In diesem Artikel wird die Netzwerkzuordnung beschrieben, die zur optimalen Nutzung von Speicher diente, wenn Sie Site Recovery zum Replizieren virtueller Hyper-V-Computer zwischen zwei lokalen Datencentern verwenden.
 
-
-## Informationen zum Artikel
-
-Die Speicherzuordnung ist ein wichtiger Bestandteil der Site Recovery-Bereitstellung. Sie gewährleistet eine optimale Nutzung des Speichers. Dieser Artikel enthält Informationen zur Speicherzuordnung sowie einige Beispiele zur Veranschaulichung der Funktionsweise.
-
-
-Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
+Sollten Sie nach der Lektüre dieses Artikels Fragen haben, können Sie diese im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
 
 ## Übersicht
 
-Die Einrichtung der Speicherzuordnung ist abhängig vom jeweiligen Site Recovery-Bereitstellungsszenario.
+Die Speicherzuordnung ist nur relevant, wenn Sie virtuelle Hyper-V-Computer in VMM-Clouds mithilfe der Hyper-V-Replikat- oder SAN-Replikation aus einem primären Datencenter in ein sekundäres Datencenter wie folgt replizieren:
 
 
-
-- **Lokal zu lokal (Replikation mit Hyper-V-Replikat)**: Ordnet Speicherklassifizierungen auf einem VMM-Quell- und -Zielserver zu, um Folgendes zu ermöglichen:
+- **Lokal zu lokal (Replikation mit Hyper-V-Replikat)**: Sie richten die Speicherzuordnung ein, indem Sie einem Quell- und Ziel-VMM-Server Speicherklassifizierungen für die folgenden Zwecke hinzufügen:
 
 	- **Angabe des Zielspeichers für virtuelle Replikatcomputer**: Virtuelle Computer werden zu einem Speicherziel Ihrer Wahl repliziert (SMB-Freigabe oder freigegebene Clustervolumes (CSVs)).
 	- **Platzierung virtueller Replikatcomputer**: Virtuelle Replikatcomputer werden durch die Speicherzuordnung optimal auf Hyper-V-Hostservern platziert. Virtuelle Replikatcomputer werden auf Hosts platziert, die auf die zugeordnete Speicherklassifizierung zugreifen können.
 	- **Keine Speicherzuordnung**: Wenn Sie keine Speicherzuordnung konfigurieren, werden virtuelle Computer zum Standardspeicherort auf dem Hyper-V-Hostserver repliziert, der dem virtuellen Replikatcomputer zugeordnet ist.
 
-- **Lokal zu lokal (Replikation mit SAN)**: Ordnet Speicherarray-Pools auf einem VMM-Quell- und -Zielserver zu, um Folgendes zu ermöglichen:
-	- **Angabe von Zielspeicherpools**: Die Speicherzuordnung stellt sicher, dass LUNs in einer Replikationsgruppe zum zugeordneten Zielspeicherpool repliziert werden.
+- **Lokal zu lokal (Replikation mit SAN)**: Sie richten die Speicherzuordnung ein, indem Sie einem Quell- und Ziel-VMM-Server Speicherarraypools für die folgenden Zwecke hinzufügen:
+	- **Angabe von Pools**: Dient zum Angeben, welcher sekundäre Speicherpool Replikationsdaten aus dem primären Pool empfängt.
+	- **Angabe von Zielspeicherpools**: Stellt sicher, dass LUNs in einer Replikationsgruppe in den zugeordneten Zielspeicherpool Ihrer Wahl repliziert werden.
 
+## Einrichten von Speicherklassifizierungen für die Hyper-V-Replikation
 
+Bei Verwenden des Hyper-V-Replikats für die Replikation mit Site Recovery erfolgt die Zuordnung zwischen Speicherklassifizierungen auf dem VMM-Quell- und -Zielserver (oder auf einem einzelnen VMM-Server, wenn zwei Standorte vom gleichen VMM-Server verwaltet werden). Beachten Sie Folgendes:
 
-## Speicherklassifizierungen
-
-Die Zuordnung erfolgt zwischen Speicherklassifizierungen auf dem VMM-Quell- und -Zielserver (oder auf einem einzelnen VMM-Server, wenn zwei Standorte vom gleichen VMM-Server verwaltet werden). Bei ordnungsgemäß konfigurierter Zuordnung und aktivierter Replikation wird die virtuelle Festplatte eines virtuellen Computers am primären Standort zum Speicher am zugeordneten Zielspeicherort repliziert. Beachten Sie Folgendes:
-
+- Bei ordnungsgemäß konfigurierter Zuordnung und aktivierter Replikation wird die virtuelle Festplatte eines virtuellen Computers am primären Standort zum Speicher am zugeordneten Zielspeicherort repliziert.
 - Speicherklassifizierungen müssen den Hostgruppen in der Quell- und Zielcloud zur Verfügung stehen.
 - Klassifizierungen müssen nicht den gleichen Speichertyp aufweisen. So können Sie beispielsweise eine Quellklassifizierung mit SMB-Freigaben einer Zielklassifizierung mit CSVs zuordnen.
 - Weitere Informationen finden Sie unter [Erstellen von Speicher-Klassifizierungen in VMM](https://technet.microsoft.com/library/gg610685.aspx).
@@ -70,13 +63,13 @@ Chicago | VMM\_Target | | GOLD\_TARGET | Nicht zugeordnet |
 
 Diese Einstellungen werden im Site Recovery-Portal auf der Registerkarte **Serverspeicher** der Seite **Ressourcen** konfiguriert.
 
-![Konfigurieren der Speicherzuordnung](./media/site-recovery-storage-mapping/StorageMapping1.png)
+![Konfigurieren der Speicherzuordnung](./media/site-recovery-storage-mapping/storage-mapping1.png)
 
 Für dieses Beispiel gilt Folgendes: Wenn für einen virtuellen Computer im GOLD-Speicher (SourceShare1) ein virtueller Replikatcomputer erstellt wird, wird dieser zu einem GOLD\_TARGET-Speicher (TargetShare1) repliziert. Wenn für einen virtuellen Computer im SILVER-Speicher (SourceShare2) ein virtueller Replikatcomputer erstellt wird, wird er zu einem SILVER\_TARGET-Speicher (TargetShare2) repliziert. Usw.
 
 Die tatsächlichen Dateifreigaben und deren zugewiesene Klassifizierungen in VMM werden im nächsten Screenshot dargestellt.
 
-![Speicherklassifizierungen in VMM](./media/site-recovery-storage-mapping/StorageMapping2.png)
+![Speicherklassifizierungen in VMM](./media/site-recovery-storage-mapping/storage-mapping2.png)
 
 ## Mehrere Speicherorte
 
@@ -103,6 +96,6 @@ VM5 | C:\\ClusterStorage\\SourceVolume3 | N/V | Keine Zuordnung, daher Verwendun
 
 ## Nächste Schritte
 
-Nachdem Sie die Speicherzuordnung nun besser nachvollziehen können, können Sie sich zur Vorbereitung auf die Bereitstellung mit den [bewährten Methoden](site-recovery-best-practices.md) vertraut machen.
+Nachdem Sie sich mit der Speicherzuordnung vertraut gemacht haben, können Sie mit der [Azure Site Recovery-Bereitstellung beginnen](site-recovery-best-practices.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

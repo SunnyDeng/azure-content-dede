@@ -14,7 +14,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
-    ms.date="11/06/2015"
+    ms.date="12/01/2015"
     ms.author="adamkr; sstein"/>
 
 # Erstellen eines Pools für elastische Datenbanken mit PowerShell zum horizontalen Hochskalieren von Ressourcen für mehrere SQL-Datenbanken 
@@ -236,4 +236,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie elastisch
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

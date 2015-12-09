@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Apache Storm-Lernprogramm: Erste Schritte mit Storm | Microsoft Azure"
 	description="Erste Schritte mit Big Data-Analysen in HDInsight mit Apache Storm und den Storm-Starter-Beispielen. Erfahren Sie, wie Sie Storm zur Verarbeitung von Daten in Echtzeit verwenden."
-	keywords="apache storm,apache storm tutorial,big data analytics,storm starter"
+	keywords="Apache Storm, Apache Storm-Tutorial, Big Data-Analysen, Storm Starter"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -23,7 +23,7 @@
 
 Apache Storm ist ein skalierbares, fehlertolerantes, verteiltes Echtzeit-Berechnungssystem für die Verarbeitung von Datenströmen. Mit Storm in Microsoft Azure HDInsight können Sie einen cloudbasierten Storm-Cluster erstellen, der Big Data-Analysen in Echtzeit durchführt.
 
-[AZURE.INCLUDE [Vorschauportal](../../includes/hdinsight-azure-preview-portal.md)]
+[AZURE.INCLUDE [Portal](../../includes/hdinsight-azure-preview-portal.md)]
 
 * [Apache Storm-Lernprogramm: Erste Schritte mit Storm-Starter-Beispielen für die Big Data-Analyse in HDInsight](hdinsight-apache-storm-tutorial-get-started-v1.md)
 
@@ -41,11 +41,11 @@ Zur Ausführung dieses Lernprogramms zu Apache Storm benötigen Sie Folgendes:
 
 Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster übergebenen Protokolldateien und Topologien. Führen Sie zur Erstellung eines Azure-Speicherkontos für Ihren Cluster die folgenden Schritte aus:
 
-1. Melden Sie sich beim [Azure-Vorschauportal][preview-portal] an.
+1. Melden Sie sich beim [Azure-Portal][preview-portal] an.
 
 2. Wählen Sie **NEU**, __Datenanalyse__ und anschließend __HDInsight__ aus.
 
-	![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
+	![Erstellen eines neuen Clusters im Azure-Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
 
 3. Geben Sie einen __Clusternamen__ ein, und wählen Sie dann __Storm__ unter __Clustertyp__ aus. Wenn der __Clustername__ verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
 
@@ -170,7 +170,7 @@ Die Topologie kann über die Benutzeroberfläche von Apache Storm überwacht wer
 
 	* **Deaktivieren** – Hält eine aktive Topologie an.
 
-	* **Ausgleichen** – Passt die Parallelität der Topologie an. Sie sollten aktive Topologien ausgleichen, nachdem Sie die Anzahl der Knoten im Cluster geändert haben. Dadurch kann die Topologie die Parallelität anpassen, um die höhere/geringere Anzahl der Knoten im Cluster zu kompensieren. Weitere Informationen finden Sie unter [Understanding the Parallelism of a Storm Topology](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html) (Grundlegendes zur Parallelität einer Storm-Topologie, in englischer Sprache).
+	* **Ausgleichen** – Passt die Parallelität der Topologie an. Sie sollten aktive Topologien ausgleichen, nachdem Sie die Anzahl der Knoten im Cluster geändert haben. Dadurch kann die Topologie die Parallelität anpassen, um die höhere/geringere Anzahl der Knoten im Cluster zu kompensieren. Weitere Informationen finden Sie unter [Grundlegendes zur Parallelität einer Storm-Topologie](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
 
 	* **Beenden** – Beendet eine Storm-Topologie nach dem angegebenen Zeitlimit.
 
@@ -245,4 +245,4 @@ In diesem Lernprogramm zu Apache Storm lernen Sie anhand der Storm-Starter-Beisp
 [hdinsight-provision]: hdinsight-provision-clusters.md
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

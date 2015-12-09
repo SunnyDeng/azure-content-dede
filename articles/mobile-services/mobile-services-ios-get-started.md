@@ -18,6 +18,11 @@
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
@@ -35,9 +40,9 @@ In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfach
 
 ## Erstellen einer neuen iOS-App
 
-Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunden ist, eine einfache Schnellstartanleitung im Verwaltungsportal befolgen:
+Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunden ist, eine einfache Schnellstartanleitung im klassischen Azure-Portal befolgen:
 
-1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 2. Klicken Sie auf der Registerkarte "Schnellstart" unter **Eine Plattform wählen** auf **iOS**, und erweitern Sie die Option **Eine neue iOS-App erstellen**. Dadurch werden die Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen Dienst verbunden wird.
 
@@ -49,14 +54,14 @@ Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunde
 
 [AZURE.INCLUDE [mobile-services-ios-run-app](../../includes/mobile-services-ios-run-app.md)]
 
-<ol start="4"> <li><p>Klicken Sie im Verwaltungsportal auf die Registerkarte **DATEN** und dann auf die Tabelle **TodoItem**. Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.<p></li></ol></p>
+<ol start="4"><li><p>Zurück im [klassischen Azure-Portal] klicken Sie auf die Registerkarte **DATEN** und dann auf die Tabelle **TodoItems**. Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.<p></li></ol></p>
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
 * [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zur App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
 * [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
@@ -81,13 +86,13 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
 <!-- URLs. -->
 [Erste Schritte mit der Synchronisierung von Offlinedaten]: mobile-services-ios-get-started-offline-data.md
-[Hinzufügen von Authentifizierung zur App]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Hinzufügen von Authentifizierung zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-push.md
 
 
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET-Back-End-Version]: mobile-services-dotnet-backend-ios-get-started.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

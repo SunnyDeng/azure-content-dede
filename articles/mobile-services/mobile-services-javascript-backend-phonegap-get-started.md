@@ -50,7 +50,7 @@ Zum Abschluss dieses Lernprogramms ist Folgendes erforderlich:
 
 In diesem Abschnitt erstellen Sie eine neue PhoneGap-App, die mit Ihrem Mobile Service verbunden ist.
 
-1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1.  Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 2. Klicken Sie auf der Schnellstartregisterkarte auf **PhoneGap** unter **Plattform auswählen**, und erweitern Sie die Option **Neue PhoneGap-App erstellen**.
 
@@ -111,7 +111,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	> [AZURE.IMPORTANT]Änderungen an diesem Plattformprojekt werden überschrieben, falls das Hauptprojekt mit den PhoneGap-Tools neu erstellt wird. Nehmen Sie die Änderungen stattdessen im www-Stammverzeichnis des Projekts vor, wie im Abschnitt unten dargestellt.
 
-4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+4. Zurück im [klassischen Azure-Portal] klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-tab.png)
 
@@ -171,9 +171,9 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 <!-- URLs. -->
 [Hinzufügen von Authentifizierung zur App]: mobile-services-html-get-started-users.md
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
-[Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

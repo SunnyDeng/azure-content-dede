@@ -46,7 +46,7 @@ Zum Ausführen des C#-Abfragecodebeispiels benötigen Sie Folgendes:
 - Visual Studio 2013, Update 4 (oder höher). Microsoft bietet Visual Studio Community jetzt *kostenlos* an.
  - [Download von Visual Studio Community](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Weitere Optionen für kostenlose Visual Studio-Versionen](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Vorschauportal](http://portal.azure.com/) Sie durch die Installation von Visual Studio begleitet.
+ - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Portal](http://portal.azure.com/) Ihnen bei der Installation von Visual Studio hilft.
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -59,13 +59,13 @@ Zum Ausführen des C#-Abfragecodebeispiels benötigen Sie Folgendes:
 Zur Installation von Visual Studio haben Sie folgende Möglichkeiten:
 
 - Installieren Sie Visual Studio Community kostenlos, indem Sie in Ihrem Browser die Visual Studio-Produktwebseiten aufrufen, auf denen kostenlose Downloads und andere Optionen angeboten werden.
-- Lassen Sie sich vom [Azure-Vorschauportal](http://portal.azure.com/) zur Downloadwebseite führen, die als Nächstes beschrieben wird.
+- Lassen Sie sich vom [Azure-Portal](http://portal.azure.com/) zur Downloadwebseite führen, die als Nächstes beschrieben wird.
 
 
-### Visual Studio über das Azure-Vorschauportal
+### Visual Studio über das Azure-Portal
 
 
-1. Melden Sie sich über das [Azure-Vorschauportal](http://portal.azure.com/) unter http://portal.azure.com/ an.
+1. Melden Sie sich über das [Azure-Portal](http://portal.azure.com/) unter http://portal.azure.com/ an.
 
 2. Klicken Sie auf **ALLE DURCHSUCHEN*** > **SQL-Datenbanken**. Ein Blatt für die Suche nach Datenbanken wird geöffnet.
 
@@ -127,7 +127,7 @@ Unser C#-Beispiel verwendet die .NET Framework-Assembly **System.Configuration.d
 ## Schritt 4: Abrufen der Verbindungszeichenfolge
 
 
-Kopieren Sie im [Azure-Vorschauportal](http://portal.azure.com/) die Verbindungszeichenfolge, die für das Verbinden mit der SQL-Datenbank benötigt wird.
+Kopieren Sie im [Azure-Portal](http://portal.azure.com/) die Verbindungszeichenfolge, die für das Verbinden mit der SQL-Datenbank benötigt wird.
 
 Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Datenbank **AdventureWorksLT**.
 
@@ -316,7 +316,7 @@ Wir versuchen, das C#-Beispiel kurz zu halten. Dennoch haben wir Code zum Lesen 
 Das C#-Clientprogramm kann erst dann eine Verbindung mit Azure SQL-Datenbank herstellen, wenn die IP-Adresse des Clientcomputers der SQL-Datenbankfirewall hinzugefügt wurde. Das Programm gibt eine hilfreiche Fehlermeldung aus, in der die erforderliche IP-Adresse genannt wird.
 
 
-Sie können die IP-Adresse über das [Azure-Vorschauportal](http://portal.azure.com/) hinzufügen.
+Sie können die IP-Adresse über das [Azure-Portal](http://portal.azure.com/) hinzufügen.
 
 
 
@@ -358,4 +358,4 @@ Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstell
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

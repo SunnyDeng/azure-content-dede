@@ -69,8 +69,7 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 1. Öffnen Sie das Fenster **Server-Explorer** in Visual Studio.
 
-2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**.
-![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
+2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**. ![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. Melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
@@ -118,12 +117,10 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 	Die Speicherverbindungszeichenfolge ist ein Beispiel, das Platzhalter für den Namen des Speicherkontos und den Zugriffsschlüssel verwendet. Sie müssen dies durch eine Verbindungszeichenfolge mit dem Namen und Schlüssel des Speicherkontos ersetzen.
 
-	<pre class="prettyprint">&lt;connectionStrings&gt;
-	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" /&gt;
-	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
-	&lt;/connectionStrings&gt;</pre>
-
-	Die Speicher-Verbindungszeichenfolge hat den Namen AzureWebJobsStorage, da dies der Name ist, den das WebJobs SDK standardmäßig verwendet. Hier wird derselbe Name verwendet, sodass Sie nur einen Verbindungszeichenfolgenwert in der Azure-Umgebung festlegen müssen.
+	<pre class="prettyprint">&lt;connectionStrings>
+  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
+  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[Kontoname]</mark>;AccountKey=<mark>[Zugriffsschlüssel]</mark>"/>
+&lt;/connectionStrings></pre>Die Speicher-Verbindungszeichenfolge hat den Namen AzureWebJobsStorage, da dies der Name ist, den das WebJobs SDK standardmäßig verwendet. Hier wird derselbe Name verwendet, sodass Sie nur einen Verbindungszeichenfolgenwert in der Azure-Umgebung festlegen müssen.
 
 2. Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf Ihr Speicherkonto im Knoten **Speicher**, und klicken Sie anschließend auf **Eigenschaften**.
 
@@ -141,17 +138,7 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 6. Öffnen Sie die Datei *App.config* für das ContosoAdsWebJob-Projekt.
 
-	Die Datei enthält zwei Verbindungszeichenfolgen: eine für die Anwendungsdaten und eine für die Protokollierung. In diesem Lernprogramm verwenden Sie dasselbe Konto für beide Funktionen. Die Verbindungszeichenfolgen enthalten Platzhalter für die Speicherkontoschlüssel.
-  	<pre class="prettyprint">&lt;configuration&gt;
-    &lt;connectionStrings&gt;
-        &lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
-        &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
-        &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt;
-    &lt;/connectionStrings&gt;
-        &lt;startup&gt;
-            &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt;
-    &lt;/startup&gt;
-&lt;/configuration&gt;</pre>
+	Die Datei enthält zwei Verbindungszeichenfolgen: eine für die Anwendungsdaten und eine für die Protokollierung. In diesem Lernprogramm verwenden Sie dasselbe Konto für beide Funktionen. Die Verbindungszeichenfolgen enthalten Platzhalter für die Speicherkontoschlüssel. <pre class="prettyprint">&lt;configuration&gt; &lt;connectionStrings&gt; &lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[Kontoname]</mark>;AccountKey=<mark>[Zugriffsschlüssel]</mark>"/&gt; &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[Kontoname]</mark>;AccountKey=<mark>[Zugriffsschlüssel]</mark>"/&gt; &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt; &lt;/connectionStrings&gt; &lt;startup&gt; &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt; &lt;/startup&gt; &lt;/configuration&gt;</pre>
 
 	Standardmäßig sucht das WebJobs SDK nach Verbindungszeichenfolgen mit den Namen AzureWebJobsStorage und AzureWebJobsDashboard. Alternativ können Sie [beliebige Namen für die Verbindungszeichenfolgen vergeben und die Namen explizit an das `JobHost`-Objekt übergeben](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#config).
 
@@ -290,7 +277,7 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 ### Konfigurieren Sie die Web-App zur Verwendung Ihrer Azure SQL-Datenbank und Ihres Speicherkontos.
 
-Sie sollten es vermeiden [sensible Daten wie Verbindungszeichenfolgen in Dateien zu lagern, die in Quellcode-Repositorys gespeichert werden](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets). Azure bietet hierfür eine Möglichkeit: Sie können die Verbindungszeichenfolge und andere Einstellungswerte in der Azure-Umgebung setzen, und die Konfigurations-APIs von ASP.NET verwenden automatisch diese Werte, wenn die Anwendung in Azure ausgeführt wird. Sie können diese Werte in Azure über den **Server-Explorer**, das Portal, Windows PowerShell oder die plattformübergreifende Befehlszeilenschnittstelle festlegen. Weitere Informationen finden Sie unter [Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
+Sie sollten es vermeiden [sensible Daten wie Verbindungszeichenfolgen in Dateien zu lagern, die in Quellcode-Repositorys gespeichert werden](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets). Azure bietet hierfür eine Möglichkeit: Sie können die Verbindungszeichenfolge und andere Einstellungswerte in der Azure-Umgebung setzen, und die Konfigurations-APIs von ASP.NET verwenden automatisch diese Werte, wenn die Anwendung in Azure ausgeführt wird. Sie können diese Werte in Azure über den **Server-Explorer**, das Azure-Portal, Windows PowerShell oder die plattformübergreifende Befehlszeilenschnittstelle festlegen. Weitere Informationen finden Sie unter [Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
 
 In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verbindungszeichenfolgen in Azure.
 
@@ -326,11 +313,11 @@ In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verb
 
 11.	Aktualisieren Sie die Seite nach wenigen Sekunden, und die Miniaturansicht erscheint.
 
-	Wenn die Miniaturansicht nicht angezeigt wird, müssen Sie möglicherweise einen Moment warten, bis der WebJob neu gestartet wurde. Wird die Miniaturansicht auch nach einem längeren Zeitraum nicht angezeigt, wenn Sie die Seite aktualisieren, dann wurde der WebJob möglicherweise nicht automatisch gestartet. Wechseln Sie in diesem Fall auf der [Azure-Portalseite](https://manage.windowsazure.com) Ihrer Web-App auf die Registerkarte "WebJobs", und klicken Sie auf **Starten**.
+	Wenn die Miniaturansicht nicht angezeigt wird, müssen Sie möglicherweise einen Moment warten, bis der WebJob neu gestartet wurde. Wird die Miniaturansicht auch nach einem längeren Zeitraum nicht angezeigt, wenn Sie die Seite aktualisieren, dann wurde der WebJob möglicherweise nicht automatisch gestartet. Wechseln Sie in diesem Fall auf der Seite des [klassischen Portals](https://manage.windowsazure.com) Ihrer Web-App auf die Registerkarte „WebJobs“, und klicken Sie auf **Starten**.
 
 ### Anzeigen des WebJobs SDK-Dashboards
 
-1. Wählen Sie Ihre Web-App im [Azure-Portal](https://manage.windowsazure.com) aus.
+1. Wählen Sie Ihre Web-App im [klassischen Portal](https://manage.windowsazure.com) aus.
 
 2. Klicken Sie auf die Registerkarte **WebJobs**.
 
@@ -348,7 +335,7 @@ In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verb
 
 	Mit der Schaltfläche **Funktion abspielen** auf dieser Seite können Sie veranlassen, dass das WebJobs SDK-Framework die Funktion erneut aufruft, und können die an die Funktion übergebenen Daten zuvor ändern.
 
->[AZURE.NOTE]Nach Abschluss der Tests löschen Sie die Web-App und die SQL-Datenbankinstanz. Die Web-App ist kostenlos, aber für die SQL-Datenbankinstanz und das Speicherkonto fallen Kosten an (minimal aufgrund der kleinen Größe). Wenn Sie die Web-App laufen lassen, kann außerdem jeder, der die URL findet, Werbungen erstellen und anzeigen. Navigieren Sie im Azure-Portal zur Registerkarte **Dashboard** für Ihre Web-App, und klicken Sie dann am unteren Seitenrand auf **Löschen**. Dort finden Sie auch ein Kontrollkästchen, um die SQL-Datenbankinstanz ebenfalls zu löschen. Klicken Sie stattdessen auf **Anhalten**, um nur vorübergehend zu verhindern, dass andere Personen auf die Web-App zugreifen. In diesem Fall entstehen weiterhin Kosten für SQL-Datenbank und Speicherkonto. Sie können die SQL-Datenbank und das Speicherkonto auf ähnliche Weise löschen, wenn Sie diese nicht mehr benötigen.
+>[AZURE.NOTE]Nach Abschluss der Tests löschen Sie die Web-App und die SQL-Datenbankinstanz. Die Web-App ist kostenlos, aber für die SQL-Datenbankinstanz und das Speicherkonto fallen Kosten an (minimal aufgrund der kleinen Größe). Wenn Sie die Web-App laufen lassen, kann außerdem jeder, der die URL findet, Werbungen erstellen und anzeigen. Navigieren Sie im klassischen Portal zur Registerkarte **Dashboard** für Ihre Web-App, und klicken Sie dann unten auf der Seite auf **Löschen**. Dort finden Sie auch ein Kontrollkästchen, um die SQL-Datenbankinstanz ebenfalls zu löschen. Klicken Sie stattdessen auf **Anhalten**, um nur vorübergehend zu verhindern, dass andere Personen auf die Web-App zugreifen. In diesem Fall entstehen weiterhin Kosten für SQL-Datenbank und Speicherkonto. Sie können die SQL-Datenbank und das Speicherkonto auf ähnliche Weise löschen, wenn Sie diese nicht mehr benötigen.
 
 ## <a id="create"></a>Erstellen der Anwendung von Grund auf
 
@@ -465,7 +452,7 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 	- *Global.asax.cs*  
 	- Im Ordner *Controllers*: *AdController.cs*
 	- Im Ordner *Views\\Shared*: Datei *\_Layout.cshtml*
-	- Im Ordner *Views\\Home*: *Index.cshtml*
+- Im Ordner *Views\\Home*: *Index.cshtml*
 	- Im Ordner *Views\\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien<br/><br/>
 
 3. Fügen Sie im Projekt ContosoAdsWebJob die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
@@ -802,7 +789,7 @@ Um sicherzustellen, dass Ihre WebJobs jederzeit und auf allen Instanzen Ihrer We
 
 ### Verwenden des WebJobs-SDK außerhalb von WebJobs
 
-Programme, die das WebJobs SDK verwenden, müssen nicht in einem WebJob in Azure ausgeführt werden. Sie können lokal ausgeführt werden und auch in anderen Umgebungen, wie z. B. einer Cloud-Dienst-Workerrolle oder einem Windows-Dienst. Sie erreichen das Webaufträge-SDK-Dashboard jedoch nur über eine Azure-Web-App. Um das Dashboard zu verwenden, müssen Sie die Web-App mit dem von Ihnen verwendeten Speicherkonto verbinden, indem Sie die AzureWebJobsDashboard-Verbindungszeichenfolge auf der Registerkarte **Konfigurieren** im Azure-Portal festlegen. Dann können Sie das Dashboard über die folgende URL abrufen:
+Programme, die das WebJobs SDK verwenden, müssen nicht in einem WebJob in Azure ausgeführt werden. Sie können lokal ausgeführt werden und auch in anderen Umgebungen, wie z. B. einer Cloud-Dienst-Workerrolle oder einem Windows-Dienst. Sie erreichen das Webaufträge-SDK-Dashboard jedoch nur über eine Azure-Web-App. Um das Dashboard zu verwenden, müssen Sie die Web-App mit dem von Ihnen verwendeten Speicherkonto verbinden, indem Sie die AzureWebJobsDashboard-Verbindungszeichenfolge auf der Registerkarte **Konfigurieren** im klassischen Portal festlegen. Dann können Sie das Dashboard über die folgende URL abrufen:
 
 https://{webappname}.scm.azurewebsites.net/azurejobs/#/functions
 
@@ -812,4 +799,4 @@ Weitere Informationen finden Sie unter [Einrichten eines Dashboards für die lok
 
 Weitere Informationen finden Sie unter [Dokumentationsressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226).
 
-<!----HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

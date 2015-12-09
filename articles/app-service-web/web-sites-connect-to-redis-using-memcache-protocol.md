@@ -37,7 +37,7 @@ Nachdem Sie die skalierbare WordPress-Website und eine Redis-Cache-Instanz berei
 
 ## Aktivieren des Web-Apps-Memcache-Shims
 
-Zum Konfigurieren des Memcache-Shims müssen Sie drei Anwendungseinstellungen erstellen. Dies kann auf unterschiedliche Weise erfolgen: im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715), im [alten Portal][3], mithilfe von [Azure-PowerShell-Cmdlets][5] oder über die [Azure-Befehlszeilenschnittstelle][5]. In diesem Artikel verwende ich das [Azure-Portal][4] zum Festlegen der Anwendungseinstellungen. Die folgenden Werte können vom Blatt **Einstellungen** Ihrer Redis Cache-Instanz abgerufen werden.
+Zum Konfigurieren des Memcache-Shims müssen Sie drei Anwendungseinstellungen erstellen. Dies kann auf unterschiedliche Weise erfolgen: im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715), im [klassischen Portal][3], mithilfe von [Azure PowerShell-Cmdlets][5] oder über die [Azure-Befehlszeilenschnittstelle][5]. In diesem Artikel verwende ich das [Azure-Portal][4] zum Festlegen der Anwendungseinstellungen. Die folgenden Werte können vom Blatt **Einstellungen** Ihrer Redis Cache-Instanz abgerufen werden.
 
 ![Azure Redis Cache – Blatt "Einstellungen"](./media/web-sites-connect-to-redis-using-memcache-protocol/1-azure-redis-cache-settings.png)
 
@@ -180,7 +180,6 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 
 ## Änderungen
 * Hinweise zur Änderung von Websites zu App Service finden Sie unter: [Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 [0]: http://bit.ly/1F0m3tw
@@ -198,4 +197,4 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 [12]: /services/cache/
 [13]: http://memcached.org
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

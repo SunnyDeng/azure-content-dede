@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/17/2015"
+	ms.date="11/29/2015"
 	ms.author="awills"/>
 
 # Application Insights: Sprachen und Plattformen
@@ -23,7 +23,7 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 
 ## Sprachen
 
-+ [C#|VB (.NET)](app-insights-start-monitoring-app-health-usage.md)
++ [C#|VB (.NET)](app-insights-asp-net.md)
 + [C#|VB (Windows Store)](app-insights-windows-get-started.md)
 + [C++ (Windows Store)](app-insights-windows-cpp.md)
 + [Java](app-insights-java-get-started.md)
@@ -37,7 +37,7 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 ## Plattformen
 
 + [Angular](https://www.npmjs.com/package/angular-applicationinsights)
-+ [ASP.NET](app-insights-start-monitoring-app-health-usage.md)
++ [ASP.NET](app-insights-asp-net.md)
 + [ASP.NET – Für Apps, die bereits aktiv sind.](app-insights-monitor-performance-live-website-now.md)
 + [ASP.NET 5](app-insights-asp-net-five.md)
 + [Android](https://github.com/Microsoft/ApplicationInsights-Android)
@@ -45,6 +45,7 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 + [Azure Cloud Services](app-insights-cloudservices.md) – Einschließlich Web- und Workerrollen.
 + [Concrete](https://github.com/fidmor89/appInsights-Concrete)
 + [Microsoft Dynamics CRM Online](app-insights-sample-mscrm.md)
++ [Docker](app-insights-docker.md)
 + [Drupal](https://github.com/fidmor89/AppInsights-Drupal)
 + [iOS](https://github.com/Microsoft/ApplicationInsights-iOS)
 + [J2EE](app-insights-java-get-started.md)
@@ -79,13 +80,4 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 
 Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie eins erstellen. Sehen Sie sich den Code der vorhandenen SDKs an, die im [Application Insights-SDK-Projekt auf GitHub](https://github.com/Microsoft/AppInsights-Home) aufgeführt sind.
 
-
-
-
-[Cordova](http://cordova.apache.org/)
-
-[Windows Store-Apps mit JavaScript](https://msdn.microsoft.com/library/windows/apps/br211385.aspx)
-
-<!--Link references-->
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

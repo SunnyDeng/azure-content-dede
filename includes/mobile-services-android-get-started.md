@@ -31,7 +31,7 @@ Sie können die Anwendung mit dem Emulator oder einem echten Gerät ausführen.
 
 	> [AZURE.NOTE]Sie können den Code überprüfen, der auf Ihren Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der ToDoActivity.java-Datei.
 
-8. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+8. Zurück im klassischen Azure-Portal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	![](./media/mobile-services-android-get-started/mobile-data-tab1.png)
 
@@ -39,4 +39,4 @@ Sie können die Anwendung mit dem Emulator oder einem echten Gerät ausführen.
 
    	![](./media/mobile-services-android-get-started/mobile-data-browse.png)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

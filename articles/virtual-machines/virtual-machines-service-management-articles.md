@@ -24,7 +24,7 @@
 
 ## Erste Schritte
 
-[Erstellen Sie einen virtuellen Windows-Computer im Azure-Portal](virtual-machines-windows-tutorial-classic-portal.md)
+[Erstellen eines virtuellen Computers unter Windows im klassischen Azure-Portal](virtual-machines-windows-tutorial-classic-portal.md)
 
 [Erstellen eines benutzerdefinierten virtuellen Computers mit Windows in Azure](virtual-machines-windows-create-custom.md)
 
@@ -152,4 +152,4 @@
 
 [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

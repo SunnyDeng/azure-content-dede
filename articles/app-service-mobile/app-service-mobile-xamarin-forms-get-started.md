@@ -18,9 +18,7 @@
 
 #Erstellen einer Xamarin.Forms-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -38,7 +36,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein Mac, auf dem [Xcode] Version 7.0 oder höher und [Xamarin Studio] installiert ist. Wenn Sie beabsichtigen, Ihre App mit Visual Studio auf einem Windows-Computer zu erstellen, benötigen Sie weiterhin Zugriff auf einen vernetzten Mac.
  
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751&appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Erstellen eines neuen Azure Mobile App-Back-Ends
 
@@ -84,7 +82,7 @@ Vor diesem Hintergrund fahren wir fort.
 
 	![][8]
 
-###(Optional) Ausführen des iOS-Projekts
+##(Optional) Ausführen des iOS-Projekts
 
 Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin iOS-Projekts für iOS-Geräte. Wenn Sie nicht mit iOS-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
 
@@ -107,7 +105,7 @@ Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Bac
 
 > [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei „TodoItemManager.cs“ des Portable Class Library-Projekts Ihrer Projektmappe.
 
-###(Optional) Ausführen des Android-Projekts
+##(Optional) Ausführen des Android-Projekts
 
 Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin Android-Projekts für Android. Wenn Sie nicht mit Android-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
 
@@ -131,7 +129,7 @@ Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Bac
 > [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei „TodoItemManager.cs“ des Portable Class Library-Projekts Ihrer Projektmappe.
 
 
-###(Optional) Ausführen des Windows-Projekts
+##(Optional) Ausführen des Windows-Projekts
 
 
 Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin WinApp-Projekts für Windows-Geräte. Wenn Sie nicht mit Windows-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
@@ -179,4 +177,4 @@ Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Bac
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

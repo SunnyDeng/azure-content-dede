@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers | Microsoft Azure" 
-	description="Erfahren Sie mehr über den DocumentDB-Abfrage-Explorer, ein Azure-Vorschauportaltool zum Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung." 
+	description="Erfahren Sie mehr über den DocumentDB-Abfrage-Explorer, ein Azure-Portaltool zum Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung." 
 	services="documentdb" 
 	authors="AndrewHoh" 
 	manager="jhubbard" 
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article"
-	ms.date="09/08/2015" 
+	ms.date="12/01/2015" 
 	ms.author="anhoh"/>
 
 # Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers #
 
-Dieser Artikel bietet eine Übersicht über den Abfrage-Explorer von [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/), ein Microsoft Azure-Vorschauportaltool, mit dem Sie Abfragen in einer DocumentDB-Sammlung erstellen, bearbeiten und ausführen können.
+Dieser Artikel bietet eine Übersicht über den Abfrage-Explorer von [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/), ein Microsoft Azure-Portaltool, mit dem Sie Abfragen in einer DocumentDB-Sammlung erstellen, bearbeiten und ausführen können.
 
 Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
@@ -78,4 +78,4 @@ Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sa
 - Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](documentdb-sql-query.md).
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

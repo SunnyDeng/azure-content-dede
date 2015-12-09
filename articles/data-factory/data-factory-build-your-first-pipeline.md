@@ -30,7 +30,7 @@ Dieser Artikel hilft Ihnen beim Einstieg in die Erstellung Ihrer ersten Azure Da
 ## Übersicht über das Tutorial
 Dieses Tutorial führt Sie durch die Schritte zum Erstellen Ihrer ersten Data Factory mit einer Pipeline. Sie erstellen eine Pipeline von Grund auf neu und geben dabei alle erforderlichen Ressourcen an.
 
-Wenn Sie die verschiedenen Funktionen der Data Factory schnell kennenlernen möchten, ohne eine Pipeline von Grund auf zu erstellen, können Sie die Beispiele verwenden, die wir im Azure-Vorschauportal bereitstellen. Unter [Azure Data Factory-Update: Vereinfachte Beispielbereitstellung](http://azure.microsoft.com/blog/2015/04/24/azure-data-factory-update-simplified-sample-deployment/) erfahren Sie, wie Sie mithilfe des Azure-Vorschauportals einen auf einem Beispiel basierenden Anwendungsfall bereitstellen.
+Wenn Sie die verschiedenen Funktionen der Data Factory schnell kennenlernen möchten, ohne eine Pipeline von Grund auf zu erstellen, können Sie die Beispiele verwenden, die wir im Azure-Portal bereitstellen. Unter [Azure Data Factory-Update: Vereinfachte Beispielbereitstellung](http://azure.microsoft.com/blog/2015/04/24/azure-data-factory-update-simplified-sample-deployment/) erfahren Sie, wie Sie mithilfe des Azure-Portals einen auf einem Beispiel basierenden Anwendungsfall bereitstellen.
 
 ## Voraussetzungen
 Bevor Sie mit diesem Tutorial beginnen, benötigten Sie Folgendes:
@@ -168,8 +168,8 @@ Bevor Sie mit dem Tutorial beginnen, müssen Sie den Azure-Speicher mit Dateien 
 
 Gehen Sie wie folgt vor:
 
-- Klicken Sie oben auf den Link [Data Factory-Editor verwenden](data-factory-build-your-first-pipeline-using-editor.md), um das Lernprogramm mithilfe des Data Factory-Editors auszuführen, der Teil des Azure-Portals ist.
+- Klicken Sie oben auf den Link [Data Factory-Editor verwenden](data-factory-build-your-first-pipeline-using-editor.md), um das Tutorial mithilfe des Data Factory-Editors auszuführen, der Teil des klassischen Azure-Portals ist.
 - Klicken Sie oben auf den Link [PowerShell verwenden](data-factory-build-your-first-pipeline-using-powershell.md), um das Lernprogramm mit Azure PowerShell auszuführen.
 - Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-build-your-first-pipeline-using-vs.md), um das Tutorial mit Visual Studio auszuführen. 
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

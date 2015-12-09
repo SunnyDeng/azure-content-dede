@@ -19,7 +19,7 @@
 
 ## Konfigurieren von Scheduler mit dem Azure-Portal zur schnellen und einfachen Auftragserstellung
 
-Für dieses Lernprogramm benötigen Sie ein Azure-Konto mit aktiviertem Azure Scheduler-Feature. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Informationen hierzu finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+Für dieses Lernprogramm benötigen Sie ein Azure-Konto mit aktiviertem Azure Scheduler-Feature. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Informationen hierzu finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Erste Schritte
 
@@ -261,4 +261,4 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

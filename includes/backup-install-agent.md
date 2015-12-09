@@ -1,6 +1,6 @@
 ## Herunterladen, Installieren und Registrieren des Azure Backup-Agents
 
-Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (Windows Server, Windows-Client oder Data Protection Manager-Server) ein Agent installiert werden, der das Sichern von Daten und Anwendungen in Azure ermöglicht.
+Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem Windows-Computer (Windows Server, Windows-Client oder System Center Data Protection Manager-Server oder Azure Backup Server-Computer) ein Agent installiert werden, der das Sichern von Daten und Anwendungen in Azure ermöglicht.
 
 1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
 
@@ -48,4 +48,4 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (
 
     ![Konfigurieren von Azure Backup](./media/backup-install-agent/configure.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

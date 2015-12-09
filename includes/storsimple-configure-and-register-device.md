@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 9/17/15-->
+<!--author=alkohli last changed: 12/01/15-->
 
 
 #### So konfigurieren und registrieren Sie das Gerät
@@ -61,7 +61,7 @@
 
 13. Schließen Sie die serielle Konsole.
 
-14. Kehren Sie zum Verwaltungsportal zurück, und führen Sie die folgenden Schritte aus:
+14. Kehren Sie zum klassischen Azure-Portal zurück, und führen Sie die folgenden Schritte aus:
   1. Doppelklicken auf Ihren StorSimple-Manager-Dienst, um auf die Seite **Schnellstart** zuzugreifen.
   2. Klicken Sie auf **View connected devices**.
   3. Vergewissern Sie sich auf der Seite **Geräte**, dass das Gerät erfolgreich mit dem Dienst verbunden wurde, indem Sie seinen Status überprüfen. Als Gerätestatus sollte **Online** angezeigt werden. Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird.
@@ -76,4 +76,4 @@ Wenn das Gerät erfolgreich registriert wurde, jedoch nicht online geschaltet wi
 
 Sie können sich [hier](http://azure.microsoft.com/documentation/videos/initialize-the-storsimple-appliance/) ein Video anschauen, dass die Konfiguration und Registrierung Ihres Geräts über Windows PowerShell für StorSimple demonstriert.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

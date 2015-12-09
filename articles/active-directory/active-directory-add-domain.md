@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Hinzufügen eigener Domänennamen zu Azure AD | Microsoft Azure"
-	description="In diesem Thema wird erläutert, wie Sie Ihren eigenen Domänennamen und dazugehörige Informationen in Azure AD hinzufügen."
+	pageTitle="Hinzufügen eines eigenen Domänennamens zu Azure Active Directory | Microsoft Azure"
+	description="Hier wird erläutert, wie Sie Ihren eigenen Domänennamen und zugehörige Informationen zu Azure Active Directory hinzufügen."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/16/2015"
+	ms.date="12/01/2015"
 	ms.author="curtand"/>
 
-# Fügen Sie Ihren eigenen Domänennamen in Azure AD hinzu
+# Hinzufügen eines eigenen Domänennamens zu Azure Active Directory
 
-Wenn Sie sich für einen Microsoft Clouddienst anmelden, wird Ihnen ein Domänenname im folgenden Format ausgegeben: contoso.onmicrosoft.com. Sie können diesen anfänglichen Domänennamen weiterhin verwenden, oder Sie können Ihren eigenen benutzerdefinierten Domänennamen zum Clouddienst hinzufügen. In diesem Thema wird erläutert, wie Sie Ihren eigenen Domänennamen und dazugehörige Informationen hinzufügen.
+Wenn Sie sich für einen Microsoft Clouddienst anmelden, wird Ihnen ein Domänenname im folgenden Format ausgegeben: contoso.onmicrosoft.com. Sie können diesen anfänglichen Domänennamen weiterhin verwenden, oder Sie können Ihren eigenen benutzerdefinierten Domänennamen zum Clouddienst hinzufügen. In diesem Thema wird erläutert, wie Sie Ihren eigenen Domänennamen und zugehörige Informationen zu Azure Active Directory (Azure AD) hinzufügen.
 
 Für Office 365-Benutzer könnten folgende Themen ebenfalls von Interesse sein:
 
@@ -38,9 +38,9 @@ Nachdem Sie bei der Registrierung den Namen für den Clouddienst ausgewählt hab
 
 Wenn Ihre Organisation bereits über einen benutzerdefinierten Domänennamen verfügt, können Sie ihn mit allen abonnierten Microsoft-Onlinediensten zu Ihrem Azure AD-Verzeichnis hinzufügen. Nachdem Sie Ihren Domänennamen in Azure AD hinzugefügt haben, können Sie die Zuordnung Ihres Domänennamens mit verschiedenen Clouddiensten starten.
 
-Sie können bis zu 900 Domänennamen für Ihren Azure AD-Mandanten verwenden, entweder:
+Sie können Ihrem Azure AD-Verzeichnis bis zu 900 Domänennamen hinzufügen. Dazu verwenden Sie:
 
-- Das Azure-Verwaltungsportal, das Office 365-Portal oder das Microsoft Intune-Portal.
+- Das klassische Azure-Portal, das Office 365-Portal oder das Microsoft Intune-Portal.
 - Das Azure Active Directory-Modul für Windows PowerShell. Weitere Informationen zu den Cmdlets. die Sie dafür verwenden können, finden Sie unter [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx).
 
 Sie müssen bereits einen Domänennamen registriert und die Anmeldeinformationen für Ihre Domänennamen-Registrierungsstelle vorliegen haben (z. B. Go Daddy oder Register.com).
@@ -51,13 +51,13 @@ Wenn Sie einmaliges Anmelden mit dem Clouddienst verwenden möchten, empfehlen w
 
 > [AZURE.NOTE]Sie verwenden Office 365? Sobald Sie Ihre Domäne eingerichtet haben, können Sie mit dem Erstellen von E-Mail-Adressen, Lync Online-Konten und Verteilergruppen beginnen, die Ihren benutzerdefinierten Domänennamen verwenden. Sie können auch Ihren Domänennamen für eine öffentliche, auf SharePoint Online gehostete Website verwenden.
 
-- [Hinzufügen und Überprüfen eines Domänennamens mithilfe des Azure Verwaltungsportals](#add-and-verify-a-domain-using-the-azure-management-portal)
+- [Hinzufügen und Überprüfen eines Domänennamens mithilfe des klassischen Azure-Portals](#add-and-verify-a-domain-using-the-azure-management-portal)
 - [Bearbeiten Sie DNS-Einträge für Ihre Clouddienste](#edit-dns-records-for-your-cloud-services)
 - [Überprüfen einer Domäne bei einer Domänennamen-Registrierungsstelle](#verify-a-domain-at-any-domain-name-registrar)
 
-### Hinzufügen eines Domänennamens mithilfe des Azure-Verwaltungsportals
+### Hinzufügen und Überprüfen eines Domänennamens mithilfe des klassischen Azure-Portals
 
-1. Klicken Sie im Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation. Sie können einen der folgenden Schritte unternehmen:
+1. Klicken Sie im klassischen Azure-Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation. Sie können einen der folgenden Schritte ausführen:
     1. Klicken Sie auf der Standardverzeichnisseite auf **Domäne hinzufügen** im Abschnitt **Verbesserung der Anmeldeerfahrung für Benutzer**.
 2. Klicken Sie auf **Domänen**, und klicken Sie dann auf **Hinzufügen eine Kundendomäne** oder auf die Schaltfläche **Hinzufügen**.
 2. Auf der Seite **Domäne hinzufügen** geben Sie den Domänennamen ein, den Sie hinzufügen möchten, und führen Sie einen der folgenden Schritte aus:
@@ -79,7 +79,7 @@ Nachdem Sie Ihren benutzerdefinierten Domänennamen hinzugefügt und überprüft
 
 Wenn Sie den Assistenten **Hinzufügen einer Domäne** gerade abgeschlossen haben, klicken Sie auf **DNS-Einträge konfigurieren**. Gehen Sie andernfalls folgendermaßen vor:
 
-1. Klicken Sie im linken Bereich im Portal auf **Domänen**.
+1. Klicken Sie im klassischen Azure-Portal im linken Bereich auf **Domänen**.
 2. Abhängig vom verwendeten Portal klicken Sie auf den Domänennamen, den Sie einrichten möchten, und klicken Sie dann entweder auf **DNS-Einstellungen** oder **DNS-Einstellungen anzeigen**. Die Seite **DNS-Einstellungen** listet die DNS-Einträge für den Clouddienst auf.
 
     Wenn Sie einen Dienst konfigurieren möchten, den Sie auf der Registerkarte "DNS-Einstellungen" nicht sehen, überprüfen Sie Ihre Auswahl der Domänendienste, um sicherzugehen, dass Sie diesen Dienst für diesen Domänennamen ausgewählt haben. Informationen zum Ändern der Einstellungen, z. B. zum Hinzufügen von Lync Online, finden Sie unter Festlegen der Dienste, die Sie mit Ihrer Domäne verwenden.
@@ -103,18 +103,18 @@ Je nach verwendetem Portal, das Sie zur Verwaltung Ihres Azure AD-Verzeichnisses
 Wenn Sie Microsoft Intune oder das Azure-Kontoportal verwenden:
 
 1. Suchen Sie in der Liste der Domänennamen auf der Seite **Domänen** die Domäne, die Sie überprüfen möchten. Klicken Sie in der Spalte **Status** auf **Klicken Sie zum Überprüfen der Domäne**.
-2. Auf der Seite **Domäne überprüfen** wählen Sie in der Dropdown-Liste **Anweisungen zur Durchführung dieses Schritts mit:** Ihren DNS-Hostinganbieter aus. Wenn Ihr Anbieter nicht in der Liste angezeigt wird, wählen Sie **Allgemeine Anweisungen**.
-3. In der Dropdown-Liste **Bestätigungsmethode wählen:** wählen Sie **TXT-Eintrag hinzufügen (bevorzugte Methode)** oder **MX-Datensatz hinzufügen (alternative Methode)**.
+2. Auf der Seite **Domäne überprüfen** wählen Sie in der Dropdownliste **Anweisungen zur Durchführung dieses Schritts mit:** Ihren DNS-Hostinganbieter aus. Wenn Ihr Anbieter nicht in der Liste angezeigt wird, wählen Sie **Allgemeine Anweisungen**.
+3. In der Dropdownliste **Bestätigungsmethode wählen:** wählen Sie **TXT-Eintrag hinzufügen (bevorzugte Methode)** oder **MX-Datensatz hinzufügen (alternative Methode)**.
 
     Wenn Ihr DNS-Hostinganbieter das Erstellen von TXT-Datensätzen ermöglicht, empfehlen wir einen TXT-Eintrag zur Überprüfung. Warum? TXT-Einträge lassen sich einfach erstellen und bergen nicht die Gefahr, die E-Mail-Übermittlung zu beeinträchtigen, wenn versehentlich ein falscher Wert eingegeben wird.
 
 4. Aus der Tabelle kopieren oder notieren Sie die Informationen **Ziele oder Verweise auf die Adresse**.
 
-Wenn Sie das Verwaltungsportal verwenden:
+Wenn Sie das klassische Azure-Portal verwenden:
 
-1. Klicken Sie im Portal auf **Active Directory**, klicken Sie auf den Namen des Verzeichnisses, klicken Sie auf **Domänen**.
+1. Klicken Sie im klassischen Azure-Portal auf **Active Directory**, klicken Sie auf den Namen des Verzeichnisses, und klicken Sie dann auf **Domänen**.
 2. In der Liste der Domänennamen auf der Seite **Domänen** klicken Sie auf die Domäne, die Sie überprüfen möchten, und klicken Sie dann auf **Überprüfen**.
-2. In der Dropdown-Liste **Datensatztyp** auf der Seite **Überprüfen** wählen Sie entweder **TXT-Eintrag** oder **MX-Eintrag**.
+2. In der Dropdownliste **Datensatztyp** auf der Seite **Überprüfen** wählen Sie entweder **TXT-Eintrag** oder **MX-Eintrag**.
 3. Kopieren oder notieren Sie die darunter angegebenen Informationen.
 
 #### Hinzufügen eines DNS-Eintrags bei Ihrer Domänennamen-Registrierungsstelle
@@ -143,7 +143,7 @@ Nachdem Sie entweder den TXT- oder den MX-Eintrag erstellt und sich von der Webs
 
 Nachdem der für Ihre Domäne erstellte Eintrag erfolgreich über das DNS-System weitergegeben wurde, führen Sie Folgendes zum Beenden der Überprüfung Ihrer Domäne mit Azure AD aus.
 
-1. Klicken Sie im Portal auf **Domänen**.
+1. Klicken Sie im klassischen Azure-Portal in Azure Active Directory auf **Domänen**.
 2. Suchen Sie in der Liste **Domänen** die Domäne, die Sie überprüfen möchten, und klicken Sie dann je nach verwendetem Portal entweder auf **Klicken Sie zum Überprüfen der Domäne** oder auf **Überprüfen**.
 3. Befolgen Sie die Anweisungen zum Abschließen des Überprüfungsprozesses.
     - Bei erfolgreicher Domänenüberprüfung werden Sie benachrichtigt, dass Ihre Domäne zu Ihrem Konto hinzugefügt wurde.
@@ -157,7 +157,7 @@ Nachdem Sie Ihre Domäne überprüft haben, können Sie sie so konfigurieren, da
 
 Nachdem Sie Ihren Domänennamen in Azure AD hinzugefügt haben, können Sie den Domänennamen ändern, der standardmäßig bei der Erstellung eines neuen Benutzerkontos angezeigt wird. Gehen Sie dazu folgendermaßen vor:
 
-1. Klicken Sie auf der Portalseite in der oberen linken Ecke auf den Namen Ihrer Organisation.
+1. Klicken Sie im klassischen Azure-Portal in der oberen linken Ecke auf den Namen Ihrer Organisation.
 2. Klicken Sie auf **Bearbeiten**.
 3. Wählen Sie einen neuen Standard-Domänennamen, wie z. B. den benutzerdefinierten Domänennamen, den Sie hinzugefügt haben.
 
@@ -173,7 +173,7 @@ Bevor Sie einen Domänennamen entfernen, wird empfohlen, dass Sie die folgende I
 
 So entfernen Sie einen Domänennamen:
 
-1. Klicken Sie im linken Bereich auf der Portalseite auf **Domänen**.
+1. Klicken Sie im klassischen Azure-Portal in Azure AD im linken Bereich auf **Domänen**.
 2. Wählen Sie auf der Seite **Domänen** den Domänennamen, den Sie entfernen möchten, und klicken Sie dann auf **Domäne entfernen**.
 3. Auf der Seite **Domäne entfernen** klicken Sie auf **Ja**.
 
@@ -197,7 +197,7 @@ Darüber hinaus müssen die Einstellungsinformationen auf der Website der Regist
 
 ### Ich kann meinen Domänennamen nicht überprüfen. Wie kann ich herausfinden, was falsch ist?
 
-Eine Möglichkeit zum Identifizieren von Problemen ist die Verwendung des Problembehandlungs-Assistenten für Domänen. Gehen Sie folgendermaßen vor, um den Assistenten zu starten: Klicken Sie im Clouddienst-Portal auf der Administratorenseite auf **Domänen**, und doppelklicken Sie dann auf den Domänennamen, den Sie überprüfen möchten. Klicken Sie unter **Problembehandlung** auf **Domänenproblembehandlung**.
+Eine Möglichkeit zum Identifizieren von Problemen ist die Verwendung des Problembehandlungs-Assistenten für Domänen. Gehen Sie folgendermaßen vor, um den Assistenten zu starten: Klicken Sie im klassischen Azure-Portal auf der Administratorenseite auf **Domänen**, und doppelklicken Sie dann auf den Domänennamen, den Sie überprüfen möchten. Klicken Sie unter **Problembehandlung** auf **Domänenproblembehandlung**.
 
 Der Assistent zur Problembehandlung fragt Sie ab, an welcher Stelle des Überprüfungsprozesses Sie sich befinden und gibt Ihnen dann Informationen, die Ihnen beim Abschließen der Überprüfung helfen.
 
@@ -212,4 +212,4 @@ Wenn Sie Ihren benutzerdefinierten Domänennamen zum Clouddienst hinzufügen, na
 - [Als Organisation für Azure registrieren](sign-up-organization.md)
 - [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

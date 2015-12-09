@@ -92,7 +92,7 @@ Solange sich die In-Memory-Features in der Vorschau befinden, müssen einige Asp
 
 ## A: Installieren des Beispiels für In-Memory OLTP
 
-Sie können im [Azure-Vorschauportal](http://portal.azure.com/) die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks erstellen. Anhand der Schritte in diesem Abschnitt wird erläutert, wie Sie anschließend Ihre AdventureWorksLT-Datenbank wie folgt erweitern können:
+Sie können im [Azure-Portal](http://portal.azure.com/) die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks erstellen. Anhand der Schritte in diesem Abschnitt wird erläutert, wie Sie anschließend Ihre AdventureWorksLT-Datenbank wie folgt erweitern können:
 
 - In-Memory-Tabellen
 - Systemintern kompilierte gespeicherte Prozedur
@@ -100,7 +100,7 @@ Sie können im [Azure-Vorschauportal](http://portal.azure.com/) die Beispieldate
 
 #### Installationsschritte
 
-1. Erstellen Sie im [Azure-Vorschauportal](http://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
+1. Erstellen Sie im [Azure-Portal](http://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
  - Detaillierte Anleitungen finden Sie unter [Erstellen Ihrer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
 2. Stellen Sie eine Verbindung mit [SQL Server Management Studio (SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx) her.
@@ -525,4 +525,4 @@ Wenn eine Datenbank eine der folgenden Arten von In-Memory OLTP-Objekten oder -T
 
 - [Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

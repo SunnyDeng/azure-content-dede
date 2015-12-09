@@ -57,11 +57,11 @@ Zum Abschließen dieses Tutorials müssen folgende Voraussetzungen erfüllt sein
 
 ## Erstellen einer neuen HTML-App
 
-Sobald Sie den mobilen Dienst erstellt haben, können Sie einem einfachen Schnellstart im Verwaltungsportal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung zum mobilen Dienst zu ändern.
+Sobald Sie den mobilen Dienst erstellt haben, können Sie einer einfachen Schnellstartanleitung im klassischen Azure-Portal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung mit dem mobilen Dienst zu ändern.
 
 In diesem Abschnitt erstellen Sie eine neue HTML-App, die mit dem mobilen Dienst verbunden ist.
 
-1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1.  Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 
 2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue HTML-App erstellen**.
@@ -106,9 +106,9 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
    	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
 
-	> [AZURE.NOTE]Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei „page.js“ finden und prüfen.
+	> [AZURE.NOTE]Sie können den Code, der zum Abfragen und Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei „page.js“ finden und prüfen.
 
-4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+4. Zurück im [klassischen Azure-Portal] klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	![][11]
 
@@ -147,11 +147,11 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 <!-- URLs. -->
 [Hinzufügen von Authentifizierung zur App]: mobile-services-html-get-started-users.md
 
-[Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Microsoft Web Platform Installer]: http://go.microsoft.com/fwlink/p/?LinkId=286333
 [neueste Version von Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
 [Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: mobile-services-html-how-to-use-client-library.md
 [Cross-origin resource sharing]: http://msdn.microsoft.com/library/azure/dn155871.aspx
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

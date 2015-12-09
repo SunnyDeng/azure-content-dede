@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Azure Site Recovery: Leistungs- und Skalierungstest: lokal zu lokal"
-	description="Dieser Artikel beschäftigt sich mit dem Testen der replikationsbedingten Leistungsauswirkungen durch Azure Site Recovery in einer Lokal-zu-Lokal-Bereitstellung."
-	services="site-recovery"
+	pageTitle="Azure Site Recovery: Ergebnisse von Leistungs- und Skalierungstests für die Hyper-V-Replikation vom Typ „Lokal zu lokal“"
+	description="Dieser Artikel bietet Informationen zu Leistungstests für die Replikation zwischen lokalen Standorten mithilfe von Azure Site Recovery."
+	services="site-recovery" 
 	documentationCenter=""
-	authors="csilauraa"
+	authors="rayne-wiselman"
 	manager="jwhit"
 	editor="tysonn"/>
 
@@ -13,24 +13,25 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="10/07/2015"
-	ms.author="lauraa"/>
+	ms.date="12/01/2015"
+	ms.author="raynew"/>
 
-# Leistungs- und Skalierungstest: lokal zu lokal
+# Azure Site Recovery: Ergebnisse von Leistungs- und Skalierungstests für die Hyper-V-Replikation vom Typ „Lokal zu lokal“
 
-Microsoft Azure Site Recovery orchestriert und verwaltet die Replikation Ihres primären Datencenters zu einem sekundären Standort, sodass Ihre Daten im Falle eines geplanten oder nicht geplanten Ausfalls gesichert sind und wiederhergestellt werden können. Dabei können Sie lokale Private Clouds in System Center Virtual Machine Manager (VMM) an einem anderen lokalen Ort oder in Microsoft Azure-Speicher sichern. Für die Replikation wird Hyper-V-Replikat verwendet – ein in Hyper-V (Windows Server 2012 und Windows Server 2012 R2) integrierter Replikationsmechanismus. Dieser ermöglicht die asynchrone Replikation virtueller Hyper-V-Computer zwischen zwei Hostservern. Jede Serverworkload, die in Hyper-V virtualisiert werden kann, kann auch repliziert werden. Die Replikation kann über jedes gewöhnliche IP-basierte Netzwerk durchgeführt werden. Hyper-V-Replikat eignet sich für eigenständige Server, Failovercluster oder eine Kombination aus beidem.
+Mit Microsoft Azure Site Recovery können Sie die Replikation virtueller Computer und physischer Server in Azure oder zu einem sekundären lokalen Standort orchestrieren. Dieser Artikel bietet die Ergebnisse unserer Leistungstests beim Replizieren virtueller Hyper-V-Computer zwischen zwei lokalen Datencentern.
 
-Dieses Thema beschäftigt sich mit dem Testen der replikationsbedingten Leistungsauswirkungen durch Azure Site Recovery in einer Lokal-zu-Lokal-Bereitstellung. Es enthält ausführliche Informationen zu den Parametern und Konfigurationseinstellungen, die Schritte für die Testbereitstellung und detaillierte Testergebnisse.
 
-## Testziele
 
-Mit diesem Test soll die Leistung von Azure Site Recovery bei der Replikation im stabilen Zustand ermittelt werden. Die Replikation im stabilen Zustands tritt auf, wenn virtuelle Computer die erste Replikation abgeschlossen haben und Datenänderungen synchronisieren. Die Ermittlung der Leistung im stabilen Zustand ist wichtig, da sich die meisten virtuellen Computer in diesem Zustand befinden, solange es zu keinem unerwarteten Ausfall kommt.
+## Übersicht
 
-## Ausführen der Testbereitstellung
+Mit diesem Test sollte die Leistung von Azure Site Recovery bei der Replikation im stabilen Zustand ermittelt werden. Die Replikation im stabilen Zustands tritt auf, wenn virtuelle Computer die erste Replikation abgeschlossen haben und Datenänderungen synchronisieren. Die Ermittlung der Leistung im stabilen Zustand ist wichtig, da sich die meisten virtuellen Computer in diesem Zustand befinden, solange es zu keinem unerwarteten Ausfall kommt.
 
-Die Testbereitstellung bestand aus zwei lokalen Standorten mit je einem VMM-Server. Beide VMM-Server sind in einem Azure Site Recovery-Tresor registriert. Diese Testbereitstellung ist typisch für eine Bereitstellung mit Hauptsitz und Zweigstelle, bei der der Hauptsitz als primärer Standort und die Zweigstelle als sekundärer Standort (oder Wiederherstellungsstandort) fungiert.
 
-### Schritte für die Testbereitstellung
+Die Testbereitstellung bestand aus zwei lokalen Standorten mit je einem VMM-Server. Diese Testbereitstellung ist typisch für eine Bereitstellung mit Hauptsitz und Zweigstelle, bei der der Hauptsitz als primärer Standort und die Zweigstelle als sekundärer Standort (oder Wiederherstellungsstandort) fungiert.
+
+### Unsere Schritte
+
+Von uns in der Testphase erledigte Schritte:
 
 1. Erstellung virtueller Computer mithilfe von VMM-Vorlagen
 
@@ -104,9 +105,9 @@ Das folgende Diagramm zeigt den Durchsatz virtueller Computer mit verschiedenen 
 
 ### Zusammenfassung
 
-Die Ergebnisse zeigen deutlich, dass Azure Site Recovery in Kombination mit Hyper-V-Replikat bestens und mit minimalem Zusatzaufwand für einen umfangreichen Cluster skaliert werden kann. Azure Site Recovery ermöglicht eine einfache Bereitstellung, Replikation, Verwaltung und Überwachung. Hyper-V-Replikat stellt die notwendige Infrastruktur für eine erfolgreiche Replikationsskalierung bereit. Laden Sie sich am besten den [Kapazitätsplaner für Hyper-V-Replikat](https://www.microsoft.com/de-DE/download/details.aspx?id=39057) herunter, um Ihre Bereitstellung optimal zu planen.
+Die Ergebnisse zeigen deutlich, dass Azure Site Recovery in Kombination mit Hyper-V-Replikat bestens und mit minimalem Zusatzaufwand für einen umfangreichen Cluster skaliert werden kann. Azure Site Recovery ermöglicht eine einfache Bereitstellung, Replikation, Verwaltung und Überwachung. Hyper-V-Replikat stellt die notwendige Infrastruktur für eine erfolgreiche Replikationsskalierung bereit. Laden Sie sich am besten den [Kapazitätsplaner für Hyper-V-Replikat](https://www.microsoft.com/download/details.aspx?id=39057) herunter, um Ihre Bereitstellung optimal zu planen.
 
-## Umgebung der Testbereitstellung
+## Testumgebungsdetails
 
 ### Primärer Standort
 
@@ -194,24 +195,13 @@ Der Tabelle fasst die Leistungsmetriken und -indikatoren zusammen, die für die 
 
 |Metrik|Indikator|
 |---|---|
-|CPU|\\Prozessor(\_Gesamt)\\% Prozessorzeit|
-|Verfügbarer Speicher|\\Speicher\\Verfügbar MBytes|
-|IOPS|\\PhysicalDisk(\_Total)\\Übertragungen/Sek.|
-|VM-Lesevorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesevorgänge/Sek.|
-|VM-Schreibvorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schrebvorgänge/S|
-|VM-Lesedurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesen Bytes/Sek.|
-|VM-Scheibdurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schreiben Bytes/Sek.|
+|CPU|\\Prozessor(\_Gesamt)\\% Prozessorzeit| |Verfügbarer Speicher|\\Speicher\\Verfügbar MBytes| |IOPS|\\PhysicalDisk(\_Total)\\Übertragungen/Sek.| |VM-Lesevorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesevorgänge/Sek.| |VM-Schreibvorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schrebvorgänge/S| |VM-Lesedurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesen Bytes/Sek.| |VM-Scheibdurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schreiben Bytes/Sek.|
 
 
 ## Nächste Schritte
 
-So stellen Sie ASR bereit:
-
-- [Einrichten von Schutz zwischen einem lokalen VMM-Standort und Azure](site-recovery-vmm-to-azure.md)
-- [Einrichten von Schutz zwischen einem lokalen Hyper-V-Standort und Azure](site-recovery-hyper-v-site-to-azure.md)
 - [Einrichten von Schutz zwischen zwei lokalen VMM-Standorten](site-recovery-vmm-to-vmm.md)
-- [Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN](site-recovery-vmm-san.md)
-- [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
+
  
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

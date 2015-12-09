@@ -135,4 +135,4 @@ Um Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese bei Appl
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-profile-ready.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

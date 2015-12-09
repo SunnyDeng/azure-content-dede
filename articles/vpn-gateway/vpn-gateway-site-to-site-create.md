@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem Azure-Portal | Microsoft Azure"
+   pageTitle="Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem klassischen Azure-Portal | Microsoft Azure"
    description="Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-Verbindung für standortübergreifende und Hybridkonfigurationen mithilfe des klassischen Bereitstellungsmodells."
    services="vpn-gateway"
    documentationCenter=""
@@ -17,10 +17,10 @@
    ms.date="10/21/2015"
    ms.author="cherylmc"/>
 
-# Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem Azure-Portal
+# Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem klassischen Azure-Portal
 
 > [AZURE.SELECTOR]
-- [Azure portal](vpn-gateway-site-to-site-create.md)
+- [Azure Classic Portal](vpn-gateway-site-to-site-create.md)
 - [PowerShell - Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
 
 Dieser Artikel führt Sie durch den Erstellungsvorgang eines virtuellen Netzwerks und einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk. Dieser Artikel gilt für das klassische Bereitstellungsmodell.
@@ -43,7 +43,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 ## Erstellen des virtuellen Netzwerks
 
-1. Melden Sie sich beim **Azure-Portal** an.
+1. Melden Sie sich beim **klassischen Azure-Portal** an.
 
 2. Klicken Sie unten links auf dem Bildschirm auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerkdienste** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
 
@@ -84,13 +84,13 @@ Geben Sie die folgenden Informationen ein, und klicken Sie dann auf das Häkchen
 - **Subnetz hinzufügen:** Umfasst die Start-IP und die Anzahl von Adressen. Zusätzliche Subnetze sind nicht erforderlich, aber Sie können eine getrenntes Subnetz für virtuelle Computer erstellen, die über statische DIPs verfügen sollen. Vielleicht möchten Sie jedoch auch Ihre virtuellen Computer in einem Subnetz zusammenfassen, das von Ihren anderen Rolleninstanzen getrennt ist.
 - **Gatewaysubnetz hinzufügen:** Klicken Sie auf diese Option, um das Gatewaysubnetz hinzuzufügen. Das Gatewaysubnetz wird nur für das Gateway des virtuellen Netzwerks verwendet und ist für diese Konfiguration erforderlich.
 
-Klicken Sie auf das Häkchen am rechten unteren Rand der Seite, damit das virtuelle Netzwerk erstellt wird. Sobald der Vorgang abgeschlossen ist, wird im Azure-Portal auf der Seite **Netzwerke** unter **Status** der Eintrag **Erstellt** angezeigt. Nachdem das VNet erstellt wurde, können Sie Ihr Gateway für das virtuelle Netzwerk konfigurieren.
+Klicken Sie auf das Häkchen am rechten unteren Rand der Seite, damit das virtuelle Netzwerk erstellt wird. Sobald der Vorgang abgeschlossen ist, wird im klassischen Azure-Portal auf der Seite **Netzwerke** unter **Status** der Eintrag **Erstellt** angezeigt. Nachdem das VNet erstellt wurde, können Sie Ihr Gateway für das virtuelle Netzwerk konfigurieren.
 
 [AZURE.INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 ## Konfigurieren des Gateways für das virtuelle Netzwerk
 
-Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine sichere Standort-zu-Standort-Verbindung herzustellen. Weitere Informationen finden Sie unter [Konfigurieren eines Gateways für ein virtuelles Netzwerk im Azure-Portal](vpn-gateway-configure-vpn-gateway-mp.md).
+Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine sichere Standort-zu-Standort-Verbindung herzustellen. Weitere Informationen finden Sie unter [Konfigurieren eines Gateways für ein virtuelles Netzwerk im klassischen Azure-Portal](vpn-gateway-configure-vpn-gateway-mp.md).
 
 ## Nächste Schritte
 
@@ -102,4 +102,4 @@ Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Info
 
 Wenn Sie eine Verbindung zwischen dem klassischen virtuellen Netzwerk und einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Modus erstellt wurde, konfigurieren möchten, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und VNets des Azure-Ressourcen-Managers](../virtual-network/virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

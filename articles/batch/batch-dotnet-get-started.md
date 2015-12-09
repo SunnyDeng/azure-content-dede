@@ -63,7 +63,7 @@ Zur Unterstützung der Anwendung wird in Azure Storage ein Container erstellt. A
 
 	- **[account-name]**: Der Name des Speicherkontos, das Sie zuvor erstellt haben.
 
-	- **[account-key]**: Der primäre Schlüssel des Speicherkontos. Den primären Schlüssel finden Sie im Azure-Vorschauportal auf der Seite „Storage“.
+	- **[account-key]**: Der primäre Schlüssel des Speicherkontos. Den primären Schlüssel finden Sie im Azure-Portal auf der Seite „Storage“.
 
 2. Speichern Sie die Datei "App.config".
 
@@ -208,7 +208,7 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("[account-url]", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
-	Ersetzen Sie die Werte in Klammern durch diejenigen, die zu Ihrem Batch-Konto gehören, die Sie alle im [Azure-Vorschauportal](https://portal.azure.com) finden. Um diese Werte zu finden, melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und:
+	Ersetzen Sie die Werte in Klammern durch diejenigen, die zu Ihrem Batch-Konto gehören. Sie finden diese im [Azure-Portal](https://portal.azure.com). Um diese Werte zu finden, melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und:
 
 	- **[account-name]** – Klicken Sie auf **Batch-Konten**, und wählen Sie das zuvor erstellte Batch-Konto aus.
 	- **[account-url]** – Klicken Sie auf dem Blatt des Batch-Kontos auf **Eigenschaften** > **URL**.
@@ -296,7 +296,7 @@ Erstellen Sie einen Auftrag, mit dem die im Pool ausgeführten Aufgaben verwalte
 
 ## Schritt 4: Hinzufügen von Aufgaben zum Auftrag
 
-Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede Aufgabe wird auf einem Serverknoten ausgeführt und verarbeitet eine Textdatei. In diesem Lernprogramm fügen Sie dem Auftrag drei Aufgaben hinzu.
+Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede Aufgabe wird auf einem Serverknoten ausgeführt und verarbeitet eine Textdatei. In diesem Tutorial fügen Sie dem Auftrag drei Aufgaben hinzu.
 
 1. Fügen Sie der Program-Klasse diese Methode hinzu, die dem Auftrag drei Aufgaben hinzufügt:
 
@@ -487,7 +487,7 @@ Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle
 			Task status: Completed
 			Task start: 7/17/2015 8:31:57 PM
 
-8. Jetzt können Sie im Azure-Vorschauportal die erstellten Ressourcen überprüfen. Zum Löschen der Ressourcen drücken Sie die EINGABETASTE, bis das Programm beendet wird.
+8. Jetzt können Sie im Azure-Portal die erstellten Ressourcen überprüfen. Zum Löschen der Ressourcen drücken Sie die EINGABETASTE, bis das Programm beendet wird.
 
 ## Nächste Schritte
 
@@ -495,4 +495,4 @@ Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle
 
 2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

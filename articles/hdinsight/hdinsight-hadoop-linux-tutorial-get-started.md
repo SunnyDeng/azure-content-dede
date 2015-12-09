@@ -14,7 +14,7 @@
    	ms.topic="hero-article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="11/16/2015"
+   	ms.date="11/29/2015"
    	ms.author="nitinme"/>
 
 # Hadoop-Lernprogramm: Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux
@@ -51,10 +51,10 @@ Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen erstellt, die 
 
 Führen Sie die folgenden Schritte aus, um einen neuen Cluster zu erstellen:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
 2. Klicken Sie auf **NEU**, **Datenanalyse** und anschließend auf **HDInsight**.
 
-    ![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Vorschauportal")
+    ![Erstellen eines neuen Clusters im Azure-Portal](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Portal")
 
 3. Geben Sie einen **Clusternamen** ein, wählen Sie **Hadoop** als **Clustertyp** aus, und wählen Sie in der Dropdownliste **Clusterbetriebssystem** den Eintrag **Ubuntu** aus. Wenn der Clustername verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
 
@@ -230,7 +230,7 @@ Nachdem Sie mit dem Cluster über SSH verbunden sind, verwenden Sie die folgende
 
 ## <a name="nextsteps"></a>Nächste Schritte
 
-In diesem Dokument haben Sie erfahren, wie Sie über das Azure-Vorschauportal einen Linux-basierten HDInsight-Cluster erstellen, über SSH eine Verbindung zu dem Cluster herstellen und wie Sie einfache Hive-Abfragen ausführen.
+In diesem Dokument haben Sie erfahren, wie Sie über das Azure-Portal einen Linux-basierten HDInsight-Cluster erstellen, über SSH eine Verbindung mit dem Cluster herstellen, und wie Sie einfache Hive-Abfragen ausführen.
 
 Weitere Informationen zur Datenanalyse mit HDInsight finden Sie in den folgenden Artikeln:
 
@@ -283,4 +283,4 @@ Weitere Informationen zum Erstellen und Verwalten von HDInsight-Clustern finden 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

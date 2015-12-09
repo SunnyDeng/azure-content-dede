@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="hero-article"
-	ms.date="10/23/2015"
+	ms.date="11/25/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Android-Apps
@@ -55,10 +55,8 @@ Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Notifi
 [AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
 
-<ol start="7">
-<li><p>Klicken Sie auf die Registerkarte <b>Configure</b>, geben Sie den Wert <b>API Key</b> ein, den Sie im vorherigen Abschnitt erhalten haben, und klicken Sie auf <b>Save</b>.</p>
-</li>
-</ol>
+&emsp;&emsp;7. Klicken Sie auf die Registerkarte **Configure**, geben Sie den Wert **API Key** ein, den Sie im vorherigen Abschnitt erhalten haben, und klicken Sie auf **Save**.
+
 &emsp;&emsp;![](./media/notification-hubs-android-get-started/notification-hub-configure-android.png)
 
 Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie besitzen die Verbindungszeichenfolge, um die App für den Empfang von Benachrichtigungen zu registrieren und Pushbenachrichtigungen zu versenden.
@@ -83,10 +81,10 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 
 ###Hinzufügen des Codes
 
-1. Laden Sie das <a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">Notification Hubs Android SDK</a> herunter. Extrahieren Sie die ZIP-Datei, und kopieren Sie die Dateien **notificationhubs\\notification-hubs-0.3.jar** und **notifications\\notifications-1.0.1.jar** in das Verzeichnis **app\\libs** Ihres Projekts. Dazu können Sie die Dateien direkt in den Ordner **libs** im Fenster "Project View" von Android Studio ziehen. Aktualisieren Sie den Ordner **libs**.
+1. Laden Sie die Datei „notification-hubs-0.4.jar“ aus dem [Notification-Hubs-Android-SDK auf Bintray](https://bintray.com/microsoftazuremobile/SDK/Notification-Hubs-Android-SDK/0.4) auf der Registerkarte **Files** herunter. Laden Sie auch [notifications-1.0.1.jar](https://bintray.com/microsoftazuremobile/SDK/Notifications-Handler/view) in das Verzeichnis **app\\libs** Ihres Projekts herunter. Dazu können Sie die Dateien direkt in den Ordner **libs** im Fenster "Project View" von Android Studio ziehen. Aktualisieren Sie den Ordner **libs**.
 
 
-    > [AZURE.NOTE]Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
+    >[AZURE.NOTE]Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
 
 2. Richten Sie ein, dass die Anwendung eine Registrierungs-ID von GCM erhält, und verwenden Sie diese, um die App-Instanz beim Notification Hub zu registrieren.
 
@@ -120,10 +118,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 	    private static Boolean isVisible = false;
 
 
-	Aktualisieren Sie die drei Platzhalter:
-	* **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben.
-	* **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken.
-	* **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
+	Aktualisieren Sie die drei Platzhalter: * **SENDER\_ID**: Legen Sie `SENDER_ID` auf die Projektnummer fest, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben. * **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. * **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
 
 
 
@@ -229,7 +224,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
         </receiver>
 
 
-9. Erweitern Sie in der Projektansicht **app** > **src** > **main** > **java**. Klicken Sie mit der rechten Maustaste auf Ihren Paketordner unter **java**, klicken Sie auf **Neu** und dann auf **Java Class**.
+9. Erweitern Sie in der Projektansicht die Knoten **app** > **src** > **main** > **java**. Klicken Sie mit der rechten Maustaste auf Ihren Paketordner unter **java**, klicken Sie auf **Neu** und dann auf **Java Class**.
 
 	![][6]
 
@@ -327,7 +322,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         android:layout_marginBottom="42dp"
         android:hint="@string/notification_message_hint" />
 
-2. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von den neuen Steuerelementen `Button` und `EditText` verwiesen wird. Fügen Sie die Werte am Ende der Datei unmittelbar vor `</resources>` ein.
+2. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von dem neuen `Button`- und `EditText`-Steuerelement verwiesen wird. Fügen Sie die Werte am Ende der Datei unmittelbar vor `</resources>` ein.
 
         <string name="send_button">Send Notification</string>
         <string name="notification_message_hint">Enter notification message text</string>
@@ -442,7 +437,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         }
 
 
-6. Fügen Sie in **MainActivity.java** der `MainActivity`-Klasse die folgende Methode hinzu, um das „Click“-Ereignis der Schaltfläche **Send Notification** zu verarbeiten und die Benachrichtigungsmeldung über die REST-API an den Hub zu senden.
+6. Fügen Sie in **MainActivity.java** der `MainActivity`-Klasse die folgende Methode hinzu, um das Click-Ereignis der Schaltfläche **Send Notification** zu verarbeiten und die Benachrichtigungsmeldung über die REST-API an den Hub zu senden.
 
         /**
          * Send Notification button click handler. This method parses the
@@ -497,7 +492,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 
 ####Testen mit einem Emulator
 
-Wenn Sie die App mit einem Emulator testen möchten, müssen Sie sicherstellen, dass das Emulatorabbild die Google-API-Ebene unterstützt, die Sie für die API auswählen. Wenn Ihr Image die Google-APIs nicht unterstützt, wird die Ausnahme **SERVICE\_NOT\_AVAILABLE** ausgegeben.
+Wenn Sie die App mit einem Emulator testen möchten, müssen Sie sicherstellen, dass das Emulatorabbild die Google-API-Ebene unterstützt, die Sie für die API auswählen. Wenn das Abbild die Google-APIs nicht unterstützt, wird die Ausnahme **SERVICE\_NOT\_AVAILABLE** ausgegeben.
 
 Stellen Sie außerdem sicher, dass Ihr Google-Konto dem ausgeführten Emulator unter **Einstellungen** > **Konten** hinzugefügt ist. Andernfalls führt die Registrierung bei GCM möglicherweise zur Ausnahme **AUTHENTICATION\_FAILED**.
 
@@ -560,4 +555,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

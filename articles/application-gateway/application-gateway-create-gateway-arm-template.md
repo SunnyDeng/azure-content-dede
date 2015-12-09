@@ -237,7 +237,7 @@ Die Bereitstellung per Klick ist ein weiterer Vorteil von ARM-Vorlagen. Diese Ar
 
 
 ### Schritt 1 
-Der Link [Bereitstellen eines Application Gateways per Klick](https://azure.microsoft.com/de-DE/documentation/templates/101-application-gateway-public-ip/) leitet Sie zur Portalseite mit den Vorlagen für Application Gateways.
+Der Link [Bereitstellen eines Application Gateways per Klick](https://azure.microsoft.com/documentation/templates/101-application-gateway-public-ip/) leitet Sie zur Portalseite mit den Vorlagen für Application Gateways.
 
 
 ### Schritt 2 
@@ -273,4 +273,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

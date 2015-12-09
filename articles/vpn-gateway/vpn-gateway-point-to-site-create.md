@@ -40,7 +40,7 @@ Schritt 2: Erstellen eines Gateways mit dynamischem Routing
 
 ### Erstellen eines virtuellen Netzwerks
 
-1. Melden Sie sich beim **Azure-Portal** an (nicht beim Vorschauportal).
+1. Melden Sie sich beim **klassischen Azure-Portal** an (nicht beim Azure-Portal).
 1. Klicken Sie unten links auf dem Bildschirm auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerkdienste** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
 1. Geben Sie auf dem Bildschirm **Details des virtuellen Netzwerks** die folgenden Informationen ein, und klicken Sie dann auf den Vorwärtspfeil unten rechts.
 	- **Name**: Name des virtuellen Netzwerks. Beispiel: „VNetEast“. Das ist der Name, auf den Sie beim Bereitstellen von virtuellen Computern und PaaS-Instanzen für dieses VNet verweisen müssen.
@@ -57,13 +57,13 @@ Schritt 2: Erstellen eines Gateways mit dynamischem Routing
  - **Adressraum**: Fügen Sie den internen IP-Adressbereich hinzu, den Sie für dieses virtuelle Netzwerk verwenden möchten, einschließlich Start-IP und Anzahl. Es ist wichtig, einen Bereich auszuwählen, der sich nicht mit den anderen Bereichen überschneidet, die für Ihr lokales Netzwerk verwendet werden. Sie müssen sich mit Ihrem Netzwerkadministrator abstimmen, der ggf. einen Bereich von IP-Adressen aus dem Adressraum Ihres lokalen Netzwerks reservieren muss, den Sie für Ihr virtuelles Netzwerk verwenden können.
  - **Subnetz hinzufügen**: Zusätzliche Subnetze sind nicht erforderlich, aber Sie können ein getrenntes Subnetz für virtuelle Computer erstellen, die über statische DIPs verfügen sollen. Vielleicht möchten Sie jedoch auch Ihre virtuellen Computer in einem Subnetz zusammenfassen, das von anderen Rolleninstanzen getrennt ist.
  - **Gatewaysubnetz hinzufügen**: Das Gatewaysubnetz ist für ein Punkt-zu-Standort-VPN erforderlich. Klicken Sie auf diese Option, um das Gatewaysubnetz hinzuzufügen. Das Gatewaysubnetz wird nur für das Gateway des virtuellen Netzwerks verwendet.
-1. Nachdem das virtuelle Netzwerk erstellt wurde, wird auf der Seite mit Netzwerken im Azure-Portal unter **Status** der Eintrag **Erstellt** angezeigt. Nachdem Ihr virtuelles Netzwerk erstellt wurde, können Sie das Gateway mit dynamischem Routing erstellen.
+1. Nachdem das virtuelle Netzwerk erstellt wurde, wird auf der Seite mit Netzwerken im klassischen Azure-Portal unter **Status** der Eintrag **Erstellt** angezeigt. Nachdem Ihr virtuelles Netzwerk erstellt wurde, können Sie das Gateway mit dynamischem Routing erstellen.
 
 ### Erstellen eines Gateways mit dynamischem Routing
 
 Der Gatewaytyp muss als dynamisch konfiguriert werden. Gateways mit statischem Routing sind mit diesem Feature nicht einsetzbar.
 
-1. Klicken Sie im Azure-Portal auf der Seite **Netzwerke** auf das virtuelle Netzwerk, das Sie gerade erstellt haben, und navigieren Sie zur Seite **Dashboard**.
+1. Klicken Sie im klassischen Azure-Portal auf der Seite **Netzwerke** auf das virtuelle Netzwerk, das Sie gerade erstellt haben, und navigieren Sie zur Seite **Dashboard**.
 1. Klicken Sie unten auf der Seite **Dashboard** auf **Gateway erstellen**. Es wird eine Meldung mit der Frage angezeigt: **Möchten Sie ein Gateway für das virtuelle Netzwerk "Yournetwork" erstellen**. Klicken Sie auf **Ja**, um mit der Erstellung des Gateways zu beginnen. Es kann bis zu 15 Minuten dauern, bis das Gateway erstellt worden ist.
 
 ## Abschnitt 2: Generieren und Hochladen von Zertifikaten
@@ -88,19 +88,19 @@ Wenn Sie keine Unternehmenszertifikatlösung verwenden, müssen Sie ein selbstsi
 
 1. Eine Möglichkeit zum Erstellen eines x. 509-Zertifikats ist die Verwendung des Certificate Creation Tool (makecert.exe). Wenn Sie „makecert“ verwenden möchten, laden Sie das kostenlose Produkt [Microsoft Visual Studio Express](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) herunter, und installieren Sie es.
 2. Navigieren Sie zum Ordner "Visual Studio-Tools", und starten Sie die Eingabeaufforderung als Administrator.
-3. Mit dem Befehl im folgenden Beispiel wird ein Stammzertifikat im persönlichen Zertifikatspeicher auf Ihrem Computer erstellt und installiert. Zudem wird eine entsprechende *CER*-Datei erstellt, die Sie später in das Azure-Portal hochladen.
+3. Mit dem Befehl im folgenden Beispiel wird ein Stammzertifikat im persönlichen Zertifikatspeicher auf Ihrem Computer erstellt und installiert. Zudem wird eine entsprechende *CER*-Datei erstellt, die Sie später in das klassische Azure-Portal hochladen.
 4. Wechseln Sie zu dem Verzeichnis, in dem die CER-Datei generiert werden soll, und führen Sie den folgenden Befehl aus, wobei *RootCertificateName* für den Namen steht, den Sie für das Zertifikat verwenden möchten. Wenn Sie das folgende Beispiel ohne Änderungen ausführen, erhalten Sie ein Stammzertifikat und die zugehörige Datei *RootCertificateName.cer*.
 
 >[AZURE.NOTE]Da Sie ein Stammzertifikat erstellt haben, aus dem Clientzertifikate generiert werden, ist es empfehlenswert, dass Sie dieses Zertifikat zusammen mit dessen privaten Schlüssel exportieren und an einem sicheren Ort speichern, von dem es wiederhergestellt werden kann.
 
     makecert -sky exchange -r -n "CN=RootCertificateName" -pe -a sha1 -len 2048 -ss My "RootCertificateName.cer"
 
-### Hochladen der Stammzertifikat-CER-Datei in das Azure-Portal
+### Hochladen der Stammzertifikat-CER-Datei in das klassische Azure-Portal
 
 Sie müssen die entsprechende CER-Datei für jedes Stammzertifikat in Azure hochladen. Sie können bis zu 20 Zertifikate hochladen.
 
-1. Wenn Sie zuvor ein Stammzertifikat generiert haben, wurde auch eine *CER*-Datei erstellt. Sie laden die Datei jetzt in das Azure-Portal hoch. Beachten Sie, dass die CER-Datei nicht den privaten Schlüssel des Stammzertifikats enthält. Sie können bis zu 20 Stammzertifikate hochladen.
-1. Klicken Sie im Azure-Portal auf der Seite **Zertifikate** für Ihr virtuelles Netzwerk auf **Ein Stammzertifikat hochladen**.
+1. Wenn Sie zuvor ein Stammzertifikat generiert haben, wurde auch eine *CER*-Datei erstellt. Sie laden die Datei jetzt in das klassische Azure-Portal hoch. Beachten Sie, dass die CER-Datei nicht den privaten Schlüssel des Stammzertifikats enthält. Sie können bis zu 20 Stammzertifikate hochladen.
+1. Klicken Sie im klassischen Azure-Portal auf der Seite **Zertifikate** für Ihr virtuelles Netzwerk auf **Ein Stammzertifikat hochladen**.
 1. Suchen Sie auf der Seite **Zertifikat hochladen** nach der CER-Datei für das Stammzertifikat, und klicken Sie dann auf das Häkchen.
 
 ### Generieren eines Client-Zertifikats
@@ -137,7 +137,7 @@ Schritt 3: Überprüfen der Verbindung
 
 ### Erstellen des VPN-Clientkonfigurationspakets
 
-1. Navigieren Sie im Azure-Portal auf der Seite **Dashboard** für Ihr virtuelles Netzwerk zum Menü „Auf einen Blick“ in der rechten Ecke, und klicken Sie auf das VPN-Paket für den Client, den Sie mit Ihrem virtuellen Netzwerk verbinden möchten.
+1. Navigieren Sie im klassischen Azure-Portal auf der Seite **Dashboard** für Ihr virtuelles Netzwerk zum Menü „Auf einen Blick“ in der rechten Ecke, und klicken Sie auf das VPN-Paket für den Client, den Sie mit Ihrem virtuellen Netzwerk verbinden möchten.
 2. 
 Die folgenden Clientbetriebssysteme werden unterstützt:
  - Windows 7 (32 Bit und 64 Bit)
@@ -152,7 +152,7 @@ Die folgenden Clientbetriebssysteme werden unterstützt:
  - Wählen Sie für 32-Bit-Clients **32-Bit-Client-VPN-Paket herunterladen** aus.
  - Wählen Sie für 64-Bit-Clients **64-Bit-Client-VPN-Paket herunterladen** aus.
 1. Die Erstellung des Clientpakets kann einige Minuten in Anspruch nehmen. Sobald das Paket fertiggestellt wurde, können Sie die Datei herunterladen. Die heruntergeladene *EXE*-Datei kann sicher auf dem lokalen Computer gespeichert werden.
-1. Nachdem Sie das VPN-Clientpaket generiert und aus dem Azure-Portal heruntergeladen haben, können Sie das Clientpaket auf dem Clientcomputer installieren, von dem Sie eine Verbindung mit dem virtuellen Netzwerk herstellen möchten. Wenn Sie das VPN-Clientpaket auf mehreren Clientcomputern installieren möchten, stellen Sie sicher, dass auf diesen auch ein Clientzertifikat installiert worden ist. Das VPN-Clientpaket enthält Konfigurationsinformationen zum Konfigurieren der VPN-Client-Software, die in Windows integriert. Das Paket installiert keine zusätzlichen Software.
+1. Nachdem Sie das VPN-Clientpaket generiert und aus dem klassischen Azure-Portal heruntergeladen haben, können Sie das Clientpaket auf dem Clientcomputer installieren, von dem Sie eine Verbindung mit dem virtuellen Netzwerk herstellen möchten. Wenn Sie das VPN-Clientpaket auf mehreren Clientcomputern installieren möchten, stellen Sie sicher, dass auf diesen auch ein Clientzertifikat installiert worden ist. Das VPN-Clientpaket enthält Konfigurationsinformationen zum Konfigurieren der VPN-Client-Software, die in Windows integriert. Das Paket installiert keine zusätzlichen Software.
 
 ### Installieren des VPN-Konfigurationspakets auf dem Client und Herstellen der Verbindung
 
@@ -193,4 +193,4 @@ Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Info
 
 Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Dokumentation zu virtuellen Netzwerken](https://azure.microsoft.com/documentation/services/virtual-network/).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

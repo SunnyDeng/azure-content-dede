@@ -78,9 +78,9 @@ Fügen Sie zunächst in der Datei "Program.cs" am Anfang der C#-Anwendung folgen
 
 > [AZURE.IMPORTANT]Um dieses NoSQL-Tutorial abzuschließen, müssen Sie die oben genannten Abhängigkeiten hinzufügen.
 
-Speichern Sie anschließend den DocumentDB-Kontoendpunkt und entweder den primären oder den sekundären Zugriffsschlüssel. Die Schlüssel finden Sie im [Azure-Vorschauportal](https://portal.azure.com).
+Speichern Sie anschließend den DocumentDB-Kontoendpunkt und entweder den primären oder den sekundären Zugriffsschlüssel. Die Schlüssel finden Sie im [Azure-Portal](https://portal.azure.com).
 
-![Screenshot des Azure-Vorschauportals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche SCHLÜSSEL auf dem Blatt „DocumentDB-Konto“ und die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL auf dem Blatt „Schlüssel“ hervorgehoben sind][keys]
+![Screenshot des Azure-Portals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche "SCHLÜSSEL" auf dem Blatt "DocumentDB-Konto", und auf dem Blatt "Schlüssel" die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind][keys]
 
     private const string EndpointUrl = "<your endpoint URI>";
     private const string AuthorizationKey = "<your key>";
@@ -480,4 +480,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio wiederherzustellen,
 [keys]: media/documentdb-get-started/nosql-tutorial-keys.png
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

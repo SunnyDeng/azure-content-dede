@@ -39,11 +39,11 @@ Wenn Sie mit der Verwendung des Service Bus Relays in Azure beginnen möchten, m
 
 So erstellen Sie einen Dienstnamespace:
 
-1.  Melden Sie sich beim [Azure-Portal][] an.
+1.  Melden Sie sich beim [klassischen Azure-Portal][] an.
 
-2.  Klicken Sie im linken Navigationsbereich des Azure-Portals auf **Service Bus**.
+2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Azure-Portals auf **Erstellen**.
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
@@ -59,7 +59,7 @@ So erstellen Sie einen Dienstnamespace:
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
-	Der erstellte Namespace wird anschließend im Azure-Portal angezeigt und in kurzer Zeit aktiviert. Fahren Sie erst fort, wenn der Status als **Aktiv** angezeigt wird.
+	Der erstellte Namespace wird anschließend im Portal angezeigt und nach kurzer Zeit aktiviert. Fahren Sie erst fort, wenn der Status als **Aktiv** angezeigt wird.
 
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
@@ -273,9 +273,9 @@ Nachdem Sie nun mit den Grundlagen des Service Bus Relay-Diensts vertraut sind, 
   [Obtain the Default Management Credentials for the Namespace]: #obtain_credentials
   [Get the Service Bus NuGet Package]: #get_nuget_package
   [How to: Use Service Bus to Expose and Consume a SOAP Web Service  with TCP]: #how_soap
-  [Azure-Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [SAS-Authentifizierung (Shared Access Signature) mit Service Bus]: service-bus-shared-access-signature-authentication.md
   [Azure-Beispiele]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [Übersicht über Service Bus-Beispiele]: service-bus-samples.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

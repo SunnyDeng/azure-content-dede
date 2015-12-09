@@ -59,7 +59,7 @@ Nun stehen unsere Daten bereit, und wir können zu Data Factory wechseln und die
 
 ## Verwenden von Azure Data Factory
 
-Nachdem wir alle Teile eingerichtet haben, können wir mit dem Einrichten der Pipeline beginnen, indem wir im Azure-Vorschauportal zu Ihrer Azure Data Factory-Instanz wechseln. Wechseln Sie hierfür zum [Azure-Portal](portal.azure.com), und wählen Sie im Menü auf der linken Seite Ihre Data Factory aus.
+Nachdem wir alle Teile eingerichtet haben, können wir mit dem Einrichten der Pipeline beginnen, indem wir im Azure-Portal zu Ihrer Azure Data Factory-Instanz wechseln. Wechseln Sie hierfür zum [klassischen Azure-Portal](portal.azure.com), und wählen Sie im Menü auf der linken Seite Ihre Data Factory aus.
 
 Von hier aus sind drei Schritte zur Einrichtung einer Azure Data Factory-Pipeline erforderlich, um Daten in Ihr Data Warehouse zu übertragen: das Verknüpfen Ihrer Dienste, das Definieren Ihrer Datasets und das Erstellen der Pipeline.
 
@@ -206,4 +206,4 @@ Klicken Sie im Abschnitt „Erstellen und Bereitstellen“ nun auf „Weitere Be
 	}
 	
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

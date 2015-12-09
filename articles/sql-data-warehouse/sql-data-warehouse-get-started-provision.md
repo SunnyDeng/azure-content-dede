@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Vorschauportal | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Vorschauportal erstellen."
+	pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Portal | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Portal erstellen."
 	services="sql-data-warehouse"
 	documentationCenter="NA"
 	authors="barbkess"
@@ -19,13 +19,13 @@
 # Erstellen eines SQL Data Warehouse
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
+- [Azure Portal](sql-data-warehouse-get-started-provision.md)
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
-In diesem Tutorial wird das Erstellen einer Azure SQL Data Warehouse-Datenbank veranschaulicht, was im Azure-Vorschauportal nur wenige Minuten dauert.
+In diesem Tutorial wird das Erstellen einer Azure SQL Data Warehouse-Datenbank veranschaulicht, was im Azure-Portal nur wenige Minuten dauert.
 
-In diesem Tutorial führen Sie folgende Schritte aus:
+In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 - Erstellen eines Servers, der die Datenbank hostet
 - Erstellen einer Datenbank, die die AdventureWorksDW-Beispieldatenbank enthält
@@ -34,7 +34,7 @@ In diesem Tutorial führen Sie folgende Schritte aus:
 
 ## Schritt 1: Anmelden und erste Schritte
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **Neu** > **Daten + Speicher** > **SQL Data Warehouse**.
 
@@ -49,12 +49,7 @@ In diesem Tutorial führen Sie folgende Schritte aus:
 
 In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server und jeder Server einem geografischen Standort zugewiesen. Der Server wird als logischer SQL Server bezeichnet.
 
-> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server:
-  >
-  > + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts.
-  > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*.
-  > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten.
-  > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
+> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server: >> + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts. > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*. > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten. > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
 
 1. Klicken Sie auf **Server** > **Neuen Server erstellen**. Es fallen keine Gebühren für den Server ein. Wenn Sie einen bereits vorhandenen logischen V12-Server verwenden möchten, wählen Sie den vorhandenen Server aus und fahren mit dem nächsten Schritt fort. 
 
@@ -99,7 +94,7 @@ Nachdem Sie Ihren logischen SQL-Server ausgewählt haben, können Sie die Erstel
 
 1. Klicken Sie auf **Erstellen**, um die SQL Data Warehouse-Datenbank zu erstellen.
 
-1. Warten Sie einige Minuten, bis die Datenbank bereit ist. Im Anschluss sollten sich wieder im [Azure-Vorschauportal](https://portal.azure.com) befinden. Beachten Sie, dass die SQL Data Warehouse-Datenbank Ihrem Dashboard hinzugefügt wurde.
+1. Warten Sie einige Minuten, bis die Datenbank bereit ist. Im Anschluss sollten Sie sich wieder im [Azure-Portal](https://portal.azure.com) befinden. Beachten Sie, dass die SQL Data Warehouse-Datenbank Ihrem Dashboard hinzugefügt wurde.
 
     ![Portalansicht](./media/sql-data-warehouse-get-started-provision/database-portal-view.png)
 
@@ -130,4 +125,4 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->
