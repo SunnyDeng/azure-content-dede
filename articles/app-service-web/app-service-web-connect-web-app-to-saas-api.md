@@ -71,17 +71,19 @@ Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die
 
 1. Aktualisieren Sie die Ansicht `Contact` entsprechend der dynamischen Liste von Kontakten mit dem folgenden Code:
 	<pre>// Add to the very top of the view file
-@model IList&lt;MyContactsList.Web.Models.Contact>
-
-// Replace the default email addresses with the following
-&lt;h3>Public Contacts&lt;/h3>
-&lt;ul>
-    @foreach (var contact in Model)
+	@model IList&lt;MyContactsList.Web.Models.Contact>
+	
+	// Replace the default email addresses with the following
+    &lt;h3>Public Contacts&lt;/h3>
+    &lt;ul>
+        @foreach (var contact in Model)
     {
         &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
-    }
-&lt;/ul> 
-</pre>![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
+        }
+    &lt;/ul> 
+	</pre>
+
+	![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
 ## Bereitstellen der Webanwendung in Web-Apps in App Service
 
@@ -90,7 +92,8 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
 <!---HONumber=AcomDC_1203_2015-->

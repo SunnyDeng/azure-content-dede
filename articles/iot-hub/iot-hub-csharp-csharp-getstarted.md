@@ -119,6 +119,7 @@ Weitere Informationen zu IoT Hub:
 
 [Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
 [Verarbeiten von D2C-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
+[Verarbeiten von Gerät-zu-Cloud-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
 [Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
 [Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md

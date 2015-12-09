@@ -39,7 +39,20 @@ Azure Site Recovery-Features mit einem Beitrag zu Ihrer Schutz- und Wiederherste
 
 Site Recovery-Replikationstechnologien sind mit allen Anwendungen kompatibel, die auf einem virtuellen Computer ausgeführt werden. Wir haben außerdem in Zusammenarbeit mit Anwendungsproduktteams zusätzliche Tests durchgeführt, um die Unterstützung der einzelnen Anwendungen noch weiter zu optimieren.
 
-**Workload** | <p>** Replizieren von Hyper-V-VMs **</p> <p>** (an einen sekundären Standort)**</p> | <p>**Replizieren von Hyper-V-VMs **</p> <p>** (in Azure)**</p> | <p>**Replizieren von Hyper-V-VMs **</p> <p>** (an einen sekundären Standort)**</p>| <p>**Replizieren von Hyper-V-VMs **</p><p>** (in Azure)**</p> ---|---|---|---|--- Active Directory, DNS | J | J | J | J Web-Apps (IIS, SQL) | J | J | J | J SCOM | J | J | J | J SharePoint | J | J | J | J <p>SAP</p><p>Replizieren eines SAP-Standorts in Azure für Nichtcluster</p> | J (von Microsoft getestet) | J (von Microsoft getestet) | J (von Microsoft getestet) | J (von Microsoft getestet) Exchange (keine DAG) | J | Bald verfügbar | J | J Remotedesktop/VDI | J | J | J | Nicht verfügbar<p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (von Microsoft getestet) | J (von Microsoft getestet) | J (von Microsoft getestet) | J (von Microsoft getestet) Dynamics AX | J | J | J | J Dynamics CRM | J | Bald verfügbar | J | Bald verfügbar Oracle | J (von Microsoft getestet) | J (von Microsoft getestet) | J (von Microsoft getestet) | Bald verfügbar (von Microsoft getestet) Windows File Server | J | J | J | J
+**Workload** | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: Azure)**</p> | <p>**Replizieren virtueller VMware-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller VMware-Computer**</p><p>**(Ziel: Azure)****</p>
+---|---|---|---|---
+Active Directory, DNS | J | J | J | J
+Web-Apps (IIS, SQL) | J | J | J | J
+SCOM | J | J | J | J
+SharePoint | J | J | J | J
+<p>SAP</p><p>Replizieren eines SAP-Standorts zu Azure (kein Cluster)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
+Exchange (kein DAG) | J | In Kürze verfügbar | J | J
+Remotedesktop/VDI | J | J | J | N/A
+<p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
+Dynamics AX | J | J | J | J
+Dynamics CRM | J | In Kürze verfügbar | J | In Kürze verfügbar
+Oracle | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
+Windows-Dateiserver | J | J | J | J
 
 ##Schützen von Active Directory und DNS
 
