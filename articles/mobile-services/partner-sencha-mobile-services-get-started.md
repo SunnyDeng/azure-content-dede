@@ -172,7 +172,7 @@ Nachdem die Azure-Erweiterung heruntergeladen und im Anwendungsverzeichnis insta
 
 	Auch wenn Sie das Konfigurationsobjekt direkt zur init-Methode weitergeben können, empfehlen wir die Erstellung einer Konfigurationseigenschaft der Sencha-Anwendung namens **azure** sowie die Platzierung aller zugehörigen Informationen an diesem Ort. Sie können diesen Eigenschaftenwert zur Methode Ext.Azure.init weitergeben.
 
-	Wenn Sie einen Mobile Service in Azure erstellen (siehe [Erste Schritte mit Windows Azure](http://senchaazuredocs.azurewebsites.net/#!/guide/getting_started)), werden ein Anwendungsschlüssel und eine URL zu diesem Dienst zugewiesen. Diese Information muss in Ihrem Azure-Paket angegeben werden, damit es eine Verbindung zum Dienst herstellen kann.
+	Wenn Sie einen Mobile Service in Azure erstellen (siehe [Erste Schritte mit Microsoft Azure](http://senchaazuredocs.azurewebsites.net/#!/guide/getting_started)), werden ein Anwendungsschlüssel und eine URL zu diesem Dienst zugewiesen. Diese Information muss in Ihrem Azure-Paket angegeben werden, damit es eine Verbindung zum Dienst herstellen kann.
 
 	Dieses Beispiel zeigt eine ganz einfache Azure-Konfiguration und Initialisierung, welche nur den Anwendungsschlüssel und die URL zur Verfügung stellt:
 
@@ -724,4 +724,4 @@ Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
