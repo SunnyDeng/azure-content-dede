@@ -37,7 +37,7 @@ Der folgende Screenshot zeigt die fertige Anwendung.
 
 ![][0]
 
-> [AZURE.NOTE]Azure bietet ebenfalls Funktionen für Speicher-Warteschlangen. Weitere Informationen zu Speicher- und Service Bus-Warteschlangen in Azure finden Sie unter [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung][sbqueuecomparison].
+> [AZURE.NOTE]Azure bietet ebenfalls Funktionen für Speicher-Warteschlangen. Weitere Informationen zu Speicher- und Service Bus-Warteschlangen in Azure finden Sie unter [Microsoft Azure-Warteschlangen und Microsoft Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung][sbqueuecomparison].
 
 ## Szenario-Übersicht: Kommunikation zwischen Rollen
 
