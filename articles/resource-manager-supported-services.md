@@ -18,7 +18,8 @@
 
 # Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen
 
-Der Azure-Ressourcen-Manager bietet eine neue Möglichkeit, die Dienste, aus denen Ihre Anwendungen bestehen, bereitzustellen und zu verwalten. Die meisten (jedoch nicht alle) Dienste unterstützen den Ressourcen-Manager, und einige Dienste unterstützen ihn nur teilweise. Microsoft ermöglicht den Ressourcen-Manager für jeden Dienst, der für zukünftige Lösungen wichtig ist. Bis diese Unterstützung jedoch konsistent ist, müssen Sie den aktuellen Status jedes Diensts kennen. Dieses Thema enthält eine Liste der unterstützten Ressourcenanbieter für den Azure-Ressourcen-Manager.
+Der Azure-Ressourcen-Manager bietet eine neue Möglichkeit, die Dienste, aus denen Ihre Anwendungen bestehen, bereitzustellen und zu verwalten.
+Die meisten (jedoch nicht alle) Dienste unterstützen den Ressourcen-Manager, und einige Dienste unterstützen ihn nur teilweise. Microsoft ermöglicht den Ressourcen-Manager für jeden Dienst, der für zukünftige Lösungen wichtig ist. Bis diese Unterstützung jedoch konsistent ist, müssen Sie den aktuellen Status jedes Diensts kennen. Dieses Thema enthält eine Liste der unterstützten Ressourcenanbieter für den Azure-Ressourcen-Manager.
 
 Beim Bereitstellen der Ressourcen müssen Sie auch wissen, welche Bereiche diese Ressourcen unterstützen und welche API-Versionen für die Ressourcen verfügbar sind. Der Abschnitt [Unterstützte Regionen](#supported-regions) zeigt, wie Sie herausfinden, in welchen Regionen Ihr Abonnement und Ihre Ressourcen verwendet werden können. Im Abschnitt [Unterstützte API-Versionen](#supported-api-versions) wird gezeigt, wie Sie ermitteln, welche API-Versionen Sie verwenden können.
 
@@ -32,7 +33,9 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Virtual Machines | Ja | Ja, mehrere Optionen | Nein | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
 | Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | Ja | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | |
 | Dynamics Lifecycle Services | Ja | Nein | | | |
-| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - | | Remote-App | Nein | Nein | - | - | - | | Service Fabric | Nein | - | - | - | - |
+| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - |
+| Remote-App | Nein | Nein | - | - | - |
+| Service Fabric | Nein | - | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -59,7 +62,8 @@ Ressourcen des Typs "Virtuelle Computer (klassisch)" können in neue Ressourceng
 | SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.0.5.9-preview) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
 | Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
 | SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.12-preview) | | | |
-| StorSimple | Nein | Nein | - | - | - | | Verwalteter Cache | Nein | Nein | - | - | - |
+| StorSimple | Nein | Nein | - | - | - |
+| Verwalteter Cache | Nein | Nein | - | - | - |
 
 ## Web- und mobile Anwendungen
 
@@ -85,7 +89,8 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Stream Analytics | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) | | | |
 | HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | Ja | | |
 | Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) | |
-| Machine Learning | Nein | Nein | - | - | - | | Data Catalog | Nein | Nein | - | - | - |
+| Machine Learning | Nein | Nein | - | - | - |
+| Data Catalog | Nein | Nein | - | - | - |
 
 ## Medien und CDN
 
@@ -101,7 +106,8 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
 | BizTalk Services | Ja | Nein | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) |
 | Service Bus | Ja | Nein | | [Service Bus REST-API-Referenz](https://msdn.microsoft.com/library/azure/hh780717.aspx) | |
-| Backup | Nein | Nein | - | - | - | | Site Recovery | Nein | Nein | - | - | - |
+| Backup | Nein | Nein | - | - | - |
+| Site Recovery | Nein | Nein | - | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
