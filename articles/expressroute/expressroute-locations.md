@@ -30,7 +30,7 @@ Wenn Sie mit mindestens einem ExpressRoute-Standort innerhalb der geopolitischen
 |**Geopolitische Region**|**Azure-Regionen**|**ExpressRoute-Standorte**|
 |---|---|---|
 |**Nordamerika**|Alle US-Regionen: Osten USA, Westen USA, Osten USA 2, USA Süd Mitte, USA Nord Mitte|Atlanta, Chicago, Dallas, Los Angeles, New York, Seattle, Silicon Valley, Washington DC|
-|**Südamerika**|Brasilien Süd|Sao Paulo|
+|**Südamerika**|Brasilien Süd|São Paulo|
 |**Europa**|Nordeuropa, Westeuropa|Amsterdam, Dublin+, London|
 |**Asien**|Ostasien, Südostasien|Hongkong, Singapur|
 |**Japan**|Japan West, Japan Ost|Osaka, Tokio|
